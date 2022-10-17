@@ -23,19 +23,19 @@ import (
 // EntityRef
 //==============================================================================
 
-func (feature *FeaturePipeline) AddConfiditions() {
-	feature.Status.Conditions = make([]FeaturePipelineCondition, 1)
-	feature.Status.Conditions[0] = FeaturePipelineCondition{
-		Type:   FeaturePipelineReady,
+func (feature *FeaturesetClass) AddConfiditions() {
+	feature.Status.Conditions = make([]FeaturesetClassCondition, 1)
+	feature.Status.Conditions[0] = FeaturesetClassCondition{
+		Type:   FeaturesetClassReady,
 		Status: v1.ConditionUnknown,
 	}
 }
 
-func (feature *FeaturePipeline) HasFinalizer() bool {
+func (feature *FeaturesetClass) HasFinalizer() bool {
 	return util.HasFin(&feature.ObjectMeta, data.GroupName)
 }
-func (feature *FeaturePipeline) AddFinalizer() { util.AddFin(&feature.ObjectMeta, data.GroupName) }
-func (feature *FeaturePipeline) RemoveFinalizer() {
+func (feature *FeaturesetClass) AddFinalizer() { util.AddFin(&feature.ObjectMeta, data.GroupName) }
+func (feature *FeaturesetClass) RemoveFinalizer() {
 	util.RemoveFin(&feature.ObjectMeta, data.GroupName)
 }
 
@@ -44,15 +44,15 @@ func (feature *FeaturePipeline) RemoveFinalizer() {
 //==============================================================================
 
 // Return the on disk rep location
-func (feature *FeaturePipeline) RepPath(root string) (string, error) {
+func (feature *FeaturesetClass) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/schemas/%s.yaml", root, feature.ObjectMeta.Name), nil
 }
 
-func (feature *FeaturePipeline) RepEntry() (string, error) {
+func (feature *FeaturesetClass) RepEntry() (string, error) {
 	return fmt.Sprintf("schemas/%s.yaml", feature.ObjectMeta.Name), nil
 }
 
-func (feature *FeaturePipeline) Age() string {
+func (feature *FeaturesetClass) Age() string {
 	return humanize.Time(feature.CreationTimestamp.Time)
 }
 
@@ -64,13 +64,13 @@ func (feature *FeaturePipeline) Age() string {
 // Assign commit and id
 //==============================================================================
 
-func (feature *FeaturePipeline) LabelWithCommit(commit string, uname string, branch string) {
+func (feature *FeaturesetClass) LabelWithCommit(commit string, uname string, branch string) {
 	feature.ObjectMeta.Labels[common.CommitLabelKey] = commit
 	feature.ObjectMeta.Labels[common.UnameLabelKey] = uname
 	feature.ObjectMeta.Labels[common.BranchLabelKey] = branch
 }
 
-func (feature *FeaturePipeline) IsGitObj() bool {
+func (feature *FeaturesetClass) IsGitObj() bool {
 	label, ok := feature.ObjectMeta.Labels[common.CommitLabelKey]
 	if !ok {
 		return false
@@ -78,14 +78,14 @@ func (feature *FeaturePipeline) IsGitObj() bool {
 	return label != ""
 }
 
-func (feature *FeaturePipeline) SetChanged() {
+func (feature *FeaturesetClass) SetChanged() {
 	feature.ObjectMeta.Labels[common.ChangedLabelKey] = "true"
 
 }
 
 // Merge or update condition
 // Merge or update condition
-func (feature *FeaturePipeline) CreateOrUpdateCond(cond FeaturePipelineCondition) {
+func (feature *FeaturesetClass) CreateOrUpdateCond(cond FeaturesetClassCondition) {
 	i := feature.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
@@ -104,7 +104,7 @@ func (feature *FeaturePipeline) CreateOrUpdateCond(cond FeaturePipelineCondition
 	feature.Status.Conditions[i] = current
 }
 
-func (feature *FeaturePipeline) GetCondIdx(t FeaturePipelineConditionType) int {
+func (feature *FeaturesetClass) GetCondIdx(t FeaturesetClassConditionType) int {
 	for i, v := range feature.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -113,14 +113,14 @@ func (feature *FeaturePipeline) GetCondIdx(t FeaturePipelineConditionType) int {
 	return -1
 }
 
-func (feature *FeaturePipeline) GetCond(t FeaturePipelineConditionType) FeaturePipelineCondition {
+func (feature *FeaturesetClass) GetCond(t FeaturesetClassConditionType) FeaturesetClassCondition {
 	for _, v := range feature.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return FeaturePipelineCondition{
+	return FeaturesetClassCondition{
 		Type:    t,
 		Status:  v1.ConditionUnknown,
 		Reason:  "",
@@ -129,38 +129,38 @@ func (feature *FeaturePipeline) GetCond(t FeaturePipelineConditionType) FeatureP
 
 }
 
-func (feature *FeaturePipeline) IsReady() bool {
-	return feature.GetCond(FeaturePipelineReady).Status == v1.ConditionTrue
+func (feature *FeaturesetClass) IsReady() bool {
+	return feature.GetCond(FeaturesetClassReady).Status == v1.ConditionTrue
 }
 
-func (feature *FeaturePipeline) Key() string {
+func (feature *FeaturesetClass) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "features", feature.Namespace, feature.Name)
 }
 
-func ParseFeatureSourceYaml(content []byte) (*FeaturePipeline, error) {
+func ParseFeaturesetClassYaml(content []byte) (*FeaturesetClass, error) {
 	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
 	if err != nil {
 		return nil, err
 	}
-	r := requiredObj.(*FeaturePipeline)
+	r := requiredObj.(*FeaturesetClass)
 	return r, nil
 }
 
-func (pipeline *FeaturePipeline) MarkReady() {
+func (pipeline *FeaturesetClass) MarkReady() {
 	// update the lab state to ready
-	pipeline.CreateOrUpdateCond(FeaturePipelineCondition{
-		Type:   FeaturePipelineReady,
+	pipeline.CreateOrUpdateCond(FeaturesetClassCondition{
+		Type:   FeaturesetClassReady,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (pipeline *FeaturePipeline) MarkArchived() {
-	pipeline.CreateOrUpdateCond(FeaturePipelineCondition{
-		Type:   FeaturePipelineSaved,
+func (pipeline *FeaturesetClass) MarkArchived() {
+	pipeline.CreateOrUpdateCond(FeaturesetClassCondition{
+		Type:   FeaturesetClassSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (pipeline *FeaturePipeline) Archived() bool {
-	return pipeline.GetCond(FeaturePipelineSaved).Status == v1.ConditionTrue
+func (pipeline *FeaturesetClass) Archived() bool {
+	return pipeline.GetCond(FeaturesetClassSaved).Status == v1.ConditionTrue
 }

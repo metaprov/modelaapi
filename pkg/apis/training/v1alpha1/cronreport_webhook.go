@@ -151,12 +151,12 @@ func (run *CronReport) IsCompleted() bool {
 
 func (run *CronReport) IsRunning() bool {
 	cond := run.GetCond(CronReportReady)
-	return cond.Status == v1.ConditionFalse && cond.Reason == string(v1alpha1.FeaturePipelineRunPhaseRunning)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(v1alpha1.FeaturesetPhaseRunning)
 }
 
 func (run *CronReport) IsFailed() bool {
 	cond := run.GetCond(CronReportReady)
-	return cond.Status == v1.ConditionFalse && cond.Reason == string(v1alpha1.FeaturePipelineRunPhaseFailed)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(v1alpha1.FeaturesetPhaseFailed)
 }
 
 // defaulting

@@ -12,8 +12,8 @@ spec:
     categories:
     - data
     - modela
-    kind: FeaturePipeline
-    listKind: FeaturePipelineList
+    kind: FeaturesetClass
+    listKind: FeaturesetClassList
     plural: featurepipelines
     shortNames:
     - fp
@@ -39,7 +39,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: FeaturePipeline represent the processing of feature in the store.
+        description: FeaturesetClass represent the processing of feature in the store.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -54,7 +54,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: FeaturePipelineSpec contain the desired state of a FeaturePipeline
+            description: FeaturesetClassSpec contain the desired state of a FeaturesetClass
             properties:
               activeDeadlineSeconds:
                 default: 600
@@ -98,6 +98,11 @@ spec:
                 description: Description of the feature pipeline
                 maxLength: 512
                 type: string
+              exclude:
+                description: Features to exclude from the data source.
+                items:
+                  type: string
+                type: array
               featureSetRef:
                 description: Family is the feature family
                 properties:
@@ -134,6 +139,11 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
+              include:
+                description: Features to include in this set
+                items:
+                  type: string
+                type: array
               materialization:
                 description: Materialization
                 properties:
@@ -164,6 +174,12 @@ spec:
                     minimum: 0
                     type: integer
                 type: object
+              offline:
+                description: Ingest the features into the offline store
+                type: boolean
+              online:
+                description: Ingest the features into the online store
+                type: boolean
               owner:
                 default: no-one
                 description: Owner is the owner of the feature pipeline
@@ -324,11 +340,205 @@ spec:
                     - cron
                     type: string
                 type: object
-              ttl:
-                default: 0
-                description: TTL.
-                format: int32
-                type: integer
+              unitTests:
+                description: A template for models unit tests
+                properties:
+                  enabled:
+                    description: If false, this test case is disabled
+                    type: boolean
+                  tests:
+                    items:
+                      properties:
+                        assertThat:
+                          description: The assertion type
+                          type: string
+                        column:
+                          description: If unit test is column test, this is the name
+                            of the column
+                          type: string
+                        column2:
+                          description: For test that involve two columns (e.g. correlation)
+                          type: string
+                        columns:
+                          description: If unit test is column test, this is the name
+                            of the column
+                          items:
+                            type: string
+                          type: array
+                        compareToRef:
+                          description: Reference to another entity which is a ref.
+                          properties:
+                            apiVersion:
+                              description: API version of the referent.
+                              type: string
+                            fieldPath:
+                              description: 'If referring to a piece of an object instead
+                                of an entire object, this string should contain a
+                                valid JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                                For example, if the object reference is to a container
+                                within a pod, this would take on a value like: "spec.containers{name}"
+                                (where "name" refers to the name of the container
+                                that triggered the event) or if no container name
+                                is specified "spec.containers[2]" (container with
+                                index 2 in this pod). This syntax is chosen only to
+                                have some well-defined way of referencing a part of
+                                an object. TODO: this design is not final and this
+                                field is subject to change in the future.'
+                              type: string
+                            kind:
+                              description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                              type: string
+                            name:
+                              description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                              type: string
+                            namespace:
+                              description: 'Namespace of the referent. More info:
+                                https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                              type: string
+                            resourceVersion:
+                              description: 'Specific resourceVersion to which this
+                                reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                              type: string
+                            uid:
+                              description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                              type: string
+                          type: object
+                        enabled:
+                          description: If false, this test case is disabled
+                          type: boolean
+                        entityRef:
+                          description: Reference to an entity.
+                          properties:
+                            apiVersion:
+                              description: API version of the referent.
+                              type: string
+                            fieldPath:
+                              description: 'If referring to a piece of an object instead
+                                of an entire object, this string should contain a
+                                valid JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                                For example, if the object reference is to a container
+                                within a pod, this would take on a value like: "spec.containers{name}"
+                                (where "name" refers to the name of the container
+                                that triggered the event) or if no container name
+                                is specified "spec.containers[2]" (container with
+                                index 2 in this pod). This syntax is chosen only to
+                                have some well-defined way of referencing a part of
+                                an object. TODO: this design is not final and this
+                                field is subject to change in the future.'
+                              type: string
+                            kind:
+                              description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                              type: string
+                            name:
+                              description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                              type: string
+                            namespace:
+                              description: 'Namespace of the referent. More info:
+                                https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                              type: string
+                            resourceVersion:
+                              description: 'Specific resourceVersion to which this
+                                reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                              type: string
+                            uid:
+                              description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                              type: string
+                          type: object
+                        entityRef2:
+                          description: Reference to an entity.
+                          properties:
+                            apiVersion:
+                              description: API version of the referent.
+                              type: string
+                            fieldPath:
+                              description: 'If referring to a piece of an object instead
+                                of an entire object, this string should contain a
+                                valid JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                                For example, if the object reference is to a container
+                                within a pod, this would take on a value like: "spec.containers{name}"
+                                (where "name" refers to the name of the container
+                                that triggered the event) or if no container name
+                                is specified "spec.containers[2]" (container with
+                                index 2 in this pod). This syntax is chosen only to
+                                have some well-defined way of referencing a part of
+                                an object. TODO: this design is not final and this
+                                field is subject to change in the future.'
+                              type: string
+                            kind:
+                              description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                              type: string
+                            name:
+                              description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                              type: string
+                            namespace:
+                              description: 'Namespace of the referent. More info:
+                                https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                              type: string
+                            resourceVersion:
+                              description: 'Specific resourceVersion to which this
+                                reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                              type: string
+                            uid:
+                              description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                              type: string
+                          type: object
+                        expectedCategory:
+                          description: The expected value
+                          type: string
+                        expectedSet:
+                          description: Expected set of values,if the assertion
+                          items:
+                            type: string
+                          type: array
+                        expectedValue:
+                          description: The expected numerical value
+                          type: number
+                        featureFilter:
+                          description: Filter the filter for this unit test.
+                          type: string
+                        generated:
+                          description: Indicates if this validation rule was automatically
+                            generated by the system
+                          type: boolean
+                        lower:
+                          description: For range based tests.
+                          format: float
+                          type: number
+                        lowerInclusive:
+                          type: boolean
+                        metric:
+                          description: The metric that is used for the test
+                          type: string
+                        name:
+                          description: The name of the test case, will be generate
+                            if empty by the combination of assertion, entity ref,
+                            column name and metric
+                          type: string
+                        periods:
+                          description: The length of the past if we are comparing
+                            to moving avg
+                          format: int32
+                          type: integer
+                        referenceType:
+                          description: Set the reference type for this unit test
+                          type: string
+                        tags:
+                          description: The test case tags, used for filtering. Optional
+                            Test Tags
+                          items:
+                            type: string
+                          type: array
+                        type:
+                          description: The test type The type of the data test
+                          type: string
+                        upper:
+                          format: float
+                          type: number
+                        upperInclusive:
+                          type: boolean
+                      type: object
+                    type: array
+                type: object
               versionName:
                 default: ""
                 description: Version name is the the product version for the feature.
@@ -342,7 +552,7 @@ spec:
                 type: number
               conditions:
                 items:
-                  description: FeaturePipelineCondition describes the state of a deployment
+                  description: FeaturesetClassCondition describes the state of a deployment
                     at a certain point.
                   properties:
                     lastTransitionTime:

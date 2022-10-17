@@ -16,18 +16,18 @@ import (
 // FeatureRef
 //==============================================================================
 
-// FeaturePipelineConditionType
-type FeaturePipelineConditionType string
+// FeaturesetClassConditionType
+type FeaturesetClassConditionType string
 
 const (
-	FeaturePipelineReady FeaturePipelineConditionType = "Ready"
-	FeaturePipelineSaved FeaturePipelineConditionType = "Saved"
+	FeaturesetClassReady FeaturesetClassConditionType = "Ready"
+	FeaturesetClassSaved FeaturesetClassConditionType = "Saved"
 )
 
-// FeaturePipelineCondition describes the state of a deployment at a certain point.
-type FeaturePipelineCondition struct {
+// FeaturesetClassCondition describes the state of a deployment at a certain point.
+type FeaturesetClassCondition struct {
 	// Type of account condition.
-	Type FeaturePipelineConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=FeatureConditionType"`
+	Type FeaturesetClassConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=FeatureConditionType"`
 	// Status of the condition, one of True, False, Unknown
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
@@ -38,7 +38,7 @@ type FeaturePipelineCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// FeaturePipeline represent the processing of feature in the store.
+// FeaturesetClass represent the processing of feature in the store.
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -48,23 +48,23 @@ type FeaturePipelineCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=featurepipelines,singular=featurepipeline,shortName="fp",categories={data,modela}
 // +kubebuilder:subresource:status
-type FeaturePipeline struct {
+type FeaturesetClass struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              FeaturePipelineSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            FeaturePipelineStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
+	Spec              FeaturesetClassSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            FeaturesetClassStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true
 // FeatureList contain a list of feature objects
-type FeaturePipelineList struct {
+type FeaturesetClassList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Items           []FeaturePipeline `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []FeaturesetClass `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// FeaturePipelineSpec contain the desired state of a FeaturePipeline
-type FeaturePipelineSpec struct {
+// FeaturesetClassSpec contain the desired state of a FeaturesetClass
+type FeaturesetClassSpec struct {
 	// Owner is the owner of the feature pipeline
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
@@ -105,14 +105,25 @@ type FeaturePipelineSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Paused *bool `json:"paused,omitempty" protobuf:"varint,12,opt,name=paused"`
-	// TTL.
-	// +kubebuilder:default:=0
+	// A template for models unit tests
 	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,13,opt,name=ttl"`
+	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,14,opt,name=unitTests"`
+	// Ingest the features into the online store
+	// +kubebuilder:validation:Optional
+	Online *bool `json:"online,omitempty" protobuf:"varint,15,opt,name=online"`
+	// Ingest the features into the offline store
+	// +kubebuilder:validation:Optional
+	Offline *bool `json:"offline,omitempty" protobuf:"varint,16,opt,name=offline"`
+	// Features to include in this set
+	// +kubebuilder:validation:Optional
+	Include []string `json:"include,omitempty" protobuf:"bytes,17,rep,name=include"`
+	// Features to exclude from the data source.
+	// +kubebuilder:validation:Optional
+	Exclude []string `json:"exclude,omitempty" protobuf:"bytes,18,rep,name=exclude"`
 }
 
 // FeatureStatus defines the observed state of Feature
-type FeaturePipelineStatus struct {
+type FeaturesetClassStatus struct {
 	// Last run is the last time a data pipeline run was created
 	//+kubebuilder:validation:Optional
 	LastRun catalog.LastRunStatus `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
@@ -130,7 +141,7 @@ type FeaturePipelineStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeaturePipelineCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
+	Conditions []FeaturesetClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
 }
 
 type MaterializationSpec struct {

@@ -168,21 +168,16 @@ type DatabaseProxyServiceClient interface {
 	CreateFeatureHistogram(ctx context.Context, in *CreateFeatureHistogramRequest, opts ...grpc.CallOption) (*v1alpha12.FeatureHistogram, error)
 	UpdateFeatureHistogram(ctx context.Context, in *UpdateFeatureHistogramRequest, opts ...grpc.CallOption) (*v1alpha12.FeatureHistogram, error)
 	DeleteFeatureHistogram(ctx context.Context, in *DeleteFeatureHistogramRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	ListFeaturePipelines(ctx context.Context, in *ListFeaturePipelinesRequest, opts ...grpc.CallOption) (*ListFeaturePipelinesResponse, error)
-	GetFeaturePipeline(ctx context.Context, in *GetFeaturePipelineRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturePipeline, error)
-	CreateFeaturePipeline(ctx context.Context, in *CreateFeaturePipelineRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturePipeline, error)
-	UpdateFeaturePipeline(ctx context.Context, in *UpdateFeaturePipelineRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturePipeline, error)
-	DeleteFeaturePipeline(ctx context.Context, in *DeleteFeaturePipelineRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	ListFeaturePipelineRuns(ctx context.Context, in *ListFeaturePipelineRunsRequest, opts ...grpc.CallOption) (*ListFeaturePipelineRunsResponse, error)
-	GetFeaturePipelineRun(ctx context.Context, in *GetFeaturePipelineRunRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturePipelineRun, error)
-	CreateFeaturePipelineRun(ctx context.Context, in *CreateFeaturePipelineRunRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturePipelineRun, error)
-	UpdateFeaturePipelineRun(ctx context.Context, in *UpdateFeaturePipelineRunRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturePipelineRun, error)
-	DeleteFeaturePipelineRun(ctx context.Context, in *DeleteFeaturePipelineRunRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	ListFeatureSources(ctx context.Context, in *ListFeatureSourcesRequest, opts ...grpc.CallOption) (*ListFeatureSourcesResponse, error)
-	GetFeatureSource(ctx context.Context, in *GetFeatureSourceRequest, opts ...grpc.CallOption) (*v1alpha12.FeatureSource, error)
-	CreateFeatureSource(ctx context.Context, in *CreateFeatureSourceRequest, opts ...grpc.CallOption) (*v1alpha12.FeatureSource, error)
-	UpdateFeatureSource(ctx context.Context, in *UpdateFeatureSourceRequest, opts ...grpc.CallOption) (*v1alpha12.FeatureSource, error)
-	DeleteFeatureSource(ctx context.Context, in *DeleteFeatureSourceRequest, opts ...grpc.CallOption) (*empty.Empty, error)
+	ListFeaturesetClasss(ctx context.Context, in *ListFeaturesetClassRequest, opts ...grpc.CallOption) (*ListFeaturesetClassResponse, error)
+	GetFeaturesetClass(ctx context.Context, in *GetFeaturesetClassRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturesetClass, error)
+	CreateFeaturesetClass(ctx context.Context, in *CreateFeaturesetClassRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturesetClass, error)
+	UpdateFeaturesetClass(ctx context.Context, in *UpdateFeaturesetClassRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturesetClass, error)
+	DeleteFeaturesetClass(ctx context.Context, in *DeleteFeaturesetClassRequest, opts ...grpc.CallOption) (*empty.Empty, error)
+	ListFeaturesets(ctx context.Context, in *ListFeaturesetRequest, opts ...grpc.CallOption) (*ListFeaturesetsResponse, error)
+	GetFeatureset(ctx context.Context, in *GetFeaturesetRequest, opts ...grpc.CallOption) (*v1alpha12.Featureset, error)
+	CreateFeatureset(ctx context.Context, in *CreateFeaturesetRequest, opts ...grpc.CallOption) (*v1alpha12.Featureset, error)
+	UpdateFeatureset(ctx context.Context, in *UpdateFeaturesetRequest, opts ...grpc.CallOption) (*v1alpha12.Featureset, error)
+	DeleteFeatureset(ctx context.Context, in *DeleteFeaturesetRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 	ListLabelingPipelines(ctx context.Context, in *ListLabelingPipelinesRequest, opts ...grpc.CallOption) (*ListLabelingPipelinesResponse, error)
 	GetLabelingPipeline(ctx context.Context, in *GetLabelingPipelineRequest, opts ...grpc.CallOption) (*v1alpha12.LabelingPipeline, error)
 	CreateLabelingPipeline(ctx context.Context, in *CreateLabelingPipelineRequest, opts ...grpc.CallOption) (*v1alpha12.LabelingPipeline, error)
@@ -1443,135 +1438,90 @@ func (c *databaseProxyServiceClient) DeleteFeatureHistogram(ctx context.Context,
 	return out, nil
 }
 
-func (c *databaseProxyServiceClient) ListFeaturePipelines(ctx context.Context, in *ListFeaturePipelinesRequest, opts ...grpc.CallOption) (*ListFeaturePipelinesResponse, error) {
-	out := new(ListFeaturePipelinesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturePipelines", in, out, opts...)
+func (c *databaseProxyServiceClient) ListFeaturesetClasss(ctx context.Context, in *ListFeaturesetClassRequest, opts ...grpc.CallOption) (*ListFeaturesetClassResponse, error) {
+	out := new(ListFeaturesetClassResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturesetClasss", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *databaseProxyServiceClient) GetFeaturePipeline(ctx context.Context, in *GetFeaturePipelineRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturePipeline, error) {
-	out := new(v1alpha12.FeaturePipeline)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeaturePipeline", in, out, opts...)
+func (c *databaseProxyServiceClient) GetFeaturesetClass(ctx context.Context, in *GetFeaturesetClassRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturesetClass, error) {
+	out := new(v1alpha12.FeaturesetClass)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeaturesetClass", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *databaseProxyServiceClient) CreateFeaturePipeline(ctx context.Context, in *CreateFeaturePipelineRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturePipeline, error) {
-	out := new(v1alpha12.FeaturePipeline)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeaturePipeline", in, out, opts...)
+func (c *databaseProxyServiceClient) CreateFeaturesetClass(ctx context.Context, in *CreateFeaturesetClassRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturesetClass, error) {
+	out := new(v1alpha12.FeaturesetClass)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeaturesetClass", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *databaseProxyServiceClient) UpdateFeaturePipeline(ctx context.Context, in *UpdateFeaturePipelineRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturePipeline, error) {
-	out := new(v1alpha12.FeaturePipeline)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeaturePipeline", in, out, opts...)
+func (c *databaseProxyServiceClient) UpdateFeaturesetClass(ctx context.Context, in *UpdateFeaturesetClassRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturesetClass, error) {
+	out := new(v1alpha12.FeaturesetClass)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeaturesetClass", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *databaseProxyServiceClient) DeleteFeaturePipeline(ctx context.Context, in *DeleteFeaturePipelineRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
+func (c *databaseProxyServiceClient) DeleteFeaturesetClass(ctx context.Context, in *DeleteFeaturesetClassRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
 	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeaturePipeline", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeaturesetClass", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *databaseProxyServiceClient) ListFeaturePipelineRuns(ctx context.Context, in *ListFeaturePipelineRunsRequest, opts ...grpc.CallOption) (*ListFeaturePipelineRunsResponse, error) {
-	out := new(ListFeaturePipelineRunsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturePipelineRuns", in, out, opts...)
+func (c *databaseProxyServiceClient) ListFeaturesets(ctx context.Context, in *ListFeaturesetRequest, opts ...grpc.CallOption) (*ListFeaturesetsResponse, error) {
+	out := new(ListFeaturesetsResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturesets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *databaseProxyServiceClient) GetFeaturePipelineRun(ctx context.Context, in *GetFeaturePipelineRunRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturePipelineRun, error) {
-	out := new(v1alpha12.FeaturePipelineRun)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeaturePipelineRun", in, out, opts...)
+func (c *databaseProxyServiceClient) GetFeatureset(ctx context.Context, in *GetFeaturesetRequest, opts ...grpc.CallOption) (*v1alpha12.Featureset, error) {
+	out := new(v1alpha12.Featureset)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeatureset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *databaseProxyServiceClient) CreateFeaturePipelineRun(ctx context.Context, in *CreateFeaturePipelineRunRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturePipelineRun, error) {
-	out := new(v1alpha12.FeaturePipelineRun)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeaturePipelineRun", in, out, opts...)
+func (c *databaseProxyServiceClient) CreateFeatureset(ctx context.Context, in *CreateFeaturesetRequest, opts ...grpc.CallOption) (*v1alpha12.Featureset, error) {
+	out := new(v1alpha12.Featureset)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeatureset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *databaseProxyServiceClient) UpdateFeaturePipelineRun(ctx context.Context, in *UpdateFeaturePipelineRunRequest, opts ...grpc.CallOption) (*v1alpha12.FeaturePipelineRun, error) {
-	out := new(v1alpha12.FeaturePipelineRun)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeaturePipelineRun", in, out, opts...)
+func (c *databaseProxyServiceClient) UpdateFeatureset(ctx context.Context, in *UpdateFeaturesetRequest, opts ...grpc.CallOption) (*v1alpha12.Featureset, error) {
+	out := new(v1alpha12.Featureset)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeatureset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *databaseProxyServiceClient) DeleteFeaturePipelineRun(ctx context.Context, in *DeleteFeaturePipelineRunRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
+func (c *databaseProxyServiceClient) DeleteFeatureset(ctx context.Context, in *DeleteFeaturesetRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
 	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeaturePipelineRun", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) ListFeatureSources(ctx context.Context, in *ListFeatureSourcesRequest, opts ...grpc.CallOption) (*ListFeatureSourcesResponse, error) {
-	out := new(ListFeatureSourcesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeatureSources", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) GetFeatureSource(ctx context.Context, in *GetFeatureSourceRequest, opts ...grpc.CallOption) (*v1alpha12.FeatureSource, error) {
-	out := new(v1alpha12.FeatureSource)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeatureSource", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) CreateFeatureSource(ctx context.Context, in *CreateFeatureSourceRequest, opts ...grpc.CallOption) (*v1alpha12.FeatureSource, error) {
-	out := new(v1alpha12.FeatureSource)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeatureSource", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) UpdateFeatureSource(ctx context.Context, in *UpdateFeatureSourceRequest, opts ...grpc.CallOption) (*v1alpha12.FeatureSource, error) {
-	out := new(v1alpha12.FeatureSource)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeatureSource", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) DeleteFeatureSource(ctx context.Context, in *DeleteFeatureSourceRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeatureSource", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeatureset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2847,21 +2797,16 @@ type DatabaseProxyServiceServer interface {
 	CreateFeatureHistogram(context.Context, *CreateFeatureHistogramRequest) (*v1alpha12.FeatureHistogram, error)
 	UpdateFeatureHistogram(context.Context, *UpdateFeatureHistogramRequest) (*v1alpha12.FeatureHistogram, error)
 	DeleteFeatureHistogram(context.Context, *DeleteFeatureHistogramRequest) (*empty.Empty, error)
-	ListFeaturePipelines(context.Context, *ListFeaturePipelinesRequest) (*ListFeaturePipelinesResponse, error)
-	GetFeaturePipeline(context.Context, *GetFeaturePipelineRequest) (*v1alpha12.FeaturePipeline, error)
-	CreateFeaturePipeline(context.Context, *CreateFeaturePipelineRequest) (*v1alpha12.FeaturePipeline, error)
-	UpdateFeaturePipeline(context.Context, *UpdateFeaturePipelineRequest) (*v1alpha12.FeaturePipeline, error)
-	DeleteFeaturePipeline(context.Context, *DeleteFeaturePipelineRequest) (*empty.Empty, error)
-	ListFeaturePipelineRuns(context.Context, *ListFeaturePipelineRunsRequest) (*ListFeaturePipelineRunsResponse, error)
-	GetFeaturePipelineRun(context.Context, *GetFeaturePipelineRunRequest) (*v1alpha12.FeaturePipelineRun, error)
-	CreateFeaturePipelineRun(context.Context, *CreateFeaturePipelineRunRequest) (*v1alpha12.FeaturePipelineRun, error)
-	UpdateFeaturePipelineRun(context.Context, *UpdateFeaturePipelineRunRequest) (*v1alpha12.FeaturePipelineRun, error)
-	DeleteFeaturePipelineRun(context.Context, *DeleteFeaturePipelineRunRequest) (*empty.Empty, error)
-	ListFeatureSources(context.Context, *ListFeatureSourcesRequest) (*ListFeatureSourcesResponse, error)
-	GetFeatureSource(context.Context, *GetFeatureSourceRequest) (*v1alpha12.FeatureSource, error)
-	CreateFeatureSource(context.Context, *CreateFeatureSourceRequest) (*v1alpha12.FeatureSource, error)
-	UpdateFeatureSource(context.Context, *UpdateFeatureSourceRequest) (*v1alpha12.FeatureSource, error)
-	DeleteFeatureSource(context.Context, *DeleteFeatureSourceRequest) (*empty.Empty, error)
+	ListFeaturesetClasss(context.Context, *ListFeaturesetClassRequest) (*ListFeaturesetClassResponse, error)
+	GetFeaturesetClass(context.Context, *GetFeaturesetClassRequest) (*v1alpha12.FeaturesetClass, error)
+	CreateFeaturesetClass(context.Context, *CreateFeaturesetClassRequest) (*v1alpha12.FeaturesetClass, error)
+	UpdateFeaturesetClass(context.Context, *UpdateFeaturesetClassRequest) (*v1alpha12.FeaturesetClass, error)
+	DeleteFeaturesetClass(context.Context, *DeleteFeaturesetClassRequest) (*empty.Empty, error)
+	ListFeaturesets(context.Context, *ListFeaturesetRequest) (*ListFeaturesetsResponse, error)
+	GetFeatureset(context.Context, *GetFeaturesetRequest) (*v1alpha12.Featureset, error)
+	CreateFeatureset(context.Context, *CreateFeaturesetRequest) (*v1alpha12.Featureset, error)
+	UpdateFeatureset(context.Context, *UpdateFeaturesetRequest) (*v1alpha12.Featureset, error)
+	DeleteFeatureset(context.Context, *DeleteFeaturesetRequest) (*empty.Empty, error)
 	ListLabelingPipelines(context.Context, *ListLabelingPipelinesRequest) (*ListLabelingPipelinesResponse, error)
 	GetLabelingPipeline(context.Context, *GetLabelingPipelineRequest) (*v1alpha12.LabelingPipeline, error)
 	CreateLabelingPipeline(context.Context, *CreateLabelingPipelineRequest) (*v1alpha12.LabelingPipeline, error)
@@ -3369,50 +3314,35 @@ func (UnimplementedDatabaseProxyServiceServer) UpdateFeatureHistogram(context.Co
 func (UnimplementedDatabaseProxyServiceServer) DeleteFeatureHistogram(context.Context, *DeleteFeatureHistogramRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteFeatureHistogram not implemented")
 }
-func (UnimplementedDatabaseProxyServiceServer) ListFeaturePipelines(context.Context, *ListFeaturePipelinesRequest) (*ListFeaturePipelinesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListFeaturePipelines not implemented")
+func (UnimplementedDatabaseProxyServiceServer) ListFeaturesetClasss(context.Context, *ListFeaturesetClassRequest) (*ListFeaturesetClassResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListFeaturesetClasss not implemented")
 }
-func (UnimplementedDatabaseProxyServiceServer) GetFeaturePipeline(context.Context, *GetFeaturePipelineRequest) (*v1alpha12.FeaturePipeline, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetFeaturePipeline not implemented")
+func (UnimplementedDatabaseProxyServiceServer) GetFeaturesetClass(context.Context, *GetFeaturesetClassRequest) (*v1alpha12.FeaturesetClass, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetFeaturesetClass not implemented")
 }
-func (UnimplementedDatabaseProxyServiceServer) CreateFeaturePipeline(context.Context, *CreateFeaturePipelineRequest) (*v1alpha12.FeaturePipeline, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateFeaturePipeline not implemented")
+func (UnimplementedDatabaseProxyServiceServer) CreateFeaturesetClass(context.Context, *CreateFeaturesetClassRequest) (*v1alpha12.FeaturesetClass, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateFeaturesetClass not implemented")
 }
-func (UnimplementedDatabaseProxyServiceServer) UpdateFeaturePipeline(context.Context, *UpdateFeaturePipelineRequest) (*v1alpha12.FeaturePipeline, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateFeaturePipeline not implemented")
+func (UnimplementedDatabaseProxyServiceServer) UpdateFeaturesetClass(context.Context, *UpdateFeaturesetClassRequest) (*v1alpha12.FeaturesetClass, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateFeaturesetClass not implemented")
 }
-func (UnimplementedDatabaseProxyServiceServer) DeleteFeaturePipeline(context.Context, *DeleteFeaturePipelineRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteFeaturePipeline not implemented")
+func (UnimplementedDatabaseProxyServiceServer) DeleteFeaturesetClass(context.Context, *DeleteFeaturesetClassRequest) (*empty.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteFeaturesetClass not implemented")
 }
-func (UnimplementedDatabaseProxyServiceServer) ListFeaturePipelineRuns(context.Context, *ListFeaturePipelineRunsRequest) (*ListFeaturePipelineRunsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListFeaturePipelineRuns not implemented")
+func (UnimplementedDatabaseProxyServiceServer) ListFeaturesets(context.Context, *ListFeaturesetRequest) (*ListFeaturesetsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListFeaturesets not implemented")
 }
-func (UnimplementedDatabaseProxyServiceServer) GetFeaturePipelineRun(context.Context, *GetFeaturePipelineRunRequest) (*v1alpha12.FeaturePipelineRun, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetFeaturePipelineRun not implemented")
+func (UnimplementedDatabaseProxyServiceServer) GetFeatureset(context.Context, *GetFeaturesetRequest) (*v1alpha12.Featureset, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetFeatureset not implemented")
 }
-func (UnimplementedDatabaseProxyServiceServer) CreateFeaturePipelineRun(context.Context, *CreateFeaturePipelineRunRequest) (*v1alpha12.FeaturePipelineRun, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateFeaturePipelineRun not implemented")
+func (UnimplementedDatabaseProxyServiceServer) CreateFeatureset(context.Context, *CreateFeaturesetRequest) (*v1alpha12.Featureset, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateFeatureset not implemented")
 }
-func (UnimplementedDatabaseProxyServiceServer) UpdateFeaturePipelineRun(context.Context, *UpdateFeaturePipelineRunRequest) (*v1alpha12.FeaturePipelineRun, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateFeaturePipelineRun not implemented")
+func (UnimplementedDatabaseProxyServiceServer) UpdateFeatureset(context.Context, *UpdateFeaturesetRequest) (*v1alpha12.Featureset, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateFeatureset not implemented")
 }
-func (UnimplementedDatabaseProxyServiceServer) DeleteFeaturePipelineRun(context.Context, *DeleteFeaturePipelineRunRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteFeaturePipelineRun not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) ListFeatureSources(context.Context, *ListFeatureSourcesRequest) (*ListFeatureSourcesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListFeatureSources not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) GetFeatureSource(context.Context, *GetFeatureSourceRequest) (*v1alpha12.FeatureSource, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetFeatureSource not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) CreateFeatureSource(context.Context, *CreateFeatureSourceRequest) (*v1alpha12.FeatureSource, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateFeatureSource not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) UpdateFeatureSource(context.Context, *UpdateFeatureSourceRequest) (*v1alpha12.FeatureSource, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateFeatureSource not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) DeleteFeatureSource(context.Context, *DeleteFeatureSourceRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteFeatureSource not implemented")
+func (UnimplementedDatabaseProxyServiceServer) DeleteFeatureset(context.Context, *DeleteFeaturesetRequest) (*empty.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteFeatureset not implemented")
 }
 func (UnimplementedDatabaseProxyServiceServer) ListLabelingPipelines(context.Context, *ListLabelingPipelinesRequest) (*ListLabelingPipelinesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListLabelingPipelines not implemented")
@@ -6052,272 +5982,182 @@ func _DatabaseProxyService_DeleteFeatureHistogram_Handler(srv interface{}, ctx c
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatabaseProxyService_ListFeaturePipelines_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListFeaturePipelinesRequest)
+func _DatabaseProxyService_ListFeaturesetClasss_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListFeaturesetClassRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).ListFeaturePipelines(ctx, in)
+		return srv.(DatabaseProxyServiceServer).ListFeaturesetClasss(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturePipelines",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturesetClasss",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).ListFeaturePipelines(ctx, req.(*ListFeaturePipelinesRequest))
+		return srv.(DatabaseProxyServiceServer).ListFeaturesetClasss(ctx, req.(*ListFeaturesetClassRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatabaseProxyService_GetFeaturePipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetFeaturePipelineRequest)
+func _DatabaseProxyService_GetFeaturesetClass_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFeaturesetClassRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).GetFeaturePipeline(ctx, in)
+		return srv.(DatabaseProxyServiceServer).GetFeaturesetClass(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeaturePipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeaturesetClass",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).GetFeaturePipeline(ctx, req.(*GetFeaturePipelineRequest))
+		return srv.(DatabaseProxyServiceServer).GetFeaturesetClass(ctx, req.(*GetFeaturesetClassRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatabaseProxyService_CreateFeaturePipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateFeaturePipelineRequest)
+func _DatabaseProxyService_CreateFeaturesetClass_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateFeaturesetClassRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).CreateFeaturePipeline(ctx, in)
+		return srv.(DatabaseProxyServiceServer).CreateFeaturesetClass(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeaturePipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeaturesetClass",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).CreateFeaturePipeline(ctx, req.(*CreateFeaturePipelineRequest))
+		return srv.(DatabaseProxyServiceServer).CreateFeaturesetClass(ctx, req.(*CreateFeaturesetClassRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatabaseProxyService_UpdateFeaturePipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateFeaturePipelineRequest)
+func _DatabaseProxyService_UpdateFeaturesetClass_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateFeaturesetClassRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).UpdateFeaturePipeline(ctx, in)
+		return srv.(DatabaseProxyServiceServer).UpdateFeaturesetClass(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeaturePipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeaturesetClass",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).UpdateFeaturePipeline(ctx, req.(*UpdateFeaturePipelineRequest))
+		return srv.(DatabaseProxyServiceServer).UpdateFeaturesetClass(ctx, req.(*UpdateFeaturesetClassRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatabaseProxyService_DeleteFeaturePipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteFeaturePipelineRequest)
+func _DatabaseProxyService_DeleteFeaturesetClass_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteFeaturesetClassRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).DeleteFeaturePipeline(ctx, in)
+		return srv.(DatabaseProxyServiceServer).DeleteFeaturesetClass(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeaturePipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeaturesetClass",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).DeleteFeaturePipeline(ctx, req.(*DeleteFeaturePipelineRequest))
+		return srv.(DatabaseProxyServiceServer).DeleteFeaturesetClass(ctx, req.(*DeleteFeaturesetClassRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatabaseProxyService_ListFeaturePipelineRuns_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListFeaturePipelineRunsRequest)
+func _DatabaseProxyService_ListFeaturesets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListFeaturesetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).ListFeaturePipelineRuns(ctx, in)
+		return srv.(DatabaseProxyServiceServer).ListFeaturesets(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturePipelineRuns",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturesets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).ListFeaturePipelineRuns(ctx, req.(*ListFeaturePipelineRunsRequest))
+		return srv.(DatabaseProxyServiceServer).ListFeaturesets(ctx, req.(*ListFeaturesetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatabaseProxyService_GetFeaturePipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetFeaturePipelineRunRequest)
+func _DatabaseProxyService_GetFeatureset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFeaturesetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).GetFeaturePipelineRun(ctx, in)
+		return srv.(DatabaseProxyServiceServer).GetFeatureset(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeaturePipelineRun",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeatureset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).GetFeaturePipelineRun(ctx, req.(*GetFeaturePipelineRunRequest))
+		return srv.(DatabaseProxyServiceServer).GetFeatureset(ctx, req.(*GetFeaturesetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatabaseProxyService_CreateFeaturePipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateFeaturePipelineRunRequest)
+func _DatabaseProxyService_CreateFeatureset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateFeaturesetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).CreateFeaturePipelineRun(ctx, in)
+		return srv.(DatabaseProxyServiceServer).CreateFeatureset(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeaturePipelineRun",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeatureset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).CreateFeaturePipelineRun(ctx, req.(*CreateFeaturePipelineRunRequest))
+		return srv.(DatabaseProxyServiceServer).CreateFeatureset(ctx, req.(*CreateFeaturesetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatabaseProxyService_UpdateFeaturePipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateFeaturePipelineRunRequest)
+func _DatabaseProxyService_UpdateFeatureset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateFeaturesetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).UpdateFeaturePipelineRun(ctx, in)
+		return srv.(DatabaseProxyServiceServer).UpdateFeatureset(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeaturePipelineRun",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeatureset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).UpdateFeaturePipelineRun(ctx, req.(*UpdateFeaturePipelineRunRequest))
+		return srv.(DatabaseProxyServiceServer).UpdateFeatureset(ctx, req.(*UpdateFeaturesetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatabaseProxyService_DeleteFeaturePipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteFeaturePipelineRunRequest)
+func _DatabaseProxyService_DeleteFeatureset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteFeaturesetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).DeleteFeaturePipelineRun(ctx, in)
+		return srv.(DatabaseProxyServiceServer).DeleteFeatureset(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeaturePipelineRun",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeatureset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).DeleteFeaturePipelineRun(ctx, req.(*DeleteFeaturePipelineRunRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_ListFeatureSources_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListFeatureSourcesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).ListFeatureSources(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeatureSources",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).ListFeatureSources(ctx, req.(*ListFeatureSourcesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_GetFeatureSource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetFeatureSourceRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).GetFeatureSource(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeatureSource",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).GetFeatureSource(ctx, req.(*GetFeatureSourceRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_CreateFeatureSource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateFeatureSourceRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).CreateFeatureSource(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeatureSource",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).CreateFeatureSource(ctx, req.(*CreateFeatureSourceRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_UpdateFeatureSource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateFeatureSourceRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).UpdateFeatureSource(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeatureSource",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).UpdateFeatureSource(ctx, req.(*UpdateFeatureSourceRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_DeleteFeatureSource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteFeatureSourceRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).DeleteFeatureSource(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeatureSource",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).DeleteFeatureSource(ctx, req.(*DeleteFeatureSourceRequest))
+		return srv.(DatabaseProxyServiceServer).DeleteFeatureset(ctx, req.(*DeleteFeaturesetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -9080,64 +8920,44 @@ var DatabaseProxyService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DatabaseProxyService_DeleteFeatureHistogram_Handler,
 		},
 		{
-			MethodName: "ListFeaturePipelines",
-			Handler:    _DatabaseProxyService_ListFeaturePipelines_Handler,
+			MethodName: "ListFeaturesetClasss",
+			Handler:    _DatabaseProxyService_ListFeaturesetClasss_Handler,
 		},
 		{
-			MethodName: "GetFeaturePipeline",
-			Handler:    _DatabaseProxyService_GetFeaturePipeline_Handler,
+			MethodName: "GetFeaturesetClass",
+			Handler:    _DatabaseProxyService_GetFeaturesetClass_Handler,
 		},
 		{
-			MethodName: "CreateFeaturePipeline",
-			Handler:    _DatabaseProxyService_CreateFeaturePipeline_Handler,
+			MethodName: "CreateFeaturesetClass",
+			Handler:    _DatabaseProxyService_CreateFeaturesetClass_Handler,
 		},
 		{
-			MethodName: "UpdateFeaturePipeline",
-			Handler:    _DatabaseProxyService_UpdateFeaturePipeline_Handler,
+			MethodName: "UpdateFeaturesetClass",
+			Handler:    _DatabaseProxyService_UpdateFeaturesetClass_Handler,
 		},
 		{
-			MethodName: "DeleteFeaturePipeline",
-			Handler:    _DatabaseProxyService_DeleteFeaturePipeline_Handler,
+			MethodName: "DeleteFeaturesetClass",
+			Handler:    _DatabaseProxyService_DeleteFeaturesetClass_Handler,
 		},
 		{
-			MethodName: "ListFeaturePipelineRuns",
-			Handler:    _DatabaseProxyService_ListFeaturePipelineRuns_Handler,
+			MethodName: "ListFeaturesets",
+			Handler:    _DatabaseProxyService_ListFeaturesets_Handler,
 		},
 		{
-			MethodName: "GetFeaturePipelineRun",
-			Handler:    _DatabaseProxyService_GetFeaturePipelineRun_Handler,
+			MethodName: "GetFeatureset",
+			Handler:    _DatabaseProxyService_GetFeatureset_Handler,
 		},
 		{
-			MethodName: "CreateFeaturePipelineRun",
-			Handler:    _DatabaseProxyService_CreateFeaturePipelineRun_Handler,
+			MethodName: "CreateFeatureset",
+			Handler:    _DatabaseProxyService_CreateFeatureset_Handler,
 		},
 		{
-			MethodName: "UpdateFeaturePipelineRun",
-			Handler:    _DatabaseProxyService_UpdateFeaturePipelineRun_Handler,
+			MethodName: "UpdateFeatureset",
+			Handler:    _DatabaseProxyService_UpdateFeatureset_Handler,
 		},
 		{
-			MethodName: "DeleteFeaturePipelineRun",
-			Handler:    _DatabaseProxyService_DeleteFeaturePipelineRun_Handler,
-		},
-		{
-			MethodName: "ListFeatureSources",
-			Handler:    _DatabaseProxyService_ListFeatureSources_Handler,
-		},
-		{
-			MethodName: "GetFeatureSource",
-			Handler:    _DatabaseProxyService_GetFeatureSource_Handler,
-		},
-		{
-			MethodName: "CreateFeatureSource",
-			Handler:    _DatabaseProxyService_CreateFeatureSource_Handler,
-		},
-		{
-			MethodName: "UpdateFeatureSource",
-			Handler:    _DatabaseProxyService_UpdateFeatureSource_Handler,
-		},
-		{
-			MethodName: "DeleteFeatureSource",
-			Handler:    _DatabaseProxyService_DeleteFeatureSource_Handler,
+			MethodName: "DeleteFeatureset",
+			Handler:    _DatabaseProxyService_DeleteFeatureset_Handler,
 		},
 		{
 			MethodName: "ListLabelingPipelines",

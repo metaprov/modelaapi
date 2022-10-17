@@ -12,8 +12,8 @@ spec:
     categories:
     - data
     - modela
-    kind: FeaturePipelineRun
-    listKind: FeaturePipelineRunList
+    kind: Featureset
+    listKind: FeaturesetList
     plural: featurepipelineruns
     shortNames:
     - fpr
@@ -47,7 +47,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: FeaturePipeline represent a feature set object in the feature
+        description: FeaturesetClass represent a feature set object in the feature
           store.
         properties:
           apiVersion:
@@ -90,7 +90,7 @@ spec:
             properties:
               conditions:
                 items:
-                  description: FeaturePipelineRunCondition describes the state of
+                  description: FeaturesetCondition describes the state of
                     a deployment at a certain point.
                   properties:
                     lastTransitionTime:

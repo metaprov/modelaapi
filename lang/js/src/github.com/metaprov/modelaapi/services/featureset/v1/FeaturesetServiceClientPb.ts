@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.featureSource.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.featureset.v1
  * @enhanceable
  * @public
  */
@@ -13,10 +13,10 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb from '../../../../../../github.com/metaprov/modelaapi/services/featureSource/v1/featureSource_pb';
+import * as github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb from '../../../../../../github.com/metaprov/modelaapi/services/featureset/v1/featureset_pb';
 
 
-export class FeatureSourceServiceClient {
+export class FeaturesetServiceClient {
   client_: grpcWeb.AbstractClientBase;
   hostname_: string;
   credentials_: null | { [index: string]: string; };
@@ -35,219 +35,219 @@ export class FeatureSourceServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListFeatureSources = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.featureSource.v1.FeatureSourceService/ListFeatureSources',
+  methodInfoListFeaturesets = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.featureset.v1.FeaturesetService/ListFeaturesets',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.ListFeatureSourceRequest,
-    github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.ListFeatureSourceResponse,
-    (request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.ListFeatureSourceRequest) => {
+    github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.ListFeaturesetRequest,
+    github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.ListFeaturesetResponse,
+    (request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.ListFeaturesetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.ListFeatureSourceResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.ListFeaturesetResponse.deserializeBinary
   );
 
-  listFeatureSources(
-    request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.ListFeatureSourceRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.ListFeatureSourceResponse>;
+  listFeaturesets(
+    request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.ListFeaturesetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.ListFeaturesetResponse>;
 
-  listFeatureSources(
-    request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.ListFeatureSourceRequest,
+  listFeaturesets(
+    request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.ListFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.ListFeatureSourceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.ListFeatureSourceResponse>;
+               response: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.ListFeaturesetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.ListFeaturesetResponse>;
 
-  listFeatureSources(
-    request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.ListFeatureSourceRequest,
+  listFeaturesets(
+    request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.ListFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.ListFeatureSourceResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.ListFeaturesetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.featureSource.v1.FeatureSourceService/ListFeatureSources',
+          '/github.com.metaprov.modelaapi.services.featureset.v1.FeaturesetService/ListFeaturesets',
         request,
         metadata || {},
-        this.methodInfoListFeatureSources,
+        this.methodInfoListFeaturesets,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.featureSource.v1.FeatureSourceService/ListFeatureSources',
+      '/github.com.metaprov.modelaapi.services.featureset.v1.FeaturesetService/ListFeaturesets',
     request,
     metadata || {},
-    this.methodInfoListFeatureSources);
+    this.methodInfoListFeaturesets);
   }
 
-  methodInfoCreateFeatureSource = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.featureSource.v1.FeatureSourceService/CreateFeatureSource',
+  methodInfoCreateFeatureset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.featureset.v1.FeaturesetService/CreateFeatureset',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.CreateFeatureSourceRequest,
-    github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.CreateFeatureSourceResponse,
-    (request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.CreateFeatureSourceRequest) => {
+    github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.CreateFeaturesetRequest,
+    github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.CreateFeaturesetResponse,
+    (request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.CreateFeaturesetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.CreateFeatureSourceResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.CreateFeaturesetResponse.deserializeBinary
   );
 
-  createFeatureSource(
-    request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.CreateFeatureSourceRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.CreateFeatureSourceResponse>;
+  createFeatureset(
+    request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.CreateFeaturesetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.CreateFeaturesetResponse>;
 
-  createFeatureSource(
-    request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.CreateFeatureSourceRequest,
+  createFeatureset(
+    request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.CreateFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.CreateFeatureSourceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.CreateFeatureSourceResponse>;
+               response: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.CreateFeaturesetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.CreateFeaturesetResponse>;
 
-  createFeatureSource(
-    request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.CreateFeatureSourceRequest,
+  createFeatureset(
+    request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.CreateFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.CreateFeatureSourceResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.CreateFeaturesetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.featureSource.v1.FeatureSourceService/CreateFeatureSource',
+          '/github.com.metaprov.modelaapi.services.featureset.v1.FeaturesetService/CreateFeatureset',
         request,
         metadata || {},
-        this.methodInfoCreateFeatureSource,
+        this.methodInfoCreateFeatureset,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.featureSource.v1.FeatureSourceService/CreateFeatureSource',
+      '/github.com.metaprov.modelaapi.services.featureset.v1.FeaturesetService/CreateFeatureset',
     request,
     metadata || {},
-    this.methodInfoCreateFeatureSource);
+    this.methodInfoCreateFeatureset);
   }
 
-  methodInfoGetFeatureSource = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.featureSource.v1.FeatureSourceService/GetFeatureSource',
+  methodInfoGetFeatureset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.featureset.v1.FeaturesetService/GetFeatureset',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.GetFeatureSourceRequest,
-    github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.GetFeatureSourceResponse,
-    (request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.GetFeatureSourceRequest) => {
+    github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.GetFeaturesetRequest,
+    github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.GetFeaturesetResponse,
+    (request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.GetFeaturesetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.GetFeatureSourceResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.GetFeaturesetResponse.deserializeBinary
   );
 
-  getFeatureSource(
-    request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.GetFeatureSourceRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.GetFeatureSourceResponse>;
+  getFeatureset(
+    request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.GetFeaturesetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.GetFeaturesetResponse>;
 
-  getFeatureSource(
-    request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.GetFeatureSourceRequest,
+  getFeatureset(
+    request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.GetFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.GetFeatureSourceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.GetFeatureSourceResponse>;
+               response: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.GetFeaturesetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.GetFeaturesetResponse>;
 
-  getFeatureSource(
-    request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.GetFeatureSourceRequest,
+  getFeatureset(
+    request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.GetFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.GetFeatureSourceResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.GetFeaturesetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.featureSource.v1.FeatureSourceService/GetFeatureSource',
+          '/github.com.metaprov.modelaapi.services.featureset.v1.FeaturesetService/GetFeatureset',
         request,
         metadata || {},
-        this.methodInfoGetFeatureSource,
+        this.methodInfoGetFeatureset,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.featureSource.v1.FeatureSourceService/GetFeatureSource',
+      '/github.com.metaprov.modelaapi.services.featureset.v1.FeaturesetService/GetFeatureset',
     request,
     metadata || {},
-    this.methodInfoGetFeatureSource);
+    this.methodInfoGetFeatureset);
   }
 
-  methodInfoUpdateFeatureSource = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.featureSource.v1.FeatureSourceService/UpdateFeatureSource',
+  methodInfoUpdateFeatureset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.featureset.v1.FeaturesetService/UpdateFeatureset',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.UpdateFeatureSourceRequest,
-    github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.UpdateFeatureSourceResponse,
-    (request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.UpdateFeatureSourceRequest) => {
+    github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.UpdateFeaturesetRequest,
+    github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.UpdateFeaturesetResponse,
+    (request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.UpdateFeaturesetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.UpdateFeatureSourceResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.UpdateFeaturesetResponse.deserializeBinary
   );
 
-  updateFeatureSource(
-    request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.UpdateFeatureSourceRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.UpdateFeatureSourceResponse>;
+  updateFeatureset(
+    request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.UpdateFeaturesetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.UpdateFeaturesetResponse>;
 
-  updateFeatureSource(
-    request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.UpdateFeatureSourceRequest,
+  updateFeatureset(
+    request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.UpdateFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.UpdateFeatureSourceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.UpdateFeatureSourceResponse>;
+               response: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.UpdateFeaturesetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.UpdateFeaturesetResponse>;
 
-  updateFeatureSource(
-    request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.UpdateFeatureSourceRequest,
+  updateFeatureset(
+    request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.UpdateFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.UpdateFeatureSourceResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.UpdateFeaturesetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.featureSource.v1.FeatureSourceService/UpdateFeatureSource',
+          '/github.com.metaprov.modelaapi.services.featureset.v1.FeaturesetService/UpdateFeatureset',
         request,
         metadata || {},
-        this.methodInfoUpdateFeatureSource,
+        this.methodInfoUpdateFeatureset,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.featureSource.v1.FeatureSourceService/UpdateFeatureSource',
+      '/github.com.metaprov.modelaapi.services.featureset.v1.FeaturesetService/UpdateFeatureset',
     request,
     metadata || {},
-    this.methodInfoUpdateFeatureSource);
+    this.methodInfoUpdateFeatureset);
   }
 
-  methodInfoDeleteFeatureSource = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.featureSource.v1.FeatureSourceService/DeleteFeatureSource',
+  methodInfoDeleteFeatureset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.featureset.v1.FeaturesetService/DeleteFeatureset',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.DeleteFeatureSourceRequest,
-    github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.DeleteFeatureSourceResponse,
-    (request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.DeleteFeatureSourceRequest) => {
+    github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.DeleteFeaturesetRequest,
+    github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.DeleteFeaturesetResponse,
+    (request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.DeleteFeaturesetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.DeleteFeatureSourceResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.DeleteFeaturesetResponse.deserializeBinary
   );
 
-  deleteFeatureSource(
-    request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.DeleteFeatureSourceRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.DeleteFeatureSourceResponse>;
+  deleteFeatureset(
+    request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.DeleteFeaturesetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.DeleteFeaturesetResponse>;
 
-  deleteFeatureSource(
-    request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.DeleteFeatureSourceRequest,
+  deleteFeatureset(
+    request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.DeleteFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.DeleteFeatureSourceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.DeleteFeatureSourceResponse>;
+               response: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.DeleteFeaturesetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.DeleteFeaturesetResponse>;
 
-  deleteFeatureSource(
-    request: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.DeleteFeatureSourceRequest,
+  deleteFeatureset(
+    request: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.DeleteFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_featureSource_v1_featureSource_pb.DeleteFeatureSourceResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_featureset_v1_featureset_pb.DeleteFeaturesetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.featureSource.v1.FeatureSourceService/DeleteFeatureSource',
+          '/github.com.metaprov.modelaapi.services.featureset.v1.FeaturesetService/DeleteFeatureset',
         request,
         metadata || {},
-        this.methodInfoDeleteFeatureSource,
+        this.methodInfoDeleteFeatureset,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.featureSource.v1.FeatureSourceService/DeleteFeatureSource',
+      '/github.com.metaprov.modelaapi.services.featureset.v1.FeaturesetService/DeleteFeatureset',
     request,
     metadata || {},
-    this.methodInfoDeleteFeatureSource);
+    this.methodInfoDeleteFeatureset);
   }
 
 }

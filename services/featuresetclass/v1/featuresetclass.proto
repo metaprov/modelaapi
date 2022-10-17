@@ -1,0 +1,119 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modelaapi/services/featuresetclass/v1";
+package github.com.metaprov.modelaapi.services.featuresetclass.v1;
+
+import "google/protobuf/field_mask.proto";
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+
+message ListFeaturesetClassRequest {
+    string namespace = 1;
+    map<string,string> labels = 2;
+    int32              page_size  = 3;
+    string             page_token = 4;
+    string             order_by   = 5;
+}
+
+message ListFeaturesetClassResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClassList featuresetclasss = 1;
+    string next_page_token = 2;
+}
+
+message CreateFeaturesetClassRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass featuresetclass = 1;
+}
+
+message CreateFeaturesetClassResponse {
+
+}
+
+message UpdateFeaturesetClassRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass featuresetclass = 1;
+    google.protobuf.FieldMask field_mask = 2;
+}
+
+message UpdateFeaturesetClassResponse {
+
+}
+
+message GetFeaturesetClassRequest {
+    string namespace = 1;
+    string name      = 2;
+    
+}
+
+
+message GetFeaturesetClassResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass featuresetclass = 1;
+    string yaml = 2;
+}
+
+
+message DeleteFeaturesetClassRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteFeaturesetClassResponse {
+
+}
+
+message PauseFeaturesetClassResponse {
+}
+
+message PauseFeaturesetClassRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message ResumeFeaturesetClassResponse {
+}
+
+message ResumeFeaturesetClassRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+
+service FeaturesetClassService {
+    rpc ListFeaturesetClasss(ListFeaturesetClassRequest) returns (ListFeaturesetClassResponse) {
+        option (google.api.http).get = "/v1/featuresetclasss/{namespace}";
+    }
+
+    rpc CreateFeaturesetClass(CreateFeaturesetClassRequest) returns (CreateFeaturesetClassResponse) {
+        option (google.api.http) = {
+			post: "/v1/featuresetclasss"
+			body: "*"
+		};
+    }
+
+    rpc GetFeaturesetClass(GetFeaturesetClassRequest) returns (GetFeaturesetClassResponse) {
+        option (google.api.http).get = "/v1/featuresetclasss/{namespace}/{name}";
+    }
+
+    rpc UpdateFeaturesetClass(UpdateFeaturesetClassRequest) returns (UpdateFeaturesetClassResponse) {
+        option (google.api.http) = {
+			put: "/v1/featuresetclasss/{featuresetclass.metadata.namespace}/{featuresetclass.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeleteFeaturesetClass(DeleteFeaturesetClassRequest) returns (DeleteFeaturesetClassResponse) {
+        option (google.api.http).delete = "/v1/featuresetclasss/{namespace}/{name}";
+    }
+    
+    rpc PauseFeaturesetClass(PauseFeaturesetClassRequest) returns (PauseFeaturesetClassResponse) {
+        option (google.api.http).post = "/v1/featuresetclasss/{namespace}/{name}:pause";
+    }
+
+    rpc ResumeFeaturesetClass(ResumeFeaturesetClassRequest) returns (ResumeFeaturesetClassResponse) {
+        option (google.api.http).post = "/v1/featuresetclasss/{namespace}/{name}:pause";
+    }
+    
+
+
+
+
+}

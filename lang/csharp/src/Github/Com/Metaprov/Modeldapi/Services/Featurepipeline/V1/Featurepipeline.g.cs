@@ -81,31 +81,31 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.ListFeaturePipelineRequest), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.ListFeaturePipelineRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.ListFeaturePipelineResponse), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.ListFeaturePipelineResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.CreateFeaturePipelineRequest), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.CreateFeaturePipelineRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.CreateFeaturePipelineResponse), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.CreateFeaturePipelineResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.UpdateFeaturePipelineRequest), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.UpdateFeaturePipelineRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.UpdateFeaturePipelineResponse), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.UpdateFeaturePipelineResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.GetFeaturePipelineRequest), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.GetFeaturePipelineRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.GetFeaturePipelineResponse), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.GetFeaturePipelineResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.DeleteFeaturePipelineRequest), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.DeleteFeaturePipelineRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.DeleteFeaturePipelineResponse), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.DeleteFeaturePipelineResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.ListFeaturesetClassRequest), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.ListFeaturesetClassRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.ListFeaturesetClassResponse), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.ListFeaturesetClassResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.CreateFeaturesetClassRequest), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.CreateFeaturesetClassRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.CreateFeaturesetClassResponse), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.CreateFeaturesetClassResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.UpdateFeaturesetClassRequest), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.UpdateFeaturesetClassRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.UpdateFeaturesetClassResponse), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.UpdateFeaturesetClassResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.GetFeaturesetClassRequest), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.GetFeaturesetClassRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.GetFeaturesetClassResponse), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.GetFeaturesetClassResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.DeleteFeaturesetClassRequest), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.DeleteFeaturesetClassRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.DeleteFeaturesetClassResponse), global::Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1.DeleteFeaturesetClassResponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class ListFeaturePipelineRequest : pb::IMessage<ListFeaturePipelineRequest>
+  public sealed partial class ListFeaturesetClassRequest : pb::IMessage<ListFeaturesetClassRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<ListFeaturePipelineRequest> _parser = new pb::MessageParser<ListFeaturePipelineRequest>(() => new ListFeaturePipelineRequest());
+    private static readonly pb::MessageParser<ListFeaturesetClassRequest> _parser = new pb::MessageParser<ListFeaturesetClassRequest>(() => new ListFeaturesetClassRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ListFeaturePipelineRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<ListFeaturesetClassRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -118,22 +118,22 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ListFeaturePipelineRequest() {
+    public ListFeaturesetClassRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ListFeaturePipelineRequest(ListFeaturePipelineRequest other) : this() {
+    public ListFeaturesetClassRequest(ListFeaturesetClassRequest other) : this() {
       namespace_ = other.namespace_;
       labels_ = other.labels_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ListFeaturePipelineRequest Clone() {
-      return new ListFeaturePipelineRequest(this);
+    public ListFeaturesetClassRequest Clone() {
+      return new ListFeaturesetClassRequest(this);
     }
 
     /// <summary>Field number for the "namespace" field.</summary>
@@ -159,11 +159,11 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as ListFeaturePipelineRequest);
+      return Equals(other as ListFeaturesetClassRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ListFeaturePipelineRequest other) {
+    public bool Equals(ListFeaturesetClassRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -235,7 +235,7 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ListFeaturePipelineRequest other) {
+    public void MergeFrom(ListFeaturesetClassRequest other) {
       if (other == null) {
         return;
       }
@@ -294,15 +294,15 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
 
   }
 
-  public sealed partial class ListFeaturePipelineResponse : pb::IMessage<ListFeaturePipelineResponse>
+  public sealed partial class ListFeaturesetClassResponse : pb::IMessage<ListFeaturesetClassResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<ListFeaturePipelineResponse> _parser = new pb::MessageParser<ListFeaturePipelineResponse>(() => new ListFeaturePipelineResponse());
+    private static readonly pb::MessageParser<ListFeaturesetClassResponse> _parser = new pb::MessageParser<ListFeaturesetClassResponse>(() => new ListFeaturesetClassResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ListFeaturePipelineResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<ListFeaturesetClassResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -315,28 +315,28 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ListFeaturePipelineResponse() {
+    public ListFeaturesetClassResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ListFeaturePipelineResponse(ListFeaturePipelineResponse other) : this() {
+    public ListFeaturesetClassResponse(ListFeaturesetClassResponse other) : this() {
       items_ = other.items_ != null ? other.items_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ListFeaturePipelineResponse Clone() {
-      return new ListFeaturePipelineResponse(this);
+    public ListFeaturesetClassResponse Clone() {
+      return new ListFeaturesetClassResponse(this);
     }
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineList items_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClassList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineList Items {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClassList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -345,11 +345,11 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as ListFeaturePipelineResponse);
+      return Equals(other as ListFeaturesetClassResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ListFeaturePipelineResponse other) {
+    public bool Equals(ListFeaturesetClassResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -416,13 +416,13 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ListFeaturePipelineResponse other) {
+    public void MergeFrom(ListFeaturesetClassResponse other) {
       if (other == null) {
         return;
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineList();
+          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClassList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -442,7 +442,7 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClassList();
             }
             input.ReadMessage(Items);
             break;
@@ -463,7 +463,7 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClassList();
             }
             input.ReadMessage(Items);
             break;
@@ -475,15 +475,15 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
 
   }
 
-  public sealed partial class CreateFeaturePipelineRequest : pb::IMessage<CreateFeaturePipelineRequest>
+  public sealed partial class CreateFeaturesetClassRequest : pb::IMessage<CreateFeaturesetClassRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<CreateFeaturePipelineRequest> _parser = new pb::MessageParser<CreateFeaturePipelineRequest>(() => new CreateFeaturePipelineRequest());
+    private static readonly pb::MessageParser<CreateFeaturesetClassRequest> _parser = new pb::MessageParser<CreateFeaturesetClassRequest>(() => new CreateFeaturesetClassRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<CreateFeaturePipelineRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<CreateFeaturesetClassRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -496,28 +496,28 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CreateFeaturePipelineRequest() {
+    public CreateFeaturesetClassRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CreateFeaturePipelineRequest(CreateFeaturePipelineRequest other) : this() {
+    public CreateFeaturesetClassRequest(CreateFeaturesetClassRequest other) : this() {
       item_ = other.item_ != null ? other.item_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CreateFeaturePipelineRequest Clone() {
-      return new CreateFeaturePipelineRequest(this);
+    public CreateFeaturesetClassRequest Clone() {
+      return new CreateFeaturesetClassRequest(this);
     }
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClass item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClass Item {
       get { return item_; }
       set {
         item_ = value;
@@ -526,11 +526,11 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as CreateFeaturePipelineRequest);
+      return Equals(other as CreateFeaturesetClassRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(CreateFeaturePipelineRequest other) {
+    public bool Equals(CreateFeaturesetClassRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -597,13 +597,13 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(CreateFeaturePipelineRequest other) {
+    public void MergeFrom(CreateFeaturesetClassRequest other) {
       if (other == null) {
         return;
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClass();
         }
         Item.MergeFrom(other.Item);
       }
@@ -623,7 +623,7 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClass();
             }
             input.ReadMessage(Item);
             break;
@@ -644,7 +644,7 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClass();
             }
             input.ReadMessage(Item);
             break;
@@ -656,15 +656,15 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
 
   }
 
-  public sealed partial class CreateFeaturePipelineResponse : pb::IMessage<CreateFeaturePipelineResponse>
+  public sealed partial class CreateFeaturesetClassResponse : pb::IMessage<CreateFeaturesetClassResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<CreateFeaturePipelineResponse> _parser = new pb::MessageParser<CreateFeaturePipelineResponse>(() => new CreateFeaturePipelineResponse());
+    private static readonly pb::MessageParser<CreateFeaturesetClassResponse> _parser = new pb::MessageParser<CreateFeaturesetClassResponse>(() => new CreateFeaturesetClassResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<CreateFeaturePipelineResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<CreateFeaturesetClassResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -677,29 +677,29 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CreateFeaturePipelineResponse() {
+    public CreateFeaturesetClassResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CreateFeaturePipelineResponse(CreateFeaturePipelineResponse other) : this() {
+    public CreateFeaturesetClassResponse(CreateFeaturesetClassResponse other) : this() {
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CreateFeaturePipelineResponse Clone() {
-      return new CreateFeaturePipelineResponse(this);
+    public CreateFeaturesetClassResponse Clone() {
+      return new CreateFeaturesetClassResponse(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as CreateFeaturePipelineResponse);
+      return Equals(other as CreateFeaturesetClassResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(CreateFeaturePipelineResponse other) {
+    public bool Equals(CreateFeaturesetClassResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -753,7 +753,7 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(CreateFeaturePipelineResponse other) {
+    public void MergeFrom(CreateFeaturesetClassResponse other) {
       if (other == null) {
         return;
       }
@@ -792,15 +792,15 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
 
   }
 
-  public sealed partial class UpdateFeaturePipelineRequest : pb::IMessage<UpdateFeaturePipelineRequest>
+  public sealed partial class UpdateFeaturesetClassRequest : pb::IMessage<UpdateFeaturesetClassRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<UpdateFeaturePipelineRequest> _parser = new pb::MessageParser<UpdateFeaturePipelineRequest>(() => new UpdateFeaturePipelineRequest());
+    private static readonly pb::MessageParser<UpdateFeaturesetClassRequest> _parser = new pb::MessageParser<UpdateFeaturesetClassRequest>(() => new UpdateFeaturesetClassRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<UpdateFeaturePipelineRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<UpdateFeaturesetClassRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -813,28 +813,28 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public UpdateFeaturePipelineRequest() {
+    public UpdateFeaturesetClassRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public UpdateFeaturePipelineRequest(UpdateFeaturePipelineRequest other) : this() {
+    public UpdateFeaturesetClassRequest(UpdateFeaturesetClassRequest other) : this() {
       item_ = other.item_ != null ? other.item_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public UpdateFeaturePipelineRequest Clone() {
-      return new UpdateFeaturePipelineRequest(this);
+    public UpdateFeaturesetClassRequest Clone() {
+      return new UpdateFeaturesetClassRequest(this);
     }
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 5;
-    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClass item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClass Item {
       get { return item_; }
       set {
         item_ = value;
@@ -843,11 +843,11 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as UpdateFeaturePipelineRequest);
+      return Equals(other as UpdateFeaturesetClassRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(UpdateFeaturePipelineRequest other) {
+    public bool Equals(UpdateFeaturesetClassRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -914,13 +914,13 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(UpdateFeaturePipelineRequest other) {
+    public void MergeFrom(UpdateFeaturesetClassRequest other) {
       if (other == null) {
         return;
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClass();
         }
         Item.MergeFrom(other.Item);
       }
@@ -940,7 +940,7 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
             break;
           case 42: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClass();
             }
             input.ReadMessage(Item);
             break;
@@ -961,7 +961,7 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
             break;
           case 42: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClass();
             }
             input.ReadMessage(Item);
             break;
@@ -973,15 +973,15 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
 
   }
 
-  public sealed partial class UpdateFeaturePipelineResponse : pb::IMessage<UpdateFeaturePipelineResponse>
+  public sealed partial class UpdateFeaturesetClassResponse : pb::IMessage<UpdateFeaturesetClassResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<UpdateFeaturePipelineResponse> _parser = new pb::MessageParser<UpdateFeaturePipelineResponse>(() => new UpdateFeaturePipelineResponse());
+    private static readonly pb::MessageParser<UpdateFeaturesetClassResponse> _parser = new pb::MessageParser<UpdateFeaturesetClassResponse>(() => new UpdateFeaturesetClassResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<UpdateFeaturePipelineResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<UpdateFeaturesetClassResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -994,29 +994,29 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public UpdateFeaturePipelineResponse() {
+    public UpdateFeaturesetClassResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public UpdateFeaturePipelineResponse(UpdateFeaturePipelineResponse other) : this() {
+    public UpdateFeaturesetClassResponse(UpdateFeaturesetClassResponse other) : this() {
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public UpdateFeaturePipelineResponse Clone() {
-      return new UpdateFeaturePipelineResponse(this);
+    public UpdateFeaturesetClassResponse Clone() {
+      return new UpdateFeaturesetClassResponse(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as UpdateFeaturePipelineResponse);
+      return Equals(other as UpdateFeaturesetClassResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(UpdateFeaturePipelineResponse other) {
+    public bool Equals(UpdateFeaturesetClassResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1070,7 +1070,7 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(UpdateFeaturePipelineResponse other) {
+    public void MergeFrom(UpdateFeaturesetClassResponse other) {
       if (other == null) {
         return;
       }
@@ -1109,15 +1109,15 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
 
   }
 
-  public sealed partial class GetFeaturePipelineRequest : pb::IMessage<GetFeaturePipelineRequest>
+  public sealed partial class GetFeaturesetClassRequest : pb::IMessage<GetFeaturesetClassRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<GetFeaturePipelineRequest> _parser = new pb::MessageParser<GetFeaturePipelineRequest>(() => new GetFeaturePipelineRequest());
+    private static readonly pb::MessageParser<GetFeaturesetClassRequest> _parser = new pb::MessageParser<GetFeaturesetClassRequest>(() => new GetFeaturesetClassRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<GetFeaturePipelineRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<GetFeaturesetClassRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -1130,22 +1130,22 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetFeaturePipelineRequest() {
+    public GetFeaturesetClassRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetFeaturePipelineRequest(GetFeaturePipelineRequest other) : this() {
+    public GetFeaturesetClassRequest(GetFeaturesetClassRequest other) : this() {
       namespace_ = other.namespace_;
       name_ = other.name_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetFeaturePipelineRequest Clone() {
-      return new GetFeaturePipelineRequest(this);
+    public GetFeaturesetClassRequest Clone() {
+      return new GetFeaturesetClassRequest(this);
     }
 
     /// <summary>Field number for the "namespace" field.</summary>
@@ -1172,11 +1172,11 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as GetFeaturePipelineRequest);
+      return Equals(other as GetFeaturesetClassRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(GetFeaturePipelineRequest other) {
+    public bool Equals(GetFeaturesetClassRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1256,7 +1256,7 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(GetFeaturePipelineRequest other) {
+    public void MergeFrom(GetFeaturesetClassRequest other) {
       if (other == null) {
         return;
       }
@@ -1317,15 +1317,15 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
 
   }
 
-  public sealed partial class GetFeaturePipelineResponse : pb::IMessage<GetFeaturePipelineResponse>
+  public sealed partial class GetFeaturesetClassResponse : pb::IMessage<GetFeaturesetClassResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<GetFeaturePipelineResponse> _parser = new pb::MessageParser<GetFeaturePipelineResponse>(() => new GetFeaturePipelineResponse());
+    private static readonly pb::MessageParser<GetFeaturesetClassResponse> _parser = new pb::MessageParser<GetFeaturesetClassResponse>(() => new GetFeaturesetClassResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<GetFeaturePipelineResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<GetFeaturesetClassResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -1338,29 +1338,29 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetFeaturePipelineResponse() {
+    public GetFeaturesetClassResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetFeaturePipelineResponse(GetFeaturePipelineResponse other) : this() {
+    public GetFeaturesetClassResponse(GetFeaturesetClassResponse other) : this() {
       item_ = other.item_ != null ? other.item_.Clone() : null;
       yaml_ = other.yaml_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetFeaturePipelineResponse Clone() {
-      return new GetFeaturePipelineResponse(this);
+    public GetFeaturesetClassResponse Clone() {
+      return new GetFeaturesetClassResponse(this);
     }
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClass item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClass Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1380,11 +1380,11 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as GetFeaturePipelineResponse);
+      return Equals(other as GetFeaturesetClassResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(GetFeaturePipelineResponse other) {
+    public bool Equals(GetFeaturesetClassResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1464,13 +1464,13 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(GetFeaturePipelineResponse other) {
+    public void MergeFrom(GetFeaturesetClassResponse other) {
       if (other == null) {
         return;
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClass();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1493,7 +1493,7 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClass();
             }
             input.ReadMessage(Item);
             break;
@@ -1518,7 +1518,7 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetClass();
             }
             input.ReadMessage(Item);
             break;
@@ -1534,15 +1534,15 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
 
   }
 
-  public sealed partial class DeleteFeaturePipelineRequest : pb::IMessage<DeleteFeaturePipelineRequest>
+  public sealed partial class DeleteFeaturesetClassRequest : pb::IMessage<DeleteFeaturesetClassRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<DeleteFeaturePipelineRequest> _parser = new pb::MessageParser<DeleteFeaturePipelineRequest>(() => new DeleteFeaturePipelineRequest());
+    private static readonly pb::MessageParser<DeleteFeaturesetClassRequest> _parser = new pb::MessageParser<DeleteFeaturesetClassRequest>(() => new DeleteFeaturesetClassRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<DeleteFeaturePipelineRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<DeleteFeaturesetClassRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -1555,22 +1555,22 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeleteFeaturePipelineRequest() {
+    public DeleteFeaturesetClassRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeleteFeaturePipelineRequest(DeleteFeaturePipelineRequest other) : this() {
+    public DeleteFeaturesetClassRequest(DeleteFeaturesetClassRequest other) : this() {
       namespace_ = other.namespace_;
       name_ = other.name_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeleteFeaturePipelineRequest Clone() {
-      return new DeleteFeaturePipelineRequest(this);
+    public DeleteFeaturesetClassRequest Clone() {
+      return new DeleteFeaturesetClassRequest(this);
     }
 
     /// <summary>Field number for the "namespace" field.</summary>
@@ -1597,11 +1597,11 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as DeleteFeaturePipelineRequest);
+      return Equals(other as DeleteFeaturesetClassRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(DeleteFeaturePipelineRequest other) {
+    public bool Equals(DeleteFeaturesetClassRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1681,7 +1681,7 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(DeleteFeaturePipelineRequest other) {
+    public void MergeFrom(DeleteFeaturesetClassRequest other) {
       if (other == null) {
         return;
       }
@@ -1742,15 +1742,15 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
 
   }
 
-  public sealed partial class DeleteFeaturePipelineResponse : pb::IMessage<DeleteFeaturePipelineResponse>
+  public sealed partial class DeleteFeaturesetClassResponse : pb::IMessage<DeleteFeaturesetClassResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<DeleteFeaturePipelineResponse> _parser = new pb::MessageParser<DeleteFeaturePipelineResponse>(() => new DeleteFeaturePipelineResponse());
+    private static readonly pb::MessageParser<DeleteFeaturesetClassResponse> _parser = new pb::MessageParser<DeleteFeaturesetClassResponse>(() => new DeleteFeaturesetClassResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<DeleteFeaturePipelineResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<DeleteFeaturesetClassResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -1763,29 +1763,29 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeleteFeaturePipelineResponse() {
+    public DeleteFeaturesetClassResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeleteFeaturePipelineResponse(DeleteFeaturePipelineResponse other) : this() {
+    public DeleteFeaturesetClassResponse(DeleteFeaturesetClassResponse other) : this() {
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeleteFeaturePipelineResponse Clone() {
-      return new DeleteFeaturePipelineResponse(this);
+    public DeleteFeaturesetClassResponse Clone() {
+      return new DeleteFeaturesetClassResponse(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as DeleteFeaturePipelineResponse);
+      return Equals(other as DeleteFeaturesetClassResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(DeleteFeaturePipelineResponse other) {
+    public bool Equals(DeleteFeaturesetClassResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1839,7 +1839,7 @@ namespace Github.Com.Metaprov.Modelaapi.Services.Featurepipeline.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(DeleteFeaturePipelineResponse other) {
+    public void MergeFrom(DeleteFeaturesetClassResponse other) {
       if (other == null) {
         return;
       }

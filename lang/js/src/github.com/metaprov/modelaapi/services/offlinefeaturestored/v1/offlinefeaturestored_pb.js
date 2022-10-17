@@ -321,7 +321,7 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.CreateFeatu
  */
 proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.CreateFeatureRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    featuresource: (f = msg.getFeaturesource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.toObject(includeInstance, f),
+    featuresource: (f = msg.getFeaturesource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClass.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
@@ -361,8 +361,8 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.CreateFeatu
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClass;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClass.deserializeBinaryFromReader);
       msg.setFeaturesource(value);
       break;
     case 2:
@@ -410,7 +410,7 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.CreateFeatu
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClass.serializeBinaryToWriter
     );
   }
   f = message.getConnection();
@@ -429,17 +429,17 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.CreateFeatu
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource featureSource = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass featureSource = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass}
  */
 proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.CreateFeatureRequest.prototype.getFeaturesource = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource, 1));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClass, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.CreateFeatureRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.CreateFeatureRequest.prototype.setFeaturesource = function(value) {
@@ -918,7 +918,7 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.UpdateFeatu
  */
 proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    featuresource: (f = msg.getFeaturesource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.toObject(includeInstance, f),
+    featuresource: (f = msg.getFeaturesource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClass.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
@@ -958,8 +958,8 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.UpdateFeatu
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClass;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClass.deserializeBinaryFromReader);
       msg.setFeaturesource(value);
       break;
     case 2:
@@ -1007,7 +1007,7 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.UpdateFeatu
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClass.serializeBinaryToWriter
     );
   }
   f = message.getConnection();
@@ -1026,17 +1026,17 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.UpdateFeatu
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource featureSource = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass featureSource = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass}
  */
 proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.prototype.getFeaturesource = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource, 1));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClass, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.UpdateFeatureRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.prototype.setFeaturesource = function(value) {
@@ -1384,7 +1384,7 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.ListFeature
  */
 proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.ListFeaturesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    features: (f = msg.getFeatures()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList.toObject(includeInstance, f)
+    features: (f = msg.getFeatures()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClassList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1422,8 +1422,8 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.ListFeature
     var field = reader.getFieldNumber();
     switch (field) {
     case 3:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClassList;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClassList.deserializeBinaryFromReader);
       msg.setFeatures(value);
       break;
     default:
@@ -1460,24 +1460,24 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.ListFeature
     writer.writeMessage(
       3,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClassList.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceList features = 3;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceList}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClassList features = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClassList}
  */
 proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.ListFeaturesResponse.prototype.getFeatures = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceList} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList, 3));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClassList} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClassList, 3));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceList|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClassList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.ListFeaturesResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.ListFeaturesResponse.prototype.setFeatures = function(value) {
@@ -1695,7 +1695,7 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GetFeatureR
  */
 proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GetFeatureResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    feature: (f = msg.getFeature()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.toObject(includeInstance, f)
+    feature: (f = msg.getFeature()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClass.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1733,8 +1733,8 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GetFeatureR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClass;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClass.deserializeBinaryFromReader);
       msg.setFeature(value);
       break;
     default:
@@ -1771,24 +1771,24 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GetFeatureR
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClass.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource feature = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass feature = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass}
  */
 proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GetFeatureResponse.prototype.getFeature = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSource, 1));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClass, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GetFeatureResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GetFeatureResponse.prototype.setFeature = function(value) {
@@ -1848,7 +1848,7 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GenerateTra
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     ns: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    features: (f = msg.getFeatures()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList.toObject(includeInstance, f)
+    features: (f = msg.getFeatures()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClassList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1894,8 +1894,8 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GenerateTra
       msg.setNs(value);
       break;
     case 3:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClassList;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClassList.deserializeBinaryFromReader);
       msg.setFeatures(value);
       break;
     default:
@@ -1946,7 +1946,7 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GenerateTra
     writer.writeMessage(
       3,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClassList.serializeBinaryToWriter
     );
   }
 };
@@ -1989,17 +1989,17 @@ proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GenerateTra
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceList features = 3;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceList}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClassList features = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClassList}
  */
 proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest.prototype.getFeatures = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceList} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSourceList, 3));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClassList} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetClassList, 3));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceList|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClassList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest.prototype.setFeatures = function(value) {

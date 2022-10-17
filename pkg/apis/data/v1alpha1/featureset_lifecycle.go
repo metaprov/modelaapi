@@ -22,19 +22,19 @@ import (
 // EntityRef
 //==============================================================================
 
-func (run *FeaturePipelineRun) AddConfiditions() {
-	run.Status.Conditions = make([]FeaturePipelineRunCondition, 1)
-	run.Status.Conditions[0] = FeaturePipelineRunCondition{
-		Type:   FeaturePipelineRunCompleted,
+func (run *Featureset) AddConfiditions() {
+	run.Status.Conditions = make([]FeaturesetCondition, 1)
+	run.Status.Conditions[0] = FeaturesetCondition{
+		Type:   FeaturesetCompleted,
 		Status: v1.ConditionUnknown,
 	}
 }
 
-func (run *FeaturePipelineRun) HasFinalizer() bool {
+func (run *Featureset) HasFinalizer() bool {
 	return util.HasFin(&run.ObjectMeta, data.GroupName)
 }
-func (run *FeaturePipelineRun) AddFinalizer() { util.AddFin(&run.ObjectMeta, data.GroupName) }
-func (run *FeaturePipelineRun) RemoveFinalizer() {
+func (run *Featureset) AddFinalizer() { util.AddFin(&run.ObjectMeta, data.GroupName) }
+func (run *Featureset) RemoveFinalizer() {
 	util.RemoveFin(&run.ObjectMeta, data.GroupName)
 }
 
@@ -44,7 +44,7 @@ func (run *FeaturePipelineRun) RemoveFinalizer() {
 
 // Return the on disk rep location
 
-func (run *FeaturePipelineRun) Age() string {
+func (run *Featureset) Age() string {
 	return humanize.Time(run.CreationTimestamp.Time)
 }
 
@@ -52,13 +52,13 @@ func (run *FeaturePipelineRun) Age() string {
 // Assign commit and id
 //==============================================================================
 
-func (run *FeaturePipelineRun) LabelWithCommit(commit string, uname string, branch string) {
+func (run *Featureset) LabelWithCommit(commit string, uname string, branch string) {
 	run.ObjectMeta.Labels[common.CommitLabelKey] = commit
 	run.ObjectMeta.Labels[common.UnameLabelKey] = uname
 	run.ObjectMeta.Labels[common.BranchLabelKey] = branch
 }
 
-func (run *FeaturePipelineRun) IsGitObj() bool {
+func (run *Featureset) IsGitObj() bool {
 	label, ok := run.ObjectMeta.Labels[common.CommitLabelKey]
 	if !ok {
 		return false
@@ -66,14 +66,14 @@ func (run *FeaturePipelineRun) IsGitObj() bool {
 	return label != ""
 }
 
-func (run *FeaturePipelineRun) SetChanged() {
+func (run *Featureset) SetChanged() {
 	run.ObjectMeta.Labels[common.ChangedLabelKey] = "true"
 
 }
 
 // Merge or update condition
 // Merge or update condition
-func (run *FeaturePipelineRun) CreateOrUpdateCond(cond FeaturePipelineRunCondition) {
+func (run *Featureset) CreateOrUpdateCond(cond FeaturesetCondition) {
 	i := run.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
@@ -92,7 +92,7 @@ func (run *FeaturePipelineRun) CreateOrUpdateCond(cond FeaturePipelineRunConditi
 	run.Status.Conditions[i] = current
 }
 
-func (run *FeaturePipelineRun) GetCondIdx(t FeaturePipelineRunConditionType) int {
+func (run *Featureset) GetCondIdx(t FeaturesetConditionType) int {
 	for i, v := range run.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -101,14 +101,14 @@ func (run *FeaturePipelineRun) GetCondIdx(t FeaturePipelineRunConditionType) int
 	return -1
 }
 
-func (run *FeaturePipelineRun) GetCond(t FeaturePipelineRunConditionType) FeaturePipelineRunCondition {
+func (run *Featureset) GetCond(t FeaturesetConditionType) FeaturesetCondition {
 	for _, v := range run.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return FeaturePipelineRunCondition{
+	return FeaturesetCondition{
 		Type:    t,
 		Status:  v1.ConditionUnknown,
 		Reason:  "",
@@ -117,50 +117,50 @@ func (run *FeaturePipelineRun) GetCond(t FeaturePipelineRunConditionType) Featur
 
 }
 
-func (run *FeaturePipelineRun) IsCompleted() bool {
-	return run.GetCond(FeaturePipelineRunCompleted).Status == v1.ConditionTrue
+func (run *Featureset) IsCompleted() bool {
+	return run.GetCond(FeaturesetCompleted).Status == v1.ConditionTrue
 }
 
-func (run *FeaturePipelineRun) IsRunning() bool {
-	cond := run.GetCond(FeaturePipelineRunCompleted)
-	return cond.Status == v1.ConditionFalse && cond.Reason == string(FeaturePipelineRunPhaseRunning)
+func (run *Featureset) IsRunning() bool {
+	cond := run.GetCond(FeaturesetCompleted)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(FeaturesetPhaseRunning)
 }
 
-func (run *FeaturePipelineRun) IsFailed() bool {
-	cond := run.GetCond(FeaturePipelineRunCompleted)
-	return cond.Status == v1.ConditionFalse && cond.Reason == string(FeaturePipelineRunPhaseFailed)
+func (run *Featureset) IsFailed() bool {
+	cond := run.GetCond(FeaturesetCompleted)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(FeaturesetPhaseFailed)
 }
 
-func (run *FeaturePipelineRun) Key() string {
+func (run *Featureset) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "features", run.Namespace, run.Name)
 }
 
-func (run *FeaturePipelineRun) MarkReady() {
+func (run *Featureset) MarkReady() {
 	// update the lab state to ready
-	run.CreateOrUpdateCond(FeaturePipelineRunCondition{
-		Type:   FeaturePipelineRunCompleted,
+	run.CreateOrUpdateCond(FeaturesetCondition{
+		Type:   FeaturesetCompleted,
 		Status: v1.ConditionTrue,
 	})
 
 }
 
-func (run *FeaturePipelineRun) MarkRunning() {
+func (run *Featureset) MarkRunning() {
 	now := metav1.Now()
 	if run.Status.StartTime == nil {
 		run.Status.StartTime = &now
 	}
-	run.Status.Phase = FeaturePipelineRunPhaseRunning
-	run.CreateOrUpdateCond(FeaturePipelineRunCondition{
-		Type:   FeaturePipelineRunCompleted,
+	run.Status.Phase = FeaturesetPhaseRunning
+	run.CreateOrUpdateCond(FeaturesetCondition{
+		Type:   FeaturesetCompleted,
 		Status: v1.ConditionFalse,
-		Reason: string(FeaturePipelineRunPhaseRunning),
+		Reason: string(FeaturesetPhaseRunning),
 	})
 }
 
-func (run *FeaturePipelineRun) MarkComplete() {
-	run.Status.Phase = FeaturePipelineRunPhaseCompleted
-	run.CreateOrUpdateCond(FeaturePipelineRunCondition{
-		Type:   FeaturePipelineRunCompleted,
+func (run *Featureset) MarkComplete() {
+	run.Status.Phase = FeaturesetPhaseCompleted
+	run.CreateOrUpdateCond(FeaturesetCondition{
+		Type:   FeaturesetCompleted,
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
@@ -169,12 +169,12 @@ func (run *FeaturePipelineRun) MarkComplete() {
 	}
 }
 
-func (run *FeaturePipelineRun) MarkFailed(err error) {
-	run.Status.Phase = FeaturePipelineRunPhaseFailed
-	run.CreateOrUpdateCond(FeaturePipelineRunCondition{
-		Type:    FeaturePipelineRunCompleted,
+func (run *Featureset) MarkFailed(err error) {
+	run.Status.Phase = FeaturesetPhaseFailed
+	run.CreateOrUpdateCond(FeaturesetCondition{
+		Type:    FeaturesetCompleted,
 		Status:  v1.ConditionTrue,
-		Reason:  string(FeaturePipelineRunPhaseFailed),
+		Reason:  string(FeaturesetPhaseFailed),
 		Message: err.Error(),
 	})
 	now := metav1.Now()
@@ -186,7 +186,7 @@ func (run *FeaturePipelineRun) MarkFailed(err error) {
 }
 
 // Return the state of the run as RunStatus
-func (run *FeaturePipelineRun) RunStatus() *catalog.LastRunStatus {
+func (run *Featureset) RunStatus() *catalog.LastRunStatus {
 	result := &catalog.LastRunStatus{
 		CompletionTime: run.Status.EndTime,
 		Duration:       int32(run.Status.EndTime.Unix() - run.Status.StartTime.Unix()),

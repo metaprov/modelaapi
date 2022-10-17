@@ -12,29 +12,29 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-type FeaturePipelineRunPhase string
+type FeaturesetPhase string
 
 const (
-	FeaturePipelineRunPhasePending   FeaturePipelineRunPhase = "Pending"
-	FeaturePipelineRunPhaseRunning   FeaturePipelineRunPhase = "Running"
-	FeaturePipelineRunPhaseCompleted FeaturePipelineRunPhase = "Completed"
-	FeaturePipelineRunPhaseAborted   FeaturePipelineRunPhase = "Aborted"
-	FeaturePipelineRunPhaseFailed    FeaturePipelineRunPhase = "Failed"
+	FeaturesetPhasePending   FeaturesetPhase = "Pending"
+	FeaturesetPhaseRunning   FeaturesetPhase = "Running"
+	FeaturesetPhaseCompleted FeaturesetPhase = "Completed"
+	FeaturesetPhaseAborted   FeaturesetPhase = "Aborted"
+	FeaturesetPhaseFailed    FeaturesetPhase = "Failed"
 )
 
-// FeaturePipelineRunConditionType
-type FeaturePipelineRunConditionType string
+// FeaturesetRunConditionType
+type FeaturesetConditionType string
 
 /// Feature Condition
 const (
-	FeaturePipelineRunCompleted FeaturePipelineRunConditionType = "Completed"
-	FeaturePipelineRunSaved     FeaturePipelineRunConditionType = "Saved"
+	FeaturesetCompleted FeaturesetConditionType = "Completed"
+	FeaturesetSaved     FeaturesetConditionType = "Saved"
 )
 
-// FeaturePipelineRunCondition describes the state of a deployment at a certain point.
-type FeaturePipelineRunCondition struct {
+// FeaturesetRunCondition describes the state of a deployment at a certain point.
+type FeaturesetCondition struct {
 	// Type of account condition.
-	Type FeaturePipelineRunConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=FeatureConditionType"`
+	Type FeaturesetConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=FeatureConditionType"`
 	// Status of the condition, one of True, False, Unknown
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
@@ -45,7 +45,7 @@ type FeaturePipelineRunCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// FeaturePipeline represent a feature set object in the feature store.
+// Featureset represent a feature set object in the feature store.
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
@@ -55,26 +55,26 @@ type FeaturePipelineRunCondition struct {
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featurepipelineruns,shortName=fpr,singular=featurepipelinerun,categories={data,modela}
+// +kubebuilder:resource:path=featuresets,shortName=fpr,singular=featureset,categories={data,modela}
 // +kubebuilder:subresource:status
-type FeaturePipelineRun struct {
+type Featureset struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              FeaturePipelineRunSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Spec              FeaturesetSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 	//+optional
-	Status FeaturePipelineRunStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
+	Status FeaturesetStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
 }
 
-// FeaturePipelineRunList contain a list of FeaturePipelineRun objects
+// FeaturesetRunList contain a list of FeaturesetRun objects
 // +kubebuilder:object:root=true
-type FeaturePipelineRunList struct {
+type FeaturesetList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Items           []FeaturePipelineRun `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []Featureset `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
 // FeatureSpec contain the desired state of a Feature
-type FeaturePipelineRunSpec struct {
+type FeaturesetSpec struct {
 	// The feature owner
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
@@ -87,7 +87,7 @@ type FeaturePipelineRunSpec struct {
 	// FileName specify the name of the attribute
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:MaxLength=64
-	FeaturePipelineName *string `json:"featurePipelineName,omitempty" protobuf:"bytes,3,opt,name=featurePipelineName"`
+	ClassName *string `json:"className,omitempty" protobuf:"bytes,3,opt,name=className"`
 	// TTL.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
@@ -95,7 +95,7 @@ type FeaturePipelineRunSpec struct {
 }
 
 // FeatureStatus defines the observed state of Feature
-type FeaturePipelineRunStatus struct {
+type FeaturesetStatus struct {
 	// The Start time of the run
 	//+option
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
@@ -105,7 +105,7 @@ type FeaturePipelineRunStatus struct {
 	// The phase of the dataset processing
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
-	Phase FeaturePipelineRunPhase `json:"phase,omitempty" protobuf:"bytes,3,opt,name=phase"`
+	Phase FeaturesetPhase `json:"phase,omitempty" protobuf:"bytes,3,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`
@@ -127,5 +127,5 @@ type FeaturePipelineRunStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeaturePipelineRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,10,rep,name=conditions"`
+	Conditions []FeaturesetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,10,rep,name=conditions"`
 }

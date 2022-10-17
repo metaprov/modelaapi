@@ -5,31 +5,31 @@ import * as google_api_annotations_pb from '../../../../../../google/api/annotat
 import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 
 
-export class ListFeaturePipelineRunRequest extends jspb.Message {
+export class ListFeaturesetRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): ListFeaturePipelineRunRequest;
+  setNamespace(value: string): ListFeaturesetRequest;
 
   getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): ListFeaturePipelineRunRequest;
+  clearLabelsMap(): ListFeaturesetRequest;
 
   getPageSize(): number;
-  setPageSize(value: number): ListFeaturePipelineRunRequest;
+  setPageSize(value: number): ListFeaturesetRequest;
 
   getPageToken(): string;
-  setPageToken(value: string): ListFeaturePipelineRunRequest;
+  setPageToken(value: string): ListFeaturesetRequest;
 
   getOrderBy(): string;
-  setOrderBy(value: string): ListFeaturePipelineRunRequest;
+  setOrderBy(value: string): ListFeaturesetRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListFeaturePipelineRunRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListFeaturePipelineRunRequest): ListFeaturePipelineRunRequest.AsObject;
-  static serializeBinaryToWriter(message: ListFeaturePipelineRunRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListFeaturePipelineRunRequest;
-  static deserializeBinaryFromReader(message: ListFeaturePipelineRunRequest, reader: jspb.BinaryReader): ListFeaturePipelineRunRequest;
+  toObject(includeInstance?: boolean): ListFeaturesetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFeaturesetRequest): ListFeaturesetRequest.AsObject;
+  static serializeBinaryToWriter(message: ListFeaturesetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFeaturesetRequest;
+  static deserializeBinaryFromReader(message: ListFeaturesetRequest, reader: jspb.BinaryReader): ListFeaturesetRequest;
 }
 
-export namespace ListFeaturePipelineRunRequest {
+export namespace ListFeaturesetRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
@@ -39,182 +39,182 @@ export namespace ListFeaturePipelineRunRequest {
   }
 }
 
-export class ListFeaturePipelineRunResponse extends jspb.Message {
-  getFeaturepipelineruns(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunList | undefined;
-  setFeaturepipelineruns(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunList): ListFeaturePipelineRunResponse;
+export class ListFeaturesetResponse extends jspb.Message {
+  getFeaturepipelineruns(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList | undefined;
+  setFeaturepipelineruns(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList): ListFeaturesetResponse;
   hasFeaturepipelineruns(): boolean;
-  clearFeaturepipelineruns(): ListFeaturePipelineRunResponse;
+  clearFeaturepipelineruns(): ListFeaturesetResponse;
 
   getNextPageToken(): string;
-  setNextPageToken(value: string): ListFeaturePipelineRunResponse;
+  setNextPageToken(value: string): ListFeaturesetResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListFeaturePipelineRunResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListFeaturePipelineRunResponse): ListFeaturePipelineRunResponse.AsObject;
-  static serializeBinaryToWriter(message: ListFeaturePipelineRunResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListFeaturePipelineRunResponse;
-  static deserializeBinaryFromReader(message: ListFeaturePipelineRunResponse, reader: jspb.BinaryReader): ListFeaturePipelineRunResponse;
+  toObject(includeInstance?: boolean): ListFeaturesetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFeaturesetResponse): ListFeaturesetResponse.AsObject;
+  static serializeBinaryToWriter(message: ListFeaturesetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFeaturesetResponse;
+  static deserializeBinaryFromReader(message: ListFeaturesetResponse, reader: jspb.BinaryReader): ListFeaturesetResponse;
 }
 
-export namespace ListFeaturePipelineRunResponse {
+export namespace ListFeaturesetResponse {
   export type AsObject = {
-    featurepipelineruns?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunList.AsObject,
+    featurepipelineruns?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList.AsObject,
     nextPageToken: string,
   }
 }
 
-export class CreateFeaturePipelineRunRequest extends jspb.Message {
-  getFeaturepipelinerun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun | undefined;
-  setFeaturepipelinerun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun): CreateFeaturePipelineRunRequest;
+export class CreateFeaturesetRequest extends jspb.Message {
+  getFeaturepipelinerun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
+  setFeaturepipelinerun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): CreateFeaturesetRequest;
   hasFeaturepipelinerun(): boolean;
-  clearFeaturepipelinerun(): CreateFeaturePipelineRunRequest;
+  clearFeaturepipelinerun(): CreateFeaturesetRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateFeaturePipelineRunRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateFeaturePipelineRunRequest): CreateFeaturePipelineRunRequest.AsObject;
-  static serializeBinaryToWriter(message: CreateFeaturePipelineRunRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateFeaturePipelineRunRequest;
-  static deserializeBinaryFromReader(message: CreateFeaturePipelineRunRequest, reader: jspb.BinaryReader): CreateFeaturePipelineRunRequest;
+  toObject(includeInstance?: boolean): CreateFeaturesetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateFeaturesetRequest): CreateFeaturesetRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateFeaturesetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateFeaturesetRequest;
+  static deserializeBinaryFromReader(message: CreateFeaturesetRequest, reader: jspb.BinaryReader): CreateFeaturesetRequest;
 }
 
-export namespace CreateFeaturePipelineRunRequest {
+export namespace CreateFeaturesetRequest {
   export type AsObject = {
-    featurepipelinerun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.AsObject,
+    featurepipelinerun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
   }
 }
 
-export class CreateFeaturePipelineRunResponse extends jspb.Message {
+export class CreateFeaturesetResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateFeaturePipelineRunResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateFeaturePipelineRunResponse): CreateFeaturePipelineRunResponse.AsObject;
-  static serializeBinaryToWriter(message: CreateFeaturePipelineRunResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateFeaturePipelineRunResponse;
-  static deserializeBinaryFromReader(message: CreateFeaturePipelineRunResponse, reader: jspb.BinaryReader): CreateFeaturePipelineRunResponse;
+  toObject(includeInstance?: boolean): CreateFeaturesetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateFeaturesetResponse): CreateFeaturesetResponse.AsObject;
+  static serializeBinaryToWriter(message: CreateFeaturesetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateFeaturesetResponse;
+  static deserializeBinaryFromReader(message: CreateFeaturesetResponse, reader: jspb.BinaryReader): CreateFeaturesetResponse;
 }
 
-export namespace CreateFeaturePipelineRunResponse {
+export namespace CreateFeaturesetResponse {
   export type AsObject = {
   }
 }
 
-export class UpdateFeaturePipelineRunRequest extends jspb.Message {
-  getFeaturepipelinerun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun | undefined;
-  setFeaturepipelinerun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun): UpdateFeaturePipelineRunRequest;
+export class UpdateFeaturesetRequest extends jspb.Message {
+  getFeaturepipelinerun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
+  setFeaturepipelinerun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): UpdateFeaturesetRequest;
   hasFeaturepipelinerun(): boolean;
-  clearFeaturepipelinerun(): UpdateFeaturePipelineRunRequest;
+  clearFeaturepipelinerun(): UpdateFeaturesetRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
-  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateFeaturePipelineRunRequest;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateFeaturesetRequest;
   hasFieldMask(): boolean;
-  clearFieldMask(): UpdateFeaturePipelineRunRequest;
+  clearFieldMask(): UpdateFeaturesetRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateFeaturePipelineRunRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateFeaturePipelineRunRequest): UpdateFeaturePipelineRunRequest.AsObject;
-  static serializeBinaryToWriter(message: UpdateFeaturePipelineRunRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateFeaturePipelineRunRequest;
-  static deserializeBinaryFromReader(message: UpdateFeaturePipelineRunRequest, reader: jspb.BinaryReader): UpdateFeaturePipelineRunRequest;
+  toObject(includeInstance?: boolean): UpdateFeaturesetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateFeaturesetRequest): UpdateFeaturesetRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateFeaturesetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateFeaturesetRequest;
+  static deserializeBinaryFromReader(message: UpdateFeaturesetRequest, reader: jspb.BinaryReader): UpdateFeaturesetRequest;
 }
 
-export namespace UpdateFeaturePipelineRunRequest {
+export namespace UpdateFeaturesetRequest {
   export type AsObject = {
-    featurepipelinerun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.AsObject,
+    featurepipelinerun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
-export class UpdateFeaturePipelineRunResponse extends jspb.Message {
+export class UpdateFeaturesetResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateFeaturePipelineRunResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateFeaturePipelineRunResponse): UpdateFeaturePipelineRunResponse.AsObject;
-  static serializeBinaryToWriter(message: UpdateFeaturePipelineRunResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateFeaturePipelineRunResponse;
-  static deserializeBinaryFromReader(message: UpdateFeaturePipelineRunResponse, reader: jspb.BinaryReader): UpdateFeaturePipelineRunResponse;
+  toObject(includeInstance?: boolean): UpdateFeaturesetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateFeaturesetResponse): UpdateFeaturesetResponse.AsObject;
+  static serializeBinaryToWriter(message: UpdateFeaturesetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateFeaturesetResponse;
+  static deserializeBinaryFromReader(message: UpdateFeaturesetResponse, reader: jspb.BinaryReader): UpdateFeaturesetResponse;
 }
 
-export namespace UpdateFeaturePipelineRunResponse {
+export namespace UpdateFeaturesetResponse {
   export type AsObject = {
   }
 }
 
-export class GetFeaturePipelineRunRequest extends jspb.Message {
+export class GetFeaturesetRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): GetFeaturePipelineRunRequest;
+  setNamespace(value: string): GetFeaturesetRequest;
 
   getName(): string;
-  setName(value: string): GetFeaturePipelineRunRequest;
+  setName(value: string): GetFeaturesetRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetFeaturePipelineRunRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetFeaturePipelineRunRequest): GetFeaturePipelineRunRequest.AsObject;
-  static serializeBinaryToWriter(message: GetFeaturePipelineRunRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetFeaturePipelineRunRequest;
-  static deserializeBinaryFromReader(message: GetFeaturePipelineRunRequest, reader: jspb.BinaryReader): GetFeaturePipelineRunRequest;
+  toObject(includeInstance?: boolean): GetFeaturesetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetFeaturesetRequest): GetFeaturesetRequest.AsObject;
+  static serializeBinaryToWriter(message: GetFeaturesetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetFeaturesetRequest;
+  static deserializeBinaryFromReader(message: GetFeaturesetRequest, reader: jspb.BinaryReader): GetFeaturesetRequest;
 }
 
-export namespace GetFeaturePipelineRunRequest {
+export namespace GetFeaturesetRequest {
   export type AsObject = {
     namespace: string,
     name: string,
   }
 }
 
-export class GetFeaturePipelineRunResponse extends jspb.Message {
-  getFeaturepipelinerun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun | undefined;
-  setFeaturepipelinerun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun): GetFeaturePipelineRunResponse;
+export class GetFeaturesetResponse extends jspb.Message {
+  getFeaturepipelinerun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
+  setFeaturepipelinerun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): GetFeaturesetResponse;
   hasFeaturepipelinerun(): boolean;
-  clearFeaturepipelinerun(): GetFeaturePipelineRunResponse;
+  clearFeaturepipelinerun(): GetFeaturesetResponse;
 
   getYaml(): string;
-  setYaml(value: string): GetFeaturePipelineRunResponse;
+  setYaml(value: string): GetFeaturesetResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetFeaturePipelineRunResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetFeaturePipelineRunResponse): GetFeaturePipelineRunResponse.AsObject;
-  static serializeBinaryToWriter(message: GetFeaturePipelineRunResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetFeaturePipelineRunResponse;
-  static deserializeBinaryFromReader(message: GetFeaturePipelineRunResponse, reader: jspb.BinaryReader): GetFeaturePipelineRunResponse;
+  toObject(includeInstance?: boolean): GetFeaturesetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetFeaturesetResponse): GetFeaturesetResponse.AsObject;
+  static serializeBinaryToWriter(message: GetFeaturesetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetFeaturesetResponse;
+  static deserializeBinaryFromReader(message: GetFeaturesetResponse, reader: jspb.BinaryReader): GetFeaturesetResponse;
 }
 
-export namespace GetFeaturePipelineRunResponse {
+export namespace GetFeaturesetResponse {
   export type AsObject = {
-    featurepipelinerun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.AsObject,
+    featurepipelinerun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
     yaml: string,
   }
 }
 
-export class DeleteFeaturePipelineRunRequest extends jspb.Message {
+export class DeleteFeaturesetRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): DeleteFeaturePipelineRunRequest;
+  setNamespace(value: string): DeleteFeaturesetRequest;
 
   getName(): string;
-  setName(value: string): DeleteFeaturePipelineRunRequest;
+  setName(value: string): DeleteFeaturesetRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteFeaturePipelineRunRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteFeaturePipelineRunRequest): DeleteFeaturePipelineRunRequest.AsObject;
-  static serializeBinaryToWriter(message: DeleteFeaturePipelineRunRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteFeaturePipelineRunRequest;
-  static deserializeBinaryFromReader(message: DeleteFeaturePipelineRunRequest, reader: jspb.BinaryReader): DeleteFeaturePipelineRunRequest;
+  toObject(includeInstance?: boolean): DeleteFeaturesetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteFeaturesetRequest): DeleteFeaturesetRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteFeaturesetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteFeaturesetRequest;
+  static deserializeBinaryFromReader(message: DeleteFeaturesetRequest, reader: jspb.BinaryReader): DeleteFeaturesetRequest;
 }
 
-export namespace DeleteFeaturePipelineRunRequest {
+export namespace DeleteFeaturesetRequest {
   export type AsObject = {
     namespace: string,
     name: string,
   }
 }
 
-export class DeleteFeaturePipelineRunResponse extends jspb.Message {
+export class DeleteFeaturesetResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteFeaturePipelineRunResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteFeaturePipelineRunResponse): DeleteFeaturePipelineRunResponse.AsObject;
-  static serializeBinaryToWriter(message: DeleteFeaturePipelineRunResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteFeaturePipelineRunResponse;
-  static deserializeBinaryFromReader(message: DeleteFeaturePipelineRunResponse, reader: jspb.BinaryReader): DeleteFeaturePipelineRunResponse;
+  toObject(includeInstance?: boolean): DeleteFeaturesetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteFeaturesetResponse): DeleteFeaturesetResponse.AsObject;
+  static serializeBinaryToWriter(message: DeleteFeaturesetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteFeaturesetResponse;
+  static deserializeBinaryFromReader(message: DeleteFeaturesetResponse, reader: jspb.BinaryReader): DeleteFeaturesetResponse;
 }
 
-export namespace DeleteFeaturePipelineRunResponse {
+export namespace DeleteFeaturesetResponse {
   export type AsObject = {
   }
 }

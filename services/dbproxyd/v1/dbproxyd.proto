@@ -864,106 +864,72 @@ message DeleteFeatureHistogramRequest {
 
 
 ////////////////////////////////////////////////////////////////
-// FeaturePipeline
+// FeaturesetClass
 ////////////////////////////////////////////////////////////////
 
-message ListFeaturePipelinesRequest {
+message ListFeaturesetClassRequest {
     string namespace   = 1;
     int32 page_size    = 2;
     string page_token  = 3;
 }
 
-message ListFeaturePipelinesResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline items = 1;
+message ListFeaturesetClassResponse {
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass items = 1;
     string next_page_token = 2;
 }
 
-message GetFeaturePipelineRequest {
+message GetFeaturesetClassRequest {
     string namespace = 1;
     string name = 2;
 }
 
-message CreateFeaturePipelineRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
+message CreateFeaturesetClassRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass item = 1;
 }
 
-message UpdateFeaturePipelineRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
+message UpdateFeaturesetClassRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass item = 1;
 }
 
-message DeleteFeaturePipelineRequest {
+message DeleteFeaturesetClassRequest {
     string namespace = 1;
     string name = 2;
 }
 
 
 ////////////////////////////////////////////////////////////////
-// FeaturePipelineRun
+// Featureset
 ////////////////////////////////////////////////////////////////
 
-message ListFeaturePipelineRunsRequest {
+message ListFeaturesetRequest {
     string namespace   = 1;
     int32 page_size    = 2;
     string page_token  = 3;
 }
 
-message ListFeaturePipelineRunsResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun items = 1;
+message ListFeaturesetsResponse {
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset items = 1;
     string next_page_token = 2;
 }
 
-message GetFeaturePipelineRunRequest {
+message GetFeaturesetRequest {
     string namespace = 1;
     string name = 2;
 }
 
-message CreateFeaturePipelineRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun item = 1;
+message CreateFeaturesetRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset item = 1;
 }
 
-message UpdateFeaturePipelineRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun item = 1;
+message UpdateFeaturesetRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset item = 1;
 }
 
-message DeleteFeaturePipelineRunRequest {
+message DeleteFeaturesetRequest {
     string namespace = 1;
     string name = 2;
 }
 
-
-
-////////////////////////////////////////////////////////////////
-// FeatureSource
-////////////////////////////////////////////////////////////////
-
-message ListFeatureSourcesRequest {
-    string namespace   = 1;
-    int32 page_size    = 2;
-    string page_token  = 3;
-}
-
-message ListFeatureSourcesResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource items = 1;
-    string next_page_token = 2;
-}
-
-message GetFeatureSourceRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message CreateFeatureSourceRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource item = 1;
-}
-
-message UpdateFeatureSourceRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource item = 1;
-}
-
-message DeleteFeatureSourceRequest {
-    string namespace = 1;
-    string name = 2;
-}
 
 
 ////////////////////////////////////////////////////////////////
@@ -1988,25 +1954,20 @@ service DatabaseProxyService {
     rpc DeleteFeatureHistogram(DeleteFeatureHistogramRequest) returns (google.protobuf.Empty) {}
 
 
-    rpc ListFeaturePipelines(ListFeaturePipelinesRequest) returns (ListFeaturePipelinesResponse) {}
-    rpc GetFeaturePipeline(GetFeaturePipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline) {}
-    rpc CreateFeaturePipeline(CreateFeaturePipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline) {}
-    rpc UpdateFeaturePipeline(UpdateFeaturePipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline) {}
-    rpc DeleteFeaturePipeline(DeleteFeaturePipelineRequest) returns (google.protobuf.Empty) {}
+    rpc ListFeaturesetClasss(ListFeaturesetClassRequest) returns (ListFeaturesetClassResponse) {}
+    rpc GetFeaturesetClass(GetFeaturesetClassRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass) {}
+    rpc CreateFeaturesetClass(CreateFeaturesetClassRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass) {}
+    rpc UpdateFeaturesetClass(UpdateFeaturesetClassRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass) {}
+    rpc DeleteFeaturesetClass(DeleteFeaturesetClassRequest) returns (google.protobuf.Empty) {}
 
 
-    rpc ListFeaturePipelineRuns(ListFeaturePipelineRunsRequest) returns (ListFeaturePipelineRunsResponse) {}
-    rpc GetFeaturePipelineRun(GetFeaturePipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun) {}
-    rpc CreateFeaturePipelineRun(CreateFeaturePipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun) {}
-    rpc UpdateFeaturePipelineRun(UpdateFeaturePipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun) {}
-    rpc DeleteFeaturePipelineRun(DeleteFeaturePipelineRunRequest) returns (google.protobuf.Empty) {}
+    rpc ListFeaturesets(ListFeaturesetRequest) returns (ListFeaturesetsResponse) {}
+    rpc GetFeatureset(GetFeaturesetRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset) {}
+    rpc CreateFeatureset(CreateFeaturesetRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset) {}
+    rpc UpdateFeatureset(UpdateFeaturesetRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset) {}
+    rpc DeleteFeatureset(DeleteFeaturesetRequest) returns (google.protobuf.Empty) {}
 
 
-    rpc ListFeatureSources(ListFeatureSourcesRequest) returns (ListFeatureSourcesResponse) {}
-    rpc GetFeatureSource(GetFeatureSourceRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource) {}
-    rpc CreateFeatureSource(CreateFeatureSourceRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource) {}
-    rpc UpdateFeatureSource(UpdateFeatureSourceRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSource) {}
-    rpc DeleteFeatureSource(DeleteFeatureSourceRequest) returns (google.protobuf.Empty) {}
 
     rpc ListLabelingPipelines(ListLabelingPipelinesRequest) returns (ListLabelingPipelinesResponse) {}
     rpc GetLabelingPipeline(GetLabelingPipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline) {}

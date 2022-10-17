@@ -5,38 +5,49 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
   creationTimestamp: null
-  name: featureSources.data.modela.ai
+  name: featuresets.data.modela.ai
 spec:
   group: data.modela.ai
   names:
     categories:
     - data
     - modela
-    kind: FeatureSource
-    listKind: FeatureSourceList
-    plural: featureSources
+    kind: Featureset
+    listKind: FeaturesetList
+    plural: featuresets
     shortNames:
-    - fset
-    singular: featureSource
+    - fpr
+    singular: featureset
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
-    - jsonPath: .status.conditions[?(@.type=="Ready")].status
-      name: Ready
+    - jsonPath: .status.phase
+      name: Status
+      type: string
+    - jsonPath: .spec.owner
+      name: Owner
       type: string
     - jsonPath: .spec.versionName
       name: Version
       type: string
-    - jsonPath: .spec.description
-      name: Description
+    - jsonPath: .spec.pipelineName
+      name: Pipeline
       type: string
+    - jsonPath: .status.startTime
+      name: StartTime
+      priority: 1
+      type: date
+    - jsonPath: .status.completionTime
+      name: CompletionTime
+      priority: 1
+      type: date
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: FeatureSource represents a featureSource object
+        description: Featureset represent a feature set object in the feature store.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -51,85 +62,34 @@ spec:
           metadata:
             type: object
           spec:
-            description: FeatureSourceSpec contain the desired state of a FeatureSource.
+            description: FeatureSpec contain the desired state of a Feature
             properties:
-              datasourceRef:
-                description: Datasource ref define the metadata for the features in
-                  this resource which the DataProductVersion describes the version
-                  of
-                properties:
-                  apiVersion:
-                    description: API version of the referent.
-                    type: string
-                  fieldPath:
-                    description: 'If referring to a piece of an object instead of
-                      an entire object, this string should contain a valid JSON/Go
-                      field access statement, such as desiredState.manifest.containers[2].
-                      For example, if the object reference is to a container within
-                      a pod, this would take on a value like: "spec.containers{name}"
-                      (where "name" refers to the name of the container that triggered
-                      the event) or if no container name is specified "spec.containers[2]"
-                      (container with index 2 in this pod). This syntax is chosen
-                      only to have some well-defined way of referencing a part of
-                      an object. TODO: this design is not final and this field is
-                      subject to change in the future.'
-                    type: string
-                  kind:
-                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                    type: string
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                    type: string
-                  namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                    type: string
-                  resourceVersion:
-                    description: 'Specific resourceVersion to which this reference
-                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                    type: string
-                  uid:
-                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                    type: string
-                type: object
-              description:
-                default: ""
-                description: User provided description
-                maxLength: 512
+              className:
+                description: FileName specify the name of the attribute
+                maxLength: 64
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
-              entityRef:
-                default: no-one
-                description: The owner account name
-                properties:
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-                      TODO: Add other useful fields. apiVersion, kind, uid?'
-                    type: string
-                type: object
-              exclude:
-                description: Features to exclude from the data source.
-                items:
-                  type: string
-                type: array
-              include:
-                description: Features to include in this set
-                items:
-                  type: string
-                type: array
               owner:
                 default: no-one
-                description: The owner account name
+                description: The feature owner
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
+              ttl:
+                default: 0
+                description: TTL.
+                format: int32
+                type: integer
               versionName:
-                default: ""
-                description: The product version of the featureSource
+                description: The product version for the feature.
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
             type: object
           status:
-            description: FeatureSourceStatus defines the observed state of FeatureSource
+            description: FeatureStatus defines the observed state of Feature
             properties:
               conditions:
                 items:
-                  description: FeatureSourceCondition describes the state of a deployment
+                  description: FeaturesetRunCondition describes the state of a deployment
                     at a certain point.
                   properties:
                     lastTransitionTime:
@@ -145,7 +105,7 @@ spec:
                       description: The reason for the condition's last transition.
                       type: string
                     status:
-                      description: Status of the condition, one of True, False, Unknown.
+                      description: Status of the condition, one of True, False, Unknown
                       type: string
                     type:
                       description: Type of account condition.
@@ -155,15 +115,70 @@ spec:
                   - type
                   type: object
                 type: array
+              endTime:
+                description: The End time of the run
+                format: date-time
+                type: string
+              failureMessage:
+                description: Update in case of terminal failure message
+                type: string
+              failureReason:
+                description: Update in case of terminal failure Borrowed from cluster
+                  api controller
+                type: string
               lastUpdated:
                 description: Last time the object was updated
                 format: date-time
                 type: string
+              logs:
+                description: Holds the location of log paths
+                properties:
+                  bucketName:
+                    description: The name of the VirtualBucket resource where the
+                      logs are stored
+                    type: string
+                  containers:
+                    description: The collection of ContainerLog objects that describe
+                      the location of logs per container
+                    items:
+                      description: ContainerLog describes the location of logs for
+                        a single Job
+                      properties:
+                        container:
+                          description: The container name
+                          type: string
+                        job:
+                          description: The name of the Job
+                          type: string
+                        key:
+                          description: The path to the log in the bucket
+                          type: string
+                      type: object
+                    type: array
+                type: object
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on
                 format: int64
                 type: integer
+              phase:
+                default: Pending
+                description: The phase of the dataset processing
+                type: string
+              startTime:
+                description: The Start time of the run
+                format: date-time
+                type: string
+              triggeredBy:
+                description: What triggered the run
+                enum:
+                - on-demand
+                - on-schedule
+                - on-new-data
+                - on-github-event
+                - on-concept-drift
+                - on-pref-degradation
+                type: string
             type: object
         required:
         - metadata
