@@ -37111,7 +37111,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceSpec.toO
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    entityref: (f = msg.getEntityref()) && k8s_io_api_core_v1_generated_pb.LocalObjectReference.toObject(includeInstance, f),
+    entityname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     datasourceref: (f = msg.getDatasourceref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     includeList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
     excludeList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
@@ -37164,9 +37164,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceSpec.des
       msg.setOwner(value);
       break;
     case 5:
-      var value = new k8s_io_api_core_v1_generated_pb.LocalObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.LocalObjectReference.deserializeBinaryFromReader);
-      msg.setEntityref(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEntityname(value);
       break;
     case 6:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
@@ -37231,12 +37230,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceSpec.ser
       f
     );
   }
-  f = message.getEntityref();
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       5,
-      f,
-      k8s_io_api_core_v1_generated_pb.LocalObjectReference.serializeBinaryToWriter
+      f
     );
   }
   f = message.getDatasourceref();
@@ -37373,30 +37371,29 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceSpec.pro
 
 
 /**
- * optional k8s.io.api.core.v1.LocalObjectReference entityRef = 5;
- * @return {?proto.k8s.io.api.core.v1.LocalObjectReference}
+ * optional string entityName = 5;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceSpec.prototype.getEntityref = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.LocalObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.LocalObjectReference, 5));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceSpec.prototype.getEntityname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.core.v1.LocalObjectReference|undefined} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceSpec.prototype.setEntityref = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceSpec.prototype.setEntityname = function(value) {
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceSpec.prototype.clearEntityref = function() {
-  return this.setEntityref(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceSpec.prototype.clearEntityname = function() {
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -37404,7 +37401,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceSpec.prototype.hasEntityref = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureSourceSpec.prototype.hasEntityname = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 

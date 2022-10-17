@@ -70,10 +70,10 @@ type FeatureSourceSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
-	// The owner account name
+	// The entity
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	EntityRef v1.LocalObjectReference `json:"entityRef,omitempty" protobuf:"bytes,5,opt,name=entityRef"`
+	EntityName *string `json:"entityName,omitempty" protobuf:"bytes,5,opt,name=entityName"`
 	// Datasource ref define the metadata for the features in this
 	// resource which the DataProductVersion describes the version of
 	// +kubebuilder:validation:Optional

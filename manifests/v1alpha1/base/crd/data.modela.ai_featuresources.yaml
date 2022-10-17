@@ -96,15 +96,10 @@ spec:
                 description: User provided description
                 maxLength: 512
                 type: string
-              entityRef:
+              entityName:
                 default: no-one
-                description: The owner account name
-                properties:
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-                      TODO: Add other useful fields. apiVersion, kind, uid?'
-                    type: string
-                type: object
+                description: The entity
+                type: string
               exclude:
                 description: Features to exclude from the data source.
                 items:

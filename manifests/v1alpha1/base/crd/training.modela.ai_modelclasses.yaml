@@ -17,7 +17,7 @@ spec:
     plural: modelclasses
     shortNames:
     - mc
-    singular: ModelClass
+    singular: modelclass
   scope: Namespaced
   versions:
   - additionalPrinterColumns:

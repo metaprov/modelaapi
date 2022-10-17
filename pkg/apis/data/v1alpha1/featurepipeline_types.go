@@ -88,7 +88,6 @@ type FeaturePipelineSpec struct {
 	// Materialization
 	Materialization *MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,6,opt,name=materialization"`
 	// Family is the feature family
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	FeatureSetRef v1.ObjectReference `json:"featureSetRef,omitempty" protobuf:"bytes,7,opt,name=featureSetRef"`
 	// Resources is the hardware resource req.

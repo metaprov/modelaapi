@@ -45,7 +45,7 @@ type ModelClassCondition struct {
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=modelclasses,singular=ModelClass,shortName=mc,categories={training,modela}
+// +kubebuilder:resource:path=modelclasses,singular=modelclass,shortName=mc,categories={training,modela}
 type ModelClass struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

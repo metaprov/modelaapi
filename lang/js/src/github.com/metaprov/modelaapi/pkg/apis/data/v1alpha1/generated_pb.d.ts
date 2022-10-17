@@ -3563,10 +3563,8 @@ export class FeatureSourceSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): FeatureSourceSpec;
 
-  getEntityref(): k8s_io_api_core_v1_generated_pb.LocalObjectReference | undefined;
-  setEntityref(value?: k8s_io_api_core_v1_generated_pb.LocalObjectReference): FeatureSourceSpec;
-  hasEntityref(): boolean;
-  clearEntityref(): FeatureSourceSpec;
+  getEntityname(): string;
+  setEntityname(value: string): FeatureSourceSpec;
 
   getDatasourceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setDatasourceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeatureSourceSpec;
@@ -3596,7 +3594,7 @@ export namespace FeatureSourceSpec {
     versionname: string,
     description: string,
     owner: string,
-    entityref?: k8s_io_api_core_v1_generated_pb.LocalObjectReference.AsObject,
+    entityname: string,
     datasourceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     includeList: Array<string>,
     excludeList: Array<string>,
