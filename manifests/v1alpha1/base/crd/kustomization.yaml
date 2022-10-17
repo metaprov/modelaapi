@@ -58,6 +58,7 @@ resources:
 - team.modela.ai_todos.yaml
 - training.modela.ai_cronreports.yaml
 - training.modela.ai_modelautobuilders.yaml
+- training.modela.ai_modelclasses.yaml
 - training.modela.ai_modelcompilerruns.yaml
 - training.modela.ai_modelpipelineruns.yaml
 - training.modela.ai_modelpipelines.yaml
