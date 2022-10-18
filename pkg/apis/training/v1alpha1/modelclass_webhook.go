@@ -35,7 +35,7 @@ func DefaultObjective(task catalog.MLTask) catalog.Metric {
 	return catalog.Accuracy
 }
 
-func (study *ModelClass) DefaultFESearchEstimator(task catalog.MLTask) catalog.ClassicEstimatorName {
+func (mclass *ModelClass) DefaultFESearchEstimator(task catalog.MLTask) catalog.ClassicEstimatorName {
 	if task == catalog.BinaryClassification {
 		return catalog.DecisionTreeClassifier
 	}
@@ -51,7 +51,7 @@ func (study *ModelClass) DefaultFESearchEstimator(task catalog.MLTask) catalog.C
 	return catalog.UnknownEstimatorName
 }
 
-func (study *ModelClass) DefaultBaselineEstimator(task catalog.MLTask) catalog.ClassicEstimatorName {
+func (mclass *ModelClass) DefaultBaselineEstimator(task catalog.MLTask) catalog.ClassicEstimatorName {
 	if task == catalog.BinaryClassification {
 		return catalog.RandomForestClassifier
 	}
@@ -69,129 +69,85 @@ func (study *ModelClass) DefaultBaselineEstimator(task catalog.MLTask) catalog.C
 
 var _ webhook.Defaulter = &ModelClass{}
 
-func (modelclass *ModelClass) Default() {
+func (mclass *ModelClass) Default() {
 
-	modelclass.ObjectMeta.Labels[catalog.TenantLabelKey] = modelclass.Spec.LabRef.Namespace
-	modelclass.ObjectMeta.Labels[catalog.LabLabelKey] = modelclass.Spec.LabRef.Name
-	modelclass.ObjectMeta.Labels[catalog.DataProductLabelKey] = *modelclass.Spec.VersionName
+	mclass.ObjectMeta.Labels[catalog.TenantLabelKey] = mclass.Spec.Training.LabRef.Namespace
+	mclass.ObjectMeta.Labels[catalog.LabLabelKey] = mclass.Spec.Training.LabRef.Name
+	mclass.ObjectMeta.Labels[catalog.DataProductLabelKey] = *mclass.Spec.VersionName
 
 }
 
 // validation
 var _ webhook.Validator = &ModelClass{}
 
-func (study *ModelClass) ValidateDelete() error {
+func (mclass *ModelClass) ValidateDelete() error {
 	return nil
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (study *ModelClass) ValidateCreate() error {
-	return study.validate()
+func (mclass *ModelClass) ValidateCreate() error {
+	return mclass.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (study *ModelClass) ValidateUpdate(old runtime.Object) error {
-	return study.validate()
+func (mclass *ModelClass) ValidateUpdate(old runtime.Object) error {
+	return mclass.validate()
 }
 
-func (study *ModelClass) validate() error {
+func (mclass *ModelClass) validate() error {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, study.validateMeta(field.NewPath("metadata"))...)
-	allErrs = append(allErrs, study.validateSpec(field.NewPath("spec"))...)
+	allErrs = append(allErrs, mclass.validateMeta(field.NewPath("metadata"))...)
+	allErrs = append(allErrs, mclass.validateSpec(field.NewPath("spec"))...)
 	if len(allErrs) == 0 {
 		return nil
 	}
 
 	return apierrors.NewInvalid(
 		schema.GroupKind{Group: "training.modela.ai", Kind: "ModelClass"},
-		study.Name, allErrs)
+		mclass.Name, allErrs)
 }
 
-func (study *ModelClass) validateMeta(fldPath *field.Path) field.ErrorList {
+func (mclass *ModelClass) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, study.validateName(fldPath.Child("name"))...)
+	allErrs = append(allErrs, mclass.validateName(fldPath.Child("name"))...)
 	return allErrs
 }
 
-func (study *ModelClass) validateName(fldPath *field.Path) field.ErrorList {
+func (mclass *ModelClass) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	err := common.ValidateResourceName(study.Name)
+	err := common.ValidateResourceName(mclass.Name)
 	if err != nil {
-		allErrs = append(allErrs, field.Invalid(fldPath.Child("Name"), study.Name, err.Error()))
+		allErrs = append(allErrs, field.Invalid(fldPath.Child("Name"), mclass.Name, err.Error()))
 	}
 	return allErrs
 }
 
-func (study *ModelClass) validateSpec(fldPath *field.Path) field.ErrorList {
+func (mclass *ModelClass) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, study.validateTask(fldPath.Child("Task"))...)
-	allErrs = append(allErrs, study.validateDataset(fldPath.Child("Entity"))...)
+	allErrs = append(allErrs, mclass.validateTask(fldPath.Child("Task"))...)
+	allErrs = append(allErrs, mclass.validateDataset(fldPath.Child("Entity"))...)
 	return allErrs
 }
 
 // Validate task checks that the
-func (study *ModelClass) validateDataset(fldPath *field.Path) field.ErrorList {
+func (mclass *ModelClass) validateDataset(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	// Task must be defined.
-	if study.Spec.DatasetName == nil {
-		err := errors.Errorf("dataset name must be defined")
-		allErrs = append(allErrs, field.Invalid(
-			fldPath,
-			study.Spec.Task,
-			err.Error()))
-		return allErrs
-	}
+
 	return allErrs
 }
 
 // Validate task checks that the
-func (study *ModelClass) validateTask(fldPath *field.Path) field.ErrorList {
+func (mclass *ModelClass) validateTask(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	// Task must be defined.
-	if study.Spec.Task == nil {
+	if mclass.Spec.Task == nil {
 		err := errors.Errorf("task must be defined")
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,
-			study.Spec.Task,
+			mclass.Spec.Task,
 			err.Error()))
 		return allErrs
-	}
-
-	if *study.Spec.Task == catalog.Regression && !study.Spec.Search.Objective.IsRegression() {
-		err := errors.Errorf("objective %v is not a regression metric", *study.Spec.Search.Objective)
-		allErrs = append(allErrs, field.Invalid(
-			fldPath,
-			study.Spec.Task,
-			err.Error()))
-	}
-	if *study.Spec.Task == catalog.BinaryClassification && !study.Spec.Search.Objective.IsClassification() {
-		err := errors.Errorf("objective %v is not a binary classification metric", *study.Spec.Search.Objective)
-		allErrs = append(allErrs, field.Invalid(
-			fldPath,
-			study.Spec.Task,
-			err.Error()))
-	}
-	if *study.Spec.Task == catalog.MultiClassification && !study.Spec.Search.Objective.IsMultiClass() {
-		err := errors.Errorf("objective %v is not a multi classification metric", *study.Spec.Search.Objective)
-		allErrs = append(allErrs, field.Invalid(
-			fldPath,
-			study.Spec.Task,
-			err.Error()))
-	}
-	if *study.Spec.Task == catalog.Clustering && !study.Spec.Search.Objective.IsClustering() {
-		err := errors.Errorf("objective %v is not a clustering metric", *study.Spec.Search.Objective)
-		allErrs = append(allErrs, field.Invalid(
-			fldPath,
-			study.Spec.Task,
-			err.Error()))
-	}
-
-	if *study.Spec.Task == catalog.Forecasting && !study.Spec.Search.Objective.IsForecast() {
-		err := errors.Errorf("objective %v is not a forecasting metric", *study.Spec.Search.Objective)
-		allErrs = append(allErrs, field.Invalid(
-			fldPath,
-			study.Spec.Task,
-			err.Error()))
 	}
 
 	return allErrs

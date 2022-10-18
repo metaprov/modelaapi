@@ -20,14 +20,14 @@ import (
 	"k8s.io/client-go/kubernetes/scheme"
 )
 
-func (run *ModelClass) IsMarkedForDeletion() bool {
-	return run.DeletionTimestamp != nil
+func (mclass *ModelClass) IsMarkedForDeletion() bool {
+	return mclass.DeletionTimestamp != nil
 }
 
 //Set up the webhook with the manager.
-func (mc *ModelClass) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (mclass *ModelClass) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(mc).
+		For(mclass).
 		Complete()
 }
 
@@ -35,42 +35,42 @@ func (mc *ModelClass) SetupWebhookWithManager(mgr ctrl.Manager) error {
 // Validate
 //==============================================================================
 
-func (run *ModelClass) JobName() string {
-	return fmt.Sprintf("run-%s", run.Name)
+func (mclass *ModelClass) JobName() string {
+	return fmt.Sprintf("mclass-%s", mclass.Name)
 }
 
-func (run *ModelClass) Age() string {
-	return humanize.Time(run.CreationTimestamp.Time)
+func (mclass *ModelClass) Age() string {
+	return humanize.Time(mclass.CreationTimestamp.Time)
 }
 
 //==============================================================================
 // Finializer
 //==============================================================================
 
-func (run *ModelClass) HasFinalizer() bool {
-	return util.HasFin(&run.ObjectMeta, training.GroupName)
+func (mclass *ModelClass) HasFinalizer() bool {
+	return util.HasFin(&mclass.ObjectMeta, training.GroupName)
 }
-func (run *ModelClass) AddFinalizer()    { util.AddFin(&run.ObjectMeta, training.GroupName) }
-func (run *ModelClass) RemoveFinalizer() { util.RemoveFin(&run.ObjectMeta, training.GroupName) }
+func (mclass *ModelClass) AddFinalizer()    { util.AddFin(&mclass.ObjectMeta, training.GroupName) }
+func (mclass *ModelClass) RemoveFinalizer() { util.RemoveFin(&mclass.ObjectMeta, training.GroupName) }
 
 // Merge or update condition
-func (run *ModelClass) CreateOrUpdateCond(cond ModelClassCondition) {
-	i := run.GetCondIdx(cond.Type)
+func (mclass *ModelClass) CreateOrUpdateCond(cond ModelClassCondition) {
+	i := mclass.GetCondIdx(cond.Type)
 	now := metav1.Now()
-	current := run.Status.Conditions[i]
+	current := mclass.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
 	current.LastTransitionTime = &now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 		current.LastTransitionTime = &now
-		run.Status.Conditions[i] = current
+		mclass.Status.Conditions[i] = current
 	}
-	run.Status.Conditions[i] = current
+	mclass.Status.Conditions[i] = current
 }
 
-func (run *ModelClass) GetCondIdx(t ModelClassConditionType) int {
-	for i, v := range run.Status.Conditions {
+func (mclass *ModelClass) GetCondIdx(t ModelClassConditionType) int {
+	for i, v := range mclass.Status.Conditions {
 		if v.Type == t {
 			return i
 		}
@@ -78,8 +78,8 @@ func (run *ModelClass) GetCondIdx(t ModelClassConditionType) int {
 	return -1
 }
 
-func (run *ModelClass) GetCond(t ModelClassConditionType) ModelClassCondition {
-	for _, v := range run.Status.Conditions {
+func (mclass *ModelClass) GetCond(t ModelClassConditionType) ModelClassCondition {
+	for _, v := range mclass.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
@@ -94,12 +94,12 @@ func (run *ModelClass) GetCond(t ModelClassConditionType) ModelClassCondition {
 
 }
 
-func (run *ModelClass) IsReady() bool {
-	return run.GetCond(ModelClassReady).Status == corev1.ConditionTrue
+func (mclass *ModelClass) IsReady() bool {
+	return mclass.GetCond(ModelClassReady).Status == corev1.ConditionTrue
 }
 
-func (run *ModelClass) Key() string {
-	return fmt.Sprintf("%s/%s/%s", "ters", run.Namespace, run.Name)
+func (mclass *ModelClass) Key() string {
+	return fmt.Sprintf("%s/%s/%s", "ters", mclass.Namespace, mclass.Name)
 }
 
 func ParseModelClassYaml(content []byte) (*ModelClass, error) {
@@ -111,15 +111,15 @@ func ParseModelClassYaml(content []byte) (*ModelClass, error) {
 	return r, nil
 }
 
-func (r *ModelClass) MarkArchived() {
-	r.CreateOrUpdateCond(ModelClassCondition{
+func (mclass *ModelClass) MarkArchived() {
+	mclass.CreateOrUpdateCond(ModelClassCondition{
 		Type:   ModelClassSaved,
 		Status: corev1.ConditionTrue,
 	})
 
 }
 
-func (in *ModelClass) IsFailed() bool {
-	cond := in.GetCond(ModelClassReady)
+func (mclass *ModelClass) IsFailed() bool {
+	cond := mclass.GetCond(ModelClassReady)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(ModelClassReady)
 }
