@@ -39,8 +39,6 @@ func init() {
 // Adds the list of known types to api.Scheme.
 func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
-		&Curtain{},
-		&CurtainList{},
 		&Predictor{},
 		&PredictorList{},
 		&Prediction{},

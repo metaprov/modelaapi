@@ -48,8 +48,6 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 		&FeaturesetClassList{},
 		&Featureset{},
 		&FeaturesetList{},
-		&LabelingPipeline{},
-		&LabelingPipelineRun{},
 		&Entity{},
 		&EntityList{},
 		&DataProduct{},
