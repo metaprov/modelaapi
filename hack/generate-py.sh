@@ -68,7 +68,6 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/common/v1/common.proto \
     github.com/metaprov/modelaapi/services/connection/v1/connection.proto \
     github.com/metaprov/modelaapi/services/review/v1/review.proto \
-    github.com/metaprov/modelaapi/services/curtain/v1/curtain.proto \
     github.com/metaprov/modelaapi/services/data/v1/data.proto \
     github.com/metaprov/modelaapi/services/datapipeline/v1/datapipeline.proto \
     github.com/metaprov/modelaapi/services/datapipelinerun/v1/datapipelinerun.proto \
@@ -87,16 +86,12 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/featureset/v1/featureset.proto \
     github.com/metaprov/modelaapi/services/k8score/v1/k8score.proto \
     github.com/metaprov/modelaapi/services/lab/v1/lab.proto \
-    github.com/metaprov/modelaapi/services/labelingpipeline/v1/labelingpipeline.proto \
-    github.com/metaprov/modelaapi/services/labelingpipelinerun/v1/labelingpipelinerun.proto \
     github.com/metaprov/modelaapi/services/license/v1/license.proto \
     github.com/metaprov/modelaapi/services/model/v1/model.proto \
     github.com/metaprov/modelaapi/services/modelclass/v1/modelclass.proto \
-    github.com/metaprov/modelaapi/services/cronreport/v1/cronreport.proto \
     github.com/metaprov/modelaapi/services/modelautobuilder/v1/modelautobuilder.proto \
     github.com/metaprov/modelaapi/services/modelpipeline/v1/modelpipeline.proto \
     github.com/metaprov/modelaapi/services/modelpipelinerun/v1/modelpipelinerun.proto \
-    github.com/metaprov/modelaapi/services/modelcompilerrun/v1/modelcompilerrun.proto \
     github.com/metaprov/modelaapi/services/notebook/v1/notebook.proto \
     github.com/metaprov/modelaapi/services/notebookrun/v1/notebookrun.proto \
     github.com/metaprov/modelaapi/services/notifier/v1/notifier.proto \

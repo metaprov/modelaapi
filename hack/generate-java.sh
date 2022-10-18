@@ -46,7 +46,6 @@ protoc \
     github.com/metaprov/modelaapi/services/common/v1/common.proto \
     github.com/metaprov/modelaapi/services/connection/v1/connection.proto \
     github.com/metaprov/modelaapi/services/curtain/v1/curtain.proto \
-    github.com/metaprov/modelaapi/services/cronreport/v1/cronreport.proto \
     github.com/metaprov/modelaapi/services/data/v1/data.proto \
     github.com/metaprov/modelaapi/services/sqlquery/v1/sqlquery.proto \
     github.com/metaprov/modelaapi/services/webrequestrun/v1/webrequestrun.proto \
@@ -63,8 +62,6 @@ protoc \
     github.com/metaprov/modelaapi/services/featureset/v1/featureset.proto \
     github.com/metaprov/modelaapi/services/k8score/v1/k8score.proto \
     github.com/metaprov/modelaapi/services/lab/v1/lab.proto \
-    github.com/metaprov/modelaapi/services/labelingpipeline/v1/labelingpipeline.proto \
-    github.com/metaprov/modelaapi/services/labelingpipelinerun/v1/labelingpipelinerun.proto \
     github.com/metaprov/modelaapi/services/license/v1/license.proto \
     github.com/metaprov/modelaapi/services/model/v1/model.proto \
     github.com/metaprov/modelaapi/services/modelclass/v1/modelclass.proto \

@@ -178,16 +178,6 @@ type DatabaseProxyServiceClient interface {
 	CreateFeatureset(ctx context.Context, in *CreateFeaturesetRequest, opts ...grpc.CallOption) (*v1alpha12.Featureset, error)
 	UpdateFeatureset(ctx context.Context, in *UpdateFeaturesetRequest, opts ...grpc.CallOption) (*v1alpha12.Featureset, error)
 	DeleteFeatureset(ctx context.Context, in *DeleteFeaturesetRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	ListLabelingPipelines(ctx context.Context, in *ListLabelingPipelinesRequest, opts ...grpc.CallOption) (*ListLabelingPipelinesResponse, error)
-	GetLabelingPipeline(ctx context.Context, in *GetLabelingPipelineRequest, opts ...grpc.CallOption) (*v1alpha12.LabelingPipeline, error)
-	CreateLabelingPipeline(ctx context.Context, in *CreateLabelingPipelineRequest, opts ...grpc.CallOption) (*v1alpha12.LabelingPipeline, error)
-	UpdateLabelingPipeline(ctx context.Context, in *UpdateLabelingPipelineRequest, opts ...grpc.CallOption) (*v1alpha12.LabelingPipeline, error)
-	DeleteLabelingPipeline(ctx context.Context, in *DeleteLabelingPipelineRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	ListLabelingPipelineRuns(ctx context.Context, in *ListLabelingPipelineRunsRequest, opts ...grpc.CallOption) (*ListLabelingPipelineRunsResponse, error)
-	GetLabelingPipelineRun(ctx context.Context, in *GetLabelingPipelineRunRequest, opts ...grpc.CallOption) (*v1alpha12.LabelingPipelineRun, error)
-	CreateLabelingPipelineRun(ctx context.Context, in *CreateLabelingPipelineRunRequest, opts ...grpc.CallOption) (*v1alpha12.LabelingPipelineRun, error)
-	UpdateLabelingPipelineRun(ctx context.Context, in *UpdateLabelingPipelineRunRequest, opts ...grpc.CallOption) (*v1alpha12.LabelingPipelineRun, error)
-	DeleteLabelingPipelineRun(ctx context.Context, in *DeleteLabelingPipelineRunRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 	ListRecipes(ctx context.Context, in *ListRecipesRequest, opts ...grpc.CallOption) (*ListRecipesResponse, error)
 	GetRecipe(ctx context.Context, in *GetRecipeRequest, opts ...grpc.CallOption) (*v1alpha12.Recipe, error)
 	CreateRecipe(ctx context.Context, in *CreateRecipeRequest, opts ...grpc.CallOption) (*v1alpha12.Recipe, error)
@@ -228,11 +218,6 @@ type DatabaseProxyServiceClient interface {
 	CreateReport(ctx context.Context, in *CreateReportRequest, opts ...grpc.CallOption) (*v1alpha13.Report, error)
 	UpdateReport(ctx context.Context, in *UpdateReportRequest, opts ...grpc.CallOption) (*v1alpha13.Report, error)
 	DeleteReport(ctx context.Context, in *DeleteReportRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	ListCronReports(ctx context.Context, in *ListCronReportsRequest, opts ...grpc.CallOption) (*ListCronReportsResponse, error)
-	GetCronReport(ctx context.Context, in *GetCronReportRequest, opts ...grpc.CallOption) (*v1alpha13.CronReport, error)
-	CreateCronReport(ctx context.Context, in *CreateCronReportRequest, opts ...grpc.CallOption) (*v1alpha13.CronReport, error)
-	UpdateCronReport(ctx context.Context, in *UpdateCronReportRequest, opts ...grpc.CallOption) (*v1alpha13.CronReport, error)
-	DeleteCronReport(ctx context.Context, in *DeleteCronReportRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 	ListStudies(ctx context.Context, in *ListStudiesRequest, opts ...grpc.CallOption) (*ListStudiesResponse, error)
 	GetStudy(ctx context.Context, in *GetStudyRequest, opts ...grpc.CallOption) (*v1alpha13.Study, error)
 	CreateStudy(ctx context.Context, in *CreateStudyRequest, opts ...grpc.CallOption) (*v1alpha13.Study, error)
@@ -258,11 +243,6 @@ type DatabaseProxyServiceClient interface {
 	CreatePredictor(ctx context.Context, in *CreatePredictorRequest, opts ...grpc.CallOption) (*v1alpha14.Predictor, error)
 	UpdatePredictor(ctx context.Context, in *UpdatePredictorRequest, opts ...grpc.CallOption) (*v1alpha14.Predictor, error)
 	DeletePredictor(ctx context.Context, in *DeletePredictorRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	ListCurtains(ctx context.Context, in *ListCurtainsRequest, opts ...grpc.CallOption) (*ListCurtainsResponse, error)
-	GetCurtain(ctx context.Context, in *GetCurtainRequest, opts ...grpc.CallOption) (*v1alpha14.Curtain, error)
-	CreateCurtain(ctx context.Context, in *CreateCurtainRequest, opts ...grpc.CallOption) (*v1alpha14.Curtain, error)
-	UpdateCurtain(ctx context.Context, in *UpdateCurtainRequest, opts ...grpc.CallOption) (*v1alpha14.Curtain, error)
-	DeleteCurtain(ctx context.Context, in *DeleteCurtainRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 	ListReviews(ctx context.Context, in *ListReviewsRequest, opts ...grpc.CallOption) (*ListReviewsResponse, error)
 	GetReview(ctx context.Context, in *GetReviewRequest, opts ...grpc.CallOption) (*v1alpha11.Review, error)
 	CreateReview(ctx context.Context, in *CreateReviewRequest, opts ...grpc.CallOption) (*v1alpha11.Review, error)
@@ -1528,96 +1508,6 @@ func (c *databaseProxyServiceClient) DeleteFeatureset(ctx context.Context, in *D
 	return out, nil
 }
 
-func (c *databaseProxyServiceClient) ListLabelingPipelines(ctx context.Context, in *ListLabelingPipelinesRequest, opts ...grpc.CallOption) (*ListLabelingPipelinesResponse, error) {
-	out := new(ListLabelingPipelinesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListLabelingPipelines", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) GetLabelingPipeline(ctx context.Context, in *GetLabelingPipelineRequest, opts ...grpc.CallOption) (*v1alpha12.LabelingPipeline, error) {
-	out := new(v1alpha12.LabelingPipeline)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetLabelingPipeline", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) CreateLabelingPipeline(ctx context.Context, in *CreateLabelingPipelineRequest, opts ...grpc.CallOption) (*v1alpha12.LabelingPipeline, error) {
-	out := new(v1alpha12.LabelingPipeline)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateLabelingPipeline", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) UpdateLabelingPipeline(ctx context.Context, in *UpdateLabelingPipelineRequest, opts ...grpc.CallOption) (*v1alpha12.LabelingPipeline, error) {
-	out := new(v1alpha12.LabelingPipeline)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLabelingPipeline", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) DeleteLabelingPipeline(ctx context.Context, in *DeleteLabelingPipelineRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLabelingPipeline", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) ListLabelingPipelineRuns(ctx context.Context, in *ListLabelingPipelineRunsRequest, opts ...grpc.CallOption) (*ListLabelingPipelineRunsResponse, error) {
-	out := new(ListLabelingPipelineRunsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListLabelingPipelineRuns", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) GetLabelingPipelineRun(ctx context.Context, in *GetLabelingPipelineRunRequest, opts ...grpc.CallOption) (*v1alpha12.LabelingPipelineRun, error) {
-	out := new(v1alpha12.LabelingPipelineRun)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetLabelingPipelineRun", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) CreateLabelingPipelineRun(ctx context.Context, in *CreateLabelingPipelineRunRequest, opts ...grpc.CallOption) (*v1alpha12.LabelingPipelineRun, error) {
-	out := new(v1alpha12.LabelingPipelineRun)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateLabelingPipelineRun", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) UpdateLabelingPipelineRun(ctx context.Context, in *UpdateLabelingPipelineRunRequest, opts ...grpc.CallOption) (*v1alpha12.LabelingPipelineRun, error) {
-	out := new(v1alpha12.LabelingPipelineRun)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLabelingPipelineRun", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) DeleteLabelingPipelineRun(ctx context.Context, in *DeleteLabelingPipelineRunRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLabelingPipelineRun", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *databaseProxyServiceClient) ListRecipes(ctx context.Context, in *ListRecipesRequest, opts ...grpc.CallOption) (*ListRecipesResponse, error) {
 	out := new(ListRecipesResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListRecipes", in, out, opts...)
@@ -1978,51 +1868,6 @@ func (c *databaseProxyServiceClient) DeleteReport(ctx context.Context, in *Delet
 	return out, nil
 }
 
-func (c *databaseProxyServiceClient) ListCronReports(ctx context.Context, in *ListCronReportsRequest, opts ...grpc.CallOption) (*ListCronReportsResponse, error) {
-	out := new(ListCronReportsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCronReports", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) GetCronReport(ctx context.Context, in *GetCronReportRequest, opts ...grpc.CallOption) (*v1alpha13.CronReport, error) {
-	out := new(v1alpha13.CronReport)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCronReport", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) CreateCronReport(ctx context.Context, in *CreateCronReportRequest, opts ...grpc.CallOption) (*v1alpha13.CronReport, error) {
-	out := new(v1alpha13.CronReport)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronReport", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) UpdateCronReport(ctx context.Context, in *UpdateCronReportRequest, opts ...grpc.CallOption) (*v1alpha13.CronReport, error) {
-	out := new(v1alpha13.CronReport)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronReport", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) DeleteCronReport(ctx context.Context, in *DeleteCronReportRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronReport", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *databaseProxyServiceClient) ListStudies(ctx context.Context, in *ListStudiesRequest, opts ...grpc.CallOption) (*ListStudiesResponse, error) {
 	out := new(ListStudiesResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListStudies", in, out, opts...)
@@ -2242,51 +2087,6 @@ func (c *databaseProxyServiceClient) UpdatePredictor(ctx context.Context, in *Up
 func (c *databaseProxyServiceClient) DeletePredictor(ctx context.Context, in *DeletePredictorRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
 	out := new(empty.Empty)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeletePredictor", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) ListCurtains(ctx context.Context, in *ListCurtainsRequest, opts ...grpc.CallOption) (*ListCurtainsResponse, error) {
-	out := new(ListCurtainsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCurtains", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) GetCurtain(ctx context.Context, in *GetCurtainRequest, opts ...grpc.CallOption) (*v1alpha14.Curtain, error) {
-	out := new(v1alpha14.Curtain)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCurtain", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) CreateCurtain(ctx context.Context, in *CreateCurtainRequest, opts ...grpc.CallOption) (*v1alpha14.Curtain, error) {
-	out := new(v1alpha14.Curtain)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCurtain", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) UpdateCurtain(ctx context.Context, in *UpdateCurtainRequest, opts ...grpc.CallOption) (*v1alpha14.Curtain, error) {
-	out := new(v1alpha14.Curtain)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCurtain", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) DeleteCurtain(ctx context.Context, in *DeleteCurtainRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCurtain", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2807,16 +2607,6 @@ type DatabaseProxyServiceServer interface {
 	CreateFeatureset(context.Context, *CreateFeaturesetRequest) (*v1alpha12.Featureset, error)
 	UpdateFeatureset(context.Context, *UpdateFeaturesetRequest) (*v1alpha12.Featureset, error)
 	DeleteFeatureset(context.Context, *DeleteFeaturesetRequest) (*empty.Empty, error)
-	ListLabelingPipelines(context.Context, *ListLabelingPipelinesRequest) (*ListLabelingPipelinesResponse, error)
-	GetLabelingPipeline(context.Context, *GetLabelingPipelineRequest) (*v1alpha12.LabelingPipeline, error)
-	CreateLabelingPipeline(context.Context, *CreateLabelingPipelineRequest) (*v1alpha12.LabelingPipeline, error)
-	UpdateLabelingPipeline(context.Context, *UpdateLabelingPipelineRequest) (*v1alpha12.LabelingPipeline, error)
-	DeleteLabelingPipeline(context.Context, *DeleteLabelingPipelineRequest) (*empty.Empty, error)
-	ListLabelingPipelineRuns(context.Context, *ListLabelingPipelineRunsRequest) (*ListLabelingPipelineRunsResponse, error)
-	GetLabelingPipelineRun(context.Context, *GetLabelingPipelineRunRequest) (*v1alpha12.LabelingPipelineRun, error)
-	CreateLabelingPipelineRun(context.Context, *CreateLabelingPipelineRunRequest) (*v1alpha12.LabelingPipelineRun, error)
-	UpdateLabelingPipelineRun(context.Context, *UpdateLabelingPipelineRunRequest) (*v1alpha12.LabelingPipelineRun, error)
-	DeleteLabelingPipelineRun(context.Context, *DeleteLabelingPipelineRunRequest) (*empty.Empty, error)
 	ListRecipes(context.Context, *ListRecipesRequest) (*ListRecipesResponse, error)
 	GetRecipe(context.Context, *GetRecipeRequest) (*v1alpha12.Recipe, error)
 	CreateRecipe(context.Context, *CreateRecipeRequest) (*v1alpha12.Recipe, error)
@@ -2857,11 +2647,6 @@ type DatabaseProxyServiceServer interface {
 	CreateReport(context.Context, *CreateReportRequest) (*v1alpha13.Report, error)
 	UpdateReport(context.Context, *UpdateReportRequest) (*v1alpha13.Report, error)
 	DeleteReport(context.Context, *DeleteReportRequest) (*empty.Empty, error)
-	ListCronReports(context.Context, *ListCronReportsRequest) (*ListCronReportsResponse, error)
-	GetCronReport(context.Context, *GetCronReportRequest) (*v1alpha13.CronReport, error)
-	CreateCronReport(context.Context, *CreateCronReportRequest) (*v1alpha13.CronReport, error)
-	UpdateCronReport(context.Context, *UpdateCronReportRequest) (*v1alpha13.CronReport, error)
-	DeleteCronReport(context.Context, *DeleteCronReportRequest) (*empty.Empty, error)
 	ListStudies(context.Context, *ListStudiesRequest) (*ListStudiesResponse, error)
 	GetStudy(context.Context, *GetStudyRequest) (*v1alpha13.Study, error)
 	CreateStudy(context.Context, *CreateStudyRequest) (*v1alpha13.Study, error)
@@ -2887,11 +2672,6 @@ type DatabaseProxyServiceServer interface {
 	CreatePredictor(context.Context, *CreatePredictorRequest) (*v1alpha14.Predictor, error)
 	UpdatePredictor(context.Context, *UpdatePredictorRequest) (*v1alpha14.Predictor, error)
 	DeletePredictor(context.Context, *DeletePredictorRequest) (*empty.Empty, error)
-	ListCurtains(context.Context, *ListCurtainsRequest) (*ListCurtainsResponse, error)
-	GetCurtain(context.Context, *GetCurtainRequest) (*v1alpha14.Curtain, error)
-	CreateCurtain(context.Context, *CreateCurtainRequest) (*v1alpha14.Curtain, error)
-	UpdateCurtain(context.Context, *UpdateCurtainRequest) (*v1alpha14.Curtain, error)
-	DeleteCurtain(context.Context, *DeleteCurtainRequest) (*empty.Empty, error)
 	ListReviews(context.Context, *ListReviewsRequest) (*ListReviewsResponse, error)
 	GetReview(context.Context, *GetReviewRequest) (*v1alpha11.Review, error)
 	CreateReview(context.Context, *CreateReviewRequest) (*v1alpha11.Review, error)
@@ -3344,36 +3124,6 @@ func (UnimplementedDatabaseProxyServiceServer) UpdateFeatureset(context.Context,
 func (UnimplementedDatabaseProxyServiceServer) DeleteFeatureset(context.Context, *DeleteFeaturesetRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteFeatureset not implemented")
 }
-func (UnimplementedDatabaseProxyServiceServer) ListLabelingPipelines(context.Context, *ListLabelingPipelinesRequest) (*ListLabelingPipelinesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListLabelingPipelines not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) GetLabelingPipeline(context.Context, *GetLabelingPipelineRequest) (*v1alpha12.LabelingPipeline, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetLabelingPipeline not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) CreateLabelingPipeline(context.Context, *CreateLabelingPipelineRequest) (*v1alpha12.LabelingPipeline, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateLabelingPipeline not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) UpdateLabelingPipeline(context.Context, *UpdateLabelingPipelineRequest) (*v1alpha12.LabelingPipeline, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateLabelingPipeline not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) DeleteLabelingPipeline(context.Context, *DeleteLabelingPipelineRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteLabelingPipeline not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) ListLabelingPipelineRuns(context.Context, *ListLabelingPipelineRunsRequest) (*ListLabelingPipelineRunsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListLabelingPipelineRuns not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) GetLabelingPipelineRun(context.Context, *GetLabelingPipelineRunRequest) (*v1alpha12.LabelingPipelineRun, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetLabelingPipelineRun not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) CreateLabelingPipelineRun(context.Context, *CreateLabelingPipelineRunRequest) (*v1alpha12.LabelingPipelineRun, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateLabelingPipelineRun not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) UpdateLabelingPipelineRun(context.Context, *UpdateLabelingPipelineRunRequest) (*v1alpha12.LabelingPipelineRun, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateLabelingPipelineRun not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) DeleteLabelingPipelineRun(context.Context, *DeleteLabelingPipelineRunRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteLabelingPipelineRun not implemented")
-}
 func (UnimplementedDatabaseProxyServiceServer) ListRecipes(context.Context, *ListRecipesRequest) (*ListRecipesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListRecipes not implemented")
 }
@@ -3494,21 +3244,6 @@ func (UnimplementedDatabaseProxyServiceServer) UpdateReport(context.Context, *Up
 func (UnimplementedDatabaseProxyServiceServer) DeleteReport(context.Context, *DeleteReportRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteReport not implemented")
 }
-func (UnimplementedDatabaseProxyServiceServer) ListCronReports(context.Context, *ListCronReportsRequest) (*ListCronReportsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListCronReports not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) GetCronReport(context.Context, *GetCronReportRequest) (*v1alpha13.CronReport, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCronReport not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) CreateCronReport(context.Context, *CreateCronReportRequest) (*v1alpha13.CronReport, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateCronReport not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) UpdateCronReport(context.Context, *UpdateCronReportRequest) (*v1alpha13.CronReport, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateCronReport not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) DeleteCronReport(context.Context, *DeleteCronReportRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteCronReport not implemented")
-}
 func (UnimplementedDatabaseProxyServiceServer) ListStudies(context.Context, *ListStudiesRequest) (*ListStudiesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListStudies not implemented")
 }
@@ -3583,21 +3318,6 @@ func (UnimplementedDatabaseProxyServiceServer) UpdatePredictor(context.Context, 
 }
 func (UnimplementedDatabaseProxyServiceServer) DeletePredictor(context.Context, *DeletePredictorRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeletePredictor not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) ListCurtains(context.Context, *ListCurtainsRequest) (*ListCurtainsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListCurtains not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) GetCurtain(context.Context, *GetCurtainRequest) (*v1alpha14.Curtain, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCurtain not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) CreateCurtain(context.Context, *CreateCurtainRequest) (*v1alpha14.Curtain, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateCurtain not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) UpdateCurtain(context.Context, *UpdateCurtainRequest) (*v1alpha14.Curtain, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateCurtain not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) DeleteCurtain(context.Context, *DeleteCurtainRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteCurtain not implemented")
 }
 func (UnimplementedDatabaseProxyServiceServer) ListReviews(context.Context, *ListReviewsRequest) (*ListReviewsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListReviews not implemented")
@@ -6162,186 +5882,6 @@ func _DatabaseProxyService_DeleteFeatureset_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatabaseProxyService_ListLabelingPipelines_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListLabelingPipelinesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).ListLabelingPipelines(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListLabelingPipelines",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).ListLabelingPipelines(ctx, req.(*ListLabelingPipelinesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_GetLabelingPipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetLabelingPipelineRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).GetLabelingPipeline(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetLabelingPipeline",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).GetLabelingPipeline(ctx, req.(*GetLabelingPipelineRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_CreateLabelingPipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateLabelingPipelineRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).CreateLabelingPipeline(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateLabelingPipeline",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).CreateLabelingPipeline(ctx, req.(*CreateLabelingPipelineRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_UpdateLabelingPipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateLabelingPipelineRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).UpdateLabelingPipeline(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLabelingPipeline",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).UpdateLabelingPipeline(ctx, req.(*UpdateLabelingPipelineRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_DeleteLabelingPipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteLabelingPipelineRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).DeleteLabelingPipeline(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLabelingPipeline",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).DeleteLabelingPipeline(ctx, req.(*DeleteLabelingPipelineRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_ListLabelingPipelineRuns_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListLabelingPipelineRunsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).ListLabelingPipelineRuns(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListLabelingPipelineRuns",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).ListLabelingPipelineRuns(ctx, req.(*ListLabelingPipelineRunsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_GetLabelingPipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetLabelingPipelineRunRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).GetLabelingPipelineRun(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetLabelingPipelineRun",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).GetLabelingPipelineRun(ctx, req.(*GetLabelingPipelineRunRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_CreateLabelingPipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateLabelingPipelineRunRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).CreateLabelingPipelineRun(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateLabelingPipelineRun",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).CreateLabelingPipelineRun(ctx, req.(*CreateLabelingPipelineRunRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_UpdateLabelingPipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateLabelingPipelineRunRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).UpdateLabelingPipelineRun(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLabelingPipelineRun",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).UpdateLabelingPipelineRun(ctx, req.(*UpdateLabelingPipelineRunRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_DeleteLabelingPipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteLabelingPipelineRunRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).DeleteLabelingPipelineRun(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLabelingPipelineRun",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).DeleteLabelingPipelineRun(ctx, req.(*DeleteLabelingPipelineRunRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _DatabaseProxyService_ListRecipes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListRecipesRequest)
 	if err := dec(in); err != nil {
@@ -7062,96 +6602,6 @@ func _DatabaseProxyService_DeleteReport_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatabaseProxyService_ListCronReports_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListCronReportsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).ListCronReports(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCronReports",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).ListCronReports(ctx, req.(*ListCronReportsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_GetCronReport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCronReportRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).GetCronReport(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCronReport",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).GetCronReport(ctx, req.(*GetCronReportRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_CreateCronReport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateCronReportRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).CreateCronReport(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronReport",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).CreateCronReport(ctx, req.(*CreateCronReportRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_UpdateCronReport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateCronReportRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).UpdateCronReport(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronReport",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).UpdateCronReport(ctx, req.(*UpdateCronReportRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_DeleteCronReport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteCronReportRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).DeleteCronReport(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronReport",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).DeleteCronReport(ctx, req.(*DeleteCronReportRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _DatabaseProxyService_ListStudies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListStudiesRequest)
 	if err := dec(in); err != nil {
@@ -7598,96 +7048,6 @@ func _DatabaseProxyService_DeletePredictor_Handler(srv interface{}, ctx context.
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DatabaseProxyServiceServer).DeletePredictor(ctx, req.(*DeletePredictorRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_ListCurtains_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListCurtainsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).ListCurtains(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCurtains",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).ListCurtains(ctx, req.(*ListCurtainsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_GetCurtain_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCurtainRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).GetCurtain(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCurtain",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).GetCurtain(ctx, req.(*GetCurtainRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_CreateCurtain_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateCurtainRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).CreateCurtain(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCurtain",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).CreateCurtain(ctx, req.(*CreateCurtainRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_UpdateCurtain_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateCurtainRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).UpdateCurtain(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCurtain",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).UpdateCurtain(ctx, req.(*UpdateCurtainRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_DeleteCurtain_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteCurtainRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).DeleteCurtain(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCurtain",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).DeleteCurtain(ctx, req.(*DeleteCurtainRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -8960,46 +8320,6 @@ var DatabaseProxyService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DatabaseProxyService_DeleteFeatureset_Handler,
 		},
 		{
-			MethodName: "ListLabelingPipelines",
-			Handler:    _DatabaseProxyService_ListLabelingPipelines_Handler,
-		},
-		{
-			MethodName: "GetLabelingPipeline",
-			Handler:    _DatabaseProxyService_GetLabelingPipeline_Handler,
-		},
-		{
-			MethodName: "CreateLabelingPipeline",
-			Handler:    _DatabaseProxyService_CreateLabelingPipeline_Handler,
-		},
-		{
-			MethodName: "UpdateLabelingPipeline",
-			Handler:    _DatabaseProxyService_UpdateLabelingPipeline_Handler,
-		},
-		{
-			MethodName: "DeleteLabelingPipeline",
-			Handler:    _DatabaseProxyService_DeleteLabelingPipeline_Handler,
-		},
-		{
-			MethodName: "ListLabelingPipelineRuns",
-			Handler:    _DatabaseProxyService_ListLabelingPipelineRuns_Handler,
-		},
-		{
-			MethodName: "GetLabelingPipelineRun",
-			Handler:    _DatabaseProxyService_GetLabelingPipelineRun_Handler,
-		},
-		{
-			MethodName: "CreateLabelingPipelineRun",
-			Handler:    _DatabaseProxyService_CreateLabelingPipelineRun_Handler,
-		},
-		{
-			MethodName: "UpdateLabelingPipelineRun",
-			Handler:    _DatabaseProxyService_UpdateLabelingPipelineRun_Handler,
-		},
-		{
-			MethodName: "DeleteLabelingPipelineRun",
-			Handler:    _DatabaseProxyService_DeleteLabelingPipelineRun_Handler,
-		},
-		{
 			MethodName: "ListRecipes",
 			Handler:    _DatabaseProxyService_ListRecipes_Handler,
 		},
@@ -9160,26 +8480,6 @@ var DatabaseProxyService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DatabaseProxyService_DeleteReport_Handler,
 		},
 		{
-			MethodName: "ListCronReports",
-			Handler:    _DatabaseProxyService_ListCronReports_Handler,
-		},
-		{
-			MethodName: "GetCronReport",
-			Handler:    _DatabaseProxyService_GetCronReport_Handler,
-		},
-		{
-			MethodName: "CreateCronReport",
-			Handler:    _DatabaseProxyService_CreateCronReport_Handler,
-		},
-		{
-			MethodName: "UpdateCronReport",
-			Handler:    _DatabaseProxyService_UpdateCronReport_Handler,
-		},
-		{
-			MethodName: "DeleteCronReport",
-			Handler:    _DatabaseProxyService_DeleteCronReport_Handler,
-		},
-		{
 			MethodName: "ListStudies",
 			Handler:    _DatabaseProxyService_ListStudies_Handler,
 		},
@@ -9278,26 +8578,6 @@ var DatabaseProxyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeletePredictor",
 			Handler:    _DatabaseProxyService_DeletePredictor_Handler,
-		},
-		{
-			MethodName: "ListCurtains",
-			Handler:    _DatabaseProxyService_ListCurtains_Handler,
-		},
-		{
-			MethodName: "GetCurtain",
-			Handler:    _DatabaseProxyService_GetCurtain_Handler,
-		},
-		{
-			MethodName: "CreateCurtain",
-			Handler:    _DatabaseProxyService_CreateCurtain_Handler,
-		},
-		{
-			MethodName: "UpdateCurtain",
-			Handler:    _DatabaseProxyService_UpdateCurtain_Handler,
-		},
-		{
-			MethodName: "DeleteCurtain",
-			Handler:    _DatabaseProxyService_DeleteCurtain_Handler,
 		},
 		{
 			MethodName: "ListReviews",

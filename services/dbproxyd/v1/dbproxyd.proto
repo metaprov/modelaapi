@@ -932,72 +932,6 @@ message DeleteFeaturesetRequest {
 
 
 
-////////////////////////////////////////////////////////////////
-// LabelingPipeline
-////////////////////////////////////////////////////////////////
-message ListLabelingPipelinesRequest {
-    string namespace   = 1;
-    int32 page_size    = 2;
-    string page_token  = 3;
-}
-
-message ListLabelingPipelinesResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline items = 1;
-    string next_page_token = 2;
-}
-
-message GetLabelingPipelineRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message CreateLabelingPipelineRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
-}
-
-message UpdateLabelingPipelineRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
-}
-
-message DeleteLabelingPipelineRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-
-////////////////////////////////////////////////////////////////
-// LabelingPipelineRun
-////////////////////////////////////////////////////////////////
-
-message ListLabelingPipelineRunsRequest {
-    string namespace   = 1;
-    int32 page_size    = 2;
-    string page_token  = 3;
-}
-
-message ListLabelingPipelineRunsResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRun items = 1;
-    string next_page_token = 2;
-}
-
-message GetLabelingPipelineRunRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message CreateLabelingPipelineRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRun item = 1;
-}
-
-message UpdateLabelingPipelineRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRun item = 1;
-}
-
-message DeleteLabelingPipelineRunRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
 
 ////////////////////////////////////////////////////////////////
 // Recipe
@@ -1305,42 +1239,6 @@ message DeleteReportRequest {
     string name = 2;
 }
 
-
-////////////////////////////////////////////////////////////////
-// CronReport
-////////////////////////////////////////////////////////////////
-
-message ListCronReportsRequest {
-    string namespace   = 1;
-    int32 page_size    = 2;
-    string page_token  = 3;
-}
-
-message ListCronReportsResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport items = 1;
-    string next_page_token = 2;
-}
-
-message GetCronReportRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message CreateCronReportRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport item = 1;
-}
-
-message UpdateCronReportRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport item = 1;
-}
-
-message DeleteCronReportRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-
-
 ////////////////////////////////////////////////////////////////
 // Study
 ////////////////////////////////////////////////////////////////
@@ -1407,41 +1305,6 @@ message DeleteCronPredictionRequest {
     string namespace = 1;
     string name = 2;
 }
-
-
-////////////////////////////////////////////////////////////////
-// Curtain
-////////////////////////////////////////////////////////////////
-
-message ListCurtainsRequest {
-    string namespace   = 1;
-    int32 page_size    = 2;
-    string page_token  = 3;
-}
-
-message ListCurtainsResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain items = 1;
-    string next_page_token = 2;
-}
-
-message GetCurtainRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message CreateCurtainRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
-}
-
-message UpdateCurtainRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
-}
-
-message DeleteCurtainRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
 
 ////////////////////////////////////////////////////////////////
 // Prediction
@@ -1967,20 +1830,6 @@ service DatabaseProxyService {
     rpc UpdateFeatureset(UpdateFeaturesetRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset) {}
     rpc DeleteFeatureset(DeleteFeaturesetRequest) returns (google.protobuf.Empty) {}
 
-
-
-    rpc ListLabelingPipelines(ListLabelingPipelinesRequest) returns (ListLabelingPipelinesResponse) {}
-    rpc GetLabelingPipeline(GetLabelingPipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline) {}
-    rpc CreateLabelingPipeline(CreateLabelingPipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline) {}
-    rpc UpdateLabelingPipeline(UpdateLabelingPipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline) {}
-    rpc DeleteLabelingPipeline(DeleteLabelingPipelineRequest) returns (google.protobuf.Empty) {}
-
-    rpc ListLabelingPipelineRuns(ListLabelingPipelineRunsRequest) returns (ListLabelingPipelineRunsResponse) {}
-    rpc GetLabelingPipelineRun(GetLabelingPipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRun) {}
-    rpc CreateLabelingPipelineRun(CreateLabelingPipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRun) {}
-    rpc UpdateLabelingPipelineRun(UpdateLabelingPipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRun) {}
-    rpc DeleteLabelingPipelineRun(DeleteLabelingPipelineRunRequest) returns (google.protobuf.Empty) {}
-
     rpc ListRecipes(ListRecipesRequest) returns (ListRecipesResponse) {}
     rpc GetRecipe(GetRecipeRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe) {}
     rpc CreateRecipe(CreateRecipeRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe) {}
@@ -2029,11 +1878,6 @@ service DatabaseProxyService {
     rpc UpdateReport(UpdateReportRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report) {}
     rpc DeleteReport(DeleteReportRequest) returns (google.protobuf.Empty) {}
 
-    rpc ListCronReports(ListCronReportsRequest) returns (ListCronReportsResponse) {}
-    rpc GetCronReport(GetCronReportRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport) {}
-    rpc CreateCronReport(CreateCronReportRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport) {}
-    rpc UpdateCronReport(UpdateCronReportRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport) {}
-    rpc DeleteCronReport(DeleteCronReportRequest) returns (google.protobuf.Empty) {}
 
     rpc ListStudies(ListStudiesRequest) returns (ListStudiesResponse) {}
     rpc GetStudy(GetStudyRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study) {}
@@ -2065,12 +1909,6 @@ service DatabaseProxyService {
     rpc CreatePredictor(CreatePredictorRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor) {}
     rpc UpdatePredictor(UpdatePredictorRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor) {}
     rpc DeletePredictor(DeletePredictorRequest) returns (google.protobuf.Empty) {}
-
-    rpc ListCurtains(ListCurtainsRequest) returns (ListCurtainsResponse) {}
-    rpc GetCurtain(GetCurtainRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain) {}
-    rpc CreateCurtain(CreateCurtainRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain) {}
-    rpc UpdateCurtain(UpdateCurtainRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain) {}
-    rpc DeleteCurtain(DeleteCurtainRequest) returns (google.protobuf.Empty) {}
 
     rpc ListReviews(ListReviewsRequest) returns (ListReviewsResponse) {}
     rpc GetReview(GetReviewRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review) {}

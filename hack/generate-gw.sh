@@ -87,7 +87,6 @@ protoc \
          github.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd.proto \
          github.com/metaprov/modelaapi/services/batchpredictord/v1/batchpredictord.proto \
          github.com/metaprov/modelaapi/services/connection/v1/connection.proto \
-         github.com/metaprov/modelaapi/services/curtain/v1/curtain.proto \
          github.com/metaprov/modelaapi/services/data/v1/data.proto \
          github.com/metaprov/modelaapi/services/datapipeline/v1/datapipeline.proto \
          github.com/metaprov/modelaapi/services/datapipelinerun/v1/datapipelinerun.proto \
@@ -106,8 +105,6 @@ protoc \
          github.com/metaprov/modelaapi/services/featureset/v1/featureset.proto \
          github.com/metaprov/modelaapi/services/k8score/v1/k8score.proto \
          github.com/metaprov/modelaapi/services/lab/v1/lab.proto \
-         github.com/metaprov/modelaapi/services/labelingpipeline/v1/labelingpipeline.proto \
-         github.com/metaprov/modelaapi/services/labelingpipelinerun/v1/labelingpipelinerun.proto \
          github.com/metaprov/modelaapi/services/license/v1/license.proto \
          github.com/metaprov/modelaapi/services/model/v1/model.proto \
          github.com/metaprov/modelaapi/services/modelclass/v1/modelclass.proto \
@@ -126,7 +123,6 @@ protoc \
          github.com/metaprov/modelaapi/services/runbook/v1/runbook.proto \
          github.com/metaprov/modelaapi/services/prediction/v1/prediction.proto \
          github.com/metaprov/modelaapi/services/cronprediction/v1/cronprediction.proto \
-         github.com/metaprov/modelaapi/services/cronreport/v1/cronreport.proto \
          github.com/metaprov/modelaapi/services/predictionstore/v1/predictionstore.proto \
          github.com/metaprov/modelaapi/services/grpcinferenceservice/v1/grpcinferenceservice.proto \
          github.com/metaprov/modelaapi/services/predictor/v1/predictor.proto \
@@ -140,5 +136,5 @@ protoc \
          github.com/metaprov/modelaapi/services/trainerd/v1/trainerd.proto \
          github.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket.proto \
          github.com/metaprov/modelaapi/services/virtualcluster/v1/virtualcluster.proto \
-         github.com/metaprov/modelaapi/services/virtualvolume/v1/virtualvolume.proto 
+         github.com/metaprov/modelaapi/services/virtualvolume/v1/virtualvolume.proto
 

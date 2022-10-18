@@ -1415,6 +1415,17 @@ const (
 	ShapTypeNone        ShapType = "none"
 )
 
+// +kubebuilder:validation:Enum="last-24-hours";"last-7-days";"last-30-days";"last-90-days";"none"
+type ReportRange string
+
+const (
+	ReportRangeLast24Hours ReportRange = "last-24-hours"
+	ReportRangeLast7Days   ReportRange = "last-7-days"
+	ReportRangeLast30Days  ReportRange = "last-30-days"
+	ReportRangeLast90Days  ReportRange = "last-90-days"
+	ReportRangeNone        ReportRange = "none"
+)
+
 //==============================================================================
 // Compiler Name
 //==============================================================================
