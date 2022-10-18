@@ -9,7 +9,6 @@ package v1alpha1
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/dustin/go-humanize"
 	"path"
 	"time"
 
@@ -435,7 +434,7 @@ func (model *Model) MarkLive(predictor string, role catalog.ModelRole) {
 	model.Labels[catalog.ModelRoleLabelKey] = string(role)
 	switch role {
 	case catalog.ModelRoleLive:
-		model.Status.Phase = ModelPhaseChampion
+		model.Status.Phase = ModelPhaseLive
 	case catalog.ModelRoleShadow:
 		model.Status.Phase = ModelPhaseShadow
 	}

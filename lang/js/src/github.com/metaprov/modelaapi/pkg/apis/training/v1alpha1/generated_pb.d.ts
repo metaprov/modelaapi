@@ -2056,6 +2056,76 @@ export namespace ModelClassDataSpec {
   }
 }
 
+export class ModelClassDeploymentSpec extends jspb.Message {
+  getPipelineList(): Array<ModelClassStageSpec>;
+  setPipelineList(value: Array<ModelClassStageSpec>): ModelClassDeploymentSpec;
+  clearPipelineList(): ModelClassDeploymentSpec;
+  addPipeline(value?: ModelClassStageSpec, index?: number): ModelClassStageSpec;
+
+  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelClassDeploymentSpec;
+  hasServingsiteref(): boolean;
+  clearServingsiteref(): ModelClassDeploymentSpec;
+
+  getOnline(): boolean;
+  setOnline(value: boolean): ModelClassDeploymentSpec;
+
+  getDashboard(): boolean;
+  setDashboard(value: boolean): ModelClassDeploymentSpec;
+
+  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
+  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): ModelClassDeploymentSpec;
+  hasAccess(): boolean;
+  clearAccess(): ModelClassDeploymentSpec;
+
+  getReplicas(): number;
+  setReplicas(value: number): ModelClassDeploymentSpec;
+
+  getPredictionschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setPredictionschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassDeploymentSpec;
+  hasPredictionschedule(): boolean;
+  clearPredictionschedule(): ModelClassDeploymentSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassDeploymentSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassDeploymentSpec): ModelClassDeploymentSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelClassDeploymentSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassDeploymentSpec;
+  static deserializeBinaryFromReader(message: ModelClassDeploymentSpec, reader: jspb.BinaryReader): ModelClassDeploymentSpec;
+}
+
+export namespace ModelClassDeploymentSpec {
+  export type AsObject = {
+    pipelineList: Array<ModelClassStageSpec.AsObject>,
+    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    online: boolean,
+    dashboard: boolean,
+    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
+    replicas: number,
+    predictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+  }
+}
+
+export class ModelClassLabelingSpec extends jspb.Message {
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassLabelingSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): ModelClassLabelingSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassLabelingSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassLabelingSpec): ModelClassLabelingSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelClassLabelingSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassLabelingSpec;
+  static deserializeBinaryFromReader(message: ModelClassLabelingSpec, reader: jspb.BinaryReader): ModelClassLabelingSpec;
+}
+
+export namespace ModelClassLabelingSpec {
+  export type AsObject = {
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+  }
+}
+
 export class ModelClassList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ModelClassList;
@@ -2082,42 +2152,50 @@ export namespace ModelClassList {
   }
 }
 
-export class ModelClassServingSpec extends jspb.Message {
-  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelClassServingSpec;
-  hasServingsiteref(): boolean;
-  clearServingsiteref(): ModelClassServingSpec;
-
-  getOnline(): boolean;
-  setOnline(value: boolean): ModelClassServingSpec;
-
-  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
-  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): ModelClassServingSpec;
-  hasAccess(): boolean;
-  clearAccess(): ModelClassServingSpec;
-
-  getReplicas(): number;
-  setReplicas(value: number): ModelClassServingSpec;
+export class ModelClassMonitoringSpec extends jspb.Message {
+  getDrift(): boolean;
+  setDrift(value: boolean): ModelClassMonitoringSpec;
 
   getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassServingSpec;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassMonitoringSpec;
   hasSchedule(): boolean;
-  clearSchedule(): ModelClassServingSpec;
+  clearSchedule(): ModelClassMonitoringSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelClassServingSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelClassServingSpec): ModelClassServingSpec.AsObject;
-  static serializeBinaryToWriter(message: ModelClassServingSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelClassServingSpec;
-  static deserializeBinaryFromReader(message: ModelClassServingSpec, reader: jspb.BinaryReader): ModelClassServingSpec;
+  toObject(includeInstance?: boolean): ModelClassMonitoringSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassMonitoringSpec): ModelClassMonitoringSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelClassMonitoringSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassMonitoringSpec;
+  static deserializeBinaryFromReader(message: ModelClassMonitoringSpec, reader: jspb.BinaryReader): ModelClassMonitoringSpec;
 }
 
-export namespace ModelClassServingSpec {
+export namespace ModelClassMonitoringSpec {
   export type AsObject = {
-    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    online: boolean,
-    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
-    replicas: number,
+    drift: boolean,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+  }
+}
+
+export class ModelClassRetrainingSpec extends jspb.Message {
+  getDrift(): boolean;
+  setDrift(value: boolean): ModelClassRetrainingSpec;
+
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassRetrainingSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): ModelClassRetrainingSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassRetrainingSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassRetrainingSpec): ModelClassRetrainingSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelClassRetrainingSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassRetrainingSpec;
+  static deserializeBinaryFromReader(message: ModelClassRetrainingSpec, reader: jspb.BinaryReader): ModelClassRetrainingSpec;
+}
+
+export namespace ModelClassRetrainingSpec {
+  export type AsObject = {
+    drift: boolean,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
@@ -2148,15 +2226,35 @@ export class ModelClassSpec extends jspb.Message {
   hasTraining(): boolean;
   clearTraining(): ModelClassSpec;
 
-  getServing(): ModelClassServingSpec | undefined;
-  setServing(value?: ModelClassServingSpec): ModelClassSpec;
-  hasServing(): boolean;
-  clearServing(): ModelClassSpec;
+  getDeployment(): ModelClassDeploymentSpec | undefined;
+  setDeployment(value?: ModelClassDeploymentSpec): ModelClassSpec;
+  hasDeployment(): boolean;
+  clearDeployment(): ModelClassSpec;
+
+  getMonitoring(): ModelClassMonitoringSpec | undefined;
+  setMonitoring(value?: ModelClassMonitoringSpec): ModelClassSpec;
+  hasMonitoring(): boolean;
+  clearMonitoring(): ModelClassSpec;
+
+  getLabeling(): ModelClassMonitoringSpec | undefined;
+  setLabeling(value?: ModelClassMonitoringSpec): ModelClassSpec;
+  hasLabeling(): boolean;
+  clearLabeling(): ModelClassSpec;
+
+  getRetraining(): ModelClassRetrainingSpec | undefined;
+  setRetraining(value?: ModelClassRetrainingSpec): ModelClassSpec;
+  hasRetraining(): boolean;
+  clearRetraining(): ModelClassSpec;
 
   getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
   setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): ModelClassSpec;
   hasNotification(): boolean;
   clearNotification(): ModelClassSpec;
+
+  getReport(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setReport(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassSpec;
+  hasReport(): boolean;
+  clearReport(): ModelClassSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassSpec.AsObject;
@@ -2175,8 +2273,48 @@ export namespace ModelClassSpec {
     subtask: string,
     data?: ModelClassDataSpec.AsObject,
     training?: ModelClassTrainingSpec.AsObject,
-    serving?: ModelClassServingSpec.AsObject,
+    deployment?: ModelClassDeploymentSpec.AsObject,
+    monitoring?: ModelClassMonitoringSpec.AsObject,
+    labeling?: ModelClassMonitoringSpec.AsObject,
+    retraining?: ModelClassRetrainingSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
+    report?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+  }
+}
+
+export class ModelClassStageSpec extends jspb.Message {
+  getDrift(): string;
+  setDrift(value: string): ModelClassStageSpec;
+
+  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelClassStageSpec;
+  hasTests(): boolean;
+  clearTests(): ModelClassStageSpec;
+
+  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelClassStageSpec;
+  hasServingsiteref(): boolean;
+  clearServingsiteref(): ModelClassStageSpec;
+
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ModelClassStageSpec;
+  hasResources(): boolean;
+  clearResources(): ModelClassStageSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassStageSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassStageSpec): ModelClassStageSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelClassStageSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassStageSpec;
+  static deserializeBinaryFromReader(message: ModelClassStageSpec, reader: jspb.BinaryReader): ModelClassStageSpec;
+}
+
+export namespace ModelClassStageSpec {
+  export type AsObject = {
+    drift: string,
+    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
 
@@ -2638,60 +2776,6 @@ export namespace ModelPipelineRunSpec {
   }
 }
 
-export class ModelPipelineRunStageStatus extends jspb.Message {
-  getPhase(): string;
-  setPhase(value: string): ModelPipelineRunStageStatus;
-
-  getApproved(): boolean;
-  setApproved(value: boolean): ModelPipelineRunStageStatus;
-
-  getApprovedby(): string;
-  setApprovedby(value: string): ModelPipelineRunStageStatus;
-
-  getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelPipelineRunStageStatus;
-  hasApprovedat(): boolean;
-  clearApprovedat(): ModelPipelineRunStageStatus;
-
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelPipelineRunStageStatus;
-  hasStarttime(): boolean;
-  clearStarttime(): ModelPipelineRunStageStatus;
-
-  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelPipelineRunStageStatus;
-  hasEndtime(): boolean;
-  clearEndtime(): ModelPipelineRunStageStatus;
-
-  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelPipelineRunStageStatus;
-  hasUnittestsresult(): boolean;
-  clearUnittestsresult(): ModelPipelineRunStageStatus;
-
-  getError(): string;
-  setError(value: string): ModelPipelineRunStageStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelPipelineRunStageStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelPipelineRunStageStatus): ModelPipelineRunStageStatus.AsObject;
-  static serializeBinaryToWriter(message: ModelPipelineRunStageStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelPipelineRunStageStatus;
-  static deserializeBinaryFromReader(message: ModelPipelineRunStageStatus, reader: jspb.BinaryReader): ModelPipelineRunStageStatus;
-}
-
-export namespace ModelPipelineRunStageStatus {
-  export type AsObject = {
-    phase: string,
-    approved: boolean,
-    approvedby: string,
-    approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    error: string,
-  }
-}
-
 export class ModelPipelineRunStatus extends jspb.Message {
   getStage(): string;
   setStage(value: string): ModelPipelineRunStatus;
@@ -2705,43 +2789,43 @@ export class ModelPipelineRunStatus extends jspb.Message {
   getModelname(): string;
   setModelname(value: string): ModelPipelineRunStatus;
 
-  getData(): ModelPipelineRunStageStatus | undefined;
-  setData(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  getData(): ModelStageStatus | undefined;
+  setData(value?: ModelStageStatus): ModelPipelineRunStatus;
   hasData(): boolean;
   clearData(): ModelPipelineRunStatus;
 
-  getTraining(): ModelPipelineRunStageStatus | undefined;
-  setTraining(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  getTraining(): ModelStageStatus | undefined;
+  setTraining(value?: ModelStageStatus): ModelPipelineRunStatus;
   hasTraining(): boolean;
   clearTraining(): ModelPipelineRunStatus;
 
-  getUat(): ModelPipelineRunStageStatus | undefined;
-  setUat(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  getUat(): ModelStageStatus | undefined;
+  setUat(value?: ModelStageStatus): ModelPipelineRunStatus;
   hasUat(): boolean;
   clearUat(): ModelPipelineRunStatus;
 
-  getCapacity(): ModelPipelineRunStageStatus | undefined;
-  setCapacity(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  getCapacity(): ModelStageStatus | undefined;
+  setCapacity(value?: ModelStageStatus): ModelPipelineRunStatus;
   hasCapacity(): boolean;
   clearCapacity(): ModelPipelineRunStatus;
 
-  getDeployment(): ModelPipelineRunStageStatus | undefined;
-  setDeployment(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  getDeployment(): ModelStageStatus | undefined;
+  setDeployment(value?: ModelStageStatus): ModelPipelineRunStatus;
   hasDeployment(): boolean;
   clearDeployment(): ModelPipelineRunStatus;
 
-  getRelease(): ModelPipelineRunStageStatus | undefined;
-  setRelease(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  getRelease(): ModelStageStatus | undefined;
+  setRelease(value?: ModelStageStatus): ModelPipelineRunStatus;
   hasRelease(): boolean;
   clearRelease(): ModelPipelineRunStatus;
 
-  getMonitor(): ModelPipelineRunStageStatus | undefined;
-  setMonitor(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  getMonitor(): ModelStageStatus | undefined;
+  setMonitor(value?: ModelStageStatus): ModelPipelineRunStatus;
   hasMonitor(): boolean;
   clearMonitor(): ModelPipelineRunStatus;
 
-  getLabeling(): ModelPipelineRunStageStatus | undefined;
-  setLabeling(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  getLabeling(): ModelStageStatus | undefined;
+  setLabeling(value?: ModelStageStatus): ModelPipelineRunStatus;
   hasLabeling(): boolean;
   clearLabeling(): ModelPipelineRunStatus;
 
@@ -2805,14 +2889,14 @@ export namespace ModelPipelineRunStatus {
     datasetname: string,
     studyname: string,
     modelname: string,
-    data?: ModelPipelineRunStageStatus.AsObject,
-    training?: ModelPipelineRunStageStatus.AsObject,
-    uat?: ModelPipelineRunStageStatus.AsObject,
-    capacity?: ModelPipelineRunStageStatus.AsObject,
-    deployment?: ModelPipelineRunStageStatus.AsObject,
-    release?: ModelPipelineRunStageStatus.AsObject,
-    monitor?: ModelPipelineRunStageStatus.AsObject,
-    labeling?: ModelPipelineRunStageStatus.AsObject,
+    data?: ModelStageStatus.AsObject,
+    training?: ModelStageStatus.AsObject,
+    uat?: ModelStageStatus.AsObject,
+    capacity?: ModelStageStatus.AsObject,
+    deployment?: ModelStageStatus.AsObject,
+    release?: ModelStageStatus.AsObject,
+    monitor?: ModelStageStatus.AsObject,
+    labeling?: ModelStageStatus.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
@@ -3266,6 +3350,60 @@ export namespace ModelSpec {
   }
 }
 
+export class ModelStageStatus extends jspb.Message {
+  getPhase(): string;
+  setPhase(value: string): ModelStageStatus;
+
+  getApproved(): boolean;
+  setApproved(value: boolean): ModelStageStatus;
+
+  getApprovedby(): string;
+  setApprovedby(value: string): ModelStageStatus;
+
+  getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStageStatus;
+  hasApprovedat(): boolean;
+  clearApprovedat(): ModelStageStatus;
+
+  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStageStatus;
+  hasStarttime(): boolean;
+  clearStarttime(): ModelStageStatus;
+
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStageStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): ModelStageStatus;
+
+  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelStageStatus;
+  hasUnittestsresult(): boolean;
+  clearUnittestsresult(): ModelStageStatus;
+
+  getError(): string;
+  setError(value: string): ModelStageStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelStageStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelStageStatus): ModelStageStatus.AsObject;
+  static serializeBinaryToWriter(message: ModelStageStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelStageStatus;
+  static deserializeBinaryFromReader(message: ModelStageStatus, reader: jspb.BinaryReader): ModelStageStatus;
+}
+
+export namespace ModelStageStatus {
+  export type AsObject = {
+    phase: string,
+    approved: boolean,
+    approvedby: string,
+    approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    error: string,
+  }
+}
+
 export class ModelStatus extends jspb.Message {
   getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
@@ -3534,10 +3672,10 @@ export class ModelStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): ModelStatus;
 
-  getGovernancestatus(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus | undefined;
-  setGovernancestatus(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus): ModelStatus;
-  hasGovernancestatus(): boolean;
-  clearGovernancestatus(): ModelStatus;
+  getGovernance(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus | undefined;
+  setGovernance(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus): ModelStatus;
+  hasGovernance(): boolean;
+  clearGovernance(): ModelStatus;
 
   getInterpretability(): InterpretabilityStatus | undefined;
   setInterpretability(value?: InterpretabilityStatus): ModelStatus;
@@ -3563,6 +3701,11 @@ export class ModelStatus extends jspb.Message {
   setGroupby(value?: ModelGroupByStatus): ModelStatus;
   hasGroupby(): boolean;
   clearGroupby(): ModelStatus;
+
+  getStagesList(): Array<ModelStageStatus>;
+  setStagesList(value: Array<ModelStageStatus>): ModelStatus;
+  clearStagesList(): ModelStatus;
+  addStages(value?: ModelStageStatus, index?: number): ModelStageStatus;
 
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
@@ -3646,12 +3789,13 @@ export namespace ModelStatus {
     correlationswithtargetList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation.AsObject>,
     topcorrelationsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation.AsObject>,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    governancestatus?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus.AsObject,
+    governance?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus.AsObject,
     interpretability?: InterpretabilityStatus.AsObject,
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     feedbacktestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     groupby?: ModelGroupByStatus.AsObject,
+    stagesList: Array<ModelStageStatus.AsObject>,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }

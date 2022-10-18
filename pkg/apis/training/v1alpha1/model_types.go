@@ -44,9 +44,9 @@ const (
 	ModelPhaseReleasing             ModelPhase = "Releasing"
 	ModelPhasePredicting            ModelPhase = "Predicting"
 	ModelPhasePredicted             ModelPhase = "Predicted"
-	ModelPhaseChampion              ModelPhase = "ModelRoleLive"
+	ModelPhaseLive                  ModelPhase = "Live"
 	ModelPhaseCanary                ModelPhase = "Canary"
-	ModelPhaseShadow                ModelPhase = "ModelRoleShadow"
+	ModelPhaseShadow                ModelPhase = "Shadow"
 	ModelPhaseMaintenance           ModelPhase = "Maintenance"
 	ModelPhaseRetired               ModelPhase = "Retired"
 	ModelPhaseTrainingDriftDetector ModelPhase = "TrainingDriftDetector"
@@ -602,7 +602,7 @@ type ModelStatus struct {
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,67,opt,name=lastUpdated"`
 	// Governance specifies the current governance status for the Model
 	// +kubebuilder:validation:Optional
-	Governance data.GovernanceStatus `json:"governance,omitempty" protobuf:"bytes,68,opt,name=governanceStatus"`
+	Governance data.GovernanceStatus `json:"governance,omitempty" protobuf:"bytes,68,opt,name=governance"`
 	// Interpretability contains results produced during the explaining phase of the Model
 	// +kubebuilder:validation:Optional
 	Interpretability InterpretabilityStatus `json:"interpretability,omitempty" protobuf:"bytes,69,opt,name=interpretability"`
@@ -611,17 +611,20 @@ type ModelStatus struct {
 	Images catalog.Images `json:"images,omitempty" protobuf:"bytes,70,opt,name=images"`
 	// The result of running the unit tests
 	// +kubebuilder:validation:Optional
-	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,71,opt,name="`
+	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,71,opt,name=unitTestsResult"`
 	// The result of running the feedback unit tests, the feedback unit tests
 	// +kubebuilder:validation:Optional
-	FeedbackTestsResult catalog.TestSuiteResult `json:"feedbackTestsResult,omitempty" protobuf:"bytes,72,opt,name="`
+	FeedbackTestsResult catalog.TestSuiteResult `json:"feedbackTestsResult,omitempty" protobuf:"bytes,72,opt,name=feedbackTestsResult"`
 	// The sub models uri file contain the results of running the sub model
 	// +kubebuilder:validation:Optional
 	GroupBy ModelGroupByStatus `json:"groupby,omitempty" protobuf:"bytes,73,opt,name=groupby"`
+	// The status of the model, when deploying via the stages
+	// +kubebuilder:validation:Optional
+	Stages []ModelStageStatus `json:"stages,omitempty" protobuf:"bytes,74,opt,name=stages"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,74,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,75,rep,name=conditions"`
 }
 
 // Holds the information about the execution environment.
@@ -1172,4 +1175,32 @@ type GroupModelLocationsSpec struct {
 	// The folder of group data
 	// +kubebuilder:validation:Optional
 	GroupForecastFile *string `json:"groupForecastFile,omitempty" protobuf:"bytes,6,opt,name=groupForecastFile"`
+}
+
+type ModelStageStatus struct {
+	// Phase is the phase of the stage
+	// +kubebuilder:default:="Pending"
+	// +kubebuilder:validation:Optional
+	Phase StageStatusPhase `json:"phase,omitempty" protobuf:"bytes,1,opt,name=phase"`
+	// Approved indicates that the stage is approved.
+	// +kubebuilder:validation:Optional
+	Approved bool `json:"approved,omitempty" protobuf:"bytes,2,opt,name=approved"`
+	// ApprovedBy indicates the account that approve this model.
+	// +kubebuilder:validation:Optional
+	ApprovedBy string `json:"approvedBy,omitempty" protobuf:"bytes,3,opt,name=approvedBy"`
+	// ApprovedAt indicates the time of approval
+	// +kubebuilder:validation:Optional
+	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,4,opt,name=approvedAt"`
+	// Start time is the start time of the stage
+	// +kubebuilder:validation:Optional
+	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,7,opt,name=startTime"`
+	// End time is the end time of the stage.
+	// +kubebuilder:validation:Optional
+	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,8,opt,name=endTime"`
+	// Results is the results of running the test datasets against the new model
+	// +kubebuilder:validation:Optional
+	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,9,opt,name=unitTestsResult"`
+	// Error record error.
+	//+kubebuilder:validation:Optional
+	Error string `json:"error,omitempty" protobuf:"bytes,10,opt,name=error"`
 }
