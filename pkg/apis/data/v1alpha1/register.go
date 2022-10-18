@@ -70,10 +70,6 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 		&SqlQueryList{},
 		&RecipeRun{},
 		&RecipeRunList{},
-		&LabelingPipeline{},
-		&LabelingPipelineList{},
-		&LabelingPipelineRun{},
-		&LabelingPipelineRunList{},
 	)
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)
 	return nil
