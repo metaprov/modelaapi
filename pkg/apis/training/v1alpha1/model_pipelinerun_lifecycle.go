@@ -73,54 +73,54 @@ func (run *ModelPipelineRun) RemoveFinalizer() { util.RemoveFin(&run.ObjectMeta,
 // PIpeline stage status
 //==============================================================================
 
-func (this *ModelPipelineRunStageStatus) MarkApprove(name string) {
+func (this *ModelStageStatus) MarkApprove(name string) {
 	this.Approved = true
 	this.ApprovedBy = name
 	now := metav1.Now()
 	this.ApprovedAt = &now
 }
 
-func (this *ModelPipelineRunStageStatus) MarkDeny(name string) {
+func (this *ModelStageStatus) MarkDeny(name string) {
 	this.Approved = false
 	this.ApprovedBy = name
 	now := metav1.Now()
 	this.ApprovedAt = &now
 }
 
-func (this *ModelPipelineRunStageStatus) MarkRunning() {
+func (this *ModelStageStatus) MarkRunning() {
 	this.Phase = StageStatusPhaseRunning
 	now := metav1.Now()
 	this.ApprovedAt = &now
 }
 
-func (this *ModelPipelineRunStageStatus) MarkFailed(err error) {
+func (this *ModelStageStatus) MarkFailed(err error) {
 	this.Error = err.Error()
 	this.Phase = StageStatusPhaseRunning
 	now := metav1.Now()
 	this.ApprovedAt = &now
 }
 
-func (this *ModelPipelineRunStageStatus) MarkCompleted() {
+func (this *ModelStageStatus) MarkCompleted() {
 	this.Phase = StageStatusPhaseCompleted
 	now := metav1.Now()
 	this.EndTime = &now
 }
 
-func (this *ModelPipelineRunStageStatus) IsCompleted() bool {
+func (this *ModelStageStatus) IsCompleted() bool {
 	return this.Phase == StageStatusPhaseCompleted
 }
 
-func (this *ModelPipelineRunStageStatus) RecordFailed() {
+func (this *ModelStageStatus) RecordFailed() {
 	this.Phase = StageStatusPhaseFailed
 	now := metav1.Now()
 	this.ApprovedAt = &now
 }
 
-func (this *ModelPipelineRunStageStatus) IsFailed() bool {
+func (this *ModelStageStatus) IsFailed() bool {
 	return this.Phase == StageStatusPhaseFailed
 }
 
-func (this *ModelPipelineRunStageStatus) IsRunning() bool {
+func (this *ModelStageStatus) IsRunning() bool {
 	return this.Phase == StageStatusPhaseRunning
 }
 
