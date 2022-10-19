@@ -3,8 +3,6 @@ package v1alpha1
 import (
 	"fmt"
 
-	"github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
-
 	"github.com/metaprov/modelaapi/pkg/apis/inference"
 	"github.com/metaprov/modelaapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
@@ -151,12 +149,12 @@ func (run *CronPrediction) IsCompleted() bool {
 
 func (run *CronPrediction) IsRunning() bool {
 	cond := run.GetCond(CronPredictionReady)
-	return cond.Status == v1.ConditionFalse && cond.Reason == string(v1alpha1.FeaturesetPhaseRunning)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(PredictionPhaseRunning)
 }
 
 func (run *CronPrediction) IsFailed() bool {
 	cond := run.GetCond(CronPredictionReady)
-	return cond.Status == v1.ConditionFalse && cond.Reason == string(v1alpha1.FeaturesetPhaseFailed)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(PredictionPhaseFailed)
 }
 
 // defaulting
