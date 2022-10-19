@@ -46,8 +46,6 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 		&FeatureHistogramList{},
 		&FeatureView{},
 		&FeatureViewList{},
-		&Featureset{},
-		&FeaturesetList{},
 		&Entity{},
 		&EntityList{},
 		&DataProduct{},
