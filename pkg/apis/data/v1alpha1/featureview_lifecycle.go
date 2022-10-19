@@ -23,19 +23,19 @@ import (
 // EntityRef
 //==============================================================================
 
-func (feature *FeaturesetClass) AddConfiditions() {
-	feature.Status.Conditions = make([]FeaturesetClassCondition, 1)
-	feature.Status.Conditions[0] = FeaturesetClassCondition{
-		Type:   FeaturesetClassReady,
+func (feature *FeatureView) AddConfiditions() {
+	feature.Status.Conditions = make([]FeatureViewCondition, 1)
+	feature.Status.Conditions[0] = FeatureViewCondition{
+		Type:   FeatureViewReady,
 		Status: v1.ConditionUnknown,
 	}
 }
 
-func (feature *FeaturesetClass) HasFinalizer() bool {
+func (feature *FeatureView) HasFinalizer() bool {
 	return util.HasFin(&feature.ObjectMeta, data.GroupName)
 }
-func (feature *FeaturesetClass) AddFinalizer() { util.AddFin(&feature.ObjectMeta, data.GroupName) }
-func (feature *FeaturesetClass) RemoveFinalizer() {
+func (feature *FeatureView) AddFinalizer() { util.AddFin(&feature.ObjectMeta, data.GroupName) }
+func (feature *FeatureView) RemoveFinalizer() {
 	util.RemoveFin(&feature.ObjectMeta, data.GroupName)
 }
 
@@ -44,15 +44,15 @@ func (feature *FeaturesetClass) RemoveFinalizer() {
 //==============================================================================
 
 // Return the on disk rep location
-func (feature *FeaturesetClass) RepPath(root string) (string, error) {
+func (feature *FeatureView) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/schemas/%s.yaml", root, feature.ObjectMeta.Name), nil
 }
 
-func (feature *FeaturesetClass) RepEntry() (string, error) {
+func (feature *FeatureView) RepEntry() (string, error) {
 	return fmt.Sprintf("schemas/%s.yaml", feature.ObjectMeta.Name), nil
 }
 
-func (feature *FeaturesetClass) Age() string {
+func (feature *FeatureView) Age() string {
 	return humanize.Time(feature.CreationTimestamp.Time)
 }
 
@@ -64,13 +64,13 @@ func (feature *FeaturesetClass) Age() string {
 // Assign commit and id
 //==============================================================================
 
-func (feature *FeaturesetClass) LabelWithCommit(commit string, uname string, branch string) {
+func (feature *FeatureView) LabelWithCommit(commit string, uname string, branch string) {
 	feature.ObjectMeta.Labels[common.CommitLabelKey] = commit
 	feature.ObjectMeta.Labels[common.UnameLabelKey] = uname
 	feature.ObjectMeta.Labels[common.BranchLabelKey] = branch
 }
 
-func (feature *FeaturesetClass) IsGitObj() bool {
+func (feature *FeatureView) IsGitObj() bool {
 	label, ok := feature.ObjectMeta.Labels[common.CommitLabelKey]
 	if !ok {
 		return false
@@ -78,14 +78,14 @@ func (feature *FeaturesetClass) IsGitObj() bool {
 	return label != ""
 }
 
-func (feature *FeaturesetClass) SetChanged() {
+func (feature *FeatureView) SetChanged() {
 	feature.ObjectMeta.Labels[common.ChangedLabelKey] = "true"
 
 }
 
 // Merge or update condition
 // Merge or update condition
-func (feature *FeaturesetClass) CreateOrUpdateCond(cond FeaturesetClassCondition) {
+func (feature *FeatureView) CreateOrUpdateCond(cond FeatureViewCondition) {
 	i := feature.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
@@ -104,7 +104,7 @@ func (feature *FeaturesetClass) CreateOrUpdateCond(cond FeaturesetClassCondition
 	feature.Status.Conditions[i] = current
 }
 
-func (feature *FeaturesetClass) GetCondIdx(t FeaturesetClassConditionType) int {
+func (feature *FeatureView) GetCondIdx(t FeatureViewConditionType) int {
 	for i, v := range feature.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -113,14 +113,14 @@ func (feature *FeaturesetClass) GetCondIdx(t FeaturesetClassConditionType) int {
 	return -1
 }
 
-func (feature *FeaturesetClass) GetCond(t FeaturesetClassConditionType) FeaturesetClassCondition {
+func (feature *FeatureView) GetCond(t FeatureViewConditionType) FeatureViewCondition {
 	for _, v := range feature.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return FeaturesetClassCondition{
+	return FeatureViewCondition{
 		Type:    t,
 		Status:  v1.ConditionUnknown,
 		Reason:  "",
@@ -129,38 +129,38 @@ func (feature *FeaturesetClass) GetCond(t FeaturesetClassConditionType) Features
 
 }
 
-func (feature *FeaturesetClass) IsReady() bool {
-	return feature.GetCond(FeaturesetClassReady).Status == v1.ConditionTrue
+func (feature *FeatureView) IsReady() bool {
+	return feature.GetCond(FeatureViewReady).Status == v1.ConditionTrue
 }
 
-func (feature *FeaturesetClass) Key() string {
+func (feature *FeatureView) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "features", feature.Namespace, feature.Name)
 }
 
-func ParseFeaturesetClassYaml(content []byte) (*FeaturesetClass, error) {
+func ParseFeatureViewYaml(content []byte) (*FeatureView, error) {
 	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
 	if err != nil {
 		return nil, err
 	}
-	r := requiredObj.(*FeaturesetClass)
+	r := requiredObj.(*FeatureView)
 	return r, nil
 }
 
-func (pipeline *FeaturesetClass) MarkReady() {
+func (pipeline *FeatureView) MarkReady() {
 	// update the lab state to ready
-	pipeline.CreateOrUpdateCond(FeaturesetClassCondition{
-		Type:   FeaturesetClassReady,
+	pipeline.CreateOrUpdateCond(FeatureViewCondition{
+		Type:   FeatureViewReady,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (pipeline *FeaturesetClass) MarkArchived() {
-	pipeline.CreateOrUpdateCond(FeaturesetClassCondition{
-		Type:   FeaturesetClassSaved,
+func (pipeline *FeatureView) MarkArchived() {
+	pipeline.CreateOrUpdateCond(FeatureViewCondition{
+		Type:   FeatureViewSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (pipeline *FeaturesetClass) Archived() bool {
-	return pipeline.GetCond(FeaturesetClassSaved).Status == v1.ConditionTrue
+func (pipeline *FeatureView) Archived() bool {
+	return pipeline.GetCond(FeatureViewSaved).Status == v1.ConditionTrue
 }

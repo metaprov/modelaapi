@@ -864,74 +864,37 @@ message DeleteFeatureHistogramRequest {
 
 
 ////////////////////////////////////////////////////////////////
-// FeaturesetClass
+// FeatureView
 ////////////////////////////////////////////////////////////////
 
-message ListFeaturesetClassRequest {
+message ListFeatureViewRequest {
     string namespace   = 1;
     int32 page_size    = 2;
     string page_token  = 3;
 }
 
-message ListFeaturesetClassResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass items = 1;
+message ListFeatureViewResponse {
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView items = 1;
     string next_page_token = 2;
 }
 
-message GetFeaturesetClassRequest {
+message GetFeatureViewRequest {
     string namespace = 1;
     string name = 2;
 }
 
-message CreateFeaturesetClassRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass item = 1;
+message CreateFeatureViewRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView item = 1;
 }
 
-message UpdateFeaturesetClassRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass item = 1;
+message UpdateFeatureViewRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView item = 1;
 }
 
-message DeleteFeaturesetClassRequest {
+message DeleteFeatureViewRequest {
     string namespace = 1;
     string name = 2;
 }
-
-
-////////////////////////////////////////////////////////////////
-// Featureset
-////////////////////////////////////////////////////////////////
-
-message ListFeaturesetRequest {
-    string namespace   = 1;
-    int32 page_size    = 2;
-    string page_token  = 3;
-}
-
-message ListFeaturesetsResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset items = 1;
-    string next_page_token = 2;
-}
-
-message GetFeaturesetRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message CreateFeaturesetRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset item = 1;
-}
-
-message UpdateFeaturesetRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset item = 1;
-}
-
-message DeleteFeaturesetRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-
-
 
 ////////////////////////////////////////////////////////////////
 // Recipe
@@ -1817,18 +1780,11 @@ service DatabaseProxyService {
     rpc DeleteFeatureHistogram(DeleteFeatureHistogramRequest) returns (google.protobuf.Empty) {}
 
 
-    rpc ListFeaturesetClasss(ListFeaturesetClassRequest) returns (ListFeaturesetClassResponse) {}
-    rpc GetFeaturesetClass(GetFeaturesetClassRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass) {}
-    rpc CreateFeaturesetClass(CreateFeaturesetClassRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass) {}
-    rpc UpdateFeaturesetClass(UpdateFeaturesetClassRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetClass) {}
-    rpc DeleteFeaturesetClass(DeleteFeaturesetClassRequest) returns (google.protobuf.Empty) {}
-
-
-    rpc ListFeaturesets(ListFeaturesetRequest) returns (ListFeaturesetsResponse) {}
-    rpc GetFeatureset(GetFeaturesetRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset) {}
-    rpc CreateFeatureset(CreateFeaturesetRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset) {}
-    rpc UpdateFeatureset(UpdateFeaturesetRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset) {}
-    rpc DeleteFeatureset(DeleteFeaturesetRequest) returns (google.protobuf.Empty) {}
+    rpc ListFeatureViews(ListFeatureViewRequest) returns (ListFeatureViewResponse) {}
+    rpc GetFeatureView(GetFeatureViewRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView) {}
+    rpc CreateFeatureView(CreateFeatureViewRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView) {}
+    rpc UpdateFeatureView(UpdateFeatureViewRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView) {}
+    rpc DeleteFeatureView(DeleteFeatureViewRequest) returns (google.protobuf.Empty) {}
 
     rpc ListRecipes(ListRecipesRequest) returns (ListRecipesResponse) {}
     rpc GetRecipe(GetRecipeRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe) {}

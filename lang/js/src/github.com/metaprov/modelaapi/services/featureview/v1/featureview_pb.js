@@ -620,7 +620,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewRespo
  */
 proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    featureviews: (f = msg.getFeaturesetclasss()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureViewList.toObject(includeInstance, f),
+    featureviews: (f = msg.getFeatureviews()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureViewList.toObject(includeInstance, f),
     nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -661,7 +661,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewRespo
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureViewList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureViewList.deserializeBinaryFromReader);
-      msg.setFeaturesetclasss(value);
+      msg.setFeatureviews(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -696,7 +696,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewRespo
  */
 proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFeaturesetclasss();
+  f = message.getFeatureviews();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -718,7 +718,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewRespo
  * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewList featureviews = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewList}
  */
-proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewResponse.prototype.getFeaturesetclasss = function() {
+proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewResponse.prototype.getFeatureviews = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureViewList, 1));
 };
@@ -728,7 +728,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewRespo
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewResponse.prototype.setFeaturesetclasss = function(value) {
+proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewResponse.prototype.setFeatureviews = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -737,8 +737,8 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewRespo
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewResponse.prototype.clearFeaturesetclasss = function() {
-  return this.setFeaturesetclasss(undefined);
+proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewResponse.prototype.clearFeatureviews = function() {
+  return this.setFeatureviews(undefined);
 };
 
 
@@ -746,7 +746,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewRespo
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewResponse.prototype.hasFeaturesetclasss = function() {
+proto.github.com.metaprov.modelaapi.services.featureview.v1.ListFeatureViewResponse.prototype.hasFeatureviews = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -801,7 +801,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewReq
  */
 proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    featureview: (f = msg.getFeaturesetclass()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.toObject(includeInstance, f)
+    featureview: (f = msg.getFeatureview()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -841,7 +841,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewReq
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.deserializeBinaryFromReader);
-      msg.setFeaturesetclass(value);
+      msg.setFeatureview(value);
       break;
     default:
       reader.skipField();
@@ -872,7 +872,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewReq
  */
 proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFeaturesetclass();
+  f = message.getFeatureview();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -887,7 +887,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewReq
  * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView featureview = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView}
  */
-proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewRequest.prototype.getFeaturesetclass = function() {
+proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewRequest.prototype.getFeatureview = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView, 1));
 };
@@ -897,7 +897,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewReq
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewRequest.prototype.setFeaturesetclass = function(value) {
+proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewRequest.prototype.setFeatureview = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -906,8 +906,8 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewReq
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewRequest.prototype.clearFeaturesetclass = function() {
-  return this.setFeaturesetclass(undefined);
+proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewRequest.prototype.clearFeatureview = function() {
+  return this.setFeatureview(undefined);
 };
 
 
@@ -915,7 +915,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewReq
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewRequest.prototype.hasFeaturesetclass = function() {
+proto.github.com.metaprov.modelaapi.services.featureview.v1.CreateFeatureViewRequest.prototype.hasFeatureview = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1053,7 +1053,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewReq
  */
 proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    featureview: (f = msg.getFeaturesetclass()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.toObject(includeInstance, f),
+    featureview: (f = msg.getFeatureview()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1094,7 +1094,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewReq
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.deserializeBinaryFromReader);
-      msg.setFeaturesetclass(value);
+      msg.setFeatureview(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1130,7 +1130,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewReq
  */
 proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFeaturesetclass();
+  f = message.getFeatureview();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1153,7 +1153,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewReq
  * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView featureview = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView}
  */
-proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewRequest.prototype.getFeaturesetclass = function() {
+proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewRequest.prototype.getFeatureview = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView, 1));
 };
@@ -1163,7 +1163,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewReq
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewRequest.prototype.setFeaturesetclass = function(value) {
+proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewRequest.prototype.setFeatureview = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1172,8 +1172,8 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewReq
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewRequest.prototype.clearFeaturesetclass = function() {
-  return this.setFeaturesetclass(undefined);
+proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewRequest.prototype.clearFeatureview = function() {
+  return this.setFeatureview(undefined);
 };
 
 
@@ -1181,7 +1181,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewReq
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewRequest.prototype.hasFeaturesetclass = function() {
+proto.github.com.metaprov.modelaapi.services.featureview.v1.UpdateFeatureViewRequest.prototype.hasFeatureview = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1516,7 +1516,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewRespon
  */
 proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    featureview: (f = msg.getFeaturesetclass()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.toObject(includeInstance, f),
+    featureview: (f = msg.getFeatureview()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1557,7 +1557,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewRespon
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.deserializeBinaryFromReader);
-      msg.setFeaturesetclass(value);
+      msg.setFeatureview(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1592,7 +1592,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewRespon
  */
 proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFeaturesetclass();
+  f = message.getFeatureview();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1614,7 +1614,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewRespon
  * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView featureview = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView}
  */
-proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewResponse.prototype.getFeaturesetclass = function() {
+proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewResponse.prototype.getFeatureview = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView, 1));
 };
@@ -1624,7 +1624,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewRespon
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewResponse.prototype.setFeaturesetclass = function(value) {
+proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewResponse.prototype.setFeatureview = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1633,8 +1633,8 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewRespon
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewResponse.prototype.clearFeaturesetclass = function() {
-  return this.setFeaturesetclass(undefined);
+proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewResponse.prototype.clearFeatureview = function() {
+  return this.setFeatureview(undefined);
 };
 
 
@@ -1642,7 +1642,7 @@ proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewRespon
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewResponse.prototype.hasFeaturesetclass = function() {
+proto.github.com.metaprov.modelaapi.services.featureview.v1.GetFeatureViewResponse.prototype.hasFeatureview = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

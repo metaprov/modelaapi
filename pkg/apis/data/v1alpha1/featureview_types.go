@@ -16,18 +16,18 @@ import (
 // FeatureRef
 //==============================================================================
 
-// FeaturesetClassConditionType
-type FeaturesetClassConditionType string
+// FeatureViewConditionType
+type FeatureViewConditionType string
 
 const (
-	FeaturesetClassReady FeaturesetClassConditionType = "Ready"
-	FeaturesetClassSaved FeaturesetClassConditionType = "Saved"
+	FeatureViewReady FeatureViewConditionType = "Ready"
+	FeatureViewSaved FeatureViewConditionType = "Saved"
 )
 
-// FeaturesetClassCondition describes the state of a deployment at a certain point.
-type FeaturesetClassCondition struct {
+// FeatureViewCondition describes the state of a deployment at a certain point.
+type FeatureViewCondition struct {
 	// Type of account condition.
-	Type FeaturesetClassConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=FeatureConditionType"`
+	Type FeatureViewConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=FeatureConditionType"`
 	// Status of the condition, one of True, False, Unknown
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
@@ -38,7 +38,7 @@ type FeaturesetClassCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// FeaturesetClass represent the processing of feature in the store.
+// FeatureView represent the processing of feature in the store.
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -46,25 +46,25 @@ type FeaturesetClassCondition struct {
 // +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule",description=""
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featuresetclasses,singular=featuresetclass,shortName="fsc",categories={data,modela}
+// +kubebuilder:resource:path=featureviewes,singular=featureview,shortName="fsc",categories={data,modela}
 // +kubebuilder:subresource:status
-type FeaturesetClass struct {
+type FeatureView struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              FeaturesetClassSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            FeaturesetClassStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
+	Spec              FeatureViewSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            FeatureViewStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true
 // FeatureList contain a list of feature objects
-type FeaturesetClassList struct {
+type FeatureViewList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Items           []FeaturesetClass `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []FeatureView `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// FeaturesetClassSpec contain the desired state of a FeaturesetClass
-type FeaturesetClassSpec struct {
+// FeatureViewSpec contain the desired state of a FeatureView
+type FeatureViewSpec struct {
 	// Owner is the owner of the feature pipeline
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
@@ -123,7 +123,7 @@ type FeaturesetClassSpec struct {
 }
 
 // FeatureStatus defines the observed state of Feature
-type FeaturesetClassStatus struct {
+type FeatureViewStatus struct {
 	// Last run is the last time a data pipeline run was created
 	//+kubebuilder:validation:Optional
 	LastRun catalog.LastRunStatus `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
@@ -141,7 +141,7 @@ type FeaturesetClassStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeaturesetClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
+	Conditions []FeatureViewCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
 }
 
 type MaterializationSpec struct {

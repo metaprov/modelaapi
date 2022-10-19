@@ -12,8 +12,8 @@ spec:
     categories:
     - data
     - modela
-    kind: FeaturesetClass
-    listKind: FeaturesetClassList
+    kind: FeatureView
+    listKind: FeatureViewList
     plural: featuresources
     shortNames:
     - fset
@@ -36,7 +36,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: FeaturesetClass represents a featureSource object
+        description: FeatureView represents a featureSource object
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -51,7 +51,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: FeaturesetClassSpec contain the desired state of a FeaturesetClass.
+            description: FeatureViewSpec contain the desired state of a FeatureView.
             properties:
               datasourceRef:
                 description: Datasource ref define the metadata for the features in
@@ -120,11 +120,11 @@ spec:
                 type: string
             type: object
           status:
-            description: FeaturesetClassStatus defines the observed state of FeaturesetClass
+            description: FeatureViewStatus defines the observed state of FeatureView
             properties:
               conditions:
                 items:
-                  description: FeaturesetClassCondition describes the state of a deployment
+                  description: FeatureViewCondition describes the state of a deployment
                     at a certain point.
                   properties:
                     lastTransitionTime:

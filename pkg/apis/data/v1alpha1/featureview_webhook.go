@@ -18,31 +18,31 @@ import (
 )
 
 // validation
-var _ webhook.Validator = &FeaturesetClass{}
+var _ webhook.Validator = &FeatureView{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (feature *FeaturesetClass) ValidateCreate() error {
+func (feature *FeatureView) ValidateCreate() error {
 	return feature.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (feature *FeaturesetClass) ValidateUpdate(old runtime.Object) error {
+func (feature *FeatureView) ValidateUpdate(old runtime.Object) error {
 	return feature.validate()
 }
 
-func (feature *FeaturesetClass) validate() error {
+func (feature *FeatureView) validate() error {
 	return nil
 }
 
-func (r *FeaturesetClass) ValidateDelete() error {
+func (r *FeatureView) ValidateDelete() error {
 	return nil
 }
 
-func (in *FeaturesetClass) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (in *FeatureView) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(in).
 		Complete()
 }
 
 // No defaults in this current release
-func (feature *FeaturesetClass) Default() {}
+func (feature *FeatureView) Default() {}

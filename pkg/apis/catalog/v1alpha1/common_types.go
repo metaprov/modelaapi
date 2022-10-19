@@ -2105,7 +2105,7 @@ const (
 	EntityLabelKey              = "modela.ai/entity"
 	FeatureHistogramLabelKey    = "modela.ai/featurehistorgram"
 	FeatureLabelKey             = "modela.ai/feature"
-	FeaturesetClassLabelKey     = "modela.ai/featuresetclass"
+	FeatureViewLabelKey         = "modela.ai/featureview"
 	FeaturesetLabelKey          = "modela.ai/featureset"
 	FeatureSetLabelKey          = "modela.ai/featureSource"
 	LabelingPipelineLabelKey    = "modela.ai/labelingpipeline"

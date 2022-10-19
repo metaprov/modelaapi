@@ -23681,7 +23681,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1 {
 
     private string featureSelector_;
     /// <summary>
-    /// FeaturesetClass selector
+    /// FeatureView selector
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

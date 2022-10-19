@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modelaapi.services.featuresetclass.v1 import featuresetclass_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2
+from github.com.metaprov.modelaapi.services.featureview.v1 import featureview_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2
 
 
 class FeaturesetClassServiceStub(object):
@@ -15,39 +15,39 @@ class FeaturesetClassServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListFeaturesetClasss = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.featuresetclass.v1.FeaturesetClassService/ListFeaturesetClasss',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.ListFeaturesetClassRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.ListFeaturesetClassResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.featureview.v1.FeaturesetClassService/ListFeaturesetClasss',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.ListFeaturesetClassRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.ListFeaturesetClassResponse.FromString,
                 )
         self.CreateFeaturesetClass = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.featuresetclass.v1.FeaturesetClassService/CreateFeaturesetClass',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.CreateFeaturesetClassRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.CreateFeaturesetClassResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.featureview.v1.FeaturesetClassService/CreateFeaturesetClass',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.CreateFeaturesetClassRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.CreateFeaturesetClassResponse.FromString,
                 )
         self.GetFeaturesetClass = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.featuresetclass.v1.FeaturesetClassService/GetFeaturesetClass',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.GetFeaturesetClassRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.GetFeaturesetClassResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.featureview.v1.FeaturesetClassService/GetFeaturesetClass',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.GetFeaturesetClassRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.GetFeaturesetClassResponse.FromString,
                 )
         self.UpdateFeaturesetClass = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.featuresetclass.v1.FeaturesetClassService/UpdateFeaturesetClass',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.UpdateFeaturesetClassRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.UpdateFeaturesetClassResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.featureview.v1.FeaturesetClassService/UpdateFeaturesetClass',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.UpdateFeaturesetClassRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.UpdateFeaturesetClassResponse.FromString,
                 )
         self.DeleteFeaturesetClass = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.featuresetclass.v1.FeaturesetClassService/DeleteFeaturesetClass',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.DeleteFeaturesetClassRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.DeleteFeaturesetClassResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.featureview.v1.FeaturesetClassService/DeleteFeaturesetClass',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.DeleteFeaturesetClassRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.DeleteFeaturesetClassResponse.FromString,
                 )
         self.PauseFeaturesetClass = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.featuresetclass.v1.FeaturesetClassService/PauseFeaturesetClass',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.PauseFeaturesetClassRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.PauseFeaturesetClassResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.featureview.v1.FeaturesetClassService/PauseFeaturesetClass',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.PauseFeaturesetClassRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.PauseFeaturesetClassResponse.FromString,
                 )
         self.ResumeFeaturesetClass = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.featuresetclass.v1.FeaturesetClassService/ResumeFeaturesetClass',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.ResumeFeaturesetClassRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.ResumeFeaturesetClassResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.featureview.v1.FeaturesetClassService/ResumeFeaturesetClass',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.ResumeFeaturesetClassRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.ResumeFeaturesetClassResponse.FromString,
                 )
 
 
@@ -101,42 +101,42 @@ def add_FeaturesetClassServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListFeaturesetClasss': grpc.unary_unary_rpc_method_handler(
                     servicer.ListFeaturesetClasss,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.ListFeaturesetClassRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.ListFeaturesetClassResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.ListFeaturesetClassRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.ListFeaturesetClassResponse.SerializeToString,
             ),
             'CreateFeaturesetClass': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateFeaturesetClass,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.CreateFeaturesetClassRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.CreateFeaturesetClassResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.CreateFeaturesetClassRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.CreateFeaturesetClassResponse.SerializeToString,
             ),
             'GetFeaturesetClass': grpc.unary_unary_rpc_method_handler(
                     servicer.GetFeaturesetClass,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.GetFeaturesetClassRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.GetFeaturesetClassResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.GetFeaturesetClassRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.GetFeaturesetClassResponse.SerializeToString,
             ),
             'UpdateFeaturesetClass': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateFeaturesetClass,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.UpdateFeaturesetClassRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.UpdateFeaturesetClassResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.UpdateFeaturesetClassRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.UpdateFeaturesetClassResponse.SerializeToString,
             ),
             'DeleteFeaturesetClass': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteFeaturesetClass,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.DeleteFeaturesetClassRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.DeleteFeaturesetClassResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.DeleteFeaturesetClassRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.DeleteFeaturesetClassResponse.SerializeToString,
             ),
             'PauseFeaturesetClass': grpc.unary_unary_rpc_method_handler(
                     servicer.PauseFeaturesetClass,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.PauseFeaturesetClassRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.PauseFeaturesetClassResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.PauseFeaturesetClassRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.PauseFeaturesetClassResponse.SerializeToString,
             ),
             'ResumeFeaturesetClass': grpc.unary_unary_rpc_method_handler(
                     servicer.ResumeFeaturesetClass,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.ResumeFeaturesetClassRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.ResumeFeaturesetClassResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.ResumeFeaturesetClassRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.ResumeFeaturesetClassResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modelaapi.services.featuresetclass.v1.FeaturesetClassService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.featureview.v1.FeaturesetClassService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -155,9 +155,9 @@ class FeaturesetClassService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featuresetclass.v1.FeaturesetClassService/ListFeaturesetClasss',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.ListFeaturesetClassRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.ListFeaturesetClassResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featureview.v1.FeaturesetClassService/ListFeaturesetClasss',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.ListFeaturesetClassRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.ListFeaturesetClassResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -172,9 +172,9 @@ class FeaturesetClassService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featuresetclass.v1.FeaturesetClassService/CreateFeaturesetClass',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.CreateFeaturesetClassRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.CreateFeaturesetClassResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featureview.v1.FeaturesetClassService/CreateFeaturesetClass',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.CreateFeaturesetClassRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.CreateFeaturesetClassResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -189,9 +189,9 @@ class FeaturesetClassService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featuresetclass.v1.FeaturesetClassService/GetFeaturesetClass',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.GetFeaturesetClassRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.GetFeaturesetClassResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featureview.v1.FeaturesetClassService/GetFeaturesetClass',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.GetFeaturesetClassRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.GetFeaturesetClassResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -206,9 +206,9 @@ class FeaturesetClassService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featuresetclass.v1.FeaturesetClassService/UpdateFeaturesetClass',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.UpdateFeaturesetClassRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.UpdateFeaturesetClassResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featureview.v1.FeaturesetClassService/UpdateFeaturesetClass',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.UpdateFeaturesetClassRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.UpdateFeaturesetClassResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -223,9 +223,9 @@ class FeaturesetClassService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featuresetclass.v1.FeaturesetClassService/DeleteFeaturesetClass',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.DeleteFeaturesetClassRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.DeleteFeaturesetClassResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featureview.v1.FeaturesetClassService/DeleteFeaturesetClass',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.DeleteFeaturesetClassRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.DeleteFeaturesetClassResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -240,9 +240,9 @@ class FeaturesetClassService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featuresetclass.v1.FeaturesetClassService/PauseFeaturesetClass',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.PauseFeaturesetClassRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.PauseFeaturesetClassResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featureview.v1.FeaturesetClassService/PauseFeaturesetClass',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.PauseFeaturesetClassRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.PauseFeaturesetClassResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -257,8 +257,8 @@ class FeaturesetClassService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featuresetclass.v1.FeaturesetClassService/ResumeFeaturesetClass',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.ResumeFeaturesetClassRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featuresetclass_dot_v1_dot_featuresetclass__pb2.ResumeFeaturesetClassResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featureview.v1.FeaturesetClassService/ResumeFeaturesetClass',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.ResumeFeaturesetClassRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featureview_dot_v1_dot_featureview__pb2.ResumeFeaturesetClassResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
