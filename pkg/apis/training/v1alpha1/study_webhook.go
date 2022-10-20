@@ -71,9 +71,9 @@ var _ webhook.Defaulter = &Study{}
 
 func (study *Study) Default() {
 
-	if study.Spec.FeatureEngineeringSearch.Estimator == nil || string(*study.Spec.FeatureEngineeringSearch.Estimator) == "" {
+	if study.Spec.FESearch.Estimator == nil || string(*study.Spec.FESearch.Estimator) == "" {
 		estimator := study.DefaultFESearchEstimator(*study.Spec.Task)
-		study.Spec.FeatureEngineeringSearch.Estimator = &estimator
+		study.Spec.FESearch.Estimator = &estimator
 	}
 
 	study.Spec.Search.Default(study.Spec.DeepCopy().Task)

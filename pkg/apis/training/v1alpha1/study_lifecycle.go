@@ -66,12 +66,12 @@ func (study *Study) ReachedMaxFETime() bool {
 		return false // not started
 	}
 	duration := metav1.Now().Unix() - study.Status.FeatureEngineeringStatus.StartTime.Unix()
-	return int32(duration/60) >= *study.Spec.FeatureEngineeringSearch.MaxTimeSec
+	return int32(duration/60) >= *study.Spec.FESearch.MaxTimeSec
 }
 
 func (study *Study) ReachedMaxFEModels() bool {
 	totalModels := study.Status.FeatureEngineeringStatus.Failed + study.Status.FeatureEngineeringStatus.Completed
-	return *study.Spec.FeatureEngineeringSearch.MaxModels == totalModels
+	return *study.Spec.FESearch.MaxModels == totalModels
 }
 
 func (study *Study) ShouldEarlyStopTraining() bool {
@@ -82,8 +82,8 @@ func (study *Study) ShouldEarlyStopTraining() bool {
 }
 
 func (study *Study) ShouldEarlyStopFE() bool {
-	if *study.Spec.FeatureEngineeringSearch.EarlyStop.Enabled {
-		return study.Status.FeatureEngineeringStatus.Failed+study.Status.FeatureEngineeringStatus.Completed >= *study.Spec.FeatureEngineeringSearch.EarlyStop.Initial && study.Status.FeatureEngineeringStatus.ModelsWithNoProgress >= *study.Spec.FeatureEngineeringSearch.EarlyStop.MinModelsWithNoProgress
+	if *study.Spec.FESearch.EarlyStop.Enabled {
+		return study.Status.FeatureEngineeringStatus.Failed+study.Status.FeatureEngineeringStatus.Completed >= *study.Spec.FESearch.EarlyStop.Initial && study.Status.FeatureEngineeringStatus.ModelsWithNoProgress >= *study.Spec.FESearch.EarlyStop.MinModelsWithNoProgress
 	}
 	return false
 }

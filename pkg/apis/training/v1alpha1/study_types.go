@@ -187,9 +187,9 @@ type StudySpec struct {
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
 	SubTask *catalog.MLSubtask `json:"subtask" protobuf:"bytes,7,opt,name=subtask"`
-	// FeatureEngineeringSearch specifies the parameters to perform a feature engineering search
+	// FESearch specifies the parameters to perform a feature engineering search
 	// +kubebuilder:validation:Optional
-	FeatureEngineeringSearch FeatureEngineeringSearchSpec `json:"feSearch,omitempty" protobuf:"bytes,8,opt,name=feSearch"`
+	FESearch FeatureEngineeringSearchSpec `json:"feSearch,omitempty" protobuf:"bytes,8,opt,name=feSearch"`
 	// Set the imbalance dataset handling.
 	// +kubebuilder:validation:Optional
 	ImbalanceHandler ImbalanceHandlingSpec `json:"imbalanceHandler,omitempty" protobuf:"bytes,9,opt,name=imbalanceHandler"`

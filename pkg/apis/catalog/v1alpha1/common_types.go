@@ -1426,6 +1426,15 @@ const (
 	ReportRangeNone        ReportRange = "none"
 )
 
+type FeatureStoreIngestType string
+
+const (
+	BatchIngestType   FeatureStoreIngestType = "batch"
+	StreamIngestType  FeatureStoreIngestType = "stream"
+	PushIngestType    FeatureStoreIngestType = "push"
+	RequestIngestType FeatureStoreIngestType = "request"
+)
+
 //==============================================================================
 // Compiler Name
 //==============================================================================

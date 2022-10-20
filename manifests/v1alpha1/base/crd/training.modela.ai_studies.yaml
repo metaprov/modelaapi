@@ -715,8 +715,8 @@ spec:
                     type: string
                 type: object
               feSearch:
-                description: FeatureEngineeringSearch specifies the parameters to
-                  perform a feature engineering search
+                description: FESearch specifies the parameters to perform a feature
+                  engineering search
                 properties:
                   autoRemove:
                     default: true

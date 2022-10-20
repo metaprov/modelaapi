@@ -61,7 +61,7 @@ spec:
                 description: Description of the entity
                 maxLength: 512
                 type: string
-              keys:
+              joinKeys:
                 description: Keys are the features that create a unique key to the
                   entity.
                 items:

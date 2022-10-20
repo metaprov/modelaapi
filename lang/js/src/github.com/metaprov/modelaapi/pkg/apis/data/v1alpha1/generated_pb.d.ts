@@ -1950,6 +1950,9 @@ export class DataSourceSpec extends jspb.Message {
   hasUnitteststemplate(): boolean;
   clearUnitteststemplate(): DataSourceSpec;
 
+  getIngestmethod(): string;
+  setIngestmethod(value: string): DataSourceSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataSourceSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataSourceSpec): DataSourceSpec.AsObject;
@@ -1974,6 +1977,7 @@ export namespace DataSourceSpec {
     labeling?: LabelingSpec.AsObject,
     inferredfrom?: DataLocation.AsObject,
     unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    ingestmethod: string,
   }
 }
 
@@ -2650,10 +2654,10 @@ export class EntitySpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): EntitySpec;
 
-  getKeysList(): Array<string>;
-  setKeysList(value: Array<string>): EntitySpec;
-  clearKeysList(): EntitySpec;
-  addKeys(value: string, index?: number): EntitySpec;
+  getJoinkeysList(): Array<string>;
+  setJoinkeysList(value: Array<string>): EntitySpec;
+  clearJoinkeysList(): EntitySpec;
+  addJoinkeys(value: string, index?: number): EntitySpec;
 
   getOwner(): string;
   setOwner(value: string): EntitySpec;
@@ -2670,7 +2674,7 @@ export namespace EntitySpec {
   export type AsObject = {
     versionname: string,
     description: string,
-    keysList: Array<string>,
+    joinkeysList: Array<string>,
     owner: string,
   }
 }
@@ -3218,6 +3222,14 @@ export class FeatureViewSpec extends jspb.Message {
   clearExcludeList(): FeatureViewSpec;
   addExclude(value: string, index?: number): FeatureViewSpec;
 
+  getEntitiesList(): Array<string>;
+  setEntitiesList(value: Array<string>): FeatureViewSpec;
+  clearEntitiesList(): FeatureViewSpec;
+  addEntities(value: string, index?: number): FeatureViewSpec;
+
+  getIngesttype(): string;
+  setIngesttype(value: string): FeatureViewSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureViewSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureViewSpec): FeatureViewSpec.AsObject;
@@ -3244,6 +3256,8 @@ export namespace FeatureViewSpec {
     offline: boolean,
     includeList: Array<string>,
     excludeList: Array<string>,
+    entitiesList: Array<string>,
+    ingesttype: string,
   }
 }
 

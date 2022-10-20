@@ -98,6 +98,11 @@ spec:
                 description: Description of the feature pipeline
                 maxLength: 512
                 type: string
+              entities:
+                description: Features to exclude from the data source.
+                items:
+                  type: string
+                type: array
               exclude:
                 description: Features to exclude from the data source.
                 items:
@@ -144,6 +149,8 @@ spec:
                 items:
                   type: string
                 type: array
+              ingestType:
+                type: string
               materialization:
                 description: Materialization
                 properties:

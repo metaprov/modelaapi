@@ -21421,7 +21421,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.toObje
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RelationshipSpec.toObject, includeInstance),
     labeling: (f = msg.getLabeling()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingSpec.toObject(includeInstance, f),
     inferredfrom: (f = msg.getInferredfrom()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
-    unitteststemplate: (f = msg.getUnitteststemplate()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
+    unitteststemplate: (f = msg.getUnitteststemplate()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
+    ingestmethod: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -21520,6 +21521,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.deseri
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
       msg.setUnitteststemplate(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setIngestmethod(value);
       break;
     default:
       reader.skipField();
@@ -21653,6 +21658,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.serial
       15,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 16));
+  if (f != null) {
+    writer.writeString(
+      16,
+      f
     );
   }
 };
@@ -22167,6 +22179,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasUnitteststemplate = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional string ingestMethod = 16;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getIngestmethod = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setIngestmethod = function(value) {
+  return jspb.Message.setField(this, 16, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.clearIngestmethod = function() {
+  return jspb.Message.setField(this, 16, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasIngestmethod = function() {
+  return jspb.Message.getField(this, 16) != null;
 };
 
 
@@ -28416,7 +28464,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.toObject =
   var f, obj = {
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    keysList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    joinkeysList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
@@ -28464,7 +28512,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.deserializ
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.addKeys(value);
+      msg.addJoinkeys(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -28513,7 +28561,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.serializeB
       f
     );
   }
-  f = message.getKeysList();
+  f = message.getJoinkeysList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       3,
@@ -28603,10 +28651,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.
 
 
 /**
- * repeated string keys = 3;
+ * repeated string joinKeys = 3;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.getKeysList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.getJoinkeysList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
@@ -28615,7 +28663,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.
  * @param {!Array<string>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.setKeysList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.setJoinkeysList = function(value) {
   return jspb.Message.setField(this, 3, value || []);
 };
 
@@ -28625,7 +28673,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.addKeys = function(value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.addJoinkeys = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
@@ -28634,8 +28682,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.clearKeysList = function() {
-  return this.setKeysList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.clearJoinkeysList = function() {
+  return this.setJoinkeysList([]);
 };
 
 
@@ -33040,7 +33088,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewList.proto
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.repeatedFields_ = [17,18];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.repeatedFields_ = [16,17,18];
 
 
 
@@ -33085,10 +33133,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.toObj
     activedeadlineseconds: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
     paused: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
     unittests: (f = msg.getUnittests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
-    online: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
-    offline: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
-    includeList: (f = jspb.Message.getRepeatedField(msg, 17)) == null ? undefined : f,
-    excludeList: (f = jspb.Message.getRepeatedField(msg, 18)) == null ? undefined : f
+    online: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
+    offline: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
+    includeList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f,
+    excludeList: (f = jspb.Message.getRepeatedField(msg, 17)) == null ? undefined : f,
+    entitiesList: (f = jspb.Message.getRepeatedField(msg, 18)) == null ? undefined : f,
+    ingesttype: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -33176,26 +33226,34 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.deser
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPaused(value);
       break;
-    case 14:
+    case 13:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
       msg.setUnittests(value);
       break;
-    case 15:
+    case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setOnline(value);
       break;
-    case 16:
+    case 15:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setOffline(value);
       break;
-    case 17:
+    case 16:
       var value = /** @type {string} */ (reader.readString());
       msg.addInclude(value);
       break;
-    case 18:
+    case 17:
       var value = /** @type {string} */ (reader.readString());
       msg.addExclude(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addEntities(value);
+      break;
+    case 19:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setIngesttype(value);
       break;
     default:
       reader.skipField();
@@ -33308,9 +33366,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.seria
   f = message.getUnittests();
   if (f != null) {
     writer.writeMessage(
-      14,
+      13,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeBool(
+      14,
+      f
     );
   }
   f = /** @type {boolean} */ (jspb.Message.getField(message, 15));
@@ -33320,24 +33385,31 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.seria
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 16));
-  if (f != null) {
-    writer.writeBool(
-      16,
-      f
-    );
-  }
   f = message.getIncludeList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      17,
+      16,
       f
     );
   }
   f = message.getExcludeList();
   if (f.length > 0) {
     writer.writeRepeatedString(
+      17,
+      f
+    );
+  }
+  f = message.getEntitiesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
       18,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 19));
+  if (f != null) {
+    writer.writeString(
+      19,
       f
     );
   }
@@ -33732,12 +33804,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.proto
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 14;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 13;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.getUnittests = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 14));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 13));
 };
 
 
@@ -33746,7 +33818,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.setUnittests = function(value) {
-  return jspb.Message.setWrapperField(this, 14, value);
+  return jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -33764,16 +33836,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.hasUnittests = function() {
-  return jspb.Message.getField(this, 14) != null;
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional bool online = 15;
+ * optional bool online = 14;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.getOnline = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
 
@@ -33782,7 +33854,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.setOnline = function(value) {
-  return jspb.Message.setField(this, 15, value);
+  return jspb.Message.setField(this, 14, value);
 };
 
 
@@ -33791,7 +33863,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.clearOnline = function() {
-  return jspb.Message.setField(this, 15, undefined);
+  return jspb.Message.setField(this, 14, undefined);
 };
 
 
@@ -33800,16 +33872,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.hasOnline = function() {
-  return jspb.Message.getField(this, 15) != null;
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * optional bool offline = 16;
+ * optional bool offline = 15;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.getOffline = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
 };
 
 
@@ -33818,7 +33890,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.setOffline = function(value) {
-  return jspb.Message.setField(this, 16, value);
+  return jspb.Message.setField(this, 15, value);
 };
 
 
@@ -33827,7 +33899,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.clearOffline = function() {
-  return jspb.Message.setField(this, 16, undefined);
+  return jspb.Message.setField(this, 15, undefined);
 };
 
 
@@ -33836,16 +33908,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.hasOffline = function() {
-  return jspb.Message.getField(this, 16) != null;
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * repeated string include = 17;
+ * repeated string include = 16;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.getIncludeList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 17));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 16));
 };
 
 
@@ -33854,7 +33926,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.setIncludeList = function(value) {
-  return jspb.Message.setField(this, 17, value || []);
+  return jspb.Message.setField(this, 16, value || []);
 };
 
 
@@ -33864,7 +33936,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.addInclude = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 17, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 16, value, opt_index);
 };
 
 
@@ -33878,11 +33950,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.proto
 
 
 /**
- * repeated string exclude = 18;
+ * repeated string exclude = 17;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.getExcludeList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 18));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 17));
 };
 
 
@@ -33891,7 +33963,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.setExcludeList = function(value) {
-  return jspb.Message.setField(this, 18, value || []);
+  return jspb.Message.setField(this, 17, value || []);
 };
 
 
@@ -33901,7 +33973,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.addExclude = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 18, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 17, value, opt_index);
 };
 
 
@@ -33911,6 +33983,79 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.clearExcludeList = function() {
   return this.setExcludeList([]);
+};
+
+
+/**
+ * repeated string entities = 18;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.getEntitiesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 18));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.setEntitiesList = function(value) {
+  return jspb.Message.setField(this, 18, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.addEntities = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 18, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.clearEntitiesList = function() {
+  return this.setEntitiesList([]);
+};
+
+
+/**
+ * optional string ingestType = 19;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.getIngesttype = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.setIngesttype = function(value) {
+  return jspb.Message.setField(this, 19, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.clearIngesttype = function() {
+  return jspb.Message.setField(this, 19, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewSpec.prototype.hasIngesttype = function() {
+  return jspb.Message.getField(this, 19) != null;
 };
 
 

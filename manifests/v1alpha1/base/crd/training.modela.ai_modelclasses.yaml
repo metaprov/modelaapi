@@ -1960,8 +1960,8 @@ spec:
                             type: string
                         type: object
                       feSearch:
-                        description: FeatureEngineeringSearch specifies the parameters
-                          to perform a feature engineering search
+                        description: FESearch specifies the parameters to perform
+                          a feature engineering search
                         properties:
                           autoRemove:
                             default: true
@@ -3843,6 +3843,29 @@ spec:
                     - datasetName
                     - task
                     type: object
+                type: object
+              trainingData:
+                description: If models are trained on data created from a point in
+                  time view.
+                properties:
+                  views:
+                    items:
+                      properties:
+                        exclude:
+                          description: Feature to exclude from the view
+                          items:
+                            type: string
+                          type: array
+                        include:
+                          description: Feature to include from the view
+                          items:
+                            type: string
+                          type: array
+                        name:
+                          description: The name of the view
+                          type: string
+                      type: object
+                    type: array
                 type: object
               versionName:
                 default: ""

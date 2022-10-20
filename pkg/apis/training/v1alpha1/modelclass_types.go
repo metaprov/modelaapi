@@ -105,6 +105,9 @@ type ModelClassSpec struct {
 	// The schedule for summary report
 	// +kubebuilder:validation:Optional
 	Report catalog.RunSchedule `json:"report,omitempty" protobuf:"bytes,13,opt,name=report"`
+	// If models are trained on data created from a point in time view.
+	// +kubebuilder:validation:Optional
+	FeatureServiceSpec `json:"trainingData,omitempty" protobuf:"bytes,14,opt,name=trainingData"`
 }
 
 type ModelClassDataSpec struct {
@@ -180,21 +183,42 @@ type ModelClassStageSpec struct {
 
 type ModelClassRetrainingSpec struct {
 	// If true , retrain the model if drift was detected
+	// +kubebuilder:validation:Optional
 	Drift *bool `json:"drift,omitempty" protobuf:"bytes,1,opt,name=drift"`
 	// The schedule for model retraining
+	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,2,opt,name=schedule"`
 }
 
 type ModelClassMonitoringSpec struct {
 	// If true , retrain the model if drift was detected
+	// +kubebuilder:validation:Optional
 	Drift *bool `json:"drift,omitempty" protobuf:"bytes,1,opt,name=drift"`
 	// The schedule for model retraining
+	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,2,opt,name=schedule"`
 }
 
 type ModelClassLabelingSpec struct {
 	// The schedule for model retraining
+	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,1,opt,name=schedule"`
+}
+
+type FeatureServiceSpec struct {
+	// +kubebuilder:validation:Optional
+	Views []FeatureViewRef `json:"views,omitempty" protobuf:"bytes,1,opt,name=views"`
+}
+
+type FeatureViewRef struct {
+	// The name of the view
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	// Feature to include from the view
+	// +kubebuilder:validation:Optional
+	Include []string `json:"include,omitempty" protobuf:"bytes,2,opt,name=include"`
+	// Feature to exclude from the view
+	// +kubebuilder:validation:Optional
+	Exclude []string `json:"exclude,omitempty" protobuf:"bytes,3,opt,name=exclude"`
 }
 
 // ModelClassList contains a list of Studies

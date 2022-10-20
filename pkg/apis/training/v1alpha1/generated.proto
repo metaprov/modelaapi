@@ -759,6 +759,24 @@ message FeatureSelectionSpec {
   repeated string reserved = 12;
 }
 
+message FeatureServiceSpec {
+  // +kubebuilder:validation:Optional
+  repeated FeatureViewRef views = 1;
+}
+
+message FeatureViewRef {
+  // The name of the view
+  optional string name = 1;
+
+  // Feature to include from the view
+  // +kubebuilder:validation:Optional
+  repeated string include = 2;
+
+  // Feature to exclude from the view
+  // +kubebuilder:validation:Optional
+  repeated string exclude = 3;
+}
+
 // The forecaster search define a search for the forecaster
 message ForecasterSpec {
   // The spec for the holiday
@@ -1468,6 +1486,7 @@ message ModelClassDeploymentSpec {
 
 message ModelClassLabelingSpec {
   // The schedule for model retraining
+  // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 1;
 }
 
@@ -1481,17 +1500,21 @@ message ModelClassList {
 
 message ModelClassMonitoringSpec {
   // If true , retrain the model if drift was detected
+  // +kubebuilder:validation:Optional
   optional bool drift = 1;
 
   // The schedule for model retraining
+  // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 2;
 }
 
 message ModelClassRetrainingSpec {
   // If true , retrain the model if drift was detected
+  // +kubebuilder:validation:Optional
   optional bool drift = 1;
 
   // The schedule for model retraining
+  // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 2;
 }
 
@@ -1559,6 +1582,10 @@ message ModelClassSpec {
   // The schedule for summary report
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule report = 13;
+
+  // If models are trained on data created from a point in time view.
+  // +kubebuilder:validation:Optional
+  optional FeatureServiceSpec trainingData = 14;
 }
 
 // Define a test stage
@@ -3629,7 +3656,7 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional string subtask = 7;
 
-  // FeatureEngineeringSearch specifies the parameters to perform a feature engineering search
+  // FESearch specifies the parameters to perform a feature engineering search
   // +kubebuilder:validation:Optional
   optional FeatureEngineeringSearchSpec feSearch = 8;
 

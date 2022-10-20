@@ -581,6 +581,8 @@ type DataSourceSpec struct {
 	// The specification for tests for a new dataset
 	// +kubebuilder:validation:Optional
 	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,15,opt,name=unitTestsTemplate"`
+	// +kubebuilder:validation:Optional
+	IngestMethod *catalog.FeatureStoreIngestType `json:"ingestMethod,omitempty" protobuf:"bytes,16,opt,name=ingestMethod"`
 }
 
 // FlatFileFormatSpec defines the format for incoming flat-files to be parsed

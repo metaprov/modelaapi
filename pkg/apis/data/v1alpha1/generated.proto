@@ -1471,6 +1471,9 @@ message DataSourceSpec {
   // The specification for tests for a new dataset
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTestsTemplate = 15;
+
+  // +kubebuilder:validation:Optional
+  optional string ingestMethod = 16;
 }
 
 // DataSourceStatus defines the observed state of a DataSource object
@@ -1957,7 +1960,7 @@ message EntitySpec {
 
   // Keys are the features that create a unique key to the entity.
   // +kubebuilder:validation:Optional
-  repeated string keys = 3;
+  repeated string joinKeys = 3;
 
   // Owner of this Entity
   // +kubebuilder:default:="no-one"
@@ -2307,23 +2310,30 @@ message FeatureViewSpec {
 
   // A template for models unit tests
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 14;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 13;
 
   // Ingest the features into the online store
   // +kubebuilder:validation:Optional
-  optional bool online = 15;
+  optional bool online = 14;
 
   // Ingest the features into the offline store
   // +kubebuilder:validation:Optional
-  optional bool offline = 16;
+  optional bool offline = 15;
 
   // Features to include in this set
   // +kubebuilder:validation:Optional
-  repeated string include = 17;
+  repeated string include = 16;
 
   // Features to exclude from the data source.
   // +kubebuilder:validation:Optional
-  repeated string exclude = 18;
+  repeated string exclude = 17;
+
+  // Features to exclude from the data source.
+  // +kubebuilder:validation:Optional
+  repeated string entities = 18;
+
+  // +kubebuilder:validation:Optional
+  optional string ingestType = 19;
 }
 
 // FeatureStatus defines the observed state of Feature

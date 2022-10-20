@@ -1076,6 +1076,56 @@ export namespace FeatureSelectionSpec {
   }
 }
 
+export class FeatureServiceSpec extends jspb.Message {
+  getViewsList(): Array<FeatureViewRef>;
+  setViewsList(value: Array<FeatureViewRef>): FeatureServiceSpec;
+  clearViewsList(): FeatureServiceSpec;
+  addViews(value?: FeatureViewRef, index?: number): FeatureViewRef;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureServiceSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureServiceSpec): FeatureServiceSpec.AsObject;
+  static serializeBinaryToWriter(message: FeatureServiceSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureServiceSpec;
+  static deserializeBinaryFromReader(message: FeatureServiceSpec, reader: jspb.BinaryReader): FeatureServiceSpec;
+}
+
+export namespace FeatureServiceSpec {
+  export type AsObject = {
+    viewsList: Array<FeatureViewRef.AsObject>,
+  }
+}
+
+export class FeatureViewRef extends jspb.Message {
+  getName(): string;
+  setName(value: string): FeatureViewRef;
+
+  getIncludeList(): Array<string>;
+  setIncludeList(value: Array<string>): FeatureViewRef;
+  clearIncludeList(): FeatureViewRef;
+  addInclude(value: string, index?: number): FeatureViewRef;
+
+  getExcludeList(): Array<string>;
+  setExcludeList(value: Array<string>): FeatureViewRef;
+  clearExcludeList(): FeatureViewRef;
+  addExclude(value: string, index?: number): FeatureViewRef;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureViewRef.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureViewRef): FeatureViewRef.AsObject;
+  static serializeBinaryToWriter(message: FeatureViewRef, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureViewRef;
+  static deserializeBinaryFromReader(message: FeatureViewRef, reader: jspb.BinaryReader): FeatureViewRef;
+}
+
+export namespace FeatureViewRef {
+  export type AsObject = {
+    name: string,
+    includeList: Array<string>,
+    excludeList: Array<string>,
+  }
+}
+
 export class ForecasterSpec extends jspb.Message {
   getEventsList(): Array<TimeSeriesEvent>;
   setEventsList(value: Array<TimeSeriesEvent>): ForecasterSpec;
@@ -2256,6 +2306,11 @@ export class ModelClassSpec extends jspb.Message {
   hasReport(): boolean;
   clearReport(): ModelClassSpec;
 
+  getTrainingdata(): FeatureServiceSpec | undefined;
+  setTrainingdata(value?: FeatureServiceSpec): ModelClassSpec;
+  hasTrainingdata(): boolean;
+  clearTrainingdata(): ModelClassSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassSpec): ModelClassSpec.AsObject;
@@ -2279,6 +2334,7 @@ export namespace ModelClassSpec {
     retraining?: ModelClassRetrainingSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     report?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    trainingdata?: FeatureServiceSpec.AsObject,
   }
 }
 

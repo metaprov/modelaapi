@@ -377,6 +377,8 @@ spec:
                       the DataLocation
                     type: string
                 type: object
+              ingestMethod:
+                type: string
               labeled:
                 default: true
                 description: If true, this datasource is for labeled data.

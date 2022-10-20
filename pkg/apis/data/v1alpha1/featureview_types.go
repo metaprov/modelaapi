@@ -107,19 +107,24 @@ type FeatureViewSpec struct {
 	Paused *bool `json:"paused,omitempty" protobuf:"varint,12,opt,name=paused"`
 	// A template for models unit tests
 	// +kubebuilder:validation:Optional
-	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,14,opt,name=unitTests"`
+	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,13,opt,name=unitTests"`
 	// Ingest the features into the online store
 	// +kubebuilder:validation:Optional
-	Online *bool `json:"online,omitempty" protobuf:"varint,15,opt,name=online"`
+	Online *bool `json:"online,omitempty" protobuf:"varint,14,opt,name=online"`
 	// Ingest the features into the offline store
 	// +kubebuilder:validation:Optional
-	Offline *bool `json:"offline,omitempty" protobuf:"varint,16,opt,name=offline"`
+	Offline *bool `json:"offline,omitempty" protobuf:"varint,15,opt,name=offline"`
 	// Features to include in this set
 	// +kubebuilder:validation:Optional
-	Include []string `json:"include,omitempty" protobuf:"bytes,17,rep,name=include"`
+	Include []string `json:"include,omitempty" protobuf:"bytes,16,rep,name=include"`
 	// Features to exclude from the data source.
 	// +kubebuilder:validation:Optional
-	Exclude []string `json:"exclude,omitempty" protobuf:"bytes,18,rep,name=exclude"`
+	Exclude []string `json:"exclude,omitempty" protobuf:"bytes,17,rep,name=exclude"`
+	// Features to exclude from the data source.
+	// +kubebuilder:validation:Optional
+	Entities []string `json:"entities,omitempty" protobuf:"bytes,18,rep,name=entities"`
+	// +kubebuilder:validation:Optional
+	IngestType *catalog.FeatureStoreIngestType `json:"ingestType,omitempty" protobuf:"bytes,19,rep,name=ingestType"`
 }
 
 // FeatureStatus defines the observed state of Feature

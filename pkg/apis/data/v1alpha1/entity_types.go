@@ -69,7 +69,7 @@ type EntitySpec struct {
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// Keys are the features that create a unique key to the entity.
 	// +kubebuilder:validation:Optional
-	Keys []string `json:"keys,omitempty" protobuf:"bytes,3,rep,name=keys"`
+	JoinKeys []string `json:"joinKeys,omitempty" protobuf:"bytes,3,rep,name=joinKeys"`
 	// Owner of this Entity
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
