@@ -10784,7 +10784,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
     samplepct: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     autoremove: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
     reuse: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
-    featureselectiontemplate: (f = msg.getFeatureselectiontemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.toObject(includeInstance, f),
+    feselection: (f = msg.getFeselection()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.toObject(includeInstance, f),
     earlystop: (f = msg.getEarlystop()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.toObject(includeInstance, f)
   };
 
@@ -10861,7 +10861,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
     case 10:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.deserializeBinaryFromReader);
-      msg.setFeatureselectiontemplate(value);
+      msg.setFeselection(value);
       break;
     case 12:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec;
@@ -10960,7 +10960,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
       f
     );
   }
-  f = message.getFeatureselectiontemplate();
+  f = message.getFeselection();
   if (f != null) {
     writer.writeMessage(
       10,
@@ -11304,10 +11304,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
 
 
 /**
- * optional FeatureSelectionSpec featureSelectionTemplate = 10;
+ * optional FeatureSelectionSpec feSelection = 10;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.getFeatureselectiontemplate = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.getFeselection = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec, 10));
 };
@@ -11317,7 +11317,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.setFeatureselectiontemplate = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.setFeselection = function(value) {
   return jspb.Message.setWrapperField(this, 10, value);
 };
 
@@ -11326,8 +11326,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.clearFeatureselectiontemplate = function() {
-  return this.setFeatureselectiontemplate(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.clearFeselection = function() {
+  return this.setFeselection(undefined);
 };
 
 
@@ -11335,7 +11335,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.hasFeatureselectiontemplate = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.hasFeselection = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 
@@ -12467,7 +12467,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
     filter: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
     wrapper: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
     pipelineList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    variancethresholdpct: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    varthreshold: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     corrthreshold: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     maxfeatures: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     percentile: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
@@ -12530,7 +12530,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setVariancethresholdpct(value);
+      msg.setVarthreshold(value);
       break;
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
@@ -12832,10 +12832,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
 
 
 /**
- * optional int32 varianceThresholdPct = 7;
+ * optional int32 varThreshold = 7;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getVariancethresholdpct = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getVarthreshold = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -12844,7 +12844,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setVariancethresholdpct = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setVarthreshold = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -12853,7 +12853,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearVariancethresholdpct = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearVarthreshold = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -12862,7 +12862,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasVariancethresholdpct = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasVarthreshold = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 

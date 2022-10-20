@@ -2001,7 +2001,7 @@ spec:
                             description: The algorithm to use when evaluating models
                               with different feature engineering pipelines
                             type: string
-                          featureSelectionTemplate:
+                          feSelection:
                             description: Specification for feature selection. successful
                               ModelClass.
                             properties:
@@ -2072,7 +2072,7 @@ spec:
                                 items:
                                   type: string
                                 type: array
-                              varianceThresholdPct:
+                              varThreshold:
                                 default: 5
                                 description: The threshold as a percentage to remove
                                   low variance features
@@ -4268,7 +4268,7 @@ spec:
                         items:
                           type: string
                         type: array
-                      varianceThresholdPct:
+                      varThreshold:
                         default: 5
                         description: The threshold as a percentage to remove low variance
                           features

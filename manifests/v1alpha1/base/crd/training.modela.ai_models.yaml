@@ -742,7 +742,7 @@ spec:
                         items:
                           type: string
                         type: array
-                      varianceThresholdPct:
+                      varThreshold:
                         default: 5
                         description: The threshold as a percentage to remove low variance
                           features

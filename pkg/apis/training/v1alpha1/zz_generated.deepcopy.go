@@ -897,7 +897,7 @@ func (in *FeatureEngineeringSearchSpec) DeepCopyInto(out *FeatureEngineeringSear
 		*out = new(bool)
 		**out = **in
 	}
-	in.FeatureSelectionTemplate.DeepCopyInto(&out.FeatureSelectionTemplate)
+	in.FSelection.DeepCopyInto(&out.FSelection)
 	in.EarlyStop.DeepCopyInto(&out.EarlyStop)
 }
 
@@ -1028,8 +1028,8 @@ func (in *FeatureSelectionSpec) DeepCopyInto(out *FeatureSelectionSpec) {
 		*out = make([]catalogv1alpha1.FeatureSelection, len(*in))
 		copy(*out, *in)
 	}
-	if in.VarianceThresholdPct != nil {
-		in, out := &in.VarianceThresholdPct, &out.VarianceThresholdPct
+	if in.VarThreshold != nil {
+		in, out := &in.VarThreshold, &out.VarThreshold
 		*out = new(int32)
 		**out = **in
 	}

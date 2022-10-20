@@ -864,10 +864,10 @@ export class FeatureEngineeringSearchSpec extends jspb.Message {
   getReuse(): boolean;
   setReuse(value: boolean): FeatureEngineeringSearchSpec;
 
-  getFeatureselectiontemplate(): FeatureSelectionSpec | undefined;
-  setFeatureselectiontemplate(value?: FeatureSelectionSpec): FeatureEngineeringSearchSpec;
-  hasFeatureselectiontemplate(): boolean;
-  clearFeatureselectiontemplate(): FeatureEngineeringSearchSpec;
+  getFeselection(): FeatureSelectionSpec | undefined;
+  setFeselection(value?: FeatureSelectionSpec): FeatureEngineeringSearchSpec;
+  hasFeselection(): boolean;
+  clearFeselection(): FeatureEngineeringSearchSpec;
 
   getEarlystop(): EarlyStopSpec | undefined;
   setEarlystop(value?: EarlyStopSpec): FeatureEngineeringSearchSpec;
@@ -893,7 +893,7 @@ export namespace FeatureEngineeringSearchSpec {
     samplepct: number,
     autoremove: boolean,
     reuse: boolean,
-    featureselectiontemplate?: FeatureSelectionSpec.AsObject,
+    feselection?: FeatureSelectionSpec.AsObject,
     earlystop?: EarlyStopSpec.AsObject,
   }
 }
@@ -1036,8 +1036,8 @@ export class FeatureSelectionSpec extends jspb.Message {
   clearPipelineList(): FeatureSelectionSpec;
   addPipeline(value: string, index?: number): FeatureSelectionSpec;
 
-  getVariancethresholdpct(): number;
-  setVariancethresholdpct(value: number): FeatureSelectionSpec;
+  getVarthreshold(): number;
+  setVarthreshold(value: number): FeatureSelectionSpec;
 
   getCorrthreshold(): number;
   setCorrthreshold(value: number): FeatureSelectionSpec;
@@ -1068,7 +1068,7 @@ export namespace FeatureSelectionSpec {
     filter: boolean,
     wrapper: boolean,
     pipelineList: Array<string>,
-    variancethresholdpct: number,
+    varthreshold: number,
     corrthreshold: number,
     maxfeatures: number,
     percentile: number,

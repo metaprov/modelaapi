@@ -647,7 +647,7 @@ message FeatureEngineeringSearchSpec {
   // Specification for feature selection.
   // successful ModelClass.
   // +kubebuilder:validation:Optional
-  optional FeatureSelectionSpec featureSelectionTemplate = 10;
+  optional FeatureSelectionSpec feSelection = 10;
 
   // The number of new models produced by the fe search which, if there is no improvement
   // in score, the model search will conclude
@@ -737,7 +737,7 @@ message FeatureSelectionSpec {
   // The threshold as a percentage to remove low variance features
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
-  optional int32 varianceThresholdPct = 7;
+  optional int32 varThreshold = 7;
 
   // The threshold to remove features with high correlations
   // +kubebuilder:default:=95

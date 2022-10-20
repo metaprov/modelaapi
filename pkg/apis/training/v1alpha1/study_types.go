@@ -820,7 +820,7 @@ type FeatureEngineeringSearchSpec struct {
 	// Specification for feature selection.
 	// successful ModelClass.
 	// +kubebuilder:validation:Optional
-	FeatureSelectionTemplate FeatureSelectionSpec `json:"featureSelectionTemplate,omitempty" protobuf:"bytes,10,opt,name=featureSelectionTemplate"`
+	FSelection FeatureSelectionSpec `json:"feSelection,omitempty" protobuf:"bytes,10,opt,name=feSelection"`
 	// The number of new models produced by the fe search which, if there is no improvement
 	// in score, the model search will conclude
 	// +kubebuilder:validation:Optional

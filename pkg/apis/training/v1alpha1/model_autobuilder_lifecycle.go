@@ -547,7 +547,7 @@ func (b *ModelAutobuilder) CreateStudy(notification catalog.NotificationSpec) *S
 			Fast: b.Spec.Fast,
 			FESearch: FeatureEngineeringSearchSpec{
 				Enabled: util.BoolPtr(*b.Spec.FeatureEngineering),
-				FeatureSelectionTemplate: FeatureSelectionSpec{
+				FSelection: FeatureSelectionSpec{
 					Enabled: util.BoolPtr(*b.Spec.FeatureSelection),
 				},
 			},

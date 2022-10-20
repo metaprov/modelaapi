@@ -1070,7 +1070,7 @@ type FeatureSelectionSpec struct {
 	// The threshold as a percentage to remove low variance features
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
-	VarianceThresholdPct *int32 `json:"varianceThresholdPct,omitempty" protobuf:"varint,7,opt,name=varianceThresholdPct"`
+	VarThreshold *int32 `json:"varThreshold,omitempty" protobuf:"varint,7,opt,name=varThreshold"`
 	// The threshold to remove features with high correlations
 	// +kubebuilder:default:=95
 	// +kubebuilder:validation:Optional
