@@ -66,10 +66,6 @@ type FeedbackTestSpec struct {
 
 // ModelServingSpec specifies the configuration for models to be served by a Predictor
 type ModelServingSpec struct {
-	// The type of predictor (online, batch, or streaming). Online is the only supported type as of the current release
-	// +kubebuilder:default:="online"
-	// +kubebuilder:validation:Optional
-	Type *catalog.PredictorType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// If Serverless is true, the Kubernetes Deployment which serves the model will not be created
 	// until it starts to receive prediction traffic, and will be destroyed once the model becomes dormant
 	Serverless *bool `json:"serverless,omitempty" protobuf:"varint,2,opt,name=serverless"`
@@ -295,10 +291,14 @@ type PredictorSpec struct {
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The reference to the DataProduct that the resource exists under
 	ProductRef *v1.ObjectReference `json:"productRef" protobuf:"bytes,4,opt,name=productRef"`
+	// The type of predictor (online, batch, or streaming). Online is the only supported type as of the current release
+	// +kubebuilder:default:="online"
+	// +kubebuilder:validation:Optional
+	Type *catalog.PredictorType `json:"type,omitempty" protobuf:"bytes,5,opt,name=type"`
 	// If specified, the reference to the ServingSite resource that hosts the Predictor
 	// If not specified, the predictor will be hosted on the default serving site.
 	// +kubebuilder:validation:Optional
-	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,5,opt,name=servingsiteRef"`
+	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,6,opt,name=servingsiteRef"`
 	// If specified, the collection of shadow models. A shadow model receives prediction request, but does
 	// not serve the reply.
 	// +kubebuilder:validation:Optional

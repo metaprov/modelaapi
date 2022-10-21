@@ -663,11 +663,6 @@ message ModelRecord {
 
 // ModelServingSpec specifies the configuration for models to be served by a Predictor
 message ModelServingSpec {
-  // The type of predictor (online, batch, or streaming). Online is the only supported type as of the current release
-  // +kubebuilder:default:="online"
-  // +kubebuilder:validation:Optional
-  optional string type = 1;
-
   // If Serverless is true, the Kubernetes Deployment which serves the model will not be created
   // until it starts to receive prediction traffic, and will be destroyed once the model becomes dormant
   optional bool serverless = 2;
@@ -883,12 +878,6 @@ message PredictionSpec {
   // +kubebuilder:validation:Optional
   optional ForecastPredictionSpec forecastSpec = 17;
 
-  // CronPredictionName specifies the name of the CronPrediction that created the Prediction, if applicable
-  // +kubebuilder:validation:MaxLength=63
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string cronPredictorName = 18;
-
   // The reference to the ServingSite resource that hosts the Prediction
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 19;
@@ -896,6 +885,11 @@ message PredictionSpec {
   // Locations for group forecasts
   // +kubebuilder:validation:Optional
   optional GroupPredictionLocationsSpec groupLocation = 20;
+
+  // In case of batch prediction, how many workers.
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 workers = 21;
 }
 
 // PredictionStatus is the observed state of a Prediction
@@ -1038,10 +1032,15 @@ message PredictorSpec {
   // The reference to the DataProduct that the resource exists under
   optional k8s.io.api.core.v1.ObjectReference productRef = 4;
 
+  // The type of predictor (online, batch, or streaming). Online is the only supported type as of the current release
+  // +kubebuilder:default:="online"
+  // +kubebuilder:validation:Optional
+  optional string type = 5;
+
   // If specified, the reference to the ServingSite resource that hosts the Predictor
   // If not specified, the predictor will be hosted on the default serving site.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 5;
+  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 6;
 
   // If specified, the collection of shadow models. A shadow model receives prediction request, but does
   // not serve the reply.

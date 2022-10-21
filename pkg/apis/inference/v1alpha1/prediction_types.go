@@ -149,17 +149,16 @@ type PredictionSpec struct {
 	// The forecasting specification in the case that the predicted model is a hierarchical forecast
 	// +kubebuilder:validation:Optional
 	ForecastSpec ForecastPredictionSpec `json:"forecastSpec,omitempty" protobuf:"bytes,17,opt,name=forecastSpec"`
-	// CronPredictionName specifies the name of the CronPrediction that created the Prediction, if applicable
-	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	CronPredictionName *string `json:"cronPredictorName,omitempty" protobuf:"bytes,18,opt,name=cronPredictorName"`
 	// The reference to the ServingSite resource that hosts the Prediction
 	// +kubebuilder:validation:Optional
 	ServingSiteRef v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,19,opt,name=servingsiteRef"`
 	// Locations for group forecasts
 	// +kubebuilder:validation:Optional
 	GroupLocation GroupPredictionLocationsSpec `json:"groupLocation" protobuf:"bytes,20,opt,name=groupLocation"`
+	// In case of batch prediction, how many workers.
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	Workers *int32 `json:"workers" protobuf:"bytes,21,opt,name=workers"`
 }
 
 // PredictionStatus is the observed state of a Prediction

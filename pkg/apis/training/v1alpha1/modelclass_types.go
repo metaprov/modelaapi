@@ -107,7 +107,7 @@ type ModelClassSpec struct {
 	Report catalog.RunSchedule `json:"report,omitempty" protobuf:"bytes,13,opt,name=report"`
 	// If models are trained on data created from a point in time view.
 	// +kubebuilder:validation:Optional
-	FeatureServiceSpec `json:"trainingData,omitempty" protobuf:"bytes,14,opt,name=trainingData"`
+	FeaturesSpec `json:"trainingData,omitempty" protobuf:"bytes,14,opt,name=trainingData"`
 }
 
 type ModelClassDataSpec struct {
@@ -205,9 +205,14 @@ type ModelClassLabelingSpec struct {
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,1,opt,name=schedule"`
 }
 
-type FeatureServiceSpec struct {
+type FeaturesSpec struct {
+	// If using the feature store (pre defined features), specify the feature groups the would
+	// be used to create the training data.
 	// +kubebuilder:validation:Optional
-	Views []FeatureGroupRef `json:"views,omitempty" protobuf:"bytes,1,opt,name=views"`
+	Groups []FeatureGroupRef `json:"groups,omitempty" protobuf:"bytes,1,opt,name=groups"`
+	// User can also specify a sql statement or a table that would be used as training data.
+	// +kubebuilder:validation:Optional
+	Data *data.DataLocation `json:"data,omitempty" protobuf:"bytes,2,opt,name=data"`
 }
 
 type FeatureGroupRef struct {

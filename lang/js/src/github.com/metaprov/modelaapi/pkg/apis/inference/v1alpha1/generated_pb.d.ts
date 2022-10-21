@@ -1060,9 +1060,6 @@ export namespace ModelRecord {
 }
 
 export class ModelServingSpec extends jspb.Message {
-  getType(): string;
-  setType(value: string): ModelServingSpec;
-
   getServerless(): boolean;
   setServerless(value: boolean): ModelServingSpec;
 
@@ -1081,7 +1078,6 @@ export class ModelServingSpec extends jspb.Message {
 
 export namespace ModelServingSpec {
   export type AsObject = {
-    type: string,
     serverless: boolean,
     servingtests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
@@ -1383,9 +1379,6 @@ export class PredictionSpec extends jspb.Message {
   hasForecastspec(): boolean;
   clearForecastspec(): PredictionSpec;
 
-  getCronpredictorname(): string;
-  setCronpredictorname(value: string): PredictionSpec;
-
   getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionSpec;
   hasServingsiteref(): boolean;
@@ -1395,6 +1388,9 @@ export class PredictionSpec extends jspb.Message {
   setGrouplocation(value?: GroupPredictionLocationsSpec): PredictionSpec;
   hasGrouplocation(): boolean;
   clearGrouplocation(): PredictionSpec;
+
+  getWorkers(): number;
+  setWorkers(value: number): PredictionSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionSpec.AsObject;
@@ -1423,9 +1419,9 @@ export namespace PredictionSpec {
     aborted: boolean,
     ttl: number,
     forecastspec?: ForecastPredictionSpec.AsObject,
-    cronpredictorname: string,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     grouplocation?: GroupPredictionLocationsSpec.AsObject,
+    workers: number,
   }
 }
 
@@ -1654,6 +1650,9 @@ export class PredictorSpec extends jspb.Message {
   hasProductref(): boolean;
   clearProductref(): PredictorSpec;
 
+  getType(): string;
+  setType(value: string): PredictorSpec;
+
   getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorSpec;
   hasServingsiteref(): boolean;
@@ -1770,6 +1769,7 @@ export namespace PredictorSpec {
     modelclassname: string,
     description: string,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    type: string,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
     progressive?: ProgressiveSpec.AsObject,

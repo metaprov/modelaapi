@@ -409,12 +409,6 @@ spec:
                             default: false
                             description: If true create output dataset
                             type: boolean
-                          cronPredictorName:
-                            default: ""
-                            description: CronPredictionName specifies the name of
-                              the CronPrediction that created the Prediction, if applicable
-                            maxLength: 63
-                            type: string
                           dataSourceRef:
                             description: A reference to the input data source ref
                             properties:
@@ -1447,6 +1441,11 @@ spec:
                               describes the version of the resource that exists in
                               the same DataProduct namespace as the resource
                             type: string
+                          workers:
+                            default: 1
+                            description: In case of batch prediction, how many workers.
+                            format: int32
+                            type: integer
                         type: object
                     required:
                     - spec
@@ -2992,15 +2991,6 @@ spec:
                           type: object
                         type: array
                     type: object
-                  type:
-                    default: online
-                    description: The type of predictor (online, batch, or streaming).
-                      Online is the only supported type as of the current release
-                    enum:
-                    - online
-                    - batch
-                    - streaming
-                    type: string
                 type: object
               servingsiteRef:
                 description: If specified, the reference to the ServingSite resource
@@ -3068,6 +3058,15 @@ spec:
                 - auto
                 - unknown
                 - group-forecasting
+                type: string
+              type:
+                default: online
+                description: The type of predictor (online, batch, or streaming).
+                  Online is the only supported type as of the current release
+                enum:
+                - online
+                - batch
+                - streaming
                 type: string
               versionName:
                 default: ""

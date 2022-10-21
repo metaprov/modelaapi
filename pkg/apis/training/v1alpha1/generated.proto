@@ -772,9 +772,15 @@ message FeatureSelectionSpec {
   repeated string reserved = 12;
 }
 
-message FeatureServiceSpec {
+message FeaturesSpec {
+  // If using the feature store (pre defined features), specify the feature groups the would
+  // be used to create the training data.
   // +kubebuilder:validation:Optional
-  repeated FeatureGroupRef views = 1;
+  repeated FeatureGroupRef groups = 1;
+
+  // User can also specify a sql statement or a table that would be used as training data.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation data = 2;
 }
 
 // The forecaster search define a search for the forecaster
@@ -1585,7 +1591,7 @@ message ModelClassSpec {
 
   // If models are trained on data created from a point in time view.
   // +kubebuilder:validation:Optional
-  optional FeatureServiceSpec trainingData = 14;
+  optional FeaturesSpec trainingData = 14;
 }
 
 // Define a test stage

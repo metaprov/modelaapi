@@ -1106,23 +1106,29 @@ export namespace FeatureSelectionSpec {
   }
 }
 
-export class FeatureServiceSpec extends jspb.Message {
-  getViewsList(): Array<FeatureGroupRef>;
-  setViewsList(value: Array<FeatureGroupRef>): FeatureServiceSpec;
-  clearViewsList(): FeatureServiceSpec;
-  addViews(value?: FeatureGroupRef, index?: number): FeatureGroupRef;
+export class FeaturesSpec extends jspb.Message {
+  getGroupsList(): Array<FeatureGroupRef>;
+  setGroupsList(value: Array<FeatureGroupRef>): FeaturesSpec;
+  clearGroupsList(): FeaturesSpec;
+  addGroups(value?: FeatureGroupRef, index?: number): FeatureGroupRef;
+
+  getData(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setData(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): FeaturesSpec;
+  hasData(): boolean;
+  clearData(): FeaturesSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeatureServiceSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: FeatureServiceSpec): FeatureServiceSpec.AsObject;
-  static serializeBinaryToWriter(message: FeatureServiceSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeatureServiceSpec;
-  static deserializeBinaryFromReader(message: FeatureServiceSpec, reader: jspb.BinaryReader): FeatureServiceSpec;
+  toObject(includeInstance?: boolean): FeaturesSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FeaturesSpec): FeaturesSpec.AsObject;
+  static serializeBinaryToWriter(message: FeaturesSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeaturesSpec;
+  static deserializeBinaryFromReader(message: FeaturesSpec, reader: jspb.BinaryReader): FeaturesSpec;
 }
 
-export namespace FeatureServiceSpec {
+export namespace FeaturesSpec {
   export type AsObject = {
-    viewsList: Array<FeatureGroupRef.AsObject>,
+    groupsList: Array<FeatureGroupRef.AsObject>,
+    data?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
@@ -2306,8 +2312,8 @@ export class ModelClassSpec extends jspb.Message {
   hasReport(): boolean;
   clearReport(): ModelClassSpec;
 
-  getTrainingdata(): FeatureServiceSpec | undefined;
-  setTrainingdata(value?: FeatureServiceSpec): ModelClassSpec;
+  getTrainingdata(): FeaturesSpec | undefined;
+  setTrainingdata(value?: FeaturesSpec): ModelClassSpec;
   hasTrainingdata(): boolean;
   clearTrainingdata(): ModelClassSpec;
 
@@ -2334,7 +2340,7 @@ export namespace ModelClassSpec {
     retraining?: ModelClassRetrainingSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     report?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    trainingdata?: FeatureServiceSpec.AsObject,
+    trainingdata?: FeaturesSpec.AsObject,
   }
 }
 
