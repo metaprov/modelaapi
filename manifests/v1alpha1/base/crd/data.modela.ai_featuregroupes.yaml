@@ -63,27 +63,31 @@ spec:
                 format: int64
                 minimum: 0
                 type: integer
+              datasourceName:
+                description: The name of the data source which contain the schema
+                  for this entity
+                type: string
               description:
                 default: ""
                 description: Description of the feature pipeline
                 maxLength: 512
                 type: string
-              entities:
-                description: Features to exclude from the data source.
-                items:
-                  type: string
-                type: array
+              entityName:
+                description: The name of the entity that this group is part of.
+                type: string
               exclude:
-                description: Features to exclude from the data source.
+                description: Features to exclude from the data source in this group
                 items:
                   type: string
                 type: array
               include:
-                description: Features to include in this set
+                description: Features to include in this group. add all, if you want
+                  to include all the features.
                 items:
                   type: string
                 type: array
               ingestType:
+                description: How this group is ingested
                 type: string
               offline:
                 description: Ingest the features into the offline store
@@ -251,6 +255,10 @@ spec:
                     - cron
                     type: string
                 type: object
+              timeColumn:
+                description: The name of the data source which contain the schema
+                  for this entity
+                type: string
               unitTests:
                 description: A template for models unit tests
                 properties:

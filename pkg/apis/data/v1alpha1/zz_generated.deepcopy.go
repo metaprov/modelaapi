@@ -2102,11 +2102,6 @@ func (in *EntitySpec) DeepCopyInto(out *EntitySpec) {
 		*out = make([]string, len(*in))
 		copy(*out, *in)
 	}
-	if in.DatasourceName != nil {
-		in, out := &in.DatasourceName, &out.DatasourceName
-		*out = new(string)
-		**out = **in
-	}
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
 		*out = new(string)
@@ -2342,8 +2337,33 @@ func (in *FeatureGroupSpec) DeepCopyInto(out *FeatureGroupSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.IngestType != nil {
+		in, out := &in.IngestType, &out.IngestType
+		*out = new(catalogv1alpha1.FeatureStoreIngestType)
+		**out = **in
+	}
+	if in.Include != nil {
+		in, out := &in.Include, &out.Include
+		*out = make([]string, len(*in))
+		copy(*out, *in)
+	}
+	if in.Exclude != nil {
+		in, out := &in.Exclude, &out.Exclude
+		*out = make([]string, len(*in))
+		copy(*out, *in)
+	}
 	in.Resources.DeepCopyInto(&out.Resources)
 	in.Schedule.DeepCopyInto(&out.Schedule)
+	if in.DatasourceName != nil {
+		in, out := &in.DatasourceName, &out.DatasourceName
+		*out = new(string)
+		**out = **in
+	}
+	if in.TimeColumn != nil {
+		in, out := &in.TimeColumn, &out.TimeColumn
+		*out = new(string)
+		**out = **in
+	}
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
 		*out = new(int64)
@@ -2363,26 +2383,6 @@ func (in *FeatureGroupSpec) DeepCopyInto(out *FeatureGroupSpec) {
 	if in.Offline != nil {
 		in, out := &in.Offline, &out.Offline
 		*out = new(bool)
-		**out = **in
-	}
-	if in.Include != nil {
-		in, out := &in.Include, &out.Include
-		*out = make([]string, len(*in))
-		copy(*out, *in)
-	}
-	if in.Exclude != nil {
-		in, out := &in.Exclude, &out.Exclude
-		*out = make([]string, len(*in))
-		copy(*out, *in)
-	}
-	if in.Entities != nil {
-		in, out := &in.Entities, &out.Entities
-		*out = make([]string, len(*in))
-		copy(*out, *in)
-	}
-	if in.IngestType != nil {
-		in, out := &in.IngestType, &out.IngestType
-		*out = new(catalogv1alpha1.FeatureStoreIngestType)
 		**out = **in
 	}
 }

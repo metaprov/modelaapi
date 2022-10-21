@@ -2225,6 +2225,11 @@ export class ModelClassSpec extends jspb.Message {
   hasDeployment(): boolean;
   clearDeployment(): ModelClassSpec;
 
+  getLabeling(): ModelClassLabelingSpec | undefined;
+  setLabeling(value?: ModelClassLabelingSpec): ModelClassSpec;
+  hasLabeling(): boolean;
+  clearLabeling(): ModelClassSpec;
+
   getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
   setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): ModelClassSpec;
   hasNotification(): boolean;
@@ -2253,6 +2258,7 @@ export namespace ModelClassSpec {
     data?: ModelClassDataSpec.AsObject,
     training?: ModelClassTrainingSpec.AsObject,
     deployment?: ModelClassDeploymentSpec.AsObject,
+    labeling?: ModelClassLabelingSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     reportat?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
@@ -2378,11 +2384,6 @@ export class ModelClassTrainingSpec extends jspb.Message {
   getRetrainondrift(): boolean;
   setRetrainondrift(value: boolean): ModelClassTrainingSpec;
 
-  getRetrainat(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setRetrainat(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassTrainingSpec;
-  hasRetrainat(): boolean;
-  clearRetrainat(): ModelClassTrainingSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassTrainingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassTrainingSpec): ModelClassTrainingSpec.AsObject;
@@ -2400,7 +2401,6 @@ export namespace ModelClassTrainingSpec {
     modelimage?: ModelImageSpec.AsObject,
     promotion: string,
     retrainondrift: boolean,
-    retrainat?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
 

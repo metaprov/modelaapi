@@ -79,41 +79,46 @@ type FeatureGroupSpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
 	Description string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
+	// How this group is ingested
+	// +kubebuilder:validation:Optional
+	IngestType *catalog.FeatureStoreIngestType `json:"ingestType,omitempty" protobuf:"bytes,5,rep,name=ingestType"`
+	// The name of the entity that this group is part of.
+	// +kubebuilder:validation:Optional
+	EntityName string `json:"entityName,omitempty" protobuf:"bytes,6,rep,name=entityName"`
+	// Features to include in this group. add all, if you want to include all the features.
+	// +kubebuilder:validation:Optional
+	Include []string `json:"include,omitempty" protobuf:"bytes,7,rep,name=include"`
+	// Features to exclude from the data source in this group
+	// +kubebuilder:validation:Optional
+	Exclude []string `json:"exclude,omitempty" protobuf:"bytes,8,rep,name=exclude"`
 	// Resources is the hardware resource req.
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,9,opt,name=resources"`
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,10,opt,name=schedule"`
+	// The name of the data source which contain the schema for this entity
+	DatasourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,11,rep,name=datasourceName"`
+	// The name of the data source which contain the schema for this entity
+	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,12,rep,name=timeColumn"`
 	// ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,11,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,13,opt,name=activeDeadlineSeconds"`
 	// Set to true to pause the data pipeline
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"varint,12,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,14,opt,name=paused"`
 	// A template for models unit tests
 	// +kubebuilder:validation:Optional
-	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,13,opt,name=unitTests"`
+	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,15,opt,name=unitTests"`
 	// Ingest the features into the online store
 	// +kubebuilder:validation:Optional
-	Online *bool `json:"online,omitempty" protobuf:"varint,14,opt,name=online"`
+	Online *bool `json:"online,omitempty" protobuf:"varint,16,opt,name=online"`
 	// Ingest the features into the offline store
 	// +kubebuilder:validation:Optional
-	Offline *bool `json:"offline,omitempty" protobuf:"varint,15,opt,name=offline"`
-	// Features to include in this set
-	// +kubebuilder:validation:Optional
-	Include []string `json:"include,omitempty" protobuf:"bytes,16,rep,name=include"`
-	// Features to exclude from the data source.
-	// +kubebuilder:validation:Optional
-	Exclude []string `json:"exclude,omitempty" protobuf:"bytes,17,rep,name=exclude"`
-	// Features to exclude from the data source.
-	// +kubebuilder:validation:Optional
-	Entities []string `json:"entities,omitempty" protobuf:"bytes,18,rep,name=entities"`
-	// +kubebuilder:validation:Optional
-	IngestType *catalog.FeatureStoreIngestType `json:"ingestType,omitempty" protobuf:"bytes,19,rep,name=ingestType"`
+	Offline *bool `json:"offline,omitempty" protobuf:"varint,17,opt,name=offline"`
 }
 
 // FeatureStatus defines the observed state of Feature

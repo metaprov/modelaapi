@@ -1962,9 +1962,6 @@ message EntitySpec {
   // +kubebuilder:validation:Optional
   repeated string joinKeys = 3;
 
-  // The name of the data source which contain the schema for this entity
-  optional string datasourceName = 4;
-
   // Owner of this Entity
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
@@ -2106,6 +2103,22 @@ message FeatureGroupSpec {
   // +kubebuilder:validation:MaxLength=512
   optional string description = 4;
 
+  // How this group is ingested
+  // +kubebuilder:validation:Optional
+  optional string ingestType = 5;
+
+  // The name of the entity that this group is part of.
+  // +kubebuilder:validation:Optional
+  optional string entityName = 6;
+
+  // Features to include in this group. add all, if you want to include all the features.
+  // +kubebuilder:validation:Optional
+  repeated string include = 7;
+
+  // Features to exclude from the data source in this group
+  // +kubebuilder:validation:Optional
+  repeated string exclude = 8;
+
   // Resources is the hardware resource req.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 9;
@@ -2114,43 +2127,34 @@ message FeatureGroupSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 10;
 
+  // The name of the data source which contain the schema for this entity
+  optional string datasourceName = 11;
+
+  // The name of the data source which contain the schema for this entity
+  optional string timeColumn = 12;
+
   // ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 11;
+  optional int64 activeDeadlineSeconds = 13;
 
   // Set to true to pause the data pipeline
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 12;
+  optional bool paused = 14;
 
   // A template for models unit tests
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 13;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 15;
 
   // Ingest the features into the online store
   // +kubebuilder:validation:Optional
-  optional bool online = 14;
+  optional bool online = 16;
 
   // Ingest the features into the offline store
   // +kubebuilder:validation:Optional
-  optional bool offline = 15;
-
-  // Features to include in this set
-  // +kubebuilder:validation:Optional
-  repeated string include = 16;
-
-  // Features to exclude from the data source.
-  // +kubebuilder:validation:Optional
-  repeated string exclude = 17;
-
-  // Features to exclude from the data source.
-  // +kubebuilder:validation:Optional
-  repeated string entities = 18;
-
-  // +kubebuilder:validation:Optional
-  optional string ingestType = 19;
+  optional bool offline = 17;
 }
 
 // FeatureStatus defines the observed state of Feature

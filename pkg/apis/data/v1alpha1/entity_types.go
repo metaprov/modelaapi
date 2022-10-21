@@ -70,8 +70,6 @@ type EntitySpec struct {
 	// Join keys are the way to join all the feature groups
 	// +kubebuilder:validation:Optional
 	JoinKeys []string `json:"joinKeys,omitempty" protobuf:"bytes,3,rep,name=joinKeys"`
-	// The name of the data source which contain the schema for this entity
-	DatasourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,4,rep,name=datasourceName"`
 	// Owner of this Entity
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"

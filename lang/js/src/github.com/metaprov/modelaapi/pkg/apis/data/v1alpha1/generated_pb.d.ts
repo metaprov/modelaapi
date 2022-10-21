@@ -2659,9 +2659,6 @@ export class EntitySpec extends jspb.Message {
   clearJoinkeysList(): EntitySpec;
   addJoinkeys(value: string, index?: number): EntitySpec;
 
-  getDatasourcename(): string;
-  setDatasourcename(value: string): EntitySpec;
-
   getOwner(): string;
   setOwner(value: string): EntitySpec;
 
@@ -2678,7 +2675,6 @@ export namespace EntitySpec {
     versionname: string,
     description: string,
     joinkeysList: Array<string>,
-    datasourcename: string,
     owner: string,
   }
 }
@@ -2917,6 +2913,22 @@ export class FeatureGroupSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): FeatureGroupSpec;
 
+  getIngesttype(): string;
+  setIngesttype(value: string): FeatureGroupSpec;
+
+  getEntityname(): string;
+  setEntityname(value: string): FeatureGroupSpec;
+
+  getIncludeList(): Array<string>;
+  setIncludeList(value: Array<string>): FeatureGroupSpec;
+  clearIncludeList(): FeatureGroupSpec;
+  addInclude(value: string, index?: number): FeatureGroupSpec;
+
+  getExcludeList(): Array<string>;
+  setExcludeList(value: Array<string>): FeatureGroupSpec;
+  clearExcludeList(): FeatureGroupSpec;
+  addExclude(value: string, index?: number): FeatureGroupSpec;
+
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): FeatureGroupSpec;
   hasResources(): boolean;
@@ -2926,6 +2938,12 @@ export class FeatureGroupSpec extends jspb.Message {
   setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): FeatureGroupSpec;
   hasSchedule(): boolean;
   clearSchedule(): FeatureGroupSpec;
+
+  getDatasourcename(): string;
+  setDatasourcename(value: string): FeatureGroupSpec;
+
+  getTimecolumn(): string;
+  setTimecolumn(value: string): FeatureGroupSpec;
 
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): FeatureGroupSpec;
@@ -2944,24 +2962,6 @@ export class FeatureGroupSpec extends jspb.Message {
   getOffline(): boolean;
   setOffline(value: boolean): FeatureGroupSpec;
 
-  getIncludeList(): Array<string>;
-  setIncludeList(value: Array<string>): FeatureGroupSpec;
-  clearIncludeList(): FeatureGroupSpec;
-  addInclude(value: string, index?: number): FeatureGroupSpec;
-
-  getExcludeList(): Array<string>;
-  setExcludeList(value: Array<string>): FeatureGroupSpec;
-  clearExcludeList(): FeatureGroupSpec;
-  addExclude(value: string, index?: number): FeatureGroupSpec;
-
-  getEntitiesList(): Array<string>;
-  setEntitiesList(value: Array<string>): FeatureGroupSpec;
-  clearEntitiesList(): FeatureGroupSpec;
-  addEntities(value: string, index?: number): FeatureGroupSpec;
-
-  getIngesttype(): string;
-  setIngesttype(value: string): FeatureGroupSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureGroupSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureGroupSpec): FeatureGroupSpec.AsObject;
@@ -2975,17 +2975,19 @@ export namespace FeatureGroupSpec {
     owner: string,
     versionname: string,
     description: string,
+    ingesttype: string,
+    entityname: string,
+    includeList: Array<string>,
+    excludeList: Array<string>,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    datasourcename: string,
+    timecolumn: string,
     activedeadlineseconds: number,
     paused: boolean,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     online: boolean,
     offline: boolean,
-    includeList: Array<string>,
-    excludeList: Array<string>,
-    entitiesList: Array<string>,
-    ingesttype: string,
   }
 }
 

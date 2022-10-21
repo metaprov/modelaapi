@@ -56,10 +56,6 @@ spec:
           spec:
             description: EntitySpec contain the desired state of a Entity.
             properties:
-              datasourceName:
-                description: The name of the data source which contain the schema
-                  for this entity
-                type: string
               description:
                 default: ""
                 description: Description of the entity
