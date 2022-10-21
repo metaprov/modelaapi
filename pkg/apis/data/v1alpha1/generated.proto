@@ -1958,15 +1958,18 @@ message EntitySpec {
   // +kubebuilder:validation:MaxLength=512
   optional string description = 2;
 
-  // Keys are the features that create a unique key to the entity.
+  // Join keys are the way to join all the feature groups
   // +kubebuilder:validation:Optional
   repeated string joinKeys = 3;
+
+  // The name of the data source which contain the schema for this entity
+  optional string datasourceName = 4;
 
   // Owner of this Entity
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string owner = 4;
+  optional string owner = 5;
 }
 
 // EntityStatus defines the observed state of Entity

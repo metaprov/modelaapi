@@ -361,6 +361,9 @@ type PredictorSpec struct {
 	// Fast slow is the specification of deployment of a fast - slow models.
 	// +kubebuilder:validation:Optional
 	FastSlow FastSlowModelSpec `json:"fastSlow,omitempty" protobuf:"bytes,26,opt,name=fastSlow"`
+	// The batch prediction settings for this predictor
+	// +kubebuilder:validation:Optional
+	Batch BatchPredictionSpec `json:"batch,omitempty" protobuf:"bytes,27,opt,name=batch"`
 }
 
 // PredictorStatus contain the current state of the Predictor resource
@@ -647,4 +650,12 @@ type MetricHistory struct {
 	// History
 	// +kubebuilder:validation:Optional
 	History []float64 `json:"history,omitempty" protobuf:"bytes,2,rep,name=history"`
+}
+
+type BatchPredictionSpec struct {
+	// The schedule at which new Prediction resources will be created
+	// +kubebuilder:validation:Optional
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,1,opt,name=schedule"`
+	// Template specifies the template to create new Prediction resources
+	Template PredictionTemplate `json:"template" protobuf:"bytes,2,opt,name=template"`
 }

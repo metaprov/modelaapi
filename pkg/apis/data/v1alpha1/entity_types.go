@@ -67,14 +67,16 @@ type EntitySpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// Keys are the features that create a unique key to the entity.
+	// Join keys are the way to join all the feature groups
 	// +kubebuilder:validation:Optional
 	JoinKeys []string `json:"joinKeys,omitempty" protobuf:"bytes,3,rep,name=joinKeys"`
+	// The name of the data source which contain the schema for this entity
+	DatasourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,4,rep,name=datasourceName"`
 	// Owner of this Entity
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
 }
 
 // +kubebuilder:object:root=true

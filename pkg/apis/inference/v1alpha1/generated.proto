@@ -75,6 +75,15 @@ message BackwardCurtainSpec {
   optional double confidenceHigh = 5;
 }
 
+message BatchPredictionSpec {
+  // The schedule at which new Prediction resources will be created
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 1;
+
+  // Template specifies the template to create new Prediction resources
+  optional PredictionTemplate template = 2;
+}
+
 // CronPrediction represents a Prediction which runs on a predefined schedule
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
@@ -1115,6 +1124,10 @@ message PredictorSpec {
   // Fast slow is the specification of deployment of a fast - slow models.
   // +kubebuilder:validation:Optional
   optional FastSlowModelSpec fastSlow = 26;
+
+  // The batch prediction settings for this predictor
+  // +kubebuilder:validation:Optional
+  optional BatchPredictionSpec batch = 27;
 }
 
 // PredictorStatus contain the current state of the Predictor resource

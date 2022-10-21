@@ -28465,7 +28465,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.toObject =
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     joinkeysList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+    datasourcename: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    owner: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -28515,6 +28516,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.deserializ
       msg.addJoinkeys(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasourcename(value);
+      break;
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
       break;
@@ -28572,6 +28577,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.serializeB
   if (f != null) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -28688,10 +28700,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.
 
 
 /**
- * optional string owner = 4;
+ * optional string datasourceName = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.getOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.getDatasourcename = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -28700,7 +28712,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.setOwner = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.setDatasourcename = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -28709,7 +28721,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.clearOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.clearDatasourcename = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -28718,8 +28730,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.hasOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.hasDatasourcename = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string owner = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.getOwner = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.setOwner = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.clearOwner = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.hasOwner = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

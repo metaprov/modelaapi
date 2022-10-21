@@ -75,6 +75,32 @@ export namespace BackwardCurtainSpec {
   }
 }
 
+export class BatchPredictionSpec extends jspb.Message {
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): BatchPredictionSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): BatchPredictionSpec;
+
+  getTemplate(): PredictionTemplate | undefined;
+  setTemplate(value?: PredictionTemplate): BatchPredictionSpec;
+  hasTemplate(): boolean;
+  clearTemplate(): BatchPredictionSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BatchPredictionSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: BatchPredictionSpec): BatchPredictionSpec.AsObject;
+  static serializeBinaryToWriter(message: BatchPredictionSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BatchPredictionSpec;
+  static deserializeBinaryFromReader(message: BatchPredictionSpec, reader: jspb.BinaryReader): BatchPredictionSpec;
+}
+
+export namespace BatchPredictionSpec {
+  export type AsObject = {
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    template?: PredictionTemplate.AsObject,
+  }
+}
+
 export class CronPrediction extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): CronPrediction;
@@ -1725,6 +1751,11 @@ export class PredictorSpec extends jspb.Message {
   hasFastslow(): boolean;
   clearFastslow(): PredictorSpec;
 
+  getBatch(): BatchPredictionSpec | undefined;
+  setBatch(value?: BatchPredictionSpec): PredictorSpec;
+  hasBatch(): boolean;
+  clearBatch(): PredictorSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictorSpec): PredictorSpec.AsObject;
@@ -1760,6 +1791,7 @@ export namespace PredictorSpec {
     forwardcurtain?: ForwardCurtainSpec.AsObject,
     backwardcurtain?: BackwardCurtainSpec.AsObject,
     fastslow?: FastSlowModelSpec.AsObject,
+    batch?: BatchPredictionSpec.AsObject,
   }
 }
 

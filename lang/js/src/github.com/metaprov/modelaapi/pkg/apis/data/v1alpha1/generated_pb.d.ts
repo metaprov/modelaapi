@@ -2659,6 +2659,9 @@ export class EntitySpec extends jspb.Message {
   clearJoinkeysList(): EntitySpec;
   addJoinkeys(value: string, index?: number): EntitySpec;
 
+  getDatasourcename(): string;
+  setDatasourcename(value: string): EntitySpec;
+
   getOwner(): string;
   setOwner(value: string): EntitySpec;
 
@@ -2675,6 +2678,7 @@ export namespace EntitySpec {
     versionname: string,
     description: string,
     joinkeysList: Array<string>,
+    datasourcename: string,
     owner: string,
   }
 }
