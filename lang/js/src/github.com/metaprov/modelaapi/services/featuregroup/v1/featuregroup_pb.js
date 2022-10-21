@@ -620,7 +620,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupRes
  */
 proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    featuregroups: (f = msg.getFeatureviews()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroupList.toObject(includeInstance, f),
+    featuregroups: (f = msg.getFeaturegroups()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroupList.toObject(includeInstance, f),
     nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -661,7 +661,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupRes
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroupList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroupList.deserializeBinaryFromReader);
-      msg.setFeatureviews(value);
+      msg.setFeaturegroups(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -696,7 +696,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupRes
  */
 proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFeatureviews();
+  f = message.getFeaturegroups();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -718,7 +718,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupRes
  * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupList featuregroups = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupList}
  */
-proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupResponse.prototype.getFeatureviews = function() {
+proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupResponse.prototype.getFeaturegroups = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroupList, 1));
 };
@@ -728,7 +728,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupRes
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupResponse.prototype.setFeatureviews = function(value) {
+proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupResponse.prototype.setFeaturegroups = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -737,8 +737,8 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupRes
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupResponse.prototype.clearFeatureviews = function() {
-  return this.setFeatureviews(undefined);
+proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupResponse.prototype.clearFeaturegroups = function() {
+  return this.setFeaturegroups(undefined);
 };
 
 
@@ -746,7 +746,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupRes
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupResponse.prototype.hasFeatureviews = function() {
+proto.github.com.metaprov.modelaapi.services.featuregroup.v1.ListFeatureGroupResponse.prototype.hasFeaturegroups = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -801,7 +801,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupR
  */
 proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    featuregroup: (f = msg.getFeatureview()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject(includeInstance, f)
+    featuregroup: (f = msg.getFeaturegroup()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -841,7 +841,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupR
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinaryFromReader);
-      msg.setFeatureview(value);
+      msg.setFeaturegroup(value);
       break;
     default:
       reader.skipField();
@@ -872,7 +872,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupR
  */
 proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFeatureview();
+  f = message.getFeaturegroup();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -887,7 +887,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupR
  * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup featuregroup = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup}
  */
-proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupRequest.prototype.getFeatureview = function() {
+proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupRequest.prototype.getFeaturegroup = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 1));
 };
@@ -897,7 +897,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupR
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupRequest.prototype.setFeatureview = function(value) {
+proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupRequest.prototype.setFeaturegroup = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -906,8 +906,8 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupR
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupRequest.prototype.clearFeatureview = function() {
-  return this.setFeatureview(undefined);
+proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupRequest.prototype.clearFeaturegroup = function() {
+  return this.setFeaturegroup(undefined);
 };
 
 
@@ -915,7 +915,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupR
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupRequest.prototype.hasFeatureview = function() {
+proto.github.com.metaprov.modelaapi.services.featuregroup.v1.CreateFeatureGroupRequest.prototype.hasFeaturegroup = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1053,7 +1053,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupR
  */
 proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    featuregroup: (f = msg.getFeatureview()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject(includeInstance, f),
+    featuregroup: (f = msg.getFeaturegroup()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1094,7 +1094,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupR
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinaryFromReader);
-      msg.setFeatureview(value);
+      msg.setFeaturegroup(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1130,7 +1130,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupR
  */
 proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFeatureview();
+  f = message.getFeaturegroup();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1153,7 +1153,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupR
  * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup featuregroup = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup}
  */
-proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupRequest.prototype.getFeatureview = function() {
+proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupRequest.prototype.getFeaturegroup = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 1));
 };
@@ -1163,7 +1163,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupR
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupRequest.prototype.setFeatureview = function(value) {
+proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupRequest.prototype.setFeaturegroup = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1172,8 +1172,8 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupR
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupRequest.prototype.clearFeatureview = function() {
-  return this.setFeatureview(undefined);
+proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupRequest.prototype.clearFeaturegroup = function() {
+  return this.setFeaturegroup(undefined);
 };
 
 
@@ -1181,7 +1181,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupR
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupRequest.prototype.hasFeatureview = function() {
+proto.github.com.metaprov.modelaapi.services.featuregroup.v1.UpdateFeatureGroupRequest.prototype.hasFeaturegroup = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1516,7 +1516,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResp
  */
 proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    featuregroup: (f = msg.getFeatureview()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject(includeInstance, f),
+    featuregroup: (f = msg.getFeaturegroup()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1557,7 +1557,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResp
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinaryFromReader);
-      msg.setFeatureview(value);
+      msg.setFeaturegroup(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1592,7 +1592,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResp
  */
 proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFeatureview();
+  f = message.getFeaturegroup();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1614,7 +1614,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResp
  * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup featuregroup = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup}
  */
-proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResponse.prototype.getFeatureview = function() {
+proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResponse.prototype.getFeaturegroup = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 1));
 };
@@ -1624,7 +1624,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResp
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResponse.prototype.setFeatureview = function(value) {
+proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResponse.prototype.setFeaturegroup = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1633,8 +1633,8 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResp
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResponse.prototype.clearFeatureview = function() {
-  return this.setFeatureview(undefined);
+proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResponse.prototype.clearFeaturegroup = function() {
+  return this.setFeaturegroup(undefined);
 };
 
 
@@ -1642,7 +1642,7 @@ proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResponse.prototype.hasFeatureview = function() {
+proto.github.com.metaprov.modelaapi.services.featuregroup.v1.GetFeatureGroupResponse.prototype.hasFeaturegroup = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

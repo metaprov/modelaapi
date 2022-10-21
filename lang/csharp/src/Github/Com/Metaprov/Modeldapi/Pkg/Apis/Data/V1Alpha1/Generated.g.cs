@@ -485,23 +485,23 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureAggrSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureAggrSpec.Parser, new[]{ "Column", "Functions", "Windows" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureView), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureView.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroup), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroup.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Featureset), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Featureset.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec.Parser, new[]{ "Owner", "VersionName", "FeatureViewName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec.Parser, new[]{ "Owner", "VersionName", "FeatureGroupName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus.Parser, new[]{ "StartTime", "CompletionTime", "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewSpec.Parser, new[]{ "Owner", "VersionName", "Description", "Aggregation", "Materialization", "Family", "EntityName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewStatus.Parser, new[]{ "AverageCost", "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec.Parser, new[]{ "Owner", "VersionName", "Description", "Name", "KeyColumn", "TimestampColumn", "FeatureColumn", "EntityName", "FeatureViewName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupSpec.Parser, new[]{ "Owner", "VersionName", "Description", "Aggregation", "Materialization", "Family", "EntityName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupStatus.Parser, new[]{ "AverageCost", "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec.Parser, new[]{ "Owner", "VersionName", "Description", "Name", "KeyColumn", "TimestampColumn", "FeatureColumn", "EntityName", "FeatureGroupName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureStatus.Parser, new[]{ "Sha256", "Name", "Min", "Max", "Mean", "Zeros", "Nulls", "P01", "P99", "Stddev", "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureView), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureView.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewSpec.Parser, new[]{ "VersionName", "Description", "Features", "Owner" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroup), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroup.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupSpec.Parser, new[]{ "VersionName", "Description", "Features", "Owner" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.CsvFileSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.CsvFileSpec.Parser, new[]{ "FileType", "Delimiter", "Quote", "EscapeChar", "CommentChars", "Header", "SkipRows", "NullValues", "Encoding", "MaxRows", "Strict" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GitLocation), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GitLocation.Parser, new[]{ "GitConnectionName", "Url" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ImageLocation), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ImageLocation.Parser, new[]{ "Name", "RegistryConnectionName" }, null, null, null, null),
@@ -511,7 +511,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRun), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRun.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec.Parser, new[]{ "Owner", "VersionName", "FeatureViewName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec.Parser, new[]{ "Owner", "VersionName", "FeatureGroupName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunStatus.Parser, new[]{ "StartTime", "CompletionTime", "Conditions" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineSpec.Parser, new[]{ "VersionName", "Description", "InputLabelsets", "RecipeNames", "OutputLabelset", "Schedule", "Owner" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
@@ -16910,7 +16910,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
   }
 
   /// <summary>
-  /// FeatureView represent the processing of feature in the store.
+  /// FeatureGroup represent the processing of feature in the store.
   /// +kubebuilder:object:root=true
   /// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
   /// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
@@ -16918,15 +16918,15 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
   /// +kubebuilder:resource:path=featurepipelines,singular=featurepipeline,categories={data,modela}
   /// +kubebuilder:subresource:status
   /// </summary>
-  public sealed partial class FeatureView : pb::IMessage<FeatureView>
+  public sealed partial class FeatureGroup : pb::IMessage<FeatureGroup>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<FeatureView> _parser = new pb::MessageParser<FeatureView>(() => new FeatureView());
+    private static readonly pb::MessageParser<FeatureGroup> _parser = new pb::MessageParser<FeatureGroup>(() => new FeatureGroup());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<FeatureView> Parser { get { return _parser; } }
+    public static pb::MessageParser<FeatureGroup> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -16939,14 +16939,14 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureView() {
+    public FeatureGroup() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureView(FeatureView other) : this() {
+    public FeatureGroup(FeatureGroup other) : this() {
       metadata_ = other.metadata_ != null ? other.metadata_.Clone() : null;
       spec_ = other.spec_ != null ? other.spec_.Clone() : null;
       status_ = other.status_ != null ? other.status_.Clone() : null;
@@ -16954,8 +16954,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureView Clone() {
-      return new FeatureView(this);
+    public FeatureGroup Clone() {
+      return new FeatureGroup(this);
     }
 
     /// <summary>Field number for the "metadata" field.</summary>
@@ -16971,9 +16971,9 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -16982,9 +16982,9 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupStatus status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -16993,11 +16993,11 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as FeatureView);
+      return Equals(other as FeatureGroup);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(FeatureView other) {
+    public bool Equals(FeatureGroup other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -17090,7 +17090,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(FeatureView other) {
+    public void MergeFrom(FeatureGroup other) {
       if (other == null) {
         return;
       }
@@ -17102,13 +17102,13 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -17135,14 +17135,14 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -17170,14 +17170,14 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -17190,17 +17190,17 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
   }
 
   /// <summary>
-  /// FeatureViewCondition describes the state of a deployment at a certain point.
+  /// FeatureGroupCondition describes the state of a deployment at a certain point.
   /// </summary>
-  public sealed partial class FeatureViewCondition : pb::IMessage<FeatureViewCondition>
+  public sealed partial class FeatureGroupCondition : pb::IMessage<FeatureGroupCondition>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<FeatureViewCondition> _parser = new pb::MessageParser<FeatureViewCondition>(() => new FeatureViewCondition());
+    private static readonly pb::MessageParser<FeatureGroupCondition> _parser = new pb::MessageParser<FeatureGroupCondition>(() => new FeatureGroupCondition());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<FeatureViewCondition> Parser { get { return _parser; } }
+    public static pb::MessageParser<FeatureGroupCondition> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -17213,14 +17213,14 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewCondition() {
+    public FeatureGroupCondition() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewCondition(FeatureViewCondition other) : this() {
+    public FeatureGroupCondition(FeatureGroupCondition other) : this() {
       type_ = other.type_;
       status_ = other.status_;
       lastTransitionTime_ = other.lastTransitionTime_ != null ? other.lastTransitionTime_.Clone() : null;
@@ -17230,8 +17230,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewCondition Clone() {
-      return new FeatureViewCondition(this);
+    public FeatureGroupCondition Clone() {
+      return new FeatureGroupCondition(this);
     }
 
     /// <summary>Field number for the "type" field.</summary>
@@ -17354,11 +17354,11 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as FeatureViewCondition);
+      return Equals(other as FeatureGroupCondition);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(FeatureViewCondition other) {
+    public bool Equals(FeatureGroupCondition other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -17477,7 +17477,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(FeatureViewCondition other) {
+    public void MergeFrom(FeatureGroupCondition other) {
       if (other == null) {
         return;
       }
@@ -17584,15 +17584,15 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
   /// +kubebuilder:object:root=true
   /// FeatureList contain a list of feature objects
   /// </summary>
-  public sealed partial class FeatureViewList : pb::IMessage<FeatureViewList>
+  public sealed partial class FeatureGroupList : pb::IMessage<FeatureGroupList>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<FeatureViewList> _parser = new pb::MessageParser<FeatureViewList>(() => new FeatureViewList());
+    private static readonly pb::MessageParser<FeatureGroupList> _parser = new pb::MessageParser<FeatureGroupList>(() => new FeatureGroupList());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<FeatureViewList> Parser { get { return _parser; } }
+    public static pb::MessageParser<FeatureGroupList> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -17605,22 +17605,22 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewList() {
+    public FeatureGroupList() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewList(FeatureViewList other) : this() {
+    public FeatureGroupList(FeatureGroupList other) : this() {
       metadata_ = other.metadata_ != null ? other.metadata_.Clone() : null;
       items_ = other.items_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewList Clone() {
-      return new FeatureViewList(this);
+    public FeatureGroupList Clone() {
+      return new FeatureGroupList(this);
     }
 
     /// <summary>Field number for the "metadata" field.</summary>
@@ -17636,21 +17636,21 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureView> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureView.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureView> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureView>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroup> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroup.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroup> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroup>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureView> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroup> Items {
       get { return items_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as FeatureViewList);
+      return Equals(other as FeatureGroupList);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(FeatureViewList other) {
+    public bool Equals(FeatureGroupList other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -17722,7 +17722,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(FeatureViewList other) {
+    public void MergeFrom(FeatureGroupList other) {
       if (other == null) {
         return;
       }
@@ -17791,7 +17791,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
   }
 
   /// <summary>
-  /// FeatureView represent a feature set object in the feature store.
+  /// FeatureGroup represent a feature set object in the feature store.
   /// +kubebuilder:object:root=true
   /// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
   /// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
@@ -18775,8 +18775,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     /// <summary>Field number for the "featurePipelineName" field.</summary>
-    public const int FeatureViewNameFieldNumber = 3;
-    private readonly static string FeatureViewNameDefaultValue = "";
+    public const int FeatureGroupNameFieldNumber = 3;
+    private readonly static string FeatureGroupNameDefaultValue = "";
 
     private string featurePipelineName_;
     /// <summary>
@@ -18786,20 +18786,20 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     /// +kubebuilder:validation:MinLength=1
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string FeatureViewName {
-      get { return featurePipelineName_ ?? FeatureViewNameDefaultValue; }
+    public string FeatureGroupName {
+      get { return featurePipelineName_ ?? FeatureGroupNameDefaultValue; }
       set {
         featurePipelineName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
     /// <summary>Gets whether the "featurePipelineName" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFeatureViewName {
+    public bool HasFeatureGroupName {
       get { return featurePipelineName_ != null; }
     }
     /// <summary>Clears the value of the "featurePipelineName" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void ClearFeatureViewName() {
+    public void ClearFeatureGroupName() {
       featurePipelineName_ = null;
     }
 
@@ -18818,7 +18818,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (Owner != other.Owner) return false;
       if (VersionName != other.VersionName) return false;
-      if (FeatureViewName != other.FeatureViewName) return false;
+      if (FeatureGroupName != other.FeatureGroupName) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -18827,7 +18827,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
       int hash = 1;
       if (HasOwner) hash ^= Owner.GetHashCode();
       if (HasVersionName) hash ^= VersionName.GetHashCode();
-      if (HasFeatureViewName) hash ^= FeatureViewName.GetHashCode();
+      if (HasFeatureGroupName) hash ^= FeatureGroupName.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -18852,9 +18852,9 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
         output.WriteRawTag(18);
         output.WriteString(VersionName);
       }
-      if (HasFeatureViewName) {
+      if (HasFeatureGroupName) {
         output.WriteRawTag(26);
-        output.WriteString(FeatureViewName);
+        output.WriteString(FeatureGroupName);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -18873,9 +18873,9 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
         output.WriteRawTag(18);
         output.WriteString(VersionName);
       }
-      if (HasFeatureViewName) {
+      if (HasFeatureGroupName) {
         output.WriteRawTag(26);
-        output.WriteString(FeatureViewName);
+        output.WriteString(FeatureGroupName);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -18892,8 +18892,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
       if (HasVersionName) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(VersionName);
       }
-      if (HasFeatureViewName) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(FeatureViewName);
+      if (HasFeatureGroupName) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FeatureGroupName);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -18912,8 +18912,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
       if (other.HasVersionName) {
         VersionName = other.VersionName;
       }
-      if (other.HasFeatureViewName) {
-        FeatureViewName = other.FeatureViewName;
+      if (other.HasFeatureGroupName) {
+        FeatureGroupName = other.FeatureGroupName;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -18938,7 +18938,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
             break;
           }
           case 26: {
-            FeatureViewName = input.ReadString();
+            FeatureGroupName = input.ReadString();
             break;
           }
         }
@@ -18964,7 +18964,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
             break;
           }
           case 26: {
-            FeatureViewName = input.ReadString();
+            FeatureGroupName = input.ReadString();
             break;
           }
         }
@@ -19240,17 +19240,17 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
   }
 
   /// <summary>
-  /// FeatureViewSpec contain the desired state of a FeatureView
+  /// FeatureGroupSpec contain the desired state of a FeatureGroup
   /// </summary>
-  public sealed partial class FeatureViewSpec : pb::IMessage<FeatureViewSpec>
+  public sealed partial class FeatureGroupSpec : pb::IMessage<FeatureGroupSpec>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<FeatureViewSpec> _parser = new pb::MessageParser<FeatureViewSpec>(() => new FeatureViewSpec());
+    private static readonly pb::MessageParser<FeatureGroupSpec> _parser = new pb::MessageParser<FeatureGroupSpec>(() => new FeatureGroupSpec());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<FeatureViewSpec> Parser { get { return _parser; } }
+    public static pb::MessageParser<FeatureGroupSpec> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -19263,14 +19263,14 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewSpec() {
+    public FeatureGroupSpec() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewSpec(FeatureViewSpec other) : this() {
+    public FeatureGroupSpec(FeatureGroupSpec other) : this() {
       owner_ = other.owner_;
       versionName_ = other.versionName_;
       description_ = other.description_;
@@ -19282,8 +19282,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewSpec Clone() {
-      return new FeatureViewSpec(this);
+    public FeatureGroupSpec Clone() {
+      return new FeatureGroupSpec(this);
     }
 
     /// <summary>Field number for the "owner" field.</summary>
@@ -19456,11 +19456,11 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as FeatureViewSpec);
+      return Equals(other as FeatureGroupSpec);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(FeatureViewSpec other) {
+    public bool Equals(FeatureGroupSpec other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -19605,7 +19605,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(FeatureViewSpec other) {
+    public void MergeFrom(FeatureGroupSpec other) {
       if (other == null) {
         return;
       }
@@ -19742,16 +19742,16 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
   /// <summary>
   /// FeatureStatus defines the observed state of Feature
   /// </summary>
-  public sealed partial class FeatureViewStatus : pb::IMessage<FeatureViewStatus>
+  public sealed partial class FeatureGroupStatus : pb::IMessage<FeatureGroupStatus>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<FeatureViewStatus> _parser = new pb::MessageParser<FeatureViewStatus>(() => new FeatureViewStatus());
+    private static readonly pb::MessageParser<FeatureGroupStatus> _parser = new pb::MessageParser<FeatureGroupStatus>(() => new FeatureGroupStatus());
     private pb::UnknownFieldSet _unknownFields;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<FeatureViewStatus> Parser { get { return _parser; } }
+    public static pb::MessageParser<FeatureGroupStatus> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -19764,14 +19764,14 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewStatus() {
+    public FeatureGroupStatus() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewStatus(FeatureViewStatus other) : this() {
+    public FeatureGroupStatus(FeatureGroupStatus other) : this() {
       _hasBits0 = other._hasBits0;
       averageCost_ = other.averageCost_;
       conditions_ = other.conditions_.Clone();
@@ -19779,8 +19779,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewStatus Clone() {
-      return new FeatureViewStatus(this);
+    public FeatureGroupStatus Clone() {
+      return new FeatureGroupStatus(this);
     }
 
     /// <summary>Field number for the "averageCost" field.</summary>
@@ -19812,24 +19812,24 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupCondition>();
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupCondition> Conditions {
       get { return conditions_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as FeatureViewStatus);
+      return Equals(other as FeatureGroupStatus);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(FeatureViewStatus other) {
+    public bool Equals(FeatureGroupStatus other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -19901,7 +19901,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(FeatureViewStatus other) {
+    public void MergeFrom(FeatureGroupStatus other) {
       if (other == null) {
         return;
       }
@@ -20230,8 +20230,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     /// <summary>Field number for the "featurePipelineName" field.</summary>
-    public const int FeatureViewNameFieldNumber = 9;
-    private readonly static string FeatureViewNameDefaultValue = "";
+    public const int FeatureGroupNameFieldNumber = 9;
+    private readonly static string FeatureGroupNameDefaultValue = "";
 
     private string featurePipelineName_;
     /// <summary>
@@ -20239,20 +20239,20 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string FeatureViewName {
-      get { return featurePipelineName_ ?? FeatureViewNameDefaultValue; }
+    public string FeatureGroupName {
+      get { return featurePipelineName_ ?? FeatureGroupNameDefaultValue; }
       set {
         featurePipelineName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
     /// <summary>Gets whether the "featurePipelineName" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFeatureViewName {
+    public bool HasFeatureGroupName {
       get { return featurePipelineName_ != null; }
     }
     /// <summary>Clears the value of the "featurePipelineName" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void ClearFeatureViewName() {
+    public void ClearFeatureGroupName() {
       featurePipelineName_ = null;
     }
 
@@ -20277,7 +20277,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
       if (TimestampColumn != other.TimestampColumn) return false;
       if (FeatureColumn != other.FeatureColumn) return false;
       if (EntityName != other.EntityName) return false;
-      if (FeatureViewName != other.FeatureViewName) return false;
+      if (FeatureGroupName != other.FeatureGroupName) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -20292,7 +20292,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
       if (HasTimestampColumn) hash ^= TimestampColumn.GetHashCode();
       if (HasFeatureColumn) hash ^= FeatureColumn.GetHashCode();
       if (HasEntityName) hash ^= EntityName.GetHashCode();
-      if (HasFeatureViewName) hash ^= FeatureViewName.GetHashCode();
+      if (HasFeatureGroupName) hash ^= FeatureGroupName.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -20341,9 +20341,9 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
         output.WriteRawTag(66);
         output.WriteString(EntityName);
       }
-      if (HasFeatureViewName) {
+      if (HasFeatureGroupName) {
         output.WriteRawTag(74);
-        output.WriteString(FeatureViewName);
+        output.WriteString(FeatureGroupName);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -20386,9 +20386,9 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
         output.WriteRawTag(66);
         output.WriteString(EntityName);
       }
-      if (HasFeatureViewName) {
+      if (HasFeatureGroupName) {
         output.WriteRawTag(74);
-        output.WriteString(FeatureViewName);
+        output.WriteString(FeatureGroupName);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -20423,8 +20423,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
       if (HasEntityName) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(EntityName);
       }
-      if (HasFeatureViewName) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(FeatureViewName);
+      if (HasFeatureGroupName) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FeatureGroupName);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -20461,8 +20461,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
       if (other.HasEntityName) {
         EntityName = other.EntityName;
       }
-      if (other.HasFeatureViewName) {
-        FeatureViewName = other.FeatureViewName;
+      if (other.HasFeatureGroupName) {
+        FeatureGroupName = other.FeatureGroupName;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -20511,7 +20511,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
             break;
           }
           case 74: {
-            FeatureViewName = input.ReadString();
+            FeatureGroupName = input.ReadString();
             break;
           }
         }
@@ -20561,7 +20561,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
             break;
           }
           case 74: {
-            FeatureViewName = input.ReadString();
+            FeatureGroupName = input.ReadString();
             break;
           }
         }
@@ -21269,7 +21269,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
   }
 
   /// <summary>
-  /// FeatureView represents a featureSource object
+  /// FeatureGroup represents a featureSource object
   /// +kubebuilder:object:root=true
   /// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
   /// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
@@ -21277,15 +21277,15 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
   /// +kubebuilder:resource:path=featureSources,singular=featureSource,categories={data,modela}
   /// +kubebuilder:subresource:status
   /// </summary>
-  public sealed partial class FeatureView : pb::IMessage<FeatureView>
+  public sealed partial class FeatureGroup : pb::IMessage<FeatureGroup>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<FeatureView> _parser = new pb::MessageParser<FeatureView>(() => new FeatureView());
+    private static readonly pb::MessageParser<FeatureGroup> _parser = new pb::MessageParser<FeatureGroup>(() => new FeatureGroup());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<FeatureView> Parser { get { return _parser; } }
+    public static pb::MessageParser<FeatureGroup> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -21298,14 +21298,14 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureView() {
+    public FeatureGroup() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureView(FeatureView other) : this() {
+    public FeatureGroup(FeatureGroup other) : this() {
       metadata_ = other.metadata_ != null ? other.metadata_.Clone() : null;
       spec_ = other.spec_ != null ? other.spec_.Clone() : null;
       status_ = other.status_ != null ? other.status_.Clone() : null;
@@ -21313,8 +21313,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureView Clone() {
-      return new FeatureView(this);
+    public FeatureGroup Clone() {
+      return new FeatureGroup(this);
     }
 
     /// <summary>Field number for the "metadata" field.</summary>
@@ -21330,9 +21330,9 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -21341,12 +21341,12 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupStatus status_;
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -21355,11 +21355,11 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as FeatureView);
+      return Equals(other as FeatureGroup);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(FeatureView other) {
+    public bool Equals(FeatureGroup other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -21452,7 +21452,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(FeatureView other) {
+    public void MergeFrom(FeatureGroup other) {
       if (other == null) {
         return;
       }
@@ -21464,13 +21464,13 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -21497,14 +21497,14 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -21532,14 +21532,14 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -21552,17 +21552,17 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
   }
 
   /// <summary>
-  /// FeatureViewCondition describes the state of a deployment at a certain point.
+  /// FeatureGroupCondition describes the state of a deployment at a certain point.
   /// </summary>
-  public sealed partial class FeatureViewCondition : pb::IMessage<FeatureViewCondition>
+  public sealed partial class FeatureGroupCondition : pb::IMessage<FeatureGroupCondition>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<FeatureViewCondition> _parser = new pb::MessageParser<FeatureViewCondition>(() => new FeatureViewCondition());
+    private static readonly pb::MessageParser<FeatureGroupCondition> _parser = new pb::MessageParser<FeatureGroupCondition>(() => new FeatureGroupCondition());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<FeatureViewCondition> Parser { get { return _parser; } }
+    public static pb::MessageParser<FeatureGroupCondition> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -21575,14 +21575,14 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewCondition() {
+    public FeatureGroupCondition() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewCondition(FeatureViewCondition other) : this() {
+    public FeatureGroupCondition(FeatureGroupCondition other) : this() {
       type_ = other.type_;
       status_ = other.status_;
       lastTransitionTime_ = other.lastTransitionTime_ != null ? other.lastTransitionTime_.Clone() : null;
@@ -21592,8 +21592,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewCondition Clone() {
-      return new FeatureViewCondition(this);
+    public FeatureGroupCondition Clone() {
+      return new FeatureGroupCondition(this);
     }
 
     /// <summary>Field number for the "type" field.</summary>
@@ -21716,11 +21716,11 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as FeatureViewCondition);
+      return Equals(other as FeatureGroupCondition);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(FeatureViewCondition other) {
+    public bool Equals(FeatureGroupCondition other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -21839,7 +21839,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(FeatureViewCondition other) {
+    public void MergeFrom(FeatureGroupCondition other) {
       if (other == null) {
         return;
       }
@@ -21944,17 +21944,17 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
   /// <summary>
   /// +kubebuilder:object:root=true
-  /// FeatureViewList contains a list of FeatureView
+  /// FeatureGroupList contains a list of FeatureGroup
   /// </summary>
-  public sealed partial class FeatureViewList : pb::IMessage<FeatureViewList>
+  public sealed partial class FeatureGroupList : pb::IMessage<FeatureGroupList>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<FeatureViewList> _parser = new pb::MessageParser<FeatureViewList>(() => new FeatureViewList());
+    private static readonly pb::MessageParser<FeatureGroupList> _parser = new pb::MessageParser<FeatureGroupList>(() => new FeatureGroupList());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<FeatureViewList> Parser { get { return _parser; } }
+    public static pb::MessageParser<FeatureGroupList> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -21967,22 +21967,22 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewList() {
+    public FeatureGroupList() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewList(FeatureViewList other) : this() {
+    public FeatureGroupList(FeatureGroupList other) : this() {
       metadata_ = other.metadata_ != null ? other.metadata_.Clone() : null;
       items_ = other.items_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewList Clone() {
-      return new FeatureViewList(this);
+    public FeatureGroupList Clone() {
+      return new FeatureGroupList(this);
     }
 
     /// <summary>Field number for the "metadata" field.</summary>
@@ -21998,21 +21998,21 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureView> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureView.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureView> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureView>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroup> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroup.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroup> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroup>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureView> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroup> Items {
       get { return items_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as FeatureViewList);
+      return Equals(other as FeatureGroupList);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(FeatureViewList other) {
+    public bool Equals(FeatureGroupList other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -22084,7 +22084,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(FeatureViewList other) {
+    public void MergeFrom(FeatureGroupList other) {
       if (other == null) {
         return;
       }
@@ -22153,17 +22153,17 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
   }
 
   /// <summary>
-  /// FeatureViewSpec contain the desired state of a FeatureView.
+  /// FeatureGroupSpec contain the desired state of a FeatureGroup.
   /// </summary>
-  public sealed partial class FeatureViewSpec : pb::IMessage<FeatureViewSpec>
+  public sealed partial class FeatureGroupSpec : pb::IMessage<FeatureGroupSpec>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<FeatureViewSpec> _parser = new pb::MessageParser<FeatureViewSpec>(() => new FeatureViewSpec());
+    private static readonly pb::MessageParser<FeatureGroupSpec> _parser = new pb::MessageParser<FeatureGroupSpec>(() => new FeatureGroupSpec());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<FeatureViewSpec> Parser { get { return _parser; } }
+    public static pb::MessageParser<FeatureGroupSpec> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -22176,14 +22176,14 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewSpec() {
+    public FeatureGroupSpec() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewSpec(FeatureViewSpec other) : this() {
+    public FeatureGroupSpec(FeatureGroupSpec other) : this() {
       versionName_ = other.versionName_;
       description_ = other.description_;
       features_ = other.features_.Clone();
@@ -22192,8 +22192,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewSpec Clone() {
-      return new FeatureViewSpec(this);
+    public FeatureGroupSpec Clone() {
+      return new FeatureGroupSpec(this);
     }
 
     /// <summary>Field number for the "versionName" field.</summary>
@@ -22295,11 +22295,11 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as FeatureViewSpec);
+      return Equals(other as FeatureGroupSpec);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(FeatureViewSpec other) {
+    public bool Equals(FeatureGroupSpec other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -22397,7 +22397,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(FeatureViewSpec other) {
+    public void MergeFrom(FeatureGroupSpec other) {
       if (other == null) {
         return;
       }
@@ -22479,17 +22479,17 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
   }
 
   /// <summary>
-  /// FeatureViewStatus defines the observed state of FeatureView
+  /// FeatureGroupStatus defines the observed state of FeatureGroup
   /// </summary>
-  public sealed partial class FeatureViewStatus : pb::IMessage<FeatureViewStatus>
+  public sealed partial class FeatureGroupStatus : pb::IMessage<FeatureGroupStatus>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<FeatureViewStatus> _parser = new pb::MessageParser<FeatureViewStatus>(() => new FeatureViewStatus());
+    private static readonly pb::MessageParser<FeatureGroupStatus> _parser = new pb::MessageParser<FeatureGroupStatus>(() => new FeatureGroupStatus());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<FeatureViewStatus> Parser { get { return _parser; } }
+    public static pb::MessageParser<FeatureGroupStatus> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -22502,43 +22502,43 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewStatus() {
+    public FeatureGroupStatus() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewStatus(FeatureViewStatus other) : this() {
+    public FeatureGroupStatus(FeatureGroupStatus other) : this() {
       conditions_ = other.conditions_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FeatureViewStatus Clone() {
-      return new FeatureViewStatus(this);
+    public FeatureGroupStatus Clone() {
+      return new FeatureGroupStatus(this);
     }
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupCondition>();
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureViewCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureGroupCondition> Conditions {
       get { return conditions_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as FeatureViewStatus);
+      return Equals(other as FeatureGroupStatus);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(FeatureViewStatus other) {
+    public bool Equals(FeatureGroupStatus other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -22597,7 +22597,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(FeatureViewStatus other) {
+    public void MergeFrom(FeatureGroupStatus other) {
       if (other == null) {
         return;
       }
@@ -25704,8 +25704,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     /// <summary>Field number for the "featurePipelineName" field.</summary>
-    public const int FeatureViewNameFieldNumber = 3;
-    private readonly static string FeatureViewNameDefaultValue = "";
+    public const int FeatureGroupNameFieldNumber = 3;
+    private readonly static string FeatureGroupNameDefaultValue = "";
 
     private string featurePipelineName_;
     /// <summary>
@@ -25714,20 +25714,20 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     /// +kubebuilder:validation:MinLength=1
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string FeatureViewName {
-      get { return featurePipelineName_ ?? FeatureViewNameDefaultValue; }
+    public string FeatureGroupName {
+      get { return featurePipelineName_ ?? FeatureGroupNameDefaultValue; }
       set {
         featurePipelineName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
     /// <summary>Gets whether the "featurePipelineName" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFeatureViewName {
+    public bool HasFeatureGroupName {
       get { return featurePipelineName_ != null; }
     }
     /// <summary>Clears the value of the "featurePipelineName" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void ClearFeatureViewName() {
+    public void ClearFeatureGroupName() {
       featurePipelineName_ = null;
     }
 
@@ -25746,7 +25746,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (Owner != other.Owner) return false;
       if (VersionName != other.VersionName) return false;
-      if (FeatureViewName != other.FeatureViewName) return false;
+      if (FeatureGroupName != other.FeatureGroupName) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -25755,7 +25755,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
       int hash = 1;
       if (HasOwner) hash ^= Owner.GetHashCode();
       if (HasVersionName) hash ^= VersionName.GetHashCode();
-      if (HasFeatureViewName) hash ^= FeatureViewName.GetHashCode();
+      if (HasFeatureGroupName) hash ^= FeatureGroupName.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -25780,9 +25780,9 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
         output.WriteRawTag(18);
         output.WriteString(VersionName);
       }
-      if (HasFeatureViewName) {
+      if (HasFeatureGroupName) {
         output.WriteRawTag(26);
-        output.WriteString(FeatureViewName);
+        output.WriteString(FeatureGroupName);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -25801,9 +25801,9 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
         output.WriteRawTag(18);
         output.WriteString(VersionName);
       }
-      if (HasFeatureViewName) {
+      if (HasFeatureGroupName) {
         output.WriteRawTag(26);
-        output.WriteString(FeatureViewName);
+        output.WriteString(FeatureGroupName);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -25820,8 +25820,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
       if (HasVersionName) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(VersionName);
       }
-      if (HasFeatureViewName) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(FeatureViewName);
+      if (HasFeatureGroupName) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FeatureGroupName);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -25840,8 +25840,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
       if (other.HasVersionName) {
         VersionName = other.VersionName;
       }
-      if (other.HasFeatureViewName) {
-        FeatureViewName = other.FeatureViewName;
+      if (other.HasFeatureGroupName) {
+        FeatureGroupName = other.FeatureGroupName;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -25866,7 +25866,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
             break;
           }
           case 26: {
-            FeatureViewName = input.ReadString();
+            FeatureGroupName = input.ReadString();
             break;
           }
         }
@@ -25892,7 +25892,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
             break;
           }
           case 26: {
-            FeatureViewName = input.ReadString();
+            FeatureGroupName = input.ReadString();
             break;
           }
         }

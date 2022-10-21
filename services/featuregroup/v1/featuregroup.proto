@@ -1,0 +1,119 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modelaapi/services/featuregroup/v1";
+package github.com.metaprov.modelaapi.services.featuregroup.v1;
+
+import "google/protobuf/field_mask.proto";
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+
+message ListFeatureGroupRequest {
+    string namespace = 1;
+    map<string,string> labels = 2;
+    int32              page_size  = 3;
+    string             page_token = 4;
+    string             order_by   = 5;
+}
+
+message ListFeatureGroupResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupList featuregroups = 1;
+    string next_page_token = 2;
+}
+
+message CreateFeatureGroupRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup featuregroup = 1;
+}
+
+message CreateFeatureGroupResponse {
+
+}
+
+message UpdateFeatureGroupRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup featuregroup = 1;
+    google.protobuf.FieldMask field_mask = 2;
+}
+
+message UpdateFeatureGroupResponse {
+
+}
+
+message GetFeatureGroupRequest {
+    string namespace = 1;
+    string name      = 2;
+    
+}
+
+
+message GetFeatureGroupResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup featuregroup = 1;
+    string yaml = 2;
+}
+
+
+message DeleteFeatureGroupRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteFeatureGroupResponse {
+
+}
+
+message PauseFeatureGroupResponse {
+}
+
+message PauseFeatureGroupRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message ResumeFeatureGroupResponse {
+}
+
+message ResumeFeatureGroupRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+
+service FeatureGroupService {
+    rpc ListFeatureGroups(ListFeatureGroupRequest) returns (ListFeatureGroupResponse) {
+        option (google.api.http).get = "/v1/featuregroups/{namespace}";
+    }
+
+    rpc CreateFeatureGroup(CreateFeatureGroupRequest) returns (CreateFeatureGroupResponse) {
+        option (google.api.http) = {
+			post: "/v1/featuregroups"
+			body: "*"
+		};
+    }
+
+    rpc GetFeatureGroup(GetFeatureGroupRequest) returns (GetFeatureGroupResponse) {
+        option (google.api.http).get = "/v1/featuregroups/{namespace}/{name}";
+    }
+
+    rpc UpdateFeatureGroup(UpdateFeatureGroupRequest) returns (UpdateFeatureGroupResponse) {
+        option (google.api.http) = {
+			put: "/v1/featuregroups/{featuregroup.metadata.namespace}/{featuregroup.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeleteFeatureGroup(DeleteFeatureGroupRequest) returns (DeleteFeatureGroupResponse) {
+        option (google.api.http).delete = "/v1/featuregroups/{namespace}/{name}";
+    }
+    
+    rpc PauseFeatureGroup(PauseFeatureGroupRequest) returns (PauseFeatureGroupResponse) {
+        option (google.api.http).post = "/v1/featuregroups/{namespace}/{name}:pause";
+    }
+
+    rpc ResumeFeatureGroup(ResumeFeatureGroupRequest) returns (ResumeFeatureGroupResponse) {
+        option (google.api.http).post = "/v1/featuregroups/{namespace}/{name}:pause";
+    }
+    
+
+
+
+
+}

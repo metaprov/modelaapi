@@ -5,19 +5,19 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
   creationTimestamp: null
-  name: featureviewes.data.modela.ai
+  name: featuregroupes.data.modela.ai
 spec:
   group: data.modela.ai
   names:
     categories:
     - data
     - modela
-    kind: FeatureView
-    listKind: FeatureViewList
-    plural: featureviewes
+    kind: FeatureGroup
+    listKind: FeatureGroupList
+    plural: featuregroupes
     shortNames:
     - fsc
-    singular: featureview
+    singular: featuregroup
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
@@ -39,7 +39,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: FeatureView represent the processing of feature in the store.
+        description: FeatureGroup represent the processing of feature in the store.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -54,7 +54,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: FeatureViewSpec contain the desired state of a FeatureView
+            description: FeatureGroupSpec contain the desired state of a FeatureGroup
             properties:
               activeDeadlineSeconds:
                 default: 600
@@ -559,7 +559,7 @@ spec:
                 type: number
               conditions:
                 items:
-                  description: FeatureViewCondition describes the state of a deployment
+                  description: FeatureGroupCondition describes the state of a deployment
                     at a certain point.
                   properties:
                     lastTransitionTime:

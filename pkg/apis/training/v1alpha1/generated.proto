@@ -678,6 +678,19 @@ message FeatureEngineeringSpec {
   optional FeatureSelectionSpec selection = 3;
 }
 
+message FeatureGroupRef {
+  // The name of the view
+  optional string name = 1;
+
+  // Feature to include from the view
+  // +kubebuilder:validation:Optional
+  repeated string include = 2;
+
+  // Feature to exclude from the view
+  // +kubebuilder:validation:Optional
+  repeated string exclude = 3;
+}
+
 // FeatureImportance records the computed importance of a single feature
 message FeatureImportance {
   // The name of the feature
@@ -761,20 +774,7 @@ message FeatureSelectionSpec {
 
 message FeatureServiceSpec {
   // +kubebuilder:validation:Optional
-  repeated FeatureViewRef views = 1;
-}
-
-message FeatureViewRef {
-  // The name of the view
-  optional string name = 1;
-
-  // Feature to include from the view
-  // +kubebuilder:validation:Optional
-  repeated string include = 2;
-
-  // Feature to exclude from the view
-  // +kubebuilder:validation:Optional
-  repeated string exclude = 3;
+  repeated FeatureGroupRef views = 1;
 }
 
 // The forecaster search define a search for the forecaster

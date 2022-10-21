@@ -948,6 +948,36 @@ export namespace FeatureEngineeringSpec {
   }
 }
 
+export class FeatureGroupRef extends jspb.Message {
+  getName(): string;
+  setName(value: string): FeatureGroupRef;
+
+  getIncludeList(): Array<string>;
+  setIncludeList(value: Array<string>): FeatureGroupRef;
+  clearIncludeList(): FeatureGroupRef;
+  addInclude(value: string, index?: number): FeatureGroupRef;
+
+  getExcludeList(): Array<string>;
+  setExcludeList(value: Array<string>): FeatureGroupRef;
+  clearExcludeList(): FeatureGroupRef;
+  addExclude(value: string, index?: number): FeatureGroupRef;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureGroupRef.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureGroupRef): FeatureGroupRef.AsObject;
+  static serializeBinaryToWriter(message: FeatureGroupRef, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureGroupRef;
+  static deserializeBinaryFromReader(message: FeatureGroupRef, reader: jspb.BinaryReader): FeatureGroupRef;
+}
+
+export namespace FeatureGroupRef {
+  export type AsObject = {
+    name: string,
+    includeList: Array<string>,
+    excludeList: Array<string>,
+  }
+}
+
 export class FeatureImportance extends jspb.Message {
   getFeature(): string;
   setFeature(value: string): FeatureImportance;
@@ -1077,10 +1107,10 @@ export namespace FeatureSelectionSpec {
 }
 
 export class FeatureServiceSpec extends jspb.Message {
-  getViewsList(): Array<FeatureViewRef>;
-  setViewsList(value: Array<FeatureViewRef>): FeatureServiceSpec;
+  getViewsList(): Array<FeatureGroupRef>;
+  setViewsList(value: Array<FeatureGroupRef>): FeatureServiceSpec;
   clearViewsList(): FeatureServiceSpec;
-  addViews(value?: FeatureViewRef, index?: number): FeatureViewRef;
+  addViews(value?: FeatureGroupRef, index?: number): FeatureGroupRef;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureServiceSpec.AsObject;
@@ -1092,37 +1122,7 @@ export class FeatureServiceSpec extends jspb.Message {
 
 export namespace FeatureServiceSpec {
   export type AsObject = {
-    viewsList: Array<FeatureViewRef.AsObject>,
-  }
-}
-
-export class FeatureViewRef extends jspb.Message {
-  getName(): string;
-  setName(value: string): FeatureViewRef;
-
-  getIncludeList(): Array<string>;
-  setIncludeList(value: Array<string>): FeatureViewRef;
-  clearIncludeList(): FeatureViewRef;
-  addInclude(value: string, index?: number): FeatureViewRef;
-
-  getExcludeList(): Array<string>;
-  setExcludeList(value: Array<string>): FeatureViewRef;
-  clearExcludeList(): FeatureViewRef;
-  addExclude(value: string, index?: number): FeatureViewRef;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeatureViewRef.AsObject;
-  static toObject(includeInstance: boolean, msg: FeatureViewRef): FeatureViewRef.AsObject;
-  static serializeBinaryToWriter(message: FeatureViewRef, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeatureViewRef;
-  static deserializeBinaryFromReader(message: FeatureViewRef, reader: jspb.BinaryReader): FeatureViewRef;
-}
-
-export namespace FeatureViewRef {
-  export type AsObject = {
-    name: string,
-    includeList: Array<string>,
-    excludeList: Array<string>,
+    viewsList: Array<FeatureGroupRef.AsObject>,
   }
 }
 

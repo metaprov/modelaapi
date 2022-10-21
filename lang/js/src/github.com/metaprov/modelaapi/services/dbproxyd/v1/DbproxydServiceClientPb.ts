@@ -5416,219 +5416,219 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteFeatureHistogram);
   }
 
-  methodInfoListFeatureViews = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeatureViews',
+  methodInfoListFeatureGroups = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeatureGroups',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureViewRequest,
-    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureViewResponse,
-    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureViewRequest) => {
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureGroupRequest,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureGroupResponse,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureGroupRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureViewResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureGroupResponse.deserializeBinary
   );
 
-  listFeatureViews(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureViewRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureViewResponse>;
+  listFeatureGroups(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureGroupRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureGroupResponse>;
 
-  listFeatureViews(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureViewRequest,
+  listFeatureGroups(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureGroupRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureViewResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureViewResponse>;
+               response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureGroupResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureGroupResponse>;
 
-  listFeatureViews(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureViewRequest,
+  listFeatureGroups(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureGroupRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureViewResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureGroupResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeatureViews',
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeatureGroups',
         request,
         metadata || {},
-        this.methodInfoListFeatureViews,
+        this.methodInfoListFeatureGroups,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeatureViews',
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeatureGroups',
     request,
     metadata || {},
-    this.methodInfoListFeatureViews);
+    this.methodInfoListFeatureGroups);
   }
 
-  methodInfoGetFeatureView = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeatureView',
+  methodInfoGetFeatureGroup = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeatureGroup',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureViewRequest,
-    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView,
-    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureViewRequest) => {
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureGroupRequest,
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureGroupRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.deserializeBinary
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinary
   );
 
-  getFeatureView(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureViewRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView>;
+  getFeatureGroup(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureGroupRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>;
 
-  getFeatureView(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureViewRequest,
+  getFeatureGroup(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureGroupRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView>;
+               response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>;
 
-  getFeatureView(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureViewRequest,
+  getFeatureGroup(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureGroupRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView) => void) {
+               response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeatureView',
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeatureGroup',
         request,
         metadata || {},
-        this.methodInfoGetFeatureView,
+        this.methodInfoGetFeatureGroup,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeatureView',
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeatureGroup',
     request,
     metadata || {},
-    this.methodInfoGetFeatureView);
+    this.methodInfoGetFeatureGroup);
   }
 
-  methodInfoCreateFeatureView = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeatureView',
+  methodInfoCreateFeatureGroup = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeatureGroup',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureViewRequest,
-    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView,
-    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureViewRequest) => {
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureGroupRequest,
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureGroupRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.deserializeBinary
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinary
   );
 
-  createFeatureView(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureViewRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView>;
+  createFeatureGroup(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureGroupRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>;
 
-  createFeatureView(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureViewRequest,
+  createFeatureGroup(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureGroupRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView>;
+               response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>;
 
-  createFeatureView(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureViewRequest,
+  createFeatureGroup(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureGroupRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView) => void) {
+               response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeatureView',
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeatureGroup',
         request,
         metadata || {},
-        this.methodInfoCreateFeatureView,
+        this.methodInfoCreateFeatureGroup,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeatureView',
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeatureGroup',
     request,
     metadata || {},
-    this.methodInfoCreateFeatureView);
+    this.methodInfoCreateFeatureGroup);
   }
 
-  methodInfoUpdateFeatureView = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeatureView',
+  methodInfoUpdateFeatureGroup = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeatureGroup',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureViewRequest,
-    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView,
-    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureViewRequest) => {
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureGroupRequest,
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureGroupRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.deserializeBinary
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinary
   );
 
-  updateFeatureView(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureViewRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView>;
+  updateFeatureGroup(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureGroupRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>;
 
-  updateFeatureView(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureViewRequest,
+  updateFeatureGroup(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureGroupRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView>;
+               response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>;
 
-  updateFeatureView(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureViewRequest,
+  updateFeatureGroup(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureGroupRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView) => void) {
+               response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeatureView',
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeatureGroup',
         request,
         metadata || {},
-        this.methodInfoUpdateFeatureView,
+        this.methodInfoUpdateFeatureGroup,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeatureView',
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeatureGroup',
     request,
     metadata || {},
-    this.methodInfoUpdateFeatureView);
+    this.methodInfoUpdateFeatureGroup);
   }
 
-  methodInfoDeleteFeatureView = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeatureView',
+  methodInfoDeleteFeatureGroup = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeatureGroup',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureViewRequest,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureGroupRequest,
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureViewRequest) => {
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureGroupRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
-  deleteFeatureView(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureViewRequest,
+  deleteFeatureGroup(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureGroupRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
-  deleteFeatureView(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureViewRequest,
+  deleteFeatureGroup(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureGroupRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
-  deleteFeatureView(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureViewRequest,
+  deleteFeatureGroup(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureGroupRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeatureView',
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeatureGroup',
         request,
         metadata || {},
-        this.methodInfoDeleteFeatureView,
+        this.methodInfoDeleteFeatureGroup,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeatureView',
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeatureGroup',
     request,
     metadata || {},
-    this.methodInfoDeleteFeatureView);
+    this.methodInfoDeleteFeatureGroup);
   }
 
   methodInfoListRecipes = new grpcWeb.MethodDescriptor(

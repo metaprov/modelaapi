@@ -22,7 +22,7 @@ const (
 	DataSourceKind         KindName = "datasources"
 	EntityKind             KindName = "entities"
 	FeatureKind            KindName = "features"
-	FeatureViewKind        KindName = "featureview"
+	FeatureGroupKind       KindName = "featuregroup"
 	FeaturesetKind         KindName = "featuresets"
 	FeatureHistogramKind   KindName = "featurehistograms"
 	RecipeKind             KindName = "recipes"

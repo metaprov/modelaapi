@@ -40,10 +40,10 @@ export namespace ListFeatureGroupRequest {
 }
 
 export class ListFeatureGroupResponse extends jspb.Message {
-  getFeatureviews(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroupList | undefined;
-  setFeatureviews(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroupList): ListFeatureGroupResponse;
-  hasFeatureviews(): boolean;
-  clearFeatureviews(): ListFeatureGroupResponse;
+  getFeaturegroups(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroupList | undefined;
+  setFeaturegroups(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroupList): ListFeatureGroupResponse;
+  hasFeaturegroups(): boolean;
+  clearFeaturegroups(): ListFeatureGroupResponse;
 
   getNextPageToken(): string;
   setNextPageToken(value: string): ListFeatureGroupResponse;
@@ -64,10 +64,10 @@ export namespace ListFeatureGroupResponse {
 }
 
 export class CreateFeatureGroupRequest extends jspb.Message {
-  getFeatureview(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
-  setFeatureview(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): CreateFeatureGroupRequest;
-  hasFeatureview(): boolean;
-  clearFeatureview(): CreateFeatureGroupRequest;
+  getFeaturegroup(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
+  setFeaturegroup(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): CreateFeatureGroupRequest;
+  hasFeaturegroup(): boolean;
+  clearFeaturegroup(): CreateFeatureGroupRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateFeatureGroupRequest.AsObject;
@@ -98,10 +98,10 @@ export namespace CreateFeatureGroupResponse {
 }
 
 export class UpdateFeatureGroupRequest extends jspb.Message {
-  getFeatureview(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
-  setFeatureview(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): UpdateFeatureGroupRequest;
-  hasFeatureview(): boolean;
-  clearFeatureview(): UpdateFeatureGroupRequest;
+  getFeaturegroup(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
+  setFeaturegroup(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): UpdateFeatureGroupRequest;
+  hasFeaturegroup(): boolean;
+  clearFeaturegroup(): UpdateFeatureGroupRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateFeatureGroupRequest;
@@ -160,10 +160,10 @@ export namespace GetFeatureGroupRequest {
 }
 
 export class GetFeatureGroupResponse extends jspb.Message {
-  getFeatureview(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
-  setFeatureview(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): GetFeatureGroupResponse;
-  hasFeatureview(): boolean;
-  clearFeatureview(): GetFeatureGroupResponse;
+  getFeaturegroup(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
+  setFeaturegroup(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): GetFeatureGroupResponse;
+  hasFeaturegroup(): boolean;
+  clearFeaturegroup(): GetFeatureGroupResponse;
 
   getYaml(): string;
   setYaml(value: string): GetFeatureGroupResponse;

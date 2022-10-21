@@ -47,7 +47,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: FeatureView represent a feature set object in the feature
+        description: FeatureGroup represent a feature set object in the feature
           store.
         properties:
           apiVersion:

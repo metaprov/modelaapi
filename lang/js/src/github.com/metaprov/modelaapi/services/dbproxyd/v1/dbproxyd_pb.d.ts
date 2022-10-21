@@ -3359,25 +3359,25 @@ export namespace DeleteFeatureHistogramRequest {
   }
 }
 
-export class ListFeatureViewRequest extends jspb.Message {
+export class ListFeatureGroupRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): ListFeatureViewRequest;
+  setNamespace(value: string): ListFeatureGroupRequest;
 
   getPageSize(): number;
-  setPageSize(value: number): ListFeatureViewRequest;
+  setPageSize(value: number): ListFeatureGroupRequest;
 
   getPageToken(): string;
-  setPageToken(value: string): ListFeatureViewRequest;
+  setPageToken(value: string): ListFeatureGroupRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListFeatureViewRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListFeatureViewRequest): ListFeatureViewRequest.AsObject;
-  static serializeBinaryToWriter(message: ListFeatureViewRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListFeatureViewRequest;
-  static deserializeBinaryFromReader(message: ListFeatureViewRequest, reader: jspb.BinaryReader): ListFeatureViewRequest;
+  toObject(includeInstance?: boolean): ListFeatureGroupRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFeatureGroupRequest): ListFeatureGroupRequest.AsObject;
+  static serializeBinaryToWriter(message: ListFeatureGroupRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFeatureGroupRequest;
+  static deserializeBinaryFromReader(message: ListFeatureGroupRequest, reader: jspb.BinaryReader): ListFeatureGroupRequest;
 }
 
-export namespace ListFeatureViewRequest {
+export namespace ListFeatureGroupRequest {
   export type AsObject = {
     namespace: string,
     pageSize: number,
@@ -3385,108 +3385,108 @@ export namespace ListFeatureViewRequest {
   }
 }
 
-export class ListFeatureViewResponse extends jspb.Message {
-  getItemsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView>;
-  setItemsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView>): ListFeatureViewResponse;
-  clearItemsList(): ListFeatureViewResponse;
-  addItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView;
+export class ListFeatureGroupResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>;
+  setItemsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>): ListFeatureGroupResponse;
+  clearItemsList(): ListFeatureGroupResponse;
+  addItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
 
   getNextPageToken(): string;
-  setNextPageToken(value: string): ListFeatureViewResponse;
+  setNextPageToken(value: string): ListFeatureGroupResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListFeatureViewResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListFeatureViewResponse): ListFeatureViewResponse.AsObject;
-  static serializeBinaryToWriter(message: ListFeatureViewResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListFeatureViewResponse;
-  static deserializeBinaryFromReader(message: ListFeatureViewResponse, reader: jspb.BinaryReader): ListFeatureViewResponse;
+  toObject(includeInstance?: boolean): ListFeatureGroupResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFeatureGroupResponse): ListFeatureGroupResponse.AsObject;
+  static serializeBinaryToWriter(message: ListFeatureGroupResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFeatureGroupResponse;
+  static deserializeBinaryFromReader(message: ListFeatureGroupResponse, reader: jspb.BinaryReader): ListFeatureGroupResponse;
 }
 
-export namespace ListFeatureViewResponse {
+export namespace ListFeatureGroupResponse {
   export type AsObject = {
-    itemsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.AsObject>,
+    itemsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject>,
     nextPageToken: string,
   }
 }
 
-export class GetFeatureViewRequest extends jspb.Message {
+export class GetFeatureGroupRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): GetFeatureViewRequest;
+  setNamespace(value: string): GetFeatureGroupRequest;
 
   getName(): string;
-  setName(value: string): GetFeatureViewRequest;
+  setName(value: string): GetFeatureGroupRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetFeatureViewRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetFeatureViewRequest): GetFeatureViewRequest.AsObject;
-  static serializeBinaryToWriter(message: GetFeatureViewRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetFeatureViewRequest;
-  static deserializeBinaryFromReader(message: GetFeatureViewRequest, reader: jspb.BinaryReader): GetFeatureViewRequest;
+  toObject(includeInstance?: boolean): GetFeatureGroupRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetFeatureGroupRequest): GetFeatureGroupRequest.AsObject;
+  static serializeBinaryToWriter(message: GetFeatureGroupRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetFeatureGroupRequest;
+  static deserializeBinaryFromReader(message: GetFeatureGroupRequest, reader: jspb.BinaryReader): GetFeatureGroupRequest;
 }
 
-export namespace GetFeatureViewRequest {
+export namespace GetFeatureGroupRequest {
   export type AsObject = {
     namespace: string,
     name: string,
   }
 }
 
-export class CreateFeatureViewRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView): CreateFeatureViewRequest;
+export class CreateFeatureGroupRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): CreateFeatureGroupRequest;
   hasItem(): boolean;
-  clearItem(): CreateFeatureViewRequest;
+  clearItem(): CreateFeatureGroupRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateFeatureViewRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateFeatureViewRequest): CreateFeatureViewRequest.AsObject;
-  static serializeBinaryToWriter(message: CreateFeatureViewRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateFeatureViewRequest;
-  static deserializeBinaryFromReader(message: CreateFeatureViewRequest, reader: jspb.BinaryReader): CreateFeatureViewRequest;
+  toObject(includeInstance?: boolean): CreateFeatureGroupRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateFeatureGroupRequest): CreateFeatureGroupRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateFeatureGroupRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateFeatureGroupRequest;
+  static deserializeBinaryFromReader(message: CreateFeatureGroupRequest, reader: jspb.BinaryReader): CreateFeatureGroupRequest;
 }
 
-export namespace CreateFeatureViewRequest {
+export namespace CreateFeatureGroupRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject,
   }
 }
 
-export class UpdateFeatureViewRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView): UpdateFeatureViewRequest;
+export class UpdateFeatureGroupRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): UpdateFeatureGroupRequest;
   hasItem(): boolean;
-  clearItem(): UpdateFeatureViewRequest;
+  clearItem(): UpdateFeatureGroupRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateFeatureViewRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateFeatureViewRequest): UpdateFeatureViewRequest.AsObject;
-  static serializeBinaryToWriter(message: UpdateFeatureViewRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateFeatureViewRequest;
-  static deserializeBinaryFromReader(message: UpdateFeatureViewRequest, reader: jspb.BinaryReader): UpdateFeatureViewRequest;
+  toObject(includeInstance?: boolean): UpdateFeatureGroupRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateFeatureGroupRequest): UpdateFeatureGroupRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateFeatureGroupRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateFeatureGroupRequest;
+  static deserializeBinaryFromReader(message: UpdateFeatureGroupRequest, reader: jspb.BinaryReader): UpdateFeatureGroupRequest;
 }
 
-export namespace UpdateFeatureViewRequest {
+export namespace UpdateFeatureGroupRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject,
   }
 }
 
-export class DeleteFeatureViewRequest extends jspb.Message {
+export class DeleteFeatureGroupRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): DeleteFeatureViewRequest;
+  setNamespace(value: string): DeleteFeatureGroupRequest;
 
   getName(): string;
-  setName(value: string): DeleteFeatureViewRequest;
+  setName(value: string): DeleteFeatureGroupRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteFeatureViewRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteFeatureViewRequest): DeleteFeatureViewRequest.AsObject;
-  static serializeBinaryToWriter(message: DeleteFeatureViewRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteFeatureViewRequest;
-  static deserializeBinaryFromReader(message: DeleteFeatureViewRequest, reader: jspb.BinaryReader): DeleteFeatureViewRequest;
+  toObject(includeInstance?: boolean): DeleteFeatureGroupRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteFeatureGroupRequest): DeleteFeatureGroupRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteFeatureGroupRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteFeatureGroupRequest;
+  static deserializeBinaryFromReader(message: DeleteFeatureGroupRequest, reader: jspb.BinaryReader): DeleteFeatureGroupRequest;
 }
 
-export namespace DeleteFeatureViewRequest {
+export namespace DeleteFeatureGroupRequest {
   export type AsObject = {
     namespace: string,
     name: string,

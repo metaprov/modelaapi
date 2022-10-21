@@ -207,10 +207,10 @@ type ModelClassLabelingSpec struct {
 
 type FeatureServiceSpec struct {
 	// +kubebuilder:validation:Optional
-	Views []FeatureViewRef `json:"views,omitempty" protobuf:"bytes,1,opt,name=views"`
+	Views []FeatureGroupRef `json:"views,omitempty" protobuf:"bytes,1,opt,name=views"`
 }
 
-type FeatureViewRef struct {
+type FeatureGroupRef struct {
 	// The name of the view
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Feature to include from the view

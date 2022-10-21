@@ -50,8 +50,8 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.Crea
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDatasetRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDatasourceRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateEntityRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureHistogramRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateLabRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateLicenseRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateMeetingRequest', null, global);
@@ -97,8 +97,8 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.Dele
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDatasetRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDatasourceRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteEntityRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureHistogramRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteLabRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteLicenseRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteMeetingRequest', null, global);
@@ -144,8 +144,8 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetD
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDatasetRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDatasourceRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetEntityRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureHistogramRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetLabRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetLicenseRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetMeetingRequest', null, global);
@@ -206,10 +206,10 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.List
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDatasourcesResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListEntitiesRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListEntitiesResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureHistogramsRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureHistogramsResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListLabsRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListLabsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListLicensesRequest', null, global);
@@ -285,8 +285,8 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.Upda
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDatasetRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDatasourceRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateEntityRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureHistogramRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateLabRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateLicenseRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateMeetingRequest', null, global);
@@ -3477,16 +3477,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest';
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -3498,16 +3498,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.repeatedFields_, null);
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse';
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -3519,16 +3519,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest';
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -3540,16 +3540,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest';
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -3561,16 +3561,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest';
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -3582,16 +3582,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest';
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -31305,8 +31305,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -31315,11 +31315,11 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
@@ -31337,23 +31337,23 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest;
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -31385,9 +31385,9 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -31395,11 +31395,11 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -31429,16 +31429,16 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -31447,16 +31447,16 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.
  * optional int32 page_size = 2;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.prototype.getPageSize = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest.prototype.getPageSize = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.prototype.setPageSize = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest.prototype.setPageSize = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -31465,16 +31465,16 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.
  * optional string page_token = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.prototype.getPageToken = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest.prototype.getPageToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.prototype.setPageToken = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest.prototype.setPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -31485,7 +31485,7 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewRequest.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.repeatedFields_ = [1];
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.repeatedFields_ = [1];
 
 
 
@@ -31502,8 +31502,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -31512,14 +31512,14 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.toObject, includeInstance),
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject, includeInstance),
     nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -31534,23 +31534,23 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse;
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -31558,8 +31558,8 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinaryFromReader);
       msg.addItems(value);
       break;
     case 2:
@@ -31579,9 +31579,9 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -31589,18 +31589,18 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItemsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.serializeBinaryToWriter
     );
   }
   f = message.getNextPageToken();
@@ -31614,39 +31614,39 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView items = 1;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView>}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup items = 1;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup>}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.prototype.getItemsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView, 1));
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.prototype.getItemsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView>} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse} returns this
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.prototype.setItemsList = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.prototype.setItemsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView, opt_index);
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.prototype.addItems = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.prototype.clearItemsList = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.prototype.clearItemsList = function() {
   return this.setItemsList([]);
 };
 
@@ -31655,16 +31655,16 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse
  * optional string next_page_token = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.prototype.getNextPageToken = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.prototype.getNextPageToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureViewResponse.prototype.setNextPageToken = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse.prototype.setNextPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -31685,8 +31685,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -31695,11 +31695,11 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.p
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -31716,23 +31716,23 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.t
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest;
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -31760,9 +31760,9 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.d
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -31770,11 +31770,11 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.p
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -31797,16 +31797,16 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.s
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -31815,16 +31815,16 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.p
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.prototype.getName = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureViewRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -31845,8 +31845,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -31855,13 +31855,13 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewReques
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -31875,23 +31875,23 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewReques
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest;
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -31899,8 +31899,8 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewReques
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -31916,9 +31916,9 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewReques
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -31926,47 +31926,47 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewReques
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView item = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup item = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView, 1));
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest} returns this
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest.prototype.clearItem = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -31975,7 +31975,7 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewReques
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureViewRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -31996,8 +31996,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -32006,13 +32006,13 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewReques
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -32026,23 +32026,23 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewReques
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest;
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -32050,8 +32050,8 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewReques
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -32067,9 +32067,9 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewReques
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -32077,47 +32077,47 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewReques
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView item = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup item = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureView, 1));
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest} returns this
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest.prototype.clearItem = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -32126,7 +32126,7 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewReques
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureViewRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -32147,8 +32147,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -32157,11 +32157,11 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewReques
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -32178,23 +32178,23 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewReques
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest;
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -32222,9 +32222,9 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewReques
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -32232,11 +32232,11 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewReques
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -32259,16 +32259,16 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewReques
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -32277,16 +32277,16 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewReques
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest.prototype.getName = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureViewRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 

@@ -15,13 +15,11 @@ resources:
 - data.modela.ai_datasets.yaml
 - data.modela.ai_datasources.yaml
 - data.modela.ai_entities.yaml
+- data.modela.ai_featuregroupes.yaml
 - data.modela.ai_featurehistograms.yaml
 - data.modela.ai_featurepipelineruns.yaml
 - data.modela.ai_featurepipelines.yaml
 - data.modela.ai_features.yaml
-- data.modela.ai_featuresetclasses.yaml
-- data.modela.ai_featuresets.yaml
-- data.modela.ai_featuresources.yaml
 - data.modela.ai_featureviewes.yaml
 - data.modela.ai_labelingpipelineruns.yaml
 - data.modela.ai_labelingpipelines.yaml

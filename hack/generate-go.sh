@@ -82,7 +82,7 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
          github.com/metaprov/modelaapi/services/webrequest/v1/webrequest.proto \
          github.com/metaprov/modelaapi/services/entity/v1/entity.proto \
          github.com/metaprov/modelaapi/services/featurehistogram/v1/featurehistogram.proto \
-         github.com/metaprov/modelaapi/services/featureview/v1/featureview.proto \
+         github.com/metaprov/modelaapi/services/featuregroup/v1/featuregroup.proto \
          github.com/metaprov/modelaapi/services/k8score/v1/k8score.proto \
          github.com/metaprov/modelaapi/services/lab/v1/lab.proto \
          github.com/metaprov/modelaapi/services/license/v1/license.proto \

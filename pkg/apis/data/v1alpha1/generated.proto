@@ -2040,6 +2040,143 @@ message FeatureAggrSpec {
   repeated string windows = 3;
 }
 
+// FeatureGroup represent the processing of feature in the store.
+// +kubebuilder:object:root=true
+// +kubebuilder:storageversion
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule",description=""
+// +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun.at",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=featuregroupes,singular=featuregroup,shortName="fsc",categories={data,modela}
+// +kubebuilder:subresource:status
+message FeatureGroup {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional FeatureGroupSpec spec = 2;
+
+  optional FeatureGroupStatus status = 3;
+}
+
+// FeatureGroupCondition describes the state of a deployment at a certain point.
+message FeatureGroupCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, Unknown
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// FeatureList contain a list of feature objects
+message FeatureGroupList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated FeatureGroup items = 2;
+}
+
+// FeatureGroupSpec contain the desired state of a FeatureGroup
+message FeatureGroupSpec {
+  // Owner is the owner of the feature pipeline
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+  // +kubebuilder:validation:Optional
+  optional string owner = 1;
+
+  // Version name is the the product version for the feature.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string versionName = 3;
+
+  // Description of the feature pipeline
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:MaxLength=512
+  optional string description = 4;
+
+  // Resources is the hardware resource req.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 9;
+
+  // Schedule for running the pipeline
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 10;
+
+  // ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
+  // +kubebuilder:default:=600
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Optional
+  optional int64 activeDeadlineSeconds = 11;
+
+  // Set to true to pause the data pipeline
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool paused = 12;
+
+  // A template for models unit tests
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 13;
+
+  // Ingest the features into the online store
+  // +kubebuilder:validation:Optional
+  optional bool online = 14;
+
+  // Ingest the features into the offline store
+  // +kubebuilder:validation:Optional
+  optional bool offline = 15;
+
+  // Features to include in this set
+  // +kubebuilder:validation:Optional
+  repeated string include = 16;
+
+  // Features to exclude from the data source.
+  // +kubebuilder:validation:Optional
+  repeated string exclude = 17;
+
+  // Features to exclude from the data source.
+  // +kubebuilder:validation:Optional
+  repeated string entities = 18;
+
+  // +kubebuilder:validation:Optional
+  optional string ingestType = 19;
+}
+
+// FeatureStatus defines the observed state of Feature
+message FeatureGroupStatus {
+  // Last run is the last time a data pipeline run was created
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 1;
+
+  // The time of the next schedule run
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 2;
+
+  // Store the avg cost of running this pipeline
+  optional double averageCost = 3;
+
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 4;
+
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
+
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  // +kubebuilder:validation:Optional
+  repeated FeatureGroupCondition conditions = 6;
+}
+
 // FeatureHistogram represent a single feature in the feature store.
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
@@ -2209,158 +2346,6 @@ message FeatureHistogramStatus {
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated FeatureHistogramCondition conditions = 12;
-}
-
-// FeatureView represent the processing of feature in the store.
-// +kubebuilder:object:root=true
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule",description=""
-// +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun.at",description=""
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featureviewes,singular=featureview,shortName="fsc",categories={data,modela}
-// +kubebuilder:subresource:status
-message FeatureView {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional FeatureViewSpec spec = 2;
-
-  optional FeatureViewStatus status = 3;
-}
-
-// FeatureViewCondition describes the state of a deployment at a certain point.
-message FeatureViewCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
-}
-
-// +kubebuilder:object:root=true
-// FeatureList contain a list of feature objects
-message FeatureViewList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
-
-  repeated FeatureView items = 2;
-}
-
-// FeatureViewSpec contain the desired state of a FeatureView
-message FeatureViewSpec {
-  // Owner is the owner of the feature pipeline
-  // +kubebuilder:default:="no-one"
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-  // +kubebuilder:validation:Optional
-  optional string owner = 1;
-
-  // DatasetSelector is used to select datasets to process the features from.
-  // +kubebuilder:validation:Optional
-  map<string, string> datasetSelector = 2;
-
-  // Version name is the the product version for the feature.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string versionName = 3;
-
-  // Description of the feature pipeline
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:MaxLength=512
-  optional string description = 4;
-
-  // Aggregation is the aggregation spec
-  // +kubebuilder:validation:Optional
-  optional AggregationSpec aggregation = 5;
-
-  // Materialization
-  optional MaterializationSpec materialization = 6;
-
-  // Family is the feature family
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference featureSetRef = 7;
-
-  // Resources is the hardware resource req.
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 9;
-
-  // Schedule for running the pipeline
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 10;
-
-  // ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
-  // +kubebuilder:default:=600
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 11;
-
-  // Set to true to pause the data pipeline
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool paused = 12;
-
-  // A template for models unit tests
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 13;
-
-  // Ingest the features into the online store
-  // +kubebuilder:validation:Optional
-  optional bool online = 14;
-
-  // Ingest the features into the offline store
-  // +kubebuilder:validation:Optional
-  optional bool offline = 15;
-
-  // Features to include in this set
-  // +kubebuilder:validation:Optional
-  repeated string include = 16;
-
-  // Features to exclude from the data source.
-  // +kubebuilder:validation:Optional
-  repeated string exclude = 17;
-
-  // Features to exclude from the data source.
-  // +kubebuilder:validation:Optional
-  repeated string entities = 18;
-
-  // +kubebuilder:validation:Optional
-  optional string ingestType = 19;
-}
-
-// FeatureStatus defines the observed state of Feature
-message FeatureViewStatus {
-  // Last run is the last time a data pipeline run was created
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 1;
-
-  // The time of the next schedule run
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 2;
-
-  // Store the avg cost of running this pipeline
-  optional double averageCost = 3;
-
-  // ObservedGeneration is the Last generation that was acted on
-  // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 4;
-
-  // Last time the object was updated
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
-
-  // +patchMergeKey=type
-  // +patchStrategy=merge
-  // +kubebuilder:validation:Optional
-  repeated FeatureViewCondition conditions = 6;
 }
 
 // FlatFileFormatSpec defines the format for incoming flat-files to be parsed

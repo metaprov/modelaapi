@@ -16,7 +16,7 @@ from github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1 import generated_pb2 
 from github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nYgithub.com/metaprov/modelaapi/services/offlinefeaturestored/v1/offlinefeaturestored.proto\x12>github.com.metaprov.modelaapi.services.offlinefeaturestored.v1\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xe8\x02\n\x14\x43reateFeatureRequest\x12X\n\rfeatureSource\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12p\n\x06secret\x18\x03 \x03(\x0b\x32`.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.CreateFeatureRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x17\n\x15\x43reateFeatureResponse\"0\n\x14\x44\x65leteFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteFeatureResponse\"\xe8\x02\n\x14UpdateFeatureRequest\x12X\n\rfeatureSource\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12p\n\x06secret\x18\x03 \x03(\x0b\x32`.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x17\n\x15UpdateFeatureResponse\"!\n\x13ListFeaturesRequest\x12\n\n\x02ns\x18\x01 \x01(\t\"o\n\x14ListFeaturesResponse\x12W\n\x08\x66\x65\x61tures\x18\x03 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewList\"-\n\x11GetFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\"h\n\x12GetFeatureResponse\x12R\n\x07\x66\x65\x61ture\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureView\"\x93\x01\n\x1eGenerateTrainingDatasetRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\x12W\n\x08\x66\x65\x61tures\x18\x03 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureViewList\"!\n\x1fGenerateTrainingDatasetResponse2\xb4\t\n\x1aOfflineFeatureStoreService\x12\xbe\x01\n\rCreateFeature\x12T.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.CreateFeatureRequest\x1aU.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.CreateFeatureResponse\"\x00\x12\xbe\x01\n\rDeleteFeature\x12T.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.DeleteFeatureRequest\x1aU.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.DeleteFeatureResponse\"\x00\x12\xbe\x01\n\rUpdateFeature\x12T.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.UpdateFeatureRequest\x1aU.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.UpdateFeatureResponse\"\x00\x12\xbb\x01\n\x0cListFeatures\x12S.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.ListFeaturesRequest\x1aT.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.ListFeaturesResponse\"\x00\x12\xb5\x01\n\nGetFeature\x12Q.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GetFeatureRequest\x1aR.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GetFeatureResponse\"\x00\x12\xdc\x01\n\x17GenerateTrainingDataset\x12^.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest\x1a_.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GenerateTrainingDatasetResponse\"\x00\x42@Z>github.com/metaprov/modelaapi/services/offlinefeaturestored/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nYgithub.com/metaprov/modelaapi/services/offlinefeaturestored/v1/offlinefeaturestored.proto\x12>github.com.metaprov.modelaapi.services.offlinefeaturestored.v1\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xe9\x02\n\x14\x43reateFeatureRequest\x12Y\n\rfeatureSource\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12p\n\x06secret\x18\x03 \x03(\x0b\x32`.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.CreateFeatureRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x17\n\x15\x43reateFeatureResponse\"0\n\x14\x44\x65leteFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteFeatureResponse\"\xe9\x02\n\x14UpdateFeatureRequest\x12Y\n\rfeatureSource\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12p\n\x06secret\x18\x03 \x03(\x0b\x32`.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x17\n\x15UpdateFeatureResponse\"!\n\x13ListFeaturesRequest\x12\n\n\x02ns\x18\x01 \x01(\t\"p\n\x14ListFeaturesResponse\x12X\n\x08\x66\x65\x61tures\x18\x03 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupList\"-\n\x11GetFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\"i\n\x12GetFeatureResponse\x12S\n\x07\x66\x65\x61ture\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\"\x94\x01\n\x1eGenerateTrainingDatasetRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\x12X\n\x08\x66\x65\x61tures\x18\x03 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupList\"!\n\x1fGenerateTrainingDatasetResponse2\xb4\t\n\x1aOfflineFeatureStoreService\x12\xbe\x01\n\rCreateFeature\x12T.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.CreateFeatureRequest\x1aU.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.CreateFeatureResponse\"\x00\x12\xbe\x01\n\rDeleteFeature\x12T.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.DeleteFeatureRequest\x1aU.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.DeleteFeatureResponse\"\x00\x12\xbe\x01\n\rUpdateFeature\x12T.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.UpdateFeatureRequest\x1aU.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.UpdateFeatureResponse\"\x00\x12\xbb\x01\n\x0cListFeatures\x12S.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.ListFeaturesRequest\x1aT.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.ListFeaturesResponse\"\x00\x12\xb5\x01\n\nGetFeature\x12Q.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GetFeatureRequest\x1aR.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GetFeatureResponse\"\x00\x12\xdc\x01\n\x17GenerateTrainingDataset\x12^.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest\x1a_.github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.GenerateTrainingDatasetResponse\"\x00\x42@Z>github.com/metaprov/modelaapi/services/offlinefeaturestored/v1b\x06proto3')
 
 
 
@@ -144,33 +144,33 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _UPDATEFEATUREREQUEST_SECRETENTRY._options = None
   _UPDATEFEATUREREQUEST_SECRETENTRY._serialized_options = b'8\001'
   _CREATEFEATUREREQUEST._serialized_start=299
-  _CREATEFEATUREREQUEST._serialized_end=659
-  _CREATEFEATUREREQUEST_SECRETENTRY._serialized_start=614
-  _CREATEFEATUREREQUEST_SECRETENTRY._serialized_end=659
-  _CREATEFEATURERESPONSE._serialized_start=661
-  _CREATEFEATURERESPONSE._serialized_end=684
-  _DELETEFEATUREREQUEST._serialized_start=686
-  _DELETEFEATUREREQUEST._serialized_end=734
-  _DELETEFEATURERESPONSE._serialized_start=736
-  _DELETEFEATURERESPONSE._serialized_end=759
-  _UPDATEFEATUREREQUEST._serialized_start=762
-  _UPDATEFEATUREREQUEST._serialized_end=1122
-  _UPDATEFEATUREREQUEST_SECRETENTRY._serialized_start=614
-  _UPDATEFEATUREREQUEST_SECRETENTRY._serialized_end=659
-  _UPDATEFEATURERESPONSE._serialized_start=1124
-  _UPDATEFEATURERESPONSE._serialized_end=1147
-  _LISTFEATURESREQUEST._serialized_start=1149
-  _LISTFEATURESREQUEST._serialized_end=1182
-  _LISTFEATURESRESPONSE._serialized_start=1184
-  _LISTFEATURESRESPONSE._serialized_end=1295
-  _GETFEATUREREQUEST._serialized_start=1297
-  _GETFEATUREREQUEST._serialized_end=1342
-  _GETFEATURERESPONSE._serialized_start=1344
-  _GETFEATURERESPONSE._serialized_end=1448
-  _GENERATETRAININGDATASETREQUEST._serialized_start=1451
-  _GENERATETRAININGDATASETREQUEST._serialized_end=1598
-  _GENERATETRAININGDATASETRESPONSE._serialized_start=1600
-  _GENERATETRAININGDATASETRESPONSE._serialized_end=1633
-  _OFFLINEFEATURESTORESERVICE._serialized_start=1636
-  _OFFLINEFEATURESTORESERVICE._serialized_end=2840
+  _CREATEFEATUREREQUEST._serialized_end=660
+  _CREATEFEATUREREQUEST_SECRETENTRY._serialized_start=615
+  _CREATEFEATUREREQUEST_SECRETENTRY._serialized_end=660
+  _CREATEFEATURERESPONSE._serialized_start=662
+  _CREATEFEATURERESPONSE._serialized_end=685
+  _DELETEFEATUREREQUEST._serialized_start=687
+  _DELETEFEATUREREQUEST._serialized_end=735
+  _DELETEFEATURERESPONSE._serialized_start=737
+  _DELETEFEATURERESPONSE._serialized_end=760
+  _UPDATEFEATUREREQUEST._serialized_start=763
+  _UPDATEFEATUREREQUEST._serialized_end=1124
+  _UPDATEFEATUREREQUEST_SECRETENTRY._serialized_start=615
+  _UPDATEFEATUREREQUEST_SECRETENTRY._serialized_end=660
+  _UPDATEFEATURERESPONSE._serialized_start=1126
+  _UPDATEFEATURERESPONSE._serialized_end=1149
+  _LISTFEATURESREQUEST._serialized_start=1151
+  _LISTFEATURESREQUEST._serialized_end=1184
+  _LISTFEATURESRESPONSE._serialized_start=1186
+  _LISTFEATURESRESPONSE._serialized_end=1298
+  _GETFEATUREREQUEST._serialized_start=1300
+  _GETFEATUREREQUEST._serialized_end=1345
+  _GETFEATURERESPONSE._serialized_start=1347
+  _GETFEATURERESPONSE._serialized_end=1452
+  _GENERATETRAININGDATASETREQUEST._serialized_start=1455
+  _GENERATETRAININGDATASETREQUEST._serialized_end=1603
+  _GENERATETRAININGDATASETRESPONSE._serialized_start=1605
+  _GENERATETRAININGDATASETRESPONSE._serialized_end=1638
+  _OFFLINEFEATURESTORESERVICE._serialized_start=1641
+  _OFFLINEFEATURESTORESERVICE._serialized_end=2845
 # @@protoc_insertion_point(module_scope)
