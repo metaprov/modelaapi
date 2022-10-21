@@ -1106,32 +1106,6 @@ export namespace FeatureSelectionSpec {
   }
 }
 
-export class FeaturesSpec extends jspb.Message {
-  getGroupsList(): Array<FeatureGroupRef>;
-  setGroupsList(value: Array<FeatureGroupRef>): FeaturesSpec;
-  clearGroupsList(): FeaturesSpec;
-  addGroups(value?: FeatureGroupRef, index?: number): FeatureGroupRef;
-
-  getData(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setData(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): FeaturesSpec;
-  hasData(): boolean;
-  clearData(): FeaturesSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeaturesSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: FeaturesSpec): FeaturesSpec.AsObject;
-  static serializeBinaryToWriter(message: FeaturesSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeaturesSpec;
-  static deserializeBinaryFromReader(message: FeaturesSpec, reader: jspb.BinaryReader): FeaturesSpec;
-}
-
-export namespace FeaturesSpec {
-  export type AsObject = {
-    groupsList: Array<FeatureGroupRef.AsObject>,
-    data?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-  }
-}
-
 export class ForecasterSpec extends jspb.Message {
   getEventsList(): Array<TimeSeriesEvent>;
   setEventsList(value: Array<TimeSeriesEvent>): ForecasterSpec;
@@ -2093,6 +2067,11 @@ export namespace ModelClassCondition {
 }
 
 export class ModelClassDataSpec extends jspb.Message {
+  getGroupsList(): Array<FeatureGroupRef>;
+  setGroupsList(value: Array<FeatureGroupRef>): ModelClassDataSpec;
+  clearGroupsList(): ModelClassDataSpec;
+  addGroups(value?: FeatureGroupRef, index?: number): FeatureGroupRef;
+
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassDataSpec;
   hasLocation(): boolean;
@@ -2108,6 +2087,7 @@ export class ModelClassDataSpec extends jspb.Message {
 
 export namespace ModelClassDataSpec {
   export type AsObject = {
+    groupsList: Array<FeatureGroupRef.AsObject>,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
@@ -2137,10 +2117,15 @@ export class ModelClassDeploymentSpec extends jspb.Message {
   getReplicas(): number;
   setReplicas(value: number): ModelClassDeploymentSpec;
 
-  getPredictionschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setPredictionschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassDeploymentSpec;
-  hasPredictionschedule(): boolean;
-  clearPredictionschedule(): ModelClassDeploymentSpec;
+  getBatchpredictat(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setBatchpredictat(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassDeploymentSpec;
+  hasBatchpredictat(): boolean;
+  clearBatchpredictat(): ModelClassDeploymentSpec;
+
+  getMonitordriftat(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setMonitordriftat(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassDeploymentSpec;
+  hasMonitordriftat(): boolean;
+  clearMonitordriftat(): ModelClassDeploymentSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassDeploymentSpec.AsObject;
@@ -2158,7 +2143,8 @@ export namespace ModelClassDeploymentSpec {
     dashboard: boolean,
     access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
     replicas: number,
-    predictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    batchpredictat?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    monitordriftat?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
 
@@ -2208,54 +2194,6 @@ export namespace ModelClassList {
   }
 }
 
-export class ModelClassMonitoringSpec extends jspb.Message {
-  getDrift(): boolean;
-  setDrift(value: boolean): ModelClassMonitoringSpec;
-
-  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassMonitoringSpec;
-  hasSchedule(): boolean;
-  clearSchedule(): ModelClassMonitoringSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelClassMonitoringSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelClassMonitoringSpec): ModelClassMonitoringSpec.AsObject;
-  static serializeBinaryToWriter(message: ModelClassMonitoringSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelClassMonitoringSpec;
-  static deserializeBinaryFromReader(message: ModelClassMonitoringSpec, reader: jspb.BinaryReader): ModelClassMonitoringSpec;
-}
-
-export namespace ModelClassMonitoringSpec {
-  export type AsObject = {
-    drift: boolean,
-    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-  }
-}
-
-export class ModelClassRetrainingSpec extends jspb.Message {
-  getDrift(): boolean;
-  setDrift(value: boolean): ModelClassRetrainingSpec;
-
-  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassRetrainingSpec;
-  hasSchedule(): boolean;
-  clearSchedule(): ModelClassRetrainingSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelClassRetrainingSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelClassRetrainingSpec): ModelClassRetrainingSpec.AsObject;
-  static serializeBinaryToWriter(message: ModelClassRetrainingSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelClassRetrainingSpec;
-  static deserializeBinaryFromReader(message: ModelClassRetrainingSpec, reader: jspb.BinaryReader): ModelClassRetrainingSpec;
-}
-
-export namespace ModelClassRetrainingSpec {
-  export type AsObject = {
-    drift: boolean,
-    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-  }
-}
-
 export class ModelClassSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ModelClassSpec;
@@ -2287,35 +2225,15 @@ export class ModelClassSpec extends jspb.Message {
   hasDeployment(): boolean;
   clearDeployment(): ModelClassSpec;
 
-  getMonitoring(): ModelClassMonitoringSpec | undefined;
-  setMonitoring(value?: ModelClassMonitoringSpec): ModelClassSpec;
-  hasMonitoring(): boolean;
-  clearMonitoring(): ModelClassSpec;
-
-  getLabeling(): ModelClassMonitoringSpec | undefined;
-  setLabeling(value?: ModelClassMonitoringSpec): ModelClassSpec;
-  hasLabeling(): boolean;
-  clearLabeling(): ModelClassSpec;
-
-  getRetraining(): ModelClassRetrainingSpec | undefined;
-  setRetraining(value?: ModelClassRetrainingSpec): ModelClassSpec;
-  hasRetraining(): boolean;
-  clearRetraining(): ModelClassSpec;
-
   getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
   setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): ModelClassSpec;
   hasNotification(): boolean;
   clearNotification(): ModelClassSpec;
 
-  getReport(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setReport(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassSpec;
-  hasReport(): boolean;
-  clearReport(): ModelClassSpec;
-
-  getTrainingdata(): FeaturesSpec | undefined;
-  setTrainingdata(value?: FeaturesSpec): ModelClassSpec;
-  hasTrainingdata(): boolean;
-  clearTrainingdata(): ModelClassSpec;
+  getReportat(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setReportat(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassSpec;
+  hasReportat(): boolean;
+  clearReportat(): ModelClassSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassSpec.AsObject;
@@ -2335,12 +2253,8 @@ export namespace ModelClassSpec {
     data?: ModelClassDataSpec.AsObject,
     training?: ModelClassTrainingSpec.AsObject,
     deployment?: ModelClassDeploymentSpec.AsObject,
-    monitoring?: ModelClassMonitoringSpec.AsObject,
-    labeling?: ModelClassMonitoringSpec.AsObject,
-    retraining?: ModelClassRetrainingSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
-    report?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    trainingdata?: FeaturesSpec.AsObject,
+    reportat?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
 
@@ -2461,6 +2375,14 @@ export class ModelClassTrainingSpec extends jspb.Message {
   getPromotion(): string;
   setPromotion(value: string): ModelClassTrainingSpec;
 
+  getRetrainondrift(): boolean;
+  setRetrainondrift(value: boolean): ModelClassTrainingSpec;
+
+  getRetrainat(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setRetrainat(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassTrainingSpec;
+  hasRetrainat(): boolean;
+  clearRetrainat(): ModelClassTrainingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassTrainingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassTrainingSpec): ModelClassTrainingSpec.AsObject;
@@ -2477,6 +2399,8 @@ export namespace ModelClassTrainingSpec {
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     modelimage?: ModelImageSpec.AsObject,
     promotion: string,
+    retrainondrift: boolean,
+    retrainat?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
 
