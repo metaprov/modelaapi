@@ -82,10 +82,10 @@ type FeatureGroupSpec struct {
 	// How this group is ingested
 	// +kubebuilder:default:="batch"
 	// +kubebuilder:validation:Optional
-	IngestType *catalog.FeatureStoreIngestType `json:"ingestType,omitempty" protobuf:"bytes,5,rep,name=ingestType"`
+	IngestType *catalog.FeatureStoreIngestType `json:"ingestType,omitempty" protobuf:"bytes,5,opt,name=ingestType"`
 	// The name of the entity that this group is part of.
 	// A feature group must be part of an entity.
-	EntityName string `json:"entityName,omitempty" protobuf:"bytes,6,rep,name=entityName"`
+	EntityName string `json:"entityName,omitempty" protobuf:"bytes,6,opt,name=entityName"`
 	// The features in the group.
 	// +kubebuilder:validation:Optional
 	Features []string `json:"features,omitempty" protobuf:"bytes,7,rep,name=features"`
@@ -106,7 +106,7 @@ type FeatureGroupSpec struct {
 	Online *bool `json:"online,omitempty" protobuf:"varint,16,opt,name=online"`
 	// Specify the data source for this feature group
 	// +kubebuilder:validation:Optional
-	Data DataLocation `json:"data,omitempty" protobuf:"varint,17,opt,name=data"`
+	Data DataLocation `json:"data,omitempty" protobuf:"bytes,17,opt,name=data"`
 }
 
 // FeatureStatus defines the observed state of Feature
