@@ -173,7 +173,7 @@ type ModelClassDeploymentSpec struct {
 // Define a test stage
 type ModelClassStageSpec struct {
 	// The stage name
-	Name string `json:"drift,omitempty" protobuf:"bytes,1,opt,name=drift"`
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// the Tests to run on the stage
 	// +kubebuilder:validation:Optional
 	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`

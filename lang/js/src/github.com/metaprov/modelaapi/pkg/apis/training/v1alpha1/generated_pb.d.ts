@@ -2269,8 +2269,8 @@ export namespace ModelClassSpec {
 }
 
 export class ModelClassStageSpec extends jspb.Message {
-  getDrift(): string;
-  setDrift(value: string): ModelClassStageSpec;
+  getName(): string;
+  setName(value: string): ModelClassStageSpec;
 
   getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelClassStageSpec;
@@ -2297,7 +2297,7 @@ export class ModelClassStageSpec extends jspb.Message {
 
 export namespace ModelClassStageSpec {
   export type AsObject = {
-    drift: string,
+    name: string,
     tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,

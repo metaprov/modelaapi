@@ -359,7 +359,7 @@ spec:
                     items:
                       description: Define a test stage
                       properties:
-                        drift:
+                        name:
                           description: The stage name
                           type: string
                         resources:

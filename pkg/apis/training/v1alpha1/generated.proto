@@ -1563,7 +1563,7 @@ message ModelClassSpec {
 // Define a test stage
 message ModelClassStageSpec {
   // The stage name
-  optional string drift = 1;
+  optional string name = 1;
 
   // the Tests to run on the stage
   // +kubebuilder:validation:Optional
