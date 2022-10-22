@@ -1118,6 +1118,7 @@ message Model {
 
   optional ModelSpec spec = 2;
 
+  // +optional
   optional ModelStatus status = 3;
 }
 
@@ -1411,6 +1412,7 @@ message ModelClass {
 
   optional ModelClassSpec spec = 2;
 
+  // +optional
   optional ModelClassStatus status = 3;
 }
 
@@ -1720,6 +1722,7 @@ message ModelPipeline {
 
   optional ModelPipelineSpec spec = 2;
 
+  // +optional
   optional ModelPipelineStatus status = 3;
 }
 
@@ -1767,7 +1770,7 @@ message ModelPipelineRun {
 
   optional ModelPipelineRunSpec spec = 2;
 
-  // +kubebuilder:validation:Optional
+  // +optional
   optional ModelPipelineRunStatus status = 3;
 }
 
@@ -2716,6 +2719,7 @@ message Notebook {
 
   optional NotebookSpec spec = 2;
 
+  // +optional
   optional NotebookStatus status = 3;
 }
 
@@ -2761,6 +2765,7 @@ message NotebookRun {
 
   optional NotebookRunSpec spec = 2;
 
+  // +optional
   optional NotebookRunStatus status = 3;
 }
 
@@ -3137,6 +3142,7 @@ message Report {
 
   optional ReportSpec spec = 2;
 
+  // +optional
   optional ReportStatus status = 3;
 }
 
@@ -3501,6 +3507,7 @@ message Study {
 
   optional StudySpec spec = 2;
 
+  // +optional
   optional StudyStatus status = 3;
 }
 

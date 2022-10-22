@@ -150,8 +150,9 @@ type StudyCondition struct {
 type Study struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              StudySpec   `json:"spec,omitempty" protobuf:"bytes,2,opt,name=spec"`
-	Status            StudyStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              StudySpec `json:"spec,omitempty" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status StudyStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // StudySpec defines the desired state of a Study and the parameters for a model search

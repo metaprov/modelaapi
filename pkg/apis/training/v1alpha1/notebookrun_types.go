@@ -68,7 +68,8 @@ type NotebookRun struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
-	Spec   NotebookRunSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Spec NotebookRunSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
 	Status NotebookRunStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 

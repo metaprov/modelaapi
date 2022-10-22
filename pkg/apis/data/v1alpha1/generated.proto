@@ -758,6 +758,7 @@ message DataPipeline {
 
   optional DataPipelineSpec spec = 2;
 
+  // +optional
   optional DataPipelineStatus status = 3;
 }
 
@@ -804,6 +805,7 @@ message DataPipelineRun {
 
   optional DataPipelineRunSpec spec = 2;
 
+  // +optional
   optional DataPipelineRunStatus status = 3;
 }
 
@@ -1036,6 +1038,7 @@ message DataProduct {
 
   optional DataProductSpec spec = 2;
 
+  // +optional
   optional DataProductStatus status = 3;
 }
 
@@ -2058,6 +2061,7 @@ message FeatureGroup {
 
   optional FeatureGroupSpec spec = 2;
 
+  // +optional
   optional FeatureGroupStatus status = 3;
 }
 
@@ -2189,6 +2193,7 @@ message FeatureHistogram {
 
   optional FeatureHistogramSpec spec = 2;
 
+  // +optional
   optional FeatureHistogramStatus status = 3;
 }
 
@@ -2684,6 +2689,7 @@ message Recipe {
 
   optional RecipeSpec spec = 2;
 
+  // +optional
   optional RecipeStatus status = 3;
 }
 

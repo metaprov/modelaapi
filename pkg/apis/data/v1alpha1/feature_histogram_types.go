@@ -75,8 +75,9 @@ type FeatureHistogramCondition struct {
 type FeatureHistogram struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              FeatureHistogramSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            FeatureHistogramStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              FeatureHistogramSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status FeatureHistogramStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true

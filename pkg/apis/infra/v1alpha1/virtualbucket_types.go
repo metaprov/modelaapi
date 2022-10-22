@@ -41,8 +41,9 @@ type VirtualBucketCondition struct {
 type VirtualBucket struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              VirtualBucketSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            VirtualBucketStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              VirtualBucketSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status VirtualBucketStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // VirtualBucketList is a list of VirtualBuckets

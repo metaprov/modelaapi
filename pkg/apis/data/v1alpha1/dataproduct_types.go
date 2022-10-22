@@ -56,8 +56,9 @@ type DataProductCondition struct {
 type DataProduct struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              DataProductSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            DataProductStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              DataProductSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status DataProductStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // GitLocation specifies the Git location where Modela will track resources as YAML

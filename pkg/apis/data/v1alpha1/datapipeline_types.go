@@ -47,8 +47,9 @@ type DataPipelineCondition struct {
 type DataPipeline struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              DataPipelineSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            DataPipelineStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              DataPipelineSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status DataPipelineStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true

@@ -60,8 +60,9 @@ type LicenseCondition struct {
 type License struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              LicenseSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            LicenseStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              LicenseSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status LicenseStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true

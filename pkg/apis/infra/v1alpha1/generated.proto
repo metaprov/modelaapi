@@ -36,6 +36,7 @@ message Account {
 
   optional AccountSpec spec = 2;
 
+  // +optional
   optional AccountStatus status = 3;
 }
 
@@ -240,6 +241,7 @@ message Alert {
 
   optional AlertSpec spec = 2;
 
+  // +optional
   optional AlertStatus status = 3;
 }
 
@@ -542,6 +544,7 @@ message ApiToken {
 
   optional ApiTokenSpec spec = 2;
 
+  // +optional
   optional ApiTokenStatus status = 3;
 }
 
@@ -617,6 +620,7 @@ message Attachment {
 
   optional AttachmentSpec spec = 2;
 
+  // +optional
   optional AttachmentStatus status = 3;
 }
 
@@ -852,6 +856,7 @@ message Commit {
 
   optional CommitSpec spec = 2;
 
+  // +optional
   optional CommitStatus status = 3;
 }
 
@@ -949,6 +954,7 @@ message Connection {
 
   optional ConnectionSpec spec = 2;
 
+  // +optional
   optional ConnectionStatus status = 3;
 }
 
@@ -1720,6 +1726,7 @@ message Lab {
 
   optional LabSpec spec = 2;
 
+  // +optional
   optional LabStatus status = 3;
 }
 
@@ -1813,6 +1820,7 @@ message License {
 
   optional LicenseSpec spec = 2;
 
+  // +optional
   optional LicenseStatus status = 3;
 }
 
@@ -2019,6 +2027,7 @@ message ModelaSystem {
 
   optional ModelaSystemSpec spec = 2;
 
+  // +optional
   optional ModelaSystemStatus status = 3;
 }
 
@@ -2218,6 +2227,7 @@ message Notifier {
 
   optional NotifierSpec spec = 2;
 
+  // +optional
   optional NotifierStatus status = 3;
 }
 
@@ -2627,6 +2637,7 @@ message ServingSite {
 
   optional ServingSiteSpec spec = 2;
 
+  // +optional
   optional ServingSiteStatus status = 3;
 }
 
@@ -2882,6 +2893,7 @@ message Tenant {
 
   optional TenantSpec spec = 2;
 
+  // +optional
   optional TenantStatus status = 3;
 }
 
@@ -3125,6 +3137,7 @@ message VirtualBucket {
 
   optional VirtualBucketSpec spec = 2;
 
+  // +optional
   optional VirtualBucketStatus status = 3;
 }
 
@@ -3237,6 +3250,7 @@ message VirtualCluster {
 
   optional VirtualClusterSpec spec = 2;
 
+  // +optional
   optional VirtualClusterStatus status = 3;
 }
 
@@ -3410,7 +3424,7 @@ message VirtualVolume {
 
   optional VirtualVolumeSpec spec = 2;
 
-  // +kubebuilder:validation:Optional
+  // +optional
   optional VirtualVolumeStatus status = 3;
 }
 

@@ -46,7 +46,7 @@ type VirtualVolume struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Spec              VirtualVolumeSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	// +kubebuilder:validation:Optional
+	//+optional
 	Status VirtualVolumeStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 

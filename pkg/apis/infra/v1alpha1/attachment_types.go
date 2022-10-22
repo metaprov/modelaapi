@@ -42,8 +42,9 @@ type AttachmentCondition struct {
 type Attachment struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              AttachmentSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            AttachmentStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              AttachmentSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status AttachmentStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true

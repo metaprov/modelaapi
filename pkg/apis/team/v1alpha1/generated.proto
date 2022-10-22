@@ -129,6 +129,7 @@ message Meeting {
 
   optional MeetingSpec spec = 2;
 
+  // +optional
   optional MeetingStatus status = 3;
 }
 
@@ -246,6 +247,7 @@ message PostMortem {
 
   optional PostMortemSpec spec = 2;
 
+  // +optional
   optional PostMortemStatus status = 3;
 }
 
@@ -379,6 +381,7 @@ message Review {
 
   optional ReviewSpec spec = 2;
 
+  // +optional
   optional ReviewStatus status = 3;
 }
 
@@ -457,6 +460,7 @@ message RunBook {
 
   optional RunBookSpec spec = 2;
 
+  // +optional
   optional RunBookStatus status = 3;
 }
 
@@ -581,6 +585,7 @@ message Todo {
 
   optional TodoSpec spec = 2;
 
+  // +optional
   optional TodoStatus status = 3;
 }
 

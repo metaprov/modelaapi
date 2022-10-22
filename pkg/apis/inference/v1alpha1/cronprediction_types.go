@@ -43,8 +43,9 @@ type CronPredictionCondition struct {
 type CronPrediction struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              CronPredictionSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            CronPredictionStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              CronPredictionSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status CronPredictionStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // CronPredictionList is a list of CronPredictions

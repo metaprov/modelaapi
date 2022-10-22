@@ -60,8 +60,9 @@ type DataPipelineRunCondition struct {
 type DataPipelineRun struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              DataPipelineRunSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            DataPipelineRunStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              DataPipelineRunSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status DataPipelineRunStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true

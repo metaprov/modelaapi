@@ -51,8 +51,9 @@ type VirtualClusterCondition struct {
 type VirtualCluster struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              VirtualClusterSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            VirtualClusterStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
+	Spec              VirtualClusterSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status VirtualClusterStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
 }
 
 type VirtualClusterSpec struct {

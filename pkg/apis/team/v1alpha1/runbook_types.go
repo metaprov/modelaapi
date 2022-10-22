@@ -46,8 +46,9 @@ type RunBookCondition struct {
 type RunBook struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              RunBookSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            RunBookStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              RunBookSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status RunBookStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true

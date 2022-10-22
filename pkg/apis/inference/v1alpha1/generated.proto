@@ -100,6 +100,7 @@ message CronPrediction {
 
   optional CronPredictionSpec spec = 2;
 
+  // +optional
   optional CronPredictionStatus status = 3;
 }
 
@@ -707,6 +708,7 @@ message Prediction {
 
   optional PredictionSpec spec = 2;
 
+  // +optional
   optional PredictionStatus status = 3;
 }
 
@@ -983,6 +985,7 @@ message Predictor {
 
   optional PredictorSpec spec = 2;
 
+  // +optional
   optional PredictorStatus status = 3;
 }
 

@@ -68,8 +68,9 @@ type PredictionCondition struct {
 type Prediction struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              PredictionSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            PredictionStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              PredictionSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status PredictionStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true

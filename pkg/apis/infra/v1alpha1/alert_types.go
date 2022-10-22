@@ -54,8 +54,9 @@ type AlertCondition struct {
 type Alert struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              AlertSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            AlertStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              AlertSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status AlertStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // AlertList is a list of Alerts

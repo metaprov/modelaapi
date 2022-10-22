@@ -49,8 +49,9 @@ type ModelClassCondition struct {
 type ModelClass struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              ModelClassSpec   `json:"spec,omitempty" protobuf:"bytes,2,opt,name=spec"`
-	Status            ModelClassStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              ModelClassSpec `json:"spec,omitempty" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status ModelClassStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // ModelClassSpec defines the desired state of a ModelClass and the parameters for a model search

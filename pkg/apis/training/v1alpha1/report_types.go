@@ -119,8 +119,9 @@ type ReportCondition struct {
 type Report struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              ReportSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            ReportStatus `json:"status,,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              ReportSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status ReportStatus `json:"status,,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // ReportList contains a list of Reports
