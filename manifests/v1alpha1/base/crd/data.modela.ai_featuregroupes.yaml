@@ -466,9 +466,6 @@ spec:
           status:
             description: FeatureStatus defines the observed state of Feature
             properties:
-              averageCost:
-                description: Store the avg cost of running this pipeline
-                type: number
               conditions:
                 items:
                   description: FeatureGroupCondition describes the state of a deployment
@@ -498,7 +495,7 @@ spec:
                   type: object
                 type: array
               lastRun:
-                description: Last run is the last time a data pipeline run was created
+                description: Last run is the last time the feature group run
                 properties:
                   completionTime:
                     description: The time at which the run concluded

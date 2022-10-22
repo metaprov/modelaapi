@@ -3002,9 +3002,6 @@ export class FeatureGroupStatus extends jspb.Message {
   hasNextrun(): boolean;
   clearNextrun(): FeatureGroupStatus;
 
-  getAveragecost(): number;
-  setAveragecost(value: number): FeatureGroupStatus;
-
   getObservedgeneration(): number;
   setObservedgeneration(value: number): FeatureGroupStatus;
 
@@ -3030,7 +3027,6 @@ export namespace FeatureGroupStatus {
   export type AsObject = {
     lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
     nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    averagecost: number,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<FeatureGroupCondition.AsObject>,

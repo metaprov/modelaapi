@@ -98,8 +98,10 @@ type FeatureGroupSpec struct {
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,10,opt,name=schedule"`
 	// The name of the data source which contain the schema for this entity
+	// +kubebuilder:validation:Optional
 	DatasourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,11,rep,name=datasourceName"`
 	// The name of the data source which contain the schema for this entity
+	// +kubebuilder:validation:Optional
 	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,12,rep,name=timeColumn"`
 	// ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
 	// +kubebuilder:default:=600
@@ -123,24 +125,22 @@ type FeatureGroupSpec struct {
 
 // FeatureStatus defines the observed state of Feature
 type FeatureGroupStatus struct {
-	// Last run is the last time a data pipeline run was created
+	// Last run is the last time the feature group run
 	//+kubebuilder:validation:Optional
 	LastRun catalog.LastRunStatus `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
 	// The time of the next schedule run
 	//+kubebuilder:validation:Optional
 	NextRun *metav1.Time `json:"nextRun,omitempty" protobuf:"bytes,2,opt,name=nextRun"`
-	// Store the avg cost of running this pipeline
-	AverageCost float64 `json:"averageCost,omitempty" protobuf:"bytes,3,opt,name=averageCost"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,5,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,4,opt,name=lastUpdated"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeatureGroupCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
+	Conditions []FeatureGroupCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }
 
 type MaterializationSpec struct {

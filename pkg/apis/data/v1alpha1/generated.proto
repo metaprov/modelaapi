@@ -2128,9 +2128,11 @@ message FeatureGroupSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 10;
 
   // The name of the data source which contain the schema for this entity
+  // +kubebuilder:validation:Optional
   optional string datasourceName = 11;
 
   // The name of the data source which contain the schema for this entity
+  // +kubebuilder:validation:Optional
   optional string timeColumn = 12;
 
   // ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
@@ -2159,7 +2161,7 @@ message FeatureGroupSpec {
 
 // FeatureStatus defines the observed state of Feature
 message FeatureGroupStatus {
-  // Last run is the last time a data pipeline run was created
+  // Last run is the last time the feature group run
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 1;
 
@@ -2167,21 +2169,18 @@ message FeatureGroupStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 2;
 
-  // Store the avg cost of running this pipeline
-  optional double averageCost = 3;
-
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 4;
+  optional int64 observedGeneration = 3;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureGroupCondition conditions = 6;
+  repeated FeatureGroupCondition conditions = 5;
 }
 
 // FeatureHistogram represent a single feature in the feature store.

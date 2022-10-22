@@ -17,6 +17,12 @@ resources:
 - data.modela.ai_entities.yaml
 - data.modela.ai_featuregroupes.yaml
 - data.modela.ai_featurehistograms.yaml
+- data.modela.ai_featurepipelineruns.yaml
+- data.modela.ai_featurepipelines.yaml
+- data.modela.ai_features.yaml
+- data.modela.ai_featureviewes.yaml
+- data.modela.ai_labelingpipelineruns.yaml
+- data.modela.ai_labelingpipelines.yaml
 - data.modela.ai_reciperuns.yaml
 - data.modela.ai_recipes.yaml
 - data.modela.ai_sqlqueries.yaml
@@ -24,7 +30,9 @@ resources:
 - data.modela.ai_webrequestruns.yaml
 - data.modela.ai_webrequests.yaml
 - inference.modela.ai_cronpredictions.yaml
+- inference.modela.ai_curtains.yaml
 - inference.modela.ai_dataapps.yaml
+- inference.modela.ai_forecasts.yaml
 - inference.modela.ai_predictions.yaml
 - inference.modela.ai_predictors.yaml
 - infra.modela.ai_accounts.yaml
@@ -48,8 +56,10 @@ resources:
 - team.modela.ai_reviews.yaml
 - team.modela.ai_runbooks.yaml
 - team.modela.ai_todos.yaml
+- training.modela.ai_cronreports.yaml
 - training.modela.ai_modelautobuilders.yaml
 - training.modela.ai_modelclasses.yaml
+- training.modela.ai_modelcompilerruns.yaml
 - training.modela.ai_modelpipelineruns.yaml
 - training.modela.ai_modelpipelines.yaml
 - training.modela.ai_models.yaml
