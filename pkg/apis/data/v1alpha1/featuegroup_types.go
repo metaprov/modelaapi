@@ -38,7 +38,7 @@ type FeatureGroupCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// FeatureGroup represent the processing of feature in the store.
+// FeatureGroup represent a group of features
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -65,35 +65,30 @@ type FeatureGroupList struct {
 
 // FeatureGroupSpec contain the desired state of a FeatureGroup
 type FeatureGroupSpec struct {
-	// Owner is the owner of the feature pipeline
+	// Owner is the owner of the feature group.
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// Version name is the the product version for the feature.
+	// Version name is the product version for the feature group.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,3,opt,name=versionName"`
-	// Description of the feature pipeline
+	// Description of the feature group.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
 	Description string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
 	// How this group is ingested
+	// +kubebuilder:default:="batch"
 	// +kubebuilder:validation:Optional
 	IngestType *catalog.FeatureStoreIngestType `json:"ingestType,omitempty" protobuf:"bytes,5,rep,name=ingestType"`
 	// The name of the entity that this group is part of.
-	// +kubebuilder:validation:Optional
+	// A feature group must be part of an entity.
 	EntityName string `json:"entityName,omitempty" protobuf:"bytes,6,rep,name=entityName"`
-	// Features to include in this group. add all, if you want to include all the features.
+	// The features in the group.
 	// +kubebuilder:validation:Optional
-	Include []string `json:"include,omitempty" protobuf:"bytes,7,rep,name=include"`
-	// Features to exclude from the data source in this group
-	// +kubebuilder:validation:Optional
-	Exclude []string `json:"exclude,omitempty" protobuf:"bytes,8,rep,name=exclude"`
-	// Resources is the hardware resource req.
-	// +kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,9,opt,name=resources"`
+	Features []string `json:"features,omitempty" protobuf:"bytes,7,rep,name=features"`
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,10,opt,name=schedule"`
@@ -103,31 +98,22 @@ type FeatureGroupSpec struct {
 	// The name of the data source which contain the schema for this entity
 	// +kubebuilder:validation:Optional
 	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,12,rep,name=timeColumn"`
-	// ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
-	// +kubebuilder:default:=600
-	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,13,opt,name=activeDeadlineSeconds"`
-	// Set to true to pause the data pipeline
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"varint,14,opt,name=paused"`
-	// A template for models unit tests
+	// Unit test to run on features from the feature group.
 	// +kubebuilder:validation:Optional
 	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,15,opt,name=unitTests"`
-	// Ingest the features into the online store
+	// Ingest the feature group into the online store
 	// +kubebuilder:validation:Optional
 	Online *bool `json:"online,omitempty" protobuf:"varint,16,opt,name=online"`
-	// Ingest the features into the offline store
+	// Specify the data source for this feature group
 	// +kubebuilder:validation:Optional
-	Offline *bool `json:"offline,omitempty" protobuf:"varint,17,opt,name=offline"`
+	Data DataLocation `json:"data,omitempty" protobuf:"varint,17,opt,name=data"`
 }
 
 // FeatureStatus defines the observed state of Feature
 type FeatureGroupStatus struct {
 	// Last run is the last time the feature group run
 	//+kubebuilder:validation:Optional
-	LastRun catalog.LastRunStatus `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
+	LastProfile catalog.LastRunStatus `json:"lastProfile,omitempty" protobuf:"bytes,1,opt,name=lastProfile"`
 	// The time of the next schedule run
 	//+kubebuilder:validation:Optional
 	NextRun *metav1.Time `json:"nextRun,omitempty" protobuf:"bytes,2,opt,name=nextRun"`
@@ -137,10 +123,13 @@ type FeatureGroupStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,4,opt,name=lastUpdated"`
+	// The current number of rows in the feature group.
+	//+kubebuilder:validation:Optional
+	Rows int32 `json:"rows,omitempty" protobuf:"bytes,5,opt,name=rows"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeatureGroupCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
+	Conditions []FeatureGroupCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
 }
 
 type MaterializationSpec struct {

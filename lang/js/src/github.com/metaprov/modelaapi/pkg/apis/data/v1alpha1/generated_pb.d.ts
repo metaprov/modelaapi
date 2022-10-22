@@ -2662,6 +2662,9 @@ export class EntitySpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): EntitySpec;
 
+  getDatasourcename(): string;
+  setDatasourcename(value: string): EntitySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EntitySpec.AsObject;
   static toObject(includeInstance: boolean, msg: EntitySpec): EntitySpec.AsObject;
@@ -2676,6 +2679,7 @@ export namespace EntitySpec {
     description: string,
     joinkeysList: Array<string>,
     owner: string,
+    datasourcename: string,
   }
 }
 
@@ -2919,20 +2923,10 @@ export class FeatureGroupSpec extends jspb.Message {
   getEntityname(): string;
   setEntityname(value: string): FeatureGroupSpec;
 
-  getIncludeList(): Array<string>;
-  setIncludeList(value: Array<string>): FeatureGroupSpec;
-  clearIncludeList(): FeatureGroupSpec;
-  addInclude(value: string, index?: number): FeatureGroupSpec;
-
-  getExcludeList(): Array<string>;
-  setExcludeList(value: Array<string>): FeatureGroupSpec;
-  clearExcludeList(): FeatureGroupSpec;
-  addExclude(value: string, index?: number): FeatureGroupSpec;
-
-  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
-  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): FeatureGroupSpec;
-  hasResources(): boolean;
-  clearResources(): FeatureGroupSpec;
+  getFeaturesList(): Array<string>;
+  setFeaturesList(value: Array<string>): FeatureGroupSpec;
+  clearFeaturesList(): FeatureGroupSpec;
+  addFeatures(value: string, index?: number): FeatureGroupSpec;
 
   getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): FeatureGroupSpec;
@@ -2945,12 +2939,6 @@ export class FeatureGroupSpec extends jspb.Message {
   getTimecolumn(): string;
   setTimecolumn(value: string): FeatureGroupSpec;
 
-  getActivedeadlineseconds(): number;
-  setActivedeadlineseconds(value: number): FeatureGroupSpec;
-
-  getPaused(): boolean;
-  setPaused(value: boolean): FeatureGroupSpec;
-
   getUnittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): FeatureGroupSpec;
   hasUnittests(): boolean;
@@ -2959,8 +2947,10 @@ export class FeatureGroupSpec extends jspb.Message {
   getOnline(): boolean;
   setOnline(value: boolean): FeatureGroupSpec;
 
-  getOffline(): boolean;
-  setOffline(value: boolean): FeatureGroupSpec;
+  getData(): DataLocation | undefined;
+  setData(value?: DataLocation): FeatureGroupSpec;
+  hasData(): boolean;
+  clearData(): FeatureGroupSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureGroupSpec.AsObject;
@@ -2977,25 +2967,21 @@ export namespace FeatureGroupSpec {
     description: string,
     ingesttype: string,
     entityname: string,
-    includeList: Array<string>,
-    excludeList: Array<string>,
-    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
+    featuresList: Array<string>,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     datasourcename: string,
     timecolumn: string,
-    activedeadlineseconds: number,
-    paused: boolean,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     online: boolean,
-    offline: boolean,
+    data?: DataLocation.AsObject,
   }
 }
 
 export class FeatureGroupStatus extends jspb.Message {
-  getLastrun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus | undefined;
-  setLastrun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus): FeatureGroupStatus;
-  hasLastrun(): boolean;
-  clearLastrun(): FeatureGroupStatus;
+  getLastprofile(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus | undefined;
+  setLastprofile(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus): FeatureGroupStatus;
+  hasLastprofile(): boolean;
+  clearLastprofile(): FeatureGroupStatus;
 
   getNextrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setNextrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureGroupStatus;
@@ -3009,6 +2995,9 @@ export class FeatureGroupStatus extends jspb.Message {
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureGroupStatus;
   hasLastupdated(): boolean;
   clearLastupdated(): FeatureGroupStatus;
+
+  getRows(): number;
+  setRows(value: number): FeatureGroupStatus;
 
   getConditionsList(): Array<FeatureGroupCondition>;
   setConditionsList(value: Array<FeatureGroupCondition>): FeatureGroupStatus;
@@ -3025,10 +3014,11 @@ export class FeatureGroupStatus extends jspb.Message {
 
 export namespace FeatureGroupStatus {
   export type AsObject = {
-    lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
+    lastprofile?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
     nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    rows: number,
     conditionsList: Array<FeatureGroupCondition.AsObject>,
   }
 }

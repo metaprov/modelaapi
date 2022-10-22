@@ -75,6 +75,8 @@ type EntitySpec struct {
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
+	// +kubebuilder:validation:Optional
+	DataSourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,6,opt,name=datasourceName"`
 }
 
 // +kubebuilder:object:root=true

@@ -1967,6 +1967,9 @@ message EntitySpec {
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
   optional string owner = 5;
+
+  // +kubebuilder:validation:Optional
+  optional string datasourceName = 6;
 }
 
 // EntityStatus defines the observed state of Entity
@@ -2040,7 +2043,7 @@ message FeatureAggrSpec {
   repeated string windows = 3;
 }
 
-// FeatureGroup represent the processing of feature in the store.
+// FeatureGroup represent a group of features
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -2086,42 +2089,35 @@ message FeatureGroupList {
 
 // FeatureGroupSpec contain the desired state of a FeatureGroup
 message FeatureGroupSpec {
-  // Owner is the owner of the feature pipeline
+  // Owner is the owner of the feature group.
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
-  // Version name is the the product version for the feature.
+  // Version name is the product version for the feature group.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string versionName = 3;
 
-  // Description of the feature pipeline
+  // Description of the feature group.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
   optional string description = 4;
 
   // How this group is ingested
+  // +kubebuilder:default:="batch"
   // +kubebuilder:validation:Optional
   optional string ingestType = 5;
 
   // The name of the entity that this group is part of.
-  // +kubebuilder:validation:Optional
+  // A feature group must be part of an entity.
   optional string entityName = 6;
 
-  // Features to include in this group. add all, if you want to include all the features.
+  // The features in the group.
   // +kubebuilder:validation:Optional
-  repeated string include = 7;
-
-  // Features to exclude from the data source in this group
-  // +kubebuilder:validation:Optional
-  repeated string exclude = 8;
-
-  // Resources is the hardware resource req.
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 9;
+  repeated string features = 7;
 
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
@@ -2135,35 +2131,24 @@ message FeatureGroupSpec {
   // +kubebuilder:validation:Optional
   optional string timeColumn = 12;
 
-  // ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
-  // +kubebuilder:default:=600
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 13;
-
-  // Set to true to pause the data pipeline
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool paused = 14;
-
-  // A template for models unit tests
+  // Unit test to run on features from the feature group.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 15;
 
-  // Ingest the features into the online store
+  // Ingest the feature group into the online store
   // +kubebuilder:validation:Optional
   optional bool online = 16;
 
-  // Ingest the features into the offline store
+  // Specify the data source for this feature group
   // +kubebuilder:validation:Optional
-  optional bool offline = 17;
+  optional DataLocation data = 17;
 }
 
 // FeatureStatus defines the observed state of Feature
 message FeatureGroupStatus {
   // Last run is the last time the feature group run
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 1;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastProfile = 1;
 
   // The time of the next schedule run
   // +kubebuilder:validation:Optional
@@ -2177,10 +2162,14 @@ message FeatureGroupStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
 
+  // The current number of rows in the feature group.
+  // +kubebuilder:validation:Optional
+  optional int32 rows = 5;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureGroupCondition conditions = 5;
+  repeated FeatureGroupCondition conditions = 6;
 }
 
 // FeatureHistogram represent a single feature in the feature store.

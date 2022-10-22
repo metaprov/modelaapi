@@ -650,6 +650,30 @@ export namespace EnsemblesSpec {
   }
 }
 
+export class EntityRef extends jspb.Message {
+  getName(): string;
+  setName(value: string): EntityRef;
+
+  getExcludeList(): Array<string>;
+  setExcludeList(value: Array<string>): EntityRef;
+  clearExcludeList(): EntityRef;
+  addExclude(value: string, index?: number): EntityRef;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EntityRef.AsObject;
+  static toObject(includeInstance: boolean, msg: EntityRef): EntityRef.AsObject;
+  static serializeBinaryToWriter(message: EntityRef, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EntityRef;
+  static deserializeBinaryFromReader(message: EntityRef, reader: jspb.BinaryReader): EntityRef;
+}
+
+export namespace EntityRef {
+  export type AsObject = {
+    name: string,
+    excludeList: Array<string>,
+  }
+}
+
 export class EvalMetrics extends jspb.Message {
   getSelection(): string;
   setSelection(value: string): EvalMetrics;
@@ -945,36 +969,6 @@ export namespace FeatureEngineeringSpec {
     pipelinesList: Array<FeatureEngineeringPipeline.AsObject>,
     imbalance: string,
     selection?: FeatureSelectionSpec.AsObject,
-  }
-}
-
-export class FeatureGroupRef extends jspb.Message {
-  getName(): string;
-  setName(value: string): FeatureGroupRef;
-
-  getIncludeList(): Array<string>;
-  setIncludeList(value: Array<string>): FeatureGroupRef;
-  clearIncludeList(): FeatureGroupRef;
-  addInclude(value: string, index?: number): FeatureGroupRef;
-
-  getExcludeList(): Array<string>;
-  setExcludeList(value: Array<string>): FeatureGroupRef;
-  clearExcludeList(): FeatureGroupRef;
-  addExclude(value: string, index?: number): FeatureGroupRef;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeatureGroupRef.AsObject;
-  static toObject(includeInstance: boolean, msg: FeatureGroupRef): FeatureGroupRef.AsObject;
-  static serializeBinaryToWriter(message: FeatureGroupRef, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeatureGroupRef;
-  static deserializeBinaryFromReader(message: FeatureGroupRef, reader: jspb.BinaryReader): FeatureGroupRef;
-}
-
-export namespace FeatureGroupRef {
-  export type AsObject = {
-    name: string,
-    includeList: Array<string>,
-    excludeList: Array<string>,
   }
 }
 
@@ -2067,15 +2061,18 @@ export namespace ModelClassCondition {
 }
 
 export class ModelClassDataSpec extends jspb.Message {
-  getGroupsList(): Array<FeatureGroupRef>;
-  setGroupsList(value: Array<FeatureGroupRef>): ModelClassDataSpec;
-  clearGroupsList(): ModelClassDataSpec;
-  addGroups(value?: FeatureGroupRef, index?: number): FeatureGroupRef;
+  getEntitiesList(): Array<EntityRef>;
+  setEntitiesList(value: Array<EntityRef>): ModelClassDataSpec;
+  clearEntitiesList(): ModelClassDataSpec;
+  addEntities(value?: EntityRef, index?: number): EntityRef;
 
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassDataSpec;
   hasLocation(): boolean;
   clearLocation(): ModelClassDataSpec;
+
+  getTarget(): string;
+  setTarget(value: string): ModelClassDataSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassDataSpec.AsObject;
@@ -2087,8 +2084,9 @@ export class ModelClassDataSpec extends jspb.Message {
 
 export namespace ModelClassDataSpec {
   export type AsObject = {
-    groupsList: Array<FeatureGroupRef.AsObject>,
+    entitiesList: Array<EntityRef.AsObject>,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    target: string,
   }
 }
 
@@ -2127,6 +2125,11 @@ export class ModelClassDeploymentSpec extends jspb.Message {
   hasMonitordriftat(): boolean;
   clearMonitordriftat(): ModelClassDeploymentSpec;
 
+  getPredictionlocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setPredictionlocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassDeploymentSpec;
+  hasPredictionlocation(): boolean;
+  clearPredictionlocation(): ModelClassDeploymentSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassDeploymentSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassDeploymentSpec): ModelClassDeploymentSpec.AsObject;
@@ -2145,6 +2148,7 @@ export namespace ModelClassDeploymentSpec {
     replicas: number,
     batchpredictat?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     monitordriftat?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    predictionlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
