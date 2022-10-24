@@ -18,6 +18,56 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
+// OfflineFeatureStoreServiceClient is the client API for OfflineFeatureStoreService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type OfflineFeatureStoreServiceClient interface {
+}
+
+type offlineFeatureStoreServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewOfflineFeatureStoreServiceClient(cc grpc.ClientConnInterface) OfflineFeatureStoreServiceClient {
+	return &offlineFeatureStoreServiceClient{cc}
+}
+
+// OfflineFeatureStoreServiceServer is the server API for OfflineFeatureStoreService service.
+// All implementations must embed UnimplementedOfflineFeatureStoreServiceServer
+// for forward compatibility
+type OfflineFeatureStoreServiceServer interface {
+	mustEmbedUnimplementedOfflineFeatureStoreServiceServer()
+}
+
+// UnimplementedOfflineFeatureStoreServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedOfflineFeatureStoreServiceServer struct {
+}
+
+func (UnimplementedOfflineFeatureStoreServiceServer) mustEmbedUnimplementedOfflineFeatureStoreServiceServer() {
+}
+
+// UnsafeOfflineFeatureStoreServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to OfflineFeatureStoreServiceServer will
+// result in compilation errors.
+type UnsafeOfflineFeatureStoreServiceServer interface {
+	mustEmbedUnimplementedOfflineFeatureStoreServiceServer()
+}
+
+func RegisterOfflineFeatureStoreServiceServer(s grpc.ServiceRegistrar, srv OfflineFeatureStoreServiceServer) {
+	s.RegisterService(&OfflineFeatureStoreService_ServiceDesc, srv)
+}
+
+// OfflineFeatureStoreService_ServiceDesc is the grpc.ServiceDesc for OfflineFeatureStoreService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var OfflineFeatureStoreService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "github.com.metaprov.modelaapi.services.data.v1.OfflineFeatureStoreService",
+	HandlerType: (*OfflineFeatureStoreServiceServer)(nil),
+	Methods:     []grpc.MethodDesc{},
+	Streams:     []grpc.StreamDesc{},
+	Metadata:    "github.com/metaprov/modelaapi/services/data/v1/data.proto",
+}
+
 // DataServiceClient is the client API for DataService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
@@ -92,6 +142,10 @@ type DataServiceClient interface {
 	UnitTestFeatureHistogram(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
 	UnitTestPredictor(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
 	GroupByDataset(ctx context.Context, in *GroupByDatasetRequest, opts ...grpc.CallOption) (*GroupByDatasetResponse, error)
+	// Sync from the online store to the offline store
+	SyncOnlineStore(ctx context.Context, in *SyncOnlineStoreRequest, opts ...grpc.CallOption) (*SyncOnlineStoreResponse, error)
+	// Generate training dataset.
+	GenTrainingData(ctx context.Context, in *GenTrainingDataRequest, opts ...grpc.CallOption) (*GenTrainingDataResponse, error)
 }
 
 type dataServiceClient struct {
@@ -507,6 +561,24 @@ func (c *dataServiceClient) GroupByDataset(ctx context.Context, in *GroupByDatas
 	return out, nil
 }
 
+func (c *dataServiceClient) SyncOnlineStore(ctx context.Context, in *SyncOnlineStoreRequest, opts ...grpc.CallOption) (*SyncOnlineStoreResponse, error) {
+	out := new(SyncOnlineStoreResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/SyncOnlineStore", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) GenTrainingData(ctx context.Context, in *GenTrainingDataRequest, opts ...grpc.CallOption) (*GenTrainingDataResponse, error) {
+	out := new(GenTrainingDataResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/GenTrainingData", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DataServiceServer is the server API for DataService service.
 // All implementations must embed UnimplementedDataServiceServer
 // for forward compatibility
@@ -581,6 +653,10 @@ type DataServiceServer interface {
 	UnitTestFeatureHistogram(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
 	UnitTestPredictor(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
 	GroupByDataset(context.Context, *GroupByDatasetRequest) (*GroupByDatasetResponse, error)
+	// Sync from the online store to the offline store
+	SyncOnlineStore(context.Context, *SyncOnlineStoreRequest) (*SyncOnlineStoreResponse, error)
+	// Generate training dataset.
+	GenTrainingData(context.Context, *GenTrainingDataRequest) (*GenTrainingDataResponse, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -722,6 +798,12 @@ func (UnimplementedDataServiceServer) UnitTestPredictor(context.Context, *RunTes
 }
 func (UnimplementedDataServiceServer) GroupByDataset(context.Context, *GroupByDatasetRequest) (*GroupByDatasetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GroupByDataset not implemented")
+}
+func (UnimplementedDataServiceServer) SyncOnlineStore(context.Context, *SyncOnlineStoreRequest) (*SyncOnlineStoreResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SyncOnlineStore not implemented")
+}
+func (UnimplementedDataServiceServer) GenTrainingData(context.Context, *GenTrainingDataRequest) (*GenTrainingDataResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenTrainingData not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -1546,6 +1628,42 @@ func _DataService_GroupByDataset_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_SyncOnlineStore_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SyncOnlineStoreRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).SyncOnlineStore(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/SyncOnlineStore",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).SyncOnlineStore(ctx, req.(*SyncOnlineStoreRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_GenTrainingData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenTrainingDataRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).GenTrainingData(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/GenTrainingData",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).GenTrainingData(ctx, req.(*GenTrainingDataRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DataService_ServiceDesc is the grpc.ServiceDesc for DataService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1732,6 +1850,14 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GroupByDataset",
 			Handler:    _DataService_GroupByDataset_Handler,
+		},
+		{
+			MethodName: "SyncOnlineStore",
+			Handler:    _DataService_SyncOnlineStore_Handler,
+		},
+		{
+			MethodName: "GenTrainingData",
+			Handler:    _DataService_GenTrainingData_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -5,6 +5,34 @@ import grpc
 from github.com.metaprov.modelaapi.services.data.v1 import data_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2
 
 
+class OfflineFeatureStoreServiceStub(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+
+
+class OfflineFeatureStoreServiceServicer(object):
+    """Missing associated documentation comment in .proto file."""
+
+
+def add_OfflineFeatureStoreServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'github.com.metaprov.modelaapi.services.data.v1.OfflineFeatureStoreService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class OfflineFeatureStoreService(object):
+    """Missing associated documentation comment in .proto file."""
+
+
 class DataServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
@@ -238,6 +266,16 @@ class DataServiceStub(object):
                 '/github.com.metaprov.modelaapi.services.data.v1.DataService/GroupByDataset',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GroupByDatasetRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GroupByDatasetResponse.FromString,
+                )
+        self.SyncOnlineStore = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.data.v1.DataService/SyncOnlineStore',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.SyncOnlineStoreRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.SyncOnlineStoreResponse.FromString,
+                )
+        self.GenTrainingData = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.data.v1.DataService/GenTrainingData',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GenTrainingDataRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GenTrainingDataResponse.FromString,
                 )
 
 
@@ -539,6 +577,20 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SyncOnlineStore(self, request, context):
+        """Sync from the online store to the offline store
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GenTrainingData(self, request, context):
+        """Generate training dataset.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_DataServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -766,6 +818,16 @@ def add_DataServiceServicer_to_server(servicer, server):
                     servicer.GroupByDataset,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GroupByDatasetRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GroupByDatasetResponse.SerializeToString,
+            ),
+            'SyncOnlineStore': grpc.unary_unary_rpc_method_handler(
+                    servicer.SyncOnlineStore,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.SyncOnlineStoreRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.SyncOnlineStoreResponse.SerializeToString,
+            ),
+            'GenTrainingData': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenTrainingData,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GenTrainingDataRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GenTrainingDataResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1539,5 +1601,39 @@ class DataService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/GroupByDataset',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GroupByDatasetRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GroupByDatasetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SyncOnlineStore(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/SyncOnlineStore',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.SyncOnlineStoreRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.SyncOnlineStoreResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GenTrainingData(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/GenTrainingData',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GenTrainingDataRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.GenTrainingDataResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

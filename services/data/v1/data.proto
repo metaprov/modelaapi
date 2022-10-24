@@ -671,6 +671,29 @@ message AskModelResponse {
 }
 
 
+service OfflineFeatureStoreService {
+
+}
+
+
+message GenTrainingDataRequest {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass model = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 2;
+}
+
+message GenTrainingDataResponse {
+    string path = 1;
+}
+
+message SyncOnlineStoreRequest {
+}
+
+message SyncOnlineStoreResponse {
+
+}
+
+
+
 service DataService {
     // Read from a flat file and create a dataset
     rpc ReadFile(DsReadFileRequest) returns (DsReadFromStoreResponse) {}
@@ -748,8 +771,10 @@ service DataService {
     rpc UnitTestFeatureHistogram(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
     rpc UnitTestPredictor(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
     rpc GroupByDataset(GroupByDatasetRequest) returns (GroupByDatasetResponse) {}
-    
 
-    
+    // Sync from the online store to the offline store
+    rpc SyncOnlineStore(SyncOnlineStoreRequest) returns (SyncOnlineStoreResponse)     {}
+    // Generate training dataset.
+    rpc GenTrainingData(GenTrainingDataRequest) returns (GenTrainingDataResponse)     {}
 
 }

@@ -3063,3 +3063,75 @@ export namespace AskModelResponse {
   }
 }
 
+export class GenTrainingDataRequest extends jspb.Message {
+  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass | undefined;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass): GenTrainingDataRequest;
+  hasModel(): boolean;
+  clearModel(): GenTrainingDataRequest;
+
+  getGroupsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>;
+  setGroupsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>): GenTrainingDataRequest;
+  clearGroupsList(): GenTrainingDataRequest;
+  addGroups(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenTrainingDataRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GenTrainingDataRequest): GenTrainingDataRequest.AsObject;
+  static serializeBinaryToWriter(message: GenTrainingDataRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenTrainingDataRequest;
+  static deserializeBinaryFromReader(message: GenTrainingDataRequest, reader: jspb.BinaryReader): GenTrainingDataRequest;
+}
+
+export namespace GenTrainingDataRequest {
+  export type AsObject = {
+    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
+    groupsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject>,
+  }
+}
+
+export class GenTrainingDataResponse extends jspb.Message {
+  getPath(): string;
+  setPath(value: string): GenTrainingDataResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenTrainingDataResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GenTrainingDataResponse): GenTrainingDataResponse.AsObject;
+  static serializeBinaryToWriter(message: GenTrainingDataResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenTrainingDataResponse;
+  static deserializeBinaryFromReader(message: GenTrainingDataResponse, reader: jspb.BinaryReader): GenTrainingDataResponse;
+}
+
+export namespace GenTrainingDataResponse {
+  export type AsObject = {
+    path: string,
+  }
+}
+
+export class SyncOnlineStoreRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SyncOnlineStoreRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SyncOnlineStoreRequest): SyncOnlineStoreRequest.AsObject;
+  static serializeBinaryToWriter(message: SyncOnlineStoreRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SyncOnlineStoreRequest;
+  static deserializeBinaryFromReader(message: SyncOnlineStoreRequest, reader: jspb.BinaryReader): SyncOnlineStoreRequest;
+}
+
+export namespace SyncOnlineStoreRequest {
+  export type AsObject = {
+  }
+}
+
+export class SyncOnlineStoreResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SyncOnlineStoreResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SyncOnlineStoreResponse): SyncOnlineStoreResponse.AsObject;
+  static serializeBinaryToWriter(message: SyncOnlineStoreResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SyncOnlineStoreResponse;
+  static deserializeBinaryFromReader(message: SyncOnlineStoreResponse, reader: jspb.BinaryReader): SyncOnlineStoreResponse;
+}
+
+export namespace SyncOnlineStoreResponse {
+  export type AsObject = {
+  }
+}
+

@@ -16,6 +16,27 @@ import * as grpcWeb from 'grpc-web';
 import * as github_com_metaprov_modelaapi_services_data_v1_data_pb from '../../../../../../github.com/metaprov/modelaapi/services/data/v1/data_pb';
 
 
+export class OfflineFeatureStoreServiceClient {
+  client_: grpcWeb.AbstractClientBase;
+  hostname_: string;
+  credentials_: null | { [index: string]: string; };
+  options_: null | { [index: string]: any; };
+
+  constructor (hostname: string,
+               credentials?: null | { [index: string]: string; },
+               options?: null | { [index: string]: any; }) {
+    if (!options) options = {};
+    if (!credentials) credentials = {};
+    options['format'] = 'text';
+
+    this.client_ = new grpcWeb.GrpcWebClientBase(options);
+    this.hostname_ = hostname;
+    this.credentials_ = credentials;
+    this.options_ = options;
+  }
+
+}
+
 export class DataServiceClient {
   client_: grpcWeb.AbstractClientBase;
   hostname_: string;
@@ -1968,6 +1989,92 @@ export class DataServiceClient {
     request,
     metadata || {},
     this.methodInfoGroupByDataset);
+  }
+
+  methodInfoSyncOnlineStore = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/SyncOnlineStore',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.SyncOnlineStoreRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.SyncOnlineStoreResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.SyncOnlineStoreRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.SyncOnlineStoreResponse.deserializeBinary
+  );
+
+  syncOnlineStore(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.SyncOnlineStoreRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.SyncOnlineStoreResponse>;
+
+  syncOnlineStore(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.SyncOnlineStoreRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.SyncOnlineStoreResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.SyncOnlineStoreResponse>;
+
+  syncOnlineStore(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.SyncOnlineStoreRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.SyncOnlineStoreResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/SyncOnlineStore',
+        request,
+        metadata || {},
+        this.methodInfoSyncOnlineStore,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/SyncOnlineStore',
+    request,
+    metadata || {},
+    this.methodInfoSyncOnlineStore);
+  }
+
+  methodInfoGenTrainingData = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/GenTrainingData',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.GenTrainingDataRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.GenTrainingDataResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GenTrainingDataRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.GenTrainingDataResponse.deserializeBinary
+  );
+
+  genTrainingData(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GenTrainingDataRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.GenTrainingDataResponse>;
+
+  genTrainingData(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GenTrainingDataRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.GenTrainingDataResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.GenTrainingDataResponse>;
+
+  genTrainingData(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GenTrainingDataRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.GenTrainingDataResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/GenTrainingData',
+        request,
+        metadata || {},
+        this.methodInfoGenTrainingData,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/GenTrainingData',
+    request,
+    metadata || {},
+    this.methodInfoGenTrainingData);
   }
 
 }
