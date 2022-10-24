@@ -84,7 +84,6 @@ type FeatureGroupSpec struct {
 	// +kubebuilder:default:="batch"
 	// +kubebuilder:validation:Optional
 	IngestType *catalog.FeatureStoreIngestType `json:"ingestType,omitempty" protobuf:"bytes,5,opt,name=ingestType"`
-	// The name of the entity that this group is part of.
 	// A feature group must be part of an entity.
 	EntityName string `json:"entityName,omitempty" protobuf:"bytes,6,opt,name=entityName"`
 	// The features in the group.
@@ -95,19 +94,16 @@ type FeatureGroupSpec struct {
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,10,opt,name=schedule"`
 	// The name of the data source which contain the schema for this entity
 	// +kubebuilder:validation:Optional
-	DatasourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,11,rep,name=datasourceName"`
-	// The name of the data source which contain the schema for this entity
-	// +kubebuilder:validation:Optional
-	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,12,rep,name=timeColumn"`
-	// Unit test to run on features from the feature group.
+	Schema Schema `json:"schema,omitempty" protobuf:"bytes,11,rep,name=schema"`
+	// Unit test to run on data from this feature group upon ingrest.
 	// +kubebuilder:validation:Optional
 	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,15,opt,name=unitTests"`
-	// Ingest the feature group into the online store
-	// +kubebuilder:validation:Optional
-	Online *bool `json:"online,omitempty" protobuf:"varint,16,opt,name=online"`
-	// Specify the data source for this feature group
+	// Specify the data for this feature group
 	// +kubebuilder:validation:Optional
 	Data DataLocation `json:"data,omitempty" protobuf:"bytes,17,opt,name=data"`
+	// Materialization
+	// +kubebuilder:validation:Optional
+	Materialization MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,18,opt,name=materialization"`
 }
 
 // FeatureStatus defines the observed state of Feature
@@ -145,30 +141,12 @@ type MaterializationSpec struct {
 	// +kubebuilder:validation:Optional
 	StartDate *metav1.Time `json:"startDate,omitempty" protobuf:"bytes,3,opt,name=startDate"`
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default:=""
-	ScheduleInterval *string `json:"scheduleInterval,omitempty" protobuf:"bytes,4,opt,name=scheduleInterval"`
-	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:default:=0
-	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,5,opt,name=ttl"`
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,4,opt,name=ttl"`
 	// Number of days to store information from the past in the feature store.
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=21
 	// +kubebuilder:validation:Minimum=0
-	Backfill *int32 `json:"backfill,omitempty" protobuf:"varint,6,opt,name=backfill"`
-}
-
-// Define the aggregation period
-type AggregationSpec struct {
-	SlidePeriod  string            `json:"slidePeriod,omitempty" protobuf:"bytes,1,opt,name=slidePeriod"`
-	Aggregations []FeatureAggrSpec `json:"aggregations,omitempty" protobuf:"bytes,2,rep,name=aggregations"`
-}
-
-type FeatureAggrSpec struct {
-	// The column
-	Column string `json:"column,omitempty" protobuf:"bytes,1,opt,name=column"`
-	// The aggregation function
-	Functions []string `json:"functions,omitempty" protobuf:"bytes,2,rep,name=functions"`
-	// List of windows functions
-	Windows []string `json:"windows,omitempty" protobuf:"bytes,3,rep,name=windows"`
+	Backfill *int32 `json:"backfill,omitempty" protobuf:"varint,5,opt,name=backfill"`
 }

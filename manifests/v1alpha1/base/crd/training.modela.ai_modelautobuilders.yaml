@@ -578,6 +578,19 @@ spec:
                               description: The default value for number types; used
                                 internally for synthetic data and validation
                               type: number
+                            aggr:
+                              description: If this column is aggregate. Define the
+                                aggregate
+                              enum:
+                              - min
+                              - max
+                              - mean
+                              - median
+                              - sum
+                              - stddev
+                              - var
+                              - none
+                              type: string
                             datatype:
                               description: The data type of the feature (e.g. number,
                                 string, boolean, etc.)
@@ -868,6 +881,10 @@ spec:
                             weight:
                               description: If True than this is a weight column
                               type: boolean
+                            window:
+                              description: If this column is aggregate
+                              format: int32
+                              type: integer
                           required:
                           - datatype
                           - name

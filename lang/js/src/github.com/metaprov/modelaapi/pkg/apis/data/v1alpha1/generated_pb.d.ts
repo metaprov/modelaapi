@@ -7,30 +7,6 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
-export class AggregationSpec extends jspb.Message {
-  getSlideperiod(): string;
-  setSlideperiod(value: string): AggregationSpec;
-
-  getAggregationsList(): Array<FeatureAggrSpec>;
-  setAggregationsList(value: Array<FeatureAggrSpec>): AggregationSpec;
-  clearAggregationsList(): AggregationSpec;
-  addAggregations(value?: FeatureAggrSpec, index?: number): FeatureAggrSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AggregationSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: AggregationSpec): AggregationSpec.AsObject;
-  static serializeBinaryToWriter(message: AggregationSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AggregationSpec;
-  static deserializeBinaryFromReader(message: AggregationSpec, reader: jspb.BinaryReader): AggregationSpec;
-}
-
-export namespace AggregationSpec {
-  export type AsObject = {
-    slideperiod: string,
-    aggregationsList: Array<FeatureAggrSpec.AsObject>,
-  }
-}
-
 export class BarChartSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): BarChartSpec;
@@ -224,6 +200,12 @@ export class Column extends jspb.Message {
   getTimeindex(): boolean;
   setTimeindex(value: boolean): Column;
 
+  getAggr(): string;
+  setAggr(value: string): Column;
+
+  getWindow(): number;
+  setWindow(value: number): Column;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Column.AsObject;
   static toObject(includeInstance: boolean, msg: Column): Column.AsObject;
@@ -286,6 +268,8 @@ export namespace Column {
     regressor: boolean,
     laggedregressor: boolean,
     timeindex: boolean,
+    aggr: string,
+    window: number,
   }
 }
 
@@ -2177,6 +2161,9 @@ export class DatasetSpec extends jspb.Message {
   getDatasourcename(): string;
   setDatasourcename(value: string): DatasetSpec;
 
+  getFeaturegroupname(): string;
+  setFeaturegroupname(value: string): DatasetSpec;
+
   getModelclassname(): string;
   setModelclassname(value: string): DatasetSpec;
 
@@ -2234,11 +2221,6 @@ export class DatasetSpec extends jspb.Message {
 
   getSubtask(): string;
   setSubtask(value: string): DatasetSpec;
-
-  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
-  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): DatasetSpec;
-  hasNotification(): boolean;
-  clearNotification(): DatasetSpec;
 
   getCorrelation(): CorrelationSpec | undefined;
   setCorrelation(value?: CorrelationSpec): DatasetSpec;
@@ -2302,6 +2284,7 @@ export namespace DatasetSpec {
     owner: string,
     versionname: string,
     datasourcename: string,
+    featuregroupname: string,
     modelclassname: string,
     description: string,
     displayname: string,
@@ -2318,7 +2301,6 @@ export namespace DatasetSpec {
     syntactic?: SyntheticSpec.AsObject,
     task: string,
     subtask: string,
-    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     correlation?: CorrelationSpec.AsObject,
     fast: boolean,
     featurized: boolean,
@@ -2783,36 +2765,6 @@ export namespace ExcelSheetArea {
   }
 }
 
-export class FeatureAggrSpec extends jspb.Message {
-  getColumn(): string;
-  setColumn(value: string): FeatureAggrSpec;
-
-  getFunctionsList(): Array<string>;
-  setFunctionsList(value: Array<string>): FeatureAggrSpec;
-  clearFunctionsList(): FeatureAggrSpec;
-  addFunctions(value: string, index?: number): FeatureAggrSpec;
-
-  getWindowsList(): Array<string>;
-  setWindowsList(value: Array<string>): FeatureAggrSpec;
-  clearWindowsList(): FeatureAggrSpec;
-  addWindows(value: string, index?: number): FeatureAggrSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeatureAggrSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: FeatureAggrSpec): FeatureAggrSpec.AsObject;
-  static serializeBinaryToWriter(message: FeatureAggrSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeatureAggrSpec;
-  static deserializeBinaryFromReader(message: FeatureAggrSpec, reader: jspb.BinaryReader): FeatureAggrSpec;
-}
-
-export namespace FeatureAggrSpec {
-  export type AsObject = {
-    column: string,
-    functionsList: Array<string>,
-    windowsList: Array<string>,
-  }
-}
-
 export class FeatureGroup extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): FeatureGroup;
@@ -2933,24 +2885,25 @@ export class FeatureGroupSpec extends jspb.Message {
   hasSchedule(): boolean;
   clearSchedule(): FeatureGroupSpec;
 
-  getDatasourcename(): string;
-  setDatasourcename(value: string): FeatureGroupSpec;
-
-  getTimecolumn(): string;
-  setTimecolumn(value: string): FeatureGroupSpec;
+  getSchema(): Schema | undefined;
+  setSchema(value?: Schema): FeatureGroupSpec;
+  hasSchema(): boolean;
+  clearSchema(): FeatureGroupSpec;
 
   getUnittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): FeatureGroupSpec;
   hasUnittests(): boolean;
   clearUnittests(): FeatureGroupSpec;
 
-  getOnline(): boolean;
-  setOnline(value: boolean): FeatureGroupSpec;
-
   getData(): DataLocation | undefined;
   setData(value?: DataLocation): FeatureGroupSpec;
   hasData(): boolean;
   clearData(): FeatureGroupSpec;
+
+  getMaterialization(): MaterializationSpec | undefined;
+  setMaterialization(value?: MaterializationSpec): FeatureGroupSpec;
+  hasMaterialization(): boolean;
+  clearMaterialization(): FeatureGroupSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureGroupSpec.AsObject;
@@ -2969,11 +2922,10 @@ export namespace FeatureGroupSpec {
     entityname: string,
     featuresList: Array<string>,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    datasourcename: string,
-    timecolumn: string,
+    schema?: Schema.AsObject,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    online: boolean,
     data?: DataLocation.AsObject,
+    materialization?: MaterializationSpec.AsObject,
   }
 }
 
@@ -3723,9 +3675,6 @@ export class MaterializationSpec extends jspb.Message {
   hasStartdate(): boolean;
   clearStartdate(): MaterializationSpec;
 
-  getScheduleinterval(): string;
-  setScheduleinterval(value: string): MaterializationSpec;
-
   getTtl(): number;
   setTtl(value: number): MaterializationSpec;
 
@@ -3745,7 +3694,6 @@ export namespace MaterializationSpec {
     online: boolean,
     offline: boolean,
     startdate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    scheduleinterval: string,
     ttl: number,
     backfill: number,
   }

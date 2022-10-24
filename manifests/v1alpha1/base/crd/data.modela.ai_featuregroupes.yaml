@@ -57,7 +57,7 @@ spec:
             description: FeatureGroupSpec contain the desired state of a FeatureGroup
             properties:
               data:
-                description: Specify the data source for this feature group
+                description: Specify the data for this feature group
                 properties:
                   bucketName:
                     default: ""
@@ -167,18 +167,13 @@ spec:
                       the DataLocation
                     type: string
                 type: object
-              datasourceName:
-                description: The name of the data source which contain the schema
-                  for this entity
-                type: string
               description:
                 default: ""
                 description: Description of the feature group.
                 maxLength: 512
                 type: string
               entityName:
-                description: The name of the entity that this group is part of. A
-                  feature group must be part of an entity.
+                description: A feature group must be part of an entity.
                 type: string
               features:
                 description: The features in the group.
@@ -189,9 +184,33 @@ spec:
                 default: batch
                 description: How this group is ingested
                 type: string
-              online:
-                description: Ingest the feature group into the online store
-                type: boolean
+              materialization:
+                description: Materialization
+                properties:
+                  backfill:
+                    default: 21
+                    description: Number of days to store information from the past
+                      in the feature store.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  offline:
+                    default: false
+                    description: If true update the offline store.
+                    type: boolean
+                  online:
+                    default: false
+                    description: If true, update the online store
+                    type: boolean
+                  startDate:
+                    format: date-time
+                    type: string
+                  ttl:
+                    default: 0
+                    format: int32
+                    minimum: 0
+                    type: integer
+                type: object
               owner:
                 default: no-one
                 description: Owner is the owner of the feature group.
@@ -232,12 +251,386 @@ spec:
                     - cron
                     type: string
                 type: object
-              timeColumn:
+              schema:
                 description: The name of the data source which contain the schema
                   for this entity
-                type: string
+                properties:
+                  columns:
+                    description: The collection of columns and their attributes
+                    items:
+                      description: Column specifies the attribute of a single column
+                        in a dataset. The fields of the Column align with the JSON
+                        schema standard; you can view detailed documentation at https://json-schema.org/draft/2020-12/json-schema-validation.html
+                      properties:
+                        DefaultValueNum:
+                          description: The default value for number types; used internally
+                            for synthetic data and validation
+                          type: number
+                        aggr:
+                          description: If this column is aggregate. Define the aggregate
+                          enum:
+                          - min
+                          - max
+                          - mean
+                          - median
+                          - sum
+                          - stddev
+                          - var
+                          - none
+                          type: string
+                        datatype:
+                          description: The data type of the feature (e.g. number,
+                            string, boolean, etc.)
+                          enum:
+                          - boolean
+                          - datetime
+                          - number
+                          - categorical
+                          - ordinal
+                          - text
+                          - json
+                          - number-list
+                          - categorical-list
+                          - text-list
+                          type: string
+                        datetimeFormat:
+                          description: The format of the datetime column. This is
+                            only setup if the column contain datetime type.
+                          type: string
+                        description:
+                          description: The user-specified description of the feature
+                          maxLength: 63
+                          type: string
+                        displayName:
+                          description: The display name of the column, which is used
+                            in reports and other visual elements. If omitted, it will
+                            use the raw name
+                          maxLength: 63
+                          type: string
+                        driftThreshold:
+                          description: The threshold drift value for model drift detection
+                            for the feature represented by this feature
+                          type: number
+                        enum:
+                          description: The collection of unique values for categorical
+                            features
+                          items:
+                            type: string
+                          type: array
+                        example:
+                          description: A user-specified example value
+                          type: string
+                        exclusiveMaximum:
+                          description: The exclusive upper limit of all values in
+                            the column, which does not include the maximum value
+                          type: boolean
+                        exclusiveMinimum:
+                          description: The exclusive lower limit of all values in
+                            the column, which does not include the minimum value
+                          type: boolean
+                        externalDocs:
+                          description: A link to user-specified external documentation
+                          type: string
+                        fk:
+                          description: Denotes if the column specifies a foreign key
+                            of another database table
+                          type: boolean
+                        fold:
+                          description: Indicates if the column holds fold values
+                          type: boolean
+                        format:
+                          description: The data domain of the feature, which constrains
+                            the contents of the feature to a specific set of values
+                          enum:
+                          - url
+                          - path
+                          - password
+                          - time
+                          - count
+                          - interval
+                          - nominal
+                          - email
+                          - creditcard
+                          - uuid
+                          - uuid5
+                          - uuid
+                          - base64
+                          - latitude
+                          - longtitude
+                          - dns
+                          - ip4
+                          - ip6
+                          - ssn
+                          - alpha
+                          - alphanumeric
+                          - unknown
+                          - color
+                          - currency
+                          - date
+                          - guid
+                          - hyperlink
+                          - image
+                          - media
+                          - file
+                          - embedding
+                          - record
+                          - useless
+                          - none
+                          type: string
+                        formula:
+                          description: The formula used to generate the column
+                          type: string
+                        generated:
+                          description: Indicates if the feature was automatically
+                            generated
+                          type: boolean
+                        id:
+                          description: Indicates if the column is an ID column
+                          type: boolean
+                        ignore:
+                          description: Indicates if the feature should be ignored
+                            when building models
+                          type: boolean
+                        imputation:
+                          description: The recommended imputation method for the column
+                          enum:
+                          - remove-rows-with-missing-values
+                          - replace-with-mean
+                          - replace-with-median
+                          - replace-with-arbitrary-value
+                          - freq-category-imputation
+                          - add-missing-value-indicator
+                          - knn
+                          - iterative
+                          - mice
+                          - no-imputation
+                          - auto
+                          - none
+                          type: string
+                        key:
+                          description: Indicates if the column is an key column
+                          type: boolean
+                        laggedRegressor:
+                          description: In forecasting based data sets Indicates if
+                            the column is regressor This is relevant only for time
+                            series schema
+                          type: boolean
+                        loc:
+                          description: Contain the Index for the column in the schema
+                          format: int32
+                          type: integer
+                        log:
+                          description: Indicates if values from this column will be
+                            sampled on a logarithmic scale
+                          type: boolean
+                        maxItems:
+                          description: The maximum number of items if the column is
+                            a list of values
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        maxLength:
+                          description: The maximum length of values in the column,
+                            if the column data type is a string
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        maximum:
+                          description: The maximum value of values all values in the
+                            column
+                          type: number
+                        minItems:
+                          description: The minimum number of items if the column is
+                            a list of values
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        minLength:
+                          description: The minimum length of values in the column,
+                            if the column data type is a string
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        minimum:
+                          description: The minimum value of values all values in the
+                            column
+                          type: number
+                        mu:
+                          description: Mu is the mean of the normal distribution
+                          type: number
+                        multipleOf:
+                          description: The integer value which the values of the column
+                            should be a multiple of
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        name:
+                          description: The name of the column
+                          maxLength: 63
+                          minLength: 1
+                          type: string
+                        nullable:
+                          description: Indicates if the column can contain null values
+                          type: boolean
+                        ordinal:
+                          default: false
+                          description: Indicates if the feature is ordinal, in the
+                            case of categorical features
+                          type: boolean
+                        pattern:
+                          description: The regex pattern which values in the column
+                            must adhere to
+                          type: string
+                        personalData:
+                          description: Indicates if the column contains any personal
+                            data
+                          type: boolean
+                        phi:
+                          description: Indicates if the column contains personal health
+                            information
+                          type: boolean
+                        pii:
+                          description: Indicates if the column contains personally
+                            identifiable information
+                          type: boolean
+                        pk:
+                          description: Denotes if the column specifies a primary key
+                            of a database table (i.e. a users ID)
+                          type: boolean
+                        protected:
+                          description: Protected means that this feature is important
+                            for ethical AI / Fairness
+                          type: boolean
+                        regressor:
+                          description: In forecasting based data sets Indicates if
+                            the column is regressor This is relevant only for time
+                            series schema
+                          type: boolean
+                        required:
+                          description: Required
+                          type: boolean
+                        reserved:
+                          description: Indicates that the feature should always be
+                            used in training
+                          type: boolean
+                        scaling:
+                          description: The recommended scaling method for the column
+                          enum:
+                          - standard-scaling
+                          - max-abs-scaling
+                          - min-max-scaling
+                          - normalization-scaling
+                          - robust-scaling
+                          - scale-to-unit-norm
+                          - none
+                          - auto
+                          type: string
+                        sigma:
+                          description: Sigma is the standard deviation of the distribution
+                          type: number
+                        skewThreshold:
+                          description: The threshold skew for skew detection for the
+                            feature represented by this feature.
+                          type: number
+                        step:
+                          description: The step value if the column values are a sequence
+                            of numbers
+                          type: number
+                        target:
+                          description: Indicates if the feature is the target feature
+                            of the model, and the feature which predictions will be
+                            made on
+                          type: boolean
+                        timeIndex:
+                          description: For time series, the field indicate tha this
+                            column will be used as the data time index for the time
+                            series. Note that there can multiple datatime type columns,
+                            but only one time column.
+                          type: boolean
+                        timeseries:
+                          description: Indicates if the column is contain a time series,
+                            In case of forecasting, if only one column is a time series,
+                            this is a univariate time series Otherwise, if two or
+                            more columns contain time series, than this is a univariate
+                            time series.
+                          type: boolean
+                        uniqueItems:
+                          description: Enforce that all the items in the list are
+                            unique
+                          type: boolean
+                        weight:
+                          description: If True than this is a weight column
+                          type: boolean
+                        window:
+                          description: If this column is aggregate
+                          format: int32
+                          type: integer
+                      required:
+                      - datatype
+                      - name
+                      type: object
+                    type: array
+                  key:
+                    description: The keys columns are the index of the file or table.
+                      The set of keys will be used as an index for the in memory representation(e.g.
+                      pandas)
+                    items:
+                      type: string
+                    type: array
+                  recommendationSchema:
+                    description: The recommendation schema, which is used for the
+                      recommendation ML task
+                    properties:
+                      itemIDColumn:
+                        default: item_id
+                        description: The name of the column that specifies item IDs
+                        type: string
+                      ratingColumn:
+                        default: rating
+                        description: The name of the column that specifies ratings
+                        type: string
+                      userIDColumn:
+                        default: user_id
+                        description: The name of the column that specifies user IDs
+                          (i.e. the primary key)
+                        type: string
+                    type: object
+                  timeSeriesSchema:
+                    description: The time-series schema, which sets time-series specific
+                      parameters
+                    properties:
+                      freq:
+                        default: day
+                        description: The time series frequency
+                        enum:
+                        - second
+                        - minute
+                        - hour
+                        - day
+                        - week
+                        - month
+                        - quarter
+                        - year
+                        - multi-year
+                        type: string
+                      interval:
+                        default: 1
+                        description: The interval to forecast at this level
+                        format: int32
+                        type: integer
+                      type:
+                        default: series
+                        description: The time series type
+                        enum:
+                        - series
+                        - panel
+                        - hierarchical
+                        type: string
+                    type: object
+                type: object
               unitTests:
-                description: Unit test to run on features from the feature group.
+                description: Unit test to run on data from this feature group upon
+                  ingrest.
                 properties:
                   enabled:
                     description: If false, this test case is disabled

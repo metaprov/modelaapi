@@ -448,10 +448,10 @@ type Column struct {
 	Sigma *float64 `json:"sigma,omitempty" protobuf:"bytes,35,opt,name=sigma"`
 	// The threshold skew for skew detection for the feature represented by this feature.
 	// +kubebuilder:validation:Optional
-	Skewthreshold *float64 `json:"skewThreshold,omitempty" protobuf:"bytes,36,opt,name=skewThreshold"`
+	SkewThreshold *float64 `json:"skewThreshold,omitempty" protobuf:"bytes,36,opt,name=skewThreshold"`
 	// The threshold drift value for model drift detection for the feature represented by this feature
 	// +kubebuilder:validation:Optional
-	Driftthreshold *float64 `json:"driftThreshold,omitempty" protobuf:"bytes,37,opt,name=driftThreshold"`
+	DriftThreshold *float64 `json:"driftThreshold,omitempty" protobuf:"bytes,37,opt,name=driftThreshold"`
 	// Indicates if the column is an key column
 	// +kubebuilder:validation:Optional
 	Key *bool `json:"key,omitempty" protobuf:"varint,38,opt,name=key"`
@@ -506,6 +506,12 @@ type Column struct {
 	// time column.
 	// +kubebuilder:validation:Optional
 	TimeIndex *bool `json:"timeIndex,omitempty" protobuf:"varint,53,opt,name=timeIndex"`
+	// If this column is aggregate. Define the aggregate
+	// +kubebuilder:validation:Optional
+	Aggr *catalog.Aggregate `json:"aggr,omitempty" protobuf:"varint,54,opt,name=aggr"`
+	// If this column is aggregate
+	// +kubebuilder:validation:Optional
+	Window *int32 `json:"window,omitempty" protobuf:"varint,55,opt,name=window"`
 }
 
 // DataSource defines the specification for the file format and column-level schema of data to be used within Modela
