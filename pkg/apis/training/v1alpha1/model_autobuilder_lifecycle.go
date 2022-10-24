@@ -502,7 +502,6 @@ func (b *ModelAutobuilder) CreateDataset(notification catalog.NotificationSpec) 
 		Spec: data.DatasetSpec{
 			Fast:           b.Spec.Fast,
 			Type:           &b.Spec.DatasetType,
-			Notification:   notification,
 			Owner:          b.Spec.Owner,
 			VersionName:    util.StrPtr(b.DataProductVersionName()),
 			DataSourceName: util.StrPtr(b.DatasourceName()),
