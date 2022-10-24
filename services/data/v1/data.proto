@@ -671,14 +671,10 @@ message AskModelResponse {
 }
 
 
-service OfflineFeatureStoreService {
-
-}
-
-
 message GenTrainingDataRequest {
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass model = 1;
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 2;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entities = 2;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 3;
 }
 
 message GenTrainingDataResponse {
@@ -686,6 +682,9 @@ message GenTrainingDataResponse {
 }
 
 message SyncOnlineStoreRequest {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass model = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entities = 2;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 3;
 }
 
 message SyncOnlineStoreResponse {

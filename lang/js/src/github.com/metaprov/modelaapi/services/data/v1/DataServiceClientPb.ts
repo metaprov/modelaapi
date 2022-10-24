@@ -16,27 +16,6 @@ import * as grpcWeb from 'grpc-web';
 import * as github_com_metaprov_modelaapi_services_data_v1_data_pb from '../../../../../../github.com/metaprov/modelaapi/services/data/v1/data_pb';
 
 
-export class OfflineFeatureStoreServiceClient {
-  client_: grpcWeb.AbstractClientBase;
-  hostname_: string;
-  credentials_: null | { [index: string]: string; };
-  options_: null | { [index: string]: any; };
-
-  constructor (hostname: string,
-               credentials?: null | { [index: string]: string; },
-               options?: null | { [index: string]: any; }) {
-    if (!options) options = {};
-    if (!credentials) credentials = {};
-    options['format'] = 'text';
-
-    this.client_ = new grpcWeb.GrpcWebClientBase(options);
-    this.hostname_ = hostname;
-    this.credentials_ = credentials;
-    this.options_ = options;
-  }
-
-}
-
 export class DataServiceClient {
   client_: grpcWeb.AbstractClientBase;
   hostname_: string;

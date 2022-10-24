@@ -18,56 +18,6 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// OfflineFeatureStoreServiceClient is the client API for OfflineFeatureStoreService service.
-//
-// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type OfflineFeatureStoreServiceClient interface {
-}
-
-type offlineFeatureStoreServiceClient struct {
-	cc grpc.ClientConnInterface
-}
-
-func NewOfflineFeatureStoreServiceClient(cc grpc.ClientConnInterface) OfflineFeatureStoreServiceClient {
-	return &offlineFeatureStoreServiceClient{cc}
-}
-
-// OfflineFeatureStoreServiceServer is the server API for OfflineFeatureStoreService service.
-// All implementations must embed UnimplementedOfflineFeatureStoreServiceServer
-// for forward compatibility
-type OfflineFeatureStoreServiceServer interface {
-	mustEmbedUnimplementedOfflineFeatureStoreServiceServer()
-}
-
-// UnimplementedOfflineFeatureStoreServiceServer must be embedded to have forward compatible implementations.
-type UnimplementedOfflineFeatureStoreServiceServer struct {
-}
-
-func (UnimplementedOfflineFeatureStoreServiceServer) mustEmbedUnimplementedOfflineFeatureStoreServiceServer() {
-}
-
-// UnsafeOfflineFeatureStoreServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to OfflineFeatureStoreServiceServer will
-// result in compilation errors.
-type UnsafeOfflineFeatureStoreServiceServer interface {
-	mustEmbedUnimplementedOfflineFeatureStoreServiceServer()
-}
-
-func RegisterOfflineFeatureStoreServiceServer(s grpc.ServiceRegistrar, srv OfflineFeatureStoreServiceServer) {
-	s.RegisterService(&OfflineFeatureStoreService_ServiceDesc, srv)
-}
-
-// OfflineFeatureStoreService_ServiceDesc is the grpc.ServiceDesc for OfflineFeatureStoreService service.
-// It's only intended for direct use with grpc.RegisterService,
-// and not to be introspected or modified (even as a copy)
-var OfflineFeatureStoreService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modelaapi.services.data.v1.OfflineFeatureStoreService",
-	HandlerType: (*OfflineFeatureStoreServiceServer)(nil),
-	Methods:     []grpc.MethodDesc{},
-	Streams:     []grpc.StreamDesc{},
-	Metadata:    "github.com/metaprov/modelaapi/services/data/v1/data.proto",
-}
-
 // DataServiceClient is the client API for DataService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.

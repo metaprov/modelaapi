@@ -3069,6 +3069,11 @@ export class GenTrainingDataRequest extends jspb.Message {
   hasModel(): boolean;
   clearModel(): GenTrainingDataRequest;
 
+  getEntitiesList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>;
+  setEntitiesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>): GenTrainingDataRequest;
+  clearEntitiesList(): GenTrainingDataRequest;
+  addEntities(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity;
+
   getGroupsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>;
   setGroupsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>): GenTrainingDataRequest;
   clearGroupsList(): GenTrainingDataRequest;
@@ -3085,6 +3090,7 @@ export class GenTrainingDataRequest extends jspb.Message {
 export namespace GenTrainingDataRequest {
   export type AsObject = {
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
+    entitiesList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject>,
     groupsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject>,
   }
 }
@@ -3108,6 +3114,21 @@ export namespace GenTrainingDataResponse {
 }
 
 export class SyncOnlineStoreRequest extends jspb.Message {
+  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass | undefined;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass): SyncOnlineStoreRequest;
+  hasModel(): boolean;
+  clearModel(): SyncOnlineStoreRequest;
+
+  getEntitiesList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>;
+  setEntitiesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>): SyncOnlineStoreRequest;
+  clearEntitiesList(): SyncOnlineStoreRequest;
+  addEntities(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity;
+
+  getGroupsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>;
+  setGroupsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>): SyncOnlineStoreRequest;
+  clearGroupsList(): SyncOnlineStoreRequest;
+  addGroups(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SyncOnlineStoreRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SyncOnlineStoreRequest): SyncOnlineStoreRequest.AsObject;
@@ -3118,6 +3139,9 @@ export class SyncOnlineStoreRequest extends jspb.Message {
 
 export namespace SyncOnlineStoreRequest {
   export type AsObject = {
+    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
+    entitiesList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject>,
+    groupsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject>,
   }
 }
 

@@ -5,34 +5,6 @@ import grpc
 from github.com.metaprov.modelaapi.services.data.v1 import data_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2
 
 
-class OfflineFeatureStoreServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
-
-    def __init__(self, channel):
-        """Constructor.
-
-        Args:
-            channel: A grpc.Channel.
-        """
-
-
-class OfflineFeatureStoreServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
-
-
-def add_OfflineFeatureStoreServiceServicer_to_server(servicer, server):
-    rpc_method_handlers = {
-    }
-    generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modelaapi.services.data.v1.OfflineFeatureStoreService', rpc_method_handlers)
-    server.add_generic_rpc_handlers((generic_handler,))
-
-
- # This class is part of an EXPERIMENTAL API.
-class OfflineFeatureStoreService(object):
-    """Missing associated documentation comment in .proto file."""
-
-
 class DataServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 

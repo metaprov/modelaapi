@@ -1810,7 +1810,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -26056,7 +26056,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.AskModelResponse.prototype.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.repeatedFields_ = [2];
+proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.repeatedFields_ = [2,3];
 
 
 
@@ -26090,6 +26090,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.prot
 proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.toObject(includeInstance, f),
+    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.toObject, includeInstance),
     groupsList: jspb.Message.toObjectList(msg.getGroupsList(),
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject, includeInstance)
   };
@@ -26134,6 +26136,11 @@ proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.dese
       msg.setModel(value);
       break;
     case 2:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.deserializeBinaryFromReader);
+      msg.addEntities(value);
+      break;
+    case 3:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinaryFromReader);
       msg.addGroups(value);
@@ -26175,10 +26182,18 @@ proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.seri
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.serializeBinaryToWriter
     );
   }
-  f = message.getGroupsList();
+  f = message.getEntitiesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       2,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.serializeBinaryToWriter
+    );
+  }
+  f = message.getGroupsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.serializeBinaryToWriter
     );
@@ -26224,12 +26239,50 @@ proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.prot
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 2;
+ * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entities = 2;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity>}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.prototype.getEntitiesList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.prototype.setEntitiesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.prototype.addEntities = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.prototype.clearEntitiesList = function() {
+  return this.setEntitiesList([]);
+};
+
+
+/**
+ * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 3;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup>}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.prototype.getGroupsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 2));
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 3));
 };
 
 
@@ -26238,7 +26291,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.prot
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.prototype.setGroupsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -26248,7 +26301,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.prototype.addGroups = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup, opt_index);
 };
 
 
@@ -26392,6 +26445,13 @@ proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataResponse.pro
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.repeatedFields_ = [2,3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -26423,7 +26483,11 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prot
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.toObject(includeInstance, f),
+    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.toObject, includeInstance),
+    groupsList: jspb.Message.toObjectList(msg.getGroupsList(),
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -26460,6 +26524,21 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.dese
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.deserializeBinaryFromReader);
+      msg.setModel(value);
+      break;
+    case 2:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.deserializeBinaryFromReader);
+      msg.addEntities(value);
+      break;
+    case 3:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinaryFromReader);
+      msg.addGroups(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -26489,6 +26568,143 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prot
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getModel();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.serializeBinaryToWriter
+    );
+  }
+  f = message.getEntitiesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.serializeBinaryToWriter
+    );
+  }
+  f = message.getGroupsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass model = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getModel = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.setModel = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.clearModel = function() {
+  return this.setModel(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.hasModel = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entities = 2;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity>}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getEntitiesList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.setEntitiesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.addEntities = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.clearEntitiesList = function() {
+  return this.setEntitiesList([]);
+};
+
+
+/**
+ * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 3;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup>}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getGroupsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.setGroupsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.addGroups = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.clearGroupsList = function() {
+  return this.setGroupsList([]);
 };
 
 
