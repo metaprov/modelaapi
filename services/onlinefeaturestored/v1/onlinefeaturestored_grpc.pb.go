@@ -22,12 +22,9 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type OnlineFeatureStoreServiceClient interface {
-	IngestFeatures(ctx context.Context, in *CreateFeatureRequest, opts ...grpc.CallOption) (*CreateFeatureResponse, error)
-	DeleteFeature(ctx context.Context, in *DeleteFeatureRequest, opts ...grpc.CallOption) (*DeleteFeatureResponse, error)
-	ListFeatures(ctx context.Context, in *ListFeaturesRequest, opts ...grpc.CallOption) (*ListFeaturesResponse, error)
-	GetFeature(ctx context.Context, in *GetFeatureRequest, opts ...grpc.CallOption) (*GetFeatureResponse, error)
-	UpdateFeature(ctx context.Context, in *UpdateFeatureRequest, opts ...grpc.CallOption) (*UpdateFeatureResponse, error)
-	Enrich(ctx context.Context, in *EnrichRequest, opts ...grpc.CallOption) (*EnrichResponse, error)
+	OnlineGet(ctx context.Context, in *OnlineGetRequest, opts ...grpc.CallOption) (*OnlineGetResponse, error)
+	OnlineMultiGet(ctx context.Context, in *OnlineMultiGetRequest, opts ...grpc.CallOption) (*OnlineMultiGetResponse, error)
+	Import(ctx context.Context, in *ImportRequest, opts ...grpc.CallOption) (*ImportResponse, error)
 }
 
 type onlineFeatureStoreServiceClient struct {
@@ -38,54 +35,27 @@ func NewOnlineFeatureStoreServiceClient(cc grpc.ClientConnInterface) OnlineFeatu
 	return &onlineFeatureStoreServiceClient{cc}
 }
 
-func (c *onlineFeatureStoreServiceClient) IngestFeatures(ctx context.Context, in *CreateFeatureRequest, opts ...grpc.CallOption) (*CreateFeatureResponse, error) {
-	out := new(CreateFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/IngestFeatures", in, out, opts...)
+func (c *onlineFeatureStoreServiceClient) OnlineGet(ctx context.Context, in *OnlineGetRequest, opts ...grpc.CallOption) (*OnlineGetResponse, error) {
+	out := new(OnlineGetResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineGet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *onlineFeatureStoreServiceClient) DeleteFeature(ctx context.Context, in *DeleteFeatureRequest, opts ...grpc.CallOption) (*DeleteFeatureResponse, error) {
-	out := new(DeleteFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature", in, out, opts...)
+func (c *onlineFeatureStoreServiceClient) OnlineMultiGet(ctx context.Context, in *OnlineMultiGetRequest, opts ...grpc.CallOption) (*OnlineMultiGetResponse, error) {
+	out := new(OnlineMultiGetResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineMultiGet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *onlineFeatureStoreServiceClient) ListFeatures(ctx context.Context, in *ListFeaturesRequest, opts ...grpc.CallOption) (*ListFeaturesResponse, error) {
-	out := new(ListFeaturesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *onlineFeatureStoreServiceClient) GetFeature(ctx context.Context, in *GetFeatureRequest, opts ...grpc.CallOption) (*GetFeatureResponse, error) {
-	out := new(GetFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *onlineFeatureStoreServiceClient) UpdateFeature(ctx context.Context, in *UpdateFeatureRequest, opts ...grpc.CallOption) (*UpdateFeatureResponse, error) {
-	out := new(UpdateFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *onlineFeatureStoreServiceClient) Enrich(ctx context.Context, in *EnrichRequest, opts ...grpc.CallOption) (*EnrichResponse, error) {
-	out := new(EnrichResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich", in, out, opts...)
+func (c *onlineFeatureStoreServiceClient) Import(ctx context.Context, in *ImportRequest, opts ...grpc.CallOption) (*ImportResponse, error) {
+	out := new(ImportResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Import", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -96,12 +66,9 @@ func (c *onlineFeatureStoreServiceClient) Enrich(ctx context.Context, in *Enrich
 // All implementations must embed UnimplementedOnlineFeatureStoreServiceServer
 // for forward compatibility
 type OnlineFeatureStoreServiceServer interface {
-	IngestFeatures(context.Context, *CreateFeatureRequest) (*CreateFeatureResponse, error)
-	DeleteFeature(context.Context, *DeleteFeatureRequest) (*DeleteFeatureResponse, error)
-	ListFeatures(context.Context, *ListFeaturesRequest) (*ListFeaturesResponse, error)
-	GetFeature(context.Context, *GetFeatureRequest) (*GetFeatureResponse, error)
-	UpdateFeature(context.Context, *UpdateFeatureRequest) (*UpdateFeatureResponse, error)
-	Enrich(context.Context, *EnrichRequest) (*EnrichResponse, error)
+	OnlineGet(context.Context, *OnlineGetRequest) (*OnlineGetResponse, error)
+	OnlineMultiGet(context.Context, *OnlineMultiGetRequest) (*OnlineMultiGetResponse, error)
+	Import(context.Context, *ImportRequest) (*ImportResponse, error)
 	mustEmbedUnimplementedOnlineFeatureStoreServiceServer()
 }
 
@@ -109,23 +76,14 @@ type OnlineFeatureStoreServiceServer interface {
 type UnimplementedOnlineFeatureStoreServiceServer struct {
 }
 
-func (UnimplementedOnlineFeatureStoreServiceServer) IngestFeatures(context.Context, *CreateFeatureRequest) (*CreateFeatureResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method IngestFeatures not implemented")
+func (UnimplementedOnlineFeatureStoreServiceServer) OnlineGet(context.Context, *OnlineGetRequest) (*OnlineGetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method OnlineGet not implemented")
 }
-func (UnimplementedOnlineFeatureStoreServiceServer) DeleteFeature(context.Context, *DeleteFeatureRequest) (*DeleteFeatureResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteFeature not implemented")
+func (UnimplementedOnlineFeatureStoreServiceServer) OnlineMultiGet(context.Context, *OnlineMultiGetRequest) (*OnlineMultiGetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method OnlineMultiGet not implemented")
 }
-func (UnimplementedOnlineFeatureStoreServiceServer) ListFeatures(context.Context, *ListFeaturesRequest) (*ListFeaturesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListFeatures not implemented")
-}
-func (UnimplementedOnlineFeatureStoreServiceServer) GetFeature(context.Context, *GetFeatureRequest) (*GetFeatureResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetFeature not implemented")
-}
-func (UnimplementedOnlineFeatureStoreServiceServer) UpdateFeature(context.Context, *UpdateFeatureRequest) (*UpdateFeatureResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateFeature not implemented")
-}
-func (UnimplementedOnlineFeatureStoreServiceServer) Enrich(context.Context, *EnrichRequest) (*EnrichResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Enrich not implemented")
+func (UnimplementedOnlineFeatureStoreServiceServer) Import(context.Context, *ImportRequest) (*ImportResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Import not implemented")
 }
 func (UnimplementedOnlineFeatureStoreServiceServer) mustEmbedUnimplementedOnlineFeatureStoreServiceServer() {
 }
@@ -141,110 +99,56 @@ func RegisterOnlineFeatureStoreServiceServer(s grpc.ServiceRegistrar, srv Online
 	s.RegisterService(&OnlineFeatureStoreService_ServiceDesc, srv)
 }
 
-func _OnlineFeatureStoreService_IngestFeatures_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateFeatureRequest)
+func _OnlineFeatureStoreService_OnlineGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(OnlineGetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OnlineFeatureStoreServiceServer).IngestFeatures(ctx, in)
+		return srv.(OnlineFeatureStoreServiceServer).OnlineGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/IngestFeatures",
+		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineGet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OnlineFeatureStoreServiceServer).IngestFeatures(ctx, req.(*CreateFeatureRequest))
+		return srv.(OnlineFeatureStoreServiceServer).OnlineGet(ctx, req.(*OnlineGetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OnlineFeatureStoreService_DeleteFeature_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteFeatureRequest)
+func _OnlineFeatureStoreService_OnlineMultiGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(OnlineMultiGetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OnlineFeatureStoreServiceServer).DeleteFeature(ctx, in)
+		return srv.(OnlineFeatureStoreServiceServer).OnlineMultiGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature",
+		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineMultiGet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OnlineFeatureStoreServiceServer).DeleteFeature(ctx, req.(*DeleteFeatureRequest))
+		return srv.(OnlineFeatureStoreServiceServer).OnlineMultiGet(ctx, req.(*OnlineMultiGetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OnlineFeatureStoreService_ListFeatures_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListFeaturesRequest)
+func _OnlineFeatureStoreService_Import_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ImportRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OnlineFeatureStoreServiceServer).ListFeatures(ctx, in)
+		return srv.(OnlineFeatureStoreServiceServer).Import(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures",
+		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Import",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OnlineFeatureStoreServiceServer).ListFeatures(ctx, req.(*ListFeaturesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _OnlineFeatureStoreService_GetFeature_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetFeatureRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OnlineFeatureStoreServiceServer).GetFeature(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OnlineFeatureStoreServiceServer).GetFeature(ctx, req.(*GetFeatureRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _OnlineFeatureStoreService_UpdateFeature_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateFeatureRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OnlineFeatureStoreServiceServer).UpdateFeature(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OnlineFeatureStoreServiceServer).UpdateFeature(ctx, req.(*UpdateFeatureRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _OnlineFeatureStoreService_Enrich_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(EnrichRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OnlineFeatureStoreServiceServer).Enrich(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OnlineFeatureStoreServiceServer).Enrich(ctx, req.(*EnrichRequest))
+		return srv.(OnlineFeatureStoreServiceServer).Import(ctx, req.(*ImportRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -257,28 +161,16 @@ var OnlineFeatureStoreService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*OnlineFeatureStoreServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "IngestFeatures",
-			Handler:    _OnlineFeatureStoreService_IngestFeatures_Handler,
+			MethodName: "OnlineGet",
+			Handler:    _OnlineFeatureStoreService_OnlineGet_Handler,
 		},
 		{
-			MethodName: "DeleteFeature",
-			Handler:    _OnlineFeatureStoreService_DeleteFeature_Handler,
+			MethodName: "OnlineMultiGet",
+			Handler:    _OnlineFeatureStoreService_OnlineMultiGet_Handler,
 		},
 		{
-			MethodName: "ListFeatures",
-			Handler:    _OnlineFeatureStoreService_ListFeatures_Handler,
-		},
-		{
-			MethodName: "GetFeature",
-			Handler:    _OnlineFeatureStoreService_GetFeature_Handler,
-		},
-		{
-			MethodName: "UpdateFeature",
-			Handler:    _OnlineFeatureStoreService_UpdateFeature_Handler,
-		},
-		{
-			MethodName: "Enrich",
-			Handler:    _OnlineFeatureStoreService_Enrich_Handler,
+			MethodName: "Import",
+			Handler:    _OnlineFeatureStoreService_Import_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -22,11 +22,9 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type OfflineFeatureStoreServiceClient interface {
-	CreateFeature(ctx context.Context, in *CreateFeatureRequest, opts ...grpc.CallOption) (*CreateFeatureResponse, error)
-	DeleteFeature(ctx context.Context, in *DeleteFeatureRequest, opts ...grpc.CallOption) (*DeleteFeatureResponse, error)
-	UpdateFeature(ctx context.Context, in *UpdateFeatureRequest, opts ...grpc.CallOption) (*UpdateFeatureResponse, error)
-	ListFeatures(ctx context.Context, in *ListFeaturesRequest, opts ...grpc.CallOption) (*ListFeaturesResponse, error)
-	GetFeature(ctx context.Context, in *GetFeatureRequest, opts ...grpc.CallOption) (*GetFeatureResponse, error)
+	// Sync to the online store
+	Sync(ctx context.Context, in *SyncRequest, opts ...grpc.CallOption) (*SyncResponse, error)
+	// Generate training dataset.
 	GenerateTrainingDataset(ctx context.Context, in *GenerateTrainingDatasetRequest, opts ...grpc.CallOption) (*GenerateTrainingDatasetResponse, error)
 }
 
@@ -38,45 +36,9 @@ func NewOfflineFeatureStoreServiceClient(cc grpc.ClientConnInterface) OfflineFea
 	return &offlineFeatureStoreServiceClient{cc}
 }
 
-func (c *offlineFeatureStoreServiceClient) CreateFeature(ctx context.Context, in *CreateFeatureRequest, opts ...grpc.CallOption) (*CreateFeatureResponse, error) {
-	out := new(CreateFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/CreateFeature", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *offlineFeatureStoreServiceClient) DeleteFeature(ctx context.Context, in *DeleteFeatureRequest, opts ...grpc.CallOption) (*DeleteFeatureResponse, error) {
-	out := new(DeleteFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/DeleteFeature", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *offlineFeatureStoreServiceClient) UpdateFeature(ctx context.Context, in *UpdateFeatureRequest, opts ...grpc.CallOption) (*UpdateFeatureResponse, error) {
-	out := new(UpdateFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/UpdateFeature", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *offlineFeatureStoreServiceClient) ListFeatures(ctx context.Context, in *ListFeaturesRequest, opts ...grpc.CallOption) (*ListFeaturesResponse, error) {
-	out := new(ListFeaturesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/ListFeatures", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *offlineFeatureStoreServiceClient) GetFeature(ctx context.Context, in *GetFeatureRequest, opts ...grpc.CallOption) (*GetFeatureResponse, error) {
-	out := new(GetFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/GetFeature", in, out, opts...)
+func (c *offlineFeatureStoreServiceClient) Sync(ctx context.Context, in *SyncRequest, opts ...grpc.CallOption) (*SyncResponse, error) {
+	out := new(SyncResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/Sync", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -96,11 +58,9 @@ func (c *offlineFeatureStoreServiceClient) GenerateTrainingDataset(ctx context.C
 // All implementations must embed UnimplementedOfflineFeatureStoreServiceServer
 // for forward compatibility
 type OfflineFeatureStoreServiceServer interface {
-	CreateFeature(context.Context, *CreateFeatureRequest) (*CreateFeatureResponse, error)
-	DeleteFeature(context.Context, *DeleteFeatureRequest) (*DeleteFeatureResponse, error)
-	UpdateFeature(context.Context, *UpdateFeatureRequest) (*UpdateFeatureResponse, error)
-	ListFeatures(context.Context, *ListFeaturesRequest) (*ListFeaturesResponse, error)
-	GetFeature(context.Context, *GetFeatureRequest) (*GetFeatureResponse, error)
+	// Sync to the online store
+	Sync(context.Context, *SyncRequest) (*SyncResponse, error)
+	// Generate training dataset.
 	GenerateTrainingDataset(context.Context, *GenerateTrainingDatasetRequest) (*GenerateTrainingDatasetResponse, error)
 	mustEmbedUnimplementedOfflineFeatureStoreServiceServer()
 }
@@ -109,20 +69,8 @@ type OfflineFeatureStoreServiceServer interface {
 type UnimplementedOfflineFeatureStoreServiceServer struct {
 }
 
-func (UnimplementedOfflineFeatureStoreServiceServer) CreateFeature(context.Context, *CreateFeatureRequest) (*CreateFeatureResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateFeature not implemented")
-}
-func (UnimplementedOfflineFeatureStoreServiceServer) DeleteFeature(context.Context, *DeleteFeatureRequest) (*DeleteFeatureResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteFeature not implemented")
-}
-func (UnimplementedOfflineFeatureStoreServiceServer) UpdateFeature(context.Context, *UpdateFeatureRequest) (*UpdateFeatureResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateFeature not implemented")
-}
-func (UnimplementedOfflineFeatureStoreServiceServer) ListFeatures(context.Context, *ListFeaturesRequest) (*ListFeaturesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListFeatures not implemented")
-}
-func (UnimplementedOfflineFeatureStoreServiceServer) GetFeature(context.Context, *GetFeatureRequest) (*GetFeatureResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetFeature not implemented")
+func (UnimplementedOfflineFeatureStoreServiceServer) Sync(context.Context, *SyncRequest) (*SyncResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Sync not implemented")
 }
 func (UnimplementedOfflineFeatureStoreServiceServer) GenerateTrainingDataset(context.Context, *GenerateTrainingDatasetRequest) (*GenerateTrainingDatasetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateTrainingDataset not implemented")
@@ -141,92 +89,20 @@ func RegisterOfflineFeatureStoreServiceServer(s grpc.ServiceRegistrar, srv Offli
 	s.RegisterService(&OfflineFeatureStoreService_ServiceDesc, srv)
 }
 
-func _OfflineFeatureStoreService_CreateFeature_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateFeatureRequest)
+func _OfflineFeatureStoreService_Sync_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SyncRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OfflineFeatureStoreServiceServer).CreateFeature(ctx, in)
+		return srv.(OfflineFeatureStoreServiceServer).Sync(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/CreateFeature",
+		FullMethod: "/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/Sync",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OfflineFeatureStoreServiceServer).CreateFeature(ctx, req.(*CreateFeatureRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _OfflineFeatureStoreService_DeleteFeature_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteFeatureRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OfflineFeatureStoreServiceServer).DeleteFeature(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/DeleteFeature",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OfflineFeatureStoreServiceServer).DeleteFeature(ctx, req.(*DeleteFeatureRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _OfflineFeatureStoreService_UpdateFeature_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateFeatureRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OfflineFeatureStoreServiceServer).UpdateFeature(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/UpdateFeature",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OfflineFeatureStoreServiceServer).UpdateFeature(ctx, req.(*UpdateFeatureRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _OfflineFeatureStoreService_ListFeatures_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListFeaturesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OfflineFeatureStoreServiceServer).ListFeatures(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/ListFeatures",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OfflineFeatureStoreServiceServer).ListFeatures(ctx, req.(*ListFeaturesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _OfflineFeatureStoreService_GetFeature_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetFeatureRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OfflineFeatureStoreServiceServer).GetFeature(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/GetFeature",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OfflineFeatureStoreServiceServer).GetFeature(ctx, req.(*GetFeatureRequest))
+		return srv.(OfflineFeatureStoreServiceServer).Sync(ctx, req.(*SyncRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -257,24 +133,8 @@ var OfflineFeatureStoreService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*OfflineFeatureStoreServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateFeature",
-			Handler:    _OfflineFeatureStoreService_CreateFeature_Handler,
-		},
-		{
-			MethodName: "DeleteFeature",
-			Handler:    _OfflineFeatureStoreService_DeleteFeature_Handler,
-		},
-		{
-			MethodName: "UpdateFeature",
-			Handler:    _OfflineFeatureStoreService_UpdateFeature_Handler,
-		},
-		{
-			MethodName: "ListFeatures",
-			Handler:    _OfflineFeatureStoreService_ListFeatures_Handler,
-		},
-		{
-			MethodName: "GetFeature",
-			Handler:    _OfflineFeatureStoreService_GetFeature_Handler,
+			MethodName: "Sync",
+			Handler:    _OfflineFeatureStoreService_Sync_Handler,
 		},
 		{
 			MethodName: "GenerateTrainingDataset",

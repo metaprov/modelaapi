@@ -35,262 +35,133 @@ export class OnlineFeatureStoreServiceClient {
     this.options_ = options;
   }
 
-  methodInfoIngestFeatures = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/IngestFeatures',
+  methodInfoOnlineGet = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineGet',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureRequest,
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureResponse,
-    (request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureRequest) => {
+    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineGetRequest,
+    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineGetResponse,
+    (request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineGetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineGetResponse.deserializeBinary
   );
 
-  ingestFeatures(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureResponse>;
+  onlineGet(
+    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineGetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineGetResponse>;
 
-  ingestFeatures(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureRequest,
+  onlineGet(
+    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineGetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureResponse>;
+               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineGetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineGetResponse>;
 
-  ingestFeatures(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureRequest,
+  onlineGet(
+    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineGetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.CreateFeatureResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineGetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/IngestFeatures',
+          '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineGet',
         request,
         metadata || {},
-        this.methodInfoIngestFeatures,
+        this.methodInfoOnlineGet,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/IngestFeatures',
+      '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineGet',
     request,
     metadata || {},
-    this.methodInfoIngestFeatures);
+    this.methodInfoOnlineGet);
   }
 
-  methodInfoDeleteFeature = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature',
+  methodInfoOnlineMultiGet = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineMultiGet',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.DeleteFeatureRequest,
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.DeleteFeatureResponse,
-    (request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.DeleteFeatureRequest) => {
+    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineMultiGetRequest,
+    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineMultiGetResponse,
+    (request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineMultiGetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.DeleteFeatureResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineMultiGetResponse.deserializeBinary
   );
 
-  deleteFeature(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.DeleteFeatureRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.DeleteFeatureResponse>;
+  onlineMultiGet(
+    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineMultiGetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineMultiGetResponse>;
 
-  deleteFeature(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.DeleteFeatureRequest,
+  onlineMultiGet(
+    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineMultiGetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.DeleteFeatureResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.DeleteFeatureResponse>;
+               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineMultiGetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineMultiGetResponse>;
 
-  deleteFeature(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.DeleteFeatureRequest,
+  onlineMultiGet(
+    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineMultiGetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.DeleteFeatureResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.OnlineMultiGetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature',
+          '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineMultiGet',
         request,
         metadata || {},
-        this.methodInfoDeleteFeature,
+        this.methodInfoOnlineMultiGet,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature',
+      '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineMultiGet',
     request,
     metadata || {},
-    this.methodInfoDeleteFeature);
+    this.methodInfoOnlineMultiGet);
   }
 
-  methodInfoListFeatures = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures',
+  methodInfoImport = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Import',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ListFeaturesRequest,
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ListFeaturesResponse,
-    (request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ListFeaturesRequest) => {
+    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ImportRequest,
+    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ImportResponse,
+    (request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ImportRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ListFeaturesResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ImportResponse.deserializeBinary
   );
 
-  listFeatures(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ListFeaturesRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ListFeaturesResponse>;
+  import(
+    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ImportRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ImportResponse>;
 
-  listFeatures(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ListFeaturesRequest,
+  import(
+    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ImportRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ListFeaturesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ListFeaturesResponse>;
+               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ImportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ImportResponse>;
 
-  listFeatures(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ListFeaturesRequest,
+  import(
+    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ImportRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ListFeaturesResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.ImportResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures',
+          '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Import',
         request,
         metadata || {},
-        this.methodInfoListFeatures,
+        this.methodInfoImport,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures',
+      '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Import',
     request,
     metadata || {},
-    this.methodInfoListFeatures);
-  }
-
-  methodInfoGetFeature = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.GetFeatureRequest,
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.GetFeatureResponse,
-    (request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.GetFeatureRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.GetFeatureResponse.deserializeBinary
-  );
-
-  getFeature(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.GetFeatureRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.GetFeatureResponse>;
-
-  getFeature(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.GetFeatureRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.GetFeatureResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.GetFeatureResponse>;
-
-  getFeature(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.GetFeatureRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.GetFeatureResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature',
-        request,
-        metadata || {},
-        this.methodInfoGetFeature,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature',
-    request,
-    metadata || {},
-    this.methodInfoGetFeature);
-  }
-
-  methodInfoUpdateFeature = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.UpdateFeatureRequest,
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.UpdateFeatureResponse,
-    (request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.UpdateFeatureRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.UpdateFeatureResponse.deserializeBinary
-  );
-
-  updateFeature(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.UpdateFeatureRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.UpdateFeatureResponse>;
-
-  updateFeature(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.UpdateFeatureRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.UpdateFeatureResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.UpdateFeatureResponse>;
-
-  updateFeature(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.UpdateFeatureRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.UpdateFeatureResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature',
-        request,
-        metadata || {},
-        this.methodInfoUpdateFeature,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature',
-    request,
-    metadata || {},
-    this.methodInfoUpdateFeature);
-  }
-
-  methodInfoEnrich = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.EnrichRequest,
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.EnrichResponse,
-    (request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.EnrichRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.EnrichResponse.deserializeBinary
-  );
-
-  enrich(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.EnrichRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.EnrichResponse>;
-
-  enrich(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.EnrichRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.EnrichResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.EnrichResponse>;
-
-  enrich(
-    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.EnrichRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.EnrichResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich',
-        request,
-        metadata || {},
-        this.methodInfoEnrich,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich',
-    request,
-    metadata || {},
-    this.methodInfoEnrich);
+    this.methodInfoImport);
   }
 
 }

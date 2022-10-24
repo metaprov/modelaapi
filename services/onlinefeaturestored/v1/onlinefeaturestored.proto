@@ -9,64 +9,51 @@ import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 
 
 service OnlineFeatureStoreService {
-    rpc IngestFeatures(CreateFeatureRequest)  returns (CreateFeatureResponse)     {}
-    rpc DeleteFeature(DeleteFeatureRequest)  returns (DeleteFeatureResponse)     {}
-    rpc ListFeatures(ListFeaturesRequest) returns (ListFeaturesResponse)     {}
-    rpc GetFeature(GetFeatureRequest) returns (GetFeatureResponse)     {}
-    rpc UpdateFeature(UpdateFeatureRequest) returns (UpdateFeatureResponse)     {}
-    rpc Enrich(EnrichRequest) returns (EnrichResponse)     {}
-
+    rpc OnlineGet(OnlineGetRequest)  returns (OnlineGetResponse)     {}
+    rpc OnlineMultiGet(OnlineMultiGetRequest)  returns (OnlineMultiGetResponse)     {}
+    rpc Import(ImportRequest)  returns (ImportResponse)     {}
 }
 
-message CreateFeatureRequest {
-    string name = 1;
-    string ns   = 2;
-    string connectionName = 3;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 4;
-    map<string,bytes>  secret    = 5;
-
-}
-message CreateFeatureResponse {}
-
-
-message DeleteFeatureRequest {
-    string name = 1;
-    string ns   = 2;
-}
-message DeleteFeatureResponse {}
-
-
-message ListFeaturesRequest {
-    string ns   = 1;
-
-}
-message ListFeaturesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupList featureSources = 1;
+message Value {
+    oneof value {
+        int64 int64 = 1;
+        double double = 2;
+        string string = 3;
+        bool bool = 4;
+        int64 unix_milli = 5;
+        bytes bytes = 6;
+    }
 }
 
-message GetFeatureRequest {
-    string name = 1;
-    string ns   = 2;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup featureSource = 3;
-}
-message GetFeatureResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup featureSource = 1;
+// For real time infernece, ask the store for one row features
+message OnlineGetRequest {
+    string key = 1;
+    repeated string features = 2;
 }
 
-message EnrichRequest {
-    string id     = 1;
-    string record = 2;
+// Answer one row
+message OnlineGetResponse {
+    map<string,Value> row=1;
 }
 
-message EnrichResponse {
-    string id     = 1;
-    string record = 2;
+// For real time inference, ask the store for multple rows.
+message OnlineMultiGetRequest {
+    repeated string key = 1;
+    repeated string features = 2;
 }
 
-message UpdateFeatureRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup featureSource = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 2;
-    map<string,bytes>  secret    = 7;
+// Answer multiple rows.
+message OnlineMultiGetResponse {
+    map<string, Value> result = 1;
 }
-message UpdateFeatureResponse {}
+
+// Import data from a location to the online store.
+message ImportRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 1;
+}
+
+message ImportResponse {
+    string key = 1;
+    repeated string features = 2;
+}
 

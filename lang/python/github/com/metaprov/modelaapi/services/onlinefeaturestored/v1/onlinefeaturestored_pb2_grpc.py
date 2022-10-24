@@ -14,72 +14,39 @@ class OnlineFeatureStoreServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.IngestFeatures = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/IngestFeatures',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureResponse.FromString,
+        self.OnlineGet = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineGet',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineGetRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineGetResponse.FromString,
                 )
-        self.DeleteFeature = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureResponse.FromString,
+        self.OnlineMultiGet = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineMultiGet',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineMultiGetRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineMultiGetResponse.FromString,
                 )
-        self.ListFeatures = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesResponse.FromString,
-                )
-        self.GetFeature = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureResponse.FromString,
-                )
-        self.UpdateFeature = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureResponse.FromString,
-                )
-        self.Enrich = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichResponse.FromString,
+        self.Import = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Import',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportResponse.FromString,
                 )
 
 
 class OnlineFeatureStoreServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def IngestFeatures(self, request, context):
+    def OnlineGet(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteFeature(self, request, context):
+    def OnlineMultiGet(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListFeatures(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetFeature(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def UpdateFeature(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Enrich(self, request, context):
+    def Import(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -88,35 +55,20 @@ class OnlineFeatureStoreServiceServicer(object):
 
 def add_OnlineFeatureStoreServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'IngestFeatures': grpc.unary_unary_rpc_method_handler(
-                    servicer.IngestFeatures,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureResponse.SerializeToString,
+            'OnlineGet': grpc.unary_unary_rpc_method_handler(
+                    servicer.OnlineGet,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineGetRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineGetResponse.SerializeToString,
             ),
-            'DeleteFeature': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteFeature,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureResponse.SerializeToString,
+            'OnlineMultiGet': grpc.unary_unary_rpc_method_handler(
+                    servicer.OnlineMultiGet,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineMultiGetRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineMultiGetResponse.SerializeToString,
             ),
-            'ListFeatures': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListFeatures,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesResponse.SerializeToString,
-            ),
-            'GetFeature': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetFeature,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureResponse.SerializeToString,
-            ),
-            'UpdateFeature': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateFeature,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureResponse.SerializeToString,
-            ),
-            'Enrich': grpc.unary_unary_rpc_method_handler(
-                    servicer.Enrich,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichResponse.SerializeToString,
+            'Import': grpc.unary_unary_rpc_method_handler(
+                    servicer.Import,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -129,7 +81,7 @@ class OnlineFeatureStoreService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def IngestFeatures(request,
+    def OnlineGet(request,
             target,
             options=(),
             channel_credentials=None,
@@ -139,14 +91,14 @@ class OnlineFeatureStoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/IngestFeatures',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineGet',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineGetRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineGetResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DeleteFeature(request,
+    def OnlineMultiGet(request,
             target,
             options=(),
             channel_credentials=None,
@@ -156,14 +108,14 @@ class OnlineFeatureStoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineMultiGet',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineMultiGetRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineMultiGetResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListFeatures(request,
+    def Import(request,
             target,
             options=(),
             channel_credentials=None,
@@ -173,59 +125,8 @@ class OnlineFeatureStoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetFeature(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def UpdateFeature(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def Enrich(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Import',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

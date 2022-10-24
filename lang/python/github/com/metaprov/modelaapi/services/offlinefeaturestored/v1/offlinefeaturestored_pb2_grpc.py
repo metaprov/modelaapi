@@ -14,30 +14,10 @@ class OfflineFeatureStoreServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.CreateFeature = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/CreateFeature',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.CreateFeatureRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.CreateFeatureResponse.FromString,
-                )
-        self.DeleteFeature = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/DeleteFeature',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.DeleteFeatureRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.DeleteFeatureResponse.FromString,
-                )
-        self.UpdateFeature = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/UpdateFeature',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.UpdateFeatureRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.UpdateFeatureResponse.FromString,
-                )
-        self.ListFeatures = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/ListFeatures',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.ListFeaturesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.ListFeaturesResponse.FromString,
-                )
-        self.GetFeature = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/GetFeature',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.GetFeatureRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.GetFeatureResponse.FromString,
+        self.Sync = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/Sync',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.SyncRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.SyncResponse.FromString,
                 )
         self.GenerateTrainingDataset = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/GenerateTrainingDataset',
@@ -49,38 +29,16 @@ class OfflineFeatureStoreServiceStub(object):
 class OfflineFeatureStoreServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def CreateFeature(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def DeleteFeature(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def UpdateFeature(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ListFeatures(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetFeature(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+    def Sync(self, request, context):
+        """Sync to the online store
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GenerateTrainingDataset(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Generate training dataset.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -88,30 +46,10 @@ class OfflineFeatureStoreServiceServicer(object):
 
 def add_OfflineFeatureStoreServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'CreateFeature': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateFeature,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.CreateFeatureRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.CreateFeatureResponse.SerializeToString,
-            ),
-            'DeleteFeature': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteFeature,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.DeleteFeatureRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.DeleteFeatureResponse.SerializeToString,
-            ),
-            'UpdateFeature': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateFeature,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.UpdateFeatureRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.UpdateFeatureResponse.SerializeToString,
-            ),
-            'ListFeatures': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListFeatures,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.ListFeaturesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.ListFeaturesResponse.SerializeToString,
-            ),
-            'GetFeature': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetFeature,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.GetFeatureRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.GetFeatureResponse.SerializeToString,
+            'Sync': grpc.unary_unary_rpc_method_handler(
+                    servicer.Sync,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.SyncRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.SyncResponse.SerializeToString,
             ),
             'GenerateTrainingDataset': grpc.unary_unary_rpc_method_handler(
                     servicer.GenerateTrainingDataset,
@@ -129,7 +67,7 @@ class OfflineFeatureStoreService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def CreateFeature(request,
+    def Sync(request,
             target,
             options=(),
             channel_credentials=None,
@@ -139,77 +77,9 @@ class OfflineFeatureStoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/CreateFeature',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.CreateFeatureRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.CreateFeatureResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DeleteFeature(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/DeleteFeature',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.DeleteFeatureRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.DeleteFeatureResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def UpdateFeature(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/UpdateFeature',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.UpdateFeatureRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.UpdateFeatureResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ListFeatures(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/ListFeatures',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.ListFeaturesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.ListFeaturesResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetFeature(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/GetFeature',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.GetFeatureRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.GetFeatureResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/Sync',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.SyncRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_offlinefeaturestored_dot_v1_dot_offlinefeaturestored__pb2.SyncResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
