@@ -3162,33 +3162,36 @@ export class SyncOnlineStoreRequest extends jspb.Message {
   hasVersion(): boolean;
   clearVersion(): SyncOnlineStoreRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): SyncOnlineStoreRequest;
-  hasConnection(): boolean;
-  clearConnection(): SyncOnlineStoreRequest;
+  getStorageconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setStorageconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): SyncOnlineStoreRequest;
+  hasStorageconnection(): boolean;
+  clearStorageconnection(): SyncOnlineStoreRequest;
 
-  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): SyncOnlineStoreRequest;
-  hasBucket(): boolean;
-  clearBucket(): SyncOnlineStoreRequest;
+  getStoragebucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setStoragebucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): SyncOnlineStoreRequest;
+  hasStoragebucket(): boolean;
+  clearStoragebucket(): SyncOnlineStoreRequest;
 
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): SyncOnlineStoreRequest;
+  getStoragesecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearStoragesecretMap(): SyncOnlineStoreRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): SyncOnlineStoreRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): SyncOnlineStoreRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): SyncOnlineStoreRequest;
 
   getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass | undefined;
   setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass): SyncOnlineStoreRequest;
   hasModel(): boolean;
   clearModel(): SyncOnlineStoreRequest;
 
-  getEntitiesList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>;
-  setEntitiesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>): SyncOnlineStoreRequest;
-  clearEntitiesList(): SyncOnlineStoreRequest;
-  addEntities(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity;
-
-  getGroupsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>;
-  setGroupsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>): SyncOnlineStoreRequest;
-  clearGroupsList(): SyncOnlineStoreRequest;
-  addGroups(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
+  getGroup(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
+  setGroup(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): SyncOnlineStoreRequest;
+  hasGroup(): boolean;
+  clearGroup(): SyncOnlineStoreRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SyncOnlineStoreRequest.AsObject;
@@ -3202,12 +3205,13 @@ export namespace SyncOnlineStoreRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
+    storageconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    storagebucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    storagesecretMap: Array<[string, Uint8Array | string]>,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
-    entitiesList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject>,
-    groupsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject>,
+    group?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject,
   }
 }
 

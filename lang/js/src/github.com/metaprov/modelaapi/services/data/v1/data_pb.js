@@ -1810,7 +1810,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -26766,13 +26766,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataResponse.pro
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.repeatedFields_ = [7,8];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -26806,14 +26799,13 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.toOb
   var f, obj = {
     product: (f = msg.getProduct()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
     version: (f = msg.getVersion()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.toObject(includeInstance, f),
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
+    storageconnection: (f = msg.getStorageconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
+    storagebucket: (f = msg.getStoragebucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
+    storagesecretMap: (f = msg.getStoragesecretMap()) ? f.toObject(includeInstance, undefined) : [],
+    dbconnection: (f = msg.getDbconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
+    dbsecretMap: (f = msg.getDbsecretMap()) ? f.toObject(includeInstance, undefined) : [],
     model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.toObject(includeInstance, f),
-    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
-    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.toObject, includeInstance),
-    groupsList: jspb.Message.toObjectList(msg.getGroupsList(),
-    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject, includeInstance)
+    group: (f = msg.getGroup()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -26863,33 +26855,39 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.dese
     case 3:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setConnection(value);
+      msg.setStorageconnection(value);
       break;
     case 4:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
-      msg.setBucket(value);
+      msg.setStoragebucket(value);
       break;
     case 5:
-      var value = msg.getSecretMap();
+      var value = msg.getStoragesecretMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
       break;
     case 6:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
+      msg.setDbconnection(value);
+      break;
+    case 7:
+      var value = msg.getDbsecretMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
+         });
+      break;
+    case 8:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.deserializeBinaryFromReader);
       msg.setModel(value);
       break;
-    case 7:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.deserializeBinaryFromReader);
-      msg.addEntities(value);
-      break;
-    case 8:
+    case 9:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinaryFromReader);
-      msg.addGroups(value);
+      msg.setGroup(value);
       break;
     default:
       reader.skipField();
@@ -26936,7 +26934,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.seri
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.serializeBinaryToWriter
     );
   }
-  f = message.getConnection();
+  f = message.getStorageconnection();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -26944,7 +26942,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.seri
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
-  f = message.getBucket();
+  f = message.getStoragebucket();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -26952,30 +26950,34 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.seri
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
   }
-  f = message.getSecretMap(true);
+  f = message.getStoragesecretMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
-  f = message.getModel();
+  f = message.getDbconnection();
   if (f != null) {
     writer.writeMessage(
       6,
       f,
+      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
+    );
+  }
+  f = message.getDbsecretMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+  }
+  f = message.getModel();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.serializeBinaryToWriter
     );
   }
-  f = message.getEntitiesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      7,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.serializeBinaryToWriter
-    );
-  }
-  f = message.getGroupsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      8,
+  f = message.getGroup();
+  if (f != null) {
+    writer.writeMessage(
+      9,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.serializeBinaryToWriter
     );
@@ -27058,10 +27060,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prot
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 3;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection storageConnection = 3;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getConnection = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getStorageconnection = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 3));
 };
@@ -27071,7 +27073,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prot
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.setConnection = function(value) {
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.setStorageconnection = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -27080,8 +27082,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.clearConnection = function() {
-  return this.setConnection(undefined);
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.clearStorageconnection = function() {
+  return this.setStorageconnection(undefined);
 };
 
 
@@ -27089,16 +27091,16 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.hasConnection = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.hasStorageconnection = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 4;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket storageBucket = 4;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getBucket = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getStoragebucket = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 4));
 };
@@ -27108,7 +27110,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prot
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.setBucket = function(value) {
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.setStoragebucket = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -27117,8 +27119,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.clearBucket = function() {
-  return this.setBucket(undefined);
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.clearStoragebucket = function() {
+  return this.setStoragebucket(undefined);
 };
 
 
@@ -27126,18 +27128,18 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.hasBucket = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.hasStoragebucket = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * map<string, bytes> secret = 5;
+ * map<string, bytes> storageSecret = 5;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getStoragesecretMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
       jspb.Message.getMapField(this, 5, opt_noLazyCreate,
       null));
@@ -27148,18 +27150,77 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prot
  * Clears values from the map. The map will be non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.clearStoragesecretMap = function() {
+  this.getStoragesecretMap().clear();
   return this;};
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass model = 6;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection dbConnection = 6;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getDbconnection = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 6));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.setDbconnection = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.clearDbconnection = function() {
+  return this.setDbconnection(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.hasDbconnection = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * map<string, bytes> dbSecret = 7;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!(string|Uint8Array)>}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getDbsecretMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
+      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.clearDbsecretMap = function() {
+  this.getDbsecretMap().clear();
+  return this;};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass model = 8;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getModel = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass, 6));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass, 8));
 };
 
 
@@ -27168,7 +27229,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prot
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.setModel = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -27186,83 +27247,44 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.hasModel = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entities = 7;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity>}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup group = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getEntitiesList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity, 7));
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getGroup = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 9));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity>} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.setEntitiesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.setGroup = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.addEntities = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.clearEntitiesList = function() {
-  return this.setEntitiesList([]);
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.clearGroup = function() {
+  return this.setGroup(undefined);
 };
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 8;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup>}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getGroupsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 8));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup>} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.setGroupsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 8, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.addGroups = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.clearGroupsList = function() {
-  return this.setGroupsList([]);
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.hasGroup = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
