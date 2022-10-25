@@ -3214,6 +3214,9 @@ export namespace SyncOnlineStoreRequest {
 }
 
 export class SyncOnlineStoreResponse extends jspb.Message {
+  getPath(): string;
+  setPath(value: string): SyncOnlineStoreResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SyncOnlineStoreResponse.AsObject;
   static toObject(includeInstance: boolean, msg: SyncOnlineStoreResponse): SyncOnlineStoreResponse.AsObject;
@@ -3224,6 +3227,7 @@ export class SyncOnlineStoreResponse extends jspb.Message {
 
 export namespace SyncOnlineStoreResponse {
   export type AsObject = {
+    path: string,
   }
 }
 

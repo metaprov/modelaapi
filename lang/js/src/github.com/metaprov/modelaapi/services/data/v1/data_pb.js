@@ -27343,7 +27343,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    path: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -27380,6 +27380,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreResponse.des
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPath(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -27409,6 +27413,31 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getPath();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string path = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreResponse.prototype.getPath = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreResponse.prototype.setPath = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
