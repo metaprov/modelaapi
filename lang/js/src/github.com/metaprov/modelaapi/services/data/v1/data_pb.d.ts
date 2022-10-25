@@ -3188,10 +3188,8 @@ export class SyncOnlineStoreRequest extends jspb.Message {
   hasModel(): boolean;
   clearModel(): SyncOnlineStoreRequest;
 
-  getGroup(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
-  setGroup(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): SyncOnlineStoreRequest;
-  hasGroup(): boolean;
-  clearGroup(): SyncOnlineStoreRequest;
+  getPath(): string;
+  setPath(value: string): SyncOnlineStoreRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SyncOnlineStoreRequest.AsObject;
@@ -3211,7 +3209,7 @@ export namespace SyncOnlineStoreRequest {
     dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     dbsecretMap: Array<[string, Uint8Array | string]>,
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
-    group?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject,
+    path: string,
   }
 }
 
@@ -3225,6 +3223,84 @@ export class SyncOnlineStoreResponse extends jspb.Message {
 }
 
 export namespace SyncOnlineStoreResponse {
+  export type AsObject = {
+  }
+}
+
+export class GenOnlineStoreDatasetRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): GenOnlineStoreDatasetRequest;
+  hasProduct(): boolean;
+  clearProduct(): GenOnlineStoreDatasetRequest;
+
+  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): GenOnlineStoreDatasetRequest;
+  hasVersion(): boolean;
+  clearVersion(): GenOnlineStoreDatasetRequest;
+
+  getStorageconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setStorageconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): GenOnlineStoreDatasetRequest;
+  hasStorageconnection(): boolean;
+  clearStorageconnection(): GenOnlineStoreDatasetRequest;
+
+  getStoragebucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setStoragebucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): GenOnlineStoreDatasetRequest;
+  hasStoragebucket(): boolean;
+  clearStoragebucket(): GenOnlineStoreDatasetRequest;
+
+  getStoragesecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearStoragesecretMap(): GenOnlineStoreDatasetRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): GenOnlineStoreDatasetRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): GenOnlineStoreDatasetRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): GenOnlineStoreDatasetRequest;
+
+  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass | undefined;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass): GenOnlineStoreDatasetRequest;
+  hasModel(): boolean;
+  clearModel(): GenOnlineStoreDatasetRequest;
+
+  getGroup(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
+  setGroup(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): GenOnlineStoreDatasetRequest;
+  hasGroup(): boolean;
+  clearGroup(): GenOnlineStoreDatasetRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenOnlineStoreDatasetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GenOnlineStoreDatasetRequest): GenOnlineStoreDatasetRequest.AsObject;
+  static serializeBinaryToWriter(message: GenOnlineStoreDatasetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenOnlineStoreDatasetRequest;
+  static deserializeBinaryFromReader(message: GenOnlineStoreDatasetRequest, reader: jspb.BinaryReader): GenOnlineStoreDatasetRequest;
+}
+
+export namespace GenOnlineStoreDatasetRequest {
+  export type AsObject = {
+    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    storageconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    storagebucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    storagesecretMap: Array<[string, Uint8Array | string]>,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
+    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
+    group?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject,
+  }
+}
+
+export class GenOnlineStoreDatasetResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenOnlineStoreDatasetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GenOnlineStoreDatasetResponse): GenOnlineStoreDatasetResponse.AsObject;
+  static serializeBinaryToWriter(message: GenOnlineStoreDatasetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenOnlineStoreDatasetResponse;
+  static deserializeBinaryFromReader(message: GenOnlineStoreDatasetResponse, reader: jspb.BinaryReader): GenOnlineStoreDatasetResponse;
+}
+
+export namespace GenOnlineStoreDatasetResponse {
   export type AsObject = {
   }
 }

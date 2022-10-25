@@ -688,7 +688,24 @@ message GenTrainingDataResponse {
     string path = 1; // The path to the new training set
 }
 
+// copy from the online store database into the online system
 message SyncOnlineStoreRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            product      = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion     version      = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection   = 3;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         storageBucket       = 4;
+    map<string,bytes>                                                           storageSecret       = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 6;
+    map<string,bytes>                                                           dbSecret       = 7;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         model          = 8;
+    string path                     = 9;
+}
+
+message SyncOnlineStoreResponse {
+
+}
+
+message GenOnlineStoreDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            product      = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion     version      = 2;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection   = 3;
@@ -700,9 +717,10 @@ message SyncOnlineStoreRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup           group          = 9;
 }
 
-message SyncOnlineStoreResponse {
+message GenOnlineStoreDatasetResponse {
 
 }
+
 
 
 
@@ -787,5 +805,7 @@ service DataService {
     rpc SyncOnlineStore(SyncOnlineStoreRequest) returns (SyncOnlineStoreResponse)     {}
     // Generate training dataset.
     rpc GenTrainingData(GenTrainingDataRequest) returns (GenTrainingDataResponse)     {}
+    // Generate training dataset.
+    rpc GenOnlineStoreDataset(GenOnlineStoreDatasetRequest) returns (GenOnlineStoreDatasetResponse)     {}
 
 }

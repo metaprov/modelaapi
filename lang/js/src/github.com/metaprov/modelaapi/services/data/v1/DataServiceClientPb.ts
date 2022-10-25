@@ -2056,5 +2056,48 @@ export class DataServiceClient {
     this.methodInfoGenTrainingData);
   }
 
+  methodInfoGenOnlineStoreDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/GenOnlineStoreDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.GenOnlineStoreDatasetRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.GenOnlineStoreDatasetResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GenOnlineStoreDatasetRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.GenOnlineStoreDatasetResponse.deserializeBinary
+  );
+
+  genOnlineStoreDataset(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GenOnlineStoreDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.GenOnlineStoreDatasetResponse>;
+
+  genOnlineStoreDataset(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GenOnlineStoreDatasetRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.GenOnlineStoreDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.GenOnlineStoreDatasetResponse>;
+
+  genOnlineStoreDataset(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.GenOnlineStoreDatasetRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.GenOnlineStoreDatasetResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/GenOnlineStoreDataset',
+        request,
+        metadata || {},
+        this.methodInfoGenOnlineStoreDataset,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/GenOnlineStoreDataset',
+    request,
+    metadata || {},
+    this.methodInfoGenOnlineStoreDataset);
+  }
+
 }
 

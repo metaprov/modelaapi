@@ -96,6 +96,8 @@ type DataServiceClient interface {
 	SyncOnlineStore(ctx context.Context, in *SyncOnlineStoreRequest, opts ...grpc.CallOption) (*SyncOnlineStoreResponse, error)
 	// Generate training dataset.
 	GenTrainingData(ctx context.Context, in *GenTrainingDataRequest, opts ...grpc.CallOption) (*GenTrainingDataResponse, error)
+	// Generate training dataset.
+	GenOnlineStoreDataset(ctx context.Context, in *GenOnlineStoreDatasetRequest, opts ...grpc.CallOption) (*GenOnlineStoreDatasetResponse, error)
 }
 
 type dataServiceClient struct {
@@ -529,6 +531,15 @@ func (c *dataServiceClient) GenTrainingData(ctx context.Context, in *GenTraining
 	return out, nil
 }
 
+func (c *dataServiceClient) GenOnlineStoreDataset(ctx context.Context, in *GenOnlineStoreDatasetRequest, opts ...grpc.CallOption) (*GenOnlineStoreDatasetResponse, error) {
+	out := new(GenOnlineStoreDatasetResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/GenOnlineStoreDataset", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DataServiceServer is the server API for DataService service.
 // All implementations must embed UnimplementedDataServiceServer
 // for forward compatibility
@@ -607,6 +618,8 @@ type DataServiceServer interface {
 	SyncOnlineStore(context.Context, *SyncOnlineStoreRequest) (*SyncOnlineStoreResponse, error)
 	// Generate training dataset.
 	GenTrainingData(context.Context, *GenTrainingDataRequest) (*GenTrainingDataResponse, error)
+	// Generate training dataset.
+	GenOnlineStoreDataset(context.Context, *GenOnlineStoreDatasetRequest) (*GenOnlineStoreDatasetResponse, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -754,6 +767,9 @@ func (UnimplementedDataServiceServer) SyncOnlineStore(context.Context, *SyncOnli
 }
 func (UnimplementedDataServiceServer) GenTrainingData(context.Context, *GenTrainingDataRequest) (*GenTrainingDataResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenTrainingData not implemented")
+}
+func (UnimplementedDataServiceServer) GenOnlineStoreDataset(context.Context, *GenOnlineStoreDatasetRequest) (*GenOnlineStoreDatasetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenOnlineStoreDataset not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -1614,6 +1630,24 @@ func _DataService_GenTrainingData_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_GenOnlineStoreDataset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenOnlineStoreDatasetRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).GenOnlineStoreDataset(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/GenOnlineStoreDataset",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).GenOnlineStoreDataset(ctx, req.(*GenOnlineStoreDatasetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DataService_ServiceDesc is the grpc.ServiceDesc for DataService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1808,6 +1842,10 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GenTrainingData",
 			Handler:    _DataService_GenTrainingData_Handler,
+		},
+		{
+			MethodName: "GenOnlineStoreDataset",
+			Handler:    _DataService_GenOnlineStoreDataset_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
