@@ -1854,7 +1854,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -27442,6 +27442,13 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreResponse.pro
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.repeatedFields_ = [9,10];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -27481,7 +27488,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetReques
     dbconnection: (f = msg.getDbconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     dbsecretMap: (f = msg.getDbsecretMap()) ? f.toObject(includeInstance, undefined) : [],
     model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.toObject(includeInstance, f),
-    group: (f = msg.getGroup()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject(includeInstance, f)
+    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.toObject, includeInstance),
+    groupsList: jspb.Message.toObjectList(msg.getGroupsList(),
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -27561,9 +27571,14 @@ proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetReques
       msg.setModel(value);
       break;
     case 9:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.deserializeBinaryFromReader);
+      msg.addEntities(value);
+      break;
+    case 10:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinaryFromReader);
-      msg.setGroup(value);
+      msg.addGroups(value);
       break;
     default:
       reader.skipField();
@@ -27650,10 +27665,18 @@ proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetReques
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.serializeBinaryToWriter
     );
   }
-  f = message.getGroup();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getEntitiesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       9,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.serializeBinaryToWriter
+    );
+  }
+  f = message.getGroupsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      10,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.serializeBinaryToWriter
     );
@@ -27928,39 +27951,78 @@ proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetReques
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup group = 9;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entities = 9;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity>}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.prototype.getGroup = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 9));
+proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.prototype.getEntitiesList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity, 9));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup|undefined} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.prototype.setGroup = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.prototype.setEntitiesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.prototype.addEntities = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.prototype.clearGroup = function() {
-  return this.setGroup(undefined);
+proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.prototype.clearEntitiesList = function() {
+  return this.setEntitiesList([]);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {boolean}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 10;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup>}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.prototype.hasGroup = function() {
-  return jspb.Message.getField(this, 9) != null;
+proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.prototype.getGroupsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 10));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.prototype.setGroupsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.prototype.addGroups = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.prototype.clearGroupsList = function() {
+  return this.setGroupsList([]);
 };
 
 

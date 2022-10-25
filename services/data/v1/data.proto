@@ -713,8 +713,9 @@ message GenOnlineStoreDatasetRequest {
     map<string,bytes>                                                           storageSecret       = 5;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 6;
     map<string,bytes>                                                           dbSecret       = 7;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         model          = 8;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup           group          = 9;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass model = 8;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entities = 9;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 10;
 }
 
 message GenOnlineStoreDatasetResponse {

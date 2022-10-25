@@ -3268,10 +3268,15 @@ export class GenOnlineStoreDatasetRequest extends jspb.Message {
   hasModel(): boolean;
   clearModel(): GenOnlineStoreDatasetRequest;
 
-  getGroup(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
-  setGroup(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): GenOnlineStoreDatasetRequest;
-  hasGroup(): boolean;
-  clearGroup(): GenOnlineStoreDatasetRequest;
+  getEntitiesList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>;
+  setEntitiesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>): GenOnlineStoreDatasetRequest;
+  clearEntitiesList(): GenOnlineStoreDatasetRequest;
+  addEntities(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity;
+
+  getGroupsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>;
+  setGroupsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>): GenOnlineStoreDatasetRequest;
+  clearGroupsList(): GenOnlineStoreDatasetRequest;
+  addGroups(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GenOnlineStoreDatasetRequest.AsObject;
@@ -3291,7 +3296,8 @@ export namespace GenOnlineStoreDatasetRequest {
     dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     dbsecretMap: Array<[string, Uint8Array | string]>,
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
-    group?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject,
+    entitiesList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject>,
+    groupsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject>,
   }
 }
 
