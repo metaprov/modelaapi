@@ -702,7 +702,7 @@ message SyncOnlineStoreRequest {
 }
 
 message SyncOnlineStoreResponse {
-    string path = 1; // location of the online store.
+
 }
 
 message GenOnlineStoreDatasetRequest {
@@ -719,7 +719,7 @@ message GenOnlineStoreDatasetRequest {
 }
 
 message GenOnlineStoreDatasetResponse {
-
+    string path = 1; // location of the online store.
 }
 
 

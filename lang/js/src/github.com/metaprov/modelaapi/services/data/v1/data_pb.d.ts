@@ -3214,9 +3214,6 @@ export namespace SyncOnlineStoreRequest {
 }
 
 export class SyncOnlineStoreResponse extends jspb.Message {
-  getPath(): string;
-  setPath(value: string): SyncOnlineStoreResponse;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SyncOnlineStoreResponse.AsObject;
   static toObject(includeInstance: boolean, msg: SyncOnlineStoreResponse): SyncOnlineStoreResponse.AsObject;
@@ -3227,7 +3224,6 @@ export class SyncOnlineStoreResponse extends jspb.Message {
 
 export namespace SyncOnlineStoreResponse {
   export type AsObject = {
-    path: string,
   }
 }
 
@@ -3302,6 +3298,9 @@ export namespace GenOnlineStoreDatasetRequest {
 }
 
 export class GenOnlineStoreDatasetResponse extends jspb.Message {
+  getPath(): string;
+  setPath(value: string): GenOnlineStoreDatasetResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GenOnlineStoreDatasetResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GenOnlineStoreDatasetResponse): GenOnlineStoreDatasetResponse.AsObject;
@@ -3312,6 +3311,7 @@ export class GenOnlineStoreDatasetResponse extends jspb.Message {
 
 export namespace GenOnlineStoreDatasetResponse {
   export type AsObject = {
+    path: string,
   }
 }
 
