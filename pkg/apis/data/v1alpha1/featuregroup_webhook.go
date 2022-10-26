@@ -21,28 +21,28 @@ import (
 var _ webhook.Validator = &FeatureGroup{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (feature *FeatureGroup) ValidateCreate() error {
-	return feature.validate()
+func (fg *FeatureGroup) ValidateCreate() error {
+	return fg.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (feature *FeatureGroup) ValidateUpdate(old runtime.Object) error {
-	return feature.validate()
+func (fg *FeatureGroup) ValidateUpdate(old runtime.Object) error {
+	return fg.validate()
 }
 
-func (feature *FeatureGroup) validate() error {
+func (fg *FeatureGroup) validate() error {
 	return nil
 }
 
-func (r *FeatureGroup) ValidateDelete() error {
+func (fg *FeatureGroup) ValidateDelete() error {
 	return nil
 }
 
-func (in *FeatureGroup) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (fg *FeatureGroup) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(in).
+		For(fg).
 		Complete()
 }
 
 // No defaults in this current release
-func (feature *FeatureGroup) Default() {}
+func (fg *FeatureGroup) Default() {}

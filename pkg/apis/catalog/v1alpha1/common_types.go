@@ -1503,6 +1503,9 @@ type RunScheduleStatus struct {
 	// In the case of failure, the resource controller which created the run will set this field with a failure message
 	// +kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,6,opt,name=failureMessage"`
+	// Last run logs
+	// +kubebuilder:validation:Optional
+	LastRunLogs Logs `json:"logs,omitempty" protobuf:"bytes,7,opt,name=logs"`
 }
 
 // Measurement is a value for a specific metric

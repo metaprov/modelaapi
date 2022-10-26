@@ -1061,6 +1061,10 @@ message RunScheduleStatus {
   // In the case of failure, the resource controller which created the run will set this field with a failure message
   // +kubebuilder:validation:Optional
   optional string failureMessage = 6;
+
+  // Last run logs
+  // +kubebuilder:validation:Optional
+  optional Logs logs = 7;
 }
 
 // Stakeholder specifies the User Role Classes of an individual Account

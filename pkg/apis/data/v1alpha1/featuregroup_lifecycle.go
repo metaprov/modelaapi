@@ -22,20 +22,20 @@ import (
 // EntityRef
 //==============================================================================
 
-func (feature *FeatureGroup) AddConfiditions() {
-	feature.Status.Conditions = make([]FeatureGroupCondition, 1)
-	feature.Status.Conditions[0] = FeatureGroupCondition{
+func (fg *FeatureGroup) AddConfiditions() {
+	fg.Status.Conditions = make([]FeatureGroupCondition, 1)
+	fg.Status.Conditions[0] = FeatureGroupCondition{
 		Type:   FeatureGroupReady,
 		Status: v1.ConditionUnknown,
 	}
 }
 
-func (feature *FeatureGroup) HasFinalizer() bool {
-	return util.HasFin(&feature.ObjectMeta, data.GroupName)
+func (fg *FeatureGroup) HasFinalizer() bool {
+	return util.HasFin(&fg.ObjectMeta, data.GroupName)
 }
-func (feature *FeatureGroup) AddFinalizer() { util.AddFin(&feature.ObjectMeta, data.GroupName) }
-func (feature *FeatureGroup) RemoveFinalizer() {
-	util.RemoveFin(&feature.ObjectMeta, data.GroupName)
+func (fg *FeatureGroup) AddFinalizer() { util.AddFin(&fg.ObjectMeta, data.GroupName) }
+func (fg *FeatureGroup) RemoveFinalizer() {
+	util.RemoveFin(&fg.ObjectMeta, data.GroupName)
 }
 
 //==============================================================================
@@ -43,16 +43,16 @@ func (feature *FeatureGroup) RemoveFinalizer() {
 //==============================================================================
 
 // Return the on disk rep location
-func (feature *FeatureGroup) RepPath(root string) (string, error) {
-	return fmt.Sprintf("%s/schemas/%s.yaml", root, feature.ObjectMeta.Name), nil
+func (fg *FeatureGroup) RepPath(root string) (string, error) {
+	return fmt.Sprintf("%s/schemas/%s.yaml", root, fg.ObjectMeta.Name), nil
 }
 
-func (feature *FeatureGroup) RepEntry() (string, error) {
-	return fmt.Sprintf("schemas/%s.yaml", feature.ObjectMeta.Name), nil
+func (fg *FeatureGroup) RepEntry() (string, error) {
+	return fmt.Sprintf("schemas/%s.yaml", fg.ObjectMeta.Name), nil
 }
 
-func (feature *FeatureGroup) Age() string {
-	return humanize.Time(feature.CreationTimestamp.Time)
+func (fg *FeatureGroup) Age() string {
+	return humanize.Time(fg.CreationTimestamp.Time)
 }
 
 ///////////////////////////////////////////////
@@ -63,82 +63,123 @@ func (fg *FeatureGroup) MarkSynching() {
 	fg.CreateOrUpdateCond(FeatureGroupCondition{
 		Type:   FeatureGroupSynced,
 		Status: v1.ConditionFalse,
-		Reason: "Synching",
+		Reason: "Syncing",
 	})
 }
 
-func (mclass *FeatureGroup) MarkSynced() {
-	mclass.Status.Phase = FeatureGroupPhaseSynced
-	mclass.CreateOrUpdateCond(FeatureGroupCondition{
+func (fg *FeatureGroup) MarkSynced() {
+	fg.Status.Phase = FeatureGroupPhaseSynced
+	fg.CreateOrUpdateCond(FeatureGroupCondition{
 		Type:   FeatureGroupSynced,
 		Status: v1.ConditionTrue,
 	})
+	now := metav1.Now()
+	if fg.Status.SyncSchedule.LastRun == nil {
+		fg.Status.SyncSchedule.LastRun = &now
+	}
 }
 
-func (mclass *FeatureGroup) MarkGeneratingOnlineDataset() {
-	mclass.Status.Phase = FeatureGroupPhaseGeneratingOnlineDataset
-	mclass.CreateOrUpdateCond(FeatureGroupCondition{
+func (fg *FeatureGroup) MarkSyncFailed(msg string) {
+	fg.CreateOrUpdateCond(FeatureGroupCondition{
+		Type:    FeatureGroupSynced,
+		Status:  v1.ConditionFalse,
+		Reason:  string(FeatureGroupSynced),
+		Message: "Failed to snapshot." + msg,
+	})
+	fg.Status.Phase = FeatureGroupPhaseFailed
+	fg.Status.SyncSchedule.FailureMessage = util.StrPtr(msg)
+	now := metav1.Now()
+	if fg.Status.SyncSchedule.LastRun == nil {
+		fg.Status.SyncSchedule.LastRun = &now
+	}
+
+}
+
+func (fg *FeatureGroup) MarkGeneratingOnlineDataset() {
+	fg.Status.Phase = FeatureGroupPhaseGeneratingOnlineDataset
+	fg.CreateOrUpdateCond(FeatureGroupCondition{
 		Type:   FeatureGroupSynced,
 		Status: v1.ConditionFalse,
 		Reason: "GeneratingOnlineDataset",
 	})
 }
 
-func (mclass *FeatureGroup) MarkGeneratedOnlineDataset() {
-	mclass.Status.Phase = FeatureGroupPhaseOnlineDatasetGenerated
-	mclass.CreateOrUpdateCond(FeatureGroupCondition{
+func (fg *FeatureGroup) MarkGeneratedOnlineDataset() {
+	fg.Status.Phase = FeatureGroupPhaseOnlineDatasetGenerated
+	fg.CreateOrUpdateCond(FeatureGroupCondition{
 		Type:   FeatureGroupSynced,
 		Status: v1.ConditionFalse,
 		Reason: "GeneratedOnlineDataset",
 	})
 }
 
+func (fg *FeatureGroup) MarkGeneratedOnlineDatasetFailed(msg string) {
+	fg.CreateOrUpdateCond(FeatureGroupCondition{
+		Type:    FeatureGroupSynced,
+		Status:  v1.ConditionFalse,
+		Reason:  string(DatasetPhaseFailed),
+		Message: "Failed to generate online dataset." + msg,
+	})
+	fg.Status.Phase = FeatureGroupPhaseFailed
+	fg.Status.SyncSchedule.FailureMessage = util.StrPtr(msg)
+
+}
+
+func (fg *FeatureGroup) Synced() bool {
+	return fg.GetCond(FeatureGroupSynced).Status == v1.ConditionTrue
+}
+
+func (fg *FeatureGroup) OnlineDatasetGenerated() bool {
+	return fg.GetCond(FeatureGroupSynced).Status == v1.ConditionFalse &&
+		fg.GetCond(FeatureGroupSynced).Reason == "GeneratedOnlineDataset"
+}
+
 //==============================================================================
 // Assign commit and id
 //==============================================================================
 
-func (feature *FeatureGroup) LabelWithCommit(commit string, uname string, branch string) {
-	feature.ObjectMeta.Labels[common.CommitLabelKey] = commit
-	feature.ObjectMeta.Labels[common.UnameLabelKey] = uname
-	feature.ObjectMeta.Labels[common.BranchLabelKey] = branch
+func (fg *FeatureGroup) LabelWithCommit(commit string, uname string, branch string) {
+	fg.ObjectMeta.Labels[common.CommitLabelKey] = commit
+	fg.ObjectMeta.Labels[common.UnameLabelKey] = uname
+	fg.ObjectMeta.Labels[common.BranchLabelKey] = branch
 }
 
-func (feature *FeatureGroup) IsGitObj() bool {
-	label, ok := feature.ObjectMeta.Labels[common.CommitLabelKey]
+func (fg *FeatureGroup) IsGitObj() bool {
+	label, ok := fg.ObjectMeta.Labels[common.CommitLabelKey]
 	if !ok {
 		return false
 	}
 	return label != ""
 }
 
-func (feature *FeatureGroup) SetChanged() {
-	feature.ObjectMeta.Labels[common.ChangedLabelKey] = "true"
+func (fg *FeatureGroup) SetChanged() {
+	fg.ObjectMeta.Labels[common.ChangedLabelKey] = "true"
 
 }
 
 // Merge or update condition
 // Merge or update condition
-func (feature *FeatureGroup) CreateOrUpdateCond(cond FeatureGroupCondition) {
-	i := feature.GetCondIdx(cond.Type)
+func (fg *FeatureGroup) CreateOrUpdateCond(cond FeatureGroupCondition) {
+	i := fg.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
 		cond.LastTransitionTime = &now
-		feature.Status.Conditions = append(feature.Status.Conditions, cond)
+		fg.Status.Conditions = append(fg.Status.Conditions, cond)
 		return
 	}
 	// else we already have the condition, update it
-	current := feature.Status.Conditions[i]
+	current := fg.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
 	current.LastTransitionTime = &now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
-	feature.Status.Conditions[i] = current
+	fg.Status.Conditions[i] = current
 }
 
-func (feature *FeatureGroup) GetCondIdx(t FeatureGroupConditionType) int {
-	for i, v := range feature.Status.Conditions {
+func (fg *FeatureGroup) GetCondIdx(t FeatureGroupConditionType) int {
+	for i, v := range fg.Status.Conditions {
 		if v.Type == t {
 			return i
 		}
@@ -146,8 +187,8 @@ func (feature *FeatureGroup) GetCondIdx(t FeatureGroupConditionType) int {
 	return -1
 }
 
-func (feature *FeatureGroup) GetCond(t FeatureGroupConditionType) FeatureGroupCondition {
-	for _, v := range feature.Status.Conditions {
+func (fg *FeatureGroup) GetCond(t FeatureGroupConditionType) FeatureGroupCondition {
+	for _, v := range fg.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
@@ -162,12 +203,12 @@ func (feature *FeatureGroup) GetCond(t FeatureGroupConditionType) FeatureGroupCo
 
 }
 
-func (feature *FeatureGroup) IsReady() bool {
-	return feature.GetCond(FeatureGroupReady).Status == v1.ConditionTrue
+func (fg *FeatureGroup) IsReady() bool {
+	return fg.GetCond(FeatureGroupReady).Status == v1.ConditionTrue
 }
 
-func (feature *FeatureGroup) Key() string {
-	return fmt.Sprintf("%s/%s/%s", "features", feature.Namespace, feature.Name)
+func (fg *FeatureGroup) Key() string {
+	return fmt.Sprintf("%s/%s/%s", "features", fg.Namespace, fg.Name)
 }
 
 func ParseFeatureGroupYaml(content []byte) (*FeatureGroup, error) {
@@ -179,21 +220,21 @@ func ParseFeatureGroupYaml(content []byte) (*FeatureGroup, error) {
 	return r, nil
 }
 
-func (pipeline *FeatureGroup) MarkReady() {
+func (fg *FeatureGroup) MarkReady() {
 	// update the lab state to ready
-	pipeline.CreateOrUpdateCond(FeatureGroupCondition{
+	fg.CreateOrUpdateCond(FeatureGroupCondition{
 		Type:   FeatureGroupReady,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (pipeline *FeatureGroup) MarkArchived() {
-	pipeline.CreateOrUpdateCond(FeatureGroupCondition{
+func (fg *FeatureGroup) MarkArchived() {
+	fg.CreateOrUpdateCond(FeatureGroupCondition{
 		Type:   FeatureGroupSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (pipeline *FeatureGroup) Archived() bool {
-	return pipeline.GetCond(FeatureGroupSaved).Status == v1.ConditionTrue
+func (fg *FeatureGroup) Archived() bool {
+	return fg.GetCond(FeatureGroupSaved).Status == v1.ConditionTrue
 }

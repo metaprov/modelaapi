@@ -17556,7 +17556,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus.
     completiontime: (f = msg.getCompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     duration: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     failurereason: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    failuremessage: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+    failuremessage: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    logs: (f = msg.getLogs()) && proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17619,6 +17620,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus.
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setFailuremessage(value);
+      break;
+    case 7:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs.deserializeBinaryFromReader);
+      msg.setLogs(value);
       break;
     default:
       reader.skipField();
@@ -17692,6 +17698,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus.
     writer.writeString(
       6,
       f
+    );
+  }
+  f = message.getLogs();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs.serializeBinaryToWriter
     );
   }
 };
@@ -17913,6 +17927,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus.prototype.hasFailuremessage = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional Logs logs = 7;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus.prototype.getLogs = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs, 7));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus.prototype.setLogs = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus.prototype.clearLogs = function() {
+  return this.setLogs(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus.prototype.hasLogs = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

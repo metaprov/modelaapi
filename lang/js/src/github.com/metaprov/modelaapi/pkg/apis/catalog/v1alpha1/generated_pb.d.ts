@@ -1782,6 +1782,11 @@ export class RunScheduleStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): RunScheduleStatus;
 
+  getLogs(): Logs | undefined;
+  setLogs(value?: Logs): RunScheduleStatus;
+  hasLogs(): boolean;
+  clearLogs(): RunScheduleStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunScheduleStatus.AsObject;
   static toObject(includeInstance: boolean, msg: RunScheduleStatus): RunScheduleStatus.AsObject;
@@ -1798,6 +1803,7 @@ export namespace RunScheduleStatus {
     duration: number,
     failurereason: string,
     failuremessage: string,
+    logs?: Logs.AsObject,
   }
 }
 

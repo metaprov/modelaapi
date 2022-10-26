@@ -19,6 +19,7 @@ const (
 	FeatureGroupPhaseOnlineDatasetGenerated  FeatureGroupPhase = "GeneratedOnlineDataset"
 	FeatureGroupPhaseSyncing                 FeatureGroupPhase = "Syncing"
 	FeatureGroupPhaseSynced                  FeatureGroupPhase = "Synced"
+	FeatureGroupPhaseFailed                  FeatureGroupPhase = "Failed"
 )
 
 //==============================================================================
