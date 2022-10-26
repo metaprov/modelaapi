@@ -3694,7 +3694,6 @@ spec:
                 description: The status for the batch prediction.
                 properties:
                   lastRun:
-                    default: false
                     description: Indicates if the schedule is enabled and the Jobs
                       associated it will be created at the specified time
                     format: date-time

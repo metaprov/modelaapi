@@ -1039,7 +1039,6 @@ message RunSchedule {
 
 message RunScheduleStatus {
   // Indicates if the schedule is enabled and the Jobs associated it will be created at the specified time
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
 

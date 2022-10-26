@@ -4540,7 +4540,6 @@ spec:
                 description: Sync Schedule status
                 properties:
                   lastRun:
-                    default: false
                     description: Indicates if the schedule is enabled and the Jobs
                       associated it will be created at the specified time
                     format: date-time
@@ -4554,7 +4553,6 @@ spec:
                 description: Training schedule status
                 properties:
                   lastRun:
-                    default: false
                     description: Indicates if the schedule is enabled and the Jobs
                       associated it will be created at the specified time
                     format: date-time

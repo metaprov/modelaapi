@@ -1486,7 +1486,6 @@ type RunSchedule struct {
 
 type RunScheduleStatus struct {
 	// Indicates if the schedule is enabled and the Jobs associated it will be created at the specified time
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
 	// The time of the day when the schedule will be executed
