@@ -3,7 +3,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.8.0
+    controller-gen.kubebuilder.io/version: v0.10.0
   creationTimestamp: null
   name: modelpipelines.training.modela.ai
 spec:
@@ -111,6 +111,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       custom:
                         default: false
                         description: If true, ignore the workload class name.
@@ -153,6 +154,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       requirements:
                         description: The custom resource requirements for the workload,
                           which are used if `WorkloadName` is not set
@@ -236,6 +238,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       datasetRef:
                         description: The name of a labeled dataset used to test the
                           model, when measuring a performance metric
@@ -274,6 +277,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       unitTests:
                         description: Define the column name for the validation role
                         properties:
@@ -346,6 +350,7 @@ spec:
                                         https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                       type: string
                                   type: object
+                                  x-kubernetes-map-type: atomic
                                 enabled:
                                   description: If false, this test case is disabled
                                   type: boolean
@@ -394,6 +399,7 @@ spec:
                                         https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                       type: string
                                   type: object
+                                  x-kubernetes-map-type: atomic
                                 entityRef2:
                                   description: Reference to an entity.
                                   properties:
@@ -439,6 +445,7 @@ spec:
                                         https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                       type: string
                                   type: object
+                                  x-kubernetes-map-type: atomic
                                 expectedCategory:
                                   description: The expected value
                                   type: string
@@ -581,6 +588,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       custom:
                         default: false
                         description: If true, ignore the workload class name.
@@ -623,6 +631,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       requirements:
                         description: The custom resource requirements for the workload,
                           which are used if `WorkloadName` is not set
@@ -705,6 +714,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       datasetRef:
                         description: The name of a labeled dataset used to test the
                           model, when measuring a performance metric
@@ -743,6 +753,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       unitTests:
                         description: Define the column name for the validation role
                         properties:
@@ -815,6 +826,7 @@ spec:
                                         https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                       type: string
                                   type: object
+                                  x-kubernetes-map-type: atomic
                                 enabled:
                                   description: If false, this test case is disabled
                                   type: boolean
@@ -863,6 +875,7 @@ spec:
                                         https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                       type: string
                                   type: object
+                                  x-kubernetes-map-type: atomic
                                 entityRef2:
                                   description: Reference to an entity.
                                   properties:
@@ -908,6 +921,7 @@ spec:
                                         https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                       type: string
                                   type: object
+                                  x-kubernetes-map-type: atomic
                                 expectedCategory:
                                   description: The expected value
                                   type: string
@@ -1077,6 +1091,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       custom:
                         default: false
                         description: If true, ignore the workload class name.
@@ -1119,6 +1134,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       requirements:
                         description: The custom resource requirements for the workload,
                           which are used if `WorkloadName` is not set
@@ -1204,6 +1220,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       modelRef:
                         description: The reference to a Model resource which has been
                           packaged and exists in the same Data Product as the Predictor
@@ -1243,6 +1260,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       modelVersion:
                         description: The version of the model, derived from the Study
                           which created it
@@ -1382,6 +1400,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       custom:
                         default: false
                         description: If true, ignore the workload class name.
@@ -1424,6 +1443,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       requirements:
                         description: The custom resource requirements for the workload,
                           which are used if `WorkloadName` is not set
@@ -1507,6 +1527,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       datasetRef:
                         description: The name of a labeled dataset used to test the
                           model, when measuring a performance metric
@@ -1545,6 +1566,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       unitTests:
                         description: Define the column name for the validation role
                         properties:
@@ -1617,6 +1639,7 @@ spec:
                                         https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                       type: string
                                   type: object
+                                  x-kubernetes-map-type: atomic
                                 enabled:
                                   description: If false, this test case is disabled
                                   type: boolean
@@ -1665,6 +1688,7 @@ spec:
                                         https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                       type: string
                                   type: object
+                                  x-kubernetes-map-type: atomic
                                 entityRef2:
                                   description: Reference to an entity.
                                   properties:
@@ -1710,6 +1734,7 @@ spec:
                                         https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                       type: string
                                   type: object
+                                  x-kubernetes-map-type: atomic
                                 expectedCategory:
                                   description: The expected value
                                   type: string
@@ -1860,9 +1885,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []

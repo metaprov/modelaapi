@@ -3,7 +3,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.8.0
+    controller-gen.kubebuilder.io/version: v0.10.0
   creationTimestamp: null
   name: modelclasses.training.modela.ai
 spec:
@@ -151,6 +151,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       sql:
                         default: ""
                         description: The SQL statement which will be executed to query
@@ -267,6 +268,7 @@ spec:
                               the secret name must be unique.
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       authMethod:
                         default: none
                         description: Indicates
@@ -444,6 +446,7 @@ spec:
                                   description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                   type: string
                               type: object
+                              x-kubernetes-map-type: atomic
                             custom:
                               default: false
                               description: If true, ignore the workload class name.
@@ -489,6 +492,7 @@ spec:
                                   description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                   type: string
                               type: object
+                              x-kubernetes-map-type: atomic
                             requirements:
                               description: The custom resource requirements for the
                                 workload, which are used if `WorkloadName` is not
@@ -564,6 +568,7 @@ spec:
                               description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                               type: string
                           type: object
+                          x-kubernetes-map-type: atomic
                         tests:
                           description: the Tests to run on the stage
                           properties:
@@ -636,6 +641,7 @@ spec:
                                           https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                         type: string
                                     type: object
+                                    x-kubernetes-map-type: atomic
                                   enabled:
                                     description: If false, this test case is disabled
                                     type: boolean
@@ -684,6 +690,7 @@ spec:
                                           https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                         type: string
                                     type: object
+                                    x-kubernetes-map-type: atomic
                                   entityRef2:
                                     description: Reference to an entity.
                                     properties:
@@ -729,6 +736,7 @@ spec:
                                           https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                         type: string
                                     type: object
+                                    x-kubernetes-map-type: atomic
                                   expectedCategory:
                                     description: The expected value
                                     type: string
@@ -867,6 +875,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       sql:
                         default: ""
                         description: The SQL statement which will be executed to query
@@ -949,6 +958,7 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
+                    x-kubernetes-map-type: atomic
                 type: object
               description:
                 default: ""
@@ -1155,6 +1165,7 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
+                    x-kubernetes-map-type: atomic
                   modelImage:
                     description: ModelImage specifies the configuration to upload
                       Docker images of models to an image registry
@@ -1239,6 +1250,7 @@ spec:
                                   description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                   type: string
                               type: object
+                              x-kubernetes-map-type: atomic
                             enabled:
                               description: If false, this test case is disabled
                               type: boolean
@@ -1282,6 +1294,7 @@ spec:
                                   description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                   type: string
                               type: object
+                              x-kubernetes-map-type: atomic
                             entityRef2:
                               description: Reference to an entity.
                               properties:
@@ -1322,6 +1335,7 @@ spec:
                                   description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                   type: string
                               type: object
+                              x-kubernetes-map-type: atomic
                             expectedCategory:
                               description: The expected value
                               type: string
@@ -1882,6 +1896,7 @@ spec:
                                       https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                     type: string
                                 type: object
+                                x-kubernetes-map-type: atomic
                               sql:
                                 default: ""
                                 description: The SQL statement which will be executed
@@ -2411,6 +2426,7 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
+                        x-kubernetes-map-type: atomic
                       location:
                         description: The data location where Study artifacts (metadata,
                           reports, and model artifacts) generated by the Study will
@@ -2494,6 +2510,7 @@ spec:
                                 description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                 type: string
                             type: object
+                            x-kubernetes-map-type: atomic
                           sql:
                             default: ""
                             description: The SQL statement which will be executed
@@ -3002,6 +3019,7 @@ spec:
                                       https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                     type: string
                                 type: object
+                                x-kubernetes-map-type: atomic
                               custom:
                                 default: false
                                 description: If true, ignore the workload class name.
@@ -3051,6 +3069,7 @@ spec:
                                       https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                     type: string
                                 type: object
+                                x-kubernetes-map-type: atomic
                               requirements:
                                 description: The custom resource requirements for
                                   the workload, which are used if `WorkloadName` is
@@ -3268,6 +3287,7 @@ spec:
                                           https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                         type: string
                                     type: object
+                                    x-kubernetes-map-type: atomic
                                   sql:
                                     default: ""
                                     description: The SQL statement which will be executed
@@ -3405,6 +3425,7 @@ spec:
                                 description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                 type: string
                             type: object
+                            x-kubernetes-map-type: atomic
                           logLevel:
                             default: info
                             description: The maximum log level for logs produced by
@@ -3480,6 +3501,7 @@ spec:
                                       https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                     type: string
                                 type: object
+                                x-kubernetes-map-type: atomic
                               custom:
                                 default: false
                                 description: If true, ignore the workload class name.
@@ -3529,6 +3551,7 @@ spec:
                                       https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                     type: string
                                 type: object
+                                x-kubernetes-map-type: atomic
                               requirements:
                                 description: The custom resource requirements for
                                   the workload, which are used if `WorkloadName` is
@@ -3794,6 +3817,7 @@ spec:
                                         https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                       type: string
                                   type: object
+                                  x-kubernetes-map-type: atomic
                                 enabled:
                                   description: If false, this test case is disabled
                                   type: boolean
@@ -3842,6 +3866,7 @@ spec:
                                         https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                       type: string
                                   type: object
+                                  x-kubernetes-map-type: atomic
                                 entityRef2:
                                   description: Reference to an entity.
                                   properties:
@@ -3887,6 +3912,7 @@ spec:
                                         https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                       type: string
                                   type: object
+                                  x-kubernetes-map-type: atomic
                                 expectedCategory:
                                   description: The expected value
                                   type: string
@@ -4409,6 +4435,10 @@ spec:
                   generated by the ModelClass
                 format: int64
                 type: integer
+              lastOnlineTablesGenerated:
+                description: The last time that we generated online table
+                format: date-time
+                type: string
               lastOnlineTrainingSet:
                 description: Store the location of the last online dataset
                 properties:
@@ -4483,6 +4513,7 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
+                    x-kubernetes-map-type: atomic
                   sql:
                     default: ""
                     description: The SQL statement which will be executed to query
@@ -4520,6 +4551,18 @@ spec:
                       the DataLocation
                     type: string
                 type: object
+              lastSync:
+                description: the last time that we sync to the online store
+                format: date-time
+                type: string
+              lastTrained:
+                description: The last time that we trained a new model
+                format: date-time
+                type: string
+              lastTrainingDatasetGenerated:
+                description: The last time that we generated a training dataset
+                format: date-time
+                type: string
               lastUpdated:
                 description: The last time the object was updated
                 format: date-time
@@ -4536,22 +4579,25 @@ spec:
               phase:
                 description: ModelPhase specifies the current phase of a Model
                 type: string
-              syncSchedule:
-                description: Sync Schedule status
-                properties:
-                  lastRun:
-                    description: Indicates if the schedule is enabled and the Jobs
-                      associated it will be created at the specified time
-                    format: date-time
-                    type: string
-                  nextRun:
-                    description: The time of the day when the schedule will be executed
-                    format: date-time
-                    type: string
-                type: object
               trainingSchedule:
                 description: Training schedule status
                 properties:
+                  completionTime:
+                    description: The time at which the run concluded
+                    format: date-time
+                    type: string
+                  duration:
+                    description: The duration of the run in seconds
+                    format: int32
+                    type: integer
+                  failureMessage:
+                    description: In the case of failure, the resource controller which
+                      created the run will set this field with a failure message
+                    type: string
+                  failureReason:
+                    description: In the case of failure, the resource controller which
+                      created the run will set this field with a failure reason
+                    type: string
                   lastRun:
                     description: Indicates if the schedule is enabled and the Jobs
                       associated it will be created at the specified time
@@ -4568,9 +4614,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []

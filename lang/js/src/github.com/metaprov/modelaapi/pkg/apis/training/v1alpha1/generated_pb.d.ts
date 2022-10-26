@@ -2349,10 +2349,25 @@ export class ModelClassStatus extends jspb.Message {
   hasTrainingschedule(): boolean;
   clearTrainingschedule(): ModelClassStatus;
 
-  getSyncschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
-  setSyncschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): ModelClassStatus;
-  hasSyncschedule(): boolean;
-  clearSyncschedule(): ModelClassStatus;
+  getLastonlinetablesgenerated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastonlinetablesgenerated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
+  hasLastonlinetablesgenerated(): boolean;
+  clearLastonlinetablesgenerated(): ModelClassStatus;
+
+  getLastsync(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastsync(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
+  hasLastsync(): boolean;
+  clearLastsync(): ModelClassStatus;
+
+  getLasttrainingdatasetgenerated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttrainingdatasetgenerated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
+  hasLasttrainingdatasetgenerated(): boolean;
+  clearLasttrainingdatasetgenerated(): ModelClassStatus;
+
+  getLasttrained(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttrained(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
+  hasLasttrained(): boolean;
+  clearLasttrained(): ModelClassStatus;
 
   getConditionsList(): Array<ModelClassCondition>;
   setConditionsList(value: Array<ModelClassCondition>): ModelClassStatus;
@@ -2379,7 +2394,10 @@ export namespace ModelClassStatus {
     bestfe?: FeatureEngineeringSpec.AsObject,
     lastonlinetrainingset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     trainingschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
-    syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
+    lastonlinetablesgenerated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastsync?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lasttrainingdatasetgenerated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lasttrained?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ModelClassCondition.AsObject>,
   }
 }

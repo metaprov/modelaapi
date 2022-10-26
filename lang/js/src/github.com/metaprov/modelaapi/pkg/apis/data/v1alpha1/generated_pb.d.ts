@@ -2880,10 +2880,15 @@ export class FeatureGroupSpec extends jspb.Message {
   clearFeaturesList(): FeatureGroupSpec;
   addFeatures(value: string, index?: number): FeatureGroupSpec;
 
-  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): FeatureGroupSpec;
-  hasSchedule(): boolean;
-  clearSchedule(): FeatureGroupSpec;
+  getIngestschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setIngestschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): FeatureGroupSpec;
+  hasIngestschedule(): boolean;
+  clearIngestschedule(): FeatureGroupSpec;
+
+  getSyncschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSyncschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): FeatureGroupSpec;
+  hasSyncschedule(): boolean;
+  clearSyncschedule(): FeatureGroupSpec;
 
   getSchema(): Schema | undefined;
   setSchema(value?: Schema): FeatureGroupSpec;
@@ -2921,7 +2926,8 @@ export namespace FeatureGroupSpec {
     ingesttype: string,
     entityname: string,
     featuresList: Array<string>,
-    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    ingestschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     schema?: Schema.AsObject,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     data?: DataLocation.AsObject,
@@ -2930,15 +2936,8 @@ export namespace FeatureGroupSpec {
 }
 
 export class FeatureGroupStatus extends jspb.Message {
-  getLastprofile(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus | undefined;
-  setLastprofile(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus): FeatureGroupStatus;
-  hasLastprofile(): boolean;
-  clearLastprofile(): FeatureGroupStatus;
-
-  getNextrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setNextrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureGroupStatus;
-  hasNextrun(): boolean;
-  clearNextrun(): FeatureGroupStatus;
+  getPhase(): string;
+  setPhase(value: string): FeatureGroupStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): FeatureGroupStatus;
@@ -2950,6 +2949,16 @@ export class FeatureGroupStatus extends jspb.Message {
 
   getRows(): number;
   setRows(value: number): FeatureGroupStatus;
+
+  getSyncschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
+  setSyncschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): FeatureGroupStatus;
+  hasSyncschedule(): boolean;
+  clearSyncschedule(): FeatureGroupStatus;
+
+  getIngestschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
+  setIngestschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): FeatureGroupStatus;
+  hasIngestschedule(): boolean;
+  clearIngestschedule(): FeatureGroupStatus;
 
   getConditionsList(): Array<FeatureGroupCondition>;
   setConditionsList(value: Array<FeatureGroupCondition>): FeatureGroupStatus;
@@ -2966,11 +2975,12 @@ export class FeatureGroupStatus extends jspb.Message {
 
 export namespace FeatureGroupStatus {
   export type AsObject = {
-    lastprofile?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
-    nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    phase: string,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     rows: number,
+    syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
+    ingestschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     conditionsList: Array<FeatureGroupCondition.AsObject>,
   }
 }

@@ -9,119 +9,109 @@ syntax = "proto2";
 
 package github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1;
 
-import "github.com/gogo/protobuf/gogoproto/gogo.proto";
 import "k8s.io/api/core/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 
 // Package-wide variables from generator "generated".
-option (gogoproto.marshaler_all) = true;
-option (gogoproto.stable_marshaler_all) = true;
-option (gogoproto.sizer_all) = true;
-option (gogoproto.goproto_stringer_all) = false;
-option (gogoproto.stringer_all) = true;
-option (gogoproto.unmarshaler_all) = true;
-option (gogoproto.goproto_unrecognized_all) = false;
-option (gogoproto.goproto_enum_prefix_all) = false;
-option (gogoproto.goproto_getters_all) = false;
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1";
 
 message ActionItem {
   // The action to take in this action time
   // +kubebuilder:validation:Optional
-  optional string action = 1 [(gogoproto.customname) = "Action", (gogoproto.nullable) = false];
+  optional string action = 1;
 
   // action due date
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time due = 2 [(gogoproto.customname) = "Due"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time due = 2;
 
   // The account to which the action is assigned to
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference assignedTo = 3 [(gogoproto.customname) = "AssignedTo"];
+  optional k8s.io.api.core.v1.ObjectReference assignedTo = 3;
 }
 
 message CheckListItem {
   // The step ID
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string id = 1 [(gogoproto.customname) = "ID"];
+  optional string id = 1;
 
   // Instruction to follow.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string instruction = 2 [(gogoproto.customname) = "Instruction"];
+  optional string instruction = 2;
 
   // Enabled indicate weather this item is enabled
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enabled = 3 [(gogoproto.customname) = "Enabled"];
+  optional bool enabled = 3;
 
   // Condition is the condition to use this checklist item
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string condition = 4 [(gogoproto.customname) = "Condition"];
+  optional string condition = 4;
 
   // The command line to execute when running the step.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string command = 5 [(gogoproto.customname) = "Command"];
+  optional string command = 5;
 
   // What must be true before the step
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string precondition = 6 [(gogoproto.customname) = "PreCondition"];
+  optional string precondition = 6;
 
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string postcondition = 7 [(gogoproto.customname) = "PostCondition"];
+  optional string postcondition = 7;
 }
 
 // Commnet represents a single comment in the review
 message Comment {
   // ID is the comment ID. Used when replying to a comment.
-  optional string id = 1 [(gogoproto.customname) = "ID", (gogoproto.nullable) = false];
+  optional string id = 1;
 
   // AuthorRef is a reference to the author of the comment
-  optional k8s.io.api.core.v1.ObjectReference authorRef = 2 [(gogoproto.customname) = "AuthorRef"];
+  optional k8s.io.api.core.v1.ObjectReference authorRef = 2;
 
   // If this comment is a reply to an id
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string replyTo = 3 [(gogoproto.customname) = "ReplyToID"];
+  optional string replyTo = 3;
 
   // Content is the content of the comment
   // +kubebuilder:default:=""
-  optional string content = 4 [(gogoproto.customname) = "Content"];
+  optional string content = 4;
 
   // PostedAt is the time when the comment was posted
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time postedAt = 5 [(gogoproto.customname) = "PostedAt"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time postedAt = 5;
 
   // Sent indicate if the comment was sent to the notifier.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool sent = 6 [(gogoproto.customname) = "Sent"];
+  optional bool sent = 6;
 
   // Pin the comment
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool pinned = 7 [(gogoproto.customname) = "Pinned"];
+  optional bool pinned = 7;
 
   // The ID of the reply
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string replyIndicationID = 8 [(gogoproto.customname) = "ReplyIndicationID"];
+  optional string replyIndicationID = 8;
 
   // The URL of an Image attached to this review
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string imageURL = 9 [(gogoproto.customname) = "ImageURL"];
+  optional string imageURL = 9;
 
   // The ID of the reply
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string accountMentionID = 10 [(gogoproto.customname) = "AccountMentionID"];
+  optional string accountMentionID = 10;
 }
 
 // +kubebuilder:object:root=true
@@ -135,38 +125,38 @@ message Comment {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=meetings,singular=meeting,categories={infra,modela}
 message Meeting {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional MeetingSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional MeetingSpec spec = 2;
 
   // +optional
-  optional MeetingStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional MeetingStatus status = 3;
 }
 
 // MeetingCondition describes the state of the license at a certain point.
 message MeetingCondition {
   // Type of account condition.
-  optional string type = 1 [(gogoproto.casttype) = "MeetingConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human-readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // MeetingList is a list of Meetings
 message MeetingList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated Meeting items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated Meeting items = 2;
 }
 
 // MeetingSpec defines the desired state of Meeting
@@ -174,54 +164,54 @@ message MeetingSpec {
   // Description of the meeting
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 1 [(gogoproto.customname) = "Description"];
+  optional string description = 1;
 
   // Agenda of the meeting
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string agenda = 2 [(gogoproto.customname) = "Agenda"];
+  optional string agenda = 2;
 
   // The modela entity that the meeting is about
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 3 [(gogoproto.customname) = "EntityRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 3;
 
   // NotifierName is the name of the notifier used to fire the alert.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string notifierName = 4 [(gogoproto.customname) = "NotifierName"];
+  optional string notifierName = 4;
 
   // Assigned to is the user name assigned to this task
   // +kubebuilder:validation:Optional
-  repeated string participants = 5 [(gogoproto.customname) = "Participants"];
+  repeated string participants = 5;
 
   // Flagged denote if the meeting is flagged
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool flagged = 6 [(gogoproto.customname) = "Flagged"];
+  optional bool flagged = 6;
 
   // Reminder is the time to send a reminder
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 7 [(gogoproto.customname) = "Reminder"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 7;
 
   // The meeting notes.
   // +kubebuilder:validation:Optional
-  optional string notes = 8 [(gogoproto.customname) = "Notes", (gogoproto.nullable) = false];
+  optional string notes = 8;
 
   // the meeting action items
   // +kubebuilder:validation:Optional
-  repeated ActionItem actionItems = 9 [(gogoproto.customname) = "ActionItems", (gogoproto.nullable) = false];
+  repeated ActionItem actionItems = 9;
 
   // TenantRef is the commit tenant
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 10 [(gogoproto.customname) = "TenantRef"];
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 10;
 
   // The meeting time
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time time = 11 [(gogoproto.customname) = "Time"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time time = 11;
 
   // A link to calender URL
   // +kubebuilder:validation:Optional
-  optional string calendarURL = 12 [(gogoproto.customname) = "CalendarURL"];
+  optional string calendarURL = 12;
 }
 
 // MeetingStatus is the observed state of a Meeting
@@ -229,20 +219,20 @@ message MeetingStatus {
   // Phase is the phase of the meeting
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 1 [(gogoproto.casttype) = "MeetingPhase", (gogoproto.customname) = "Phase", (gogoproto.nullable) = false];
+  optional string phase = 1;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 2 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 2;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 6 [(gogoproto.customname) = "LastUpdated"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 6;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated MeetingCondition conditions = 7 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated MeetingCondition conditions = 7;
 }
 
 // +kubebuilder:object:root=true
@@ -253,38 +243,38 @@ message MeetingStatus {
 // +kubebuilder:resource:path=postmortems,shortName=pt,singular=postmortem,categories={team,modela,all}
 // PostMortem represent a post mortem
 message PostMortem {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional PostMortemSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional PostMortemSpec spec = 2;
 
   // +optional
-  optional PostMortemStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional PostMortemStatus status = 3;
 }
 
 // Post Morem Condition describes the state of a post mortem at a certain point.
 message PostMortemCondition {
   // Type of bucket condition.
-  optional string type = 1 [(gogoproto.casttype) = "PostMortemConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // PostMortemList is a list of PostMortems
 message PostMortemList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated PostMortem items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated PostMortem items = 2;
 }
 
 // PostMortemSpec defines the desired state of PostMorem
@@ -292,88 +282,88 @@ message PostMortemSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // Description of the meeting
-  optional string description = 1 [(gogoproto.customname) = "Description"];
+  optional string description = 1;
 
   // The target object of the post mortem for example a predictor.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 2 [(gogoproto.customname) = "EntityRef"];
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
 
   // The place of the events, can be lab or serving site.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference locationRef = 3 [(gogoproto.customname) = "LocationRef"];
+  optional k8s.io.api.core.v1.ObjectReference locationRef = 3;
 
   // Reference to accounts that handled the post-mortem
   // +kubebuilder:validation:Optional
-  repeated k8s.io.api.core.v1.ObjectReference handledBy = 4 [(gogoproto.customname) = "HandledBy", (gogoproto.nullable) = false];
+  repeated k8s.io.api.core.v1.ObjectReference handledBy = 4;
 
   // Alerts
   // +kubebuilder:validation:Optional
-  repeated RaisedAlert alerts = 5 [(gogoproto.customname) = "Alerts", (gogoproto.nullable) = false];
+  repeated RaisedAlert alerts = 5;
 
   // Timeline is the list of events that happed during the events
   // +kubebuilder:validation:Optional
-  repeated TimeLineEvent timeline = 6 [(gogoproto.customname) = "TimeLine", (gogoproto.nullable) = false];
+  repeated TimeLineEvent timeline = 6;
 
   // Root cause
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string rootCause = 7 [(gogoproto.customname) = "RootCause"];
+  optional string rootCause = 7;
 
   // Summary of the post mortem
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string summary = 8 [(gogoproto.customname) = "Summary"];
+  optional string summary = 8;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 9 [(gogoproto.customname) = "Owner"];
+  optional string owner = 9;
 
   // TenantRef is the commit tenant
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 10 [(gogoproto.customname) = "TenantRef"];
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 10;
 
   // The start time of the post mortem
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 11 [(gogoproto.customname) = "StartTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 11;
 
   // The detection time of the post mortem
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time detectionTime = 12 [(gogoproto.customname) = "DetectionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time detectionTime = 12;
 
   // The end time of the post mortem.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 13 [(gogoproto.customname) = "EndTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 13;
 
   // Attach image to the post mortem.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string imageURL = 14 [(gogoproto.customname) = "ImageURL"];
+  optional string imageURL = 14;
 }
 
 // PostMortemStatus defines the actual state of a PostMortem
 message PostMortemStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 1;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2 [(gogoproto.customname) = "LastUpdated"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PostMortemCondition conditions = 3 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated PostMortemCondition conditions = 3;
 }
 
 // Alert is an alert that was raised during the incident
 message RaisedAlert {
   // +kubebuilder:validation:Optional
-  optional string name = 1 [(gogoproto.customname) = "Name"];
+  optional string name = 1;
 
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2 [(gogoproto.customname) = "At"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
 }
 
 // +kubebuilder:object:root=true
@@ -387,75 +377,75 @@ message RaisedAlert {
 // +kubebuilder:resource:path=reviews,shortName=cv,singular=review,categories={team,modela}
 // Review represents a comment about any review
 message Review {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional ReviewSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional ReviewSpec spec = 2;
 
   // +optional
-  optional ReviewStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional ReviewStatus status = 3;
 }
 
 // ReviewCondition describes the state of the review
 message ReviewCondition {
-  optional string type = 1 [(gogoproto.casttype) = "ReviewConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // ReviewList is a list of Reviews
 message ReviewList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated Review items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated Review items = 2;
 }
 
 // ReviewSpec defines the desired state of a Review
 message ReviewSpec {
   // The target of the review
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 1 [(gogoproto.customname) = "EntityRef"];
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 1;
 
   // Messages are the messages of the review.
-  repeated Comment messages = 2 [(gogoproto.customname) = "Messages", (gogoproto.nullable) = false];
+  repeated Comment messages = 2;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 3 [(gogoproto.customname) = "Owner"];
+  optional string owner = 3;
 
   // The notifier is used for alerts about new msgs in the review
   // +kubebuilder:default:="default-slack-notifier"
   // +kubebuilder:validation:Optional
-  optional string notifierName = 4 [(gogoproto.customname) = "NotifierName"];
+  optional string notifierName = 4;
 
   // TenantRef is the review tenant.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 5 [(gogoproto.customname) = "TenantRef"];
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 5;
 }
 
 // ReviewStatus is the current status of the review
 message ReviewStatus {
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1 [(gogoproto.customname) = "LastUpdated"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 2 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 2;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ReviewCondition conditions = 3 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated ReviewCondition conditions = 3;
 }
 
 // +kubebuilder:object:root=true
@@ -466,41 +456,41 @@ message ReviewStatus {
 // +kubebuilder:resource:path=runbooks,shortName=rb,singular=runbook,categories={data,modela}
 // RunBook represent a list of instructions for a specific operation
 message RunBook {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional RunBookSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional RunBookSpec spec = 2;
 
   // +optional
-  optional RunBookStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional RunBookStatus status = 3;
 }
 
 // RunBookCondition describes the state of a RunBook at a certain point.
 message RunBookCondition {
   // Type of condition.
-  optional string type = 1 [(gogoproto.casttype) = "RunBookConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // The last time this condition was updated.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdateTime = 3 [(gogoproto.customname) = "LastUpdateTime", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdateTime = 3;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
 
   // The reason for the condition's last transition.
-  optional string reason = 5 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 5;
 
   // A human readable message indicating details about the transition.
-  optional string message = 6 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 6;
 }
 
 // +kubebuilder:object:root=true
 // RunBookList is a list of RunBooks
 message RunBookList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated RunBook items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated RunBook items = 2;
 }
 
 // RunBookSpec defines the desired state of RunBook
@@ -508,77 +498,77 @@ message RunBookSpec {
   // Description of the run book
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 1 [(gogoproto.customname) = "Description"];
+  optional string description = 1;
 
   // The target object of run book
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 2 [(gogoproto.customname) = "EntityRef"];
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
 
   // The author of the run book
-  optional k8s.io.api.core.v1.ObjectReference authorRef = 3 [(gogoproto.customname) = "AuthorRef"];
+  optional k8s.io.api.core.v1.ObjectReference authorRef = 3;
 
   // The checklist
   // +kubebuilder:validation:Optional
-  repeated CheckListItem checklist = 4 [(gogoproto.customname) = "CheckList", (gogoproto.nullable) = false];
+  repeated CheckListItem checklist = 4;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 5 [(gogoproto.customname) = "Owner"];
+  optional string owner = 5;
 
   // TenantRef is the run book tenant
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 6 [(gogoproto.customname) = "TenantRef"];
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 6;
 }
 
 // RunBookStatus defines the actual state of a RunBook
 message RunBookStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 1;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2 [(gogoproto.customname) = "LastUpdated"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated RunBookCondition conditions = 3 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated RunBookCondition conditions = 3;
 }
 
 message TaskSpec {
-  optional string id = 1 [(gogoproto.customname) = "ID"];
+  optional string id = 1;
 
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 2 [(gogoproto.customname) = "Content"];
+  optional string description = 2;
 
   // Assigned to is the user name assigned to this task
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string assignedTo = 3 [(gogoproto.customname) = "AssignedTo"];
+  optional string assignedTo = 3;
 
   // Flagged donete that task was flagged
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time dueDate = 4 [(gogoproto.customname) = "DueDate"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time dueDate = 4;
 
   // Reminder is the time to send a reminder
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 5 [(gogoproto.customname) = "Reminder"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 5;
 
   // If this task is a subtask, this is the name of the subtask
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string parentTask = 6 [(gogoproto.customname) = "ParentTask"];
+  optional string parentTask = 6;
 }
 
 // TimeLineEvent
 message TimeLineEvent {
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
-  optional string content = 1 [(gogoproto.customname) = "Content"];
+  optional string content = 1;
 
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2 [(gogoproto.customname) = "At"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
 }
 
 // +kubebuilder:object:root=true
@@ -591,81 +581,81 @@ message TimeLineEvent {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=todos,singular=todo,categories={team,modela}
 message Todo {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional TodoSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional TodoSpec spec = 2;
 
   // +optional
-  optional TodoStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional TodoStatus status = 3;
 }
 
 // TodoCondition describes the state of the license at a certain point.
 message TodoCondition {
   // Type of account condition.
-  optional string type = 1 [(gogoproto.casttype) = "TodoConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // TodoList is a list of Todos
 message TodoList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated Todo items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated Todo items = 2;
 }
 
 // TodoSpec defines the desired state of Todo
 message TodoSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 1 [(gogoproto.customname) = "Description"];
+  optional string description = 1;
 
   // +kubebuilder:validation:Optional
-  repeated TaskSpec tasks = 2 [(gogoproto.customname) = "Tasks", (gogoproto.nullable) = false];
+  repeated TaskSpec tasks = 2;
 
   // The modela entity that the task refer to.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 3 [(gogoproto.customname) = "EntityRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 3;
 
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Required
   // NotifierName is the name of the notifier used to fire the alert.
-  optional string notifierName = 4 [(gogoproto.customname) = "NotifierName"];
+  optional string notifierName = 4;
 
   // Flagged donate that task was flagged
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool flagged = 5 [(gogoproto.customname) = "Flagged"];
+  optional bool flagged = 5;
 
   // TenantRef is the todo tenant
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 6 [(gogoproto.customname) = "TenantRef"];
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 6;
 }
 
 // TodoStatus is the observed state of a Todo
 message TodoStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 1;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2 [(gogoproto.customname) = "LastUpdated"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated TodoCondition conditions = 3 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated TodoCondition conditions = 3;
 }
 

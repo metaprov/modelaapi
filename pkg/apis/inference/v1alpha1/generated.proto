@@ -9,7 +9,6 @@ syntax = "proto2";
 
 package github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1;
 
-import "github.com/gogo/protobuf/gogoproto/gogo.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
@@ -19,15 +18,6 @@ import "k8s.io/apimachinery/pkg/runtime/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 
 // Package-wide variables from generator "generated".
-option (gogoproto.marshaler_all) = true;
-option (gogoproto.stable_marshaler_all) = true;
-option (gogoproto.sizer_all) = true;
-option (gogoproto.goproto_stringer_all) = false;
-option (gogoproto.stringer_all) = true;
-option (gogoproto.unmarshaler_all) = true;
-option (gogoproto.goproto_unrecognized_all) = false;
-option (gogoproto.goproto_enum_prefix_all) = false;
-option (gogoproto.goproto_getters_all) = false;
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1";
 
 // AutoScaling defines the configuration for the automatic scaling of a service
@@ -35,20 +25,20 @@ message AutoScalingSpec {
   // Indicates if automatic scaling is enabled
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1 [(gogoproto.customname) = "Enabled"];
+  optional bool enabled = 1;
 
   // The minimum number of replicas running the service
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:default:=1
-  optional int32 minReplicas = 2 [(gogoproto.customname) = "MinReplicas"];
+  optional int32 minReplicas = 2;
 
   // The maximum number of replicas running the service
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:default:=1
-  optional int32 maxReplicas = 3 [(gogoproto.customname) = "MaxReplicas"];
+  optional int32 maxReplicas = 3;
 
   // The target average CPU utilization across all replicas. The HorizontalPodAutoscaler associated with the
   // service will change the number of replicas to maintain this metric
@@ -56,7 +46,7 @@ message AutoScalingSpec {
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=100
   // +kubebuilder:default:=80
-  optional int32 cpuAvgUtilization = 4 [(gogoproto.customname) = "CpuAvgUtilization"];
+  optional int32 cpuAvgUtilization = 4;
 
   // The target average memory utilization across all replicas. The HorizontalPodAutoscaler associated with the
   // service will change the number of replicas to maintain this metric
@@ -64,34 +54,34 @@ message AutoScalingSpec {
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=100
   // +kubebuilder:default:=80
-  optional int32 memAvgUtilization = 5 [(gogoproto.customname) = "MemAvgUtilization"];
+  optional int32 memAvgUtilization = 5;
 }
 
 message BackwardCurtainSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1 [(gogoproto.customname) = "Enabled"];
+  optional bool enabled = 1;
 
   // The forward curtain receives prediction requests before the prediction (currently unimplemented)
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference curtainRef = 2 [(gogoproto.customname) = "CurtainRef"];
+  optional k8s.io.api.core.v1.ObjectReference curtainRef = 2;
 
   // For backward curtain is the confidence low
   // +kubebuilder:validation:Optional
-  optional double confidenceLow = 4 [(gogoproto.customname) = "ConfidenceLow"];
+  optional double confidenceLow = 4;
 
   // For backward curtain is the confidence high
   // +kubebuilder:validation:Optional
-  optional double confidenceHigh = 5 [(gogoproto.customname) = "ConfidenceHigh"];
+  optional double confidenceHigh = 5;
 }
 
 message BatchPredictionSpec {
   // The schedule at which new Prediction resources will be created
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 1 [(gogoproto.customname) = "Schedule", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 1;
 
   // Template specifies the template to create new Prediction resources
-  optional PredictionTemplate template = 2 [(gogoproto.customname) = "Template", (gogoproto.nullable) = false];
+  optional PredictionTemplate template = 2;
 }
 
 // CronPrediction represents a Prediction which runs on a predefined schedule
@@ -106,38 +96,38 @@ message BatchPredictionSpec {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=cronpredictions,shortName=cpred,singular=cronprediction,categories={inference,modela}
 message CronPrediction {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional CronPredictionSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional CronPredictionSpec spec = 2;
 
   // +optional
-  optional CronPredictionStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional CronPredictionStatus status = 3;
 }
 
 // CronPredictionCondition describes the state of a CronPrediction at a certain point
 message CronPredictionCondition {
   // Type of condition
-  optional string type = 1 [(gogoproto.casttype) = "CronPredictionConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, Unknown
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human-readable message indicating details about the transition
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // CronPredictionList is a list of CronPredictions
 // +kubebuilder:object:root=true
 message CronPredictionList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated CronPrediction items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated CronPrediction items = 2;
 }
 
 // CronPredictionSpec represent the desired state of a CronPrediction
@@ -146,65 +136,65 @@ message CronPredictionSpec {
   // that exists in the same DataProduct namespace as the resource
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string versionName = 1 [(gogoproto.customname) = "VersionName"];
+  optional string versionName = 1;
 
   // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 2 [(gogoproto.customname) = "Owner"];
+  optional string owner = 2;
 
   // The schedule at which new Prediction resources will be created
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3 [(gogoproto.customname) = "Schedule", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
 
   // Template specifies the template to create new Prediction resources
-  optional PredictionTemplate template = 4 [(gogoproto.customname) = "Template", (gogoproto.nullable) = false];
+  optional PredictionTemplate template = 4;
 
   // The priority of the CronPrediction to be executed (medium, by default)
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
-  optional string priority = 5 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.PriorityLevel", (gogoproto.customname) = "Priority"];
+  optional string priority = 5;
 
   // Indicates if the CronPrediction is paused and will not create new Predictions
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 6 [(gogoproto.customname) = "Paused"];
+  optional bool paused = 6;
 
   // The notification specification that determines which notifiers will receive Alerts generated by the object
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 7 [(gogoproto.customname) = "Notification", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 7;
 }
 
 // CronPredictionStatus is the observed state of a CronPrediction
 message CronPredictionStatus {
   // The time at which a run of the CronPrediction was last started
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 1 [(gogoproto.customname) = "LastRun", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 1;
 
   // The time at which the CronPrediction is next scheduled to be executed
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 2 [(gogoproto.customname) = "NextRun"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 2;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3 [(gogoproto.customname) = "LastUpdated"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
   // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 4 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 4;
 
   // In the case of failure, the CronPrediction resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
-  optional string failureReason = 5 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.StatusError", (gogoproto.customname) = "FailureReason"];
+  optional string failureReason = 5;
 
   // In the case of failure, the CronPrediction resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 6 [(gogoproto.customname) = "FailureMessage"];
+  optional string failureMessage = 6;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated CronPredictionCondition conditions = 7 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated CronPredictionCondition conditions = 7;
 }
 
 // CustomAppSpec defines the custom pages for a DataApp
@@ -212,16 +202,16 @@ message CustomAppSpec {
   // Indicates if custom pages are enabled
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool owner = 1 [(gogoproto.customname) = "Enabled"];
+  optional bool owner = 1;
 
   // The app title
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string title = 2 [(gogoproto.customname) = "Title"];
+  optional string title = 2;
 
   // The app pages
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec pages = 3 [(gogoproto.customname) = "Pages", (gogoproto.nullable) = false];
+  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec pages = 3;
 }
 
 // DataApp represents a live dashboard for a single model
@@ -238,38 +228,38 @@ message CustomAppSpec {
 // +kubebuilder:resource:path=dataapps,singular=dataapp,categories={data,modela}
 // +kubebuilder:subresource:status
 message DataApp {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional DataAppSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional DataAppSpec spec = 2;
 
   // +optional
-  optional DataAppStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional DataAppStatus status = 3;
 }
 
 // DataAppCondition describes the state of a DataApp at a certain point
 message DataAppCondition {
   // Type of DataApp condition
-  optional string type = 1 [(gogoproto.casttype) = "DataAppConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, Unknown
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
 
   // The reason for the condition's last transition
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // DataAppList contains a list of DataApps
 // +kubebuilder:object:root=true
 message DataAppList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated DataApp items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated DataApp items = 2;
 }
 
 // DataAppSpec defines the desired state of a DataApp
@@ -277,132 +267,132 @@ message DataAppSpec {
   // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:="no-one"
-  optional string owner = 1 [(gogoproto.customname) = "Owner"];
+  optional string owner = 1;
 
   // The name of the DataProductVersion which describes the version of the resource
   // that exists in the same DataProduct namespace as the resource
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string versionName = 2 [(gogoproto.customname) = "VersionName"];
+  optional string versionName = 2;
 
   // The model class for this pipeline
   // +kubebuilder:validation:Optional
-  optional string modelClassName = 3 [(gogoproto.customname) = "ModelClassName"];
+  optional string modelClassName = 3;
 
   // The user-provided description of the DataApp
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
-  optional string description = 4 [(gogoproto.customname) = "Description"];
+  optional string description = 4;
 
   // The name of the predictive app model. The model will be used
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string modelName = 5 [(gogoproto.customname) = "ModelName"];
+  optional string modelName = 5;
 
   // Define how to access the app.
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 6 [(gogoproto.customname) = "Access", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 6;
 
   // The number of replicas for the Kubernetes Deployment associated with the DataApp, which will instantiate multiple
   // copies of the service in the case that automatic scaling is disabled
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
-  optional int32 replicas = 7 [(gogoproto.customname) = "Replicas"];
+  optional int32 replicas = 7;
 
   // Resources specifies the resource requirements allocated to the DataApp's web server
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 10 [(gogoproto.customname) = "Resources", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 10;
 
   // The reference to the DataProduct that the resource exists under
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference productRef = 12 [(gogoproto.customname) = "ProductRef"];
+  optional k8s.io.api.core.v1.ObjectReference productRef = 12;
 
   // The reference to the ServingSite resource that hosts the Predictor
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 13 [(gogoproto.customname) = "ServingSiteRef"];
+  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 13;
 
   // The specification to create a custom data application (currently unimplemented)
   // +kubebuilder:validation:Optional
-  optional CustomAppSpec custom = 14 [(gogoproto.customname) = "Custom", (gogoproto.nullable) = false];
+  optional CustomAppSpec custom = 14;
 }
 
 // DataAppStatus defines the observed state of DataApp
 message DataAppStatus {
   // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 1;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2 [(gogoproto.customname) = "LastUpdated"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
   // The reference to the Kubernetes Deployment associated with the DataApp
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference deploymentStatus = 3 [(gogoproto.customname) = "DeploymentRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference deploymentStatus = 3;
 
   // The status of the Kubernetes Service associated with the DataApp
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ServiceStatus servicetStatus = 4 [(gogoproto.customname) = "ServiceStatus", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ServiceStatus servicetStatus = 4;
 
   // In the case of failure, the DataApp resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
-  optional string failureReason = 5 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.StatusError", (gogoproto.customname) = "FailureReason"];
+  optional string failureReason = 5;
 
   // In the case of failure, the DataApp resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 6 [(gogoproto.customname) = "FailureMessage"];
+  optional string failureMessage = 6;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataAppCondition conditions = 7 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated DataAppCondition conditions = 7;
 }
 
 message DriftDetectionSpec {
   // Indicates if model monitoring is enabled for the model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1 [(gogoproto.customname) = "Enabled"];
+  optional bool enabled = 1;
 
   // If true, automatically generate drift test to all the columns based on the column type
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool genDriftTests = 2 [(gogoproto.customname) = "GenDriftTests"];
+  optional bool genDriftTests = 2;
 
   // If true, automatically generate drift test to all the columns based on the column type
   // +kubebuilder:default:=1000
   // +kubebuilder:validation:Optional
-  optional int32 minPredictions = 3 [(gogoproto.customname) = "MinPredictions"];
+  optional int32 minPredictions = 3;
 
   // Set the list of columns for drift detection, if empty, watch all the columns.
   // +kubebuilder:validation:Optional
-  repeated string columns = 4 [(gogoproto.customname) = "Columns"];
+  repeated string columns = 4;
 
   // The drift threshold for drift metrics.
   // If empty will be set the modela
-  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold driftThresholds = 5 [(gogoproto.customname) = "DriftThresholds", (gogoproto.nullable) = false];
+  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold driftThresholds = 5;
 
   // Define the tests to run against the predictor.
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTestsTemplate = 6 [(gogoproto.customname) = "UnitTestsTemplate", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTestsTemplate = 6;
 
   // The schedule on which model monitoring computations will be performed
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 7 [(gogoproto.customname) = "Schedule", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 7;
 
   // Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
   // Currently not in use.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 8 [(gogoproto.customname) = "OutlierDetectionModelRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 8;
 
   // how many feature histograms to keep in memory (as kubernetes objects). Histograms are garbage collected.
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
-  optional int32 maxHistograms = 9 [(gogoproto.customname) = "MaxHistograms"];
+  optional int32 maxHistograms = 9;
 
   // The duration in seconds that an histogram is updated before computing drift
   // the default is one hour
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
-  optional int32 periodSeconds = 10 [(gogoproto.customname) = "PeriodSeconds"];
+  optional int32 periodSeconds = 10;
 }
 
 message DriftDetectionStatus {
@@ -414,68 +404,68 @@ message FastSlowModelSpec {
   // Indicates if model monitoring is enabled for the model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1 [(gogoproto.customname) = "Enabled"];
+  optional bool enabled = 1;
 
   // Reference to the fast model
-  optional k8s.io.api.core.v1.ObjectReference fastModelRef = 2 [(gogoproto.customname) = "FastModelRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference fastModelRef = 2;
 
   // Reference to the slow model
-  optional k8s.io.api.core.v1.ObjectReference slowModelRef = 3 [(gogoproto.customname) = "SlowModelRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference slowModelRef = 3;
 
   // The low range of confidence.
   // +kubebuilder:default:=40
   // +kubebuilder:validation:Optional
-  optional int32 probaLowPct = 4 [(gogoproto.customname) = "ProbaLowPct"];
+  optional int32 probaLowPct = 4;
 
   // The high range of confidence , Must be higher than probalow
   // +kubebuilder:default:=60
   // +kubebuilder:validation:Optional
-  optional int32 probaHighPct = 5 [(gogoproto.customname) = "ProbaHighPct"];
+  optional int32 probaHighPct = 5;
 }
 
 message FeedbackTestSpec {
   // Indicates if model monitoring is enabled for the model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1 [(gogoproto.customname) = "Enabled"];
+  optional bool enabled = 1;
 
   // Define the tests to run against the predictor.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 2 [(gogoproto.customname) = "Tests", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 2;
 
   // The schedule on which model monitoring computations will be performed
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3 [(gogoproto.customname) = "Schedule", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
 }
 
 // ForecastSpec specifies the details of a forecasting model
 message ForecastPredictionSpec {
   // The hierarchy specification, which maps columns to values
   // +kubebuilder:validation:Optional
-  map<string, string> hierarchyValues = 1 [(gogoproto.customname) = "HierarchyValues", (gogoproto.nullable) = false];
+  map<string, string> hierarchyValues = 1;
 
   // The interval of the forecast
-  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec horizon = 2 [(gogoproto.customname) = "Horizon", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec horizon = 2;
 }
 
 message ForecastRun {
   // The reference to the ServingSite resource that
   // +kubebuilder:validation:Optional
-  optional string key = 1 [(gogoproto.customname) = "Key", (gogoproto.nullable) = false];
+  optional string key = 1;
 
   // The reference to the ServingSite resource that
   // +kubebuilder:validation:Optional
-  optional string modelURI = 2 [(gogoproto.customname) = "ModelURI", (gogoproto.nullable) = false];
+  optional string modelURI = 2;
 
   // the prediction horizon
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec horizon = 3 [(gogoproto.customname) = "Horizon", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.WindowSpec horizon = 3;
 }
 
 message ForecastSpec {
   // The list of forecast runs. Runs are indexed by key
   // +kubebuilder:validation:Optional
-  map<string, ForecastRun> runs = 9 [(gogoproto.customname) = "Runs", (gogoproto.nullable) = false];
+  map<string, ForecastRun> runs = 9;
 }
 
 // The result of forecasting one item. The forecast data itself is stored on the cloud.
@@ -483,218 +473,218 @@ message ForecastSpec {
 message ForecastStatus {
   // The URI of all the porfiles
   // +kubebuilder:validation:Optional
-  optional string profileURI = 1 [(gogoproto.customname) = "ProfileURI", (gogoproto.nullable) = false];
+  optional string profileURI = 1;
 
   // A pointer to the actual forecast
   // +kubebuilder:validation:Optional
-  optional string reportURI = 2 [(gogoproto.customname) = "ReportURI", (gogoproto.nullable) = false];
+  optional string reportURI = 2;
 
   // A pointer to the file containing the metadata about the forecasts
   // +kubebuilder:validation:Optional
-  optional string forecastURI = 3 [(gogoproto.customname) = "ForecastURI", (gogoproto.nullable) = false];
+  optional string forecastURI = 3;
 
   // Mark forecast as a failure.
   // +kubebuilder:validation:Optional
-  optional bool failed = 4 [(gogoproto.customname) = "Failed"];
+  optional bool failed = 4;
 
   // In case of failure, this is the failure message
   // +kubebuilder:validation:Optional
-  optional string failureMsg = 5 [(gogoproto.customname) = "FailureMessage"];
+  optional string failureMsg = 5;
 
   // Holds the worker on going result, when a worker finish, we update the location of thier result files
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult workerResults = 6 [(gogoproto.customname) = "WorkerResults", (gogoproto.nullable) = false];
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult workerResults = 6;
 }
 
 message ForwardCurtainSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1 [(gogoproto.customname) = "Enabled"];
+  optional bool enabled = 1;
 
   // The forward curtain receives prediction requests before the prediction (currently unimplemented)
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference curtainRef = 2 [(gogoproto.customname) = "CurtainRef"];
+  optional k8s.io.api.core.v1.ObjectReference curtainRef = 2;
 
   // Percent of request that are sent to the foreward curtain.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 percent = 3 [(gogoproto.customname) = "Percent"];
+  optional int32 percent = 3;
 }
 
 message GroupPredictionLocationsSpec {
   // The folder of group data
   // +kubebuilder:validation:Optional
-  optional string groupForecastFile = 2 [(gogoproto.customname) = "GroupForecastFile"];
+  optional string groupForecastFile = 2;
 }
 
 // KubernetesObjectStatus describes the location and status of a Kubernetes-native resource
 message KubernetesObjectStatus {
   // The object reference
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference ref = 1 [(gogoproto.customname) = "Ref"];
+  optional k8s.io.api.core.v1.ObjectReference ref = 1;
 
   // The status of the object
   // +kubebuilder:validation:Optional
-  optional string status = 2 [(gogoproto.casttype) = "K8sObjectStatusState", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 }
 
 // Hold the Last X measurments of a metric
 message MetricHistory {
   // The Metric Name
   // +kubebuilder:validation:Optional
-  optional string metric = 1 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.Metric", (gogoproto.customname) = "Metric", (gogoproto.nullable) = false];
+  optional string metric = 1;
 
   // History
   // +kubebuilder:validation:Optional
-  repeated double history = 2 [(gogoproto.customname) = "History"];
+  repeated double history = 2;
 }
 
 message ModelDeploymentStatus {
   // The name of the Model resource associated with the deployment
   // +kubebuilder:validation:Optional
-  optional string modelName = 1 [(gogoproto.customname) = "ModelName", (gogoproto.nullable) = false];
+  optional string modelName = 1;
 
   // The version of the Model resource
   // +kubebuilder:validation:Optional
-  optional string modelVersion = 2 [(gogoproto.customname) = "ModelVersion", (gogoproto.nullable) = false];
+  optional string modelVersion = 2;
 
   // The image name that the deployment is currently running
   // +kubebuilder:validation:Optional
-  optional string imageName = 3 [(gogoproto.customname) = "ImageName", (gogoproto.nullable) = false];
+  optional string imageName = 3;
 
   // The name of the Kubernetes Deployment that manages the pods of the Model
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference deploymentRef = 4 [(gogoproto.customname) = "DeploymentRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference deploymentRef = 4;
 
   // The name of the Kubernetes Service which exposes the Model externally
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference serviceRef = 5 [(gogoproto.customname) = "ServiceRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference serviceRef = 5;
 
   // the name of the horizonal pod autoscaler, if autoscaling is true
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference hpaRef = 6 [(gogoproto.customname) = "HPARef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference hpaRef = 6;
 
   // 50% latency (median) for predictions served by the model
   // +kubebuilder:validation:Optional
-  optional double p50 = 7 [(gogoproto.customname) = "P50", (gogoproto.nullable) = false];
+  optional double p50 = 7;
 
   // 95% latency for predictions served by the model
   // +kubebuilder:validation:Optional
-  optional double p95 = 8 [(gogoproto.customname) = "P95", (gogoproto.nullable) = false];
+  optional double p95 = 8;
 
   // 99% latency for predictions served by the model
   // +kubebuilder:validation:Optional
-  optional double p99 = 9 [(gogoproto.customname) = "P99", (gogoproto.nullable) = false];
+  optional double p99 = 9;
 
   // The last time a prediction was served by the Predictorlet
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionTime = 10 [(gogoproto.customname) = "LastPredictionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionTime = 10;
 
   // +kubebuilder:validation:Optional
-  optional int32 dailyPredictionAvg = 11 [(gogoproto.customname) = "DailyPredictionAvg", (gogoproto.nullable) = false];
+  optional int32 dailyPredictionAvg = 11;
 
   // LastFailure is the last failure that occured with the model
   // +kubebuilder:validation:Optional
-  optional string lastFailure = 12 [(gogoproto.customname) = "LastFailure", (gogoproto.nullable) = false];
+  optional string lastFailure = 12;
 
   // Phase is the current phase of the model deployment
   // +kubebuilder:validation:Optional
-  optional string phase = 13 [(gogoproto.casttype) = "ModelDeploymentPhase", (gogoproto.customname) = "Phase", (gogoproto.nullable) = false];
+  optional string phase = 13;
 
   // DeployedAt is the last time that the model was deployed
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time deployedAt = 14 [(gogoproto.customname) = "DeployedAt"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time deployedAt = 14;
 
   // ReleasedAt is the time that the model was released
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 15 [(gogoproto.customname) = "ReleasedAt"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 15;
 
   // Indicates if a data drift has been detected based on incoming prediction data
   // +kubebuilder:validation:Optional
-  optional bool dataDrift = 16 [(gogoproto.customname) = "DataDrift", (gogoproto.nullable) = false];
+  optional bool dataDrift = 16;
 
   // Indicates if a concept drift has been detected based on incoming prediction data
   // +kubebuilder:validation:Optional
-  optional bool conceptDrift = 17 [(gogoproto.customname) = "ConceptDrift", (gogoproto.nullable) = false];
+  optional bool conceptDrift = 17;
 
   // The predictions from the last 7 days
   // +kubebuilder:validation:Optional
-  repeated int32 lastDailyPredictions = 18 [(gogoproto.customname) = "LastDailyPredictions"];
+  repeated int32 lastDailyPredictions = 18;
 
   // +kubebuilder:validation:Optional
-  repeated KubernetesObjectStatus objectStatuses = 19 [(gogoproto.customname) = "ObjectStatuses", (gogoproto.nullable) = false];
+  repeated KubernetesObjectStatus objectStatuses = 19;
 
   // the set of validation errors
   // +kubebuilder:validation:Optional
-  repeated ValidationError errors = 20 [(gogoproto.customname) = "Errors", (gogoproto.nullable) = false];
+  repeated ValidationError errors = 20;
 
   // Ref to the last ground true dataset that this model was tested against.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference lastFeedbackDatasetRef = 21 [(gogoproto.customname) = "LastFeedbackDatasetRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference lastFeedbackDatasetRef = 21;
 
   // Last time that a ground true test was done.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastFeedbackTest = 22 [(gogoproto.customname) = "LastFeedbackTest"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastFeedbackTest = 22;
 
   // Last results of the ground truth tests.
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement lastFeedbackTestResults = 23 [(gogoproto.customname) = "LastFeedbackTestResults", (gogoproto.nullable) = false];
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement lastFeedbackTestResults = 23;
 
   // Holds the last N metrics for this model
   // +kubebuilder:validation:Optional
-  map<string, MetricHistory> metricsHistory = 24 [(gogoproto.castkey) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.Metric", (gogoproto.customname) = "MetricHistory", (gogoproto.nullable) = false];
+  map<string, MetricHistory> metricsHistory = 24;
 }
 
 // ModelRecord hold the state of a model that was in production
 message ModelRecord {
   // Model Name is the name of the model
   // +kubebuilder:validation:Optional
-  optional string modelName = 1 [(gogoproto.customname) = "ModelName", (gogoproto.nullable) = false];
+  optional string modelName = 1;
 
   // Model version is the version of the model
   // +kubebuilder:validation:Optional
-  optional string modelVersion = 2 [(gogoproto.customname) = "ModelVersion", (gogoproto.nullable) = false];
+  optional string modelVersion = 2;
 
   // Live at is the time that the model were placed in production
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time liveAt = 3 [(gogoproto.customname) = "LiveAt"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time liveAt = 3;
 
   // Retried at is the time that the model was retired from production.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time retiredAt = 4 [(gogoproto.customname) = "RetiredAt"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time retiredAt = 4;
 
   // Retried at is the time that the model was retired from production.
   // +kubebuilder:validation:Optional
-  optional int32 avgDailyPrediction = 5 [(gogoproto.customname) = "AvgDailyPrediction", (gogoproto.nullable) = false];
+  optional int32 avgDailyPrediction = 5;
 
   // Retried at is the time that the model was retired from production.
   // +kubebuilder:validation:Optional
-  optional double avgLatency = 6 [(gogoproto.customname) = "AvgLatency", (gogoproto.nullable) = false];
+  optional double avgLatency = 6;
 }
 
 // ModelServingSpec specifies the configuration for models to be served by a Predictor
 message ModelServingSpec {
   // If Serverless is true, the Kubernetes Deployment which serves the model will not be created
   // until it starts to receive prediction traffic, and will be destroyed once the model becomes dormant
-  optional bool serverless = 2 [(gogoproto.customname) = "Serverless"];
+  optional bool serverless = 2;
 
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite servingTests = 4 [(gogoproto.customname) = "UnitTestsTemplate", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite servingTests = 4;
 }
 
 // OnlineFeaturestoreSpec specifies the connection information for an online feature store
 message OnlineFeatureStoreSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1 [(gogoproto.customname) = "Enabled"];
+  optional bool enabled = 1;
 
   // The host name of the feature store micro service.
   // +kubebuilder:default:=""
-  optional string hostname = 2 [(gogoproto.customname) = "Hostname"];
+  optional string hostname = 2;
 }
 
 message OnlineStoreStatus {
   // LastAccessed specifies the last time the online store was accessed
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastAccessed = 1 [(gogoproto.customname) = "LastAccessed"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastAccessed = 1;
 }
 
 // Prediction represents a single batch prediction on a dataset
@@ -714,12 +704,12 @@ message OnlineStoreStatus {
 // +kubebuilder:storageversion
 // +kubebuilder:resource:path=predictions,shortName=pred,singular=prediction,categories={inference,modela}
 message Prediction {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional PredictionSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional PredictionSpec spec = 2;
 
   // +optional
-  optional PredictionStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional PredictionStatus status = 3;
 }
 
 // PredictionCacheSpec specifies the connection information of a key-value cache to store predictions
@@ -727,51 +717,51 @@ message PredictionCacheSpec {
   // Enabled indicates if predictions will be cached
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1 [(gogoproto.customname) = "Enabled"];
+  optional bool enabled = 1;
 
   // InMemory indicates if predictions will be cached in the available memory of the Pod serving the model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool inMemory = 2 [(gogoproto.customname) = "InMemory"];
+  optional bool inMemory = 2;
 
   // Redis indicates if predictions will be cached in an external Redis deployment
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool redis = 3 [(gogoproto.customname) = "Redis"];
+  optional bool redis = 3;
 
   // The reference to a Connection resource to an external Redis deployment
-  optional k8s.io.api.core.v1.ObjectReference connectionRef = 4 [(gogoproto.customname) = "ConnectionRef"];
+  optional k8s.io.api.core.v1.ObjectReference connectionRef = 4;
 }
 
 message PredictionCacheStatus {
   // LastAccessed specifies the last time the prediction cache was accessed
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastAccessed = 1 [(gogoproto.customname) = "LastAccessed"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastAccessed = 1;
 }
 
 // PredictionCondition describes the state of a Prediction at a certain point
 message PredictionCondition {
   // Type of Prediction condition
-  optional string type = 1 [(gogoproto.casttype) = "PredictionConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, Unknown
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human-readable message indicating details about the transition
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // PredictionList is a list of Predictions
 message PredictionList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated Prediction items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated Prediction items = 2;
 }
 
 // PredictionLoggingSpec specifies the configuration to log incoming and outgoing prediction requests
@@ -779,30 +769,30 @@ message PredictionLoggingSpec {
   // Indicates if prediction logging is enabled
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1 [(gogoproto.customname) = "Enabled"];
+  optional bool enabled = 1;
 
   // The number percentage (0 through 100) of prediction requests to log
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 samplePercent = 2 [(gogoproto.customname) = "SamplePercent"];
+  optional int32 samplePercent = 2;
 
   // Number of rows in the serving dataset
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 rows = 3 [(gogoproto.customname) = "Rows"];
+  optional int32 rows = 3;
 
   // Backup Frequency seconds.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 backupFreqSeconds = 4 [(gogoproto.customname) = "BackupFreqSeconds"];
+  optional int32 backupFreqSeconds = 4;
 
   // Reference to backup location.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference backupConnectionRef = 5 [(gogoproto.customname) = "BackupConnectionRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference backupConnectionRef = 5;
 
   // Target location of the serving dataset
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 6 [(gogoproto.customname) = "Location", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 6;
 }
 
 // PredictionSpec represent the desired state of Prediction
@@ -811,170 +801,170 @@ message PredictionSpec {
   // that exists in the same DataProduct namespace as the resource
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string versionName = 1 [(gogoproto.customname) = "VersionName"];
+  optional string versionName = 1;
 
   // The model class for this pipeline
   // +kubebuilder:validation:Optional
-  optional string modelClassName = 2 [(gogoproto.customname) = "ModelClassName"];
+  optional string modelClassName = 2;
 
   // PredictorRef is the name of the Predictor resource that will be used to evaluate predictions for the
   // unlabeled input dataset. The Predictor must exist in the same DataProduct namespace as the resource
   // +kubebuilder:validation:Required
   // +required
-  optional k8s.io.api.core.v1.ObjectReference predictorRef = 3 [(gogoproto.customname) = "PredictorRef"];
+  optional k8s.io.api.core.v1.ObjectReference predictorRef = 3;
 
   // If true, measurements for the metrics specified by the `Tests` field will be computed for each prediction and
   // stored in the Prediction's status with the average result of all predictions
   // +kubebuilder:default:=false
   // Used usually for unit testing
-  optional bool labeled = 4 [(gogoproto.customname) = "Labeled"];
+  optional bool labeled = 4;
 
   // Indicates if the prediction is a forecast
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool forecast = 5 [(gogoproto.customname) = "Forecast"];
+  optional bool forecast = 5;
 
   // A reference to the input data source ref
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference dataSourceRef = 6 [(gogoproto.customname) = "DataSourceRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference dataSourceRef = 6;
 
   // Output specifies the location where the predicted dataset will be stored
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec input = 7 [(gogoproto.customname) = "Input", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec input = 7;
 
   // Output specifies the location where the predicted dataset will be stored
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec output = 8 [(gogoproto.customname) = "Output", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec output = 8;
 
   // If true create output dataset
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool createDataset = 9 [(gogoproto.customname) = "CreateDataset"];
+  optional bool createDataset = 9;
 
   // Tests specifies a collection of metrics that will be computed for each prediction
   // if the Labeled field of the Prediction is enabled
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite unitTests = 10 [(gogoproto.customname) = "UnitTests", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite unitTests = 10;
 
   // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 11 [(gogoproto.customname) = "Owner"];
+  optional string owner = 11;
 
   // Resources specifies the resource requirements that will be allocated to the batch prediction Job
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 12 [(gogoproto.customname) = "Resources", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 12;
 
   // The deadline for the batch prediction Job to be completed in seconds
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 13 [(gogoproto.customname) = "ActiveDeadlineSeconds"];
+  optional int64 activeDeadlineSeconds = 13;
 
   // The priority of the Kubernetes Job created by the Prediction (medium, by default)
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
-  optional string priority = 14 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.PriorityLevel", (gogoproto.customname) = "Priority"];
+  optional string priority = 14;
 
   // Indicates if the Prediction was aborted and should stop execution
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool aborted = 15 [(gogoproto.customname) = "Aborted"];
+  optional bool aborted = 15;
 
   // The time-to-live of the Prediction, after which the Prediction will be archived
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 16 [(gogoproto.customname) = "TTL"];
+  optional int32 ttl = 16;
 
   // The forecasting specification in the case that the predicted model is a hierarchical forecast
   // +kubebuilder:validation:Optional
-  optional ForecastPredictionSpec forecastSpec = 17 [(gogoproto.customname) = "ForecastSpec", (gogoproto.nullable) = false];
+  optional ForecastPredictionSpec forecastSpec = 17;
 
   // The reference to the ServingSite resource that hosts the Prediction
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 19 [(gogoproto.customname) = "ServingSiteRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 19;
 
   // Locations for group forecasts
   // +kubebuilder:validation:Optional
-  optional GroupPredictionLocationsSpec groupLocation = 20 [(gogoproto.customname) = "GroupLocation", (gogoproto.nullable) = false];
+  optional GroupPredictionLocationsSpec groupLocation = 20;
 
   // In case of batch prediction, how many workers.
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
-  optional int32 workers = 21 [(gogoproto.customname) = "Workers"];
+  optional int32 workers = 21;
 }
 
 // PredictionStatus is the observed state of a Prediction
 message PredictionStatus {
   // StartTime denotes the time when the batch prediction Job started
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1 [(gogoproto.customname) = "StartTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
 
   // EndTime denotes the time when the batch prediction Job completed or failed
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2 [(gogoproto.customname) = "EndTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2;
 
   // The current phase of the prediction
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 3 [(gogoproto.casttype) = "PredictionPhase", (gogoproto.customname) = "Phase", (gogoproto.nullable) = false];
+  optional string phase = 3;
 
   // The collection of metrics that represent the average measurement across all predictions for each
   // metric specified by the Tests field of the Predictor
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 4 [(gogoproto.customname) = "UnitTestsResult", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 4;
 
   // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 5 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 5;
 
   // The number of rows predicted
   // +kubebuilder:validation:Optional
-  optional int32 rows = 6 [(gogoproto.customname) = "Rows", (gogoproto.nullable) = false];
+  optional int32 rows = 6;
 
   // The trigger that started the batch prediction
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 7 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.TriggerType", (gogoproto.customname) = "TriggeredBy", (gogoproto.nullable) = false];
+  optional string triggeredBy = 7;
 
   // The location of logs produced by the batch prediction Job
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 8 [(gogoproto.customname) = "Logs", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 8;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 9 [(gogoproto.customname) = "LastUpdated"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 9;
 
   // In the case of failure, the Prediction resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
-  optional string failureReason = 10 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.StatusError", (gogoproto.customname) = "FailureReason"];
+  optional string failureReason = 10;
 
   // In the case of failure, the Prediction resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 11 [(gogoproto.customname) = "FailureMessage"];
+  optional string failureMessage = 11;
 
   // The dataset that was generated.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference datasetRef = 12 [(gogoproto.customname) = "DatasetRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference datasetRef = 12;
 
   // The histogram values, map from column name to an histogram
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram columns = 13 [(gogoproto.customname) = "Columns", (gogoproto.nullable) = false];
+  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram columns = 13;
 
   // Set to true if drifted
   // +kubebuilder:validation:Optional
-  optional bool drifted = 14 [(gogoproto.customname) = "Drifted", (gogoproto.nullable) = false];
+  optional bool drifted = 14;
 
   // the forecast results for this forecast
   // +kubebuilder:validation:Optional
-  optional ForecastStatus forecast = 15 [(gogoproto.customname) = "Forecast", (gogoproto.nullable) = false];
+  optional ForecastStatus forecast = 15;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictionCondition conditions = 16 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated PredictionCondition conditions = 16;
 }
 
 // PredictionTemplate defines the specification for a Prediction resource to be created
 message PredictionTemplate {
-  optional PredictionSpec spec = 1 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional PredictionSpec spec = 1;
 }
 
 // Predictor specifies the deployment of a service to serve predictions for a Model
@@ -991,38 +981,38 @@ message PredictionTemplate {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=predictors,singular=predictor,shortName=pdr,categories={inference,modela}
 message Predictor {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional PredictorSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional PredictorSpec spec = 2;
 
   // +optional
-  optional PredictorStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional PredictorStatus status = 3;
 }
 
 // PredictorCondition describes the state of a Predictor at a certain point
 message PredictorCondition {
   // Type of Predictor condition
-  optional string type = 1 [(gogoproto.casttype) = "PredictorConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, Unknown
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human-readable message indicating details about the transition
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // PredictorList contains a list of Predictors
 message PredictorList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated Predictor items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated Predictor items = 2;
 }
 
 // PredictorSpec defines the desired state of a Predictor
@@ -1031,231 +1021,231 @@ message PredictorSpec {
   // that exists in the same DataProduct namespace as the resource
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string versionName = 1 [(gogoproto.customname) = "VersionName"];
+  optional string versionName = 1;
 
   // The model class for this pipeline
   // +kubebuilder:validation:Optional
-  optional string modelClassName = 2 [(gogoproto.customname) = "ModelClassName"];
+  optional string modelClassName = 2;
 
   // If specified, the user-provided description of the Predictor
   // +kubebuilder:validation:MaxLength=256
   // +kubebuilder:default:=""
-  optional string description = 3 [(gogoproto.customname) = "Description"];
+  optional string description = 3;
 
   // The reference to the DataProduct that the resource exists under
-  optional k8s.io.api.core.v1.ObjectReference productRef = 4 [(gogoproto.customname) = "ProductRef"];
+  optional k8s.io.api.core.v1.ObjectReference productRef = 4;
 
   // The type of predictor (online, batch, or streaming). Online is the only supported type as of the current release
   // +kubebuilder:default:="online"
   // +kubebuilder:validation:Optional
-  optional string type = 5 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.PredictorType", (gogoproto.customname) = "Type"];
+  optional string type = 5;
 
   // If specified, the reference to the ServingSite resource that hosts the Predictor
   // If not specified, the predictor will be hosted on the default serving site.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 6 [(gogoproto.customname) = "ServingSiteRef"];
+  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 6;
 
   // If specified, the collection of shadow models. A shadow model receives prediction request, but does
   // not serve the reply.
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec models = 7 [(gogoproto.customname) = "Models", (gogoproto.nullable) = false];
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec models = 7;
 
   // The specification to progressively deploy a new live model. ModelDeploymentSpec specifications within Models that have the
   // `Canary` field enabled will be progressively deployed according to the specification when they are applied to the Predictor
   // +kubebuilder:validation:Optional
-  optional ProgressiveSpec progressive = 8 [(gogoproto.customname) = "Progressive"];
+  optional ProgressiveSpec progressive = 8;
 
   // The data location where artifacts generated by the Predictor will be stored
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation artifactsFolder = 9 [(gogoproto.customname) = "ArtifactsFolder", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation artifactsFolder = 9;
 
   // Access specifies the configuration for the Predictor service to be exposed externally
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 10 [(gogoproto.customname) = "Access", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 10;
 
   // The number of replicas for the Kubernetes Deployment associated with the Predictor, which will instantiate multiple
   // copies of the service in the case that automatic scaling is disabled
   // +kubebuilder:validation:Optional
-  optional int32 replicas = 11 [(gogoproto.customname) = "Replicas"];
+  optional int32 replicas = 11;
 
   // AutoScaling specifies the auto-scaling policy
   // +kubebuilder:validation:Optional
-  optional AutoScalingSpec autoScaling = 12 [(gogoproto.customname) = "AutoScaling", (gogoproto.nullable) = false];
+  optional AutoScalingSpec autoScaling = 12;
 
   // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 13 [(gogoproto.customname) = "Owner"];
+  optional string owner = 13;
 
   // Resources specifies the resource requirements allocated to the prediction service
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 14 [(gogoproto.customname) = "Resources", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 14;
 
   // Cache specifies the configuration of the prediction cache
-  optional PredictionCacheSpec cache = 15 [(gogoproto.customname) = "Cache", (gogoproto.nullable) = false];
+  optional PredictionCacheSpec cache = 15;
 
   // Store specifies the configuration of the online data store
-  optional OnlineFeatureStoreSpec store = 16 [(gogoproto.customname) = "Store", (gogoproto.nullable) = false];
+  optional OnlineFeatureStoreSpec store = 16;
 
   // Serving specifies the configuration for individual models to handle prediction traffic
-  optional ModelServingSpec serving = 17 [(gogoproto.customname) = "Serving", (gogoproto.nullable) = false];
+  optional ModelServingSpec serving = 17;
 
   // The task type of the Predictor, which should match the task type of the models being served
   // +kubebuilder:default:="unknown"
   // +kubebuilder:validation:Optional
-  optional string task = 18 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.MLTask", (gogoproto.customname) = "Task"];
+  optional string task = 18;
 
   // The prediction threshold
   // +kubebuilder:validation:Optional
-  optional double predictionThreshold = 19 [(gogoproto.customname) = "PredictionThreshold"];
+  optional double predictionThreshold = 19;
 
   // Spec for the drift detection process
   // +kubebuilder:validation:Optional
-  optional DriftDetectionSpec drift = 20 [(gogoproto.customname) = "Drift", (gogoproto.nullable) = false];
+  optional DriftDetectionSpec drift = 20;
 
   // Spec for the ground truth process.
   // +kubebuilder:validation:Optional
-  optional FeedbackTestSpec feedback = 21 [(gogoproto.customname) = "Feedback", (gogoproto.nullable) = false];
+  optional FeedbackTestSpec feedback = 21;
 
   // NotifierRef references a Notifier resource that will be triggered in the case that a concept or data drift is detected
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference notifierRef = 22 [(gogoproto.customname) = "NotifierRef"];
+  optional k8s.io.api.core.v1.ObjectReference notifierRef = 22;
 
   // Monitor spec specify the monitor for this predictor.
   // +kubebuilder:validation:Optional
-  optional PredictionLoggingSpec predictionLogging = 23 [(gogoproto.customname) = "PredictionLogging", (gogoproto.nullable) = false];
+  optional PredictionLoggingSpec predictionLogging = 23;
 
   // Forward curtain
   // +kubebuilder:validation:Optional
-  optional ForwardCurtainSpec forwardCurtain = 24 [(gogoproto.customname) = "ForwardCurtain", (gogoproto.nullable) = false];
+  optional ForwardCurtainSpec forwardCurtain = 24;
 
   // Backward curtain
   // +kubebuilder:validation:Optional
-  optional BackwardCurtainSpec backwardCurtain = 25 [(gogoproto.customname) = "BackwardCurtain", (gogoproto.nullable) = false];
+  optional BackwardCurtainSpec backwardCurtain = 25;
 
   // Fast slow is the specification of deployment of a fast - slow models.
   // +kubebuilder:validation:Optional
-  optional FastSlowModelSpec fastSlow = 26 [(gogoproto.customname) = "FastSlow", (gogoproto.nullable) = false];
+  optional FastSlowModelSpec fastSlow = 26;
 
   // The batch prediction settings for this predictor
   // +kubebuilder:validation:Optional
-  optional BatchPredictionSpec batch = 27 [(gogoproto.customname) = "Batch", (gogoproto.nullable) = false];
+  optional BatchPredictionSpec batch = 27;
 }
 
 // PredictorStatus contain the current state of the Predictor resource
 message PredictorStatus {
   // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 1;
 
   // The collection of historical records of models deployed to the Predictor, used internally to roll-back models
   // +kubebuilder:validation:Optional
-  repeated ModelRecord history = 2 [(gogoproto.customname) = "History", (gogoproto.nullable) = false];
+  repeated ModelRecord history = 2;
 
   // The status of the shadow models
   // +kubebuilder:validation:Optional
-  repeated ModelDeploymentStatus modelsStatus = 4 [(gogoproto.customname) = "ModelStatus", (gogoproto.nullable) = false];
+  repeated ModelDeploymentStatus modelsStatus = 4;
 
   // The status of the Predictorlet associated with the Predictor. The Predictorlet is a service which handles prediction traffic
   // and routes predictions to individual models based on the specification of the Predictor
   // +kubebuilder:validation:Optional
-  optional PredictorletStatus predictorletStatus = 5 [(gogoproto.customname) = "PredictorletStatus", (gogoproto.nullable) = false];
+  optional PredictorletStatus predictorletStatus = 5;
 
   // The status of the prediction cache managed by the Predictor
   // +kubebuilder:validation:Optional
-  optional PredictionCacheStatus cacheStatus = 6 [(gogoproto.customname) = "CacheStatus", (gogoproto.nullable) = false];
+  optional PredictionCacheStatus cacheStatus = 6;
 
   // The status of the online store managed by the Predictor
   // +kubebuilder:validation:Optional
-  optional OnlineStoreStatus onlineStoreStatus = 7 [(gogoproto.customname) = "OnlineStore", (gogoproto.nullable) = false];
+  optional OnlineStoreStatus onlineStoreStatus = 7;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 8 [(gogoproto.customname) = "LastUpdated"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 8;
 
   // The end-point URL of the Predictor
   // +kubebuilder:validation:Optional
-  optional string endPoint = 9 [(gogoproto.customname) = "EndPoint", (gogoproto.nullable) = false];
+  optional string endPoint = 9;
 
   // In the case of failure, the Predictor resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
-  optional string failureReason = 10 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.StatusError", (gogoproto.customname) = "FailureReason"];
+  optional string failureReason = 10;
 
   // In the case of failure, the Predictor resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 11 [(gogoproto.customname) = "FailureMessage"];
+  optional string failureMessage = 11;
 
   // The status of the load balancer, if the Predictor's access type is LoadBalancer
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.LoadBalancerStatus loadBalancerStatus = 12 [(gogoproto.customname) = "LoadBalancerStatus"];
+  optional k8s.io.api.core.v1.LoadBalancerStatus loadBalancerStatus = 12;
 
   // The last time that a prediction dataset was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference lastPredictionDataset = 13 [(gogoproto.customname) = "LastPredictionDataset", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference lastPredictionDataset = 13;
 
   // The results of running the serving tests
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult servingTestsResults = 14 [(gogoproto.customname) = "ServingTestResult", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult servingTestsResults = 14;
 
   // The status for the batch prediction.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus predictionSchedule = 15 [(gogoproto.customname) = "PredictionSchedule", (gogoproto.nullable) = false];
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus predictionSchedule = 15;
 
   // The last time we performed prediction
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPrediction = 16 [(gogoproto.customname) = "LastPrediction"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPrediction = 16;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictorCondition conditions = 17 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated PredictorCondition conditions = 17;
 }
 
 // PredictorletStatus describes the current state of a prediction proxy service associated with a Predictor
 message PredictorletStatus {
   // The image name that the Predictorlet is currently running
   // +kubebuilder:validation:Optional
-  optional string imageName = 1 [(gogoproto.customname) = "ImageName", (gogoproto.nullable) = false];
+  optional string imageName = 1;
 
   // The name of the Kubernetes Deployment that manages the pods of the Predictorlet
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference deploymentRef = 2 [(gogoproto.customname) = "DeploymentRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference deploymentRef = 2;
 
   // The name of the Kubernetes Service which exposes the Predictorlet externally
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference serviceRef = 3 [(gogoproto.customname) = "ServiceRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference serviceRef = 3;
 
   // 50% latency (median) for predictions served by the Predictorlet
   // +kubebuilder:validation:Optional
-  optional double p50 = 4 [(gogoproto.customname) = "P50", (gogoproto.nullable) = false];
+  optional double p50 = 4;
 
   // 95% latency for predictions served by the Predictorlet
   // +kubebuilder:validation:Optional
-  optional double p95 = 5 [(gogoproto.customname) = "P95", (gogoproto.nullable) = false];
+  optional double p95 = 5;
 
   // 99% latency for predictions served by the Predictorlet
   // +kubebuilder:validation:Optional
-  optional double p99 = 6 [(gogoproto.customname) = "P99", (gogoproto.nullable) = false];
+  optional double p99 = 6;
 
   // +kubebuilder:validation:Optional
-  optional int32 dailyPredictionAvg = 7 [(gogoproto.customname) = "DailyPredictionAvg", (gogoproto.nullable) = false];
+  optional int32 dailyPredictionAvg = 7;
 
   // The total number of predictions served by the Predictorlet
-  optional int32 totalPredictions = 8 [(gogoproto.customname) = "TotalPredictions", (gogoproto.nullable) = false];
+  optional int32 totalPredictions = 8;
 
   // The predictions from the last 7 days
-  repeated int32 lastDailyPredictions = 9 [(gogoproto.customname) = "LastDailyPredictions"];
+  repeated int32 lastDailyPredictions = 9;
 
   // The last time a prediction was served by the Predictorlet
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionTime = 10 [(gogoproto.customname) = "LastPredictionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionTime = 10;
 
   // LastFailure contains the last failure that occured with a model served by the Predictorlet
   // +kubebuilder:validation:Optional
-  optional string lastFailure = 11 [(gogoproto.customname) = "LastFailure", (gogoproto.nullable) = false];
+  optional string lastFailure = 11;
 
   // +kubebuilder:validation:Optional
-  repeated KubernetesObjectStatus objectStatuses = 12 [(gogoproto.customname) = "ObjectStatuses", (gogoproto.nullable) = false];
+  repeated KubernetesObjectStatus objectStatuses = 12;
 }
 
 // ProgressiveSpec defines the specification to progressively deploy a model to production
@@ -1264,33 +1254,33 @@ message ProgressiveSpec {
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Maximum=100
   // +kubebuilder:validation:Minimum=0
-  optional int32 warmup = 1 [(gogoproto.customname) = "Warmup"];
+  optional int32 warmup = 1;
 
   // The percentage of traffic to increment
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Optional
-  optional int32 trafficIncrement = 2 [(gogoproto.customname) = "TrafficIncrement"];
+  optional int32 trafficIncrement = 2;
 
   // What metric to use when comparing the candidate model to the current model
   // +kubebuilder:validation:Optional
-  repeated string canaryMetrics = 3 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.Metric", (gogoproto.customname) = "CanaryMetrics"];
+  repeated string canaryMetrics = 3;
 }
 
 message ValidationError {
   // The name of the column
-  optional string column = 1 [(gogoproto.customname) = "Column", (gogoproto.nullable) = false];
+  optional string column = 1;
 
   // The metric from the rule
-  optional string metric = 2 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.Metric", (gogoproto.customname) = "Metric", (gogoproto.nullable) = false];
+  optional string metric = 2;
 
   // Expected min
-  optional double min = 3 [(gogoproto.customname) = "Min", (gogoproto.nullable) = false];
+  optional double min = 3;
 
   // Expected max
-  optional double max = 4 [(gogoproto.customname) = "Max", (gogoproto.nullable) = false];
+  optional double max = 4;
 
   // Actual value
-  optional double actual = 5 [(gogoproto.customname) = "Actual", (gogoproto.nullable) = false];
+  optional double actual = 5;
 }
 

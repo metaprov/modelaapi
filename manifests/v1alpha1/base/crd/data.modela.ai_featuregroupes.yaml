@@ -3,7 +3,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.8.0
+    controller-gen.kubebuilder.io/version: v0.10.0
   creationTimestamp: null
   name: featuregroupes.data.modela.ai
 spec:
@@ -130,6 +130,7 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
+                    x-kubernetes-map-type: atomic
                   sql:
                     default: ""
                     description: The SQL statement which will be executed to query
@@ -180,6 +181,44 @@ spec:
                 items:
                   type: string
                 type: array
+              ingestSchedule:
+                description: Schedule for running ingesting the data from the feature.
+                  On virtual features (e.g. where the data already reside in a table)
+                  The ingest will just perform feature profile, and run the feature
+                  group unit tests.
+                properties:
+                  cron:
+                    description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                      for more information
+                    type: string
+                  enabled:
+                    default: false
+                    description: Indicates if the schedule is enabled and the Jobs
+                      associated it will be created at the specified time
+                    type: boolean
+                  endTime:
+                    description: The time of the day when the schedule is expected
+                      to conclude
+                    format: date-time
+                    type: string
+                  startTime:
+                    description: The time of the day when the schedule will be executed
+                    format: date-time
+                    type: string
+                  type:
+                    description: The type of schedule, which can be a frequency interval
+                      or a cron expression
+                    enum:
+                    - now
+                    - once
+                    - hourly
+                    - daily
+                    - weekly
+                    - monthly
+                    - yearly
+                    - cron
+                    type: string
+                type: object
               ingestType:
                 default: batch
                 description: How this group is ingested
@@ -216,41 +255,6 @@ spec:
                 description: Owner is the owner of the feature group.
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
-              schedule:
-                description: Schedule for running the pipeline
-                properties:
-                  cron:
-                    description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
-                      for more information
-                    type: string
-                  enabled:
-                    default: false
-                    description: Indicates if the schedule is enabled and the Jobs
-                      associated it will be created at the specified time
-                    type: boolean
-                  endTime:
-                    description: The time of the day when the schedule is expected
-                      to conclude
-                    format: date-time
-                    type: string
-                  startTime:
-                    description: The time of the day when the schedule will be executed
-                    format: date-time
-                    type: string
-                  type:
-                    description: The type of schedule, which can be a frequency interval
-                      or a cron expression
-                    enum:
-                    - now
-                    - once
-                    - hourly
-                    - daily
-                    - weekly
-                    - monthly
-                    - yearly
-                    - cron
-                    type: string
-                type: object
               schema:
                 description: The name of the data source which contain the schema
                   for this entity
@@ -628,6 +632,41 @@ spec:
                         type: string
                     type: object
                 type: object
+              syncSchedule:
+                description: Schedule to sync the feature group into the online store.
+                properties:
+                  cron:
+                    description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                      for more information
+                    type: string
+                  enabled:
+                    default: false
+                    description: Indicates if the schedule is enabled and the Jobs
+                      associated it will be created at the specified time
+                    type: boolean
+                  endTime:
+                    description: The time of the day when the schedule is expected
+                      to conclude
+                    format: date-time
+                    type: string
+                  startTime:
+                    description: The time of the day when the schedule will be executed
+                    format: date-time
+                    type: string
+                  type:
+                    description: The type of schedule, which can be a frequency interval
+                      or a cron expression
+                    enum:
+                    - now
+                    - once
+                    - hourly
+                    - daily
+                    - weekly
+                    - monthly
+                    - yearly
+                    - cron
+                    type: string
+                type: object
               unitTests:
                 description: Unit test to run on data from this feature group upon
                   ingrest.
@@ -692,6 +731,7 @@ spec:
                               description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                               type: string
                           type: object
+                          x-kubernetes-map-type: atomic
                         enabled:
                           description: If false, this test case is disabled
                           type: boolean
@@ -733,6 +773,7 @@ spec:
                               description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                               type: string
                           type: object
+                          x-kubernetes-map-type: atomic
                         entityRef2:
                           description: Reference to an entity.
                           properties:
@@ -771,6 +812,7 @@ spec:
                               description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                               type: string
                           type: object
+                          x-kubernetes-map-type: atomic
                         expectedCategory:
                           description: The expected value
                           type: string
@@ -864,8 +906,8 @@ spec:
                   - type
                   type: object
                 type: array
-              lastProfile:
-                description: Last run is the last time the feature group run
+              ingestSchedule:
+                description: the ingest schedule status
                 properties:
                   completionTime:
                     description: The time at which the run concluded
@@ -883,19 +925,18 @@ spec:
                     description: In the case of failure, the resource controller which
                       created the run will set this field with a failure reason
                     type: string
-                  name:
-                    description: The name of the run
+                  lastRun:
+                    description: Indicates if the schedule is enabled and the Jobs
+                      associated it will be created at the specified time
+                    format: date-time
                     type: string
-                  status:
-                    description: The status of the last run
+                  nextRun:
+                    description: The time of the day when the schedule will be executed
+                    format: date-time
                     type: string
                 type: object
               lastUpdated:
                 description: Last time the object was updated
-                format: date-time
-                type: string
-              nextRun:
-                description: The time of the next schedule run
                 format: date-time
                 type: string
               observedGeneration:
@@ -903,10 +944,42 @@ spec:
                   on
                 format: int64
                 type: integer
+              phase:
+                type: string
               rows:
                 description: The current number of rows in the feature group.
                 format: int32
                 type: integer
+              syncSchedule:
+                description: Set the sync schedule between offline store and online
+                  store.
+                properties:
+                  completionTime:
+                    description: The time at which the run concluded
+                    format: date-time
+                    type: string
+                  duration:
+                    description: The duration of the run in seconds
+                    format: int32
+                    type: integer
+                  failureMessage:
+                    description: In the case of failure, the resource controller which
+                      created the run will set this field with a failure message
+                    type: string
+                  failureReason:
+                    description: In the case of failure, the resource controller which
+                      created the run will set this field with a failure reason
+                    type: string
+                  lastRun:
+                    description: Indicates if the schedule is enabled and the Jobs
+                      associated it will be created at the specified time
+                    format: date-time
+                    type: string
+                  nextRun:
+                    description: The time of the day when the schedule will be executed
+                    format: date-time
+                    type: string
+                type: object
             type: object
         required:
         - metadata
@@ -916,9 +989,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []

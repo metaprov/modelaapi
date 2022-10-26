@@ -263,15 +263,15 @@ type ModelClassStatus struct {
 	LastOnlineTablesGenerated *metav1.Time `json:"lastOnlineTablesGenerated,omitempty" protobuf:"bytes,12,opt,name=lastOnlineTablesGenerated"`
 	// the last time that we sync to the online store
 	//+kubebuilder:validation:Optional
-	LastSync *metav1.Time `json:"lastSync,omitempty" protobuf:"bytes,12,opt,name=lastSync"`
+	LastSync *metav1.Time `json:"lastSync,omitempty" protobuf:"bytes,13,opt,name=lastSync"`
 	// The last time that we generated a training dataset
 	//+kubebuilder:validation:Optional
-	LastTrainingDatasetGenerated *metav1.Time `json:"lastTrainingDatasetGenerated,omitempty" protobuf:"bytes,13,opt,name=lastTrainingDatasetGenerated"`
+	LastTrainingDatasetGenerated *metav1.Time `json:"lastTrainingDatasetGenerated,omitempty" protobuf:"bytes,14,opt,name=lastTrainingDatasetGenerated"`
 	// The last time that we trained a new model
 	//+kubebuilder:validation:Optional
-	LastTrained *metav1.Time `json:"lastTrained,omitempty" protobuf:"bytes,14,opt,name=lastTrained"`
+	LastTrained *metav1.Time `json:"lastTrained,omitempty" protobuf:"bytes,15,opt,name=lastTrained"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,15,rep,name=conditions"`
+	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,16,rep,name=conditions"`
 }

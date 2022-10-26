@@ -1858,6 +1858,11 @@ export class PredictorStatus extends jspb.Message {
   hasPredictionschedule(): boolean;
   clearPredictionschedule(): PredictorStatus;
 
+  getLastprediction(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastprediction(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorStatus;
+  hasLastprediction(): boolean;
+  clearLastprediction(): PredictorStatus;
+
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
   clearConditionsList(): PredictorStatus;
@@ -1887,6 +1892,7 @@ export namespace PredictorStatus {
     lastpredictiondataset?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingtestsresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     predictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
+    lastprediction?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }

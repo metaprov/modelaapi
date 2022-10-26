@@ -83,7 +83,7 @@ ifeq (, $(shell which controller-gen))
 	CONTROLLER_GEN_TMP_DIR=$$(mktemp -d) ;\
 	cd $$CONTROLLER_GEN_TMP_DIR ;\
 	go mod init tmp ;\
-	go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.8.0 ;\
+	go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.10.0 ;\
 	rm -rf $$CONTROLLER_GEN_TMP_DIR ;\
 	}
 CONTROLLER_GEN=$(GOBIN)/controller-gen
@@ -106,7 +106,7 @@ install-gen:
 	go install k8s.io/code-generator/cmd/import-boss     
 	go install k8s.io/code-generator/cmd/lister-gen    
 	go install k8s.io/code-generator/cmd/register-gen
-	GO111MODULE=on go install sigs.k8s.io/controller-tools/cmd/controller-gen@v0.8.0 
+	GO111MODULE=on go install sigs.k8s.io/controller-tools/cmd/controller-gen@v0.10.0
 	
 
 .PHONY: generate
@@ -132,9 +132,9 @@ update-licenses:
 
 .PHONY: install-protoc
 install-protoc:	 
-	 wget https://github.com/protocolbuffers/protobuf/releases/download/v3.19.1/protoc-3.19.1-linux-x86_64.zip 
-	 mv protoc-3.19.1-linux-x86_64.zip /tmp/protoc-3.19.1-linux-x86_64.zip
-	 unzip /tmp/protoc-3.19.1-linux-x86_64.zip -d $HOME/.local
+	 wget https://github.com/protocolbuffers/protobuf/releases/download/v3.20.3/protoc-3.20.3-linux-x86_64.zip
+	 mv protoc-3.20.3-linux-x86_64.zip /tmp/protoc-3.20.3-linux-x86_64.zip
+	 unzip /tmp/protoc-3.20.3-linux-x86_64.zip -d $HOME/.local
 	 export PATH=$PATH:$HOME/.local/bin
 
 

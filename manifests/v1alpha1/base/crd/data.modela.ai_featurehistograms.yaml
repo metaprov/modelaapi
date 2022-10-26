@@ -3,7 +3,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.8.0
+    controller-gen.kubebuilder.io/version: v0.10.0
   creationTimestamp: null
   name: featurehistograms.data.modela.ai
 spec:
@@ -101,6 +101,7 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
+                x-kubernetes-map-type: atomic
               columns:
                 description: The list of columns to generate the histograms.
                 items:
@@ -189,6 +190,7 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
+                x-kubernetes-map-type: atomic
               start:
                 description: The start time of this feature histogram. For training
                   dataset histogram this is set to the creation time of the dataset
@@ -268,6 +270,7 @@ spec:
                               description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                               type: string
                           type: object
+                          x-kubernetes-map-type: atomic
                         enabled:
                           description: If false, this test case is disabled
                           type: boolean
@@ -309,6 +312,7 @@ spec:
                               description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                               type: string
                           type: object
+                          x-kubernetes-map-type: atomic
                         entityRef2:
                           description: Reference to an entity.
                           properties:
@@ -347,6 +351,7 @@ spec:
                               description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                               type: string
                           type: object
+                          x-kubernetes-map-type: atomic
                         expectedCategory:
                           description: The expected value
                           type: string
@@ -535,6 +540,7 @@ spec:
                                 description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                 type: string
                             type: object
+                            x-kubernetes-map-type: atomic
                           metric:
                             description: The metric type name (e.g. F1 / Accuracy)
                             type: string
@@ -688,6 +694,7 @@ spec:
                         description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                         type: string
                     type: object
+                    x-kubernetes-map-type: atomic
                   errors:
                     description: Total number of assertion errors.
                     format: int32
@@ -797,6 +804,7 @@ spec:
                                   description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                                   type: string
                               type: object
+                              x-kubernetes-map-type: atomic
                             metric:
                               description: The metric type name (e.g. F1 / Accuracy)
                               type: string
@@ -849,9 +857,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []

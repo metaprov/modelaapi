@@ -1768,6 +1768,20 @@ export class RunScheduleStatus extends jspb.Message {
   hasNextrun(): boolean;
   clearNextrun(): RunScheduleStatus;
 
+  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunScheduleStatus;
+  hasCompletiontime(): boolean;
+  clearCompletiontime(): RunScheduleStatus;
+
+  getDuration(): number;
+  setDuration(value: number): RunScheduleStatus;
+
+  getFailurereason(): string;
+  setFailurereason(value: string): RunScheduleStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): RunScheduleStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunScheduleStatus.AsObject;
   static toObject(includeInstance: boolean, msg: RunScheduleStatus): RunScheduleStatus.AsObject;
@@ -1780,6 +1794,10 @@ export namespace RunScheduleStatus {
   export type AsObject = {
     lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    duration: number,
+    failurereason: string,
+    failuremessage: string,
   }
 }
 
