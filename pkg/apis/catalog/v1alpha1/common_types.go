@@ -105,6 +105,8 @@ const (
 	GroupUnitTestDatasetTask TaskName = "group-unittest-dataset"
 	GroupStudySplitTask      TaskName = "group-study-split"
 	GroupForecastTask        TaskName = "group-forecast-task"
+	GenerateOnlineTableTask  TaskName = "gen-online-table"
+	SyncOnlineTableTask      TaskName = "sync-online-table"
 )
 
 // ApiKeyName is the secret or in env variable

@@ -8,9 +8,9 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
+	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -237,4 +237,29 @@ func (fg *FeatureGroup) MarkArchived() {
 
 func (fg *FeatureGroup) Archived() bool {
 	return fg.GetCond(FeatureGroupSaved).Status == v1.ConditionTrue
+}
+
+func (fh *FeatureGroup) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+	level := infra.Error
+	subject := fmt.Sprintf("FeatureGroup %s failed with error %v", fh.Name, err.Error())
+	return &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: fh.Name,
+			Namespace:    fh.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject:      util.StrPtr(subject),
+			Message:      util.StrPtr(err.Error()),
+			Level:        &level,
+			TenantRef:    tenantRef,
+			NotifierName: notifierName,
+			EntityRef: v1.ObjectReference{
+				Kind:      "FeatureGroup",
+				Name:      fh.Name,
+				Namespace: fh.Namespace,
+			},
+			Owner:  fh.Spec.Owner,
+			Fields: map[string]string{},
+		},
+	}
 }
