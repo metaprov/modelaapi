@@ -12,14 +12,17 @@ import (
 type ModelClassPhase string
 
 const (
-	ModelClassPhaseFailed                   ModelClassPhase = "Failed"
-	ModelClassPhasePending                  ModelClassPhase = "Pending"
-	ModelClassPhasePreparingTrainingDataset ModelClassPhase = "PreparingTrainingDataset"
-	ModelClassPhaseTraining                 ModelClassPhase = "Training"
-	ModelClassPhaseTrained                  ModelClassPhase = "Trained"
-	ModelClassPhaseDeploying                ModelClassPhase = "Deploying"
-	ModelClassPhaseDeployed                 ModelClassPhase = "Deployed"
-	ModelClassPhaseDrifted                  ModelClassPhase = "Drifted"
+	ModelClassPhaseFailed                         ModelClassPhase = "Failed"
+	ModelClassPhasePending                        ModelClassPhase = "Pending"
+	ModelClassPhasePreparingTrainingDataset       ModelClassPhase = "PreparingTrainingDataset"
+	ModelClassPhasePreparingTrainingDatasetFailed ModelClassPhase = "FailedToPrepareTrainingDataset"
+	ModelClassPhaseTraining                       ModelClassPhase = "Training"
+	ModelClassPhaseTrainingFailed                 ModelClassPhase = "FailedToTraining"
+	ModelClassPhaseTrained                        ModelClassPhase = "Trained"
+	ModelClassPhaseDeploying                      ModelClassPhase = "Deploying"
+	ModelClassPhaseFailedToDeploy                 ModelClassPhase = "FailedToDeploy"
+	ModelClassPhaseDeployed                       ModelClassPhase = "Deployed"
+	ModelClassPhaseDrifted                        ModelClassPhase = "Drifted"
 )
 
 // ModelClassConditionType is the condition of a ModelClass

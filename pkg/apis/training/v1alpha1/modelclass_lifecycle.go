@@ -127,6 +127,36 @@ func (mclass *ModelClass) IsFailed() bool {
 ///////////////////////////////////////////////
 // Training
 //////////////////////////////////////////////
+func (mclass *ModelClass) MarkCreatingTrainingSet() {
+	mclass.Status.Phase = ModelClassPhaseTraining
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassTrained,
+		Status: v1.ConditionFalse,
+		Reason: ReasonTraining,
+	})
+}
+
+func (mclass *ModelClass) MarkCreatedTrainingSet() {
+	mclass.Status.Phase = ModelClassPhaseTrained
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassTrained,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (mclass *ModelClass) MarkCreatingTrainingSetFailed(err string) {
+	mclass.Status.Phase = ModelClassPhaseTrainingFailed
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:    ModelClassTrained,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonTraining,
+		Message: err,
+	})
+}
+
+///////////////////////////////////////////////
+// Training
+//////////////////////////////////////////////
 func (mclass *ModelClass) MarkTraining() {
 	mclass.Status.Phase = ModelClassPhaseTraining
 	mclass.CreateOrUpdateCond(ModelClassCondition{
@@ -141,6 +171,16 @@ func (mclass *ModelClass) MarkTrained() {
 	mclass.CreateOrUpdateCond(ModelClassCondition{
 		Type:   ModelClassTrained,
 		Status: v1.ConditionTrue,
+	})
+}
+
+func (mclass *ModelClass) MarkTrainingFailed(err string) {
+	mclass.Status.Phase = ModelClassPhaseTrainingFailed
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:    ModelClassTrained,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonTraining,
+		Message: err,
 	})
 }
 
@@ -161,6 +201,16 @@ func (mclass *ModelClass) MarkDeployed() {
 	mclass.CreateOrUpdateCond(ModelClassCondition{
 		Type:   ModelClassDeployed,
 		Status: v1.ConditionTrue,
+	})
+}
+
+func (mclass *ModelClass) MarkDeploymentFailed(err string) {
+	mclass.Status.Phase = ModelClassPhaseFailedToDeploy
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:    ModelClassDeployed,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
 	})
 }
 
