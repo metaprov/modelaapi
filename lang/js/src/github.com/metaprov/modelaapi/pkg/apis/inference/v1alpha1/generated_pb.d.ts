@@ -1853,6 +1853,11 @@ export class PredictorStatus extends jspb.Message {
   hasServingtestsresults(): boolean;
   clearServingtestsresults(): PredictorStatus;
 
+  getPredictionschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
+  setPredictionschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): PredictorStatus;
+  hasPredictionschedule(): boolean;
+  clearPredictionschedule(): PredictorStatus;
+
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
   clearConditionsList(): PredictorStatus;
@@ -1881,6 +1886,7 @@ export namespace PredictorStatus {
     loadbalancerstatus?: k8s_io_api_core_v1_generated_pb.LoadBalancerStatus.AsObject,
     lastpredictiondataset?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingtestsresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    predictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }

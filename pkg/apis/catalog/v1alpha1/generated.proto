@@ -1037,6 +1037,17 @@ message RunSchedule {
   optional string type = 5;
 }
 
+message RunScheduleStatus {
+  // Indicates if the schedule is enabled and the Jobs associated it will be created at the specified time
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+
+  // The time of the day when the schedule will be executed
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 2;
+}
+
 // Stakeholder specifies the User Role Classes of an individual Account
 message Stakeholder {
   // The name of an Account

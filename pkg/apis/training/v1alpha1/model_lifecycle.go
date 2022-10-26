@@ -348,6 +348,8 @@ const (
 	ReasonReleasing          = "Releasing"
 	ReasonPredicting         = "Predicting"
 	ReasonTraining           = "Training"
+	ReasonSyncing            = "Syncing"
+	ReasonDeploying          = "Deploying"
 	ReasonBaselining         = "Baselining"
 	ReasonFeatureEngineering = "FeatureEngineering"
 	ReasonCreateEnsemble     = "CreateEnsemble"

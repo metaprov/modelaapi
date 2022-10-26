@@ -3690,6 +3690,20 @@ spec:
                     format: date-time
                     type: string
                 type: object
+              predictionSchedule:
+                description: The status for the batch prediction.
+                properties:
+                  lastRun:
+                    default: false
+                    description: Indicates if the schedule is enabled and the Jobs
+                      associated it will be created at the specified time
+                    format: date-time
+                    type: string
+                  nextRun:
+                    description: The time of the day when the schedule will be executed
+                    format: date-time
+                    type: string
+                type: object
               predictorletStatus:
                 description: The status of the Predictorlet associated with the Predictor.
                   The Predictorlet is a service which handles prediction traffic and

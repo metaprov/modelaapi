@@ -123,3 +123,74 @@ func (mclass *ModelClass) IsFailed() bool {
 	cond := mclass.GetCond(ModelClassReady)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(ModelClassReady)
 }
+
+///////////////////////////////////////////////
+// Training
+//////////////////////////////////////////////
+func (mclass *ModelClass) MarkTraining() {
+	mclass.Status.Phase = ModelClassPhaseTraining
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassTrained,
+		Status: v1.ConditionFalse,
+		Reason: ReasonTraining,
+	})
+}
+
+func (mclass *ModelClass) MarkTrained() {
+	mclass.Status.Phase = ModelClassPhaseTrained
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassTrained,
+		Status: v1.ConditionTrue,
+	})
+}
+
+///////////////////////////////////////////////
+// Sync
+//////////////////////////////////////////////
+func (mclass *ModelClass) MarkSynching() {
+	mclass.Status.Phase = ModelClassPhaseSyncing
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassSynced,
+		Status: v1.ConditionFalse,
+		Reason: ReasonSyncing,
+	})
+}
+
+func (mclass *ModelClass) MarkSynced() {
+	mclass.Status.Phase = ModelClassPhaseSynced
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassSynced,
+		Status: v1.ConditionTrue,
+	})
+}
+
+///////////////////////////////////////////////
+// Deploying
+//////////////////////////////////////////////
+func (mclass *ModelClass) MarkDeploying() {
+	mclass.Status.Phase = ModelClassPhaseDeploying
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassDeployed,
+		Status: v1.ConditionFalse,
+		Reason: ReasonDeploying,
+	})
+}
+
+func (mclass *ModelClass) MarkDeployed() {
+	mclass.Status.Phase = ModelClassPhaseDeployed
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassDeployed,
+		Status: v1.ConditionTrue,
+	})
+}
+
+///////////////////////////////////////////////
+// Drifted
+//////////////////////////////////////////////
+func (mclass *ModelClass) MarkDrifted() {
+	mclass.Status.Phase = ModelClassPhaseDrifted
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassDrifted,
+		Status: v1.ConditionTrue,
+	})
+}

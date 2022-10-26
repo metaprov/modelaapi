@@ -1757,6 +1757,32 @@ export namespace RunSchedule {
   }
 }
 
+export class RunScheduleStatus extends jspb.Message {
+  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunScheduleStatus;
+  hasLastrun(): boolean;
+  clearLastrun(): RunScheduleStatus;
+
+  getNextrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setNextrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunScheduleStatus;
+  hasNextrun(): boolean;
+  clearNextrun(): RunScheduleStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RunScheduleStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: RunScheduleStatus): RunScheduleStatus.AsObject;
+  static serializeBinaryToWriter(message: RunScheduleStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunScheduleStatus;
+  static deserializeBinaryFromReader(message: RunScheduleStatus, reader: jspb.BinaryReader): RunScheduleStatus;
+}
+
+export namespace RunScheduleStatus {
+  export type AsObject = {
+    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+  }
+}
+
 export class Stakeholder extends jspb.Message {
   getAccount(): string;
   setAccount(value: string): Stakeholder;

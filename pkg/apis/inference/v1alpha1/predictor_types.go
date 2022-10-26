@@ -409,6 +409,9 @@ type PredictorStatus struct {
 	// The results of running the serving tests
 	//+kubebuilder:validation:Optional
 	ServingTestResult catalog.TestSuiteResult `json:"servingTestResult,omitempty" protobuf:"bytes,14,opt,name=servingTestsResults"`
+	// The status for the batch prediction.
+	//+kubebuilder:validation:Optional
+	PredictionSchedule catalog.RunScheduleStatus `json:"predictionSchedule,omitempty" protobuf:"bytes,15,opt,name=predictionSchedule"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

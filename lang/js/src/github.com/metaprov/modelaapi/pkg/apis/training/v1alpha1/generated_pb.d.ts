@@ -2074,6 +2074,11 @@ export class ModelClassDataSpec extends jspb.Message {
   getTarget(): string;
   setTarget(value: string): ModelClassDataSpec;
 
+  getSyncschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSyncschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassDataSpec;
+  hasSyncschedule(): boolean;
+  clearSyncschedule(): ModelClassDataSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassDataSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassDataSpec): ModelClassDataSpec.AsObject;
@@ -2087,6 +2092,7 @@ export namespace ModelClassDataSpec {
     entitiesList: Array<EntityRef.AsObject>,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     target: string,
+    syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
 
@@ -2305,6 +2311,9 @@ export namespace ModelClassStageSpec {
 }
 
 export class ModelClassStatus extends jspb.Message {
+  getPhase(): string;
+  setPhase(value: string): ModelClassStatus;
+
   getModels(): number;
   setModels(value: number): ModelClassStatus;
 
@@ -2335,6 +2344,16 @@ export class ModelClassStatus extends jspb.Message {
   hasLastonlinetrainingset(): boolean;
   clearLastonlinetrainingset(): ModelClassStatus;
 
+  getTrainingschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
+  setTrainingschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): ModelClassStatus;
+  hasTrainingschedule(): boolean;
+  clearTrainingschedule(): ModelClassStatus;
+
+  getSyncschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
+  setSyncschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): ModelClassStatus;
+  hasSyncschedule(): boolean;
+  clearSyncschedule(): ModelClassStatus;
+
   getConditionsList(): Array<ModelClassCondition>;
   setConditionsList(value: Array<ModelClassCondition>): ModelClassStatus;
   clearConditionsList(): ModelClassStatus;
@@ -2350,6 +2369,7 @@ export class ModelClassStatus extends jspb.Message {
 
 export namespace ModelClassStatus {
   export type AsObject = {
+    phase: string,
     models: number,
     observedgeneration: number,
     lastmodelid: number,
@@ -2358,6 +2378,8 @@ export namespace ModelClassStatus {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
     lastonlinetrainingset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    trainingschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
+    syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     conditionsList: Array<ModelClassCondition.AsObject>,
   }
 }
