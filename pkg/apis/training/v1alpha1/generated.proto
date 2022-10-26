@@ -1609,10 +1609,14 @@ message ModelClassStatus {
   // +kubebuilder:validation:Optional
   optional FeatureEngineeringSpec bestFE = 33;
 
+  // Store the location of the last online dataset
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation lastOnlineTrainingSet = 34;
+
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelClassCondition conditions = 36;
+  repeated ModelClassCondition conditions = 35;
 }
 
 // Specification for model training.

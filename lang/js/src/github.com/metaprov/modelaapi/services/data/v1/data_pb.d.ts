@@ -3188,8 +3188,10 @@ export class SyncOnlineStoreRequest extends jspb.Message {
   hasModel(): boolean;
   clearModel(): SyncOnlineStoreRequest;
 
-  getPath(): string;
-  setPath(value: string): SyncOnlineStoreRequest;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): SyncOnlineStoreRequest;
+  hasLocation(): boolean;
+  clearLocation(): SyncOnlineStoreRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SyncOnlineStoreRequest.AsObject;
@@ -3209,7 +3211,7 @@ export namespace SyncOnlineStoreRequest {
     dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     dbsecretMap: Array<[string, Uint8Array | string]>,
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
-    path: string,
+    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
@@ -3298,8 +3300,10 @@ export namespace GenOnlineStoreDatasetRequest {
 }
 
 export class GenOnlineStoreDatasetResponse extends jspb.Message {
-  getPath(): string;
-  setPath(value: string): GenOnlineStoreDatasetResponse;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): GenOnlineStoreDatasetResponse;
+  hasLocation(): boolean;
+  clearLocation(): GenOnlineStoreDatasetResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GenOnlineStoreDatasetResponse.AsObject;
@@ -3311,7 +3315,7 @@ export class GenOnlineStoreDatasetResponse extends jspb.Message {
 
 export namespace GenOnlineStoreDatasetResponse {
   export type AsObject = {
-    path: string,
+    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 

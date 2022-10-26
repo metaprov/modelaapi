@@ -698,7 +698,7 @@ message SyncOnlineStoreRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 6;
     map<string,bytes>                                                           dbSecret       = 7;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         model          = 8;
-    string path                     = 9;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation   location   = 9;
 }
 
 message SyncOnlineStoreResponse {
@@ -719,7 +719,7 @@ message GenOnlineStoreDatasetRequest {
 }
 
 message GenOnlineStoreDatasetResponse {
-    string path = 1; // location of the online store.
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation   location   = 1;
 }
 
 

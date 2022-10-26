@@ -2330,6 +2330,11 @@ export class ModelClassStatus extends jspb.Message {
   hasBestfe(): boolean;
   clearBestfe(): ModelClassStatus;
 
+  getLastonlinetrainingset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLastonlinetrainingset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassStatus;
+  hasLastonlinetrainingset(): boolean;
+  clearLastonlinetrainingset(): ModelClassStatus;
+
   getConditionsList(): Array<ModelClassCondition>;
   setConditionsList(value: Array<ModelClassCondition>): ModelClassStatus;
   clearConditionsList(): ModelClassStatus;
@@ -2352,6 +2357,7 @@ export namespace ModelClassStatus {
     failuremessage: string,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
+    lastonlinetrainingset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     conditionsList: Array<ModelClassCondition.AsObject>,
   }
 }

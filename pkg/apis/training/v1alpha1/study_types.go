@@ -850,10 +850,13 @@ type ModelClassStatus struct {
 	// BestFE specifies the best feature engineering pipeline produced by the ModelClass
 	//+kubebuilder:validation:Optional
 	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,33,opt,name=bestFE"`
+	// Store the location of the last online dataset
+	//+kubebuilder:validation:Optional
+	LastOnlineTrainingSet data.DataLocation `json:"lastOnlineTrainingSet,omitempty" protobuf:"bytes,34,opt,name=lastOnlineTrainingSet"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,36,rep,name=conditions"`
+	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,35,rep,name=conditions"`
 }
 
 type Level struct {

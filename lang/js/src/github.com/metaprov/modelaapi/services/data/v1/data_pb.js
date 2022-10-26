@@ -26849,7 +26849,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.toOb
     dbconnection: (f = msg.getDbconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     dbsecretMap: (f = msg.getDbsecretMap()) ? f.toObject(includeInstance, undefined) : [],
     model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.toObject(includeInstance, f),
-    path: jspb.Message.getFieldWithDefault(msg, 9, "")
+    location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -26929,8 +26929,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.dese
       msg.setModel(value);
       break;
     case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPath(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
+      msg.setLocation(value);
       break;
     default:
       reader.skipField();
@@ -27017,11 +27018,12 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.seri
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.serializeBinaryToWriter
     );
   }
-  f = message.getPath();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getLocation();
+  if (f != null) {
+    writer.writeMessage(
       9,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
 };
@@ -27294,20 +27296,39 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prot
 
 
 /**
- * optional string path = 9;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getPath = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getLocation = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 9));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.setLocation = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.setPath = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.clearLocation = function() {
+  return this.setLocation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.hasLocation = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -28029,7 +28050,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRespon
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    path: jspb.Message.getFieldWithDefault(msg, 1, "")
+    location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -28067,8 +28088,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRespon
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPath(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
+      msg.setLocation(value);
       break;
     default:
       reader.skipField();
@@ -28099,31 +28121,51 @@ proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRespon
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPath();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getLocation();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string path = 1;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetResponse.prototype.getPath = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetResponse.prototype.getLocation = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetResponse.prototype.setLocation = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetResponse.prototype.setPath = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetResponse.prototype.clearLocation = function() {
+  return this.setLocation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetResponse.prototype.hasLocation = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
