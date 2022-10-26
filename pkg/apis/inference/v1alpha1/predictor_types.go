@@ -412,10 +412,13 @@ type PredictorStatus struct {
 	// The status for the batch prediction.
 	//+kubebuilder:validation:Optional
 	PredictionSchedule catalog.RunScheduleStatus `json:"predictionSchedule,omitempty" protobuf:"bytes,15,opt,name=predictionSchedule"`
+	// The last time we performed prediction
+	//+kubebuilder:validation:Optional
+	LastPrediction *metav1.Time `json:"lastPrediction,omitempty" protobuf:"bytes,16,opt,name=lastPrediction"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,16,rep,name=conditions"`
+	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,17,rep,name=conditions"`
 }
 
 // ModelRecord hold the state of a model that was in production

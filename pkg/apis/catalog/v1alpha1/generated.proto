@@ -9,6 +9,7 @@ syntax = "proto2";
 
 package github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1;
 
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
 import "k8s.io/api/core/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/api/resource/generated.proto";
 import "k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto";
@@ -16,6 +17,15 @@ import "k8s.io/apimachinery/pkg/runtime/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 
 // Package-wide variables from generator "generated".
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_stringer_all) = false;
+option (gogoproto.stringer_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.goproto_unrecognized_all) = false;
+option (gogoproto.goproto_enum_prefix_all) = false;
+option (gogoproto.goproto_getters_all) = false;
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1";
 
 message AccessSpec {
@@ -26,14 +36,14 @@ message AccessSpec {
   // +kubebuilder:validation:Maximum=65535
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=8080
-  optional int32 port = 1;
+  optional int32 port = 1 [(gogoproto.customname) = "Port"];
 
   // The port number that will be exposed on the external address of every node on the cluster, in the case of the
   // Predictor's access type being NodePort. Traffic from the port will be forwarded to the Predictor's backend service
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=65535
   // +kubebuilder:validation:Optional
-  optional int32 nodePort = 2;
+  optional int32 nodePort = 2 [(gogoproto.customname) = "NodePort"];
 
   // The auto-generated DNS path where the Predictor service can be accessed. If the access type is ClusterIP, it will
   // be a cluster-internal DNS name (i.e. predictor.default-serving-site.svc.cluster.local). In the case of the Ingress
@@ -41,29 +51,29 @@ message AccessSpec {
   // +kubebuilder:validation:MaxLength=256
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
-  optional string path = 3;
+  optional string path = 3 [(gogoproto.customname) = "Path"];
 
   // The Kubernetes-native access method which specifies how the Kubernetes Service created by the Predictor will be exposed.
   // See https://modela.ai/docs/docs/serving/production/#access-method for a detailed description of each access type
   // (defaults to cluster-ip)
   // +kubebuilder:default:="cluster-ip"
   // +kubebuilder:validation:Optional
-  optional string accessType = 4;
+  optional string accessType = 4 [(gogoproto.casttype) = "AccessType", (gogoproto.customname) = "AccessType"];
 
   // Indicates if the prediction service should expose an additional port to serve the GRPCInferenceService API through REST.
   // The port one digit above the number specified by the Port field will be exposed to accept HTTP/1.1 traffic
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool rest = 5;
+  optional bool rest = 5 [(gogoproto.customname) = "REST"];
 
   // Indicates
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional string authMethod = 6;
+  optional string authMethod = 6 [(gogoproto.casttype) = "AuthMethod", (gogoproto.customname) = "AuthMethod"];
 
   // ApiKeySecretRef references a Kubernetes Secret containing an API key that must be passed in prediction requests to the Predictor
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.SecretReference apikeySecretRef = 7;
+  optional k8s.io.api.core.v1.SecretReference apikeySecretRef = 7 [(gogoproto.customname) = "ApiKeySecretRef"];
 }
 
 // Algorithm define the metadata about a machine learning algorithm.
@@ -75,17 +85,17 @@ message AccessSpec {
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",description="ML task name"
 // +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
 message Algorithm {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional AlgorithmSpec spec = 2;
+  optional AlgorithmSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // AlgorithmList contains a list of Algorithm
 message AlgorithmList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated Algorithm items = 2;
+  repeated Algorithm items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // AlgorithmSpec describes the attributes of an machine learning algorithm
@@ -93,52 +103,52 @@ message AlgorithmSpec {
   // FrameworkName is a reference to library
   // +kubebuilder:validation:Required
   // +required
-  optional string frameworkName = 1;
+  optional string frameworkName = 1 [(gogoproto.customname) = "FrameworkName", (gogoproto.nullable) = false];
 
   // Description is the description of the algorithm
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 2;
+  optional string description = 2 [(gogoproto.customname) = "Description"];
 
   // URL is a url to the html page describing the algorithm
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string url = 3;
+  optional string url = 3 [(gogoproto.customname) = "URL"];
 
   // Task is the machine learning task (binary classification / regression)
   // +kubebuilder:validation:Optional
-  optional string task = 4;
+  optional string task = 4 [(gogoproto.casttype) = "MLTask", (gogoproto.customname) = "Task", (gogoproto.nullable) = false];
 
   // Sparse indicate if this algorithm can deal with sparse data
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool sparse = 5;
+  optional bool sparse = 5 [(gogoproto.customname) = "Sparse"];
 
   // IntegerParameters is the list of integer hyper parameter ranges.
   // +kubebuilder:validation:Optional
-  repeated IntParameter integerParameters = 6;
+  repeated IntParameter integerParameters = 6 [(gogoproto.customname) = "IntegerParameters", (gogoproto.nullable) = false];
 
   // FloatParameters is the list of float hyper parameters ranges
   // +kubebuilder:validation:Optional
-  repeated FloatParameter floatParameters = 7;
+  repeated FloatParameter floatParameters = 7 [(gogoproto.customname) = "FloatParameters", (gogoproto.nullable) = false];
 
   // CategoricalParameters is the list of categorical hyper parameters ranges
   // +kubebuilder:validation:Optional
-  repeated CategoricalParameter categoricalParameters = 8;
+  repeated CategoricalParameter categoricalParameters = 8 [(gogoproto.customname) = "CategoricalParameters", (gogoproto.nullable) = false];
 }
 
 // CategoricalParameter contain the specification of an categorical hyper parameter
 message CategoricalParameter {
   // Name is the name of the hyper parameter
   // +kubebuilder:validation:Optional
-  optional string name = 1;
+  optional string name = 1 [(gogoproto.customname) = "Name", (gogoproto.nullable) = false];
 
   // DefaultValue if the default categorical value
-  optional string defaultValue = 2;
+  optional string defaultValue = 2 [(gogoproto.customname) = "DefaultValue", (gogoproto.nullable) = false];
 
   // Enums defines the list of values
   // +kubebuilder:validation:Optional
-  repeated string enums = 3;
+  repeated string enums = 3 [(gogoproto.customname) = "Enums"];
 }
 
 // Cloud represent a cloud provider metadata. A cloud contains regions,datacenter,machine classes
@@ -146,56 +156,56 @@ message CategoricalParameter {
 // +kubebuilder:storageversion
 // +kubebuilder:resource:path=clouds,singular=cloud,categories={catalog,modela,all}
 message Cloud {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional CloudSpec spec = 2;
+  optional CloudSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
   // +optional
-  optional CloudStatus status = 3;
+  optional CloudStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // CloudList contains a list of Cloud
 message CloudList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated Cloud items = 2;
+  repeated Cloud items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // CloudSpec define the attribute of a single cloud provider (E.g. AWS)
 message CloudSpec {
   // DefaultRegionName is the default region.
   // +kubebuilder:validation:Optional
-  optional string defaultRegionName = 1;
+  optional string defaultRegionName = 1 [(gogoproto.customname) = "DefaultRegionName", (gogoproto.nullable) = false];
 
   // DefaultMachineClassName is the default machine class. Used when allocating new machine on this provider
   // +kubebuilder:validation:Optional
-  optional string defaultMachineClassName = 2;
+  optional string defaultMachineClassName = 2 [(gogoproto.customname) = "DefaultMachineClassName", (gogoproto.nullable) = false];
 
   // DefaultGpuClassName is the default gpu class. Used when allocating new gpu on this provider
   // +kubebuilder:validation:Optional
-  optional string defaultGpuClassName = 3;
+  optional string defaultGpuClassName = 3 [(gogoproto.customname) = "DefaultGpuClassName", (gogoproto.nullable) = false];
 
   // MachineClasses defines the types of machines in this provider
   // +kubebuilder:validation:Optional
-  repeated MachineClass machineClasses = 4;
+  repeated MachineClass machineClasses = 4 [(gogoproto.customname) = "MachineClasses", (gogoproto.nullable) = false];
 
   // GPUClasses define the type of GPUs offered by this provider
   // +kubebuilder:validation:Optional
-  repeated GpuClass gpuClasses = 5;
+  repeated GpuClass gpuClasses = 5 [(gogoproto.customname) = "GpuClasses", (gogoproto.nullable) = false];
 
   // Regions define the type of regions offered by this provider
   // +kubebuilder:validation:Optional
-  repeated Region regions = 6;
+  repeated Region regions = 6 [(gogoproto.customname) = "Regions", (gogoproto.nullable) = false];
 }
 
 // CloudStatus defines the observed state of Cloud.
 message CloudStatus {
   // Machine cost is the costs of
-  repeated MachineClassCost machineCosts = 1;
+  repeated MachineClassCost machineCosts = 1 [(gogoproto.customname) = "MachineCosts", (gogoproto.nullable) = false];
 
   // CostSpot is the spot cost of the machine class
-  repeated GpuClassCost gpuCosts = 2;
+  repeated GpuClassCost gpuCosts = 2 [(gogoproto.customname) = "GpuCosts", (gogoproto.nullable) = false];
 }
 
 // Compiler spec is used when there is a specification for model compilation
@@ -203,342 +213,342 @@ message CompilerSpec {
   // Enable set the enable to
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enable = 1;
+  optional bool enable = 1 [(gogoproto.customname) = "Enable"];
 
   // Set one or more targets
   // Enable set the enable to
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
-  optional string compiler = 2;
+  optional string compiler = 2 [(gogoproto.casttype) = "CompilerName", (gogoproto.customname) = "Compiler"];
 
   // Set one or more targets for the compiler
-  repeated string targets = 3;
+  repeated string targets = 3 [(gogoproto.casttype) = "HardwareTarget", (gogoproto.customname) = "Targets"];
 }
 
 message ConfusionMatrix {
-  repeated ConfusionMatrixRow rows = 1;
+  repeated ConfusionMatrixRow rows = 1 [(gogoproto.customname) = "Rows", (gogoproto.nullable) = false];
 }
 
 message ConfusionMatrixRow {
-  optional string t = 1;
+  optional string t = 1 [(gogoproto.customname) = "T", (gogoproto.nullable) = false];
 
   // True Label
-  optional string p = 2;
+  optional string p = 2 [(gogoproto.customname) = "P", (gogoproto.nullable) = false];
 
   // Predicated Label
-  optional int32 count = 3;
+  optional int32 count = 3 [(gogoproto.customname) = "Count", (gogoproto.nullable) = false];
 
-  optional double pct = 4;
+  optional double pct = 4 [(gogoproto.customname) = "Pct", (gogoproto.nullable) = false];
 }
 
 // ContainerLog describes the location of logs for a single Job
 message ContainerLog {
   // The name of the Job
-  optional string job = 1;
+  optional string job = 1 [(gogoproto.customname) = "Job", (gogoproto.nullable) = false];
 
   // The container name
-  optional string container = 2;
+  optional string container = 2 [(gogoproto.customname) = "Container", (gogoproto.nullable) = false];
 
   // The path to the log in the bucket
-  optional string key = 3;
+  optional string key = 3 [(gogoproto.customname) = "Key", (gogoproto.nullable) = false];
 }
 
 message CurvePoint {
-  optional double x = 1;
+  optional double x = 1 [(gogoproto.customname) = "X", (gogoproto.nullable) = false];
 
-  optional double y = 2;
+  optional double y = 2 [(gogoproto.customname) = "Y", (gogoproto.nullable) = false];
 }
 
 // Datacenter contains the attribute of a specific data center
 message DataCenter {
   // Name is the name of the datacenter
-  optional string name = 1;
+  optional string name = 1 [(gogoproto.customname) = "Name", (gogoproto.nullable) = false];
 
   // Code is the code of the datacenter
-  optional string code = 2;
+  optional string code = 2 [(gogoproto.customname) = "Code", (gogoproto.nullable) = false];
 }
 
 message DataTestCase {
   // If false, this test case is disabled
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
+  optional bool enabled = 1 [(gogoproto.customname) = "Enabled"];
 
   // The name of the test case, will be generate if empty by the combination of assertion, entity ref, column name and metric
-  optional string name = 2;
+  optional string name = 2 [(gogoproto.customname) = "Name", (gogoproto.nullable) = false];
 
   // The assertion type
-  optional string assertThat = 3;
+  optional string assertThat = 3 [(gogoproto.casttype) = "AssertionType", (gogoproto.customname) = "AssertThat", (gogoproto.nullable) = false];
 
   // Reference to an entity.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 4;
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 4 [(gogoproto.customname) = "EntityRef", (gogoproto.nullable) = false];
 
   // Reference to another entity which is a ref.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference compareToRef = 5;
+  optional k8s.io.api.core.v1.ObjectReference compareToRef = 5 [(gogoproto.customname) = "CompareToRef", (gogoproto.nullable) = false];
 
   // If unit test is column test, this is the name of the column
   // +kubebuilder:validation:Optional
-  optional string column = 6;
+  optional string column = 6 [(gogoproto.customname) = "Column"];
 
   // The test type
   // The type of the data test
-  optional string type = 7;
+  optional string type = 7 [(gogoproto.casttype) = "DataTestType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // The metric that is used for the test
   // +kubebuilder:validation:Optional
-  optional string metric = 8;
+  optional string metric = 8 [(gogoproto.casttype) = "Metric", (gogoproto.customname) = "Metric", (gogoproto.nullable) = false];
 
   // The expected numerical value
   // +kubebuilder:validation:Optional
-  optional double expectedValue = 9;
+  optional double expectedValue = 9 [(gogoproto.customname) = "ExpectedValue"];
 
   // The expected value
   // +kubebuilder:validation:Optional
-  optional string expectedCategory = 10;
+  optional string expectedCategory = 10 [(gogoproto.customname) = "ExpectedCategory"];
 
   // For range based tests.
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Optional
-  optional double lower = 11;
+  optional double lower = 11 [(gogoproto.customname) = "Lower"];
 
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Optional
-  optional double upper = 12;
+  optional double upper = 12 [(gogoproto.customname) = "Upper"];
 
   // Expected set of values,if the assertion
   // +kubebuilder:validation:Optional
-  repeated string expectedSet = 13;
+  repeated string expectedSet = 13 [(gogoproto.customname) = "ExpectedSet"];
 
   // +kubebuilder:validation:Optional
-  optional bool lowerInclusive = 14;
+  optional bool lowerInclusive = 14 [(gogoproto.customname) = "LowerInclusive"];
 
   // +kubebuilder:validation:Optional
-  optional bool upperInclusive = 15;
+  optional bool upperInclusive = 15 [(gogoproto.customname) = "UpperInclusive"];
 
   // Indicates if this validation rule was automatically generated by the system
   // +kubebuilder:validation:Optional
-  optional bool generated = 16;
+  optional bool generated = 16 [(gogoproto.customname) = "Generated"];
 
   // The test case tags, used for filtering.
   // Optional Test Tags
-  repeated string tags = 17;
+  repeated string tags = 17 [(gogoproto.customname) = "Tags"];
 
   // For test that involve two columns (e.g. correlation)
   // +kubebuilder:validation:Optional
-  optional string column2 = 18;
+  optional string column2 = 18 [(gogoproto.customname) = "Column2"];
 
   // Reference to an entity.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference entityRef2 = 19;
+  optional k8s.io.api.core.v1.ObjectReference entityRef2 = 19 [(gogoproto.customname) = "EntityRef2", (gogoproto.nullable) = false];
 
   // If unit test is column test, this is the name of the column
   // +kubebuilder:validation:Optional
-  repeated string columns = 20;
+  repeated string columns = 20 [(gogoproto.customname) = "Columns"];
 
   // Filter the filter for this unit test.
   // +kubebuilder:validation:Optional
-  optional string featureFilter = 21;
+  optional string featureFilter = 21 [(gogoproto.casttype) = "FeatureFilterType", (gogoproto.customname) = "FeatureFilter"];
 
   // Set the reference type for this unit test
   // +kubebuilder:validation:Optional
-  optional string referenceType = 22;
+  optional string referenceType = 22 [(gogoproto.casttype) = "ReferenceDataType", (gogoproto.customname) = "ReferenceType"];
 
   // The length of the past if we are comparing to moving avg
   // +kubebuilder:validation:Optional
-  optional int32 periods = 23;
+  optional int32 periods = 23 [(gogoproto.customname) = "Periods"];
 }
 
 // Result for a specific case
 message DataTestCaseResult {
   // The test case name for this result.
-  optional string name = 1;
+  optional string name = 1 [(gogoproto.customname) = "Name", (gogoproto.nullable) = false];
 
   // Actual observation
   // +kubebuilder:validation:Optional
-  optional Measurement actual = 2;
+  optional Measurement actual = 2 [(gogoproto.customname) = "Actual", (gogoproto.nullable) = false];
 
   // A failure occur on assertion failure
   // +kubebuilder:validation:Optional
-  optional bool failure = 3;
+  optional bool failure = 3 [(gogoproto.customname) = "Failure", (gogoproto.nullable) = false];
 
   // An error occur if the system cannot execute the test case (e.g. connection error).
   // +kubebuilder:validation:Optional
-  optional bool error = 4;
+  optional bool error = 4 [(gogoproto.customname) = "Error", (gogoproto.nullable) = false];
 
   // An optional
   // +kubebuilder:validation:Optional
-  optional string failureMsg = 5;
+  optional string failureMsg = 5 [(gogoproto.customname) = "FailureMsg", (gogoproto.nullable) = false];
 }
 
 // FloatParameter contain the specification of an float hyper parameter
 message FloatParameter {
   // Name is the name of the hyper parameter
   // +kubebuilder:validation:Optional
-  optional string name = 1;
+  optional string name = 1 [(gogoproto.customname) = "Name", (gogoproto.nullable) = false];
 
   // Min is the minimum value
   // +kubebuilder:validation:Optional
-  optional double min = 3;
+  optional double min = 3 [(gogoproto.customname) = "Min", (gogoproto.nullable) = false];
 
   // Max is the maximum value
   // +kubebuilder:validation:Optional
-  optional double max = 4;
+  optional double max = 4 [(gogoproto.customname) = "Max", (gogoproto.nullable) = false];
 
   // Default float value
   // +kubebuilder:validation:Optional
-  optional double defaultValue = 5;
+  optional double defaultValue = 5 [(gogoproto.customname) = "DefaultValue", (gogoproto.nullable) = false];
 
   // Log specify if this hyperparameter is logarithmic
   // +kubebuilder:validation:Optional
-  optional bool log = 6;
+  optional bool log = 6 [(gogoproto.customname) = "Log", (gogoproto.nullable) = false];
 }
 
 // GithubEvents specify repo and the events to listen in order ot fire the pipeline
 message GithubEvents {
   // The GitHub connections used to loginto git
-  optional string gitConnectionName = 1;
+  optional string gitConnectionName = 1 [(gogoproto.customname) = "GitConnectionsName"];
 
   // Repository is the name of the github repository
-  optional string repository = 2;
+  optional string repository = 2 [(gogoproto.customname) = "Repository"];
 
   // Branch is the name of the github branch.
   // By default, the trigger listen to all branch
-  optional string branch = 3;
+  optional string branch = 3 [(gogoproto.customname) = "Branch"];
 
   // Blobname regex is a regular expression on the blob name that changed
-  optional string blobNameRegex = 4;
+  optional string blobNameRegex = 4 [(gogoproto.customname) = "BlobNameRegex"];
 
   // Events is the name of the github events.
-  repeated string events = 5;
+  repeated string events = 5 [(gogoproto.customname) = "Events"];
 }
 
 // GpuClass define the specific for a machine type of a cloud provider
 message GpuClass {
   // Code the the code of the gpu class within the data provider
-  optional string code = 1;
+  optional string code = 1 [(gogoproto.customname) = "Code", (gogoproto.nullable) = false];
 
-  optional string regionName = 2;
+  optional string regionName = 2 [(gogoproto.customname) = "RegionName", (gogoproto.nullable) = false];
 
   // Vcpu is the number of cores
   // +kubebuilder:validation:Minimum=0
-  optional int32 vcpu = 3;
+  optional int32 vcpu = 3 [(gogoproto.customname) = "Vcpu", (gogoproto.nullable) = false];
 
   // Gpumem is the amount of memory on the gpu
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity gpumem = 4;
+  optional k8s.io.apimachinery.pkg.api.resource.Quantity gpumem = 4 [(gogoproto.customname) = "Gpumem"];
 }
 
 // GpuClassCost contain the current cost of a gpu class in a region
 message GpuClassCost {
   // Code is the machine class code
-  optional string code = 1;
+  optional string code = 1 [(gogoproto.customname) = "Code", (gogoproto.nullable) = false];
 
-  optional string region = 2;
+  optional string region = 2 [(gogoproto.customname) = "Region", (gogoproto.nullable) = false];
 
   // CostPerMinute is the cost per minute in dollar of the machine class
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity costPerMinute = 3;
+  optional k8s.io.apimachinery.pkg.api.resource.Quantity costPerMinute = 3 [(gogoproto.customname) = "CostPerMinute"];
 
   // CostSpot is the spot cost of the machine class
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity costSpot = 4;
+  optional k8s.io.apimachinery.pkg.api.resource.Quantity costSpot = 4 [(gogoproto.customname) = "CostSpot"];
 }
 
 // HistogramData contains the data to construct a histogram image
 message HistogramData {
   // The bins if the histogram describes continous variables
-  repeated double bins = 1;
+  repeated double bins = 1 [(gogoproto.customname) = "Bins"];
 
   // The name of the categories, one per bin if this is a categorical histogram
-  repeated string categories = 2;
+  repeated string categories = 2 [(gogoproto.customname) = "Categories"];
 
   // The set of values per bin
-  repeated double counts = 3;
+  repeated double counts = 3 [(gogoproto.customname) = "Counts"];
 
   // The number of missing values
   // +kubebuilder:validation:Minimum=0
-  optional int32 missing = 4;
+  optional int32 missing = 4 [(gogoproto.customname) = "Missing", (gogoproto.nullable) = false];
 
   // The number of invalid values
   // +kubebuilder:validation:Minimum=0
-  optional int32 invalid = 5;
+  optional int32 invalid = 5 [(gogoproto.customname) = "InvalidCount", (gogoproto.nullable) = false];
 }
 
 // Images describes the Docker images used internally to perform workloads
 message Images {
   // The image used during training
   // +kubebuilder:validation:Optional
-  optional string trainerImage = 1;
+  optional string trainerImage = 1 [(gogoproto.customname) = "TrainerImage"];
 
   // The image used for data operations
   // +kubebuilder:validation:Optional
-  optional string dataImage = 2;
+  optional string dataImage = 2 [(gogoproto.customname) = "DataImage"];
 
   // The image used to deploy models
   // +kubebuilder:validation:Optional
-  optional string publisherImage = 3;
+  optional string publisherImage = 3 [(gogoproto.customname) = "PublisherImage"];
 }
 
 // IntParameter contain the specification of an integer hyper parameter
 message IntParameter {
   // Name is the name of the hyper parameter
   // +kubebuilder:validation:Optional
-  optional string name = 1;
+  optional string name = 1 [(gogoproto.customname) = "Name", (gogoproto.nullable) = false];
 
   // Type is the datatype of the parameter
   // +kubebuilder:validation:Optional
-  optional string type = 2;
+  optional string type = 2 [(gogoproto.casttype) = "DataType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Min is the minimum value of the hyper parameter range
   // +kubebuilder:validation:Optional
-  optional int32 min = 3;
+  optional int32 min = 3 [(gogoproto.customname) = "Min", (gogoproto.nullable) = false];
 
   // Max is the maximum value of the hyper parameter range
   // +kubebuilder:validation:Optional
-  optional int32 max = 4;
+  optional int32 max = 4 [(gogoproto.customname) = "Max", (gogoproto.nullable) = false];
 
   // DefaultValue is the default value of the parameter
   // +kubebuilder:validation:Optional
-  optional int32 defaultValue = 6;
+  optional int32 defaultValue = 6 [(gogoproto.customname) = "DefaultValue", (gogoproto.nullable) = false];
 }
 
 // LastRunStatus describes the status of a single run for a run-based resource (such as a pipeline)
 message LastRunStatus {
   // The name of the run
-  optional string name = 1;
+  optional string name = 1 [(gogoproto.customname) = "Name", (gogoproto.nullable) = false];
 
   // The status of the last run
   // +kubebuilder:validation:Optional
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // The time at which the run concluded
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3 [(gogoproto.customname) = "CompletionTime"];
 
   // The duration of the run in seconds
   // +kubebuilder:validation:Optional
-  optional int32 duration = 4;
+  optional int32 duration = 4 [(gogoproto.customname) = "Duration", (gogoproto.nullable) = false];
 
   // In the case of failure, the resource controller which created the run will set this field with a failure reason
-  optional string failureReason = 5;
+  optional string failureReason = 5 [(gogoproto.casttype) = "StatusError", (gogoproto.customname) = "FailureReason"];
 
   // In the case of failure, the resource controller which created the run will set this field with a failure message
-  optional string failureMessage = 6;
+  optional string failureMessage = 6 [(gogoproto.customname) = "FailureMessage"];
 }
 
 message Lib {
-  optional string frameworks = 1;
+  optional string frameworks = 1 [(gogoproto.customname) = "Name", (gogoproto.nullable) = false];
 
-  optional string version = 2;
+  optional string version = 2 [(gogoproto.customname) = "Version", (gogoproto.nullable) = false];
 }
 
 // Logs describes the location of logs produced by workloads associated with a resource
 message Logs {
   // The name of the VirtualBucket resource where the logs are stored
   // +kubebuilder:validation:Optional
-  optional string bucketName = 1;
+  optional string bucketName = 1 [(gogoproto.customname) = "BucketName", (gogoproto.nullable) = false];
 
   // The collection of ContainerLog objects that describe the location of logs per container
   // +kubebuilder:validation:Optional
-  repeated ContainerLog containers = 2;
+  repeated ContainerLog containers = 2 [(gogoproto.customname) = "Containers", (gogoproto.nullable) = false];
 }
 
 // MLFramework define the metadata about a machine learning framework
@@ -549,75 +559,75 @@ message Logs {
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // +kubebuilder:resource:path=mlframeworks,singular=mlframework,categories={catalog,modela,all}
 message MLFramework {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional MLFrameworkSpec spec = 2;
+  optional MLFrameworkSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // MLFrameworkList contains a list of MLFramework
 message MLFrameworkList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated MLFramework items = 2;
+  repeated MLFramework items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // MLFramework is the spec for a specific version of machine learning framework (e.g. tensorflow)
 message MLFrameworkSpec {
   // URL for the home page of the mlframework
   // +kubebuilder:validation:Optional
-  optional string url = 1;
+  optional string url = 1 [(gogoproto.customname) = "URL", (gogoproto.nullable) = false];
 
   // Comments of the framework
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string description = 2;
+  optional string description = 2 [(gogoproto.customname) = "Description"];
 
   // The current version of the mlframework
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string version = 3;
+  optional string version = 3 [(gogoproto.customname) = "Version"];
 
   // Lang is the framework lang
   // +kubebuilder:validation:Optional
-  optional string lang = 4;
+  optional string lang = 4 [(gogoproto.customname) = "Lang"];
 }
 
 // MachineClass define the specific for a machine type of cloud provider
 message MachineClass {
   // Code the the code of the machine class within the data provider
-  optional string code = 1;
+  optional string code = 1 [(gogoproto.customname) = "Code", (gogoproto.nullable) = false];
 
   // +optional
-  optional string regionName = 2;
+  optional string regionName = 2 [(gogoproto.customname) = "RegionName", (gogoproto.nullable) = false];
 
   // Mem is the amount of memory on this machine
   // +optional
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 3;
+  optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 3 [(gogoproto.customname) = "Mem"];
 
   // Vcpu is the number of virtual cpus on this machine
   // +kubebuilder:validation:Minimum=0
   // +optional
-  optional int32 vcpu = 4;
+  optional int32 vcpu = 4 [(gogoproto.customname) = "Vcpu"];
 
   // Storage is the amount of storage on this machine class
   // +optional
-  optional string storage = 5;
+  optional string storage = 5 [(gogoproto.customname) = "Storage", (gogoproto.nullable) = false];
 }
 
 // MachineClassCost contain the current cost of a machine class in a region
 message MachineClassCost {
   // Code is the machine class code
-  optional string code = 1;
+  optional string code = 1 [(gogoproto.customname) = "Code", (gogoproto.nullable) = false];
 
   // Region is the code of the region
-  optional string region = 2;
+  optional string region = 2 [(gogoproto.customname) = "Region", (gogoproto.nullable) = false];
 
   // CostPerMinute is the cost per minute in dollar of the machine class
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity costPerMinute = 3;
+  optional k8s.io.apimachinery.pkg.api.resource.Quantity costPerMinute = 3 [(gogoproto.customname) = "CostPerMinute"];
 
   // CostSpot is the spot cost of the machine class
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity costSpot = 4;
+  optional k8s.io.apimachinery.pkg.api.resource.Quantity costSpot = 4 [(gogoproto.customname) = "CostSpot"];
 }
 
 // MLFramework define the metadata about a machine learning framework
@@ -627,147 +637,147 @@ message MachineClassCost {
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // +kubebuilder:resource:path=managedimages,singular=managedimage,categories={catalog,modela,all}
 message ManagedImage {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional ManagedImageSpec spec = 2;
+  optional ManagedImageSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // ManagedImageList is a list of pretrained models
 message ManagedImageList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated ManagedImage items = 2;
+  repeated ManagedImage items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // ManagedImageSpec is the desired state of the pretrained model
 message ManagedImageSpec {
   // +kubebuilder:validation:Optional
-  optional string description = 1;
+  optional string description = 1 [(gogoproto.customname) = "Description"];
 
   // The image registry, by default use docker.io
   // +kubebuilder:default ="docker.io"
   // +kubebuilder:validation:Optional
-  optional string registry = 2;
+  optional string registry = 2 [(gogoproto.customname) = "Registry"];
 
   // The image repository. This is a required field
   // +kubebuilder:validation:Required
-  optional string repository = 3;
+  optional string repository = 3 [(gogoproto.customname) = "Repository", (gogoproto.nullable) = false];
 
   // The image tag. by default this is latest
   // +kubebuilder:default ="latest"
   // +kubebuilder:validation:Optional
-  optional string tag = 4;
+  optional string tag = 4 [(gogoproto.customname) = "Tag"];
 
   // The environment variables to use when the image start
   // +kubebuilder:validation:Optional
-  repeated k8s.io.api.core.v1.EnvVar env = 5;
+  repeated k8s.io.api.core.v1.EnvVar env = 5 [(gogoproto.customname) = "Env", (gogoproto.nullable) = false];
 
   // Is this a gpu image
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool gpu = 6;
+  optional bool gpu = 6 [(gogoproto.customname) = "Gpu"];
 
   // If true this is an active image that should be used for new training.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool active = 7;
+  optional bool active = 7 [(gogoproto.customname) = "Active"];
 
   // Preload the image to the cluster.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool preload = 8;
+  optional bool preload = 8 [(gogoproto.customname) = "Preload"];
 
   // Preload the image to the cluster.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference connectionRef = 9;
+  optional k8s.io.api.core.v1.ObjectReference connectionRef = 9 [(gogoproto.customname) = "ConnectionRef"];
 
   // The base image for this image.
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string base = 10;
+  optional string base = 10 [(gogoproto.customname) = "Base"];
 
   // The base image for this image.
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string role = 11;
+  optional string role = 11 [(gogoproto.casttype) = "ManagedImageRole", (gogoproto.customname) = "Role"];
 
   // The organization maintaining this image
   // +kubebuilder:default ="metaprov"
   // +kubebuilder:validation:Optional
   // Who maintain this image.
-  optional string mantainedBy = 12;
+  optional string mantainedBy = 12 [(gogoproto.customname) = "MaintainedBy"];
 
   // The Image home page in the registry
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string uri = 13;
+  optional string uri = 13 [(gogoproto.customname) = "URI"];
 
   // List of ml frameworks supported by the data container
   // +kubebuilder:validation:Optional
-  repeated string frameworks = 14;
+  repeated string frameworks = 14 [(gogoproto.customname) = "Frameworks"];
 
   // Libs is the list of python library supported by the data container
   // +kubebuilder:validation:Optional
-  repeated Lib libs = 15;
+  repeated Lib libs = 15 [(gogoproto.customname) = "Libs", (gogoproto.nullable) = false];
 
   // OS is the name of the os
   // +kubebuilder:validation:Optional
-  optional string os = 16;
+  optional string os = 16 [(gogoproto.customname) = "OS", (gogoproto.nullable) = false];
 
   // OSVersion is the version of the os
   // +kubebuilder:validation:Optional
-  optional string osVersion = 17;
+  optional string osVersion = 17 [(gogoproto.customname) = "OSVersion", (gogoproto.nullable) = false];
 
   // If true this is an active image that should be used for new training.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool private = 18;
+  optional bool private = 18 [(gogoproto.customname) = "Private"];
 }
 
 // Measurement is a value for a specific metric
 message Measurement {
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference entity = 1;
+  optional k8s.io.api.core.v1.ObjectReference entity = 1 [(gogoproto.customname) = "Entity", (gogoproto.nullable) = false];
 
   // +kubebuilder:validation:Optional
-  optional string column = 2;
+  optional string column = 2 [(gogoproto.customname) = "Column"];
 
   // The metric type name (e.g. F1 / Accuracy)
   // +kubebuilder:validation:Optional
-  optional string metric = 3;
+  optional string metric = 3 [(gogoproto.casttype) = "Metric", (gogoproto.customname) = "Metric"];
 
   // The value of the metric for quantitive observations
   // +kubebuilder:validation:Optional
-  optional double value = 4;
+  optional double value = 4 [(gogoproto.customname) = "Value"];
 
   // Metric standard diviation for quantative observations.
   // +kubebuilder:validation:Optional
-  optional double stddev = 5;
+  optional double stddev = 5 [(gogoproto.customname) = "Stddev"];
 
   // If the metric refer to a bool unit, store the bool value
   // +kubebuilder:validation:Optional
-  optional bool boolQty = 6;
+  optional bool boolQty = 6 [(gogoproto.customname) = "BoolQty"];
 
   // If the metric refer to categorical measure,store the category.
   // +kubebuilder:validation:Optional
-  optional string category = 7;
+  optional string category = 7 [(gogoproto.customname) = "Category"];
 
   // Capture a set of values.
   // +kubebuilder:validation:Optional
-  repeated string valueSet = 8;
+  repeated string valueSet = 8 [(gogoproto.customname) = "ValueSet"];
 
   // The Time when the observation was taken
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time timePoint = 9;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time timePoint = 9 [(gogoproto.customname) = "TimePoint"];
 
   // The measurment task type (e.g. train, test, cv, feature)
   // +kubebuilder:validation:Optional
-  optional string taskType = 10;
+  optional string taskType = 10 [(gogoproto.customname) = "TaskType"];
 
   // The name of the algorithm that generated this measurment
   // +kubebuilder:validation:Optional
-  optional string algorithm = 11;
+  optional string algorithm = 11 [(gogoproto.customname) = "Algorithm"];
 }
 
 // ModelDeploymentSpec describes how a single model should be deployed with a Predictor, and
@@ -777,45 +787,45 @@ message ModelDeploymentSpec {
   // as the Predictor which specifies the ModelDeploymentSpec
   // +kubebuilder:validation:Required
   // +required
-  optional k8s.io.api.core.v1.ObjectReference modelRef = 1;
+  optional k8s.io.api.core.v1.ObjectReference modelRef = 1 [(gogoproto.customname) = "ModelRef", (gogoproto.nullable) = false];
 
   // the port of the model service.
   // +kubebuilder:default:=8080
   // +kubebuilder:validation:Optional
-  optional int32 port = 2;
+  optional int32 port = 2 [(gogoproto.customname) = "Port"];
 
   // The version of the model, derived from the Study which created it
   // +kubebuilder:validation:Optional
-  optional string modelVersion = 3;
+  optional string modelVersion = 3 [(gogoproto.customname) = "ModelVersion"];
 
   // The minimum percentage (0 through 100) of traffic that will be served by the model
   // +kubebuilder:validation:Maximum=100
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:default:=100
   // +kubebuilder:validation:Optional
-  optional int32 traffic = 4;
+  optional int32 traffic = 4 [(gogoproto.customname) = "Traffic"];
 
   // Role denotes the role of this model
   // +kubebuilder:default:=live
   // +kubebuilder:validation:Optional
-  optional string role = 5;
+  optional string role = 5 [(gogoproto.casttype) = "ModelRole", (gogoproto.customname) = "Role"];
 
   // MountTar means that we would mount the model tar file. Else we would use baked image.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool mountTar = 9;
+  optional bool mountTar = 9 [(gogoproto.customname) = "MountTar"];
 
   // TrafficSelector is a filter on the traffic to this model
   // +kubebuilder:validation:Optional
-  optional string trafficSelector = 10;
+  optional string trafficSelector = 10 [(gogoproto.customname) = "TrafficSelector"];
 
   // The approver account name
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference approvedBy = 12;
+  optional k8s.io.api.core.v1.ObjectReference approvedBy = 12 [(gogoproto.customname) = "ApprovedBy", (gogoproto.nullable) = false];
 
   // The time of approval
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 13;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 13 [(gogoproto.customname) = "ApprovedAt"];
 }
 
 // NotificationSpec specifies which Notifiers to forward Alert resources to
@@ -823,53 +833,53 @@ message NotificationSpec {
   // Time-to-live for error messages, in seconds
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
-  optional int32 errorTTL = 2;
+  optional int32 errorTTL = 2 [(gogoproto.customname) = "ErrorTTL"];
 
   // Time-to-live for success messages. In seconds
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
-  optional int32 successTTL = 4;
+  optional int32 successTTL = 4 [(gogoproto.customname) = "SuccessTTL"];
 
   // The name of the Notifier which exists in the same tenant as the resource specifying the NotificationSpec
   // +kubebuilder:default:= ""
   // +kubebuilder:validation:Optional
-  optional string notifierName = 5;
+  optional string notifierName = 5 [(gogoproto.customname) = "NotifierName"];
 
   // The labels which will be searched for in all Notifiers to determine the target Notifiers
   // +kubebuilder:validation:Optional
-  map<string, string> selector = 6;
+  map<string, string> selector = 6 [(gogoproto.customname) = "Selector", (gogoproto.nullable) = false];
 }
 
 message PRCurve {
-  repeated CurvePoint values = 1;
+  repeated CurvePoint values = 1 [(gogoproto.customname) = "Values", (gogoproto.nullable) = false];
 }
 
 // PermissionsSpec specifies the Accounts that have access to a DataProduct or Tenant namespace and what permissions
 // they possess for resources under the namespace
 message PermissionsSpec {
-  repeated Stakeholder stakeholders = 1;
+  repeated Stakeholder stakeholders = 1 [(gogoproto.customname) = "Stakeholders", (gogoproto.nullable) = false];
 }
 
 // Pretrained model contain the metadata about a pretrained model
 // +kubebuilder:object:root=true
 message PretrainedModel {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional PretrainedModelSpec spec = 2;
+  optional PretrainedModelSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // PretrainedModelList is a list of pretrained models
 message PretrainedModelList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated PretrainedModel items = 2;
+  repeated PretrainedModel items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // PretrainedModelSpec is the desired state of the pretrained model
 message PretrainedModelSpec {
   // Image is the docker image of the pretrained model
-  optional string image = 1;
+  optional string image = 1 [(gogoproto.customname) = "Image", (gogoproto.nullable) = false];
 }
 
 // PublicDataset represent the metadata about a public dataset
@@ -884,105 +894,105 @@ message PretrainedModelSpec {
 // +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
 // +kubebuilder:resource:path=publicdatasets,singular=publicdataset,categories={catalog,modela,all}
 message PublicDataset {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional PublicDatasetSpec spec = 2;
+  optional PublicDatasetSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // PublicDatasetList contains a list of PublicDataset
 message PublicDatasetList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated PublicDataset items = 2;
+  repeated PublicDataset items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 message PublicDatasetSpec {
-  optional string url = 1;
+  optional string url = 1 [(gogoproto.customname) = "Url", (gogoproto.nullable) = false];
 
   // Entity description
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string description = 2;
+  optional string description = 2 [(gogoproto.customname) = "Description"];
 
   // Task is the machine learning task of the public dataset
-  optional string task = 3;
+  optional string task = 3 [(gogoproto.casttype) = "MLTask", (gogoproto.customname) = "Task"];
 
   // The open ml id of the dataset
   // +kubebuilder:validation:Optional
   // +kubebuilder:default =""
-  optional string openMLID = 4;
+  optional string openMLID = 4 [(gogoproto.customname) = "OpenMLID"];
 
   // The URL to the actual data file or folder
   // +kubebuilder:validation:Optional
   // +kubebuilder:default =""
-  optional string dataUrl = 5;
+  optional string dataUrl = 5 [(gogoproto.customname) = "DataUrl"];
 
   // Entity citation
   // +kubebuilder:validation:Optional
   // +kubebuilder:default =""
-  optional string citation = 6;
+  optional string citation = 6 [(gogoproto.customname) = "Citation"];
 
   // Number of rows in the dataset
   // +kubebuilder:validation:Optional
   // +kubebuilder:default := 0
-  optional int32 rows = 7;
+  optional int32 rows = 7 [(gogoproto.customname) = "Rows"];
 
   // Number of columns in the dataset
   // +kubebuilder:validation:Optional
   // +kubebuilder:default := 0
-  optional int32 columns = 8;
+  optional int32 columns = 8 [(gogoproto.customname) = "Columns"];
 
   // +kubebuilder:validation:Optional
   // The size of the dataset in bytes
   // +kubebuilder:default := 0
-  optional int32 fileSize = 9;
+  optional int32 fileSize = 9 [(gogoproto.customname) = "FileSize"];
 
   // The target column name
   // +kubebuilder:default =""
-  optional string targetColumn = 10;
+  optional string targetColumn = 10 [(gogoproto.customname) = "TargetColumn"];
 
   // The target column name
   // +kubebuilder:default =""
-  optional string industry = 11;
+  optional string industry = 11 [(gogoproto.customname) = "Industry"];
 
   // +kubebuilder:default = false
-  optional bool imbalanced = 12;
+  optional bool imbalanced = 12 [(gogoproto.customname) = "Imbalanced"];
 
   // URI of the datasource CR for this public dataset
   // +kubebuilder:default =""
-  optional string datasourceCR = 13;
+  optional string datasourceCR = 13 [(gogoproto.customname) = "DatasourceCR"];
 
   // URI of the dataset CR for this public dataset
   // +kubebuilder:default =""
-  optional string datasetCR = 14;
+  optional string datasetCR = 14 [(gogoproto.customname) = "DatasetCR"];
 
   // URI of the study CR for this public dataset
   // +kubebuilder:default =""
-  optional string studyCR = 15;
+  optional string studyCR = 15 [(gogoproto.customname) = "StudyCR"];
 
   // URI of the data product CR
   // +kubebuilder:default =""
-  optional string dataProductCR = 16;
+  optional string dataProductCR = 16 [(gogoproto.customname) = "DataProductCR"];
 }
 
 // Region defines a region within the data provider
 message Region {
   // Code is the code of the region
-  optional string code = 1;
+  optional string code = 1 [(gogoproto.customname) = "Code", (gogoproto.nullable) = false];
 
   // The default datacenter for a region
   // +optional
-  optional string defaultDatacenterName = 2;
+  optional string defaultDatacenterName = 2 [(gogoproto.customname) = "DefaultDatacenterName", (gogoproto.nullable) = false];
 
   // Location is the location code The location of the region
-  optional string location = 3;
+  optional string location = 3 [(gogoproto.customname) = "Location", (gogoproto.nullable) = false];
 
   // BillingCode is the billing code of the region
-  optional string billingCode = 4;
+  optional string billingCode = 4 [(gogoproto.customname) = "BillingCode", (gogoproto.nullable) = false];
 
   // Datacenters if the list of datacenters
-  repeated DataCenter datacenters = 5;
+  repeated DataCenter datacenters = 5 [(gogoproto.customname) = "Datacenters", (gogoproto.nullable) = false];
 }
 
 // ResourceSpec specifies the amount of resources that will be allocated to a workload
@@ -991,26 +1001,26 @@ message ResourceSpec {
   // The name of a WorkloadClass. The system will use the resource requirements described by the WorkloadClass
   // +kubebuilder:default:="general-large"
   // +kubebuilder:validation:Optional
-  optional string workloadName = 1;
+  optional string workloadName = 1 [(gogoproto.customname) = "WorkloadName"];
 
   // If true, ignore the workload class name.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool custom = 2;
+  optional bool custom = 2 [(gogoproto.customname) = "Custom"];
 
   // Reference to the managed CPU trainer image, used internally
-  optional k8s.io.api.core.v1.ObjectReference cpuImage = 3;
+  optional k8s.io.api.core.v1.ObjectReference cpuImage = 3 [(gogoproto.customname) = "CpuImage", (gogoproto.nullable) = false];
 
   // Reference to the managed GPU trainer image, used internally
-  optional k8s.io.api.core.v1.ObjectReference gpuImage = 4;
+  optional k8s.io.api.core.v1.ObjectReference gpuImage = 4 [(gogoproto.customname) = "GpuImage", (gogoproto.nullable) = false];
 
   // The custom resource requirements for the workload, which are used if `WorkloadName` is not set
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ResourceRequirements requirements = 5;
+  optional k8s.io.api.core.v1.ResourceRequirements requirements = 5 [(gogoproto.customname) = "Requirements"];
 }
 
 message RocAucCurve {
-  repeated CurvePoint values = 1;
+  repeated CurvePoint values = 1 [(gogoproto.customname) = "Values", (gogoproto.nullable) = false];
 }
 
 // RunSchedule specifies the schedule for a Job to be executed
@@ -1018,99 +1028,99 @@ message RunSchedule {
   // Indicates if the schedule is enabled and the Jobs associated it will be created at the specified time
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
+  optional bool enabled = 1 [(gogoproto.customname) = "Enabled"];
 
   // The time of the day when the schedule will be executed
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2 [(gogoproto.customname) = "StartTime"];
 
   // The time of the day when the schedule is expected to conclude
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3 [(gogoproto.customname) = "EndTime"];
 
   // The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm for more information
   // +kubebuilder:validation:Optional
-  optional string cron = 4;
+  optional string cron = 4 [(gogoproto.customname) = "Cron"];
 
   // +kubebuilder:validation:Optional
   // The type of schedule, which can be a frequency interval or a cron expression
-  optional string type = 5;
+  optional string type = 5 [(gogoproto.casttype) = "TriggerScheduleEventType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 }
 
 message RunScheduleStatus {
   // Indicates if the schedule is enabled and the Jobs associated it will be created at the specified time
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1 [(gogoproto.customname) = "LastRun"];
 
   // The time of the day when the schedule will be executed
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 2 [(gogoproto.customname) = "NextRun"];
 }
 
 // Stakeholder specifies the User Role Classes of an individual Account
 message Stakeholder {
   // The name of an Account
-  optional string account = 1;
+  optional string account = 1 [(gogoproto.customname) = "AccountName", (gogoproto.nullable) = false];
 
   // The object references to UserRoleClass resources which describe the actions the Account may perform
-  repeated k8s.io.api.core.v1.ObjectReference roles = 2;
+  repeated k8s.io.api.core.v1.ObjectReference roles = 2 [(gogoproto.customname) = "Roles", (gogoproto.nullable) = false];
 }
 
 message TestSuite {
   // If false, this test case is disabled
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
+  optional bool enabled = 1 [(gogoproto.customname) = "Enabled"];
 
   // +kubebuilder:validation:Optional
-  repeated DataTestCase tests = 2;
+  repeated DataTestCase tests = 2 [(gogoproto.customname) = "Tests", (gogoproto.nullable) = false];
 }
 
 message TestSuiteResult {
   // A reference to the object under test. Best practice is to have one suite for an object
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 1;
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 1 [(gogoproto.customname) = "EntityRef", (gogoproto.nullable) = false];
 
   // Total number of failures. A failure is an unplanned error, e.g. cannot connect to a dataset
   // +kubebuilder:validation:Optional
-  optional int32 failures = 2;
+  optional int32 failures = 2 [(gogoproto.customname) = "Failures", (gogoproto.nullable) = false];
 
   // Total number of assertion errors.
   // +kubebuilder:validation:Optional
-  optional int32 errors = 3;
+  optional int32 errors = 3 [(gogoproto.customname) = "Errors", (gogoproto.nullable) = false];
 
   // Start time of running the suite
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4 [(gogoproto.customname) = "StartTime"];
 
   // Stop time of running the suite.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time stopTime = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time stopTime = 5 [(gogoproto.customname) = "StopTime"];
 
   // The result of executing the test suite. The result contain one result object per test case.
   // +kubebuilder:validation:Optional
-  repeated DataTestCaseResult tests = 6;
+  repeated DataTestCaseResult tests = 6 [(gogoproto.customname) = "Tests", (gogoproto.nullable) = false];
 }
 
 message VizUri {
-  optional string name = 1;
+  optional string name = 1 [(gogoproto.casttype) = "VizName", (gogoproto.customname) = "Name", (gogoproto.nullable) = false];
 
-  optional string uri = 2;
+  optional string uri = 2 [(gogoproto.customname) = "Uri", (gogoproto.nullable) = false];
 }
 
 message WorkerRunResult {
   // Worker ID
   // +kubebuilder:validation:Optional
-  optional int32 id = 1;
+  optional int32 id = 1 [(gogoproto.customname) = "ID", (gogoproto.nullable) = false];
 
   // URI
   // +kubebuilder:validation:Optional
-  optional string uri = 2;
+  optional string uri = 2 [(gogoproto.customname) = "URI", (gogoproto.nullable) = false];
 
   // +kubebuilder:validation:Optional
-  optional string task = 3;
+  optional string task = 3 [(gogoproto.casttype) = "TaskName", (gogoproto.customname) = "Task", (gogoproto.nullable) = false];
 
   // +kubebuilder:validation:Optional
-  optional string error = 4;
+  optional string error = 4 [(gogoproto.customname) = "Error", (gogoproto.nullable) = false];
 }
 
 // WorkloadClass define a template for a job.
@@ -1119,21 +1129,21 @@ message WorkerRunResult {
 // +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
 // +kubebuilder:resource:path=workloadclasses,singular=workloadclass,categories={catalog,modela,all}
 message WorkloadClass {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional WorkloadClassSpec spec = 2;
+  optional WorkloadClassSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // TrainerList contains a list of Trainer
 message WorkloadClassList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated WorkloadClass items = 2;
+  repeated WorkloadClass items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // WorkloadClassSpec defines the specification of  a workload class.
 message WorkloadClassSpec {
-  optional ResourceSpec resourcesTemplate = 1;
+  optional ResourceSpec resourcesTemplate = 1 [(gogoproto.customname) = "ResourcesTemplate"];
 }
 

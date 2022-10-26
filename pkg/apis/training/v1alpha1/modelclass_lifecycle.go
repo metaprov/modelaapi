@@ -145,26 +145,6 @@ func (mclass *ModelClass) MarkTrained() {
 }
 
 ///////////////////////////////////////////////
-// Sync
-//////////////////////////////////////////////
-func (mclass *ModelClass) MarkSynching() {
-	mclass.Status.Phase = ModelClassPhaseSyncing
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassSynced,
-		Status: v1.ConditionFalse,
-		Reason: ReasonSyncing,
-	})
-}
-
-func (mclass *ModelClass) MarkSynced() {
-	mclass.Status.Phase = ModelClassPhaseSynced
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassSynced,
-		Status: v1.ConditionTrue,
-	})
-}
-
-///////////////////////////////////////////////
 // Deploying
 //////////////////////////////////////////////
 func (mclass *ModelClass) MarkDeploying() {

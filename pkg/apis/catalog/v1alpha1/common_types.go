@@ -1491,6 +1491,18 @@ type RunScheduleStatus struct {
 	// The time of the day when the schedule will be executed
 	// +kubebuilder:validation:Optional
 	NextRun *metav1.Time `json:"nextRun,omitempty" protobuf:"bytes,2,opt,name=nextRun"`
+	// The time at which the run concluded
+	// +kubebuilder:validation:Optional
+	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,3,opt,name=completionTime"`
+	// The duration of the run in seconds
+	// +kubebuilder:validation:Optional
+	Duration int32 `json:"duration,omitempty" protobuf:"varint,4,opt,name=duration"`
+	// In the case of failure, the resource controller which created the run will set this field with a failure reason
+	// +kubebuilder:validation:Optional
+	FailureReason *StatusError `json:"failureReason,omitempty" protobuf:"bytes,5,opt,name=failureReason"`
+	// In the case of failure, the resource controller which created the run will set this field with a failure message
+	// +kubebuilder:validation:Optional
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,6,opt,name=failureMessage"`
 }
 
 // Measurement is a value for a specific metric

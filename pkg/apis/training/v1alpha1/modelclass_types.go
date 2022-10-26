@@ -17,8 +17,6 @@ const (
 	ModelClassPhasePreparingTrainingDataset ModelClassPhase = "PreparingTrainingDataset"
 	ModelClassPhaseTraining                 ModelClassPhase = "Training"
 	ModelClassPhaseTrained                  ModelClassPhase = "Trained"
-	ModelClassPhaseSyncing                  ModelClassPhase = "Syncing"
-	ModelClassPhaseSynced                   ModelClassPhase = "Synced"
 	ModelClassPhaseDeploying                ModelClassPhase = "Deploying"
 	ModelClassPhaseDeployed                 ModelClassPhase = "Deployed"
 	ModelClassPhaseDrifted                  ModelClassPhase = "Drifted"
@@ -37,8 +35,6 @@ const (
 	ModelClassTrained ModelClassConditionType = "Trained"
 	// ModelClassDeployed states that the latest model
 	ModelClassDeployed ModelClassConditionType = "Deployed"
-	// ModelClassSynced states that the model sync the offline feature store with the online feature store.
-	ModelClassSynced ModelClassConditionType = "Synced"
 	// ModelClassDeployed states that the latest model
 	ModelClassDrifted ModelClassConditionType = "Drifted"
 )
@@ -262,11 +258,20 @@ type ModelClassStatus struct {
 	// Training schedule status
 	//+kubebuilder:validation:Optional
 	TrainingSchedule catalog.RunScheduleStatus `json:"trainingSchedule,omitempty" protobuf:"bytes,10,opt,name=trainingSchedule"`
-	// Sync Schedule status
+	// The last time that we generated online table
 	//+kubebuilder:validation:Optional
-	SyncSchedule catalog.RunScheduleStatus `json:"syncSchedule,omitempty" protobuf:"bytes,11,opt,name=syncSchedule"`
+	LastOnlineTablesGenerated *metav1.Time `json:"lastOnlineTablesGenerated,omitempty" protobuf:"bytes,12,opt,name=lastOnlineTablesGenerated"`
+	// the last time that we sync to the online store
+	//+kubebuilder:validation:Optional
+	LastSync *metav1.Time `json:"lastSync,omitempty" protobuf:"bytes,12,opt,name=lastSync"`
+	// The last time that we generated a training dataset
+	//+kubebuilder:validation:Optional
+	LastTrainingDatasetGenerated *metav1.Time `json:"lastTrainingDatasetGenerated,omitempty" protobuf:"bytes,13,opt,name=lastTrainingDatasetGenerated"`
+	// The last time that we trained a new model
+	//+kubebuilder:validation:Optional
+	LastTrained *metav1.Time `json:"lastTrained,omitempty" protobuf:"bytes,14,opt,name=lastTrained"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
+	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,15,rep,name=conditions"`
 }

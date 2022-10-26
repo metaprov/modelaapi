@@ -1469,6 +1469,10 @@ func (in *PredictorStatus) DeepCopyInto(out *PredictorStatus) {
 	out.LastPredictionDataset = in.LastPredictionDataset
 	in.ServingTestResult.DeepCopyInto(&out.ServingTestResult)
 	in.PredictionSchedule.DeepCopyInto(&out.PredictionSchedule)
+	if in.LastPrediction != nil {
+		in, out := &in.LastPrediction, &out.LastPrediction
+		*out = (*in).DeepCopy()
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]PredictorCondition, len(*in))

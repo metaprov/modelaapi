@@ -9,7 +9,6 @@ package v1alpha1
 import (
 	"fmt"
 	"github.com/dustin/go-humanize"
-
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -56,9 +55,43 @@ func (feature *FeatureGroup) Age() string {
 	return humanize.Time(feature.CreationTimestamp.Time)
 }
 
-//==============================================================================
-// Factory method
-//==============================================================================
+///////////////////////////////////////////////
+// Sync
+//////////////////////////////////////////////
+func (fg *FeatureGroup) MarkSynching() {
+	fg.Status.Phase = FeatureGroupPhaseSyncing
+	fg.CreateOrUpdateCond(FeatureGroupCondition{
+		Type:   FeatureGroupSynced,
+		Status: v1.ConditionFalse,
+		Reason: "Synching",
+	})
+}
+
+func (mclass *FeatureGroup) MarkSynced() {
+	mclass.Status.Phase = FeatureGroupPhaseSynced
+	mclass.CreateOrUpdateCond(FeatureGroupCondition{
+		Type:   FeatureGroupSynced,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (mclass *FeatureGroup) MarkGeneratingOnlineDataset() {
+	mclass.Status.Phase = FeatureGroupPhaseGeneratingOnlineDataset
+	mclass.CreateOrUpdateCond(FeatureGroupCondition{
+		Type:   FeatureGroupSynced,
+		Status: v1.ConditionFalse,
+		Reason: "GeneratingOnlineDataset",
+	})
+}
+
+func (mclass *FeatureGroup) MarkGeneratedOnlineDataset() {
+	mclass.Status.Phase = FeatureGroupPhaseOnlineDatasetGenerated
+	mclass.CreateOrUpdateCond(FeatureGroupCondition{
+		Type:   FeatureGroupSynced,
+		Status: v1.ConditionFalse,
+		Reason: "GeneratedOnlineDataset",
+	})
+}
 
 //==============================================================================
 // Assign commit and id

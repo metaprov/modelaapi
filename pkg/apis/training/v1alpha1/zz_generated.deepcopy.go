@@ -2099,7 +2099,22 @@ func (in *ModelClassStatus) DeepCopyInto(out *ModelClassStatus) {
 	}
 	in.LastOnlineTrainingSet.DeepCopyInto(&out.LastOnlineTrainingSet)
 	in.TrainingSchedule.DeepCopyInto(&out.TrainingSchedule)
-	in.SyncSchedule.DeepCopyInto(&out.SyncSchedule)
+	if in.LastOnlineTablesGenerated != nil {
+		in, out := &in.LastOnlineTablesGenerated, &out.LastOnlineTablesGenerated
+		*out = (*in).DeepCopy()
+	}
+	if in.LastSync != nil {
+		in, out := &in.LastSync, &out.LastSync
+		*out = (*in).DeepCopy()
+	}
+	if in.LastTrainingDatasetGenerated != nil {
+		in, out := &in.LastTrainingDatasetGenerated, &out.LastTrainingDatasetGenerated
+		*out = (*in).DeepCopy()
+	}
+	if in.LastTrained != nil {
+		in, out := &in.LastTrained, &out.LastTrained
+		*out = (*in).DeepCopy()
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ModelClassCondition, len(*in))

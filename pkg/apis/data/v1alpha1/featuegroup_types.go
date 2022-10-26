@@ -12,6 +12,15 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+type FeatureGroupPhase string
+
+const (
+	FeatureGroupPhaseGeneratingOnlineDataset FeatureGroupPhase = "GeneratingOnlineDataset"
+	FeatureGroupPhaseOnlineDatasetGenerated  FeatureGroupPhase = "GeneratedOnlineDataset"
+	FeatureGroupPhaseSyncing                 FeatureGroupPhase = "Syncing"
+	FeatureGroupPhaseSynced                  FeatureGroupPhase = "Synced"
+)
+
 //==============================================================================
 // FeatureRef
 //==============================================================================
@@ -20,8 +29,9 @@ import (
 type FeatureGroupConditionType string
 
 const (
-	FeatureGroupReady FeatureGroupConditionType = "Ready"
-	FeatureGroupSaved FeatureGroupConditionType = "Saved"
+	FeatureGroupReady  FeatureGroupConditionType = "Ready"
+	FeatureGroupSaved  FeatureGroupConditionType = "Saved"
+	FeatureGroupSynced FeatureGroupConditionType = "Sync"
 )
 
 // FeatureGroupCondition describes the state of a deployment at a certain point.
@@ -74,46 +84,46 @@ type FeatureGroupSpec struct {
 	// Version name is the product version for the feature group.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,3,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// Description of the feature group.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
-	Description string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
+	Description string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// How this group is ingested
 	// +kubebuilder:default:="batch"
 	// +kubebuilder:validation:Optional
-	IngestType *catalog.FeatureStoreIngestType `json:"ingestType,omitempty" protobuf:"bytes,5,opt,name=ingestType"`
+	IngestType *catalog.FeatureStoreIngestType `json:"ingestType,omitempty" protobuf:"bytes,4,opt,name=ingestType"`
 	// A feature group must be part of an entity.
-	EntityName string `json:"entityName,omitempty" protobuf:"bytes,6,opt,name=entityName"`
+	EntityName string `json:"entityName,omitempty" protobuf:"bytes,5,opt,name=entityName"`
 	// The features in the group.
 	// +kubebuilder:validation:Optional
-	Features []string `json:"features,omitempty" protobuf:"bytes,7,rep,name=features"`
-	// Schedule for running the pipeline
+	Features []string `json:"features,omitempty" protobuf:"bytes,6,rep,name=features"`
+	// Schedule for running ingesting the data from the feature.
+	// On virtual features (e.g. where the data already reside in a table)
+	// The ingest will just perform feature profile, and run the feature group unit tests.
 	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,10,opt,name=schedule"`
+	IngestSchedule catalog.RunSchedule `json:"ingestSchedule,omitempty" protobuf:"bytes,7,opt,name=ingestSchedule"`
+	// Schedule to sync the feature group into the online store.
+	// +kubebuilder:validation:Optional
+	SyncSchedule catalog.RunSchedule `json:"syncSchedule,omitempty" protobuf:"bytes,8,opt,name=syncSchedule"`
 	// The name of the data source which contain the schema for this entity
 	// +kubebuilder:validation:Optional
-	Schema Schema `json:"schema,omitempty" protobuf:"bytes,11,rep,name=schema"`
+	Schema Schema `json:"schema,omitempty" protobuf:"bytes,9,opt,name=schema"`
 	// Unit test to run on data from this feature group upon ingrest.
 	// +kubebuilder:validation:Optional
-	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,15,opt,name=unitTests"`
+	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,10,opt,name=unitTests"`
 	// Specify the data for this feature group
 	// +kubebuilder:validation:Optional
-	Data DataLocation `json:"data,omitempty" protobuf:"bytes,17,opt,name=data"`
+	Data DataLocation `json:"data,omitempty" protobuf:"bytes,11,opt,name=data"`
 	// Materialization
 	// +kubebuilder:validation:Optional
-	Materialization MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,18,opt,name=materialization"`
+	Materialization MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,12,opt,name=materialization"`
 }
 
 // FeatureStatus defines the observed state of Feature
 type FeatureGroupStatus struct {
-	// Last run is the last time the feature group run
-	//+kubebuilder:validation:Optional
-	LastProfile catalog.LastRunStatus `json:"lastProfile,omitempty" protobuf:"bytes,1,opt,name=lastProfile"`
-	// The time of the next schedule run
-	//+kubebuilder:validation:Optional
-	NextRun *metav1.Time `json:"nextRun,omitempty" protobuf:"bytes,2,opt,name=nextRun"`
+	Phase FeatureGroupPhase `json:"phase,omitempty" protobuf:"bytes,2,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
@@ -122,11 +132,17 @@ type FeatureGroupStatus struct {
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,4,opt,name=lastUpdated"`
 	// The current number of rows in the feature group.
 	//+kubebuilder:validation:Optional
-	Rows int32 `json:"rows,omitempty" protobuf:"bytes,5,opt,name=rows"`
+	Rows int32 `json:"rows,omitempty" protobuf:"varint,5,opt,name=rows"`
+	// Set the sync schedule between offline store and online store.
+	//+kubebuilder:validation:Optional
+	SyncSchedule catalog.RunScheduleStatus `json:"syncSchedule,omitempty" protobuf:"bytes,6,opt,name=syncSchedule"`
+	// the ingest schedule status
+	//+kubebuilder:validation:Optional
+	IngestSchedule catalog.RunScheduleStatus `json:"ingestSchedule,omitempty" protobuf:"bytes,7,opt,name=ingestSchedule"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeatureGroupCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
+	Conditions []FeatureGroupCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
 }
 
 type MaterializationSpec struct {
