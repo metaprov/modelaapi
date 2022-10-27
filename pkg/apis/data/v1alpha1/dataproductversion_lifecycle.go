@@ -17,7 +17,7 @@ import (
 	"k8s.io/client-go/kubernetes/scheme"
 )
 
-func (version *DataProductVersion) HasFinalizer() bool {
+func (version DataProductVersion) HasFinalizer() bool {
 	return util.HasFin(&version.ObjectMeta, data.GroupName)
 }
 func (version *DataProductVersion) AddFinalizer() { util.AddFin(&version.ObjectMeta, data.GroupName) }
@@ -49,7 +49,7 @@ func (version *DataProductVersion) CreateOrUpdateCond(cond DataProductVersionCon
 	version.Status.Conditions[i] = current
 }
 
-func (version *DataProductVersion) GetCondIdx(t DataProductVersionConditionType) int {
+func (version DataProductVersion) GetCondIdx(t DataProductVersionConditionType) int {
 	for i, v := range version.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -58,7 +58,7 @@ func (version *DataProductVersion) GetCondIdx(t DataProductVersionConditionType)
 	return -1
 }
 
-func (version *DataProductVersion) GetCond(t DataProductVersionConditionType) DataProductVersionCondition {
+func (version DataProductVersion) GetCond(t DataProductVersionConditionType) DataProductVersionCondition {
 	for _, v := range version.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -74,15 +74,15 @@ func (version *DataProductVersion) GetCond(t DataProductVersionConditionType) Da
 
 }
 
-func (version *DataProductVersion) IsReady() bool {
+func (version DataProductVersion) IsReady() bool {
 	return version.GetCond(DataProductVersionReady).Status == v1.ConditionTrue
 }
 
-func (version *DataProductVersion) YamlUri() string {
+func (version DataProductVersion) YamlUri() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/%s-dataproductversion.yaml", version.Namespace, version.Name, version.Name)
 }
 
-func (version *DataProductVersion) MessageUri() string {
+func (version DataProductVersion) MessageUri() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/dataproductversion.json", version.Namespace, version.Name)
 }
 
@@ -118,6 +118,6 @@ func (version *DataProductVersion) MarkFailed(err error) {
 	})
 }
 
-func (version *DataProductVersion) Archived() bool {
+func (version DataProductVersion) Archived() bool {
 	return version.GetCond(DataProductVersionSaved).Status == v1.ConditionTrue
 }

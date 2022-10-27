@@ -19,7 +19,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
 
-func (study *Study) DefaultObjective(task catalog.MLTask) catalog.Metric {
+func (study Study) DefaultObjective(task catalog.MLTask) catalog.Metric {
 	if task == catalog.BinaryClassification {
 		return catalog.RocAuc
 	}
@@ -35,7 +35,7 @@ func (study *Study) DefaultObjective(task catalog.MLTask) catalog.Metric {
 	return catalog.Accuracy
 }
 
-func (study *Study) DefaultFESearchEstimator(task catalog.MLTask) catalog.ClassicEstimatorName {
+func (study Study) DefaultFESearchEstimator(task catalog.MLTask) catalog.ClassicEstimatorName {
 	if task == catalog.BinaryClassification {
 		return catalog.DecisionTreeClassifier
 	}
@@ -51,7 +51,7 @@ func (study *Study) DefaultFESearchEstimator(task catalog.MLTask) catalog.Classi
 	return catalog.UnknownEstimatorName
 }
 
-func (study *Study) DefaultBaselineEstimator(task catalog.MLTask) catalog.ClassicEstimatorName {
+func (study Study) DefaultBaselineEstimator(task catalog.MLTask) catalog.ClassicEstimatorName {
 	if task == catalog.BinaryClassification {
 		return catalog.RandomForestClassifier
 	}
@@ -140,21 +140,21 @@ func (study *Study) Default() {
 // validation
 var _ webhook.Validator = &Study{}
 
-func (study *Study) ValidateDelete() error {
+func (study Study) ValidateDelete() error {
 	return nil
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (study *Study) ValidateCreate() error {
+func (study Study) ValidateCreate() error {
 	return study.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (study *Study) ValidateUpdate(old runtime.Object) error {
+func (study Study) ValidateUpdate(old runtime.Object) error {
 	return study.validate()
 }
 
-func (study *Study) validate() error {
+func (study Study) validate() error {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, study.validateMeta(field.NewPath("metadata"))...)
 	allErrs = append(allErrs, study.validateSpec(field.NewPath("spec"))...)
@@ -167,13 +167,13 @@ func (study *Study) validate() error {
 		study.Name, allErrs)
 }
 
-func (study *Study) validateMeta(fldPath *field.Path) field.ErrorList {
+func (study Study) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, study.validateName(fldPath.Child("name"))...)
 	return allErrs
 }
 
-func (study *Study) validateName(fldPath *field.Path) field.ErrorList {
+func (study Study) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	err := common.ValidateResourceName(study.Name)
 	if err != nil {
@@ -182,7 +182,7 @@ func (study *Study) validateName(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (study *Study) validateSpec(fldPath *field.Path) field.ErrorList {
+func (study Study) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, study.validateTask(fldPath.Child("Task"))...)
 	allErrs = append(allErrs, study.validateDataset(fldPath.Child("Entity"))...)
@@ -190,7 +190,7 @@ func (study *Study) validateSpec(fldPath *field.Path) field.ErrorList {
 }
 
 // Validate task checks that the
-func (study *Study) validateDataset(fldPath *field.Path) field.ErrorList {
+func (study Study) validateDataset(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	// Task must be defined.
 	if study.Spec.DatasetName == nil {
@@ -205,7 +205,7 @@ func (study *Study) validateDataset(fldPath *field.Path) field.ErrorList {
 }
 
 // Validate task checks that the
-func (study *Study) validateTask(fldPath *field.Path) field.ErrorList {
+func (study Study) validateTask(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	// Task must be defined.
 	if study.Spec.Task == nil {
@@ -246,7 +246,7 @@ func (study *Study) validateTask(fldPath *field.Path) field.ErrorList {
 			err.Error()))
 	}
 
-	if *study.Spec.Task == catalog.Forecasting && !study.Spec.Search.Objective.IsForecast() {
+	if *study.Spec.Task == catalog.Forecasting || *study.Spec.Task == catalog.GroupForecast && !study.Spec.Search.Objective.IsForecast() {
 		err := errors.Errorf("objective %v is not a forecasting metric", *study.Spec.Search.Objective)
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,

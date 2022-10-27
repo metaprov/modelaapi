@@ -30,21 +30,21 @@ func (lab *Lab) SetupWebhookWithManager(mgr ctrl.Manager) error {
 // Keys
 //==============================================================================
 
-func (lab *Lab) RootUri() string {
+func (lab Lab) RootUri() string {
 	return fmt.Sprintf("tenants/%s/labs/%s", lab.Namespace, lab.Name)
 }
 
-func (lab *Lab) ManifestUri() string {
+func (lab Lab) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-lab.yaml", lab.RootUri(), lab.Name)
 }
 
-func (lab *Lab) CreateNamespace() *corev1.Namespace {
+func (lab Lab) CreateNamespace() *corev1.Namespace {
 	namespace := &corev1.Namespace{}
 	namespace.ObjectMeta.Name = lab.ObjectMeta.Name
 	return namespace
 }
 
-func (lab *Lab) Selector() *metav1.LabelSelector {
+func (lab Lab) Selector() *metav1.LabelSelector {
 	result := &metav1.LabelSelector{
 		MatchLabels: map[string]string{},
 	}
@@ -65,11 +65,11 @@ func (lab *Lab) RemoveFinalizer()   { util.RemoveFin(&lab.ObjectMeta, infra.Grou
 //==============================================================================
 
 // Return the on disk rep location
-func (lab *Lab) RepPath(root string) (string, error) {
+func (lab Lab) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/labs/%s.yaml", root, lab.ObjectMeta.Name), nil
 }
 
-func (lab *Lab) RepEntry() (string, error) {
+func (lab Lab) RepEntry() (string, error) {
 	return fmt.Sprintf("labs/%s.yaml", lab.ObjectMeta.Name), nil
 }
 
@@ -117,11 +117,11 @@ func (lab *Lab) GetCond(t LabConditionType) LabCondition {
 	}
 }
 
-func (lab *Lab) IsReady() bool {
+func (lab Lab) IsReady() bool {
 	return lab.GetCond(LabReady).Status == corev1.ConditionTrue
 }
 
-func (lab *Lab) IsArchived() bool {
+func (lab Lab) IsArchived() bool {
 	return lab.GetCond(LabSaved).Status == corev1.ConditionTrue
 }
 
@@ -149,7 +149,7 @@ func ParseLabYaml(content []byte) (*Lab, error) {
 /// Roles
 /////////////////////////////////////////
 
-func (lab *Lab) LabAdmin() *rbacv1.Role {
+func (lab Lab) LabAdmin() *rbacv1.Role {
 	return &rbacv1.Role{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      "lab-admin",
@@ -167,7 +167,7 @@ func (lab *Lab) LabAdmin() *rbacv1.Role {
 	}
 }
 
-func (lab *Lab) LabDev() *rbacv1.Role {
+func (lab Lab) LabDev() *rbacv1.Role {
 	return &rbacv1.Role{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      "lab-dev",
@@ -185,7 +185,7 @@ func (lab *Lab) LabDev() *rbacv1.Role {
 	}
 }
 
-func (lab *Lab) LabOps() *rbacv1.Role {
+func (lab Lab) LabOps() *rbacv1.Role {
 	return &rbacv1.Role{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      "lab-ops",
@@ -203,7 +203,7 @@ func (lab *Lab) LabOps() *rbacv1.Role {
 	}
 }
 
-func (lab *Lab) LabJobRole() *rbacv1.Role {
+func (lab Lab) LabJobRole() *rbacv1.Role {
 	return &rbacv1.Role{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.LabJobRunnerRole,
@@ -229,7 +229,7 @@ func (lab *Lab) LabJobRole() *rbacv1.Role {
 }
 
 // Create a role binding for a job
-func (lab *Lab) LabJobRoleBinding() *rbacv1.RoleBinding {
+func (lab Lab) LabJobRoleBinding() *rbacv1.RoleBinding {
 	return &rbacv1.RoleBinding{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.LabJobRunnerRoleBinding,
@@ -251,7 +251,7 @@ func (lab *Lab) LabJobRoleBinding() *rbacv1.RoleBinding {
 	}
 }
 
-func (lab *Lab) LabServiceAccount() *corev1.ServiceAccount {
+func (lab Lab) LabServiceAccount() *corev1.ServiceAccount {
 	return &corev1.ServiceAccount{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.LabJobRunnerSa,

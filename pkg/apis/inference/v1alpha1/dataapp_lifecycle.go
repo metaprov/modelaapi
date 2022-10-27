@@ -17,42 +17,42 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-func (r *DataApp) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (dataapp *DataApp) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(r).
+		For(dataapp).
 		Complete()
 }
 
-func (r *DataApp) HasFinalizer() bool { return util.HasFin(&r.ObjectMeta, data.GroupName) }
-func (r *DataApp) AddFinalizer()      { util.AddFin(&r.ObjectMeta, data.GroupName) }
-func (r *DataApp) RemoveFinalizer()   { util.RemoveFin(&r.ObjectMeta, data.GroupName) }
+func (dataapp DataApp) HasFinalizer() bool { return util.HasFin(&dataapp.ObjectMeta, data.GroupName) }
+func (dataapp *DataApp) AddFinalizer()     { util.AddFin(&dataapp.ObjectMeta, data.GroupName) }
+func (dataapp *DataApp) RemoveFinalizer()  { util.RemoveFin(&dataapp.ObjectMeta, data.GroupName) }
 
 //==============================================================================
 // Validate
 //==============================================================================
 
 // Merge or update condition
-func (r *DataApp) CreateOrUpdateCond(cond DataAppCondition) {
-	i := r.GetCondIdx(cond.Type)
+func (dataapp *DataApp) CreateOrUpdateCond(cond DataAppCondition) {
+	i := dataapp.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
 		cond.LastTransitionTime = &now
-		r.Status.Conditions = append(r.Status.Conditions, cond)
+		dataapp.Status.Conditions = append(dataapp.Status.Conditions, cond)
 		return
 	}
 	// else we already have the condition, update it
-	current := r.Status.Conditions[i]
+	current := dataapp.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
 	current.LastTransitionTime = &now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
-	r.Status.Conditions[i] = current
+	dataapp.Status.Conditions[i] = current
 }
 
-func (r *DataApp) GetCondIdx(t DataAppConditionType) int {
-	for i, v := range r.Status.Conditions {
+func (dataapp *DataApp) GetCondIdx(t DataAppConditionType) int {
+	for i, v := range dataapp.Status.Conditions {
 		if v.Type == t {
 			return i
 		}
@@ -60,8 +60,8 @@ func (r *DataApp) GetCondIdx(t DataAppConditionType) int {
 	return -1
 }
 
-func (r *DataApp) GetCond(t DataAppConditionType) DataAppCondition {
-	for _, v := range r.Status.Conditions {
+func (dataapp DataApp) GetCond(t DataAppConditionType) DataAppCondition {
+	for _, v := range dataapp.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
@@ -76,61 +76,61 @@ func (r *DataApp) GetCond(t DataAppConditionType) DataAppCondition {
 
 }
 
-func (r *DataApp) IsReady() bool {
-	return r.GetCond(DataAppReady).Status == v1.ConditionTrue
+func (dataapp DataApp) IsReady() bool {
+	return dataapp.GetCond(DataAppReady).Status == v1.ConditionTrue
 }
 
-func (dataapp *DataApp) IsFailed() bool {
+func (dataapp DataApp) IsFailed() bool {
 	return dataapp.GetCond(DataAppReady).Status == v1.ConditionFalse &&
 		dataapp.GetCond(DataAppReady).Reason == "Failed"
 }
 
-func (r *DataApp) Populate(name string) {
+func (dataapp *DataApp) Populate(name string) {
 
-	r.ObjectMeta = metav1.ObjectMeta{
+	dataapp.ObjectMeta = metav1.ObjectMeta{
 		Name:      "iris",
 		Namespace: "modela-data",
 	}
 
-	r.Spec = DataAppSpec{
+	dataapp.Spec = DataAppSpec{
 		VersionName: util.StrPtr("iris-0.0.1"),
 	}
 }
 
-func (r *DataApp) IsInCond(ct DataAppConditionType) bool {
-	current := r.GetCond(ct)
+func (dataapp *DataApp) IsInCond(ct DataAppConditionType) bool {
+	current := dataapp.GetCond(ct)
 	return current.Status == v1.ConditionTrue
 }
 
-func (r *DataApp) PrintConditions() {
-	for _, v := range r.Status.Conditions {
+func (dataapp *DataApp) PrintConditions() {
+	for _, v := range dataapp.Status.Conditions {
 		fmt.Println(v)
 	}
 }
 
-func (r *DataApp) MarkReady() {
-	r.CreateOrUpdateCond(DataAppCondition{
+func (dataapp *DataApp) MarkReady() {
+	dataapp.CreateOrUpdateCond(DataAppCondition{
 		Type:   DataAppReady,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (r *DataApp) Deleted() bool {
-	return !r.ObjectMeta.DeletionTimestamp.IsZero()
+func (dataapp DataApp) Deleted() bool {
+	return !dataapp.ObjectMeta.DeletionTimestamp.IsZero()
 }
 
-func (r *DataApp) MarkSaved() {
-	r.CreateOrUpdateCond(DataAppCondition{
+func (dataapp *DataApp) MarkSaved() {
+	dataapp.CreateOrUpdateCond(DataAppCondition{
 		Type:   DataAppSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (r *DataApp) IsSaved() bool {
-	return r.GetCond(DataAppSaved).Status == v1.ConditionTrue
+func (dataapp DataApp) IsSaved() bool {
+	return dataapp.GetCond(DataAppSaved).Status == v1.ConditionTrue
 }
 
-func (dataapp *DataApp) ConstructGrpcRule(fqdn string, serviceName string) *nwv1.IngressRule {
+func (dataapp DataApp) ConstructGrpcRule(fqdn string, serviceName string) *nwv1.IngressRule {
 	prefix := nwv1.PathTypePrefix
 	return &nwv1.IngressRule{
 		Host: dataapp.Name + "." + fqdn,
@@ -156,7 +156,7 @@ func (dataapp *DataApp) ConstructGrpcRule(fqdn string, serviceName string) *nwv1
 	}
 }
 
-func (dataapp *DataApp) ConstructRESTRule(fqdn string, serviceName string) *nwv1.IngressRule {
+func (dataapp DataApp) ConstructRESTRule(fqdn string, serviceName string) *nwv1.IngressRule {
 	prefix := nwv1.PathTypePrefix
 	return &nwv1.IngressRule{
 		Host: "dataapps." + fqdn,

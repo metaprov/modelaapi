@@ -21,24 +21,24 @@ import (
 var _ webhook.Defaulter = &DataProduct{}
 
 // No defaults in this current release
-func (r *DataProduct) Default() {
-	if r.Spec.Owner == nil {
-		r.Spec.Owner = util.StrPtr("")
+func (product *DataProduct) Default() {
+	if product.Spec.Owner == nil {
+		product.Spec.Owner = util.StrPtr("")
 	}
 
-	if r.Spec.TenantRef == nil {
-		r.Spec.TenantRef = &v1.ObjectReference{Namespace: "modela-system", Name: "default-tenant"}
+	if product.Spec.TenantRef == nil {
+		product.Spec.TenantRef = &v1.ObjectReference{Namespace: "modela-system", Name: "default-tenant"}
 	}
 
 	// set the default folder, if non was given
-	if *r.Spec.DataLocation.Path == "" {
-		r.Spec.DataLocation.Path = util.StrPtr("modela/live/tenants/" + r.Spec.TenantRef.Name + "/dataproducts/" + r.Name)
+	if *product.Spec.DataLocation.Path == "" {
+		product.Spec.DataLocation.Path = util.StrPtr("modela/live/tenants/" + product.Spec.TenantRef.Name + "/dataproducts/" + product.Name)
 	}
 
-	r.Status.Conditions = make([]DataProductCondition, 0)
-	if r.Spec.ImageLocation.Name == nil {
-		r.Spec.ImageLocation.Name = util.StrPtr(r.Name)
-		r.Spec.ImageLocation.RegistryConnectionName = util.StrPtr("")
+	product.Status.Conditions = make([]DataProductCondition, 0)
+	if product.Spec.ImageLocation.Name == nil {
+		product.Spec.ImageLocation.Name = util.StrPtr(product.Name)
+		product.Spec.ImageLocation.RegistryConnectionName = util.StrPtr("")
 	}
 }
 
@@ -46,16 +46,16 @@ func (r *DataProduct) Default() {
 var _ webhook.Validator = &DataProduct{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (r *DataProduct) ValidateCreate() error {
-	return r.validate()
+func (product DataProduct) ValidateCreate() error {
+	return product.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (r *DataProduct) ValidateUpdate(old runtime.Object) error {
-	return r.validate()
+func (product DataProduct) ValidateUpdate(old runtime.Object) error {
+	return product.validate()
 }
 
-func (r *DataProduct) validate() error {
+func (product DataProduct) validate() error {
 	var allErrs field.ErrorList
 	if len(allErrs) == 0 {
 		return nil
@@ -63,14 +63,14 @@ func (r *DataProduct) validate() error {
 
 	return apierrors.NewInvalid(
 		schema.GroupKind{Group: "data.modela.ai", Kind: "DataProduct"},
-		r.Name, allErrs)
+		product.Name, allErrs)
 }
 
-func (r *DataProduct) ValidateDelete() error {
+func (product DataProduct) ValidateDelete() error {
 	return nil
 }
 
-func (r *DataProduct) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (product *DataProduct) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(&DataProduct{}).
 		Complete()

@@ -15,37 +15,37 @@ import (
 // defaulting
 var _ webhook.Defaulter = &RecipeRun{}
 
-func (run *RecipeRun) Default() {
-	if run.ObjectMeta.Labels == nil {
-		run.ObjectMeta.Labels = make(map[string]string)
+func (reciperun *RecipeRun) Default() {
+	if reciperun.ObjectMeta.Labels == nil {
+		reciperun.ObjectMeta.Labels = make(map[string]string)
 	}
-	if run.Spec.RecipeName != nil {
-		run.ObjectMeta.Labels[catalog.RecipeLabelKey] = *run.Spec.RecipeName
+	if reciperun.Spec.RecipeName != nil {
+		reciperun.ObjectMeta.Labels[catalog.RecipeLabelKey] = *reciperun.Spec.RecipeName
 	}
-	if run.Spec.VersionName != nil {
-		run.ObjectMeta.Labels[catalog.DataProductVersionLabelKey] = *run.Spec.VersionName
+	if reciperun.Spec.VersionName != nil {
+		reciperun.ObjectMeta.Labels[catalog.DataProductVersionLabelKey] = *reciperun.Spec.VersionName
 	}
-	run.ObjectMeta.Labels[catalog.TenantLabelKey] = run.Spec.LabRef.Namespace
-	run.ObjectMeta.Labels[catalog.LabLabelKey] = run.Spec.LabRef.Name
+	reciperun.ObjectMeta.Labels[catalog.TenantLabelKey] = reciperun.Spec.LabRef.Namespace
+	reciperun.ObjectMeta.Labels[catalog.LabLabelKey] = reciperun.Spec.LabRef.Name
 }
 
 // validation
 var _ webhook.Validator = &RecipeRun{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (recipe *RecipeRun) ValidateCreate() error {
-	return recipe.validate()
+func (reciperun *RecipeRun) ValidateCreate() error {
+	return reciperun.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (recipe *RecipeRun) ValidateUpdate(old runtime.Object) error {
-	return recipe.validate()
+func (reciperun *RecipeRun) ValidateUpdate(old runtime.Object) error {
+	return reciperun.validate()
 }
 
-func (recipe *RecipeRun) validate() error {
+func (reciperun *RecipeRun) validate() error {
 	return nil
 }
 
-func (recipe *RecipeRun) ValidateDelete() error {
+func (reciperun *RecipeRun) ValidateDelete() error {
 	return nil
 }

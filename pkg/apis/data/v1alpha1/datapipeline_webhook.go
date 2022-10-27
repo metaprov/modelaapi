@@ -26,16 +26,16 @@ func (wr *DataPipeline) SetupWebhookWithManager(mgr ctrl.Manager) error {
 var _ webhook.Validator = &DataPipeline{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (wr *DataPipeline) ValidateCreate() error {
+func (wr DataPipeline) ValidateCreate() error {
 	return wr.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (wr *DataPipeline) ValidateUpdate(old runtime.Object) error {
+func (wr DataPipeline) ValidateUpdate(old runtime.Object) error {
 	return wr.validate()
 }
 
-func (wr *DataPipeline) validate() error {
+func (wr DataPipeline) validate() error {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, wr.validateMeta(field.NewPath("metadata"))...)
 	allErrs = append(allErrs, wr.validateSpec(field.NewPath("spec"))...)
@@ -48,13 +48,13 @@ func (wr *DataPipeline) validate() error {
 		wr.Name, allErrs)
 }
 
-func (wr *DataPipeline) validateMeta(fldPath *field.Path) field.ErrorList {
+func (wr DataPipeline) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, wr.validateName(fldPath.Child("name"))...)
 	return allErrs
 }
 
-func (wr *DataPipeline) validateName(fldPath *field.Path) field.ErrorList {
+func (wr DataPipeline) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	err := common.ValidateResourceName(wr.Name)
 	if err != nil {
@@ -63,12 +63,12 @@ func (wr *DataPipeline) validateName(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (wr *DataPipeline) validateSpec(fldPath *field.Path) field.ErrorList {
+func (wr DataPipeline) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	return allErrs
 }
 
-func (wr *DataPipeline) ValidateDelete() error {
+func (wr DataPipeline) ValidateDelete() error {
 	return nil
 }
 

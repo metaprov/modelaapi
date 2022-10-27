@@ -17,18 +17,18 @@ import (
 
 var _ webhook.Defaulter = &ServingSite{}
 
-func (r *ServingSite) Default() {
-	if r.Spec.TenantRef == nil {
-		r.Spec.TenantRef = &v1.ObjectReference{
+func (servingsite *ServingSite) Default() {
+	if servingsite.Spec.TenantRef == nil {
+		servingsite.Spec.TenantRef = &v1.ObjectReference{
 			Namespace: "default-tenant",
-			Name:      r.Namespace,
+			Name:      servingsite.Namespace,
 		}
 	}
-	if r.Spec.Description == nil {
-		r.Spec.Description = util.StrPtr("")
+	if servingsite.Spec.Description == nil {
+		servingsite.Spec.Description = util.StrPtr("")
 	}
-	if r.Spec.Ingress.FQDN == nil {
-		r.Spec.Ingress.FQDN = util.StrPtr(r.Name + ".modela.ai")
+	if servingsite.Spec.Ingress.FQDN == nil {
+		servingsite.Spec.Ingress.FQDN = util.StrPtr(servingsite.Name + ".modela.ai")
 	}
 }
 
@@ -40,30 +40,30 @@ var _ webhook.Validator = &ServingSite{}
 //==============================================================================
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (r *ServingSite) ValidateCreate() error {
-	return r.validate()
+func (servingsite ServingSite) ValidateCreate() error {
+	return servingsite.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (r *ServingSite) ValidateUpdate(old runtime.Object) error {
-	return r.validate()
+func (servingsite ServingSite) ValidateUpdate(old runtime.Object) error {
+	return servingsite.validate()
 }
 
-func (r *ServingSite) validate() error {
+func (servingsite ServingSite) validate() error {
 	return nil
 }
 
-func (r *ServingSite) validateSpec(fldPath *field.Path) field.ErrorList {
+func (servingsite ServingSite) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	return allErrs
 }
 
-func (r *ServingSite) ValidateDelete() error {
+func (servingsite ServingSite) ValidateDelete() error {
 	return nil
 }
-
-func (r *ServingSite) SetupWebhookWithManager(mgr ctrl.Manager) error {
+ 
+func (servingsite *ServingSite) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(r).
+		For(servingsite).
 		Complete()
 }

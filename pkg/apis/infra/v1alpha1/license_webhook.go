@@ -31,16 +31,16 @@ func (license *License) Default() {
 var _ webhook.Validator = &License{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (license *License) ValidateCreate() error {
+func (license License) ValidateCreate() error {
 	return license.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (license *License) ValidateUpdate(old runtime.Object) error {
+func (license License) ValidateUpdate(old runtime.Object) error {
 	return license.validate()
 }
 
-func (dataset *License) validate() error {
+func (license License) validate() error {
 	var allErrs field.ErrorList
 	if len(allErrs) == 0 {
 		return nil
@@ -48,6 +48,6 @@ func (dataset *License) validate() error {
 	return nil
 }
 
-func (m *License) ValidateDelete() error {
+func (license License) ValidateDelete() error {
 	return nil
 }

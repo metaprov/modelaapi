@@ -20,7 +20,7 @@ import (
 	"k8s.io/client-go/kubernetes/scheme"
 )
 
-func (mclass *ModelClass) IsMarkedForDeletion() bool {
+func (mclass ModelClass) IsMarkedForDeletion() bool {
 	return mclass.DeletionTimestamp != nil
 }
 
@@ -35,11 +35,11 @@ func (mclass *ModelClass) SetupWebhookWithManager(mgr ctrl.Manager) error {
 // Validate
 //==============================================================================
 
-func (mclass *ModelClass) JobName() string {
+func (mclass ModelClass) JobName() string {
 	return fmt.Sprintf("mclass-%s", mclass.Name)
 }
 
-func (mclass *ModelClass) Age() string {
+func (mclass ModelClass) Age() string {
 	return humanize.Time(mclass.CreationTimestamp.Time)
 }
 
@@ -47,7 +47,7 @@ func (mclass *ModelClass) Age() string {
 // Finializer
 //==============================================================================
 
-func (mclass *ModelClass) HasFinalizer() bool {
+func (mclass ModelClass) HasFinalizer() bool {
 	return util.HasFin(&mclass.ObjectMeta, training.GroupName)
 }
 func (mclass *ModelClass) AddFinalizer()    { util.AddFin(&mclass.ObjectMeta, training.GroupName) }
@@ -69,7 +69,7 @@ func (mclass *ModelClass) CreateOrUpdateCond(cond ModelClassCondition) {
 	mclass.Status.Conditions[i] = current
 }
 
-func (mclass *ModelClass) GetCondIdx(t ModelClassConditionType) int {
+func (mclass ModelClass) GetCondIdx(t ModelClassConditionType) int {
 	for i, v := range mclass.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -78,7 +78,7 @@ func (mclass *ModelClass) GetCondIdx(t ModelClassConditionType) int {
 	return -1
 }
 
-func (mclass *ModelClass) GetCond(t ModelClassConditionType) ModelClassCondition {
+func (mclass ModelClass) GetCond(t ModelClassConditionType) ModelClassCondition {
 	for _, v := range mclass.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -94,11 +94,11 @@ func (mclass *ModelClass) GetCond(t ModelClassConditionType) ModelClassCondition
 
 }
 
-func (mclass *ModelClass) IsReady() bool {
+func (mclass ModelClass) IsReady() bool {
 	return mclass.GetCond(ModelClassReady).Status == corev1.ConditionTrue
 }
 
-func (mclass *ModelClass) Key() string {
+func (mclass ModelClass) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "ters", mclass.Namespace, mclass.Name)
 }
 
@@ -119,7 +119,7 @@ func (mclass *ModelClass) MarkArchived() {
 
 }
 
-func (mclass *ModelClass) IsFailed() bool {
+func (mclass ModelClass) IsFailed() bool {
 	cond := mclass.GetCond(ModelClassReady)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(ModelClassReady)
 }

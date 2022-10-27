@@ -58,19 +58,19 @@ func (dataset *Dataset) Default() {
 var _ webhook.Validator = &Dataset{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (dataset *Dataset) ValidateCreate() error {
+func (dataset Dataset) ValidateCreate() error {
 	return dataset.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (dataset *Dataset) ValidateUpdate(old runtime.Object) error {
+func (dataset Dataset) ValidateUpdate(old runtime.Object) error {
 	return dataset.validate()
 }
 
-func (dataset *Dataset) validate() error {
+func (dataset Dataset) validate() error {
 	return nil
 }
 
-func (dataset *Dataset) ValidateDelete() error {
+func (dataset Dataset) ValidateDelete() error {
 	return nil
 }

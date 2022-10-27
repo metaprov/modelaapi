@@ -22,19 +22,19 @@ import (
 // Finilizer
 //==============================================================================
 
-func (tenant *Tenant) HasFinalizer() bool { return util.HasFin(&tenant.ObjectMeta, infra.GroupName) }
-func (tenant *Tenant) AddFinalizer()      { util.AddFin(&tenant.ObjectMeta, infra.GroupName) }
-func (tenant *Tenant) RemoveFinalizer()   { util.RemoveFin(&tenant.ObjectMeta, infra.GroupName) }
+func (tenant Tenant) HasFinalizer() bool { return util.HasFin(&tenant.ObjectMeta, infra.GroupName) }
+func (tenant *Tenant) AddFinalizer()     { util.AddFin(&tenant.ObjectMeta, infra.GroupName) }
+func (tenant *Tenant) RemoveFinalizer()  { util.RemoveFin(&tenant.ObjectMeta, infra.GroupName) }
 
 //==============================================================================
 // Trackable
 //==============================================================================
 
-func (tenant *Tenant) RootUri() string {
+func (tenant Tenant) RootUri() string {
 	return fmt.Sprintf("tenants/%s", tenant.Name)
 }
 
-func (tenant *Tenant) ManifestUri() string {
+func (tenant Tenant) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-tenant.yaml", tenant.RootUri(), tenant.Name)
 }
 
@@ -58,7 +58,7 @@ func (tenant *Tenant) CreateOrUpdateCond(cond TenantCondition) {
 	tenant.Status.Conditions[i] = current
 }
 
-func (tenant *Tenant) GetCondIdx(t TenantConditionType) int {
+func (tenant Tenant) GetCondIdx(t TenantConditionType) int {
 	for i, v := range tenant.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -67,7 +67,7 @@ func (tenant *Tenant) GetCondIdx(t TenantConditionType) int {
 	return -1
 }
 
-func (tenant *Tenant) GetCond(t TenantConditionType) TenantCondition {
+func (tenant Tenant) GetCond(t TenantConditionType) TenantCondition {
 	for _, v := range tenant.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -83,11 +83,11 @@ func (tenant *Tenant) GetCond(t TenantConditionType) TenantCondition {
 
 }
 
-func (tenant *Tenant) IsReady() bool {
+func (tenant Tenant) IsReady() bool {
 	return tenant.GetCond(TenantReady).Status == v1.ConditionTrue
 }
 
-func (tenant *Tenant) Key() string {
+func (tenant Tenant) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "tenants", tenant.Namespace, tenant.Name)
 }
 
@@ -136,11 +136,11 @@ func (tenant *Tenant) MarkArchived() {
 	})
 }
 
-func (tenant *Tenant) Archived() bool {
+func (tenant Tenant) Archived() bool {
 	return tenant.GetCond(TenantSaved).Status == v1.ConditionTrue
 }
 
-func (tenant *Tenant) GetRolesForAccount(account *Account) []string {
+func (tenant Tenant) GetRolesForAccount(account *Account) []string {
 	result := make([]string, 0)
 	for _, v := range tenant.Spec.Permissions.Stakeholders {
 		if v.AccountName == account.Name {

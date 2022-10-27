@@ -31,18 +31,18 @@ func (account *Account) Default() {
 // validation
 var _ webhook.Validator = &Account{}
 
-func (account *Account) ValidateCreate() error {
+func (account Account) ValidateCreate() error {
 	return account.validate()
 }
 
-func (account *Account) ValidateUpdate(old runtime.Object) error {
+func (account Account) ValidateUpdate(old runtime.Object) error {
 	return account.validate()
 }
 
-func (account *Account) validate() error {
+func (account Account) validate() error {
 	return nil
 }
 
-func (account *Account) ValidateDelete() error {
+func (account Account) ValidateDelete() error {
 	return nil
 }

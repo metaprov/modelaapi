@@ -22,19 +22,19 @@ func (lab *Lab) Default() {
 var _ webhook.Validator = &Lab{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (lab *Lab) ValidateCreate() error {
+func (lab Lab) ValidateCreate() error {
 	return lab.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (lab *Lab) ValidateUpdate(old runtime.Object) error {
+func (lab Lab) ValidateUpdate(old runtime.Object) error {
 	return lab.validate()
 }
 
-func (lab *Lab) validate() error {
+func (lab Lab) validate() error {
 	return nil
 }
 
-func (lab *Lab) ValidateDelete() error {
+func (lab Lab) ValidateDelete() error {
 	return nil
 }

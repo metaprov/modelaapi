@@ -17,7 +17,7 @@ import (
 // EntityRef
 //==============================================================================
 
-func (sc *DataSource) AddColumn(
+func (datasource *DataSource) AddColumn(
 	name string,
 	dtype catalog.DataType,
 	dformat catalog.DataDomain,
@@ -31,26 +31,30 @@ func (sc *DataSource) AddColumn(
 	a.Ignore = util.BoolPtr(Ignore)
 	a.Target = util.BoolPtr(Target)
 	a.Nullable = util.BoolPtr(Nullable)
-	sc.Spec.Schema.Columns = append(sc.Spec.Schema.Columns, a)
+	datasource.Spec.Schema.Columns = append(datasource.Spec.Schema.Columns, a)
 }
 
-func (sc *DataSource) HasFinalizer() bool { return util.HasFin(&sc.ObjectMeta, data.GroupName) }
-func (sc *DataSource) AddFinalizer()      { util.AddFin(&sc.ObjectMeta, data.GroupName) }
-func (sc *DataSource) RemoveFinalizer()   { util.RemoveFin(&sc.ObjectMeta, data.GroupName) }
+func (datasource DataSource) HasFinalizer() bool {
+	return util.HasFin(&datasource.ObjectMeta, data.GroupName)
+}
+func (datasource *DataSource) AddFinalizer() { util.AddFin(&datasource.ObjectMeta, data.GroupName) }
+func (datasource *DataSource) RemoveFinalizer() {
+	util.RemoveFin(&datasource.ObjectMeta, data.GroupName)
+}
 
-func (sc *DataSource) MarkLastFieldAsTarget() {
-	targets := sc.Spec.Schema.Columns
+func (datasource *DataSource) MarkLastFieldAsTarget() {
+	targets := datasource.Spec.Schema.Columns
 	// last column
-	lastCol := targets[len(sc.Spec.Schema.Columns)-1]
+	lastCol := targets[len(datasource.Spec.Schema.Columns)-1]
 	lastCol.Target = util.BoolPtr(true)
-	sc.Spec.Schema.Columns[len(sc.Spec.Schema.Columns)-1] = lastCol
+	datasource.Spec.Schema.Columns[len(datasource.Spec.Schema.Columns)-1] = lastCol
 }
 
-func (sc *DataSource) MarkFieldAsTarget(target string) {
-	for v, x := range sc.Spec.Schema.Columns {
+func (datasource *DataSource) MarkFieldAsTarget(target string) {
+	for v, x := range datasource.Spec.Schema.Columns {
 		if x.Name == target {
 			x.Target = util.BoolPtr(true)
-			sc.Spec.Schema.Columns[v] = x
+			datasource.Spec.Schema.Columns[v] = x
 			break
 		}
 	}
@@ -60,11 +64,11 @@ func (sc *DataSource) MarkFieldAsTarget(target string) {
 // Validate
 //==============================================================================
 
-func (sc DataSource) Validate() (bool, []metav1.StatusCause) {
+func (datasource DataSource) Validate() (bool, []metav1.StatusCause) {
 	var causes []metav1.StatusCause
 
 	// must have one target attribute
-	if sc.CountTargetAttributes() == 0 {
+	if datasource.CountTargetAttributes() == 0 {
 		causes = append(causes, metav1.StatusCause{
 			Type:    metav1.CauseTypeFieldValueInvalid,
 			Field:   "FeatureColumn",
@@ -73,7 +77,7 @@ func (sc DataSource) Validate() (bool, []metav1.StatusCause) {
 	}
 
 	// must have at least one active attribute which is not a target
-	if sc.CountTargetAttributes() > 1 {
+	if datasource.CountTargetAttributes() > 1 {
 		causes = append(causes, metav1.StatusCause{
 			Type:    metav1.CauseTypeFieldValueInvalid,
 			Field:   "FeatureColumn",
@@ -82,7 +86,7 @@ func (sc DataSource) Validate() (bool, []metav1.StatusCause) {
 	}
 
 	// validate each attribute
-	for _, a := range sc.Spec.Schema.Columns {
+	for _, a := range datasource.Spec.Schema.Columns {
 		valid, c := a.Validate()
 		if !valid {
 			for _, each := range c {
@@ -94,38 +98,38 @@ func (sc DataSource) Validate() (bool, []metav1.StatusCause) {
 	return len(causes) == 0, causes
 }
 
-func (a *Column) ValidateColumn() (bool, []metav1.StatusCause) {
+func (column *Column) ValidateColumn() (bool, []metav1.StatusCause) {
 	var causes []metav1.StatusCause
-	if a.Target != nil && a.Ignore != nil && *a.Target && *a.Ignore {
+	if column.Target != nil && column.Ignore != nil && *column.Target && *column.Ignore {
 		causes = append(causes, metav1.StatusCause{
 			Type:    metav1.CauseTypeFieldValueInvalid,
 			Field:   "FeatureColumn",
-			Message: fmt.Sprintf("FeatureColumn %s cannot be ignored and a target", a.Name),
+			Message: fmt.Sprintf("FeatureColumn %s cannot be ignored and column target", column.Name),
 		})
 	}
 
-	if err := util.CheckMaxLen(a.Name, "name", 256); err != nil {
+	if err := util.CheckMaxLen(column.Name, "name", 256); err != nil {
 		causes = append(causes, metav1.StatusCause{
 			Type:    metav1.CauseTypeFieldValueInvalid,
 			Field:   "FeatureColumn",
-			Message: fmt.Sprintf("FeatureColumn %s length cannot be more than 256 chars", a.Name),
+			Message: fmt.Sprintf("FeatureColumn %s length cannot be more than 256 chars", column.Name),
 		})
 	}
 
-	if err := util.CheckNotEmpty(a.Name, "name"); err != nil {
+	if err := util.CheckNotEmpty(column.Name, "name"); err != nil {
 		causes = append(causes, metav1.StatusCause{
 			Type:    metav1.CauseTypeFieldValueInvalid,
 			Field:   "FeatureColumn",
-			Message: fmt.Sprintf("FeatureColumn %s cannot be empty", a.Name),
+			Message: fmt.Sprintf("FeatureColumn %s cannot be empty", column.Name),
 		})
 	}
 	return len(causes) == 0, causes
 }
 
 // CountActiveAttributes counts the number of attributes that we should not ignore
-func (sc DataSource) CountActiveAttributes() int {
+func (datasource DataSource) CountActiveAttributes() int {
 	count := 0
-	for _, a := range sc.Spec.Schema.Columns {
+	for _, a := range datasource.Spec.Schema.Columns {
 		if !*a.Ignore {
 			count++
 		}
@@ -134,9 +138,9 @@ func (sc DataSource) CountActiveAttributes() int {
 }
 
 // Count the number of attributes that are mark as targets
-func (sc DataSource) CountTargetAttributes() int {
+func (datasource DataSource) CountTargetAttributes() int {
 	count := 0
-	for _, a := range sc.Spec.Schema.Columns {
+	for _, a := range datasource.Spec.Schema.Columns {
 		if a.Target != nil && *a.Target {
 			count++
 		}
@@ -146,27 +150,27 @@ func (sc DataSource) CountTargetAttributes() int {
 
 // Merge or update condition
 // Merge or update condition
-func (sc *DataSource) CreateOrUpdateCond(cond DataSourceCondition) {
-	i := sc.GetCondIdx(cond.Type)
+func (datasource *DataSource) CreateOrUpdateCond(cond DataSourceCondition) {
+	i := datasource.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
 		cond.LastTransitionTime = &now
-		sc.Status.Conditions = append(sc.Status.Conditions, cond)
+		datasource.Status.Conditions = append(datasource.Status.Conditions, cond)
 		return
 	}
 	// else we already have the condition, update it
-	current := sc.Status.Conditions[i]
+	current := datasource.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
 	current.LastTransitionTime = &now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
-	sc.Status.Conditions[i] = current
+	datasource.Status.Conditions[i] = current
 }
 
-func (sc *DataSource) GetCondIdx(t DataSourceConditionType) int {
-	for i, v := range sc.Status.Conditions {
+func (datasource DataSource) GetCondIdx(t DataSourceConditionType) int {
+	for i, v := range datasource.Status.Conditions {
 		if v.Type == t {
 			return i
 		}
@@ -174,8 +178,8 @@ func (sc *DataSource) GetCondIdx(t DataSourceConditionType) int {
 	return -1
 }
 
-func (sc *DataSource) GetCond(t DataSourceConditionType) DataSourceCondition {
-	for _, v := range sc.Status.Conditions {
+func (datasource DataSource) GetCond(t DataSourceConditionType) DataSourceCondition {
+	for _, v := range datasource.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
@@ -190,43 +194,43 @@ func (sc *DataSource) GetCond(t DataSourceConditionType) DataSourceCondition {
 
 }
 
-func (schema *DataSource) IsReady() bool {
-	return schema.GetCond(DatasourceReady).Status == v1.ConditionTrue
+func (datasource DataSource) IsReady() bool {
+	return datasource.GetCond(DatasourceReady).Status == v1.ConditionTrue
 }
 
-func (sc *DataSource) Key() string {
-	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasources/%s-datasource.yaml", sc.Namespace, *sc.Spec.VersionName, sc.Name)
+func (datasource DataSource) Key() string {
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasources/%s-datasource.yaml", datasource.Namespace, *datasource.Spec.VersionName, datasource.Name)
 }
 
-func (schema *DataSource) RootUri() string {
-	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasources/%s", schema.Namespace, *schema.Spec.VersionName, schema.Name)
+func (datasource DataSource) RootUri() string {
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasources/%s", datasource.Namespace, *datasource.Spec.VersionName, datasource.Name)
 }
 
-func (schema *DataSource) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-schema.yaml", schema.RootUri(), schema.Name)
+func (datasource DataSource) ManifestUri() string {
+	return fmt.Sprintf("%s/%s-datasource.yaml", datasource.RootUri(), datasource.Name)
 }
 
-func (sc *DataSource) Poplulate() {
-	sc.ObjectMeta = metav1.ObjectMeta{
+func (datasource *DataSource) Poplulate() {
+	datasource.ObjectMeta = metav1.ObjectMeta{
 		Name:      "binary-classification",
 		Namespace: "iris-product",
 	}
-	sc.Spec = DataSourceSpec{
+	datasource.Spec = DataSourceSpec{
 		VersionName: util.StrPtr("iris"),
 	}
 
-	sc.Spec.Schema.Columns = make([]Column, 0)
-	sc.AddColumn("a", catalog.DataTypeNumber, catalog.DataDomainNone, false, false, false)
-	sc.AddColumn("b", catalog.DataTypeNumber, catalog.DataDomainNone, false, false, false)
-	sc.AddColumn("c", catalog.DataTypeNumber, catalog.DataDomainNone, false, false, false)
-	sc.AddColumn("d", catalog.DataTypeNumber, catalog.DataDomainNone, false, false, false)
-	sc.AddColumn("class", catalog.DataTypeCategorical, catalog.DataDomainNone, false, true, false)
+	datasource.Spec.Schema.Columns = make([]Column, 0)
+	datasource.AddColumn("a", catalog.DataTypeNumber, catalog.DataDomainNone, false, false, false)
+	datasource.AddColumn("b", catalog.DataTypeNumber, catalog.DataDomainNone, false, false, false)
+	datasource.AddColumn("c", catalog.DataTypeNumber, catalog.DataDomainNone, false, false, false)
+	datasource.AddColumn("d", catalog.DataTypeNumber, catalog.DataDomainNone, false, false, false)
+	datasource.AddColumn("class", catalog.DataTypeCategorical, catalog.DataDomainNone, false, true, false)
 
 }
 
-func (in *DataSource) ActiveColumns() (string, error) {
+func (datasource DataSource) ActiveColumns() (string, error) {
 	columns := make([]string, 0)
-	for _, v := range in.Spec.Schema.Columns {
+	for _, v := range datasource.Spec.Schema.Columns {
 		if !(v.Ignore != nil && *v.Ignore) && !(v.Target != nil && *v.Target) {
 			columns = append(columns, v.Name)
 		}
@@ -238,9 +242,9 @@ func (in *DataSource) ActiveColumns() (string, error) {
 	return string(js), nil
 }
 
-func (sc *DataSource) InferTask() catalog.MLTask {
+func (datasource DataSource) InferTask() catalog.MLTask {
 	// get last column
-	last := sc.Spec.Schema.Columns[len(sc.Spec.Schema.Columns)-1]
+	last := datasource.Spec.Schema.Columns[len(datasource.Spec.Schema.Columns)-1]
 	if last.DataType == catalog.DataTypeNumber {
 		return catalog.Regression
 	} else {
@@ -248,32 +252,32 @@ func (sc *DataSource) InferTask() catalog.MLTask {
 	}
 }
 
-func (sc *DataSource) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (datasource *DataSource) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(sc).
+		For(datasource).
 		Complete()
 }
 
-func (sc *DataSource) MarkReady() {
-	sc.CreateOrUpdateCond(DataSourceCondition{
+func (datasource *DataSource) MarkReady() {
+	datasource.CreateOrUpdateCond(DataSourceCondition{
 		Type:   DatasourceReady,
 		Status: v1.ConditionTrue,
 	})
 
 }
 
-func (sc *DataSource) MarkSaved() {
-	sc.CreateOrUpdateCond(DataSourceCondition{
+func (datasource *DataSource) MarkSaved() {
+	datasource.CreateOrUpdateCond(DataSourceCondition{
 		Type:   DatasourceSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (sc *DataSource) Saved() bool {
-	return sc.GetCond(DatasourceSaved).Status == v1.ConditionTrue
+func (datasource DataSource) Saved() bool {
+	return datasource.GetCond(DatasourceSaved).Status == v1.ConditionTrue
 }
 
-func (sc *DataSource) HaveValidationRules() bool {
-	return len(sc.Spec.UnitTestsTemplate.Tests) > 0
+func (datasource *DataSource) HaveValidationRules() bool {
+	return len(datasource.Spec.UnitTestsTemplate.Tests) > 0
 
 }

@@ -19,7 +19,7 @@ import (
 // validation
 var _ webhook.Defaulter = &ModelaSystem{}
 
-func (notifier *ModelaSystem) Default() {
+func (ms *ModelaSystem) Default() {
 
 }
 
@@ -27,42 +27,42 @@ func (notifier *ModelaSystem) Default() {
 var _ webhook.Validator = &ModelaSystem{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (notifier *ModelaSystem) ValidateCreate() error {
-	return notifier.validate()
+func (ms ModelaSystem) ValidateCreate() error {
+	return ms.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (notifier *ModelaSystem) ValidateUpdate(old runtime.Object) error {
-	return notifier.validate()
+func (ms ModelaSystem) ValidateUpdate(old runtime.Object) error {
+	return ms.validate()
 }
 
-func (notifier *ModelaSystem) validate() error {
+func (ms *ModelaSystem) validate() error {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, notifier.validateMeta(field.NewPath("metadata"))...)
-	allErrs = append(allErrs, notifier.validateSpec(field.NewPath("spec"))...)
+	allErrs = append(allErrs, ms.validateMeta(field.NewPath("metadata"))...)
+	allErrs = append(allErrs, ms.validateSpec(field.NewPath("spec"))...)
 	if len(allErrs) == 0 {
 		return nil
 	}
 
-	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.ai", Kind: "ModelaSystem"}, notifier.Name, allErrs)
+	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.ai", Kind: "ModelaSystem"}, ms.Name, allErrs)
 }
 
-func (notifier *ModelaSystem) validateMeta(fldPath *field.Path) field.ErrorList {
+func (ms ModelaSystem) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, notifier.validateName(fldPath.Child("name"))...)
+	allErrs = append(allErrs, ms.validateName(fldPath.Child("name"))...)
 	return allErrs
 }
 
-func (notifier *ModelaSystem) validateName(fldPath *field.Path) field.ErrorList {
+func (ms ModelaSystem) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	err := common.ValidateResourceName(notifier.Name)
+	err := common.ValidateResourceName(ms.Name)
 	if err != nil {
-		allErrs = append(allErrs, field.Invalid(fldPath.Child("FileName"), notifier.Name, err.Error()))
+		allErrs = append(allErrs, field.Invalid(fldPath.Child("FileName"), ms.Name, err.Error()))
 	}
 	return allErrs
 }
 
-func (notifier *ModelaSystem) validateSpec(fldPath *field.Path) field.ErrorList {
+func (ms ModelaSystem) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	//Smtp.To   []string
 	//Smtp.Origin string
@@ -74,12 +74,12 @@ func (notifier *ModelaSystem) validateSpec(fldPath *field.Path) field.ErrorList 
 	return allErrs
 }
 
-func (notifier *ModelaSystem) ValidateDelete() error {
+func (ms ModelaSystem) ValidateDelete() error {
 	return nil
 }
 
-func (notifier *ModelaSystem) MarkReady() {
-	notifier.CreateOrUpdateCond(ModelaSystemCondition{
+func (ms *ModelaSystem) MarkReady() {
+	ms.CreateOrUpdateCond(ModelaSystemCondition{
 		Type:   ModelaSystemReady,
 		Status: corev1.ConditionTrue,
 	})

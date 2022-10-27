@@ -22,16 +22,16 @@ var _ webhook.Defaulter = &VirtualVolume{}
 var _ webhook.Validator = &VirtualVolume{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (volume *VirtualVolume) ValidateCreate() error {
+func (volume VirtualVolume) ValidateCreate() error {
 	return volume.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (volume *VirtualVolume) ValidateUpdate(old runtime.Object) error {
+func (volume VirtualVolume) ValidateUpdate(old runtime.Object) error {
 	return volume.validate()
 }
 
-func (notifier *VirtualVolume) validate() error {
+func (notifier VirtualVolume) validate() error {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, notifier.validateMeta(field.NewPath("metadata"))...)
 	allErrs = append(allErrs, notifier.validateSpec(field.NewPath("spec"))...)
@@ -44,13 +44,13 @@ func (notifier *VirtualVolume) validate() error {
 		notifier.Name, allErrs)
 }
 
-func (dataset *VirtualVolume) validateMeta(fldPath *field.Path) field.ErrorList {
+func (dataset VirtualVolume) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, dataset.validateName(fldPath.Child("name"))...)
 	return allErrs
 }
 
-func (dataset *VirtualVolume) validateName(fldPath *field.Path) field.ErrorList {
+func (dataset VirtualVolume) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	err := common.ValidateResourceName(dataset.Name)
 	if err != nil {
@@ -59,7 +59,7 @@ func (dataset *VirtualVolume) validateName(fldPath *field.Path) field.ErrorList 
 	return allErrs
 }
 
-func (dataset *VirtualVolume) validateSpec(fldPath *field.Path) field.ErrorList {
+func (dataset VirtualVolume) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	return allErrs
 }
@@ -73,5 +73,5 @@ func (volume *VirtualVolume) Default() {
 }
 
 func (volume *VirtualVolume) ValidateDelete() error {
-	panic("implement me")
+	return nil
 }

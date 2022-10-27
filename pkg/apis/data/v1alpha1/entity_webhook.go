@@ -23,16 +23,16 @@ import (
 var _ webhook.Validator = &Entity{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (entity *Entity) ValidateCreate() error {
+func (entity Entity) ValidateCreate() error {
 	return entity.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (entity *Entity) ValidateUpdate(old runtime.Object) error {
+func (entity Entity) ValidateUpdate(old runtime.Object) error {
 	return entity.validate()
 }
 
-func (entity *Entity) validate() error {
+func (entity Entity) validate() error {
 	var allErrs field.ErrorList
 	if len(allErrs) == 0 {
 		return nil
@@ -43,7 +43,7 @@ func (entity *Entity) validate() error {
 		entity.Name, allErrs)
 }
 
-func (r *Entity) ValidateDelete() error {
+func (entity Entity) ValidateDelete() error {
 	return nil
 }
 
@@ -51,9 +51,9 @@ func (r *Entity) ValidateDelete() error {
 var _ webhook.Defaulter = &Entity{}
 
 // No defaults in this current release
-func (e *Entity) Default() {
-	if e.Spec.Description == nil {
-		e.Spec.Description = util.StrPtr("")
+func (entity *Entity) Default() {
+	if entity.Spec.Description == nil {
+		entity.Spec.Description = util.StrPtr("")
 	}
 
 }

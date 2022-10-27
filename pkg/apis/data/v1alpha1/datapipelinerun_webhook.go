@@ -25,24 +25,24 @@ func (wr *DataPipelineRun) SetupWebhookWithManager(mgr ctrl.Manager) error {
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (run *DataPipelineRun) ValidateCreate() error {
+func (run DataPipelineRun) ValidateCreate() error {
 	return run.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (run *DataPipelineRun) ValidateUpdate(old runtime.Object) error {
+func (run DataPipelineRun) ValidateUpdate(old runtime.Object) error {
 	return run.validate()
 }
 
-func (run *DataPipelineRun) ValidateDelete() error {
+func (run DataPipelineRun) ValidateDelete() error {
 	return nil
 }
 
-func (ffile *DataPipelineRun) validate() error {
+func (ffile DataPipelineRun) validate() error {
 	return nil
 }
 
-func (ffile *DataPipelineRun) validateMeta(fldPath *field.Path) field.ErrorList {
+func (ffile DataPipelineRun) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	return allErrs
 }

@@ -26,7 +26,7 @@ func (volume *VirtualVolume) SetupWebhookWithManager(mgr ctrl.Manager) error {
 // Finilizer
 //==============================================================================
 
-func (volume *VirtualVolume) HasFinalizer() bool {
+func (volume VirtualVolume) HasFinalizer() bool {
 	return util.HasFin(&volume.ObjectMeta, infra.GroupName)
 }
 func (volume *VirtualVolume) AddFinalizer()    { util.AddFin(&volume.ObjectMeta, infra.GroupName) }
@@ -52,7 +52,7 @@ func (volume *VirtualVolume) CreateOrUpdateCond(cond VirtualVolumeCondition) {
 	volume.Status.Conditions[i] = current
 }
 
-func (volume *VirtualVolume) GetCondIdx(t VirtualVolumeConditionType) int {
+func (volume VirtualVolume) GetCondIdx(t VirtualVolumeConditionType) int {
 	for i, v := range volume.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -61,7 +61,7 @@ func (volume *VirtualVolume) GetCondIdx(t VirtualVolumeConditionType) int {
 	return -1
 }
 
-func (volume *VirtualVolume) GetCond(t VirtualVolumeConditionType) VirtualVolumeCondition {
+func (volume VirtualVolume) GetCond(t VirtualVolumeConditionType) VirtualVolumeCondition {
 	for _, v := range volume.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -77,15 +77,15 @@ func (volume *VirtualVolume) GetCond(t VirtualVolumeConditionType) VirtualVolume
 
 }
 
-func (volume *VirtualVolume) IsReady() bool {
+func (volume VirtualVolume) IsReady() bool {
 	return volume.GetCond(VirtualVolumeReady).Status == v1.ConditionTrue
 }
 
-func (volume *VirtualVolume) RootUri() string {
+func (volume VirtualVolume) RootUri() string {
 	return fmt.Sprintf("tenant/%s/virtualvolumes/%s", volume.Namespace, volume.Name)
 }
 
-func (volume *VirtualVolume) ManifestUri() string {
+func (volume VirtualVolume) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-virtualvolume.yaml", volume.RootUri(), volume.Name)
 }
 
@@ -103,6 +103,6 @@ func (vv *VirtualVolume) MarkArchived() {
 	})
 }
 
-func (vv *VirtualVolume) Archived() bool {
+func (vv VirtualVolume) Archived() bool {
 	return vv.GetCond(VirtualVolumeSaved).Status == v1.ConditionTrue
 }

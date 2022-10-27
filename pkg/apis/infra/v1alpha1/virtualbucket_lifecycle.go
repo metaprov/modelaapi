@@ -23,7 +23,7 @@ func (r *VirtualBucket) SetupWebhookWithManager(mgr ctrl.Manager) error {
 		Complete()
 }
 
-func (bucket *VirtualBucket) HasFinalizer() bool {
+func (bucket VirtualBucket) HasFinalizer() bool {
 	return util.HasFin(&bucket.ObjectMeta, infra.GroupName)
 }
 func (bucket *VirtualBucket) AddFinalizer()    { util.AddFin(&bucket.ObjectMeta, infra.GroupName) }
@@ -49,7 +49,7 @@ func (bucket *VirtualBucket) CreateOrUpdateCond(cond VirtualBucketCondition) {
 	bucket.Status.Conditions[i] = current
 }
 
-func (bucket *VirtualBucket) GetCondIdx(t VirtualBucketConditionType) int {
+func (bucket VirtualBucket) GetCondIdx(t VirtualBucketConditionType) int {
 	for i, v := range bucket.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -58,11 +58,11 @@ func (bucket *VirtualBucket) GetCondIdx(t VirtualBucketConditionType) int {
 	return -1
 }
 
-func (bucket *VirtualBucket) IsReady() bool {
+func (bucket VirtualBucket) IsReady() bool {
 	return bucket.GetCond(VirtualBucketReady).Status == v1.ConditionTrue
 }
 
-func (bucket *VirtualBucket) GetCond(t VirtualBucketConditionType) VirtualBucketCondition {
+func (bucket VirtualBucket) GetCond(t VirtualBucketConditionType) VirtualBucketCondition {
 	for _, v := range bucket.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -78,11 +78,11 @@ func (bucket *VirtualBucket) GetCond(t VirtualBucketConditionType) VirtualBucket
 
 }
 
-func (bucket *VirtualBucket) RootUri() string {
+func (bucket VirtualBucket) RootUri() string {
 	return fmt.Sprintf("tenants/%s/virtualbuckets/%s", bucket.Namespace, bucket.Name)
 }
 
-func (bucket *VirtualBucket) ManifestUri() string {
+func (bucket VirtualBucket) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-virtualbucket.yaml", bucket.RootUri(), bucket.Name)
 }
 
@@ -100,7 +100,7 @@ func (bucket *VirtualBucket) MarkArchived() {
 	})
 }
 
-func (bucket *VirtualBucket) Archived() bool {
+func (bucket VirtualBucket) Archived() bool {
 	return bucket.GetCond(VirtualBucketSaved).Status == v1.ConditionTrue
 }
 

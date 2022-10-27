@@ -79,7 +79,7 @@ func NewModel(
 	return result
 }
 
-func (model *Model) DefaultObjective() catalog.Metric {
+func (model Model) DefaultObjective() catalog.Metric {
 	if *model.Spec.Task == catalog.BinaryClassification {
 		return catalog.RocAuc
 	}
@@ -89,24 +89,24 @@ func (model *Model) DefaultObjective() catalog.Metric {
 	return catalog.NoneMetric
 }
 
-func (model *Model) DefaultImageName() string {
+func (model Model) DefaultImageName() string {
 	return model.Name
 }
 
-func (model *Model) IsExpired(minutes int) bool {
+func (model Model) IsExpired(minutes int) bool {
 	now := time.Now()
 	return (now.Second()-model.CreationTimestamp.Second())/60 < minutes
 }
 
-func (model *Model) ReportName() string {
+func (model Model) ReportName() string {
 	return "model-report-" + model.ObjectMeta.Name
 }
 
-func (model *Model) IsEnsemble() bool {
+func (model Model) IsEnsemble() bool {
 	return len(model.Spec.Ensemble.Models) > 0
 }
 
-func (model *Model) ReportType() ReportType {
+func (model Model) ReportType() ReportType {
 	switch *model.Spec.Task {
 	case catalog.BinaryClassification:
 		return BinaryClassificationModelReport
@@ -122,7 +122,7 @@ func (model *Model) ReportType() ReportType {
 	return InvalidReport
 }
 
-func (model *Model) Age() string {
+func (model Model) Age() string {
 	return humanize.Time(model.CreationTimestamp.Time)
 }
 
@@ -130,7 +130,7 @@ func (model *Model) Age() string {
 // Finalizer
 //==============================================================================
 
-func (model *Model) HasFinalizer() bool {
+func (model Model) HasFinalizer() bool {
 	return util.HasFin(&model.ObjectMeta, training.GroupName)
 }
 func (model *Model) AddFinalizer() { util.AddFin(&model.ObjectMeta, training.GroupName) }
@@ -142,7 +142,7 @@ func (model *Model) RemoveFinalizer() {
 // Trackable
 //==============================================================================
 
-func (model *Model) RootUri() string {
+func (model Model) RootUri() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s",
 		model.Namespace,
 		*model.Spec.VersionName,
@@ -150,68 +150,68 @@ func (model *Model) RootUri() string {
 		model.Name)
 }
 
-func (model *Model) ManifestUri() string {
+func (model Model) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-model.yaml", model.RootUri(), model.Name)
 }
 
 //    dataproducts/*/models/*/bin/model.joblib
-func (model *Model) WeightsUri() string {
+func (model Model) WeightsUri() string {
 	return fmt.Sprintf("%s/bin/model.joblib", model.RootUri())
 }
 
-func (model *Model) ExplainModelUri() string {
+func (model Model) ExplainModelUri() string {
 	return fmt.Sprintf("%s/bin/explain-model.joblib", model.RootUri())
 }
 
 //    dataproducts/*/models/*/metadata/model.json
-func (model *Model) ModelJsonUri() string {
+func (model Model) ModelJsonUri() string {
 	return fmt.Sprintf("%s/metadata/model.json", model.RootUri())
 }
 
 //    dataproducts/*/models/*/metadata/study.json
-func (model *Model) StudyJsonUri() string {
+func (model Model) StudyJsonUri() string {
 	return fmt.Sprintf("%s/metadata/study.json", model.RootUri())
 }
 
 //    dataproducts/*/models/*/metadata/schema.json
-func (model *Model) SchemaJsonUri() string {
+func (model Model) SchemaJsonUri() string {
 	return fmt.Sprintf("%s/metadata/schema.json", model.RootUri())
 }
 
 //    dataproducts/*/models/*/metadata/dataset.json
-func (model *Model) DatasetJsonUri() string {
+func (model Model) DatasetJsonUri() string {
 	return fmt.Sprintf("%s/metadata/dataset.json", model.RootUri())
 }
 
 //    dataproducts/*/models/*/metadata/productversion.json
-func (model *Model) ProductVersionJsonUri() string {
+func (model Model) ProductVersionJsonUri() string {
 	return fmt.Sprintf("%s/metadata/productversion.json", model.RootUri())
 }
 
 //    dataproducts/*/models/*/model-<name>-report.pdf
-func (model *Model) ReportUri() string {
+func (model Model) ReportUri() string {
 	return fmt.Sprintf("%s/model-%s-report.pdf", model.RootUri(), model.Name)
 }
 
-func (model *Model) TarUri() string {
+func (model Model) TarUri() string {
 	return fmt.Sprintf("%s/model.tar.gz", model.RootUri())
 }
 
-func (model *Model) ForecastUri() string {
+func (model Model) ForecastUri() string {
 	return fmt.Sprintf("%s/model-%s-forecast.csv", model.RootUri(), model.Name)
 }
 
 //    dataproducts/*/models/*/Dockerfile
-func (model *Model) DockerfileUri() string {
+func (model Model) DockerfileUri() string {
 	return fmt.Sprintf("%s/Dockerfile", model.RootUri())
 }
 
-func (model *Model) CombinedImageName() string {
+func (model Model) CombinedImageName() string {
 	return model.Name + ":" + "combined"
 }
 
 // return the result for a metric
-func (model *Model) GetTestResult(metric catalog.Metric) float64 {
+func (model Model) GetTestResult(metric catalog.Metric) float64 {
 	for _, v := range model.Status.Train {
 		if *v.Metric == metric {
 			return *v.Value
@@ -264,55 +264,55 @@ func (model *Model) GetCond(t ModelConditionType) ModelCondition {
 	}
 }
 
-func (model *Model) StatusString() string {
+func (model Model) StatusString() string {
 	return string(model.Status.Phase)
 }
 
-func (model *Model) Key() string {
+func (model Model) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "models", model.Namespace, model.Name)
 }
 
-func (model *Model) DepotKey() string {
+func (model Model) DepotKey() string {
 	return fmt.Sprintf("%s/%s", "modela/depot/models", model.Key())
 }
 
-func (model *Model) LiveKey() string {
+func (model Model) LiveKey() string {
 	return fmt.Sprintf("%s/%s", "modela/live/models", model.Key())
 }
 
-func (model *Model) ArchiveKey() string {
+func (model Model) ArchiveKey() string {
 	return fmt.Sprintf("%s/%s", "modela/archive/models", model.Key())
 }
 
-func (model *Model) Accuracy() float64 {
+func (model Model) Accuracy() float64 {
 	return model.GetTestResult(catalog.Accuracy)
 }
 
-func (model *Model) R2() float64 {
+func (model Model) R2() float64 {
 	return model.GetTestResult(catalog.R2)
 }
 
-func (model *Model) RMSE() float64 {
+func (model Model) RMSE() float64 {
 	return model.GetTestResult(catalog.RMSE)
 }
 
-func (model *Model) RMSLE() float64 {
+func (model Model) RMSLE() float64 {
 	return model.GetTestResult(catalog.RMSLE)
 }
 
-func (model *Model) MAPE() float64 {
+func (model Model) MAPE() float64 {
 	return model.GetTestResult(catalog.MAPE)
 }
 
-func (model *Model) Precision() float64 {
+func (model Model) Precision() float64 {
 	return model.GetTestResult(catalog.PrecisionBinary)
 }
 
-func (model *Model) Recall() float64 {
+func (model Model) Recall() float64 {
 	return model.GetTestResult(catalog.RecallBinary)
 }
 
-func (model *Model) F1() float64 {
+func (model Model) F1() float64 {
 	return model.GetTestResult(catalog.F1Binary)
 }
 
@@ -426,7 +426,7 @@ func (model *Model) MarkPredicted() {
 	})
 }
 
-func (model *Model) IsReleasing() bool {
+func (model Model) IsReleasing() bool {
 	return model.Status.Phase == ModelPhaseReleasing
 }
 
@@ -471,7 +471,7 @@ func (model *Model) MarkUndeployed() {
 	})
 }
 
-func (model *Model) IsLive() bool {
+func (model Model) IsLive() bool {
 	cond := model.GetCond(ModelReleased)
 	return cond.Status == v1.ConditionTrue
 }
@@ -514,7 +514,7 @@ func (model *Model) MarkFailedToTrain(err string) {
 
 }
 
-func (model *Model) WaitingToTrain() bool {
+func (model Model) WaitingToTrain() bool {
 	if len(model.Status.Conditions) == 0 {
 		return true
 	}
@@ -522,12 +522,12 @@ func (model *Model) WaitingToTrain() bool {
 	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonWaitingToTrain
 }
 
-func (model *Model) Training() bool {
+func (model Model) Training() bool {
 	cond := model.GetCond(ModelTrained)
 	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonTraining
 }
 
-func (model *Model) TrainingFailed() bool {
+func (model Model) TrainingFailed() bool {
 	if model.TestingFailed() {
 		return true
 	}
@@ -535,7 +535,7 @@ func (model *Model) TrainingFailed() bool {
 	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonFailed
 }
 
-func (model *Model) Trained() bool {
+func (model Model) Trained() bool {
 	return model.GetCond(ModelTrained).Status == v1.ConditionTrue
 }
 
@@ -596,21 +596,21 @@ func (model *Model) MarkTested() {
 
 ////// Test
 
-func (model *Model) TestingFailed() bool {
+func (model Model) TestingFailed() bool {
 	cond := model.GetCond(ModelTested)
 	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonFailed
 }
 
-func (model *Model) Tested() bool {
+func (model Model) Tested() bool {
 	return model.GetCond(ModelTested).Status == v1.ConditionTrue
 }
 
-func (model *Model) Testing() bool {
+func (model Model) Testing() bool {
 	cond := model.GetCond(ModelTested)
 	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonTesting
 }
 
-func (model *Model) WaitingToTest() bool {
+func (model Model) WaitingToTest() bool {
 	return *model.Spec.Tested && model.Status.TestingStartTime == nil
 }
 
@@ -654,7 +654,7 @@ func (model *Model) MarkUnitTestFailed(msg string, stop bool) {
 	}
 }
 
-func (model *Model) UnitTested() bool {
+func (model Model) UnitTested() bool {
 	return model.GetCond(ModelUnitTested).Status == v1.ConditionTrue
 }
 
@@ -686,7 +686,7 @@ func (model *Model) MarkFeedbackTestFailed(msg string) {
 	})
 }
 
-func (model *Model) FeedbackTested() bool {
+func (model Model) FeedbackTested() bool {
 	return model.GetCond(ModelFeedbackTested).Status == v1.ConditionTrue
 }
 
@@ -721,7 +721,7 @@ func (model *Model) MarkProfiledFailed(err string) {
 	})
 }
 
-func (model *Model) Profiled() bool {
+func (model Model) Profiled() bool {
 	cond := model.GetCond(ModelProfiled)
 	return cond.Status == v1.ConditionTrue || cond.Reason == ReasonFailed
 }
@@ -741,7 +741,7 @@ func (model *Model) MarkPruned(uri string) {
 	}
 }
 
-func (model *Model) Pruned() bool {
+func (model Model) Pruned() bool {
 	cond := model.GetCond(ModelPruned)
 	return cond.Status == v1.ConditionTrue
 }
@@ -777,7 +777,7 @@ func (model *Model) MarkReportFailed(err string) {
 	})
 }
 
-func (model *Model) Reported() bool {
+func (model Model) Reported() bool {
 	cond := model.GetCond(ModelReported)
 	return cond.Status == v1.ConditionTrue || cond.Reason == ReasonFailed
 }
@@ -785,7 +785,7 @@ func (model *Model) Reported() bool {
 // ------------------ Forecast
 
 // Answer true if the model has been forecasted
-func (model *Model) Forecasted() bool {
+func (model Model) Forecasted() bool {
 	cond := model.GetCond(ModelForecasted)
 	return cond.Status == v1.ConditionTrue
 }
@@ -841,7 +841,7 @@ func (model *Model) MarkPackaging() {
 
 }
 
-func (model *Model) Packaged() bool {
+func (model Model) Packaged() bool {
 	cond := model.GetCond(ModelPackaged)
 	return cond.Status == v1.ConditionTrue
 }
@@ -885,7 +885,7 @@ func (model *Model) MarkExplaining() {
 
 }
 
-func (model *Model) Explained() bool {
+func (model Model) Explained() bool {
 	cond := model.GetCond(ModelExplained)
 	return cond.Status == v1.ConditionTrue || cond.Reason == ReasonFailed
 }
@@ -920,7 +920,7 @@ func (model *Model) MarkPublishing() {
 
 }
 
-func (model *Model) Published() bool {
+func (model Model) Published() bool {
 	cond := model.GetCond(ModelPublished)
 	return cond.Status == v1.ConditionTrue
 }
@@ -961,7 +961,7 @@ func (model *Model) MarkTrainingDriftDetector() {
 
 }
 
-func (model *Model) TrainedDriftDetector() bool {
+func (model Model) TrainedDriftDetector() bool {
 	cond := model.GetCond(ModelTrainedDriftDetector)
 	return cond.Status == v1.ConditionTrue
 }
@@ -1032,13 +1032,13 @@ func (model *Model) MarkAborted() {
 	}
 }
 
-func (model *Model) Aborted() bool {
+func (model Model) Aborted() bool {
 	cond := model.GetCond(ModelAborted)
 	return cond.Status == v1.ConditionTrue
 
 }
 
-func (model *Model) Failed() bool {
+func (model Model) Failed() bool {
 	return model.Status.Phase == ModelPhaseFailed || model.TrainingFailed() || model.TestingFailed()
 }
 
@@ -1052,7 +1052,7 @@ func (model *Model) MarkMaintain() {
 	})
 }
 
-func (model *Model) Maintain() bool {
+func (model Model) Maintain() bool {
 	cond := model.GetCond(ModelMaintenance)
 	return cond.Status == v1.ConditionTrue
 }
@@ -1071,14 +1071,14 @@ func (model *Model) MarkReady() {
 	model.Status.Progress = 100
 }
 
-func (model *Model) IsReady() bool {
+func (model Model) IsReady() bool {
 	cond := model.GetCond(ModelReady)
 	return cond.Status == v1.ConditionTrue
 }
 
 /////////////////////// Paused
 
-func (model *Model) Paused() bool {
+func (model Model) Paused() bool {
 	cond := model.GetCond(ModelPaused)
 	return *model.Spec.Paused && (cond.Status == v1.ConditionFalse && cond.Reason == ReasonPausing) || cond.Status == v1.ConditionTrue
 }
@@ -1099,12 +1099,12 @@ func (model *Model) MarkSaved() {
 	})
 }
 
-func (model *Model) IsSaved() bool {
+func (model Model) IsSaved() bool {
 	cond := model.GetCond(ModelSaved)
 	return cond.Status == v1.ConditionTrue
 }
 
-func (model *Model) IsPredicted() bool {
+func (model Model) IsPredicted() bool {
 	cond := model.GetCond(ModelPredicted)
 	return cond.Status == v1.ConditionTrue
 }
@@ -1116,7 +1116,7 @@ func (model *Model) MarkArchived() {
 	})
 }
 
-func (model *Model) IsArchived() bool {
+func (model Model) IsArchived() bool {
 	cond := model.GetCond(ModelArchived)
 	return cond.Status == v1.ConditionTrue
 }
@@ -1150,14 +1150,14 @@ func (model *Model) InitModelFromStudy(study *Study) {
 
 }
 
-func (model *Model) Done() bool {
+func (model Model) Done() bool {
 	if *model.Spec.Tested {
 		return model.Tested() || model.TestingFailed()
 	}
 	return model.Trained() || model.TrainingFailed()
 }
 
-func (model *Model) OpName() string {
+func (model Model) OpName() string {
 	return model.Namespace + "-" + model.Name
 }
 
@@ -1188,7 +1188,7 @@ func (model Model) IsTest() bool {
 ////////////////////////////////////////////////////////////
 // Model Alerts
 
-func (model *Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+func (model Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Model %s completed successfully", model.Name)
 	result := &infra.Alert{
@@ -1226,7 +1226,7 @@ func (model *Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 
 }
 
-func (model *Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (model Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Model %s failed with error %v", model.Name, err.Error())
 	result := &infra.Alert{

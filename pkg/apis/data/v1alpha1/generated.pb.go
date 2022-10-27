@@ -66,30 +66,30 @@ func (m *BarChartSpec) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_BarChartSpec proto.InternalMessageInfo
 
-func (m *Column) Reset()      { *m = Column{} }
+func (column *Column) Reset() { *column = Column{} }
 func (*Column) ProtoMessage() {}
 func (*Column) Descriptor() ([]byte, []int) {
 	return fileDescriptor_0c557a5a515a9338, []int{1}
 }
-func (m *Column) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+func (column *Column) XXX_Unmarshal(b []byte) error {
+	return column.Unmarshal(b)
 }
-func (m *Column) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (column *Column) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := column.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (m *Column) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Column.Merge(m, src)
+func (column *Column) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Column.Merge(column, src)
 }
-func (m *Column) XXX_Size() int {
-	return m.Size()
+func (column *Column) XXX_Size() int {
+	return column.Size()
 }
-func (m *Column) XXX_DiscardUnknown() {
-	xxx_messageInfo_Column.DiscardUnknown(m)
+func (column *Column) XXX_DiscardUnknown() {
+	xxx_messageInfo_Column.DiscardUnknown(column)
 }
 
 var xxx_messageInfo_Column proto.InternalMessageInfo
@@ -682,30 +682,30 @@ func (m *DataPipelineStatus) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_DataPipelineStatus proto.InternalMessageInfo
 
-func (m *DataProduct) Reset()      { *m = DataProduct{} }
-func (*DataProduct) ProtoMessage() {}
+func (product *DataProduct) Reset() { *product = DataProduct{} }
+func (*DataProduct) ProtoMessage()  {}
 func (*DataProduct) Descriptor() ([]byte, []int) {
 	return fileDescriptor_0c557a5a515a9338, []int{23}
 }
-func (m *DataProduct) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+func (product *DataProduct) XXX_Unmarshal(b []byte) error {
+	return product.Unmarshal(b)
 }
-func (m *DataProduct) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (product *DataProduct) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := product.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (m *DataProduct) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DataProduct.Merge(m, src)
+func (product *DataProduct) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DataProduct.Merge(product, src)
 }
-func (m *DataProduct) XXX_Size() int {
-	return m.Size()
+func (product *DataProduct) XXX_Size() int {
+	return product.Size()
 }
-func (m *DataProduct) XXX_DiscardUnknown() {
-	xxx_messageInfo_DataProduct.DiscardUnknown(m)
+func (product *DataProduct) XXX_DiscardUnknown() {
+	xxx_messageInfo_DataProduct.DiscardUnknown(product)
 }
 
 var xxx_messageInfo_DataProduct proto.InternalMessageInfo
@@ -962,30 +962,30 @@ func (m *DataProductVersionStatus) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_DataProductVersionStatus proto.InternalMessageInfo
 
-func (m *DataSource) Reset()      { *m = DataSource{} }
-func (*DataSource) ProtoMessage() {}
+func (datasource *DataSource) Reset() { *datasource = DataSource{} }
+func (*DataSource) ProtoMessage()     {}
 func (*DataSource) Descriptor() ([]byte, []int) {
 	return fileDescriptor_0c557a5a515a9338, []int{33}
 }
-func (m *DataSource) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+func (datasource *DataSource) XXX_Unmarshal(b []byte) error {
+	return datasource.Unmarshal(b)
 }
-func (m *DataSource) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (datasource *DataSource) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := datasource.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (m *DataSource) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DataSource.Merge(m, src)
+func (datasource *DataSource) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DataSource.Merge(datasource, src)
 }
-func (m *DataSource) XXX_Size() int {
-	return m.Size()
+func (datasource *DataSource) XXX_Size() int {
+	return datasource.Size()
 }
-func (m *DataSource) XXX_DiscardUnknown() {
-	xxx_messageInfo_DataSource.DiscardUnknown(m)
+func (datasource *DataSource) XXX_DiscardUnknown() {
+	xxx_messageInfo_DataSource.DiscardUnknown(datasource)
 }
 
 var xxx_messageInfo_DataSource proto.InternalMessageInfo
@@ -1354,30 +1354,30 @@ func (m *DriftThreshold) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_DriftThreshold proto.InternalMessageInfo
 
-func (m *Entity) Reset()      { *m = Entity{} }
+func (entity *Entity) Reset() { *entity = Entity{} }
 func (*Entity) ProtoMessage() {}
 func (*Entity) Descriptor() ([]byte, []int) {
 	return fileDescriptor_0c557a5a515a9338, []int{47}
 }
-func (m *Entity) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+func (entity *Entity) XXX_Unmarshal(b []byte) error {
+	return entity.Unmarshal(b)
 }
-func (m *Entity) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (entity *Entity) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := entity.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (m *Entity) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Entity.Merge(m, src)
+func (entity *Entity) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Entity.Merge(entity, src)
 }
-func (m *Entity) XXX_Size() int {
-	return m.Size()
+func (entity *Entity) XXX_Size() int {
+	return entity.Size()
 }
-func (m *Entity) XXX_DiscardUnknown() {
-	xxx_messageInfo_Entity.DiscardUnknown(m)
+func (entity *Entity) XXX_DiscardUnknown() {
+	xxx_messageInfo_Entity.DiscardUnknown(entity)
 }
 
 var xxx_messageInfo_Entity proto.InternalMessageInfo
@@ -1690,30 +1690,30 @@ func (m *FeatureGroupStatus) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_FeatureGroupStatus proto.InternalMessageInfo
 
-func (m *FeatureHistogram) Reset()      { *m = FeatureHistogram{} }
+func (fh *FeatureHistogram) Reset()     { *fh = FeatureHistogram{} }
 func (*FeatureHistogram) ProtoMessage() {}
 func (*FeatureHistogram) Descriptor() ([]byte, []int) {
 	return fileDescriptor_0c557a5a515a9338, []int{59}
 }
-func (m *FeatureHistogram) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+func (fh *FeatureHistogram) XXX_Unmarshal(b []byte) error {
+	return fh.Unmarshal(b)
 }
-func (m *FeatureHistogram) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (fh *FeatureHistogram) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := fh.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (m *FeatureHistogram) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_FeatureHistogram.Merge(m, src)
+func (fh *FeatureHistogram) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_FeatureHistogram.Merge(fh, src)
 }
-func (m *FeatureHistogram) XXX_Size() int {
-	return m.Size()
+func (fh *FeatureHistogram) XXX_Size() int {
+	return fh.Size()
 }
-func (m *FeatureHistogram) XXX_DiscardUnknown() {
-	xxx_messageInfo_FeatureHistogram.DiscardUnknown(m)
+func (fh *FeatureHistogram) XXX_DiscardUnknown() {
+	xxx_messageInfo_FeatureHistogram.DiscardUnknown(fh)
 }
 
 var xxx_messageInfo_FeatureHistogram proto.InternalMessageInfo
@@ -2362,30 +2362,30 @@ func (m *ParquetFileSpec) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ParquetFileSpec proto.InternalMessageInfo
 
-func (m *Recipe) Reset()      { *m = Recipe{} }
+func (recipe *Recipe) Reset() { *recipe = Recipe{} }
 func (*Recipe) ProtoMessage() {}
 func (*Recipe) Descriptor() ([]byte, []int) {
 	return fileDescriptor_0c557a5a515a9338, []int{83}
 }
-func (m *Recipe) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+func (recipe *Recipe) XXX_Unmarshal(b []byte) error {
+	return recipe.Unmarshal(b)
 }
-func (m *Recipe) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (recipe *Recipe) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := recipe.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (m *Recipe) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Recipe.Merge(m, src)
+func (recipe *Recipe) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Recipe.Merge(recipe, src)
 }
-func (m *Recipe) XXX_Size() int {
-	return m.Size()
+func (recipe *Recipe) XXX_Size() int {
+	return recipe.Size()
 }
-func (m *Recipe) XXX_DiscardUnknown() {
-	xxx_messageInfo_Recipe.DiscardUnknown(m)
+func (recipe *Recipe) XXX_DiscardUnknown() {
+	xxx_messageInfo_Recipe.DiscardUnknown(recipe)
 }
 
 var xxx_messageInfo_Recipe proto.InternalMessageInfo
@@ -2530,30 +2530,30 @@ func (m *RecipePartSpec) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_RecipePartSpec proto.InternalMessageInfo
 
-func (m *RecipeRun) Reset()      { *m = RecipeRun{} }
-func (*RecipeRun) ProtoMessage() {}
+func (reciperun *RecipeRun) Reset() { *reciperun = RecipeRun{} }
+func (*RecipeRun) ProtoMessage()    {}
 func (*RecipeRun) Descriptor() ([]byte, []int) {
 	return fileDescriptor_0c557a5a515a9338, []int{89}
 }
-func (m *RecipeRun) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+func (reciperun *RecipeRun) XXX_Unmarshal(b []byte) error {
+	return reciperun.Unmarshal(b)
 }
-func (m *RecipeRun) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (reciperun *RecipeRun) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := reciperun.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (m *RecipeRun) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RecipeRun.Merge(m, src)
+func (reciperun *RecipeRun) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RecipeRun.Merge(reciperun, src)
 }
-func (m *RecipeRun) XXX_Size() int {
-	return m.Size()
+func (reciperun *RecipeRun) XXX_Size() int {
+	return reciperun.Size()
 }
-func (m *RecipeRun) XXX_DiscardUnknown() {
-	xxx_messageInfo_RecipeRun.DiscardUnknown(m)
+func (reciperun *RecipeRun) XXX_DiscardUnknown() {
+	xxx_messageInfo_RecipeRun.DiscardUnknown(reciperun)
 }
 
 var xxx_messageInfo_RecipeRun proto.InternalMessageInfo
@@ -4522,45 +4522,45 @@ func (m *BarChartSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *Column) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
+func (column *Column) Marshal() (dAtA []byte, err error) {
+	size := column.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := column.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (m *Column) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+func (column *Column) MarshalTo(dAtA []byte) (int, error) {
+	size := column.Size()
+	return column.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (column *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
-	if m.Window != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.Window))
+	if column.Window != nil {
+		i = encodeVarintGenerated(dAtA, i, uint64(*column.Window))
 		i--
 		dAtA[i] = 0x3
 		i--
 		dAtA[i] = 0xb8
 	}
-	if m.Aggr != nil {
-		i -= len(*m.Aggr)
-		copy(dAtA[i:], *m.Aggr)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Aggr)))
+	if column.Aggr != nil {
+		i -= len(*column.Aggr)
+		copy(dAtA[i:], *column.Aggr)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*column.Aggr)))
 		i--
 		dAtA[i] = 0x3
 		i--
 		dAtA[i] = 0xb2
 	}
-	if m.TimeIndex != nil {
+	if column.TimeIndex != nil {
 		i--
-		if *m.TimeIndex {
+		if *column.TimeIndex {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4570,9 +4570,9 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xa8
 	}
-	if m.LaggedRegressor != nil {
+	if column.LaggedRegressor != nil {
 		i--
-		if *m.LaggedRegressor {
+		if *column.LaggedRegressor {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4582,9 +4582,9 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xa0
 	}
-	if m.Regressor != nil {
+	if column.Regressor != nil {
 		i--
-		if *m.Regressor {
+		if *column.Regressor {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4594,9 +4594,9 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x98
 	}
-	if m.TimeSeries != nil {
+	if column.TimeSeries != nil {
 		i--
-		if *m.TimeSeries {
+		if *column.TimeSeries {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4606,31 +4606,31 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x90
 	}
-	if m.DateTimeFormat != nil {
-		i -= len(*m.DateTimeFormat)
-		copy(dAtA[i:], *m.DateTimeFormat)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.DateTimeFormat)))
+	if column.DateTimeFormat != nil {
+		i -= len(*column.DateTimeFormat)
+		copy(dAtA[i:], *column.DateTimeFormat)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*column.DateTimeFormat)))
 		i--
 		dAtA[i] = 0x3
 		i--
 		dAtA[i] = 0x8a
 	}
-	i = encodeVarintGenerated(dAtA, i, uint64(m.Loc))
+	i = encodeVarintGenerated(dAtA, i, uint64(column.Loc))
 	i--
 	dAtA[i] = 0x3
 	i--
 	dAtA[i] = 0x80
-	if m.Step != nil {
+	if column.Step != nil {
 		i -= 8
-		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(*m.Step))))
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(*column.Step))))
 		i--
 		dAtA[i] = 0x2
 		i--
 		dAtA[i] = 0xf9
 	}
-	if m.ID != nil {
+	if column.ID != nil {
 		i--
-		if *m.ID {
+		if *column.ID {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4640,18 +4640,18 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xf0
 	}
-	if m.Formula != nil {
-		i -= len(*m.Formula)
-		copy(dAtA[i:], *m.Formula)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Formula)))
+	if column.Formula != nil {
+		i -= len(*column.Formula)
+		copy(dAtA[i:], *column.Formula)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*column.Formula)))
 		i--
 		dAtA[i] = 0x2
 		i--
 		dAtA[i] = 0xea
 	}
-	if m.Generated != nil {
+	if column.Generated != nil {
 		i--
-		if *m.Generated {
+		if *column.Generated {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4661,27 +4661,27 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xe0
 	}
-	if m.Scaling != nil {
-		i -= len(*m.Scaling)
-		copy(dAtA[i:], *m.Scaling)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Scaling)))
+	if column.Scaling != nil {
+		i -= len(*column.Scaling)
+		copy(dAtA[i:], *column.Scaling)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*column.Scaling)))
 		i--
 		dAtA[i] = 0x2
 		i--
 		dAtA[i] = 0xda
 	}
-	if m.Imputation != nil {
-		i -= len(*m.Imputation)
-		copy(dAtA[i:], *m.Imputation)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Imputation)))
+	if column.Imputation != nil {
+		i -= len(*column.Imputation)
+		copy(dAtA[i:], *column.Imputation)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*column.Imputation)))
 		i--
 		dAtA[i] = 0x2
 		i--
 		dAtA[i] = 0xd2
 	}
-	if m.Reserved != nil {
+	if column.Reserved != nil {
 		i--
-		if *m.Reserved {
+		if *column.Reserved {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4691,9 +4691,9 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xc8
 	}
-	if m.Weight != nil {
+	if column.Weight != nil {
 		i--
-		if *m.Weight {
+		if *column.Weight {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4703,9 +4703,9 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xc0
 	}
-	if m.Fold != nil {
+	if column.Fold != nil {
 		i--
-		if *m.Fold {
+		if *column.Fold {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4715,9 +4715,9 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xb8
 	}
-	if m.Key != nil {
+	if column.Key != nil {
 		i--
-		if *m.Key {
+		if *column.Key {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4727,41 +4727,41 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xb0
 	}
-	if m.DriftThreshold != nil {
+	if column.DriftThreshold != nil {
 		i -= 8
-		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(*m.DriftThreshold))))
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(*column.DriftThreshold))))
 		i--
 		dAtA[i] = 0x2
 		i--
 		dAtA[i] = 0xa9
 	}
-	if m.SkewThreshold != nil {
+	if column.SkewThreshold != nil {
 		i -= 8
-		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(*m.SkewThreshold))))
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(*column.SkewThreshold))))
 		i--
 		dAtA[i] = 0x2
 		i--
 		dAtA[i] = 0xa1
 	}
-	if m.Sigma != nil {
+	if column.Sigma != nil {
 		i -= 8
-		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(*m.Sigma))))
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(*column.Sigma))))
 		i--
 		dAtA[i] = 0x2
 		i--
 		dAtA[i] = 0x99
 	}
-	if m.Mu != nil {
+	if column.Mu != nil {
 		i -= 8
-		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(*m.Mu))))
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(*column.Mu))))
 		i--
 		dAtA[i] = 0x2
 		i--
 		dAtA[i] = 0x91
 	}
-	if m.Log != nil {
+	if column.Log != nil {
 		i--
-		if *m.Log {
+		if *column.Log {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4771,17 +4771,17 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x88
 	}
-	if m.DefaultValueNum != nil {
+	if column.DefaultValueNum != nil {
 		i -= 8
-		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(*m.DefaultValueNum))))
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(*column.DefaultValueNum))))
 		i--
 		dAtA[i] = 0x2
 		i--
 		dAtA[i] = 0x81
 	}
-	if m.Protected != nil {
+	if column.Protected != nil {
 		i--
-		if *m.Protected {
+		if *column.Protected {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4791,9 +4791,9 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xf8
 	}
-	if m.PersonalData != nil {
+	if column.PersonalData != nil {
 		i--
-		if *m.PersonalData {
+		if *column.PersonalData {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4803,9 +4803,9 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xf0
 	}
-	if m.PHI != nil {
+	if column.PHI != nil {
 		i--
-		if *m.PHI {
+		if *column.PHI {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4815,9 +4815,9 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xe8
 	}
-	if m.PII != nil {
+	if column.PII != nil {
 		i--
-		if *m.PII {
+		if *column.PII {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4827,9 +4827,9 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xe0
 	}
-	if m.UniqueItems != nil {
+	if column.UniqueItems != nil {
 		i--
-		if *m.UniqueItems {
+		if *column.UniqueItems {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4839,23 +4839,23 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xd0
 	}
-	if m.MinItems != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.MinItems))
+	if column.MinItems != nil {
+		i = encodeVarintGenerated(dAtA, i, uint64(*column.MinItems))
 		i--
 		dAtA[i] = 0x1
 		i--
 		dAtA[i] = 0xc8
 	}
-	if m.MaxItems != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.MaxItems))
+	if column.MaxItems != nil {
+		i = encodeVarintGenerated(dAtA, i, uint64(*column.MaxItems))
 		i--
 		dAtA[i] = 0x1
 		i--
 		dAtA[i] = 0xc0
 	}
-	if m.Ordinal != nil {
+	if column.Ordinal != nil {
 		i--
-		if *m.Ordinal {
+		if *column.Ordinal {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4865,38 +4865,38 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xb8
 	}
-	if len(m.Enum) > 0 {
-		for iNdEx := len(m.Enum) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Enum[iNdEx])
-			copy(dAtA[i:], m.Enum[iNdEx])
-			i = encodeVarintGenerated(dAtA, i, uint64(len(m.Enum[iNdEx])))
+	if len(column.Enum) > 0 {
+		for iNdEx := len(column.Enum) - 1; iNdEx >= 0; iNdEx-- {
+			i -= len(column.Enum[iNdEx])
+			copy(dAtA[i:], column.Enum[iNdEx])
+			i = encodeVarintGenerated(dAtA, i, uint64(len(column.Enum[iNdEx])))
 			i--
 			dAtA[i] = 0x1
 			i--
 			dAtA[i] = 0xb2
 		}
 	}
-	if m.ExternalDocs != nil {
-		i -= len(*m.ExternalDocs)
-		copy(dAtA[i:], *m.ExternalDocs)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.ExternalDocs)))
+	if column.ExternalDocs != nil {
+		i -= len(*column.ExternalDocs)
+		copy(dAtA[i:], *column.ExternalDocs)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*column.ExternalDocs)))
 		i--
 		dAtA[i] = 0x1
 		i--
 		dAtA[i] = 0xaa
 	}
-	if m.Example != nil {
-		i -= len(*m.Example)
-		copy(dAtA[i:], *m.Example)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Example)))
+	if column.Example != nil {
+		i -= len(*column.Example)
+		copy(dAtA[i:], *column.Example)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*column.Example)))
 		i--
 		dAtA[i] = 0x1
 		i--
 		dAtA[i] = 0xa2
 	}
-	if m.Required != nil {
+	if column.Required != nil {
 		i--
-		if *m.Required {
+		if *column.Required {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4906,32 +4906,32 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x98
 	}
-	if m.Pattern != nil {
-		i -= len(*m.Pattern)
-		copy(dAtA[i:], *m.Pattern)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Pattern)))
+	if column.Pattern != nil {
+		i -= len(*column.Pattern)
+		copy(dAtA[i:], *column.Pattern)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*column.Pattern)))
 		i--
 		dAtA[i] = 0x1
 		i--
 		dAtA[i] = 0x92
 	}
-	if m.MinLength != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.MinLength))
+	if column.MinLength != nil {
+		i = encodeVarintGenerated(dAtA, i, uint64(*column.MinLength))
 		i--
 		dAtA[i] = 0x1
 		i--
 		dAtA[i] = 0x88
 	}
-	if m.MaxLength != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.MaxLength))
+	if column.MaxLength != nil {
+		i = encodeVarintGenerated(dAtA, i, uint64(*column.MaxLength))
 		i--
 		dAtA[i] = 0x1
 		i--
 		dAtA[i] = 0x80
 	}
-	if m.ExclusiveMinimum != nil {
+	if column.ExclusiveMinimum != nil {
 		i--
-		if *m.ExclusiveMinimum {
+		if *column.ExclusiveMinimum {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4939,15 +4939,15 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x78
 	}
-	if m.Minimum != nil {
+	if column.Minimum != nil {
 		i -= 8
-		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(*m.Minimum))))
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(*column.Minimum))))
 		i--
 		dAtA[i] = 0x71
 	}
-	if m.ExclusiveMaximum != nil {
+	if column.ExclusiveMaximum != nil {
 		i--
-		if *m.ExclusiveMaximum {
+		if *column.ExclusiveMaximum {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4955,20 +4955,20 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x68
 	}
-	if m.Maximum != nil {
+	if column.Maximum != nil {
 		i -= 8
-		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(*m.Maximum))))
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(*column.Maximum))))
 		i--
 		dAtA[i] = 0x61
 	}
-	if m.MultipleOf != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.MultipleOf))
+	if column.MultipleOf != nil {
+		i = encodeVarintGenerated(dAtA, i, uint64(*column.MultipleOf))
 		i--
 		dAtA[i] = 0x58
 	}
-	if m.FK != nil {
+	if column.FK != nil {
 		i--
-		if *m.FK {
+		if *column.FK {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4976,9 +4976,9 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x50
 	}
-	if m.PK != nil {
+	if column.PK != nil {
 		i--
-		if *m.PK {
+		if *column.PK {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4986,9 +4986,9 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x48
 	}
-	if m.Nullable != nil {
+	if column.Nullable != nil {
 		i--
-		if *m.Nullable {
+		if *column.Nullable {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -4996,9 +4996,9 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x40
 	}
-	if m.Target != nil {
+	if column.Target != nil {
 		i--
-		if *m.Target {
+		if *column.Target {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -5006,9 +5006,9 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x38
 	}
-	if m.Ignore != nil {
+	if column.Ignore != nil {
 		i--
-		if *m.Ignore {
+		if *column.Ignore {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -5016,35 +5016,35 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x30
 	}
-	if m.Description != nil {
-		i -= len(*m.Description)
-		copy(dAtA[i:], *m.Description)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Description)))
+	if column.Description != nil {
+		i -= len(*column.Description)
+		copy(dAtA[i:], *column.Description)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*column.Description)))
 		i--
 		dAtA[i] = 0x2a
 	}
-	if m.Format != nil {
-		i -= len(*m.Format)
-		copy(dAtA[i:], *m.Format)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Format)))
+	if column.Format != nil {
+		i -= len(*column.Format)
+		copy(dAtA[i:], *column.Format)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*column.Format)))
 		i--
 		dAtA[i] = 0x22
 	}
-	i -= len(m.DataType)
-	copy(dAtA[i:], m.DataType)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.DataType)))
+	i -= len(column.DataType)
+	copy(dAtA[i:], column.DataType)
+	i = encodeVarintGenerated(dAtA, i, uint64(len(column.DataType)))
 	i--
 	dAtA[i] = 0x1a
-	if m.DisplayName != nil {
-		i -= len(*m.DisplayName)
-		copy(dAtA[i:], *m.DisplayName)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.DisplayName)))
+	if column.DisplayName != nil {
+		i -= len(*column.DisplayName)
+		copy(dAtA[i:], *column.DisplayName)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*column.DisplayName)))
 		i--
 		dAtA[i] = 0x12
 	}
-	i -= len(m.Name)
-	copy(dAtA[i:], m.Name)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Name)))
+	i -= len(column.Name)
+	copy(dAtA[i:], column.Name)
+	i = encodeVarintGenerated(dAtA, i, uint64(len(column.Name)))
 	i--
 	dAtA[i] = 0xa
 	return len(dAtA) - i, nil
@@ -6820,28 +6820,28 @@ func (m *DataPipelineStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *DataProduct) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
+func (product *DataProduct) Marshal() (dAtA []byte, err error) {
+	size := product.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := product.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (m *DataProduct) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+func (product *DataProduct) MarshalTo(dAtA []byte) (int, error) {
+	size := product.Size()
+	return product.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *DataProduct) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (product *DataProduct) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := product.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -6851,7 +6851,7 @@ func (m *DataProduct) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := product.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -6861,7 +6861,7 @@ func (m *DataProduct) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := product.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -7627,28 +7627,28 @@ func (m *DataProductVersionStatus) MarshalToSizedBuffer(dAtA []byte) (int, error
 	return len(dAtA) - i, nil
 }
 
-func (m *DataSource) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
+func (datasource *DataSource) Marshal() (dAtA []byte, err error) {
+	size := datasource.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := datasource.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (m *DataSource) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+func (datasource *DataSource) MarshalTo(dAtA []byte) (int, error) {
+	size := datasource.Size()
+	return datasource.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *DataSource) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (datasource *DataSource) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := datasource.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -7658,7 +7658,7 @@ func (m *DataSource) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := datasource.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -7668,7 +7668,7 @@ func (m *DataSource) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := datasource.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -8952,28 +8952,28 @@ func (m *DriftThreshold) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *Entity) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
+func (entity *Entity) Marshal() (dAtA []byte, err error) {
+	size := entity.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := entity.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (m *Entity) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+func (entity *Entity) MarshalTo(dAtA []byte) (int, error) {
+	size := entity.Size()
+	return entity.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *Entity) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (entity *Entity) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := entity.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -8983,7 +8983,7 @@ func (m *Entity) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := entity.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -8993,7 +8993,7 @@ func (m *Entity) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := entity.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -9690,28 +9690,28 @@ func (m *FeatureGroupStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *FeatureHistogram) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
+func (fh *FeatureHistogram) Marshal() (dAtA []byte, err error) {
+	size := fh.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := fh.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (m *FeatureHistogram) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+func (fh *FeatureHistogram) MarshalTo(dAtA []byte) (int, error) {
+	size := fh.Size()
+	return fh.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *FeatureHistogram) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (fh *FeatureHistogram) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := fh.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -9721,7 +9721,7 @@ func (m *FeatureHistogram) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := fh.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -9731,7 +9731,7 @@ func (m *FeatureHistogram) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := fh.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -11075,28 +11075,28 @@ func (m *ParquetFileSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *Recipe) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
+func (recipe *Recipe) Marshal() (dAtA []byte, err error) {
+	size := recipe.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := recipe.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (m *Recipe) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+func (recipe *Recipe) MarshalTo(dAtA []byte) (int, error) {
+	size := recipe.Size()
+	return recipe.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *Recipe) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (recipe *Recipe) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := recipe.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -11106,7 +11106,7 @@ func (m *Recipe) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := recipe.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -11116,7 +11116,7 @@ func (m *Recipe) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := recipe.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -11370,28 +11370,28 @@ func (m *RecipePartSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *RecipeRun) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
+func (reciperun *RecipeRun) Marshal() (dAtA []byte, err error) {
+	size := reciperun.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := reciperun.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (m *RecipeRun) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+func (reciperun *RecipeRun) MarshalTo(dAtA []byte) (int, error) {
+	size := reciperun.Size()
+	return reciperun.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *RecipeRun) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (reciperun *RecipeRun) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := reciperun.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -11401,7 +11401,7 @@ func (m *RecipeRun) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := reciperun.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -11411,7 +11411,7 @@ func (m *RecipeRun) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := reciperun.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -13990,183 +13990,183 @@ func (m *BarChartSpec) Size() (n int) {
 	return n
 }
 
-func (m *Column) Size() (n int) {
-	if m == nil {
+func (column *Column) Size() (n int) {
+	if column == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = len(m.Name)
+	l = len(column.Name)
 	n += 1 + l + sovGenerated(uint64(l))
-	if m.DisplayName != nil {
-		l = len(*m.DisplayName)
+	if column.DisplayName != nil {
+		l = len(*column.DisplayName)
 		n += 1 + l + sovGenerated(uint64(l))
 	}
-	l = len(m.DataType)
+	l = len(column.DataType)
 	n += 1 + l + sovGenerated(uint64(l))
-	if m.Format != nil {
-		l = len(*m.Format)
+	if column.Format != nil {
+		l = len(*column.Format)
 		n += 1 + l + sovGenerated(uint64(l))
 	}
-	if m.Description != nil {
-		l = len(*m.Description)
+	if column.Description != nil {
+		l = len(*column.Description)
 		n += 1 + l + sovGenerated(uint64(l))
 	}
-	if m.Ignore != nil {
+	if column.Ignore != nil {
 		n += 2
 	}
-	if m.Target != nil {
+	if column.Target != nil {
 		n += 2
 	}
-	if m.Nullable != nil {
+	if column.Nullable != nil {
 		n += 2
 	}
-	if m.PK != nil {
+	if column.PK != nil {
 		n += 2
 	}
-	if m.FK != nil {
+	if column.FK != nil {
 		n += 2
 	}
-	if m.MultipleOf != nil {
-		n += 1 + sovGenerated(uint64(*m.MultipleOf))
+	if column.MultipleOf != nil {
+		n += 1 + sovGenerated(uint64(*column.MultipleOf))
 	}
-	if m.Maximum != nil {
+	if column.Maximum != nil {
 		n += 9
 	}
-	if m.ExclusiveMaximum != nil {
+	if column.ExclusiveMaximum != nil {
 		n += 2
 	}
-	if m.Minimum != nil {
+	if column.Minimum != nil {
 		n += 9
 	}
-	if m.ExclusiveMinimum != nil {
+	if column.ExclusiveMinimum != nil {
 		n += 2
 	}
-	if m.MaxLength != nil {
-		n += 2 + sovGenerated(uint64(*m.MaxLength))
+	if column.MaxLength != nil {
+		n += 2 + sovGenerated(uint64(*column.MaxLength))
 	}
-	if m.MinLength != nil {
-		n += 2 + sovGenerated(uint64(*m.MinLength))
+	if column.MinLength != nil {
+		n += 2 + sovGenerated(uint64(*column.MinLength))
 	}
-	if m.Pattern != nil {
-		l = len(*m.Pattern)
+	if column.Pattern != nil {
+		l = len(*column.Pattern)
 		n += 2 + l + sovGenerated(uint64(l))
 	}
-	if m.Required != nil {
+	if column.Required != nil {
 		n += 3
 	}
-	if m.Example != nil {
-		l = len(*m.Example)
+	if column.Example != nil {
+		l = len(*column.Example)
 		n += 2 + l + sovGenerated(uint64(l))
 	}
-	if m.ExternalDocs != nil {
-		l = len(*m.ExternalDocs)
+	if column.ExternalDocs != nil {
+		l = len(*column.ExternalDocs)
 		n += 2 + l + sovGenerated(uint64(l))
 	}
-	if len(m.Enum) > 0 {
-		for _, s := range m.Enum {
+	if len(column.Enum) > 0 {
+		for _, s := range column.Enum {
 			l = len(s)
 			n += 2 + l + sovGenerated(uint64(l))
 		}
 	}
-	if m.Ordinal != nil {
+	if column.Ordinal != nil {
 		n += 3
 	}
-	if m.MaxItems != nil {
-		n += 2 + sovGenerated(uint64(*m.MaxItems))
+	if column.MaxItems != nil {
+		n += 2 + sovGenerated(uint64(*column.MaxItems))
 	}
-	if m.MinItems != nil {
-		n += 2 + sovGenerated(uint64(*m.MinItems))
+	if column.MinItems != nil {
+		n += 2 + sovGenerated(uint64(*column.MinItems))
 	}
-	if m.UniqueItems != nil {
+	if column.UniqueItems != nil {
 		n += 3
 	}
-	if m.PII != nil {
+	if column.PII != nil {
 		n += 3
 	}
-	if m.PHI != nil {
+	if column.PHI != nil {
 		n += 3
 	}
-	if m.PersonalData != nil {
+	if column.PersonalData != nil {
 		n += 3
 	}
-	if m.Protected != nil {
+	if column.Protected != nil {
 		n += 3
 	}
-	if m.DefaultValueNum != nil {
+	if column.DefaultValueNum != nil {
 		n += 10
 	}
-	if m.Log != nil {
+	if column.Log != nil {
 		n += 3
 	}
-	if m.Mu != nil {
+	if column.Mu != nil {
 		n += 10
 	}
-	if m.Sigma != nil {
+	if column.Sigma != nil {
 		n += 10
 	}
-	if m.SkewThreshold != nil {
+	if column.SkewThreshold != nil {
 		n += 10
 	}
-	if m.DriftThreshold != nil {
+	if column.DriftThreshold != nil {
 		n += 10
 	}
-	if m.Key != nil {
+	if column.Key != nil {
 		n += 3
 	}
-	if m.Fold != nil {
+	if column.Fold != nil {
 		n += 3
 	}
-	if m.Weight != nil {
+	if column.Weight != nil {
 		n += 3
 	}
-	if m.Reserved != nil {
+	if column.Reserved != nil {
 		n += 3
 	}
-	if m.Imputation != nil {
-		l = len(*m.Imputation)
+	if column.Imputation != nil {
+		l = len(*column.Imputation)
 		n += 2 + l + sovGenerated(uint64(l))
 	}
-	if m.Scaling != nil {
-		l = len(*m.Scaling)
+	if column.Scaling != nil {
+		l = len(*column.Scaling)
 		n += 2 + l + sovGenerated(uint64(l))
 	}
-	if m.Generated != nil {
+	if column.Generated != nil {
 		n += 3
 	}
-	if m.Formula != nil {
-		l = len(*m.Formula)
+	if column.Formula != nil {
+		l = len(*column.Formula)
 		n += 2 + l + sovGenerated(uint64(l))
 	}
-	if m.ID != nil {
+	if column.ID != nil {
 		n += 3
 	}
-	if m.Step != nil {
+	if column.Step != nil {
 		n += 10
 	}
-	n += 2 + sovGenerated(uint64(m.Loc))
-	if m.DateTimeFormat != nil {
-		l = len(*m.DateTimeFormat)
+	n += 2 + sovGenerated(uint64(column.Loc))
+	if column.DateTimeFormat != nil {
+		l = len(*column.DateTimeFormat)
 		n += 2 + l + sovGenerated(uint64(l))
 	}
-	if m.TimeSeries != nil {
+	if column.TimeSeries != nil {
 		n += 3
 	}
-	if m.Regressor != nil {
+	if column.Regressor != nil {
 		n += 3
 	}
-	if m.LaggedRegressor != nil {
+	if column.LaggedRegressor != nil {
 		n += 3
 	}
-	if m.TimeIndex != nil {
+	if column.TimeIndex != nil {
 		n += 3
 	}
-	if m.Aggr != nil {
-		l = len(*m.Aggr)
+	if column.Aggr != nil {
+		l = len(*column.Aggr)
 		n += 2 + l + sovGenerated(uint64(l))
 	}
-	if m.Window != nil {
-		n += 2 + sovGenerated(uint64(*m.Window))
+	if column.Window != nil {
+		n += 2 + sovGenerated(uint64(*column.Window))
 	}
 	return n
 }
@@ -14792,17 +14792,17 @@ func (m *DataPipelineStatus) Size() (n int) {
 	return n
 }
 
-func (m *DataProduct) Size() (n int) {
-	if m == nil {
+func (product *DataProduct) Size() (n int) {
+	if product == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = m.ObjectMeta.Size()
+	l = product.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Spec.Size()
+	l = product.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Status.Size()
+	l = product.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -15081,17 +15081,17 @@ func (m *DataProductVersionStatus) Size() (n int) {
 	return n
 }
 
-func (m *DataSource) Size() (n int) {
-	if m == nil {
+func (datasource *DataSource) Size() (n int) {
+	if datasource == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = m.ObjectMeta.Size()
+	l = datasource.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Spec.Size()
+	l = datasource.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Status.Size()
+	l = datasource.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -15538,17 +15538,17 @@ func (m *DriftThreshold) Size() (n int) {
 	return n
 }
 
-func (m *Entity) Size() (n int) {
-	if m == nil {
+func (entity *Entity) Size() (n int) {
+	if entity == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = m.ObjectMeta.Size()
+	l = entity.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Spec.Size()
+	l = entity.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Status.Size()
+	l = entity.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -15813,17 +15813,17 @@ func (m *FeatureGroupStatus) Size() (n int) {
 	return n
 }
 
-func (m *FeatureHistogram) Size() (n int) {
-	if m == nil {
+func (fh *FeatureHistogram) Size() (n int) {
+	if fh == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = m.ObjectMeta.Size()
+	l = fh.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Spec.Size()
+	l = fh.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Status.Size()
+	l = fh.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -16373,17 +16373,17 @@ func (m *ParquetFileSpec) Size() (n int) {
 	return n
 }
 
-func (m *Recipe) Size() (n int) {
-	if m == nil {
+func (recipe *Recipe) Size() (n int) {
+	if recipe == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = m.ObjectMeta.Size()
+	l = recipe.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Spec.Size()
+	l = recipe.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Status.Size()
+	l = recipe.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -16486,17 +16486,17 @@ func (m *RecipePartSpec) Size() (n int) {
 	return n
 }
 
-func (m *RecipeRun) Size() (n int) {
-	if m == nil {
+func (reciperun *RecipeRun) Size() (n int) {
+	if reciperun == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = m.ObjectMeta.Size()
+	l = reciperun.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Spec.Size()
+	l = reciperun.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Status.Size()
+	l = reciperun.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -17475,65 +17475,65 @@ func (this *BarChartSpec) String() string {
 	}, "")
 	return s
 }
-func (this *Column) String() string {
-	if this == nil {
+func (column *Column) String() string {
+	if column == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&Column{`,
-		`Name:` + fmt.Sprintf("%v", this.Name) + `,`,
-		`DisplayName:` + valueToStringGenerated(this.DisplayName) + `,`,
-		`DataType:` + fmt.Sprintf("%v", this.DataType) + `,`,
-		`Format:` + valueToStringGenerated(this.Format) + `,`,
-		`Description:` + valueToStringGenerated(this.Description) + `,`,
-		`Ignore:` + valueToStringGenerated(this.Ignore) + `,`,
-		`Target:` + valueToStringGenerated(this.Target) + `,`,
-		`Nullable:` + valueToStringGenerated(this.Nullable) + `,`,
-		`PK:` + valueToStringGenerated(this.PK) + `,`,
-		`FK:` + valueToStringGenerated(this.FK) + `,`,
-		`MultipleOf:` + valueToStringGenerated(this.MultipleOf) + `,`,
-		`Maximum:` + valueToStringGenerated(this.Maximum) + `,`,
-		`ExclusiveMaximum:` + valueToStringGenerated(this.ExclusiveMaximum) + `,`,
-		`Minimum:` + valueToStringGenerated(this.Minimum) + `,`,
-		`ExclusiveMinimum:` + valueToStringGenerated(this.ExclusiveMinimum) + `,`,
-		`MaxLength:` + valueToStringGenerated(this.MaxLength) + `,`,
-		`MinLength:` + valueToStringGenerated(this.MinLength) + `,`,
-		`Pattern:` + valueToStringGenerated(this.Pattern) + `,`,
-		`Required:` + valueToStringGenerated(this.Required) + `,`,
-		`Example:` + valueToStringGenerated(this.Example) + `,`,
-		`ExternalDocs:` + valueToStringGenerated(this.ExternalDocs) + `,`,
-		`Enum:` + fmt.Sprintf("%v", this.Enum) + `,`,
-		`Ordinal:` + valueToStringGenerated(this.Ordinal) + `,`,
-		`MaxItems:` + valueToStringGenerated(this.MaxItems) + `,`,
-		`MinItems:` + valueToStringGenerated(this.MinItems) + `,`,
-		`UniqueItems:` + valueToStringGenerated(this.UniqueItems) + `,`,
-		`PII:` + valueToStringGenerated(this.PII) + `,`,
-		`PHI:` + valueToStringGenerated(this.PHI) + `,`,
-		`PersonalData:` + valueToStringGenerated(this.PersonalData) + `,`,
-		`Protected:` + valueToStringGenerated(this.Protected) + `,`,
-		`DefaultValueNum:` + valueToStringGenerated(this.DefaultValueNum) + `,`,
-		`Log:` + valueToStringGenerated(this.Log) + `,`,
-		`Mu:` + valueToStringGenerated(this.Mu) + `,`,
-		`Sigma:` + valueToStringGenerated(this.Sigma) + `,`,
-		`SkewThreshold:` + valueToStringGenerated(this.SkewThreshold) + `,`,
-		`DriftThreshold:` + valueToStringGenerated(this.DriftThreshold) + `,`,
-		`Key:` + valueToStringGenerated(this.Key) + `,`,
-		`Fold:` + valueToStringGenerated(this.Fold) + `,`,
-		`Weight:` + valueToStringGenerated(this.Weight) + `,`,
-		`Reserved:` + valueToStringGenerated(this.Reserved) + `,`,
-		`Imputation:` + valueToStringGenerated(this.Imputation) + `,`,
-		`Scaling:` + valueToStringGenerated(this.Scaling) + `,`,
-		`Generated:` + valueToStringGenerated(this.Generated) + `,`,
-		`Formula:` + valueToStringGenerated(this.Formula) + `,`,
-		`ID:` + valueToStringGenerated(this.ID) + `,`,
-		`Step:` + valueToStringGenerated(this.Step) + `,`,
-		`Loc:` + fmt.Sprintf("%v", this.Loc) + `,`,
-		`DateTimeFormat:` + valueToStringGenerated(this.DateTimeFormat) + `,`,
-		`TimeSeries:` + valueToStringGenerated(this.TimeSeries) + `,`,
-		`Regressor:` + valueToStringGenerated(this.Regressor) + `,`,
-		`LaggedRegressor:` + valueToStringGenerated(this.LaggedRegressor) + `,`,
-		`TimeIndex:` + valueToStringGenerated(this.TimeIndex) + `,`,
-		`Aggr:` + valueToStringGenerated(this.Aggr) + `,`,
-		`Window:` + valueToStringGenerated(this.Window) + `,`,
+		`Name:` + fmt.Sprintf("%v", column.Name) + `,`,
+		`DisplayName:` + valueToStringGenerated(column.DisplayName) + `,`,
+		`DataType:` + fmt.Sprintf("%v", column.DataType) + `,`,
+		`Format:` + valueToStringGenerated(column.Format) + `,`,
+		`Description:` + valueToStringGenerated(column.Description) + `,`,
+		`Ignore:` + valueToStringGenerated(column.Ignore) + `,`,
+		`Target:` + valueToStringGenerated(column.Target) + `,`,
+		`Nullable:` + valueToStringGenerated(column.Nullable) + `,`,
+		`PK:` + valueToStringGenerated(column.PK) + `,`,
+		`FK:` + valueToStringGenerated(column.FK) + `,`,
+		`MultipleOf:` + valueToStringGenerated(column.MultipleOf) + `,`,
+		`Maximum:` + valueToStringGenerated(column.Maximum) + `,`,
+		`ExclusiveMaximum:` + valueToStringGenerated(column.ExclusiveMaximum) + `,`,
+		`Minimum:` + valueToStringGenerated(column.Minimum) + `,`,
+		`ExclusiveMinimum:` + valueToStringGenerated(column.ExclusiveMinimum) + `,`,
+		`MaxLength:` + valueToStringGenerated(column.MaxLength) + `,`,
+		`MinLength:` + valueToStringGenerated(column.MinLength) + `,`,
+		`Pattern:` + valueToStringGenerated(column.Pattern) + `,`,
+		`Required:` + valueToStringGenerated(column.Required) + `,`,
+		`Example:` + valueToStringGenerated(column.Example) + `,`,
+		`ExternalDocs:` + valueToStringGenerated(column.ExternalDocs) + `,`,
+		`Enum:` + fmt.Sprintf("%v", column.Enum) + `,`,
+		`Ordinal:` + valueToStringGenerated(column.Ordinal) + `,`,
+		`MaxItems:` + valueToStringGenerated(column.MaxItems) + `,`,
+		`MinItems:` + valueToStringGenerated(column.MinItems) + `,`,
+		`UniqueItems:` + valueToStringGenerated(column.UniqueItems) + `,`,
+		`PII:` + valueToStringGenerated(column.PII) + `,`,
+		`PHI:` + valueToStringGenerated(column.PHI) + `,`,
+		`PersonalData:` + valueToStringGenerated(column.PersonalData) + `,`,
+		`Protected:` + valueToStringGenerated(column.Protected) + `,`,
+		`DefaultValueNum:` + valueToStringGenerated(column.DefaultValueNum) + `,`,
+		`Log:` + valueToStringGenerated(column.Log) + `,`,
+		`Mu:` + valueToStringGenerated(column.Mu) + `,`,
+		`Sigma:` + valueToStringGenerated(column.Sigma) + `,`,
+		`SkewThreshold:` + valueToStringGenerated(column.SkewThreshold) + `,`,
+		`DriftThreshold:` + valueToStringGenerated(column.DriftThreshold) + `,`,
+		`Key:` + valueToStringGenerated(column.Key) + `,`,
+		`Fold:` + valueToStringGenerated(column.Fold) + `,`,
+		`Weight:` + valueToStringGenerated(column.Weight) + `,`,
+		`Reserved:` + valueToStringGenerated(column.Reserved) + `,`,
+		`Imputation:` + valueToStringGenerated(column.Imputation) + `,`,
+		`Scaling:` + valueToStringGenerated(column.Scaling) + `,`,
+		`Generated:` + valueToStringGenerated(column.Generated) + `,`,
+		`Formula:` + valueToStringGenerated(column.Formula) + `,`,
+		`ID:` + valueToStringGenerated(column.ID) + `,`,
+		`Step:` + valueToStringGenerated(column.Step) + `,`,
+		`Loc:` + fmt.Sprintf("%v", column.Loc) + `,`,
+		`DateTimeFormat:` + valueToStringGenerated(column.DateTimeFormat) + `,`,
+		`TimeSeries:` + valueToStringGenerated(column.TimeSeries) + `,`,
+		`Regressor:` + valueToStringGenerated(column.Regressor) + `,`,
+		`LaggedRegressor:` + valueToStringGenerated(column.LaggedRegressor) + `,`,
+		`TimeIndex:` + valueToStringGenerated(column.TimeIndex) + `,`,
+		`Aggr:` + valueToStringGenerated(column.Aggr) + `,`,
+		`Window:` + valueToStringGenerated(column.Window) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -17926,14 +17926,14 @@ func (this *DataPipelineStatus) String() string {
 	}, "")
 	return s
 }
-func (this *DataProduct) String() string {
-	if this == nil {
+func (product *DataProduct) String() string {
+	if product == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&DataProduct{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "DataProductSpec", "DataProductSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "DataProductStatus", "DataProductStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", product.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(product.Spec.String(), "DataProductSpec", "DataProductSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(product.Status.String(), "DataProductStatus", "DataProductStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -18114,14 +18114,14 @@ func (this *DataProductVersionStatus) String() string {
 	}, "")
 	return s
 }
-func (this *DataSource) String() string {
-	if this == nil {
+func (datasource *DataSource) String() string {
+	if datasource == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&DataSource{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "DataSourceSpec", "DataSourceSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "DataSourceStatus", "DataSourceStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", datasource.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(datasource.Spec.String(), "DataSourceSpec", "DataSourceSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(datasource.Status.String(), "DataSourceStatus", "DataSourceStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -18398,14 +18398,14 @@ func (this *DriftThreshold) String() string {
 	}, "")
 	return s
 }
-func (this *Entity) String() string {
-	if this == nil {
+func (entity *Entity) String() string {
+	if entity == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&Entity{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "EntitySpec", "EntitySpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "EntityStatus", "EntityStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", entity.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(entity.Spec.String(), "EntitySpec", "EntitySpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(entity.Status.String(), "EntityStatus", "EntityStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -18583,14 +18583,14 @@ func (this *FeatureGroupStatus) String() string {
 	}, "")
 	return s
 }
-func (this *FeatureHistogram) String() string {
-	if this == nil {
+func (fh *FeatureHistogram) String() string {
+	if fh == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&FeatureHistogram{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "FeatureHistogramSpec", "FeatureHistogramSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "FeatureHistogramStatus", "FeatureHistogramStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", fh.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(fh.Spec.String(), "FeatureHistogramSpec", "FeatureHistogramSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(fh.Status.String(), "FeatureHistogramStatus", "FeatureHistogramStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -18939,14 +18939,14 @@ func (this *ParquetFileSpec) String() string {
 	}, "")
 	return s
 }
-func (this *Recipe) String() string {
-	if this == nil {
+func (recipe *Recipe) String() string {
+	if recipe == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&Recipe{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "RecipeSpec", "RecipeSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "RecipeStatus", "RecipeStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", recipe.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(recipe.Spec.String(), "RecipeSpec", "RecipeSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(recipe.Status.String(), "RecipeStatus", "RecipeStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -19016,14 +19016,14 @@ func (this *RecipePartSpec) String() string {
 	}, "")
 	return s
 }
-func (this *RecipeRun) String() string {
-	if this == nil {
+func (reciperun *RecipeRun) String() string {
+	if reciperun == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&RecipeRun{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "RecipeRunSpec", "RecipeRunSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "RecipeRunStatus", "RecipeRunStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", reciperun.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(reciperun.Spec.String(), "RecipeRunSpec", "RecipeRunSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(reciperun.Status.String(), "RecipeRunStatus", "RecipeRunStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -19852,7 +19852,7 @@ func (m *BarChartSpec) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *Column) Unmarshal(dAtA []byte) error {
+func (column *Column) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -19911,7 +19911,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Name = string(dAtA[iNdEx:postIndex])
+			column.Name = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -19944,7 +19944,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			s := string(dAtA[iNdEx:postIndex])
-			m.DisplayName = &s
+			column.DisplayName = &s
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
@@ -19976,7 +19976,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.DataType = github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1.DataType(dAtA[iNdEx:postIndex])
+			column.DataType = github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1.DataType(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
 			if wireType != 2 {
@@ -20009,7 +20009,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			s := github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1.DataDomain(dAtA[iNdEx:postIndex])
-			m.Format = &s
+			column.Format = &s
 			iNdEx = postIndex
 		case 5:
 			if wireType != 2 {
@@ -20042,7 +20042,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			s := string(dAtA[iNdEx:postIndex])
-			m.Description = &s
+			column.Description = &s
 			iNdEx = postIndex
 		case 6:
 			if wireType != 0 {
@@ -20064,7 +20064,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.Ignore = &b
+			column.Ignore = &b
 		case 7:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Target", wireType)
@@ -20085,7 +20085,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.Target = &b
+			column.Target = &b
 		case 8:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Nullable", wireType)
@@ -20106,7 +20106,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.Nullable = &b
+			column.Nullable = &b
 		case 9:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field PK", wireType)
@@ -20127,7 +20127,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.PK = &b
+			column.PK = &b
 		case 10:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field FK", wireType)
@@ -20148,7 +20148,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.FK = &b
+			column.FK = &b
 		case 11:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field MultipleOf", wireType)
@@ -20168,7 +20168,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 					break
 				}
 			}
-			m.MultipleOf = &v
+			column.MultipleOf = &v
 		case 12:
 			if wireType != 1 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Maximum", wireType)
@@ -20180,7 +20180,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
 			iNdEx += 8
 			v2 := float64(math.Float64frombits(v))
-			m.Maximum = &v2
+			column.Maximum = &v2
 		case 13:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field ExclusiveMaximum", wireType)
@@ -20201,7 +20201,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.ExclusiveMaximum = &b
+			column.ExclusiveMaximum = &b
 		case 14:
 			if wireType != 1 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Minimum", wireType)
@@ -20213,7 +20213,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
 			iNdEx += 8
 			v2 := float64(math.Float64frombits(v))
-			m.Minimum = &v2
+			column.Minimum = &v2
 		case 15:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field ExclusiveMinimum", wireType)
@@ -20234,7 +20234,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.ExclusiveMinimum = &b
+			column.ExclusiveMinimum = &b
 		case 16:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field MaxLength", wireType)
@@ -20254,7 +20254,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 					break
 				}
 			}
-			m.MaxLength = &v
+			column.MaxLength = &v
 		case 17:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field MinLength", wireType)
@@ -20274,7 +20274,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 					break
 				}
 			}
-			m.MinLength = &v
+			column.MinLength = &v
 		case 18:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Pattern", wireType)
@@ -20306,7 +20306,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			s := string(dAtA[iNdEx:postIndex])
-			m.Pattern = &s
+			column.Pattern = &s
 			iNdEx = postIndex
 		case 19:
 			if wireType != 0 {
@@ -20328,7 +20328,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.Required = &b
+			column.Required = &b
 		case 20:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Example", wireType)
@@ -20360,7 +20360,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			s := string(dAtA[iNdEx:postIndex])
-			m.Example = &s
+			column.Example = &s
 			iNdEx = postIndex
 		case 21:
 			if wireType != 2 {
@@ -20393,7 +20393,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			s := string(dAtA[iNdEx:postIndex])
-			m.ExternalDocs = &s
+			column.ExternalDocs = &s
 			iNdEx = postIndex
 		case 22:
 			if wireType != 2 {
@@ -20425,7 +20425,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Enum = append(m.Enum, string(dAtA[iNdEx:postIndex]))
+			column.Enum = append(column.Enum, string(dAtA[iNdEx:postIndex]))
 			iNdEx = postIndex
 		case 23:
 			if wireType != 0 {
@@ -20447,7 +20447,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.Ordinal = &b
+			column.Ordinal = &b
 		case 24:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field MaxItems", wireType)
@@ -20467,7 +20467,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 					break
 				}
 			}
-			m.MaxItems = &v
+			column.MaxItems = &v
 		case 25:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field MinItems", wireType)
@@ -20487,7 +20487,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 					break
 				}
 			}
-			m.MinItems = &v
+			column.MinItems = &v
 		case 26:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field UniqueItems", wireType)
@@ -20508,7 +20508,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.UniqueItems = &b
+			column.UniqueItems = &b
 		case 28:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field PII", wireType)
@@ -20529,7 +20529,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.PII = &b
+			column.PII = &b
 		case 29:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field PHI", wireType)
@@ -20550,7 +20550,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.PHI = &b
+			column.PHI = &b
 		case 30:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field PersonalData", wireType)
@@ -20571,7 +20571,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.PersonalData = &b
+			column.PersonalData = &b
 		case 31:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Protected", wireType)
@@ -20592,7 +20592,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.Protected = &b
+			column.Protected = &b
 		case 32:
 			if wireType != 1 {
 				return fmt.Errorf("proto: wrong wireType = %d for field DefaultValueNum", wireType)
@@ -20604,7 +20604,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
 			iNdEx += 8
 			v2 := float64(math.Float64frombits(v))
-			m.DefaultValueNum = &v2
+			column.DefaultValueNum = &v2
 		case 33:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Log", wireType)
@@ -20625,7 +20625,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.Log = &b
+			column.Log = &b
 		case 34:
 			if wireType != 1 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Mu", wireType)
@@ -20637,7 +20637,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
 			iNdEx += 8
 			v2 := float64(math.Float64frombits(v))
-			m.Mu = &v2
+			column.Mu = &v2
 		case 35:
 			if wireType != 1 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Sigma", wireType)
@@ -20649,7 +20649,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
 			iNdEx += 8
 			v2 := float64(math.Float64frombits(v))
-			m.Sigma = &v2
+			column.Sigma = &v2
 		case 36:
 			if wireType != 1 {
 				return fmt.Errorf("proto: wrong wireType = %d for field SkewThreshold", wireType)
@@ -20661,7 +20661,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
 			iNdEx += 8
 			v2 := float64(math.Float64frombits(v))
-			m.SkewThreshold = &v2
+			column.SkewThreshold = &v2
 		case 37:
 			if wireType != 1 {
 				return fmt.Errorf("proto: wrong wireType = %d for field DriftThreshold", wireType)
@@ -20673,7 +20673,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
 			iNdEx += 8
 			v2 := float64(math.Float64frombits(v))
-			m.DriftThreshold = &v2
+			column.DriftThreshold = &v2
 		case 38:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Key", wireType)
@@ -20694,7 +20694,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.Key = &b
+			column.Key = &b
 		case 39:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Fold", wireType)
@@ -20715,7 +20715,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.Fold = &b
+			column.Fold = &b
 		case 40:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Weight", wireType)
@@ -20736,7 +20736,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.Weight = &b
+			column.Weight = &b
 		case 41:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Reserved", wireType)
@@ -20757,7 +20757,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.Reserved = &b
+			column.Reserved = &b
 		case 42:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Imputation", wireType)
@@ -20789,7 +20789,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			s := github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1.Imputation(dAtA[iNdEx:postIndex])
-			m.Imputation = &s
+			column.Imputation = &s
 			iNdEx = postIndex
 		case 43:
 			if wireType != 2 {
@@ -20822,7 +20822,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			s := github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1.Scaling(dAtA[iNdEx:postIndex])
-			m.Scaling = &s
+			column.Scaling = &s
 			iNdEx = postIndex
 		case 44:
 			if wireType != 0 {
@@ -20844,7 +20844,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.Generated = &b
+			column.Generated = &b
 		case 45:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Formula", wireType)
@@ -20876,7 +20876,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			s := string(dAtA[iNdEx:postIndex])
-			m.Formula = &s
+			column.Formula = &s
 			iNdEx = postIndex
 		case 46:
 			if wireType != 0 {
@@ -20898,7 +20898,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.ID = &b
+			column.ID = &b
 		case 47:
 			if wireType != 1 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Step", wireType)
@@ -20910,12 +20910,12 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
 			iNdEx += 8
 			v2 := float64(math.Float64frombits(v))
-			m.Step = &v2
+			column.Step = &v2
 		case 48:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Loc", wireType)
 			}
-			m.Loc = 0
+			column.Loc = 0
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowGenerated
@@ -20925,7 +20925,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.Loc |= int32(b&0x7F) << shift
+				column.Loc |= int32(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -20961,7 +20961,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			s := string(dAtA[iNdEx:postIndex])
-			m.DateTimeFormat = &s
+			column.DateTimeFormat = &s
 			iNdEx = postIndex
 		case 50:
 			if wireType != 0 {
@@ -20983,7 +20983,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.TimeSeries = &b
+			column.TimeSeries = &b
 		case 51:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Regressor", wireType)
@@ -21004,7 +21004,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.Regressor = &b
+			column.Regressor = &b
 		case 52:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field LaggedRegressor", wireType)
@@ -21025,7 +21025,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.LaggedRegressor = &b
+			column.LaggedRegressor = &b
 		case 53:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field TimeIndex", wireType)
@@ -21046,7 +21046,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.TimeIndex = &b
+			column.TimeIndex = &b
 		case 54:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Aggr", wireType)
@@ -21078,7 +21078,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			s := github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1.Aggregate(dAtA[iNdEx:postIndex])
-			m.Aggr = &s
+			column.Aggr = &s
 			iNdEx = postIndex
 		case 55:
 			if wireType != 0 {
@@ -21099,7 +21099,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 					break
 				}
 			}
-			m.Window = &v
+			column.Window = &v
 		default:
 			iNdEx = preIndex
 			skippy, err := skipGenerated(dAtA[iNdEx:])
@@ -26561,7 +26561,7 @@ func (m *DataPipelineStatus) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *DataProduct) Unmarshal(dAtA []byte) error {
+func (product *DataProduct) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -26619,7 +26619,7 @@ func (m *DataProduct) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := product.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -26652,7 +26652,7 @@ func (m *DataProduct) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := product.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -26685,7 +26685,7 @@ func (m *DataProduct) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := product.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -29223,7 +29223,7 @@ func (m *DataProductVersionStatus) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *DataSource) Unmarshal(dAtA []byte) error {
+func (datasource *DataSource) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -29281,7 +29281,7 @@ func (m *DataSource) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := datasource.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -29314,7 +29314,7 @@ func (m *DataSource) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := datasource.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -29347,7 +29347,7 @@ func (m *DataSource) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := datasource.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -33439,7 +33439,7 @@ func (m *DriftThreshold) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *Entity) Unmarshal(dAtA []byte) error {
+func (entity *Entity) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -33497,7 +33497,7 @@ func (m *Entity) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := entity.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -33530,7 +33530,7 @@ func (m *Entity) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := entity.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -33563,7 +33563,7 @@ func (m *Entity) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := entity.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -35779,7 +35779,7 @@ func (m *FeatureGroupStatus) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *FeatureHistogram) Unmarshal(dAtA []byte) error {
+func (fh *FeatureHistogram) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -35837,7 +35837,7 @@ func (m *FeatureHistogram) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := fh.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -35870,7 +35870,7 @@ func (m *FeatureHistogram) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := fh.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -35903,7 +35903,7 @@ func (m *FeatureHistogram) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := fh.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -40129,7 +40129,7 @@ func (m *ParquetFileSpec) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *Recipe) Unmarshal(dAtA []byte) error {
+func (recipe *Recipe) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -40187,7 +40187,7 @@ func (m *Recipe) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := recipe.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -40220,7 +40220,7 @@ func (m *Recipe) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := recipe.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -40253,7 +40253,7 @@ func (m *Recipe) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := recipe.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -41016,7 +41016,7 @@ func (m *RecipePartSpec) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *RecipeRun) Unmarshal(dAtA []byte) error {
+func (reciperun *RecipeRun) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -41074,7 +41074,7 @@ func (m *RecipeRun) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := reciperun.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -41107,7 +41107,7 @@ func (m *RecipeRun) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := reciperun.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -41140,7 +41140,7 @@ func (m *RecipeRun) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := reciperun.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex

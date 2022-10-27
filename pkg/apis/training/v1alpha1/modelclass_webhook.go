@@ -80,21 +80,21 @@ func (mclass *ModelClass) Default() {
 // validation
 var _ webhook.Validator = &ModelClass{}
 
-func (mclass *ModelClass) ValidateDelete() error {
+func (mclass ModelClass) ValidateDelete() error {
 	return nil
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (mclass *ModelClass) ValidateCreate() error {
+func (mclass ModelClass) ValidateCreate() error {
 	return mclass.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (mclass *ModelClass) ValidateUpdate(old runtime.Object) error {
+func (mclass ModelClass) ValidateUpdate(old runtime.Object) error {
 	return mclass.validate()
 }
 
-func (mclass *ModelClass) validate() error {
+func (mclass ModelClass) validate() error {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, mclass.validateMeta(field.NewPath("metadata"))...)
 	allErrs = append(allErrs, mclass.validateSpec(field.NewPath("spec"))...)
@@ -113,7 +113,7 @@ func (mclass *ModelClass) validateMeta(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (mclass *ModelClass) validateName(fldPath *field.Path) field.ErrorList {
+func (mclass ModelClass) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	err := common.ValidateResourceName(mclass.Name)
 	if err != nil {
@@ -122,7 +122,7 @@ func (mclass *ModelClass) validateName(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (mclass *ModelClass) validateSpec(fldPath *field.Path) field.ErrorList {
+func (mclass ModelClass) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, mclass.validateTask(fldPath.Child("Task"))...)
 	allErrs = append(allErrs, mclass.validateDataset(fldPath.Child("Entity"))...)
@@ -130,7 +130,7 @@ func (mclass *ModelClass) validateSpec(fldPath *field.Path) field.ErrorList {
 }
 
 // Validate task checks that the
-func (mclass *ModelClass) validateDataset(fldPath *field.Path) field.ErrorList {
+func (mclass ModelClass) validateDataset(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	// Task must be defined.
 
@@ -138,7 +138,7 @@ func (mclass *ModelClass) validateDataset(fldPath *field.Path) field.ErrorList {
 }
 
 // Validate task checks that the
-func (mclass *ModelClass) validateTask(fldPath *field.Path) field.ErrorList {
+func (mclass ModelClass) validateTask(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	// Task must be defined.
 	if mclass.Spec.Task == nil {

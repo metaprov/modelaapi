@@ -44,7 +44,7 @@ func NewStudy(ns string, name string, dataset string) *Study {
 	return result
 }
 
-func (study *Study) CanStart() bool {
+func (study Study) CanStart() bool {
 	if study.Spec.Schedule.StartAt == nil {
 		return true
 	}
@@ -52,7 +52,7 @@ func (study *Study) CanStart() bool {
 	return study.Spec.Schedule.StartAt.Before(&now)
 }
 
-func (study *Study) PipelineName() string {
+func (study Study) PipelineName() string {
 	return study.ObjectMeta.Labels["pipeline"]
 }
 
@@ -61,7 +61,7 @@ func (study *Study) AddPipelineLable(pipeline string) {
 
 }
 
-func (study *Study) ReachedMaxFETime() bool {
+func (study Study) ReachedMaxFETime() bool {
 	if study.Status.FeatureEngineeringStatus.StartTime == nil {
 		return false // not started
 	}
@@ -69,19 +69,19 @@ func (study *Study) ReachedMaxFETime() bool {
 	return int32(duration/60) >= *study.Spec.FESearch.MaxTimeSec
 }
 
-func (study *Study) ReachedMaxFEModels() bool {
+func (study Study) ReachedMaxFEModels() bool {
 	totalModels := study.Status.FeatureEngineeringStatus.Failed + study.Status.FeatureEngineeringStatus.Completed
 	return *study.Spec.FESearch.MaxModels == totalModels
 }
 
-func (study *Study) ShouldEarlyStopTraining() bool {
+func (study Study) ShouldEarlyStopTraining() bool {
 	if *study.Spec.Search.EarlyStop.Enabled {
 		return study.Status.SearchStatus.Failed+study.Status.SearchStatus.Completed >= *study.Spec.Search.EarlyStop.Initial && study.Status.SearchStatus.ModelsWithNoProgress >= *study.Spec.Search.EarlyStop.MinModelsWithNoProgress
 	}
 	return false
 }
 
-func (study *Study) ShouldEarlyStopFE() bool {
+func (study Study) ShouldEarlyStopFE() bool {
 	if *study.Spec.FESearch.EarlyStop.Enabled {
 		return study.Status.FeatureEngineeringStatus.Failed+study.Status.FeatureEngineeringStatus.Completed >= *study.Spec.FESearch.EarlyStop.Initial && study.Status.FeatureEngineeringStatus.ModelsWithNoProgress >= *study.Spec.FESearch.EarlyStop.MinModelsWithNoProgress
 	}
@@ -89,7 +89,7 @@ func (study *Study) ShouldEarlyStopFE() bool {
 }
 
 // Enabled if we reached max time
-func (study *Study) ReachedMaxTime() bool {
+func (study Study) ReachedMaxTime() bool {
 	if study.Status.SearchStatus.StartTime == nil {
 		return false // not started
 	}
@@ -98,15 +98,15 @@ func (study *Study) ReachedMaxTime() bool {
 }
 
 // Tru if there are models waiting for test
-func (s *Study) ModelsWaiting() bool {
+func (s Study) ModelsWaiting() bool {
 	return s.Status.TestStatus.Waiting > 0
 }
 
-func (study *Study) LiveKey() string {
+func (study Study) LiveKey() string {
 	return *study.Spec.Location.Path
 }
 
-func (study *Study) ArchiveKey() string {
+func (study Study) ArchiveKey() string {
 	return strings.Replace(*study.Spec.Location.Path, "/live/", "/archive/", -1)
 }
 
@@ -116,9 +116,9 @@ func (study *Study) ArchiveKey() string {
 // StudyName Finilizer
 //==============================================================================
 
-func (study *Study) HasFinalizer() bool { return util.HasFin(&study.ObjectMeta, training.GroupName) }
-func (study *Study) AddFinalizer()      { util.AddFin(&study.ObjectMeta, training.GroupName) }
-func (study *Study) RemoveFinalizer()   { util.RemoveFin(&study.ObjectMeta, training.GroupName) }
+func (study Study) HasFinalizer() bool { return util.HasFin(&study.ObjectMeta, training.GroupName) }
+func (study *Study) AddFinalizer()     { util.AddFin(&study.ObjectMeta, training.GroupName) }
+func (study *Study) RemoveFinalizer()  { util.RemoveFin(&study.ObjectMeta, training.GroupName) }
 
 // Merge or update condition
 func (study *Study) CreateOrUpdateCond(cond StudyCondition) {
@@ -149,7 +149,7 @@ func (study *Study) GetCondIdx(t StudyConditionType) int {
 	return -1
 }
 
-func (study *Study) GetCond(t StudyConditionType) StudyCondition {
+func (study Study) GetCond(t StudyConditionType) StudyCondition {
 	for _, v := range study.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -164,41 +164,41 @@ func (study *Study) GetCond(t StudyConditionType) StudyCondition {
 	}
 }
 
-func (r *Study) IsSearching() bool {
+func (r Study) IsSearching() bool {
 	return r.Status.Phase == StudyPhaseSearching
 }
 
-func (r *Study) IsFeatureEngineering() bool {
+func (r Study) IsFeatureEngineering() bool {
 	return r.Status.Phase == StudyPhaseEngineeringFeature
 }
 
-func (r *Study) IsReady() bool {
+func (r Study) IsReady() bool {
 	return r.GetCond(StudyCompleted).Status == v1.ConditionTrue
 }
 
-func (r *Study) IsPartitioned() bool {
+func (r Study) IsPartitioned() bool {
 	return r.GetCond(StudyPartitioned).Status == v1.ConditionTrue
 }
 
-func (r *Study) IsForecast() bool {
+func (r Study) IsForecast() bool {
 	return *r.Spec.Task == catalog.Forecasting
 }
 
 // Compute the current phase based on the condition
-func (study *Study) Phase() StudyPhase {
+func (study Study) Phase() StudyPhase {
 	return study.Status.Phase
 }
 
-func (study *Study) RootUri() string {
+func (study Study) RootUri() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s", study.Namespace, *study.Spec.VersionName, study.Name)
 }
 
-func (study *Study) ManifestUri() string {
+func (study Study) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-study.yaml", study.RootUri(), study.Name)
 }
 
 //    dataproducts/*/studies/*/study-<name>-report.pdf
-func (study *Study) ReportUri() string {
+func (study Study) ReportUri() string {
 	return fmt.Sprintf("%s/%s-report.pdf", study.RootUri(), study.Name)
 }
 
@@ -219,17 +219,17 @@ func (study *Study) SetStartTime() {
 	study.Status.StartTime = &metav1.Time{Time: now}
 }
 
-func (study *Study) ReportName() string {
+func (study Study) ReportName() string {
 	return "study-report-" + study.ObjectMeta.Name
 
 }
 
-func (study *Study) IsInCond(ct StudyConditionType) bool {
+func (study Study) IsInCond(ct StudyConditionType) bool {
 	current := study.GetCond(ct)
 	return current.Status == v1.ConditionTrue
 }
 
-func (study *Study) SelectSplitMethod() {
+func (study Study) SelectSplitMethod() {
 	if *study.Spec.Task == catalog.Forecasting || *study.Spec.Task == catalog.GroupForecast {
 		v := catalog.DataSplitMethodTime
 		study.Spec.TrainingTemplate.Split.Method = &v
@@ -297,7 +297,7 @@ func (study *Study) AutoSplit(rows int32) {
 		study.Spec.TrainingTemplate.Split.Method = &method
 	}
 
-	if *study.Spec.Task == catalog.Forecasting {
+	if *study.Spec.Task == catalog.Forecasting || *study.Spec.Task == catalog.GroupForecast {
 		method := catalog.DataSplitMethodTime
 		study.Spec.TrainingTemplate.Split.Method = &method
 	}
@@ -308,7 +308,7 @@ func (study *Study) AutoSplit(rows int32) {
 // Split
 ///////////////////////////////////////////////////////////////
 
-func (study *Study) Splitted() bool {
+func (study Study) Splitted() bool {
 	cond := study.GetCond(StudySplit)
 	return cond.Status == v1.ConditionTrue
 }
@@ -358,7 +358,7 @@ func (study *Study) MarkSplitFailed(err string) {
 // Transform
 ///////////////////////////////////////////////////////////////
 
-func (study *Study) Transformed() bool {
+func (study Study) Transformed() bool {
 	cond := study.GetCond(StudyTransformed)
 	return cond.Status == v1.ConditionTrue
 }
@@ -408,7 +408,7 @@ func (study *Study) MarkTransformFailed(err string) {
 // Feature engineering
 ////////////////////////////////////////////////
 
-func (study *Study) FeatureEngineered() bool {
+func (study Study) FeatureEngineered() bool {
 	cond := study.GetCond(StudyFeatureEngineered)
 	return cond.Status == v1.ConditionTrue
 }
@@ -454,7 +454,7 @@ func (study *Study) MarkFeatureEngineeringFailed(err string) {
 // Baselines
 ///////////////////////////////////////////////////////////////
 
-func (study *Study) Baselined() bool {
+func (study Study) Baselined() bool {
 	cond := study.GetCond(StudyBaselined)
 	return cond.Status == v1.ConditionTrue
 }
@@ -534,7 +534,7 @@ func (study *Study) MarkGCFailed(err string) {
 // Searched
 ///////////////////////////////////////////////////////////////
 
-func (study *Study) Searched() bool {
+func (study Study) Searched() bool {
 	cond := study.GetCond(StudySearched)
 	return cond.Status == v1.ConditionTrue
 }
@@ -583,7 +583,7 @@ func (study *Study) MarkSearchFailed(err string) {
 // Ensemble
 ///////////////////////////////////////////////////////
 
-func (study *Study) Ensembled() bool {
+func (study Study) Ensembled() bool {
 	cond := study.GetCond(StudyEnsembleCreated)
 	return cond.Status == v1.ConditionTrue
 }
@@ -637,7 +637,7 @@ func (study *Study) MarkEnsembleFailed(err string) {
 // Test
 //////////////////////////////////////////////////////
 
-func (study *Study) ModelTested() bool {
+func (study Study) ModelTested() bool {
 	cond := study.GetCond(StudyTested)
 	return cond.Status == v1.ConditionTrue
 }
@@ -677,7 +677,7 @@ func (study *Study) MarkTestingFailed(err string) {
 	study.RefreshProgress()
 }
 
-func (study *Study) Tested() bool {
+func (study Study) Tested() bool {
 	return study.GetCond(StudyTested).Status == v1.ConditionTrue
 }
 
@@ -685,7 +685,7 @@ func (study *Study) Tested() bool {
 // Tuned
 //////////////////////////////////////////////////////
 
-func (study *Study) ModelTuned() bool {
+func (study Study) ModelTuned() bool {
 	cond := study.GetCond(StudyTuned)
 	return cond.Status == v1.ConditionTrue
 }
@@ -725,7 +725,7 @@ func (study *Study) MarkTuningFailed(err string) {
 	study.RefreshProgress()
 }
 
-func (study *Study) Tuned() bool {
+func (study Study) Tuned() bool {
 	return study.GetCond(StudyTuned).Status == v1.ConditionTrue
 }
 
@@ -733,7 +733,7 @@ func (study *Study) Tuned() bool {
 // --------------- Profile
 ///////////////////////////////////////////////////////
 
-func (study *Study) Profiled() bool {
+func (study Study) Profiled() bool {
 	return *study.Spec.Profiled && study.GetCond(StudyProfiled).Status == v1.ConditionTrue
 }
 
@@ -785,7 +785,7 @@ func (study *Study) MarkReporting() {
 
 }
 
-func (study *Study) Reported() bool {
+func (study Study) Reported() bool {
 	return study.GetCond(StudyReported).Status == v1.ConditionTrue
 }
 
@@ -800,14 +800,14 @@ func (study *Study) MarkReported(name string) {
 }
 
 // ------------------- Paused
-func (study *Study) Paused() bool {
+func (study Study) Paused() bool {
 	cond := study.GetCond(StudyPaused)
 	return cond.Status == v1.ConditionTrue
 }
 
 // ------------------- Abort
 
-func (study *Study) Aborted() bool {
+func (study Study) Aborted() bool {
 	cond := study.GetCond(StudyAborted)
 	return cond.Status == v1.ConditionTrue
 }
@@ -826,11 +826,11 @@ func (study *Study) MarkPartitioned() bool {
 	return cond.Status == v1.ConditionTrue
 }
 
-func (study *Study) EnsembleTrained() bool {
+func (study Study) EnsembleTrained() bool {
 	return study.GetCond(StudyEnsembleCreated).Status == v1.ConditionTrue
 }
 
-func (study *Study) Ready() bool {
+func (study Study) Ready() bool {
 	return study.GetCond(StudyCompleted).Status == v1.ConditionTrue
 }
 
@@ -842,11 +842,11 @@ func (study *Study) MarkSaved() {
 	study.RefreshProgress()
 }
 
-func (study *Study) Saved() bool {
+func (study Study) Saved() bool {
 	return study.GetCond(StudySaved).Status == v1.ConditionTrue
 }
 
-func (study *Study) PrintConditions() {
+func (study Study) PrintConditions() {
 	for _, v := range study.Status.Conditions {
 		fmt.Println(v)
 	}
@@ -890,15 +890,15 @@ func (study *Study) MarkPaused() {
 //////////////////////// Profile
 
 // This is the operation name for the study.
-func (study *Study) OpName() string {
+func (study Study) OpName() string {
 	return study.Namespace + "-" + study.Name
 }
 
-func (study *Study) Random() bool {
+func (study Study) Random() bool {
 	return *study.Spec.Search.Sampler == RandomSearch
 }
 
-func (study *Study) Deleted() bool {
+func (study Study) Deleted() bool {
 	return !study.ObjectMeta.DeletionTimestamp.IsZero()
 }
 
@@ -998,7 +998,7 @@ func (study *Study) MarkPartitionedFailed(err string) {
 	study.RefreshProgress()
 }
 
-func (study *Study) ReachedMaxModels() bool {
+func (study Study) ReachedMaxModels() bool {
 	return study.Status.SearchStatus.Failed+
 		study.Status.SearchStatus.Completed+
 		study.Status.SearchStatus.Waiting >= *study.Spec.Search.MaxModels
@@ -1022,22 +1022,22 @@ func (study *Study) SetTrainTest(rows int32) {
 }
 
 // based on the levels in the study, create all the paths
-func (study *Study) CreatePartitionsPaths() []string {
+func (study Study) CreatePartitionsPaths() []string {
 	return make([]string, 0)
 }
 
 // Ask the hirerchy to return forecast keys
 
-func (study *Study) IsRunning() bool {
+func (study Study) IsRunning() bool {
 	return study.GetCond(StudyCompleted).Status != v1.ConditionFalse &&
 		study.GetCond(StudyCompleted).Reason == string(catalog.Running)
 }
 
-func (study *Study) IsFailed() bool {
+func (study Study) IsFailed() bool {
 	return study.Status.Phase == StudyPhaseFailed
 }
 
-func (study *Study) IsGroup() bool {
+func (study Study) IsGroup() bool {
 	return *study.Spec.Task == catalog.GroupForecast
 }
 
@@ -1065,7 +1065,7 @@ func (study *Study) RefreshProgress() {
 ////////////////////////////////////////////////////////////
 // Model Alerts
 
-func (study *Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+func (study Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Study %s completed successfully", study.Name)
 	result := &infra.Alert{
@@ -1098,7 +1098,7 @@ func (study *Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName 
 	return result
 }
 
-func (study *Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (study Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Study %s failed with error %v", study.Name, err.Error())
 	result := &infra.Alert{
@@ -1143,26 +1143,26 @@ func (study *Study) MarkModelFailed(model *Model, err error) {
 	study.Status.EndTime = &now
 }
 
-func (study *Study) WorkerIndexFileKey(workerIndex int, task string) string {
+func (study Study) WorkerIndexFileKey(workerIndex int, task string) string {
 	return fmt.Sprintf("%s/%s_%d.json", study.RootUri(), task, workerIndex)
 }
 
-func (study *Study) TaskIndexFileKey(task string) string {
+func (study Study) TaskIndexFileKey(task string) string {
 	return fmt.Sprintf("%s/%s.json", study.RootUri(), task)
 }
 
-func (study *Study) GroupFolder(key []string) string {
+func (study Study) GroupFolder(key []string) string {
 	return study.RootUri() + "/groups/" + path.Join(key...)
 }
 
-func (study *Study) GroupDataFolder(key []string) string {
+func (study Study) GroupDataFolder(key []string) string {
 	return study.GroupFolder(key) + "/data"
 }
 
-func (study *Study) GroupTrainFile(key []string) string {
+func (study Study) GroupTrainFile(key []string) string {
 	return study.GroupFolder(key) + "/data/train.parquet"
 }
 
-func (study *Study) GroupTestFile(key []string) string {
+func (study Study) GroupTestFile(key []string) string {
 	return study.GroupFolder(key) + "/data/test.parquet"
 }

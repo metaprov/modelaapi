@@ -112,14 +112,14 @@ func (model *Model) Default() {
 var _ webhook.Validator = &Model{}
 
 //Set up the webhook with the manager.
-func (r *Model) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (model *Model) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(r).
+		For(model).
 		Complete()
 }
 
-func (in *Model) ValidateDelete() error {
-	return in.validateDelete()
+func (model Model) ValidateDelete() error {
+	return model.validateDelete()
 }
 
 //==============================================================================
@@ -127,49 +127,49 @@ func (in *Model) ValidateDelete() error {
 //==============================================================================
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (model *Model) ValidateCreate() error {
+func (model Model) ValidateCreate() error {
 	return model.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (model *Model) ValidateUpdate(old runtime.Object) error {
+func (model Model) ValidateUpdate(old runtime.Object) error {
 	return model.validate()
 }
 
-func (notifier *Model) validate() error {
+func (model Model) validate() error {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, notifier.validateMeta(field.NewPath("metadata"))...)
-	allErrs = append(allErrs, notifier.validateSpec(field.NewPath("spec"))...)
+	allErrs = append(allErrs, model.validateMeta(field.NewPath("metadata"))...)
+	allErrs = append(allErrs, model.validateSpec(field.NewPath("spec"))...)
 	if len(allErrs) == 0 {
 		return nil
 	}
 
 	return apierrors.NewInvalid(
 		schema.GroupKind{Group: "training.modela.ai", Kind: "dModel"},
-		notifier.Name, allErrs)
+		model.Name, allErrs)
 }
 
-func (dataset *Model) validateMeta(fldPath *field.Path) field.ErrorList {
+func (model Model) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, dataset.validateName(fldPath.Child("name"))...)
+	allErrs = append(allErrs, model.validateName(fldPath.Child("name"))...)
 	return allErrs
 }
 
-func (dataset *Model) validateName(fldPath *field.Path) field.ErrorList {
+func (model Model) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	err := common.ValidateResourceName(dataset.Name)
+	err := common.ValidateResourceName(model.Name)
 	if err != nil {
-		allErrs = append(allErrs, field.Invalid(fldPath.Child("FileName"), dataset.Name, err.Error()))
+		allErrs = append(allErrs, field.Invalid(fldPath.Child("FileName"), model.Name, err.Error()))
 	}
 	return allErrs
 }
 
-func (dataset *Model) validateSpec(fldPath *field.Path) field.ErrorList {
+func (model Model) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	return allErrs
 }
 
-func (model *Model) validateDelete() error {
+func (model Model) validateDelete() error {
 	var allErrors field.ErrorList
 
 	path := field.NewPath("")

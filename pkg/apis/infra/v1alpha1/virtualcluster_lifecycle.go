@@ -27,7 +27,7 @@ func (virtualcluster *VirtualCluster) SetupWebhookWithManager(mgr ctrl.Manager) 
 // Finializer
 //==============================================================================
 
-func (vcluster *VirtualCluster) HasFinalizer() bool {
+func (vcluster VirtualCluster) HasFinalizer() bool {
 	return util.HasFin(&vcluster.ObjectMeta, infra.GroupName)
 }
 func (vcluster *VirtualCluster) AddFinalizer() { util.AddFin(&vcluster.ObjectMeta, infra.GroupName) }
@@ -45,7 +45,7 @@ func (vcluster *VirtualCluster) LabelWithCommit(commit string, uname string, bra
 	vcluster.ObjectMeta.Labels[common.BranchLabelKey] = branch
 }
 
-func (vcluster *VirtualCluster) IsGitObj() bool {
+func (vcluster VirtualCluster) IsGitObj() bool {
 	label, ok := vcluster.ObjectMeta.Labels[common.CommitLabelKey]
 	if !ok {
 		return false
@@ -82,7 +82,7 @@ func (vcluster *VirtualCluster) GetCondIdx(t VirtualClusterConditionType) int {
 	return -1
 }
 
-func (vcluster *VirtualCluster) GetCond(t VirtualClusterConditionType) VirtualClusterCondition {
+func (vcluster VirtualCluster) GetCond(t VirtualClusterConditionType) VirtualClusterCondition {
 	for _, v := range vcluster.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -98,15 +98,15 @@ func (vcluster *VirtualCluster) GetCond(t VirtualClusterConditionType) VirtualCl
 
 }
 
-func (vcluster *VirtualCluster) IsReady() bool {
+func (vcluster VirtualCluster) IsReady() bool {
 	return vcluster.GetCond(VirtualClusterReady).Status == v1.ConditionTrue
 }
 
-func (vcluster *VirtualCluster) RootUri() string {
+func (vcluster VirtualCluster) RootUri() string {
 	return fmt.Sprintf("tenant/%s/virtualclusters/%s", vcluster.Namespace, vcluster.Name)
 }
 
-func (vcluster *VirtualCluster) ManifestUri() string {
+func (vcluster VirtualCluster) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-virtualcluster.yaml", vcluster.RootUri(), vcluster.Name)
 }
 

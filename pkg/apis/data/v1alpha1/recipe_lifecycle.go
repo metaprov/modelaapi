@@ -16,42 +16,42 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-func (r *Recipe) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (recipe *Recipe) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(r).
+		For(recipe).
 		Complete()
 }
 
-func (r *Recipe) HasFinalizer() bool { return util.HasFin(&r.ObjectMeta, data.GroupName) }
-func (r *Recipe) AddFinalizer()      { util.AddFin(&r.ObjectMeta, data.GroupName) }
-func (r *Recipe) RemoveFinalizer()   { util.RemoveFin(&r.ObjectMeta, data.GroupName) }
+func (recipe Recipe) HasFinalizer() bool { return util.HasFin(&recipe.ObjectMeta, data.GroupName) }
+func (recipe *Recipe) AddFinalizer()     { util.AddFin(&recipe.ObjectMeta, data.GroupName) }
+func (recipe *Recipe) RemoveFinalizer()  { util.RemoveFin(&recipe.ObjectMeta, data.GroupName) }
 
 //==============================================================================
 // Validate
 //==============================================================================
 
 // Merge or update condition
-func (r *Recipe) CreateOrUpdateCond(cond RecipeCondition) {
-	i := r.GetCondIdx(cond.Type)
+func (recipe *Recipe) CreateOrUpdateCond(cond RecipeCondition) {
+	i := recipe.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
 		cond.LastTransitionTime = &now
-		r.Status.Conditions = append(r.Status.Conditions, cond)
+		recipe.Status.Conditions = append(recipe.Status.Conditions, cond)
 		return
 	}
 	// else we already have the condition, update it
-	current := r.Status.Conditions[i]
+	current := recipe.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
 	current.LastTransitionTime = &now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
-	r.Status.Conditions[i] = current
+	recipe.Status.Conditions[i] = current
 }
 
-func (r *Recipe) GetCondIdx(t RecipeConditionType) int {
-	for i, v := range r.Status.Conditions {
+func (recipe *Recipe) GetCondIdx(t RecipeConditionType) int {
+	for i, v := range recipe.Status.Conditions {
 		if v.Type == t {
 			return i
 		}
@@ -59,8 +59,8 @@ func (r *Recipe) GetCondIdx(t RecipeConditionType) int {
 	return -1
 }
 
-func (r *Recipe) GetCond(t RecipeConditionType) RecipeCondition {
-	for _, v := range r.Status.Conditions {
+func (recipe Recipe) GetCond(t RecipeConditionType) RecipeCondition {
+	for _, v := range recipe.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
@@ -75,55 +75,55 @@ func (r *Recipe) GetCond(t RecipeConditionType) RecipeCondition {
 
 }
 
-func (r *Recipe) IsReady() bool {
-	return r.GetCond(RecipeReady).Status == v1.ConditionTrue
+func (recipe Recipe) IsReady() bool {
+	return recipe.GetCond(RecipeReady).Status == v1.ConditionTrue
 }
 
-func (r *Recipe) Populate(name string) {
+func (recipe *Recipe) Populate(name string) {
 
-	r.ObjectMeta = metav1.ObjectMeta{
+	recipe.ObjectMeta = metav1.ObjectMeta{
 		Name:      "iris",
 		Namespace: "modela-data",
 	}
 
-	r.Spec = RecipeSpec{
+	recipe.Spec = RecipeSpec{
 		VersionName: util.StrPtr("iris-0.0.1"),
 	}
 }
 
-func (r *Recipe) IsInCond(ct RecipeConditionType) bool {
-	current := r.GetCond(ct)
+func (recipe Recipe) IsInCond(ct RecipeConditionType) bool {
+	current := recipe.GetCond(ct)
 	return current.Status == v1.ConditionTrue
 }
 
-func (r *Recipe) PrintConditions() {
-	for _, v := range r.Status.Conditions {
+func (recipe Recipe) PrintConditions() {
+	for _, v := range recipe.Status.Conditions {
 		fmt.Println(v)
 	}
 }
 
-func (r *Recipe) MarkReady() {
-	r.CreateOrUpdateCond(RecipeCondition{
+func (recipe *Recipe) MarkReady() {
+	recipe.CreateOrUpdateCond(RecipeCondition{
 		Type:   RecipeReady,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (r *Recipe) Deleted() bool {
-	return !r.ObjectMeta.DeletionTimestamp.IsZero()
+func (recipe Recipe) Deleted() bool {
+	return !recipe.ObjectMeta.DeletionTimestamp.IsZero()
 }
 
-func (r *Recipe) MarkSaved() {
-	r.CreateOrUpdateCond(RecipeCondition{
+func (recipe *Recipe) MarkSaved() {
+	recipe.CreateOrUpdateCond(RecipeCondition{
 		Type:   RecipeSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (r *Recipe) IsSaved() bool {
-	return r.GetCond(RecipeSaved).Status == v1.ConditionTrue
+func (recipe Recipe) IsSaved() bool {
+	return recipe.GetCond(RecipeSaved).Status == v1.ConditionTrue
 }
 
-func (in *Recipe) UpdateRunStatus(run RecipeRun) {
+func (recipe *Recipe) UpdateRunStatus(run RecipeRun) {
 
 }

@@ -19,7 +19,7 @@ import (
 // validation
 var _ webhook.Defaulter = &Attachment{}
 
-func (alert *Attachment) Default() {
+func (attachment *Attachment) Default() {
 
 }
 
@@ -27,42 +27,42 @@ func (alert *Attachment) Default() {
 var _ webhook.Validator = &Attachment{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (alert *Attachment) ValidateCreate() error {
-	return alert.validate()
+func (attachment *Attachment) ValidateCreate() error {
+	return attachment.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (alert *Attachment) ValidateUpdate(old runtime.Object) error {
-	return alert.validate()
+func (attachment *Attachment) ValidateUpdate(old runtime.Object) error {
+	return attachment.validate()
 }
 
-func (alert *Attachment) validate() error {
+func (attachment *Attachment) validate() error {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, alert.validateMeta(field.NewPath("metadata"))...)
-	allErrs = append(allErrs, alert.validateSpec(field.NewPath("spec"))...)
+	allErrs = append(allErrs, attachment.validateMeta(field.NewPath("metadata"))...)
+	allErrs = append(allErrs, attachment.validateSpec(field.NewPath("spec"))...)
 	if len(allErrs) == 0 {
 		return nil
 	}
 
-	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.ai", Kind: "Attachment"}, alert.Name, allErrs)
+	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.ai", Kind: "Attachment"}, attachment.Name, allErrs)
 }
 
-func (alert *Attachment) validateMeta(fldPath *field.Path) field.ErrorList {
+func (attachment *Attachment) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, alert.validateName(fldPath.Child("name"))...)
+	allErrs = append(allErrs, attachment.validateName(fldPath.Child("name"))...)
 	return allErrs
 }
 
-func (alert *Attachment) validateName(fldPath *field.Path) field.ErrorList {
+func (attachment *Attachment) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	err := common.ValidateResourceName(alert.Name)
+	err := common.ValidateResourceName(attachment.Name)
 	if err != nil {
-		allErrs = append(allErrs, field.Invalid(fldPath.Child("FileName"), alert.Name, err.Error()))
+		allErrs = append(allErrs, field.Invalid(fldPath.Child("FileName"), attachment.Name, err.Error()))
 	}
 	return allErrs
 }
 
-func (alert *Attachment) validateSpec(fldPath *field.Path) field.ErrorList {
+func (attachment *Attachment) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	//Smtp.To   []string
 	//Smtp.Origin string
@@ -74,12 +74,12 @@ func (alert *Attachment) validateSpec(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (alert *Attachment) ValidateDelete() error {
+func (attachment *Attachment) ValidateDelete() error {
 	return nil
 }
 
-func (alert *Attachment) MarkSent() {
-	alert.CreateOrUpdateCond(AttachmentCondition{
+func (attachment *Attachment) MarkSent() {
+	attachment.CreateOrUpdateCond(AttachmentCondition{
 		Type:   AttachmentSent,
 		Status: corev1.ConditionTrue,
 	})

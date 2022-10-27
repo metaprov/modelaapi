@@ -15,14 +15,14 @@ import (
 // defaulting
 var _ webhook.Defaulter = &Recipe{}
 
-func (r *Recipe) Default() {
+func (recipe *Recipe) Default() {
 
-	if r.Spec.Owner == nil {
-		r.Spec.Owner = util.StrPtr("")
+	if recipe.Spec.Owner == nil {
+		recipe.Spec.Owner = util.StrPtr("")
 	}
 
-	if r.Spec.Description == nil {
-		r.Spec.Description = util.StrPtr("")
+	if recipe.Spec.Description == nil {
+		recipe.Spec.Description = util.StrPtr("")
 	}
 
 }
@@ -31,19 +31,19 @@ func (r *Recipe) Default() {
 var _ webhook.Validator = &Recipe{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (recipe *Recipe) ValidateCreate() error {
+func (recipe Recipe) ValidateCreate() error {
 	return recipe.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (recipe *Recipe) ValidateUpdate(old runtime.Object) error {
+func (recipe Recipe) ValidateUpdate(old runtime.Object) error {
 	return recipe.validate()
 }
 
-func (recipe *Recipe) validate() error {
+func (recipe Recipe) validate() error {
 	return nil
 }
 
-func (recipe *Recipe) ValidateDelete() error {
+func (recipe Recipe) ValidateDelete() error {
 	return nil
 }

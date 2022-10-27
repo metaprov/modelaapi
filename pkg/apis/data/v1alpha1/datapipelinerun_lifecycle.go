@@ -17,7 +17,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-func (run *DataPipelineRun) HasFinalizer() bool {
+func (run DataPipelineRun) HasFinalizer() bool {
 	return util.HasFin(&run.ObjectMeta, data.GroupName)
 }
 func (run *DataPipelineRun) AddFinalizer()    { util.AddFin(&run.ObjectMeta, data.GroupName) }
@@ -47,7 +47,7 @@ func (run *DataPipelineRun) CreateOrUpdateCond(cond DataPipelineRunCondition) {
 	run.Status.Conditions[i] = current
 }
 
-func (run *DataPipelineRun) GetCondIdx(t DataPipelineRunConditionType) int {
+func (run DataPipelineRun) GetCondIdx(t DataPipelineRunConditionType) int {
 	for i, v := range run.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -56,7 +56,7 @@ func (run *DataPipelineRun) GetCondIdx(t DataPipelineRunConditionType) int {
 	return -1
 }
 
-func (run *DataPipelineRun) GetCond(t DataPipelineRunConditionType) DataPipelineRunCondition {
+func (run DataPipelineRun) GetCond(t DataPipelineRunConditionType) DataPipelineRunCondition {
 	for _, v := range run.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -72,46 +72,46 @@ func (run *DataPipelineRun) GetCond(t DataPipelineRunConditionType) DataPipeline
 
 }
 
-func (w *DataPipelineRun) IsReady() bool {
+func (w DataPipelineRun) IsReady() bool {
 	return w.GetCond(DataPipelineRunCompleted).Status == v1.ConditionTrue
 }
 
-func (w *DataPipelineRun) IsSaved() bool {
+func (w DataPipelineRun) IsSaved() bool {
 	return w.GetCond(DataPipelineRunSaved).Status == v1.ConditionTrue
 }
 
-func (run *DataPipelineRun) StatusString() string {
+func (run DataPipelineRun) StatusString() string {
 	return string(run.Status.Phase)
 }
 
-func (run *DataPipelineRun) RootUri() string {
+func (run DataPipelineRun) RootUri() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/wranglings/%s", run.Namespace, *run.Spec.VersionName, run.Name)
 }
 
-func (run *DataPipelineRun) ManifestUri() string {
+func (run DataPipelineRun) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-wrangling.yaml", run.RootUri(), run.Name)
 }
 
-func (in *DataPipelineRun) Paused() bool {
+func (in DataPipelineRun) Paused() bool {
 	cond := in.GetCond(DataPipelineRunCompleted)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(DataPipelineRunPhasePaused)
 }
 
-func (in *DataPipelineRun) Aborted() bool {
+func (in DataPipelineRun) Aborted() bool {
 	cond := in.GetCond(DataPipelineRunCompleted)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(DataPipelineRunPhaseAborted)
 }
 
-func (in *DataPipelineRun) IsCompleted() bool {
+func (in DataPipelineRun) IsCompleted() bool {
 	return in.GetCond(DataPipelineRunCompleted).Status == v1.ConditionTrue
 }
 
-func (in *DataPipelineRun) IsRunning() bool {
+func (in DataPipelineRun) IsRunning() bool {
 	cond := in.GetCond(DataPipelineRunCompleted)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(DataPipelineRunPhaseRunning)
 }
 
-func (in *DataPipelineRun) IsFailed() bool {
+func (in DataPipelineRun) IsFailed() bool {
 	cond := in.GetCond(DataPipelineRunCompleted)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(DataPipelineRunPhaseFailed)
 }
@@ -183,7 +183,7 @@ func (in *DataPipelineRun) MarkSaved() {
 }
 
 // Generate a dataset completion alert
-func (run *DataPipelineRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+func (run DataPipelineRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Data pipeline run %s completed successfully", run.Name)
 	result := &infra.Alert{
@@ -213,7 +213,7 @@ func (run *DataPipelineRun) CompletionAlert(tenantRef *v1.ObjectReference, notif
 	return result
 }
 
-func (run *DataPipelineRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (run DataPipelineRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Data pipeline run %s failed with error %v", run.Name, err.Error())
 	result := &infra.Alert{
@@ -244,7 +244,7 @@ func (run *DataPipelineRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierNa
 }
 
 // Return the state of the run as RunStatus
-func (run *DataPipelineRun) RunStatus() *catalog.LastRunStatus {
+func (run DataPipelineRun) RunStatus() *catalog.LastRunStatus {
 	result := &catalog.LastRunStatus{
 		CompletionTime: run.Status.EndTime,
 		Duration:       int32(run.Status.EndTime.Unix() - run.Status.StartTime.Unix()),

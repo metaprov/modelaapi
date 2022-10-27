@@ -179,7 +179,7 @@ func (fg *FeatureGroup) CreateOrUpdateCond(cond FeatureGroupCondition) {
 	fg.Status.Conditions[i] = current
 }
 
-func (fg *FeatureGroup) GetCondIdx(t FeatureGroupConditionType) int {
+func (fg FeatureGroup) GetCondIdx(t FeatureGroupConditionType) int {
 	for i, v := range fg.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -188,7 +188,7 @@ func (fg *FeatureGroup) GetCondIdx(t FeatureGroupConditionType) int {
 	return -1
 }
 
-func (fg *FeatureGroup) GetCond(t FeatureGroupConditionType) FeatureGroupCondition {
+func (fg FeatureGroup) GetCond(t FeatureGroupConditionType) FeatureGroupCondition {
 	for _, v := range fg.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -204,11 +204,11 @@ func (fg *FeatureGroup) GetCond(t FeatureGroupConditionType) FeatureGroupConditi
 
 }
 
-func (fg *FeatureGroup) IsReady() bool {
+func (fg FeatureGroup) IsReady() bool {
 	return fg.GetCond(FeatureGroupReady).Status == v1.ConditionTrue
 }
 
-func (fg *FeatureGroup) Key() string {
+func (fg FeatureGroup) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "features", fg.Namespace, fg.Name)
 }
 
@@ -236,11 +236,11 @@ func (fg *FeatureGroup) MarkArchived() {
 	})
 }
 
-func (fg *FeatureGroup) Archived() bool {
+func (fg FeatureGroup) Archived() bool {
 	return fg.GetCond(FeatureGroupSaved).Status == v1.ConditionTrue
 }
 
-func (fh *FeatureGroup) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (fh FeatureGroup) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("FeatureGroup %s failed with error %v", fh.Name, err.Error())
 	return &infra.Alert{

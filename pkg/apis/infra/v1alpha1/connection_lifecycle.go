@@ -25,7 +25,7 @@ import (
 //  Core api objects
 //==============================================================================
 
-func (connection *Connection) Secret(content map[string]string) (*corev1.Secret, error) {
+func (connection Connection) Secret(content map[string]string) (*corev1.Secret, error) {
 	secret := &corev1.Secret{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      connection.Name,
@@ -40,7 +40,7 @@ func (connection *Connection) Secret(content map[string]string) (*corev1.Secret,
 //  Finalizer
 //==============================================================================
 
-func (connection *Connection) HasFinalizer() bool {
+func (connection Connection) HasFinalizer() bool {
 	return util.HasFin(&connection.ObjectMeta, infra.GroupName)
 }
 func (connection *Connection) AddFinalizer() { util.AddFin(&connection.ObjectMeta, infra.GroupName) }
@@ -52,11 +52,11 @@ func (connection *Connection) RemoveFinalizer() {
 // Trackable
 //==============================================================================
 
-func (connection *Connection) RootUri() string {
+func (connection Connection) RootUri() string {
 	return fmt.Sprintf("tenants/%s/connections/%s", connection.Namespace, connection.Name)
 }
 
-func (connection *Connection) ManifestUri() string {
+func (connection Connection) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-connection.yaml", connection.RootUri(), connection.Name)
 }
 
@@ -105,7 +105,7 @@ func (connection *Connection) GetCond(t ConnectionConditionType) ConnectionCondi
 
 }
 
-func (connection *Connection) Key() string {
+func (connection Connection) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "connections", connection.Namespace, connection.Name)
 }
 
@@ -118,7 +118,7 @@ func ParseConnectionYaml(content []byte) (*Connection, error) {
 	return r, nil
 }
 
-func (connection *Connection) IsReady() bool {
+func (connection Connection) IsReady() bool {
 	return connection.GetCond(ConnectionReady).Status == corev1.ConditionTrue
 }
 
@@ -138,7 +138,7 @@ func (connection *Connection) MarkArchived() {
 
 // create a new secret based on secret fields.
 // currently we place all the fields in the connection.
-func (connection *Connection) CreateSecret() *v1.Secret {
+func (connection Connection) CreateSecret() *v1.Secret {
 	secretName := connection.Name
 	if connection.Spec.SecretRef.Name != "" {
 		secretName = *&connection.Spec.SecretRef.Name

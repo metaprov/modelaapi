@@ -30,16 +30,16 @@ func (notifier *Notifier) Default() {
 var _ webhook.Validator = &Notifier{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (notifier *Notifier) ValidateCreate() error {
+func (notifier Notifier) ValidateCreate() error {
 	return notifier.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (notifier *Notifier) ValidateUpdate(old runtime.Object) error {
+func (notifier Notifier) ValidateUpdate(old runtime.Object) error {
 	return notifier.validate()
 }
 
-func (notifier *Notifier) validate() error {
+func (notifier Notifier) validate() error {
 	var allErrs field.ErrorList
 	if len(allErrs) == 0 {
 		return nil
@@ -48,7 +48,7 @@ func (notifier *Notifier) validate() error {
 	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.ai", Kind: "Notifier"}, notifier.Name, allErrs)
 }
 
-func (notifier *Notifier) ValidateDelete() error {
+func (notifier Notifier) ValidateDelete() error {
 	return nil
 }
 

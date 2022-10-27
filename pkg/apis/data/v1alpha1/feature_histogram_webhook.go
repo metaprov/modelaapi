@@ -21,28 +21,28 @@ import (
 var _ webhook.Validator = &FeatureHistogram{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (feature *FeatureHistogram) ValidateCreate() error {
-	return feature.validate()
+func (fh FeatureHistogram) ValidateCreate() error {
+	return fh.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (feature *FeatureHistogram) ValidateUpdate(old runtime.Object) error {
-	return feature.validate()
+func (fh FeatureHistogram) ValidateUpdate(old runtime.Object) error {
+	return fh.validate()
 }
 
-func (feature *FeatureHistogram) validate() error {
+func (fh FeatureHistogram) validate() error {
 	return nil
 }
 
-func (r *FeatureHistogram) ValidateDelete() error {
+func (fh FeatureHistogram) ValidateDelete() error {
 	return nil
 }
 
-func (in *FeatureHistogram) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (fh *FeatureHistogram) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(in).
+		For(fh).
 		Complete()
 }
 
 // No defaults in this current release
-func (feature *FeatureHistogram) Default() {}
+func (fh *FeatureHistogram) Default() {}

@@ -19,9 +19,9 @@ import (
 )
 
 //Set up the webhook with the manager.
-func (r *Account) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (account *Account) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(r).
+		For(account).
 		Complete()
 }
 
@@ -29,19 +29,19 @@ func (r *Account) SetupWebhookWithManager(mgr ctrl.Manager) error {
 // Finalizer
 //==============================================================================
 
-func (account *Account) HasFinalizer() bool { return util.HasFin(&account.ObjectMeta, infra.GroupName) }
-func (account *Account) AddFinalizer()      { util.AddFin(&account.ObjectMeta, infra.GroupName) }
-func (account *Account) RemoveFinalizer()   { util.RemoveFin(&account.ObjectMeta, infra.GroupName) }
+func (account Account) HasFinalizer() bool { return util.HasFin(&account.ObjectMeta, infra.GroupName) }
+func (account *Account) AddFinalizer()     { util.AddFin(&account.ObjectMeta, infra.GroupName) }
+func (account *Account) RemoveFinalizer()  { util.RemoveFin(&account.ObjectMeta, infra.GroupName) }
 
 //==============================================================================
 // Trackable
 //==============================================================================
 
-func (account *Account) RootUri() string {
+func (account Account) RootUri() string {
 	return fmt.Sprintf("tenants/%s/accounts/%s", account.Namespace, account.Name)
 }
 
-func (account *Account) ManifestUri() string {
+func (account Account) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-account.yaml", account.RootUri(), account.Name)
 }
 
@@ -65,7 +65,7 @@ func (account *Account) CreateOrUpdateCond(cond AccountCondition) {
 	account.Status.Conditions[i] = current
 }
 
-func (account *Account) GetCondIdx(t AccountConditionType) int {
+func (account Account) GetCondIdx(t AccountConditionType) int {
 	for i, v := range account.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -74,7 +74,7 @@ func (account *Account) GetCondIdx(t AccountConditionType) int {
 	return -1
 }
 
-func (account *Account) GetCond(t AccountConditionType) AccountCondition {
+func (account Account) GetCond(t AccountConditionType) AccountCondition {
 	for _, v := range account.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -90,11 +90,11 @@ func (account *Account) GetCond(t AccountConditionType) AccountCondition {
 
 }
 
-func (account *Account) IsReady() bool {
+func (account Account) IsReady() bool {
 	return account.GetCond(AccountReady).Status == v1.ConditionTrue
 }
 
-func (account *Account) Key() string {
+func (account Account) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "accounts", account.Namespace, account.Name)
 }
 
@@ -138,7 +138,7 @@ func (account *Account) MarkArchived() {
 	})
 }
 
-func (account *Account) Archived() bool {
+func (account Account) Archived() bool {
 	return account.GetCond(AccountSaved).Status == v1.ConditionTrue
 }
 

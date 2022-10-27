@@ -27,16 +27,16 @@ func (commit *Commit) Default() {
 var _ webhook.Validator = &Commit{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (commit *Commit) ValidateCreate() error {
+func (commit Commit) ValidateCreate() error {
 	return commit.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (commit *Commit) ValidateUpdate(old runtime.Object) error {
+func (commit Commit) ValidateUpdate(old runtime.Object) error {
 	return commit.validate()
 }
 
-func (commit *Commit) validate() error {
+func (commit Commit) validate() error {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, commit.validateMeta(field.NewPath("metadata"))...)
 	allErrs = append(allErrs, commit.validateSpec(field.NewPath("spec"))...)
@@ -47,13 +47,13 @@ func (commit *Commit) validate() error {
 	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.ai", Kind: "Commit"}, commit.Name, allErrs)
 }
 
-func (commit *Commit) validateMeta(fldPath *field.Path) field.ErrorList {
+func (commit Commit) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, commit.validateName(fldPath.Child("name"))...)
 	return allErrs
 }
 
-func (commit *Commit) validateName(fldPath *field.Path) field.ErrorList {
+func (commit Commit) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	err := common.ValidateResourceName(commit.Name)
 	if err != nil {
@@ -62,7 +62,7 @@ func (commit *Commit) validateName(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (commit *Commit) validateSpec(fldPath *field.Path) field.ErrorList {
+func (commit Commit) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	//Smtp.To   []string
 	//Smtp.Origin string
@@ -74,7 +74,7 @@ func (commit *Commit) validateSpec(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (commit *Commit) ValidateDelete() error {
+func (commit Commit) ValidateDelete() error {
 	return nil
 }
 

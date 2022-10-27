@@ -32,11 +32,11 @@ const PipelineLabelKey = "pipeline"
 // Keys
 //==============================================================================
 
-func (prediction *Prediction) RootUri() string {
+func (prediction Prediction) RootUri() string {
 	return fmt.Sprintf("dataproducts/%s/predictions/%s", prediction.Namespace, prediction.Name)
 }
 
-func (prediction *Prediction) ManifestUri() string {
+func (prediction Prediction) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-prediction.yaml", prediction.RootUri(), prediction.Name)
 }
 
@@ -44,7 +44,7 @@ func (prediction *Prediction) ManifestUri() string {
 // Validate
 //==============================================================================
 
-func (prediction *Prediction) PipelineName() string {
+func (prediction Prediction) PipelineName() string {
 	return prediction.ObjectMeta.Labels[PipelineLabelKey]
 }
 
@@ -52,7 +52,7 @@ func (prediction *Prediction) PipelineName() string {
 // Finalizer
 //==============================================================================
 
-func (prediction *Prediction) HasFinalizer() bool {
+func (prediction Prediction) HasFinalizer() bool {
 	return util.HasFin(&prediction.ObjectMeta, inference.GroupName)
 }
 func (prediction *Prediction) AddFinalizer() {
@@ -67,7 +67,7 @@ func (prediction *Prediction) RemoveFinalizer() {
 //==============================================================================
 
 // Return the on disk rep location
-func (prediction *Prediction) RepPath(root string) (string, error) {
+func (prediction Prediction) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/predictions/%s.yaml", root, prediction.ObjectMeta.Name), nil
 }
 
@@ -92,7 +92,7 @@ func (prediction *Prediction) CreateOrUpdateCond(cond PredictionCondition) {
 	prediction.Status.Conditions[i] = current
 }
 
-func (prediction *Prediction) GetCondIdx(t PredictionConditionType) int {
+func (prediction Prediction) GetCondIdx(t PredictionConditionType) int {
 	for i, v := range prediction.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -101,7 +101,7 @@ func (prediction *Prediction) GetCondIdx(t PredictionConditionType) int {
 	return -1
 }
 
-func (prediction *Prediction) GetCond(t PredictionConditionType) PredictionCondition {
+func (prediction Prediction) GetCond(t PredictionConditionType) PredictionCondition {
 	for _, v := range prediction.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -116,11 +116,11 @@ func (prediction *Prediction) GetCond(t PredictionConditionType) PredictionCondi
 	}
 }
 
-func (prediction *Prediction) IsCompleted() bool {
+func (prediction Prediction) IsCompleted() bool {
 	return prediction.GetCond(PredictionCompleted).Status == v1.ConditionTrue
 }
 
-func (prediction *Prediction) Key() string {
+func (prediction Prediction) Key() string {
 	return fmt.Sprintf("dataproducts/%s/predictions/%s", prediction.Namespace, prediction.Name)
 }
 
@@ -221,27 +221,27 @@ func (prediction *Prediction) MarkArchived() {
 	})
 }
 
-func (prediction *Prediction) OpName() string {
+func (prediction Prediction) OpName() string {
 	return prediction.Namespace + "-" + prediction.Name
 }
 
-func (version *Prediction) MarkSaved() {
-	version.CreateOrUpdateCond(PredictionCondition{
+func (prediction *Prediction) MarkSaved() {
+	prediction.CreateOrUpdateCond(PredictionCondition{
 		Type:   PredictionSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (version *Prediction) IsSaved() bool {
-	return version.GetCond(PredictionSaved).Status == v1.ConditionTrue
+func (prediction Prediction) IsSaved() bool {
+	return prediction.GetCond(PredictionSaved).Status == v1.ConditionTrue
 }
 
-func (run *Prediction) MarkRunning() {
-	run.CreateOrUpdateCond(PredictionCondition{
+func (prediction *Prediction) MarkRunning() {
+	prediction.CreateOrUpdateCond(PredictionCondition{
 		Status: v1.ConditionFalse,
 		Reason: string(catalog.Running),
 	})
-	run.Status.Phase = PredictionPhaseRunning
+	prediction.Status.Phase = PredictionPhaseRunning
 }
 
 func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
@@ -284,7 +284,7 @@ func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
 ////////////////////////////////////////////////////////////
 // Model Alerts
 
-func (prediction *Prediction) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+func (prediction Prediction) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Prediction %s completed successfully", prediction.Name)
 	result := &infra.Alert{
@@ -314,7 +314,7 @@ func (prediction *Prediction) CompletionAlert(tenantRef *v1.ObjectReference, not
 	return result
 }
 
-func (prediction *Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (prediction Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Prediction %s failed with error %v", prediction.Name, err.Error())
 	result := &infra.Alert{
@@ -344,31 +344,31 @@ func (prediction *Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifier
 	return result
 }
 
-func (in *Prediction) IsFailed() bool {
-	cond := in.GetCond(PredictionCompleted)
+func (prediction Prediction) IsFailed() bool {
+	cond := prediction.GetCond(PredictionCompleted)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(PredictionCompleted)
 }
 
 // Return the state of the run as RunStatus
-func (run *Prediction) RunStatus() *catalog.LastRunStatus {
+func (prediction *Prediction) RunStatus() *catalog.LastRunStatus {
 	result := &catalog.LastRunStatus{
-		CompletionTime: run.Status.EndTime,
-		Duration:       int32(run.Status.EndTime.Unix() - run.Status.StartTime.Unix()),
-		FailureReason:  run.Status.FailureReason,
-		FailureMessage: run.Status.FailureMessage,
+		CompletionTime: prediction.Status.EndTime,
+		Duration:       int32(prediction.Status.EndTime.Unix() - prediction.Status.StartTime.Unix()),
+		FailureReason:  prediction.Status.FailureReason,
+		FailureMessage: prediction.Status.FailureMessage,
 	}
-	result.Status = string(run.Status.Phase)
+	result.Status = string(prediction.Status.Phase)
 	return result
 
 }
 
-func (fh *Prediction) DriftAlert(tenantRef *v1.ObjectReference, notifierName *string, columns []string) *infra.Alert {
+func (prediction *Prediction) DriftAlert(tenantRef *v1.ObjectReference, notifierName *string, columns []string) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("drift detected")
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
-			GenerateName: fh.Name,
-			Namespace:    fh.Namespace,
+			GenerateName: prediction.Name,
+			Namespace:    prediction.Namespace,
 		},
 		Spec: infra.AlertSpec{
 			Subject:      util.StrPtr(subject),
@@ -378,10 +378,10 @@ func (fh *Prediction) DriftAlert(tenantRef *v1.ObjectReference, notifierName *st
 			NotifierName: notifierName,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Entity",
-				Name:      fh.Name,
-				Namespace: fh.Namespace,
+				Name:      prediction.Name,
+				Namespace: prediction.Namespace,
 			},
-			Owner: fh.Spec.Owner,
+			Owner: prediction.Spec.Owner,
 			Fields: map[string]string{
 				"columns": strings.Join(columns, ","),
 			},

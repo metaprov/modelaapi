@@ -22,24 +22,24 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-func (entity *Entity) HasFinalizer() bool { return util.HasFin(&entity.ObjectMeta, data.GroupName) }
-func (entity *Entity) AddFinalizer()      { util.AddFin(&entity.ObjectMeta, data.GroupName) }
-func (entity *Entity) RemoveFinalizer()   { util.RemoveFin(&entity.ObjectMeta, data.GroupName) }
+func (entity Entity) HasFinalizer() bool { return util.HasFin(&entity.ObjectMeta, data.GroupName) }
+func (entity *Entity) AddFinalizer()     { util.AddFin(&entity.ObjectMeta, data.GroupName) }
+func (entity *Entity) RemoveFinalizer()  { util.RemoveFin(&entity.ObjectMeta, data.GroupName) }
 
 //==============================================================================
 // Trackable
 //==============================================================================
 
 // Return the on disk rep location
-func (entity *Entity) RepPath(root string) (string, error) {
+func (entity Entity) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/schemas/%s.yaml", root, entity.ObjectMeta.Name), nil
 }
 
-func (entity *Entity) RepEntry() (string, error) {
+func (entity Entity) RepEntry() (string, error) {
 	return fmt.Sprintf("schemas/%s.yaml", entity.ObjectMeta.Name), nil
 }
 
-func (entity *Entity) Age() string {
+func (entity Entity) Age() string {
 	return humanize.Time(entity.CreationTimestamp.Time)
 }
 
@@ -115,18 +115,18 @@ func (entity *Entity) GetCond(t EntityConditionType) EntityCondition {
 
 }
 
-func (entity *Entity) IsReady() bool {
+func (entity Entity) IsReady() bool {
 	return entity.GetCond(EntityReady).Status == v1.ConditionTrue
 }
 
-func (entity *Entity) Key() string {
+func (entity Entity) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "entities", entity.Namespace, entity.Name)
 }
 
 //Set up the webhook with the manager.
-func (r *Entity) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (entity *Entity) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(r).
+		For(entity).
 		Complete()
 }
 
@@ -145,6 +145,6 @@ func (entity *Entity) MarkArchived() {
 	})
 }
 
-func (entity *Entity) Archived() bool {
+func (entity Entity) Archived() bool {
 	return entity.GetCond(EntitySaved).Status == v1.ConditionTrue
 }

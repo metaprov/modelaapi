@@ -38,30 +38,30 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
-func (m *Account) Reset()      { *m = Account{} }
-func (*Account) ProtoMessage() {}
+func (account *Account) Reset() { *account = Account{} }
+func (*Account) ProtoMessage()  {}
 func (*Account) Descriptor() ([]byte, []int) {
 	return fileDescriptor_737e1eae4c5a77fc, []int{0}
 }
-func (m *Account) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+func (account *Account) XXX_Unmarshal(b []byte) error {
+	return account.Unmarshal(b)
 }
-func (m *Account) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (account *Account) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := account.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (m *Account) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Account.Merge(m, src)
+func (account *Account) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Account.Merge(account, src)
 }
-func (m *Account) XXX_Size() int {
-	return m.Size()
+func (account *Account) XXX_Size() int {
+	return account.Size()
 }
-func (m *Account) XXX_DiscardUnknown() {
-	xxx_messageInfo_Account.DiscardUnknown(m)
+func (account *Account) XXX_DiscardUnknown() {
+	xxx_messageInfo_Account.DiscardUnknown(account)
 }
 
 var xxx_messageInfo_Account proto.InternalMessageInfo
@@ -598,30 +598,30 @@ func (m *ApacheSparkSpec) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ApacheSparkSpec proto.InternalMessageInfo
 
-func (m *ApiToken) Reset()      { *m = ApiToken{} }
+func (token *ApiToken) Reset()  { *token = ApiToken{} }
 func (*ApiToken) ProtoMessage() {}
 func (*ApiToken) Descriptor() ([]byte, []int) {
 	return fileDescriptor_737e1eae4c5a77fc, []int{20}
 }
-func (m *ApiToken) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+func (token *ApiToken) XXX_Unmarshal(b []byte) error {
+	return token.Unmarshal(b)
 }
-func (m *ApiToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (token *ApiToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := token.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (m *ApiToken) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ApiToken.Merge(m, src)
+func (token *ApiToken) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ApiToken.Merge(token, src)
 }
-func (m *ApiToken) XXX_Size() int {
-	return m.Size()
+func (token *ApiToken) XXX_Size() int {
+	return token.Size()
 }
-func (m *ApiToken) XXX_DiscardUnknown() {
-	xxx_messageInfo_ApiToken.DiscardUnknown(m)
+func (token *ApiToken) XXX_DiscardUnknown() {
+	xxx_messageInfo_ApiToken.DiscardUnknown(token)
 }
 
 var xxx_messageInfo_ApiToken proto.InternalMessageInfo
@@ -738,30 +738,30 @@ func (m *ApiTokenStatus) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ApiTokenStatus proto.InternalMessageInfo
 
-func (m *Attachment) Reset()      { *m = Attachment{} }
-func (*Attachment) ProtoMessage() {}
+func (attachment *Attachment) Reset() { *attachment = Attachment{} }
+func (*Attachment) ProtoMessage()     {}
 func (*Attachment) Descriptor() ([]byte, []int) {
 	return fileDescriptor_737e1eae4c5a77fc, []int{25}
 }
-func (m *Attachment) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+func (attachment *Attachment) XXX_Unmarshal(b []byte) error {
+	return attachment.Unmarshal(b)
 }
-func (m *Attachment) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (attachment *Attachment) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := attachment.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (m *Attachment) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Attachment.Merge(m, src)
+func (attachment *Attachment) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Attachment.Merge(attachment, src)
 }
-func (m *Attachment) XXX_Size() int {
-	return m.Size()
+func (attachment *Attachment) XXX_Size() int {
+	return attachment.Size()
 }
-func (m *Attachment) XXX_DiscardUnknown() {
-	xxx_messageInfo_Attachment.DiscardUnknown(m)
+func (attachment *Attachment) XXX_DiscardUnknown() {
+	xxx_messageInfo_Attachment.DiscardUnknown(attachment)
 }
 
 var xxx_messageInfo_Attachment proto.InternalMessageInfo
@@ -2250,30 +2250,30 @@ func (m *LabStatus) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_LabStatus proto.InternalMessageInfo
 
-func (m *License) Reset()      { *m = License{} }
-func (*License) ProtoMessage() {}
+func (license *License) Reset() { *license = License{} }
+func (*License) ProtoMessage()  {}
 func (*License) Descriptor() ([]byte, []int) {
 	return fileDescriptor_737e1eae4c5a77fc, []int{79}
 }
-func (m *License) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+func (license *License) XXX_Unmarshal(b []byte) error {
+	return license.Unmarshal(b)
 }
-func (m *License) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (license *License) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := license.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (m *License) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_License.Merge(m, src)
+func (license *License) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_License.Merge(license, src)
 }
-func (m *License) XXX_Size() int {
-	return m.Size()
+func (license *License) XXX_Size() int {
+	return license.Size()
 }
-func (m *License) XXX_DiscardUnknown() {
-	xxx_messageInfo_License.DiscardUnknown(m)
+func (license *License) XXX_DiscardUnknown() {
+	xxx_messageInfo_License.DiscardUnknown(license)
 }
 
 var xxx_messageInfo_License proto.InternalMessageInfo
@@ -2530,30 +2530,30 @@ func (m *MinioSpec) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MinioSpec proto.InternalMessageInfo
 
-func (m *ModelaSystem) Reset()      { *m = ModelaSystem{} }
+func (ms *ModelaSystem) Reset()     { *ms = ModelaSystem{} }
 func (*ModelaSystem) ProtoMessage() {}
 func (*ModelaSystem) Descriptor() ([]byte, []int) {
 	return fileDescriptor_737e1eae4c5a77fc, []int{89}
 }
-func (m *ModelaSystem) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+func (ms *ModelaSystem) XXX_Unmarshal(b []byte) error {
+	return ms.Unmarshal(b)
 }
-func (m *ModelaSystem) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (ms *ModelaSystem) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := ms.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (m *ModelaSystem) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ModelaSystem.Merge(m, src)
+func (ms *ModelaSystem) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ModelaSystem.Merge(ms, src)
 }
-func (m *ModelaSystem) XXX_Size() int {
-	return m.Size()
+func (ms *ModelaSystem) XXX_Size() int {
+	return ms.Size()
 }
-func (m *ModelaSystem) XXX_DiscardUnknown() {
-	xxx_messageInfo_ModelaSystem.DiscardUnknown(m)
+func (ms *ModelaSystem) XXX_DiscardUnknown() {
+	xxx_messageInfo_ModelaSystem.DiscardUnknown(ms)
 }
 
 var xxx_messageInfo_ModelaSystem proto.InternalMessageInfo
@@ -3454,30 +3454,30 @@ func (m *Scope) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Scope proto.InternalMessageInfo
 
-func (m *ServingSite) Reset()      { *m = ServingSite{} }
-func (*ServingSite) ProtoMessage() {}
+func (servingsite *ServingSite) Reset() { *servingsite = ServingSite{} }
+func (*ServingSite) ProtoMessage()      {}
 func (*ServingSite) Descriptor() ([]byte, []int) {
 	return fileDescriptor_737e1eae4c5a77fc, []int{122}
 }
-func (m *ServingSite) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+func (servingsite *ServingSite) XXX_Unmarshal(b []byte) error {
+	return servingsite.Unmarshal(b)
 }
-func (m *ServingSite) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (servingsite *ServingSite) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := servingsite.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (m *ServingSite) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ServingSite.Merge(m, src)
+func (servingsite *ServingSite) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ServingSite.Merge(servingsite, src)
 }
-func (m *ServingSite) XXX_Size() int {
-	return m.Size()
+func (servingsite *ServingSite) XXX_Size() int {
+	return servingsite.Size()
 }
-func (m *ServingSite) XXX_DiscardUnknown() {
-	xxx_messageInfo_ServingSite.DiscardUnknown(m)
+func (servingsite *ServingSite) XXX_DiscardUnknown() {
+	xxx_messageInfo_ServingSite.DiscardUnknown(servingsite)
 }
 
 var xxx_messageInfo_ServingSite proto.InternalMessageInfo
@@ -5338,28 +5338,28 @@ var fileDescriptor_737e1eae4c5a77fc = []byte{
 	0x6c, 0x54, 0x1b, 0x9c, 0x86, 0xd8, 0x00, 0x00,
 }
 
-func (m *Account) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
+func (account *Account) Marshal() (dAtA []byte, err error) {
+	size := account.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := account.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (m *Account) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+func (account *Account) MarshalTo(dAtA []byte) (int, error) {
+	size := account.Size()
+	return account.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *Account) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (account *Account) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := account.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -5369,7 +5369,7 @@ func (m *Account) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := account.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -5379,7 +5379,7 @@ func (m *Account) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := account.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -6689,28 +6689,28 @@ func (m *ApacheSparkSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *ApiToken) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
+func (token *ApiToken) Marshal() (dAtA []byte, err error) {
+	size := token.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := token.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (m *ApiToken) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+func (token *ApiToken) MarshalTo(dAtA []byte) (int, error) {
+	size := token.Size()
+	return token.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *ApiToken) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (token *ApiToken) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := token.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -6720,7 +6720,7 @@ func (m *ApiToken) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := token.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -6730,7 +6730,7 @@ func (m *ApiToken) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := token.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -6947,28 +6947,28 @@ func (m *ApiTokenStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *Attachment) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
+func (attachment *Attachment) Marshal() (dAtA []byte, err error) {
+	size := attachment.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := attachment.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (m *Attachment) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+func (attachment *Attachment) MarshalTo(dAtA []byte) (int, error) {
+	size := attachment.Size()
+	return attachment.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *Attachment) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (attachment *Attachment) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := attachment.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -6978,7 +6978,7 @@ func (m *Attachment) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := attachment.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -6988,7 +6988,7 @@ func (m *Attachment) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := attachment.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -10940,28 +10940,28 @@ func (m *LabStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *License) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
+func (license *License) Marshal() (dAtA []byte, err error) {
+	size := license.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := license.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (m *License) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+func (license *License) MarshalTo(dAtA []byte) (int, error) {
+	size := license.Size()
+	return license.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *License) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (license *License) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := license.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -10971,7 +10971,7 @@ func (m *License) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := license.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -10981,7 +10981,7 @@ func (m *License) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := license.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -11549,28 +11549,28 @@ func (m *MinioSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *ModelaSystem) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
+func (ms *ModelaSystem) Marshal() (dAtA []byte, err error) {
+	size := ms.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := ms.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (m *ModelaSystem) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+func (ms *ModelaSystem) MarshalTo(dAtA []byte) (int, error) {
+	size := ms.Size()
+	return ms.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *ModelaSystem) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (ms *ModelaSystem) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := ms.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -11580,7 +11580,7 @@ func (m *ModelaSystem) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := ms.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -11590,7 +11590,7 @@ func (m *ModelaSystem) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := ms.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -13430,28 +13430,28 @@ func (m *Scope) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *ServingSite) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
+func (servingsite *ServingSite) Marshal() (dAtA []byte, err error) {
+	size := servingsite.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := servingsite.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (m *ServingSite) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+func (servingsite *ServingSite) MarshalTo(dAtA []byte) (int, error) {
+	size := servingsite.Size()
+	return servingsite.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *ServingSite) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (servingsite *ServingSite) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := servingsite.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -13461,7 +13461,7 @@ func (m *ServingSite) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := servingsite.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -13471,7 +13471,7 @@ func (m *ServingSite) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := servingsite.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -15987,17 +15987,17 @@ func encodeVarintGenerated(dAtA []byte, offset int, v uint64) int {
 	dAtA[offset] = uint8(v)
 	return base
 }
-func (m *Account) Size() (n int) {
-	if m == nil {
+func (account *Account) Size() (n int) {
+	if account == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = m.ObjectMeta.Size()
+	l = account.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Spec.Size()
+	l = account.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Status.Size()
+	l = account.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -16584,17 +16584,17 @@ func (m *ApacheSparkSpec) Size() (n int) {
 	return n
 }
 
-func (m *ApiToken) Size() (n int) {
-	if m == nil {
+func (token *ApiToken) Size() (n int) {
+	if token == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = m.ObjectMeta.Size()
+	l = token.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Spec.Size()
+	l = token.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Status.Size()
+	l = token.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -16680,17 +16680,17 @@ func (m *ApiTokenStatus) Size() (n int) {
 	return n
 }
 
-func (m *Attachment) Size() (n int) {
-	if m == nil {
+func (attachment *Attachment) Size() (n int) {
+	if attachment == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = m.ObjectMeta.Size()
+	l = attachment.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Spec.Size()
+	l = attachment.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Status.Size()
+	l = attachment.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -18279,17 +18279,17 @@ func (m *LabStatus) Size() (n int) {
 	return n
 }
 
-func (m *License) Size() (n int) {
-	if m == nil {
+func (license *License) Size() (n int) {
+	if license == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = m.ObjectMeta.Size()
+	l = license.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Spec.Size()
+	l = license.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Status.Size()
+	l = license.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -18530,17 +18530,17 @@ func (m *MinioSpec) Size() (n int) {
 	return n
 }
 
-func (m *ModelaSystem) Size() (n int) {
-	if m == nil {
+func (ms *ModelaSystem) Size() (n int) {
+	if ms == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = m.ObjectMeta.Size()
+	l = ms.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Spec.Size()
+	l = ms.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Status.Size()
+	l = ms.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -19365,17 +19365,17 @@ func (m *Scope) Size() (n int) {
 	return n
 }
 
-func (m *ServingSite) Size() (n int) {
-	if m == nil {
+func (servingsite *ServingSite) Size() (n int) {
+	if servingsite == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = m.ObjectMeta.Size()
+	l = servingsite.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Spec.Size()
+	l = servingsite.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Status.Size()
+	l = servingsite.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -20415,14 +20415,14 @@ func sovGenerated(x uint64) (n int) {
 func sozGenerated(x uint64) (n int) {
 	return sovGenerated(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
-func (this *Account) String() string {
-	if this == nil {
+func (account *Account) String() string {
+	if account == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&Account{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "AccountSpec", "AccountSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "AccountStatus", "AccountStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", account.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(account.Spec.String(), "AccountSpec", "AccountSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(account.Status.String(), "AccountStatus", "AccountStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -20740,14 +20740,14 @@ func (this *ApacheSparkSpec) String() string {
 	}, "")
 	return s
 }
-func (this *ApiToken) String() string {
-	if this == nil {
+func (token *ApiToken) String() string {
+	if token == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&ApiToken{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "ApiTokenSpec", "ApiTokenSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "ApiTokenStatus", "ApiTokenStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", token.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(token.Spec.String(), "ApiTokenSpec", "ApiTokenSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(token.Status.String(), "ApiTokenStatus", "ApiTokenStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -20816,14 +20816,14 @@ func (this *ApiTokenStatus) String() string {
 	}, "")
 	return s
 }
-func (this *Attachment) String() string {
-	if this == nil {
+func (attachment *Attachment) String() string {
+	if attachment == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&Attachment{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "AttachmentSpec", "AttachmentSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "AttachmentStatus", "AttachmentStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", attachment.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(attachment.Spec.String(), "AttachmentSpec", "AttachmentSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(attachment.Status.String(), "AttachmentStatus", "AttachmentStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -21653,14 +21653,14 @@ func (this *LabStatus) String() string {
 	}, "")
 	return s
 }
-func (this *License) String() string {
-	if this == nil {
+func (license *License) String() string {
+	if license == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&License{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "LicenseSpec", "LicenseSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "LicenseStatus", "LicenseStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", license.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(license.Spec.String(), "LicenseSpec", "LicenseSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(license.Status.String(), "LicenseStatus", "LicenseStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -21800,14 +21800,14 @@ func (this *MinioSpec) String() string {
 	}, "")
 	return s
 }
-func (this *ModelaSystem) String() string {
-	if this == nil {
+func (ms *ModelaSystem) String() string {
+	if ms == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&ModelaSystem{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "ModelaSystemSpec", "ModelaSystemSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "ModelaSystemStatus", "ModelaSystemStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", ms.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(ms.Spec.String(), "ModelaSystemSpec", "ModelaSystemSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(ms.Status.String(), "ModelaSystemStatus", "ModelaSystemStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -22274,14 +22274,14 @@ func (this *Scope) String() string {
 	}, "")
 	return s
 }
-func (this *ServingSite) String() string {
-	if this == nil {
+func (servingsite *ServingSite) String() string {
+	if servingsite == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&ServingSite{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "ServingSiteSpec", "ServingSiteSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "ServingSiteStatus", "ServingSiteStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", servingsite.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(servingsite.Spec.String(), "ServingSiteSpec", "ServingSiteSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(servingsite.Status.String(), "ServingSiteStatus", "ServingSiteStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -22929,7 +22929,7 @@ func valueToStringGenerated(v interface{}) string {
 	pv := reflect.Indirect(rv).Interface()
 	return fmt.Sprintf("*%v", pv)
 }
-func (m *Account) Unmarshal(dAtA []byte) error {
+func (account *Account) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -22987,7 +22987,7 @@ func (m *Account) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := account.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -23020,7 +23020,7 @@ func (m *Account) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := account.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -23053,7 +23053,7 @@ func (m *Account) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := account.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -27640,7 +27640,7 @@ func (m *ApacheSparkSpec) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *ApiToken) Unmarshal(dAtA []byte) error {
+func (token *ApiToken) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -27698,7 +27698,7 @@ func (m *ApiToken) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := token.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -27731,7 +27731,7 @@ func (m *ApiToken) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := token.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -27764,7 +27764,7 @@ func (m *ApiToken) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := token.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -28409,7 +28409,7 @@ func (m *ApiTokenStatus) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *Attachment) Unmarshal(dAtA []byte) error {
+func (attachment *Attachment) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -28467,7 +28467,7 @@ func (m *Attachment) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := attachment.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -28500,7 +28500,7 @@ func (m *Attachment) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := attachment.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -28533,7 +28533,7 @@ func (m *Attachment) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := attachment.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -41096,7 +41096,7 @@ func (m *LabStatus) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *License) Unmarshal(dAtA []byte) error {
+func (license *License) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -41154,7 +41154,7 @@ func (m *License) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := license.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -41187,7 +41187,7 @@ func (m *License) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := license.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -41220,7 +41220,7 @@ func (m *License) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := license.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -43020,7 +43020,7 @@ func (m *MinioSpec) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *ModelaSystem) Unmarshal(dAtA []byte) error {
+func (ms *ModelaSystem) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -43078,7 +43078,7 @@ func (m *ModelaSystem) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := ms.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -43111,7 +43111,7 @@ func (m *ModelaSystem) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := ms.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -43144,7 +43144,7 @@ func (m *ModelaSystem) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := ms.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -49270,7 +49270,7 @@ func (m *Scope) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *ServingSite) Unmarshal(dAtA []byte) error {
+func (servingsite *ServingSite) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -49328,7 +49328,7 @@ func (m *ServingSite) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := servingsite.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -49361,7 +49361,7 @@ func (m *ServingSite) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := servingsite.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -49394,7 +49394,7 @@ func (m *ServingSite) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := servingsite.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex

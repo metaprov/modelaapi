@@ -21,37 +21,37 @@ import (
 	"k8s.io/client-go/kubernetes/scheme"
 )
 
-func (r *ServingSite) IsMarkedForDeletion() bool {
-	return r.DeletionTimestamp != nil
+func (servingsite ServingSite) IsMarkedForDeletion() bool {
+	return servingsite.DeletionTimestamp != nil
 }
 
-func (r *ServingSite) FullName() string {
-	return r.ObjectMeta.Namespace + "/" + r.ObjectMeta.Name
+func (servingsite ServingSite) FullName() string {
+	return servingsite.ObjectMeta.Namespace + "/" + servingsite.ObjectMeta.Name
 }
 
-func (r *ServingSite) RootUri() string {
-	return fmt.Sprintf("tenant/%s/servingsites/%s", r.Namespace, r.Name)
+func (servingsite ServingSite) RootUri() string {
+	return fmt.Sprintf("tenant/%s/servingsites/%s", servingsite.Namespace, servingsite.Name)
 }
 
-func (r *ServingSite) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-servingsite.yaml", r.RootUri(), r.Name)
+func (servingsite ServingSite) ManifestUri() string {
+	return fmt.Sprintf("%s/%s-servingsite.yaml", servingsite.RootUri(), servingsite.Name)
 }
 
-func (r *ServingSite) Payload() string {
-	return "name=" + r.Name
+func (servingsite ServingSite) Payload() string {
+	return "name=" + servingsite.Name
 }
 
-func (r *ServingSite) Prefix() string {
-	return r.Name
+func (servingsite ServingSite) Prefix() string {
+	return servingsite.Name
 }
 
-func (r *ServingSite) Age() string {
-	return humanize.Time(r.CreationTimestamp.Time)
+func (servingsite ServingSite) Age() string {
+	return humanize.Time(servingsite.CreationTimestamp.Time)
 }
 
-func (r *ServingSite) CreateNamespace() *v1.Namespace {
+func (servingsite ServingSite) CreateNamespace() *v1.Namespace {
 	namespace := &v1.Namespace{}
-	namespace.ObjectMeta.Name = r.ObjectMeta.Name
+	namespace.ObjectMeta.Name = servingsite.ObjectMeta.Name
 	return namespace
 }
 
@@ -59,35 +59,37 @@ func (r *ServingSite) CreateNamespace() *v1.Namespace {
 // Finializer
 //==============================================================================
 
-func (r *ServingSite) HasFinalizer() bool {
-	return util.HasFin(&r.ObjectMeta, infra.GroupName)
+func (servingsite ServingSite) HasFinalizer() bool {
+	return util.HasFin(&servingsite.ObjectMeta, infra.GroupName)
 }
-func (r *ServingSite) AddFinalizer()    { util.AddFin(&r.ObjectMeta, infra.GroupName) }
-func (r *ServingSite) RemoveFinalizer() { util.RemoveFin(&r.ObjectMeta, infra.GroupName) }
+func (servingsite *ServingSite) AddFinalizer() { util.AddFin(&servingsite.ObjectMeta, infra.GroupName) }
+func (servingsite *ServingSite) RemoveFinalizer() {
+	util.RemoveFin(&servingsite.ObjectMeta, infra.GroupName)
+}
 
 // Merge or update condition
-func (r *ServingSite) CreateOrUpdateCond(cond ServingSiteCondition) {
-	i := r.GetCondIdx(cond.Type)
+func (servingsite *ServingSite) CreateOrUpdateCond(cond ServingSiteCondition) {
+	i := servingsite.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
 		cond.LastTransitionTime = &now
-		r.Status.Conditions = append(r.Status.Conditions, cond)
+		servingsite.Status.Conditions = append(servingsite.Status.Conditions, cond)
 		return
 	}
 	// else we already have the condition, update it
-	current := r.Status.Conditions[i]
+	current := servingsite.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
 	current.LastTransitionTime = &now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
-	r.Status.Conditions[i] = current
+	servingsite.Status.Conditions[i] = current
 
 }
 
-func (r *ServingSite) GetCondIdx(t ServingSiteConditionType) int {
-	for i, v := range r.Status.Conditions {
+func (servingsite ServingSite) GetCondIdx(t ServingSiteConditionType) int {
+	for i, v := range servingsite.Status.Conditions {
 		if v.Type == t {
 			return i
 		}
@@ -95,8 +97,8 @@ func (r *ServingSite) GetCondIdx(t ServingSiteConditionType) int {
 	return -1
 }
 
-func (r *ServingSite) GetCond(t ServingSiteConditionType) ServingSiteCondition {
-	for _, v := range r.Status.Conditions {
+func (servingsite ServingSite) GetCond(t ServingSiteConditionType) ServingSiteCondition {
+	for _, v := range servingsite.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
@@ -111,12 +113,12 @@ func (r *ServingSite) GetCond(t ServingSiteConditionType) ServingSiteCondition {
 
 }
 
-func (r *ServingSite) IsReady() bool {
-	return r.GetCond(ServingSiteReady).Status == v1.ConditionTrue
+func (servingsite ServingSite) IsReady() bool {
+	return servingsite.GetCond(ServingSiteReady).Status == v1.ConditionTrue
 }
 
-func (r *ServingSite) Key() string {
-	return fmt.Sprintf("tenanets/%s/servingsites/%s", r.Namespace, r.Name)
+func (servingsite ServingSite) Key() string {
+	return fmt.Sprintf("tenanets/%s/servingsites/%s", servingsite.Namespace, servingsite.Name)
 }
 
 func ParseServingSiteServingYaml(content []byte) (*ServingSite, error) {
@@ -129,14 +131,14 @@ func ParseServingSiteServingYaml(content []byte) (*ServingSite, error) {
 }
 
 // Create the ingress for GRPC traffic
-func (r *ServingSite) ConstructGrpcIngress() *nwv1.Ingress {
+func (servingsite ServingSite) ConstructGrpcIngress() *nwv1.Ingress {
 	result := &nwv1.Ingress{
 		ObjectMeta: metav1.ObjectMeta{
-			Namespace: r.Name,
-			Name:      r.Name + "-grpc",
+			Namespace: servingsite.Name,
+			Name:      servingsite.Name + "-grpc",
 			Labels: map[string]string{
-				"modela.ai/servingsite": r.Name,
-				"modela.ai/tenant":      r.Spec.TenantRef.Name,
+				"modela.ai/servingsite": servingsite.Name,
+				"modela.ai/tenant":      servingsite.Spec.TenantRef.Name,
 			},
 			Annotations: map[string]string{
 				"nginx.ingress.kubernetes.io/enable-cors":        "true",
@@ -153,14 +155,14 @@ func (r *ServingSite) ConstructGrpcIngress() *nwv1.Ingress {
 			},
 		},
 		Spec: nwv1.IngressSpec{
-			IngressClassName: r.Spec.Ingress.IngressClassName,
+			IngressClassName: servingsite.Spec.Ingress.IngressClassName,
 			TLS:              nil,
 			Rules:            []nwv1.IngressRule{},
 		},
 	}
 
-	if r.Spec.Ingress.ClusterIssuerName != nil && *r.Spec.Ingress.ClusterIssuerName != "" {
-		result.ObjectMeta.Annotations["cert-manager.io/cluster-issuer"] = *r.Spec.Ingress.ClusterIssuerName
+	if servingsite.Spec.Ingress.ClusterIssuerName != nil && *servingsite.Spec.Ingress.ClusterIssuerName != "" {
+		result.ObjectMeta.Annotations["cert-manager.io/cluster-issuer"] = *servingsite.Spec.Ingress.ClusterIssuerName
 	}
 
 	return result
@@ -168,14 +170,14 @@ func (r *ServingSite) ConstructGrpcIngress() *nwv1.Ingress {
 }
 
 // Create the ingress for REST traffic
-func (r *ServingSite) ConstructRestIngress() *nwv1.Ingress {
+func (servingsite ServingSite) ConstructRestIngress() *nwv1.Ingress {
 	result := &nwv1.Ingress{
 		ObjectMeta: metav1.ObjectMeta{
-			Namespace: r.Name,
-			Name:      r.Name + "-rest",
+			Namespace: servingsite.Name,
+			Name:      servingsite.Name + "-rest",
 			Labels: map[string]string{
-				"modela.ai/servingsite": r.Name,
-				"modela.ai/tenant":      r.Spec.TenantRef.Name,
+				"modela.ai/servingsite": servingsite.Name,
+				"modela.ai/tenant":      servingsite.Spec.TenantRef.Name,
 			},
 			Annotations: map[string]string{
 				"nginx.ingress.kubernetes.io/enable-cors":        "true",
@@ -188,13 +190,13 @@ func (r *ServingSite) ConstructRestIngress() *nwv1.Ingress {
 			},
 		},
 		Spec: nwv1.IngressSpec{
-			IngressClassName: r.Spec.Ingress.IngressClassName,
+			IngressClassName: servingsite.Spec.Ingress.IngressClassName,
 			TLS:              nil,
 			Rules:            []nwv1.IngressRule{},
 		},
 	}
-	if r.Spec.Ingress.ClusterIssuerName != nil && *r.Spec.Ingress.ClusterIssuerName != "" {
-		result.ObjectMeta.Annotations["cert-manager.io/cluster-issuer"] = *r.Spec.Ingress.ClusterIssuerName
+	if servingsite.Spec.Ingress.ClusterIssuerName != nil && *servingsite.Spec.Ingress.ClusterIssuerName != "" {
+		result.ObjectMeta.Annotations["cert-manager.io/cluster-issuer"] = *servingsite.Spec.Ingress.ClusterIssuerName
 
 	}
 	return result
@@ -204,11 +206,11 @@ func (r *ServingSite) ConstructRestIngress() *nwv1.Ingress {
 /// Roles
 /////////////////////////////////////////
 
-func (r *ServingSite) ServingSiteAdmin() *rbacv1.Role {
+func (servingsite ServingSite) ServingSiteAdmin() *rbacv1.Role {
 	return &rbacv1.Role{
 		ObjectMeta: metav1.ObjectMeta{
-			Name:      "r-admin",
-			Namespace: r.Name,
+			Name:      "servingsite-admin",
+			Namespace: servingsite.Name,
 		},
 		Rules: []rbacv1.PolicyRule{
 			{
@@ -222,11 +224,11 @@ func (r *ServingSite) ServingSiteAdmin() *rbacv1.Role {
 	}
 }
 
-func (r *ServingSite) ServingSiteDev() *rbacv1.Role {
+func (servingsite ServingSite) ServingSiteDev() *rbacv1.Role {
 	return &rbacv1.Role{
 		ObjectMeta: metav1.ObjectMeta{
-			Name:      "r-dev",
-			Namespace: r.Name,
+			Name:      "servingsite-dev",
+			Namespace: servingsite.Name,
 		},
 		Rules: []rbacv1.PolicyRule{
 			{
@@ -240,11 +242,11 @@ func (r *ServingSite) ServingSiteDev() *rbacv1.Role {
 	}
 }
 
-func (r *ServingSite) ServingSiteOps() *rbacv1.Role {
+func (servingsite ServingSite) ServingSiteOps() *rbacv1.Role {
 	return &rbacv1.Role{
 		ObjectMeta: metav1.ObjectMeta{
-			Name:      "r-dev",
-			Namespace: r.Name,
+			Name:      "servingsite-dev",
+			Namespace: servingsite.Name,
 		},
 		Rules: []rbacv1.PolicyRule{
 			{
@@ -258,25 +260,25 @@ func (r *ServingSite) ServingSiteOps() *rbacv1.Role {
 	}
 }
 
-func (r *ServingSite) MarkReady() {
-	r.CreateOrUpdateCond(ServingSiteCondition{
+func (servingsite *ServingSite) MarkReady() {
+	servingsite.CreateOrUpdateCond(ServingSiteCondition{
 		Type:   ServingSiteReady,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (r *ServingSite) MarkArchived() {
-	r.CreateOrUpdateCond(ServingSiteCondition{
+func (servingsite *ServingSite) MarkArchived() {
+	servingsite.CreateOrUpdateCond(ServingSiteCondition{
 		Type:   ServingSiteSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (r *ServingSite) Archived() bool {
-	return r.GetCond(ServingSiteSaved).Status == v1.ConditionTrue
+func (servingsite ServingSite) Archived() bool {
+	return servingsite.GetCond(ServingSiteSaved).Status == v1.ConditionTrue
 }
 
-func (servingsite *ServingSite) JobRole() *rbacv1.Role {
+func (servingsite ServingSite) JobRole() *rbacv1.Role {
 	return &rbacv1.Role{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.ServingSiteJobRunnerRole,
@@ -302,7 +304,7 @@ func (servingsite *ServingSite) JobRole() *rbacv1.Role {
 }
 
 // Create a role binding for a job
-func (servingsite *ServingSite) JobRoleBinding() *rbacv1.RoleBinding {
+func (servingsite ServingSite) JobRoleBinding() *rbacv1.RoleBinding {
 	return &rbacv1.RoleBinding{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.ServingSiteJobRunnerRoleBinding,
@@ -324,7 +326,7 @@ func (servingsite *ServingSite) JobRoleBinding() *rbacv1.RoleBinding {
 	}
 }
 
-func (servingsite *ServingSite) ServiceAccount() *corev1.ServiceAccount {
+func (servingsite ServingSite) ServiceAccount() *corev1.ServiceAccount {
 	return &corev1.ServiceAccount{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.ServingSiteJobRunnerSa,
@@ -337,7 +339,7 @@ func (servingsite *ServingSite) ServiceAccount() *corev1.ServiceAccount {
 // Predictor role
 //////////////////////////////////////////////////////////
 
-func (servingsite *ServingSite) PredictorRole() *rbacv1.ClusterRole {
+func (servingsite ServingSite) PredictorRole() *rbacv1.ClusterRole {
 	return &rbacv1.ClusterRole{
 		ObjectMeta: metav1.ObjectMeta{
 			Name: catalog.ServingSitePredictorRole,
@@ -390,7 +392,7 @@ func (servingsite *ServingSite) PredictorRole() *rbacv1.ClusterRole {
 }
 
 // Create a role binding for a job
-func (servingsite *ServingSite) PredictorRoleBinding() *rbacv1.ClusterRoleBinding {
+func (servingsite ServingSite) PredictorRoleBinding() *rbacv1.ClusterRoleBinding {
 	return &rbacv1.ClusterRoleBinding{
 		ObjectMeta: metav1.ObjectMeta{
 			Name: catalog.ServingSitePredictorRoleBinding,
@@ -411,7 +413,7 @@ func (servingsite *ServingSite) PredictorRoleBinding() *rbacv1.ClusterRoleBindin
 	}
 }
 
-func (servingsite *ServingSite) PredictorServiceAccount() *corev1.ServiceAccount {
+func (servingsite ServingSite) PredictorServiceAccount() *corev1.ServiceAccount {
 	return &corev1.ServiceAccount{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.ServingSitePredictorSa,

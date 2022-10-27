@@ -28,16 +28,16 @@ func (prediction *Prediction) Default() {
 var _ webhook.Validator = &Prediction{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (prediction *Prediction) ValidateCreate() error {
+func (prediction Prediction) ValidateCreate() error {
 	return prediction.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (prediction *Prediction) ValidateUpdate(old runtime.Object) error {
+func (prediction Prediction) ValidateUpdate(old runtime.Object) error {
 	return prediction.validate()
 }
 
-func (prediction *Prediction) validate() error {
+func (prediction Prediction) validate() error {
 	var allErrs field.ErrorList
 	if len(allErrs) == 0 {
 		return nil
@@ -48,6 +48,6 @@ func (prediction *Prediction) validate() error {
 		prediction.Name, allErrs)
 }
 
-func (prediction *Prediction) ValidateDelete() error {
+func (prediction Prediction) ValidateDelete() error {
 	return nil
 }

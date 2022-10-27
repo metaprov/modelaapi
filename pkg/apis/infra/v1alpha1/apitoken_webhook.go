@@ -19,7 +19,7 @@ import (
 // validation
 var _ webhook.Defaulter = &ApiToken{}
 
-func (notifier *ApiToken) Default() {
+func (token *ApiToken) Default() {
 
 }
 
@@ -27,42 +27,42 @@ func (notifier *ApiToken) Default() {
 var _ webhook.Validator = &ApiToken{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (notifier *ApiToken) ValidateCreate() error {
-	return notifier.validate()
+func (token ApiToken) ValidateCreate() error {
+	return token.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (notifier *ApiToken) ValidateUpdate(old runtime.Object) error {
-	return notifier.validate()
+func (token ApiToken) ValidateUpdate(old runtime.Object) error {
+	return token.validate()
 }
 
-func (notifier *ApiToken) validate() error {
+func (token ApiToken) validate() error {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, notifier.validateMeta(field.NewPath("metadata"))...)
-	allErrs = append(allErrs, notifier.validateSpec(field.NewPath("spec"))...)
+	allErrs = append(allErrs, token.validateMeta(field.NewPath("metadata"))...)
+	allErrs = append(allErrs, token.validateSpec(field.NewPath("spec"))...)
 	if len(allErrs) == 0 {
 		return nil
 	}
 
-	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.ai", Kind: "ApiToken"}, notifier.Name, allErrs)
+	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.ai", Kind: "ApiToken"}, token.Name, allErrs)
 }
 
-func (notifier *ApiToken) validateMeta(fldPath *field.Path) field.ErrorList {
+func (token ApiToken) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, notifier.validateName(fldPath.Child("name"))...)
+	allErrs = append(allErrs, token.validateName(fldPath.Child("name"))...)
 	return allErrs
 }
 
-func (notifier *ApiToken) validateName(fldPath *field.Path) field.ErrorList {
+func (token ApiToken) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	err := common.ValidateResourceName(notifier.Name)
+	err := common.ValidateResourceName(token.Name)
 	if err != nil {
-		allErrs = append(allErrs, field.Invalid(fldPath.Child("FileName"), notifier.Name, err.Error()))
+		allErrs = append(allErrs, field.Invalid(fldPath.Child("FileName"), token.Name, err.Error()))
 	}
 	return allErrs
 }
 
-func (notifier *ApiToken) validateSpec(fldPath *field.Path) field.ErrorList {
+func (token ApiToken) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	//Smtp.To   []string
 	//Smtp.Origin string
@@ -74,12 +74,12 @@ func (notifier *ApiToken) validateSpec(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (notifier *ApiToken) ValidateDelete() error {
+func (token ApiToken) ValidateDelete() error {
 	return nil
 }
 
-func (notifier *ApiToken) MarkReady() {
-	notifier.CreateOrUpdateCond(ApiTokenCondition{
+func (token *ApiToken) MarkReady() {
+	token.CreateOrUpdateCond(ApiTokenCondition{
 		Type:   ApiTokenReady,
 		Status: corev1.ConditionTrue,
 	})

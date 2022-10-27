@@ -84,16 +84,16 @@ func (predictor *Predictor) Default() {
 // validation
 var _ webhook.Validator = &Predictor{}
 
-func (predictor *Predictor) ValidateCreate() error {
+func (predictor Predictor) ValidateCreate() error {
 	return predictor.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (predictor *Predictor) ValidateUpdate(old runtime.Object) error {
+func (predictor Predictor) ValidateUpdate(old runtime.Object) error {
 	return predictor.validate()
 }
 
-func (predictor *Predictor) validate() error {
+func (predictor Predictor) validate() error {
 	//var allErrs field.ErrorList
 
 	//return apierrors.NewInvalid(
@@ -102,6 +102,6 @@ func (predictor *Predictor) validate() error {
 	return nil
 }
 
-func (predictor *Predictor) ValidateDelete() error {
+func (predictor Predictor) ValidateDelete() error {
 	return nil
 }

@@ -50,7 +50,7 @@ func (report *Report) CreateOrUpdateCond(cond ReportCondition) {
 	report.Status.Conditions[i] = current
 }
 
-func (report *Report) GetCondIdx(t ReportConditionType) int {
+func (report Report) GetCondIdx(t ReportConditionType) int {
 	for i, v := range report.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -59,7 +59,7 @@ func (report *Report) GetCondIdx(t ReportConditionType) int {
 	return -1
 }
 
-func (report *Report) GetCond(t ReportConditionType) ReportCondition {
+func (report Report) GetCond(t ReportConditionType) ReportCondition {
 	for _, v := range report.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -75,8 +75,8 @@ func (report *Report) GetCond(t ReportConditionType) ReportCondition {
 
 }
 
-func (r *Report) IsReady() bool {
-	return r.GetCond(ReportReady).Status == v1.ConditionTrue
+func (report Report) IsReady() bool {
+	return report.GetCond(ReportReady).Status == v1.ConditionTrue
 }
 
 func NewReport(
@@ -108,15 +108,15 @@ func (report *Report) Label(key string, value string) {
 // Finilizer
 //==============================================================================
 
-func (report *Report) HasFinalizer() bool { return util.HasFin(&report.ObjectMeta, training.GroupName) }
-func (report *Report) AddFinalizer()      { util.AddFin(&report.ObjectMeta, training.GroupName) }
-func (report *Report) RemoveFinalizer()   { util.RemoveFin(&report.ObjectMeta, training.GroupName) }
+func (report Report) HasFinalizer() bool { return util.HasFin(&report.ObjectMeta, training.GroupName) }
+func (report *Report) AddFinalizer()     { util.AddFin(&report.ObjectMeta, training.GroupName) }
+func (report *Report) RemoveFinalizer()  { util.RemoveFin(&report.ObjectMeta, training.GroupName) }
 
 //==============================================================================
 // Status string
 //==============================================================================
 
-func (report *Report) IsDatasetReport() bool {
+func (report Report) IsDatasetReport() bool {
 	return *report.Spec.ReportType == ClassificationDatasetReport ||
 		*report.Spec.ReportType == RegressionDatasetReport ||
 		*report.Spec.ReportType == TextClassificationDatasetReport ||
@@ -124,15 +124,15 @@ func (report *Report) IsDatasetReport() bool {
 		*report.Spec.ReportType == GroupTimeSeriesDatasetReport
 }
 
-func (report *Report) IsStudyReport() bool {
+func (report Report) IsStudyReport() bool {
 	return *report.Spec.ReportType == StudyReport
 }
 
-func (report *Report) IsForecastReport() bool {
+func (report Report) IsForecastReport() bool {
 	return *report.Spec.ReportType == ForecastReport
 }
 
-func (report *Report) IsModelReport() bool {
+func (report Report) IsModelReport() bool {
 	// Binary classification report
 	return *report.Spec.ReportType == BinaryClassificationModelReport ||
 		*report.Spec.ReportType == ForecastModelReport ||
@@ -142,11 +142,11 @@ func (report *Report) IsModelReport() bool {
 		*report.Spec.ReportType == GroupTimeSeriesModelReport
 }
 
-func (report *Report) Age() string {
+func (report Report) Age() string {
 	return humanize.Time(report.CreationTimestamp.Time)
 }
 
-func (report *Report) RootUri() string {
+func (report Report) RootUri() string {
 	if *report.Spec.ReportType == GroupTimeSeriesDatasetReport {
 		if len(report.Spec.Key) > 0 {
 			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s/groups/%s",
@@ -201,16 +201,16 @@ func (report *Report) RootUri() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/reports", report.Namespace, *report.Spec.VersionName)
 }
 
-func (report *Report) ManifestUri() string {
+func (report Report) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-report.yaml", report.RootUri(), report.Name)
 }
 
 //    dataproducts/*/models/*/bin/model.joblib
-func (report *Report) PdfUri() string {
+func (report Report) PdfUri() string {
 	return fmt.Sprintf("%s/%s.pdf", report.RootUri(), report.Name)
 }
 
-func (report *Report) IsGroup() bool {
+func (report Report) IsGroup() bool {
 	return *report.Spec.ReportType == GroupTimeSeriesDatasetReport || *report.Spec.ReportType == GroupTimeSeriesModelReport
 }
 
@@ -223,20 +223,20 @@ func ParseReportYaml(content []byte) (*Report, error) {
 	return r, nil
 }
 
-func (report *Report) ValidateDelete() error {
+func (report Report) ValidateDelete() error {
 	return nil
 }
 
-func (report *Report) IndexFileKey() string {
+func (report Report) IndexFileKey() string {
 	return report.RootUri() + "/group_report_index.json"
 }
 
-func (report *Report) WorkerIndexFileKey(workerIndex int, task string) string {
+func (report Report) WorkerIndexFileKey(workerIndex int, task string) string {
 	return fmt.Sprintf("%s/%s_%d.json", report.RootUri(), task, workerIndex)
 }
 
 // This is the index file for task
-func (report *Report) TaskIndexFileKey(task string) string {
+func (report Report) TaskIndexFileKey(task string) string {
 	return fmt.Sprintf("%s/%s.json", report.RootUri(), task)
 }
 
@@ -256,7 +256,7 @@ func (report *Report) MarkSaved() {
 	})
 }
 
-func (report *Report) IsSaved() bool {
+func (report Report) IsSaved() bool {
 	cond := report.GetCond(ReportSaved)
 	return cond.Status == v1.ConditionTrue
 }
@@ -292,7 +292,7 @@ func (report *Report) MarkReportReady(product *data.DataProduct) {
 ////////////////////////////////////////////////////////////
 // Model Alerts
 
-func (report *Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+func (report Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Report %s completed successfully", report.Name)
 	result := &infra.Alert{
@@ -325,7 +325,7 @@ func (report *Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierNam
 	return result
 }
 
-func (report *Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (report Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Report %s failed with error %v", report.Name, err.Error())
 	result := &infra.Alert{
@@ -358,20 +358,20 @@ func (report *Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *st
 	return result
 }
 
-func (in *Report) IsFailed() bool {
-	cond := in.GetCond(ReportReady)
+func (report Report) IsFailed() bool {
+	cond := report.GetCond(ReportReady)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(ReportReady)
 }
 
 // Return the state of the run as RunStatus
-func (run *Report) RunStatus() *catalog.LastRunStatus {
+func (report Report) RunStatus() *catalog.LastRunStatus {
 	result := &catalog.LastRunStatus{
-		CompletionTime: run.Status.EndTime,
-		Duration:       int32(run.Status.EndTime.Unix() - run.Status.StartTime.Unix()),
-		FailureReason:  run.Status.FailureReason,
-		FailureMessage: run.Status.FailureMessage,
+		CompletionTime: report.Status.EndTime,
+		Duration:       int32(report.Status.EndTime.Unix() - report.Status.StartTime.Unix()),
+		FailureReason:  report.Status.FailureReason,
+		FailureMessage: report.Status.FailureMessage,
 	}
-	result.Status = string(run.Status.Phase)
+	result.Status = string(report.Status.Phase)
 	return result
 
 }

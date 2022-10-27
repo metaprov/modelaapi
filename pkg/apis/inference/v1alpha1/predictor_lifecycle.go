@@ -35,7 +35,7 @@ func AddOrUpdateK8sStatuses(current []KubernetesObjectStatus, status KubernetesO
 
 }
 
-func (predictor *Predictor) Selector() *metav1.LabelSelector {
+func (predictor Predictor) Selector() *metav1.LabelSelector {
 	result := &metav1.LabelSelector{
 		MatchLabels: map[string]string{},
 	}
@@ -47,7 +47,7 @@ func (predictor *Predictor) Selector() *metav1.LabelSelector {
 // Finalizer
 //==============================================================================
 
-func (predictor *Predictor) HasFinalizer() bool {
+func (predictor Predictor) HasFinalizer() bool {
 	return util.HasFin(&predictor.ObjectMeta, inference.GroupName)
 }
 func (predictor *Predictor) AddFinalizer() { util.AddFin(&predictor.ObjectMeta, inference.GroupName) }
@@ -104,11 +104,11 @@ func (predictor *Predictor) GetCond(t PredictorConditionType) PredictorCondition
 	}
 }
 
-func (predictor *Predictor) IsReady() bool {
+func (predictor Predictor) IsReady() bool {
 	return predictor.GetCond(PredictorReady).Status == v1.ConditionTrue
 }
 
-func (predictor *Predictor) IsFailed() bool {
+func (predictor Predictor) IsFailed() bool {
 	return predictor.GetCond(PredictorReady).Status == v1.ConditionFalse &&
 		predictor.GetCond(PredictorReady).Reason == "Failed"
 }
@@ -122,44 +122,44 @@ func ParsePredictorYaml(content []byte) (*Predictor, error) {
 	return r, nil
 }
 
-func (predictor *Predictor) RootUri() string {
+func (predictor Predictor) RootUri() string {
 	return fmt.Sprintf("dataproducts/%s/predictors/%s", predictor.Namespace, predictor.Name)
 }
 
-func (predictor *Predictor) ManifestUri() string {
+func (predictor Predictor) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-prediction.yaml", predictor.RootUri(), predictor.Name)
 }
 
 //    dataproducts/*/predictor/*/predictor-<name>.yaml
 
 //    dataproducts/*/predictor/*/manifests/deployment-<name>.yaml
-func (predictor *Predictor) DeploymentUri() string {
+func (predictor Predictor) DeploymentUri() string {
 	return fmt.Sprintf("%s/%s-deployment.yaml", predictor.RootUri(), predictor.Name)
 }
 
 //    dataproducts/*/predictor/*/manifests/service-<name>.yaml
-func (predictor *Predictor) ServiceUri() string {
+func (predictor Predictor) ServiceUri() string {
 	return fmt.Sprintf("%s/%s-service.yaml", predictor.RootUri(), predictor.Name)
 }
 
-func (r *Predictor) ServiceName() string {
-	return r.Name
+func (predictor Predictor) ServiceName() string {
+	return predictor.Name
 }
 
-func (r *Predictor) FullServiceName() string {
-	return r.Name + "." + r.Spec.ServingSiteRef.Name + ".svc.cluster.local"
+func (predictor Predictor) FullServiceName() string {
+	return predictor.Name + "." + predictor.Spec.ServingSiteRef.Name + ".svc.cluster.local"
 }
 
-func (r *Predictor) DeploymentName() string {
-	return r.Name
+func (predictor Predictor) DeploymentName() string {
+	return predictor.Name
 }
 
-func (r *Predictor) GreenName() string {
-	return "green-" + r.Name
+func (predictor Predictor) GreenName() string {
+	return "green-" + predictor.Name
 }
 
-func (r *Predictor) MirrorName() string {
-	return "mirror-" + r.Name
+func (predictor Predictor) MirrorName() string {
+	return "mirror-" + predictor.Name
 }
 
 func (predictor *Predictor) MarkSaved() {
@@ -169,7 +169,7 @@ func (predictor *Predictor) MarkSaved() {
 	})
 }
 
-func (predictor *Predictor) IsSaved() bool {
+func (predictor Predictor) IsSaved() bool {
 	return predictor.GetCond(PredictorSaved).Status == v1.ConditionTrue
 }
 
@@ -190,7 +190,7 @@ func (predictor *Predictor) MarkFailed(err string) {
 	predictor.Status.FailureMessage = util.StrPtr(err)
 }
 
-func (predictor *Predictor) ConstructGrpcRule(fqdn string, serviceName string) *nwv1.IngressRule {
+func (predictor Predictor) ConstructGrpcRule(fqdn string, serviceName string) *nwv1.IngressRule {
 	prefix := nwv1.PathTypePrefix
 	return &nwv1.IngressRule{
 		Host: predictor.Name + "." + fqdn,
@@ -216,7 +216,7 @@ func (predictor *Predictor) ConstructGrpcRule(fqdn string, serviceName string) *
 	}
 }
 
-func (predictor *Predictor) ConstructRESTRule(serviceName string) *nwv1.HTTPIngressPath {
+func (predictor Predictor) ConstructRESTRule(serviceName string) *nwv1.HTTPIngressPath {
 	prefix := nwv1.PathTypePrefix
 	return &nwv1.HTTPIngressPath{
 		PathType: &prefix,
@@ -232,16 +232,16 @@ func (predictor *Predictor) ConstructRESTRule(serviceName string) *nwv1.HTTPIngr
 	}
 }
 
-func (p *Predictor) UpdateK8sDeploymentStatus(model training.Model, deployment kapps.Deployment, k8sStatus KubernetesObjectStatus) {
+func (predictor *Predictor) UpdateK8sDeploymentStatus(model training.Model, deployment kapps.Deployment, k8sStatus KubernetesObjectStatus) {
 	// update live model
 	found := false
 	// else update shddow model k8sStatus
-	for i, v := range p.Status.ModelStatus {
+	for i, v := range predictor.Status.ModelStatus {
 		if v.ModelName == model.Name {
 			found = true
-			shadowModelStatus := p.Status.ModelStatus[i]
+			shadowModelStatus := predictor.Status.ModelStatus[i]
 			shadowModelStatus.ObjectStatuses = AddOrUpdateK8sStatuses(shadowModelStatus.ObjectStatuses, k8sStatus)
-			p.Status.ModelStatus[i] = shadowModelStatus
+			predictor.Status.ModelStatus[i] = shadowModelStatus
 		}
 	}
 	if !found {
@@ -255,20 +255,20 @@ func (p *Predictor) UpdateK8sDeploymentStatus(model training.Model, deployment k
 			ModelVersion: *model.Spec.ModelVersion,
 		}
 		status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
-		p.Status.ModelStatus = append(p.Status.ModelStatus, status)
+		predictor.Status.ModelStatus = append(predictor.Status.ModelStatus, status)
 	}
 }
 
-func (p *Predictor) UpdateK8sServiceStatus(model training.Model, service v1.Service, k8sStatus KubernetesObjectStatus) {
+func (predictor *Predictor) UpdateK8sServiceStatus(model training.Model, service v1.Service, k8sStatus KubernetesObjectStatus) {
 	// update live model
 	found := false
 	// else update shddow model k8sStatus
-	for i, v := range p.Status.ModelStatus {
+	for i, v := range predictor.Status.ModelStatus {
 		if v.ModelName == model.Name {
 			found = true
-			shadowModelStatus := p.Status.ModelStatus[i]
+			shadowModelStatus := predictor.Status.ModelStatus[i]
 			shadowModelStatus.ObjectStatuses = AddOrUpdateK8sStatuses(shadowModelStatus.ObjectStatuses, k8sStatus)
-			p.Status.ModelStatus[i] = shadowModelStatus
+			predictor.Status.ModelStatus[i] = shadowModelStatus
 		}
 	}
 	if !found {
@@ -282,13 +282,13 @@ func (p *Predictor) UpdateK8sServiceStatus(model training.Model, service v1.Serv
 			ModelVersion: *model.Spec.ModelVersion,
 		}
 		status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
-		p.Status.ModelStatus = append(p.Status.ModelStatus, status)
+		predictor.Status.ModelStatus = append(predictor.Status.ModelStatus, status)
 	}
 }
 
 // Return the live model name.
-func (p *Predictor) GetLiveModelName() string {
-	for _, v := range p.Spec.Models {
+func (predictor *Predictor) GetLiveModelName() string {
+	for _, v := range predictor.Spec.Models {
 		if *v.Role == catalog.ModelRoleLive {
 			return v.ModelRef.Name
 		}
@@ -297,8 +297,8 @@ func (p *Predictor) GetLiveModelName() string {
 }
 
 // Get the first live model or none if none exist
-func (p Predictor) GetLiveModel() *catalog.ModelDeploymentSpec {
-	for _, v := range p.Spec.Models {
+func (predictor Predictor) GetLiveModel() *catalog.ModelDeploymentSpec {
+	for _, v := range predictor.Spec.Models {
 		if *v.Role == catalog.ModelRoleLive {
 			return &v
 		}
@@ -306,9 +306,9 @@ func (p Predictor) GetLiveModel() *catalog.ModelDeploymentSpec {
 	return nil
 }
 
-func (p Predictor) GetShadowModels() []catalog.ModelDeploymentSpec {
+func (predictor Predictor) GetShadowModels() []catalog.ModelDeploymentSpec {
 	result := make([]catalog.ModelDeploymentSpec, 0)
-	for _, v := range p.Spec.Models {
+	for _, v := range predictor.Spec.Models {
 		if *v.Role == catalog.ModelRoleLive {
 			continue
 		}

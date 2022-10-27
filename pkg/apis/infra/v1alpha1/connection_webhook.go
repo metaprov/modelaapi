@@ -45,11 +45,11 @@ func (connection *Connection) SetupWebhookWithManager(mgr ctrl.Manager) error {
 		Complete()
 }
 
-func (connection *Connection) ValidateSecret(s *v1.Secret) field.ErrorList {
+func (connection Connection) ValidateSecret(s *v1.Secret) field.ErrorList {
 	return connection.validateSecret(s.StringData)
 }
 
-func (connection *Connection) validateSecret(vars map[string]string) field.ErrorList {
+func (connection Connection) validateSecret(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 	switch *connection.Spec.Provider {
 	case catalog.UnknownProvider:
@@ -99,22 +99,22 @@ func (connection *Connection) validateSecret(vars map[string]string) field.Error
 
 }
 
-func (connection *Connection) validateAzure(vars map[string]string) field.ErrorList {
+func (connection Connection) validateAzure(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 	return allErrs
 }
 
-func (connection *Connection) validateGcp(vars map[string]string) field.ErrorList {
+func (connection Connection) validateGcp(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 	return allErrs
 }
 
-func (connection *Connection) validateDockerReg(vars map[string]string) field.ErrorList {
+func (connection Connection) validateDockerReg(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 	return allErrs
 }
 
-func (connection *Connection) validateGithub(vars map[string]string) field.ErrorList {
+func (connection Connection) validateGithub(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 
 	if !connection.varIncludes(vars, string(catalog.ApiKeyNameUsername)) || connection.varEmpty(vars, string(catalog.ApiKeyNameUsername)) {
@@ -144,7 +144,7 @@ func (connection *Connection) validateGithub(vars map[string]string) field.Error
 	return allErrs
 }
 
-func (connection *Connection) validateSlack(vars map[string]string) field.ErrorList {
+func (connection Connection) validateSlack(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 
 	if !connection.varIncludes(vars, string(catalog.ApiKeyNameToken)) || connection.varEmpty(vars, string(catalog.ApiKeyNameToken)) {
@@ -175,7 +175,7 @@ func (connection *Connection) validateSlack(vars map[string]string) field.ErrorL
 
 }
 
-func (connection *Connection) validateMinio(vars map[string]string) field.ErrorList {
+func (connection Connection) validateMinio(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 
 	if !connection.varIncludes(vars, string(catalog.ApiKeyNameAccessKey)) || connection.varEmpty(vars, string(catalog.ApiKeyNameAccessKey)) {
@@ -206,7 +206,7 @@ func (connection *Connection) validateMinio(vars map[string]string) field.ErrorL
 
 }
 
-func (connection *Connection) validateEmailProvider(vars map[string]string) field.ErrorList {
+func (connection Connection) validateEmailProvider(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 
 	if !connection.varIncludes(vars, string(catalog.ApiKeyNameUsername)) || connection.varEmpty(vars, string(catalog.ApiKeyNameUsername)) {
@@ -236,7 +236,7 @@ func (connection *Connection) validateEmailProvider(vars map[string]string) fiel
 	return allErrs
 }
 
-func (connection *Connection) validateAws(vars map[string]string) field.ErrorList {
+func (connection Connection) validateAws(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 
 	if !connection.varIncludes(vars, string(catalog.ApiKeyNameAccessKey)) || connection.varEmpty(vars, string(catalog.ApiKeyNameAccessKey)) {
@@ -268,7 +268,7 @@ func (connection *Connection) validateAws(vars map[string]string) field.ErrorLis
 }
 
 // Validat digital ocean
-func (connection *Connection) validateDo(vars map[string]string) field.ErrorList {
+func (connection Connection) validateDo(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 
 	if !connection.varIncludes(vars, string(catalog.ApiKeyNameAccessKey)) || connection.varEmpty(vars, string(catalog.ApiKeyNameAccessKey)) {
@@ -307,15 +307,15 @@ func (connection *Connection) validateDo(vars map[string]string) field.ErrorList
 	return allErrs
 }
 
-func (connection *Connection) ValidateCreate() error {
+func (connection Connection) ValidateCreate() error {
 	return connection.validate()
 }
 
-func (connection *Connection) ValidateUpdate(old runtime.Object) error {
+func (connection Connection) ValidateUpdate(old runtime.Object) error {
 	return connection.validate()
 }
 
-func (connection *Connection) validate() error {
+func (connection Connection) validate() error {
 	var allErrs field.ErrorList
 	if len(allErrs) == 0 {
 		return nil
@@ -335,12 +335,12 @@ func (connection *Connection) ValidateDelete() error {
 	return nil
 }
 
-func (connection *Connection) validateUserAccount(vars map[string]string) field.ErrorList {
+func (connection Connection) validateUserAccount(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 	return allErrs
 }
 
-func (connection *Connection) validateLicense(vars map[string]string) field.ErrorList {
+func (connection Connection) validateLicense(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 	return allErrs
 }

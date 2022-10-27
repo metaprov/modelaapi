@@ -27,52 +27,52 @@ func (datasource *DataSource) Default() {
 var _ webhook.Validator = &DataSource{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (ffile *DataSource) ValidateCreate() error {
-	return ffile.validate()
+func (datasource DataSource) ValidateCreate() error {
+	return datasource.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (ffile *DataSource) ValidateUpdate(old runtime.Object) error {
-	return ffile.validate()
+func (datasource DataSource) ValidateUpdate(old runtime.Object) error {
+	return datasource.validate()
 }
 
-func (ffile *DataSource) validate() error {
+func (datasource DataSource) validate() error {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, ffile.validateMeta(field.NewPath("metadata"))...)
-	allErrs = append(allErrs, ffile.validateSpec(field.NewPath("spec"))...)
+	allErrs = append(allErrs, datasource.validateMeta(field.NewPath("metadata"))...)
+	allErrs = append(allErrs, datasource.validateSpec(field.NewPath("spec"))...)
 	if len(allErrs) == 0 {
 		return nil
 	}
 
 	return apierrors.NewInvalid(
 		schema.GroupKind{Group: "data.modela.ai", Kind: "DataSource"},
-		ffile.Name, allErrs)
+		datasource.Name, allErrs)
 }
 
-func (ffile *DataSource) validateMeta(fldPath *field.Path) field.ErrorList {
+func (datasource DataSource) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, ffile.validateName(fldPath.Child("name"))...)
+	allErrs = append(allErrs, datasource.validateName(fldPath.Child("name"))...)
 	return allErrs
 }
 
-func (ffile *DataSource) validateName(fldPath *field.Path) field.ErrorList {
+func (datasource DataSource) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	err := common.ValidateResourceName(ffile.Name)
+	err := common.ValidateResourceName(datasource.Name)
 	if err != nil {
-		allErrs = append(allErrs, field.Invalid(fldPath.Child("FileName"), ffile.Name, err.Error()))
+		allErrs = append(allErrs, field.Invalid(fldPath.Child("FileName"), datasource.Name, err.Error()))
 	}
 	return allErrs
 }
 
-func (ffile *DataSource) validateSpec(fldPath *field.Path) field.ErrorList {
+func (datasource DataSource) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	return allErrs
 }
 
-func (ffile *DataSource) ValidateDelete() error {
+func (datasource DataSource) ValidateDelete() error {
 	return nil
 }
 
-func (in *Column) Validate() (bool, []metav1.StatusCause) {
+func (column *Column) Validate() (bool, []metav1.StatusCause) {
 	return false, nil
 }

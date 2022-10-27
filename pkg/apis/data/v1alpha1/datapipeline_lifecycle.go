@@ -20,11 +20,11 @@ import (
 // EntityRef
 //==============================================================================
 
-func (w *DataPipeline) IsReady() bool {
+func (w DataPipeline) IsReady() bool {
 	return w.GetCond(DataPipelineReady).Status == corev1.ConditionTrue
 }
 
-func (wr *DataPipeline) HasFinalizer() bool {
+func (wr DataPipeline) HasFinalizer() bool {
 	return util.HasFin(&wr.ObjectMeta, data.GroupName)
 }
 func (wr *DataPipeline) AddFinalizer()    { util.AddFin(&wr.ObjectMeta, data.GroupName) }
@@ -54,7 +54,7 @@ func (wr *DataPipeline) CreateOrUpdateCond(cond DataPipelineCondition) {
 	wr.Status.Conditions[i] = current
 }
 
-func (wr *DataPipeline) GetCondIdx(t DataPipelineConditionType) int {
+func (wr DataPipeline) GetCondIdx(t DataPipelineConditionType) int {
 	for i, v := range wr.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -63,7 +63,7 @@ func (wr *DataPipeline) GetCondIdx(t DataPipelineConditionType) int {
 	return -1
 }
 
-func (wr *DataPipeline) GetCond(t DataPipelineConditionType) DataPipelineCondition {
+func (wr DataPipeline) GetCond(t DataPipelineConditionType) DataPipelineCondition {
 	for _, v := range wr.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -79,11 +79,11 @@ func (wr *DataPipeline) GetCond(t DataPipelineConditionType) DataPipelineConditi
 
 }
 
-func (wr *DataPipeline) RootUri() string {
+func (wr DataPipeline) RootUri() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datapipelines/%s", wr.Namespace, *wr.Spec.VersionName, wr.Name)
 }
 
-func (wr *DataPipeline) ManifestUri() string {
+func (wr DataPipeline) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-wrangler.yaml", wr.RootUri(), wr.Name)
 }
 
@@ -110,7 +110,7 @@ func (in *DataPipeline) MarkSaved() {
 	})
 }
 
-func (w *DataPipeline) IsSaved() bool {
+func (w DataPipeline) IsSaved() bool {
 	return w.GetCond(DataPipelineSaved).Status == corev1.ConditionTrue
 }
 

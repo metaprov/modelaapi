@@ -16,7 +16,7 @@ import (
 // defaulting
 var _ webhook.Defaulter = &DataApp{}
 
-func (dataapp *DataApp) Default() {
+func (dataapp DataApp) Default() {
 
 	if dataapp.Spec.Owner == nil {
 		dataapp.Spec.Owner = util.StrPtr("")
@@ -38,19 +38,19 @@ func (dataapp *DataApp) Default() {
 var _ webhook.Validator = &DataApp{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (recipe *DataApp) ValidateCreate() error {
-	return recipe.validate()
+func (dataapp DataApp) ValidateCreate() error {
+	return dataapp.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (recipe *DataApp) ValidateUpdate(old runtime.Object) error {
-	return recipe.validate()
+func (dataapp DataApp) ValidateUpdate(old runtime.Object) error {
+	return dataapp.validate()
 }
 
-func (recipe *DataApp) validate() error {
+func (dataapp DataApp) validate() error {
 	return nil
 }
 
-func (recipe *DataApp) ValidateDelete() error {
+func (dataapp DataApp) ValidateDelete() error {
 	return nil
 }

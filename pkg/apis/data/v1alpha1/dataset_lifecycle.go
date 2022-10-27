@@ -26,13 +26,13 @@ func (r *Dataset) SetupWebhookWithManager(mgr ctrl.Manager) error {
 		Complete()
 }
 
-func (dataset *Dataset) ReportName() string {
+func (dataset Dataset) ReportName() string {
 	return "dataset-report-" + dataset.Name
 }
 
-func (dataset *Dataset) HasFinalizer() bool { return util.HasFin(&dataset.ObjectMeta, data.GroupName) }
-func (dataset *Dataset) AddFinalizer()      { util.AddFin(&dataset.ObjectMeta, data.GroupName) }
-func (dataset *Dataset) RemoveFinalizer()   { util.RemoveFin(&dataset.ObjectMeta, data.GroupName) }
+func (dataset Dataset) HasFinalizer() bool { return util.HasFin(&dataset.ObjectMeta, data.GroupName) }
+func (dataset *Dataset) AddFinalizer()     { util.AddFin(&dataset.ObjectMeta, data.GroupName) }
+func (dataset *Dataset) RemoveFinalizer()  { util.RemoveFin(&dataset.ObjectMeta, data.GroupName) }
 
 //==============================================================================
 // Validate
@@ -58,7 +58,7 @@ func (dataset *Dataset) CreateOrUpdateCond(cond DatasetCondition) {
 	dataset.Status.Conditions[i] = current
 }
 
-func (dataset *Dataset) GetCondIdx(t DatasetConditionType) int {
+func (dataset Dataset) GetCondIdx(t DatasetConditionType) int {
 	for i, v := range dataset.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -67,7 +67,7 @@ func (dataset *Dataset) GetCondIdx(t DatasetConditionType) int {
 	return -1
 }
 
-func (dataset *Dataset) GetCond(t DatasetConditionType) DatasetCondition {
+func (dataset Dataset) GetCond(t DatasetConditionType) DatasetCondition {
 	for _, v := range dataset.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -83,27 +83,27 @@ func (dataset *Dataset) GetCond(t DatasetConditionType) DatasetCondition {
 
 }
 
-func (dataset *Dataset) IsReady() bool {
+func (dataset Dataset) IsReady() bool {
 	return dataset.GetCond(DatasetReady).Status == v1.ConditionTrue
 }
 
-func (dataset *Dataset) StatusString() string {
+func (dataset Dataset) StatusString() string {
 	return string(dataset.Status.Phase)
 }
 
-func (dataset *Dataset) RootUri() string {
+func (dataset Dataset) RootUri() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s", dataset.Namespace, *dataset.Spec.VersionName, dataset.Name)
 }
 
-func (dataset *Dataset) ReportUri() string {
+func (dataset Dataset) ReportUri() string {
 	return fmt.Sprintf("%s/%s-report.pdf", dataset.RootUri(), dataset.Name)
 }
 
-func (dataset *Dataset) ManifestUri() string {
+func (dataset Dataset) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-dataset.yaml", dataset.RootUri(), dataset.Name)
 }
 
-func (dataset *Dataset) ProfileUri() string {
+func (dataset Dataset) ProfileUri() string {
 	return fmt.Sprintf("%s/profile/dataset_profile.json", dataset.RootUri())
 }
 
@@ -142,7 +142,7 @@ func (dataset *Dataset) UpdatePhaseFromConditions() {
 	}
 }
 
-func (dataset *Dataset) IsInCond(ct DatasetConditionType) bool {
+func (dataset Dataset) IsInCond(ct DatasetConditionType) bool {
 	current := dataset.GetCond(ct)
 	return current.Status == v1.ConditionTrue
 }
@@ -156,33 +156,33 @@ func (dataset *Dataset) MarkSkewColumns() {
 
 }
 
-func (dataset *Dataset) PrintConditions() {
+func (dataset Dataset) PrintConditions() {
 	for _, v := range dataset.Status.Conditions {
 		fmt.Println(v)
 	}
 }
 
-func (dataset *Dataset) Ingested() bool {
+func (dataset Dataset) Ingested() bool {
 	return dataset.GetCond(DatasetIngested).Status == v1.ConditionTrue
 }
 
-func (dataset *Dataset) UnitTested() bool {
+func (dataset Dataset) UnitTested() bool {
 	return *dataset.Spec.UnitTested && dataset.GetCond(DatasetUnitTested).Status == v1.ConditionTrue
 }
 
-func (dataset *Dataset) Snapshotted() bool {
+func (dataset Dataset) Snapshotted() bool {
 	return *dataset.Spec.Snapshotted && dataset.GetCond(DatasetSnapshotted).Status == v1.ConditionTrue
 }
 
-func (dataset *Dataset) Profiled() bool {
+func (dataset Dataset) Profiled() bool {
 	return dataset.GetCond(DatasetProfiled).Status == v1.ConditionTrue
 }
 
-func (dataset *Dataset) Reported() bool {
+func (dataset Dataset) Reported() bool {
 	return dataset.GetCond(DatasetReported).Status == v1.ConditionTrue
 }
 
-func (dataset *Dataset) Generated() bool {
+func (dataset Dataset) Generated() bool {
 	return dataset.GetCond(DatasetGenerated).Status == v1.ConditionTrue
 }
 
@@ -227,21 +227,21 @@ func (dataset *Dataset) MarkTakingSnapshot() {
 
 //------------------------------ Group
 
-func (dataset *Dataset) Grouped() bool {
+func (dataset Dataset) Grouped() bool {
 	return dataset.GetCond(DatasetGrouped).Status == v1.ConditionTrue
 }
 
-func (dataset *Dataset) IndexFileKey() string {
+func (dataset Dataset) IndexFileKey() string {
 	return dataset.RootUri() + "/" + "groups.json"
 }
 
 // Return the location of the worker index file for the key
-func (dataset *Dataset) WorkerIndexFileKey(workerIndex int, task string) string {
+func (dataset Dataset) WorkerIndexFileKey(workerIndex int, task string) string {
 	return fmt.Sprintf("%s/%s_%d.json", dataset.RootUri(), task, workerIndex)
 }
 
 // This is the index file for task
-func (dataset *Dataset) TaskIndexFileKey(task string) string {
+func (dataset Dataset) TaskIndexFileKey(task string) string {
 	return fmt.Sprintf("%s/%s.json", dataset.RootUri(), task)
 }
 
@@ -506,28 +506,28 @@ func (dataset *Dataset) MarkSaved() {
 	})
 }
 
-func (dataset *Dataset) Archived() bool {
+func (dataset Dataset) Archived() bool {
 	return dataset.GetCond(DatasetArchived).Status == v1.ConditionTrue
 }
 
-func (dataset *Dataset) Saved() bool {
+func (dataset Dataset) Saved() bool {
 	return dataset.GetCond(DatasetSaved).Status == v1.ConditionTrue
 }
 
-func (dataset *Dataset) Deleted() bool {
+func (dataset Dataset) Deleted() bool {
 	return !dataset.ObjectMeta.DeletionTimestamp.IsZero()
 }
 
-func (dataset *Dataset) IsFailed() bool {
+func (dataset Dataset) IsFailed() bool {
 	return dataset.Status.Phase == DatasetPhaseFailed
 }
 
-func (dataset *Dataset) IsGroup() bool {
+func (dataset Dataset) IsGroup() bool {
 	return *dataset.Spec.Task == catalog.GroupForecast
 }
 
 // Generate a dataset completion alert
-func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+func (dataset Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Entity %s completed successfully ", dataset.Name)
 	result := &infra.Alert{
@@ -560,7 +560,7 @@ func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 	return result
 }
 
-func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (dataset Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Entity %s failed with error %v", dataset.Name, err.Error())
 	result := &infra.Alert{
@@ -594,7 +594,7 @@ func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *
 	return result
 }
 
-func (dataset *Dataset) ConstuctFeatureHistogram() (*FeatureHistogram, error) {
+func (dataset Dataset) ConstuctFeatureHistogram() (*FeatureHistogram, error) {
 	// get the columns that we need to track drift for
 	columns := dataset.DriftColumnNames()
 
@@ -646,7 +646,7 @@ func (dataset *Dataset) ConstuctFeatureHistogram() (*FeatureHistogram, error) {
 }
 
 // return the list of drift. Currently return the drift columns
-func (dataset *Dataset) DriftColumnNames() []string {
+func (dataset Dataset) DriftColumnNames() []string {
 	result := make([]string, 0)
 	for _, v := range dataset.Status.Statistics.Columns {
 		if !v.Target {
@@ -658,7 +658,7 @@ func (dataset *Dataset) DriftColumnNames() []string {
 }
 
 // Search for a column stat, based on name
-func (dataset *Dataset) GetColumn(name string) (*ColumnStatistics, error) {
+func (dataset Dataset) GetColumn(name string) (*ColumnStatistics, error) {
 	for _, v := range dataset.Status.Statistics.Columns {
 		if v.Name == name {
 			return &v, nil
@@ -669,7 +669,7 @@ func (dataset *Dataset) GetColumn(name string) (*ColumnStatistics, error) {
 }
 
 // Based on the column type generate the drift test case
-func (col *ColumnStatistics) GenDriftTestCase(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
+func (col ColumnStatistics) GenDriftTestCase(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
 	// small data
 	if rowCount < 1000 && col.DataType == catalog.DataTypeNumber {
 		return col.SmallNumericTest(thresholds, rowCount)
@@ -695,7 +695,7 @@ func (col *ColumnStatistics) GenDriftTestCase(thresholds []DriftThreshold, rowCo
 	// large data
 }
 
-func (col *ColumnStatistics) findThreshold(thresholds []DriftThreshold, metric catalog.Metric) float64 {
+func (col ColumnStatistics) findThreshold(thresholds []DriftThreshold, metric catalog.Metric) float64 {
 	for _, v := range thresholds {
 		if v.Metric == metric {
 			return v.Value
@@ -704,7 +704,7 @@ func (col *ColumnStatistics) findThreshold(thresholds []DriftThreshold, metric c
 	return 0.3
 }
 
-func (col *ColumnStatistics) SmallNumericTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
+func (col ColumnStatistics) SmallNumericTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
 	assertion := ModelDriftTwoSampleKSTestLessThan
 	threshold := col.findThreshold(thresholds, catalog.TwoSampleKSTest)
 	t := catalog.DataTestTypeDataDrift
@@ -721,7 +721,7 @@ func (col *ColumnStatistics) SmallNumericTest(thresholds []DriftThreshold, rowCo
 
 }
 
-func (col *ColumnStatistics) SmallCatTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
+func (col ColumnStatistics) SmallCatTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
 	assertion := ModelDriftChiSquaredLessThan
 	threshold := col.findThreshold(thresholds, catalog.ChiSqrTest)
 	t := catalog.DataTestTypeDataDrift
@@ -737,7 +737,7 @@ func (col *ColumnStatistics) SmallCatTest(thresholds []DriftThreshold, rowCount 
 	}
 }
 
-func (col *ColumnStatistics) SmallBoolTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
+func (col ColumnStatistics) SmallBoolTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
 	assertion := ModelDriftProportionDiffTestLessThan
 	threshold := col.findThreshold(thresholds, catalog.ProportionDifference)
 	t := catalog.DataTestTypeDataDrift
@@ -753,7 +753,7 @@ func (col *ColumnStatistics) SmallBoolTest(thresholds []DriftThreshold, rowCount
 	}
 }
 
-func (col *ColumnStatistics) BigNumericTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
+func (col ColumnStatistics) BigNumericTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
 	assertion := ModelDriftWassersteinDistanceLessThan
 	threshold := col.findThreshold(thresholds, catalog.WassersteinDistance)
 	t := catalog.DataTestTypeDataDrift
@@ -769,7 +769,7 @@ func (col *ColumnStatistics) BigNumericTest(thresholds []DriftThreshold, rowCoun
 	}
 }
 
-func (col *ColumnStatistics) BigCatTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
+func (col ColumnStatistics) BigCatTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
 	assertion := ModelDriftJSDivergenceLessThan
 	threshold := col.findThreshold(thresholds, catalog.JSDivergence)
 	t := catalog.DataTestTypeDataDrift
@@ -785,7 +785,7 @@ func (col *ColumnStatistics) BigCatTest(thresholds []DriftThreshold, rowCount in
 	}
 }
 
-func (col *ColumnStatistics) BigBoolTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
+func (col ColumnStatistics) BigBoolTest(thresholds []DriftThreshold, rowCount int32) *catalog.DataTestCase {
 	assertion := ModelDriftJSDivergenceLessThan
 	threshold := col.findThreshold(thresholds, catalog.JSDivergence)
 	t := catalog.DataTestTypeDataDrift
@@ -804,27 +804,27 @@ func (col *ColumnStatistics) BigBoolTest(thresholds []DriftThreshold, rowCount i
 ///////////////////////////////////////
 // Group folders. This is
 
-func (dataset *Dataset) GroupsFolder() string {
+func (dataset Dataset) GroupsFolder() string {
 	return dataset.RootUri() + "/groups"
 }
 
-func (dataset *Dataset) GroupFolder() string {
+func (dataset Dataset) GroupFolder() string {
 	return path.Join(dataset.GroupsFolder(), path.Join(dataset.Spec.Key...))
 }
 
-func (dataset *Dataset) GroupDataFolder() string {
+func (dataset Dataset) GroupDataFolder() string {
 	return dataset.GroupFolder() + "/data"
 }
 
-func (dataset *Dataset) GroupDataFile() string {
+func (dataset Dataset) GroupDataFile() string {
 	return dataset.GroupDataFolder() + "/raw.csv"
 }
 
-func (dataset *Dataset) GroupProfileFolder() string {
+func (dataset Dataset) GroupProfileFolder() string {
 	return dataset.GroupFolder() + "/profile"
 }
 
-func (dataset *Dataset) GroupReportFile() string {
+func (dataset Dataset) GroupReportFile() string {
 	return dataset.GroupFolder() + "/" + dataset.ReportName() + ".pdf"
 }
 

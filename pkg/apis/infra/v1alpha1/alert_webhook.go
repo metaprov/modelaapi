@@ -27,16 +27,16 @@ func (alert *Alert) Default() {
 var _ webhook.Validator = &Alert{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (alert *Alert) ValidateCreate() error {
+func (alert Alert) ValidateCreate() error {
 	return alert.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (alert *Alert) ValidateUpdate(old runtime.Object) error {
+func (alert Alert) ValidateUpdate(old runtime.Object) error {
 	return alert.validate()
 }
 
-func (alert *Alert) validate() error {
+func (alert Alert) validate() error {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, alert.validateMeta(field.NewPath("metadata"))...)
 	allErrs = append(allErrs, alert.validateSpec(field.NewPath("spec"))...)
@@ -47,13 +47,13 @@ func (alert *Alert) validate() error {
 	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.ai", Kind: "Alert"}, alert.Name, allErrs)
 }
 
-func (alert *Alert) validateMeta(fldPath *field.Path) field.ErrorList {
+func (alert Alert) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, alert.validateName(fldPath.Child("name"))...)
 	return allErrs
 }
 
-func (alert *Alert) validateName(fldPath *field.Path) field.ErrorList {
+func (alert Alert) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	err := common.ValidateResourceName(alert.Name)
 	if err != nil {
@@ -74,7 +74,7 @@ func (alert *Alert) validateSpec(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (alert *Alert) ValidateDelete() error {
+func (alert Alert) ValidateDelete() error {
 	return nil
 }
 

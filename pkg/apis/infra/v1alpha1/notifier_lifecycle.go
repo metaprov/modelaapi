@@ -32,7 +32,7 @@ func (notifier *Notifier) SetupWebhookWithManager(mgr ctrl.Manager) error {
 // Finalizer
 //==============================================================================
 
-func (notifier *Notifier) HasFinalizer() bool {
+func (notifier Notifier) HasFinalizer() bool {
 	return util.HasFin(&notifier.ObjectMeta, metav1.GroupName)
 }
 func (notifier *Notifier) AddFinalizer()    { util.AddFin(&notifier.ObjectMeta, metav1.GroupName) }
@@ -58,7 +58,7 @@ func (notifier *Notifier) CreateOrUpdateCond(cond NotifierCondition) {
 	notifier.Status.Conditions[i] = current
 }
 
-func (notifier *Notifier) GetCondIdx(t NotifierConditionType) int {
+func (notifier Notifier) GetCondIdx(t NotifierConditionType) int {
 	for i, v := range notifier.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -67,7 +67,7 @@ func (notifier *Notifier) GetCondIdx(t NotifierConditionType) int {
 	return -1
 }
 
-func (notifier *Notifier) GetCond(t NotifierConditionType) NotifierCondition {
+func (notifier Notifier) GetCond(t NotifierConditionType) NotifierCondition {
 	for _, v := range notifier.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -83,15 +83,15 @@ func (notifier *Notifier) GetCond(t NotifierConditionType) NotifierCondition {
 
 }
 
-func (notifier *Notifier) IsReady() bool {
+func (notifier Notifier) IsReady() bool {
 	return notifier.GetCond(NotifierReady).Status == v1.ConditionTrue
 }
 
-func (notifier *Notifier) RootUri() string {
+func (notifier Notifier) RootUri() string {
 	return fmt.Sprintf("tenant/%s/notifiers/%s", notifier.Namespace, notifier.Name)
 }
 
-func (notifier *Notifier) ManifestUri() string {
+func (notifier Notifier) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-notifier.yaml", notifier.RootUri(), notifier.Name)
 }
 

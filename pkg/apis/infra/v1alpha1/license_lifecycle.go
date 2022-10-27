@@ -26,13 +26,13 @@ func (license *License) SetupWebhookWithManager(mgr ctrl.Manager) error {
 }
 
 // Check if the license has expired.
-func (license *License) HasExpired() bool {
+func (license License) HasExpired() bool {
 	now := metav1.Now()
 	return license.Spec.ExpireAt.Before(&now)
 }
 
 // Check if we are still in free trial
-func (license *License) IsFreeTrial() bool {
+func (license License) IsFreeTrial() bool {
 	return time.Now().Unix() < license.Spec.TrialEnd.Time.Unix()
 }
 
@@ -40,9 +40,9 @@ func (license *License) IsFreeTrial() bool {
 // Finalizer
 //==============================================================================
 
-func (license *License) HasFinalizer() bool { return util.HasFin(&license.ObjectMeta, infra.GroupName) }
-func (license *License) AddFinalizer()      { util.AddFin(&license.ObjectMeta, infra.GroupName) }
-func (license *License) RemoveFinalizer()   { util.RemoveFin(&license.ObjectMeta, infra.GroupName) }
+func (license License) HasFinalizer() bool { return util.HasFin(&license.ObjectMeta, infra.GroupName) }
+func (license *License) AddFinalizer()     { util.AddFin(&license.ObjectMeta, infra.GroupName) }
+func (license *License) RemoveFinalizer()  { util.RemoveFin(&license.ObjectMeta, infra.GroupName) }
 
 // Merge or update condition
 func (license *License) CreateOrUpdateCond(cond LicenseCondition) {
@@ -64,7 +64,7 @@ func (license *License) CreateOrUpdateCond(cond LicenseCondition) {
 	license.Status.Conditions[i] = current
 }
 
-func (license *License) GetCondIdx(t LicenseConditionType) int {
+func (license License) GetCondIdx(t LicenseConditionType) int {
 	for i, v := range license.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -73,7 +73,7 @@ func (license *License) GetCondIdx(t LicenseConditionType) int {
 	return -1
 }
 
-func (license *License) GetCond(t LicenseConditionType) LicenseCondition {
+func (license License) GetCond(t LicenseConditionType) LicenseCondition {
 	for _, v := range license.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -89,15 +89,15 @@ func (license *License) GetCond(t LicenseConditionType) LicenseCondition {
 
 }
 
-func (license *License) IsValid() bool {
+func (license License) IsValid() bool {
 	return license.GetCond(LicenseValid).Status == v1.ConditionTrue
 }
 
-func (license *License) RootUri() string {
+func (license License) RootUri() string {
 	return fmt.Sprintf("tenant/%s/licenses/%s", license.Namespace, license.Name)
 }
 
-func (license *License) ManifestUri() string {
+func (license License) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-license.yaml", license.RootUri(), license.Name)
 }
 

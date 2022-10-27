@@ -57,7 +57,7 @@ func (alert *Alert) CreateOrUpdateCond(cond AlertCondition) {
 	alert.Status.Conditions[i] = current
 }
 
-func (alert *Alert) GetCondIdx(t AlertConditionType) int {
+func (alert Alert) GetCondIdx(t AlertConditionType) int {
 	for i, v := range alert.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -66,7 +66,7 @@ func (alert *Alert) GetCondIdx(t AlertConditionType) int {
 	return -1
 }
 
-func (alert *Alert) GetCond(t AlertConditionType) AlertCondition {
+func (alert Alert) GetCond(t AlertConditionType) AlertCondition {
 	for _, v := range alert.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -82,15 +82,15 @@ func (alert *Alert) GetCond(t AlertConditionType) AlertCondition {
 
 }
 
-func (alert *Alert) IsReady() bool {
+func (alert Alert) IsReady() bool {
 	return alert.GetCond(AlertSent).Status == v1.ConditionTrue
 }
 
-func (alert *Alert) RootUri() string {
+func (alert Alert) RootUri() string {
 	return fmt.Sprintf("tenant/%s/apitokens/%s", alert.Namespace, alert.Name)
 }
 
-func (alert *Alert) ManifestUri() string {
+func (alert Alert) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-apitoken.yaml", alert.RootUri(), alert.Name)
 }
 

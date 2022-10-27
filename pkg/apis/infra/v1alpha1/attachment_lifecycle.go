@@ -17,9 +17,9 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-func (alert *Attachment) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (attachment *Attachment) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(alert).
+		For(attachment).
 		Complete()
 }
 
@@ -31,34 +31,36 @@ func (alert *Attachment) SetupWebhookWithManager(mgr ctrl.Manager) error {
 // Finalizer
 //==============================================================================
 
-func (alert *Attachment) HasFinalizer() bool {
-	return util.HasFin(&alert.ObjectMeta, metav1.GroupName)
+func (attachment *Attachment) HasFinalizer() bool {
+	return util.HasFin(&attachment.ObjectMeta, metav1.GroupName)
 }
-func (alert *Attachment) AddFinalizer()    { util.AddFin(&alert.ObjectMeta, metav1.GroupName) }
-func (alert *Attachment) RemoveFinalizer() { util.RemoveFin(&alert.ObjectMeta, metav1.GroupName) }
+func (attachment *Attachment) AddFinalizer() { util.AddFin(&attachment.ObjectMeta, metav1.GroupName) }
+func (attachment *Attachment) RemoveFinalizer() {
+	util.RemoveFin(&attachment.ObjectMeta, metav1.GroupName)
+}
 
 // Merge or update condition
-func (alert *Attachment) CreateOrUpdateCond(cond AttachmentCondition) {
-	i := alert.GetCondIdx(cond.Type)
+func (attachment *Attachment) CreateOrUpdateCond(cond AttachmentCondition) {
+	i := attachment.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
 		cond.LastTransitionTime = &now
-		alert.Status.Conditions = append(alert.Status.Conditions, cond)
+		attachment.Status.Conditions = append(attachment.Status.Conditions, cond)
 		return
 	}
 	// else we already have the condition, update it
-	current := alert.Status.Conditions[i]
+	current := attachment.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
 	current.LastTransitionTime = &now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
-	alert.Status.Conditions[i] = current
+	attachment.Status.Conditions[i] = current
 }
 
-func (alert *Attachment) GetCondIdx(t AttachmentConditionType) int {
-	for i, v := range alert.Status.Conditions {
+func (attachment Attachment) GetCondIdx(t AttachmentConditionType) int {
+	for i, v := range attachment.Status.Conditions {
 		if v.Type == t {
 			return i
 		}
@@ -66,8 +68,8 @@ func (alert *Attachment) GetCondIdx(t AttachmentConditionType) int {
 	return -1
 }
 
-func (alert *Attachment) GetCond(t AttachmentConditionType) AttachmentCondition {
-	for _, v := range alert.Status.Conditions {
+func (attachment Attachment) GetCond(t AttachmentConditionType) AttachmentCondition {
+	for _, v := range attachment.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
@@ -82,16 +84,16 @@ func (alert *Attachment) GetCond(t AttachmentConditionType) AttachmentCondition 
 
 }
 
-func (alert *Attachment) IsReady() bool {
-	return alert.GetCond(AttachmentSent).Status == v1.ConditionTrue
+func (attachment Attachment) IsReady() bool {
+	return attachment.GetCond(AttachmentSent).Status == v1.ConditionTrue
 }
 
-func (alert *Attachment) RootUri() string {
-	return fmt.Sprintf("tenant/%s/apitokens/%s", alert.Namespace, alert.Name)
+func (attachment Attachment) RootUri() string {
+	return fmt.Sprintf("tenant/%s/apitokens/%s", attachment.Namespace, attachment.Name)
 }
 
-func (alert *Attachment) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-apitoken.yaml", alert.RootUri(), alert.Name)
+func (attachment Attachment) ManifestUri() string {
+	return fmt.Sprintf("%s/%s-apitoken.yaml", attachment.RootUri(), attachment.Name)
 }
 
 func ParseAttachmentYaml(content []byte) (*Attachment, error) {
@@ -103,8 +105,8 @@ func ParseAttachmentYaml(content []byte) (*Attachment, error) {
 	return r, nil
 }
 
-func (alert *Attachment) MarkArchived() {
-	alert.CreateOrUpdateCond(AttachmentCondition{
+func (attachment *Attachment) MarkArchived() {
+	attachment.CreateOrUpdateCond(AttachmentCondition{
 		Type:   AttachmentSaved,
 		Status: v1.ConditionTrue,
 	})

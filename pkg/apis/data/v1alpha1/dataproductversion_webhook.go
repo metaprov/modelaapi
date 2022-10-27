@@ -35,24 +35,24 @@ func (dp *DataProductVersion) Default() {
 var _ webhook.Validator = &DataProductVersion{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (version *DataProductVersion) ValidateCreate() error {
+func (version DataProductVersion) ValidateCreate() error {
 	return version.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (version *DataProductVersion) ValidateUpdate(old runtime.Object) error {
+func (version DataProductVersion) ValidateUpdate(old runtime.Object) error {
 	return version.validate()
 }
 
-func (version *DataProductVersion) validate() error {
+func (version DataProductVersion) validate() error {
 	return nil
 }
 
-func (version *DataProductVersion) ValidateDelete() error {
+func (version DataProductVersion) ValidateDelete() error {
 	return nil
 }
 
-func (version *DataProductVersion) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (version DataProductVersion) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(&DataProductVersion{}).
 		Complete()

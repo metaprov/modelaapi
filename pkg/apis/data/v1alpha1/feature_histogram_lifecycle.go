@@ -27,20 +27,20 @@ import (
 // EntityRef
 //==============================================================================
 
-func (feature *FeatureHistogram) AddConditions() {
-	feature.Status.Conditions = make([]FeatureHistogramCondition, 1)
-	feature.Status.Conditions[0] = FeatureHistogramCondition{
+func (fh *FeatureHistogram) AddConditions() {
+	fh.Status.Conditions = make([]FeatureHistogramCondition, 1)
+	fh.Status.Conditions[0] = FeatureHistogramCondition{
 		Type:   FeatureHistogramReady,
 		Status: v1.ConditionUnknown,
 	}
 }
 
-func (feature *FeatureHistogram) HasFinalizer() bool {
-	return util.HasFin(&feature.ObjectMeta, data.GroupName)
+func (fh *FeatureHistogram) HasFinalizer() bool {
+	return util.HasFin(&fh.ObjectMeta, data.GroupName)
 }
-func (feature *FeatureHistogram) AddFinalizer() { util.AddFin(&feature.ObjectMeta, data.GroupName) }
-func (feature *FeatureHistogram) RemoveFinalizer() {
-	util.RemoveFin(&feature.ObjectMeta, data.GroupName)
+func (fh *FeatureHistogram) AddFinalizer() { util.AddFin(&fh.ObjectMeta, data.GroupName) }
+func (fh *FeatureHistogram) RemoveFinalizer() {
+	util.RemoveFin(&fh.ObjectMeta, data.GroupName)
 }
 
 //==============================================================================
@@ -48,64 +48,64 @@ func (feature *FeatureHistogram) RemoveFinalizer() {
 //==============================================================================
 
 // Return the on disk rep location
-func (feature *FeatureHistogram) RepPath(root string) (string, error) {
-	return fmt.Sprintf("%s/schemas/%s.yaml", root, feature.ObjectMeta.Name), nil
+func (fh *FeatureHistogram) RepPath(root string) (string, error) {
+	return fmt.Sprintf("%s/schemas/%s.yaml", root, fh.ObjectMeta.Name), nil
 }
 
-func (feature *FeatureHistogram) RepEntry() (string, error) {
-	return fmt.Sprintf("schemas/%s.yaml", feature.ObjectMeta.Name), nil
+func (fh *FeatureHistogram) RepEntry() (string, error) {
+	return fmt.Sprintf("schemas/%s.yaml", fh.ObjectMeta.Name), nil
 }
 
-func (feature *FeatureHistogram) Age() string {
-	return humanize.Time(feature.CreationTimestamp.Time)
+func (fh *FeatureHistogram) Age() string {
+	return humanize.Time(fh.CreationTimestamp.Time)
 }
 
 //==============================================================================
 // Assign commit and id
 //==============================================================================
 
-func (feature *FeatureHistogram) LabelWithCommit(commit string, uname string, branch string) {
-	feature.ObjectMeta.Labels[common.CommitLabelKey] = commit
-	feature.ObjectMeta.Labels[common.UnameLabelKey] = uname
-	feature.ObjectMeta.Labels[common.BranchLabelKey] = branch
+func (fh *FeatureHistogram) LabelWithCommit(commit string, uname string, branch string) {
+	fh.ObjectMeta.Labels[common.CommitLabelKey] = commit
+	fh.ObjectMeta.Labels[common.UnameLabelKey] = uname
+	fh.ObjectMeta.Labels[common.BranchLabelKey] = branch
 }
 
-func (feature *FeatureHistogram) IsGitObj() bool {
-	label, ok := feature.ObjectMeta.Labels[common.CommitLabelKey]
+func (fh *FeatureHistogram) IsGitObj() bool {
+	label, ok := fh.ObjectMeta.Labels[common.CommitLabelKey]
 	if !ok {
 		return false
 	}
 	return label != ""
 }
 
-func (feature *FeatureHistogram) SetChanged() {
-	feature.ObjectMeta.Labels[common.ChangedLabelKey] = "true"
+func (fh *FeatureHistogram) SetChanged() {
+	fh.ObjectMeta.Labels[common.ChangedLabelKey] = "true"
 
 }
 
 // Merge or update condition
 // Merge or update condition
-func (feature *FeatureHistogram) CreateOrUpdateCond(cond FeatureHistogramCondition) {
-	i := feature.GetCondIdx(cond.Type)
+func (fh *FeatureHistogram) CreateOrUpdateCond(cond FeatureHistogramCondition) {
+	i := fh.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
 		cond.LastTransitionTime = &now
-		feature.Status.Conditions = append(feature.Status.Conditions, cond)
+		fh.Status.Conditions = append(fh.Status.Conditions, cond)
 		return
 	}
 	// else we already have the condition, update it
-	current := feature.Status.Conditions[i]
+	current := fh.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
 	current.LastTransitionTime = &now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
-	feature.Status.Conditions[i] = current
+	fh.Status.Conditions[i] = current
 }
 
-func (feature *FeatureHistogram) GetCondIdx(t FeatureHistogramConditionType) int {
-	for i, v := range feature.Status.Conditions {
+func (fh FeatureHistogram) GetCondIdx(t FeatureHistogramConditionType) int {
+	for i, v := range fh.Status.Conditions {
 		if v.Type == t {
 			return i
 		}
@@ -113,8 +113,8 @@ func (feature *FeatureHistogram) GetCondIdx(t FeatureHistogramConditionType) int
 	return -1
 }
 
-func (feature *FeatureHistogram) GetCond(t FeatureHistogramConditionType) FeatureHistogramCondition {
-	for _, v := range feature.Status.Conditions {
+func (fh *FeatureHistogram) GetCond(t FeatureHistogramConditionType) FeatureHistogramCondition {
+	for _, v := range fh.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
@@ -134,18 +134,18 @@ func (feature *FeatureHistogram) GetCond(t FeatureHistogramConditionType) Featur
 ////////////////////////////////////////////////////////////////////////////////
 
 // MarkLive
-func (feature *FeatureHistogram) MarkLive() {
-	feature.Spec.Live = util.BoolPtr(true)
-	feature.CreateOrUpdateCond(FeatureHistogramCondition{
+func (fh *FeatureHistogram) MarkLive() {
+	fh.Spec.Live = util.BoolPtr(true)
+	fh.CreateOrUpdateCond(FeatureHistogramCondition{
 		Type:   FeatureHistogramReady,
 		Status: v1.ConditionFalse,
 		Reason: string(FeatureHistogramPhaseLive),
 	})
-	feature.Status.Phase = FeatureHistogramPhaseLive
+	fh.Status.Phase = FeatureHistogramPhaseLive
 }
 
-func (feature *FeatureHistogram) Drifted() bool {
-	for _, v := range feature.Status.Columns {
+func (fh *FeatureHistogram) Drifted() bool {
+	for _, v := range fh.Status.Columns {
 		if v.Drift != nil && *v.Drift {
 			return true
 		}
@@ -153,49 +153,49 @@ func (feature *FeatureHistogram) Drifted() bool {
 	return false
 }
 
-func (feature *FeatureHistogram) MarkDrift() {
-	feature.Spec.Live = util.BoolPtr(true)
-	feature.CreateOrUpdateCond(FeatureHistogramCondition{
+func (fh *FeatureHistogram) MarkDrift() {
+	fh.Spec.Live = util.BoolPtr(true)
+	fh.CreateOrUpdateCond(FeatureHistogramCondition{
 		Type:   FeatureHistogramReady,
 		Status: v1.ConditionFalse,
 		Reason: string(FeatureHistogramPhaseDrift),
 	})
-	feature.Status.Phase = FeatureHistogramPhaseDrift
+	fh.Status.Phase = FeatureHistogramPhaseDrift
 }
 
-func (feature FeatureHistogram) Live() bool {
-	return feature.GetCond(FeatureHistogramReady).Status == v1.ConditionFalse &&
-		feature.GetCond(FeatureHistogramReady).Reason == string(FeatureHistogramPhaseLive)
+func (fh FeatureHistogram) Live() bool {
+	return fh.GetCond(FeatureHistogramReady).Status == v1.ConditionFalse &&
+		fh.GetCond(FeatureHistogramReady).Reason == string(FeatureHistogramPhaseLive)
 }
 
 // Mark Expired
-func (feature *FeatureHistogram) MarkExpired() {
-	feature.CreateOrUpdateCond(FeatureHistogramCondition{
+func (fh *FeatureHistogram) MarkExpired() {
+	fh.CreateOrUpdateCond(FeatureHistogramCondition{
 		Type:   FeatureHistogramReady,
 		Status: v1.ConditionFalse,
 		Reason: string(FeatureHistogramPhaseLive),
 	})
-	feature.Status.Phase = FeatureHistogramPhaseExpired
+	fh.Status.Phase = FeatureHistogramPhaseExpired
 }
 
 // MarkGenTest
-func (feature *FeatureHistogram) MarkGenTest() {
-	feature.CreateOrUpdateCond(FeatureHistogramCondition{
+func (fh *FeatureHistogram) MarkGenTest() {
+	fh.CreateOrUpdateCond(FeatureHistogramCondition{
 		Type:   FeatureHistogramReady,
 		Status: v1.ConditionFalse,
 		Reason: string(FeatureHistogramPhaseGenTest),
 	})
-	feature.Status.Phase = FeatureHistogramPhaseGenTest
+	fh.Status.Phase = FeatureHistogramPhaseGenTest
 }
 
 // MarkReadyToTest
-func (feature *FeatureHistogram) MarkReadyToTest() {
-	feature.CreateOrUpdateCond(FeatureHistogramCondition{
+func (fh *FeatureHistogram) MarkReadyToTest() {
+	fh.CreateOrUpdateCond(FeatureHistogramCondition{
 		Type:   FeatureHistogramReady,
 		Status: v1.ConditionFalse,
 		Reason: string(FeatureHistogramPhaseReadyToTest),
 	})
-	feature.Status.Phase = FeatureHistogramPhaseReadyToTest
+	fh.Status.Phase = FeatureHistogramPhaseReadyToTest
 }
 
 // MarkUnitTesting
@@ -239,7 +239,7 @@ func (fh *FeatureHistogram) MarkUnitTestFailed(msg string, stop bool) {
 
 }
 
-func (fh *FeatureHistogram) UnitTested() bool {
+func (fh FeatureHistogram) UnitTested() bool {
 	return fh.GetCond(FeatureHistogramUnitTested).Status == v1.ConditionTrue
 }
 
@@ -249,16 +249,16 @@ func (fh *FeatureHistogram) UnitTested() bool {
 
 // MarkDrifted
 
-func (feature *FeatureHistogram) IsReady() bool {
-	return feature.GetCond(FeatureHistogramReady).Status == v1.ConditionTrue
+func (fh FeatureHistogram) IsReady() bool {
+	return fh.GetCond(FeatureHistogramReady).Status == v1.ConditionTrue
 }
 
-func (feature *FeatureHistogram) IsArchived() bool {
-	return feature.GetCond(FeatureHistogramSaved).Status == v1.ConditionTrue
+func (fh FeatureHistogram) IsArchived() bool {
+	return fh.GetCond(FeatureHistogramSaved).Status == v1.ConditionTrue
 }
 
-func (feature *FeatureHistogram) Key() string {
-	return fmt.Sprintf("%s/%s/%s", "features", feature.Namespace, feature.Name)
+func (fh FeatureHistogram) Key() string {
+	return fmt.Sprintf("%s/%s/%s", "features", fh.Namespace, fh.Name)
 }
 
 func ParseFeatureHistogramYaml(content []byte) (*FeatureHistogram, error) {
@@ -270,38 +270,38 @@ func ParseFeatureHistogramYaml(content []byte) (*FeatureHistogram, error) {
 	return r, nil
 }
 
-func (feature *FeatureHistogram) MarkReady() {
+func (fh *FeatureHistogram) MarkReady() {
 	// update the lab state to ready
-	feature.CreateOrUpdateCond(FeatureHistogramCondition{
+	fh.CreateOrUpdateCond(FeatureHistogramCondition{
 		Type:   FeatureHistogramReady,
 		Status: v1.ConditionTrue,
 	})
-	feature.Status.Phase = FeatureHistogramPhaseReady
+	fh.Status.Phase = FeatureHistogramPhaseReady
 }
 
-func (feature *FeatureHistogram) MarkArchived() {
-	feature.CreateOrUpdateCond(FeatureHistogramCondition{
+func (fh *FeatureHistogram) MarkArchived() {
+	fh.CreateOrUpdateCond(FeatureHistogramCondition{
 		Type:   FeatureHistogramSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (feature *FeatureHistogram) Archived() bool {
-	return feature.GetCond(FeatureHistogramSaved).Status == v1.ConditionTrue
+func (fh FeatureHistogram) Archived() bool {
+	return fh.GetCond(FeatureHistogramSaved).Status == v1.ConditionTrue
 }
 
-func (feature *FeatureHistogram) MarkFailed(msg string) {
-	feature.CreateOrUpdateCond(FeatureHistogramCondition{
+func (fh *FeatureHistogram) MarkFailed(msg string) {
+	fh.CreateOrUpdateCond(FeatureHistogramCondition{
 		Type:    FeatureHistogramReady,
 		Status:  v1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
 		Message: "Feature histogram failed." + msg,
 	})
-	feature.Status.Phase = FeatureHistogramPhaseFailed
-	feature.Status.FailureMessage = msg
+	fh.Status.Phase = FeatureHistogramPhaseFailed
+	fh.Status.FailureMessage = msg
 }
 
-func (fh *FeatureHistogram) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (fh FeatureHistogram) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Entity %s failed with error %v", fh.Name, err.Error())
 	return &infra.Alert{
@@ -326,7 +326,7 @@ func (fh *FeatureHistogram) ErrorAlert(tenantRef *v1.ObjectReference, notifierNa
 	}
 }
 
-func (fh *FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierName *string, columns []string) *infra.Alert {
+func (fh FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierName *string, columns []string) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("drift detected")
 	return &infra.Alert{

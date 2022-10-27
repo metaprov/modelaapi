@@ -17,9 +17,9 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-func (notifier *ApiToken) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (token *ApiToken) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(notifier).
+		For(token).
 		Complete()
 }
 
@@ -27,34 +27,34 @@ func (notifier *ApiToken) SetupWebhookWithManager(mgr ctrl.Manager) error {
 // Finalizer
 //==============================================================================
 
-func (notifier *ApiToken) HasFinalizer() bool {
-	return util.HasFin(&notifier.ObjectMeta, metav1.GroupName)
+func (token ApiToken) HasFinalizer() bool {
+	return util.HasFin(&token.ObjectMeta, metav1.GroupName)
 }
-func (notifier *ApiToken) AddFinalizer()    { util.AddFin(&notifier.ObjectMeta, metav1.GroupName) }
-func (notifier *ApiToken) RemoveFinalizer() { util.RemoveFin(&notifier.ObjectMeta, metav1.GroupName) }
+func (token *ApiToken) AddFinalizer()    { util.AddFin(&token.ObjectMeta, metav1.GroupName) }
+func (token *ApiToken) RemoveFinalizer() { util.RemoveFin(&token.ObjectMeta, metav1.GroupName) }
 
 // Merge or update condition
-func (notifier *ApiToken) CreateOrUpdateCond(cond ApiTokenCondition) {
-	i := notifier.GetCondIdx(cond.Type)
+func (token *ApiToken) CreateOrUpdateCond(cond ApiTokenCondition) {
+	i := token.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
 		cond.LastTransitionTime = &now
-		notifier.Status.Conditions = append(notifier.Status.Conditions, cond)
+		token.Status.Conditions = append(token.Status.Conditions, cond)
 		return
 	}
 	// else we already have the condition, update it
-	current := notifier.Status.Conditions[i]
+	current := token.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
 	current.LastTransitionTime = &now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
-	notifier.Status.Conditions[i] = current
+	token.Status.Conditions[i] = current
 }
 
-func (notifier *ApiToken) GetCondIdx(t ApiTokenConditionType) int {
-	for i, v := range notifier.Status.Conditions {
+func (token ApiToken) GetCondIdx(t ApiTokenConditionType) int {
+	for i, v := range token.Status.Conditions {
 		if v.Type == t {
 			return i
 		}
@@ -62,8 +62,8 @@ func (notifier *ApiToken) GetCondIdx(t ApiTokenConditionType) int {
 	return -1
 }
 
-func (notifier *ApiToken) GetCond(t ApiTokenConditionType) ApiTokenCondition {
-	for _, v := range notifier.Status.Conditions {
+func (token ApiToken) GetCond(t ApiTokenConditionType) ApiTokenCondition {
+	for _, v := range token.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
@@ -78,16 +78,16 @@ func (notifier *ApiToken) GetCond(t ApiTokenConditionType) ApiTokenCondition {
 
 }
 
-func (notifier *ApiToken) IsReady() bool {
-	return notifier.GetCond(ApiTokenReady).Status == v1.ConditionTrue
+func (token ApiToken) IsReady() bool {
+	return token.GetCond(ApiTokenReady).Status == v1.ConditionTrue
 }
 
-func (notifier *ApiToken) RootUri() string {
-	return fmt.Sprintf("tenant/%s/apitokens/%s", notifier.Namespace, notifier.Name)
+func (token ApiToken) RootUri() string {
+	return fmt.Sprintf("tenant/%s/apitokens/%s", token.Namespace, token.Name)
 }
 
-func (notifier *ApiToken) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-apitoken.yaml", notifier.RootUri(), notifier.Name)
+func (token ApiToken) ManifestUri() string {
+	return fmt.Sprintf("%s/%s-apitoken.yaml", token.RootUri(), token.Name)
 }
 
 func ParseApiTokenYaml(content []byte) (*ApiToken, error) {
