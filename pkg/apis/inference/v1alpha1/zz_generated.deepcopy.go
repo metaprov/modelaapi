@@ -66,8 +66,8 @@ func (in *BackwardCurtainSpec) DeepCopyInto(out *BackwardCurtainSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.CurtainRef != nil {
-		in, out := &in.CurtainRef, &out.CurtainRef
+	if in.AccountRef != nil {
+		in, out := &in.AccountRef, &out.AccountRef
 		*out = new(v1.ObjectReference)
 		**out = **in
 	}
@@ -694,8 +694,8 @@ func (in *ForwardCurtainSpec) DeepCopyInto(out *ForwardCurtainSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.CurtainRef != nil {
-		in, out := &in.CurtainRef, &out.CurtainRef
+	if in.AccountRef != nil {
+		in, out := &in.AccountRef, &out.AccountRef
 		*out = new(v1.ObjectReference)
 		**out = **in
 	}
@@ -1354,9 +1354,9 @@ func (in *PredictorSpec) DeepCopyInto(out *PredictorSpec) {
 		*out = new(v1.ObjectReference)
 		**out = **in
 	}
-	if in.Type != nil {
-		in, out := &in.Type, &out.Type
-		*out = new(catalogv1alpha1.PredictorType)
+	if in.Online != nil {
+		in, out := &in.Online, &out.Online
+		*out = new(bool)
 		**out = **in
 	}
 	if in.ServingSiteRef != nil {
@@ -1469,10 +1469,6 @@ func (in *PredictorStatus) DeepCopyInto(out *PredictorStatus) {
 	out.LastPredictionDataset = in.LastPredictionDataset
 	in.ServingTestResult.DeepCopyInto(&out.ServingTestResult)
 	in.PredictionSchedule.DeepCopyInto(&out.PredictionSchedule)
-	if in.LastPrediction != nil {
-		in, out := &in.LastPrediction, &out.LastPrediction
-		*out = (*in).DeepCopy()
-	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]PredictorCondition, len(*in))
