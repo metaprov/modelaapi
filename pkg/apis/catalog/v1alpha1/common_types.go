@@ -1487,15 +1487,15 @@ type RunSchedule struct {
 }
 
 type RunScheduleStatus struct {
-	// Indicates if the schedule is enabled and the Jobs associated it will be created at the specified time
-	// +kubebuilder:validation:Optional
-	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
 	// The time of the day when the schedule will be executed
 	// +kubebuilder:validation:Optional
 	NextRun *metav1.Time `json:"nextRun,omitempty" protobuf:"bytes,2,opt,name=nextRun"`
-	// The time at which the run concluded
+	// The time when we started the action based on the schedule.
 	// +kubebuilder:validation:Optional
-	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,3,opt,name=completionTime"`
+	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,3,opt,name=startTime"`
+	// The time that we completed the action based on the schedule.
+	// +kubebuilder:validation:Optional
+	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,1,opt,name=endTime"`
 	// The duration of the run in seconds
 	// +kubebuilder:validation:Optional
 	Duration int32 `json:"duration,omitempty" protobuf:"varint,4,opt,name=duration"`
@@ -1508,6 +1508,17 @@ type RunScheduleStatus struct {
 	// Last run logs
 	// +kubebuilder:validation:Optional
 	LastRunLogs Logs `json:"logs,omitempty" protobuf:"bytes,7,opt,name=logs"`
+}
+
+func (runstatus RunScheduleStatus) ShouldStart() bool {
+	now := metav1.Now()
+	if runstatus.NextRun == nil {
+		return true
+	}
+	if now.After(runstatus.NextRun.Time) && (runstatus.StartTime == nil || runstatus.StartTime.Before(runstatus.NextRun)) {
+		return true
+	}
+	return false
 }
 
 // Measurement is a value for a specific metric

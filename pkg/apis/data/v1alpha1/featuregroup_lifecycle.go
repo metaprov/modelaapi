@@ -56,10 +56,18 @@ func (fg *FeatureGroup) Age() string {
 	return humanize.Time(fg.CreationTimestamp.Time)
 }
 
+func (fg FeatureGroup) IsDeleted() bool {
+	return !fg.ObjectMeta.DeletionTimestamp.IsZero()
+}
+
+func (fg FeatureGroup) IsIngestTime() bool {
+	return fg.Spec.IngestSchedule.ShouldFire(fg.Status.IngestSchedule)
+}
+
 ///////////////////////////////////////////////
 // Sync
 //////////////////////////////////////////////
-func (fg *FeatureGroup) MarkSynching() {
+func (fg *FeatureGroup) MarkSyncing() {
 	fg.Status.Phase = FeatureGroupPhaseSyncing
 	fg.CreateOrUpdateCond(FeatureGroupCondition{
 		Type:   FeatureGroupSynced,
@@ -126,8 +134,15 @@ func (fg *FeatureGroup) MarkGeneratedOnlineDatasetFailed(msg string) {
 
 }
 
-func (fg *FeatureGroup) Synced() bool {
+func (fg *FeatureGroup) IsSynced() bool {
 	return fg.GetCond(FeatureGroupSynced).Status == v1.ConditionTrue
+}
+
+func (fg *FeatureGroup) HasOnlineTable() bool {
+	if fg.Status.SyncSchedule.StartTime == nil {
+		return false
+	}
+	return fg.Status.OnlineTableCreated != nil && fg.Status.OnlineTableCreated.After(fg.Status.SyncSchedule.StartTime.Time)
 }
 
 func (fg *FeatureGroup) OnlineDatasetGenerated() bool {
