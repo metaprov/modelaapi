@@ -2960,6 +2960,16 @@ export class FeatureGroupStatus extends jspb.Message {
   hasIngestschedule(): boolean;
   clearIngestschedule(): FeatureGroupStatus;
 
+  getOnelinetable(): DataLocation | undefined;
+  setOnelinetable(value?: DataLocation): FeatureGroupStatus;
+  hasOnelinetable(): boolean;
+  clearOnelinetable(): FeatureGroupStatus;
+
+  getOnelinetablecreated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setOnelinetablecreated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureGroupStatus;
+  hasOnelinetablecreated(): boolean;
+  clearOnelinetablecreated(): FeatureGroupStatus;
+
   getConditionsList(): Array<FeatureGroupCondition>;
   setConditionsList(value: Array<FeatureGroupCondition>): FeatureGroupStatus;
   clearConditionsList(): FeatureGroupStatus;
@@ -2981,6 +2991,8 @@ export namespace FeatureGroupStatus {
     rows: number,
     syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     ingestschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
+    onelinetable?: DataLocation.AsObject,
+    onelinetablecreated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<FeatureGroupCondition.AsObject>,
   }
 }

@@ -163,14 +163,6 @@ export namespace ImportRequest {
 }
 
 export class ImportResponse extends jspb.Message {
-  getKey(): string;
-  setKey(value: string): ImportResponse;
-
-  getFeaturesList(): Array<string>;
-  setFeaturesList(value: Array<string>): ImportResponse;
-  clearFeaturesList(): ImportResponse;
-  addFeatures(value: string, index?: number): ImportResponse;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ImportResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ImportResponse): ImportResponse.AsObject;
@@ -181,8 +173,62 @@ export class ImportResponse extends jspb.Message {
 
 export namespace ImportResponse {
   export type AsObject = {
+  }
+}
+
+export class Row extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): Row;
+
+  getDataMap(): jspb.Map<string, Value>;
+  clearDataMap(): Row;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Row.AsObject;
+  static toObject(includeInstance: boolean, msg: Row): Row.AsObject;
+  static serializeBinaryToWriter(message: Row, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Row;
+  static deserializeBinaryFromReader(message: Row, reader: jspb.BinaryReader): Row;
+}
+
+export namespace Row {
+  export type AsObject = {
     key: string,
-    featuresList: Array<string>,
+    dataMap: Array<[string, Value.AsObject]>,
+  }
+}
+
+export class PushRequest extends jspb.Message {
+  getRowsList(): Array<Row>;
+  setRowsList(value: Array<Row>): PushRequest;
+  clearRowsList(): PushRequest;
+  addRows(value?: Row, index?: number): Row;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PushRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PushRequest): PushRequest.AsObject;
+  static serializeBinaryToWriter(message: PushRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PushRequest;
+  static deserializeBinaryFromReader(message: PushRequest, reader: jspb.BinaryReader): PushRequest;
+}
+
+export namespace PushRequest {
+  export type AsObject = {
+    rowsList: Array<Row.AsObject>,
+  }
+}
+
+export class PushResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PushResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PushResponse): PushResponse.AsObject;
+  static serializeBinaryToWriter(message: PushResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PushResponse;
+  static deserializeBinaryFromReader(message: PushResponse, reader: jspb.BinaryReader): PushResponse;
+}
+
+export namespace PushResponse {
+  export type AsObject = {
   }
 }
 

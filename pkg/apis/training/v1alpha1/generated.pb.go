@@ -1383,30 +1383,30 @@ func (m *MedianPrunerOptions) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MedianPrunerOptions proto.InternalMessageInfo
 
-func (model *Model) Reset()  { *model = Model{} }
+func (m *Model) Reset()      { *m = Model{} }
 func (*Model) ProtoMessage() {}
 func (*Model) Descriptor() ([]byte, []int) {
 	return fileDescriptor_b06c1c430b441be9, []int{48}
 }
-func (model *Model) XXX_Unmarshal(b []byte) error {
-	return model.Unmarshal(b)
+func (m *Model) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
 }
-func (model *Model) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *Model) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := model.MarshalToSizedBuffer(b)
+	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (model *Model) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Model.Merge(model, src)
+func (m *Model) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Model.Merge(m, src)
 }
-func (model *Model) XXX_Size() int {
-	return model.Size()
+func (m *Model) XXX_Size() int {
+	return m.Size()
 }
-func (model *Model) XXX_DiscardUnknown() {
-	xxx_messageInfo_Model.DiscardUnknown(model)
+func (m *Model) XXX_DiscardUnknown() {
+	xxx_messageInfo_Model.DiscardUnknown(m)
 }
 
 var xxx_messageInfo_Model proto.InternalMessageInfo
@@ -2839,30 +2839,30 @@ func (m *ReleaseStageSpec) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ReleaseStageSpec proto.InternalMessageInfo
 
-func (report *Report) Reset() { *report = Report{} }
+func (m *Report) Reset()      { *m = Report{} }
 func (*Report) ProtoMessage() {}
 func (*Report) Descriptor() ([]byte, []int) {
 	return fileDescriptor_b06c1c430b441be9, []int{100}
 }
-func (report *Report) XXX_Unmarshal(b []byte) error {
-	return report.Unmarshal(b)
+func (m *Report) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
 }
-func (report *Report) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *Report) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := report.MarshalToSizedBuffer(b)
+	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (report *Report) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Report.Merge(report, src)
+func (m *Report) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Report.Merge(m, src)
 }
-func (report *Report) XXX_Size() int {
-	return report.Size()
+func (m *Report) XXX_Size() int {
+	return m.Size()
 }
-func (report *Report) XXX_DiscardUnknown() {
-	xxx_messageInfo_Report.DiscardUnknown(report)
+func (m *Report) XXX_DiscardUnknown() {
+	xxx_messageInfo_Report.DiscardUnknown(m)
 }
 
 var xxx_messageInfo_Report proto.InternalMessageInfo
@@ -7570,28 +7570,28 @@ func (m *MedianPrunerOptions) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (model *Model) Marshal() (dAtA []byte, err error) {
-	size := model.Size()
+func (m *Model) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := model.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (model *Model) MarshalTo(dAtA []byte) (int, error) {
-	size := model.Size()
-	return model.MarshalToSizedBuffer(dAtA[:size])
+func (m *Model) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (model *Model) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *Model) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := model.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -7601,7 +7601,7 @@ func (model *Model) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := model.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -7611,7 +7611,7 @@ func (model *Model) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := model.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -12861,28 +12861,28 @@ func (m *ReleaseStageSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (report *Report) Marshal() (dAtA []byte, err error) {
-	size := report.Size()
+func (m *Report) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := report.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (report *Report) MarshalTo(dAtA []byte) (int, error) {
-	size := report.Size()
-	return report.MarshalToSizedBuffer(dAtA[:size])
+func (m *Report) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (report *Report) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *Report) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := report.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -12892,7 +12892,7 @@ func (report *Report) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := report.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -12902,7 +12902,7 @@ func (report *Report) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := report.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -16723,17 +16723,17 @@ func (m *MedianPrunerOptions) Size() (n int) {
 	return n
 }
 
-func (model *Model) Size() (n int) {
-	if model == nil {
+func (m *Model) Size() (n int) {
+	if m == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = model.ObjectMeta.Size()
+	l = m.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = model.Spec.Size()
+	l = m.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = model.Status.Size()
+	l = m.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -18520,17 +18520,17 @@ func (m *ReleaseStageSpec) Size() (n int) {
 	return n
 }
 
-func (report *Report) Size() (n int) {
-	if report == nil {
+func (m *Report) Size() (n int) {
+	if m == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = report.ObjectMeta.Size()
+	l = m.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = report.Spec.Size()
+	l = m.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = report.Status.Size()
+	l = m.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -20200,14 +20200,14 @@ func (this *MedianPrunerOptions) String() string {
 	}, "")
 	return s
 }
-func (model *Model) String() string {
-	if model == nil {
+func (this *Model) String() string {
+	if this == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&Model{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", model.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(model.Spec.String(), "ModelSpec", "ModelSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(model.Status.String(), "ModelStatus", "ModelStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "ModelSpec", "ModelSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "ModelStatus", "ModelStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -21268,14 +21268,14 @@ func (this *ReleaseStageSpec) String() string {
 	}, "")
 	return s
 }
-func (report *Report) String() string {
-	if report == nil {
+func (this *Report) String() string {
+	if this == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&Report{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", report.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(report.Spec.String(), "ReportSpec", "ReportSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(report.Status.String(), "ReportStatus", "ReportStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "ReportSpec", "ReportSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "ReportStatus", "ReportStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -30103,7 +30103,7 @@ func (m *MedianPrunerOptions) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (model *Model) Unmarshal(dAtA []byte) error {
+func (m *Model) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -30161,7 +30161,7 @@ func (model *Model) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := model.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -30194,7 +30194,7 @@ func (model *Model) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := model.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -30227,7 +30227,7 @@ func (model *Model) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := model.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -46690,7 +46690,7 @@ func (m *ReleaseStageSpec) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (report *Report) Unmarshal(dAtA []byte) error {
+func (m *Report) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -46748,7 +46748,7 @@ func (report *Report) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := report.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -46781,7 +46781,7 @@ func (report *Report) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := report.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -46814,7 +46814,7 @@ func (report *Report) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := report.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex

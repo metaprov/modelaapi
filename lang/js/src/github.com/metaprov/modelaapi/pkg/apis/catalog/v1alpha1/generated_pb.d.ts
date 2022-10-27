@@ -1723,16 +1723,6 @@ export class RunSchedule extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): RunSchedule;
 
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunSchedule;
-  hasStarttime(): boolean;
-  clearStarttime(): RunSchedule;
-
-  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunSchedule;
-  hasEndtime(): boolean;
-  clearEndtime(): RunSchedule;
-
   getCron(): string;
   setCron(value: string): RunSchedule;
 
@@ -1750,8 +1740,6 @@ export class RunSchedule extends jspb.Message {
 export namespace RunSchedule {
   export type AsObject = {
     enabled: boolean,
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     cron: string,
     type: string,
   }
@@ -1768,10 +1756,10 @@ export class RunScheduleStatus extends jspb.Message {
   hasNextrun(): boolean;
   clearNextrun(): RunScheduleStatus;
 
-  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunScheduleStatus;
-  hasCompletiontime(): boolean;
-  clearCompletiontime(): RunScheduleStatus;
+  getCurrentstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCurrentstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunScheduleStatus;
+  hasCurrentstarttime(): boolean;
+  clearCurrentstarttime(): RunScheduleStatus;
 
   getDuration(): number;
   setDuration(value: number): RunScheduleStatus;
@@ -1799,7 +1787,7 @@ export namespace RunScheduleStatus {
   export type AsObject = {
     lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    currentstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     duration: number,
     failurereason: string,
     failuremessage: string,

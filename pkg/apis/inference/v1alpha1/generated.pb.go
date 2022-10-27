@@ -291,30 +291,30 @@ func (m *CustomAppSpec) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_CustomAppSpec proto.InternalMessageInfo
 
-func (dataapp *DataApp) Reset() { *dataapp = DataApp{} }
-func (*DataApp) ProtoMessage()  {}
+func (m *DataApp) Reset()      { *m = DataApp{} }
+func (*DataApp) ProtoMessage() {}
 func (*DataApp) Descriptor() ([]byte, []int) {
 	return fileDescriptor_7392dcd092a29f91, []int{9}
 }
-func (dataapp *DataApp) XXX_Unmarshal(b []byte) error {
-	return dataapp.Unmarshal(b)
+func (m *DataApp) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
 }
-func (dataapp *DataApp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *DataApp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := dataapp.MarshalToSizedBuffer(b)
+	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (dataapp *DataApp) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DataApp.Merge(dataapp, src)
+func (m *DataApp) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DataApp.Merge(m, src)
 }
-func (dataapp *DataApp) XXX_Size() int {
-	return dataapp.Size()
+func (m *DataApp) XXX_Size() int {
+	return m.Size()
 }
-func (dataapp *DataApp) XXX_DiscardUnknown() {
-	xxx_messageInfo_DataApp.DiscardUnknown(dataapp)
+func (m *DataApp) XXX_DiscardUnknown() {
+	xxx_messageInfo_DataApp.DiscardUnknown(m)
 }
 
 var xxx_messageInfo_DataApp proto.InternalMessageInfo
@@ -907,30 +907,30 @@ func (m *OnlineStoreStatus) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_OnlineStoreStatus proto.InternalMessageInfo
 
-func (prediction *Prediction) Reset() { *prediction = Prediction{} }
-func (*Prediction) ProtoMessage()     {}
+func (m *Prediction) Reset()      { *m = Prediction{} }
+func (*Prediction) ProtoMessage() {}
 func (*Prediction) Descriptor() ([]byte, []int) {
 	return fileDescriptor_7392dcd092a29f91, []int{31}
 }
-func (prediction *Prediction) XXX_Unmarshal(b []byte) error {
-	return prediction.Unmarshal(b)
+func (m *Prediction) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
 }
-func (prediction *Prediction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *Prediction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := prediction.MarshalToSizedBuffer(b)
+	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (prediction *Prediction) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Prediction.Merge(prediction, src)
+func (m *Prediction) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Prediction.Merge(m, src)
 }
-func (prediction *Prediction) XXX_Size() int {
-	return prediction.Size()
+func (m *Prediction) XXX_Size() int {
+	return m.Size()
 }
-func (prediction *Prediction) XXX_DiscardUnknown() {
-	xxx_messageInfo_Prediction.DiscardUnknown(prediction)
+func (m *Prediction) XXX_DiscardUnknown() {
+	xxx_messageInfo_Prediction.DiscardUnknown(m)
 }
 
 var xxx_messageInfo_Prediction proto.InternalMessageInfo
@@ -1159,30 +1159,30 @@ func (m *PredictionTemplate) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_PredictionTemplate proto.InternalMessageInfo
 
-func (predictor *Predictor) Reset() { *predictor = Predictor{} }
-func (*Predictor) ProtoMessage()    {}
+func (m *Predictor) Reset()      { *m = Predictor{} }
+func (*Predictor) ProtoMessage() {}
 func (*Predictor) Descriptor() ([]byte, []int) {
 	return fileDescriptor_7392dcd092a29f91, []int{40}
 }
-func (predictor *Predictor) XXX_Unmarshal(b []byte) error {
-	return predictor.Unmarshal(b)
+func (m *Predictor) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
 }
-func (predictor *Predictor) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *Predictor) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := predictor.MarshalToSizedBuffer(b)
+	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (predictor *Predictor) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Predictor.Merge(predictor, src)
+func (m *Predictor) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Predictor.Merge(m, src)
 }
-func (predictor *Predictor) XXX_Size() int {
-	return predictor.Size()
+func (m *Predictor) XXX_Size() int {
+	return m.Size()
 }
-func (predictor *Predictor) XXX_DiscardUnknown() {
-	xxx_messageInfo_Predictor.DiscardUnknown(predictor)
+func (m *Predictor) XXX_DiscardUnknown() {
+	xxx_messageInfo_Predictor.DiscardUnknown(m)
 }
 
 var xxx_messageInfo_Predictor proto.InternalMessageInfo
@@ -2307,28 +2307,28 @@ func (m *CustomAppSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (dataapp *DataApp) Marshal() (dAtA []byte, err error) {
-	size := dataapp.Size()
+func (m *DataApp) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := dataapp.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (dataapp *DataApp) MarshalTo(dAtA []byte) (int, error) {
-	size := dataapp.Size()
-	return dataapp.MarshalToSizedBuffer(dAtA[:size])
+func (m *DataApp) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (dataapp *DataApp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *DataApp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := dataapp.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -2338,7 +2338,7 @@ func (dataapp *DataApp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := dataapp.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -2348,7 +2348,7 @@ func (dataapp *DataApp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := dataapp.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -3738,28 +3738,28 @@ func (m *OnlineStoreStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (prediction *Prediction) Marshal() (dAtA []byte, err error) {
-	size := prediction.Size()
+func (m *Prediction) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := prediction.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (prediction *Prediction) MarshalTo(dAtA []byte) (int, error) {
-	size := prediction.Size()
-	return prediction.MarshalToSizedBuffer(dAtA[:size])
+func (m *Prediction) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (prediction *Prediction) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *Prediction) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := prediction.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -3769,7 +3769,7 @@ func (prediction *Prediction) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := prediction.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -3779,7 +3779,7 @@ func (prediction *Prediction) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := prediction.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -4469,28 +4469,28 @@ func (m *PredictionTemplate) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (predictor *Predictor) Marshal() (dAtA []byte, err error) {
-	size := predictor.Size()
+func (m *Predictor) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := predictor.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (predictor *Predictor) MarshalTo(dAtA []byte) (int, error) {
-	size := predictor.Size()
-	return predictor.MarshalToSizedBuffer(dAtA[:size])
+func (m *Predictor) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (predictor *Predictor) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *Predictor) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := predictor.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -4500,7 +4500,7 @@ func (predictor *Predictor) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := predictor.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -4510,7 +4510,7 @@ func (predictor *Predictor) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := predictor.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -5502,17 +5502,17 @@ func (m *CustomAppSpec) Size() (n int) {
 	return n
 }
 
-func (dataapp *DataApp) Size() (n int) {
-	if dataapp == nil {
+func (m *DataApp) Size() (n int) {
+	if m == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = dataapp.ObjectMeta.Size()
+	l = m.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = dataapp.Spec.Size()
+	l = m.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = dataapp.Status.Size()
+	l = m.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -6010,17 +6010,17 @@ func (m *OnlineStoreStatus) Size() (n int) {
 	return n
 }
 
-func (prediction *Prediction) Size() (n int) {
-	if prediction == nil {
+func (m *Prediction) Size() (n int) {
+	if m == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = prediction.ObjectMeta.Size()
+	l = m.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = prediction.Spec.Size()
+	l = m.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = prediction.Status.Size()
+	l = m.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -6256,17 +6256,17 @@ func (m *PredictionTemplate) Size() (n int) {
 	return n
 }
 
-func (predictor *Predictor) Size() (n int) {
-	if predictor == nil {
+func (m *Predictor) Size() (n int) {
+	if m == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = predictor.ObjectMeta.Size()
+	l = m.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = predictor.Spec.Size()
+	l = m.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = predictor.Status.Size()
+	l = m.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -6669,14 +6669,14 @@ func (this *CustomAppSpec) String() string {
 	}, "")
 	return s
 }
-func (dataapp *DataApp) String() string {
-	if dataapp == nil {
+func (this *DataApp) String() string {
+	if this == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&DataApp{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", dataapp.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(dataapp.Spec.String(), "DataAppSpec", "DataAppSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(dataapp.Status.String(), "DataAppStatus", "DataAppStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "DataAppSpec", "DataAppSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "DataAppStatus", "DataAppStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -7033,14 +7033,14 @@ func (this *OnlineStoreStatus) String() string {
 	}, "")
 	return s
 }
-func (prediction *Prediction) String() string {
-	if prediction == nil {
+func (this *Prediction) String() string {
+	if this == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&Prediction{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", prediction.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(prediction.Spec.String(), "PredictionSpec", "PredictionSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(prediction.Status.String(), "PredictionStatus", "PredictionStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "PredictionSpec", "PredictionSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "PredictionStatus", "PredictionStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -7187,14 +7187,14 @@ func (this *PredictionTemplate) String() string {
 	}, "")
 	return s
 }
-func (predictor *Predictor) String() string {
-	if predictor == nil {
+func (this *Predictor) String() string {
+	if this == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&Predictor{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", predictor.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(predictor.Spec.String(), "PredictorSpec", "PredictorSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(predictor.Status.String(), "PredictorStatus", "PredictorStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "PredictorSpec", "PredictorSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "PredictorStatus", "PredictorStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -8928,7 +8928,7 @@ func (m *CustomAppSpec) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (dataapp *DataApp) Unmarshal(dAtA []byte) error {
+func (m *DataApp) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -8986,7 +8986,7 @@ func (dataapp *DataApp) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := dataapp.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -9019,7 +9019,7 @@ func (dataapp *DataApp) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := dataapp.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -9052,7 +9052,7 @@ func (dataapp *DataApp) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := dataapp.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -13395,7 +13395,7 @@ func (m *OnlineStoreStatus) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (prediction *Prediction) Unmarshal(dAtA []byte) error {
+func (m *Prediction) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -13453,7 +13453,7 @@ func (prediction *Prediction) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := prediction.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -13486,7 +13486,7 @@ func (prediction *Prediction) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := prediction.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -13519,7 +13519,7 @@ func (prediction *Prediction) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := prediction.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -15562,7 +15562,7 @@ func (m *PredictionTemplate) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (predictor *Predictor) Unmarshal(dAtA []byte) error {
+func (m *Predictor) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -15620,7 +15620,7 @@ func (predictor *Predictor) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := predictor.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -15653,7 +15653,7 @@ func (predictor *Predictor) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := predictor.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -15686,7 +15686,7 @@ func (predictor *Predictor) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := predictor.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex

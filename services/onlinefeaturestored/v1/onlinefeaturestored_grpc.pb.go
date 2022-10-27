@@ -25,6 +25,7 @@ type OnlineFeatureStoreServiceClient interface {
 	OnlineGet(ctx context.Context, in *OnlineGetRequest, opts ...grpc.CallOption) (*OnlineGetResponse, error)
 	OnlineMultiGet(ctx context.Context, in *OnlineMultiGetRequest, opts ...grpc.CallOption) (*OnlineMultiGetResponse, error)
 	Import(ctx context.Context, in *ImportRequest, opts ...grpc.CallOption) (*ImportResponse, error)
+	Push(ctx context.Context, in *PushRequest, opts ...grpc.CallOption) (*PushResponse, error)
 }
 
 type onlineFeatureStoreServiceClient struct {
@@ -62,6 +63,15 @@ func (c *onlineFeatureStoreServiceClient) Import(ctx context.Context, in *Import
 	return out, nil
 }
 
+func (c *onlineFeatureStoreServiceClient) Push(ctx context.Context, in *PushRequest, opts ...grpc.CallOption) (*PushResponse, error) {
+	out := new(PushResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Push", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnlineFeatureStoreServiceServer is the server API for OnlineFeatureStoreService service.
 // All implementations must embed UnimplementedOnlineFeatureStoreServiceServer
 // for forward compatibility
@@ -69,6 +79,7 @@ type OnlineFeatureStoreServiceServer interface {
 	OnlineGet(context.Context, *OnlineGetRequest) (*OnlineGetResponse, error)
 	OnlineMultiGet(context.Context, *OnlineMultiGetRequest) (*OnlineMultiGetResponse, error)
 	Import(context.Context, *ImportRequest) (*ImportResponse, error)
+	Push(context.Context, *PushRequest) (*PushResponse, error)
 	mustEmbedUnimplementedOnlineFeatureStoreServiceServer()
 }
 
@@ -84,6 +95,9 @@ func (UnimplementedOnlineFeatureStoreServiceServer) OnlineMultiGet(context.Conte
 }
 func (UnimplementedOnlineFeatureStoreServiceServer) Import(context.Context, *ImportRequest) (*ImportResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Import not implemented")
+}
+func (UnimplementedOnlineFeatureStoreServiceServer) Push(context.Context, *PushRequest) (*PushResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Push not implemented")
 }
 func (UnimplementedOnlineFeatureStoreServiceServer) mustEmbedUnimplementedOnlineFeatureStoreServiceServer() {
 }
@@ -153,6 +167,24 @@ func _OnlineFeatureStoreService_Import_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnlineFeatureStoreService_Push_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PushRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnlineFeatureStoreServiceServer).Push(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Push",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnlineFeatureStoreServiceServer).Push(ctx, req.(*PushRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnlineFeatureStoreService_ServiceDesc is the grpc.ServiceDesc for OnlineFeatureStoreService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -171,6 +203,10 @@ var OnlineFeatureStoreService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Import",
 			Handler:    _OnlineFeatureStoreService_Import_Handler,
+		},
+		{
+			MethodName: "Push",
+			Handler:    _OnlineFeatureStoreService_Push_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -120,15 +120,6 @@ spec:
                     description: Indicates if the schedule is enabled and the Jobs
                       associated it will be created at the specified time
                     type: boolean
-                  endTime:
-                    description: The time of the day when the schedule is expected
-                      to conclude
-                    format: date-time
-                    type: string
-                  startTime:
-                    description: The time of the day when the schedule will be executed
-                    format: date-time
-                    type: string
                   type:
                     description: The type of schedule, which can be a frequency interval
                       or a cron expression

@@ -61,7 +61,7 @@ func (servingsite ServingSite) validateSpec(fldPath *field.Path) field.ErrorList
 func (servingsite ServingSite) ValidateDelete() error {
 	return nil
 }
- 
+
 func (servingsite *ServingSite) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(servingsite).

@@ -164,5 +164,48 @@ export class OnlineFeatureStoreServiceClient {
     this.methodInfoImport);
   }
 
+  methodInfoPush = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Push',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.PushRequest,
+    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.PushResponse,
+    (request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.PushRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.PushResponse.deserializeBinary
+  );
+
+  push(
+    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.PushRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.PushResponse>;
+
+  push(
+    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.PushRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.PushResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.PushResponse>;
+
+  push(
+    request: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.PushRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_pb.PushResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Push',
+        request,
+        metadata || {},
+        this.methodInfoPush,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Push',
+    request,
+    metadata || {},
+    this.methodInfoPush);
+  }
+
 }
 

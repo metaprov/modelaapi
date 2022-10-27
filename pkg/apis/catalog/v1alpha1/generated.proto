@@ -1020,14 +1020,6 @@ message RunSchedule {
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // The time of the day when the schedule will be executed
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2;
-
-  // The time of the day when the schedule is expected to conclude
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
-
   // The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm for more information
   // +kubebuilder:validation:Optional
   optional string cron = 4;
@@ -1038,7 +1030,7 @@ message RunSchedule {
 }
 
 message RunScheduleStatus {
-  // Indicates if the schedule is enabled and the Jobs associated it will be created at the specified time
+  // Last time the job was ended successfuly
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
 
@@ -1046,9 +1038,9 @@ message RunScheduleStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 2;
 
-  // The time at which the run concluded
+  // The time when we started the action based on the schedule.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time currentStartTime = 3;
 
   // The duration of the run in seconds
   // +kubebuilder:validation:Optional

@@ -2163,10 +2163,18 @@ message FeatureGroupStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus ingestSchedule = 7;
 
+  // Holds the last online table location. set the null when running the sync process
+  // +kubebuilder:validation:Optional
+  optional DataLocation onelineTable = 8;
+
+  // The last time an online table was created
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time onelineTableCreated = 9;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureGroupCondition conditions = 8;
+  repeated FeatureGroupCondition conditions = 10;
 }
 
 // FeatureHistogram represent a single feature in the feature store.

@@ -2346,6 +2346,11 @@ func (in *FeatureGroupStatus) DeepCopyInto(out *FeatureGroupStatus) {
 	}
 	in.SyncSchedule.DeepCopyInto(&out.SyncSchedule)
 	in.IngestSchedule.DeepCopyInto(&out.IngestSchedule)
+	in.OnlineTable.DeepCopyInto(&out.OnlineTable)
+	if in.OnlineTableCreated != nil {
+		in, out := &in.OnlineTableCreated, &out.OnlineTableCreated
+		*out = (*in).DeepCopy()
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]FeatureGroupCondition, len(*in))

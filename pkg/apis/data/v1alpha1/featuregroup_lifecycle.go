@@ -61,7 +61,7 @@ func (fg FeatureGroup) IsDeleted() bool {
 }
 
 func (fg FeatureGroup) IsIngestTime() bool {
-	return fg.Spec.IngestSchedule.ShouldFire(fg.Status.IngestSchedule)
+	return fg.Status.IngestSchedule.ShouldStartNextRun()
 }
 
 ///////////////////////////////////////////////
@@ -139,10 +139,10 @@ func (fg *FeatureGroup) IsSynced() bool {
 }
 
 func (fg *FeatureGroup) HasOnlineTable() bool {
-	if fg.Status.SyncSchedule.StartTime == nil {
+	if !fg.Status.SyncSchedule.IsStarted() {
 		return false
 	}
-	return fg.Status.OnlineTableCreated != nil && fg.Status.OnlineTableCreated.After(fg.Status.SyncSchedule.StartTime.Time)
+	return fg.Status.OnlineTableCreated.After(fg.Status.SyncSchedule.CurrentStartTime.Time)
 }
 
 func (fg *FeatureGroup) OnlineDatasetGenerated() bool {

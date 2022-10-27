@@ -1,8 +1,10 @@
 package v1alpha1
 
 import (
+	"github.com/aptible/supercronic/cronexpr"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"time"
 )
 
 // ===========================================================
@@ -1472,12 +1474,6 @@ type RunSchedule struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// The time of the day when the schedule will be executed
-	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,2,opt,name=startTime"`
-	// The time of the day when the schedule is expected to conclude
-	// +kubebuilder:validation:Optional
-	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,3,opt,name=endTime"`
 	// The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm for more information
 	// +kubebuilder:validation:Optional
 	Cron *string `json:"cron,omitempty" protobuf:"bytes,4,opt,name=cron"`
@@ -1486,16 +1482,71 @@ type RunSchedule struct {
 	Type TriggerScheduleEventType `json:"type,omitempty" protobuf:"bytes,5,opt,name=type"`
 }
 
+// Compute the next run. return nil if the schedule is disabled.
+func (schedule RunSchedule) NextRun() *metav1.Time {
+	if schedule.Enabled == nil || !*schedule.Enabled {
+		return nil
+	}
+	now := metav1.Now()
+	hour := now.Hour()
+	day := now.Day()
+	month := now.Month()
+	year := now.Year()
+
+	switch schedule.Type {
+	case TriggerScheduleEventTypeNow:
+		return &now
+	case TriggerScheduleEventTypeHourly:
+		nextTime := time.Date(year, month, day, hour+1, 0, 0, 0, now.Location())
+		next := metav1.NewTime(nextTime)
+		return &next
+	case TriggerScheduleEventTypeDaily:
+		nextTime := time.Date(year, month, day+1, 0, 0, 0, 0, now.Location())
+		next := metav1.NewTime(nextTime)
+		return &next
+	case TriggerScheduleEventTypeWeekly:
+		nextTime := time.Date(year, month, day+7, 0, 0, 0, 0, now.Location())
+		// roll back to monday
+		if wd := nextTime.Weekday(); wd == time.Sunday {
+			nextTime = nextTime.AddDate(0, 0, -6)
+		} else {
+			nextTime = nextTime.AddDate(0, 0, -int(wd)+1)
+		}
+		next := metav1.NewTime(nextTime)
+		return &next
+	case TriggerScheduleEventTypeMonthly:
+
+		if month == 12 {
+			nextTime := time.Date(year+1, 1, 1, 0, 0, 0, 0, now.Location())
+			next := metav1.NewTime(nextTime)
+			return &next
+		} else {
+			nextTime := time.Date(year, month+1, 1, 0, 0, 0, 0, now.Location())
+			next := metav1.NewTime(nextTime)
+			return &next
+		}
+	case TriggerScheduleEventTypeYearly:
+		nextTime := time.Date(year+1, 1, 1, 0, 0, 0, 0, now.Location())
+		next := metav1.NewTime(nextTime)
+		return &next
+	case TriggerScheduleEventTypeCron:
+		nextTime := cronexpr.MustParse(*schedule.Cron).Next(time.Now())
+		next := metav1.NewTime(nextTime)
+		return &next
+	}
+	return nil
+}
+
 type RunScheduleStatus struct {
+	// Last time the job was ended successfuly
+	// +kubebuilder:validation:Optional
+	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
 	// The time of the day when the schedule will be executed
 	// +kubebuilder:validation:Optional
 	NextRun *metav1.Time `json:"nextRun,omitempty" protobuf:"bytes,2,opt,name=nextRun"`
 	// The time when we started the action based on the schedule.
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,3,opt,name=startTime"`
-	// The time that we completed the action based on the schedule.
-	// +kubebuilder:validation:Optional
-	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,1,opt,name=endTime"`
+	CurrentStartTime *metav1.Time `json:"currentStartTime,omitempty" protobuf:"bytes,3,opt,name=currentStartTime"`
 	// The duration of the run in seconds
 	// +kubebuilder:validation:Optional
 	Duration int32 `json:"duration,omitempty" protobuf:"varint,4,opt,name=duration"`
@@ -1510,15 +1561,53 @@ type RunScheduleStatus struct {
 	LastRunLogs Logs `json:"logs,omitempty" protobuf:"bytes,7,opt,name=logs"`
 }
 
-func (runstatus RunScheduleStatus) ShouldStart() bool {
-	now := metav1.Now()
+// return true if the schedule started but not ended
+func (runstatus RunScheduleStatus) IsStarted() bool {
+	return runstatus.CurrentStartTime != nil
+}
+
+func (runstatus RunScheduleStatus) IsEnded() bool {
+	if runstatus.LastRun == nil || runstatus.NextRun == nil {
+		return false
+	}
+	return runstatus.LastRun.Before(runstatus.NextRun)
+
+}
+
+func (runstatus RunScheduleStatus) IsRunning() bool {
+	return runstatus.IsStarted() && !runstatus.IsEnded()
+}
+
+func (runstatus RunScheduleStatus) ShouldStartNextRun() bool {
 	if runstatus.NextRun == nil {
 		return true
 	}
-	if now.After(runstatus.NextRun.Time) && (runstatus.StartTime == nil || runstatus.StartTime.Before(runstatus.NextRun)) {
-		return true
+	if runstatus.IsRunning() {
+		return false
 	}
-	return false
+
+	now := metav1.Now()
+	return runstatus.NextRun.Time.Before(now.Time)
+}
+
+func (runstatus RunScheduleStatus) Init(nextRun metav1.Time) {
+	runstatus.NextRun = &nextRun
+	runstatus.CurrentStartTime = nil
+}
+
+func (runstatus RunScheduleStatus) RecordStart() {
+	if runstatus.CurrentStartTime == nil {
+		now := metav1.Now()
+		runstatus.CurrentStartTime = &now
+	}
+}
+
+func (runstatus RunScheduleStatus) RecordEnd() {
+	runstatus.CurrentStartTime = nil
+	if runstatus.LastRun == nil {
+		now := metav1.Now()
+		runstatus.LastRun = &now
+	}
 }
 
 // Measurement is a value for a specific metric

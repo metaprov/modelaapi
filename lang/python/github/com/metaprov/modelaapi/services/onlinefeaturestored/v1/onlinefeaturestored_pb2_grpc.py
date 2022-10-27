@@ -29,6 +29,11 @@ class OnlineFeatureStoreServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportResponse.FromString,
                 )
+        self.Push = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Push',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.PushRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.PushResponse.FromString,
+                )
 
 
 class OnlineFeatureStoreServiceServicer(object):
@@ -52,6 +57,12 @@ class OnlineFeatureStoreServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Push(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_OnlineFeatureStoreServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -69,6 +80,11 @@ def add_OnlineFeatureStoreServiceServicer_to_server(servicer, server):
                     servicer.Import,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportResponse.SerializeToString,
+            ),
+            'Push': grpc.unary_unary_rpc_method_handler(
+                    servicer.Push,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.PushRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.PushResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -128,5 +144,22 @@ class OnlineFeatureStoreService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Import',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Push(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Push',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.PushRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.PushResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -12,6 +12,7 @@ service OnlineFeatureStoreService {
     rpc OnlineGet(OnlineGetRequest)  returns (OnlineGetResponse)     {}
     rpc OnlineMultiGet(OnlineMultiGetRequest)  returns (OnlineMultiGetResponse)     {}
     rpc Import(ImportRequest)  returns (ImportResponse)     {}
+    rpc Push(PushRequest)  returns (PushResponse)     {}
 }
 
 message Value {
@@ -53,7 +54,22 @@ message ImportRequest {
 }
 
 message ImportResponse {
-    string key = 1;
-    repeated string features = 2;
+
 }
+
+message Row {
+    string key = 1;
+    map<string, Value> data= 2;
+}
+
+// Import data from a location to the online store.
+message PushRequest {
+    repeated Row rows = 1;
+}
+
+message PushResponse {
+
+}
+
+
 
