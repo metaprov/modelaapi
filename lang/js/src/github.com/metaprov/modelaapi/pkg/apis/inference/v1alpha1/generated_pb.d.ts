@@ -47,10 +47,10 @@ export class BackwardCurtainSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): BackwardCurtainSpec;
 
-  getCurtainref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setCurtainref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): BackwardCurtainSpec;
-  hasCurtainref(): boolean;
-  clearCurtainref(): BackwardCurtainSpec;
+  getAccountref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setAccountref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): BackwardCurtainSpec;
+  hasAccountref(): boolean;
+  clearAccountref(): BackwardCurtainSpec;
 
   getConfidencelow(): number;
   setConfidencelow(value: number): BackwardCurtainSpec;
@@ -69,7 +69,7 @@ export class BackwardCurtainSpec extends jspb.Message {
 export namespace BackwardCurtainSpec {
   export type AsObject = {
     enabled: boolean,
-    curtainref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    accountref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     confidencelow: number,
     confidencehigh: number,
   }
@@ -793,10 +793,10 @@ export class ForwardCurtainSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): ForwardCurtainSpec;
 
-  getCurtainref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setCurtainref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForwardCurtainSpec;
-  hasCurtainref(): boolean;
-  clearCurtainref(): ForwardCurtainSpec;
+  getAccountref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setAccountref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForwardCurtainSpec;
+  hasAccountref(): boolean;
+  clearAccountref(): ForwardCurtainSpec;
 
   getPercent(): number;
   setPercent(value: number): ForwardCurtainSpec;
@@ -812,7 +812,7 @@ export class ForwardCurtainSpec extends jspb.Message {
 export namespace ForwardCurtainSpec {
   export type AsObject = {
     enabled: boolean,
-    curtainref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    accountref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     percent: number,
   }
 }
@@ -1650,8 +1650,8 @@ export class PredictorSpec extends jspb.Message {
   hasProductref(): boolean;
   clearProductref(): PredictorSpec;
 
-  getType(): string;
-  setType(value: string): PredictorSpec;
+  getOnline(): boolean;
+  setOnline(value: boolean): PredictorSpec;
 
   getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorSpec;
@@ -1769,7 +1769,7 @@ export namespace PredictorSpec {
     modelclassname: string,
     description: string,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    type: string,
+    online: boolean,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
     progressive?: ProgressiveSpec.AsObject,
@@ -1858,11 +1858,6 @@ export class PredictorStatus extends jspb.Message {
   hasPredictionschedule(): boolean;
   clearPredictionschedule(): PredictorStatus;
 
-  getLastprediction(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastprediction(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorStatus;
-  hasLastprediction(): boolean;
-  clearLastprediction(): PredictorStatus;
-
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
   clearConditionsList(): PredictorStatus;
@@ -1892,7 +1887,6 @@ export namespace PredictorStatus {
     lastpredictiondataset?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingtestsresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     predictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
-    lastprediction?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }

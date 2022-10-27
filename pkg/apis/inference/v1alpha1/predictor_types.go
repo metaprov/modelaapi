@@ -196,9 +196,9 @@ type ForwardCurtainSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// The forward curtain receives prediction requests before the prediction (currently unimplemented)
+	// The user account of the forward ref
 	// +kubebuilder:validation:Optional
-	CurtainRef *v1.ObjectReference `json:"curtainRef,omitempty" protobuf:"bytes,2,opt,name=curtainRef"`
+	AccountRef *v1.ObjectReference `json:"accountRef,omitempty" protobuf:"bytes,2,opt,name=accountRef"`
 	// Percent of request that are sent to the foreward curtain.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
@@ -211,7 +211,7 @@ type BackwardCurtainSpec struct {
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The forward curtain receives prediction requests before the prediction (currently unimplemented)
 	// +kubebuilder:validation:Optional
-	CurtainRef *v1.ObjectReference `json:"curtainRef,omitempty" protobuf:"bytes,2,opt,name=curtainRef"`
+	AccountRef *v1.ObjectReference `json:"accountRef,omitempty" protobuf:"bytes,2,opt,name=accountRef"`
 	// For backward curtain is the confidence low
 	// +kubebuilder:validation:Optional
 	ConfidenceLow *float64 `json:"confidenceLow,omitempty" protobuf:"bytes,4,opt,name=confidenceLow"`
@@ -229,8 +229,9 @@ type PredictorConditionType string
 
 /// Predictor Condition
 const (
-	PredictorReady PredictorConditionType = "Ready"
-	PredictorSaved PredictorConditionType = "Saved"
+	PredictorReady        PredictorConditionType = "Ready"
+	PredictorSaved        PredictorConditionType = "Saved"
+	PredictorBatchPredict PredictorConditionType = "BatchPredict" // Batch Predicting
 )
 
 // PredictorCondition describes the state of a Predictor at a certain point
@@ -292,10 +293,10 @@ type PredictorSpec struct {
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The reference to the DataProduct that the resource exists under
 	ProductRef *v1.ObjectReference `json:"productRef" protobuf:"bytes,4,opt,name=productRef"`
-	// The type of predictor (online, batch, or streaming). Online is the only supported type as of the current release
-	// +kubebuilder:default:="online"
+	// If true, create an online predictor. else this predictor is only for batch predictions.
+	// +kubebuilder:default:="false"
 	// +kubebuilder:validation:Optional
-	Type *catalog.PredictorType `json:"type,omitempty" protobuf:"bytes,5,opt,name=type"`
+	Online *bool `json:"online" protobuf:"varint,5,opt,name=online"`
 	// If specified, the reference to the ServingSite resource that hosts the Predictor
 	// If not specified, the predictor will be hosted on the default serving site.
 	// +kubebuilder:validation:Optional
@@ -412,9 +413,6 @@ type PredictorStatus struct {
 	// The status for the batch prediction.
 	//+kubebuilder:validation:Optional
 	PredictionSchedule catalog.RunScheduleStatus `json:"predictionSchedule,omitempty" protobuf:"bytes,15,opt,name=predictionSchedule"`
-	// The last time we performed prediction
-	//+kubebuilder:validation:Optional
-	LastPrediction *metav1.Time `json:"lastPrediction,omitempty" protobuf:"bytes,16,opt,name=lastPrediction"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

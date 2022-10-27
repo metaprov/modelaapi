@@ -1464,7 +1464,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainS
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-    curtainref: (f = msg.getCurtainref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    accountref: (f = msg.getAccountref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     confidencelow: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
     confidencehigh: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f
   };
@@ -1510,7 +1510,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainS
     case 2:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setCurtainref(value);
+      msg.setAccountref(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readDouble());
@@ -1556,7 +1556,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainS
       f
     );
   }
-  f = message.getCurtainref();
+  f = message.getAccountref();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -1618,10 +1618,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainS
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference curtainRef = 2;
+ * optional k8s.io.api.core.v1.ObjectReference accountRef = 2;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainSpec.prototype.getCurtainref = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainSpec.prototype.getAccountref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
     jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
 };
@@ -1631,7 +1631,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainS
  * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainSpec.prototype.setCurtainref = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainSpec.prototype.setAccountref = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -1640,8 +1640,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainS
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainSpec.prototype.clearCurtainref = function() {
-  return this.setCurtainref(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainSpec.prototype.clearAccountref = function() {
+  return this.setAccountref(undefined);
 };
 
 
@@ -1649,7 +1649,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainSpec.prototype.hasCurtainref = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.BackwardCurtainSpec.prototype.hasAccountref = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -8096,7 +8096,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSp
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-    curtainref: (f = msg.getCurtainref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    accountref: (f = msg.getAccountref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     percent: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
@@ -8141,7 +8141,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSp
     case 2:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setCurtainref(value);
+      msg.setAccountref(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
@@ -8183,7 +8183,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSp
       f
     );
   }
-  f = message.getCurtainref();
+  f = message.getAccountref();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -8238,10 +8238,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSp
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference curtainRef = 2;
+ * optional k8s.io.api.core.v1.ObjectReference accountRef = 2;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSpec.prototype.getCurtainref = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSpec.prototype.getAccountref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
     jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
 };
@@ -8251,7 +8251,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSp
  * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSpec.prototype.setCurtainref = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSpec.prototype.setAccountref = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -8260,8 +8260,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSp
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSpec.prototype.clearCurtainref = function() {
-  return this.setCurtainref(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSpec.prototype.clearAccountref = function() {
+  return this.setAccountref(undefined);
 };
 
 
@@ -8269,7 +8269,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSpec.prototype.hasCurtainref = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForwardCurtainSpec.prototype.hasAccountref = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -15730,7 +15730,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.to
     modelclassname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     productref: (f = msg.getProductref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    type: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    online: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
     servingsiteref: (f = msg.getServingsiteref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     modelsList: jspb.Message.toObjectList(msg.getModelsList(),
     github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.toObject, includeInstance),
@@ -15808,8 +15808,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.de
       msg.setProductref(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setOnline(value);
       break;
     case 6:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
@@ -15975,9 +15975,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.se
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       5,
       f
     );
@@ -16303,19 +16303,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
 
 
 /**
- * optional string type = 5;
- * @return {string}
+ * optional bool online = 5;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getOnline = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setType = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setOnline = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -16324,7 +16324,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearOnline = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -16333,7 +16333,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasOnline = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -17204,7 +17204,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
     lastpredictiondataset: (f = msg.getLastpredictiondataset()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     servingtestsresults: (f = msg.getServingtestsresults()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
     predictionschedule: (f = msg.getPredictionschedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.toObject(includeInstance, f),
-    lastprediction: (f = msg.getLastprediction()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition.toObject, includeInstance)
   };
@@ -17308,11 +17307,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.deserializeBinaryFromReader);
       msg.setPredictionschedule(value);
-      break;
-    case 16:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastprediction(value);
       break;
     case 17:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition;
@@ -17454,14 +17448,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       15,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.serializeBinaryToWriter
-    );
-  }
-  f = message.getLastprediction();
-  if (f != null) {
-    writer.writeMessage(
-      16,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
   f = message.getConditionsList();
@@ -17988,43 +17974,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasPredictionschedule = function() {
   return jspb.Message.getField(this, 15) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPrediction = 16;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getLastprediction = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 16));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setLastprediction = function(value) {
-  return jspb.Message.setWrapperField(this, 16, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearLastprediction = function() {
-  return this.setLastprediction(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasLastprediction = function() {
-  return jspb.Message.getField(this, 16) != null;
 };
 
 

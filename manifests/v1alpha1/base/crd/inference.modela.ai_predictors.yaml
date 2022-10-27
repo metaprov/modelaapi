@@ -300,13 +300,7 @@ spec:
               backwardCurtain:
                 description: Backward curtain
                 properties:
-                  confidenceHigh:
-                    description: For backward curtain is the confidence high
-                    type: number
-                  confidenceLow:
-                    description: For backward curtain is the confidence low
-                    type: number
-                  curtainRef:
+                  accountRef:
                     description: The forward curtain receives prediction requests
                       before the prediction (currently unimplemented)
                     properties:
@@ -344,6 +338,12 @@ spec:
                         type: string
                     type: object
                     x-kubernetes-map-type: atomic
+                  confidenceHigh:
+                    description: For backward curtain is the confidence high
+                    type: number
+                  confidenceLow:
+                    description: For backward curtain is the confidence low
+                    type: number
                   enabled:
                     default: false
                     type: boolean
@@ -2224,9 +2224,8 @@ spec:
               forwardCurtain:
                 description: Forward curtain
                 properties:
-                  curtainRef:
-                    description: The forward curtain receives prediction requests
-                      before the prediction (currently unimplemented)
+                  accountRef:
+                    description: The user account of the forward ref
                     properties:
                       apiVersion:
                         description: API version of the referent.
@@ -2438,6 +2437,11 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
+              online:
+                default: "false"
+                description: If true, create an online predictor. else this predictor
+                  is only for batch predictions.
+                type: boolean
               owner:
                 default: no-one
                 description: The name of the Account which created the object, which
@@ -3097,15 +3101,6 @@ spec:
                 - unknown
                 - group-forecasting
                 type: string
-              type:
-                default: online
-                description: The type of predictor (online, batch, or streaming).
-                  Online is the only supported type as of the current release
-                enum:
-                - online
-                - batch
-                - streaming
-                type: string
               versionName:
                 default: ""
                 description: If specified, the name of the DataProductVersion which
@@ -3200,10 +3195,6 @@ spec:
                       type: string
                   type: object
                 type: array
-              lastPrediction:
-                description: The last time we performed prediction
-                format: date-time
-                type: string
               lastPredictionDataset:
                 description: The last time that a prediction dataset was created
                 properties:

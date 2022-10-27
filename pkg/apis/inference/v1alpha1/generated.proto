@@ -64,7 +64,7 @@ message BackwardCurtainSpec {
 
   // The forward curtain receives prediction requests before the prediction (currently unimplemented)
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference curtainRef = 2;
+  optional k8s.io.api.core.v1.ObjectReference accountRef = 2;
 
   // For backward curtain is the confidence low
   // +kubebuilder:validation:Optional
@@ -501,9 +501,9 @@ message ForwardCurtainSpec {
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // The forward curtain receives prediction requests before the prediction (currently unimplemented)
+  // The user account of the forward ref
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference curtainRef = 2;
+  optional k8s.io.api.core.v1.ObjectReference accountRef = 2;
 
   // Percent of request that are sent to the foreward curtain.
   // +kubebuilder:default:=0
@@ -1035,10 +1035,10 @@ message PredictorSpec {
   // The reference to the DataProduct that the resource exists under
   optional k8s.io.api.core.v1.ObjectReference productRef = 4;
 
-  // The type of predictor (online, batch, or streaming). Online is the only supported type as of the current release
-  // +kubebuilder:default:="online"
+  // If true, create an online predictor. else this predictor is only for batch predictions.
+  // +kubebuilder:default:="false"
   // +kubebuilder:validation:Optional
-  optional string type = 5;
+  optional bool online = 5;
 
   // If specified, the reference to the ServingSite resource that hosts the Predictor
   // If not specified, the predictor will be hosted on the default serving site.
@@ -1190,10 +1190,6 @@ message PredictorStatus {
   // The status for the batch prediction.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus predictionSchedule = 15;
-
-  // The last time we performed prediction
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPrediction = 16;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
