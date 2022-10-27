@@ -1452,10 +1452,6 @@ message ModelClassDataSpec {
   // Name of the target column
   // +kubebuilder:validation:Optional
   optional string target = 3;
-
-  // Feature store sync schedule. This will refresh the online store with the latest offline information.
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule syncSchedule = 4;
 }
 
 message ModelClassDeploymentSpec {
@@ -1469,6 +1465,7 @@ message ModelClassDeploymentSpec {
   optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 2;
 
   // Create an online predictor, if the model is used only for batch prediction, set this option to false.
+  // default is false.
   // +kubebuilder:validation:Optional
   optional bool online = 3;
 
@@ -1651,9 +1648,10 @@ message ModelClassTrainingSpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference labRef = 1;
 
-  // Template for study
+  // Define a reference to a study template. The study template will be the basis for training models
+  // From this model class.
   // +kubebuilder:validation:Optional
-  optional StudySpec study = 2;
+  optional string studyTemplateName = 2;
 
   // A template for models unit tests
   // +kubebuilder:validation:Optional

@@ -2074,11 +2074,6 @@ export class ModelClassDataSpec extends jspb.Message {
   getTarget(): string;
   setTarget(value: string): ModelClassDataSpec;
 
-  getSyncschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSyncschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassDataSpec;
-  hasSyncschedule(): boolean;
-  clearSyncschedule(): ModelClassDataSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassDataSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassDataSpec): ModelClassDataSpec.AsObject;
@@ -2092,7 +2087,6 @@ export namespace ModelClassDataSpec {
     entitiesList: Array<EntityRef.AsObject>,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     target: string,
-    syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
 
@@ -2408,10 +2402,8 @@ export class ModelClassTrainingSpec extends jspb.Message {
   hasLabref(): boolean;
   clearLabref(): ModelClassTrainingSpec;
 
-  getStudy(): StudySpec | undefined;
-  setStudy(value?: StudySpec): ModelClassTrainingSpec;
-  hasStudy(): boolean;
-  clearStudy(): ModelClassTrainingSpec;
+  getStudytemplatename(): string;
+  setStudytemplatename(value: string): ModelClassTrainingSpec;
 
   getModelunittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setModelunittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelClassTrainingSpec;
@@ -2445,7 +2437,7 @@ export class ModelClassTrainingSpec extends jspb.Message {
 export namespace ModelClassTrainingSpec {
   export type AsObject = {
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    study?: StudySpec.AsObject,
+    studytemplatename: string,
     modelunittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     modelimage?: ModelImageSpec.AsObject,

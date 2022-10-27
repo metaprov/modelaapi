@@ -132,9 +132,6 @@ type ModelClassDataSpec struct {
 	// Name of the target column
 	// +kubebuilder:validation:Optional
 	Target *string `json:"target,omitempty" protobuf:"bytes,3,opt,name=target"`
-	// Feature store sync schedule. This will refresh the online store with the latest offline information.
-	// +kubebuilder:validation:Optional
-	SyncSchedule catalog.RunSchedule `json:"syncSchedule,omitempty" protobuf:"bytes,4,opt,name=syncSchedule"`
 }
 
 // Specification for model training.
@@ -143,9 +140,10 @@ type ModelClassTrainingSpec struct {
 	// If unspecified, the default Lab from the parent DataProduct will be used
 	// +kubebuilder:validation:Optional
 	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,1,opt,name=labRef"`
-	// Template for study
+	// Define a reference to a study template. The study template will be the basis for training models
+	// From this model class.
 	// +kubebuilder:validation:Optional
-	Study StudySpec `json:"study,omitempty" protobuf:"bytes,2,opt,name=study"`
+	StudyTemplateName string `json:"studyTemplateName,omitempty" protobuf:"bytes,2,opt,name=studyTemplateName"`
 	// A template for models unit tests
 	// +kubebuilder:validation:Optional
 	ModelUnitTests catalog.TestSuite `json:"modelUnitTests,omitempty" protobuf:"bytes,3,opt,name=modelUnitTests"`
@@ -172,6 +170,7 @@ type ModelClassDeploymentSpec struct {
 	// +kubebuilder:validation:Optional
 	ServingSiteRef v1.ObjectReference `json:"servingSiteRef,omitempty" protobuf:"bytes,2,opt,name=servingSiteRef"`
 	// Create an online predictor, if the model is used only for batch prediction, set this option to false.
+	// default is false.
 	// +kubebuilder:validation:Optional
 	Online *bool `json:"online,omitempty" protobuf:"varint,3,opt,name=online"`
 	// Setup a dashboard for the predictor.
