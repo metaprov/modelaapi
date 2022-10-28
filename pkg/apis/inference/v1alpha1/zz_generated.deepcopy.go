@@ -1354,6 +1354,11 @@ func (in *PredictorSpec) DeepCopyInto(out *PredictorSpec) {
 		*out = new(v1.ObjectReference)
 		**out = **in
 	}
+	if in.Template != nil {
+		in, out := &in.Template, &out.Template
+		*out = new(bool)
+		**out = **in
+	}
 	if in.Online != nil {
 		in, out := &in.Online, &out.Online
 		*out = new(bool)
