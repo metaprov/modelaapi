@@ -698,7 +698,8 @@ message SyncOnlineStoreRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 6;
     map<string,bytes>                                                           dbSecret       = 7;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         model          = 8;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation   location   = 9;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup           fg          = 9;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation           location   = 10;
 }
 
 message SyncOnlineStoreResponse {

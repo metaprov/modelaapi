@@ -3188,6 +3188,11 @@ export class SyncOnlineStoreRequest extends jspb.Message {
   hasModel(): boolean;
   clearModel(): SyncOnlineStoreRequest;
 
+  getFg(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
+  setFg(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): SyncOnlineStoreRequest;
+  hasFg(): boolean;
+  clearFg(): SyncOnlineStoreRequest;
+
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): SyncOnlineStoreRequest;
   hasLocation(): boolean;
@@ -3211,6 +3216,7 @@ export namespace SyncOnlineStoreRequest {
     dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     dbsecretMap: Array<[string, Uint8Array | string]>,
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
+    fg?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }

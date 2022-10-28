@@ -26849,6 +26849,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.toOb
     dbconnection: (f = msg.getDbconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     dbsecretMap: (f = msg.getDbsecretMap()) ? f.toObject(includeInstance, undefined) : [],
     model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.toObject(includeInstance, f),
+    fg: (f = msg.getFg()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject(includeInstance, f),
     location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
@@ -26929,6 +26930,11 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.dese
       msg.setModel(value);
       break;
     case 9:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinaryFromReader);
+      msg.setFg(value);
+      break;
+    case 10:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
       msg.setLocation(value);
@@ -27018,10 +27024,18 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.seri
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.serializeBinaryToWriter
     );
   }
-  f = message.getLocation();
+  f = message.getFg();
   if (f != null) {
     writer.writeMessage(
       9,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.serializeBinaryToWriter
+    );
+  }
+  f = message.getLocation();
+  if (f != null) {
+    writer.writeMessage(
+      10,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
@@ -27296,12 +27310,49 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prot
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 9;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup fg = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getFg = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.setFg = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.clearFg = function() {
+  return this.setFg(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.hasFg = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 10;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.getLocation = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 9));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 10));
 };
 
 
@@ -27310,7 +27361,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prot
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.setLocation = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -27328,7 +27379,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.prototype.hasLocation = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
