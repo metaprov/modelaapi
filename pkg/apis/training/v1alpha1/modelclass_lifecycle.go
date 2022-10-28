@@ -157,9 +157,9 @@ func (mclass *ModelClass) MarkCreatedTrainingSet() {
 func (mclass *ModelClass) MarkCreatingTrainingSetFailed(err string) {
 	mclass.Status.Phase = ModelClassPhaseTrainingFailed
 	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:    ModelClassTrained,
+		Type:    ModelClassCreatedTrainingSet,
 		Status:  v1.ConditionFalse,
-		Reason:  ReasonTraining,
+		Reason:  ReasonCreatingTrainingSet,
 		Message: err,
 	})
 }
