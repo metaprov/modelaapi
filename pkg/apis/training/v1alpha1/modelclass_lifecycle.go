@@ -9,6 +9,7 @@ package v1alpha1
 import (
 	"fmt"
 	"github.com/dustin/go-humanize"
+	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	ctrl "sigs.k8s.io/controller-runtime"
 
 	"github.com/metaprov/modelaapi/pkg/apis/training"
@@ -223,4 +224,65 @@ func (mclass *ModelClass) MarkDrifted() {
 		Type:   ModelClassDrifted,
 		Status: v1.ConditionTrue,
 	})
+}
+
+func (mclass *ModelClass) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+	level := infra.Info
+	subject := fmt.Sprintf("model class %s completed successfully", mclass.Name)
+	result := &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: mclass.Name,
+			Namespace:    mclass.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject: util.StrPtr(subject),
+			Level:   &level,
+			EntityRef: v1.ObjectReference{
+				Kind:      "ModelClass",
+				Name:      mclass.Name,
+				Namespace: mclass.Namespace,
+			},
+			TenantRef:    tenantRef,
+			NotifierName: notifierName,
+			Owner:        mclass.Spec.Owner,
+			Fields: map[string]string{
+				"Start Time": mclass.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+			},
+		},
+	}
+	if mclass.Status.TrainingStatus.LastRun != nil {
+		result.Spec.Fields["Completion Time"] = mclass.Status.TrainingStatus.LastRun.Format("01/2/2006 15:04:05")
+	}
+	return result
+}
+
+func (mclass *ModelClass) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+	level := infra.Error
+	subject := fmt.Sprintf("Model Class %s failed with error %v", mclass.Name, err.Error())
+	result := &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: mclass.Name,
+			Namespace:    mclass.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject: util.StrPtr(subject),
+			Level:   &level,
+			EntityRef: v1.ObjectReference{
+				Kind:      "ModelClass",
+				Name:      mclass.Name,
+				Namespace: mclass.Namespace,
+			},
+			TenantRef:    tenantRef,
+			NotifierName: notifierName,
+			Owner:        mclass.Spec.Owner,
+			Fields: map[string]string{
+				"Start Time": mclass.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+			},
+		},
+	}
+	if mclass.Status.TrainingStatus.LastRun != nil {
+		result.Spec.Fields["Completion Time"] = mclass.Status.TrainingStatus.LastRun.Format("01/2/2006 15:04:05")
+	}
+
+	return result
 }
