@@ -19,6 +19,8 @@ const (
 	FeatureGroupPhaseOnlineDatasetGenerated  FeatureGroupPhase = "GeneratedOnlineDataset"
 	FeatureGroupPhaseSyncing                 FeatureGroupPhase = "Syncing"
 	FeatureGroupPhaseSynced                  FeatureGroupPhase = "Synced"
+	FeatureGroupPhaseIngesting               FeatureGroupPhase = "Ingesting"
+	FeatureGroupPhaseIngested                FeatureGroupPhase = "Ingested"
 	FeatureGroupPhaseFailed                  FeatureGroupPhase = "Failed"
 )
 
@@ -30,9 +32,10 @@ const (
 type FeatureGroupConditionType string
 
 const (
-	FeatureGroupReady  FeatureGroupConditionType = "Ready"
-	FeatureGroupSaved  FeatureGroupConditionType = "Saved"
-	FeatureGroupSynced FeatureGroupConditionType = "Sync"
+	FeatureGroupReady    FeatureGroupConditionType = "Ready"
+	FeatureGroupSaved    FeatureGroupConditionType = "Saved"
+	FeatureGroupSynced   FeatureGroupConditionType = "Sync"
+	FeatureGroupIngested FeatureGroupConditionType = "Ingested"
 )
 
 // FeatureGroupCondition describes the state of a deployment at a certain point.

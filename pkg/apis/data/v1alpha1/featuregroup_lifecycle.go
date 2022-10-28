@@ -64,6 +64,45 @@ func (fg FeatureGroup) IsIngestTime() bool {
 	return fg.Status.IngestSchedule.ShouldStartNextRun()
 }
 
+////////////////////////////////////////////////
+// Ingest
+////////////////////////////////////////////////
+func (fg *FeatureGroup) MarkIngesting() {
+	fg.Status.Phase = FeatureGroupPhaseIngesting
+	fg.CreateOrUpdateCond(FeatureGroupCondition{
+		Type:   FeatureGroupIngested,
+		Status: v1.ConditionFalse,
+		Reason: "Ingesting",
+	})
+}
+
+func (fg *FeatureGroup) MarkIngested() {
+	fg.Status.Phase = FeatureGroupPhaseIngested
+	fg.CreateOrUpdateCond(FeatureGroupCondition{
+		Type:   FeatureGroupIngested,
+		Status: v1.ConditionFalse,
+		Reason: "Ingested",
+	})
+	nextRun := fg.Spec.IngestSchedule.NextRun()
+	fg.Status.IngestSchedule.RecordEnd(*nextRun)
+}
+
+func (fg *FeatureGroup) MarkIngestFailed(msg string) {
+	fg.CreateOrUpdateCond(FeatureGroupCondition{
+		Type:    FeatureGroupIngested,
+		Status:  v1.ConditionFalse,
+		Reason:  string(FeatureGroupIngested),
+		Message: "Failed to ingest." + msg,
+	})
+	fg.Status.Phase = FeatureGroupPhaseFailed
+	fg.Status.IngestSchedule.FailureMessage = util.StrPtr(msg)
+	now := metav1.Now()
+	if fg.Status.IngestSchedule.LastRun == nil {
+		fg.Status.IngestSchedule.LastRun = &now
+	}
+
+}
+
 ///////////////////////////////////////////////
 // Sync
 //////////////////////////////////////////////
@@ -82,10 +121,8 @@ func (fg *FeatureGroup) MarkSynced() {
 		Type:   FeatureGroupSynced,
 		Status: v1.ConditionTrue,
 	})
-	now := metav1.Now()
-	if fg.Status.SyncSchedule.LastRun == nil {
-		fg.Status.SyncSchedule.LastRun = &now
-	}
+	nextRun := fg.Spec.SyncSchedule.NextRun()
+	fg.Status.SyncSchedule.RecordEnd(*nextRun)
 }
 
 func (fg *FeatureGroup) MarkSyncFailed(msg string) {

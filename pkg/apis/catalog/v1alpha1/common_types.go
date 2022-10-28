@@ -1604,12 +1604,13 @@ func (runstatus RunScheduleStatus) RecordStart() {
 	}
 }
 
-func (runstatus RunScheduleStatus) RecordEnd() {
+func (runstatus RunScheduleStatus) RecordEnd(nextRun metav1.Time) {
 	runstatus.CurrentStartTime = nil
 	if runstatus.LastRun == nil {
 		now := metav1.Now()
 		runstatus.LastRun = &now
 	}
+	runstatus.NextRun = &nextRun
 }
 
 // Measurement is a value for a specific metric
