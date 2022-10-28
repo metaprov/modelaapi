@@ -347,6 +347,7 @@ const (
 	ReasonPublishing              = "Publishing"
 	ReasonReleasing               = "Releasing"
 	ReasonPredicting              = "Predicting"
+	ReasonCreatingTrainingSet     = "CreatingTrainingSet"
 	ReasonTraining                = "Training"
 	ReasonSyncing                 = "Syncing"
 	ReasonGeneratingOnlineDataset = "GeneratingOnlineDataset"

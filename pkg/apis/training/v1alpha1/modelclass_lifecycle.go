@@ -128,19 +128,28 @@ func (mclass ModelClass) IsFailed() bool {
 ///////////////////////////////////////////////
 // Training
 //////////////////////////////////////////////
+
+func (mclass *ModelClass) StudyName() string {
+	return "study-" + mclass.Name
+}
+
+func (mclass *ModelClass) IsTrainingSetCreated() bool {
+	cond := mclass.GetCond(ModelClassCreatedTrainingSet)
+	return cond.Status == v1.ConditionFalse
+}
+
 func (mclass *ModelClass) MarkCreatingTrainingSet() {
-	mclass.Status.Phase = ModelClassPhaseTraining
+	mclass.Status.Phase = ModelClassPhasePreparingTrainingDataset
 	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassTrained,
+		Type:   ModelClassCreatedTrainingSet,
 		Status: v1.ConditionFalse,
-		Reason: ReasonTraining,
+		Reason: ReasonCreatingTrainingSet,
 	})
 }
 
 func (mclass *ModelClass) MarkCreatedTrainingSet() {
-	mclass.Status.Phase = ModelClassPhaseTrained
 	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassTrained,
+		Type:   ModelClassCreatedTrainingSet,
 		Status: v1.ConditionTrue,
 	})
 }

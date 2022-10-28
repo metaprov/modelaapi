@@ -34,6 +34,8 @@ const (
 	ModelClassReady ModelClassConditionType = "Ready"
 	// ModelClassSaved states that the ModelClass has been archived in a database
 	ModelClassSaved ModelClassConditionType = "Saved"
+	// State that we have created the training set
+	ModelClassCreatedTrainingSet ModelClassConditionType = "CreatedTrainingSet"
 	// ModelClassTrained states that the current model from the ModelClass has been trained
 	ModelClassTrained ModelClassConditionType = "Trained"
 	// ModelClassDeployed states that the latest model
