@@ -1434,10 +1434,11 @@ const (
 type FeatureStoreIngestType string
 
 const (
-	BatchIngestType   FeatureStoreIngestType = "batch"
-	StreamIngestType  FeatureStoreIngestType = "stream"
-	PushIngestType    FeatureStoreIngestType = "push"
-	RequestIngestType FeatureStoreIngestType = "request"
+	BatchIngestType    FeatureStoreIngestType = "batch"
+	StreamIngestType   FeatureStoreIngestType = "stream"
+	PushIngestType     FeatureStoreIngestType = "push"
+	RequestIngestType  FeatureStoreIngestType = "request"
+	OnDemandIngestType FeatureStoreIngestType = "ondemand"
 )
 
 //==============================================================================

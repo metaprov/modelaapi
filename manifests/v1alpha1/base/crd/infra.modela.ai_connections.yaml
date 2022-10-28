@@ -251,13 +251,14 @@ spec:
                 description: CassandraSpec defines the connection to cassandra
                 properties:
                   host:
-                    default: ""
                     type: string
                   keyspace:
-                    default: ""
+                    type: string
+                  loadBalancePolicy:
+                    type: string
+                  localDC:
                     type: string
                   password:
-                    default: ""
                     type: string
                   port:
                     default: 9042
@@ -265,12 +266,13 @@ spec:
                     maximum: 65535
                     minimum: 1
                     type: integer
+                  protocolVersion:
+                    type: string
                   url:
                     default: ""
                     description: URL override the other settings
                     type: string
                   username:
-                    default: ""
                     type: string
                 type: object
               category:
@@ -1050,6 +1052,9 @@ spec:
                     maximum: 65535
                     minimum: 1
                     type: integer
+                  schema:
+                    description: Schema
+                    type: string
                   url:
                     default: ""
                     description: URL override the other settings
@@ -1121,11 +1126,17 @@ spec:
                 type: object
               redshift:
                 properties:
+                  clusterID:
+                    description: redshift cluster id
+                    type: string
                   database:
                     default: ""
                     type: string
                   host:
                     default: ""
+                    type: string
+                  iamRole:
+                    description: IAM Role
                     type: string
                   password:
                     default: ""
@@ -1136,6 +1147,12 @@ spec:
                     maximum: 65535
                     minimum: 1
                     type: integer
+                  region:
+                    description: AWS Region
+                    type: string
+                  s3StagingLocation:
+                    description: s3 staging location
+                    type: string
                   url:
                     default: ""
                     description: URL Override the other
@@ -1312,6 +1329,9 @@ spec:
                     maximum: 65535
                     minimum: 1
                     type: integer
+                  role:
+                    default: ""
+                    type: string
                   schema:
                     default: ""
                     type: string

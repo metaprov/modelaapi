@@ -372,6 +372,14 @@ spec:
                       the DataLocation
                     type: string
                 type: object
+              maxEventTime:
+                description: For filtering
+                format: date-time
+                type: string
+              minEventTime:
+                description: For filtering
+                format: date-time
+                type: string
               modelClassName:
                 description: In case of training data, this is the model class name
                   that created it.
@@ -807,6 +815,11 @@ spec:
                     format: int32
                     type: integer
                 type: object
+              tags:
+                description: Tags attached to the dataset
+                items:
+                  type: string
+                type: array
               task:
                 description: The machine learning task relevant to the Dataset. This
                   field *must* be the same as the Data Source of the object

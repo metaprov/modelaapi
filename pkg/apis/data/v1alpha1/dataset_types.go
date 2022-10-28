@@ -131,24 +131,27 @@ type DatasetSpec struct {
 	// +kubebuilder:default:="training"
 	// +kubebuilder:validation:Optional
 	Role *DatasetRole `json:"role,omitempty" protobuf:"bytes,8,opt,name=role"`
+	// Tags attached to the dataset
+	// +kubebuilder:validation:Optional
+	Tags []string `json:"tags,omitempty" protobuf:"bytes,9,opt,name=tags"`
 	// Indicates if a PDF report containing the Dataset's profile should be generated
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"reported,omitempty" protobuf:"varint,9,opt,name=reported"`
+	Reported *bool `json:"reported,omitempty" protobuf:"varint,10,opt,name=reported"`
 	// Indicates if the resource controller has created a snapshot of the data in the case that it is being read
 	// directly from a database, and must be converted to a flat-file type such as a CSV as a result
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Snapshotted *bool `json:"snapshotted,omitempty" protobuf:"varint,10,opt,name=snapshotted"`
+	Snapshotted *bool `json:"snapshotted,omitempty" protobuf:"varint,11,opt,name=snapshotted"`
 	// Indicates if the Dataset should be checked against the validation rules of its Data Source
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	UnitTested *bool `json:"unitTested,omitempty" protobuf:"varint,11,opt,name=unitTested"`
+	UnitTested *bool `json:"unitTested,omitempty" protobuf:"varint,12,opt,name=unitTested"`
 	// Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
 	// created, the resource controller will retrieve the data from the location, validate it against its Data Source
 	// if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
 	// +kubebuilder:validation:Optional
-	Origin DataLocation `json:"origin,omitempty" protobuf:"bytes,12,opt,name=origin"`
+	Origin DataLocation `json:"origin,omitempty" protobuf:"bytes,13,opt,name=origin"`
 	// Location is the final location of the data which was copied from the `Origin` location during the ingestion phase.
 	// This field is set by the Dataset resource controller and should not be changed by any end-users
 	// +kubebuilder:validation:Required
@@ -219,6 +222,12 @@ type DatasetSpec struct {
 	// If this dataset represent a group in a multi series dataset, these are the values of the group key.
 	// +kubebuilder:validation:Optional
 	Key []string `json:"key,omitempty" protobuf:"bytes,33,rep,name=key"`
+	// For filtering
+	// +kubebuilder:validation:Optional
+	MinEventTime *metav1.Time `json:"minEventTime,omitempty" protobuf:"bytes,34,opt,name=minEventTime"`
+	// For filtering
+	// +kubebuilder:validation:Optional
+	MaxEventTime *metav1.Time `json:"maxEventTime,omitempty" protobuf:"bytes,35,opt,name=maxEventTime"`
 }
 
 // DatasetStatus defines the observed state of a Dataset object

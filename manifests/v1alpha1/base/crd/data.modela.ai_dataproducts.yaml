@@ -654,6 +654,11 @@ spec:
                 - image-segmentation
                 - none
                 type: string
+              tags:
+                description: Assign tags to data product
+                items:
+                  type: string
+                type: array
               task:
                 description: Task specifies the default machine learning task of the
                   product (classification, regression, etc.)

@@ -649,6 +649,11 @@ spec:
                     - cron
                     type: string
                 type: object
+              tags:
+                description: Tags for this feature groups
+                items:
+                  type: string
+                type: array
               unitTests:
                 description: Unit test to run on data from this feature group upon
                   ingrest.

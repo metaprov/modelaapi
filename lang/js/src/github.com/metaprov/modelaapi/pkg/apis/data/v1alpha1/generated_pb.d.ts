@@ -1481,6 +1481,11 @@ export class DataProductSpec extends jspb.Message {
   hasPermissions(): boolean;
   clearPermissions(): DataProductSpec;
 
+  getTagsList(): Array<string>;
+  setTagsList(value: Array<string>): DataProductSpec;
+  clearTagsList(): DataProductSpec;
+  addTags(value: string, index?: number): DataProductSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataProductSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataProductSpec): DataProductSpec.AsObject;
@@ -1514,6 +1519,7 @@ export namespace DataProductSpec {
     color: string,
     governance?: GovernanceSpec.AsObject,
     permissions?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.AsObject,
+    tagsList: Array<string>,
   }
 }
 
@@ -2176,6 +2182,11 @@ export class DatasetSpec extends jspb.Message {
   getRole(): string;
   setRole(value: string): DatasetSpec;
 
+  getTagsList(): Array<string>;
+  setTagsList(value: Array<string>): DatasetSpec;
+  clearTagsList(): DatasetSpec;
+  addTags(value: string, index?: number): DatasetSpec;
+
   getReported(): boolean;
   setReported(value: boolean): DatasetSpec;
 
@@ -2271,6 +2282,16 @@ export class DatasetSpec extends jspb.Message {
   clearKeyList(): DatasetSpec;
   addKey(value: string, index?: number): DatasetSpec;
 
+  getMineventtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setMineventtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetSpec;
+  hasMineventtime(): boolean;
+  clearMineventtime(): DatasetSpec;
+
+  getMaxeventtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setMaxeventtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetSpec;
+  hasMaxeventtime(): boolean;
+  clearMaxeventtime(): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -2289,6 +2310,7 @@ export namespace DatasetSpec {
     description: string,
     displayname: string,
     role: string,
+    tagsList: Array<string>,
     reported: boolean,
     snapshotted: boolean,
     unittested: boolean,
@@ -2312,6 +2334,8 @@ export namespace DatasetSpec {
     groupby?: GroupBySpec.AsObject,
     grouplocations?: GroupDatasetLocationsSpec.AsObject,
     keyList: Array<string>,
+    mineventtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    maxeventtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 
@@ -2647,6 +2671,11 @@ export class EntitySpec extends jspb.Message {
   getDatasourcename(): string;
   setDatasourcename(value: string): EntitySpec;
 
+  getTagsList(): Array<string>;
+  setTagsList(value: Array<string>): EntitySpec;
+  clearTagsList(): EntitySpec;
+  addTags(value: string, index?: number): EntitySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EntitySpec.AsObject;
   static toObject(includeInstance: boolean, msg: EntitySpec): EntitySpec.AsObject;
@@ -2662,6 +2691,7 @@ export namespace EntitySpec {
     joinkeysList: Array<string>,
     owner: string,
     datasourcename: string,
+    tagsList: Array<string>,
   }
 }
 
@@ -2875,6 +2905,11 @@ export class FeatureGroupSpec extends jspb.Message {
   getEntityname(): string;
   setEntityname(value: string): FeatureGroupSpec;
 
+  getTagsList(): Array<string>;
+  setTagsList(value: Array<string>): FeatureGroupSpec;
+  clearTagsList(): FeatureGroupSpec;
+  addTags(value: string, index?: number): FeatureGroupSpec;
+
   getFeaturesList(): Array<string>;
   setFeaturesList(value: Array<string>): FeatureGroupSpec;
   clearFeaturesList(): FeatureGroupSpec;
@@ -2925,6 +2960,7 @@ export namespace FeatureGroupSpec {
     description: string,
     ingesttype: string,
     entityname: string,
+    tagsList: Array<string>,
     featuresList: Array<string>,
     ingestschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,

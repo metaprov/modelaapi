@@ -97,29 +97,32 @@ type FeatureGroupSpec struct {
 	IngestType *catalog.FeatureStoreIngestType `json:"ingestType,omitempty" protobuf:"bytes,4,opt,name=ingestType"`
 	// A feature group must be part of an entity.
 	EntityName string `json:"entityName,omitempty" protobuf:"bytes,5,opt,name=entityName"`
+	// Tags for this feature groups
+	// +kubebuilder:validation:Optional
+	Tags []string `json:"tags,omitempty" protobuf:"bytes,6,opt,name=tags"`
 	// The features in the group.
 	// +kubebuilder:validation:Optional
-	Features []string `json:"features,omitempty" protobuf:"bytes,6,rep,name=features"`
+	Features []string `json:"features,omitempty" protobuf:"bytes,7,rep,name=features"`
 	// Schedule for running ingesting the data from the feature.
 	// On virtual features (e.g. where the data already reside in a table)
 	// The ingest will just perform feature profile, and run the feature group unit tests.
 	// +kubebuilder:validation:Optional
-	IngestSchedule catalog.RunSchedule `json:"ingestSchedule,omitempty" protobuf:"bytes,7,opt,name=ingestSchedule"`
+	IngestSchedule catalog.RunSchedule `json:"ingestSchedule,omitempty" protobuf:"bytes,8,opt,name=ingestSchedule"`
 	// Schedule to sync the feature group into the online store.
 	// +kubebuilder:validation:Optional
-	SyncSchedule catalog.RunSchedule `json:"syncSchedule,omitempty" protobuf:"bytes,8,opt,name=syncSchedule"`
+	SyncSchedule catalog.RunSchedule `json:"syncSchedule,omitempty" protobuf:"bytes,9,opt,name=syncSchedule"`
 	// The name of the data source which contain the schema for this entity
 	// +kubebuilder:validation:Optional
-	Schema Schema `json:"schema,omitempty" protobuf:"bytes,9,opt,name=schema"`
+	Schema Schema `json:"schema,omitempty" protobuf:"bytes,10,opt,name=schema"`
 	// Unit test to run on data from this feature group upon ingrest.
 	// +kubebuilder:validation:Optional
-	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,10,opt,name=unitTests"`
+	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,11,opt,name=unitTests"`
 	// Specify the data for this feature group
 	// +kubebuilder:validation:Optional
-	Data DataLocation `json:"data,omitempty" protobuf:"bytes,11,opt,name=data"`
+	Data DataLocation `json:"data,omitempty" protobuf:"bytes,12,opt,name=data"`
 	// Materialization
 	// +kubebuilder:validation:Optional
-	Materialization MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,12,opt,name=materialization"`
+	Materialization MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,14,opt,name=materialization"`
 }
 
 // FeatureStatus defines the observed state of Feature

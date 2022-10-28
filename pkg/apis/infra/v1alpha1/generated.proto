@@ -414,11 +414,22 @@ message AmazonRedShiftSpec {
   // URL Override the other
   // +kubebuilder:default:=""
   optional string url = 6;
+
+  // AWS Region
+  optional string region = 7;
+
+  // redshift cluster id
+  optional string clusterID = 8;
+
+  // s3 staging location
+  optional string s3StagingLocation = 9;
+
+  // IAM Role
+  optional string iamRole = 10;
 }
 
 // CassandraSpec defines the connection to cassandra
 message ApacheCassandraSpec {
-  // +kubebuilder:default:=""
   optional string host = 1;
 
   // +kubebuilder:default:= 9042
@@ -427,18 +438,21 @@ message ApacheCassandraSpec {
   // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
-  // +kubebuilder:default:=""
   optional string keyspace = 3;
 
-  // +kubebuilder:default:=""
   optional string username = 4;
 
-  // +kubebuilder:default:=""
   optional string password = 5;
+
+  optional string protocolVersion = 6;
+
+  optional string localDC = 7;
+
+  optional string loadBalancePolicy = 8;
 
   // URL override the other settings
   // +kubebuilder:default:=""
-  optional string url = 6;
+  optional string url = 9;
 }
 
 // ApacheDruid
@@ -2398,15 +2412,18 @@ message PostgresSQLSpec {
   // +kubebuilder:default:=""
   optional string database = 3;
 
-  // +kubebuilder:default:=""
-  optional string username = 4;
+  // Schema
+  optional string schema = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5;
+  optional string username = 5;
+
+  // +kubebuilder:default:=""
+  optional string password = 6;
 
   // URL override the other settings
   // +kubebuilder:default:=""
-  optional string url = 6;
+  optional string url = 7;
 }
 
 message PrestoSpec {
@@ -2848,8 +2865,11 @@ message SnowflakeSpec {
   // +kubebuilder:default:=""
   optional string warehouse = 7;
 
+  // +kubebuilder:default:=""
+  optional string role = 8;
+
   // URL Override the other
-  optional string url = 8;
+  optional string url = 9;
 }
 
 message SqliteSpec {

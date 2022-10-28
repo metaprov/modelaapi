@@ -73,6 +73,11 @@ spec:
                 description: Owner of this Entity
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
+              tags:
+                description: Tags for this feature groups
+                items:
+                  type: string
+                type: array
               versionName:
                 default: ""
                 description: The product version of the entity

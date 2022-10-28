@@ -583,6 +583,18 @@ export class AmazonRedShiftSpec extends jspb.Message {
   getUrl(): string;
   setUrl(value: string): AmazonRedShiftSpec;
 
+  getRegion(): string;
+  setRegion(value: string): AmazonRedShiftSpec;
+
+  getClusterid(): string;
+  setClusterid(value: string): AmazonRedShiftSpec;
+
+  getS3staginglocation(): string;
+  setS3staginglocation(value: string): AmazonRedShiftSpec;
+
+  getIamrole(): string;
+  setIamrole(value: string): AmazonRedShiftSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AmazonRedShiftSpec.AsObject;
   static toObject(includeInstance: boolean, msg: AmazonRedShiftSpec): AmazonRedShiftSpec.AsObject;
@@ -599,6 +611,10 @@ export namespace AmazonRedShiftSpec {
     username: string,
     password: string,
     url: string,
+    region: string,
+    clusterid: string,
+    s3staginglocation: string,
+    iamrole: string,
   }
 }
 
@@ -618,6 +634,15 @@ export class ApacheCassandraSpec extends jspb.Message {
   getPassword(): string;
   setPassword(value: string): ApacheCassandraSpec;
 
+  getProtocolversion(): string;
+  setProtocolversion(value: string): ApacheCassandraSpec;
+
+  getLocaldc(): string;
+  setLocaldc(value: string): ApacheCassandraSpec;
+
+  getLoadbalancepolicy(): string;
+  setLoadbalancepolicy(value: string): ApacheCassandraSpec;
+
   getUrl(): string;
   setUrl(value: string): ApacheCassandraSpec;
 
@@ -636,6 +661,9 @@ export namespace ApacheCassandraSpec {
     keyspace: string,
     username: string,
     password: string,
+    protocolversion: string,
+    localdc: string,
+    loadbalancepolicy: string,
     url: string,
   }
 }
@@ -4196,6 +4224,9 @@ export class PostgresSQLSpec extends jspb.Message {
   getDatabase(): string;
   setDatabase(value: string): PostgresSQLSpec;
 
+  getSchema(): string;
+  setSchema(value: string): PostgresSQLSpec;
+
   getUsername(): string;
   setUsername(value: string): PostgresSQLSpec;
 
@@ -4218,6 +4249,7 @@ export namespace PostgresSQLSpec {
     host: string,
     port: number,
     database: string,
+    schema: string,
     username: string,
     password: string,
     url: string,
@@ -4948,6 +4980,9 @@ export class SnowflakeSpec extends jspb.Message {
   getWarehouse(): string;
   setWarehouse(value: string): SnowflakeSpec;
 
+  getRole(): string;
+  setRole(value: string): SnowflakeSpec;
+
   getUrl(): string;
   setUrl(value: string): SnowflakeSpec;
 
@@ -4968,6 +5003,7 @@ export namespace SnowflakeSpec {
     database: string,
     schema: string,
     warehouse: string,
+    role: string,
     url: string,
   }
 }

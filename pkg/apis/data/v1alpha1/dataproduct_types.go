@@ -181,6 +181,9 @@ type DataProductSpec struct {
 	// can access the DataProduct and what actions they can perform
 	// +kubebuilder:validation:Optional
 	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,24,opt,name=permissions"`
+	// Assign tags to data product
+	// +kubebuilder:validation:Optional
+	Tags []string `json:"tags,omitempty" protobuf:"bytes,25,opt,name=tags"`
 }
 
 // DataProductStatus defines the observed state of DataProduct

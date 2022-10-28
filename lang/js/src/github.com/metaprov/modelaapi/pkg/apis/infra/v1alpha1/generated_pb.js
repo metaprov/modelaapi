@@ -8962,7 +8962,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.t
     database: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     username: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     password: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    url: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+    url: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    region: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    clusterid: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    s3staginglocation: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    iamrole: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9022,6 +9026,22 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.d
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setUrl(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRegion(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setClusterid(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setS3staginglocation(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setIamrole(value);
       break;
     default:
       reader.skipField();
@@ -9091,6 +9111,34 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.s
   if (f != null) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -9313,6 +9361,150 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.p
 };
 
 
+/**
+ * optional string region = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.prototype.getRegion = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.prototype.setRegion = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.prototype.clearRegion = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.prototype.hasRegion = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional string clusterID = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.prototype.getClusterid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.prototype.setClusterid = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.prototype.clearClusterid = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.prototype.hasClusterid = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional string s3StagingLocation = 9;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.prototype.getS3staginglocation = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.prototype.setS3staginglocation = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.prototype.clearS3staginglocation = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.prototype.hasS3staginglocation = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional string iamRole = 10;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.prototype.getIamrole = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.prototype.setIamrole = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.prototype.clearIamrole = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.prototype.hasIamrole = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
 
 
 
@@ -9350,7 +9542,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.
     keyspace: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     username: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     password: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    url: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+    protocolversion: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    localdc: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    loadbalancepolicy: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    url: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9408,6 +9603,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.
       msg.setPassword(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProtocolversion(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLocaldc(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLoadbalancepolicy(value);
+      break;
+    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setUrl(value);
       break;
@@ -9479,6 +9686,27 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.
   if (f != null) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -9666,10 +9894,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.
 
 
 /**
- * optional string url = 6;
+ * optional string protocolVersion = 6;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.getUrl = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.getProtocolversion = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -9678,7 +9906,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.setUrl = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.setProtocolversion = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -9687,7 +9915,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.clearUrl = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.clearProtocolversion = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -9696,8 +9924,116 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.hasUrl = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.hasProtocolversion = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string localDC = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.getLocaldc = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.setLocaldc = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.clearLocaldc = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.hasLocaldc = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional string loadBalancePolicy = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.getLoadbalancepolicy = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.setLoadbalancepolicy = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.clearLoadbalancepolicy = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.hasLoadbalancepolicy = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional string url = 9;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.setUrl = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.clearUrl = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.prototype.hasUrl = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -42622,9 +42958,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.toOb
     host: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     port: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     database: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    username: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    password: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    url: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+    schema: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    username: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    password: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    url: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -42675,13 +43012,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.dese
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUsername(value);
+      msg.setSchema(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPassword(value);
+      msg.setUsername(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPassword(value);
+      break;
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setUrl(value);
       break;
@@ -42753,6 +43094,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.seri
   if (f != null) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -42868,10 +43216,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prot
 
 
 /**
- * optional string username = 4;
+ * optional string schema = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.getUsername = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.getSchema = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -42880,7 +43228,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.setUsername = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.setSchema = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -42889,7 +43237,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.clearUsername = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.clearSchema = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -42898,16 +43246,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.hasUsername = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.hasSchema = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string password = 5;
+ * optional string username = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.getPassword = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.getUsername = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -42916,7 +43264,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.setPassword = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.setUsername = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -42925,7 +43273,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.clearPassword = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.clearUsername = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -42934,16 +43282,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.hasPassword = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.hasUsername = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional string url = 6;
+ * optional string password = 6;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.getUrl = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.getPassword = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -42952,7 +43300,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.setUrl = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.setPassword = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -42961,7 +43309,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.clearUrl = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.clearPassword = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -42970,8 +43318,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.hasUrl = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.hasPassword = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string url = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.setUrl = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.clearUrl = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.prototype.hasUrl = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -49796,7 +50180,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.toObje
     database: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     schema: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     warehouse: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    url: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
+    role: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    url: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -49862,6 +50247,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.deseri
       msg.setWarehouse(value);
       break;
     case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRole(value);
+      break;
+    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setUrl(value);
       break;
@@ -49947,6 +50336,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.serial
   if (f != null) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -50206,10 +50602,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
 
 
 /**
- * optional string url = 8;
+ * optional string role = 8;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.getUrl = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.getRole = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -50218,7 +50614,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.setUrl = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.setRole = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
@@ -50227,7 +50623,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.clearUrl = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.clearRole = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -50236,8 +50632,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.hasUrl = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.hasRole = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional string url = 9;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.setUrl = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.clearUrl = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.hasUrl = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 

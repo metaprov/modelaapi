@@ -367,22 +367,27 @@ type GcpBigQuerySpec struct {
 
 // CassandraSpec defines the connection to cassandra
 type ApacheCassandraSpec struct {
-	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default:= 9042
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=65535
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
-	// +kubebuilder:default:=""
+
 	KeySpace *string `json:"keyspace,omitempty" protobuf:"bytes,3,opt,name=keyspace"`
-	// +kubebuilder:default:=""
+
 	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
-	// +kubebuilder:default:=""
+
 	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+
+	ProtocolVersion *string `json:"protocolVersion,omitempty" protobuf:"bytes,6,opt,name=protocolVersion"`
+
+	LocalDC *string `json:"localDC,omitempty" protobuf:"bytes,7,opt,name=localDC"`
+
+	LoadBalancePolicy *string `json:"loadBalancePolicy,omitempty" protobuf:"bytes,8,opt,name=loadBalancePolicy"`
 	// URL override the other settings
 	// +kubebuilder:default:=""
-	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+	URL *string `json:"url,omitempty" protobuf:"bytes,9,opt,name=url"`
 }
 
 // ApacheDruid defines the connection to Apache Druid
@@ -509,13 +514,15 @@ type PostgresSQLSpec struct {
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	// Schema
+	Schema *string `json:"schema,omitempty" protobuf:"bytes,4,opt,name=schema"`
 	// +kubebuilder:default:=""
-	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,5,opt,name=username"`
 	// +kubebuilder:default:=""
-	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	Password *string `json:"password,omitempty" protobuf:"bytes,6,opt,name=password"`
 	// URL override the other settings
 	// +kubebuilder:default:=""
-	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+	URL *string `json:"url,omitempty" protobuf:"bytes,7,opt,name=url"`
 }
 
 type PrestoSpec struct {
@@ -554,6 +561,14 @@ type AmazonRedShiftSpec struct {
 	// URL Override the other
 	// +kubebuilder:default:=""
 	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+	// AWS Region
+	Region string `json:"region,omitempty" protobuf:"bytes,7,opt,name=region"`
+	// redshift cluster id
+	ClusterID string `json:"clusterID,omitempty" protobuf:"bytes,8,opt,name=clusterID"`
+	// s3 staging location
+	S3StagingLocation string `json:"s3StagingLocation,omitempty" protobuf:"bytes,9,opt,name=s3StagingLocation"`
+	// IAM Role
+	IAMRole string `json:"iamRole,omitempty" protobuf:"bytes,10,opt,name=iamRole"`
 }
 
 type ApacheHiveSpec struct {
@@ -590,8 +605,10 @@ type SnowflakeSpec struct {
 	Schema *string `json:"schema,omitempty" protobuf:"bytes,6,opt,name=schema"`
 	// +kubebuilder:default:=""
 	Warehouse *string `json:"warehouse,omitempty" protobuf:"bytes,7,opt,name=warehouse"`
+	// +kubebuilder:default:=""
+	Role *string `json:"role,omitempty" protobuf:"bytes,8,opt,name=role"`
 	// URL Override the other
-	URL *string `json:"url,omitempty" protobuf:"bytes,8,opt,name=url"`
+	URL *string `json:"url,omitempty" protobuf:"bytes,9,opt,name=url"`
 }
 
 type SybaseSpec struct {

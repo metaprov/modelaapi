@@ -1180,6 +1180,10 @@ message DataProductSpec {
   // can access the DataProduct and what actions they can perform
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 24;
+
+  // Assign tags to data product
+  // +kubebuilder:validation:Optional
+  repeated string tags = 25;
 }
 
 // DataProductStatus defines the observed state of DataProduct
@@ -1643,27 +1647,31 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional string role = 8;
 
+  // Tags attached to the dataset
+  // +kubebuilder:validation:Optional
+  repeated string tags = 9;
+
   // Indicates if a PDF report containing the Dataset's profile should be generated
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool reported = 9;
+  optional bool reported = 10;
 
   // Indicates if the resource controller has created a snapshot of the data in the case that it is being read
   // directly from a database, and must be converted to a flat-file type such as a CSV as a result
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool snapshotted = 10;
+  optional bool snapshotted = 11;
 
   // Indicates if the Dataset should be checked against the validation rules of its Data Source
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool unitTested = 11;
+  optional bool unitTested = 12;
 
   // Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
   // created, the resource controller will retrieve the data from the location, validate it against its Data Source
   // if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
   // +kubebuilder:validation:Optional
-  optional DataLocation origin = 12;
+  optional DataLocation origin = 13;
 
   // Location is the final location of the data which was copied from the `Origin` location during the ingestion phase.
   // This field is set by the Dataset resource controller and should not be changed by any end-users
@@ -1753,6 +1761,14 @@ message DatasetSpec {
   // If this dataset represent a group in a multi series dataset, these are the values of the group key.
   // +kubebuilder:validation:Optional
   repeated string key = 33;
+
+  // For filtering
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time minEventTime = 34;
+
+  // For filtering
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time maxEventTime = 35;
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The
@@ -1974,6 +1990,10 @@ message EntitySpec {
 
   // +kubebuilder:validation:Optional
   optional string datasourceName = 6;
+
+  // Tags for this feature groups
+  // +kubebuilder:validation:Optional
+  repeated string tags = 7;
 }
 
 // EntityStatus defines the observed state of Entity
@@ -2108,35 +2128,39 @@ message FeatureGroupSpec {
   // A feature group must be part of an entity.
   optional string entityName = 5;
 
+  // Tags for this feature groups
+  // +kubebuilder:validation:Optional
+  repeated string tags = 6;
+
   // The features in the group.
   // +kubebuilder:validation:Optional
-  repeated string features = 6;
+  repeated string features = 7;
 
   // Schedule for running ingesting the data from the feature.
   // On virtual features (e.g. where the data already reside in a table)
   // The ingest will just perform feature profile, and run the feature group unit tests.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule ingestSchedule = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule ingestSchedule = 8;
 
   // Schedule to sync the feature group into the online store.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule syncSchedule = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule syncSchedule = 9;
 
   // The name of the data source which contain the schema for this entity
   // +kubebuilder:validation:Optional
-  optional Schema schema = 9;
+  optional Schema schema = 10;
 
   // Unit test to run on data from this feature group upon ingrest.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 10;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 11;
 
   // Specify the data for this feature group
   // +kubebuilder:validation:Optional
-  optional DataLocation data = 11;
+  optional DataLocation data = 12;
 
   // Materialization
   // +kubebuilder:validation:Optional
-  optional MaterializationSpec materialization = 12;
+  optional MaterializationSpec materialization = 14;
 }
 
 // FeatureStatus defines the observed state of Feature
