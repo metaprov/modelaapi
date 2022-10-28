@@ -25,6 +25,8 @@ var github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb = require
 goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb);
 var github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb);
+var github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb.js');
+goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest', null, global);
@@ -694,7 +696,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value.protot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.repeatedFields_ = [2];
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.repeatedFields_ = [3];
 
 
 
@@ -727,8 +729,9 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetReq
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    featuresList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+    modelclass: (f = msg.getModelclass()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.toObject(includeInstance, f),
+    key: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    featuresList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -766,10 +769,15 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetReq
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.deserializeBinaryFromReader);
+      msg.setModelclass(value);
+      break;
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setKey(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.addFeatures(value);
       break;
@@ -802,17 +810,25 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetReq
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getModelclass();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.serializeBinaryToWriter
+    );
+  }
   f = message.getKey();
   if (f.length > 0) {
     writer.writeString(
-      1,
+      2,
       f
     );
   }
   f = message.getFeaturesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      2,
+      3,
       f
     );
   }
@@ -820,11 +836,48 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetReq
 
 
 /**
- * optional string key = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass}
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.prototype.getModelclass = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.prototype.setModelclass = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.prototype.clearModelclass = function() {
+  return this.setModelclass(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.prototype.hasModelclass = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string key = 2;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.prototype.getKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -833,16 +886,16 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetReq
  * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest} returns this
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.prototype.setKey = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * repeated string features = 2;
+ * repeated string features = 3;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.prototype.getFeaturesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
@@ -851,7 +904,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetReq
  * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest} returns this
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.prototype.setFeaturesList = function(value) {
-  return jspb.Message.setField(this, 2, value || []);
+  return jspb.Message.setField(this, 3, value || []);
 };
 
 
@@ -861,7 +914,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetReq
  * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest} returns this
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.prototype.addFeatures = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
@@ -1013,7 +1066,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRes
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.repeatedFields_ = [1,2];
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.repeatedFields_ = [2];
 
 
 
@@ -1046,8 +1099,8 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiG
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    keyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    featuresList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+    modelclass: (f = msg.getModelclass()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.toObject(includeInstance, f),
+    keyList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1085,12 +1138,13 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiG
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addKey(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.deserializeBinaryFromReader);
+      msg.setModelclass(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.addFeatures(value);
+      msg.addKey(value);
       break;
     default:
       reader.skipField();
@@ -1121,14 +1175,15 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiG
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getKeyList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
+  f = message.getModelclass();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.serializeBinaryToWriter
     );
   }
-  f = message.getFeaturesList();
+  f = message.getKeyList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       2,
@@ -1139,47 +1194,47 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiG
 
 
 /**
- * repeated string key = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass}
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.prototype.getModelclass = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.prototype.setModelclass = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.prototype.clearModelclass = function() {
+  return this.setModelclass(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.prototype.hasModelclass = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated string key = 2;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.prototype.getKeyList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.prototype.setKeyList = function(value) {
-  return jspb.Message.setField(this, 1, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.prototype.addKey = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.prototype.clearKeyList = function() {
-  return this.setKeyList([]);
-};
-
-
-/**
- * repeated string features = 2;
- * @return {!Array<string>}
- */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.prototype.getFeaturesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
@@ -1188,7 +1243,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiG
  * @param {!Array<string>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.prototype.setFeaturesList = function(value) {
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.prototype.setKeyList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
 
@@ -1198,7 +1253,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiG
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.prototype.addFeatures = function(value, opt_index) {
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.prototype.addKey = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
@@ -1207,8 +1262,8 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiG
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.prototype.clearFeaturesList = function() {
-  return this.setFeaturesList([]);
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest.prototype.clearKeyList = function() {
+  return this.setKeyList([]);
 };
 
 
@@ -1244,7 +1299,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiG
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultMap: (f = msg.getResultMap()) ? f.toObject(includeInstance, proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value.toObject) : []
+    resultMap: (f = msg.getResultMap()) ? f.toObject(includeInstance, proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.toObject) : []
   };
 
   if (includeInstance) {
@@ -1284,7 +1339,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiG
     case 1:
       var value = msg.getResultMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value.deserializeBinaryFromReader, "", new proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.deserializeBinaryFromReader, "", new proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row());
          });
       break;
     default:
@@ -1318,21 +1373,21 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiG
   var f = undefined;
   f = message.getResultMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value.serializeBinaryToWriter);
+    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.serializeBinaryToWriter);
   }
 };
 
 
 /**
- * map<string, Value> result = 1;
+ * map<string, Row> result = 1;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value>}
+ * @return {!jspb.Map<string,!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row>}
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetResponse.prototype.getResultMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value>} */ (
+  return /** @type {!jspb.Map<string,!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row>} */ (
       jspb.Message.getMapField(this, 1, opt_noLazyCreate,
-      proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value));
+      proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row));
 };
 
 
@@ -1377,6 +1432,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportReques
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
+    modelclass: (f = msg.getModelclass()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.toObject(includeInstance, f),
     location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
@@ -1415,6 +1471,11 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportReques
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.deserializeBinaryFromReader);
+      msg.setModelclass(value);
+      break;
+    case 2:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
       msg.setLocation(value);
@@ -1448,10 +1509,18 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportReques
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLocation();
+  f = message.getModelclass();
   if (f != null) {
     writer.writeMessage(
       1,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.serializeBinaryToWriter
+    );
+  }
+  f = message.getLocation();
+  if (f != null) {
+    writer.writeMessage(
+      2,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
@@ -1460,12 +1529,49 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportReques
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass}
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportRequest.prototype.getModelclass = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportRequest.prototype.setModelclass = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportRequest.prototype.clearModelclass = function() {
+  return this.setModelclass(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportRequest.prototype.hasModelclass = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 2;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportRequest.prototype.getLocation = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 1));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 2));
 };
 
 
@@ -1474,7 +1580,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportReques
  * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportRequest.prototype.setLocation = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -1492,7 +1598,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportReques
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportRequest.prototype.hasLocation = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -1766,7 +1872,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.prototyp
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.repeatedFields_ = [1];
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.repeatedFields_ = [2];
 
 
 
@@ -1799,6 +1905,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
+    modelclass: (f = msg.getModelclass()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.toObject(includeInstance, f),
     rowsList: jspb.Message.toObjectList(msg.getRowsList(),
     proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.toObject, includeInstance)
   };
@@ -1838,6 +1945,11 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.deserializeBinaryFromReader);
+      msg.setModelclass(value);
+      break;
+    case 2:
       var value = new proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.deserializeBinaryFromReader);
       msg.addRows(value);
@@ -1871,10 +1983,18 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getModelclass();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.serializeBinaryToWriter
+    );
+  }
   f = message.getRowsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      2,
       f,
       proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.serializeBinaryToWriter
     );
@@ -1883,12 +2003,49 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.
 
 
 /**
- * repeated Row rows = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass}
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.prototype.getModelclass = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.prototype.setModelclass = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.prototype.clearModelclass = function() {
+  return this.setModelclass(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.prototype.hasModelclass = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated Row rows = 2;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row>}
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.prototype.getRowsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row, 1));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row, 2));
 };
 
 
@@ -1897,7 +2054,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.
  * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.prototype.setRowsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -1907,7 +2064,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.
  * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row}
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.prototype.addRows = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row, opt_index);
 };
 
 

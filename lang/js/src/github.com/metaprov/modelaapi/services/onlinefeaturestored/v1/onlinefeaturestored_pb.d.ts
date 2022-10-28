@@ -2,6 +2,7 @@ import * as jspb from 'google-protobuf'
 
 import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb';
 
 
 export class Value extends jspb.Message {
@@ -57,6 +58,11 @@ export namespace Value {
 }
 
 export class OnlineGetRequest extends jspb.Message {
+  getModelclass(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass | undefined;
+  setModelclass(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass): OnlineGetRequest;
+  hasModelclass(): boolean;
+  clearModelclass(): OnlineGetRequest;
+
   getKey(): string;
   setKey(value: string): OnlineGetRequest;
 
@@ -75,6 +81,7 @@ export class OnlineGetRequest extends jspb.Message {
 
 export namespace OnlineGetRequest {
   export type AsObject = {
+    modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
     key: string,
     featuresList: Array<string>,
   }
@@ -99,15 +106,15 @@ export namespace OnlineGetResponse {
 }
 
 export class OnlineMultiGetRequest extends jspb.Message {
+  getModelclass(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass | undefined;
+  setModelclass(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass): OnlineMultiGetRequest;
+  hasModelclass(): boolean;
+  clearModelclass(): OnlineMultiGetRequest;
+
   getKeyList(): Array<string>;
   setKeyList(value: Array<string>): OnlineMultiGetRequest;
   clearKeyList(): OnlineMultiGetRequest;
   addKey(value: string, index?: number): OnlineMultiGetRequest;
-
-  getFeaturesList(): Array<string>;
-  setFeaturesList(value: Array<string>): OnlineMultiGetRequest;
-  clearFeaturesList(): OnlineMultiGetRequest;
-  addFeatures(value: string, index?: number): OnlineMultiGetRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OnlineMultiGetRequest.AsObject;
@@ -119,13 +126,13 @@ export class OnlineMultiGetRequest extends jspb.Message {
 
 export namespace OnlineMultiGetRequest {
   export type AsObject = {
+    modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
     keyList: Array<string>,
-    featuresList: Array<string>,
   }
 }
 
 export class OnlineMultiGetResponse extends jspb.Message {
-  getResultMap(): jspb.Map<string, Value>;
+  getResultMap(): jspb.Map<string, Row>;
   clearResultMap(): OnlineMultiGetResponse;
 
   serializeBinary(): Uint8Array;
@@ -138,11 +145,16 @@ export class OnlineMultiGetResponse extends jspb.Message {
 
 export namespace OnlineMultiGetResponse {
   export type AsObject = {
-    resultMap: Array<[string, Value.AsObject]>,
+    resultMap: Array<[string, Row.AsObject]>,
   }
 }
 
 export class ImportRequest extends jspb.Message {
+  getModelclass(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass | undefined;
+  setModelclass(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass): ImportRequest;
+  hasModelclass(): boolean;
+  clearModelclass(): ImportRequest;
+
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ImportRequest;
   hasLocation(): boolean;
@@ -158,6 +170,7 @@ export class ImportRequest extends jspb.Message {
 
 export namespace ImportRequest {
   export type AsObject = {
+    modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
@@ -199,6 +212,11 @@ export namespace Row {
 }
 
 export class PushRequest extends jspb.Message {
+  getModelclass(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass | undefined;
+  setModelclass(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass): PushRequest;
+  hasModelclass(): boolean;
+  clearModelclass(): PushRequest;
+
   getRowsList(): Array<Row>;
   setRowsList(value: Array<Row>): PushRequest;
   clearRowsList(): PushRequest;
@@ -214,6 +232,7 @@ export class PushRequest extends jspb.Message {
 
 export namespace PushRequest {
   export type AsObject = {
+    modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
     rowsList: Array<Row.AsObject>,
   }
 }

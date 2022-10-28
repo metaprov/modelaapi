@@ -5,6 +5,7 @@ package github.com.metaprov.modelaapi.services.onlinefeaturestored.v1;
 
 import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
 
 
 
@@ -28,8 +29,9 @@ message Value {
 
 // For real time infernece, ask the store for one row features
 message OnlineGetRequest {
-    string key = 1;
-    repeated string features = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass= 1;
+    string key = 2;
+    repeated string features = 3;
 }
 
 // Answer one row
@@ -39,18 +41,19 @@ message OnlineGetResponse {
 
 // For real time inference, ask the store for multple rows.
 message OnlineMultiGetRequest {
-    repeated string key = 1;
-    repeated string features = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass= 1;
+    repeated string key = 2;
 }
 
 // Answer multiple rows.
 message OnlineMultiGetResponse {
-    map<string, Value> result = 1;
+    map<string, Row> result = 1;
 }
 
 // Import data from a location to the online store.
 message ImportRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass= 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 2;
 }
 
 message ImportResponse {
@@ -64,7 +67,8 @@ message Row {
 
 // Import data from a location to the online store.
 message PushRequest {
-    repeated Row rows = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass= 1;
+    repeated Row rows = 2;
 }
 
 message PushResponse {
