@@ -3071,6 +3071,11 @@ spec:
                 - unknown
                 - group-forecasting
                 type: string
+              template:
+                default: "false"
+                description: If true, this predictor is a template predictor. I.e.
+                  it is used in model class But is not opertional
+                type: boolean
               versionName:
                 default: ""
                 description: If specified, the name of the DataProductVersion which

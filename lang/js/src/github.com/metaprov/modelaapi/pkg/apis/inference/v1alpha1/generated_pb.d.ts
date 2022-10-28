@@ -1650,6 +1650,9 @@ export class PredictorSpec extends jspb.Message {
   hasProductref(): boolean;
   clearProductref(): PredictorSpec;
 
+  getTemplate(): boolean;
+  setTemplate(value: boolean): PredictorSpec;
+
   getOnline(): boolean;
   setOnline(value: boolean): PredictorSpec;
 
@@ -1769,6 +1772,7 @@ export namespace PredictorSpec {
     modelclassname: string,
     description: string,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    template: boolean,
     online: boolean,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,

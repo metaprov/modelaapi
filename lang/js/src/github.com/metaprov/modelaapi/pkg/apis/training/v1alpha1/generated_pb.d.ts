@@ -2096,6 +2096,9 @@ export class ModelClassDeploymentSpec extends jspb.Message {
   clearPipelineList(): ModelClassDeploymentSpec;
   addPipeline(value?: ModelClassStageSpec, index?: number): ModelClassStageSpec;
 
+  getPredictortemplatename(): string;
+  setPredictortemplatename(value: string): ModelClassDeploymentSpec;
+
   getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelClassDeploymentSpec;
   hasServingsiteref(): boolean;
@@ -2141,6 +2144,7 @@ export class ModelClassDeploymentSpec extends jspb.Message {
 export namespace ModelClassDeploymentSpec {
   export type AsObject = {
     pipelineList: Array<ModelClassStageSpec.AsObject>,
+    predictortemplatename: string,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     online: boolean,
     dashboard: boolean,
@@ -2314,15 +2318,6 @@ export class ModelClassStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelClassStatus;
 
-  getLastmodelid(): number;
-  setLastmodelid(value: number): ModelClassStatus;
-
-  getFailurereason(): string;
-  setFailurereason(value: string): ModelClassStatus;
-
-  getFailuremessage(): string;
-  setFailuremessage(value: string): ModelClassStatus;
-
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
   hasLastupdated(): boolean;
@@ -2338,30 +2333,21 @@ export class ModelClassStatus extends jspb.Message {
   hasLastonlinetrainingset(): boolean;
   clearLastonlinetrainingset(): ModelClassStatus;
 
-  getTrainingschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
-  setTrainingschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): ModelClassStatus;
-  hasTrainingschedule(): boolean;
-  clearTrainingschedule(): ModelClassStatus;
+  getTrainingstatus(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
+  setTrainingstatus(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): ModelClassStatus;
+  hasTrainingstatus(): boolean;
+  clearTrainingstatus(): ModelClassStatus;
 
-  getLastonlinetablesgenerated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastonlinetablesgenerated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
-  hasLastonlinetablesgenerated(): boolean;
-  clearLastonlinetablesgenerated(): ModelClassStatus;
+  getPromotionstatus(): PromotionStatus | undefined;
+  setPromotionstatus(value?: PromotionStatus): ModelClassStatus;
+  hasPromotionstatus(): boolean;
+  clearPromotionstatus(): ModelClassStatus;
 
-  getLastsync(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastsync(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
-  hasLastsync(): boolean;
-  clearLastsync(): ModelClassStatus;
+  getLateststudy(): string;
+  setLateststudy(value: string): ModelClassStatus;
 
-  getLasttrainingdatasetgenerated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttrainingdatasetgenerated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
-  hasLasttrainingdatasetgenerated(): boolean;
-  clearLasttrainingdatasetgenerated(): ModelClassStatus;
-
-  getLasttrained(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttrained(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
-  hasLasttrained(): boolean;
-  clearLasttrained(): ModelClassStatus;
+  getLatestmodel(): string;
+  setLatestmodel(value: string): ModelClassStatus;
 
   getConditionsList(): Array<ModelClassCondition>;
   setConditionsList(value: Array<ModelClassCondition>): ModelClassStatus;
@@ -2381,17 +2367,13 @@ export namespace ModelClassStatus {
     phase: string,
     models: number,
     observedgeneration: number,
-    lastmodelid: number,
-    failurereason: string,
-    failuremessage: string,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
     lastonlinetrainingset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    trainingschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
-    lastonlinetablesgenerated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lastsync?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lasttrainingdatasetgenerated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lasttrained?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    trainingstatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
+    promotionstatus?: PromotionStatus.AsObject,
+    lateststudy: string,
+    latestmodel: string,
     conditionsList: Array<ModelClassCondition.AsObject>,
   }
 }
@@ -4395,6 +4377,36 @@ export namespace PercentilePrunerOptions {
     warmupsteps: number,
     intervaltrials: number,
     mintrials: number,
+  }
+}
+
+export class PromotionStatus extends jspb.Message {
+  getPromotedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setPromotedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PromotionStatus;
+  hasPromotedat(): boolean;
+  clearPromotedat(): PromotionStatus;
+
+  getAuto(): boolean;
+  setAuto(value: boolean): PromotionStatus;
+
+  getApprovedby(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setApprovedby(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PromotionStatus;
+  hasApprovedby(): boolean;
+  clearApprovedby(): PromotionStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PromotionStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: PromotionStatus): PromotionStatus.AsObject;
+  static serializeBinaryToWriter(message: PromotionStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PromotionStatus;
+  static deserializeBinaryFromReader(message: PromotionStatus, reader: jspb.BinaryReader): PromotionStatus;
+}
+
+export namespace PromotionStatus {
+  export type AsObject = {
+    promotedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    auto: boolean,
+    approvedby?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
