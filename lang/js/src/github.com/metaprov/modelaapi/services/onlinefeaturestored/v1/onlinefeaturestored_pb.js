@@ -1905,7 +1905,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    modelclass: (f = msg.getModelclass()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.toObject(includeInstance, f),
+    featuregroup: (f = msg.getFeaturegroup()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject(includeInstance, f),
     rowsList: jspb.Message.toObjectList(msg.getRowsList(),
     proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.toObject, includeInstance)
   };
@@ -1945,9 +1945,9 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.deserializeBinaryFromReader);
-      msg.setModelclass(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinaryFromReader);
+      msg.setFeaturegroup(value);
       break;
     case 2:
       var value = new proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row;
@@ -1983,12 +1983,12 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getModelclass();
+  f = message.getFeaturegroup();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.serializeBinaryToWriter
     );
   }
   f = message.getRowsList();
@@ -2003,20 +2003,20 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup featuregroup = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup}
  */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.prototype.getModelclass = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass, 1));
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.prototype.getFeaturegroup = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.prototype.setModelclass = function(value) {
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.prototype.setFeaturegroup = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -2025,8 +2025,8 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.prototype.clearModelclass = function() {
-  return this.setModelclass(undefined);
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.prototype.clearFeaturegroup = function() {
+  return this.setFeaturegroup(undefined);
 };
 
 
@@ -2034,7 +2034,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.prototype.hasModelclass = function() {
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest.prototype.hasFeaturegroup = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

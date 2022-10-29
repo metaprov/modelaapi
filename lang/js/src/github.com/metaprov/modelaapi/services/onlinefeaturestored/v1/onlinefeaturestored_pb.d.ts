@@ -212,10 +212,10 @@ export namespace Row {
 }
 
 export class PushRequest extends jspb.Message {
-  getModelclass(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass | undefined;
-  setModelclass(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass): PushRequest;
-  hasModelclass(): boolean;
-  clearModelclass(): PushRequest;
+  getFeaturegroup(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
+  setFeaturegroup(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): PushRequest;
+  hasFeaturegroup(): boolean;
+  clearFeaturegroup(): PushRequest;
 
   getRowsList(): Array<Row>;
   setRowsList(value: Array<Row>): PushRequest;
@@ -232,7 +232,7 @@ export class PushRequest extends jspb.Message {
 
 export namespace PushRequest {
   export type AsObject = {
-    modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
+    featuregroup?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject,
     rowsList: Array<Row.AsObject>,
   }
 }

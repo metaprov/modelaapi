@@ -67,7 +67,7 @@ message Row {
 
 // Import data from a location to the online store.
 message PushRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass= 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup featuregroup= 1;
     repeated Row rows = 2;
 }
 
