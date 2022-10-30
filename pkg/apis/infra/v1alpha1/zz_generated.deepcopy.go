@@ -642,6 +642,21 @@ func (in *ApacheCassandraSpec) DeepCopyInto(out *ApacheCassandraSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.ProtocolVersion != nil {
+		in, out := &in.ProtocolVersion, &out.ProtocolVersion
+		*out = new(string)
+		**out = **in
+	}
+	if in.LocalDC != nil {
+		in, out := &in.LocalDC, &out.LocalDC
+		*out = new(string)
+		**out = **in
+	}
+	if in.LoadBalancePolicy != nil {
+		in, out := &in.LoadBalancePolicy, &out.LoadBalancePolicy
+		*out = new(string)
+		**out = **in
+	}
 	if in.URL != nil {
 		in, out := &in.URL, &out.URL
 		*out = new(string)
@@ -4246,6 +4261,11 @@ func (in *PostgresSQLSpec) DeepCopyInto(out *PostgresSQLSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Schema != nil {
+		in, out := &in.Schema, &out.Schema
+		*out = new(string)
+		**out = **in
+	}
 	if in.Username != nil {
 		in, out := &in.Username, &out.Username
 		*out = new(string)
@@ -5014,6 +5034,11 @@ func (in *SnowflakeSpec) DeepCopyInto(out *SnowflakeSpec) {
 	}
 	if in.Warehouse != nil {
 		in, out := &in.Warehouse, &out.Warehouse
+		*out = new(string)
+		**out = **in
+	}
+	if in.Role != nil {
+		in, out := &in.Role, &out.Role
 		*out = new(string)
 		**out = **in
 	}

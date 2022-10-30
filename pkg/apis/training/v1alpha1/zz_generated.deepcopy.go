@@ -1889,11 +1889,17 @@ func (in *ModelClassDataSpec) DeepCopyInto(out *ModelClassDataSpec) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	in.Location.DeepCopyInto(&out.Location)
+	in.ArtifactLocation.DeepCopyInto(&out.ArtifactLocation)
 	if in.Target != nil {
 		in, out := &in.Target, &out.Target
 		*out = new(string)
 		**out = **in
+	}
+	in.Labels.DeepCopyInto(&out.Labels)
+	if in.TrainingPK != nil {
+		in, out := &in.TrainingPK, &out.TrainingPK
+		*out = make([]string, len(*in))
+		copy(*out, *in)
 	}
 }
 

@@ -103,9 +103,6 @@ type FeatureGroupSpec struct {
 	// Tags for this feature groups
 	// +kubebuilder:validation:Optional
 	Tags []string `json:"tags,omitempty" protobuf:"bytes,6,opt,name=tags"`
-	// The features in the group.
-	// +kubebuilder:validation:Optional
-	Features []string `json:"features,omitempty" protobuf:"bytes,7,rep,name=features"`
 	// Schedule for running ingesting the data from the feature.
 	// On virtual features (e.g. where the data already reside in a table)
 	// The ingest will just perform feature profile, and run the feature group unit tests.
@@ -121,8 +118,12 @@ type FeatureGroupSpec struct {
 	// +kubebuilder:validation:Optional
 	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,11,opt,name=unitTests"`
 	// Specify the data for this feature group
+	// This can be a table,  a view or a file on S3.
 	// +kubebuilder:validation:Optional
 	Data DataLocation `json:"data,omitempty" protobuf:"bytes,12,opt,name=data"`
+	// the time column index. Might be null, if the fg does not have time column.
+	// +kubebuilder:validation:Optional
+	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,13,opt,name=timeColumn"`
 	// Materialization
 	// +kubebuilder:validation:Optional
 	Materialization MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,14,opt,name=materialization"`

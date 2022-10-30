@@ -2668,9 +2668,6 @@ export class EntitySpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): EntitySpec;
 
-  getDatasourcename(): string;
-  setDatasourcename(value: string): EntitySpec;
-
   getTagsList(): Array<string>;
   setTagsList(value: Array<string>): EntitySpec;
   clearTagsList(): EntitySpec;
@@ -2690,7 +2687,6 @@ export namespace EntitySpec {
     description: string,
     joinkeysList: Array<string>,
     owner: string,
-    datasourcename: string,
     tagsList: Array<string>,
   }
 }
@@ -2910,11 +2906,6 @@ export class FeatureGroupSpec extends jspb.Message {
   clearTagsList(): FeatureGroupSpec;
   addTags(value: string, index?: number): FeatureGroupSpec;
 
-  getFeaturesList(): Array<string>;
-  setFeaturesList(value: Array<string>): FeatureGroupSpec;
-  clearFeaturesList(): FeatureGroupSpec;
-  addFeatures(value: string, index?: number): FeatureGroupSpec;
-
   getIngestschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setIngestschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): FeatureGroupSpec;
   hasIngestschedule(): boolean;
@@ -2940,6 +2931,9 @@ export class FeatureGroupSpec extends jspb.Message {
   hasData(): boolean;
   clearData(): FeatureGroupSpec;
 
+  getTimecolumn(): string;
+  setTimecolumn(value: string): FeatureGroupSpec;
+
   getMaterialization(): MaterializationSpec | undefined;
   setMaterialization(value?: MaterializationSpec): FeatureGroupSpec;
   hasMaterialization(): boolean;
@@ -2961,12 +2955,12 @@ export namespace FeatureGroupSpec {
     ingesttype: string,
     entityname: string,
     tagsList: Array<string>,
-    featuresList: Array<string>,
     ingestschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     schema?: Schema.AsObject,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     data?: DataLocation.AsObject,
+    timecolumn: string,
     materialization?: MaterializationSpec.AsObject,
   }
 }

@@ -57,7 +57,8 @@ spec:
             description: FeatureGroupSpec contain the desired state of a FeatureGroup
             properties:
               data:
-                description: Specify the data for this feature group
+                description: Specify the data for this feature group This can be a
+                  table,  a view or a file on S3.
                 properties:
                   bucketName:
                     default: ""
@@ -176,11 +177,6 @@ spec:
               entityName:
                 description: A feature group must be part of an entity.
                 type: string
-              features:
-                description: The features in the group.
-                items:
-                  type: string
-                type: array
               ingestSchedule:
                 description: Schedule for running ingesting the data from the feature.
                   On virtual features (e.g. where the data already reside in a table)
@@ -654,6 +650,10 @@ spec:
                 items:
                   type: string
                 type: array
+              timeColumn:
+                description: the time column index. Might be null, if the fg does
+                  not have time column.
+                type: string
               unitTests:
                 description: Unit test to run on data from this feature group upon
                   ingrest.

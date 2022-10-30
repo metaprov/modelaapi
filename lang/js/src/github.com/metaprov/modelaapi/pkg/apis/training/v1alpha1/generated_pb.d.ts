@@ -2066,13 +2066,23 @@ export class ModelClassDataSpec extends jspb.Message {
   clearEntitiesList(): ModelClassDataSpec;
   addEntities(value?: EntityRef, index?: number): EntityRef;
 
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassDataSpec;
-  hasLocation(): boolean;
-  clearLocation(): ModelClassDataSpec;
+  getArtifactlocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setArtifactlocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassDataSpec;
+  hasArtifactlocation(): boolean;
+  clearArtifactlocation(): ModelClassDataSpec;
 
   getTarget(): string;
   setTarget(value: string): ModelClassDataSpec;
+
+  getLabels(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLabels(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassDataSpec;
+  hasLabels(): boolean;
+  clearLabels(): ModelClassDataSpec;
+
+  getTrainingpkList(): Array<string>;
+  setTrainingpkList(value: Array<string>): ModelClassDataSpec;
+  clearTrainingpkList(): ModelClassDataSpec;
+  addTrainingpk(value: string, index?: number): ModelClassDataSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassDataSpec.AsObject;
@@ -2085,8 +2095,10 @@ export class ModelClassDataSpec extends jspb.Message {
 export namespace ModelClassDataSpec {
   export type AsObject = {
     entitiesList: Array<EntityRef.AsObject>,
-    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    artifactlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     target: string,
+    labels?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    trainingpkList: Array<string>,
   }
 }
 

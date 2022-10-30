@@ -1988,9 +1988,6 @@ message EntitySpec {
   // +kubebuilder:validation:Optional
   optional string owner = 5;
 
-  // +kubebuilder:validation:Optional
-  optional string datasourceName = 6;
-
   // Tags for this feature groups
   // +kubebuilder:validation:Optional
   repeated string tags = 7;
@@ -2132,10 +2129,6 @@ message FeatureGroupSpec {
   // +kubebuilder:validation:Optional
   repeated string tags = 6;
 
-  // The features in the group.
-  // +kubebuilder:validation:Optional
-  repeated string features = 7;
-
   // Schedule for running ingesting the data from the feature.
   // On virtual features (e.g. where the data already reside in a table)
   // The ingest will just perform feature profile, and run the feature group unit tests.
@@ -2155,8 +2148,13 @@ message FeatureGroupSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 11;
 
   // Specify the data for this feature group
+  // This can be a table,  a view or a file on S3.
   // +kubebuilder:validation:Optional
   optional DataLocation data = 12;
+
+  // the time column index. Might be null, if the fg does not have time column.
+  // +kubebuilder:validation:Optional
+  optional string timeColumn = 13;
 
   // Materialization
   // +kubebuilder:validation:Optional
