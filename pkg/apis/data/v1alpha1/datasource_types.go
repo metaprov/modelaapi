@@ -323,15 +323,15 @@ type RecommendationSchema struct {
 	// The name of the column that specifies user IDs (i.e. the primary key)
 	// +kubebuilder:default:="user_id"
 	// +kubebuilder:validation:Optional
-	UserID *string `json:"userIDColumn,omitempty" protobuf:"bytes,1,opt,name=userIDColumn"`
+	UserIDColumn *string `json:"userIDColumn,omitempty" protobuf:"bytes,1,opt,name=userIDColumn"`
 	// The name of the column that specifies item IDs
 	// +kubebuilder:default:="item_id"
 	// +kubebuilder:validation:Optional
-	ItemID *string `json:"itemIDColumn,omitempty" protobuf:"bytes,2,opt,name=itemIDColumn"`
+	ItemIDColumn *string `json:"itemIDColumn,omitempty" protobuf:"bytes,2,opt,name=itemIDColumn"`
 	// The name of the column that specifies ratings
 	// +kubebuilder:default:="rating"
 	// +kubebuilder:validation:Optional
-	Rating *string `json:"ratingColumn,omitempty" protobuf:"bytes,3,opt,name=ratingColumn"`
+	RatingColumn *string `json:"ratingColumn,omitempty" protobuf:"bytes,3,opt,name=ratingColumn"`
 }
 
 // Column specifies the attribute of a single column in a dataset. The fields of the Column align with the

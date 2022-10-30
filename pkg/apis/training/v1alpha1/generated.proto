@@ -1054,6 +1054,18 @@ message InterpretabilityStatus {
   repeated FeatureImportance importance = 6;
 }
 
+// Specification for the label information
+message LabelsDataSpec {
+  // The location or the sql of the labels file.
+  // the labels file contain the training data.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 1;
+
+  // The schema of the labels file
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema schema = 2;
+}
+
 message Level {
   // The level name, must be unique
   optional string name = 1;
@@ -1453,10 +1465,9 @@ message ModelClassDataSpec {
   // +kubebuilder:validation:Optional
   optional string target = 3;
 
-  // The location or the sql of the labels file.
-  // the labels file contain the training data.
+  // Label file information
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation labels = 4;
+  optional LabelsDataSpec labels = 4;
 
   // The training file primary key. This key will be used as id for each row in the training dataset
   // +kubebuilder:validation:Optional

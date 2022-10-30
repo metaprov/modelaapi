@@ -1556,6 +1556,32 @@ export namespace InterpretabilityStatus {
   }
 }
 
+export class LabelsDataSpec extends jspb.Message {
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): LabelsDataSpec;
+  hasLocation(): boolean;
+  clearLocation(): LabelsDataSpec;
+
+  getSchema(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema | undefined;
+  setSchema(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema): LabelsDataSpec;
+  hasSchema(): boolean;
+  clearSchema(): LabelsDataSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LabelsDataSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: LabelsDataSpec): LabelsDataSpec.AsObject;
+  static serializeBinaryToWriter(message: LabelsDataSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LabelsDataSpec;
+  static deserializeBinaryFromReader(message: LabelsDataSpec, reader: jspb.BinaryReader): LabelsDataSpec;
+}
+
+export namespace LabelsDataSpec {
+  export type AsObject = {
+    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    schema?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema.AsObject,
+  }
+}
+
 export class Level extends jspb.Message {
   getName(): string;
   setName(value: string): Level;
@@ -2074,8 +2100,8 @@ export class ModelClassDataSpec extends jspb.Message {
   getTarget(): string;
   setTarget(value: string): ModelClassDataSpec;
 
-  getLabels(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLabels(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassDataSpec;
+  getLabels(): LabelsDataSpec | undefined;
+  setLabels(value?: LabelsDataSpec): ModelClassDataSpec;
   hasLabels(): boolean;
   clearLabels(): ModelClassDataSpec;
 
@@ -2097,7 +2123,7 @@ export namespace ModelClassDataSpec {
     entitiesList: Array<EntityRef.AsObject>,
     artifactlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     target: string,
-    labels?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    labels?: LabelsDataSpec.AsObject,
     trainingpkList: Array<string>,
   }
 }

@@ -134,13 +134,23 @@ type ModelClassDataSpec struct {
 	// Name of the target column
 	// +kubebuilder:validation:Optional
 	Target *string `json:"target,omitempty" protobuf:"bytes,3,opt,name=target"`
-	// The location or the sql of the labels file.
-	// the labels file contain the training data.
+	// Label file information
 	// +kubebuilder:validation:Optional
-	Labels data.DataLocation `json:"labels,omitempty" protobuf:"bytes,4,opt,name=labels"`
+	Labels LabelsDataSpec `json:"labels,omitempty" protobuf:"bytes,4,opt,name=labels"`
 	// The training file primary key. This key will be used as id for each row in the training dataset
 	// +kubebuilder:validation:Optional
 	TrainingPK []string `json:"trainingPK,omitempty" protobuf:"bytes,5,opt,name=trainingPK"`
+}
+
+// Specification for the label information
+type LabelsDataSpec struct {
+	// The location or the sql of the labels file.
+	// the labels file contain the training data.
+	// +kubebuilder:validation:Optional
+	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,1,opt,name=location"`
+	// The schema of the labels file
+	// +kubebuilder:validation:Optional
+	Schema data.Schema `json:"schema,omitempty" protobuf:"bytes,2,opt,name=schema"`
 }
 
 // Specification for model training.
