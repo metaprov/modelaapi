@@ -203,7 +203,6 @@ type ModelClassDeploymentSpec struct {
 	// +kubebuilder:validation:Optional
 	ServingSiteRef v1.ObjectReference `json:"servingSiteRef,omitempty" protobuf:"bytes,3,opt,name=servingSiteRef"`
 	// Create an online predictor, if the model is used only for batch prediction, set this option to false.
-	// default is false.
 	// +kubebuilder:validation:Optional
 	Online *bool `json:"online,omitempty" protobuf:"varint,4,opt,name=online"`
 	// Setup a dashboard for the predictor.

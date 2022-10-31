@@ -190,11 +190,6 @@ func (in *Column) DeepCopyInto(out *Column) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.PersonalData != nil {
-		in, out := &in.PersonalData, &out.PersonalData
-		*out = new(bool)
-		**out = **in
-	}
 	if in.Protected != nil {
 		in, out := &in.Protected, &out.Protected
 		*out = new(bool)

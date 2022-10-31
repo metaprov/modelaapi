@@ -1036,13 +1036,12 @@ message PredictorSpec {
   optional k8s.io.api.core.v1.ObjectReference productRef = 4;
 
   // If true, this predictor is a template predictor. I.e. it is used in model class
-  // But is not opertional
-  // +kubebuilder:default:="false"
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool template = 5;
 
   // If true, create an online predictor. else this predictor is only for batch predictions.
-  // +kubebuilder:default:="false"
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool online = 6;
 

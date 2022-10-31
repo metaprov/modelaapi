@@ -843,8 +843,7 @@ spec:
                     type: object
                   online:
                     description: Create an online predictor, if the model is used
-                      only for batch prediction, set this option to false. default
-                      is false.
+                      only for batch prediction, set this option to false.
                     type: boolean
                   pipeline:
                     description: Define the stages to test the model before release

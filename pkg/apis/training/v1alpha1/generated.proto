@@ -1498,7 +1498,6 @@ message ModelClassDeploymentSpec {
   optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 3;
 
   // Create an online predictor, if the model is used only for batch prediction, set this option to false.
-  // default is false.
   // +kubebuilder:validation:Optional
   optional bool online = 4;
 

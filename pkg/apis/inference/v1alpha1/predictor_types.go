@@ -294,12 +294,11 @@ type PredictorSpec struct {
 	// The reference to the DataProduct that the resource exists under
 	ProductRef *v1.ObjectReference `json:"productRef" protobuf:"bytes,4,opt,name=productRef"`
 	// If true, this predictor is a template predictor. I.e. it is used in model class
-	// But is not opertional
-	// +kubebuilder:default:="false"
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Template *bool `json:"template" protobuf:"varint,5,opt,name=template"`
 	// If true, create an online predictor. else this predictor is only for batch predictions.
-	// +kubebuilder:default:="false"
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Online *bool `json:"online" protobuf:"varint,6,opt,name=online"`
 	// If specified, the reference to the ServingSite resource that hosts the Predictor

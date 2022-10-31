@@ -2408,7 +2408,7 @@ spec:
                 type: object
                 x-kubernetes-map-type: atomic
               online:
-                default: "false"
+                default: false
                 description: If true, create an online predictor. else this predictor
                   is only for batch predictions.
                 type: boolean
@@ -3072,9 +3072,9 @@ spec:
                 - group-forecasting
                 type: string
               template:
-                default: "false"
+                default: false
                 description: If true, this predictor is a template predictor. I.e.
-                  it is used in model class But is not opertional
+                  it is used in model class
                 type: boolean
               versionName:
                 default: ""
