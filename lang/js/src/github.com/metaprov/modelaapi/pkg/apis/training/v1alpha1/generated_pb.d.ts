@@ -2110,11 +2110,6 @@ export class ModelClassDataSpec extends jspb.Message {
   getTarget(): string;
   setTarget(value: string): ModelClassDataSpec;
 
-  getLabels(): LabelsDataSpec | undefined;
-  setLabels(value?: LabelsDataSpec): ModelClassDataSpec;
-  hasLabels(): boolean;
-  clearLabels(): ModelClassDataSpec;
-
   getTtl(): number;
   setTtl(value: number): ModelClassDataSpec;
 
@@ -2131,7 +2126,6 @@ export namespace ModelClassDataSpec {
     entitiesList: Array<EntityRef.AsObject>,
     artifactlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     target: string,
-    labels?: LabelsDataSpec.AsObject,
     ttl: number,
   }
 }
@@ -2169,11 +2163,6 @@ export class ModelClassDeploymentSpec extends jspb.Message {
   hasMonitoringschedule(): boolean;
   clearMonitoringschedule(): ModelClassDeploymentSpec;
 
-  getPredictionlocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setPredictionlocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassDeploymentSpec;
-  hasPredictionlocation(): boolean;
-  clearPredictionlocation(): ModelClassDeploymentSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassDeploymentSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassDeploymentSpec): ModelClassDeploymentSpec.AsObject;
@@ -2192,27 +2181,6 @@ export namespace ModelClassDeploymentSpec {
     access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
     replicas: number,
     monitoringschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    predictionlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-  }
-}
-
-export class ModelClassLabelingSpec extends jspb.Message {
-  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassLabelingSpec;
-  hasSchedule(): boolean;
-  clearSchedule(): ModelClassLabelingSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelClassLabelingSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelClassLabelingSpec): ModelClassLabelingSpec.AsObject;
-  static serializeBinaryToWriter(message: ModelClassLabelingSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelClassLabelingSpec;
-  static deserializeBinaryFromReader(message: ModelClassLabelingSpec, reader: jspb.BinaryReader): ModelClassLabelingSpec;
-}
-
-export namespace ModelClassLabelingSpec {
-  export type AsObject = {
-    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
 
@@ -2284,6 +2252,11 @@ export class ModelClassSpec extends jspb.Message {
   getSubtask(): string;
   setSubtask(value: string): ModelClassSpec;
 
+  getLabels(): LabelsDataSpec | undefined;
+  setLabels(value?: LabelsDataSpec): ModelClassSpec;
+  hasLabels(): boolean;
+  clearLabels(): ModelClassSpec;
+
   getData(): ModelClassDataSpec | undefined;
   setData(value?: ModelClassDataSpec): ModelClassSpec;
   hasData(): boolean;
@@ -2303,11 +2276,6 @@ export class ModelClassSpec extends jspb.Message {
   setPrediction(value?: ModelClassPredictionSpec): ModelClassSpec;
   hasPrediction(): boolean;
   clearPrediction(): ModelClassSpec;
-
-  getLabeling(): ModelClassLabelingSpec | undefined;
-  setLabeling(value?: ModelClassLabelingSpec): ModelClassSpec;
-  hasLabeling(): boolean;
-  clearLabeling(): ModelClassSpec;
 
   getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
   setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): ModelClassSpec;
@@ -2334,11 +2302,11 @@ export namespace ModelClassSpec {
     description: string,
     task: string,
     subtask: string,
+    labels?: LabelsDataSpec.AsObject,
     data?: ModelClassDataSpec.AsObject,
     training?: ModelClassTrainingSpec.AsObject,
     deployment?: ModelClassDeploymentSpec.AsObject,
     prediction?: ModelClassPredictionSpec.AsObject,
-    labeling?: ModelClassLabelingSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     reportschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
