@@ -1058,6 +1058,7 @@ message InterpretabilityStatus {
 message LabelsDataSpec {
   // The location or the sql of the labels file.
   // the labels file contain the training data.
+  // The labels file can reside in the cloud or in a database.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 1;
 
@@ -1065,14 +1066,22 @@ message LabelsDataSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema schema = 2;
 
-  // The training file primary key. This key will be used as id for each row in the training dataset
+  // The training file primary key. This key will be used as unique id for each row in the training dataset
+  // If empty the system will set the join key as the primary key based on the schema.
   // +kubebuilder:validation:Optional
-  repeated string trainingPK = 3;
+  repeated string primaryKey = 3;
 
   // Define the column name that contains the prediction time for each row in the label data.
   // The system uses the prediction time in order to avoid data leakage.
   // I.e. the training dataset will contain only data that was known before the prediction time
+  // If null, the system will set the prediction time column as the time index column in the schema.
+  // +kubebuilder:validation:Optional
   optional string predictionTimeColumn = 4;
+
+  // Name of the target column
+  // If null, the system will assign this column based on the schema.
+  // +kubebuilder:validation:Optional
+  optional string target = 5;
 }
 
 message Level {
@@ -1470,12 +1479,10 @@ message ModelClassDataSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation artifactLocation = 2;
 
-  // Name of the target column
-  // +kubebuilder:validation:Optional
-  optional string target = 3;
-
   // The length of the windows used to create training data.
   // In general the training data will take into account all rows which are
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
   optional int32 ttl = 5;
 }
 

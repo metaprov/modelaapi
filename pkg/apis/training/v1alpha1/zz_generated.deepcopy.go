@@ -1486,10 +1486,20 @@ func (in *LabelsDataSpec) DeepCopyInto(out *LabelsDataSpec) {
 	*out = *in
 	in.Location.DeepCopyInto(&out.Location)
 	in.Schema.DeepCopyInto(&out.Schema)
-	if in.JoinKey != nil {
-		in, out := &in.JoinKey, &out.JoinKey
+	if in.PrimaryKey != nil {
+		in, out := &in.PrimaryKey, &out.PrimaryKey
 		*out = make([]string, len(*in))
 		copy(*out, *in)
+	}
+	if in.PredictionTimeColumn != nil {
+		in, out := &in.PredictionTimeColumn, &out.PredictionTimeColumn
+		*out = new(string)
+		**out = **in
+	}
+	if in.Target != nil {
+		in, out := &in.Target, &out.Target
+		*out = new(string)
+		**out = **in
 	}
 }
 
@@ -1912,11 +1922,6 @@ func (in *ModelClassDataSpec) DeepCopyInto(out *ModelClassDataSpec) {
 		}
 	}
 	in.ArtifactLocation.DeepCopyInto(&out.ArtifactLocation)
-	if in.Target != nil {
-		in, out := &in.Target, &out.Target
-		*out = new(string)
-		**out = **in
-	}
 	if in.TTL != nil {
 		in, out := &in.TTL, &out.TTL
 		*out = new(int32)

@@ -189,10 +189,8 @@ spec:
                           type: string
                       type: object
                     type: array
-                  target:
-                    description: Name of the target column
-                    type: string
                   ttl:
+                    default: 0
                     description: The length of the windows used to create training
                       data. In general the training data will take into account all
                       rows which are
@@ -782,7 +780,8 @@ spec:
                 properties:
                   location:
                     description: The location or the sql of the labels file. the labels
-                      file contain the training data.
+                      file contain the training data. The labels file can reside in
+                      the cloud or in a database.
                     properties:
                       bucketName:
                         default: ""
@@ -900,8 +899,17 @@ spec:
                       time for each row in the label data. The system uses the prediction
                       time in order to avoid data leakage. I.e. the training dataset
                       will contain only data that was known before the prediction
-                      time
+                      time If null, the system will set the prediction time column
+                      as the time index column in the schema.
                     type: string
+                  primaryKey:
+                    description: The training file primary key. This key will be used
+                      as unique id for each row in the training dataset If empty the
+                      system will set the join key as the primary key based on the
+                      schema.
+                    items:
+                      type: string
+                    type: array
                   schema:
                     description: The schema of the labels file
                     properties:
@@ -1284,12 +1292,10 @@ spec:
                             type: string
                         type: object
                     type: object
-                  trainingPK:
-                    description: The training file primary key. This key will be used
-                      as id for each row in the training dataset
-                    items:
-                      type: string
-                    type: array
+                  target:
+                    description: Name of the target column If null, the system will
+                      assign this column based on the schema.
+                    type: string
                 type: object
               notification:
                 description: The notification specification that determines which
