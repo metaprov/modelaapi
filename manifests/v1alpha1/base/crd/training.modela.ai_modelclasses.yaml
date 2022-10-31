@@ -314,6 +314,13 @@ spec:
                               resource which specifies the DataLocation
                             type: string
                         type: object
+                      predictionTimeColumn:
+                        description: Define the column name that contains the prediction
+                          time for each row in the label data. The system uses the
+                          prediction time in order to avoid data leakage. I.e. the
+                          training dataset will contain only data that was known before
+                          the prediction time
+                        type: string
                       schema:
                         description: The schema of the labels file
                         properties:
@@ -555,10 +562,6 @@ spec:
                                   description: The regex pattern which values in the
                                     column must adhere to
                                   type: string
-                                personalData:
-                                  description: Indicates if the column contains any
-                                    personal data
-                                  type: boolean
                                 phi:
                                   description: Indicates if the column contains personal
                                     health information
@@ -708,16 +711,22 @@ spec:
                                 type: string
                             type: object
                         type: object
+                      trainingPK:
+                        description: The training file primary key. This key will
+                          be used as id for each row in the training dataset
+                        items:
+                          type: string
+                        type: array
                     type: object
                   target:
                     description: Name of the target column
                     type: string
-                  trainingPK:
-                    description: The training file primary key. This key will be used
-                      as id for each row in the training dataset
-                    items:
-                      type: string
-                    type: array
+                  ttl:
+                    description: The length of the windows used to create training
+                      data. In general the training data will take into account all
+                      rows which are
+                    format: int32
+                    type: integer
                 type: object
               deployment:
                 description: ServingTemplate specifies the model format and resource
@@ -803,36 +812,10 @@ spec:
                           by the Port field will be exposed to accept HTTP/1.1 traffic
                         type: boolean
                     type: object
-                  batchPredictAt:
-                    description: Prediction schedule
-                    properties:
-                      cron:
-                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
-                          for more information
-                        type: string
-                      enabled:
-                        default: false
-                        description: Indicates if the schedule is enabled and the
-                          Jobs associated it will be created at the specified time
-                        type: boolean
-                      type:
-                        description: The type of schedule, which can be a frequency
-                          interval or a cron expression
-                        enum:
-                        - now
-                        - once
-                        - hourly
-                        - daily
-                        - weekly
-                        - monthly
-                        - yearly
-                        - cron
-                        type: string
-                    type: object
                   dashboard:
                     description: Setup a dashboard for the predictor.
                     type: boolean
-                  monitorDriftAt:
+                  monitoringSchedule:
                     description: Schedule for computing drift
                     properties:
                       cron:
@@ -1499,7 +1482,151 @@ spec:
                 description: The name of the Account which created the object, which
                   exists in the same tenant as the object
                 type: string
-              reportAt:
+              prediction:
+                description: Specify when and from where to perform batch prediction
+                properties:
+                  location:
+                    description: The source location for data to predict
+                    properties:
+                      bucketName:
+                        default: ""
+                        description: In the case of the location type being an object
+                          storage system, BucketName is the name of the VirtualBucket
+                          resource that exists in the same tenant as the resource
+                          specifying the DataLocation. Modela will connect to the
+                          external object storage system, and will access the file
+                          from the path specified by the Path field
+                        type: string
+                      connectionName:
+                        default: ""
+                        description: In the case of the type of location being a database,
+                          ConnectionName specifies the name of the Connection resource
+                          that exists in the same tenant as the resource specifying
+                          the DataLocation. Modela will attempt to connect to the
+                          database using the credentials specified in the Connection,
+                          and will execute the query specified by the SQL field
+                        type: string
+                      database:
+                        default: ""
+                        description: The name of a database inside the database system
+                          specified by the ConnectionName field
+                        type: string
+                      path:
+                        default: ""
+                        description: The path to a flat-file inside an object storage
+                          system. When using the Modela API to upload files (through
+                          the FileService API), Modela will upload the data to a predetermined
+                          path based on the Tenant, DataProduct, DataProductVersion,
+                          and resource type of the resource in relation to the file
+                          being uploaded. The path does not need to adhere to this
+                          format; you can give the path to a file inside a bucket
+                          not managed by Modela
+                        type: string
+                      resourceRef:
+                        description: In the case of the location type being Dataset
+                          or PublicDataset, ResourceRef references another resource
+                          that containing data that will be used as a data source
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                        x-kubernetes-map-type: atomic
+                      sql:
+                        default: ""
+                        description: The SQL statement which will be executed to query
+                          data from the table specified by Table
+                        type: string
+                      table:
+                        default: ""
+                        description: The name of a table inside a database, if applicable
+                        type: string
+                      topic:
+                        default: ""
+                        description: The name of the streaming topic (currently unsupported)
+                        type: string
+                      type:
+                        default: object
+                        description: The type of location where the data resides,
+                          which can either be an object inside an object storage system
+                          (i.e. Minio), a SQL location like a table or a view, a data
+                          stream (i.e. Kafka, currently unsupported), or a web location
+                          (currently unsupported)
+                        enum:
+                        - object
+                        - table
+                        - view
+                        - stream
+                        - web
+                        - public-dataset
+                        - dataset
+                        type: string
+                      url:
+                        default: ""
+                        description: In the case of the location type being WebApi,
+                          URL specifies the external location (HTTP or Git) that will
+                          be queried and then stored as flat-file by the resource
+                          which specifies the DataLocation
+                        type: string
+                    type: object
+                  schedule:
+                    description: Prediction schedule
+                    properties:
+                      cron:
+                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                          for more information
+                        type: string
+                      enabled:
+                        default: false
+                        description: Indicates if the schedule is enabled and the
+                          Jobs associated it will be created at the specified time
+                        type: boolean
+                      type:
+                        description: The type of schedule, which can be a frequency
+                          interval or a cron expression
+                        enum:
+                        - now
+                        - once
+                        - hourly
+                        - daily
+                        - weekly
+                        - monthly
+                        - yearly
+                        - cron
+                        type: string
+                    type: object
+                type: object
+              reportSchedule:
                 description: The schedule for summary report
                 properties:
                   cron:
@@ -1847,7 +1974,7 @@ spec:
                           type: object
                         type: array
                     type: object
-                  promotion:
+                  promotionPolicy:
                     description: Promotion defines the way to promote models
                     enum:
                     - manual
@@ -1857,7 +1984,12 @@ spec:
                   retrainOnDrift:
                     description: If true, retrain on drift
                     type: boolean
-                  schedule:
+                  studyTemplateName:
+                    description: Define a reference to a study template. The study
+                      template will be the basis for training models From this model
+                      class.
+                    type: string
+                  trainingSchedule:
                     description: Training schedule
                     properties:
                       cron:
@@ -1883,11 +2015,6 @@ spec:
                         - cron
                         type: string
                     type: object
-                  studyTemplateName:
-                    description: Define a reference to a study template. The study
-                      template will be the basis for training models From this model
-                      class.
-                    type: string
                 type: object
               versionName:
                 default: ""

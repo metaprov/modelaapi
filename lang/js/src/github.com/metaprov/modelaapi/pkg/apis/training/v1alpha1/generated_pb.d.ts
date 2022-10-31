@@ -1567,6 +1567,14 @@ export class LabelsDataSpec extends jspb.Message {
   hasSchema(): boolean;
   clearSchema(): LabelsDataSpec;
 
+  getTrainingpkList(): Array<string>;
+  setTrainingpkList(value: Array<string>): LabelsDataSpec;
+  clearTrainingpkList(): LabelsDataSpec;
+  addTrainingpk(value: string, index?: number): LabelsDataSpec;
+
+  getPredictiontimecolumn(): string;
+  setPredictiontimecolumn(value: string): LabelsDataSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LabelsDataSpec.AsObject;
   static toObject(includeInstance: boolean, msg: LabelsDataSpec): LabelsDataSpec.AsObject;
@@ -1579,6 +1587,8 @@ export namespace LabelsDataSpec {
   export type AsObject = {
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     schema?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema.AsObject,
+    trainingpkList: Array<string>,
+    predictiontimecolumn: string,
   }
 }
 
@@ -2105,10 +2115,8 @@ export class ModelClassDataSpec extends jspb.Message {
   hasLabels(): boolean;
   clearLabels(): ModelClassDataSpec;
 
-  getTrainingpkList(): Array<string>;
-  setTrainingpkList(value: Array<string>): ModelClassDataSpec;
-  clearTrainingpkList(): ModelClassDataSpec;
-  addTrainingpk(value: string, index?: number): ModelClassDataSpec;
+  getTtl(): number;
+  setTtl(value: number): ModelClassDataSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassDataSpec.AsObject;
@@ -2124,7 +2132,7 @@ export namespace ModelClassDataSpec {
     artifactlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     target: string,
     labels?: LabelsDataSpec.AsObject,
-    trainingpkList: Array<string>,
+    ttl: number,
   }
 }
 
@@ -2156,15 +2164,10 @@ export class ModelClassDeploymentSpec extends jspb.Message {
   getReplicas(): number;
   setReplicas(value: number): ModelClassDeploymentSpec;
 
-  getBatchpredictat(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setBatchpredictat(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassDeploymentSpec;
-  hasBatchpredictat(): boolean;
-  clearBatchpredictat(): ModelClassDeploymentSpec;
-
-  getMonitordriftat(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setMonitordriftat(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassDeploymentSpec;
-  hasMonitordriftat(): boolean;
-  clearMonitordriftat(): ModelClassDeploymentSpec;
+  getMonitoringschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setMonitoringschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassDeploymentSpec;
+  hasMonitoringschedule(): boolean;
+  clearMonitoringschedule(): ModelClassDeploymentSpec;
 
   getPredictionlocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setPredictionlocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassDeploymentSpec;
@@ -2188,8 +2191,7 @@ export namespace ModelClassDeploymentSpec {
     dashboard: boolean,
     access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
     replicas: number,
-    batchpredictat?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    monitordriftat?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    monitoringschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     predictionlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
@@ -2240,6 +2242,32 @@ export namespace ModelClassList {
   }
 }
 
+export class ModelClassPredictionSpec extends jspb.Message {
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassPredictionSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): ModelClassPredictionSpec;
+
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassPredictionSpec;
+  hasLocation(): boolean;
+  clearLocation(): ModelClassPredictionSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassPredictionSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassPredictionSpec): ModelClassPredictionSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelClassPredictionSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassPredictionSpec;
+  static deserializeBinaryFromReader(message: ModelClassPredictionSpec, reader: jspb.BinaryReader): ModelClassPredictionSpec;
+}
+
+export namespace ModelClassPredictionSpec {
+  export type AsObject = {
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+  }
+}
+
 export class ModelClassSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ModelClassSpec;
@@ -2271,6 +2299,11 @@ export class ModelClassSpec extends jspb.Message {
   hasDeployment(): boolean;
   clearDeployment(): ModelClassSpec;
 
+  getPrediction(): ModelClassPredictionSpec | undefined;
+  setPrediction(value?: ModelClassPredictionSpec): ModelClassSpec;
+  hasPrediction(): boolean;
+  clearPrediction(): ModelClassSpec;
+
   getLabeling(): ModelClassLabelingSpec | undefined;
   setLabeling(value?: ModelClassLabelingSpec): ModelClassSpec;
   hasLabeling(): boolean;
@@ -2281,10 +2314,10 @@ export class ModelClassSpec extends jspb.Message {
   hasNotification(): boolean;
   clearNotification(): ModelClassSpec;
 
-  getReportat(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setReportat(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassSpec;
-  hasReportat(): boolean;
-  clearReportat(): ModelClassSpec;
+  getReportschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setReportschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassSpec;
+  hasReportschedule(): boolean;
+  clearReportschedule(): ModelClassSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassSpec.AsObject;
@@ -2304,9 +2337,10 @@ export namespace ModelClassSpec {
     data?: ModelClassDataSpec.AsObject,
     training?: ModelClassTrainingSpec.AsObject,
     deployment?: ModelClassDeploymentSpec.AsObject,
+    prediction?: ModelClassPredictionSpec.AsObject,
     labeling?: ModelClassLabelingSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
-    reportat?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    reportschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
 
@@ -2430,18 +2464,18 @@ export class ModelClassTrainingSpec extends jspb.Message {
   hasModelunittests(): boolean;
   clearModelunittests(): ModelClassTrainingSpec;
 
-  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassTrainingSpec;
-  hasSchedule(): boolean;
-  clearSchedule(): ModelClassTrainingSpec;
+  getTrainingschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setTrainingschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassTrainingSpec;
+  hasTrainingschedule(): boolean;
+  clearTrainingschedule(): ModelClassTrainingSpec;
 
   getModelimage(): ModelImageSpec | undefined;
   setModelimage(value?: ModelImageSpec): ModelClassTrainingSpec;
   hasModelimage(): boolean;
   clearModelimage(): ModelClassTrainingSpec;
 
-  getPromotion(): string;
-  setPromotion(value: string): ModelClassTrainingSpec;
+  getPromotionpolicy(): string;
+  setPromotionpolicy(value: string): ModelClassTrainingSpec;
 
   getRetrainondrift(): boolean;
   setRetrainondrift(value: boolean): ModelClassTrainingSpec;
@@ -2459,9 +2493,9 @@ export namespace ModelClassTrainingSpec {
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     studytemplatename: string,
     modelunittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    trainingschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     modelimage?: ModelImageSpec.AsObject,
-    promotion: string,
+    promotionpolicy: string,
     retrainondrift: boolean,
   }
 }

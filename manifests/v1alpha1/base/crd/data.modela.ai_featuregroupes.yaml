@@ -472,10 +472,6 @@ spec:
                           description: The regex pattern which values in the column
                             must adhere to
                           type: string
-                        personalData:
-                          description: Indicates if the column contains any personal
-                            data
-                          type: boolean
                         phi:
                           description: Indicates if the column contains personal health
                             information

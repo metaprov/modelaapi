@@ -429,9 +429,6 @@ type Column struct {
 	// Indicates if the column contains personal health information
 	// +kubebuilder:validation:Optional
 	PHI *bool `json:"phi,omitempty" protobuf:"varint,29,opt,name=phi"`
-	// Indicates if the column contains any personal data
-	// +kubebuilder:validation:Optional
-	PersonalData *bool `json:"personalData,omitempty" protobuf:"varint,30,opt,name=personalData"`
 	// Protected means that this feature is important for ethical AI / Fairness
 	// +kubebuilder:validation:Optional
 	Protected *bool `json:"protected,omitempty" protobuf:"varint,31,opt,name=protected"`

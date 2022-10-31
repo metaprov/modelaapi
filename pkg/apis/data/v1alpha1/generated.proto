@@ -164,10 +164,6 @@ message Column {
   // +kubebuilder:validation:Optional
   optional bool phi = 29;
 
-  // Indicates if the column contains any personal data
-  // +kubebuilder:validation:Optional
-  optional bool personalData = 30;
-
   // Protected means that this feature is important for ethical AI / Fairness
   // +kubebuilder:validation:Optional
   optional bool protected = 31;

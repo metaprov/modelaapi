@@ -3232,7 +3232,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject = fun
     uniqueitems: (f = jspb.Message.getBooleanField(msg, 26)) == null ? undefined : f,
     pii: (f = jspb.Message.getBooleanField(msg, 28)) == null ? undefined : f,
     phi: (f = jspb.Message.getBooleanField(msg, 29)) == null ? undefined : f,
-    personaldata: (f = jspb.Message.getBooleanField(msg, 30)) == null ? undefined : f,
     pb_protected: (f = jspb.Message.getBooleanField(msg, 31)) == null ? undefined : f,
     defaultvaluenum: (f = jspb.Message.getOptionalFloatingPointField(msg, 32)) == null ? undefined : f,
     log: (f = jspb.Message.getBooleanField(msg, 33)) == null ? undefined : f,
@@ -3405,10 +3404,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.deserializeBin
     case 29:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPhi(value);
-      break;
-    case 30:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setPersonaldata(value);
       break;
     case 31:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -3732,13 +3727,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.serializeBinar
   if (f != null) {
     writer.writeBool(
       29,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 30));
-  if (f != null) {
-    writer.writeBool(
-      30,
       f
     );
   }
@@ -4926,42 +4914,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasPhi = function() {
   return jspb.Message.getField(this, 29) != null;
-};
-
-
-/**
- * optional bool personalData = 30;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getPersonaldata = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 30, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setPersonaldata = function(value) {
-  return jspb.Message.setField(this, 30, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearPersonaldata = function() {
-  return jspb.Message.setField(this, 30, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasPersonaldata = function() {
-  return jspb.Message.getField(this, 30) != null;
 };
 
 

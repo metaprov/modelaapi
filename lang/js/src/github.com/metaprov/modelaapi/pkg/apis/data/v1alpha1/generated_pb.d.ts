@@ -128,9 +128,6 @@ export class Column extends jspb.Message {
   getPhi(): boolean;
   setPhi(value: boolean): Column;
 
-  getPersonaldata(): boolean;
-  setPersonaldata(value: boolean): Column;
-
   getProtected(): boolean;
   setProtected(value: boolean): Column;
 
@@ -244,7 +241,6 @@ export namespace Column {
     uniqueitems: boolean,
     pii: boolean,
     phi: boolean,
-    personaldata: boolean,
     pb_protected: boolean,
     defaultvaluenum: number,
     log: boolean,
