@@ -9,7 +9,7 @@ func TestK8sStatus(t *testing.T) {
 	first := K8sObjectStatus{
 		Namespace: "modela-system",
 		Name:      "control-plane",
-		Kind:      "Deployment",
+		Kind:      "Serving",
 		Age:       nil,
 		Status:    K8sObjectStatusHealthy,
 	}

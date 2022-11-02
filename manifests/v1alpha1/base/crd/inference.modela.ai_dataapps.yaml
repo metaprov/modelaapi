@@ -376,9 +376,9 @@ spec:
                 x-kubernetes-map-type: atomic
               replicas:
                 default: 1
-                description: The number of replicas for the Kubernetes Deployment
-                  associated with the DataApp, which will instantiate multiple copies
-                  of the service in the case that automatic scaling is disabled
+                description: The number of replicas for the Kubernetes Serving associated
+                  with the DataApp, which will instantiate multiple copies of the
+                  service in the case that automatic scaling is disabled
                 format: int32
                 type: integer
               resources:
@@ -577,8 +577,8 @@ spec:
                   type: object
                 type: array
               deploymentStatus:
-                description: The reference to the Kubernetes Deployment associated
-                  with the DataApp
+                description: The reference to the Kubernetes Serving associated with
+                  the DataApp
                 properties:
                   apiVersion:
                     description: API version of the referent.

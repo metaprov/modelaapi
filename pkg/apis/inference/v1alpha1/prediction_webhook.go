@@ -44,7 +44,7 @@ func (prediction Prediction) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "inference.modela.ai", Kind: "Prediction"},
+		schema.GroupKind{Group: "inference.modela.ai", Kind: "BatchPrediction"},
 		prediction.Name, allErrs)
 }
 

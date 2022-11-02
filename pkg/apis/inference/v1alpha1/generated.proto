@@ -292,7 +292,7 @@ message DataAppSpec {
   // Define how to access the app.
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 6;
 
-  // The number of replicas for the Kubernetes Deployment associated with the DataApp, which will instantiate multiple
+  // The number of replicas for the Kubernetes Serving associated with the DataApp, which will instantiate multiple
   // copies of the service in the case that automatic scaling is disabled
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
@@ -325,7 +325,7 @@ message DataAppStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
-  // The reference to the Kubernetes Deployment associated with the DataApp
+  // The reference to the Kubernetes Serving associated with the DataApp
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference deploymentStatus = 3;
 
@@ -552,7 +552,7 @@ message ModelDeploymentStatus {
   // +kubebuilder:validation:Optional
   optional string imageName = 3;
 
-  // The name of the Kubernetes Deployment that manages the pods of the Model
+  // The name of the Kubernetes Serving that manages the pods of the Model
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference deploymentRef = 4;
 
@@ -664,7 +664,7 @@ message ModelRecord {
 
 // ModelServingSpec specifies the configuration for models to be served by a Predictor
 message ModelServingSpec {
-  // If Serverless is true, the Kubernetes Deployment which serves the model will not be created
+  // If Serverless is true, the Kubernetes Serving which serves the model will not be created
   // until it starts to receive prediction traffic, and will be destroyed once the model becomes dormant
   optional bool serverless = 2;
 
@@ -1068,7 +1068,7 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 11;
 
-  // The number of replicas for the Kubernetes Deployment associated with the Predictor, which will instantiate multiple
+  // The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
   // copies of the service in the case that automatic scaling is disabled
   // +kubebuilder:validation:Optional
   optional int32 replicas = 12;
@@ -1208,7 +1208,7 @@ message PredictorletStatus {
   // +kubebuilder:validation:Optional
   optional string imageName = 1;
 
-  // The name of the Kubernetes Deployment that manages the pods of the Predictorlet
+  // The name of the Kubernetes Serving that manages the pods of the Predictorlet
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference deploymentRef = 2;
 

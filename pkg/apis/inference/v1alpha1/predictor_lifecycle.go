@@ -249,7 +249,7 @@ func (predictor *Predictor) UpdateK8sDeploymentStatus(model training.Model, depl
 			DeploymentRef: v1.ObjectReference{
 				Name:      deployment.Name,
 				Namespace: deployment.Namespace,
-				Kind:      "Deployment",
+				Kind:      "Serving",
 			},
 			ModelName:    model.Name,
 			ModelVersion: *model.Spec.ModelVersion,

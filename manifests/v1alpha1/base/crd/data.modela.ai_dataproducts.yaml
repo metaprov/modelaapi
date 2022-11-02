@@ -939,8 +939,8 @@ spec:
                 format: int32
                 type: integer
               totalPredictions:
-                description: The number of Prediction resources that exist under the
-                  namespace
+                description: The number of BatchPrediction resources that exist under
+                  the namespace
                 format: int32
                 type: integer
               totalPredictors:

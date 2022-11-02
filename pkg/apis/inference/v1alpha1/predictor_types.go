@@ -66,7 +66,7 @@ type FeedbackTestSpec struct {
 
 // ModelServingSpec specifies the configuration for models to be served by a Predictor
 type ModelServingSpec struct {
-	// If Serverless is true, the Kubernetes Deployment which serves the model will not be created
+	// If Serverless is true, the Kubernetes Serving which serves the model will not be created
 	// until it starts to receive prediction traffic, and will be destroyed once the model becomes dormant
 	Serverless *bool `json:"serverless,omitempty" protobuf:"varint,2,opt,name=serverless"`
 	// Serving tests
@@ -118,7 +118,7 @@ type ProgressiveSpec struct {
 }
 
 /////////////////////////////////////////////////////
-// Prediction Cache Spec
+// BatchPrediction Cache Spec
 /////////////////////////////////////////////////////
 
 // PredictionCacheSpec specifies the connection information of a key-value cache to store predictions
@@ -319,7 +319,7 @@ type PredictorSpec struct {
 	// Access specifies the configuration for the Predictor service to be exposed externally
 	// +kubebuilder:validation:Optional
 	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,11,opt,name=access"`
-	// The number of replicas for the Kubernetes Deployment associated with the Predictor, which will instantiate multiple
+	// The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
 	// copies of the service in the case that automatic scaling is disabled
 	// +kubebuilder:validation:Optional
 	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,12,opt,name=replicas"`
@@ -455,7 +455,7 @@ type ModelDeploymentStatus struct {
 	// The image name that the deployment is currently running
 	// +kubebuilder:validation:Optional
 	ImageName string `json:"imageName,omitempty" protobuf:"bytes,3,opt,name=imageName"`
-	// The name of the Kubernetes Deployment that manages the pods of the Model
+	// The name of the Kubernetes Serving that manages the pods of the Model
 	// +kubebuilder:validation:Optional
 	DeploymentRef v1.ObjectReference `json:"deploymentRef,omitempty" protobuf:"bytes,4,opt,name=deploymentRef"`
 	// The name of the Kubernetes Service which exposes the Model externally
@@ -553,7 +553,7 @@ type PredictorletStatus struct {
 	// The image name that the Predictorlet is currently running
 	// +kubebuilder:validation:Optional
 	ImageName string `json:"imageName,omitempty" protobuf:"bytes,1,opt,name=imageName"`
-	// The name of the Kubernetes Deployment that manages the pods of the Predictorlet
+	// The name of the Kubernetes Serving that manages the pods of the Predictorlet
 	// +kubebuilder:validation:Optional
 	DeploymentRef v1.ObjectReference `json:"deploymentRef,omitempty" protobuf:"bytes,2,opt,name=deploymentRef"`
 	// The name of the Kubernetes Service which exposes the Predictorlet externally

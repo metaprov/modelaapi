@@ -286,7 +286,7 @@ func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
 
 func (prediction Prediction) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
-	subject := fmt.Sprintf("Prediction %s completed successfully", prediction.Name)
+	subject := fmt.Sprintf("BatchPrediction %s completed successfully", prediction.Name)
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: prediction.Name,
@@ -296,7 +296,7 @@ func (prediction Prediction) CompletionAlert(tenantRef *v1.ObjectReference, noti
 			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
-				Kind:      "Prediction",
+				Kind:      "BatchPrediction",
 				Name:      prediction.Name,
 				Namespace: prediction.Namespace,
 			},
@@ -316,7 +316,7 @@ func (prediction Prediction) CompletionAlert(tenantRef *v1.ObjectReference, noti
 
 func (prediction Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
-	subject := fmt.Sprintf("Prediction %s failed with error %v", prediction.Name, err.Error())
+	subject := fmt.Sprintf("BatchPrediction %s failed with error %v", prediction.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: prediction.Name,
@@ -326,7 +326,7 @@ func (prediction Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifierN
 			Subject: util.StrPtr(subject),
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
-				Kind:      "Prediction",
+				Kind:      "BatchPrediction",
 				Name:      prediction.Name,
 				Namespace: prediction.Namespace,
 			},

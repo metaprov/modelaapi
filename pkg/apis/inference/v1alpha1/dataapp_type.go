@@ -89,7 +89,7 @@ type DataAppSpec struct {
 	ModelName *string `json:"modelName,omitempty" protobuf:"bytes,5,opt,name=modelName"`
 	// Define how to access the app.
 	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,6,opt,name=access"`
-	// The number of replicas for the Kubernetes Deployment associated with the DataApp, which will instantiate multiple
+	// The number of replicas for the Kubernetes Serving associated with the DataApp, which will instantiate multiple
 	// copies of the service in the case that automatic scaling is disabled
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
@@ -131,7 +131,7 @@ type DataAppStatus struct {
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
-	// The reference to the Kubernetes Deployment associated with the DataApp
+	// The reference to the Kubernetes Serving associated with the DataApp
 	//+kubebuilder:validation:Optional
 	DeploymentRef v1.ObjectReference `json:"deploymentStatus,omitempty" protobuf:"bytes,3,opt,name=deploymentStatus"`
 	// The status of the Kubernetes Service associated with the DataApp

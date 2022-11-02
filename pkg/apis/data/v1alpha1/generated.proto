@@ -1236,7 +1236,7 @@ message DataProductStatus {
   // +kubebuilder:validation:Optional
   optional int32 totalApps = 13;
 
-  // The number of Prediction resources that exist under the namespace
+  // The number of BatchPrediction resources that exist under the namespace
   // +kubebuilder:validation:Optional
   optional int32 totalPredictions = 14;
 

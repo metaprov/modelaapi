@@ -2064,6 +2064,32 @@ export namespace ModelClass {
   }
 }
 
+export class ModelClassBatchPredictionSpec extends jspb.Message {
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassBatchPredictionSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): ModelClassBatchPredictionSpec;
+
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassBatchPredictionSpec;
+  hasLocation(): boolean;
+  clearLocation(): ModelClassBatchPredictionSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassBatchPredictionSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassBatchPredictionSpec): ModelClassBatchPredictionSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelClassBatchPredictionSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassBatchPredictionSpec;
+  static deserializeBinaryFromReader(message: ModelClassBatchPredictionSpec, reader: jspb.BinaryReader): ModelClassBatchPredictionSpec;
+}
+
+export namespace ModelClassBatchPredictionSpec {
+  export type AsObject = {
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+  }
+}
+
 export class ModelClassCondition extends jspb.Message {
   getType(): string;
   setType(value: string): ModelClassCondition;
@@ -2130,60 +2156,6 @@ export namespace ModelClassDataSpec {
   }
 }
 
-export class ModelClassDeploymentSpec extends jspb.Message {
-  getPipelineList(): Array<ModelClassStageSpec>;
-  setPipelineList(value: Array<ModelClassStageSpec>): ModelClassDeploymentSpec;
-  clearPipelineList(): ModelClassDeploymentSpec;
-  addPipeline(value?: ModelClassStageSpec, index?: number): ModelClassStageSpec;
-
-  getPredictortemplatename(): string;
-  setPredictortemplatename(value: string): ModelClassDeploymentSpec;
-
-  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelClassDeploymentSpec;
-  hasServingsiteref(): boolean;
-  clearServingsiteref(): ModelClassDeploymentSpec;
-
-  getOnline(): boolean;
-  setOnline(value: boolean): ModelClassDeploymentSpec;
-
-  getDashboard(): boolean;
-  setDashboard(value: boolean): ModelClassDeploymentSpec;
-
-  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
-  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): ModelClassDeploymentSpec;
-  hasAccess(): boolean;
-  clearAccess(): ModelClassDeploymentSpec;
-
-  getReplicas(): number;
-  setReplicas(value: number): ModelClassDeploymentSpec;
-
-  getMonitoringschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setMonitoringschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassDeploymentSpec;
-  hasMonitoringschedule(): boolean;
-  clearMonitoringschedule(): ModelClassDeploymentSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelClassDeploymentSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelClassDeploymentSpec): ModelClassDeploymentSpec.AsObject;
-  static serializeBinaryToWriter(message: ModelClassDeploymentSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelClassDeploymentSpec;
-  static deserializeBinaryFromReader(message: ModelClassDeploymentSpec, reader: jspb.BinaryReader): ModelClassDeploymentSpec;
-}
-
-export namespace ModelClassDeploymentSpec {
-  export type AsObject = {
-    pipelineList: Array<ModelClassStageSpec.AsObject>,
-    predictortemplatename: string,
-    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    online: boolean,
-    dashboard: boolean,
-    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
-    replicas: number,
-    monitoringschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-  }
-}
-
 export class ModelClassList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ModelClassList;
@@ -2210,29 +2182,57 @@ export namespace ModelClassList {
   }
 }
 
-export class ModelClassPredictionSpec extends jspb.Message {
-  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassPredictionSpec;
-  hasSchedule(): boolean;
-  clearSchedule(): ModelClassPredictionSpec;
+export class ModelClassServingSpec extends jspb.Message {
+  getPipelineList(): Array<ModelClassStageSpec>;
+  setPipelineList(value: Array<ModelClassStageSpec>): ModelClassServingSpec;
+  clearPipelineList(): ModelClassServingSpec;
+  addPipeline(value?: ModelClassStageSpec, index?: number): ModelClassStageSpec;
 
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassPredictionSpec;
-  hasLocation(): boolean;
-  clearLocation(): ModelClassPredictionSpec;
+  getPredictortemplatename(): string;
+  setPredictortemplatename(value: string): ModelClassServingSpec;
+
+  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelClassServingSpec;
+  hasServingsiteref(): boolean;
+  clearServingsiteref(): ModelClassServingSpec;
+
+  getOnline(): boolean;
+  setOnline(value: boolean): ModelClassServingSpec;
+
+  getDashboard(): boolean;
+  setDashboard(value: boolean): ModelClassServingSpec;
+
+  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
+  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): ModelClassServingSpec;
+  hasAccess(): boolean;
+  clearAccess(): ModelClassServingSpec;
+
+  getReplicas(): number;
+  setReplicas(value: number): ModelClassServingSpec;
+
+  getMonitoringschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setMonitoringschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassServingSpec;
+  hasMonitoringschedule(): boolean;
+  clearMonitoringschedule(): ModelClassServingSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelClassPredictionSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelClassPredictionSpec): ModelClassPredictionSpec.AsObject;
-  static serializeBinaryToWriter(message: ModelClassPredictionSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelClassPredictionSpec;
-  static deserializeBinaryFromReader(message: ModelClassPredictionSpec, reader: jspb.BinaryReader): ModelClassPredictionSpec;
+  toObject(includeInstance?: boolean): ModelClassServingSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassServingSpec): ModelClassServingSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelClassServingSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassServingSpec;
+  static deserializeBinaryFromReader(message: ModelClassServingSpec, reader: jspb.BinaryReader): ModelClassServingSpec;
 }
 
-export namespace ModelClassPredictionSpec {
+export namespace ModelClassServingSpec {
   export type AsObject = {
-    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    pipelineList: Array<ModelClassStageSpec.AsObject>,
+    predictortemplatename: string,
+    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    online: boolean,
+    dashboard: boolean,
+    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
+    replicas: number,
+    monitoringschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
 
@@ -2267,15 +2267,15 @@ export class ModelClassSpec extends jspb.Message {
   hasTraining(): boolean;
   clearTraining(): ModelClassSpec;
 
-  getDeployment(): ModelClassDeploymentSpec | undefined;
-  setDeployment(value?: ModelClassDeploymentSpec): ModelClassSpec;
-  hasDeployment(): boolean;
-  clearDeployment(): ModelClassSpec;
+  getServing(): ModelClassServingSpec | undefined;
+  setServing(value?: ModelClassServingSpec): ModelClassSpec;
+  hasServing(): boolean;
+  clearServing(): ModelClassSpec;
 
-  getPrediction(): ModelClassPredictionSpec | undefined;
-  setPrediction(value?: ModelClassPredictionSpec): ModelClassSpec;
-  hasPrediction(): boolean;
-  clearPrediction(): ModelClassSpec;
+  getBatchprediction(): ModelClassBatchPredictionSpec | undefined;
+  setBatchprediction(value?: ModelClassBatchPredictionSpec): ModelClassSpec;
+  hasBatchprediction(): boolean;
+  clearBatchprediction(): ModelClassSpec;
 
   getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
   setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): ModelClassSpec;
@@ -2305,8 +2305,8 @@ export namespace ModelClassSpec {
     labels?: LabelsDataSpec.AsObject,
     data?: ModelClassDataSpec.AsObject,
     training?: ModelClassTrainingSpec.AsObject,
-    deployment?: ModelClassDeploymentSpec.AsObject,
-    prediction?: ModelClassPredictionSpec.AsObject,
+    serving?: ModelClassServingSpec.AsObject,
+    batchprediction?: ModelClassBatchPredictionSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     reportschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }

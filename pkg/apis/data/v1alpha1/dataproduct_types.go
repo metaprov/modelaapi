@@ -227,7 +227,7 @@ type DataProductStatus struct {
 	// The number of DataApp resources that exist under the namespace
 	//+kubebuilder:validation:Optional
 	TotalApps int32 `json:"totalApps,omitempty" protobuf:"varint,13,opt,name=totalApps"`
-	// The number of Prediction resources that exist under the namespace
+	// The number of BatchPrediction resources that exist under the namespace
 	//+kubebuilder:validation:Optional
 	TotalPredictions int32 `json:"totalPredictions,omitempty" protobuf:"varint,14,opt,name=totalPredictions"`
 	// The number of informative alerts produced under the namespace
