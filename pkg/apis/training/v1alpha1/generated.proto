@@ -1693,6 +1693,19 @@ message ModelClassTrainingSpec {
   // If true, retrain on drift
   // +kubebuilder:validation:Optional
   optional bool retrainOnDrift = 7;
+
+  // If true, retrain when there is a change in the labels data file. For example, if new labels were added
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool retrainOnLabelsDataChange = 8;
+
+  // If true, retrain on the model when a ever a metadata change occur.
+  // A metadata change is adding or removing feature from a feature group that the model depends on
+  // adding or removing entities, etc.
+  // When a metadata change is detected, the system will retrain the models
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool retrainOnFeaturesMetadataChange = 9;
 }
 
 // ModelCondition describes the state of a Model at a certain point

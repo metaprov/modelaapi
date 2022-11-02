@@ -25567,7 +25567,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainin
     trainingschedule: (f = msg.getTrainingschedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     modelimage: (f = msg.getModelimage()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelImageSpec.toObject(includeInstance, f),
     promotionpolicy: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    retrainondrift: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f
+    retrainondrift: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
+    retrainonlabelsdatachange: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
+    retrainonfeaturesmetadatachange: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -25635,6 +25637,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainin
     case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setRetrainondrift(value);
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setRetrainonlabelsdatachange(value);
+      break;
+    case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setRetrainonfeaturesmetadatachange(value);
       break;
     default:
       reader.skipField();
@@ -25715,6 +25725,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainin
   if (f != null) {
     writer.writeBool(
       7,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeBool(
+      9,
       f
     );
   }
@@ -25974,6 +25998,78 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainin
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.hasRetrainondrift = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional bool retrainOnLabelsDataChange = 8;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.getRetrainonlabelsdatachange = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.setRetrainonlabelsdatachange = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.clearRetrainonlabelsdatachange = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.hasRetrainonlabelsdatachange = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional bool retrainOnFeaturesMetadataChange = 9;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.getRetrainonfeaturesmetadatachange = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.setRetrainonfeaturesmetadatachange = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.clearRetrainonfeaturesmetadatachange = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.hasRetrainonfeaturesmetadatachange = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 

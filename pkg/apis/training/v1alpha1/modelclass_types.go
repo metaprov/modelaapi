@@ -194,6 +194,17 @@ type ModelClassTrainingSpec struct {
 	// If true, retrain on drift
 	// +kubebuilder:validation:Optional
 	RetrainOnDrift *bool `json:"retrainOnDrift,omitempty" protobuf:"bytes,7,opt,name=retrainOnDrift"`
+	// If true, retrain when there is a change in the labels data file. For example, if new labels were added
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	RetrainOnLabelsDataChange *bool `json:"retrainOnLabelsDataChange,omitempty" protobuf:"bytes,8,opt,name=retrainOnLabelsDataChange"`
+	// If true, retrain on the model when a ever a metadata change occur.
+	// A metadata change is adding or removing feature from a feature group that the model depends on
+	// adding or removing entities, etc.
+	// When a metadata change is detected, the system will retrain the models
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	RetrainOnFeaturesMetadataChange *bool `json:"retrainOnFeaturesMetadataChange,omitempty" protobuf:"bytes,9,opt,name=retrainOnFeaturesMetadataChange"`
 }
 
 type ModelClassServingSpec struct {

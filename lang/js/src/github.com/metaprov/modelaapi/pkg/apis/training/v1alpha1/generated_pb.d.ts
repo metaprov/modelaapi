@@ -2448,6 +2448,12 @@ export class ModelClassTrainingSpec extends jspb.Message {
   getRetrainondrift(): boolean;
   setRetrainondrift(value: boolean): ModelClassTrainingSpec;
 
+  getRetrainonlabelsdatachange(): boolean;
+  setRetrainonlabelsdatachange(value: boolean): ModelClassTrainingSpec;
+
+  getRetrainonfeaturesmetadatachange(): boolean;
+  setRetrainonfeaturesmetadatachange(value: boolean): ModelClassTrainingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassTrainingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassTrainingSpec): ModelClassTrainingSpec.AsObject;
@@ -2465,6 +2471,8 @@ export namespace ModelClassTrainingSpec {
     modelimage?: ModelImageSpec.AsObject,
     promotionpolicy: string,
     retrainondrift: boolean,
+    retrainonlabelsdatachange: boolean,
+    retrainonfeaturesmetadatachange: boolean,
   }
 }
 
