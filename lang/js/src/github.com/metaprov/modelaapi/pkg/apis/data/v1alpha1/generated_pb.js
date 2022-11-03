@@ -28422,7 +28422,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntityList.prototype.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.repeatedFields_ = [3,7];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.repeatedFields_ = [7];
 
 
 
@@ -28457,7 +28457,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.toObject =
   var f, obj = {
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    joinkeysList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    joinkey: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     tagsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
   };
@@ -28506,7 +28506,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.deserializ
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.addJoinkeys(value);
+      msg.setJoinkey(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -28559,9 +28559,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.serializeB
       f
     );
   }
-  f = message.getJoinkeysList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
       3,
       f
     );
@@ -28656,39 +28656,38 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.
 
 
 /**
- * repeated string joinKeys = 3;
- * @return {!Array<string>}
+ * optional string joinKey = 3;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.getJoinkeysList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.setJoinkeysList = function(value) {
-  return jspb.Message.setField(this, 3, value || []);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.getJoinkey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.addJoinkeys = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.setJoinkey = function(value) {
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
- * Clears the list making it empty but non-null.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.clearJoinkeysList = function() {
-  return this.setJoinkeysList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.clearJoinkey = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntitySpec.prototype.hasJoinkey = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

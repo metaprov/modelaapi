@@ -61,11 +61,10 @@ spec:
                 description: Description of the entity
                 maxLength: 512
                 type: string
-              joinKeys:
+              joinKey:
                 description: Join keys are the way to join all the feature groups
-                items:
-                  type: string
-                type: array
+                  Join key can be either UUID or seq. Entity must have a join key
+                type: string
               owner:
                 default: no-one
                 description: Owner of this Entity

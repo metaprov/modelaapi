@@ -11,8 +11,6 @@ import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto
 
 service OnlineFeatureStoreService {
     rpc OnlineGet(OnlineGetRequest)  returns (OnlineGetResponse)     {}
-    rpc OnlineMultiGet(OnlineMultiGetRequest)  returns (OnlineMultiGetResponse)     {}
-    rpc Import(ImportRequest)  returns (ImportResponse)     {}
     rpc Push(PushRequest)  returns (PushResponse)     {}
 }
 
@@ -29,46 +27,34 @@ message Value {
 
 // For real time infernece, ask the store for one row features
 message OnlineGetRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass= 1;
-    string key = 2;
-    repeated string features = 3;
+    repeated GetRow rows = 1;
+}
+
+message GetRow {
+    map<string,string> joinkey=1; // list of join key and value.
+}
+
+message GetResultRow {
+    string key = 1;
+    map<string,Value> values = 2; // for each feature, return its value
 }
 
 // Answer one row
 message OnlineGetResponse {
-    map<string,Value> row=1;
-}
-
-// For real time inference, ask the store for multple rows.
-message OnlineMultiGetRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass= 1;
-    repeated string key = 2;
-}
-
-// Answer multiple rows.
-message OnlineMultiGetResponse {
-    map<string, Row> result = 1;
-}
-
-// Import data from a location to the online store.
-message ImportRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass= 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 2;
-}
-
-message ImportResponse {
-
+    repeated GetResultRow rows= 1;
 }
 
 message Row {
-    string key = 1;
-    map<string, Value> data= 2;
+    string keyname = 1;
+    string key = 2;
+    string field = 3;
+    Value  value = 4;
 }
 
 // Import data from a location to the online store.
 message PushRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup featuregroup= 1;
-    repeated Row rows = 2;
+    string namespace = 1;
+    repeated Row rows = 3;
 }
 
 message PushResponse {

@@ -58,18 +58,10 @@ export namespace Value {
 }
 
 export class OnlineGetRequest extends jspb.Message {
-  getModelclass(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass | undefined;
-  setModelclass(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass): OnlineGetRequest;
-  hasModelclass(): boolean;
-  clearModelclass(): OnlineGetRequest;
-
-  getKey(): string;
-  setKey(value: string): OnlineGetRequest;
-
-  getFeaturesList(): Array<string>;
-  setFeaturesList(value: Array<string>): OnlineGetRequest;
-  clearFeaturesList(): OnlineGetRequest;
-  addFeatures(value: string, index?: number): OnlineGetRequest;
+  getRowsList(): Array<GetRow>;
+  setRowsList(value: Array<GetRow>): OnlineGetRequest;
+  clearRowsList(): OnlineGetRequest;
+  addRows(value?: GetRow, index?: number): GetRow;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OnlineGetRequest.AsObject;
@@ -81,15 +73,55 @@ export class OnlineGetRequest extends jspb.Message {
 
 export namespace OnlineGetRequest {
   export type AsObject = {
-    modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
+    rowsList: Array<GetRow.AsObject>,
+  }
+}
+
+export class GetRow extends jspb.Message {
+  getJoinkeyMap(): jspb.Map<string, string>;
+  clearJoinkeyMap(): GetRow;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetRow.AsObject;
+  static toObject(includeInstance: boolean, msg: GetRow): GetRow.AsObject;
+  static serializeBinaryToWriter(message: GetRow, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetRow;
+  static deserializeBinaryFromReader(message: GetRow, reader: jspb.BinaryReader): GetRow;
+}
+
+export namespace GetRow {
+  export type AsObject = {
+    joinkeyMap: Array<[string, string]>,
+  }
+}
+
+export class GetResultRow extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): GetResultRow;
+
+  getValuesMap(): jspb.Map<string, Value>;
+  clearValuesMap(): GetResultRow;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetResultRow.AsObject;
+  static toObject(includeInstance: boolean, msg: GetResultRow): GetResultRow.AsObject;
+  static serializeBinaryToWriter(message: GetResultRow, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetResultRow;
+  static deserializeBinaryFromReader(message: GetResultRow, reader: jspb.BinaryReader): GetResultRow;
+}
+
+export namespace GetResultRow {
+  export type AsObject = {
     key: string,
-    featuresList: Array<string>,
+    valuesMap: Array<[string, Value.AsObject]>,
   }
 }
 
 export class OnlineGetResponse extends jspb.Message {
-  getRowMap(): jspb.Map<string, Value>;
-  clearRowMap(): OnlineGetResponse;
+  getRowsList(): Array<GetResultRow>;
+  setRowsList(value: Array<GetResultRow>): OnlineGetResponse;
+  clearRowsList(): OnlineGetResponse;
+  addRows(value?: GetResultRow, index?: number): GetResultRow;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OnlineGetResponse.AsObject;
@@ -101,100 +133,24 @@ export class OnlineGetResponse extends jspb.Message {
 
 export namespace OnlineGetResponse {
   export type AsObject = {
-    rowMap: Array<[string, Value.AsObject]>,
-  }
-}
-
-export class OnlineMultiGetRequest extends jspb.Message {
-  getModelclass(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass | undefined;
-  setModelclass(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass): OnlineMultiGetRequest;
-  hasModelclass(): boolean;
-  clearModelclass(): OnlineMultiGetRequest;
-
-  getKeyList(): Array<string>;
-  setKeyList(value: Array<string>): OnlineMultiGetRequest;
-  clearKeyList(): OnlineMultiGetRequest;
-  addKey(value: string, index?: number): OnlineMultiGetRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OnlineMultiGetRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: OnlineMultiGetRequest): OnlineMultiGetRequest.AsObject;
-  static serializeBinaryToWriter(message: OnlineMultiGetRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OnlineMultiGetRequest;
-  static deserializeBinaryFromReader(message: OnlineMultiGetRequest, reader: jspb.BinaryReader): OnlineMultiGetRequest;
-}
-
-export namespace OnlineMultiGetRequest {
-  export type AsObject = {
-    modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
-    keyList: Array<string>,
-  }
-}
-
-export class OnlineMultiGetResponse extends jspb.Message {
-  getResultMap(): jspb.Map<string, Row>;
-  clearResultMap(): OnlineMultiGetResponse;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OnlineMultiGetResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: OnlineMultiGetResponse): OnlineMultiGetResponse.AsObject;
-  static serializeBinaryToWriter(message: OnlineMultiGetResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OnlineMultiGetResponse;
-  static deserializeBinaryFromReader(message: OnlineMultiGetResponse, reader: jspb.BinaryReader): OnlineMultiGetResponse;
-}
-
-export namespace OnlineMultiGetResponse {
-  export type AsObject = {
-    resultMap: Array<[string, Row.AsObject]>,
-  }
-}
-
-export class ImportRequest extends jspb.Message {
-  getModelclass(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass | undefined;
-  setModelclass(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass): ImportRequest;
-  hasModelclass(): boolean;
-  clearModelclass(): ImportRequest;
-
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ImportRequest;
-  hasLocation(): boolean;
-  clearLocation(): ImportRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ImportRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ImportRequest): ImportRequest.AsObject;
-  static serializeBinaryToWriter(message: ImportRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ImportRequest;
-  static deserializeBinaryFromReader(message: ImportRequest, reader: jspb.BinaryReader): ImportRequest;
-}
-
-export namespace ImportRequest {
-  export type AsObject = {
-    modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
-    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-  }
-}
-
-export class ImportResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ImportResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ImportResponse): ImportResponse.AsObject;
-  static serializeBinaryToWriter(message: ImportResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ImportResponse;
-  static deserializeBinaryFromReader(message: ImportResponse, reader: jspb.BinaryReader): ImportResponse;
-}
-
-export namespace ImportResponse {
-  export type AsObject = {
+    rowsList: Array<GetResultRow.AsObject>,
   }
 }
 
 export class Row extends jspb.Message {
+  getKeyname(): string;
+  setKeyname(value: string): Row;
+
   getKey(): string;
   setKey(value: string): Row;
 
-  getDataMap(): jspb.Map<string, Value>;
-  clearDataMap(): Row;
+  getField(): string;
+  setField(value: string): Row;
+
+  getValue(): Value | undefined;
+  setValue(value?: Value): Row;
+  hasValue(): boolean;
+  clearValue(): Row;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Row.AsObject;
@@ -206,16 +162,16 @@ export class Row extends jspb.Message {
 
 export namespace Row {
   export type AsObject = {
+    keyname: string,
     key: string,
-    dataMap: Array<[string, Value.AsObject]>,
+    field: string,
+    value?: Value.AsObject,
   }
 }
 
 export class PushRequest extends jspb.Message {
-  getFeaturegroup(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
-  setFeaturegroup(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): PushRequest;
-  hasFeaturegroup(): boolean;
-  clearFeaturegroup(): PushRequest;
+  getNamespace(): string;
+  setNamespace(value: string): PushRequest;
 
   getRowsList(): Array<Row>;
   setRowsList(value: Array<Row>): PushRequest;
@@ -232,7 +188,7 @@ export class PushRequest extends jspb.Message {
 
 export namespace PushRequest {
   export type AsObject = {
-    featuregroup?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject,
+    namespace: string,
     rowsList: Array<Row.AsObject>,
   }
 }

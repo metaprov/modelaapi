@@ -2656,10 +2656,8 @@ export class EntitySpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): EntitySpec;
 
-  getJoinkeysList(): Array<string>;
-  setJoinkeysList(value: Array<string>): EntitySpec;
-  clearJoinkeysList(): EntitySpec;
-  addJoinkeys(value: string, index?: number): EntitySpec;
+  getJoinkey(): string;
+  setJoinkey(value: string): EntitySpec;
 
   getOwner(): string;
   setOwner(value: string): EntitySpec;
@@ -2681,7 +2679,7 @@ export namespace EntitySpec {
   export type AsObject = {
     versionname: string,
     description: string,
-    joinkeysList: Array<string>,
+    joinkey: string,
     owner: string,
     tagsList: Array<string>,
   }

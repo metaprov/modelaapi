@@ -23,8 +23,6 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type OnlineFeatureStoreServiceClient interface {
 	OnlineGet(ctx context.Context, in *OnlineGetRequest, opts ...grpc.CallOption) (*OnlineGetResponse, error)
-	OnlineMultiGet(ctx context.Context, in *OnlineMultiGetRequest, opts ...grpc.CallOption) (*OnlineMultiGetResponse, error)
-	Import(ctx context.Context, in *ImportRequest, opts ...grpc.CallOption) (*ImportResponse, error)
 	Push(ctx context.Context, in *PushRequest, opts ...grpc.CallOption) (*PushResponse, error)
 }
 
@@ -45,24 +43,6 @@ func (c *onlineFeatureStoreServiceClient) OnlineGet(ctx context.Context, in *Onl
 	return out, nil
 }
 
-func (c *onlineFeatureStoreServiceClient) OnlineMultiGet(ctx context.Context, in *OnlineMultiGetRequest, opts ...grpc.CallOption) (*OnlineMultiGetResponse, error) {
-	out := new(OnlineMultiGetResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineMultiGet", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *onlineFeatureStoreServiceClient) Import(ctx context.Context, in *ImportRequest, opts ...grpc.CallOption) (*ImportResponse, error) {
-	out := new(ImportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Import", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *onlineFeatureStoreServiceClient) Push(ctx context.Context, in *PushRequest, opts ...grpc.CallOption) (*PushResponse, error) {
 	out := new(PushResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Push", in, out, opts...)
@@ -77,8 +57,6 @@ func (c *onlineFeatureStoreServiceClient) Push(ctx context.Context, in *PushRequ
 // for forward compatibility
 type OnlineFeatureStoreServiceServer interface {
 	OnlineGet(context.Context, *OnlineGetRequest) (*OnlineGetResponse, error)
-	OnlineMultiGet(context.Context, *OnlineMultiGetRequest) (*OnlineMultiGetResponse, error)
-	Import(context.Context, *ImportRequest) (*ImportResponse, error)
 	Push(context.Context, *PushRequest) (*PushResponse, error)
 	mustEmbedUnimplementedOnlineFeatureStoreServiceServer()
 }
@@ -89,12 +67,6 @@ type UnimplementedOnlineFeatureStoreServiceServer struct {
 
 func (UnimplementedOnlineFeatureStoreServiceServer) OnlineGet(context.Context, *OnlineGetRequest) (*OnlineGetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OnlineGet not implemented")
-}
-func (UnimplementedOnlineFeatureStoreServiceServer) OnlineMultiGet(context.Context, *OnlineMultiGetRequest) (*OnlineMultiGetResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method OnlineMultiGet not implemented")
-}
-func (UnimplementedOnlineFeatureStoreServiceServer) Import(context.Context, *ImportRequest) (*ImportResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Import not implemented")
 }
 func (UnimplementedOnlineFeatureStoreServiceServer) Push(context.Context, *PushRequest) (*PushResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Push not implemented")
@@ -131,42 +103,6 @@ func _OnlineFeatureStoreService_OnlineGet_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OnlineFeatureStoreService_OnlineMultiGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(OnlineMultiGetRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OnlineFeatureStoreServiceServer).OnlineMultiGet(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineMultiGet",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OnlineFeatureStoreServiceServer).OnlineMultiGet(ctx, req.(*OnlineMultiGetRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _OnlineFeatureStoreService_Import_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ImportRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OnlineFeatureStoreServiceServer).Import(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Import",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OnlineFeatureStoreServiceServer).Import(ctx, req.(*ImportRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _OnlineFeatureStoreService_Push_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PushRequest)
 	if err := dec(in); err != nil {
@@ -195,14 +131,6 @@ var OnlineFeatureStoreService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "OnlineGet",
 			Handler:    _OnlineFeatureStoreService_OnlineGet_Handler,
-		},
-		{
-			MethodName: "OnlineMultiGet",
-			Handler:    _OnlineFeatureStoreService_OnlineMultiGet_Handler,
-		},
-		{
-			MethodName: "Import",
-			Handler:    _OnlineFeatureStoreService_Import_Handler,
 		},
 		{
 			MethodName: "Push",

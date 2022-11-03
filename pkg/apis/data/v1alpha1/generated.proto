@@ -1975,8 +1975,9 @@ message EntitySpec {
   optional string description = 2;
 
   // Join keys are the way to join all the feature groups
-  // +kubebuilder:validation:Optional
-  repeated string joinKeys = 3;
+  // Join key can be either UUID or seq.
+  // Entity must have a join key
+  optional string joinKey = 3;
 
   // Owner of this Entity
   // +kubebuilder:default:="no-one"

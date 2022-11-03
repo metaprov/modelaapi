@@ -19,16 +19,6 @@ class OnlineFeatureStoreServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineGetRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineGetResponse.FromString,
                 )
-        self.OnlineMultiGet = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineMultiGet',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineMultiGetRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineMultiGetResponse.FromString,
-                )
-        self.Import = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Import',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportResponse.FromString,
-                )
         self.Push = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Push',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.PushRequest.SerializeToString,
@@ -40,18 +30,6 @@ class OnlineFeatureStoreServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def OnlineGet(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def OnlineMultiGet(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Import(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -70,16 +48,6 @@ def add_OnlineFeatureStoreServiceServicer_to_server(servicer, server):
                     servicer.OnlineGet,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineGetRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineGetResponse.SerializeToString,
-            ),
-            'OnlineMultiGet': grpc.unary_unary_rpc_method_handler(
-                    servicer.OnlineMultiGet,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineMultiGetRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineMultiGetResponse.SerializeToString,
-            ),
-            'Import': grpc.unary_unary_rpc_method_handler(
-                    servicer.Import,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportResponse.SerializeToString,
             ),
             'Push': grpc.unary_unary_rpc_method_handler(
                     servicer.Push,
@@ -110,40 +78,6 @@ class OnlineFeatureStoreService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineGet',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineGetRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineGetResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def OnlineMultiGet(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/OnlineMultiGet',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineMultiGetRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.OnlineMultiGetResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def Import(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Import',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ImportResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

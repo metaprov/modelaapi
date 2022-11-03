@@ -17,21 +17,18 @@ from github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1 import generated_pb2 a
 from github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nWgithub.com/metaprov/modelaapi/services/onlinefeaturestored/v1/onlinefeaturestored.proto\x12=github.com.metaprov.modelaapi.services.onlinefeaturestored.v1\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\"|\n\x05Value\x12\x0f\n\x05int64\x18\x01 \x01(\x03H\x00\x12\x10\n\x06\x64ouble\x18\x02 \x01(\x01H\x00\x12\x10\n\x06string\x18\x03 \x01(\tH\x00\x12\x0e\n\x04\x62ool\x18\x04 \x01(\x08H\x00\x12\x14\n\nunix_milli\x18\x05 \x01(\x03H\x00\x12\x0f\n\x05\x62ytes\x18\x06 \x01(\x0cH\x00\x42\x07\n\x05value\"\x8b\x01\n\x10OnlineGetRequest\x12X\n\nmodelclass\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x10\n\x08\x66\x65\x61tures\x18\x03 \x03(\t\"\xed\x01\n\x11OnlineGetResponse\x12\x66\n\x03row\x18\x01 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetResponse.RowEntry\x1ap\n\x08RowEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12S\n\x05value\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value:\x02\x38\x01\"~\n\x15OnlineMultiGetRequest\x12X\n\nmodelclass\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12\x0b\n\x03key\x18\x02 \x03(\t\"\xfe\x01\n\x16OnlineMultiGetResponse\x12q\n\x06result\x18\x01 \x03(\x0b\x32\x61.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetResponse.ResultEntry\x1aq\n\x0bResultEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12Q\n\x05value\x18\x02 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row:\x02\x38\x01\"\xbf\x01\n\rImportRequest\x12X\n\nmodelclass\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12T\n\x08location\x18\x02 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\"\x10\n\x0eImportResponse\"\xe1\x01\n\x03Row\x12\x0b\n\x03key\x18\x01 \x01(\t\x12Z\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32L.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.DataEntry\x1aq\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12S\n\x05value\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value:\x02\x38\x01\"\xb9\x01\n\x0bPushRequest\x12X\n\x0c\x66\x65\x61turegroup\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\x12P\n\x04rows\x18\x02 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row\"\x0e\n\x0cPushResponse2\xde\x05\n\x19OnlineFeatureStoreService\x12\xb0\x01\n\tOnlineGet\x12O.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest\x1aP.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetResponse\"\x00\x12\xbf\x01\n\x0eOnlineMultiGet\x12T.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest\x1aU.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetResponse\"\x00\x12\xa7\x01\n\x06Import\x12L.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportRequest\x1aM.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportResponse\"\x00\x12\xa1\x01\n\x04Push\x12J.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest\x1aK.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushResponse\"\x00\x42?Z=github.com/metaprov/modelaapi/services/onlinefeaturestored/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nWgithub.com/metaprov/modelaapi/services/onlinefeaturestored/v1/onlinefeaturestored.proto\x12=github.com.metaprov.modelaapi.services.onlinefeaturestored.v1\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\"|\n\x05Value\x12\x0f\n\x05int64\x18\x01 \x01(\x03H\x00\x12\x10\n\x06\x64ouble\x18\x02 \x01(\x01H\x00\x12\x10\n\x06string\x18\x03 \x01(\tH\x00\x12\x0e\n\x04\x62ool\x18\x04 \x01(\x08H\x00\x12\x14\n\nunix_milli\x18\x05 \x01(\x03H\x00\x12\x0f\n\x05\x62ytes\x18\x06 \x01(\x0cH\x00\x42\x07\n\x05value\"g\n\x10OnlineGetRequest\x12S\n\x04rows\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow\"\x9d\x01\n\x06GetRow\x12\x63\n\x07joinkey\x18\x01 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.JoinkeyEntry\x1a.\n\x0cJoinkeyEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf9\x01\n\x0cGetResultRow\x12\x0b\n\x03key\x18\x01 \x01(\t\x12g\n\x06values\x18\x02 \x03(\x0b\x32W.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetResultRow.ValuesEntry\x1as\n\x0bValuesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12S\n\x05value\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value:\x02\x38\x01\"n\n\x11OnlineGetResponse\x12Y\n\x04rows\x18\x01 \x03(\x0b\x32K.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetResultRow\"\x87\x01\n\x03Row\x12\x0f\n\x07keyname\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\r\n\x05\x66ield\x18\x03 \x01(\t\x12S\n\x05value\x18\x04 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value\"r\n\x0bPushRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12P\n\x04rows\x18\x03 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row\"\x0e\n\x0cPushResponse2\xf2\x02\n\x19OnlineFeatureStoreService\x12\xb0\x01\n\tOnlineGet\x12O.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest\x1aP.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetResponse\"\x00\x12\xa1\x01\n\x04Push\x12J.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushRequest\x1aK.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.PushResponse\"\x00\x42?Z=github.com/metaprov/modelaapi/services/onlinefeaturestored/v1b\x06proto3')
 
 
 
 _VALUE = DESCRIPTOR.message_types_by_name['Value']
 _ONLINEGETREQUEST = DESCRIPTOR.message_types_by_name['OnlineGetRequest']
+_GETROW = DESCRIPTOR.message_types_by_name['GetRow']
+_GETROW_JOINKEYENTRY = _GETROW.nested_types_by_name['JoinkeyEntry']
+_GETRESULTROW = DESCRIPTOR.message_types_by_name['GetResultRow']
+_GETRESULTROW_VALUESENTRY = _GETRESULTROW.nested_types_by_name['ValuesEntry']
 _ONLINEGETRESPONSE = DESCRIPTOR.message_types_by_name['OnlineGetResponse']
-_ONLINEGETRESPONSE_ROWENTRY = _ONLINEGETRESPONSE.nested_types_by_name['RowEntry']
-_ONLINEMULTIGETREQUEST = DESCRIPTOR.message_types_by_name['OnlineMultiGetRequest']
-_ONLINEMULTIGETRESPONSE = DESCRIPTOR.message_types_by_name['OnlineMultiGetResponse']
-_ONLINEMULTIGETRESPONSE_RESULTENTRY = _ONLINEMULTIGETRESPONSE.nested_types_by_name['ResultEntry']
-_IMPORTREQUEST = DESCRIPTOR.message_types_by_name['ImportRequest']
-_IMPORTRESPONSE = DESCRIPTOR.message_types_by_name['ImportResponse']
 _ROW = DESCRIPTOR.message_types_by_name['Row']
-_ROW_DATAENTRY = _ROW.nested_types_by_name['DataEntry']
 _PUSHREQUEST = DESCRIPTOR.message_types_by_name['PushRequest']
 _PUSHRESPONSE = DESCRIPTOR.message_types_by_name['PushResponse']
 Value = _reflection.GeneratedProtocolMessageType('Value', (_message.Message,), {
@@ -48,71 +45,49 @@ OnlineGetRequest = _reflection.GeneratedProtocolMessageType('OnlineGetRequest', 
   })
 _sym_db.RegisterMessage(OnlineGetRequest)
 
-OnlineGetResponse = _reflection.GeneratedProtocolMessageType('OnlineGetResponse', (_message.Message,), {
+GetRow = _reflection.GeneratedProtocolMessageType('GetRow', (_message.Message,), {
 
-  'RowEntry' : _reflection.GeneratedProtocolMessageType('RowEntry', (_message.Message,), {
-    'DESCRIPTOR' : _ONLINEGETRESPONSE_ROWENTRY,
+  'JoinkeyEntry' : _reflection.GeneratedProtocolMessageType('JoinkeyEntry', (_message.Message,), {
+    'DESCRIPTOR' : _GETROW_JOINKEYENTRY,
     '__module__' : 'github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.onlinefeaturestored_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetResponse.RowEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.JoinkeyEntry)
     })
   ,
+  'DESCRIPTOR' : _GETROW,
+  '__module__' : 'github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.onlinefeaturestored_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow)
+  })
+_sym_db.RegisterMessage(GetRow)
+_sym_db.RegisterMessage(GetRow.JoinkeyEntry)
+
+GetResultRow = _reflection.GeneratedProtocolMessageType('GetResultRow', (_message.Message,), {
+
+  'ValuesEntry' : _reflection.GeneratedProtocolMessageType('ValuesEntry', (_message.Message,), {
+    'DESCRIPTOR' : _GETRESULTROW_VALUESENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.onlinefeaturestored_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetResultRow.ValuesEntry)
+    })
+  ,
+  'DESCRIPTOR' : _GETRESULTROW,
+  '__module__' : 'github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.onlinefeaturestored_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetResultRow)
+  })
+_sym_db.RegisterMessage(GetResultRow)
+_sym_db.RegisterMessage(GetResultRow.ValuesEntry)
+
+OnlineGetResponse = _reflection.GeneratedProtocolMessageType('OnlineGetResponse', (_message.Message,), {
   'DESCRIPTOR' : _ONLINEGETRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.onlinefeaturestored_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetResponse)
   })
 _sym_db.RegisterMessage(OnlineGetResponse)
-_sym_db.RegisterMessage(OnlineGetResponse.RowEntry)
-
-OnlineMultiGetRequest = _reflection.GeneratedProtocolMessageType('OnlineMultiGetRequest', (_message.Message,), {
-  'DESCRIPTOR' : _ONLINEMULTIGETREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.onlinefeaturestored_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetRequest)
-  })
-_sym_db.RegisterMessage(OnlineMultiGetRequest)
-
-OnlineMultiGetResponse = _reflection.GeneratedProtocolMessageType('OnlineMultiGetResponse', (_message.Message,), {
-
-  'ResultEntry' : _reflection.GeneratedProtocolMessageType('ResultEntry', (_message.Message,), {
-    'DESCRIPTOR' : _ONLINEMULTIGETRESPONSE_RESULTENTRY,
-    '__module__' : 'github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.onlinefeaturestored_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetResponse.ResultEntry)
-    })
-  ,
-  'DESCRIPTOR' : _ONLINEMULTIGETRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.onlinefeaturestored_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineMultiGetResponse)
-  })
-_sym_db.RegisterMessage(OnlineMultiGetResponse)
-_sym_db.RegisterMessage(OnlineMultiGetResponse.ResultEntry)
-
-ImportRequest = _reflection.GeneratedProtocolMessageType('ImportRequest', (_message.Message,), {
-  'DESCRIPTOR' : _IMPORTREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.onlinefeaturestored_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportRequest)
-  })
-_sym_db.RegisterMessage(ImportRequest)
-
-ImportResponse = _reflection.GeneratedProtocolMessageType('ImportResponse', (_message.Message,), {
-  'DESCRIPTOR' : _IMPORTRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.onlinefeaturestored_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ImportResponse)
-  })
-_sym_db.RegisterMessage(ImportResponse)
 
 Row = _reflection.GeneratedProtocolMessageType('Row', (_message.Message,), {
-
-  'DataEntry' : _reflection.GeneratedProtocolMessageType('DataEntry', (_message.Message,), {
-    'DESCRIPTOR' : _ROW_DATAENTRY,
-    '__module__' : 'github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.onlinefeaturestored_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.DataEntry)
-    })
-  ,
   'DESCRIPTOR' : _ROW,
   '__module__' : 'github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.onlinefeaturestored_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row)
   })
 _sym_db.RegisterMessage(Row)
-_sym_db.RegisterMessage(Row.DataEntry)
 
 PushRequest = _reflection.GeneratedProtocolMessageType('PushRequest', (_message.Message,), {
   'DESCRIPTOR' : _PUSHREQUEST,
@@ -133,38 +108,30 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z=github.com/metaprov/modelaapi/services/onlinefeaturestored/v1'
-  _ONLINEGETRESPONSE_ROWENTRY._options = None
-  _ONLINEGETRESPONSE_ROWENTRY._serialized_options = b'8\001'
-  _ONLINEMULTIGETRESPONSE_RESULTENTRY._options = None
-  _ONLINEMULTIGETRESPONSE_RESULTENTRY._serialized_options = b'8\001'
-  _ROW_DATAENTRY._options = None
-  _ROW_DATAENTRY._serialized_options = b'8\001'
+  _GETROW_JOINKEYENTRY._options = None
+  _GETROW_JOINKEYENTRY._serialized_options = b'8\001'
+  _GETRESULTROW_VALUESENTRY._options = None
+  _GETRESULTROW_VALUESENTRY._serialized_options = b'8\001'
   _VALUE._serialized_start=369
   _VALUE._serialized_end=493
-  _ONLINEGETREQUEST._serialized_start=496
-  _ONLINEGETREQUEST._serialized_end=635
-  _ONLINEGETRESPONSE._serialized_start=638
-  _ONLINEGETRESPONSE._serialized_end=875
-  _ONLINEGETRESPONSE_ROWENTRY._serialized_start=763
-  _ONLINEGETRESPONSE_ROWENTRY._serialized_end=875
-  _ONLINEMULTIGETREQUEST._serialized_start=877
-  _ONLINEMULTIGETREQUEST._serialized_end=1003
-  _ONLINEMULTIGETRESPONSE._serialized_start=1006
-  _ONLINEMULTIGETRESPONSE._serialized_end=1260
-  _ONLINEMULTIGETRESPONSE_RESULTENTRY._serialized_start=1147
-  _ONLINEMULTIGETRESPONSE_RESULTENTRY._serialized_end=1260
-  _IMPORTREQUEST._serialized_start=1263
-  _IMPORTREQUEST._serialized_end=1454
-  _IMPORTRESPONSE._serialized_start=1456
-  _IMPORTRESPONSE._serialized_end=1472
-  _ROW._serialized_start=1475
-  _ROW._serialized_end=1700
-  _ROW_DATAENTRY._serialized_start=1587
-  _ROW_DATAENTRY._serialized_end=1700
-  _PUSHREQUEST._serialized_start=1703
-  _PUSHREQUEST._serialized_end=1888
-  _PUSHRESPONSE._serialized_start=1890
-  _PUSHRESPONSE._serialized_end=1904
-  _ONLINEFEATURESTORESERVICE._serialized_start=1907
-  _ONLINEFEATURESTORESERVICE._serialized_end=2641
+  _ONLINEGETREQUEST._serialized_start=495
+  _ONLINEGETREQUEST._serialized_end=598
+  _GETROW._serialized_start=601
+  _GETROW._serialized_end=758
+  _GETROW_JOINKEYENTRY._serialized_start=712
+  _GETROW_JOINKEYENTRY._serialized_end=758
+  _GETRESULTROW._serialized_start=761
+  _GETRESULTROW._serialized_end=1010
+  _GETRESULTROW_VALUESENTRY._serialized_start=895
+  _GETRESULTROW_VALUESENTRY._serialized_end=1010
+  _ONLINEGETRESPONSE._serialized_start=1012
+  _ONLINEGETRESPONSE._serialized_end=1122
+  _ROW._serialized_start=1125
+  _ROW._serialized_end=1260
+  _PUSHREQUEST._serialized_start=1262
+  _PUSHREQUEST._serialized_end=1376
+  _PUSHRESPONSE._serialized_start=1378
+  _PUSHRESPONSE._serialized_end=1392
+  _ONLINEFEATURESTORESERVICE._serialized_start=1395
+  _ONLINEFEATURESTORESERVICE._serialized_end=1765
 # @@protoc_insertion_point(module_scope)

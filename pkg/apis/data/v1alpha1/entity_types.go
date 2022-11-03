@@ -68,8 +68,9 @@ type EntitySpec struct {
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// Join keys are the way to join all the feature groups
-	// +kubebuilder:validation:Optional
-	JoinKeys []string `json:"joinKeys,omitempty" protobuf:"bytes,3,rep,name=joinKeys"`
+	// Join key can be either UUID or seq.
+	// Entity must have a join key
+	JoinKey string `json:"joinKey,omitempty" protobuf:"bytes,3,rep,name=joinKey"`
 	// Owner of this Entity
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
