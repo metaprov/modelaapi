@@ -118,7 +118,7 @@ type ModelPipelineSpec struct {
 }
 
 //DataStageSpec is the desired state of the data preprocessing step of the pipeline.
-//Data preprocessing will be done via
+//Location preprocessing will be done via
 type DataStageSpec struct {
 	// Enabled indicates that the stage is enabled
 	// +kubebuilder:default:=true

@@ -56,7 +56,48 @@ spec:
           spec:
             description: FeatureGroupSpec contain the desired state of a FeatureGroup
             properties:
-              data:
+              description:
+                default: ""
+                description: Description of the feature group.
+                maxLength: 512
+                type: string
+              entityName:
+                description: A feature group must be part of an entity.
+                type: string
+              ingestSchedule:
+                description: Schedule for running ingesting the data from the feature.
+                  On virtual features (e.g. where the data already reside in a table)
+                  The ingest will just perform feature profile, and run the feature
+                  group unit tests.
+                properties:
+                  cron:
+                    description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                      for more information
+                    type: string
+                  enabled:
+                    default: false
+                    description: Indicates if the schedule is enabled and the Jobs
+                      associated it will be created at the specified time
+                    type: boolean
+                  type:
+                    description: The type of schedule, which can be a frequency interval
+                      or a cron expression
+                    enum:
+                    - now
+                    - once
+                    - hourly
+                    - daily
+                    - weekly
+                    - monthly
+                    - yearly
+                    - cron
+                    type: string
+                type: object
+              ingestType:
+                default: batch
+                description: How this group is ingested
+                type: string
+              location:
                 description: Specify the data for this feature group This can be a
                   table,  a view or a file on S3.
                 properties:
@@ -169,47 +210,6 @@ spec:
                       the DataLocation
                     type: string
                 type: object
-              description:
-                default: ""
-                description: Description of the feature group.
-                maxLength: 512
-                type: string
-              entityName:
-                description: A feature group must be part of an entity.
-                type: string
-              ingestSchedule:
-                description: Schedule for running ingesting the data from the feature.
-                  On virtual features (e.g. where the data already reside in a table)
-                  The ingest will just perform feature profile, and run the feature
-                  group unit tests.
-                properties:
-                  cron:
-                    description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
-                      for more information
-                    type: string
-                  enabled:
-                    default: false
-                    description: Indicates if the schedule is enabled and the Jobs
-                      associated it will be created at the specified time
-                    type: boolean
-                  type:
-                    description: The type of schedule, which can be a frequency interval
-                      or a cron expression
-                    enum:
-                    - now
-                    - once
-                    - hourly
-                    - daily
-                    - weekly
-                    - monthly
-                    - yearly
-                    - cron
-                    type: string
-                type: object
-              ingestType:
-                default: batch
-                description: How this group is ingested
-                type: string
               materialization:
                 description: Materialization
                 properties:

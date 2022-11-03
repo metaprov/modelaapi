@@ -47,11 +47,11 @@ func TestProduct(t *testing.T) {
 	product := obj.CreateDataProduct()
 	assert.Equal(t, product.Name, "iris-product")
 	assert.Equal(t, product.Namespace, "default-tenant")
-	assert.Equal(t, product.Spec.DataLocation.BucketName, "default-digitalocean-bucket")
+	assert.Equal(t, product.Spec.Location.BucketName, "default-digitalocean-bucket")
 	assert.Equal(t, product.Spec.TenantRef.Name, "default-tenant")
 	assert.Equal(t, product.Spec.TenantRef.Namespace, "modela-system")
 	assert.Equal(t, *product.Spec.ServingSiteName, "default-serving-site")
-	assert.Equal(t, product.Spec.DataLocation.Path, "modela/live/tenants/default-tenant/dataproducts/iris-product")
+	assert.Equal(t, product.Spec.Location.Path, "modela/live/tenants/default-tenant/dataproducts/iris-product")
 }
 
 func TestProductVersion(t *testing.T) {

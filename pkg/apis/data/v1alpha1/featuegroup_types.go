@@ -120,7 +120,7 @@ type FeatureGroupSpec struct {
 	// Specify the data for this feature group
 	// This can be a table,  a view or a file on S3.
 	// +kubebuilder:validation:Optional
-	Data DataLocation `json:"data,omitempty" protobuf:"bytes,12,opt,name=data"`
+	Location DataLocation `json:"location,omitempty" protobuf:"bytes,12,opt,name=location"`
 	// the time column index. Might be null, if the fg does not have time column.
 	// +kubebuilder:validation:Optional
 	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,13,opt,name=timeColumn"`

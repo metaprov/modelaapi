@@ -51,9 +51,9 @@ func (ffile DataPipelineRun) validateMeta(fldPath *field.Path) field.ErrorList {
 var _ webhook.Defaulter = &DataPipelineRun{}
 
 func (run *DataPipelineRun) Default() {
-	//if run.Spec.DataLocation
-	//if run.Spec.DataLocation.Path == "" {
-	//	run.Spec.DataLocation.Path = "modela/live/tenants/default-tenant/dataproducts/" + run.Namespace +
+	//if run.Spec.Location
+	//if run.Spec.Location.Path == "" {
+	//	run.Spec.Location.Path = "modela/live/tenants/default-tenant/dataproducts/" + run.Namespace +
 	//		"/dataproductversions/" +
 	//		*run.Spec.VersionName +
 	//		"/datapipelines/" + *run.Spec.DataPipelineName + "/runs/" + run.Name

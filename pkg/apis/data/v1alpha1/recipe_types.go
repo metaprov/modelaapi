@@ -364,7 +364,7 @@ const (
 	ToNumberColumnStep RecipeStepOperation = "to-number-column"
 	ToStringColumnStep RecipeStepOperation = "to-string-column"
 
-	// Data cleaning
+	// Location cleaning
 	CapitalCaseStepOp              RecipeStepOperation = "capital-case"
 	FormatDateStepOp               RecipeStepOperation = "format-date"
 	AddDoubleQuotesStepOp          RecipeStepOperation = "add-double-quotes"
@@ -379,7 +379,7 @@ const (
 	ReplaceBetweenPositionsStepOp  RecipeStepOperation = "replace-between-positions"
 	ReplaceTextStepOp              RecipeStepOperation = "replace-text"
 
-	// Data quality
+	// Location quality
 	FillWithAvgStepOp       RecipeStepOperation = "fill-with-average"
 	FillWithCustomStepOp    RecipeStepOperation = "fill-with-custom"
 	FillWithEmptyStepOp     RecipeStepOperation = "fill-with-empty"
@@ -404,7 +404,7 @@ const (
 	SplitColumnSingleDelimiterStepOp   RecipeStepOperation = "split-column-single-delimiter"
 	SplitColumnWithIntervalsStepOp     RecipeStepOperation = "split-column-with-intervals"
 
-	// Data structure
+	// Location structure
 	CatMappingStepOp   RecipeStepOperation = "category-mapping"
 	GroupByStepOp      RecipeStepOperation = "group-by"
 	JoinStepOp         RecipeStepOperation = "join"

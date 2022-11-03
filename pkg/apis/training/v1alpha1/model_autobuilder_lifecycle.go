@@ -370,7 +370,7 @@ func (b *ModelAutobuilder) CreateDataProduct() *data.DataProduct {
 				Namespace: "modela-system",
 				Name:      "default-tenant",
 			},
-			DataLocation: data.DataLocation{
+			Location: data.DataLocation{
 				BucketName: util.StrPtr("default-digitalocean-bucket"),
 				Path:       util.StrPtr("modela/live/tenants/default-tenant/dataproducts/" + b.DataProductName()),
 			},
@@ -593,7 +593,7 @@ func (b *ModelAutobuilder) StudyName() string {
 	return b.Name
 }
 
-// Data App
+// Location App
 func (b *ModelAutobuilder) MarkDataAppRunning() {
 	b.Status.Phase = ModelAutobuilderPhaseDataAppRunning
 	b.CreateOrUpdateCond(ModelAutobuilderCondition{

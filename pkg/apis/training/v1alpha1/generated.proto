@@ -234,7 +234,7 @@ message DataSplitSpec {
 }
 
 // DataStageSpec is the desired state of the data preprocessing step of the pipeline.
-// Data preprocessing will be done via
+// Location preprocessing will be done via
 message DataStageSpec {
   // Enabled indicates that the stage is enabled
   // +kubebuilder:default:=true
@@ -1157,7 +1157,7 @@ message Model {
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
-// +kubebuilder:printcolumn:name="Data Product",type="string",JSONPath=".spec.dataProductName"
+// +kubebuilder:printcolumn:name="Location Product",type="string",JSONPath=".spec.dataProductName"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.dataProductVersionName"
 // +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".status.datasetName"
 // +kubebuilder:printcolumn:name="Study",type="string",JSONPath=".status.studyName"
@@ -3890,7 +3890,7 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional string reportUri = 7;
 
-  // Reference to the report object that was generated for the dataset, which exists in the same Data Product namespace
+  // Reference to the report object that was generated for the dataset, which exists in the same Location Product namespace
   // as the object
   // +kubebuilder:validation:Optional
   optional string reportName = 8;

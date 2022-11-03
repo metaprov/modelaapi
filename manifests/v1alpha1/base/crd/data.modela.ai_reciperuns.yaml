@@ -100,7 +100,7 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
-              output:
+              location:
                 description: The location of the data output.
                 properties:
                   bucketName:

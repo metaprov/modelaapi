@@ -328,7 +328,7 @@ type StudyStatus struct {
 	// The name of the Report resource produced by the Study
 	// +kubebuilder:validation:Optional
 	ReportUri string `json:"reportUri,omitempty" protobuf:"bytes,7,opt,name=reportUri"`
-	// Reference to the report object that was generated for the dataset, which exists in the same Data Product namespace
+	// Reference to the report object that was generated for the dataset, which exists in the same Location Product namespace
 	// as the object
 	// +kubebuilder:validation:Optional
 	ReportName string `json:"reportName,omitempty" protobuf:"bytes,8,opt,name=reportName"`

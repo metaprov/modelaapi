@@ -68,7 +68,7 @@ type DatasetCondition struct {
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Data Source",type="string",JSONPath=".spec.datasourceName"
+// +kubebuilder:printcolumn:name="Location Source",type="string",JSONPath=".spec.datasourceName"
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type"
 // +kubebuilder:printcolumn:name="Rows",type="integer",JSONPath=".status.statistics.rows"
 // +kubebuilder:printcolumn:name="Columns",type="integer",JSONPath=".status.statistics.cols"
@@ -104,9 +104,9 @@ type DatasetSpec struct {
 	// +kubebuilder:validation:Required
 	// +required
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
-	// The reference to the Data Source resource which exists in the same Data Product namespace as the object.
-	// The Data Source must represent the columns and the task type of the Dataset. The validation rules associated with
-	// the Data Source will be validated against the raw data of the Dataset once it is created
+	// The reference to the Location Source resource which exists in the same Location Product namespace as the object.
+	// The Location Source must represent the columns and the task type of the Dataset. The validation rules associated with
+	// the Location Source will be validated against the raw data of the Dataset once it is created
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:default:=""
@@ -143,12 +143,12 @@ type DatasetSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Snapshotted *bool `json:"snapshotted,omitempty" protobuf:"varint,11,opt,name=snapshotted"`
-	// Indicates if the Dataset should be checked against the validation rules of its Data Source
+	// Indicates if the Dataset should be checked against the validation rules of its Location Source
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	UnitTested *bool `json:"unitTested,omitempty" protobuf:"varint,12,opt,name=unitTested"`
 	// Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
-	// created, the resource controller will retrieve the data from the location, validate it against its Data Source
+	// created, the resource controller will retrieve the data from the location, validate it against its Location Source
 	// if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
 	// +kubebuilder:validation:Optional
 	Origin DataLocation `json:"origin,omitempty" protobuf:"bytes,13,opt,name=origin"`
@@ -175,10 +175,10 @@ type DatasetSpec struct {
 	// If the dataset is syntactic, this is the syntactic spec
 	// +kubebuilder:validation:Optional
 	Synthetic SyntheticSpec `json:"syntactic,omitempty" protobuf:"bytes,19,opt,name=syntactic"`
-	// The machine learning task relevant to the Dataset. This field *must* be the same as the Data Source of the object
+	// The machine learning task relevant to the Dataset. This field *must* be the same as the Location Source of the object
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,20,opt,name=task"`
-	// The machine learning sub task relevant to the Dataset. This field *must* be the same as the Data Source of the object
+	// The machine learning sub task relevant to the Dataset. This field *must* be the same as the Location Source of the object
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
 	SubTask *catalog.MLSubtask `json:"subtask,omitempty" protobuf:"bytes,21,opt,name=subtask"`
@@ -239,7 +239,7 @@ type DatasetStatus struct {
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase DatasetPhase `json:"phase,omitempty" protobuf:"bytes,2,opt,name=phase"`
-	// Reference to the report object that was generated for the dataset, which exists in the same Data Product namespace
+	// Reference to the report object that was generated for the dataset, which exists in the same Location Product namespace
 	// as the object
 	// +kubebuilder:validation:Optional
 	ReportName string `json:"reportName,omitempty" protobuf:"bytes,3,opt,name=reportName"`
@@ -259,7 +259,7 @@ type DatasetStatus struct {
 	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,8,opt,name=observedGeneration"`
-	// List of validation results which are generated for every validation rule associated with the Dataset's Data Source
+	// List of validation results which are generated for every validation rule associated with the Dataset's Location Source
 	//+kubebuilder:validation:Optional
 	UnitTestResults catalog.TestSuiteResult `json:"unitTestResults,omitempty" protobuf:"bytes,9,opt,name=unitTestResults"`
 	// Last time the Dataset was used with a Study

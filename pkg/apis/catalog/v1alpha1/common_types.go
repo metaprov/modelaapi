@@ -549,7 +549,7 @@ const (
 	ReqSec                     Metric = "req-per-sec"
 	UncertainPredictionPercent Metric = "uncertain-prediction-percent"
 
-	// Data drift metrics
+	// Location drift metrics
 	TwoSampleKSTest      Metric = "two-sample-ks-test"
 	ChiSqrTest           Metric = "chi-squared-test"
 	ProportionDifference Metric = "proportion-difference"
@@ -1659,7 +1659,7 @@ const (
 // ModelDeploymentSpec describes how a single model should be deployed with a Predictor, and
 // how prediction traffic will be routed to the model
 type ModelDeploymentSpec struct {
-	// The reference to a Model resource which has been packaged and exists in the same Data Product
+	// The reference to a Model resource which has been packaged and exists in the same Location Product
 	// as the Predictor which specifies the ModelDeploymentSpec
 	// +kubebuilder:validation:Required
 	// +required

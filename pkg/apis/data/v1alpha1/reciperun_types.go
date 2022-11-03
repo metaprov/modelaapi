@@ -85,7 +85,7 @@ type RecipeRunSpec struct {
 	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,3,opt,name=labRef"`
 	// The location of the data output.
 	// +required.
-	Output DataLocation `json:"output,omitempty" protobuf:"bytes,4,opt,name=output"`
+	Location DataLocation `json:"location,omitempty" protobuf:"bytes,4,opt,name=location"`
 	// Resources are hardware resource req for a recipe run.
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,5,opt,name=resources"`

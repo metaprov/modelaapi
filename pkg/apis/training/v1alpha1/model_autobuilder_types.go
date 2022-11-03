@@ -62,7 +62,7 @@ type ModelAutobuilderCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
-// +kubebuilder:printcolumn:name="Data Product",type="string",JSONPath=".spec.dataProductName"
+// +kubebuilder:printcolumn:name="Location Product",type="string",JSONPath=".spec.dataProductName"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.dataProductVersionName"
 // +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".status.datasetName"
 // +kubebuilder:printcolumn:name="Study",type="string",JSONPath=".status.studyName"

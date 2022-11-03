@@ -31,8 +31,8 @@ func (product *DataProduct) Default() {
 	}
 
 	// set the default folder, if non was given
-	if *product.Spec.DataLocation.Path == "" {
-		product.Spec.DataLocation.Path = util.StrPtr("modela/live/tenants/" + product.Spec.TenantRef.Name + "/dataproducts/" + product.Name)
+	if *product.Spec.Location.Path == "" {
+		product.Spec.Location.Path = util.StrPtr("modela/live/tenants/" + product.Spec.TenantRef.Name + "/dataproducts/" + product.Name)
 	}
 
 	product.Status.Conditions = make([]DataProductCondition, 0)

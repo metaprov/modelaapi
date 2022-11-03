@@ -1219,7 +1219,7 @@ func (in *DataProductSpec) DeepCopyInto(out *DataProductSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	in.DataLocation.DeepCopyInto(&out.DataLocation)
+	in.Location.DeepCopyInto(&out.Location)
 	in.Notification.DeepCopyInto(&out.Notification)
 	in.DefaultTrainingResources.DeepCopyInto(&out.DefaultTrainingResources)
 	in.DefaultServingResources.DeepCopyInto(&out.DefaultServingResources)
@@ -2331,7 +2331,7 @@ func (in *FeatureGroupSpec) DeepCopyInto(out *FeatureGroupSpec) {
 	in.SyncSchedule.DeepCopyInto(&out.SyncSchedule)
 	in.Schema.DeepCopyInto(&out.Schema)
 	in.UnitTests.DeepCopyInto(&out.UnitTests)
-	in.Data.DeepCopyInto(&out.Data)
+	in.Location.DeepCopyInto(&out.Location)
 	if in.TimeColumn != nil {
 		in, out := &in.TimeColumn, &out.TimeColumn
 		*out = new(string)
@@ -3377,7 +3377,7 @@ func (in *RecipeRunSpec) DeepCopyInto(out *RecipeRunSpec) {
 		**out = **in
 	}
 	out.LabRef = in.LabRef
-	in.Output.DeepCopyInto(&out.Output)
+	in.Location.DeepCopyInto(&out.Location)
 	in.Resources.DeepCopyInto(&out.Resources)
 	if in.TTL != nil {
 		in, out := &in.TTL, &out.TTL

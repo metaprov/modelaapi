@@ -1022,7 +1022,7 @@ message DataPipelineStatus {
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Public",type="boolean",JSONPath=".spec.public"
 // +kubebuilder:printcolumn:name="Errors",type="integer",JSONPath=".status.totalErrorAlerts"
-// +kubebuilder:printcolumn:name="Data Sources",type="integer",JSONPath=".status.totalDatasources",priority=1
+// +kubebuilder:printcolumn:name="Location Sources",type="integer",JSONPath=".status.totalDatasources",priority=1
 // +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.totalDatasets",priority=1
 // +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.totalStudies",priority=1
 // +kubebuilder:printcolumn:name="Models",type="integer",JSONPath=".status.totalModels",priority=1
@@ -1117,9 +1117,9 @@ message DataProductSpec {
   optional string description = 11;
 
   // The default location for all artifacts created under the DataProduct. All data-producing resources will
-  // use the VirtualBucket specified by the DataLocation by default
+  // use the VirtualBucket specified by the Location by default
   // +kubebuilder:validation:Optional
-  optional DataLocation dataLocation = 12;
+  optional DataLocation location = 12;
 
   // The default notification specification for all resources under the DataProduct
   // +kubebuilder:validation:Optional
@@ -1450,8 +1450,8 @@ message DataSourceSpec {
   // primarily for very large datasets
   optional SampleSpec sample = 9;
 
-  // The default task for Dataset resources created from the Data Source. If null, the task type will default to the
-  // the default task type of the Data Product which contains the Data Source
+  // The default task for Dataset resources created from the Location Source. If null, the task type will default to the
+  // the default task type of the Location Product which contains the Location Source
   // +kubebuilder:validation:Optional
   optional string task = 10;
 
@@ -1468,7 +1468,7 @@ message DataSourceSpec {
   // +kubebuilder:validation:Optional
   optional LabelingSpec labeling = 13;
 
-  // InferredFrom specifies the location of the data that was used to generate the schema of the Data Source
+  // InferredFrom specifies the location of the data that was used to generate the schema of the Location Source
   // +kubebuilder:validation:Optional
   optional DataLocation inferredFrom = 14;
 
@@ -1524,7 +1524,7 @@ message DataSourceStatus {
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Data Source",type="string",JSONPath=".spec.datasourceName"
+// +kubebuilder:printcolumn:name="Location Source",type="string",JSONPath=".spec.datasourceName"
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type"
 // +kubebuilder:printcolumn:name="Rows",type="integer",JSONPath=".status.statistics.rows"
 // +kubebuilder:printcolumn:name="Columns",type="integer",JSONPath=".status.statistics.cols"
@@ -1610,9 +1610,9 @@ message DatasetSpec {
   // +required
   optional string versionName = 2;
 
-  // The reference to the Data Source resource which exists in the same Data Product namespace as the object.
-  // The Data Source must represent the columns and the task type of the Dataset. The validation rules associated with
-  // the Data Source will be validated against the raw data of the Dataset once it is created
+  // The reference to the Location Source resource which exists in the same Location Product namespace as the object.
+  // The Location Source must represent the columns and the task type of the Dataset. The validation rules associated with
+  // the Location Source will be validated against the raw data of the Dataset once it is created
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:default:=""
@@ -1658,13 +1658,13 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional bool snapshotted = 11;
 
-  // Indicates if the Dataset should be checked against the validation rules of its Data Source
+  // Indicates if the Dataset should be checked against the validation rules of its Location Source
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool unitTested = 12;
 
   // Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
-  // created, the resource controller will retrieve the data from the location, validate it against its Data Source
+  // created, the resource controller will retrieve the data from the location, validate it against its Location Source
   // if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
   // +kubebuilder:validation:Optional
   optional DataLocation origin = 13;
@@ -1698,11 +1698,11 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional SyntheticSpec syntactic = 19;
 
-  // The machine learning task relevant to the Dataset. This field *must* be the same as the Data Source of the object
+  // The machine learning task relevant to the Dataset. This field *must* be the same as the Location Source of the object
   // +kubebuilder:validation:Optional
   optional string task = 20;
 
-  // The machine learning sub task relevant to the Dataset. This field *must* be the same as the Data Source of the object
+  // The machine learning sub task relevant to the Dataset. This field *must* be the same as the Location Source of the object
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional string subtask = 21;
@@ -1806,7 +1806,7 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional string phase = 2;
 
-  // Reference to the report object that was generated for the dataset, which exists in the same Data Product namespace
+  // Reference to the report object that was generated for the dataset, which exists in the same Location Product namespace
   // as the object
   // +kubebuilder:validation:Optional
   optional string reportName = 3;
@@ -1832,7 +1832,7 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 8;
 
-  // List of validation results which are generated for every validation rule associated with the Dataset's Data Source
+  // List of validation results which are generated for every validation rule associated with the Dataset's Location Source
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestResults = 9;
 
@@ -2147,7 +2147,7 @@ message FeatureGroupSpec {
   // Specify the data for this feature group
   // This can be a table,  a view or a file on S3.
   // +kubebuilder:validation:Optional
-  optional DataLocation data = 12;
+  optional DataLocation location = 12;
 
   // the time column index. Might be null, if the fg does not have time column.
   // +kubebuilder:validation:Optional
@@ -2847,7 +2847,7 @@ message RecipeRunSpec {
 
   // The location of the data output.
   // +required.
-  optional DataLocation output = 4;
+  optional DataLocation location = 4;
 
   // Resources are hardware resource req for a recipe run.
   // +kubebuilder:validation:Optional

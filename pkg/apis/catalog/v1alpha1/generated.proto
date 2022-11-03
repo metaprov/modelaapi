@@ -773,7 +773,7 @@ message Measurement {
 // ModelDeploymentSpec describes how a single model should be deployed with a Predictor, and
 // how prediction traffic will be routed to the model
 message ModelDeploymentSpec {
-  // The reference to a Model resource which has been packaged and exists in the same Data Product
+  // The reference to a Model resource which has been packaged and exists in the same Location Product
   // as the Predictor which specifies the ModelDeploymentSpec
   // +kubebuilder:validation:Required
   // +required

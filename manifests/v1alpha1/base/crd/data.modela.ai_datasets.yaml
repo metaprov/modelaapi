@@ -32,7 +32,7 @@ spec:
       name: Version
       type: string
     - jsonPath: .spec.datasourceName
-      name: Data Source
+      name: Location Source
       type: string
     - jsonPath: .spec.type
       name: Type
@@ -99,11 +99,11 @@ spec:
                 type: object
               datasourceName:
                 default: ""
-                description: The reference to the Data Source resource which exists
-                  in the same Data Product namespace as the object. The Data Source
-                  must represent the columns and the task type of the Dataset. The
-                  validation rules associated with the Data Source will be validated
-                  against the raw data of the Dataset once it is created
+                description: The reference to the Location Source resource which exists
+                  in the same Location Product namespace as the object. The Location
+                  Source must represent the columns and the task type of the Dataset.
+                  The validation rules associated with the Location Source will be
+                  validated against the raw data of the Dataset once it is created
                 maxLength: 63
                 type: string
               description:
@@ -388,8 +388,8 @@ spec:
                 description: Origin is the location of the data file or database query
                   which holds the raw data of the Dataset. When the Dataset is created,
                   the resource controller will retrieve the data from the location,
-                  validate it against its Data Source if applicable, and store it
-                  inside the `live` section of the Virtual Bucket resource specified
+                  validate it against its Location Source if applicable, and store
+                  it inside the `live` section of the Virtual Bucket resource specified
                   by the location
                 properties:
                   bucketName:
@@ -768,7 +768,7 @@ spec:
               subtask:
                 default: none
                 description: The machine learning sub task relevant to the Dataset.
-                  This field *must* be the same as the Data Source of the object
+                  This field *must* be the same as the Location Source of the object
                 enum:
                 - text-ner
                 - text-classification
@@ -822,7 +822,7 @@ spec:
                 type: array
               task:
                 description: The machine learning task relevant to the Dataset. This
-                  field *must* be the same as the Data Source of the object
+                  field *must* be the same as the Location Source of the object
                 enum:
                 - binary-classification
                 - multi-classification
@@ -850,7 +850,7 @@ spec:
               unitTested:
                 default: true
                 description: Indicates if the Dataset should be checked against the
-                  validation rules of its Data Source
+                  validation rules of its Location Source
                 type: boolean
               unitTests:
                 description: The specification for tests for a new dataset
@@ -1270,8 +1270,8 @@ spec:
                 type: integer
               reportName:
                 description: Reference to the report object that was generated for
-                  the dataset, which exists in the same Data Product namespace as
-                  the object
+                  the dataset, which exists in the same Location Product namespace
+                  as the object
                 type: string
               reportUri:
                 description: The location of report generated during the reporting
@@ -1572,7 +1572,7 @@ spec:
                 type: object
               unitTestResults:
                 description: List of validation results which are generated for every
-                  validation rule associated with the Dataset's Data Source
+                  validation rule associated with the Dataset's Location Source
                 properties:
                   entityRef:
                     description: A reference to the object under test. Best practice

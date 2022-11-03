@@ -2296,7 +2296,7 @@ spec:
                       x-kubernetes-map-type: atomic
                     modelRef:
                       description: The reference to a Model resource which has been
-                        packaged and exists in the same Data Product as the Predictor
+                        packaged and exists in the same Location Product as the Predictor
                         which specifies the ModelDeploymentSpec
                       properties:
                         apiVersion:

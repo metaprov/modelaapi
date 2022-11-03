@@ -38,7 +38,7 @@ spec:
       name: Errors
       type: integer
     - jsonPath: .status.totalDatasources
-      name: Data Sources
+      name: Location Sources
       priority: 1
       type: integer
     - jsonPath: .status.totalDatasets
@@ -137,10 +137,106 @@ spec:
                       type: string
                     type: array
                 type: object
-              dataLocation:
+              description:
+                default: ""
+                description: User-provided description of the object
+                maxLength: 512
+                type: string
+              gitLocation:
+                description: GitLocation is the default Git location where all child
+                  resources will be tracked as YAML
+                properties:
+                  branch:
+                    default: ""
+                    description: The branch inside the Git repository
+                    maxLength: 256
+                    type: string
+                  gitConnectionName:
+                    default: ""
+                    description: The Git Connection resource which exists in the same
+                      tenant as the parent DataProduct
+                    type: string
+                  private:
+                    default: true
+                    description: Indicates if the repository is private
+                    type: boolean
+                  url:
+                    default: ""
+                    description: The URL to the destination Git repository
+                    maxLength: 256
+                    type: string
+                type: object
+              governance:
+                description: The Governance requirements (not functional as of the
+                  current release)
+                properties:
+                  businessReviewer:
+                    description: The account name of the business reviewer
+                    type: string
+                  complianceReviewer:
+                    description: The account name of the compliance reviewer
+                    type: string
+                  country:
+                    description: The country whose regulations are under consideration
+                    type: string
+                  enabled:
+                    default: false
+                    description: Indicates if governance is enabled
+                    type: boolean
+                  itReviewer:
+                    description: The account name of the IT reviewer
+                    type: string
+                  members:
+                    description: The name of the team members account that goveren
+                      this data product.
+                    items:
+                      type: string
+                    type: array
+                type: object
+              imageLocation:
+                description: ImageLocation is the default Docker image repository
+                  where model images produced under the DataProduct will be stored
+                properties:
+                  name:
+                    default: ""
+                    description: The canonical name of the image repository. If not
+                      set, it will default to docker/{dataproduct_name}
+                    maxLength: 256
+                    type: string
+                  registryConnectionName:
+                    default: ""
+                    description: The image repository Connection resource which exists
+                      in the same tenant as the parent DataProduct. If the field is
+                      not set, Modela will ignore the image location and not push
+                      images
+                    type: string
+                type: object
+              kpis:
+                description: KPIs define key performance indicators for the DataProduct
+                  (not functional as of the current release)
+                items:
+                  description: KPI specifies a key performance indicator for a DataProduct.
+                    Currently not implemented.
+                  properties:
+                    name:
+                      default: ""
+                      description: The name of the KPI
+                      type: string
+                    value:
+                      description: The value of the KPI
+                      type: number
+                  type: object
+                type: array
+              labName:
+                description: The name of the Lab that will be used by default with
+                  all compute-requiring child resources
+                maxLength: 63
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              location:
                 description: The default location for all artifacts created under
                   the DataProduct. All data-producing resources will use the VirtualBucket
-                  specified by the DataLocation by default
+                  specified by the Location by default
                 properties:
                   bucketName:
                     default: ""
@@ -251,102 +347,6 @@ spec:
                       the DataLocation
                     type: string
                 type: object
-              description:
-                default: ""
-                description: User-provided description of the object
-                maxLength: 512
-                type: string
-              gitLocation:
-                description: GitLocation is the default Git location where all child
-                  resources will be tracked as YAML
-                properties:
-                  branch:
-                    default: ""
-                    description: The branch inside the Git repository
-                    maxLength: 256
-                    type: string
-                  gitConnectionName:
-                    default: ""
-                    description: The Git Connection resource which exists in the same
-                      tenant as the parent DataProduct
-                    type: string
-                  private:
-                    default: true
-                    description: Indicates if the repository is private
-                    type: boolean
-                  url:
-                    default: ""
-                    description: The URL to the destination Git repository
-                    maxLength: 256
-                    type: string
-                type: object
-              governance:
-                description: The Governance requirements (not functional as of the
-                  current release)
-                properties:
-                  businessReviewer:
-                    description: The account name of the business reviewer
-                    type: string
-                  complianceReviewer:
-                    description: The account name of the compliance reviewer
-                    type: string
-                  country:
-                    description: The country whose regulations are under consideration
-                    type: string
-                  enabled:
-                    default: false
-                    description: Indicates if governance is enabled
-                    type: boolean
-                  itReviewer:
-                    description: The account name of the IT reviewer
-                    type: string
-                  members:
-                    description: The name of the team members account that goveren
-                      this data product.
-                    items:
-                      type: string
-                    type: array
-                type: object
-              imageLocation:
-                description: ImageLocation is the default Docker image repository
-                  where model images produced under the DataProduct will be stored
-                properties:
-                  name:
-                    default: ""
-                    description: The canonical name of the image repository. If not
-                      set, it will default to docker/{dataproduct_name}
-                    maxLength: 256
-                    type: string
-                  registryConnectionName:
-                    default: ""
-                    description: The image repository Connection resource which exists
-                      in the same tenant as the parent DataProduct. If the field is
-                      not set, Modela will ignore the image location and not push
-                      images
-                    type: string
-                type: object
-              kpis:
-                description: KPIs define key performance indicators for the DataProduct
-                  (not functional as of the current release)
-                items:
-                  description: KPI specifies a key performance indicator for a DataProduct.
-                    Currently not implemented.
-                  properties:
-                    name:
-                      default: ""
-                      description: The name of the KPI
-                      type: string
-                    value:
-                      description: The value of the KPI
-                      type: number
-                  type: object
-                type: array
-              labName:
-                description: The name of the Lab that will be used by default with
-                  all compute-requiring child resources
-                maxLength: 63
-                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
-                type: string
               notification:
                 description: The default notification specification for all resources
                   under the DataProduct

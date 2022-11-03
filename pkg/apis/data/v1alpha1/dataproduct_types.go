@@ -45,7 +45,7 @@ type DataProductCondition struct {
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Public",type="boolean",JSONPath=".spec.public"
 // +kubebuilder:printcolumn:name="Errors",type="integer",JSONPath=".status.totalErrorAlerts"
-// +kubebuilder:printcolumn:name="Data Sources",type="integer",JSONPath=".status.totalDatasources",priority=1
+// +kubebuilder:printcolumn:name="Location Sources",type="integer",JSONPath=".status.totalDatasources",priority=1
 // +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.totalDatasets",priority=1
 // +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.totalStudies",priority=1
 // +kubebuilder:printcolumn:name="Models",type="integer",JSONPath=".status.totalModels",priority=1
@@ -134,9 +134,9 @@ type DataProductSpec struct {
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,11,opt,name=description"`
 	// The default location for all artifacts created under the DataProduct. All data-producing resources will
-	// use the VirtualBucket specified by the DataLocation by default
+	// use the VirtualBucket specified by the Location by default
 	// +kubebuilder:validation:Optional
-	DataLocation DataLocation `json:"dataLocation,omitempty" protobuf:"bytes,12,opt,name=dataLocation"`
+	Location DataLocation `json:"location,omitempty" protobuf:"bytes,12,opt,name=location"`
 	// The default notification specification for all resources under the DataProduct
 	// +kubebuilder:validation:Optional
 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,13,opt,name=notification"`

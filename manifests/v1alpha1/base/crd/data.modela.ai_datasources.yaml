@@ -267,7 +267,7 @@ spec:
                 type: object
               inferredFrom:
                 description: InferredFrom specifies the location of the data that
-                  was used to generate the schema of the Data Source
+                  was used to generate the schema of the Location Source
                 properties:
                   bucketName:
                     default: ""
@@ -921,8 +921,9 @@ spec:
                 type: string
               task:
                 description: The default task for Dataset resources created from the
-                  Data Source. If null, the task type will default to the the default
-                  task type of the Data Product which contains the Data Source
+                  Location Source. If null, the task type will default to the the
+                  default task type of the Location Product which contains the Location
+                  Source
                 enum:
                 - binary-classification
                 - multi-classification

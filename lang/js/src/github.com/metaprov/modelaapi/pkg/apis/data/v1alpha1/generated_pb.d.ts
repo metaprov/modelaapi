@@ -1422,10 +1422,10 @@ export class DataProductSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): DataProductSpec;
 
-  getDatalocation(): DataLocation | undefined;
-  setDatalocation(value?: DataLocation): DataProductSpec;
-  hasDatalocation(): boolean;
-  clearDatalocation(): DataProductSpec;
+  getLocation(): DataLocation | undefined;
+  setLocation(value?: DataLocation): DataProductSpec;
+  hasLocation(): boolean;
+  clearLocation(): DataProductSpec;
 
   getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
   setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): DataProductSpec;
@@ -1502,7 +1502,7 @@ export namespace DataProductSpec {
     task: string,
     subtask: string,
     description: string,
-    datalocation?: DataLocation.AsObject,
+    location?: DataLocation.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     trainingresources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     servingresources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
@@ -2920,10 +2920,10 @@ export class FeatureGroupSpec extends jspb.Message {
   hasUnittests(): boolean;
   clearUnittests(): FeatureGroupSpec;
 
-  getData(): DataLocation | undefined;
-  setData(value?: DataLocation): FeatureGroupSpec;
-  hasData(): boolean;
-  clearData(): FeatureGroupSpec;
+  getLocation(): DataLocation | undefined;
+  setLocation(value?: DataLocation): FeatureGroupSpec;
+  hasLocation(): boolean;
+  clearLocation(): FeatureGroupSpec;
 
   getTimecolumn(): string;
   setTimecolumn(value: string): FeatureGroupSpec;
@@ -2953,7 +2953,7 @@ export namespace FeatureGroupSpec {
     syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     schema?: Schema.AsObject,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    data?: DataLocation.AsObject,
+    location?: DataLocation.AsObject,
     timecolumn: string,
     materialization?: MaterializationSpec.AsObject,
   }
@@ -4119,10 +4119,10 @@ export class RecipeRunSpec extends jspb.Message {
   hasLabref(): boolean;
   clearLabref(): RecipeRunSpec;
 
-  getOutput(): DataLocation | undefined;
-  setOutput(value?: DataLocation): RecipeRunSpec;
-  hasOutput(): boolean;
-  clearOutput(): RecipeRunSpec;
+  getLocation(): DataLocation | undefined;
+  setLocation(value?: DataLocation): RecipeRunSpec;
+  hasLocation(): boolean;
+  clearLocation(): RecipeRunSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): RecipeRunSpec;
@@ -4145,7 +4145,7 @@ export namespace RecipeRunSpec {
     versionname: string,
     recipename: string,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    output?: DataLocation.AsObject,
+    location?: DataLocation.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     ttl: number,
   }
