@@ -81,14 +81,39 @@ export namespace OnlineGetRequest {
   }
 }
 
-export class GetRow extends jspb.Message {
-  getFeaturesList(): Array<string>;
-  setFeaturesList(value: Array<string>): GetRow;
-  clearFeaturesList(): GetRow;
-  addFeatures(value: string, index?: number): GetRow;
+export class FGFields extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): FGFields;
 
-  getJoinkeyMap(): jspb.Map<string, string>;
-  clearJoinkeyMap(): GetRow;
+  getKeyvalue(): string;
+  setKeyvalue(value: string): FGFields;
+
+  getFeaturesList(): Array<string>;
+  setFeaturesList(value: Array<string>): FGFields;
+  clearFeaturesList(): FGFields;
+  addFeatures(value: string, index?: number): FGFields;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FGFields.AsObject;
+  static toObject(includeInstance: boolean, msg: FGFields): FGFields.AsObject;
+  static serializeBinaryToWriter(message: FGFields, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FGFields;
+  static deserializeBinaryFromReader(message: FGFields, reader: jspb.BinaryReader): FGFields;
+}
+
+export namespace FGFields {
+  export type AsObject = {
+    key: string,
+    keyvalue: string,
+    featuresList: Array<string>,
+  }
+}
+
+export class GetRow extends jspb.Message {
+  getGroupsList(): Array<FGFields>;
+  setGroupsList(value: Array<FGFields>): GetRow;
+  clearGroupsList(): GetRow;
+  addGroups(value?: FGFields, index?: number): FGFields;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetRow.AsObject;
@@ -100,38 +125,41 @@ export class GetRow extends jspb.Message {
 
 export namespace GetRow {
   export type AsObject = {
-    featuresList: Array<string>,
-    joinkeyMap: Array<[string, string]>,
+    groupsList: Array<FGFields.AsObject>,
   }
 }
 
-export class GetResultRow extends jspb.Message {
+export class GetRowResult extends jspb.Message {
+  getKeyname(): string;
+  setKeyname(value: string): GetRowResult;
+
   getKey(): string;
-  setKey(value: string): GetResultRow;
+  setKey(value: string): GetRowResult;
 
   getValuesMap(): jspb.Map<string, Value>;
-  clearValuesMap(): GetResultRow;
+  clearValuesMap(): GetRowResult;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetResultRow.AsObject;
-  static toObject(includeInstance: boolean, msg: GetResultRow): GetResultRow.AsObject;
-  static serializeBinaryToWriter(message: GetResultRow, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetResultRow;
-  static deserializeBinaryFromReader(message: GetResultRow, reader: jspb.BinaryReader): GetResultRow;
+  toObject(includeInstance?: boolean): GetRowResult.AsObject;
+  static toObject(includeInstance: boolean, msg: GetRowResult): GetRowResult.AsObject;
+  static serializeBinaryToWriter(message: GetRowResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetRowResult;
+  static deserializeBinaryFromReader(message: GetRowResult, reader: jspb.BinaryReader): GetRowResult;
 }
 
-export namespace GetResultRow {
+export namespace GetRowResult {
   export type AsObject = {
+    keyname: string,
     key: string,
     valuesMap: Array<[string, Value.AsObject]>,
   }
 }
 
 export class OnlineGetResponse extends jspb.Message {
-  getRowsList(): Array<GetResultRow>;
-  setRowsList(value: Array<GetResultRow>): OnlineGetResponse;
+  getRowsList(): Array<GetRowResult>;
+  setRowsList(value: Array<GetRowResult>): OnlineGetResponse;
   clearRowsList(): OnlineGetResponse;
-  addRows(value?: GetResultRow, index?: number): GetResultRow;
+  addRows(value?: GetRowResult, index?: number): GetRowResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OnlineGetResponse.AsObject;
@@ -143,7 +171,7 @@ export class OnlineGetResponse extends jspb.Message {
 
 export namespace OnlineGetResponse {
   export type AsObject = {
-    rowsList: Array<GetResultRow.AsObject>,
+    rowsList: Array<GetRowResult.AsObject>,
   }
 }
 

@@ -28,22 +28,28 @@ message Value {
 // For real time infernece, ask the store for one row features
 message OnlineGetRequest {
     string namespace = 1;
-    repeated GetRow rows = 2;
+    repeated GetRow rows = 2; // repeated for multi get
+}
+
+message FGFields {
+    string key = 1; // the name of the feature group
+    string keyvalue = 2; // the name of the feature group
+    repeated string features = 3; // all the features in the feature group
 }
 
 message GetRow {
-    repeated string features = 1;
-    map<string,string> joinkey=2; // list of join key and value.
+    repeated FGFields  groups = 1;
 }
 
-message GetResultRow {
-    string key = 1;
-    map<string,Value> values = 2; // for each feature, return its value
+message GetRowResult {
+    string keyname = 1;
+    string key = 2;
+    map<string,Value> values = 3; // for each feature, return its value
 }
 
 // Answer one row
 message OnlineGetResponse {
-    repeated GetResultRow rows= 1;
+    repeated GetRowResult rows= 1;
 }
 
 message Row {
