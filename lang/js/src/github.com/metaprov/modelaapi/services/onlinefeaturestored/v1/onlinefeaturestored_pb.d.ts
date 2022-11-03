@@ -82,6 +82,11 @@ export namespace OnlineGetRequest {
 }
 
 export class GetRow extends jspb.Message {
+  getFeaturesList(): Array<string>;
+  setFeaturesList(value: Array<string>): GetRow;
+  clearFeaturesList(): GetRow;
+  addFeatures(value: string, index?: number): GetRow;
+
   getJoinkeyMap(): jspb.Map<string, string>;
   clearJoinkeyMap(): GetRow;
 
@@ -95,6 +100,7 @@ export class GetRow extends jspb.Message {
 
 export namespace GetRow {
   export type AsObject = {
+    featuresList: Array<string>,
     joinkeyMap: Array<[string, string]>,
   }
 }

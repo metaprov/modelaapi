@@ -89,7 +89,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -837,6 +837,13 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetReq
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.repeatedFields_ = [1];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -868,6 +875,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.proto
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.toObject = function(includeInstance, msg) {
   var f, obj = {
+    featuresList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     joinkeyMap: (f = msg.getJoinkeyMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
@@ -906,6 +914,10 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.deser
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addFeatures(value);
+      break;
+    case 2:
       var value = msg.getJoinkeyMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
@@ -940,22 +952,66 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.proto
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getFeaturesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      1,
+      f
+    );
+  }
   f = message.getJoinkeyMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
 
 /**
- * map<string, string> joinkey = 1;
+ * repeated string features = 1;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.prototype.getFeaturesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.prototype.setFeaturesList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.prototype.addFeatures = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.prototype.clearFeaturesList = function() {
+  return this.setFeaturesList([]);
+};
+
+
+/**
+ * map<string, string> joinkey = 2;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.prototype.getJoinkeyMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
       null));
 };
 

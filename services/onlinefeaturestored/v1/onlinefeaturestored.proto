@@ -32,7 +32,8 @@ message OnlineGetRequest {
 }
 
 message GetRow {
-    map<string,string> joinkey=1; // list of join key and value.
+    repeated string features = 1;
+    map<string,string> joinkey=2; // list of join key and value.
 }
 
 message GetResultRow {
