@@ -2102,11 +2102,6 @@ func (in *EntitySpec) DeepCopyInto(out *EntitySpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.JoinKeys != nil {
-		in, out := &in.JoinKeys, &out.JoinKeys
-		*out = make([]string, len(*in))
-		copy(*out, *in)
-	}
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
 		*out = new(string)
