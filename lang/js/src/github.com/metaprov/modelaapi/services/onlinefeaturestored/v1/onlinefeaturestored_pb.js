@@ -652,7 +652,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value.protot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.repeatedFields_ = [1];
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.repeatedFields_ = [2];
 
 
 
@@ -685,6 +685,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetReq
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
+    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     rowsList: jspb.Message.toObjectList(msg.getRowsList(),
     proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.toObject, includeInstance)
   };
@@ -724,6 +725,10 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetReq
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
+    case 2:
       var value = new proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.deserializeBinaryFromReader);
       msg.addRows(value);
@@ -757,10 +762,17 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetReq
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = message.getRowsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      2,
       f,
       proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow.serializeBinaryToWriter
     );
@@ -769,12 +781,30 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetReq
 
 
 /**
- * repeated GetRow rows = 1;
+ * optional string namespace = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * repeated GetRow rows = 2;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow>}
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.prototype.getRowsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow, 1));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow, 2));
 };
 
 
@@ -783,7 +813,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetReq
  * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.prototype.setRowsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -793,7 +823,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetReq
  * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow}
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineGetRequest.prototype.addRows = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetRow, opt_index);
 };
 
 

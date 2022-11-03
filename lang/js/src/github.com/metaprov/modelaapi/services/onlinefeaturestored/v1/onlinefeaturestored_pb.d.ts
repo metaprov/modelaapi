@@ -58,6 +58,9 @@ export namespace Value {
 }
 
 export class OnlineGetRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): OnlineGetRequest;
+
   getRowsList(): Array<GetRow>;
   setRowsList(value: Array<GetRow>): OnlineGetRequest;
   clearRowsList(): OnlineGetRequest;
@@ -73,6 +76,7 @@ export class OnlineGetRequest extends jspb.Message {
 
 export namespace OnlineGetRequest {
   export type AsObject = {
+    namespace: string,
     rowsList: Array<GetRow.AsObject>,
   }
 }

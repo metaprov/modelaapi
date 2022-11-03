@@ -27,7 +27,8 @@ message Value {
 
 // For real time infernece, ask the store for one row features
 message OnlineGetRequest {
-    repeated GetRow rows = 1;
+    string namespace = 1;
+    repeated GetRow rows = 2;
 }
 
 message GetRow {
