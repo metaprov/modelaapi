@@ -185,10 +185,8 @@ export class Row extends jspb.Message {
   getField(): string;
   setField(value: string): Row;
 
-  getValue(): Value | undefined;
-  setValue(value?: Value): Row;
-  hasValue(): boolean;
-  clearValue(): Row;
+  getValue(): string;
+  setValue(value: string): Row;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Row.AsObject;
@@ -203,7 +201,7 @@ export namespace Row {
     keyname: string,
     key: string,
     field: string,
-    value?: Value.AsObject,
+    value: string,
   }
 }
 

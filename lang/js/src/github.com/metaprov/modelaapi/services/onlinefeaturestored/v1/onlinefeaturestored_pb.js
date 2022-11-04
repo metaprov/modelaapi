@@ -1622,7 +1622,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.toObject
     keyname: jspb.Message.getFieldWithDefault(msg, 1, ""),
     key: jspb.Message.getFieldWithDefault(msg, 2, ""),
     field: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    value: (f = msg.getValue()) && proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value.toObject(includeInstance, f)
+    value: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1672,8 +1672,7 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.deserial
       msg.setField(value);
       break;
     case 4:
-      var value = new proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setValue(value);
       break;
     default:
@@ -1727,11 +1726,10 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.serializ
     );
   }
   f = message.getValue();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       4,
-      f,
-      proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -1792,39 +1790,20 @@ proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.prototyp
 
 
 /**
- * optional Value value = 4;
- * @return {?proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value}
+ * optional string value = 4;
+ * @return {string}
  */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.prototype.getValue = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value, 4));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Value|undefined} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row} returns this
-*/
+ */
 proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.prototype.setValue = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row} returns this
- */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.prototype.clearValue = function() {
-  return this.setValue(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.Row.prototype.hasValue = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

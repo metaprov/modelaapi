@@ -56,7 +56,7 @@ message Row {
     string keyname = 1;
     string key = 2;
     string field = 3;
-    Value  value = 4;
+    string value = 4;
 }
 
 // Import data from a location to the online store.
