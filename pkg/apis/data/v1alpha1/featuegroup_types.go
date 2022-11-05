@@ -124,9 +124,12 @@ type FeatureGroupSpec struct {
 	// the time column index. Might be null, if the fg does not have time column.
 	// +kubebuilder:validation:Optional
 	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,13,opt,name=timeColumn"`
+	// The time column format
+	// +kubebuilder:validation:Optional
+	TimeColumnFormat *string `json:"timeColumnFormat,omitempty" protobuf:"bytes,14,opt,name=timeColumnFormat"`
 	// Materialization
 	// +kubebuilder:validation:Optional
-	Materialization MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,14,opt,name=materialization"`
+	Materialization MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,15,opt,name=materialization"`
 }
 
 // FeatureStatus defines the observed state of Feature
@@ -173,10 +176,14 @@ type MaterializationSpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:default:=0
-	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,4,opt,name=ttl"`
+	OfflineTTL *int32 `json:"offlineTTL,omitempty" protobuf:"varint,4,opt,name=offlineTTL"`
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:default:=0
+	OnlineTTL *int32 `json:"onlineTTL,omitempty" protobuf:"varint,5,opt,name=onlineTTL"`
 	// Number of days to store information from the past in the feature store.
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=21
 	// +kubebuilder:validation:Minimum=0
-	Backfill *int32 `json:"backfill,omitempty" protobuf:"varint,5,opt,name=backfill"`
+	Backfill *int32 `json:"backfill,omitempty" protobuf:"varint,6,opt,name=backfill"`
 }

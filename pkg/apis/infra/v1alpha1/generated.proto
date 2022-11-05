@@ -169,10 +169,26 @@ message AccountStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 4;
 
+  // Total models owned by this user
+  // +kubebuilder:validation:Optional
+  optional int32 totalModels = 5;
+
+  // Total model classes owned by this user
+  // +kubebuilder:validation:Optional
+  optional int32 totalModelClasses = 6;
+
+  // Total number of feature groups that this user is owner of.
+  // +kubebuilder:validation:Optional
+  optional int32 totalPredictors = 7;
+
+  // Total number of feature groups that this user is responsible for.
+  // +kubebuilder:validation:Optional
+  optional int32 totalFeatureGroups = 8;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated AccountCondition conditions = 5;
+  repeated AccountCondition conditions = 9;
 }
 
 message AirTableSpec {
@@ -2714,6 +2730,11 @@ message ServingSiteSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 7;
+
+  // The type of the serving class
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string type = 8;
 }
 
 message ServingSiteStatus {

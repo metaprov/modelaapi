@@ -2153,9 +2153,13 @@ message FeatureGroupSpec {
   // +kubebuilder:validation:Optional
   optional string timeColumn = 13;
 
+  // The time column format
+  // +kubebuilder:validation:Optional
+  optional string timeColumnFormat = 14;
+
   // Materialization
   // +kubebuilder:validation:Optional
-  optional MaterializationSpec materialization = 14;
+  optional MaterializationSpec materialization = 15;
 }
 
 // FeatureStatus defines the observed state of Feature
@@ -2639,13 +2643,18 @@ message MaterializationSpec {
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:default:=0
-  optional int32 ttl = 4;
+  optional int32 offlineTTL = 4;
+
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:default:=0
+  optional int32 onlineTTL = 5;
 
   // Number of days to store information from the past in the feature store.
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=21
   // +kubebuilder:validation:Minimum=0
-  optional int32 backfill = 5;
+  optional int32 backfill = 6;
 }
 
 message MetricSpec {

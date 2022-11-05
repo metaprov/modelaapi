@@ -205,6 +205,10 @@ type ModelClassTrainingSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	RetrainOnFeaturesMetadataChange *bool `json:"retrainOnFeaturesMetadataChange,omitempty" protobuf:"bytes,9,opt,name=retrainOnFeaturesMetadataChange"`
+	// Define custom search space for this model class.
+	// If not defined, we would use the search space in the model template.
+	// +kubebuilder:validation:Optional
+	SearchSpace *AlgorithmSearchSpaceSpec `json:"searchSpace,omitempty" protobuf:"bytes,10,opt,name=searchSpace"`
 }
 
 type ModelClassServingSpec struct {

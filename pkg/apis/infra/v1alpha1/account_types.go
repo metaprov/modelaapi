@@ -154,10 +154,22 @@ type AccountStatus struct {
 	// In the case of failure, the Account resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,4,opt,name=failureMessage"`
+	// Total models owned by this user
+	//+kubebuilder:validation:Optional
+	TotalModels int32 `json:"totalModels,omitempty" protobuf:"bytes,5,opt,name=totalModels"`
+	// Total model classes owned by this user
+	//+kubebuilder:validation:Optional
+	TotalModelClasses int32 `json:"totalModelClassess,omitempty" protobuf:"bytes,6,opt,name=totalModelClasses"`
+	// Total number of feature groups that this user is owner of.
+	//+kubebuilder:validation:Optional
+	TotalPredictors int32 `json:"totalPredictors,omitempty" protobuf:"bytes,7,opt,name=totalPredictors"`
+	// Total number of feature groups that this user is responsible for.
+	//+kubebuilder:validation:Optional
+	TotalFeatureGroups int32 `json:"TotalFeatureGroups,omitempty" protobuf:"bytes,8,opt,name=totalFeatureGroups"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []AccountCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
+	Conditions []AccountCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,9,rep,name=conditions"`
 }
 
 // AvatarSpec specifies the location of an avatar for an Account

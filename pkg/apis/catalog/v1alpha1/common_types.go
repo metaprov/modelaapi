@@ -1844,6 +1844,14 @@ const (
 	OnyxPredictor  PredictorFormat = "onyx"
 )
 
+type ServingSiteType string
+
+const (
+	ServingSiteTypeDev   ServingSiteType = "dev"
+	ServingSiteTypeProd  ServingSiteType = "prod"
+	ServingSiteTypeStage ServingSiteType = "stage"
+)
+
 // +kubebuilder:validation:Enum="one-to-one";"one-to-many";"many-to-many";
 // Relationship type between data sources
 type RelationshipArity string

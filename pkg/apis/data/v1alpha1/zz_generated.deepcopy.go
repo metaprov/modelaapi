@@ -2337,6 +2337,11 @@ func (in *FeatureGroupSpec) DeepCopyInto(out *FeatureGroupSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.TimeColumnFormat != nil {
+		in, out := &in.TimeColumnFormat, &out.TimeColumnFormat
+		*out = new(string)
+		**out = **in
+	}
 	in.Materialization.DeepCopyInto(&out.Materialization)
 }
 
@@ -3008,8 +3013,13 @@ func (in *MaterializationSpec) DeepCopyInto(out *MaterializationSpec) {
 		in, out := &in.StartDate, &out.StartDate
 		*out = (*in).DeepCopy()
 	}
-	if in.TTL != nil {
-		in, out := &in.TTL, &out.TTL
+	if in.OfflineTTL != nil {
+		in, out := &in.OfflineTTL, &out.OfflineTTL
+		*out = new(int32)
+		**out = **in
+	}
+	if in.OnlineTTL != nil {
+		in, out := &in.OnlineTTL, &out.OnlineTTL
 		*out = new(int32)
 		**out = **in
 	}

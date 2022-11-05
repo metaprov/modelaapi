@@ -224,18 +224,23 @@ spec:
                     default: false
                     description: If true update the offline store.
                     type: boolean
-                  online:
-                    default: false
-                    description: If true, update the online store
-                    type: boolean
-                  startDate:
-                    format: date-time
-                    type: string
-                  ttl:
+                  offlineTTL:
                     default: 0
                     format: int32
                     minimum: 0
                     type: integer
+                  online:
+                    default: false
+                    description: If true, update the online store
+                    type: boolean
+                  onlineTTL:
+                    default: 0
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  startDate:
+                    format: date-time
+                    type: string
                 type: object
               owner:
                 default: no-one
@@ -649,6 +654,9 @@ spec:
               timeColumn:
                 description: the time column index. Might be null, if the fg does
                   not have time column.
+                type: string
+              timeColumnFormat:
+                description: The time column format
                 type: string
               unitTests:
                 description: Unit test to run on data from this feature group upon

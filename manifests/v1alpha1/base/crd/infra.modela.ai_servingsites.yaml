@@ -350,6 +350,10 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
+              type:
+                default: no-one
+                description: The type of the serving class
+                type: string
             type: object
           status:
             properties:

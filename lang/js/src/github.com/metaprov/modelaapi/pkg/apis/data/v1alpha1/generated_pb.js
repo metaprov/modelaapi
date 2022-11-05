@@ -30564,6 +30564,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.toOb
     unittests: (f = msg.getUnittests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
     location: (f = msg.getLocation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
     timecolumn: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
+    timecolumnformat: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
     materialization: (f = msg.getMaterialization()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.toObject(includeInstance, f)
   };
 
@@ -30655,6 +30656,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.dese
       msg.setTimecolumn(value);
       break;
     case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTimecolumnformat(value);
+      break;
+    case 15:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.deserializeBinaryFromReader);
       msg.setMaterialization(value);
@@ -30777,10 +30782,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.seri
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeString(
+      14,
+      f
+    );
+  }
   f = message.getMaterialization();
   if (f != null) {
     writer.writeMessage(
-      14,
+      15,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.serializeBinaryToWriter
     );
@@ -31227,12 +31239,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
 
 
 /**
- * optional MaterializationSpec materialization = 14;
+ * optional string timeColumnFormat = 14;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getTimecolumnformat = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setTimecolumnformat = function(value) {
+  return jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.clearTimecolumnformat = function() {
+  return jspb.Message.setField(this, 14, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasTimecolumnformat = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional MaterializationSpec materialization = 15;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getMaterialization = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec, 14));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec, 15));
 };
 
 
@@ -31241,7 +31289,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setMaterialization = function(value) {
-  return jspb.Message.setWrapperField(this, 14, value);
+  return jspb.Message.setWrapperField(this, 15, value);
 };
 
 
@@ -31259,7 +31307,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasMaterialization = function() {
-  return jspb.Message.getField(this, 14) != null;
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
@@ -38260,8 +38308,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.t
     online: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     offline: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
     startdate: (f = msg.getStartdate()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    ttl: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    backfill: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    offlinettl: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    onlinettl: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    backfill: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -38313,9 +38362,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.d
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTtl(value);
+      msg.setOfflinettl(value);
       break;
     case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setOnlinettl(value);
+      break;
+    case 6:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setBackfill(value);
       break;
@@ -38381,6 +38434,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.s
   if (f != null) {
     writer.writeInt32(
       5,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeInt32(
+      6,
       f
     );
   }
@@ -38497,10 +38557,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.p
 
 
 /**
- * optional int32 ttl = 4;
+ * optional int32 offlineTTL = 4;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.getTtl = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.getOfflinettl = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -38509,7 +38569,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.p
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.setTtl = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.setOfflinettl = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -38518,7 +38578,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.clearTtl = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.clearOfflinettl = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -38527,16 +38587,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.hasTtl = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.hasOfflinettl = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional int32 backfill = 5;
+ * optional int32 onlineTTL = 5;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.getBackfill = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.getOnlinettl = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -38545,7 +38605,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.p
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.setBackfill = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.setOnlinettl = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -38554,7 +38614,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.clearBackfill = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.clearOnlinettl = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -38563,8 +38623,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.hasBackfill = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.hasOnlinettl = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional int32 backfill = 6;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.getBackfill = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.setBackfill = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.clearBackfill = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.hasBackfill = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

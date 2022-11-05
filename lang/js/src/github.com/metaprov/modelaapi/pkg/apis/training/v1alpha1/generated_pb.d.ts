@@ -9,10 +9,20 @@ import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../.
 
 
 export class AlgorithmSearchSpaceSpec extends jspb.Message {
-  getAllowlistList(): Array<string>;
-  setAllowlistList(value: Array<string>): AlgorithmSearchSpaceSpec;
-  clearAllowlistList(): AlgorithmSearchSpaceSpec;
-  addAllowlist(value: string, index?: number): AlgorithmSearchSpaceSpec;
+  getIncludeList(): Array<string>;
+  setIncludeList(value: Array<string>): AlgorithmSearchSpaceSpec;
+  clearIncludeList(): AlgorithmSearchSpaceSpec;
+  addInclude(value: string, index?: number): AlgorithmSearchSpaceSpec;
+
+  getExcludeList(): Array<string>;
+  setExcludeList(value: Array<string>): AlgorithmSearchSpaceSpec;
+  clearExcludeList(): AlgorithmSearchSpaceSpec;
+  addExclude(value: string, index?: number): AlgorithmSearchSpaceSpec;
+
+  getCustomalgnamesList(): Array<k8s_io_api_core_v1_generated_pb.ObjectReference>;
+  setCustomalgnamesList(value: Array<k8s_io_api_core_v1_generated_pb.ObjectReference>): AlgorithmSearchSpaceSpec;
+  clearCustomalgnamesList(): AlgorithmSearchSpaceSpec;
+  addCustomalgnames(value?: k8s_io_api_core_v1_generated_pb.ObjectReference, index?: number): k8s_io_api_core_v1_generated_pb.ObjectReference;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AlgorithmSearchSpaceSpec.AsObject;
@@ -24,7 +34,9 @@ export class AlgorithmSearchSpaceSpec extends jspb.Message {
 
 export namespace AlgorithmSearchSpaceSpec {
   export type AsObject = {
-    allowlistList: Array<string>,
+    includeList: Array<string>,
+    excludeList: Array<string>,
+    customalgnamesList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
   }
 }
 
@@ -2454,6 +2466,11 @@ export class ModelClassTrainingSpec extends jspb.Message {
   getRetrainonfeaturesmetadatachange(): boolean;
   setRetrainonfeaturesmetadatachange(value: boolean): ModelClassTrainingSpec;
 
+  getSearchspace(): AlgorithmSearchSpaceSpec | undefined;
+  setSearchspace(value?: AlgorithmSearchSpaceSpec): ModelClassTrainingSpec;
+  hasSearchspace(): boolean;
+  clearSearchspace(): ModelClassTrainingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassTrainingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassTrainingSpec): ModelClassTrainingSpec.AsObject;
@@ -2473,6 +2490,7 @@ export namespace ModelClassTrainingSpec {
     retrainondrift: boolean,
     retrainonlabelsdatachange: boolean,
     retrainonfeaturesmetadatachange: boolean,
+    searchspace?: AlgorithmSearchSpaceSpec.AsObject,
   }
 }
 

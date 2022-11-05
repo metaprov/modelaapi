@@ -2928,6 +2928,9 @@ export class FeatureGroupSpec extends jspb.Message {
   getTimecolumn(): string;
   setTimecolumn(value: string): FeatureGroupSpec;
 
+  getTimecolumnformat(): string;
+  setTimecolumnformat(value: string): FeatureGroupSpec;
+
   getMaterialization(): MaterializationSpec | undefined;
   setMaterialization(value?: MaterializationSpec): FeatureGroupSpec;
   hasMaterialization(): boolean;
@@ -2955,6 +2958,7 @@ export namespace FeatureGroupSpec {
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     location?: DataLocation.AsObject,
     timecolumn: string,
+    timecolumnformat: string,
     materialization?: MaterializationSpec.AsObject,
   }
 }
@@ -3721,8 +3725,11 @@ export class MaterializationSpec extends jspb.Message {
   hasStartdate(): boolean;
   clearStartdate(): MaterializationSpec;
 
-  getTtl(): number;
-  setTtl(value: number): MaterializationSpec;
+  getOfflinettl(): number;
+  setOfflinettl(value: number): MaterializationSpec;
+
+  getOnlinettl(): number;
+  setOnlinettl(value: number): MaterializationSpec;
 
   getBackfill(): number;
   setBackfill(value: number): MaterializationSpec;
@@ -3740,7 +3747,8 @@ export namespace MaterializationSpec {
     online: boolean,
     offline: boolean,
     startdate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    ttl: number,
+    offlinettl: number,
+    onlinettl: number,
     backfill: number,
   }
 }

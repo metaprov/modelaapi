@@ -2987,7 +2987,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.repeatedFields_ = [1];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.repeatedFields_ = [1,2,3];
 
 
 
@@ -3020,7 +3020,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    allowlistList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+    includeList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    excludeList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    customalgnamesList: jspb.Message.toObjectList(msg.getCustomalgnamesList(),
+    k8s_io_api_core_v1_generated_pb.ObjectReference.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -3059,7 +3062,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSp
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.addAllowlist(value);
+      msg.addInclude(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addExclude(value);
+      break;
+    case 3:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.addCustomalgnames(value);
       break;
     default:
       reader.skipField();
@@ -3090,21 +3102,36 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAllowlistList();
+  f = message.getIncludeList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       1,
       f
     );
   }
+  f = message.getExcludeList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      2,
+      f
+    );
+  }
+  f = message.getCustomalgnamesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+    );
+  }
 };
 
 
 /**
- * repeated string allowlist = 1;
+ * repeated string include = 1;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.getAllowlistList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.getIncludeList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
@@ -3113,7 +3140,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSp
  * @param {!Array<string>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.setAllowlistList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.setIncludeList = function(value) {
   return jspb.Message.setField(this, 1, value || []);
 };
 
@@ -3123,7 +3150,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSp
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.addAllowlist = function(value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.addInclude = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
@@ -3132,8 +3159,83 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSp
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.clearAllowlistList = function() {
-  return this.setAllowlistList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.clearIncludeList = function() {
+  return this.setIncludeList([]);
+};
+
+
+/**
+ * repeated string exclude = 2;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.getExcludeList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.setExcludeList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.addExclude = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.clearExcludeList = function() {
+  return this.setExcludeList([]);
+};
+
+
+/**
+ * repeated k8s.io.api.core.v1.ObjectReference customAlgNames = 3;
+ * @return {!Array<!proto.k8s.io.api.core.v1.ObjectReference>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.getCustomalgnamesList = function() {
+  return /** @type{!Array<!proto.k8s.io.api.core.v1.ObjectReference>} */ (
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.k8s.io.api.core.v1.ObjectReference>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.setCustomalgnamesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.k8s.io.api.core.v1.ObjectReference=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.addCustomalgnames = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.k8s.io.api.core.v1.ObjectReference, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.prototype.clearCustomalgnamesList = function() {
+  return this.setCustomalgnamesList([]);
 };
 
 
@@ -25569,7 +25671,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainin
     promotionpolicy: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     retrainondrift: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
     retrainonlabelsdatachange: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
-    retrainonfeaturesmetadatachange: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f
+    retrainonfeaturesmetadatachange: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
+    searchspace: (f = msg.getSearchspace()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -25645,6 +25748,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainin
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setRetrainonfeaturesmetadatachange(value);
+      break;
+    case 10:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.deserializeBinaryFromReader);
+      msg.setSearchspace(value);
       break;
     default:
       reader.skipField();
@@ -25740,6 +25848,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainin
     writer.writeBool(
       9,
       f
+    );
+  }
+  f = message.getSearchspace();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.serializeBinaryToWriter
     );
   }
 };
@@ -26070,6 +26186,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainin
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.hasRetrainonfeaturesmetadatachange = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional AlgorithmSearchSpaceSpec searchSpace = 10;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.getSearchspace = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec, 10));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.setSearchspace = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.clearSearchspace = function() {
+  return this.setSearchspace(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.hasSearchspace = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 

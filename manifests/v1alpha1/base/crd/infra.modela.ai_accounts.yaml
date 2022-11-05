@@ -199,6 +199,11 @@ spec:
           status:
             description: AccountStatus defines the actual state of the api object
             properties:
+              TotalFeatureGroups:
+                description: Total number of feature groups that this user is responsible
+                  for.
+                format: int32
+                type: integer
               conditions:
                 items:
                   description: AccountCondition describes the state of a account at
@@ -240,6 +245,19 @@ spec:
                 description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
+                type: integer
+              totalModelClassess:
+                description: Total model classes owned by this user
+                format: int32
+                type: integer
+              totalModels:
+                description: Total models owned by this user
+                format: int32
+                type: integer
+              totalPredictors:
+                description: Total number of feature groups that this user is owner
+                  of.
+                format: int32
                 type: integer
             type: object
         type: object

@@ -640,15 +640,22 @@ type BaselineSpec struct {
 	All *bool `json:"all,omitempty" protobuf:"varint,3,opt,name=all"`
 }
 
-// AlgorithmSearchSpaceSpec defines the algorithms available to models produced by a ModelClass
+// AlgorithmSearchSpaceSpec defines the algorithms available to models produced by a Study
 type AlgorithmSearchSpaceSpec struct {
-	// AllowList contains the collection of algorithms available to the ModelClass specifying the AlgorithmSearchSpaceSpec.
+	// Which algorithm to include
 	// If empty, all algorithms will be available for training
 	// +kubebuilder:validation:Optional
-	AllowList []catalog.ClassicEstimatorName `json:"allowlist,omitempty" protobuf:"bytes,1,rep,name=allowlist"`
+	Include []catalog.ClassicEstimatorName `json:"include,omitempty" protobuf:"bytes,1,rep,name=include"`
+	// Which algorithm to exclude
+	// If empty, all algorithms will be available for training
+	// +kubebuilder:validation:Optional
+	Exclude []catalog.ClassicEstimatorName `json:"exclude,omitempty" protobuf:"bytes,2,rep,name=exclude"`
+	// Set a custom hyper parameter spaace. This list refer to algorithm objects that define the custom paramters.
+	// +kubebuilder:validation:Optional
+	CustomAlgNames []v1.ObjectReference `json:"CustomAlgNames,omitempty" protobuf:"bytes,3,rep,name=customAlgNames"`
 }
 
-// ModelClassScheduleSpec specifies the parameters for a ModelClass to be executed at a certain time
+// StudyScheduleSpec specifies the parameters for a Study to be executed at a certain time
 type StudyScheduleSpec struct {
 	// Indicates if the schedule is enabled
 	// +kubebuilder:default:=false

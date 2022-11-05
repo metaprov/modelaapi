@@ -19,12 +19,21 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1";
 
-// AlgorithmSearchSpaceSpec defines the algorithms available to models produced by a ModelClass
+// AlgorithmSearchSpaceSpec defines the algorithms available to models produced by a Study
 message AlgorithmSearchSpaceSpec {
-  // AllowList contains the collection of algorithms available to the ModelClass specifying the AlgorithmSearchSpaceSpec.
+  // Which algorithm to include
   // If empty, all algorithms will be available for training
   // +kubebuilder:validation:Optional
-  repeated string allowlist = 1;
+  repeated string include = 1;
+
+  // Which algorithm to exclude
+  // If empty, all algorithms will be available for training
+  // +kubebuilder:validation:Optional
+  repeated string exclude = 2;
+
+  // Set a custom hyper parameter spaace. This list refer to algorithm objects that define the custom paramters.
+  // +kubebuilder:validation:Optional
+  repeated k8s.io.api.core.v1.ObjectReference customAlgNames = 3;
 }
 
 message Anomaly {
@@ -1706,6 +1715,11 @@ message ModelClassTrainingSpec {
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool retrainOnFeaturesMetadataChange = 9;
+
+  // Define custom search space for this model class.
+  // If not defined, we would use the search space in the model template.
+  // +kubebuilder:validation:Optional
+  optional AlgorithmSearchSpaceSpec searchSpace = 10;
 }
 
 // ModelCondition describes the state of a Model at a certain point
@@ -3659,7 +3673,7 @@ message StudyPhaseStatus {
   optional int32 modelsWithNoProgress = 8;
 }
 
-// ModelClassScheduleSpec specifies the parameters for a ModelClass to be executed at a certain time
+// StudyScheduleSpec specifies the parameters for a Study to be executed at a certain time
 message StudyScheduleSpec {
   // Indicates if the schedule is enabled
   // +kubebuilder:default:=false

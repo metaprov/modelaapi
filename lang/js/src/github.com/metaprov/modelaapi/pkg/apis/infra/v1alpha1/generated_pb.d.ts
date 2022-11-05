@@ -197,6 +197,18 @@ export class AccountStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): AccountStatus;
 
+  getTotalmodels(): number;
+  setTotalmodels(value: number): AccountStatus;
+
+  getTotalmodelclasses(): number;
+  setTotalmodelclasses(value: number): AccountStatus;
+
+  getTotalpredictors(): number;
+  setTotalpredictors(value: number): AccountStatus;
+
+  getTotalfeaturegroups(): number;
+  setTotalfeaturegroups(value: number): AccountStatus;
+
   getConditionsList(): Array<AccountCondition>;
   setConditionsList(value: Array<AccountCondition>): AccountStatus;
   clearConditionsList(): AccountStatus;
@@ -216,6 +228,10 @@ export namespace AccountStatus {
     observedgeneration: number,
     failurereason: string,
     failuremessage: string,
+    totalmodels: number,
+    totalmodelclasses: number,
+    totalpredictors: number,
+    totalfeaturegroups: number,
     conditionsList: Array<AccountCondition.AsObject>,
   }
 }
@@ -4753,6 +4769,9 @@ export class ServingSiteSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ServingSiteSpec;
 
+  getType(): string;
+  setType(value: string): ServingSiteSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingSiteSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ServingSiteSpec): ServingSiteSpec.AsObject;
@@ -4769,6 +4788,7 @@ export namespace ServingSiteSpec {
     ingress?: IngressSpec.AsObject,
     clustername: string,
     owner: string,
+    type: string,
   }
 }
 
