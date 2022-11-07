@@ -15,6 +15,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/validation/field"
+	"k8s.io/klog/v2"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
 
@@ -182,11 +183,9 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 
 	}
 	pspec := ms.Pruner
-	klog.InfoS("v", "pspec", *pspec.Type, "sampler", *ms.Sampler)
 	switch *pspec.Type {
 	case MedianPruner: // set default median pruner
 		if pspec.Median == nil {
-			klog.InfoS("set default pruner", "update median pruner")
 			pspec.Median = &MedianPrunerOptions{
 				// Pruning is disabled until the given number of trials finish in the same study.
 				StartupTrials: util.Int32Ptr(5),
@@ -217,7 +216,6 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 			}
 		}
 	case HyperbandPruner:
-		klog.InfoS("v", "update hyperband pruner")
 		if pspec.Hyperband == nil {
 			pspec.Hyperband = &HyperbandOptions{
 				MinResources:    util.Int32Ptr(1),
