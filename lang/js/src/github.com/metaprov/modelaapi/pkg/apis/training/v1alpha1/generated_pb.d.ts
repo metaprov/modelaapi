@@ -1590,6 +1590,11 @@ export class LabelsDataSpec extends jspb.Message {
   getTarget(): string;
   setTarget(value: string): LabelsDataSpec;
 
+  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): LabelsDataSpec;
+  hasTests(): boolean;
+  clearTests(): LabelsDataSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LabelsDataSpec.AsObject;
   static toObject(includeInstance: boolean, msg: LabelsDataSpec): LabelsDataSpec.AsObject;
@@ -1605,6 +1610,7 @@ export namespace LabelsDataSpec {
     primarykeyList: Array<string>,
     predictiontimecolumn: string,
     target: string,
+    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -2149,9 +2155,6 @@ export class ModelClassDataSpec extends jspb.Message {
   hasArtifactlocation(): boolean;
   clearArtifactlocation(): ModelClassDataSpec;
 
-  getTtl(): number;
-  setTtl(value: number): ModelClassDataSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassDataSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassDataSpec): ModelClassDataSpec.AsObject;
@@ -2164,7 +2167,6 @@ export namespace ModelClassDataSpec {
   export type AsObject = {
     entitiesList: Array<EntityRef.AsObject>,
     artifactlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    ttl: number,
   }
 }
 

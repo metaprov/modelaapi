@@ -16,6 +16,7 @@ resources:
 - data.modela.ai_datasources.yaml
 - data.modela.ai_entities.yaml
 - data.modela.ai_featuregroupes.yaml
+- data.modela.ai_featuregroups.yaml
 - data.modela.ai_featurehistograms.yaml
 - data.modela.ai_reciperuns.yaml
 - data.modela.ai_recipes.yaml

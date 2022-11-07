@@ -17603,7 +17603,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.LabelsDataSpec.to
     schema: (f = msg.getSchema()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema.toObject(includeInstance, f),
     primarykeyList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     predictiontimecolumn: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    target: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    target: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17661,6 +17662,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.LabelsDataSpec.de
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setTarget(value);
+      break;
+    case 6:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
+      msg.setTests(value);
       break;
     default:
       reader.skipField();
@@ -17726,6 +17732,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.LabelsDataSpec.se
     writer.writeString(
       5,
       f
+    );
+  }
+  f = message.getTests();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
     );
   }
 };
@@ -17911,6 +17925,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.LabelsDataSpec.pr
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.LabelsDataSpec.prototype.hasTarget = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 6;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.LabelsDataSpec.prototype.getTests = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 6));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.LabelsDataSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.LabelsDataSpec.prototype.setTests = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.LabelsDataSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.LabelsDataSpec.prototype.clearTests = function() {
+  return this.setTests(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.LabelsDataSpec.prototype.hasTests = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -23044,8 +23095,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
   var f, obj = {
     entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EntityRef.toObject, includeInstance),
-    artifactlocation: (f = msg.getArtifactlocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
-    ttl: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    artifactlocation: (f = msg.getArtifactlocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -23092,10 +23142,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
       msg.setArtifactlocation(value);
       break;
-    case 5:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setTtl(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -23139,13 +23185,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
       2,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeInt32(
-      5,
-      f
     );
   }
 };
@@ -23223,42 +23262,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.hasArtifactlocation = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional int32 ttl = 5;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.getTtl = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.setTtl = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.clearTtl = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.hasTtl = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 

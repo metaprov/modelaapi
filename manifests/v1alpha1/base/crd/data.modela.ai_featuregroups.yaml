@@ -1,0 +1,1151 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.10.0
+  creationTimestamp: null
+  name: featuregroups.data.modela.ai
+spec:
+  group: data.modela.ai
+  names:
+    categories:
+    - data
+    - modela
+    kind: FeatureGroup
+    listKind: FeatureGroupList
+    plural: featuregroups
+    shortNames:
+    - fg
+    singular: featuregroup
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .spec.versionName
+      name: Version
+      type: string
+    - jsonPath: .spec.schedule
+      name: Schedule
+      type: string
+    - jsonPath: .status.lastRun.at
+      name: Last Run
+      type: date
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: FeatureGroup represent a group of features
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: FeatureGroupSpec contain the desired state of a FeatureGroup
+            properties:
+              description:
+                default: ""
+                description: Description of the feature group.
+                maxLength: 512
+                type: string
+              entityName:
+                description: A feature group must be part of an entity.
+                type: string
+              ingestSchedule:
+                description: Schedule for running ingesting the data from the feature.
+                  On virtual features (e.g. where the data already reside in a table)
+                  The ingest will just perform feature profile, and run the feature
+                  group unit tests.
+                properties:
+                  cron:
+                    description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                      for more information
+                    type: string
+                  enabled:
+                    default: false
+                    description: Indicates if the schedule is enabled and the Jobs
+                      associated it will be created at the specified time
+                    type: boolean
+                  type:
+                    description: The type of schedule, which can be a frequency interval
+                      or a cron expression
+                    enum:
+                    - now
+                    - once
+                    - hourly
+                    - daily
+                    - weekly
+                    - monthly
+                    - yearly
+                    - cron
+                    type: string
+                type: object
+              ingestType:
+                default: batch
+                description: How this group is ingested
+                type: string
+              location:
+                description: Specify the data for this feature group This can be a
+                  table,  a view or a file on S3.
+                properties:
+                  bucketName:
+                    default: ""
+                    description: In the case of the location type being an object
+                      storage system, BucketName is the name of the VirtualBucket
+                      resource that exists in the same tenant as the resource specifying
+                      the DataLocation. Modela will connect to the external object
+                      storage system, and will access the file from the path specified
+                      by the Path field
+                    type: string
+                  connectionName:
+                    default: ""
+                    description: In the case of the type of location being a database,
+                      ConnectionName specifies the name of the Connection resource
+                      that exists in the same tenant as the resource specifying the
+                      DataLocation. Modela will attempt to connect to the database
+                      using the credentials specified in the Connection, and will
+                      execute the query specified by the SQL field
+                    type: string
+                  database:
+                    default: ""
+                    description: The name of a database inside the database system
+                      specified by the ConnectionName field
+                    type: string
+                  path:
+                    default: ""
+                    description: The path to a flat-file inside an object storage
+                      system. When using the Modela API to upload files (through the
+                      FileService API), Modela will upload the data to a predetermined
+                      path based on the Tenant, DataProduct, DataProductVersion, and
+                      resource type of the resource in relation to the file being
+                      uploaded. The path does not need to adhere to this format; you
+                      can give the path to a file inside a bucket not managed by Modela
+                    type: string
+                  resourceRef:
+                    description: In the case of the location type being Dataset or
+                      PublicDataset, ResourceRef references another resource that
+                      containing data that will be used as a data source
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                    x-kubernetes-map-type: atomic
+                  sql:
+                    default: ""
+                    description: The SQL statement which will be executed to query
+                      data from the table specified by Table
+                    type: string
+                  table:
+                    default: ""
+                    description: The name of a table inside a database, if applicable
+                    type: string
+                  topic:
+                    default: ""
+                    description: The name of the streaming topic (currently unsupported)
+                    type: string
+                  type:
+                    default: object
+                    description: The type of location where the data resides, which
+                      can either be an object inside an object storage system (i.e.
+                      Minio), a SQL location like a table or a view, a data stream
+                      (i.e. Kafka, currently unsupported), or a web location (currently
+                      unsupported)
+                    enum:
+                    - object
+                    - table
+                    - view
+                    - stream
+                    - web
+                    - public-dataset
+                    - dataset
+                    type: string
+                  url:
+                    default: ""
+                    description: In the case of the location type being WebApi, URL
+                      specifies the external location (HTTP or Git) that will be queried
+                      and then stored as flat-file by the resource which specifies
+                      the DataLocation
+                    type: string
+                type: object
+              materialization:
+                description: Materialization
+                properties:
+                  backfill:
+                    default: 21
+                    description: Number of days to store information from the past
+                      in the feature store.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  offline:
+                    default: false
+                    description: If true update the offline store.
+                    type: boolean
+                  offlineTTL:
+                    default: 0
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  online:
+                    default: false
+                    description: If true, update the online store
+                    type: boolean
+                  onlineTTL:
+                    default: 0
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  startDate:
+                    format: date-time
+                    type: string
+                type: object
+              owner:
+                default: no-one
+                description: Owner is the owner of the feature group.
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              schema:
+                description: The name of the data source which contain the schema
+                  for this entity
+                properties:
+                  columns:
+                    description: The collection of columns and their attributes
+                    items:
+                      description: Column specifies the attribute of a single column
+                        in a dataset. The fields of the Column align with the JSON
+                        schema standard; you can view detailed documentation at https://json-schema.org/draft/2020-12/json-schema-validation.html
+                      properties:
+                        DefaultValueNum:
+                          description: The default value for number types; used internally
+                            for synthetic data and validation
+                          type: number
+                        aggr:
+                          description: If this column is aggregate. Define the aggregate
+                          enum:
+                          - min
+                          - max
+                          - mean
+                          - median
+                          - sum
+                          - stddev
+                          - var
+                          - none
+                          type: string
+                        datatype:
+                          description: The data type of the feature (e.g. number,
+                            string, boolean, etc.)
+                          enum:
+                          - boolean
+                          - datetime
+                          - number
+                          - categorical
+                          - ordinal
+                          - text
+                          - json
+                          - number-list
+                          - categorical-list
+                          - text-list
+                          type: string
+                        datetimeFormat:
+                          description: The format of the datetime column. This is
+                            only setup if the column contain datetime type.
+                          type: string
+                        description:
+                          description: The user-specified description of the feature
+                          maxLength: 63
+                          type: string
+                        displayName:
+                          description: The display name of the column, which is used
+                            in reports and other visual elements. If omitted, it will
+                            use the raw name
+                          maxLength: 63
+                          type: string
+                        driftThreshold:
+                          description: The threshold drift value for model drift detection
+                            for the feature represented by this feature
+                          type: number
+                        enum:
+                          description: The collection of unique values for categorical
+                            features
+                          items:
+                            type: string
+                          type: array
+                        example:
+                          description: A user-specified example value
+                          type: string
+                        exclusiveMaximum:
+                          description: The exclusive upper limit of all values in
+                            the column, which does not include the maximum value
+                          type: boolean
+                        exclusiveMinimum:
+                          description: The exclusive lower limit of all values in
+                            the column, which does not include the minimum value
+                          type: boolean
+                        externalDocs:
+                          description: A link to user-specified external documentation
+                          type: string
+                        fk:
+                          description: Denotes if the column specifies a foreign key
+                            of another database table
+                          type: boolean
+                        fold:
+                          description: Indicates if the column holds fold values
+                          type: boolean
+                        format:
+                          description: The data domain of the feature, which constrains
+                            the contents of the feature to a specific set of values
+                          enum:
+                          - url
+                          - path
+                          - password
+                          - time
+                          - count
+                          - interval
+                          - nominal
+                          - email
+                          - creditcard
+                          - uuid
+                          - uuid5
+                          - uuid
+                          - base64
+                          - latitude
+                          - longtitude
+                          - dns
+                          - ip4
+                          - ip6
+                          - ssn
+                          - alpha
+                          - alphanumeric
+                          - unknown
+                          - color
+                          - currency
+                          - date
+                          - guid
+                          - hyperlink
+                          - image
+                          - media
+                          - file
+                          - embedding
+                          - record
+                          - useless
+                          - none
+                          type: string
+                        formula:
+                          description: The formula used to generate the column
+                          type: string
+                        generated:
+                          description: Indicates if the feature was automatically
+                            generated
+                          type: boolean
+                        id:
+                          description: Indicates if the column is an ID column
+                          type: boolean
+                        ignore:
+                          description: Indicates if the feature should be ignored
+                            when building models
+                          type: boolean
+                        imputation:
+                          description: The recommended imputation method for the column
+                          enum:
+                          - remove-rows-with-missing-values
+                          - replace-with-mean
+                          - replace-with-median
+                          - replace-with-arbitrary-value
+                          - freq-category-imputation
+                          - add-missing-value-indicator
+                          - knn
+                          - iterative
+                          - mice
+                          - no-imputation
+                          - auto
+                          - none
+                          type: string
+                        key:
+                          description: Indicates if the column is an key column
+                          type: boolean
+                        laggedRegressor:
+                          description: In forecasting based data sets Indicates if
+                            the column is regressor This is relevant only for time
+                            series schema
+                          type: boolean
+                        loc:
+                          description: Contain the Index for the column in the schema
+                          format: int32
+                          type: integer
+                        log:
+                          description: Indicates if values from this column will be
+                            sampled on a logarithmic scale
+                          type: boolean
+                        maxItems:
+                          description: The maximum number of items if the column is
+                            a list of values
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        maxLength:
+                          description: The maximum length of values in the column,
+                            if the column data type is a string
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        maximum:
+                          description: The maximum value of values all values in the
+                            column
+                          type: number
+                        minItems:
+                          description: The minimum number of items if the column is
+                            a list of values
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        minLength:
+                          description: The minimum length of values in the column,
+                            if the column data type is a string
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        minimum:
+                          description: The minimum value of values all values in the
+                            column
+                          type: number
+                        mu:
+                          description: Mu is the mean of the normal distribution
+                          type: number
+                        multipleOf:
+                          description: The integer value which the values of the column
+                            should be a multiple of
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        name:
+                          description: The name of the column
+                          maxLength: 63
+                          minLength: 1
+                          type: string
+                        nullable:
+                          description: Indicates if the column can contain null values
+                          type: boolean
+                        ordinal:
+                          default: false
+                          description: Indicates if the feature is ordinal, in the
+                            case of categorical features
+                          type: boolean
+                        pattern:
+                          description: The regex pattern which values in the column
+                            must adhere to
+                          type: string
+                        phi:
+                          description: Indicates if the column contains personal health
+                            information
+                          type: boolean
+                        pii:
+                          description: Indicates if the column contains personally
+                            identifiable information
+                          type: boolean
+                        pk:
+                          description: Denotes if the column specifies a primary key
+                            of a database table (i.e. a users ID)
+                          type: boolean
+                        protected:
+                          description: Protected means that this feature is important
+                            for ethical AI / Fairness
+                          type: boolean
+                        regressor:
+                          description: In forecasting based data sets Indicates if
+                            the column is regressor This is relevant only for time
+                            series schema
+                          type: boolean
+                        required:
+                          description: Required
+                          type: boolean
+                        reserved:
+                          description: Indicates that the feature should always be
+                            used in training
+                          type: boolean
+                        scaling:
+                          description: The recommended scaling method for the column
+                          enum:
+                          - standard-scaling
+                          - max-abs-scaling
+                          - min-max-scaling
+                          - normalization-scaling
+                          - robust-scaling
+                          - scale-to-unit-norm
+                          - none
+                          - auto
+                          type: string
+                        sigma:
+                          description: Sigma is the standard deviation of the distribution
+                          type: number
+                        skewThreshold:
+                          description: The threshold skew for skew detection for the
+                            feature represented by this feature.
+                          type: number
+                        step:
+                          description: The step value if the column values are a sequence
+                            of numbers
+                          type: number
+                        target:
+                          description: Indicates if the feature is the target feature
+                            of the model, and the feature which predictions will be
+                            made on
+                          type: boolean
+                        timeIndex:
+                          description: For time series, the field indicate tha this
+                            column will be used as the data time index for the time
+                            series. Note that there can multiple datatime type columns,
+                            but only one time column.
+                          type: boolean
+                        timeseries:
+                          description: Indicates if the column is contain a time series,
+                            In case of forecasting, if only one column is a time series,
+                            this is a univariate time series Otherwise, if two or
+                            more columns contain time series, than this is a univariate
+                            time series.
+                          type: boolean
+                        uniqueItems:
+                          description: Enforce that all the items in the list are
+                            unique
+                          type: boolean
+                        weight:
+                          description: If True than this is a weight column
+                          type: boolean
+                        window:
+                          description: If this column is aggregate
+                          format: int32
+                          type: integer
+                      required:
+                      - datatype
+                      - name
+                      type: object
+                    type: array
+                  key:
+                    description: The keys columns are the index of the file or table.
+                      The set of keys will be used as an index for the in memory representation(e.g.
+                      pandas)
+                    items:
+                      type: string
+                    type: array
+                  recommendationSchema:
+                    description: The recommendation schema, which is used for the
+                      recommendation ML task
+                    properties:
+                      itemIDColumn:
+                        default: item_id
+                        description: The name of the column that specifies item IDs
+                        type: string
+                      ratingColumn:
+                        default: rating
+                        description: The name of the column that specifies ratings
+                        type: string
+                      userIDColumn:
+                        default: user_id
+                        description: The name of the column that specifies user IDs
+                          (i.e. the primary key)
+                        type: string
+                    type: object
+                  timeSeriesSchema:
+                    description: The time-series schema, which sets time-series specific
+                      parameters
+                    properties:
+                      freq:
+                        default: day
+                        description: The time series frequency
+                        enum:
+                        - second
+                        - minute
+                        - hour
+                        - day
+                        - week
+                        - month
+                        - quarter
+                        - year
+                        - multi-year
+                        type: string
+                      interval:
+                        default: 1
+                        description: The interval to forecast at this level
+                        format: int32
+                        type: integer
+                      type:
+                        default: series
+                        description: The time series type
+                        enum:
+                        - series
+                        - panel
+                        - hierarchical
+                        type: string
+                    type: object
+                type: object
+              syncSchedule:
+                description: Schedule to sync the feature group into the online store.
+                properties:
+                  cron:
+                    description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                      for more information
+                    type: string
+                  enabled:
+                    default: false
+                    description: Indicates if the schedule is enabled and the Jobs
+                      associated it will be created at the specified time
+                    type: boolean
+                  type:
+                    description: The type of schedule, which can be a frequency interval
+                      or a cron expression
+                    enum:
+                    - now
+                    - once
+                    - hourly
+                    - daily
+                    - weekly
+                    - monthly
+                    - yearly
+                    - cron
+                    type: string
+                type: object
+              tags:
+                description: Tags for this feature groups
+                items:
+                  type: string
+                type: array
+              timeColumn:
+                description: the time column index. Might be null, if the fg does
+                  not have time column.
+                type: string
+              timeColumnFormat:
+                description: The time column format
+                type: string
+              unitTests:
+                description: Unit test to run on data from this feature group upon
+                  ingrest.
+                properties:
+                  enabled:
+                    description: If false, this test case is disabled
+                    type: boolean
+                  tests:
+                    items:
+                      properties:
+                        assertThat:
+                          description: The assertion type
+                          type: string
+                        column:
+                          description: If unit test is column test, this is the name
+                            of the column
+                          type: string
+                        column2:
+                          description: For test that involve two columns (e.g. correlation)
+                          type: string
+                        columns:
+                          description: If unit test is column test, this is the name
+                            of the column
+                          items:
+                            type: string
+                          type: array
+                        compareToRef:
+                          description: Reference to another entity which is a ref.
+                          properties:
+                            apiVersion:
+                              description: API version of the referent.
+                              type: string
+                            fieldPath:
+                              description: 'If referring to a piece of an object instead
+                                of an entire object, this string should contain a
+                                valid JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                                For example, if the object reference is to a container
+                                within a pod, this would take on a value like: "spec.containers{name}"
+                                (where "name" refers to the name of the container
+                                that triggered the event) or if no container name
+                                is specified "spec.containers[2]" (container with
+                                index 2 in this pod). This syntax is chosen only to
+                                have some well-defined way of referencing a part of
+                                an object. TODO: this design is not final and this
+                                field is subject to change in the future.'
+                              type: string
+                            kind:
+                              description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                              type: string
+                            name:
+                              description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                              type: string
+                            namespace:
+                              description: 'Namespace of the referent. More info:
+                                https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                              type: string
+                            resourceVersion:
+                              description: 'Specific resourceVersion to which this
+                                reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                              type: string
+                            uid:
+                              description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                              type: string
+                          type: object
+                          x-kubernetes-map-type: atomic
+                        enabled:
+                          description: If false, this test case is disabled
+                          type: boolean
+                        entityRef:
+                          description: Reference to an entity.
+                          properties:
+                            apiVersion:
+                              description: API version of the referent.
+                              type: string
+                            fieldPath:
+                              description: 'If referring to a piece of an object instead
+                                of an entire object, this string should contain a
+                                valid JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                                For example, if the object reference is to a container
+                                within a pod, this would take on a value like: "spec.containers{name}"
+                                (where "name" refers to the name of the container
+                                that triggered the event) or if no container name
+                                is specified "spec.containers[2]" (container with
+                                index 2 in this pod). This syntax is chosen only to
+                                have some well-defined way of referencing a part of
+                                an object. TODO: this design is not final and this
+                                field is subject to change in the future.'
+                              type: string
+                            kind:
+                              description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                              type: string
+                            name:
+                              description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                              type: string
+                            namespace:
+                              description: 'Namespace of the referent. More info:
+                                https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                              type: string
+                            resourceVersion:
+                              description: 'Specific resourceVersion to which this
+                                reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                              type: string
+                            uid:
+                              description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                              type: string
+                          type: object
+                          x-kubernetes-map-type: atomic
+                        entityRef2:
+                          description: Reference to an entity.
+                          properties:
+                            apiVersion:
+                              description: API version of the referent.
+                              type: string
+                            fieldPath:
+                              description: 'If referring to a piece of an object instead
+                                of an entire object, this string should contain a
+                                valid JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                                For example, if the object reference is to a container
+                                within a pod, this would take on a value like: "spec.containers{name}"
+                                (where "name" refers to the name of the container
+                                that triggered the event) or if no container name
+                                is specified "spec.containers[2]" (container with
+                                index 2 in this pod). This syntax is chosen only to
+                                have some well-defined way of referencing a part of
+                                an object. TODO: this design is not final and this
+                                field is subject to change in the future.'
+                              type: string
+                            kind:
+                              description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                              type: string
+                            name:
+                              description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                              type: string
+                            namespace:
+                              description: 'Namespace of the referent. More info:
+                                https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                              type: string
+                            resourceVersion:
+                              description: 'Specific resourceVersion to which this
+                                reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                              type: string
+                            uid:
+                              description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                              type: string
+                          type: object
+                          x-kubernetes-map-type: atomic
+                        expectedCategory:
+                          description: The expected value
+                          type: string
+                        expectedSet:
+                          description: Expected set of values,if the assertion
+                          items:
+                            type: string
+                          type: array
+                        expectedValue:
+                          description: The expected numerical value
+                          type: number
+                        featureFilter:
+                          description: Filter the filter for this unit test.
+                          type: string
+                        generated:
+                          description: Indicates if this validation rule was automatically
+                            generated by the system
+                          type: boolean
+                        lower:
+                          description: For range based tests.
+                          format: float
+                          type: number
+                        lowerInclusive:
+                          type: boolean
+                        metric:
+                          description: The metric that is used for the test
+                          type: string
+                        name:
+                          description: The name of the test case, will be generate
+                            if empty by the combination of assertion, entity ref,
+                            column name and metric
+                          type: string
+                        periods:
+                          description: The length of the past if we are comparing
+                            to moving avg
+                          format: int32
+                          type: integer
+                        referenceType:
+                          description: Set the reference type for this unit test
+                          type: string
+                        tags:
+                          description: The test case tags, used for filtering. Optional
+                            Test Tags
+                          items:
+                            type: string
+                          type: array
+                        type:
+                          description: The test type The type of the data test
+                          type: string
+                        upper:
+                          format: float
+                          type: number
+                        upperInclusive:
+                          type: boolean
+                      type: object
+                    type: array
+                type: object
+              versionName:
+                default: ""
+                description: Version name is the product version for the feature group.
+                type: string
+            type: object
+          status:
+            description: FeatureStatus defines the observed state of Feature
+            properties:
+              conditions:
+                items:
+                  description: FeatureGroupCondition describes the state of a deployment
+                    at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, Unknown
+                      type: string
+                    type:
+                      description: Type of account condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              ingestSchedule:
+                description: the ingest schedule status
+                properties:
+                  currentStartTime:
+                    description: The time when we started the action based on the
+                      schedule.
+                    format: date-time
+                    type: string
+                  duration:
+                    description: The duration of the run in seconds
+                    format: int32
+                    type: integer
+                  failureMessage:
+                    description: In the case of failure, the resource controller which
+                      created the run will set this field with a failure message
+                    type: string
+                  failureReason:
+                    description: In the case of failure, the resource controller which
+                      created the run will set this field with a failure reason
+                    type: string
+                  lastRun:
+                    description: Last time the job was ended successfuly
+                    format: date-time
+                    type: string
+                  logs:
+                    description: Last run logs
+                    properties:
+                      bucketName:
+                        description: The name of the VirtualBucket resource where
+                          the logs are stored
+                        type: string
+                      containers:
+                        description: The collection of ContainerLog objects that describe
+                          the location of logs per container
+                        items:
+                          description: ContainerLog describes the location of logs
+                            for a single Job
+                          properties:
+                            container:
+                              description: The container name
+                              type: string
+                            job:
+                              description: The name of the Job
+                              type: string
+                            key:
+                              description: The path to the log in the bucket
+                              type: string
+                          type: object
+                        type: array
+                    type: object
+                  nextRun:
+                    description: The time of the day when the schedule will be executed
+                    format: date-time
+                    type: string
+                type: object
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
+              onlineTable:
+                description: Holds the last online table location. set the null when
+                  running the sync process
+                properties:
+                  bucketName:
+                    default: ""
+                    description: In the case of the location type being an object
+                      storage system, BucketName is the name of the VirtualBucket
+                      resource that exists in the same tenant as the resource specifying
+                      the DataLocation. Modela will connect to the external object
+                      storage system, and will access the file from the path specified
+                      by the Path field
+                    type: string
+                  connectionName:
+                    default: ""
+                    description: In the case of the type of location being a database,
+                      ConnectionName specifies the name of the Connection resource
+                      that exists in the same tenant as the resource specifying the
+                      DataLocation. Modela will attempt to connect to the database
+                      using the credentials specified in the Connection, and will
+                      execute the query specified by the SQL field
+                    type: string
+                  database:
+                    default: ""
+                    description: The name of a database inside the database system
+                      specified by the ConnectionName field
+                    type: string
+                  path:
+                    default: ""
+                    description: The path to a flat-file inside an object storage
+                      system. When using the Modela API to upload files (through the
+                      FileService API), Modela will upload the data to a predetermined
+                      path based on the Tenant, DataProduct, DataProductVersion, and
+                      resource type of the resource in relation to the file being
+                      uploaded. The path does not need to adhere to this format; you
+                      can give the path to a file inside a bucket not managed by Modela
+                    type: string
+                  resourceRef:
+                    description: In the case of the location type being Dataset or
+                      PublicDataset, ResourceRef references another resource that
+                      containing data that will be used as a data source
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                    x-kubernetes-map-type: atomic
+                  sql:
+                    default: ""
+                    description: The SQL statement which will be executed to query
+                      data from the table specified by Table
+                    type: string
+                  table:
+                    default: ""
+                    description: The name of a table inside a database, if applicable
+                    type: string
+                  topic:
+                    default: ""
+                    description: The name of the streaming topic (currently unsupported)
+                    type: string
+                  type:
+                    default: object
+                    description: The type of location where the data resides, which
+                      can either be an object inside an object storage system (i.e.
+                      Minio), a SQL location like a table or a view, a data stream
+                      (i.e. Kafka, currently unsupported), or a web location (currently
+                      unsupported)
+                    enum:
+                    - object
+                    - table
+                    - view
+                    - stream
+                    - web
+                    - public-dataset
+                    - dataset
+                    type: string
+                  url:
+                    default: ""
+                    description: In the case of the location type being WebApi, URL
+                      specifies the external location (HTTP or Git) that will be queried
+                      and then stored as flat-file by the resource which specifies
+                      the DataLocation
+                    type: string
+                type: object
+              onlineTableCreated:
+                description: The last time an online table was created
+                format: date-time
+                type: string
+              phase:
+                type: string
+              rows:
+                description: The current number of rows in the feature group.
+                format: int32
+                type: integer
+              syncSchedule:
+                description: Set the sync schedule between offline store and online
+                  store.
+                properties:
+                  currentStartTime:
+                    description: The time when we started the action based on the
+                      schedule.
+                    format: date-time
+                    type: string
+                  duration:
+                    description: The duration of the run in seconds
+                    format: int32
+                    type: integer
+                  failureMessage:
+                    description: In the case of failure, the resource controller which
+                      created the run will set this field with a failure message
+                    type: string
+                  failureReason:
+                    description: In the case of failure, the resource controller which
+                      created the run will set this field with a failure reason
+                    type: string
+                  lastRun:
+                    description: Last time the job was ended successfuly
+                    format: date-time
+                    type: string
+                  logs:
+                    description: Last run logs
+                    properties:
+                      bucketName:
+                        description: The name of the VirtualBucket resource where
+                          the logs are stored
+                        type: string
+                      containers:
+                        description: The collection of ContainerLog objects that describe
+                          the location of logs per container
+                        items:
+                          description: ContainerLog describes the location of logs
+                            for a single Job
+                          properties:
+                            container:
+                              description: The container name
+                              type: string
+                            job:
+                              description: The name of the Job
+                              type: string
+                            key:
+                              description: The path to the log in the bucket
+                              type: string
+                          type: object
+                        type: array
+                    type: object
+                  nextRun:
+                    description: The time of the day when the schedule will be executed
+                    format: date-time
+                    type: string
+                type: object
+            type: object
+        required:
+        - metadata
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

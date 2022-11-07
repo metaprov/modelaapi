@@ -60,7 +60,7 @@ type FeatureGroupCondition struct {
 // +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule",description=""
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featuregroupes,singular=featuregroup,shortName="fsc",categories={data,modela}
+// +kubebuilder:resource:path=featuregroups,singular=featuregroup,shortName="fg",categories={data,modela}
 // +kubebuilder:subresource:status
 type FeatureGroup struct {
 	metav1.TypeMeta   `json:",inline"`
