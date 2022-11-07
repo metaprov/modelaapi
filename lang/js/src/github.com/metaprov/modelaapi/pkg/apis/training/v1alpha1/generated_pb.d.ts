@@ -1568,52 +1568,6 @@ export namespace InterpretabilityStatus {
   }
 }
 
-export class LabelsDataSpec extends jspb.Message {
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): LabelsDataSpec;
-  hasLocation(): boolean;
-  clearLocation(): LabelsDataSpec;
-
-  getSchema(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema | undefined;
-  setSchema(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema): LabelsDataSpec;
-  hasSchema(): boolean;
-  clearSchema(): LabelsDataSpec;
-
-  getPrimarykeyList(): Array<string>;
-  setPrimarykeyList(value: Array<string>): LabelsDataSpec;
-  clearPrimarykeyList(): LabelsDataSpec;
-  addPrimarykey(value: string, index?: number): LabelsDataSpec;
-
-  getPredictiontimecolumn(): string;
-  setPredictiontimecolumn(value: string): LabelsDataSpec;
-
-  getTarget(): string;
-  setTarget(value: string): LabelsDataSpec;
-
-  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): LabelsDataSpec;
-  hasTests(): boolean;
-  clearTests(): LabelsDataSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LabelsDataSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: LabelsDataSpec): LabelsDataSpec.AsObject;
-  static serializeBinaryToWriter(message: LabelsDataSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LabelsDataSpec;
-  static deserializeBinaryFromReader(message: LabelsDataSpec, reader: jspb.BinaryReader): LabelsDataSpec;
-}
-
-export namespace LabelsDataSpec {
-  export type AsObject = {
-    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    schema?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema.AsObject,
-    primarykeyList: Array<string>,
-    predictiontimecolumn: string,
-    target: string,
-    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-  }
-}
-
 export class Level extends jspb.Message {
   getName(): string;
   setName(value: string): Level;
@@ -2082,32 +2036,6 @@ export namespace ModelClass {
   }
 }
 
-export class ModelClassBatchPredictionSpec extends jspb.Message {
-  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassBatchPredictionSpec;
-  hasSchedule(): boolean;
-  clearSchedule(): ModelClassBatchPredictionSpec;
-
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassBatchPredictionSpec;
-  hasLocation(): boolean;
-  clearLocation(): ModelClassBatchPredictionSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelClassBatchPredictionSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelClassBatchPredictionSpec): ModelClassBatchPredictionSpec.AsObject;
-  static serializeBinaryToWriter(message: ModelClassBatchPredictionSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelClassBatchPredictionSpec;
-  static deserializeBinaryFromReader(message: ModelClassBatchPredictionSpec, reader: jspb.BinaryReader): ModelClassBatchPredictionSpec;
-}
-
-export namespace ModelClassBatchPredictionSpec {
-  export type AsObject = {
-    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-  }
-}
-
 export class ModelClassCondition extends jspb.Message {
   getType(): string;
   setType(value: string): ModelClassCondition;
@@ -2141,32 +2069,6 @@ export namespace ModelClassCondition {
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     reason: string,
     message: string,
-  }
-}
-
-export class ModelClassDataSpec extends jspb.Message {
-  getEntitiesList(): Array<EntityRef>;
-  setEntitiesList(value: Array<EntityRef>): ModelClassDataSpec;
-  clearEntitiesList(): ModelClassDataSpec;
-  addEntities(value?: EntityRef, index?: number): EntityRef;
-
-  getArtifactlocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setArtifactlocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassDataSpec;
-  hasArtifactlocation(): boolean;
-  clearArtifactlocation(): ModelClassDataSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelClassDataSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelClassDataSpec): ModelClassDataSpec.AsObject;
-  static serializeBinaryToWriter(message: ModelClassDataSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelClassDataSpec;
-  static deserializeBinaryFromReader(message: ModelClassDataSpec, reader: jspb.BinaryReader): ModelClassDataSpec;
-}
-
-export namespace ModelClassDataSpec {
-  export type AsObject = {
-    entitiesList: Array<EntityRef.AsObject>,
-    artifactlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
@@ -2229,6 +2131,16 @@ export class ModelClassServingSpec extends jspb.Message {
   hasMonitoringschedule(): boolean;
   clearMonitoringschedule(): ModelClassServingSpec;
 
+  getBatchpredictionschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setBatchpredictionschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassServingSpec;
+  hasBatchpredictionschedule(): boolean;
+  clearBatchpredictionschedule(): ModelClassServingSpec;
+
+  getBatchpredictionlocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setBatchpredictionlocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassServingSpec;
+  hasBatchpredictionlocation(): boolean;
+  clearBatchpredictionlocation(): ModelClassServingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassServingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassServingSpec): ModelClassServingSpec.AsObject;
@@ -2247,6 +2159,8 @@ export namespace ModelClassServingSpec {
     access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
     replicas: number,
     monitoringschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    batchpredictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    batchpredictionlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
@@ -2266,15 +2180,15 @@ export class ModelClassSpec extends jspb.Message {
   getSubtask(): string;
   setSubtask(value: string): ModelClassSpec;
 
-  getLabels(): LabelsDataSpec | undefined;
-  setLabels(value?: LabelsDataSpec): ModelClassSpec;
-  hasLabels(): boolean;
-  clearLabels(): ModelClassSpec;
+  getEntitiesList(): Array<EntityRef>;
+  setEntitiesList(value: Array<EntityRef>): ModelClassSpec;
+  clearEntitiesList(): ModelClassSpec;
+  addEntities(value?: EntityRef, index?: number): EntityRef;
 
-  getData(): ModelClassDataSpec | undefined;
-  setData(value?: ModelClassDataSpec): ModelClassSpec;
-  hasData(): boolean;
-  clearData(): ModelClassSpec;
+  getArtifactlocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setArtifactlocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassSpec;
+  hasArtifactlocation(): boolean;
+  clearArtifactlocation(): ModelClassSpec;
 
   getTraining(): ModelClassTrainingSpec | undefined;
   setTraining(value?: ModelClassTrainingSpec): ModelClassSpec;
@@ -2285,11 +2199,6 @@ export class ModelClassSpec extends jspb.Message {
   setServing(value?: ModelClassServingSpec): ModelClassSpec;
   hasServing(): boolean;
   clearServing(): ModelClassSpec;
-
-  getBatchprediction(): ModelClassBatchPredictionSpec | undefined;
-  setBatchprediction(value?: ModelClassBatchPredictionSpec): ModelClassSpec;
-  hasBatchprediction(): boolean;
-  clearBatchprediction(): ModelClassSpec;
 
   getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
   setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): ModelClassSpec;
@@ -2316,11 +2225,10 @@ export namespace ModelClassSpec {
     description: string,
     task: string,
     subtask: string,
-    labels?: LabelsDataSpec.AsObject,
-    data?: ModelClassDataSpec.AsObject,
+    entitiesList: Array<EntityRef.AsObject>,
+    artifactlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     training?: ModelClassTrainingSpec.AsObject,
     serving?: ModelClassServingSpec.AsObject,
-    batchprediction?: ModelClassBatchPredictionSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     reportschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
@@ -2433,6 +2341,11 @@ export namespace ModelClassStatus {
 }
 
 export class ModelClassTrainingSpec extends jspb.Message {
+  getTrainingdata(): TrainingDataSpec | undefined;
+  setTrainingdata(value?: TrainingDataSpec): ModelClassTrainingSpec;
+  hasTrainingdata(): boolean;
+  clearTrainingdata(): ModelClassTrainingSpec;
+
   getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelClassTrainingSpec;
   hasLabref(): boolean;
@@ -2483,6 +2396,7 @@ export class ModelClassTrainingSpec extends jspb.Message {
 
 export namespace ModelClassTrainingSpec {
   export type AsObject = {
+    trainingdata?: TrainingDataSpec.AsObject,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     studytemplatename: string,
     modelunittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
@@ -5943,6 +5857,52 @@ export namespace TimeSeriesEvent {
     preevent: number,
     postevent: number,
     timepointsList: Array<string>,
+  }
+}
+
+export class TrainingDataSpec extends jspb.Message {
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): TrainingDataSpec;
+  hasLocation(): boolean;
+  clearLocation(): TrainingDataSpec;
+
+  getSchema(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema | undefined;
+  setSchema(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema): TrainingDataSpec;
+  hasSchema(): boolean;
+  clearSchema(): TrainingDataSpec;
+
+  getPrimarykeyList(): Array<string>;
+  setPrimarykeyList(value: Array<string>): TrainingDataSpec;
+  clearPrimarykeyList(): TrainingDataSpec;
+  addPrimarykey(value: string, index?: number): TrainingDataSpec;
+
+  getPredictiontimecolumn(): string;
+  setPredictiontimecolumn(value: string): TrainingDataSpec;
+
+  getTarget(): string;
+  setTarget(value: string): TrainingDataSpec;
+
+  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): TrainingDataSpec;
+  hasTests(): boolean;
+  clearTests(): TrainingDataSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TrainingDataSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: TrainingDataSpec): TrainingDataSpec.AsObject;
+  static serializeBinaryToWriter(message: TrainingDataSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TrainingDataSpec;
+  static deserializeBinaryFromReader(message: TrainingDataSpec, reader: jspb.BinaryReader): TrainingDataSpec;
+}
+
+export namespace TrainingDataSpec {
+  export type AsObject = {
+    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    schema?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema.AsObject,
+    primarykeyList: Array<string>,
+    predictiontimecolumn: string,
+    target: string,
+    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
