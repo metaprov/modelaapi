@@ -135,7 +135,7 @@ func (mclass *ModelClass) StudyName() string {
 
 func (mclass *ModelClass) IsTrainingSetCreated() bool {
 	cond := mclass.GetCond(ModelClassCreatedTrainingSet)
-	return cond.Status == v1.ConditionFalse
+	return cond.Status == v1.ConditionTrue
 }
 
 func (mclass *ModelClass) MarkCreatingTrainingSet() {
