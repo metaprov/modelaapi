@@ -1497,6 +1497,10 @@ message ModelClassServingSpec {
 
   // The source location for data to predict
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation batchPredictionLocation = 10;
+
+  // The serving resources for batch or online prediction
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 11;
 }
 
 // ModelClassSpec defines the desired state of a ModelClass and the parameters for a model search
@@ -1676,6 +1680,10 @@ message ModelClassTrainingSpec {
   // If not defined, we would use the search space in the model template.
   // +kubebuilder:validation:Optional
   optional AlgorithmSearchSpaceSpec searchSpace = 11;
+
+  // Training resources
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 12;
 }
 
 // ModelCondition describes the state of a Model at a certain point

@@ -2141,6 +2141,11 @@ export class ModelClassServingSpec extends jspb.Message {
   hasBatchpredictionlocation(): boolean;
   clearBatchpredictionlocation(): ModelClassServingSpec;
 
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ModelClassServingSpec;
+  hasResources(): boolean;
+  clearResources(): ModelClassServingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassServingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassServingSpec): ModelClassServingSpec.AsObject;
@@ -2161,6 +2166,7 @@ export namespace ModelClassServingSpec {
     monitoringschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     batchpredictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     batchpredictionlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
 
@@ -2390,6 +2396,11 @@ export class ModelClassTrainingSpec extends jspb.Message {
   hasSearchspace(): boolean;
   clearSearchspace(): ModelClassTrainingSpec;
 
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ModelClassTrainingSpec;
+  hasResources(): boolean;
+  clearResources(): ModelClassTrainingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassTrainingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassTrainingSpec): ModelClassTrainingSpec.AsObject;
@@ -2411,6 +2422,7 @@ export namespace ModelClassTrainingSpec {
     retrainonlabelsdatachange: boolean,
     retrainonfeaturesmetadatachange: boolean,
     searchspace?: AlgorithmSearchSpaceSpec.AsObject,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
 

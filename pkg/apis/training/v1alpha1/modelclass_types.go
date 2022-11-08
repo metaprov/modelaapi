@@ -188,6 +188,9 @@ type ModelClassTrainingSpec struct {
 	// If not defined, we would use the search space in the model template.
 	// +kubebuilder:validation:Optional
 	SearchSpace *AlgorithmSearchSpaceSpec `json:"searchSpace,omitempty" protobuf:"bytes,11,opt,name=searchSpace"`
+	// Training resources
+	// +kubebuilder:validation:Optional
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,12,opt,name=resources"`
 }
 
 type ModelClassServingSpec struct {
@@ -222,6 +225,9 @@ type ModelClassServingSpec struct {
 	BatchPredictionSchedule catalog.RunSchedule `json:"batchPredictionSchedule,omitempty" protobuf:"bytes,8,opt,name=batchPredictionSchedule"`
 	// The source location for data to predict
 	BatchPredictionLocation data.DataLocation `json:"batchPredictionLocation,omitempty" protobuf:"bytes,10,opt,name=batchPredictionLocation"`
+	// The serving resources for batch or online prediction
+	// +kubebuilder:validation:Optional
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,11,opt,name=resources"`
 }
 
 // Define a test stage
