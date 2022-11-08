@@ -139,7 +139,7 @@ func (mclass *ModelClass) IsTrainingSetCreated() bool {
 }
 
 func (mclass *ModelClass) MarkCreatingTrainingSet() {
-	mclass.Status.Phase = ModelClassPhasePreparingTrainingDataset
+	mclass.Status.Phase = ModelClassPhaseCreatingTrainingDataset
 	mclass.CreateOrUpdateCond(ModelClassCondition{
 		Type:   ModelClassCreatedTrainingSet,
 		Status: v1.ConditionFalse,
@@ -155,7 +155,7 @@ func (mclass *ModelClass) MarkCreatedTrainingSet() {
 }
 
 func (mclass *ModelClass) MarkCreatingTrainingSetFailed(err string) {
-	mclass.Status.Phase = ModelClassPhaseTrainingFailed
+	mclass.Status.Phase = ModelClassPhaseFailed
 	mclass.CreateOrUpdateCond(ModelClassCondition{
 		Type:    ModelClassCreatedTrainingSet,
 		Status:  v1.ConditionFalse,
@@ -177,7 +177,7 @@ func (mclass *ModelClass) MarkTraining() {
 }
 
 func (mclass *ModelClass) MarkTrained() {
-	mclass.Status.Phase = ModelClassPhaseTrained
+	mclass.Status.Phase = ModelClassPhaseReady
 	mclass.CreateOrUpdateCond(ModelClassCondition{
 		Type:   ModelClassTrained,
 		Status: v1.ConditionTrue,
@@ -185,41 +185,11 @@ func (mclass *ModelClass) MarkTrained() {
 }
 
 func (mclass *ModelClass) MarkTrainingFailed(err string) {
-	mclass.Status.Phase = ModelClassPhaseTrainingFailed
+	mclass.Status.Phase = ModelClassPhaseFailed
 	mclass.CreateOrUpdateCond(ModelClassCondition{
 		Type:    ModelClassTrained,
 		Status:  v1.ConditionFalse,
 		Reason:  ReasonTraining,
-		Message: err,
-	})
-}
-
-///////////////////////////////////////////////
-// Deploying
-//////////////////////////////////////////////
-func (mclass *ModelClass) MarkDeploying() {
-	mclass.Status.Phase = ModelClassPhaseDeploying
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassDeployed,
-		Status: v1.ConditionFalse,
-		Reason: ReasonDeploying,
-	})
-}
-
-func (mclass *ModelClass) MarkDeployed() {
-	mclass.Status.Phase = ModelClassPhaseDeployed
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassDeployed,
-		Status: v1.ConditionTrue,
-	})
-}
-
-func (mclass *ModelClass) MarkDeploymentFailed(err string) {
-	mclass.Status.Phase = ModelClassPhaseFailedToDeploy
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:    ModelClassDeployed,
-		Status:  v1.ConditionFalse,
-		Reason:  ReasonFailed,
 		Message: err,
 	})
 }

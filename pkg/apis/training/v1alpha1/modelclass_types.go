@@ -12,17 +12,11 @@ import (
 type ModelClassPhase string
 
 const (
-	ModelClassPhaseFailed                         ModelClassPhase = "Failed"
-	ModelClassPhasePending                        ModelClassPhase = "Pending"
-	ModelClassPhasePreparingTrainingDataset       ModelClassPhase = "PreparingTrainingDataset"
-	ModelClassPhasePreparingTrainingDatasetFailed ModelClassPhase = "FailedToPrepareTrainingDataset"
-	ModelClassPhaseTraining                       ModelClassPhase = "Training"
-	ModelClassPhaseTrainingFailed                 ModelClassPhase = "FailedToTraining"
-	ModelClassPhaseTrained                        ModelClassPhase = "Trained"
-	ModelClassPhaseDeploying                      ModelClassPhase = "Deploying"
-	ModelClassPhaseFailedToDeploy                 ModelClassPhase = "FailedToDeploy"
-	ModelClassPhaseDeployed                       ModelClassPhase = "Deployed"
-	ModelClassPhaseDrifted                        ModelClassPhase = "Drifted"
+	ModelClassPhaseFailed                  ModelClassPhase = "Failed"
+	ModelClassPhaseReady                   ModelClassPhase = "Ready"
+	ModelClassPhaseCreatingTrainingDataset ModelClassPhase = "CreatingTrainingDataset"
+	ModelClassPhaseTraining                ModelClassPhase = "Training"
+	ModelClassPhaseDrifted                 ModelClassPhase = "Drifted"
 )
 
 // ModelClassConditionType is the condition of a ModelClass
@@ -38,8 +32,6 @@ const (
 	ModelClassCreatedTrainingSet ModelClassConditionType = "CreatedTrainingSet"
 	// ModelClassTrained states that the current model from the ModelClass has been trained
 	ModelClassTrained ModelClassConditionType = "Trained"
-	// ModelClassDeployed states that the latest model
-	ModelClassDeployed ModelClassConditionType = "Deployed"
 	// ModelClassDeployed states that the latest model
 	ModelClassDrifted ModelClassConditionType = "Drifted"
 )

@@ -77,7 +77,7 @@ func (fg *FeatureGroup) MarkIngesting() {
 }
 
 func (fg *FeatureGroup) MarkIngested() {
-	fg.Status.Phase = FeatureGroupPhaseIngested
+	fg.Status.Phase = FeatureGroupPhaseReady
 	fg.CreateOrUpdateCond(FeatureGroupCondition{
 		Type:   FeatureGroupIngested,
 		Status: v1.ConditionFalse,
@@ -116,7 +116,7 @@ func (fg *FeatureGroup) MarkSyncing() {
 }
 
 func (fg *FeatureGroup) MarkSynced() {
-	fg.Status.Phase = FeatureGroupPhaseSynced
+	fg.Status.Phase = FeatureGroupPhaseReady
 	fg.CreateOrUpdateCond(FeatureGroupCondition{
 		Type:   FeatureGroupSynced,
 		Status: v1.ConditionTrue,
@@ -130,7 +130,7 @@ func (fg *FeatureGroup) MarkSyncFailed(msg string) {
 		Type:    FeatureGroupSynced,
 		Status:  v1.ConditionFalse,
 		Reason:  string(FeatureGroupSynced),
-		Message: "Failed to snapshot." + msg,
+		Message: "Failed to sync." + msg,
 	})
 	fg.Status.Phase = FeatureGroupPhaseFailed
 	fg.Status.SyncSchedule.FailureMessage = util.StrPtr(msg)
@@ -151,7 +151,7 @@ func (fg *FeatureGroup) MarkGeneratingOnlineDataset() {
 }
 
 func (fg *FeatureGroup) MarkGeneratedOnlineDataset() {
-	fg.Status.Phase = FeatureGroupPhaseOnlineDatasetGenerated
+	fg.Status.Phase = FeatureGroupPhaseReady
 	fg.CreateOrUpdateCond(FeatureGroupCondition{
 		Type:   FeatureGroupSynced,
 		Status: v1.ConditionFalse,

@@ -16,12 +16,10 @@ type FeatureGroupPhase string
 
 const (
 	FeatureGroupPhaseGeneratingOnlineDataset FeatureGroupPhase = "GeneratingOnlineDataset"
-	FeatureGroupPhaseOnlineDatasetGenerated  FeatureGroupPhase = "GeneratedOnlineDataset"
 	FeatureGroupPhaseSyncing                 FeatureGroupPhase = "Syncing"
-	FeatureGroupPhaseSynced                  FeatureGroupPhase = "Synced"
 	FeatureGroupPhaseIngesting               FeatureGroupPhase = "Ingesting"
-	FeatureGroupPhaseIngested                FeatureGroupPhase = "Ingested"
 	FeatureGroupPhaseFailed                  FeatureGroupPhase = "Failed"
+	FeatureGroupPhaseReady                   FeatureGroupPhase = "Ready"
 )
 
 //==============================================================================
@@ -34,7 +32,7 @@ type FeatureGroupConditionType string
 const (
 	FeatureGroupReady    FeatureGroupConditionType = "Ready"
 	FeatureGroupSaved    FeatureGroupConditionType = "Saved"
-	FeatureGroupSynced   FeatureGroupConditionType = "Sync"
+	FeatureGroupSynced   FeatureGroupConditionType = "Synced"
 	FeatureGroupIngested FeatureGroupConditionType = "Ingested"
 )
 
