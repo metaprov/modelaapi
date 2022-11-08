@@ -1605,18 +1605,22 @@ message ModelClassStatus {
   // +kubebuilder:validation:Optional
   optional PromotionStatus promotionStatus = 8;
 
+  // Holds the latest dataset used during training.
+  // +kubebuilder:validation:Optional
+  optional string latestDataset = 9;
+
   // The lastest study name
   // +kubebuilder:validation:Optional
-  optional string latestStudy = 9;
+  optional string latestStudy = 10;
 
   // The latest best model
   // +kubebuilder:validation:Optional
-  optional string latestModel = 10;
+  optional string latestModel = 11;
 
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelClassCondition conditions = 11;
+  repeated ModelClassCondition conditions = 12;
 }
 
 // Specification for model training.

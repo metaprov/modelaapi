@@ -2305,6 +2305,9 @@ export class ModelClassStatus extends jspb.Message {
   hasPromotionstatus(): boolean;
   clearPromotionstatus(): ModelClassStatus;
 
+  getLatestdataset(): string;
+  setLatestdataset(value: string): ModelClassStatus;
+
   getLateststudy(): string;
   setLateststudy(value: string): ModelClassStatus;
 
@@ -2334,6 +2337,7 @@ export namespace ModelClassStatus {
     lastonlinetrainingset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     trainingstatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     promotionstatus?: PromotionStatus.AsObject,
+    latestdataset: string,
     lateststudy: string,
     latestmodel: string,
     conditionsList: Array<ModelClassCondition.AsObject>,

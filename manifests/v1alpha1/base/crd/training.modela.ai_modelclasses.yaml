@@ -2737,6 +2737,9 @@ spec:
                 description: The last time the object was updated
                 format: date-time
                 type: string
+              latestDataset:
+                description: Holds the latest dataset used during training.
+                type: string
               latestModel:
                 description: The latest best model
                 type: string
