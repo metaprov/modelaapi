@@ -2995,6 +2995,11 @@ export class FeatureGroupStatus extends jspb.Message {
   hasIngestschedule(): boolean;
   clearIngestschedule(): FeatureGroupStatus;
 
+  getSyncschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
+  setSyncschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): FeatureGroupStatus;
+  hasSyncschedule(): boolean;
+  clearSyncschedule(): FeatureGroupStatus;
+
   getOnelinetable(): DataLocation | undefined;
   setOnelinetable(value?: DataLocation): FeatureGroupStatus;
   hasOnelinetable(): boolean;
@@ -3025,6 +3030,7 @@ export namespace FeatureGroupStatus {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     rows: number,
     ingestschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
+    syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     onelinetable?: DataLocation.AsObject,
     onelinetablecreated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<FeatureGroupCondition.AsObject>,

@@ -148,12 +148,15 @@ type FeatureGroupStatus struct {
 	// the ingest schedule status. During ingest we test and profile the current feature group content.
 	//+kubebuilder:validation:Optional
 	IngestSchedule catalog.RunScheduleStatus `json:"ingestSchedule,omitempty" protobuf:"bytes,7,opt,name=ingestSchedule"`
+	// The status of the sync schedule
+	//+kubebuilder:validation:Optional
+	SyncSchedule catalog.RunScheduleStatus `json:"syncSchedule,omitempty" protobuf:"bytes,8,opt,name=syncSchedule"`
 	// Holds the last online table location. set the null when running the sync process
 	//+kubebuilder:validation:Optional
-	OnlineTable DataLocation `json:"onlineTable,omitempty" protobuf:"bytes,8,opt,name=onelineTable"`
+	OnlineTable DataLocation `json:"onlineTable,omitempty" protobuf:"bytes,9,opt,name=onelineTable"`
 	// The last time an online table was created
 	//+kubebuilder:validation:Optional
-	OnlineTableCreated *metav1.Time `json:"onlineTableCreated,omitempty" protobuf:"bytes,9,opt,name=onelineTableCreated"`
+	OnlineTableCreated *metav1.Time `json:"onlineTableCreated,omitempty" protobuf:"bytes,10,opt,name=onelineTableCreated"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
