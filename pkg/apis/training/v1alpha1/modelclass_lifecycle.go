@@ -154,6 +154,25 @@ func (mclass *ModelClass) MarkCreatedTrainingSet() {
 	})
 }
 
+func (mclass *ModelClass) MarkReady() {
+	mclass.Status.Phase = ModelClassPhaseReady
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassReady,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (mclass *ModelClass) MarkNotReady() {
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassReady,
+		Status: v1.ConditionFalse,
+	})
+}
+
+func (mclass *ModelClass) AdvanceTrainingTime() {
+	mclass.Status.TrainingStatus.RecordEnd(*mclass.Spec.Training.TrainingSchedule.NextRun())
+}
+
 func (mclass *ModelClass) MarkCreatingTrainingSetFailed(err string) {
 	mclass.Status.Phase = ModelClassPhaseFailed
 	mclass.CreateOrUpdateCond(ModelClassCondition{
