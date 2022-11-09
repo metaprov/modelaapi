@@ -121,7 +121,7 @@ func (fg *FeatureGroup) MarkSynced() {
 		Type:   FeatureGroupSynced,
 		Status: v1.ConditionTrue,
 	})
-	nextRun := fg.Spec.SyncSchedule.NextRun()
+	nextRun := fg.Spec.Materialization.Schedule.NextRun()
 	fg.Status.SyncSchedule.RecordEnd(*nextRun)
 }
 
