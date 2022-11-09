@@ -2650,8 +2650,13 @@ export namespace EntityList {
 }
 
 export class EntitySpec extends jspb.Message {
-  getVersionname(): string;
-  setVersionname(value: string): EntitySpec;
+  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): EntitySpec;
+  hasTenantref(): boolean;
+  clearTenantref(): EntitySpec;
+
+  getVersion(): string;
+  setVersion(value: string): EntitySpec;
 
   getDescription(): string;
   setDescription(value: string): EntitySpec;
@@ -2677,7 +2682,8 @@ export class EntitySpec extends jspb.Message {
 
 export namespace EntitySpec {
   export type AsObject = {
-    versionname: string,
+    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    version: string,
     description: string,
     joinkey: string,
     owner: string,
@@ -2883,8 +2889,8 @@ export class FeatureGroupSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): FeatureGroupSpec;
 
-  getVersionname(): string;
-  setVersionname(value: string): FeatureGroupSpec;
+  getVersion(): string;
+  setVersion(value: string): FeatureGroupSpec;
 
   getDescription(): string;
   setDescription(value: string): FeatureGroupSpec;
@@ -2947,7 +2953,7 @@ export class FeatureGroupSpec extends jspb.Message {
 export namespace FeatureGroupSpec {
   export type AsObject = {
     owner: string,
-    versionname: string,
+    version: string,
     description: string,
     ingesttype: string,
     entityname: string,

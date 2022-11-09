@@ -86,7 +86,7 @@ type FeatureGroupSpec struct {
 	// Version name is the product version for the feature group.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
+	Version *string `json:"version,omitempty" protobuf:"bytes,2,opt,name=version"`
 	// Description of the feature group.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional

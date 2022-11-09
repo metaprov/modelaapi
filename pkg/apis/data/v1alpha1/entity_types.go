@@ -59,18 +59,21 @@ type Entity struct {
 
 // EntitySpec contain the desired state of a Entity.
 type EntitySpec struct {
+	// The reference to the tenant which the object exists under
+	// +kubebuilder:validation:Optional
+	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,opt,name=tenantRef"`
 	// The product version of the entity
 	// +kubebuilder:default:=""
-	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
+	Version *string `json:"version" protobuf:"bytes,2,opt,name=version"`
 	// Description of the entity
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
-	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Join keys are the way to join all the feature groups
 	// Join key can be either UUID or seq.
 	// Entity must have a join key
-	JoinKey string `json:"joinKey,omitempty" protobuf:"bytes,3,rep,name=joinKey"`
+	JoinKey string `json:"joinKey,omitempty" protobuf:"bytes,4,rep,name=joinKey"`
 	// Owner of this Entity
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
@@ -78,7 +81,7 @@ type EntitySpec struct {
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
 	// Tags for this feature groups
 	// +kubebuilder:validation:Optional
-	Tags []string `json:"tags,omitempty" protobuf:"bytes,7,opt,name=tags"`
+	Tags []string `json:"tags,omitempty" protobuf:"bytes,6,opt,name=tags"`
 }
 
 // +kubebuilder:object:root=true
