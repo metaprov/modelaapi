@@ -2140,10 +2140,6 @@ message FeatureGroupSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule ingestSchedule = 8;
 
-  // Schedule to sync the feature group into the online store.
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule syncSchedule = 9;
-
   // The name of the data source which contain the schema for this entity
   // +kubebuilder:validation:Optional
   optional Schema schema = 10;
@@ -2168,6 +2164,10 @@ message FeatureGroupSpec {
   // Materialization
   // +kubebuilder:validation:Optional
   optional MaterializationSpec materialization = 15;
+
+  // Resources used for ingest and the sync
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 16;
 }
 
 // FeatureStatus defines the observed state of Feature
@@ -2186,11 +2186,7 @@ message FeatureGroupStatus {
   // +kubebuilder:validation:Optional
   optional int32 rows = 5;
 
-  // Set the sync schedule between offline store and online store.
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus syncSchedule = 6;
-
-  // the ingest schedule status
+  // the ingest schedule status. During ingest we test and profile the current feature group content.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus ingestSchedule = 7;
 
@@ -2205,7 +2201,7 @@ message FeatureGroupStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureGroupCondition conditions = 10;
+  repeated FeatureGroupCondition conditions = 11;
 }
 
 // FeatureHistogram represent a single feature in the feature store.
@@ -2663,6 +2659,10 @@ message MaterializationSpec {
   // +kubebuilder:default:=21
   // +kubebuilder:validation:Minimum=0
   optional int32 backfill = 6;
+
+  // Set the sync schedule between offline store and online store.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 7;
 }
 
 message MetricSpec {

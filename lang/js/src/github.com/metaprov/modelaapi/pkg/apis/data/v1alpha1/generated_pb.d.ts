@@ -2916,11 +2916,6 @@ export class FeatureGroupSpec extends jspb.Message {
   hasIngestschedule(): boolean;
   clearIngestschedule(): FeatureGroupSpec;
 
-  getSyncschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSyncschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): FeatureGroupSpec;
-  hasSyncschedule(): boolean;
-  clearSyncschedule(): FeatureGroupSpec;
-
   getSchema(): Schema | undefined;
   setSchema(value?: Schema): FeatureGroupSpec;
   hasSchema(): boolean;
@@ -2947,6 +2942,11 @@ export class FeatureGroupSpec extends jspb.Message {
   hasMaterialization(): boolean;
   clearMaterialization(): FeatureGroupSpec;
 
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): FeatureGroupSpec;
+  hasResources(): boolean;
+  clearResources(): FeatureGroupSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureGroupSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureGroupSpec): FeatureGroupSpec.AsObject;
@@ -2965,13 +2965,13 @@ export namespace FeatureGroupSpec {
     entityname: string,
     tagsList: Array<string>,
     ingestschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     schema?: Schema.AsObject,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     location?: DataLocation.AsObject,
     timecolumn: string,
     timecolumnformat: string,
     materialization?: MaterializationSpec.AsObject,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
 
@@ -2989,11 +2989,6 @@ export class FeatureGroupStatus extends jspb.Message {
 
   getRows(): number;
   setRows(value: number): FeatureGroupStatus;
-
-  getSyncschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
-  setSyncschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): FeatureGroupStatus;
-  hasSyncschedule(): boolean;
-  clearSyncschedule(): FeatureGroupStatus;
 
   getIngestschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
   setIngestschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): FeatureGroupStatus;
@@ -3029,7 +3024,6 @@ export namespace FeatureGroupStatus {
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     rows: number,
-    syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     ingestschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     onelinetable?: DataLocation.AsObject,
     onelinetablecreated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -3746,6 +3740,11 @@ export class MaterializationSpec extends jspb.Message {
   getBackfill(): number;
   setBackfill(value: number): MaterializationSpec;
 
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): MaterializationSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): MaterializationSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MaterializationSpec.AsObject;
   static toObject(includeInstance: boolean, msg: MaterializationSpec): MaterializationSpec.AsObject;
@@ -3762,6 +3761,7 @@ export namespace MaterializationSpec {
     offlinettl: number,
     onlinettl: number,
     backfill: number,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
 
