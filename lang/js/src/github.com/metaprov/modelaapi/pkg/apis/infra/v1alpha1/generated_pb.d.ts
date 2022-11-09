@@ -5200,6 +5200,11 @@ export class TenantSpec extends jspb.Message {
   hasPermissions(): boolean;
   clearPermissions(): TenantSpec;
 
+  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
+  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): TenantSpec;
+  hasNotification(): boolean;
+  clearNotification(): TenantSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TenantSpec.AsObject;
   static toObject(includeInstance: boolean, msg: TenantSpec): TenantSpec.AsObject;
@@ -5215,6 +5220,7 @@ export namespace TenantSpec {
     description: string,
     owner: string,
     permissions?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.AsObject,
+    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
   }
 }
 

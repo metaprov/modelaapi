@@ -2990,6 +2990,10 @@ message TenantSpec {
   // can access the resources under the Tenant namespace and what actions they can perform
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 5;
+
+  // The default notification specification for all resources under the tenant
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 6;
 }
 
 // TenantStatus defines the actual state of a Tenant

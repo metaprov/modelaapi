@@ -133,6 +133,32 @@ spec:
                 description: The user-provided description of the Tenant
                 maxLength: 512
                 type: string
+              notification:
+                description: The default notification specification for all resources
+                  under the tenant
+                properties:
+                  errorTTL:
+                    default: 3600
+                    description: Time-to-live for error messages, in seconds
+                    format: int32
+                    type: integer
+                  notifierName:
+                    default: ""
+                    description: The name of the Notifier which exists in the same
+                      tenant as the resource specifying the NotificationSpec
+                    type: string
+                  selector:
+                    additionalProperties:
+                      type: string
+                    description: The labels which will be searched for in all Notifiers
+                      to determine the target Notifiers
+                    type: object
+                  successTTL:
+                    default: 3600
+                    description: Time-to-live for success messages. In seconds
+                    format: int32
+                    type: integer
+                type: object
               owner:
                 default: no-one
                 description: Owner indicates the name of the Account under the Tenant

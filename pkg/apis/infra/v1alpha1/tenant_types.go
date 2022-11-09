@@ -85,6 +85,9 @@ type TenantSpec struct {
 	// can access the resources under the Tenant namespace and what actions they can perform
 	// +kubebuilder:validation:Optional
 	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,5,opt,name=permissions"`
+	// The default notification specification for all resources under the tenant
+	// +kubebuilder:validation:Optional
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,6,opt,name=notification"`
 }
 
 // TenantStatus defines the actual state of a Tenant
