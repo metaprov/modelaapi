@@ -2101,34 +2101,38 @@ message FeatureGroupList {
 
 // FeatureGroupSpec contain the desired state of a FeatureGroup
 message FeatureGroupSpec {
+  // The reference to the tenant which the object exists under
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
+
   // Owner is the owner of the feature group.
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string owner = 1;
+  optional string owner = 2;
 
   // Version name is the product version for the feature group.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string version = 2;
+  optional string version = 3;
 
   // Description of the feature group.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
-  optional string description = 3;
+  optional string description = 4;
 
   // How this group is ingested
   // +kubebuilder:default:="batch"
   // +kubebuilder:validation:Optional
-  optional string ingestType = 4;
+  optional string ingestType = 5;
 
   // A feature group must be part of an entity.
-  optional string entityName = 5;
+  optional string entityName = 6;
 
   // Tags for this feature groups
   // +kubebuilder:validation:Optional
-  repeated string tags = 6;
+  repeated string tags = 7;
 
   // Schedule for running ingesting the data from the feature.
   // On virtual features (e.g. where the data already reside in a table)

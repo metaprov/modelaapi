@@ -2886,6 +2886,11 @@ export namespace FeatureGroupList {
 }
 
 export class FeatureGroupSpec extends jspb.Message {
+  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeatureGroupSpec;
+  hasTenantref(): boolean;
+  clearTenantref(): FeatureGroupSpec;
+
   getOwner(): string;
   setOwner(value: string): FeatureGroupSpec;
 
@@ -2952,6 +2957,7 @@ export class FeatureGroupSpec extends jspb.Message {
 
 export namespace FeatureGroupSpec {
   export type AsObject = {
+    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     owner: string,
     version: string,
     description: string,

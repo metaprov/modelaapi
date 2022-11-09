@@ -78,29 +78,32 @@ type FeatureGroupList struct {
 
 // FeatureGroupSpec contain the desired state of a FeatureGroup
 type FeatureGroupSpec struct {
+	// The reference to the tenant which the object exists under
+	// +kubebuilder:validation:Optional
+	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,opt,name=tenantRef"`
 	// Owner is the owner of the feature group.
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,2,opt,name=owner"`
 	// Version name is the product version for the feature group.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Version *string `json:"version,omitempty" protobuf:"bytes,2,opt,name=version"`
+	Version *string `json:"version,omitempty" protobuf:"bytes,3,opt,name=version"`
 	// Description of the feature group.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
-	Description string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
+	Description string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
 	// How this group is ingested
 	// +kubebuilder:default:="batch"
 	// +kubebuilder:validation:Optional
-	IngestType *catalog.FeatureStoreIngestType `json:"ingestType,omitempty" protobuf:"bytes,4,opt,name=ingestType"`
+	IngestType *catalog.FeatureStoreIngestType `json:"ingestType,omitempty" protobuf:"bytes,5,opt,name=ingestType"`
 	// A feature group must be part of an entity.
-	EntityName string `json:"entityName,omitempty" protobuf:"bytes,5,opt,name=entityName"`
+	EntityName string `json:"entityName,omitempty" protobuf:"bytes,6,opt,name=entityName"`
 	// Tags for this feature groups
 	// +kubebuilder:validation:Optional
-	Tags []string `json:"tags,omitempty" protobuf:"bytes,6,opt,name=tags"`
+	Tags []string `json:"tags,omitempty" protobuf:"bytes,7,opt,name=tags"`
 	// Schedule for running ingesting the data from the feature.
 	// On virtual features (e.g. where the data already reside in a table)
 	// The ingest will just perform feature profile, and run the feature group unit tests.
