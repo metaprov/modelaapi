@@ -690,16 +690,14 @@ message GenTrainingDataResponse {
 
 // copy from the online store database into the online system
 message SyncOnlineStoreRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            product      = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion     version      = 2;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection   = 3;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         storageBucket       = 4;
-    map<string,bytes>                                                           storageSecret       = 5;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 6;
-    map<string,bytes>                                                           dbSecret       = 7;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         model          = 8;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup           fg          = 9;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation           location   = 10;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection   = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         storageBucket       = 2;
+    map<string,bytes>                                                           storageSecret       = 3;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 4;
+    map<string,bytes>                                                           dbSecret       = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         model          = 6;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup           fg          = 7;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation           location   = 8;
 }
 
 message SyncOnlineStoreResponse {
@@ -707,16 +705,14 @@ message SyncOnlineStoreResponse {
 }
 
 message GenOnlineStoreDatasetRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            product      = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion     version      = 2;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection   = 3;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         storageBucket       = 4;
-    map<string,bytes>                                                           storageSecret       = 5;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 6;
-    map<string,bytes>                                                           dbSecret       = 7;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass model = 8;
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entities = 9;
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 10;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection   = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         storageBucket       = 2;
+    map<string,bytes>                                                           storageSecret       = 3;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 4;
+    map<string,bytes>                                                           dbSecret       = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         model          = 6;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup           fg          = 7;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation           location   = 8;
 }
 
 message GenOnlineStoreDatasetResponse {

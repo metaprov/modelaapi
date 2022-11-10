@@ -3152,16 +3152,6 @@ export namespace GenTrainingDataResponse {
 }
 
 export class SyncOnlineStoreRequest extends jspb.Message {
-  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): SyncOnlineStoreRequest;
-  hasProduct(): boolean;
-  clearProduct(): SyncOnlineStoreRequest;
-
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): SyncOnlineStoreRequest;
-  hasVersion(): boolean;
-  clearVersion(): SyncOnlineStoreRequest;
-
   getStorageconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
   setStorageconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): SyncOnlineStoreRequest;
   hasStorageconnection(): boolean;
@@ -3208,8 +3198,6 @@ export class SyncOnlineStoreRequest extends jspb.Message {
 
 export namespace SyncOnlineStoreRequest {
   export type AsObject = {
-    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     storageconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     storagebucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     storagesecretMap: Array<[string, Uint8Array | string]>,
@@ -3236,16 +3224,6 @@ export namespace SyncOnlineStoreResponse {
 }
 
 export class GenOnlineStoreDatasetRequest extends jspb.Message {
-  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): GenOnlineStoreDatasetRequest;
-  hasProduct(): boolean;
-  clearProduct(): GenOnlineStoreDatasetRequest;
-
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): GenOnlineStoreDatasetRequest;
-  hasVersion(): boolean;
-  clearVersion(): GenOnlineStoreDatasetRequest;
-
   getStorageconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
   setStorageconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): GenOnlineStoreDatasetRequest;
   hasStorageconnection(): boolean;
@@ -3272,15 +3250,15 @@ export class GenOnlineStoreDatasetRequest extends jspb.Message {
   hasModel(): boolean;
   clearModel(): GenOnlineStoreDatasetRequest;
 
-  getEntitiesList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>;
-  setEntitiesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>): GenOnlineStoreDatasetRequest;
-  clearEntitiesList(): GenOnlineStoreDatasetRequest;
-  addEntities(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity;
+  getFg(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
+  setFg(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): GenOnlineStoreDatasetRequest;
+  hasFg(): boolean;
+  clearFg(): GenOnlineStoreDatasetRequest;
 
-  getGroupsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>;
-  setGroupsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>): GenOnlineStoreDatasetRequest;
-  clearGroupsList(): GenOnlineStoreDatasetRequest;
-  addGroups(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): GenOnlineStoreDatasetRequest;
+  hasLocation(): boolean;
+  clearLocation(): GenOnlineStoreDatasetRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GenOnlineStoreDatasetRequest.AsObject;
@@ -3292,16 +3270,14 @@ export class GenOnlineStoreDatasetRequest extends jspb.Message {
 
 export namespace GenOnlineStoreDatasetRequest {
   export type AsObject = {
-    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     storageconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     storagebucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     storagesecretMap: Array<[string, Uint8Array | string]>,
     dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     dbsecretMap: Array<[string, Uint8Array | string]>,
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
-    entitiesList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject>,
-    groupsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject>,
+    fg?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
