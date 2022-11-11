@@ -1590,10 +1590,6 @@ func (in *RunScheduleStatus) DeepCopyInto(out *RunScheduleStatus) {
 		in, out := &in.NextRun, &out.NextRun
 		*out = (*in).DeepCopy()
 	}
-	if in.CurrentStartTime != nil {
-		in, out := &in.CurrentStartTime, &out.CurrentStartTime
-		*out = (*in).DeepCopy()
-	}
 	if in.FailureReason != nil {
 		in, out := &in.FailureReason, &out.FailureReason
 		*out = new(StatusError)

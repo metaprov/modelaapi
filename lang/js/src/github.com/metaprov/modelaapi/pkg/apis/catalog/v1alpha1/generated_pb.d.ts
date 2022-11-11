@@ -1756,11 +1756,6 @@ export class RunScheduleStatus extends jspb.Message {
   hasNextrun(): boolean;
   clearNextrun(): RunScheduleStatus;
 
-  getCurrentstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCurrentstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunScheduleStatus;
-  hasCurrentstarttime(): boolean;
-  clearCurrentstarttime(): RunScheduleStatus;
-
   getDuration(): number;
   setDuration(value: number): RunScheduleStatus;
 
@@ -1787,7 +1782,6 @@ export namespace RunScheduleStatus {
   export type AsObject = {
     lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    currentstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     duration: number,
     failurereason: string,
     failuremessage: string,

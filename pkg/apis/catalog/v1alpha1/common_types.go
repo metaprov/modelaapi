@@ -1540,18 +1540,15 @@ func (schedule RunSchedule) NextRun() *metav1.Time {
 }
 
 type RunScheduleStatus struct {
-	// Last time the job was ended successfuly
+	// Last time the job started
 	// +kubebuilder:validation:Optional
 	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
 	// The time of the day when the schedule will be executed
 	// +kubebuilder:validation:Optional
 	NextRun *metav1.Time `json:"nextRun,omitempty" protobuf:"bytes,2,opt,name=nextRun"`
-	// The time when we started the action based on the schedule.
-	// +kubebuilder:validation:Optional
-	CurrentStartTime *metav1.Time `json:"currentStartTime,omitempty" protobuf:"bytes,3,opt,name=currentStartTime"`
 	// The duration of the run in seconds
 	// +kubebuilder:validation:Optional
-	Duration int32 `json:"duration,omitempty" protobuf:"varint,4,opt,name=duration"`
+	Duration float64 `json:"duration,omitempty" protobuf:"varint,4,opt,name=duration"`
 	// In the case of failure, the resource controller which created the run will set this field with a failure reason
 	// +kubebuilder:validation:Optional
 	FailureReason *StatusError `json:"failureReason,omitempty" protobuf:"bytes,5,opt,name=failureReason"`
@@ -1563,53 +1560,26 @@ type RunScheduleStatus struct {
 	LastRunLogs Logs `json:"logs,omitempty" protobuf:"bytes,7,opt,name=logs"`
 }
 
-// return true if the schedule started but not ended
-func (runstatus RunScheduleStatus) IsStarted() bool {
-	return runstatus.CurrentStartTime != nil
-}
-
-func (runstatus RunScheduleStatus) IsEnded() bool {
-	if runstatus.LastRun == nil || runstatus.NextRun == nil {
-		return false
-	}
-	return runstatus.LastRun.Before(runstatus.NextRun)
-
-}
-
-func (runstatus RunScheduleStatus) IsRunning() bool {
-	return runstatus.IsStarted() && !runstatus.IsEnded()
-}
-
-func (runstatus RunScheduleStatus) ShouldStartNextRun() bool {
+// Check if we are due for a run. next run must be set.
+func (runstatus *RunScheduleStatus) IsDue() bool {
 	if runstatus.NextRun == nil {
-		return true
-	}
-	if runstatus.IsRunning() {
 		return false
 	}
-
 	now := metav1.Now()
 	return runstatus.NextRun.Time.Before(now.Time)
 }
 
-func (runstatus RunScheduleStatus) Init(nextRun metav1.Time) {
-	runstatus.NextRun = &nextRun
-	runstatus.CurrentStartTime = nil
+func (runstatus *RunScheduleStatus) Start() {
+	now := metav1.Now()
+	runstatus.LastRun = &now
 }
 
-func (runstatus RunScheduleStatus) RecordStart() {
-	if runstatus.CurrentStartTime == nil {
-		now := metav1.Now()
-		runstatus.CurrentStartTime = &now
-	}
+func (runstatus *RunScheduleStatus) End() {
+	now := metav1.Now()
+	runstatus.Duration = now.Sub(runstatus.LastRun.Time).Seconds()
 }
 
-func (runstatus RunScheduleStatus) RecordEnd(nextRun metav1.Time) {
-	runstatus.CurrentStartTime = nil
-	if runstatus.LastRun == nil {
-		now := metav1.Now()
-		runstatus.LastRun = &now
-	}
+func (runstatus RunScheduleStatus) SetNext(nextRun metav1.Time) {
 	runstatus.NextRun = &nextRun
 }
 

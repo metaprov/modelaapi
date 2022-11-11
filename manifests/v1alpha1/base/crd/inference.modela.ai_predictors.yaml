@@ -3708,15 +3708,9 @@ spec:
               predictionSchedule:
                 description: The status for the batch prediction.
                 properties:
-                  currentStartTime:
-                    description: The time when we started the action based on the
-                      schedule.
-                    format: date-time
-                    type: string
                   duration:
                     description: The duration of the run in seconds
-                    format: int32
-                    type: integer
+                    type: number
                   failureMessage:
                     description: In the case of failure, the resource controller which
                       created the run will set this field with a failure message
@@ -3726,7 +3720,7 @@ spec:
                       created the run will set this field with a failure reason
                     type: string
                   lastRun:
-                    description: Last time the job was ended successfuly
+                    description: Last time the job started
                     format: date-time
                     type: string
                   logs:

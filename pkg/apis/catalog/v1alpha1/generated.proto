@@ -1030,7 +1030,7 @@ message RunSchedule {
 }
 
 message RunScheduleStatus {
-  // Last time the job was ended successfuly
+  // Last time the job started
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
 
@@ -1038,13 +1038,9 @@ message RunScheduleStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 2;
 
-  // The time when we started the action based on the schedule.
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time currentStartTime = 3;
-
   // The duration of the run in seconds
   // +kubebuilder:validation:Optional
-  optional int32 duration = 4;
+  optional double duration = 4;
 
   // In the case of failure, the resource controller which created the run will set this field with a failure reason
   // +kubebuilder:validation:Optional
