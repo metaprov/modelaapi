@@ -282,22 +282,25 @@ type ModelClassStatus struct {
 	// Training schedule status
 	//+kubebuilder:validation:Optional
 	TrainingStatus catalog.RunScheduleStatus `json:"trainingStatus,omitempty" protobuf:"bytes,7,opt,name=trainingStatus"`
+	// Batch Prediction schedule
+	//+kubebuilder:validation:Optional
+	PredictionStatus catalog.RunScheduleStatus `json:"predictionStatus,omitempty" protobuf:"bytes,8,opt,name=predictionStatus"`
 	// Training schedule status
 	//+kubebuilder:validation:Optional
-	PromotionStatus PromotionStatus `json:"promotionStatus,omitempty" protobuf:"bytes,8,opt,name=promotionStatus"`
+	PromotionStatus PromotionStatus `json:"promotionStatus,omitempty" protobuf:"bytes,9,opt,name=promotionStatus"`
 	// Holds the latest dataset used during training.
 	//+kubebuilder:validation:Optional
-	LastestDataset string `json:"latestDataset,omitempty" protobuf:"bytes,9,opt,name=latestDataset"`
+	LastestDataset string `json:"latestDataset,omitempty" protobuf:"bytes,10,opt,name=latestDataset"`
 	// The lastest study name
 	//+kubebuilder:validation:Optional
-	LastestStudy string `json:"latestStudy,omitempty" protobuf:"bytes,10,opt,name=latestStudy"`
+	LastestStudy string `json:"latestStudy,omitempty" protobuf:"bytes,11,opt,name=latestStudy"`
 	// The latest best model
 	//+kubebuilder:validation:Optional
-	LastestModel string `json:"latestModel,omitempty" protobuf:"bytes,11,opt,name=latestModel"`
+	LastestModel string `json:"latestModel,omitempty" protobuf:"bytes,12,opt,name=latestModel"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
+	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,13,rep,name=conditions"`
 }
 
 type PromotionStatus struct {

@@ -2061,6 +2061,7 @@ func (in *ModelClassStatus) DeepCopyInto(out *ModelClassStatus) {
 	}
 	in.LastTrainingSet.DeepCopyInto(&out.LastTrainingSet)
 	in.TrainingStatus.DeepCopyInto(&out.TrainingStatus)
+	in.PredictionStatus.DeepCopyInto(&out.PredictionStatus)
 	in.PromotionStatus.DeepCopyInto(&out.PromotionStatus)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions

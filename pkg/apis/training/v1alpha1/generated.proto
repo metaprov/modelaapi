@@ -1605,26 +1605,30 @@ message ModelClassStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus trainingStatus = 7;
 
+  // Batch Prediction schedule
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus predictionStatus = 8;
+
   // Training schedule status
   // +kubebuilder:validation:Optional
-  optional PromotionStatus promotionStatus = 8;
+  optional PromotionStatus promotionStatus = 9;
 
   // Holds the latest dataset used during training.
   // +kubebuilder:validation:Optional
-  optional string latestDataset = 9;
+  optional string latestDataset = 10;
 
   // The lastest study name
   // +kubebuilder:validation:Optional
-  optional string latestStudy = 10;
+  optional string latestStudy = 11;
 
   // The latest best model
   // +kubebuilder:validation:Optional
-  optional string latestModel = 11;
+  optional string latestModel = 12;
 
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelClassCondition conditions = 12;
+  repeated ModelClassCondition conditions = 13;
 }
 
 // Specification for model training.

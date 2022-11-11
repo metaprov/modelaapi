@@ -2306,6 +2306,11 @@ export class ModelClassStatus extends jspb.Message {
   hasTrainingstatus(): boolean;
   clearTrainingstatus(): ModelClassStatus;
 
+  getPredictionstatus(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
+  setPredictionstatus(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): ModelClassStatus;
+  hasPredictionstatus(): boolean;
+  clearPredictionstatus(): ModelClassStatus;
+
   getPromotionstatus(): PromotionStatus | undefined;
   setPromotionstatus(value?: PromotionStatus): ModelClassStatus;
   hasPromotionstatus(): boolean;
@@ -2342,6 +2347,7 @@ export namespace ModelClassStatus {
     bestfe?: FeatureEngineeringSpec.AsObject,
     lastonlinetrainingset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     trainingstatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
+    predictionstatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     promotionstatus?: PromotionStatus.AsObject,
     latestdataset: string,
     lateststudy: string,

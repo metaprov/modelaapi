@@ -3000,6 +3000,55 @@ spec:
               phase:
                 description: ModelPhase specifies the current phase of a Model
                 type: string
+              predictionStatus:
+                description: Batch Prediction schedule
+                properties:
+                  duration:
+                    description: The duration of the run in seconds
+                    type: number
+                  failureMessage:
+                    description: In the case of failure, the resource controller which
+                      created the run will set this field with a failure message
+                    type: string
+                  failureReason:
+                    description: In the case of failure, the resource controller which
+                      created the run will set this field with a failure reason
+                    type: string
+                  lastRun:
+                    description: Last time the job started
+                    format: date-time
+                    type: string
+                  logs:
+                    description: Last run logs
+                    properties:
+                      bucketName:
+                        description: The name of the VirtualBucket resource where
+                          the logs are stored
+                        type: string
+                      containers:
+                        description: The collection of ContainerLog objects that describe
+                          the location of logs per container
+                        items:
+                          description: ContainerLog describes the location of logs
+                            for a single Job
+                          properties:
+                            container:
+                              description: The container name
+                              type: string
+                            job:
+                              description: The name of the Job
+                              type: string
+                            key:
+                              description: The path to the log in the bucket
+                              type: string
+                          type: object
+                        type: array
+                    type: object
+                  nextRun:
+                    description: The time of the day when the schedule will be executed
+                    format: date-time
+                    type: string
+                type: object
               promotionStatus:
                 description: Training schedule status
                 properties:
