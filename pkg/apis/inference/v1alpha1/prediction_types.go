@@ -88,7 +88,6 @@ type PredictionSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
-
 	// The model class for this pipeline
 	// +kubebuilder:validation:Optional
 	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,2,opt,name=modelClassName"`
@@ -160,9 +159,6 @@ type PredictionSpec struct {
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	Workers *int32 `json:"workers" protobuf:"bytes,21,opt,name=workers"`
-	// Reference to the model class that generated this prediction
-	// +kubebuilder:validation:Optional
-	ModelClassRef v1.ObjectReference `json:"modelClassRef" protobuf:"bytes,22,opt,name=modelClassRef"`
 }
 
 // PredictionStatus is the observed state of a Prediction
