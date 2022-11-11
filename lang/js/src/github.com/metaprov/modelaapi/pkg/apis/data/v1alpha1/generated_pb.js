@@ -30616,6 +30616,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.toOb
     location: (f = msg.getLocation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
     timecolumn: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
     timecolumnformat: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
+    keycolumn: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
     materialization: (f = msg.getMaterialization()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.toObject(includeInstance, f),
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f)
   };
@@ -30712,11 +30713,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.dese
       msg.setTimecolumnformat(value);
       break;
     case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setKeycolumn(value);
+      break;
+    case 16:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.deserializeBinaryFromReader);
       msg.setMaterialization(value);
       break;
-    case 16:
+    case 17:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
       msg.setResources(value);
@@ -30846,10 +30851,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.seri
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 15));
+  if (f != null) {
+    writer.writeString(
+      15,
+      f
+    );
+  }
   f = message.getMaterialization();
   if (f != null) {
     writer.writeMessage(
-      15,
+      16,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.serializeBinaryToWriter
     );
@@ -30857,7 +30869,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.seri
   f = message.getResources();
   if (f != null) {
     writer.writeMessage(
-      16,
+      17,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
@@ -31340,12 +31352,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
 
 
 /**
- * optional MaterializationSpec materialization = 15;
+ * optional string keyColumn = 15;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getKeycolumn = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setKeycolumn = function(value) {
+  return jspb.Message.setField(this, 15, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.clearKeycolumn = function() {
+  return jspb.Message.setField(this, 15, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasKeycolumn = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional MaterializationSpec materialization = 16;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getMaterialization = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec, 15));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec, 16));
 };
 
 
@@ -31354,7 +31402,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setMaterialization = function(value) {
-  return jspb.Message.setWrapperField(this, 15, value);
+  return jspb.Message.setWrapperField(this, 16, value);
 };
 
 
@@ -31372,17 +31420,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasMaterialization = function() {
-  return jspb.Message.getField(this, 15) != null;
+  return jspb.Message.getField(this, 16) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 16;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 17;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getResources = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 16));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 17));
 };
 
 
@@ -31391,7 +31439,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setResources = function(value) {
-  return jspb.Message.setWrapperField(this, 16, value);
+  return jspb.Message.setWrapperField(this, 17, value);
 };
 
 
@@ -31409,7 +31457,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasResources = function() {
-  return jspb.Message.getField(this, 16) != null;
+  return jspb.Message.getField(this, 17) != null;
 };
 
 

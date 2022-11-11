@@ -2351,6 +2351,11 @@ func (in *FeatureGroupSpec) DeepCopyInto(out *FeatureGroupSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.KeyColumn != nil {
+		in, out := &in.KeyColumn, &out.KeyColumn
+		*out = new(string)
+		**out = **in
+	}
 	in.Materialization.DeepCopyInto(&out.Materialization)
 	in.Resources.DeepCopyInto(&out.Resources)
 }

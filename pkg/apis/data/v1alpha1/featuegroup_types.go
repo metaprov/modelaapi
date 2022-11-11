@@ -125,12 +125,15 @@ type FeatureGroupSpec struct {
 	// The time column format
 	// +kubebuilder:validation:Optional
 	TimeColumnFormat *string `json:"timeColumnFormat,omitempty" protobuf:"bytes,14,opt,name=timeColumnFormat"`
+	// The feature group primary key. This is usually the key that is used to join the feature groups
+	// to other feature groups in the entity
+	KeyColumn *string `json:"keyColumn,omitempty" protobuf:"bytes,15,opt,name=keyColumn"`
 	// Materialization
 	// +kubebuilder:validation:Optional
-	Materialization MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,15,opt,name=materialization"`
+	Materialization MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,16,opt,name=materialization"`
 	// Resources used for ingest and the sync
 	//+kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,16,opt,name=resources"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,17,opt,name=resources"`
 }
 
 // FeatureStatus defines the observed state of Feature

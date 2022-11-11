@@ -2161,13 +2161,17 @@ message FeatureGroupSpec {
   // +kubebuilder:validation:Optional
   optional string timeColumnFormat = 14;
 
+  // The feature group primary key. This is usually the key that is used to join the feature groups
+  // to other feature groups in the entity
+  optional string keyColumn = 15;
+
   // Materialization
   // +kubebuilder:validation:Optional
-  optional MaterializationSpec materialization = 15;
+  optional MaterializationSpec materialization = 16;
 
   // Resources used for ingest and the sync
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 16;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 17;
 }
 
 // FeatureStatus defines the observed state of Feature

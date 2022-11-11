@@ -2937,6 +2937,9 @@ export class FeatureGroupSpec extends jspb.Message {
   getTimecolumnformat(): string;
   setTimecolumnformat(value: string): FeatureGroupSpec;
 
+  getKeycolumn(): string;
+  setKeycolumn(value: string): FeatureGroupSpec;
+
   getMaterialization(): MaterializationSpec | undefined;
   setMaterialization(value?: MaterializationSpec): FeatureGroupSpec;
   hasMaterialization(): boolean;
@@ -2970,6 +2973,7 @@ export namespace FeatureGroupSpec {
     location?: DataLocation.AsObject,
     timecolumn: string,
     timecolumnformat: string,
+    keycolumn: string,
     materialization?: MaterializationSpec.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }

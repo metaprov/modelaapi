@@ -97,6 +97,11 @@ spec:
                 default: batch
                 description: How this group is ingested
                 type: string
+              keyColumn:
+                description: The feature group primary key. This is usually the key
+                  that is used to join the feature groups to other feature groups
+                  in the entity
+                type: string
               location:
                 description: Specify the data for this feature group This can be a
                   table,  a view or a file on S3.
