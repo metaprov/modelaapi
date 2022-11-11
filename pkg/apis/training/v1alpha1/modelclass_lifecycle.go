@@ -191,7 +191,7 @@ func (mclass *ModelClass) MarkTraining() {
 			Reason: ReasonTraining,
 		})
 		now := metav1.Now()
-		mclass.Status.TrainingStatus.LastRun = &now
+		mclass.Status.TrainingScheduleStatus.LastRun = &now
 	}
 }
 
@@ -202,8 +202,8 @@ func (mclass *ModelClass) MarkTrained() {
 		Status: v1.ConditionTrue,
 	})
 	nextRun := mclass.Spec.Training.TrainingSchedule.NextRun()
-	mclass.Status.TrainingStatus.End()
-	mclass.Status.TrainingStatus.SetNext(*nextRun)
+	mclass.Status.TrainingScheduleStatus.End()
+	mclass.Status.TrainingScheduleStatus.SetNext(*nextRun)
 }
 
 func (mclass *ModelClass) MarkTrainingFailed(err string) {
@@ -251,8 +251,8 @@ func (mclass *ModelClass) CompletionAlert(tenantRef *v1.ObjectReference, notifie
 			},
 		},
 	}
-	if mclass.Status.TrainingStatus.LastRun != nil {
-		result.Spec.Fields["Completion Time"] = mclass.Status.TrainingStatus.LastRun.Format("01/2/2006 15:04:05")
+	if mclass.Status.TrainingScheduleStatus.LastRun != nil {
+		result.Spec.Fields["Completion Time"] = mclass.Status.TrainingScheduleStatus.LastRun.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -281,8 +281,8 @@ func (mclass *ModelClass) ErrorAlert(tenantRef *v1.ObjectReference, notifierName
 			},
 		},
 	}
-	if mclass.Status.TrainingStatus.LastRun != nil {
-		result.Spec.Fields["Completion Time"] = mclass.Status.TrainingStatus.LastRun.Format("01/2/2006 15:04:05")
+	if mclass.Status.TrainingScheduleStatus.LastRun != nil {
+		result.Spec.Fields["Completion Time"] = mclass.Status.TrainingScheduleStatus.LastRun.Format("01/2/2006 15:04:05")
 	}
 
 	return result
