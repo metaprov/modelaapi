@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
@@ -60,31 +59,31 @@ func (fg FeatureGroup) IsDeleted() bool {
 	return !fg.ObjectMeta.DeletionTimestamp.IsZero()
 }
 
-func (fg FeatureGroup) IsIngestTime() bool {
-	return fg.Status.IngestSchedule.ShouldStartNextRun()
-}
-
 ////////////////////////////////////////////////
 // Ingest
 ////////////////////////////////////////////////
 func (fg *FeatureGroup) MarkIngesting() {
-	fg.Status.Phase = FeatureGroupPhaseIngesting
-	fg.CreateOrUpdateCond(FeatureGroupCondition{
-		Type:   FeatureGroupIngested,
-		Status: v1.ConditionFalse,
-		Reason: "Ingesting",
-	})
+	if fg.Status.Phase != FeatureGroupPhaseIngesting {
+		fg.Status.Phase = FeatureGroupPhaseIngesting
+		fg.CreateOrUpdateCond(FeatureGroupCondition{
+			Type:   FeatureGroupIngested,
+			Status: v1.ConditionFalse,
+			Reason: "Ingesting",
+		})
+		now := metav1.Now()
+		fg.Status.IngestSchedule.LastRun = &now
+	}
 }
 
 func (fg *FeatureGroup) MarkIngested() {
 	fg.Status.Phase = FeatureGroupPhaseReady
 	fg.CreateOrUpdateCond(FeatureGroupCondition{
 		Type:   FeatureGroupIngested,
-		Status: v1.ConditionFalse,
-		Reason: "Ingested",
+		Status: v1.ConditionTrue,
 	})
 	nextRun := fg.Spec.IngestSchedule.NextRun()
-	fg.Status.IngestSchedule.RecordEnd(*nextRun)
+	fg.Status.IngestSchedule.End()
+	fg.Status.IngestSchedule.SetNext(*nextRun)
 }
 
 func (fg *FeatureGroup) MarkIngestFailed(msg string) {
@@ -96,10 +95,6 @@ func (fg *FeatureGroup) MarkIngestFailed(msg string) {
 	})
 	fg.Status.Phase = FeatureGroupPhaseFailed
 	fg.Status.IngestSchedule.FailureMessage = util.StrPtr(msg)
-	now := metav1.Now()
-	if fg.Status.IngestSchedule.LastRun == nil {
-		fg.Status.IngestSchedule.LastRun = &now
-	}
 
 }
 
@@ -107,12 +102,17 @@ func (fg *FeatureGroup) MarkIngestFailed(msg string) {
 // Sync
 //////////////////////////////////////////////
 func (fg *FeatureGroup) MarkSyncing() {
-	fg.Status.Phase = FeatureGroupPhaseSyncing
-	fg.CreateOrUpdateCond(FeatureGroupCondition{
-		Type:   FeatureGroupSynced,
-		Status: v1.ConditionFalse,
-		Reason: "Syncing",
-	})
+	if fg.Status.Phase != FeatureGroupPhaseSyncing {
+		fg.Status.Phase = FeatureGroupPhaseSyncing
+		fg.CreateOrUpdateCond(FeatureGroupCondition{
+			Type:   FeatureGroupSynced,
+			Status: v1.ConditionFalse,
+			Reason: "Syncing",
+		})
+		now := metav1.Now()
+		fg.Status.SyncSchedule.LastRun = &now
+	}
+
 }
 
 func (fg *FeatureGroup) MarkSynced() {
@@ -122,7 +122,8 @@ func (fg *FeatureGroup) MarkSynced() {
 		Status: v1.ConditionTrue,
 	})
 	nextRun := fg.Spec.Materialization.Schedule.NextRun()
-	fg.Status.SyncSchedule.RecordEnd(*nextRun)
+	fg.Status.SyncSchedule.End()
+	fg.Status.SyncSchedule.SetNext(*nextRun)
 }
 
 func (fg *FeatureGroup) MarkSyncFailed(msg string) {
@@ -134,57 +135,18 @@ func (fg *FeatureGroup) MarkSyncFailed(msg string) {
 	})
 	fg.Status.Phase = FeatureGroupPhaseFailed
 	fg.Status.SyncSchedule.FailureMessage = util.StrPtr(msg)
-	now := metav1.Now()
-	if fg.Status.SyncSchedule.LastRun == nil {
-		fg.Status.SyncSchedule.LastRun = &now
-	}
-
-}
-
-func (fg *FeatureGroup) MarkGeneratingOnlineDataset() {
-	fg.Status.Phase = FeatureGroupPhaseGeneratingOnlineDataset
-	fg.CreateOrUpdateCond(FeatureGroupCondition{
-		Type:   FeatureGroupSynced,
-		Status: v1.ConditionFalse,
-		Reason: "GeneratingOnlineDataset",
-	})
-}
-
-func (fg *FeatureGroup) MarkGeneratedOnlineDataset() {
-	fg.Status.Phase = FeatureGroupPhaseReady
-	fg.CreateOrUpdateCond(FeatureGroupCondition{
-		Type:   FeatureGroupSynced,
-		Status: v1.ConditionFalse,
-		Reason: "GeneratedOnlineDataset",
-	})
-}
-
-func (fg *FeatureGroup) MarkGeneratedOnlineDatasetFailed(msg string) {
-	fg.CreateOrUpdateCond(FeatureGroupCondition{
-		Type:    FeatureGroupSynced,
-		Status:  v1.ConditionFalse,
-		Reason:  string(DatasetPhaseFailed),
-		Message: "Failed to generate online dataset." + msg,
-	})
-	fg.Status.Phase = FeatureGroupPhaseFailed
-	fg.Status.SyncSchedule.FailureMessage = util.StrPtr(msg)
-
 }
 
 func (fg *FeatureGroup) IsSynced() bool {
 	return fg.GetCond(FeatureGroupSynced).Status == v1.ConditionTrue
 }
 
-func (fg *FeatureGroup) HasOnlineTable() bool {
-	if !fg.Status.SyncSchedule.IsStarted() {
-		return false
-	}
-	return fg.Status.OnlineTableCreated.After(fg.Status.SyncSchedule.CurrentStartTime.Time)
+func (fg *FeatureGroup) IsSynching() bool {
+	return fg.Status.Phase == FeatureGroupPhaseSyncing
 }
 
-func (fg *FeatureGroup) OnlineDatasetGenerated() bool {
-	return fg.GetCond(FeatureGroupSynced).Status == v1.ConditionFalse &&
-		fg.GetCond(FeatureGroupSynced).Reason == "GeneratedOnlineDataset"
+func (fg *FeatureGroup) IsIngesting() bool {
+	return fg.Status.Phase == FeatureGroupPhaseIngesting
 }
 
 //==============================================================================

@@ -15,11 +15,10 @@ import (
 type FeatureGroupPhase string
 
 const (
-	FeatureGroupPhaseGeneratingOnlineDataset FeatureGroupPhase = "GeneratingOnlineDataset"
-	FeatureGroupPhaseSyncing                 FeatureGroupPhase = "Syncing"
-	FeatureGroupPhaseIngesting               FeatureGroupPhase = "Ingesting"
-	FeatureGroupPhaseFailed                  FeatureGroupPhase = "Failed"
-	FeatureGroupPhaseReady                   FeatureGroupPhase = "Ready"
+	FeatureGroupPhaseSyncing   FeatureGroupPhase = "Syncing"
+	FeatureGroupPhaseIngesting FeatureGroupPhase = "Ingesting"
+	FeatureGroupPhaseFailed    FeatureGroupPhase = "Failed"
+	FeatureGroupPhaseReady     FeatureGroupPhase = "Ready"
 )
 
 //==============================================================================
