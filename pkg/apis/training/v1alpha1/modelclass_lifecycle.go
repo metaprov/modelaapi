@@ -169,10 +169,6 @@ func (mclass *ModelClass) MarkNotReady() {
 	})
 }
 
-func (mclass *ModelClass) AdvanceTrainingTime() {
-	mclass.Status.TrainingStatus.RecordEnd(*mclass.Spec.Training.TrainingSchedule.NextRun())
-}
-
 func (mclass *ModelClass) MarkCreatingTrainingSetFailed(err string) {
 	mclass.Status.Phase = ModelClassPhaseFailed
 	mclass.CreateOrUpdateCond(ModelClassCondition{
