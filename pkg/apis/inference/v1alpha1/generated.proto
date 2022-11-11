@@ -892,6 +892,10 @@ message PredictionSpec {
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   optional int32 workers = 21;
+
+  // Reference to the model class that generated this prediction
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference modelClassRef = 22;
 }
 
 // PredictionStatus is the observed state of a Prediction

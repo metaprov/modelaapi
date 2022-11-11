@@ -12787,7 +12787,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.t
     forecastspec: (f = msg.getForecastspec()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastPredictionSpec.toObject(includeInstance, f),
     servingsiteref: (f = msg.getServingsiteref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     grouplocation: (f = msg.getGrouplocation()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.GroupPredictionLocationsSpec.toObject(includeInstance, f),
-    workers: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f
+    workers: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
+    modelclassref: (f = msg.getModelclassref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12912,6 +12913,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.d
     case 21:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setWorkers(value);
+      break;
+    case 22:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setModelclassref(value);
       break;
     default:
       reader.skipField();
@@ -13089,6 +13095,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.s
     writer.writeInt32(
       21,
       f
+    );
+  }
+  f = message.getModelclassref();
+  if (f != null) {
+    writer.writeMessage(
+      22,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -13820,6 +13834,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasWorkers = function() {
   return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference modelClassRef = 22;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getModelclassref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 22));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setModelclassref = function(value) {
+  return jspb.Message.setWrapperField(this, 22, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearModelclassref = function() {
+  return this.setModelclassref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasModelclassref = function() {
+  return jspb.Message.getField(this, 22) != null;
 };
 
 

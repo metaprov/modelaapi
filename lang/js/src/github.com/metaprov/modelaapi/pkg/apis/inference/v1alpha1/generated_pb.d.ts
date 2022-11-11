@@ -1392,6 +1392,11 @@ export class PredictionSpec extends jspb.Message {
   getWorkers(): number;
   setWorkers(value: number): PredictionSpec;
 
+  getModelclassref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setModelclassref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionSpec;
+  hasModelclassref(): boolean;
+  clearModelclassref(): PredictionSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionSpec): PredictionSpec.AsObject;
@@ -1422,6 +1427,7 @@ export namespace PredictionSpec {
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     grouplocation?: GroupPredictionLocationsSpec.AsObject,
     workers: number,
+    modelclassref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
