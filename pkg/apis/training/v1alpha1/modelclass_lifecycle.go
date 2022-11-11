@@ -183,12 +183,16 @@ func (mclass *ModelClass) MarkCreatingTrainingSetFailed(err string) {
 // Training
 //////////////////////////////////////////////
 func (mclass *ModelClass) MarkTraining() {
-	mclass.Status.Phase = ModelClassPhaseTraining
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassTrained,
-		Status: v1.ConditionFalse,
-		Reason: ReasonTraining,
-	})
+	if mclass.Status.Phase != ModelClassPhaseTraining {
+		mclass.Status.Phase = ModelClassPhaseTraining
+		mclass.CreateOrUpdateCond(ModelClassCondition{
+			Type:   ModelClassTrained,
+			Status: v1.ConditionFalse,
+			Reason: ReasonTraining,
+		})
+		now := metav1.Now()
+		mclass.Status.TrainingStatus.LastRun = &now
+	}
 }
 
 func (mclass *ModelClass) MarkTrained() {
@@ -197,6 +201,9 @@ func (mclass *ModelClass) MarkTrained() {
 		Type:   ModelClassTrained,
 		Status: v1.ConditionTrue,
 	})
+	nextRun := mclass.Spec.Training.TrainingSchedule.NextRun()
+	mclass.Status.TrainingStatus.End()
+	mclass.Status.TrainingStatus.SetNext(*nextRun)
 }
 
 func (mclass *ModelClass) MarkTrainingFailed(err string) {
