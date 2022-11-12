@@ -58,6 +58,11 @@ func (mclass *ModelClass) RemoveFinalizer() { util.RemoveFin(&mclass.ObjectMeta,
 func (mclass *ModelClass) CreateOrUpdateCond(cond ModelClassCondition) {
 	i := mclass.GetCondIdx(cond.Type)
 	now := metav1.Now()
+	if i == -1 { // not found
+		cond.LastTransitionTime = &now
+		mclass.Status.Conditions = append(mclass.Status.Conditions, cond)
+		return
+	}
 	current := mclass.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
