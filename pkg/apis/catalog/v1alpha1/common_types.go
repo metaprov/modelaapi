@@ -1563,7 +1563,7 @@ type RunScheduleStatus struct {
 // Check if we are due for a run. next run must be set.
 func (runstatus *RunScheduleStatus) IsDue() bool {
 	if runstatus.NextRun == nil {
-		return false
+		return true
 	}
 	now := metav1.Now()
 	return runstatus.NextRun.Time.Before(now.Time)
