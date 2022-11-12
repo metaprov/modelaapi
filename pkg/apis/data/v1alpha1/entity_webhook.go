@@ -8,7 +8,9 @@ package v1alpha1
 
 import (
 	"github.com/metaprov/modelaapi/pkg/util"
+	v1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
+
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/validation/field"
@@ -55,5 +57,10 @@ func (entity *Entity) Default() {
 	if entity.Spec.Description == nil {
 		entity.Spec.Description = util.StrPtr("")
 	}
+	if entity.Spec.TenantRef == nil {
+		entity.Spec.TenantRef = &v1.ObjectReference{}
+	}
+	entity.Spec.TenantRef.Namespace = "modela-system"
+	entity.Spec.TenantRef.Name = entity.Namespace
 
 }

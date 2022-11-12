@@ -11,6 +11,7 @@ package v1alpha1
 //==============================================================================
 
 import (
+	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
 
@@ -45,4 +46,11 @@ func (fg *FeatureGroup) SetupWebhookWithManager(mgr ctrl.Manager) error {
 }
 
 // No defaults in this current release
-func (fg *FeatureGroup) Default() {}
+func (fg *FeatureGroup) Default() {
+	if fg.Spec.TenantRef == nil {
+		fg.Spec.TenantRef = &corev1.ObjectReference{}
+	}
+	fg.Spec.TenantRef.Namespace = "modela-system"
+	fg.Spec.TenantRef.Name = fg.Namespace
+
+}
