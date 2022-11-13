@@ -255,6 +255,10 @@ func (fg FeatureGroup) Archived() bool {
 	return fg.GetCond(FeatureGroupSaved).Status == v1.ConditionTrue
 }
 
+func (fg FeatureGroup) TenantName() string {
+	return fg.Spec.TenantRef.Name
+}
+
 func (fh FeatureGroup) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("FeatureGroup %s failed with error %v", fh.Name, err.Error())
