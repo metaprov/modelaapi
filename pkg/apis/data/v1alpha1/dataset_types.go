@@ -497,7 +497,7 @@ const (
 
 )
 
-// +kubebuilder:validation:Enum="unlabled";"serving";"feedback";"training";"prediction"
+// +kubebuilder:validation:Enum="unlabled";"serving";"feedback";"training";"prediction";"featuregroup";
 type DatasetRole string
 
 const (

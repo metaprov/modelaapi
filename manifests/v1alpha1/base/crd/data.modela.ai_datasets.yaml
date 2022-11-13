@@ -677,6 +677,7 @@ spec:
                 - feedback
                 - training
                 - prediction
+                - featuregroup
                 type: string
               sample:
                 description: The specification for how the data should be sampled,
