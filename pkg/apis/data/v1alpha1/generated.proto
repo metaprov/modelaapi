@@ -2206,10 +2206,14 @@ message FeatureGroupStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time onelineTableCreated = 10;
 
+  // The last monitor dataset name
+  // +kubebuilder:validation:Optional
+  optional string ingestDatasetName = 11;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureGroupCondition conditions = 11;
+  repeated FeatureGroupCondition conditions = 12;
 }
 
 // FeatureHistogram represent a single feature in the feature store.

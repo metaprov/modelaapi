@@ -159,10 +159,14 @@ type FeatureGroupStatus struct {
 	// The last time an online table was created
 	//+kubebuilder:validation:Optional
 	OnlineTableCreated *metav1.Time `json:"onlineTableCreated,omitempty" protobuf:"bytes,10,opt,name=onelineTableCreated"`
+	// The last monitor dataset name
+	//+kubebuilder:validation:Optional
+	IngestDatasetName string `json:"ingestDatasetName,omitempty" protobuf:"bytes,11,opt,name=ingestDatasetName"`
+
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeatureGroupCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,11,rep,name=conditions"`
+	Conditions []FeatureGroupCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
 }
 
 type MaterializationSpec struct {

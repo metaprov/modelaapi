@@ -1058,6 +1058,9 @@ spec:
                   - type
                   type: object
                 type: array
+              ingestDatasetName:
+                description: The last monitor dataset name
+                type: string
               ingestSchedule:
                 description: the ingest schedule status. During ingest we test and
                   profile the current feature group content.
