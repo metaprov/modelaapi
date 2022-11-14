@@ -2916,6 +2916,11 @@ export class FeatureGroupSpec extends jspb.Message {
   hasIngestschedule(): boolean;
   clearIngestschedule(): FeatureGroupSpec;
 
+  getFlatfile(): FlatFileFormatSpec | undefined;
+  setFlatfile(value?: FlatFileFormatSpec): FeatureGroupSpec;
+  hasFlatfile(): boolean;
+  clearFlatfile(): FeatureGroupSpec;
+
   getSchema(): Schema | undefined;
   setSchema(value?: Schema): FeatureGroupSpec;
   hasSchema(): boolean;
@@ -2968,6 +2973,7 @@ export namespace FeatureGroupSpec {
     entityname: string,
     tagsList: Array<string>,
     ingestschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    flatfile?: FlatFileFormatSpec.AsObject,
     schema?: Schema.AsObject,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     location?: DataLocation.AsObject,

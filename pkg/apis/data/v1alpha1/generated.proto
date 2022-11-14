@@ -2140,6 +2140,11 @@ message FeatureGroupSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule ingestSchedule = 8;
 
+  // In case where the feature group data is stored as flat file. the flat file format
+  // define how to read the file.
+  // +kubebuilder:validation:Optional
+  optional FlatFileFormatSpec flatfile = 9;
+
   // The name of the data source which contain the schema for this entity
   // +kubebuilder:validation:Optional
   optional Schema schema = 10;

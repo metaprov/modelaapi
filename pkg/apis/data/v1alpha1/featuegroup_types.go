@@ -108,6 +108,10 @@ type FeatureGroupSpec struct {
 	// The ingest will just perform feature profile, and run the feature group unit tests.
 	// +kubebuilder:validation:Optional
 	IngestSchedule catalog.RunSchedule `json:"ingestSchedule,omitempty" protobuf:"bytes,8,opt,name=ingestSchedule"`
+	// In case where the feature group data is stored as flat file. the flat file format
+	// define how to read the file.
+	// +kubebuilder:validation:Optional
+	FlatFile *FlatFileFormatSpec `json:"flatfile,omitempty" protobuf:"bytes,9,opt,name=flatfile"`
 	// The name of the data source which contain the schema for this entity
 	// +kubebuilder:validation:Optional
 	Schema Schema `json:"schema,omitempty" protobuf:"bytes,10,opt,name=schema"`
