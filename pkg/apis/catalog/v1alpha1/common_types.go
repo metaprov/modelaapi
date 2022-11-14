@@ -157,6 +157,7 @@ const (
 	NoveltyDetection     MLTask = "novelty-detection"
 	TopicModeling        MLTask = "topic-modeling"
 	AutoDetectTask       MLTask = "auto"
+	MonitorTask          MLTask = "monitoring" // when the dataset is used only for monitoring
 
 	// Text Tasks
 
