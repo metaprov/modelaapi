@@ -526,6 +526,11 @@ func (dataset Dataset) IsGroup() bool {
 	return *dataset.Spec.Task == catalog.GroupForecast
 }
 
+// Answer true if the dataset is used for feature groupp monitoring.
+func (dataset Dataset) IsFeatureGroup() bool {
+	return *dataset.Spec.Role == DatasetRoleFeatureGroup
+}
+
 // Generate a dataset completion alert
 func (dataset Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
