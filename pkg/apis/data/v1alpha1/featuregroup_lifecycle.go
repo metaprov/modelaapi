@@ -251,6 +251,10 @@ func (fg *FeatureGroup) MarkArchived() {
 	})
 }
 
+func (fg *FeatureGroup) PrefixLiveUri(path string) string {
+	return fmt.Sprintf("modela/live/tenants/%s/%s", fg.Namespace, path)
+}
+
 func (fg FeatureGroup) Archived() bool {
 	return fg.GetCond(FeatureGroupSaved).Status == v1.ConditionTrue
 }

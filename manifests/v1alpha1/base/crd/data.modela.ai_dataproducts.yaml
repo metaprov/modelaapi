@@ -674,6 +674,7 @@ spec:
                 - auto
                 - unknown
                 - group-forecasting
+                - monitoring
                 type: string
               tenantRef:
                 description: The reference to the Tenant which owns the DataProduct.

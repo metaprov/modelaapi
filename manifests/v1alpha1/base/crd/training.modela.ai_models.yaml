@@ -2018,6 +2018,7 @@ spec:
                 - auto
                 - unknown
                 - group-forecasting
+                - monitoring
                 type: string
               tested:
                 default: false

@@ -121,6 +121,7 @@ spec:
                 - auto
                 - unknown
                 - group-forecasting
+                - monitoring
                 type: string
               url:
                 type: string

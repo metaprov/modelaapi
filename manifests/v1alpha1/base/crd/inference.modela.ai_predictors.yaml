@@ -3070,6 +3070,7 @@ spec:
                 - auto
                 - unknown
                 - group-forecasting
+                - monitoring
                 type: string
               template:
                 default: false

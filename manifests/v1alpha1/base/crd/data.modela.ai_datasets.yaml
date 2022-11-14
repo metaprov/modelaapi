@@ -836,6 +836,7 @@ spec:
                 - auto
                 - unknown
                 - group-forecasting
+                - monitoring
                 type: string
               type:
                 default: tabular

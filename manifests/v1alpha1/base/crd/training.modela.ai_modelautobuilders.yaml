@@ -1000,6 +1000,7 @@ spec:
                     - auto
                     - unknown
                     - group-forecasting
+                    - monitoring
                     type: string
                   unitTestsTemplate:
                     description: The specification for tests for a new dataset
@@ -1669,6 +1670,7 @@ spec:
                 - auto
                 - unknown
                 - group-forecasting
+                - monitoring
                 type: string
               trainers:
                 default: 1
