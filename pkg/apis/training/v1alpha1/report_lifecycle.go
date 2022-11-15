@@ -275,15 +275,15 @@ func (report *Report) MarkReportFailed(err string) {
 
 }
 
-func (report *Report) MarkReportReady(product *data.DataProduct) {
+func (report *Report) MarkReportReady(uri string) {
 	report.Status.Phase = ReportPhaseCompleted
 	report.CreateOrUpdateCond(ReportCondition{
 		Type:   ReportReady,
 		Status: v1.ConditionTrue,
 	})
 
-	liveUri := product.PrefixLiveUri(report.PdfUri())
-	report.Status.URI = liveUri
+	//liveUri := product.PrefixLiveUri(report.PdfUri())
+	report.Status.URI = uri
 	now := metav1.Now()
 	report.Status.EndTime = &now
 
