@@ -138,23 +138,27 @@ type ModelClassDataSpec struct {
 	// The schema of the observation file. The schema is used as the basis for training and serving.
 	// +kubebuilder:validation:Optional
 	Schema data.Schema `json:"schema,omitempty" protobuf:"bytes,4,opt,name=schema"`
+	// In case where the feature group data is stored as flat file. the flat file format
+	// define how to read the file.
+	// +kubebuilder:validation:Optional
+	FlatFile *data.FlatFileFormatSpec `json:"flatfile,omitempty" protobuf:"bytes,5,opt,name=flatfile"`
 	// The primary key for the observation row
 	// If empty the system will set the join key as the primary key based on the schema.
 	// +kubebuilder:validation:Optional
-	PrimaryKey []string `json:"primaryKey,omitempty" protobuf:"bytes,5,opt,name=primaryKey"`
+	PrimaryKey []string `json:"primaryKey,omitempty" protobuf:"bytes,6,opt,name=primaryKey"`
 	// Define the column name that contains the prediction time for each row in the label data.
 	// The system uses the prediction time in order to avoid data leakage.
 	// I.e. the training dataset will contain only data that was known before the prediction time
 	// If null, the system will set the prediction time column as the time index column in the schema.
 	// +kubebuilder:validation:Optional
-	PredictionTimeColumn *string `json:"predictionTimeColumn,omitempty" protobuf:"bytes,6,opt,name=predictionTimeColumn"`
+	PredictionTimeColumn *string `json:"predictionTimeColumn,omitempty" protobuf:"bytes,7,opt,name=predictionTimeColumn"`
 	// Name of the target column
 	// If null, the system will assign this column based on the schema.
 	// +kubebuilder:validation:Optional
-	Target *string `json:"target,omitempty" protobuf:"bytes,7,opt,name=target"`
+	Target *string `json:"target,omitempty" protobuf:"bytes,8,opt,name=target"`
 	// Tests to run on the training data before training. This assurs data quality is being met.
 	// +kubebuilder:validation:Optional
-	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,8,opt,name=tests"`
+	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,9,opt,name=tests"`
 }
 
 // Specification for model training.

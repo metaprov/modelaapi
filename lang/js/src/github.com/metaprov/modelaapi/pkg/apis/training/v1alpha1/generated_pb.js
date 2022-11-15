@@ -22409,7 +22409,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassConditi
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.repeatedFields_ = [5];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.repeatedFields_ = [6];
 
 
 
@@ -22446,9 +22446,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
     predictionhistory: (f = msg.getPredictionhistory()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     predictions: (f = msg.getPredictions()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     schema: (f = msg.getSchema()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema.toObject(includeInstance, f),
-    primarykeyList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    predictiontimecolumn: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    target: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    flatfile: (f = msg.getFlatfile()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec.toObject(includeInstance, f),
+    primarykeyList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+    predictiontimecolumn: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    target: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
   };
 
@@ -22507,18 +22508,23 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
       msg.setSchema(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addPrimarykey(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec.deserializeBinaryFromReader);
+      msg.setFlatfile(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPredictiontimecolumn(value);
+      msg.addPrimarykey(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTarget(value);
+      msg.setPredictiontimecolumn(value);
       break;
     case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTarget(value);
+      break;
+    case 9:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
       msg.setTests(value);
@@ -22584,16 +22590,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema.serializeBinaryToWriter
     );
   }
+  f = message.getFlatfile();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec.serializeBinaryToWriter
+    );
+  }
   f = message.getPrimarykeyList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      5,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
-  if (f != null) {
-    writer.writeString(
       6,
       f
     );
@@ -22605,10 +22612,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
   f = message.getTests();
   if (f != null) {
     writer.writeMessage(
-      8,
+      9,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
     );
@@ -22765,11 +22779,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
 
 
 /**
- * repeated string primaryKey = 5;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec flatfile = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.getFlatfile = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.setFlatfile = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.clearFlatfile = function() {
+  return this.setFlatfile(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.hasFlatfile = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * repeated string primaryKey = 6;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.getPrimarykeyList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
 };
 
 
@@ -22778,7 +22829,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.setPrimarykeyList = function(value) {
-  return jspb.Message.setField(this, 5, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
@@ -22788,7 +22839,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.addPrimarykey = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
@@ -22802,46 +22853,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
 
 
 /**
- * optional string predictionTimeColumn = 6;
+ * optional string predictionTimeColumn = 7;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.getPredictiontimecolumn = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.setPredictiontimecolumn = function(value) {
-  return jspb.Message.setField(this, 6, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.clearPredictiontimecolumn = function() {
-  return jspb.Message.setField(this, 6, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.hasPredictiontimecolumn = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional string target = 7;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.getTarget = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -22850,7 +22865,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.setTarget = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.setPredictiontimecolumn = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -22859,7 +22874,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.clearTarget = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.clearPredictiontimecolumn = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -22868,18 +22883,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.hasTarget = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.hasPredictiontimecolumn = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 8;
+ * optional string target = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.getTarget = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.setTarget = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.clearTarget = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.hasTarget = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 9;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.getTests = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 8));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 9));
 };
 
 
@@ -22888,7 +22939,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.setTests = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -22906,7 +22957,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.hasTests = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 

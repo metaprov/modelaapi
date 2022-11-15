@@ -2093,6 +2093,11 @@ export class ModelClassDataSpec extends jspb.Message {
   hasSchema(): boolean;
   clearSchema(): ModelClassDataSpec;
 
+  getFlatfile(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec | undefined;
+  setFlatfile(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec): ModelClassDataSpec;
+  hasFlatfile(): boolean;
+  clearFlatfile(): ModelClassDataSpec;
+
   getPrimarykeyList(): Array<string>;
   setPrimarykeyList(value: Array<string>): ModelClassDataSpec;
   clearPrimarykeyList(): ModelClassDataSpec;
@@ -2123,6 +2128,7 @@ export namespace ModelClassDataSpec {
     predictionhistory?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     predictions?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     schema?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema.AsObject,
+    flatfile?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec.AsObject,
     primarykeyList: Array<string>,
     predictiontimecolumn: string,
     target: string,

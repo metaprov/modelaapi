@@ -1469,26 +1469,31 @@ message ModelClassDataSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema schema = 4;
 
+  // In case where the feature group data is stored as flat file. the flat file format
+  // define how to read the file.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec flatfile = 5;
+
   // The primary key for the observation row
   // If empty the system will set the join key as the primary key based on the schema.
   // +kubebuilder:validation:Optional
-  repeated string primaryKey = 5;
+  repeated string primaryKey = 6;
 
   // Define the column name that contains the prediction time for each row in the label data.
   // The system uses the prediction time in order to avoid data leakage.
   // I.e. the training dataset will contain only data that was known before the prediction time
   // If null, the system will set the prediction time column as the time index column in the schema.
   // +kubebuilder:validation:Optional
-  optional string predictionTimeColumn = 6;
+  optional string predictionTimeColumn = 7;
 
   // Name of the target column
   // If null, the system will assign this column based on the schema.
   // +kubebuilder:validation:Optional
-  optional string target = 7;
+  optional string target = 8;
 
   // Tests to run on the training data before training. This assurs data quality is being met.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 9;
 }
 
 // ModelClassList contains a list of Studies
