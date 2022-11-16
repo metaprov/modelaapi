@@ -19,6 +19,18 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1";
 
+// Define a single custom search spec for a single alg
+message AlgorithmSearchSpace {
+  // The algorithm name
+  // +kubebuilder:validation:Optional
+  optional string name = 1;
+
+  // Specify one or more parameters ranges. This parameters will override the default
+  // ranges
+  // +kubebuilder:validation:Optional
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange ranges = 2;
+}
+
 // AlgorithmSearchSpaceSpec defines the algorithms available to models produced by a Study
 message AlgorithmSearchSpaceSpec {
   // Which algorithm to include
@@ -31,9 +43,10 @@ message AlgorithmSearchSpaceSpec {
   // +kubebuilder:validation:Optional
   repeated string exclude = 2;
 
-  // Set a custom hyper parameter spaace. This list refer to algorithm objects that define the custom paramters.
+  // Set a custom hyper parameter spaace.
+  // Specify custom ranges per estimator.
   // +kubebuilder:validation:Optional
-  repeated k8s.io.api.core.v1.ObjectReference customAlgNames = 3;
+  repeated AlgorithmSearchSpace custom = 3;
 }
 
 message Anomaly {

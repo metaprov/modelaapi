@@ -119,20 +119,10 @@ export class AlgorithmSpec extends jspb.Message {
   getSparse(): boolean;
   setSparse(value: boolean): AlgorithmSpec;
 
-  getIntegerparametersList(): Array<IntParameter>;
-  setIntegerparametersList(value: Array<IntParameter>): AlgorithmSpec;
-  clearIntegerparametersList(): AlgorithmSpec;
-  addIntegerparameters(value?: IntParameter, index?: number): IntParameter;
-
-  getFloatparametersList(): Array<FloatParameter>;
-  setFloatparametersList(value: Array<FloatParameter>): AlgorithmSpec;
-  clearFloatparametersList(): AlgorithmSpec;
-  addFloatparameters(value?: FloatParameter, index?: number): FloatParameter;
-
-  getCategoricalparametersList(): Array<CategoricalParameter>;
-  setCategoricalparametersList(value: Array<CategoricalParameter>): AlgorithmSpec;
-  clearCategoricalparametersList(): AlgorithmSpec;
-  addCategoricalparameters(value?: CategoricalParameter, index?: number): CategoricalParameter;
+  getRangesList(): Array<ParameterRange>;
+  setRangesList(value: Array<ParameterRange>): AlgorithmSpec;
+  clearRangesList(): AlgorithmSpec;
+  addRanges(value?: ParameterRange, index?: number): ParameterRange;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AlgorithmSpec.AsObject;
@@ -149,9 +139,7 @@ export namespace AlgorithmSpec {
     url: string,
     task: string,
     sparse: boolean,
-    integerparametersList: Array<IntParameter.AsObject>,
-    floatparametersList: Array<FloatParameter.AsObject>,
-    categoricalparametersList: Array<CategoricalParameter.AsObject>,
+    rangesList: Array<ParameterRange.AsObject>,
   }
 }
 
@@ -815,40 +803,6 @@ export namespace Images {
   }
 }
 
-export class IntParameter extends jspb.Message {
-  getName(): string;
-  setName(value: string): IntParameter;
-
-  getType(): string;
-  setType(value: string): IntParameter;
-
-  getMin(): number;
-  setMin(value: number): IntParameter;
-
-  getMax(): number;
-  setMax(value: number): IntParameter;
-
-  getDefaultvalue(): number;
-  setDefaultvalue(value: number): IntParameter;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): IntParameter.AsObject;
-  static toObject(includeInstance: boolean, msg: IntParameter): IntParameter.AsObject;
-  static serializeBinaryToWriter(message: IntParameter, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): IntParameter;
-  static deserializeBinaryFromReader(message: IntParameter, reader: jspb.BinaryReader): IntParameter;
-}
-
-export namespace IntParameter {
-  export type AsObject = {
-    name: string,
-    type: string,
-    min: number,
-    max: number,
-    defaultvalue: number,
-  }
-}
-
 export class LastRunStatus extends jspb.Message {
   getName(): string;
   setName(value: string): LastRunStatus;
@@ -1400,6 +1354,58 @@ export class PRCurve extends jspb.Message {
 export namespace PRCurve {
   export type AsObject = {
     valuesList: Array<CurvePoint.AsObject>,
+  }
+}
+
+export class ParameterRange extends jspb.Message {
+  getName(): string;
+  setName(value: string): ParameterRange;
+
+  getType(): string;
+  setType(value: string): ParameterRange;
+
+  getLow(): number;
+  setLow(value: number): ParameterRange;
+
+  getHigh(): number;
+  setHigh(value: number): ParameterRange;
+
+  getStep(): number;
+  setStep(value: number): ParameterRange;
+
+  getLog(): boolean;
+  setLog(value: boolean): ParameterRange;
+
+  getChoicesList(): Array<string>;
+  setChoicesList(value: Array<string>): ParameterRange;
+  clearChoicesList(): ParameterRange;
+  addChoices(value: string, index?: number): ParameterRange;
+
+  getDefaultvalue(): number;
+  setDefaultvalue(value: number): ParameterRange;
+
+  getDefaultchoice(): string;
+  setDefaultchoice(value: string): ParameterRange;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ParameterRange.AsObject;
+  static toObject(includeInstance: boolean, msg: ParameterRange): ParameterRange.AsObject;
+  static serializeBinaryToWriter(message: ParameterRange, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ParameterRange;
+  static deserializeBinaryFromReader(message: ParameterRange, reader: jspb.BinaryReader): ParameterRange;
+}
+
+export namespace ParameterRange {
+  export type AsObject = {
+    name: string,
+    type: string,
+    low: number,
+    high: number,
+    step: number,
+    log: boolean,
+    choicesList: Array<string>,
+    defaultvalue: number,
+    defaultchoice: string,
   }
 }
 

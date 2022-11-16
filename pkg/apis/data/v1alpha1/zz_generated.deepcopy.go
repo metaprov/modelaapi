@@ -2338,6 +2338,11 @@ func (in *FeatureGroupSpec) DeepCopyInto(out *FeatureGroupSpec) {
 		copy(*out, *in)
 	}
 	in.IngestSchedule.DeepCopyInto(&out.IngestSchedule)
+	if in.FlatFile != nil {
+		in, out := &in.FlatFile, &out.FlatFile
+		*out = new(FlatFileFormatSpec)
+		(*in).DeepCopyInto(*out)
+	}
 	in.Schema.DeepCopyInto(&out.Schema)
 	in.UnitTests.DeepCopyInto(&out.UnitTests)
 	in.Location.DeepCopyInto(&out.Location)

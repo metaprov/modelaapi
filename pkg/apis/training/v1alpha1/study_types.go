@@ -650,9 +650,21 @@ type AlgorithmSearchSpaceSpec struct {
 	// If empty, all algorithms will be available for training
 	// +kubebuilder:validation:Optional
 	Exclude []catalog.ClassicEstimatorName `json:"exclude,omitempty" protobuf:"bytes,2,rep,name=exclude"`
-	// Set a custom hyper parameter spaace. This list refer to algorithm objects that define the custom paramters.
+	// Set a custom hyper parameter spaace.
+	// Specify custom ranges per estimator.
 	// +kubebuilder:validation:Optional
-	CustomAlgNames []v1.ObjectReference `json:"CustomAlgNames,omitempty" protobuf:"bytes,3,rep,name=customAlgNames"`
+	Custom []AlgorithmSearchSpace `json:"custom,omitempty" protobuf:"bytes,3,opt,name=custom"`
+}
+
+// Define a single custom search spec for a single alg
+type AlgorithmSearchSpace struct {
+	// The algorithm name
+	// +kubebuilder:validation:Optional
+	Name catalog.ClassicEstimatorName `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	// Specify one or more parameters ranges. This parameters will override the default
+	// ranges
+	// +kubebuilder:validation:Optional
+	Ranges []catalog.ParameterRange `json:"ranges,omitempty" protobuf:"bytes,2,rep,name=ranges"`
 }
 
 // StudyScheduleSpec specifies the parameters for a Study to be executed at a certain time

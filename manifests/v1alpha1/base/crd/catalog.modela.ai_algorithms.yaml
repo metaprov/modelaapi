@@ -57,94 +57,54 @@ spec:
             description: AlgorithmSpec describes the attributes of an machine learning
               algorithm
             properties:
-              categoricalParameters:
-                description: CategoricalParameters is the list of categorical hyper
-                  parameters ranges
-                items:
-                  description: CategoricalParameter contain the specification of an
-                    categorical hyper parameter
-                  properties:
-                    defaultValue:
-                      description: DefaultValue if the default categorical value
-                      type: string
-                    enums:
-                      description: Enums defines the list of values
-                      items:
-                        type: string
-                      type: array
-                    name:
-                      description: Name is the name of the hyper parameter
-                      type: string
-                  type: object
-                type: array
               description:
                 default: ""
                 description: Description is the description of the algorithm
                 type: string
-              floatParameters:
-                description: FloatParameters is the list of float hyper parameters
-                  ranges
-                items:
-                  description: FloatParameter contain the specification of an float
-                    hyper parameter
-                  properties:
-                    defaultValue:
-                      description: Default float value
-                      type: number
-                    log:
-                      description: Log specify if this hyperparameter is logarithmic
-                      type: boolean
-                    max:
-                      description: Max is the maximum value
-                      type: number
-                    min:
-                      description: Min is the minimum value
-                      type: number
-                    name:
-                      description: Name is the name of the hyper parameter
-                      type: string
-                  type: object
-                type: array
               frameworkName:
                 description: FrameworkName is a reference to library
                 type: string
-              integerParameters:
+              ranges:
                 description: IntegerParameters is the list of integer hyper parameter
                   ranges.
                 items:
-                  description: IntParameter contain the specification of an integer
-                    hyper parameter
+                  description: Parameter range indicate a single hyper parameter range
                   properties:
+                    choices:
+                      description: Set of choices for categorical variable
+                      items:
+                        type: string
+                      type: array
+                    defaultChoice:
+                      description: Default Choice for categorical variable.
+                      type: string
                     defaultValue:
                       description: DefaultValue is the default value of the parameter
-                      format: int32
-                      type: integer
+                      type: number
+                    log:
+                      description: If the scale is logaritimic
+                      type: boolean
                     max:
-                      description: Max is the maximum value of the hyper parameter
+                      description: High is the maximum value of the hyper parameter
                         range
-                      format: int32
-                      type: integer
+                      type: number
                     min:
-                      description: Min is the minimum value of the hyper parameter
+                      description: Low is the minimum value of the hyperparameter
                         range
-                      format: int32
-                      type: integer
+                      type: number
                     name:
                       description: Name is the name of the hyper parameter
                       type: string
+                    step:
+                      description: Step for discrete variable.
+                      format: int32
+                      type: integer
                     type:
                       description: Type is the datatype of the parameter
                       enum:
-                      - boolean
-                      - datetime
-                      - number
+                      - float
+                      - int
                       - categorical
-                      - ordinal
-                      - text
-                      - json
-                      - number-list
-                      - categorical-list
-                      - text-list
                       type: string
                   type: object
                 type: array

@@ -49,32 +49,38 @@ type AlgorithmSpec struct {
 	Sparse *bool `json:"sparse,omitempty" protobuf:"varint,5,opt,name=sparse"`
 	// IntegerParameters is the list of integer hyper parameter ranges.
 	// +kubebuilder:validation:Optional
-	IntegerParameters []IntParameter `json:"integerParameters,omitempty" protobuf:"bytes,6,rep,name=integerParameters"`
-	// FloatParameters is the list of float hyper parameters ranges
-	// +kubebuilder:validation:Optional
-	FloatParameters []FloatParameter `json:"floatParameters,omitempty" protobuf:"bytes,7,rep,name=floatParameters"`
-	// CategoricalParameters is the list of categorical hyper parameters ranges
-	// +kubebuilder:validation:Optional
-	CategoricalParameters []CategoricalParameter `json:"categoricalParameters,omitempty" protobuf:"bytes,8,rep,name=categoricalParameters"`
+	Ranges []ParameterRange `json:"ranges,omitempty" protobuf:"bytes,6,rep,name=ranges"`
 }
 
-// IntParameter contain the specification of an integer hyper parameter
-type IntParameter struct {
+// Parameter range indicate a single hyper parameter range
+type ParameterRange struct {
 	// Name is the name of the hyper parameter
 	// +kubebuilder:validation:Optional
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Type is the datatype of the parameter
 	// +kubebuilder:validation:Optional
-	Type DataType `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
-	// Min is the minimum value of the hyper parameter range
+	Type HyperParameterDataType `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
+	// Low is the minimum value of the hyperparameter range
 	// +kubebuilder:validation:Optional
-	Min int32 `json:"min,omitempty" protobuf:"varint,3,opt,name=min"`
-	// Max is the maximum value of the hyper parameter range
+	Low *float64 `json:"min,omitempty" protobuf:"bytes,3,opt,name=low"`
+	// High is the maximum value of the hyper parameter range
 	// +kubebuilder:validation:Optional
-	Max int32 `json:"max,omitempty" protobuf:"varint,4,opt,name=max"`
+	High *float64 `json:"max,omitempty" protobuf:"bytes,4,opt,name=high"`
+	// Step for discrete variable.
+	// +kubebuilder:validation:Optional
+	Step *int32 `json:"step,omitempty" protobuf:"varint,5,opt,name=step"`
+	// If the scale is logaritimic
+	// +kubebuilder:validation:Optional
+	Log *bool `json:"log,omitempty" protobuf:"varint,6,opt,name=log"`
+	// Set of choices for categorical variable
+	// +kubebuilder:validation:Optional
+	Choices []string `json:"choices,omitempty" protobuf:"bytes,7,rep,name=choices"`
 	// DefaultValue is the default value of the parameter
 	// +kubebuilder:validation:Optional
-	DefaultValue int32 `json:"defaultValue,omitempty" protobuf:"varint,6,opt,name=defaultValue"`
+	DefaultValue *float64 `json:"defaultValue,omitempty" protobuf:"varint,8,opt,name=defaultValue"`
+	// Default Choice for categorical variable.
+	//+kubebuilder:validation:Optional
+	DefaultChoice *string `json:"defaultChoice,omitempty" protobuf:"varint,9,opt,name=defaultChoice"`
 }
 
 // FloatParameter contain the specification of an float hyper parameter

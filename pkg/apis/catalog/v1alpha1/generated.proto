@@ -116,15 +116,7 @@ message AlgorithmSpec {
 
   // IntegerParameters is the list of integer hyper parameter ranges.
   // +kubebuilder:validation:Optional
-  repeated IntParameter integerParameters = 6;
-
-  // FloatParameters is the list of float hyper parameters ranges
-  // +kubebuilder:validation:Optional
-  repeated FloatParameter floatParameters = 7;
-
-  // CategoricalParameters is the list of categorical hyper parameters ranges
-  // +kubebuilder:validation:Optional
-  repeated CategoricalParameter categoricalParameters = 8;
+  repeated ParameterRange ranges = 6;
 }
 
 // CategoricalParameter contain the specification of an categorical hyper parameter
@@ -477,29 +469,6 @@ message Images {
   optional string publisherImage = 3;
 }
 
-// IntParameter contain the specification of an integer hyper parameter
-message IntParameter {
-  // Name is the name of the hyper parameter
-  // +kubebuilder:validation:Optional
-  optional string name = 1;
-
-  // Type is the datatype of the parameter
-  // +kubebuilder:validation:Optional
-  optional string type = 2;
-
-  // Min is the minimum value of the hyper parameter range
-  // +kubebuilder:validation:Optional
-  optional int32 min = 3;
-
-  // Max is the maximum value of the hyper parameter range
-  // +kubebuilder:validation:Optional
-  optional int32 max = 4;
-
-  // DefaultValue is the default value of the parameter
-  // +kubebuilder:validation:Optional
-  optional int32 defaultValue = 6;
-}
-
 // LastRunStatus describes the status of a single run for a run-based resource (such as a pipeline)
 message LastRunStatus {
   // The name of the run
@@ -842,6 +811,45 @@ message NotificationSpec {
 
 message PRCurve {
   repeated CurvePoint values = 1;
+}
+
+// Parameter range indicate a single hyper parameter range
+message ParameterRange {
+  // Name is the name of the hyper parameter
+  // +kubebuilder:validation:Optional
+  optional string name = 1;
+
+  // Type is the datatype of the parameter
+  // +kubebuilder:validation:Optional
+  optional string type = 2;
+
+  // Low is the minimum value of the hyperparameter range
+  // +kubebuilder:validation:Optional
+  optional double low = 3;
+
+  // High is the maximum value of the hyper parameter range
+  // +kubebuilder:validation:Optional
+  optional double high = 4;
+
+  // Step for discrete variable.
+  // +kubebuilder:validation:Optional
+  optional int32 step = 5;
+
+  // If the scale is logaritimic
+  // +kubebuilder:validation:Optional
+  optional bool log = 6;
+
+  // Set of choices for categorical variable
+  // +kubebuilder:validation:Optional
+  repeated string choices = 7;
+
+  // DefaultValue is the default value of the parameter
+  // +kubebuilder:validation:Optional
+  optional double defaultValue = 8;
+
+  // Default Choice for categorical variable.
+  // +kubebuilder:validation:Optional
+  optional string defaultChoice = 9;
 }
 
 // PermissionsSpec specifies the Accounts that have access to a DataProduct or Tenant namespace and what permissions

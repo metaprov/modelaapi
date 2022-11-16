@@ -8,6 +8,30 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
+export class AlgorithmSearchSpace extends jspb.Message {
+  getName(): string;
+  setName(value: string): AlgorithmSearchSpace;
+
+  getRangesList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ParameterRange>;
+  setRangesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ParameterRange>): AlgorithmSearchSpace;
+  clearRangesList(): AlgorithmSearchSpace;
+  addRanges(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ParameterRange, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ParameterRange;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AlgorithmSearchSpace.AsObject;
+  static toObject(includeInstance: boolean, msg: AlgorithmSearchSpace): AlgorithmSearchSpace.AsObject;
+  static serializeBinaryToWriter(message: AlgorithmSearchSpace, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AlgorithmSearchSpace;
+  static deserializeBinaryFromReader(message: AlgorithmSearchSpace, reader: jspb.BinaryReader): AlgorithmSearchSpace;
+}
+
+export namespace AlgorithmSearchSpace {
+  export type AsObject = {
+    name: string,
+    rangesList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ParameterRange.AsObject>,
+  }
+}
+
 export class AlgorithmSearchSpaceSpec extends jspb.Message {
   getIncludeList(): Array<string>;
   setIncludeList(value: Array<string>): AlgorithmSearchSpaceSpec;
@@ -19,10 +43,10 @@ export class AlgorithmSearchSpaceSpec extends jspb.Message {
   clearExcludeList(): AlgorithmSearchSpaceSpec;
   addExclude(value: string, index?: number): AlgorithmSearchSpaceSpec;
 
-  getCustomalgnamesList(): Array<k8s_io_api_core_v1_generated_pb.ObjectReference>;
-  setCustomalgnamesList(value: Array<k8s_io_api_core_v1_generated_pb.ObjectReference>): AlgorithmSearchSpaceSpec;
-  clearCustomalgnamesList(): AlgorithmSearchSpaceSpec;
-  addCustomalgnames(value?: k8s_io_api_core_v1_generated_pb.ObjectReference, index?: number): k8s_io_api_core_v1_generated_pb.ObjectReference;
+  getCustomList(): Array<AlgorithmSearchSpace>;
+  setCustomList(value: Array<AlgorithmSearchSpace>): AlgorithmSearchSpaceSpec;
+  clearCustomList(): AlgorithmSearchSpaceSpec;
+  addCustom(value?: AlgorithmSearchSpace, index?: number): AlgorithmSearchSpace;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AlgorithmSearchSpaceSpec.AsObject;
@@ -36,7 +60,7 @@ export namespace AlgorithmSearchSpaceSpec {
   export type AsObject = {
     includeList: Array<string>,
     excludeList: Array<string>,
-    customalgnamesList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
+    customList: Array<AlgorithmSearchSpace.AsObject>,
   }
 }
 

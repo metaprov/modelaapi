@@ -1067,6 +1067,15 @@ const (
 	DataTypeTextList        DataType = "text-list"
 )
 
+// +kubebuilder:validation:Enum="float";"int";"categorical";
+type HyperParameterDataType string
+
+const (
+	HyperParameterDataTypeFloat       HyperParameterDataType = "float"
+	HyperParameterDataTypeInt         HyperParameterDataType = "int"
+	HyperParameterDataTypeCategorical HyperParameterDataType = "categorical"
+)
+
 // +kubebuilder:validation:Enum="url";"path";"password";"time";"count";"interval";"nominal";"email";"creditcard";"uuid";"uuid5";"uuid";"base64";"latitude";"longtitude";"dns";"ip4";"ip6";"ssn";"alpha";"alphanumeric";"unknown";"color";"currency";"date";"guid";"hyperlink";"image";"media";"file";"embedding";"record";"useless";"none"
 type DataDomain string
 
