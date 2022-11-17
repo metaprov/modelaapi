@@ -666,5 +666,5 @@ type BatchPredictionSpec struct {
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,1,opt,name=schedule"`
 	// Template specifies the template to create new Prediction resources
-	Template PredictionTemplate `json:"template" protobuf:"bytes,2,opt,name=template"`
+	Template PredictionSpec `json:"template" protobuf:"bytes,2,opt,name=template"`
 }

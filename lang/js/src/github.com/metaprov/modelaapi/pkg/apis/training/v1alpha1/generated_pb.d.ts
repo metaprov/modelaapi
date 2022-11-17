@@ -1350,44 +1350,6 @@ export namespace GeneratedColumnSpec {
   }
 }
 
-export class GroupModelLocationsSpec extends jspb.Message {
-  getGroupfolder(): string;
-  setGroupfolder(value: string): GroupModelLocationsSpec;
-
-  getGroupprofilefolder(): string;
-  setGroupprofilefolder(value: string): GroupModelLocationsSpec;
-
-  getGroupreportfile(): string;
-  setGroupreportfile(value: string): GroupModelLocationsSpec;
-
-  getGroupmodelfolder(): string;
-  setGroupmodelfolder(value: string): GroupModelLocationsSpec;
-
-  getGroupmodelfile(): string;
-  setGroupmodelfile(value: string): GroupModelLocationsSpec;
-
-  getGroupforecastfile(): string;
-  setGroupforecastfile(value: string): GroupModelLocationsSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GroupModelLocationsSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: GroupModelLocationsSpec): GroupModelLocationsSpec.AsObject;
-  static serializeBinaryToWriter(message: GroupModelLocationsSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GroupModelLocationsSpec;
-  static deserializeBinaryFromReader(message: GroupModelLocationsSpec, reader: jspb.BinaryReader): GroupModelLocationsSpec;
-}
-
-export namespace GroupModelLocationsSpec {
-  export type AsObject = {
-    groupfolder: string,
-    groupprofilefolder: string,
-    groupreportfile: string,
-    groupmodelfolder: string,
-    groupmodelfile: string,
-    groupforecastfile: string,
-  }
-}
-
 export class GroupSplitLocationsSpec extends jspb.Message {
   getGrouptrainingdatafile(): string;
   setGrouptrainingdatafile(value: string): GroupSplitLocationsSpec;
@@ -3364,10 +3326,10 @@ export class ModelSpec extends jspb.Message {
   hasFeedbacktests(): boolean;
   clearFeedbacktests(): ModelSpec;
 
-  getGrouplocations(): GroupModelLocationsSpec | undefined;
-  setGrouplocations(value?: GroupModelLocationsSpec): ModelSpec;
-  hasGrouplocations(): boolean;
-  clearGrouplocations(): ModelSpec;
+  getPartitionlocations(): PartitionModelLocationsSpec | undefined;
+  setPartitionlocations(value?: PartitionModelLocationsSpec): ModelSpec;
+  hasPartitionlocations(): boolean;
+  clearPartitionlocations(): ModelSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
@@ -3430,7 +3392,7 @@ export namespace ModelSpec {
     interpretability?: InterpretabilitySpec.AsObject,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     feedbacktests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    grouplocations?: GroupModelLocationsSpec.AsObject,
+    partitionlocations?: PartitionModelLocationsSpec.AsObject,
   }
 }
 
@@ -4417,6 +4379,44 @@ export namespace NotebookVarValue {
   export type AsObject = {
     name: string,
     value: string,
+  }
+}
+
+export class PartitionModelLocationsSpec extends jspb.Message {
+  getPartitionfolder(): string;
+  setPartitionfolder(value: string): PartitionModelLocationsSpec;
+
+  getPartitionprofilefolder(): string;
+  setPartitionprofilefolder(value: string): PartitionModelLocationsSpec;
+
+  getPartitionreportfile(): string;
+  setPartitionreportfile(value: string): PartitionModelLocationsSpec;
+
+  getPartitionmodelfolder(): string;
+  setPartitionmodelfolder(value: string): PartitionModelLocationsSpec;
+
+  getPartitionmodelfile(): string;
+  setPartitionmodelfile(value: string): PartitionModelLocationsSpec;
+
+  getPartitionforecastfile(): string;
+  setPartitionforecastfile(value: string): PartitionModelLocationsSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PartitionModelLocationsSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PartitionModelLocationsSpec): PartitionModelLocationsSpec.AsObject;
+  static serializeBinaryToWriter(message: PartitionModelLocationsSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PartitionModelLocationsSpec;
+  static deserializeBinaryFromReader(message: PartitionModelLocationsSpec, reader: jspb.BinaryReader): PartitionModelLocationsSpec;
+}
+
+export namespace PartitionModelLocationsSpec {
+  export type AsObject = {
+    partitionfolder: string,
+    partitionprofilefolder: string,
+    partitionreportfile: string,
+    partitionmodelfolder: string,
+    partitionmodelfile: string,
+    partitionforecastfile: string,
   }
 }
 

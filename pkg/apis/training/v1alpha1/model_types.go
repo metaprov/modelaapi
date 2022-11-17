@@ -358,7 +358,7 @@ type ModelSpec struct {
 	FeedbackTests catalog.TestSuite `json:"feedbackTests,omitempty" protobuf:"bytes,51,opt,name=feedbackTests"`
 	// The set locations in case of group forecasts
 	// +kubebuilder:validation:Optional
-	GroupLocations GroupModelLocationsSpec `json:"groupLocations,omitempty" protobuf:"bytes,52,opt,name=groupLocations"`
+	PartitionsLocation PartitionModelLocationsSpec `json:"partitionLocations,omitempty" protobuf:"bytes,52,opt,name=partitionLocations"`
 }
 
 type SegmentSpec struct {
@@ -1157,25 +1157,25 @@ type ModelGroupByStatus struct {
 	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,4,opt,name=workerResults"`
 }
 
-type GroupModelLocationsSpec struct {
+type PartitionModelLocationsSpec struct {
 	// The folder of group data
 	// +kubebuilder:validation:Optional
-	GroupFolder *string `json:"groupFolder,omitempty" protobuf:"bytes,1,opt,name=groupFolder"`
-	// The folder of group data
+	PartitionFolder *string `json:"partitionFolder,omitempty" protobuf:"bytes,1,opt,name=partitionFolder"`
+	// The folder of partition data
 	// +kubebuilder:validation:Optional
-	GroupProfileFolder *string `json:"groupProfileFolder,omitempty" protobuf:"bytes,2,opt,name=groupProfileFolder"`
-	// The folder of group data
+	PartitionProfileFolder *string `json:"partitionProfileFolder,omitempty" protobuf:"bytes,2,opt,name=partitionProfileFolder"`
+	// The folder of partition data
 	// +kubebuilder:validation:Optional
-	GroupReportFile *string `json:"groupReportFile,omitempty" protobuf:"bytes,3,opt,name=groupReportFile"`
-	// The folder of group data
+	PartitionReportFile *string `json:"partitionReportFile,omitempty" protobuf:"bytes,3,opt,name=partitionReportFile"`
+	// The folder of partition data
 	// +kubebuilder:validation:Optional
-	GroupModelFolder *string `json:"groupModelFolder,omitempty" protobuf:"bytes,4,opt,name=groupModelFolder"`
-	// The folder of group data
+	PartitionModelFolder *string `json:"partitionModelFolder,omitempty" protobuf:"bytes,4,opt,name=partitionModelFolder"`
+	// The folder of partition data
 	// +kubebuilder:validation:Optional
-	GroupModelFile *string `json:"groupModelFile,omitempty" protobuf:"bytes,5,opt,name=groupModelFile"`
-	// The folder of group data
+	PartitionModelFile *string `json:"partitionModelFile,omitempty" protobuf:"bytes,5,opt,name=partitionModelFile"`
+	// The folder of partition data
 	// +kubebuilder:validation:Optional
-	GroupForecastFile *string `json:"groupForecastFile,omitempty" protobuf:"bytes,6,opt,name=groupForecastFile"`
+	PartitionForecastFile *string `json:"partitionForecastFile,omitempty" protobuf:"bytes,6,opt,name=partitionForecastFile"`
 }
 
 type ModelStageStatus struct {

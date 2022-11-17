@@ -929,32 +929,6 @@ message GeneratedColumnSpec {
   optional string original = 5;
 }
 
-message GroupModelLocationsSpec {
-  // The folder of group data
-  // +kubebuilder:validation:Optional
-  optional string groupFolder = 1;
-
-  // The folder of group data
-  // +kubebuilder:validation:Optional
-  optional string groupProfileFolder = 2;
-
-  // The folder of group data
-  // +kubebuilder:validation:Optional
-  optional string groupReportFile = 3;
-
-  // The folder of group data
-  // +kubebuilder:validation:Optional
-  optional string groupModelFolder = 4;
-
-  // The folder of group data
-  // +kubebuilder:validation:Optional
-  optional string groupModelFile = 5;
-
-  // The folder of group data
-  // +kubebuilder:validation:Optional
-  optional string groupForecastFile = 6;
-}
-
 message GroupSplitLocationsSpec {
   // The folder of group data
   // +kubebuilder:validation:Optional
@@ -2427,7 +2401,7 @@ message ModelSpec {
 
   // The set locations in case of group forecasts
   // +kubebuilder:validation:Optional
-  optional GroupModelLocationsSpec groupLocations = 52;
+  optional PartitionModelLocationsSpec partitionLocations = 52;
 }
 
 message ModelStageStatus {
@@ -3082,6 +3056,32 @@ message NotebookVarValue {
   optional string name = 1;
 
   optional string value = 2;
+}
+
+message PartitionModelLocationsSpec {
+  // The folder of group data
+  // +kubebuilder:validation:Optional
+  optional string partitionFolder = 1;
+
+  // The folder of partition data
+  // +kubebuilder:validation:Optional
+  optional string partitionProfileFolder = 2;
+
+  // The folder of partition data
+  // +kubebuilder:validation:Optional
+  optional string partitionReportFile = 3;
+
+  // The folder of partition data
+  // +kubebuilder:validation:Optional
+  optional string partitionModelFolder = 4;
+
+  // The folder of partition data
+  // +kubebuilder:validation:Optional
+  optional string partitionModelFile = 5;
+
+  // The folder of partition data
+  // +kubebuilder:validation:Optional
+  optional string partitionForecastFile = 6;
 }
 
 message PercentilePrunerOptions {

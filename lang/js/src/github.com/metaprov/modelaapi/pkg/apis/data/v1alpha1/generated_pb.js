@@ -10585,8 +10585,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    location: (f = msg.getLocation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
-    format: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    observation: (f = msg.getObservation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
+    format: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -10623,12 +10623,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.deseria
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.deserializeBinaryFromReader);
-      msg.setLocation(value);
+      msg.setObservation(value);
       break;
-    case 3:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setFormat(value);
       break;
@@ -10661,18 +10661,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLocation();
+  f = message.getObservation();
   if (f != null) {
     writer.writeMessage(
-      2,
+      1,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeString(
-      3,
+      2,
       f
     );
   }
@@ -10680,12 +10680,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.seriali
 
 
 /**
- * optional DataLocation location = 2;
+ * optional DataLocation observation = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.getLocation = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.getObservation = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation, 2));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation, 1));
 };
 
 
@@ -10693,8 +10693,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.setLocation = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.setObservation = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -10702,8 +10702,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.clearLocation = function() {
-  return this.setLocation(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.clearObservation = function() {
+  return this.setObservation(undefined);
 };
 
 
@@ -10711,17 +10711,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.hasLocation = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.hasObservation = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string format = 3;
+ * optional string format = 2;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.getFormat = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -10730,7 +10730,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.setFormat = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
@@ -10739,7 +10739,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.clearFormat = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -10748,7 +10748,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.hasFormat = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

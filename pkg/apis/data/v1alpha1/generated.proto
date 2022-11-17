@@ -620,14 +620,15 @@ message CsvFileSpec {
 
 // DataInputSpec specifies the format and location of an input dataset
 message DataInputSpec {
-  // The physical location of the dataset
+  // The physical location of the observation file.
+  // the location can point to a database.
   // +kubebuilder:validation:Optional
-  optional DataLocation location = 2;
+  optional DataLocation observation = 1;
 
   // The file format of the dataset, if applicable
   // +kubebuilder:default:="csv"
   // +kubebuilder:validation:Optional
-  optional string format = 3;
+  optional string format = 2;
 }
 
 // DataLocation describes the external location of data that will be accessed by Modela, and additional

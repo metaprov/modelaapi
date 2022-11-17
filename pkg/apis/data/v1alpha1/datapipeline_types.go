@@ -132,13 +132,14 @@ type DataPipelineStatus struct {
 
 // DataInputSpec specifies the format and location of an input dataset
 type DataInputSpec struct {
-	// The physical location of the dataset
+	// The physical location of the observation file.
+	// the location can point to a database.
 	// +kubebuilder:validation:Optional
-	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
+	Observation *DataLocation `json:"observation,omitempty" protobuf:"bytes,1,opt,name=observation"`
 	// The file format of the dataset, if applicable
 	// +kubebuilder:default:="csv"
 	// +kubebuilder:validation:Optional
-	Format *catalog.DatastoreType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
+	Format *catalog.DatastoreType `json:"format,omitempty" protobuf:"bytes,2,opt,name=format"`
 }
 
 // DataOutputSpec specifies the format, features, and output location of a transformed dataset

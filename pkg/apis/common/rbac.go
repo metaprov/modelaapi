@@ -21,9 +21,7 @@ const (
 	DatasetKind            KindName = "datasets"
 	DataSourceKind         KindName = "datasources"
 	EntityKind             KindName = "entities"
-	FeatureKind            KindName = "features"
 	FeatureGroupKind       KindName = "featuregroup"
-	FeaturesetKind         KindName = "featuresets"
 	FeatureHistogramKind   KindName = "featurehistograms"
 	RecipeKind             KindName = "recipes"
 	RecipeRunKind          KindName = "reciperuns"
@@ -33,11 +31,9 @@ const (
 	WebRequestRunKind      KindName = "webrequestruns"
 
 	// inference
-	CronPredictionKind KindName = "cronpredictions"
-	PredictionKind     KindName = "predictions"
-	PredictorKind      KindName = "predictors"
-	CurtainKind        KindName = "curtains"
-	DataAppKind        KindName = "dataapps"
+	PredictionKind KindName = "predictions"
+	PredictorKind  KindName = "predictors"
+	DataAppKind    KindName = "dataapps"
 
 	// infra
 	AccountKind        KindName = "accounts"
@@ -65,7 +61,6 @@ const (
 	ModelCompilerRunKind KindName = "modelcompilerruns"
 	ModelAutobuilderKind KindName = "modelautobuilders"
 	ReportKind           KindName = "reports"
-	CronReportKind       KindName = "cronreports"
 	StudyKind            KindName = "studies"
 
 	// team

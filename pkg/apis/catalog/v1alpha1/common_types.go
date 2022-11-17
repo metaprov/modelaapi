@@ -138,7 +138,7 @@ func (ak ApiKeyName) AsCliOption() string {
 }
 
 // MLTask is the machine learning task name
-// +kubebuilder:validation:Enum="binary-classification";"multi-classification";"forecasting";"regression";"clustering";"recommendation";"outlier-detection";"novelty-detection";"auto";"unknown";"group-forecasting";"monitoring";
+// +kubebuilder:validation:Enum="binary-classification";"multi-classification";"forecasting";"regression";"clustering";"recommendation";"outlier-detection";"novelty-detection";"auto";"unknown";"partition-forecasting";"monitoring";
 type MLTask string
 
 const (
@@ -149,7 +149,7 @@ const (
 	Video                MLTask = "video"
 	Audio                MLTask = "audio"
 	Forecasting          MLTask = "forecasting"
-	GroupForecast        MLTask = "group-forecasting"
+	PartitionForecast    MLTask = "partition-forecasting"
 	Regression           MLTask = "regression"
 	Clustering           MLTask = "clustering"
 	Recommendation       MLTask = "recommendation"

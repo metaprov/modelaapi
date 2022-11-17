@@ -223,11 +223,6 @@ type DatabaseProxyServiceClient interface {
 	CreateModel(ctx context.Context, in *CreateModelRequest, opts ...grpc.CallOption) (*v1alpha13.Model, error)
 	UpdateModel(ctx context.Context, in *UpdateModelRequest, opts ...grpc.CallOption) (*v1alpha13.Model, error)
 	DeleteModel(ctx context.Context, in *DeleteModelRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	ListCronPredictions(ctx context.Context, in *ListCronPredictionsRequest, opts ...grpc.CallOption) (*ListCronPredictionsResponse, error)
-	GetCronPrediction(ctx context.Context, in *GetCronPredictionRequest, opts ...grpc.CallOption) (*v1alpha14.CronPrediction, error)
-	CreateCronPrediction(ctx context.Context, in *CreateCronPredictionRequest, opts ...grpc.CallOption) (*v1alpha14.CronPrediction, error)
-	UpdateCronPrediction(ctx context.Context, in *UpdateCronPredictionRequest, opts ...grpc.CallOption) (*v1alpha14.CronPrediction, error)
-	DeleteCronPrediction(ctx context.Context, in *DeleteCronPredictionRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 	ListPredictions(ctx context.Context, in *ListPredictionsRequest, opts ...grpc.CallOption) (*ListPredictionsResponse, error)
 	GetPrediction(ctx context.Context, in *GetPredictionRequest, opts ...grpc.CallOption) (*v1alpha14.Prediction, error)
 	CreatePrediction(ctx context.Context, in *CreatePredictionRequest, opts ...grpc.CallOption) (*v1alpha14.Prediction, error)
@@ -1908,51 +1903,6 @@ func (c *databaseProxyServiceClient) DeleteModel(ctx context.Context, in *Delete
 	return out, nil
 }
 
-func (c *databaseProxyServiceClient) ListCronPredictions(ctx context.Context, in *ListCronPredictionsRequest, opts ...grpc.CallOption) (*ListCronPredictionsResponse, error) {
-	out := new(ListCronPredictionsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCronPredictions", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) GetCronPrediction(ctx context.Context, in *GetCronPredictionRequest, opts ...grpc.CallOption) (*v1alpha14.CronPrediction, error) {
-	out := new(v1alpha14.CronPrediction)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCronPrediction", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) CreateCronPrediction(ctx context.Context, in *CreateCronPredictionRequest, opts ...grpc.CallOption) (*v1alpha14.CronPrediction, error) {
-	out := new(v1alpha14.CronPrediction)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronPrediction", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) UpdateCronPrediction(ctx context.Context, in *UpdateCronPredictionRequest, opts ...grpc.CallOption) (*v1alpha14.CronPrediction, error) {
-	out := new(v1alpha14.CronPrediction)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronPrediction", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) DeleteCronPrediction(ctx context.Context, in *DeleteCronPredictionRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronPrediction", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *databaseProxyServiceClient) ListPredictions(ctx context.Context, in *ListPredictionsRequest, opts ...grpc.CallOption) (*ListPredictionsResponse, error) {
 	out := new(ListPredictionsResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictions", in, out, opts...)
@@ -2602,11 +2552,6 @@ type DatabaseProxyServiceServer interface {
 	CreateModel(context.Context, *CreateModelRequest) (*v1alpha13.Model, error)
 	UpdateModel(context.Context, *UpdateModelRequest) (*v1alpha13.Model, error)
 	DeleteModel(context.Context, *DeleteModelRequest) (*empty.Empty, error)
-	ListCronPredictions(context.Context, *ListCronPredictionsRequest) (*ListCronPredictionsResponse, error)
-	GetCronPrediction(context.Context, *GetCronPredictionRequest) (*v1alpha14.CronPrediction, error)
-	CreateCronPrediction(context.Context, *CreateCronPredictionRequest) (*v1alpha14.CronPrediction, error)
-	UpdateCronPrediction(context.Context, *UpdateCronPredictionRequest) (*v1alpha14.CronPrediction, error)
-	DeleteCronPrediction(context.Context, *DeleteCronPredictionRequest) (*empty.Empty, error)
 	ListPredictions(context.Context, *ListPredictionsRequest) (*ListPredictionsResponse, error)
 	GetPrediction(context.Context, *GetPredictionRequest) (*v1alpha14.Prediction, error)
 	CreatePrediction(context.Context, *CreatePredictionRequest) (*v1alpha14.Prediction, error)
@@ -3203,21 +3148,6 @@ func (UnimplementedDatabaseProxyServiceServer) UpdateModel(context.Context, *Upd
 }
 func (UnimplementedDatabaseProxyServiceServer) DeleteModel(context.Context, *DeleteModelRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteModel not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) ListCronPredictions(context.Context, *ListCronPredictionsRequest) (*ListCronPredictionsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListCronPredictions not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) GetCronPrediction(context.Context, *GetCronPredictionRequest) (*v1alpha14.CronPrediction, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCronPrediction not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) CreateCronPrediction(context.Context, *CreateCronPredictionRequest) (*v1alpha14.CronPrediction, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateCronPrediction not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) UpdateCronPrediction(context.Context, *UpdateCronPredictionRequest) (*v1alpha14.CronPrediction, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateCronPrediction not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) DeleteCronPrediction(context.Context, *DeleteCronPredictionRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteCronPrediction not implemented")
 }
 func (UnimplementedDatabaseProxyServiceServer) ListPredictions(context.Context, *ListPredictionsRequest) (*ListPredictionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListPredictions not implemented")
@@ -6622,96 +6552,6 @@ func _DatabaseProxyService_DeleteModel_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatabaseProxyService_ListCronPredictions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListCronPredictionsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).ListCronPredictions(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCronPredictions",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).ListCronPredictions(ctx, req.(*ListCronPredictionsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_GetCronPrediction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCronPredictionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).GetCronPrediction(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCronPrediction",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).GetCronPrediction(ctx, req.(*GetCronPredictionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_CreateCronPrediction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateCronPredictionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).CreateCronPrediction(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronPrediction",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).CreateCronPrediction(ctx, req.(*CreateCronPredictionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_UpdateCronPrediction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateCronPredictionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).UpdateCronPrediction(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronPrediction",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).UpdateCronPrediction(ctx, req.(*UpdateCronPredictionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_DeleteCronPrediction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteCronPredictionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).DeleteCronPrediction(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronPrediction",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).DeleteCronPrediction(ctx, req.(*DeleteCronPredictionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _DatabaseProxyService_ListPredictions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListPredictionsRequest)
 	if err := dec(in); err != nil {
@@ -8338,26 +8178,6 @@ var DatabaseProxyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteModel",
 			Handler:    _DatabaseProxyService_DeleteModel_Handler,
-		},
-		{
-			MethodName: "ListCronPredictions",
-			Handler:    _DatabaseProxyService_ListCronPredictions_Handler,
-		},
-		{
-			MethodName: "GetCronPrediction",
-			Handler:    _DatabaseProxyService_GetCronPrediction_Handler,
-		},
-		{
-			MethodName: "CreateCronPrediction",
-			Handler:    _DatabaseProxyService_CreateCronPrediction_Handler,
-		},
-		{
-			MethodName: "UpdateCronPrediction",
-			Handler:    _DatabaseProxyService_UpdateCronPrediction_Handler,
-		},
-		{
-			MethodName: "DeleteCronPrediction",
-			Handler:    _DatabaseProxyService_DeleteCronPrediction_Handler,
 		},
 		{
 			MethodName: "ListPredictions",

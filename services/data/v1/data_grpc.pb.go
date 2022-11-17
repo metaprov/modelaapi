@@ -98,6 +98,7 @@ type DataServiceClient interface {
 	GenTrainingData(ctx context.Context, in *GenTrainingDataRequest, opts ...grpc.CallOption) (*GenTrainingDataResponse, error)
 	// Generate training dataset.
 	GenOnlineStoreDataset(ctx context.Context, in *GenOnlineStoreDatasetRequest, opts ...grpc.CallOption) (*GenOnlineStoreDatasetResponse, error)
+	BatchPredict(ctx context.Context, in *BatchPredictRequest, opts ...grpc.CallOption) (*BatchPredictResponse, error)
 }
 
 type dataServiceClient struct {
@@ -540,6 +541,15 @@ func (c *dataServiceClient) GenOnlineStoreDataset(ctx context.Context, in *GenOn
 	return out, nil
 }
 
+func (c *dataServiceClient) BatchPredict(ctx context.Context, in *BatchPredictRequest, opts ...grpc.CallOption) (*BatchPredictResponse, error) {
+	out := new(BatchPredictResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/BatchPredict", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DataServiceServer is the server API for DataService service.
 // All implementations must embed UnimplementedDataServiceServer
 // for forward compatibility
@@ -620,6 +630,7 @@ type DataServiceServer interface {
 	GenTrainingData(context.Context, *GenTrainingDataRequest) (*GenTrainingDataResponse, error)
 	// Generate training dataset.
 	GenOnlineStoreDataset(context.Context, *GenOnlineStoreDatasetRequest) (*GenOnlineStoreDatasetResponse, error)
+	BatchPredict(context.Context, *BatchPredictRequest) (*BatchPredictResponse, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -770,6 +781,9 @@ func (UnimplementedDataServiceServer) GenTrainingData(context.Context, *GenTrain
 }
 func (UnimplementedDataServiceServer) GenOnlineStoreDataset(context.Context, *GenOnlineStoreDatasetRequest) (*GenOnlineStoreDatasetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenOnlineStoreDataset not implemented")
+}
+func (UnimplementedDataServiceServer) BatchPredict(context.Context, *BatchPredictRequest) (*BatchPredictResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BatchPredict not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -1648,6 +1662,24 @@ func _DataService_GenOnlineStoreDataset_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_BatchPredict_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BatchPredictRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).BatchPredict(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/BatchPredict",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).BatchPredict(ctx, req.(*BatchPredictRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DataService_ServiceDesc is the grpc.ServiceDesc for DataService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1846,6 +1878,10 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GenOnlineStoreDataset",
 			Handler:    _DataService_GenOnlineStoreDataset_Handler,
+		},
+		{
+			MethodName: "BatchPredict",
+			Handler:    _DataService_BatchPredict_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -3301,3 +3301,91 @@ export namespace GenOnlineStoreDatasetResponse {
   }
 }
 
+export class BatchPredictRequest extends jspb.Message {
+  getStorageconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setStorageconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): BatchPredictRequest;
+  hasStorageconnection(): boolean;
+  clearStorageconnection(): BatchPredictRequest;
+
+  getStoragebucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setStoragebucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): BatchPredictRequest;
+  hasStoragebucket(): boolean;
+  clearStoragebucket(): BatchPredictRequest;
+
+  getStoragesecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearStoragesecretMap(): BatchPredictRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): BatchPredictRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): BatchPredictRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): BatchPredictRequest;
+
+  getModelclass(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass | undefined;
+  setModelclass(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass): BatchPredictRequest;
+  hasModelclass(): boolean;
+  clearModelclass(): BatchPredictRequest;
+
+  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): BatchPredictRequest;
+  hasModel(): boolean;
+  clearModel(): BatchPredictRequest;
+
+  getEntitiesList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>;
+  setEntitiesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>): BatchPredictRequest;
+  clearEntitiesList(): BatchPredictRequest;
+  addEntities(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity;
+
+  getGroupsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>;
+  setGroupsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>): BatchPredictRequest;
+  clearGroupsList(): BatchPredictRequest;
+  addGroups(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
+
+  getPrediction(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction | undefined;
+  setPrediction(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction): BatchPredictRequest;
+  hasPrediction(): boolean;
+  clearPrediction(): BatchPredictRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BatchPredictRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: BatchPredictRequest): BatchPredictRequest.AsObject;
+  static serializeBinaryToWriter(message: BatchPredictRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BatchPredictRequest;
+  static deserializeBinaryFromReader(message: BatchPredictRequest, reader: jspb.BinaryReader): BatchPredictRequest;
+}
+
+export namespace BatchPredictRequest {
+  export type AsObject = {
+    storageconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    storagebucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    storagesecretMap: Array<[string, Uint8Array | string]>,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
+    modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
+    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    entitiesList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject>,
+    groupsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject>,
+    prediction?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction.AsObject,
+  }
+}
+
+export class BatchPredictResponse extends jspb.Message {
+  getRows(): number;
+  setRows(value: number): BatchPredictResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BatchPredictResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: BatchPredictResponse): BatchPredictResponse.AsObject;
+  static serializeBinaryToWriter(message: BatchPredictResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BatchPredictResponse;
+  static deserializeBinaryFromReader(message: BatchPredictResponse, reader: jspb.BinaryReader): BatchPredictResponse;
+}
+
+export namespace BatchPredictResponse {
+  export type AsObject = {
+    rows: number,
+  }
+}
+

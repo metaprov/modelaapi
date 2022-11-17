@@ -720,6 +720,25 @@ message GenOnlineStoreDatasetResponse {
 }
 
 
+message BatchPredictRequest {
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection   = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         storageBucket       = 2;
+    map<string,bytes>                                                           storageSecret       = 3;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 4;
+    map<string,bytes>                                                           dbSecret       = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         modelclass          = 6;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model              model          = 7;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity        entities = 8;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup  groups = 9;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction        prediction  = 10;
+}
+
+
+
+message BatchPredictResponse {
+    int32 rows = 1; // number of predicted rows
+}
+
 
 
 service DataService {
@@ -805,5 +824,7 @@ service DataService {
     rpc GenTrainingData(GenTrainingDataRequest) returns (GenTrainingDataResponse)     {}
     // Generate training dataset.
     rpc GenOnlineStoreDataset(GenOnlineStoreDatasetRequest) returns (GenOnlineStoreDatasetResponse)     {}
+
+    rpc BatchPredict(BatchPredictRequest) returns (BatchPredictResponse) {}
 
 }

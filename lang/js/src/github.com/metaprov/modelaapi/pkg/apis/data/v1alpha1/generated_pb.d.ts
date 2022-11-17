@@ -732,10 +732,10 @@ export namespace CsvFileSpec {
 }
 
 export class DataInputSpec extends jspb.Message {
-  getLocation(): DataLocation | undefined;
-  setLocation(value?: DataLocation): DataInputSpec;
-  hasLocation(): boolean;
-  clearLocation(): DataInputSpec;
+  getObservation(): DataLocation | undefined;
+  setObservation(value?: DataLocation): DataInputSpec;
+  hasObservation(): boolean;
+  clearObservation(): DataInputSpec;
 
   getFormat(): string;
   setFormat(value: string): DataInputSpec;
@@ -750,7 +750,7 @@ export class DataInputSpec extends jspb.Message {
 
 export namespace DataInputSpec {
   export type AsObject = {
-    location?: DataLocation.AsObject,
+    observation?: DataLocation.AsObject,
     format: string,
   }
 }

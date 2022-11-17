@@ -1236,38 +1236,6 @@ message DeleteStudyRequest {
 }
 
 
-////////////////////////////////////////////////////////////////
-// CronPrediction
-////////////////////////////////////////////////////////////////
-
-message ListCronPredictionsRequest {
-    string namespace   = 1;
-    int32 page_size    = 2;
-    string page_token  = 3;
-}
-
-message ListCronPredictionsResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction items = 1;
-    string next_page_token = 2;
-}
-
-message GetCronPredictionRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message CreateCronPredictionRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
-}
-
-message UpdateCronPredictionRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
-}
-
-message DeleteCronPredictionRequest {
-    string namespace = 1;
-    string name = 2;
-}
 
 ////////////////////////////////////////////////////////////////
 // Prediction
@@ -1846,13 +1814,6 @@ service DatabaseProxyService {
     rpc CreateModel(CreateModelRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model) {}
     rpc UpdateModel(UpdateModelRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model) {}
     rpc DeleteModel(DeleteModelRequest) returns (google.protobuf.Empty) {}
-
-
-    rpc ListCronPredictions(ListCronPredictionsRequest) returns (ListCronPredictionsResponse) {}
-    rpc GetCronPrediction(GetCronPredictionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction) {}
-    rpc CreateCronPrediction(CreateCronPredictionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction) {}
-    rpc UpdateCronPrediction(UpdateCronPredictionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction) {}
-    rpc DeleteCronPrediction(DeleteCronPredictionRequest) returns (google.protobuf.Empty) {}
 
     rpc ListPredictions(ListPredictionsRequest) returns (ListPredictionsResponse) {}
     rpc GetPrediction(GetPredictionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction) {}

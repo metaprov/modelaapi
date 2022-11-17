@@ -81,8 +81,8 @@ export class BatchPredictionSpec extends jspb.Message {
   hasSchedule(): boolean;
   clearSchedule(): BatchPredictionSpec;
 
-  getTemplate(): PredictionTemplate | undefined;
-  setTemplate(value?: PredictionTemplate): BatchPredictionSpec;
+  getTemplate(): PredictionSpec | undefined;
+  setTemplate(value?: PredictionSpec): BatchPredictionSpec;
   hasTemplate(): boolean;
   clearTemplate(): BatchPredictionSpec;
 
@@ -97,199 +97,7 @@ export class BatchPredictionSpec extends jspb.Message {
 export namespace BatchPredictionSpec {
   export type AsObject = {
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    template?: PredictionTemplate.AsObject,
-  }
-}
-
-export class CronPrediction extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): CronPrediction;
-  hasMetadata(): boolean;
-  clearMetadata(): CronPrediction;
-
-  getSpec(): CronPredictionSpec | undefined;
-  setSpec(value?: CronPredictionSpec): CronPrediction;
-  hasSpec(): boolean;
-  clearSpec(): CronPrediction;
-
-  getStatus(): CronPredictionStatus | undefined;
-  setStatus(value?: CronPredictionStatus): CronPrediction;
-  hasStatus(): boolean;
-  clearStatus(): CronPrediction;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CronPrediction.AsObject;
-  static toObject(includeInstance: boolean, msg: CronPrediction): CronPrediction.AsObject;
-  static serializeBinaryToWriter(message: CronPrediction, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CronPrediction;
-  static deserializeBinaryFromReader(message: CronPrediction, reader: jspb.BinaryReader): CronPrediction;
-}
-
-export namespace CronPrediction {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    spec?: CronPredictionSpec.AsObject,
-    status?: CronPredictionStatus.AsObject,
-  }
-}
-
-export class CronPredictionCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): CronPredictionCondition;
-
-  getStatus(): string;
-  setStatus(value: string): CronPredictionCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronPredictionCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): CronPredictionCondition;
-
-  getReason(): string;
-  setReason(value: string): CronPredictionCondition;
-
-  getMessage(): string;
-  setMessage(value: string): CronPredictionCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CronPredictionCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: CronPredictionCondition): CronPredictionCondition.AsObject;
-  static serializeBinaryToWriter(message: CronPredictionCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CronPredictionCondition;
-  static deserializeBinaryFromReader(message: CronPredictionCondition, reader: jspb.BinaryReader): CronPredictionCondition;
-}
-
-export namespace CronPredictionCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
-export class CronPredictionList extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): CronPredictionList;
-  hasMetadata(): boolean;
-  clearMetadata(): CronPredictionList;
-
-  getItemsList(): Array<CronPrediction>;
-  setItemsList(value: Array<CronPrediction>): CronPredictionList;
-  clearItemsList(): CronPredictionList;
-  addItems(value?: CronPrediction, index?: number): CronPrediction;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CronPredictionList.AsObject;
-  static toObject(includeInstance: boolean, msg: CronPredictionList): CronPredictionList.AsObject;
-  static serializeBinaryToWriter(message: CronPredictionList, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CronPredictionList;
-  static deserializeBinaryFromReader(message: CronPredictionList, reader: jspb.BinaryReader): CronPredictionList;
-}
-
-export namespace CronPredictionList {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
-    itemsList: Array<CronPrediction.AsObject>,
-  }
-}
-
-export class CronPredictionSpec extends jspb.Message {
-  getVersionname(): string;
-  setVersionname(value: string): CronPredictionSpec;
-
-  getOwner(): string;
-  setOwner(value: string): CronPredictionSpec;
-
-  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): CronPredictionSpec;
-  hasSchedule(): boolean;
-  clearSchedule(): CronPredictionSpec;
-
-  getTemplate(): PredictionTemplate | undefined;
-  setTemplate(value?: PredictionTemplate): CronPredictionSpec;
-  hasTemplate(): boolean;
-  clearTemplate(): CronPredictionSpec;
-
-  getPriority(): string;
-  setPriority(value: string): CronPredictionSpec;
-
-  getPaused(): boolean;
-  setPaused(value: boolean): CronPredictionSpec;
-
-  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
-  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): CronPredictionSpec;
-  hasNotification(): boolean;
-  clearNotification(): CronPredictionSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CronPredictionSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: CronPredictionSpec): CronPredictionSpec.AsObject;
-  static serializeBinaryToWriter(message: CronPredictionSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CronPredictionSpec;
-  static deserializeBinaryFromReader(message: CronPredictionSpec, reader: jspb.BinaryReader): CronPredictionSpec;
-}
-
-export namespace CronPredictionSpec {
-  export type AsObject = {
-    versionname: string,
-    owner: string,
-    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    template?: PredictionTemplate.AsObject,
-    priority: string,
-    paused: boolean,
-    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
-  }
-}
-
-export class CronPredictionStatus extends jspb.Message {
-  getLastrun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus | undefined;
-  setLastrun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus): CronPredictionStatus;
-  hasLastrun(): boolean;
-  clearLastrun(): CronPredictionStatus;
-
-  getNextrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setNextrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronPredictionStatus;
-  hasNextrun(): boolean;
-  clearNextrun(): CronPredictionStatus;
-
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronPredictionStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): CronPredictionStatus;
-
-  getObservedgeneration(): number;
-  setObservedgeneration(value: number): CronPredictionStatus;
-
-  getFailurereason(): string;
-  setFailurereason(value: string): CronPredictionStatus;
-
-  getFailuremessage(): string;
-  setFailuremessage(value: string): CronPredictionStatus;
-
-  getConditionsList(): Array<CronPredictionCondition>;
-  setConditionsList(value: Array<CronPredictionCondition>): CronPredictionStatus;
-  clearConditionsList(): CronPredictionStatus;
-  addConditions(value?: CronPredictionCondition, index?: number): CronPredictionCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CronPredictionStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: CronPredictionStatus): CronPredictionStatus.AsObject;
-  static serializeBinaryToWriter(message: CronPredictionStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CronPredictionStatus;
-  static deserializeBinaryFromReader(message: CronPredictionStatus, reader: jspb.BinaryReader): CronPredictionStatus;
-}
-
-export namespace CronPredictionStatus {
-  export type AsObject = {
-    lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
-    nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    observedgeneration: number,
-    failurereason: string,
-    failuremessage: string,
-    conditionsList: Array<CronPredictionCondition.AsObject>,
+    template?: PredictionSpec.AsObject,
   }
 }
 
@@ -817,24 +625,6 @@ export namespace ForwardCurtainSpec {
   }
 }
 
-export class GroupPredictionLocationsSpec extends jspb.Message {
-  getGroupforecastfile(): string;
-  setGroupforecastfile(value: string): GroupPredictionLocationsSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GroupPredictionLocationsSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: GroupPredictionLocationsSpec): GroupPredictionLocationsSpec.AsObject;
-  static serializeBinaryToWriter(message: GroupPredictionLocationsSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GroupPredictionLocationsSpec;
-  static deserializeBinaryFromReader(message: GroupPredictionLocationsSpec, reader: jspb.BinaryReader): GroupPredictionLocationsSpec;
-}
-
-export namespace GroupPredictionLocationsSpec {
-  export type AsObject = {
-    groupforecastfile: string,
-  }
-}
-
 export class KubernetesObjectStatus extends jspb.Message {
   getRef(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setRef(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): KubernetesObjectStatus;
@@ -1125,6 +915,24 @@ export namespace OnlineStoreStatus {
   }
 }
 
+export class PartitionPredictionLocationsSpec extends jspb.Message {
+  getGroupforecastfile(): string;
+  setGroupforecastfile(value: string): PartitionPredictionLocationsSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PartitionPredictionLocationsSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PartitionPredictionLocationsSpec): PartitionPredictionLocationsSpec.AsObject;
+  static serializeBinaryToWriter(message: PartitionPredictionLocationsSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PartitionPredictionLocationsSpec;
+  static deserializeBinaryFromReader(message: PartitionPredictionLocationsSpec, reader: jspb.BinaryReader): PartitionPredictionLocationsSpec;
+}
+
+export namespace PartitionPredictionLocationsSpec {
+  export type AsObject = {
+    groupforecastfile: string,
+  }
+}
+
 export class Prediction extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Prediction;
@@ -1384,10 +1192,10 @@ export class PredictionSpec extends jspb.Message {
   hasServingsiteref(): boolean;
   clearServingsiteref(): PredictionSpec;
 
-  getGrouplocation(): GroupPredictionLocationsSpec | undefined;
-  setGrouplocation(value?: GroupPredictionLocationsSpec): PredictionSpec;
-  hasGrouplocation(): boolean;
-  clearGrouplocation(): PredictionSpec;
+  getPartitionlocation(): PartitionPredictionLocationsSpec | undefined;
+  setPartitionlocation(value?: PartitionPredictionLocationsSpec): PredictionSpec;
+  hasPartitionlocation(): boolean;
+  clearPartitionlocation(): PredictionSpec;
 
   getWorkers(): number;
   setWorkers(value: number): PredictionSpec;
@@ -1420,7 +1228,7 @@ export namespace PredictionSpec {
     ttl: number,
     forecastspec?: ForecastPredictionSpec.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    grouplocation?: GroupPredictionLocationsSpec.AsObject,
+    partitionlocation?: PartitionPredictionLocationsSpec.AsObject,
     workers: number,
   }
 }
@@ -1518,26 +1326,6 @@ export namespace PredictionStatus {
     drifted: boolean,
     forecast?: ForecastStatus.AsObject,
     conditionsList: Array<PredictionCondition.AsObject>,
-  }
-}
-
-export class PredictionTemplate extends jspb.Message {
-  getSpec(): PredictionSpec | undefined;
-  setSpec(value?: PredictionSpec): PredictionTemplate;
-  hasSpec(): boolean;
-  clearSpec(): PredictionTemplate;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionTemplate.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionTemplate): PredictionTemplate.AsObject;
-  static serializeBinaryToWriter(message: PredictionTemplate, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionTemplate;
-  static deserializeBinaryFromReader(message: PredictionTemplate, reader: jspb.BinaryReader): PredictionTemplate;
-}
-
-export namespace PredictionTemplate {
-  export type AsObject = {
-    spec?: PredictionSpec.AsObject,
   }
 }
 

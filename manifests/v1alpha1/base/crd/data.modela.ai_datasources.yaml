@@ -935,7 +935,7 @@ spec:
                 - novelty-detection
                 - auto
                 - unknown
-                - group-forecasting
+                - partition-forecasting
                 - monitoring
                 type: string
               unitTestsTemplate:

@@ -154,7 +154,7 @@ type PredictionSpec struct {
 	ServingSiteRef v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,19,opt,name=servingsiteRef"`
 	// Locations for group forecasts
 	// +kubebuilder:validation:Optional
-	GroupLocation GroupPredictionLocationsSpec `json:"groupLocation" protobuf:"bytes,20,opt,name=groupLocation"`
+	PartitionLocation PartitionPredictionLocationsSpec `json:"partitionLocation" protobuf:"bytes,20,opt,name=partitionLocation"`
 	// In case of batch prediction, how many workers.
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
@@ -246,7 +246,7 @@ type ForecastStatus struct {
 	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,6,opt,name=workerResults"`
 }
 
-type GroupPredictionLocationsSpec struct {
+type PartitionPredictionLocationsSpec struct {
 	// The folder of group data
 	// +kubebuilder:validation:Optional
 	GroupForecastFile *string `json:"groupForecastFile,omitempty" protobuf:"bytes,2,opt,name=groupForecastFile"`

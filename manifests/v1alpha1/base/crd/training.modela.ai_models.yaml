@@ -1543,28 +1543,6 @@ spec:
                       type: string
                     type: array
                 type: object
-              groupLocations:
-                description: The set locations in case of group forecasts
-                properties:
-                  groupFolder:
-                    description: The folder of group data
-                    type: string
-                  groupForecastFile:
-                    description: The folder of group data
-                    type: string
-                  groupModelFile:
-                    description: The folder of group data
-                    type: string
-                  groupModelFolder:
-                    description: The folder of group data
-                    type: string
-                  groupProfileFolder:
-                    description: The folder of group data
-                    type: string
-                  groupReportFile:
-                    description: The folder of group data
-                    type: string
-                type: object
               interpretability:
                 description: Interpretability specifies the configuration to generate
                   model interpretability visualizations
@@ -1781,6 +1759,28 @@ spec:
                 description: Packaged indicates if the Model should be packaged into
                   tarbell
                 type: boolean
+              partitionLocations:
+                description: The set locations in case of group forecasts
+                properties:
+                  partitionFolder:
+                    description: The folder of group data
+                    type: string
+                  partitionForecastFile:
+                    description: The folder of partition data
+                    type: string
+                  partitionModelFile:
+                    description: The folder of partition data
+                    type: string
+                  partitionModelFolder:
+                    description: The folder of partition data
+                    type: string
+                  partitionProfileFolder:
+                    description: The folder of partition data
+                    type: string
+                  partitionReportFile:
+                    description: The folder of partition data
+                    type: string
+                type: object
               paused:
                 default: false
                 description: Paused indicates that the execution of new workloads
@@ -2017,7 +2017,7 @@ spec:
                 - novelty-detection
                 - auto
                 - unknown
-                - group-forecasting
+                - partition-forecasting
                 - monitoring
                 type: string
               tested:

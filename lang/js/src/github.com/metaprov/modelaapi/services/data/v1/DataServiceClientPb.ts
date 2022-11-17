@@ -2099,5 +2099,48 @@ export class DataServiceClient {
     this.methodInfoGenOnlineStoreDataset);
   }
 
+  methodInfoBatchPredict = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/BatchPredict',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.BatchPredictRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.BatchPredictResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.BatchPredictRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.BatchPredictResponse.deserializeBinary
+  );
+
+  batchPredict(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.BatchPredictRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.BatchPredictResponse>;
+
+  batchPredict(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.BatchPredictRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.BatchPredictResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.BatchPredictResponse>;
+
+  batchPredict(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.BatchPredictRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.BatchPredictResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/BatchPredict',
+        request,
+        metadata || {},
+        this.methodInfoBatchPredict,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/BatchPredict',
+    request,
+    metadata || {},
+    this.methodInfoBatchPredict);
+  }
+
 }
 

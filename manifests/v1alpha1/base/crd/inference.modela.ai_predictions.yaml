@@ -172,13 +172,6 @@ spec:
                         type: integer
                     type: object
                 type: object
-              groupLocation:
-                description: Locations for group forecasts
-                properties:
-                  groupForecastFile:
-                    description: The folder of group data
-                    type: string
-                type: object
               input:
                 description: Output specifies the location where the predicted dataset
                   will be stored
@@ -199,8 +192,9 @@ spec:
                     - spss
                     - auto
                     type: string
-                  location:
-                    description: The physical location of the dataset
+                  observation:
+                    description: The physical location of the observation file. the
+                      location can point to a database.
                     properties:
                       bucketName:
                         default: ""
@@ -504,6 +498,13 @@ spec:
                 description: The name of the Account which created the object, which
                   exists in the same tenant as the object
                 type: string
+              partitionLocation:
+                description: Locations for group forecasts
+                properties:
+                  groupForecastFile:
+                    description: The folder of group data
+                    type: string
+                type: object
               predictorRef:
                 description: PredictorRef is the name of the Predictor resource that
                   will be used to evaluate predictions for the unlabeled input dataset.
