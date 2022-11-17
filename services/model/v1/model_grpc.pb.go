@@ -41,6 +41,8 @@ type ModelServiceClient interface {
 	DownloadModel(ctx context.Context, in *DownloadModelRequest, opts ...grpc.CallOption) (*DownloadModelResponse, error)
 	// Flag model
 	FlagModel(ctx context.Context, in *FlagModelRequest, opts ...grpc.CallOption) (*FlagModelResponse, error)
+	// promote model to live in model class
+	PromoteModel(ctx context.Context, in *PromoteModelRequest, opts ...grpc.CallOption) (*PromoteModelResponse, error)
 	// Mark the model to test
 	TestModel(ctx context.Context, in *TestModelRequest, opts ...grpc.CallOption) (*TestModelResponse, error)
 }
@@ -215,6 +217,15 @@ func (c *modelServiceClient) FlagModel(ctx context.Context, in *FlagModelRequest
 	return out, nil
 }
 
+func (c *modelServiceClient) PromoteModel(ctx context.Context, in *PromoteModelRequest, opts ...grpc.CallOption) (*PromoteModelResponse, error) {
+	out := new(PromoteModelResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/PromoteModel", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *modelServiceClient) TestModel(ctx context.Context, in *TestModelRequest, opts ...grpc.CallOption) (*TestModelResponse, error) {
 	out := new(TestModelResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/TestModel", in, out, opts...)
@@ -247,6 +258,8 @@ type ModelServiceServer interface {
 	DownloadModel(context.Context, *DownloadModelRequest) (*DownloadModelResponse, error)
 	// Flag model
 	FlagModel(context.Context, *FlagModelRequest) (*FlagModelResponse, error)
+	// promote model to live in model class
+	PromoteModel(context.Context, *PromoteModelRequest) (*PromoteModelResponse, error)
 	// Mark the model to test
 	TestModel(context.Context, *TestModelRequest) (*TestModelResponse, error)
 	mustEmbedUnimplementedModelServiceServer()
@@ -309,6 +322,9 @@ func (UnimplementedModelServiceServer) DownloadModel(context.Context, *DownloadM
 }
 func (UnimplementedModelServiceServer) FlagModel(context.Context, *FlagModelRequest) (*FlagModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FlagModel not implemented")
+}
+func (UnimplementedModelServiceServer) PromoteModel(context.Context, *PromoteModelRequest) (*PromoteModelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PromoteModel not implemented")
 }
 func (UnimplementedModelServiceServer) TestModel(context.Context, *TestModelRequest) (*TestModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TestModel not implemented")
@@ -650,6 +666,24 @@ func _ModelService_FlagModel_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ModelService_PromoteModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PromoteModelRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ModelServiceServer).PromoteModel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/PromoteModel",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ModelServiceServer).PromoteModel(ctx, req.(*PromoteModelRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ModelService_TestModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(TestModelRequest)
 	if err := dec(in); err != nil {
@@ -746,6 +780,10 @@ var ModelService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "FlagModel",
 			Handler:    _ModelService_FlagModel_Handler,
+		},
+		{
+			MethodName: "PromoteModel",
+			Handler:    _ModelService_PromoteModel_Handler,
 		},
 		{
 			MethodName: "TestModel",

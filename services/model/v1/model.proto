@@ -200,6 +200,20 @@ message FlagModelResponse {
     
 }
 
+
+// Promote model
+message PromoteModelRequest {
+    string namespace = 1;
+    string name      = 2;
+    bool   shadow    = 3; // if true the model become shadow model
+}
+
+// Answer the report in base 64
+message PromoteModelResponse {
+
+}
+
+
 // Flag model
 message TestModelRequest {
     string namespace = 1;
@@ -299,6 +313,12 @@ service ModelService {
     rpc FlagModel(FlagModelRequest) returns (FlagModelResponse) {
         option (google.api.http).post = "/v1/models/{namespace}/{name}:flag";
     }
+
+    // promote model to live in model class
+    rpc PromoteModel(PromoteModelRequest) returns (PromoteModelResponse) {
+        option (google.api.http).post = "/v1/models/{namespace}/{name}:promote";
+    }
+
 
     // Mark the model to test
     rpc TestModel(TestModelRequest) returns (TestModelResponse) {

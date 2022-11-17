@@ -806,6 +806,46 @@ export namespace FlagModelResponse {
   }
 }
 
+export class PromoteModelRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): PromoteModelRequest;
+
+  getName(): string;
+  setName(value: string): PromoteModelRequest;
+
+  getShadow(): boolean;
+  setShadow(value: boolean): PromoteModelRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PromoteModelRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PromoteModelRequest): PromoteModelRequest.AsObject;
+  static serializeBinaryToWriter(message: PromoteModelRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PromoteModelRequest;
+  static deserializeBinaryFromReader(message: PromoteModelRequest, reader: jspb.BinaryReader): PromoteModelRequest;
+}
+
+export namespace PromoteModelRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+    shadow: boolean,
+  }
+}
+
+export class PromoteModelResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PromoteModelResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PromoteModelResponse): PromoteModelResponse.AsObject;
+  static serializeBinaryToWriter(message: PromoteModelResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PromoteModelResponse;
+  static deserializeBinaryFromReader(message: PromoteModelResponse, reader: jspb.BinaryReader): PromoteModelResponse;
+}
+
+export namespace PromoteModelResponse {
+  export type AsObject = {
+  }
+}
+
 export class TestModelRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): TestModelRequest;

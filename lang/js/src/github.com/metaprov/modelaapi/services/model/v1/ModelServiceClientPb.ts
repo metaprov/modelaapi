@@ -809,6 +809,49 @@ export class ModelServiceClient {
     this.methodInfoFlagModel);
   }
 
+  methodInfoPromoteModel = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.model.v1.ModelService/PromoteModel',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.PromoteModelRequest,
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.PromoteModelResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.PromoteModelRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.PromoteModelResponse.deserializeBinary
+  );
+
+  promoteModel(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.PromoteModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.PromoteModelResponse>;
+
+  promoteModel(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.PromoteModelRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.PromoteModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.PromoteModelResponse>;
+
+  promoteModel(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.PromoteModelRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.PromoteModelResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/PromoteModel',
+        request,
+        metadata || {},
+        this.methodInfoPromoteModel,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/PromoteModel',
+    request,
+    metadata || {},
+    this.methodInfoPromoteModel);
+  }
+
   methodInfoTestModel = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.model.v1.ModelService/TestModel',
     grpcWeb.MethodType.UNARY,
