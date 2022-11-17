@@ -229,7 +229,6 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 			}
 		}
 	case ThresholdPruner:
-		klog.InfoS("v", "update threshold pruner")
 		if pspec.Threshold == nil {
 			pspec.Threshold = &ThresholdPrunerOptions{
 				Lower:         util.Float64Ptr(0),
