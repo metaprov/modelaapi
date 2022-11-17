@@ -2070,6 +2070,11 @@ func (in *ModelClassSpec) DeepCopyInto(out *ModelClassSpec) {
 		*out = new(catalogv1alpha1.MLSubtask)
 		**out = **in
 	}
+	if in.Objective != nil {
+		in, out := &in.Objective, &out.Objective
+		*out = new(catalogv1alpha1.Metric)
+		**out = **in
+	}
 	if in.Entities != nil {
 		in, out := &in.Entities, &out.Entities
 		*out = make([]EntityRef, len(*in))

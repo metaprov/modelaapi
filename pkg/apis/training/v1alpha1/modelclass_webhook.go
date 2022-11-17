@@ -15,7 +15,6 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/validation/field"
-	"k8s.io/klog/v2"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
 
@@ -75,6 +74,11 @@ func (mclass *ModelClass) Default() {
 	//	mclass.ObjectMeta.Labels[catalog.LabLabelKey] = mclass.Spec.Training.LabRef.Name
 	//	mclass.ObjectMeta.Labels[catalog.DataProductLabelKey] = *mclass.Spec.VersionName
 	//}
+
+	if mclass.Spec.Objective == nil {
+		o := DefaultObjective(*mclass.Spec.Task)
+		mclass.Spec.Objective = &o
+	}
 
 }
 

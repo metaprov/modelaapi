@@ -1363,6 +1363,10 @@ spec:
                     format: int32
                     type: integer
                 type: object
+              objective:
+                description: The optimization objective. The objective is also used
+                  when promoting models
+                type: string
               owner:
                 default: no-one
                 description: The name of the Account which created the object, which

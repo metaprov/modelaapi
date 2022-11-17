@@ -2278,6 +2278,9 @@ export class ModelClassSpec extends jspb.Message {
   getSubtask(): string;
   setSubtask(value: string): ModelClassSpec;
 
+  getObjective(): string;
+  setObjective(value: string): ModelClassSpec;
+
   getEntitiesList(): Array<EntityRef>;
   setEntitiesList(value: Array<EntityRef>): ModelClassSpec;
   clearEntitiesList(): ModelClassSpec;
@@ -2328,6 +2331,7 @@ export namespace ModelClassSpec {
     description: string,
     task: string,
     subtask: string,
+    objective: string,
     entitiesList: Array<EntityRef.AsObject>,
     artifactlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     data?: ModelClassDataSpec.AsObject,

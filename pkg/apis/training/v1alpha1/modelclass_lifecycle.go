@@ -183,6 +183,25 @@ func (mclass *ModelClass) MarkCreatingTrainingSetFailed(err string) {
 	})
 }
 
+func (mclass *ModelClass) MarkPromoting() {
+	mclass.Status.Phase = ModelClassPhasePromoting
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassReady,
+		Status: v1.ConditionFalse,
+		Reason: ReasonPromoting,
+	})
+}
+
+func (mclass *ModelClass) MarkFailToPromote(err error) {
+	mclass.Status.Phase = ModelClassPhaseFailed
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:    ModelClassReady,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailedToPromote,
+		Message: err.Error(),
+	})
+}
+
 func (mclass *ModelClass) MarkWaitingForPromotion(err string) {
 	mclass.Status.Phase = ModelClassPhaseWaitingForPromotion
 	mclass.CreateOrUpdateCond(ModelClassCondition{
@@ -297,6 +316,36 @@ func (mclass *ModelClass) ErrorAlert(tenantRef *v1.ObjectReference, notifierName
 	}
 	if mclass.Status.TrainingScheduleStatus.LastRun != nil {
 		result.Spec.Fields["Completion Time"] = mclass.Status.TrainingScheduleStatus.LastRun.Format("01/2/2006 15:04:05")
+	}
+
+	return result
+}
+
+func (mclass *ModelClass) PromotionAlert(tenantRef *v1.ObjectReference, notifierName *string, model Model) *infra.Alert {
+	level := infra.Info
+	subject := fmt.Sprintf("Model %s is waiting for manual promotion", model.Name)
+	result := &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: mclass.Name,
+			Namespace:    mclass.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject: util.StrPtr(subject),
+			Level:   &level,
+			EntityRef: v1.ObjectReference{
+				Kind:      "Model",
+				Name:      model.Name,
+				Namespace: model.Namespace,
+			},
+			TenantRef:    tenantRef,
+			NotifierName: notifierName,
+			Owner:        model.Spec.Owner,
+			Fields: map[string]string{
+				"Model Class Namespace": mclass.Namespace,
+				"ModelClass":            mclass.Name,
+				"Model":                 model.Namespace,
+			},
+		},
 	}
 
 	return result

@@ -348,6 +348,8 @@ const (
 	ReasonPredicting              = "Predicting"
 	ReasonCreatingTrainingSet     = "CreatingTrainingSet"
 	ReasonWaitingForPromotion     = "WaitingForPromotion"
+	ReasonPromoting               = "Promoting"
+	ReasonFailedToPromote         = "FailedToPromote"
 	ReasonTraining                = "Training"
 	ReasonSyncing                 = "Syncing"
 	ReasonGeneratingOnlineDataset = "GeneratingOnlineDataset"
@@ -1430,4 +1432,9 @@ func (model *Model) GroupModelReportFile() string {
 
 func (model *Model) GroupModelForecastFile() string {
 	return model.GroupFolder() + "/forecasts/forecast.csv"
+}
+
+// Compre this model to other model based on the objective.
+func (model *Model) CompareTestingScore(other *Model) bool {
+	return model.Spec.Objective.Compare(model.Status.TestScore, other.Status.TestScore)
 }
