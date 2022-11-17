@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/dustin/go-humanize"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	ctrl "sigs.k8s.io/controller-runtime"
 
@@ -202,13 +203,12 @@ func (mclass *ModelClass) MarkFailToPromote(err error) {
 	})
 }
 
-func (mclass *ModelClass) MarkWaitingForPromotion(err string) {
+func (mclass *ModelClass) MarkWaitingForPromotion() {
 	mclass.Status.Phase = ModelClassPhaseWaitingForPromotion
 	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:    ModelClassReady,
-		Status:  v1.ConditionFalse,
-		Reason:  ReasonWaitingForPromotion,
-		Message: err,
+		Type:   ModelClassReady,
+		Status: v1.ConditionFalse,
+		Reason: ReasonWaitingForPromotion,
 	})
 }
 
