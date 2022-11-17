@@ -9,7 +9,6 @@ package v1alpha1
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/dustin/go-humanize"
 	"path"
 	"time"
 
@@ -348,6 +347,7 @@ const (
 	ReasonReleasing               = "Releasing"
 	ReasonPredicting              = "Predicting"
 	ReasonCreatingTrainingSet     = "CreatingTrainingSet"
+	ReasonWaitingForPromotion     = "WaitingForPromotion"
 	ReasonTraining                = "Training"
 	ReasonSyncing                 = "Syncing"
 	ReasonGeneratingOnlineDataset = "GeneratingOnlineDataset"

@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	ctrl "sigs.k8s.io/controller-runtime"
 
@@ -180,6 +179,16 @@ func (mclass *ModelClass) MarkCreatingTrainingSetFailed(err string) {
 		Type:    ModelClassCreatedTrainingSet,
 		Status:  v1.ConditionFalse,
 		Reason:  ReasonCreatingTrainingSet,
+		Message: err,
+	})
+}
+
+func (mclass *ModelClass) MarkWaitingForPromotion(err string) {
+	mclass.Status.Phase = ModelClassPhaseWaitingForPromotion
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:    ModelClassReady,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonWaitingForPromotion,
 		Message: err,
 	})
 }

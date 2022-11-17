@@ -653,11 +653,11 @@ type AlgorithmSearchSpaceSpec struct {
 	// Set a custom hyper parameter spaace.
 	// Specify custom ranges per estimator.
 	// +kubebuilder:validation:Optional
-	Custom []AlgorithmSearchSpace `json:"custom,omitempty" protobuf:"bytes,3,opt,name=custom"`
+	Custom []AlgorithmParameterRange `json:"custom,omitempty" protobuf:"bytes,3,opt,name=custom"`
 }
 
 // Define a single custom search spec for a single alg
-type AlgorithmSearchSpace struct {
+type AlgorithmParameterRange struct {
 	// The algorithm name
 	// +kubebuilder:validation:Optional
 	Name catalog.ClassicEstimatorName `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`

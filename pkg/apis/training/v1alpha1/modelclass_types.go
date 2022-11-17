@@ -15,6 +15,7 @@ const (
 	ModelClassPhaseFailed                  ModelClassPhase = "Failed"
 	ModelClassPhaseReady                   ModelClassPhase = "Ready"
 	ModelClassPhaseCreatingTrainingDataset ModelClassPhase = "CreatingTrainingDataset"
+	ModelClassPhaseWaitingForPromotion     ModelClassPhase = "WaitingForPromotion" // in case of manual promotion
 	ModelClassPhaseTraining                ModelClassPhase = "Training"
 	ModelClassPhaseDrifted                 ModelClassPhase = "Drifted"
 )
@@ -199,7 +200,7 @@ type ModelClassTrainingSpec struct {
 type ModelClassServingSpec struct {
 	// Define the stages to test the model before release
 	// +kubebuilder:validation:Optional
-	Pipeline []ModelClassStageSpec `json:"pipeline,omitempty" protobuf:"bytes,1,opt,name=pipeline"`
+	Pipeline []PipelineStageSpec `json:"pipeline,omitempty" protobuf:"bytes,1,opt,name=pipeline"`
 	// The name of the predictor template to use when
 	// +kubebuilder:validation:Optional
 	PredictorTemplateName *string `json:"predictorTemplateName,omitempty" protobuf:"bytes,2,opt,name=predictorTemplateName"`
@@ -229,10 +230,16 @@ type ModelClassServingSpec struct {
 	// The serving resources for batch or online prediction
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,10,opt,name=resources"`
+	// The name of the live model
+	// +kubebuilder:validation:Optional
+	Live *string `json:"live,omitempty" protobuf:"bytes,11,opt,name=live"`
+	// The name of shadow models
+	// +kubebuilder:validation:Optional
+	Shadows []string `json:"shadows,omitempty" protobuf:"bytes,12,rep,name=shadows"`
 }
 
 // Define a test stage
-type ModelClassStageSpec struct {
+type PipelineStageSpec struct {
 	// The stage name
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// the Tests to run on the stage
@@ -304,10 +311,12 @@ type ModelClassStatus struct {
 	// The latest best model
 	//+kubebuilder:validation:Optional
 	LastestModel string `json:"latestModel,omitempty" protobuf:"bytes,14,opt,name=latestModel"`
+	// List of the last 5 retired models
+	RetiredModels []string `json:"retired,omitempty" protobuf:"bytes,15,opt,name=retired"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,15,rep,name=conditions"`
+	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,16,rep,name=conditions"`
 }
 
 type PromotionStatus struct {

@@ -1507,6 +1507,9 @@ spec:
                   dashboard:
                     description: Setup a dashboard for the predictor.
                     type: boolean
+                  live:
+                    description: The name of the live model
+                    type: string
                   monitoringSchedule:
                     description: Schedule for computing drift
                     properties:
@@ -2112,6 +2115,11 @@ spec:
                         type: string
                     type: object
                     x-kubernetes-map-type: atomic
+                  shadows:
+                    description: The name of shadow models
+                    items:
+                      type: string
+                    type: array
                 type: object
               subtask:
                 default: none
@@ -3445,6 +3453,11 @@ spec:
                     format: date-time
                     type: string
                 type: object
+              retired:
+                description: List of the last 5 retired models
+                items:
+                  type: string
+                type: array
               trainingScheduleStatus:
                 description: Training schedule status
                 properties:

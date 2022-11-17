@@ -8,24 +8,24 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
-export class AlgorithmSearchSpace extends jspb.Message {
+export class AlgorithmParameterRange extends jspb.Message {
   getName(): string;
-  setName(value: string): AlgorithmSearchSpace;
+  setName(value: string): AlgorithmParameterRange;
 
   getRangesList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ParameterRange>;
-  setRangesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ParameterRange>): AlgorithmSearchSpace;
-  clearRangesList(): AlgorithmSearchSpace;
+  setRangesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ParameterRange>): AlgorithmParameterRange;
+  clearRangesList(): AlgorithmParameterRange;
   addRanges(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ParameterRange, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ParameterRange;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AlgorithmSearchSpace.AsObject;
-  static toObject(includeInstance: boolean, msg: AlgorithmSearchSpace): AlgorithmSearchSpace.AsObject;
-  static serializeBinaryToWriter(message: AlgorithmSearchSpace, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AlgorithmSearchSpace;
-  static deserializeBinaryFromReader(message: AlgorithmSearchSpace, reader: jspb.BinaryReader): AlgorithmSearchSpace;
+  toObject(includeInstance?: boolean): AlgorithmParameterRange.AsObject;
+  static toObject(includeInstance: boolean, msg: AlgorithmParameterRange): AlgorithmParameterRange.AsObject;
+  static serializeBinaryToWriter(message: AlgorithmParameterRange, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AlgorithmParameterRange;
+  static deserializeBinaryFromReader(message: AlgorithmParameterRange, reader: jspb.BinaryReader): AlgorithmParameterRange;
 }
 
-export namespace AlgorithmSearchSpace {
+export namespace AlgorithmParameterRange {
   export type AsObject = {
     name: string,
     rangesList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ParameterRange.AsObject>,
@@ -43,10 +43,10 @@ export class AlgorithmSearchSpaceSpec extends jspb.Message {
   clearExcludeList(): AlgorithmSearchSpaceSpec;
   addExclude(value: string, index?: number): AlgorithmSearchSpaceSpec;
 
-  getCustomList(): Array<AlgorithmSearchSpace>;
-  setCustomList(value: Array<AlgorithmSearchSpace>): AlgorithmSearchSpaceSpec;
+  getCustomList(): Array<AlgorithmParameterRange>;
+  setCustomList(value: Array<AlgorithmParameterRange>): AlgorithmSearchSpaceSpec;
   clearCustomList(): AlgorithmSearchSpaceSpec;
-  addCustom(value?: AlgorithmSearchSpace, index?: number): AlgorithmSearchSpace;
+  addCustom(value?: AlgorithmParameterRange, index?: number): AlgorithmParameterRange;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AlgorithmSearchSpaceSpec.AsObject;
@@ -60,7 +60,7 @@ export namespace AlgorithmSearchSpaceSpec {
   export type AsObject = {
     includeList: Array<string>,
     excludeList: Array<string>,
-    customList: Array<AlgorithmSearchSpace.AsObject>,
+    customList: Array<AlgorithmParameterRange.AsObject>,
   }
 }
 
@@ -2187,10 +2187,10 @@ export namespace ModelClassList {
 }
 
 export class ModelClassServingSpec extends jspb.Message {
-  getPipelineList(): Array<ModelClassStageSpec>;
-  setPipelineList(value: Array<ModelClassStageSpec>): ModelClassServingSpec;
+  getPipelineList(): Array<PipelineStageSpec>;
+  setPipelineList(value: Array<PipelineStageSpec>): ModelClassServingSpec;
   clearPipelineList(): ModelClassServingSpec;
-  addPipeline(value?: ModelClassStageSpec, index?: number): ModelClassStageSpec;
+  addPipeline(value?: PipelineStageSpec, index?: number): PipelineStageSpec;
 
   getPredictortemplatename(): string;
   setPredictortemplatename(value: string): ModelClassServingSpec;
@@ -2229,6 +2229,14 @@ export class ModelClassServingSpec extends jspb.Message {
   hasResources(): boolean;
   clearResources(): ModelClassServingSpec;
 
+  getLive(): string;
+  setLive(value: string): ModelClassServingSpec;
+
+  getShadowsList(): Array<string>;
+  setShadowsList(value: Array<string>): ModelClassServingSpec;
+  clearShadowsList(): ModelClassServingSpec;
+  addShadows(value: string, index?: number): ModelClassServingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassServingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassServingSpec): ModelClassServingSpec.AsObject;
@@ -2239,7 +2247,7 @@ export class ModelClassServingSpec extends jspb.Message {
 
 export namespace ModelClassServingSpec {
   export type AsObject = {
-    pipelineList: Array<ModelClassStageSpec.AsObject>,
+    pipelineList: Array<PipelineStageSpec.AsObject>,
     predictortemplatename: string,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     online: boolean,
@@ -2249,6 +2257,8 @@ export namespace ModelClassServingSpec {
     monitoringschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     batchpredictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
+    live: string,
+    shadowsList: Array<string>,
   }
 }
 
@@ -2328,42 +2338,6 @@ export namespace ModelClassSpec {
   }
 }
 
-export class ModelClassStageSpec extends jspb.Message {
-  getName(): string;
-  setName(value: string): ModelClassStageSpec;
-
-  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelClassStageSpec;
-  hasTests(): boolean;
-  clearTests(): ModelClassStageSpec;
-
-  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelClassStageSpec;
-  hasServingsiteref(): boolean;
-  clearServingsiteref(): ModelClassStageSpec;
-
-  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
-  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ModelClassStageSpec;
-  hasResources(): boolean;
-  clearResources(): ModelClassStageSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelClassStageSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelClassStageSpec): ModelClassStageSpec.AsObject;
-  static serializeBinaryToWriter(message: ModelClassStageSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelClassStageSpec;
-  static deserializeBinaryFromReader(message: ModelClassStageSpec, reader: jspb.BinaryReader): ModelClassStageSpec;
-}
-
-export namespace ModelClassStageSpec {
-  export type AsObject = {
-    name: string,
-    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-  }
-}
-
 export class ModelClassStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): ModelClassStatus;
@@ -2423,6 +2397,11 @@ export class ModelClassStatus extends jspb.Message {
   getLatestmodel(): string;
   setLatestmodel(value: string): ModelClassStatus;
 
+  getRetiredList(): Array<string>;
+  setRetiredList(value: Array<string>): ModelClassStatus;
+  clearRetiredList(): ModelClassStatus;
+  addRetired(value: string, index?: number): ModelClassStatus;
+
   getConditionsList(): Array<ModelClassCondition>;
   setConditionsList(value: Array<ModelClassCondition>): ModelClassStatus;
   clearConditionsList(): ModelClassStatus;
@@ -2452,6 +2431,7 @@ export namespace ModelClassStatus {
     latestdataset: string,
     lateststudy: string,
     latestmodel: string,
+    retiredList: Array<string>,
     conditionsList: Array<ModelClassCondition.AsObject>,
   }
 }
@@ -4467,6 +4447,42 @@ export namespace PercentilePrunerOptions {
     warmupsteps: number,
     intervaltrials: number,
     mintrials: number,
+  }
+}
+
+export class PipelineStageSpec extends jspb.Message {
+  getName(): string;
+  setName(value: string): PipelineStageSpec;
+
+  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): PipelineStageSpec;
+  hasTests(): boolean;
+  clearTests(): PipelineStageSpec;
+
+  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PipelineStageSpec;
+  hasServingsiteref(): boolean;
+  clearServingsiteref(): PipelineStageSpec;
+
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): PipelineStageSpec;
+  hasResources(): boolean;
+  clearResources(): PipelineStageSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PipelineStageSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PipelineStageSpec): PipelineStageSpec.AsObject;
+  static serializeBinaryToWriter(message: PipelineStageSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PipelineStageSpec;
+  static deserializeBinaryFromReader(message: PipelineStageSpec, reader: jspb.BinaryReader): PipelineStageSpec;
+}
+
+export namespace PipelineStageSpec {
+  export type AsObject = {
+    name: string,
+    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
 

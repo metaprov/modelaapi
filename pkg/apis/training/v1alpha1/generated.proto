@@ -20,7 +20,7 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1";
 
 // Define a single custom search spec for a single alg
-message AlgorithmSearchSpace {
+message AlgorithmParameterRange {
   // The algorithm name
   // +kubebuilder:validation:Optional
   optional string name = 1;
@@ -46,7 +46,7 @@ message AlgorithmSearchSpaceSpec {
   // Set a custom hyper parameter spaace.
   // Specify custom ranges per estimator.
   // +kubebuilder:validation:Optional
-  repeated AlgorithmSearchSpace custom = 3;
+  repeated AlgorithmParameterRange custom = 3;
 }
 
 message Anomaly {
@@ -1520,7 +1520,7 @@ message ModelClassList {
 message ModelClassServingSpec {
   // Define the stages to test the model before release
   // +kubebuilder:validation:Optional
-  repeated ModelClassStageSpec pipeline = 1;
+  repeated PipelineStageSpec pipeline = 1;
 
   // The name of the predictor template to use when
   // +kubebuilder:validation:Optional
@@ -1559,6 +1559,14 @@ message ModelClassServingSpec {
   // The serving resources for batch or online prediction
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 10;
+
+  // The name of the live model
+  // +kubebuilder:validation:Optional
+  optional string live = 11;
+
+  // The name of shadow models
+  // +kubebuilder:validation:Optional
+  repeated string shadows = 12;
 }
 
 // ModelClassSpec defines the desired state of a ModelClass and the parameters for a model search
@@ -1622,24 +1630,6 @@ message ModelClassSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule reportSchedule = 12;
 }
 
-// Define a test stage
-message ModelClassStageSpec {
-  // The stage name
-  optional string name = 1;
-
-  // the Tests to run on the stage
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 2;
-
-  // The serving site ref
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 3;
-
-  // The resources to use when running tests at this stage
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
-}
-
 message ModelClassStatus {
   optional string phase = 1;
 
@@ -1695,10 +1685,13 @@ message ModelClassStatus {
   // +kubebuilder:validation:Optional
   optional string latestModel = 14;
 
+  // List of the last 5 retired models
+  repeated string retired = 15;
+
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelClassCondition conditions = 15;
+  repeated ModelClassCondition conditions = 16;
 }
 
 // Specification for model training.
@@ -3114,6 +3107,24 @@ message PercentilePrunerOptions {
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   optional int32 minTrials = 5;
+}
+
+// Define a test stage
+message PipelineStageSpec {
+  // The stage name
+  optional string name = 1;
+
+  // the Tests to run on the stage
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 2;
+
+  // The serving site ref
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 3;
+
+  // The resources to use when running tests at this stage
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
 }
 
 message PromotionStatus {
