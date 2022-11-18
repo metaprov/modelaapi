@@ -113,8 +113,10 @@ export class AlgorithmSpec extends jspb.Message {
   getUrl(): string;
   setUrl(value: string): AlgorithmSpec;
 
-  getTask(): string;
-  setTask(value: string): AlgorithmSpec;
+  getTasksList(): Array<string>;
+  setTasksList(value: Array<string>): AlgorithmSpec;
+  clearTasksList(): AlgorithmSpec;
+  addTasks(value: string, index?: number): AlgorithmSpec;
 
   getSparse(): boolean;
   setSparse(value: boolean): AlgorithmSpec;
@@ -137,7 +139,7 @@ export namespace AlgorithmSpec {
     frameworkname: string,
     description: string,
     url: string,
-    task: string,
+    tasksList: Array<string>,
     sparse: boolean,
     rangesList: Array<ParameterRange.AsObject>,
   }

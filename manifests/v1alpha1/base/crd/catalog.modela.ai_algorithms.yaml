@@ -113,23 +113,26 @@ spec:
                 description: Sparse indicate if this algorithm can deal with sparse
                   data
                 type: boolean
-              task:
+              tasks:
                 description: Task is the machine learning task (binary classification
                   / regression)
-                enum:
-                - binary-classification
-                - multi-classification
-                - forecasting
-                - regression
-                - clustering
-                - recommendation
-                - outlier-detection
-                - novelty-detection
-                - auto
-                - unknown
-                - partition-forecasting
-                - monitoring
-                type: string
+                items:
+                  description: MLTask is the machine learning task name
+                  enum:
+                  - binary-classification
+                  - multi-classification
+                  - forecasting
+                  - regression
+                  - clustering
+                  - recommendation
+                  - outlier-detection
+                  - novelty-detection
+                  - auto
+                  - unknown
+                  - partition-forecasting
+                  - monitoring
+                  type: string
+                type: array
               url:
                 default: ""
                 description: URL is a url to the html page describing the algorithm

@@ -2143,7 +2143,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmList.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec.repeatedFields_ = [6];
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec.repeatedFields_ = [4,6];
 
 
 
@@ -2179,7 +2179,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec.toOb
     frameworkname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     url: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    task: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    tasksList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
     sparse: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
     rangesList: jspb.Message.toObjectList(msg.getRangesList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.toObject, includeInstance)
@@ -2233,7 +2233,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec.dese
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTask(value);
+      msg.addTasks(value);
       break;
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -2294,9 +2294,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec.seri
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
+  f = message.getTasksList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
       4,
       f
     );
@@ -2428,38 +2428,39 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec.prot
 
 
 /**
- * optional string task = 4;
- * @return {string}
+ * repeated string tasks = 4;
+ * @return {!Array<string>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec.prototype.getTask = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec.prototype.getTasksList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec.prototype.setTasksList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
 };
 
 
 /**
  * @param {string} value
+ * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec.prototype.setTask = function(value) {
-  return jspb.Message.setField(this, 4, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec.prototype.addTasks = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec.prototype.clearTask = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec.prototype.hasTask = function() {
-  return jspb.Message.getField(this, 4) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec.prototype.clearTasksList = function() {
+  return this.setTasksList([]);
 };
 
 

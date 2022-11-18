@@ -107,7 +107,7 @@ message AlgorithmSpec {
 
   // Task is the machine learning task (binary classification / regression)
   // +kubebuilder:validation:Optional
-  optional string task = 4;
+  repeated string tasks = 4;
 
   // Sparse indicate if this algorithm can deal with sparse data
   // +kubebuilder:default:=false
