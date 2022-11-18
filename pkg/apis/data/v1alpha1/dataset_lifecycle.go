@@ -523,7 +523,7 @@ func (dataset Dataset) IsFailed() bool {
 }
 
 func (dataset Dataset) IsGroup() bool {
-	return *dataset.Spec.Task == catalog.GroupForecast
+	return *dataset.Spec.Task == catalog.PartitionForecast
 }
 
 // Answer true if the dataset is used for feature groupp monitoring.

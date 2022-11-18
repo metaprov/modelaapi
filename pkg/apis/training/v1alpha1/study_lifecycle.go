@@ -230,7 +230,7 @@ func (study Study) IsInCond(ct StudyConditionType) bool {
 }
 
 func (study Study) SelectSplitMethod() {
-	if *study.Spec.Task == catalog.Forecasting || *study.Spec.Task == catalog.GroupForecast {
+	if *study.Spec.Task == catalog.Forecasting || *study.Spec.Task == catalog.PartitionForecast {
 		v := catalog.DataSplitMethodTime
 		study.Spec.TrainingTemplate.Split.Method = &v
 	}
@@ -297,7 +297,7 @@ func (study *Study) AutoSplit(rows int32) {
 		study.Spec.TrainingTemplate.Split.Method = &method
 	}
 
-	if *study.Spec.Task == catalog.Forecasting || *study.Spec.Task == catalog.GroupForecast {
+	if *study.Spec.Task == catalog.Forecasting || *study.Spec.Task == catalog.PartitionForecast {
 		method := catalog.DataSplitMethodTime
 		study.Spec.TrainingTemplate.Split.Method = &method
 	}
@@ -1038,7 +1038,7 @@ func (study Study) IsFailed() bool {
 }
 
 func (study Study) IsGroup() bool {
-	return *study.Spec.Task == catalog.GroupForecast
+	return *study.Spec.Task == catalog.PartitionForecast
 }
 
 func (study *Study) RefreshProgress() {

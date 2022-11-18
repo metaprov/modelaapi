@@ -28,7 +28,7 @@ func DefaultObjective(task catalog.MLTask) catalog.Metric {
 	if task == catalog.Regression {
 		return catalog.RMSE
 	}
-	if task == catalog.Forecasting || task == catalog.GroupForecast {
+	if task == catalog.Forecasting || task == catalog.PartitionForecast {
 		return catalog.MAPE
 	}
 	return catalog.Accuracy
@@ -44,7 +44,7 @@ func (mclass *ModelClass) DefaultFESearchEstimator(task catalog.MLTask) catalog.
 	if task == catalog.Regression {
 		return catalog.DecisionTreeRegressor
 	}
-	if task == catalog.Forecasting || task == catalog.GroupForecast {
+	if task == catalog.Forecasting || task == catalog.PartitionForecast {
 		return catalog.AutoARIMA
 	}
 	return catalog.UnknownEstimatorName
@@ -60,7 +60,7 @@ func (mclass *ModelClass) DefaultBaselineEstimator(task catalog.MLTask) catalog.
 	if task == catalog.Regression {
 		return catalog.RandomForestRegressor
 	}
-	if task == catalog.Forecasting || task == catalog.GroupForecast {
+	if task == catalog.Forecasting || task == catalog.PartitionForecast {
 		return catalog.AutoARIMA
 	}
 	return catalog.UnknownEstimatorName

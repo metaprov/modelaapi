@@ -116,7 +116,7 @@ func (model Model) ReportType() ReportType {
 		return RegressionModelReport
 	case catalog.Forecasting:
 		return ForecastModelReport
-	case catalog.GroupForecast:
+	case catalog.PartitionForecast:
 		return GroupTimeSeriesModelReport
 	}
 	return InvalidReport
@@ -1167,7 +1167,7 @@ func (model Model) OpName() string {
 }
 
 func (model Model) IsGroup() bool {
-	return *model.Spec.Task == catalog.GroupForecast
+	return *model.Spec.Task == catalog.PartitionForecast
 }
 
 ////////////////////////////////

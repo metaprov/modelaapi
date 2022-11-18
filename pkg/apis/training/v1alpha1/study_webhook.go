@@ -29,7 +29,7 @@ func (study Study) DefaultObjective(task catalog.MLTask) catalog.Metric {
 	if task == catalog.Regression {
 		return catalog.RMSE
 	}
-	if task == catalog.Forecasting || task == catalog.GroupForecast {
+	if task == catalog.Forecasting || task == catalog.PartitionForecast {
 		return catalog.MAPE
 	}
 	return catalog.Accuracy
@@ -45,7 +45,7 @@ func (study Study) DefaultFESearchEstimator(task catalog.MLTask) catalog.Classic
 	if task == catalog.Regression {
 		return catalog.DecisionTreeRegressor
 	}
-	if task == catalog.Forecasting || task == catalog.GroupForecast {
+	if task == catalog.Forecasting || task == catalog.PartitionForecast {
 		return catalog.AutoARIMA
 	}
 	return catalog.UnknownEstimatorName
@@ -61,7 +61,7 @@ func (study Study) DefaultBaselineEstimator(task catalog.MLTask) catalog.Classic
 	if task == catalog.Regression {
 		return catalog.RandomForestRegressor
 	}
-	if task == catalog.Forecasting || task == catalog.GroupForecast {
+	if task == catalog.Forecasting || task == catalog.PartitionForecast {
 		return catalog.AutoARIMA
 	}
 	return catalog.UnknownEstimatorName
@@ -246,7 +246,7 @@ func (study Study) validateTask(fldPath *field.Path) field.ErrorList {
 			err.Error()))
 	}
 
-	if *study.Spec.Task == catalog.Forecasting || *study.Spec.Task == catalog.GroupForecast && !study.Spec.Search.Objective.IsForecast() {
+	if *study.Spec.Task == catalog.Forecasting || *study.Spec.Task == catalog.PartitionForecast && !study.Spec.Search.Objective.IsForecast() {
 		err := errors.Errorf("objective %v is not a forecasting metric", *study.Spec.Search.Objective)
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,
