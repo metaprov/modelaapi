@@ -25,6 +25,7 @@ type BatchClient interface {
 	// Ingest a new dataset to the store, the store creates a new layouts and set of keys
 	// for the new dataset
 	BatchPredict(ctx context.Context, in *BatchPredictRequest, opts ...grpc.CallOption) (*BatchPredictResponse, error)
+	BatchPredictMC(ctx context.Context, in *BatchPredictRequest, opts ...grpc.CallOption) (*BatchPredictResponse, error)
 	Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error)
 }
 
@@ -39,6 +40,15 @@ func NewBatchClient(cc grpc.ClientConnInterface) BatchClient {
 func (c *batchClient) BatchPredict(ctx context.Context, in *BatchPredictRequest, opts ...grpc.CallOption) (*BatchPredictResponse, error) {
 	out := new(BatchPredictResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredict", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *batchClient) BatchPredictMC(ctx context.Context, in *BatchPredictRequest, opts ...grpc.CallOption) (*BatchPredictResponse, error) {
+	out := new(BatchPredictResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictMC", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -61,6 +71,7 @@ type BatchServer interface {
 	// Ingest a new dataset to the store, the store creates a new layouts and set of keys
 	// for the new dataset
 	BatchPredict(context.Context, *BatchPredictRequest) (*BatchPredictResponse, error)
+	BatchPredictMC(context.Context, *BatchPredictRequest) (*BatchPredictResponse, error)
 	Shutdown(context.Context, *ShutdownRequest) (*ShutdownResponse, error)
 	mustEmbedUnimplementedBatchServer()
 }
@@ -71,6 +82,9 @@ type UnimplementedBatchServer struct {
 
 func (UnimplementedBatchServer) BatchPredict(context.Context, *BatchPredictRequest) (*BatchPredictResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BatchPredict not implemented")
+}
+func (UnimplementedBatchServer) BatchPredictMC(context.Context, *BatchPredictRequest) (*BatchPredictResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BatchPredictMC not implemented")
 }
 func (UnimplementedBatchServer) Shutdown(context.Context, *ShutdownRequest) (*ShutdownResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Shutdown not implemented")
@@ -106,6 +120,24 @@ func _Batch_BatchPredict_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Batch_BatchPredictMC_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BatchPredictRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BatchServer).BatchPredictMC(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictMC",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BatchServer).BatchPredictMC(ctx, req.(*BatchPredictRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Batch_Shutdown_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ShutdownRequest)
 	if err := dec(in); err != nil {
@@ -134,6 +166,10 @@ var Batch_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "BatchPredict",
 			Handler:    _Batch_BatchPredict_Handler,
+		},
+		{
+			MethodName: "BatchPredictMC",
+			Handler:    _Batch_BatchPredictMC_Handler,
 		},
 		{
 			MethodName: "Shutdown",
