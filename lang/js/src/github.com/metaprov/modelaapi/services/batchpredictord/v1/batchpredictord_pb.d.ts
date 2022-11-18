@@ -11,31 +11,18 @@ export class BatchPredictRequest extends jspb.Message {
   hasPrediction(): boolean;
   clearPrediction(): BatchPredictRequest;
 
-  getFrombucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setFrombucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): BatchPredictRequest;
-  hasFrombucket(): boolean;
-  clearFrombucket(): BatchPredictRequest;
+  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): BatchPredictRequest;
+  hasBucket(): boolean;
+  clearBucket(): BatchPredictRequest;
 
-  getFromconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setFromconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): BatchPredictRequest;
-  hasFromconnection(): boolean;
-  clearFromconnection(): BatchPredictRequest;
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): BatchPredictRequest;
+  hasConnection(): boolean;
+  clearConnection(): BatchPredictRequest;
 
-  getFromsecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearFromsecretMap(): BatchPredictRequest;
-
-  getTargetbucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setTargetbucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): BatchPredictRequest;
-  hasTargetbucket(): boolean;
-  clearTargetbucket(): BatchPredictRequest;
-
-  getToconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setToconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): BatchPredictRequest;
-  hasToconnection(): boolean;
-  clearToconnection(): BatchPredictRequest;
-
-  getTosecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearTosecretMap(): BatchPredictRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): BatchPredictRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BatchPredictRequest.AsObject;
@@ -48,12 +35,9 @@ export class BatchPredictRequest extends jspb.Message {
 export namespace BatchPredictRequest {
   export type AsObject = {
     prediction?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction.AsObject,
-    frombucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    fromconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    fromsecretMap: Array<[string, Uint8Array | string]>,
-    targetbucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    toconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    tosecretMap: Array<[string, Uint8Array | string]>,
+    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 

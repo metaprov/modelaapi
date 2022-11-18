@@ -10,12 +10,9 @@ import "google/protobuf/empty.proto";
 // A request to batch predictor
 message BatchPredictRequest {
     github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction prediction     = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket  fromBucket     = 2;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection     fromConnection = 3;
-    map<string,bytes>                                                    fromSecret     = 4;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket  targetBucket   = 5;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection     toConnection   = 6;
-    map<string,bytes>                                                    toSecret       = 7;    
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket  bucket     = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection     connection = 3;
+    map<string,bytes>                                                    secret     = 4;
 }
 
 message BatchPredictResponse {
