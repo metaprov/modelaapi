@@ -62,6 +62,7 @@ type TaskName string
 
 const (
 	BatchPredictTask             TaskName = "batch-predict"
+	BatchPredictMCTask           TaskName = "batch-predict-multi-class"
 	ForecastTask                 TaskName = "forecast"
 	ProfileDatasetTask           TaskName = "profile-dataset"
 	SnapshotDatasetTask          TaskName = "snapshot-dataset"
