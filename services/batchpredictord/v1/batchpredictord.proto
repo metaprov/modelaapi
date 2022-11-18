@@ -3,6 +3,8 @@ option go_package = "github.com/metaprov/modelaapi/services/batchpredictord/v1";
 package github.com.metaprov.modelaapi.services.batchpredictord.v1;
 
 import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto";
 import "google/protobuf/empty.proto";
 
@@ -14,6 +16,19 @@ message BatchPredictRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection     connection = 3;
     map<string,bytes>                                                    secret     = 4;
 }
+
+message BatchPredictMCRequest {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction prediction     = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket  bucket     = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection     connection = 3;
+    map<string,bytes>                                                    secret     = 4;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass  model = 5;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entities = 6;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 7;
+}
+
+
+
 
 message BatchPredictResponse {
     int32 rows = 1; // number of predicted rows
@@ -28,6 +43,6 @@ service Batch {
     // Ingest a new dataset to the store, the store creates a new layouts and set of keys
     // for the new dataset
     rpc BatchPredict(BatchPredictRequest) returns (BatchPredictResponse) {}
-    rpc BatchPredictMC(BatchPredictRequest) returns (BatchPredictResponse) {}
+    rpc BatchPredictMC(BatchPredictMCRequest) returns (BatchPredictResponse) {}
     rpc Shutdown(ShutdownRequest) returns (ShutdownResponse) {}
 }

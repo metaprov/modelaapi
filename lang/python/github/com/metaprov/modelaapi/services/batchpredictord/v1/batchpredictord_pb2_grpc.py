@@ -21,7 +21,7 @@ class BatchStub(object):
                 )
         self.BatchPredictMC = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictMC',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictRequest.SerializeToString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictMCRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictResponse.FromString,
                 )
         self.Shutdown = channel.unary_unary(
@@ -64,7 +64,7 @@ def add_BatchServicer_to_server(servicer, server):
             ),
             'BatchPredictMC': grpc.unary_unary_rpc_method_handler(
                     servicer.BatchPredictMC,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictMCRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictResponse.SerializeToString,
             ),
             'Shutdown': grpc.unary_unary_rpc_method_handler(
@@ -111,7 +111,7 @@ class Batch(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictMC',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictMCRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
