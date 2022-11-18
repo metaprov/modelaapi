@@ -469,6 +469,8 @@ message AskModelRequest {
     int32  budget = 6;
     bool   defaultHP = 7; // use default HP
     string algorithm = 8; // ask for a specific algorithm.
+    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm     algorithms  = 9;
+
 }
 
 
@@ -492,8 +494,8 @@ message AskForecastModelRequest {
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study   study              = 3;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource         = 4;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset            = 5;
-    repeated string algorithms = 8; // ask for a specific algorithm.
-    repeated string keys = 9; // list of keys to train from a dataset
+    repeated string keys = 6; // list of keys to train from a dataset
+    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm     algorithms  = 7;
 }
 
 
@@ -511,14 +513,13 @@ message AskEnsembleRequest {
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study   study              = 3;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource         = 4;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset            = 5;
-    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model models       = 6;    
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model models       = 6;
+    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm     algorithms  = 7;
 }
 // Return one or more ensembles
 message AskEnsembleResponse {
     repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
 }
-
-
 
 message AskBaselineRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct  product           = 1;
@@ -527,7 +528,8 @@ message AskBaselineRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource         = 4;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset            = 5;   
     repeated string algnames = 6; // ask for a list of algorithms
-    bool all = 7; // ask for all algorithms 
+    bool all = 7; // ask for all algorithms
+    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm     algorithms  = 8;
 }
 
 message AskBaselineResponse {
@@ -545,7 +547,8 @@ message AskAllModelsForTaskRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource         = 4;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset            = 5;
     int32  budget = 6;
-    string task   = 7; // use default HP    
+    string task   = 7; // use default HP
+    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm     algorithms  = 8;
 }
 
 

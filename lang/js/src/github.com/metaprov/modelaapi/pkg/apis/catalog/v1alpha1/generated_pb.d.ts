@@ -143,34 +143,6 @@ export namespace AlgorithmSpec {
   }
 }
 
-export class CategoricalParameter extends jspb.Message {
-  getName(): string;
-  setName(value: string): CategoricalParameter;
-
-  getDefaultvalue(): string;
-  setDefaultvalue(value: string): CategoricalParameter;
-
-  getEnumsList(): Array<string>;
-  setEnumsList(value: Array<string>): CategoricalParameter;
-  clearEnumsList(): CategoricalParameter;
-  addEnums(value: string, index?: number): CategoricalParameter;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CategoricalParameter.AsObject;
-  static toObject(includeInstance: boolean, msg: CategoricalParameter): CategoricalParameter.AsObject;
-  static serializeBinaryToWriter(message: CategoricalParameter, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CategoricalParameter;
-  static deserializeBinaryFromReader(message: CategoricalParameter, reader: jspb.BinaryReader): CategoricalParameter;
-}
-
-export namespace CategoricalParameter {
-  export type AsObject = {
-    name: string,
-    defaultvalue: string,
-    enumsList: Array<string>,
-  }
-}
-
 export class Cloud extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Cloud;
@@ -598,40 +570,6 @@ export namespace DataTestCaseResult {
     failure: boolean,
     error: boolean,
     failuremsg: string,
-  }
-}
-
-export class FloatParameter extends jspb.Message {
-  getName(): string;
-  setName(value: string): FloatParameter;
-
-  getMin(): number;
-  setMin(value: number): FloatParameter;
-
-  getMax(): number;
-  setMax(value: number): FloatParameter;
-
-  getDefaultvalue(): number;
-  setDefaultvalue(value: number): FloatParameter;
-
-  getLog(): boolean;
-  setLog(value: boolean): FloatParameter;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FloatParameter.AsObject;
-  static toObject(includeInstance: boolean, msg: FloatParameter): FloatParameter.AsObject;
-  static serializeBinaryToWriter(message: FloatParameter, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FloatParameter;
-  static deserializeBinaryFromReader(message: FloatParameter, reader: jspb.BinaryReader): FloatParameter;
-}
-
-export namespace FloatParameter {
-  export type AsObject = {
-    name: string,
-    min: number,
-    max: number,
-    defaultvalue: number,
-    log: boolean,
   }
 }
 

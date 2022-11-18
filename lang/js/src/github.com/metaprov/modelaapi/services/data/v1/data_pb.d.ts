@@ -2140,6 +2140,11 @@ export class AskModelRequest extends jspb.Message {
   getAlgorithm(): string;
   setAlgorithm(value: string): AskModelRequest;
 
+  getAlgorithmsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm>;
+  setAlgorithmsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm>): AskModelRequest;
+  clearAlgorithmsList(): AskModelRequest;
+  addAlgorithms(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AskModelRequest.AsObject;
   static toObject(includeInstance: boolean, msg: AskModelRequest): AskModelRequest.AsObject;
@@ -2158,6 +2163,7 @@ export namespace AskModelRequest {
     budget: number,
     defaulthp: boolean,
     algorithm: string,
+    algorithmsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.AsObject>,
   }
 }
 
@@ -2251,15 +2257,15 @@ export class AskForecastModelRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): AskForecastModelRequest;
 
-  getAlgorithmsList(): Array<string>;
-  setAlgorithmsList(value: Array<string>): AskForecastModelRequest;
-  clearAlgorithmsList(): AskForecastModelRequest;
-  addAlgorithms(value: string, index?: number): AskForecastModelRequest;
-
   getKeysList(): Array<string>;
   setKeysList(value: Array<string>): AskForecastModelRequest;
   clearKeysList(): AskForecastModelRequest;
   addKeys(value: string, index?: number): AskForecastModelRequest;
+
+  getAlgorithmsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm>;
+  setAlgorithmsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm>): AskForecastModelRequest;
+  clearAlgorithmsList(): AskForecastModelRequest;
+  addAlgorithms(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AskForecastModelRequest.AsObject;
@@ -2276,8 +2282,8 @@ export namespace AskForecastModelRequest {
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    algorithmsList: Array<string>,
     keysList: Array<string>,
+    algorithmsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.AsObject>,
   }
 }
 
@@ -2332,6 +2338,11 @@ export class AskEnsembleRequest extends jspb.Message {
   clearModelsList(): AskEnsembleRequest;
   addModels(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
 
+  getAlgorithmsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm>;
+  setAlgorithmsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm>): AskEnsembleRequest;
+  clearAlgorithmsList(): AskEnsembleRequest;
+  addAlgorithms(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AskEnsembleRequest.AsObject;
   static toObject(includeInstance: boolean, msg: AskEnsembleRequest): AskEnsembleRequest.AsObject;
@@ -2348,6 +2359,7 @@ export namespace AskEnsembleRequest {
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
+    algorithmsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.AsObject>,
   }
 }
 
@@ -2405,6 +2417,11 @@ export class AskBaselineRequest extends jspb.Message {
   getAll(): boolean;
   setAll(value: boolean): AskBaselineRequest;
 
+  getAlgorithmsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm>;
+  setAlgorithmsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm>): AskBaselineRequest;
+  clearAlgorithmsList(): AskBaselineRequest;
+  addAlgorithms(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AskBaselineRequest.AsObject;
   static toObject(includeInstance: boolean, msg: AskBaselineRequest): AskBaselineRequest.AsObject;
@@ -2422,6 +2439,7 @@ export namespace AskBaselineRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     algnamesList: Array<string>,
     all: boolean,
+    algorithmsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.AsObject>,
   }
 }
 
@@ -2477,6 +2495,11 @@ export class AskAllModelsForTaskRequest extends jspb.Message {
   getTask(): string;
   setTask(value: string): AskAllModelsForTaskRequest;
 
+  getAlgorithmsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm>;
+  setAlgorithmsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm>): AskAllModelsForTaskRequest;
+  clearAlgorithmsList(): AskAllModelsForTaskRequest;
+  addAlgorithms(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AskAllModelsForTaskRequest.AsObject;
   static toObject(includeInstance: boolean, msg: AskAllModelsForTaskRequest): AskAllModelsForTaskRequest.AsObject;
@@ -2494,6 +2517,7 @@ export namespace AskAllModelsForTaskRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     budget: number,
     task: string,
+    algorithmsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.AsObject>,
   }
 }
 

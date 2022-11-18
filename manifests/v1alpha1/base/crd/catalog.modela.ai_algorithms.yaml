@@ -81,14 +81,14 @@ spec:
                     defaultValue:
                       description: DefaultValue is the default value of the parameter
                       type: number
-                    log:
-                      description: If the scale is logaritimic
-                      type: boolean
-                    max:
+                    high:
                       description: High is the maximum value of the hyper parameter
                         range
                       type: number
-                    min:
+                    log:
+                      description: If the scale is logaritimic
+                      type: boolean
+                    low:
                       description: Low is the minimum value of the hyperparameter
                         range
                       type: number

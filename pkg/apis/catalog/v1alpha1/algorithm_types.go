@@ -62,10 +62,10 @@ type ParameterRange struct {
 	Type HyperParameterDataType `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
 	// Low is the minimum value of the hyperparameter range
 	// +kubebuilder:validation:Optional
-	Low *float64 `json:"min,omitempty" protobuf:"bytes,3,opt,name=low"`
+	Low *float64 `json:"low,omitempty" protobuf:"bytes,3,opt,name=low"`
 	// High is the maximum value of the hyper parameter range
 	// +kubebuilder:validation:Optional
-	High *float64 `json:"max,omitempty" protobuf:"bytes,4,opt,name=high"`
+	High *float64 `json:"high,omitempty" protobuf:"bytes,4,opt,name=high"`
 	// Step for discrete variable.
 	// +kubebuilder:validation:Optional
 	Step *int32 `json:"step,omitempty" protobuf:"varint,5,opt,name=step"`
@@ -81,35 +81,4 @@ type ParameterRange struct {
 	// Default Choice for categorical variable.
 	//+kubebuilder:validation:Optional
 	DefaultChoice *string `json:"defaultChoice,omitempty" protobuf:"varint,9,opt,name=defaultChoice"`
-}
-
-// FloatParameter contain the specification of an float hyper parameter
-type FloatParameter struct {
-	// Name is the name of the hyper parameter
-	// +kubebuilder:validation:Optional
-	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// Min is the minimum value
-	// +kubebuilder:validation:Optional
-	Min float64 `json:"min,omitempty" protobuf:"bytes,3,opt,name=min"`
-	// Max is the maximum value
-	// +kubebuilder:validation:Optional
-	Max float64 `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
-	// Default float value
-	// +kubebuilder:validation:Optional
-	DefaultValue float64 `json:"defaultValue,omitempty" protobuf:"bytes,5,opt,name=defaultValue"`
-	// Log specify if this hyperparameter is logarithmic
-	// +kubebuilder:validation:Optional
-	Log bool `json:"log,omitempty" protobuf:"varint,6,opt,name=log"`
-}
-
-// CategoricalParameter contain the specification of an categorical hyper parameter
-type CategoricalParameter struct {
-	// Name is the name of the hyper parameter
-	// +kubebuilder:validation:Optional
-	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// DefaultValue if the default categorical value
-	DefaultValue string `json:"defaultValue,omitempty" protobuf:"bytes,2,opt,name=defaultValue"`
-	// Enums defines the list of values
-	// +kubebuilder:validation:Optional
-	Enums []string `json:"enums,omitempty" protobuf:"bytes,3,rep,name=enums"`
 }

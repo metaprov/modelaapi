@@ -119,20 +119,6 @@ message AlgorithmSpec {
   repeated ParameterRange ranges = 6;
 }
 
-// CategoricalParameter contain the specification of an categorical hyper parameter
-message CategoricalParameter {
-  // Name is the name of the hyper parameter
-  // +kubebuilder:validation:Optional
-  optional string name = 1;
-
-  // DefaultValue if the default categorical value
-  optional string defaultValue = 2;
-
-  // Enums defines the list of values
-  // +kubebuilder:validation:Optional
-  repeated string enums = 3;
-}
-
 // Cloud represent a cloud provider metadata. A cloud contains regions,datacenter,machine classes
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
@@ -361,29 +347,6 @@ message DataTestCaseResult {
   // An optional
   // +kubebuilder:validation:Optional
   optional string failureMsg = 5;
-}
-
-// FloatParameter contain the specification of an float hyper parameter
-message FloatParameter {
-  // Name is the name of the hyper parameter
-  // +kubebuilder:validation:Optional
-  optional string name = 1;
-
-  // Min is the minimum value
-  // +kubebuilder:validation:Optional
-  optional double min = 3;
-
-  // Max is the maximum value
-  // +kubebuilder:validation:Optional
-  optional double max = 4;
-
-  // Default float value
-  // +kubebuilder:validation:Optional
-  optional double defaultValue = 5;
-
-  // Log specify if this hyperparameter is logarithmic
-  // +kubebuilder:validation:Optional
-  optional bool log = 6;
 }
 
 // GithubEvents specify repo and the events to listen in order ot fire the pipeline
