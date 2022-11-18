@@ -1032,24 +1032,6 @@ func ParseEstimatorName(name string) ClassicEstimatorName {
 }
 
 // ==================================================
-// DataEnv source
-// ==================================================
-// +kubebuilder:validation:Enum="csv";"json";"parquet";"tde";"sql";"table";"fwf";"excel";"sas";"spss";"auto";
-type DatastoreType string
-
-const (
-	DatastoreTypeCsv     DatastoreType = "csv"
-	DatastoreTypeJson    DatastoreType = "json"
-	DatastoreTypeParquet DatastoreType = "parquet"
-	DatastoreTypeSas     DatastoreType = "sas"
-	DatastoreTypeSpss    DatastoreType = "spss"
-	DatastoreTypeTde     DatastoreType = "tde"
-	DatastoreTypeSql     DatastoreType = "sql"
-	DatastoreTypeTable   DatastoreType = "table"
-	DatastoreTypeFwf     DatastoreType = "fwf"
-	DatastoreTypeExcel   DatastoreType = "excel"
-	DatastoreTypeAuto    DatastoreType = "auto"
-)
 
 // +kubebuilder:validation:Enum="boolean";"datetime";"number";"categorical";"ordinal";"text";"json";"number-list";"categorical-list";"text-list";
 type DataType string

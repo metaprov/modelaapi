@@ -599,7 +599,7 @@ func (in *DataInputSpec) DeepCopyInto(out *DataInputSpec) {
 	}
 	if in.Format != nil {
 		in, out := &in.Format, &out.Format
-		*out = new(catalogv1alpha1.DatastoreType)
+		*out = new(FlatFileType)
 		**out = **in
 	}
 }
@@ -694,7 +694,7 @@ func (in *DataOutputSpec) DeepCopyInto(out *DataOutputSpec) {
 	}
 	if in.Format != nil {
 		in, out := &in.Format, &out.Format
-		*out = new(catalogv1alpha1.DatastoreType)
+		*out = new(FlatFileType)
 		**out = **in
 	}
 	if in.Action != nil {
@@ -3214,7 +3214,7 @@ func (in *RecipeInputSpec) DeepCopyInto(out *RecipeInputSpec) {
 	}
 	if in.Format != nil {
 		in, out := &in.Format, &out.Format
-		*out = new(catalogv1alpha1.DatastoreType)
+		*out = new(FlatFileType)
 		**out = **in
 	}
 }

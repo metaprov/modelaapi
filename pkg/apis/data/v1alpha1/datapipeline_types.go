@@ -139,7 +139,7 @@ type DataInputSpec struct {
 	// The file format of the dataset, if applicable
 	// +kubebuilder:default:="csv"
 	// +kubebuilder:validation:Optional
-	Format *catalog.DatastoreType `json:"format,omitempty" protobuf:"bytes,2,opt,name=format"`
+	Format *FlatFileType `json:"format,omitempty" protobuf:"bytes,2,opt,name=format"`
 }
 
 // DataOutputSpec specifies the format, features, and output location of a transformed dataset
@@ -155,7 +155,7 @@ type DataOutputSpec struct {
 	// The format of the dataset, applicable if the output location is a flat-file
 	// +kubebuilder:default:="csv"
 	// +kubebuilder:validation:Optional
-	Format *catalog.DatastoreType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
+	Format *FlatFileType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
 	// The update strategy for the dataset in the case that the output location already exists (i.e a database table)
 	// Upsert will insert new records and update existing ones;
 	// Insert will insert new records and not update existing ones;

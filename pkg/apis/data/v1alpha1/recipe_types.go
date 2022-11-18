@@ -456,7 +456,7 @@ type RecipeInputSpec struct {
 	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
 	// Format is the dataset format
 	// +kubebuilder:default:=csv
-	Format *catalog.DatastoreType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
+	Format *FlatFileType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
 }
 
 // RecipeOutputSpec for the recipe output

@@ -181,16 +181,17 @@ spec:
                     description: The file format of the dataset, if applicable
                     enum:
                     - csv
-                    - json
-                    - parquet
-                    - tde
-                    - sql
-                    - table
-                    - fwf
+                    - tsv
                     - excel
+                    - fwf
+                    - hdf
+                    - html
+                    - json
+                    - pickle
                     - sas
-                    - spss
-                    - auto
+                    - stata
+                    - feather
+                    - parquet
                     type: string
                   observation:
                     description: The physical location of the observation file. the
@@ -356,16 +357,17 @@ spec:
                       location is a flat-file
                     enum:
                     - csv
-                    - json
-                    - parquet
-                    - tde
-                    - sql
-                    - table
-                    - fwf
+                    - tsv
                     - excel
+                    - fwf
+                    - hdf
+                    - html
+                    - json
+                    - pickle
                     - sas
-                    - spss
-                    - auto
+                    - stata
+                    - feather
+                    - parquet
                     type: string
                   includeFeatures:
                     default: true

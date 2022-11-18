@@ -83,16 +83,17 @@ spec:
                     description: Format is the dataset format
                     enum:
                     - csv
-                    - json
-                    - parquet
-                    - tde
-                    - sql
-                    - table
-                    - fwf
+                    - tsv
                     - excel
+                    - fwf
+                    - hdf
+                    - html
+                    - json
+                    - pickle
                     - sas
-                    - spss
-                    - auto
+                    - stata
+                    - feather
+                    - parquet
                     type: string
                   location:
                     description: Location is the folder of the actual data resides,
