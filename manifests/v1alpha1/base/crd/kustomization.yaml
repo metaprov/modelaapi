@@ -41,8 +41,6 @@ resources:
 - infra.modela.ai_tenants.yaml
 - infra.modela.ai_userroleclasses.yaml
 - infra.modela.ai_virtualbuckets.yaml
-- infra.modela.ai_virtualclusters.yaml
-- infra.modela.ai_virtualvolumes.yaml
 - team.modela.ai_meetings.yaml
 - team.modela.ai_postmortems.yaml
 - team.modela.ai_reviews.yaml
