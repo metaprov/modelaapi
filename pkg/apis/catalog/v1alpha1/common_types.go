@@ -1572,7 +1572,7 @@ func (runstatus *RunScheduleStatus) End() {
 	runstatus.Duration = now.Sub(runstatus.LastRun.Time).Seconds()
 }
 
-func (runstatus RunScheduleStatus) SetNext(nextRun metav1.Time) {
+func (runstatus *RunScheduleStatus) SetNext(nextRun metav1.Time) {
 	runstatus.NextRun = &nextRun
 }
 

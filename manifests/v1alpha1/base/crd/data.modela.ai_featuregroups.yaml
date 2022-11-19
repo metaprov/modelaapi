@@ -27,15 +27,24 @@ spec:
     - jsonPath: .spec.versionName
       name: Version
       type: string
+    - jsonPath: .spec.entityName
+      name: Entity
+      type: string
     - jsonPath: .spec.schedule
       name: Schedule
       type: string
-    - jsonPath: .status.lastRun.at
-      name: Last Run
+    - jsonPath: .status.ingestSchedule.lastRun
+      name: Last Ingest
+      type: date
+    - jsonPath: .status.syncScedule.lastRun
+      name: Last Sync
       type: date
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
+    - jsonPath: .spec.description
+      name: Description
+      type: string
     name: v1alpha1
     schema:
       openAPIV3Schema:
