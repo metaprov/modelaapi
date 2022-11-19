@@ -137,6 +137,11 @@ func (in *AlgorithmSpec) DeepCopyInto(out *AlgorithmSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Tasks != nil {
+		in, out := &in.Tasks, &out.Tasks
+		*out = make([]MLTask, len(*in))
+		copy(*out, *in)
+	}
 	if in.Sparse != nil {
 		in, out := &in.Sparse, &out.Sparse
 		*out = new(bool)
