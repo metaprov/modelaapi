@@ -108,18 +108,6 @@ type DatabaseProxyServiceClient interface {
 	CreateVirtualBucket(ctx context.Context, in *CreateVirtualBucketRequest, opts ...grpc.CallOption) (*v1alpha1.VirtualBucket, error)
 	UpdateVirtualBucket(ctx context.Context, in *UpdateVirtualBucketRequest, opts ...grpc.CallOption) (*v1alpha1.VirtualBucket, error)
 	DeleteVirtualBucket(ctx context.Context, in *DeleteVirtualBucketRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	// virtual cluster
-	ListVirtualClusters(ctx context.Context, in *ListVirtualClustersRequest, opts ...grpc.CallOption) (*ListVirtualClustersResponse, error)
-	GetVirtualCluster(ctx context.Context, in *GetVirtualClusterRequest, opts ...grpc.CallOption) (*v1alpha1.VirtualCluster, error)
-	CreateVirtualCluster(ctx context.Context, in *CreateVirtualClusterRequest, opts ...grpc.CallOption) (*v1alpha1.VirtualCluster, error)
-	UpdateVirtualCluster(ctx context.Context, in *UpdateVirtualClusterRequest, opts ...grpc.CallOption) (*v1alpha1.VirtualCluster, error)
-	DeleteVirtualCluster(ctx context.Context, in *DeleteVirtualClusterRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	// virtual volume
-	ListVirtualVolumes(ctx context.Context, in *ListVirtualVolumesRequest, opts ...grpc.CallOption) (*ListVirtualVolumesResponse, error)
-	GetVirtualVolume(ctx context.Context, in *GetVirtualVolumeRequest, opts ...grpc.CallOption) (*v1alpha1.VirtualVolume, error)
-	CreateVirtualVolume(ctx context.Context, in *CreateVirtualVolumeRequest, opts ...grpc.CallOption) (*v1alpha1.VirtualVolume, error)
-	UpdateVirtualVolume(ctx context.Context, in *UpdateVirtualVolumeRequest, opts ...grpc.CallOption) (*v1alpha1.VirtualVolume, error)
-	DeleteVirtualVolume(ctx context.Context, in *DeleteVirtualVolumeRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 	// data pipeline
 	ListDataPipelines(ctx context.Context, in *ListDataPipelinesRequest, opts ...grpc.CallOption) (*ListDataPipelinesResponse, error)
 	GetDataPipeline(ctx context.Context, in *GetDataPipelineRequest, opts ...grpc.CallOption) (*v1alpha12.DataPipeline, error)
@@ -907,96 +895,6 @@ func (c *databaseProxyServiceClient) UpdateVirtualBucket(ctx context.Context, in
 func (c *databaseProxyServiceClient) DeleteVirtualBucket(ctx context.Context, in *DeleteVirtualBucketRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
 	out := new(empty.Empty)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualBucket", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) ListVirtualClusters(ctx context.Context, in *ListVirtualClustersRequest, opts ...grpc.CallOption) (*ListVirtualClustersResponse, error) {
-	out := new(ListVirtualClustersResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualClusters", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) GetVirtualCluster(ctx context.Context, in *GetVirtualClusterRequest, opts ...grpc.CallOption) (*v1alpha1.VirtualCluster, error) {
-	out := new(v1alpha1.VirtualCluster)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualCluster", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) CreateVirtualCluster(ctx context.Context, in *CreateVirtualClusterRequest, opts ...grpc.CallOption) (*v1alpha1.VirtualCluster, error) {
-	out := new(v1alpha1.VirtualCluster)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualCluster", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) UpdateVirtualCluster(ctx context.Context, in *UpdateVirtualClusterRequest, opts ...grpc.CallOption) (*v1alpha1.VirtualCluster, error) {
-	out := new(v1alpha1.VirtualCluster)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualCluster", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) DeleteVirtualCluster(ctx context.Context, in *DeleteVirtualClusterRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualCluster", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) ListVirtualVolumes(ctx context.Context, in *ListVirtualVolumesRequest, opts ...grpc.CallOption) (*ListVirtualVolumesResponse, error) {
-	out := new(ListVirtualVolumesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualVolumes", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) GetVirtualVolume(ctx context.Context, in *GetVirtualVolumeRequest, opts ...grpc.CallOption) (*v1alpha1.VirtualVolume, error) {
-	out := new(v1alpha1.VirtualVolume)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualVolume", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) CreateVirtualVolume(ctx context.Context, in *CreateVirtualVolumeRequest, opts ...grpc.CallOption) (*v1alpha1.VirtualVolume, error) {
-	out := new(v1alpha1.VirtualVolume)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualVolume", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) UpdateVirtualVolume(ctx context.Context, in *UpdateVirtualVolumeRequest, opts ...grpc.CallOption) (*v1alpha1.VirtualVolume, error) {
-	out := new(v1alpha1.VirtualVolume)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualVolume", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) DeleteVirtualVolume(ctx context.Context, in *DeleteVirtualVolumeRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualVolume", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2437,18 +2335,6 @@ type DatabaseProxyServiceServer interface {
 	CreateVirtualBucket(context.Context, *CreateVirtualBucketRequest) (*v1alpha1.VirtualBucket, error)
 	UpdateVirtualBucket(context.Context, *UpdateVirtualBucketRequest) (*v1alpha1.VirtualBucket, error)
 	DeleteVirtualBucket(context.Context, *DeleteVirtualBucketRequest) (*empty.Empty, error)
-	// virtual cluster
-	ListVirtualClusters(context.Context, *ListVirtualClustersRequest) (*ListVirtualClustersResponse, error)
-	GetVirtualCluster(context.Context, *GetVirtualClusterRequest) (*v1alpha1.VirtualCluster, error)
-	CreateVirtualCluster(context.Context, *CreateVirtualClusterRequest) (*v1alpha1.VirtualCluster, error)
-	UpdateVirtualCluster(context.Context, *UpdateVirtualClusterRequest) (*v1alpha1.VirtualCluster, error)
-	DeleteVirtualCluster(context.Context, *DeleteVirtualClusterRequest) (*empty.Empty, error)
-	// virtual volume
-	ListVirtualVolumes(context.Context, *ListVirtualVolumesRequest) (*ListVirtualVolumesResponse, error)
-	GetVirtualVolume(context.Context, *GetVirtualVolumeRequest) (*v1alpha1.VirtualVolume, error)
-	CreateVirtualVolume(context.Context, *CreateVirtualVolumeRequest) (*v1alpha1.VirtualVolume, error)
-	UpdateVirtualVolume(context.Context, *UpdateVirtualVolumeRequest) (*v1alpha1.VirtualVolume, error)
-	DeleteVirtualVolume(context.Context, *DeleteVirtualVolumeRequest) (*empty.Empty, error)
 	// data pipeline
 	ListDataPipelines(context.Context, *ListDataPipelinesRequest) (*ListDataPipelinesResponse, error)
 	GetDataPipeline(context.Context, *GetDataPipelineRequest) (*v1alpha12.DataPipeline, error)
@@ -2818,36 +2704,6 @@ func (UnimplementedDatabaseProxyServiceServer) UpdateVirtualBucket(context.Conte
 }
 func (UnimplementedDatabaseProxyServiceServer) DeleteVirtualBucket(context.Context, *DeleteVirtualBucketRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteVirtualBucket not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) ListVirtualClusters(context.Context, *ListVirtualClustersRequest) (*ListVirtualClustersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListVirtualClusters not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) GetVirtualCluster(context.Context, *GetVirtualClusterRequest) (*v1alpha1.VirtualCluster, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetVirtualCluster not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) CreateVirtualCluster(context.Context, *CreateVirtualClusterRequest) (*v1alpha1.VirtualCluster, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateVirtualCluster not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) UpdateVirtualCluster(context.Context, *UpdateVirtualClusterRequest) (*v1alpha1.VirtualCluster, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateVirtualCluster not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) DeleteVirtualCluster(context.Context, *DeleteVirtualClusterRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteVirtualCluster not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) ListVirtualVolumes(context.Context, *ListVirtualVolumesRequest) (*ListVirtualVolumesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListVirtualVolumes not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) GetVirtualVolume(context.Context, *GetVirtualVolumeRequest) (*v1alpha1.VirtualVolume, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetVirtualVolume not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) CreateVirtualVolume(context.Context, *CreateVirtualVolumeRequest) (*v1alpha1.VirtualVolume, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateVirtualVolume not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) UpdateVirtualVolume(context.Context, *UpdateVirtualVolumeRequest) (*v1alpha1.VirtualVolume, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateVirtualVolume not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) DeleteVirtualVolume(context.Context, *DeleteVirtualVolumeRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteVirtualVolume not implemented")
 }
 func (UnimplementedDatabaseProxyServiceServer) ListDataPipelines(context.Context, *ListDataPipelinesRequest) (*ListDataPipelinesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListDataPipelines not implemented")
@@ -4568,186 +4424,6 @@ func _DatabaseProxyService_DeleteVirtualBucket_Handler(srv interface{}, ctx cont
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DatabaseProxyServiceServer).DeleteVirtualBucket(ctx, req.(*DeleteVirtualBucketRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_ListVirtualClusters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListVirtualClustersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).ListVirtualClusters(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualClusters",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).ListVirtualClusters(ctx, req.(*ListVirtualClustersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_GetVirtualCluster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetVirtualClusterRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).GetVirtualCluster(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualCluster",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).GetVirtualCluster(ctx, req.(*GetVirtualClusterRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_CreateVirtualCluster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateVirtualClusterRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).CreateVirtualCluster(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualCluster",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).CreateVirtualCluster(ctx, req.(*CreateVirtualClusterRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_UpdateVirtualCluster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateVirtualClusterRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).UpdateVirtualCluster(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualCluster",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).UpdateVirtualCluster(ctx, req.(*UpdateVirtualClusterRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_DeleteVirtualCluster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteVirtualClusterRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).DeleteVirtualCluster(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualCluster",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).DeleteVirtualCluster(ctx, req.(*DeleteVirtualClusterRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_ListVirtualVolumes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListVirtualVolumesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).ListVirtualVolumes(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualVolumes",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).ListVirtualVolumes(ctx, req.(*ListVirtualVolumesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_GetVirtualVolume_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetVirtualVolumeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).GetVirtualVolume(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualVolume",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).GetVirtualVolume(ctx, req.(*GetVirtualVolumeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_CreateVirtualVolume_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateVirtualVolumeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).CreateVirtualVolume(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualVolume",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).CreateVirtualVolume(ctx, req.(*CreateVirtualVolumeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_UpdateVirtualVolume_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateVirtualVolumeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).UpdateVirtualVolume(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualVolume",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).UpdateVirtualVolume(ctx, req.(*UpdateVirtualVolumeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_DeleteVirtualVolume_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteVirtualVolumeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).DeleteVirtualVolume(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualVolume",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).DeleteVirtualVolume(ctx, req.(*DeleteVirtualVolumeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -7738,46 +7414,6 @@ var DatabaseProxyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteVirtualBucket",
 			Handler:    _DatabaseProxyService_DeleteVirtualBucket_Handler,
-		},
-		{
-			MethodName: "ListVirtualClusters",
-			Handler:    _DatabaseProxyService_ListVirtualClusters_Handler,
-		},
-		{
-			MethodName: "GetVirtualCluster",
-			Handler:    _DatabaseProxyService_GetVirtualCluster_Handler,
-		},
-		{
-			MethodName: "CreateVirtualCluster",
-			Handler:    _DatabaseProxyService_CreateVirtualCluster_Handler,
-		},
-		{
-			MethodName: "UpdateVirtualCluster",
-			Handler:    _DatabaseProxyService_UpdateVirtualCluster_Handler,
-		},
-		{
-			MethodName: "DeleteVirtualCluster",
-			Handler:    _DatabaseProxyService_DeleteVirtualCluster_Handler,
-		},
-		{
-			MethodName: "ListVirtualVolumes",
-			Handler:    _DatabaseProxyService_ListVirtualVolumes_Handler,
-		},
-		{
-			MethodName: "GetVirtualVolume",
-			Handler:    _DatabaseProxyService_GetVirtualVolume_Handler,
-		},
-		{
-			MethodName: "CreateVirtualVolume",
-			Handler:    _DatabaseProxyService_CreateVirtualVolume_Handler,
-		},
-		{
-			MethodName: "UpdateVirtualVolume",
-			Handler:    _DatabaseProxyService_UpdateVirtualVolume_Handler,
-		},
-		{
-			MethodName: "DeleteVirtualVolume",
-			Handler:    _DatabaseProxyService_DeleteVirtualVolume_Handler,
 		},
 		{
 			MethodName: "ListDataPipelines",

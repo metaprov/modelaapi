@@ -105,7 +105,5 @@ protoc \
     github.com/metaprov/modelaapi/services/tenant/v1/tenant.proto \
     github.com/metaprov/modelaapi/services/trainerd/v1/trainerd.proto \
     github.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket.proto \
-    github.com/metaprov/modelaapi/services/virtualcluster/v1/virtualcluster.proto \
-    github.com/metaprov/modelaapi/services/virtualvolume/v1/virtualvolume.proto \
     github.com/metaprov/modelaapi/services/batchpredictord/v1/batchpredictord.proto
 

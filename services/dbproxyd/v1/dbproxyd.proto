@@ -488,73 +488,6 @@ message DeleteVirtualBucketRequest {
     string name = 2;
 }
 
-
-////////////////////////////////////////////////////////////////
-// VirtualCluster
-////////////////////////////////////////////////////////////////
-message ListVirtualClustersRequest {
-    string namespace   = 1;
-    int32 page_size    = 2;
-    string page_token  = 3;
-}
-
-message ListVirtualClustersResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster items = 1;
-    string next_page_token = 2;
-}
-
-message GetVirtualClusterRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message CreateVirtualClusterRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
-}
-
-message UpdateVirtualClusterRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
-}
-
-message DeleteVirtualClusterRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-////////////////////////////////////////////////////////////////
-// VirtualVolume
-////////////////////////////////////////////////////////////////
-
-message ListVirtualVolumesRequest {
-    string namespace   = 1;
-    int32 page_size    = 2;
-    string page_token  = 3;
-}
-
-message ListVirtualVolumesResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume items = 1;
-    string next_page_token = 2;
-}
-
-message GetVirtualVolumeRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message CreateVirtualVolumeRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
-}
-
-message UpdateVirtualVolumeRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
-}
-
-message DeleteVirtualVolumeRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-
 ////////////////////////////////////////////////////////////////
 // DataPipeline
 ////////////////////////////////////////////////////////////////
@@ -1675,20 +1608,6 @@ service DatabaseProxyService {
     rpc CreateVirtualBucket(CreateVirtualBucketRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket) {}
     rpc UpdateVirtualBucket(UpdateVirtualBucketRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket) {}
     rpc DeleteVirtualBucket(DeleteVirtualBucketRequest) returns (google.protobuf.Empty) {}
-
-    // virtual cluster
-    rpc ListVirtualClusters(ListVirtualClustersRequest) returns (ListVirtualClustersResponse) {}
-    rpc GetVirtualCluster(GetVirtualClusterRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster) {}
-    rpc CreateVirtualCluster(CreateVirtualClusterRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster) {}
-    rpc UpdateVirtualCluster(UpdateVirtualClusterRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster) {}
-    rpc DeleteVirtualCluster(DeleteVirtualClusterRequest) returns (google.protobuf.Empty) {}
-
-    // virtual volume
-    rpc ListVirtualVolumes(ListVirtualVolumesRequest) returns (ListVirtualVolumesResponse) {}
-    rpc GetVirtualVolume(GetVirtualVolumeRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume) {}
-    rpc CreateVirtualVolume(CreateVirtualVolumeRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume) {}
-    rpc UpdateVirtualVolume(UpdateVirtualVolumeRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume) {}
-    rpc DeleteVirtualVolume(DeleteVirtualVolumeRequest) returns (google.protobuf.Empty) {}
 
     // data pipeline
     rpc ListDataPipelines(ListDataPipelinesRequest) returns (ListDataPipelinesResponse) {}

@@ -63,7 +63,7 @@ type LabSpec struct {
 	// assigned to the Lab will be executed inside the cluster (currently not implemented)
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
-	ClusterName *string `json:"clusterName,omitempty" protobuf:"bytes,4,opt,name=clusterName"`
+	ExternalCluster *VirtualClusterSpec `json:"externalCluster,omitempty" protobuf:"bytes,4,opt,name=externalCluster"`
 	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
@@ -116,4 +116,79 @@ type ResourceLimitSpec struct {
 	QuotaSpec *corev1.ResourceQuotaSpec `json:"quota,omitempty" protobuf:"bytes,6,opt,name=quota"`
 	// +kubebuilder:validation:Optional
 	LimitRangeSpec *corev1.LimitRangeSpec `json:"limitRange,omitempty" protobuf:"bytes,7,opt,name=limitRange"`
+}
+
+type VirtualClusterSpec struct {
+	// Indicates if the lab should run on its own virtual cluster.
+	// Currently not supported
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=false
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// Description is the user provided description
+	//+kubebuilder:default:=""
+	//+optional
+	Description *string `json:"description.omitempty" protobuf:"bytes,2,opt,name=description"`
+	// Nodes is the desired number of nodes
+	//+kubebuilder:default:=1
+	//+kubebuilder:validation:Minimum=1
+	//+kubebuilder:validation:Maximum=10
+	// +kubebuilder:validation:Optional
+	Nodes *int32 `json:"nodes,omitempty" protobuf:"varint,3,opt,name=nodes"`
+	// +kubebuilder:validation:Optional
+	// NodeClassName is the class of nodes or vm
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	NodeClassName *string `json:"nodeClassName,omitempty" protobuf:"bytes,4,opt,name=nodeClassName"`
+	// +kubebuilder:validation:Optional
+	// Gpus is the desired number of gpus
+	//+kubebuilder:default:=0
+	//+kubebuilder:validation:Minimum=0
+	//+kubebuilder:validation:Maximum=10
+	// +kubebuilder:validation:Optional
+	Gpus *int32 `json:"gpus,omitempty" protobuf:"varint,5,opt,name=gpus"`
+	// +kubebuilder:validation:Optional
+	// GpuClassName is the The class of gpu.
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	GpuClassName *string `json:"gpuClassName,omitempty" protobuf:"bytes,6,opt,name=gpuClassName"`
+	// +kubebuilder:validation:Optional
+	// VolumeSize is the size of the volume that would be mounted on all the node of the cluster
+	//+kubebuilder:default:=0
+	//+kubebuilder:validation:Minimum=0
+	//+kubebuilder:validation:Maximum=10
+	// +kubebuilder:validation:Optional
+	VolumeSize *int32 `json:"volumeSize,omitempty" protobuf:"varint,7,opt,name=volumeSize"`
+	// +kubebuilder:validation:Optional
+	// Spot indicate if we should we use spot instances.
+	//+kubebuilder:default:=false
+	//+optional
+	Spot *bool `json:"spot,omitempty" protobuf:"varint,8,opt,name=spot"`
+	// ConnectionName refer to the name of the provider connection
+	// +kubebuilder:default:=""
+	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,9,opt,name=connectionName"`
+	// Owner is the account name of the owner of this cluster
+	// +kubebuilder:default:="no-one"
+	// +kubebuilder:validation:Optional
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,10,opt,name=owner"`
+	// Specify resource limits for the virtual cluster
+	// +kubebuilder:validation:Optional
+	Limits *ResourceLimitSpec `json:"limits,omitempty" protobuf:"bytes,11,opt,name=limits"`
+	// The cloud region, if this cluster is created in a public cloud
+	// +kubebuilder:validation:Optional
+	Region *string `json:"region,omitempty" protobuf:"bytes,12,opt,name=region"`
+	// The cloud AZ, if this cluster is created in a public cloud
+	// +kubebuilder:validation:Optional
+	Az *string `json:"az,omitempty" protobuf:"bytes,13,opt,name=az"`
+	// The cluster kubernetes version
+	// +kubebuilder:validation:Optional
+	KubernetesVersion *string `json:"kubernetesVersion,omitempty" protobuf:"bytes,14,opt,name=kubernetesVersion"`
+	// Set to true, for auto scaling cluster
+	// +kubebuilder:validation:Optional
+	AutoScale *bool `json:"autoscale,omitempty" protobuf:"varint,15,opt,name=autoscale"`
+	// Minimum number of nodes for auto scaling
+	// +kubebuilder:validation:Optional
+	MinNodes *int32 `json:"minNodes,omitempty" protobuf:"bytes,16,opt,name=minNodes"`
+	// Maximum number of nodes for auto scaling
+	// +kubebuilder:validation:Optional
+	MaxNodes *int32 `json:"maxNodes,omitempty" protobuf:"bytes,17,opt,name=maxNodes"`
 }

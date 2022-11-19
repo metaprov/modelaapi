@@ -113,9 +113,6 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
          github.com/metaprov/modelaapi/services/tenant/v1/tenant.proto \
          github.com/metaprov/modelaapi/services/trainerd/v1/trainerd.proto \
          github.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket.proto \
-         github.com/metaprov/modelaapi/services/virtualcluster/v1/virtualcluster.proto \
-         github.com/metaprov/modelaapi/services/virtualvolume/v1/virtualvolume.proto 
-
         #--go_out=plugins=grpc:$GOPATH/src \
         # \
 

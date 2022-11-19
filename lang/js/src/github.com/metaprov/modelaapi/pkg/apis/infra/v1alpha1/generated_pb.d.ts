@@ -3132,8 +3132,10 @@ export class LabSpec extends jspb.Message {
   hasLimits(): boolean;
   clearLimits(): LabSpec;
 
-  getClustername(): string;
-  setClustername(value: string): LabSpec;
+  getExternalcluster(): VirtualClusterSpec | undefined;
+  setExternalcluster(value?: VirtualClusterSpec): LabSpec;
+  hasExternalcluster(): boolean;
+  clearExternalcluster(): LabSpec;
 
   getOwner(): string;
   setOwner(value: string): LabSpec;
@@ -3151,7 +3153,7 @@ export namespace LabSpec {
     description: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     limits?: ResourceLimitSpec.AsObject,
-    clustername: string,
+    externalcluster?: VirtualClusterSpec.AsObject,
     owner: string,
   }
 }
@@ -5722,131 +5724,9 @@ export namespace VirtualBucketStatus {
   }
 }
 
-export class VirtualCluster extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): VirtualCluster;
-  hasMetadata(): boolean;
-  clearMetadata(): VirtualCluster;
-
-  getSpec(): VirtualClusterSpec | undefined;
-  setSpec(value?: VirtualClusterSpec): VirtualCluster;
-  hasSpec(): boolean;
-  clearSpec(): VirtualCluster;
-
-  getStatus(): VirtualClusterStatus | undefined;
-  setStatus(value?: VirtualClusterStatus): VirtualCluster;
-  hasStatus(): boolean;
-  clearStatus(): VirtualCluster;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VirtualCluster.AsObject;
-  static toObject(includeInstance: boolean, msg: VirtualCluster): VirtualCluster.AsObject;
-  static serializeBinaryToWriter(message: VirtualCluster, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VirtualCluster;
-  static deserializeBinaryFromReader(message: VirtualCluster, reader: jspb.BinaryReader): VirtualCluster;
-}
-
-export namespace VirtualCluster {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    spec?: VirtualClusterSpec.AsObject,
-    status?: VirtualClusterStatus.AsObject,
-  }
-}
-
-export class VirtualClusterAutoScaleSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): VirtualClusterAutoScaleSpec;
-
-  getMin(): number;
-  setMin(value: number): VirtualClusterAutoScaleSpec;
-
-  getMax(): number;
-  setMax(value: number): VirtualClusterAutoScaleSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VirtualClusterAutoScaleSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: VirtualClusterAutoScaleSpec): VirtualClusterAutoScaleSpec.AsObject;
-  static serializeBinaryToWriter(message: VirtualClusterAutoScaleSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VirtualClusterAutoScaleSpec;
-  static deserializeBinaryFromReader(message: VirtualClusterAutoScaleSpec, reader: jspb.BinaryReader): VirtualClusterAutoScaleSpec;
-}
-
-export namespace VirtualClusterAutoScaleSpec {
-  export type AsObject = {
-    enabled: boolean,
-    min: number,
-    max: number,
-  }
-}
-
-export class VirtualClusterCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): VirtualClusterCondition;
-
-  getStatus(): string;
-  setStatus(value: string): VirtualClusterCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): VirtualClusterCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): VirtualClusterCondition;
-
-  getReason(): string;
-  setReason(value: string): VirtualClusterCondition;
-
-  getMessage(): string;
-  setMessage(value: string): VirtualClusterCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VirtualClusterCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: VirtualClusterCondition): VirtualClusterCondition.AsObject;
-  static serializeBinaryToWriter(message: VirtualClusterCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VirtualClusterCondition;
-  static deserializeBinaryFromReader(message: VirtualClusterCondition, reader: jspb.BinaryReader): VirtualClusterCondition;
-}
-
-export namespace VirtualClusterCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
-export class VirtualClusterList extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): VirtualClusterList;
-  hasMetadata(): boolean;
-  clearMetadata(): VirtualClusterList;
-
-  getItemsList(): Array<VirtualCluster>;
-  setItemsList(value: Array<VirtualCluster>): VirtualClusterList;
-  clearItemsList(): VirtualClusterList;
-  addItems(value?: VirtualCluster, index?: number): VirtualCluster;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VirtualClusterList.AsObject;
-  static toObject(includeInstance: boolean, msg: VirtualClusterList): VirtualClusterList.AsObject;
-  static serializeBinaryToWriter(message: VirtualClusterList, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VirtualClusterList;
-  static deserializeBinaryFromReader(message: VirtualClusterList, reader: jspb.BinaryReader): VirtualClusterList;
-}
-
-export namespace VirtualClusterList {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
-    itemsList: Array<VirtualCluster.AsObject>,
-  }
-}
-
 export class VirtualClusterSpec extends jspb.Message {
-  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): VirtualClusterSpec;
-  hasTenantref(): boolean;
-  clearTenantref(): VirtualClusterSpec;
+  getEnabled(): boolean;
+  setEnabled(value: boolean): VirtualClusterSpec;
 
   getDescription(): string;
   setDescription(value: string): VirtualClusterSpec;
@@ -5889,10 +5769,14 @@ export class VirtualClusterSpec extends jspb.Message {
   getKubernetesversion(): string;
   setKubernetesversion(value: string): VirtualClusterSpec;
 
-  getAutoscale(): VirtualClusterAutoScaleSpec | undefined;
-  setAutoscale(value?: VirtualClusterAutoScaleSpec): VirtualClusterSpec;
-  hasAutoscale(): boolean;
-  clearAutoscale(): VirtualClusterSpec;
+  getAutoscale(): boolean;
+  setAutoscale(value: boolean): VirtualClusterSpec;
+
+  getMinnodes(): number;
+  setMinnodes(value: number): VirtualClusterSpec;
+
+  getMaxnodes(): number;
+  setMaxnodes(value: number): VirtualClusterSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VirtualClusterSpec.AsObject;
@@ -5904,7 +5788,7 @@ export class VirtualClusterSpec extends jspb.Message {
 
 export namespace VirtualClusterSpec {
   export type AsObject = {
-    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    enabled: boolean,
     description: string,
     nodes: number,
     nodeclassname: string,
@@ -5918,217 +5802,9 @@ export namespace VirtualClusterSpec {
     region: string,
     az: string,
     kubernetesversion: string,
-    autoscale?: VirtualClusterAutoScaleSpec.AsObject,
-  }
-}
-
-export class VirtualClusterStatus extends jspb.Message {
-  getObservedgeneration(): number;
-  setObservedgeneration(value: number): VirtualClusterStatus;
-
-  getAvailablenodes(): number;
-  setAvailablenodes(value: number): VirtualClusterStatus;
-
-  getAvailablegpus(): number;
-  setAvailablegpus(value: number): VirtualClusterStatus;
-
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): VirtualClusterStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): VirtualClusterStatus;
-
-  getFailurereason(): string;
-  setFailurereason(value: string): VirtualClusterStatus;
-
-  getFailuremessage(): string;
-  setFailuremessage(value: string): VirtualClusterStatus;
-
-  getConditionsList(): Array<VirtualClusterCondition>;
-  setConditionsList(value: Array<VirtualClusterCondition>): VirtualClusterStatus;
-  clearConditionsList(): VirtualClusterStatus;
-  addConditions(value?: VirtualClusterCondition, index?: number): VirtualClusterCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VirtualClusterStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: VirtualClusterStatus): VirtualClusterStatus.AsObject;
-  static serializeBinaryToWriter(message: VirtualClusterStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VirtualClusterStatus;
-  static deserializeBinaryFromReader(message: VirtualClusterStatus, reader: jspb.BinaryReader): VirtualClusterStatus;
-}
-
-export namespace VirtualClusterStatus {
-  export type AsObject = {
-    observedgeneration: number,
-    availablenodes: number,
-    availablegpus: number,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
-    conditionsList: Array<VirtualClusterCondition.AsObject>,
-  }
-}
-
-export class VirtualVolume extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): VirtualVolume;
-  hasMetadata(): boolean;
-  clearMetadata(): VirtualVolume;
-
-  getSpec(): VirtualVolumeSpec | undefined;
-  setSpec(value?: VirtualVolumeSpec): VirtualVolume;
-  hasSpec(): boolean;
-  clearSpec(): VirtualVolume;
-
-  getStatus(): VirtualVolumeStatus | undefined;
-  setStatus(value?: VirtualVolumeStatus): VirtualVolume;
-  hasStatus(): boolean;
-  clearStatus(): VirtualVolume;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VirtualVolume.AsObject;
-  static toObject(includeInstance: boolean, msg: VirtualVolume): VirtualVolume.AsObject;
-  static serializeBinaryToWriter(message: VirtualVolume, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VirtualVolume;
-  static deserializeBinaryFromReader(message: VirtualVolume, reader: jspb.BinaryReader): VirtualVolume;
-}
-
-export namespace VirtualVolume {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    spec?: VirtualVolumeSpec.AsObject,
-    status?: VirtualVolumeStatus.AsObject,
-  }
-}
-
-export class VirtualVolumeCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): VirtualVolumeCondition;
-
-  getStatus(): string;
-  setStatus(value: string): VirtualVolumeCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): VirtualVolumeCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): VirtualVolumeCondition;
-
-  getReason(): string;
-  setReason(value: string): VirtualVolumeCondition;
-
-  getMessage(): string;
-  setMessage(value: string): VirtualVolumeCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VirtualVolumeCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: VirtualVolumeCondition): VirtualVolumeCondition.AsObject;
-  static serializeBinaryToWriter(message: VirtualVolumeCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VirtualVolumeCondition;
-  static deserializeBinaryFromReader(message: VirtualVolumeCondition, reader: jspb.BinaryReader): VirtualVolumeCondition;
-}
-
-export namespace VirtualVolumeCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
-export class VirtualVolumeList extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): VirtualVolumeList;
-  hasMetadata(): boolean;
-  clearMetadata(): VirtualVolumeList;
-
-  getItemsList(): Array<VirtualVolume>;
-  setItemsList(value: Array<VirtualVolume>): VirtualVolumeList;
-  clearItemsList(): VirtualVolumeList;
-  addItems(value?: VirtualVolume, index?: number): VirtualVolume;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VirtualVolumeList.AsObject;
-  static toObject(includeInstance: boolean, msg: VirtualVolumeList): VirtualVolumeList.AsObject;
-  static serializeBinaryToWriter(message: VirtualVolumeList, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VirtualVolumeList;
-  static deserializeBinaryFromReader(message: VirtualVolumeList, reader: jspb.BinaryReader): VirtualVolumeList;
-}
-
-export namespace VirtualVolumeList {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
-    itemsList: Array<VirtualVolume.AsObject>,
-  }
-}
-
-export class VirtualVolumeSpec extends jspb.Message {
-  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): VirtualVolumeSpec;
-  hasTenantref(): boolean;
-  clearTenantref(): VirtualVolumeSpec;
-
-  getConnectionname(): string;
-  setConnectionname(value: string): VirtualVolumeSpec;
-
-  getDescription(): string;
-  setDescription(value: string): VirtualVolumeSpec;
-
-  getOwner(): string;
-  setOwner(value: string): VirtualVolumeSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VirtualVolumeSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: VirtualVolumeSpec): VirtualVolumeSpec.AsObject;
-  static serializeBinaryToWriter(message: VirtualVolumeSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VirtualVolumeSpec;
-  static deserializeBinaryFromReader(message: VirtualVolumeSpec, reader: jspb.BinaryReader): VirtualVolumeSpec;
-}
-
-export namespace VirtualVolumeSpec {
-  export type AsObject = {
-    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    connectionname: string,
-    description: string,
-    owner: string,
-  }
-}
-
-export class VirtualVolumeStatus extends jspb.Message {
-  getObservedgeneration(): number;
-  setObservedgeneration(value: number): VirtualVolumeStatus;
-
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): VirtualVolumeStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): VirtualVolumeStatus;
-
-  getFailurereason(): string;
-  setFailurereason(value: string): VirtualVolumeStatus;
-
-  getFailuremessage(): string;
-  setFailuremessage(value: string): VirtualVolumeStatus;
-
-  getConditionsList(): Array<VirtualVolumeCondition>;
-  setConditionsList(value: Array<VirtualVolumeCondition>): VirtualVolumeStatus;
-  clearConditionsList(): VirtualVolumeStatus;
-  addConditions(value?: VirtualVolumeCondition, index?: number): VirtualVolumeCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VirtualVolumeStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: VirtualVolumeStatus): VirtualVolumeStatus.AsObject;
-  static serializeBinaryToWriter(message: VirtualVolumeStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VirtualVolumeStatus;
-  static deserializeBinaryFromReader(message: VirtualVolumeStatus, reader: jspb.BinaryReader): VirtualVolumeStatus;
-}
-
-export namespace VirtualVolumeStatus {
-  export type AsObject = {
-    observedgeneration: number,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
-    conditionsList: Array<VirtualVolumeCondition.AsObject>,
+    autoscale: boolean,
+    minnodes: number,
+    maxnodes: number,
   }
 }
 

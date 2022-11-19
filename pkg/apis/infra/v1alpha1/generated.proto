@@ -1806,7 +1806,7 @@ message LabSpec {
   // assigned to the Lab will be executed inside the cluster (currently not implemented)
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
-  optional string clusterName = 4;
+  optional VirtualClusterSpec externalCluster = 4;
 
   // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
@@ -3277,75 +3277,12 @@ message VirtualBucketStatus {
   repeated VirtualBucketCondition conditions = 6;
 }
 
-// VirtualCluster defined a running kubernetes cluster with N nodes and GPU.
-// The study can create or destroy virtual clusters during training.
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.ownerName",description="cluster owner account"
-// +kubebuilder:printcolumn:name="Nodes",type="integer",JSONPath=".spec.connectionName",description="virtual bucket connections"
-// +kubebuilder:printcolumn:name="Node Class",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
-// +kubebuilder:printcolumn:name="Gpus",type="integer",JSONPath=".spec.connectionName",description="virtual bucket connections"
-// +kubebuilder:printcolumn:name="Gpu Class",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
-// +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
-// +kubebuilder:resource:path=virtualclusters,singular=virtualcluster,categories={infra,modela}
-message VirtualCluster {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional VirtualClusterSpec spec = 2;
-
-  // +optional
-  optional VirtualClusterStatus status = 3;
-}
-
-message VirtualClusterAutoScaleSpec {
-  // Is auto scaling enabled
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-
-  // Min number of nodes
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 min = 2;
-
-  // Max number of nodes
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 max = 3;
-}
-
-// VirtualClusterCondition describes the state of a virtual cluster at a certain point.
-message VirtualClusterCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
-}
-
-// +kubebuilder:object:root=true
-// VirtualClusterList is a list of VirtualCluster
-message VirtualClusterList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
-
-  repeated VirtualCluster items = 2;
-}
-
 message VirtualClusterSpec {
-  // The owner of the virtual bucket
+  // Indicates if the lab should run on its own virtual cluster.
+  // Currently not supported
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
+  // +kubebuilder:default:=false
+  optional bool enabled = 1;
 
   // Description is the user provided description
   // +kubebuilder:default:=""
@@ -3418,130 +3355,17 @@ message VirtualClusterSpec {
   // +kubebuilder:validation:Optional
   optional string kubernetesVersion = 14;
 
-  // Auto Scale specification
+  // Set to true, for auto scaling cluster
   // +kubebuilder:validation:Optional
-  optional VirtualClusterAutoScaleSpec autoScale = 15;
-}
+  optional bool autoscale = 15;
 
-message VirtualClusterStatus {
-  // ObservedGeneration is the Last generation that was acted on
+  // Minimum number of nodes for auto scaling
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
+  optional int32 minNodes = 16;
 
-  // +kubebuilder:validation:Minimum=0
-  // +optional
-  optional int32 availableNodes = 2;
-
-  // Number of available Gpus
-  // +kubebuilder:validation:Minimum=0
-  // +optional
-  optional int32 availableGpus = 3;
-
-  // Last time the object was updated
+  // Maximum number of nodes for auto scaling
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
-
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
-  // +kubebuilder:validation:Optional
-  optional string failureReason = 5;
-
-  // Update in case of terminal failure message
-  // +kubebuilder:validation:Optional
-  optional string failureMessage = 6;
-
-  // +patchMergeKey=type
-  // +patchStrategy=merge
-  // +kubebuilder:validation:Optional
-  repeated VirtualClusterCondition conditions = 7;
-}
-
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="StorageConnection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=virtualvolumes,shortName=vol,singular=virtualvolume,categories={infra,modela,all}
-// VirtualVolume represent a volume api object
-message VirtualVolume {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional VirtualVolumeSpec spec = 2;
-
-  // +optional
-  optional VirtualVolumeStatus status = 3;
-}
-
-message VirtualVolumeCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
-
-  // The reason for the condition's last transition.
-  optional string reason = 5;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 6;
-}
-
-// +kubebuilder:object:root=true
-// VirtualVolumeList is a list of mdvolumes
-message VirtualVolumeList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
-
-  repeated VirtualVolume items = 2;
-}
-
-// VirtualVolumeSpec define the desired state of the mdvolume.
-message VirtualVolumeSpec {
-  // The Lab that own the git repository
-  // Default to the default volume.
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
-
-  //  specify the api connections of this mdvolume cloud provider.
-  // +kubebuilder:validation:Optional
-  optional string connectionName = 2;
-
-  // User provided description
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:MaxLength=512
-  optional string description = 3;
-
-  // The owner account name
-  // +kubebuilder:default:="no-one"
-  // +kubebuilder:validation:Optional
-  optional string owner = 4;
-}
-
-message VirtualVolumeStatus {
-  // ObservedGeneration is the Last generation that was acted on
-  // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
-
-  // Last time the object was updated
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
-
-  // Update in case of terminal failure
-  // Borrowed from cluster api controller
-  // +kubebuilder:validation:Optional
-  optional string failureReason = 3;
-
-  // Update in case of terminal failure message
-  // +kubebuilder:validation:Optional
-  optional string failureMessage = 4;
-
-  // +patchMergeKey=type
-  // +patchStrategy=merge
-  // +kubebuilder:validation:Optional
-  repeated VirtualVolumeCondition conditions = 5;
+  optional int32 maxNodes = 17;
 }
 
 message WebhookSpec {
