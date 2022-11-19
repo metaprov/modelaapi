@@ -1805,7 +1805,6 @@ message LabSpec {
   // ClusterName is the name of a VirtualCluster that exists under the same tenant as the object. If specified, Jobs
   // assigned to the Lab will be executed inside the cluster (currently not implemented)
   // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=""
   optional VirtualClusterSpec externalCluster = 4;
 
   // The name of the Account which created the object, which exists in the same tenant as the object

@@ -62,7 +62,6 @@ type LabSpec struct {
 	// ClusterName is the name of a VirtualCluster that exists under the same tenant as the object. If specified, Jobs
 	// assigned to the Lab will be executed inside the cluster (currently not implemented)
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default:=""
 	ExternalCluster *VirtualClusterSpec `json:"externalCluster,omitempty" protobuf:"bytes,4,opt,name=externalCluster"`
 	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"

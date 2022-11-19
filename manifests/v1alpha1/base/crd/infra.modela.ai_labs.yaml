@@ -59,7 +59,6 @@ spec:
                 maxLength: 256
                 type: string
               externalCluster:
-                default: ""
                 description: ClusterName is the name of a VirtualCluster that exists
                   under the same tenant as the object. If specified, Jobs assigned
                   to the Lab will be executed inside the cluster (currently not implemented)
