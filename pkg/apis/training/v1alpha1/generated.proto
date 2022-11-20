@@ -1606,6 +1606,12 @@ message ModelClassSpec {
   // The schedule for summary report
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule reportSchedule = 13;
+
+  // Fast indicates if Dataset, Model and Study resources associated with the ModelClass should run in fast mode.
+  // Running in fast mode will skip unnecessary workloads such as profiling, reporting, explaining, etc.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool fast = 14;
 }
 
 message ModelClassStatus {

@@ -2278,6 +2278,9 @@ export class ModelClassSpec extends jspb.Message {
   hasReportschedule(): boolean;
   clearReportschedule(): ModelClassSpec;
 
+  getFast(): boolean;
+  setFast(value: boolean): ModelClassSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassSpec): ModelClassSpec.AsObject;
@@ -2301,6 +2304,7 @@ export namespace ModelClassSpec {
     serving?: ModelClassServingSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     reportschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    fast: boolean,
   }
 }
 

@@ -23770,7 +23770,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.to
     training: (f = msg.getTraining()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.toObject(includeInstance, f),
     serving: (f = msg.getServing()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassServingSpec.toObject(includeInstance, f),
     notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f),
-    reportschedule: (f = msg.getReportschedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f)
+    reportschedule: (f = msg.getReportschedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
+    fast: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -23865,6 +23866,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.de
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
       msg.setReportschedule(value);
+      break;
+    case 14:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setFast(value);
       break;
     default:
       reader.skipField();
@@ -23991,6 +23996,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.se
       13,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeBool(
+      14,
+      f
     );
   }
 };
@@ -24469,6 +24481,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.pr
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.hasReportschedule = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional bool fast = 14;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.getFast = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.setFast = function(value) {
+  return jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.clearFast = function() {
+  return jspb.Message.setField(this, 14, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.hasFast = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
