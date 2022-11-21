@@ -47,9 +47,6 @@ protoc \
     github.com/metaprov/modelaapi/services/connection/v1/connection.proto \
     github.com/metaprov/modelaapi/services/curtain/v1/curtain.proto \
     github.com/metaprov/modelaapi/services/data/v1/data.proto \
-    github.com/metaprov/modelaapi/services/sqlquery/v1/sqlquery.proto \
-    github.com/metaprov/modelaapi/services/webrequestrun/v1/webrequestrun.proto \
-    github.com/metaprov/modelaapi/services/webrequest/v1/webrequest.proto \        
     github.com/metaprov/modelaapi/services/datapipeline/v1/datapipeline.proto \
     github.com/metaprov/modelaapi/services/datapipelinerun/v1/datapipelinerun.proto \
     github.com/metaprov/modelaapi/services/dataproduct/v1/dataproduct.proto \
