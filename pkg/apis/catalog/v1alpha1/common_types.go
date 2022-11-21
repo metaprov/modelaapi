@@ -2239,6 +2239,9 @@ const (
 	TenantLabelKey        = "modela.ai/tenant"
 	UserClassLabelKey     = "modela.ai/userclass"
 	VirtualBucketLabelKey = "modela.ai/virtualbucket"
+	// Set the ref on the job for the original object
+	ObjectRefNamespaceLabelKey = "modela.ai/object-ref-namespace"
+	ObjectRefNameLabelKey      = "modela.ai/object-ref-name"
 
 	// team
 	MeetingLabelKey    = "modela.ai/meeting"
