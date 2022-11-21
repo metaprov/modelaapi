@@ -54,12 +54,6 @@ type DatabaseProxyServiceClient interface {
 	CreateAttachment(ctx context.Context, in *CreateAttachmentRequest, opts ...grpc.CallOption) (*v1alpha1.Attachment, error)
 	UpdateAttachment(ctx context.Context, in *UpdateAttachmentRequest, opts ...grpc.CallOption) (*v1alpha1.Attachment, error)
 	DeleteAttachment(ctx context.Context, in *DeleteAttachmentRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	// commits
-	ListCommits(ctx context.Context, in *ListCommitsRequest, opts ...grpc.CallOption) (*ListCommitsResponse, error)
-	GetCommit(ctx context.Context, in *GetCommitRequest, opts ...grpc.CallOption) (*v1alpha1.Commit, error)
-	CreateCommit(ctx context.Context, in *CreateCommitRequest, opts ...grpc.CallOption) (*v1alpha1.Commit, error)
-	UpdateCommit(ctx context.Context, in *UpdateCommitRequest, opts ...grpc.CallOption) (*v1alpha1.Commit, error)
-	DeleteCommit(ctx context.Context, in *DeleteCommitRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 	// api token
 	ListApiTokens(ctx context.Context, in *ListApiTokensRequest, opts ...grpc.CallOption) (*ListApiTokensResponse, error)
 	GetApiToken(ctx context.Context, in *GetApiTokenRequest, opts ...grpc.CallOption) (*v1alpha1.ApiToken, error)
@@ -445,51 +439,6 @@ func (c *databaseProxyServiceClient) UpdateAttachment(ctx context.Context, in *U
 func (c *databaseProxyServiceClient) DeleteAttachment(ctx context.Context, in *DeleteAttachmentRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
 	out := new(empty.Empty)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAttachment", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) ListCommits(ctx context.Context, in *ListCommitsRequest, opts ...grpc.CallOption) (*ListCommitsResponse, error) {
-	out := new(ListCommitsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCommits", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) GetCommit(ctx context.Context, in *GetCommitRequest, opts ...grpc.CallOption) (*v1alpha1.Commit, error) {
-	out := new(v1alpha1.Commit)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCommit", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) CreateCommit(ctx context.Context, in *CreateCommitRequest, opts ...grpc.CallOption) (*v1alpha1.Commit, error) {
-	out := new(v1alpha1.Commit)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCommit", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) UpdateCommit(ctx context.Context, in *UpdateCommitRequest, opts ...grpc.CallOption) (*v1alpha1.Commit, error) {
-	out := new(v1alpha1.Commit)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCommit", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) DeleteCommit(ctx context.Context, in *DeleteCommitRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCommit", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1831,12 +1780,6 @@ type DatabaseProxyServiceServer interface {
 	CreateAttachment(context.Context, *CreateAttachmentRequest) (*v1alpha1.Attachment, error)
 	UpdateAttachment(context.Context, *UpdateAttachmentRequest) (*v1alpha1.Attachment, error)
 	DeleteAttachment(context.Context, *DeleteAttachmentRequest) (*empty.Empty, error)
-	// commits
-	ListCommits(context.Context, *ListCommitsRequest) (*ListCommitsResponse, error)
-	GetCommit(context.Context, *GetCommitRequest) (*v1alpha1.Commit, error)
-	CreateCommit(context.Context, *CreateCommitRequest) (*v1alpha1.Commit, error)
-	UpdateCommit(context.Context, *UpdateCommitRequest) (*v1alpha1.Commit, error)
-	DeleteCommit(context.Context, *DeleteCommitRequest) (*empty.Empty, error)
 	// api token
 	ListApiTokens(context.Context, *ListApiTokensRequest) (*ListApiTokensResponse, error)
 	GetApiToken(context.Context, *GetApiTokenRequest) (*v1alpha1.ApiToken, error)
@@ -2074,21 +2017,6 @@ func (UnimplementedDatabaseProxyServiceServer) UpdateAttachment(context.Context,
 }
 func (UnimplementedDatabaseProxyServiceServer) DeleteAttachment(context.Context, *DeleteAttachmentRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAttachment not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) ListCommits(context.Context, *ListCommitsRequest) (*ListCommitsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListCommits not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) GetCommit(context.Context, *GetCommitRequest) (*v1alpha1.Commit, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCommit not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) CreateCommit(context.Context, *CreateCommitRequest) (*v1alpha1.Commit, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateCommit not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) UpdateCommit(context.Context, *UpdateCommitRequest) (*v1alpha1.Commit, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateCommit not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) DeleteCommit(context.Context, *DeleteCommitRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteCommit not implemented")
 }
 func (UnimplementedDatabaseProxyServiceServer) ListApiTokens(context.Context, *ListApiTokensRequest) (*ListApiTokensResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListApiTokens not implemented")
@@ -2984,96 +2912,6 @@ func _DatabaseProxyService_DeleteAttachment_Handler(srv interface{}, ctx context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DatabaseProxyServiceServer).DeleteAttachment(ctx, req.(*DeleteAttachmentRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_ListCommits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListCommitsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).ListCommits(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCommits",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).ListCommits(ctx, req.(*ListCommitsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_GetCommit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCommitRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).GetCommit(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCommit",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).GetCommit(ctx, req.(*GetCommitRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_CreateCommit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateCommitRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).CreateCommit(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCommit",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).CreateCommit(ctx, req.(*CreateCommitRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_UpdateCommit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateCommitRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).UpdateCommit(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCommit",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).UpdateCommit(ctx, req.(*UpdateCommitRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_DeleteCommit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteCommitRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).DeleteCommit(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCommit",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).DeleteCommit(ctx, req.(*DeleteCommitRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -5794,26 +5632,6 @@ var DatabaseProxyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteAttachment",
 			Handler:    _DatabaseProxyService_DeleteAttachment_Handler,
-		},
-		{
-			MethodName: "ListCommits",
-			Handler:    _DatabaseProxyService_ListCommits_Handler,
-		},
-		{
-			MethodName: "GetCommit",
-			Handler:    _DatabaseProxyService_GetCommit_Handler,
-		},
-		{
-			MethodName: "CreateCommit",
-			Handler:    _DatabaseProxyService_CreateCommit_Handler,
-		},
-		{
-			MethodName: "UpdateCommit",
-			Handler:    _DatabaseProxyService_UpdateCommit_Handler,
-		},
-		{
-			MethodName: "DeleteCommit",
-			Handler:    _DatabaseProxyService_DeleteCommit_Handler,
 		},
 		{
 			MethodName: "ListApiTokens",

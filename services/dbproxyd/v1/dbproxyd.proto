@@ -181,39 +181,6 @@ message DeleteMeetingRequest {
 
 
 
-//////////////////////////////////////////////////////
-/// Commits
-//////////////////////////////////////////////////////
-
-message ListCommitsRequest {
-    string namespace   = 1;
-    int32 page_size    = 2;
-    string page_token  = 3;
-}
-
-message ListCommitsResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit items = 1;
-    string next_page_token = 2;
-}
-
-message GetCommitRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message CreateCommitRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit item = 1;
-}
-
-message UpdateCommitRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit item = 2;
-}
-
-message DeleteCommitRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
 
 //////////////////////////////////////////////////////
 /// ApiTokens
@@ -1239,14 +1206,6 @@ service DatabaseProxyService {
     rpc UpdateAttachment(UpdateAttachmentRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment) {}
     rpc DeleteAttachment(DeleteAttachmentRequest) returns (google.protobuf.Empty) {}
     
-    
-    // commits
-    rpc ListCommits(ListCommitsRequest) returns (ListCommitsResponse) {}
-    rpc GetCommit(GetCommitRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit) {}
-    rpc CreateCommit(CreateCommitRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit) { }
-    rpc UpdateCommit(UpdateCommitRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit) {}
-    rpc DeleteCommit(DeleteCommitRequest) returns (google.protobuf.Empty) {}
-
     // api token
     rpc ListApiTokens(ListApiTokensRequest) returns (ListApiTokensResponse) {}
     rpc GetApiToken(GetApiTokenRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken) { }

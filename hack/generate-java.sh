@@ -39,7 +39,6 @@ protoc \
     github.com/metaprov/modelaapi/services/apitoken/v1/apitoken.proto \
     github.com/metaprov/modelaapi/services/alert/v1/alert.proto \
     github.com/metaprov/modelaapi/services/attachment/v1/attachment.proto \
-    github.com/metaprov/modelaapi/services/commit/v1/commit.proto \
     github.com/metaprov/modelaapi/services/dbproxyd/v1/dbproxyd.proto \
     github.com/metaprov/modelaapi/services/catalog/v1/catalog.proto \
     github.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd.proto \
