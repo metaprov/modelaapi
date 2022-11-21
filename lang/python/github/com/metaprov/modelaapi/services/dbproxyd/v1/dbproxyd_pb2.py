@@ -21,7 +21,7 @@ from github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1 import generated_pb2 a
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nAgithub.com/metaprov/modelaapi/services/dbproxyd/v1/dbproxyd.proto\x12\x32github.com.metaprov.modelaapi.services.dbproxyd.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto\x1a\x1bgoogle/protobuf/empty.proto\"O\n\x13ListAccountsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"~\n\x14ListAccountsResponse\x12M\n\x05items\x18\x01 \x03(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"d\n\x14\x43reateAccountRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\"d\n\x14UpdateAccountRequest\x12L\n\x04item\x18\x02 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\"7\n\x14\x44\x65leteAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"M\n\x11ListAlertsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"z\n\x12ListAlertsResponse\x12K\n\x05items\x18\x01 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"2\n\x0fGetAlertRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"`\n\x12\x43reateAlertRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"`\n\x12UpdateAlertRequest\x12J\n\x04item\x18\x02 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"5\n\x12\x44\x65leteAlertRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListAttachmentsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x84\x01\n\x17ListAttachmentsResponse\x12P\n\x05items\x18\x01 \x03(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetAttachmentRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"j\n\x17\x43reateAttachmentRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\"j\n\x17UpdateAttachmentRequest\x12O\n\x04item\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\":\n\x17\x44\x65leteAttachmentRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"L\n\x10ListTodosRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"w\n\x11ListTodosResponse\x12I\n\x05items\x18\x01 \x03(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"1\n\x0eGetTodoRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"]\n\x11\x43reateTodoRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\"]\n\x11UpdateTodoRequest\x12H\n\x04item\x18\x02 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\"4\n\x11\x44\x65leteTodoRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListMeetingsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"}\n\x14ListMeetingsResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetMeetingRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x14\x43reateMeetingRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting\"c\n\x14UpdateMeetingRequest\x12K\n\x04item\x18\x02 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting\"7\n\x14\x44\x65leteMeetingRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"P\n\x14ListApiTokensRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x80\x01\n\x15ListApiTokensResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"5\n\x12GetApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"f\n\x15\x43reateApiTokenRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\"f\n\x15UpdateApiTokenRequest\x12M\n\x04item\x18\x02 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\"8\n\x15\x44\x65leteApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListConnectionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x84\x01\n\x17ListConnectionsResponse\x12P\n\x05items\x18\x01 \x03(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"j\n\x17\x43reateConnectionRequest\x12O\n\x04item\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\"j\n\x17UpdateConnectionRequest\x12O\n\x04item\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\":\n\x17\x44\x65leteConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"K\n\x0fListLabsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"v\n\x10ListLabsResponse\x12I\n\x05items\x18\x01 \x03(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"0\n\rGetLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\\\n\x10\x43reateLabRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\"\\\n\x10UpdateLabRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\"3\n\x10\x44\x65leteLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListLicensesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"~\n\x14ListLicensesResponse\x12M\n\x05items\x18\x01 \x03(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetLicenseRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"d\n\x14\x43reateLicenseRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\"d\n\x14UpdateLicenseRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\"7\n\x14\x44\x65leteLicenseRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"P\n\x14ListNotifiersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x80\x01\n\x15ListNotifiersResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"5\n\x12GetNotifierRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"f\n\x15\x43reateNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"f\n\x15UpdateNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"8\n\x15\x44\x65leteNotifierRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"S\n\x17ListServingsitesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x86\x01\n\x18ListServingsitesResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"8\n\x15GetServingsiteRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"l\n\x18\x43reateServingsiteRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\"l\n\x18UpdateServingsiteRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\";\n\x18\x44\x65leteServingsiteRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListTenantsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"|\n\x13ListTenantsResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"b\n\x13\x43reateTenantRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\"b\n\x13UpdateTenantRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\"6\n\x13\x44\x65leteTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"U\n\x19ListVirtualBucketsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8a\x01\n\x1aListVirtualBucketsResponse\x12S\n\x05items\x18\x01 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\":\n\x17GetVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"p\n\x1a\x43reateVirtualBucketRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"p\n\x1aUpdateVirtualBucketRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"=\n\x1a\x44\x65leteVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"T\n\x18ListDataPipelinesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x87\x01\n\x19ListDataPipelinesResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"9\n\x16GetDataPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n\x19\x43reateDataPipelineRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\"m\n\x19UpdateDataPipelineRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\"<\n\x19\x44\x65leteDataPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"W\n\x1bListDataPipelineRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8d\x01\n\x1cListDataPipelineRunsResponse\x12T\n\x05items\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"<\n\x19GetDataPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x1c\x43reateDataPipelineRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun\"s\n\x1cUpdateDataPipelineRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun\"?\n\x1c\x44\x65leteDataPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"S\n\x17ListDataProductsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x85\x01\n\x18ListDataProductsResponse\x12P\n\x05items\x18\x01 \x03(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"8\n\x15GetDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"k\n\x18\x43reateDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\"k\n\x18UpdateDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\";\n\x18\x44\x65leteDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"Z\n\x1eListDataProductVersionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x93\x01\n\x1fListDataProductVersionsResponse\x12W\n\x05items\x18\x01 \x03(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"?\n\x1cGetDataProductVersionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"y\n\x1f\x43reateDataProductVersionRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\"y\n\x1fUpdateDataProductVersionRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\"B\n\x1f\x44\x65leteDataProductVersionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListDatasetsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"}\n\x14ListDatasetsResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x14\x43reateDatasetRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\"c\n\x14UpdateDatasetRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\"7\n\x14\x44\x65leteDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListDatasourcesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x83\x01\n\x17ListDatasourcesResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetDatasourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"i\n\x17\x43reateDatasourceRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\"i\n\x17UpdateDatasourceRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\":\n\x17\x44\x65leteDatasourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListEntitiesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"|\n\x14ListEntitiesResponse\x12K\n\x05items\x18\x01 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x13\x43reateEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\"a\n\x13UpdateEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\"6\n\x13\x44\x65leteEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"S\n\x17ListModelClassesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x88\x01\n\x18ListModelClassesResponse\x12S\n\x05items\x18\x01 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetModelClassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n\x17\x43reateModelClassRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\"m\n\x17UpdateModelClassRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\":\n\x17\x44\x65leteModelClassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"X\n\x1cListFeatureHistogramsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8f\x01\n\x1dListFeatureHistogramsResponse\x12U\n\x05items\x18\x01 \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"=\n\x1aGetFeatureHistogramRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x1d\x43reateFeatureHistogramRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\"u\n\x1dUpdateFeatureHistogramRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\"@\n\x1d\x44\x65leteFeatureHistogramRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"S\n\x17ListFeatureGroupRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x86\x01\n\x18ListFeatureGroupResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"9\n\x16GetFeatureGroupRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n\x19\x43reateFeatureGroupRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\"m\n\x19UpdateFeatureGroupRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\"<\n\x19\x44\x65leteFeatureGroupRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListRecipesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"{\n\x13ListRecipesResponse\x12K\n\x05items\x18\x01 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x13\x43reateRecipeRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\"a\n\x13UpdateRecipeRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\"6\n\x13\x44\x65leteRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"Q\n\x15ListRecipeRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x81\x01\n\x16ListRecipeRunsResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"6\n\x13GetRecipeRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"g\n\x16\x43reateRecipeRunRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun\"g\n\x16UpdateRecipeRunRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun\"9\n\x16\x44\x65leteRecipeRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"M\n\x11ListModelsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"}\n\x12ListModelsResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"2\n\x0fGetModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x12\x43reateModelRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"c\n\x12UpdateModelRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"5\n\x12\x44\x65leteModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListReportsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x7f\n\x13ListReportsResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"e\n\x13\x43reateReportRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\"e\n\x13UpdateReportRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\"6\n\x13\x44\x65leteReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListStudiesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"~\n\x13ListStudiesResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"2\n\x0fGetStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x12\x43reateStudyRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\"c\n\x12UpdateStudyRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\"5\n\x12\x44\x65leteStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListPredictionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x88\x01\n\x17ListPredictionsResponse\x12T\n\x05items\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"n\n\x17\x43reatePredictionRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\"n\n\x17UpdatePredictionRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\":\n\x17\x44\x65letePredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"Q\n\x15ListPredictorsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x86\x01\n\x16ListPredictorsResponse\x12S\n\x05items\x18\x01 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"6\n\x13GetPredictorRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"l\n\x16\x43reatePredictorRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\"l\n\x16UpdatePredictorRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\"9\n\x16\x44\x65letePredictorRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListReviewsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"{\n\x13ListReviewsResponse\x12K\n\x05items\x18\x01 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetReviewRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x13\x43reateReviewRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\"a\n\x13UpdateReviewRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\"6\n\x13\x44\x65leteReviewRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListPostMortemsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x83\x01\n\x17ListPostMortemsResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetPostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"i\n\x17\x43reatePostMortemRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\"i\n\x17UpdatePostMortemRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\":\n\x17\x44\x65letePostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListRunbooksRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"}\n\x14ListRunbooksResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetRunbookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x14\x43reateRunbookRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook\"c\n\x14UpdateRunbookRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook\"7\n\x14\x44\x65leteRunbookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x81\x01\n\x13ListDataAppResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"h\n\x14\x43reateDataAppRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"h\n\x14UpdateDataAppRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"7\n\x14\x44\x65leteDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t2\x9c\xce\x01\n\x14\x44\x61tabaseProxyService\x12\xa3\x01\n\x0cListAccounts\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListAccountsRequest\x1aH.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListAccountsResponse\"\x00\x12\x95\x01\n\nGetAccount\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetAccountRequest\x1a>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\"\x00\x12\x9b\x01\n\rCreateAccount\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateAccountRequest\x1a>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\"\x00\x12\x9b\x01\n\rUpdateAccount\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateAccountRequest\x1a>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\"\x00\x12s\n\rDeleteAccount\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteAccountRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x9d\x01\n\nListAlerts\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListAlertsRequest\x1a\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListAlertsResponse\"\x00\x12\x8f\x01\n\x08GetAlert\x12\x43.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetAlertRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"\x00\x12\x95\x01\n\x0b\x43reateAlert\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateAlertRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"\x00\x12\x95\x01\n\x0bUpdateAlert\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateAlertRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"\x00\x12o\n\x0b\x44\x65leteAlert\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteAlertRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x9a\x01\n\tListTodos\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListTodosRequest\x1a\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListTodosResponse\"\x00\x12\x8b\x01\n\x07GetTodo\x12\x42.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetTodoRequest\x1a:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\"\x00\x12\x91\x01\n\nCreateTodo\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateTodoRequest\x1a:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\"\x00\x12\x91\x01\n\nUpdateTodo\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateTodoRequest\x1a:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\"\x00\x12m\n\nDeleteTodo\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteTodoRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListMeetings\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListMeetingsRequest\x1aH.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListMeetingsResponse\"\x00\x12\x94\x01\n\nGetMeeting\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetMeetingRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting\"\x00\x12\x9a\x01\n\rCreateMeeting\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateMeetingRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting\"\x00\x12\x9a\x01\n\rUpdateMeeting\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateMeetingRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting\"\x00\x12s\n\rDeleteMeeting\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteMeetingRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListAttachments\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListAttachmentsRequest\x1aK.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListAttachmentsResponse\"\x00\x12\x9e\x01\n\rGetAttachment\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetAttachmentRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\"\x00\x12\xa4\x01\n\x10\x43reateAttachment\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateAttachmentRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\"\x00\x12\xa4\x01\n\x10UpdateAttachment\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateAttachmentRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\"\x00\x12y\n\x10\x44\x65leteAttachment\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteAttachmentRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa6\x01\n\rListApiTokens\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListApiTokensRequest\x1aI.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListApiTokensResponse\"\x00\x12\x98\x01\n\x0bGetApiToken\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetApiTokenRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\"\x00\x12\x9e\x01\n\x0e\x43reateApiToken\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateApiTokenRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\"\x00\x12\x9e\x01\n\x0eUpdateApiToken\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateApiTokenRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\"\x00\x12u\n\x0e\x44\x65leteApiToken\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteApiTokenRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListConnections\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListConnectionsRequest\x1aK.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListConnectionsResponse\"\x00\x12\x9e\x01\n\rGetConnection\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetConnectionRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\"\x00\x12\xa4\x01\n\x10\x43reateConnection\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateConnectionRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\"\x00\x12\xa4\x01\n\x10UpdateConnection\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateConnectionRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\"\x00\x12y\n\x10\x44\x65leteConnection\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteConnectionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x97\x01\n\x08ListLabs\x12\x43.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListLabsRequest\x1a\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListLabsResponse\"\x00\x12\x89\x01\n\x06GetLab\x12\x41.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetLabRequest\x1a:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\"\x00\x12\x8f\x01\n\tCreateLab\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateLabRequest\x1a:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\"\x00\x12\x8f\x01\n\tUpdateLab\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateLabRequest\x1a:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\"\x00\x12k\n\tDeleteLab\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteLabRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListLicenses\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListLicensesRequest\x1aH.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListLicensesResponse\"\x00\x12\x95\x01\n\nGetLicense\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetLicenseRequest\x1a>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\"\x00\x12\x9b\x01\n\rCreateLicense\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateLicenseRequest\x1a>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\"\x00\x12\x9b\x01\n\rUpdateLicense\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateLicenseRequest\x1a>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\"\x00\x12s\n\rDeleteLicense\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteLicenseRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa6\x01\n\rListNotifiers\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListNotifiersRequest\x1aI.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListNotifiersResponse\"\x00\x12\x98\x01\n\x0bGetNotifier\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetNotifierRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"\x00\x12\x9e\x01\n\x0e\x43reateNotifier\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateNotifierRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"\x00\x12\x9e\x01\n\x0eUpdateNotifier\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateNotifierRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"\x00\x12u\n\x0e\x44\x65leteNotifier\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteNotifierRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xaf\x01\n\x10ListServingSites\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListServingsitesRequest\x1aL.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListServingsitesResponse\"\x00\x12\xa1\x01\n\x0eGetServingSite\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetServingsiteRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\"\x00\x12\xa7\x01\n\x11\x43reateServingSite\x12L.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateServingsiteRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\"\x00\x12\xa7\x01\n\x11UpdateServingSite\x12L.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateServingsiteRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\"\x00\x12{\n\x11\x44\x65leteServingSite\x12L.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteServingsiteRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListTenants\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListTenantsRequest\x1aG.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListTenantsResponse\"\x00\x12\x92\x01\n\tGetTenant\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetTenantRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\"\x00\x12\x98\x01\n\x0c\x43reateTenant\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateTenantRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\"\x00\x12\x98\x01\n\x0cUpdateTenant\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateTenantRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\"\x00\x12q\n\x0c\x44\x65leteTenant\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteTenantRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb5\x01\n\x12ListVirtualBuckets\x12M.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListVirtualBucketsRequest\x1aN.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListVirtualBucketsResponse\"\x00\x12\xa7\x01\n\x10GetVirtualBucket\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetVirtualBucketRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x00\x12\xad\x01\n\x13\x43reateVirtualBucket\x12N.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateVirtualBucketRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x00\x12\xad\x01\n\x13UpdateVirtualBucket\x12N.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateVirtualBucketRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x00\x12\x7f\n\x13\x44\x65leteVirtualBucket\x12N.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteVirtualBucketRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb2\x01\n\x11ListDataPipelines\x12L.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataPipelinesRequest\x1aM.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataPipelinesResponse\"\x00\x12\xa3\x01\n\x0fGetDataPipeline\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataPipelineRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\"\x00\x12\xa9\x01\n\x12\x43reateDataPipeline\x12M.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataPipelineRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\"\x00\x12\xa9\x01\n\x12UpdateDataPipeline\x12M.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataPipelineRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\"\x00\x12}\n\x12\x44\x65leteDataPipeline\x12M.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataPipelineRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xbb\x01\n\x14ListDataPipelineRuns\x12O.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataPipelineRunsRequest\x1aP.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataPipelineRunsResponse\"\x00\x12\xac\x01\n\x12GetDataPipelineRun\x12M.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataPipelineRunRequest\x1a\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun\"\x00\x12\xb2\x01\n\x15\x43reateDataPipelineRun\x12P.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataPipelineRunRequest\x1a\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun\"\x00\x12\xb2\x01\n\x15UpdateDataPipelineRun\x12P.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataPipelineRunRequest\x1a\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun\"\x00\x12\x83\x01\n\x15\x44\x65leteDataPipelineRun\x12P.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataPipelineRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xaf\x01\n\x10ListDataProducts\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataProductsRequest\x1aL.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataProductsResponse\"\x00\x12\xa0\x01\n\x0eGetDataProduct\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataProductRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\"\x00\x12\xa6\x01\n\x11\x43reateDataProduct\x12L.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataProductRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\"\x00\x12\xa6\x01\n\x11UpdateDataProduct\x12L.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataProductRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\"\x00\x12{\n\x11\x44\x65leteDataProduct\x12L.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataProductRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xc4\x01\n\x17ListDataProductVersions\x12R.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataProductVersionsRequest\x1aS.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataProductVersionsResponse\"\x00\x12\xb5\x01\n\x15GetDataProductVersion\x12P.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataProductVersionRequest\x1aH.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\"\x00\x12\xbb\x01\n\x18\x43reateDataProductVersion\x12S.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataProductVersionRequest\x1aH.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\"\x00\x12\xbb\x01\n\x18UpdateDataProductVersion\x12S.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataProductVersionRequest\x1aH.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\"\x00\x12\x89\x01\n\x18\x44\x65leteDataProductVersion\x12S.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataProductVersionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListDatasets\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDatasetsRequest\x1aH.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDatasetsResponse\"\x00\x12\x94\x01\n\nGetDataset\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDatasetRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\"\x00\x12\x9a\x01\n\rCreateDataset\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDatasetRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\"\x00\x12\x9a\x01\n\rUpdateDataset\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDatasetRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\"\x00\x12s\n\rDeleteDataset\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDatasetRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListDataSources\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDatasourcesRequest\x1aK.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDatasourcesResponse\"\x00\x12\x9d\x01\n\rGetDataSource\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDatasourceRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\"\x00\x12\xa3\x01\n\x10\x43reateDataSource\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDatasourceRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\"\x00\x12\xa3\x01\n\x10UpdateDataSource\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDatasourceRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\"\x00\x12y\n\x10\x44\x65leteDataSource\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDatasourceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListEntities\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListEntitiesRequest\x1aH.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListEntitiesResponse\"\x00\x12\x91\x01\n\tGetEntity\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetEntityRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\"\x00\x12\x97\x01\n\x0c\x43reateEntity\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateEntityRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\"\x00\x12\x97\x01\n\x0cUpdateEntity\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateEntityRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\"\x00\x12q\n\x0c\x44\x65leteEntity\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteEntityRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xad\x01\n\x0eListModelClass\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRequest\x1aL.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesResponse\"\x00\x12\xa1\x01\n\rGetModelClass\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\"\x00\x12\xa7\x01\n\x10\x43reateModelClass\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\"\x00\x12\xa6\x01\n\x0fUpdateModelClas\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\"\x00\x12y\n\x10\x44\x65leteModelClass\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xbe\x01\n\x15ListFeatureHistograms\x12P.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureHistogramsRequest\x1aQ.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureHistogramsResponse\"\x00\x12\xaf\x01\n\x13GetFeatureHistogram\x12N.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureHistogramRequest\x1a\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\"\x00\x12\xb5\x01\n\x16\x43reateFeatureHistogram\x12Q.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureHistogramRequest\x1a\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\"\x00\x12\xb5\x01\n\x16UpdateFeatureHistogram\x12Q.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureHistogramRequest\x1a\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\"\x00\x12\x85\x01\n\x16\x44\x65leteFeatureHistogram\x12Q.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureHistogramRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb0\x01\n\x11ListFeatureGroups\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest\x1aL.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse\"\x00\x12\xa3\x01\n\x0fGetFeatureGroup\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\"\x00\x12\xa9\x01\n\x12\x43reateFeatureGroup\x12M.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\"\x00\x12\xa9\x01\n\x12UpdateFeatureGroup\x12M.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\"\x00\x12}\n\x12\x44\x65leteFeatureGroup\x12M.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListRecipes\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListRecipesRequest\x1aG.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListRecipesResponse\"\x00\x12\x91\x01\n\tGetRecipe\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetRecipeRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\"\x00\x12\x97\x01\n\x0c\x43reateRecipe\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateRecipeRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\"\x00\x12\x97\x01\n\x0cUpdateRecipe\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateRecipeRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\"\x00\x12q\n\x0c\x44\x65leteRecipe\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteRecipeRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa9\x01\n\x0eListRecipeRuns\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListRecipeRunsRequest\x1aJ.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListRecipeRunsResponse\"\x00\x12\x9a\x01\n\x0cGetRecipeRun\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetRecipeRunRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun\"\x00\x12\xa0\x01\n\x0f\x43reateRecipeRun\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateRecipeRunRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun\"\x00\x12\xa0\x01\n\x0fUpdateRecipeRun\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateRecipeRunRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun\"\x00\x12w\n\x0f\x44\x65leteRecipeRun\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteRecipeRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListReports\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListReportsRequest\x1aG.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListReportsResponse\"\x00\x12\x95\x01\n\tGetReport\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetReportRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\"\x00\x12\x9b\x01\n\x0c\x43reateReport\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateReportRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\"\x00\x12\x9b\x01\n\x0cUpdateReport\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateReportRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\"\x00\x12q\n\x0c\x44\x65leteReport\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteReportRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListStudies\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListStudiesRequest\x1aG.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListStudiesResponse\"\x00\x12\x92\x01\n\x08GetStudy\x12\x43.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetStudyRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\"\x00\x12\x98\x01\n\x0b\x43reateStudy\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateStudyRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\"\x00\x12\x98\x01\n\x0bUpdateStudy\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateStudyRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\"\x00\x12o\n\x0b\x44\x65leteStudy\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteStudyRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x9d\x01\n\nListModels\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelsRequest\x1a\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelsResponse\"\x00\x12\x92\x01\n\x08GetModel\x12\x43.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\x00\x12\x98\x01\n\x0b\x43reateModel\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\x00\x12\x98\x01\n\x0bUpdateModel\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\x00\x12o\n\x0b\x44\x65leteModel\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListPredictions\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictionsRequest\x1aK.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictionsResponse\"\x00\x12\xa2\x01\n\rGetPrediction\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictionRequest\x1a\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\"\x00\x12\xa8\x01\n\x10\x43reatePrediction\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictionRequest\x1a\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\"\x00\x12\xa8\x01\n\x10UpdatePrediction\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictionRequest\x1a\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\"\x00\x12y\n\x10\x44\x65letePrediction\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa9\x01\n\x0eListPredictors\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictorsRequest\x1aJ.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictorsResponse\"\x00\x12\x9f\x01\n\x0cGetPredictor\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictorRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\"\x00\x12\xa5\x01\n\x0f\x43reatePredictor\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictorRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\"\x00\x12\xa5\x01\n\x0fUpdatePredictor\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictorRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\"\x00\x12w\n\x0f\x44\x65letePredictor\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictorRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListReviews\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListReviewsRequest\x1aG.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListReviewsResponse\"\x00\x12\x91\x01\n\tGetReview\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetReviewRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\"\x00\x12\x97\x01\n\x0c\x43reateReview\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateReviewRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\"\x00\x12\x97\x01\n\x0cUpdateReview\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateReviewRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\"\x00\x12q\n\x0c\x44\x65leteReview\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteReviewRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListPostMortems\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPostMortemsRequest\x1aK.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPostMortemsResponse\"\x00\x12\x9d\x01\n\rGetPostMortem\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPostMortemRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\"\x00\x12\xa3\x01\n\x10\x43reatePostMortem\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePostMortemRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\"\x00\x12\xa3\x01\n\x10UpdatePostMortem\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePostMortemRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\"\x00\x12y\n\x10\x44\x65letePostMortem\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePostMortemRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListRunBooks\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListRunbooksRequest\x1aH.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListRunbooksResponse\"\x00\x12\x94\x01\n\nGetRunBook\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetRunbookRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook\"\x00\x12\x9a\x01\n\rCreateRunBook\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateRunbookRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook\"\x00\x12\x9a\x01\n\rUpdateRunBook\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateRunbookRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook\"\x00\x12s\n\rDeleteRunBook\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteRunbookRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListDataApp\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest\x1aG.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse\"\x00\x12\x99\x01\n\nGetDataApp\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x00\x12\x9f\x01\n\rCreateDataApp\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x00\x12\x9f\x01\n\rUpdateDataApp\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x00\x12s\n\rDeleteDataApp\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest\x1a\x16.google.protobuf.Empty\"\x00\x42\x34Z2github.com/metaprov/modelaapi/services/dbproxyd/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nAgithub.com/metaprov/modelaapi/services/dbproxyd/v1/dbproxyd.proto\x12\x32github.com.metaprov.modelaapi.services.dbproxyd.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto\x1a\x1bgoogle/protobuf/empty.proto\"O\n\x13ListAccountsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"~\n\x14ListAccountsResponse\x12M\n\x05items\x18\x01 \x03(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"d\n\x14\x43reateAccountRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\"d\n\x14UpdateAccountRequest\x12L\n\x04item\x18\x02 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\"7\n\x14\x44\x65leteAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"M\n\x11ListAlertsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"z\n\x12ListAlertsResponse\x12K\n\x05items\x18\x01 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"2\n\x0fGetAlertRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"`\n\x12\x43reateAlertRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"`\n\x12UpdateAlertRequest\x12J\n\x04item\x18\x02 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"5\n\x12\x44\x65leteAlertRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListAttachmentsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x84\x01\n\x17ListAttachmentsResponse\x12P\n\x05items\x18\x01 \x03(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetAttachmentRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"j\n\x17\x43reateAttachmentRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\"j\n\x17UpdateAttachmentRequest\x12O\n\x04item\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\":\n\x17\x44\x65leteAttachmentRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"L\n\x10ListTodosRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"w\n\x11ListTodosResponse\x12I\n\x05items\x18\x01 \x03(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"1\n\x0eGetTodoRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"]\n\x11\x43reateTodoRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\"]\n\x11UpdateTodoRequest\x12H\n\x04item\x18\x02 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\"4\n\x11\x44\x65leteTodoRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListConnectionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x84\x01\n\x17ListConnectionsResponse\x12P\n\x05items\x18\x01 \x03(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"j\n\x17\x43reateConnectionRequest\x12O\n\x04item\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\"j\n\x17UpdateConnectionRequest\x12O\n\x04item\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\":\n\x17\x44\x65leteConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"K\n\x0fListLabsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"v\n\x10ListLabsResponse\x12I\n\x05items\x18\x01 \x03(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"0\n\rGetLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\\\n\x10\x43reateLabRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\"\\\n\x10UpdateLabRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\"3\n\x10\x44\x65leteLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListLicensesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"~\n\x14ListLicensesResponse\x12M\n\x05items\x18\x01 \x03(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetLicenseRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"d\n\x14\x43reateLicenseRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\"d\n\x14UpdateLicenseRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\"7\n\x14\x44\x65leteLicenseRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"P\n\x14ListNotifiersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x80\x01\n\x15ListNotifiersResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"5\n\x12GetNotifierRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"f\n\x15\x43reateNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"f\n\x15UpdateNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"8\n\x15\x44\x65leteNotifierRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"S\n\x17ListServingsitesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x86\x01\n\x18ListServingsitesResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"8\n\x15GetServingsiteRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"l\n\x18\x43reateServingsiteRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\"l\n\x18UpdateServingsiteRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\";\n\x18\x44\x65leteServingsiteRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListTenantsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"|\n\x13ListTenantsResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"b\n\x13\x43reateTenantRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\"b\n\x13UpdateTenantRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\"6\n\x13\x44\x65leteTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"U\n\x19ListVirtualBucketsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8a\x01\n\x1aListVirtualBucketsResponse\x12S\n\x05items\x18\x01 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\":\n\x17GetVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"p\n\x1a\x43reateVirtualBucketRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"p\n\x1aUpdateVirtualBucketRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"=\n\x1a\x44\x65leteVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"T\n\x18ListDataPipelinesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x87\x01\n\x19ListDataPipelinesResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"9\n\x16GetDataPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n\x19\x43reateDataPipelineRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\"m\n\x19UpdateDataPipelineRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\"<\n\x19\x44\x65leteDataPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"W\n\x1bListDataPipelineRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8d\x01\n\x1cListDataPipelineRunsResponse\x12T\n\x05items\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"<\n\x19GetDataPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x1c\x43reateDataPipelineRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun\"s\n\x1cUpdateDataPipelineRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun\"?\n\x1c\x44\x65leteDataPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"S\n\x17ListDataProductsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x85\x01\n\x18ListDataProductsResponse\x12P\n\x05items\x18\x01 \x03(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"8\n\x15GetDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"k\n\x18\x43reateDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\"k\n\x18UpdateDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\";\n\x18\x44\x65leteDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"Z\n\x1eListDataProductVersionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x93\x01\n\x1fListDataProductVersionsResponse\x12W\n\x05items\x18\x01 \x03(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"?\n\x1cGetDataProductVersionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"y\n\x1f\x43reateDataProductVersionRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\"y\n\x1fUpdateDataProductVersionRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\"B\n\x1f\x44\x65leteDataProductVersionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListDatasetsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"}\n\x14ListDatasetsResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x14\x43reateDatasetRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\"c\n\x14UpdateDatasetRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\"7\n\x14\x44\x65leteDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListDatasourcesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x83\x01\n\x17ListDatasourcesResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetDatasourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"i\n\x17\x43reateDatasourceRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\"i\n\x17UpdateDatasourceRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\":\n\x17\x44\x65leteDatasourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListEntitiesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"|\n\x14ListEntitiesResponse\x12K\n\x05items\x18\x01 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x13\x43reateEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\"a\n\x13UpdateEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\"6\n\x13\x44\x65leteEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"S\n\x17ListModelClassesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x88\x01\n\x18ListModelClassesResponse\x12S\n\x05items\x18\x01 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetModelClassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n\x17\x43reateModelClassRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\"m\n\x17UpdateModelClassRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\":\n\x17\x44\x65leteModelClassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"X\n\x1cListFeatureHistogramsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8f\x01\n\x1dListFeatureHistogramsResponse\x12U\n\x05items\x18\x01 \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"=\n\x1aGetFeatureHistogramRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x1d\x43reateFeatureHistogramRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\"u\n\x1dUpdateFeatureHistogramRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\"@\n\x1d\x44\x65leteFeatureHistogramRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"S\n\x17ListFeatureGroupRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x86\x01\n\x18ListFeatureGroupResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"9\n\x16GetFeatureGroupRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n\x19\x43reateFeatureGroupRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\"m\n\x19UpdateFeatureGroupRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\"<\n\x19\x44\x65leteFeatureGroupRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListRecipesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"{\n\x13ListRecipesResponse\x12K\n\x05items\x18\x01 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x13\x43reateRecipeRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\"a\n\x13UpdateRecipeRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\"6\n\x13\x44\x65leteRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"Q\n\x15ListRecipeRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x81\x01\n\x16ListRecipeRunsResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"6\n\x13GetRecipeRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"g\n\x16\x43reateRecipeRunRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun\"g\n\x16UpdateRecipeRunRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun\"9\n\x16\x44\x65leteRecipeRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"M\n\x11ListModelsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"}\n\x12ListModelsResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"2\n\x0fGetModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x12\x43reateModelRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"c\n\x12UpdateModelRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"5\n\x12\x44\x65leteModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListReportsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x7f\n\x13ListReportsResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"e\n\x13\x43reateReportRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\"e\n\x13UpdateReportRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\"6\n\x13\x44\x65leteReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListStudiesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"~\n\x13ListStudiesResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"2\n\x0fGetStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x12\x43reateStudyRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\"c\n\x12UpdateStudyRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\"5\n\x12\x44\x65leteStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListPredictionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x88\x01\n\x17ListPredictionsResponse\x12T\n\x05items\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"n\n\x17\x43reatePredictionRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\"n\n\x17UpdatePredictionRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\":\n\x17\x44\x65letePredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"Q\n\x15ListPredictorsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x86\x01\n\x16ListPredictorsResponse\x12S\n\x05items\x18\x01 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"6\n\x13GetPredictorRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"l\n\x16\x43reatePredictorRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\"l\n\x16UpdatePredictorRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\"9\n\x16\x44\x65letePredictorRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListReviewsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"{\n\x13ListReviewsResponse\x12K\n\x05items\x18\x01 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetReviewRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x13\x43reateReviewRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\"a\n\x13UpdateReviewRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\"6\n\x13\x44\x65leteReviewRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListPostMortemsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x83\x01\n\x17ListPostMortemsResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetPostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"i\n\x17\x43reatePostMortemRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\"i\n\x17UpdatePostMortemRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\":\n\x17\x44\x65letePostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListRunbooksRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"}\n\x14ListRunbooksResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetRunbookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x14\x43reateRunbookRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook\"c\n\x14UpdateRunbookRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook\"7\n\x14\x44\x65leteRunbookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x81\x01\n\x13ListDataAppResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"h\n\x14\x43reateDataAppRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"h\n\x14UpdateDataAppRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"7\n\x14\x44\x65leteDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t2\xb3\xc2\x01\n\x14\x44\x61tabaseProxyService\x12\xa3\x01\n\x0cListAccounts\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListAccountsRequest\x1aH.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListAccountsResponse\"\x00\x12\x95\x01\n\nGetAccount\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetAccountRequest\x1a>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\"\x00\x12\x9b\x01\n\rCreateAccount\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateAccountRequest\x1a>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\"\x00\x12\x9b\x01\n\rUpdateAccount\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateAccountRequest\x1a>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\"\x00\x12s\n\rDeleteAccount\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteAccountRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x9d\x01\n\nListAlerts\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListAlertsRequest\x1a\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListAlertsResponse\"\x00\x12\x8f\x01\n\x08GetAlert\x12\x43.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetAlertRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"\x00\x12\x95\x01\n\x0b\x43reateAlert\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateAlertRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"\x00\x12\x95\x01\n\x0bUpdateAlert\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateAlertRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"\x00\x12o\n\x0b\x44\x65leteAlert\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteAlertRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x9a\x01\n\tListTodos\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListTodosRequest\x1a\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListTodosResponse\"\x00\x12\x8b\x01\n\x07GetTodo\x12\x42.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetTodoRequest\x1a:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\"\x00\x12\x91\x01\n\nCreateTodo\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateTodoRequest\x1a:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\"\x00\x12\x91\x01\n\nUpdateTodo\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateTodoRequest\x1a:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\"\x00\x12m\n\nDeleteTodo\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteTodoRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListAttachments\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListAttachmentsRequest\x1aK.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListAttachmentsResponse\"\x00\x12\x9e\x01\n\rGetAttachment\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetAttachmentRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\"\x00\x12\xa4\x01\n\x10\x43reateAttachment\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateAttachmentRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\"\x00\x12\xa4\x01\n\x10UpdateAttachment\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateAttachmentRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\"\x00\x12y\n\x10\x44\x65leteAttachment\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteAttachmentRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListConnections\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListConnectionsRequest\x1aK.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListConnectionsResponse\"\x00\x12\x9e\x01\n\rGetConnection\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetConnectionRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\"\x00\x12\xa4\x01\n\x10\x43reateConnection\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateConnectionRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\"\x00\x12\xa4\x01\n\x10UpdateConnection\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateConnectionRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\"\x00\x12y\n\x10\x44\x65leteConnection\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteConnectionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x97\x01\n\x08ListLabs\x12\x43.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListLabsRequest\x1a\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListLabsResponse\"\x00\x12\x89\x01\n\x06GetLab\x12\x41.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetLabRequest\x1a:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\"\x00\x12\x8f\x01\n\tCreateLab\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateLabRequest\x1a:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\"\x00\x12\x8f\x01\n\tUpdateLab\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateLabRequest\x1a:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\"\x00\x12k\n\tDeleteLab\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteLabRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListLicenses\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListLicensesRequest\x1aH.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListLicensesResponse\"\x00\x12\x95\x01\n\nGetLicense\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetLicenseRequest\x1a>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\"\x00\x12\x9b\x01\n\rCreateLicense\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateLicenseRequest\x1a>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\"\x00\x12\x9b\x01\n\rUpdateLicense\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateLicenseRequest\x1a>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\"\x00\x12s\n\rDeleteLicense\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteLicenseRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa6\x01\n\rListNotifiers\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListNotifiersRequest\x1aI.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListNotifiersResponse\"\x00\x12\x98\x01\n\x0bGetNotifier\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetNotifierRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"\x00\x12\x9e\x01\n\x0e\x43reateNotifier\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateNotifierRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"\x00\x12\x9e\x01\n\x0eUpdateNotifier\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateNotifierRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"\x00\x12u\n\x0e\x44\x65leteNotifier\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteNotifierRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xaf\x01\n\x10ListServingSites\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListServingsitesRequest\x1aL.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListServingsitesResponse\"\x00\x12\xa1\x01\n\x0eGetServingSite\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetServingsiteRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\"\x00\x12\xa7\x01\n\x11\x43reateServingSite\x12L.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateServingsiteRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\"\x00\x12\xa7\x01\n\x11UpdateServingSite\x12L.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateServingsiteRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\"\x00\x12{\n\x11\x44\x65leteServingSite\x12L.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteServingsiteRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListTenants\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListTenantsRequest\x1aG.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListTenantsResponse\"\x00\x12\x92\x01\n\tGetTenant\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetTenantRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\"\x00\x12\x98\x01\n\x0c\x43reateTenant\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateTenantRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\"\x00\x12\x98\x01\n\x0cUpdateTenant\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateTenantRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\"\x00\x12q\n\x0c\x44\x65leteTenant\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteTenantRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb5\x01\n\x12ListVirtualBuckets\x12M.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListVirtualBucketsRequest\x1aN.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListVirtualBucketsResponse\"\x00\x12\xa7\x01\n\x10GetVirtualBucket\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetVirtualBucketRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x00\x12\xad\x01\n\x13\x43reateVirtualBucket\x12N.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateVirtualBucketRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x00\x12\xad\x01\n\x13UpdateVirtualBucket\x12N.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateVirtualBucketRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x00\x12\x7f\n\x13\x44\x65leteVirtualBucket\x12N.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteVirtualBucketRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb2\x01\n\x11ListDataPipelines\x12L.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataPipelinesRequest\x1aM.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataPipelinesResponse\"\x00\x12\xa3\x01\n\x0fGetDataPipeline\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataPipelineRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\"\x00\x12\xa9\x01\n\x12\x43reateDataPipeline\x12M.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataPipelineRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\"\x00\x12\xa9\x01\n\x12UpdateDataPipeline\x12M.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataPipelineRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\"\x00\x12}\n\x12\x44\x65leteDataPipeline\x12M.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataPipelineRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xbb\x01\n\x14ListDataPipelineRuns\x12O.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataPipelineRunsRequest\x1aP.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataPipelineRunsResponse\"\x00\x12\xac\x01\n\x12GetDataPipelineRun\x12M.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataPipelineRunRequest\x1a\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun\"\x00\x12\xb2\x01\n\x15\x43reateDataPipelineRun\x12P.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataPipelineRunRequest\x1a\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun\"\x00\x12\xb2\x01\n\x15UpdateDataPipelineRun\x12P.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataPipelineRunRequest\x1a\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun\"\x00\x12\x83\x01\n\x15\x44\x65leteDataPipelineRun\x12P.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataPipelineRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xaf\x01\n\x10ListDataProducts\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataProductsRequest\x1aL.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataProductsResponse\"\x00\x12\xa0\x01\n\x0eGetDataProduct\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataProductRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\"\x00\x12\xa6\x01\n\x11\x43reateDataProduct\x12L.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataProductRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\"\x00\x12\xa6\x01\n\x11UpdateDataProduct\x12L.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataProductRequest\x1a\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\"\x00\x12{\n\x11\x44\x65leteDataProduct\x12L.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataProductRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xc4\x01\n\x17ListDataProductVersions\x12R.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataProductVersionsRequest\x1aS.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataProductVersionsResponse\"\x00\x12\xb5\x01\n\x15GetDataProductVersion\x12P.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataProductVersionRequest\x1aH.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\"\x00\x12\xbb\x01\n\x18\x43reateDataProductVersion\x12S.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataProductVersionRequest\x1aH.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\"\x00\x12\xbb\x01\n\x18UpdateDataProductVersion\x12S.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataProductVersionRequest\x1aH.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\"\x00\x12\x89\x01\n\x18\x44\x65leteDataProductVersion\x12S.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataProductVersionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListDatasets\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDatasetsRequest\x1aH.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDatasetsResponse\"\x00\x12\x94\x01\n\nGetDataset\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDatasetRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\"\x00\x12\x9a\x01\n\rCreateDataset\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDatasetRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\"\x00\x12\x9a\x01\n\rUpdateDataset\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDatasetRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\"\x00\x12s\n\rDeleteDataset\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDatasetRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListDataSources\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDatasourcesRequest\x1aK.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDatasourcesResponse\"\x00\x12\x9d\x01\n\rGetDataSource\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDatasourceRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\"\x00\x12\xa3\x01\n\x10\x43reateDataSource\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDatasourceRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\"\x00\x12\xa3\x01\n\x10UpdateDataSource\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDatasourceRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\"\x00\x12y\n\x10\x44\x65leteDataSource\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDatasourceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListEntities\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListEntitiesRequest\x1aH.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListEntitiesResponse\"\x00\x12\x91\x01\n\tGetEntity\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetEntityRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\"\x00\x12\x97\x01\n\x0c\x43reateEntity\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateEntityRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\"\x00\x12\x97\x01\n\x0cUpdateEntity\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateEntityRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\"\x00\x12q\n\x0c\x44\x65leteEntity\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteEntityRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xad\x01\n\x0eListModelClass\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRequest\x1aL.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesResponse\"\x00\x12\xa1\x01\n\rGetModelClass\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\"\x00\x12\xa7\x01\n\x10\x43reateModelClass\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\"\x00\x12\xa6\x01\n\x0fUpdateModelClas\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\"\x00\x12y\n\x10\x44\x65leteModelClass\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xbe\x01\n\x15ListFeatureHistograms\x12P.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureHistogramsRequest\x1aQ.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureHistogramsResponse\"\x00\x12\xaf\x01\n\x13GetFeatureHistogram\x12N.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureHistogramRequest\x1a\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\"\x00\x12\xb5\x01\n\x16\x43reateFeatureHistogram\x12Q.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureHistogramRequest\x1a\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\"\x00\x12\xb5\x01\n\x16UpdateFeatureHistogram\x12Q.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureHistogramRequest\x1a\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\"\x00\x12\x85\x01\n\x16\x44\x65leteFeatureHistogram\x12Q.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureHistogramRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb0\x01\n\x11ListFeatureGroups\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupRequest\x1aL.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureGroupResponse\"\x00\x12\xa3\x01\n\x0fGetFeatureGroup\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetFeatureGroupRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\"\x00\x12\xa9\x01\n\x12\x43reateFeatureGroup\x12M.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureGroupRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\"\x00\x12\xa9\x01\n\x12UpdateFeatureGroup\x12M.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureGroupRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\"\x00\x12}\n\x12\x44\x65leteFeatureGroup\x12M.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteFeatureGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListRecipes\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListRecipesRequest\x1aG.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListRecipesResponse\"\x00\x12\x91\x01\n\tGetRecipe\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetRecipeRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\"\x00\x12\x97\x01\n\x0c\x43reateRecipe\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateRecipeRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\"\x00\x12\x97\x01\n\x0cUpdateRecipe\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateRecipeRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\"\x00\x12q\n\x0c\x44\x65leteRecipe\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteRecipeRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa9\x01\n\x0eListRecipeRuns\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListRecipeRunsRequest\x1aJ.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListRecipeRunsResponse\"\x00\x12\x9a\x01\n\x0cGetRecipeRun\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetRecipeRunRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun\"\x00\x12\xa0\x01\n\x0f\x43reateRecipeRun\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateRecipeRunRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun\"\x00\x12\xa0\x01\n\x0fUpdateRecipeRun\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateRecipeRunRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun\"\x00\x12w\n\x0f\x44\x65leteRecipeRun\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteRecipeRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListReports\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListReportsRequest\x1aG.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListReportsResponse\"\x00\x12\x95\x01\n\tGetReport\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetReportRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\"\x00\x12\x9b\x01\n\x0c\x43reateReport\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateReportRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\"\x00\x12\x9b\x01\n\x0cUpdateReport\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateReportRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\"\x00\x12q\n\x0c\x44\x65leteReport\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteReportRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListStudies\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListStudiesRequest\x1aG.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListStudiesResponse\"\x00\x12\x92\x01\n\x08GetStudy\x12\x43.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetStudyRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\"\x00\x12\x98\x01\n\x0b\x43reateStudy\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateStudyRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\"\x00\x12\x98\x01\n\x0bUpdateStudy\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateStudyRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\"\x00\x12o\n\x0b\x44\x65leteStudy\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteStudyRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x9d\x01\n\nListModels\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelsRequest\x1a\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelsResponse\"\x00\x12\x92\x01\n\x08GetModel\x12\x43.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\x00\x12\x98\x01\n\x0b\x43reateModel\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\x00\x12\x98\x01\n\x0bUpdateModel\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelRequest\x1a?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\x00\x12o\n\x0b\x44\x65leteModel\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListPredictions\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictionsRequest\x1aK.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictionsResponse\"\x00\x12\xa2\x01\n\rGetPrediction\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictionRequest\x1a\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\"\x00\x12\xa8\x01\n\x10\x43reatePrediction\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictionRequest\x1a\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\"\x00\x12\xa8\x01\n\x10UpdatePrediction\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictionRequest\x1a\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\"\x00\x12y\n\x10\x44\x65letePrediction\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa9\x01\n\x0eListPredictors\x12I.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictorsRequest\x1aJ.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictorsResponse\"\x00\x12\x9f\x01\n\x0cGetPredictor\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictorRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\"\x00\x12\xa5\x01\n\x0f\x43reatePredictor\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictorRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\"\x00\x12\xa5\x01\n\x0fUpdatePredictor\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictorRequest\x1a\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\"\x00\x12w\n\x0f\x44\x65letePredictor\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictorRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListReviews\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListReviewsRequest\x1aG.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListReviewsResponse\"\x00\x12\x91\x01\n\tGetReview\x12\x44.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetReviewRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\"\x00\x12\x97\x01\n\x0c\x43reateReview\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateReviewRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\"\x00\x12\x97\x01\n\x0cUpdateReview\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateReviewRequest\x1a<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\"\x00\x12q\n\x0c\x44\x65leteReview\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteReviewRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListPostMortems\x12J.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPostMortemsRequest\x1aK.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPostMortemsResponse\"\x00\x12\x9d\x01\n\rGetPostMortem\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPostMortemRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\"\x00\x12\xa3\x01\n\x10\x43reatePostMortem\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePostMortemRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\"\x00\x12\xa3\x01\n\x10UpdatePostMortem\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePostMortemRequest\x1a@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\"\x00\x12y\n\x10\x44\x65letePostMortem\x12K.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePostMortemRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListRunBooks\x12G.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListRunbooksRequest\x1aH.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListRunbooksResponse\"\x00\x12\x94\x01\n\nGetRunBook\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetRunbookRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook\"\x00\x12\x9a\x01\n\rCreateRunBook\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateRunbookRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook\"\x00\x12\x9a\x01\n\rUpdateRunBook\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateRunbookRequest\x1a=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook\"\x00\x12s\n\rDeleteRunBook\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteRunbookRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListDataApp\x12\x46.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest\x1aG.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse\"\x00\x12\x99\x01\n\nGetDataApp\x12\x45.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x00\x12\x9f\x01\n\rCreateDataApp\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x00\x12\x9f\x01\n\rUpdateDataApp\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest\x1a\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x00\x12s\n\rDeleteDataApp\x12H.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest\x1a\x16.google.protobuf.Empty\"\x00\x42\x34Z2github.com/metaprov/modelaapi/services/dbproxyd/v1b\x06proto3')
 
 
 
@@ -49,18 +49,6 @@ _GETTODOREQUEST = DESCRIPTOR.message_types_by_name['GetTodoRequest']
 _CREATETODOREQUEST = DESCRIPTOR.message_types_by_name['CreateTodoRequest']
 _UPDATETODOREQUEST = DESCRIPTOR.message_types_by_name['UpdateTodoRequest']
 _DELETETODOREQUEST = DESCRIPTOR.message_types_by_name['DeleteTodoRequest']
-_LISTMEETINGSREQUEST = DESCRIPTOR.message_types_by_name['ListMeetingsRequest']
-_LISTMEETINGSRESPONSE = DESCRIPTOR.message_types_by_name['ListMeetingsResponse']
-_GETMEETINGREQUEST = DESCRIPTOR.message_types_by_name['GetMeetingRequest']
-_CREATEMEETINGREQUEST = DESCRIPTOR.message_types_by_name['CreateMeetingRequest']
-_UPDATEMEETINGREQUEST = DESCRIPTOR.message_types_by_name['UpdateMeetingRequest']
-_DELETEMEETINGREQUEST = DESCRIPTOR.message_types_by_name['DeleteMeetingRequest']
-_LISTAPITOKENSREQUEST = DESCRIPTOR.message_types_by_name['ListApiTokensRequest']
-_LISTAPITOKENSRESPONSE = DESCRIPTOR.message_types_by_name['ListApiTokensResponse']
-_GETAPITOKENREQUEST = DESCRIPTOR.message_types_by_name['GetApiTokenRequest']
-_CREATEAPITOKENREQUEST = DESCRIPTOR.message_types_by_name['CreateApiTokenRequest']
-_UPDATEAPITOKENREQUEST = DESCRIPTOR.message_types_by_name['UpdateApiTokenRequest']
-_DELETEAPITOKENREQUEST = DESCRIPTOR.message_types_by_name['DeleteApiTokenRequest']
 _LISTCONNECTIONSREQUEST = DESCRIPTOR.message_types_by_name['ListConnectionsRequest']
 _LISTCONNECTIONSRESPONSE = DESCRIPTOR.message_types_by_name['ListConnectionsResponse']
 _GETCONNECTIONREQUEST = DESCRIPTOR.message_types_by_name['GetConnectionRequest']
@@ -396,90 +384,6 @@ DeleteTodoRequest = _reflection.GeneratedProtocolMessageType('DeleteTodoRequest'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteTodoRequest)
   })
 _sym_db.RegisterMessage(DeleteTodoRequest)
-
-ListMeetingsRequest = _reflection.GeneratedProtocolMessageType('ListMeetingsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTMEETINGSREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.dbproxyd.v1.dbproxyd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dbproxyd.v1.ListMeetingsRequest)
-  })
-_sym_db.RegisterMessage(ListMeetingsRequest)
-
-ListMeetingsResponse = _reflection.GeneratedProtocolMessageType('ListMeetingsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTMEETINGSRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.dbproxyd.v1.dbproxyd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dbproxyd.v1.ListMeetingsResponse)
-  })
-_sym_db.RegisterMessage(ListMeetingsResponse)
-
-GetMeetingRequest = _reflection.GeneratedProtocolMessageType('GetMeetingRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETMEETINGREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.dbproxyd.v1.dbproxyd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dbproxyd.v1.GetMeetingRequest)
-  })
-_sym_db.RegisterMessage(GetMeetingRequest)
-
-CreateMeetingRequest = _reflection.GeneratedProtocolMessageType('CreateMeetingRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEMEETINGREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.dbproxyd.v1.dbproxyd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateMeetingRequest)
-  })
-_sym_db.RegisterMessage(CreateMeetingRequest)
-
-UpdateMeetingRequest = _reflection.GeneratedProtocolMessageType('UpdateMeetingRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEMEETINGREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.dbproxyd.v1.dbproxyd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateMeetingRequest)
-  })
-_sym_db.RegisterMessage(UpdateMeetingRequest)
-
-DeleteMeetingRequest = _reflection.GeneratedProtocolMessageType('DeleteMeetingRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEMEETINGREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.dbproxyd.v1.dbproxyd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteMeetingRequest)
-  })
-_sym_db.RegisterMessage(DeleteMeetingRequest)
-
-ListApiTokensRequest = _reflection.GeneratedProtocolMessageType('ListApiTokensRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTAPITOKENSREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.dbproxyd.v1.dbproxyd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dbproxyd.v1.ListApiTokensRequest)
-  })
-_sym_db.RegisterMessage(ListApiTokensRequest)
-
-ListApiTokensResponse = _reflection.GeneratedProtocolMessageType('ListApiTokensResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTAPITOKENSRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.dbproxyd.v1.dbproxyd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dbproxyd.v1.ListApiTokensResponse)
-  })
-_sym_db.RegisterMessage(ListApiTokensResponse)
-
-GetApiTokenRequest = _reflection.GeneratedProtocolMessageType('GetApiTokenRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETAPITOKENREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.dbproxyd.v1.dbproxyd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dbproxyd.v1.GetApiTokenRequest)
-  })
-_sym_db.RegisterMessage(GetApiTokenRequest)
-
-CreateApiTokenRequest = _reflection.GeneratedProtocolMessageType('CreateApiTokenRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEAPITOKENREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.dbproxyd.v1.dbproxyd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateApiTokenRequest)
-  })
-_sym_db.RegisterMessage(CreateApiTokenRequest)
-
-UpdateApiTokenRequest = _reflection.GeneratedProtocolMessageType('UpdateApiTokenRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEAPITOKENREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.dbproxyd.v1.dbproxyd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateApiTokenRequest)
-  })
-_sym_db.RegisterMessage(UpdateApiTokenRequest)
-
-DeleteApiTokenRequest = _reflection.GeneratedProtocolMessageType('DeleteApiTokenRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEAPITOKENREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.dbproxyd.v1.dbproxyd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteApiTokenRequest)
-  })
-_sym_db.RegisterMessage(DeleteApiTokenRequest)
 
 ListConnectionsRequest = _reflection.GeneratedProtocolMessageType('ListConnectionsRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTCONNECTIONSREQUEST,
@@ -1710,366 +1614,342 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _UPDATETODOREQUEST._serialized_end=2560
   _DELETETODOREQUEST._serialized_start=2562
   _DELETETODOREQUEST._serialized_end=2614
-  _LISTMEETINGSREQUEST._serialized_start=2616
-  _LISTMEETINGSREQUEST._serialized_end=2695
-  _LISTMEETINGSRESPONSE._serialized_start=2697
-  _LISTMEETINGSRESPONSE._serialized_end=2822
-  _GETMEETINGREQUEST._serialized_start=2824
-  _GETMEETINGREQUEST._serialized_end=2876
-  _CREATEMEETINGREQUEST._serialized_start=2878
-  _CREATEMEETINGREQUEST._serialized_end=2977
-  _UPDATEMEETINGREQUEST._serialized_start=2979
-  _UPDATEMEETINGREQUEST._serialized_end=3078
-  _DELETEMEETINGREQUEST._serialized_start=3080
-  _DELETEMEETINGREQUEST._serialized_end=3135
-  _LISTAPITOKENSREQUEST._serialized_start=3137
-  _LISTAPITOKENSREQUEST._serialized_end=3217
-  _LISTAPITOKENSRESPONSE._serialized_start=3220
-  _LISTAPITOKENSRESPONSE._serialized_end=3348
-  _GETAPITOKENREQUEST._serialized_start=3350
-  _GETAPITOKENREQUEST._serialized_end=3403
-  _CREATEAPITOKENREQUEST._serialized_start=3405
-  _CREATEAPITOKENREQUEST._serialized_end=3507
-  _UPDATEAPITOKENREQUEST._serialized_start=3509
-  _UPDATEAPITOKENREQUEST._serialized_end=3611
-  _DELETEAPITOKENREQUEST._serialized_start=3613
-  _DELETEAPITOKENREQUEST._serialized_end=3669
-  _LISTCONNECTIONSREQUEST._serialized_start=3671
-  _LISTCONNECTIONSREQUEST._serialized_end=3753
-  _LISTCONNECTIONSRESPONSE._serialized_start=3756
-  _LISTCONNECTIONSRESPONSE._serialized_end=3888
-  _GETCONNECTIONREQUEST._serialized_start=3890
-  _GETCONNECTIONREQUEST._serialized_end=3945
-  _CREATECONNECTIONREQUEST._serialized_start=3947
-  _CREATECONNECTIONREQUEST._serialized_end=4053
-  _UPDATECONNECTIONREQUEST._serialized_start=4055
-  _UPDATECONNECTIONREQUEST._serialized_end=4161
-  _DELETECONNECTIONREQUEST._serialized_start=4163
-  _DELETECONNECTIONREQUEST._serialized_end=4221
-  _LISTLABSREQUEST._serialized_start=4223
-  _LISTLABSREQUEST._serialized_end=4298
-  _LISTLABSRESPONSE._serialized_start=4300
-  _LISTLABSRESPONSE._serialized_end=4418
-  _GETLABREQUEST._serialized_start=4420
-  _GETLABREQUEST._serialized_end=4468
-  _CREATELABREQUEST._serialized_start=4470
-  _CREATELABREQUEST._serialized_end=4562
-  _UPDATELABREQUEST._serialized_start=4564
-  _UPDATELABREQUEST._serialized_end=4656
-  _DELETELABREQUEST._serialized_start=4658
-  _DELETELABREQUEST._serialized_end=4709
-  _LISTLICENSESREQUEST._serialized_start=4711
-  _LISTLICENSESREQUEST._serialized_end=4790
-  _LISTLICENSESRESPONSE._serialized_start=4792
-  _LISTLICENSESRESPONSE._serialized_end=4918
-  _GETLICENSEREQUEST._serialized_start=4920
-  _GETLICENSEREQUEST._serialized_end=4972
-  _CREATELICENSEREQUEST._serialized_start=4974
-  _CREATELICENSEREQUEST._serialized_end=5074
-  _UPDATELICENSEREQUEST._serialized_start=5076
-  _UPDATELICENSEREQUEST._serialized_end=5176
-  _DELETELICENSEREQUEST._serialized_start=5178
-  _DELETELICENSEREQUEST._serialized_end=5233
-  _LISTNOTIFIERSREQUEST._serialized_start=5235
-  _LISTNOTIFIERSREQUEST._serialized_end=5315
-  _LISTNOTIFIERSRESPONSE._serialized_start=5318
-  _LISTNOTIFIERSRESPONSE._serialized_end=5446
-  _GETNOTIFIERREQUEST._serialized_start=5448
-  _GETNOTIFIERREQUEST._serialized_end=5501
-  _CREATENOTIFIERREQUEST._serialized_start=5503
-  _CREATENOTIFIERREQUEST._serialized_end=5605
-  _UPDATENOTIFIERREQUEST._serialized_start=5607
-  _UPDATENOTIFIERREQUEST._serialized_end=5709
-  _DELETENOTIFIERREQUEST._serialized_start=5711
-  _DELETENOTIFIERREQUEST._serialized_end=5767
-  _LISTSERVINGSITESREQUEST._serialized_start=5769
-  _LISTSERVINGSITESREQUEST._serialized_end=5852
-  _LISTSERVINGSITESRESPONSE._serialized_start=5855
-  _LISTSERVINGSITESRESPONSE._serialized_end=5989
-  _GETSERVINGSITEREQUEST._serialized_start=5991
-  _GETSERVINGSITEREQUEST._serialized_end=6047
-  _CREATESERVINGSITEREQUEST._serialized_start=6049
-  _CREATESERVINGSITEREQUEST._serialized_end=6157
-  _UPDATESERVINGSITEREQUEST._serialized_start=6159
-  _UPDATESERVINGSITEREQUEST._serialized_end=6267
-  _DELETESERVINGSITEREQUEST._serialized_start=6269
-  _DELETESERVINGSITEREQUEST._serialized_end=6328
-  _LISTTENANTSREQUEST._serialized_start=6330
-  _LISTTENANTSREQUEST._serialized_end=6408
-  _LISTTENANTSRESPONSE._serialized_start=6410
-  _LISTTENANTSRESPONSE._serialized_end=6534
-  _GETTENANTREQUEST._serialized_start=6536
-  _GETTENANTREQUEST._serialized_end=6587
-  _CREATETENANTREQUEST._serialized_start=6589
-  _CREATETENANTREQUEST._serialized_end=6687
-  _UPDATETENANTREQUEST._serialized_start=6689
-  _UPDATETENANTREQUEST._serialized_end=6787
-  _DELETETENANTREQUEST._serialized_start=6789
-  _DELETETENANTREQUEST._serialized_end=6843
-  _LISTVIRTUALBUCKETSREQUEST._serialized_start=6845
-  _LISTVIRTUALBUCKETSREQUEST._serialized_end=6930
-  _LISTVIRTUALBUCKETSRESPONSE._serialized_start=6933
-  _LISTVIRTUALBUCKETSRESPONSE._serialized_end=7071
-  _GETVIRTUALBUCKETREQUEST._serialized_start=7073
-  _GETVIRTUALBUCKETREQUEST._serialized_end=7131
-  _CREATEVIRTUALBUCKETREQUEST._serialized_start=7133
-  _CREATEVIRTUALBUCKETREQUEST._serialized_end=7245
-  _UPDATEVIRTUALBUCKETREQUEST._serialized_start=7247
-  _UPDATEVIRTUALBUCKETREQUEST._serialized_end=7359
-  _DELETEVIRTUALBUCKETREQUEST._serialized_start=7361
-  _DELETEVIRTUALBUCKETREQUEST._serialized_end=7422
-  _LISTDATAPIPELINESREQUEST._serialized_start=7424
-  _LISTDATAPIPELINESREQUEST._serialized_end=7508
-  _LISTDATAPIPELINESRESPONSE._serialized_start=7511
-  _LISTDATAPIPELINESRESPONSE._serialized_end=7646
-  _GETDATAPIPELINEREQUEST._serialized_start=7648
-  _GETDATAPIPELINEREQUEST._serialized_end=7705
-  _CREATEDATAPIPELINEREQUEST._serialized_start=7707
-  _CREATEDATAPIPELINEREQUEST._serialized_end=7816
-  _UPDATEDATAPIPELINEREQUEST._serialized_start=7818
-  _UPDATEDATAPIPELINEREQUEST._serialized_end=7927
-  _DELETEDATAPIPELINEREQUEST._serialized_start=7929
-  _DELETEDATAPIPELINEREQUEST._serialized_end=7989
-  _LISTDATAPIPELINERUNSREQUEST._serialized_start=7991
-  _LISTDATAPIPELINERUNSREQUEST._serialized_end=8078
-  _LISTDATAPIPELINERUNSRESPONSE._serialized_start=8081
-  _LISTDATAPIPELINERUNSRESPONSE._serialized_end=8222
-  _GETDATAPIPELINERUNREQUEST._serialized_start=8224
-  _GETDATAPIPELINERUNREQUEST._serialized_end=8284
-  _CREATEDATAPIPELINERUNREQUEST._serialized_start=8286
-  _CREATEDATAPIPELINERUNREQUEST._serialized_end=8401
-  _UPDATEDATAPIPELINERUNREQUEST._serialized_start=8403
-  _UPDATEDATAPIPELINERUNREQUEST._serialized_end=8518
-  _DELETEDATAPIPELINERUNREQUEST._serialized_start=8520
-  _DELETEDATAPIPELINERUNREQUEST._serialized_end=8583
-  _LISTDATAPRODUCTSREQUEST._serialized_start=8585
-  _LISTDATAPRODUCTSREQUEST._serialized_end=8668
-  _LISTDATAPRODUCTSRESPONSE._serialized_start=8671
-  _LISTDATAPRODUCTSRESPONSE._serialized_end=8804
-  _GETDATAPRODUCTREQUEST._serialized_start=8806
-  _GETDATAPRODUCTREQUEST._serialized_end=8862
-  _CREATEDATAPRODUCTREQUEST._serialized_start=8864
-  _CREATEDATAPRODUCTREQUEST._serialized_end=8971
-  _UPDATEDATAPRODUCTREQUEST._serialized_start=8973
-  _UPDATEDATAPRODUCTREQUEST._serialized_end=9080
-  _DELETEDATAPRODUCTREQUEST._serialized_start=9082
-  _DELETEDATAPRODUCTREQUEST._serialized_end=9141
-  _LISTDATAPRODUCTVERSIONSREQUEST._serialized_start=9143
-  _LISTDATAPRODUCTVERSIONSREQUEST._serialized_end=9233
-  _LISTDATAPRODUCTVERSIONSRESPONSE._serialized_start=9236
-  _LISTDATAPRODUCTVERSIONSRESPONSE._serialized_end=9383
-  _GETDATAPRODUCTVERSIONREQUEST._serialized_start=9385
-  _GETDATAPRODUCTVERSIONREQUEST._serialized_end=9448
-  _CREATEDATAPRODUCTVERSIONREQUEST._serialized_start=9450
-  _CREATEDATAPRODUCTVERSIONREQUEST._serialized_end=9571
-  _UPDATEDATAPRODUCTVERSIONREQUEST._serialized_start=9573
-  _UPDATEDATAPRODUCTVERSIONREQUEST._serialized_end=9694
-  _DELETEDATAPRODUCTVERSIONREQUEST._serialized_start=9696
-  _DELETEDATAPRODUCTVERSIONREQUEST._serialized_end=9762
-  _LISTDATASETSREQUEST._serialized_start=9764
-  _LISTDATASETSREQUEST._serialized_end=9843
-  _LISTDATASETSRESPONSE._serialized_start=9845
-  _LISTDATASETSRESPONSE._serialized_end=9970
-  _GETDATASETREQUEST._serialized_start=9972
-  _GETDATASETREQUEST._serialized_end=10024
-  _CREATEDATASETREQUEST._serialized_start=10026
-  _CREATEDATASETREQUEST._serialized_end=10125
-  _UPDATEDATASETREQUEST._serialized_start=10127
-  _UPDATEDATASETREQUEST._serialized_end=10226
-  _DELETEDATASETREQUEST._serialized_start=10228
-  _DELETEDATASETREQUEST._serialized_end=10283
-  _LISTDATASOURCESREQUEST._serialized_start=10285
-  _LISTDATASOURCESREQUEST._serialized_end=10367
-  _LISTDATASOURCESRESPONSE._serialized_start=10370
-  _LISTDATASOURCESRESPONSE._serialized_end=10501
-  _GETDATASOURCEREQUEST._serialized_start=10503
-  _GETDATASOURCEREQUEST._serialized_end=10558
-  _CREATEDATASOURCEREQUEST._serialized_start=10560
-  _CREATEDATASOURCEREQUEST._serialized_end=10665
-  _UPDATEDATASOURCEREQUEST._serialized_start=10667
-  _UPDATEDATASOURCEREQUEST._serialized_end=10772
-  _DELETEDATASOURCEREQUEST._serialized_start=10774
-  _DELETEDATASOURCEREQUEST._serialized_end=10832
-  _LISTENTITIESREQUEST._serialized_start=10834
-  _LISTENTITIESREQUEST._serialized_end=10913
-  _LISTENTITIESRESPONSE._serialized_start=10915
-  _LISTENTITIESRESPONSE._serialized_end=11039
-  _GETENTITYREQUEST._serialized_start=11041
-  _GETENTITYREQUEST._serialized_end=11092
-  _CREATEENTITYREQUEST._serialized_start=11094
-  _CREATEENTITYREQUEST._serialized_end=11191
-  _UPDATEENTITYREQUEST._serialized_start=11193
-  _UPDATEENTITYREQUEST._serialized_end=11290
-  _DELETEENTITYREQUEST._serialized_start=11292
-  _DELETEENTITYREQUEST._serialized_end=11346
-  _LISTMODELCLASSESREQUEST._serialized_start=11348
-  _LISTMODELCLASSESREQUEST._serialized_end=11431
-  _LISTMODELCLASSESRESPONSE._serialized_start=11434
-  _LISTMODELCLASSESRESPONSE._serialized_end=11570
-  _GETMODELCLASSREQUEST._serialized_start=11572
-  _GETMODELCLASSREQUEST._serialized_end=11627
-  _CREATEMODELCLASSREQUEST._serialized_start=11629
-  _CREATEMODELCLASSREQUEST._serialized_end=11738
-  _UPDATEMODELCLASSREQUEST._serialized_start=11740
-  _UPDATEMODELCLASSREQUEST._serialized_end=11849
-  _DELETEMODELCLASSREQUEST._serialized_start=11851
-  _DELETEMODELCLASSREQUEST._serialized_end=11909
-  _LISTFEATUREHISTOGRAMSREQUEST._serialized_start=11911
-  _LISTFEATUREHISTOGRAMSREQUEST._serialized_end=11999
-  _LISTFEATUREHISTOGRAMSRESPONSE._serialized_start=12002
-  _LISTFEATUREHISTOGRAMSRESPONSE._serialized_end=12145
-  _GETFEATUREHISTOGRAMREQUEST._serialized_start=12147
-  _GETFEATUREHISTOGRAMREQUEST._serialized_end=12208
-  _CREATEFEATUREHISTOGRAMREQUEST._serialized_start=12210
-  _CREATEFEATUREHISTOGRAMREQUEST._serialized_end=12327
-  _UPDATEFEATUREHISTOGRAMREQUEST._serialized_start=12329
-  _UPDATEFEATUREHISTOGRAMREQUEST._serialized_end=12446
-  _DELETEFEATUREHISTOGRAMREQUEST._serialized_start=12448
-  _DELETEFEATUREHISTOGRAMREQUEST._serialized_end=12512
-  _LISTFEATUREGROUPREQUEST._serialized_start=12514
-  _LISTFEATUREGROUPREQUEST._serialized_end=12597
-  _LISTFEATUREGROUPRESPONSE._serialized_start=12600
-  _LISTFEATUREGROUPRESPONSE._serialized_end=12734
-  _GETFEATUREGROUPREQUEST._serialized_start=12736
-  _GETFEATUREGROUPREQUEST._serialized_end=12793
-  _CREATEFEATUREGROUPREQUEST._serialized_start=12795
-  _CREATEFEATUREGROUPREQUEST._serialized_end=12904
-  _UPDATEFEATUREGROUPREQUEST._serialized_start=12906
-  _UPDATEFEATUREGROUPREQUEST._serialized_end=13015
-  _DELETEFEATUREGROUPREQUEST._serialized_start=13017
-  _DELETEFEATUREGROUPREQUEST._serialized_end=13077
-  _LISTRECIPESREQUEST._serialized_start=13079
-  _LISTRECIPESREQUEST._serialized_end=13157
-  _LISTRECIPESRESPONSE._serialized_start=13159
-  _LISTRECIPESRESPONSE._serialized_end=13282
-  _GETRECIPEREQUEST._serialized_start=13284
-  _GETRECIPEREQUEST._serialized_end=13335
-  _CREATERECIPEREQUEST._serialized_start=13337
-  _CREATERECIPEREQUEST._serialized_end=13434
-  _UPDATERECIPEREQUEST._serialized_start=13436
-  _UPDATERECIPEREQUEST._serialized_end=13533
-  _DELETERECIPEREQUEST._serialized_start=13535
-  _DELETERECIPEREQUEST._serialized_end=13589
-  _LISTRECIPERUNSREQUEST._serialized_start=13591
-  _LISTRECIPERUNSREQUEST._serialized_end=13672
-  _LISTRECIPERUNSRESPONSE._serialized_start=13675
-  _LISTRECIPERUNSRESPONSE._serialized_end=13804
-  _GETRECIPERUNREQUEST._serialized_start=13806
-  _GETRECIPERUNREQUEST._serialized_end=13860
-  _CREATERECIPERUNREQUEST._serialized_start=13862
-  _CREATERECIPERUNREQUEST._serialized_end=13965
-  _UPDATERECIPERUNREQUEST._serialized_start=13967
-  _UPDATERECIPERUNREQUEST._serialized_end=14070
-  _DELETERECIPERUNREQUEST._serialized_start=14072
-  _DELETERECIPERUNREQUEST._serialized_end=14129
-  _LISTMODELSREQUEST._serialized_start=14131
-  _LISTMODELSREQUEST._serialized_end=14208
-  _LISTMODELSRESPONSE._serialized_start=14210
-  _LISTMODELSRESPONSE._serialized_end=14335
-  _GETMODELREQUEST._serialized_start=14337
-  _GETMODELREQUEST._serialized_end=14387
-  _CREATEMODELREQUEST._serialized_start=14389
-  _CREATEMODELREQUEST._serialized_end=14488
-  _UPDATEMODELREQUEST._serialized_start=14490
-  _UPDATEMODELREQUEST._serialized_end=14589
-  _DELETEMODELREQUEST._serialized_start=14591
-  _DELETEMODELREQUEST._serialized_end=14644
-  _LISTREPORTSREQUEST._serialized_start=14646
-  _LISTREPORTSREQUEST._serialized_end=14724
-  _LISTREPORTSRESPONSE._serialized_start=14726
-  _LISTREPORTSRESPONSE._serialized_end=14853
-  _GETREPORTREQUEST._serialized_start=14855
-  _GETREPORTREQUEST._serialized_end=14906
-  _CREATEREPORTREQUEST._serialized_start=14908
-  _CREATEREPORTREQUEST._serialized_end=15009
-  _UPDATEREPORTREQUEST._serialized_start=15011
-  _UPDATEREPORTREQUEST._serialized_end=15112
-  _DELETEREPORTREQUEST._serialized_start=15114
-  _DELETEREPORTREQUEST._serialized_end=15168
-  _LISTSTUDIESREQUEST._serialized_start=15170
-  _LISTSTUDIESREQUEST._serialized_end=15248
-  _LISTSTUDIESRESPONSE._serialized_start=15250
-  _LISTSTUDIESRESPONSE._serialized_end=15376
-  _GETSTUDYREQUEST._serialized_start=15378
-  _GETSTUDYREQUEST._serialized_end=15428
-  _CREATESTUDYREQUEST._serialized_start=15430
-  _CREATESTUDYREQUEST._serialized_end=15529
-  _UPDATESTUDYREQUEST._serialized_start=15531
-  _UPDATESTUDYREQUEST._serialized_end=15630
-  _DELETESTUDYREQUEST._serialized_start=15632
-  _DELETESTUDYREQUEST._serialized_end=15685
-  _LISTPREDICTIONSREQUEST._serialized_start=15687
-  _LISTPREDICTIONSREQUEST._serialized_end=15769
-  _LISTPREDICTIONSRESPONSE._serialized_start=15772
-  _LISTPREDICTIONSRESPONSE._serialized_end=15908
-  _GETPREDICTIONREQUEST._serialized_start=15910
-  _GETPREDICTIONREQUEST._serialized_end=15965
-  _CREATEPREDICTIONREQUEST._serialized_start=15967
-  _CREATEPREDICTIONREQUEST._serialized_end=16077
-  _UPDATEPREDICTIONREQUEST._serialized_start=16079
-  _UPDATEPREDICTIONREQUEST._serialized_end=16189
-  _DELETEPREDICTIONREQUEST._serialized_start=16191
-  _DELETEPREDICTIONREQUEST._serialized_end=16249
-  _LISTPREDICTORSREQUEST._serialized_start=16251
-  _LISTPREDICTORSREQUEST._serialized_end=16332
-  _LISTPREDICTORSRESPONSE._serialized_start=16335
-  _LISTPREDICTORSRESPONSE._serialized_end=16469
-  _GETPREDICTORREQUEST._serialized_start=16471
-  _GETPREDICTORREQUEST._serialized_end=16525
-  _CREATEPREDICTORREQUEST._serialized_start=16527
-  _CREATEPREDICTORREQUEST._serialized_end=16635
-  _UPDATEPREDICTORREQUEST._serialized_start=16637
-  _UPDATEPREDICTORREQUEST._serialized_end=16745
-  _DELETEPREDICTORREQUEST._serialized_start=16747
-  _DELETEPREDICTORREQUEST._serialized_end=16804
-  _LISTREVIEWSREQUEST._serialized_start=16806
-  _LISTREVIEWSREQUEST._serialized_end=16884
-  _LISTREVIEWSRESPONSE._serialized_start=16886
-  _LISTREVIEWSRESPONSE._serialized_end=17009
-  _GETREVIEWREQUEST._serialized_start=17011
-  _GETREVIEWREQUEST._serialized_end=17062
-  _CREATEREVIEWREQUEST._serialized_start=17064
-  _CREATEREVIEWREQUEST._serialized_end=17161
-  _UPDATEREVIEWREQUEST._serialized_start=17163
-  _UPDATEREVIEWREQUEST._serialized_end=17260
-  _DELETEREVIEWREQUEST._serialized_start=17262
-  _DELETEREVIEWREQUEST._serialized_end=17316
-  _LISTPOSTMORTEMSREQUEST._serialized_start=17318
-  _LISTPOSTMORTEMSREQUEST._serialized_end=17400
-  _LISTPOSTMORTEMSRESPONSE._serialized_start=17403
-  _LISTPOSTMORTEMSRESPONSE._serialized_end=17534
-  _GETPOSTMORTEMREQUEST._serialized_start=17536
-  _GETPOSTMORTEMREQUEST._serialized_end=17591
-  _CREATEPOSTMORTEMREQUEST._serialized_start=17593
-  _CREATEPOSTMORTEMREQUEST._serialized_end=17698
-  _UPDATEPOSTMORTEMREQUEST._serialized_start=17700
-  _UPDATEPOSTMORTEMREQUEST._serialized_end=17805
-  _DELETEPOSTMORTEMREQUEST._serialized_start=17807
-  _DELETEPOSTMORTEMREQUEST._serialized_end=17865
-  _LISTRUNBOOKSREQUEST._serialized_start=17867
-  _LISTRUNBOOKSREQUEST._serialized_end=17946
-  _LISTRUNBOOKSRESPONSE._serialized_start=17948
-  _LISTRUNBOOKSRESPONSE._serialized_end=18073
-  _GETRUNBOOKREQUEST._serialized_start=18075
-  _GETRUNBOOKREQUEST._serialized_end=18127
-  _CREATERUNBOOKREQUEST._serialized_start=18129
-  _CREATERUNBOOKREQUEST._serialized_end=18228
-  _UPDATERUNBOOKREQUEST._serialized_start=18230
-  _UPDATERUNBOOKREQUEST._serialized_end=18329
-  _DELETERUNBOOKREQUEST._serialized_start=18331
-  _DELETERUNBOOKREQUEST._serialized_end=18386
-  _LISTDATAAPPREQUEST._serialized_start=18388
-  _LISTDATAAPPREQUEST._serialized_end=18466
-  _LISTDATAAPPRESPONSE._serialized_start=18469
-  _LISTDATAAPPRESPONSE._serialized_end=18598
-  _GETDATAAPPREQUEST._serialized_start=18600
-  _GETDATAAPPREQUEST._serialized_end=18652
-  _CREATEDATAAPPREQUEST._serialized_start=18654
-  _CREATEDATAAPPREQUEST._serialized_end=18758
-  _UPDATEDATAAPPREQUEST._serialized_start=18760
-  _UPDATEDATAAPPREQUEST._serialized_end=18864
-  _DELETEDATAAPPREQUEST._serialized_start=18866
-  _DELETEDATAAPPREQUEST._serialized_end=18921
-  _DATABASEPROXYSERVICE._serialized_start=18925
-  _DATABASEPROXYSERVICE._serialized_end=45321
+  _LISTCONNECTIONSREQUEST._serialized_start=2616
+  _LISTCONNECTIONSREQUEST._serialized_end=2698
+  _LISTCONNECTIONSRESPONSE._serialized_start=2701
+  _LISTCONNECTIONSRESPONSE._serialized_end=2833
+  _GETCONNECTIONREQUEST._serialized_start=2835
+  _GETCONNECTIONREQUEST._serialized_end=2890
+  _CREATECONNECTIONREQUEST._serialized_start=2892
+  _CREATECONNECTIONREQUEST._serialized_end=2998
+  _UPDATECONNECTIONREQUEST._serialized_start=3000
+  _UPDATECONNECTIONREQUEST._serialized_end=3106
+  _DELETECONNECTIONREQUEST._serialized_start=3108
+  _DELETECONNECTIONREQUEST._serialized_end=3166
+  _LISTLABSREQUEST._serialized_start=3168
+  _LISTLABSREQUEST._serialized_end=3243
+  _LISTLABSRESPONSE._serialized_start=3245
+  _LISTLABSRESPONSE._serialized_end=3363
+  _GETLABREQUEST._serialized_start=3365
+  _GETLABREQUEST._serialized_end=3413
+  _CREATELABREQUEST._serialized_start=3415
+  _CREATELABREQUEST._serialized_end=3507
+  _UPDATELABREQUEST._serialized_start=3509
+  _UPDATELABREQUEST._serialized_end=3601
+  _DELETELABREQUEST._serialized_start=3603
+  _DELETELABREQUEST._serialized_end=3654
+  _LISTLICENSESREQUEST._serialized_start=3656
+  _LISTLICENSESREQUEST._serialized_end=3735
+  _LISTLICENSESRESPONSE._serialized_start=3737
+  _LISTLICENSESRESPONSE._serialized_end=3863
+  _GETLICENSEREQUEST._serialized_start=3865
+  _GETLICENSEREQUEST._serialized_end=3917
+  _CREATELICENSEREQUEST._serialized_start=3919
+  _CREATELICENSEREQUEST._serialized_end=4019
+  _UPDATELICENSEREQUEST._serialized_start=4021
+  _UPDATELICENSEREQUEST._serialized_end=4121
+  _DELETELICENSEREQUEST._serialized_start=4123
+  _DELETELICENSEREQUEST._serialized_end=4178
+  _LISTNOTIFIERSREQUEST._serialized_start=4180
+  _LISTNOTIFIERSREQUEST._serialized_end=4260
+  _LISTNOTIFIERSRESPONSE._serialized_start=4263
+  _LISTNOTIFIERSRESPONSE._serialized_end=4391
+  _GETNOTIFIERREQUEST._serialized_start=4393
+  _GETNOTIFIERREQUEST._serialized_end=4446
+  _CREATENOTIFIERREQUEST._serialized_start=4448
+  _CREATENOTIFIERREQUEST._serialized_end=4550
+  _UPDATENOTIFIERREQUEST._serialized_start=4552
+  _UPDATENOTIFIERREQUEST._serialized_end=4654
+  _DELETENOTIFIERREQUEST._serialized_start=4656
+  _DELETENOTIFIERREQUEST._serialized_end=4712
+  _LISTSERVINGSITESREQUEST._serialized_start=4714
+  _LISTSERVINGSITESREQUEST._serialized_end=4797
+  _LISTSERVINGSITESRESPONSE._serialized_start=4800
+  _LISTSERVINGSITESRESPONSE._serialized_end=4934
+  _GETSERVINGSITEREQUEST._serialized_start=4936
+  _GETSERVINGSITEREQUEST._serialized_end=4992
+  _CREATESERVINGSITEREQUEST._serialized_start=4994
+  _CREATESERVINGSITEREQUEST._serialized_end=5102
+  _UPDATESERVINGSITEREQUEST._serialized_start=5104
+  _UPDATESERVINGSITEREQUEST._serialized_end=5212
+  _DELETESERVINGSITEREQUEST._serialized_start=5214
+  _DELETESERVINGSITEREQUEST._serialized_end=5273
+  _LISTTENANTSREQUEST._serialized_start=5275
+  _LISTTENANTSREQUEST._serialized_end=5353
+  _LISTTENANTSRESPONSE._serialized_start=5355
+  _LISTTENANTSRESPONSE._serialized_end=5479
+  _GETTENANTREQUEST._serialized_start=5481
+  _GETTENANTREQUEST._serialized_end=5532
+  _CREATETENANTREQUEST._serialized_start=5534
+  _CREATETENANTREQUEST._serialized_end=5632
+  _UPDATETENANTREQUEST._serialized_start=5634
+  _UPDATETENANTREQUEST._serialized_end=5732
+  _DELETETENANTREQUEST._serialized_start=5734
+  _DELETETENANTREQUEST._serialized_end=5788
+  _LISTVIRTUALBUCKETSREQUEST._serialized_start=5790
+  _LISTVIRTUALBUCKETSREQUEST._serialized_end=5875
+  _LISTVIRTUALBUCKETSRESPONSE._serialized_start=5878
+  _LISTVIRTUALBUCKETSRESPONSE._serialized_end=6016
+  _GETVIRTUALBUCKETREQUEST._serialized_start=6018
+  _GETVIRTUALBUCKETREQUEST._serialized_end=6076
+  _CREATEVIRTUALBUCKETREQUEST._serialized_start=6078
+  _CREATEVIRTUALBUCKETREQUEST._serialized_end=6190
+  _UPDATEVIRTUALBUCKETREQUEST._serialized_start=6192
+  _UPDATEVIRTUALBUCKETREQUEST._serialized_end=6304
+  _DELETEVIRTUALBUCKETREQUEST._serialized_start=6306
+  _DELETEVIRTUALBUCKETREQUEST._serialized_end=6367
+  _LISTDATAPIPELINESREQUEST._serialized_start=6369
+  _LISTDATAPIPELINESREQUEST._serialized_end=6453
+  _LISTDATAPIPELINESRESPONSE._serialized_start=6456
+  _LISTDATAPIPELINESRESPONSE._serialized_end=6591
+  _GETDATAPIPELINEREQUEST._serialized_start=6593
+  _GETDATAPIPELINEREQUEST._serialized_end=6650
+  _CREATEDATAPIPELINEREQUEST._serialized_start=6652
+  _CREATEDATAPIPELINEREQUEST._serialized_end=6761
+  _UPDATEDATAPIPELINEREQUEST._serialized_start=6763
+  _UPDATEDATAPIPELINEREQUEST._serialized_end=6872
+  _DELETEDATAPIPELINEREQUEST._serialized_start=6874
+  _DELETEDATAPIPELINEREQUEST._serialized_end=6934
+  _LISTDATAPIPELINERUNSREQUEST._serialized_start=6936
+  _LISTDATAPIPELINERUNSREQUEST._serialized_end=7023
+  _LISTDATAPIPELINERUNSRESPONSE._serialized_start=7026
+  _LISTDATAPIPELINERUNSRESPONSE._serialized_end=7167
+  _GETDATAPIPELINERUNREQUEST._serialized_start=7169
+  _GETDATAPIPELINERUNREQUEST._serialized_end=7229
+  _CREATEDATAPIPELINERUNREQUEST._serialized_start=7231
+  _CREATEDATAPIPELINERUNREQUEST._serialized_end=7346
+  _UPDATEDATAPIPELINERUNREQUEST._serialized_start=7348
+  _UPDATEDATAPIPELINERUNREQUEST._serialized_end=7463
+  _DELETEDATAPIPELINERUNREQUEST._serialized_start=7465
+  _DELETEDATAPIPELINERUNREQUEST._serialized_end=7528
+  _LISTDATAPRODUCTSREQUEST._serialized_start=7530
+  _LISTDATAPRODUCTSREQUEST._serialized_end=7613
+  _LISTDATAPRODUCTSRESPONSE._serialized_start=7616
+  _LISTDATAPRODUCTSRESPONSE._serialized_end=7749
+  _GETDATAPRODUCTREQUEST._serialized_start=7751
+  _GETDATAPRODUCTREQUEST._serialized_end=7807
+  _CREATEDATAPRODUCTREQUEST._serialized_start=7809
+  _CREATEDATAPRODUCTREQUEST._serialized_end=7916
+  _UPDATEDATAPRODUCTREQUEST._serialized_start=7918
+  _UPDATEDATAPRODUCTREQUEST._serialized_end=8025
+  _DELETEDATAPRODUCTREQUEST._serialized_start=8027
+  _DELETEDATAPRODUCTREQUEST._serialized_end=8086
+  _LISTDATAPRODUCTVERSIONSREQUEST._serialized_start=8088
+  _LISTDATAPRODUCTVERSIONSREQUEST._serialized_end=8178
+  _LISTDATAPRODUCTVERSIONSRESPONSE._serialized_start=8181
+  _LISTDATAPRODUCTVERSIONSRESPONSE._serialized_end=8328
+  _GETDATAPRODUCTVERSIONREQUEST._serialized_start=8330
+  _GETDATAPRODUCTVERSIONREQUEST._serialized_end=8393
+  _CREATEDATAPRODUCTVERSIONREQUEST._serialized_start=8395
+  _CREATEDATAPRODUCTVERSIONREQUEST._serialized_end=8516
+  _UPDATEDATAPRODUCTVERSIONREQUEST._serialized_start=8518
+  _UPDATEDATAPRODUCTVERSIONREQUEST._serialized_end=8639
+  _DELETEDATAPRODUCTVERSIONREQUEST._serialized_start=8641
+  _DELETEDATAPRODUCTVERSIONREQUEST._serialized_end=8707
+  _LISTDATASETSREQUEST._serialized_start=8709
+  _LISTDATASETSREQUEST._serialized_end=8788
+  _LISTDATASETSRESPONSE._serialized_start=8790
+  _LISTDATASETSRESPONSE._serialized_end=8915
+  _GETDATASETREQUEST._serialized_start=8917
+  _GETDATASETREQUEST._serialized_end=8969
+  _CREATEDATASETREQUEST._serialized_start=8971
+  _CREATEDATASETREQUEST._serialized_end=9070
+  _UPDATEDATASETREQUEST._serialized_start=9072
+  _UPDATEDATASETREQUEST._serialized_end=9171
+  _DELETEDATASETREQUEST._serialized_start=9173
+  _DELETEDATASETREQUEST._serialized_end=9228
+  _LISTDATASOURCESREQUEST._serialized_start=9230
+  _LISTDATASOURCESREQUEST._serialized_end=9312
+  _LISTDATASOURCESRESPONSE._serialized_start=9315
+  _LISTDATASOURCESRESPONSE._serialized_end=9446
+  _GETDATASOURCEREQUEST._serialized_start=9448
+  _GETDATASOURCEREQUEST._serialized_end=9503
+  _CREATEDATASOURCEREQUEST._serialized_start=9505
+  _CREATEDATASOURCEREQUEST._serialized_end=9610
+  _UPDATEDATASOURCEREQUEST._serialized_start=9612
+  _UPDATEDATASOURCEREQUEST._serialized_end=9717
+  _DELETEDATASOURCEREQUEST._serialized_start=9719
+  _DELETEDATASOURCEREQUEST._serialized_end=9777
+  _LISTENTITIESREQUEST._serialized_start=9779
+  _LISTENTITIESREQUEST._serialized_end=9858
+  _LISTENTITIESRESPONSE._serialized_start=9860
+  _LISTENTITIESRESPONSE._serialized_end=9984
+  _GETENTITYREQUEST._serialized_start=9986
+  _GETENTITYREQUEST._serialized_end=10037
+  _CREATEENTITYREQUEST._serialized_start=10039
+  _CREATEENTITYREQUEST._serialized_end=10136
+  _UPDATEENTITYREQUEST._serialized_start=10138
+  _UPDATEENTITYREQUEST._serialized_end=10235
+  _DELETEENTITYREQUEST._serialized_start=10237
+  _DELETEENTITYREQUEST._serialized_end=10291
+  _LISTMODELCLASSESREQUEST._serialized_start=10293
+  _LISTMODELCLASSESREQUEST._serialized_end=10376
+  _LISTMODELCLASSESRESPONSE._serialized_start=10379
+  _LISTMODELCLASSESRESPONSE._serialized_end=10515
+  _GETMODELCLASSREQUEST._serialized_start=10517
+  _GETMODELCLASSREQUEST._serialized_end=10572
+  _CREATEMODELCLASSREQUEST._serialized_start=10574
+  _CREATEMODELCLASSREQUEST._serialized_end=10683
+  _UPDATEMODELCLASSREQUEST._serialized_start=10685
+  _UPDATEMODELCLASSREQUEST._serialized_end=10794
+  _DELETEMODELCLASSREQUEST._serialized_start=10796
+  _DELETEMODELCLASSREQUEST._serialized_end=10854
+  _LISTFEATUREHISTOGRAMSREQUEST._serialized_start=10856
+  _LISTFEATUREHISTOGRAMSREQUEST._serialized_end=10944
+  _LISTFEATUREHISTOGRAMSRESPONSE._serialized_start=10947
+  _LISTFEATUREHISTOGRAMSRESPONSE._serialized_end=11090
+  _GETFEATUREHISTOGRAMREQUEST._serialized_start=11092
+  _GETFEATUREHISTOGRAMREQUEST._serialized_end=11153
+  _CREATEFEATUREHISTOGRAMREQUEST._serialized_start=11155
+  _CREATEFEATUREHISTOGRAMREQUEST._serialized_end=11272
+  _UPDATEFEATUREHISTOGRAMREQUEST._serialized_start=11274
+  _UPDATEFEATUREHISTOGRAMREQUEST._serialized_end=11391
+  _DELETEFEATUREHISTOGRAMREQUEST._serialized_start=11393
+  _DELETEFEATUREHISTOGRAMREQUEST._serialized_end=11457
+  _LISTFEATUREGROUPREQUEST._serialized_start=11459
+  _LISTFEATUREGROUPREQUEST._serialized_end=11542
+  _LISTFEATUREGROUPRESPONSE._serialized_start=11545
+  _LISTFEATUREGROUPRESPONSE._serialized_end=11679
+  _GETFEATUREGROUPREQUEST._serialized_start=11681
+  _GETFEATUREGROUPREQUEST._serialized_end=11738
+  _CREATEFEATUREGROUPREQUEST._serialized_start=11740
+  _CREATEFEATUREGROUPREQUEST._serialized_end=11849
+  _UPDATEFEATUREGROUPREQUEST._serialized_start=11851
+  _UPDATEFEATUREGROUPREQUEST._serialized_end=11960
+  _DELETEFEATUREGROUPREQUEST._serialized_start=11962
+  _DELETEFEATUREGROUPREQUEST._serialized_end=12022
+  _LISTRECIPESREQUEST._serialized_start=12024
+  _LISTRECIPESREQUEST._serialized_end=12102
+  _LISTRECIPESRESPONSE._serialized_start=12104
+  _LISTRECIPESRESPONSE._serialized_end=12227
+  _GETRECIPEREQUEST._serialized_start=12229
+  _GETRECIPEREQUEST._serialized_end=12280
+  _CREATERECIPEREQUEST._serialized_start=12282
+  _CREATERECIPEREQUEST._serialized_end=12379
+  _UPDATERECIPEREQUEST._serialized_start=12381
+  _UPDATERECIPEREQUEST._serialized_end=12478
+  _DELETERECIPEREQUEST._serialized_start=12480
+  _DELETERECIPEREQUEST._serialized_end=12534
+  _LISTRECIPERUNSREQUEST._serialized_start=12536
+  _LISTRECIPERUNSREQUEST._serialized_end=12617
+  _LISTRECIPERUNSRESPONSE._serialized_start=12620
+  _LISTRECIPERUNSRESPONSE._serialized_end=12749
+  _GETRECIPERUNREQUEST._serialized_start=12751
+  _GETRECIPERUNREQUEST._serialized_end=12805
+  _CREATERECIPERUNREQUEST._serialized_start=12807
+  _CREATERECIPERUNREQUEST._serialized_end=12910
+  _UPDATERECIPERUNREQUEST._serialized_start=12912
+  _UPDATERECIPERUNREQUEST._serialized_end=13015
+  _DELETERECIPERUNREQUEST._serialized_start=13017
+  _DELETERECIPERUNREQUEST._serialized_end=13074
+  _LISTMODELSREQUEST._serialized_start=13076
+  _LISTMODELSREQUEST._serialized_end=13153
+  _LISTMODELSRESPONSE._serialized_start=13155
+  _LISTMODELSRESPONSE._serialized_end=13280
+  _GETMODELREQUEST._serialized_start=13282
+  _GETMODELREQUEST._serialized_end=13332
+  _CREATEMODELREQUEST._serialized_start=13334
+  _CREATEMODELREQUEST._serialized_end=13433
+  _UPDATEMODELREQUEST._serialized_start=13435
+  _UPDATEMODELREQUEST._serialized_end=13534
+  _DELETEMODELREQUEST._serialized_start=13536
+  _DELETEMODELREQUEST._serialized_end=13589
+  _LISTREPORTSREQUEST._serialized_start=13591
+  _LISTREPORTSREQUEST._serialized_end=13669
+  _LISTREPORTSRESPONSE._serialized_start=13671
+  _LISTREPORTSRESPONSE._serialized_end=13798
+  _GETREPORTREQUEST._serialized_start=13800
+  _GETREPORTREQUEST._serialized_end=13851
+  _CREATEREPORTREQUEST._serialized_start=13853
+  _CREATEREPORTREQUEST._serialized_end=13954
+  _UPDATEREPORTREQUEST._serialized_start=13956
+  _UPDATEREPORTREQUEST._serialized_end=14057
+  _DELETEREPORTREQUEST._serialized_start=14059
+  _DELETEREPORTREQUEST._serialized_end=14113
+  _LISTSTUDIESREQUEST._serialized_start=14115
+  _LISTSTUDIESREQUEST._serialized_end=14193
+  _LISTSTUDIESRESPONSE._serialized_start=14195
+  _LISTSTUDIESRESPONSE._serialized_end=14321
+  _GETSTUDYREQUEST._serialized_start=14323
+  _GETSTUDYREQUEST._serialized_end=14373
+  _CREATESTUDYREQUEST._serialized_start=14375
+  _CREATESTUDYREQUEST._serialized_end=14474
+  _UPDATESTUDYREQUEST._serialized_start=14476
+  _UPDATESTUDYREQUEST._serialized_end=14575
+  _DELETESTUDYREQUEST._serialized_start=14577
+  _DELETESTUDYREQUEST._serialized_end=14630
+  _LISTPREDICTIONSREQUEST._serialized_start=14632
+  _LISTPREDICTIONSREQUEST._serialized_end=14714
+  _LISTPREDICTIONSRESPONSE._serialized_start=14717
+  _LISTPREDICTIONSRESPONSE._serialized_end=14853
+  _GETPREDICTIONREQUEST._serialized_start=14855
+  _GETPREDICTIONREQUEST._serialized_end=14910
+  _CREATEPREDICTIONREQUEST._serialized_start=14912
+  _CREATEPREDICTIONREQUEST._serialized_end=15022
+  _UPDATEPREDICTIONREQUEST._serialized_start=15024
+  _UPDATEPREDICTIONREQUEST._serialized_end=15134
+  _DELETEPREDICTIONREQUEST._serialized_start=15136
+  _DELETEPREDICTIONREQUEST._serialized_end=15194
+  _LISTPREDICTORSREQUEST._serialized_start=15196
+  _LISTPREDICTORSREQUEST._serialized_end=15277
+  _LISTPREDICTORSRESPONSE._serialized_start=15280
+  _LISTPREDICTORSRESPONSE._serialized_end=15414
+  _GETPREDICTORREQUEST._serialized_start=15416
+  _GETPREDICTORREQUEST._serialized_end=15470
+  _CREATEPREDICTORREQUEST._serialized_start=15472
+  _CREATEPREDICTORREQUEST._serialized_end=15580
+  _UPDATEPREDICTORREQUEST._serialized_start=15582
+  _UPDATEPREDICTORREQUEST._serialized_end=15690
+  _DELETEPREDICTORREQUEST._serialized_start=15692
+  _DELETEPREDICTORREQUEST._serialized_end=15749
+  _LISTREVIEWSREQUEST._serialized_start=15751
+  _LISTREVIEWSREQUEST._serialized_end=15829
+  _LISTREVIEWSRESPONSE._serialized_start=15831
+  _LISTREVIEWSRESPONSE._serialized_end=15954
+  _GETREVIEWREQUEST._serialized_start=15956
+  _GETREVIEWREQUEST._serialized_end=16007
+  _CREATEREVIEWREQUEST._serialized_start=16009
+  _CREATEREVIEWREQUEST._serialized_end=16106
+  _UPDATEREVIEWREQUEST._serialized_start=16108
+  _UPDATEREVIEWREQUEST._serialized_end=16205
+  _DELETEREVIEWREQUEST._serialized_start=16207
+  _DELETEREVIEWREQUEST._serialized_end=16261
+  _LISTPOSTMORTEMSREQUEST._serialized_start=16263
+  _LISTPOSTMORTEMSREQUEST._serialized_end=16345
+  _LISTPOSTMORTEMSRESPONSE._serialized_start=16348
+  _LISTPOSTMORTEMSRESPONSE._serialized_end=16479
+  _GETPOSTMORTEMREQUEST._serialized_start=16481
+  _GETPOSTMORTEMREQUEST._serialized_end=16536
+  _CREATEPOSTMORTEMREQUEST._serialized_start=16538
+  _CREATEPOSTMORTEMREQUEST._serialized_end=16643
+  _UPDATEPOSTMORTEMREQUEST._serialized_start=16645
+  _UPDATEPOSTMORTEMREQUEST._serialized_end=16750
+  _DELETEPOSTMORTEMREQUEST._serialized_start=16752
+  _DELETEPOSTMORTEMREQUEST._serialized_end=16810
+  _LISTRUNBOOKSREQUEST._serialized_start=16812
+  _LISTRUNBOOKSREQUEST._serialized_end=16891
+  _LISTRUNBOOKSRESPONSE._serialized_start=16893
+  _LISTRUNBOOKSRESPONSE._serialized_end=17018
+  _GETRUNBOOKREQUEST._serialized_start=17020
+  _GETRUNBOOKREQUEST._serialized_end=17072
+  _CREATERUNBOOKREQUEST._serialized_start=17074
+  _CREATERUNBOOKREQUEST._serialized_end=17173
+  _UPDATERUNBOOKREQUEST._serialized_start=17175
+  _UPDATERUNBOOKREQUEST._serialized_end=17274
+  _DELETERUNBOOKREQUEST._serialized_start=17276
+  _DELETERUNBOOKREQUEST._serialized_end=17331
+  _LISTDATAAPPREQUEST._serialized_start=17333
+  _LISTDATAAPPREQUEST._serialized_end=17411
+  _LISTDATAAPPRESPONSE._serialized_start=17414
+  _LISTDATAAPPRESPONSE._serialized_end=17543
+  _GETDATAAPPREQUEST._serialized_start=17545
+  _GETDATAAPPREQUEST._serialized_end=17597
+  _CREATEDATAAPPREQUEST._serialized_start=17599
+  _CREATEDATAAPPREQUEST._serialized_end=17703
+  _UPDATEDATAAPPREQUEST._serialized_start=17705
+  _UPDATEDATAAPPREQUEST._serialized_end=17809
+  _DELETEDATAAPPREQUEST._serialized_start=17811
+  _DELETEDATAAPPREQUEST._serialized_end=17866
+  _DATABASEPROXYSERVICE._serialized_start=17870
+  _DATABASEPROXYSERVICE._serialized_end=42753
 # @@protoc_insertion_point(module_scope)

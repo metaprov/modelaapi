@@ -138,6 +138,8 @@ type AccountSpec struct {
 	// The collection of DataProduct names that will be displayed with priority on the tenant dashboard for the Account
 	// +kubebuilder:validation:Optional
 	FavoritesProducts []string `json:"favoriteProducts,omitempty" protobuf:"bytes,19,rep,name=favoriteProducts"`
+	// +kubebuilder:validation:Optional
+	Tokens []APITokenSpec `json:"tokens,omitempty" protobuf:"bytes,20,rep,name=tokens"`
 }
 
 // AccountStatus defines the actual state of the api object
@@ -183,3 +185,27 @@ type AvatarSpec struct {
 	// +kubebuilder:validation:Optional
 	Path *string `json:"path,omitempty" protobuf:"bytes,2,opt,name=path"`
 }
+
+type APITokenSpec struct {
+	Name string `json:"name,omitempty" protobuf:"bytes,1,rep,name=name"`
+	// Scopes is the list of scopes for this token.
+	// +kubebuilder:validation:Optional
+	Scopes []Scope `json:"scopes,omitempty" protobuf:"bytes,2,rep,name=scopes"`
+	// The token itself
+	SecretRef v1.SecretReference `json:"secretRef,omitempty" protobuf:"bytes,3,rep,name=secretRef"`
+}
+
+type Scope struct {
+	// +kubebuilder:validation:Optional
+	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	// +kubebuilder:validation:Optional
+	Actions []ScopeVerb `json:"actions,omitempty" protobuf:"bytes,2,rep,name=actions"`
+}
+
+type ScopeVerb string
+
+const (
+	ScopeVerbRead  ScopeVerb = "read"
+	ScopeVerbWrite ScopeVerb = "write"
+	ScopeVerbList  ScopeVerb = "list"
+)

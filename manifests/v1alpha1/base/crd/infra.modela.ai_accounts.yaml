@@ -179,6 +179,38 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
+              tokens:
+                items:
+                  properties:
+                    name:
+                      type: string
+                    scopes:
+                      description: Scopes is the list of scopes for this token.
+                      items:
+                        properties:
+                          actions:
+                            items:
+                              type: string
+                            type: array
+                          name:
+                            type: string
+                        type: object
+                      type: array
+                    secretRef:
+                      description: The token itself
+                      properties:
+                        name:
+                          description: name is unique within a namespace to reference
+                            a secret resource.
+                          type: string
+                        namespace:
+                          description: namespace defines the space within which the
+                            secret name must be unique.
+                          type: string
+                      type: object
+                      x-kubernetes-map-type: atomic
+                  type: object
+                type: array
               type:
                 default: user
                 description: The type of Account, which can be a user or a group

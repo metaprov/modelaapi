@@ -44,22 +44,11 @@ type DatabaseProxyServiceClient interface {
 	CreateTodo(ctx context.Context, in *CreateTodoRequest, opts ...grpc.CallOption) (*v1alpha11.Todo, error)
 	UpdateTodo(ctx context.Context, in *UpdateTodoRequest, opts ...grpc.CallOption) (*v1alpha11.Todo, error)
 	DeleteTodo(ctx context.Context, in *DeleteTodoRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	ListMeetings(ctx context.Context, in *ListMeetingsRequest, opts ...grpc.CallOption) (*ListMeetingsResponse, error)
-	GetMeeting(ctx context.Context, in *GetMeetingRequest, opts ...grpc.CallOption) (*v1alpha11.Meeting, error)
-	CreateMeeting(ctx context.Context, in *CreateMeetingRequest, opts ...grpc.CallOption) (*v1alpha11.Meeting, error)
-	UpdateMeeting(ctx context.Context, in *UpdateMeetingRequest, opts ...grpc.CallOption) (*v1alpha11.Meeting, error)
-	DeleteMeeting(ctx context.Context, in *DeleteMeetingRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 	ListAttachments(ctx context.Context, in *ListAttachmentsRequest, opts ...grpc.CallOption) (*ListAttachmentsResponse, error)
 	GetAttachment(ctx context.Context, in *GetAttachmentRequest, opts ...grpc.CallOption) (*v1alpha1.Attachment, error)
 	CreateAttachment(ctx context.Context, in *CreateAttachmentRequest, opts ...grpc.CallOption) (*v1alpha1.Attachment, error)
 	UpdateAttachment(ctx context.Context, in *UpdateAttachmentRequest, opts ...grpc.CallOption) (*v1alpha1.Attachment, error)
 	DeleteAttachment(ctx context.Context, in *DeleteAttachmentRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	// api token
-	ListApiTokens(ctx context.Context, in *ListApiTokensRequest, opts ...grpc.CallOption) (*ListApiTokensResponse, error)
-	GetApiToken(ctx context.Context, in *GetApiTokenRequest, opts ...grpc.CallOption) (*v1alpha1.ApiToken, error)
-	CreateApiToken(ctx context.Context, in *CreateApiTokenRequest, opts ...grpc.CallOption) (*v1alpha1.ApiToken, error)
-	UpdateApiToken(ctx context.Context, in *UpdateApiTokenRequest, opts ...grpc.CallOption) (*v1alpha1.ApiToken, error)
-	DeleteApiToken(ctx context.Context, in *DeleteApiTokenRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 	// connection
 	ListConnections(ctx context.Context, in *ListConnectionsRequest, opts ...grpc.CallOption) (*ListConnectionsResponse, error)
 	GetConnection(ctx context.Context, in *GetConnectionRequest, opts ...grpc.CallOption) (*v1alpha1.Connection, error)
@@ -355,51 +344,6 @@ func (c *databaseProxyServiceClient) DeleteTodo(ctx context.Context, in *DeleteT
 	return out, nil
 }
 
-func (c *databaseProxyServiceClient) ListMeetings(ctx context.Context, in *ListMeetingsRequest, opts ...grpc.CallOption) (*ListMeetingsResponse, error) {
-	out := new(ListMeetingsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListMeetings", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) GetMeeting(ctx context.Context, in *GetMeetingRequest, opts ...grpc.CallOption) (*v1alpha11.Meeting, error) {
-	out := new(v1alpha11.Meeting)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetMeeting", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) CreateMeeting(ctx context.Context, in *CreateMeetingRequest, opts ...grpc.CallOption) (*v1alpha11.Meeting, error) {
-	out := new(v1alpha11.Meeting)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateMeeting", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) UpdateMeeting(ctx context.Context, in *UpdateMeetingRequest, opts ...grpc.CallOption) (*v1alpha11.Meeting, error) {
-	out := new(v1alpha11.Meeting)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateMeeting", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) DeleteMeeting(ctx context.Context, in *DeleteMeetingRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteMeeting", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *databaseProxyServiceClient) ListAttachments(ctx context.Context, in *ListAttachmentsRequest, opts ...grpc.CallOption) (*ListAttachmentsResponse, error) {
 	out := new(ListAttachmentsResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListAttachments", in, out, opts...)
@@ -439,51 +383,6 @@ func (c *databaseProxyServiceClient) UpdateAttachment(ctx context.Context, in *U
 func (c *databaseProxyServiceClient) DeleteAttachment(ctx context.Context, in *DeleteAttachmentRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
 	out := new(empty.Empty)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAttachment", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) ListApiTokens(ctx context.Context, in *ListApiTokensRequest, opts ...grpc.CallOption) (*ListApiTokensResponse, error) {
-	out := new(ListApiTokensResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListApiTokens", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) GetApiToken(ctx context.Context, in *GetApiTokenRequest, opts ...grpc.CallOption) (*v1alpha1.ApiToken, error) {
-	out := new(v1alpha1.ApiToken)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetApiToken", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) CreateApiToken(ctx context.Context, in *CreateApiTokenRequest, opts ...grpc.CallOption) (*v1alpha1.ApiToken, error) {
-	out := new(v1alpha1.ApiToken)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateApiToken", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) UpdateApiToken(ctx context.Context, in *UpdateApiTokenRequest, opts ...grpc.CallOption) (*v1alpha1.ApiToken, error) {
-	out := new(v1alpha1.ApiToken)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateApiToken", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *databaseProxyServiceClient) DeleteApiToken(ctx context.Context, in *DeleteApiTokenRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteApiToken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1770,22 +1669,11 @@ type DatabaseProxyServiceServer interface {
 	CreateTodo(context.Context, *CreateTodoRequest) (*v1alpha11.Todo, error)
 	UpdateTodo(context.Context, *UpdateTodoRequest) (*v1alpha11.Todo, error)
 	DeleteTodo(context.Context, *DeleteTodoRequest) (*empty.Empty, error)
-	ListMeetings(context.Context, *ListMeetingsRequest) (*ListMeetingsResponse, error)
-	GetMeeting(context.Context, *GetMeetingRequest) (*v1alpha11.Meeting, error)
-	CreateMeeting(context.Context, *CreateMeetingRequest) (*v1alpha11.Meeting, error)
-	UpdateMeeting(context.Context, *UpdateMeetingRequest) (*v1alpha11.Meeting, error)
-	DeleteMeeting(context.Context, *DeleteMeetingRequest) (*empty.Empty, error)
 	ListAttachments(context.Context, *ListAttachmentsRequest) (*ListAttachmentsResponse, error)
 	GetAttachment(context.Context, *GetAttachmentRequest) (*v1alpha1.Attachment, error)
 	CreateAttachment(context.Context, *CreateAttachmentRequest) (*v1alpha1.Attachment, error)
 	UpdateAttachment(context.Context, *UpdateAttachmentRequest) (*v1alpha1.Attachment, error)
 	DeleteAttachment(context.Context, *DeleteAttachmentRequest) (*empty.Empty, error)
-	// api token
-	ListApiTokens(context.Context, *ListApiTokensRequest) (*ListApiTokensResponse, error)
-	GetApiToken(context.Context, *GetApiTokenRequest) (*v1alpha1.ApiToken, error)
-	CreateApiToken(context.Context, *CreateApiTokenRequest) (*v1alpha1.ApiToken, error)
-	UpdateApiToken(context.Context, *UpdateApiTokenRequest) (*v1alpha1.ApiToken, error)
-	DeleteApiToken(context.Context, *DeleteApiTokenRequest) (*empty.Empty, error)
 	// connection
 	ListConnections(context.Context, *ListConnectionsRequest) (*ListConnectionsResponse, error)
 	GetConnection(context.Context, *GetConnectionRequest) (*v1alpha1.Connection, error)
@@ -1988,21 +1876,6 @@ func (UnimplementedDatabaseProxyServiceServer) UpdateTodo(context.Context, *Upda
 func (UnimplementedDatabaseProxyServiceServer) DeleteTodo(context.Context, *DeleteTodoRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteTodo not implemented")
 }
-func (UnimplementedDatabaseProxyServiceServer) ListMeetings(context.Context, *ListMeetingsRequest) (*ListMeetingsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListMeetings not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) GetMeeting(context.Context, *GetMeetingRequest) (*v1alpha11.Meeting, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetMeeting not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) CreateMeeting(context.Context, *CreateMeetingRequest) (*v1alpha11.Meeting, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateMeeting not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) UpdateMeeting(context.Context, *UpdateMeetingRequest) (*v1alpha11.Meeting, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateMeeting not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) DeleteMeeting(context.Context, *DeleteMeetingRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteMeeting not implemented")
-}
 func (UnimplementedDatabaseProxyServiceServer) ListAttachments(context.Context, *ListAttachmentsRequest) (*ListAttachmentsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListAttachments not implemented")
 }
@@ -2017,21 +1890,6 @@ func (UnimplementedDatabaseProxyServiceServer) UpdateAttachment(context.Context,
 }
 func (UnimplementedDatabaseProxyServiceServer) DeleteAttachment(context.Context, *DeleteAttachmentRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAttachment not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) ListApiTokens(context.Context, *ListApiTokensRequest) (*ListApiTokensResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListApiTokens not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) GetApiToken(context.Context, *GetApiTokenRequest) (*v1alpha1.ApiToken, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetApiToken not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) CreateApiToken(context.Context, *CreateApiTokenRequest) (*v1alpha1.ApiToken, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateApiToken not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) UpdateApiToken(context.Context, *UpdateApiTokenRequest) (*v1alpha1.ApiToken, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateApiToken not implemented")
-}
-func (UnimplementedDatabaseProxyServiceServer) DeleteApiToken(context.Context, *DeleteApiTokenRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteApiToken not implemented")
 }
 func (UnimplementedDatabaseProxyServiceServer) ListConnections(context.Context, *ListConnectionsRequest) (*ListConnectionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListConnections not implemented")
@@ -2736,96 +2594,6 @@ func _DatabaseProxyService_DeleteTodo_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatabaseProxyService_ListMeetings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListMeetingsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).ListMeetings(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListMeetings",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).ListMeetings(ctx, req.(*ListMeetingsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_GetMeeting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetMeetingRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).GetMeeting(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetMeeting",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).GetMeeting(ctx, req.(*GetMeetingRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_CreateMeeting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateMeetingRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).CreateMeeting(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateMeeting",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).CreateMeeting(ctx, req.(*CreateMeetingRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_UpdateMeeting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateMeetingRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).UpdateMeeting(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateMeeting",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).UpdateMeeting(ctx, req.(*UpdateMeetingRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_DeleteMeeting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteMeetingRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).DeleteMeeting(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteMeeting",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).DeleteMeeting(ctx, req.(*DeleteMeetingRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _DatabaseProxyService_ListAttachments_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListAttachmentsRequest)
 	if err := dec(in); err != nil {
@@ -2912,96 +2680,6 @@ func _DatabaseProxyService_DeleteAttachment_Handler(srv interface{}, ctx context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DatabaseProxyServiceServer).DeleteAttachment(ctx, req.(*DeleteAttachmentRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_ListApiTokens_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListApiTokensRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).ListApiTokens(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListApiTokens",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).ListApiTokens(ctx, req.(*ListApiTokensRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_GetApiToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetApiTokenRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).GetApiToken(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetApiToken",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).GetApiToken(ctx, req.(*GetApiTokenRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_CreateApiToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateApiTokenRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).CreateApiToken(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateApiToken",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).CreateApiToken(ctx, req.(*CreateApiTokenRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_UpdateApiToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateApiTokenRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).UpdateApiToken(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateApiToken",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).UpdateApiToken(ctx, req.(*UpdateApiTokenRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DatabaseProxyService_DeleteApiToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteApiTokenRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).DeleteApiToken(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteApiToken",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).DeleteApiToken(ctx, req.(*DeleteApiTokenRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -5594,26 +5272,6 @@ var DatabaseProxyService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DatabaseProxyService_DeleteTodo_Handler,
 		},
 		{
-			MethodName: "ListMeetings",
-			Handler:    _DatabaseProxyService_ListMeetings_Handler,
-		},
-		{
-			MethodName: "GetMeeting",
-			Handler:    _DatabaseProxyService_GetMeeting_Handler,
-		},
-		{
-			MethodName: "CreateMeeting",
-			Handler:    _DatabaseProxyService_CreateMeeting_Handler,
-		},
-		{
-			MethodName: "UpdateMeeting",
-			Handler:    _DatabaseProxyService_UpdateMeeting_Handler,
-		},
-		{
-			MethodName: "DeleteMeeting",
-			Handler:    _DatabaseProxyService_DeleteMeeting_Handler,
-		},
-		{
 			MethodName: "ListAttachments",
 			Handler:    _DatabaseProxyService_ListAttachments_Handler,
 		},
@@ -5632,26 +5290,6 @@ var DatabaseProxyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteAttachment",
 			Handler:    _DatabaseProxyService_DeleteAttachment_Handler,
-		},
-		{
-			MethodName: "ListApiTokens",
-			Handler:    _DatabaseProxyService_ListApiTokens_Handler,
-		},
-		{
-			MethodName: "GetApiToken",
-			Handler:    _DatabaseProxyService_GetApiToken_Handler,
-		},
-		{
-			MethodName: "CreateApiToken",
-			Handler:    _DatabaseProxyService_CreateApiToken_Handler,
-		},
-		{
-			MethodName: "UpdateApiToken",
-			Handler:    _DatabaseProxyService_UpdateApiToken_Handler,
-		},
-		{
-			MethodName: "DeleteApiToken",
-			Handler:    _DatabaseProxyService_DeleteApiToken_Handler,
 		},
 		{
 			MethodName: "ListConnections",

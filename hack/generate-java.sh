@@ -36,7 +36,6 @@ protoc \
     github.com/metaprov/modelaapi/services/account/v1/account.proto \
     github.com/metaprov/modelaapi/services/userroleclass/v1/userroleclass.proto \
     github.com/metaprov/modelaapi/services/modelasystem/v1/modelasystem.proto \
-    github.com/metaprov/modelaapi/services/apitoken/v1/apitoken.proto \
     github.com/metaprov/modelaapi/services/alert/v1/alert.proto \
     github.com/metaprov/modelaapi/services/attachment/v1/attachment.proto \
     github.com/metaprov/modelaapi/services/dbproxyd/v1/dbproxyd.proto \
@@ -44,7 +43,6 @@ protoc \
     github.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd.proto \
     github.com/metaprov/modelaapi/services/common/v1/common.proto \
     github.com/metaprov/modelaapi/services/connection/v1/connection.proto \
-    github.com/metaprov/modelaapi/services/curtain/v1/curtain.proto \
     github.com/metaprov/modelaapi/services/data/v1/data.proto \
     github.com/metaprov/modelaapi/services/datapipeline/v1/datapipeline.proto \
     github.com/metaprov/modelaapi/services/datapipelinerun/v1/datapipelinerun.proto \

@@ -8,6 +8,36 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
+export class APITokenSpec extends jspb.Message {
+  getName(): string;
+  setName(value: string): APITokenSpec;
+
+  getScopesList(): Array<Scope>;
+  setScopesList(value: Array<Scope>): APITokenSpec;
+  clearScopesList(): APITokenSpec;
+  addScopes(value?: Scope, index?: number): Scope;
+
+  getSecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
+  setSecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): APITokenSpec;
+  hasSecretref(): boolean;
+  clearSecretref(): APITokenSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): APITokenSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: APITokenSpec): APITokenSpec.AsObject;
+  static serializeBinaryToWriter(message: APITokenSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): APITokenSpec;
+  static deserializeBinaryFromReader(message: APITokenSpec, reader: jspb.BinaryReader): APITokenSpec;
+}
+
+export namespace APITokenSpec {
+  export type AsObject = {
+    name: string,
+    scopesList: Array<Scope.AsObject>,
+    secretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
+  }
+}
+
 export class Account extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Account;
@@ -154,6 +184,11 @@ export class AccountSpec extends jspb.Message {
   clearFavoriteproductsList(): AccountSpec;
   addFavoriteproducts(value: string, index?: number): AccountSpec;
 
+  getTokensList(): Array<APITokenSpec>;
+  setTokensList(value: Array<APITokenSpec>): AccountSpec;
+  clearTokensList(): AccountSpec;
+  addTokens(value?: APITokenSpec, index?: number): APITokenSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AccountSpec.AsObject;
   static toObject(includeInstance: boolean, msg: AccountSpec): AccountSpec.AsObject;
@@ -179,6 +214,7 @@ export namespace AccountSpec {
     clearancelevel: string,
     avatar?: AvatarSpec.AsObject,
     favoriteproductsList: Array<string>,
+    tokensList: Array<APITokenSpec.AsObject>,
   }
 }
 
@@ -833,158 +869,6 @@ export namespace ApacheSparkSpec {
     username: string,
     password: string,
     url: string,
-  }
-}
-
-export class ApiToken extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): ApiToken;
-  hasMetadata(): boolean;
-  clearMetadata(): ApiToken;
-
-  getSpec(): ApiTokenSpec | undefined;
-  setSpec(value?: ApiTokenSpec): ApiToken;
-  hasSpec(): boolean;
-  clearSpec(): ApiToken;
-
-  getStatus(): ApiTokenStatus | undefined;
-  setStatus(value?: ApiTokenStatus): ApiToken;
-  hasStatus(): boolean;
-  clearStatus(): ApiToken;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ApiToken.AsObject;
-  static toObject(includeInstance: boolean, msg: ApiToken): ApiToken.AsObject;
-  static serializeBinaryToWriter(message: ApiToken, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ApiToken;
-  static deserializeBinaryFromReader(message: ApiToken, reader: jspb.BinaryReader): ApiToken;
-}
-
-export namespace ApiToken {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    spec?: ApiTokenSpec.AsObject,
-    status?: ApiTokenStatus.AsObject,
-  }
-}
-
-export class ApiTokenCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): ApiTokenCondition;
-
-  getStatus(): string;
-  setStatus(value: string): ApiTokenCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ApiTokenCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): ApiTokenCondition;
-
-  getReason(): string;
-  setReason(value: string): ApiTokenCondition;
-
-  getMessage(): string;
-  setMessage(value: string): ApiTokenCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ApiTokenCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: ApiTokenCondition): ApiTokenCondition.AsObject;
-  static serializeBinaryToWriter(message: ApiTokenCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ApiTokenCondition;
-  static deserializeBinaryFromReader(message: ApiTokenCondition, reader: jspb.BinaryReader): ApiTokenCondition;
-}
-
-export namespace ApiTokenCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
-export class ApiTokenList extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ApiTokenList;
-  hasMetadata(): boolean;
-  clearMetadata(): ApiTokenList;
-
-  getItemsList(): Array<ApiToken>;
-  setItemsList(value: Array<ApiToken>): ApiTokenList;
-  clearItemsList(): ApiTokenList;
-  addItems(value?: ApiToken, index?: number): ApiToken;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ApiTokenList.AsObject;
-  static toObject(includeInstance: boolean, msg: ApiTokenList): ApiTokenList.AsObject;
-  static serializeBinaryToWriter(message: ApiTokenList, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ApiTokenList;
-  static deserializeBinaryFromReader(message: ApiTokenList, reader: jspb.BinaryReader): ApiTokenList;
-}
-
-export namespace ApiTokenList {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
-    itemsList: Array<ApiToken.AsObject>,
-  }
-}
-
-export class ApiTokenSpec extends jspb.Message {
-  getDescription(): string;
-  setDescription(value: string): ApiTokenSpec;
-
-  getScopesList(): Array<Scope>;
-  setScopesList(value: Array<Scope>): ApiTokenSpec;
-  clearScopesList(): ApiTokenSpec;
-  addScopes(value?: Scope, index?: number): Scope;
-
-  getOwner(): string;
-  setOwner(value: string): ApiTokenSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ApiTokenSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ApiTokenSpec): ApiTokenSpec.AsObject;
-  static serializeBinaryToWriter(message: ApiTokenSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ApiTokenSpec;
-  static deserializeBinaryFromReader(message: ApiTokenSpec, reader: jspb.BinaryReader): ApiTokenSpec;
-}
-
-export namespace ApiTokenSpec {
-  export type AsObject = {
-    description: string,
-    scopesList: Array<Scope.AsObject>,
-    owner: string,
-  }
-}
-
-export class ApiTokenStatus extends jspb.Message {
-  getObservedgeneration(): number;
-  setObservedgeneration(value: number): ApiTokenStatus;
-
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ApiTokenStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): ApiTokenStatus;
-
-  getConditionsList(): Array<ApiTokenCondition>;
-  setConditionsList(value: Array<ApiTokenCondition>): ApiTokenStatus;
-  clearConditionsList(): ApiTokenStatus;
-  addConditions(value?: ApiTokenCondition, index?: number): ApiTokenCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ApiTokenStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: ApiTokenStatus): ApiTokenStatus.AsObject;
-  static serializeBinaryToWriter(message: ApiTokenStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ApiTokenStatus;
-  static deserializeBinaryFromReader(message: ApiTokenStatus, reader: jspb.BinaryReader): ApiTokenStatus;
-}
-
-export namespace ApiTokenStatus {
-  export type AsObject = {
-    observedgeneration: number,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    conditionsList: Array<ApiTokenCondition.AsObject>,
   }
 }
 

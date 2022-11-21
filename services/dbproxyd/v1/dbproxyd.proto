@@ -146,75 +146,6 @@ message DeleteTodoRequest {
     string name = 2;
 }
 
-///////////////////////////////////////////////////////
-/// Meeting
-//////////////////////////////////////////////////////
-
-message ListMeetingsRequest {
-    string namespace   = 1;
-    int32 page_size    = 2;
-    string page_token  = 3;
-}
-
-message ListMeetingsResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting items = 1;
-    string next_page_token = 2;
-}
-
-message GetMeetingRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message CreateMeetingRequest {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting item = 1;
-}
-
-message UpdateMeetingRequest {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting item = 2;
-}
-
-message DeleteMeetingRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-
-
-
-//////////////////////////////////////////////////////
-/// ApiTokens
-//////////////////////////////////////////////////////
-
-message ListApiTokensRequest {
-    string namespace   = 1;
-    int32 page_size    = 2;
-    string page_token  = 3;
-}
-
-message ListApiTokensResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken items = 1;
-    string next_page_token = 2;
-}
-
-message GetApiTokenRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message CreateApiTokenRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken item = 1;
-}
-
-message UpdateApiTokenRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken item = 2;
-}
-
-message DeleteApiTokenRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
 
 //////////////////////////////////////////////////////
 /// Connections
@@ -1194,24 +1125,12 @@ service DatabaseProxyService {
     rpc UpdateTodo(UpdateTodoRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo) {}
     rpc DeleteTodo(DeleteTodoRequest) returns (google.protobuf.Empty) {}
 
-    rpc ListMeetings(ListMeetingsRequest) returns (ListMeetingsResponse) {}
-    rpc GetMeeting(GetMeetingRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting) {}
-    rpc CreateMeeting(CreateMeetingRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting) { }
-    rpc UpdateMeeting(UpdateMeetingRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting) {}
-    rpc DeleteMeeting(DeleteMeetingRequest) returns (google.protobuf.Empty) {}
-
+    
     rpc ListAttachments(ListAttachmentsRequest) returns (ListAttachmentsResponse) {}
     rpc GetAttachment(GetAttachmentRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment) {}
     rpc CreateAttachment(CreateAttachmentRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment) { }
     rpc UpdateAttachment(UpdateAttachmentRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment) {}
     rpc DeleteAttachment(DeleteAttachmentRequest) returns (google.protobuf.Empty) {}
-    
-    // api token
-    rpc ListApiTokens(ListApiTokensRequest) returns (ListApiTokensResponse) {}
-    rpc GetApiToken(GetApiTokenRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken) { }
-    rpc CreateApiToken(CreateApiTokenRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken) {}
-    rpc UpdateApiToken(UpdateApiTokenRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken) {}
-    rpc DeleteApiToken(DeleteApiTokenRequest) returns (google.protobuf.Empty) {}
 
     // connection
     rpc ListConnections(ListConnectionsRequest) returns (ListConnectionsResponse) {}

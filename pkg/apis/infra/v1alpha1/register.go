@@ -41,8 +41,6 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
 		&Account{},
 		&AccountList{},
-		&ApiToken{},
-		&ApiTokenList{},
 		&Alert{},
 		&AlertList{},
 		&Attachment{},

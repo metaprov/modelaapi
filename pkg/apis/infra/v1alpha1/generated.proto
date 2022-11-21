@@ -19,6 +19,17 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1";
 
+message APITokenSpec {
+  optional string name = 1;
+
+  // Scopes is the list of scopes for this token.
+  // +kubebuilder:validation:Optional
+  repeated Scope scopes = 2;
+
+  // The token itself
+  optional k8s.io.api.core.v1.SecretReference secretRef = 3;
+}
+
 // Account represents a single user on the system or a team that other Accounts can be grouped under
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
@@ -149,6 +160,9 @@ message AccountSpec {
   // The collection of DataProduct names that will be displayed with priority on the tenant dashboard for the Account
   // +kubebuilder:validation:Optional
   repeated string favoriteProducts = 19;
+
+  // +kubebuilder:validation:Optional
+  repeated APITokenSpec tokens = 20;
 }
 
 // AccountStatus defines the actual state of the api object
@@ -561,78 +575,6 @@ message ApacheSparkSpec {
 
   // URL Override the other
   optional string url = 6;
-}
-
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=apitokens,singular=apitoken,categories={infra,modela}
-message ApiToken {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional ApiTokenSpec spec = 2;
-
-  // +optional
-  optional ApiTokenStatus status = 3;
-}
-
-// ApiTokenCondition describes the state of the license at a certain point.
-message ApiTokenCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human-readable message indicating details about the transition.
-  optional string message = 5;
-}
-
-// +kubebuilder:object:root=true
-// ApiTokenList is a list of ApiTokens
-message ApiTokenList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
-
-  repeated ApiToken items = 2;
-}
-
-// ApiTokenSpec defines the desired state of ApiToken
-message ApiTokenSpec {
-  // User provided description
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string description = 1;
-
-  // Scopes is the list of scopes for this token.
-  repeated Scope scopes = 2;
-
-  // +kubebuilder:default:="no-one"
-  // +kubebuilder:validation:Optional
-  optional string owner = 3;
-}
-
-// ApiTokenStatus is the observed state of a ApiToken
-message ApiTokenStatus {
-  // ObservedGeneration is the Last generation that was acted on
-  // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
-
-  // Last time the object was updated
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
-
-  // +patchMergeKey=type
-  // +patchStrategy=merge
-  // +kubebuilder:validation:Optional
-  repeated ApiTokenCondition conditions = 3;
 }
 
 // +kubebuilder:object:root=true
