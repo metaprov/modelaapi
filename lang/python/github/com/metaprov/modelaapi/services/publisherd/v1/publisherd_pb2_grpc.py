@@ -24,11 +24,6 @@ class PublisherdServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelResponse.FromString,
                 )
-        self.PublishNotebook = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishNotebook',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishNotebookRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishNotebookResponse.FromString,
-                )
         self.Shutdown = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/Shutdown',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.ShutdownRequest.SerializeToString,
@@ -52,13 +47,6 @@ class PublisherdServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def PublishNotebook(self, request, context):
-        """Publish a notebook.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def Shutdown(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -77,11 +65,6 @@ def add_PublisherdServiceServicer_to_server(servicer, server):
                     servicer.PublishModel,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelResponse.SerializeToString,
-            ),
-            'PublishNotebook': grpc.unary_unary_rpc_method_handler(
-                    servicer.PublishNotebook,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishNotebookRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishNotebookResponse.SerializeToString,
             ),
             'Shutdown': grpc.unary_unary_rpc_method_handler(
                     servicer.Shutdown,
@@ -129,23 +112,6 @@ class PublisherdService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishModel',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def PublishNotebook(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishNotebook',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishNotebookRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishNotebookResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

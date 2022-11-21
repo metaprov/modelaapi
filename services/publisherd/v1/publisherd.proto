@@ -7,19 +7,6 @@ import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 
-message PublishNotebookRequest {
-    string notebookName = 1;
-    string notebookNamespace = 2;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec notebookSpec            = 3;
-    string   NotebookContent     = 4;
-    string   Dockerfile          = 5;
-    string   provider            = 6;  // the image registry provider
-    map<string,bytes>  secret    = 7;  // the image registry login details
-}
-
-message PublishNotebookResponse {
-    string ImageName     = 1;
-}
 
 message PublishModelRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct           dataproduct         = 1;
@@ -72,9 +59,6 @@ service PublisherdService {
     rpc PackageModel(PackageModelRequest) returns (PackageModelResponse) {}
 
     rpc PublishModel(PublishModelRequest) returns (PublishModelResponse) {}
-
-    // Publish a notebook.
-    rpc PublishNotebook(PublishNotebookRequest) returns (PublishNotebookResponse) {}
 
     rpc Shutdown(ShutdownRequest) returns (ShutdownResponse) {}
 }

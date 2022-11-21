@@ -25,8 +25,6 @@ type PublisherdServiceClient interface {
 	// publish tar file including the reports
 	PackageModel(ctx context.Context, in *PackageModelRequest, opts ...grpc.CallOption) (*PackageModelResponse, error)
 	PublishModel(ctx context.Context, in *PublishModelRequest, opts ...grpc.CallOption) (*PublishModelResponse, error)
-	// Publish a notebook.
-	PublishNotebook(ctx context.Context, in *PublishNotebookRequest, opts ...grpc.CallOption) (*PublishNotebookResponse, error)
 	Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error)
 }
 
@@ -56,15 +54,6 @@ func (c *publisherdServiceClient) PublishModel(ctx context.Context, in *PublishM
 	return out, nil
 }
 
-func (c *publisherdServiceClient) PublishNotebook(ctx context.Context, in *PublishNotebookRequest, opts ...grpc.CallOption) (*PublishNotebookResponse, error) {
-	out := new(PublishNotebookResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishNotebook", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *publisherdServiceClient) Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error) {
 	out := new(ShutdownResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/Shutdown", in, out, opts...)
@@ -81,8 +70,6 @@ type PublisherdServiceServer interface {
 	// publish tar file including the reports
 	PackageModel(context.Context, *PackageModelRequest) (*PackageModelResponse, error)
 	PublishModel(context.Context, *PublishModelRequest) (*PublishModelResponse, error)
-	// Publish a notebook.
-	PublishNotebook(context.Context, *PublishNotebookRequest) (*PublishNotebookResponse, error)
 	Shutdown(context.Context, *ShutdownRequest) (*ShutdownResponse, error)
 	mustEmbedUnimplementedPublisherdServiceServer()
 }
@@ -96,9 +83,6 @@ func (UnimplementedPublisherdServiceServer) PackageModel(context.Context, *Packa
 }
 func (UnimplementedPublisherdServiceServer) PublishModel(context.Context, *PublishModelRequest) (*PublishModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PublishModel not implemented")
-}
-func (UnimplementedPublisherdServiceServer) PublishNotebook(context.Context, *PublishNotebookRequest) (*PublishNotebookResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PublishNotebook not implemented")
 }
 func (UnimplementedPublisherdServiceServer) Shutdown(context.Context, *ShutdownRequest) (*ShutdownResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Shutdown not implemented")
@@ -152,24 +136,6 @@ func _PublisherdService_PublishModel_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
-func _PublisherdService_PublishNotebook_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PublishNotebookRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(PublisherdServiceServer).PublishNotebook(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishNotebook",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PublisherdServiceServer).PublishNotebook(ctx, req.(*PublishNotebookRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _PublisherdService_Shutdown_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ShutdownRequest)
 	if err := dec(in); err != nil {
@@ -202,10 +168,6 @@ var PublisherdService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "PublishModel",
 			Handler:    _PublisherdService_PublishModel_Handler,
-		},
-		{
-			MethodName: "PublishNotebook",
-			Handler:    _PublisherdService_PublishNotebook_Handler,
 		},
 		{
 			MethodName: "Shutdown",

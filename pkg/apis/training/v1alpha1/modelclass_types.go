@@ -204,6 +204,34 @@ type ModelClassTrainingSpec struct {
 	// Training resources
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,9,opt,name=resources"`
+	// What triggered the training
+	//+kubebuilder:validation:Optional
+	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,10,opt,name=triggeredBy"`
+	// Pause the training job or any additional training job
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,11,opt,name=paused"`
+	// The deadline for models to complete training, in seconds
+	// +kubebuilder:validation:Maximum=36000
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:default:=3600
+	// +kubebuilder:validation:Optional
+	MaxTime *int32 `json:"maxTime,omitempty" protobuf:"varint,12,opt,name=maxTime"`
+	// The number of candidate models that will be sampled and trained
+	// +kubebuilder:validation:Maximum=512
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:default:=10
+	// +kubebuilder:validation:Optional
+	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,13,opt,name=maxModels"`
+	// The desired number of trainers that will train candidate models in parallel. The number
+	// of trainers is restricted based on the allowance provided by the active License
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,14,opt,name=trainers"`
+	// Aborted indicates that the execution of the ModelAutobuilder and any associated workloads should be permanently stopped
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,15,opt,name=aborted"`
 }
 
 type ModelClassServingSpec struct {
@@ -320,12 +348,15 @@ type ModelClassStatus struct {
 	// The latest best model
 	//+kubebuilder:validation:Optional
 	LastestModel string `json:"latestModel,omitempty" protobuf:"bytes,14,opt,name=latestModel"`
+	// The highest score out of all Models created by the associated Study resource
+	// +kubebuilder:validation:Optional
+	BestModelScore float64 `json:"bestModelScore,omitempty" protobuf:"bytes,15,opt,name=bestModelScore"`
 	// List of the last 5 retired models
-	RetiredModels []string `json:"retired,omitempty" protobuf:"bytes,15,opt,name=retired"`
+	RetiredModels []string `json:"retired,omitempty" protobuf:"bytes,16,opt,name=retired"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,16,rep,name=conditions"`
+	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,17,rep,name=conditions"`
 }
 
 type PromotionStatus struct {

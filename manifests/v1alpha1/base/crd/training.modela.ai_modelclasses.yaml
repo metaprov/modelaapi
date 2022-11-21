@@ -2189,6 +2189,11 @@ spec:
                 description: TrainingTemplate specifies the configuration to train
                   and evaluate models
                 properties:
+                  aborted:
+                    default: false
+                    description: Aborted indicates that the execution of the ModelAutobuilder
+                      and any associated workloads should be permanently stopped
+                    type: boolean
                   labRef:
                     description: The reference to the Lab under which the Model for
                       the class will be trained If unspecified, the default Lab from
@@ -2228,6 +2233,22 @@ spec:
                         type: string
                     type: object
                     x-kubernetes-map-type: atomic
+                  maxModels:
+                    default: 10
+                    description: The number of candidate models that will be sampled
+                      and trained
+                    format: int32
+                    maximum: 512
+                    minimum: 1
+                    type: integer
+                  maxTime:
+                    default: 3600
+                    description: The deadline for models to complete training, in
+                      seconds
+                    format: int32
+                    maximum: 36000
+                    minimum: 1
+                    type: integer
                   modelImage:
                     description: ModelImage specifies the configuration to upload
                       Docker images of models to an image registry
@@ -2455,6 +2476,11 @@ spec:
                           type: object
                         type: array
                     type: object
+                  paused:
+                    default: false
+                    description: Pause the training job or any additional training
+                      job
+                    type: boolean
                   promotionPolicy:
                     description: Promotion defines the way to promote models
                     enum:
@@ -2668,6 +2694,13 @@ spec:
                       template will be the basis for training models From this model
                       class.
                     type: string
+                  trainers:
+                    default: 1
+                    description: The desired number of trainers that will train candidate
+                      models in parallel. The number of trainers is restricted based
+                      on the allowance provided by the active License
+                    format: int32
+                    type: integer
                   trainingSchedule:
                     description: Training schedule
                     properties:
@@ -2694,6 +2727,16 @@ spec:
                         - cron
                         type: string
                     type: object
+                  triggeredBy:
+                    description: What triggered the training
+                    enum:
+                    - on-demand
+                    - on-schedule
+                    - on-new-data
+                    - on-github-event
+                    - on-concept-drift
+                    - on-pref-degradation
+                    type: string
                 type: object
               versionName:
                 default: ""
@@ -3107,6 +3150,10 @@ spec:
                         type: boolean
                     type: object
                 type: object
+              bestModelScore:
+                description: The highest score out of all Models created by the associated
+                  Study resource
+                type: number
               conditions:
                 items:
                   description: ModelClassCondition describes the state of a ModelClass

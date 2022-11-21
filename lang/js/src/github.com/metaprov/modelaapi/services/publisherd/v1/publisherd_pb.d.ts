@@ -5,68 +5,6 @@ import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb fr
 import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
 
 
-export class PublishNotebookRequest extends jspb.Message {
-  getNotebookname(): string;
-  setNotebookname(value: string): PublishNotebookRequest;
-
-  getNotebooknamespace(): string;
-  setNotebooknamespace(value: string): PublishNotebookRequest;
-
-  getNotebookspec(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookSpec | undefined;
-  setNotebookspec(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookSpec): PublishNotebookRequest;
-  hasNotebookspec(): boolean;
-  clearNotebookspec(): PublishNotebookRequest;
-
-  getNotebookcontent(): string;
-  setNotebookcontent(value: string): PublishNotebookRequest;
-
-  getDockerfile(): string;
-  setDockerfile(value: string): PublishNotebookRequest;
-
-  getProvider(): string;
-  setProvider(value: string): PublishNotebookRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): PublishNotebookRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PublishNotebookRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PublishNotebookRequest): PublishNotebookRequest.AsObject;
-  static serializeBinaryToWriter(message: PublishNotebookRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PublishNotebookRequest;
-  static deserializeBinaryFromReader(message: PublishNotebookRequest, reader: jspb.BinaryReader): PublishNotebookRequest;
-}
-
-export namespace PublishNotebookRequest {
-  export type AsObject = {
-    notebookname: string,
-    notebooknamespace: string,
-    notebookspec?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookSpec.AsObject,
-    notebookcontent: string,
-    dockerfile: string,
-    provider: string,
-    secretMap: Array<[string, Uint8Array | string]>,
-  }
-}
-
-export class PublishNotebookResponse extends jspb.Message {
-  getImagename(): string;
-  setImagename(value: string): PublishNotebookResponse;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PublishNotebookResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: PublishNotebookResponse): PublishNotebookResponse.AsObject;
-  static serializeBinaryToWriter(message: PublishNotebookResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PublishNotebookResponse;
-  static deserializeBinaryFromReader(message: PublishNotebookResponse, reader: jspb.BinaryReader): PublishNotebookResponse;
-}
-
-export namespace PublishNotebookResponse {
-  export type AsObject = {
-    imagename: string,
-  }
-}
-
 export class PublishModelRequest extends jspb.Message {
   getDataproduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
   setDataproduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): PublishModelRequest;

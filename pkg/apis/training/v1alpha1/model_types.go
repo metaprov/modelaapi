@@ -1178,6 +1178,21 @@ type PartitionModelLocationsSpec struct {
 	PartitionForecastFile *string `json:"partitionForecastFile,omitempty" protobuf:"bytes,6,opt,name=partitionForecastFile"`
 }
 
+type StageStatusPhase string
+
+const (
+	StageStatusPhaseRunning            StageStatusPhase = "Running"
+	StageStatusPhaseTraining           StageStatusPhase = "Training"   // search and train for the best model
+	StageStatusPhasePublishing         StageStatusPhase = "Publishing" // publish the model
+	StageStatusPhaseUnitTests          StageStatusPhase = "UnitTesting"
+	StageStatusPhaseReleasing          StageStatusPhase = "Releasing"
+	StageStatusPhaseWaitingForApproval StageStatusPhase = "WaitingForApproval"
+	StageStatusPhaseApproved           StageStatusPhase = "Approved"
+	StageStatusPhaseDenied             StageStatusPhase = "Denied"
+	StageStatusPhaseCompleted          StageStatusPhase = "Completed"
+	StageStatusPhaseFailed             StageStatusPhase = "Failed"
+)
+
 type ModelStageStatus struct {
 	// Phase is the phase of the stage
 	// +kubebuilder:default:="Pending"

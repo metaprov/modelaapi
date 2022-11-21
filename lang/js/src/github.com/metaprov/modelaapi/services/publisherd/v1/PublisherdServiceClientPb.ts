@@ -121,49 +121,6 @@ export class PublisherdServiceClient {
     this.methodInfoPublishModel);
   }
 
-  methodInfoPublishNotebook = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishNotebook',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishNotebookRequest,
-    github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishNotebookResponse,
-    (request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishNotebookRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishNotebookResponse.deserializeBinary
-  );
-
-  publishNotebook(
-    request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishNotebookRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishNotebookResponse>;
-
-  publishNotebook(
-    request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishNotebookRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishNotebookResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishNotebookResponse>;
-
-  publishNotebook(
-    request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishNotebookRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishNotebookResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishNotebook',
-        request,
-        metadata || {},
-        this.methodInfoPublishNotebook,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishNotebook',
-    request,
-    metadata || {},
-    this.methodInfoPublishNotebook);
-  }
-
   methodInfoShutdown = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/Shutdown',
     grpcWeb.MethodType.UNARY,

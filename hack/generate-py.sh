@@ -88,11 +88,6 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/license/v1/license.proto \
     github.com/metaprov/modelaapi/services/model/v1/model.proto \
     github.com/metaprov/modelaapi/services/modelclass/v1/modelclass.proto \
-    github.com/metaprov/modelaapi/services/modelautobuilder/v1/modelautobuilder.proto \
-    github.com/metaprov/modelaapi/services/modelpipeline/v1/modelpipeline.proto \
-    github.com/metaprov/modelaapi/services/modelpipelinerun/v1/modelpipelinerun.proto \
-    github.com/metaprov/modelaapi/services/notebook/v1/notebook.proto \
-    github.com/metaprov/modelaapi/services/notebookrun/v1/notebookrun.proto \
     github.com/metaprov/modelaapi/services/notifier/v1/notifier.proto \
     github.com/metaprov/modelaapi/services/objectstored/v1/objectstored.proto \
     github.com/metaprov/modelaapi/services/onlinefeaturestored/v1/onlinefeaturestored.proto \

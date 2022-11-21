@@ -40,22 +40,12 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
 		&Model{},
 		&ModelList{},
-		&ModelPipeline{},
-		&ModelPipelineList{},
-		&ModelPipelineRun{},
-		&ModelPipelineRunList{},
 		&Study{},
 		&StudyList{},
 		&ModelClass{},
 		&ModelClassList{},
 		&Report{},
 		&ReportList{},
-		&ModelAutobuilder{},
-		&ModelAutobuilderList{},
-		&Notebook{},
-		&NotebookList{},
-		&NotebookRun{},
-		&NotebookRunList{},
 	)
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)
 	return nil
