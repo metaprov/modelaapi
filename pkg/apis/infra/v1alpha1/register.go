@@ -47,8 +47,6 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 		&AlertList{},
 		&Attachment{},
 		&AttachmentList{},
-		&Commit{},
-		&CommitList{},
 		&ServingSite{},
 		&ServingSiteList{},
 		&Lab{},
