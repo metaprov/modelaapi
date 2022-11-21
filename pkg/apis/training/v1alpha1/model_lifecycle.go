@@ -997,7 +997,7 @@ func (model *Model) MarkTrainedDriftDetectorFailed(err string) {
 
 func (model *Model) MarkReleaseFailed(err string) {
 	model.CreateOrUpdateCond(ModelCondition{
-		Type:    ModelConditionType(MPRModelReleased),
+		Type:    ModelConditionType(ModelReleased),
 		Status:  v1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
