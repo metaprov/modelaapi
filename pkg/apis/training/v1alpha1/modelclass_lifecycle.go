@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	ctrl "sigs.k8s.io/controller-runtime"
 
@@ -131,109 +130,81 @@ func (mclass ModelClass) IsFailed() bool {
 }
 
 ///////////////////////////////////////////////
-// Training
+// Training Life cycle
 //////////////////////////////////////////////
 
 func (mclass *ModelClass) StudyName() string {
 	return "study-" + mclass.Name
 }
 
-func (mclass *ModelClass) IsTrainingSetCreated() bool {
-	cond := mclass.GetCond(ModelClassCreatedTrainingSet)
-	return cond.Status == v1.ConditionTrue
+// At the start of training, mark the training dataset as pending
+func (mclass *ModelClass) MarkTrainingDatasetPending() {
+	mclass.Status.Phase = ModelClassPhasePending
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassTrainingDatasetReady,
+		Status: v1.ConditionFalse,
+		Reason: ReasonTrainingPending,
+	})
+	mclass.Status.LastestStudy = ""
+	mclass.Status.LastestDataset = ""
+	mclass.Status.LastestModel = ""
 }
 
-func (mclass *ModelClass) MarkCreatingTrainingSet() {
+func (mclass *ModelClass) MarkCreatingTrainingDatasetSet(dataset string) {
 	mclass.Status.Phase = ModelClassPhaseCreatingTrainingDataset
 	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassCreatedTrainingSet,
+		Type:   ModelClassTrainingDatasetReady,
 		Status: v1.ConditionFalse,
 		Reason: ReasonCreatingTrainingSet,
 	})
+	mclass.Status.LastestDataset = datasetName
 }
 
+// when
 func (mclass *ModelClass) MarkCreatedTrainingSet() {
+	mclass.Status.Phase = ModelClassPhaseTraining
 	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassCreatedTrainingSet,
-		Status: v1.ConditionTrue,
-	})
-}
-
-func (mclass *ModelClass) MarkReady() {
-	mclass.Status.Phase = ModelClassPhaseReady
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassReady,
-		Status: v1.ConditionTrue,
-	})
-}
-
-func (mclass *ModelClass) MarkNotReady() {
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassReady,
+		Type:   ModelClassTrainingDatasetReady,
 		Status: v1.ConditionFalse,
+		Reason: ReasonCreatedTrainingSet,
 	})
 }
 
 func (mclass *ModelClass) MarkCreatingTrainingSetFailed(err string) {
 	mclass.Status.Phase = ModelClassPhaseFailed
 	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:    ModelClassCreatedTrainingSet,
+		Type:    ModelClassTrainingDatasetReady,
 		Status:  v1.ConditionFalse,
 		Reason:  ReasonCreatingTrainingSet,
 		Message: err,
 	})
 }
 
-func (mclass *ModelClass) MarkPromoting() {
-	mclass.Status.Phase = ModelClassPhasePromoting
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassReady,
-		Status: v1.ConditionFalse,
-		Reason: ReasonPromoting,
-	})
-}
-
-func (mclass *ModelClass) MarkFailToPromote(err error) {
-	mclass.Status.Phase = ModelClassPhaseFailed
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:    ModelClassReady,
-		Status:  v1.ConditionFalse,
-		Reason:  ReasonFailedToPromote,
-		Message: err.Error(),
-	})
-}
-
-func (mclass *ModelClass) MarkWaitingForPromotion() {
-	mclass.Status.Phase = ModelClassPhaseWaitingForPromotion
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassReady,
-		Status: v1.ConditionFalse,
-		Reason: ReasonWaitingForPromotion,
-	})
-}
-
-///////////////////////////////////////////////
-// Training
-//////////////////////////////////////////////
-func (mclass *ModelClass) MarkTraining() {
+/////////////////////////////////////////////////////
+// Actual training
+//////////////////////////////////////////////////////
+func (mclass *ModelClass) MarkTraining(study string) {
 	if mclass.Status.Phase != ModelClassPhaseTraining {
 		mclass.Status.Phase = ModelClassPhaseTraining
 		mclass.CreateOrUpdateCond(ModelClassCondition{
-			Type:   ModelClassTrained,
+			Type:   ModelClassModelTrained,
 			Status: v1.ConditionFalse,
 			Reason: ReasonTraining,
 		})
 		now := metav1.Now()
 		mclass.Status.TrainingScheduleStatus.LastRun = &now
 	}
+	mclass.Status.LastestStudy = study
 }
 
-func (mclass *ModelClass) MarkTrained() {
-	mclass.Status.Phase = ModelClassPhaseReady
+func (mclass *ModelClass) MarkModelReady(model string) {
+	mclass.Status.Phase = ModelClassPhaseModelReady
 	mclass.CreateOrUpdateCond(ModelClassCondition{
 		Type:   ModelClassTrained,
-		Status: v1.ConditionTrue,
+		Status: v1.ConditionFalse,
+		Reason: ReasonModelReady,
 	})
+	mclass.Status.LastestModel = model
 	nextRun := mclass.Spec.Training.TrainingSchedule.NextRun()
 	mclass.Status.TrainingScheduleStatus.End()
 	mclass.Status.TrainingScheduleStatus.SetNext(*nextRun)
@@ -248,6 +219,59 @@ func (mclass *ModelClass) MarkTrainingFailed(err string) {
 		Message: err,
 	})
 }
+
+func (mclass *ModelClass) MarkWaitingForPromotion() {
+	mclass.Status.Phase = ModelClassPhaseWaitingForPromotion
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassTrained,
+		Status: v1.ConditionFalse,
+		Reason: ReasonWaitingForPromotion,
+	})
+}
+
+func (mclass *ModelClass) IsTrained() bool {
+	cond := mclass.GetCond(ModelClassTrained)
+	return cond.Status == v1.ConditionTrue
+}
+
+func (mclass *ModelClass) IsModelPromoted() bool {
+	cond := mclass.GetCond(ModelClassModelPromoted)
+	return cond.Status == v1.ConditionTrue
+}
+
+func (mclass *ModelClass) IsServed() bool {
+	cond := mclass.GetCond(ModelClassServed)
+	return cond.Status == v1.ConditionTrue
+}
+
+func (mclass *ModelClass) MarkReady() {
+	mclass.Status.Phase = ModelClassPhaseReady
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassReady,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (mclass *ModelClass) MarkPromoted() {
+	mclass.Status.Phase = ModelClassPhaseReady
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassModelPromoted,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (mclass *ModelClass) MarkFailToPromote(err error) {
+	mclass.Status.Phase = ModelClassPhaseFailed
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassModelPromoted,
+		Status: v1.ConditionFalse,
+		Reason: ReasonFailedToPromote,
+	})
+}
+
+///////////////////////////////////////////////
+// Training
+//////////////////////////////////////////////
 
 ///////////////////////////////////////////////
 // Drifted

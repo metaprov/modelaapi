@@ -1751,13 +1751,8 @@ export class ModelClassServingSpec extends jspb.Message {
   hasResources(): boolean;
   clearResources(): ModelClassServingSpec;
 
-  getLive(): string;
-  setLive(value: string): ModelClassServingSpec;
-
-  getShadowsList(): Array<string>;
-  setShadowsList(value: Array<string>): ModelClassServingSpec;
-  clearShadowsList(): ModelClassServingSpec;
-  addShadows(value: string, index?: number): ModelClassServingSpec;
+  getShadowfirst(): boolean;
+  setShadowfirst(value: boolean): ModelClassServingSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassServingSpec.AsObject;
@@ -1779,8 +1774,7 @@ export namespace ModelClassServingSpec {
     monitoringschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     batchpredictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    live: string,
-    shadowsList: Array<string>,
+    shadowfirst: boolean,
   }
 }
 
@@ -1935,6 +1929,20 @@ export class ModelClassStatus extends jspb.Message {
   clearRetiredList(): ModelClassStatus;
   addRetired(value: string, index?: number): ModelClassStatus;
 
+  getPredictorname(): string;
+  setPredictorname(value: string): ModelClassStatus;
+
+  getLivemodel(): string;
+  setLivemodel(value: string): ModelClassStatus;
+
+  getShadowsList(): Array<string>;
+  setShadowsList(value: Array<string>): ModelClassStatus;
+  clearShadowsList(): ModelClassStatus;
+  addShadows(value: string, index?: number): ModelClassStatus;
+
+  getTriggeredby(): string;
+  setTriggeredby(value: string): ModelClassStatus;
+
   getConditionsList(): Array<ModelClassCondition>;
   setConditionsList(value: Array<ModelClassCondition>): ModelClassStatus;
   clearConditionsList(): ModelClassStatus;
@@ -1966,6 +1974,10 @@ export namespace ModelClassStatus {
     latestmodel: string,
     bestmodelscore: number,
     retiredList: Array<string>,
+    predictorname: string,
+    livemodel: string,
+    shadowsList: Array<string>,
+    triggeredby: string,
     conditionsList: Array<ModelClassCondition.AsObject>,
   }
 }

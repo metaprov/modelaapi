@@ -12,6 +12,7 @@ import (
 type ModelClassPhase string
 
 const (
+	ModelClassPhasePending                 ModelClassPhase = "Pending"
 	ModelClassPhaseFailed                  ModelClassPhase = "Failed"
 	ModelClassPhaseReady                   ModelClassPhase = "Ready"
 	ModelClassPhaseCreatingTrainingDataset ModelClassPhase = "CreatingTrainingDataset"
@@ -26,16 +27,19 @@ type ModelClassConditionType string
 
 /// ModelClass Condition
 const (
-	// ModelClassInitialized states that the resources needed for training are allocated and ready
-	ModelClassReady ModelClassConditionType = "Ready"
 	// ModelClassSaved states that the ModelClass has been archived in a database
 	ModelClassSaved ModelClassConditionType = "Saved"
-	// State that we have created the training set
-	ModelClassCreatedTrainingSet ModelClassConditionType = "CreatedTrainingSet"
-	// ModelClassTrained states that the current model from the ModelClass has been trained
-	ModelClassTrained ModelClassConditionType = "Trained"
-	// ModelClassDeployed states that the latest model
-	ModelClassDrifted ModelClassConditionType = "Drifted"
+	// Condition to check if the training dataset is ready
+	ModelClassTrainingDatasetReady ModelClassConditionType = "TrainingDatasetReady"
+	// Condition indicating if the model was trained
+	ModelClassModelTrained ModelClassConditionType = "ModelTrained"
+	// Condition to indicate if the latest model was promoted.
+	// The condition is set to false if there a model waiting for promotion.
+	ModelClassModelPromoted ModelClassConditionType = "ModelPromoted"
+	// Condition to indicate that there is a model in production
+	ModelClassModelServed ModelClassConditionType = "ModelServed"
+	// ModelClassDrifted states that the latest model has drifted
+	ModelClassModelDrifted ModelClassConditionType = "ModelDrifted"
 )
 
 // ModelClassCondition describes the state of a ModelClass at a certain point
@@ -151,7 +155,7 @@ type ModelClassDataSpec struct {
 	// In case where the feature group data is stored as flat file. the flat file format
 	// define how to read the file.
 	// +kubebuilder:validation:Optional
-	FlatFile *data.FlatFileFormatSpec `json:"flatfile,omitempty" protobuf:"bytes,5,opt,name=flatfile"`
+	FlatFile *data.FlatFileFormatSpec `json:"flatFile,omitempty" protobuf:"bytes,5,opt,name=flatFile"`
 	// The primary key for the observation row
 	// If empty the system will set the join key as the primary key based on the schema.
 	// +kubebuilder:validation:Optional
@@ -206,7 +210,7 @@ type ModelClassTrainingSpec struct {
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,9,opt,name=resources"`
 	// What triggered the training
 	//+kubebuilder:validation:Optional
-	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,10,opt,name=triggeredBy"`
+	Trigger catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,10,opt,name=triggeredBy"`
 	// Pause the training job or any additional training job
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -267,12 +271,9 @@ type ModelClassServingSpec struct {
 	// The serving resources for batch or online prediction
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,10,opt,name=resources"`
-	// The name of the live model
+	// when a model is ready, deploy it as shadow model first.
 	// +kubebuilder:validation:Optional
-	Live *string `json:"live,omitempty" protobuf:"bytes,11,opt,name=live"`
-	// The name of shadow models
-	// +kubebuilder:validation:Optional
-	Shadows []string `json:"shadows,omitempty" protobuf:"bytes,12,rep,name=shadows"`
+	ShadowFirst *bool `json:"shadowFirst,omitempty" protobuf:"bytes,11,opt,name=shadowFirst"`
 }
 
 // Define a test stage
@@ -345,18 +346,29 @@ type ModelClassStatus struct {
 	// The lastest study name
 	//+kubebuilder:validation:Optional
 	LastestStudy string `json:"latestStudy,omitempty" protobuf:"bytes,13,opt,name=latestStudy"`
-	// The latest best model
+	// The name of the candidate model for promotion.
 	//+kubebuilder:validation:Optional
-	LastestModel string `json:"latestModel,omitempty" protobuf:"bytes,14,opt,name=latestModel"`
+	CandidateModel string `json:"latestModel,omitempty" protobuf:"bytes,14,opt,name=latestModel"`
 	// The highest score out of all Models created by the associated Study resource
 	// +kubebuilder:validation:Optional
 	BestModelScore float64 `json:"bestModelScore,omitempty" protobuf:"bytes,15,opt,name=bestModelScore"`
 	// List of the last 5 retired models
-	RetiredModels []string `json:"retired,omitempty" protobuf:"bytes,16,opt,name=retired"`
+	RetiredModels []string `json:"retired,omitempty" protobuf:"bytes,17,opt,name=retired"`
+	// The name of the current predictor for this model class.
+	PredictorName string `json:"predictorName,omitempty" protobuf:"bytes,18,opt,name=predictorName"`
+	// The name of the live model in production. This is taken from the predictor for this model class.
+	// +kubebuilder:validation:Optional
+	LiveModel *string `json:"liveModel,omitempty" protobuf:"bytes,19,opt,name=liveModel"`
+	// The name of shadow models in production. This is taken from the predictor for this model class.
+	// +kubebuilder:validation:Optional
+	Shadows []string `json:"shadows,omitempty" protobuf:"bytes,20,rep,name=shadows"`
+	// The name of triggered by.
+	// +kubebuilder:validation:Optional
+	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,21,opt,name=triggeredBy"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,17,rep,name=conditions"`
+	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,22,rep,name=conditions"`
 }
 
 type PromotionStatus struct {

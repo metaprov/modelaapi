@@ -170,7 +170,7 @@ spec:
               data:
                 description: The model class data
                 properties:
-                  flatfile:
+                  flatFile:
                     description: In case where the feature group data is stored as
                       flat file. the flat file format define how to read the file.
                     properties:
@@ -1518,9 +1518,6 @@ spec:
                   dashboard:
                     description: Setup a dashboard for the predictor.
                     type: boolean
-                  live:
-                    description: The name of the live model
-                    type: string
                   monitoringSchedule:
                     description: Schedule for computing drift
                     properties:
@@ -2126,11 +2123,10 @@ spec:
                         type: string
                     type: object
                     x-kubernetes-map-type: atomic
-                  shadows:
-                    description: The name of shadow models
-                    items:
-                      type: string
-                    type: array
+                  shadowFirst:
+                    description: when a model is ready, deploy it as shadow model
+                      first.
+                    type: boolean
                 type: object
               subtask:
                 default: none
@@ -3299,10 +3295,14 @@ spec:
                 description: Holds the latest dataset used during training.
                 type: string
               latestModel:
-                description: The latest best model
+                description: The name of the candidate model for promotion.
                 type: string
               latestStudy:
                 description: The lastest study name
+                type: string
+              liveModel:
+                description: The name of the live model in production. This is taken
+                  from the predictor for this model class.
                 type: string
               models:
                 description: Total models created for the ModelClass
@@ -3414,6 +3414,9 @@ spec:
                     format: date-time
                     type: string
                 type: object
+              predictorName:
+                description: The name of the current predictor for this model class.
+                type: string
               promotionStatus:
                 description: Training schedule status
                 properties:
@@ -3516,6 +3519,12 @@ spec:
                 items:
                   type: string
                 type: array
+              shadows:
+                description: The name of shadow models in production. This is taken
+                  from the predictor for this model class.
+                items:
+                  type: string
+                type: array
               trainingScheduleStatus:
                 description: Training schedule status
                 properties:
@@ -3565,6 +3574,16 @@ spec:
                     format: date-time
                     type: string
                 type: object
+              triggeredBy:
+                description: The name of triggered by.
+                enum:
+                - on-demand
+                - on-schedule
+                - on-new-data
+                - on-github-event
+                - on-concept-drift
+                - on-pref-degradation
+                type: string
             type: object
         type: object
     served: true

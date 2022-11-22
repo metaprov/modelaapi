@@ -1108,7 +1108,7 @@ message ModelClassDataSpec {
   // In case where the feature group data is stored as flat file. the flat file format
   // define how to read the file.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec flatfile = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec flatFile = 5;
 
   // The primary key for the observation row
   // If empty the system will set the join key as the primary key based on the schema.
@@ -1183,13 +1183,9 @@ message ModelClassServingSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 10;
 
-  // The name of the live model
+  // when a model is ready, deploy it as shadow model first.
   // +kubebuilder:validation:Optional
-  optional string live = 11;
-
-  // The name of shadow models
-  // +kubebuilder:validation:Optional
-  repeated string shadows = 12;
+  optional bool shadowFirst = 11;
 }
 
 // ModelClassSpec defines the desired state of a ModelClass and the parameters for a model search
@@ -1314,7 +1310,7 @@ message ModelClassStatus {
   // +kubebuilder:validation:Optional
   optional string latestStudy = 13;
 
-  // The latest best model
+  // The name of the candidate model for promotion.
   // +kubebuilder:validation:Optional
   optional string latestModel = 14;
 
@@ -1323,12 +1319,27 @@ message ModelClassStatus {
   optional double bestModelScore = 15;
 
   // List of the last 5 retired models
-  repeated string retired = 16;
+  repeated string retired = 17;
+
+  // The name of the current predictor for this model class.
+  optional string predictorName = 18;
+
+  // The name of the live model in production. This is taken from the predictor for this model class.
+  // +kubebuilder:validation:Optional
+  optional string liveModel = 19;
+
+  // The name of shadow models in production. This is taken from the predictor for this model class.
+  // +kubebuilder:validation:Optional
+  repeated string shadows = 20;
+
+  // The name of triggered by.
+  // +kubebuilder:validation:Optional
+  optional string triggeredBy = 21;
 
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelClassCondition conditions = 17;
+  repeated ModelClassCondition conditions = 22;
 }
 
 // Specification for model training.
