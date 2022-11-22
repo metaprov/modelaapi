@@ -17,9 +17,8 @@ from github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.generated_pb2 impo
 from greykite.algo.changepoint.adalasso.changepoint_detector import ChangepointDetector
 from greykite.framework.input.univariate_time_series import UnivariateTimeSeries
 
-from modelacore.ml import io
-from modelacore.ml.forecast.ts import MTimeSeries
 
+from modelaapi.ts import MTimeSeries
 
 warnings.filterwarnings("ignore")
 
