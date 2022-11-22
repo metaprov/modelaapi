@@ -288,3 +288,75 @@ export namespace UpdateModelClassResponse {
   }
 }
 
+export class ModelClassTrainNowRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ModelClassTrainNowRequest;
+
+  getName(): string;
+  setName(value: string): ModelClassTrainNowRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassTrainNowRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassTrainNowRequest): ModelClassTrainNowRequest.AsObject;
+  static serializeBinaryToWriter(message: ModelClassTrainNowRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassTrainNowRequest;
+  static deserializeBinaryFromReader(message: ModelClassTrainNowRequest, reader: jspb.BinaryReader): ModelClassTrainNowRequest;
+}
+
+export namespace ModelClassTrainNowRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class ModelClassTrainNowResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassTrainNowResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassTrainNowResponse): ModelClassTrainNowResponse.AsObject;
+  static serializeBinaryToWriter(message: ModelClassTrainNowResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassTrainNowResponse;
+  static deserializeBinaryFromReader(message: ModelClassTrainNowResponse, reader: jspb.BinaryReader): ModelClassTrainNowResponse;
+}
+
+export namespace ModelClassTrainNowResponse {
+  export type AsObject = {
+  }
+}
+
+export class ModelClassPredictNowRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ModelClassPredictNowRequest;
+
+  getName(): string;
+  setName(value: string): ModelClassPredictNowRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassPredictNowRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassPredictNowRequest): ModelClassPredictNowRequest.AsObject;
+  static serializeBinaryToWriter(message: ModelClassPredictNowRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassPredictNowRequest;
+  static deserializeBinaryFromReader(message: ModelClassPredictNowRequest, reader: jspb.BinaryReader): ModelClassPredictNowRequest;
+}
+
+export namespace ModelClassPredictNowRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class ModelClassPredictNowResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassPredictNowResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassPredictNowResponse): ModelClassPredictNowResponse.AsObject;
+  static serializeBinaryToWriter(message: ModelClassPredictNowResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassPredictNowResponse;
+  static deserializeBinaryFromReader(message: ModelClassPredictNowResponse, reader: jspb.BinaryReader): ModelClassPredictNowResponse;
+}
+
+export namespace ModelClassPredictNowResponse {
+  export type AsObject = {
+  }
+}
+

@@ -44,6 +44,16 @@ class ModelClassServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.CreateModelClassProfileRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.CreateModelClassProfileResponse.FromString,
                 )
+        self.TrainNow = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/TrainNow',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.ModelClassTrainNowRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.ModelClassTrainNowResponse.FromString,
+                )
+        self.PredictNow = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/PredictNow',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.ModelClassPredictNowRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.ModelClassPredictNowResponse.FromString,
+                )
 
 
 class ModelClassServiceServicer(object):
@@ -85,6 +95,18 @@ class ModelClassServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def TrainNow(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def PredictNow(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ModelClassServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -117,6 +139,16 @@ def add_ModelClassServiceServicer_to_server(servicer, server):
                     servicer.CreateModelClassProfile,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.CreateModelClassProfileRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.CreateModelClassProfileResponse.SerializeToString,
+            ),
+            'TrainNow': grpc.unary_unary_rpc_method_handler(
+                    servicer.TrainNow,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.ModelClassTrainNowRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.ModelClassTrainNowResponse.SerializeToString,
+            ),
+            'PredictNow': grpc.unary_unary_rpc_method_handler(
+                    servicer.PredictNow,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.ModelClassPredictNowRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.ModelClassPredictNowResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -227,5 +259,39 @@ class ModelClassService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/CreateModelClassProfile',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.CreateModelClassProfileRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.CreateModelClassProfileResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def TrainNow(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/TrainNow',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.ModelClassTrainNowRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.ModelClassTrainNowResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PredictNow(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/PredictNow',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.ModelClassPredictNowRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelclass_dot_v1_dot_modelclass__pb2.ModelClassPredictNowResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

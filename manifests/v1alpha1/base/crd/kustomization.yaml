@@ -24,6 +24,7 @@ resources:
 - inference.modela.ai_predictors.yaml
 - infra.modela.ai_accounts.yaml
 - infra.modela.ai_alerts.yaml
+- infra.modela.ai_apitokens.yaml
 - infra.modela.ai_attachments.yaml
 - infra.modela.ai_commits.yaml
 - infra.modela.ai_connections.yaml

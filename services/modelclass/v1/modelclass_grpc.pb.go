@@ -28,6 +28,8 @@ type ModelClassServiceClient interface {
 	UpdateModelClass(ctx context.Context, in *UpdateModelClassRequest, opts ...grpc.CallOption) (*UpdateModelClassResponse, error)
 	DeleteModelClass(ctx context.Context, in *DeleteModelClassRequest, opts ...grpc.CallOption) (*DeleteModelClassResponse, error)
 	CreateModelClassProfile(ctx context.Context, in *CreateModelClassProfileRequest, opts ...grpc.CallOption) (*CreateModelClassProfileResponse, error)
+	TrainNow(ctx context.Context, in *ModelClassTrainNowRequest, opts ...grpc.CallOption) (*ModelClassTrainNowResponse, error)
+	PredictNow(ctx context.Context, in *ModelClassPredictNowRequest, opts ...grpc.CallOption) (*ModelClassPredictNowResponse, error)
 }
 
 type modelClassServiceClient struct {
@@ -92,6 +94,24 @@ func (c *modelClassServiceClient) CreateModelClassProfile(ctx context.Context, i
 	return out, nil
 }
 
+func (c *modelClassServiceClient) TrainNow(ctx context.Context, in *ModelClassTrainNowRequest, opts ...grpc.CallOption) (*ModelClassTrainNowResponse, error) {
+	out := new(ModelClassTrainNowResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/TrainNow", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *modelClassServiceClient) PredictNow(ctx context.Context, in *ModelClassPredictNowRequest, opts ...grpc.CallOption) (*ModelClassPredictNowResponse, error) {
+	out := new(ModelClassPredictNowResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/PredictNow", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ModelClassServiceServer is the server API for ModelClassService service.
 // All implementations must embed UnimplementedModelClassServiceServer
 // for forward compatibility
@@ -102,6 +122,8 @@ type ModelClassServiceServer interface {
 	UpdateModelClass(context.Context, *UpdateModelClassRequest) (*UpdateModelClassResponse, error)
 	DeleteModelClass(context.Context, *DeleteModelClassRequest) (*DeleteModelClassResponse, error)
 	CreateModelClassProfile(context.Context, *CreateModelClassProfileRequest) (*CreateModelClassProfileResponse, error)
+	TrainNow(context.Context, *ModelClassTrainNowRequest) (*ModelClassTrainNowResponse, error)
+	PredictNow(context.Context, *ModelClassPredictNowRequest) (*ModelClassPredictNowResponse, error)
 	mustEmbedUnimplementedModelClassServiceServer()
 }
 
@@ -126,6 +148,12 @@ func (UnimplementedModelClassServiceServer) DeleteModelClass(context.Context, *D
 }
 func (UnimplementedModelClassServiceServer) CreateModelClassProfile(context.Context, *CreateModelClassProfileRequest) (*CreateModelClassProfileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateModelClassProfile not implemented")
+}
+func (UnimplementedModelClassServiceServer) TrainNow(context.Context, *ModelClassTrainNowRequest) (*ModelClassTrainNowResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TrainNow not implemented")
+}
+func (UnimplementedModelClassServiceServer) PredictNow(context.Context, *ModelClassPredictNowRequest) (*ModelClassPredictNowResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PredictNow not implemented")
 }
 func (UnimplementedModelClassServiceServer) mustEmbedUnimplementedModelClassServiceServer() {}
 
@@ -248,6 +276,42 @@ func _ModelClassService_CreateModelClassProfile_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ModelClassService_TrainNow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ModelClassTrainNowRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ModelClassServiceServer).TrainNow(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/TrainNow",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ModelClassServiceServer).TrainNow(ctx, req.(*ModelClassTrainNowRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ModelClassService_PredictNow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ModelClassPredictNowRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ModelClassServiceServer).PredictNow(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/PredictNow",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ModelClassServiceServer).PredictNow(ctx, req.(*ModelClassPredictNowRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ModelClassService_ServiceDesc is the grpc.ServiceDesc for ModelClassService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -278,6 +342,14 @@ var ModelClassService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateModelClassProfile",
 			Handler:    _ModelClassService_CreateModelClassProfile_Handler,
+		},
+		{
+			MethodName: "TrainNow",
+			Handler:    _ModelClassService_TrainNow_Handler,
+		},
+		{
+			MethodName: "PredictNow",
+			Handler:    _ModelClassService_PredictNow_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

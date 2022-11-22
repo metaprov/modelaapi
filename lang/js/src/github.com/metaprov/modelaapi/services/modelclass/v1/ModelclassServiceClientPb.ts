@@ -293,5 +293,91 @@ export class ModelClassServiceClient {
     this.methodInfoCreateModelClassProfile);
   }
 
+  methodInfoTrainNow = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/TrainNow',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassTrainNowRequest,
+    github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassTrainNowResponse,
+    (request: github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassTrainNowRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassTrainNowResponse.deserializeBinary
+  );
+
+  trainNow(
+    request: github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassTrainNowRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassTrainNowResponse>;
+
+  trainNow(
+    request: github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassTrainNowRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassTrainNowResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassTrainNowResponse>;
+
+  trainNow(
+    request: github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassTrainNowRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassTrainNowResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/TrainNow',
+        request,
+        metadata || {},
+        this.methodInfoTrainNow,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/TrainNow',
+    request,
+    metadata || {},
+    this.methodInfoTrainNow);
+  }
+
+  methodInfoPredictNow = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/PredictNow',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassPredictNowRequest,
+    github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassPredictNowResponse,
+    (request: github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassPredictNowRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassPredictNowResponse.deserializeBinary
+  );
+
+  predictNow(
+    request: github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassPredictNowRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassPredictNowResponse>;
+
+  predictNow(
+    request: github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassPredictNowRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassPredictNowResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassPredictNowResponse>;
+
+  predictNow(
+    request: github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassPredictNowRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_modelclass_v1_modelclass_pb.ModelClassPredictNowResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/PredictNow',
+        request,
+        metadata || {},
+        this.methodInfoPredictNow,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.study.v1.ModelClassService/PredictNow',
+    request,
+    metadata || {},
+    this.methodInfoPredictNow);
+  }
+
 }
 

@@ -18,7 +18,7 @@ from github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1 import generated_p
 from github.com.metaprov.modelaapi.services.common.v1 import common_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nEgithub.com/metaprov/modelaapi/services/modelclass/v1/modelclass.proto\x12/github.com.metaprov.modelaapi.services.study.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"7\n\x14GetModelClassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x7f\n\x15GetModelClassResponse\x12X\n\nmodelclass\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"\xbd\x01\n\x15ListModelClassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x03 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.study.v1.ListModelClassRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x91\x01\n\x16ListModelClassResponse\x12^\n\x0cmodelclasses\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"s\n\x17\x43reateModelClassRequest\x12X\n\nmodelclass\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\"\x1a\n\x18\x43reateModelClassResponse\"\xa3\x01\n\x17UpdateModelClassRequest\x12X\n\nmodelclass\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x98\x01\n\x1e\x43reateModelClassProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12U\n\x0cmodelclasses\x18\x03 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"O\n\x1f\x43reateModelClassProfileResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03uri\x18\x03 \x01(\t\"N\n\x1bGetModelClassProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06models\x18\x03 \x01(\x05\":\n\x17\x44\x65leteModelClassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteModelClassResponse\"\x1a\n\x18UpdateModelClassResponse2\xbc\n\n\x11ModelClassService\x12\xc9\x01\n\x10ListModelClasses\x12\x46.github.com.metaprov.modelaapi.services.study.v1.ListModelClassRequest\x1aG.github.com.metaprov.modelaapi.services.study.v1.ListModelClassResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/modelclasses/{namespace}\x12\xc4\x01\n\x10\x43reateModelClass\x12H.github.com.metaprov.modelaapi.services.study.v1.CreateModelClassRequest\x1aI.github.com.metaprov.modelaapi.services.study.v1.CreateModelClassResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/modelclasses:\x01*\x12\xcb\x01\n\rGetModelClass\x12\x45.github.com.metaprov.modelaapi.services.study.v1.GetModelClassRequest\x1a\x46.github.com.metaprov.modelaapi.services.study.v1.GetModelClassResponse\"+\x82\xd3\xe4\x93\x02%\x12#/v1/modelclasses/{namespace}/{name}\x12\xfa\x01\n\x10UpdateModelClass\x12H.github.com.metaprov.modelaapi.services.study.v1.UpdateModelClassRequest\x1aI.github.com.metaprov.modelaapi.services.study.v1.UpdateModelClassResponse\"Q\x82\xd3\xe4\x93\x02K\x1a\x46/v1/studies/{modelclass.metadata.namespace}/{modelclass.metadata.name}:\x01*\x12\xd4\x01\n\x10\x44\x65leteModelClass\x12H.github.com.metaprov.modelaapi.services.study.v1.DeleteModelClassRequest\x1aI.github.com.metaprov.modelaapi.services.study.v1.DeleteModelClassResponse\"+\x82\xd3\xe4\x93\x02%*#/v1/modelclasses/{namespace}/{name}\x12\xf1\x01\n\x17\x43reateModelClassProfile\x12O.github.com.metaprov.modelaapi.services.study.v1.CreateModelClassProfileRequest\x1aP.github.com.metaprov.modelaapi.services.study.v1.CreateModelClassProfileResponse\"3\x82\xd3\xe4\x93\x02-\"+/v1/modelclasses/{namespace}/{name}/profileB1Z/github.com/metaprov/modelaapi/services/study/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nEgithub.com/metaprov/modelaapi/services/modelclass/v1/modelclass.proto\x12/github.com.metaprov.modelaapi.services.study.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"7\n\x14GetModelClassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x7f\n\x15GetModelClassResponse\x12X\n\nmodelclass\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"\xbd\x01\n\x15ListModelClassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x03 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.study.v1.ListModelClassRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x91\x01\n\x16ListModelClassResponse\x12^\n\x0cmodelclasses\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"s\n\x17\x43reateModelClassRequest\x12X\n\nmodelclass\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\"\x1a\n\x18\x43reateModelClassResponse\"\xa3\x01\n\x17UpdateModelClassRequest\x12X\n\nmodelclass\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x98\x01\n\x1e\x43reateModelClassProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12U\n\x0cmodelclasses\x18\x03 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"O\n\x1f\x43reateModelClassProfileResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03uri\x18\x03 \x01(\t\"N\n\x1bGetModelClassProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06models\x18\x03 \x01(\x05\":\n\x17\x44\x65leteModelClassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteModelClassResponse\"\x1a\n\x18UpdateModelClassResponse\"<\n\x19ModelClassTrainNowRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1c\n\x1aModelClassTrainNowResponse\">\n\x1bModelClassPredictNowRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1e\n\x1cModelClassPredictNowResponse2\xf6\r\n\x11ModelClassService\x12\xc9\x01\n\x10ListModelClasses\x12\x46.github.com.metaprov.modelaapi.services.study.v1.ListModelClassRequest\x1aG.github.com.metaprov.modelaapi.services.study.v1.ListModelClassResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/modelclasses/{namespace}\x12\xc4\x01\n\x10\x43reateModelClass\x12H.github.com.metaprov.modelaapi.services.study.v1.CreateModelClassRequest\x1aI.github.com.metaprov.modelaapi.services.study.v1.CreateModelClassResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/modelclasses:\x01*\x12\xcb\x01\n\rGetModelClass\x12\x45.github.com.metaprov.modelaapi.services.study.v1.GetModelClassRequest\x1a\x46.github.com.metaprov.modelaapi.services.study.v1.GetModelClassResponse\"+\x82\xd3\xe4\x93\x02%\x12#/v1/modelclasses/{namespace}/{name}\x12\xfa\x01\n\x10UpdateModelClass\x12H.github.com.metaprov.modelaapi.services.study.v1.UpdateModelClassRequest\x1aI.github.com.metaprov.modelaapi.services.study.v1.UpdateModelClassResponse\"Q\x82\xd3\xe4\x93\x02K\x1a\x46/v1/studies/{modelclass.metadata.namespace}/{modelclass.metadata.name}:\x01*\x12\xd4\x01\n\x10\x44\x65leteModelClass\x12H.github.com.metaprov.modelaapi.services.study.v1.DeleteModelClassRequest\x1aI.github.com.metaprov.modelaapi.services.study.v1.DeleteModelClassResponse\"+\x82\xd3\xe4\x93\x02%*#/v1/modelclasses/{namespace}/{name}\x12\xf1\x01\n\x17\x43reateModelClassProfile\x12O.github.com.metaprov.modelaapi.services.study.v1.CreateModelClassProfileRequest\x1aP.github.com.metaprov.modelaapi.services.study.v1.CreateModelClassProfileResponse\"3\x82\xd3\xe4\x93\x02-\"+/v1/modelclasses/{namespace}/{name}/profile\x12\xd6\x01\n\x08TrainNow\x12J.github.com.metaprov.modelaapi.services.study.v1.ModelClassTrainNowRequest\x1aK.github.com.metaprov.modelaapi.services.study.v1.ModelClassTrainNowResponse\"1\x82\xd3\xe4\x93\x02+\")/v1/modelclasses/{namespace}/{name}/train\x12\xde\x01\n\nPredictNow\x12L.github.com.metaprov.modelaapi.services.study.v1.ModelClassPredictNowRequest\x1aM.github.com.metaprov.modelaapi.services.study.v1.ModelClassPredictNowResponse\"3\x82\xd3\xe4\x93\x02-\"+/v1/modelclasses/{namespace}/{name}/predictB1Z/github.com/metaprov/modelaapi/services/study/v1b\x06proto3')
 
 
 
@@ -36,6 +36,10 @@ _GETMODELCLASSPROFILEREQUEST = DESCRIPTOR.message_types_by_name['GetModelClassPr
 _DELETEMODELCLASSREQUEST = DESCRIPTOR.message_types_by_name['DeleteModelClassRequest']
 _DELETEMODELCLASSRESPONSE = DESCRIPTOR.message_types_by_name['DeleteModelClassResponse']
 _UPDATEMODELCLASSRESPONSE = DESCRIPTOR.message_types_by_name['UpdateModelClassResponse']
+_MODELCLASSTRAINNOWREQUEST = DESCRIPTOR.message_types_by_name['ModelClassTrainNowRequest']
+_MODELCLASSTRAINNOWRESPONSE = DESCRIPTOR.message_types_by_name['ModelClassTrainNowResponse']
+_MODELCLASSPREDICTNOWREQUEST = DESCRIPTOR.message_types_by_name['ModelClassPredictNowRequest']
+_MODELCLASSPREDICTNOWRESPONSE = DESCRIPTOR.message_types_by_name['ModelClassPredictNowResponse']
 GetModelClassRequest = _reflection.GeneratedProtocolMessageType('GetModelClassRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETMODELCLASSREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelclass.v1.modelclass_pb2'
@@ -135,6 +139,34 @@ UpdateModelClassResponse = _reflection.GeneratedProtocolMessageType('UpdateModel
   })
 _sym_db.RegisterMessage(UpdateModelClassResponse)
 
+ModelClassTrainNowRequest = _reflection.GeneratedProtocolMessageType('ModelClassTrainNowRequest', (_message.Message,), {
+  'DESCRIPTOR' : _MODELCLASSTRAINNOWREQUEST,
+  '__module__' : 'github.com.metaprov.modelaapi.services.modelclass.v1.modelclass_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.study.v1.ModelClassTrainNowRequest)
+  })
+_sym_db.RegisterMessage(ModelClassTrainNowRequest)
+
+ModelClassTrainNowResponse = _reflection.GeneratedProtocolMessageType('ModelClassTrainNowResponse', (_message.Message,), {
+  'DESCRIPTOR' : _MODELCLASSTRAINNOWRESPONSE,
+  '__module__' : 'github.com.metaprov.modelaapi.services.modelclass.v1.modelclass_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.study.v1.ModelClassTrainNowResponse)
+  })
+_sym_db.RegisterMessage(ModelClassTrainNowResponse)
+
+ModelClassPredictNowRequest = _reflection.GeneratedProtocolMessageType('ModelClassPredictNowRequest', (_message.Message,), {
+  'DESCRIPTOR' : _MODELCLASSPREDICTNOWREQUEST,
+  '__module__' : 'github.com.metaprov.modelaapi.services.modelclass.v1.modelclass_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.study.v1.ModelClassPredictNowRequest)
+  })
+_sym_db.RegisterMessage(ModelClassPredictNowRequest)
+
+ModelClassPredictNowResponse = _reflection.GeneratedProtocolMessageType('ModelClassPredictNowResponse', (_message.Message,), {
+  'DESCRIPTOR' : _MODELCLASSPREDICTNOWRESPONSE,
+  '__module__' : 'github.com.metaprov.modelaapi.services.modelclass.v1.modelclass_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.study.v1.ModelClassPredictNowResponse)
+  })
+_sym_db.RegisterMessage(ModelClassPredictNowResponse)
+
 _MODELCLASSSERVICE = DESCRIPTOR.services_by_name['ModelClassService']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
@@ -154,6 +186,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _MODELCLASSSERVICE.methods_by_name['DeleteModelClass']._serialized_options = b'\202\323\344\223\002%*#/v1/modelclasses/{namespace}/{name}'
   _MODELCLASSSERVICE.methods_by_name['CreateModelClassProfile']._options = None
   _MODELCLASSSERVICE.methods_by_name['CreateModelClassProfile']._serialized_options = b'\202\323\344\223\002-\"+/v1/modelclasses/{namespace}/{name}/profile'
+  _MODELCLASSSERVICE.methods_by_name['TrainNow']._options = None
+  _MODELCLASSSERVICE.methods_by_name['TrainNow']._serialized_options = b'\202\323\344\223\002+\")/v1/modelclasses/{namespace}/{name}/train'
+  _MODELCLASSSERVICE.methods_by_name['PredictNow']._options = None
+  _MODELCLASSSERVICE.methods_by_name['PredictNow']._serialized_options = b'\202\323\344\223\002-\"+/v1/modelclasses/{namespace}/{name}/predict'
   _GETMODELCLASSREQUEST._serialized_start=323
   _GETMODELCLASSREQUEST._serialized_end=378
   _GETMODELCLASSRESPONSE._serialized_start=380
@@ -182,6 +218,14 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DELETEMODELCLASSRESPONSE._serialized_end=1562
   _UPDATEMODELCLASSRESPONSE._serialized_start=1564
   _UPDATEMODELCLASSRESPONSE._serialized_end=1590
-  _MODELCLASSSERVICE._serialized_start=1593
-  _MODELCLASSSERVICE._serialized_end=2933
+  _MODELCLASSTRAINNOWREQUEST._serialized_start=1592
+  _MODELCLASSTRAINNOWREQUEST._serialized_end=1652
+  _MODELCLASSTRAINNOWRESPONSE._serialized_start=1654
+  _MODELCLASSTRAINNOWRESPONSE._serialized_end=1682
+  _MODELCLASSPREDICTNOWREQUEST._serialized_start=1684
+  _MODELCLASSPREDICTNOWREQUEST._serialized_end=1746
+  _MODELCLASSPREDICTNOWRESPONSE._serialized_start=1748
+  _MODELCLASSPREDICTNOWRESPONSE._serialized_end=1778
+  _MODELCLASSSERVICE._serialized_start=1781
+  _MODELCLASSSERVICE._serialized_end=3563
 # @@protoc_insertion_point(module_scope)
