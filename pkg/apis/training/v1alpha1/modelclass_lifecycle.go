@@ -219,6 +219,14 @@ func (mclass *ModelClass) MarkTrainingFailed(err string) {
 	})
 }
 
+func (mclass *ModelClass) MarkTrained() {
+	mclass.Status.Phase = ModelClassPhaseReady
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:   ModelClassModelTrained,
+		Status: v1.ConditionTrue,
+	})
+}
+
 func (mclass *ModelClass) IsTrained() bool {
 	cond := mclass.GetCond(ModelClassModelTrained)
 	return cond.Status == v1.ConditionTrue
