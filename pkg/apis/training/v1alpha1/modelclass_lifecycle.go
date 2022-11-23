@@ -36,6 +36,10 @@ func (mclass *ModelClass) PredictorName() string {
 	return "mc-predictor-" + mclass.Name
 }
 
+func (mclass *ModelClass) DataAppName() string {
+	return "mc-dataapp-" + mclass.Name
+}
+
 //==============================================================================
 // Validate
 //==============================================================================
