@@ -2421,6 +2421,9 @@ export class ModelSpec extends jspb.Message {
   hasPartitionlocations(): boolean;
   clearPartitionlocations(): ModelSpec;
 
+  getModelclassversion(): number;
+  setModelclassversion(value: number): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -2483,6 +2486,7 @@ export namespace ModelSpec {
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     feedbacktests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     partitionlocations?: PartitionModelLocationsSpec.AsObject,
+    modelclassversion: number,
   }
 }
 

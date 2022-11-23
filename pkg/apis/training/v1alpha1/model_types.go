@@ -359,6 +359,9 @@ type ModelSpec struct {
 	// The set locations in case of group forecasts
 	// +kubebuilder:validation:Optional
 	PartitionsLocation PartitionModelLocationsSpec `json:"partitionLocations,omitempty" protobuf:"bytes,52,opt,name=partitionLocations"`
+	// The version assigned to this model by the model class
+	// +kubebuilder:validation:Optional
+	ModelClassVersion *int32 `json:"modelClassVersion,omitempty" protobuf:"bytes,53,opt,name=modelClassVersion"`
 }
 
 type SegmentSpec struct {

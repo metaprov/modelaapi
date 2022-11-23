@@ -1732,6 +1732,10 @@ spec:
               modelClassName:
                 description: The model class for this model
                 type: string
+              modelClassVersion:
+                description: The version assigned to this model by the model class
+                format: int32
+                type: integer
               modelVersion:
                 default: ""
                 description: The user-assigned version of the Model, derived from

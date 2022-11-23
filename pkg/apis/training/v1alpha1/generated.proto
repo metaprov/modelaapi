@@ -1762,6 +1762,10 @@ message ModelSpec {
   // The set locations in case of group forecasts
   // +kubebuilder:validation:Optional
   optional PartitionModelLocationsSpec partitionLocations = 52;
+
+  // The version assigned to this model by the model class
+  // +kubebuilder:validation:Optional
+  optional int32 modelClassVersion = 53;
 }
 
 message ModelStageStatus {
