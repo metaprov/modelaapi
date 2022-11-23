@@ -32,6 +32,10 @@ func (mclass *ModelClass) SetupWebhookWithManager(mgr ctrl.Manager) error {
 		Complete()
 }
 
+func (mclass *ModelClass) PredictorName() string {
+	return "mc-predictor-" + mclass.Name
+}
+
 //==============================================================================
 // Validate
 //==============================================================================
