@@ -444,6 +444,11 @@ spec:
               modelClassName:
                 description: The model class for this pipeline
                 type: string
+              modelClassVersion:
+                description: The current version of the model class that created this
+                  report,
+                format: int32
+                type: integer
               notifierName:
                 description: The name of the Notifier resource which Alerts created
                   by the Report will be forwarded to

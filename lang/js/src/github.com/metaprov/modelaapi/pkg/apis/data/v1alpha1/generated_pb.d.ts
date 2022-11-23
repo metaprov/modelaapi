@@ -2169,6 +2169,9 @@ export class DatasetSpec extends jspb.Message {
   getModelclassname(): string;
   setModelclassname(value: string): DatasetSpec;
 
+  getModelclassversion(): number;
+  setModelclassversion(value: number): DatasetSpec;
+
   getDescription(): string;
   setDescription(value: string): DatasetSpec;
 
@@ -2303,6 +2306,7 @@ export namespace DatasetSpec {
     datasourcename: string,
     featuregroupname: string,
     modelclassname: string,
+    modelclassversion: number,
     description: string,
     displayname: string,
     role: string,

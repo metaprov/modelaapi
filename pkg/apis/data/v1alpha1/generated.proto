@@ -1628,85 +1628,89 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional string modelClassName = 5;
 
+  // The current version of the model class that created this dataset
+  // +kubebuilder:validation:Optional
+  optional int32 modelClassVersion = 6;
+
   // User-provided description of the object
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 6;
+  optional string description = 7;
 
   // User-provided display name of the object
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string displayName = 7;
+  optional string displayName = 8;
 
   // The dataset role
   // +kubebuilder:default:="training"
   // +kubebuilder:validation:Optional
-  optional string role = 8;
+  optional string role = 9;
 
   // Tags attached to the dataset
   // +kubebuilder:validation:Optional
-  repeated string tags = 9;
+  repeated string tags = 10;
 
   // Indicates if a PDF report containing the Dataset's profile should be generated
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool reported = 10;
+  optional bool reported = 11;
 
   // Indicates if the resource controller has created a snapshot of the data in the case that it is being read
   // directly from a database, and must be converted to a flat-file type such as a CSV as a result
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool snapshotted = 11;
+  optional bool snapshotted = 12;
 
   // Indicates if the Dataset should be checked against the validation rules of its Location Source
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool unitTested = 12;
+  optional bool unitTested = 13;
 
   // Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
   // created, the resource controller will retrieve the data from the location, validate it against its Location Source
   // if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
   // +kubebuilder:validation:Optional
-  optional DataLocation origin = 13;
+  optional DataLocation origin = 14;
 
   // Location is the final location of the data which was copied from the `Origin` location during the ingestion phase.
   // This field is set by the Dataset resource controller and should not be changed by any end-users
   // +kubebuilder:validation:Required
   // +required
-  optional DataLocation location = 14;
+  optional DataLocation location = 15;
 
   // Resources specifies the resource requirements which the Dataset will request when creating Jobs to analyze the data
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 15;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 16;
 
   // The deadline in seconds for all Jobs created by the Dataset
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 16;
+  optional int64 activeDeadlineSeconds = 17;
 
   // The type of dataset which was uploaded. `tabular` is the only supported type as of the current release
   // +kubebuilder:default:="tabular"
   // +kubebuilder:validation:Optional
-  optional string type = 17;
+  optional string type = 18;
 
   // The specification for how the data should be sampled, if applicable. Sampling may improve dataset and model creation
   // time in the case of very large datasets that are being rapidly prototyped and iterated on
   // +kubebuilder:validation:Optional
-  optional SampleSpec sample = 18;
+  optional SampleSpec sample = 19;
 
   // If the dataset is syntactic, this is the syntactic spec
   // +kubebuilder:validation:Optional
-  optional SyntheticSpec syntactic = 19;
+  optional SyntheticSpec syntactic = 20;
 
   // The machine learning task relevant to the Dataset. This field *must* be the same as the Location Source of the object
   // +kubebuilder:validation:Optional
-  optional string task = 20;
+  optional string task = 21;
 
   // The machine learning sub task relevant to the Dataset. This field *must* be the same as the Location Source of the object
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional string subtask = 21;
+  optional string subtask = 22;
 
   // The specification for how to find the correlations of the Dataset's features during the profiling phase.
   // Based on the specification, the data plane will compute the correlation between each feature and will store the highest-scoring

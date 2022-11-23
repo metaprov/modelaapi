@@ -1781,6 +1781,11 @@ func (in *DatasetSpec) DeepCopyInto(out *DatasetSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.ModelClassVersion != nil {
+		in, out := &in.ModelClassVersion, &out.ModelClassVersion
+		*out = new(int32)
+		**out = **in
+	}
 	if in.Description != nil {
 		in, out := &in.Description, &out.Description
 		*out = new(string)

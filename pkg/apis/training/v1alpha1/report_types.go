@@ -144,45 +144,48 @@ type ReportSpec struct {
 	// The model class for this pipeline
 	// +kubebuilder:validation:Optional
 	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,3,opt,name=modelClassName"`
+	// The current version of the model class that created this report,
+	// +kubebuilder:validation:Optional
+	ModelClassVersion *int32 `json:"modelClassVersion" protobuf:"bytes,4,opt,name=modelClassVersion"`
 	// The location of the flat-file containing the PDF report
 	// +kubebuilder:validation:Optional
-	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,4,opt,name=location"`
+	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,5,opt,name=location"`
 	// The type of report (e.g. classification model report, study report)
 	// +kubebuilder:validation:Required
 	// +required
-	ReportType *ReportType `json:"reportType,omitempty" protobuf:"bytes,5,opt,name=reportType"`
+	ReportType *ReportType `json:"reportType,omitempty" protobuf:"bytes,6,opt,name=reportType"`
 	// The format of the Report. `pdf` is the only supported type as of the current release
 	// +kubebuilder:default:=pdf
 	// +kubebuilder:validation:Optional
-	Format *ReportFormat `json:"format,omitempty" protobuf:"bytes,6,opt,name=format"`
+	Format *ReportFormat `json:"format,omitempty" protobuf:"bytes,7,opt,name=format"`
 	// The name of the Notifier resource which Alerts created by the Report will be forwarded to
 	// +kubebuilder:validation:Optional
-	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,7,opt,name=notifierName"`
+	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,8,opt,name=notifierName"`
 	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,9,opt,name=owner"`
 	// Resources specifies the resource requirements that will be allocated to the report generation workload
 	// +kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,9,opt,name=resources"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,10,opt,name=resources"`
 	// The deadline for any Jobs associated with the Report to be completed in seconds
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,10,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,11,opt,name=activeDeadlineSeconds"`
 	// Custom contains the specification to generate a custom report (currently unimplemented)
 	// +kubebuilder:validation:Optional
-	Custom CustomReportSpec `json:"custom,omitempty" protobuf:"bytes,11,opt,name=custom"`
+	Custom CustomReportSpec `json:"custom,omitempty" protobuf:"bytes,12,opt,name=custom"`
 	// The name of the CronReport resource that generated the Report
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	CronReportName *string `json:"cronReportName,omitempty" protobuf:"bytes,12,opt,name=cronReportName"`
+	CronReportName *string `json:"cronReportName,omitempty" protobuf:"bytes,13,opt,name=cronReportName"`
 	// The reference to the Lab namespace under which the report generation Job will be executed under.
 	// If unspecified, the default Lab from the parent DataProduct will be used
 	// +kubebuilder:validation:Optional
-	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,13,opt,name=labRef"`
+	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,14,opt,name=labRef"`
 	// For group forecasting, this is the key of the group
 	// +kubebuilder:validation:Optional
-	Key []string `json:"key,omitempty" protobuf:"bytes,14,opt,name=key"`
+	Key []string `json:"key,omitempty" protobuf:"bytes,15,opt,name=key"`
 }
 
 // ReportStatus defines the observed state of a Report

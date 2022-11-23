@@ -100,7 +100,7 @@ func (mclass ModelClass) GetCond(t ModelClassConditionType) ModelClassCondition 
 }
 
 func (mclass ModelClass) IsReady() bool {
-	return mclass.GetCond(ModelClassReady).Status == corev1.ConditionTrue
+	return mclass.Status.Phase == ModelClassPhaseReady
 }
 
 func (mclass ModelClass) Key() string {
@@ -121,12 +121,10 @@ func (mclass *ModelClass) MarkArchived() {
 		Type:   ModelClassSaved,
 		Status: corev1.ConditionTrue,
 	})
-
 }
 
 func (mclass ModelClass) IsFailed() bool {
-	cond := mclass.GetCond(ModelClassReady)
-	return cond.Status == v1.ConditionFalse && cond.Reason == string(ModelClassReady)
+	return mclass.Status.Phase == ModelClassPhaseFailed
 }
 
 ///////////////////////////////////////////////
@@ -138,16 +136,17 @@ func (mclass *ModelClass) StudyName() string {
 }
 
 // At the start of training, mark the training dataset as pending
-func (mclass *ModelClass) MarkTrainingDatasetPending() {
+func (mclass *ModelClass) StartTrainingProcess() {
 	mclass.Status.Phase = ModelClassPhasePending
 	mclass.CreateOrUpdateCond(ModelClassCondition{
 		Type:   ModelClassTrainingDatasetReady,
 		Status: v1.ConditionFalse,
-		Reason: ReasonTrainingPending,
+		Reason: ReasonTrainingDatasetPending,
 	})
-	mclass.Status.LastestStudy = ""
-	mclass.Status.LastestDataset = ""
-	mclass.Status.LastestModel = ""
+	mclass.Status.Version = mclass.Status.Version + 1
+	mclass.Status.Dataset = ""
+	mclass.Status.Study = ""
+	mclass.Status.CandidateModel = ""
 }
 
 func (mclass *ModelClass) MarkCreatingTrainingDatasetSet(dataset string) {
@@ -155,18 +154,17 @@ func (mclass *ModelClass) MarkCreatingTrainingDatasetSet(dataset string) {
 	mclass.CreateOrUpdateCond(ModelClassCondition{
 		Type:   ModelClassTrainingDatasetReady,
 		Status: v1.ConditionFalse,
-		Reason: ReasonCreatingTrainingSet,
+		Reason: ReasonCreatingTrainingDataset,
 	})
-	mclass.Status.LastestDataset = datasetName
+	mclass.Status.Dataset = dataset
 }
 
 // when
 func (mclass *ModelClass) MarkCreatedTrainingSet() {
-	mclass.Status.Phase = ModelClassPhaseTraining
+	mclass.Status.Phase = ModelClassPhaseReady
 	mclass.CreateOrUpdateCond(ModelClassCondition{
 		Type:   ModelClassTrainingDatasetReady,
-		Status: v1.ConditionFalse,
-		Reason: ReasonCreatedTrainingSet,
+		Status: v1.ConditionTrue,
 	})
 }
 
@@ -175,15 +173,16 @@ func (mclass *ModelClass) MarkCreatingTrainingSetFailed(err string) {
 	mclass.CreateOrUpdateCond(ModelClassCondition{
 		Type:    ModelClassTrainingDatasetReady,
 		Status:  v1.ConditionFalse,
-		Reason:  ReasonCreatingTrainingSet,
+		Reason:  ReasonFailedToCreateTrainingDataset,
 		Message: err,
 	})
 }
 
 /////////////////////////////////////////////////////
-// Actual training
+// Mark Training
 //////////////////////////////////////////////////////
 func (mclass *ModelClass) MarkTraining(study string) {
+	mclass.Status.Phase = ModelClassPhaseTraining
 	if mclass.Status.Phase != ModelClassPhaseTraining {
 		mclass.Status.Phase = ModelClassPhaseTraining
 		mclass.CreateOrUpdateCond(ModelClassCondition{
@@ -194,17 +193,16 @@ func (mclass *ModelClass) MarkTraining(study string) {
 		now := metav1.Now()
 		mclass.Status.TrainingScheduleStatus.LastRun = &now
 	}
-	mclass.Status.LastestStudy = study
+	mclass.Status.Study = study
 }
 
 func (mclass *ModelClass) MarkModelReady(model string) {
-	mclass.Status.Phase = ModelClassPhaseModelReady
+	mclass.Status.Phase = ModelClassPhaseReady
 	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassTrained,
-		Status: v1.ConditionFalse,
-		Reason: ReasonModelReady,
+		Type:   ModelClassModelTrained,
+		Status: v1.ConditionTrue,
 	})
-	mclass.Status.LastestModel = model
+	mclass.Status.CandidateModel = model
 	nextRun := mclass.Spec.Training.TrainingSchedule.NextRun()
 	mclass.Status.TrainingScheduleStatus.End()
 	mclass.Status.TrainingScheduleStatus.SetNext(*nextRun)
@@ -213,43 +211,34 @@ func (mclass *ModelClass) MarkModelReady(model string) {
 func (mclass *ModelClass) MarkTrainingFailed(err string) {
 	mclass.Status.Phase = ModelClassPhaseFailed
 	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:    ModelClassTrained,
+		Type:    ModelClassModelTrained,
 		Status:  v1.ConditionFalse,
-		Reason:  ReasonTraining,
+		Reason:  ReasonFailed,
 		Message: err,
 	})
 }
 
+func (mclass *ModelClass) IsTrained() bool {
+	cond := mclass.GetCond(ModelClassModelTrained)
+	return cond.Status == v1.ConditionTrue
+}
+
+////////////////////////////////////////////
+// Promotion
+////////////////////////////////////////////
+
 func (mclass *ModelClass) MarkWaitingForPromotion() {
 	mclass.Status.Phase = ModelClassPhaseWaitingForPromotion
 	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassTrained,
+		Type:   ModelClassModelPromoted,
 		Status: v1.ConditionFalse,
 		Reason: ReasonWaitingForPromotion,
 	})
 }
 
-func (mclass *ModelClass) IsTrained() bool {
-	cond := mclass.GetCond(ModelClassTrained)
-	return cond.Status == v1.ConditionTrue
-}
-
-func (mclass *ModelClass) IsModelPromoted() bool {
+func (mclass *ModelClass) IsPromoted() bool {
 	cond := mclass.GetCond(ModelClassModelPromoted)
 	return cond.Status == v1.ConditionTrue
-}
-
-func (mclass *ModelClass) IsServed() bool {
-	cond := mclass.GetCond(ModelClassServed)
-	return cond.Status == v1.ConditionTrue
-}
-
-func (mclass *ModelClass) MarkReady() {
-	mclass.Status.Phase = ModelClassPhaseReady
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassReady,
-		Status: v1.ConditionTrue,
-	})
 }
 
 func (mclass *ModelClass) MarkPromoted() {
@@ -258,20 +247,19 @@ func (mclass *ModelClass) MarkPromoted() {
 		Type:   ModelClassModelPromoted,
 		Status: v1.ConditionTrue,
 	})
+	// promote the version
+	mclass.Spec.Version = mclass.Status.Version
 }
 
 func (mclass *ModelClass) MarkFailToPromote(err error) {
 	mclass.Status.Phase = ModelClassPhaseFailed
 	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassModelPromoted,
-		Status: v1.ConditionFalse,
-		Reason: ReasonFailedToPromote,
+		Type:    ModelClassModelPromoted,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailedToPromote,
+		Message: err.Error(),
 	})
 }
-
-///////////////////////////////////////////////
-// Training
-//////////////////////////////////////////////
 
 ///////////////////////////////////////////////
 // Drifted
@@ -279,7 +267,7 @@ func (mclass *ModelClass) MarkFailToPromote(err error) {
 func (mclass *ModelClass) MarkDrifted() {
 	mclass.Status.Phase = ModelClassPhaseDrifted
 	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassDrifted,
+		Type:   ModelClassModelDrifted,
 		Status: v1.ConditionTrue,
 	})
 }

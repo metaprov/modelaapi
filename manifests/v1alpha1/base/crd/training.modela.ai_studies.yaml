@@ -1161,6 +1161,11 @@ spec:
               modelClassName:
                 description: The model class for this study
                 type: string
+              modelClassVersion:
+                description: The current version of the model class that created this
+                  study
+                format: int32
+                type: integer
               modelExplained:
                 default: true
                 description: ModelExplained indicates if interpretability diagrams,

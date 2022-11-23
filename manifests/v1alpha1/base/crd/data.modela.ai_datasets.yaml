@@ -384,6 +384,11 @@ spec:
                 description: In case of training data, this is the model class name
                   that created it.
                 type: string
+              modelClassVersion:
+                description: The current version of the model class that created this
+                  dataset
+                format: int32
+                type: integer
               origin:
                 description: Origin is the location of the data file or database query
                   which holds the raw data of the Dataset. When the Dataset is created,

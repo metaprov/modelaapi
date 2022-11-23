@@ -1782,8 +1782,11 @@ export class ModelClassSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ModelClassSpec;
 
-  getVersionname(): string;
-  setVersionname(value: string): ModelClassSpec;
+  getDataproductversionname(): string;
+  setDataproductversionname(value: string): ModelClassSpec;
+
+  getVersion(): number;
+  setVersion(value: number): ModelClassSpec;
 
   getDescription(): string;
   setDescription(value: string): ModelClassSpec;
@@ -1846,7 +1849,8 @@ export class ModelClassSpec extends jspb.Message {
 export namespace ModelClassSpec {
   export type AsObject = {
     owner: string,
-    versionname: string,
+    dataproductversionname: string,
+    version: number,
     description: string,
     task: string,
     subtask: string,
@@ -1912,14 +1916,14 @@ export class ModelClassStatus extends jspb.Message {
   hasPromotionstatus(): boolean;
   clearPromotionstatus(): ModelClassStatus;
 
-  getLatestdataset(): string;
-  setLatestdataset(value: string): ModelClassStatus;
+  getDataset(): string;
+  setDataset(value: string): ModelClassStatus;
 
-  getLateststudy(): string;
-  setLateststudy(value: string): ModelClassStatus;
+  getStudy(): string;
+  setStudy(value: string): ModelClassStatus;
 
-  getLatestmodel(): string;
-  setLatestmodel(value: string): ModelClassStatus;
+  getCandidatemodel(): string;
+  setCandidatemodel(value: string): ModelClassStatus;
 
   getBestmodelscore(): number;
   setBestmodelscore(value: number): ModelClassStatus;
@@ -1942,6 +1946,9 @@ export class ModelClassStatus extends jspb.Message {
 
   getTriggeredby(): string;
   setTriggeredby(value: string): ModelClassStatus;
+
+  getVersion(): number;
+  setVersion(value: number): ModelClassStatus;
 
   getConditionsList(): Array<ModelClassCondition>;
   setConditionsList(value: Array<ModelClassCondition>): ModelClassStatus;
@@ -1969,15 +1976,16 @@ export namespace ModelClassStatus {
     monitoringscedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     reportscedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     promotionstatus?: PromotionStatus.AsObject,
-    latestdataset: string,
-    lateststudy: string,
-    latestmodel: string,
+    dataset: string,
+    study: string,
+    candidatemodel: string,
     bestmodelscore: number,
     retiredList: Array<string>,
     predictorname: string,
     livemodel: string,
     shadowsList: Array<string>,
     triggeredby: string,
+    version: number,
     conditionsList: Array<ModelClassCondition.AsObject>,
   }
 }
@@ -3380,6 +3388,9 @@ export class ReportSpec extends jspb.Message {
   getModelclassname(): string;
   setModelclassname(value: string): ReportSpec;
 
+  getModelclassversion(): number;
+  setModelclassversion(value: number): ReportSpec;
+
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ReportSpec;
   hasLocation(): boolean;
@@ -3436,6 +3447,7 @@ export namespace ReportSpec {
     versionname: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     modelclassname: string,
+    modelclassversion: number,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     reporttype: string,
     format: string,
@@ -3979,6 +3991,9 @@ export class StudySpec extends jspb.Message {
   getModelclassname(): string;
   setModelclassname(value: string): StudySpec;
 
+  getModelclassversion(): number;
+  setModelclassversion(value: number): StudySpec;
+
   getDescription(): string;
   setDescription(value: string): StudySpec;
 
@@ -4143,6 +4158,7 @@ export namespace StudySpec {
   export type AsObject = {
     versionname: string,
     modelclassname: string,
+    modelclassversion: number,
     description: string,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     datasetname: string,

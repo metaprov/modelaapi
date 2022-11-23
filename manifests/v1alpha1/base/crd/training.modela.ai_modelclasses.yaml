@@ -1317,6 +1317,13 @@ spec:
                         type: array
                     type: object
                 type: object
+              dataProductVersionName:
+                default: ""
+                description: The name of the DataProductVersion which describes the
+                  version of the resource that exists in the same DataProduct namespace
+                  as the resource
+                maxLength: 63
+                type: string
               description:
                 default: ""
                 description: The user-provided description of the ModelClass
@@ -2734,13 +2741,11 @@ spec:
                     - on-pref-degradation
                     type: string
                 type: object
-              versionName:
-                default: ""
-                description: The name of the DataProductVersion which describes the
-                  version of the resource that exists in the same DataProduct namespace
-                  as the resource
-                maxLength: 63
-                type: string
+              version:
+                description: The current version of the model class that exists in
+                  the same DataProduct namespace as the resource
+                format: int32
+                type: integer
             required:
             - task
             type: object
@@ -3150,6 +3155,9 @@ spec:
                 description: The highest score out of all Models created by the associated
                   Study resource
                 type: number
+              candidateModel:
+                description: The name of the candidate model for promotion.
+                type: string
               conditions:
                 items:
                   description: ModelClassCondition describes the state of a ModelClass
@@ -3175,6 +3183,9 @@ spec:
                       type: string
                   type: object
                 type: array
+              dataset:
+                description: Holds the latest dataset used during training.
+                type: string
               lastOnlineTrainingSet:
                 description: Store the location of the last training set
                 properties:
@@ -3290,15 +3301,6 @@ spec:
               lastUpdated:
                 description: The last time the object was updated
                 format: date-time
-                type: string
-              latestDataset:
-                description: Holds the latest dataset used during training.
-                type: string
-              latestModel:
-                description: The name of the candidate model for promotion.
-                type: string
-              latestStudy:
-                description: The lastest study name
                 type: string
               liveModel:
                 description: The name of the live model in production. This is taken
@@ -3525,6 +3527,9 @@ spec:
                 items:
                   type: string
                 type: array
+              study:
+                description: The lastest study name
+                type: string
               trainingScheduleStatus:
                 description: Training schedule status
                 properties:
@@ -3584,6 +3589,10 @@ spec:
                 - on-concept-drift
                 - on-pref-degradation
                 type: string
+              version:
+                description: Version for resources that are created during training.
+                format: int32
+                type: integer
             type: object
         type: object
     served: true

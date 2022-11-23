@@ -12,13 +12,12 @@ import (
 type ModelClassPhase string
 
 const (
-	ModelClassPhasePending                 ModelClassPhase = "Pending"
-	ModelClassPhaseFailed                  ModelClassPhase = "Failed"
-	ModelClassPhaseReady                   ModelClassPhase = "Ready"
 	ModelClassPhaseCreatingTrainingDataset ModelClassPhase = "CreatingTrainingDataset"
-	ModelClassPhaseWaitingForPromotion     ModelClassPhase = "WaitingForPromotion" // in case of manual promotion
 	ModelClassPhaseTraining                ModelClassPhase = "Training"
-	ModelClassPhasePromoting               ModelClassPhase = "Promoting"
+	ModelClassPhaseWaitingForPromotion     ModelClassPhase = "WaitingForPromotion" // in case of manual promotion
+	ModelClassPhasePending                 ModelClassPhase = "Promoting"
+	ModelClassPhaseReady                   ModelClassPhase = "Ready"
+	ModelClassPhaseFailed                  ModelClassPhase = "Failed"
 	ModelClassPhaseDrifted                 ModelClassPhase = "Drifted"
 )
 
@@ -31,13 +30,12 @@ const (
 	ModelClassSaved ModelClassConditionType = "Saved"
 	// Condition to check if the training dataset is ready
 	ModelClassTrainingDatasetReady ModelClassConditionType = "TrainingDatasetReady"
-	// Condition indicating if the model was trained
+	// Condition indicating if the current model was trained.
 	ModelClassModelTrained ModelClassConditionType = "ModelTrained"
-	// Condition to indicate if the latest model was promoted.
-	// The condition is set to false if there a model waiting for promotion.
+	// Condition to indicate if the current model was promoted
 	ModelClassModelPromoted ModelClassConditionType = "ModelPromoted"
-	// Condition to indicate that there is a model in production
-	ModelClassModelServed ModelClassConditionType = "ModelServed"
+	// Condition to indicate that there is a model in production serving prediction
+	ModelClassModelServing ModelClassConditionType = "ModelServing"
 	// ModelClassDrifted states that the latest model has drifted
 	ModelClassModelDrifted ModelClassConditionType = "ModelDrifted"
 )
@@ -88,51 +86,55 @@ type ModelClassSpec struct {
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	VersionName *string `json:"versionName" protobuf:"bytes,2,opt,name=versionName"`
+	DataProductVersionName *string `json:"dataProductVersionName" protobuf:"bytes,2,opt,name=dataProductVersionName"`
+	// The current version of the model class
+	// that exists in the same DataProduct namespace as the resource
+	// +kubebuilder:validation:Optional
+	Version int32 `json:"version" protobuf:"bytes,3,opt,name=version"`
 	// The user-provided description of the ModelClass
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:validation:Optional
-	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
 	// The machine learning task type (i.e. regression, classification)
 	// +kubebuilder:validation:Required
 	// +required
-	Task *catalog.MLTask `json:"task" protobuf:"bytes,4,opt,name=task"`
+	Task *catalog.MLTask `json:"task" protobuf:"bytes,5,opt,name=task"`
 	// The machine learning subtask relevant to the primary task (text classification, image object detection, etc.)
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	SubTask *catalog.MLSubtask `json:"subtask" protobuf:"bytes,5,opt,name=subtask"`
+	SubTask *catalog.MLSubtask `json:"subtask" protobuf:"bytes,6,opt,name=subtask"`
 	// The optimization objective. The objective is also used when promoting models
 	// +kubebuilder:validation:Optional
-	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,6,opt,name=objective"`
+	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,7,opt,name=objective"`
 	// If using the feature store (pre defined features), specify the feature groups the would
 	// be used to create the training data.
 	// +kubebuilder:validation:Optional
-	Entities []EntityRef `json:"entities,omitempty" protobuf:"bytes,7,opt,name=entities"`
+	Entities []EntityRef `json:"entities,omitempty" protobuf:"bytes,8,opt,name=entities"`
 	// The location where ModelClass artifacts (metadata, reports, and model artifacts) will be stored
 	// +kubebuilder:validation:Optional
-	ArtifactLocation data.DataLocation `json:"artifactLocation,omitempty" protobuf:"bytes,8,opt,name=artifactLocation"`
+	ArtifactLocation data.DataLocation `json:"artifactLocation,omitempty" protobuf:"bytes,9,opt,name=artifactLocation"`
 	// The model class data
 	// +kubebuilder:validation:Optional
-	Data ModelClassDataSpec `json:"data,omitempty" protobuf:"bytes,9,opt,name=data"`
+	Data ModelClassDataSpec `json:"data,omitempty" protobuf:"bytes,10,opt,name=data"`
 	// TrainingTemplate specifies the configuration to train and evaluate models
 	// +kubebuilder:validation:Optional
-	Training ModelClassTrainingSpec `json:"training,omitempty" protobuf:"bytes,10,opt,name=training"`
+	Training ModelClassTrainingSpec `json:"training,omitempty" protobuf:"bytes,11,opt,name=training"`
 	// ServingTemplate specifies the model format and resource requirements that will be applied to
 	// the Predictor created for the Model that will be selected by the ModelClass
 	// +kubebuilder:validation:Optional
-	Serving ModelClassServingSpec `json:"serving,omitempty" protobuf:"bytes,11,opt,name=serving"`
+	Serving ModelClassServingSpec `json:"serving,omitempty" protobuf:"bytes,12,opt,name=serving"`
 	// The notification specification that determines which notifiers will receive Alerts generated by the object
 	//+kubebuilder:validation:Optional
-	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,12,opt,name=notification"`
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,13,opt,name=notification"`
 	// The schedule for summary report
 	// +kubebuilder:validation:Optional
-	ReportSchedule catalog.RunSchedule `json:"reportSchedule,omitempty" protobuf:"bytes,13,opt,name=reportSchedule"`
+	ReportSchedule catalog.RunSchedule `json:"reportSchedule,omitempty" protobuf:"bytes,14,opt,name=reportSchedule"`
 	// Fast indicates if Dataset, Model and Study resources associated with the ModelClass should run in fast mode.
 	// Running in fast mode will skip unnecessary workloads such as profiling, reporting, explaining, etc.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Fast *bool `json:"fast,omitempty" protobuf:"varint,14,opt,name=fast"`
+	Fast *bool `json:"fast,omitempty" protobuf:"varint,15,opt,name=fast"`
 }
 
 // Specification for the label information
@@ -342,13 +344,13 @@ type ModelClassStatus struct {
 	PromotionStatus PromotionStatus `json:"promotionStatus,omitempty" protobuf:"bytes,11,opt,name=promotionStatus"`
 	// Holds the latest dataset used during training.
 	//+kubebuilder:validation:Optional
-	LastestDataset string `json:"latestDataset,omitempty" protobuf:"bytes,12,opt,name=latestDataset"`
+	Dataset string `json:"dataset,omitempty" protobuf:"bytes,12,opt,name=dataset"`
 	// The lastest study name
 	//+kubebuilder:validation:Optional
-	LastestStudy string `json:"latestStudy,omitempty" protobuf:"bytes,13,opt,name=latestStudy"`
+	Study string `json:"study,omitempty" protobuf:"bytes,13,opt,name=study"`
 	// The name of the candidate model for promotion.
 	//+kubebuilder:validation:Optional
-	CandidateModel string `json:"latestModel,omitempty" protobuf:"bytes,14,opt,name=latestModel"`
+	CandidateModel string `json:"candidateModel,omitempty" protobuf:"bytes,14,opt,name=candidateModel"`
 	// The highest score out of all Models created by the associated Study resource
 	// +kubebuilder:validation:Optional
 	BestModelScore float64 `json:"bestModelScore,omitempty" protobuf:"bytes,15,opt,name=bestModelScore"`
@@ -365,10 +367,13 @@ type ModelClassStatus struct {
 	// The name of triggered by.
 	// +kubebuilder:validation:Optional
 	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,21,opt,name=triggeredBy"`
+	// Version for resources that are created during training.
+	// +kubebuilder:validation:Optional
+	Version int32 `json:"version,omitempty" protobuf:"bytes,22,opt,name=version"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,22,rep,name=conditions"`
+	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,23,rep,name=conditions"`
 }
 
 type PromotionStatus struct {

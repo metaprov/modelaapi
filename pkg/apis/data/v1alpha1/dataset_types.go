@@ -118,70 +118,73 @@ type DatasetSpec struct {
 	// In case of training data, this is the model class name that created it.
 	// +kubebuilder:validation:Optional
 	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,5,opt,name=modelClassName"`
+	// The current version of the model class that created this dataset
+	// +kubebuilder:validation:Optional
+	ModelClassVersion *int32 `json:"modelClassVersion" protobuf:"varint,6,opt,name=modelClassVersion"`
 	// User-provided description of the object
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Description *string `json:"description,omitempty" protobuf:"bytes,6,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,7,opt,name=description"`
 	// User-provided display name of the object
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	DisplayName *string `json:"displayName,omitempty" protobuf:"bytes,7,opt,name=displayName"`
+	DisplayName *string `json:"displayName,omitempty" protobuf:"bytes,8,opt,name=displayName"`
 	// The dataset role
 	// +kubebuilder:default:="training"
 	// +kubebuilder:validation:Optional
-	Role *DatasetRole `json:"role,omitempty" protobuf:"bytes,8,opt,name=role"`
+	Role *DatasetRole `json:"role,omitempty" protobuf:"bytes,9,opt,name=role"`
 	// Tags attached to the dataset
 	// +kubebuilder:validation:Optional
-	Tags []string `json:"tags,omitempty" protobuf:"bytes,9,opt,name=tags"`
+	Tags []string `json:"tags,omitempty" protobuf:"bytes,10,opt,name=tags"`
 	// Indicates if a PDF report containing the Dataset's profile should be generated
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"reported,omitempty" protobuf:"varint,10,opt,name=reported"`
+	Reported *bool `json:"reported,omitempty" protobuf:"varint,11,opt,name=reported"`
 	// Indicates if the resource controller has created a snapshot of the data in the case that it is being read
 	// directly from a database, and must be converted to a flat-file type such as a CSV as a result
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Snapshotted *bool `json:"snapshotted,omitempty" protobuf:"varint,11,opt,name=snapshotted"`
+	Snapshotted *bool `json:"snapshotted,omitempty" protobuf:"varint,12,opt,name=snapshotted"`
 	// Indicates if the Dataset should be checked against the validation rules of its Location Source
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	UnitTested *bool `json:"unitTested,omitempty" protobuf:"varint,12,opt,name=unitTested"`
+	UnitTested *bool `json:"unitTested,omitempty" protobuf:"varint,13,opt,name=unitTested"`
 	// Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
 	// created, the resource controller will retrieve the data from the location, validate it against its Location Source
 	// if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
 	// +kubebuilder:validation:Optional
-	Origin DataLocation `json:"origin,omitempty" protobuf:"bytes,13,opt,name=origin"`
+	Origin DataLocation `json:"origin,omitempty" protobuf:"bytes,14,opt,name=origin"`
 	// Location is the final location of the data which was copied from the `Origin` location during the ingestion phase.
 	// This field is set by the Dataset resource controller and should not be changed by any end-users
 	// +kubebuilder:validation:Required
 	// +required
-	Location DataLocation `json:"location,omitempty" protobuf:"bytes,14,opt,name=location"`
+	Location DataLocation `json:"location,omitempty" protobuf:"bytes,15,opt,name=location"`
 	// Resources specifies the resource requirements which the Dataset will request when creating Jobs to analyze the data
 	// +kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,15,opt,name=resources"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,16,opt,name=resources"`
 	// The deadline in seconds for all Jobs created by the Dataset
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,16,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,17,opt,name=activeDeadlineSeconds"`
 	// The type of dataset which was uploaded. `tabular` is the only supported type as of the current release
 	// +kubebuilder:default:="tabular"
 	// +kubebuilder:validation:Optional
-	Type *catalog.DatasetType `json:"type,omitempty" protobuf:"bytes,17,opt,name=type"`
+	Type *catalog.DatasetType `json:"type,omitempty" protobuf:"bytes,18,opt,name=type"`
 	// The specification for how the data should be sampled, if applicable. Sampling may improve dataset and model creation
 	// time in the case of very large datasets that are being rapidly prototyped and iterated on
 	// +kubebuilder:validation:Optional
-	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,18,opt,name=sample"`
+	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,19,opt,name=sample"`
 	// If the dataset is syntactic, this is the syntactic spec
 	// +kubebuilder:validation:Optional
-	Synthetic SyntheticSpec `json:"syntactic,omitempty" protobuf:"bytes,19,opt,name=syntactic"`
+	Synthetic SyntheticSpec `json:"syntactic,omitempty" protobuf:"bytes,20,opt,name=syntactic"`
 	// The machine learning task relevant to the Dataset. This field *must* be the same as the Location Source of the object
 	// +kubebuilder:validation:Optional
-	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,20,opt,name=task"`
+	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,21,opt,name=task"`
 	// The machine learning sub task relevant to the Dataset. This field *must* be the same as the Location Source of the object
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	SubTask *catalog.MLSubtask `json:"subtask,omitempty" protobuf:"bytes,21,opt,name=subtask"`
+	SubTask *catalog.MLSubtask `json:"subtask,omitempty" protobuf:"bytes,22,opt,name=subtask"`
 	// The specification for how to find the correlations of the Dataset's features during the profiling phase.
 	// Based on the specification, the data plane will compute the correlation between each feature and will store the highest-scoring
 	// +kubebuilder:validation:Optional

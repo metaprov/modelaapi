@@ -1626,15 +1626,10 @@ func (in *ModelClassServingSpec) DeepCopyInto(out *ModelClassServingSpec) {
 	in.MonitoringSchedule.DeepCopyInto(&out.MonitoringSchedule)
 	in.BatchPredictionSchedule.DeepCopyInto(&out.BatchPredictionSchedule)
 	in.Resources.DeepCopyInto(&out.Resources)
-	if in.Live != nil {
-		in, out := &in.Live, &out.Live
-		*out = new(string)
+	if in.ShadowFirst != nil {
+		in, out := &in.ShadowFirst, &out.ShadowFirst
+		*out = new(bool)
 		**out = **in
-	}
-	if in.Shadows != nil {
-		in, out := &in.Shadows, &out.Shadows
-		*out = make([]string, len(*in))
-		copy(*out, *in)
 	}
 }
 
@@ -1656,8 +1651,8 @@ func (in *ModelClassSpec) DeepCopyInto(out *ModelClassSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.VersionName != nil {
-		in, out := &in.VersionName, &out.VersionName
+	if in.DataProductVersionName != nil {
+		in, out := &in.DataProductVersionName, &out.DataProductVersionName
 		*out = new(string)
 		**out = **in
 	}
@@ -1731,6 +1726,16 @@ func (in *ModelClassStatus) DeepCopyInto(out *ModelClassStatus) {
 	in.PromotionStatus.DeepCopyInto(&out.PromotionStatus)
 	if in.RetiredModels != nil {
 		in, out := &in.RetiredModels, &out.RetiredModels
+		*out = make([]string, len(*in))
+		copy(*out, *in)
+	}
+	if in.LiveModel != nil {
+		in, out := &in.LiveModel, &out.LiveModel
+		*out = new(string)
+		**out = **in
+	}
+	if in.Shadows != nil {
+		in, out := &in.Shadows, &out.Shadows
 		*out = make([]string, len(*in))
 		copy(*out, *in)
 	}
@@ -2758,6 +2763,11 @@ func (in *ReportSpec) DeepCopyInto(out *ReportSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.ModelClassVersion != nil {
+		in, out := &in.ModelClassVersion, &out.ModelClassVersion
+		*out = new(int32)
+		**out = **in
+	}
 	in.Location.DeepCopyInto(&out.Location)
 	if in.ReportType != nil {
 		in, out := &in.ReportType, &out.ReportType
@@ -3252,6 +3262,11 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 	if in.ModelClassName != nil {
 		in, out := &in.ModelClassName, &out.ModelClassName
 		*out = new(string)
+		**out = **in
+	}
+	if in.ModelClassVersion != nil {
+		in, out := &in.ModelClassVersion, &out.ModelClassVersion
+		*out = new(int32)
 		**out = **in
 	}
 	if in.Description != nil {
