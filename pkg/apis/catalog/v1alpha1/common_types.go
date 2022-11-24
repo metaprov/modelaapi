@@ -1737,13 +1737,14 @@ const (
 )
 
 // Define how a model is promoted to production
-// +kubebuilder:validation:Enum="manual";"best";"latest";
+// +kubebuilder:validation:Enum="manual";"best";"latest";"none"
 type PromotionType string
 
 const (
 	ManualPromotion PromotionType = "manual"
 	LatestPromotion PromotionType = "latest"
 	BestPromotion   PromotionType = "best"
+	NonePromotion   PromotionType = "none"
 )
 
 // +kubebuilder:validation:Enum="unclassified";"confidential";"secret";"top-secret"

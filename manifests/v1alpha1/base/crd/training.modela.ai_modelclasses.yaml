@@ -2490,6 +2490,7 @@ spec:
                     - manual
                     - best
                     - latest
+                    - none
                     type: string
                   resources:
                     description: Training resources

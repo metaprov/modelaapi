@@ -9,6 +9,7 @@ package v1alpha1
 import (
 	"fmt"
 	"github.com/dustin/go-humanize"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	ctrl "sigs.k8s.io/controller-runtime"
 
@@ -212,9 +213,12 @@ func (mclass *ModelClass) MarkModelReady(model string) {
 		Status: v1.ConditionTrue,
 	})
 	mclass.Status.CandidateModel = model
-	nextRun := mclass.Spec.Training.TrainingSchedule.NextRun()
-	mclass.Status.TrainingScheduleStatus.End()
-	mclass.Status.TrainingScheduleStatus.SetNext(*nextRun)
+	// If we do not promote, we can set the schedule to next cycle
+	if mclass.Spec.Training.PromotionPolicy == catalog.NonePromotion {
+		nextRun := mclass.Spec.Training.TrainingSchedule.NextRun()
+		mclass.Status.TrainingScheduleStatus.End()
+		mclass.Status.TrainingScheduleStatus.SetNext(*nextRun)
+	}
 }
 
 func (mclass *ModelClass) MarkTrainingFailed(err string) {
@@ -266,6 +270,10 @@ func (mclass *ModelClass) MarkPromoted() {
 	})
 	// promote the version
 	mclass.Spec.Version = mclass.Status.Version
+	nextRun := mclass.Spec.Training.TrainingSchedule.NextRun()
+	mclass.Status.TrainingScheduleStatus.End()
+	mclass.Status.TrainingScheduleStatus.SetNext(*nextRun)
+
 }
 
 func (mclass *ModelClass) MarkFailToPromote(err error) {
