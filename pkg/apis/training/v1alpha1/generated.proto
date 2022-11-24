@@ -1140,6 +1140,174 @@ message ModelClassList {
   repeated ModelClass items = 2;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:storageversion
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
+// +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress",priority=1
+// +kubebuilder:printcolumn:name="MC",type="string",JSONPath=".status.modelClassName"
+// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
+// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
+// +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.failureMessage"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
+// +kubebuilder:resource:path=modelclassruns,shortName=mcr,singular=modelclassrun,categories={train,modela,all}
+// ModelClassRun represent a execution of a model class training
+message ModelClassRun {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional ModelClassRunSpec spec = 2;
+
+  // +optional
+  optional ModelClassRunStatus status = 3;
+}
+
+// ModelClassRunCondition describes the state of a ModelClassRun at a certain point.
+message ModelClassRunCondition {
+  // Type of  condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, Unknown.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+
+  // The reason for the condition's last transition.
+  optional string reason = 5;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 6;
+}
+
+// +kubebuilder:object:root=true
+// ModelClassRunList represent list of pipelineruns
+message ModelClassRunList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated ModelClassRun items = 2;
+}
+
+// ModelClassRunSpec is the desired state of the ModelClassRun resource
+message ModelClassRunSpec {
+  // VersionName is the data product version of the run
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string versionName = 1;
+
+  // Description is the user provided description
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string description = 2;
+
+  // DatasetName is the name of the dataset that we trained on.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string datasetName = 3;
+
+  // ModelClassName is the name of the ModelClass for this pipeline
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string modelClassName = 4;
+
+  // The owner of the run.
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string owner = 5;
+
+  // The priority of this pipeline run. The default is medium.
+  // +kubebuilder:default:=medium
+  // +kubebuilder:validation:Optional
+  optional string priority = 6;
+
+  // Set to true to pause the model pipeline run
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool paused = 7;
+
+  // Set to true to abort the model pipeline run
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool aborted = 8;
+
+  // TTL.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 9;
+
+  // What triggered the run
+  // +kubebuilder:validation:Optional
+  optional string triggeredBy = 10;
+}
+
+// ModelClassRunStatus is the observed state of the ModelClassRun resource .
+message ModelClassRunStatus {
+  // The name of the dataset that was captured by the label filter.
+  // +kubebuilder:validation:Optional
+  optional string datasetName = 1;
+
+  // The name of the study generated.
+  // +kubebuilder:validation:Optional
+  optional string studyName = 2;
+
+  // The name of the best model
+  // +kubebuilder:validation:Optional
+  optional string modelName = 3;
+
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4;
+
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 5;
+
+  // The phase of the pipeline run
+  // +kubebuilder:default:="Pending"
+  // +kubebuilder:validation:Optional
+  optional string phase = 6;
+
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 7;
+
+  // Folder for pipeline run artifacts. This is assigned by the system
+  // The folder contains all the pipeline artifacts - metadata, logs
+  // +kubebuilder:validation:Optional
+  optional string evalMetrics = 8;
+
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 9;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 10;
+
+  // Pipeline progress Progress in percent, the progress takes into account the different stages of the pipeline
+  // +kubebuilder:validation:Optional
+  optional int32 progress = 11;
+
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 12;
+
+  // The log file specification that determines the location of all logs produced by the object
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 13;
+
+  // Last promotion was done
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time promotedAt = 14;
+
+  // If true the promotion was automatic
+  optional bool auto = 15;
+
+  // for manual promotion, who approved the promotion
+  optional k8s.io.api.core.v1.ObjectReference approvedBy = 16;
+
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  // +kubebuilder:validation:Optional
+  repeated ModelClassRunCondition conditions = 17;
+}
+
 message ModelClassServingSpec {
   // Define the stages to test the model before release
   // +kubebuilder:validation:Optional
@@ -1303,22 +1471,6 @@ message ModelClassStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus reportSceduleStatus = 10;
 
-  // Training schedule status
-  // +kubebuilder:validation:Optional
-  optional PromotionStatus promotionStatus = 11;
-
-  // Holds the latest dataset used during training.
-  // +kubebuilder:validation:Optional
-  optional string dataset = 12;
-
-  // The lastest study name
-  // +kubebuilder:validation:Optional
-  optional string study = 13;
-
-  // The name of the candidate model for promotion.
-  // +kubebuilder:validation:Optional
-  optional string candidateModel = 14;
-
   // The highest score out of all Models created by the associated Study resource
   // +kubebuilder:validation:Optional
   optional double bestModelScore = 15;
@@ -1329,21 +1481,9 @@ message ModelClassStatus {
   // The name of the current predictor for this model class.
   optional string predictorName = 18;
 
-  // The name of the live model in production. This is taken from the predictor for this model class.
-  // +kubebuilder:validation:Optional
-  optional string liveModel = 19;
-
-  // The name of shadow models in production. This is taken from the predictor for this model class.
-  // +kubebuilder:validation:Optional
-  repeated string shadows = 20;
-
   // The name of triggered by.
   // +kubebuilder:validation:Optional
   optional string triggeredBy = 21;
-
-  // Version for resources that are created during training.
-  // +kubebuilder:validation:Optional
-  optional int32 version = 22;
 
   // +optional
   // +patchMergeKey=type
@@ -2210,17 +2350,6 @@ message PipelineStageSpec {
   // The resources to use when running tests at this stage
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
-}
-
-message PromotionStatus {
-  // Last promotion was done
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time promotedAt = 1;
-
-  // If true the promotion was automatic
-  optional bool auto = 2;
-
-  // for manual promotion, who approved the promotion
-  optional k8s.io.api.core.v1.ObjectReference approvedBy = 3;
 }
 
 message PrunerSpec {

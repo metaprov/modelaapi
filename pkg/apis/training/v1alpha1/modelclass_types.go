@@ -12,13 +12,9 @@ import (
 type ModelClassPhase string
 
 const (
-	ModelClassPhaseCreatingTrainingDataset ModelClassPhase = "CreatingTrainingDataset"
-	ModelClassPhaseTraining                ModelClassPhase = "Training"
-	ModelClassPhaseWaitingForPromotion     ModelClassPhase = "WaitingForPromotion" // in case of manual promotion
-	ModelClassPhasePending                 ModelClassPhase = "Promoting"
-	ModelClassPhaseReady                   ModelClassPhase = "Ready"
-	ModelClassPhaseFailed                  ModelClassPhase = "Failed"
-	ModelClassPhaseDrifted                 ModelClassPhase = "Drifted"
+	ModelClassPhaseReady   ModelClassPhase = "Ready"
+	ModelClassPhaseFailed  ModelClassPhase = "Failed"
+	ModelClassPhaseDrifted ModelClassPhase = "Drifted"
 )
 
 // ModelClassConditionType is the condition of a ModelClass
@@ -28,14 +24,6 @@ type ModelClassConditionType string
 const (
 	// ModelClassSaved states that the ModelClass has been archived in a database
 	ModelClassSaved ModelClassConditionType = "Saved"
-	// Condition to check if the training dataset is ready
-	ModelClassTrainingDatasetReady ModelClassConditionType = "TrainingDatasetReady"
-	// Condition indicating if the current model was trained.
-	ModelClassModelTrained ModelClassConditionType = "ModelTrained"
-	// Condition to indicate if the current model was promoted
-	ModelClassModelPromoted ModelClassConditionType = "ModelPromoted"
-	// Condition to indicate that there is a model in production serving prediction
-	ModelClassModelServing ModelClassConditionType = "ModelServing"
 	// ModelClassDrifted states that the latest model has drifted
 	ModelClassModelDrifted ModelClassConditionType = "ModelDrifted"
 )
@@ -339,18 +327,6 @@ type ModelClassStatus struct {
 	// Batch Prediction schedule
 	//+kubebuilder:validation:Optional
 	ReportScheduleStatus catalog.RunScheduleStatus `json:"reportScheduleStatus,omitempty" protobuf:"bytes,10,opt,name=reportSceduleStatus"`
-	// Training schedule status
-	//+kubebuilder:validation:Optional
-	PromotionStatus PromotionStatus `json:"promotionStatus,omitempty" protobuf:"bytes,11,opt,name=promotionStatus"`
-	// Holds the latest dataset used during training.
-	//+kubebuilder:validation:Optional
-	Dataset string `json:"dataset,omitempty" protobuf:"bytes,12,opt,name=dataset"`
-	// The lastest study name
-	//+kubebuilder:validation:Optional
-	Study string `json:"study,omitempty" protobuf:"bytes,13,opt,name=study"`
-	// The name of the candidate model for promotion.
-	//+kubebuilder:validation:Optional
-	CandidateModel string `json:"candidateModel,omitempty" protobuf:"bytes,14,opt,name=candidateModel"`
 	// The highest score out of all Models created by the associated Study resource
 	// +kubebuilder:validation:Optional
 	BestModelScore float64 `json:"bestModelScore,omitempty" protobuf:"bytes,15,opt,name=bestModelScore"`
@@ -358,29 +334,11 @@ type ModelClassStatus struct {
 	RetiredModels []string `json:"retired,omitempty" protobuf:"bytes,17,opt,name=retired"`
 	// The name of the current predictor for this model class.
 	PredictorName string `json:"predictorName,omitempty" protobuf:"bytes,18,opt,name=predictorName"`
-	// The name of the live model in production. This is taken from the predictor for this model class.
-	// +kubebuilder:validation:Optional
-	LiveModel *string `json:"liveModel,omitempty" protobuf:"bytes,19,opt,name=liveModel"`
-	// The name of shadow models in production. This is taken from the predictor for this model class.
-	// +kubebuilder:validation:Optional
-	Shadows []string `json:"shadows,omitempty" protobuf:"bytes,20,rep,name=shadows"`
 	// The name of triggered by.
 	// +kubebuilder:validation:Optional
 	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,21,opt,name=triggeredBy"`
-	// Version for resources that are created during training.
-	// +kubebuilder:validation:Optional
-	Version int32 `json:"version,omitempty" protobuf:"bytes,22,opt,name=version"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,23,rep,name=conditions"`
-}
-
-type PromotionStatus struct {
-	// Last promotion was done
-	PromotedAt *metav1.Time `json:"promotedAt,omitempty" protobuf:"bytes,1,opt,name=promotedAt"`
-	// If true the promotion was automatic
-	Auto *bool `json:"auto,omitempty" protobuf:"bytes,2,opt,name=auto"`
-	// for manual promotion, who approved the promotion
-	ApprovedBy v1.ObjectReference `json:"approvedBy,omitempty" protobuf:"bytes,3,opt,name=approvedBy"`
 }

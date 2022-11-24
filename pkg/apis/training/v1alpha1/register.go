@@ -44,6 +44,8 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 		&StudyList{},
 		&ModelClass{},
 		&ModelClassList{},
+		&ModelClassRun{},
+		&ModelClassRunList{},
 		&Report{},
 		&ReportList{},
 	)

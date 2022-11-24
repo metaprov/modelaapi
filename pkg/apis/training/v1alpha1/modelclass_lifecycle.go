@@ -9,7 +9,6 @@ package v1alpha1
 import (
 	"fmt"
 	"github.com/dustin/go-humanize"
-	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	ctrl "sigs.k8s.io/controller-runtime"
 
@@ -146,146 +145,6 @@ func (mclass *ModelClass) StudyName() string {
 }
 
 // At the start of training, mark the training dataset as pending
-func (mclass *ModelClass) StartTrainingProcess() {
-	mclass.Status.Phase = ModelClassPhasePending
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassTrainingDatasetReady,
-		Status: v1.ConditionFalse,
-		Reason: ReasonTrainingDatasetPending,
-	})
-	mclass.Status.Version = mclass.Status.Version + 1
-	mclass.Status.Dataset = ""
-	mclass.Status.Study = ""
-	mclass.Status.CandidateModel = ""
-	mclass.Status.TrainingScheduleStatus.Start()
-}
-
-func (mclass *ModelClass) MarkCreatingTrainingDatasetSet(dataset string) {
-	mclass.Status.Phase = ModelClassPhaseCreatingTrainingDataset
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassTrainingDatasetReady,
-		Status: v1.ConditionFalse,
-		Reason: ReasonCreatingTrainingDataset,
-	})
-	mclass.Status.Dataset = dataset
-}
-
-// when
-func (mclass *ModelClass) MarkCreatedTrainingSet() {
-	mclass.Status.Phase = ModelClassPhaseReady
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassTrainingDatasetReady,
-		Status: v1.ConditionTrue,
-	})
-}
-
-func (mclass *ModelClass) MarkCreatingTrainingSetFailed(err string) {
-	mclass.Status.Phase = ModelClassPhaseFailed
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:    ModelClassTrainingDatasetReady,
-		Status:  v1.ConditionFalse,
-		Reason:  ReasonFailedToCreateTrainingDataset,
-		Message: err,
-	})
-}
-
-/////////////////////////////////////////////////////
-// Mark Training
-//////////////////////////////////////////////////////
-func (mclass *ModelClass) MarkTraining(study string) {
-	mclass.Status.Phase = ModelClassPhaseTraining
-	if mclass.Status.Phase != ModelClassPhaseTraining {
-		mclass.Status.Phase = ModelClassPhaseTraining
-		mclass.CreateOrUpdateCond(ModelClassCondition{
-			Type:   ModelClassModelTrained,
-			Status: v1.ConditionFalse,
-			Reason: ReasonTraining,
-		})
-		now := metav1.Now()
-		mclass.Status.TrainingScheduleStatus.LastRun = &now
-	}
-	mclass.Status.Study = study
-}
-
-func (mclass *ModelClass) MarkModelReady(model string) {
-	mclass.Status.Phase = ModelClassPhaseReady
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassModelTrained,
-		Status: v1.ConditionTrue,
-	})
-	mclass.Status.CandidateModel = model
-	// If we do not promote, we can set the schedule to next cycle
-	if mclass.Spec.Training.PromotionPolicy == catalog.NonePromotion {
-		nextRun := mclass.Spec.Training.TrainingSchedule.NextRun()
-		mclass.Status.TrainingScheduleStatus.End()
-		mclass.Status.TrainingScheduleStatus.SetNext(*nextRun)
-	}
-}
-
-func (mclass *ModelClass) MarkTrainingFailed(err string) {
-	mclass.Status.Phase = ModelClassPhaseFailed
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:    ModelClassModelTrained,
-		Status:  v1.ConditionFalse,
-		Reason:  ReasonFailed,
-		Message: err,
-	})
-}
-
-func (mclass *ModelClass) MarkTrained() {
-	mclass.Status.Phase = ModelClassPhaseReady
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassModelTrained,
-		Status: v1.ConditionTrue,
-	})
-}
-
-func (mclass *ModelClass) IsTrained() bool {
-	cond := mclass.GetCond(ModelClassModelTrained)
-	return cond.Status == v1.ConditionTrue
-}
-
-////////////////////////////////////////////
-// Promotion
-////////////////////////////////////////////
-
-func (mclass *ModelClass) MarkWaitingForPromotion() {
-	mclass.Status.Phase = ModelClassPhaseWaitingForPromotion
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassModelPromoted,
-		Status: v1.ConditionFalse,
-		Reason: ReasonWaitingForPromotion,
-	})
-}
-
-func (mclass *ModelClass) IsPromoted() bool {
-	cond := mclass.GetCond(ModelClassModelPromoted)
-	return cond.Status == v1.ConditionTrue
-}
-
-func (mclass *ModelClass) MarkPromoted() {
-	mclass.Status.Phase = ModelClassPhaseReady
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:   ModelClassModelPromoted,
-		Status: v1.ConditionTrue,
-	})
-	// promote the version
-	mclass.Spec.Version = mclass.Status.Version
-	nextRun := mclass.Spec.Training.TrainingSchedule.NextRun()
-	mclass.Status.TrainingScheduleStatus.End()
-	mclass.Status.TrainingScheduleStatus.SetNext(*nextRun)
-
-}
-
-func (mclass *ModelClass) MarkFailToPromote(err error) {
-	mclass.Status.Phase = ModelClassPhaseFailed
-	mclass.CreateOrUpdateCond(ModelClassCondition{
-		Type:    ModelClassModelPromoted,
-		Status:  v1.ConditionFalse,
-		Reason:  ReasonFailedToPromote,
-		Message: err.Error(),
-	})
-}
 
 ///////////////////////////////////////////////
 // Drifted
@@ -354,36 +213,6 @@ func (mclass *ModelClass) ErrorAlert(tenantRef *v1.ObjectReference, notifierName
 	}
 	if mclass.Status.TrainingScheduleStatus.LastRun != nil {
 		result.Spec.Fields["Completion Time"] = mclass.Status.TrainingScheduleStatus.LastRun.Format("01/2/2006 15:04:05")
-	}
-
-	return result
-}
-
-func (mclass *ModelClass) PromotionAlert(tenantRef *v1.ObjectReference, notifierName *string, model Model) *infra.Alert {
-	level := infra.Info
-	subject := fmt.Sprintf("Model %s is waiting for manual promotion", model.Name)
-	result := &infra.Alert{
-		ObjectMeta: metav1.ObjectMeta{
-			GenerateName: mclass.Name,
-			Namespace:    mclass.Namespace,
-		},
-		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
-			Level:   &level,
-			EntityRef: v1.ObjectReference{
-				Kind:      "Model",
-				Name:      model.Name,
-				Namespace: model.Namespace,
-			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
-			Owner:        model.Spec.Owner,
-			Fields: map[string]string{
-				"Model Class Namespace": mclass.Namespace,
-				"ModelClass":            mclass.Name,
-				"Model":                 model.Namespace,
-			},
-		},
 	}
 
 	return result

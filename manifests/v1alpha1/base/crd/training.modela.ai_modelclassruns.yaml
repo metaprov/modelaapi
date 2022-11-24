@@ -1,0 +1,283 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.10.0
+  creationTimestamp: null
+  name: modelclassruns.training.modela.ai
+spec:
+  group: training.modela.ai
+  names:
+    categories:
+    - train
+    - modela
+    - all
+    kind: ModelClassRun
+    listKind: ModelClassRunList
+    plural: modelclassruns
+    shortNames:
+    - mcr
+    singular: modelclassrun
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.phase
+      name: Status
+      type: string
+    - jsonPath: .status.progress
+      name: Progress
+      priority: 1
+      type: number
+    - jsonPath: .status.modelClassName
+      name: MC
+      type: string
+    - jsonPath: .status.startTime
+      name: StartTime
+      priority: 1
+      type: date
+    - jsonPath: .status.completionTime
+      name: CompletionTime
+      priority: 1
+      type: date
+    - jsonPath: .status.failureMessage
+      name: Last Failure
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: ModelClassRun represent a execution of a model class training
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ModelClassRunSpec is the desired state of the ModelClassRun
+              resource
+            properties:
+              aborted:
+                default: false
+                description: Set to true to abort the model pipeline run
+                type: boolean
+              datasetName:
+                default: ""
+                description: DatasetName is the name of the dataset that we trained
+                  on.
+                type: string
+              description:
+                default: ""
+                description: Description is the user provided description
+                type: string
+              modelClassName:
+                default: ""
+                description: ModelClassName is the name of the ModelClass for this
+                  pipeline
+                type: string
+              owner:
+                default: no-one
+                description: The owner of the run.
+                type: string
+              paused:
+                default: false
+                description: Set to true to pause the model pipeline run
+                type: boolean
+              priority:
+                default: medium
+                description: The priority of this pipeline run. The default is medium.
+                enum:
+                - low
+                - medium
+                - high
+                - urgent
+                type: string
+              triggeredBy:
+                description: What triggered the run
+                enum:
+                - on-demand
+                - on-schedule
+                - on-new-data
+                - on-github-event
+                - on-concept-drift
+                - on-pref-degradation
+                type: string
+              ttl:
+                default: 0
+                description: TTL.
+                format: int32
+                type: integer
+              versionName:
+                default: ""
+                description: VersionName is the data product version of the run
+                type: string
+            type: object
+          status:
+            description: ModelClassRunStatus is the observed state of the ModelClassRun
+              resource .
+            properties:
+              approvedBy:
+                description: for manual promotion, who approved the promotion
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+                x-kubernetes-map-type: atomic
+              auto:
+                description: If true the promotion was automatic
+                type: boolean
+              conditions:
+                items:
+                  description: ModelClassRunCondition describes the state of a ModelClassRun
+                    at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, Unknown.
+                      type: string
+                    type:
+                      description: Type of  condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              datasetName:
+                description: The name of the dataset that was captured by the label
+                  filter.
+                type: string
+              endTime:
+                format: date-time
+                type: string
+              failureMessage:
+                description: Update in case of terminal failure message
+                type: string
+              failureReason:
+                description: Update in case of terminal failure Borrowed from cluster
+                  api controller
+                type: string
+              folder:
+                description: Folder for pipeline run artifacts. This is assigned by
+                  the system The folder contains all the pipeline artifacts - metadata,
+                  logs
+                type: string
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
+              logs:
+                description: The log file specification that determines the location
+                  of all logs produced by the object
+                properties:
+                  bucketName:
+                    description: The name of the VirtualBucket resource where the
+                      logs are stored
+                    type: string
+                  containers:
+                    description: The collection of ContainerLog objects that describe
+                      the location of logs per container
+                    items:
+                      description: ContainerLog describes the location of logs for
+                        a single Job
+                      properties:
+                        container:
+                          description: The container name
+                          type: string
+                        job:
+                          description: The name of the Job
+                          type: string
+                        key:
+                          description: The path to the log in the bucket
+                          type: string
+                      type: object
+                    type: array
+                type: object
+              modelName:
+                description: The name of the best model
+                type: string
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
+              phase:
+                default: Pending
+                description: The phase of the pipeline run
+                type: string
+              progress:
+                description: Pipeline progress Progress in percent, the progress takes
+                  into account the different stages of the pipeline
+                format: int32
+                type: integer
+              promotedAt:
+                description: Last promotion was done
+                format: date-time
+                type: string
+              startTime:
+                format: date-time
+                type: string
+              studyName:
+                description: The name of the study generated.
+                type: string
+            required:
+            - logs
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

@@ -1,0 +1,159 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modelaapi/services/modelclassrun/v1";
+package github.com.metaprov.modelaapi.services.modelclassrun.v1;
+
+import "google/protobuf/field_mask.proto";
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
+
+
+message ListModelClassRunsRequest {
+  string namespace = 1;
+  map<string,string> labels =2;
+  int32              page_size  = 3;
+  string             page_token = 4;
+  string             order_by   = 5;
+}
+
+message ListModelClassRunsResponse {
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunList modelclassruns = 1;
+  string next_page_token = 2;
+}
+
+message ModelClassRunResponse {}
+
+message CreateModelClassRunRequest {
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun modelclassrun = 1;
+}
+
+message CreateModelClassRunResponse {
+
+}
+
+message UpdateModelClassRunRequest {
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun modelclassrun = 1;
+  google.protobuf.FieldMask field_mask = 2;
+}
+
+message UpdateModelClassRunResponse {
+
+}
+
+message GetModelClassRunRequest {
+  string namespace = 1;
+  string name      = 2;
+}
+
+
+message GetModelClassRunResponse {
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun modelclassrun = 1;
+  string yaml = 2;
+}
+
+
+
+message DeleteModelClassRunRequest {
+  string namespace = 1;
+  string name      = 2;
+}
+
+message DeleteModelClassRunResponse {
+
+}
+
+message ApproveModelClassRunRequest {
+  string namespace = 1;
+  string name      = 2;
+  string stage     = 3;
+  string account   = 4;
+
+}
+
+message ApproveModelClassRunResponse {
+
+}
+
+
+message DenyModelClassRunRequest {
+  string namespace = 1;
+  string name      = 2;
+  string stage     = 3;
+  string account   = 4;
+
+}
+
+message DenyModelClassRunResponse {
+
+}
+
+message PauseModelClassRunResponse {
+}
+
+message PauseModelClassRunRequest {
+  string namespace = 1;
+  string name      = 2;
+}
+
+
+message ResumeModelClassRunResponse {
+}
+
+message ResumeModelClassRunRequest {
+  string namespace = 1;
+  string name      = 2;
+}
+
+message AbortModelClassRunResponse {
+}
+
+message AbortModelClassRunRequest {
+  string namespace = 1;
+  string name      = 2;
+}
+
+service ModelClassRunService {
+  rpc ListModelClassRuns(ListModelClassRunsRequest) returns (ListModelClassRunsResponse) {
+    option (google.api.http).get = "/v1/modelclassruns/{namespace}";
+  }
+  rpc CreateModelClassRun(CreateModelClassRunRequest) returns (CreateModelClassRunResponse) {
+    option (google.api.http) = {
+      post: "/v1/modelclassruns"
+      body: "*"
+    };
+  }
+  rpc GetModelClassRun(GetModelClassRunRequest) returns (GetModelClassRunResponse) {
+    option (google.api.http).get = "/v1/modelclassruns/{namespace}/{name}";
+  }
+  rpc UpdateModelClassRun(UpdateModelClassRunRequest) returns (UpdateModelClassRunResponse) {
+    option (google.api.http) = {
+      put: "/v1/modelclassruns/{modelclassrun.metadata.namespace}/{modelclassrun.metadata.name}"
+      body: "*"
+    };
+  }
+
+  rpc DeleteModelClassRun(DeleteModelClassRunRequest) returns (DeleteModelClassRunResponse) {
+    option (google.api.http).delete = "/v1/modelclassruns/{namespace}/{name}";
+  }
+
+  rpc ApproveModelClassRun(ApproveModelClassRunRequest) returns (ApproveModelClassRunResponse) {
+    option (google.api.http).put = "/v1/modelclassruns/{namespace}/{name}:approve";
+  }
+
+  rpc DenyModelClassRun(DenyModelClassRunRequest) returns (DenyModelClassRunResponse) {
+    option (google.api.http).put = "/v1/modelclassruns/{namespace}/{name}:deny";
+  }
+
+  rpc AbortModelClassRun(AbortModelClassRunRequest) returns (AbortModelClassRunResponse) {
+    option (google.api.http).put = "/v1/modelclassruns/{namespace}/{name}:abort";
+  }
+
+  rpc PauseModelClassRun(PauseModelClassRunRequest) returns (PauseModelClassRunResponse) {
+    option (google.api.http).put = "/v1/modelclassruns/{namespace}/{name}:pause";
+  }
+
+  rpc ResumeModelClassRun(ResumeModelClassRunRequest) returns (ResumeModelClassRunResponse) {
+    option (google.api.http).put = "/v1/modelclassruns/{namespace}/{name}:resume";
+  }
+
+}

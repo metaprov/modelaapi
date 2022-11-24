@@ -1708,6 +1708,250 @@ export namespace ModelClassList {
   }
 }
 
+export class ModelClassRun extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): ModelClassRun;
+  hasMetadata(): boolean;
+  clearMetadata(): ModelClassRun;
+
+  getSpec(): ModelClassRunSpec | undefined;
+  setSpec(value?: ModelClassRunSpec): ModelClassRun;
+  hasSpec(): boolean;
+  clearSpec(): ModelClassRun;
+
+  getStatus(): ModelClassRunStatus | undefined;
+  setStatus(value?: ModelClassRunStatus): ModelClassRun;
+  hasStatus(): boolean;
+  clearStatus(): ModelClassRun;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassRun.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassRun): ModelClassRun.AsObject;
+  static serializeBinaryToWriter(message: ModelClassRun, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassRun;
+  static deserializeBinaryFromReader(message: ModelClassRun, reader: jspb.BinaryReader): ModelClassRun;
+}
+
+export namespace ModelClassRun {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: ModelClassRunSpec.AsObject,
+    status?: ModelClassRunStatus.AsObject,
+  }
+}
+
+export class ModelClassRunCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): ModelClassRunCondition;
+
+  getStatus(): string;
+  setStatus(value: string): ModelClassRunCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassRunCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): ModelClassRunCondition;
+
+  getReason(): string;
+  setReason(value: string): ModelClassRunCondition;
+
+  getMessage(): string;
+  setMessage(value: string): ModelClassRunCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassRunCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassRunCondition): ModelClassRunCondition.AsObject;
+  static serializeBinaryToWriter(message: ModelClassRunCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassRunCondition;
+  static deserializeBinaryFromReader(message: ModelClassRunCondition, reader: jspb.BinaryReader): ModelClassRunCondition;
+}
+
+export namespace ModelClassRunCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class ModelClassRunList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ModelClassRunList;
+  hasMetadata(): boolean;
+  clearMetadata(): ModelClassRunList;
+
+  getItemsList(): Array<ModelClassRun>;
+  setItemsList(value: Array<ModelClassRun>): ModelClassRunList;
+  clearItemsList(): ModelClassRunList;
+  addItems(value?: ModelClassRun, index?: number): ModelClassRun;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassRunList.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassRunList): ModelClassRunList.AsObject;
+  static serializeBinaryToWriter(message: ModelClassRunList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassRunList;
+  static deserializeBinaryFromReader(message: ModelClassRunList, reader: jspb.BinaryReader): ModelClassRunList;
+}
+
+export namespace ModelClassRunList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<ModelClassRun.AsObject>,
+  }
+}
+
+export class ModelClassRunSpec extends jspb.Message {
+  getVersionname(): string;
+  setVersionname(value: string): ModelClassRunSpec;
+
+  getDescription(): string;
+  setDescription(value: string): ModelClassRunSpec;
+
+  getDatasetname(): string;
+  setDatasetname(value: string): ModelClassRunSpec;
+
+  getModelclassname(): string;
+  setModelclassname(value: string): ModelClassRunSpec;
+
+  getOwner(): string;
+  setOwner(value: string): ModelClassRunSpec;
+
+  getPriority(): string;
+  setPriority(value: string): ModelClassRunSpec;
+
+  getPaused(): boolean;
+  setPaused(value: boolean): ModelClassRunSpec;
+
+  getAborted(): boolean;
+  setAborted(value: boolean): ModelClassRunSpec;
+
+  getTtl(): number;
+  setTtl(value: number): ModelClassRunSpec;
+
+  getTriggeredby(): string;
+  setTriggeredby(value: string): ModelClassRunSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassRunSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassRunSpec): ModelClassRunSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelClassRunSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassRunSpec;
+  static deserializeBinaryFromReader(message: ModelClassRunSpec, reader: jspb.BinaryReader): ModelClassRunSpec;
+}
+
+export namespace ModelClassRunSpec {
+  export type AsObject = {
+    versionname: string,
+    description: string,
+    datasetname: string,
+    modelclassname: string,
+    owner: string,
+    priority: string,
+    paused: boolean,
+    aborted: boolean,
+    ttl: number,
+    triggeredby: string,
+  }
+}
+
+export class ModelClassRunStatus extends jspb.Message {
+  getDatasetname(): string;
+  setDatasetname(value: string): ModelClassRunStatus;
+
+  getStudyname(): string;
+  setStudyname(value: string): ModelClassRunStatus;
+
+  getModelname(): string;
+  setModelname(value: string): ModelClassRunStatus;
+
+  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassRunStatus;
+  hasStarttime(): boolean;
+  clearStarttime(): ModelClassRunStatus;
+
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassRunStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): ModelClassRunStatus;
+
+  getPhase(): string;
+  setPhase(value: string): ModelClassRunStatus;
+
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): ModelClassRunStatus;
+
+  getEvalmetrics(): string;
+  setEvalmetrics(value: string): ModelClassRunStatus;
+
+  getFailurereason(): string;
+  setFailurereason(value: string): ModelClassRunStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): ModelClassRunStatus;
+
+  getProgress(): number;
+  setProgress(value: number): ModelClassRunStatus;
+
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassRunStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): ModelClassRunStatus;
+
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): ModelClassRunStatus;
+  hasLogs(): boolean;
+  clearLogs(): ModelClassRunStatus;
+
+  getPromotedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setPromotedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassRunStatus;
+  hasPromotedat(): boolean;
+  clearPromotedat(): ModelClassRunStatus;
+
+  getAuto(): boolean;
+  setAuto(value: boolean): ModelClassRunStatus;
+
+  getApprovedby(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setApprovedby(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelClassRunStatus;
+  hasApprovedby(): boolean;
+  clearApprovedby(): ModelClassRunStatus;
+
+  getConditionsList(): Array<ModelClassRunCondition>;
+  setConditionsList(value: Array<ModelClassRunCondition>): ModelClassRunStatus;
+  clearConditionsList(): ModelClassRunStatus;
+  addConditions(value?: ModelClassRunCondition, index?: number): ModelClassRunCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelClassRunStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelClassRunStatus): ModelClassRunStatus.AsObject;
+  static serializeBinaryToWriter(message: ModelClassRunStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelClassRunStatus;
+  static deserializeBinaryFromReader(message: ModelClassRunStatus, reader: jspb.BinaryReader): ModelClassRunStatus;
+}
+
+export namespace ModelClassRunStatus {
+  export type AsObject = {
+    datasetname: string,
+    studyname: string,
+    modelname: string,
+    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    phase: string,
+    observedgeneration: number,
+    evalmetrics: string,
+    failurereason: string,
+    failuremessage: string,
+    progress: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
+    promotedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    auto: boolean,
+    approvedby?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    conditionsList: Array<ModelClassRunCondition.AsObject>,
+  }
+}
+
 export class ModelClassServingSpec extends jspb.Message {
   getPipelineList(): Array<PipelineStageSpec>;
   setPipelineList(value: Array<PipelineStageSpec>): ModelClassServingSpec;
@@ -1911,20 +2155,6 @@ export class ModelClassStatus extends jspb.Message {
   hasReportscedulestatus(): boolean;
   clearReportscedulestatus(): ModelClassStatus;
 
-  getPromotionstatus(): PromotionStatus | undefined;
-  setPromotionstatus(value?: PromotionStatus): ModelClassStatus;
-  hasPromotionstatus(): boolean;
-  clearPromotionstatus(): ModelClassStatus;
-
-  getDataset(): string;
-  setDataset(value: string): ModelClassStatus;
-
-  getStudy(): string;
-  setStudy(value: string): ModelClassStatus;
-
-  getCandidatemodel(): string;
-  setCandidatemodel(value: string): ModelClassStatus;
-
   getBestmodelscore(): number;
   setBestmodelscore(value: number): ModelClassStatus;
 
@@ -1936,19 +2166,8 @@ export class ModelClassStatus extends jspb.Message {
   getPredictorname(): string;
   setPredictorname(value: string): ModelClassStatus;
 
-  getLivemodel(): string;
-  setLivemodel(value: string): ModelClassStatus;
-
-  getShadowsList(): Array<string>;
-  setShadowsList(value: Array<string>): ModelClassStatus;
-  clearShadowsList(): ModelClassStatus;
-  addShadows(value: string, index?: number): ModelClassStatus;
-
   getTriggeredby(): string;
   setTriggeredby(value: string): ModelClassStatus;
-
-  getVersion(): number;
-  setVersion(value: number): ModelClassStatus;
 
   getConditionsList(): Array<ModelClassCondition>;
   setConditionsList(value: Array<ModelClassCondition>): ModelClassStatus;
@@ -1975,17 +2194,10 @@ export namespace ModelClassStatus {
     predictionscedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     monitoringscedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     reportscedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
-    promotionstatus?: PromotionStatus.AsObject,
-    dataset: string,
-    study: string,
-    candidatemodel: string,
     bestmodelscore: number,
     retiredList: Array<string>,
     predictorname: string,
-    livemodel: string,
-    shadowsList: Array<string>,
     triggeredby: string,
-    version: number,
     conditionsList: Array<ModelClassCondition.AsObject>,
   }
 }
@@ -3117,36 +3329,6 @@ export namespace PipelineStageSpec {
     tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-  }
-}
-
-export class PromotionStatus extends jspb.Message {
-  getPromotedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setPromotedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PromotionStatus;
-  hasPromotedat(): boolean;
-  clearPromotedat(): PromotionStatus;
-
-  getAuto(): boolean;
-  setAuto(value: boolean): PromotionStatus;
-
-  getApprovedby(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setApprovedby(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PromotionStatus;
-  hasApprovedby(): boolean;
-  clearApprovedby(): PromotionStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PromotionStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: PromotionStatus): PromotionStatus.AsObject;
-  static serializeBinaryToWriter(message: PromotionStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PromotionStatus;
-  static deserializeBinaryFromReader(message: PromotionStatus, reader: jspb.BinaryReader): PromotionStatus;
-}
-
-export namespace PromotionStatus {
-  export type AsObject = {
-    promotedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    auto: boolean,
-    approvedby?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 

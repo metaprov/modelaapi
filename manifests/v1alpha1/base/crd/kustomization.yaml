@@ -41,6 +41,7 @@ resources:
 - team.modela.ai_runbooks.yaml
 - team.modela.ai_todos.yaml
 - training.modela.ai_modelclasses.yaml
+- training.modela.ai_modelclassruns.yaml
 - training.modela.ai_models.yaml
 - training.modela.ai_reports.yaml
 - training.modela.ai_studies.yaml
