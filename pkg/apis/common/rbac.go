@@ -25,10 +25,6 @@ const (
 	FeatureHistogramKind   KindName = "featurehistograms"
 	RecipeKind             KindName = "recipes"
 	RecipeRunKind          KindName = "reciperuns"
-	SqlQueryKind           KindName = "sqlqueries"
-	SqlQueryRunKind        KindName = "sqlqueryruns"
-	WebRequestKind         KindName = "webrequests"
-	WebRequestRunKind      KindName = "webrequestruns"
 
 	// inference
 	PredictionKind KindName = "predictions"
@@ -50,16 +46,11 @@ const (
 	AttachmentKind    KindName = "attachments"
 
 	// Training kind
-	ModelKind            KindName = "models"
-	ModelClassKind       KindName = "modelclasses"
-	NotebookKind         KindName = "notebooks"
-	NotebookRunKind      KindName = "notebookruns"
-	ModelPipelineKind    KindName = "modelpipelines"
-	ModelPipelineRunKind KindName = "modelpipelineruns"
-	ModelCompilerRunKind KindName = "modelcompilerruns"
-	ModelAutobuilderKind KindName = "modelautobuilders"
-	ReportKind           KindName = "reports"
-	StudyKind            KindName = "studies"
+	ModelKind         KindName = "models"
+	ModelClassKind    KindName = "modelclasses"
+	ModelClassRunKind KindName = "modelclassrun"
+	ReportKind        KindName = "reports"
+	StudyKind         KindName = "studies"
 
 	// team
 	ReviewKind     KindName = "reviews"
