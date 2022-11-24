@@ -145,6 +145,7 @@ type ReportSpec struct {
 	// +kubebuilder:validation:Optional
 	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,3,opt,name=modelClassName"`
 	// The current version of the model class that created this report,
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	ModelClassVersion *int32 `json:"modelClassVersion" protobuf:"bytes,4,opt,name=modelClassVersion"`
 	// The location of the flat-file containing the PDF report

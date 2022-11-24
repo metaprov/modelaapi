@@ -2371,6 +2371,7 @@ message ReportSpec {
   optional string modelClassName = 3;
 
   // The current version of the model class that created this report,
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 modelClassVersion = 4;
 

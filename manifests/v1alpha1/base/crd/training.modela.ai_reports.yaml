@@ -445,6 +445,7 @@ spec:
                 description: The model class for this pipeline
                 type: string
               modelClassVersion:
+                default: 0
                 description: The current version of the model class that created this
                   report,
                 format: int32
