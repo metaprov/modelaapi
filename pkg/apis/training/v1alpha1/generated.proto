@@ -2791,6 +2791,7 @@ message StudySpec {
   optional string modelClassName = 2;
 
   // The current version of the model class that created this study
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 modelClassVersion = 3;
 

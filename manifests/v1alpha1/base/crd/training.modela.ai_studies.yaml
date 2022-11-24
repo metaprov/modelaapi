@@ -1162,6 +1162,7 @@ spec:
                 description: The model class for this study
                 type: string
               modelClassVersion:
+                default: 0
                 description: The current version of the model class that created this
                   study
                 format: int32

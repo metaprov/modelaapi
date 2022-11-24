@@ -167,6 +167,7 @@ type StudySpec struct {
 	// +kubebuilder:validation:Optional
 	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,2,opt,name=modelClassName"`
 	// The current version of the model class that created this study
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	ModelClassVersion *int32 `json:"modelClassVersion" protobuf:"bytes,3,opt,name=modelClassVersion"`
 	// The user-provided description of the Study
