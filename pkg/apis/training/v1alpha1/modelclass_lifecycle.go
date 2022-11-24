@@ -157,6 +157,7 @@ func (mclass *ModelClass) StartTrainingProcess() {
 	mclass.Status.Dataset = ""
 	mclass.Status.Study = ""
 	mclass.Status.CandidateModel = ""
+	mclass.Status.TrainingScheduleStatus.Start()
 }
 
 func (mclass *ModelClass) MarkCreatingTrainingDatasetSet(dataset string) {

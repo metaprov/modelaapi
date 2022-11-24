@@ -1569,7 +1569,9 @@ func (runstatus *RunScheduleStatus) Start() {
 
 func (runstatus *RunScheduleStatus) End() {
 	now := metav1.Now()
-	runstatus.Duration = now.Sub(runstatus.LastRun.Time).Seconds()
+	if runstatus.LastRun != nil {
+		runstatus.Duration = now.Sub(runstatus.LastRun.Time).Seconds()
+	}
 }
 
 func (runstatus *RunScheduleStatus) SetNext(nextRun metav1.Time) {
