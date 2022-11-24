@@ -116,9 +116,11 @@ type DatasetSpec struct {
 	// +kubebuilder:validation:Optional
 	FeatureGroupName *string `json:"featureGroupName,omitempty" protobuf:"bytes,4,opt,name=featureGroupName"`
 	// In case of training data, this is the model class name that created it.
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,5,opt,name=modelClassName"`
 	// The current version of the model class that created this dataset
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	ModelClassVersion *int32 `json:"modelClassVersion" protobuf:"varint,6,opt,name=modelClassVersion"`
 	// User-provided description of the object

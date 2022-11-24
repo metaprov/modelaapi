@@ -1625,10 +1625,12 @@ message DatasetSpec {
   optional string featureGroupName = 4;
 
   // In case of training data, this is the model class name that created it.
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string modelClassName = 5;
 
   // The current version of the model class that created this dataset
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 modelClassVersion = 6;
 

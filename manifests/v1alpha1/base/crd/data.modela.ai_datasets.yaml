@@ -381,10 +381,12 @@ spec:
                 format: date-time
                 type: string
               modelClassName:
+                default: ""
                 description: In case of training data, this is the model class name
                   that created it.
                 type: string
               modelClassVersion:
+                default: 0
                 description: The current version of the model class that created this
                   dataset
                 format: int32
