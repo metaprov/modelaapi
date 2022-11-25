@@ -217,3 +217,8 @@ func (mclass *ModelClass) ErrorAlert(tenantRef *v1.ObjectReference, notifierName
 
 	return result
 }
+
+func (mclass *ModelClass) MarkFailed(err string) {
+	mclass.Status.Phase = ModelClassPhaseFailed
+	mclass.Status.FailureMessage = util.StrPtr(err)
+}
