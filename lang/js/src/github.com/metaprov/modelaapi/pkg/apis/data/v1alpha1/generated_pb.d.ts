@@ -2299,6 +2299,11 @@ export class DatasetSpec extends jspb.Message {
   getModelclassrunname(): string;
   setModelclassrunname(value: string): DatasetSpec;
 
+  getFeaturegroupsList(): Array<k8s_io_api_core_v1_generated_pb.ObjectReference>;
+  setFeaturegroupsList(value: Array<k8s_io_api_core_v1_generated_pb.ObjectReference>): DatasetSpec;
+  clearFeaturegroupsList(): DatasetSpec;
+  addFeaturegroups(value?: k8s_io_api_core_v1_generated_pb.ObjectReference, index?: number): k8s_io_api_core_v1_generated_pb.ObjectReference;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -2344,6 +2349,7 @@ export namespace DatasetSpec {
     maxeventtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     modelclassname: string,
     modelclassrunname: string,
+    featuregroupsList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
   }
 }
 

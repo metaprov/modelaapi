@@ -1778,6 +1778,11 @@ message DatasetSpec {
   // If this report was created by a model class run, this is the run name
   // +kubebuilder:validation:Optional
   optional string modelClassRunName = 37;
+
+  // List the feature groups that were used to create this dataset
+  // This is used for lineage.
+  // +kubebuilder:validation:Optional
+  repeated k8s.io.api.core.v1.ObjectReference featureGroups = 38;
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The

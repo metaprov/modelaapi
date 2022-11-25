@@ -23434,7 +23434,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetList.prototype
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.repeatedFields_ = [10,33];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.repeatedFields_ = [10,33,38];
 
 
 
@@ -23501,7 +23501,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.toObject 
     mineventtime: (f = msg.getMineventtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     maxeventtime: (f = msg.getMaxeventtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     modelclassname: (f = jspb.Message.getField(msg, 36)) == null ? undefined : f,
-    modelclassrunname: (f = jspb.Message.getField(msg, 37)) == null ? undefined : f
+    modelclassrunname: (f = jspb.Message.getField(msg, 37)) == null ? undefined : f,
+    featuregroupsList: jspb.Message.toObjectList(msg.getFeaturegroupsList(),
+    k8s_io_api_core_v1_generated_pb.ObjectReference.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -23691,6 +23693,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.deseriali
     case 37:
       var value = /** @type {string} */ (reader.readString());
       msg.setModelclassrunname(value);
+      break;
+    case 38:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.addFeaturegroups(value);
       break;
     default:
       reader.skipField();
@@ -23978,6 +23985,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.serialize
     writer.writeString(
       37,
       f
+    );
+  }
+  f = message.getFeaturegroupsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      38,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -25256,6 +25271,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasModelclassrunname = function() {
   return jspb.Message.getField(this, 37) != null;
+};
+
+
+/**
+ * repeated k8s.io.api.core.v1.ObjectReference featureGroups = 38;
+ * @return {!Array<!proto.k8s.io.api.core.v1.ObjectReference>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getFeaturegroupsList = function() {
+  return /** @type{!Array<!proto.k8s.io.api.core.v1.ObjectReference>} */ (
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 38));
+};
+
+
+/**
+ * @param {!Array<!proto.k8s.io.api.core.v1.ObjectReference>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setFeaturegroupsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 38, value);
+};
+
+
+/**
+ * @param {!proto.k8s.io.api.core.v1.ObjectReference=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.addFeaturegroups = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 38, opt_value, proto.k8s.io.api.core.v1.ObjectReference, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearFeaturegroupsList = function() {
+  return this.setFeaturegroupsList([]);
 };
 
 

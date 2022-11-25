@@ -83,7 +83,6 @@ func (fg *FeatureGroup) MarkIngested() {
 		Status: v1.ConditionTrue,
 	})
 	nextRun := fg.Spec.IngestSchedule.NextRun()
-	fg.Status.IngestSchedule.End()
 	fg.Status.IngestSchedule.SetNext(*nextRun)
 }
 
@@ -123,7 +122,6 @@ func (fg *FeatureGroup) MarkSynced() {
 		Status: v1.ConditionTrue,
 	})
 	nextRun := fg.Spec.Materialization.Schedule.NextRun()
-	fg.Status.SyncSchedule.End()
 	fg.Status.SyncSchedule.SetNext(*nextRun)
 }
 

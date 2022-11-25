@@ -231,6 +231,10 @@ type DatasetSpec struct {
 	// If this report was created by a model class run, this is the run name
 	// +kubebuilder:validation:Optional
 	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,37,opt,name=modelClassRunName"`
+	// List the feature groups that were used to create this dataset
+	// This is used for lineage.
+	// +kubebuilder:validation:Optional
+	FeatureGroups []v1.ObjectReference `json:"featureGroups,omitempty" protobuf:"bytes,38,opt,name=featureGroups"`
 }
 
 // DatasetStatus defines the observed state of a Dataset object
