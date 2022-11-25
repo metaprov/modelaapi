@@ -2448,10 +2448,10 @@ export namespace ListModelClassesRequest {
 }
 
 export class ListModelClassesResponse extends jspb.Message {
-  getItemsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass>;
-  setItemsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass>): ListModelClassesResponse;
+  getItemsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun>;
+  setItemsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun>): ListModelClassesResponse;
   clearItemsList(): ListModelClassesResponse;
-  addItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass;
+  addItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun;
 
   getNextPageToken(): string;
   setNextPageToken(value: string): ListModelClassesResponse;
@@ -2466,7 +2466,57 @@ export class ListModelClassesResponse extends jspb.Message {
 
 export namespace ListModelClassesResponse {
   export type AsObject = {
-    itemsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject>,
+    itemsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.AsObject>,
+    nextPageToken: string,
+  }
+}
+
+export class ListModelClassesRunRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListModelClassesRunRequest;
+
+  getPageSize(): number;
+  setPageSize(value: number): ListModelClassesRunRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListModelClassesRunRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListModelClassesRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListModelClassesRunRequest): ListModelClassesRunRequest.AsObject;
+  static serializeBinaryToWriter(message: ListModelClassesRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListModelClassesRunRequest;
+  static deserializeBinaryFromReader(message: ListModelClassesRunRequest, reader: jspb.BinaryReader): ListModelClassesRunRequest;
+}
+
+export namespace ListModelClassesRunRequest {
+  export type AsObject = {
+    namespace: string,
+    pageSize: number,
+    pageToken: string,
+  }
+}
+
+export class ListModelClasseRunsResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun>;
+  setItemsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun>): ListModelClasseRunsResponse;
+  clearItemsList(): ListModelClasseRunsResponse;
+  addItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListModelClasseRunsResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListModelClasseRunsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListModelClasseRunsResponse): ListModelClasseRunsResponse.AsObject;
+  static serializeBinaryToWriter(message: ListModelClasseRunsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListModelClasseRunsResponse;
+  static deserializeBinaryFromReader(message: ListModelClasseRunsResponse, reader: jspb.BinaryReader): ListModelClasseRunsResponse;
+}
+
+export namespace ListModelClasseRunsResponse {
+  export type AsObject = {
+    itemsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.AsObject>,
     nextPageToken: string,
   }
 }
@@ -2549,6 +2599,90 @@ export class DeleteModelClassRequest extends jspb.Message {
 }
 
 export namespace DeleteModelClassRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class GetModelClassRunRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetModelClassRunRequest;
+
+  getName(): string;
+  setName(value: string): GetModelClassRunRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetModelClassRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetModelClassRunRequest): GetModelClassRunRequest.AsObject;
+  static serializeBinaryToWriter(message: GetModelClassRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetModelClassRunRequest;
+  static deserializeBinaryFromReader(message: GetModelClassRunRequest, reader: jspb.BinaryReader): GetModelClassRunRequest;
+}
+
+export namespace GetModelClassRunRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class CreateModelClassRunRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun): CreateModelClassRunRequest;
+  hasItem(): boolean;
+  clearItem(): CreateModelClassRunRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateModelClassRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateModelClassRunRequest): CreateModelClassRunRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateModelClassRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateModelClassRunRequest;
+  static deserializeBinaryFromReader(message: CreateModelClassRunRequest, reader: jspb.BinaryReader): CreateModelClassRunRequest;
+}
+
+export namespace CreateModelClassRunRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.AsObject,
+  }
+}
+
+export class UpdateModelClassRunRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun): UpdateModelClassRunRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateModelClassRunRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateModelClassRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateModelClassRunRequest): UpdateModelClassRunRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateModelClassRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateModelClassRunRequest;
+  static deserializeBinaryFromReader(message: UpdateModelClassRunRequest, reader: jspb.BinaryReader): UpdateModelClassRunRequest;
+}
+
+export namespace UpdateModelClassRunRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.AsObject,
+  }
+}
+
+export class DeleteModelClassRunRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): DeleteModelClassRunRequest;
+
+  getName(): string;
+  setName(value: string): DeleteModelClassRunRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteModelClassRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteModelClassRunRequest): DeleteModelClassRunRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteModelClassRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteModelClassRunRequest;
+  static deserializeBinaryFromReader(message: DeleteModelClassRunRequest, reader: jspb.BinaryReader): DeleteModelClassRunRequest;
+}
+
+export namespace DeleteModelClassRunRequest {
   export type AsObject = {
     namespace: string,
     name: string,

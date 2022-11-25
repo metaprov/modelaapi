@@ -132,8 +132,13 @@ type DatabaseProxyServiceClient interface {
 	ListModelClass(ctx context.Context, in *ListModelClassesRequest, opts ...grpc.CallOption) (*ListModelClassesResponse, error)
 	GetModelClass(ctx context.Context, in *GetModelClassRequest, opts ...grpc.CallOption) (*v1alpha13.ModelClass, error)
 	CreateModelClass(ctx context.Context, in *CreateModelClassRequest, opts ...grpc.CallOption) (*v1alpha13.ModelClass, error)
-	UpdateModelClas(ctx context.Context, in *UpdateModelClassRequest, opts ...grpc.CallOption) (*v1alpha13.ModelClass, error)
+	UpdateModelClass(ctx context.Context, in *UpdateModelClassRequest, opts ...grpc.CallOption) (*v1alpha13.ModelClass, error)
 	DeleteModelClass(ctx context.Context, in *DeleteModelClassRequest, opts ...grpc.CallOption) (*empty.Empty, error)
+	ListModelClassRun(ctx context.Context, in *ListModelClassesRunRequest, opts ...grpc.CallOption) (*ListModelClasseRunsResponse, error)
+	GetModelClassRun(ctx context.Context, in *GetModelClassRunRequest, opts ...grpc.CallOption) (*v1alpha13.ModelClassRun, error)
+	CreateModelClassRun(ctx context.Context, in *CreateModelClassRunRequest, opts ...grpc.CallOption) (*v1alpha13.ModelClassRun, error)
+	UpdateModelClassRun(ctx context.Context, in *UpdateModelClassRunRequest, opts ...grpc.CallOption) (*v1alpha13.ModelClassRun, error)
+	DeleteModelClassRun(ctx context.Context, in *DeleteModelClassRunRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 	ListFeatureHistograms(ctx context.Context, in *ListFeatureHistogramsRequest, opts ...grpc.CallOption) (*ListFeatureHistogramsResponse, error)
 	GetFeatureHistogram(ctx context.Context, in *GetFeatureHistogramRequest, opts ...grpc.CallOption) (*v1alpha12.FeatureHistogram, error)
 	CreateFeatureHistogram(ctx context.Context, in *CreateFeatureHistogramRequest, opts ...grpc.CallOption) (*v1alpha12.FeatureHistogram, error)
@@ -1046,9 +1051,9 @@ func (c *databaseProxyServiceClient) CreateModelClass(ctx context.Context, in *C
 	return out, nil
 }
 
-func (c *databaseProxyServiceClient) UpdateModelClas(ctx context.Context, in *UpdateModelClassRequest, opts ...grpc.CallOption) (*v1alpha13.ModelClass, error) {
+func (c *databaseProxyServiceClient) UpdateModelClass(ctx context.Context, in *UpdateModelClassRequest, opts ...grpc.CallOption) (*v1alpha13.ModelClass, error) {
 	out := new(v1alpha13.ModelClass)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelClas", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelClass", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1058,6 +1063,51 @@ func (c *databaseProxyServiceClient) UpdateModelClas(ctx context.Context, in *Up
 func (c *databaseProxyServiceClient) DeleteModelClass(ctx context.Context, in *DeleteModelClassRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
 	out := new(empty.Empty)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelClass", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *databaseProxyServiceClient) ListModelClassRun(ctx context.Context, in *ListModelClassesRunRequest, opts ...grpc.CallOption) (*ListModelClasseRunsResponse, error) {
+	out := new(ListModelClasseRunsResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModelClassRun", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *databaseProxyServiceClient) GetModelClassRun(ctx context.Context, in *GetModelClassRunRequest, opts ...grpc.CallOption) (*v1alpha13.ModelClassRun, error) {
+	out := new(v1alpha13.ModelClassRun)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModelClassRun", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *databaseProxyServiceClient) CreateModelClassRun(ctx context.Context, in *CreateModelClassRunRequest, opts ...grpc.CallOption) (*v1alpha13.ModelClassRun, error) {
+	out := new(v1alpha13.ModelClassRun)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelClassRun", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *databaseProxyServiceClient) UpdateModelClassRun(ctx context.Context, in *UpdateModelClassRunRequest, opts ...grpc.CallOption) (*v1alpha13.ModelClassRun, error) {
+	out := new(v1alpha13.ModelClassRun)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelClassRun", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *databaseProxyServiceClient) DeleteModelClassRun(ctx context.Context, in *DeleteModelClassRunRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
+	out := new(empty.Empty)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelClassRun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1757,8 +1807,13 @@ type DatabaseProxyServiceServer interface {
 	ListModelClass(context.Context, *ListModelClassesRequest) (*ListModelClassesResponse, error)
 	GetModelClass(context.Context, *GetModelClassRequest) (*v1alpha13.ModelClass, error)
 	CreateModelClass(context.Context, *CreateModelClassRequest) (*v1alpha13.ModelClass, error)
-	UpdateModelClas(context.Context, *UpdateModelClassRequest) (*v1alpha13.ModelClass, error)
+	UpdateModelClass(context.Context, *UpdateModelClassRequest) (*v1alpha13.ModelClass, error)
 	DeleteModelClass(context.Context, *DeleteModelClassRequest) (*empty.Empty, error)
+	ListModelClassRun(context.Context, *ListModelClassesRunRequest) (*ListModelClasseRunsResponse, error)
+	GetModelClassRun(context.Context, *GetModelClassRunRequest) (*v1alpha13.ModelClassRun, error)
+	CreateModelClassRun(context.Context, *CreateModelClassRunRequest) (*v1alpha13.ModelClassRun, error)
+	UpdateModelClassRun(context.Context, *UpdateModelClassRunRequest) (*v1alpha13.ModelClassRun, error)
+	DeleteModelClassRun(context.Context, *DeleteModelClassRunRequest) (*empty.Empty, error)
 	ListFeatureHistograms(context.Context, *ListFeatureHistogramsRequest) (*ListFeatureHistogramsResponse, error)
 	GetFeatureHistogram(context.Context, *GetFeatureHistogramRequest) (*v1alpha12.FeatureHistogram, error)
 	CreateFeatureHistogram(context.Context, *CreateFeatureHistogramRequest) (*v1alpha12.FeatureHistogram, error)
@@ -2110,11 +2165,26 @@ func (UnimplementedDatabaseProxyServiceServer) GetModelClass(context.Context, *G
 func (UnimplementedDatabaseProxyServiceServer) CreateModelClass(context.Context, *CreateModelClassRequest) (*v1alpha13.ModelClass, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateModelClass not implemented")
 }
-func (UnimplementedDatabaseProxyServiceServer) UpdateModelClas(context.Context, *UpdateModelClassRequest) (*v1alpha13.ModelClass, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateModelClas not implemented")
+func (UnimplementedDatabaseProxyServiceServer) UpdateModelClass(context.Context, *UpdateModelClassRequest) (*v1alpha13.ModelClass, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateModelClass not implemented")
 }
 func (UnimplementedDatabaseProxyServiceServer) DeleteModelClass(context.Context, *DeleteModelClassRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteModelClass not implemented")
+}
+func (UnimplementedDatabaseProxyServiceServer) ListModelClassRun(context.Context, *ListModelClassesRunRequest) (*ListModelClasseRunsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListModelClassRun not implemented")
+}
+func (UnimplementedDatabaseProxyServiceServer) GetModelClassRun(context.Context, *GetModelClassRunRequest) (*v1alpha13.ModelClassRun, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetModelClassRun not implemented")
+}
+func (UnimplementedDatabaseProxyServiceServer) CreateModelClassRun(context.Context, *CreateModelClassRunRequest) (*v1alpha13.ModelClassRun, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateModelClassRun not implemented")
+}
+func (UnimplementedDatabaseProxyServiceServer) UpdateModelClassRun(context.Context, *UpdateModelClassRunRequest) (*v1alpha13.ModelClassRun, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateModelClassRun not implemented")
+}
+func (UnimplementedDatabaseProxyServiceServer) DeleteModelClassRun(context.Context, *DeleteModelClassRunRequest) (*empty.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteModelClassRun not implemented")
 }
 func (UnimplementedDatabaseProxyServiceServer) ListFeatureHistograms(context.Context, *ListFeatureHistogramsRequest) (*ListFeatureHistogramsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListFeatureHistograms not implemented")
@@ -3998,20 +4068,20 @@ func _DatabaseProxyService_CreateModelClass_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatabaseProxyService_UpdateModelClas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DatabaseProxyService_UpdateModelClass_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateModelClassRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DatabaseProxyServiceServer).UpdateModelClas(ctx, in)
+		return srv.(DatabaseProxyServiceServer).UpdateModelClass(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelClas",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelClass",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatabaseProxyServiceServer).UpdateModelClas(ctx, req.(*UpdateModelClassRequest))
+		return srv.(DatabaseProxyServiceServer).UpdateModelClass(ctx, req.(*UpdateModelClassRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -4030,6 +4100,96 @@ func _DatabaseProxyService_DeleteModelClass_Handler(srv interface{}, ctx context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DatabaseProxyServiceServer).DeleteModelClass(ctx, req.(*DeleteModelClassRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatabaseProxyService_ListModelClassRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListModelClassesRunRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatabaseProxyServiceServer).ListModelClassRun(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModelClassRun",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatabaseProxyServiceServer).ListModelClassRun(ctx, req.(*ListModelClassesRunRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatabaseProxyService_GetModelClassRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetModelClassRunRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatabaseProxyServiceServer).GetModelClassRun(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModelClassRun",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatabaseProxyServiceServer).GetModelClassRun(ctx, req.(*GetModelClassRunRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatabaseProxyService_CreateModelClassRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateModelClassRunRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatabaseProxyServiceServer).CreateModelClassRun(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelClassRun",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatabaseProxyServiceServer).CreateModelClassRun(ctx, req.(*CreateModelClassRunRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatabaseProxyService_UpdateModelClassRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateModelClassRunRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatabaseProxyServiceServer).UpdateModelClassRun(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelClassRun",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatabaseProxyServiceServer).UpdateModelClassRun(ctx, req.(*UpdateModelClassRunRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatabaseProxyService_DeleteModelClassRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteModelClassRunRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatabaseProxyServiceServer).DeleteModelClassRun(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelClassRun",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatabaseProxyServiceServer).DeleteModelClassRun(ctx, req.(*DeleteModelClassRunRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -5584,12 +5744,32 @@ var DatabaseProxyService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DatabaseProxyService_CreateModelClass_Handler,
 		},
 		{
-			MethodName: "UpdateModelClas",
-			Handler:    _DatabaseProxyService_UpdateModelClas_Handler,
+			MethodName: "UpdateModelClass",
+			Handler:    _DatabaseProxyService_UpdateModelClass_Handler,
 		},
 		{
 			MethodName: "DeleteModelClass",
 			Handler:    _DatabaseProxyService_DeleteModelClass_Handler,
+		},
+		{
+			MethodName: "ListModelClassRun",
+			Handler:    _DatabaseProxyService_ListModelClassRun_Handler,
+		},
+		{
+			MethodName: "GetModelClassRun",
+			Handler:    _DatabaseProxyService_GetModelClassRun_Handler,
+		},
+		{
+			MethodName: "CreateModelClassRun",
+			Handler:    _DatabaseProxyService_CreateModelClassRun_Handler,
+		},
+		{
+			MethodName: "UpdateModelClassRun",
+			Handler:    _DatabaseProxyService_UpdateModelClassRun_Handler,
+		},
+		{
+			MethodName: "DeleteModelClassRun",
+			Handler:    _DatabaseProxyService_DeleteModelClassRun_Handler,
 		},
 		{
 			MethodName: "ListFeatureHistograms",

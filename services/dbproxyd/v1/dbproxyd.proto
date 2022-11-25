@@ -637,9 +637,23 @@ message ListModelClassesRequest {
 }
 
 message ListModelClassesResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun items = 1;
     string next_page_token = 2;
 }
+
+message ListModelClassesRunRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListModelClasseRunsResponse {
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun items = 1;
+    string next_page_token = 2;
+}
+
+
+// ModelClass
 
 message GetModelClassRequest {
     string namespace = 1;
@@ -658,6 +672,27 @@ message DeleteModelClassRequest {
     string namespace = 1;
     string name = 2;
 }
+
+// Model Class Run
+
+message GetModelClassRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateModelClassRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun item = 1;
+}
+
+message UpdateModelClassRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun item = 1;
+}
+
+message DeleteModelClassRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
 
 ////////////////////////////////////////////////////////////////
 // FeatureHistogram
@@ -1229,8 +1264,14 @@ service DatabaseProxyService {
     rpc ListModelClass(ListModelClassesRequest) returns (ListModelClassesResponse) {}
     rpc GetModelClass(GetModelClassRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass) {}
     rpc CreateModelClass(CreateModelClassRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass) {}
-    rpc UpdateModelClas(UpdateModelClassRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass) {}
+    rpc UpdateModelClass(UpdateModelClassRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass) {}
     rpc DeleteModelClass(DeleteModelClassRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListModelClassRun(ListModelClassesRunRequest) returns (ListModelClasseRunsResponse) {}
+    rpc GetModelClassRun(GetModelClassRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun) {}
+    rpc CreateModelClassRun(CreateModelClassRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun) {}
+    rpc UpdateModelClassRun(UpdateModelClassRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun) {}
+    rpc DeleteModelClassRun(DeleteModelClassRunRequest) returns (google.protobuf.Empty) {}
 
     rpc ListFeatureHistograms(ListFeatureHistogramsRequest) returns (ListFeatureHistogramsResponse) {}
     rpc GetFeatureHistogram(GetFeatureHistogramRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram) {}

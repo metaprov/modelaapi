@@ -52,6 +52,7 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.Crea
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateLabRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateLicenseRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateNotifierRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePostMortemRequest', null, global);
@@ -84,6 +85,7 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.Dele
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteLabRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteLicenseRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteNotifierRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePostMortemRequest', null, global);
@@ -116,6 +118,7 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetF
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetLabRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetLicenseRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetNotifierRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPostMortemRequest', null, global);
@@ -163,8 +166,10 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.List
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListLabsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListLicensesRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListLicensesResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelsRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListNotifiersRequest', null, global);
@@ -212,6 +217,7 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.Upda
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateLabRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateLicenseRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateNotifierRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePostMortemRequest', null, global);
@@ -2547,6 +2553,48 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -2620,6 +2668,90 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -22525,7 +22657,7 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRespons
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.toObject, includeInstance),
+    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.toObject, includeInstance),
     nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -22564,8 +22696,8 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRespons
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.deserializeBinaryFromReader);
       msg.addItems(value);
       break;
     case 2:
@@ -22606,7 +22738,7 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRespons
     writer.writeRepeatedMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.serializeBinaryToWriter
     );
   }
   f = message.getNextPageToken();
@@ -22620,17 +22752,17 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRespons
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass items = 1;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass>}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun items = 1;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun>}
  */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesResponse.prototype.getItemsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass, 1));
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesResponse.prototype.setItemsList = function(value) {
@@ -22639,12 +22771,12 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRespons
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun}
  */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesResponse.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun, opt_index);
 };
 
 
@@ -22671,6 +22803,386 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRespons
  * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesResponse} returns this
  */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string namespace = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional int32 page_size = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional string page_token = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRunRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.toObject, includeInstance),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.deserializeBinaryFromReader);
+      msg.addItems(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getItemsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun items = 1;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun>}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.prototype.getItemsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.prototype.setItemsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.prototype.addItems = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.prototype.clearItemsList = function() {
+  return this.setItemsList([]);
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClasseRunsResponse.prototype.setNextPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -23293,6 +23805,628 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRequest
  * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRequest} returns this
  */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string namespace = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetModelClassRunRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.deserializeBinaryFromReader);
+      msg.setItem(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getItem();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun item = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest.prototype.setItem = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateModelClassRunRequest.prototype.hasItem = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.deserializeBinaryFromReader);
+      msg.setItem(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getItem();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun item = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest.prototype.setItem = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateModelClassRunRequest.prototype.hasItem = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string namespace = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteModelClassRunRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 

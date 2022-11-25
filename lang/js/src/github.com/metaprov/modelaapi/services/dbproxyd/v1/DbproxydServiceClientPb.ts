@@ -4040,8 +4040,8 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateModelClass);
   }
 
-  methodInfoUpdateModelClas = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelClas',
+  methodInfoUpdateModelClass = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelClass',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelClassRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass,
@@ -4051,17 +4051,17 @@ export class DatabaseProxyServiceClient {
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.deserializeBinary
   );
 
-  updateModelClas(
+  updateModelClass(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelClassRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass>;
 
-  updateModelClas(
+  updateModelClass(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelClassRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass>;
 
-  updateModelClas(
+  updateModelClass(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelClassRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
@@ -4069,18 +4069,18 @@ export class DatabaseProxyServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelClas',
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelClass',
         request,
         metadata || {},
-        this.methodInfoUpdateModelClas,
+        this.methodInfoUpdateModelClass,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelClas',
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelClass',
     request,
     metadata || {},
-    this.methodInfoUpdateModelClas);
+    this.methodInfoUpdateModelClass);
   }
 
   methodInfoDeleteModelClass = new grpcWeb.MethodDescriptor(
@@ -4124,6 +4124,221 @@ export class DatabaseProxyServiceClient {
     request,
     metadata || {},
     this.methodInfoDeleteModelClass);
+  }
+
+  methodInfoListModelClassRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModelClassRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelClassesRunRequest,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelClasseRunsResponse,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelClassesRunRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelClasseRunsResponse.deserializeBinary
+  );
+
+  listModelClassRun(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelClassesRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelClasseRunsResponse>;
+
+  listModelClassRun(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelClassesRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelClasseRunsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelClasseRunsResponse>;
+
+  listModelClassRun(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelClassesRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelClasseRunsResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModelClassRun',
+        request,
+        metadata || {},
+        this.methodInfoListModelClassRun,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModelClassRun',
+    request,
+    metadata || {},
+    this.methodInfoListModelClassRun);
+  }
+
+  methodInfoGetModelClassRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModelClassRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelClassRunRequest,
+    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelClassRunRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.deserializeBinary
+  );
+
+  getModelClassRun(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelClassRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun>;
+
+  getModelClassRun(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelClassRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun>;
+
+  getModelClassRun(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelClassRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModelClassRun',
+        request,
+        metadata || {},
+        this.methodInfoGetModelClassRun,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModelClassRun',
+    request,
+    metadata || {},
+    this.methodInfoGetModelClassRun);
+  }
+
+  methodInfoCreateModelClassRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelClassRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelClassRunRequest,
+    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelClassRunRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.deserializeBinary
+  );
+
+  createModelClassRun(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelClassRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun>;
+
+  createModelClassRun(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelClassRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun>;
+
+  createModelClassRun(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelClassRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelClassRun',
+        request,
+        metadata || {},
+        this.methodInfoCreateModelClassRun,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelClassRun',
+    request,
+    metadata || {},
+    this.methodInfoCreateModelClassRun);
+  }
+
+  methodInfoUpdateModelClassRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelClassRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelClassRunRequest,
+    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelClassRunRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.deserializeBinary
+  );
+
+  updateModelClassRun(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelClassRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun>;
+
+  updateModelClassRun(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelClassRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun>;
+
+  updateModelClassRun(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelClassRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelClassRun',
+        request,
+        metadata || {},
+        this.methodInfoUpdateModelClassRun,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelClassRun',
+    request,
+    metadata || {},
+    this.methodInfoUpdateModelClassRun);
+  }
+
+  methodInfoDeleteModelClassRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelClassRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelClassRunRequest,
+    google_protobuf_empty_pb.Empty,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelClassRunRequest) => {
+      return request.serializeBinary();
+    },
+    google_protobuf_empty_pb.Empty.deserializeBinary
+  );
+
+  deleteModelClassRun(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelClassRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+
+  deleteModelClassRun(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelClassRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  deleteModelClassRun(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelClassRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: google_protobuf_empty_pb.Empty) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelClassRun',
+        request,
+        metadata || {},
+        this.methodInfoDeleteModelClassRun,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelClassRun',
+    request,
+    metadata || {},
+    this.methodInfoDeleteModelClassRun);
   }
 
   methodInfoListFeatureHistograms = new grpcWeb.MethodDescriptor(
