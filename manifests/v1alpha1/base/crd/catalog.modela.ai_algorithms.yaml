@@ -9,9 +9,15 @@ metadata:
 spec:
   group: catalog.modela.ai
   names:
+    categories:
+    - catalog
+    - modela
+    - all
     kind: Algorithm
     listKind: AlgorithmList
     plural: algorithms
+    shortNames:
+    - alg
     singular: algorithm
   scope: Namespaced
   versions:

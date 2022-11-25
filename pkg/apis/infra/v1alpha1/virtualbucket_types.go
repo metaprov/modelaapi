@@ -33,12 +33,10 @@ type VirtualBucketCondition struct {
 // +kubebuilder:resource:path=virtualbuckets,shortName=vb,singular=virtualbucket,categories={infra,modela,all}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description="owner"
 // +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-
 // VirtualBucket represents an abstract object storage system used to store flat-files
 type VirtualBucket struct {
 	metav1.TypeMeta   `json:",inline"`

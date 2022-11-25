@@ -53,7 +53,6 @@ type FeatureGroupCondition struct {
 // +kubebuilder:storageversion
 // +kubebuilder:resource:path=featuregroups,singular=featuregroup,shortName="fg",categories={data,modela}
 // +kubebuilder:subresource:status
-
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.entityName"
@@ -62,7 +61,6 @@ type FeatureGroupCondition struct {
 // +kubebuilder:printcolumn:name="Last Sync",type="date",JSONPath=".status.syncScedule.lastRun",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
-
 // FeatureGroup represent a group of features
 type FeatureGroup struct {
 	metav1.TypeMeta   `json:",inline"`

@@ -33,12 +33,10 @@ type LabCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=labs,singular=lab,categories={infra,modela,all}
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Cluster",type="string",JSONPath=".spec.clusterName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-
 // Lab represents a single namespace where data analysis and model training workloads take place
 type Lab struct {
 	metav1.TypeMeta   `json:",inline"`

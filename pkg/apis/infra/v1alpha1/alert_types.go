@@ -42,7 +42,6 @@ type AlertCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=alerts,singular=alert,categories={infra,modela}
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
 // +kubebuilder:printcolumn:name="Level",type="string",JSONPath=".spec.level",description=""
 // +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
@@ -51,7 +50,6 @@ type AlertCondition struct {
 // +kubebuilder:printcolumn:name="Notifier",type="string",JSONPath=".spec.notifierName",description="",priority=1
 // +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-
 // Alert represents temporal information about an event that occurred with a Modela custom resource
 type Alert struct {
 	metav1.TypeMeta   `json:",inline"`

@@ -47,14 +47,12 @@ type RecipeRunCondition struct {
 // +kubebuilder:resource:path=reciperuns,shortName=rcr,singular=reciperun,categories={data,modela,all}
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Recipe",type="string",JSONPath=".spec.recipeName"
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
-
 // RecipeRun represent one execution of the recipe.
 // Execution is performed by creating a Kubernetes job.
 type RecipeRun struct {

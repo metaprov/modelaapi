@@ -9,9 +9,14 @@ metadata:
 spec:
   group: data.modela.ai
   names:
+    categories:
+    - data
+    - modela
     kind: FeatureHistogram
     listKind: FeatureHistogramList
     plural: featurehistograms
+    shortNames:
+    - fh
     singular: featurehistogram
   scope: Namespaced
   versions:
@@ -850,4 +855,5 @@ spec:
         type: object
     served: true
     storage: true
-    subresources: {}
+    subresources:
+      status: {}

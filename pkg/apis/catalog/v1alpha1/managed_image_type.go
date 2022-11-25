@@ -38,11 +38,9 @@ const (
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=managedimages,singular=managedimage,categories={catalog,modela,all}
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
-
 // Managed Images define the metadata about a docker image used during training or serving
 type ManagedImage struct {
 	metav1.TypeMeta   `json:",inline"`

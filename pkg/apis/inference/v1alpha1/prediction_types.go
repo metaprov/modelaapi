@@ -53,7 +53,6 @@ type PredictionCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 // +kubebuilder:resource:path=predictions,shortName=pred,singular=prediction,categories={inference,modela}
-
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
@@ -65,7 +64,6 @@ type PredictionCondition struct {
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Rows",type="string",JSONPath=".status.rows"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-
 // Prediction represents a single batch prediction on a dataset
 type Prediction struct {
 	metav1.TypeMeta   `json:",inline"`

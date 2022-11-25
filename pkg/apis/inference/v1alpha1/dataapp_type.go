@@ -40,7 +40,6 @@ type DataAppCondition struct {
 // +kubebuilder:storageversion
 // +kubebuilder:resource:path=dataapps,singular=dataapp,categories={data,modela}
 // +kubebuilder:subresource:status
-
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
@@ -49,7 +48,6 @@ type DataAppCondition struct {
 // +kubebuilder:printcolumn:name="Replicas",type="string",JSONPath=".spec.replicas"
 // +kubebuilder:printcolumn:name="Port",type="string",JSONPath=".spec.port"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-
 // DataApp represents a live dashboard for a single model
 type DataApp struct {
 	metav1.TypeMeta   `json:",inline"`

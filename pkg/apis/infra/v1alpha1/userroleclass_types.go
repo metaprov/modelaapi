@@ -15,7 +15,6 @@ import (
 // +kubebuilder:storageversion
 // +kubebuilder:resource:path=userroleclasses,singular=userroleclass,categories={infra,modela,all}
 // +kubebuilder:object:root=true
-
 // UserRoleClass specifies the permissions that can be performed on a set of resources
 type UserRoleClass struct {
 	metav1.TypeMeta   `json:",inline"`

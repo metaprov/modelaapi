@@ -8,9 +8,7 @@ import (
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=workloadclasses,singular=workloadclass,categories={catalog,modela,all}
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
-
 // WorkloadClass define a template for a job.
 type WorkloadClass struct {
 	metav1.TypeMeta   `json:",inline"`

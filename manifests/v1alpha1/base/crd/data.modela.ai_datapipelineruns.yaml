@@ -9,9 +9,15 @@ metadata:
 spec:
   group: data.modela.ai
   names:
+    categories:
+    - data
+    - modela
+    - all
     kind: DataPipelineRun
     listKind: DataPipelineRunList
     plural: datapipelineruns
+    shortNames:
+    - dpr
     singular: datapipelinerun
   scope: Namespaced
   versions:
@@ -469,4 +475,5 @@ spec:
         type: object
     served: true
     storage: true
-    subresources: {}
+    subresources:
+      status: {}

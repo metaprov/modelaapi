@@ -20,11 +20,9 @@ const (
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=mlframeworks,singular=mlframework,categories={catalog,modela,all}
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
-
 // MLFramework define the metadata about a machine learning framework
 type MLFramework struct {
 	metav1.TypeMeta   `json:",inline"`

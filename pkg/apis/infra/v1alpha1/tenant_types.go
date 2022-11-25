@@ -41,12 +41,10 @@ type TenantCondition struct {
 // +kubebuilder:resource:path=tenants,singular=tenant,categories={infra,modela}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Default Lab",type="string",JSONPath=".spec.defaultLabRef.Name",description=""
 // +kubebuilder:printcolumn:name="Default Serving Site",type="string",JSONPath=".spec.defaultServingSiteRef.Name",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-
 // Tenant represents a root namespace for tenant-level resources and child DataProduct namespaces
 type Tenant struct {
 	metav1.TypeMeta   `json:",inline"`

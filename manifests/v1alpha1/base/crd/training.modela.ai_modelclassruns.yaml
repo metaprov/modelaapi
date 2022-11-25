@@ -9,9 +9,15 @@ metadata:
 spec:
   group: training.modela.ai
   names:
+    categories:
+    - train
+    - modela
+    - all
     kind: ModelClassRun
     listKind: ModelClassRunList
     plural: modelclassruns
+    shortNames:
+    - mcr
     singular: modelclassrun
   scope: Namespaced
   versions:
@@ -273,4 +279,5 @@ spec:
         type: object
     served: true
     storage: true
-    subresources: {}
+    subresources:
+      status: {}

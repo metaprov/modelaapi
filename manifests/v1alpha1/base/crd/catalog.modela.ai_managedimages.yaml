@@ -9,6 +9,10 @@ metadata:
 spec:
   group: catalog.modela.ai
   names:
+    categories:
+    - catalog
+    - modela
+    - all
     kind: ManagedImage
     listKind: ManagedImageList
     plural: managedimages

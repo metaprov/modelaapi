@@ -51,11 +51,9 @@ type ModelClassCondition struct {
 // +kubebuilder:resource:path=modelclasses,singular=modelclass,shortName=mc,categories={training,modela}
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-
 // ModelClass represents an automatic search for the best machine learning model for a given dataset
 type ModelClass struct {
 	metav1.TypeMeta   `json:",inline"`

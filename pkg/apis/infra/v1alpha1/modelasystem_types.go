@@ -33,10 +33,8 @@ type ModelaSystemCondition struct {
 // +kubebuilder:resource:path=modelasystems,singular=modelasystem,categories={infra,modela}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-
 // ModelaSystem
 type ModelaSystem struct {
 	metav1.TypeMeta   `json:",inline"`

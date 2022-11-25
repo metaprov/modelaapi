@@ -9,9 +9,15 @@ metadata:
 spec:
   group: data.modela.ai
   names:
+    categories:
+    - data
+    - modela
+    - all
     kind: Dataset
     listKind: DatasetList
     plural: datasets
+    shortNames:
+    - ds
     singular: dataset
   scope: Namespaced
   versions:
@@ -1774,4 +1780,5 @@ spec:
         type: object
     served: true
     storage: true
-    subresources: {}
+    subresources:
+      status: {}

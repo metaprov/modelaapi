@@ -65,7 +65,6 @@ type DatasetCondition struct {
 // +kubebuilder:resource:path=datasets,shortName=ds,singular=dataset,categories={data,modela,all}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
@@ -75,7 +74,6 @@ type DatasetCondition struct {
 // +kubebuilder:printcolumn:name="Columns",type="integer",JSONPath=".status.statistics.cols"
 // +kubebuilder:printcolumn:name="Size",type="integer",JSONPath=".status.statistics.fileSize"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-
 // Dataset represents a chunk of data that has been analyzed and stored inside a managed bucket
 type Dataset struct {
 	metav1.TypeMeta   `json:",inline"`

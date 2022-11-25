@@ -2169,6 +2169,12 @@ export class ModelClassStatus extends jspb.Message {
   getTriggeredby(): string;
   setTriggeredby(value: string): ModelClassStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): ModelClassStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): ModelClassStatus;
+
   getConditionsList(): Array<ModelClassCondition>;
   setConditionsList(value: Array<ModelClassCondition>): ModelClassStatus;
   clearConditionsList(): ModelClassStatus;
@@ -2198,6 +2204,8 @@ export namespace ModelClassStatus {
     retiredList: Array<string>,
     predictorname: string,
     triggeredby: string,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<ModelClassCondition.AsObject>,
   }
 }

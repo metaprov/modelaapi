@@ -45,7 +45,6 @@ type AccountCondition struct {
 // +kubebuilder:resource:path=accounts,shortName=acct,singular=account,categories={infra,modela}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
 // +kubebuilder:printcolumn:name="Username",type="string",JSONPath=".spec.username",description=""
@@ -53,7 +52,6 @@ type AccountCondition struct {
 // +kubebuilder:printcolumn:name="Phone",type="string",JSONPath=".spec.phone",description="",priority=1
 // +kubebuilder:printcolumn:name="Email",type="string",JSONPath=".spec.email",description="",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-
 // Account represents a single user on the system or a team that other Accounts can be grouped under
 type Account struct {
 	metav1.TypeMeta   `json:",inline"`

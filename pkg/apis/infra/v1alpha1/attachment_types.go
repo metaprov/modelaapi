@@ -33,14 +33,12 @@ type AttachmentCondition struct {
 // +kubebuilder:resource:path=attachments,singular=attachment,categories={infra,modela}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.name",description=""
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.namespace",description=""
 // +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.bucketName",description=""
 // +kubebuilder:printcolumn:name="Path",type="string",JSONPath=".spec.path",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-
 // Attachment represent an file attached to a resource.
 type Attachment struct {
 	metav1.TypeMeta   `json:",inline"`

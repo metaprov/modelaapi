@@ -34,13 +34,11 @@ type ConnectionCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=connections,shortName=conn,singular=connection,categories={infra,modela}
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Provider",type="string",JSONPath=".spec.provider",description=""
 // +kubebuilder:printcolumn:name="Category",type="string",JSONPath=".spec.category",description=""
 // +kubebuilder:printcolumn:name="Secret",type="string",JSONPath=".spec.secretRef.name",description="",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-
 // Connection define a connection to an external system (e.g. database, public cloud)
 type Connection struct {
 	metav1.TypeMeta   `json:",inline"`

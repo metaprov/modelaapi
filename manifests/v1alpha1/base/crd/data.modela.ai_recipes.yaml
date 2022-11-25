@@ -9,9 +9,15 @@ metadata:
 spec:
   group: data.modela.ai
   names:
+    categories:
+    - data
+    - modela
+    - all
     kind: Recipe
     listKind: RecipeList
     plural: recipes
+    shortNames:
+    - rc
     singular: recipe
   scope: Namespaced
   versions:
@@ -811,4 +817,5 @@ spec:
         type: object
     served: true
     storage: true
-    subresources: {}
+    subresources:
+      status: {}

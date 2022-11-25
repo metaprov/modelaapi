@@ -9,9 +9,14 @@ metadata:
 spec:
   group: training.modela.ai
   names:
+    categories:
+    - training
+    - modela
     kind: ModelClass
     listKind: ModelClassList
     plural: modelclasses
+    shortNames:
+    - mc
     singular: modelclass
   scope: Namespaced
   versions:
@@ -3176,6 +3181,13 @@ spec:
                       type: string
                   type: object
                 type: array
+              failureMessage:
+                description: UpdateUpdateStrategy in case of terminal failure message
+                type: string
+              failureReason:
+                description: UpdateUpdateStrategy in case of terminal failure Borrowed
+                  from cluster api controller
+                type: string
               lastOnlineTrainingSet:
                 description: Store the location of the last training set
                 properties:
@@ -3418,4 +3430,5 @@ spec:
         type: object
     served: true
     storage: true
-    subresources: {}
+    subresources:
+      status: {}

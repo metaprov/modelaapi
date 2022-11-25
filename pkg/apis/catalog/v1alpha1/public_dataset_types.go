@@ -14,7 +14,6 @@ import (
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=publicdatasets,singular=publicdataset,categories={catalog,modela,all}
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",description="ML task name"
 // +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url",description="",priority=1
 // +kubebuilder:printcolumn:name="Rows",type="number",JSONPath=".spec.rows",description=""
@@ -22,7 +21,6 @@ import (
 // +kubebuilder:printcolumn:name="Target",type="string",JSONPath=".spec.targetColumn",description=""
 // +kubebuilder:printcolumn:name="Imbalanced",type="string",JSONPath=".spec.imbalanced",description="",priority=1
 // +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
-
 // PublicDataset represent the metadata about a public dataset
 type PublicDataset struct {
 	metav1.TypeMeta   `json:",inline"`

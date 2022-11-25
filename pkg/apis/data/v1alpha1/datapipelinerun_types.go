@@ -49,7 +49,6 @@ type DataPipelineRunCondition struct {
 // +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,shortName="dpr",categories={data,modela,all}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Progress",type="string",JSONPath=".status.progress",priority=1
 // +kubebuilder:printcolumn:name="Pipeline",type="string",JSONPath=".spec.datapipelineName"
@@ -57,7 +56,6 @@ type DataPipelineRunCondition struct {
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Failure",type="string",JSONPath=".metadata.failureMessage"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-
 // DataPipelineRun represent one execution of the data pipeline
 type DataPipelineRun struct {
 	metav1.TypeMeta   `json:",inline"`

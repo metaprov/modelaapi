@@ -9,9 +9,15 @@ metadata:
 spec:
   group: data.modela.ai
   names:
+    categories:
+    - data
+    - modela
+    - all
     kind: DataProductVersion
     listKind: DataProductVersionList
     plural: dataproductversions
+    shortNames:
+    - dpv
     singular: dataproductversion
   scope: Namespaced
   versions:
@@ -168,4 +174,5 @@ spec:
         type: object
     served: true
     storage: true
-    subresources: {}
+    subresources:
+      status: {}

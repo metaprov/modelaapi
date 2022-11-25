@@ -42,12 +42,10 @@ type NotifierCondition struct {
 // +kubebuilder:resource:path=notifiers,singular=notifier,categories={infra,modela}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description=""
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-
 // The Notifier resource
 type Notifier struct {
 	metav1.TypeMeta   `json:",inline"`

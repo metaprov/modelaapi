@@ -21908,7 +21908,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.pr
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.repeatedFields_ = [17,23];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.repeatedFields_ = [17,22];
 
 
 
@@ -21954,7 +21954,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
     bestmodelscore: (f = jspb.Message.getOptionalFloatingPointField(msg, 15)) == null ? undefined : f,
     retiredList: (f = jspb.Message.getRepeatedField(msg, 17)) == null ? undefined : f,
     predictorname: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
-    triggeredby: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
+    triggeredby: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
+    failurereason: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassCondition.toObject, includeInstance)
   };
@@ -22052,11 +22054,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
       var value = /** @type {string} */ (reader.readString());
       msg.setPredictorname(value);
       break;
-    case 21:
+    case 19:
       var value = /** @type {string} */ (reader.readString());
       msg.setTriggeredby(value);
       break;
-    case 23:
+    case 20:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailurereason(value);
+      break;
+    case 21:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
+      break;
+    case 22:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -22188,6 +22198,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 19));
+  if (f != null) {
+    writer.writeString(
+      19,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 20));
+  if (f != null) {
+    writer.writeString(
+      20,
+      f
+    );
+  }
   f = /** @type {string} */ (jspb.Message.getField(message, 21));
   if (f != null) {
     writer.writeString(
@@ -22198,7 +22222,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      23,
+      22,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassCondition.serializeBinaryToWriter
     );
@@ -22683,11 +22707,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
 
 
 /**
- * optional string triggeredBy = 21;
+ * optional string triggeredBy = 19;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.getTriggeredby = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
 };
 
 
@@ -22696,7 +22720,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.setTriggeredby = function(value) {
-  return jspb.Message.setField(this, 21, value);
+  return jspb.Message.setField(this, 19, value);
 };
 
 
@@ -22705,7 +22729,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.clearTriggeredby = function() {
-  return jspb.Message.setField(this, 21, undefined);
+  return jspb.Message.setField(this, 19, undefined);
 };
 
 
@@ -22714,17 +22738,89 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.hasTriggeredby = function() {
+  return jspb.Message.getField(this, 19) != null;
+};
+
+
+/**
+ * optional string failureReason = 20;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.getFailurereason = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.setFailurereason = function(value) {
+  return jspb.Message.setField(this, 20, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.clearFailurereason = function() {
+  return jspb.Message.setField(this, 20, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.hasFailurereason = function() {
+  return jspb.Message.getField(this, 20) != null;
+};
+
+
+/**
+ * optional string failureMessage = 21;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.setFailuremessage = function(value) {
+  return jspb.Message.setField(this, 21, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.clearFailuremessage = function() {
+  return jspb.Message.setField(this, 21, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.hasFailuremessage = function() {
   return jspb.Message.getField(this, 21) != null;
 };
 
 
 /**
- * repeated ModelClassCondition conditions = 23;
+ * repeated ModelClassCondition conditions = 22;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassCondition, 23));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassCondition, 22));
 };
 
 
@@ -22733,7 +22829,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 23, value);
+  return jspb.Message.setRepeatedWrapperField(this, 22, value);
 };
 
 
@@ -22743,7 +22839,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 23, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 22, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassCondition, opt_index);
 };
 
 

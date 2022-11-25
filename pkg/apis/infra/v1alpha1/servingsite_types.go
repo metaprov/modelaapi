@@ -37,7 +37,6 @@ type ServingSiteCondition struct {
 // +kubebuilder:resource:path=servingsites,singular=servingsite,categories={infra,modela}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description="owner"
 // +kubebuilder:printcolumn:name="FQDN",type="string",JSONPath=".spec.ingress.fqdn",description=""
@@ -46,7 +45,6 @@ type ServingSiteCondition struct {
 // +kubebuilder:printcolumn:name="Predictors",type="number",JSONPath=".status.activePredictors",description=""
 // +kubebuilder:printcolumn:name="Cluster",type="string",JSONPath=".spec.clusterName",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-
 // ServingSite represents a namespace where model serving workloads are executed under
 type ServingSite struct {
 	metav1.TypeMeta   `json:",inline"`

@@ -9,9 +9,14 @@ metadata:
 spec:
   group: inference.modela.ai
   names:
+    categories:
+    - inference
+    - modela
     kind: Prediction
     listKind: PredictionList
     plural: predictions
+    shortNames:
+    - pred
     singular: prediction
   scope: Namespaced
   versions:
@@ -1556,4 +1561,5 @@ spec:
         type: object
     served: true
     storage: true
-    subresources: {}
+    subresources:
+      status: {}

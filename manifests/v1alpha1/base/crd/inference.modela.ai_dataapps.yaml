@@ -9,6 +9,9 @@ metadata:
 spec:
   group: inference.modela.ai
   names:
+    categories:
+    - data
+    - modela
     kind: DataApp
     listKind: DataAppList
     plural: dataapps
@@ -774,4 +777,5 @@ spec:
         type: object
     served: true
     storage: true
-    subresources: {}
+    subresources:
+      status: {}

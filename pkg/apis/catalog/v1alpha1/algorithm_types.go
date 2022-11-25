@@ -8,12 +8,10 @@ import (
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=algorithms,singular=algorithm,shortName="alg",categories={catalog,modela,all}
 // +kubebuilder:storageversion
-
 // +kubebuilder:printcolumn:name="Framework",type="string",JSONPath=".spec.frameworkName",description="ML Framework name"
 // +kubebuilder:printcolumn:name="Docs",type="string",JSONPath=".spec.url",description=""
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",description="ML task name"
 // +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
-
 // Algorithm define the metadata about a machine learning algorithm.
 type Algorithm struct {
 	metav1.TypeMeta   `json:",inline"`

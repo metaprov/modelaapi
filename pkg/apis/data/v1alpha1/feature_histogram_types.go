@@ -63,7 +63,6 @@ type FeatureHistogramCondition struct {
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=featurehistograms,shortName=fh,singular=featurehistogram,categories={data,modela}
 // +kubebuilder:subresource:status
-
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
@@ -72,7 +71,6 @@ type FeatureHistogramCondition struct {
 // +kubebuilder:printcolumn:name="Start",type="date",JSONPath=".spec.start"
 // +kubebuilder:printcolumn:name="End",type="date",JSONPath=".spec.end"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-
 // FeatureHistogram represent a single feature in the feature store.
 type FeatureHistogram struct {
 	metav1.TypeMeta   `json:",inline"`
