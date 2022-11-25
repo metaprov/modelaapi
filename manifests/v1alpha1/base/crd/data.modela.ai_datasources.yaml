@@ -9,15 +9,9 @@ metadata:
 spec:
   group: data.modela.ai
   names:
-    categories:
-    - data
-    - modela
-    - all
     kind: DataSource
     listKind: DataSourceList
     plural: datasources
-    shortNames:
-    - dsrc
     singular: datasource
   scope: Namespaced
   versions:
@@ -71,7 +65,7 @@ spec:
                 enum:
                 - tabular
                 - image
-                - text
+                - nlp
                 - video
                 - audio
                 type: string
@@ -1218,5 +1212,4 @@ spec:
         type: object
     served: true
     storage: true
-    subresources:
-      status: {}
+    subresources: {}

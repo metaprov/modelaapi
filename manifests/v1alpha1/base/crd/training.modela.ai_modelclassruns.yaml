@@ -9,15 +9,9 @@ metadata:
 spec:
   group: training.modela.ai
   names:
-    categories:
-    - train
-    - modela
-    - all
     kind: ModelClassRun
     listKind: ModelClassRunList
     plural: modelclassruns
-    shortNames:
-    - mcr
     singular: modelclassrun
   scope: Namespaced
   versions:
@@ -202,11 +196,11 @@ spec:
                 format: date-time
                 type: string
               failureMessage:
-                description: Update in case of terminal failure message
+                description: UpdateUpdateStrategy in case of terminal failure message
                 type: string
               failureReason:
-                description: Update in case of terminal failure Borrowed from cluster
-                  api controller
+                description: UpdateUpdateStrategy in case of terminal failure Borrowed
+                  from cluster api controller
                 type: string
               folder:
                 description: Folder for pipeline run artifacts. This is assigned by
@@ -279,5 +273,4 @@ spec:
         type: object
     served: true
     storage: true
-    subresources:
-      status: {}
+    subresources: {}

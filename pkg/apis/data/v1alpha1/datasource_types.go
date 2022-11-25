@@ -511,9 +511,11 @@ type Column struct {
 	Window *int32 `json:"window,omitempty" protobuf:"varint,55,opt,name=window"`
 }
 
-// DataSource defines the specification for the file format and column-level schema of data to be used within Modela
 // +kubebuilder:object:root=true
+// +kubebuilder:resource:path=datasources,singular=datasource,shortName="dsrc",categories={data,modela,all}
 // +kubebuilder:storageversion
+// +kubebuilder:subresource:status
+
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
@@ -521,8 +523,8 @@ type Column struct {
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.datasetType"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:subresource:status
-// +kubebuilder:resource:path=datasources,singular=datasource,shortName="dsrc",categories={data,modela,all}
+
+// DataSource defines the specification for the file format and column-level schema of data to be used within Modela
 type DataSource struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`

@@ -11,10 +11,11 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// Cloud represent a cloud provider metadata. A cloud contains regions,datacenter,machine classes
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 // +kubebuilder:resource:path=clouds,singular=cloud,categories={catalog,modela,all}
+
+// Cloud represent a cloud provider metadata. A cloud contains regions,datacenter,machine classes
 type Cloud struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

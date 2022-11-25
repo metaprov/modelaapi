@@ -9,14 +9,9 @@ metadata:
 spec:
   group: training.modela.ai
   names:
-    categories:
-    - training
-    - modela
     kind: ModelClass
     listKind: ModelClassList
     plural: modelclasses
-    shortNames:
-    - mc
     singular: modelclass
   scope: Namespaced
   versions:
@@ -3527,5 +3522,4 @@ spec:
         type: object
     served: true
     storage: true
-    subresources:
-      status: {}
+    subresources: {}

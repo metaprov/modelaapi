@@ -350,7 +350,7 @@ func (study *Study) MarkSplitFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("Failed to split." + err)
+	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to split." + err)
 	study.RefreshProgress()
 }
 
@@ -400,7 +400,7 @@ func (study *Study) MarkTransformFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("Failed to transform." + err)
+	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to transform." + err)
 	study.RefreshProgress()
 }
 
@@ -446,7 +446,7 @@ func (study *Study) MarkFeatureEngineeringFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("Failed to engineer features." + err)
+	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to engineer features." + err)
 	study.RefreshProgress()
 }
 
@@ -494,7 +494,7 @@ func (study *Study) MarkBaselineFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to create baseline models." + err)
+	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to create baseline models." + err)
 	study.UpdateEndTime()
 	study.RefreshProgress()
 }
@@ -507,7 +507,7 @@ func (study *Study) MarkReadyFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to mark study as ready." + err)
+	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to mark study as ready." + err)
 	study.UpdateEndTime()
 	study.RefreshProgress()
 }
@@ -525,7 +525,7 @@ func (study *Study) MarkGCFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to gc study." + err)
+	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to gc study." + err)
 	study.UpdateEndTime()
 	study.RefreshProgress()
 }
@@ -574,7 +574,7 @@ func (study *Study) MarkSearchFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to search models." + err)
+	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to search models." + err)
 	study.UpdateEndTime()
 	study.RefreshProgress()
 }
@@ -628,7 +628,7 @@ func (study *Study) MarkEnsembleFailed(err string) {
 	}
 
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to ensemble models." + err)
+	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to ensemble models." + err)
 	study.UpdateEndTime()
 	study.RefreshProgress()
 }
@@ -673,7 +673,7 @@ func (study *Study) MarkTestingFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("Failed to test model." + err)
+	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to test model." + err)
 	study.RefreshProgress()
 }
 
@@ -721,7 +721,7 @@ func (study *Study) MarkTuningFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("Failed to tune model." + err)
+	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to tune model." + err)
 	study.RefreshProgress()
 }
 
@@ -766,7 +766,7 @@ func (study *Study) MarkProfileFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to profile." + err)
+	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to profile." + err)
 	study.UpdateEndTime()
 	study.RefreshProgress()
 }
@@ -947,7 +947,7 @@ func (study *Study) MarkReportFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("Failed to report." + err)
+	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to report." + err)
 	study.RefreshProgress()
 	now := metav1.Now()
 	study.Status.EndTime = &now
@@ -962,7 +962,7 @@ func (study *Study) MarkAbortFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to abort." + err)
+	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to abort." + err)
 	study.RefreshProgress()
 	now := metav1.Now()
 	study.Status.EndTime = &now
@@ -977,7 +977,7 @@ func (study *Study) MarkPauseFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to pause." + err)
+	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to pause." + err)
 	study.RefreshProgress()
 	now := metav1.Now()
 	study.Status.EndTime = &now
@@ -992,7 +992,7 @@ func (study *Study) MarkPartitionedFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to partition." + err)
+	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to partition." + err)
 	now := metav1.Now()
 	study.Status.EndTime = &now
 	study.RefreshProgress()

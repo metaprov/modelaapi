@@ -110,7 +110,7 @@ func (predictor Predictor) IsReady() bool {
 
 func (predictor Predictor) IsFailed() bool {
 	return predictor.GetCond(PredictorReady).Status == v1.ConditionFalse &&
-		predictor.GetCond(PredictorReady).Reason == "Failed"
+		predictor.GetCond(PredictorReady).Reason == "FailedConditionReason"
 }
 
 func ParsePredictorYaml(content []byte) (*Predictor, error) {
@@ -184,7 +184,7 @@ func (predictor *Predictor) MarkFailed(err string) {
 	predictor.CreateOrUpdateCond(PredictorCondition{
 		Type:    PredictorReady,
 		Status:  v1.ConditionFalse,
-		Reason:  "Failed",
+		Reason:  "FailedConditionReason",
 		Message: err,
 	})
 	predictor.Status.FailureMessage = util.StrPtr(err)
@@ -289,7 +289,7 @@ func (predictor *Predictor) UpdateK8sServiceStatus(model training.Model, service
 // Return the live model name.
 func (predictor *Predictor) GetLiveModelName() string {
 	for _, v := range predictor.Spec.Models {
-		if *v.Role == catalog.ModelRoleLive {
+		if *v.Role == catalog.LiveModelRole {
 			return v.ModelRef.Name
 		}
 	}
@@ -299,7 +299,7 @@ func (predictor *Predictor) GetLiveModelName() string {
 // Get the first live model or none if none exist
 func (predictor Predictor) GetLiveModel() *catalog.ModelDeploymentSpec {
 	for _, v := range predictor.Spec.Models {
-		if *v.Role == catalog.ModelRoleLive {
+		if *v.Role == catalog.LiveModelRole {
 			return &v
 		}
 	}
@@ -309,7 +309,7 @@ func (predictor Predictor) GetLiveModel() *catalog.ModelDeploymentSpec {
 func (predictor Predictor) GetShadowModels() []catalog.ModelDeploymentSpec {
 	result := make([]catalog.ModelDeploymentSpec, 0)
 	for _, v := range predictor.Spec.Models {
-		if *v.Role == catalog.ModelRoleLive {
+		if *v.Role == catalog.LiveModelRole {
 			continue
 		}
 		result = append(result, v)

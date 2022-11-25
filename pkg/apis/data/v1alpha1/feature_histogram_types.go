@@ -25,15 +25,15 @@ const (
 type FeatureHistogramPhase string
 
 const (
-	FeatureHistogramPhasePending     FeatureHistogramPhase = "Pending"        // when generating
-	FeatureHistogramPhaseLive        FeatureHistogramPhase = "Live"           // when the feature histogram is live. I.e. get updated by predictions
-	FeatureHistogramPhaseExpired     FeatureHistogramPhase = "Expired"        // when the feature histogram is expired. I.e. get updated by predictions
-	FeatureHistogramPhaseGenTest     FeatureHistogramPhase = "GeneratingTest" // when the unit tests are generated
-	FeatureHistogramPhaseReadyToTest FeatureHistogramPhase = "ReadyToTest"    // when the unit tests were generated or the histogram has tests
-	FeatureHistogramPhaseUnitTesting FeatureHistogramPhase = "UnitTesting"    // when running the unit tests
-	FeatureHistogramPhaseDrift       FeatureHistogramPhase = "Drift"          // when one or more column drifted
-	FeatureHistogramPhaseReady       FeatureHistogramPhase = "Ready"          // when ready and not drift.
-	FeatureHistogramPhaseFailed      FeatureHistogramPhase = "Failed"         // failed in the process.
+	FeatureHistogramPhasePending     FeatureHistogramPhase = "Pending"               // when generating
+	FeatureHistogramPhaseLive        FeatureHistogramPhase = "Live"                  // when the feature histogram is live. I.e. get updated by predictions
+	FeatureHistogramPhaseExpired     FeatureHistogramPhase = "Expired"               // when the feature histogram is expired. I.e. get updated by predictions
+	FeatureHistogramPhaseGenTest     FeatureHistogramPhase = "GeneratingTest"        // when the unit tests are generated
+	FeatureHistogramPhaseReadyToTest FeatureHistogramPhase = "ReadyToTest"           // when the unit tests were generated or the histogram has tests
+	FeatureHistogramPhaseUnitTesting FeatureHistogramPhase = "UnitTesting"           // when running the unit tests
+	FeatureHistogramPhaseDrift       FeatureHistogramPhase = "Drift"                 // when one or more column drifted
+	FeatureHistogramPhaseReady       FeatureHistogramPhase = "Ready"                 // when ready and not drift.
+	FeatureHistogramPhaseFailed      FeatureHistogramPhase = "FailedConditionReason" // failed in the process.
 )
 
 // FeatureHistogramConditionType is the condition of the feature
@@ -60,9 +60,10 @@ type FeatureHistogramCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// FeatureHistogram represent a single feature in the feature store.
 // +kubebuilder:object:root=true
+// +kubebuilder:resource:path=featurehistograms,shortName=fh,singular=featurehistogram,categories={data,modela}
 // +kubebuilder:subresource:status
+
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
@@ -71,7 +72,8 @@ type FeatureHistogramCondition struct {
 // +kubebuilder:printcolumn:name="Start",type="date",JSONPath=".spec.start"
 // +kubebuilder:printcolumn:name="End",type="date",JSONPath=".spec.end"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featurehistograms,shortName=fh,singular=featurehistogram,categories={data,modela}
+
+// FeatureHistogram represent a single feature in the feature store.
 type FeatureHistogram struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`

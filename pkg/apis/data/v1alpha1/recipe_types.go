@@ -31,17 +31,19 @@ type RecipeCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// Recipe represents a single batch of data
 // +kubebuilder:object:root=true
+// +kubebuilder:resource:path=recipes,shortName=rc,singular=recipe,categories={data,modela,all}
 // +kubebuilder:storageversion
+// +kubebuilder:subresource:status
+
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:subresource:status
-// +kubebuilder:resource:path=recipes,shortName=rc,singular=recipe,categories={data,modela,all}
+
+// Recipe represents a single batch of data
 type Recipe struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`

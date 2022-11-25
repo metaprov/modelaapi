@@ -712,9 +712,9 @@ message DataOutputSpec {
   optional string format = 3;
 
   // The update strategy for the dataset in the case that the output location already exists (i.e a database table)
-  // Upsert will insert new records and update existing ones;
-  // Insert will insert new records and not update existing ones;
-  // Update will not insert new records and only update existing ones
+  // UpsertUpdateStrategy will insert new records and update existing ones;
+  // InsertUpdateStrategy will insert new records and not update existing ones;
+  // UpdateUpdateStrategy will not insert new records and only update existing ones
   // +kubebuilder:default:="upsert"
   // +kubebuilder:validation:Optional
   optional string action = 4;
@@ -741,15 +741,6 @@ message DataOutputSpec {
   optional bool detectOutliers = 8;
 }
 
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description",description=""
-// +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule",description=""
-// +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun.at",description=""
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=datapipelines,singular=datapipeline,shortName="dpl",categories={data,modela}
 // DataPipeline represents the ETL flow from the data sources to a processed dataset, ready for training.
 message DataPipeline {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -786,17 +777,6 @@ message DataPipelineList {
   repeated DataPipeline items = 2;
 }
 
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
-// +kubebuilder:printcolumn:name="Progress",type="string",JSONPath=".status.progress",priority=1
-// +kubebuilder:printcolumn:name="Pipeline",type="string",JSONPath=".spec.datapipelineName"
-// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
-// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
-// +kubebuilder:printcolumn:name="Failure",type="string",JSONPath=".metadata.failureMessage"
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,shortName="dpr",categories={data,modela,all}
 // DataPipelineRun represent one execution of the data pipeline
 message DataPipelineRun {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -910,11 +890,11 @@ message DataPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 6;
 
-  // Update in case of terminal failure
+  // UpdateUpdateStrategy in case of terminal failure
   // Borrowed from cluster api controller
   optional string failureReason = 7;
 
-  // Update in case of terminal failure message
+  // UpdateUpdateStrategy in case of terminal failure message
   optional string failureMessage = 8;
 
   // Pipeline progress Progress in percent, the progress takes into account the different stages of the pipeline
@@ -1023,22 +1003,6 @@ message DataPipelineStatus {
 
 // DataProduct represents a single DataProduct namespace, which contains all non-infrastructure resources. Additionally,
 // it specifies default parameters for resources to be created under the namespace, such as workload class and storage location
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
-// +kubebuilder:printcolumn:name="Public",type="boolean",JSONPath=".spec.public"
-// +kubebuilder:printcolumn:name="Errors",type="integer",JSONPath=".status.totalErrorAlerts"
-// +kubebuilder:printcolumn:name="Location Sources",type="integer",JSONPath=".status.totalDatasources",priority=1
-// +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.totalDatasets",priority=1
-// +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.totalStudies",priority=1
-// +kubebuilder:printcolumn:name="Models",type="integer",JSONPath=".status.totalModels",priority=1
-// +kubebuilder:printcolumn:name="Predictors",type="integer",JSONPath=".status.totalPredictors",priority=1
-// +kubebuilder:printcolumn:name="Apps",type="integer",JSONPath=".status.totalApps",priority=1
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=dataproducts,shortName=prod,singular=dataproduct,shortName="prod",categories={data,modela,all}
 message DataProduct {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1274,15 +1238,6 @@ message DataProductStatus {
 }
 
 // DataProductVersion represents a single version of a DataProduct, which should increment versions in response to changes in data
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Product",type="string",JSONPath=".spec.productRef.name",description=""
-// +kubebuilder:printcolumn:name="Base",type="boolean",JSONPath=".spec.baseline",description=""
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=dataproductversions,shortName=dpv,singular=dataproductversion,categories={data,modela,all}
 message DataProductVersion {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1372,17 +1327,6 @@ message DataProductVersionStatus {
 }
 
 // DataSource defines the specification for the file format and column-level schema of data to be used within Modela
-// +kubebuilder:object:root=true
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Format",type="string",JSONPath=".spec.flatfile.fileType"
-// +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.datasetType"
-// +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:subresource:status
-// +kubebuilder:resource:path=datasources,singular=datasource,shortName="dsrc",categories={data,modela,all}
 message DataSource {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1527,19 +1471,6 @@ message DataSourceStatus {
 }
 
 // Dataset represents a chunk of data that has been analyzed and stored inside a managed bucket
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Location Source",type="string",JSONPath=".spec.datasourceName"
-// +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type"
-// +kubebuilder:printcolumn:name="Rows",type="integer",JSONPath=".status.statistics.rows"
-// +kubebuilder:printcolumn:name="Columns",type="integer",JSONPath=".status.statistics.cols"
-// +kubebuilder:printcolumn:name="Size",type="integer",JSONPath=".status.statistics.fileSize"
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=datasets,shortName=dset,singular=dataset,categories={data,modela,all}
 message Dataset {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1931,15 +1862,6 @@ message DriftThreshold {
 }
 
 // Entity represents a entity object
-// +kubebuilder:object:root=true
-// +kubebuilder:storageversion
-// +kubebuilder:subresource:status
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=entities,singular=entity,shortName=et,categories={data,modela}
 message Entity {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -2068,18 +1990,6 @@ message ExcelSheetArea {
 }
 
 // FeatureGroup represent a group of features
-// +kubebuilder:object:root=true
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.entityName"
-// +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule",description=""
-// +kubebuilder:printcolumn:name="Last Ingest",type="date",JSONPath=".status.ingestSchedule.lastRun",description=""
-// +kubebuilder:printcolumn:name="Last Sync",type="date",JSONPath=".status.syncScedule.lastRun",description=""
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
-// +kubebuilder:resource:path=featuregroups,singular=featuregroup,shortName="fg",categories={data,modela}
-// +kubebuilder:subresource:status
 message FeatureGroup {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -2238,17 +2148,6 @@ message FeatureGroupStatus {
 }
 
 // FeatureHistogram represent a single feature in the feature store.
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Live",type="boolean",JSONPath=".spec.live"
-// +kubebuilder:printcolumn:name="Start",type="date",JSONPath=".spec.start"
-// +kubebuilder:printcolumn:name="End",type="date",JSONPath=".spec.end"
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featurehistograms,shortName=fh,singular=featurehistogram,categories={data,modela}
 message FeatureHistogram {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -2740,16 +2639,6 @@ message ParquetFileSpec {
 }
 
 // Recipe represents a single batch of data
-// +kubebuilder:object:root=true
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
-// +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun.at",description=""
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:subresource:status
-// +kubebuilder:resource:path=recipes,shortName=rc,singular=recipe,categories={data,modela,all}
 message Recipe {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -2833,16 +2722,6 @@ message RecipePartSpec {
 
 // RecipeRun represent one execution of the recipe.
 // Execution is performed by creating a Kubernetes job.
-// +kubebuilder:object:root=true
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Recipe",type="string",JSONPath=".spec.recipeName"
-// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
-// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
-// +kubebuilder:subresource:status
-// +kubebuilder:resource:path=reciperuns,shortName=rcr,singular=reciperun,categories={data,modela,all}
 message RecipeRun {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -2935,12 +2814,12 @@ message RecipeRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 4;
 
-  // Update in case of terminal failure
+  // UpdateUpdateStrategy in case of terminal failure
   // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
   optional string failureReason = 5;
 
-  // Update in case of terminal failure message
+  // UpdateUpdateStrategy in case of terminal failure message
   // +kubebuilder:validation:Optional
   optional string failureMessage = 6;
 

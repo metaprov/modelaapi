@@ -9,14 +9,9 @@ metadata:
 spec:
   group: data.modela.ai
   names:
-    categories:
-    - data
-    - modela
     kind: FeatureGroup
     listKind: FeatureGroupList
     plural: featuregroups
-    shortNames:
-    - fg
     singular: featuregroup
   scope: Namespaced
   versions:
@@ -1493,5 +1488,4 @@ spec:
         type: object
     served: true
     storage: true
-    subresources:
-      status: {}
+    subresources: {}

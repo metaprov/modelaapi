@@ -16,13 +16,16 @@ const (
 	LightGbm    FrameworkName = "lightgbm"
 )
 
-// MLFramework define the metadata about a machine learning framework
+// +genclient
 // +kubebuilder:object:root=true
+// +kubebuilder:resource:path=mlframeworks,singular=mlframework,categories={catalog,modela,all}
 // +kubebuilder:storageversion
+
 // +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
-// +kubebuilder:resource:path=mlframeworks,singular=mlframework,categories={catalog,modela,all}
+
+// MLFramework define the metadata about a machine learning framework
 type MLFramework struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

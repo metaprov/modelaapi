@@ -9,9 +9,6 @@ metadata:
 spec:
   group: infra.modela.ai
   names:
-    categories:
-    - infra
-    - modela
     kind: Attachment
     listKind: AttachmentList
     plural: attachments
@@ -40,6 +37,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: Attachment represent an file attached to a resource.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -177,11 +175,11 @@ spec:
                   type: object
                 type: array
               failureMessage:
-                description: Update in case of terminal failure message
+                description: UpdateUpdateStrategy in case of terminal failure message
                 type: string
               failureReason:
-                description: Update in case of terminal failure Borrowed from cluster
-                  api controller
+                description: UpdateUpdateStrategy in case of terminal failure Borrowed
+                  from cluster api controller
                 type: string
               lastUpdated:
                 description: Last time the object was updated
@@ -196,5 +194,4 @@ spec:
         type: object
     served: true
     storage: true
-    subresources:
-      status: {}
+    subresources: {}

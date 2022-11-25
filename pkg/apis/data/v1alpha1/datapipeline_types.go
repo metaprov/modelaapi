@@ -35,14 +35,16 @@ type DataPipelineCondition struct {
 }
 
 // +kubebuilder:object:root=true
+// +kubebuilder:resource:path=datapipelines,singular=datapipeline,shortName="dpl",categories={data,modela}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
+
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description",description=""
 // +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule",description=""
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=datapipelines,singular=datapipeline,shortName="dpl",categories={data,modela}
+
 // DataPipeline represents the ETL flow from the data sources to a processed dataset, ready for training.
 type DataPipeline struct {
 	metav1.TypeMeta   `json:",inline"`
@@ -157,9 +159,9 @@ type DataOutputSpec struct {
 	// +kubebuilder:validation:Optional
 	Format *FlatFileType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
 	// The update strategy for the dataset in the case that the output location already exists (i.e a database table)
-	// Upsert will insert new records and update existing ones;
-	// Insert will insert new records and not update existing ones;
-	// Update will not insert new records and only update existing ones
+	// UpsertUpdateStrategy will insert new records and update existing ones;
+	// InsertUpdateStrategy will insert new records and not update existing ones;
+	// UpdateUpdateStrategy will not insert new records and only update existing ones
 	// +kubebuilder:default:="upsert"
 	// +kubebuilder:validation:Optional
 	Action *catalog.UpdateStrategy `json:"action,omitempty" protobuf:"bytes,4,opt,name=action"`

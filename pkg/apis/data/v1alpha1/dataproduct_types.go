@@ -35,11 +35,11 @@ type DataProductCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
-// DataProduct represents a single DataProduct namespace, which contains all non-infrastructure resources. Additionally,
-// it specifies default parameters for resources to be created under the namespace, such as workload class and storage location
 // +kubebuilder:object:root=true
+// +kubebuilder:resource:path=dataproducts,shortName=prod,singular=dataproduct,shortName="prod",categories={data,modela,all}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
+
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
@@ -52,7 +52,9 @@ type DataProductCondition struct {
 // +kubebuilder:printcolumn:name="Predictors",type="integer",JSONPath=".status.totalPredictors",priority=1
 // +kubebuilder:printcolumn:name="Apps",type="integer",JSONPath=".status.totalApps",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=dataproducts,shortName=prod,singular=dataproduct,shortName="prod",categories={data,modela,all}
+
+// DataProduct represents a single DataProduct namespace, which contains all non-infrastructure resources. Additionally,
+// it specifies default parameters for resources to be created under the namespace, such as workload class and storage location
 type DataProduct struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`

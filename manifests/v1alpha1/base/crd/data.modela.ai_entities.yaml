@@ -9,14 +9,9 @@ metadata:
 spec:
   group: data.modela.ai
   names:
-    categories:
-    - data
-    - modela
     kind: Entity
     listKind: EntityList
     plural: entities
-    shortNames:
-    - et
     singular: entity
   scope: Namespaced
   versions:
@@ -166,5 +161,4 @@ spec:
         type: object
     served: true
     storage: true
-    subresources:
-      status: {}
+    subresources: {}

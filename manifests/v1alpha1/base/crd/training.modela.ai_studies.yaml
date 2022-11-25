@@ -9,14 +9,9 @@ metadata:
 spec:
   group: training.modela.ai
   names:
-    categories:
-    - training
-    - modela
     kind: Study
     listKind: StudyList
     plural: studies
-    shortNames:
-    - sd
     singular: study
   scope: Namespaced
   versions:
@@ -264,7 +259,7 @@ spec:
                           Threshold to compute the ``Outside Tolerance`` metric, defined
                           as the fraction of forecasted values whose relative error
                           is strictly greater than ``relative_error_tolerance``. If
-                          `None`, the metric is not computed.'
+                          `NoneSeasonalityMode`, the metric is not computed.'
                         type: number
                       reporting:
                         description: 'From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
@@ -3766,5 +3761,4 @@ spec:
         type: object
     served: true
     storage: true
-    subresources:
-      status: {}
+    subresources: {}

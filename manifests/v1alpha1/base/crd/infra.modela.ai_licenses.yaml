@@ -9,9 +9,6 @@ metadata:
 spec:
   group: infra.modela.ai
   names:
-    categories:
-    - infra
-    - modela
     kind: License
     listKind: LicenseList
     plural: licenses
@@ -215,5 +212,4 @@ spec:
         type: object
     served: true
     storage: true
-    subresources:
-      status: {}
+    subresources: {}

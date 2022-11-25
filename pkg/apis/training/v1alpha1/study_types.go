@@ -63,7 +63,7 @@ const (
 	StudyPhaseExplaining         StudyPhase = "Explaining"
 	StudyPhaseExplained          StudyPhase = "Explained"
 	StudyPhaseCompleted          StudyPhase = "Completed"
-	StudyPhaseFailed             StudyPhase = "Failed"
+	StudyPhaseFailed             StudyPhase = "FailedConditionReason"
 	StudyPhaseAborted            StudyPhase = "Aborted"
 	StudyPhasePaused             StudyPhase = "Paused"
 )
@@ -127,10 +127,11 @@ type StudyCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
-// Study represents an automatic search for the best machine learning model for a given dataset
 // +kubebuilder:subresource:status
+// +kubebuilder:resource:path=studies,singular=study,shortName=sd,categories={training,modela}
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
+
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress",priority=1
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
@@ -146,7 +147,8 @@ type StudyCondition struct {
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.lastFailure"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=studies,singular=study,shortName=sd,categories={training,modela}
+
+// Study represents an automatic search for the best machine learning model for a given dataset
 type Study struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

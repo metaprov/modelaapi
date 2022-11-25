@@ -17,7 +17,7 @@ const (
 	PredictionPhaseCreatingDataset   PredictionPhase = "CreatingDataset"
 	PredictionPhaseWaitingForDataset PredictionPhase = "WaitingForDataset"
 	PredictionPhaseRunning           PredictionPhase = "Running"
-	PredictionPhaseFailed            PredictionPhase = "Failed"
+	PredictionPhaseFailed            PredictionPhase = "FailedConditionReason"
 	PredictionPhaseAborted           PredictionPhase = "Aborted"
 	PredictionPhaseCompleted         PredictionPhase = "Completed"
 	PredictionPhaseUnitTesting       PredictionPhase = "UnitTesting"
@@ -49,7 +49,11 @@ type PredictionCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// Prediction represents a single batch prediction on a dataset
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:storageversion
+// +kubebuilder:resource:path=predictions,shortName=pred,singular=prediction,categories={inference,modela}
+
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
@@ -61,10 +65,8 @@ type PredictionCondition struct {
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Rows",type="string",JSONPath=".status.rows"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:storageversion
-// +kubebuilder:resource:path=predictions,shortName=pred,singular=prediction,categories={inference,modela}
+
+// Prediction represents a single batch prediction on a dataset
 type Prediction struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

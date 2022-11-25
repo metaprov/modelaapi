@@ -9,9 +9,6 @@ metadata:
 spec:
   group: infra.modela.ai
   names:
-    categories:
-    - infra
-    - modela
     kind: Alert
     listKind: AlertList
     plural: alerts
@@ -245,5 +242,4 @@ spec:
         type: object
     served: true
     storage: true
-    subresources:
-      status: {}
+    subresources: {}

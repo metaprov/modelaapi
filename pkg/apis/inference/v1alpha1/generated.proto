@@ -102,18 +102,6 @@ message CustomAppSpec {
 }
 
 // DataApp represents a live dashboard for a single model
-// +kubebuilder:object:root=true
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Path",type="string",JSONPath=".spec.path"
-// +kubebuilder:printcolumn:name="Model",type="string",JSONPath=".spec.modelName"
-// +kubebuilder:printcolumn:name="Replicas",type="string",JSONPath=".spec.replicas"
-// +kubebuilder:printcolumn:name="Port",type="string",JSONPath=".spec.port"
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=dataapps,singular=dataapp,categories={data,modela}
-// +kubebuilder:subresource:status
 message DataApp {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -575,21 +563,6 @@ message PartitionPredictionLocationsSpec {
 }
 
 // Prediction represents a single batch prediction on a dataset
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
-// +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
-// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.datasetName"
-// +kubebuilder:printcolumn:name="Labeled",type="string",JSONPath=".spec.labeled"
-// +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.output.bucketName",priority=1
-// +kubebuilder:printcolumn:name="Key",type="string",JSONPath=".spec.output.path",priority=1
-// +kubebuilder:printcolumn:name="Score",type="string",JSONPath=".status.score"
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
-// +kubebuilder:printcolumn:name="Rows",type="string",JSONPath=".status.rows"
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:storageversion
-// +kubebuilder:resource:path=predictions,shortName=pred,singular=prediction,categories={inference,modela}
 message Prediction {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -850,18 +823,6 @@ message PredictionStatus {
 }
 
 // Predictor specifies the deployment of a service to serve predictions for a Model
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
-// +kubebuilder:printcolumn:name="Serving Site",type="string",JSONPath=".spec.servingsiteRef.name",description=""
-// +kubebuilder:printcolumn:name="Port",type="integer",JSONPath=".spec.access.port",description=""
-// +kubebuilder:printcolumn:name="Access",type="string",JSONPath=".spec.access.accessType",description=""
-// +kubebuilder:printcolumn:name="Replicas",type="integer",JSONPath=".spec.replicas",description=""
-// +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=predictors,singular=predictor,shortName=pdr,categories={inference,modela}
 message Predictor {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 

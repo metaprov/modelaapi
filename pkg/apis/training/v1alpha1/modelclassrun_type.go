@@ -15,7 +15,7 @@ const (
 	ModelClassPhasePromoting               ModelClassRunPhase = "Promoting"
 	ModelClassRunPhasePending              ModelClassRunPhase = "Pending"
 	ModelClassRunPhaseTraining             ModelClassRunPhase = "Training"
-	ModelClassRunPhaseFailed               ModelClassRunPhase = "Failed"
+	ModelClassRunPhaseFailed               ModelClassRunPhase = "FailedConditionReason"
 	ModelClassRunPhaseTrained              ModelClassRunPhase = "Trained"
 	ModelClassRunPhaseAborted              ModelClassRunPhase = "Aborted"
 	ModelClassRunPhaseCompleted            ModelClassRunPhase = "Completed"
@@ -53,8 +53,10 @@ type ModelClassRunCondition struct {
 }
 
 // +kubebuilder:object:root=true
+// +kubebuilder:resource:path=modelclassruns,shortName=mcr,singular=modelclassrun,categories={train,modela,all}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
+
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress",priority=1
 // +kubebuilder:printcolumn:name="MC",type="string",JSONPath=".status.modelClassName"
@@ -62,7 +64,7 @@ type ModelClassRunCondition struct {
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.failureMessage"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=modelclassruns,shortName=mcr,singular=modelclassrun,categories={train,modela,all}
+
 // ModelClassRun represent a execution of a model class training
 type ModelClassRun struct {
 	metav1.TypeMeta   `json:",inline"`
@@ -151,11 +153,11 @@ type ModelClassRunStatus struct {
 	// The folder contains all the pipeline artifacts - metadata, logs
 	// +kubebuilder:validation:Optional
 	Folder string `json:"folder,omitempty" protobuf:"bytes,8,opt,name=evalMetrics"`
-	// Update in case of terminal failure
+	// UpdateUpdateStrategy in case of terminal failure
 	// Borrowed from cluster api controller
 	//+kubebuilder:validation:Optional
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,9,opt,name=failureReason"`
-	// Update in case of terminal failure message
+	// UpdateUpdateStrategy in case of terminal failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,10,opt,name=failureMessage"`
 	// Pipeline progress Progress in percent, the progress takes into account the different stages of the pipeline

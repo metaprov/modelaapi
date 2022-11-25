@@ -9,15 +9,9 @@ metadata:
 spec:
   group: data.modela.ai
   names:
-    categories:
-    - data
-    - modela
-    - all
     kind: Dataset
     listKind: DatasetList
     plural: datasets
-    shortNames:
-    - dset
     singular: dataset
   scope: Namespaced
   versions:
@@ -849,7 +843,7 @@ spec:
                 enum:
                 - tabular
                 - image
-                - text
+                - nlp
                 - video
                 - audio
                 type: string
@@ -1780,5 +1774,4 @@ spec:
         type: object
     served: true
     storage: true
-    subresources:
-      status: {}
+    subresources: {}

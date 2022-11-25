@@ -17,7 +17,7 @@ const (
 	DataPipelineRunPhasePending   DataPipelineRunPhase = "Pending"
 	DataPipelineRunPhaseRunning   DataPipelineRunPhase = "Running"
 	DataPipelineRunPhaseCompleted DataPipelineRunPhase = "Completed"
-	DataPipelineRunPhaseFailed    DataPipelineRunPhase = "Failed"
+	DataPipelineRunPhaseFailed    DataPipelineRunPhase = "FailedConditionReason"
 	DataPipelineRunPhaseAborted   DataPipelineRunPhase = "Aborted"
 	DataPipelineRunPhasePaused    DataPipelineRunPhase = "Paused"
 )
@@ -46,8 +46,10 @@ type DataPipelineRunCondition struct {
 }
 
 // +kubebuilder:object:root=true
+// +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,shortName="dpr",categories={data,modela,all}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
+
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Progress",type="string",JSONPath=".status.progress",priority=1
 // +kubebuilder:printcolumn:name="Pipeline",type="string",JSONPath=".spec.datapipelineName"
@@ -55,7 +57,7 @@ type DataPipelineRunCondition struct {
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Failure",type="string",JSONPath=".metadata.failureMessage"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,shortName="dpr",categories={data,modela,all}
+
 // DataPipelineRun represent one execution of the data pipeline
 type DataPipelineRun struct {
 	metav1.TypeMeta   `json:",inline"`
@@ -136,11 +138,11 @@ type DataPipelineRunStatus struct {
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,6,opt,name=observedGeneration"`
 
-	// Update in case of terminal failure
+	// UpdateUpdateStrategy in case of terminal failure
 	// Borrowed from cluster api controller
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,7,opt,name=failureReason"`
 
-	// Update in case of terminal failure message
+	// UpdateUpdateStrategy in case of terminal failure message
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,8,opt,name=failureMessage"`
 
 	// Pipeline progress Progress in percent, the progress takes into account the different stages of the pipeline

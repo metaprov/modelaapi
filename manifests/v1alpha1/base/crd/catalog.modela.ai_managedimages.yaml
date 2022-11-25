@@ -9,10 +9,6 @@ metadata:
 spec:
   group: catalog.modela.ai
   names:
-    categories:
-    - catalog
-    - modela
-    - all
     kind: ManagedImage
     listKind: ManagedImageList
     plural: managedimages
@@ -32,7 +28,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: MLFramework define the metadata about a machine learning framework
+        description: Managed Images define the metadata about a docker image used
+          during training or serving
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

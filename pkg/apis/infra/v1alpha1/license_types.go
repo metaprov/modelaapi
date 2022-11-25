@@ -42,10 +42,11 @@ type LicenseCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// License represents the license key and limitations of a cluster-wide license obtained from Modela.ai
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:resource:path=licenses,singular=license,categories={infra,modela}
 // +kubebuilder:storageversion
+
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Valid\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description=""
 // +kubebuilder:printcolumn:name="Secret",type="string",JSONPath=".spec.secretRef.name",description=""
@@ -56,7 +57,8 @@ type LicenseCondition struct {
 // +kubebuilder:printcolumn:name="ExpectedValueMax Users",type="string",JSONPath=".spec.maxUsers",description="",priority=1
 // +kubebuilder:printcolumn:name="Expire At",type="date",JSONPath=".spec.expireAt",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=licenses,singular=license,categories={infra,modela}
+
+// License represents the license key and limitations of a cluster-wide license obtained from Modela.ai
 type License struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

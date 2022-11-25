@@ -61,10 +61,10 @@ type CompilerSpec struct {
 type TaskName string
 
 const (
-	BatchPredictTask             TaskName = "batch-predict"
-	BatchPredictMCTask           TaskName = "batch-predict-multi-class"
-	ForecastTask                 TaskName = "forecast"
-	ProfileDatasetTask           TaskName = "profile-dataset"
+	BatchPredictTaskName         TaskName = "batch-predict"
+	BatchPredictMCTaskName       TaskName = "batch-predict-multi-class"
+	ForecastTaskName             TaskName = "forecast"
+	ProfileDatasetTaskName       TaskName = "profile-dataset"
 	SnapshotDatasetTask          TaskName = "snapshot-dataset"
 	ProfileStudyTask             TaskName = "profile-study"
 	ProfileModelTask             TaskName = "profile-model"
@@ -118,9 +118,9 @@ const (
 type ApiKeyName string
 
 const (
-	ApiKeyNameProvider         ApiKeyName = "provider"
-	ApiKeyNameKeyFile          ApiKeyName = "keyfile"
-	ApiKeyNameAccessKey        ApiKeyName = "accessKey"
+	ProviderApiKeyName         ApiKeyName = "provider"
+	KeyFileApiKeyName          ApiKeyName = "keyfile"
+	AccessKeyApiKeyName        ApiKeyName = "accessKey"
 	ApiKeyNameSecretKey        ApiKeyName = "secretKey"
 	ApiKeyNameHost             ApiKeyName = "host"
 	ApiKeyNameToken            ApiKeyName = "token"
@@ -216,45 +216,45 @@ type ProviderName string
 
 const (
 	// Databases
-	AmazonAthena     ProviderName = "athena"
-	AmazonRedshift   ProviderName = "redshift"
-	ApacheDrill      ProviderName = "drill"
-	ApacheDruid      ProviderName = "druid"
-	ApacheHive       ProviderName = "hive"
-	ApacheImpala     ProviderName = "impala"
-	ApacheKylin      ProviderName = "kylin"
-	ApachePinot      ProviderName = "pinot"
-	ApacheSpark      ProviderName = "spark"
-	AzureSqlDatabase ProviderName = "azuresqldatabase"
-	GcpBigQuery      ProviderName = "bigquery"
-	ApacheCassandra  ProviderName = "cassandra"
-	CockrouchDB      ProviderName = "cockrouchdb"
-	Clickhouse       ProviderName = "clickhouse"
-	Couchbase        ProviderName = "couchbase"
-	Dermio           ProviderName = "dermio"
-	DB2              ProviderName = "db2"
-	ElasticSearch    ProviderName = "elasticsearch"
-	Exasol           ProviderName = "exasol"
-	Kafka            ProviderName = "kafka"
-	GoogleSheets     ProviderName = "googlesheets"
-	GcpSpanner       ProviderName = "spanner"
-	Greenplum        ProviderName = "greenplum"
-	MySql            ProviderName = "mysql"
-	MongoDb          ProviderName = "mongodb"
-	Oracle           ProviderName = "oracle"
-	PostgresSQL      ProviderName = "postgres"
-	Presto           ProviderName = "presto"
-	SAPHana          ProviderName = "hana"
-	Snowflake        ProviderName = "snowflake"
-	Singlestore      ProviderName = "singlestore"
-	Sybase           ProviderName = "sybase"
-	MSSqlServer      ProviderName = "mssqlserver"
-	Sqlite           ProviderName = "sqlite"
-	RabbitMQ         ProviderName = "rabbitmq"
-	Teradata         ProviderName = "teradata"
-	Vertica          ProviderName = "vertica"
-	Odbc             ProviderName = "odbc"
-	Informix         ProviderName = "informix"
+	AmazonAthenaProviderName   ProviderName = "athena"
+	AmazonRedshiftProviderName ProviderName = "redshift"
+	ApacheDrillProviderName    ProviderName = "drill"
+	ApacheDruid                ProviderName = "druid"
+	ApacheHive                 ProviderName = "hive"
+	ApacheImpala               ProviderName = "impala"
+	ApacheKylin                ProviderName = "kylin"
+	ApachePinot                ProviderName = "pinot"
+	ApacheSpark                ProviderName = "spark"
+	AzureSqlDatabase           ProviderName = "azuresqldatabase"
+	GcpBigQuery                ProviderName = "bigquery"
+	ApacheCassandra            ProviderName = "cassandra"
+	CockrouchDB                ProviderName = "cockrouchdb"
+	Clickhouse                 ProviderName = "clickhouse"
+	Couchbase                  ProviderName = "couchbase"
+	Dermio                     ProviderName = "dermio"
+	DB2                        ProviderName = "db2"
+	ElasticSearch              ProviderName = "elasticsearch"
+	Exasol                     ProviderName = "exasol"
+	Kafka                      ProviderName = "kafka"
+	GoogleSheets               ProviderName = "googlesheets"
+	GcpSpanner                 ProviderName = "spanner"
+	Greenplum                  ProviderName = "greenplum"
+	MySql                      ProviderName = "mysql"
+	MongoDb                    ProviderName = "mongodb"
+	Oracle                     ProviderName = "oracle"
+	PostgresSQL                ProviderName = "postgres"
+	Presto                     ProviderName = "presto"
+	SAPHana                    ProviderName = "hana"
+	Snowflake                  ProviderName = "snowflake"
+	Singlestore                ProviderName = "singlestore"
+	Sybase                     ProviderName = "sybase"
+	MSSqlServer                ProviderName = "mssqlserver"
+	Sqlite                     ProviderName = "sqlite"
+	RabbitMQ                   ProviderName = "rabbitmq"
+	Teradata                   ProviderName = "teradata"
+	Vertica                    ProviderName = "vertica"
+	Odbc                       ProviderName = "odbc"
+	Informix                   ProviderName = "informix"
 
 	// graph databases
 	Neo4j ProviderName = "neo4j"
@@ -377,9 +377,9 @@ func ParseEventAndAction(evt string, action string) WebHookNameAndAction {
 type LicenseType string
 
 const (
-	Lite       LicenseType = "lite"
-	Pro        LicenseType = "pro"
-	Enterprise LicenseType = "enterprise"
+	LiteLicenseType       LicenseType = "lite"
+	ProLicenseType        LicenseType = "pro"
+	EnterpriseLicenseType LicenseType = "enterprise"
 )
 
 //====================================================================
@@ -648,23 +648,22 @@ func ParseCategoricalEncoding(name string) CategoricalEncoding {
 type Imputation string
 
 const (
-	RemoveRowsWithMissingValues         Imputation = "remove-rows-with-missing-values"
-	ReplaceWithMeanImputation           Imputation = "replace-with-mean"
-	ReplaceWithMedianImputation         Imputation = "replace-with-median"
-	ReplaceWithArbitraryValueImputation Imputation = "replace-with-arbitrary-value"
-	FreqCategoryImputation              Imputation = "freq-category-imputation"
-	AddMissingValueIndicatorImputation  Imputation = "add-missing-value-indicator"
-	KnnImputation                       Imputation = "knn"
-	IterativeImputation                 Imputation = "iterative"
-	MICEImputation                      Imputation = "mice"
-	NoImputation                        Imputation = "no-imputation"
-	AutoImputer                         Imputation = "auto"
-	NoneImputer                         Imputation = "none"
+	RemoveRowsWithMissingValuesImputation Imputation = "remove-rows-with-missing-values"
+	ReplaceWithMeanImputation             Imputation = "replace-with-mean"
+	ReplaceWithMedianImputation           Imputation = "replace-with-median"
+	ReplaceWithArbitraryValueImputation   Imputation = "replace-with-arbitrary-value"
+	FreqCategoryImputation                Imputation = "freq-category-imputation"
+	AddMissingValueIndicatorImputation    Imputation = "add-missing-value-indicator"
+	KnnImputation                         Imputation = "knn"
+	IterativeImputation                   Imputation = "iterative"
+	MICEImputation                        Imputation = "mice"
+	AutoImputation                        Imputation = "auto"
+	NoneImputation                        Imputation = "none"
 )
 
 func ParseImputation(name string) Imputation {
 	names := []Imputation{
-		RemoveRowsWithMissingValues,
+		RemoveRowsWithMissingValuesImputation,
 		ReplaceWithMeanImputation,
 		ReplaceWithMedianImputation,
 		ReplaceWithArbitraryValueImputation,
@@ -673,8 +672,8 @@ func ParseImputation(name string) Imputation {
 		KnnImputation,
 		MICEImputation,
 		IterativeImputation,
-		NoImputation,
-		AutoImputer,
+		NoneImputation,
+		AutoImputation,
 	}
 
 	for _, v := range names {
@@ -682,7 +681,7 @@ func ParseImputation(name string) Imputation {
 			return v
 		}
 	}
-	return AutoImputer
+	return AutoImputation
 }
 
 //==============================================================================
@@ -692,14 +691,14 @@ func ParseImputation(name string) Imputation {
 type Scaling string
 
 const (
-	StandardScaling Scaling = "standard-scaling"
-	MaxAbsScaling   Scaling = "max-abs-scaling"
-	MinMaxScaling   Scaling = "min-max-scaling"
-	Normalization   Scaling = "normalization-scaling"
-	RobustScaling   Scaling = "robust-scaling"
-	ScaleToUnitNorm Scaling = "scale-to-unit-norm"
-	NoneScaling     Scaling = "none"
-	AutoScaling     Scaling = "auto"
+	StandardScaling        Scaling = "standard-scaling"
+	MaxAbsScaling          Scaling = "max-abs-scaling"
+	MinMaxScaling          Scaling = "min-max-scaling"
+	Normalization          Scaling = "normalization-scaling"
+	RobustScaling          Scaling = "robust-scaling"
+	ScaleToUnitNormScaling Scaling = "scale-to-unit-norm"
+	NoneScaling            Scaling = "none"
+	AutoScaling            Scaling = "auto"
 )
 
 func ParseScaler(name string) Scaling {
@@ -709,7 +708,7 @@ func ParseScaler(name string) Scaling {
 		MinMaxScaling,
 		Normalization,
 		RobustScaling,
-		ScaleToUnitNorm,
+		ScaleToUnitNormScaling,
 		NoneScaling,
 		AutoScaling,
 	}
@@ -747,14 +746,14 @@ type VideoFeaturizer string
 type VariableTransformation string
 
 const (
-	LogTransformation        VariableTransformation = "log-transformation"
-	ReciprocalTransformation VariableTransformation = "reciprocal-transformation"
-	SqrtTransformation       VariableTransformation = "sqrt-transformation"
-	PowerTransformation      VariableTransformation = "power-transformation"
-	BoxCoxTransformation     VariableTransformation = "box-cox-transformation"
-	YeoJohnsonTransformation VariableTransformation = "yj-transformation"
-	NoneTransform            VariableTransformation = "none"
-	AutoTransform            VariableTransformation = "auto"
+	LogVariableTransformation VariableTransformation = "log-transformation"
+	ReciprocalTransformation  VariableTransformation = "reciprocal-transformation"
+	SqrtTransformation        VariableTransformation = "sqrt-transformation"
+	PowerTransformation       VariableTransformation = "power-transformation"
+	BoxCoxTransformation      VariableTransformation = "box-cox-transformation"
+	YeoJohnsonTransformation  VariableTransformation = "yj-transformation"
+	NoneTransform             VariableTransformation = "none"
+	AutoTransform             VariableTransformation = "auto"
 )
 
 //==============================================================================
@@ -785,8 +784,8 @@ const (
 	WinsorizerOutlierHandling OutlierHandling = "winsorizer-outliers"
 	CapOutlierHandling        OutlierHandling = "cap-outliers"
 	ZeroCodeOutlierHandling   OutlierHandling = "zero-code-outliers"
-	NoneOutlier               OutlierHandling = "none"
-	AutoOutlier               OutlierHandling = "auto"
+	NoneOutlierHandling       OutlierHandling = "none"
+	AutoOutlierHandling       OutlierHandling = "auto"
 )
 
 //==============================================================================
@@ -796,9 +795,9 @@ const (
 type DatetimeTransformation string
 
 const (
-	ExtractDateTimeInformation DatetimeTransformation = "extract-datetime-information"
-	NoneDatetime               DatetimeTransformation = "none"
-	AutoDatetime               DatetimeTransformation = "auto"
+	ExtractDatetimeTransformation DatetimeTransformation = "extract-datetime-information"
+	NoneDatetimeTransformation    DatetimeTransformation = "none"
+	AutoDatetimeTransformation    DatetimeTransformation = "auto"
 )
 
 //==============================================================================
@@ -808,16 +807,16 @@ const (
 type ImbalanceHandling string
 
 const (
-	ADASYN            ImbalanceHandling = "adasyn"
-	BorderlineSMOTE   ImbalanceHandling = "baseline-smote"
-	KMeansSMOTE       ImbalanceHandling = "kmean-smote"
-	RandomOverSampler ImbalanceHandling = "random-over-sampler"
-	SMOTE             ImbalanceHandling = "smote"
-	SMOTENC           ImbalanceHandling = "smotenc"
-	SVMSMOTE          ImbalanceHandling = "svmsmote"
-	ClassWeights      ImbalanceHandling = "class-weights"
-	ImbalanceNone     ImbalanceHandling = "none"
-	ImbalanceAuto     ImbalanceHandling = "auto"
+	ADASYNImbalanceHandling            ImbalanceHandling = "adasyn"
+	BorderlineSMOTEImbalanceHandling   ImbalanceHandling = "baseline-smote"
+	KMeansSMOTEImbalanceHandling       ImbalanceHandling = "kmean-smote"
+	RandomOverSamplerImbalanceHandling ImbalanceHandling = "random-over-sampler"
+	SMOTEImbalanceHandling             ImbalanceHandling = "smote"
+	SMOTENCImbalanceHandling           ImbalanceHandling = "smotenc"
+	SVMSMOTEImbalanceHandling          ImbalanceHandling = "svmsmote"
+	ClassWeightsImbalanceHandling      ImbalanceHandling = "class-weights"
+	NoneImbalanceHandling              ImbalanceHandling = "none"
+	AutoImbalanceHandling              ImbalanceHandling = "auto"
 )
 
 //==============================================================================
@@ -827,31 +826,31 @@ const (
 type DimensionReduction string
 
 const (
-	PCA                    DimensionReduction = "pca"
-	PolynomialFeatures     DimensionReduction = "polynomial-features"
-	RBFSampler             DimensionReduction = "rbf-sampler"
-	FastIca                DimensionReduction = "fast-ica"
-	Nystroem               DimensionReduction = "nystroem"
-	NoneFeatureEngineering DimensionReduction = "none"
-	AutoFeatureEngineering DimensionReduction = "auto"
+	PCADimensionReduction                DimensionReduction = "pca"
+	PolynomialFeaturesDimensionReduction DimensionReduction = "polynomial-features"
+	RBFSamplerDimensionReduction         DimensionReduction = "rbf-sampler"
+	FastIcaDimensionReduction            DimensionReduction = "fast-ica"
+	NystroemDimensionReduction           DimensionReduction = "nystroem"
+	NoneDimensionReduction               DimensionReduction = "none"
+	AutoDimensionReduction               DimensionReduction = "auto"
 )
 
 // +kubebuilder:validation:Enum="tfidf";"count-vec";"hasing-vec";"none";"auto"
 type TextEncoding string
 
 const (
-	TfIdf             TextEncoding = "tfidf"
-	CountVectorizer   TextEncoding = "count-vec"
-	HashingVectorizer TextEncoding = "hashing-vec"
-	NoneTextTransform TextEncoding = "none"
-	AutoTextTransform TextEncoding = "auto"
+	TfIdfTextEncding              TextEncoding = "tfidf"
+	CountVectorizerTextEncoding   TextEncoding = "count-vec"
+	HashingVectorizerTextEncoding TextEncoding = "hashing-vec"
+	NoneTextEncoding              TextEncoding = "none"
+	AutoTextEncoding              TextEncoding = "auto"
 )
 
 // +kubebuilder:validation:Enum="drop-features";"drop-constant-features";"drop-duplicated-features";"drop-correlated-features";"mutual-information";"chisquare";"anova";"step-forward";"step-backward";"lasso-regression";"tree-importance";"recursive-feature-elimination";"recursive-feature-addition";"select-percentile";"select-kbest";"select-fpr";"select-fdr";"variance-threshold";"none";"auto"
 type FeatureSelection string
 
 const (
-	DropFeatures                      FeatureSelection = "drop-features"
+	DropFeaturesFeatureSelection      FeatureSelection = "drop-features"
 	DropConstantFeatures              FeatureSelection = "drop-constant-features"
 	DropDuplicateFeatures             FeatureSelection = "drop-duplicated-features"
 	DropCorrelatedFeatures            FeatureSelection = "drop-correlated-features"
@@ -1307,15 +1306,15 @@ const (
 type ConnectionCategory string
 
 const (
-	ConnectionCategoryGeneral             ConnectionCategory = "general"
-	ConnectionCategoryCloudProvider       ConnectionCategory = "cloud"
-	ConnectionCategoryDockerImageRegistry ConnectionCategory = "docker-image-registry"
-	ConnectionCategoryDatabase            ConnectionCategory = "database"
-	ConnectionCategoryGit                 ConnectionCategory = "git"
-	ConnectionCategoryMessaging           ConnectionCategory = "messaging"
-	ConnectionMessagerBroker              ConnectionCategory = "message-broker"
-	ConnectionGraphDatabase               ConnectionCategory = "graph-database"
-	ConnectionSocialMedia                 ConnectionCategory = "social-media"
+	GeneralConnectionCategory             ConnectionCategory = "general"
+	CloudProviderConnectionCategory       ConnectionCategory = "cloud"
+	DockerImageRegistryConnectionCategory ConnectionCategory = "docker-image-registry"
+	DatabaseConnectionCategory            ConnectionCategory = "database"
+	GitConnectionCategory                 ConnectionCategory = "git"
+	MessagingConnectionCategory           ConnectionCategory = "messaging"
+	BrokerConnectionMessage               ConnectionCategory = "message-broker"
+	GraphDatabaseConnectionCategory       ConnectionCategory = "graph-database"
+	SocialMediaConnectionCategory         ConnectionCategory = "social-media"
 )
 
 type EnsembleType string
@@ -1333,14 +1332,14 @@ const (
 type TriggerScheduleEventType string
 
 const (
-	TriggerScheduleEventTypeNow     TriggerScheduleEventType = "now"
-	TriggerScheduleEventTypeOnce    TriggerScheduleEventType = "once"
-	TriggerScheduleEventTypeHourly  TriggerScheduleEventType = "hourly"
-	TriggerScheduleEventTypeDaily   TriggerScheduleEventType = "daily"
-	TriggerScheduleEventTypeWeekly  TriggerScheduleEventType = "weekly"
-	TriggerScheduleEventTypeMonthly TriggerScheduleEventType = "monthly"
-	TriggerScheduleEventTypeYearly  TriggerScheduleEventType = "yearly"
-	TriggerScheduleEventTypeCron    TriggerScheduleEventType = "cron"
+	NowTriggerScheduleEventType     TriggerScheduleEventType = "now"
+	OnceTriggerScheduleEventType    TriggerScheduleEventType = "once"
+	HourlyTriggerScheduleEventType  TriggerScheduleEventType = "hourly"
+	DailyTriggerScheduleEventType   TriggerScheduleEventType = "daily"
+	WeeklyTriggerScheduleEventType  TriggerScheduleEventType = "weekly"
+	MonthlyTriggerScheduleEventType TriggerScheduleEventType = "monthly"
+	YearlyTriggerScheduleEventType  TriggerScheduleEventType = "yearly"
+	CronTriggerScheduleEventType    TriggerScheduleEventType = "cron"
 )
 
 //==============================================================================
@@ -1351,12 +1350,12 @@ const (
 type TriggerType string
 
 const (
-	TriggerTypeOnDemand        TriggerType = "on-demand"
-	TriggerTypeSchedule        TriggerType = "on-schedule"
-	TriggerTypeNewData         TriggerType = "on-new-data"
-	TriggerTypeGithubEvent     TriggerType = "on-github-event"
-	TriggerTypeConceptDrift    TriggerType = "on-concept-drift"
-	TriggerTypePrefDegragation TriggerType = "on-pref-degradation"
+	OnDemandTriggerType        TriggerType = "on-demand"
+	ScheduleTriggerType        TriggerType = "on-schedule"
+	NewDataTriggerType         TriggerType = "on-new-data"
+	GithubEventTriggerType     TriggerType = "on-github-event"
+	ConceptDriftTriggerType    TriggerType = "on-concept-drift"
+	PrefDegragationTriggerType TriggerType = "on-pref-degradation"
 )
 
 //==============================================================================
@@ -1366,12 +1365,12 @@ const (
 type ConditionReason string
 
 const (
-	Failed             ConditionReason = "Failed"
-	Success            ConditionReason = "Success"
-	Running            ConditionReason = "Running"
-	WaitingForApproval ConditionReason = "WaitingForApproval"
-	Approved           ConditionReason = "Approved"
-	Denied             ConditionReason = "Denied"
+	FailedConditionReason ConditionReason = "FailedConditionReason"
+	Success               ConditionReason = "Success"
+	Running               ConditionReason = "Running"
+	WaitingForApproval    ConditionReason = "WaitingForApproval"
+	Approved              ConditionReason = "Approved"
+	Denied                ConditionReason = "Denied"
 )
 
 //==============================================================================
@@ -1417,11 +1416,11 @@ const (
 type ReportRange string
 
 const (
-	ReportRangeLast24Hours ReportRange = "last-24-hours"
-	ReportRangeLast7Days   ReportRange = "last-7-days"
-	ReportRangeLast30Days  ReportRange = "last-30-days"
-	ReportRangeLast90Days  ReportRange = "last-90-days"
-	ReportRangeNone        ReportRange = "none"
+	Last24HoursReportRange ReportRange = "last-24-hours"
+	Last7DaysReportRange   ReportRange = "last-7-days"
+	Last30DaysReportRange  ReportRange = "last-30-days"
+	Last90DaysReportRange  ReportRange = "last-90-days"
+	NoneReportRange        ReportRange = "none"
 )
 
 type FeatureStoreIngestType string
@@ -1442,10 +1441,10 @@ const (
 type CompilerName string
 
 const (
-	CompilerNameTVM  CompilerName = "tvm"
-	CompilerNameOnyx CompilerName = "onyx"
-	CompilerNameXla  CompilerName = "xla"
-	CompilerNameNone CompilerName = "none"
+	TVMCompilerName  CompilerName = "tvm"
+	OnyxCompilerName CompilerName = "onyx"
+	XlaCompilerName  CompilerName = "xla"
+	NoneCompilerName CompilerName = "none"
 )
 
 // GithubEvents specify repo and the events to listen in order ot fire the pipeline
@@ -1489,17 +1488,17 @@ func (schedule RunSchedule) NextRun() *metav1.Time {
 	year := now.Year()
 
 	switch schedule.Type {
-	case TriggerScheduleEventTypeNow:
+	case NowTriggerScheduleEventType:
 		return &now
-	case TriggerScheduleEventTypeHourly:
+	case HourlyTriggerScheduleEventType:
 		nextTime := time.Date(year, month, day, hour+1, 0, 0, 0, now.Location())
 		next := metav1.NewTime(nextTime)
 		return &next
-	case TriggerScheduleEventTypeDaily:
+	case DailyTriggerScheduleEventType:
 		nextTime := time.Date(year, month, day+1, 0, 0, 0, 0, now.Location())
 		next := metav1.NewTime(nextTime)
 		return &next
-	case TriggerScheduleEventTypeWeekly:
+	case WeeklyTriggerScheduleEventType:
 		nextTime := time.Date(year, month, day+7, 0, 0, 0, 0, now.Location())
 		// roll back to monday
 		if wd := nextTime.Weekday(); wd == time.Sunday {
@@ -1509,7 +1508,7 @@ func (schedule RunSchedule) NextRun() *metav1.Time {
 		}
 		next := metav1.NewTime(nextTime)
 		return &next
-	case TriggerScheduleEventTypeMonthly:
+	case MonthlyTriggerScheduleEventType:
 
 		if month == 12 {
 			nextTime := time.Date(year+1, 1, 1, 0, 0, 0, 0, now.Location())
@@ -1520,11 +1519,11 @@ func (schedule RunSchedule) NextRun() *metav1.Time {
 			next := metav1.NewTime(nextTime)
 			return &next
 		}
-	case TriggerScheduleEventTypeYearly:
+	case YearlyTriggerScheduleEventType:
 		nextTime := time.Date(year+1, 1, 1, 0, 0, 0, 0, now.Location())
 		next := metav1.NewTime(nextTime)
 		return &next
-	case TriggerScheduleEventTypeCron:
+	case CronTriggerScheduleEventType:
 		nextTime := cronexpr.MustParse(*schedule.Cron).Next(time.Now())
 		next := metav1.NewTime(nextTime)
 		return &next
@@ -1613,12 +1612,13 @@ type Measurement struct {
 	Algorithm *string `json:"algorithm,omitempty" protobuf:"bytes,11,opt,name=algorithm"`
 }
 
-// +kubebuilder:validation:Enum="live";"shadow";
+// +kubebuilder:validation:Enum="live";"shadow";"none"
 type ModelRole string
 
 const (
-	ModelRoleLive   ModelRole = "live"
-	ModelRoleShadow ModelRole = "shadow"
+	LiveModelRole   ModelRole = "live"
+	ShadowModelRole ModelRole = "shadow"
+	NoneModelRole   ModelRole = "none"
 )
 
 // ModelDeploymentSpec describes how a single model should be deployed with a Predictor, and
@@ -1661,15 +1661,15 @@ type ModelDeploymentSpec struct {
 	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,13,opt,name=approvedAt"`
 }
 
-// +kubebuilder:validation:Enum="tabular";"image";"text";"video";"audio"
+// +kubebuilder:validation:Enum="tabular";"image";"nlp";"video";"audio"
 type DatasetType string
 
 const (
-	DatasetTypeTabular DatasetType = "tabular"
-	DatasetTypeImage   DatasetType = "image"
-	DatasetTypeText    DatasetType = "text"
-	DatasetTypeVideo   DatasetType = "video"
-	DatasetTypeAudio   DatasetType = "audio"
+	TabularDatasetType DatasetType = "tabular"
+	ImageDatasetType   DatasetType = "image"
+	NLPDatasetType     DatasetType = "nlp"
+	VideoDatasetType   DatasetType = "video"
+	AudioDatasetType   DatasetType = "audio"
 )
 
 // AccessType define how client reach the predictor
@@ -1696,22 +1696,22 @@ const (
 type Op string
 
 const (
-	LT Op = "lt"
-	EQ Op = "eq"
-	GT Op = "gt"
-	NE Op = "ne" // not equal
-	LE Op = "le" // less or equal
-	GE Op = "ge" // greater or equal
+	LTOp Op = "lt"
+	EQOp Op = "eq"
+	GTOp Op = "gt"
+	NEOp Op = "ne" // not equal
+	LEOp Op = "le" // less or equal
+	GE   Op = "ge" // greater or equal
 )
 
-// Update strategy is a dataset update strategy
+// UpdateUpdateStrategy strategy is a dataset update strategy
 // +kubebuilder:validation:Enum="upsert";"insert";"update"
 type UpdateStrategy string
 
 const (
-	Upsert UpdateStrategy = "upsert"
-	Insert UpdateStrategy = "insert"
-	Update UpdateStrategy = "update"
+	UpsertUpdateStrategy UpdateStrategy = "upsert"
+	InsertUpdateStrategy UpdateStrategy = "insert"
+	UpdateUpdateStrategy UpdateStrategy = "update"
 )
 
 // Classify the model per the study phase. for example, feature engineering models, baseline models,
@@ -1719,8 +1719,8 @@ const (
 type ModelClassType string
 
 const (
-	ModelStudyPhaseClassTypeFE       ModelClassType = "feature-engineering" // for feature engineering models
-	ModelStudyPhaseClassTypeBaseline ModelClassType = "baseline"            // for baseline models
+	FEModelStudyPhaseClassType       ModelClassType = "feature-engineering" // for feature engineering models
+	BaselineModelStudyPhaseClassType ModelClassType = "baseline"            // for baseline models
 	ModelStudyPhaseClassTypeSearch   ModelClassType = "search"              // for search model
 	ModelStudyPhaseClassTypeEnsemble ModelClassType = "ensemble"            // for ensemble models
 	ModelStudyPhaseClassTypeTest     ModelClassType = "test"                // for model in the search phase
@@ -1753,10 +1753,10 @@ const (
 type SecurityClearanceLevel string
 
 const (
-	SecurityClearanceLevelUnclassified SecurityClearanceLevel = "unclassified"
-	SecurityClearanceLevelConfidential SecurityClearanceLevel = "confidential"
-	SecurityClearanceLevelSecret       SecurityClearanceLevel = "secret"
-	SecurityClearanceLevelTopSecret    SecurityClearanceLevel = "top-secret"
+	UnclassifiedSecurityClearanceLevel SecurityClearanceLevel = "unclassified"
+	ConfidentialSecurityClearanceLevel SecurityClearanceLevel = "confidential"
+	SecretSecurityClearanceLevel       SecurityClearanceLevel = "secret"
+	TopSecretSecurityClearanceLevel    SecurityClearanceLevel = "top-secret"
 )
 
 // the priority level for a task
@@ -1775,12 +1775,12 @@ const (
 type ModelType string
 
 const (
-	ModelTypeClassical   ModelType = "classical"
-	ModelTypeHierarchy   ModelType = "hierarchy" // mainly for time series.
-	ModelTypeDNN         ModelType = "dnn"
-	ModelTypeTransformer ModelType = "transformer"
-	ModelTypeChatbot     ModelType = "chatbot"
-	ModelTypeRL          ModelType = "rl"
+	ClassicalModelType   ModelType = "classical"
+	HierarchyModelType   ModelType = "hierarchy" // mainly for time series.
+	DNNModelType         ModelType = "dnn"
+	TransformerModelType ModelType = "transformer"
+	ChatbotModelType     ModelType = "chatbot"
+	RLModelType          ModelType = "rl"
 )
 
 // ModelType enamurate the model type
@@ -1789,15 +1789,15 @@ const (
 type ModelServingFormat string
 
 const (
-	ModelServingFormatProtobuf    ModelServingFormat = "protobuf"
-	ModelServingFormatPickle      ModelServingFormat = "pickle"
-	ModelServingFormatCloudPickle ModelServingFormat = "cloudpickle"
-	ModelServingFormatMLLeap      ModelServingFormat = "mlleap"
-	ModelServingFormatMLModel     ModelServingFormat = "mlmodel"
-	ModelServingFormatH5          ModelServingFormat = "h5"
-	ModelServingFormatOnyx        ModelServingFormat = "onyx"
-	ModelServingFormatPmml        ModelServingFormat = "pmml"
-	ModelServingFormatTorchScript ModelServingFormat = "pt"
+	ProtobufModelServingFormat    ModelServingFormat = "protobuf"
+	PickleModelServingFormat      ModelServingFormat = "pickle"
+	CloudPickleModelServingFormat ModelServingFormat = "cloudpickle"
+	MLLeapModelServingFormat      ModelServingFormat = "mlleap"
+	MLModelModelServingFormat     ModelServingFormat = "mlmodel"
+	H5ModelServingFormat          ModelServingFormat = "h5"
+	OnyxModelServingFormat        ModelServingFormat = "onyx"
+	PmmlModelServingFormat        ModelServingFormat = "pmml"
+	TorchScriptModelServingFormat ModelServingFormat = "pt"
 )
 
 // +kubebuilder:validation:Enum="flask";"grpc";"onyx";
@@ -1813,9 +1813,9 @@ const (
 type ServingSiteType string
 
 const (
-	ServingSiteTypeDev   ServingSiteType = "dev"
-	ServingSiteTypeProd  ServingSiteType = "prod"
-	ServingSiteTypeStage ServingSiteType = "stage"
+	DevServingSiteType   ServingSiteType = "dev"
+	ProdServingSiteType  ServingSiteType = "prod"
+	StageServingSiteType ServingSiteType = "stage"
 )
 
 // +kubebuilder:validation:Enum="one-to-one";"one-to-many";"many-to-many";
@@ -1823,9 +1823,9 @@ const (
 type RelationshipArity string
 
 const (
-	RelationshipArityOneToOne   RelationshipArity = "one-to-one"
-	RelationshipArityOneToMany  RelationshipArity = "one-to-many"
-	RelationshipArityManyToMany RelationshipArity = "many-to-many"
+	OneToOneRelationshipArity   RelationshipArity = "one-to-one"
+	OneToManyRelationshipArity  RelationshipArity = "one-to-many"
+	ManyToManyRelationshipArity RelationshipArity = "many-to-many"
 )
 
 // ModalityType define the way that ASHA algorithm divide the data .
@@ -1834,14 +1834,14 @@ const (
 type ModalityType string
 
 const (
-	ModalityTypeData   ModalityType = "data"
-	ModalityTypeEpochs ModalityType = "epochs"
+	DataModalityType   ModalityType = "data"
+	EpochsModalityType ModalityType = "epochs"
 )
 
 type OutlierAlgorithmName string
 
 const (
-	OutlierAlgorithmNameIsolationForest OutlierAlgorithmName = "isolation-forest"
+	IsolationForestOutlierAlgorithmName OutlierAlgorithmName = "isolation-forest"
 )
 
 // NotificationSpec specifies which Notifiers to forward Alert resources to
@@ -1903,10 +1903,10 @@ type ContainerLog struct {
 type SeasonalityMode string
 
 const (
-	Multiplicative SeasonalityMode = "multiplicative"
-	Additive       SeasonalityMode = "additive"
-	Auto           SeasonalityMode = "auto"
-	None           SeasonalityMode = "none"
+	MultiplicativeSeasonalityMode SeasonalityMode = "multiplicative"
+	AdditiveSeasonalityMode       SeasonalityMode = "additive"
+	AutoSeasonalityMode           SeasonalityMode = "auto"
+	NoneSeasonalityMode           SeasonalityMode = "none"
 )
 
 // The Log level for modela jobs
@@ -1914,10 +1914,10 @@ const (
 type LogLevel string
 
 const (
-	LogLevelTrace LogLevel = "trace"
-	LogLevelDebug LogLevel = "debug"
-	LogLevelInfo  LogLevel = "info"
-	LogLevelError LogLevel = "error"
+	TraceLogLevel LogLevel = "trace"
+	DebugLogLevel LogLevel = "debug"
+	InfoLogLevel  LogLevel = "info"
+	ErrorLogLevel LogLevel = "error"
 )
 
 // Use for color attribute

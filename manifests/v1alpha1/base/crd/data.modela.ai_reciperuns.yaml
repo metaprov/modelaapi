@@ -9,15 +9,9 @@ metadata:
 spec:
   group: data.modela.ai
   names:
-    categories:
-    - data
-    - modela
-    - all
     kind: RecipeRun
     listKind: RecipeRunList
     plural: reciperuns
-    shortNames:
-    - rcr
     singular: reciperun
   scope: Namespaced
   versions:
@@ -387,11 +381,11 @@ spec:
                 format: date-time
                 type: string
               failureMessage:
-                description: Update in case of terminal failure message
+                description: UpdateUpdateStrategy in case of terminal failure message
                 type: string
               failureReason:
-                description: Update in case of terminal failure Borrowed from cluster
-                  api controller
+                description: UpdateUpdateStrategy in case of terminal failure Borrowed
+                  from cluster api controller
                 type: string
               lastUpdated:
                 description: Last time the object was updated
@@ -647,5 +641,4 @@ spec:
         type: object
     served: true
     storage: true
-    subresources:
-      status: {}
+    subresources: {}

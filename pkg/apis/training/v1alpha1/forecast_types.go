@@ -346,7 +346,7 @@ type EvalMetrics struct {
 	//Threshold to compute the ``Outside Tolerance`` metric,
 	//defined as the fraction of forecasted values whose relative
 	//error is strictly greater than ``relative_error_tolerance``.
-	//If `None`, the metric is not computed.
+	//If `NoneSeasonalityMode`, the metric is not computed.
 	// +kubebuilder:validation:Optional
 	RelErrTolerance *float64 `json:"relErrTolerance,omitempty" protobuf:"bytes,6,opt,name=relErrTolerance"`
 }
@@ -363,7 +363,7 @@ type EvalPeriod struct {
 	//Number of periods for the gap between train and test data.
 	//Applies to both backtest and forecast, however the behaviour is slightly different.
 	//Check the illustration of test parameters for a visual explanation.
-	//If None, default is 0.
+	//If NoneSeasonalityMode, default is 0.
 
 	// +kubebuilder:validation:Optional
 	PeriodsBetweenTrainTest *int32 `json:"periodsBetweenTrainTest,omitempty" protobuf:"bytes,2,opt,name=periodsBetweenTrainTest"`

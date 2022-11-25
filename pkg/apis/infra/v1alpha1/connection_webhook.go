@@ -30,7 +30,7 @@ func (connection *Connection) Default() {
 		}
 	}
 	if connection.Spec.Category == nil {
-		general := catalog.ConnectionCategoryGeneral
+		general := catalog.GeneralConnectionCategory
 		connection.Spec.Category = &general
 	}
 
@@ -178,11 +178,11 @@ func (connection Connection) validateSlack(vars map[string]string) field.ErrorLi
 func (connection Connection) validateMinio(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 
-	if !connection.varIncludes(vars, string(catalog.ApiKeyNameAccessKey)) || connection.varEmpty(vars, string(catalog.ApiKeyNameAccessKey)) {
+	if !connection.varIncludes(vars, string(catalog.AccessKeyApiKeyName)) || connection.varEmpty(vars, string(catalog.AccessKeyApiKeyName)) {
 		allErrs = append(
 			allErrs,
 			field.Required(
-				field.NewPath("secret", "values", string(catalog.ApiKeyNameAccessKey)),
+				field.NewPath("secret", "values", string(catalog.AccessKeyApiKeyName)),
 				"expected minio access key value to be populated",
 			),
 		)
@@ -239,11 +239,11 @@ func (connection Connection) validateEmailProvider(vars map[string]string) field
 func (connection Connection) validateAws(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 
-	if !connection.varIncludes(vars, string(catalog.ApiKeyNameAccessKey)) || connection.varEmpty(vars, string(catalog.ApiKeyNameAccessKey)) {
+	if !connection.varIncludes(vars, string(catalog.AccessKeyApiKeyName)) || connection.varEmpty(vars, string(catalog.AccessKeyApiKeyName)) {
 		allErrs = append(
 			allErrs,
 			field.Required(
-				field.NewPath("secret", "values", string(catalog.ApiKeyNameAccessKey)),
+				field.NewPath("secret", "values", string(catalog.AccessKeyApiKeyName)),
 				"expected aws access key value to be populated",
 			),
 		)
@@ -271,11 +271,11 @@ func (connection Connection) validateAws(vars map[string]string) field.ErrorList
 func (connection Connection) validateDo(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 
-	if !connection.varIncludes(vars, string(catalog.ApiKeyNameAccessKey)) || connection.varEmpty(vars, string(catalog.ApiKeyNameAccessKey)) {
+	if !connection.varIncludes(vars, string(catalog.AccessKeyApiKeyName)) || connection.varEmpty(vars, string(catalog.AccessKeyApiKeyName)) {
 		allErrs = append(
 			allErrs,
 			field.Required(
-				field.NewPath("secret", "values", string(catalog.ApiKeyNameAccessKey)),
+				field.NewPath("secret", "values", string(catalog.AccessKeyApiKeyName)),
 				"expected digital ocean space access key value to be populated",
 			),
 		)

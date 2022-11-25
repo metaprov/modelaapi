@@ -9,15 +9,9 @@ metadata:
 spec:
   group: infra.modela.ai
   names:
-    categories:
-    - infra
-    - modela
-    - all
     kind: VirtualBucket
     listKind: VirtualBucketList
     plural: virtualbuckets
-    shortNames:
-    - vb
     singular: virtualbucket
   scope: Namespaced
   versions:
@@ -191,5 +185,4 @@ spec:
         type: object
     served: true
     storage: true
-    subresources:
-      status: {}
+    subresources: {}

@@ -16,7 +16,7 @@ const (
 	ReportPhasePending   ReportPhase = "Pending"
 	ReportPhaseRunning   ReportPhase = "Running"
 	ReportPhaseCompleted ReportPhase = "Completed"
-	ReportPhaseFailed    ReportPhase = "Failed"
+	ReportPhaseFailed    ReportPhase = "FailedConditionReason"
 )
 
 // ReportType is the type of a Report
@@ -106,16 +106,18 @@ type ReportCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
-// Report represents a PDF file containing information compiled about another resource
 // +kubebuilder:object:root=true
+// +kubebuilder:resource:path=reports,singular=report,categories={training,modela,all}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
+
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.reportType"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=reports,singular=report,categories={training,modela,all}
+
+// Report represents a PDF file containing information compiled about another resource
 type Report struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

@@ -152,19 +152,19 @@ func (connection Connection) CreateSecret() *v1.Secret {
 	fields := make(map[string]string)
 	switch *connection.Spec.Provider {
 
-	case catalog.AmazonAthena:
+	case catalog.AmazonAthenaProviderName:
 		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.AmazonAthena.Database
 		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.AmazonAthena.Username
 		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.AmazonAthena.Password
 		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.AmazonAthena.URL
-	case catalog.AmazonRedshift:
+	case catalog.AmazonRedshiftProviderName:
 		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.RedShift.Hostname
 		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.RedShift.Port))
 		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.RedShift.Database
 		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.RedShift.Username
 		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.RedShift.Password
 		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.RedShift.URL
-	case catalog.ApacheDrill:
+	case catalog.ApacheDrillProviderName:
 		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.ApacheDrill.Host
 		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.ApacheDrill.Port))
 		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.ApacheDrill.Username
@@ -350,13 +350,13 @@ func (connection Connection) CreateSecret() *v1.Secret {
 		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.MSSqlServer.URL
 	// Cloud Storage
 	case catalog.AliCloud:
-		fields[string(catalog.ApiKeyNameAccessKey)] = *connection.Spec.AliCloud.AccessKey
+		fields[string(catalog.AccessKeyApiKeyName)] = *connection.Spec.AliCloud.AccessKey
 		fields[string(catalog.ApiKeyNameSecretKey)] = *connection.Spec.AliCloud.SecretKey
 	case catalog.Azure:
-		fields[string(catalog.ApiKeyNameAccessKey)] = *connection.Spec.AzureStorage.AccessKey
+		fields[string(catalog.AccessKeyApiKeyName)] = *connection.Spec.AzureStorage.AccessKey
 		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.AzureStorage.StorageAccount
 	case catalog.DigitalOcean:
-		fields[string(catalog.ApiKeyNameAccessKey)] = *connection.Spec.DigitalOcean.AccessKey
+		fields[string(catalog.AccessKeyApiKeyName)] = *connection.Spec.DigitalOcean.AccessKey
 		fields[string(catalog.ApiKeyNameSecretKey)] = *connection.Spec.DigitalOcean.SecretKey
 		fields[string(catalog.ApiKeyNameToken)] = *connection.Spec.DigitalOcean.Token
 	case catalog.Hetzner:
@@ -364,14 +364,14 @@ func (connection Connection) CreateSecret() *v1.Secret {
 	case catalog.Linode:
 		fields[string(catalog.ApiKeyNameToken)] = *connection.Spec.Linode.Token
 	case catalog.Gcp:
-		fields[string(catalog.ApiKeyNameKeyFile)] = *connection.Spec.GcpStorage.KeyFile
+		fields[string(catalog.KeyFileApiKeyName)] = *connection.Spec.GcpStorage.KeyFile
 	case catalog.Minio:
-		fields[string(catalog.ApiKeyNameAccessKey)] = *connection.Spec.Minio.AccessKey
+		fields[string(catalog.AccessKeyApiKeyName)] = *connection.Spec.Minio.AccessKey
 		fields[string(catalog.ApiKeyNameSecretKey)] = *connection.Spec.Minio.SecretKey
 	case catalog.Ovh:
 		fields[string(catalog.ApiKeyNameSecretKey)] = *connection.Spec.Ovh.ConsumerKey
 	case catalog.Aws:
-		fields[string(catalog.ApiKeyNameAccessKey)] = *connection.Spec.Aws.AccessKey
+		fields[string(catalog.AccessKeyApiKeyName)] = *connection.Spec.Aws.AccessKey
 		fields[string(catalog.ApiKeyNameSecretKey)] = *connection.Spec.Aws.SecretKey
 	case catalog.FTP:
 		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.FTP.Host
@@ -436,7 +436,7 @@ func (connection Connection) CreateSecret() *v1.Secret {
 func (connection *Connection) MaskSecretFields() {
 	hiddenPtr := util.StrPtr("[hidden]")
 	switch *connection.Spec.Provider {
-	case catalog.AmazonAthena:
+	case catalog.AmazonAthenaProviderName:
 		connection.Spec.AmazonAthena.Password = hiddenPtr
 		connection.Spec.AmazonAthena.URL = hiddenPtr
 	case catalog.GcpBigQuery:
@@ -471,7 +471,7 @@ func (connection *Connection) MaskSecretFields() {
 		connection.Spec.Presto.Username = hiddenPtr
 		connection.Spec.Presto.Password = hiddenPtr
 		connection.Spec.Presto.URL = hiddenPtr
-	case catalog.AmazonRedshift:
+	case catalog.AmazonRedshiftProviderName:
 		connection.Spec.RedShift.Username = hiddenPtr
 		connection.Spec.RedShift.Password = hiddenPtr
 		connection.Spec.RedShift.URL = hiddenPtr
@@ -607,27 +607,27 @@ func (connection *Connection) MaskSecretFields() {
 func (connection *Connection) UnmaskSecretFields(secret v1.Secret) {
 	token := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameToken)]))
 	apikey := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameApiKey)]))
-	accessKey := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameAccessKey)]))
+	accessKey := util.StrPtr(string(secret.Data[string(catalog.AccessKeyApiKeyName)]))
 	secretKey := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameSecretKey)]))
 	database := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameDatabase)]))
 	username := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameUsername)]))
 	password := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNamePassword)]))
 	url := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameURL)]))
-	keyfile := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameKeyFile)]))
+	keyfile := util.StrPtr(string(secret.Data[string(catalog.KeyFileApiKeyName)]))
 	webhook := util.StrPtr(string(secret.Data[string(catalog.ApiKeyNameURL)]))
 	switch *connection.Spec.Provider {
 
-	case catalog.AmazonAthena:
+	case catalog.AmazonAthenaProviderName:
 		connection.Spec.AmazonAthena.Database = database
 		connection.Spec.AmazonAthena.Username = username
 		connection.Spec.AmazonAthena.Password = password
 		connection.Spec.AmazonAthena.URL = url
-	case catalog.AmazonRedshift:
+	case catalog.AmazonRedshiftProviderName:
 		connection.Spec.RedShift.Database = database
 		connection.Spec.RedShift.Username = username
 		connection.Spec.RedShift.Password = password
 		connection.Spec.RedShift.URL = url
-	case catalog.ApacheDrill:
+	case catalog.ApacheDrillProviderName:
 		connection.Spec.ApacheDrill.Username = username
 		connection.Spec.ApacheDrill.Password = password
 		connection.Spec.ApacheDrill.URL = url

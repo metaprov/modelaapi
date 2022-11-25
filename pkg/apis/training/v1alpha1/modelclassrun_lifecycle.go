@@ -181,12 +181,6 @@ func (mclass *ModelClassRun) MarkPromoted() {
 		Type:   ModelClassRunModelPromoted,
 		Status: v1.ConditionTrue,
 	})
-	// promote the version
-	//mclass.Spec.Version = mclass.Status.Version
-	//nextRun := mclass.Spec.Training.TrainingSchedule.NextRun()
-	//mclass.Status.TrainingScheduleStatus.End()
-	//mclass.Status.TrainingScheduleStatus.SetNext(*nextRun)
-
 }
 
 func (mclass *ModelClassRun) MarkFailToPromote(err error) {

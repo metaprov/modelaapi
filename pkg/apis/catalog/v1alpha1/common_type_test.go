@@ -19,27 +19,27 @@ func TestRunSchedule_NextRun_NextDate(t *testing.T) {
 	schedule.Enabled = util.BoolPtr(true)
 	now := metav1.Now()
 
-	schedule.Type = TriggerScheduleEventTypeNow
+	schedule.Type = NowTriggerScheduleEventType
 	nextRun := schedule.NextRun()
 	assert.True(t, nextRun.After(now.Time))
 
-	schedule.Type = TriggerScheduleEventTypeHourly
+	schedule.Type = HourlyTriggerScheduleEventType
 	nextRun = schedule.NextRun()
 	assert.Equal(t, nextRun.Hour(), now.Hour()+1)
 
-	schedule.Type = TriggerScheduleEventTypeDaily
+	schedule.Type = DailyTriggerScheduleEventType
 	nextRun = schedule.NextRun()
 	assert.Equal(t, nextRun.Day(), now.Day()+1)
 
-	schedule.Type = TriggerScheduleEventTypeMonthly
+	schedule.Type = MonthlyTriggerScheduleEventType
 	nextRun = schedule.NextRun()
 	assert.Equal(t, nextRun.Month(), now.Month()+1)
 
-	schedule.Type = TriggerScheduleEventTypeYearly
+	schedule.Type = YearlyTriggerScheduleEventType
 	nextRun = schedule.NextRun()
 	assert.Equal(t, nextRun.Year(), now.Year()+1)
 
-	schedule.Type = TriggerScheduleEventTypeCron
+	schedule.Type = CronTriggerScheduleEventType
 	//Fire at 12:00 PM (noon) every day
 	schedule.Cron = util.StrPtr("0 0 12 * * ?")
 	nextRun = schedule.NextRun()

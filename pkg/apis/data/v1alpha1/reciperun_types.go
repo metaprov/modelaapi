@@ -14,7 +14,7 @@ const (
 	RecipeRunPhaseRunning     RecipeRunPhase = "Running"
 	RecipeRunPhaseUnitTesting RecipeRunPhase = "UnitTesting"
 	RecipeRunPhaseSucceed     RecipeRunPhase = "Completed"
-	RecipeRunPhaseFailed      RecipeRunPhase = "Failed"
+	RecipeRunPhaseFailed      RecipeRunPhase = "FailedConditionReason"
 )
 
 // Condition on the dataset
@@ -43,18 +43,20 @@ type RecipeRunCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// RecipeRun represent one execution of the recipe.
-// Execution is performed by creating a Kubernetes job.
+// +kubebuilder:subresource:status
+// +kubebuilder:resource:path=reciperuns,shortName=rcr,singular=reciperun,categories={data,modela,all}
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
+
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Recipe",type="string",JSONPath=".spec.recipeName"
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
-// +kubebuilder:subresource:status
-// +kubebuilder:resource:path=reciperuns,shortName=rcr,singular=reciperun,categories={data,modela,all}
+
+// RecipeRun represent one execution of the recipe.
+// Execution is performed by creating a Kubernetes job.
 type RecipeRun struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
@@ -115,11 +117,11 @@ type RecipeRunStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`
-	// Update in case of terminal failure
+	// UpdateUpdateStrategy in case of terminal failure
 	// Borrowed from cluster api controller
 	//+kubebuilder:validation:Optional
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,5,opt,name=failureReason"`
-	// Update in case of terminal failure message
+	// UpdateUpdateStrategy in case of terminal failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,6,opt,name=failureMessage"`
 	// What triggered the run

@@ -23,7 +23,7 @@ const (
 	DatasetPhaseUnitTesting     DatasetPhase = "UnitTesting"
 	DatasetPhaseSnapshotRunning DatasetPhase = "TakingSnapshot"
 	DatasetPhaseSnapshotSuccess DatasetPhase = "Snapshotted"
-	DatasetPhaseFailed          DatasetPhase = "Failed"
+	DatasetPhaseFailed          DatasetPhase = "FailedConditionReason"
 	DatasetPhaseAborted         DatasetPhase = "Aborted"
 	DatasetPhaseReady           DatasetPhase = "Ready"
 )
@@ -61,10 +61,11 @@ type DatasetCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
-// Dataset represents a chunk of data that has been analyzed and stored inside a managed bucket
 // +kubebuilder:object:root=true
+// +kubebuilder:resource:path=datasets,shortName=ds,singular=dataset,categories={data,modela,all}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
+
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
@@ -74,7 +75,8 @@ type DatasetCondition struct {
 // +kubebuilder:printcolumn:name="Columns",type="integer",JSONPath=".status.statistics.cols"
 // +kubebuilder:printcolumn:name="Size",type="integer",JSONPath=".status.statistics.fileSize"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=datasets,shortName=dset,singular=dataset,categories={data,modela,all}
+
+// Dataset represents a chunk of data that has been analyzed and stored inside a managed bucket
 type Dataset struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`

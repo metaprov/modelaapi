@@ -336,7 +336,7 @@ func ParseModelYaml(content []byte) (*Model, error) {
 }
 
 const (
-	ReasonFailed                        = "Failed"
+	ReasonFailed                        = "FailedConditionReason"
 	ReasonTesting                       = "Testing"
 	ReasonTuning                        = "Tuning"
 	ReasonTuned                         = "Tuned"
@@ -406,30 +406,14 @@ func (model *Model) MarkTraining() {
 func (model *Model) MarkReleasing() {
 	model.Status.Phase = ModelPhaseReleasing
 	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelReleased,
+		Type:   ModelLive,
 		Status: v1.ConditionFalse,
 		Reason: ReasonReleasing,
 	})
-}
-
-func (model *Model) MarkPredicting() {
-	model.Status.Phase = ModelPhasePredicting
 	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelPredicted,
+		Type:   ModelShadow,
 		Status: v1.ConditionFalse,
-		Reason: ReasonPredicting,
-	})
-}
-
-func (model *Model) MarkPredicted() {
-	if model.Status.PredictedAt == nil {
-		now := metav1.Now()
-		model.Status.PredictedAt = &now
-	}
-	model.Status.Phase = ModelPhasePredicted
-	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelPredicted,
-		Status: v1.ConditionTrue,
+		Reason: ReasonReleasing,
 	})
 }
 
@@ -445,19 +429,31 @@ func (model *Model) MarkLive(predictor string, role catalog.ModelRole) {
 	model.Labels[catalog.PredictorLabelKey] = predictor
 	model.Labels[catalog.ModelRoleLabelKey] = string(role)
 	switch role {
-	case catalog.ModelRoleLive:
+	case catalog.LiveModelRole:
 		model.Status.Phase = ModelPhaseLive
-	case catalog.ModelRoleShadow:
+		model.CreateOrUpdateCond(ModelCondition{
+			Type:   ModelLive,
+			Status: v1.ConditionTrue,
+		})
+		model.CreateOrUpdateCond(ModelCondition{
+			Type:   ModelShadow,
+			Status: v1.ConditionFalse,
+		})
+	case catalog.ShadowModelRole:
 		model.Status.Phase = ModelPhaseShadow
+		model.CreateOrUpdateCond(ModelCondition{
+			Type:   ModelLive,
+			Status: v1.ConditionFalse,
+		})
+		model.CreateOrUpdateCond(ModelCondition{
+			Type:   ModelShadow,
+			Status: v1.ConditionTrue,
+		})
 	}
 
-	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelReleased,
-		Status: v1.ConditionTrue,
-	})
 }
 
-func (model *Model) MarkUndeployed() {
+func (model *Model) Demote() {
 	model.Status.ReleasedAt = nil
 	labels := make(map[string]string)
 	for k, v := range model.Labels {
@@ -473,13 +469,17 @@ func (model *Model) MarkUndeployed() {
 	model.Spec.Released = util.BoolPtr(false)
 
 	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelReleased,
-		Status: v1.ConditionTrue,
+		Type:   ModelLive,
+		Status: v1.ConditionFalse,
+	})
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelShadow,
+		Status: v1.ConditionFalse,
 	})
 }
 
 func (model Model) IsLive() bool {
-	cond := model.GetCond(ModelReleased)
+	cond := model.GetCond(ModelLive)
 	return cond.Status == v1.ConditionTrue
 }
 
@@ -516,7 +516,7 @@ func (model *Model) MarkFailedToTrain(err string) {
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
 	model.Status.Train = make([]catalog.Measurement, 0)
-	model.Status.FailureMessage = util.StrPtr("Failed to train." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to train." + err)
 	model.Status.Progress = 100
 
 }
@@ -579,7 +579,7 @@ func (model *Model) MarkTestingFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("Failed to test." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to test." + err)
 	model.Status.Progress = 100
 	if model.Status.EndTime == nil {
 		now := metav1.Now()
@@ -648,7 +648,7 @@ func (model *Model) MarkUnitTestFailed(msg string, stop bool) {
 		Type:    ModelUnitTested,
 		Status:  v1.ConditionFalse,
 		Reason:  string(ModelPhaseFailed),
-		Message: "Failed to unit test." + msg,
+		Message: "FailedConditionReason to unit test." + msg,
 	})
 	if stop {
 		model.Status.Phase = ModelPhaseFailed
@@ -689,7 +689,7 @@ func (model *Model) MarkFeedbackTestFailed(msg string) {
 		Type:    ModelFeedbackTested,
 		Status:  v1.ConditionFalse,
 		Reason:  string(ModelPhaseFailed),
-		Message: "Failed to test feedback." + msg,
+		Message: "FailedConditionReason to test feedback." + msg,
 	})
 }
 
@@ -814,7 +814,7 @@ func (model *Model) MarkForecastFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("Failed to forecast." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to forecast." + err)
 	model.Status.Progress = 100
 	if model.Status.EndTime == nil {
 		now := metav1.Now()
@@ -870,7 +870,7 @@ func (model *Model) MarkPackgedFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("Failed to package." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to package." + err)
 	if model.Status.EndTime == nil {
 		now := metav1.Now()
 		model.Status.EndTime = &now
@@ -949,7 +949,7 @@ func (model *Model) MarkPublishFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("Failed to publish." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to publish." + err)
 	if model.Status.EndTime == nil {
 		now := metav1.Now()
 		model.Status.EndTime = &now
@@ -990,7 +990,7 @@ func (model *Model) MarkTrainedDriftDetectorFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("Failed to train drift detector." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to train drift detector." + err)
 	if model.Status.EndTime == nil {
 		now := metav1.Now()
 		model.Status.EndTime = &now
@@ -1000,7 +1000,7 @@ func (model *Model) MarkTrainedDriftDetectorFailed(err string) {
 
 func (model *Model) MarkReleaseFailed(err string) {
 	model.CreateOrUpdateCond(ModelCondition{
-		Type:    ModelConditionType(ModelReleased),
+		Type:    ModelConditionType(ModelLive),
 		Status:  v1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
@@ -1009,7 +1009,7 @@ func (model *Model) MarkReleaseFailed(err string) {
 	now := metav1.Now()
 	model.Status.TrainingEndTime = &now
 	model.Status.EndTime = &now
-	model.Status.FailureMessage = util.StrPtr("Failed to release." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to release." + err)
 	model.Status.Progress = 100
 
 }
@@ -1111,11 +1111,6 @@ func (model Model) IsSaved() bool {
 	return cond.Status == v1.ConditionTrue
 }
 
-func (model Model) IsPredicted() bool {
-	cond := model.GetCond(ModelPredicted)
-	return cond.Status == v1.ConditionTrue
-}
-
 func (model *Model) MarkArchived() {
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelArchived,
@@ -1178,11 +1173,11 @@ func (model Model) IsGroup() bool {
 ////////////////////////////////
 
 func (model Model) IsFE() bool {
-	return model.Spec.ModelClass == catalog.ModelStudyPhaseClassTypeFE
+	return model.Spec.ModelClass == catalog.FEModelStudyPhaseClassType
 }
 
 func (model Model) IsBaseline() bool {
-	return model.Spec.ModelClass == catalog.ModelStudyPhaseClassTypeBaseline
+	return model.Spec.ModelClass == catalog.BaselineModelStudyPhaseClassType
 }
 
 func (model Model) IsSearch() bool {
@@ -1306,7 +1301,7 @@ func (model *Model) MarkFailedToTune(err string) {
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
 	model.Status.Tune = make([]catalog.Measurement, 0)
-	model.Status.FailureMessage = util.StrPtr("Failed to tune." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to tune." + err)
 	model.Status.Progress = 100
 
 }
@@ -1361,7 +1356,7 @@ func (model *Model) MarkFailedToMerge(err string) {
 	}
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
-	model.Status.FailureMessage = util.StrPtr("Failed to merge." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to merge." + err)
 	model.Status.Progress = 100
 
 }

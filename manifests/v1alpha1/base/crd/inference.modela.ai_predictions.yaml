@@ -9,14 +9,9 @@ metadata:
 spec:
   group: inference.modela.ai
   names:
-    categories:
-    - inference
-    - modela
     kind: Prediction
     listKind: PredictionList
     plural: predictions
-    shortNames:
-    - pred
     singular: prediction
   scope: Namespaced
   versions:
@@ -326,10 +321,10 @@ spec:
                   action:
                     default: upsert
                     description: The update strategy for the dataset in the case that
-                      the output location already exists (i.e a database table) Upsert
-                      will insert new records and update existing ones; Insert will
-                      insert new records and not update existing ones; Update will
-                      not insert new records and only update existing ones
+                      the output location already exists (i.e a database table) UpsertUpdateStrategy
+                      will insert new records and update existing ones; InsertUpdateStrategy
+                      will insert new records and not update existing ones; UpdateUpdateStrategy
+                      will not insert new records and only update existing ones
                     enum:
                     - upsert
                     - insert
@@ -1561,5 +1556,4 @@ spec:
         type: object
     served: true
     storage: true
-    subresources:
-      status: {}
+    subresources: {}

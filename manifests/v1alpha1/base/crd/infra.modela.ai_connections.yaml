@@ -9,14 +9,9 @@ metadata:
 spec:
   group: infra.modela.ai
   names:
-    categories:
-    - infra
-    - modela
     kind: Connection
     listKind: ConnectionList
     plural: connections
-    shortNames:
-    - conn
     singular: connection
   scope: Namespaced
   versions:
@@ -1628,11 +1623,11 @@ spec:
                   type: object
                 type: array
               failureMessage:
-                description: Update in case of terminal failure message
+                description: UpdateUpdateStrategy in case of terminal failure message
                 type: string
               failureReason:
-                description: Update in case of terminal failure Borrowed from cluster
-                  api controller
+                description: UpdateUpdateStrategy in case of terminal failure Borrowed
+                  from cluster api controller
                 type: string
               lastUpdated:
                 description: Last time the object was updated
@@ -1647,5 +1642,4 @@ spec:
         type: object
     served: true
     storage: true
-    subresources:
-      status: {}
+    subresources: {}

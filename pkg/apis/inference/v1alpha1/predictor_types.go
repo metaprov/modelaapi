@@ -140,7 +140,7 @@ type PredictionCacheSpec struct {
 }
 
 /////////////////////////////////////////////////////
-// Auto Scaling Spec
+// AutoSeasonalityMode Scaling Spec
 /////////////////////////////////////////////////////
 
 // AutoScaling defines the configuration for the automatic scaling of a service
@@ -248,10 +248,11 @@ type PredictorCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// Predictor specifies the deployment of a service to serve predictions for a Model
 // +kubebuilder:object:root=true
+// +kubebuilder:resource:path=predictors,singular=predictor,shortName=pdr,categories={inference,modela}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
+
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Serving Site",type="string",JSONPath=".spec.servingsiteRef.name",description=""
@@ -260,7 +261,8 @@ type PredictorCondition struct {
 // +kubebuilder:printcolumn:name="Replicas",type="integer",JSONPath=".spec.replicas",description=""
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=predictors,singular=predictor,shortName=pdr,categories={inference,modela}
+
+// Predictor specifies the deployment of a service to serve predictions for a Model
 type Predictor struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -526,7 +528,7 @@ const (
 	ModelDeploymentPhaseShadowing ModelDeploymentPhase = "Shadowing"
 	ModelDeploymentPhaseReleasing ModelDeploymentPhase = "Releasing"
 	ModelDeploymentPhaseReleased  ModelDeploymentPhase = "Released"
-	ModelDeploymentPhaseFailed    ModelDeploymentPhase = "Failed"
+	ModelDeploymentPhaseFailed    ModelDeploymentPhase = "FailedConditionReason"
 )
 
 type K8sObjectStatusState string

@@ -13,7 +13,7 @@ type ModelClassPhase string
 
 const (
 	ModelClassPhaseReady   ModelClassPhase = "Ready"
-	ModelClassPhaseFailed  ModelClassPhase = "Failed"
+	ModelClassPhaseFailed  ModelClassPhase = "FailedConditionReason"
 	ModelClassPhaseDrifted ModelClassPhase = "Drifted"
 )
 
@@ -47,14 +47,16 @@ type ModelClassCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
-// ModelClass represents an automatic search for the best machine learning model for a given dataset
 // +kubebuilder:subresource:status
+// +kubebuilder:resource:path=modelclasses,singular=modelclass,shortName=mc,categories={training,modela}
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
+
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=modelclasses,singular=modelclass,shortName=mc,categories={training,modela}
+
+// ModelClass represents an automatic search for the best machine learning model for a given dataset
 type ModelClass struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
