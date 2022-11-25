@@ -115,14 +115,6 @@ type DatasetSpec struct {
 	// In case of training data, this is the model class name that created it.
 	// +kubebuilder:validation:Optional
 	FeatureGroupName *string `json:"featureGroupName,omitempty" protobuf:"bytes,4,opt,name=featureGroupName"`
-	// In case of training data, this is the model class name that created it.
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,5,opt,name=modelClassName"`
-	// The current version of the model class that created this dataset
-	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Optional
-	ModelClassVersion *int32 `json:"modelClassVersion" protobuf:"varint,6,opt,name=modelClassVersion"`
 	// User-provided description of the object
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:default:=""
@@ -233,6 +225,12 @@ type DatasetSpec struct {
 	// For filtering
 	// +kubebuilder:validation:Optional
 	MaxEventTime *metav1.Time `json:"maxEventTime,omitempty" protobuf:"bytes,35,opt,name=maxEventTime"`
+	// The model class for this dataset if the dataset was created by a model class
+	// +kubebuilder:validation:Optional
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,36,opt,name=modelClassName"`
+	// If this report was created by a model class run, this is the run name
+	// +kubebuilder:validation:Optional
+	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,37,opt,name=modelClassRunName"`
 }
 
 // DatasetStatus defines the observed state of a Dataset object

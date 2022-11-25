@@ -141,13 +141,6 @@ type ReportSpec struct {
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// EntityRef specifies the entity which the Report references. The supported entities consist of Entity, Model, and Study resources
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,2,opt,name=entityRef"`
-	// The model class for this pipeline
-	// +kubebuilder:validation:Optional
-	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,3,opt,name=modelClassName"`
-	// The current version of the model class that created this report,
-	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Optional
-	ModelClassVersion *int32 `json:"modelClassVersion" protobuf:"bytes,4,opt,name=modelClassVersion"`
 	// The location of the flat-file containing the PDF report
 	// +kubebuilder:validation:Optional
 	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,5,opt,name=location"`
@@ -187,6 +180,12 @@ type ReportSpec struct {
 	// For group forecasting, this is the key of the group
 	// +kubebuilder:validation:Optional
 	Key []string `json:"key,omitempty" protobuf:"bytes,15,opt,name=key"`
+	// The model class for this report if the model was created by a model class
+	// +kubebuilder:validation:Optional
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,16,opt,name=modelClassName"`
+	// If this report was created by a model class run, this is the run name
+	// +kubebuilder:validation:Optional
+	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,17,opt,name=modelClassRunName"`
 }
 
 // ReportStatus defines the observed state of a Report

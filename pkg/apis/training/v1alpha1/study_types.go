@@ -163,13 +163,6 @@ type StudySpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
-	// The model class for this study
-	// +kubebuilder:validation:Optional
-	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,2,opt,name=modelClassName"`
-	// The current version of the model class that created this study
-	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Optional
-	ModelClassVersion *int32 `json:"modelClassVersion" protobuf:"bytes,3,opt,name=modelClassVersion"`
 	// The user-provided description of the Study
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
@@ -307,6 +300,12 @@ type StudySpec struct {
 	// In case of a group by, those are the group locations
 	// +kubebuilder:validation:Optional
 	GroupLocations GroupSplitLocationsSpec `json:"groupLocations,omitempty" protobuf:"bytes,41,opt,name=groupLocations"`
+	// The model class for this report if the model was created by a model class
+	// +kubebuilder:validation:Optional
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,42,opt,name=modelClassName"`
+	// If this report was created by a model class run, this is the run name
+	// +kubebuilder:validation:Optional
+	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,43,opt,name=modelClassRunName"`
 }
 
 // StudyStatus defines the observed state of a Study

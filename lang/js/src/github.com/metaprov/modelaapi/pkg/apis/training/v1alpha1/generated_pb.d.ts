@@ -2449,9 +2449,6 @@ export class ModelSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): ModelSpec;
 
-  getModelclassname(): string;
-  setModelclassname(value: string): ModelSpec;
-
   getModelversion(): string;
   setModelversion(value: string): ModelSpec;
 
@@ -2633,8 +2630,11 @@ export class ModelSpec extends jspb.Message {
   hasPartitionlocations(): boolean;
   clearPartitionlocations(): ModelSpec;
 
-  getModelclassversion(): number;
-  setModelclassversion(value: number): ModelSpec;
+  getModelclassname(): string;
+  setModelclassname(value: string): ModelSpec;
+
+  getModelclassrunname(): string;
+  setModelclassrunname(value: string): ModelSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
@@ -2648,7 +2648,6 @@ export namespace ModelSpec {
   export type AsObject = {
     owner: string,
     versionname: string,
-    modelclassname: string,
     modelversion: string,
     studyname: string,
     datasetname: string,
@@ -2698,7 +2697,8 @@ export namespace ModelSpec {
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     feedbacktests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     partitionlocations?: PartitionModelLocationsSpec.AsObject,
-    modelclassversion: number,
+    modelclassname: string,
+    modelclassrunname: string,
   }
 }
 
@@ -3571,12 +3571,6 @@ export class ReportSpec extends jspb.Message {
   hasEntityref(): boolean;
   clearEntityref(): ReportSpec;
 
-  getModelclassname(): string;
-  setModelclassname(value: string): ReportSpec;
-
-  getModelclassversion(): number;
-  setModelclassversion(value: number): ReportSpec;
-
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ReportSpec;
   hasLocation(): boolean;
@@ -3620,6 +3614,12 @@ export class ReportSpec extends jspb.Message {
   clearKeyList(): ReportSpec;
   addKey(value: string, index?: number): ReportSpec;
 
+  getModelclassname(): string;
+  setModelclassname(value: string): ReportSpec;
+
+  getModelclassrunname(): string;
+  setModelclassrunname(value: string): ReportSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ReportSpec): ReportSpec.AsObject;
@@ -3632,8 +3632,6 @@ export namespace ReportSpec {
   export type AsObject = {
     versionname: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    modelclassname: string,
-    modelclassversion: number,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     reporttype: string,
     format: string,
@@ -3645,6 +3643,8 @@ export namespace ReportSpec {
     cronreportname: string,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     keyList: Array<string>,
+    modelclassname: string,
+    modelclassrunname: string,
   }
 }
 
@@ -4174,12 +4174,6 @@ export class StudySpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): StudySpec;
 
-  getModelclassname(): string;
-  setModelclassname(value: string): StudySpec;
-
-  getModelclassversion(): number;
-  setModelclassversion(value: number): StudySpec;
-
   getDescription(): string;
   setDescription(value: string): StudySpec;
 
@@ -4332,6 +4326,12 @@ export class StudySpec extends jspb.Message {
   hasGrouplocations(): boolean;
   clearGrouplocations(): StudySpec;
 
+  getModelclassname(): string;
+  setModelclassname(value: string): StudySpec;
+
+  getModelclassrunname(): string;
+  setModelclassrunname(value: string): StudySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -4343,8 +4343,6 @@ export class StudySpec extends jspb.Message {
 export namespace StudySpec {
   export type AsObject = {
     versionname: string,
-    modelclassname: string,
-    modelclassversion: number,
     description: string,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     datasetname: string,
@@ -4383,6 +4381,8 @@ export namespace StudySpec {
     codegenerated: boolean,
     unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     grouplocations?: GroupSplitLocationsSpec.AsObject,
+    modelclassname: string,
+    modelclassrunname: string,
   }
 }
 

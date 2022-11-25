@@ -873,6 +873,14 @@ message DataPipelineRunSpec {
   // The Lab where the data pipeline run.
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference labRef = 9;
+
+  // The model class for this data pipeline run if the dataset was created by a model class
+  // +kubebuilder:validation:Optional
+  optional string modelClassName = 10;
+
+  // If this report was created by a data pipeline run, this is the run name
+  // +kubebuilder:validation:Optional
+  optional string modelClassRunName = 11;
 }
 
 // DataPipelineRunStatus defines the observed state of DataPipelineRun
@@ -1624,16 +1632,6 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional string featureGroupName = 4;
 
-  // In case of training data, this is the model class name that created it.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string modelClassName = 5;
-
-  // The current version of the model class that created this dataset
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 modelClassVersion = 6;
-
   // User-provided description of the object
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:default:=""
@@ -1772,6 +1770,14 @@ message DatasetSpec {
   // For filtering
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time maxEventTime = 35;
+
+  // The model class for this dataset if the dataset was created by a model class
+  // +kubebuilder:validation:Optional
+  optional string modelClassName = 36;
+
+  // If this report was created by a model class run, this is the run name
+  // +kubebuilder:validation:Optional
+  optional string modelClassRunName = 37;
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The
@@ -2901,6 +2907,14 @@ message RecipeRunSpec {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 ttl = 6;
+
+  // The model class for this data pipeline run if the dataset was created by a model class
+  // +kubebuilder:validation:Optional
+  optional string modelClassName = 7;
+
+  // If this report was created by a data pipeline run, this is the run name
+  // +kubebuilder:validation:Optional
+  optional string modelClassRunName = 8;
 }
 
 // RecipeStatus defines the observed state of Recipe

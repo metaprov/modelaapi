@@ -1159,14 +1159,13 @@ spec:
                     type: string
                 type: object
               modelClassName:
-                description: The model class for this study
+                description: The model class for this report if the model was created
+                  by a model class
                 type: string
-              modelClassVersion:
-                default: 0
-                description: The current version of the model class that created this
-                  study
-                format: int32
-                type: integer
+              modelClassRunName:
+                description: If this report was created by a model class run, this
+                  is the run name
+                type: string
               modelExplained:
                 default: true
                 description: ModelExplained indicates if interpretability diagrams,

@@ -106,6 +106,12 @@ type DataPipelineRunSpec struct {
 	// The Lab where the data pipeline run.
 	// +kubebuilder:validation:Optional
 	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,9,opt,name=labRef"`
+	// The model class for this data pipeline run if the dataset was created by a model class
+	// +kubebuilder:validation:Optional
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,10,opt,name=modelClassName"`
+	// If this report was created by a data pipeline run, this is the run name
+	// +kubebuilder:validation:Optional
+	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,11,opt,name=modelClassRunName"`
 }
 
 // DataPipelineRunStatus defines the observed state of DataPipelineRun

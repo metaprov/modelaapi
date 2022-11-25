@@ -442,14 +442,13 @@ spec:
                     type: string
                 type: object
               modelClassName:
-                description: The model class for this pipeline
+                description: The model class for this report if the model was created
+                  by a model class
                 type: string
-              modelClassVersion:
-                default: 0
-                description: The current version of the model class that created this
-                  report,
-                format: int32
-                type: integer
+              modelClassRunName:
+                description: If this report was created by a model class run, this
+                  is the run name
+                type: string
               notifierName:
                 description: The name of the Notifier resource which Alerts created
                   by the Report will be forwarded to

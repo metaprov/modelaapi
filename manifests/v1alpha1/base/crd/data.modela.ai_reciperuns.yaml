@@ -212,6 +212,14 @@ spec:
                       the DataLocation
                     type: string
                 type: object
+              modelClassName:
+                description: The model class for this data pipeline run if the dataset
+                  was created by a model class
+                type: string
+              modelClassRunName:
+                description: If this report was created by a data pipeline run, this
+                  is the run name
+                type: string
               recipeName:
                 default: ""
                 description: The name of the recipe that execute this run

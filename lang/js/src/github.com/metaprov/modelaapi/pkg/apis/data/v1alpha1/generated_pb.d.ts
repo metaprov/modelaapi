@@ -1076,6 +1076,12 @@ export class DataPipelineRunSpec extends jspb.Message {
   hasLabref(): boolean;
   clearLabref(): DataPipelineRunSpec;
 
+  getModelclassname(): string;
+  setModelclassname(value: string): DataPipelineRunSpec;
+
+  getModelclassrunname(): string;
+  setModelclassrunname(value: string): DataPipelineRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataPipelineRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataPipelineRunSpec): DataPipelineRunSpec.AsObject;
@@ -1094,6 +1100,8 @@ export namespace DataPipelineRunSpec {
     paused: boolean,
     aborted: boolean,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    modelclassname: string,
+    modelclassrunname: string,
   }
 }
 
@@ -2166,12 +2174,6 @@ export class DatasetSpec extends jspb.Message {
   getFeaturegroupname(): string;
   setFeaturegroupname(value: string): DatasetSpec;
 
-  getModelclassname(): string;
-  setModelclassname(value: string): DatasetSpec;
-
-  getModelclassversion(): number;
-  setModelclassversion(value: number): DatasetSpec;
-
   getDescription(): string;
   setDescription(value: string): DatasetSpec;
 
@@ -2291,6 +2293,12 @@ export class DatasetSpec extends jspb.Message {
   hasMaxeventtime(): boolean;
   clearMaxeventtime(): DatasetSpec;
 
+  getModelclassname(): string;
+  setModelclassname(value: string): DatasetSpec;
+
+  getModelclassrunname(): string;
+  setModelclassrunname(value: string): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -2305,8 +2313,6 @@ export namespace DatasetSpec {
     versionname: string,
     datasourcename: string,
     featuregroupname: string,
-    modelclassname: string,
-    modelclassversion: number,
     description: string,
     displayname: string,
     role: string,
@@ -2336,6 +2342,8 @@ export namespace DatasetSpec {
     keyList: Array<string>,
     mineventtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     maxeventtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    modelclassname: string,
+    modelclassrunname: string,
   }
 }
 
@@ -4176,6 +4184,12 @@ export class RecipeRunSpec extends jspb.Message {
   getTtl(): number;
   setTtl(value: number): RecipeRunSpec;
 
+  getModelclassname(): string;
+  setModelclassname(value: string): RecipeRunSpec;
+
+  getModelclassrunname(): string;
+  setModelclassrunname(value: string): RecipeRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RecipeRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: RecipeRunSpec): RecipeRunSpec.AsObject;
@@ -4192,6 +4206,8 @@ export namespace RecipeRunSpec {
     location?: DataLocation.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     ttl: number,
+    modelclassname: string,
+    modelclassrunname: string,
   }
 }
 

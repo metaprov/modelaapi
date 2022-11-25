@@ -93,6 +93,12 @@ type RecipeRunSpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,6,opt,name=ttl"`
+	// The model class for this data pipeline run if the dataset was created by a model class
+	// +kubebuilder:validation:Optional
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,7,opt,name=modelClassName"`
+	// If this report was created by a data pipeline run, this is the run name
+	// +kubebuilder:validation:Optional
+	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,8,opt,name=modelClassRunName"`
 }
 
 // RecipeStatus defines the observed state of Recipe

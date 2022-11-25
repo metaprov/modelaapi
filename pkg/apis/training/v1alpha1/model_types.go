@@ -173,9 +173,6 @@ type ModelSpec struct {
 	// +kubebuilder:validation:MaxLength=63
 	// +required
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
-	// The model class for this model
-	// +kubebuilder:validation:Optional
-	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,3,opt,name=modelClassName"`
 	// The user-assigned version of the Model, derived from the parent Study
 	// +kubebuilder:default:=""
 	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,4,opt,name=modelVersion"`
@@ -359,9 +356,12 @@ type ModelSpec struct {
 	// The set locations in case of group forecasts
 	// +kubebuilder:validation:Optional
 	PartitionsLocation PartitionModelLocationsSpec `json:"partitionLocations,omitempty" protobuf:"bytes,52,opt,name=partitionLocations"`
-	// The version assigned to this model by the model class
+	// The model class for this model if the model was created by a model class
 	// +kubebuilder:validation:Optional
-	ModelClassVersion *int32 `json:"modelClassVersion,omitempty" protobuf:"bytes,53,opt,name=modelClassVersion"`
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,53,opt,name=modelClassName"`
+	// If this model was created by a model class run, this is the run name
+	// +kubebuilder:validation:Optional
+	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,54,opt,name=modelClassRunName"`
 }
 
 type SegmentSpec struct {

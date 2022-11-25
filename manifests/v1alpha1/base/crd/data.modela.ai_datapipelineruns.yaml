@@ -111,6 +111,14 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
+              modelClassName:
+                description: The model class for this data pipeline run if the dataset
+                  was created by a model class
+                type: string
+              modelClassRunName:
+                description: If this report was created by a data pipeline run, this
+                  is the run name
+                type: string
               owner:
                 default: no-one
                 description: The owner of the run, set to the owner of the pipeline

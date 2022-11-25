@@ -1667,10 +1667,6 @@ message ModelSpec {
   // +required
   optional string versionName = 2;
 
-  // The model class for this model
-  // +kubebuilder:validation:Optional
-  optional string modelClassName = 3;
-
   // The user-assigned version of the Model, derived from the parent Study
   // +kubebuilder:default:=""
   optional string modelVersion = 4;
@@ -1903,9 +1899,13 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional PartitionModelLocationsSpec partitionLocations = 52;
 
-  // The version assigned to this model by the model class
+  // The model class for this model if the model was created by a model class
   // +kubebuilder:validation:Optional
-  optional int32 modelClassVersion = 53;
+  optional string modelClassName = 53;
+
+  // If this model was created by a model class run, this is the run name
+  // +kubebuilder:validation:Optional
+  optional string modelClassRunName = 54;
 }
 
 message ModelStageStatus {
@@ -2495,15 +2495,6 @@ message ReportSpec {
   // EntityRef specifies the entity which the Report references. The supported entities consist of Entity, Model, and Study resources
   optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
 
-  // The model class for this pipeline
-  // +kubebuilder:validation:Optional
-  optional string modelClassName = 3;
-
-  // The current version of the model class that created this report,
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 modelClassVersion = 4;
-
   // The location of the flat-file containing the PDF report
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 5;
@@ -2553,6 +2544,14 @@ message ReportSpec {
   // For group forecasting, this is the key of the group
   // +kubebuilder:validation:Optional
   repeated string key = 15;
+
+  // The model class for this report if the model was created by a model class
+  // +kubebuilder:validation:Optional
+  optional string modelClassName = 16;
+
+  // If this report was created by a model class run, this is the run name
+  // +kubebuilder:validation:Optional
+  optional string modelClassRunName = 17;
 }
 
 // ReportStatus defines the observed state of a Report
@@ -2915,15 +2914,6 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
-  // The model class for this study
-  // +kubebuilder:validation:Optional
-  optional string modelClassName = 2;
-
-  // The current version of the model class that created this study
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 modelClassVersion = 3;
-
   // The user-provided description of the Study
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
@@ -3098,6 +3088,14 @@ message StudySpec {
   // In case of a group by, those are the group locations
   // +kubebuilder:validation:Optional
   optional GroupSplitLocationsSpec groupLocations = 41;
+
+  // The model class for this report if the model was created by a model class
+  // +kubebuilder:validation:Optional
+  optional string modelClassName = 42;
+
+  // If this report was created by a model class run, this is the run name
+  // +kubebuilder:validation:Optional
+  optional string modelClassRunName = 43;
 }
 
 // StudyStatus defines the observed state of a Study

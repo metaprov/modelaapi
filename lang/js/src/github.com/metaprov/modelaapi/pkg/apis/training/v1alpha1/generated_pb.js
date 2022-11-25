@@ -25070,7 +25070,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.toObjec
   var f, obj = {
     owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    modelclassname: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     modelversion: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     studyname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     datasetname: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
@@ -25120,7 +25119,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.toObjec
     unittests: (f = msg.getUnittests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
     feedbacktests: (f = msg.getFeedbacktests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
     partitionlocations: (f = msg.getPartitionlocations()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PartitionModelLocationsSpec.toObject(includeInstance, f),
-    modelclassversion: (f = jspb.Message.getField(msg, 53)) == null ? undefined : f
+    modelclassname: (f = jspb.Message.getField(msg, 53)) == null ? undefined : f,
+    modelclassrunname: (f = jspb.Message.getField(msg, 54)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -25164,10 +25164,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setVersionname(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setModelclassname(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -25383,8 +25379,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
       msg.setPartitionlocations(value);
       break;
     case 53:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setModelclassversion(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelclassname(value);
+      break;
+    case 54:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelclassrunname(value);
       break;
     default:
       reader.skipField();
@@ -25426,13 +25426,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
   if (f != null) {
     writer.writeString(
       2,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
       f
     );
   }
@@ -25796,10 +25789,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PartitionModelLocationsSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 53));
+  f = /** @type {string} */ (jspb.Message.getField(message, 53));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       53,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 54));
+  if (f != null) {
+    writer.writeString(
+      54,
       f
     );
   }
@@ -25875,42 +25875,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasVersionname = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string modelClassName = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getModelclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setModelclassname = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearModelclassname = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasModelclassname = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -27696,19 +27660,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
 
 
 /**
- * optional int32 modelClassVersion = 53;
- * @return {number}
+ * optional string modelClassName = 53;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getModelclassversion = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 53, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getModelclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 53, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setModelclassversion = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setModelclassname = function(value) {
   return jspb.Message.setField(this, 53, value);
 };
 
@@ -27717,7 +27681,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearModelclassversion = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearModelclassname = function() {
   return jspb.Message.setField(this, 53, undefined);
 };
 
@@ -27726,8 +27690,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasModelclassversion = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasModelclassname = function() {
   return jspb.Message.getField(this, 53) != null;
+};
+
+
+/**
+ * optional string modelClassRunName = 54;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getModelclassrunname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 54, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setModelclassrunname = function(value) {
+  return jspb.Message.setField(this, 54, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearModelclassrunname = function() {
+  return jspb.Message.setField(this, 54, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasModelclassrunname = function() {
+  return jspb.Message.getField(this, 54) != null;
 };
 
 
@@ -35806,8 +35806,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.toObje
   var f, obj = {
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     entityref: (f = msg.getEntityref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    modelclassname: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    modelclassversion: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     reporttype: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     format: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
@@ -35818,7 +35816,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.toObje
     custom: (f = msg.getCustom()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CustomReportSpec.toObject(includeInstance, f),
     cronreportname: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
     labref: (f = msg.getLabref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    keyList: (f = jspb.Message.getRepeatedField(msg, 15)) == null ? undefined : f
+    keyList: (f = jspb.Message.getRepeatedField(msg, 15)) == null ? undefined : f,
+    modelclassname: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
+    modelclassrunname: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -35863,14 +35863,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.deseri
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setEntityref(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setModelclassname(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setModelclassversion(value);
       break;
     case 5:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
@@ -35920,6 +35912,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.deseri
       var value = /** @type {string} */ (reader.readString());
       msg.addKey(value);
       break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelclassname(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelclassrunname(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -35962,20 +35962,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.serial
       2,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeInt32(
-      4,
-      f
     );
   }
   f = message.getLocation();
@@ -36059,6 +36045,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.serial
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 16));
+  if (f != null) {
+    writer.writeString(
+      16,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 17));
+  if (f != null) {
+    writer.writeString(
+      17,
+      f
+    );
+  }
 };
 
 
@@ -36132,78 +36132,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.hasEntityref = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string modelClassName = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.getModelclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.setModelclassname = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.clearModelclassname = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.hasModelclassname = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional int32 modelClassVersion = 4;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.getModelclassversion = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.setModelclassversion = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.clearModelclassversion = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.hasModelclassversion = function() {
-  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -36605,6 +36533,78 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.clearKeyList = function() {
   return this.setKeyList([]);
+};
+
+
+/**
+ * optional string modelClassName = 16;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.getModelclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.setModelclassname = function(value) {
+  return jspb.Message.setField(this, 16, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.clearModelclassname = function() {
+  return jspb.Message.setField(this, 16, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.hasModelclassname = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional string modelClassRunName = 17;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.getModelclassrunname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.setModelclassrunname = function(value) {
+  return jspb.Message.setField(this, 17, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.clearModelclassrunname = function() {
+  return jspb.Message.setField(this, 17, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.hasModelclassrunname = function() {
+  return jspb.Message.getField(this, 17) != null;
 };
 
 
@@ -41440,8 +41440,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    modelclassname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    modelclassversion: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     labref: (f = msg.getLabref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     datasetname: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
@@ -41479,7 +41477,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.toObjec
     timeoutinsecs: (f = jspb.Message.getField(msg, 38)) == null ? undefined : f,
     codegenerated: (f = jspb.Message.getBooleanField(msg, 39)) == null ? undefined : f,
     unitteststemplate: (f = msg.getUnitteststemplate()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
-    grouplocations: (f = msg.getGrouplocations()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupSplitLocationsSpec.toObject(includeInstance, f)
+    grouplocations: (f = msg.getGrouplocations()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupSplitLocationsSpec.toObject(includeInstance, f),
+    modelclassname: (f = jspb.Message.getField(msg, 42)) == null ? undefined : f,
+    modelclassrunname: (f = jspb.Message.getField(msg, 43)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -41519,14 +41519,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.deseria
     case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setVersionname(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setModelclassname(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setModelclassversion(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -41699,6 +41691,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.deseria
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupSplitLocationsSpec.deserializeBinaryFromReader);
       msg.setGrouplocations(value);
       break;
+    case 42:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelclassname(value);
+      break;
+    case 43:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelclassrunname(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -41732,20 +41732,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.seriali
   if (f != null) {
     writer.writeString(
       1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeInt32(
-      3,
       f
     );
   }
@@ -42034,6 +42020,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.seriali
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GroupSplitLocationsSpec.serializeBinaryToWriter
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 42));
+  if (f != null) {
+    writer.writeString(
+      42,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 43));
+  if (f != null) {
+    writer.writeString(
+      43,
+      f
+    );
+  }
 };
 
 
@@ -42070,78 +42070,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasVersionname = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string modelClassName = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getModelclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setModelclassname = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearModelclassname = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasModelclassname = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional int32 modelClassVersion = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getModelclassversion = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setModelclassversion = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearModelclassversion = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasModelclassversion = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -43529,6 +43457,78 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasGrouplocations = function() {
   return jspb.Message.getField(this, 41) != null;
+};
+
+
+/**
+ * optional string modelClassName = 42;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getModelclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 42, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setModelclassname = function(value) {
+  return jspb.Message.setField(this, 42, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearModelclassname = function() {
+  return jspb.Message.setField(this, 42, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasModelclassname = function() {
+  return jspb.Message.getField(this, 42) != null;
+};
+
+
+/**
+ * optional string modelClassRunName = 43;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getModelclassrunname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 43, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setModelclassrunname = function(value) {
+  return jspb.Message.setField(this, 43, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearModelclassrunname = function() {
+  return jspb.Message.setField(this, 43, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasModelclassrunname = function() {
+  return jspb.Message.getField(this, 43) != null;
 };
 
 
