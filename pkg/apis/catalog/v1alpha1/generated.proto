@@ -978,10 +978,6 @@ message RunScheduleStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 2;
 
-  // The duration of the run in seconds
-  // +kubebuilder:validation:Optional
-  optional double duration = 4;
-
   // In the case of failure, the resource controller which created the run will set this field with a failure reason
   // +kubebuilder:validation:Optional
   optional string failureReason = 5;
@@ -992,7 +988,7 @@ message RunScheduleStatus {
 
   // Last run logs
   // +kubebuilder:validation:Optional
-  optional Logs logs = 7;
+  optional string lastRunName = 7;
 }
 
 // Stakeholder specifies the User Role Classes of an individual Account

@@ -1702,19 +1702,14 @@ export class RunScheduleStatus extends jspb.Message {
   hasNextrun(): boolean;
   clearNextrun(): RunScheduleStatus;
 
-  getDuration(): number;
-  setDuration(value: number): RunScheduleStatus;
-
   getFailurereason(): string;
   setFailurereason(value: string): RunScheduleStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): RunScheduleStatus;
 
-  getLogs(): Logs | undefined;
-  setLogs(value?: Logs): RunScheduleStatus;
-  hasLogs(): boolean;
-  clearLogs(): RunScheduleStatus;
+  getLastrunname(): string;
+  setLastrunname(value: string): RunScheduleStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunScheduleStatus.AsObject;
@@ -1728,10 +1723,9 @@ export namespace RunScheduleStatus {
   export type AsObject = {
     lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    duration: number,
     failurereason: string,
     failuremessage: string,
-    logs?: Logs.AsObject,
+    lastrunname: string,
   }
 }
 

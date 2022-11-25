@@ -362,6 +362,10 @@ type ModelSpec struct {
 	// If this model was created by a model class run, this is the run name
 	// +kubebuilder:validation:Optional
 	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,54,opt,name=modelClassRunName"`
+	// The desired role of the model
+	// +kubebuilder:default:="none"
+	// +kubebuilder:validation:Optional
+	Role *catalog.ModelRole `json:"role,omitempty" protobuf:"bytes,55,opt,name=role"`
 }
 
 type SegmentSpec struct {

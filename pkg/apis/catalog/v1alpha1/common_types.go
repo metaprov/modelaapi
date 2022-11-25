@@ -1538,9 +1538,6 @@ type RunScheduleStatus struct {
 	// The time of the day when the schedule will be executed
 	// +kubebuilder:validation:Optional
 	NextRun *metav1.Time `json:"nextRun,omitempty" protobuf:"bytes,2,opt,name=nextRun"`
-	// The duration of the run in seconds
-	// +kubebuilder:validation:Optional
-	Duration float64 `json:"duration,omitempty" protobuf:"varint,4,opt,name=duration"`
 	// In the case of failure, the resource controller which created the run will set this field with a failure reason
 	// +kubebuilder:validation:Optional
 	FailureReason *StatusError `json:"failureReason,omitempty" protobuf:"bytes,5,opt,name=failureReason"`
@@ -1549,7 +1546,7 @@ type RunScheduleStatus struct {
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,6,opt,name=failureMessage"`
 	// Last run logs
 	// +kubebuilder:validation:Optional
-	LastRunLogs Logs `json:"logs,omitempty" protobuf:"bytes,7,opt,name=logs"`
+	LastRunName *string `json:"lastRunName,omitempty" protobuf:"bytes,7,opt,name=lastRunName"`
 }
 
 // Check if we are due for a run. next run must be set.
@@ -1564,13 +1561,6 @@ func (runstatus *RunScheduleStatus) IsDue() bool {
 func (runstatus *RunScheduleStatus) Start() {
 	now := metav1.Now()
 	runstatus.LastRun = &now
-}
-
-func (runstatus *RunScheduleStatus) End() {
-	now := metav1.Now()
-	if runstatus.LastRun != nil {
-		runstatus.Duration = now.Sub(runstatus.LastRun.Time).Seconds()
-	}
 }
 
 func (runstatus *RunScheduleStatus) SetNext(nextRun metav1.Time) {

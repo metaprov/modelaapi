@@ -25120,7 +25120,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.toObjec
     feedbacktests: (f = msg.getFeedbacktests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
     partitionlocations: (f = msg.getPartitionlocations()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PartitionModelLocationsSpec.toObject(includeInstance, f),
     modelclassname: (f = jspb.Message.getField(msg, 53)) == null ? undefined : f,
-    modelclassrunname: (f = jspb.Message.getField(msg, 54)) == null ? undefined : f
+    modelclassrunname: (f = jspb.Message.getField(msg, 54)) == null ? undefined : f,
+    role: (f = jspb.Message.getField(msg, 55)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -25385,6 +25386,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
     case 54:
       var value = /** @type {string} */ (reader.readString());
       msg.setModelclassrunname(value);
+      break;
+    case 55:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRole(value);
       break;
     default:
       reader.skipField();
@@ -25800,6 +25805,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
   if (f != null) {
     writer.writeString(
       54,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 55));
+  if (f != null) {
+    writer.writeString(
+      55,
       f
     );
   }
@@ -27728,6 +27740,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasModelclassrunname = function() {
   return jspb.Message.getField(this, 54) != null;
+};
+
+
+/**
+ * optional string role = 55;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getRole = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 55, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setRole = function(value) {
+  return jspb.Message.setField(this, 55, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearRole = function() {
+  return jspb.Message.setField(this, 55, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasRole = function() {
+  return jspb.Message.getField(this, 55) != null;
 };
 
 

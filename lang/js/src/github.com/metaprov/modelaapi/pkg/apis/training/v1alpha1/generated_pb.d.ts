@@ -2636,6 +2636,9 @@ export class ModelSpec extends jspb.Message {
   getModelclassrunname(): string;
   setModelclassrunname(value: string): ModelSpec;
 
+  getRole(): string;
+  setRole(value: string): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -2699,6 +2702,7 @@ export namespace ModelSpec {
     partitionlocations?: PartitionModelLocationsSpec.AsObject,
     modelclassname: string,
     modelclassrunname: string,
+    role: string,
   }
 }
 

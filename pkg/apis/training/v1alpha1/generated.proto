@@ -1870,6 +1870,11 @@ message ModelSpec {
   // If this model was created by a model class run, this is the run name
   // +kubebuilder:validation:Optional
   optional string modelClassRunName = 54;
+
+  // The desired role of the model
+  // +kubebuilder:default:="none"
+  // +kubebuilder:validation:Optional
+  optional string role = 55;
 }
 
 message ModelStageStatus {

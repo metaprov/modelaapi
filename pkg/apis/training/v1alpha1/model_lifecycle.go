@@ -421,7 +421,7 @@ func (model Model) IsReleasing() bool {
 	return model.Status.Phase == ModelPhaseReleasing
 }
 
-func (model *Model) MarkLive(predictor string, role catalog.ModelRole) {
+func (model *Model) MarkRole(predictor string, role catalog.ModelRole) {
 	if model.Status.ReleasedAt == nil {
 		now := metav1.Now()
 		model.Status.ReleasedAt = &now
@@ -467,6 +467,8 @@ func (model *Model) Demote() {
 	model.Status.PredictorName = ""
 	// Mark released as false in order to avoid creating the predictor again.
 	model.Spec.Released = util.BoolPtr(false)
+	noneRole := catalog.NoneModelRole
+	model.Spec.Role = &noneRole
 
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelLive,
@@ -479,8 +481,11 @@ func (model *Model) Demote() {
 }
 
 func (model Model) IsLive() bool {
-	cond := model.GetCond(ModelLive)
-	return cond.Status == v1.ConditionTrue
+	return *model.Spec.Role == catalog.LiveModelRole
+}
+
+func (model Model) IsShadow() bool {
+	return *model.Spec.Role == catalog.ShadowModelRole
 }
 
 func (model *Model) MarkTrained(ms []catalog.Measurement) {

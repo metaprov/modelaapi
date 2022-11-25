@@ -1820,6 +1820,14 @@ spec:
                 description: Reported indicates that a Report will be generated for
                   the Model
                 type: boolean
+              role:
+                default: none
+                description: The desired role of the model
+                enum:
+                - live
+                - shadow
+                - none
+                type: string
               serving:
                 description: ServingSpec defines the resource requirements that will
                   be applied to a Predictor that will be created if the model is set
