@@ -1544,9 +1544,12 @@ type RunScheduleStatus struct {
 	// In the case of failure, the resource controller which created the run will set this field with a failure message
 	// +kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,6,opt,name=failureMessage"`
-	// Last run logs
+	// Last run name
 	// +kubebuilder:validation:Optional
 	LastRunName *string `json:"lastRunName,omitempty" protobuf:"bytes,7,opt,name=lastRunName"`
+	// Logs from the last run
+	// +kubebuilder:validation:Optional
+	LastRunLogs Logs `json:"lastRunLogs,omitempty" protobuf:"bytes,8,opt,name=lastRunLogs"`
 }
 
 // Check if we are due for a run. next run must be set.

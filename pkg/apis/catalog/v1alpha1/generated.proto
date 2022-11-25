@@ -1019,9 +1019,13 @@ message RunScheduleStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 6;
 
-  // Last run logs
+  // Last run name
   // +kubebuilder:validation:Optional
   optional string lastRunName = 7;
+
+  // Logs from the last run
+  // +kubebuilder:validation:Optional
+  optional Logs lastRunLogs = 8;
 }
 
 // Stakeholder specifies the User Role Classes of an individual Account
