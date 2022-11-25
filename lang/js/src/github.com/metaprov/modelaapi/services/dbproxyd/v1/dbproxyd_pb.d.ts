@@ -2448,10 +2448,10 @@ export namespace ListModelClassesRequest {
 }
 
 export class ListModelClassesResponse extends jspb.Message {
-  getItemsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun>;
-  setItemsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun>): ListModelClassesResponse;
+  getItemsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass>;
+  setItemsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass>): ListModelClassesResponse;
   clearItemsList(): ListModelClassesResponse;
-  addItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun;
+  addItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass;
 
   getNextPageToken(): string;
   setNextPageToken(value: string): ListModelClassesResponse;
@@ -2466,7 +2466,7 @@ export class ListModelClassesResponse extends jspb.Message {
 
 export namespace ListModelClassesResponse {
   export type AsObject = {
-    itemsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.AsObject>,
+    itemsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject>,
     nextPageToken: string,
   }
 }

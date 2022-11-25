@@ -637,7 +637,7 @@ message ListModelClassesRequest {
 }
 
 message ListModelClassesResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass items = 1;
     string next_page_token = 2;
 }
 

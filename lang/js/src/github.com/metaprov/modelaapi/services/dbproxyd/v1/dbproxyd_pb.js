@@ -22657,7 +22657,7 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRespons
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.toObject, includeInstance),
+    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.toObject, includeInstance),
     nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -22696,8 +22696,8 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRespons
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.deserializeBinaryFromReader);
       msg.addItems(value);
       break;
     case 2:
@@ -22738,7 +22738,7 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRespons
     writer.writeRepeatedMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.serializeBinaryToWriter
     );
   }
   f = message.getNextPageToken();
@@ -22752,17 +22752,17 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRespons
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun items = 1;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun>}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass items = 1;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass>}
  */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesResponse.prototype.getItemsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun, 1));
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesResponse.prototype.setItemsList = function(value) {
@@ -22771,12 +22771,12 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesRespons
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass}
  */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListModelClassesResponse.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass, opt_index);
 };
 
 
