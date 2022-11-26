@@ -426,6 +426,7 @@ func (model *Model) MarkRole(predictor string, role catalog.ModelRole) {
 		now := metav1.Now()
 		model.Status.ReleasedAt = &now
 	}
+	model.Spec.Role = &role
 	model.Labels[catalog.PredictorLabelKey] = predictor
 	model.Labels[catalog.ModelRoleLabelKey] = string(role)
 	switch role {
