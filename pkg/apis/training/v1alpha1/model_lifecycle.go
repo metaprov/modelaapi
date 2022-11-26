@@ -1135,6 +1135,7 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	model.Spec.VersionName = study.Spec.VersionName
 	model.Spec.DatasetName = study.Spec.DatasetName
 	model.Spec.ModelClassName = study.Spec.ModelClassName
+	model.Spec.ModelClassRunName = study.Spec.ModelClassRunName
 	model.Spec.Task = study.Spec.Task
 	model.Spec.Forecasting = study.Spec.FctTemplate.DeepCopy()
 	model.Spec.Objective = study.Spec.Search.Objective
