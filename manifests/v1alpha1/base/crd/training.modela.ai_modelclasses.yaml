@@ -955,11 +955,6 @@ spec:
                               description: Indicates if the column can contain null
                                 values
                               type: boolean
-                            ordinal:
-                              default: false
-                              description: Indicates if the feature is ordinal, in
-                                the case of categorical features
-                              type: boolean
                             pattern:
                               description: The regex pattern which values in the column
                                 must adhere to

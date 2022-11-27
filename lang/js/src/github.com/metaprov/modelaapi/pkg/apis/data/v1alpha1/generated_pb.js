@@ -2786,7 +2786,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject = fun
     example: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
     externaldocs: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
     enumList: (f = jspb.Message.getRepeatedField(msg, 22)) == null ? undefined : f,
-    ordinal: (f = jspb.Message.getBooleanField(msg, 23)) == null ? undefined : f,
     maxitems: (f = jspb.Message.getField(msg, 24)) == null ? undefined : f,
     minitems: (f = jspb.Message.getField(msg, 25)) == null ? undefined : f,
     uniqueitems: (f = jspb.Message.getBooleanField(msg, 26)) == null ? undefined : f,
@@ -2940,10 +2939,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.deserializeBin
     case 22:
       var value = /** @type {string} */ (reader.readString());
       msg.addEnum(value);
-      break;
-    case 23:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOrdinal(value);
       break;
     case 24:
       var value = /** @type {number} */ (reader.readInt32());
@@ -3245,13 +3240,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.serializeBinar
   if (f.length > 0) {
     writer.writeRepeatedString(
       22,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 23));
-  if (f != null) {
-    writer.writeBool(
-      23,
       f
     );
   }
@@ -4258,42 +4246,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.addE
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearEnumList = function() {
   return this.setEnumList([]);
-};
-
-
-/**
- * optional bool ordinal = 23;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getOrdinal = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 23, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setOrdinal = function(value) {
-  return jspb.Message.setField(this, 23, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearOrdinal = function() {
-  return jspb.Message.setField(this, 23, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasOrdinal = function() {
-  return jspb.Message.getField(this, 23) != null;
 };
 
 

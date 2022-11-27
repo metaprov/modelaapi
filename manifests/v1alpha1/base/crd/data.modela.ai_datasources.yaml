@@ -76,7 +76,6 @@ spec:
                 - audio
                 type: string
               description:
-                default: ""
                 description: User-provided description of the object
                 maxLength: 512
                 type: string
@@ -729,11 +728,6 @@ spec:
                           type: string
                         nullable:
                           description: Indicates if the column can contain null values
-                          type: boolean
-                        ordinal:
-                          default: false
-                          description: Indicates if the feature is ordinal, in the
-                            case of categorical features
                           type: boolean
                         pattern:
                           description: The regex pattern which values in the column

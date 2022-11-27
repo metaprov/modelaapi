@@ -408,10 +408,6 @@ type Column struct {
 	// The collection of unique values for categorical features
 	// +kubebuilder:validation:Optional
 	Enum []string `json:"enum,omitempty" protobuf:"bytes,22,rep,name=enum"`
-	// Indicates if the feature is ordinal, in the case of categorical features
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Ordinal *bool `json:"ordinal,omitempty" protobuf:"varint,23,opt,name=ordinal"`
 	// The maximum number of items if the column is a list of values
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
@@ -544,7 +540,6 @@ type DataSourceSpec struct {
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// User-provided description of the object
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`

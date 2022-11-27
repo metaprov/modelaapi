@@ -110,9 +110,6 @@ export class Column extends jspb.Message {
   clearEnumList(): Column;
   addEnum(value: string, index?: number): Column;
 
-  getOrdinal(): boolean;
-  setOrdinal(value: boolean): Column;
-
   getMaxitems(): number;
   setMaxitems(value: number): Column;
 
@@ -235,7 +232,6 @@ export namespace Column {
     example: string,
     externaldocs: string,
     enumList: Array<string>,
-    ordinal: boolean,
     maxitems: number,
     minitems: number,
     uniqueitems: boolean,
