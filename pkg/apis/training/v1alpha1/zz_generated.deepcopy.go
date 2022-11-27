@@ -1770,6 +1770,7 @@ func (in *ModelClassRunStatus) DeepCopyInto(out *ModelClassRunStatus) {
 		**out = **in
 	}
 	out.ApprovedBy = in.ApprovedBy
+	in.LastTrainingSet.DeepCopyInto(&out.LastTrainingSet)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ModelClassRunCondition, len(*in))
@@ -1916,7 +1917,6 @@ func (in *ModelClassStatus) DeepCopyInto(out *ModelClassStatus) {
 		*out = new(FeatureEngineeringSpec)
 		(*in).DeepCopyInto(*out)
 	}
-	in.LastTrainingSet.DeepCopyInto(&out.LastTrainingSet)
 	in.TrainingScheduleStatus.DeepCopyInto(&out.TrainingScheduleStatus)
 	in.PredictionScheduleStatus.DeepCopyInto(&out.PredictionScheduleStatus)
 	in.MonitoringScheduleStatus.DeepCopyInto(&out.MonitoringScheduleStatus)
