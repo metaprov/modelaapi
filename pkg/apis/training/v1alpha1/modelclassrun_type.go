@@ -2,7 +2,6 @@ package v1alpha1
 
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
-	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -174,9 +173,6 @@ type ModelClassRunStatus struct {
 	Auto *bool `json:"auto,omitempty" protobuf:"bytes,15,opt,name=auto"`
 	// for manual promotion, who approved the promotion
 	ApprovedBy v1.ObjectReference `json:"approvedBy,omitempty" protobuf:"bytes,16,opt,name=approvedBy"`
-	// Store the location of the last training set
-	//+kubebuilder:validation:Optional
-	LastTrainingSet data.DataLocation `json:"lastTrainingSet,omitempty" protobuf:"bytes,17,opt,name=lastTrainingSet"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

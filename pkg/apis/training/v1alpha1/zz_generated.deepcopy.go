@@ -1770,7 +1770,6 @@ func (in *ModelClassRunStatus) DeepCopyInto(out *ModelClassRunStatus) {
 		**out = **in
 	}
 	out.ApprovedBy = in.ApprovedBy
-	in.LastTrainingSet.DeepCopyInto(&out.LastTrainingSet)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ModelClassRunCondition, len(*in))

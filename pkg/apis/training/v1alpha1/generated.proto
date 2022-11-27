@@ -1305,10 +1305,6 @@ message ModelClassRunStatus {
   // for manual promotion, who approved the promotion
   optional k8s.io.api.core.v1.ObjectReference approvedBy = 16;
 
-  // Store the location of the last training set
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation lastTrainingSet = 17;
-
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional

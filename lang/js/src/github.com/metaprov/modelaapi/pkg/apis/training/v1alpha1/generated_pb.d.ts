@@ -1917,11 +1917,6 @@ export class ModelClassRunStatus extends jspb.Message {
   hasApprovedby(): boolean;
   clearApprovedby(): ModelClassRunStatus;
 
-  getLasttrainingset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLasttrainingset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassRunStatus;
-  hasLasttrainingset(): boolean;
-  clearLasttrainingset(): ModelClassRunStatus;
-
   getConditionsList(): Array<ModelClassRunCondition>;
   setConditionsList(value: Array<ModelClassRunCondition>): ModelClassRunStatus;
   clearConditionsList(): ModelClassRunStatus;
@@ -1953,7 +1948,6 @@ export namespace ModelClassRunStatus {
     promotedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     auto: boolean,
     approvedby?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    lasttrainingset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     conditionsList: Array<ModelClassRunCondition.AsObject>,
   }
 }
