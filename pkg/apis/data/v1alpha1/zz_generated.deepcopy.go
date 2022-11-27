@@ -160,11 +160,6 @@ func (in *Column) DeepCopyInto(out *Column) {
 		*out = make([]string, len(*in))
 		copy(*out, *in)
 	}
-	if in.Ordinal != nil {
-		in, out := &in.Ordinal, &out.Ordinal
-		*out = new(bool)
-		**out = **in
-	}
 	if in.MaxItems != nil {
 		in, out := &in.MaxItems, &out.MaxItems
 		*out = new(int32)
