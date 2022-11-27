@@ -8,15 +8,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// ModelPhase specifies the current phase of a Model
-type ModelClassPhase string
-
-const (
-	ModelClassPhaseReady   ModelClassPhase = "Ready"
-	ModelClassPhaseFailed  ModelClassPhase = "FailedConditionReason"
-	ModelClassPhaseDrifted ModelClassPhase = "Drifted"
-)
-
 // ModelClassConditionType is the condition of a ModelClass
 type ModelClassConditionType string
 
@@ -26,6 +17,8 @@ const (
 	ModelClassSaved ModelClassConditionType = "Saved"
 	// ModelClassDrifted states that the latest model has drifted
 	ModelClassModelDrifted ModelClassConditionType = "ModelDrifted"
+	// ModelClassSaved states that the ModelClass has been archived in a database
+	ModelClassReady ModelClassConditionType = "Ready"
 )
 
 // ModelClassCondition describes the state of a ModelClass at a certain point
@@ -53,6 +46,9 @@ type ModelClassCondition struct {
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
+// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
+// +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
+// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.objective"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // ModelClass represents an automatic search for the best machine learning model for a given dataset
 type ModelClass struct {
@@ -78,7 +74,7 @@ type ModelClassSpec struct {
 	// The current version of the model class
 	// that exists in the same DataProduct namespace as the resource
 	// +kubebuilder:validation:Optional
-	Version int32 `json:"version" protobuf:"bytes,3,opt,name=version"`
+	Version string `json:"version" protobuf:"bytes,3,opt,name=version"`
 	// The user-provided description of the ModelClass
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
@@ -299,7 +295,6 @@ type ModelClassList struct {
 }
 
 type ModelClassStatus struct {
-	Phase ModelClassPhase `json:"phase,omitempty" protobuf:"varint,1,opt,name=phase"`
 	// Total models created for the ModelClass
 	// +kubebuilder:validation:Optional
 	Models int32 `json:"models,omitempty" protobuf:"varint,2,opt,name=models"`
@@ -334,18 +329,20 @@ type ModelClassStatus struct {
 	RetiredModels []string `json:"retired,omitempty" protobuf:"bytes,17,opt,name=retired"`
 	// The name of the current predictor for this model class.
 	PredictorName string `json:"predictorName,omitempty" protobuf:"bytes,18,opt,name=predictorName"`
+	// The name of the current dataaoo for the model class
+	DataAppName string `json:"dataAppName,omitempty" protobuf:"bytes,19,opt,name=dataAppName"`
 	// The name of triggered by.
 	// +kubebuilder:validation:Optional
-	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,19,opt,name=triggeredBy"`
+	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,20,opt,name=triggeredBy"`
 	// UpdateUpdateStrategy in case of terminal failure
 	// Borrowed from cluster api controller
 	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,20,opt,name=failureReason"`
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,21,opt,name=failureReason"`
 	// UpdateUpdateStrategy in case of terminal failure message
 	//+kubebuilder:validation:Optional
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,21,opt,name=failureMessage"`
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,22,opt,name=failureMessage"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,22,rep,name=conditions"`
+	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,23,rep,name=conditions"`
 }

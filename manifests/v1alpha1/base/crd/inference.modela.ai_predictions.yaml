@@ -24,18 +24,8 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
-    - jsonPath: .spec.owner
-      name: Owner
-      priority: 1
-      type: string
-    - jsonPath: .spec.predictorName
+    - jsonPath: .spec.predictorRef.Name
       name: Predictor
-      type: string
-    - jsonPath: .spec.datasetName
-      name: Entity
-      type: string
-    - jsonPath: .spec.labeled
-      name: Labeled
       type: string
     - jsonPath: .spec.output.bucketName
       name: Bucket

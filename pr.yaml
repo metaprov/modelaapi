@@ -1,0 +1,75 @@
+apiVersion: inference.modela.ai/v1alpha1
+kind: Prediction
+metadata:
+  labels:
+    modela.ai/servingsite: default-serving-site
+    modela.ai/tenant: default-tenant
+  name: prediction-2
+  namespace: iris-product
+  ownerReferences:
+  - apiVersion: training.modela.ai/v1alpha1
+    kind: ModelClass
+    name: mc5
+    uid: 246c53b9-14af-4f67-b74c-75be6716d347
+spec:`
+  aborted: false
+  activeDeadlineSeconds: 600
+  createDataset: false
+  dataSourceRef: {}
+  forecast: false
+  forecastSpec:
+    horizon:
+      start: 0
+  input:
+    format: csv
+    observation:
+      bucketName: default-digitalocean-bucket
+      connectionName: ""
+      database: ""
+      path: modela/live/tenants/default-tenant/dataproducts/iris-product/dataproductversions/v0.0.1/modelclasses/mc/data/raw/orders.csv
+      sql: ""
+      table: ""
+      topic: ""
+      type: object
+      url: ""
+  labeled: false
+  modelClassName: mc5
+  output:
+    action: upsert
+    createTableIfNotExist: true
+    datasetName: dataset-20221126-151746
+    detectOutliers: false
+    format: csv
+    includeFeatures: true
+    location:
+      bucketName: default-digitalocean-bucket
+      connectionName: ""
+      database: ""
+      path: modela/live/tenants/default-tenant/dataproducts/iris-product/dataproductversions/v0.0.1/modelclasses/mc/data/raw/orders.csv.out
+      sql: ""
+      table: ""
+      topic: ""
+      type: object
+      url: ""
+    xai: true
+  owner: admin
+  partitionLocation: {}
+  predictorRef:
+    name: mc-predictor-mc5
+    namespace: iris-product
+  priority: medium
+  resources:
+    cpuImage: {}
+    custom: false
+    gpuImage: {}
+    workloadName: general-large
+  servingsiteRef:
+    name: default-serving-site
+    namespace: default-tenant
+  ttl: 0
+  unitTests:
+    baselineModelRef: {}
+    datasetRef: {}
+    unitTests: {}
+  versionName: v0.0.1
+  workers: 1

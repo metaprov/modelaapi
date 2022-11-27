@@ -54,10 +54,7 @@ type PredictionCondition struct {
 // +kubebuilder:storageversion
 // +kubebuilder:resource:path=predictions,shortName=pred,singular=prediction,categories={inference,modela}
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
-// +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
-// +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.datasetName"
-// +kubebuilder:printcolumn:name="Labeled",type="string",JSONPath=".spec.labeled"
+// +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorRef.Name"
 // +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.output.bucketName",priority=1
 // +kubebuilder:printcolumn:name="Key",type="string",JSONPath=".spec.output.path",priority=1
 // +kubebuilder:printcolumn:name="Score",type="string",JSONPath=".status.score"

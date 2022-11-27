@@ -109,7 +109,8 @@ func (mclass ModelClass) GetCond(t ModelClassConditionType) ModelClassCondition 
 }
 
 func (mclass ModelClass) IsReady() bool {
-	return mclass.Status.Phase == ModelClassPhaseReady
+	cond := mclass.GetCond(ModelClassReady)
+	return cond.Status == v1.ConditionTrue
 }
 
 func (mclass ModelClass) Key() string {
@@ -133,15 +134,8 @@ func (mclass *ModelClass) MarkArchived() {
 }
 
 func (mclass ModelClass) IsFailed() bool {
-	return mclass.Status.Phase == ModelClassPhaseFailed
-}
-
-///////////////////////////////////////////////
-// Training Life cycle
-//////////////////////////////////////////////
-
-func (mclass *ModelClass) StudyName() string {
-	return "study-" + mclass.Name
+	cond := mclass.GetCond(ModelClassReady)
+	return cond.Status == v1.ConditionFalse
 }
 
 // At the start of training, mark the training dataset as pending
@@ -150,7 +144,6 @@ func (mclass *ModelClass) StudyName() string {
 // Drifted
 //////////////////////////////////////////////
 func (mclass *ModelClass) MarkDrifted() {
-	mclass.Status.Phase = ModelClassPhaseDrifted
 	mclass.CreateOrUpdateCond(ModelClassCondition{
 		Type:   ModelClassModelDrifted,
 		Status: v1.ConditionTrue,
@@ -219,6 +212,10 @@ func (mclass *ModelClass) ErrorAlert(tenantRef *v1.ObjectReference, notifierName
 }
 
 func (mclass *ModelClass) MarkFailed(err string) {
-	mclass.Status.Phase = ModelClassPhaseFailed
+	mclass.CreateOrUpdateCond(ModelClassCondition{
+		Type:    ModelClassReady,
+		Status:  corev1.ConditionFalse,
+		Message: err,
+	})
 	mclass.Status.FailureMessage = util.StrPtr(err)
 }

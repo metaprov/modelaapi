@@ -1050,6 +1050,9 @@ message Model {
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
+// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
+// +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
+// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.objective"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // ModelClass represents an automatic search for the best machine learning model for a given dataset
 message ModelClass {
@@ -1373,7 +1376,7 @@ message ModelClassSpec {
   // The current version of the model class
   // that exists in the same DataProduct namespace as the resource
   // +kubebuilder:validation:Optional
-  optional int32 version = 3;
+  optional string version = 3;
 
   // The user-provided description of the ModelClass
   // +kubebuilder:default:=""
@@ -1433,8 +1436,6 @@ message ModelClassSpec {
 }
 
 message ModelClassStatus {
-  optional string phase = 1;
-
   // Total models created for the ModelClass
   // +kubebuilder:validation:Optional
   optional int32 models = 2;
@@ -1481,23 +1482,26 @@ message ModelClassStatus {
   // The name of the current predictor for this model class.
   optional string predictorName = 18;
 
+  // The name of the current dataaoo for the model class
+  optional string dataAppName = 19;
+
   // The name of triggered by.
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 19;
+  optional string triggeredBy = 20;
 
   // UpdateUpdateStrategy in case of terminal failure
   // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string failureReason = 20;
+  optional string failureReason = 21;
 
   // UpdateUpdateStrategy in case of terminal failure message
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 21;
+  optional string failureMessage = 22;
 
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelClassCondition conditions = 22;
+  repeated ModelClassCondition conditions = 23;
 }
 
 // Specification for model training.

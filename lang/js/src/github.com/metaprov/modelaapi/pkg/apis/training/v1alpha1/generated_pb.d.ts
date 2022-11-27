@@ -2029,8 +2029,8 @@ export class ModelClassSpec extends jspb.Message {
   getDataproductversionname(): string;
   setDataproductversionname(value: string): ModelClassSpec;
 
-  getVersion(): number;
-  setVersion(value: number): ModelClassSpec;
+  getVersion(): string;
+  setVersion(value: string): ModelClassSpec;
 
   getDescription(): string;
   setDescription(value: string): ModelClassSpec;
@@ -2094,7 +2094,7 @@ export namespace ModelClassSpec {
   export type AsObject = {
     owner: string,
     dataproductversionname: string,
-    version: number,
+    version: string,
     description: string,
     task: string,
     subtask: string,
@@ -2111,9 +2111,6 @@ export namespace ModelClassSpec {
 }
 
 export class ModelClassStatus extends jspb.Message {
-  getPhase(): string;
-  setPhase(value: string): ModelClassStatus;
-
   getModels(): number;
   setModels(value: number): ModelClassStatus;
 
@@ -2166,6 +2163,9 @@ export class ModelClassStatus extends jspb.Message {
   getPredictorname(): string;
   setPredictorname(value: string): ModelClassStatus;
 
+  getDataappname(): string;
+  setDataappname(value: string): ModelClassStatus;
+
   getTriggeredby(): string;
   setTriggeredby(value: string): ModelClassStatus;
 
@@ -2190,7 +2190,6 @@ export class ModelClassStatus extends jspb.Message {
 
 export namespace ModelClassStatus {
   export type AsObject = {
-    phase: string,
     models: number,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -2203,6 +2202,7 @@ export namespace ModelClassStatus {
     bestmodelscore: number,
     retiredList: Array<string>,
     predictorname: string,
+    dataappname: string,
     triggeredby: string,
     failurereason: string,
     failuremessage: string,

@@ -29,6 +29,15 @@ spec:
       name: Version
       priority: 1
       type: string
+    - jsonPath: .spec.description
+      name: Description
+      type: string
+    - jsonPath: .spec.task
+      name: Task
+      type: string
+    - jsonPath: .spec.objective
+      name: Objective
+      type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
@@ -2745,8 +2754,7 @@ spec:
               version:
                 description: The current version of the model class that exists in
                   the same DataProduct namespace as the resource
-                format: int32
-                type: integer
+                type: string
             required:
             - task
             type: object
@@ -3181,6 +3189,9 @@ spec:
                       type: string
                   type: object
                 type: array
+              dataAppName:
+                description: The name of the current dataaoo for the model class
+                type: string
               failureMessage:
                 description: UpdateUpdateStrategy in case of terminal failure message
                 type: string
@@ -3362,9 +3373,6 @@ spec:
                   on
                 format: int64
                 type: integer
-              phase:
-                description: ModelPhase specifies the current phase of a Model
-                type: string
               predictionScheduleStatus:
                 description: Batch Prediction schedule
                 properties:
