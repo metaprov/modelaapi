@@ -1305,10 +1305,14 @@ message ModelClassRunStatus {
   // for manual promotion, who approved the promotion
   optional k8s.io.api.core.v1.ObjectReference approvedBy = 16;
 
+  // Store the location of the last training set
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation lastTrainingSet = 17;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelClassRunCondition conditions = 17;
+  repeated ModelClassRunCondition conditions = 18;
 }
 
 message ModelClassServingSpec {
@@ -1451,10 +1455,6 @@ message ModelClassStatus {
   // BestFE specifies the best feature engineering pipeline produced by the ModelClass
   // +kubebuilder:validation:Optional
   optional FeatureEngineeringSpec bestFE = 5;
-
-  // Store the location of the last training set
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation lastOnlineTrainingSet = 6;
 
   // Training schedule status
   // +kubebuilder:validation:Optional

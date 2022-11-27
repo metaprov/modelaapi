@@ -1917,6 +1917,11 @@ export class ModelClassRunStatus extends jspb.Message {
   hasApprovedby(): boolean;
   clearApprovedby(): ModelClassRunStatus;
 
+  getLasttrainingset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLasttrainingset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassRunStatus;
+  hasLasttrainingset(): boolean;
+  clearLasttrainingset(): ModelClassRunStatus;
+
   getConditionsList(): Array<ModelClassRunCondition>;
   setConditionsList(value: Array<ModelClassRunCondition>): ModelClassRunStatus;
   clearConditionsList(): ModelClassRunStatus;
@@ -1948,6 +1953,7 @@ export namespace ModelClassRunStatus {
     promotedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     auto: boolean,
     approvedby?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    lasttrainingset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     conditionsList: Array<ModelClassRunCondition.AsObject>,
   }
 }
@@ -2127,11 +2133,6 @@ export class ModelClassStatus extends jspb.Message {
   hasBestfe(): boolean;
   clearBestfe(): ModelClassStatus;
 
-  getLastonlinetrainingset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLastonlinetrainingset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassStatus;
-  hasLastonlinetrainingset(): boolean;
-  clearLastonlinetrainingset(): ModelClassStatus;
-
   getTrainingschedulestatus(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
   setTrainingschedulestatus(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): ModelClassStatus;
   hasTrainingschedulestatus(): boolean;
@@ -2194,7 +2195,6 @@ export namespace ModelClassStatus {
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
-    lastonlinetrainingset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     trainingschedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     predictionscedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     monitoringscedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,

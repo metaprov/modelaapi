@@ -307,9 +307,7 @@ type ModelClassStatus struct {
 	// BestFE specifies the best feature engineering pipeline produced by the ModelClass
 	//+kubebuilder:validation:Optional
 	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,5,opt,name=bestFE"`
-	// Store the location of the last training set
-	//+kubebuilder:validation:Optional
-	LastTrainingSet data.DataLocation `json:"lastOnlineTrainingSet,omitempty" protobuf:"bytes,6,opt,name=lastOnlineTrainingSet"`
+
 	// Training schedule status
 	//+kubebuilder:validation:Optional
 	TrainingScheduleStatus catalog.RunScheduleStatus `json:"trainingScheduleStatus,omitempty" protobuf:"bytes,7,opt,name=trainingScheduleStatus"`
