@@ -1935,6 +1935,18 @@ func (in *ModelClassStatus) DeepCopyInto(out *ModelClassStatus) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.LastTraining != nil {
+		in, out := &in.LastTraining, &out.LastTraining
+		*out = (*in).DeepCopy()
+	}
+	if in.LastPromotion != nil {
+		in, out := &in.LastPromotion, &out.LastPromotion
+		*out = (*in).DeepCopy()
+	}
+	if in.LastBatchPrediction != nil {
+		in, out := &in.LastBatchPrediction, &out.LastBatchPrediction
+		*out = (*in).DeepCopy()
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ModelClassCondition, len(*in))
