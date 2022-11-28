@@ -78,6 +78,49 @@ export class CloudProxyServiceClient {
     this.methodInfoDownload);
   }
 
+  methodInfoDownloadAllFiles = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/DownloadAllFiles',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.DownloadAllFilesRequest,
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.DownloadAllFilesResponse,
+    (request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.DownloadAllFilesRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.DownloadAllFilesResponse.deserializeBinary
+  );
+
+  downloadAllFiles(
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.DownloadAllFilesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.DownloadAllFilesResponse>;
+
+  downloadAllFiles(
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.DownloadAllFilesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.DownloadAllFilesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.DownloadAllFilesResponse>;
+
+  downloadAllFiles(
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.DownloadAllFilesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.DownloadAllFilesResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/DownloadAllFiles',
+        request,
+        metadata || {},
+        this.methodInfoDownloadAllFiles,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/DownloadAllFiles',
+    request,
+    metadata || {},
+    this.methodInfoDownloadAllFiles);
+  }
+
   methodInfoUpload = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Upload',
     grpcWeb.MethodType.UNARY,

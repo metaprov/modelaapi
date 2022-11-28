@@ -205,6 +205,62 @@ export namespace FileDownloadResponse {
   }
 }
 
+export class DownloadAllFilesRequest extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): DownloadAllFilesRequest;
+
+  getPath(): string;
+  setPath(value: string): DownloadAllFilesRequest;
+
+  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DownloadAllFilesRequest;
+  hasBucket(): boolean;
+  clearBucket(): DownloadAllFilesRequest;
+
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DownloadAllFilesRequest;
+  hasConnection(): boolean;
+  clearConnection(): DownloadAllFilesRequest;
+
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DownloadAllFilesRequest;
+
+  getTenant(): string;
+  setTenant(value: string): DownloadAllFilesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownloadAllFilesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DownloadAllFilesRequest): DownloadAllFilesRequest.AsObject;
+  static serializeBinaryToWriter(message: DownloadAllFilesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownloadAllFilesRequest;
+  static deserializeBinaryFromReader(message: DownloadAllFilesRequest, reader: jspb.BinaryReader): DownloadAllFilesRequest;
+}
+
+export namespace DownloadAllFilesRequest {
+  export type AsObject = {
+    key: string,
+    path: string,
+    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
+    tenant: string,
+  }
+}
+
+export class DownloadAllFilesResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownloadAllFilesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DownloadAllFilesResponse): DownloadAllFilesResponse.AsObject;
+  static serializeBinaryToWriter(message: DownloadAllFilesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownloadAllFilesResponse;
+  static deserializeBinaryFromReader(message: DownloadAllFilesResponse, reader: jspb.BinaryReader): DownloadAllFilesResponse;
+}
+
+export namespace DownloadAllFilesResponse {
+  export type AsObject = {
+  }
+}
+
 export class FileUploadRequest extends jspb.Message {
   getKey(): string;
   setKey(value: string): FileUploadRequest;

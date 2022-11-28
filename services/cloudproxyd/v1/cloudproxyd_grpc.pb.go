@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CloudProxyServiceClient interface {
 	Download(ctx context.Context, in *FileDownloadRequest, opts ...grpc.CallOption) (*FileDownloadResponse, error)
+	DownloadAllFiles(ctx context.Context, in *DownloadAllFilesRequest, opts ...grpc.CallOption) (*DownloadAllFilesResponse, error)
 	Upload(ctx context.Context, in *FileUploadRequest, opts ...grpc.CallOption) (*FileUploadResponse, error)
 	KeyExistInVirtualBucket(ctx context.Context, in *KeyExistInVirtualBucketRequest, opts ...grpc.CallOption) (*KeyExistInVirtualBucketResponse, error)
 	VirtualBucketExist(ctx context.Context, in *VirtualBucketExistRequest, opts ...grpc.CallOption) (*VirtualBucketExistResponse, error)
@@ -41,6 +42,15 @@ func NewCloudProxyServiceClient(cc grpc.ClientConnInterface) CloudProxyServiceCl
 func (c *cloudProxyServiceClient) Download(ctx context.Context, in *FileDownloadRequest, opts ...grpc.CallOption) (*FileDownloadResponse, error) {
 	out := new(FileDownloadResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Download", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudProxyServiceClient) DownloadAllFiles(ctx context.Context, in *DownloadAllFilesRequest, opts ...grpc.CallOption) (*DownloadAllFilesResponse, error) {
+	out := new(DownloadAllFilesResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/DownloadAllFiles", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -97,6 +107,7 @@ func (c *cloudProxyServiceClient) Shutdown(ctx context.Context, in *ShutdownRequ
 // for forward compatibility
 type CloudProxyServiceServer interface {
 	Download(context.Context, *FileDownloadRequest) (*FileDownloadResponse, error)
+	DownloadAllFiles(context.Context, *DownloadAllFilesRequest) (*DownloadAllFilesResponse, error)
 	Upload(context.Context, *FileUploadRequest) (*FileUploadResponse, error)
 	KeyExistInVirtualBucket(context.Context, *KeyExistInVirtualBucketRequest) (*KeyExistInVirtualBucketResponse, error)
 	VirtualBucketExist(context.Context, *VirtualBucketExistRequest) (*VirtualBucketExistResponse, error)
@@ -111,6 +122,9 @@ type UnimplementedCloudProxyServiceServer struct {
 
 func (UnimplementedCloudProxyServiceServer) Download(context.Context, *FileDownloadRequest) (*FileDownloadResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Download not implemented")
+}
+func (UnimplementedCloudProxyServiceServer) DownloadAllFiles(context.Context, *DownloadAllFilesRequest) (*DownloadAllFilesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DownloadAllFiles not implemented")
 }
 func (UnimplementedCloudProxyServiceServer) Upload(context.Context, *FileUploadRequest) (*FileUploadResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Upload not implemented")
@@ -154,6 +168,24 @@ func _CloudProxyService_Download_Handler(srv interface{}, ctx context.Context, d
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudProxyServiceServer).Download(ctx, req.(*FileDownloadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudProxyService_DownloadAllFiles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DownloadAllFilesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudProxyServiceServer).DownloadAllFiles(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/DownloadAllFiles",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudProxyServiceServer).DownloadAllFiles(ctx, req.(*DownloadAllFilesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -258,6 +290,10 @@ var CloudProxyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Download",
 			Handler:    _CloudProxyService_Download_Handler,
+		},
+		{
+			MethodName: "DownloadAllFiles",
+			Handler:    _CloudProxyService_DownloadAllFiles_Handler,
 		},
 		{
 			MethodName: "Upload",
