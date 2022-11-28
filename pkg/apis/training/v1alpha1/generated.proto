@@ -1504,12 +1504,19 @@ message ModelClassStatus {
 
   // The last time a batch prediction was made
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastBatchPrediction = 25;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPrediction = 25;
+
+  // The name of the last prediction for this class
+  // +kubebuilder:validation:Optional
+  optional string lastPredictionName = 26;
+
+  // Total number of batch predictions
+  optional int32 totalPredictions = 27;
 
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelClassCondition conditions = 26;
+  repeated ModelClassCondition conditions = 28;
 }
 
 // Specification for model training.

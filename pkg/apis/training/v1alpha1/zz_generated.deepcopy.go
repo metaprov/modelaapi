@@ -1943,8 +1943,8 @@ func (in *ModelClassStatus) DeepCopyInto(out *ModelClassStatus) {
 		in, out := &in.LastPromotion, &out.LastPromotion
 		*out = (*in).DeepCopy()
 	}
-	if in.LastBatchPrediction != nil {
-		in, out := &in.LastBatchPrediction, &out.LastBatchPrediction
+	if in.LastPrediction != nil {
+		in, out := &in.LastPrediction, &out.LastPrediction
 		*out = (*in).DeepCopy()
 	}
 	if in.Conditions != nil {

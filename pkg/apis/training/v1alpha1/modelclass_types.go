@@ -347,9 +347,14 @@ type ModelClassStatus struct {
 	LastPromotion *metav1.Time `json:"lastPromotion,omitempty" protobuf:"bytes,24,opt,name=lastPromotion"`
 	// The last time a batch prediction was made
 	//+kubebuilder:validation:Optional
-	LastBatchPrediction *metav1.Time `json:"lastBatchPrediction,omitempty" protobuf:"bytes,25,opt,name=lastBatchPrediction"`
+	LastPrediction *metav1.Time `json:"lastPrediction,omitempty" protobuf:"bytes,25,opt,name=lastPrediction"`
+	// The name of the last prediction for this class
+	//+kubebuilder:validation:Optional
+	LastPredictionName string `json:"lastPredictionName,omitempty" protobuf:"bytes,26,opt,name=lastPredictionName"`
+	// Total number of batch predictions
+	TotalPredictions int32 `json:"totalPredictions,omitempty" protobuf:"varint,27,opt,name=totalPredictions"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,26,rep,name=conditions"`
+	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,28,rep,name=conditions"`
 }

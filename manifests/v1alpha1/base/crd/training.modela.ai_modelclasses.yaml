@@ -3194,9 +3194,12 @@ spec:
                 description: UpdateUpdateStrategy in case of terminal failure Borrowed
                   from cluster api controller
                 type: string
-              lastBatchPrediction:
+              lastPrediction:
                 description: The last time a batch prediction was made
                 format: date-time
+                type: string
+              lastPredictionName:
+                description: The name of the last prediction for this class
                 type: string
               lastPromotion:
                 description: The last time a new model was promoted
@@ -3375,6 +3378,10 @@ spec:
                 items:
                   type: string
                 type: array
+              totalPredictions:
+                description: Total number of batch predictions
+                format: int32
+                type: integer
               trainingScheduleStatus:
                 description: Training schedule status
                 properties:
