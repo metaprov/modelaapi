@@ -19,10 +19,10 @@ class CloudProxyServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.FileDownloadRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.FileDownloadResponse.FromString,
                 )
-        self.DownloadAllFiles = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/DownloadAllFiles',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.DownloadAllFilesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.DownloadAllFilesResponse.FromString,
+        self.List = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/List',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.ListObjectsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.ListObjectsResponse.FromString,
                 )
         self.Upload = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Upload',
@@ -60,7 +60,7 @@ class CloudProxyServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DownloadAllFiles(self, request, context):
+    def List(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -104,10 +104,10 @@ def add_CloudProxyServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.FileDownloadRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.FileDownloadResponse.SerializeToString,
             ),
-            'DownloadAllFiles': grpc.unary_unary_rpc_method_handler(
-                    servicer.DownloadAllFiles,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.DownloadAllFilesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.DownloadAllFilesResponse.SerializeToString,
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.ListObjectsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.ListObjectsResponse.SerializeToString,
             ),
             'Upload': grpc.unary_unary_rpc_method_handler(
                     servicer.Upload,
@@ -162,7 +162,7 @@ class CloudProxyService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DownloadAllFiles(request,
+    def List(request,
             target,
             options=(),
             channel_credentials=None,
@@ -172,9 +172,9 @@ class CloudProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/DownloadAllFiles',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.DownloadAllFilesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.DownloadAllFilesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/List',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.ListObjectsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.ListObjectsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

@@ -9,7 +9,7 @@ import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 
 service CloudProxyService {
     rpc Download(FileDownloadRequest)                             returns (FileDownloadResponse)     {}
-    rpc DownloadAllFiles(DownloadAllFilesRequest)                 returns (DownloadAllFilesResponse)     {}
+    rpc List(ListObjectsRequest)                                  returns (ListObjectsResponse)     {}
     rpc Upload  (FileUploadRequest)                               returns (FileUploadResponse)     {}
     rpc KeyExistInVirtualBucket(KeyExistInVirtualBucketRequest)   returns (KeyExistInVirtualBucketResponse)     {}
     rpc VirtualBucketExist(VirtualBucketExistRequest)             returns (VirtualBucketExistResponse)     {}
@@ -57,18 +57,17 @@ message FileDownloadRequest {
 message FileDownloadResponse {}
 
 
-message DownloadAllFilesRequest {
-    string key    = 1; // key on the cloud storage
-    string path   = 2; // local path
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 3;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection       connection = 4;
-    map<string,bytes>  secret    = 5;
-    string tenant   = 6; // local path
+message ListObjectsRequest {
+    string prefix   = 1; // local path
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection       connection = 3;
+    map<string,bytes>  secret    = 4;
+    string tenant   = 5; // local path
 }
 
-message DownloadAllFilesResponse {}
-
-
+message ListObjectsResponse {
+    repeated string keys   = 1; // local path
+}
 
 message FileUploadRequest {
     string key    = 1; // key on the cloud storage

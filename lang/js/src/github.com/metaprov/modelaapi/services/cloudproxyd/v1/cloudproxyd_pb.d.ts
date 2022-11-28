@@ -205,41 +205,37 @@ export namespace FileDownloadResponse {
   }
 }
 
-export class DownloadAllFilesRequest extends jspb.Message {
-  getKey(): string;
-  setKey(value: string): DownloadAllFilesRequest;
-
-  getPath(): string;
-  setPath(value: string): DownloadAllFilesRequest;
+export class ListObjectsRequest extends jspb.Message {
+  getPrefix(): string;
+  setPrefix(value: string): ListObjectsRequest;
 
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DownloadAllFilesRequest;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): ListObjectsRequest;
   hasBucket(): boolean;
-  clearBucket(): DownloadAllFilesRequest;
+  clearBucket(): ListObjectsRequest;
 
   getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DownloadAllFilesRequest;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): ListObjectsRequest;
   hasConnection(): boolean;
-  clearConnection(): DownloadAllFilesRequest;
+  clearConnection(): ListObjectsRequest;
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): DownloadAllFilesRequest;
+  clearSecretMap(): ListObjectsRequest;
 
   getTenant(): string;
-  setTenant(value: string): DownloadAllFilesRequest;
+  setTenant(value: string): ListObjectsRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DownloadAllFilesRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DownloadAllFilesRequest): DownloadAllFilesRequest.AsObject;
-  static serializeBinaryToWriter(message: DownloadAllFilesRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DownloadAllFilesRequest;
-  static deserializeBinaryFromReader(message: DownloadAllFilesRequest, reader: jspb.BinaryReader): DownloadAllFilesRequest;
+  toObject(includeInstance?: boolean): ListObjectsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListObjectsRequest): ListObjectsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListObjectsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListObjectsRequest;
+  static deserializeBinaryFromReader(message: ListObjectsRequest, reader: jspb.BinaryReader): ListObjectsRequest;
 }
 
-export namespace DownloadAllFilesRequest {
+export namespace ListObjectsRequest {
   export type AsObject = {
-    key: string,
-    path: string,
+    prefix: string,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
@@ -247,17 +243,23 @@ export namespace DownloadAllFilesRequest {
   }
 }
 
-export class DownloadAllFilesResponse extends jspb.Message {
+export class ListObjectsResponse extends jspb.Message {
+  getKeysList(): Array<string>;
+  setKeysList(value: Array<string>): ListObjectsResponse;
+  clearKeysList(): ListObjectsResponse;
+  addKeys(value: string, index?: number): ListObjectsResponse;
+
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DownloadAllFilesResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: DownloadAllFilesResponse): DownloadAllFilesResponse.AsObject;
-  static serializeBinaryToWriter(message: DownloadAllFilesResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DownloadAllFilesResponse;
-  static deserializeBinaryFromReader(message: DownloadAllFilesResponse, reader: jspb.BinaryReader): DownloadAllFilesResponse;
+  toObject(includeInstance?: boolean): ListObjectsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListObjectsResponse): ListObjectsResponse.AsObject;
+  static serializeBinaryToWriter(message: ListObjectsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListObjectsResponse;
+  static deserializeBinaryFromReader(message: ListObjectsResponse, reader: jspb.BinaryReader): ListObjectsResponse;
 }
 
-export namespace DownloadAllFilesResponse {
+export namespace ListObjectsResponse {
   export type AsObject = {
+    keysList: Array<string>,
   }
 }
 
