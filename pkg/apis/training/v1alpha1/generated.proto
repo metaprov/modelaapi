@@ -1494,10 +1494,22 @@ message ModelClassStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 22;
 
+  // The last time a new model was trained as part of this model class
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTraining = 23;
+
+  // The last time a new model was promoted
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPromotion = 24;
+
+  // The last time a batch prediction was made
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastBatchPrediction = 25;
+
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelClassCondition conditions = 23;
+  repeated ModelClassCondition conditions = 26;
 }
 
 // Specification for model training.

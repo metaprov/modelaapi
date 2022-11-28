@@ -339,8 +339,17 @@ type ModelClassStatus struct {
 	// UpdateUpdateStrategy in case of terminal failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,22,opt,name=failureMessage"`
+	// The last time a new model was trained as part of this model class
+	//+kubebuilder:validation:Optional
+	LastTraining *metav1.Time `json:"lastTraining,omitempty" protobuf:"bytes,23,opt,name=lastTraining"`
+	// The last time a new model was promoted
+	//+kubebuilder:validation:Optional
+	LastPromotion *metav1.Time `json:"lastPromotion,omitempty" protobuf:"bytes,24,opt,name=lastPromotion"`
+	// The last time a batch prediction was made
+	//+kubebuilder:validation:Optional
+	LastBatchPrediction *metav1.Time `json:"lastBatchPrediction,omitempty" protobuf:"bytes,25,opt,name=lastBatchPrediction"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,23,rep,name=conditions"`
+	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,26,rep,name=conditions"`
 }

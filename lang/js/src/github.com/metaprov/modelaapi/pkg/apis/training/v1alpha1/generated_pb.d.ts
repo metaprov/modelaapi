@@ -2170,6 +2170,21 @@ export class ModelClassStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): ModelClassStatus;
 
+  getLasttraining(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttraining(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
+  hasLasttraining(): boolean;
+  clearLasttraining(): ModelClassStatus;
+
+  getLastpromotion(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastpromotion(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
+  hasLastpromotion(): boolean;
+  clearLastpromotion(): ModelClassStatus;
+
+  getLastbatchprediction(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastbatchprediction(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
+  hasLastbatchprediction(): boolean;
+  clearLastbatchprediction(): ModelClassStatus;
+
   getConditionsList(): Array<ModelClassCondition>;
   setConditionsList(value: Array<ModelClassCondition>): ModelClassStatus;
   clearConditionsList(): ModelClassStatus;
@@ -2200,6 +2215,9 @@ export namespace ModelClassStatus {
     triggeredby: string,
     failurereason: string,
     failuremessage: string,
+    lasttraining?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastpromotion?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastbatchprediction?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ModelClassCondition.AsObject>,
   }
 }
