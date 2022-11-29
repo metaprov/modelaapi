@@ -98,6 +98,9 @@ export namespace BatchPredictMCRequest {
 }
 
 export class BatchPredictResponse extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): BatchPredictResponse;
+
   getRows(): number;
   setRows(value: number): BatchPredictResponse;
 
@@ -111,6 +114,7 @@ export class BatchPredictResponse extends jspb.Message {
 
 export namespace BatchPredictResponse {
   export type AsObject = {
+    key: string,
     rows: number,
   }
 }

@@ -28,10 +28,9 @@ message BatchPredictMCRequest {
 }
 
 
-
-
 message BatchPredictResponse {
-    int32 rows = 1; // number of predicted rows
+    string key = 1; // the object key to the prediction file.
+    int32 rows = 2; // number of predicted rows
 }
 
 message ShutdownRequest {}

@@ -909,7 +909,8 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResp
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rows: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    rows: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -947,6 +948,10 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResp
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setKey(value);
+      break;
+    case 2:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setRows(value);
       break;
@@ -979,10 +984,17 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResp
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getKey();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = message.getRows();
   if (f !== 0) {
     writer.writeInt32(
-      1,
+      2,
       f
     );
   }
@@ -990,11 +1002,29 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResp
 
 
 /**
- * optional int32 rows = 1;
+ * optional string key = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse.prototype.getKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse.prototype.setKey = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional int32 rows = 2;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse.prototype.getRows = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -1003,7 +1033,7 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResp
  * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse} returns this
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse.prototype.setRows = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
