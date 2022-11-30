@@ -1660,6 +1660,12 @@ export class ModelClassDataSpec extends jspb.Message {
   hasTests(): boolean;
   clearTests(): ModelClassDataSpec;
 
+  getOnlinefeaturestorename(): string;
+  setOnlinefeaturestorename(value: string): ModelClassDataSpec;
+
+  getOfflinefeaturestorename(): string;
+  setOfflinefeaturestorename(value: string): ModelClassDataSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassDataSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassDataSpec): ModelClassDataSpec.AsObject;
@@ -1679,6 +1685,8 @@ export namespace ModelClassDataSpec {
     predictiontimecolumn: string,
     target: string,
     tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    onlinefeaturestorename: string,
+    offlinefeaturestorename: string,
   }
 }
 
@@ -2082,6 +2090,9 @@ export class ModelClassSpec extends jspb.Message {
   getFast(): boolean;
   setFast(value: boolean): ModelClassSpec;
 
+  getPaused(): boolean;
+  setPaused(value: boolean): ModelClassSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassSpec): ModelClassSpec.AsObject;
@@ -2107,6 +2118,7 @@ export namespace ModelClassSpec {
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     reportschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     fast: boolean,
+    paused: boolean,
   }
 }
 

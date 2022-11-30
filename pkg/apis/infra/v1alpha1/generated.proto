@@ -1324,6 +1324,36 @@ message FacebookSpec {
   optional string token = 1;
 }
 
+// Specifiction for an online feature store
+message FeatureStoreSpec {
+  optional bool online = 1;
+
+  // The name of the online feature store.
+  // +kubebuilder:validation:Optional
+  optional string name = 2;
+
+  // UpdateUpdateStrategy in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference connectionRef = 3;
+}
+
+message FeatureStoreStatus {
+  // Feature store name
+  optional string name = 1;
+
+  // Last check of the feature store status
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+
+  // UpdateUpdateStrategy in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 3;
+
+  // UpdateUpdateStrategy in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 4;
+}
+
 message FtpSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
@@ -2839,6 +2869,10 @@ message TenantSpec {
   // The default notification specification for all resources under the tenant
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 6;
+
+  // Set of feature stores
+  // +kubebuilder:validation:Optional
+  repeated FeatureStoreSpec featureStores = 7;
 }
 
 // TenantStatus defines the actual state of a Tenant
@@ -2860,10 +2894,14 @@ message TenantStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 4;
 
+  // the status of the feature stores
+  // +kubebuilder:validation:Optional
+  repeated FeatureStoreStatus featureStores = 5;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated TenantCondition conditions = 5;
+  repeated TenantCondition conditions = 6;
 }
 
 message TeradataSpec {

@@ -481,6 +481,16 @@ spec:
                           which specifies the DataLocation
                         type: string
                     type: object
+                  offlineFeatureStoreName:
+                    description: The name of the offline feature store, the offline
+                      feature store contain the observations and the feature groups
+                      The offline feature stores are stored in the tenant.
+                    type: string
+                  onlineFeatureStoreName:
+                    description: The name of the online feature store that serve predictions
+                      for models from this model class The offline feature stores
+                      are stored in the tenant.
+                    type: string
                   predictionHistory:
                     description: The location of the prediction history file. The
                       prediction history contain all the predictions for an observation
@@ -1390,6 +1400,10 @@ spec:
                 description: The name of the Account which created the object, which
                   exists in the same tenant as the object
                 type: string
+              paused:
+                default: false
+                description: If true, pause the model class activities.
+                type: boolean
               reportSchedule:
                 description: The schedule for summary report
                 properties:

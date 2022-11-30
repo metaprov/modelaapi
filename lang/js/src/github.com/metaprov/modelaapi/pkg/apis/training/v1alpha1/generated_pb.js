@@ -17342,7 +17342,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
     primarykeyList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
     predictiontimecolumn: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     target: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f)
+    tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
+    onlinefeaturestorename: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    offlinefeaturestorename: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -17420,6 +17422,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
       msg.setTests(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOnlinefeaturestorename(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOfflinefeaturestorename(value);
       break;
     default:
       reader.skipField();
@@ -17517,6 +17527,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
       9,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 11));
+  if (f != null) {
+    writer.writeString(
+      11,
+      f
     );
   }
 };
@@ -17850,6 +17874,78 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpe
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.hasTests = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional string onlineFeatureStoreName = 10;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.getOnlinefeaturestorename = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.setOnlinefeaturestorename = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.clearOnlinefeaturestorename = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.hasOnlinefeaturestorename = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional string offlineFeatureStoreName = 11;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.getOfflinefeaturestorename = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.setOfflinefeaturestorename = function(value) {
+  return jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.clearOfflinefeaturestorename = function() {
+  return jspb.Message.setField(this, 11, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.prototype.hasOfflinefeaturestorename = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
@@ -21106,7 +21202,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.to
     serving: (f = msg.getServing()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassServingSpec.toObject(includeInstance, f),
     notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f),
     reportschedule: (f = msg.getReportschedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
-    fast: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f
+    fast: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
+    paused: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -21209,6 +21306,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.de
     case 15:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setFast(value);
+      break;
+    case 16:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPaused(value);
       break;
     default:
       reader.skipField();
@@ -21348,6 +21449,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.se
   if (f != null) {
     writer.writeBool(
       15,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 16));
+  if (f != null) {
+    writer.writeBool(
+      16,
       f
     );
   }
@@ -21899,6 +22007,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.pr
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.hasFast = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional bool paused = 16;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.getPaused = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.setPaused = function(value) {
+  return jspb.Message.setField(this, 16, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.clearPaused = function() {
+  return jspb.Message.setField(this, 16, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.hasPaused = function() {
+  return jspb.Message.getField(this, 16) != null;
 };
 
 

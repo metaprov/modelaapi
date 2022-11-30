@@ -133,6 +133,57 @@ spec:
                 description: The user-provided description of the Tenant
                 maxLength: 512
                 type: string
+              featureStores:
+                description: Set of feature stores
+                items:
+                  description: Specifiction for an online feature store
+                  properties:
+                    connectionRef:
+                      description: UpdateUpdateStrategy in case of terminal failure
+                        message
+                      properties:
+                        apiVersion:
+                          description: API version of the referent.
+                          type: string
+                        fieldPath:
+                          description: 'If referring to a piece of an object instead
+                            of an entire object, this string should contain a valid
+                            JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                            For example, if the object reference is to a container
+                            within a pod, this would take on a value like: "spec.containers{name}"
+                            (where "name" refers to the name of the container that
+                            triggered the event) or if no container name is specified
+                            "spec.containers[2]" (container with index 2 in this pod).
+                            This syntax is chosen only to have some well-defined way
+                            of referencing a part of an object. TODO: this design
+                            is not final and this field is subject to change in the
+                            future.'
+                          type: string
+                        kind:
+                          description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                          type: string
+                        name:
+                          description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                          type: string
+                        namespace:
+                          description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                          type: string
+                        resourceVersion:
+                          description: 'Specific resourceVersion to which this reference
+                            is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                          type: string
+                        uid:
+                          description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                          type: string
+                      type: object
+                      x-kubernetes-map-type: atomic
+                    name:
+                      description: The name of the online feature store.
+                      type: string
+                    online:
+                      type: boolean
+                  type: object
+                type: array
               notification:
                 description: The default notification specification for all resources
                   under the tenant
@@ -287,6 +338,27 @@ spec:
                 description: UpdateUpdateStrategy in case of terminal failure Borrowed
                   from cluster api controller
                 type: string
+              featureStores:
+                description: the status of the feature stores
+                items:
+                  properties:
+                    failureMessage:
+                      description: UpdateUpdateStrategy in case of terminal failure
+                        message
+                      type: string
+                    failureReason:
+                      description: UpdateUpdateStrategy in case of terminal failure
+                        Borrowed from cluster api controller
+                      type: string
+                    lastUpdated:
+                      description: Last check of the feature store status
+                      format: date-time
+                      type: string
+                    name:
+                      description: Feature store name
+                      type: string
+                  type: object
+                type: array
               lastUpdated:
                 description: Last time the object was updated
                 format: date-time

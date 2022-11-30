@@ -1133,6 +1133,16 @@ message ModelClassDataSpec {
   // Tests to run on the training data before training. This assurs data quality is being met.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 9;
+
+  // The name of the online feature store that serve predictions for models from this model class
+  // The offline feature stores are stored in the tenant.
+  // +kubebuilder:validation:Optional
+  optional string onlineFeatureStoreName = 10;
+
+  // The name of the offline feature store, the offline feature store contain the observations and the feature groups
+  // The offline feature stores are stored in the tenant.
+  // +kubebuilder:validation:Optional
+  optional string offlineFeatureStoreName = 11;
 }
 
 // ModelClassList contains a list of Studies
@@ -1433,6 +1443,11 @@ message ModelClassSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool fast = 15;
+
+  // If true, pause the model class activities.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool paused = 16;
 }
 
 message ModelClassStatus {

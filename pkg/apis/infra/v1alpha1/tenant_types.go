@@ -88,6 +88,9 @@ type TenantSpec struct {
 	// The default notification specification for all resources under the tenant
 	// +kubebuilder:validation:Optional
 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,6,opt,name=notification"`
+	// Set of feature stores
+	// +kubebuilder:validation:Optional
+	FeatureStores []FeatureStoreSpec `json:"featureStores,omitempty" protobuf:"bytes,7,opt,name=featureStores"`
 }
 
 // TenantStatus defines the actual state of a Tenant
@@ -95,7 +98,6 @@ type TenantStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
-
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
@@ -106,8 +108,36 @@ type TenantStatus struct {
 	// UpdateUpdateStrategy in case of terminal failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,4,opt,name=failureMessage"`
+	// the status of the feature stores
+	//+kubebuilder:validation:Optional
+	FeatureStores []FeatureStoreStatus `json:"featureStores,omitempty" protobuf:"bytes,5,opt,name=featureStores"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []TenantCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
+	Conditions []TenantCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
+}
+
+// Specifiction for an online feature store
+type FeatureStoreSpec struct {
+	Online bool `json:"online,omitempty" protobuf:"bytes,1,opt,name=online"`
+	// The name of the online feature store.
+	//+kubebuilder:validation:Optional
+	Name string `json:"name,omitempty" protobuf:"bytes,2,opt,name=name"`
+	// UpdateUpdateStrategy in case of terminal failure message
+	//+kubebuilder:validation:Optional
+	ConnectionRef v1.ObjectReference `json:"connectionRef,omitempty" protobuf:"bytes,3,opt,name=connectionRef"`
+}
+
+type FeatureStoreStatus struct {
+	// Feature store name
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	// Last check of the feature store status
+	LastCheck *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
+	// UpdateUpdateStrategy in case of terminal failure
+	// Borrowed from cluster api controller
+	//+kubebuilder:validation:Optional
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,3,opt,name=failureReason"`
+	// UpdateUpdateStrategy in case of terminal failure message
+	//+kubebuilder:validation:Optional
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,4,opt,name=failureMessage"`
 }

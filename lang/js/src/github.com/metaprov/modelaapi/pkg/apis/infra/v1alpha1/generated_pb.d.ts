@@ -2256,6 +2256,66 @@ export namespace FacebookSpec {
   }
 }
 
+export class FeatureStoreSpec extends jspb.Message {
+  getOnline(): boolean;
+  setOnline(value: boolean): FeatureStoreSpec;
+
+  getName(): string;
+  setName(value: string): FeatureStoreSpec;
+
+  getConnectionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setConnectionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeatureStoreSpec;
+  hasConnectionref(): boolean;
+  clearConnectionref(): FeatureStoreSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureStoreSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureStoreSpec): FeatureStoreSpec.AsObject;
+  static serializeBinaryToWriter(message: FeatureStoreSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureStoreSpec;
+  static deserializeBinaryFromReader(message: FeatureStoreSpec, reader: jspb.BinaryReader): FeatureStoreSpec;
+}
+
+export namespace FeatureStoreSpec {
+  export type AsObject = {
+    online: boolean,
+    name: string,
+    connectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+  }
+}
+
+export class FeatureStoreStatus extends jspb.Message {
+  getName(): string;
+  setName(value: string): FeatureStoreStatus;
+
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureStoreStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): FeatureStoreStatus;
+
+  getFailurereason(): string;
+  setFailurereason(value: string): FeatureStoreStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): FeatureStoreStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureStoreStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureStoreStatus): FeatureStoreStatus.AsObject;
+  static serializeBinaryToWriter(message: FeatureStoreStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureStoreStatus;
+  static deserializeBinaryFromReader(message: FeatureStoreStatus, reader: jspb.BinaryReader): FeatureStoreStatus;
+}
+
+export namespace FeatureStoreStatus {
+  export type AsObject = {
+    name: string,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    failurereason: string,
+    failuremessage: string,
+  }
+}
+
 export class FtpSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): FtpSpec;
@@ -4915,6 +4975,11 @@ export class TenantSpec extends jspb.Message {
   hasNotification(): boolean;
   clearNotification(): TenantSpec;
 
+  getFeaturestoresList(): Array<FeatureStoreSpec>;
+  setFeaturestoresList(value: Array<FeatureStoreSpec>): TenantSpec;
+  clearFeaturestoresList(): TenantSpec;
+  addFeaturestores(value?: FeatureStoreSpec, index?: number): FeatureStoreSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TenantSpec.AsObject;
   static toObject(includeInstance: boolean, msg: TenantSpec): TenantSpec.AsObject;
@@ -4931,6 +4996,7 @@ export namespace TenantSpec {
     owner: string,
     permissions?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
+    featurestoresList: Array<FeatureStoreSpec.AsObject>,
   }
 }
 
@@ -4948,6 +5014,11 @@ export class TenantStatus extends jspb.Message {
 
   getFailuremessage(): string;
   setFailuremessage(value: string): TenantStatus;
+
+  getFeaturestoresList(): Array<FeatureStoreStatus>;
+  setFeaturestoresList(value: Array<FeatureStoreStatus>): TenantStatus;
+  clearFeaturestoresList(): TenantStatus;
+  addFeaturestores(value?: FeatureStoreStatus, index?: number): FeatureStoreStatus;
 
   getConditionsList(): Array<TenantCondition>;
   setConditionsList(value: Array<TenantCondition>): TenantStatus;
@@ -4968,6 +5039,7 @@ export namespace TenantStatus {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
+    featurestoresList: Array<FeatureStoreStatus.AsObject>,
     conditionsList: Array<TenantCondition.AsObject>,
   }
 }

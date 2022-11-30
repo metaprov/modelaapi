@@ -119,6 +119,10 @@ type ModelClassSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Fast *bool `json:"fast,omitempty" protobuf:"varint,15,opt,name=fast"`
+	// If true, pause the model class activities.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,16,opt,name=paused"`
 }
 
 // Specification for the label information
@@ -159,6 +163,14 @@ type ModelClassDataSpec struct {
 	// Tests to run on the training data before training. This assurs data quality is being met.
 	// +kubebuilder:validation:Optional
 	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,9,opt,name=tests"`
+	// The name of the online feature store that serve predictions for models from this model class
+	// The offline feature stores are stored in the tenant.
+	// +kubebuilder:validation:Optional
+	OnlineFeatureStoreName *string `json:"onlineFeatureStoreName,omitempty" protobuf:"bytes,10,opt,name=onlineFeatureStoreName"`
+	// The name of the offline feature store, the offline feature store contain the observations and the feature groups
+	// The offline feature stores are stored in the tenant.
+	// +kubebuilder:validation:Optional
+	OfflineFeatureStoreName *string `json:"offlineFeatureStoreName,omitempty" protobuf:"bytes,11,opt,name=offlineFeatureStoreName"`
 }
 
 // Specification for model training.
