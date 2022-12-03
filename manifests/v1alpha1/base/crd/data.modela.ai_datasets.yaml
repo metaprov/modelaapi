@@ -872,8 +872,8 @@ spec:
                 - image-segmentation
                 - none
                 type: string
-              syntactic:
-                description: If the dataset is syntactic, this is the syntactic spec
+              synthetic:
+                description: If the dataset is Synthetic , this is the syntactic spec
                 properties:
                   enabled:
                     description: Enabled syntatic data

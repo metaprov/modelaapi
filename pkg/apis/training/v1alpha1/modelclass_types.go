@@ -95,9 +95,6 @@ type ModelClassSpec struct {
 	// be used to create the training data.
 	// +kubebuilder:validation:Optional
 	Entities []EntityRef `json:"entities,omitempty" protobuf:"bytes,8,opt,name=entities"`
-	// The location where ModelClass artifacts (metadata, reports, and model artifacts) will be stored
-	// +kubebuilder:validation:Optional
-	ArtifactLocation data.DataLocation `json:"artifactLocation,omitempty" protobuf:"bytes,9,opt,name=artifactLocation"`
 	// The model class data
 	// +kubebuilder:validation:Optional
 	Data ModelClassDataSpec `json:"data,omitempty" protobuf:"bytes,10,opt,name=data"`
@@ -132,10 +129,6 @@ type ModelClassDataSpec struct {
 	// columns) or for prediction (observations with no targets).
 	// +kubebuilder:validation:Optional
 	Observations data.DataLocation `json:"observations,omitempty" protobuf:"bytes,1,opt,name=observations"`
-	// The location of the prediction history file. The prediction history contain all the predictions for
-	// an observation done by multiple models.
-	// +kubebuilder:validation:Optional
-	PredictionHistory data.DataLocation `json:"predictionHistory,omitempty" protobuf:"bytes,2,opt,name=predictionHistory"`
 	// The location of the predictions table. The predictions table contains all the latest predictions.
 	// +kubebuilder:validation:Optional
 	Predictions data.DataLocation `json:"predictions,omitempty" protobuf:"bytes,3,opt,name=predictions"`

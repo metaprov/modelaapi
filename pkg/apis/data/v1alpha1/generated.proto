@@ -1693,9 +1693,9 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional SampleSpec sample = 19;
 
-  // If the dataset is syntactic, this is the syntactic spec
+  // If the dataset is Synthetic , this is the syntactic spec
   // +kubebuilder:validation:Optional
-  optional SyntheticSpec syntactic = 20;
+  optional SyntheticSpec synthetic  = 20;
 
   // The machine learning task relevant to the Dataset. This field *must* be the same as the Location Source of the object
   // +kubebuilder:validation:Optional

@@ -1624,11 +1624,6 @@ export class ModelClassDataSpec extends jspb.Message {
   hasObservations(): boolean;
   clearObservations(): ModelClassDataSpec;
 
-  getPredictionhistory(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setPredictionhistory(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassDataSpec;
-  hasPredictionhistory(): boolean;
-  clearPredictionhistory(): ModelClassDataSpec;
-
   getPredictions(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setPredictions(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassDataSpec;
   hasPredictions(): boolean;
@@ -1677,7 +1672,6 @@ export class ModelClassDataSpec extends jspb.Message {
 export namespace ModelClassDataSpec {
   export type AsObject = {
     observations?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    predictionhistory?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     predictions?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     schema?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema.AsObject,
     flatfile?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec.AsObject,
@@ -2057,11 +2051,6 @@ export class ModelClassSpec extends jspb.Message {
   clearEntitiesList(): ModelClassSpec;
   addEntities(value?: EntityRef, index?: number): EntityRef;
 
-  getArtifactlocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setArtifactlocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassSpec;
-  hasArtifactlocation(): boolean;
-  clearArtifactlocation(): ModelClassSpec;
-
   getData(): ModelClassDataSpec | undefined;
   setData(value?: ModelClassDataSpec): ModelClassSpec;
   hasData(): boolean;
@@ -2111,7 +2100,6 @@ export namespace ModelClassSpec {
     subtask: string,
     objective: string,
     entitiesList: Array<EntityRef.AsObject>,
-    artifactlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     data?: ModelClassDataSpec.AsObject,
     training?: ModelClassTrainingSpec.AsObject,
     serving?: ModelClassServingSpec.AsObject,

@@ -2219,10 +2219,10 @@ export class DatasetSpec extends jspb.Message {
   hasSample(): boolean;
   clearSample(): DatasetSpec;
 
-  getSyntactic(): SyntheticSpec | undefined;
-  setSyntactic(value?: SyntheticSpec): DatasetSpec;
-  hasSyntactic(): boolean;
-  clearSyntactic(): DatasetSpec;
+  getSynthetic(): SyntheticSpec | undefined;
+  setSynthetic(value?: SyntheticSpec): DatasetSpec;
+  hasSynthetic(): boolean;
+  clearSynthetic(): DatasetSpec;
 
   getTask(): string;
   setTask(value: string): DatasetSpec;
@@ -2327,7 +2327,7 @@ export namespace DatasetSpec {
     activedeadlineseconds: number,
     type: string,
     sample?: SampleSpec.AsObject,
-    syntactic?: SyntheticSpec.AsObject,
+    synthetic?: SyntheticSpec.AsObject,
     task: string,
     subtask: string,
     correlation?: CorrelationSpec.AsObject,

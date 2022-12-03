@@ -169,9 +169,9 @@ type DatasetSpec struct {
 	// time in the case of very large datasets that are being rapidly prototyped and iterated on
 	// +kubebuilder:validation:Optional
 	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,19,opt,name=sample"`
-	// If the dataset is syntactic, this is the syntactic spec
+	// If the dataset is Synthetic , this is the syntactic spec
 	// +kubebuilder:validation:Optional
-	Synthetic SyntheticSpec `json:"syntactic,omitempty" protobuf:"bytes,20,opt,name=syntactic"`
+	Synthetic SyntheticSpec `json:"synthetic,omitempty" protobuf:"bytes,20,opt,name=synthetic "`
 	// The machine learning task relevant to the Dataset. This field *must* be the same as the Location Source of the object
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,21,opt,name=task"`

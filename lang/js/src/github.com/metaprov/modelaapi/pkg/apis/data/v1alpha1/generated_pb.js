@@ -23436,7 +23436,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.toObject 
     activedeadlineseconds: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
     type: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
     sample: (f = msg.getSample()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.toObject(includeInstance, f),
-    syntactic: (f = msg.getSyntactic()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SyntheticSpec.toObject(includeInstance, f),
+    synthetic: (f = msg.getSynthetic()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SyntheticSpec.toObject(includeInstance, f),
     task: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
     subtask: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
     correlation: (f = msg.getCorrelation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec.toObject(includeInstance, f),
@@ -23567,7 +23567,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.deseriali
     case 20:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SyntheticSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SyntheticSpec.deserializeBinaryFromReader);
-      msg.setSyntactic(value);
+      msg.setSynthetic(value);
       break;
     case 21:
       var value = /** @type {string} */ (reader.readString());
@@ -23803,7 +23803,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.serialize
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.serializeBinaryToWriter
     );
   }
-  f = message.getSyntactic();
+  f = message.getSynthetic();
   if (f != null) {
     writer.writeMessage(
       20,
@@ -24568,10 +24568,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
 
 
 /**
- * optional SyntheticSpec syntactic = 20;
+ * optional SyntheticSpec synthetic = 20;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SyntheticSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getSyntactic = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getSynthetic = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SyntheticSpec} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SyntheticSpec, 20));
 };
@@ -24581,7 +24581,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SyntheticSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setSyntactic = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setSynthetic = function(value) {
   return jspb.Message.setWrapperField(this, 20, value);
 };
 
@@ -24590,8 +24590,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearSyntactic = function() {
-  return this.setSyntactic(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearSynthetic = function() {
+  return this.setSynthetic(undefined);
 };
 
 
@@ -24599,7 +24599,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasSyntactic = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasSynthetic = function() {
   return jspb.Message.getField(this, 20) != null;
 };
 
