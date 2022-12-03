@@ -1523,7 +1523,6 @@ func (in *ModelClassCondition) DeepCopy() *ModelClassCondition {
 func (in *ModelClassDataSpec) DeepCopyInto(out *ModelClassDataSpec) {
 	*out = *in
 	in.Observations.DeepCopyInto(&out.Observations)
-	in.PredictionHistory.DeepCopyInto(&out.PredictionHistory)
 	in.Predictions.DeepCopyInto(&out.Predictions)
 	in.Schema.DeepCopyInto(&out.Schema)
 	if in.FlatFile != nil {
@@ -1891,7 +1890,6 @@ func (in *ModelClassSpec) DeepCopyInto(out *ModelClassSpec) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	in.ArtifactLocation.DeepCopyInto(&out.ArtifactLocation)
 	in.Data.DeepCopyInto(&out.Data)
 	in.Training.DeepCopyInto(&out.Training)
 	in.Serving.DeepCopyInto(&out.Serving)
