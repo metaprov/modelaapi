@@ -2065,39 +2065,39 @@ message ModelStatus {
 
   // The URI of the Report
   // +kubebuilder:validation:Optional
-  optional string reportUri = 22;
+  optional string reportURI = 22;
 
   // The URI of the Model manifest
   // +kubebuilder:validation:Optional
-  optional string manifestUri = 23;
+  optional string manifestURI = 23;
 
   // The URI of the model weights binary file
   // +kubebuilder:validation:Optional
-  optional string weightsUri = 24;
+  optional string weightsURI = 24;
 
   // The URI of the label encoder binary file, if it exists
   // +kubebuilder:validation:Optional
-  optional string labelEncoderUri = 25;
+  optional string labelEncoderURI = 25;
 
   // The URI of the logs file
   // +kubebuilder:validation:Optional
-  optional string logsUri = 26;
+  optional string logsURI = 26;
 
   // The URI of the model profile, which contains visualizations produced during the profiling phase
   // +kubebuilder:validation:Optional
-  optional string profileUri = 27;
+  optional string profileURI = 27;
 
   // The URI to the misclassification file produced during the testing phase
   // +kubebuilder:validation:Optional
-  optional string misclassificationUri = 28;
+  optional string misclassificationURI = 28;
 
   // The URI to the model tarbell file
   // +kubebuilder:validation:Optional
-  optional string tarUri = 29;
+  optional string tarURI = 29;
 
   // The URI to the model application file
   // +kubebuilder:validation:Optional
-  optional string appUri = 30;
+  optional string appURI = 30;
 
   // The name of the Docker image produced by the Model
   // +kubebuilder:validation:Optional
@@ -2115,7 +2115,7 @@ message ModelStatus {
 
   // The URI of the model forecast
   // +kubebuilder:validation:Optional
-  optional string forecastUri = 34;
+  optional string forecastURI = 34;
 
   // The runtime training details.
   // +kubebuilder:validation:Optional
@@ -3146,11 +3146,11 @@ message StudyStatus {
 
   // The URI of the raw profile data produced by the Study
   // +kubebuilder:validation:Optional
-  optional string profileUri = 6;
+  optional string profileURI = 6;
 
   // The name of the Report resource produced by the Study
   // +kubebuilder:validation:Optional
-  optional string reportUri = 7;
+  optional string reportURI = 7;
 
   // Reference to the report object that was generated for the dataset, which exists in the same Location Product namespace
   // as the object

@@ -465,31 +465,31 @@ type ModelStatus struct {
 	ReportName string `json:"reportName,omitempty" protobuf:"bytes,21,opt,name=reportName"`
 	// The URI of the Report
 	// +kubebuilder:validation:Optional
-	ReportUri string `json:"reportUri,omitempty" protobuf:"bytes,22,opt,name=reportUri"`
+	ReportURI string `json:"reportURI,omitempty" protobuf:"bytes,22,opt,name=reportURI"`
 	// The URI of the Model manifest
 	// +kubebuilder:validation:Optional
-	ManifestUri string `json:"manifestUri,omitempty" protobuf:"bytes,23,opt,name=manifestUri"`
+	ManifestURI string `json:"manifestURI,omitempty" protobuf:"bytes,23,opt,name=manifestURI"`
 	// The URI of the model weights binary file
 	// +kubebuilder:validation:Optional
-	WeightsUri string `json:"weightsUri,omitempty" protobuf:"bytes,24,opt,name=weightsUri"`
+	WeightsURI string `json:"weightsURI,omitempty" protobuf:"bytes,24,opt,name=weightsURI"`
 	// The URI of the label encoder binary file, if it exists
 	// +kubebuilder:validation:Optional
-	LabelEncoderUri string `json:"labelEncoderUri,omitempty" protobuf:"bytes,25,opt,name=labelEncoderUri"`
+	LabelEncoderURI string `json:"labelEncoderURI,omitempty" protobuf:"bytes,25,opt,name=labelEncoderURI"`
 	// The URI of the logs file
 	// +kubebuilder:validation:Optional
-	LogsUri string `json:"logsUri,omitempty" protobuf:"bytes,26,opt,name=logsUri"`
+	LogsURI string `json:"logsURI,omitempty" protobuf:"bytes,26,opt,name=logsURI"`
 	// The URI of the model profile, which contains visualizations produced during the profiling phase
 	// +kubebuilder:validation:Optional
-	ProfileUri string `json:"profileUri" protobuf:"bytes,27,opt,name=profileUri"`
+	ProfileURI string `json:"profileURI" protobuf:"bytes,27,opt,name=profileURI"`
 	// The URI to the misclassification file produced during the testing phase
 	// +kubebuilder:validation:Optional
-	MisclassificationUri string `json:"misclassificationUri" protobuf:"bytes,28,opt,name=misclassificationUri"`
+	MisclassificationURI string `json:"misclassificationURI" protobuf:"bytes,28,opt,name=misclassificationURI"`
 	// The URI to the model tarbell file
 	// +kubebuilder:validation:Optional
-	TarUri string `json:"tarUri" protobuf:"bytes,29,opt,name=tarUri"`
+	TarURI string `json:"tarURI" protobuf:"bytes,29,opt,name=tarURI"`
 	// The URI to the model application file
 	// +kubebuilder:validation:Optional
-	AppUri string `json:"appUri" protobuf:"bytes,30,opt,name=appUri"`
+	AppURI string `json:"appURI" protobuf:"bytes,30,opt,name=appURI"`
 	// The name of the Docker image produced by the Model
 	// +kubebuilder:validation:Optional
 	ImageName string `json:"imageName" protobuf:"bytes,31,opt,name=imageName"`
@@ -503,7 +503,7 @@ type ModelStatus struct {
 	PermutationImportance []FeatureImportance `json:"permutationImportance,omitempty" protobuf:"bytes,33,rep,name=permutationImportance"`
 	// The URI of the model forecast
 	// +kubebuilder:validation:Optional
-	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,34,opt,name=forecastUri"`
+	ForecastURI string `json:"forecastURI,omitempty" protobuf:"bytes,34,opt,name=forecastURI"`
 	// The runtime training details.
 	// +kubebuilder:validation:Optional
 	Runtime RuntimeStatus `json:"runtime,omitempty" protobuf:"bytes,35,opt,name=runtime"`

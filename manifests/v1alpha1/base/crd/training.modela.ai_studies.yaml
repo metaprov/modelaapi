@@ -3287,7 +3287,7 @@ spec:
                 default: Pending
                 description: The phase of the Study
                 type: string
-              profileUri:
+              profileURI:
                 description: The URI of the raw profile data produced by the Study
                 type: string
               progress:
@@ -3300,7 +3300,7 @@ spec:
                   the dataset, which exists in the same Location Product namespace
                   as the object
                 type: string
-              reportUri:
+              reportURI:
                 description: The name of the Report resource produced by the Study
                 type: string
               search:

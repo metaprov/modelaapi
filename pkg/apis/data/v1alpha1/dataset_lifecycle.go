@@ -451,7 +451,7 @@ func (dataset *Dataset) MarkProfiled(uri string) {
 		Type:   DatasetProfiled,
 		Status: v1.ConditionTrue,
 	})
-	dataset.Status.ProfileUri = uri
+	dataset.Status.ProfileURI = uri
 	dataset.Status.Phase = DatasetPhaseProfileSuccess
 	dataset.Status.Progress = 80
 }

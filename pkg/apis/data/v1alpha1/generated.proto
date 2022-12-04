@@ -1198,15 +1198,15 @@ message DataProductStatus {
 
   // The number of DataSource resources that exist under the namespace
   // +kubebuilder:validation:Optional
-  optional int32 totalDatasources = 3;
+  optional int32 datasourcesCount = 3;
 
   // The number of Dataset resources that exist under the namespace
   // +kubebuilder:validation:Optional
-  optional int32 totalDatasets = 4;
+  optional int32 datasetsCount = 4;
 
   // The number of DataPipeline resources that exist under the namespace
   // +kubebuilder:validation:Optional
-  optional int32 totalDataPipelines = 5;
+  optional int32 dataPipelineCount = 5;
 
   // The number of DataPipelineRun resources that exist under the namespace
   // +kubebuilder:validation:Optional
@@ -1214,43 +1214,31 @@ message DataProductStatus {
 
   // The number of Study resources that exist under the namespace
   // +kubebuilder:validation:Optional
-  optional int32 totalStudies = 7;
+  optional int32 studiesCount = 7;
 
   // The number of Model resources that exist under the namespace
   // +kubebuilder:validation:Optional
-  optional int32 totalModels = 8;
-
-  // The number of ModelPipeline resources that exist under the namespace
-  // +kubebuilder:validation:Optional
-  optional int32 totalModelPipelines = 9;
-
-  // The number of ModelPipelineRun resources that exist under the namespace
-  // +kubebuilder:validation:Optional
-  optional int32 totalModelPipelineRuns = 10;
+  optional int32 modelsCount = 8;
 
   // The number of Predictor resources that exist under the namespace
   // +kubebuilder:validation:Optional
-  optional int32 totalPredictors = 11;
-
-  // The number of ModelAutoBuilder resources that exist under the namespace
-  // +kubebuilder:validation:Optional
-  optional int32 totalBuilders = 12;
+  optional int32 predictorsCount = 11;
 
   // The number of DataApp resources that exist under the namespace
   // +kubebuilder:validation:Optional
-  optional int32 totalApps = 13;
+  optional int32 dataAppsCount = 13;
 
   // The number of BatchPrediction resources that exist under the namespace
   // +kubebuilder:validation:Optional
-  optional int32 totalPredictions = 14;
+  optional int32 predictionsCount = 14;
 
   // The number of informative alerts produced under the namespace
   // +kubebuilder:validation:Optional
-  optional int32 totalInfoAlerts = 15;
+  optional int32 infoAlertsCount = 15;
 
   // The number of error alerts produced under the namespace
   // +kubebuilder:validation:Optional
-  optional int32 totalErrorAlerts = 16;
+  optional int32 errorAlertsCount = 16;
 
   // In the case of failure, the DataProduct resource controller will set this field with a failure reason
   optional string failureReason = 17;
@@ -1825,11 +1813,11 @@ message DatasetStatus {
 
   // The location of report generated during the reporting phase. This field is intended for internal use
   // +kubebuilder:validation:Optional
-  optional string reportUri = 4;
+  optional string reportURI = 4;
 
   // The location of raw profile data. This field is intended for internal use
   // +kubebuilder:validation:Optional
-  optional string profileUri = 5;
+  optional string profileURI = 5;
 
   // Whether or not the data was detected as imbalanced
   // +kubebuilder:validation:Optional
@@ -1838,7 +1826,7 @@ message DatasetStatus {
   // The location of anomaly file. The file contain the list of rows that were marked as anomaly by an isolation forest.
   // algorithm
   // +kubebuilder:validation:Optional
-  optional string anomaliesUri = 7;
+  optional string anomaliesURI = 7;
 
   // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
@@ -1846,7 +1834,7 @@ message DatasetStatus {
 
   // List of validation results which are generated for every validation rule associated with the Dataset's Location Source
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestResults = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testResults = 9;
 
   // Last time the Dataset was used with a Study
   // +kubebuilder:validation:Optional

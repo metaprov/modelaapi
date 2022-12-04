@@ -1072,7 +1072,7 @@ message TestSuiteResult {
   repeated DataTestCaseResult tests = 6;
 }
 
-message VizUri {
+message VizURI {
   optional string name = 1;
 
   optional string uri = 2;

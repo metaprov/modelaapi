@@ -1829,22 +1829,22 @@ export namespace TestSuiteResult {
   }
 }
 
-export class VizUri extends jspb.Message {
+export class VizURI extends jspb.Message {
   getName(): string;
-  setName(value: string): VizUri;
+  setName(value: string): VizURI;
 
   getUri(): string;
-  setUri(value: string): VizUri;
+  setUri(value: string): VizURI;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VizUri.AsObject;
-  static toObject(includeInstance: boolean, msg: VizUri): VizUri.AsObject;
-  static serializeBinaryToWriter(message: VizUri, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VizUri;
-  static deserializeBinaryFromReader(message: VizUri, reader: jspb.BinaryReader): VizUri;
+  toObject(includeInstance?: boolean): VizURI.AsObject;
+  static toObject(includeInstance: boolean, msg: VizURI): VizURI.AsObject;
+  static serializeBinaryToWriter(message: VizURI, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VizURI;
+  static deserializeBinaryFromReader(message: VizURI, reader: jspb.BinaryReader): VizURI;
 }
 
-export namespace VizUri {
+export namespace VizURI {
   export type AsObject = {
     name: string,
     uri: string,

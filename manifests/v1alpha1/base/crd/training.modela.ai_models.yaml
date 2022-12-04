@@ -2799,7 +2799,7 @@ spec:
           status:
             description: ModelStatus defines the observed state of a Model
             properties:
-              appUri:
+              appURI:
                 description: The URI to the model application file
                 type: string
               best:
@@ -3291,7 +3291,7 @@ spec:
                       type: object
                     type: array
                 type: object
-              forecastUri:
+              forecastURI:
                 description: The URI of the model forecast
                 type: string
               governance:
@@ -3454,7 +3454,7 @@ spec:
                     description: The URI for the train SHAP values
                     type: string
                 type: object
-              labelEncoderUri:
+              labelEncoderURI:
                 description: The URI of the label encoder binary file, if it exists
                 type: string
               lastFeedbackDatasetRef:
@@ -3524,13 +3524,13 @@ spec:
                       type: object
                     type: array
                 type: object
-              logsUri:
+              logsURI:
                 description: The URI of the logs file
                 type: string
-              manifestUri:
+              manifestURI:
                 description: The URI of the Model manifest
                 type: string
-              misclassificationUri:
+              misclassificationURI:
                 description: The URI to the misclassification file produced during
                   the testing phase
                 type: string
@@ -3581,7 +3581,7 @@ spec:
                 description: The name of the Predictor in the case that the Model
                   has been released and deployed
                 type: string
-              profileUri:
+              profileURI:
                 description: The URI of the model profile, which contains visualizations
                   produced during the profiling phase
                 type: string
@@ -3597,7 +3597,7 @@ spec:
               reportName:
                 description: The name of the Report resource produced by the Model
                 type: string
-              reportUri:
+              reportURI:
                 description: The URI of the Report
                 type: string
               rocCurve:
@@ -3879,7 +3879,7 @@ spec:
               tarFileHash:
                 description: Sha256 of the model tar file
                 type: string
-              tarUri:
+              tarURI:
                 description: The URI to the model tarbell file
                 type: string
               team:
@@ -4894,7 +4894,7 @@ spec:
                 description: The number of rows in the validation dataset, if applicable
                 format: int32
                 type: integer
-              weightsUri:
+              weightsURI:
                 description: The URI of the model weights binary file
                 type: string
             type: object

@@ -870,6 +870,35 @@ spec:
                   - type
                   type: object
                 type: array
+              dataAppsCount:
+                description: The number of DataApp resources that exist under the
+                  namespace
+                format: int32
+                type: integer
+              dataPipelineCount:
+                description: The number of DataPipeline resources that exist under
+                  the namespace
+                format: int32
+                type: integer
+              dataPipelineRunsCount:
+                description: The number of DataPipelineRun resources that exist under
+                  the namespace
+                format: int32
+                type: integer
+              datasetsCount:
+                description: The number of Dataset resources that exist under the
+                  namespace
+                format: int32
+                type: integer
+              datasourcesCount:
+                description: The number of DataSource resources that exist under the
+                  namespace
+                format: int32
+                type: integer
+              errorAlertsCount:
+                description: The number of error alerts produced under the namespace
+                format: int32
+                type: integer
               failureMessage:
                 description: In the case of failure, the DataProduct resource controller
                   will set this field with a failure message
@@ -878,74 +907,30 @@ spec:
                 description: In the case of failure, the DataProduct resource controller
                   will set this field with a failure reason
                 type: string
+              infoAlertsCount:
+                description: The number of informative alerts produced under the namespace
+                format: int32
+                type: integer
+              modelsCount:
+                description: The number of Model resources that exist under the namespace
+                format: int32
+                type: integer
               observedGeneration:
                 description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer
-              totalApps:
-                description: The number of DataApp resources that exist under the
-                  namespace
-                format: int32
-                type: integer
-              totalBuilders:
-                description: The number of ModelAutoBuilder resources that exist under
-                  the namespace
-                format: int32
-                type: integer
-              totalDataPipelineRuns:
-                description: The number of DataPipelineRun resources that exist under
-                  the namespace
-                format: int32
-                type: integer
-              totalDataPipelines:
-                description: The number of DataPipeline resources that exist under
-                  the namespace
-                format: int32
-                type: integer
-              totalDatasets:
-                description: The number of Dataset resources that exist under the
-                  namespace
-                format: int32
-                type: integer
-              totalDatasources:
-                description: The number of DataSource resources that exist under the
-                  namespace
-                format: int32
-                type: integer
-              totalErrorAlerts:
-                description: The number of error alerts produced under the namespace
-                format: int32
-                type: integer
-              totalInfoAlerts:
-                description: The number of informative alerts produced under the namespace
-                format: int32
-                type: integer
-              totalModelPipelineRuns:
-                description: The number of ModelPipelineRun resources that exist under
-                  the namespace
-                format: int32
-                type: integer
-              totalModelPipelines:
-                description: The number of ModelPipeline resources that exist under
-                  the namespace
-                format: int32
-                type: integer
-              totalModels:
-                description: The number of Model resources that exist under the namespace
-                format: int32
-                type: integer
-              totalPredictions:
+              predictionsCount:
                 description: The number of BatchPrediction resources that exist under
                   the namespace
                 format: int32
                 type: integer
-              totalPredictors:
+              predictorsCount:
                 description: The number of Predictor resources that exist under the
                   namespace
                 format: int32
                 type: integer
-              totalStudies:
+              studiesCount:
                 description: The number of Study resources that exist under the namespace
                 format: int32
                 type: integer

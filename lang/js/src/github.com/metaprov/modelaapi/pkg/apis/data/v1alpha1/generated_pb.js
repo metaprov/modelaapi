@@ -17475,20 +17475,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.toO
   var f, obj = {
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    totaldatasources: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    totaldatasets: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    totaldatapipelines: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    datasourcescount: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    datasetscount: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    datapipelinecount: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     totaldatapipelineruns: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    totalstudies: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    totalmodels: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    totalmodelpipelines: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
-    totalmodelpipelineruns: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
-    totalpredictors: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
-    totalbuilders: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
-    totalapps: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
-    totalpredictions: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    totalinfoalerts: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
-    totalerroralerts: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
+    studiescount: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    modelscount: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    predictorscount: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+    dataappscount: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
+    predictionscount: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
+    infoalertscount: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+    erroralertscount: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
     failurereason: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
     baselineversion: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
@@ -17541,15 +17538,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.des
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotaldatasources(value);
+      msg.setDatasourcescount(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotaldatasets(value);
+      msg.setDatasetscount(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotaldatapipelines(value);
+      msg.setDatapipelinecount(value);
       break;
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
@@ -17557,43 +17554,31 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.des
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalstudies(value);
+      msg.setStudiescount(value);
       break;
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalmodels(value);
-      break;
-    case 9:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalmodelpipelines(value);
-      break;
-    case 10:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalmodelpipelineruns(value);
+      msg.setModelscount(value);
       break;
     case 11:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalpredictors(value);
-      break;
-    case 12:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalbuilders(value);
+      msg.setPredictorscount(value);
       break;
     case 13:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalapps(value);
+      msg.setDataappscount(value);
       break;
     case 14:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalpredictions(value);
+      msg.setPredictionscount(value);
       break;
     case 15:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalinfoalerts(value);
+      msg.setInfoalertscount(value);
       break;
     case 16:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalerroralerts(value);
+      msg.setErroralertscount(value);
       break;
     case 17:
       var value = /** @type {string} */ (reader.readString());
@@ -17698,31 +17683,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.ser
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 9));
-  if (f != null) {
-    writer.writeInt32(
-      9,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 10));
-  if (f != null) {
-    writer.writeInt32(
-      10,
-      f
-    );
-  }
   f = /** @type {number} */ (jspb.Message.getField(message, 11));
   if (f != null) {
     writer.writeInt32(
       11,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 12));
-  if (f != null) {
-    writer.writeInt32(
-      12,
       f
     );
   }
@@ -17860,10 +17824,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
 
 
 /**
- * optional int32 totalDatasources = 3;
+ * optional int32 datasourcesCount = 3;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getTotaldatasources = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getDatasourcescount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -17872,7 +17836,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setTotaldatasources = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setDatasourcescount = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -17881,7 +17845,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearTotaldatasources = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearDatasourcescount = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -17890,16 +17854,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasTotaldatasources = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasDatasourcescount = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional int32 totalDatasets = 4;
+ * optional int32 datasetsCount = 4;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getTotaldatasets = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getDatasetscount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -17908,7 +17872,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setTotaldatasets = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setDatasetscount = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -17917,7 +17881,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearTotaldatasets = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearDatasetscount = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -17926,16 +17890,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasTotaldatasets = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasDatasetscount = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional int32 totalDataPipelines = 5;
+ * optional int32 dataPipelineCount = 5;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getTotaldatapipelines = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getDatapipelinecount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -17944,7 +17908,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setTotaldatapipelines = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setDatapipelinecount = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -17953,7 +17917,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearTotaldatapipelines = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearDatapipelinecount = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -17962,7 +17926,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasTotaldatapipelines = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasDatapipelinecount = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -18004,10 +17968,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
 
 
 /**
- * optional int32 totalStudies = 7;
+ * optional int32 studiesCount = 7;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getTotalstudies = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getStudiescount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -18016,7 +17980,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setTotalstudies = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setStudiescount = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -18025,7 +17989,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearTotalstudies = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearStudiescount = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -18034,16 +17998,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasTotalstudies = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasStudiescount = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional int32 totalModels = 8;
+ * optional int32 modelsCount = 8;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getTotalmodels = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getModelscount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -18052,7 +18016,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setTotalmodels = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setModelscount = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
@@ -18061,7 +18025,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearTotalmodels = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearModelscount = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -18070,88 +18034,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasTotalmodels = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasModelscount = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional int32 totalModelPipelines = 9;
+ * optional int32 predictorsCount = 11;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getTotalmodelpipelines = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setTotalmodelpipelines = function(value) {
-  return jspb.Message.setField(this, 9, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearTotalmodelpipelines = function() {
-  return jspb.Message.setField(this, 9, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasTotalmodelpipelines = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
- * optional int32 totalModelPipelineRuns = 10;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getTotalmodelpipelineruns = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setTotalmodelpipelineruns = function(value) {
-  return jspb.Message.setField(this, 10, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearTotalmodelpipelineruns = function() {
-  return jspb.Message.setField(this, 10, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasTotalmodelpipelineruns = function() {
-  return jspb.Message.getField(this, 10) != null;
-};
-
-
-/**
- * optional int32 totalPredictors = 11;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getTotalpredictors = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getPredictorscount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
@@ -18160,7 +18052,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setTotalpredictors = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setPredictorscount = function(value) {
   return jspb.Message.setField(this, 11, value);
 };
 
@@ -18169,7 +18061,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearTotalpredictors = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearPredictorscount = function() {
   return jspb.Message.setField(this, 11, undefined);
 };
 
@@ -18178,52 +18070,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasTotalpredictors = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasPredictorscount = function() {
   return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional int32 totalBuilders = 12;
+ * optional int32 dataAppsCount = 13;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getTotalbuilders = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setTotalbuilders = function(value) {
-  return jspb.Message.setField(this, 12, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearTotalbuilders = function() {
-  return jspb.Message.setField(this, 12, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasTotalbuilders = function() {
-  return jspb.Message.getField(this, 12) != null;
-};
-
-
-/**
- * optional int32 totalApps = 13;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getTotalapps = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getDataappscount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
 };
 
@@ -18232,7 +18088,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setTotalapps = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setDataappscount = function(value) {
   return jspb.Message.setField(this, 13, value);
 };
 
@@ -18241,7 +18097,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearTotalapps = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearDataappscount = function() {
   return jspb.Message.setField(this, 13, undefined);
 };
 
@@ -18250,16 +18106,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasTotalapps = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasDataappscount = function() {
   return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional int32 totalPredictions = 14;
+ * optional int32 predictionsCount = 14;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getTotalpredictions = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getPredictionscount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
 };
 
@@ -18268,7 +18124,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setTotalpredictions = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setPredictionscount = function(value) {
   return jspb.Message.setField(this, 14, value);
 };
 
@@ -18277,7 +18133,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearTotalpredictions = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearPredictionscount = function() {
   return jspb.Message.setField(this, 14, undefined);
 };
 
@@ -18286,16 +18142,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasTotalpredictions = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasPredictionscount = function() {
   return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * optional int32 totalInfoAlerts = 15;
+ * optional int32 infoAlertsCount = 15;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getTotalinfoalerts = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getInfoalertscount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
 };
 
@@ -18304,7 +18160,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setTotalinfoalerts = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setInfoalertscount = function(value) {
   return jspb.Message.setField(this, 15, value);
 };
 
@@ -18313,7 +18169,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearTotalinfoalerts = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearInfoalertscount = function() {
   return jspb.Message.setField(this, 15, undefined);
 };
 
@@ -18322,16 +18178,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasTotalinfoalerts = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasInfoalertscount = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * optional int32 totalErrorAlerts = 16;
+ * optional int32 errorAlertsCount = 16;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getTotalerroralerts = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.getErroralertscount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
 };
 
@@ -18340,7 +18196,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setTotalerroralerts = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.setErroralertscount = function(value) {
   return jspb.Message.setField(this, 16, value);
 };
 
@@ -18349,7 +18205,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearTotalerroralerts = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.clearErroralertscount = function() {
   return jspb.Message.setField(this, 16, undefined);
 };
 
@@ -18358,7 +18214,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasTotalerroralerts = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductStatus.prototype.hasErroralertscount = function() {
   return jspb.Message.getField(this, 16) != null;
 };
 
@@ -25721,7 +25577,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.toObjec
     imbalanced: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
     anomaliesuri: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    unittestresults: (f = msg.getUnittestresults()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
+    testresults: (f = msg.getTestresults()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
     laststudyat: (f = msg.getLaststudyat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     failurereason: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
@@ -25808,7 +25664,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.deseria
     case 9:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
-      msg.setUnittestresults(value);
+      msg.setTestresults(value);
       break;
     case 10:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
@@ -25956,7 +25812,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.seriali
       f
     );
   }
-  f = message.getUnittestresults();
+  f = message.getTestresults();
   if (f != null) {
     writer.writeMessage(
       9,
@@ -26176,7 +26032,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
 
 
 /**
- * optional string reportUri = 4;
+ * optional string reportURI = 4;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getReporturi = function() {
@@ -26212,7 +26068,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
 
 
 /**
- * optional string profileUri = 5;
+ * optional string profileURI = 5;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getProfileuri = function() {
@@ -26284,7 +26140,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
 
 
 /**
- * optional string anomaliesUri = 7;
+ * optional string anomaliesURI = 7;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getAnomaliesuri = function() {
@@ -26356,10 +26212,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestResults = 9;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult testResults = 9;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getUnittestresults = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getTestresults = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 9));
 };
@@ -26369,7 +26225,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.setUnittestresults = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.setTestresults = function(value) {
   return jspb.Message.setWrapperField(this, 9, value);
 };
 
@@ -26378,8 +26234,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.clearUnittestresults = function() {
-  return this.setUnittestresults(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.clearTestresults = function() {
+  return this.setTestresults(undefined);
 };
 
 
@@ -26387,7 +26243,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.hasUnittestresults = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.hasTestresults = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 

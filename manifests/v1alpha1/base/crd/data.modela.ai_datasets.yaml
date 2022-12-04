@@ -1136,7 +1136,7 @@ spec:
           status:
             description: DatasetStatus defines the observed state of a Dataset object
             properties:
-              anomaliesUri:
+              anomaliesURI:
                 description: The location of anomaly file. The file contain the list
                   of rows that were marked as anomaly by an isolation forest. algorithm
                 type: string
@@ -1325,7 +1325,7 @@ spec:
                 default: Pending
                 description: The current phase of the Dataset progress
                 type: string
-              profileUri:
+              profileURI:
                 description: The location of raw profile data. This field is intended
                   for internal use
                 type: string
@@ -1340,7 +1340,7 @@ spec:
                   the dataset, which exists in the same Location Product namespace
                   as the object
                 type: string
-              reportUri:
+              reportURI:
                 description: The location of report generated during the reporting
                   phase. This field is intended for internal use
                 type: string
@@ -1632,7 +1632,7 @@ spec:
                       type: object
                     type: array
                 type: object
-              unitTestResults:
+              testResults:
                 description: List of validation results which are generated for every
                   validation rule associated with the Dataset's Location Source
                 properties:

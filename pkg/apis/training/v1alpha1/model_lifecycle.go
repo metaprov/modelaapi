@@ -721,7 +721,7 @@ func (model *Model) MarkProfiled(uri string) {
 		Type:   ModelProfiled,
 		Status: v1.ConditionTrue,
 	})
-	model.Status.ProfileUri = uri
+	model.Status.ProfileURI = uri
 	model.Status.Progress = 90
 }
 

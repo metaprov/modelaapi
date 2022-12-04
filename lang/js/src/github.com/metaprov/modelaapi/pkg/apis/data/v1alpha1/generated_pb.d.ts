@@ -1532,47 +1532,38 @@ export class DataProductStatus extends jspb.Message {
   hasUpdatedat(): boolean;
   clearUpdatedat(): DataProductStatus;
 
-  getTotaldatasources(): number;
-  setTotaldatasources(value: number): DataProductStatus;
+  getDatasourcescount(): number;
+  setDatasourcescount(value: number): DataProductStatus;
 
-  getTotaldatasets(): number;
-  setTotaldatasets(value: number): DataProductStatus;
+  getDatasetscount(): number;
+  setDatasetscount(value: number): DataProductStatus;
 
-  getTotaldatapipelines(): number;
-  setTotaldatapipelines(value: number): DataProductStatus;
+  getDatapipelinecount(): number;
+  setDatapipelinecount(value: number): DataProductStatus;
 
   getTotaldatapipelineruns(): number;
   setTotaldatapipelineruns(value: number): DataProductStatus;
 
-  getTotalstudies(): number;
-  setTotalstudies(value: number): DataProductStatus;
+  getStudiescount(): number;
+  setStudiescount(value: number): DataProductStatus;
 
-  getTotalmodels(): number;
-  setTotalmodels(value: number): DataProductStatus;
+  getModelscount(): number;
+  setModelscount(value: number): DataProductStatus;
 
-  getTotalmodelpipelines(): number;
-  setTotalmodelpipelines(value: number): DataProductStatus;
+  getPredictorscount(): number;
+  setPredictorscount(value: number): DataProductStatus;
 
-  getTotalmodelpipelineruns(): number;
-  setTotalmodelpipelineruns(value: number): DataProductStatus;
+  getDataappscount(): number;
+  setDataappscount(value: number): DataProductStatus;
 
-  getTotalpredictors(): number;
-  setTotalpredictors(value: number): DataProductStatus;
+  getPredictionscount(): number;
+  setPredictionscount(value: number): DataProductStatus;
 
-  getTotalbuilders(): number;
-  setTotalbuilders(value: number): DataProductStatus;
+  getInfoalertscount(): number;
+  setInfoalertscount(value: number): DataProductStatus;
 
-  getTotalapps(): number;
-  setTotalapps(value: number): DataProductStatus;
-
-  getTotalpredictions(): number;
-  setTotalpredictions(value: number): DataProductStatus;
-
-  getTotalinfoalerts(): number;
-  setTotalinfoalerts(value: number): DataProductStatus;
-
-  getTotalerroralerts(): number;
-  setTotalerroralerts(value: number): DataProductStatus;
+  getErroralertscount(): number;
+  setErroralertscount(value: number): DataProductStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): DataProductStatus;
@@ -1600,20 +1591,17 @@ export namespace DataProductStatus {
   export type AsObject = {
     observedgeneration: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    totaldatasources: number,
-    totaldatasets: number,
-    totaldatapipelines: number,
+    datasourcescount: number,
+    datasetscount: number,
+    datapipelinecount: number,
     totaldatapipelineruns: number,
-    totalstudies: number,
-    totalmodels: number,
-    totalmodelpipelines: number,
-    totalmodelpipelineruns: number,
-    totalpredictors: number,
-    totalbuilders: number,
-    totalapps: number,
-    totalpredictions: number,
-    totalinfoalerts: number,
-    totalerroralerts: number,
+    studiescount: number,
+    modelscount: number,
+    predictorscount: number,
+    dataappscount: number,
+    predictionscount: number,
+    infoalertscount: number,
+    erroralertscount: number,
     failurereason: string,
     failuremessage: string,
     baselineversion: string,
@@ -2420,10 +2408,10 @@ export class DatasetStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DatasetStatus;
 
-  getUnittestresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setUnittestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetStatus;
-  hasUnittestresults(): boolean;
-  clearUnittestresults(): DatasetStatus;
+  getTestresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setTestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetStatus;
+  hasTestresults(): boolean;
+  clearTestresults(): DatasetStatus;
 
   getLaststudyat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLaststudyat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
@@ -2498,7 +2486,7 @@ export namespace DatasetStatus {
     imbalanced: boolean,
     anomaliesuri: string,
     observedgeneration: number,
-    unittestresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    testresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     laststudyat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,

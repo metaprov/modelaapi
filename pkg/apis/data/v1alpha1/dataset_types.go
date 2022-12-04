@@ -252,23 +252,23 @@ type DatasetStatus struct {
 	ReportName string `json:"reportName,omitempty" protobuf:"bytes,3,opt,name=reportName"`
 	// The location of report generated during the reporting phase. This field is intended for internal use
 	// +kubebuilder:validation:Optional
-	ReportUri string `json:"reportUri,omitempty" protobuf:"bytes,4,opt,name=reportUri"`
+	ReportURI string `json:"reportURI,omitempty" protobuf:"bytes,4,opt,name=reportURI"`
 	// The location of raw profile data. This field is intended for internal use
 	// +kubebuilder:validation:Optional
-	ProfileUri string `json:"profileUri" protobuf:"bytes,5,opt,name=profileUri"`
+	ProfileURI string `json:"profileURI" protobuf:"bytes,5,opt,name=profileURI"`
 	// Whether or not the data was detected as imbalanced
 	//+kubebuilder:validation:Optional
 	Imbalanced bool `json:"imbalanced,omitempty" protobuf:"bytes,6,opt,name=imbalanced"`
 	// The location of anomaly file. The file contain the list of rows that were marked as anomaly by an isolation forest.
 	// algorithm
 	// +kubebuilder:validation:Optional
-	AnomaliesUri string `json:"anomaliesUri" protobuf:"bytes,7,opt,name=anomaliesUri"`
+	AnomaliesURI string `json:"anomaliesURI" protobuf:"bytes,7,opt,name=anomaliesURI"`
 	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,8,opt,name=observedGeneration"`
 	// List of validation results which are generated for every validation rule associated with the Dataset's Location Source
 	//+kubebuilder:validation:Optional
-	UnitTestResults catalog.TestSuiteResult `json:"unitTestResults,omitempty" protobuf:"bytes,9,opt,name=unitTestResults"`
+	TestResults catalog.TestSuiteResult `json:"testResults,omitempty" protobuf:"bytes,9,opt,name=testResults"`
 	// Last time the Dataset was used with a Study
 	//+kubebuilder:validation:Optional
 	LastStudyAt *metav1.Time `json:"lastStudyAt,omitempty" protobuf:"bytes,10,opt,name=lastStudyAt"`

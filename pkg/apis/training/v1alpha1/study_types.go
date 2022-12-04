@@ -324,10 +324,10 @@ type StudyStatus struct {
 	BestModelScore float64 `json:"bestModelScore,omitempty" protobuf:"bytes,5,opt,name=bestModelScore"`
 	// The URI of the raw profile data produced by the Study
 	// +kubebuilder:validation:Optional
-	ProfileUri string `json:"profileUri" protobuf:"bytes,6,opt,name=profileUri"`
+	ProfileURI string `json:"profileURI" protobuf:"bytes,6,opt,name=profileURI"`
 	// The name of the Report resource produced by the Study
 	// +kubebuilder:validation:Optional
-	ReportUri string `json:"reportUri,omitempty" protobuf:"bytes,7,opt,name=reportUri"`
+	ReportURI string `json:"reportURI,omitempty" protobuf:"bytes,7,opt,name=reportURI"`
 	// Reference to the report object that was generated for the dataset, which exists in the same Location Product namespace
 	// as the object
 	// +kubebuilder:validation:Optional

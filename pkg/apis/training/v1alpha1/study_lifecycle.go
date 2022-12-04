@@ -748,7 +748,7 @@ func (study *Study) MarkProfiling() {
 
 func (study *Study) MarkProfiled(url string) {
 	study.Status.Phase = StudyPhaseProfiled
-	study.Status.ProfileUri = url
+	study.Status.ProfileURI = url
 	// update the condition
 	study.CreateOrUpdateCond(StudyCondition{
 		Type:   StudyProfiled,

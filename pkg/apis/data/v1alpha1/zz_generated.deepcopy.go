@@ -1939,7 +1939,7 @@ func (in *DatasetStatistics) DeepCopy() *DatasetStatistics {
 func (in *DatasetStatus) DeepCopyInto(out *DatasetStatus) {
 	*out = *in
 	in.Statistics.DeepCopyInto(&out.Statistics)
-	in.UnitTestResults.DeepCopyInto(&out.UnitTestResults)
+	in.TestResults.DeepCopyInto(&out.TestResults)
 	if in.LastStudyAt != nil {
 		in, out := &in.LastStudyAt, &out.LastStudyAt
 		*out = (*in).DeepCopy()

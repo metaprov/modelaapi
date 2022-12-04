@@ -1177,7 +1177,7 @@ const (
 ////////////////////////////////////////////
 /// Visual URI
 
-type VizUri struct {
+type VizURI struct {
 	Name VizName `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	Uri  string  `json:"uri,omitempty" protobuf:"bytes,2,opt,name=uri"`
 }
