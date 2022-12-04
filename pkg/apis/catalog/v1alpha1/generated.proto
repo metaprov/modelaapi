@@ -814,6 +814,26 @@ message ParameterRange {
   // Default Choice for categorical variable.
   // +kubebuilder:validation:Optional
   optional string defaultChoice = 9;
+
+  // If true this parameter is condition on another parameter value
+  // +kubebuilder:validation:Optional
+  optional bool conditional = 10;
+
+  // Parent parameter name
+  // +kubebuilder:validation:Optional
+  optional string parent = 11;
+
+  // The parent value in order for this parameter to be active.
+  // +kubebuilder:validation:Optional
+  optional string parentValueCat = 12;
+
+  // The parent value in order for this parameter to be active.
+  // +kubebuilder:validation:Optional
+  optional int32 parentValueInteger = 13;
+
+  // The parent value in order for this parameter to be active.
+  // +kubebuilder:validation:Optional
+  optional double parentValueFloat = 14;
 }
 
 // PermissionsSpec specifies the Accounts that have access to a DataProduct or Tenant namespace and what permissions

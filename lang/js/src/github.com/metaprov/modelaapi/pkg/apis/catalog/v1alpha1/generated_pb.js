@@ -13276,7 +13276,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.toO
     log: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
     choicesList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
     defaultvalue: (f = jspb.Message.getOptionalFloatingPointField(msg, 8)) == null ? undefined : f,
-    defaultchoice: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
+    defaultchoice: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    conditional: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
+    parent: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+    parentvaluecat: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
+    parentvalueinteger: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
+    parentvaluefloat: (f = jspb.Message.getOptionalFloatingPointField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13348,6 +13353,26 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.des
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setDefaultchoice(value);
+      break;
+    case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setConditional(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setParent(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setParentvaluecat(value);
+      break;
+    case 13:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setParentvalueinteger(value);
+      break;
+    case 14:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setParentvaluefloat(value);
       break;
     default:
       reader.skipField();
@@ -13438,6 +13463,41 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.ser
   if (f != null) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeBool(
+      10,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 11));
+  if (f != null) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 12));
+  if (f != null) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 13));
+  if (f != null) {
+    writer.writeInt32(
+      13,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeDouble(
+      14,
       f
     );
   }
@@ -13766,6 +13826,186 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.hasDefaultchoice = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional bool conditional = 10;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.getConditional = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.setConditional = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.clearConditional = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.hasConditional = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional string parent = 11;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.getParent = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.setParent = function(value) {
+  return jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.clearParent = function() {
+  return jspb.Message.setField(this, 11, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.hasParent = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional string parentValueCat = 12;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.getParentvaluecat = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.setParentvaluecat = function(value) {
+  return jspb.Message.setField(this, 12, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.clearParentvaluecat = function() {
+  return jspb.Message.setField(this, 12, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.hasParentvaluecat = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional int32 parentValueInteger = 13;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.getParentvalueinteger = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.setParentvalueinteger = function(value) {
+  return jspb.Message.setField(this, 13, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.clearParentvalueinteger = function() {
+  return jspb.Message.setField(this, 13, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.hasParentvalueinteger = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional double parentValueFloat = 14;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.getParentvaluefloat = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 14, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.setParentvaluefloat = function(value) {
+  return jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.clearParentvaluefloat = function() {
+  return jspb.Message.setField(this, 14, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ParameterRange.prototype.hasParentvaluefloat = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 

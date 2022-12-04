@@ -1542,6 +1542,10 @@ spec:
                                     items:
                                       type: string
                                     type: array
+                                  conditional:
+                                    description: If true this parameter is condition
+                                      on another parameter value
+                                    type: boolean
                                   defaultChoice:
                                     description: Default Choice for categorical variable.
                                     type: string
@@ -1563,6 +1567,22 @@ spec:
                                   name:
                                     description: Name is the name of the hyper parameter
                                     type: string
+                                  parent:
+                                    description: Parent parameter name
+                                    type: string
+                                  parentValueCat:
+                                    description: The parent value in order for this
+                                      parameter to be active.
+                                    type: string
+                                  parentValueFloat:
+                                    description: The parent value in order for this
+                                      parameter to be active.
+                                    type: number
+                                  parentValueInteger:
+                                    description: The parent value in order for this
+                                      parameter to be active.
+                                    format: int32
+                                    type: integer
                                   step:
                                     description: Step for discrete variable.
                                     format: int32

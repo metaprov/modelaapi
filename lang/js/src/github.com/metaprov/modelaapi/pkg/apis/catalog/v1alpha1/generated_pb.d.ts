@@ -1327,6 +1327,21 @@ export class ParameterRange extends jspb.Message {
   getDefaultchoice(): string;
   setDefaultchoice(value: string): ParameterRange;
 
+  getConditional(): boolean;
+  setConditional(value: boolean): ParameterRange;
+
+  getParent(): string;
+  setParent(value: string): ParameterRange;
+
+  getParentvaluecat(): string;
+  setParentvaluecat(value: string): ParameterRange;
+
+  getParentvalueinteger(): number;
+  setParentvalueinteger(value: number): ParameterRange;
+
+  getParentvaluefloat(): number;
+  setParentvaluefloat(value: number): ParameterRange;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ParameterRange.AsObject;
   static toObject(includeInstance: boolean, msg: ParameterRange): ParameterRange.AsObject;
@@ -1346,6 +1361,11 @@ export namespace ParameterRange {
     choicesList: Array<string>,
     defaultvalue: number,
     defaultchoice: string,
+    conditional: boolean,
+    parent: string,
+    parentvaluecat: string,
+    parentvalueinteger: number,
+    parentvaluefloat: number,
   }
 }
 

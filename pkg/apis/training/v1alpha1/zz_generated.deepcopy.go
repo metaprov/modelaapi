@@ -1755,11 +1755,6 @@ func (in *ModelClassRunStatus) DeepCopyInto(out *ModelClassRunStatus) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Progress != nil {
-		in, out := &in.Progress, &out.Progress
-		*out = new(int32)
-		**out = **in
-	}
 	if in.UpdatedAt != nil {
 		in, out := &in.UpdatedAt, &out.UpdatedAt
 		*out = (*in).DeepCopy()
@@ -1827,7 +1822,7 @@ func (in *ModelClassServingSpec) DeepCopyInto(out *ModelClassServingSpec) {
 		**out = **in
 	}
 	in.MonitoringSchedule.DeepCopyInto(&out.MonitoringSchedule)
-	in.BatchPredictionSchedule.DeepCopyInto(&out.BatchPredictionSchedule)
+	in.PredictionSchedule.DeepCopyInto(&out.PredictionSchedule)
 	in.Resources.DeepCopyInto(&out.Resources)
 	if in.ShadowFirst != nil {
 		in, out := &in.ShadowFirst, &out.ShadowFirst
@@ -1944,12 +1939,8 @@ func (in *ModelClassStatus) DeepCopyInto(out *ModelClassStatus) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.LastTraining != nil {
-		in, out := &in.LastTraining, &out.LastTraining
-		*out = (*in).DeepCopy()
-	}
-	if in.LastPromotion != nil {
-		in, out := &in.LastPromotion, &out.LastPromotion
+	if in.LastRunAt != nil {
+		in, out := &in.LastRunAt, &out.LastRunAt
 		*out = (*in).DeepCopy()
 	}
 	if in.LastPredictionAt != nil {
@@ -2984,11 +2975,6 @@ func (in *ReportSpec) DeepCopyInto(out *ReportSpec) {
 		**out = **in
 	}
 	in.Custom.DeepCopyInto(&out.Custom)
-	if in.CronReportName != nil {
-		in, out := &in.CronReportName, &out.CronReportName
-		*out = new(string)
-		**out = **in
-	}
 	out.LabRef = in.LabRef
 	if in.Key != nil {
 		in, out := &in.Key, &out.Key

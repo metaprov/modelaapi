@@ -82,4 +82,19 @@ type ParameterRange struct {
 	// Default Choice for categorical variable.
 	//+kubebuilder:validation:Optional
 	DefaultChoice *string `json:"defaultChoice,omitempty" protobuf:"varint,9,opt,name=defaultChoice"`
+	// If true this parameter is condition on another parameter value
+	//+kubebuilder:validation:Optional
+	Conditional *bool `json:"conditional,omitempty" protobuf:"varint,10,opt,name=conditional"`
+	// Parent parameter name
+	//+kubebuilder:validation:Optional
+	Parent *string `json:"parent,omitempty" protobuf:"bytes,11,opt,name=parent"`
+	// The parent value in order for this parameter to be active.
+	//+kubebuilder:validation:Optional
+	ParentValueCat *string `json:"parentValueCat,omitempty" protobuf:"bytes,12,opt,name=parentValueCat"`
+	// The parent value in order for this parameter to be active.
+	//+kubebuilder:validation:Optional
+	ParentValueInteger *int32 `json:"parentValueInteger,omitempty" protobuf:"varint,13,opt,name=parentValueInteger"`
+	// The parent value in order for this parameter to be active.
+	//+kubebuilder:validation:Optional
+	ParentValueFloat *float64 `json:"parentValueFloat,omitempty" protobuf:"bytes,14,opt,name=parentValueFloat"`
 }
