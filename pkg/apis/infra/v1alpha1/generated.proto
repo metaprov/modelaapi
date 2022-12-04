@@ -185,24 +185,32 @@ message AccountStatus {
 
   // Total models owned by this user
   // +kubebuilder:validation:Optional
-  optional int32 totalModels = 5;
+  optional int32 modelsCount = 5;
 
   // Total model classes owned by this user
   // +kubebuilder:validation:Optional
-  optional int32 totalModelClasses = 6;
+  optional int32 modelClassesCount = 6;
 
   // Total number of feature groups that this user is owner of.
   // +kubebuilder:validation:Optional
-  optional int32 totalPredictors = 7;
+  optional int32 predictorsCount = 7;
 
   // Total number of feature groups that this user is responsible for.
   // +kubebuilder:validation:Optional
-  optional int32 totalFeatureGroups = 8;
+  optional int32 featureGroupsCount = 8;
+
+  // Total number of feature groups that this user is responsible for.
+  // +kubebuilder:validation:Optional
+  optional int32 datasetsCount = 9;
+
+  // If group, this is the total members.
+  // +kubebuilder:validation:Optional
+  optional int32 membersCount = 10;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated AccountCondition conditions = 9;
+  repeated AccountCondition conditions = 11;
 }
 
 message AirTableSpec {
@@ -1762,13 +1770,13 @@ message LicenseSpec {
   // +kubebuilder:default:=""
   optional string email = 4;
 
-  // TrialStart is the start date for of the free trial period, if active
+  // TrialStartAt is the start date for of the free trial period, if active
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialStart = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialStartAt = 5;
 
-  // TrialEnd specifies when the free trial expires, if active
+  // TrialEndAt specifies when the free trial expires, if active
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialEnd = 6;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialEndAt = 6;
 
   // MaxProducts specifies the maximum number of DataProduct across the cluster
   // +kubebuilder:validation:Minimum=0
@@ -1836,7 +1844,7 @@ message LicenseSpec {
 message LicenseStatus {
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 1;
 
   // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
@@ -2633,7 +2641,7 @@ message ServingSiteStatus {
   optional int32 totalPredictorAccuracyFailed = 7;
 
   // The collection of predictions from the last 7 days
-  repeated int32 lastDailyPredictions = 8;
+  repeated int32 dailyPredictionsCounts = 8;
 
   // In the case of failure, the ServingSite resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional

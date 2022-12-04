@@ -112,7 +112,7 @@ type ServingSiteStatus struct {
 	// The number of predictors that have detected average inaccurate results
 	TotalPredictorAccuracyFailed int32 `json:"totalPredictorAccuracyFailed,omitempty" protobuf:"varint,7,opt,name=totalPredictorAccuracyFailed"`
 	// The collection of predictions from the last 7 days
-	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,8,rep,name=lastDailyPredictions"`
+	DailyPredictionsCounts []int32 `json:"dailyPredictionsCounts,omitempty" protobuf:"bytes,8,rep,name=dailyPredictionsCounts"`
 	// In the case of failure, the ServingSite resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,9,opt,name=failureReason"`

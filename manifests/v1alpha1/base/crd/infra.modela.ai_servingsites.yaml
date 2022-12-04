@@ -386,6 +386,12 @@ spec:
                       type: string
                   type: object
                 type: array
+              dailyPredictionsCounts:
+                description: The collection of predictions from the last 7 days
+                items:
+                  format: int32
+                  type: integer
+                type: array
               failureMessage:
                 description: In the case of failure, the ServingSite resource controller
                   will set this field with a failure message
@@ -409,12 +415,6 @@ spec:
                 description: The number of inactive (non-deployed) predictors
                 format: int32
                 type: integer
-              lastDailyPredictions:
-                description: The collection of predictions from the last 7 days
-                items:
-                  format: int32
-                  type: integer
-                type: array
               observedGeneration:
                 description: ObservedGeneration is the last generation that was acted
                   on

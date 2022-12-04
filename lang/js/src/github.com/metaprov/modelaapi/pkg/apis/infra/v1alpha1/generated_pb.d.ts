@@ -233,17 +233,23 @@ export class AccountStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): AccountStatus;
 
-  getTotalmodels(): number;
-  setTotalmodels(value: number): AccountStatus;
+  getModelscount(): number;
+  setModelscount(value: number): AccountStatus;
 
-  getTotalmodelclasses(): number;
-  setTotalmodelclasses(value: number): AccountStatus;
+  getModelclassescount(): number;
+  setModelclassescount(value: number): AccountStatus;
 
-  getTotalpredictors(): number;
-  setTotalpredictors(value: number): AccountStatus;
+  getPredictorscount(): number;
+  setPredictorscount(value: number): AccountStatus;
 
-  getTotalfeaturegroups(): number;
-  setTotalfeaturegroups(value: number): AccountStatus;
+  getFeaturegroupscount(): number;
+  setFeaturegroupscount(value: number): AccountStatus;
+
+  getDatasetscount(): number;
+  setDatasetscount(value: number): AccountStatus;
+
+  getMemberscount(): number;
+  setMemberscount(value: number): AccountStatus;
 
   getConditionsList(): Array<AccountCondition>;
   setConditionsList(value: Array<AccountCondition>): AccountStatus;
@@ -264,10 +270,12 @@ export namespace AccountStatus {
     observedgeneration: number,
     failurereason: string,
     failuremessage: string,
-    totalmodels: number,
-    totalmodelclasses: number,
-    totalpredictors: number,
-    totalfeaturegroups: number,
+    modelscount: number,
+    modelclassescount: number,
+    predictorscount: number,
+    featuregroupscount: number,
+    datasetscount: number,
+    memberscount: number,
     conditionsList: Array<AccountCondition.AsObject>,
   }
 }
@@ -3053,15 +3061,15 @@ export class LicenseSpec extends jspb.Message {
   getEmail(): string;
   setEmail(value: string): LicenseSpec;
 
-  getTrialstart(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTrialstart(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LicenseSpec;
-  hasTrialstart(): boolean;
-  clearTrialstart(): LicenseSpec;
+  getTrialstartat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTrialstartat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LicenseSpec;
+  hasTrialstartat(): boolean;
+  clearTrialstartat(): LicenseSpec;
 
-  getTrialend(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTrialend(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LicenseSpec;
-  hasTrialend(): boolean;
-  clearTrialend(): LicenseSpec;
+  getTrialendat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTrialendat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LicenseSpec;
+  hasTrialendat(): boolean;
+  clearTrialendat(): LicenseSpec;
 
   getMaxproducts(): number;
   setMaxproducts(value: number): LicenseSpec;
@@ -3116,8 +3124,8 @@ export namespace LicenseSpec {
   export type AsObject = {
     secretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
     email: string,
-    trialstart?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    trialend?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    trialstartat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    trialendat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     maxproducts: number,
     maxtrainers: number,
     maxservers: number,
@@ -3135,10 +3143,10 @@ export namespace LicenseSpec {
 }
 
 export class LicenseStatus extends jspb.Message {
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LicenseStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): LicenseStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LicenseStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): LicenseStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): LicenseStatus;
@@ -3164,7 +3172,7 @@ export class LicenseStatus extends jspb.Message {
 
 export namespace LicenseStatus {
   export type AsObject = {
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     failurereason: string,
     failuremessage: string,
@@ -4580,10 +4588,10 @@ export class ServingSiteStatus extends jspb.Message {
   getTotalpredictoraccuracyfailed(): number;
   setTotalpredictoraccuracyfailed(value: number): ServingSiteStatus;
 
-  getLastdailypredictionsList(): Array<number>;
-  setLastdailypredictionsList(value: Array<number>): ServingSiteStatus;
-  clearLastdailypredictionsList(): ServingSiteStatus;
-  addLastdailypredictions(value: number, index?: number): ServingSiteStatus;
+  getDailypredictionscountsList(): Array<number>;
+  setDailypredictionscountsList(value: Array<number>): ServingSiteStatus;
+  clearDailypredictionscountsList(): ServingSiteStatus;
+  addDailypredictionscounts(value: number, index?: number): ServingSiteStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): ServingSiteStatus;
@@ -4625,7 +4633,7 @@ export namespace ServingSiteStatus {
     totalpredictorservicefailed: number,
     totalpredictordatadriftfailed: number,
     totalpredictoraccuracyfailed: number,
-    lastdailypredictionsList: Array<number>,
+    dailypredictionscountsList: Array<number>,
     failurereason: string,
     failuremessage: string,
     grpcingressname: string,

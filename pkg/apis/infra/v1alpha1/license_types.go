@@ -84,12 +84,12 @@ type LicenseSpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	Email *string `json:"email,omitempty" protobuf:"bytes,4,opt,name=email"`
-	// TrialStart is the start date for of the free trial period, if active
+	// TrialStartAt is the start date for of the free trial period, if active
 	// +kubebuilder:validation:Optional
-	TrialStart *metav1.Time `json:"trialStart,omitempty" protobuf:"bytes,5,opt,name=trialStart"`
-	// TrialEnd specifies when the free trial expires, if active
+	TrialStartAt *metav1.Time `json:"trialStartAt,omitempty" protobuf:"bytes,5,opt,name=trialStartAt"`
+	// TrialEndAt specifies when the free trial expires, if active
 	// +kubebuilder:validation:Optional
-	TrialEnd *metav1.Time `json:"trialEnd,omitempty" protobuf:"bytes,6,opt,name=trialEnd"`
+	TrialEndAt *metav1.Time `json:"trialEndAt,omitempty" protobuf:"bytes,6,opt,name=trialEndAt"`
 	// MaxProducts specifies the maximum number of DataProduct across the cluster
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
@@ -144,7 +144,7 @@ type LicenseSpec struct {
 type LicenseStatus struct {
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,1,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,1,opt,name=updatedAt"`
 	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`

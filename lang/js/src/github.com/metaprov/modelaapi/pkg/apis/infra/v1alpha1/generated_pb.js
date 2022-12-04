@@ -5226,7 +5226,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.repeatedFields_ = [9];
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.repeatedFields_ = [11];
 
 
 
@@ -5263,10 +5263,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.toObje
     observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     failurereason: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    totalmodels: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    totalmodelclasses: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    totalpredictors: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    totalfeaturegroups: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    modelscount: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    modelclassescount: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    predictorscount: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    featuregroupscount: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    datasetscount: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    memberscount: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.toObject, includeInstance)
   };
@@ -5324,21 +5326,29 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.deseri
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalmodels(value);
+      msg.setModelscount(value);
       break;
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalmodelclasses(value);
+      msg.setModelclassescount(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalpredictors(value);
+      msg.setPredictorscount(value);
       break;
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalfeaturegroups(value);
+      msg.setFeaturegroupscount(value);
       break;
     case 9:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setDatasetscount(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMemberscount(value);
+      break;
+    case 11:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -5429,10 +5439,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.serial
       f
     );
   }
+  f = /** @type {number} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeInt32(
+      9,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeInt32(
+      10,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      9,
+      11,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.serializeBinaryToWriter
     );
@@ -5586,10 +5610,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
 
 
 /**
- * optional int32 totalModels = 5;
+ * optional int32 modelsCount = 5;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.getTotalmodels = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.getModelscount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -5598,7 +5622,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.setTotalmodels = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.setModelscount = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -5607,7 +5631,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.clearTotalmodels = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.clearModelscount = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -5616,16 +5640,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.hasTotalmodels = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.hasModelscount = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional int32 totalModelClasses = 6;
+ * optional int32 modelClassesCount = 6;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.getTotalmodelclasses = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.getModelclassescount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
@@ -5634,7 +5658,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.setTotalmodelclasses = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.setModelclassescount = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -5643,7 +5667,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.clearTotalmodelclasses = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.clearModelclassescount = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -5652,16 +5676,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.hasTotalmodelclasses = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.hasModelclassescount = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional int32 totalPredictors = 7;
+ * optional int32 predictorsCount = 7;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.getTotalpredictors = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.getPredictorscount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -5670,7 +5694,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.setTotalpredictors = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.setPredictorscount = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -5679,7 +5703,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.clearTotalpredictors = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.clearPredictorscount = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -5688,16 +5712,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.hasTotalpredictors = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.hasPredictorscount = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional int32 totalFeatureGroups = 8;
+ * optional int32 featureGroupsCount = 8;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.getTotalfeaturegroups = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.getFeaturegroupscount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -5706,7 +5730,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.setTotalfeaturegroups = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.setFeaturegroupscount = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
@@ -5715,7 +5739,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.clearTotalfeaturegroups = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.clearFeaturegroupscount = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -5724,18 +5748,90 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.hasTotalfeaturegroups = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.hasFeaturegroupscount = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * repeated AccountCondition conditions = 9;
+ * optional int32 datasetsCount = 9;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.getDatasetscount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.setDatasetscount = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.clearDatasetscount = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.hasDatasetscount = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional int32 membersCount = 10;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.getMemberscount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.setMemberscount = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.clearMemberscount = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.hasMemberscount = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * repeated AccountCondition conditions = 11;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition, 9));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition, 11));
 };
 
 
@@ -5744,7 +5840,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+  return jspb.Message.setRepeatedWrapperField(this, 11, value);
 };
 
 
@@ -5754,7 +5850,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition, opt_index);
 };
 
 
@@ -31757,8 +31853,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.toObject
   var f, obj = {
     secretref: (f = msg.getSecretref()) && k8s_io_api_core_v1_generated_pb.SecretReference.toObject(includeInstance, f),
     email: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    trialstart: (f = msg.getTrialstart()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    trialend: (f = msg.getTrialend()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    trialstartat: (f = msg.getTrialstartat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    trialendat: (f = msg.getTrialendat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     maxproducts: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     maxtrainers: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     maxservers: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
@@ -31820,12 +31916,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.deserial
     case 5:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setTrialstart(value);
+      msg.setTrialstartat(value);
       break;
     case 6:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setTrialend(value);
+      msg.setTrialendat(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
@@ -31924,7 +32020,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.serializ
       f
     );
   }
-  f = message.getTrialstart();
+  f = message.getTrialstartat();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -31932,7 +32028,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.serializ
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getTrialend();
+  f = message.getTrialendat();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -32109,10 +32205,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototyp
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialStart = 5;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialStartAt = 5;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.getTrialstart = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.getTrialstartat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 5));
 };
@@ -32122,7 +32218,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototyp
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.setTrialstart = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.setTrialstartat = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -32131,8 +32227,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototyp
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.clearTrialstart = function() {
-  return this.setTrialstart(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.clearTrialstartat = function() {
+  return this.setTrialstartat(undefined);
 };
 
 
@@ -32140,16 +32236,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.hasTrialstart = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.hasTrialstartat = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialEnd = 6;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialEndAt = 6;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.getTrialend = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.getTrialendat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 6));
 };
@@ -32159,7 +32255,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototyp
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.setTrialend = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.setTrialendat = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
 
@@ -32168,8 +32264,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototyp
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.clearTrialend = function() {
-  return this.setTrialend(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.clearTrialendat = function() {
+  return this.setTrialendat(undefined);
 };
 
 
@@ -32177,7 +32273,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.hasTrialend = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.hasTrialendat = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
@@ -32690,7 +32786,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     failurereason: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
@@ -32735,7 +32831,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.deseri
     case 1:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastupdated(value);
+      msg.setUpdatedat(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
@@ -32783,7 +32879,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLastupdated();
+  f = message.getUpdatedat();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -32824,10 +32920,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.serial
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 1;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.getLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.getUpdatedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 1));
 };
@@ -32837,7 +32933,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.protot
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.setLastupdated = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.setUpdatedat = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -32846,8 +32942,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.protot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.clearLastupdated = function() {
-  return this.setLastupdated(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.clearUpdatedat = function() {
+  return this.setUpdatedat(undefined);
 };
 
 
@@ -32855,7 +32951,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.hasLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.hasUpdatedat = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -46072,7 +46168,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.to
     totalpredictorservicefailed: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     totalpredictordatadriftfailed: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     totalpredictoraccuracyfailed: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    lastdailypredictionsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
+    dailypredictionscountsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
     failurereason: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     grpcingressname: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
@@ -46149,7 +46245,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.de
     case 8:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
       for (var i = 0; i < values.length; i++) {
-        msg.addLastdailypredictions(values[i]);
+        msg.addDailypredictionscounts(values[i]);
       }
       break;
     case 9:
@@ -46260,7 +46356,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.se
       f
     );
   }
-  f = message.getLastdailypredictionsList();
+  f = message.getDailypredictionscountsList();
   if (f.length > 0) {
     writer.writeRepeatedInt32(
       8,
@@ -46574,10 +46670,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
 
 
 /**
- * repeated int32 lastDailyPredictions = 8;
+ * repeated int32 dailyPredictionsCounts = 8;
  * @return {!Array<number>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getLastdailypredictionsList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getDailypredictionscountsList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 8));
 };
 
@@ -46586,7 +46682,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @param {!Array<number>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setLastdailypredictionsList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setDailypredictionscountsList = function(value) {
   return jspb.Message.setField(this, 8, value || []);
 };
 
@@ -46596,7 +46692,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.addLastdailypredictions = function(value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.addDailypredictionscounts = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
 };
 
@@ -46605,8 +46701,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.clearLastdailypredictionsList = function() {
-  return this.setLastdailypredictionsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.clearDailypredictionscountsList = function() {
+  return this.setDailypredictionscountsList([]);
 };
 
 

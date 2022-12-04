@@ -152,13 +152,14 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
-              trialEnd:
-                description: TrialEnd specifies when the free trial expires, if active
+              trialEndAt:
+                description: TrialEndAt specifies when the free trial expires, if
+                  active
                 format: date-time
                 type: string
-              trialStart:
-                description: TrialStart is the start date for of the free trial period,
-                  if active
+              trialStartAt:
+                description: TrialStartAt is the start date for of the free trial
+                  period, if active
                 format: date-time
                 type: string
               vision:
@@ -202,15 +203,15 @@ spec:
                 description: In the case of failure, the License resource controller
                   will set this field with a failure reason
                 type: string
-              lastUpdated:
-                description: The last time the object was updated
-                format: date-time
-                type: string
               observedGeneration:
                 description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer
+              updatedAt:
+                description: The last time the object was updated
+                format: date-time
+                type: string
             type: object
         type: object
     served: true

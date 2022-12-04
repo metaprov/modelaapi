@@ -22,15 +22,6 @@ func TestParseHyperParameterListOneParam(t *testing.T) {
 	assert.Equal(t, len(parsed), 1)
 }
 
-func TestNotebookAddFinalizer(t *testing.T) {
-	nb := Notebook{}
-	nb.Default()
-	nb.AddFinalizer()
-	assert.True(t, nb.HasFinalizer())
-	nb.RemoveFinalizer()
-	assert.False(t, nb.HasFinalizer())
-}
-
 // Staging that the image knows how to Add python packages to the container.
 
 // When the there are pip package, there will be added to the image.

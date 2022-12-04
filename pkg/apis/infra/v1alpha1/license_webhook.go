@@ -16,13 +16,13 @@ import (
 var _ webhook.Defaulter = &License{}
 
 func (license *License) Default() {
-	if license.Spec.TrialStart == nil {
+	if license.Spec.TrialStartAt == nil {
 		t := metav1.Now()
-		license.Spec.TrialStart = &t
+		license.Spec.TrialStartAt = &t
 	}
-	if license.Spec.TrialEnd == nil {
-		t := license.Spec.TrialStart.AddDate(0, 0, 21)
-		license.Spec.TrialEnd = &metav1.Time{Time: t}
+	if license.Spec.TrialEndAt == nil {
+		t := license.Spec.TrialStartAt.AddDate(0, 0, 21)
+		license.Spec.TrialEndAt = &metav1.Time{Time: t}
 	}
 
 }

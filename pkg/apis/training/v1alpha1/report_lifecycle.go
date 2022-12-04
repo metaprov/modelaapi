@@ -367,7 +367,7 @@ func (report Report) IsFailed() bool {
 func (report Report) RunStatus() *catalog.LastRunStatus {
 	result := &catalog.LastRunStatus{
 		CompletedAt:    report.Status.CompletedAt,
-		Duration:       int32(report.Status.CompletedAt.Unix() - report.Status.StartedAt.Unix()),
+		Duration:       int32(report.Status.CompletedAt.Unix() - report.CreationTimestamp.Unix()),
 		FailureReason:  report.Status.FailureReason,
 		FailureMessage: report.Status.FailureMessage,
 	}

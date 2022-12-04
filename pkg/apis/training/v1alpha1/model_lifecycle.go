@@ -371,10 +371,6 @@ const (
 // ----------------- Training commands
 
 func (model *Model) MarkWaitingToTrain() {
-	now := metav1.Now()
-	if model.Status.StartedAt == nil {
-		model.Status.StartedAt = &now
-	}
 	model.Status.Phase = ModelPhasePending
 	model.Status.Progress = 0
 	model.CreateOrUpdateCond(ModelCondition{
@@ -387,9 +383,6 @@ func (model *Model) MarkWaitingToTrain() {
 
 func (model *Model) MarkTraining() {
 	now := metav1.Now()
-	if model.Status.StartedAt == nil {
-		model.Status.StartedAt = &now
-	}
 	if model.Status.TrainingStartedAt == nil {
 		model.Status.TrainingStartedAt = &now
 	}

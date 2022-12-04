@@ -3059,12 +3059,12 @@ func (in *LicenseSpec) DeepCopyInto(out *LicenseSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.TrialStart != nil {
-		in, out := &in.TrialStart, &out.TrialStart
+	if in.TrialStartAt != nil {
+		in, out := &in.TrialStartAt, &out.TrialStartAt
 		*out = (*in).DeepCopy()
 	}
-	if in.TrialEnd != nil {
-		in, out := &in.TrialEnd, &out.TrialEnd
+	if in.TrialEndAt != nil {
+		in, out := &in.TrialEndAt, &out.TrialEndAt
 		*out = (*in).DeepCopy()
 	}
 	if in.MaxProducts != nil {
@@ -4631,8 +4631,8 @@ func (in *ServingSiteStatus) DeepCopyInto(out *ServingSiteStatus) {
 		in, out := &in.UpdatedAt, &out.UpdatedAt
 		*out = (*in).DeepCopy()
 	}
-	if in.LastDailyPredictions != nil {
-		in, out := &in.LastDailyPredictions, &out.LastDailyPredictions
+	if in.DailyPredictionsCounts != nil {
+		in, out := &in.DailyPredictionsCounts, &out.DailyPredictionsCounts
 		*out = make([]int32, len(*in))
 		copy(*out, *in)
 	}

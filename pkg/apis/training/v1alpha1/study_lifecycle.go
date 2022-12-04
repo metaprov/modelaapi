@@ -214,11 +214,6 @@ func ParseStudyYaml(content []byte) (*Study, error) {
 	return r, nil
 }
 
-func (study *Study) SetStartTime() {
-	now := time.Now()
-	study.Status.StartedAt = &metav1.Time{Time: now}
-}
-
 func (study Study) ReportName() string {
 	return "study-report-" + study.ObjectMeta.Name
 
@@ -924,18 +919,15 @@ func (study *Study) CreateReport(key string, bucketName string) *Report {
 // Answer true if the cv period ended.
 func (study *Study) MaxTimeOrModelReached() bool {
 
-	if study.Status.StartedAt == nil {
-		return false
-	} else {
-		now := time.Now()
-		diff := now.Sub(study.Status.StartedAt.Time)
-		timeOver := diff.Minutes() > float64(*study.Spec.Search.MaxTime)
+	now := time.Now()
+	diff := now.Sub(study.CreationTimestamp.Time)
+	timeOver := diff.Minutes() > float64(*study.Spec.Search.MaxTime)
 
-		// compare the model. We take the ensemble into consideration
-		modelOver := (study.Status.SearchStatus.Completed + study.Status.SearchStatus.Failed) >= *study.Spec.Search.MaxModels
+	// compare the model. We take the ensemble into consideration
+	modelOver := (study.Status.SearchStatus.Completed + study.Status.SearchStatus.Failed) >= *study.Spec.Search.MaxModels
 
-		return timeOver || modelOver
-	}
+	return timeOver || modelOver
+
 }
 
 func (study *Study) MarkReportFailed(err string) {

@@ -33,7 +33,7 @@ func (license License) HasExpired() bool {
 
 // Check if we are still in free trial
 func (license License) IsFreeTrial() bool {
-	return time.Now().Unix() < license.Spec.TrialEnd.Time.Unix()
+	return time.Now().Unix() < license.Spec.TrialEndAt.Time.Unix()
 }
 
 //==============================================================================
