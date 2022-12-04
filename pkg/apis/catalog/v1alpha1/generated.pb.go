@@ -5136,9 +5136,9 @@ func (m *VizURI) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.Uri)
-	copy(dAtA[i:], m.Uri)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Uri)))
+	i -= len(m.URI)
+	copy(dAtA[i:], m.URI)
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.URI)))
 	i--
 	dAtA[i] = 0x12
 	i -= len(m.Name)
@@ -6578,7 +6578,7 @@ func (m *VizURI) Size() (n int) {
 	_ = l
 	l = len(m.Name)
 	n += 1 + l + sovGenerated(uint64(l))
-	l = len(m.Uri)
+	l = len(m.URI)
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -7480,7 +7480,7 @@ func (this *VizURI) String() string {
 	}
 	s := strings.Join([]string{`&VizURI{`,
 		`Name:` + fmt.Sprintf("%v", this.Name) + `,`,
-		`Uri:` + fmt.Sprintf("%v", this.Uri) + `,`,
+		`URI:` + fmt.Sprintf("%v", this.URI) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -17317,7 +17317,7 @@ func (m *VizURI) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Uri", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field URI", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -17345,7 +17345,7 @@ func (m *VizURI) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Uri = string(dAtA[iNdEx:postIndex])
+			m.URI = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex

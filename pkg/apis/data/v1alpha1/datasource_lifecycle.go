@@ -202,12 +202,12 @@ func (datasource DataSource) Key() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasources/%s-datasource.yaml", datasource.Namespace, *datasource.Spec.VersionName, datasource.Name)
 }
 
-func (datasource DataSource) RootUri() string {
+func (datasource DataSource) RootURI() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasources/%s", datasource.Namespace, *datasource.Spec.VersionName, datasource.Name)
 }
 
-func (datasource DataSource) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-datasource.yaml", datasource.RootUri(), datasource.Name)
+func (datasource DataSource) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-datasource.yaml", datasource.RootURI(), datasource.Name)
 }
 
 func (datasource *DataSource) Poplulate() {

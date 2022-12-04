@@ -39,12 +39,12 @@ func (pm *PostMortem) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/connections/%s.yaml", root, pm.ObjectMeta.Name), nil
 }
 
-func (pm *PostMortem) RootUri() string {
+func (pm *PostMortem) RootURI() string {
 	return fmt.Sprintf("tenants/%s/postmortems/%s", pm.Namespace, pm.Name)
 }
 
-func (pm *PostMortem) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-postmortem.yaml", pm.RootUri(), pm.Name)
+func (pm *PostMortem) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-postmortem.yaml", pm.RootURI(), pm.Name)
 }
 
 // Merge or update condition

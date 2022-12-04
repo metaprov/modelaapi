@@ -84,12 +84,12 @@ func (run DataPipelineRun) StatusString() string {
 	return string(run.Status.Phase)
 }
 
-func (run DataPipelineRun) RootUri() string {
+func (run DataPipelineRun) RootURI() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/wranglings/%s", run.Namespace, *run.Spec.VersionName, run.Name)
 }
 
-func (run DataPipelineRun) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-wrangling.yaml", run.RootUri(), run.Name)
+func (run DataPipelineRun) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-wrangling.yaml", run.RootURI(), run.Name)
 }
 
 func (in DataPipelineRun) Paused() bool {

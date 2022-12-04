@@ -88,12 +88,12 @@ func (attachment Attachment) IsReady() bool {
 	return attachment.GetCond(AttachmentSent).Status == v1.ConditionTrue
 }
 
-func (attachment Attachment) RootUri() string {
+func (attachment Attachment) RootURI() string {
 	return fmt.Sprintf("tenant/%s/apitokens/%s", attachment.Namespace, attachment.Name)
 }
 
-func (attachment Attachment) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-apitoken.yaml", attachment.RootUri(), attachment.Name)
+func (attachment Attachment) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-apitoken.yaml", attachment.RootURI(), attachment.Name)
 }
 
 func ParseAttachmentYaml(content []byte) (*Attachment, error) {

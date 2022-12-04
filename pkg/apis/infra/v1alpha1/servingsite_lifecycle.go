@@ -29,12 +29,12 @@ func (servingsite ServingSite) FullName() string {
 	return servingsite.ObjectMeta.Namespace + "/" + servingsite.ObjectMeta.Name
 }
 
-func (servingsite ServingSite) RootUri() string {
+func (servingsite ServingSite) RootURI() string {
 	return fmt.Sprintf("tenant/%s/servingsites/%s", servingsite.Namespace, servingsite.Name)
 }
 
-func (servingsite ServingSite) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-servingsite.yaml", servingsite.RootUri(), servingsite.Name)
+func (servingsite ServingSite) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-servingsite.yaml", servingsite.RootURI(), servingsite.Name)
 }
 
 func (servingsite ServingSite) Payload() string {

@@ -122,24 +122,24 @@ func ParsePredictorYaml(content []byte) (*Predictor, error) {
 	return r, nil
 }
 
-func (predictor Predictor) RootUri() string {
+func (predictor Predictor) RootURI() string {
 	return fmt.Sprintf("dataproducts/%s/predictors/%s", predictor.Namespace, predictor.Name)
 }
 
-func (predictor Predictor) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-prediction.yaml", predictor.RootUri(), predictor.Name)
+func (predictor Predictor) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-prediction.yaml", predictor.RootURI(), predictor.Name)
 }
 
 //    dataproducts/*/predictor/*/predictor-<name>.yaml
 
 //    dataproducts/*/predictor/*/manifests/deployment-<name>.yaml
-func (predictor Predictor) DeploymentUri() string {
-	return fmt.Sprintf("%s/%s-deployment.yaml", predictor.RootUri(), predictor.Name)
+func (predictor Predictor) DeploymentURI() string {
+	return fmt.Sprintf("%s/%s-deployment.yaml", predictor.RootURI(), predictor.Name)
 }
 
 //    dataproducts/*/predictor/*/manifests/service-<name>.yaml
-func (predictor Predictor) ServiceUri() string {
-	return fmt.Sprintf("%s/%s-service.yaml", predictor.RootUri(), predictor.Name)
+func (predictor Predictor) ServiceURI() string {
+	return fmt.Sprintf("%s/%s-service.yaml", predictor.RootURI(), predictor.Name)
 }
 
 func (predictor Predictor) ServiceName() string {

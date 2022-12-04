@@ -189,17 +189,17 @@ func (study Study) Phase() StudyPhase {
 	return study.Status.Phase
 }
 
-func (study Study) RootUri() string {
+func (study Study) RootURI() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s", study.Namespace, *study.Spec.VersionName, study.Name)
 }
 
-func (study Study) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-study.yaml", study.RootUri(), study.Name)
+func (study Study) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-study.yaml", study.RootURI(), study.Name)
 }
 
 //    dataproducts/*/studies/*/study-<name>-report.pdf
-func (study Study) ReportUri() string {
-	return fmt.Sprintf("%s/%s-report.pdf", study.RootUri(), study.Name)
+func (study Study) ReportURI() string {
+	return fmt.Sprintf("%s/%s-report.pdf", study.RootURI(), study.Name)
 }
 
 // divide the model list into retained model and not retained model
@@ -1136,15 +1136,15 @@ func (study *Study) MarkModelFailed(model *Model, err error) {
 }
 
 func (study Study) WorkerIndexFileKey(workerIndex int, task string) string {
-	return fmt.Sprintf("%s/%s_%d.json", study.RootUri(), task, workerIndex)
+	return fmt.Sprintf("%s/%s_%d.json", study.RootURI(), task, workerIndex)
 }
 
 func (study Study) TaskIndexFileKey(task string) string {
-	return fmt.Sprintf("%s/%s.json", study.RootUri(), task)
+	return fmt.Sprintf("%s/%s.json", study.RootURI(), task)
 }
 
 func (study Study) GroupFolder(key []string) string {
-	return study.RootUri() + "/groups/" + path.Join(key...)
+	return study.RootURI() + "/groups/" + path.Join(key...)
 }
 
 func (study Study) GroupDataFolder(key []string) string {

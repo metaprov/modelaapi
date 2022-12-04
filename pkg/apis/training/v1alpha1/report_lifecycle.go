@@ -146,7 +146,7 @@ func (report Report) Age() string {
 	return humanize.Time(report.CreationTimestamp.Time)
 }
 
-func (report Report) RootUri() string {
+func (report Report) RootURI() string {
 	if *report.Spec.ReportType == GroupTimeSeriesDatasetReport {
 		if len(report.Spec.Key) > 0 {
 			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s/groups/%s",
@@ -201,13 +201,13 @@ func (report Report) RootUri() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/reports", report.Namespace, *report.Spec.VersionName)
 }
 
-func (report Report) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-report.yaml", report.RootUri(), report.Name)
+func (report Report) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-report.yaml", report.RootURI(), report.Name)
 }
 
 //    dataproducts/*/models/*/bin/model.joblib
-func (report Report) PdfUri() string {
-	return fmt.Sprintf("%s/%s.pdf", report.RootUri(), report.Name)
+func (report Report) PdfURI() string {
+	return fmt.Sprintf("%s/%s.pdf", report.RootURI(), report.Name)
 }
 
 func (report Report) IsGroup() bool {
@@ -228,16 +228,16 @@ func (report Report) ValidateDelete() error {
 }
 
 func (report Report) IndexFileKey() string {
-	return report.RootUri() + "/group_report_index.json"
+	return report.RootURI() + "/group_report_index.json"
 }
 
 func (report Report) WorkerIndexFileKey(workerIndex int, task string) string {
-	return fmt.Sprintf("%s/%s_%d.json", report.RootUri(), task, workerIndex)
+	return fmt.Sprintf("%s/%s_%d.json", report.RootURI(), task, workerIndex)
 }
 
 // This is the index file for task
 func (report Report) TaskIndexFileKey(task string) string {
-	return fmt.Sprintf("%s/%s.json", report.RootUri(), task)
+	return fmt.Sprintf("%s/%s.json", report.RootURI(), task)
 }
 
 func (report *Report) MarkRunning() {
@@ -282,7 +282,7 @@ func (report *Report) MarkReportReady(uri string) {
 		Status: v1.ConditionTrue,
 	})
 
-	//liveUri := product.PrefixLiveUri(report.PdfUri())
+	//liveURI := product.PrefixLiveURI(report.PdfURI())
 	report.Status.URI = uri
 	now := metav1.Now()
 	report.Status.CompletedAt = &now

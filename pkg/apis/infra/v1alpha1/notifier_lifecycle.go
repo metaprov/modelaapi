@@ -87,12 +87,12 @@ func (notifier Notifier) IsReady() bool {
 	return notifier.GetCond(NotifierReady).Status == v1.ConditionTrue
 }
 
-func (notifier Notifier) RootUri() string {
+func (notifier Notifier) RootURI() string {
 	return fmt.Sprintf("tenant/%s/notifiers/%s", notifier.Namespace, notifier.Name)
 }
 
-func (notifier Notifier) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-notifier.yaml", notifier.RootUri(), notifier.Name)
+func (notifier Notifier) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-notifier.yaml", notifier.RootURI(), notifier.Name)
 }
 
 func ParseNotifierYaml(content []byte) (*Notifier, error) {

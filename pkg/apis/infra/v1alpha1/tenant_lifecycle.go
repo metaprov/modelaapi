@@ -30,12 +30,12 @@ func (tenant *Tenant) RemoveFinalizer()  { util.RemoveFin(&tenant.ObjectMeta, in
 // Trackable
 //==============================================================================
 
-func (tenant Tenant) RootUri() string {
+func (tenant Tenant) RootURI() string {
 	return fmt.Sprintf("tenants/%s", tenant.Name)
 }
 
-func (tenant Tenant) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-tenant.yaml", tenant.RootUri(), tenant.Name)
+func (tenant Tenant) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-tenant.yaml", tenant.RootURI(), tenant.Name)
 }
 
 // Merge or update condition

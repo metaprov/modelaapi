@@ -142,7 +142,7 @@ func (model *Model) RemoveFinalizer() {
 // Trackable
 //==============================================================================
 
-func (model Model) RootUri() string {
+func (model Model) RootURI() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s",
 		model.Namespace,
 		*model.Spec.VersionName,
@@ -150,60 +150,60 @@ func (model Model) RootUri() string {
 		model.Name)
 }
 
-func (model Model) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-model.yaml", model.RootUri(), model.Name)
+func (model Model) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-model.yaml", model.RootURI(), model.Name)
 }
 
 //    dataproducts/*/models/*/bin/model.joblib
-func (model Model) WeightsUri() string {
-	return fmt.Sprintf("%s/bin/model.joblib", model.RootUri())
+func (model Model) WeightsURI() string {
+	return fmt.Sprintf("%s/bin/model.joblib", model.RootURI())
 }
 
-func (model Model) ExplainModelUri() string {
-	return fmt.Sprintf("%s/bin/explain-model.joblib", model.RootUri())
+func (model Model) ExplainModelURI() string {
+	return fmt.Sprintf("%s/bin/explain-model.joblib", model.RootURI())
 }
 
 //    dataproducts/*/models/*/metadata/model.json
-func (model Model) ModelJsonUri() string {
-	return fmt.Sprintf("%s/metadata/model.json", model.RootUri())
+func (model Model) ModelJsonURI() string {
+	return fmt.Sprintf("%s/metadata/model.json", model.RootURI())
 }
 
 //    dataproducts/*/models/*/metadata/study.json
-func (model Model) StudyJsonUri() string {
-	return fmt.Sprintf("%s/metadata/study.json", model.RootUri())
+func (model Model) StudyJsonURI() string {
+	return fmt.Sprintf("%s/metadata/study.json", model.RootURI())
 }
 
 //    dataproducts/*/models/*/metadata/schema.json
-func (model Model) SchemaJsonUri() string {
-	return fmt.Sprintf("%s/metadata/schema.json", model.RootUri())
+func (model Model) SchemaJsonURI() string {
+	return fmt.Sprintf("%s/metadata/schema.json", model.RootURI())
 }
 
 //    dataproducts/*/models/*/metadata/dataset.json
-func (model Model) DatasetJsonUri() string {
-	return fmt.Sprintf("%s/metadata/dataset.json", model.RootUri())
+func (model Model) DatasetJsonURI() string {
+	return fmt.Sprintf("%s/metadata/dataset.json", model.RootURI())
 }
 
 //    dataproducts/*/models/*/metadata/productversion.json
-func (model Model) ProductVersionJsonUri() string {
-	return fmt.Sprintf("%s/metadata/productversion.json", model.RootUri())
+func (model Model) ProductVersionJsonURI() string {
+	return fmt.Sprintf("%s/metadata/productversion.json", model.RootURI())
 }
 
 //    dataproducts/*/models/*/model-<name>-report.pdf
-func (model Model) ReportUri() string {
-	return fmt.Sprintf("%s/model-%s-report.pdf", model.RootUri(), model.Name)
+func (model Model) ReportURI() string {
+	return fmt.Sprintf("%s/model-%s-report.pdf", model.RootURI(), model.Name)
 }
 
-func (model Model) TarUri() string {
-	return fmt.Sprintf("%s/model.tar.gz", model.RootUri())
+func (model Model) TarURI() string {
+	return fmt.Sprintf("%s/model.tar.gz", model.RootURI())
 }
 
-func (model Model) ForecastUri() string {
-	return fmt.Sprintf("%s/model-%s-forecast.csv", model.RootUri(), model.Name)
+func (model Model) ForecastURI() string {
+	return fmt.Sprintf("%s/model-%s-forecast.csv", model.RootURI(), model.Name)
 }
 
 //    dataproducts/*/models/*/Dockerfile
-func (model Model) DockerfileUri() string {
-	return fmt.Sprintf("%s/Dockerfile", model.RootUri())
+func (model Model) DockerfileURI() string {
+	return fmt.Sprintf("%s/Dockerfile", model.RootURI())
 }
 
 func (model Model) CombinedImageName() string {
@@ -1394,23 +1394,23 @@ func (model *Model) Merged() bool {
 // Index file paths
 
 func (model *Model) IndexFileKey() string {
-	return model.RootUri() + "/groups.json"
+	return model.RootURI() + "/groups.json"
 }
 
 func (model *Model) WorkerIndexFileKey(workerIndex int, task string) string {
-	return fmt.Sprintf("%s/%s_%d.json", model.RootUri(), task, workerIndex)
+	return fmt.Sprintf("%s/%s_%d.json", model.RootURI(), task, workerIndex)
 }
 
 // This is the index file for task
 func (model *Model) TaskIndexFileKey(task string) string {
-	return fmt.Sprintf("%s/%s.json", model.RootUri(), task)
+	return fmt.Sprintf("%s/%s.json", model.RootURI(), task)
 }
 
 ////////////////////////////
 // Group folders
 
 func (model *Model) GroupFolder() string {
-	return model.RootUri() + "/groups/" + path.Join(model.Spec.Forecasting.Key...)
+	return model.RootURI() + "/groups/" + path.Join(model.Spec.Forecasting.Key...)
 }
 
 func (model *Model) GroupModelFolder() string {

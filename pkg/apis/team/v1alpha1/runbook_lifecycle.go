@@ -43,12 +43,12 @@ func (runbook *RunBook) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/runbooks/%s-runbook.yaml", root, runbook.ObjectMeta.Name), nil
 }
 
-func (runbook *RunBook) RootUri() string {
+func (runbook *RunBook) RootURI() string {
 	return fmt.Sprintf("tenants/%s/runbooks/%s", runbook.Namespace, runbook.Name)
 }
 
-func (runbook *RunBook) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-runbook.yaml", runbook.RootUri(), runbook.Name)
+func (runbook *RunBook) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-runbook.yaml", runbook.RootURI(), runbook.Name)
 }
 
 // Merge or update condition

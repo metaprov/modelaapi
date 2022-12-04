@@ -91,12 +91,12 @@ func (reciperun RecipeRun) StatusString() string {
 	return string(reciperun.Status.Phase)
 }
 
-func (reciperun RecipeRun) RootUri() string {
+func (reciperun RecipeRun) RootURI() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/reciperuns/%s", reciperun.Namespace, *reciperun.Spec.VersionName, reciperun.Name)
 }
 
-func (reciperun RecipeRun) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-reciperun.yaml", reciperun.RootUri(), reciperun.Name)
+func (reciperun RecipeRun) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-reciperun.yaml", reciperun.RootURI(), reciperun.Name)
 }
 
 func (reciperun RecipeRun) IsInCond(ct RecipeConditionType) bool {

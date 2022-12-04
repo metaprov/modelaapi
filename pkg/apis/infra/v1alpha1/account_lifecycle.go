@@ -37,12 +37,12 @@ func (account *Account) RemoveFinalizer()  { util.RemoveFin(&account.ObjectMeta,
 // Trackable
 //==============================================================================
 
-func (account Account) RootUri() string {
+func (account Account) RootURI() string {
 	return fmt.Sprintf("tenants/%s/accounts/%s", account.Namespace, account.Name)
 }
 
-func (account Account) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-account.yaml", account.RootUri(), account.Name)
+func (account Account) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-account.yaml", account.RootURI(), account.Name)
 }
 
 // Merge or update condition

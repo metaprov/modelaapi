@@ -86,12 +86,12 @@ func (alert Alert) IsReady() bool {
 	return alert.GetCond(AlertSent).Status == v1.ConditionTrue
 }
 
-func (alert Alert) RootUri() string {
+func (alert Alert) RootURI() string {
 	return fmt.Sprintf("tenant/%s/apitokens/%s", alert.Namespace, alert.Name)
 }
 
-func (alert Alert) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-apitoken.yaml", alert.RootUri(), alert.Name)
+func (alert Alert) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-apitoken.yaml", alert.RootURI(), alert.Name)
 }
 
 func ParseAlertYaml(content []byte) (*Alert, error) {

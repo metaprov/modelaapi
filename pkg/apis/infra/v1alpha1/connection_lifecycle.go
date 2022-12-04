@@ -52,12 +52,12 @@ func (connection *Connection) RemoveFinalizer() {
 // Trackable
 //==============================================================================
 
-func (connection Connection) RootUri() string {
+func (connection Connection) RootURI() string {
 	return fmt.Sprintf("tenants/%s/connections/%s", connection.Namespace, connection.Name)
 }
 
-func (connection Connection) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-connection.yaml", connection.RootUri(), connection.Name)
+func (connection Connection) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-connection.yaml", connection.RootURI(), connection.Name)
 }
 
 // Merge or update condition

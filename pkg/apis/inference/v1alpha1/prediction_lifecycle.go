@@ -32,12 +32,12 @@ const PipelineLabelKey = "pipeline"
 // Keys
 //==============================================================================
 
-func (prediction Prediction) RootUri() string {
+func (prediction Prediction) RootURI() string {
 	return fmt.Sprintf("dataproducts/%s/predictions/%s", prediction.Namespace, prediction.Name)
 }
 
-func (prediction Prediction) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-prediction.yaml", prediction.RootUri(), prediction.Name)
+func (prediction Prediction) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-prediction.yaml", prediction.RootURI(), prediction.Name)
 }
 
 //==============================================================================

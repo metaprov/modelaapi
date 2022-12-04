@@ -30,12 +30,12 @@ func (lab *Lab) SetupWebhookWithManager(mgr ctrl.Manager) error {
 // Keys
 //==============================================================================
 
-func (lab Lab) RootUri() string {
+func (lab Lab) RootURI() string {
 	return fmt.Sprintf("tenants/%s/labs/%s", lab.Namespace, lab.Name)
 }
 
-func (lab Lab) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-lab.yaml", lab.RootUri(), lab.Name)
+func (lab Lab) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-lab.yaml", lab.RootURI(), lab.Name)
 }
 
 func (lab Lab) CreateNamespace() *corev1.Namespace {

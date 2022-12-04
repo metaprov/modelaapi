@@ -84,12 +84,12 @@ func (alert *Todo) IsReady() bool {
 	return alert.GetCond(TodoDone).Status == v1.ConditionTrue
 }
 
-func (alert *Todo) RootUri() string {
+func (alert *Todo) RootURI() string {
 	return fmt.Sprintf("tenant/%s/apitokens/%s", alert.Namespace, alert.Name)
 }
 
-func (alert *Todo) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-apitoken.yaml", alert.RootUri(), alert.Name)
+func (alert *Todo) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-apitoken.yaml", alert.RootURI(), alert.Name)
 }
 
 func (alert *Todo) MarkArchived() {

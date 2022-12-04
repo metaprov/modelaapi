@@ -93,12 +93,12 @@ func (license License) IsValid() bool {
 	return license.GetCond(LicenseValid).Status == v1.ConditionTrue
 }
 
-func (license License) RootUri() string {
+func (license License) RootURI() string {
 	return fmt.Sprintf("tenant/%s/licenses/%s", license.Namespace, license.Name)
 }
 
-func (license License) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-license.yaml", license.RootUri(), license.Name)
+func (license License) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-license.yaml", license.RootURI(), license.Name)
 }
 
 func ParseLicenseYaml(content []byte) (*License, error) {

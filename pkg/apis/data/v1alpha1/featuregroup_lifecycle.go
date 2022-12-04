@@ -249,7 +249,7 @@ func (fg *FeatureGroup) MarkArchived() {
 	})
 }
 
-func (fg *FeatureGroup) PrefixLiveUri(path string) string {
+func (fg *FeatureGroup) PrefixLiveURI(path string) string {
 	return fmt.Sprintf("modela/live/tenants/%s/%s", fg.Namespace, path)
 }
 

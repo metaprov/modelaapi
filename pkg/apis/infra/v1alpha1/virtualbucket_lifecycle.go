@@ -78,12 +78,12 @@ func (bucket VirtualBucket) GetCond(t VirtualBucketConditionType) VirtualBucketC
 
 }
 
-func (bucket VirtualBucket) RootUri() string {
+func (bucket VirtualBucket) RootURI() string {
 	return fmt.Sprintf("tenants/%s/virtualbuckets/%s", bucket.Namespace, bucket.Name)
 }
 
-func (bucket VirtualBucket) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-virtualbucket.yaml", bucket.RootUri(), bucket.Name)
+func (bucket VirtualBucket) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-virtualbucket.yaml", bucket.RootURI(), bucket.Name)
 }
 
 func (bucket *VirtualBucket) MarkReady() {

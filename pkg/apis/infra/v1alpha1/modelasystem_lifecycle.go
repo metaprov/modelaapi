@@ -88,12 +88,12 @@ func (ms ModelaSystem) IsReady() bool {
 	return ms.GetCond(ModelaSystemReady).Status == v1.ConditionTrue
 }
 
-func (ms ModelaSystem) RootUri() string {
+func (ms ModelaSystem) RootURI() string {
 	return fmt.Sprintf("tenant/%s/apitokens/%s", ms.Namespace, ms.Name)
 }
 
-func (ms ModelaSystem) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-apitoken.yaml", ms.RootUri(), ms.Name)
+func (ms ModelaSystem) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-apitoken.yaml", ms.RootURI(), ms.Name)
 }
 
 func ParseModelaSystemYaml(content []byte) (*ModelaSystem, error) {

@@ -78,11 +78,11 @@ func (version DataProductVersion) IsReady() bool {
 	return version.GetCond(DataProductVersionReady).Status == v1.ConditionTrue
 }
 
-func (version DataProductVersion) YamlUri() string {
+func (version DataProductVersion) YamlURI() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/%s-dataproductversion.yaml", version.Namespace, version.Name, version.Name)
 }
 
-func (version DataProductVersion) MessageUri() string {
+func (version DataProductVersion) MessageURI() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/dataproductversion.json", version.Namespace, version.Name)
 }
 

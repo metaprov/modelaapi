@@ -91,20 +91,20 @@ func (dataset Dataset) StatusString() string {
 	return string(dataset.Status.Phase)
 }
 
-func (dataset Dataset) RootUri() string {
+func (dataset Dataset) RootURI() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s", dataset.Namespace, *dataset.Spec.VersionName, dataset.Name)
 }
 
-func (dataset Dataset) ReportUri() string {
-	return fmt.Sprintf("%s/%s-report.pdf", dataset.RootUri(), dataset.Name)
+func (dataset Dataset) ReportURI() string {
+	return fmt.Sprintf("%s/%s-report.pdf", dataset.RootURI(), dataset.Name)
 }
 
-func (dataset Dataset) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-dataset.yaml", dataset.RootUri(), dataset.Name)
+func (dataset Dataset) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-dataset.yaml", dataset.RootURI(), dataset.Name)
 }
 
-func (dataset Dataset) ProfileUri() string {
-	return fmt.Sprintf("%s/profile/dataset_profile.json", dataset.RootUri())
+func (dataset Dataset) ProfileURI() string {
+	return fmt.Sprintf("%s/profile/dataset_profile.json", dataset.RootURI())
 }
 
 func ParseDatasetYaml(content []byte) (*Dataset, error) {
@@ -232,17 +232,17 @@ func (dataset Dataset) Grouped() bool {
 }
 
 func (dataset Dataset) IndexFileKey() string {
-	return dataset.RootUri() + "/" + "groups.json"
+	return dataset.RootURI() + "/" + "groups.json"
 }
 
 // Return the location of the worker index file for the key
 func (dataset Dataset) WorkerIndexFileKey(workerIndex int, task string) string {
-	return fmt.Sprintf("%s/%s_%d.json", dataset.RootUri(), task, workerIndex)
+	return fmt.Sprintf("%s/%s_%d.json", dataset.RootURI(), task, workerIndex)
 }
 
 // This is the index file for task
 func (dataset Dataset) TaskIndexFileKey(task string) string {
-	return fmt.Sprintf("%s/%s.json", dataset.RootUri(), task)
+	return fmt.Sprintf("%s/%s.json", dataset.RootURI(), task)
 }
 
 func (dataset *Dataset) MarkGroupFailed(msg string) {
@@ -810,7 +810,7 @@ func (col ColumnStatistics) BigBoolTest(thresholds []DriftThreshold, rowCount in
 // Group folders. This is
 
 func (dataset Dataset) GroupsFolder() string {
-	return dataset.RootUri() + "/groups"
+	return dataset.RootURI() + "/groups"
 }
 
 func (dataset Dataset) GroupFolder() string {

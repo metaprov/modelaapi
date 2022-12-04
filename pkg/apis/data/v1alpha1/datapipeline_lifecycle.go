@@ -79,12 +79,12 @@ func (wr DataPipeline) GetCond(t DataPipelineConditionType) DataPipelineConditio
 
 }
 
-func (wr DataPipeline) RootUri() string {
+func (wr DataPipeline) RootURI() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datapipelines/%s", wr.Namespace, *wr.Spec.VersionName, wr.Name)
 }
 
-func (wr DataPipeline) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-wrangler.yaml", wr.RootUri(), wr.Name)
+func (wr DataPipeline) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-wrangler.yaml", wr.RootURI(), wr.Name)
 }
 
 func (in *DataPipeline) MarkReady() {

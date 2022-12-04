@@ -45,12 +45,12 @@ func (conv *Review) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/connections/%s.yaml", root, conv.ObjectMeta.Name), nil
 }
 
-func (conv *Review) RootUri() string {
+func (conv *Review) RootURI() string {
 	return fmt.Sprintf("tenants/%s/connections/%s", conv.Namespace, conv.Name)
 }
 
-func (conv *Review) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-review.yaml", conv.RootUri(), conv.Name)
+func (conv *Review) ManifestURI() string {
+	return fmt.Sprintf("%s/%s-review.yaml", conv.RootURI(), conv.Name)
 }
 
 // Merge or update condition

@@ -88,19 +88,19 @@ func (product DataProduct) IsReady() bool {
 	return product.GetCond(DataProductReady).Status == v1.ConditionTrue
 }
 
-func (product DataProduct) YamlUri() string {
+func (product DataProduct) YamlURI() string {
 	return fmt.Sprintf("tenants/%s/dataproducts/%s/%s-dataproduct.yaml", product.Namespace, product.Name, product.Name)
 }
 
-func (product DataProduct) PrefixLiveUri(uri string) string {
+func (product DataProduct) PrefixLiveURI(uri string) string {
 	return fmt.Sprintf("modela/live/tenants/%s/%s", product.Namespace, uri)
 }
 
-func (product DataProduct) PrefixDepotUri(uri string) string {
+func (product DataProduct) PrefixDepotURI(uri string) string {
 	return fmt.Sprintf("modela/depot/tenants/%s/%s", product.Namespace, uri)
 }
 
-func (product DataProduct) PrefixArchiveUri(uri string) string {
+func (product DataProduct) PrefixArchiveURI(uri string) string {
 	return fmt.Sprintf("modela/archive/tenants/%s/%s", product.Namespace, uri)
 }
 
