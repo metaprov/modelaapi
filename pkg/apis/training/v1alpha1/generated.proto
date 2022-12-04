@@ -372,7 +372,7 @@ message EntityRef {
   // The name of the entity
   optional string name = 1;
 
-  // Feature to exclude from the link
+  // FeatureGroups to exclude from the link
   // +kubebuilder:validation:Optional
   repeated string exclude = 2;
 }
@@ -1097,47 +1097,47 @@ message ModelClassDataSpec {
 
   // The location of the predictions table. The predictions table contains all the latest predictions.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation predictions = 3;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation predictions = 2;
 
   // The schema of the observation file. The schema is used as the basis for training and serving.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema schema = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema schema = 3;
 
   // In case where the feature group data is stored as flat file. the flat file format
   // define how to read the file.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec flatFile = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec flatFile = 4;
 
   // The primary key for the observation row
   // If empty the system will set the join key as the primary key based on the schema.
   // +kubebuilder:validation:Optional
-  repeated string primaryKey = 6;
+  repeated string primaryKey = 5;
 
   // Define the column name that contains the prediction time for each row in the label data.
   // The system uses the prediction time in order to avoid data leakage.
   // I.e. the training dataset will contain only data that was known before the prediction time
   // If null, the system will set the prediction time column as the time index column in the schema.
   // +kubebuilder:validation:Optional
-  optional string predictionTimeColumn = 7;
+  optional string predictionTimeColumn = 6;
 
   // Name of the target column
   // If null, the system will assign this column based on the schema.
   // +kubebuilder:validation:Optional
-  optional string target = 8;
+  optional string target = 7;
 
   // Tests to run on the training data before training. This assurs data quality is being met.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 8;
 
   // The name of the online feature store that serve predictions for models from this model class
   // The offline feature stores are stored in the tenant.
   // +kubebuilder:validation:Optional
-  optional string onlineFeatureStoreName = 10;
+  optional string onlineFeatureStoreName = 9;
 
   // The name of the offline feature store, the offline feature store contain the observations and the feature groups
   // The offline feature stores are stored in the tenant.
   // +kubebuilder:validation:Optional
-  optional string offlineFeatureStoreName = 11;
+  optional string offlineFeatureStoreName = 10;
 }
 
 // ModelClassList contains a list of Studies
@@ -1153,9 +1153,7 @@ message ModelClassList {
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
-// +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress",priority=1
-// +kubebuilder:printcolumn:name="MC",type="string",JSONPath=".status.modelClassName"
-// +kubebuilder:printcolumn:name="StartedAt",type="date",JSONPath=".status.startTime",priority=1
+// +kubebuilder:printcolumn:name="ModelClass",type="string",JSONPath=".status.modelClassName"
 // +kubebuilder:printcolumn:name="CompletedAt",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.failureMessage"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
@@ -1287,10 +1285,6 @@ message ModelClassRunStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 10;
 
-  // Pipeline progress Progress in percent, the progress takes into account the different stages of the pipeline
-  // +kubebuilder:validation:Optional
-  optional int32 progress = 11;
-
   // Last time the object was updated
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 12;
@@ -1306,6 +1300,9 @@ message ModelClassRunStatus {
 
   // for manual promotion, who approved the promotion
   optional k8s.io.api.core.v1.ObjectReference approvedBy = 16;
+
+  // for manual promotion, who approved the promotion
+  optional int32 modelsCount = 17;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
@@ -1350,7 +1347,7 @@ message ModelClassServingSpec {
 
   // BatchPrediction schedule
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule batchPredictionSchedule = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule predictionSchedule = 9;
 
   // The serving resources for batch or online prediction
   // +kubebuilder:validation:Optional
@@ -1439,88 +1436,92 @@ message ModelClassSpec {
 }
 
 message ModelClassStatus {
-  // Total models created for the ModelClass
-  // +kubebuilder:validation:Optional
-  optional int32 modelsCount = 2;
-
   // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 3;
+  optional int64 observedGeneration = 1;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
 
   // BestFE specifies the best feature engineering pipeline produced by the ModelClass
   // +kubebuilder:validation:Optional
-  optional FeatureEngineeringSpec bestFE = 5;
+  optional FeatureEngineeringSpec bestFE = 3;
 
   // Training schedule status
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus trainingScheduleStatus = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus trainingScheduleStatus = 4;
 
   // Batch Prediction schedule
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus predictionSceduleStatus = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus predictionSceduleStatus = 5;
 
   // Batch Prediction schedule
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus monitoringSceduleStatus = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus monitoringSceduleStatus = 6;
 
   // Batch Prediction schedule
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus reportSceduleStatus = 10;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus reportSceduleStatus = 7;
 
   // The highest score out of all ModelsCount created by the associated Study resource
   // +kubebuilder:validation:Optional
-  optional double bestModelScore = 15;
+  optional double bestModelScore = 8;
 
   // List of the last 5 retired models
-  repeated string retired = 17;
+  repeated string retired = 9;
 
   // The name of the current predictor for this model class.
-  optional string predictorName = 18;
+  optional string predictorName = 10;
 
   // The name of the current dataaoo for the model class
-  optional string dataAppName = 19;
+  optional string dataAppName = 11;
 
   // The name of triggered by.
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 20;
+  optional string triggeredBy = 12;
 
   // UpdateUpdateStrategy in case of terminal failure
   // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string failureReason = 21;
+  optional string failureReason = 13;
 
   // UpdateUpdateStrategy in case of terminal failure message
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 22;
+  optional string failureMessage = 14;
 
   // The last time a new model was trained as part of this model class
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTraining = 23;
-
-  // The last time a new model was promoted
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPromotion = 24;
-
-  // The last time a batch prediction was made
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionAt = 25;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRunAt = 15;
 
   // The name of the last prediction for this class
   // +kubebuilder:validation:Optional
-  optional string lastPredictionName = 26;
+  optional string lastRunName = 16;
+
+  // The last time a batch prediction was made
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionAt = 17;
+
+  // The name of the last prediction for this class
+  // +kubebuilder:validation:Optional
+  optional string lastPredictionName = 18;
 
   // Total number of batch predictions
   // +kubebuilder:validation:Optional
-  optional int32 predictionsCount = 27;
+  optional int32 predictionsCount = 19;
+
+  // Total number of batch predictions
+  // +kubebuilder:validation:Optional
+  optional int32 runsCount = 20;
+
+  // Total models created for the ModelClass
+  // +kubebuilder:validation:Optional
+  optional int32 modelsCount = 21;
 
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelClassCondition conditions = 28;
+  repeated ModelClassCondition conditions = 22;
 }
 
 // Specification for model training.
@@ -2107,7 +2108,7 @@ message ModelStatus {
   // The collection of features and their importance, sorted by the greatest importance first
   // The collection is measured based on impuriry and uses the native measures by a tree algorithm
   // +kubebuilder:validation:Optional
-  repeated FeatureImportance importance = 32;
+  repeated FeatureImportance impurityImportance = 32;
 
   // The collection of features and their importance, sorted by the greatest importance first
   // The collection is measured using permutation importance
@@ -2558,16 +2559,11 @@ message ReportSpec {
   // The deadline for any Jobs associated with the Report to be completed in seconds
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 11;
+  optional int64 timeout = 11;
 
   // Custom contains the specification to generate a custom report (currently unimplemented)
   // +kubebuilder:validation:Optional
   optional CustomReportSpec custom = 12;
-
-  // The name of the CronReport resource that generated the Report
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string cronReportName = 13;
 
   // The reference to the Lab namespace under which the report generation Job will be executed under.
   // If unspecified, the default Lab from the parent DataProduct will be used
@@ -3103,7 +3099,7 @@ message StudySpec {
   // The time, in seconds, after which the execution of the Study will be forcefully aborted (4 hours, by default)
   // +kubebuilder:default:= 14400
   // +kubebuilder:validation:Optional
-  optional int32 timeoutInSecs = 38;
+  optional int32 timeout = 38;
 
   // Not implemented. For future use. If true,generate code when the best model
   // +kubebuilder:default:=false
@@ -3118,11 +3114,11 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional GroupSplitLocationsSpec groupLocations = 41;
 
-  // The model class for this report if the model was created by a model class
+  // The model class for this study if the model was created by a model class
   // +kubebuilder:validation:Optional
   optional string modelClassName = 42;
 
-  // If this report was created by a model class run, this is the run name
+  // If this study was created by a model class run, this is the run name
   // +kubebuilder:validation:Optional
   optional string modelClassRunName = 43;
 }
@@ -3131,7 +3127,7 @@ message StudySpec {
 message StudyStatus {
   // Total models created for the study
   // +kubebuilder:validation:Optional
-  optional int32 models = 1;
+  optional int32 modelsCount = 1;
 
   // CompletedAt represents the time at which the Study was marked as completed, failed, or aborted
   // +kubebuilder:validation:Optional
@@ -3192,15 +3188,15 @@ message StudyStatus {
 
   // The number of rows in the training dataset
   // +kubebuilder:validation:Optional
-  optional int32 trainingRows = 17;
+  optional int32 trainingRowsCount = 17;
 
   // The number of rows in the testing dataset
   // +kubebuilder:validation:Optional
-  optional int32 testingRows = 18;
+  optional int32 testingRowsCount = 18;
 
   // The number of rows in the validation dataset
   // +kubebuilder:validation:Optional
-  optional int32 validationRows = 19;
+  optional int32 validationRowsCount = 19;
 
   // The progress percentage of the Study, which is derived from the Study's current phase
   // +kubebuilder:validation:Optional

@@ -57,17 +57,6 @@ spec:
           spec:
             description: ReportSpec specifies the desired state of a Report
             properties:
-              activeDeadlineSeconds:
-                default: 600
-                description: The deadline for any Jobs associated with the Report
-                  to be completed in seconds
-                format: int64
-                type: integer
-              cronReportName:
-                default: ""
-                description: The name of the CronReport resource that generated the
-                  Report
-                type: string
               custom:
                 description: Custom contains the specification to generate a custom
                   report (currently unimplemented)
@@ -600,6 +589,12 @@ spec:
                       WorkloadClass
                     type: string
                 type: object
+              timeout:
+                default: 600
+                description: The deadline for any Jobs associated with the Report
+                  to be completed in seconds
+                format: int64
+                type: integer
               versionName:
                 default: latest
                 description: The name of the DataProductVersion which describes the

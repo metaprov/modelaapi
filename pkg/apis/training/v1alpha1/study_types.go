@@ -82,15 +82,15 @@ const (
 	// StudyFeatureEngineered states that the search for the best feature engineering pipeline is complete
 	StudyFeatureEngineered StudyConditionType = "StudyFeaturesEngineered"
 	// StudyBaselined states that baseline models for each algorithm have been trained
-	StudyBaselined StudyConditionType = "StudyBaselined"
+	StudyBaselined StudyConditionType = "Baselined"
 	// StudySearched states that the primary model search for algorithm and hyper-parameters is complete
-	StudySearched StudyConditionType = "StudySearched"
+	StudySearched StudyConditionType = "Searched"
 	// StudyEnsembleCreated states that ensemble models were trained
 	StudyEnsembleCreated StudyConditionType = "ModelsEnsembleCreated"
 	// StudyTested states that the best model has been tested against training and testing datasets
-	StudyTested StudyConditionType = "ModelTested"
+	StudyTested StudyConditionType = "Tested"
 	// StudyTested states that the best model has been tested against training and testing datasets
-	StudyTuned StudyConditionType = "ModelTuned"
+	StudyTuned StudyConditionType = "Tuned"
 
 	// StudyReported states that a Report resource has been generated for the Study
 	StudyReported  StudyConditionType = "Reported"
@@ -289,7 +289,7 @@ type StudySpec struct {
 	// The time, in seconds, after which the execution of the Study will be forcefully aborted (4 hours, by default)
 	// +kubebuilder:default:= 14400
 	// +kubebuilder:validation:Optional
-	TimeoutInSecs *int32 `json:"timeoutInSecs,omitempty" protobuf:"varint,38,opt,name=timeoutInSecs"`
+	Timeout *int32 `json:"timeout,omitempty" protobuf:"varint,38,opt,name=timeout"`
 	// Not implemented. For future use. If true,generate code when the best model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -300,10 +300,10 @@ type StudySpec struct {
 	// In case of a group by, those are the group locations
 	// +kubebuilder:validation:Optional
 	GroupLocations GroupSplitLocationsSpec `json:"groupLocations,omitempty" protobuf:"bytes,41,opt,name=groupLocations"`
-	// The model class for this report if the model was created by a model class
+	// The model class for this study if the model was created by a model class
 	// +kubebuilder:validation:Optional
 	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,42,opt,name=modelClassName"`
-	// If this report was created by a model class run, this is the run name
+	// If this study was created by a model class run, this is the run name
 	// +kubebuilder:validation:Optional
 	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,43,opt,name=modelClassRunName"`
 }
@@ -312,7 +312,7 @@ type StudySpec struct {
 type StudyStatus struct {
 	// Total models created for the study
 	// +kubebuilder:validation:Optional
-	Models int32 `json:"models,omitempty" protobuf:"varint,1,opt,name=models"`
+	ModelsCount int32 `json:"modelsCount,omitempty" protobuf:"varint,1,opt,name=modelsCount"`
 	// CompletedAt represents the time at which the Study was marked as completed, failed, or aborted
 	// +kubebuilder:validation:Optional
 	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,3,opt,name=completedAt"`
@@ -358,13 +358,13 @@ type StudyStatus struct {
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,16,opt,name=failureMessage"`
 	// The number of rows in the training dataset
 	// +kubebuilder:validation:Optional
-	TrainingRows int32 `json:"trainingRows" protobuf:"varint,17,opt,name=trainingRows"`
+	TrainingRowsCount int32 `json:"trainingRowsCount" protobuf:"varint,17,opt,name=trainingRowsCount"`
 	// The number of rows in the testing dataset
 	// +kubebuilder:validation:Optional
-	TestingRows int32 `json:"testingRows" protobuf:"varint,18,opt,name=testingRows"`
+	TestingRowsCount int32 `json:"testingRowsCount" protobuf:"varint,18,opt,name=testingRowsCount"`
 	// The number of rows in the validation dataset
 	// +kubebuilder:validation:Optional
-	ValidationRows int32 `json:"validationRows" protobuf:"varint,19,opt,name=validationRows"`
+	ValidationRowsCount int32 `json:"validationRowsCount" protobuf:"varint,19,opt,name=validationRowsCount"`
 	// The progress percentage of the Study, which is derived from the Study's current phase
 	// +kubebuilder:validation:Optional
 	Progress int32 `json:"progress" protobuf:"varint,20,opt,name=progress"`

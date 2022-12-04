@@ -25,17 +25,9 @@ spec:
     - jsonPath: .status.phase
       name: Status
       type: string
-    - jsonPath: .status.progress
-      name: Progress
-      priority: 1
-      type: number
     - jsonPath: .status.modelClassName
-      name: MC
+      name: ModelClass
       type: string
-    - jsonPath: .status.startTime
-      name: StartedAt
-      priority: 1
-      type: date
     - jsonPath: .status.completionTime
       name: CompletedAt
       priority: 1
@@ -243,6 +235,10 @@ spec:
               modelName:
                 description: The name of the best model
                 type: string
+              modelsCount:
+                description: for manual promotion, who approved the promotion
+                format: int32
+                type: integer
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on
@@ -252,11 +248,6 @@ spec:
                 default: Pending
                 description: The phase of the pipeline run
                 type: string
-              progress:
-                description: Pipeline progress Progress in percent, the progress takes
-                  into account the different stages of the pipeline
-                format: int32
-                type: integer
               promotedAt:
                 description: Last promotion was done
                 format: date-time

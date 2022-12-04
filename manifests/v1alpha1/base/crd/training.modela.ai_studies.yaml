@@ -1159,11 +1159,11 @@ spec:
                     type: string
                 type: object
               modelClassName:
-                description: The model class for this report if the model was created
+                description: The model class for this study if the model was created
                   by a model class
                 type: string
               modelClassRunName:
-                description: If this report was created by a model class run, this
+                description: If this study was created by a model class run, this
                   is the run name
                 type: string
               modelExplained:
@@ -1813,7 +1813,7 @@ spec:
                 description: Indicates if the Study is a template, in which case it
                   will not be executed
                 type: boolean
-              timeoutInSecs:
+              timeout:
                 default: 14400
                 description: The time, in seconds, after which the execution of the
                   Study will be forcefully aborted (4 hours, by default)
@@ -3274,7 +3274,7 @@ spec:
                       type: object
                     type: array
                 type: object
-              models:
+              modelsCount:
                 description: Total models created for the study
                 format: int32
                 type: integer
@@ -3495,7 +3495,7 @@ spec:
                       the DataLocation
                     type: string
                 type: object
-              testingRows:
+              testingRowsCount:
                 description: The number of rows in the testing dataset
                 format: int32
                 type: integer
@@ -3626,7 +3626,7 @@ spec:
                     default: ""
                     type: string
                 type: object
-              trainingRows:
+              trainingRowsCount:
                 description: The number of rows in the training dataset
                 format: int32
                 type: integer
@@ -3753,7 +3753,7 @@ spec:
                       the DataLocation
                     type: string
                 type: object
-              validationRows:
+              validationRowsCount:
                 description: The number of rows in the validation dataset
                 format: int32
                 type: integer

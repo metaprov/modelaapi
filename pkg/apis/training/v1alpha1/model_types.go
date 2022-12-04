@@ -496,7 +496,7 @@ type ModelStatus struct {
 	// The collection of features and their importance, sorted by the greatest importance first
 	// The collection is measured based on impuriry and uses the native measures by a tree algorithm
 	// +kubebuilder:validation:Optional
-	ImpurityImportance []FeatureImportance `json:"impurityImportance,,omitempty" protobuf:"bytes,32,rep,name=importance"`
+	ImpurityImportance []FeatureImportance `json:"impurityImportance,,omitempty" protobuf:"bytes,32,rep,name=impurityImportance"`
 	// The collection of features and their importance, sorted by the greatest importance first
 	// The collection is measured using permutation importance
 	// +kubebuilder:validation:Optional

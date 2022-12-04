@@ -2978,8 +2978,8 @@ func (in *ReportSpec) DeepCopyInto(out *ReportSpec) {
 		**out = **in
 	}
 	in.Resources.DeepCopyInto(&out.Resources)
-	if in.ActiveDeadlineSeconds != nil {
-		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
+	if in.Timeout != nil {
+		in, out := &in.Timeout, &out.Timeout
 		*out = new(int64)
 		**out = **in
 	}
@@ -3555,8 +3555,8 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.TimeoutInSecs != nil {
-		in, out := &in.TimeoutInSecs, &out.TimeoutInSecs
+	if in.Timeout != nil {
+		in, out := &in.Timeout, &out.Timeout
 		*out = new(int32)
 		**out = **in
 	}

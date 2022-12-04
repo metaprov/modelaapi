@@ -1262,15 +1262,16 @@ export class DataPipelineStatus extends jspb.Message {
   hasUpdatedat(): boolean;
   clearUpdatedat(): DataPipelineStatus;
 
-  getLastrun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus | undefined;
-  setLastrun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus): DataPipelineStatus;
-  hasLastrun(): boolean;
-  clearLastrun(): DataPipelineStatus;
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): DataPipelineStatus;
+  hasSchedule(): boolean;
+  clearSchedule(): DataPipelineStatus;
 
-  getNextrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setNextrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataPipelineStatus;
-  hasNextrun(): boolean;
-  clearNextrun(): DataPipelineStatus;
+  getLastrunname(): string;
+  setLastrunname(value: string): DataPipelineStatus;
+
+  getRunscount(): number;
+  setRunscount(value: number): DataPipelineStatus;
 
   getConditionsList(): Array<DataPipelineCondition>;
   setConditionsList(value: Array<DataPipelineCondition>): DataPipelineStatus;
@@ -1289,8 +1290,9 @@ export namespace DataPipelineStatus {
   export type AsObject = {
     observedgeneration: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
-    nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
+    lastrunname: string,
+    runscount: number,
     conditionsList: Array<DataPipelineCondition.AsObject>,
   }
 }
@@ -2922,10 +2924,10 @@ export class FeatureGroupSpec extends jspb.Message {
   hasSchema(): boolean;
   clearSchema(): FeatureGroupSpec;
 
-  getUnittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): FeatureGroupSpec;
-  hasUnittests(): boolean;
-  clearUnittests(): FeatureGroupSpec;
+  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): FeatureGroupSpec;
+  hasTests(): boolean;
+  clearTests(): FeatureGroupSpec;
 
   getLocation(): DataLocation | undefined;
   setLocation(value?: DataLocation): FeatureGroupSpec;
@@ -2971,7 +2973,7 @@ export namespace FeatureGroupSpec {
     ingestschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     flatfile?: FlatFileFormatSpec.AsObject,
     schema?: Schema.AsObject,
-    unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     location?: DataLocation.AsObject,
     timecolumn: string,
     timecolumnformat: string,
@@ -4196,15 +4198,10 @@ export namespace RecipeRunSpec {
 }
 
 export class RecipeRunStatus extends jspb.Message {
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RecipeRunStatus;
-  hasStarttime(): boolean;
-  clearStarttime(): RecipeRunStatus;
-
-  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RecipeRunStatus;
-  hasEndtime(): boolean;
-  clearEndtime(): RecipeRunStatus;
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RecipeRunStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): RecipeRunStatus;
 
   getPhase(): string;
   setPhase(value: string): RecipeRunStatus;
@@ -4226,10 +4223,10 @@ export class RecipeRunStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): RecipeRunStatus;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RecipeRunStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): RecipeRunStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RecipeRunStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): RecipeRunStatus;
 
   getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
   setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): RecipeRunStatus;
@@ -4251,15 +4248,14 @@ export class RecipeRunStatus extends jspb.Message {
 
 export namespace RecipeRunStatus {
   export type AsObject = {
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
     observedgeneration: number,
     failurereason: string,
     failuremessage: string,
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<RecipeCondition.AsObject>,
   }
@@ -4300,8 +4296,8 @@ export class RecipeSpec extends jspb.Message {
   hasResources(): boolean;
   clearResources(): RecipeSpec;
 
-  getActivedeadlineseconds(): number;
-  setActivedeadlineseconds(value: number): RecipeSpec;
+  getTimeout(): number;
+  setTimeout(value: number): RecipeSpec;
 
   getTtl(): number;
   setTtl(value: number): RecipeSpec;
@@ -4329,7 +4325,7 @@ export namespace RecipeSpec {
     output?: RecipeOutputSpec.AsObject,
     sample?: SampleSpec.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    activedeadlineseconds: number,
+    timeout: number,
     ttl: number,
     unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
@@ -4343,11 +4339,6 @@ export class RecipeStatus extends jspb.Message {
   setLastrun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus): RecipeStatus;
   hasLastrun(): boolean;
   clearLastrun(): RecipeStatus;
-
-  getNextrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setNextrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RecipeStatus;
-  hasNextrun(): boolean;
-  clearNextrun(): RecipeStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RecipeStatus;
@@ -4371,7 +4362,6 @@ export namespace RecipeStatus {
   export type AsObject = {
     observedgeneration: number,
     lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
-    nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<RecipeCondition.AsObject>,
   }

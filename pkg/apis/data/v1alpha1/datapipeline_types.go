@@ -120,14 +120,17 @@ type DataPipelineStatus struct {
 	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,2,opt,name=updatedAt"`
 	// Last run is the last time a data pipeline run was created
 	//+kubebuilder:validation:Optional
-	LastRun catalog.LastRunStatus `json:"lastRun,omitempty" protobuf:"bytes,3,opt,name=lastRun"`
-	// The time of the next schedule run
+	Schedule catalog.RunScheduleStatus `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
+	// The name of the last data pipeline count
 	//+kubebuilder:validation:Optional
-	NextRun *metav1.Time `json:"nextRun,omitempty" protobuf:"bytes,4,opt,name=nextRun"`
+	LastRunName string `json:"lastRunName,omitempty" protobuf:"bytes,4,opt,name=lastRunName"`
+	// The number of datapipline runs
+	//+kubebuilder:validation:Optional
+	RunsCount int32 `json:"runsCount,omitempty" protobuf:"bytes,5,opt,name=runsCount"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DataPipelineCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
+	Conditions []DataPipelineCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
 }
 
 // DataInputSpec specifies the format and location of an input dataset

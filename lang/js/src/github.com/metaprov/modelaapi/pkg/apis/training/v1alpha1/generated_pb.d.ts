@@ -1888,9 +1888,6 @@ export class ModelClassRunStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): ModelClassRunStatus;
 
-  getProgress(): number;
-  setProgress(value: number): ModelClassRunStatus;
-
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassRunStatus;
   hasUpdatedat(): boolean;
@@ -1913,6 +1910,9 @@ export class ModelClassRunStatus extends jspb.Message {
   setApprovedby(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelClassRunStatus;
   hasApprovedby(): boolean;
   clearApprovedby(): ModelClassRunStatus;
+
+  getModelscount(): number;
+  setModelscount(value: number): ModelClassRunStatus;
 
   getConditionsList(): Array<ModelClassRunCondition>;
   setConditionsList(value: Array<ModelClassRunCondition>): ModelClassRunStatus;
@@ -1938,12 +1938,12 @@ export namespace ModelClassRunStatus {
     evalmetrics: string,
     failurereason: string,
     failuremessage: string,
-    progress: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     promotedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     auto: boolean,
     approvedby?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    modelscount: number,
     conditionsList: Array<ModelClassRunCondition.AsObject>,
   }
 }
@@ -1981,10 +1981,10 @@ export class ModelClassServingSpec extends jspb.Message {
   hasMonitoringschedule(): boolean;
   clearMonitoringschedule(): ModelClassServingSpec;
 
-  getBatchpredictionschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setBatchpredictionschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassServingSpec;
-  hasBatchpredictionschedule(): boolean;
-  clearBatchpredictionschedule(): ModelClassServingSpec;
+  getPredictionschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setPredictionschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassServingSpec;
+  hasPredictionschedule(): boolean;
+  clearPredictionschedule(): ModelClassServingSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ModelClassServingSpec;
@@ -2012,7 +2012,7 @@ export namespace ModelClassServingSpec {
     access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
     replicas: number,
     monitoringschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    batchpredictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    predictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     shadowfirst: boolean,
   }
@@ -2105,9 +2105,6 @@ export namespace ModelClassSpec {
 }
 
 export class ModelClassStatus extends jspb.Message {
-  getModelscount(): number;
-  setModelscount(value: number): ModelClassStatus;
-
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelClassStatus;
 
@@ -2164,15 +2161,13 @@ export class ModelClassStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): ModelClassStatus;
 
-  getLasttraining(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttraining(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
-  hasLasttraining(): boolean;
-  clearLasttraining(): ModelClassStatus;
+  getLastrunat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrunat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
+  hasLastrunat(): boolean;
+  clearLastrunat(): ModelClassStatus;
 
-  getLastpromotion(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastpromotion(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
-  hasLastpromotion(): boolean;
-  clearLastpromotion(): ModelClassStatus;
+  getLastrunname(): string;
+  setLastrunname(value: string): ModelClassStatus;
 
   getLastpredictionat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastpredictionat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
@@ -2184,6 +2179,12 @@ export class ModelClassStatus extends jspb.Message {
 
   getPredictionscount(): number;
   setPredictionscount(value: number): ModelClassStatus;
+
+  getRunscount(): number;
+  setRunscount(value: number): ModelClassStatus;
+
+  getModelscount(): number;
+  setModelscount(value: number): ModelClassStatus;
 
   getConditionsList(): Array<ModelClassCondition>;
   setConditionsList(value: Array<ModelClassCondition>): ModelClassStatus;
@@ -2200,7 +2201,6 @@ export class ModelClassStatus extends jspb.Message {
 
 export namespace ModelClassStatus {
   export type AsObject = {
-    modelscount: number,
     observedgeneration: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
@@ -2215,11 +2215,13 @@ export namespace ModelClassStatus {
     triggeredby: string,
     failurereason: string,
     failuremessage: string,
-    lasttraining?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lastpromotion?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastrunname: string,
     lastpredictionat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastpredictionname: string,
     predictionscount: number,
+    runscount: number,
+    modelscount: number,
     conditionsList: Array<ModelClassCondition.AsObject>,
   }
 }
@@ -2899,10 +2901,10 @@ export class ModelStatus extends jspb.Message {
   getImagename(): string;
   setImagename(value: string): ModelStatus;
 
-  getImportanceList(): Array<FeatureImportance>;
-  setImportanceList(value: Array<FeatureImportance>): ModelStatus;
-  clearImportanceList(): ModelStatus;
-  addImportance(value?: FeatureImportance, index?: number): FeatureImportance;
+  getImpurityimportanceList(): Array<FeatureImportance>;
+  setImpurityimportanceList(value: Array<FeatureImportance>): ModelStatus;
+  clearImpurityimportanceList(): ModelStatus;
+  addImpurityimportance(value?: FeatureImportance, index?: number): FeatureImportance;
 
   getPermutationimportanceList(): Array<FeatureImportance>;
   setPermutationimportanceList(value: Array<FeatureImportance>): ModelStatus;
@@ -3125,7 +3127,7 @@ export namespace ModelStatus {
     taruri: string,
     appuri: string,
     imagename: string,
-    importanceList: Array<FeatureImportance.AsObject>,
+    impurityimportanceList: Array<FeatureImportance.AsObject>,
     permutationimportanceList: Array<FeatureImportance.AsObject>,
     forecasturi: string,
     runtime?: RuntimeStatus.AsObject,
@@ -3613,16 +3615,13 @@ export class ReportSpec extends jspb.Message {
   hasResources(): boolean;
   clearResources(): ReportSpec;
 
-  getActivedeadlineseconds(): number;
-  setActivedeadlineseconds(value: number): ReportSpec;
+  getTimeout(): number;
+  setTimeout(value: number): ReportSpec;
 
   getCustom(): CustomReportSpec | undefined;
   setCustom(value?: CustomReportSpec): ReportSpec;
   hasCustom(): boolean;
   clearCustom(): ReportSpec;
-
-  getCronreportname(): string;
-  setCronreportname(value: string): ReportSpec;
 
   getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ReportSpec;
@@ -3658,9 +3657,8 @@ export namespace ReportSpec {
     notifiername: string,
     owner: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    activedeadlineseconds: number,
+    timeout: number,
     custom?: CustomReportSpec.AsObject,
-    cronreportname: string,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     keyList: Array<string>,
     modelclassname: string,
@@ -4324,8 +4322,8 @@ export class StudySpec extends jspb.Message {
   getModelversion(): string;
   setModelversion(value: string): StudySpec;
 
-  getTimeoutinsecs(): number;
-  setTimeoutinsecs(value: number): StudySpec;
+  getTimeout(): number;
+  setTimeout(value: number): StudySpec;
 
   getCodegenerated(): boolean;
   setCodegenerated(value: boolean): StudySpec;
@@ -4391,7 +4389,7 @@ export namespace StudySpec {
     gc?: GarbageCollectionSpec.AsObject,
     ttl: number,
     modelversion: string,
-    timeoutinsecs: number,
+    timeout: number,
     codegenerated: boolean,
     unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     grouplocations?: GroupSplitLocationsSpec.AsObject,
@@ -4401,8 +4399,8 @@ export namespace StudySpec {
 }
 
 export class StudyStatus extends jspb.Message {
-  getModels(): number;
-  setModels(value: number): StudyStatus;
+  getModelscount(): number;
+  setModelscount(value: number): StudyStatus;
 
   getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
@@ -4454,14 +4452,14 @@ export class StudyStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): StudyStatus;
 
-  getTrainingrows(): number;
-  setTrainingrows(value: number): StudyStatus;
+  getTrainingrowscount(): number;
+  setTrainingrowscount(value: number): StudyStatus;
 
-  getTestingrows(): number;
-  setTestingrows(value: number): StudyStatus;
+  getTestingrowscount(): number;
+  setTestingrowscount(value: number): StudyStatus;
 
-  getValidationrows(): number;
-  setValidationrows(value: number): StudyStatus;
+  getValidationrowscount(): number;
+  setValidationrowscount(value: number): StudyStatus;
 
   getProgress(): number;
   setProgress(value: number): StudyStatus;
@@ -4549,7 +4547,7 @@ export class StudyStatus extends jspb.Message {
 
 export namespace StudyStatus {
   export type AsObject = {
-    models: number,
+    modelscount: number,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestmodel: string,
     bestmodelscore: number,
@@ -4564,9 +4562,9 @@ export namespace StudyStatus {
     lastmodelid: number,
     failurereason: string,
     failuremessage: string,
-    trainingrows: number,
-    testingrows: number,
-    validationrows: number,
+    trainingrowscount: number,
+    testingrowscount: number,
+    validationrowscount: number,
     progress: number,
     trainingdatahash?: DataHashes.AsObject,
     triggeredby: string,

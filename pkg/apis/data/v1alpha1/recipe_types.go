@@ -86,10 +86,10 @@ type RecipeSpec struct {
 	// Resource define the resource requirements to run the recipe
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,8,opt,name=resources"`
-	// ActiveDeadlineSeconds is the deadline setup on jobs for this recipe.
+	// Timeout is the deadline setup on jobs for this recipe.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,10,opt,name=activeDeadlineSeconds"`
+	Timeout *int64 `json:"timeout,omitempty" protobuf:"varint,10,opt,name=timeout"`
 	// TTL.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
@@ -104,18 +104,12 @@ type RecipeStatus struct {
 	//ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
-
 	// Last run is the last time a data pipeline run was created
 	//+kubebuilder:validation:Optional
 	LastRun catalog.LastRunStatus `json:"lastRun,omitempty" protobuf:"bytes,2,opt,name=lastRun"`
-	// The time of the next schedule run
-	//+kubebuilder:validation:Optional
-	NextRun *metav1.Time `json:"nextRun,omitempty" protobuf:"bytes,3,opt,name=nextRun"`
-
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,4,opt,name=updatedAt"`
-
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

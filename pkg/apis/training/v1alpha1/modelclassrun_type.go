@@ -57,9 +57,7 @@ type ModelClassRunCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
-// +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress",priority=1
-// +kubebuilder:printcolumn:name="MC",type="string",JSONPath=".status.modelClassName"
-// +kubebuilder:printcolumn:name="StartedAt",type="date",JSONPath=".status.startTime",priority=1
+// +kubebuilder:printcolumn:name="ModelClass",type="string",JSONPath=".status.modelClassName"
 // +kubebuilder:printcolumn:name="CompletedAt",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.failureMessage"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
@@ -156,10 +154,6 @@ type ModelClassRunStatus struct {
 	// UpdateUpdateStrategy in case of terminal failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,10,opt,name=failureMessage"`
-	// Pipeline progress Progress in percent, the progress takes into account the different stages of the pipeline
-	// +kubebuilder:validation:Optional
-	Progress *int32 `json:"progress" protobuf:"varint,11,opt,name=progress"`
-
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,12,opt,name=updatedAt"`
@@ -171,6 +165,8 @@ type ModelClassRunStatus struct {
 	Auto *bool `json:"auto,omitempty" protobuf:"bytes,15,opt,name=auto"`
 	// for manual promotion, who approved the promotion
 	ApprovedBy v1.ObjectReference `json:"approvedBy,omitempty" protobuf:"bytes,16,opt,name=approvedBy"`
+	// for manual promotion, who approved the promotion
+	ModelsCount int32 `json:"modelsCount,omitempty" protobuf:"varint,17,opt,name=modelsCount"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

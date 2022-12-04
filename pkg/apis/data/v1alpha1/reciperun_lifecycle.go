@@ -117,8 +117,8 @@ func (reciperun *RecipeRun) MarkCompleted() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if reciperun.Status.EndTime == nil {
-		reciperun.Status.EndTime = &now
+	if reciperun.Status.CompletedAt == nil {
+		reciperun.Status.CompletedAt = &now
 	}
 }
 
@@ -138,8 +138,8 @@ func (reciperun *RecipeRun) MarkFailed(error string) {
 		Message: error,
 	})
 	now := metav1.Now()
-	if reciperun.Status.EndTime == nil {
-		reciperun.Status.EndTime = &now
+	if reciperun.Status.CompletedAt == nil {
+		reciperun.Status.CompletedAt = &now
 	}
 	reciperun.Status.FailureMessage = util.StrPtr(error)
 }
@@ -198,8 +198,8 @@ func (reciperun RecipeRun) CompletionAlert(tenantRef *v1.ObjectReference, notifi
 			},
 		},
 	}
-	if reciperun.Status.EndTime != nil {
-		result.Spec.Fields["Completion Time"] = reciperun.Status.EndTime.Format("01/2/2006 15:04:05")
+	if reciperun.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = reciperun.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -227,8 +227,8 @@ func (reciperun RecipeRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierNam
 			},
 		},
 	}
-	if reciperun.Status.EndTime != nil {
-		result.Spec.Fields["Completion Time"] = reciperun.Status.EndTime.Format("01/2/2006 15:04:05")
+	if reciperun.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = reciperun.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -236,8 +236,8 @@ func (reciperun RecipeRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierNam
 // Return the state of the run as RunStatus
 func (reciperun RecipeRun) RunStatus() *catalog.LastRunStatus {
 	result := &catalog.LastRunStatus{
-		CompletedAt:    reciperun.Status.EndTime,
-		Duration:       int32(reciperun.Status.EndTime.Unix() - reciperun.Status.StartTime.Unix()),
+		CompletedAt:    reciperun.Status.CompletedAt,
+		Duration:       int32(reciperun.Status.CompletedAt.Unix() - reciperun.Status.StartTime.Unix()),
 		FailureReason:  reciperun.Status.FailureReason,
 		FailureMessage: reciperun.Status.FailureMessage,
 	}

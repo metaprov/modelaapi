@@ -2355,7 +2355,7 @@ func (in *FeatureGroupSpec) DeepCopyInto(out *FeatureGroupSpec) {
 		(*in).DeepCopyInto(*out)
 	}
 	in.Schema.DeepCopyInto(&out.Schema)
-	in.UnitTests.DeepCopyInto(&out.UnitTests)
+	in.Tests.DeepCopyInto(&out.Tests)
 	in.Location.DeepCopyInto(&out.Location)
 	if in.TimeColumn != nil {
 		in, out := &in.TimeColumn, &out.TimeColumn
@@ -3455,8 +3455,8 @@ func (in *RecipeRunStatus) DeepCopyInto(out *RecipeRunStatus) {
 		in, out := &in.StartTime, &out.StartTime
 		*out = (*in).DeepCopy()
 	}
-	if in.EndTime != nil {
-		in, out := &in.EndTime, &out.EndTime
+	if in.CompletedAt != nil {
+		in, out := &in.CompletedAt, &out.CompletedAt
 		*out = (*in).DeepCopy()
 	}
 	if in.FailureReason != nil {
@@ -3470,8 +3470,8 @@ func (in *RecipeRunStatus) DeepCopyInto(out *RecipeRunStatus) {
 		**out = **in
 	}
 	in.Logs.DeepCopyInto(&out.Logs)
-	if in.LastUpdated != nil {
-		in, out := &in.LastUpdated, &out.LastUpdated
+	if in.UpdatedAt != nil {
+		in, out := &in.UpdatedAt, &out.UpdatedAt
 		*out = (*in).DeepCopy()
 	}
 	in.UnitTestsResult.DeepCopyInto(&out.UnitTestsResult)
@@ -3523,8 +3523,8 @@ func (in *RecipeSpec) DeepCopyInto(out *RecipeSpec) {
 	in.Output.DeepCopyInto(&out.Output)
 	in.Sample.DeepCopyInto(&out.Sample)
 	in.Resources.DeepCopyInto(&out.Resources)
-	if in.ActiveDeadlineSeconds != nil {
-		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
+	if in.Timeout != nil {
+		in, out := &in.Timeout, &out.Timeout
 		*out = new(int64)
 		**out = **in
 	}

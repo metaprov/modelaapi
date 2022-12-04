@@ -1120,7 +1120,7 @@ spec:
                 items:
                   properties:
                     exclude:
-                      description: Feature to exclude from the link
+                      description: FeatureGroups to exclude from the link
                       items:
                         type: string
                       type: array
@@ -1299,48 +1299,6 @@ spec:
                           through REST. The port one digit above the number specified
                           by the Port field will be exposed to accept HTTP/1.1 traffic
                         type: boolean
-                    type: object
-                  batchPredictionSchedule:
-                    description: BatchPrediction schedule
-                    properties:
-                      MaxRetryCount:
-                        format: int32
-                        type: integer
-                      cron:
-                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
-                          for more information
-                        type: string
-                      enabled:
-                        default: false
-                        description: Indicates if the schedule is enabled and the
-                          Jobs associated it will be created at the specified time
-                        type: boolean
-                      nextRunAt:
-                        description: The time of the day when the schedule will be
-                          executed
-                        format: date-time
-                        type: string
-                      retryDelaySec:
-                        format: int32
-                        type: integer
-                      timeoutSec:
-                        format: int32
-                        type: integer
-                      timezone:
-                        type: string
-                      type:
-                        description: The type of schedule, which can be a frequency
-                          interval or a cron expression
-                        enum:
-                        - now
-                        - once
-                        - hourly
-                        - daily
-                        - weekly
-                        - monthly
-                        - yearly
-                        - cron
-                        type: string
                     type: object
                   dashboard:
                     description: Setup a dashboard for the predictor.
@@ -1796,6 +1754,48 @@ spec:
                           type: object
                       type: object
                     type: array
+                  predictionSchedule:
+                    description: BatchPrediction schedule
+                    properties:
+                      MaxRetryCount:
+                        format: int32
+                        type: integer
+                      cron:
+                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                          for more information
+                        type: string
+                      enabled:
+                        default: false
+                        description: Indicates if the schedule is enabled and the
+                          Jobs associated it will be created at the specified time
+                        type: boolean
+                      nextRunAt:
+                        description: The time of the day when the schedule will be
+                          executed
+                        format: date-time
+                        type: string
+                      retryDelaySec:
+                        format: int32
+                        type: integer
+                      timeoutSec:
+                        format: int32
+                        type: integer
+                      timezone:
+                        type: string
+                      type:
+                        description: The type of schedule, which can be a frequency
+                          interval or a cron expression
+                        enum:
+                        - now
+                        - once
+                        - hourly
+                        - daily
+                        - weekly
+                        - monthly
+                        - yearly
+                        - cron
+                        type: string
+                    type: object
                   predictorTemplateName:
                     description: The name of the predictor template to use when
                     type: string
@@ -3049,14 +3049,13 @@ spec:
               lastPredictionName:
                 description: The name of the last prediction for this class
                 type: string
-              lastPromotion:
-                description: The last time a new model was promoted
-                format: date-time
-                type: string
-              lastTraining:
+              lastRunAt:
                 description: The last time a new model was trained as part of this
                   model class
                 format: date-time
+                type: string
+              lastRunName:
+                description: The name of the last prediction for this class
                 type: string
               modelsCount:
                 description: Total models created for the ModelClass
@@ -3226,6 +3225,10 @@ spec:
                 items:
                   type: string
                 type: array
+              runsCount:
+                description: Total number of batch predictions
+                format: int32
+                type: integer
               trainingScheduleStatus:
                 description: Training schedule status
                 properties:

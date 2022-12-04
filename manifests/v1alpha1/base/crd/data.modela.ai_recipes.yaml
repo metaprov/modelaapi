@@ -60,12 +60,6 @@ spec:
           spec:
             description: RecipeSpec defines the desired state of a dataset
             properties:
-              activeDeadlineSeconds:
-                default: 600
-                description: ActiveDeadlineSeconds is the deadline setup on jobs for
-                  this recipe.
-                format: int64
-                type: integer
               description:
                 default: ""
                 description: Description is the user provided description
@@ -526,6 +520,11 @@ spec:
                       type: array
                   type: object
                 type: array
+              timeout:
+                default: 600
+                description: Timeout is the deadline setup on jobs for this recipe.
+                format: int64
+                type: integer
               ttl:
                 default: 0
                 description: TTL.
@@ -797,10 +796,6 @@ spec:
                     description: The status of the last run
                     type: string
                 type: object
-              nextRun:
-                description: The time of the next schedule run
-                format: date-time
-                type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on

@@ -1004,16 +1004,20 @@ message DataPipelineStatus {
 
   // Last run is the last time a data pipeline run was created
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 3;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus schedule = 3;
 
-  // The time of the next schedule run
+  // The name of the last data pipeline count
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 4;
+  optional string lastRunName = 4;
+
+  // The number of datapipline runs
+  // +kubebuilder:validation:Optional
+  optional int32 runsCount = 5;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataPipelineCondition conditions = 5;
+  repeated DataPipelineCondition conditions = 6;
 }
 
 // +kubebuilder:object:root=true
@@ -1964,7 +1968,7 @@ message EntitySpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
-  // The product version of the entity
+  // The entity version
   // +kubebuilder:default:=""
   optional string version = 2;
 
@@ -2150,7 +2154,7 @@ message FeatureGroupSpec {
 
   // Unit test to run on data from this feature group upon ingrest.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 11;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 11;
 
   // Specify the data for this feature group
   // This can be a table,  a view or a file on S3.
@@ -2902,42 +2906,39 @@ message RecipeRunSpec {
 
 // RecipeStatus defines the observed state of Recipe
 message RecipeRunStatus {
-  // Represents the start time
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
-
   // Represents the end time
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 1;
 
   // The phase of the dataset processing
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 3;
+  optional string phase = 2;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 4;
+  optional int64 observedGeneration = 3;
 
   // UpdateUpdateStrategy in case of terminal failure
   // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string failureReason = 5;
+  optional string failureReason = 4;
 
   // UpdateUpdateStrategy in case of terminal failure message
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 6;
+  optional string failureMessage = 5;
 
   // What triggered the run
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 7;
+  optional string triggeredBy = 6;
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 9;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 9;
 
   // Test suite for this recipe
   // +kubebuilder:validation:Optional
@@ -2985,10 +2986,10 @@ message RecipeSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 8;
 
-  // ActiveDeadlineSeconds is the deadline setup on jobs for this recipe.
+  // Timeout is the deadline setup on jobs for this recipe.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 10;
+  optional int64 timeout = 10;
 
   // TTL.
   // +kubebuilder:default:=0
@@ -3009,10 +3010,6 @@ message RecipeStatus {
   // Last run is the last time a data pipeline run was created
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus lastRun = 2;
-
-  // The time of the next schedule run
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRun = 3;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional

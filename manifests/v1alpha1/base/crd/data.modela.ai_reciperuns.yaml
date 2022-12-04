@@ -354,6 +354,10 @@ spec:
           status:
             description: RecipeStatus defines the observed state of Recipe
             properties:
+              completedAt:
+                description: Represents the end time
+                format: date-time
+                type: string
               conditions:
                 items:
                   description: RecipeCondition describes the state of a dataset at
@@ -382,20 +386,12 @@ spec:
                   - type
                   type: object
                 type: array
-              endTime:
-                description: Represents the end time
-                format: date-time
-                type: string
               failureMessage:
                 description: UpdateUpdateStrategy in case of terminal failure message
                 type: string
               failureReason:
                 description: UpdateUpdateStrategy in case of terminal failure Borrowed
                   from cluster api controller
-                type: string
-              lastUpdated:
-                description: Last time the object was updated
-                format: date-time
                 type: string
               logs:
                 description: Holds the location of log paths
@@ -431,10 +427,6 @@ spec:
               phase:
                 default: Pending
                 description: The phase of the dataset processing
-                type: string
-              startTime:
-                description: Represents the start time
-                format: date-time
                 type: string
               triggeredBy:
                 description: What triggered the run
@@ -640,6 +632,10 @@ spec:
                       type: object
                     type: array
                 type: object
+              updatedAt:
+                description: Last time the object was updated
+                format: date-time
+                type: string
             type: object
         required:
         - metadata

@@ -120,7 +120,7 @@ type FeatureGroupSpec struct {
 	Schema Schema `json:"schema,omitempty" protobuf:"bytes,10,opt,name=schema"`
 	// Unit test to run on data from this feature group upon ingrest.
 	// +kubebuilder:validation:Optional
-	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,11,opt,name=unitTests"`
+	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,11,opt,name=tests"`
 	// Specify the data for this feature group
 	// This can be a table,  a view or a file on S3.
 	// +kubebuilder:validation:Optional

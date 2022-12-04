@@ -131,39 +131,39 @@ type ModelClassDataSpec struct {
 	Observations data.DataLocation `json:"observations,omitempty" protobuf:"bytes,1,opt,name=observations"`
 	// The location of the predictions table. The predictions table contains all the latest predictions.
 	// +kubebuilder:validation:Optional
-	Predictions data.DataLocation `json:"predictions,omitempty" protobuf:"bytes,3,opt,name=predictions"`
+	Predictions data.DataLocation `json:"predictions,omitempty" protobuf:"bytes,2,opt,name=predictions"`
 	// The schema of the observation file. The schema is used as the basis for training and serving.
 	// +kubebuilder:validation:Optional
-	Schema data.Schema `json:"schema,omitempty" protobuf:"bytes,4,opt,name=schema"`
+	Schema data.Schema `json:"schema,omitempty" protobuf:"bytes,3,opt,name=schema"`
 	// In case where the feature group data is stored as flat file. the flat file format
 	// define how to read the file.
 	// +kubebuilder:validation:Optional
-	FlatFile *data.FlatFileFormatSpec `json:"flatFile,omitempty" protobuf:"bytes,5,opt,name=flatFile"`
+	FlatFile *data.FlatFileFormatSpec `json:"flatFile,omitempty" protobuf:"bytes,4,opt,name=flatFile"`
 	// The primary key for the observation row
 	// If empty the system will set the join key as the primary key based on the schema.
 	// +kubebuilder:validation:Optional
-	PrimaryKey []string `json:"primaryKey,omitempty" protobuf:"bytes,6,opt,name=primaryKey"`
+	PrimaryKey []string `json:"primaryKey,omitempty" protobuf:"bytes,5,opt,name=primaryKey"`
 	// Define the column name that contains the prediction time for each row in the label data.
 	// The system uses the prediction time in order to avoid data leakage.
 	// I.e. the training dataset will contain only data that was known before the prediction time
 	// If null, the system will set the prediction time column as the time index column in the schema.
 	// +kubebuilder:validation:Optional
-	PredictionTimeColumn *string `json:"predictionTimeColumn,omitempty" protobuf:"bytes,7,opt,name=predictionTimeColumn"`
+	PredictionTimeColumn *string `json:"predictionTimeColumn,omitempty" protobuf:"bytes,6,opt,name=predictionTimeColumn"`
 	// Name of the target column
 	// If null, the system will assign this column based on the schema.
 	// +kubebuilder:validation:Optional
-	Target *string `json:"target,omitempty" protobuf:"bytes,8,opt,name=target"`
+	Target *string `json:"target,omitempty" protobuf:"bytes,7,opt,name=target"`
 	// Tests to run on the training data before training. This assurs data quality is being met.
 	// +kubebuilder:validation:Optional
-	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,9,opt,name=tests"`
+	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,8,opt,name=tests"`
 	// The name of the online feature store that serve predictions for models from this model class
 	// The offline feature stores are stored in the tenant.
 	// +kubebuilder:validation:Optional
-	OnlineFeatureStoreName *string `json:"onlineFeatureStoreName,omitempty" protobuf:"bytes,10,opt,name=onlineFeatureStoreName"`
+	OnlineFeatureStoreName *string `json:"onlineFeatureStoreName,omitempty" protobuf:"bytes,9,opt,name=onlineFeatureStoreName"`
 	// The name of the offline feature store, the offline feature store contain the observations and the feature groups
 	// The offline feature stores are stored in the tenant.
 	// +kubebuilder:validation:Optional
-	OfflineFeatureStoreName *string `json:"offlineFeatureStoreName,omitempty" protobuf:"bytes,11,opt,name=offlineFeatureStoreName"`
+	OfflineFeatureStoreName *string `json:"offlineFeatureStoreName,omitempty" protobuf:"bytes,10,opt,name=offlineFeatureStoreName"`
 }
 
 // Specification for model training.
@@ -258,7 +258,7 @@ type ModelClassServingSpec struct {
 	MonitoringSchedule catalog.RunSchedule `json:"monitoringSchedule,omitempty" protobuf:"bytes,8,opt,name=monitoringSchedule"`
 	// BatchPrediction schedule
 	// +kubebuilder:validation:Optional
-	BatchPredictionSchedule catalog.RunSchedule `json:"batchPredictionSchedule,omitempty" protobuf:"bytes,9,opt,name=batchPredictionSchedule"`
+	PredictionSchedule catalog.RunSchedule `json:"predictionSchedule,omitempty" protobuf:"bytes,9,opt,name=predictionSchedule"`
 	// The serving resources for batch or online prediction
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,10,opt,name=resources"`
@@ -285,7 +285,7 @@ type PipelineStageSpec struct {
 type EntityRef struct {
 	// The name of the entity
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// Feature to exclude from the link
+	// FeatureGroups to exclude from the link
 	// +kubebuilder:validation:Optional
 	Exclude []string `json:"exclude,omitempty" protobuf:"bytes,2,opt,name=exclude"`
 }
@@ -300,66 +300,69 @@ type ModelClassList struct {
 }
 
 type ModelClassStatus struct {
-	// Total models created for the ModelClass
-	// +kubebuilder:validation:Optional
-	ModelsCount int32 `json:"modelsCount,omitempty" protobuf:"varint,2,opt,name=modelsCount"`
 	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,4,opt,name=updatedAt"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,2,opt,name=updatedAt"`
 	// BestFE specifies the best feature engineering pipeline produced by the ModelClass
 	//+kubebuilder:validation:Optional
-	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,5,opt,name=bestFE"`
+	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,3,opt,name=bestFE"`
 	// Training schedule status
 	//+kubebuilder:validation:Optional
-	TrainingScheduleStatus catalog.RunScheduleStatus `json:"trainingScheduleStatus,omitempty" protobuf:"bytes,7,opt,name=trainingScheduleStatus"`
+	TrainingScheduleStatus catalog.RunScheduleStatus `json:"trainingScheduleStatus,omitempty" protobuf:"bytes,4,opt,name=trainingScheduleStatus"`
 	// Batch Prediction schedule
 	//+kubebuilder:validation:Optional
-	PredictionScheduleStatus catalog.RunScheduleStatus `json:"predictionScheduleStatus,omitempty" protobuf:"bytes,8,opt,name=predictionSceduleStatus"`
+	PredictionScheduleStatus catalog.RunScheduleStatus `json:"predictionScheduleStatus,omitempty" protobuf:"bytes,5,opt,name=predictionSceduleStatus"`
 	// Batch Prediction schedule
 	//+kubebuilder:validation:Optional
-	MonitoringScheduleStatus catalog.RunScheduleStatus `json:"monitoringScheduleStatus,omitempty" protobuf:"bytes,9,opt,name=monitoringSceduleStatus"`
+	MonitoringScheduleStatus catalog.RunScheduleStatus `json:"monitoringScheduleStatus,omitempty" protobuf:"bytes,6,opt,name=monitoringSceduleStatus"`
 	// Batch Prediction schedule
 	//+kubebuilder:validation:Optional
-	ReportScheduleStatus catalog.RunScheduleStatus `json:"reportScheduleStatus,omitempty" protobuf:"bytes,10,opt,name=reportSceduleStatus"`
+	ReportScheduleStatus catalog.RunScheduleStatus `json:"reportScheduleStatus,omitempty" protobuf:"bytes,7,opt,name=reportSceduleStatus"`
 	// The highest score out of all ModelsCount created by the associated Study resource
 	// +kubebuilder:validation:Optional
-	BestModelScore float64 `json:"bestModelScore,omitempty" protobuf:"bytes,15,opt,name=bestModelScore"`
+	BestModelScore float64 `json:"bestModelScore,omitempty" protobuf:"bytes,8,opt,name=bestModelScore"`
 	// List of the last 5 retired models
-	RetiredModels []string `json:"retired,omitempty" protobuf:"bytes,17,opt,name=retired"`
+	RetiredModels []string `json:"retired,omitempty" protobuf:"bytes,9,opt,name=retired"`
 	// The name of the current predictor for this model class.
-	PredictorName string `json:"predictorName,omitempty" protobuf:"bytes,18,opt,name=predictorName"`
+	PredictorName string `json:"predictorName,omitempty" protobuf:"bytes,10,opt,name=predictorName"`
 	// The name of the current dataaoo for the model class
-	DataAppName string `json:"dataAppName,omitempty" protobuf:"bytes,19,opt,name=dataAppName"`
+	DataAppName string `json:"dataAppName,omitempty" protobuf:"bytes,11,opt,name=dataAppName"`
 	// The name of triggered by.
 	// +kubebuilder:validation:Optional
-	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,20,opt,name=triggeredBy"`
+	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,12,opt,name=triggeredBy"`
 	// UpdateUpdateStrategy in case of terminal failure
 	// Borrowed from cluster api controller
 	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,21,opt,name=failureReason"`
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,13,opt,name=failureReason"`
 	// UpdateUpdateStrategy in case of terminal failure message
 	//+kubebuilder:validation:Optional
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,22,opt,name=failureMessage"`
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,14,opt,name=failureMessage"`
 	// The last time a new model was trained as part of this model class
 	//+kubebuilder:validation:Optional
-	LastTraining *metav1.Time `json:"lastTraining,omitempty" protobuf:"bytes,23,opt,name=lastTraining"`
-	// The last time a new model was promoted
-	//+kubebuilder:validation:Optional
-	LastPromotion *metav1.Time `json:"lastPromotion,omitempty" protobuf:"bytes,24,opt,name=lastPromotion"`
-	// The last time a batch prediction was made
-	//+kubebuilder:validation:Optional
-	LastPredictionAt *metav1.Time `json:"lastPredictionAt,omitempty" protobuf:"bytes,25,opt,name=lastPredictionAt"`
+	LastRunAt *metav1.Time `json:"lastRunAt,omitempty" protobuf:"bytes,15,opt,name=lastRunAt"`
 	// The name of the last prediction for this class
 	//+kubebuilder:validation:Optional
-	LastPredictionName string `json:"lastPredictionName,omitempty" protobuf:"bytes,26,opt,name=lastPredictionName"`
+	LastRunName string `json:"lastRunName,omitempty" protobuf:"bytes,16,opt,name=lastRunName"`
+	// The last time a batch prediction was made
+	//+kubebuilder:validation:Optional
+	LastPredictionAt *metav1.Time `json:"lastPredictionAt,omitempty" protobuf:"bytes,17,opt,name=lastPredictionAt"`
+	// The name of the last prediction for this class
+	//+kubebuilder:validation:Optional
+	LastPredictionName string `json:"lastPredictionName,omitempty" protobuf:"bytes,18,opt,name=lastPredictionName"`
 	// Total number of batch predictions
 	//+kubebuilder:validation:Optional
-	PredictionsCount int32 `json:"predictionsCount,omitempty" protobuf:"varint,27,opt,name=predictionsCount"`
+	PredictionsCount int32 `json:"predictionsCount,omitempty" protobuf:"varint,19,opt,name=predictionsCount"`
+	// Total number of batch predictions
+	//+kubebuilder:validation:Optional
+	RunsCount int32 `json:"runsCount,omitempty" protobuf:"varint,20,opt,name=runsCount"`
+	// Total models created for the ModelClass
+	// +kubebuilder:validation:Optional
+	ModelsCount int32 `json:"modelsCount,omitempty" protobuf:"varint,21,opt,name=modelsCount"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,28,rep,name=conditions"`
+	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,22,rep,name=conditions"`
 }

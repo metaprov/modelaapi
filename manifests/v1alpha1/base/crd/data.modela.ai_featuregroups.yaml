@@ -1032,14 +1032,7 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
-              timeColumn:
-                description: the time column index. Might be null, if the fg does
-                  not have time column.
-                type: string
-              timeColumnFormat:
-                description: The time column format
-                type: string
-              unitTests:
+              tests:
                 description: Unit test to run on data from this feature group upon
                   ingrest.
                 properties:
@@ -1242,6 +1235,13 @@ spec:
                       type: object
                     type: array
                 type: object
+              timeColumn:
+                description: the time column index. Might be null, if the fg does
+                  not have time column.
+                type: string
+              timeColumnFormat:
+                description: The time column format
+                type: string
               version:
                 default: ""
                 description: Version name is the product version for the feature group.

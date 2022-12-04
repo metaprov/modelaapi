@@ -16,7 +16,7 @@ const (
 	ReportPhasePending   ReportPhase = "Pending"
 	ReportPhaseRunning   ReportPhase = "Running"
 	ReportPhaseCompleted ReportPhase = "Completed"
-	ReportPhaseFailed    ReportPhase = "FailedConditionReason"
+	ReportPhaseFailed    ReportPhase = "Failed"
 )
 
 // ReportType is the type of a Report
@@ -165,14 +165,10 @@ type ReportSpec struct {
 	// The deadline for any Jobs associated with the Report to be completed in seconds
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,11,opt,name=activeDeadlineSeconds"`
+	Timeout *int64 `json:"timeout,omitempty" protobuf:"varint,11,opt,name=timeout"`
 	// Custom contains the specification to generate a custom report (currently unimplemented)
 	// +kubebuilder:validation:Optional
 	Custom CustomReportSpec `json:"custom,omitempty" protobuf:"bytes,12,opt,name=custom"`
-	// The name of the CronReport resource that generated the Report
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	CronReportName *string `json:"cronReportName,omitempty" protobuf:"bytes,13,opt,name=cronReportName"`
 	// The reference to the Lab namespace under which the report generation Job will be executed under.
 	// If unspecified, the default Lab from the parent DataProduct will be used
 	// +kubebuilder:validation:Optional
