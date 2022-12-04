@@ -158,15 +158,15 @@ spec:
                   will set this field with a failure reason Borrowed from cluster
                   api controller
                 type: string
-              lastUpdated:
-                description: The last time the object was updated
-                format: date-time
-                type: string
               observedGeneration:
                 description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer
+              updatedAt:
+                description: The last time the object was updated
+                format: date-time
+                type: string
             type: object
         required:
         - metadata

@@ -271,7 +271,7 @@ type DatasetStatus struct {
 	UnitTestResults catalog.TestSuiteResult `json:"unitTestResults,omitempty" protobuf:"bytes,9,opt,name=unitTestResults"`
 	// Last time the Dataset was used with a Study
 	//+kubebuilder:validation:Optional
-	LastStudyTime *metav1.Time `json:"lastStudyTime,omitempty" protobuf:"bytes,10,opt,name=lastStudyTime"`
+	LastStudyAt *metav1.Time `json:"lastStudyAt,omitempty" protobuf:"bytes,10,opt,name=lastStudyAt"`
 	// In the case of failure, the Dataset resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,12,opt,name=failureReason"`
@@ -293,16 +293,13 @@ type DatasetStatus struct {
 	DerivedFromDataset *string `json:"derivedFromDataset,omitempty" protobuf:"bytes,17,opt,name=derivedFromDataset"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,18,opt,name=lastUpdated"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,18,opt,name=updatedAt"`
 	// The Docker images used during the analysis of the Dataset
 	// +kubebuilder:validation:Optional
 	Images catalog.Images `json:"images,omitempty" protobuf:"bytes,19,opt,name=images"`
-	// The time that the system started processing the Dataset, usually after the creation of the object
-	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,20,opt,name=startTime"`
 	// The time that the Dataset finished processing, either due to completion or failure
 	// +kubebuilder:validation:Optional
-	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,21,opt,name=endTime"`
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,21,opt,name=completedAt"`
 	// The generated training feature histogram, Empty if no feature histogram generated
 	// +kubebuilder:validation:Optional
 	FeatureHistogramRef v1.ObjectReference `json:"featureHistogramRef,omitempty" protobuf:"bytes,22,opt,name=featureHistogramRef"`

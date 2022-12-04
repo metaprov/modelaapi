@@ -295,10 +295,10 @@ export class DataAppStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataAppStatus;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataAppStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): DataAppStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataAppStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): DataAppStatus;
 
   getDeploymentstatus(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setDeploymentstatus(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataAppStatus;
@@ -332,7 +332,7 @@ export class DataAppStatus extends jspb.Message {
 export namespace DataAppStatus {
   export type AsObject = {
     observedgeneration: number,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     deploymentstatus?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servicetstatus?: k8s_io_api_core_v1_generated_pb.ServiceStatus.AsObject,
     failurereason: string,
@@ -1234,15 +1234,10 @@ export namespace PredictionSpec {
 }
 
 export class PredictionStatus extends jspb.Message {
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionStatus;
-  hasStarttime(): boolean;
-  clearStarttime(): PredictionStatus;
-
-  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionStatus;
-  hasEndtime(): boolean;
-  clearEndtime(): PredictionStatus;
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): PredictionStatus;
 
   getPhase(): string;
   setPhase(value: string): PredictionStatus;
@@ -1266,10 +1261,10 @@ export class PredictionStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): PredictionStatus;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): PredictionStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): PredictionStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): PredictionStatus;
@@ -1310,15 +1305,14 @@ export class PredictionStatus extends jspb.Message {
 
 export namespace PredictionStatus {
   export type AsObject = {
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     observedgeneration: number,
     rows: number,
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
     datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,

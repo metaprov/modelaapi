@@ -51,8 +51,8 @@ type RecipeRunCondition struct {
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Recipe",type="string",JSONPath=".spec.recipeName"
-// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
-// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
+// +kubebuilder:printcolumn:name="StartedAt",type="date",JSONPath=".status.startTime",priority=1
+// +kubebuilder:printcolumn:name="CompletedAt",type="date",JSONPath=".status.completionTime",priority=1
 // RecipeRun represent one execution of the recipe.
 // Execution is performed by creating a Kubernetes job.
 type RecipeRun struct {

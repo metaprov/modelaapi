@@ -160,7 +160,7 @@ type FeatureHistogramStatus struct {
 	Columns []ColumnHistogram `json:"columns,omitempty" protobuf:"bytes,2,rep,name=columns"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,3,opt,name=updatedAt"`
 	// The log file specification that determines the location of all logs produced by the object
 	// +kubebuilder:validation:Optional
 	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,5,opt,name=logs"`

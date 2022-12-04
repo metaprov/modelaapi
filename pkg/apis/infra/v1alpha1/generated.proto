@@ -169,7 +169,7 @@ message AccountSpec {
 message AccountStatus {
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 1;
 
   // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
@@ -263,7 +263,7 @@ message AirWriteSpec {
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.namespace",description="",priority=1
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.name",description="",priority=1
 // +kubebuilder:printcolumn:name="Notifier",type="string",JSONPath=".spec.notifierName",description="",priority=1
-// +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
+// +kubebuilder:printcolumn:name="FiredAt",type="date",JSONPath=".status.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // Alert represents temporal information about an event that occurred with a Modela custom resource
 message Alert {
@@ -366,7 +366,7 @@ message AlertStatus {
 
   // The time when the Alert was fired
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time firedAt = 2;
 
   // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
@@ -374,7 +374,7 @@ message AlertStatus {
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 4;
 
   // In the case of failure, the Alert resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
@@ -652,31 +652,27 @@ message AttachmentSpec {
 
 // AttachmentStatus is the observed state of a Attachment
 message AttachmentStatus {
-  // The time when the alert was fired
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
-
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 3;
+  optional int64 observedGeneration = 1;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
 
   // UpdateUpdateStrategy in case of terminal failure
   // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string failureReason = 5;
+  optional string failureReason = 3;
 
   // UpdateUpdateStrategy in case of terminal failure message
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 6;
+  optional string failureMessage = 4;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated AttachmentCondition conditions = 7;
+  repeated AttachmentCondition conditions = 5;
 }
 
 // AvatarSpec specifies the location of an avatar for an Account
@@ -1119,7 +1115,7 @@ message ConnectionStatus {
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
 
   // UpdateUpdateStrategy in case of terminal failure
   // Borrowed from cluster api controller
@@ -1696,7 +1692,7 @@ message LabStatus {
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
@@ -1716,7 +1712,7 @@ message LabStatus {
 // +kubebuilder:printcolumn:name="ExpectedValueMax Trainers",type="string",JSONPath=".spec.maxTrainers",description="",priority=1
 // +kubebuilder:printcolumn:name="ExpectedValueMax Nodes",type="string",JSONPath=".spec.maxServers",description="",priority=1
 // +kubebuilder:printcolumn:name="ExpectedValueMax Users",type="string",JSONPath=".spec.maxUsers",description="",priority=1
-// +kubebuilder:printcolumn:name="Expire At",type="date",JSONPath=".spec.expireAt",description=""
+// +kubebuilder:printcolumn:name="Expire FiredAt",type="date",JSONPath=".spec.expireAt",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // License represents the license key and limitations of a cluster-wide license obtained from Modela.ai
 message License {
@@ -2198,7 +2194,7 @@ message NotifierStatus {
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 3;
 
   // The status of Notification Channels after Alerts have been forwarded to them
   repeated NotificationChannelStatus channelsStatus = 4;
@@ -2619,7 +2615,7 @@ message ServingSiteStatus {
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
 
   // The number of active predictor services
   optional int32 activePredictors = 3;
@@ -2883,7 +2879,7 @@ message TenantStatus {
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
 
   // UpdateUpdateStrategy in case of terminal failure
   // Borrowed from cluster api controller
@@ -3140,7 +3136,7 @@ message VirtualBucketSpec {
 message VirtualBucketStatus {
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 1;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional

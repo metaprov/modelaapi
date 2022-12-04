@@ -617,7 +617,7 @@ type DataSourceStatus struct {
 	LastDatasetName string `json:"lastDatasetName,omitempty" protobuf:"bytes,4,opt,name=lastDatasetName"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,5,opt,name=lastUpdated"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,5,opt,name=updatedAt"`
 	// In the case of failure, the DataSource resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,6,opt,name=failureReason"`

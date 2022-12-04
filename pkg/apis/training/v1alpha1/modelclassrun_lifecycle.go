@@ -230,8 +230,8 @@ func (run *ModelClassRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName
 			},
 		},
 	}
-	if run.Status.EndTime != nil {
-		result.Spec.Fields["Completion Time"] = run.Status.EndTime.Format("01/2/2006 15:04:05")
+	if run.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = run.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -260,8 +260,8 @@ func (run *ModelClassRun) CompletionAlert(tenantRef *v1.ObjectReference, notifie
 			},
 		},
 	}
-	if run.Status.EndTime != nil {
-		result.Spec.Fields["Completion Time"] = run.Status.EndTime.Format("01/2/2006 15:04:05")
+	if run.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = run.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }

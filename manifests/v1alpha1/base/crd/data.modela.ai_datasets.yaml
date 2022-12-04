@@ -1140,6 +1140,11 @@ spec:
                 description: The location of anomaly file. The file contain the list
                   of rows that were marked as anomaly by an isolation forest. algorithm
                 type: string
+              completedAt:
+                description: The time that the Dataset finished processing, either
+                  due to completion or failure
+                format: date-time
+                type: string
               conditions:
                 items:
                   description: DatasetCondition describes the state of a dataset at
@@ -1171,11 +1176,6 @@ spec:
               derivedFromDataset:
                 description: If the dataset is derived, the name of the Dataset that
                   the object is derived from
-                type: string
-              endTime:
-                description: The time that the Dataset finished processing, either
-                  due to completion or failure
-                format: date-time
                 type: string
               failureMessage:
                 description: In the case of failure, the Dataset resource controller
@@ -1285,12 +1285,8 @@ spec:
               imbalanced:
                 description: Whether or not the data was detected as imbalanced
                 type: boolean
-              lastStudyTime:
+              lastStudyAt:
                 description: Last time the Dataset was used with a Study
-                format: date-time
-                type: string
-              lastUpdated:
-                description: The last time the object was updated
                 format: date-time
                 type: string
               logs:
@@ -1347,11 +1343,6 @@ spec:
               reportUri:
                 description: The location of report generated during the reporting
                   phase. This field is intended for internal use
-                type: string
-              startTime:
-                description: The time that the system started processing the Dataset,
-                  usually after the creation of the object
-                format: date-time
                 type: string
               statistics:
                 description: Statistics for each column of the Dataset, which are
@@ -1645,6 +1636,10 @@ spec:
                 description: List of validation results which are generated for every
                   validation rule associated with the Dataset's Location Source
                 properties:
+                  completedAt:
+                    description: Stop time of running the suite.
+                    format: date-time
+                    type: string
                   entityRef:
                     description: A reference to the object under test. Best practice
                       is to have one suite for an object
@@ -1692,12 +1687,8 @@ spec:
                       error, e.g. cannot connect to a dataset
                     format: int32
                     type: integer
-                  startTime:
+                  startedAt:
                     description: Start time of running the suite
-                    format: date-time
-                    type: string
-                  stopTime:
-                    description: Stop time of running the suite.
                     format: date-time
                     type: string
                   tests:
@@ -1836,6 +1827,10 @@ spec:
                       type: object
                     type: array
                 type: object
+              updatedAt:
+                description: The last time the object was updated
+                format: date-time
+                type: string
             required:
             - logs
             type: object

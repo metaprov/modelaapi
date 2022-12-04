@@ -190,41 +190,38 @@ type ReportSpec struct {
 
 // ReportStatus defines the observed state of a Report
 type ReportStatus struct {
-	// StartTime represents the time at which the execution of the Report started
+	// CompletedAt represents the time at which the Report was marked as completed, failed, or aborted
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,2,opt,name=startTime"`
-	// EndTime represents the time at which the Report was marked as completed, failed, or aborted
-	// +kubebuilder:validation:Optional
-	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,3,opt,name=endTime"`
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,1,opt,name=completedAt"`
 	// The phase of the Report
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
-	Phase ReportPhase `json:"phase,omitempty" protobuf:"bytes,4,opt,name=phase"`
+	Phase ReportPhase `json:"phase,omitempty" protobuf:"bytes,2,opt,name=phase"`
 	// The URI to the flat-file report within the VirtualBucket specified by the Report
 	// +kubebuilder:validation:Optional
-	URI string `json:"uri,omitempty" protobuf:"bytes,5,opt,name=uri"`
+	URI string `json:"uri,omitempty" protobuf:"bytes,3,opt,name=uri"`
 	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,6,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`
 	// In the case of failure, the Report resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,7,opt,name=failureReason"`
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,5,opt,name=failureReason"`
 	// In the case of failure, the Report resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,8,opt,name=failureMessage"`
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,6,opt,name=failureMessage"`
 	// Logs specifies the location of logs produced by workloads associated with the Report
 	//+kubebuilder:validation:Optional
-	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,9,opt,name=logs"`
+	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,7,opt,name=logs"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,10,opt,name=lastUpdated"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,8,opt,name=updatedAt"`
 	// The sub models uri file contain the results of running the sub model
 	// +kubebuilder:validation:Optional
-	GroupBy ReportGroupByStatus `json:"groupby,omitempty" protobuf:"bytes,11,opt,name=groupby"`
+	GroupBy ReportGroupByStatus `json:"groupby,omitempty" protobuf:"bytes,9,opt,name=groupby"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ReportCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
+	Conditions []ReportCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,10,rep,name=conditions"`
 }
 
 type CustomReportSpec struct {

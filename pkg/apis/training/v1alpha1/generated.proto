@@ -955,13 +955,13 @@ message InterpretabilitySpec {
 
 // InterpretabilityStatus represents the state of the explanation phase of a Model
 message InterpretabilityStatus {
-  // StartTime represents the time when the model explanation phase started
+  // StartedAt represents the time when the model explanation phase started
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartTime = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 1;
 
-  // EndTime represents the time when the model explanation phase ended
+  // CompletedAt represents the time when the model explanation phase ended
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingEndTime = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 2;
 
   // The URI for the generated explanation data
   optional string explainerURI = 3;
@@ -1155,8 +1155,8 @@ message ModelClassList {
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress",priority=1
 // +kubebuilder:printcolumn:name="MC",type="string",JSONPath=".status.modelClassName"
-// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
-// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
+// +kubebuilder:printcolumn:name="StartedAt",type="date",JSONPath=".status.startTime",priority=1
+// +kubebuilder:printcolumn:name="CompletedAt",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.failureMessage"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // ModelClassRun represent a execution of a model class training
@@ -1262,10 +1262,7 @@ message ModelClassRunStatus {
   optional string modelName = 3;
 
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4;
-
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 5;
 
   // The phase of the pipeline run
   // +kubebuilder:default:="Pending"
@@ -1296,7 +1293,7 @@ message ModelClassRunStatus {
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 12;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 12;
 
   // The log file specification that determines the location of all logs produced by the object
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 13;
@@ -1452,7 +1449,7 @@ message ModelClassStatus {
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 4;
 
   // BestFE specifies the best feature engineering pipeline produced by the ModelClass
   // +kubebuilder:validation:Optional
@@ -1967,11 +1964,11 @@ message ModelStageStatus {
 
   // Start time is the start time of the stage
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 7;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 7;
 
   // End time is the end time of the stage.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 8;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 8;
 
   // Results is the results of running the test datasets against the new model
   // +kubebuilder:validation:Optional
@@ -1984,37 +1981,33 @@ message ModelStageStatus {
 
 // ModelStatus defines the observed state of a Model
 message ModelStatus {
-  // StartTime represents the time at which the execution of the Model started
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
-
   // TrainStartTime represents the time at which the Model started training
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartTime = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartedAt = 2;
 
   // TrainCompletionTime represents the time at which the Model completed training
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingEndTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingCompletedAt = 3;
 
-  // TestingStartTime represents the time at which the Model started testing
+  // TestingStartedAt represents the time at which the Model started testing
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingStartTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingStartedAt = 4;
 
-  // TestingEndTime represents the time at which the Model completed testing
+  // TestingCompletedAt represents the time at which the Model completed testing
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingEndTime = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingCompletedAt = 5;
 
-  // TuningStartTime represents the time at which the Model started testing
+  // TuningStartedAt represents the time at which the Model started testing
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time tuningStartTime = 6;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time tuningStartedAt = 6;
 
-  // TuningEndTime represents the time at which the Model completed testing
+  // TuningCompletedAt represents the time at which the Model completed testing
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time tuningEndTime = 7;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time tuningCompletedAt = 7;
 
-  // EndTime represents the time at which the Model was marked as ready, failed, or aborted
+  // CompletedAt represents the time at which the Model was marked as ready, failed, or aborted
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 8;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 8;
 
   // The cross-validation score for the objective metric produced after training
   // +kubebuilder:validation:Optional
@@ -2254,7 +2247,7 @@ message ModelStatus {
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 67;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 67;
 
   // Governance specifies the current governance status for the Model
   // +kubebuilder:validation:Optional
@@ -2595,51 +2588,47 @@ message ReportSpec {
 
 // ReportStatus defines the observed state of a Report
 message ReportStatus {
-  // StartTime represents the time at which the execution of the Report started
+  // CompletedAt represents the time at which the Report was marked as completed, failed, or aborted
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2;
-
-  // EndTime represents the time at which the Report was marked as completed, failed, or aborted
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 1;
 
   // The phase of the Report
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 4;
+  optional string phase = 2;
 
   // The URI to the flat-file report within the VirtualBucket specified by the Report
   // +kubebuilder:validation:Optional
-  optional string uri = 5;
+  optional string uri = 3;
 
   // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 6;
+  optional int64 observedGeneration = 4;
 
   // In the case of failure, the Report resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
-  optional string failureReason = 7;
+  optional string failureReason = 5;
 
   // In the case of failure, the Report resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 8;
+  optional string failureMessage = 6;
 
   // Logs specifies the location of logs produced by workloads associated with the Report
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 10;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 8;
 
   // The sub models uri file contain the results of running the sub model
   // +kubebuilder:validation:Optional
-  optional ReportGroupByStatus groupby = 11;
+  optional ReportGroupByStatus groupby = 9;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ReportCondition conditions = 12;
+  repeated ReportCondition conditions = 10;
 }
 
 // ResourceConsumption represents the total resources consumed by a workload
@@ -2842,8 +2831,8 @@ message ServingSpec {
 // +kubebuilder:printcolumn:name="Best model",type="string",JSONPath=".status.bestModel"
 // +kubebuilder:printcolumn:name="Trained",type="number",JSONPath=".status.search.completed"
 // +kubebuilder:printcolumn:name="Tested",type="number",JSONPath=".status.test.completed"
-// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
-// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
+// +kubebuilder:printcolumn:name="StartedAt",type="date",JSONPath=".status.startTime",priority=1
+// +kubebuilder:printcolumn:name="CompletedAt",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.lastFailure"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // Study represents an automatic search for the best machine learning model for a given dataset
@@ -2901,11 +2890,11 @@ message StudyList {
 message StudyPhaseStatus {
   // The time at which the phase started
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 1;
 
   // The time at which the phase concluded
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 2;
 
   // The number of models pending training
   // +kubebuilder:validation:Optional
@@ -3143,13 +3132,9 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional int32 models = 1;
 
-  // StartTime represents the time at which the execution of the Study started
+  // CompletedAt represents the time at which the Study was marked as completed, failed, or aborted
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2;
-
-  // EndTime represents the time at which the Study was marked as completed, failed, or aborted
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 3;
 
   // The name of the Model resource which was determined to be the highest-performing
   // +kubebuilder:validation:Optional

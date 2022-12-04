@@ -8104,7 +8104,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.toOb
   var f, obj = {
     name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    completiontime: (f = msg.getCompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    completedat: (f = msg.getCompletedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     duration: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     failurereason: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
@@ -8155,7 +8155,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.dese
     case 3:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setCompletiontime(value);
+      msg.setCompletedat(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
@@ -8212,7 +8212,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.seri
       f
     );
   }
-  f = message.getCompletiontime();
+  f = message.getCompletedat();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -8317,10 +8317,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 3;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.getCompletiontime = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.getCompletedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
 };
@@ -8330,7 +8330,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.setCompletiontime = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.setCompletedat = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -8339,8 +8339,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.clearCompletiontime = function() {
-  return this.setCompletiontime(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.clearCompletedat = function() {
+  return this.setCompletedat(undefined);
 };
 
 
@@ -8348,7 +8348,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.hasCompletiontime = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.LastRunStatus.prototype.hasCompletedat = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -17731,8 +17731,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.to
     entityref: (f = msg.getEntityref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     failures: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     errors: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    stoptime: (f = msg.getStoptime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    startedat: (f = msg.getStartedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    completedat: (f = msg.getCompletedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     testsList: jspb.Message.toObjectList(msg.getTestsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCaseResult.toObject, includeInstance)
   };
@@ -17787,12 +17787,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.de
     case 4:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setStarttime(value);
+      msg.setStartedat(value);
       break;
     case 5:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setStoptime(value);
+      msg.setCompletedat(value);
       break;
     case 6:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataTestCaseResult;
@@ -17850,7 +17850,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.se
       f
     );
   }
-  f = message.getStarttime();
+  f = message.getStartedat();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -17858,7 +17858,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.se
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getStoptime();
+  f = message.getCompletedat();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -17987,10 +17987,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 4;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.getStarttime = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.getStartedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
 };
@@ -18000,7 +18000,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.setStarttime = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.setStartedat = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -18009,8 +18009,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.clearStarttime = function() {
-  return this.setStarttime(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.clearStartedat = function() {
+  return this.setStartedat(undefined);
 };
 
 
@@ -18018,16 +18018,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.hasStarttime = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.hasStartedat = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time stopTime = 5;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 5;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.getStoptime = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.getCompletedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 5));
 };
@@ -18037,7 +18037,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.setStoptime = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.setCompletedat = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -18046,8 +18046,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.clearStoptime = function() {
-  return this.setStoptime(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.clearCompletedat = function() {
+  return this.setCompletedat(undefined);
 };
 
 
@@ -18055,7 +18055,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.hasStoptime = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult.prototype.hasCompletedat = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 

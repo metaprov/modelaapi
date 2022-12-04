@@ -878,10 +878,6 @@ spec:
                 description: In the case of failure, the DataProduct resource controller
                   will set this field with a failure reason
                 type: string
-              lastUpdated:
-                description: The last time the object was updated
-                format: date-time
-                type: string
               observedGeneration:
                 description: ObservedGeneration is the last generation that was acted
                   on
@@ -953,6 +949,10 @@ spec:
                 description: The number of Study resources that exist under the namespace
                 format: int32
                 type: integer
+              updatedAt:
+                description: The last time the object was updated
+                format: date-time
+                type: string
             type: object
         required:
         - metadata

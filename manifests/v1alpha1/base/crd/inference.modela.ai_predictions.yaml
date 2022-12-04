@@ -1171,6 +1171,11 @@ spec:
                       type: string
                   type: object
                 type: array
+              completedAt:
+                description: CompletedAt denotes the time when the batch prediction
+                  Job completed or failed
+                format: date-time
+                type: string
               conditions:
                 items:
                   description: PredictionCondition describes the state of a Prediction
@@ -1239,11 +1244,6 @@ spec:
               drifted:
                 description: Set to true if drifted
                 type: boolean
-              endTime:
-                description: EndTime denotes the time when the batch prediction Job
-                  completed or failed
-                format: date-time
-                type: string
               failureMessage:
                 description: In the case of failure, the Prediction resource controller
                   will set this field with a failure message
@@ -1290,10 +1290,6 @@ spec:
                       type: object
                     type: array
                 type: object
-              lastUpdated:
-                description: The last time the object was updated
-                format: date-time
-                type: string
               logs:
                 description: The location of logs produced by the batch prediction
                   Job
@@ -1334,11 +1330,6 @@ spec:
                 description: The number of rows predicted
                 format: int32
                 type: integer
-              startTime:
-                description: StartTime denotes the time when the batch prediction
-                  Job started
-                format: date-time
-                type: string
               triggeredBy:
                 description: The trigger that started the batch prediction
                 enum:
@@ -1354,6 +1345,10 @@ spec:
                   measurement across all predictions for each metric specified by
                   the Tests field of the Predictor
                 properties:
+                  completedAt:
+                    description: Stop time of running the suite.
+                    format: date-time
+                    type: string
                   entityRef:
                     description: A reference to the object under test. Best practice
                       is to have one suite for an object
@@ -1401,12 +1396,8 @@ spec:
                       error, e.g. cannot connect to a dataset
                     format: int32
                     type: integer
-                  startTime:
+                  startedAt:
                     description: Start time of running the suite
-                    format: date-time
-                    type: string
-                  stopTime:
-                    description: Stop time of running the suite.
                     format: date-time
                     type: string
                   tests:
@@ -1545,6 +1536,10 @@ spec:
                       type: object
                     type: array
                 type: object
+              updatedAt:
+                description: The last time the object was updated
+                format: date-time
+                type: string
             type: object
         required:
         - spec

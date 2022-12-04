@@ -52,8 +52,8 @@ type DataPipelineRunCondition struct {
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Progress",type="string",JSONPath=".status.progress",priority=1
 // +kubebuilder:printcolumn:name="Pipeline",type="string",JSONPath=".spec.datapipelineName"
-// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
-// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
+// +kubebuilder:printcolumn:name="StartedAt",type="date",JSONPath=".status.startTime",priority=1
+// +kubebuilder:printcolumn:name="CompletedAt",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Failure",type="string",JSONPath=".metadata.failureMessage"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // DataPipelineRun represent one execution of the data pipeline
@@ -126,12 +126,12 @@ type DataPipelineRunStatus struct {
 	// +kubebuilder:default:="Pending"
 	//+kubebuilder:validation:Optional
 	Phase DataPipelineRunPhase `json:"phase" protobuf:"bytes,3,opt,name=phase"`
-	// StartTime is the start time of the pipeline
+	// StartedAt is the start time of the pipeline
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,4,opt,name=startTime"`
-	// CompletionTime is the end time of the pipeline
+	StartedAt *metav1.Time `json:"startedAt,omitempty" protobuf:"bytes,4,opt,name=startedAt"`
+	// CompletedAt is the end time of the pipeline
 	// +kubebuilder:validation:Optional
-	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,5,opt,name=endTime"`
+	ComplatedAt *metav1.Time `json:"complatedAt,omitempty" protobuf:"bytes,5,opt,name=complatedAt"`
 	//ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,6,opt,name=observedGeneration"`

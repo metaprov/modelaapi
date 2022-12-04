@@ -441,7 +441,7 @@ message LastRunStatus {
 
   // The time at which the run concluded
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 3;
 
   // The duration of the run in seconds
   // +kubebuilder:validation:Optional
@@ -1061,11 +1061,11 @@ message TestSuiteResult {
 
   // Start time of running the suite
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 4;
 
   // Stop time of running the suite.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time stopTime = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 5;
 
   // The result of executing the test suite. The result contain one result object per test case.
   // +kubebuilder:validation:Optional

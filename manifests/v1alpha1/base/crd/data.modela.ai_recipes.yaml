@@ -774,7 +774,7 @@ spec:
               lastRun:
                 description: Last run is the last time a data pipeline run was created
                 properties:
-                  completionTime:
+                  completedAt:
                     description: The time at which the run concluded
                     format: date-time
                     type: string
@@ -797,10 +797,6 @@ spec:
                     description: The status of the last run
                     type: string
                 type: object
-              lastUpdated:
-                description: Last time the object was updated
-                format: date-time
-                type: string
               nextRun:
                 description: The time of the next schedule run
                 format: date-time
@@ -810,6 +806,10 @@ spec:
                   on
                 format: int64
                 type: integer
+              updatedAt:
+                description: Last time the object was updated
+                format: date-time
+                type: string
             type: object
         required:
         - metadata

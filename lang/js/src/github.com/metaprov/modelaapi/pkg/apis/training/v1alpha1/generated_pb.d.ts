@@ -1409,15 +1409,15 @@ export namespace InterpretabilitySpec {
 }
 
 export class InterpretabilityStatus extends jspb.Message {
-  getTrainingstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTrainingstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): InterpretabilityStatus;
-  hasTrainingstarttime(): boolean;
-  clearTrainingstarttime(): InterpretabilityStatus;
+  getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): InterpretabilityStatus;
+  hasStartedat(): boolean;
+  clearStartedat(): InterpretabilityStatus;
 
-  getTrainingendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTrainingendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): InterpretabilityStatus;
-  hasTrainingendtime(): boolean;
-  clearTrainingendtime(): InterpretabilityStatus;
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): InterpretabilityStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): InterpretabilityStatus;
 
   getExplaineruri(): string;
   setExplaineruri(value: string): InterpretabilityStatus;
@@ -1443,8 +1443,8 @@ export class InterpretabilityStatus extends jspb.Message {
 
 export namespace InterpretabilityStatus {
   export type AsObject = {
-    trainingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    trainingendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     explaineruri: string,
     trainshapvaluesuri: string,
     testshapvaluesuri: string,
@@ -1868,15 +1868,10 @@ export class ModelClassRunStatus extends jspb.Message {
   getModelname(): string;
   setModelname(value: string): ModelClassRunStatus;
 
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassRunStatus;
-  hasStarttime(): boolean;
-  clearStarttime(): ModelClassRunStatus;
-
-  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassRunStatus;
-  hasEndtime(): boolean;
-  clearEndtime(): ModelClassRunStatus;
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassRunStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): ModelClassRunStatus;
 
   getPhase(): string;
   setPhase(value: string): ModelClassRunStatus;
@@ -1896,10 +1891,10 @@ export class ModelClassRunStatus extends jspb.Message {
   getProgress(): number;
   setProgress(value: number): ModelClassRunStatus;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassRunStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): ModelClassRunStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassRunStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): ModelClassRunStatus;
 
   getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
   setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): ModelClassRunStatus;
@@ -1937,15 +1932,14 @@ export namespace ModelClassRunStatus {
     datasetname: string,
     studyname: string,
     modelname: string,
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
     observedgeneration: number,
     evalmetrics: string,
     failurereason: string,
     failuremessage: string,
     progress: number,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     promotedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     auto: boolean,
@@ -2117,10 +2111,10 @@ export class ModelClassStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelClassStatus;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): ModelClassStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): ModelClassStatus;
 
   getBestfe(): FeatureEngineeringSpec | undefined;
   setBestfe(value?: FeatureEngineeringSpec): ModelClassStatus;
@@ -2208,7 +2202,7 @@ export namespace ModelClassStatus {
   export type AsObject = {
     models: number,
     observedgeneration: number,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
     trainingschedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     predictionscedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
@@ -2749,15 +2743,15 @@ export class ModelStageStatus extends jspb.Message {
   hasApprovedat(): boolean;
   clearApprovedat(): ModelStageStatus;
 
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStageStatus;
-  hasStarttime(): boolean;
-  clearStarttime(): ModelStageStatus;
+  getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStageStatus;
+  hasStartedat(): boolean;
+  clearStartedat(): ModelStageStatus;
 
-  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStageStatus;
-  hasEndtime(): boolean;
-  clearEndtime(): ModelStageStatus;
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStageStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): ModelStageStatus;
 
   getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
   setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelStageStatus;
@@ -2781,53 +2775,48 @@ export namespace ModelStageStatus {
     approved: boolean,
     approvedby: string,
     approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     error: string,
   }
 }
 
 export class ModelStatus extends jspb.Message {
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasStarttime(): boolean;
-  clearStarttime(): ModelStatus;
+  getTrainingstartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTrainingstartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasTrainingstartedat(): boolean;
+  clearTrainingstartedat(): ModelStatus;
 
-  getTrainingstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTrainingstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasTrainingstarttime(): boolean;
-  clearTrainingstarttime(): ModelStatus;
+  getTrainingcompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTrainingcompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasTrainingcompletedat(): boolean;
+  clearTrainingcompletedat(): ModelStatus;
 
-  getTrainingendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTrainingendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasTrainingendtime(): boolean;
-  clearTrainingendtime(): ModelStatus;
+  getTestingstartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTestingstartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasTestingstartedat(): boolean;
+  clearTestingstartedat(): ModelStatus;
 
-  getTestingstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTestingstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasTestingstarttime(): boolean;
-  clearTestingstarttime(): ModelStatus;
+  getTestingcompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTestingcompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasTestingcompletedat(): boolean;
+  clearTestingcompletedat(): ModelStatus;
 
-  getTestingendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTestingendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasTestingendtime(): boolean;
-  clearTestingendtime(): ModelStatus;
+  getTuningstartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTuningstartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasTuningstartedat(): boolean;
+  clearTuningstartedat(): ModelStatus;
 
-  getTuningstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTuningstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasTuningstarttime(): boolean;
-  clearTuningstarttime(): ModelStatus;
+  getTuningcompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTuningcompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasTuningcompletedat(): boolean;
+  clearTuningcompletedat(): ModelStatus;
 
-  getTuningendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTuningendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasTuningendtime(): boolean;
-  clearTuningendtime(): ModelStatus;
-
-  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasEndtime(): boolean;
-  clearEndtime(): ModelStatus;
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): ModelStatus;
 
   getCvscore(): number;
   setCvscore(value: number): ModelStatus;
@@ -3051,10 +3040,10 @@ export class ModelStatus extends jspb.Message {
   clearTopcorrelationsList(): ModelStatus;
   addTopcorrelations(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): ModelStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): ModelStatus;
 
   getGovernance(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus | undefined;
   setGovernance(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus): ModelStatus;
@@ -3106,14 +3095,13 @@ export class ModelStatus extends jspb.Message {
 
 export namespace ModelStatus {
   export type AsObject = {
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    trainingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    trainingendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    testingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    testingendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    tuningstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    tuningendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    trainingstartedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    trainingcompletedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    testingstartedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    testingcompletedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    tuningstartedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    tuningcompletedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     cvscore: number,
     trainingscore: number,
     testscore: number,
@@ -3172,7 +3160,7 @@ export namespace ModelStatus {
     testconfusionmatrix?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
     correlationswithtargetList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation.AsObject>,
     topcorrelationsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation.AsObject>,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     governance?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus.AsObject,
     interpretability?: InterpretabilityStatus.AsObject,
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
@@ -3681,15 +3669,10 @@ export namespace ReportSpec {
 }
 
 export class ReportStatus extends jspb.Message {
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReportStatus;
-  hasStarttime(): boolean;
-  clearStarttime(): ReportStatus;
-
-  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReportStatus;
-  hasEndtime(): boolean;
-  clearEndtime(): ReportStatus;
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReportStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): ReportStatus;
 
   getPhase(): string;
   setPhase(value: string): ReportStatus;
@@ -3711,10 +3694,10 @@ export class ReportStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): ReportStatus;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReportStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): ReportStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReportStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): ReportStatus;
 
   getGroupby(): ReportGroupByStatus | undefined;
   setGroupby(value?: ReportGroupByStatus): ReportStatus;
@@ -3736,15 +3719,14 @@ export class ReportStatus extends jspb.Message {
 
 export namespace ReportStatus {
   export type AsObject = {
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
     uri: string,
     observedgeneration: number,
     failurereason: string,
     failuremessage: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     groupby?: ReportGroupByStatus.AsObject,
     conditionsList: Array<ReportCondition.AsObject>,
   }
@@ -4129,15 +4111,15 @@ export namespace StudyList {
 }
 
 export class StudyPhaseStatus extends jspb.Message {
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyPhaseStatus;
-  hasStarttime(): boolean;
-  clearStarttime(): StudyPhaseStatus;
+  getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyPhaseStatus;
+  hasStartedat(): boolean;
+  clearStartedat(): StudyPhaseStatus;
 
-  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyPhaseStatus;
-  hasEndtime(): boolean;
-  clearEndtime(): StudyPhaseStatus;
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyPhaseStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): StudyPhaseStatus;
 
   getWaiting(): number;
   setWaiting(value: number): StudyPhaseStatus;
@@ -4167,8 +4149,8 @@ export class StudyPhaseStatus extends jspb.Message {
 
 export namespace StudyPhaseStatus {
   export type AsObject = {
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     waiting: number,
     running: number,
     failed: number,
@@ -4422,15 +4404,10 @@ export class StudyStatus extends jspb.Message {
   getModels(): number;
   setModels(value: number): StudyStatus;
 
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasStarttime(): boolean;
-  clearStarttime(): StudyStatus;
-
-  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasEndtime(): boolean;
-  clearEndtime(): StudyStatus;
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): StudyStatus;
 
   getBestmodel(): string;
   setBestmodel(value: string): StudyStatus;
@@ -4573,8 +4550,7 @@ export class StudyStatus extends jspb.Message {
 export namespace StudyStatus {
   export type AsObject = {
     models: number,
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestmodel: string,
     bestmodelscore: number,
     profileuri: string,

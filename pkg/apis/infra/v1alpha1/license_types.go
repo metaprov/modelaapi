@@ -54,7 +54,7 @@ type LicenseCondition struct {
 // +kubebuilder:printcolumn:name="ExpectedValueMax Trainers",type="string",JSONPath=".spec.maxTrainers",description="",priority=1
 // +kubebuilder:printcolumn:name="ExpectedValueMax Nodes",type="string",JSONPath=".spec.maxServers",description="",priority=1
 // +kubebuilder:printcolumn:name="ExpectedValueMax Users",type="string",JSONPath=".spec.maxUsers",description="",priority=1
-// +kubebuilder:printcolumn:name="Expire At",type="date",JSONPath=".spec.expireAt",description=""
+// +kubebuilder:printcolumn:name="Expire FiredAt",type="date",JSONPath=".spec.expireAt",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // License represents the license key and limitations of a cluster-wide license obtained from Modela.ai
 type License struct {

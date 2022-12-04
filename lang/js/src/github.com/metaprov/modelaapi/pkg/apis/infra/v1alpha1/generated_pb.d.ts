@@ -219,10 +219,10 @@ export namespace AccountSpec {
 }
 
 export class AccountStatus extends jspb.Message {
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AccountStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): AccountStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AccountStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): AccountStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): AccountStatus;
@@ -260,7 +260,7 @@ export class AccountStatus extends jspb.Message {
 
 export namespace AccountStatus {
   export type AsObject = {
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     failurereason: string,
     failuremessage: string,
@@ -508,18 +508,18 @@ export class AlertStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): AlertStatus;
 
-  getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AlertStatus;
-  hasAt(): boolean;
-  clearAt(): AlertStatus;
+  getFiredat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setFiredat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AlertStatus;
+  hasFiredat(): boolean;
+  clearFiredat(): AlertStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): AlertStatus;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AlertStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): AlertStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AlertStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): AlertStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): AlertStatus;
@@ -543,9 +543,9 @@ export class AlertStatus extends jspb.Message {
 export namespace AlertStatus {
   export type AsObject = {
     phase: string,
-    at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    firedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
     conditionsList: Array<AlertCondition.AsObject>,
@@ -1009,18 +1009,13 @@ export namespace AttachmentSpec {
 }
 
 export class AttachmentStatus extends jspb.Message {
-  getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AttachmentStatus;
-  hasAt(): boolean;
-  clearAt(): AttachmentStatus;
-
   getObservedgeneration(): number;
   setObservedgeneration(value: number): AttachmentStatus;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AttachmentStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): AttachmentStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AttachmentStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): AttachmentStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): AttachmentStatus;
@@ -1043,9 +1038,8 @@ export class AttachmentStatus extends jspb.Message {
 
 export namespace AttachmentStatus {
   export type AsObject = {
-    at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
     conditionsList: Array<AttachmentCondition.AsObject>,
@@ -1890,10 +1884,10 @@ export class ConnectionStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ConnectionStatus;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ConnectionStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): ConnectionStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ConnectionStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): ConnectionStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): ConnectionStatus;
@@ -1917,7 +1911,7 @@ export class ConnectionStatus extends jspb.Message {
 export namespace ConnectionStatus {
   export type AsObject = {
     observedgeneration: number,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
     conditionsList: Array<ConnectionCondition.AsObject>,
@@ -2930,10 +2924,10 @@ export class LabStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): LabStatus;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LabStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): LabStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LabStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): LabStatus;
 
   getConditionsList(): Array<LabCondition>;
   setConditionsList(value: Array<LabCondition>): LabStatus;
@@ -2951,7 +2945,7 @@ export class LabStatus extends jspb.Message {
 export namespace LabStatus {
   export type AsObject = {
     observedgeneration: number,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<LabCondition.AsObject>,
   }
 }
@@ -3792,10 +3786,10 @@ export class NotifierStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): NotifierStatus;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotifierStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): NotifierStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotifierStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): NotifierStatus;
 
   getChannelsstatusList(): Array<NotificationChannelStatus>;
   setChannelsstatusList(value: Array<NotificationChannelStatus>): NotifierStatus;
@@ -3818,7 +3812,7 @@ export class NotifierStatus extends jspb.Message {
 export namespace NotifierStatus {
   export type AsObject = {
     observedgeneration: number,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     channelsstatusList: Array<NotificationChannelStatus.AsObject>,
     conditionsList: Array<NotifierCondition.AsObject>,
   }
@@ -4566,10 +4560,10 @@ export class ServingSiteStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ServingSiteStatus;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ServingSiteStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): ServingSiteStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ServingSiteStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): ServingSiteStatus;
 
   getActivepredictors(): number;
   setActivepredictors(value: number): ServingSiteStatus;
@@ -4625,7 +4619,7 @@ export class ServingSiteStatus extends jspb.Message {
 export namespace ServingSiteStatus {
   export type AsObject = {
     observedgeneration: number,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     activepredictors: number,
     inactivepredictors: number,
     totalpredictorservicefailed: number,
@@ -5004,10 +4998,10 @@ export class TenantStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): TenantStatus;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TenantStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): TenantStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TenantStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): TenantStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): TenantStatus;
@@ -5036,7 +5030,7 @@ export class TenantStatus extends jspb.Message {
 export namespace TenantStatus {
   export type AsObject = {
     observedgeneration: number,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
     featurestoresList: Array<FeatureStoreStatus.AsObject>,
@@ -5467,10 +5461,10 @@ export namespace VirtualBucketSpec {
 }
 
 export class VirtualBucketStatus extends jspb.Message {
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): VirtualBucketStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): VirtualBucketStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): VirtualBucketStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): VirtualBucketStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): VirtualBucketStatus;
@@ -5496,7 +5490,7 @@ export class VirtualBucketStatus extends jspb.Message {
 
 export namespace VirtualBucketStatus {
   export type AsObject = {
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     failurereason: string,
     failuremessage: string,

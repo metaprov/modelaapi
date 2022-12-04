@@ -269,10 +269,6 @@ spec:
                 description: In the case of failure, the Account resource controller
                   will set this field with a failure reason
                 type: string
-              lastUpdated:
-                description: The last time the object was updated
-                format: date-time
-                type: string
               observedGeneration:
                 description: ObservedGeneration is the last generation that was acted
                   on
@@ -291,6 +287,10 @@ spec:
                   of.
                 format: int32
                 type: integer
+              updatedAt:
+                description: The last time the object was updated
+                format: date-time
+                type: string
             type: object
         type: object
     served: true

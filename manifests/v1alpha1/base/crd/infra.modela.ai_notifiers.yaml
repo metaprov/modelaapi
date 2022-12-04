@@ -197,15 +197,15 @@ spec:
                       type: string
                   type: object
                 type: array
-              lastUpdated:
-                description: The last time the object was updated
-                format: date-time
-                type: string
               observedGeneration:
                 description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer
+              updatedAt:
+                description: The last time the object was updated
+                format: date-time
+                type: string
             type: object
         type: object
     served: true

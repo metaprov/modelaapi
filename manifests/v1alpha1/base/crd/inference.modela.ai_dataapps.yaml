@@ -622,10 +622,6 @@ spec:
                 description: In the case of failure, the DataApp resource controller
                   will set this field with a failure reason
                 type: string
-              lastUpdated:
-                description: The last time the object was updated
-                format: date-time
-                type: string
               observedGeneration:
                 description: ObservedGeneration is the last generation that was acted
                   on
@@ -770,6 +766,10 @@ spec:
                         type: array
                     type: object
                 type: object
+              updatedAt:
+                description: The last time the object was updated
+                format: date-time
+                type: string
             type: object
         required:
         - metadata

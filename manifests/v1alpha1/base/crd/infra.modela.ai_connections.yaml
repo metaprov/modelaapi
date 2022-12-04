@@ -1634,15 +1634,15 @@ spec:
                 description: UpdateUpdateStrategy in case of terminal failure Borrowed
                   from cluster api controller
                 type: string
-              lastUpdated:
-                description: Last time the object was updated
-                format: date-time
-                type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on
                 format: int64
                 type: integer
+              updatedAt:
+                description: Last time the object was updated
+                format: date-time
+                type: string
             type: object
         type: object
     served: true

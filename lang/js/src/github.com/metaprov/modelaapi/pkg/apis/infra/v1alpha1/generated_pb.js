@@ -5259,7 +5259,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     failurereason: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
@@ -5308,7 +5308,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.deseri
     case 1:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastupdated(value);
+      msg.setUpdatedat(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
@@ -5372,7 +5372,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLastupdated();
+  f = message.getUpdatedat();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -5441,10 +5441,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.serial
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 1;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.getLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.getUpdatedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 1));
 };
@@ -5454,7 +5454,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.setLastupdated = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.setUpdatedat = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -5463,8 +5463,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.clearLastupdated = function() {
-  return this.setLastupdated(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.clearUpdatedat = function() {
+  return this.setUpdatedat(undefined);
 };
 
 
@@ -5472,7 +5472,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.hasLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.hasUpdatedat = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -8009,9 +8009,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     phase: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    at: (f = msg.getAt()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    firedat: (f = msg.getFiredat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     failurereason: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
@@ -8059,7 +8059,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.deserial
     case 2:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setAt(value);
+      msg.setFiredat(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt64());
@@ -8068,7 +8068,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.deserial
     case 4:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastupdated(value);
+      msg.setUpdatedat(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -8119,7 +8119,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.serializ
       f
     );
   }
-  f = message.getAt();
+  f = message.getFiredat();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -8134,7 +8134,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.serializ
       f
     );
   }
-  f = message.getLastupdated();
+  f = message.getUpdatedat();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -8204,10 +8204,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time firedAt = 2;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.getAt = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.getFiredat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
 };
@@ -8217,7 +8217,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.setAt = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.setFiredat = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -8226,8 +8226,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.clearAt = function() {
-  return this.setAt(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.clearFiredat = function() {
+  return this.setFiredat(undefined);
 };
 
 
@@ -8235,7 +8235,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.hasAt = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.hasFiredat = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -8277,10 +8277,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 4;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.getLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.getUpdatedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
 };
@@ -8290,7 +8290,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.setLastupdated = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.setUpdatedat = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -8299,8 +8299,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.clearLastupdated = function() {
-  return this.setLastupdated(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.clearUpdatedat = function() {
+  return this.setUpdatedat(undefined);
 };
 
 
@@ -8308,7 +8308,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.hasLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.hasUpdatedat = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -12926,7 +12926,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentSpec.proto
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.repeatedFields_ = [7];
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.repeatedFields_ = [5];
 
 
 
@@ -12959,11 +12959,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    at: (f = msg.getAt()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    failurereason: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    failuremessage: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    failurereason: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.toObject, includeInstance)
   };
@@ -13002,29 +13001,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.des
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setAt(value);
-      break;
-    case 3:
+    case 1:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
       break;
-    case 4:
+    case 2:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastupdated(value);
+      msg.setUpdatedat(value);
       break;
-    case 5:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setFailurereason(value);
       break;
-    case 6:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setFailuremessage(value);
       break;
-    case 7:
+    case 5:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -13058,7 +13052,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAt();
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getUpdatedat();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -13066,39 +13067,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.ser
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeInt64(
+    writer.writeString(
       3,
       f
     );
   }
-  f = message.getLastupdated();
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       4,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
-  if (f != null) {
-    writer.writeString(
-      6,
       f
     );
   }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      7,
+      5,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.serializeBinaryToWriter
     );
@@ -13107,10 +13093,46 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.ser
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
+ * optional int64 observedGeneration = 1;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.getObservedgeneration = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.setObservedgeneration = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.clearObservedgeneration = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.hasObservedgeneration = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.getAt = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.getUpdatedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
 };
@@ -13120,7 +13142,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.setAt = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.setUpdatedat = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -13129,8 +13151,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.clearAt = function() {
-  return this.setAt(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.clearUpdatedat = function() {
+  return this.setUpdatedat(undefined);
 };
 
 
@@ -13138,90 +13160,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.hasAt = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.hasUpdatedat = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional int64 observedGeneration = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.getObservedgeneration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.setObservedgeneration = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.clearObservedgeneration = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.hasObservedgeneration = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.getLastupdated = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.setLastupdated = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.clearLastupdated = function() {
-  return this.setLastupdated(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.hasLastupdated = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string failureReason = 5;
+ * optional string failureReason = 3;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.getFailurereason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -13230,7 +13179,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.setFailurereason = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -13239,7 +13188,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.clearFailurereason = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -13248,16 +13197,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.hasFailurereason = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string failureMessage = 6;
+ * optional string failureMessage = 4;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.getFailuremessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -13266,7 +13215,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.setFailuremessage = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
@@ -13275,7 +13224,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.clearFailuremessage = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -13284,17 +13233,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.hasFailuremessage = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * repeated AttachmentCondition conditions = 7;
+ * repeated AttachmentCondition conditions = 5;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition, 7));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition, 5));
 };
 
 
@@ -13303,7 +13252,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -13313,7 +13262,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition, opt_index);
 };
 
 
@@ -20735,7 +20684,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.pro
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     failurereason: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
@@ -20783,7 +20732,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.des
     case 2:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastupdated(value);
+      msg.setUpdatedat(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -20834,7 +20783,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.ser
       f
     );
   }
-  f = message.getLastupdated();
+  f = message.getUpdatedat();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -20904,10 +20853,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.pro
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.getLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.getUpdatedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
 };
@@ -20917,7 +20866,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.pro
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.setLastupdated = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.setUpdatedat = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -20926,8 +20875,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.clearLastupdated = function() {
-  return this.setLastupdated(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.clearUpdatedat = function() {
+  return this.setUpdatedat(undefined);
 };
 
 
@@ -20935,7 +20884,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.hasLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.hasUpdatedat = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -30748,7 +30697,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.toObject, includeInstance)
   };
@@ -30794,7 +30743,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.deserializ
     case 2:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastupdated(value);
+      msg.setUpdatedat(value);
       break;
     case 3:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition;
@@ -30837,7 +30786,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.serializeB
       f
     );
   }
-  f = message.getLastupdated();
+  f = message.getUpdatedat();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -30893,10 +30842,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.getLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.getUpdatedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
 };
@@ -30906,7 +30855,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.setLastupdated = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.setUpdatedat = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -30915,8 +30864,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.clearLastupdated = function() {
-  return this.setLastupdated(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.clearUpdatedat = function() {
+  return this.setUpdatedat(undefined);
 };
 
 
@@ -30924,7 +30873,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.hasLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.hasUpdatedat = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -38741,7 +38690,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     channelsstatusList: jspb.Message.toObjectList(msg.getChannelsstatusList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.toObject, includeInstance),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
@@ -38789,7 +38738,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.deser
     case 3:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastupdated(value);
+      msg.setUpdatedat(value);
       break;
     case 4:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus;
@@ -38837,7 +38786,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.seria
       f
     );
   }
-  f = message.getLastupdated();
+  f = message.getUpdatedat();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -38901,10 +38850,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 3;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.getLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.getUpdatedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
 };
@@ -38914,7 +38863,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.setLastupdated = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.setUpdatedat = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -38923,8 +38872,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.clearLastupdated = function() {
-  return this.setLastupdated(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.clearUpdatedat = function() {
+  return this.setUpdatedat(undefined);
 };
 
 
@@ -38932,7 +38881,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.hasLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.hasUpdatedat = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -46117,7 +46066,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     activepredictors: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     inactivepredictors: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     totalpredictorservicefailed: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
@@ -46175,7 +46124,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.de
     case 2:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastupdated(value);
+      msg.setUpdatedat(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
@@ -46268,7 +46217,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.se
       f
     );
   }
-  f = message.getLastupdated();
+  f = message.getUpdatedat();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -46408,10 +46357,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getUpdatedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
 };
@@ -46421,7 +46370,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setLastupdated = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setUpdatedat = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -46430,8 +46379,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.clearLastupdated = function() {
-  return this.setLastupdated(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.clearUpdatedat = function() {
+  return this.setUpdatedat(undefined);
 };
 
 
@@ -46439,7 +46388,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.hasLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.hasUpdatedat = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -50358,7 +50307,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototy
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     failurereason: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     featurestoresList: jspb.Message.toObjectList(msg.getFeaturestoresList(),
@@ -50408,7 +50357,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.deseria
     case 2:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastupdated(value);
+      msg.setUpdatedat(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -50464,7 +50413,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.seriali
       f
     );
   }
-  f = message.getLastupdated();
+  f = message.getUpdatedat();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -50542,10 +50491,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototy
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.getLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.getUpdatedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
 };
@@ -50555,7 +50504,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototy
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.setLastupdated = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.setUpdatedat = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -50564,8 +50513,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.clearLastupdated = function() {
-  return this.setLastupdated(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.clearUpdatedat = function() {
+  return this.setUpdatedat(undefined);
 };
 
 
@@ -50573,7 +50522,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.hasLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.hasUpdatedat = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -54678,7 +54627,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     failurereason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
@@ -54723,7 +54672,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
     case 1:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastupdated(value);
+      msg.setUpdatedat(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt64());
@@ -54771,7 +54720,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLastupdated();
+  f = message.getUpdatedat();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -54812,10 +54761,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 1;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.getLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.getUpdatedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 1));
 };
@@ -54825,7 +54774,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.setLastupdated = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.setUpdatedat = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -54834,8 +54783,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.clearLastupdated = function() {
-  return this.setLastupdated(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.clearUpdatedat = function() {
+  return this.setUpdatedat(undefined);
 };
 
 
@@ -54843,7 +54792,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.hasLastupdated = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.hasUpdatedat = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

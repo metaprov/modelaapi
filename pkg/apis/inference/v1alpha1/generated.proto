@@ -210,7 +210,7 @@ message DataAppStatus {
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
 
   // The reference to the Kubernetes Serving associated with the DataApp
   // +kubebuilder:validation:Optional
@@ -780,70 +780,67 @@ message PredictionSpec {
 
 // PredictionStatus is the observed state of a Prediction
 message PredictionStatus {
-  // StartTime denotes the time when the batch prediction Job started
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
-
-  // EndTime denotes the time when the batch prediction Job completed or failed
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2;
+  // CompletedAt denotes the time when the batch prediction Job completed or failed
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 1;
 
   // The current phase of the prediction
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 3;
+  optional string phase = 2;
 
   // The collection of metrics that represent the average measurement across all predictions for each
   // metric specified by the Tests field of the Predictor
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 3;
 
   // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 5;
+  optional int64 observedGeneration = 4;
 
   // The number of rows predicted
   // +kubebuilder:validation:Optional
-  optional int32 rows = 6;
+  optional int32 rows = 5;
 
   // The trigger that started the batch prediction
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 7;
+  optional string triggeredBy = 6;
 
   // The location of logs produced by the batch prediction Job
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 9;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 8;
 
   // In the case of failure, the Prediction resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
-  optional string failureReason = 10;
+  optional string failureReason = 9;
 
   // In the case of failure, the Prediction resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 11;
+  optional string failureMessage = 10;
 
   // The dataset that was generated.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference datasetRef = 12;
+  optional k8s.io.api.core.v1.ObjectReference datasetRef = 11;
 
   // The histogram values, map from column name to an histogram
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram columns = 13;
+  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnHistogram columns = 12;
 
   // Set to true if drifted
   // +kubebuilder:validation:Optional
-  optional bool drifted = 14;
+  optional bool drifted = 13;
 
   // the forecast results for this forecast
   // +kubebuilder:validation:Optional
-  optional ForecastStatus forecast = 15;
+  optional ForecastStatus forecast = 14;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictionCondition conditions = 16;
+  repeated PredictionCondition conditions = 15;
 }
 
 // +kubebuilder:object:root=true

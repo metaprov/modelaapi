@@ -59,8 +59,8 @@ type ModelClassRunCondition struct {
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress",priority=1
 // +kubebuilder:printcolumn:name="MC",type="string",JSONPath=".status.modelClassName"
-// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
-// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
+// +kubebuilder:printcolumn:name="StartedAt",type="date",JSONPath=".status.startTime",priority=1
+// +kubebuilder:printcolumn:name="CompletedAt",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.failureMessage"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // ModelClassRun represent a execution of a model class training
@@ -137,9 +137,7 @@ type ModelClassRunStatus struct {
 	//+kubebuilder:validation:Optional
 	ModelName string `json:"modelName,omitempty" protobuf:"bytes,3,opt,name=modelName"`
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,4,opt,name=startTime"`
-	// +kubebuilder:validation:Optional
-	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,5,opt,name=endTime"`
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,5,opt,name=completedAt"`
 	// The phase of the pipeline run
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
@@ -164,7 +162,7 @@ type ModelClassRunStatus struct {
 
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,12,opt,name=lastUpdated"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,12,opt,name=updatedAt"`
 	// The log file specification that determines the location of all logs produced by the object
 	Logs catalog.Logs `json:"logs" protobuf:"bytes,13,opt,name=logs"`
 	// Last promotion was done

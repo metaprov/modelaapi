@@ -142,8 +142,8 @@ type StudyCondition struct {
 // +kubebuilder:printcolumn:name="Best model",type="string",JSONPath=".status.bestModel"
 // +kubebuilder:printcolumn:name="Trained",type="number",JSONPath=".status.search.completed"
 // +kubebuilder:printcolumn:name="Tested",type="number",JSONPath=".status.test.completed"
-// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
-// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
+// +kubebuilder:printcolumn:name="StartedAt",type="date",JSONPath=".status.startTime",priority=1
+// +kubebuilder:printcolumn:name="CompletedAt",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.lastFailure"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // Study represents an automatic search for the best machine learning model for a given dataset
@@ -313,12 +313,9 @@ type StudyStatus struct {
 	// Total models created for the study
 	// +kubebuilder:validation:Optional
 	Models int32 `json:"models,omitempty" protobuf:"varint,1,opt,name=models"`
-	// StartTime represents the time at which the execution of the Study started
+	// CompletedAt represents the time at which the Study was marked as completed, failed, or aborted
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,2,opt,name=startTime"`
-	// EndTime represents the time at which the Study was marked as completed, failed, or aborted
-	// +kubebuilder:validation:Optional
-	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,3,opt,name=endTime"`
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,3,opt,name=completedAt"`
 	// The name of the Model resource which was determined to be the highest-performing
 	// +kubebuilder:validation:Optional
 	BestModel string `json:"bestModel,omitempty" protobuf:"bytes,4,opt,name=bestModel"`
@@ -451,10 +448,10 @@ type StudyList struct {
 type StudyPhaseStatus struct {
 	// The time at which the phase started
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
+	StartedAt *metav1.Time `json:"startedAt,omitempty" protobuf:"bytes,1,opt,name=startedAt"`
 	// The time at which the phase concluded
 	// +kubebuilder:validation:Optional
-	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,2,opt,name=endTime"`
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,2,opt,name=completedAt"`
 	// The number of models pending training
 	// +kubebuilder:validation:Optional
 	Waiting int32 `json:"waiting,omitempty" protobuf:"varint,3,opt,name=waiting"`

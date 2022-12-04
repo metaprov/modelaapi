@@ -193,7 +193,7 @@ type DataProductStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,2,opt,name=updatedAt"`
 	// The number of DataSource resources that exist under the namespace
 	//+kubebuilder:validation:Optional
 	TotalDatasources int32 `json:"totalDatasources,omitempty" protobuf:"varint,3,opt,name=totalDatasources"`
@@ -301,7 +301,7 @@ type GovernanceReviewStatus struct {
 	// The approval status, which can be approved or rejected
 	Result ApprovalType `json:"result,omitempty" protobuf:"bytes,1,opt,name=result"`
 	// The date of the approval
-	ApprovalDate *metav1.Time `json:"approvalDate,omitempty" protobuf:"bytes,2,opt,name=approvalDate"`
+	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,2,opt,name=approvedAt"`
 	// Notes taken during the review
 	Notes string `json:"notes,omitempty" protobuf:"bytes,3,opt,name=notes"`
 }

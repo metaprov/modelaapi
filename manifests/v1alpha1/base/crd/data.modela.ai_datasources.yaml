@@ -1196,15 +1196,15 @@ spec:
               lastDatasetName:
                 description: The name of the last Dataset created using the DataSource
                 type: string
-              lastUpdated:
-                description: Last time the object was updated
-                format: date-time
-                type: string
               observedGeneration:
                 description: ObservedGeneration is the last generation that was acted
                   on
                 format: int64
                 type: integer
+              updatedAt:
+                description: Last time the object was updated
+                format: date-time
+                type: string
             type: object
         required:
         - metadata

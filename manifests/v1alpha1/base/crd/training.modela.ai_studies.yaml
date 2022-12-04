@@ -58,11 +58,11 @@ spec:
       name: Tested
       type: number
     - jsonPath: .status.startTime
-      name: StartTime
+      name: StartedAt
       priority: 1
       type: date
     - jsonPath: .status.completionTime
-      name: CompletionTime
+      name: CompletedAt
       priority: 1
       type: date
     - jsonPath: .status.lastFailure
@@ -2579,7 +2579,7 @@ spec:
                       trained
                     format: int32
                     type: integer
-                  endTime:
+                  completedAt:
                     description: The time at which the phase concluded
                     format: date-time
                     type: string
@@ -2597,7 +2597,7 @@ spec:
                     description: The number of models currently being trained
                     format: int32
                     type: integer
-                  startTime:
+                  startedAt:
                     description: The time at which the phase started
                     format: date-time
                     type: string
@@ -3014,6 +3014,11 @@ spec:
                 description: The score of the Model resource which was determined
                   to be the highest-performing
                 type: number
+              completedAt:
+                description: CompletedAt represents the time at which the Study was
+                  marked as completed, failed, or aborted
+                format: date-time
+                type: string
               conditions:
                 items:
                   description: StudyCondition describes the state of a Study at a
@@ -3046,11 +3051,6 @@ spec:
                     description: The location of the prediction outlier detection
                     type: string
                 type: object
-              endTime:
-                description: EndTime represents the time at which the Study was marked
-                  as completed, failed, or aborted
-                format: date-time
-                type: string
               ensemble:
                 description: EnsembleStatus contains the status of the ensemble phase
                 properties:
@@ -3063,7 +3063,7 @@ spec:
                       trained
                     format: int32
                     type: integer
-                  endTime:
+                  completedAt:
                     description: The time at which the phase concluded
                     format: date-time
                     type: string
@@ -3081,7 +3081,7 @@ spec:
                     description: The number of models currently being trained
                     format: int32
                     type: integer
-                  startTime:
+                  startedAt:
                     description: The time at which the phase started
                     format: date-time
                     type: string
@@ -3102,7 +3102,7 @@ spec:
                       trained
                     format: int32
                     type: integer
-                  endTime:
+                  completedAt:
                     description: The time at which the phase concluded
                     format: date-time
                     type: string
@@ -3120,7 +3120,7 @@ spec:
                     description: The number of models currently being trained
                     format: int32
                     type: integer
-                  startTime:
+                  startedAt:
                     description: The time at which the phase started
                     format: date-time
                     type: string
@@ -3150,7 +3150,7 @@ spec:
                       trained
                     format: int32
                     type: integer
-                  endTime:
+                  completedAt:
                     description: The time at which the phase concluded
                     format: date-time
                     type: string
@@ -3168,7 +3168,7 @@ spec:
                     description: The number of models currently being trained
                     format: int32
                     type: integer
-                  startTime:
+                  startedAt:
                     description: The time at which the phase started
                     format: date-time
                     type: string
@@ -3316,7 +3316,7 @@ spec:
                       trained
                     format: int32
                     type: integer
-                  endTime:
+                  completedAt:
                     description: The time at which the phase concluded
                     format: date-time
                     type: string
@@ -3334,7 +3334,7 @@ spec:
                     description: The number of models currently being trained
                     format: int32
                     type: integer
-                  startTime:
+                  startedAt:
                     description: The time at which the phase started
                     format: date-time
                     type: string
@@ -3343,11 +3343,6 @@ spec:
                     format: int32
                     type: integer
                 type: object
-              startTime:
-                description: StartTime represents the time at which the execution
-                  of the Study started
-                format: date-time
-                type: string
               test:
                 description: TestStatus contains the status of the testing phase
                 properties:
@@ -3360,7 +3355,7 @@ spec:
                       trained
                     format: int32
                     type: integer
-                  endTime:
+                  completedAt:
                     description: The time at which the phase concluded
                     format: date-time
                     type: string
@@ -3378,7 +3373,7 @@ spec:
                     description: The number of models currently being trained
                     format: int32
                     type: integer
-                  startTime:
+                  startedAt:
                     description: The time at which the phase started
                     format: date-time
                     type: string

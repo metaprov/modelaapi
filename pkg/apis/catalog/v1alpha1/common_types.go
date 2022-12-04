@@ -2178,7 +2178,7 @@ type LastRunStatus struct {
 	Status string `json:"status,omitempty" protobuf:"bytes,2,opt,name=status"`
 	// The time at which the run concluded
 	// +kubebuilder:validation:Optional
-	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,3,opt,name=completionTime"`
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,3,opt,name=completedAt"`
 	// The duration of the run in seconds
 	// +kubebuilder:validation:Optional
 	Duration int32 `json:"duration,omitempty" protobuf:"varint,4,opt,name=duration"`
@@ -2386,10 +2386,10 @@ type TestSuiteResult struct {
 	Errors int32 `json:"errors,omitempty" protobuf:"varint,3,opt,name=errors"`
 	// Start time of running the suite
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,4,opt,name=startTime"`
+	StartedAt *metav1.Time `json:"startedAt,omitempty" protobuf:"bytes,4,opt,name=startedAt"`
 	// Stop time of running the suite.
 	// +kubebuilder:validation:Optional
-	StopTime *metav1.Time `json:"stopTime,omitempty" protobuf:"bytes,5,opt,name=stopTime"`
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,5,opt,name=completedAt"`
 	// The result of executing the test suite. The result contain one result object per test case.
 	// +kubebuilder:validation:Optional
 	Tests []DataTestCaseResult `json:"tests,omitempty" protobuf:"bytes,6,rep,name=tests"`

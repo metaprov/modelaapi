@@ -308,7 +308,7 @@ type ModelClassStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,4,opt,name=lastUpdated"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,4,opt,name=updatedAt"`
 	// BestFE specifies the best feature engineering pipeline produced by the ModelClass
 	//+kubebuilder:validation:Optional
 	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,5,opt,name=bestFE"`

@@ -611,10 +611,6 @@ spec:
                 description: In the case of failure, the Dataset resource controller
                   will set this field with a failure reason
                 type: string
-              lastUpdated:
-                description: Last time the object was updated
-                format: date-time
-                type: string
               logs:
                 description: The log file specification that determines the location
                   of all logs produced by the object
@@ -657,6 +653,10 @@ spec:
               unitTestsResult:
                 description: Test suite for this histogram.
                 properties:
+                  completedAt:
+                    description: Stop time of running the suite.
+                    format: date-time
+                    type: string
                   entityRef:
                     description: A reference to the object under test. Best practice
                       is to have one suite for an object
@@ -704,12 +704,8 @@ spec:
                       error, e.g. cannot connect to a dataset
                     format: int32
                     type: integer
-                  startTime:
+                  startedAt:
                     description: Start time of running the suite
-                    format: date-time
-                    type: string
-                  stopTime:
-                    description: Stop time of running the suite.
                     format: date-time
                     type: string
                   tests:
@@ -848,6 +844,10 @@ spec:
                       type: object
                     type: array
                 type: object
+              updatedAt:
+                description: Last time the object was updated
+                format: date-time
+                type: string
             type: object
         required:
         - metadata

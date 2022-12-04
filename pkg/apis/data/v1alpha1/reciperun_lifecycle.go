@@ -236,7 +236,7 @@ func (reciperun RecipeRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierNam
 // Return the state of the run as RunStatus
 func (reciperun RecipeRun) RunStatus() *catalog.LastRunStatus {
 	result := &catalog.LastRunStatus{
-		CompletionTime: reciperun.Status.EndTime,
+		CompletedAt:    reciperun.Status.EndTime,
 		Duration:       int32(reciperun.Status.EndTime.Unix() - reciperun.Status.StartTime.Unix()),
 		FailureReason:  reciperun.Status.FailureReason,
 		FailureMessage: reciperun.Status.FailureMessage,

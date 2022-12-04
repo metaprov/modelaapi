@@ -118,8 +118,8 @@ func (in DataPipelineRun) IsFailed() bool {
 
 func (r *DataPipelineRun) MarkRunning() {
 	now := metav1.Now()
-	if r.Status.StartTime == nil {
-		r.Status.StartTime = &now
+	if r.Status.StartedAt == nil {
+		r.Status.StartedAt = &now
 	}
 	r.Status.Phase = DataPipelineRunPhaseRunning
 	r.CreateOrUpdateCond(DataPipelineRunCondition{
@@ -138,8 +138,8 @@ func (in *DataPipelineRun) MarkComplete() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if in.Status.EndTime == nil {
-		in.Status.EndTime = &now
+	if in.Status.ComplatedAt == nil {
+		in.Status.ComplatedAt = &now
 	}
 	in.Status.Progress = util.Int32Ptr(100)
 }
@@ -153,8 +153,8 @@ func (in *DataPipelineRun) MarkFailed(err error) {
 		Message: err.Error(),
 	})
 	now := metav1.Now()
-	if in.Status.EndTime == nil {
-		in.Status.EndTime = &now
+	if in.Status.ComplatedAt == nil {
+		in.Status.ComplatedAt = &now
 	}
 	in.Status.Progress = util.Int32Ptr(100)
 	in.Status.FailureMessage = util.StrPtr(err.Error())
@@ -168,8 +168,8 @@ func (in *DataPipelineRun) MarkAborted(err error) {
 		Reason: string(DataPipelineRunPhaseAborted),
 	})
 	now := metav1.Now()
-	if in.Status.EndTime == nil {
-		in.Status.EndTime = &now
+	if in.Status.ComplatedAt == nil {
+		in.Status.ComplatedAt = &now
 	}
 	in.Status.Progress = util.Int32Ptr(100)
 	in.Status.FailureMessage = util.StrPtr(err.Error())
@@ -207,8 +207,8 @@ func (run DataPipelineRun) CompletionAlert(tenantRef *v1.ObjectReference, notifi
 			},
 		},
 	}
-	if run.Status.EndTime != nil {
-		result.Spec.Fields["Completion Time"] = run.Status.EndTime.Format("01/2/2006 15:04:05")
+	if run.Status.ComplatedAt != nil {
+		result.Spec.Fields["Completion Time"] = run.Status.ComplatedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -237,8 +237,8 @@ func (run DataPipelineRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierNam
 			},
 		},
 	}
-	if run.Status.EndTime != nil {
-		result.Spec.Fields["Completion Time"] = run.Status.EndTime.Format("01/2/2006 15:04:05")
+	if run.Status.ComplatedAt != nil {
+		result.Spec.Fields["Completion Time"] = run.Status.ComplatedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -246,8 +246,8 @@ func (run DataPipelineRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierNam
 // Return the state of the run as RunStatus
 func (run DataPipelineRun) RunStatus() *catalog.LastRunStatus {
 	result := &catalog.LastRunStatus{
-		CompletionTime: run.Status.EndTime,
-		Duration:       int32(run.Status.EndTime.Unix() - run.Status.StartTime.Unix()),
+		CompletedAt:    run.Status.ComplatedAt,
+		Duration:       int32(run.Status.ComplatedAt.Unix() - run.Status.StartedAt.Unix()),
 		FailureReason:  run.Status.FailureReason,
 		FailureMessage: run.Status.FailureMessage,
 	}

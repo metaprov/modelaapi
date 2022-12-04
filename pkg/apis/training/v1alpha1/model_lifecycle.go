@@ -372,8 +372,8 @@ const (
 
 func (model *Model) MarkWaitingToTrain() {
 	now := metav1.Now()
-	if model.Status.StartTime == nil {
-		model.Status.StartTime = &now
+	if model.Status.StartedAt == nil {
+		model.Status.StartedAt = &now
 	}
 	model.Status.Phase = ModelPhasePending
 	model.Status.Progress = 0
@@ -387,11 +387,11 @@ func (model *Model) MarkWaitingToTrain() {
 
 func (model *Model) MarkTraining() {
 	now := metav1.Now()
-	if model.Status.StartTime == nil {
-		model.Status.StartTime = &now
+	if model.Status.StartedAt == nil {
+		model.Status.StartedAt = &now
 	}
-	if model.Status.TrainingStartTime == nil {
-		model.Status.TrainingStartTime = &now
+	if model.Status.TrainingStartedAt == nil {
+		model.Status.TrainingStartedAt = &now
 	}
 	model.Status.Phase = ModelPhaseTraining
 	model.Status.Progress = 10
@@ -490,9 +490,9 @@ func (model Model) IsShadow() bool {
 }
 
 func (model *Model) MarkTrained(ms []catalog.Measurement) {
-	if model.Status.TrainingEndTime == nil {
+	if model.Status.TrainingCompletedAt == nil {
 		now := metav1.Now()
-		model.Status.TrainingEndTime = &now
+		model.Status.TrainingCompletedAt = &now
 	}
 	model.Status.Train = ms
 	model.Status.Phase = ModelPhaseTrained
@@ -511,13 +511,13 @@ func (model *Model) MarkFailedToTrain(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	if model.Status.TrainingEndTime == nil {
+	if model.Status.TrainingCompletedAt == nil {
 		now := metav1.Now()
-		model.Status.TrainingEndTime = &now
+		model.Status.TrainingCompletedAt = &now
 	}
-	if model.Status.EndTime == nil {
+	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
-		model.Status.EndTime = &now
+		model.Status.CompletedAt = &now
 	}
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
@@ -564,9 +564,9 @@ func (model *Model) MarkWaitingToTest() {
 }
 
 func (model *Model) MarkTesting() {
-	if model.Status.TestingStartTime == nil {
+	if model.Status.TestingStartedAt == nil {
 		now := metav1.Now()
-		model.Status.TestingStartTime = &now
+		model.Status.TestingStartedAt = &now
 	}
 	model.Status.Phase = ModelPhaseTesting
 	model.CreateOrUpdateCond(ModelCondition{
@@ -587,9 +587,9 @@ func (model *Model) MarkTestingFailed(err string) {
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to test." + err)
 	model.Status.Progress = 100
-	if model.Status.EndTime == nil {
+	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
-		model.Status.EndTime = &now
+		model.Status.CompletedAt = &now
 	}
 
 }
@@ -600,9 +600,9 @@ func (model *Model) MarkTested() {
 		Type:   ModelTested,
 		Status: v1.ConditionTrue,
 	})
-	if model.Status.TestingEndTime == nil {
+	if model.Status.TestingCompletedAt == nil {
 		now := metav1.Now()
-		model.Status.TestingEndTime = &now
+		model.Status.TestingCompletedAt = &now
 	}
 	model.Status.Progress = 80
 }
@@ -624,7 +624,7 @@ func (model Model) Testing() bool {
 }
 
 func (model Model) WaitingToTest() bool {
-	return *model.Spec.Tested && model.Status.TestingStartTime == nil
+	return *model.Spec.Tested && model.Status.TestingStartedAt == nil
 }
 
 // -------------------- Unit testing
@@ -661,8 +661,8 @@ func (model *Model) MarkUnitTestFailed(msg string, stop bool) {
 		model.Status.FailureMessage = util.StrPtr(msg)
 		model.Status.Progress = 100
 		now := metav1.Now()
-		if model.Status.EndTime == nil {
-			model.Status.EndTime = &now
+		if model.Status.CompletedAt == nil {
+			model.Status.CompletedAt = &now
 		}
 	}
 }
@@ -748,9 +748,9 @@ func (model *Model) MarkPruned(uri string) {
 		Status: v1.ConditionTrue,
 	})
 	model.Status.Progress = 100
-	if model.Status.EndTime == nil {
+	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
-		model.Status.EndTime = &now
+		model.Status.CompletedAt = &now
 	}
 }
 
@@ -822,9 +822,9 @@ func (model *Model) MarkForecastFailed(err string) {
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to forecast." + err)
 	model.Status.Progress = 100
-	if model.Status.EndTime == nil {
+	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
-		model.Status.EndTime = &now
+		model.Status.CompletedAt = &now
 	}
 	model.Status.FailureMessage = util.StrPtr(err)
 
@@ -877,9 +877,9 @@ func (model *Model) MarkPackgedFailed(err string) {
 	})
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to package." + err)
-	if model.Status.EndTime == nil {
+	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
-		model.Status.EndTime = &now
+		model.Status.CompletedAt = &now
 	}
 
 }
@@ -956,9 +956,9 @@ func (model *Model) MarkPublishFailed(err string) {
 	})
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to publish." + err)
-	if model.Status.EndTime == nil {
+	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
-		model.Status.EndTime = &now
+		model.Status.CompletedAt = &now
 	}
 
 }
@@ -997,9 +997,9 @@ func (model *Model) MarkTrainedDriftDetectorFailed(err string) {
 	})
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to train drift detector." + err)
-	if model.Status.EndTime == nil {
+	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
-		model.Status.EndTime = &now
+		model.Status.CompletedAt = &now
 	}
 
 }
@@ -1013,8 +1013,8 @@ func (model *Model) MarkReleaseFailed(err string) {
 	})
 	model.Status.Phase = ModelPhaseFailed
 	now := metav1.Now()
-	model.Status.TrainingEndTime = &now
-	model.Status.EndTime = &now
+	model.Status.TrainingCompletedAt = &now
+	model.Status.CompletedAt = &now
 	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to release." + err)
 	model.Status.Progress = 100
 
@@ -1040,8 +1040,8 @@ func (model *Model) MarkAborted() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if model.Status.EndTime == nil {
-		model.Status.EndTime = &now
+	if model.Status.CompletedAt == nil {
+		model.Status.CompletedAt = &now
 	}
 }
 
@@ -1079,7 +1079,7 @@ func (model *Model) MarkReady() {
 	})
 	// mark the time
 	now := metav1.Now()
-	model.Status.EndTime = &now
+	model.Status.CompletedAt = &now
 	model.Status.Phase = ModelPhaseCompleted
 	model.Status.Progress = 100
 }
@@ -1229,8 +1229,8 @@ func (model Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *
 			},
 		},
 	}
-	if model.Status.EndTime != nil {
-		result.Spec.Fields["Completion Time"] = model.Status.EndTime.Format("01/2/2006 15:04:05")
+	if model.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = model.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 
@@ -1267,8 +1267,8 @@ func (model Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *strin
 			},
 		},
 	}
-	if model.Status.EndTime != nil {
-		result.Spec.Fields["Completion Time"] = model.Status.EndTime.Format("01/2/2006 15:04:05")
+	if model.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = model.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -1276,9 +1276,9 @@ func (model Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *strin
 // =================== Tun
 
 func (model *Model) MarkTuned(ms []catalog.Measurement) {
-	if model.Status.TuningEndTime == nil {
+	if model.Status.TuningCompletedAt == nil {
 		now := metav1.Now()
-		model.Status.TuningEndTime = &now
+		model.Status.TuningCompletedAt = &now
 	}
 	model.Status.Tune = ms
 	model.Status.Phase = ModelPhaseTuned
@@ -1297,13 +1297,13 @@ func (model *Model) MarkFailedToTune(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	if model.Status.TuningEndTime == nil {
+	if model.Status.TuningCompletedAt == nil {
 		now := metav1.Now()
-		model.Status.TuningEndTime = &now
+		model.Status.TuningCompletedAt = &now
 	}
-	if model.Status.EndTime == nil {
+	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
-		model.Status.EndTime = &now
+		model.Status.CompletedAt = &now
 	}
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
@@ -1333,9 +1333,9 @@ func (model *Model) Tuned() bool {
 }
 
 func (model *Model) MarkMerged() {
-	if model.Status.TuningEndTime == nil {
+	if model.Status.TuningCompletedAt == nil {
 		now := metav1.Now()
-		model.Status.TuningEndTime = &now
+		model.Status.TuningCompletedAt = &now
 	}
 	model.Status.Phase = ModelPhaseMerged
 	model.CreateOrUpdateCond(ModelCondition{
@@ -1353,13 +1353,13 @@ func (model *Model) MarkFailedToMerge(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseMerged
-	if model.Status.TuningEndTime == nil {
+	if model.Status.TuningCompletedAt == nil {
 		now := metav1.Now()
-		model.Status.TuningEndTime = &now
+		model.Status.TuningCompletedAt = &now
 	}
-	if model.Status.EndTime == nil {
+	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
-		model.Status.EndTime = &now
+		model.Status.CompletedAt = &now
 	}
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value

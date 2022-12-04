@@ -94,7 +94,7 @@ type NotifierStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,3,opt,name=updatedAt"`
 	// The status of Notification Channels after Alerts have been forwarded to them
 	ChannelsStatus []NotificationChannelStatus `json:"channelsStatus,omitempty" protobuf:"bytes,4,opt,name=channelsStatus"`
 	//+kubebuilder:validation:Optional

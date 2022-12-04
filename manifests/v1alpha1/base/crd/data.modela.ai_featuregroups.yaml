@@ -1300,10 +1300,6 @@ spec:
                     format: date-time
                     type: string
                 type: object
-              lastUpdated:
-                description: Last time the object was updated
-                format: date-time
-                type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on
@@ -1481,6 +1477,10 @@ spec:
                     format: date-time
                     type: string
                 type: object
+              updatedAt:
+                description: Last time the object was updated
+                format: date-time
+                type: string
             type: object
         required:
         - metadata

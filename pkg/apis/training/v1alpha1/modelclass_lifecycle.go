@@ -138,7 +138,7 @@ func (mclass ModelClass) IsFailed() bool {
 	return cond.Status == v1.ConditionFalse
 }
 
-// At the start of training, mark the training dataset as pending
+// FiredAt the start of training, mark the training dataset as pending
 
 ///////////////////////////////////////////////
 // Drifted

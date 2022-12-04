@@ -788,8 +788,8 @@ message DataPipelineList {
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Progress",type="string",JSONPath=".status.progress",priority=1
 // +kubebuilder:printcolumn:name="Pipeline",type="string",JSONPath=".spec.datapipelineName"
-// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
-// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
+// +kubebuilder:printcolumn:name="StartedAt",type="date",JSONPath=".status.startTime",priority=1
+// +kubebuilder:printcolumn:name="CompletedAt",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Failure",type="string",JSONPath=".metadata.failureMessage"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // DataPipelineRun represent one execution of the data pipeline
@@ -893,13 +893,13 @@ message DataPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional string phase = 3;
 
-  // StartTime is the start time of the pipeline
+  // StartedAt is the start time of the pipeline
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 4;
 
-  // CompletionTime is the end time of the pipeline
+  // CompletedAt is the end time of the pipeline
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time complatedAt = 5;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
@@ -1000,7 +1000,7 @@ message DataPipelineStatus {
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
 
   // Last run is the last time a data pipeline run was created
   // +kubebuilder:validation:Optional
@@ -1194,7 +1194,7 @@ message DataProductStatus {
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
 
   // The number of DataSource resources that exist under the namespace
   // +kubebuilder:validation:Optional
@@ -1351,7 +1351,7 @@ message DataProductVersionStatus {
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
 
   // In the case of failure, the Dataset resource controller will set this field with a failure reason
   // Borrowed from cluster api controller
@@ -1504,7 +1504,7 @@ message DataSourceStatus {
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 5;
 
   // In the case of failure, the DataSource resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
@@ -1850,7 +1850,7 @@ message DatasetStatus {
 
   // Last time the Dataset was used with a Study
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudyTime = 10;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudyAt = 10;
 
   // In the case of failure, the Dataset resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
@@ -1879,19 +1879,15 @@ message DatasetStatus {
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 18;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 18;
 
   // The Docker images used during the analysis of the Dataset
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images images = 19;
 
-  // The time that the system started processing the Dataset, usually after the creation of the object
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 20;
-
   // The time that the Dataset finished processing, either due to completion or failure
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 21;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 21;
 
   // The generated training feature histogram, Empty if no feature histogram generated
   // +kubebuilder:validation:Optional
@@ -2014,7 +2010,7 @@ message EntityStatus {
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
@@ -2204,7 +2200,7 @@ message FeatureGroupStatus {
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 4;
 
   // The current number of rows in the feature group.
   // +kubebuilder:validation:Optional
@@ -2372,7 +2368,7 @@ message FeatureHistogramStatus {
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 3;
 
   // The log file specification that determines the location of all logs produced by the object
   // +kubebuilder:validation:Optional
@@ -2473,7 +2469,7 @@ message GovernanceReviewStatus {
   optional string result = 1;
 
   // The date of the approval
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvalDate = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 2;
 
   // Notes taken during the review
   optional string notes = 3;
@@ -2838,8 +2834,8 @@ message RecipePartSpec {
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Recipe",type="string",JSONPath=".spec.recipeName"
-// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
-// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
+// +kubebuilder:printcolumn:name="StartedAt",type="date",JSONPath=".status.startTime",priority=1
+// +kubebuilder:printcolumn:name="CompletedAt",type="date",JSONPath=".status.completionTime",priority=1
 // RecipeRun represent one execution of the recipe.
 // Execution is performed by creating a Kubernetes job.
 message RecipeRun {
@@ -3032,7 +3028,7 @@ message RecipeStatus {
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 4;
 
   // +patchMergeKey=type
   // +patchStrategy=merge

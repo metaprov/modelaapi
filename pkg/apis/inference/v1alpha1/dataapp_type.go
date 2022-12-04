@@ -130,7 +130,7 @@ type DataAppStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,2,opt,name=updatedAt"`
 	// The reference to the Kubernetes Serving associated with the DataApp
 	//+kubebuilder:validation:Optional
 	DeploymentRef v1.ObjectReference `json:"deploymentStatus,omitempty" protobuf:"bytes,3,opt,name=deploymentStatus"`

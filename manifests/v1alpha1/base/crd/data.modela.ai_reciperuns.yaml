@@ -35,11 +35,11 @@ spec:
       name: Recipe
       type: string
     - jsonPath: .status.startTime
-      name: StartTime
+      name: StartedAt
       priority: 1
       type: date
     - jsonPath: .status.completionTime
-      name: CompletionTime
+      name: CompletedAt
       priority: 1
       type: date
     name: v1alpha1
@@ -449,6 +449,10 @@ spec:
               unitTestsResult:
                 description: Test suite for this recipe
                 properties:
+                  completedAt:
+                    description: Stop time of running the suite.
+                    format: date-time
+                    type: string
                   entityRef:
                     description: A reference to the object under test. Best practice
                       is to have one suite for an object
@@ -496,12 +500,8 @@ spec:
                       error, e.g. cannot connect to a dataset
                     format: int32
                     type: integer
-                  startTime:
+                  startedAt:
                     description: Start time of running the suite
-                    format: date-time
-                    type: string
-                  stopTime:
-                    description: Stop time of running the suite.
                     format: date-time
                     type: string
                   tests:

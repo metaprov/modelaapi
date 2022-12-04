@@ -160,55 +160,53 @@ type PredictionSpec struct {
 
 // PredictionStatus is the observed state of a Prediction
 type PredictionStatus struct {
-	// StartTime denotes the time when the batch prediction Job started
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
-	// EndTime denotes the time when the batch prediction Job completed or failed
-	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,2,opt,name=endTime"`
+	// CompletedAt denotes the time when the batch prediction Job completed or failed
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,1,opt,name=completedAt"`
 	// The current phase of the prediction
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
-	Phase PredictionPhase `json:"phase,omitempty" protobuf:"bytes,3,opt,name=phase"`
+	Phase PredictionPhase `json:"phase,omitempty" protobuf:"bytes,2,opt,name=phase"`
 	// The collection of metrics that represent the average measurement across all predictions for each
 	// metric specified by the Tests field of the Predictor
 	// +kubebuilder:validation:Optional
-	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,4,opt,name=unitTestsResult"`
+	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,3,opt,name=unitTestsResult"`
 	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,5,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`
 	// The number of rows predicted
 	//+kubebuilder:validation:Optional
-	Rows int32 `json:"rows,omitempty" protobuf:"varint,6,opt,name=rows"`
+	Rows int32 `json:"rows,omitempty" protobuf:"varint,5,opt,name=rows"`
 	// The trigger that started the batch prediction
 	//+kubebuilder:validation:Optional
-	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,7,opt,name=triggeredBy"`
+	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,6,opt,name=triggeredBy"`
 	// The location of logs produced by the batch prediction Job
 	//+kubebuilder:validation:Optional
-	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,8,opt,name=logs"`
+	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,7,opt,name=logs"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,9,opt,name=lastUpdated"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,8,opt,name=updatedAt"`
 	// In the case of failure, the Prediction resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,10,opt,name=failureReason"`
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,9,opt,name=failureReason"`
 	// In the case of failure, the Prediction resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,11,opt,name=failureMessage"`
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,10,opt,name=failureMessage"`
 	// The dataset that was generated.
 	//+kubebuilder:validation:Optional
-	DatasetRef v1.ObjectReference `json:"datasetRef,omitempty" protobuf:"bytes,12,opt,name=datasetRef"`
+	DatasetRef v1.ObjectReference `json:"datasetRef,omitempty" protobuf:"bytes,11,opt,name=datasetRef"`
 	// The histogram values, map from column name to an histogram
 	// +kubebuilder:validation:Optional
-	Columns []data.ColumnHistogram `json:"columns,omitempty" protobuf:"bytes,13,rep,name=columns"`
+	Columns []data.ColumnHistogram `json:"columns,omitempty" protobuf:"bytes,12,rep,name=columns"`
 	// Set to true if drifted
 	// +kubebuilder:validation:Optional
-	Drifted bool `json:"drifted,omitempty" protobuf:"bytes,14,rep,name=drifted"`
+	Drifted bool `json:"drifted,omitempty" protobuf:"bytes,13,rep,name=drifted"`
 	// the forecast results for this forecast
 	//+kubebuilder:validation:Optional
-	Forecast ForecastStatus `json:"forecast,omitempty" protobuf:"bytes,15,opt,name=forecast"`
+	Forecast ForecastStatus `json:"forecast,omitempty" protobuf:"bytes,14,opt,name=forecast"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,16,rep,name=conditions"`
+	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,15,rep,name=conditions"`
 }
 
 // ForecastSpec specifies the details of a forecasting model

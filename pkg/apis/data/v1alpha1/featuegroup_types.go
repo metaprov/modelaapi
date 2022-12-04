@@ -150,7 +150,7 @@ type FeatureGroupStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,4,opt,name=lastUpdated"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,4,opt,name=updatedAt"`
 	// The current number of rows in the feature group.
 	//+kubebuilder:validation:Optional
 	Rows int32 `json:"rows,omitempty" protobuf:"varint,5,opt,name=rows"`

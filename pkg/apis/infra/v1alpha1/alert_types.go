@@ -48,7 +48,7 @@ type AlertCondition struct {
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.namespace",description="",priority=1
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.name",description="",priority=1
 // +kubebuilder:printcolumn:name="Notifier",type="string",JSONPath=".spec.notifierName",description="",priority=1
-// +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
+// +kubebuilder:printcolumn:name="FiredAt",type="date",JSONPath=".status.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // Alert represents temporal information about an event that occurred with a Modela custom resource
 type Alert struct {
@@ -129,13 +129,13 @@ type AlertStatus struct {
 	Phase AlertPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// The time when the Alert was fired
 	// +kubebuilder:validation:Optional
-	At *metav1.Time `json:"at" protobuf:"bytes,2,opt,name=at"`
+	FiredAt *metav1.Time `json:"firedAt" protobuf:"bytes,2,opt,name=firedAt"`
 	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,4,opt,name=lastUpdated"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,4,opt,name=updatedAt"`
 	// In the case of failure, the Alert resource controller will set this field with a failure reason
 	//+kubebuilder:validation:Optional
 	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,5,opt,name=failureReason"`

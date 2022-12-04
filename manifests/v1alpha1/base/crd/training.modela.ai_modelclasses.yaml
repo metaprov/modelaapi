@@ -2995,10 +2995,6 @@ spec:
                   model class
                 format: date-time
                 type: string
-              lastUpdated:
-                description: The last time the object was updated
-                format: date-time
-                type: string
               models:
                 description: Total models created for the ModelClass
                 format: int32
@@ -3225,6 +3221,10 @@ spec:
                 - on-github-event
                 - on-concept-drift
                 - on-pref-degradation
+                type: string
+              updatedAt:
+                description: The last time the object was updated
+                format: date-time
                 type: string
             type: object
         type: object

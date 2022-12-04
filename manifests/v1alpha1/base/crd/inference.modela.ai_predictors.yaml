@@ -3868,6 +3868,10 @@ spec:
               servingTestResult:
                 description: The results of running the serving tests
                 properties:
+                  completedAt:
+                    description: Stop time of running the suite.
+                    format: date-time
+                    type: string
                   entityRef:
                     description: A reference to the object under test. Best practice
                       is to have one suite for an object
@@ -3915,12 +3919,8 @@ spec:
                       error, e.g. cannot connect to a dataset
                     format: int32
                     type: integer
-                  startTime:
+                  startedAt:
                     description: Start time of running the suite
-                    format: date-time
-                    type: string
-                  stopTime:
-                    description: Stop time of running the suite.
                     format: date-time
                     type: string
                   tests:

@@ -33,11 +33,11 @@ spec:
       name: MC
       type: string
     - jsonPath: .status.startTime
-      name: StartTime
+      name: StartedAt
       priority: 1
       type: date
     - jsonPath: .status.completionTime
-      name: CompletionTime
+      name: CompletedAt
       priority: 1
       type: date
     - jsonPath: .status.failureMessage
@@ -166,6 +166,9 @@ spec:
               auto:
                 description: If true the promotion was automatic
                 type: boolean
+              completedAt:
+                format: date-time
+                type: string
               conditions:
                 items:
                   description: ModelClassRunCondition describes the state of a ModelClassRun
@@ -198,9 +201,6 @@ spec:
                 description: The name of the dataset that was captured by the label
                   filter.
                 type: string
-              endTime:
-                format: date-time
-                type: string
               failureMessage:
                 description: UpdateUpdateStrategy in case of terminal failure message
                 type: string
@@ -212,10 +212,6 @@ spec:
                 description: Folder for pipeline run artifacts. This is assigned by
                   the system The folder contains all the pipeline artifacts - metadata,
                   logs
-                type: string
-              lastUpdated:
-                description: Last time the object was updated
-                format: date-time
                 type: string
               logs:
                 description: The log file specification that determines the location
@@ -265,11 +261,12 @@ spec:
                 description: Last promotion was done
                 format: date-time
                 type: string
-              startTime:
-                format: date-time
-                type: string
               studyName:
                 description: The name of the study generated.
+                type: string
+              updatedAt:
+                description: Last time the object was updated
+                format: date-time
                 type: string
             required:
             - logs

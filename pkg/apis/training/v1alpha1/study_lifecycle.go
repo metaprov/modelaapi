@@ -62,10 +62,10 @@ func (study *Study) AddPipelineLable(pipeline string) {
 }
 
 func (study Study) ReachedMaxFETime() bool {
-	if study.Status.FeatureEngineeringStatus.StartTime == nil {
+	if study.Status.FeatureEngineeringStatus.StartedAt == nil {
 		return false // not started
 	}
-	duration := metav1.Now().Unix() - study.Status.FeatureEngineeringStatus.StartTime.Unix()
+	duration := metav1.Now().Unix() - study.Status.FeatureEngineeringStatus.StartedAt.Unix()
 	return int32(duration/60) >= *study.Spec.FESearch.MaxTimeSec
 }
 
@@ -90,10 +90,10 @@ func (study Study) ShouldEarlyStopFE() bool {
 
 // Enabled if we reached max time
 func (study Study) ReachedMaxTime() bool {
-	if study.Status.SearchStatus.StartTime == nil {
+	if study.Status.SearchStatus.StartedAt == nil {
 		return false // not started
 	}
-	duration := metav1.Now().Unix() - study.Status.SearchStatus.StartTime.Unix()
+	duration := metav1.Now().Unix() - study.Status.SearchStatus.StartedAt.Unix()
 	return int32(duration/60) >= *study.Spec.Search.MaxTime
 }
 
@@ -216,7 +216,7 @@ func ParseStudyYaml(content []byte) (*Study, error) {
 
 func (study *Study) SetStartTime() {
 	now := time.Now()
-	study.Status.StartTime = &metav1.Time{Time: now}
+	study.Status.StartedAt = &metav1.Time{Time: now}
 }
 
 func (study Study) ReportName() string {
@@ -420,7 +420,7 @@ func (study *Study) MarkFeatureEngineering() {
 		Reason: ReasonFeatureEngineering,
 	})
 	now := metav1.Now()
-	study.Status.FeatureEngineeringStatus.StartTime = &now
+	study.Status.FeatureEngineeringStatus.StartedAt = &now
 	study.Status.Phase = StudyPhaseEngineeringFeature
 }
 
@@ -430,8 +430,8 @@ func (study *Study) MarkFeatureEngineered() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if study.Status.FeatureEngineeringStatus.EndTime == nil {
-		study.Status.FeatureEngineeringStatus.EndTime = &now
+	if study.Status.FeatureEngineeringStatus.CompletedAt == nil {
+		study.Status.FeatureEngineeringStatus.CompletedAt = &now
 	}
 	study.Status.Phase = StudyPhaseFeatureEngineered
 	study.RefreshProgress()
@@ -466,8 +466,8 @@ func (study *Study) MarkBaselining() {
 		Reason: ReasonBaselining,
 	})
 	now := metav1.Now()
-	if study.Status.BaselineStatus.StartTime == nil {
-		study.Status.BaselineStatus.StartTime = &now
+	if study.Status.BaselineStatus.StartedAt == nil {
+		study.Status.BaselineStatus.StartedAt = &now
 	}
 	study.Status.Phase = StudyPhaseBaseline
 	study.RefreshProgress()
@@ -479,8 +479,8 @@ func (study *Study) MarkBaselined() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if study.Status.BaselineStatus.EndTime == nil {
-		study.Status.BaselineStatus.EndTime = &now
+	if study.Status.BaselineStatus.CompletedAt == nil {
+		study.Status.BaselineStatus.CompletedAt = &now
 	}
 	study.Status.Phase = StudyPhaseBaselined
 	study.RefreshProgress()
@@ -514,7 +514,7 @@ func (study *Study) MarkReadyFailed(err string) {
 
 func (study *Study) UpdateEndTime() {
 	now := metav1.Now()
-	study.Status.EndTime = &now
+	study.Status.CompletedAt = &now
 }
 
 func (study *Study) MarkGCFailed(err string) {
@@ -546,8 +546,8 @@ func (study *Study) MarkSearching() {
 		Reason: ReasonTraining,
 	})
 	now := metav1.Now()
-	if study.Status.SearchStatus.StartTime == nil {
-		study.Status.SearchStatus.StartTime = &now
+	if study.Status.SearchStatus.StartedAt == nil {
+		study.Status.SearchStatus.StartedAt = &now
 	}
 	study.Status.Phase = StudyPhaseSearching
 	study.RefreshProgress()
@@ -559,8 +559,8 @@ func (study *Study) MarkSearched() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if study.Status.SearchStatus.EndTime == nil {
-		study.Status.SearchStatus.EndTime = &now
+	if study.Status.SearchStatus.CompletedAt == nil {
+		study.Status.SearchStatus.CompletedAt = &now
 	}
 	study.Status.Phase = StudyPhaseSearched
 	study.RefreshProgress()
@@ -595,8 +595,8 @@ func (study *Study) MarkEnsembling() {
 		Reason: ReasonCreateEnsemble,
 	})
 	now := metav1.Now()
-	if study.Status.EnsembleStatus.StartTime == nil {
-		study.Status.EnsembleStatus.StartTime = &now
+	if study.Status.EnsembleStatus.StartedAt == nil {
+		study.Status.EnsembleStatus.StartedAt = &now
 	}
 	study.Status.Phase = StudyPhaseCreatingEnsembles
 	study.RefreshProgress()
@@ -608,8 +608,8 @@ func (study *Study) MarkEnsembled() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if study.Status.EnsembleStatus.EndTime == nil {
-		study.Status.EnsembleStatus.EndTime = &now
+	if study.Status.EnsembleStatus.CompletedAt == nil {
+		study.Status.EnsembleStatus.CompletedAt = &now
 	}
 	study.Status.Phase = StudyPhaseCreatedEnsembles
 	study.RefreshProgress()
@@ -623,8 +623,8 @@ func (study *Study) MarkEnsembleFailed(err string) {
 		Message: err,
 	})
 	now := metav1.Now()
-	if study.Status.EnsembleStatus.EndTime == nil {
-		study.Status.EnsembleStatus.EndTime = &now
+	if study.Status.EnsembleStatus.CompletedAt == nil {
+		study.Status.EnsembleStatus.CompletedAt = &now
 	}
 
 	study.Status.Phase = StudyPhaseFailed
@@ -649,7 +649,7 @@ func (study *Study) MarkTesting() {
 		Reason: ReasonTesting,
 	})
 	now := metav1.Now()
-	study.Status.TestStatus.StartTime = &now
+	study.Status.TestStatus.StartedAt = &now
 	study.Status.Phase = StudyPhaseTesting
 }
 
@@ -659,7 +659,7 @@ func (study *Study) MarkTested() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	study.Status.TestStatus.EndTime = &now
+	study.Status.TestStatus.CompletedAt = &now
 	study.Status.Phase = StudyPhaseTested
 	study.RefreshProgress()
 }
@@ -697,7 +697,7 @@ func (study *Study) MarkTuning() {
 		Reason: ReasonTuning,
 	})
 	now := metav1.Now()
-	study.Status.TestStatus.StartTime = &now
+	study.Status.TestStatus.StartedAt = &now
 	study.Status.Phase = StudyPhaseTuning
 }
 
@@ -707,7 +707,7 @@ func (study *Study) MarkTuned() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	study.Status.TestStatus.EndTime = &now
+	study.Status.TestStatus.CompletedAt = &now
 	study.Status.Phase = StudyPhaseTuned
 	study.RefreshProgress()
 }
@@ -862,7 +862,7 @@ func (study *Study) MarkResumed() {
 
 func (study *Study) MarkReady() {
 	now := metav1.Now()
-	study.Status.EndTime = &now
+	study.Status.CompletedAt = &now
 	study.CreateOrUpdateCond(StudyCondition{
 		Type:   StudyCompleted,
 		Status: v1.ConditionTrue,
@@ -924,11 +924,11 @@ func (study *Study) CreateReport(key string, bucketName string) *Report {
 // Answer true if the cv period ended.
 func (study *Study) MaxTimeOrModelReached() bool {
 
-	if study.Status.StartTime == nil {
+	if study.Status.StartedAt == nil {
 		return false
 	} else {
 		now := time.Now()
-		diff := now.Sub(study.Status.StartTime.Time)
+		diff := now.Sub(study.Status.StartedAt.Time)
 		timeOver := diff.Minutes() > float64(*study.Spec.Search.MaxTime)
 
 		// compare the model. We take the ensemble into consideration
@@ -950,7 +950,7 @@ func (study *Study) MarkReportFailed(err string) {
 	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to report." + err)
 	study.RefreshProgress()
 	now := metav1.Now()
-	study.Status.EndTime = &now
+	study.Status.CompletedAt = &now
 
 }
 
@@ -965,7 +965,7 @@ func (study *Study) MarkAbortFailed(err string) {
 	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to abort." + err)
 	study.RefreshProgress()
 	now := metav1.Now()
-	study.Status.EndTime = &now
+	study.Status.CompletedAt = &now
 
 }
 
@@ -980,7 +980,7 @@ func (study *Study) MarkPauseFailed(err string) {
 	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to pause." + err)
 	study.RefreshProgress()
 	now := metav1.Now()
-	study.Status.EndTime = &now
+	study.Status.CompletedAt = &now
 
 }
 
@@ -994,7 +994,7 @@ func (study *Study) MarkPartitionedFailed(err string) {
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to partition." + err)
 	now := metav1.Now()
-	study.Status.EndTime = &now
+	study.Status.CompletedAt = &now
 	study.RefreshProgress()
 }
 
@@ -1092,8 +1092,8 @@ func (study Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *
 			},
 		},
 	}
-	if study.Status.EndTime != nil {
-		result.Spec.Fields["Completion Time"] = study.Status.EndTime.Format("01/2/2006 15:04:05")
+	if study.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = study.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -1125,8 +1125,8 @@ func (study Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *strin
 			},
 		},
 	}
-	if study.Status.EndTime != nil {
-		result.Spec.Fields["Completion Time"] = study.Status.EndTime.Format("01/2/2006 15:04:05")
+	if study.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = study.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -1140,7 +1140,7 @@ func (study *Study) MarkModelFailed(model *Model, err error) {
 	study.Status.FailureMessage = util.StrPtr(msg)
 	study.RefreshProgress()
 	now := metav1.Now()
-	study.Status.EndTime = &now
+	study.Status.CompletedAt = &now
 }
 
 func (study Study) WorkerIndexFileKey(workerIndex int, task string) string {

@@ -41,7 +41,7 @@ spec:
       priority: 1
       type: string
     - jsonPath: .status.at
-      name: At
+      name: FiredAt
       type: date
     - jsonPath: .metadata.creationTimestamp
       name: Age
@@ -191,10 +191,6 @@ spec:
           status:
             description: AlertStatus is the observed state of an Alert
             properties:
-              at:
-                description: The time when the Alert was fired
-                format: date-time
-                type: string
               conditions:
                 items:
                   description: AlertCondition describes the state of an Alert at a
@@ -228,8 +224,8 @@ spec:
                 description: In the case of failure, the Alert resource controller
                   will set this field with a failure reason
                 type: string
-              lastUpdated:
-                description: The last time the object was updated
+              firedAt:
+                description: The time when the Alert was fired
                 format: date-time
                 type: string
               observedGeneration:
@@ -240,6 +236,10 @@ spec:
               phase:
                 default: Pending
                 description: The current phase of the Alert
+                type: string
+              updatedAt:
+                description: The last time the object was updated
+                format: date-time
                 type: string
             type: object
         type: object

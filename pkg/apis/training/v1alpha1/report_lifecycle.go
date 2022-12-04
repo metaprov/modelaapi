@@ -270,7 +270,7 @@ func (report *Report) MarkReportFailed(err string) {
 	})
 	report.Status.Phase = ReportPhaseFailed
 	now := metav1.Now()
-	report.Status.EndTime = &now
+	report.Status.CompletedAt = &now
 	report.Status.FailureMessage = util.StrPtr(err)
 
 }
@@ -285,7 +285,7 @@ func (report *Report) MarkReportReady(uri string) {
 	//liveUri := product.PrefixLiveUri(report.PdfUri())
 	report.Status.URI = uri
 	now := metav1.Now()
-	report.Status.EndTime = &now
+	report.Status.CompletedAt = &now
 
 }
 
@@ -318,8 +318,8 @@ func (report Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierName
 			},
 		},
 	}
-	if report.Status.EndTime != nil {
-		result.Spec.Fields["Completion Time"] = report.Status.EndTime.Format("01/2/2006 15:04:05")
+	if report.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = report.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 
 	return result
@@ -352,8 +352,8 @@ func (report Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *str
 			},
 		},
 	}
-	if report.Status.EndTime != nil {
-		result.Spec.Fields["Completion Time"] = report.Status.EndTime.Format("01/2/2006 15:04:05")
+	if report.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = report.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -366,8 +366,8 @@ func (report Report) IsFailed() bool {
 // Return the state of the run as RunStatus
 func (report Report) RunStatus() *catalog.LastRunStatus {
 	result := &catalog.LastRunStatus{
-		CompletionTime: report.Status.EndTime,
-		Duration:       int32(report.Status.EndTime.Unix() - report.Status.StartTime.Unix()),
+		CompletedAt:    report.Status.CompletedAt,
+		Duration:       int32(report.Status.CompletedAt.Unix() - report.Status.StartedAt.Unix()),
 		FailureReason:  report.Status.FailureReason,
 		FailureMessage: report.Status.FailureMessage,
 	}

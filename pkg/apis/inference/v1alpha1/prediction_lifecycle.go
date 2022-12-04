@@ -141,8 +141,8 @@ func (prediction *Prediction) MarkFailed(msg string) {
 		Message: msg,
 	})
 	now := metav1.Now()
-	if prediction.Status.EndTime == nil {
-		prediction.Status.EndTime = &now
+	if prediction.Status.CompletedAt == nil {
+		prediction.Status.CompletedAt = &now
 	}
 	prediction.Status.FailureMessage = util.StrPtr(msg)
 }
@@ -199,8 +199,8 @@ func (prediction *Prediction) MarkCompleted() {
 	})
 	prediction.Status.Phase = PredictionPhaseCompleted
 	now := metav1.Now()
-	if prediction.Status.EndTime == nil {
-		prediction.Status.EndTime = &now
+	if prediction.Status.CompletedAt == nil {
+		prediction.Status.CompletedAt = &now
 	}
 }
 
@@ -271,7 +271,7 @@ func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
 		},
 		Status: data.DatasetStatus{
 			ObservedGeneration: 0,
-			LastUpdated:        nil,
+			UpdatedAt:          nil,
 			Logs:               catalog.Logs{},
 			Phase:              "",
 		},
@@ -308,8 +308,8 @@ func (prediction Prediction) CompletionAlert(tenantRef *v1.ObjectReference, noti
 			},
 		},
 	}
-	if prediction.Status.EndTime != nil {
-		result.Spec.Fields["Completion Time"] = prediction.Status.EndTime.Format("01/2/2006 15:04:05")
+	if prediction.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = prediction.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -338,8 +338,8 @@ func (prediction Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifierN
 			},
 		},
 	}
-	if prediction.Status.EndTime != nil {
-		result.Spec.Fields["Completion Time"] = prediction.Status.EndTime.Format("01/2/2006 15:04:05")
+	if prediction.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = prediction.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -352,8 +352,8 @@ func (prediction Prediction) IsFailed() bool {
 // Return the state of the run as RunStatus
 func (prediction *Prediction) RunStatus() *catalog.LastRunStatus {
 	result := &catalog.LastRunStatus{
-		CompletionTime: prediction.Status.EndTime,
-		Duration:       int32(prediction.Status.EndTime.Unix() - prediction.Status.StartTime.Unix()),
+		CompletedAt:    prediction.Status.CompletedAt,
+		Duration:       int32(prediction.Status.CompletedAt.Unix() - prediction.CreationTimestamp.Unix()),
 		FailureReason:  prediction.Status.FailureReason,
 		FailureMessage: prediction.Status.FailureMessage,
 	}

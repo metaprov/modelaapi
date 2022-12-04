@@ -33,11 +33,11 @@ spec:
       name: Pipeline
       type: string
     - jsonPath: .status.startTime
-      name: StartTime
+      name: StartedAt
       priority: 1
       type: date
     - jsonPath: .status.completionTime
-      name: CompletionTime
+      name: CompletedAt
       priority: 1
       type: date
     - jsonPath: .metadata.failureMessage
@@ -263,6 +263,10 @@ spec:
           status:
             description: DataPipelineRunStatus defines the observed state of DataPipelineRun
             properties:
+              complatedAt:
+                description: CompletedAt is the end time of the pipeline
+                format: date-time
+                type: string
               conditions:
                 items:
                   description: DataPipelineRunCondition describes the state of a data
@@ -291,10 +295,6 @@ spec:
                   - type
                   type: object
                 type: array
-              endTime:
-                description: CompletionTime is the end time of the pipeline
-                format: date-time
-                type: string
               failureMessage:
                 description: UpdateUpdateStrategy in case of terminal failure message
                 type: string
@@ -464,8 +464,8 @@ spec:
                 items:
                   type: string
                 type: array
-              startTime:
-                description: StartTime is the start time of the pipeline
+              startedAt:
+                description: StartedAt is the start time of the pipeline
                 format: date-time
                 type: string
             type: object

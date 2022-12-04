@@ -750,10 +750,10 @@ export class LastRunStatus extends jspb.Message {
   getStatus(): string;
   setStatus(value: string): LastRunStatus;
 
-  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LastRunStatus;
-  hasCompletiontime(): boolean;
-  clearCompletiontime(): LastRunStatus;
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LastRunStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): LastRunStatus;
 
   getDuration(): number;
   setDuration(value: number): LastRunStatus;
@@ -776,7 +776,7 @@ export namespace LastRunStatus {
   export type AsObject = {
     name: string,
     status: string,
-    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     duration: number,
     failurereason: string,
     failuremessage: string,
@@ -1795,15 +1795,15 @@ export class TestSuiteResult extends jspb.Message {
   getErrors(): number;
   setErrors(value: number): TestSuiteResult;
 
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TestSuiteResult;
-  hasStarttime(): boolean;
-  clearStarttime(): TestSuiteResult;
+  getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TestSuiteResult;
+  hasStartedat(): boolean;
+  clearStartedat(): TestSuiteResult;
 
-  getStoptime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStoptime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TestSuiteResult;
-  hasStoptime(): boolean;
-  clearStoptime(): TestSuiteResult;
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TestSuiteResult;
+  hasCompletedat(): boolean;
+  clearCompletedat(): TestSuiteResult;
 
   getTestsList(): Array<DataTestCaseResult>;
   setTestsList(value: Array<DataTestCaseResult>): TestSuiteResult;
@@ -1823,8 +1823,8 @@ export namespace TestSuiteResult {
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     failures: number,
     errors: number,
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    stoptime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     testsList: Array<DataTestCaseResult.AsObject>,
   }
 }

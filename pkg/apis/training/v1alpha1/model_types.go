@@ -401,30 +401,27 @@ type EnsembleSpec struct {
 
 // ModelStatus defines the observed state of a Model
 type ModelStatus struct {
-	// StartTime represents the time at which the execution of the Model started
-	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
 	// TrainStartTime represents the time at which the Model started training
 	// +kubebuilder:validation:Optional
-	TrainingStartTime *metav1.Time `json:"trainingStartTime,omitempty" protobuf:"bytes,2,opt,name=trainingStartTime"`
+	TrainingStartedAt *metav1.Time `json:"trainingStartedAt,omitempty" protobuf:"bytes,2,opt,name=trainingStartedAt"`
 	// TrainCompletionTime represents the time at which the Model completed training
 	// +kubebuilder:validation:Optional
-	TrainingEndTime *metav1.Time `json:"trainingEndTime,omitempty" protobuf:"bytes,3,opt,name=trainingEndTime"`
-	// TestingStartTime represents the time at which the Model started testing
+	TrainingCompletedAt *metav1.Time `json:"trainingCompletedAt,omitempty" protobuf:"bytes,3,opt,name=trainingCompletedAt"`
+	// TestingStartedAt represents the time at which the Model started testing
 	// +kubebuilder:validation:Optional
-	TestingStartTime *metav1.Time `json:"testingStartTime,omitempty" protobuf:"bytes,4,opt,name=testingStartTime"`
-	// TestingEndTime represents the time at which the Model completed testing
+	TestingStartedAt *metav1.Time `json:"testingStartedAt,omitempty" protobuf:"bytes,4,opt,name=testingStartedAt"`
+	// TestingCompletedAt represents the time at which the Model completed testing
 	// +kubebuilder:validation:Optional
-	TestingEndTime *metav1.Time `json:"testingEndTime,omitempty" protobuf:"bytes,5,opt,name=testingEndTime"`
-	// TuningStartTime represents the time at which the Model started testing
+	TestingCompletedAt *metav1.Time `json:"testingCompletedAt,omitempty" protobuf:"bytes,5,opt,name=testingCompletedAt"`
+	// TuningStartedAt represents the time at which the Model started testing
 	// +kubebuilder:validation:Optional
-	TuningStartTime *metav1.Time `json:"tuningStartTime,omitempty" protobuf:"bytes,6,opt,name=tuningStartTime"`
-	// TuningEndTime represents the time at which the Model completed testing
+	TuningStartedAt *metav1.Time `json:"tuningStartedAt,omitempty" protobuf:"bytes,6,opt,name=tuningStartedAt"`
+	// TuningCompletedAt represents the time at which the Model completed testing
 	// +kubebuilder:validation:Optional
-	TuningEndTime *metav1.Time `json:"tuningEndTime,omitempty" protobuf:"bytes,7,opt,name=tuningEndTime"`
-	// EndTime represents the time at which the Model was marked as ready, failed, or aborted
+	TuningCompletedAt *metav1.Time `json:"tuningCompletedAt,omitempty" protobuf:"bytes,7,opt,name=tuningCompletedAt"`
+	// CompletedAt represents the time at which the Model was marked as ready, failed, or aborted
 	// +kubebuilder:validation:Optional
-	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,8,opt,name=endTime"`
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,8,opt,name=completedAt"`
 	// The cross-validation score for the objective metric produced after training
 	// +kubebuilder:validation:Optional
 	CVScore float64 `json:"cvScore,omitempty" protobuf:"bytes,9,opt,name=cvScore"`
@@ -605,7 +602,7 @@ type ModelStatus struct {
 	TopCorrelations []data.Correlation `json:"topCorrelations,omitempty" protobuf:"bytes,66,rep,name=topCorrelations"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,67,opt,name=lastUpdated"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,67,opt,name=updatedAt"`
 	// Governance specifies the current governance status for the Model
 	// +kubebuilder:validation:Optional
 	Governance data.GovernanceStatus `json:"governance,omitempty" protobuf:"bytes,68,opt,name=governance"`
@@ -1131,12 +1128,12 @@ type FeaturePair struct {
 
 // InterpretabilityStatus represents the state of the explanation phase of a Model
 type InterpretabilityStatus struct {
-	// StartTime represents the time when the model explanation phase started
+	// StartedAt represents the time when the model explanation phase started
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"trainingStartTime,omitempty" protobuf:"bytes,1,opt,name=trainingStartTime"`
-	// EndTime represents the time when the model explanation phase ended
+	StartedAt *metav1.Time `json:"startedAt,omitempty" protobuf:"bytes,1,opt,name=startedAt"`
+	// CompletedAt represents the time when the model explanation phase ended
 	// +kubebuilder:validation:Optional
-	EndTime *metav1.Time `json:"trainingEndTime,omitempty" protobuf:"bytes,2,opt,name=trainingEndTime"`
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,2,opt,name=completedAt"`
 	// The URI for the generated explanation data
 	ExplainerURI string `json:"explainerURI,omitempty" protobuf:"bytes,3,opt,name=explainerURI"`
 	// The URI for the train SHAP values
@@ -1214,10 +1211,10 @@ type ModelStageStatus struct {
 	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,4,opt,name=approvedAt"`
 	// Start time is the start time of the stage
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,7,opt,name=startTime"`
+	StartedAt *metav1.Time `json:"startedAt,omitempty" protobuf:"bytes,7,opt,name=startedAt"`
 	// End time is the end time of the stage.
 	// +kubebuilder:validation:Optional
-	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,8,opt,name=endTime"`
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,8,opt,name=completedAt"`
 	// Results is the results of running the test datasets against the new model
 	// +kubebuilder:validation:Optional
 	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,9,opt,name=unitTestsResult"`

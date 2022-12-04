@@ -47,7 +47,7 @@ spec:
       priority: 1
       type: string
     - jsonPath: .spec.expireAt
-      name: Expire At
+      name: Expire FiredAt
       type: date
     - jsonPath: .metadata.creationTimestamp
       name: Age

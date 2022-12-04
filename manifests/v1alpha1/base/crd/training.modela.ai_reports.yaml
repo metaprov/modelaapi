@@ -610,6 +610,11 @@ spec:
           status:
             description: ReportStatus defines the observed state of a Report
             properties:
+              completedAt:
+                description: CompletedAt represents the time at which the Report was
+                  marked as completed, failed, or aborted
+                format: date-time
+                type: string
               conditions:
                 items:
                   description: ReportCondition describes the state of a Report at
@@ -638,11 +643,6 @@ spec:
                   - type
                   type: object
                 type: array
-              endTime:
-                description: EndTime represents the time at which the Report was marked
-                  as completed, failed, or aborted
-                format: date-time
-                type: string
               failureMessage:
                 description: In the case of failure, the Report resource controller
                   will set this field with a failure message
@@ -678,10 +678,6 @@ spec:
                       type: object
                     type: array
                 type: object
-              lastUpdated:
-                description: The last time the object was updated
-                format: date-time
-                type: string
               logs:
                 description: Logs specifies the location of logs produced by workloads
                   associated with the Report
@@ -718,9 +714,8 @@ spec:
                 default: Pending
                 description: The phase of the Report
                 type: string
-              startTime:
-                description: StartTime represents the time at which the execution
-                  of the Report started
+              updatedAt:
+                description: The last time the object was updated
                 format: date-time
                 type: string
               uri:

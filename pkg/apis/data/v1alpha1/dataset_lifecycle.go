@@ -199,8 +199,8 @@ func (dataset *Dataset) MarkSnapshotFailed(msg string) {
 	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
 	now := metav1.Now()
-	if dataset.Status.EndTime == nil {
-		dataset.Status.EndTime = &now
+	if dataset.Status.CompletedAt == nil {
+		dataset.Status.CompletedAt = &now
 	}
 
 }
@@ -256,8 +256,8 @@ func (dataset *Dataset) MarkGroupFailed(msg string) {
 	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
 	now := metav1.Now()
-	if dataset.Status.EndTime == nil {
-		dataset.Status.EndTime = &now
+	if dataset.Status.CompletedAt == nil {
+		dataset.Status.CompletedAt = &now
 	}
 
 }
@@ -295,8 +295,8 @@ func (dataset *Dataset) MarkUnitTestFailed(msg string) {
 	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
 	now := metav1.Now()
-	if dataset.Status.EndTime == nil {
-		dataset.Status.EndTime = &now
+	if dataset.Status.CompletedAt == nil {
+		dataset.Status.CompletedAt = &now
 	}
 }
 
@@ -353,8 +353,8 @@ func (dataset *Dataset) MarkIngestFailed(msg string) {
 	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
 	now := metav1.Now()
-	if dataset.Status.EndTime == nil {
-		dataset.Status.EndTime = &now
+	if dataset.Status.CompletedAt == nil {
+		dataset.Status.CompletedAt = &now
 	}
 }
 
@@ -392,8 +392,8 @@ func (dataset *Dataset) MarkGeneratedFailed(msg string) {
 	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
 	now := metav1.Now()
-	if dataset.Status.EndTime == nil {
-		dataset.Status.EndTime = &now
+	if dataset.Status.CompletedAt == nil {
+		dataset.Status.CompletedAt = &now
 	}
 }
 
@@ -429,8 +429,8 @@ func (dataset *Dataset) MarkReportFailed(msg string) {
 	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
 	now := metav1.Now()
-	if dataset.Status.EndTime == nil {
-		dataset.Status.EndTime = &now
+	if dataset.Status.CompletedAt == nil {
+		dataset.Status.CompletedAt = &now
 	}
 }
 
@@ -467,8 +467,8 @@ func (dataset *Dataset) MarkProfiledFailed(msg string) {
 	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
 	now := metav1.Now()
-	if dataset.Status.EndTime == nil {
-		dataset.Status.EndTime = &now
+	if dataset.Status.CompletedAt == nil {
+		dataset.Status.CompletedAt = &now
 	}
 }
 
@@ -485,8 +485,8 @@ func (dataset *Dataset) MarkReady() {
 	dataset.Status.Phase = DatasetPhaseReady
 	dataset.Status.Progress = 100
 	now := metav1.Now()
-	if dataset.Status.EndTime == nil {
-		dataset.Status.EndTime = &now
+	if dataset.Status.CompletedAt == nil {
+		dataset.Status.CompletedAt = &now
 	}
 }
 
@@ -559,8 +559,8 @@ func (dataset Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierNa
 			},
 		},
 	}
-	if dataset.Status.EndTime != nil {
-		result.Spec.Fields["Completion Time"] = dataset.Status.EndTime.Format("01/2/2006 15:04:05")
+	if dataset.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = dataset.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -593,8 +593,8 @@ func (dataset Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *s
 			},
 		},
 	}
-	if dataset.Status.EndTime != nil {
-		result.Spec.Fields["Completion Time"] = dataset.Status.EndTime.Format("01/2/2006 15:04:05")
+	if dataset.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = dataset.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -640,7 +640,7 @@ func (dataset Dataset) ConstuctFeatureHistogram() (*FeatureHistogram, error) {
 		Status: FeatureHistogramStatus{
 			ObservedGeneration: 0,
 			Columns:            histograms,
-			LastUpdated:        nil,
+			UpdatedAt:          nil,
 			Logs:               catalog.Logs{},
 			Phase:              FeatureHistogramPhaseReady,
 		},
