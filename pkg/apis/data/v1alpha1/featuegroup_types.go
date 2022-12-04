@@ -111,35 +111,40 @@ type FeatureGroupSpec struct {
 	// The ingest will just perform feature profile, and run the feature group unit tests.
 	// +kubebuilder:validation:Optional
 	IngestSchedule catalog.RunSchedule `json:"ingestSchedule,omitempty" protobuf:"bytes,8,opt,name=ingestSchedule"`
+	// Schedule for running ingesting the data from the feature.
+	// On virtual features (e.g. where the data already reside in a table)
+	// The ingest will just perform feature profile, and run the feature group unit tests.
+	// +kubebuilder:validation:Optional
+	SyncSchedule catalog.RunSchedule `json:"syncSchedule,omitempty" protobuf:"bytes,9,opt,name=syncSchedule"`
 	// In case where the feature group data is stored as flat file. the flat file format
 	// define how to read the file.
 	// +kubebuilder:validation:Optional
-	FlatFile *FlatFileFormatSpec `json:"flatfile,omitempty" protobuf:"bytes,9,opt,name=flatfile"`
+	FlatFile *FlatFileFormatSpec `json:"flatfile,omitempty" protobuf:"bytes,10,opt,name=flatfile"`
 	// The name of the data source which contain the schema for this entity
 	// +kubebuilder:validation:Optional
-	Schema Schema `json:"schema,omitempty" protobuf:"bytes,10,opt,name=schema"`
+	Schema Schema `json:"schema,omitempty" protobuf:"bytes,11,opt,name=schema"`
 	// Unit test to run on data from this feature group upon ingrest.
 	// +kubebuilder:validation:Optional
-	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,11,opt,name=tests"`
+	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,12,opt,name=tests"`
 	// Specify the data for this feature group
 	// This can be a table,  a view or a file on S3.
 	// +kubebuilder:validation:Optional
-	Location DataLocation `json:"location,omitempty" protobuf:"bytes,12,opt,name=location"`
+	Location DataLocation `json:"location,omitempty" protobuf:"bytes,13,opt,name=location"`
 	// the time column index. Might be null, if the fg does not have time column.
 	// +kubebuilder:validation:Optional
-	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,13,opt,name=timeColumn"`
+	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,14,opt,name=timeColumn"`
 	// The time column format
 	// +kubebuilder:validation:Optional
-	TimeColumnFormat *string `json:"timeColumnFormat,omitempty" protobuf:"bytes,14,opt,name=timeColumnFormat"`
+	TimeColumnFormat *string `json:"timeColumnFormat,omitempty" protobuf:"bytes,15,opt,name=timeColumnFormat"`
 	// The feature group primary key. This is usually the key that is used to join the feature groups
 	// to other feature groups in the entity
-	KeyColumn *string `json:"keyColumn,omitempty" protobuf:"bytes,15,opt,name=keyColumn"`
+	KeyColumn *string `json:"keyColumn,omitempty" protobuf:"bytes,16,opt,name=keyColumn"`
 	// Materialization
 	// +kubebuilder:validation:Optional
-	Materialization MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,16,opt,name=materialization"`
+	Materialization MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,17,opt,name=materialization"`
 	// Resources used for ingest and the sync
 	//+kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,17,opt,name=resources"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,18,opt,name=resources"`
 }
 
 // FeatureStatus defines the observed state of Feature

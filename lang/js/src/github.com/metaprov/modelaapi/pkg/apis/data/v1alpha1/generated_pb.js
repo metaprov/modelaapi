@@ -30170,13 +30170,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.toOb
     entityname: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     tagsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
     ingestschedule: (f = msg.getIngestschedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
+    syncschedule: (f = msg.getSyncschedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     flatfile: (f = msg.getFlatfile()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec.toObject(includeInstance, f),
     schema: (f = msg.getSchema()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.toObject(includeInstance, f),
     tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
     location: (f = msg.getLocation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
-    timecolumn: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
-    timecolumnformat: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    keycolumn: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+    timecolumn: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
+    timecolumnformat: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+    keycolumn: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
     materialization: (f = msg.getMaterialization()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.toObject(includeInstance, f),
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f)
   };
@@ -30250,43 +30251,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.dese
       msg.setIngestschedule(value);
       break;
     case 9:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
+      msg.setSyncschedule(value);
+      break;
+    case 10:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec.deserializeBinaryFromReader);
       msg.setFlatfile(value);
       break;
-    case 10:
+    case 11:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.deserializeBinaryFromReader);
       msg.setSchema(value);
       break;
-    case 11:
+    case 12:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.deserializeBinaryFromReader);
       msg.setTests(value);
       break;
-    case 12:
+    case 13:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.deserializeBinaryFromReader);
       msg.setLocation(value);
       break;
-    case 13:
+    case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setTimecolumn(value);
       break;
-    case 14:
+    case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setTimecolumnformat(value);
       break;
-    case 15:
+    case 16:
       var value = /** @type {string} */ (reader.readString());
       msg.setKeycolumn(value);
       break;
-    case 16:
+    case 17:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.deserializeBinaryFromReader);
       msg.setMaterialization(value);
       break;
-    case 17:
+    case 18:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
       msg.setResources(value);
@@ -30378,10 +30384,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.seri
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
     );
   }
-  f = message.getFlatfile();
+  f = message.getSyncschedule();
   if (f != null) {
     writer.writeMessage(
       9,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
+    );
+  }
+  f = message.getFlatfile();
+  if (f != null) {
+    writer.writeMessage(
+      10,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec.serializeBinaryToWriter
     );
@@ -30389,7 +30403,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.seri
   f = message.getSchema();
   if (f != null) {
     writer.writeMessage(
-      10,
+      11,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.serializeBinaryToWriter
     );
@@ -30397,7 +30411,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.seri
   f = message.getTests();
   if (f != null) {
     writer.writeMessage(
-      11,
+      12,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.serializeBinaryToWriter
     );
@@ -30405,16 +30419,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.seri
   f = message.getLocation();
   if (f != null) {
     writer.writeMessage(
-      12,
+      13,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 13));
-  if (f != null) {
-    writer.writeString(
-      13,
-      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 14));
@@ -30431,10 +30438,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.seri
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 16));
+  if (f != null) {
+    writer.writeString(
+      16,
+      f
+    );
+  }
   f = message.getMaterialization();
   if (f != null) {
     writer.writeMessage(
-      16,
+      17,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.serializeBinaryToWriter
     );
@@ -30442,7 +30456,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.seri
   f = message.getResources();
   if (f != null) {
     writer.writeMessage(
-      17,
+      18,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
@@ -30742,12 +30756,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
 
 
 /**
- * optional FlatFileFormatSpec flatfile = 9;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule syncSchedule = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getSyncschedule = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setSyncschedule = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.clearSyncschedule = function() {
+  return this.setSyncschedule(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasSyncschedule = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional FlatFileFormatSpec flatfile = 10;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getFlatfile = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec, 9));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec, 10));
 };
 
 
@@ -30756,7 +30807,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setFlatfile = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -30774,17 +30825,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasFlatfile = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional Schema schema = 10;
+ * optional Schema schema = 11;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getSchema = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema, 10));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema, 11));
 };
 
 
@@ -30793,7 +30844,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setSchema = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -30811,17 +30862,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasSchema = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 11;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 12;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getTests = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 11));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite, 12));
 };
 
 
@@ -30830,7 +30881,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setTests = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 12, value);
 };
 
 
@@ -30848,17 +30899,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasTests = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
 /**
- * optional DataLocation location = 12;
+ * optional DataLocation location = 13;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getLocation = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation, 12));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation, 13));
 };
 
 
@@ -30867,7 +30918,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setLocation = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
+  return jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -30885,51 +30936,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasLocation = function() {
-  return jspb.Message.getField(this, 12) != null;
-};
-
-
-/**
- * optional string timeColumn = 13;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getTimecolumn = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setTimecolumn = function(value) {
-  return jspb.Message.setField(this, 13, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.clearTimecolumn = function() {
-  return jspb.Message.setField(this, 13, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasTimecolumn = function() {
   return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional string timeColumnFormat = 14;
+ * optional string timeColumn = 14;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getTimecolumnformat = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getTimecolumn = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
 };
 
@@ -30938,7 +30953,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setTimecolumnformat = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setTimecolumn = function(value) {
   return jspb.Message.setField(this, 14, value);
 };
 
@@ -30947,7 +30962,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.clearTimecolumnformat = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.clearTimecolumn = function() {
   return jspb.Message.setField(this, 14, undefined);
 };
 
@@ -30956,16 +30971,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasTimecolumnformat = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasTimecolumn = function() {
   return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * optional string keyColumn = 15;
+ * optional string timeColumnFormat = 15;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getKeycolumn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getTimecolumnformat = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
 };
 
@@ -30974,7 +30989,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setKeycolumn = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setTimecolumnformat = function(value) {
   return jspb.Message.setField(this, 15, value);
 };
 
@@ -30983,7 +30998,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.clearKeycolumn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.clearTimecolumnformat = function() {
   return jspb.Message.setField(this, 15, undefined);
 };
 
@@ -30992,18 +31007,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasKeycolumn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasTimecolumnformat = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * optional MaterializationSpec materialization = 16;
+ * optional string keyColumn = 16;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getKeycolumn = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setKeycolumn = function(value) {
+  return jspb.Message.setField(this, 16, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.clearKeycolumn = function() {
+  return jspb.Message.setField(this, 16, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasKeycolumn = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional MaterializationSpec materialization = 17;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getMaterialization = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec, 16));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec, 17));
 };
 
 
@@ -31012,7 +31063,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setMaterialization = function(value) {
-  return jspb.Message.setWrapperField(this, 16, value);
+  return jspb.Message.setWrapperField(this, 17, value);
 };
 
 
@@ -31030,17 +31081,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasMaterialization = function() {
-  return jspb.Message.getField(this, 16) != null;
+  return jspb.Message.getField(this, 17) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 17;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 18;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.getResources = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 17));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 18));
 };
 
 
@@ -31049,7 +31100,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.setResources = function(value) {
-  return jspb.Message.setWrapperField(this, 17, value);
+  return jspb.Message.setWrapperField(this, 18, value);
 };
 
 
@@ -31067,7 +31118,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroupSpec.prototype.hasResources = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 18) != null;
 };
 
 

@@ -72,7 +72,7 @@ func (fg *FeatureGroup) MarkIngesting() {
 			Reason: "Ingesting",
 		})
 		now := metav1.Now()
-		fg.Status.IngestSchedule.LastRun = &now
+		fg.Status.IngestSchedule.LastRunAt = &now
 	}
 }
 
@@ -83,7 +83,7 @@ func (fg *FeatureGroup) MarkIngested() {
 		Status: v1.ConditionTrue,
 	})
 	nextRun := fg.Spec.IngestSchedule.NextRun()
-	fg.Status.IngestSchedule.SetNext(*nextRun)
+	fg.Spec.IngestSchedule.SetNext(*nextRun)
 }
 
 func (fg *FeatureGroup) MarkIngestFailed(msg string) {
@@ -110,7 +110,7 @@ func (fg *FeatureGroup) MarkSyncing() {
 			Reason: "Syncing",
 		})
 		now := metav1.Now()
-		fg.Status.SyncSchedule.LastRun = &now
+		fg.Status.SyncSchedule.LastRunAt = &now
 	}
 
 }
@@ -122,7 +122,7 @@ func (fg *FeatureGroup) MarkSynced() {
 		Status: v1.ConditionTrue,
 	})
 	nextRun := fg.Spec.Materialization.Schedule.NextRun()
-	fg.Status.SyncSchedule.SetNext(*nextRun)
+	fg.Spec.SyncSchedule.SetNext(*nextRun)
 }
 
 func (fg *FeatureGroup) MarkSyncFailed(msg string) {

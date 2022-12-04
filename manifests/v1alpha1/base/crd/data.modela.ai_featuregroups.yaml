@@ -990,6 +990,50 @@ spec:
                         type: string
                     type: object
                 type: object
+              syncSchedule:
+                description: Schedule for running ingesting the data from the feature.
+                  On virtual features (e.g. where the data already reside in a table)
+                  The ingest will just perform feature profile, and run the feature
+                  group unit tests.
+                properties:
+                  MaxRetryCount:
+                    format: int32
+                    type: integer
+                  cron:
+                    description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                      for more information
+                    type: string
+                  enabled:
+                    default: false
+                    description: Indicates if the schedule is enabled and the Jobs
+                      associated it will be created at the specified time
+                    type: boolean
+                  nextRunAt:
+                    description: The time of the day when the schedule will be executed
+                    format: date-time
+                    type: string
+                  retryDelaySec:
+                    format: int32
+                    type: integer
+                  timeoutSec:
+                    format: int32
+                    type: integer
+                  timezone:
+                    type: string
+                  type:
+                    description: The type of schedule, which can be a frequency interval
+                      or a cron expression
+                    enum:
+                    - now
+                    - once
+                    - hourly
+                    - daily
+                    - weekly
+                    - monthly
+                    - yearly
+                    - cron
+                    type: string
+                type: object
               tags:
                 description: Tags for this feature groups
                 items:

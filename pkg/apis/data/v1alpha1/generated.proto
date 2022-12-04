@@ -2143,43 +2143,49 @@ message FeatureGroupSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule ingestSchedule = 8;
 
+  // Schedule for running ingesting the data from the feature.
+  // On virtual features (e.g. where the data already reside in a table)
+  // The ingest will just perform feature profile, and run the feature group unit tests.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule syncSchedule = 9;
+
   // In case where the feature group data is stored as flat file. the flat file format
   // define how to read the file.
   // +kubebuilder:validation:Optional
-  optional FlatFileFormatSpec flatfile = 9;
+  optional FlatFileFormatSpec flatfile = 10;
 
   // The name of the data source which contain the schema for this entity
   // +kubebuilder:validation:Optional
-  optional Schema schema = 10;
+  optional Schema schema = 11;
 
   // Unit test to run on data from this feature group upon ingrest.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 11;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 12;
 
   // Specify the data for this feature group
   // This can be a table,  a view or a file on S3.
   // +kubebuilder:validation:Optional
-  optional DataLocation location = 12;
+  optional DataLocation location = 13;
 
   // the time column index. Might be null, if the fg does not have time column.
   // +kubebuilder:validation:Optional
-  optional string timeColumn = 13;
+  optional string timeColumn = 14;
 
   // The time column format
   // +kubebuilder:validation:Optional
-  optional string timeColumnFormat = 14;
+  optional string timeColumnFormat = 15;
 
   // The feature group primary key. This is usually the key that is used to join the feature groups
   // to other feature groups in the entity
-  optional string keyColumn = 15;
+  optional string keyColumn = 16;
 
   // Materialization
   // +kubebuilder:validation:Optional
-  optional MaterializationSpec materialization = 16;
+  optional MaterializationSpec materialization = 17;
 
   // Resources used for ingest and the sync
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 17;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 18;
 }
 
 // FeatureStatus defines the observed state of Feature
