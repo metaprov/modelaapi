@@ -47,7 +47,7 @@ type DataProductCondition struct {
 // +kubebuilder:printcolumn:name="Location Sources",type="integer",JSONPath=".status.totalDatasources",priority=1
 // +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.totalDatasets",priority=1
 // +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.totalStudies",priority=1
-// +kubebuilder:printcolumn:name="Models",type="integer",JSONPath=".status.totalModels",priority=1
+// +kubebuilder:printcolumn:name="ModelsCount",type="integer",JSONPath=".status.totalModels",priority=1
 // +kubebuilder:printcolumn:name="Predictors",type="integer",JSONPath=".status.totalPredictors",priority=1
 // +kubebuilder:printcolumn:name="Apps",type="integer",JSONPath=".status.totalApps",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""

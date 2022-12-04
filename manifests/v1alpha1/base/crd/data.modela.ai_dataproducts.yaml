@@ -50,7 +50,7 @@ spec:
       priority: 1
       type: integer
     - jsonPath: .status.totalModels
-      name: Models
+      name: ModelsCount
       priority: 1
       type: integer
     - jsonPath: .status.totalPredictors

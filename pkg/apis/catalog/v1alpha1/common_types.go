@@ -1470,10 +1470,21 @@ type RunSchedule struct {
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm for more information
 	// +kubebuilder:validation:Optional
-	Cron *string `json:"cron,omitempty" protobuf:"bytes,4,opt,name=cron"`
+	Cron *string `json:"cron,omitempty" protobuf:"bytes,2,opt,name=cron"`
 	// +kubebuilder:validation:Optional
 	// The type of schedule, which can be a frequency interval or a cron expression
-	Type TriggerScheduleEventType `json:"type,omitempty" protobuf:"bytes,5,opt,name=type"`
+	Type TriggerScheduleEventType `json:"type,omitempty" protobuf:"bytes,3,opt,name=type"`
+	// +kubebuilder:validation:Optional
+	MaxRetryCount *int32 `json:"MaxRetryCount,omitempty" protobuf:"varint,4,opt,name=maxRetryCount"`
+	// +kubebuilder:validation:Optional
+	RetryDelaySec *int32 `json:"retryDelaySec,omitempty" protobuf:"varint,5,opt,name=retryDelaySec"`
+	// +kubebuilder:validation:Optional
+	TimeoutSec *int32 `json:"timeoutSec,omitempty" protobuf:"varint,6,opt,name=timeoutSec"`
+	// +kubebuilder:validation:Optional
+	TimeZone *string `json:"timezone,omitempty" protobuf:"bytes,7,opt,name=timezone"`
+	// The time of the day when the schedule will be executed
+	// +kubebuilder:validation:Optional
+	NextRunAt *metav1.Time `json:"nextRunAt,omitempty" protobuf:"bytes,8,opt,name=nextRunAt"`
 }
 
 // Compute the next run. return nil if the schedule is disabled.
@@ -1534,40 +1545,40 @@ func (schedule RunSchedule) NextRun() *metav1.Time {
 type RunScheduleStatus struct {
 	// Last time the job started
 	// +kubebuilder:validation:Optional
-	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
-	// The time of the day when the schedule will be executed
-	// +kubebuilder:validation:Optional
-	NextRun *metav1.Time `json:"nextRun,omitempty" protobuf:"bytes,2,opt,name=nextRun"`
+	LastRunAt *metav1.Time `json:"lastRunAt,omitempty" protobuf:"bytes,1,opt,name=lastRunAt"`
 	// In the case of failure, the resource controller which created the run will set this field with a failure reason
 	// +kubebuilder:validation:Optional
-	FailureReason *StatusError `json:"failureReason,omitempty" protobuf:"bytes,5,opt,name=failureReason"`
+	FailureReason *StatusError `json:"failureReason,omitempty" protobuf:"bytes,2,opt,name=failureReason"`
 	// In the case of failure, the resource controller which created the run will set this field with a failure message
 	// +kubebuilder:validation:Optional
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,6,opt,name=failureMessage"`
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,3,opt,name=failureMessage"`
 	// Last run name
 	// +kubebuilder:validation:Optional
-	LastRunName *string `json:"lastRunName,omitempty" protobuf:"bytes,7,opt,name=lastRunName"`
+	LastRunName *string `json:"lastRunName,omitempty" protobuf:"bytes,4,opt,name=lastRunName"`
 	// Logs from the last run
 	// +kubebuilder:validation:Optional
-	LastRunLogs Logs `json:"lastRunLogs,omitempty" protobuf:"bytes,8,opt,name=lastRunLogs"`
+	LastRunLogs Logs `json:"lastRunLogs,omitempty" protobuf:"bytes,5,opt,name=lastRunLogs"`
+	// Actual retry count
+	// +kubebuilder:validation:Optional
+	RetryCount int32 `json:"retryCount,omitempty" protobuf:"bytes,6,opt,name=retryCount"`
 }
 
 // Check if we are due for a run. next run must be set.
-func (runstatus *RunScheduleStatus) IsDue() bool {
-	if runstatus.NextRun == nil {
+func (runs *RunSchedule) IsDue() bool {
+	if runs.NextRunAt == nil {
 		return true
 	}
 	now := metav1.Now()
-	return runstatus.NextRun.Time.Before(now.Time)
+	return runs.NextRunAt.Time.Before(now.Time)
 }
 
-func (runstatus *RunScheduleStatus) Start() {
+func (runs *RunScheduleStatus) Start() {
 	now := metav1.Now()
-	runstatus.LastRun = &now
+	runs.LastRunAt = &now
 }
 
-func (runstatus *RunScheduleStatus) SetNext(nextRun metav1.Time) {
-	runstatus.NextRun = &nextRun
+func (runs *RunSchedule) SetNext(nextRun metav1.Time) {
+	runs.NextRunAt = &nextRun
 }
 
 // Measurement is a value for a specific metric

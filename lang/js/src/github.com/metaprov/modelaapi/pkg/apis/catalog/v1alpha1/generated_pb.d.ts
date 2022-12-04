@@ -1675,6 +1675,23 @@ export class RunSchedule extends jspb.Message {
   getType(): string;
   setType(value: string): RunSchedule;
 
+  getMaxretrycount(): number;
+  setMaxretrycount(value: number): RunSchedule;
+
+  getRetrydelaysec(): number;
+  setRetrydelaysec(value: number): RunSchedule;
+
+  getTimeoutsec(): number;
+  setTimeoutsec(value: number): RunSchedule;
+
+  getTimezone(): string;
+  setTimezone(value: string): RunSchedule;
+
+  getNextrunat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setNextrunat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunSchedule;
+  hasNextrunat(): boolean;
+  clearNextrunat(): RunSchedule;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunSchedule.AsObject;
   static toObject(includeInstance: boolean, msg: RunSchedule): RunSchedule.AsObject;
@@ -1688,19 +1705,19 @@ export namespace RunSchedule {
     enabled: boolean,
     cron: string,
     type: string,
+    maxretrycount: number,
+    retrydelaysec: number,
+    timeoutsec: number,
+    timezone: string,
+    nextrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 
 export class RunScheduleStatus extends jspb.Message {
-  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunScheduleStatus;
-  hasLastrun(): boolean;
-  clearLastrun(): RunScheduleStatus;
-
-  getNextrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setNextrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunScheduleStatus;
-  hasNextrun(): boolean;
-  clearNextrun(): RunScheduleStatus;
+  getLastrunat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrunat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunScheduleStatus;
+  hasLastrunat(): boolean;
+  clearLastrunat(): RunScheduleStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): RunScheduleStatus;
@@ -1716,6 +1733,9 @@ export class RunScheduleStatus extends jspb.Message {
   hasLastrunlogs(): boolean;
   clearLastrunlogs(): RunScheduleStatus;
 
+  getRetrycount(): number;
+  setRetrycount(value: number): RunScheduleStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunScheduleStatus.AsObject;
   static toObject(includeInstance: boolean, msg: RunScheduleStatus): RunScheduleStatus.AsObject;
@@ -1726,12 +1746,12 @@ export class RunScheduleStatus extends jspb.Message {
 
 export namespace RunScheduleStatus {
   export type AsObject = {
-    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    nextrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
     lastrunname: string,
     lastrunlogs?: Logs.AsObject,
+    retrycount: number,
   }
 }
 

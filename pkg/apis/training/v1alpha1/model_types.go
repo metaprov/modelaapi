@@ -151,7 +151,7 @@ type Model struct {
 }
 
 // +kubebuilder:object:root=true
-// ModelList is a list of Models
+// ModelList is a list of ModelsCount
 type ModelList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

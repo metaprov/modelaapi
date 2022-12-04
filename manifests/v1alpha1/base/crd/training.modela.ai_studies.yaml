@@ -96,7 +96,7 @@ spec:
               aborted:
                 default: false
                 description: Aborted indicates that the execution of the Study and
-                  associated Models should be permanently stopped
+                  associated ModelsCount should be permanently stopped
                 type: boolean
               baseline:
                 description: Baseline specifies the parameters to generate baseline
@@ -205,8 +205,8 @@ spec:
                 type: object
               fast:
                 default: false
-                description: Fast indicates if Models associated with the Study should
-                  skip profiling, explaining, and reporting
+                description: Fast indicates if ModelsCount associated with the Study
+                  should skip profiling, explaining, and reporting
                 type: boolean
               fctTemplate:
                 description: ForecastSpec specifies the parameters required when generating

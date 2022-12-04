@@ -264,6 +264,9 @@ spec:
                   The ingest will just perform feature profile, and run the feature
                   group unit tests.
                 properties:
+                  MaxRetryCount:
+                    format: int32
+                    type: integer
                   cron:
                     description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
                       for more information
@@ -273,6 +276,18 @@ spec:
                     description: Indicates if the schedule is enabled and the Jobs
                       associated it will be created at the specified time
                     type: boolean
+                  nextRunAt:
+                    description: The time of the day when the schedule will be executed
+                    format: date-time
+                    type: string
+                  retryDelaySec:
+                    format: int32
+                    type: integer
+                  timeoutSec:
+                    format: int32
+                    type: integer
+                  timezone:
+                    type: string
                   type:
                     description: The type of schedule, which can be a frequency interval
                       or a cron expression
@@ -441,6 +456,9 @@ spec:
                     description: Set the sync schedule between offline store and online
                       store.
                     properties:
+                      MaxRetryCount:
+                        format: int32
+                        type: integer
                       cron:
                         description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
                           for more information
@@ -450,6 +468,19 @@ spec:
                         description: Indicates if the schedule is enabled and the
                           Jobs associated it will be created at the specified time
                         type: boolean
+                      nextRunAt:
+                        description: The time of the day when the schedule will be
+                          executed
+                        format: date-time
+                        type: string
+                      retryDelaySec:
+                        format: int32
+                        type: integer
+                      timeoutSec:
+                        format: int32
+                        type: integer
+                      timezone:
+                        type: string
                       type:
                         description: The type of schedule, which can be a frequency
                           interval or a cron expression
@@ -1262,7 +1293,7 @@ spec:
                     description: In the case of failure, the resource controller which
                       created the run will set this field with a failure reason
                     type: string
-                  lastRun:
+                  lastRunAt:
                     description: Last time the job started
                     format: date-time
                     type: string
@@ -1295,10 +1326,10 @@ spec:
                   lastRunName:
                     description: Last run name
                     type: string
-                  nextRun:
-                    description: The time of the day when the schedule will be executed
-                    format: date-time
-                    type: string
+                  retryCount:
+                    description: Actual retry count
+                    format: int32
+                    type: integer
                 type: object
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
@@ -1439,7 +1470,7 @@ spec:
                     description: In the case of failure, the resource controller which
                       created the run will set this field with a failure reason
                     type: string
-                  lastRun:
+                  lastRunAt:
                     description: Last time the job started
                     format: date-time
                     type: string
@@ -1472,10 +1503,10 @@ spec:
                   lastRunName:
                     description: Last run name
                     type: string
-                  nextRun:
-                    description: The time of the day when the schedule will be executed
-                    format: date-time
-                    type: string
+                  retryCount:
+                    description: Actual retry count
+                    format: int32
+                    type: integer
                 type: object
               updatedAt:
                 description: Last time the object was updated

@@ -21932,7 +21932,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    models: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    modelscount: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     bestfe: (f = msg.getBestfe()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.toObject(includeInstance, f),
@@ -21949,9 +21949,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
     failuremessage: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
     lasttraining: (f = msg.getLasttraining()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     lastpromotion: (f = msg.getLastpromotion()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    lastprediction: (f = msg.getLastprediction()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    lastpredictionat: (f = msg.getLastpredictionat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     lastpredictionname: (f = jspb.Message.getField(msg, 26)) == null ? undefined : f,
-    totalpredictions: (f = jspb.Message.getField(msg, 27)) == null ? undefined : f,
+    predictionscount: (f = jspb.Message.getField(msg, 27)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassCondition.toObject, includeInstance)
   };
@@ -21992,7 +21992,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
     switch (field) {
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setModels(value);
+      msg.setModelscount(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt64());
@@ -22069,7 +22069,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
     case 25:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastprediction(value);
+      msg.setLastpredictionat(value);
       break;
     case 26:
       var value = /** @type {string} */ (reader.readString());
@@ -22077,7 +22077,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
       break;
     case 27:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalpredictions(value);
+      msg.setPredictionscount(value);
       break;
     case 28:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassCondition;
@@ -22240,7 +22240,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getLastprediction();
+  f = message.getLastpredictionat();
   if (f != null) {
     writer.writeMessage(
       25,
@@ -22274,10 +22274,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
 
 
 /**
- * optional int32 models = 2;
+ * optional int32 modelsCount = 2;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.getModels = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.getModelscount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -22286,7 +22286,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.setModels = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.setModelscount = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -22295,7 +22295,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.clearModels = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.clearModelscount = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -22304,7 +22304,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.hasModels = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.hasModelscount = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -22895,10 +22895,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPrediction = 25;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionAt = 25;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.getLastprediction = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.getLastpredictionat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 25));
 };
@@ -22908,7 +22908,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.setLastprediction = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.setLastpredictionat = function(value) {
   return jspb.Message.setWrapperField(this, 25, value);
 };
 
@@ -22917,8 +22917,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.clearLastprediction = function() {
-  return this.setLastprediction(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.clearLastpredictionat = function() {
+  return this.setLastpredictionat(undefined);
 };
 
 
@@ -22926,7 +22926,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.hasLastprediction = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.hasLastpredictionat = function() {
   return jspb.Message.getField(this, 25) != null;
 };
 
@@ -22968,10 +22968,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
 
 
 /**
- * optional int32 totalPredictions = 27;
+ * optional int32 predictionsCount = 27;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.getTotalpredictions = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.getPredictionscount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 27, 0));
 };
 
@@ -22980,7 +22980,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.setTotalpredictions = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.setPredictionscount = function(value) {
   return jspb.Message.setField(this, 27, value);
 };
 
@@ -22989,7 +22989,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.clearTotalpredictions = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.clearPredictionscount = function() {
   return jspb.Message.setField(this, 27, undefined);
 };
 
@@ -22998,7 +22998,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.hasTotalpredictions = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassStatus.prototype.hasPredictionscount = function() {
   return jspb.Message.getField(this, 27) != null;
 };
 

@@ -1441,7 +1441,7 @@ message ModelClassSpec {
 message ModelClassStatus {
   // Total models created for the ModelClass
   // +kubebuilder:validation:Optional
-  optional int32 models = 2;
+  optional int32 modelsCount = 2;
 
   // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
@@ -1471,7 +1471,7 @@ message ModelClassStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus reportSceduleStatus = 10;
 
-  // The highest score out of all Models created by the associated Study resource
+  // The highest score out of all ModelsCount created by the associated Study resource
   // +kubebuilder:validation:Optional
   optional double bestModelScore = 15;
 
@@ -1507,14 +1507,15 @@ message ModelClassStatus {
 
   // The last time a batch prediction was made
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPrediction = 25;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionAt = 25;
 
   // The name of the last prediction for this class
   // +kubebuilder:validation:Optional
   optional string lastPredictionName = 26;
 
   // Total number of batch predictions
-  optional int32 totalPredictions = 27;
+  // +kubebuilder:validation:Optional
+  optional int32 predictionsCount = 27;
 
   // +optional
   // +patchMergeKey=type
@@ -1653,7 +1654,7 @@ message ModelImageSpec {
 }
 
 // +kubebuilder:object:root=true
-// ModelList is a list of Models
+// ModelList is a list of ModelsCount
 message ModelList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
@@ -3013,7 +3014,7 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional DriftModelSpec driftDetection = 19;
 
-  // Aborted indicates that the execution of the Study and associated Models should be permanently stopped
+  // Aborted indicates that the execution of the Study and associated ModelsCount should be permanently stopped
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool aborted = 20;
@@ -3049,7 +3050,7 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional bool modelExplained = 26;
 
-  // Fast indicates if Models associated with the Study should skip profiling, explaining, and reporting
+  // Fast indicates if ModelsCount associated with the Study should skip profiling, explaining, and reporting
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool fast = 27;

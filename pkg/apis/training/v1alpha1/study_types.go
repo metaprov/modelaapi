@@ -218,7 +218,7 @@ type StudySpec struct {
 	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,18,opt,name=interpretability"`
 	// +kubebuilder:validation:Optional
 	DriftDetector DriftModelSpec `json:"driftDetection,omitempty" protobuf:"bytes,19,opt,name=driftDetection"`
-	// Aborted indicates that the execution of the Study and associated Models should be permanently stopped
+	// Aborted indicates that the execution of the Study and associated ModelsCount should be permanently stopped
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,20,opt,name=aborted"`
@@ -247,7 +247,7 @@ type StudySpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	ModelExplained *bool `json:"modelExplained,omitempty" protobuf:"varint,26,opt,name=modelExplained"`
-	// Fast indicates if Models associated with the Study should skip profiling, explaining, and reporting
+	// Fast indicates if ModelsCount associated with the Study should skip profiling, explaining, and reporting
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Fast *bool `json:"fast,omitempty" protobuf:"varint,27,opt,name=fast"`

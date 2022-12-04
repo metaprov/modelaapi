@@ -426,6 +426,9 @@ spec:
               schedule:
                 description: Schedule for running the pipeline
                 properties:
+                  MaxRetryCount:
+                    format: int32
+                    type: integer
                   cron:
                     description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
                       for more information
@@ -435,6 +438,18 @@ spec:
                     description: Indicates if the schedule is enabled and the Jobs
                       associated it will be created at the specified time
                     type: boolean
+                  nextRunAt:
+                    description: The time of the day when the schedule will be executed
+                    format: date-time
+                    type: string
+                  retryDelaySec:
+                    format: int32
+                    type: integer
+                  timeoutSec:
+                    format: int32
+                    type: integer
+                  timezone:
+                    type: string
                   type:
                     description: The type of schedule, which can be a frequency interval
                       or a cron expression

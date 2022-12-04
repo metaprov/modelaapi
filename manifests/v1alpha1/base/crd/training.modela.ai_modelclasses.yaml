@@ -1178,6 +1178,9 @@ spec:
               reportSchedule:
                 description: The schedule for summary report
                 properties:
+                  MaxRetryCount:
+                    format: int32
+                    type: integer
                   cron:
                     description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
                       for more information
@@ -1187,6 +1190,18 @@ spec:
                     description: Indicates if the schedule is enabled and the Jobs
                       associated it will be created at the specified time
                     type: boolean
+                  nextRunAt:
+                    description: The time of the day when the schedule will be executed
+                    format: date-time
+                    type: string
+                  retryDelaySec:
+                    format: int32
+                    type: integer
+                  timeoutSec:
+                    format: int32
+                    type: integer
+                  timezone:
+                    type: string
                   type:
                     description: The type of schedule, which can be a frequency interval
                       or a cron expression
@@ -1288,6 +1303,9 @@ spec:
                   batchPredictionSchedule:
                     description: BatchPrediction schedule
                     properties:
+                      MaxRetryCount:
+                        format: int32
+                        type: integer
                       cron:
                         description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
                           for more information
@@ -1297,6 +1315,19 @@ spec:
                         description: Indicates if the schedule is enabled and the
                           Jobs associated it will be created at the specified time
                         type: boolean
+                      nextRunAt:
+                        description: The time of the day when the schedule will be
+                          executed
+                        format: date-time
+                        type: string
+                      retryDelaySec:
+                        format: int32
+                        type: integer
+                      timeoutSec:
+                        format: int32
+                        type: integer
+                      timezone:
+                        type: string
                       type:
                         description: The type of schedule, which can be a frequency
                           interval or a cron expression
@@ -1317,6 +1348,9 @@ spec:
                   monitoringSchedule:
                     description: Schedule for computing drift
                     properties:
+                      MaxRetryCount:
+                        format: int32
+                        type: integer
                       cron:
                         description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
                           for more information
@@ -1326,6 +1360,19 @@ spec:
                         description: Indicates if the schedule is enabled and the
                           Jobs associated it will be created at the specified time
                         type: boolean
+                      nextRunAt:
+                        description: The time of the day when the schedule will be
+                          executed
+                        format: date-time
+                        type: string
+                      retryDelaySec:
+                        format: int32
+                        type: integer
+                      timeoutSec:
+                        format: int32
+                        type: integer
+                      timezone:
+                        type: string
                       type:
                         description: The type of schedule, which can be a frequency
                           interval or a cron expression
@@ -2497,6 +2544,9 @@ spec:
                   trainingSchedule:
                     description: Training schedule
                     properties:
+                      MaxRetryCount:
+                        format: int32
+                        type: integer
                       cron:
                         description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
                           for more information
@@ -2506,6 +2556,19 @@ spec:
                         description: Indicates if the schedule is enabled and the
                           Jobs associated it will be created at the specified time
                         type: boolean
+                      nextRunAt:
+                        description: The time of the day when the schedule will be
+                          executed
+                        format: date-time
+                        type: string
+                      retryDelaySec:
+                        format: int32
+                        type: integer
+                      timeoutSec:
+                        format: int32
+                        type: integer
+                      timezone:
+                        type: string
                       type:
                         description: The type of schedule, which can be a frequency
                           interval or a cron expression
@@ -2941,8 +3004,8 @@ spec:
                     type: object
                 type: object
               bestModelScore:
-                description: The highest score out of all Models created by the associated
-                  Study resource
+                description: The highest score out of all ModelsCount created by the
+                  associated Study resource
                 type: number
               conditions:
                 items:
@@ -2979,7 +3042,7 @@ spec:
                 description: UpdateUpdateStrategy in case of terminal failure Borrowed
                   from cluster api controller
                 type: string
-              lastPrediction:
+              lastPredictionAt:
                 description: The last time a batch prediction was made
                 format: date-time
                 type: string
@@ -2995,7 +3058,7 @@ spec:
                   model class
                 format: date-time
                 type: string
-              models:
+              modelsCount:
                 description: Total models created for the ModelClass
                 format: int32
                 type: integer
@@ -3010,7 +3073,7 @@ spec:
                     description: In the case of failure, the resource controller which
                       created the run will set this field with a failure reason
                     type: string
-                  lastRun:
+                  lastRunAt:
                     description: Last time the job started
                     format: date-time
                     type: string
@@ -3043,10 +3106,10 @@ spec:
                   lastRunName:
                     description: Last run name
                     type: string
-                  nextRun:
-                    description: The time of the day when the schedule will be executed
-                    format: date-time
-                    type: string
+                  retryCount:
+                    description: Actual retry count
+                    format: int32
+                    type: integer
                 type: object
               observedGeneration:
                 description: ObservedGeneration is the last generation that was acted
@@ -3064,7 +3127,7 @@ spec:
                     description: In the case of failure, the resource controller which
                       created the run will set this field with a failure reason
                     type: string
-                  lastRun:
+                  lastRunAt:
                     description: Last time the job started
                     format: date-time
                     type: string
@@ -3097,11 +3160,15 @@ spec:
                   lastRunName:
                     description: Last run name
                     type: string
-                  nextRun:
-                    description: The time of the day when the schedule will be executed
-                    format: date-time
-                    type: string
+                  retryCount:
+                    description: Actual retry count
+                    format: int32
+                    type: integer
                 type: object
+              predictionsCount:
+                description: Total number of batch predictions
+                format: int32
+                type: integer
               predictorName:
                 description: The name of the current predictor for this model class.
                 type: string
@@ -3116,7 +3183,7 @@ spec:
                     description: In the case of failure, the resource controller which
                       created the run will set this field with a failure reason
                     type: string
-                  lastRun:
+                  lastRunAt:
                     description: Last time the job started
                     format: date-time
                     type: string
@@ -3149,20 +3216,16 @@ spec:
                   lastRunName:
                     description: Last run name
                     type: string
-                  nextRun:
-                    description: The time of the day when the schedule will be executed
-                    format: date-time
-                    type: string
+                  retryCount:
+                    description: Actual retry count
+                    format: int32
+                    type: integer
                 type: object
               retired:
                 description: List of the last 5 retired models
                 items:
                   type: string
                 type: array
-              totalPredictions:
-                description: Total number of batch predictions
-                format: int32
-                type: integer
               trainingScheduleStatus:
                 description: Training schedule status
                 properties:
@@ -3174,7 +3237,7 @@ spec:
                     description: In the case of failure, the resource controller which
                       created the run will set this field with a failure reason
                     type: string
-                  lastRun:
+                  lastRunAt:
                     description: Last time the job started
                     format: date-time
                     type: string
@@ -3207,10 +3270,10 @@ spec:
                   lastRunName:
                     description: Last run name
                     type: string
-                  nextRun:
-                    description: The time of the day when the schedule will be executed
-                    format: date-time
-                    type: string
+                  retryCount:
+                    description: Actual retry count
+                    format: int32
+                    type: integer
                 type: object
               triggeredBy:
                 description: The name of triggered by.

@@ -2105,8 +2105,8 @@ export namespace ModelClassSpec {
 }
 
 export class ModelClassStatus extends jspb.Message {
-  getModels(): number;
-  setModels(value: number): ModelClassStatus;
+  getModelscount(): number;
+  setModelscount(value: number): ModelClassStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelClassStatus;
@@ -2174,16 +2174,16 @@ export class ModelClassStatus extends jspb.Message {
   hasLastpromotion(): boolean;
   clearLastpromotion(): ModelClassStatus;
 
-  getLastprediction(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastprediction(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
-  hasLastprediction(): boolean;
-  clearLastprediction(): ModelClassStatus;
+  getLastpredictionat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastpredictionat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
+  hasLastpredictionat(): boolean;
+  clearLastpredictionat(): ModelClassStatus;
 
   getLastpredictionname(): string;
   setLastpredictionname(value: string): ModelClassStatus;
 
-  getTotalpredictions(): number;
-  setTotalpredictions(value: number): ModelClassStatus;
+  getPredictionscount(): number;
+  setPredictionscount(value: number): ModelClassStatus;
 
   getConditionsList(): Array<ModelClassCondition>;
   setConditionsList(value: Array<ModelClassCondition>): ModelClassStatus;
@@ -2200,7 +2200,7 @@ export class ModelClassStatus extends jspb.Message {
 
 export namespace ModelClassStatus {
   export type AsObject = {
-    models: number,
+    modelscount: number,
     observedgeneration: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
@@ -2217,9 +2217,9 @@ export namespace ModelClassStatus {
     failuremessage: string,
     lasttraining?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastpromotion?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lastprediction?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastpredictionat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastpredictionname: string,
-    totalpredictions: number,
+    predictionscount: number,
     conditionsList: Array<ModelClassCondition.AsObject>,
   }
 }

@@ -302,7 +302,7 @@ type ModelClassList struct {
 type ModelClassStatus struct {
 	// Total models created for the ModelClass
 	// +kubebuilder:validation:Optional
-	Models int32 `json:"models,omitempty" protobuf:"varint,2,opt,name=models"`
+	ModelsCount int32 `json:"modelsCount,omitempty" protobuf:"varint,2,opt,name=modelsCount"`
 	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
@@ -312,7 +312,6 @@ type ModelClassStatus struct {
 	// BestFE specifies the best feature engineering pipeline produced by the ModelClass
 	//+kubebuilder:validation:Optional
 	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,5,opt,name=bestFE"`
-
 	// Training schedule status
 	//+kubebuilder:validation:Optional
 	TrainingScheduleStatus catalog.RunScheduleStatus `json:"trainingScheduleStatus,omitempty" protobuf:"bytes,7,opt,name=trainingScheduleStatus"`
@@ -325,7 +324,7 @@ type ModelClassStatus struct {
 	// Batch Prediction schedule
 	//+kubebuilder:validation:Optional
 	ReportScheduleStatus catalog.RunScheduleStatus `json:"reportScheduleStatus,omitempty" protobuf:"bytes,10,opt,name=reportSceduleStatus"`
-	// The highest score out of all Models created by the associated Study resource
+	// The highest score out of all ModelsCount created by the associated Study resource
 	// +kubebuilder:validation:Optional
 	BestModelScore float64 `json:"bestModelScore,omitempty" protobuf:"bytes,15,opt,name=bestModelScore"`
 	// List of the last 5 retired models
@@ -352,12 +351,13 @@ type ModelClassStatus struct {
 	LastPromotion *metav1.Time `json:"lastPromotion,omitempty" protobuf:"bytes,24,opt,name=lastPromotion"`
 	// The last time a batch prediction was made
 	//+kubebuilder:validation:Optional
-	LastPrediction *metav1.Time `json:"lastPrediction,omitempty" protobuf:"bytes,25,opt,name=lastPrediction"`
+	LastPredictionAt *metav1.Time `json:"lastPredictionAt,omitempty" protobuf:"bytes,25,opt,name=lastPredictionAt"`
 	// The name of the last prediction for this class
 	//+kubebuilder:validation:Optional
 	LastPredictionName string `json:"lastPredictionName,omitempty" protobuf:"bytes,26,opt,name=lastPredictionName"`
 	// Total number of batch predictions
-	TotalPredictions int32 `json:"totalPredictions,omitempty" protobuf:"varint,27,opt,name=totalPredictions"`
+	//+kubebuilder:validation:Optional
+	PredictionsCount int32 `json:"predictionsCount,omitempty" protobuf:"varint,27,opt,name=predictionsCount"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
