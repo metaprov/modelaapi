@@ -18,13 +18,14 @@ message BatchPredictRequest {
 }
 
 message BatchPredictMCRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction prediction     = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction prediction = 1;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket  bucket     = 2;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection     connection = 3;
     map<string,bytes>                                                    secret     = 4;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass  model = 5;
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entities = 6;
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 7;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model       model      = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass  modelclass = 6;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entities = 7;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 8;
 }
 
 
