@@ -118,9 +118,6 @@ func (in DataPipelineRun) IsFailed() bool {
 
 func (r *DataPipelineRun) MarkRunning() {
 	now := metav1.Now()
-	if r.Status.StartedAt == nil {
-		r.Status.StartedAt = &now
-	}
 	r.Status.Phase = DataPipelineRunPhaseRunning
 	r.CreateOrUpdateCond(DataPipelineRunCondition{
 		Type:   DataPipelineRunCompleted,

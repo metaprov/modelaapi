@@ -951,10 +951,6 @@ func (in *DataPipelineRunStatus) DeepCopyInto(out *DataPipelineRunStatus) {
 		copy(*out, *in)
 	}
 	in.Output.DeepCopyInto(&out.Output)
-	if in.StartedAt != nil {
-		in, out := &in.StartedAt, &out.StartedAt
-		*out = (*in).DeepCopy()
-	}
 	if in.CompletedAt != nil {
 		in, out := &in.CompletedAt, &out.CompletedAt
 		*out = (*in).DeepCopy()
@@ -2345,6 +2341,7 @@ func (in *FeatureGroupSpec) DeepCopyInto(out *FeatureGroupSpec) {
 		copy(*out, *in)
 	}
 	in.IngestSchedule.DeepCopyInto(&out.IngestSchedule)
+	in.SyncSchedule.DeepCopyInto(&out.SyncSchedule)
 	if in.FlatFile != nil {
 		in, out := &in.FlatFile, &out.FlatFile
 		*out = new(FlatFileFormatSpec)
@@ -2395,6 +2392,16 @@ func (in *FeatureGroupStatus) DeepCopyInto(out *FeatureGroupStatus) {
 	if in.OnlineTableCreated != nil {
 		in, out := &in.OnlineTableCreated, &out.OnlineTableCreated
 		*out = (*in).DeepCopy()
+	}
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
 	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
