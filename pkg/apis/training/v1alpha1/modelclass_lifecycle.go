@@ -174,8 +174,8 @@ func (mclass *ModelClass) CompletionAlert(tenantRef *v1.ObjectReference, notifie
 			},
 		},
 	}
-	if mclass.Status.TrainingScheduleStatus.LastRun != nil {
-		result.Spec.Fields["Completion Time"] = mclass.Status.TrainingScheduleStatus.LastRun.Format("01/2/2006 15:04:05")
+	if mclass.Status.TrainingScheduleStatus.LastRunAt != nil {
+		result.Spec.Fields["Completion Time"] = mclass.Status.TrainingScheduleStatus.LastRunAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -204,8 +204,8 @@ func (mclass *ModelClass) ErrorAlert(tenantRef *v1.ObjectReference, notifierName
 			},
 		},
 	}
-	if mclass.Status.TrainingScheduleStatus.LastRun != nil {
-		result.Spec.Fields["Completion Time"] = mclass.Status.TrainingScheduleStatus.LastRun.Format("01/2/2006 15:04:05")
+	if mclass.Status.TrainingScheduleStatus.LastRunAt != nil {
+		result.Spec.Fields["Completion Time"] = mclass.Status.TrainingScheduleStatus.LastRunAt.Format("01/2/2006 15:04:05")
 	}
 
 	return result
