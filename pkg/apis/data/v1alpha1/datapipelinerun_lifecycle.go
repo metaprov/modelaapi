@@ -117,7 +117,6 @@ func (in DataPipelineRun) IsFailed() bool {
 }
 
 func (r *DataPipelineRun) MarkRunning() {
-	now := metav1.Now()
 	r.Status.Phase = DataPipelineRunPhaseRunning
 	r.CreateOrUpdateCond(DataPipelineRunCondition{
 		Type:   DataPipelineRunCompleted,
@@ -244,7 +243,7 @@ func (run DataPipelineRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierNam
 func (run DataPipelineRun) RunStatus() *catalog.LastRunStatus {
 	result := &catalog.LastRunStatus{
 		CompletedAt:    run.Status.CompletedAt,
-		Duration:       int32(run.Status.CompletedAt.Unix() - run.Status.StartedAt.Unix()),
+		Duration:       int32(run.Status.CompletedAt.Unix() - run.CreationTimestamp.Unix()),
 		FailureReason:  run.Status.FailureReason,
 		FailureMessage: run.Status.FailureMessage,
 	}
