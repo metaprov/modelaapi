@@ -188,9 +188,6 @@ type ModelClassTrainingSpec struct {
 	// Promotion defines the way to promote models
 	//+kubebuilder:validation:Optional
 	PromotionPolicy catalog.PromotionType `json:"promotionPolicy,omitempty" protobuf:"bytes,6,opt,name=promotionPolicy"`
-	// If true, retrain the model. Once the model is retrained, we set the flag to false.
-	// +kubebuilder:validation:Optional
-	Retrain *bool `json:"retrain,omitempty" protobuf:"varint,7,opt,name=retrain"`
 	// Define custom search space for this model class.
 	// The search space defines which algorithm to include or execlude
 	// If not defined, we would use the search space in the model template.

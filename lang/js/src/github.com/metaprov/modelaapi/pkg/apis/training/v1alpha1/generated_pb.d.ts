@@ -2253,9 +2253,6 @@ export class ModelClassTrainingSpec extends jspb.Message {
   getPromotionpolicy(): string;
   setPromotionpolicy(value: string): ModelClassTrainingSpec;
 
-  getRetrain(): boolean;
-  setRetrain(value: boolean): ModelClassTrainingSpec;
-
   getSearchspace(): AlgorithmSearchSpaceSpec | undefined;
   setSearchspace(value?: AlgorithmSearchSpaceSpec): ModelClassTrainingSpec;
   hasSearchspace(): boolean;
@@ -2300,7 +2297,6 @@ export namespace ModelClassTrainingSpec {
     trainingschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     modelimage?: ModelImageSpec.AsObject,
     promotionpolicy: string,
-    retrain: boolean,
     searchspace?: AlgorithmSearchSpaceSpec.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     triggeredby: string,

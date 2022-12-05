@@ -2449,10 +2449,6 @@ spec:
                           by the WorkloadClass
                         type: string
                     type: object
-                  retrain:
-                    description: If true, retrain the model. Once the model is retrained,
-                      we set the flag to false.
-                    type: boolean
                   searchSpace:
                     description: Define custom search space for this model class.
                       The search space defines which algorithm to include or execlude

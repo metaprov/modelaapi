@@ -205,6 +205,22 @@ func (this *ModelClassRun) IsSaved() bool {
 	return cond.Status == v1.ConditionTrue
 }
 
+func (this *ModelClassRun) IsAborted() bool {
+	return this.Spec.Aborted != nil && *this.Spec.Aborted
+}
+
+func (this *ModelClassRun) Abort() {
+	this.Spec.Aborted = util.BoolPtr(true)
+}
+
+func (this *ModelClassRun) IsPaused() bool {
+	return this.Spec.Paused != nil && *this.Spec.Paused
+}
+
+func (this *ModelClassRun) Pause() {
+	this.Spec.Paused = util.BoolPtr(true)
+}
+
 func (run *ModelClassRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("ModelClassRun %s failed with error %v", run.Name, err.Error())

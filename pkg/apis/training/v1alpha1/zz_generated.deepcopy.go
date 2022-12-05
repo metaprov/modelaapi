@@ -1973,11 +1973,6 @@ func (in *ModelClassTrainingSpec) DeepCopyInto(out *ModelClassTrainingSpec) {
 	in.ModelUnitTests.DeepCopyInto(&out.ModelUnitTests)
 	in.TrainingSchedule.DeepCopyInto(&out.TrainingSchedule)
 	in.ModelImage.DeepCopyInto(&out.ModelImage)
-	if in.Retrain != nil {
-		in, out := &in.Retrain, &out.Retrain
-		*out = new(bool)
-		**out = **in
-	}
 	if in.SearchSpace != nil {
 		in, out := &in.SearchSpace, &out.SearchSpace
 		*out = new(AlgorithmSearchSpaceSpec)

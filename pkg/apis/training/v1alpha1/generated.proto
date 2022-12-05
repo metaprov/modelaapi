@@ -1552,10 +1552,6 @@ message ModelClassTrainingSpec {
   // +kubebuilder:validation:Optional
   optional string promotionPolicy = 6;
 
-  // If true, retrain the model. Once the model is retrained, we set the flag to false.
-  // +kubebuilder:validation:Optional
-  optional bool retrain = 7;
-
   // Define custom search space for this model class.
   // The search space defines which algorithm to include or execlude
   // If not defined, we would use the search space in the model template.
