@@ -145,8 +145,6 @@ func (reciperun *RecipeRun) MarkFailed(error string) {
 }
 
 func (reciperun *RecipeRun) MarkRunning() {
-	now := metav1.Now()
-	reciperun.Status.StartTime = &now
 	reciperun.Status.Phase = RecipeRunPhaseRunning
 	reciperun.CreateOrUpdateCond(RecipeCondition{
 		Type:    RecipeReady,
@@ -237,7 +235,7 @@ func (reciperun RecipeRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierNam
 func (reciperun RecipeRun) RunStatus() *catalog.LastRunStatus {
 	result := &catalog.LastRunStatus{
 		CompletedAt:    reciperun.Status.CompletedAt,
-		Duration:       int32(reciperun.Status.CompletedAt.Unix() - reciperun.Status.StartTime.Unix()),
+		Duration:       int32(reciperun.Status.CompletedAt.Unix() - reciperun.CreationTimestamp.Unix()),
 		FailureReason:  reciperun.Status.FailureReason,
 		FailureMessage: reciperun.Status.FailureMessage,
 	}
