@@ -84,7 +84,7 @@ type NotifierSpec struct {
 	// Each channel specifies a Connection resource for an external messaging system, and a destination channel within the system
 	// to forward the information from Alerts to
 	// +kubebuilder:validation:Optional
-	Channels []NotificationChannelSpec `json:"channels,omitempty" protobuf:"bytes,5,opt,name=channels"`
+	Channels []NotificationChannelSpec `json:"channels,omitempty" protobuf:"bytes,5,rep,name=channels"`
 }
 
 // NotifierStatus is the observed state of a Notifier
@@ -96,7 +96,7 @@ type NotifierStatus struct {
 	//+kubebuilder:validation:Optional
 	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,3,opt,name=updatedAt"`
 	// The status of Notification Channels after Alerts have been forwarded to them
-	ChannelsStatus []NotificationChannelStatus `json:"channelsStatus,omitempty" protobuf:"bytes,4,opt,name=channelsStatus"`
+	ChannelsStatus []NotificationChannelStatus `json:"channelsStatus,omitempty" protobuf:"bytes,4,rep,name=channelsStatus"`
 	//+kubebuilder:validation:Optional
 	Conditions []NotifierCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }

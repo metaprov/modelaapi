@@ -105,7 +105,7 @@ type FeatureGroupSpec struct {
 	EntityName string `json:"entityName,omitempty" protobuf:"bytes,6,opt,name=entityName"`
 	// Tags for this feature groups
 	// +kubebuilder:validation:Optional
-	Tags []string `json:"tags,omitempty" protobuf:"bytes,7,opt,name=tags"`
+	Tags []string `json:"tags,omitempty" protobuf:"bytes,7,rep,name=tags"`
 	// Schedule for running ingesting the data from the feature.
 	// On virtual features (e.g. where the data already reside in a table)
 	// The ingest will just perform feature profile, and run the feature group unit tests.

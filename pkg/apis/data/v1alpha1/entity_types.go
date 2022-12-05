@@ -81,7 +81,7 @@ type EntitySpec struct {
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
 	// Tags for this feature groups
 	// +kubebuilder:validation:Optional
-	Tags []string `json:"tags,omitempty" protobuf:"bytes,6,opt,name=tags"`
+	Tags []string `json:"tags,omitempty" protobuf:"bytes,6,rep,name=tags"`
 }
 
 // +kubebuilder:object:root=true

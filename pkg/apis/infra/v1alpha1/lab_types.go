@@ -186,8 +186,8 @@ type VirtualClusterSpec struct {
 	AutoScale *bool `json:"autoscale,omitempty" protobuf:"varint,15,opt,name=autoscale"`
 	// Minimum number of nodes for auto scaling
 	// +kubebuilder:validation:Optional
-	MinNodes *int32 `json:"minNodes,omitempty" protobuf:"bytes,16,opt,name=minNodes"`
+	MinNodes *int32 `json:"minNodes,omitempty" protobuf:"varint,16,opt,name=minNodes"`
 	// Maximum number of nodes for auto scaling
 	// +kubebuilder:validation:Optional
-	MaxNodes *int32 `json:"maxNodes,omitempty" protobuf:"bytes,17,opt,name=maxNodes"`
+	MaxNodes *int32 `json:"maxNodes,omitempty" protobuf:"varint,17,opt,name=maxNodes"`
 }

@@ -2297,7 +2297,7 @@ type AssertionType string
 type TestSuite struct {
 	// If false, this test case is disabled
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// +kubebuilder:validation:Optional
 	Tests []DataTestCase `json:"tests,omitempty" protobuf:"bytes,2,rep,name=tests"`
 }
@@ -2325,7 +2325,7 @@ const (
 type DataTestCase struct {
 	// If false, this test case is disabled
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The name of the test case, will be generate if empty by the combination of assertion, entity ref, column name and metric
 	Name string `json:"name,omitempty" protobuf:"bytes,2,opt,name=name"`
 	// The assertion type

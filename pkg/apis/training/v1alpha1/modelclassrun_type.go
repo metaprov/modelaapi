@@ -162,7 +162,7 @@ type ModelClassRunStatus struct {
 	// Last promotion was done
 	PromotedAt *metav1.Time `json:"promotedAt,omitempty" protobuf:"bytes,14,opt,name=promotedAt"`
 	// If true the promotion was automatic
-	Auto *bool `json:"auto,omitempty" protobuf:"bytes,15,opt,name=auto"`
+	Auto *bool `json:"auto,omitempty" protobuf:"varint,15,opt,name=auto"`
 	// for manual promotion, who approved the promotion
 	ApprovedBy v1.ObjectReference `json:"approvedBy,omitempty" protobuf:"bytes,16,opt,name=approvedBy"`
 	// for manual promotion, who approved the promotion

@@ -154,7 +154,7 @@ type ForecasterSpec struct {
 	Future WindowSpec `json:"future,omitempty" protobuf:"bytes,4,opt,name=future"`
 	// Make a forecast post training
 	// +kubebuilder:validation:Optional
-	Forecast *bool `json:"forecast,omitempty" protobuf:"bytes,5,opt,name=forecast"`
+	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,5,opt,name=forecast"`
 	// Make a forecast post training
 	// +kubebuilder:validation:Optional
 	Coverage *float64 `json:"coverage,omitempty" protobuf:"bytes,6,opt,name=coverage"`
@@ -163,21 +163,21 @@ type ForecasterSpec struct {
 	OutputLocation data.DataLocation `json:"outputLocation,omitempty" protobuf:"bytes,7,opt,name=outputLocation"`
 	// List of time series features to compute on each time series.
 	// +kubebuilder:validation:Optional
-	Features []catalog.Metric `json:"features,omitempty" protobuf:"bytes,8,opt,name=features"`
+	Features []catalog.Metric `json:"features,omitempty" protobuf:"bytes,8,rep,name=features"`
 	// Filter the groups to forecast for. If none forecast only to the leaf group
 	// +kubebuilder:validation:Optional
 	Groups []string `json:"groups,omitempty" protobuf:"bytes,9,rep,name=groups"`
 	// +kubebuilder:validation:Optional
 	PredefinedTemplate ModelTemplate `json:"predefinedTemplate,omitempty" protobuf:"bytes,10,opt,name=predefinedTemplate"`
 	// +kubebuilder:validation:Optional
-	Anomalies []Anomaly `json:"anomalies,omitempty" protobuf:"bytes,11,opt,name=anomalies"`
+	Anomalies []Anomaly `json:"anomalies,omitempty" protobuf:"bytes,11,rep,name=anomalies"`
 	// +kubebuilder:validation:Optional
 	TrainEndDate string `json:"trainEndData,omitempty" protobuf:"bytes,12,opt,name=trainEndData"`
 	// The value column. this is the name of the column to forecast, this will be based on the data source.
 	// +kubebuilder:validation:Optional
 	ValueColumn string `json:"valueColumn,omitempty" protobuf:"bytes,13,opt,name=valueColumn"`
 	// +kubebuilder:validation:Optional
-	HPOBudget *int32 `json:"hpoBudget,omitempty" protobuf:"bytes,14,opt,name=hpoBudget"`
+	HPOBudget *int32 `json:"hpoBudget,omitempty" protobuf:"varint,14,opt,name=hpoBudget"`
 	// Spec for evaluation metric
 	// +kubebuilder:validation:Optional
 	EvalMetrics EvalMetrics `json:"evaluationMetrics,omitempty" protobuf:"bytes,15,opt,name=evaluationMetrics"`
@@ -188,19 +188,19 @@ type ForecasterSpec struct {
 	Seasonality SeasonalitySpec `json:"seasonality,omitempty" protobuf:"bytes,17,opt,name=seasonality"`
 	// The regressor. Initially those are set from the data source schema
 	// +kubebuilder:validation:Optional
-	Regressors []string `json:"regressors,omitempty" protobuf:"bytes,18,opt,name=regressors"`
+	Regressors []string `json:"regressors,omitempty" protobuf:"bytes,18,rep,name=regressors"`
 	// Lagged Regressors
 	// +kubebuilder:validation:Optional
-	LaggedRegressors []string `json:"laggedRegressors,omitempty" protobuf:"bytes,19,opt,name=laggedRegressors"`
+	LaggedRegressors []string `json:"laggedRegressors,omitempty" protobuf:"bytes,19,rep,name=laggedRegressors"`
 	// Set the growth of the series
 	// +kubebuilder:validation:Optional
 	Growth GrowthMode `json:"growth,omitempty" protobuf:"bytes,20,opt,name=growth"`
 	// In case of group forecast
 	// +kubebuilder:validation:Optional
-	Key []string `json:"key,omitempty" protobuf:"bytes,21,opt,name=key"`
+	Key []string `json:"key,omitempty" protobuf:"bytes,21,rep,name=key"`
 	// The estimators to try. By default, we try graykit / auto arima and prophet.
 	// +kubebuilder:validation:Optional
-	Estimators []catalog.ClassicEstimatorName `json:"estimators,omitempty" protobuf:"bytes,22,opt,name=estimators"`
+	Estimators []catalog.ClassicEstimatorName `json:"estimators,omitempty" protobuf:"bytes,22,rep,name=estimators"`
 	// Group recocile.
 	// By default this is the bottom-up
 	// +kubebuilder:default:="bottom-up"
@@ -235,7 +235,7 @@ type RegressionForecasterSpec struct {
 	// If true this is an ensemble pipeline
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Ensemble *bool `json:"ensemble,omitempty" protobuf:"bytes,1,opt,name=ensemble"`
+	Ensemble *bool `json:"ensemble,omitempty" protobuf:"varint,1,opt,name=ensemble"`
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
 	Imputation *catalog.Imputation `json:"imputation,omitempty" protobuf:"bytes,2,opt,name=imputation"`
@@ -250,17 +250,17 @@ type RegressionForecasterSpec struct {
 	// If true apply the data transofmer to
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Date *bool `json:"date,omitempty" protobuf:"bytes,5,opt,name=date"`
+	Date *bool `json:"date,omitempty" protobuf:"varint,5,opt,name=date"`
 	// The list of windows to use when generating features.
 	// +kubebuilder:validation:Optional
-	Windows []int32 `json:"windows,omitempty" protobuf:"bytes,6,opt,name=windows"`
+	Windows []int32 `json:"windows,omitempty" protobuf:"bytes,6,rep,name=windows"`
 	// The list of lags to use when generating features
 	// +kubebuilder:validation:Optional
-	Lags []int32 `json:"lags,omitempty" protobuf:"bytes,7,opt,name=lags"`
+	Lags []int32 `json:"lags,omitempty" protobuf:"bytes,7,rep,name=lags"`
 	// The list of metrics to generate for each combination of lag and windows.
 	// The default list is min,max,median,stddev
 	// +kubebuilder:validation:Optional
-	Functions []catalog.Metric `json:"functions,omitempty" protobuf:"bytes,8,opt,name=functions"`
+	Functions []catalog.Metric `json:"functions,omitempty" protobuf:"bytes,8,rep,name=functions"`
 	// when computing moving avg, use exponential moving avg, other use regular moving avg
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -298,19 +298,19 @@ type TimeSeriesEvent struct {
 	Method string `json:"method,omitempty" protobuf:"bytes,2,opt,name=method"`
 	// Set to true if this event is an holiday
 	// +kubebuilder:validation:Optional
-	Holiday *bool `json:"holiday,omitempty" protobuf:"bytes,3,opt,name=holiday"`
+	Holiday *bool `json:"holiday,omitempty" protobuf:"varint,3,opt,name=holiday"`
 	// If this event is an holiday, this is the holiday country
 	// +kubebuilder:validation:Optional
 	Country catalog.HolidayCountry `json:"country,omitempty" protobuf:"bytes,4,opt,name=country"`
 	// Pre event window, that might have event effects
 	// +kubebuilder:validation:Optional
-	PreEvent *int32 `json:"preEvent,omitempty" protobuf:"bytes,5,opt,name=preEvent"`
+	PreEvent *int32 `json:"preEvent,omitempty" protobuf:"varint,5,opt,name=preEvent"`
 	// Post event windows the might have event effects.
 	// +kubebuilder:validation:Optional
-	PostEvent *int32 `json:"postEvent,omitempty" protobuf:"bytes,6,opt,name=postEvent"`
+	PostEvent *int32 `json:"postEvent,omitempty" protobuf:"varint,6,opt,name=postEvent"`
 	// The time points to mark the events
 	// +kubebuilder:validation:Optional
-	TimePoints []string `json:"timePoints,omitempty" protobuf:"bytes,7,opt,name=timePoints"`
+	TimePoints []string `json:"timePoints,omitempty" protobuf:"bytes,7,rep,name=timePoints"`
 }
 
 type ChangePoint struct {
@@ -325,7 +325,7 @@ type EvalMetrics struct {
 	// From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
 	// Additional metrics to compute during CV, besides the one specified by ``cv_selection_metric``
 	// +kubebuilder:validation:Optional
-	Reporting []catalog.Metric `json:"reporting,omitempty" protobuf:"bytes,2,opt,name=reporting"`
+	Reporting []catalog.Metric `json:"reporting,omitempty" protobuf:"bytes,2,rep,name=reporting"`
 	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
 	//  Defines how to aggregate rolling windows of actual and predicted values
 	//  before evaluation.
@@ -334,7 +334,7 @@ type EvalMetrics struct {
 	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
 	//  Number of periods to aggregate before evaluation.
 	// +kubebuilder:validation:Optional
-	AggPeriod *int32 `json:"aggPeriod,omitempty" protobuf:"bytes,4,opt,name=aggPeriod"`
+	AggPeriod *int32 `json:"aggPeriod,omitempty" protobuf:"varint,4,opt,name=aggPeriod"`
 	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
 	// Defines baseline model to compute ``R2_null_model_score`` evaluation metric.
 	// R2_null_model_score is the improvement in the loss function relative
@@ -358,7 +358,7 @@ type EvalPeriod struct {
 	//The rest is used for cross validation.
 	//If None, default is forecast_horizon. Set to 0 to skip backtest.
 	// +kubebuilder:validation:Optional
-	TestHorizon *int32 `json:"testHorizon,omitempty" protobuf:"bytes,1,opt,name=testHorizon"`
+	TestHorizon *int32 `json:"testHorizon,omitempty" protobuf:"varint,1,opt,name=testHorizon"`
 	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
 	//Number of periods for the gap between train and test data.
 	//Applies to both backtest and forecast, however the behaviour is slightly different.
@@ -366,40 +366,40 @@ type EvalPeriod struct {
 	//If NoneSeasonalityMode, default is 0.
 
 	// +kubebuilder:validation:Optional
-	PeriodsBetweenTrainTest *int32 `json:"periodsBetweenTrainTest,omitempty" protobuf:"bytes,2,opt,name=periodsBetweenTrainTest"`
+	PeriodsBetweenTrainTest *int32 `json:"periodsBetweenTrainTest,omitempty" protobuf:"varint,2,opt,name=periodsBetweenTrainTest"`
 	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
 	//Number of periods to slide the test window between CV splits. Has to be greater than or equal to 1.
 	//If None, default is cv_horizon.
 	// +kubebuilder:validation:Optional
-	CvPeriodsBetweenSplits *int32 `json:"cvPeriodsBetweenSplits,omitempty" protobuf:"bytes,3,opt,name=cvPeriodsBetweenSplits"`
+	CvPeriodsBetweenSplits *int32 `json:"cvPeriodsBetweenSplits,omitempty" protobuf:"varint,3,opt,name=cvPeriodsBetweenSplits"`
 	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
 	//If True, training window for each CV split is fixed to the first available date.
 	//Otherwise, train start date is sliding, determined by cv_min_train_periods
 
 	// +kubebuilder:validation:Optional
-	CvExpandingWindows *bool `json:"cvExpandingWindows,omitempty" protobuf:"bytes,4,opt,name=cvExpandingWindows"`
+	CvExpandingWindows *bool `json:"cvExpandingWindows,omitempty" protobuf:"varint,4,opt,name=cvExpandingWindows"`
 	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
 	//Number of periods in each CV test set
 	//If None, default is forecast_horizon. Set to 0 to skip CV.
 	// +kubebuilder:validation:Optional
-	CvHorizon *int32 `json:"cvHorizon,omitempty" protobuf:"bytes,5,opt,name=cvHorizon"`
+	CvHorizon *int32 `json:"cvHorizon,omitempty" protobuf:"varint,5,opt,name=cvHorizon"`
 	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
 	// Minimum number of periods for training each CV fold.
 	//If cv_expanding_window is False, every training period is this size
 	//If None, default is 2 * cv_horizon
 	// +kubebuilder:validation:Optional
-	CvMinTrainPeriods *int32 `json:"cvMinTrainPeriods,omitempty" protobuf:"bytes,6,opt,name=cvMinTrainPeriods"`
+	CvMinTrainPeriods *int32 `json:"cvMinTrainPeriods,omitempty" protobuf:"varint,6,opt,name=cvMinTrainPeriods"`
 	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
 	// Maximum number of CV splits.
 	// Given the above configuration, samples up to max_splits train/test splits,
 	// preferring splits toward the end of available data. If None, uses all splits.
 	// +kubebuilder:validation:Optional
-	CvMaxSplits *int32 `json:"cvMaxSplits,omitempty" protobuf:"bytes,7,opt,name=cvMaxSplits"`
+	CvMaxSplits *int32 `json:"cvMaxSplits,omitempty" protobuf:"varint,7,opt,name=cvMaxSplits"`
 	//  From: https://linkedin.github.io/greykite/docs/0.1.0/html/pages/stepbystep/0400_configuration.html
 	//If True, splits from the end of the dataset are used.
 	//Else a sampling strategy is applied. Check
 	// +kubebuilder:validation:Optional
-	CvUseMostRecentSplits *bool `json:"cvUseMostRecentSplits,omitempty" protobuf:"bytes,8,opt,name=cvUseMostRecentSplits"`
+	CvUseMostRecentSplits *bool `json:"cvUseMostRecentSplits,omitempty" protobuf:"varint,8,opt,name=cvUseMostRecentSplits"`
 }
 
 type UnivariateForecastStatus struct {

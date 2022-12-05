@@ -90,7 +90,7 @@ type TenantSpec struct {
 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,6,opt,name=notification"`
 	// Set of feature stores
 	// +kubebuilder:validation:Optional
-	FeatureStores []FeatureStoreSpec `json:"featureStores,omitempty" protobuf:"bytes,7,opt,name=featureStores"`
+	FeatureStores []FeatureStoreSpec `json:"featureStores,omitempty" protobuf:"bytes,7,rep,name=featureStores"`
 }
 
 // TenantStatus defines the actual state of a Tenant
@@ -110,7 +110,7 @@ type TenantStatus struct {
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,4,opt,name=failureMessage"`
 	// the status of the feature stores
 	//+kubebuilder:validation:Optional
-	FeatureStores []FeatureStoreStatus `json:"featureStores,omitempty" protobuf:"bytes,5,opt,name=featureStores"`
+	FeatureStores []FeatureStoreStatus `json:"featureStores,omitempty" protobuf:"bytes,5,rep,name=featureStores"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
@@ -119,7 +119,7 @@ type TenantStatus struct {
 
 // Specifiction for an online feature store
 type FeatureStoreSpec struct {
-	Online bool `json:"online,omitempty" protobuf:"bytes,1,opt,name=online"`
+	Online bool `json:"online,omitempty" protobuf:"varint,1,opt,name=online"`
 	// The name of the online feature store.
 	//+kubebuilder:validation:Optional
 	Name string `json:"name,omitempty" protobuf:"bytes,2,opt,name=name"`

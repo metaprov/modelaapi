@@ -120,7 +120,7 @@ type CustomAppSpec struct {
 	Title *string `json:"title,omitempty" protobuf:"bytes,2,opt,name=title"`
 	// The app pages
 	// +kubebuilder:validation:Optional
-	Pages []data.PageSpec `json:"pages,omitempty" protobuf:"bytes,3,opt,name=pages"`
+	Pages []data.PageSpec `json:"pages,omitempty" protobuf:"bytes,3,rep,name=pages"`
 }
 
 // DataAppStatus defines the observed state of DataApp

@@ -94,7 +94,7 @@ type ModelClassSpec struct {
 	// If using the feature store (pre defined features), specify the feature groups the would
 	// be used to create the training data.
 	// +kubebuilder:validation:Optional
-	Entities []EntityRef `json:"entities,omitempty" protobuf:"bytes,8,opt,name=entities"`
+	Entities []EntityRef `json:"entities,omitempty" protobuf:"bytes,8,rep,name=entities"`
 	// The model class data
 	// +kubebuilder:validation:Optional
 	Data ModelClassDataSpec `json:"data,omitempty" protobuf:"bytes,10,opt,name=data"`
@@ -142,7 +142,7 @@ type ModelClassDataSpec struct {
 	// The primary key for the observation row
 	// If empty the system will set the join key as the primary key based on the schema.
 	// +kubebuilder:validation:Optional
-	PrimaryKey []string `json:"primaryKey,omitempty" protobuf:"bytes,5,opt,name=primaryKey"`
+	PrimaryKey []string `json:"primaryKey,omitempty" protobuf:"bytes,5,rep,name=primaryKey"`
 	// Define the column name that contains the prediction time for each row in the label data.
 	// The system uses the prediction time in order to avoid data leakage.
 	// I.e. the training dataset will contain only data that was known before the prediction time
@@ -232,7 +232,7 @@ type ModelClassTrainingSpec struct {
 type ModelClassServingSpec struct {
 	// Define the stages to test the model before release
 	// +kubebuilder:validation:Optional
-	Pipeline []PipelineStageSpec `json:"pipeline,omitempty" protobuf:"bytes,1,opt,name=pipeline"`
+	Pipeline []PipelineStageSpec `json:"pipeline,omitempty" protobuf:"bytes,1,rep,name=pipeline"`
 	// The name of the predictor template to use when
 	// +kubebuilder:validation:Optional
 	PredictorTemplateName *string `json:"predictorTemplateName,omitempty" protobuf:"bytes,2,opt,name=predictorTemplateName"`
@@ -264,7 +264,7 @@ type ModelClassServingSpec struct {
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,10,opt,name=resources"`
 	// when a model is ready, deploy it as shadow model first.
 	// +kubebuilder:validation:Optional
-	ShadowFirst *bool `json:"shadowFirst,omitempty" protobuf:"bytes,11,opt,name=shadowFirst"`
+	ShadowFirst *bool `json:"shadowFirst,omitempty" protobuf:"varint,11,opt,name=shadowFirst"`
 }
 
 // Define a test stage
@@ -287,7 +287,7 @@ type EntityRef struct {
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// FeatureGroups to exclude from the link
 	// +kubebuilder:validation:Optional
-	Exclude []string `json:"exclude,omitempty" protobuf:"bytes,2,opt,name=exclude"`
+	Exclude []string `json:"exclude,omitempty" protobuf:"bytes,2,rep,name=exclude"`
 }
 
 // ModelClassList contains a list of Studies
@@ -325,7 +325,7 @@ type ModelClassStatus struct {
 	// +kubebuilder:validation:Optional
 	BestModelScore float64 `json:"bestModelScore,omitempty" protobuf:"bytes,8,opt,name=bestModelScore"`
 	// List of the last 5 retired models
-	RetiredModels []string `json:"retired,omitempty" protobuf:"bytes,9,opt,name=retired"`
+	RetiredModels []string `json:"retired,omitempty" protobuf:"bytes,9,rep,name=retired"`
 	// The name of the current predictor for this model class.
 	PredictorName string `json:"predictorName,omitempty" protobuf:"bytes,10,opt,name=predictorName"`
 	// The name of the current dataaoo for the model class

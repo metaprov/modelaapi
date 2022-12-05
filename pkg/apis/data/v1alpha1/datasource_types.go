@@ -316,7 +316,7 @@ type TimeSeriesSchema struct {
 	// The interval to forecast at this level
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	Interval *int32 `json:"interval,omitempty" protobuf:"bytes,3,opt,name=interval"`
+	Interval *int32 `json:"interval,omitempty" protobuf:"varint,3,opt,name=interval"`
 }
 
 type RecommendationSchema struct {
@@ -555,7 +555,7 @@ type DataSourceSpec struct {
 	// If true, this datasource is for labeled data.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Labeled *bool `json:"labeled,omitempty" protobuf:"bytes,7,opt,name=labeled"`
+	Labeled *bool `json:"labeled,omitempty" protobuf:"varint,7,opt,name=labeled"`
 	// The specification for how incoming data should be sampled (i.e. how many rows should be used). Applicable
 	// primarily for very large datasets
 	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,9,opt,name=sample"`
@@ -656,7 +656,7 @@ type RelationshipSpec struct {
 
 type LabelingSpec struct {
 	// If true enable labeling.
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The name of the column that will hold the result.
 	ResultColumn string `json:"resultColumn,omitempty" protobuf:"bytes,2,opt,name=resultColumn"`
 	// List of rules for positive rules.

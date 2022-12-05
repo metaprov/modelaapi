@@ -43,7 +43,7 @@ type AlgorithmSpec struct {
 	URL *string `json:"url,omitempty" protobuf:"bytes,3,opt,name=url"`
 	// Task is the machine learning task (binary classification / regression)
 	// +kubebuilder:validation:Optional
-	Tasks []MLTask `json:"tasks" protobuf:"bytes,4,opt,name=tasks"`
+	Tasks []MLTask `json:"tasks" protobuf:"bytes,4,rep,name=tasks"`
 	// Sparse indicate if this algorithm can deal with sparse data
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

@@ -130,7 +130,7 @@ type DatasetSpec struct {
 	Role *DatasetRole `json:"role,omitempty" protobuf:"bytes,9,opt,name=role"`
 	// Tags attached to the dataset
 	// +kubebuilder:validation:Optional
-	Tags []string `json:"tags,omitempty" protobuf:"bytes,10,opt,name=tags"`
+	Tags []string `json:"tags,omitempty" protobuf:"bytes,10,rep,name=tags"`
 	// Indicates if a PDF report containing the Dataset's profile should be generated
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
@@ -234,7 +234,7 @@ type DatasetSpec struct {
 	// List the feature groups that were used to create this dataset
 	// This is used for lineage.
 	// +kubebuilder:validation:Optional
-	FeatureGroups []v1.ObjectReference `json:"featureGroups,omitempty" protobuf:"bytes,38,opt,name=featureGroups"`
+	FeatureGroups []v1.ObjectReference `json:"featureGroups,omitempty" protobuf:"bytes,38,rep,name=featureGroups"`
 }
 
 // DatasetStatus defines the observed state of a Dataset object
@@ -258,7 +258,7 @@ type DatasetStatus struct {
 	ProfileURI string `json:"profileURI" protobuf:"bytes,5,opt,name=profileURI"`
 	// Whether or not the data was detected as imbalanced
 	//+kubebuilder:validation:Optional
-	Imbalanced bool `json:"imbalanced,omitempty" protobuf:"bytes,6,opt,name=imbalanced"`
+	Imbalanced bool `json:"imbalanced,omitempty" protobuf:"varint,6,opt,name=imbalanced"`
 	// The location of anomaly file. The file contain the list of rows that were marked as anomaly by an isolation forest.
 	// algorithm
 	// +kubebuilder:validation:Optional
@@ -625,7 +625,7 @@ type DatasetGroupByStatus struct {
 	FeaturesURI string `json:"featuresURI,omitempty" protobuf:"bytes,5,opt,name=featuresURI"`
 	// Holds the worker on going result, when a worker finish, we update the location of thier result files
 	// +kubebuilder:validation:Optional
-	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,6,opt,name=workerResults"`
+	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,6,rep,name=workerResults"`
 }
 
 // Define how to group by the data, before processing.
@@ -636,7 +636,7 @@ type GroupBySpec struct {
 	// For group forecasting, this is the key of the group
 	// If not specify this will be the key from the data source.
 	// +kubebuilder:validation:Optional
-	GroupBy []string `json:"groupby,omitempty" protobuf:"bytes,2,opt,name=groupby"`
+	GroupBy []string `json:"groupby,omitempty" protobuf:"bytes,2,rep,name=groupby"`
 	// The time series frequency, if not specify they freq will be the base freq from the data source.
 	// +kubebuilder:default:="day"
 	// +kubebuilder:validation:Optional
@@ -645,7 +645,7 @@ type GroupBySpec struct {
 	// the data source
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	Interval *int32 `json:"interval,omitempty" protobuf:"bytes,4,opt,name=interval"`
+	Interval *int32 `json:"interval,omitempty" protobuf:"varint,4,opt,name=interval"`
 	// Aggregation function. Define how to aggregate
 	// By default this is the aggregation function from the data source.
 	// +kubebuilder:default:="sum"

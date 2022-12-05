@@ -479,7 +479,7 @@ type GarbageCollectionStatus struct {
 	CollectedModelsCount int32 `json:"collectedModelsCount,omitempty" protobuf:"varint,1,opt,name=collectedModelsCount"`
 	// The collection of models that were archived
 	// +kubebuilder:validation:Optional
-	Models []ModelResult `json:"models,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,opt,name=models"`
+	Models []ModelResult `json:"models,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,rep,name=models"`
 }
 
 type DriftDetectorStatus struct {
@@ -493,7 +493,7 @@ type StudyGroupByStatus struct {
 	StudiesURI string `json:"studiesURI,omitempty" protobuf:"bytes,1,opt,name=studiesURI"`
 	// Holds the worker on going result, when a worker finish, we update the location of thier result files
 	// +kubebuilder:validation:Optional
-	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,2,opt,name=workerResults"`
+	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,2,rep,name=workerResults"`
 }
 
 // SearchSpec specifies the configuration for a distributed model search
@@ -656,7 +656,7 @@ type AlgorithmSearchSpaceSpec struct {
 	// Set a custom hyper parameter spaace.
 	// Specify custom ranges per estimator.
 	// +kubebuilder:validation:Optional
-	Custom []AlgorithmParameterRange `json:"custom,omitempty" protobuf:"bytes,3,opt,name=custom"`
+	Custom []AlgorithmParameterRange `json:"custom,omitempty" protobuf:"bytes,3,rep,name=custom"`
 }
 
 // Define a single custom search spec for a single alg

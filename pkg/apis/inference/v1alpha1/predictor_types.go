@@ -202,7 +202,7 @@ type ForwardCurtainSpec struct {
 	// Percent of request that are sent to the foreward curtain.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Percent *int32 `json:"percent,omitempty" protobuf:"bytes,3,opt,name=percent"`
+	Percent *int32 `json:"percent,omitempty" protobuf:"varint,3,opt,name=percent"`
 }
 
 type BackwardCurtainSpec struct {
@@ -379,7 +379,7 @@ type PredictorStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	// The collection of historical records of models deployed to the Predictor, used internally to roll-back models
 	//+kubebuilder:validation:Optional
-	History []ModelRecord `json:"history,omitempty" protobuf:"bytes,2,opt,name=history"`
+	History []ModelRecord `json:"history,omitempty" protobuf:"bytes,2,rep,name=history"`
 	// The status of the shadow models
 	// +kubebuilder:validation:Optional
 	ModelStatus []ModelDeploymentStatus `json:"modelsStatus,omitempty" protobuf:"bytes,4,rep,name=modelsStatus"`
@@ -503,7 +503,7 @@ type ModelDeploymentStatus struct {
 	ObjectStatuses []KubernetesObjectStatus `json:"objectStatuses,omitempty" protobuf:"bytes,19,rep,name=objectStatuses"`
 	// the set of validation errors
 	// +kubebuilder:validation:Optional
-	Errors []ValidationError `json:"errors,omitempty" protobuf:"bytes,20,opt,name=errors"`
+	Errors []ValidationError `json:"errors,omitempty" protobuf:"bytes,20,rep,name=errors"`
 	// Ref to the last ground true dataset that this model was tested against.
 	// +kubebuilder:validation:Optional
 	LastFeedbackDatasetRef v1.ObjectReference `json:"lastFeedbackDatasetRef,omitempty" protobuf:"bytes,21,opt,name=lastFeedbackDatasetRef"`
@@ -512,7 +512,7 @@ type ModelDeploymentStatus struct {
 	LastFeedbackTest *metav1.Time `json:"lastFeedbackTest,omitempty" protobuf:"bytes,22,opt,name=lastFeedbackTest"`
 	// Last results of the ground truth tests.
 	// +kubebuilder:validation:Optional
-	LastFeedbackTestResults []catalog.Measurement `json:"lastFeedbackTestResults,omitempty" protobuf:"bytes,23,opt,name=lastFeedbackTestResults"`
+	LastFeedbackTestResults []catalog.Measurement `json:"lastFeedbackTestResults,omitempty" protobuf:"bytes,23,rep,name=lastFeedbackTestResults"`
 	// Holds the last N metrics for this model
 	// +kubebuilder:validation:Optional
 	MetricHistory map[catalog.Metric]MetricHistory `json:"metricHistory,omitempty" protobuf:"bytes,24,opt,name=metricsHistory"`

@@ -175,7 +175,7 @@ type ReportSpec struct {
 	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,14,opt,name=labRef"`
 	// For group forecasting, this is the key of the group
 	// +kubebuilder:validation:Optional
-	Key []string `json:"key,omitempty" protobuf:"bytes,15,opt,name=key"`
+	Key []string `json:"key,omitempty" protobuf:"bytes,15,rep,name=key"`
 	// The model class for this report if the model was created by a model class
 	// +kubebuilder:validation:Optional
 	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,16,opt,name=modelClassName"`
@@ -222,7 +222,7 @@ type ReportStatus struct {
 
 type CustomReportSpec struct {
 	// Pages contains a collection of custom pages that will be appended to a Report
-	Pages []data.PageSpec `json:"pages,omitempty" protobuf:"bytes,8,opt,name=pages"`
+	Pages []data.PageSpec `json:"pages,omitempty" protobuf:"bytes,8,rep,name=pages"`
 }
 
 type ReportGroupByStatus struct {
@@ -231,5 +231,5 @@ type ReportGroupByStatus struct {
 	ReportsURI string `json:"reportsURI,omitempty" protobuf:"bytes,1,opt,name=reportsURI"`
 	// Holds the worker on going result, when a worker finish, we update the location of thier result files
 	// +kubebuilder:validation:Optional
-	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,4,opt,name=workerResults"`
+	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,4,rep,name=workerResults"`
 }

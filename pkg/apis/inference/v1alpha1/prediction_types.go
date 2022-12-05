@@ -114,7 +114,7 @@ type PredictionSpec struct {
 	// If true create output dataset
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	CreateDataset *bool `json:"createDataset,omitempty" protobuf:"bytes,9,opt,name=createDataset"`
+	CreateDataset *bool `json:"createDataset,omitempty" protobuf:"varint,9,opt,name=createDataset"`
 	// Tests specifies a collection of metrics that will be computed for each prediction
 	// if the Labeled field of the Prediction is enabled
 	// +kubebuilder:validation:Optional
@@ -148,14 +148,14 @@ type PredictionSpec struct {
 	ForecastSpec ForecastPredictionSpec `json:"forecastSpec,omitempty" protobuf:"bytes,17,opt,name=forecastSpec"`
 	// The reference to the ServingSite resource that hosts the Prediction
 	// +kubebuilder:validation:Optional
-	ServingSiteRef v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,19,opt,name=servingsiteRef"`
+	ServingSiteRef v1.ObjectReference `json:"servingsiteRef,omitempty" protobuf:"bytes,19,opt,name=servingsiteRef"`
 	// Locations for group forecasts
 	// +kubebuilder:validation:Optional
-	PartitionLocation PartitionPredictionLocationsSpec `json:"partitionLocation" protobuf:"bytes,20,opt,name=partitionLocation"`
+	PartitionLocation PartitionPredictionLocationsSpec `json:"partitionLocation,omitempty" protobuf:"bytes,20,opt,name=partitionLocation"`
 	// In case of batch prediction, how many workers.
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	Workers *int32 `json:"workers" protobuf:"bytes,21,opt,name=workers"`
+	Workers *int32 `json:"workers,omitempty" protobuf:"varint,21,opt,name=workers"`
 }
 
 // PredictionStatus is the observed state of a Prediction
@@ -199,7 +199,7 @@ type PredictionStatus struct {
 	Columns []data.ColumnHistogram `json:"columns,omitempty" protobuf:"bytes,12,rep,name=columns"`
 	// Set to true if drifted
 	// +kubebuilder:validation:Optional
-	Drifted bool `json:"drifted,omitempty" protobuf:"bytes,13,rep,name=drifted"`
+	Drifted bool `json:"drifted,omitempty" protobuf:"varint,13,rep,name=drifted"`
 	// the forecast results for this forecast
 	//+kubebuilder:validation:Optional
 	Forecast ForecastStatus `json:"forecast,omitempty" protobuf:"bytes,14,opt,name=forecast"`
@@ -232,7 +232,7 @@ type ForecastStatus struct {
 	ForecastURI string `json:"forecastURI,omitempty" protobuf:"bytes,3,rep,name=forecastURI"`
 	// Mark forecast as a failure.
 	// +kubebuilder:validation:Optional
-	Failed *bool `json:"failed,omitempty" protobuf:"bytes,4,opt,name=failed"`
+	Failed *bool `json:"failed,omitempty" protobuf:"varint,4,opt,name=failed"`
 	// In case of failure, this is the failure message
 	// +kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,5,opt,name=failureMsg"`

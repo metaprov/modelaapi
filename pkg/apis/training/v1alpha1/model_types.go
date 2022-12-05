@@ -623,7 +623,7 @@ type ModelStatus struct {
 	GroupBy ModelGroupByStatus `json:"groupby,omitempty" protobuf:"bytes,73,opt,name=groupby"`
 	// The status of the model, when deploying via the stages
 	// +kubebuilder:validation:Optional
-	Stages []ModelStageStatus `json:"stages,omitempty" protobuf:"bytes,74,opt,name=stages"`
+	Stages []ModelStageStatus `json:"stages,omitempty" protobuf:"bytes,74,rep,name=stages"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
@@ -1156,7 +1156,7 @@ type ModelGroupByStatus struct {
 	ForecastsURI string `json:"forecastsURI,omitempty" protobuf:"bytes,3,opt,name=forecastsURI"`
 	// Holds the worker on going result, when a worker finish, we update the location of thier result files
 	// +kubebuilder:validation:Optional
-	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,4,opt,name=workerResults"`
+	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,4,rep,name=workerResults"`
 }
 
 type PartitionModelLocationsSpec struct {
