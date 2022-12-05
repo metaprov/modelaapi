@@ -37369,7 +37369,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelS
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    lastmessage: (f = msg.getLastmessage()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    lastmessageat: (f = msg.getLastmessageat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     failurereason: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
@@ -37411,7 +37411,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelS
     case 1:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastmessage(value);
+      msg.setLastmessageat(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -37450,7 +37450,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelS
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLastmessage();
+  f = message.getLastmessageat();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -37476,10 +37476,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelS
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastMessage = 1;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastMessageAt = 1;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.prototype.getLastmessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.prototype.getLastmessageat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 1));
 };
@@ -37489,7 +37489,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelS
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.prototype.setLastmessage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.prototype.setLastmessageat = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -37498,8 +37498,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelS
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.prototype.clearLastmessage = function() {
-  return this.setLastmessage(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.prototype.clearLastmessageat = function() {
+  return this.setLastmessageat(undefined);
 };
 
 
@@ -37507,7 +37507,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.prototype.hasLastmessage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.prototype.hasLastmessageat = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

@@ -911,6 +911,10 @@ spec:
                 description: The number of informative alerts produced under the namespace
                 format: int32
                 type: integer
+              modelClassesCount:
+                description: Count the number of model classes
+                format: int32
+                type: integer
               modelsCount:
                 description: The number of Model resources that exist under the namespace
                 format: int32

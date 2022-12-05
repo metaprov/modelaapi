@@ -1275,8 +1275,8 @@ func (in *PredictorStatus) DeepCopyInto(out *PredictorStatus) {
 	in.PredictorletStatus.DeepCopyInto(&out.PredictorletStatus)
 	in.CacheStatus.DeepCopyInto(&out.CacheStatus)
 	in.OnlineStore.DeepCopyInto(&out.OnlineStore)
-	if in.LastUpdated != nil {
-		in, out := &in.LastUpdated, &out.LastUpdated
+	if in.UpdatedAt != nil {
+		in, out := &in.UpdatedAt, &out.UpdatedAt
 		*out = (*in).DeepCopy()
 	}
 	if in.FailureReason != nil {

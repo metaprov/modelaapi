@@ -90,7 +90,7 @@ type TableSpec struct {
 	// one or more filters
 	// +kubebuilder:validation:Optional
 	Filters []string `json:"filters,omitempty" protobuf:"bytes,3,rep,name=filters"`
-	// Groupby columns
+	// GroupBy columns
 	// +kubebuilder:validation:Optional
 	GroupBy []string `json:"groupby,omitempty" protobuf:"bytes,4,rep,name=groupby"`
 	// Row is the row number

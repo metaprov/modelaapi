@@ -166,7 +166,7 @@ spec:
                       description: In the case of failure, the Notifier resource controller
                         will set this field with a failure reason
                       type: string
-                    lastMessage:
+                    lastMessageAt:
                       description: The last time a message was sent on this channel
                       format: date-time
                       type: string

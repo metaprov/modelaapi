@@ -1191,8 +1191,8 @@ export namespace GarbageCollectionSpec {
 }
 
 export class GarbageCollectionStatus extends jspb.Message {
-  getCollected(): number;
-  setCollected(value: number): GarbageCollectionStatus;
+  getCollectedmodelscount(): number;
+  setCollectedmodelscount(value: number): GarbageCollectionStatus;
 
   getModelsList(): Array<ModelResult>;
   setModelsList(value: Array<ModelResult>): GarbageCollectionStatus;
@@ -1209,7 +1209,7 @@ export class GarbageCollectionStatus extends jspb.Message {
 
 export namespace GarbageCollectionStatus {
   export type AsObject = {
-    collected: number,
+    collectedmodelscount: number,
     modelsList: Array<ModelResult.AsObject>,
   }
 }
@@ -3838,6 +3838,9 @@ export class SearchSpec extends jspb.Message {
   getTune(): boolean;
   setTune(value: boolean): SearchSpec;
 
+  getGoal(): string;
+  setGoal(value: string): SearchSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchSpec.AsObject;
   static toObject(includeInstance: boolean, msg: SearchSpec): SearchSpec.AsObject;
@@ -3863,6 +3866,7 @@ export namespace SearchSpec {
     objective: string,
     objective2: string,
     tune: boolean,
+    goal: string,
   }
 }
 
@@ -4119,17 +4123,17 @@ export class StudyPhaseStatus extends jspb.Message {
   hasCompletedat(): boolean;
   clearCompletedat(): StudyPhaseStatus;
 
-  getWaiting(): number;
-  setWaiting(value: number): StudyPhaseStatus;
+  getWaitingmodelscount(): number;
+  setWaitingmodelscount(value: number): StudyPhaseStatus;
 
-  getRunning(): number;
-  setRunning(value: number): StudyPhaseStatus;
+  getRunningmodelscount(): number;
+  setRunningmodelscount(value: number): StudyPhaseStatus;
 
-  getFailed(): number;
-  setFailed(value: number): StudyPhaseStatus;
+  getFailedmodelscount(): number;
+  setFailedmodelscount(value: number): StudyPhaseStatus;
 
-  getCompleted(): number;
-  setCompleted(value: number): StudyPhaseStatus;
+  getCompletedmodelscount(): number;
+  setCompletedmodelscount(value: number): StudyPhaseStatus;
 
   getBestscore(): number;
   setBestscore(value: number): StudyPhaseStatus;
@@ -4149,10 +4153,10 @@ export namespace StudyPhaseStatus {
   export type AsObject = {
     startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    waiting: number,
-    running: number,
-    failed: number,
-    completed: number,
+    waitingmodelscount: number,
+    runningmodelscount: number,
+    failedmodelscount: number,
+    completedmodelscount: number,
     bestscore: number,
     modelswithnoprogress: number,
   }
@@ -4512,10 +4516,10 @@ export class StudyStatus extends jspb.Message {
   hasDriftdetection(): boolean;
   clearDriftdetection(): StudyStatus;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): StudyStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): StudyStatus;
 
   getBestfe(): FeatureEngineeringSpec | undefined;
   setBestfe(value?: FeatureEngineeringSpec): StudyStatus;
@@ -4576,7 +4580,7 @@ export namespace StudyStatus {
     test?: StudyPhaseStatus.AsObject,
     explain?: StudyPhaseStatus.AsObject,
     driftdetection?: DriftDetectorStatus.AsObject,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
     gc?: GarbageCollectionStatus.AsObject,
     groupby?: StudyGroupByStatus.AsObject,

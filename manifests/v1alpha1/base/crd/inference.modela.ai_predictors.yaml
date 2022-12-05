@@ -3199,10 +3199,6 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
-              lastUpdated:
-                description: The last time the object was updated
-                format: date-time
-                type: string
               loadBalancerStatus:
                 description: The status of the load balancer, if the Predictor's access
                   type is LoadBalancer
@@ -4107,6 +4103,10 @@ spec:
                       type: object
                     type: array
                 type: object
+              updatedAt:
+                description: The last time the object was updated
+                format: date-time
+                type: string
             type: object
         required:
         - spec

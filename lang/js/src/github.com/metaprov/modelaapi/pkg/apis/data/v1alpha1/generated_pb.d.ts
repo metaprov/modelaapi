@@ -1115,15 +1115,10 @@ export class DataPipelineRunStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): DataPipelineRunStatus;
 
-  getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataPipelineRunStatus;
-  hasStartedat(): boolean;
-  clearStartedat(): DataPipelineRunStatus;
-
-  getComplatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setComplatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataPipelineRunStatus;
-  hasComplatedat(): boolean;
-  clearComplatedat(): DataPipelineRunStatus;
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataPipelineRunStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): DataPipelineRunStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataPipelineRunStatus;
@@ -1142,10 +1137,10 @@ export class DataPipelineRunStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): DataPipelineRunStatus;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataPipelineRunStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): DataPipelineRunStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataPipelineRunStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): DataPipelineRunStatus;
 
   getConditionsList(): Array<DataPipelineRunCondition>;
   setConditionsList(value: Array<DataPipelineRunCondition>): DataPipelineRunStatus;
@@ -1165,14 +1160,13 @@ export namespace DataPipelineRunStatus {
     reciperunsList: Array<string>,
     output?: DataLocation.AsObject,
     phase: string,
-    startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    complatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     failurereason: string,
     failuremessage: string,
     progress: number,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<DataPipelineRunCondition.AsObject>,
   }
 }
@@ -1567,6 +1561,9 @@ export class DataProductStatus extends jspb.Message {
   getErroralertscount(): number;
   setErroralertscount(value: number): DataProductStatus;
 
+  getModelclassescount(): number;
+  setModelclassescount(value: number): DataProductStatus;
+
   getFailurereason(): string;
   setFailurereason(value: string): DataProductStatus;
 
@@ -1604,6 +1601,7 @@ export namespace DataProductStatus {
     predictionscount: number,
     infoalertscount: number,
     erroralertscount: number,
+    modelclassescount: number,
     failurereason: string,
     failuremessage: string,
     baselineversion: string,
@@ -1968,10 +1966,10 @@ export class DataSourceStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataSourceStatus;
 
-  getLastdatasetcreated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastdatasetcreated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataSourceStatus;
-  hasLastdatasetcreated(): boolean;
-  clearLastdatasetcreated(): DataSourceStatus;
+  getLastdatasetcreatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastdatasetcreatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataSourceStatus;
+  hasLastdatasetcreatedat(): boolean;
+  clearLastdatasetcreatedat(): DataSourceStatus;
 
   getLastdatasetname(): string;
   setLastdatasetname(value: string): DataSourceStatus;
@@ -2004,7 +2002,7 @@ export namespace DataSourceStatus {
   export type AsObject = {
     cols: number,
     observedgeneration: number,
-    lastdatasetcreated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastdatasetcreatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastdatasetname: string,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
@@ -2198,8 +2196,8 @@ export class DatasetSpec extends jspb.Message {
   hasResources(): boolean;
   clearResources(): DatasetSpec;
 
-  getActivedeadlineseconds(): number;
-  setActivedeadlineseconds(value: number): DatasetSpec;
+  getTimeout(): number;
+  setTimeout(value: number): DatasetSpec;
 
   getType(): string;
   setType(value: string): DatasetSpec;
@@ -2314,7 +2312,7 @@ export namespace DatasetSpec {
     origin?: DataLocation.AsObject,
     location?: DataLocation.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    activedeadlineseconds: number,
+    timeout: number,
     type: string,
     sample?: SampleSpec.AsObject,
     synthetic?: SyntheticSpec.AsObject,
@@ -3027,6 +3025,12 @@ export class FeatureGroupStatus extends jspb.Message {
   getIngestdatasetname(): string;
   setIngestdatasetname(value: string): FeatureGroupStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): FeatureGroupStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): FeatureGroupStatus;
+
   getConditionsList(): Array<FeatureGroupCondition>;
   setConditionsList(value: Array<FeatureGroupCondition>): FeatureGroupStatus;
   clearConditionsList(): FeatureGroupStatus;
@@ -3051,6 +3055,8 @@ export namespace FeatureGroupStatus {
     onelinetable?: DataLocation.AsObject,
     onelinetablecreated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     ingestdatasetname: string,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<FeatureGroupCondition.AsObject>,
   }
 }

@@ -15,8 +15,8 @@ type DataPipelineRunPhase string
 
 const (
 	DataPipelineRunPhasePending   DataPipelineRunPhase = "Pending"
-	DataPipelineRunPhaseRunning   DataPipelineRunPhase = "Running"
-	DataPipelineRunPhaseCompleted DataPipelineRunPhase = "Completed"
+	DataPipelineRunPhaseRunning   DataPipelineRunPhase = "RunningModelsCount"
+	DataPipelineRunPhaseCompleted DataPipelineRunPhase = "CompletedModelsCount"
 	DataPipelineRunPhaseFailed    DataPipelineRunPhase = "FailedConditionReason"
 	DataPipelineRunPhaseAborted   DataPipelineRunPhase = "Aborted"
 	DataPipelineRunPhasePaused    DataPipelineRunPhase = "Paused"
@@ -27,7 +27,7 @@ type DataPipelineRunConditionType string
 
 /// DataPipelineRun Condition
 const (
-	DataPipelineRunCompleted DataPipelineRunConditionType = "Completed"
+	DataPipelineRunCompleted DataPipelineRunConditionType = "CompletedModelsCount"
 	DataPipelineRunSaved     DataPipelineRunConditionType = "Saved"
 )
 
@@ -126,12 +126,9 @@ type DataPipelineRunStatus struct {
 	// +kubebuilder:default:="Pending"
 	//+kubebuilder:validation:Optional
 	Phase DataPipelineRunPhase `json:"phase" protobuf:"bytes,3,opt,name=phase"`
-	// StartedAt is the start time of the pipeline
-	// +kubebuilder:validation:Optional
-	StartedAt *metav1.Time `json:"startedAt,omitempty" protobuf:"bytes,4,opt,name=startedAt"`
 	// CompletedAt is the end time of the pipeline
 	// +kubebuilder:validation:Optional
-	ComplatedAt *metav1.Time `json:"complatedAt,omitempty" protobuf:"bytes,5,opt,name=complatedAt"`
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,5,opt,name=completedAt"`
 	//ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,6,opt,name=observedGeneration"`
@@ -152,7 +149,7 @@ type DataPipelineRunStatus struct {
 
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,11,opt,name=lastUpdated"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,11,opt,name=updatedAt"`
 
 	// +patchMergeKey=type
 	// +patchStrategy=merge

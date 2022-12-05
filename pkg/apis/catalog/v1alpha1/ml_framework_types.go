@@ -4,18 +4,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// +kubebuilder:validation:Enum="scikit-learn";"tensorflow";"pytorch";"catcoost";"lightgbm";
-// FrameworkName is the name of the machine learning framework
-type FrameworkName string
-
-const (
-	ScikitLearn FrameworkName = "scikit-learn"
-	TensorFlow  FrameworkName = "tensorflow"
-	PyTorch     FrameworkName = "pytorch"
-	Cataboost   FrameworkName = "catcoost"
-	LightGbm    FrameworkName = "lightgbm"
-)
-
 // +genclient
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=mlframeworks,singular=mlframework,categories={catalog,modela,all}

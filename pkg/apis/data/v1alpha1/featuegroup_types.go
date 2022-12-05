@@ -174,11 +174,16 @@ type FeatureGroupStatus struct {
 	// The last monitor dataset name
 	//+kubebuilder:validation:Optional
 	IngestDatasetName string `json:"ingestDatasetName,omitempty" protobuf:"bytes,11,opt,name=ingestDatasetName"`
-
+	// In the case of failure, the Study resource controller will set this field with a failure reason
+	//+kubebuilder:validation:Optional
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,12,opt,name=failureReason"`
+	// In the case of failure, the Study resource controller will set this field with a failure message
+	//+kubebuilder:validation:Optional
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,13,opt,name=failureMessage"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeatureGroupCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
+	Conditions []FeatureGroupCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,14,rep,name=conditions"`
 }
 
 type MaterializationSpec struct {

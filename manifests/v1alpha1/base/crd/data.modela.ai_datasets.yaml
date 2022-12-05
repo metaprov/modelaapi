@@ -70,11 +70,6 @@ spec:
           spec:
             description: DatasetSpec defines the desired state of the Dataset
             properties:
-              activeDeadlineSeconds:
-                default: 600
-                description: The deadline in seconds for all Jobs created by the Dataset
-                format: int64
-                type: integer
               correlation:
                 description: The specification for how to find the correlations of
                   the Dataset's features during the profiling phase. Based on the
@@ -907,6 +902,11 @@ spec:
                 - partition-forecasting
                 - monitoring
                 type: string
+              timeout:
+                default: 600
+                description: The deadline in seconds for all Jobs created by the Dataset
+                format: int64
+                type: integer
               type:
                 default: tabular
                 description: The type of dataset which was uploaded. `tabular` is

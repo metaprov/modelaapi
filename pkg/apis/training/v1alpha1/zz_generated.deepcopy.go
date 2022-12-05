@@ -3609,8 +3609,8 @@ func (in *StudyStatus) DeepCopyInto(out *StudyStatus) {
 	in.TestStatus.DeepCopyInto(&out.TestStatus)
 	in.ExplainStatus.DeepCopyInto(&out.ExplainStatus)
 	out.DriftDetection = in.DriftDetection
-	if in.LastUpdated != nil {
-		in, out := &in.LastUpdated, &out.LastUpdated
+	if in.UpdatedAt != nil {
+		in, out := &in.UpdatedAt, &out.UpdatedAt
 		*out = (*in).DeepCopy()
 	}
 	if in.BestFE != nil {
@@ -3619,7 +3619,7 @@ func (in *StudyStatus) DeepCopyInto(out *StudyStatus) {
 		(*in).DeepCopyInto(*out)
 	}
 	in.GC.DeepCopyInto(&out.GC)
-	in.Groupby.DeepCopyInto(&out.Groupby)
+	in.GroupBy.DeepCopyInto(&out.GroupBy)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]StudyCondition, len(*in))

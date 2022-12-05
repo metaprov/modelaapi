@@ -1042,7 +1042,7 @@ message PredictorStatus {
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 8;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 8;
 
   // The end-point URL of the Predictor
   // +kubebuilder:validation:Optional

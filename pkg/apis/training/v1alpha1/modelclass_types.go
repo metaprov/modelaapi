@@ -112,7 +112,7 @@ type ModelClassSpec struct {
 	// +kubebuilder:validation:Optional
 	ReportSchedule catalog.RunSchedule `json:"reportSchedule,omitempty" protobuf:"bytes,14,opt,name=reportSchedule"`
 	// Fast indicates if Dataset, Model and Study resources associated with the ModelClass should run in fast mode.
-	// Running in fast mode will skip unnecessary workloads such as profiling, reporting, explaining, etc.
+	// RunningModelsCount in fast mode will skip unnecessary workloads such as profiling, reporting, explaining, etc.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Fast *bool `json:"fast,omitempty" protobuf:"varint,15,opt,name=fast"`

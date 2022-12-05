@@ -160,7 +160,7 @@ type DatasetSpec struct {
 	// The deadline in seconds for all Jobs created by the Dataset
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,17,opt,name=activeDeadlineSeconds"`
+	Timeout *int64 `json:"timeout,omitempty" protobuf:"varint,17,opt,name=timeout"`
 	// The type of dataset which was uploaded. `tabular` is the only supported type as of the current release
 	// +kubebuilder:default:="tabular"
 	// +kubebuilder:validation:Optional

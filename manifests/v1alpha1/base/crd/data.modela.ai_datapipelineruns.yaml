@@ -263,7 +263,7 @@ spec:
           status:
             description: DataPipelineRunStatus defines the observed state of DataPipelineRun
             properties:
-              complatedAt:
+              completedAt:
                 description: CompletedAt is the end time of the pipeline
                 format: date-time
                 type: string
@@ -301,10 +301,6 @@ spec:
               failureReason:
                 description: UpdateUpdateStrategy in case of terminal failure Borrowed
                   from cluster api controller
-                type: string
-              lastUpdated:
-                description: Last time the object was updated
-                format: date-time
                 type: string
               logs:
                 description: Holds the location of log paths
@@ -464,8 +460,8 @@ spec:
                 items:
                   type: string
                 type: array
-              startedAt:
-                description: StartedAt is the start time of the pipeline
+              updatedAt:
+                description: Last time the object was updated
                 format: date-time
                 type: string
             type: object

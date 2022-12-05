@@ -116,7 +116,7 @@ func (attachment *Attachment) MarkFailed(err string) {
 	attachment.CreateOrUpdateCond(AttachmentCondition{
 		Type:    AttachmentSent,
 		Status:  v1.ConditionFalse,
-		Reason:  "Failed",
+		Reason:  "FailedModelsCount",
 		Message: err,
 	})
 	attachment.Status.FailureMessage = util.StrPtr(err)

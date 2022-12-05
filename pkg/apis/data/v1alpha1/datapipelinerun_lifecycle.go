@@ -138,8 +138,8 @@ func (in *DataPipelineRun) MarkComplete() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if in.Status.ComplatedAt == nil {
-		in.Status.ComplatedAt = &now
+	if in.Status.CompletedAt == nil {
+		in.Status.CompletedAt = &now
 	}
 	in.Status.Progress = util.Int32Ptr(100)
 }
@@ -153,8 +153,8 @@ func (in *DataPipelineRun) MarkFailed(err error) {
 		Message: err.Error(),
 	})
 	now := metav1.Now()
-	if in.Status.ComplatedAt == nil {
-		in.Status.ComplatedAt = &now
+	if in.Status.CompletedAt == nil {
+		in.Status.CompletedAt = &now
 	}
 	in.Status.Progress = util.Int32Ptr(100)
 	in.Status.FailureMessage = util.StrPtr(err.Error())
@@ -168,8 +168,8 @@ func (in *DataPipelineRun) MarkAborted(err error) {
 		Reason: string(DataPipelineRunPhaseAborted),
 	})
 	now := metav1.Now()
-	if in.Status.ComplatedAt == nil {
-		in.Status.ComplatedAt = &now
+	if in.Status.CompletedAt == nil {
+		in.Status.CompletedAt = &now
 	}
 	in.Status.Progress = util.Int32Ptr(100)
 	in.Status.FailureMessage = util.StrPtr(err.Error())
@@ -207,8 +207,8 @@ func (run DataPipelineRun) CompletionAlert(tenantRef *v1.ObjectReference, notifi
 			},
 		},
 	}
-	if run.Status.ComplatedAt != nil {
-		result.Spec.Fields["Completion Time"] = run.Status.ComplatedAt.Format("01/2/2006 15:04:05")
+	if run.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = run.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -237,8 +237,8 @@ func (run DataPipelineRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierNam
 			},
 		},
 	}
-	if run.Status.ComplatedAt != nil {
-		result.Spec.Fields["Completion Time"] = run.Status.ComplatedAt.Format("01/2/2006 15:04:05")
+	if run.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = run.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
@@ -246,8 +246,8 @@ func (run DataPipelineRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierNam
 // Return the state of the run as RunStatus
 func (run DataPipelineRun) RunStatus() *catalog.LastRunStatus {
 	result := &catalog.LastRunStatus{
-		CompletedAt:    run.Status.ComplatedAt,
-		Duration:       int32(run.Status.ComplatedAt.Unix() - run.Status.StartedAt.Unix()),
+		CompletedAt:    run.Status.CompletedAt,
+		Duration:       int32(run.Status.CompletedAt.Unix() - run.Status.StartedAt.Unix()),
 		FailureReason:  run.Status.FailureReason,
 		FailureMessage: run.Status.FailureMessage,
 	}

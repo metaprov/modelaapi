@@ -1288,6 +1288,9 @@ spec:
                         format: int32
                         type: integer
                     type: object
+                  goal:
+                    default: maximize
+                    type: string
                   maxCost:
                     default: 100
                     description: The maximum cost that can be incurred before stopping
@@ -2594,16 +2597,16 @@ spec:
                     description: Best score so far in this phase. The best score is
                       the value of the objective.
                     type: number
-                  completed:
-                    description: The number of models that have been successfully
-                      trained
-                    format: int32
-                    type: integer
                   completedAt:
                     description: The time at which the phase concluded
                     format: date-time
                     type: string
-                  failed:
+                  completedModelsCount:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  failedModelsCount:
                     description: The number of models that experienced an error whilst
                       training
                     format: int32
@@ -2613,7 +2616,7 @@ spec:
                       This used to decide on early stop.
                     format: int32
                     type: integer
-                  running:
+                  runningModelsCount:
                     description: The number of models currently being trained
                     format: int32
                     type: integer
@@ -2621,7 +2624,7 @@ spec:
                     description: The time at which the phase started
                     format: date-time
                     type: string
-                  waiting:
+                  waitingModelsCount:
                     description: The number of models pending training
                     format: int32
                     type: integer
@@ -3078,16 +3081,16 @@ spec:
                     description: Best score so far in this phase. The best score is
                       the value of the objective.
                     type: number
-                  completed:
-                    description: The number of models that have been successfully
-                      trained
-                    format: int32
-                    type: integer
                   completedAt:
                     description: The time at which the phase concluded
                     format: date-time
                     type: string
-                  failed:
+                  completedModelsCount:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  failedModelsCount:
                     description: The number of models that experienced an error whilst
                       training
                     format: int32
@@ -3097,7 +3100,7 @@ spec:
                       This used to decide on early stop.
                     format: int32
                     type: integer
-                  running:
+                  runningModelsCount:
                     description: The number of models currently being trained
                     format: int32
                     type: integer
@@ -3105,7 +3108,7 @@ spec:
                     description: The time at which the phase started
                     format: date-time
                     type: string
-                  waiting:
+                  waitingModelsCount:
                     description: The number of models pending training
                     format: int32
                     type: integer
@@ -3117,16 +3120,16 @@ spec:
                     description: Best score so far in this phase. The best score is
                       the value of the objective.
                     type: number
-                  completed:
-                    description: The number of models that have been successfully
-                      trained
-                    format: int32
-                    type: integer
                   completedAt:
                     description: The time at which the phase concluded
                     format: date-time
                     type: string
-                  failed:
+                  completedModelsCount:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  failedModelsCount:
                     description: The number of models that experienced an error whilst
                       training
                     format: int32
@@ -3136,7 +3139,7 @@ spec:
                       This used to decide on early stop.
                     format: int32
                     type: integer
-                  running:
+                  runningModelsCount:
                     description: The number of models currently being trained
                     format: int32
                     type: integer
@@ -3144,7 +3147,7 @@ spec:
                     description: The time at which the phase started
                     format: date-time
                     type: string
-                  waiting:
+                  waitingModelsCount:
                     description: The number of models pending training
                     format: int32
                     type: integer
@@ -3165,16 +3168,16 @@ spec:
                     description: Best score so far in this phase. The best score is
                       the value of the objective.
                     type: number
-                  completed:
-                    description: The number of models that have been successfully
-                      trained
-                    format: int32
-                    type: integer
                   completedAt:
                     description: The time at which the phase concluded
                     format: date-time
                     type: string
-                  failed:
+                  completedModelsCount:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  failedModelsCount:
                     description: The number of models that experienced an error whilst
                       training
                     format: int32
@@ -3184,7 +3187,7 @@ spec:
                       This used to decide on early stop.
                     format: int32
                     type: integer
-                  running:
+                  runningModelsCount:
                     description: The number of models currently being trained
                     format: int32
                     type: integer
@@ -3192,7 +3195,7 @@ spec:
                     description: The time at which the phase started
                     format: date-time
                     type: string
-                  waiting:
+                  waitingModelsCount:
                     description: The number of models pending training
                     format: int32
                     type: integer
@@ -3201,7 +3204,7 @@ spec:
                 description: GC specifies the status of garbage collection relevant
                   to the Study
                 properties:
-                  collected:
+                  collectedModelsCount:
                     description: The number of models that were collected, equal to
                       len(Models)
                     format: int32
@@ -3263,10 +3266,6 @@ spec:
                   generated by the Study
                 format: int64
                 type: integer
-              lastUpdated:
-                description: The last time the object was updated
-                format: date-time
-                type: string
               logs:
                 description: Logs specifies the location of logs produced by workloads
                   associated with the Study
@@ -3331,16 +3330,16 @@ spec:
                     description: Best score so far in this phase. The best score is
                       the value of the objective.
                     type: number
-                  completed:
-                    description: The number of models that have been successfully
-                      trained
-                    format: int32
-                    type: integer
                   completedAt:
                     description: The time at which the phase concluded
                     format: date-time
                     type: string
-                  failed:
+                  completedModelsCount:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  failedModelsCount:
                     description: The number of models that experienced an error whilst
                       training
                     format: int32
@@ -3350,7 +3349,7 @@ spec:
                       This used to decide on early stop.
                     format: int32
                     type: integer
-                  running:
+                  runningModelsCount:
                     description: The number of models currently being trained
                     format: int32
                     type: integer
@@ -3358,7 +3357,7 @@ spec:
                     description: The time at which the phase started
                     format: date-time
                     type: string
-                  waiting:
+                  waitingModelsCount:
                     description: The number of models pending training
                     format: int32
                     type: integer
@@ -3370,16 +3369,16 @@ spec:
                     description: Best score so far in this phase. The best score is
                       the value of the objective.
                     type: number
-                  completed:
-                    description: The number of models that have been successfully
-                      trained
-                    format: int32
-                    type: integer
                   completedAt:
                     description: The time at which the phase concluded
                     format: date-time
                     type: string
-                  failed:
+                  completedModelsCount:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  failedModelsCount:
                     description: The number of models that experienced an error whilst
                       training
                     format: int32
@@ -3389,7 +3388,7 @@ spec:
                       This used to decide on early stop.
                     format: int32
                     type: integer
-                  running:
+                  runningModelsCount:
                     description: The number of models currently being trained
                     format: int32
                     type: integer
@@ -3397,7 +3396,7 @@ spec:
                     description: The time at which the phase started
                     format: date-time
                     type: string
-                  waiting:
+                  waitingModelsCount:
                     description: The number of models pending training
                     format: int32
                     type: integer
@@ -3659,6 +3658,10 @@ spec:
                 - on-github-event
                 - on-concept-drift
                 - on-pref-degradation
+                type: string
+              updatedAt:
+                description: The last time the object was updated
+                format: date-time
                 type: string
               validationDataset:
                 description: ValidationDataset specifies the location of the validation

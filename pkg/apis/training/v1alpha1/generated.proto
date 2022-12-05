@@ -828,7 +828,7 @@ message GarbageCollectionSpec {
 message GarbageCollectionStatus {
   // The number of models that were collected, equal to len(Models)
   // +kubebuilder:validation:Optional
-  optional int32 collected = 1;
+  optional int32 collectedModelsCount = 1;
 
   // The collection of models that were archived
   // +kubebuilder:validation:Optional
@@ -1424,7 +1424,7 @@ message ModelClassSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule reportSchedule = 14;
 
   // Fast indicates if Dataset, Model and Study resources associated with the ModelClass should run in fast mode.
-  // Running in fast mode will skip unnecessary workloads such as profiling, reporting, explaining, etc.
+  // RunningModelsCount in fast mode will skip unnecessary workloads such as profiling, reporting, explaining, etc.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool fast = 15;
@@ -2747,6 +2747,10 @@ message SearchSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool tune = 16;
+
+  // +kubebuilder:default:="maximize"
+  // +kubebuilder:validation:Optional
+  optional string goal = 17;
 }
 
 // Define the seasonality for a period (yearly / monthly / daily)
@@ -2895,19 +2899,19 @@ message StudyPhaseStatus {
 
   // The number of models pending training
   // +kubebuilder:validation:Optional
-  optional int32 waiting = 3;
+  optional int32 waitingModelsCount = 3;
 
   // The number of models currently being trained
   // +kubebuilder:validation:Optional
-  optional int32 running = 4;
+  optional int32 runningModelsCount = 4;
 
   // The number of models that experienced an error whilst training
   // +kubebuilder:validation:Optional
-  optional int32 failed = 5;
+  optional int32 failedModelsCount = 5;
 
   // The number of models that have been successfully trained
   // +kubebuilder:validation:Optional
-  optional int32 completed = 6;
+  optional int32 completedModelsCount = 6;
 
   // Best score so far in this phase. The best score is the value of the objective.
   // +kubebuilder:validation:Optional
@@ -3246,7 +3250,7 @@ message StudyStatus {
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 32;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 32;
 
   // BestFE specifies the best feature engineering pipeline produced by the Study
   // +kubebuilder:validation:Optional

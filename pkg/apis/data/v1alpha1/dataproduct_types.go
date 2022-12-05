@@ -227,17 +227,20 @@ type DataProductStatus struct {
 	// The number of error alerts produced under the namespace
 	//+kubebuilder:validation:Optional
 	ErrorsAlertsCount int32 `json:"errorAlertsCount,omitempty" protobuf:"varint,16,opt,name=errorAlertsCount"`
+	// Count the number of model classes
+	//+kubebuilder:validation:Optional
+	ModelClassesCount int32 `json:"modelClassesCount,omitempty" protobuf:"varint,17,opt,name=modelClassesCount"`
 	// In the case of failure, the DataProduct resource controller will set this field with a failure reason
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,17,opt,name=failureReason"`
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,18,opt,name=failureReason"`
 	// In the case of failure, the DataProduct resource controller will set this field with a failure message
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,18,opt,name=failureMessage"`
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,19,opt,name=failureMessage"`
 	// The name of the DataProductVersion which currently represents the latest version of the DataProduct.
 	// Newly-created resources will be instantiated with this version by default
-	BaselineVersion *string `json:"baselineVersion,omitempty" protobuf:"bytes,19,opt,name=baselineVersion"`
+	BaselineVersion *string `json:"baselineVersion,omitempty" protobuf:"bytes,20,opt,name=baselineVersion"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DataProductCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,20,rep,name=conditions"`
+	Conditions []DataProductCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,21,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true

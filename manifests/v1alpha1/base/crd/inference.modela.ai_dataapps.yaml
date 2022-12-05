@@ -288,7 +288,7 @@ spec:
                                             type: string
                                           type: array
                                         groupby:
-                                          description: Groupby columns
+                                          description: GroupBy columns
                                           items:
                                             type: string
                                           type: array

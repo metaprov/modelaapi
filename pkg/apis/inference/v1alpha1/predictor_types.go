@@ -395,7 +395,7 @@ type PredictorStatus struct {
 	OnlineStore OnlineStoreStatus `json:"onlineStoreStatus,omitempty" protobuf:"bytes,7,opt,name=onlineStoreStatus"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,8,opt,name=lastUpdated"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,8,opt,name=updatedAt"`
 	// The end-point URL of the Predictor
 	//+kubebuilder:validation:Optional
 	EndPoint string `json:"endPoint,omitempty" protobuf:"bytes,9,opt,name=endPoint"`

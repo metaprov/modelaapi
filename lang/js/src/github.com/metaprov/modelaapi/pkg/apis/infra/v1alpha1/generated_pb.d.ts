@@ -3631,10 +3631,10 @@ export namespace NotificationChannelSpec {
 }
 
 export class NotificationChannelStatus extends jspb.Message {
-  getLastmessage(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastmessage(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotificationChannelStatus;
-  hasLastmessage(): boolean;
-  clearLastmessage(): NotificationChannelStatus;
+  getLastmessageat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastmessageat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotificationChannelStatus;
+  hasLastmessageat(): boolean;
+  clearLastmessageat(): NotificationChannelStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): NotificationChannelStatus;
@@ -3652,7 +3652,7 @@ export class NotificationChannelStatus extends jspb.Message {
 
 export namespace NotificationChannelStatus {
   export type AsObject = {
-    lastmessage?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastmessageat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
   }

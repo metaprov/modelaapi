@@ -611,7 +611,7 @@ type DataSourceStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
 	// Last time the DataSource was used to create a Dataset
 	//+kubebuilder:validation:Optional
-	LastDatasetCreated *metav1.Time `json:"lastDatasetCreated,omitempty" protobuf:"bytes,3,opt,name=lastDatasetCreated"`
+	LastDatasetCreatedAt *metav1.Time `json:"lastDatasetCreatedAt,omitempty" protobuf:"bytes,3,opt,name=lastDatasetCreatedAt"`
 	// The name of the last Dataset created using the DataSource
 	//+kubebuilder:validation:Optional
 	LastDatasetName string `json:"lastDatasetName,omitempty" protobuf:"bytes,4,opt,name=lastDatasetName"`

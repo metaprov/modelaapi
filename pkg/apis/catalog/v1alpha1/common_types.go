@@ -453,6 +453,13 @@ func (metric Metric) IsClustering() bool {
 	return false
 }
 
+type GoalType string
+
+const (
+	MaximizeGoalType GoalType = "maximize"
+	MinimizeGoalType GoalType = "minimize"
+)
+
 type Metric string
 
 const (
@@ -1367,7 +1374,7 @@ type ConditionReason string
 const (
 	FailedConditionReason ConditionReason = "FailedConditionReason"
 	Success               ConditionReason = "Success"
-	Running               ConditionReason = "Running"
+	Running               ConditionReason = "RunningModelsCount"
 	WaitingForApproval    ConditionReason = "WaitingForApproval"
 	Approved              ConditionReason = "Approved"
 	Denied                ConditionReason = "Denied"

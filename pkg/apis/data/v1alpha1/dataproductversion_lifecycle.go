@@ -113,7 +113,7 @@ func (version *DataProductVersion) MarkFailed(err error) {
 	version.CreateOrUpdateCond(DataProductVersionCondition{
 		Type:    DataProductVersionReady,
 		Status:  v1.ConditionFalse,
-		Reason:  "Failed",
+		Reason:  "FailedModelsCount",
 		Message: err.Error(),
 	})
 }

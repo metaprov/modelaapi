@@ -1132,7 +1132,7 @@ spec:
               fast:
                 default: false
                 description: Fast indicates if Dataset, Model and Study resources
-                  associated with the ModelClass should run in fast mode. Running
+                  associated with the ModelClass should run in fast mode. RunningModelsCount
                   in fast mode will skip unnecessary workloads such as profiling,
                   reporting, explaining, etc.
                 type: boolean

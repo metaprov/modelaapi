@@ -14,9 +14,9 @@ type ReportPhase string
 /// Entity Condition
 const (
 	ReportPhasePending   ReportPhase = "Pending"
-	ReportPhaseRunning   ReportPhase = "Running"
-	ReportPhaseCompleted ReportPhase = "Completed"
-	ReportPhaseFailed    ReportPhase = "Failed"
+	ReportPhaseRunning   ReportPhase = "RunningModelsCount"
+	ReportPhaseCompleted ReportPhase = "CompletedModelsCount"
+	ReportPhaseFailed    ReportPhase = "FailedModelsCount"
 )
 
 // ReportType is the type of a Report

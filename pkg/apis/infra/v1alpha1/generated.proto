@@ -2111,7 +2111,7 @@ message NotificationChannelSpec {
 
 message NotificationChannelStatus {
   // The last time a message was sent on this channel
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastMessage = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastMessageAt = 1;
 
   // In the case of failure, the Notifier resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional

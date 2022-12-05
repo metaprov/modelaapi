@@ -893,13 +893,9 @@ message DataPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional string phase = 3;
 
-  // StartedAt is the start time of the pipeline
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 4;
-
   // CompletedAt is the end time of the pipeline
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time complatedAt = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 5;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
@@ -922,7 +918,7 @@ message DataPipelineRunStatus {
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 11;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 11;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
@@ -1244,20 +1240,24 @@ message DataProductStatus {
   // +kubebuilder:validation:Optional
   optional int32 errorAlertsCount = 16;
 
+  // Count the number of model classes
+  // +kubebuilder:validation:Optional
+  optional int32 modelClassesCount = 17;
+
   // In the case of failure, the DataProduct resource controller will set this field with a failure reason
-  optional string failureReason = 17;
+  optional string failureReason = 18;
 
   // In the case of failure, the DataProduct resource controller will set this field with a failure message
-  optional string failureMessage = 18;
+  optional string failureMessage = 19;
 
   // The name of the DataProductVersion which currently represents the latest version of the DataProduct.
   // Newly-created resources will be instantiated with this version by default
-  optional string baselineVersion = 19;
+  optional string baselineVersion = 20;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataProductCondition conditions = 20;
+  repeated DataProductCondition conditions = 21;
 }
 
 // +kubebuilder:object:root=true
@@ -1488,7 +1488,7 @@ message DataSourceStatus {
 
   // Last time the DataSource was used to create a Dataset
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastDatasetCreated = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastDatasetCreatedAt = 3;
 
   // The name of the last Dataset created using the DataSource
   // +kubebuilder:validation:Optional
@@ -1673,7 +1673,7 @@ message DatasetSpec {
   // The deadline in seconds for all Jobs created by the Dataset
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 17;
+  optional int64 timeout = 17;
 
   // The type of dataset which was uploaded. `tabular` is the only supported type as of the current release
   // +kubebuilder:default:="tabular"
@@ -2224,10 +2224,18 @@ message FeatureGroupStatus {
   // +kubebuilder:validation:Optional
   optional string ingestDatasetName = 11;
 
+  // In the case of failure, the Study resource controller will set this field with a failure reason
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 12;
+
+  // In the case of failure, the Study resource controller will set this field with a failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 13;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureGroupCondition conditions = 12;
+  repeated FeatureGroupCondition conditions = 14;
 }
 
 // +kubebuilder:object:root=true
@@ -3173,7 +3181,7 @@ message TableSpec {
   // +kubebuilder:validation:Optional
   repeated string filters = 3;
 
-  // Groupby columns
+  // GroupBy columns
   // +kubebuilder:validation:Optional
   repeated string groupby = 4;
 

@@ -62,7 +62,7 @@ const (
 	StudyPhaseProfiled           StudyPhase = "Profiled"
 	StudyPhaseExplaining         StudyPhase = "Explaining"
 	StudyPhaseExplained          StudyPhase = "Explained"
-	StudyPhaseCompleted          StudyPhase = "Completed"
+	StudyPhaseCompleted          StudyPhase = "CompletedModelsCount"
 	StudyPhaseFailed             StudyPhase = "FailedConditionReason"
 	StudyPhaseAborted            StudyPhase = "Aborted"
 	StudyPhasePaused             StudyPhase = "Paused"
@@ -102,7 +102,7 @@ const (
 	// StudySaved states that the Study has been archived in a database
 	StudySaved StudyConditionType = "Saved"
 	// StudyCompleted states that the Study has completed execution
-	StudyCompleted   StudyConditionType = "Completed"
+	StudyCompleted   StudyConditionType = "CompletedModelsCount"
 	StudyPartitioned StudyConditionType = "Partitioned"
 	StudyArchived    StudyConditionType = "Archived"
 	StudyUnitTested  StudyConditionType = "UnitTested"
@@ -402,14 +402,14 @@ type StudyStatus struct {
 	DriftDetection DriftDetectorStatus `json:"driftDetection,omitempty" protobuf:"bytes,31,opt,name=driftDetection"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,32,opt,name=lastUpdated"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,32,opt,name=updatedAt"`
 	// BestFE specifies the best feature engineering pipeline produced by the Study
 	//+kubebuilder:validation:Optional
 	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,33,opt,name=bestFE"`
 	// GC specifies the status of garbage collection relevant to the Study
 	GC GarbageCollectionStatus `json:"gc,omitempty" protobuf:"bytes,34,opt,name=gc"`
 	// Study group by
-	Groupby StudyGroupByStatus `json:"groupby,omitempty" protobuf:"bytes,35,opt,name=groupby"`
+	GroupBy StudyGroupByStatus `json:"groupby,omitempty" protobuf:"bytes,35,opt,name=groupby"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
@@ -454,16 +454,16 @@ type StudyPhaseStatus struct {
 	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,2,opt,name=completedAt"`
 	// The number of models pending training
 	// +kubebuilder:validation:Optional
-	Waiting int32 `json:"waiting,omitempty" protobuf:"varint,3,opt,name=waiting"`
+	WaitingModelsCount int32 `json:"waitingModelsCount,omitempty" protobuf:"varint,3,opt,name=waitingModelsCount"`
 	// The number of models currently being trained
 	// +kubebuilder:validation:Optional
-	Running int32 `json:"running,omitempty" protobuf:"varint,4,opt,name=running"`
+	RunningModelsCount int32 `json:"runningModelsCount,omitempty" protobuf:"varint,4,opt,name=runningModelsCount"`
 	// The number of models that experienced an error whilst training
 	// +kubebuilder:validation:Optional
-	Failed int32 `json:"failed,omitempty" protobuf:"varint,5,opt,name=failed"`
+	FailedModelsCount int32 `json:"failedModelsCount,omitempty" protobuf:"varint,5,opt,name=failedModelsCount"`
 	// The number of models that have been successfully trained
 	// +kubebuilder:validation:Optional
-	Completed int32 `json:"completed,omitempty" protobuf:"varint,6,opt,name=completed"`
+	CompletedModelsCount int32 `json:"completedModelsCount,omitempty" protobuf:"varint,6,opt,name=completedModelsCount"`
 	// Best score so far in this phase. The best score is the value of the objective.
 	// +kubebuilder:validation:Optional
 	BestScore float64 `json:"bestScore,omitempty" protobuf:"varint,7,opt,name=bestScore"`
@@ -476,7 +476,7 @@ type StudyPhaseStatus struct {
 type GarbageCollectionStatus struct {
 	// The number of models that were collected, equal to len(Models)
 	// +kubebuilder:validation:Optional
-	Collected int32 `json:"collected,omitempty" protobuf:"varint,1,opt,name=collected"`
+	CollectedModelsCount int32 `json:"collectedModelsCount,omitempty" protobuf:"varint,1,opt,name=collectedModelsCount"`
 	// The collection of models that were archived
 	// +kubebuilder:validation:Optional
 	Models []ModelResult `json:"models,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,opt,name=models"`
@@ -573,6 +573,9 @@ type SearchSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Tune *bool `json:"tune,omitempty" protobuf:"varint,16,opt,name=tune"`
+	// +kubebuilder:default:="maximize"
+	// +kubebuilder:validation:Optional
+	Goal *catalog.GoalType `json:"goal,omitempty" protobuf:"bytes,17,opt,name=goal"`
 }
 
 // EarlyStopSpec specifies the configuration to automatically abort a model search

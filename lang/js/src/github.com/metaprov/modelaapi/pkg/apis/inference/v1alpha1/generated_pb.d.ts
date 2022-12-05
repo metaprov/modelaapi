@@ -1610,10 +1610,10 @@ export class PredictorStatus extends jspb.Message {
   hasOnlinestorestatus(): boolean;
   clearOnlinestorestatus(): PredictorStatus;
 
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): PredictorStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): PredictorStatus;
 
   getEndpoint(): string;
   setEndpoint(value: string): PredictorStatus;
@@ -1665,7 +1665,7 @@ export namespace PredictorStatus {
     predictorletstatus?: PredictorletStatus.AsObject,
     cachestatus?: PredictionCacheStatus.AsObject,
     onlinestorestatus?: OnlineStoreStatus.AsObject,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endpoint: string,
     failurereason: string,
     failuremessage: string,
