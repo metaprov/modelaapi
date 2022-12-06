@@ -96,7 +96,7 @@ spec:
               aborted:
                 default: false
                 description: Aborted indicates that the execution of the Study and
-                  associated ModelsCount should be permanently stopped
+                  associated Models should be permanently stopped
                 type: boolean
               baseline:
                 description: Baseline specifies the parameters to generate baseline

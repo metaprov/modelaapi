@@ -27,6 +27,7 @@ type ServingSiteServiceClient interface {
 	GetServingSite(ctx context.Context, in *GetServingSiteRequest, opts ...grpc.CallOption) (*GetServingSiteResponse, error)
 	UpdateServingSite(ctx context.Context, in *UpdateServingSiteRequest, opts ...grpc.CallOption) (*UpdateServingSiteResponse, error)
 	DeleteServingSite(ctx context.Context, in *DeleteServingSiteRequest, opts ...grpc.CallOption) (*DeleteServingSiteResponse, error)
+	GetPublicKey(ctx context.Context, in *GetPublicKeyRequest, opts ...grpc.CallOption) (*GetPublicKeyResponse, error)
 }
 
 type servingSiteServiceClient struct {
@@ -82,6 +83,15 @@ func (c *servingSiteServiceClient) DeleteServingSite(ctx context.Context, in *De
 	return out, nil
 }
 
+func (c *servingSiteServiceClient) GetPublicKey(ctx context.Context, in *GetPublicKeyRequest, opts ...grpc.CallOption) (*GetPublicKeyResponse, error) {
+	out := new(GetPublicKeyResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/GetPublicKey", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ServingSiteServiceServer is the server API for ServingSiteService service.
 // All implementations must embed UnimplementedServingSiteServiceServer
 // for forward compatibility
@@ -91,6 +101,7 @@ type ServingSiteServiceServer interface {
 	GetServingSite(context.Context, *GetServingSiteRequest) (*GetServingSiteResponse, error)
 	UpdateServingSite(context.Context, *UpdateServingSiteRequest) (*UpdateServingSiteResponse, error)
 	DeleteServingSite(context.Context, *DeleteServingSiteRequest) (*DeleteServingSiteResponse, error)
+	GetPublicKey(context.Context, *GetPublicKeyRequest) (*GetPublicKeyResponse, error)
 	mustEmbedUnimplementedServingSiteServiceServer()
 }
 
@@ -112,6 +123,9 @@ func (UnimplementedServingSiteServiceServer) UpdateServingSite(context.Context, 
 }
 func (UnimplementedServingSiteServiceServer) DeleteServingSite(context.Context, *DeleteServingSiteRequest) (*DeleteServingSiteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteServingSite not implemented")
+}
+func (UnimplementedServingSiteServiceServer) GetPublicKey(context.Context, *GetPublicKeyRequest) (*GetPublicKeyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPublicKey not implemented")
 }
 func (UnimplementedServingSiteServiceServer) mustEmbedUnimplementedServingSiteServiceServer() {}
 
@@ -216,6 +230,24 @@ func _ServingSiteService_DeleteServingSite_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ServingSiteService_GetPublicKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPublicKeyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ServingSiteServiceServer).GetPublicKey(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/GetPublicKey",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ServingSiteServiceServer).GetPublicKey(ctx, req.(*GetPublicKeyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ServingSiteService_ServiceDesc is the grpc.ServiceDesc for ServingSiteService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -242,6 +274,10 @@ var ServingSiteService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteServingSite",
 			Handler:    _ServingSiteService_DeleteServingSite_Handler,
+		},
+		{
+			MethodName: "GetPublicKey",
+			Handler:    _ServingSiteService_GetPublicKey_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

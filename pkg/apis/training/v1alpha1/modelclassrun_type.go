@@ -18,7 +18,7 @@ const (
 	ModelClassRunPhaseFailed               ModelClassRunPhase = "FailedConditionReason"
 	ModelClassRunPhaseTrained              ModelClassRunPhase = "Trained"
 	ModelClassRunPhaseAborted              ModelClassRunPhase = "Aborted"
-	ModelClassRunPhaseCompleted            ModelClassRunPhase = "CompletedModelsCount"
+	ModelClassRunPhaseCompleted            ModelClassRunPhase = "Completed"
 )
 
 // Pipeline run condition

@@ -39,6 +39,11 @@ class ServingSiteServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteResponse.FromString,
                 )
+        self.GetPublicKey = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/GetPublicKey',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetPublicKeyRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetPublicKeyResponse.FromString,
+                )
 
 
 class ServingSiteServiceServicer(object):
@@ -74,6 +79,12 @@ class ServingSiteServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetPublicKey(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ServingSiteServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -101,6 +112,11 @@ def add_ServingSiteServiceServicer_to_server(servicer, server):
                     servicer.DeleteServingSite,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteResponse.SerializeToString,
+            ),
+            'GetPublicKey': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPublicKey,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetPublicKeyRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetPublicKeyResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -194,5 +210,22 @@ class ServingSiteService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/DeleteServingSite',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetPublicKey(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/GetPublicKey',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetPublicKeyRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetPublicKeyResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

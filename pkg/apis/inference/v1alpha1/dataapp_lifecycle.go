@@ -82,7 +82,7 @@ func (dataapp DataApp) IsReady() bool {
 
 func (dataapp DataApp) IsFailed() bool {
 	return dataapp.GetCond(DataAppReady).Status == v1.ConditionFalse &&
-		dataapp.GetCond(DataAppReady).Reason == "FailedModelsCount"
+		dataapp.GetCond(DataAppReady).Reason == "Failed"
 }
 
 func (dataapp *DataApp) Populate(name string) {

@@ -1424,7 +1424,7 @@ message ModelClassSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule reportSchedule = 14;
 
   // Fast indicates if Dataset, Model and Study resources associated with the ModelClass should run in fast mode.
-  // RunningModelsCount in fast mode will skip unnecessary workloads such as profiling, reporting, explaining, etc.
+  // Running in fast mode will skip unnecessary workloads such as profiling, reporting, explaining, etc.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool fast = 15;
@@ -3010,7 +3010,7 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional DriftModelSpec driftDetection = 19;
 
-  // Aborted indicates that the execution of the Study and associated ModelsCount should be permanently stopped
+  // Aborted indicates that the execution of the Study and associated Models should be permanently stopped
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool aborted = 20;

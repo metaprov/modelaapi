@@ -47,6 +47,15 @@ message GetServingSiteResponse {
     string yaml = 2;
 }
 
+message GetPublicKeyRequest {
+  string namespace = 1;
+  string name      = 2;
+}
+
+
+message GetPublicKeyResponse {
+  bytes publickey = 1;
+}
 
 
 message DeleteServingSiteRequest {
@@ -71,6 +80,8 @@ service ServingSiteService {
     rpc GetServingSite(GetServingSiteRequest) returns (GetServingSiteResponse) {
         option (google.api.http).get = "/v1/servingsites/{namespace}/{name}";
     }
+
+
     rpc UpdateServingSite(UpdateServingSiteRequest) returns (UpdateServingSiteResponse) {
         option (google.api.http) = {
 			put: "/v1/servingsites/{servingsite.metadata.namespace}/{servingsite.metadata.name}"
@@ -83,6 +94,13 @@ service ServingSiteService {
 			delete: "/v1/servingsites/{namespace}/{name}"
 		};
     }
+
+    rpc GetPublicKey(GetPublicKeyRequest) returns (GetPublicKeyResponse) {
+        option (google.api.http).get = "/v1/servingsites/{namespace}/{name}:getpublickey";
+  }
+
+
+
 
 
 }

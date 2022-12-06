@@ -1374,7 +1374,7 @@ type ConditionReason string
 const (
 	FailedConditionReason ConditionReason = "FailedConditionReason"
 	Success               ConditionReason = "Success"
-	Running               ConditionReason = "RunningModelsCount"
+	Running               ConditionReason = "Running"
 	WaitingForApproval    ConditionReason = "WaitingForApproval"
 	Approved              ConditionReason = "Approved"
 	Denied                ConditionReason = "Denied"

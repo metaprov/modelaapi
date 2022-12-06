@@ -98,7 +98,7 @@ func (in *DataPipeline) MarkFailed(err error) {
 	in.CreateOrUpdateCond(DataPipelineCondition{
 		Type:    DataPipelineReady,
 		Status:  v1.ConditionFalse,
-		Reason:  "FailedModelsCount",
+		Reason:  "Failed",
 		Message: err.Error(),
 	})
 }

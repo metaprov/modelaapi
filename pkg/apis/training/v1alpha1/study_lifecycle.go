@@ -70,20 +70,20 @@ func (study Study) ReachedMaxFETime() bool {
 }
 
 func (study Study) ReachedMaxFEModels() bool {
-	totalModels := study.Status.FeatureEngineeringStatus.FailedModelsCount + study.Status.FeatureEngineeringStatus.CompletedModelsCount
+	totalModels := study.Status.FeatureEngineeringStatus.Failed + study.Status.FeatureEngineeringStatus.Completed
 	return *study.Spec.FESearch.MaxModels == totalModels
 }
 
 func (study Study) ShouldEarlyStopTraining() bool {
 	if *study.Spec.Search.EarlyStop.Enabled {
-		return study.Status.SearchStatus.FailedModelsCount+study.Status.SearchStatus.CompletedModelsCount >= *study.Spec.Search.EarlyStop.Initial && study.Status.SearchStatus.ModelsWithNoProgress >= *study.Spec.Search.EarlyStop.MinModelsWithNoProgress
+		return study.Status.SearchStatus.Failed+study.Status.SearchStatus.Completed >= *study.Spec.Search.EarlyStop.Initial && study.Status.SearchStatus.ModelsWithNoProgress >= *study.Spec.Search.EarlyStop.MinModelsWithNoProgress
 	}
 	return false
 }
 
 func (study Study) ShouldEarlyStopFE() bool {
 	if *study.Spec.FESearch.EarlyStop.Enabled {
-		return study.Status.FeatureEngineeringStatus.FailedModelsCount+study.Status.FeatureEngineeringStatus.CompletedModelsCount >= *study.Spec.FESearch.EarlyStop.Initial && study.Status.FeatureEngineeringStatus.ModelsWithNoProgress >= *study.Spec.FESearch.EarlyStop.MinModelsWithNoProgress
+		return study.Status.FeatureEngineeringStatus.Failed+study.Status.FeatureEngineeringStatus.Completed >= *study.Spec.FESearch.EarlyStop.Initial && study.Status.FeatureEngineeringStatus.ModelsWithNoProgress >= *study.Spec.FESearch.EarlyStop.MinModelsWithNoProgress
 	}
 	return false
 }
@@ -924,7 +924,7 @@ func (study *Study) MaxTimeOrModelReached() bool {
 	timeOver := diff.Minutes() > float64(*study.Spec.Search.MaxTime)
 
 	// compare the model. We take the ensemble into consideration
-	modelOver := (study.Status.SearchStatus.CompletedModelsCount + study.Status.SearchStatus.FailedModelsCount) >= *study.Spec.Search.MaxModels
+	modelOver := (study.Status.SearchStatus.Completed + study.Status.SearchStatus.Failed) >= *study.Spec.Search.MaxModels
 
 	return timeOver || modelOver
 
@@ -991,8 +991,8 @@ func (study *Study) MarkPartitionedFailed(err string) {
 }
 
 func (study Study) ReachedMaxModels() bool {
-	return study.Status.SearchStatus.FailedModelsCount+
-		study.Status.SearchStatus.CompletedModelsCount+
+	return study.Status.SearchStatus.Failed+
+		study.Status.SearchStatus.Completed+
 		study.Status.SearchStatus.WaitingModelsCount >= *study.Spec.Search.MaxModels
 }
 

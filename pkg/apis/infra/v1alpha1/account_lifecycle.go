@@ -153,7 +153,7 @@ func (account *Account) MarkFailed(err string) {
 	account.CreateOrUpdateCond(AccountCondition{
 		Type:    AccountReady,
 		Status:  v1.ConditionFalse,
-		Reason:  "FailedModelsCount",
+		Reason:  "Failed",
 		Message: err,
 	})
 	account.Status.FailureMessage = util.StrPtr(err)

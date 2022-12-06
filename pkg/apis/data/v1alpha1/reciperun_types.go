@@ -11,9 +11,9 @@ type RecipeRunPhase string
 const (
 	RecipeRunPhasePending     RecipeRunPhase = "Pending"
 	RecipeRunPhaseAborted     RecipeRunPhase = "Aborted"
-	RecipeRunPhaseRunning     RecipeRunPhase = "RunningModelsCount"
+	RecipeRunPhaseRunning     RecipeRunPhase = "Running"
 	RecipeRunPhaseUnitTesting RecipeRunPhase = "UnitTesting"
-	RecipeRunPhaseSucceed     RecipeRunPhase = "CompletedModelsCount"
+	RecipeRunPhaseSucceed     RecipeRunPhase = "Completed"
 	RecipeRunPhaseFailed      RecipeRunPhase = "FailedConditionReason"
 )
 
@@ -23,7 +23,7 @@ type RecipeRunConditionType string
 /// RecipeName Condition
 const (
 	RecipeRunUnitTested RecipeConditionType = "UnitTested"
-	RecipeRunCompleted  RecipeConditionType = "CompletedModelsCount"
+	RecipeRunCompleted  RecipeConditionType = "Completed"
 	RecipeRunSaved      RecipeConditionType = "Saved"
 )
 

@@ -183,6 +183,48 @@ export namespace GetServingSiteResponse {
   }
 }
 
+export class GetPublicKeyRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetPublicKeyRequest;
+
+  getName(): string;
+  setName(value: string): GetPublicKeyRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetPublicKeyRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetPublicKeyRequest): GetPublicKeyRequest.AsObject;
+  static serializeBinaryToWriter(message: GetPublicKeyRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetPublicKeyRequest;
+  static deserializeBinaryFromReader(message: GetPublicKeyRequest, reader: jspb.BinaryReader): GetPublicKeyRequest;
+}
+
+export namespace GetPublicKeyRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class GetPublicKeyResponse extends jspb.Message {
+  getPublickey(): Uint8Array | string;
+  getPublickey_asU8(): Uint8Array;
+  getPublickey_asB64(): string;
+  setPublickey(value: Uint8Array | string): GetPublicKeyResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetPublicKeyResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetPublicKeyResponse): GetPublicKeyResponse.AsObject;
+  static serializeBinaryToWriter(message: GetPublicKeyResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetPublicKeyResponse;
+  static deserializeBinaryFromReader(message: GetPublicKeyResponse, reader: jspb.BinaryReader): GetPublicKeyResponse;
+}
+
+export namespace GetPublicKeyResponse {
+  export type AsObject = {
+    publickey: Uint8Array | string,
+  }
+}
+
 export class DeleteServingSiteRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): DeleteServingSiteRequest;

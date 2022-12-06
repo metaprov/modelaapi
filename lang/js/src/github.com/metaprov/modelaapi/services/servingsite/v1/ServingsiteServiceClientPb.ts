@@ -250,5 +250,48 @@ export class ServingSiteServiceClient {
     this.methodInfoDeleteServingSite);
   }
 
+  methodInfoGetPublicKey = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/GetPublicKey',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetPublicKeyRequest,
+    github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetPublicKeyResponse,
+    (request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetPublicKeyRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetPublicKeyResponse.deserializeBinary
+  );
+
+  getPublicKey(
+    request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetPublicKeyRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetPublicKeyResponse>;
+
+  getPublicKey(
+    request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetPublicKeyRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetPublicKeyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetPublicKeyResponse>;
+
+  getPublicKey(
+    request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetPublicKeyRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetPublicKeyResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/GetPublicKey',
+        request,
+        metadata || {},
+        this.methodInfoGetPublicKey,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/GetPublicKey',
+    request,
+    metadata || {},
+    this.methodInfoGetPublicKey);
+  }
+
 }
 

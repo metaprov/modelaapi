@@ -62,7 +62,7 @@ const (
 	StudyPhaseProfiled           StudyPhase = "Profiled"
 	StudyPhaseExplaining         StudyPhase = "Explaining"
 	StudyPhaseExplained          StudyPhase = "Explained"
-	StudyPhaseCompleted          StudyPhase = "CompletedModelsCount"
+	StudyPhaseCompleted          StudyPhase = "Completed"
 	StudyPhaseFailed             StudyPhase = "FailedConditionReason"
 	StudyPhaseAborted            StudyPhase = "Aborted"
 	StudyPhasePaused             StudyPhase = "Paused"
@@ -102,7 +102,7 @@ const (
 	// StudySaved states that the Study has been archived in a database
 	StudySaved StudyConditionType = "Saved"
 	// StudyCompleted states that the Study has completed execution
-	StudyCompleted   StudyConditionType = "CompletedModelsCount"
+	StudyCompleted   StudyConditionType = "Completed"
 	StudyPartitioned StudyConditionType = "Partitioned"
 	StudyArchived    StudyConditionType = "Archived"
 	StudyUnitTested  StudyConditionType = "UnitTested"
@@ -218,7 +218,7 @@ type StudySpec struct {
 	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,18,opt,name=interpretability"`
 	// +kubebuilder:validation:Optional
 	DriftDetector DriftModelSpec `json:"driftDetection,omitempty" protobuf:"bytes,19,opt,name=driftDetection"`
-	// Aborted indicates that the execution of the Study and associated ModelsCount should be permanently stopped
+	// Aborted indicates that the execution of the Study and associated Models should be permanently stopped
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,20,opt,name=aborted"`
@@ -457,13 +457,13 @@ type StudyPhaseStatus struct {
 	WaitingModelsCount int32 `json:"waitingModelsCount,omitempty" protobuf:"varint,3,opt,name=waitingModelsCount"`
 	// The number of models currently being trained
 	// +kubebuilder:validation:Optional
-	RunningModelsCount int32 `json:"runningModelsCount,omitempty" protobuf:"varint,4,opt,name=runningModelsCount"`
+	Running int32 `json:"runningModelsCount,omitempty" protobuf:"varint,4,opt,name=runningModelsCount"`
 	// The number of models that experienced an error whilst training
 	// +kubebuilder:validation:Optional
-	FailedModelsCount int32 `json:"failedModelsCount,omitempty" protobuf:"varint,5,opt,name=failedModelsCount"`
+	Failed int32 `json:"failedModelsCount,omitempty" protobuf:"varint,5,opt,name=failedModelsCount"`
 	// The number of models that have been successfully trained
 	// +kubebuilder:validation:Optional
-	CompletedModelsCount int32 `json:"completedModelsCount,omitempty" protobuf:"varint,6,opt,name=completedModelsCount"`
+	Completed int32 `json:"completedModelsCount,omitempty" protobuf:"varint,6,opt,name=completedModelsCount"`
 	// Best score so far in this phase. The best score is the value of the objective.
 	// +kubebuilder:validation:Optional
 	BestScore float64 `json:"bestScore,omitempty" protobuf:"varint,7,opt,name=bestScore"`

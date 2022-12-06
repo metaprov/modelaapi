@@ -15,9 +15,9 @@ type DataPipelineRunPhase string
 
 const (
 	DataPipelineRunPhasePending   DataPipelineRunPhase = "Pending"
-	DataPipelineRunPhaseRunning   DataPipelineRunPhase = "RunningModelsCount"
-	DataPipelineRunPhaseCompleted DataPipelineRunPhase = "CompletedModelsCount"
-	DataPipelineRunPhaseFailed    DataPipelineRunPhase = "FailedConditionReason"
+	DataPipelineRunPhaseRunning   DataPipelineRunPhase = "Running"
+	DataPipelineRunPhaseCompleted DataPipelineRunPhase = "Completed"
+	DataPipelineRunPhaseFailed    DataPipelineRunPhase = "Failed"
 	DataPipelineRunPhaseAborted   DataPipelineRunPhase = "Aborted"
 	DataPipelineRunPhasePaused    DataPipelineRunPhase = "Paused"
 )
@@ -27,7 +27,7 @@ type DataPipelineRunConditionType string
 
 /// DataPipelineRun Condition
 const (
-	DataPipelineRunCompleted DataPipelineRunConditionType = "CompletedModelsCount"
+	DataPipelineRunCompleted DataPipelineRunConditionType = "Completed"
 	DataPipelineRunSaved     DataPipelineRunConditionType = "Saved"
 )
 

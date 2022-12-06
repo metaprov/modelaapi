@@ -25,7 +25,7 @@ const (
 	ModelPhaseComputedFeedback      ModelPhase = "ComputedFeedback"
 	ModelPhaseReporting             ModelPhase = "Reporting"
 	ModelPhaseReported              ModelPhase = "Reported"
-	ModelPhaseCompleted             ModelPhase = "CompletedModelsCount"
+	ModelPhaseCompleted             ModelPhase = "Completed"
 	ModelPhasePublishing            ModelPhase = "Publishing"
 	ModelPhasePublished             ModelPhase = "Published"
 	ModelPhasePackaging             ModelPhase = "Packaging"
@@ -1183,7 +1183,7 @@ type PartitionModelLocationsSpec struct {
 type StageStatusPhase string
 
 const (
-	StageStatusPhaseRunning            StageStatusPhase = "RunningModelsCount"
+	StageStatusPhaseRunning            StageStatusPhase = "Running"
 	StageStatusPhaseTraining           StageStatusPhase = "Training"   // search and train for the best model
 	StageStatusPhasePublishing         StageStatusPhase = "Publishing" // publish the model
 	StageStatusPhaseUnitTests          StageStatusPhase = "UnitTesting"
@@ -1191,7 +1191,7 @@ const (
 	StageStatusPhaseWaitingForApproval StageStatusPhase = "WaitingForApproval"
 	StageStatusPhaseApproved           StageStatusPhase = "Approved"
 	StageStatusPhaseDenied             StageStatusPhase = "Denied"
-	StageStatusPhaseCompleted          StageStatusPhase = "CompletedModelsCount"
+	StageStatusPhaseCompleted          StageStatusPhase = "Completed"
 	StageStatusPhaseFailed             StageStatusPhase = "FailedConditionReason"
 )
 

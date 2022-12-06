@@ -16,10 +16,10 @@ const (
 	PredictionPhasePending           PredictionPhase = "Pending"
 	PredictionPhaseCreatingDataset   PredictionPhase = "CreatingDataset"
 	PredictionPhaseWaitingForDataset PredictionPhase = "WaitingForDataset"
-	PredictionPhaseRunning           PredictionPhase = "RunningModelsCount"
+	PredictionPhaseRunning           PredictionPhase = "Running"
 	PredictionPhaseFailed            PredictionPhase = "FailedConditionReason"
 	PredictionPhaseAborted           PredictionPhase = "Aborted"
-	PredictionPhaseCompleted         PredictionPhase = "CompletedModelsCount"
+	PredictionPhaseCompleted         PredictionPhase = "Completed"
 	PredictionPhaseUnitTesting       PredictionPhase = "UnitTesting"
 	PredictionPhaseUnitTested        PredictionPhase = "UnitTested"
 )
@@ -29,7 +29,7 @@ type PredictionConditionType string
 
 /// PredictionTemplate Condition
 const (
-	PredictionCompleted  PredictionConditionType = "CompletedModelsCount"
+	PredictionCompleted  PredictionConditionType = "Completed"
 	PredictionSaved      PredictionConditionType = "Saved"
 	PredictionUnitTested PredictionConditionType = "UnitTested"
 	PredictionArchived   PredictionConditionType = "Archived"
