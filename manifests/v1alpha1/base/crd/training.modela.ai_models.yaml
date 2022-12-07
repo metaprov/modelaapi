@@ -1753,7 +1753,15 @@ spec:
               objective:
                 description: The objective metric that will be used to evaluate the
                   performance of the model
-                type: string
+                properties:
+                  goal:
+                    default: maximize
+                    description: The goal of the objective.
+                    type: string
+                  metric:
+                    description: The objective metric
+                    type: string
+                type: object
               owner:
                 default: no-one
                 description: The Account which owns the the Study that created the

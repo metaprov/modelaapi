@@ -11,7 +11,7 @@ type RecipeRunPhase string
 const (
 	RecipeRunPhasePending     RecipeRunPhase = "Pending"
 	RecipeRunPhaseAborted     RecipeRunPhase = "Aborted"
-	RecipeRunPhaseRunning     RecipeRunPhase = "Running"
+	RecipeRunPhaseRunning     RecipeRunPhase = "RunningModelsCount"
 	RecipeRunPhaseUnitTesting RecipeRunPhase = "UnitTesting"
 	RecipeRunPhaseSucceed     RecipeRunPhase = "Completed"
 	RecipeRunPhaseFailed      RecipeRunPhase = "FailedConditionReason"

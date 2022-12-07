@@ -460,6 +460,22 @@ const (
 	MinimizeGoalType GoalType = "minimize"
 )
 
+type ObjectiveSpec struct {
+	// The objective metric
+	Metric Metric `json:"metric,omitempty" protobuf:"bytes,1,opt,name=metric"`
+	// The goal of the objective.
+	// +kubebuilder:default:=maximize
+	Goal GoalType `json:"goal,omitempty" protobuf:"bytes,2,opt,name=goal"`
+}
+
+func (objective ObjectiveSpec) Compare(i float64, j float64) bool {
+	if objective.Goal == MaximizeGoalType {
+		return i <= j
+	} else {
+		return j < i
+	}
+}
+
 type Metric string
 
 const (
@@ -1374,7 +1390,7 @@ type ConditionReason string
 const (
 	FailedConditionReason ConditionReason = "FailedConditionReason"
 	Success               ConditionReason = "Success"
-	Running               ConditionReason = "Running"
+	Running               ConditionReason = "RunningModelsCount"
 	WaitingForApproval    ConditionReason = "WaitingForApproval"
 	Approved              ConditionReason = "Approved"
 	Denied                ConditionReason = "Denied"

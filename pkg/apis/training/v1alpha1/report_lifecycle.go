@@ -121,7 +121,7 @@ func (report Report) IsDatasetReport() bool {
 		*report.Spec.ReportType == RegressionDatasetReport ||
 		*report.Spec.ReportType == TextClassificationDatasetReport ||
 		*report.Spec.ReportType == ForecastDatasetReport ||
-		*report.Spec.ReportType == GroupTimeSeriesDatasetReport
+		*report.Spec.ReportType == PartitionTimeSeriesDatasetReport
 }
 
 func (report Report) IsStudyReport() bool {
@@ -139,7 +139,7 @@ func (report Report) IsModelReport() bool {
 		*report.Spec.ReportType == MultiClassificationModelReport ||
 		*report.Spec.ReportType == TextClassificationModelReport ||
 		*report.Spec.ReportType == RegressionModelReport ||
-		*report.Spec.ReportType == GroupTimeSeriesModelReport
+		*report.Spec.ReportType == PartitionTimeSeriesModelReport
 }
 
 func (report Report) Age() string {
@@ -147,7 +147,7 @@ func (report Report) Age() string {
 }
 
 func (report Report) RootURI() string {
-	if *report.Spec.ReportType == GroupTimeSeriesDatasetReport {
+	if *report.Spec.ReportType == PartitionTimeSeriesDatasetReport {
 		if len(report.Spec.Key) > 0 {
 			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s/groups/%s",
 				report.Namespace,
@@ -163,7 +163,7 @@ func (report Report) RootURI() string {
 
 	}
 
-	if *report.Spec.ReportType == GroupTimeSeriesModelReport {
+	if *report.Spec.ReportType == PartitionTimeSeriesModelReport {
 		if len(report.Spec.Key) > 0 {
 			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s/groups/%s",
 				report.Namespace,
@@ -211,7 +211,7 @@ func (report Report) PdfURI() string {
 }
 
 func (report Report) IsGroup() bool {
-	return *report.Spec.ReportType == GroupTimeSeriesDatasetReport || *report.Spec.ReportType == GroupTimeSeriesModelReport
+	return *report.Spec.ReportType == PartitionTimeSeriesDatasetReport || *report.Spec.ReportType == PartitionTimeSeriesModelReport
 }
 
 func ParseReportYaml(content []byte) (*Report, error) {

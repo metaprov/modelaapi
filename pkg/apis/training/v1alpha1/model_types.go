@@ -195,7 +195,7 @@ type ModelSpec struct {
 	// The objective metric that will be used to evaluate the performance of the model
 	// +kubebuilder:validation:Required
 	// +required
-	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,9,opt,name=objective"`
+	Objective *catalog.ObjectiveSpec `json:"objective,omitempty" protobuf:"bytes,9,opt,name=objective"`
 	// FeatureEngineering specifies the preprocessing pipelines that will be applied to the model prior to training.
 	// By default, feature engineering is generated automatically by sampling different pipelines in competition
 	// +kubebuilder:validation:Optional
@@ -1183,7 +1183,7 @@ type PartitionModelLocationsSpec struct {
 type StageStatusPhase string
 
 const (
-	StageStatusPhaseRunning            StageStatusPhase = "Running"
+	StageStatusPhaseRunning            StageStatusPhase = "RunningModelsCount"
 	StageStatusPhaseTraining           StageStatusPhase = "Training"   // search and train for the best model
 	StageStatusPhasePublishing         StageStatusPhase = "Publishing" // publish the model
 	StageStatusPhaseUnitTests          StageStatusPhase = "UnitTesting"

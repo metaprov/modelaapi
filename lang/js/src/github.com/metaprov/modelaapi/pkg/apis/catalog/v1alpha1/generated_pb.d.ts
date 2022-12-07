@@ -1277,6 +1277,28 @@ export namespace NotificationSpec {
   }
 }
 
+export class ObjectiveSpec extends jspb.Message {
+  getMetric(): string;
+  setMetric(value: string): ObjectiveSpec;
+
+  getGoal(): string;
+  setGoal(value: string): ObjectiveSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ObjectiveSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ObjectiveSpec): ObjectiveSpec.AsObject;
+  static serializeBinaryToWriter(message: ObjectiveSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ObjectiveSpec;
+  static deserializeBinaryFromReader(message: ObjectiveSpec, reader: jspb.BinaryReader): ObjectiveSpec;
+}
+
+export namespace ObjectiveSpec {
+  export type AsObject = {
+    metric: string,
+    goal: string,
+  }
+}
+
 export class PRCurve extends jspb.Message {
   getValuesList(): Array<CurvePoint>;
   setValuesList(value: Array<CurvePoint>): PRCurve;

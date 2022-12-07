@@ -1395,7 +1395,7 @@ message ModelClassSpec {
 
   // The optimization objective. The objective is also used when promoting models
   // +kubebuilder:validation:Optional
-  optional string objective = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec objective = 7;
 
   // If using the feature store (pre defined features), specify the feature groups the would
   // be used to create the training data.
@@ -1424,7 +1424,7 @@ message ModelClassSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule reportSchedule = 14;
 
   // Fast indicates if Dataset, Model and Study resources associated with the ModelClass should run in fast mode.
-  // Running in fast mode will skip unnecessary workloads such as profiling, reporting, explaining, etc.
+  // RunningModelsCount in fast mode will skip unnecessary workloads such as profiling, reporting, explaining, etc.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool fast = 15;
@@ -1725,7 +1725,7 @@ message ModelSpec {
   // The objective metric that will be used to evaluate the performance of the model
   // +kubebuilder:validation:Required
   // +required
-  optional string objective = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec objective = 9;
 
   // FeatureEngineering specifies the preprocessing pipelines that will be applied to the model prior to training.
   // By default, feature engineering is generated automatically by sampling different pipelines in competition
@@ -2731,13 +2731,13 @@ message SearchSpec {
 
   // The objective metric that will be measured against all models to evaluate their performance
   // +kubebuilder:validation:Optional
-  optional string objective = 14;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec objective = 14;
 
   // The second objective metric that will be measured and evaluated in tandem with the primary objective.
   // The model search optimizer will attempt to optimize both metrics
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
-  optional string objective2 = 15;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec objective2 = 15;
 
   // Tune best model
   // +kubebuilder:default:=false

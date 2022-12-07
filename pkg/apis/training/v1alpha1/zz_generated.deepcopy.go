@@ -1871,7 +1871,7 @@ func (in *ModelClassSpec) DeepCopyInto(out *ModelClassSpec) {
 	}
 	if in.Objective != nil {
 		in, out := &in.Objective, &out.Objective
-		*out = new(catalogv1alpha1.Metric)
+		*out = new(catalogv1alpha1.ObjectiveSpec)
 		**out = **in
 	}
 	if in.Entities != nil {
@@ -2172,7 +2172,7 @@ func (in *ModelSpec) DeepCopyInto(out *ModelSpec) {
 	}
 	if in.Objective != nil {
 		in, out := &in.Objective, &out.Objective
-		*out = new(catalogv1alpha1.Metric)
+		*out = new(catalogv1alpha1.ObjectiveSpec)
 		**out = **in
 	}
 	in.FeatureEngineering.DeepCopyInto(&out.FeatureEngineering)
@@ -3130,12 +3130,12 @@ func (in *SearchSpec) DeepCopyInto(out *SearchSpec) {
 	in.EarlyStop.DeepCopyInto(&out.EarlyStop)
 	if in.Objective != nil {
 		in, out := &in.Objective, &out.Objective
-		*out = new(catalogv1alpha1.Metric)
+		*out = new(catalogv1alpha1.ObjectiveSpec)
 		**out = **in
 	}
 	if in.Objective2 != nil {
 		in, out := &in.Objective2, &out.Objective2
-		*out = new(catalogv1alpha1.Metric)
+		*out = new(catalogv1alpha1.ObjectiveSpec)
 		**out = **in
 	}
 	if in.Tune != nil {

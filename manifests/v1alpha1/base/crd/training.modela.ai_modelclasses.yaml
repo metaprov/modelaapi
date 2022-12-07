@@ -1132,7 +1132,7 @@ spec:
               fast:
                 default: false
                 description: Fast indicates if Dataset, Model and Study resources
-                  associated with the ModelClass should run in fast mode. Running
+                  associated with the ModelClass should run in fast mode. RunningModelsCount
                   in fast mode will skip unnecessary workloads such as profiling,
                   reporting, explaining, etc.
                 type: boolean
@@ -1165,7 +1165,15 @@ spec:
               objective:
                 description: The optimization objective. The objective is also used
                   when promoting models
-                type: string
+                properties:
+                  goal:
+                    default: maximize
+                    description: The goal of the objective.
+                    type: string
+                  metric:
+                    description: The objective metric
+                    type: string
+                type: object
               owner:
                 default: no-one
                 description: The name of the Account which created the object, which

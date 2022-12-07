@@ -14,7 +14,7 @@ type ReportPhase string
 /// Entity Condition
 const (
 	ReportPhasePending   ReportPhase = "Pending"
-	ReportPhaseRunning   ReportPhase = "Running"
+	ReportPhaseRunning   ReportPhase = "RunningModelsCount"
 	ReportPhaseCompleted ReportPhase = "Completed"
 	ReportPhaseFailed    ReportPhase = "Failed"
 )
@@ -24,23 +24,23 @@ const (
 type ReportType string
 
 const (
-	BinaryClassificationModelReport ReportType = "binary-classification-model"
-	ForecastModelReport             ReportType = "forecast-model"
-	RegressionModelReport           ReportType = "regression-model"
-	MultiClassificationModelReport  ReportType = "multi-classification-model"
-	TextClassificationModelReport   ReportType = "text-classification-model"
-	ClassificationDatasetReport     ReportType = "classification-dataset"
-	ForecastDatasetReport           ReportType = "forecast-dataset"
-	TextClassificationDatasetReport ReportType = "text-classification-dataset"
-	RegressionDatasetReport         ReportType = "regression-dataset"
-	SummaryReport                   ReportType = "summary-report"
-	CustomReport                    ReportType = "custom-report"
-	GroupTimeSeriesModelReport      ReportType = "group-timeseries-model-report"
-	GroupTimeSeriesDatasetReport    ReportType = "group-timeseries-dataset-report"
-	StudyReport                     ReportType = "study-report"
-	ForecastReport                  ReportType = "forecast-report"
-	FeatureReport                   ReportType = "feature-report"
-	InvalidReport                   ReportType = "invalid-report"
+	BinaryClassificationModelReport  ReportType = "binary-classification-model"
+	ForecastModelReport              ReportType = "forecast-model"
+	RegressionModelReport            ReportType = "regression-model"
+	MultiClassificationModelReport   ReportType = "multi-classification-model"
+	TextClassificationModelReport    ReportType = "text-classification-model"
+	ClassificationDatasetReport      ReportType = "classification-dataset"
+	ForecastDatasetReport            ReportType = "forecast-dataset"
+	TextClassificationDatasetReport  ReportType = "text-classification-dataset"
+	RegressionDatasetReport          ReportType = "regression-dataset"
+	SummaryReport                    ReportType = "summary-report"
+	CustomReport                     ReportType = "custom-report"
+	PartitionTimeSeriesModelReport   ReportType = "partition-timeseries-model-report"
+	PartitionTimeSeriesDatasetReport ReportType = "partition-timeseries-dataset-report"
+	StudyReport                      ReportType = "study-report"
+	ForecastReport                   ReportType = "forecast-report"
+	FeatureReport                    ReportType = "feature-report"
+	InvalidReport                    ReportType = "invalid-report"
 )
 
 // +kubebuilder:validation:Enum="pdf"

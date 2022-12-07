@@ -773,6 +773,15 @@ message NotificationSpec {
   map<string, string> selector = 6;
 }
 
+message ObjectiveSpec {
+  // The objective metric
+  optional string metric = 1;
+
+  // The goal of the objective.
+  // +kubebuilder:default:=maximize
+  optional string goal = 2;
+}
+
 message PRCurve {
   repeated CurvePoint values = 1;
 }

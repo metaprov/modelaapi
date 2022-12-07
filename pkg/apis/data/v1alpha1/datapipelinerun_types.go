@@ -15,7 +15,7 @@ type DataPipelineRunPhase string
 
 const (
 	DataPipelineRunPhasePending   DataPipelineRunPhase = "Pending"
-	DataPipelineRunPhaseRunning   DataPipelineRunPhase = "Running"
+	DataPipelineRunPhaseRunning   DataPipelineRunPhase = "RunningModelsCount"
 	DataPipelineRunPhaseCompleted DataPipelineRunPhase = "Completed"
 	DataPipelineRunPhaseFailed    DataPipelineRunPhase = "Failed"
 	DataPipelineRunPhaseAborted   DataPipelineRunPhase = "Aborted"

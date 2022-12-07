@@ -9,7 +9,6 @@ package v1alpha1
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/dustin/go-humanize"
 	"path"
 	"time"
 
@@ -79,14 +78,27 @@ func NewModel(
 	return result
 }
 
-func (model Model) DefaultObjective() catalog.Metric {
+func (model Model) DefaultObjective() catalog.ObjectiveSpec {
+	result := catalog.ObjectiveSpec{}
 	if *model.Spec.Task == catalog.BinaryClassification {
-		return catalog.RocAuc
+		return catalog.ObjectiveSpec{
+			Metric: catalog.RocAuc,
+			Goal:   catalog.MaximizeGoalType,
+		}
 	}
 	if *model.Spec.Task == catalog.Regression {
-		return catalog.MSLE
+		return catalog.ObjectiveSpec{
+			Metric: catalog.RMSE,
+			Goal:   catalog.MinimizeGoalType,
+		}
 	}
-	return catalog.NoneMetric
+	if *model.Spec.Task == catalog.Forecasting || *model.Spec.Task == catalog.PartitionForecast {
+		return catalog.ObjectiveSpec{
+			Metric: catalog.MAPE,
+			Goal:   catalog.MinimizeGoalType,
+		}
+	}
+	return result
 }
 
 func (model Model) DefaultImageName() string {
@@ -117,7 +129,7 @@ func (model Model) ReportType() ReportType {
 	case catalog.Forecasting:
 		return ForecastModelReport
 	case catalog.PartitionForecast:
-		return GroupTimeSeriesModelReport
+		return PartitionTimeSeriesModelReport
 	}
 	return InvalidReport
 }
@@ -1214,7 +1226,7 @@ func (model Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *
 				"Entity":     *model.Spec.DatasetName,
 				"Study":      *model.Spec.StudyName,
 				"Task":       string(*model.Spec.Task),
-				"Objective":  string(*model.Spec.Objective),
+				"Objective":  string(model.Spec.Objective.Metric),
 				"Algorithm":  model.Spec.Estimator.AlgorithmName,
 				"Phase":      string(model.Status.Phase),
 				"Score":      util.FtoA(&model.Status.CVScore),
@@ -1252,7 +1264,7 @@ func (model Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *strin
 				"Entity":     *model.Spec.DatasetName,
 				"Study":      *model.Spec.StudyName,
 				"Task":       string(*model.Spec.Task),
-				"Objective":  string(*model.Spec.Objective),
+				"Objective":  string(model.Spec.Objective.Metric),
 				"Algorithm":  model.Spec.Estimator.AlgorithmName,
 				"Phase":      string(model.Status.Phase),
 				"Score":      util.FtoA(&model.Status.CVScore),
@@ -1308,12 +1320,12 @@ func (model *Model) MarkFailedToTune(err string) {
 
 //////// Tuning
 
-func (model *Model) Tuning() bool {
+func (model Model) Tuning() bool {
 	cond := model.GetCond(ModelTuned)
 	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonTuned
 }
 
-func (model *Model) TuningFailed() bool {
+func (model Model) TuningFailed() bool {
 	if model.TuningFailed() {
 		return true
 	}
@@ -1321,7 +1333,7 @@ func (model *Model) TuningFailed() bool {
 	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonFailed
 }
 
-func (model *Model) Tuned() bool {
+func (model Model) Tuned() bool {
 	return model.GetCond(ModelTuned).Status == v1.ConditionTrue
 }
 
@@ -1386,54 +1398,54 @@ func (model *Model) MerginingFailed() bool {
 	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonFailed
 }
 
-func (model *Model) Merged() bool {
+func (model Model) Merged() bool {
 	return model.GetCond(ModelMerged).Status == v1.ConditionTrue
 }
 
 ////////////////////////////
 // Index file paths
 
-func (model *Model) IndexFileKey() string {
+func (model Model) IndexFileKey() string {
 	return model.RootURI() + "/groups.json"
 }
 
-func (model *Model) WorkerIndexFileKey(workerIndex int, task string) string {
+func (model Model) WorkerIndexFileKey(workerIndex int, task string) string {
 	return fmt.Sprintf("%s/%s_%d.json", model.RootURI(), task, workerIndex)
 }
 
 // This is the index file for task
-func (model *Model) TaskIndexFileKey(task string) string {
+func (model Model) TaskIndexFileKey(task string) string {
 	return fmt.Sprintf("%s/%s.json", model.RootURI(), task)
 }
 
 ////////////////////////////
 // Group folders
 
-func (model *Model) GroupFolder() string {
-	return model.RootURI() + "/groups/" + path.Join(model.Spec.Forecasting.Key...)
+func (model Model) PartitionFolder() string {
+	return model.RootURI() + "/partitions/" + path.Join(model.Spec.Forecasting.Key...)
 }
 
-func (model *Model) GroupModelFolder() string {
-	return model.GroupFolder() + "/bin/model"
+func (model Model) PartitionModelFolder() string {
+	return model.PartitionFolder() + "/bin/model"
 }
 
-func (model *Model) GroupModelFile() string {
-	return model.GroupFolder() + "/bin/model.zip"
+func (model Model) PartitionModelFile() string {
+	return model.PartitionFolder() + "/bin/model.zip"
 }
 
-func (model *Model) GroupModelProfileFolder() string {
-	return model.GroupFolder() + "/profile"
+func (model Model) PartitionModelProfileFolder() string {
+	return model.PartitionFolder() + "/profile"
 }
 
-func (model *Model) GroupModelReportFile() string {
-	return model.GroupFolder() + "/" + model.Name + ".pdf"
+func (model Model) PartitionModelReportFile() string {
+	return model.PartitionFolder() + "/" + model.Name + ".pdf"
 }
 
-func (model *Model) GroupModelForecastFile() string {
-	return model.GroupFolder() + "/forecasts/forecast.csv"
+func (model Model) PartitionModelForecastFile() string {
+	return model.PartitionFolder() + "/forecasts/forecast.csv"
 }
 
 // Compre this model to other model based on the objective.
-func (model *Model) CompareTestingScore(other *Model) bool {
+func (model Model) CompareTestingScore(other *Model) bool {
 	return model.Spec.Objective.Compare(model.Status.TestScore, other.Status.TestScore)
 }

@@ -2037,8 +2037,10 @@ export class ModelClassSpec extends jspb.Message {
   getSubtask(): string;
   setSubtask(value: string): ModelClassSpec;
 
-  getObjective(): string;
-  setObjective(value: string): ModelClassSpec;
+  getObjective(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec | undefined;
+  setObjective(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec): ModelClassSpec;
+  hasObjective(): boolean;
+  clearObjective(): ModelClassSpec;
 
   getEntitiesList(): Array<EntityRef>;
   setEntitiesList(value: Array<EntityRef>): ModelClassSpec;
@@ -2092,7 +2094,7 @@ export namespace ModelClassSpec {
     description: string,
     task: string,
     subtask: string,
-    objective: string,
+    objective?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.AsObject,
     entitiesList: Array<EntityRef.AsObject>,
     data?: ModelClassDataSpec.AsObject,
     training?: ModelClassTrainingSpec.AsObject,
@@ -2484,8 +2486,10 @@ export class ModelSpec extends jspb.Message {
   getSubtask(): string;
   setSubtask(value: string): ModelSpec;
 
-  getObjective(): string;
-  setObjective(value: string): ModelSpec;
+  getObjective(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec | undefined;
+  setObjective(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec): ModelSpec;
+  hasObjective(): boolean;
+  clearObjective(): ModelSpec;
 
   getFeatureengineering(): FeatureEngineeringSpec | undefined;
   setFeatureengineering(value?: FeatureEngineeringSpec): ModelSpec;
@@ -2676,7 +2680,7 @@ export namespace ModelSpec {
     datasetname: string,
     task: string,
     subtask: string,
-    objective: string,
+    objective?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.AsObject,
     featureengineering?: FeatureEngineeringSpec.AsObject,
     estimator?: ClassicalEstimatorSpec.AsObject,
     dnn?: DeepEstimatorSpec.AsObject,
@@ -3825,11 +3829,15 @@ export class SearchSpec extends jspb.Message {
   hasEarlystop(): boolean;
   clearEarlystop(): SearchSpec;
 
-  getObjective(): string;
-  setObjective(value: string): SearchSpec;
+  getObjective(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec | undefined;
+  setObjective(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec): SearchSpec;
+  hasObjective(): boolean;
+  clearObjective(): SearchSpec;
 
-  getObjective2(): string;
-  setObjective2(value: string): SearchSpec;
+  getObjective2(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec | undefined;
+  setObjective2(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec): SearchSpec;
+  hasObjective2(): boolean;
+  clearObjective2(): SearchSpec;
 
   getTune(): boolean;
   setTune(value: boolean): SearchSpec;
@@ -3859,8 +3867,8 @@ export namespace SearchSpec {
     retainedfor: number,
     searchspace?: AlgorithmSearchSpaceSpec.AsObject,
     earlystop?: EarlyStopSpec.AsObject,
-    objective: string,
-    objective2: string,
+    objective?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.AsObject,
+    objective2?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.AsObject,
     tune: boolean,
     goal: string,
   }

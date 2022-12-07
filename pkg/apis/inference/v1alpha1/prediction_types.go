@@ -16,7 +16,7 @@ const (
 	PredictionPhasePending           PredictionPhase = "Pending"
 	PredictionPhaseCreatingDataset   PredictionPhase = "CreatingDataset"
 	PredictionPhaseWaitingForDataset PredictionPhase = "WaitingForDataset"
-	PredictionPhaseRunning           PredictionPhase = "Running"
+	PredictionPhaseRunning           PredictionPhase = "RunningModelsCount"
 	PredictionPhaseFailed            PredictionPhase = "FailedConditionReason"
 	PredictionPhaseAborted           PredictionPhase = "Aborted"
 	PredictionPhaseCompleted         PredictionPhase = "Completed"

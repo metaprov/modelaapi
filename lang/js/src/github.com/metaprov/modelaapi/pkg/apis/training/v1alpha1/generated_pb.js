@@ -21091,7 +21091,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.to
     description: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     task: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     subtask: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    objective: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    objective: (f = msg.getObjective()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.toObject(includeInstance, f),
     entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EntityRef.toObject, includeInstance),
     data: (f = msg.getData()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassDataSpec.toObject(includeInstance, f),
@@ -21162,7 +21162,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.de
       msg.setSubtask(value);
       break;
     case 7:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.deserializeBinaryFromReader);
       msg.setObjective(value);
       break;
     case 8:
@@ -21274,11 +21275,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.se
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  f = message.getObjective();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       7,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.serializeBinaryToWriter
     );
   }
   f = message.getEntitiesList();
@@ -21563,29 +21565,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.pr
 
 
 /**
- * optional string objective = 7;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec objective = 7;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.getObjective = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec, 7));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec} returns this
- */
+*/
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.setObjective = function(value) {
-  return jspb.Message.setField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.clearObjective = function() {
-  return jspb.Message.setField(this, 7, undefined);
+  return this.setObjective(undefined);
 };
 
 
@@ -25357,7 +25360,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.toObjec
     datasetname: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     task: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     subtask: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    objective: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    objective: (f = msg.getObjective()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.toObject(includeInstance, f),
     featureengineering: (f = msg.getFeatureengineering()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.toObject(includeInstance, f),
     estimator: (f = msg.getEstimator()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec.toObject(includeInstance, f),
     dnn: (f = msg.getDnn()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec.toObject(includeInstance, f),
@@ -25469,7 +25472,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
       msg.setSubtask(value);
       break;
     case 9:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.deserializeBinaryFromReader);
       msg.setObjective(value);
       break;
     case 10:
@@ -25751,11 +25755,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  f = message.getObjective();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       9,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.serializeBinaryToWriter
     );
   }
   f = message.getFeatureengineering();
@@ -26353,29 +26358,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
 
 
 /**
- * optional string objective = 9;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec objective = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getObjective = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec, 9));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
+*/
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setObjective = function(value) {
-  return jspb.Message.setField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearObjective = function() {
-  return jspb.Message.setField(this, 9, undefined);
+  return this.setObjective(undefined);
 };
 
 
@@ -38008,8 +38014,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.toObje
     retainedfor: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     searchspace: (f = msg.getSearchspace()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AlgorithmSearchSpaceSpec.toObject(includeInstance, f),
     earlystop: (f = msg.getEarlystop()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.toObject(includeInstance, f),
-    objective: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    objective2: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+    objective: (f = msg.getObjective()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.toObject(includeInstance, f),
+    objective2: (f = msg.getObjective2()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.toObject(includeInstance, f),
     tune: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
     goal: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f
   };
@@ -38100,11 +38106,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.deseri
       msg.setEarlystop(value);
       break;
     case 14:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.deserializeBinaryFromReader);
       msg.setObjective(value);
       break;
     case 15:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.deserializeBinaryFromReader);
       msg.setObjective2(value);
       break;
     case 16:
@@ -38231,18 +38239,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.serial
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EarlyStopSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 14));
+  f = message.getObjective();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       14,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 15));
+  f = message.getObjective2();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       15,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {boolean} */ (jspb.Message.getField(message, 16));
@@ -38698,29 +38708,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.protot
 
 
 /**
- * optional string objective = 14;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec objective = 14;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.getObjective = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec, 14));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec} returns this
- */
+*/
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.setObjective = function(value) {
-  return jspb.Message.setField(this, 14, value);
+  return jspb.Message.setWrapperField(this, 14, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.clearObjective = function() {
-  return jspb.Message.setField(this, 14, undefined);
+  return this.setObjective(undefined);
 };
 
 
@@ -38734,29 +38745,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.protot
 
 
 /**
- * optional string objective2 = 15;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec objective2 = 15;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.getObjective2 = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec, 15));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec} returns this
- */
+*/
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.setObjective2 = function(value) {
-  return jspb.Message.setField(this, 15, value);
+  return jspb.Message.setWrapperField(this, 15, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SearchSpec.prototype.clearObjective2 = function() {
-  return jspb.Message.setField(this, 15, undefined);
+  return this.setObjective2(undefined);
 };
 
 

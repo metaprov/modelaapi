@@ -90,7 +90,7 @@ type ModelClassSpec struct {
 	SubTask *catalog.MLSubtask `json:"subtask" protobuf:"bytes,6,opt,name=subtask"`
 	// The optimization objective. The objective is also used when promoting models
 	// +kubebuilder:validation:Optional
-	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,7,opt,name=objective"`
+	Objective *catalog.ObjectiveSpec `json:"objective,omitempty" protobuf:"bytes,7,opt,name=objective"`
 	// If using the feature store (pre defined features), specify the feature groups the would
 	// be used to create the training data.
 	// +kubebuilder:validation:Optional
@@ -112,7 +112,7 @@ type ModelClassSpec struct {
 	// +kubebuilder:validation:Optional
 	ReportSchedule catalog.RunSchedule `json:"reportSchedule,omitempty" protobuf:"bytes,14,opt,name=reportSchedule"`
 	// Fast indicates if Dataset, Model and Study resources associated with the ModelClass should run in fast mode.
-	// Running in fast mode will skip unnecessary workloads such as profiling, reporting, explaining, etc.
+	// RunningModelsCount in fast mode will skip unnecessary workloads such as profiling, reporting, explaining, etc.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Fast *bool `json:"fast,omitempty" protobuf:"varint,15,opt,name=fast"`

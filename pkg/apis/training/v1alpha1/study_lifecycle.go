@@ -70,20 +70,20 @@ func (study Study) ReachedMaxFETime() bool {
 }
 
 func (study Study) ReachedMaxFEModels() bool {
-	totalModels := study.Status.FeatureEngineeringStatus.Failed + study.Status.FeatureEngineeringStatus.Completed
+	totalModels := study.Status.FeatureEngineeringStatus.FailedModelsCount + study.Status.FeatureEngineeringStatus.CompletedModelsCount
 	return *study.Spec.FESearch.MaxModels == totalModels
 }
 
 func (study Study) ShouldEarlyStopTraining() bool {
 	if *study.Spec.Search.EarlyStop.Enabled {
-		return study.Status.SearchStatus.Failed+study.Status.SearchStatus.Completed >= *study.Spec.Search.EarlyStop.Initial && study.Status.SearchStatus.ModelsWithNoProgress >= *study.Spec.Search.EarlyStop.MinModelsWithNoProgress
+		return study.Status.SearchStatus.FailedModelsCount+study.Status.SearchStatus.CompletedModelsCount >= *study.Spec.Search.EarlyStop.Initial && study.Status.SearchStatus.ModelsWithNoProgress >= *study.Spec.Search.EarlyStop.MinModelsWithNoProgress
 	}
 	return false
 }
 
 func (study Study) ShouldEarlyStopFE() bool {
 	if *study.Spec.FESearch.EarlyStop.Enabled {
-		return study.Status.FeatureEngineeringStatus.Failed+study.Status.FeatureEngineeringStatus.Completed >= *study.Spec.FESearch.EarlyStop.Initial && study.Status.FeatureEngineeringStatus.ModelsWithNoProgress >= *study.Spec.FESearch.EarlyStop.MinModelsWithNoProgress
+		return study.Status.FeatureEngineeringStatus.FailedModelsCount+study.Status.FeatureEngineeringStatus.CompletedModelsCount >= *study.Spec.FESearch.EarlyStop.Initial && study.Status.FeatureEngineeringStatus.ModelsWithNoProgress >= *study.Spec.FESearch.EarlyStop.MinModelsWithNoProgress
 	}
 	return false
 }
@@ -345,7 +345,7 @@ func (study *Study) MarkSplitFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to split." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to split." + err)
 	study.RefreshProgress()
 }
 
@@ -395,7 +395,7 @@ func (study *Study) MarkTransformFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to transform." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to transform." + err)
 	study.RefreshProgress()
 }
 
@@ -441,7 +441,7 @@ func (study *Study) MarkFeatureEngineeringFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to engineer features." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to engineer features." + err)
 	study.RefreshProgress()
 }
 
@@ -489,7 +489,7 @@ func (study *Study) MarkBaselineFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to create baseline models." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to create baseline models." + err)
 	study.UpdateEndTime()
 	study.RefreshProgress()
 }
@@ -502,7 +502,7 @@ func (study *Study) MarkReadyFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to mark study as ready." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to mark study as ready." + err)
 	study.UpdateEndTime()
 	study.RefreshProgress()
 }
@@ -520,7 +520,7 @@ func (study *Study) MarkGCFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to gc study." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to gc study." + err)
 	study.UpdateEndTime()
 	study.RefreshProgress()
 }
@@ -569,7 +569,7 @@ func (study *Study) MarkSearchFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to search models." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to search models." + err)
 	study.UpdateEndTime()
 	study.RefreshProgress()
 }
@@ -623,7 +623,7 @@ func (study *Study) MarkEnsembleFailed(err string) {
 	}
 
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to ensemble models." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to ensemble models." + err)
 	study.UpdateEndTime()
 	study.RefreshProgress()
 }
@@ -668,7 +668,7 @@ func (study *Study) MarkTestingFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to test model." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to test model." + err)
 	study.RefreshProgress()
 }
 
@@ -716,7 +716,7 @@ func (study *Study) MarkTuningFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to tune model." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to tune model." + err)
 	study.RefreshProgress()
 }
 
@@ -761,7 +761,7 @@ func (study *Study) MarkProfileFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to profile." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to profile." + err)
 	study.UpdateEndTime()
 	study.RefreshProgress()
 }
@@ -924,7 +924,7 @@ func (study *Study) MaxTimeOrModelReached() bool {
 	timeOver := diff.Minutes() > float64(*study.Spec.Search.MaxTime)
 
 	// compare the model. We take the ensemble into consideration
-	modelOver := (study.Status.SearchStatus.Completed + study.Status.SearchStatus.Failed) >= *study.Spec.Search.MaxModels
+	modelOver := (study.Status.SearchStatus.CompletedModelsCount + study.Status.SearchStatus.FailedModelsCount) >= *study.Spec.Search.MaxModels
 
 	return timeOver || modelOver
 
@@ -939,7 +939,7 @@ func (study *Study) MarkReportFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to report." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to report." + err)
 	study.RefreshProgress()
 	now := metav1.Now()
 	study.Status.CompletedAt = &now
@@ -954,7 +954,7 @@ func (study *Study) MarkAbortFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to abort." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to abort." + err)
 	study.RefreshProgress()
 	now := metav1.Now()
 	study.Status.CompletedAt = &now
@@ -969,7 +969,7 @@ func (study *Study) MarkPauseFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to pause." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to pause." + err)
 	study.RefreshProgress()
 	now := metav1.Now()
 	study.Status.CompletedAt = &now
@@ -991,8 +991,8 @@ func (study *Study) MarkPartitionedFailed(err string) {
 }
 
 func (study Study) ReachedMaxModels() bool {
-	return study.Status.SearchStatus.Failed+
-		study.Status.SearchStatus.Completed+
+	return study.Status.SearchStatus.FailedModelsCount+
+		study.Status.SearchStatus.CompletedModelsCount+
 		study.Status.SearchStatus.WaitingModelsCount >= *study.Spec.Search.MaxModels
 }
 
@@ -1143,18 +1143,18 @@ func (study Study) TaskIndexFileKey(task string) string {
 	return fmt.Sprintf("%s/%s.json", study.RootURI(), task)
 }
 
-func (study Study) GroupFolder(key []string) string {
-	return study.RootURI() + "/groups/" + path.Join(key...)
+func (study Study) PartitionFolder(key []string) string {
+	return study.RootURI() + "/partitions/" + path.Join(key...)
 }
 
-func (study Study) GroupDataFolder(key []string) string {
-	return study.GroupFolder(key) + "/data"
+func (study Study) PartitionDataFolder(key []string) string {
+	return study.PartitionFolder(key) + "/data"
 }
 
-func (study Study) GroupTrainFile(key []string) string {
-	return study.GroupFolder(key) + "/data/train.parquet"
+func (study Study) PartitionTrainFile(key []string) string {
+	return study.PartitionFolder(key) + "/data/train.parquet"
 }
 
-func (study Study) GroupTestFile(key []string) string {
-	return study.GroupFolder(key) + "/data/test.parquet"
+func (study Study) PartitionTestFile(key []string) string {
+	return study.PartitionFolder(key) + "/data/test.parquet"
 }

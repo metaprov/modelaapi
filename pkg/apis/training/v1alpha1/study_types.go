@@ -457,13 +457,13 @@ type StudyPhaseStatus struct {
 	WaitingModelsCount int32 `json:"waitingModelsCount,omitempty" protobuf:"varint,3,opt,name=waitingModelsCount"`
 	// The number of models currently being trained
 	// +kubebuilder:validation:Optional
-	Running int32 `json:"runningModelsCount,omitempty" protobuf:"varint,4,opt,name=runningModelsCount"`
+	RunningModelsCount int32 `json:"runningModelsCount,omitempty" protobuf:"varint,4,opt,name=runningModelsCount"`
 	// The number of models that experienced an error whilst training
 	// +kubebuilder:validation:Optional
-	Failed int32 `json:"failedModelsCount,omitempty" protobuf:"varint,5,opt,name=failedModelsCount"`
+	FailedModelsCount int32 `json:"failedModelsCount,omitempty" protobuf:"varint,5,opt,name=failedModelsCount"`
 	// The number of models that have been successfully trained
 	// +kubebuilder:validation:Optional
-	Completed int32 `json:"completedModelsCount,omitempty" protobuf:"varint,6,opt,name=completedModelsCount"`
+	CompletedModelsCount int32 `json:"completedModelsCount,omitempty" protobuf:"varint,6,opt,name=completedModelsCount"`
 	// Best score so far in this phase. The best score is the value of the objective.
 	// +kubebuilder:validation:Optional
 	BestScore float64 `json:"bestScore,omitempty" protobuf:"varint,7,opt,name=bestScore"`
@@ -563,12 +563,12 @@ type SearchSpec struct {
 	EarlyStop EarlyStopSpec `json:"earlyStop,omitempty" protobuf:"bytes,12,opt,name=earlyStop"`
 	// The objective metric that will be measured against all models to evaluate their performance
 	// +kubebuilder:validation:Optional
-	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,14,opt,name=objective"`
+	Objective *catalog.ObjectiveSpec `json:"objective,omitempty" protobuf:"bytes,14,opt,name=objective"`
 	// The second objective metric that will be measured and evaluated in tandem with the primary objective.
 	// The model search optimizer will attempt to optimize both metrics
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
-	Objective2 *catalog.Metric `json:"objective2,omitempty" protobuf:"bytes,15,opt,name=objective2"`
+	Objective2 *catalog.ObjectiveSpec `json:"objective2,omitempty" protobuf:"bytes,15,opt,name=objective2"`
 	// Tune best model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

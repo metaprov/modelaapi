@@ -1324,13 +1324,29 @@ spec:
                   objective:
                     description: The objective metric that will be measured against
                       all models to evaluate their performance
-                    type: string
+                    properties:
+                      goal:
+                        default: maximize
+                        description: The goal of the objective.
+                        type: string
+                      metric:
+                        description: The objective metric
+                        type: string
+                    type: object
                   objective2:
                     default: none
                     description: The second objective metric that will be measured
                       and evaluated in tandem with the primary objective. The model
                       search optimizer will attempt to optimize both metrics
-                    type: string
+                    properties:
+                      goal:
+                        default: maximize
+                        description: The goal of the objective.
+                        type: string
+                      metric:
+                        description: The objective metric
+                        type: string
+                    type: object
                   pruner:
                     description: Pruner specifies the configuration to run a model
                       search using a pruning algorithm. Using a pruning algorithm
