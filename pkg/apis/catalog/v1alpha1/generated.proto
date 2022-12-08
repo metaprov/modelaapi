@@ -1117,12 +1117,6 @@ message TestSuiteResult {
   repeated DataTestCaseResult tests = 6;
 }
 
-message VizURI {
-  optional string name = 1;
-
-  optional string uri = 2;
-}
-
 message WorkerRunResult {
   // Worker ID
   // +kubebuilder:validation:Optional

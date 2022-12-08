@@ -55,5 +55,5 @@ func (alg *Algorithm) RepEntry() (string, error) {
 }
 
 func (alg *Algorithm) ValidateDelete() error {
-	panic("implement me")
+	return nil
 }

@@ -1891,28 +1891,6 @@ export namespace TestSuiteResult {
   }
 }
 
-export class VizURI extends jspb.Message {
-  getName(): string;
-  setName(value: string): VizURI;
-
-  getUri(): string;
-  setUri(value: string): VizURI;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VizURI.AsObject;
-  static toObject(includeInstance: boolean, msg: VizURI): VizURI.AsObject;
-  static serializeBinaryToWriter(message: VizURI, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VizURI;
-  static deserializeBinaryFromReader(message: VizURI, reader: jspb.BinaryReader): VizURI;
-}
-
-export namespace VizURI {
-  export type AsObject = {
-    name: string,
-    uri: string,
-  }
-}
-
 export class WorkerRunResult extends jspb.Message {
   getId(): number;
   setId(value: number): WorkerRunResult;

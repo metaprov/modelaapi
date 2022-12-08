@@ -2735,7 +2735,6 @@ message SearchSpec {
 
   // The second objective metric that will be measured and evaluated in tandem with the primary objective.
   // The model search optimizer will attempt to optimize both metrics
-  // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ObjectiveSpec objective2 = 15;
 

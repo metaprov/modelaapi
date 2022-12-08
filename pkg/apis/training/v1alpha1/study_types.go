@@ -566,7 +566,6 @@ type SearchSpec struct {
 	Objective *catalog.ObjectiveSpec `json:"objective,omitempty" protobuf:"bytes,14,opt,name=objective"`
 	// The second objective metric that will be measured and evaluated in tandem with the primary objective.
 	// The model search optimizer will attempt to optimize both metrics
-	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	Objective2 *catalog.ObjectiveSpec `json:"objective2,omitempty" protobuf:"bytes,15,opt,name=objective2"`
 	// Tune best model

@@ -1334,7 +1334,6 @@ spec:
                         type: string
                     type: object
                   objective2:
-                    default: none
                     description: The second objective metric that will be measured
                       and evaluated in tandem with the primary objective. The model
                       search optimizer will attempt to optimize both metrics
