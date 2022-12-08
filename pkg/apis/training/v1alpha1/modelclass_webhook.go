@@ -18,20 +18,35 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
 
-func DefaultObjective(task catalog.MLTask) catalog.Metric {
+func DefaultObjective(task catalog.MLTask) catalog.ObjectiveSpec {
 	if task == catalog.BinaryClassification {
-		return catalog.RocAuc
+		return catalog.ObjectiveSpec{
+			Metric: catalog.RocAuc,
+			Goal:   catalog.MaximizeGoalType,
+		}
 	}
 	if task == catalog.MultiClassification {
-		return catalog.F1Macro
+		return catalog.ObjectiveSpec{
+			Metric: catalog.F1Macro,
+			Goal:   catalog.MaximizeGoalType,
+		}
 	}
 	if task == catalog.Regression {
-		return catalog.RMSE
+		return catalog.ObjectiveSpec{
+			Metric: catalog.RMSE,
+			Goal:   catalog.MinimizeGoalType,
+		}
 	}
 	if task == catalog.Forecasting || task == catalog.PartitionForecast {
-		return catalog.MAPE
+		return catalog.ObjectiveSpec{
+			Metric: catalog.MAPE,
+			Goal:   catalog.MinimizeGoalType,
+		}
 	}
-	return catalog.Accuracy
+	return catalog.ObjectiveSpec{
+		Metric: catalog.Accuracy,
+		Goal:   catalog.MaximizeGoalType,
+	}
 }
 
 func (mclass *ModelClass) DefaultFESearchEstimator(task catalog.MLTask) catalog.ClassicEstimatorName {
