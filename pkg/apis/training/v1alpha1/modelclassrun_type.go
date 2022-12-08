@@ -15,7 +15,7 @@ const (
 	ModelClassPhasePromoting               ModelClassRunPhase = "Promoting"
 	ModelClassRunPhasePending              ModelClassRunPhase = "Pending"
 	ModelClassRunPhaseTraining             ModelClassRunPhase = "Training"
-	ModelClassRunPhaseFailed               ModelClassRunPhase = "FailedConditionReason"
+	ModelClassRunPhaseFailed               ModelClassRunPhase = "Failed"
 	ModelClassRunPhaseTrained              ModelClassRunPhase = "Trained"
 	ModelClassRunPhaseAborted              ModelClassRunPhase = "Aborted"
 	ModelClassRunPhaseCompleted            ModelClassRunPhase = "Completed"

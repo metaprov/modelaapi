@@ -235,7 +235,7 @@ func (product *DataProduct) MarkFailed(err error) {
 	product.CreateOrUpdateCond(DataProductCondition{
 		Type:    DataProductReady,
 		Status:  v1.ConditionFalse,
-		Reason:  "FailedConditionReason",
+		Reason:  "Failed",
 		Message: err.Error(),
 	})
 }

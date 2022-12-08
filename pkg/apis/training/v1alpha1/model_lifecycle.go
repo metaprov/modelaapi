@@ -349,7 +349,7 @@ func ParseModelYaml(content []byte) (*Model, error) {
 }
 
 const (
-	ReasonFailed                        = "FailedConditionReason"
+	ReasonFailed                        = "Failed"
 	ReasonTesting                       = "Testing"
 	ReasonTuning                        = "Tuning"
 	ReasonTuned                         = "Tuned"

@@ -14,7 +14,7 @@ const (
 	RecipeRunPhaseRunning     RecipeRunPhase = "RunningModelsCount"
 	RecipeRunPhaseUnitTesting RecipeRunPhase = "UnitTesting"
 	RecipeRunPhaseSucceed     RecipeRunPhase = "Completed"
-	RecipeRunPhaseFailed      RecipeRunPhase = "FailedConditionReason"
+	RecipeRunPhaseFailed      RecipeRunPhase = "Failed"
 )
 
 // Condition on the dataset

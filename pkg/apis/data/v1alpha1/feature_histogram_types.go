@@ -25,15 +25,15 @@ const (
 type FeatureHistogramPhase string
 
 const (
-	FeatureHistogramPhasePending     FeatureHistogramPhase = "Pending"               // when generating
-	FeatureHistogramPhaseLive        FeatureHistogramPhase = "Live"                  // when the feature histogram is live. I.e. get updated by predictions
-	FeatureHistogramPhaseExpired     FeatureHistogramPhase = "Expired"               // when the feature histogram is expired. I.e. get updated by predictions
-	FeatureHistogramPhaseGenTest     FeatureHistogramPhase = "GeneratingTest"        // when the unit tests are generated
-	FeatureHistogramPhaseReadyToTest FeatureHistogramPhase = "ReadyToTest"           // when the unit tests were generated or the histogram has tests
-	FeatureHistogramPhaseUnitTesting FeatureHistogramPhase = "UnitTesting"           // when running the unit tests
-	FeatureHistogramPhaseDrift       FeatureHistogramPhase = "Drift"                 // when one or more column drifted
-	FeatureHistogramPhaseReady       FeatureHistogramPhase = "Ready"                 // when ready and not drift.
-	FeatureHistogramPhaseFailed      FeatureHistogramPhase = "FailedConditionReason" // failed in the process.
+	FeatureHistogramPhasePending     FeatureHistogramPhase = "Pending"        // when generating
+	FeatureHistogramPhaseLive        FeatureHistogramPhase = "Live"           // when the feature histogram is live. I.e. get updated by predictions
+	FeatureHistogramPhaseExpired     FeatureHistogramPhase = "Expired"        // when the feature histogram is expired. I.e. get updated by predictions
+	FeatureHistogramPhaseGenTest     FeatureHistogramPhase = "GeneratingTest" // when the unit tests are generated
+	FeatureHistogramPhaseReadyToTest FeatureHistogramPhase = "ReadyToTest"    // when the unit tests were generated or the histogram has tests
+	FeatureHistogramPhaseUnitTesting FeatureHistogramPhase = "UnitTesting"    // when running the unit tests
+	FeatureHistogramPhaseDrift       FeatureHistogramPhase = "Drift"          // when one or more column drifted
+	FeatureHistogramPhaseReady       FeatureHistogramPhase = "Ready"          // when ready and not drift.
+	FeatureHistogramPhaseFailed      FeatureHistogramPhase = "Failed"         // failed in the process.
 )
 
 // FeatureHistogramConditionType is the condition of the feature

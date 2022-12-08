@@ -1224,7 +1224,7 @@ const (
 type ConditionReason string
 
 const (
-	FailedConditionReason ConditionReason = "FailedConditionReason"
+	FailedConditionReason ConditionReason = "Failed"
 	Success               ConditionReason = "Success"
 	Running               ConditionReason = "RunningModelsCount"
 	WaitingForApproval    ConditionReason = "WaitingForApproval"

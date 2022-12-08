@@ -63,7 +63,7 @@ const (
 	StudyPhaseExplaining         StudyPhase = "Explaining"
 	StudyPhaseExplained          StudyPhase = "Explained"
 	StudyPhaseCompleted          StudyPhase = "Completed"
-	StudyPhaseFailed             StudyPhase = "FailedConditionReason"
+	StudyPhaseFailed             StudyPhase = "Failed"
 	StudyPhaseAborted            StudyPhase = "Aborted"
 	StudyPhasePaused             StudyPhase = "Paused"
 )

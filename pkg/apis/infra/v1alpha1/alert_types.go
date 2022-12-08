@@ -13,7 +13,7 @@ const (
 	AlertPhasePending AlertPhase = "Pending"
 	AlertPhaseSending AlertPhase = "Sending"
 	AlertPhaseSent    AlertPhase = "Sent"
-	AlertPhaseFailed  AlertPhase = "FailedConditionReason"
+	AlertPhaseFailed  AlertPhase = "Failed"
 )
 
 // Alert condition

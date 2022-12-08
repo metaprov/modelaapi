@@ -23,7 +23,7 @@ const (
 	DatasetPhaseUnitTesting     DatasetPhase = "UnitTesting"
 	DatasetPhaseSnapshotRunning DatasetPhase = "TakingSnapshot"
 	DatasetPhaseSnapshotSuccess DatasetPhase = "Snapshotted"
-	DatasetPhaseFailed          DatasetPhase = "FailedConditionReason"
+	DatasetPhaseFailed          DatasetPhase = "Failed"
 	DatasetPhaseAborted         DatasetPhase = "Aborted"
 	DatasetPhaseReady           DatasetPhase = "Ready"
 )

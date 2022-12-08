@@ -17,7 +17,7 @@ type FeatureGroupPhase string
 const (
 	FeatureGroupPhaseSyncing   FeatureGroupPhase = "Syncing"
 	FeatureGroupPhaseIngesting FeatureGroupPhase = "Ingesting"
-	FeatureGroupPhaseFailed    FeatureGroupPhase = "FailedConditionReason"
+	FeatureGroupPhaseFailed    FeatureGroupPhase = "Failed"
 	FeatureGroupPhaseReady     FeatureGroupPhase = "Ready"
 )
 

@@ -526,7 +526,7 @@ const (
 	ModelDeploymentPhaseShadowing ModelDeploymentPhase = "Shadowing"
 	ModelDeploymentPhaseReleasing ModelDeploymentPhase = "Releasing"
 	ModelDeploymentPhaseReleased  ModelDeploymentPhase = "Released"
-	ModelDeploymentPhaseFailed    ModelDeploymentPhase = "FailedConditionReason"
+	ModelDeploymentPhaseFailed    ModelDeploymentPhase = "Failed"
 )
 
 type K8sObjectStatusState string

@@ -110,7 +110,7 @@ func (predictor Predictor) IsReady() bool {
 
 func (predictor Predictor) IsFailed() bool {
 	return predictor.GetCond(PredictorReady).Status == v1.ConditionFalse &&
-		predictor.GetCond(PredictorReady).Reason == "FailedConditionReason"
+		predictor.GetCond(PredictorReady).Reason == "Failed"
 }
 
 func ParsePredictorYaml(content []byte) (*Predictor, error) {
@@ -184,7 +184,7 @@ func (predictor *Predictor) MarkFailed(err string) {
 	predictor.CreateOrUpdateCond(PredictorCondition{
 		Type:    PredictorReady,
 		Status:  v1.ConditionFalse,
-		Reason:  "FailedConditionReason",
+		Reason:  "Failed",
 		Message: err,
 	})
 	predictor.Status.FailureMessage = util.StrPtr(err)

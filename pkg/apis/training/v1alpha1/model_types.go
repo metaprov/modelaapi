@@ -11,7 +11,7 @@ import (
 type ModelPhase string
 
 const (
-	ModelPhaseFailed                ModelPhase = "FailedConditionReason"
+	ModelPhaseFailed                ModelPhase = "Failed"
 	ModelPhasePending               ModelPhase = "Pending"
 	ModelPhaseTraining              ModelPhase = "Training"
 	ModelPhaseTrained               ModelPhase = "Trained"
@@ -1192,7 +1192,7 @@ const (
 	StageStatusPhaseApproved           StageStatusPhase = "Approved"
 	StageStatusPhaseDenied             StageStatusPhase = "Denied"
 	StageStatusPhaseCompleted          StageStatusPhase = "Completed"
-	StageStatusPhaseFailed             StageStatusPhase = "FailedConditionReason"
+	StageStatusPhaseFailed             StageStatusPhase = "Failed"
 )
 
 type ModelStageStatus struct {
