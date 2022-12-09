@@ -34,9 +34,7 @@ const (
 	ServingSiteJobRunnerSa          string = "servingsite-job-sa"
 	ServingSiteJobRunnerRoleBinding string = "servingsite-job-runner-binding"
 
-	ServingSitePredictorRole        string = "servingsite-predictor"
-	ServingSitePredictorSa          string = "servingsite-predictor-sa"
-	ServingSitePredictorRoleBinding string = "servingsite-predictor-binding"
+	PredictorRole string = "predictor"
 )
 
 // Compiler spec is used when there is a specification for model compilation

@@ -321,7 +321,7 @@ func (predictor Predictor) GetShadowModels() []catalog.ModelDeploymentSpec {
 func (predictor Predictor) ClusterRole() *rbacv1.ClusterRole {
 	return &rbacv1.ClusterRole{
 		ObjectMeta: metav1.ObjectMeta{
-			Name: catalog.ServingSitePredictorRole,
+			Name: catalog.PredictorRole,
 		},
 		Rules: []rbacv1.PolicyRule{
 			{
@@ -374,21 +374,21 @@ func (predictor Predictor) ClusterRole() *rbacv1.ClusterRole {
 func (predictor Predictor) RoleBinding(ns string) *rbacv1.RoleBinding {
 	return &rbacv1.RoleBinding{
 		ObjectMeta: metav1.ObjectMeta{
-			Name:      catalog.ServingSitePredictorRoleBinding,
+			Name:      predictor.Name,
 			Namespace: ns,
 		},
 		Subjects: []rbacv1.Subject{
 			{
 				Kind:      "ServiceAccount",
 				APIGroup:  "",
-				Name:      catalog.ServingSitePredictorSa,
+				Name:      predictor.Name,
 				Namespace: ns,
 			},
 		},
 		RoleRef: rbacv1.RoleRef{
 			APIGroup: "rbac.authorization.k8s.io",
 			Kind:     "ClusterRole",
-			Name:     catalog.ServingSitePredictorRole,
+			Name:     catalog.PredictorRole,
 		},
 	}
 }
@@ -396,7 +396,7 @@ func (predictor Predictor) RoleBinding(ns string) *rbacv1.RoleBinding {
 func (predictor Predictor) ServiceAccount(ns string) *v1.ServiceAccount {
 	return &v1.ServiceAccount{
 		ObjectMeta: metav1.ObjectMeta{
-			Name:      catalog.ServingSitePredictorSa,
+			Name:      predictor.Name,
 			Namespace: ns,
 		},
 	}
