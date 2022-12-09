@@ -408,7 +408,7 @@ func (servingsite ServingSite) PredictorRoleBinding() *rbacv1.RoleBinding {
 		},
 		RoleRef: rbacv1.RoleRef{
 			APIGroup: "rbac.authorization.k8s.io",
-			Kind:     "Role",
+			Kind:     "ClusterRole",
 			Name:     catalog.ServingSitePredictorRole,
 		},
 	}
