@@ -278,7 +278,7 @@ func (servingsite ServingSite) Archived() bool {
 	return servingsite.GetCond(ServingSiteSaved).Status == v1.ConditionTrue
 }
 
-func (servingsite ServingSite) JobRole() *rbacv1.Role {
+func (servingsite ServingSite) JobRunnerRole() *rbacv1.Role {
 	return &rbacv1.Role{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.ServingSiteJobRunnerRole,
@@ -304,7 +304,7 @@ func (servingsite ServingSite) JobRole() *rbacv1.Role {
 }
 
 // Create a role binding for a job
-func (servingsite ServingSite) JobRoleBinding() *rbacv1.RoleBinding {
+func (servingsite ServingSite) JobRunnerRoleBinding() *rbacv1.RoleBinding {
 	return &rbacv1.RoleBinding{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.ServingSiteJobRunnerRoleBinding,
@@ -312,7 +312,7 @@ func (servingsite ServingSite) JobRoleBinding() *rbacv1.RoleBinding {
 		},
 		Subjects: []rbacv1.Subject{
 			{
-				Kind:      "ServiceAccount",
+				Kind:      "JobRunnerServiceAccount",
 				APIGroup:  "",
 				Name:      catalog.ServingSiteJobRunnerSa,
 				Namespace: servingsite.Name,
@@ -326,98 +326,10 @@ func (servingsite ServingSite) JobRoleBinding() *rbacv1.RoleBinding {
 	}
 }
 
-func (servingsite ServingSite) ServiceAccount() *corev1.ServiceAccount {
+func (servingsite ServingSite) JobRunnerServiceAccount() *corev1.ServiceAccount {
 	return &corev1.ServiceAccount{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.ServingSiteJobRunnerSa,
-			Namespace: servingsite.Name,
-		},
-	}
-}
-
-///////////////////////////////////////////////////////////
-// Predictor role
-//////////////////////////////////////////////////////////
-
-func (servingsite ServingSite) PredictorRole() *rbacv1.ClusterRole {
-	return &rbacv1.ClusterRole{
-		ObjectMeta: metav1.ObjectMeta{
-			Name: catalog.ServingSitePredictorRole,
-		},
-		Rules: []rbacv1.PolicyRule{
-			{
-				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
-				APIGroups:       []string{"data.modela.ai"},
-				Resources:       []string{"datasets", "datasets/status"},
-				ResourceNames:   []string{},
-				NonResourceURLs: []string{},
-			},
-			{
-				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
-				APIGroups:       []string{"data.modela.ai"},
-				Resources:       []string{"featurehistograms", "featurehistograms/status"},
-				ResourceNames:   []string{},
-				NonResourceURLs: []string{},
-			},
-			{
-				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
-				APIGroups:       []string{"data.modela.ai"},
-				Resources:       []string{"datasources", "datasources/status"},
-				ResourceNames:   []string{},
-				NonResourceURLs: []string{},
-			},
-			{
-				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
-				APIGroups:       []string{"training.modela.ai"},
-				Resources:       []string{"models", "models/status"},
-				ResourceNames:   []string{},
-				NonResourceURLs: []string{},
-			},
-			{
-				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
-				APIGroups:       []string{"training.modela.ai"},
-				Resources:       []string{"studies", "studies/status"},
-				ResourceNames:   []string{},
-				NonResourceURLs: []string{},
-			},
-			{
-				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
-				APIGroups:       []string{"inference.modela.ai"},
-				Resources:       []string{"predictors", "predictors/status"},
-				ResourceNames:   []string{},
-				NonResourceURLs: []string{},
-			},
-		},
-	}
-}
-
-// Create a role binding for a job
-func (servingsite ServingSite) PredictorRoleBinding() *rbacv1.RoleBinding {
-	return &rbacv1.RoleBinding{
-		ObjectMeta: metav1.ObjectMeta{
-			Name:      catalog.ServingSitePredictorRoleBinding,
-			Namespace: servingsite.Name,
-		},
-		Subjects: []rbacv1.Subject{
-			{
-				Kind:      "ServiceAccount",
-				APIGroup:  "",
-				Name:      catalog.ServingSitePredictorSa,
-				Namespace: servingsite.Name,
-			},
-		},
-		RoleRef: rbacv1.RoleRef{
-			APIGroup: "rbac.authorization.k8s.io",
-			Kind:     "ClusterRole",
-			Name:     catalog.ServingSitePredictorRole,
-		},
-	}
-}
-
-func (servingsite ServingSite) PredictorServiceAccount() *corev1.ServiceAccount {
-	return &corev1.ServiceAccount{
-		ObjectMeta: metav1.ObjectMeta{
-			Name:      catalog.ServingSitePredictorSa,
 			Namespace: servingsite.Name,
 		},
 	}

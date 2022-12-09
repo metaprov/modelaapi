@@ -9,6 +9,7 @@ import (
 	kapps "k8s.io/api/apps/v1"
 	v1 "k8s.io/api/core/v1"
 	nwv1 "k8s.io/api/networking/v1"
+	rbacv1 "k8s.io/api/rbac/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
@@ -315,4 +316,88 @@ func (predictor Predictor) GetShadowModels() []catalog.ModelDeploymentSpec {
 		result = append(result, v)
 	}
 	return result
+}
+
+func (predictor Predictor) ClusterRole() *rbacv1.ClusterRole {
+	return &rbacv1.ClusterRole{
+		ObjectMeta: metav1.ObjectMeta{
+			Name: catalog.ServingSitePredictorRole,
+		},
+		Rules: []rbacv1.PolicyRule{
+			{
+				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
+				APIGroups:       []string{"data.modela.ai"},
+				Resources:       []string{"datasets", "datasets/status"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+			{
+				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
+				APIGroups:       []string{"data.modela.ai"},
+				Resources:       []string{"featurehistograms", "featurehistograms/status"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+			{
+				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
+				APIGroups:       []string{"data.modela.ai"},
+				Resources:       []string{"datasources", "datasources/status"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+			{
+				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
+				APIGroups:       []string{"training.modela.ai"},
+				Resources:       []string{"models", "models/status"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+			{
+				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
+				APIGroups:       []string{"training.modela.ai"},
+				Resources:       []string{"studies", "studies/status"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+			{
+				Verbs:           []string{"get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"},
+				APIGroups:       []string{"inference.modela.ai"},
+				Resources:       []string{"predictors", "predictors/status"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+		},
+	}
+}
+
+// Create a role binding for a job
+func (predictor Predictor) RoleBinding(ns string) *rbacv1.RoleBinding {
+	return &rbacv1.RoleBinding{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      catalog.ServingSitePredictorRoleBinding,
+			Namespace: ns,
+		},
+		Subjects: []rbacv1.Subject{
+			{
+				Kind:      "JobRunnerServiceAccount",
+				APIGroup:  "",
+				Name:      catalog.ServingSitePredictorSa,
+				Namespace: ns,
+			},
+		},
+		RoleRef: rbacv1.RoleRef{
+			APIGroup: "rbac.authorization.k8s.io",
+			Kind:     "ClusterRole",
+			Name:     catalog.ServingSitePredictorRole,
+		},
+	}
+}
+
+func (predictor Predictor) ServiceAccount(ns string) *v1.ServiceAccount {
+	return &v1.ServiceAccount{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      catalog.ServingSitePredictorSa,
+			Namespace: ns,
+		},
+	}
 }

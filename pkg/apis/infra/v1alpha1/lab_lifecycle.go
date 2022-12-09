@@ -237,7 +237,7 @@ func (lab Lab) LabJobRoleBinding() *rbacv1.RoleBinding {
 		},
 		Subjects: []rbacv1.Subject{
 			{
-				Kind:      "ServiceAccount",
+				Kind:      "JobRunnerServiceAccount",
 				APIGroup:  "",
 				Name:      catalog.LabJobRunnerSa,
 				Namespace: lab.Name,
