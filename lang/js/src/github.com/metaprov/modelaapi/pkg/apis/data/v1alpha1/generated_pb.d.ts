@@ -4240,11 +4240,6 @@ export class RecipeRunStatus extends jspb.Message {
   hasUpdatedat(): boolean;
   clearUpdatedat(): RecipeRunStatus;
 
-  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): RecipeRunStatus;
-  hasUnittestsresult(): boolean;
-  clearUnittestsresult(): RecipeRunStatus;
-
   getConditionsList(): Array<RecipeCondition>;
   setConditionsList(value: Array<RecipeCondition>): RecipeRunStatus;
   clearConditionsList(): RecipeRunStatus;
@@ -4268,7 +4263,6 @@ export namespace RecipeRunStatus {
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     conditionsList: Array<RecipeCondition.AsObject>,
   }
 }

@@ -2171,12 +2171,15 @@ type DataTestCase struct {
 	// Filter the filter for this unit test.
 	// +kubebuilder:validation:Optional
 	FeatureFilter *FeatureFilterType `json:"featureFilter,omitempty" protobuf:"bytes,21,opt,name=featureFilter"`
+	// Sql statement to filter the data for this unit test
+	// +kubebuilder:validation:Optional
+	DataFilter *string `json:"dataFilter,omitempty" protobuf:"bytes,22,opt,name=dataFilter"`
 	// Set the reference type for this unit test
 	// +kubebuilder:validation:Optional
-	ReferenceType *ReferenceDataType `json:"referenceType,omitempty" protobuf:"bytes,22,opt,name=referenceType"`
+	ReferenceType *ReferenceDataType `json:"referenceType,omitempty" protobuf:"bytes,23,opt,name=referenceType"`
 	// The length of the past if we are comparing to moving avg
 	// +kubebuilder:validation:Optional
-	Periods *int32 `json:"periods,omitempty" protobuf:"bytes,23,opt,name=periods"`
+	Periods *int32 `json:"periods,omitempty" protobuf:"bytes,24,opt,name=periods"`
 }
 
 type TestSuiteResult struct {

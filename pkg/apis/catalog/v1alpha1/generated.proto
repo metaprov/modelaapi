@@ -316,13 +316,17 @@ message DataTestCase {
   // +kubebuilder:validation:Optional
   optional string featureFilter = 21;
 
+  // Sql statement to filter the data for this unit test
+  // +kubebuilder:validation:Optional
+  optional string dataFilter = 22;
+
   // Set the reference type for this unit test
   // +kubebuilder:validation:Optional
-  optional string referenceType = 22;
+  optional string referenceType = 23;
 
   // The length of the past if we are comparing to moving avg
   // +kubebuilder:validation:Optional
-  optional int32 periods = 23;
+  optional int32 periods = 24;
 }
 
 // Result for a specific case

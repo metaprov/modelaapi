@@ -88,9 +88,17 @@ type TenantSpec struct {
 	// The default notification specification for all resources under the tenant
 	// +kubebuilder:validation:Optional
 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,6,opt,name=notification"`
-	// Set of feature stores
+	// The connection to the online feature store for the tenant.
+	// The online store serves all the feature groups for this tenant.
 	// +kubebuilder:validation:Optional
-	FeatureStores []FeatureStoreSpec `json:"featureStores,omitempty" protobuf:"bytes,7,rep,name=featureStores"`
+	Online FeatureStoreSpec `json:"online,omitempty" protobuf:"bytes,7,opt,name=online"`
+	// The connection to the offline feature store. This feature store holds the observations as well as the feature groups.
+	// +kubebuilder:validation:Optional
+	Offline FeatureStoreSpec `json:"offline,omitempty" protobuf:"bytes,8,opt,name=offline"`
+	// The connection to the metrics store. The metrics store hold the metadata about objects in the system (e.g. models)
+	// The metrics store is used for reports and general analytics.
+	// +kubebuilder:validation:Optional
+	Metrics FeatureStoreSpec `json:"metrics,omitempty" protobuf:"bytes,9,opt,name=metrics"`
 }
 
 // TenantStatus defines the actual state of a Tenant
@@ -108,24 +116,29 @@ type TenantStatus struct {
 	// UpdateUpdateStrategy in case of terminal failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,4,opt,name=failureMessage"`
-	// the status of the feature stores
+	// the status of the online store
 	//+kubebuilder:validation:Optional
-	FeatureStores []FeatureStoreStatus `json:"featureStores,omitempty" protobuf:"bytes,5,rep,name=featureStores"`
+	Online FeatureStoreStatus `json:"online,omitempty" protobuf:"bytes,5,rep,name=online"`
+	// the status of the offline store
+	//+kubebuilder:validation:Optional
+	Offline FeatureStoreStatus `json:"offline,omitempty" protobuf:"bytes,6,rep,name=offline"`
+	// the status of the metrics store
+	//+kubebuilder:validation:Optional
+	Metrics FeatureStoreStatus `json:"metrics,omitempty" protobuf:"bytes,7,rep,name=metrics"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []TenantCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
+	Conditions []TenantCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
 }
 
 // Specifiction for an online feature store
 type FeatureStoreSpec struct {
-	Online bool `json:"online,omitempty" protobuf:"varint,1,opt,name=online"`
 	// The name of the online feature store.
 	//+kubebuilder:validation:Optional
-	Name string `json:"name,omitempty" protobuf:"bytes,2,opt,name=name"`
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// UpdateUpdateStrategy in case of terminal failure message
 	//+kubebuilder:validation:Optional
-	ConnectionRef v1.ObjectReference `json:"connectionRef,omitempty" protobuf:"bytes,3,opt,name=connectionRef"`
+	ConnectionRef v1.ObjectReference `json:"connectionRef,omitempty" protobuf:"bytes,2,opt,name=connectionRef"`
 }
 
 type FeatureStoreStatus struct {

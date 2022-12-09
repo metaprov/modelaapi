@@ -2954,10 +2954,6 @@ message RecipeRunStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 9;
 
-  // Test suite for this recipe
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 10;
-
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional

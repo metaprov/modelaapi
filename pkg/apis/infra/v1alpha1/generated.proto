@@ -1330,15 +1330,13 @@ message FacebookSpec {
 
 // Specifiction for an online feature store
 message FeatureStoreSpec {
-  optional bool online = 1;
-
   // The name of the online feature store.
   // +kubebuilder:validation:Optional
-  optional string name = 2;
+  optional string name = 1;
 
   // UpdateUpdateStrategy in case of terminal failure message
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference connectionRef = 3;
+  optional k8s.io.api.core.v1.ObjectReference connectionRef = 2;
 }
 
 message FeatureStoreStatus {
@@ -2874,9 +2872,19 @@ message TenantSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 6;
 
-  // Set of feature stores
+  // The connection to the online feature store for the tenant.
+  // The online store serves all the feature groups for this tenant.
   // +kubebuilder:validation:Optional
-  repeated FeatureStoreSpec featureStores = 7;
+  optional FeatureStoreSpec online = 7;
+
+  // The connection to the offline feature store. This feature store holds the observations as well as the feature groups.
+  // +kubebuilder:validation:Optional
+  optional FeatureStoreSpec offline = 8;
+
+  // The connection to the metrics store. The metrics store hold the metadata about objects in the system (e.g. models)
+  // The metrics store is used for reports and general analytics.
+  // +kubebuilder:validation:Optional
+  optional FeatureStoreSpec metrics = 9;
 }
 
 // TenantStatus defines the actual state of a Tenant
@@ -2898,14 +2906,22 @@ message TenantStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 4;
 
-  // the status of the feature stores
+  // the status of the online store
   // +kubebuilder:validation:Optional
-  repeated FeatureStoreStatus featureStores = 5;
+  optional FeatureStoreStatus online = 5;
+
+  // the status of the offline store
+  // +kubebuilder:validation:Optional
+  optional FeatureStoreStatus offline = 6;
+
+  // the status of the metrics store
+  // +kubebuilder:validation:Optional
+  optional FeatureStoreStatus metrics = 7;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated TenantCondition conditions = 6;
+  repeated TenantCondition conditions = 8;
 }
 
 message TeradataSpec {

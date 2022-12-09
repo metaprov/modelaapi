@@ -497,6 +497,9 @@ export class DataTestCase extends jspb.Message {
   getFeaturefilter(): string;
   setFeaturefilter(value: string): DataTestCase;
 
+  getDatafilter(): string;
+  setDatafilter(value: string): DataTestCase;
+
   getReferencetype(): string;
   setReferencetype(value: string): DataTestCase;
 
@@ -534,6 +537,7 @@ export namespace DataTestCase {
     entityref2?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     columnsList: Array<string>,
     featurefilter: string,
+    datafilter: string,
     referencetype: string,
     periods: number,
   }

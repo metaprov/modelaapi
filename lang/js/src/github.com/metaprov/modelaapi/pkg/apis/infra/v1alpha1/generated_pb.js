@@ -2900,7 +2900,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -24416,8 +24416,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    online: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-    name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     connectionref: (f = msg.getConnectionref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
@@ -24456,14 +24455,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.des
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOnline(value);
-      break;
-    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
-    case 3:
+    case 2:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setConnectionref(value);
@@ -24497,24 +24492,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeBool(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
     writer.writeString(
-      2,
+      1,
       f
     );
   }
   f = message.getConnectionref();
   if (f != null) {
     writer.writeMessage(
-      3,
+      2,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
@@ -24523,47 +24511,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.ser
 
 
 /**
- * optional bool online = 1;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.prototype.getOnline = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.prototype.setOnline = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.prototype.clearOnline = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.prototype.hasOnline = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string name = 2;
+ * optional string name = 1;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -24572,7 +24524,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.prototype.setName = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
@@ -24581,7 +24533,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.prototype.clearName = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -24590,17 +24542,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.pro
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.prototype.hasName = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference connectionRef = 3;
+ * optional k8s.io.api.core.v1.ObjectReference connectionRef = 2;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.prototype.getConnectionref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 3));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
 };
 
 
@@ -24609,7 +24561,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.prototype.setConnectionref = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -24627,7 +24579,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.pro
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.prototype.hasConnectionref = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -49904,13 +49856,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantList.prototype
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.repeatedFields_ = [7];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -49948,8 +49893,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.toObject 
     owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     permissions: (f = msg.getPermissions()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.toObject(includeInstance, f),
     notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f),
-    featurestoresList: jspb.Message.toObjectList(msg.getFeaturestoresList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.toObject, includeInstance)
+    online: (f = msg.getOnline()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.toObject(includeInstance, f),
+    offline: (f = msg.getOffline()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.toObject(includeInstance, f),
+    metrics: (f = msg.getMetrics()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -50017,7 +49963,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.deseriali
     case 7:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.deserializeBinaryFromReader);
-      msg.addFeaturestores(value);
+      msg.setOnline(value);
+      break;
+    case 8:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.deserializeBinaryFromReader);
+      msg.setOffline(value);
+      break;
+    case 9:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.deserializeBinaryFromReader);
+      msg.setMetrics(value);
       break;
     default:
       reader.skipField();
@@ -50094,10 +50050,26 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.serialize
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.serializeBinaryToWriter
     );
   }
-  f = message.getFeaturestoresList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getOnline();
+  if (f != null) {
+    writer.writeMessage(
       7,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getOffline();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getMetrics();
+  if (f != null) {
+    writer.writeMessage(
+      9,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.serializeBinaryToWriter
     );
@@ -50326,40 +50298,113 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype
 
 
 /**
- * repeated FeatureStoreSpec featureStores = 7;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec>}
+ * optional FeatureStoreSpec online = 7;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.getFeaturestoresList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec, 7));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.getOnline = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec, 7));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec>} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.setFeaturestoresList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.setOnline = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.addFeaturestores = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.clearFeaturestoresList = function() {
-  return this.setFeaturestoresList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.clearOnline = function() {
+  return this.setOnline(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.hasOnline = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional FeatureStoreSpec offline = 8;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.getOffline = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec, 8));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.setOffline = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.clearOffline = function() {
+  return this.setOffline(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.hasOffline = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional FeatureStoreSpec metrics = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.getMetrics = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.setMetrics = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.clearMetrics = function() {
+  return this.setMetrics(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.hasMetrics = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -50369,7 +50414,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.repeatedFields_ = [5,6];
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.repeatedFields_ = [8];
 
 
 
@@ -50406,8 +50451,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.toObjec
     updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     failurereason: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    featurestoresList: jspb.Message.toObjectList(msg.getFeaturestoresList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus.toObject, includeInstance),
+    online: (f = msg.getOnline()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus.toObject(includeInstance, f),
+    offline: (f = msg.getOffline()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus.toObject(includeInstance, f),
+    metrics: (f = msg.getMetrics()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.toObject, includeInstance)
   };
@@ -50466,9 +50512,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.deseria
     case 5:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus.deserializeBinaryFromReader);
-      msg.addFeaturestores(value);
+      msg.setOnline(value);
       break;
     case 6:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus.deserializeBinaryFromReader);
+      msg.setOffline(value);
+      break;
+    case 7:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus.deserializeBinaryFromReader);
+      msg.setMetrics(value);
+      break;
+    case 8:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -50531,10 +50587,26 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.seriali
       f
     );
   }
-  f = message.getFeaturestoresList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getOnline();
+  if (f != null) {
+    writer.writeMessage(
       5,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus.serializeBinaryToWriter
+    );
+  }
+  f = message.getOffline();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus.serializeBinaryToWriter
+    );
+  }
+  f = message.getMetrics();
+  if (f != null) {
+    writer.writeMessage(
+      7,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus.serializeBinaryToWriter
     );
@@ -50542,7 +50614,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.seriali
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      8,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.serializeBinaryToWriter
     );
@@ -50696,50 +50768,123 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototy
 
 
 /**
- * repeated FeatureStoreStatus featureStores = 5;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus>}
+ * optional FeatureStoreStatus online = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.getFeaturestoresList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus, 5));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.getOnline = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus, 5));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus>} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.setFeaturestoresList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.setOnline = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.addFeaturestores = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.clearFeaturestoresList = function() {
-  return this.setFeaturestoresList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.clearOnline = function() {
+  return this.setOnline(undefined);
 };
 
 
 /**
- * repeated TenantCondition conditions = 6;
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.hasOnline = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional FeatureStoreStatus offline = 6;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.getOffline = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus, 6));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.setOffline = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.clearOffline = function() {
+  return this.setOffline(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.hasOffline = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional FeatureStoreStatus metrics = 7;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.getMetrics = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus, 7));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.setMetrics = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.clearMetrics = function() {
+  return this.setMetrics(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.hasMetrics = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * repeated TenantCondition conditions = 8;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition, 8));
 };
 
 
@@ -50748,7 +50893,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototy
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -50758,7 +50903,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototy
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition, opt_index);
 };
 
 

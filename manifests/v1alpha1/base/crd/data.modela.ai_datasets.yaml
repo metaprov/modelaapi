@@ -987,6 +987,10 @@ spec:
                               type: string
                           type: object
                           x-kubernetes-map-type: atomic
+                        dataFilter:
+                          description: Sql statement to filter the data for this unit
+                            test
+                          type: string
                         enabled:
                           description: If false, this test case is disabled
                           type: boolean

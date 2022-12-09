@@ -2259,9 +2259,6 @@ export namespace FacebookSpec {
 }
 
 export class FeatureStoreSpec extends jspb.Message {
-  getOnline(): boolean;
-  setOnline(value: boolean): FeatureStoreSpec;
-
   getName(): string;
   setName(value: string): FeatureStoreSpec;
 
@@ -2280,7 +2277,6 @@ export class FeatureStoreSpec extends jspb.Message {
 
 export namespace FeatureStoreSpec {
   export type AsObject = {
-    online: boolean,
     name: string,
     connectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
@@ -4977,10 +4973,20 @@ export class TenantSpec extends jspb.Message {
   hasNotification(): boolean;
   clearNotification(): TenantSpec;
 
-  getFeaturestoresList(): Array<FeatureStoreSpec>;
-  setFeaturestoresList(value: Array<FeatureStoreSpec>): TenantSpec;
-  clearFeaturestoresList(): TenantSpec;
-  addFeaturestores(value?: FeatureStoreSpec, index?: number): FeatureStoreSpec;
+  getOnline(): FeatureStoreSpec | undefined;
+  setOnline(value?: FeatureStoreSpec): TenantSpec;
+  hasOnline(): boolean;
+  clearOnline(): TenantSpec;
+
+  getOffline(): FeatureStoreSpec | undefined;
+  setOffline(value?: FeatureStoreSpec): TenantSpec;
+  hasOffline(): boolean;
+  clearOffline(): TenantSpec;
+
+  getMetrics(): FeatureStoreSpec | undefined;
+  setMetrics(value?: FeatureStoreSpec): TenantSpec;
+  hasMetrics(): boolean;
+  clearMetrics(): TenantSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TenantSpec.AsObject;
@@ -4998,7 +5004,9 @@ export namespace TenantSpec {
     owner: string,
     permissions?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
-    featurestoresList: Array<FeatureStoreSpec.AsObject>,
+    online?: FeatureStoreSpec.AsObject,
+    offline?: FeatureStoreSpec.AsObject,
+    metrics?: FeatureStoreSpec.AsObject,
   }
 }
 
@@ -5017,10 +5025,20 @@ export class TenantStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): TenantStatus;
 
-  getFeaturestoresList(): Array<FeatureStoreStatus>;
-  setFeaturestoresList(value: Array<FeatureStoreStatus>): TenantStatus;
-  clearFeaturestoresList(): TenantStatus;
-  addFeaturestores(value?: FeatureStoreStatus, index?: number): FeatureStoreStatus;
+  getOnline(): FeatureStoreStatus | undefined;
+  setOnline(value?: FeatureStoreStatus): TenantStatus;
+  hasOnline(): boolean;
+  clearOnline(): TenantStatus;
+
+  getOffline(): FeatureStoreStatus | undefined;
+  setOffline(value?: FeatureStoreStatus): TenantStatus;
+  hasOffline(): boolean;
+  clearOffline(): TenantStatus;
+
+  getMetrics(): FeatureStoreStatus | undefined;
+  setMetrics(value?: FeatureStoreStatus): TenantStatus;
+  hasMetrics(): boolean;
+  clearMetrics(): TenantStatus;
 
   getConditionsList(): Array<TenantCondition>;
   setConditionsList(value: Array<TenantCondition>): TenantStatus;
@@ -5041,7 +5059,9 @@ export namespace TenantStatus {
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
-    featurestoresList: Array<FeatureStoreStatus.AsObject>,
+    online?: FeatureStoreStatus.AsObject,
+    offline?: FeatureStoreStatus.AsObject,
+    metrics?: FeatureStoreStatus.AsObject,
     conditionsList: Array<TenantCondition.AsObject>,
   }
 }

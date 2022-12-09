@@ -129,9 +129,6 @@ type RecipeRunStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,9,opt,name=updatedAt"`
-	// Test suite for this recipe
-	//+kubebuilder:validation:Optional
-	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,10,opt,name=unitTestsResult"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
