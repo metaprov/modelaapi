@@ -392,10 +392,11 @@ func (servingsite ServingSite) PredictorRole() *rbacv1.ClusterRole {
 }
 
 // Create a role binding for a job
-func (servingsite ServingSite) PredictorRoleBinding() *rbacv1.ClusterRoleBinding {
-	return &rbacv1.ClusterRoleBinding{
+func (servingsite ServingSite) PredictorRoleBinding() *rbacv1.RoleBinding {
+	return &rbacv1.RoleBinding{
 		ObjectMeta: metav1.ObjectMeta{
-			Name: catalog.ServingSitePredictorRoleBinding,
+			Name:      catalog.ServingSitePredictorRoleBinding,
+			Namespace: servingsite.Name,
 		},
 		Subjects: []rbacv1.Subject{
 			{
@@ -407,7 +408,7 @@ func (servingsite ServingSite) PredictorRoleBinding() *rbacv1.ClusterRoleBinding
 		},
 		RoleRef: rbacv1.RoleRef{
 			APIGroup: "rbac.authorization.k8s.io",
-			Kind:     "ClusterRole",
+			Kind:     "Role",
 			Name:     catalog.ServingSitePredictorRole,
 		},
 	}
