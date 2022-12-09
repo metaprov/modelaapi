@@ -24417,7 +24417,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.pro
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    connectionref: (f = msg.getConnectionref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
+    connectionref: (f = msg.getConnectionref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    databasename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -24463,6 +24464,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.des
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setConnectionref(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatabasename(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -24505,6 +24510,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.ser
       2,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -24580,6 +24592,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.prototype.hasConnectionref = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string databaseName = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.prototype.getDatabasename = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.prototype.setDatabasename = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.prototype.clearDatabasename = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.prototype.hasDatabasename = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

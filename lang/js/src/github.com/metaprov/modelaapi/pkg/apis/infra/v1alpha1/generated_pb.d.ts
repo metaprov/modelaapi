@@ -2267,6 +2267,9 @@ export class FeatureStoreSpec extends jspb.Message {
   hasConnectionref(): boolean;
   clearConnectionref(): FeatureStoreSpec;
 
+  getDatabasename(): string;
+  setDatabasename(value: string): FeatureStoreSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureStoreSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureStoreSpec): FeatureStoreSpec.AsObject;
@@ -2279,6 +2282,7 @@ export namespace FeatureStoreSpec {
   export type AsObject = {
     name: string,
     connectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    databasename: string,
   }
 }
 
