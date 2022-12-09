@@ -379,7 +379,7 @@ func (predictor Predictor) RoleBinding(ns string) *rbacv1.RoleBinding {
 		},
 		Subjects: []rbacv1.Subject{
 			{
-				Kind:      "JobRunnerServiceAccount",
+				Kind:      "ServiceAccount",
 				APIGroup:  "",
 				Name:      catalog.ServingSitePredictorSa,
 				Namespace: ns,
