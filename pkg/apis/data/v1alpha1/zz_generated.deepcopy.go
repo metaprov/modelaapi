@@ -3473,7 +3473,6 @@ func (in *RecipeRunStatus) DeepCopyInto(out *RecipeRunStatus) {
 		in, out := &in.UpdatedAt, &out.UpdatedAt
 		*out = (*in).DeepCopy()
 	}
-	in.UnitTestsResult.DeepCopyInto(&out.UnitTestsResult)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]RecipeCondition, len(*in))

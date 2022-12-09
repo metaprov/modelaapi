@@ -476,6 +476,11 @@ func (in *DataTestCase) DeepCopyInto(out *DataTestCase) {
 		*out = new(FeatureFilterType)
 		**out = **in
 	}
+	if in.DataFilter != nil {
+		in, out := &in.DataFilter, &out.DataFilter
+		*out = new(string)
+		**out = **in
+	}
 	if in.ReferenceType != nil {
 		in, out := &in.ReferenceType, &out.ReferenceType
 		*out = new(ReferenceDataType)
