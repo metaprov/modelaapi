@@ -382,7 +382,7 @@ func (predictor Predictor) RoleBinding(ns string) *rbacv1.RoleBinding {
 				Kind:      "ServiceAccount",
 				APIGroup:  "",
 				Name:      predictor.Name,
-				Namespace: ns,
+				Namespace: predictor.Spec.ServingSiteRef.Name,
 			},
 		},
 		RoleRef: rbacv1.RoleRef{
@@ -393,11 +393,13 @@ func (predictor Predictor) RoleBinding(ns string) *rbacv1.RoleBinding {
 	}
 }
 
-func (predictor Predictor) ServiceAccount(ns string) *v1.ServiceAccount {
+// The serving site service account by which
+// the predictor deployments are running.
+func (predictor Predictor) ServiceAccount() *v1.ServiceAccount {
 	return &v1.ServiceAccount{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      predictor.Name,
-			Namespace: ns,
+			Namespace: predictor.Spec.ServingSiteRef.Name,
 		},
 	}
 }
