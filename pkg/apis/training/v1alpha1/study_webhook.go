@@ -246,8 +246,8 @@ func (study Study) validateTask(fldPath *field.Path) field.ErrorList {
 			err.Error()))
 	}
 
-	if *study.Spec.Task == catalog.Forecasting || *study.Spec.Task == catalog.PartitionForecast && !study.Spec.Search.Objective.Metric.IsForecast() {
-		err := errors.Errorf("objective %v is not a forecasting metric", *study.Spec.Search.Objective)
+	if (*study.Spec.Task == catalog.Forecasting || *study.Spec.Task == catalog.PartitionForecast) && !study.Spec.Search.Objective.Metric.IsForecast() {
+		err := errors.Errorf("objective %v is not a forecasting metric", study.Spec.Search.Objective.Metric)
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,
 			study.Spec.Task,
