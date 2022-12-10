@@ -528,7 +528,7 @@ func (model *Model) MarkFailedToTrain(err string) {
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
 	model.Status.Train = make([]catalog.Measurement, 0)
-	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to train." + err)
+	model.Status.FailureMessage = util.StrPtr("Failed to train." + err)
 	model.Status.Progress = 100
 
 }
@@ -591,7 +591,7 @@ func (model *Model) MarkTestingFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to test." + err)
+	model.Status.FailureMessage = util.StrPtr("Failed to test." + err)
 	model.Status.Progress = 100
 	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
@@ -660,7 +660,7 @@ func (model *Model) MarkUnitTestFailed(msg string, stop bool) {
 		Type:    ModelUnitTested,
 		Status:  v1.ConditionFalse,
 		Reason:  string(ModelPhaseFailed),
-		Message: "FailedConditionReason to unit test." + msg,
+		Message: "Failed to unit test." + msg,
 	})
 	if stop {
 		model.Status.Phase = ModelPhaseFailed
@@ -701,7 +701,7 @@ func (model *Model) MarkFeedbackTestFailed(msg string) {
 		Type:    ModelFeedbackTested,
 		Status:  v1.ConditionFalse,
 		Reason:  string(ModelPhaseFailed),
-		Message: "FailedConditionReason to test feedback." + msg,
+		Message: "Failed to test feedback." + msg,
 	})
 }
 
@@ -826,7 +826,7 @@ func (model *Model) MarkForecastFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to forecast." + err)
+	model.Status.FailureMessage = util.StrPtr("Failed to forecast." + err)
 	model.Status.Progress = 100
 	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
@@ -882,7 +882,7 @@ func (model *Model) MarkPackgedFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to package." + err)
+	model.Status.FailureMessage = util.StrPtr("Failed to package." + err)
 	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
 		model.Status.CompletedAt = &now
@@ -961,7 +961,7 @@ func (model *Model) MarkPublishFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to publish." + err)
+	model.Status.FailureMessage = util.StrPtr("Failed to publish." + err)
 	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
 		model.Status.CompletedAt = &now
@@ -1002,7 +1002,7 @@ func (model *Model) MarkTrainedDriftDetectorFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to train drift detector." + err)
+	model.Status.FailureMessage = util.StrPtr("Failed to train drift detector." + err)
 	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
 		model.Status.CompletedAt = &now
@@ -1021,7 +1021,7 @@ func (model *Model) MarkReleaseFailed(err string) {
 	now := metav1.Now()
 	model.Status.TrainingCompletedAt = &now
 	model.Status.CompletedAt = &now
-	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to release." + err)
+	model.Status.FailureMessage = util.StrPtr("Failed to release." + err)
 	model.Status.Progress = 100
 
 }
@@ -1314,7 +1314,7 @@ func (model *Model) MarkFailedToTune(err string) {
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
 	model.Status.Tune = make([]catalog.Measurement, 0)
-	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to tune." + err)
+	model.Status.FailureMessage = util.StrPtr("Failed to tune." + err)
 	model.Status.Progress = 100
 
 }
@@ -1369,7 +1369,7 @@ func (model *Model) MarkFailedToMerge(err string) {
 	}
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
-	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to merge." + err)
+	model.Status.FailureMessage = util.StrPtr("Failed to merge." + err)
 	model.Status.Progress = 100
 
 }

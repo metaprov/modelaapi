@@ -91,7 +91,7 @@ func (fg *FeatureGroup) MarkIngestFailed(msg string) {
 		Type:    FeatureGroupIngested,
 		Status:  v1.ConditionFalse,
 		Reason:  string(FeatureGroupIngested),
-		Message: "FailedConditionReason to ingest." + msg,
+		Message: "Failed to ingest." + msg,
 	})
 	fg.Status.Phase = FeatureGroupPhaseFailed
 	fg.Status.IngestSchedule.FailureMessage = util.StrPtr(msg)
@@ -130,7 +130,7 @@ func (fg *FeatureGroup) MarkSyncFailed(msg string) {
 		Type:    FeatureGroupSynced,
 		Status:  v1.ConditionFalse,
 		Reason:  string(FeatureGroupSynced),
-		Message: "FailedConditionReason to sync." + msg,
+		Message: "Failed to sync." + msg,
 	})
 	fg.Status.Phase = FeatureGroupPhaseFailed
 	fg.Status.SyncSchedule.FailureMessage = util.StrPtr(msg)

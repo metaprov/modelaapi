@@ -81,24 +81,32 @@ type TenantSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
+	// The default bucket name for tenant artifacts
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	BucketName *string `json:"bucketName,omitempty" protobuf:"bytes,5,opt,name=bucketName"`
+	// The root path to
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Path *string `json:"path,omitempty" protobuf:"bytes,6,opt,name=path"`
 	// Permissions denotes the specification that determines which Accounts
 	// can access the resources under the Tenant namespace and what actions they can perform
 	// +kubebuilder:validation:Optional
-	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,5,opt,name=permissions"`
+	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,7,opt,name=permissions"`
 	// The default notification specification for all resources under the tenant
 	// +kubebuilder:validation:Optional
-	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,6,opt,name=notification"`
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,8,opt,name=notification"`
 	// The connection to the online feature store for the tenant.
 	// The online store serves all the feature groups for this tenant.
 	// +kubebuilder:validation:Optional
-	Online FeatureStoreSpec `json:"online,omitempty" protobuf:"bytes,7,opt,name=online"`
+	Online FeatureStoreSpec `json:"online,omitempty" protobuf:"bytes,9,opt,name=online"`
 	// The connection to the offline feature store. This feature store holds the observations as well as the feature groups.
 	// +kubebuilder:validation:Optional
-	Offline FeatureStoreSpec `json:"offline,omitempty" protobuf:"bytes,8,opt,name=offline"`
+	Offline FeatureStoreSpec `json:"offline,omitempty" protobuf:"bytes,10,opt,name=offline"`
 	// The connection to the metrics store. The metrics store hold the metadata about objects in the system (e.g. models)
 	// The metrics store is used for reports and general analytics.
 	// +kubebuilder:validation:Optional
-	Metrics FeatureStoreSpec `json:"metrics,omitempty" protobuf:"bytes,9,opt,name=metrics"`
+	Metrics FeatureStoreSpec `json:"metrics,omitempty" protobuf:"bytes,11,opt,name=metrics"`
 }
 
 // TenantStatus defines the actual state of a Tenant

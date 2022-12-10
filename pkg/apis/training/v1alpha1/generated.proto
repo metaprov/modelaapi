@@ -1338,6 +1338,8 @@ message ModelClassServingSpec {
 
   // The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
   // copies of the service in the case that automatic scaling is disabled
+  // For batch prediction, this will specify how many predictors will run in parallel.
+  // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   optional int32 replicas = 7;
 

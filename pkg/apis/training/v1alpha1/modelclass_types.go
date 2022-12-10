@@ -248,6 +248,8 @@ type ModelClassServingSpec struct {
 	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,6,opt,name=access"`
 	// The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
 	// copies of the service in the case that automatic scaling is disabled
+	// For batch prediction, this will specify how many predictors will run in parallel.
+	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,7,opt,name=replicas"`
 	// Schedule for computing drift

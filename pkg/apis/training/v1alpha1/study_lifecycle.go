@@ -984,7 +984,7 @@ func (study *Study) MarkPartitionedFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to partition." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to partition." + err)
 	now := metav1.Now()
 	study.Status.CompletedAt = &now
 	study.RefreshProgress()

@@ -1222,12 +1222,12 @@ const (
 type ConditionReason string
 
 const (
-	FailedConditionReason ConditionReason = "Failed"
-	Success               ConditionReason = "Success"
-	Running               ConditionReason = "RunningModelsCount"
-	WaitingForApproval    ConditionReason = "WaitingForApproval"
-	Approved              ConditionReason = "Approved"
-	Denied                ConditionReason = "Denied"
+	Failed             ConditionReason = "Failed"
+	Success            ConditionReason = "Success"
+	Running            ConditionReason = "RunningModelsCount"
+	WaitingForApproval ConditionReason = "WaitingForApproval"
+	Approved           ConditionReason = "Approved"
+	Denied             ConditionReason = "Denied"
 )
 
 //==============================================================================

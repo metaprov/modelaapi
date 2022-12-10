@@ -1816,10 +1816,12 @@ spec:
                     description: The name of the predictor template to use when
                     type: string
                   replicas:
+                    default: 1
                     description: The number of replicas for the Kubernetes Serving
                       associated with the Predictor, which will instantiate multiple
                       copies of the service in the case that automatic scaling is
-                      disabled
+                      disabled For batch prediction, this will specify how many predictors
+                      will run in parallel.
                     format: int32
                     type: integer
                   resources:
