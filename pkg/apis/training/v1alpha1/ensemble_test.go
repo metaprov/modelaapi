@@ -24,7 +24,6 @@ func createModel(name string, alg string, score float64, objective catalog.Metri
 			Estimator: &ClassicalEstimatorSpec{
 				AlgorithmName: alg,
 			},
-			Objective: &objective,
 		},
 		Status: ModelStatus{
 			CVScore: score,
