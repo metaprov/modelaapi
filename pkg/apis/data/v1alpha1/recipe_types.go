@@ -9,7 +9,7 @@ import (
 // RecipeConditionType is the condition on the Recipe
 type RecipeConditionType string
 
-/// RecipeName Condition
+// / RecipeName Condition
 const (
 	RecipeReady RecipeConditionType = "Ready"
 	RecipeSaved RecipeConditionType = "Saved"
@@ -58,7 +58,7 @@ type RecipeList struct {
 	Items           []Recipe `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-//RecipeSpec defines the desired state of a dataset
+// RecipeSpec defines the desired state of a dataset
 type RecipeSpec struct {
 	// Owner is the owner of the recipe
 	// +kubebuilder:default:="no-one"
@@ -116,19 +116,19 @@ type RecipeStatus struct {
 	Conditions []RecipeCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,7,rep,name=conditions"`
 }
 
-//RecipeStep defines one step in the recipe
+// RecipeStep defines one step in the recipe
 type RecipeStep struct {
 	Op         RecipeStepOperation `json:"op,omitempty" protobuf:"bytes,1,opt,name=op"`
 	Parameters []*RecipeStepParam  `json:"parameters,omitempty" protobuf:"bytes,2,rep,name=parameters"`
 }
 
-//RecipeStepParam is a key value parameter of the recipe
+// RecipeStepParam is a key value parameter of the recipe
 type RecipeStepParam struct {
 	Name  string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	Value string `json:"value,omitempty" protobuf:"bytes,2,opt,name=value"`
 }
 
-//RecipeStepOperation is the operation name of one step in the recipe
+// RecipeStepOperation is the operation name of one step in the recipe
 type RecipeStepOperation string
 
 const (

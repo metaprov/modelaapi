@@ -85,7 +85,7 @@ type GpuClass struct {
 	Gpumem *resource.Quantity `json:"gpumem,omitempty" protobuf:"bytes,4,opt,name=gpumem"`
 }
 
-//Region defines a region within the data provider
+// Region defines a region within the data provider
 type Region struct {
 	//Code is the code of the region
 	Code string `json:"code" protobuf:"bytes,1,opt,name=code"`
@@ -100,7 +100,7 @@ type Region struct {
 	Datacenters []DataCenter `json:"datacenters,omitempty" protobuf:"bytes,5,rep,name=datacenters"`
 }
 
-//Datacenter contains the attribute of a specific data center
+// Datacenter contains the attribute of a specific data center
 type DataCenter struct {
 	// Name is the name of the datacenter
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
@@ -108,7 +108,7 @@ type DataCenter struct {
 	Code string `json:"code,omitempty" protobuf:"bytes,2,opt,name=code"`
 }
 
-//MachineClassCost contain the current cost of a machine class in a region
+// MachineClassCost contain the current cost of a machine class in a region
 type MachineClassCost struct {
 	// Code is the machine class code
 	Code string `json:"code,omitempty" protobuf:"bytes,1,opt,name=code"`
@@ -120,7 +120,7 @@ type MachineClassCost struct {
 	CostSpot *resource.Quantity `json:"costSpot,omitempty" protobuf:"bytes,4,opt,name=costSpot"`
 }
 
-//GpuClassCost contain the current cost of a gpu class in a region
+// GpuClassCost contain the current cost of a gpu class in a region
 type GpuClassCost struct {
 	// Code is the machine class code
 	Code string `json:"code,omitempty" protobuf:"bytes,1,opt,name=code"`

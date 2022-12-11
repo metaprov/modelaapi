@@ -27,7 +27,7 @@ type AlgorithmList struct {
 	Items           []Algorithm `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-//AlgorithmSpec describes the attributes of an machine learning algorithm
+// AlgorithmSpec describes the attributes of an machine learning algorithm
 type AlgorithmSpec struct {
 	// FrameworkName is a reference to library
 	// +kubebuilder:validation:Required

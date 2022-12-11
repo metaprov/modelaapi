@@ -380,7 +380,15 @@ class MTimeSeries:
 
     def read_parque(self, fname: str):
         """read the history from a parqye file"""
-        self.__df = pd.read_parquet(fname)
+        df = pd.read_parquet(fname)
+        values = df[self.time_column_name]
+        if reindex_on_time:
+             index = pd.PeriodIndex(values,freq=self.freq)
+             df = df.set_index(index)
+        if not keep_time:
+             del df[self.time_column_name]
+        self.__df = df
+
 
 
     ######################################################

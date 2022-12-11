@@ -71,7 +71,7 @@ const (
 // StudyConditionType is the condition of a Study
 type StudyConditionType string
 
-/// Study Condition
+// / Study Condition
 const (
 	// StudyInitialized states that the resources needed for training are allocated and ready
 	StudyInitialized StudyConditionType = "Initialized"

@@ -16,7 +16,7 @@ type WorkloadClass struct {
 	Spec              WorkloadClassSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 }
 
-//WorkloadClassSpec defines the specification of  a workload class.
+// WorkloadClassSpec defines the specification of  a workload class.
 type WorkloadClassSpec struct {
 	ResourcesTemplate *ResourceSpec `json:"resourcesTemplate,omitempty" protobuf:"bytes,1,opt,name=resourcesTemplate"`
 }

@@ -19,7 +19,7 @@ import (
 // Condition on the entity
 type EntityConditionType string
 
-/// Entity Condition
+// / Entity Condition
 const (
 	EntityReady EntityConditionType = "Ready"
 	EntitySaved EntityConditionType = "Saved"

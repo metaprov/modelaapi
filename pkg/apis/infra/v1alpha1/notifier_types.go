@@ -18,7 +18,7 @@ const (
 // Notifier condition
 type NotifierConditionType string
 
-/// Notifier Condition
+// / Notifier Condition
 const (
 	NotifierReady NotifierConditionType = "Ready"
 	NotifierSaved NotifierConditionType = "Saved"

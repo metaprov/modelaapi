@@ -9,7 +9,7 @@ import (
 
 type VirtualBucketConditionType string
 
-/// Bucket Condition
+// / Bucket Condition
 const (
 	VirtualBucketReady VirtualBucketConditionType = "Ready"
 	VirtualBucketSaved VirtualBucketConditionType = "Saved"

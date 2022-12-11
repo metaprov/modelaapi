@@ -22,7 +22,7 @@ const (
 
 type LicenseConditionType string
 
-/// License Condition
+// / License Condition
 const (
 	LicenseValid LicenseConditionType = "Valid"
 	LicenseSaved LicenseConditionType = "Saved"

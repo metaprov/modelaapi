@@ -27,7 +27,7 @@ const (
 // PredictionConditionType is the condition type of the prediction pipeline
 type PredictionConditionType string
 
-/// PredictionTemplate Condition
+// / PredictionTemplate Condition
 const (
 	PredictionCompleted  PredictionConditionType = "Completed"
 	PredictionSaved      PredictionConditionType = "Saved"

@@ -24,7 +24,7 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-//Set up the webhook with the manager.
+// Set up the webhook with the manager.
 func (study *Study) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(study).
@@ -197,7 +197,7 @@ func (study Study) ManifestURI() string {
 	return fmt.Sprintf("%s/%s-study.yaml", study.RootURI(), study.Name)
 }
 
-//    dataproducts/*/studies/*/study-<name>-report.pdf
+// dataproducts/*/studies/*/study-<name>-report.pdf
 func (study Study) ReportURI() string {
 	return fmt.Sprintf("%s/%s-report.pdf", study.RootURI(), study.Name)
 }
@@ -984,7 +984,7 @@ func (study *Study) MarkPartitionedFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("FailedConditionReason to partition." + err)
+	study.Status.FailureMessage = util.StrPtr("Failed to partition." + err)
 	now := metav1.Now()
 	study.Status.CompletedAt = &now
 	study.RefreshProgress()
@@ -1123,9 +1123,9 @@ func (study Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *strin
 	return result
 }
 
-///////////////////////////////////////////////////
+// /////////////////////////////////////////////////
 // Mark study failed due to model failure
-//////////////////////////////////////////////////
+// ////////////////////////////////////////////////
 func (study *Study) MarkModelFailed(model *Model, err error) {
 	study.Status.Phase = StudyPhaseFailed
 	msg := fmt.Sprintf("model %s failed with messasge %s", model.Name, err.Error())

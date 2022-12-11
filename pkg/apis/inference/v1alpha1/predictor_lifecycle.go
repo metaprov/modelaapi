@@ -133,12 +133,12 @@ func (predictor Predictor) ManifestURI() string {
 
 //    dataproducts/*/predictor/*/predictor-<name>.yaml
 
-//    dataproducts/*/predictor/*/manifests/deployment-<name>.yaml
+// dataproducts/*/predictor/*/manifests/deployment-<name>.yaml
 func (predictor Predictor) DeploymentURI() string {
 	return fmt.Sprintf("%s/%s-deployment.yaml", predictor.RootURI(), predictor.Name)
 }
 
-//    dataproducts/*/predictor/*/manifests/service-<name>.yaml
+// dataproducts/*/predictor/*/manifests/service-<name>.yaml
 func (predictor Predictor) ServiceURI() string {
 	return fmt.Sprintf("%s/%s-service.yaml", predictor.RootURI(), predictor.Name)
 }

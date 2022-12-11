@@ -9,7 +9,7 @@ import (
 // ModelaSystem condition
 type ModelaSystemConditionType string
 
-/// ModelaSystem Condition
+// / ModelaSystem Condition
 const (
 	ModelaSystemReady ModelaSystemConditionType = "Ready"
 	ModelaSystemSaved ModelaSystemConditionType = "Saved"

@@ -11,7 +11,7 @@ import (
 // ModelClassConditionType is the condition of a ModelClass
 type ModelClassConditionType string
 
-/// ModelClass Condition
+// / ModelClass Condition
 const (
 	// ModelClassSaved states that the ModelClass has been archived in a database
 	ModelClassSaved ModelClassConditionType = "Saved"

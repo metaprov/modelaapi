@@ -123,7 +123,7 @@ func (entity Entity) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "entities", entity.Namespace, entity.Name)
 }
 
-//Set up the webhook with the manager.
+// Set up the webhook with the manager.
 func (entity *Entity) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(entity).

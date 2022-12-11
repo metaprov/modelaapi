@@ -11,10 +11,10 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-/// BucketName conditions
+// / BucketName conditions
 type ReviewConditionType string
 
-/// BucketName Condition
+// / BucketName Condition
 const (
 	ReviewReady ReviewConditionType = "Ready"
 	ReviewSaved ReviewConditionType = "Saved"
@@ -115,7 +115,7 @@ type ReviewSpec struct {
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,5,opt,name=tenantRef"`
 }
 
-//ReviewStatus is the current status of the review
+// ReviewStatus is the current status of the review
 type ReviewStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
