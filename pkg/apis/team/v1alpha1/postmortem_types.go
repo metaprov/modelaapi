@@ -17,7 +17,7 @@ import (
 
 type PostMortemConditionType string
 
-/// Post Moretem Condition
+// / Post Moretem Condition
 const (
 	PostMortemReady PostMortemConditionType = "Ready"
 	PostMortemSaved PostMortemConditionType = "Saved"

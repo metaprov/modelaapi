@@ -49939,8 +49939,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.toObject 
     defaultservingsiteref: (f = msg.getDefaultservingsiteref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    bucketname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    path: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     permissions: (f = msg.getPermissions()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.toObject(includeInstance, f),
     notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f),
     online: (f = msg.getOnline()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.toObject(includeInstance, f),
@@ -50001,34 +49999,26 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.deseriali
       msg.setOwner(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setBucketname(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPath(value);
-      break;
-    case 7:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.deserializeBinaryFromReader);
       msg.setPermissions(value);
       break;
-    case 8:
+    case 6:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.deserializeBinaryFromReader);
       msg.setNotification(value);
       break;
-    case 9:
+    case 7:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.deserializeBinaryFromReader);
       msg.setOnline(value);
       break;
-    case 10:
+    case 8:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.deserializeBinaryFromReader);
       msg.setOffline(value);
       break;
-    case 11:
+    case 9:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.deserializeBinaryFromReader);
       msg.setMetrics(value);
@@ -50092,24 +50082,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.serialize
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
-  if (f != null) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
   f = message.getPermissions();
   if (f != null) {
     writer.writeMessage(
-      7,
+      5,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.serializeBinaryToWriter
     );
@@ -50117,7 +50093,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.serialize
   f = message.getNotification();
   if (f != null) {
     writer.writeMessage(
-      8,
+      6,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.serializeBinaryToWriter
     );
@@ -50125,7 +50101,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.serialize
   f = message.getOnline();
   if (f != null) {
     writer.writeMessage(
-      9,
+      7,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.serializeBinaryToWriter
     );
@@ -50133,7 +50109,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.serialize
   f = message.getOffline();
   if (f != null) {
     writer.writeMessage(
-      10,
+      8,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.serializeBinaryToWriter
     );
@@ -50141,7 +50117,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.serialize
   f = message.getMetrics();
   if (f != null) {
     writer.writeMessage(
-      11,
+      9,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec.serializeBinaryToWriter
     );
@@ -50296,84 +50272,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype
 
 
 /**
- * optional string bucketName = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.getBucketname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.setBucketname = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.clearBucketname = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.hasBucketname = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional string path = 6;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.getPath = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.setPath = function(value) {
-  return jspb.Message.setField(this, 6, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.clearPath = function() {
-  return jspb.Message.setField(this, 6, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.hasPath = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 7;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 5;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.getPermissions = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec, 7));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec, 5));
 };
 
 
@@ -50382,7 +50286,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.setPermissions = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -50400,17 +50304,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.hasPermissions = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 8;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 6;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.getNotification = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec, 8));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec, 6));
 };
 
 
@@ -50419,7 +50323,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.setNotification = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -50437,17 +50341,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.hasNotification = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional FeatureStoreSpec online = 9;
+ * optional FeatureStoreSpec online = 7;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.getOnline = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec, 9));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec, 7));
 };
 
 
@@ -50456,7 +50360,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.setOnline = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -50474,17 +50378,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.hasOnline = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional FeatureStoreSpec offline = 10;
+ * optional FeatureStoreSpec offline = 8;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.getOffline = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec, 10));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec, 8));
 };
 
 
@@ -50493,7 +50397,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.setOffline = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -50511,17 +50415,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.hasOffline = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional FeatureStoreSpec metrics = 11;
+ * optional FeatureStoreSpec metrics = 9;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.getMetrics = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec, 11));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreSpec, 9));
 };
 
 
@@ -50530,7 +50434,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.setMetrics = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -50548,7 +50452,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec.prototype.hasMetrics = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 

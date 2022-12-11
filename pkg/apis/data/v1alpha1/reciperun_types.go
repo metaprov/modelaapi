@@ -20,7 +20,7 @@ const (
 // Condition on the dataset
 type RecipeRunConditionType string
 
-/// RecipeName Condition
+// / RecipeName Condition
 const (
 	RecipeRunUnitTested RecipeConditionType = "UnitTested"
 	RecipeRunCompleted  RecipeConditionType = "Completed"
@@ -71,7 +71,7 @@ type RecipeRunList struct {
 	Items           []RecipeRun `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-//RecipeSpec defines the desired state of a dataset
+// RecipeSpec defines the desired state of a dataset
 type RecipeRunSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional

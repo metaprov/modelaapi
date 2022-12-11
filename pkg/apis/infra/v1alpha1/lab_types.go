@@ -9,7 +9,7 @@ import (
 // LabConditionType is the condition of the lab
 type LabConditionType string
 
-/// TenantRef Condition
+// / TenantRef Condition
 const (
 	LabReady LabConditionType = "Ready"
 	LabSaved LabConditionType = "Saved"

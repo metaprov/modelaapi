@@ -589,9 +589,9 @@ func (metric Metric) Compare(i float64, j float64) bool {
 
 }
 
-//==============================================================================
+// ==============================================================================
 // CategoricalEncoding
-//==============================================================================
+// ==============================================================================
 // +kubebuilder:validation:Enum="one-hot-encoding";"one-hot-encoding-top-categories";"ordinal-encoding";"count-encoding";"target-encoding";"weight-of-evidence-encoding";"binary-encoding";"label-encoding";"hash-encoding";"catboost-encoding";"loo-encoding";"no-encoding";"auto";"none"
 type CategoricalEncoding string
 
@@ -634,9 +634,9 @@ func ParseCategoricalEncoding(name string) CategoricalEncoding {
 	return AutoEncoding
 }
 
-//==============================================================================
+// ==============================================================================
 // Imputation
-//==============================================================================
+// ==============================================================================
 // +kubebuilder:validation:Enum="remove-rows-with-missing-values";"replace-with-mean";"replace-with-median";"replace-with-arbitrary-value";"freq-category-imputation";"add-missing-value-indicator";"knn";"iterative";"mice";"no-imputation";"auto";"none"
 type Imputation string
 
@@ -654,9 +654,9 @@ const (
 	NoneImputation                        Imputation = "none"
 )
 
-//==============================================================================
+// ==============================================================================
 // Scaling
-//==============================================================================
+// ==============================================================================
 // +kubebuilder:validation:Enum="standard-scaling";"max-abs-scaling";"min-max-scaling";"normalization-scaling";"robust-scaling";"scale-to-unit-norm";"none";"auto";
 type Scaling string
 
@@ -671,19 +671,19 @@ const (
 	AutoScaling            Scaling = "auto"
 )
 
-//==============================================================================
+// ==============================================================================
 // Image Featurizer
-//==============================================================================
+// ==============================================================================
 type ImageFeaturizer string
 
-//==============================================================================
+// ==============================================================================
 // Audio Featurizer
-//==============================================================================
+// ==============================================================================
 type AudioFeaturizer string
 
-//==============================================================================
+// ==============================================================================
 // Video Featurizer
-//==============================================================================
+// ==============================================================================
 type VideoFeaturizer string
 
 //==============================================================================
@@ -704,9 +704,9 @@ const (
 	AutoTransform             VariableTransformation = "auto"
 )
 
-//==============================================================================
+// ==============================================================================
 // Discretisation
-//==============================================================================
+// ==============================================================================
 // +kubebuilder:validation:Enum="equal-width-discretisation-";"equal-freq-discretisation";"kbin-discretisation";"kernel-centerer-discretisation";"label-binarizer-discretisation";"multi-label-binarizer-discretisation";"none";"auto"
 type Discretisation string
 
@@ -721,9 +721,9 @@ const (
 	AutoDiscretisation                Discretisation = "auto"
 )
 
-//==============================================================================
+// ==============================================================================
 // Outlier Handling
-//==============================================================================
+// ==============================================================================
 // +kubebuilder:validation:Enum="trim-outliers";"winsorizer-outliers";"cap-outliers";"zero-code-outliers";"none";"auto"
 type OutlierHandling string
 
@@ -736,9 +736,9 @@ const (
 	AutoOutlierHandling       OutlierHandling = "auto"
 )
 
-//==============================================================================
+// ==============================================================================
 // Datatime Transformation
-//==============================================================================
+// ==============================================================================
 // +kubebuilder:validation:Enum="extract-datetime-information";"none";"auto"
 type DatetimeTransformation string
 
@@ -748,9 +748,9 @@ const (
 	AutoDatetimeTransformation    DatetimeTransformation = "auto"
 )
 
-//==============================================================================
+// ==============================================================================
 // Imbalance Handling
-//==============================================================================
+// ==============================================================================
 // +kubebuilder:validation:Enum="adasyn";"baseline-smote";"kmean-smote";"random-over-sampler";"smote";"smotenc";"svmsmote";"none";"auto";class-weights;
 type ImbalanceHandling string
 
@@ -767,9 +767,9 @@ const (
 	AutoImbalanceHandling              ImbalanceHandling = "auto"
 )
 
-//==============================================================================
+// ==============================================================================
 // Feature Engineering
-//==============================================================================
+// ==============================================================================
 // +kubebuilder:validation:Enum="pca";"polynomial-features";"rbf-sampler";"fast-ica";"nystroem";"none";"auto"
 type DimensionReduction string
 
@@ -1081,7 +1081,7 @@ const (
 	HTSNone      HTS = "none"
 )
 
-/// The HolidayCountry unit
+// / The HolidayCountry unit
 // +kubebuilder:validation:Enum="US";"BR";"ID";"IN";"MY";"VN";"TH";"PH";"PK";"BD";"EG";"CN";"RU";"KR";"BY";"AE";"none";
 type HolidayCountry string
 
@@ -1222,12 +1222,12 @@ const (
 type ConditionReason string
 
 const (
-	Failed             ConditionReason = "Failed"
-	Success            ConditionReason = "Success"
-	Running            ConditionReason = "RunningModelsCount"
-	WaitingForApproval ConditionReason = "WaitingForApproval"
-	Approved           ConditionReason = "Approved"
-	Denied             ConditionReason = "Denied"
+	FailedConditionReason ConditionReason = "Failed"
+	Success               ConditionReason = "Success"
+	Running               ConditionReason = "RunningModelsCount"
+	WaitingForApproval    ConditionReason = "WaitingForApproval"
+	Approved              ConditionReason = "Approved"
+	Denied                ConditionReason = "Denied"
 )
 
 //==============================================================================
@@ -1250,9 +1250,9 @@ const (
 	HardwareTargetRaspberryPi8MODELB HardwareTarget = "raspberry-pi8-modela-b"
 )
 
-//==============================================================================
+// ==============================================================================
 // Shap methods
-//==============================================================================
+// ==============================================================================
 // +kubebuilder:validation:Enum="permutation";"partition";"tree";"kernel";"sampling";"linear";"deep";"gradient";"auto";"none"
 type ShapType string
 

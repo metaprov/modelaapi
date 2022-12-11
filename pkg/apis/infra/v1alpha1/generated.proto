@@ -2867,38 +2867,28 @@ message TenantSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 4;
 
-  // The default bucket name for tenant artifacts
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string bucketName = 5;
-
-  // The root path to
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string path = 6;
-
   // Permissions denotes the specification that determines which Accounts
   // can access the resources under the Tenant namespace and what actions they can perform
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 5;
 
   // The default notification specification for all resources under the tenant
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 6;
 
   // The connection to the online feature store for the tenant.
   // The online store serves all the feature groups for this tenant.
   // +kubebuilder:validation:Optional
-  optional FeatureStoreSpec online = 9;
+  optional FeatureStoreSpec online = 7;
 
   // The connection to the offline feature store. This feature store holds the observations as well as the feature groups.
   // +kubebuilder:validation:Optional
-  optional FeatureStoreSpec offline = 10;
+  optional FeatureStoreSpec offline = 8;
 
   // The connection to the metrics store. The metrics store hold the metadata about objects in the system (e.g. models)
   // The metrics store is used for reports and general analytics.
   // +kubebuilder:validation:Optional
-  optional FeatureStoreSpec metrics = 11;
+  optional FeatureStoreSpec metrics = 9;
 }
 
 // TenantStatus defines the actual state of a Tenant

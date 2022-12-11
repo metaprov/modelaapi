@@ -39,7 +39,7 @@ const (
 // FeatureHistogramConditionType is the condition of the feature
 type FeatureHistogramConditionType string
 
-/// FeatureHistogram Condition
+// / FeatureHistogram Condition
 const (
 	FeatureHistogramReady      FeatureHistogramConditionType = "Ready"
 	FeatureHistogramUnitTested FeatureHistogramConditionType = "UnitTested"

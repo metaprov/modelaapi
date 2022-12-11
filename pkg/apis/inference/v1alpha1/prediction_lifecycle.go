@@ -137,7 +137,7 @@ func (prediction *Prediction) MarkFailed(msg string) {
 	prediction.CreateOrUpdateCond(PredictionCondition{
 		Type:    PredictionCompleted,
 		Status:  v1.ConditionFalse,
-		Reason:  string(catalog.Failed),
+		Reason:  string(catalog.FailedConditionReason),
 		Message: msg,
 	})
 	now := metav1.Now()
@@ -209,7 +209,7 @@ func (prediction *Prediction) MarkUnitTestFailed(msg string) {
 		Type:    PredictionUnitTested,
 		Status:  v1.ConditionFalse,
 		Reason:  string(PredictionPhaseFailed),
-		Message: "Failed to validate." + msg,
+		Message: "FailedConditionReason to validate." + msg,
 	})
 
 }

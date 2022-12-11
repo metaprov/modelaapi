@@ -15,7 +15,7 @@ import (
 // Condition on the dataset
 type DataProductVersionConditionType string
 
-/// DataProductVersion Condition
+// / DataProductVersion Condition
 const (
 	DataProductVersionReady DataProductVersionConditionType = "Ready"
 	DataProductVersionSaved DataProductVersionConditionType = "Saved"

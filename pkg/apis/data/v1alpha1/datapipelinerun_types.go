@@ -25,7 +25,7 @@ const (
 // Condition on the dataset
 type DataPipelineRunConditionType string
 
-/// DataPipelineRun Condition
+// / DataPipelineRun Condition
 const (
 	DataPipelineRunCompleted DataPipelineRunConditionType = "Completed"
 	DataPipelineRunSaved     DataPipelineRunConditionType = "Saved"
@@ -73,7 +73,7 @@ type DataPipelineRunList struct {
 	Items           []DataPipelineRun `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-//DataPipelineRunSpec defines the desired state of a schema
+// DataPipelineRunSpec defines the desired state of a schema
 type DataPipelineRunSpec struct {
 	// The data product version of the run
 	// +kubebuilder:default:=""

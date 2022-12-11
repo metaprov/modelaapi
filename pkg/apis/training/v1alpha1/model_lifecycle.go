@@ -167,7 +167,7 @@ func (model Model) ManifestURI() string {
 	return fmt.Sprintf("%s/%s-model.yaml", model.RootURI(), model.Name)
 }
 
-//    dataproducts/*/models/*/bin/model.joblib
+// dataproducts/*/models/*/bin/model.joblib
 func (model Model) WeightsURI() string {
 	return fmt.Sprintf("%s/bin/model.joblib", model.RootURI())
 }
@@ -176,32 +176,32 @@ func (model Model) ExplainModelURI() string {
 	return fmt.Sprintf("%s/bin/explain-model.joblib", model.RootURI())
 }
 
-//    dataproducts/*/models/*/metadata/model.json
+// dataproducts/*/models/*/metadata/model.json
 func (model Model) ModelJsonURI() string {
 	return fmt.Sprintf("%s/metadata/model.json", model.RootURI())
 }
 
-//    dataproducts/*/models/*/metadata/study.json
+// dataproducts/*/models/*/metadata/study.json
 func (model Model) StudyJsonURI() string {
 	return fmt.Sprintf("%s/metadata/study.json", model.RootURI())
 }
 
-//    dataproducts/*/models/*/metadata/schema.json
+// dataproducts/*/models/*/metadata/schema.json
 func (model Model) SchemaJsonURI() string {
 	return fmt.Sprintf("%s/metadata/schema.json", model.RootURI())
 }
 
-//    dataproducts/*/models/*/metadata/dataset.json
+// dataproducts/*/models/*/metadata/dataset.json
 func (model Model) DatasetJsonURI() string {
 	return fmt.Sprintf("%s/metadata/dataset.json", model.RootURI())
 }
 
-//    dataproducts/*/models/*/metadata/productversion.json
+// dataproducts/*/models/*/metadata/productversion.json
 func (model Model) ProductVersionJsonURI() string {
 	return fmt.Sprintf("%s/metadata/productversion.json", model.RootURI())
 }
 
-//    dataproducts/*/models/*/model-<name>-report.pdf
+// dataproducts/*/models/*/model-<name>-report.pdf
 func (model Model) ReportURI() string {
 	return fmt.Sprintf("%s/model-%s-report.pdf", model.RootURI(), model.Name)
 }
@@ -214,7 +214,7 @@ func (model Model) ForecastURI() string {
 	return fmt.Sprintf("%s/model-%s-forecast.csv", model.RootURI(), model.Name)
 }
 
-//    dataproducts/*/models/*/Dockerfile
+// dataproducts/*/models/*/Dockerfile
 func (model Model) DockerfileURI() string {
 	return fmt.Sprintf("%s/Dockerfile", model.RootURI())
 }
@@ -528,7 +528,7 @@ func (model *Model) MarkFailedToTrain(err string) {
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
 	model.Status.Train = make([]catalog.Measurement, 0)
-	model.Status.FailureMessage = util.StrPtr("Failed to train." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to train." + err)
 	model.Status.Progress = 100
 
 }
@@ -591,7 +591,7 @@ func (model *Model) MarkTestingFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("Failed to test." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to test." + err)
 	model.Status.Progress = 100
 	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
@@ -660,7 +660,7 @@ func (model *Model) MarkUnitTestFailed(msg string, stop bool) {
 		Type:    ModelUnitTested,
 		Status:  v1.ConditionFalse,
 		Reason:  string(ModelPhaseFailed),
-		Message: "Failed to unit test." + msg,
+		Message: "FailedConditionReason to unit test." + msg,
 	})
 	if stop {
 		model.Status.Phase = ModelPhaseFailed
@@ -701,7 +701,7 @@ func (model *Model) MarkFeedbackTestFailed(msg string) {
 		Type:    ModelFeedbackTested,
 		Status:  v1.ConditionFalse,
 		Reason:  string(ModelPhaseFailed),
-		Message: "Failed to test feedback." + msg,
+		Message: "FailedConditionReason to test feedback." + msg,
 	})
 }
 
@@ -826,7 +826,7 @@ func (model *Model) MarkForecastFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("Failed to forecast." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to forecast." + err)
 	model.Status.Progress = 100
 	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
@@ -882,7 +882,7 @@ func (model *Model) MarkPackgedFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("Failed to package." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to package." + err)
 	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
 		model.Status.CompletedAt = &now
@@ -961,7 +961,7 @@ func (model *Model) MarkPublishFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("Failed to publish." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to publish." + err)
 	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
 		model.Status.CompletedAt = &now
@@ -1002,7 +1002,7 @@ func (model *Model) MarkTrainedDriftDetectorFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.FailureMessage = util.StrPtr("Failed to train drift detector." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to train drift detector." + err)
 	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
 		model.Status.CompletedAt = &now
@@ -1021,7 +1021,7 @@ func (model *Model) MarkReleaseFailed(err string) {
 	now := metav1.Now()
 	model.Status.TrainingCompletedAt = &now
 	model.Status.CompletedAt = &now
-	model.Status.FailureMessage = util.StrPtr("Failed to release." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to release." + err)
 	model.Status.Progress = 100
 
 }
@@ -1314,7 +1314,7 @@ func (model *Model) MarkFailedToTune(err string) {
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
 	model.Status.Tune = make([]catalog.Measurement, 0)
-	model.Status.FailureMessage = util.StrPtr("Failed to tune." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to tune." + err)
 	model.Status.Progress = 100
 
 }
@@ -1369,7 +1369,7 @@ func (model *Model) MarkFailedToMerge(err string) {
 	}
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
-	model.Status.FailureMessage = util.StrPtr("Failed to merge." + err)
+	model.Status.FailureMessage = util.StrPtr("FailedConditionReason to merge." + err)
 	model.Status.Progress = 100
 
 }

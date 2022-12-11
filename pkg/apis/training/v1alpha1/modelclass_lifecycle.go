@@ -25,7 +25,7 @@ func (mclass ModelClass) IsMarkedForDeletion() bool {
 	return mclass.DeletionTimestamp != nil
 }
 
-//Set up the webhook with the manager.
+// Set up the webhook with the manager.
 func (mclass *ModelClass) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(mclass).
@@ -140,9 +140,9 @@ func (mclass ModelClass) IsFailed() bool {
 
 // FiredAt the start of training, mark the training dataset as pending
 
-///////////////////////////////////////////////
+// /////////////////////////////////////////////
 // Drifted
-//////////////////////////////////////////////
+// ////////////////////////////////////////////
 func (mclass *ModelClass) MarkDrifted() {
 	mclass.CreateOrUpdateCond(ModelClassCondition{
 		Type:   ModelClassModelDrifted,

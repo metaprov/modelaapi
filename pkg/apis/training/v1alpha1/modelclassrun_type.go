@@ -24,7 +24,7 @@ const (
 // Pipeline run condition
 type ModelClassRunConditionType string
 
-/// ModelClassRun Condition
+// / ModelClassRun Condition
 const (
 	// Condition to check if the training dataset is ready
 	ModelClassRunTrainingDatasetReady ModelClassRunConditionType = "TrainingDatasetReady"

@@ -101,7 +101,7 @@ func ParseTenantYaml(content []byte) (*Tenant, error) {
 	return r, nil
 }
 
-//Set up the webhook with the manager.
+// Set up the webhook with the manager.
 func (r *Tenant) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(r).

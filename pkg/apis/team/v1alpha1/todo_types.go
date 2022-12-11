@@ -8,7 +8,7 @@ import (
 // Todo condition
 type TodoConditionType string
 
-/// Todo Condition
+// / Todo Condition
 const (
 	TodoDone  TodoConditionType = "Done"
 	TodoSaved TodoConditionType = "Saved"

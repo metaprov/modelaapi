@@ -923,9 +923,9 @@ type SqliteSpec struct {
 	Filename *string `json:"fileName,omitempty" protobuf:"bytes,1,opt,name=fileName"`
 }
 
-////////////////////////////
+// //////////////////////////
 // Cloud connection
-////////////////////////////
+// //////////////////////////
 type AwsS3Spec struct {
 	// Default zone.
 	// +kubebuilder:default:=""

@@ -11,7 +11,7 @@ import (
 // ReportPhase is the current state of a Report
 type ReportPhase string
 
-/// Entity Condition
+// / Entity Condition
 const (
 	ReportPhasePending   ReportPhase = "Pending"
 	ReportPhaseRunning   ReportPhase = "RunningModelsCount"

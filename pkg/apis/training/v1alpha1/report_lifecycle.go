@@ -23,7 +23,7 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-//Set up the webhook with the manager.
+// Set up the webhook with the manager.
 func (report *Report) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(report).
@@ -205,7 +205,7 @@ func (report Report) ManifestURI() string {
 	return fmt.Sprintf("%s/%s-report.yaml", report.RootURI(), report.Name)
 }
 
-//    dataproducts/*/models/*/bin/model.joblib
+// dataproducts/*/models/*/bin/model.joblib
 func (report Report) PdfURI() string {
 	return fmt.Sprintf("%s/%s.pdf", report.RootURI(), report.Name)
 }

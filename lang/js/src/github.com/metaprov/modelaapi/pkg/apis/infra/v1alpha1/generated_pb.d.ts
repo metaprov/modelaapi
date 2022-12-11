@@ -4967,12 +4967,6 @@ export class TenantSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): TenantSpec;
 
-  getBucketname(): string;
-  setBucketname(value: string): TenantSpec;
-
-  getPath(): string;
-  setPath(value: string): TenantSpec;
-
   getPermissions(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec | undefined;
   setPermissions(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec): TenantSpec;
   hasPermissions(): boolean;
@@ -5012,8 +5006,6 @@ export namespace TenantSpec {
     defaultservingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     description: string,
     owner: string,
-    bucketname: string,
-    path: string,
     permissions?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     online?: FeatureStoreSpec.AsObject,

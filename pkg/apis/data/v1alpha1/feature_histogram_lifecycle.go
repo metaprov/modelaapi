@@ -225,13 +225,13 @@ func (fh *FeatureHistogram) MarkUnitTestFailed(msg string, stop bool) {
 		Type:    FeatureHistogramUnitTested,
 		Status:  v1.ConditionFalse,
 		Reason:  string(FeatureHistogramPhaseFailed),
-		Message: "Failed to unit test." + msg,
+		Message: "FailedConditionReason to unit test." + msg,
 	})
 	fh.CreateOrUpdateCond(FeatureHistogramCondition{
 		Type:    FeatureHistogramReady,
 		Status:  v1.ConditionFalse,
 		Reason:  string(FeatureHistogramPhaseFailed),
-		Message: "Failed to unit test." + msg,
+		Message: "FailedConditionReason to unit test." + msg,
 	})
 
 	fh.Status.Phase = FeatureHistogramPhaseFailed

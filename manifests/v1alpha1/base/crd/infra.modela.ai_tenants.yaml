@@ -52,10 +52,6 @@ spec:
           spec:
             description: TenantSpec defines the desired state of a Tenant
             properties:
-              bucketName:
-                default: ""
-                description: The default bucket name for tenant artifacts
-                type: string
               defaultLabRef:
                 description: The reference to the Lab resource that will be used as
                   a default when creating new DataProduct namespaces
@@ -315,10 +311,6 @@ spec:
                 default: no-one
                 description: Owner indicates the name of the Account under the Tenant
                   which created the Tenant (i.e. the Tenant administrator)
-                type: string
-              path:
-                default: ""
-                description: The root path to
                 type: string
               permissions:
                 description: Permissions denotes the specification that determines
