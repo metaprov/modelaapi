@@ -79,7 +79,7 @@ func (run *ModelClassRun) StatusString() string {
 	return string(run.Status.Phase)
 }
 
-//Set up the webhook with the manager.
+// Set up the webhook with the manager.
 func (pl *ModelClassRun) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(pl).

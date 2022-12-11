@@ -7,9 +7,9 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-//=======
+// =======
 // Account
-//========
+// ========
 // +kubebuilder:validation:Enum="user";"group"
 type AccountType string
 
@@ -21,7 +21,7 @@ const (
 // AccountCondition represents the state of the account
 type AccountConditionType string
 
-/// Account Condition
+// / Account Condition
 const (
 	AccountReady AccountConditionType = "Ready"
 	AccountSaved AccountConditionType = "Saved"

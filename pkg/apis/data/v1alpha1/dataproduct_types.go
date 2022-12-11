@@ -15,7 +15,7 @@ import (
 // Condition on the dataset
 type DataProductConditionType string
 
-/// ProductRef Condition
+// / ProductRef Condition
 const (
 	DataProductReady DataProductConditionType = "Ready"
 	DataProductSaved DataProductConditionType = "Saved"

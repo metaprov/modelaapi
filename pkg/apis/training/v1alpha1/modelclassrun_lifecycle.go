@@ -106,9 +106,9 @@ func (mclass *ModelClassRun) MarkCreatingTrainingSetFailed(err string) {
 	mclass.Status.FailureMessage = &err
 }
 
-/////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////
 // Mark Training
-//////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 func (mclass *ModelClassRun) MarkTraining(study string) {
 	mclass.Status.Phase = ModelClassRunPhaseTraining
 	mclass.CreateOrUpdateCond(ModelClassRunCondition{

@@ -16,7 +16,7 @@ import (
 // DataAppConditionType is the condition of a DataApp
 type DataAppConditionType string
 
-/// DataApp Condition
+// / DataApp Condition
 const (
 	DataAppReady DataAppConditionType = "Ready"
 	DataAppSaved DataAppConditionType = "Saved"

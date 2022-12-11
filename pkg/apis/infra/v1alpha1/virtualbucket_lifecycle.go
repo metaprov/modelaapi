@@ -16,7 +16,7 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-//Set up the webhook with the manager.
+// Set up the webhook with the manager.
 func (r *VirtualBucket) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(r).

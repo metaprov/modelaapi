@@ -84,7 +84,7 @@ const (
 // Condition on the dataset
 type DataSourceConditionType string
 
-/// Datastore Condition
+// / Datastore Condition
 const (
 	// Regular state of the store.
 	DatasourceReady DataSourceConditionType = "Ready"

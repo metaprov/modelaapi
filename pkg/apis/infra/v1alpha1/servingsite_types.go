@@ -10,10 +10,10 @@ import (
 // ServingSite
 //==============================================================================
 
-/// ServingSiteConditionType site condition
+// / ServingSiteConditionType site condition
 type ServingSiteConditionType string
 
-/// ServingSite Condition
+// / ServingSite Condition
 const (
 	ServingSiteReady ServingSiteConditionType = "Ready"
 	ServingSiteSaved ServingSiteConditionType = "Saved"

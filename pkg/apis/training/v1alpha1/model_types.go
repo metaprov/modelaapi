@@ -57,7 +57,7 @@ const (
 // ModelConditionType specifies the current condition of a Model
 type ModelConditionType string
 
-/// Model
+// / Model
 const (
 	// ModelInitialized states that the Model is populated with an algorithm and hyper-parameters
 	ModelInitialized ModelConditionType = "Initialized"

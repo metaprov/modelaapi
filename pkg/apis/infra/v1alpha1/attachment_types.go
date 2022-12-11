@@ -9,7 +9,7 @@ import (
 // Attachment condition
 type AttachmentConditionType string
 
-/// Attachment Condition
+// / Attachment Condition
 const (
 	AttachmentSent  AttachmentConditionType = "Sent"
 	AttachmentSaved AttachmentConditionType = "Saved"

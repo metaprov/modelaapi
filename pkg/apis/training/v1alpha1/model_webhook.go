@@ -111,7 +111,7 @@ func (model *Model) Default() {
 // validation
 var _ webhook.Validator = &Model{}
 
-//Set up the webhook with the manager.
+// Set up the webhook with the manager.
 func (model *Model) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(model).

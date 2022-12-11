@@ -11,10 +11,10 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-/// RunBook conditions
+// / RunBook conditions
 type RunBookConditionType string
 
-/// RunBookReady Condition
+// / RunBookReady Condition
 const (
 	RunBookReady RunBookConditionType = "Ready"
 	RunBookSaved RunBookConditionType = "Saved"

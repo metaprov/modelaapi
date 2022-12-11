@@ -31,7 +31,7 @@ const (
 // Condition on the dataset
 type DatasetConditionType string
 
-/// DatasetName Condition
+// / DatasetName Condition
 const (
 	DatasetReported    DatasetConditionType = "Reported"
 	DatasetUnitTested  DatasetConditionType = "UnitTested"

@@ -14,7 +14,7 @@ import (
 // Condition of the data pipeline
 type DataPipelineConditionType string
 
-/// DataPipeline Condition
+// / DataPipeline Condition
 const (
 	DataPipelineReady DataPipelineConditionType = "Ready"
 	DataPipelineSaved DataPipelineConditionType = "Saved"
@@ -60,7 +60,7 @@ type DataPipelineList struct {
 	Items           []DataPipeline `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-//DataPipelineSpec defines the desired state of a DataPipeline
+// DataPipelineSpec defines the desired state of a DataPipeline
 type DataPipelineSpec struct {
 	// VersionName is the data product version of the data pipeline
 	// +kubebuilder:default:=""

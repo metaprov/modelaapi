@@ -17,7 +17,7 @@ type TenantType string
 
 type TenantConditionType string
 
-/// Tenant Condition
+// / Tenant Condition
 const (
 	TenantReady TenantConditionType = "Ready"
 	TenantSaved TenantConditionType = "Saved"
