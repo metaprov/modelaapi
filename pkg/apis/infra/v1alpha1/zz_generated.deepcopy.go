@@ -5016,6 +5016,16 @@ func (in *TenantSpec) DeepCopyInto(out *TenantSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.BucketName != nil {
+		in, out := &in.BucketName, &out.BucketName
+		*out = new(string)
+		**out = **in
+	}
+	if in.Path != nil {
+		in, out := &in.Path, &out.Path
+		*out = new(string)
+		**out = **in
+	}
 	in.Permissions.DeepCopyInto(&out.Permissions)
 	in.Notification.DeepCopyInto(&out.Notification)
 	out.Online = in.Online
