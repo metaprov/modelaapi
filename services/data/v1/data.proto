@@ -84,11 +84,13 @@ message DsRunRecipeRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion     version       = 2;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource             datasource    = 3;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset                dataset       = 4;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            connection    = 5;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket        = 6;
-    map<string,bytes>                                                           secret        = 7;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe                 recipe        = 8;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun              reciperun     = 9;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket        = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection = 6;
+    map<string,bytes>                                                           secretConnection  = 7;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 8;
+    map<string,bytes>                                                           dbSecret  = 9;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe                 recipe        = 10;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun              reciperun     = 11;
 }
 
 message DsRunRecipeResponse {
@@ -100,10 +102,12 @@ message DsCreateRecipeProfileRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion     version       = 2;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource             datasource    = 3;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset                dataset       = 4;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            connection    = 5;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket        = 6;
-    map<string,bytes>                                                           secret        = 7;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe                 recipe        = 8;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket        = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection = 6;
+    map<string,bytes>                                                           secretConnection  = 7;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 8;
+    map<string,bytes>                                                           dbSecret  = 9;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe                 recipe        = 10;
 }
 
 message DsCreateRecipeProfileResponse {
@@ -122,10 +126,12 @@ message DsCreateDatasetProfileRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
-    map<string,bytes> secret = 7;
-    bool              group  = 8; 
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection = 6;
+    map<string,bytes>                                                           storageSecret  = 7;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 8;
+    map<string,bytes>                                                           dbSecret  = 9;
+    bool              group  = 10;
 }
 
 message DsCreateDatasetProfileResponse {
@@ -146,6 +152,9 @@ message DsCreateModelProfileRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 8;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
     map<string,bytes> secret = 10;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 11;
+    map<string,bytes>                                                           dbSecret  = 12;
+
 }
 
 message DsCreateModelProfileResponse {
@@ -170,6 +179,9 @@ message DsMergeForecastFileRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
     map<string,bytes> secret = 10;
     repeated string forecasts = 11;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 12;
+    map<string,bytes>                                                           dbSecret  = 13;
+
 }
  
 message DsMergeForecastFileResponse {
@@ -189,6 +201,9 @@ message DsCreateStudyProfileRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 7;
     repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model models = 8;
     map<string,bytes> secret = 9;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 10;
+    map<string,bytes>                                                           dbSecret  = 11;
+
 }
 
 message DsCreateStudyProfileResponse {
@@ -224,6 +239,9 @@ message RunTestSuiteRequest {
         github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor refPredictor = 25;
     }
     bool group = 26;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 27;
+    map<string,bytes>                                                           dbSecret  = 28;
+
 }
 
 message RunTestSuiteResponse{
@@ -239,6 +257,9 @@ message DsGenerateDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 5;
     map<string,bytes> secret = 6;
     int32 rows = 7;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 8;
+    map<string,bytes>                                                           dbSecret  = 9;
+
 }
 
 message DsGenerateDatasetResponse {
@@ -256,7 +277,10 @@ message DsSplitDatasetRequest {
     map<string,bytes> secret = 8;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset trainingDataset = 9;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset testingDataset = 10;
-    bool    group  = 11; 
+    bool    group  = 11;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 12;
+    map<string,bytes>                                                           dbSecret  = 13;
+
 
 }
 
@@ -320,6 +344,9 @@ message DsCreateColumnProfileRequest {
     map<string,bytes> secret = 7;
     string columnType     = 8;
     string columnName     = 9;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 10;
+    map<string,bytes>                                                           dbSecret  = 11;
+
 }
 
 message DsCreateColumnProfileResponse {
@@ -337,6 +364,9 @@ message GroupByDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
     map<string,bytes> secret = 7;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 8;
+    map<string,bytes>                                                           dbSecret  = 9;
+
 }
 
 message GroupByDatasetResponse {
@@ -344,21 +374,6 @@ message GroupByDatasetResponse {
 }
 
 
-message DsDatasetProfileRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource        = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 5;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 6;
-    map<string,bytes> secret = 7;
-    bool    quick         = 8;
-    bool    group  = 9; 
-}
-
-message DsDatasetProfileResponse {
-    github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profile = 1;
-}
 
 message DsInferSchemaRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 1;
@@ -380,7 +395,10 @@ message DsGetTableViewRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation             location   = 3;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection              connection = 4;
     map<string,bytes> secret = 5;
-    
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 6;
+    map<string,bytes>                                                           dbSecret  = 7;
+
+
 }
 
 message DsGetTableViewResponse {
@@ -416,16 +434,23 @@ message CreateForecastReportRequest {
     map<string,bytes>     secret     = 8;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket          = 9;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report              report = 10;
-    bool                                                                         group  = 11; 
+    bool                                                                         group  = 11;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 12;
+    map<string,bytes>                                                           dbSecret  = 13;
+
+
 }
 
 message CreateSummaryReportRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion     version = 2;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection            = 7;
-    map<string,bytes>     secret     = 8;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket          = 9;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report              report = 10;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection            = 3;
+    map<string,bytes>     secret     = 4;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket          = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report              report = 6;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 7;
+    map<string,bytes>                                                           dbSecret  = 8;
+
 }
 
 
@@ -442,7 +467,10 @@ message CreateDatasetReportRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket   = 6;
     map<string,bytes>     secret     = 7;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report              report = 8;
-    bool                                                                         group  = 9; 
+    bool                                                                         group  = 9;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 10;
+    map<string,bytes>                                                           dbSecret  = 11;
+
 }
 
 
@@ -457,6 +485,9 @@ message CreateStudyReportRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection        = 8;
     map<string,bytes>     secret     = 9;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report              report = 10;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 11;
+    map<string,bytes>                                                           dbSecret  = 12;
+
 }
 
 

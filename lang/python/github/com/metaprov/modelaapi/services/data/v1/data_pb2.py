@@ -21,7 +21,7 @@ from github.com.metaprov.modelaapi.services.common.v1 import common_pb2 as githu
 from k8s.io.api.core.v1 import generated_pb2 as k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n9github.com/metaprov/modelaapi/services/data/v1/data.proto\x12.github.com.metaprov.modelaapi.services.data.v1\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1aGgithub.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\x1a\"k8s.io/api/core/v1/generated.proto\"\xfd\x03\n\x11\x44sReadFileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12]\n\x06secret\x18\x06 \x03(\x0b\x32M.github.com.metaprov.modelaapi.services.data.v1.DsReadFileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x83\x04\n\x14\x44sReadFeatureRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x04 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12`\n\x06secret\x18\x06 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.data.v1.DsReadFeatureRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xcf\x04\n\x12\x44sWriteFileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x07\x63ontent\x18\x03 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12^\n\x06secret\x18\x07 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xd0\x02\n\x12\x44sReadAudioRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12^\n\x06secret\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.data.v1.DsReadAudioRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x89\x04\n\x17\x44sReadTextCorpusRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x63\n\x06secret\x18\x05 \x03(\x0b\x32S.github.com.metaprov.modelaapi.services.data.v1.DsReadTextCorpusRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xd8\x04\n\x17\x44sReadFromStoreResponse\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12M\n\x06result\x18\x03 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x04 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x63\n\x06secret\x18\x06 \x03(\x0b\x32S.github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"p\n\x18\x44sRunDataPipelineRequest\x12T\n\x08pipeline\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\"j\n\x19\x44sRunDataPipelineResponse\x12M\n\x06result\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\"\xc7\x06\n\x12\x44sRunRecipeRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12^\n\x06secret\x18\x07 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.SecretEntry\x12L\n\x06recipe\x18\x08 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\x12R\n\treciperun\x18\t \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"c\n\x13\x44sRunRecipeResponse\x12L\n\x06result\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\"\x87\x06\n\x1c\x44sCreateRecipeProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.SecretEntry\x12L\n\x06recipe\x18\x08 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"l\n\x1d\x44sCreateRecipeProfileResponse\x12K\n\x06result\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView\"\x14\n\x12\x44\x61taSourceResponse\"\x11\n\x0f\x44\x61tasetResponse\"\xca\x05\n\x1d\x44sCreateDatasetProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12i\n\x06secret\x18\x07 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.SecretEntry\x12\r\n\x05group\x18\x08 \x01(\x08\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x80\x01\n\x1e\x44sCreateDatasetProfileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12Q\n\x07profile\x18\x02 \x01(\x0b\x32@.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile\"\xd7\x06\n\x1b\x44sCreateModelProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12g\n\x06secret\x18\n \x03(\x0b\x32W.github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"+\n\x1c\x44sCreateModelProfileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xe8\x06\n\x1a\x44sMergeForecastFileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x66\n\x06secret\x18\n \x03(\x0b\x32V.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.SecretEntry\x12\x11\n\tforecasts\x18\x0b \x03(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"*\n\x1b\x44sMergeForecastFileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xd8\x06\n\x1b\x44sCreateStudyProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12O\n\x06models\x18\x08 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12g\n\x06secret\x18\t \x03(\x0b\x32W.github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"+\n\x1c\x44sCreateStudyProfileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xe1\x0f\n\x13RunTestSuiteRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x08 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12_\n\x06secret\x18\n \x03(\x0b\x32O.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.SecretEntry\x12Q\n\x05suite\x18\x0b \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite\x12S\n\nsutDataset\x18\x0c \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetH\x00\x12S\n\x08sutStudy\x18\r \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyH\x00\x12S\n\x08sutModel\x18\x0e \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelH\x00\x12Q\n\tsutRecipe\x18\x0f \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeH\x00\x12^\n\x0csutHistogram\x18\x10 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramH\x00\x12\\\n\x0csutPredictor\x18\x11 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorH\x00\x12S\n\nrefDataset\x18\x14 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetH\x01\x12S\n\x08refStudy\x18\x15 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyH\x01\x12S\n\x08refModel\x18\x16 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelH\x01\x12Q\n\trefRecipe\x18\x17 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeH\x01\x12^\n\x0crefHistogram\x18\x18 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramH\x01\x12\\\n\x0crefPredictor\x18\x19 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorH\x01\x12\r\n\x05group\x18\x1a \x01(\x08\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x42\x0b\n\tsut_oneofB\t\n\x07sut_ref\"p\n\x14RunTestSuiteResponse\x12X\n\x06result\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult\"\xef\x04\n\x18\x44sGenerateDatasetRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x64\n\x06secret\x18\x06 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.SecretEntry\x12\x0c\n\x04rows\x18\x07 \x01(\x05\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"(\n\x19\x44sGenerateDatasetResponse\x12\x0b\n\x03key\x18\x01 \x01(\t\"\xb9\x07\n\x15\x44sSplitDatasetRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x61\n\x06secret\x18\x08 \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.SecretEntry\x12V\n\x0ftrainingDataset\x18\t \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\x0etestingDataset\x18\n \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12\r\n\x05group\x18\x0b \x01(\x08\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xa8\x01\n\x16\x44sSplitDatasetResponse\x12\x10\n\x08training\x18\x01 \x01(\x05\x12\x0f\n\x07testing\x18\x02 \x01(\x05\x12\x12\n\nvalidation\x18\x03 \x01(\x05\x12\x15\n\rtraining_hash\x18\x04 \x01(\t\x12\x14\n\x0ctesting_hash\x18\x05 \x01(\t\x12\x17\n\x0fvalidation_hash\x18\x06 \x01(\t\x12\x11\n\tindexFile\x18\x07 \x01(\t\"\xc8\x05\n\x1c\x44sSplitDatasetToRungsRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest.SecretEntry\x12\r\n\x05rungs\x18\x08 \x01(\x05\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x1f\n\x1d\x44sSplitDatasetToRungsResponse\"\xa4\x07\n\x12\x44sTransformRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12^\n\x06secret\x18\x08 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.data.v1.DsTransformRequest.SecretEntry\x12V\n\x0ftrainingDataset\x18\t \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\x0etestingDataset\x18\n \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"[\n\x13\x44sTransformResponse\x12\x15\n\rtraining_hash\x18\x04 \x01(\t\x12\x14\n\x0ctesting_hash\x18\x05 \x01(\t\x12\x17\n\x0fvalidation_hash\x18\x06 \x01(\t\"\xe1\x05\n\x1c\x44sCreateColumnProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest.SecretEntry\x12\x12\n\ncolumnType\x18\x08 \x01(\t\x12\x12\n\ncolumnName\x18\t \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"s\n\x1d\x44sCreateColumnProfileResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x44\n\x04plot\x18\x02 \x01(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\"\xab\x05\n\x15GroupByDatasetRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x61\n\x06secret\x18\x07 \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.data.v1.GroupByDatasetRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"%\n\x16GroupByDatasetResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xcd\x05\n\x17\x44sDatasetProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x63\n\x06secret\x18\x07 \x03(\x0b\x32S.github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.SecretEntry\x12\r\n\x05quick\x18\x08 \x01(\x08\x12\r\n\x05group\x18\t \x01(\x08\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"m\n\x18\x44sDatasetProfileResponse\x12Q\n\x07profile\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile\"\x80\x04\n\x14\x44sInferSchemaRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\x08location\x18\x02 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12`\n\x06secret\x18\x05 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"j\n\x15\x44sInferSchemaResponse\x12Q\n\x07profile\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile\"\x88\x04\n\x15\x44sGetTableViewRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12Z\n\x08\x66latfile\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec\x12T\n\x08location\x18\x03 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x61\n\x06secret\x18\x05 \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"h\n\x16\x44sGetTableViewResponse\x12N\n\ttableview\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView\"\xb2\x07\n\x18\x43reateModelReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x64\n\x06secret\x18\x08 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.SecretEntry\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12P\n\x06report\x18\n \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\x12\r\n\x05group\x18\x0b \x01(\x08\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xbb\x07\n\x1b\x43reateForecastReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12Q\n\x08\x66orecast\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12g\n\x06secret\x18\x08 \x03(\x0b\x32W.github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.SecretEntry\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12P\n\x06report\x18\n \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\x12\r\n\x05group\x18\x0b \x01(\x08\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xe1\x04\n\x1a\x43reateSummaryReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x66\n\x06secret\x18\x08 \x03(\x0b\x32V.github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.SecretEntry\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12P\n\x06report\x18\n \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"#\n\x14\x43reateReportResponse\x12\x0b\n\x03pdf\x18\x01 \x01(\x0c\"\x96\x06\n\x1a\x43reateDatasetReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x66\n\x06secret\x18\x07 \x03(\x0b\x32V.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.SecretEntry\x12P\n\x06report\x18\x08 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\x12\r\n\x05group\x18\t \x01(\x08\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xa8\x07\n\x18\x43reateStudyReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12S\n\x06models\x18\x06 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList\x12T\n\x06\x62ucket\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x64\n\x06secret\x18\t \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.SecretEntry\x12P\n\x06report\x18\n \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xc4\x04\n\x0f\x41skModelRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12\x0e\n\x06\x62udget\x18\x06 \x01(\x05\x12\x11\n\tdefaultHP\x18\x07 \x01(\x08\x12\x11\n\talgorithm\x18\x08 \x01(\t\x12V\n\nalgorithms\x18\t \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm\"\xc6\x03\n\x1fGetTimeSeriesDatasetKeysRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\"0\n GetTimeSeriesDatasetKeysResponse\x12\x0c\n\x04keys\x18\x01 \x03(\t\"\xa4\x04\n\x17\x41skForecastModelRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12\x0c\n\x04keys\x18\x06 \x03(\t\x12V\n\nalgorithms\x18\x07 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm\"j\n\x18\x41skForecastModelResponse\x12N\n\x05model\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\xe2\x04\n\x12\x41skEnsembleRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12O\n\x06models\x18\x06 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12V\n\nalgorithms\x18\x07 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm\"e\n\x13\x41skEnsembleResponse\x12N\n\x05model\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\xb0\x04\n\x12\x41skBaselineRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12\x10\n\x08\x61lgnames\x18\x06 \x03(\t\x12\x0b\n\x03\x61ll\x18\x07 \x01(\x08\x12V\n\nalgorithms\x18\x08 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm\"e\n\x13\x41skBaselineResponse\x12N\n\x05model\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\xb7\x04\n\x1a\x41skAllModelsForTaskRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12\x0e\n\x06\x62udget\x18\x06 \x01(\x05\x12\x0c\n\x04task\x18\x07 \x01(\t\x12V\n\nalgorithms\x18\x08 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm\"m\n\x1b\x41skAllModelsForTaskResponse\x12N\n\x05model\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\x97\x04\n\x10TellModelRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12\x0e\n\x06\x66\x61iled\x18\x07 \x01(\x08\"#\n\x11TellModelResponse\x12\x0e\n\x06pruned\x18\x01 \x01(\x08\"\x13\n\x11\x44sShutdownRequest\"\x14\n\x12\x44sShutdownResponse\"\xda\x02\n\x17\x44sTestConnectionRequest\x12U\n\nconnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x63\n\x06secret\x18\x03 \x03(\x0b\x32S.github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"7\n\x18\x44sTestConnectionResponse\x12\x0e\n\x06status\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\t\"\xf7\x05\n\x13\x44sStudyEndedRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12_\n\x06secret\x18\x08 \x03(\x0b\x32O.github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x16\n\x14\x44sStudyEndedResponse\"\xfd\x05\n\x16SaveOptimizerDBRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x62\n\x06secret\x18\x08 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x19\n\x17SaveOptimizerDBResponse\"\x80\x02\n\x15\x44sGetDatabasesRequest\x12U\n\nconnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x61\n\x06secret\x18\x02 \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"+\n\x16\x44sGetDatabasesResponse\x12\x11\n\tdatabases\x18\x01 \x03(\t\"\x90\x02\n\x12\x44sGetTablesRequest\x12U\n\nconnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12^\n\x06secret\x18\x02 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.SecretEntry\x12\x14\n\x0c\x64\x61tabaseName\x18\x03 \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"%\n\x13\x44sGetTablesResponse\x12\x0e\n\x06tables\x18\x01 \x03(\t\"\x9f\x02\n\x13\x44sExecuteSqlRequest\x12U\n\nconnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12_\n\x06secret\x18\x02 \x03(\x0b\x32O.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.SecretEntry\x12\x14\n\x0c\x64\x61tabaseName\x18\x03 \x01(\t\x12\x0b\n\x03sql\x18\x04 \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"f\n\x14\x44sExecuteSqlResponse\x12N\n\ttableview\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView\"\xb9\x07\n\x11\x44sSnapshotRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12W\n\x0c\x64\x62\x63onnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x61\n\x08\x64\x62secret\x18\x06 \x03(\x0b\x32O.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.DbsecretEntry\x12\\\n\x11storageconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12k\n\rstoragesecret\x18\x08 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.StoragesecretEntry\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x0b\n\x03key\x18\n \x01(\t\x1a/\n\rDbsecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a\x34\n\x12StoragesecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x14\n\x12\x44sSnapshotResponse\"b\n\x10\x41skModelResponse\x12N\n\x05model\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\x95\x08\n\x16GenTrainingDataRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12\\\n\x11storageConnection\x18\x03 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12[\n\rstorageBucket\x18\x04 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12p\n\rstorageSecret\x18\x05 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.StorageSecretEntry\x12W\n\x0c\x64\x62\x43onnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x66\n\x08\x64\x62Secret\x18\x07 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.DbSecretEntry\x12S\n\x05model\x18\x08 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12N\n\x08\x65ntities\x18\t \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\x12R\n\x06groups\x18\n \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\x1a\x34\n\x12StorageSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\'\n\x17GenTrainingDataResponse\x12\x0c\n\x04path\x18\x01 \x01(\t\"\xe8\x06\n\x16SyncOnlineStoreRequest\x12\\\n\x11storageConnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12[\n\rstorageBucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12p\n\rstorageSecret\x18\x03 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.StorageSecretEntry\x12W\n\x0c\x64\x62\x43onnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x66\n\x08\x64\x62Secret\x18\x05 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.DbSecretEntry\x12S\n\x05model\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12N\n\x02\x66g\x18\x07 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\x12T\n\x08location\x18\x08 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\x1a\x34\n\x12StorageSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x19\n\x17SyncOnlineStoreResponse\"\xfa\x06\n\x1cGenOnlineStoreDatasetRequest\x12\\\n\x11storageConnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12[\n\rstorageBucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12v\n\rstorageSecret\x18\x03 \x03(\x0b\x32_.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.StorageSecretEntry\x12W\n\x0c\x64\x62\x43onnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12l\n\x08\x64\x62Secret\x18\x05 \x03(\x0b\x32Z.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.DbSecretEntry\x12S\n\x05model\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12N\n\x02\x66g\x18\x07 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\x12T\n\x08location\x18\x08 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\x1a\x34\n\x12StorageSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"u\n\x1dGenOnlineStoreDatasetResponse\x12T\n\x08location\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\"\x8d\x08\n\x13\x42\x61tchPredictRequest\x12\\\n\x11storageConnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12[\n\rstorageBucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12m\n\rstorageSecret\x18\x03 \x03(\x0b\x32V.github.com.metaprov.modelaapi.services.data.v1.BatchPredictRequest.StorageSecretEntry\x12W\n\x0c\x64\x62\x43onnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x63\n\x08\x64\x62Secret\x18\x05 \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.data.v1.BatchPredictRequest.DbSecretEntry\x12X\n\nmodelclass\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12N\n\x05model\x18\x07 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12N\n\x08\x65ntities\x18\x08 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\x12R\n\x06groups\x18\t \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\x12Y\n\nprediction\x18\n \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\x1a\x34\n\x12StorageSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"$\n\x14\x42\x61tchPredictResponse\x12\x0c\n\x04rows\x18\x01 \x01(\x05\x32\x89?\n\x0b\x44\x61taService\x12\x98\x01\n\x08ReadFile\x12\x41.github.com.metaprov.modelaapi.services.data.v1.DsReadFileRequest\x1aG.github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse\"\x00\x12\x9e\x01\n\x0bReadFeature\x12\x44.github.com.metaprov.modelaapi.services.data.v1.DsReadFeatureRequest\x1aG.github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse\"\x00\x12\x9a\x01\n\tReadAudio\x12\x42.github.com.metaprov.modelaapi.services.data.v1.DsReadAudioRequest\x1aG.github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse\"\x00\x12\xa8\x01\n\x0fRunDataPipeline\x12H.github.com.metaprov.modelaapi.services.data.v1.DsRunDataPipelineRequest\x1aI.github.com.metaprov.modelaapi.services.data.v1.DsRunDataPipelineResponse\"\x00\x12\x96\x01\n\tRunRecipe\x12\x42.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest\x1a\x43.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeResponse\"\x00\x12\x9a\x01\n\tWriteFile\x12\x42.github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest\x1aG.github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse\"\x00\x12\xa8\x01\n\x0fGenerateDataset\x12H.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest\x1aI.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse\"\x00\x12\x9f\x01\n\x0cSplitDataset\x12\x45.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest\x1a\x46.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse\"\x00\x12\x96\x01\n\tTransform\x12\x42.github.com.metaprov.modelaapi.services.data.v1.DsTransformRequest\x1a\x43.github.com.metaprov.modelaapi.services.data.v1.DsTransformResponse\"\x00\x12\xb4\x01\n\x13\x43reateColumnProfile\x12L.github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest\x1aM.github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileResponse\"\x00\x12\x9c\x01\n\x0bInferSchema\x12\x44.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest\x1a\x45.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaResponse\"\x00\x12\x9f\x01\n\x0cGetTableView\x12\x45.github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest\x1a\x46.github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewResponse\"\x00\x12\xb4\x01\n\x13SplitDatasetToRungs\x12L.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest\x1aM.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsResponse\"\x00\x12\xb7\x01\n\x14\x43reateDatasetProfile\x12M.github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest\x1aN.github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileResponse\"\x00\x12\xb1\x01\n\x12\x43reateModelProfile\x12K.github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest\x1aL.github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileResponse\"\x00\x12\xb1\x01\n\x12\x43reateStudyProfile\x12K.github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest\x1aL.github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileResponse\"\x00\x12\xb4\x01\n\x13\x43reateRecipeProfile\x12L.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest\x1aM.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileResponse\"\x00\x12\xa5\x01\n\x11\x43reateModelReport\x12H.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse\"\x00\x12\xa5\x01\n\x11\x43reateStudyReport\x12H.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse\"\x00\x12\xa9\x01\n\x13\x43reateDatasetReport\x12J.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse\"\x00\x12\xab\x01\n\x14\x43reateForecastReport\x12K.github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse\"\x00\x12\xa9\x01\n\x13\x43reateSummaryReport\x12J.github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse\"\x00\x12\x8c\x01\n\x05\x41skFE\x12?.github.com.metaprov.modelaapi.services.data.v1.AskModelRequest\x1a@.github.com.metaprov.modelaapi.services.data.v1.AskModelResponse\"\x00\x12\x98\x01\n\x0b\x41skBaseline\x12\x42.github.com.metaprov.modelaapi.services.data.v1.AskBaselineRequest\x1a\x43.github.com.metaprov.modelaapi.services.data.v1.AskBaselineResponse\"\x00\x12\x98\x01\n\x0b\x41skEnsemble\x12\x42.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleRequest\x1a\x43.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse\"\x00\x12\xa7\x01\n\x10\x41skForecastModel\x12G.github.com.metaprov.modelaapi.services.data.v1.AskForecastModelRequest\x1aH.github.com.metaprov.modelaapi.services.data.v1.AskForecastModelResponse\"\x00\x12\x8f\x01\n\x08\x41skModel\x12?.github.com.metaprov.modelaapi.services.data.v1.AskModelRequest\x1a@.github.com.metaprov.modelaapi.services.data.v1.AskModelResponse\"\x00\x12\xb0\x01\n\x13\x41skAllModelsForTask\x12J.github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskRequest\x1aK.github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskResponse\"\x00\x12\x99\x01\n\x10TellPartialModel\x12@.github.com.metaprov.modelaapi.services.data.v1.TellModelRequest\x1a\x41.github.com.metaprov.modelaapi.services.data.v1.TellModelResponse\"\x00\x12\x92\x01\n\tTellModel\x12@.github.com.metaprov.modelaapi.services.data.v1.TellModelRequest\x1a\x41.github.com.metaprov.modelaapi.services.data.v1.TellModelResponse\"\x00\x12\xae\x01\n\x11MergeForecastFile\x12J.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest\x1aK.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileResponse\"\x00\x12\xa7\x01\n\x10\x44sTestConnection\x12G.github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest\x1aH.github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionResponse\"\x00\x12\x93\x01\n\x08ShutDown\x12\x41.github.com.metaprov.modelaapi.services.data.v1.DsShutdownRequest\x1a\x42.github.com.metaprov.modelaapi.services.data.v1.DsShutdownResponse\"\x00\x12\x99\x01\n\nStudyEnded\x12\x43.github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedResponse\"\x00\x12\xa4\x01\n\x0fSaveOptimizerDB\x12\x46.github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest\x1aG.github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBResponse\"\x00\x12\x9f\x01\n\x0cGetDatabases\x12\x45.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest\x1a\x46.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesResponse\"\x00\x12\x96\x01\n\tGetTables\x12\x42.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest\x1a\x43.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesResponse\"\x00\x12\x99\x01\n\nExecuteSql\x12\x43.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlResponse\"\x00\x12\x93\x01\n\x08Snapshot\x12\x41.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest\x1a\x42.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse\"\x00\x12\x9e\x01\n\x0fUnitTestDataset\x12\x43.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteResponse\"\x00\x12\x9c\x01\n\rUnitTestModel\x12\x43.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteResponse\"\x00\x12\x9f\x01\n\x10UnitTestFeedback\x12\x43.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteResponse\"\x00\x12\xa7\x01\n\x18UnitTestFeatureHistogram\x12\x43.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteResponse\"\x00\x12\xa0\x01\n\x11UnitTestPredictor\x12\x43.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteResponse\"\x00\x12\xa1\x01\n\x0eGroupByDataset\x12\x45.github.com.metaprov.modelaapi.services.data.v1.GroupByDatasetRequest\x1a\x46.github.com.metaprov.modelaapi.services.data.v1.GroupByDatasetResponse\"\x00\x12\xa4\x01\n\x0fSyncOnlineStore\x12\x46.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest\x1aG.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreResponse\"\x00\x12\xa4\x01\n\x0fGenTrainingData\x12\x46.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest\x1aG.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataResponse\"\x00\x12\xb6\x01\n\x15GenOnlineStoreDataset\x12L.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest\x1aM.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetResponse\"\x00\x12\x9b\x01\n\x0c\x42\x61tchPredict\x12\x43.github.com.metaprov.modelaapi.services.data.v1.BatchPredictRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.BatchPredictResponse\"\x00\x42\x30Z.github.com/metaprov/modelaapi/services/data/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n9github.com/metaprov/modelaapi/services/data/v1/data.proto\x12.github.com.metaprov.modelaapi.services.data.v1\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1aGgithub.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\x1a\"k8s.io/api/core/v1/generated.proto\"\xfd\x03\n\x11\x44sReadFileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12]\n\x06secret\x18\x06 \x03(\x0b\x32M.github.com.metaprov.modelaapi.services.data.v1.DsReadFileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x83\x04\n\x14\x44sReadFeatureRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x04 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12`\n\x06secret\x18\x06 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.data.v1.DsReadFeatureRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xcf\x04\n\x12\x44sWriteFileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x07\x63ontent\x18\x03 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12^\n\x06secret\x18\x07 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xd0\x02\n\x12\x44sReadAudioRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12^\n\x06secret\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.data.v1.DsReadAudioRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x89\x04\n\x17\x44sReadTextCorpusRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x63\n\x06secret\x18\x05 \x03(\x0b\x32S.github.com.metaprov.modelaapi.services.data.v1.DsReadTextCorpusRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xd8\x04\n\x17\x44sReadFromStoreResponse\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12M\n\x06result\x18\x03 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x04 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x63\n\x06secret\x18\x06 \x03(\x0b\x32S.github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"p\n\x18\x44sRunDataPipelineRequest\x12T\n\x08pipeline\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline\"j\n\x19\x44sRunDataPipelineResponse\x12M\n\x06result\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\"\xda\x08\n\x12\x44sRunRecipeRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\\\n\x11storageConnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12r\n\x10secretConnection\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.SecretConnectionEntry\x12W\n\x0c\x64\x62\x43onnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x62\n\x08\x64\x62Secret\x18\t \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.DbSecretEntry\x12L\n\x06recipe\x18\n \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\x12R\n\treciperun\x18\x0b \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun\x1a\x37\n\x15SecretConnectionEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"c\n\x13\x44sRunRecipeResponse\x12L\n\x06result\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\"\xa4\x08\n\x1c\x44sCreateRecipeProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\\\n\x11storageConnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12|\n\x10secretConnection\x18\x07 \x03(\x0b\x32\x62.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.SecretConnectionEntry\x12W\n\x0c\x64\x62\x43onnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12l\n\x08\x64\x62Secret\x18\t \x03(\x0b\x32Z.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.DbSecretEntry\x12L\n\x06recipe\x18\n \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\x1a\x37\n\x15SecretConnectionEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"l\n\x1d\x44sCreateRecipeProfileResponse\x12K\n\x06result\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView\"\x14\n\x12\x44\x61taSourceResponse\"\x11\n\x0f\x44\x61tasetResponse\"\xdf\x07\n\x1d\x44sCreateDatasetProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\\\n\x11storageConnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12w\n\rstorageSecret\x18\x07 \x03(\x0b\x32`.github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.StorageSecretEntry\x12W\n\x0c\x64\x62\x43onnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12m\n\x08\x64\x62Secret\x18\t \x03(\x0b\x32[.github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.DbSecretEntry\x12\r\n\x05group\x18\n \x01(\x08\x1a\x34\n\x12StorageSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x80\x01\n\x1e\x44sCreateDatasetProfileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12Q\n\x07profile\x18\x02 \x01(\x0b\x32@.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile\"\xce\x08\n\x1b\x44sCreateModelProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12g\n\x06secret\x18\n \x03(\x0b\x32W.github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest.SecretEntry\x12W\n\x0c\x64\x62\x43onnection\x18\x0b \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12k\n\x08\x64\x62Secret\x18\x0c \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest.DbSecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"+\n\x1c\x44sCreateModelProfileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xde\x08\n\x1a\x44sMergeForecastFileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x66\n\x06secret\x18\n \x03(\x0b\x32V.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.SecretEntry\x12\x11\n\tforecasts\x18\x0b \x03(\t\x12W\n\x0c\x64\x62\x43onnection\x18\x0c \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12j\n\x08\x64\x62Secret\x18\r \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.DbSecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"*\n\x1b\x44sMergeForecastFileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xcf\x08\n\x1b\x44sCreateStudyProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12O\n\x06models\x18\x08 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12g\n\x06secret\x18\t \x03(\x0b\x32W.github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.SecretEntry\x12W\n\x0c\x64\x62\x43onnection\x18\n \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12k\n\x08\x64\x62Secret\x18\x0b \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.DbSecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"+\n\x1c\x44sCreateStudyProfileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xd0\x11\n\x13RunTestSuiteRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x08 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12_\n\x06secret\x18\n \x03(\x0b\x32O.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.SecretEntry\x12Q\n\x05suite\x18\x0b \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite\x12S\n\nsutDataset\x18\x0c \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetH\x00\x12S\n\x08sutStudy\x18\r \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyH\x00\x12S\n\x08sutModel\x18\x0e \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelH\x00\x12Q\n\tsutRecipe\x18\x0f \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeH\x00\x12^\n\x0csutHistogram\x18\x10 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramH\x00\x12\\\n\x0csutPredictor\x18\x11 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorH\x00\x12S\n\nrefDataset\x18\x14 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetH\x01\x12S\n\x08refStudy\x18\x15 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyH\x01\x12S\n\x08refModel\x18\x16 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelH\x01\x12Q\n\trefRecipe\x18\x17 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeH\x01\x12^\n\x0crefHistogram\x18\x18 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramH\x01\x12\\\n\x0crefPredictor\x18\x19 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorH\x01\x12\r\n\x05group\x18\x1a \x01(\x08\x12W\n\x0c\x64\x62\x43onnection\x18\x1b \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x63\n\x08\x64\x62Secret\x18\x1c \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.DbSecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x42\x0b\n\tsut_oneofB\t\n\x07sut_ref\"p\n\x14RunTestSuiteResponse\x12X\n\x06result\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult\"\xe3\x06\n\x18\x44sGenerateDatasetRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x64\n\x06secret\x18\x06 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.SecretEntry\x12\x0c\n\x04rows\x18\x07 \x01(\x05\x12W\n\x0c\x64\x62\x43onnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12h\n\x08\x64\x62Secret\x18\t \x03(\x0b\x32V.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.DbSecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"(\n\x19\x44sGenerateDatasetResponse\x12\x0b\n\x03key\x18\x01 \x01(\t\"\xaa\t\n\x15\x44sSplitDatasetRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x61\n\x06secret\x18\x08 \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.SecretEntry\x12V\n\x0ftrainingDataset\x18\t \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\x0etestingDataset\x18\n \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12\r\n\x05group\x18\x0b \x01(\x08\x12W\n\x0c\x64\x62\x43onnection\x18\x0c \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x65\n\x08\x64\x62Secret\x18\r \x03(\x0b\x32S.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.DbSecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xa8\x01\n\x16\x44sSplitDatasetResponse\x12\x10\n\x08training\x18\x01 \x01(\x05\x12\x0f\n\x07testing\x18\x02 \x01(\x05\x12\x12\n\nvalidation\x18\x03 \x01(\x05\x12\x15\n\rtraining_hash\x18\x04 \x01(\t\x12\x14\n\x0ctesting_hash\x18\x05 \x01(\t\x12\x17\n\x0fvalidation_hash\x18\x06 \x01(\t\x12\x11\n\tindexFile\x18\x07 \x01(\t\"\xc8\x05\n\x1c\x44sSplitDatasetToRungsRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest.SecretEntry\x12\r\n\x05rungs\x18\x08 \x01(\x05\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x1f\n\x1d\x44sSplitDatasetToRungsResponse\"\xa4\x07\n\x12\x44sTransformRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12^\n\x06secret\x18\x08 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.data.v1.DsTransformRequest.SecretEntry\x12V\n\x0ftrainingDataset\x18\t \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\x0etestingDataset\x18\n \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"[\n\x13\x44sTransformResponse\x12\x15\n\rtraining_hash\x18\x04 \x01(\t\x12\x14\n\x0ctesting_hash\x18\x05 \x01(\t\x12\x17\n\x0fvalidation_hash\x18\x06 \x01(\t\"\xd9\x07\n\x1c\x44sCreateColumnProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest.SecretEntry\x12\x12\n\ncolumnType\x18\x08 \x01(\t\x12\x12\n\ncolumnName\x18\t \x01(\t\x12W\n\x0c\x64\x62\x43onnection\x18\n \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12l\n\x08\x64\x62Secret\x18\x0b \x03(\x0b\x32Z.github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest.DbSecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"s\n\x1d\x44sCreateColumnProfileResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x44\n\x04plot\x18\x02 \x01(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\"\x9c\x07\n\x15GroupByDatasetRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x61\n\x06secret\x18\x07 \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.data.v1.GroupByDatasetRequest.SecretEntry\x12W\n\x0c\x64\x62\x43onnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x65\n\x08\x64\x62Secret\x18\t \x03(\x0b\x32S.github.com.metaprov.modelaapi.services.data.v1.GroupByDatasetRequest.DbSecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"%\n\x16GroupByDatasetResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\x80\x04\n\x14\x44sInferSchemaRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\x08location\x18\x02 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12`\n\x06secret\x18\x05 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"j\n\x15\x44sInferSchemaResponse\x12Q\n\x07profile\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile\"\xf9\x05\n\x15\x44sGetTableViewRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12Z\n\x08\x66latfile\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec\x12T\n\x08location\x18\x03 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x61\n\x06secret\x18\x05 \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.SecretEntry\x12W\n\x0c\x64\x62\x43onnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x65\n\x08\x64\x62Secret\x18\x07 \x03(\x0b\x32S.github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.DbSecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"h\n\x16\x44sGetTableViewResponse\x12N\n\ttableview\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView\"\xb2\x07\n\x18\x43reateModelReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x64\n\x06secret\x18\x08 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.SecretEntry\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12P\n\x06report\x18\n \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\x12\r\n\x05group\x18\x0b \x01(\x08\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xb2\t\n\x1b\x43reateForecastReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12Q\n\x08\x66orecast\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12g\n\x06secret\x18\x08 \x03(\x0b\x32W.github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.SecretEntry\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12P\n\x06report\x18\n \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\x12\r\n\x05group\x18\x0b \x01(\x08\x12W\n\x0c\x64\x62\x43onnection\x18\x0c \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12k\n\x08\x64\x62Secret\x18\r \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.DbSecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xd7\x06\n\x1a\x43reateSummaryReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12U\n\nconnection\x18\x03 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x66\n\x06secret\x18\x04 \x03(\x0b\x32V.github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.SecretEntry\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12P\n\x06report\x18\x06 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\x12W\n\x0c\x64\x62\x43onnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12j\n\x08\x64\x62Secret\x18\x08 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.DbSecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"#\n\x14\x43reateReportResponse\x12\x0b\n\x03pdf\x18\x01 \x01(\x0c\"\x8c\x08\n\x1a\x43reateDatasetReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x66\n\x06secret\x18\x07 \x03(\x0b\x32V.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.SecretEntry\x12P\n\x06report\x18\x08 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\x12\r\n\x05group\x18\t \x01(\x08\x12W\n\x0c\x64\x62\x43onnection\x18\n \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12j\n\x08\x64\x62Secret\x18\x0b \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.DbSecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x9c\t\n\x18\x43reateStudyReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12S\n\x06models\x18\x06 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList\x12T\n\x06\x62ucket\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x64\n\x06secret\x18\t \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.SecretEntry\x12P\n\x06report\x18\n \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\x12W\n\x0c\x64\x62\x43onnection\x18\x0b \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12h\n\x08\x64\x62Secret\x18\x0c \x03(\x0b\x32V.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.DbSecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xc4\x04\n\x0f\x41skModelRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12\x0e\n\x06\x62udget\x18\x06 \x01(\x05\x12\x11\n\tdefaultHP\x18\x07 \x01(\x08\x12\x11\n\talgorithm\x18\x08 \x01(\t\x12V\n\nalgorithms\x18\t \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm\"\xc6\x03\n\x1fGetTimeSeriesDatasetKeysRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\"0\n GetTimeSeriesDatasetKeysResponse\x12\x0c\n\x04keys\x18\x01 \x03(\t\"\xa4\x04\n\x17\x41skForecastModelRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12\x0c\n\x04keys\x18\x06 \x03(\t\x12V\n\nalgorithms\x18\x07 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm\"j\n\x18\x41skForecastModelResponse\x12N\n\x05model\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\xe2\x04\n\x12\x41skEnsembleRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12O\n\x06models\x18\x06 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12V\n\nalgorithms\x18\x07 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm\"e\n\x13\x41skEnsembleResponse\x12N\n\x05model\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\xb0\x04\n\x12\x41skBaselineRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12\x10\n\x08\x61lgnames\x18\x06 \x03(\t\x12\x0b\n\x03\x61ll\x18\x07 \x01(\x08\x12V\n\nalgorithms\x18\x08 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm\"e\n\x13\x41skBaselineResponse\x12N\n\x05model\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\xb7\x04\n\x1a\x41skAllModelsForTaskRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12\x0e\n\x06\x62udget\x18\x06 \x01(\x05\x12\x0c\n\x04task\x18\x07 \x01(\t\x12V\n\nalgorithms\x18\x08 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm\"m\n\x1b\x41skAllModelsForTaskResponse\x12N\n\x05model\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\x97\x04\n\x10TellModelRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12\x0e\n\x06\x66\x61iled\x18\x07 \x01(\x08\"#\n\x11TellModelResponse\x12\x0e\n\x06pruned\x18\x01 \x01(\x08\"\x13\n\x11\x44sShutdownRequest\"\x14\n\x12\x44sShutdownResponse\"\xda\x02\n\x17\x44sTestConnectionRequest\x12U\n\nconnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x63\n\x06secret\x18\x03 \x03(\x0b\x32S.github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"7\n\x18\x44sTestConnectionResponse\x12\x0e\n\x06status\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\t\"\xf7\x05\n\x13\x44sStudyEndedRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12_\n\x06secret\x18\x08 \x03(\x0b\x32O.github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x16\n\x14\x44sStudyEndedResponse\"\xfd\x05\n\x16SaveOptimizerDBRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x62\n\x06secret\x18\x08 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x19\n\x17SaveOptimizerDBResponse\"\x80\x02\n\x15\x44sGetDatabasesRequest\x12U\n\nconnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x61\n\x06secret\x18\x02 \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"+\n\x16\x44sGetDatabasesResponse\x12\x11\n\tdatabases\x18\x01 \x03(\t\"\x90\x02\n\x12\x44sGetTablesRequest\x12U\n\nconnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12^\n\x06secret\x18\x02 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.SecretEntry\x12\x14\n\x0c\x64\x61tabaseName\x18\x03 \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"%\n\x13\x44sGetTablesResponse\x12\x0e\n\x06tables\x18\x01 \x03(\t\"\x9f\x02\n\x13\x44sExecuteSqlRequest\x12U\n\nconnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12_\n\x06secret\x18\x02 \x03(\x0b\x32O.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.SecretEntry\x12\x14\n\x0c\x64\x61tabaseName\x18\x03 \x01(\t\x12\x0b\n\x03sql\x18\x04 \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"f\n\x14\x44sExecuteSqlResponse\x12N\n\ttableview\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView\"\xb9\x07\n\x11\x44sSnapshotRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12W\n\x0c\x64\x62\x63onnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x61\n\x08\x64\x62secret\x18\x06 \x03(\x0b\x32O.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.DbsecretEntry\x12\\\n\x11storageconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12k\n\rstoragesecret\x18\x08 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.StoragesecretEntry\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x0b\n\x03key\x18\n \x01(\t\x1a/\n\rDbsecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a\x34\n\x12StoragesecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x14\n\x12\x44sSnapshotResponse\"b\n\x10\x41skModelResponse\x12N\n\x05model\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\x95\x08\n\x16GenTrainingDataRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12\\\n\x11storageConnection\x18\x03 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12[\n\rstorageBucket\x18\x04 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12p\n\rstorageSecret\x18\x05 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.StorageSecretEntry\x12W\n\x0c\x64\x62\x43onnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x66\n\x08\x64\x62Secret\x18\x07 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest.DbSecretEntry\x12S\n\x05model\x18\x08 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12N\n\x08\x65ntities\x18\t \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\x12R\n\x06groups\x18\n \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\x1a\x34\n\x12StorageSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\'\n\x17GenTrainingDataResponse\x12\x0c\n\x04path\x18\x01 \x01(\t\"\xe8\x06\n\x16SyncOnlineStoreRequest\x12\\\n\x11storageConnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12[\n\rstorageBucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12p\n\rstorageSecret\x18\x03 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.StorageSecretEntry\x12W\n\x0c\x64\x62\x43onnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x66\n\x08\x64\x62Secret\x18\x05 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest.DbSecretEntry\x12S\n\x05model\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12N\n\x02\x66g\x18\x07 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\x12T\n\x08location\x18\x08 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\x1a\x34\n\x12StorageSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x19\n\x17SyncOnlineStoreResponse\"\xfa\x06\n\x1cGenOnlineStoreDatasetRequest\x12\\\n\x11storageConnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12[\n\rstorageBucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12v\n\rstorageSecret\x18\x03 \x03(\x0b\x32_.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.StorageSecretEntry\x12W\n\x0c\x64\x62\x43onnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12l\n\x08\x64\x62Secret\x18\x05 \x03(\x0b\x32Z.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest.DbSecretEntry\x12S\n\x05model\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12N\n\x02\x66g\x18\x07 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\x12T\n\x08location\x18\x08 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\x1a\x34\n\x12StorageSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"u\n\x1dGenOnlineStoreDatasetResponse\x12T\n\x08location\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\"\x8d\x08\n\x13\x42\x61tchPredictRequest\x12\\\n\x11storageConnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12[\n\rstorageBucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12m\n\rstorageSecret\x18\x03 \x03(\x0b\x32V.github.com.metaprov.modelaapi.services.data.v1.BatchPredictRequest.StorageSecretEntry\x12W\n\x0c\x64\x62\x43onnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x63\n\x08\x64\x62Secret\x18\x05 \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.data.v1.BatchPredictRequest.DbSecretEntry\x12X\n\nmodelclass\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass\x12N\n\x05model\x18\x07 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12N\n\x08\x65ntities\x18\x08 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\x12R\n\x06groups\x18\t \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup\x12Y\n\nprediction\x18\n \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\x1a\x34\n\x12StorageSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a/\n\rDbSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"$\n\x14\x42\x61tchPredictResponse\x12\x0c\n\x04rows\x18\x01 \x01(\x05\x32\x89?\n\x0b\x44\x61taService\x12\x98\x01\n\x08ReadFile\x12\x41.github.com.metaprov.modelaapi.services.data.v1.DsReadFileRequest\x1aG.github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse\"\x00\x12\x9e\x01\n\x0bReadFeature\x12\x44.github.com.metaprov.modelaapi.services.data.v1.DsReadFeatureRequest\x1aG.github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse\"\x00\x12\x9a\x01\n\tReadAudio\x12\x42.github.com.metaprov.modelaapi.services.data.v1.DsReadAudioRequest\x1aG.github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse\"\x00\x12\xa8\x01\n\x0fRunDataPipeline\x12H.github.com.metaprov.modelaapi.services.data.v1.DsRunDataPipelineRequest\x1aI.github.com.metaprov.modelaapi.services.data.v1.DsRunDataPipelineResponse\"\x00\x12\x96\x01\n\tRunRecipe\x12\x42.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest\x1a\x43.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeResponse\"\x00\x12\x9a\x01\n\tWriteFile\x12\x42.github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest\x1aG.github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse\"\x00\x12\xa8\x01\n\x0fGenerateDataset\x12H.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest\x1aI.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse\"\x00\x12\x9f\x01\n\x0cSplitDataset\x12\x45.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest\x1a\x46.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse\"\x00\x12\x96\x01\n\tTransform\x12\x42.github.com.metaprov.modelaapi.services.data.v1.DsTransformRequest\x1a\x43.github.com.metaprov.modelaapi.services.data.v1.DsTransformResponse\"\x00\x12\xb4\x01\n\x13\x43reateColumnProfile\x12L.github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest\x1aM.github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileResponse\"\x00\x12\x9c\x01\n\x0bInferSchema\x12\x44.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest\x1a\x45.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaResponse\"\x00\x12\x9f\x01\n\x0cGetTableView\x12\x45.github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest\x1a\x46.github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewResponse\"\x00\x12\xb4\x01\n\x13SplitDatasetToRungs\x12L.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest\x1aM.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsResponse\"\x00\x12\xb7\x01\n\x14\x43reateDatasetProfile\x12M.github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest\x1aN.github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileResponse\"\x00\x12\xb1\x01\n\x12\x43reateModelProfile\x12K.github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest\x1aL.github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileResponse\"\x00\x12\xb1\x01\n\x12\x43reateStudyProfile\x12K.github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest\x1aL.github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileResponse\"\x00\x12\xb4\x01\n\x13\x43reateRecipeProfile\x12L.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest\x1aM.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileResponse\"\x00\x12\xa5\x01\n\x11\x43reateModelReport\x12H.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse\"\x00\x12\xa5\x01\n\x11\x43reateStudyReport\x12H.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse\"\x00\x12\xa9\x01\n\x13\x43reateDatasetReport\x12J.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse\"\x00\x12\xab\x01\n\x14\x43reateForecastReport\x12K.github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse\"\x00\x12\xa9\x01\n\x13\x43reateSummaryReport\x12J.github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse\"\x00\x12\x8c\x01\n\x05\x41skFE\x12?.github.com.metaprov.modelaapi.services.data.v1.AskModelRequest\x1a@.github.com.metaprov.modelaapi.services.data.v1.AskModelResponse\"\x00\x12\x98\x01\n\x0b\x41skBaseline\x12\x42.github.com.metaprov.modelaapi.services.data.v1.AskBaselineRequest\x1a\x43.github.com.metaprov.modelaapi.services.data.v1.AskBaselineResponse\"\x00\x12\x98\x01\n\x0b\x41skEnsemble\x12\x42.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleRequest\x1a\x43.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse\"\x00\x12\xa7\x01\n\x10\x41skForecastModel\x12G.github.com.metaprov.modelaapi.services.data.v1.AskForecastModelRequest\x1aH.github.com.metaprov.modelaapi.services.data.v1.AskForecastModelResponse\"\x00\x12\x8f\x01\n\x08\x41skModel\x12?.github.com.metaprov.modelaapi.services.data.v1.AskModelRequest\x1a@.github.com.metaprov.modelaapi.services.data.v1.AskModelResponse\"\x00\x12\xb0\x01\n\x13\x41skAllModelsForTask\x12J.github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskRequest\x1aK.github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskResponse\"\x00\x12\x99\x01\n\x10TellPartialModel\x12@.github.com.metaprov.modelaapi.services.data.v1.TellModelRequest\x1a\x41.github.com.metaprov.modelaapi.services.data.v1.TellModelResponse\"\x00\x12\x92\x01\n\tTellModel\x12@.github.com.metaprov.modelaapi.services.data.v1.TellModelRequest\x1a\x41.github.com.metaprov.modelaapi.services.data.v1.TellModelResponse\"\x00\x12\xae\x01\n\x11MergeForecastFile\x12J.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest\x1aK.github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileResponse\"\x00\x12\xa7\x01\n\x10\x44sTestConnection\x12G.github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest\x1aH.github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionResponse\"\x00\x12\x93\x01\n\x08ShutDown\x12\x41.github.com.metaprov.modelaapi.services.data.v1.DsShutdownRequest\x1a\x42.github.com.metaprov.modelaapi.services.data.v1.DsShutdownResponse\"\x00\x12\x99\x01\n\nStudyEnded\x12\x43.github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedResponse\"\x00\x12\xa4\x01\n\x0fSaveOptimizerDB\x12\x46.github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest\x1aG.github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBResponse\"\x00\x12\x9f\x01\n\x0cGetDatabases\x12\x45.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest\x1a\x46.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesResponse\"\x00\x12\x96\x01\n\tGetTables\x12\x42.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest\x1a\x43.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesResponse\"\x00\x12\x99\x01\n\nExecuteSql\x12\x43.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlResponse\"\x00\x12\x93\x01\n\x08Snapshot\x12\x41.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest\x1a\x42.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse\"\x00\x12\x9e\x01\n\x0fUnitTestDataset\x12\x43.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteResponse\"\x00\x12\x9c\x01\n\rUnitTestModel\x12\x43.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteResponse\"\x00\x12\x9f\x01\n\x10UnitTestFeedback\x12\x43.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteResponse\"\x00\x12\xa7\x01\n\x18UnitTestFeatureHistogram\x12\x43.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteResponse\"\x00\x12\xa0\x01\n\x11UnitTestPredictor\x12\x43.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteResponse\"\x00\x12\xa1\x01\n\x0eGroupByDataset\x12\x45.github.com.metaprov.modelaapi.services.data.v1.GroupByDatasetRequest\x1a\x46.github.com.metaprov.modelaapi.services.data.v1.GroupByDatasetResponse\"\x00\x12\xa4\x01\n\x0fSyncOnlineStore\x12\x46.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreRequest\x1aG.github.com.metaprov.modelaapi.services.data.v1.SyncOnlineStoreResponse\"\x00\x12\xa4\x01\n\x0fGenTrainingData\x12\x46.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataRequest\x1aG.github.com.metaprov.modelaapi.services.data.v1.GenTrainingDataResponse\"\x00\x12\xb6\x01\n\x15GenOnlineStoreDataset\x12L.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetRequest\x1aM.github.com.metaprov.modelaapi.services.data.v1.GenOnlineStoreDatasetResponse\"\x00\x12\x9b\x01\n\x0c\x42\x61tchPredict\x12\x43.github.com.metaprov.modelaapi.services.data.v1.BatchPredictRequest\x1a\x44.github.com.metaprov.modelaapi.services.data.v1.BatchPredictResponse\"\x00\x42\x30Z.github.com/metaprov/modelaapi/services/data/v1b\x06proto3')
 
 
 
@@ -40,33 +40,42 @@ _DSREADFROMSTORERESPONSE_SECRETENTRY = _DSREADFROMSTORERESPONSE.nested_types_by_
 _DSRUNDATAPIPELINEREQUEST = DESCRIPTOR.message_types_by_name['DsRunDataPipelineRequest']
 _DSRUNDATAPIPELINERESPONSE = DESCRIPTOR.message_types_by_name['DsRunDataPipelineResponse']
 _DSRUNRECIPEREQUEST = DESCRIPTOR.message_types_by_name['DsRunRecipeRequest']
-_DSRUNRECIPEREQUEST_SECRETENTRY = _DSRUNRECIPEREQUEST.nested_types_by_name['SecretEntry']
+_DSRUNRECIPEREQUEST_SECRETCONNECTIONENTRY = _DSRUNRECIPEREQUEST.nested_types_by_name['SecretConnectionEntry']
+_DSRUNRECIPEREQUEST_DBSECRETENTRY = _DSRUNRECIPEREQUEST.nested_types_by_name['DbSecretEntry']
 _DSRUNRECIPERESPONSE = DESCRIPTOR.message_types_by_name['DsRunRecipeResponse']
 _DSCREATERECIPEPROFILEREQUEST = DESCRIPTOR.message_types_by_name['DsCreateRecipeProfileRequest']
-_DSCREATERECIPEPROFILEREQUEST_SECRETENTRY = _DSCREATERECIPEPROFILEREQUEST.nested_types_by_name['SecretEntry']
+_DSCREATERECIPEPROFILEREQUEST_SECRETCONNECTIONENTRY = _DSCREATERECIPEPROFILEREQUEST.nested_types_by_name['SecretConnectionEntry']
+_DSCREATERECIPEPROFILEREQUEST_DBSECRETENTRY = _DSCREATERECIPEPROFILEREQUEST.nested_types_by_name['DbSecretEntry']
 _DSCREATERECIPEPROFILERESPONSE = DESCRIPTOR.message_types_by_name['DsCreateRecipeProfileResponse']
 _DATASOURCERESPONSE = DESCRIPTOR.message_types_by_name['DataSourceResponse']
 _DATASETRESPONSE = DESCRIPTOR.message_types_by_name['DatasetResponse']
 _DSCREATEDATASETPROFILEREQUEST = DESCRIPTOR.message_types_by_name['DsCreateDatasetProfileRequest']
-_DSCREATEDATASETPROFILEREQUEST_SECRETENTRY = _DSCREATEDATASETPROFILEREQUEST.nested_types_by_name['SecretEntry']
+_DSCREATEDATASETPROFILEREQUEST_STORAGESECRETENTRY = _DSCREATEDATASETPROFILEREQUEST.nested_types_by_name['StorageSecretEntry']
+_DSCREATEDATASETPROFILEREQUEST_DBSECRETENTRY = _DSCREATEDATASETPROFILEREQUEST.nested_types_by_name['DbSecretEntry']
 _DSCREATEDATASETPROFILERESPONSE = DESCRIPTOR.message_types_by_name['DsCreateDatasetProfileResponse']
 _DSCREATEMODELPROFILEREQUEST = DESCRIPTOR.message_types_by_name['DsCreateModelProfileRequest']
 _DSCREATEMODELPROFILEREQUEST_SECRETENTRY = _DSCREATEMODELPROFILEREQUEST.nested_types_by_name['SecretEntry']
+_DSCREATEMODELPROFILEREQUEST_DBSECRETENTRY = _DSCREATEMODELPROFILEREQUEST.nested_types_by_name['DbSecretEntry']
 _DSCREATEMODELPROFILERESPONSE = DESCRIPTOR.message_types_by_name['DsCreateModelProfileResponse']
 _DSMERGEFORECASTFILEREQUEST = DESCRIPTOR.message_types_by_name['DsMergeForecastFileRequest']
 _DSMERGEFORECASTFILEREQUEST_SECRETENTRY = _DSMERGEFORECASTFILEREQUEST.nested_types_by_name['SecretEntry']
+_DSMERGEFORECASTFILEREQUEST_DBSECRETENTRY = _DSMERGEFORECASTFILEREQUEST.nested_types_by_name['DbSecretEntry']
 _DSMERGEFORECASTFILERESPONSE = DESCRIPTOR.message_types_by_name['DsMergeForecastFileResponse']
 _DSCREATESTUDYPROFILEREQUEST = DESCRIPTOR.message_types_by_name['DsCreateStudyProfileRequest']
 _DSCREATESTUDYPROFILEREQUEST_SECRETENTRY = _DSCREATESTUDYPROFILEREQUEST.nested_types_by_name['SecretEntry']
+_DSCREATESTUDYPROFILEREQUEST_DBSECRETENTRY = _DSCREATESTUDYPROFILEREQUEST.nested_types_by_name['DbSecretEntry']
 _DSCREATESTUDYPROFILERESPONSE = DESCRIPTOR.message_types_by_name['DsCreateStudyProfileResponse']
 _RUNTESTSUITEREQUEST = DESCRIPTOR.message_types_by_name['RunTestSuiteRequest']
 _RUNTESTSUITEREQUEST_SECRETENTRY = _RUNTESTSUITEREQUEST.nested_types_by_name['SecretEntry']
+_RUNTESTSUITEREQUEST_DBSECRETENTRY = _RUNTESTSUITEREQUEST.nested_types_by_name['DbSecretEntry']
 _RUNTESTSUITERESPONSE = DESCRIPTOR.message_types_by_name['RunTestSuiteResponse']
 _DSGENERATEDATASETREQUEST = DESCRIPTOR.message_types_by_name['DsGenerateDatasetRequest']
 _DSGENERATEDATASETREQUEST_SECRETENTRY = _DSGENERATEDATASETREQUEST.nested_types_by_name['SecretEntry']
+_DSGENERATEDATASETREQUEST_DBSECRETENTRY = _DSGENERATEDATASETREQUEST.nested_types_by_name['DbSecretEntry']
 _DSGENERATEDATASETRESPONSE = DESCRIPTOR.message_types_by_name['DsGenerateDatasetResponse']
 _DSSPLITDATASETREQUEST = DESCRIPTOR.message_types_by_name['DsSplitDatasetRequest']
 _DSSPLITDATASETREQUEST_SECRETENTRY = _DSSPLITDATASETREQUEST.nested_types_by_name['SecretEntry']
+_DSSPLITDATASETREQUEST_DBSECRETENTRY = _DSSPLITDATASETREQUEST.nested_types_by_name['DbSecretEntry']
 _DSSPLITDATASETRESPONSE = DESCRIPTOR.message_types_by_name['DsSplitDatasetResponse']
 _DSSPLITDATASETTORUNGSREQUEST = DESCRIPTOR.message_types_by_name['DsSplitDatasetToRungsRequest']
 _DSSPLITDATASETTORUNGSREQUEST_SECRETENTRY = _DSSPLITDATASETTORUNGSREQUEST.nested_types_by_name['SecretEntry']
@@ -76,30 +85,34 @@ _DSTRANSFORMREQUEST_SECRETENTRY = _DSTRANSFORMREQUEST.nested_types_by_name['Secr
 _DSTRANSFORMRESPONSE = DESCRIPTOR.message_types_by_name['DsTransformResponse']
 _DSCREATECOLUMNPROFILEREQUEST = DESCRIPTOR.message_types_by_name['DsCreateColumnProfileRequest']
 _DSCREATECOLUMNPROFILEREQUEST_SECRETENTRY = _DSCREATECOLUMNPROFILEREQUEST.nested_types_by_name['SecretEntry']
+_DSCREATECOLUMNPROFILEREQUEST_DBSECRETENTRY = _DSCREATECOLUMNPROFILEREQUEST.nested_types_by_name['DbSecretEntry']
 _DSCREATECOLUMNPROFILERESPONSE = DESCRIPTOR.message_types_by_name['DsCreateColumnProfileResponse']
 _GROUPBYDATASETREQUEST = DESCRIPTOR.message_types_by_name['GroupByDatasetRequest']
 _GROUPBYDATASETREQUEST_SECRETENTRY = _GROUPBYDATASETREQUEST.nested_types_by_name['SecretEntry']
+_GROUPBYDATASETREQUEST_DBSECRETENTRY = _GROUPBYDATASETREQUEST.nested_types_by_name['DbSecretEntry']
 _GROUPBYDATASETRESPONSE = DESCRIPTOR.message_types_by_name['GroupByDatasetResponse']
-_DSDATASETPROFILEREQUEST = DESCRIPTOR.message_types_by_name['DsDatasetProfileRequest']
-_DSDATASETPROFILEREQUEST_SECRETENTRY = _DSDATASETPROFILEREQUEST.nested_types_by_name['SecretEntry']
-_DSDATASETPROFILERESPONSE = DESCRIPTOR.message_types_by_name['DsDatasetProfileResponse']
 _DSINFERSCHEMAREQUEST = DESCRIPTOR.message_types_by_name['DsInferSchemaRequest']
 _DSINFERSCHEMAREQUEST_SECRETENTRY = _DSINFERSCHEMAREQUEST.nested_types_by_name['SecretEntry']
 _DSINFERSCHEMARESPONSE = DESCRIPTOR.message_types_by_name['DsInferSchemaResponse']
 _DSGETTABLEVIEWREQUEST = DESCRIPTOR.message_types_by_name['DsGetTableViewRequest']
 _DSGETTABLEVIEWREQUEST_SECRETENTRY = _DSGETTABLEVIEWREQUEST.nested_types_by_name['SecretEntry']
+_DSGETTABLEVIEWREQUEST_DBSECRETENTRY = _DSGETTABLEVIEWREQUEST.nested_types_by_name['DbSecretEntry']
 _DSGETTABLEVIEWRESPONSE = DESCRIPTOR.message_types_by_name['DsGetTableViewResponse']
 _CREATEMODELREPORTREQUEST = DESCRIPTOR.message_types_by_name['CreateModelReportRequest']
 _CREATEMODELREPORTREQUEST_SECRETENTRY = _CREATEMODELREPORTREQUEST.nested_types_by_name['SecretEntry']
 _CREATEFORECASTREPORTREQUEST = DESCRIPTOR.message_types_by_name['CreateForecastReportRequest']
 _CREATEFORECASTREPORTREQUEST_SECRETENTRY = _CREATEFORECASTREPORTREQUEST.nested_types_by_name['SecretEntry']
+_CREATEFORECASTREPORTREQUEST_DBSECRETENTRY = _CREATEFORECASTREPORTREQUEST.nested_types_by_name['DbSecretEntry']
 _CREATESUMMARYREPORTREQUEST = DESCRIPTOR.message_types_by_name['CreateSummaryReportRequest']
 _CREATESUMMARYREPORTREQUEST_SECRETENTRY = _CREATESUMMARYREPORTREQUEST.nested_types_by_name['SecretEntry']
+_CREATESUMMARYREPORTREQUEST_DBSECRETENTRY = _CREATESUMMARYREPORTREQUEST.nested_types_by_name['DbSecretEntry']
 _CREATEREPORTRESPONSE = DESCRIPTOR.message_types_by_name['CreateReportResponse']
 _CREATEDATASETREPORTREQUEST = DESCRIPTOR.message_types_by_name['CreateDatasetReportRequest']
 _CREATEDATASETREPORTREQUEST_SECRETENTRY = _CREATEDATASETREPORTREQUEST.nested_types_by_name['SecretEntry']
+_CREATEDATASETREPORTREQUEST_DBSECRETENTRY = _CREATEDATASETREPORTREQUEST.nested_types_by_name['DbSecretEntry']
 _CREATESTUDYREPORTREQUEST = DESCRIPTOR.message_types_by_name['CreateStudyReportRequest']
 _CREATESTUDYREPORTREQUEST_SECRETENTRY = _CREATESTUDYREPORTREQUEST.nested_types_by_name['SecretEntry']
+_CREATESTUDYREPORTREQUEST_DBSECRETENTRY = _CREATESTUDYREPORTREQUEST.nested_types_by_name['DbSecretEntry']
 _ASKMODELREQUEST = DESCRIPTOR.message_types_by_name['AskModelRequest']
 _GETTIMESERIESDATASETKEYSREQUEST = DESCRIPTOR.message_types_by_name['GetTimeSeriesDatasetKeysRequest']
 _GETTIMESERIESDATASETKEYSRESPONSE = DESCRIPTOR.message_types_by_name['GetTimeSeriesDatasetKeysResponse']
@@ -260,10 +273,17 @@ _sym_db.RegisterMessage(DsRunDataPipelineResponse)
 
 DsRunRecipeRequest = _reflection.GeneratedProtocolMessageType('DsRunRecipeRequest', (_message.Message,), {
 
-  'SecretEntry' : _reflection.GeneratedProtocolMessageType('SecretEntry', (_message.Message,), {
-    'DESCRIPTOR' : _DSRUNRECIPEREQUEST_SECRETENTRY,
+  'SecretConnectionEntry' : _reflection.GeneratedProtocolMessageType('SecretConnectionEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DSRUNRECIPEREQUEST_SECRETCONNECTIONENTRY,
     '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.SecretEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.SecretConnectionEntry)
+    })
+  ,
+
+  'DbSecretEntry' : _reflection.GeneratedProtocolMessageType('DbSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DSRUNRECIPEREQUEST_DBSECRETENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.DbSecretEntry)
     })
   ,
   'DESCRIPTOR' : _DSRUNRECIPEREQUEST,
@@ -271,7 +291,8 @@ DsRunRecipeRequest = _reflection.GeneratedProtocolMessageType('DsRunRecipeReques
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest)
   })
 _sym_db.RegisterMessage(DsRunRecipeRequest)
-_sym_db.RegisterMessage(DsRunRecipeRequest.SecretEntry)
+_sym_db.RegisterMessage(DsRunRecipeRequest.SecretConnectionEntry)
+_sym_db.RegisterMessage(DsRunRecipeRequest.DbSecretEntry)
 
 DsRunRecipeResponse = _reflection.GeneratedProtocolMessageType('DsRunRecipeResponse', (_message.Message,), {
   'DESCRIPTOR' : _DSRUNRECIPERESPONSE,
@@ -282,10 +303,17 @@ _sym_db.RegisterMessage(DsRunRecipeResponse)
 
 DsCreateRecipeProfileRequest = _reflection.GeneratedProtocolMessageType('DsCreateRecipeProfileRequest', (_message.Message,), {
 
-  'SecretEntry' : _reflection.GeneratedProtocolMessageType('SecretEntry', (_message.Message,), {
-    'DESCRIPTOR' : _DSCREATERECIPEPROFILEREQUEST_SECRETENTRY,
+  'SecretConnectionEntry' : _reflection.GeneratedProtocolMessageType('SecretConnectionEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DSCREATERECIPEPROFILEREQUEST_SECRETCONNECTIONENTRY,
     '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.SecretEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.SecretConnectionEntry)
+    })
+  ,
+
+  'DbSecretEntry' : _reflection.GeneratedProtocolMessageType('DbSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DSCREATERECIPEPROFILEREQUEST_DBSECRETENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.DbSecretEntry)
     })
   ,
   'DESCRIPTOR' : _DSCREATERECIPEPROFILEREQUEST,
@@ -293,7 +321,8 @@ DsCreateRecipeProfileRequest = _reflection.GeneratedProtocolMessageType('DsCreat
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest)
   })
 _sym_db.RegisterMessage(DsCreateRecipeProfileRequest)
-_sym_db.RegisterMessage(DsCreateRecipeProfileRequest.SecretEntry)
+_sym_db.RegisterMessage(DsCreateRecipeProfileRequest.SecretConnectionEntry)
+_sym_db.RegisterMessage(DsCreateRecipeProfileRequest.DbSecretEntry)
 
 DsCreateRecipeProfileResponse = _reflection.GeneratedProtocolMessageType('DsCreateRecipeProfileResponse', (_message.Message,), {
   'DESCRIPTOR' : _DSCREATERECIPEPROFILERESPONSE,
@@ -318,10 +347,17 @@ _sym_db.RegisterMessage(DatasetResponse)
 
 DsCreateDatasetProfileRequest = _reflection.GeneratedProtocolMessageType('DsCreateDatasetProfileRequest', (_message.Message,), {
 
-  'SecretEntry' : _reflection.GeneratedProtocolMessageType('SecretEntry', (_message.Message,), {
-    'DESCRIPTOR' : _DSCREATEDATASETPROFILEREQUEST_SECRETENTRY,
+  'StorageSecretEntry' : _reflection.GeneratedProtocolMessageType('StorageSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DSCREATEDATASETPROFILEREQUEST_STORAGESECRETENTRY,
     '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.SecretEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.StorageSecretEntry)
+    })
+  ,
+
+  'DbSecretEntry' : _reflection.GeneratedProtocolMessageType('DbSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DSCREATEDATASETPROFILEREQUEST_DBSECRETENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.DbSecretEntry)
     })
   ,
   'DESCRIPTOR' : _DSCREATEDATASETPROFILEREQUEST,
@@ -329,7 +365,8 @@ DsCreateDatasetProfileRequest = _reflection.GeneratedProtocolMessageType('DsCrea
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest)
   })
 _sym_db.RegisterMessage(DsCreateDatasetProfileRequest)
-_sym_db.RegisterMessage(DsCreateDatasetProfileRequest.SecretEntry)
+_sym_db.RegisterMessage(DsCreateDatasetProfileRequest.StorageSecretEntry)
+_sym_db.RegisterMessage(DsCreateDatasetProfileRequest.DbSecretEntry)
 
 DsCreateDatasetProfileResponse = _reflection.GeneratedProtocolMessageType('DsCreateDatasetProfileResponse', (_message.Message,), {
   'DESCRIPTOR' : _DSCREATEDATASETPROFILERESPONSE,
@@ -346,12 +383,20 @@ DsCreateModelProfileRequest = _reflection.GeneratedProtocolMessageType('DsCreate
     # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest.SecretEntry)
     })
   ,
+
+  'DbSecretEntry' : _reflection.GeneratedProtocolMessageType('DbSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DSCREATEMODELPROFILEREQUEST_DBSECRETENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest.DbSecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _DSCREATEMODELPROFILEREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest)
   })
 _sym_db.RegisterMessage(DsCreateModelProfileRequest)
 _sym_db.RegisterMessage(DsCreateModelProfileRequest.SecretEntry)
+_sym_db.RegisterMessage(DsCreateModelProfileRequest.DbSecretEntry)
 
 DsCreateModelProfileResponse = _reflection.GeneratedProtocolMessageType('DsCreateModelProfileResponse', (_message.Message,), {
   'DESCRIPTOR' : _DSCREATEMODELPROFILERESPONSE,
@@ -368,12 +413,20 @@ DsMergeForecastFileRequest = _reflection.GeneratedProtocolMessageType('DsMergeFo
     # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.SecretEntry)
     })
   ,
+
+  'DbSecretEntry' : _reflection.GeneratedProtocolMessageType('DbSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DSMERGEFORECASTFILEREQUEST_DBSECRETENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.DbSecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _DSMERGEFORECASTFILEREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest)
   })
 _sym_db.RegisterMessage(DsMergeForecastFileRequest)
 _sym_db.RegisterMessage(DsMergeForecastFileRequest.SecretEntry)
+_sym_db.RegisterMessage(DsMergeForecastFileRequest.DbSecretEntry)
 
 DsMergeForecastFileResponse = _reflection.GeneratedProtocolMessageType('DsMergeForecastFileResponse', (_message.Message,), {
   'DESCRIPTOR' : _DSMERGEFORECASTFILERESPONSE,
@@ -390,12 +443,20 @@ DsCreateStudyProfileRequest = _reflection.GeneratedProtocolMessageType('DsCreate
     # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.SecretEntry)
     })
   ,
+
+  'DbSecretEntry' : _reflection.GeneratedProtocolMessageType('DbSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DSCREATESTUDYPROFILEREQUEST_DBSECRETENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.DbSecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _DSCREATESTUDYPROFILEREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest)
   })
 _sym_db.RegisterMessage(DsCreateStudyProfileRequest)
 _sym_db.RegisterMessage(DsCreateStudyProfileRequest.SecretEntry)
+_sym_db.RegisterMessage(DsCreateStudyProfileRequest.DbSecretEntry)
 
 DsCreateStudyProfileResponse = _reflection.GeneratedProtocolMessageType('DsCreateStudyProfileResponse', (_message.Message,), {
   'DESCRIPTOR' : _DSCREATESTUDYPROFILERESPONSE,
@@ -412,12 +473,20 @@ RunTestSuiteRequest = _reflection.GeneratedProtocolMessageType('RunTestSuiteRequ
     # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.SecretEntry)
     })
   ,
+
+  'DbSecretEntry' : _reflection.GeneratedProtocolMessageType('DbSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _RUNTESTSUITEREQUEST_DBSECRETENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest.DbSecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _RUNTESTSUITEREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.RunTestSuiteRequest)
   })
 _sym_db.RegisterMessage(RunTestSuiteRequest)
 _sym_db.RegisterMessage(RunTestSuiteRequest.SecretEntry)
+_sym_db.RegisterMessage(RunTestSuiteRequest.DbSecretEntry)
 
 RunTestSuiteResponse = _reflection.GeneratedProtocolMessageType('RunTestSuiteResponse', (_message.Message,), {
   'DESCRIPTOR' : _RUNTESTSUITERESPONSE,
@@ -434,12 +503,20 @@ DsGenerateDatasetRequest = _reflection.GeneratedProtocolMessageType('DsGenerateD
     # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.SecretEntry)
     })
   ,
+
+  'DbSecretEntry' : _reflection.GeneratedProtocolMessageType('DbSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DSGENERATEDATASETREQUEST_DBSECRETENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.DbSecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _DSGENERATEDATASETREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest)
   })
 _sym_db.RegisterMessage(DsGenerateDatasetRequest)
 _sym_db.RegisterMessage(DsGenerateDatasetRequest.SecretEntry)
+_sym_db.RegisterMessage(DsGenerateDatasetRequest.DbSecretEntry)
 
 DsGenerateDatasetResponse = _reflection.GeneratedProtocolMessageType('DsGenerateDatasetResponse', (_message.Message,), {
   'DESCRIPTOR' : _DSGENERATEDATASETRESPONSE,
@@ -456,12 +533,20 @@ DsSplitDatasetRequest = _reflection.GeneratedProtocolMessageType('DsSplitDataset
     # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.SecretEntry)
     })
   ,
+
+  'DbSecretEntry' : _reflection.GeneratedProtocolMessageType('DbSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DSSPLITDATASETREQUEST_DBSECRETENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.DbSecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _DSSPLITDATASETREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest)
   })
 _sym_db.RegisterMessage(DsSplitDatasetRequest)
 _sym_db.RegisterMessage(DsSplitDatasetRequest.SecretEntry)
+_sym_db.RegisterMessage(DsSplitDatasetRequest.DbSecretEntry)
 
 DsSplitDatasetResponse = _reflection.GeneratedProtocolMessageType('DsSplitDatasetResponse', (_message.Message,), {
   'DESCRIPTOR' : _DSSPLITDATASETRESPONSE,
@@ -522,12 +607,20 @@ DsCreateColumnProfileRequest = _reflection.GeneratedProtocolMessageType('DsCreat
     # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest.SecretEntry)
     })
   ,
+
+  'DbSecretEntry' : _reflection.GeneratedProtocolMessageType('DbSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DSCREATECOLUMNPROFILEREQUEST_DBSECRETENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest.DbSecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _DSCREATECOLUMNPROFILEREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest)
   })
 _sym_db.RegisterMessage(DsCreateColumnProfileRequest)
 _sym_db.RegisterMessage(DsCreateColumnProfileRequest.SecretEntry)
+_sym_db.RegisterMessage(DsCreateColumnProfileRequest.DbSecretEntry)
 
 DsCreateColumnProfileResponse = _reflection.GeneratedProtocolMessageType('DsCreateColumnProfileResponse', (_message.Message,), {
   'DESCRIPTOR' : _DSCREATECOLUMNPROFILERESPONSE,
@@ -544,12 +637,20 @@ GroupByDatasetRequest = _reflection.GeneratedProtocolMessageType('GroupByDataset
     # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.GroupByDatasetRequest.SecretEntry)
     })
   ,
+
+  'DbSecretEntry' : _reflection.GeneratedProtocolMessageType('DbSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _GROUPBYDATASETREQUEST_DBSECRETENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.GroupByDatasetRequest.DbSecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _GROUPBYDATASETREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.GroupByDatasetRequest)
   })
 _sym_db.RegisterMessage(GroupByDatasetRequest)
 _sym_db.RegisterMessage(GroupByDatasetRequest.SecretEntry)
+_sym_db.RegisterMessage(GroupByDatasetRequest.DbSecretEntry)
 
 GroupByDatasetResponse = _reflection.GeneratedProtocolMessageType('GroupByDatasetResponse', (_message.Message,), {
   'DESCRIPTOR' : _GROUPBYDATASETRESPONSE,
@@ -557,28 +658,6 @@ GroupByDatasetResponse = _reflection.GeneratedProtocolMessageType('GroupByDatase
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.GroupByDatasetResponse)
   })
 _sym_db.RegisterMessage(GroupByDatasetResponse)
-
-DsDatasetProfileRequest = _reflection.GeneratedProtocolMessageType('DsDatasetProfileRequest', (_message.Message,), {
-
-  'SecretEntry' : _reflection.GeneratedProtocolMessageType('SecretEntry', (_message.Message,), {
-    'DESCRIPTOR' : _DSDATASETPROFILEREQUEST_SECRETENTRY,
-    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.SecretEntry)
-    })
-  ,
-  'DESCRIPTOR' : _DSDATASETPROFILEREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest)
-  })
-_sym_db.RegisterMessage(DsDatasetProfileRequest)
-_sym_db.RegisterMessage(DsDatasetProfileRequest.SecretEntry)
-
-DsDatasetProfileResponse = _reflection.GeneratedProtocolMessageType('DsDatasetProfileResponse', (_message.Message,), {
-  'DESCRIPTOR' : _DSDATASETPROFILERESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileResponse)
-  })
-_sym_db.RegisterMessage(DsDatasetProfileResponse)
 
 DsInferSchemaRequest = _reflection.GeneratedProtocolMessageType('DsInferSchemaRequest', (_message.Message,), {
 
@@ -610,12 +689,20 @@ DsGetTableViewRequest = _reflection.GeneratedProtocolMessageType('DsGetTableView
     # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.SecretEntry)
     })
   ,
+
+  'DbSecretEntry' : _reflection.GeneratedProtocolMessageType('DbSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DSGETTABLEVIEWREQUEST_DBSECRETENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.DbSecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _DSGETTABLEVIEWREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest)
   })
 _sym_db.RegisterMessage(DsGetTableViewRequest)
 _sym_db.RegisterMessage(DsGetTableViewRequest.SecretEntry)
+_sym_db.RegisterMessage(DsGetTableViewRequest.DbSecretEntry)
 
 DsGetTableViewResponse = _reflection.GeneratedProtocolMessageType('DsGetTableViewResponse', (_message.Message,), {
   'DESCRIPTOR' : _DSGETTABLEVIEWRESPONSE,
@@ -647,12 +734,20 @@ CreateForecastReportRequest = _reflection.GeneratedProtocolMessageType('CreateFo
     # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.SecretEntry)
     })
   ,
+
+  'DbSecretEntry' : _reflection.GeneratedProtocolMessageType('DbSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _CREATEFORECASTREPORTREQUEST_DBSECRETENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.DbSecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _CREATEFORECASTREPORTREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest)
   })
 _sym_db.RegisterMessage(CreateForecastReportRequest)
 _sym_db.RegisterMessage(CreateForecastReportRequest.SecretEntry)
+_sym_db.RegisterMessage(CreateForecastReportRequest.DbSecretEntry)
 
 CreateSummaryReportRequest = _reflection.GeneratedProtocolMessageType('CreateSummaryReportRequest', (_message.Message,), {
 
@@ -662,12 +757,20 @@ CreateSummaryReportRequest = _reflection.GeneratedProtocolMessageType('CreateSum
     # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.SecretEntry)
     })
   ,
+
+  'DbSecretEntry' : _reflection.GeneratedProtocolMessageType('DbSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _CREATESUMMARYREPORTREQUEST_DBSECRETENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.DbSecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _CREATESUMMARYREPORTREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest)
   })
 _sym_db.RegisterMessage(CreateSummaryReportRequest)
 _sym_db.RegisterMessage(CreateSummaryReportRequest.SecretEntry)
+_sym_db.RegisterMessage(CreateSummaryReportRequest.DbSecretEntry)
 
 CreateReportResponse = _reflection.GeneratedProtocolMessageType('CreateReportResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATEREPORTRESPONSE,
@@ -684,12 +787,20 @@ CreateDatasetReportRequest = _reflection.GeneratedProtocolMessageType('CreateDat
     # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.SecretEntry)
     })
   ,
+
+  'DbSecretEntry' : _reflection.GeneratedProtocolMessageType('DbSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _CREATEDATASETREPORTREQUEST_DBSECRETENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.DbSecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _CREATEDATASETREPORTREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest)
   })
 _sym_db.RegisterMessage(CreateDatasetReportRequest)
 _sym_db.RegisterMessage(CreateDatasetReportRequest.SecretEntry)
+_sym_db.RegisterMessage(CreateDatasetReportRequest.DbSecretEntry)
 
 CreateStudyReportRequest = _reflection.GeneratedProtocolMessageType('CreateStudyReportRequest', (_message.Message,), {
 
@@ -699,12 +810,20 @@ CreateStudyReportRequest = _reflection.GeneratedProtocolMessageType('CreateStudy
     # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.SecretEntry)
     })
   ,
+
+  'DbSecretEntry' : _reflection.GeneratedProtocolMessageType('DbSecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _CREATESTUDYREPORTREQUEST_DBSECRETENTRY,
+    '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.DbSecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _CREATESTUDYREPORTREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.data.v1.data_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest)
   })
 _sym_db.RegisterMessage(CreateStudyReportRequest)
 _sym_db.RegisterMessage(CreateStudyReportRequest.SecretEntry)
+_sym_db.RegisterMessage(CreateStudyReportRequest.DbSecretEntry)
 
 AskModelRequest = _reflection.GeneratedProtocolMessageType('AskModelRequest', (_message.Message,), {
   'DESCRIPTOR' : _ASKMODELREQUEST,
@@ -1117,48 +1236,78 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DSREADTEXTCORPUSREQUEST_SECRETENTRY._serialized_options = b'8\001'
   _DSREADFROMSTORERESPONSE_SECRETENTRY._options = None
   _DSREADFROMSTORERESPONSE_SECRETENTRY._serialized_options = b'8\001'
-  _DSRUNRECIPEREQUEST_SECRETENTRY._options = None
-  _DSRUNRECIPEREQUEST_SECRETENTRY._serialized_options = b'8\001'
-  _DSCREATERECIPEPROFILEREQUEST_SECRETENTRY._options = None
-  _DSCREATERECIPEPROFILEREQUEST_SECRETENTRY._serialized_options = b'8\001'
-  _DSCREATEDATASETPROFILEREQUEST_SECRETENTRY._options = None
-  _DSCREATEDATASETPROFILEREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _DSRUNRECIPEREQUEST_SECRETCONNECTIONENTRY._options = None
+  _DSRUNRECIPEREQUEST_SECRETCONNECTIONENTRY._serialized_options = b'8\001'
+  _DSRUNRECIPEREQUEST_DBSECRETENTRY._options = None
+  _DSRUNRECIPEREQUEST_DBSECRETENTRY._serialized_options = b'8\001'
+  _DSCREATERECIPEPROFILEREQUEST_SECRETCONNECTIONENTRY._options = None
+  _DSCREATERECIPEPROFILEREQUEST_SECRETCONNECTIONENTRY._serialized_options = b'8\001'
+  _DSCREATERECIPEPROFILEREQUEST_DBSECRETENTRY._options = None
+  _DSCREATERECIPEPROFILEREQUEST_DBSECRETENTRY._serialized_options = b'8\001'
+  _DSCREATEDATASETPROFILEREQUEST_STORAGESECRETENTRY._options = None
+  _DSCREATEDATASETPROFILEREQUEST_STORAGESECRETENTRY._serialized_options = b'8\001'
+  _DSCREATEDATASETPROFILEREQUEST_DBSECRETENTRY._options = None
+  _DSCREATEDATASETPROFILEREQUEST_DBSECRETENTRY._serialized_options = b'8\001'
   _DSCREATEMODELPROFILEREQUEST_SECRETENTRY._options = None
   _DSCREATEMODELPROFILEREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _DSCREATEMODELPROFILEREQUEST_DBSECRETENTRY._options = None
+  _DSCREATEMODELPROFILEREQUEST_DBSECRETENTRY._serialized_options = b'8\001'
   _DSMERGEFORECASTFILEREQUEST_SECRETENTRY._options = None
   _DSMERGEFORECASTFILEREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _DSMERGEFORECASTFILEREQUEST_DBSECRETENTRY._options = None
+  _DSMERGEFORECASTFILEREQUEST_DBSECRETENTRY._serialized_options = b'8\001'
   _DSCREATESTUDYPROFILEREQUEST_SECRETENTRY._options = None
   _DSCREATESTUDYPROFILEREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _DSCREATESTUDYPROFILEREQUEST_DBSECRETENTRY._options = None
+  _DSCREATESTUDYPROFILEREQUEST_DBSECRETENTRY._serialized_options = b'8\001'
   _RUNTESTSUITEREQUEST_SECRETENTRY._options = None
   _RUNTESTSUITEREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _RUNTESTSUITEREQUEST_DBSECRETENTRY._options = None
+  _RUNTESTSUITEREQUEST_DBSECRETENTRY._serialized_options = b'8\001'
   _DSGENERATEDATASETREQUEST_SECRETENTRY._options = None
   _DSGENERATEDATASETREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _DSGENERATEDATASETREQUEST_DBSECRETENTRY._options = None
+  _DSGENERATEDATASETREQUEST_DBSECRETENTRY._serialized_options = b'8\001'
   _DSSPLITDATASETREQUEST_SECRETENTRY._options = None
   _DSSPLITDATASETREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _DSSPLITDATASETREQUEST_DBSECRETENTRY._options = None
+  _DSSPLITDATASETREQUEST_DBSECRETENTRY._serialized_options = b'8\001'
   _DSSPLITDATASETTORUNGSREQUEST_SECRETENTRY._options = None
   _DSSPLITDATASETTORUNGSREQUEST_SECRETENTRY._serialized_options = b'8\001'
   _DSTRANSFORMREQUEST_SECRETENTRY._options = None
   _DSTRANSFORMREQUEST_SECRETENTRY._serialized_options = b'8\001'
   _DSCREATECOLUMNPROFILEREQUEST_SECRETENTRY._options = None
   _DSCREATECOLUMNPROFILEREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _DSCREATECOLUMNPROFILEREQUEST_DBSECRETENTRY._options = None
+  _DSCREATECOLUMNPROFILEREQUEST_DBSECRETENTRY._serialized_options = b'8\001'
   _GROUPBYDATASETREQUEST_SECRETENTRY._options = None
   _GROUPBYDATASETREQUEST_SECRETENTRY._serialized_options = b'8\001'
-  _DSDATASETPROFILEREQUEST_SECRETENTRY._options = None
-  _DSDATASETPROFILEREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _GROUPBYDATASETREQUEST_DBSECRETENTRY._options = None
+  _GROUPBYDATASETREQUEST_DBSECRETENTRY._serialized_options = b'8\001'
   _DSINFERSCHEMAREQUEST_SECRETENTRY._options = None
   _DSINFERSCHEMAREQUEST_SECRETENTRY._serialized_options = b'8\001'
   _DSGETTABLEVIEWREQUEST_SECRETENTRY._options = None
   _DSGETTABLEVIEWREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _DSGETTABLEVIEWREQUEST_DBSECRETENTRY._options = None
+  _DSGETTABLEVIEWREQUEST_DBSECRETENTRY._serialized_options = b'8\001'
   _CREATEMODELREPORTREQUEST_SECRETENTRY._options = None
   _CREATEMODELREPORTREQUEST_SECRETENTRY._serialized_options = b'8\001'
   _CREATEFORECASTREPORTREQUEST_SECRETENTRY._options = None
   _CREATEFORECASTREPORTREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _CREATEFORECASTREPORTREQUEST_DBSECRETENTRY._options = None
+  _CREATEFORECASTREPORTREQUEST_DBSECRETENTRY._serialized_options = b'8\001'
   _CREATESUMMARYREPORTREQUEST_SECRETENTRY._options = None
   _CREATESUMMARYREPORTREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _CREATESUMMARYREPORTREQUEST_DBSECRETENTRY._options = None
+  _CREATESUMMARYREPORTREQUEST_DBSECRETENTRY._serialized_options = b'8\001'
   _CREATEDATASETREPORTREQUEST_SECRETENTRY._options = None
   _CREATEDATASETREPORTREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _CREATEDATASETREPORTREQUEST_DBSECRETENTRY._options = None
+  _CREATEDATASETREPORTREQUEST_DBSECRETENTRY._serialized_options = b'8\001'
   _CREATESTUDYREPORTREQUEST_SECRETENTRY._options = None
   _CREATESTUDYREPORTREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _CREATESTUDYREPORTREQUEST_DBSECRETENTRY._options = None
+  _CREATESTUDYREPORTREQUEST_DBSECRETENTRY._serialized_options = b'8\001'
   _DSTESTCONNECTIONREQUEST_SECRETENTRY._options = None
   _DSTESTCONNECTIONREQUEST_SECRETENTRY._serialized_options = b'8\001'
   _DSSTUDYENDEDREQUEST_SECRETENTRY._options = None
@@ -1220,235 +1369,261 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DSRUNDATAPIPELINERESPONSE._serialized_start=3775
   _DSRUNDATAPIPELINERESPONSE._serialized_end=3881
   _DSRUNRECIPEREQUEST._serialized_start=3884
-  _DSRUNRECIPEREQUEST._serialized_end=4723
-  _DSRUNRECIPEREQUEST_SECRETENTRY._serialized_start=1036
-  _DSRUNRECIPEREQUEST_SECRETENTRY._serialized_end=1081
-  _DSRUNRECIPERESPONSE._serialized_start=4725
-  _DSRUNRECIPERESPONSE._serialized_end=4824
-  _DSCREATERECIPEPROFILEREQUEST._serialized_start=4827
-  _DSCREATERECIPEPROFILEREQUEST._serialized_end=5602
-  _DSCREATERECIPEPROFILEREQUEST_SECRETENTRY._serialized_start=1036
-  _DSCREATERECIPEPROFILEREQUEST_SECRETENTRY._serialized_end=1081
-  _DSCREATERECIPEPROFILERESPONSE._serialized_start=5604
-  _DSCREATERECIPEPROFILERESPONSE._serialized_end=5712
-  _DATASOURCERESPONSE._serialized_start=5714
-  _DATASOURCERESPONSE._serialized_end=5734
-  _DATASETRESPONSE._serialized_start=5736
-  _DATASETRESPONSE._serialized_end=5753
-  _DSCREATEDATASETPROFILEREQUEST._serialized_start=5756
-  _DSCREATEDATASETPROFILEREQUEST._serialized_end=6470
-  _DSCREATEDATASETPROFILEREQUEST_SECRETENTRY._serialized_start=1036
-  _DSCREATEDATASETPROFILEREQUEST_SECRETENTRY._serialized_end=1081
-  _DSCREATEDATASETPROFILERESPONSE._serialized_start=6473
-  _DSCREATEDATASETPROFILERESPONSE._serialized_end=6601
-  _DSCREATEMODELPROFILEREQUEST._serialized_start=6604
-  _DSCREATEMODELPROFILEREQUEST._serialized_end=7459
+  _DSRUNRECIPEREQUEST._serialized_end=4998
+  _DSRUNRECIPEREQUEST_SECRETCONNECTIONENTRY._serialized_start=4894
+  _DSRUNRECIPEREQUEST_SECRETCONNECTIONENTRY._serialized_end=4949
+  _DSRUNRECIPEREQUEST_DBSECRETENTRY._serialized_start=4951
+  _DSRUNRECIPEREQUEST_DBSECRETENTRY._serialized_end=4998
+  _DSRUNRECIPERESPONSE._serialized_start=5000
+  _DSRUNRECIPERESPONSE._serialized_end=5099
+  _DSCREATERECIPEPROFILEREQUEST._serialized_start=5102
+  _DSCREATERECIPEPROFILEREQUEST._serialized_end=6162
+  _DSCREATERECIPEPROFILEREQUEST_SECRETCONNECTIONENTRY._serialized_start=4894
+  _DSCREATERECIPEPROFILEREQUEST_SECRETCONNECTIONENTRY._serialized_end=4949
+  _DSCREATERECIPEPROFILEREQUEST_DBSECRETENTRY._serialized_start=4951
+  _DSCREATERECIPEPROFILEREQUEST_DBSECRETENTRY._serialized_end=4998
+  _DSCREATERECIPEPROFILERESPONSE._serialized_start=6164
+  _DSCREATERECIPEPROFILERESPONSE._serialized_end=6272
+  _DATASOURCERESPONSE._serialized_start=6274
+  _DATASOURCERESPONSE._serialized_end=6294
+  _DATASETRESPONSE._serialized_start=6296
+  _DATASETRESPONSE._serialized_end=6313
+  _DSCREATEDATASETPROFILEREQUEST._serialized_start=6316
+  _DSCREATEDATASETPROFILEREQUEST._serialized_end=7307
+  _DSCREATEDATASETPROFILEREQUEST_STORAGESECRETENTRY._serialized_start=7206
+  _DSCREATEDATASETPROFILEREQUEST_STORAGESECRETENTRY._serialized_end=7258
+  _DSCREATEDATASETPROFILEREQUEST_DBSECRETENTRY._serialized_start=4951
+  _DSCREATEDATASETPROFILEREQUEST_DBSECRETENTRY._serialized_end=4998
+  _DSCREATEDATASETPROFILERESPONSE._serialized_start=7310
+  _DSCREATEDATASETPROFILERESPONSE._serialized_end=7438
+  _DSCREATEMODELPROFILEREQUEST._serialized_start=7441
+  _DSCREATEMODELPROFILEREQUEST._serialized_end=8543
   _DSCREATEMODELPROFILEREQUEST_SECRETENTRY._serialized_start=1036
   _DSCREATEMODELPROFILEREQUEST_SECRETENTRY._serialized_end=1081
-  _DSCREATEMODELPROFILERESPONSE._serialized_start=7461
-  _DSCREATEMODELPROFILERESPONSE._serialized_end=7504
-  _DSMERGEFORECASTFILEREQUEST._serialized_start=7507
-  _DSMERGEFORECASTFILEREQUEST._serialized_end=8379
+  _DSCREATEMODELPROFILEREQUEST_DBSECRETENTRY._serialized_start=4951
+  _DSCREATEMODELPROFILEREQUEST_DBSECRETENTRY._serialized_end=4998
+  _DSCREATEMODELPROFILERESPONSE._serialized_start=8545
+  _DSCREATEMODELPROFILERESPONSE._serialized_end=8588
+  _DSMERGEFORECASTFILEREQUEST._serialized_start=8591
+  _DSMERGEFORECASTFILEREQUEST._serialized_end=9709
   _DSMERGEFORECASTFILEREQUEST_SECRETENTRY._serialized_start=1036
   _DSMERGEFORECASTFILEREQUEST_SECRETENTRY._serialized_end=1081
-  _DSMERGEFORECASTFILERESPONSE._serialized_start=8381
-  _DSMERGEFORECASTFILERESPONSE._serialized_end=8423
-  _DSCREATESTUDYPROFILEREQUEST._serialized_start=8426
-  _DSCREATESTUDYPROFILEREQUEST._serialized_end=9282
+  _DSMERGEFORECASTFILEREQUEST_DBSECRETENTRY._serialized_start=4951
+  _DSMERGEFORECASTFILEREQUEST_DBSECRETENTRY._serialized_end=4998
+  _DSMERGEFORECASTFILERESPONSE._serialized_start=9711
+  _DSMERGEFORECASTFILERESPONSE._serialized_end=9753
+  _DSCREATESTUDYPROFILEREQUEST._serialized_start=9756
+  _DSCREATESTUDYPROFILEREQUEST._serialized_end=10859
   _DSCREATESTUDYPROFILEREQUEST_SECRETENTRY._serialized_start=1036
   _DSCREATESTUDYPROFILEREQUEST_SECRETENTRY._serialized_end=1081
-  _DSCREATESTUDYPROFILERESPONSE._serialized_start=9284
-  _DSCREATESTUDYPROFILERESPONSE._serialized_end=9327
-  _RUNTESTSUITEREQUEST._serialized_start=9330
-  _RUNTESTSUITEREQUEST._serialized_end=11347
+  _DSCREATESTUDYPROFILEREQUEST_DBSECRETENTRY._serialized_start=4951
+  _DSCREATESTUDYPROFILEREQUEST_DBSECRETENTRY._serialized_end=4998
+  _DSCREATESTUDYPROFILERESPONSE._serialized_start=10861
+  _DSCREATESTUDYPROFILERESPONSE._serialized_end=10904
+  _RUNTESTSUITEREQUEST._serialized_start=10907
+  _RUNTESTSUITEREQUEST._serialized_end=13163
   _RUNTESTSUITEREQUEST_SECRETENTRY._serialized_start=1036
   _RUNTESTSUITEREQUEST_SECRETENTRY._serialized_end=1081
-  _RUNTESTSUITERESPONSE._serialized_start=11349
-  _RUNTESTSUITERESPONSE._serialized_end=11461
-  _DSGENERATEDATASETREQUEST._serialized_start=11464
-  _DSGENERATEDATASETREQUEST._serialized_end=12087
+  _RUNTESTSUITEREQUEST_DBSECRETENTRY._serialized_start=4951
+  _RUNTESTSUITEREQUEST_DBSECRETENTRY._serialized_end=4998
+  _RUNTESTSUITERESPONSE._serialized_start=13165
+  _RUNTESTSUITERESPONSE._serialized_end=13277
+  _DSGENERATEDATASETREQUEST._serialized_start=13280
+  _DSGENERATEDATASETREQUEST._serialized_end=14147
   _DSGENERATEDATASETREQUEST_SECRETENTRY._serialized_start=1036
   _DSGENERATEDATASETREQUEST_SECRETENTRY._serialized_end=1081
-  _DSGENERATEDATASETRESPONSE._serialized_start=12089
-  _DSGENERATEDATASETRESPONSE._serialized_end=12129
-  _DSSPLITDATASETREQUEST._serialized_start=12132
-  _DSSPLITDATASETREQUEST._serialized_end=13085
+  _DSGENERATEDATASETREQUEST_DBSECRETENTRY._serialized_start=4951
+  _DSGENERATEDATASETREQUEST_DBSECRETENTRY._serialized_end=4998
+  _DSGENERATEDATASETRESPONSE._serialized_start=14149
+  _DSGENERATEDATASETRESPONSE._serialized_end=14189
+  _DSSPLITDATASETREQUEST._serialized_start=14192
+  _DSSPLITDATASETREQUEST._serialized_end=15386
   _DSSPLITDATASETREQUEST_SECRETENTRY._serialized_start=1036
   _DSSPLITDATASETREQUEST_SECRETENTRY._serialized_end=1081
-  _DSSPLITDATASETRESPONSE._serialized_start=13088
-  _DSSPLITDATASETRESPONSE._serialized_end=13256
-  _DSSPLITDATASETTORUNGSREQUEST._serialized_start=13259
-  _DSSPLITDATASETTORUNGSREQUEST._serialized_end=13971
+  _DSSPLITDATASETREQUEST_DBSECRETENTRY._serialized_start=4951
+  _DSSPLITDATASETREQUEST_DBSECRETENTRY._serialized_end=4998
+  _DSSPLITDATASETRESPONSE._serialized_start=15389
+  _DSSPLITDATASETRESPONSE._serialized_end=15557
+  _DSSPLITDATASETTORUNGSREQUEST._serialized_start=15560
+  _DSSPLITDATASETTORUNGSREQUEST._serialized_end=16272
   _DSSPLITDATASETTORUNGSREQUEST_SECRETENTRY._serialized_start=1036
   _DSSPLITDATASETTORUNGSREQUEST_SECRETENTRY._serialized_end=1081
-  _DSSPLITDATASETTORUNGSRESPONSE._serialized_start=13973
-  _DSSPLITDATASETTORUNGSRESPONSE._serialized_end=14004
-  _DSTRANSFORMREQUEST._serialized_start=14007
-  _DSTRANSFORMREQUEST._serialized_end=14939
+  _DSSPLITDATASETTORUNGSRESPONSE._serialized_start=16274
+  _DSSPLITDATASETTORUNGSRESPONSE._serialized_end=16305
+  _DSTRANSFORMREQUEST._serialized_start=16308
+  _DSTRANSFORMREQUEST._serialized_end=17240
   _DSTRANSFORMREQUEST_SECRETENTRY._serialized_start=1036
   _DSTRANSFORMREQUEST_SECRETENTRY._serialized_end=1081
-  _DSTRANSFORMRESPONSE._serialized_start=14941
-  _DSTRANSFORMRESPONSE._serialized_end=15032
-  _DSCREATECOLUMNPROFILEREQUEST._serialized_start=15035
-  _DSCREATECOLUMNPROFILEREQUEST._serialized_end=15772
+  _DSTRANSFORMRESPONSE._serialized_start=17242
+  _DSTRANSFORMRESPONSE._serialized_end=17333
+  _DSCREATECOLUMNPROFILEREQUEST._serialized_start=17336
+  _DSCREATECOLUMNPROFILEREQUEST._serialized_end=18321
   _DSCREATECOLUMNPROFILEREQUEST_SECRETENTRY._serialized_start=1036
   _DSCREATECOLUMNPROFILEREQUEST_SECRETENTRY._serialized_end=1081
-  _DSCREATECOLUMNPROFILERESPONSE._serialized_start=15774
-  _DSCREATECOLUMNPROFILERESPONSE._serialized_end=15889
-  _GROUPBYDATASETREQUEST._serialized_start=15892
-  _GROUPBYDATASETREQUEST._serialized_end=16575
+  _DSCREATECOLUMNPROFILEREQUEST_DBSECRETENTRY._serialized_start=4951
+  _DSCREATECOLUMNPROFILEREQUEST_DBSECRETENTRY._serialized_end=4998
+  _DSCREATECOLUMNPROFILERESPONSE._serialized_start=18323
+  _DSCREATECOLUMNPROFILERESPONSE._serialized_end=18438
+  _GROUPBYDATASETREQUEST._serialized_start=18441
+  _GROUPBYDATASETREQUEST._serialized_end=19365
   _GROUPBYDATASETREQUEST_SECRETENTRY._serialized_start=1036
   _GROUPBYDATASETREQUEST_SECRETENTRY._serialized_end=1081
-  _GROUPBYDATASETRESPONSE._serialized_start=16577
-  _GROUPBYDATASETRESPONSE._serialized_end=16614
-  _DSDATASETPROFILEREQUEST._serialized_start=16617
-  _DSDATASETPROFILEREQUEST._serialized_end=17334
-  _DSDATASETPROFILEREQUEST_SECRETENTRY._serialized_start=1036
-  _DSDATASETPROFILEREQUEST_SECRETENTRY._serialized_end=1081
-  _DSDATASETPROFILERESPONSE._serialized_start=17336
-  _DSDATASETPROFILERESPONSE._serialized_end=17445
-  _DSINFERSCHEMAREQUEST._serialized_start=17448
-  _DSINFERSCHEMAREQUEST._serialized_end=17960
+  _GROUPBYDATASETREQUEST_DBSECRETENTRY._serialized_start=4951
+  _GROUPBYDATASETREQUEST_DBSECRETENTRY._serialized_end=4998
+  _GROUPBYDATASETRESPONSE._serialized_start=19367
+  _GROUPBYDATASETRESPONSE._serialized_end=19404
+  _DSINFERSCHEMAREQUEST._serialized_start=19407
+  _DSINFERSCHEMAREQUEST._serialized_end=19919
   _DSINFERSCHEMAREQUEST_SECRETENTRY._serialized_start=1036
   _DSINFERSCHEMAREQUEST_SECRETENTRY._serialized_end=1081
-  _DSINFERSCHEMARESPONSE._serialized_start=17962
-  _DSINFERSCHEMARESPONSE._serialized_end=18068
-  _DSGETTABLEVIEWREQUEST._serialized_start=18071
-  _DSGETTABLEVIEWREQUEST._serialized_end=18591
+  _DSINFERSCHEMARESPONSE._serialized_start=19921
+  _DSINFERSCHEMARESPONSE._serialized_end=20027
+  _DSGETTABLEVIEWREQUEST._serialized_start=20030
+  _DSGETTABLEVIEWREQUEST._serialized_end=20791
   _DSGETTABLEVIEWREQUEST_SECRETENTRY._serialized_start=1036
   _DSGETTABLEVIEWREQUEST_SECRETENTRY._serialized_end=1081
-  _DSGETTABLEVIEWRESPONSE._serialized_start=18593
-  _DSGETTABLEVIEWRESPONSE._serialized_end=18697
-  _CREATEMODELREPORTREQUEST._serialized_start=18700
-  _CREATEMODELREPORTREQUEST._serialized_end=19646
+  _DSGETTABLEVIEWREQUEST_DBSECRETENTRY._serialized_start=4951
+  _DSGETTABLEVIEWREQUEST_DBSECRETENTRY._serialized_end=4998
+  _DSGETTABLEVIEWRESPONSE._serialized_start=20793
+  _DSGETTABLEVIEWRESPONSE._serialized_end=20897
+  _CREATEMODELREPORTREQUEST._serialized_start=20900
+  _CREATEMODELREPORTREQUEST._serialized_end=21846
   _CREATEMODELREPORTREQUEST_SECRETENTRY._serialized_start=1036
   _CREATEMODELREPORTREQUEST_SECRETENTRY._serialized_end=1081
-  _CREATEFORECASTREPORTREQUEST._serialized_start=19649
-  _CREATEFORECASTREPORTREQUEST._serialized_end=20604
+  _CREATEFORECASTREPORTREQUEST._serialized_start=21849
+  _CREATEFORECASTREPORTREQUEST._serialized_end=23051
   _CREATEFORECASTREPORTREQUEST_SECRETENTRY._serialized_start=1036
   _CREATEFORECASTREPORTREQUEST_SECRETENTRY._serialized_end=1081
-  _CREATESUMMARYREPORTREQUEST._serialized_start=20607
-  _CREATESUMMARYREPORTREQUEST._serialized_end=21216
+  _CREATEFORECASTREPORTREQUEST_DBSECRETENTRY._serialized_start=4951
+  _CREATEFORECASTREPORTREQUEST_DBSECRETENTRY._serialized_end=4998
+  _CREATESUMMARYREPORTREQUEST._serialized_start=23054
+  _CREATESUMMARYREPORTREQUEST._serialized_end=23909
   _CREATESUMMARYREPORTREQUEST_SECRETENTRY._serialized_start=1036
   _CREATESUMMARYREPORTREQUEST_SECRETENTRY._serialized_end=1081
-  _CREATEREPORTRESPONSE._serialized_start=21218
-  _CREATEREPORTRESPONSE._serialized_end=21253
-  _CREATEDATASETREPORTREQUEST._serialized_start=21256
-  _CREATEDATASETREPORTREQUEST._serialized_end=22046
+  _CREATESUMMARYREPORTREQUEST_DBSECRETENTRY._serialized_start=4951
+  _CREATESUMMARYREPORTREQUEST_DBSECRETENTRY._serialized_end=4998
+  _CREATEREPORTRESPONSE._serialized_start=23911
+  _CREATEREPORTRESPONSE._serialized_end=23946
+  _CREATEDATASETREPORTREQUEST._serialized_start=23949
+  _CREATEDATASETREPORTREQUEST._serialized_end=24985
   _CREATEDATASETREPORTREQUEST_SECRETENTRY._serialized_start=1036
   _CREATEDATASETREPORTREQUEST_SECRETENTRY._serialized_end=1081
-  _CREATESTUDYREPORTREQUEST._serialized_start=22049
-  _CREATESTUDYREPORTREQUEST._serialized_end=22985
+  _CREATEDATASETREPORTREQUEST_DBSECRETENTRY._serialized_start=4951
+  _CREATEDATASETREPORTREQUEST_DBSECRETENTRY._serialized_end=4998
+  _CREATESTUDYREPORTREQUEST._serialized_start=24988
+  _CREATESTUDYREPORTREQUEST._serialized_end=26168
   _CREATESTUDYREPORTREQUEST_SECRETENTRY._serialized_start=1036
   _CREATESTUDYREPORTREQUEST_SECRETENTRY._serialized_end=1081
-  _ASKMODELREQUEST._serialized_start=22988
-  _ASKMODELREQUEST._serialized_end=23568
-  _GETTIMESERIESDATASETKEYSREQUEST._serialized_start=23571
-  _GETTIMESERIESDATASETKEYSREQUEST._serialized_end=24025
-  _GETTIMESERIESDATASETKEYSRESPONSE._serialized_start=24027
-  _GETTIMESERIESDATASETKEYSRESPONSE._serialized_end=24075
-  _ASKFORECASTMODELREQUEST._serialized_start=24078
-  _ASKFORECASTMODELREQUEST._serialized_end=24626
-  _ASKFORECASTMODELRESPONSE._serialized_start=24628
-  _ASKFORECASTMODELRESPONSE._serialized_end=24734
-  _ASKENSEMBLEREQUEST._serialized_start=24737
-  _ASKENSEMBLEREQUEST._serialized_end=25347
-  _ASKENSEMBLERESPONSE._serialized_start=25349
-  _ASKENSEMBLERESPONSE._serialized_end=25450
-  _ASKBASELINEREQUEST._serialized_start=25453
-  _ASKBASELINEREQUEST._serialized_end=26013
-  _ASKBASELINERESPONSE._serialized_start=26015
-  _ASKBASELINERESPONSE._serialized_end=26116
-  _ASKALLMODELSFORTASKREQUEST._serialized_start=26119
-  _ASKALLMODELSFORTASKREQUEST._serialized_end=26686
-  _ASKALLMODELSFORTASKRESPONSE._serialized_start=26688
-  _ASKALLMODELSFORTASKRESPONSE._serialized_end=26797
-  _TELLMODELREQUEST._serialized_start=26800
-  _TELLMODELREQUEST._serialized_end=27335
-  _TELLMODELRESPONSE._serialized_start=27337
-  _TELLMODELRESPONSE._serialized_end=27372
-  _DSSHUTDOWNREQUEST._serialized_start=27374
-  _DSSHUTDOWNREQUEST._serialized_end=27393
-  _DSSHUTDOWNRESPONSE._serialized_start=27395
-  _DSSHUTDOWNRESPONSE._serialized_end=27415
-  _DSTESTCONNECTIONREQUEST._serialized_start=27418
-  _DSTESTCONNECTIONREQUEST._serialized_end=27764
+  _CREATESTUDYREPORTREQUEST_DBSECRETENTRY._serialized_start=4951
+  _CREATESTUDYREPORTREQUEST_DBSECRETENTRY._serialized_end=4998
+  _ASKMODELREQUEST._serialized_start=26171
+  _ASKMODELREQUEST._serialized_end=26751
+  _GETTIMESERIESDATASETKEYSREQUEST._serialized_start=26754
+  _GETTIMESERIESDATASETKEYSREQUEST._serialized_end=27208
+  _GETTIMESERIESDATASETKEYSRESPONSE._serialized_start=27210
+  _GETTIMESERIESDATASETKEYSRESPONSE._serialized_end=27258
+  _ASKFORECASTMODELREQUEST._serialized_start=27261
+  _ASKFORECASTMODELREQUEST._serialized_end=27809
+  _ASKFORECASTMODELRESPONSE._serialized_start=27811
+  _ASKFORECASTMODELRESPONSE._serialized_end=27917
+  _ASKENSEMBLEREQUEST._serialized_start=27920
+  _ASKENSEMBLEREQUEST._serialized_end=28530
+  _ASKENSEMBLERESPONSE._serialized_start=28532
+  _ASKENSEMBLERESPONSE._serialized_end=28633
+  _ASKBASELINEREQUEST._serialized_start=28636
+  _ASKBASELINEREQUEST._serialized_end=29196
+  _ASKBASELINERESPONSE._serialized_start=29198
+  _ASKBASELINERESPONSE._serialized_end=29299
+  _ASKALLMODELSFORTASKREQUEST._serialized_start=29302
+  _ASKALLMODELSFORTASKREQUEST._serialized_end=29869
+  _ASKALLMODELSFORTASKRESPONSE._serialized_start=29871
+  _ASKALLMODELSFORTASKRESPONSE._serialized_end=29980
+  _TELLMODELREQUEST._serialized_start=29983
+  _TELLMODELREQUEST._serialized_end=30518
+  _TELLMODELRESPONSE._serialized_start=30520
+  _TELLMODELRESPONSE._serialized_end=30555
+  _DSSHUTDOWNREQUEST._serialized_start=30557
+  _DSSHUTDOWNREQUEST._serialized_end=30576
+  _DSSHUTDOWNRESPONSE._serialized_start=30578
+  _DSSHUTDOWNRESPONSE._serialized_end=30598
+  _DSTESTCONNECTIONREQUEST._serialized_start=30601
+  _DSTESTCONNECTIONREQUEST._serialized_end=30947
   _DSTESTCONNECTIONREQUEST_SECRETENTRY._serialized_start=1036
   _DSTESTCONNECTIONREQUEST_SECRETENTRY._serialized_end=1081
-  _DSTESTCONNECTIONRESPONSE._serialized_start=27766
-  _DSTESTCONNECTIONRESPONSE._serialized_end=27821
-  _DSSTUDYENDEDREQUEST._serialized_start=27824
-  _DSSTUDYENDEDREQUEST._serialized_end=28583
+  _DSTESTCONNECTIONRESPONSE._serialized_start=30949
+  _DSTESTCONNECTIONRESPONSE._serialized_end=31004
+  _DSSTUDYENDEDREQUEST._serialized_start=31007
+  _DSSTUDYENDEDREQUEST._serialized_end=31766
   _DSSTUDYENDEDREQUEST_SECRETENTRY._serialized_start=1036
   _DSSTUDYENDEDREQUEST_SECRETENTRY._serialized_end=1081
-  _DSSTUDYENDEDRESPONSE._serialized_start=28585
-  _DSSTUDYENDEDRESPONSE._serialized_end=28607
-  _SAVEOPTIMIZERDBREQUEST._serialized_start=28610
-  _SAVEOPTIMIZERDBREQUEST._serialized_end=29375
+  _DSSTUDYENDEDRESPONSE._serialized_start=31768
+  _DSSTUDYENDEDRESPONSE._serialized_end=31790
+  _SAVEOPTIMIZERDBREQUEST._serialized_start=31793
+  _SAVEOPTIMIZERDBREQUEST._serialized_end=32558
   _SAVEOPTIMIZERDBREQUEST_SECRETENTRY._serialized_start=1036
   _SAVEOPTIMIZERDBREQUEST_SECRETENTRY._serialized_end=1081
-  _SAVEOPTIMIZERDBRESPONSE._serialized_start=29377
-  _SAVEOPTIMIZERDBRESPONSE._serialized_end=29402
-  _DSGETDATABASESREQUEST._serialized_start=29405
-  _DSGETDATABASESREQUEST._serialized_end=29661
+  _SAVEOPTIMIZERDBRESPONSE._serialized_start=32560
+  _SAVEOPTIMIZERDBRESPONSE._serialized_end=32585
+  _DSGETDATABASESREQUEST._serialized_start=32588
+  _DSGETDATABASESREQUEST._serialized_end=32844
   _DSGETDATABASESREQUEST_SECRETENTRY._serialized_start=1036
   _DSGETDATABASESREQUEST_SECRETENTRY._serialized_end=1081
-  _DSGETDATABASESRESPONSE._serialized_start=29663
-  _DSGETDATABASESRESPONSE._serialized_end=29706
-  _DSGETTABLESREQUEST._serialized_start=29709
-  _DSGETTABLESREQUEST._serialized_end=29981
+  _DSGETDATABASESRESPONSE._serialized_start=32846
+  _DSGETDATABASESRESPONSE._serialized_end=32889
+  _DSGETTABLESREQUEST._serialized_start=32892
+  _DSGETTABLESREQUEST._serialized_end=33164
   _DSGETTABLESREQUEST_SECRETENTRY._serialized_start=1036
   _DSGETTABLESREQUEST_SECRETENTRY._serialized_end=1081
-  _DSGETTABLESRESPONSE._serialized_start=29983
-  _DSGETTABLESRESPONSE._serialized_end=30020
-  _DSEXECUTESQLREQUEST._serialized_start=30023
-  _DSEXECUTESQLREQUEST._serialized_end=30310
+  _DSGETTABLESRESPONSE._serialized_start=33166
+  _DSGETTABLESRESPONSE._serialized_end=33203
+  _DSEXECUTESQLREQUEST._serialized_start=33206
+  _DSEXECUTESQLREQUEST._serialized_end=33493
   _DSEXECUTESQLREQUEST_SECRETENTRY._serialized_start=1036
   _DSEXECUTESQLREQUEST_SECRETENTRY._serialized_end=1081
-  _DSEXECUTESQLRESPONSE._serialized_start=30312
-  _DSEXECUTESQLRESPONSE._serialized_end=30414
-  _DSSNAPSHOTREQUEST._serialized_start=30417
-  _DSSNAPSHOTREQUEST._serialized_end=31370
-  _DSSNAPSHOTREQUEST_DBSECRETENTRY._serialized_start=31269
-  _DSSNAPSHOTREQUEST_DBSECRETENTRY._serialized_end=31316
-  _DSSNAPSHOTREQUEST_STORAGESECRETENTRY._serialized_start=31318
-  _DSSNAPSHOTREQUEST_STORAGESECRETENTRY._serialized_end=31370
-  _DSSNAPSHOTRESPONSE._serialized_start=31372
-  _DSSNAPSHOTRESPONSE._serialized_end=31392
-  _ASKMODELRESPONSE._serialized_start=31394
-  _ASKMODELRESPONSE._serialized_end=31492
-  _GENTRAININGDATAREQUEST._serialized_start=31495
-  _GENTRAININGDATAREQUEST._serialized_end=32540
-  _GENTRAININGDATAREQUEST_STORAGESECRETENTRY._serialized_start=32439
-  _GENTRAININGDATAREQUEST_STORAGESECRETENTRY._serialized_end=32491
-  _GENTRAININGDATAREQUEST_DBSECRETENTRY._serialized_start=32493
-  _GENTRAININGDATAREQUEST_DBSECRETENTRY._serialized_end=32540
-  _GENTRAININGDATARESPONSE._serialized_start=32542
-  _GENTRAININGDATARESPONSE._serialized_end=32581
-  _SYNCONLINESTOREREQUEST._serialized_start=32584
-  _SYNCONLINESTOREREQUEST._serialized_end=33456
-  _SYNCONLINESTOREREQUEST_STORAGESECRETENTRY._serialized_start=32439
-  _SYNCONLINESTOREREQUEST_STORAGESECRETENTRY._serialized_end=32491
-  _SYNCONLINESTOREREQUEST_DBSECRETENTRY._serialized_start=32493
-  _SYNCONLINESTOREREQUEST_DBSECRETENTRY._serialized_end=32540
-  _SYNCONLINESTORERESPONSE._serialized_start=33458
-  _SYNCONLINESTORERESPONSE._serialized_end=33483
-  _GENONLINESTOREDATASETREQUEST._serialized_start=33486
-  _GENONLINESTOREDATASETREQUEST._serialized_end=34376
-  _GENONLINESTOREDATASETREQUEST_STORAGESECRETENTRY._serialized_start=32439
-  _GENONLINESTOREDATASETREQUEST_STORAGESECRETENTRY._serialized_end=32491
-  _GENONLINESTOREDATASETREQUEST_DBSECRETENTRY._serialized_start=32493
-  _GENONLINESTOREDATASETREQUEST_DBSECRETENTRY._serialized_end=32540
-  _GENONLINESTOREDATASETRESPONSE._serialized_start=34378
-  _GENONLINESTOREDATASETRESPONSE._serialized_end=34495
-  _BATCHPREDICTREQUEST._serialized_start=34498
-  _BATCHPREDICTREQUEST._serialized_end=35535
-  _BATCHPREDICTREQUEST_STORAGESECRETENTRY._serialized_start=32439
-  _BATCHPREDICTREQUEST_STORAGESECRETENTRY._serialized_end=32491
-  _BATCHPREDICTREQUEST_DBSECRETENTRY._serialized_start=32493
-  _BATCHPREDICTREQUEST_DBSECRETENTRY._serialized_end=32540
-  _BATCHPREDICTRESPONSE._serialized_start=35537
-  _BATCHPREDICTRESPONSE._serialized_end=35573
-  _DATASERVICE._serialized_start=35576
-  _DATASERVICE._serialized_end=43649
+  _DSEXECUTESQLRESPONSE._serialized_start=33495
+  _DSEXECUTESQLRESPONSE._serialized_end=33597
+  _DSSNAPSHOTREQUEST._serialized_start=33600
+  _DSSNAPSHOTREQUEST._serialized_end=34553
+  _DSSNAPSHOTREQUEST_DBSECRETENTRY._serialized_start=34452
+  _DSSNAPSHOTREQUEST_DBSECRETENTRY._serialized_end=34499
+  _DSSNAPSHOTREQUEST_STORAGESECRETENTRY._serialized_start=34501
+  _DSSNAPSHOTREQUEST_STORAGESECRETENTRY._serialized_end=34553
+  _DSSNAPSHOTRESPONSE._serialized_start=34555
+  _DSSNAPSHOTRESPONSE._serialized_end=34575
+  _ASKMODELRESPONSE._serialized_start=34577
+  _ASKMODELRESPONSE._serialized_end=34675
+  _GENTRAININGDATAREQUEST._serialized_start=34678
+  _GENTRAININGDATAREQUEST._serialized_end=35723
+  _GENTRAININGDATAREQUEST_STORAGESECRETENTRY._serialized_start=7206
+  _GENTRAININGDATAREQUEST_STORAGESECRETENTRY._serialized_end=7258
+  _GENTRAININGDATAREQUEST_DBSECRETENTRY._serialized_start=4951
+  _GENTRAININGDATAREQUEST_DBSECRETENTRY._serialized_end=4998
+  _GENTRAININGDATARESPONSE._serialized_start=35725
+  _GENTRAININGDATARESPONSE._serialized_end=35764
+  _SYNCONLINESTOREREQUEST._serialized_start=35767
+  _SYNCONLINESTOREREQUEST._serialized_end=36639
+  _SYNCONLINESTOREREQUEST_STORAGESECRETENTRY._serialized_start=7206
+  _SYNCONLINESTOREREQUEST_STORAGESECRETENTRY._serialized_end=7258
+  _SYNCONLINESTOREREQUEST_DBSECRETENTRY._serialized_start=4951
+  _SYNCONLINESTOREREQUEST_DBSECRETENTRY._serialized_end=4998
+  _SYNCONLINESTORERESPONSE._serialized_start=36641
+  _SYNCONLINESTORERESPONSE._serialized_end=36666
+  _GENONLINESTOREDATASETREQUEST._serialized_start=36669
+  _GENONLINESTOREDATASETREQUEST._serialized_end=37559
+  _GENONLINESTOREDATASETREQUEST_STORAGESECRETENTRY._serialized_start=7206
+  _GENONLINESTOREDATASETREQUEST_STORAGESECRETENTRY._serialized_end=7258
+  _GENONLINESTOREDATASETREQUEST_DBSECRETENTRY._serialized_start=4951
+  _GENONLINESTOREDATASETREQUEST_DBSECRETENTRY._serialized_end=4998
+  _GENONLINESTOREDATASETRESPONSE._serialized_start=37561
+  _GENONLINESTOREDATASETRESPONSE._serialized_end=37678
+  _BATCHPREDICTREQUEST._serialized_start=37681
+  _BATCHPREDICTREQUEST._serialized_end=38718
+  _BATCHPREDICTREQUEST_STORAGESECRETENTRY._serialized_start=7206
+  _BATCHPREDICTREQUEST_STORAGESECRETENTRY._serialized_end=7258
+  _BATCHPREDICTREQUEST_DBSECRETENTRY._serialized_start=4951
+  _BATCHPREDICTREQUEST_DBSECRETENTRY._serialized_end=4998
+  _BATCHPREDICTRESPONSE._serialized_start=38720
+  _BATCHPREDICTRESPONSE._serialized_end=38756
+  _DATASERVICE._serialized_start=38759
+  _DATASERVICE._serialized_end=46832
 # @@protoc_insertion_point(module_scope)

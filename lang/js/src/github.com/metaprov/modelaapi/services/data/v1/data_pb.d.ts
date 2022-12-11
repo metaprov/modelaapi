@@ -322,18 +322,26 @@ export class DsRunRecipeRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): DsRunRecipeRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsRunRecipeRequest;
-  hasConnection(): boolean;
-  clearConnection(): DsRunRecipeRequest;
-
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
   setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsRunRecipeRequest;
   hasBucket(): boolean;
   clearBucket(): DsRunRecipeRequest;
 
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): DsRunRecipeRequest;
+  getStorageconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setStorageconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsRunRecipeRequest;
+  hasStorageconnection(): boolean;
+  clearStorageconnection(): DsRunRecipeRequest;
+
+  getSecretconnectionMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretconnectionMap(): DsRunRecipeRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsRunRecipeRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): DsRunRecipeRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): DsRunRecipeRequest;
 
   getRecipe(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
   setRecipe(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): DsRunRecipeRequest;
@@ -359,9 +367,11 @@ export namespace DsRunRecipeRequest {
     version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
+    storageconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    secretconnectionMap: Array<[string, Uint8Array | string]>,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
     recipe?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
     reciperun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun.AsObject,
   }
@@ -408,18 +418,26 @@ export class DsCreateRecipeProfileRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): DsCreateRecipeProfileRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsCreateRecipeProfileRequest;
-  hasConnection(): boolean;
-  clearConnection(): DsCreateRecipeProfileRequest;
-
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
   setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsCreateRecipeProfileRequest;
   hasBucket(): boolean;
   clearBucket(): DsCreateRecipeProfileRequest;
 
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): DsCreateRecipeProfileRequest;
+  getStorageconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setStorageconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsCreateRecipeProfileRequest;
+  hasStorageconnection(): boolean;
+  clearStorageconnection(): DsCreateRecipeProfileRequest;
+
+  getSecretconnectionMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretconnectionMap(): DsCreateRecipeProfileRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsCreateRecipeProfileRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): DsCreateRecipeProfileRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): DsCreateRecipeProfileRequest;
 
   getRecipe(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
   setRecipe(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): DsCreateRecipeProfileRequest;
@@ -440,9 +458,11 @@ export namespace DsCreateRecipeProfileRequest {
     version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
+    storageconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    secretconnectionMap: Array<[string, Uint8Array | string]>,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
     recipe?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
   }
 }
@@ -516,18 +536,26 @@ export class DsCreateDatasetProfileRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): DsCreateDatasetProfileRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsCreateDatasetProfileRequest;
-  hasConnection(): boolean;
-  clearConnection(): DsCreateDatasetProfileRequest;
-
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
   setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsCreateDatasetProfileRequest;
   hasBucket(): boolean;
   clearBucket(): DsCreateDatasetProfileRequest;
 
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): DsCreateDatasetProfileRequest;
+  getStorageconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setStorageconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsCreateDatasetProfileRequest;
+  hasStorageconnection(): boolean;
+  clearStorageconnection(): DsCreateDatasetProfileRequest;
+
+  getStoragesecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearStoragesecretMap(): DsCreateDatasetProfileRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsCreateDatasetProfileRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): DsCreateDatasetProfileRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): DsCreateDatasetProfileRequest;
 
   getGroup(): boolean;
   setGroup(value: boolean): DsCreateDatasetProfileRequest;
@@ -546,9 +574,11 @@ export namespace DsCreateDatasetProfileRequest {
     version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
+    storageconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    storagesecretMap: Array<[string, Uint8Array | string]>,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
     group: boolean,
   }
 }
@@ -621,6 +651,14 @@ export class DsCreateModelProfileRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): DsCreateModelProfileRequest;
 
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsCreateModelProfileRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): DsCreateModelProfileRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): DsCreateModelProfileRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsCreateModelProfileRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsCreateModelProfileRequest): DsCreateModelProfileRequest.AsObject;
@@ -640,6 +678,8 @@ export namespace DsCreateModelProfileRequest {
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -710,6 +750,14 @@ export class DsMergeForecastFileRequest extends jspb.Message {
   clearForecastsList(): DsMergeForecastFileRequest;
   addForecasts(value: string, index?: number): DsMergeForecastFileRequest;
 
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsMergeForecastFileRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): DsMergeForecastFileRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): DsMergeForecastFileRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsMergeForecastFileRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsMergeForecastFileRequest): DsMergeForecastFileRequest.AsObject;
@@ -730,6 +778,8 @@ export namespace DsMergeForecastFileRequest {
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
     forecastsList: Array<string>,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -795,6 +845,14 @@ export class DsCreateStudyProfileRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): DsCreateStudyProfileRequest;
 
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsCreateStudyProfileRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): DsCreateStudyProfileRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): DsCreateStudyProfileRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsCreateStudyProfileRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsCreateStudyProfileRequest): DsCreateStudyProfileRequest.AsObject;
@@ -814,6 +872,8 @@ export namespace DsCreateStudyProfileRequest {
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
     secretMap: Array<[string, Uint8Array | string]>,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -947,6 +1007,14 @@ export class RunTestSuiteRequest extends jspb.Message {
   getGroup(): boolean;
   setGroup(value: boolean): RunTestSuiteRequest;
 
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): RunTestSuiteRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): RunTestSuiteRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): RunTestSuiteRequest;
+
   getSutOneofCase(): RunTestSuiteRequest.SutOneofCase;
 
   getSutRefCase(): RunTestSuiteRequest.SutRefCase;
@@ -984,6 +1052,8 @@ export namespace RunTestSuiteRequest {
     refhistogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
     refpredictor?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
     group: boolean,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 
   export enum SutOneofCase { 
@@ -1059,6 +1129,14 @@ export class DsGenerateDatasetRequest extends jspb.Message {
   getRows(): number;
   setRows(value: number): DsGenerateDatasetRequest;
 
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsGenerateDatasetRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): DsGenerateDatasetRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): DsGenerateDatasetRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsGenerateDatasetRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsGenerateDatasetRequest): DsGenerateDatasetRequest.AsObject;
@@ -1076,6 +1154,8 @@ export namespace DsGenerateDatasetRequest {
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
     rows: number,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -1149,6 +1229,14 @@ export class DsSplitDatasetRequest extends jspb.Message {
   getGroup(): boolean;
   setGroup(value: boolean): DsSplitDatasetRequest;
 
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsSplitDatasetRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): DsSplitDatasetRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): DsSplitDatasetRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsSplitDatasetRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsSplitDatasetRequest): DsSplitDatasetRequest.AsObject;
@@ -1170,6 +1258,8 @@ export namespace DsSplitDatasetRequest {
     trainingdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     testingdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     group: boolean,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -1425,6 +1515,14 @@ export class DsCreateColumnProfileRequest extends jspb.Message {
   getColumnname(): string;
   setColumnname(value: string): DsCreateColumnProfileRequest;
 
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsCreateColumnProfileRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): DsCreateColumnProfileRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): DsCreateColumnProfileRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsCreateColumnProfileRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsCreateColumnProfileRequest): DsCreateColumnProfileRequest.AsObject;
@@ -1444,6 +1542,8 @@ export namespace DsCreateColumnProfileRequest {
     secretMap: Array<[string, Uint8Array | string]>,
     columntype: string,
     columnname: string,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -1505,6 +1605,14 @@ export class GroupByDatasetRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): GroupByDatasetRequest;
 
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): GroupByDatasetRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): GroupByDatasetRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): GroupByDatasetRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GroupByDatasetRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GroupByDatasetRequest): GroupByDatasetRequest.AsObject;
@@ -1522,6 +1630,8 @@ export namespace GroupByDatasetRequest {
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -1540,88 +1650,6 @@ export class GroupByDatasetResponse extends jspb.Message {
 export namespace GroupByDatasetResponse {
   export type AsObject = {
     uri: string,
-  }
-}
-
-export class DsDatasetProfileRequest extends jspb.Message {
-  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsDatasetProfileRequest;
-  hasProduct(): boolean;
-  clearProduct(): DsDatasetProfileRequest;
-
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsDatasetProfileRequest;
-  hasVersion(): boolean;
-  clearVersion(): DsDatasetProfileRequest;
-
-  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsDatasetProfileRequest;
-  hasDatasource(): boolean;
-  clearDatasource(): DsDatasetProfileRequest;
-
-  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsDatasetProfileRequest;
-  hasDataset(): boolean;
-  clearDataset(): DsDatasetProfileRequest;
-
-  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsDatasetProfileRequest;
-  hasBucket(): boolean;
-  clearBucket(): DsDatasetProfileRequest;
-
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsDatasetProfileRequest;
-  hasConnection(): boolean;
-  clearConnection(): DsDatasetProfileRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): DsDatasetProfileRequest;
-
-  getQuick(): boolean;
-  setQuick(value: boolean): DsDatasetProfileRequest;
-
-  getGroup(): boolean;
-  setGroup(value: boolean): DsDatasetProfileRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DsDatasetProfileRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DsDatasetProfileRequest): DsDatasetProfileRequest.AsObject;
-  static serializeBinaryToWriter(message: DsDatasetProfileRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DsDatasetProfileRequest;
-  static deserializeBinaryFromReader(message: DsDatasetProfileRequest, reader: jspb.BinaryReader): DsDatasetProfileRequest;
-}
-
-export namespace DsDatasetProfileRequest {
-  export type AsObject = {
-    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
-    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
-    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
-    quick: boolean,
-    group: boolean,
-  }
-}
-
-export class DsDatasetProfileResponse extends jspb.Message {
-  getProfile(): github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile | undefined;
-  setProfile(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile): DsDatasetProfileResponse;
-  hasProfile(): boolean;
-  clearProfile(): DsDatasetProfileResponse;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DsDatasetProfileResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: DsDatasetProfileResponse): DsDatasetProfileResponse.AsObject;
-  static serializeBinaryToWriter(message: DsDatasetProfileResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DsDatasetProfileResponse;
-  static deserializeBinaryFromReader(message: DsDatasetProfileResponse, reader: jspb.BinaryReader): DsDatasetProfileResponse;
-}
-
-export namespace DsDatasetProfileResponse {
-  export type AsObject = {
-    profile?: github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile.AsObject,
   }
 }
 
@@ -1711,6 +1739,14 @@ export class DsGetTableViewRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): DsGetTableViewRequest;
 
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsGetTableViewRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): DsGetTableViewRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): DsGetTableViewRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsGetTableViewRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsGetTableViewRequest): DsGetTableViewRequest.AsObject;
@@ -1726,6 +1762,8 @@ export namespace DsGetTableViewRequest {
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -1877,6 +1915,14 @@ export class CreateForecastReportRequest extends jspb.Message {
   getGroup(): boolean;
   setGroup(value: boolean): CreateForecastReportRequest;
 
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateForecastReportRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): CreateForecastReportRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): CreateForecastReportRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateForecastReportRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateForecastReportRequest): CreateForecastReportRequest.AsObject;
@@ -1898,6 +1944,8 @@ export namespace CreateForecastReportRequest {
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     report?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
     group: boolean,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -1930,6 +1978,14 @@ export class CreateSummaryReportRequest extends jspb.Message {
   hasReport(): boolean;
   clearReport(): CreateSummaryReportRequest;
 
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateSummaryReportRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): CreateSummaryReportRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): CreateSummaryReportRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateSummaryReportRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateSummaryReportRequest): CreateSummaryReportRequest.AsObject;
@@ -1946,6 +2002,8 @@ export namespace CreateSummaryReportRequest {
     secretMap: Array<[string, Uint8Array | string]>,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     report?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -2011,6 +2069,14 @@ export class CreateDatasetReportRequest extends jspb.Message {
   getGroup(): boolean;
   setGroup(value: boolean): CreateDatasetReportRequest;
 
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateDatasetReportRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): CreateDatasetReportRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): CreateDatasetReportRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateDatasetReportRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateDatasetReportRequest): CreateDatasetReportRequest.AsObject;
@@ -2030,6 +2096,8 @@ export namespace CreateDatasetReportRequest {
     secretMap: Array<[string, Uint8Array | string]>,
     report?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
     group: boolean,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -2082,6 +2150,14 @@ export class CreateStudyReportRequest extends jspb.Message {
   hasReport(): boolean;
   clearReport(): CreateStudyReportRequest;
 
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateStudyReportRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): CreateStudyReportRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): CreateStudyReportRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateStudyReportRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateStudyReportRequest): CreateStudyReportRequest.AsObject;
@@ -2102,6 +2178,8 @@ export namespace CreateStudyReportRequest {
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
     report?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
