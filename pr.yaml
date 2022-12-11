@@ -4,7 +4,7 @@ metadata:
   labels:
     modela.ai/servingsite: default-serving-site
     modela.ai/tenant: default-tenant
-  name: prediction-2
+  name: prediction-22
   namespace: iris-product
   ownerReferences:
   - apiVersion: training.modela.ai/v1alpha1
