@@ -4247,7 +4247,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.toObject
     dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     storageconnection: (f = msg.getStorageconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretconnectionMap: (f = msg.getSecretconnectionMap()) ? f.toObject(includeInstance, undefined) : [],
+    storagesecretMap: (f = msg.getStoragesecretMap()) ? f.toObject(includeInstance, undefined) : [],
     dbconnection: (f = msg.getDbconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     dbsecretMap: (f = msg.getDbsecretMap()) ? f.toObject(includeInstance, undefined) : [],
     recipe: (f = msg.getRecipe()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.toObject(includeInstance, f),
@@ -4319,7 +4319,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.deserial
       msg.setStorageconnection(value);
       break;
     case 7:
-      var value = msg.getSecretconnectionMap();
+      var value = msg.getStoragesecretMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
@@ -4422,7 +4422,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.serializ
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
-  f = message.getSecretconnectionMap(true);
+  f = message.getStoragesecretMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
@@ -4680,12 +4680,12 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.prototyp
 
 
 /**
- * map<string, bytes> secretConnection = 7;
+ * map<string, bytes> storageSecret = 7;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.prototype.getSecretconnectionMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.prototype.getStoragesecretMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
       jspb.Message.getMapField(this, 7, opt_noLazyCreate,
       null));
@@ -4696,8 +4696,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.prototyp
  * Clears values from the map. The map will be non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.prototype.clearSecretconnectionMap = function() {
-  this.getSecretconnectionMap().clear();
+proto.github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.prototype.clearStoragesecretMap = function() {
+  this.getStoragesecretMap().clear();
   return this;};
 
 
@@ -5023,7 +5023,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileReques
     dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     storageconnection: (f = msg.getStorageconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretconnectionMap: (f = msg.getSecretconnectionMap()) ? f.toObject(includeInstance, undefined) : [],
+    storagesecretMap: (f = msg.getStoragesecretMap()) ? f.toObject(includeInstance, undefined) : [],
     dbconnection: (f = msg.getDbconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     dbsecretMap: (f = msg.getDbsecretMap()) ? f.toObject(includeInstance, undefined) : [],
     recipe: (f = msg.getRecipe()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.toObject(includeInstance, f)
@@ -5094,7 +5094,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileReques
       msg.setStorageconnection(value);
       break;
     case 7:
-      var value = msg.getSecretconnectionMap();
+      var value = msg.getStoragesecretMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
@@ -5192,7 +5192,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileReques
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
-  f = message.getSecretconnectionMap(true);
+  f = message.getStoragesecretMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
@@ -5442,12 +5442,12 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileReques
 
 
 /**
- * map<string, bytes> secretConnection = 7;
+ * map<string, bytes> storageSecret = 7;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.prototype.getSecretconnectionMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.prototype.getStoragesecretMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
       jspb.Message.getMapField(this, 7, opt_noLazyCreate,
       null));
@@ -5458,8 +5458,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileReques
  * Clears values from the map. The map will be non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.prototype.clearSecretconnectionMap = function() {
-  this.getSecretconnectionMap().clear();
+proto.github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.prototype.clearStoragesecretMap = function() {
+  this.getStoragesecretMap().clear();
   return this;};
 
 

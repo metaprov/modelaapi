@@ -332,8 +332,8 @@ export class DsRunRecipeRequest extends jspb.Message {
   hasStorageconnection(): boolean;
   clearStorageconnection(): DsRunRecipeRequest;
 
-  getSecretconnectionMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretconnectionMap(): DsRunRecipeRequest;
+  getStoragesecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearStoragesecretMap(): DsRunRecipeRequest;
 
   getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
   setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsRunRecipeRequest;
@@ -369,7 +369,7 @@ export namespace DsRunRecipeRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     storageconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretconnectionMap: Array<[string, Uint8Array | string]>,
+    storagesecretMap: Array<[string, Uint8Array | string]>,
     dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     dbsecretMap: Array<[string, Uint8Array | string]>,
     recipe?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
@@ -428,8 +428,8 @@ export class DsCreateRecipeProfileRequest extends jspb.Message {
   hasStorageconnection(): boolean;
   clearStorageconnection(): DsCreateRecipeProfileRequest;
 
-  getSecretconnectionMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretconnectionMap(): DsCreateRecipeProfileRequest;
+  getStoragesecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearStoragesecretMap(): DsCreateRecipeProfileRequest;
 
   getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
   setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsCreateRecipeProfileRequest;
@@ -460,7 +460,7 @@ export namespace DsCreateRecipeProfileRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     storageconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretconnectionMap: Array<[string, Uint8Array | string]>,
+    storagesecretMap: Array<[string, Uint8Array | string]>,
     dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     dbsecretMap: Array<[string, Uint8Array | string]>,
     recipe?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,

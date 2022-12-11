@@ -86,7 +86,7 @@ message DsRunRecipeRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset                dataset       = 4;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket        = 5;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection = 6;
-    map<string,bytes>                                                           secretConnection  = 7;
+    map<string,bytes>                                                           storageSecret  = 7;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 8;
     map<string,bytes>                                                           dbSecret  = 9;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe                 recipe        = 10;
@@ -104,7 +104,7 @@ message DsCreateRecipeProfileRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset                dataset       = 4;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket        = 5;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection = 6;
-    map<string,bytes>                                                           secretConnection  = 7;
+    map<string,bytes>                                                           storageSecret  = 7;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 8;
     map<string,bytes>                                                           dbSecret  = 9;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe                 recipe        = 10;
