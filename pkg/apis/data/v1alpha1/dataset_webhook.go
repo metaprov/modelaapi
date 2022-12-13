@@ -82,6 +82,7 @@ func (loc DataLocation) Validate(field string) ([]metav1.StatusCause, bool) {
 	// if type is view
 	// if type is stream
 	// if type is web
+	return nil, true
 }
 
 func (gb GroupBySpec) Validate(field string) ([]metav1.StatusCause, bool) {
@@ -90,4 +91,5 @@ func (gb GroupBySpec) Validate(field string) ([]metav1.StatusCause, bool) {
 	// if type is view
 	// if type is stream
 	// if type is web
+	return nil, true
 }
