@@ -1183,7 +1183,7 @@ type PartitionModelLocationsSpec struct {
 type StageStatusPhase string
 
 const (
-	StageStatusPhaseRunning            StageStatusPhase = "RunningModelsCount"
+	StageStatusPhaseRunning            StageStatusPhase = "Running"
 	StageStatusPhaseTraining           StageStatusPhase = "Training"   // search and train for the best model
 	StageStatusPhasePublishing         StageStatusPhase = "Publishing" // publish the model
 	StageStatusPhaseUnitTests          StageStatusPhase = "UnitTesting"

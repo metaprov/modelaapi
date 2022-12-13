@@ -14,7 +14,7 @@ type ReportPhase string
 // / Entity Condition
 const (
 	ReportPhasePending   ReportPhase = "Pending"
-	ReportPhaseRunning   ReportPhase = "RunningModelsCount"
+	ReportPhaseRunning   ReportPhase = "Running"
 	ReportPhaseCompleted ReportPhase = "Completed"
 	ReportPhaseFailed    ReportPhase = "Failed"
 )

@@ -457,7 +457,7 @@ type StudyPhaseStatus struct {
 	WaitingModelsCount int32 `json:"waitingModelsCount,omitempty" protobuf:"varint,3,opt,name=waitingModelsCount"`
 	// The number of models currently being trained
 	// +kubebuilder:validation:Optional
-	RunningModelsCount int32 `json:"runningModelsCount,omitempty" protobuf:"varint,4,opt,name=runningModelsCount"`
+	Running int32 `json:"runningModelsCount,omitempty" protobuf:"varint,4,opt,name=runningModelsCount"`
 	// The number of models that experienced an error whilst training
 	// +kubebuilder:validation:Optional
 	FailedModelsCount int32 `json:"failedModelsCount,omitempty" protobuf:"varint,5,opt,name=failedModelsCount"`
