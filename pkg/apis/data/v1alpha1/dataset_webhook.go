@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"strings"
 
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -73,4 +74,20 @@ func (dataset Dataset) validate() error {
 
 func (dataset Dataset) ValidateDelete() error {
 	return nil
+}
+
+func (loc DataLocation) Validate(field string) ([]metav1.StatusCause, bool) {
+	// if type is object
+	// if type is table
+	// if type is view
+	// if type is stream
+	// if type is web
+}
+
+func (gb GroupBySpec) Validate(field string) ([]metav1.StatusCause, bool) {
+	// if type is object
+	// if type is table
+	// if type is view
+	// if type is stream
+	// if type is web
 }

@@ -433,7 +433,7 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequ
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.repeatedFields_ = [7,8];
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.repeatedFields_ = [8,9];
 
 
 
@@ -470,6 +470,7 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRe
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
+    datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
     modelclass: (f = msg.getModelclass()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.toObject(includeInstance, f),
     entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
@@ -534,21 +535,26 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRe
          });
       break;
     case 5:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
+      msg.setDatasource(value);
+      break;
+    case 6:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.deserializeBinaryFromReader);
       msg.setModel(value);
       break;
-    case 6:
+    case 7:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.deserializeBinaryFromReader);
       msg.setModelclass(value);
       break;
-    case 7:
+    case 8:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.deserializeBinaryFromReader);
       msg.addEntities(value);
       break;
-    case 8:
+    case 9:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinaryFromReader);
       msg.addGroups(value);
@@ -610,10 +616,18 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRe
   if (f && f.getLength() > 0) {
     f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
-  f = message.getModel();
+  f = message.getDatasource();
   if (f != null) {
     writer.writeMessage(
       5,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
+    );
+  }
+  f = message.getModel();
+  if (f != null) {
+    writer.writeMessage(
+      6,
       f,
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.serializeBinaryToWriter
     );
@@ -621,7 +635,7 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRe
   f = message.getModelclass();
   if (f != null) {
     writer.writeMessage(
-      6,
+      7,
       f,
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.serializeBinaryToWriter
     );
@@ -629,7 +643,7 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRe
   f = message.getEntitiesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      7,
+      8,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.serializeBinaryToWriter
     );
@@ -637,7 +651,7 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRe
   f = message.getGroupsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      8,
+      9,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.serializeBinaryToWriter
     );
@@ -779,12 +793,49 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRe
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 5;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
+ */
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.prototype.getDatasource = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.prototype.setDatasource = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.prototype.clearDatasource = function() {
+  return this.setDatasource(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.prototype.hasDatasource = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 6;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model}
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.prototype.getModel = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, 5));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, 6));
 };
 
 
@@ -793,7 +844,7 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRe
  * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.prototype.setModel = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -811,17 +862,17 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRe
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.prototype.hasModel = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass = 6;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelclass = 7;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass}
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.prototype.getModelclass = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass, 6));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass, 7));
 };
 
 
@@ -830,7 +881,7 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRe
  * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.prototype.setModelclass = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -848,17 +899,17 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRe
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.prototype.hasModelclass = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entities = 7;
+ * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entities = 8;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity>}
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.prototype.getEntitiesList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity, 7));
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity, 8));
 };
 
 
@@ -867,7 +918,7 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRe
  * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.prototype.setEntitiesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -877,7 +928,7 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRe
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity}
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.prototype.addEntities = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity, opt_index);
 };
 
 
@@ -891,12 +942,12 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRe
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 8;
+ * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 9;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup>}
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.prototype.getGroupsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 8));
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup, 9));
 };
 
 
@@ -905,7 +956,7 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRe
  * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.prototype.setGroupsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
@@ -915,7 +966,7 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRe
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup}
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMCRequest.prototype.addGroups = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup, opt_index);
 };
 
 

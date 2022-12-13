@@ -25,7 +25,7 @@ spec:
     - jsonPath: .status.phase
       name: Status
       type: string
-    - jsonPath: .status.modelClassName
+    - jsonPath: .spec.modelClassName
       name: ModelClass
       type: string
     - jsonPath: .status.completionTime
