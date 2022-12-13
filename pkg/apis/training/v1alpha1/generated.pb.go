@@ -11204,7 +11204,7 @@ func (m *StudyPhaseStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i = encodeVarintGenerated(dAtA, i, uint64(m.FailedModelsCount))
 	i--
 	dAtA[i] = 0x28
-	i = encodeVarintGenerated(dAtA, i, uint64(m.Running))
+	i = encodeVarintGenerated(dAtA, i, uint64(m.RunningModelsCount))
 	i--
 	dAtA[i] = 0x20
 	i = encodeVarintGenerated(dAtA, i, uint64(m.WaitingModelsCount))
@@ -15376,7 +15376,7 @@ func (m *StudyPhaseStatus) Size() (n int) {
 		n += 1 + l + sovGenerated(uint64(l))
 	}
 	n += 1 + sovGenerated(uint64(m.WaitingModelsCount))
-	n += 1 + sovGenerated(uint64(m.Running))
+	n += 1 + sovGenerated(uint64(m.RunningModelsCount))
 	n += 1 + sovGenerated(uint64(m.FailedModelsCount))
 	n += 1 + sovGenerated(uint64(m.CompletedModelsCount))
 	n += 9
@@ -17510,7 +17510,7 @@ func (this *StudyPhaseStatus) String() string {
 		`StartedAt:` + strings.Replace(fmt.Sprintf("%v", this.StartedAt), "Time", "v1.Time", 1) + `,`,
 		`CompletedAt:` + strings.Replace(fmt.Sprintf("%v", this.CompletedAt), "Time", "v1.Time", 1) + `,`,
 		`WaitingModelsCount:` + fmt.Sprintf("%v", this.WaitingModelsCount) + `,`,
-		`Running:` + fmt.Sprintf("%v", this.Running) + `,`,
+		`RunningModelsCount:` + fmt.Sprintf("%v", this.RunningModelsCount) + `,`,
 		`FailedModelsCount:` + fmt.Sprintf("%v", this.FailedModelsCount) + `,`,
 		`CompletedModelsCount:` + fmt.Sprintf("%v", this.CompletedModelsCount) + `,`,
 		`BestScore:` + fmt.Sprintf("%v", this.BestScore) + `,`,
@@ -40125,9 +40125,9 @@ func (m *StudyPhaseStatus) Unmarshal(dAtA []byte) error {
 			}
 		case 4:
 			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Running", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field RunningModelsCount", wireType)
 			}
-			m.Running = 0
+			m.RunningModelsCount = 0
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowGenerated
@@ -40137,7 +40137,7 @@ func (m *StudyPhaseStatus) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.Running |= int32(b&0x7F) << shift
+				m.RunningModelsCount |= int32(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
