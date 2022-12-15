@@ -2994,6 +2994,9 @@ spec:
                 description: The cross-validation score for the objective metric produced
                   after training
                 type: number
+              driftDetectorURI:
+                description: The URI of the model test weights
+                type: string
               endpoint:
                 description: The endpoint of the Model, which is set after it is deployed
                   to a Predictor

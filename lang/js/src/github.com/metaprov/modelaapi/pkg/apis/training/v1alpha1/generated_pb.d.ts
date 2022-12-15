@@ -2886,6 +2886,9 @@ export class ModelStatus extends jspb.Message {
   getFullweightsuri(): string;
   setFullweightsuri(value: string): ModelStatus;
 
+  getDriftdetectoruri(): string;
+  setDriftdetectoruri(value: string): ModelStatus;
+
   getLabelencoderuri(): string;
   setLabelencoderuri(value: string): ModelStatus;
 
@@ -3128,6 +3131,7 @@ export namespace ModelStatus {
     trainweightsuri: string,
     testweightsuri: string,
     fullweightsuri: string,
+    driftdetectoruri: string,
     labelencoderuri: string,
     logsuri: string,
     profileuri: string,
