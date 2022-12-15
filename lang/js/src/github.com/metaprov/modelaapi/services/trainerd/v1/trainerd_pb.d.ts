@@ -339,8 +339,17 @@ export class TestResponse extends jspb.Message {
   clearBenchmarkResultList(): TestResponse;
   addBenchmarkResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
-  getModelweightsclouduri(): string;
-  setModelweightsclouduri(value: string): TestResponse;
+  getTestingmodelweightsclouduri(): string;
+  setTestingmodelweightsclouduri(value: string): TestResponse;
+
+  getTestinglabelencoder(): string;
+  setTestinglabelencoder(value: string): TestResponse;
+
+  getFullmodelweightsclouduri(): string;
+  setFullmodelweightsclouduri(value: string): TestResponse;
+
+  getFulllabelencoder(): string;
+  setFulllabelencoder(value: string): TestResponse;
 
   getModelmanifestclouduri(): string;
   setModelmanifestclouduri(value: string): TestResponse;
@@ -356,9 +365,6 @@ export class TestResponse extends jspb.Message {
 
   getPrelogsclouduri(): string;
   setPrelogsclouduri(value: string): TestResponse;
-
-  getLabelencoder(): string;
-  setLabelencoder(value: string): TestResponse;
 
   getPythoncmd(): string;
   setPythoncmd(value: string): TestResponse;
@@ -404,13 +410,15 @@ export namespace TestResponse {
     trainResultList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     testResultList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     benchmarkResultList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
-    modelweightsclouduri: string,
+    testingmodelweightsclouduri: string,
+    testinglabelencoder: string,
+    fullmodelweightsclouduri: string,
+    fulllabelencoder: string,
     modelmanifestclouduri: string,
     modellogsclouduri: string,
     preweightsclouduri: string,
     premanifestclouduri: string,
     prelogsclouduri: string,
-    labelencoder: string,
     pythoncmd: string,
     os: string,
     pythonversioninfo: string,

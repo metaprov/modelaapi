@@ -2954,18 +2954,20 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.toObject =
     github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance),
     benchmarkResultList: jspb.Message.toObjectList(msg.getBenchmarkResultList(),
     github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance),
-    modelweightsclouduri: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    modelmanifestclouduri: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    modellogsclouduri: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    preweightsclouduri: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    premanifestclouduri: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    prelogsclouduri: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    labelencoder: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    pythoncmd: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    os: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    pythonversioninfo: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    testingmodelweightsclouduri: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    testinglabelencoder: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    fullmodelweightsclouduri: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    fulllabelencoder: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    modelmanifestclouduri: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    modellogsclouduri: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    preweightsclouduri: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    premanifestclouduri: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    prelogsclouduri: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    pythoncmd: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    os: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    pythonversioninfo: jspb.Message.getFieldWithDefault(msg, 15, ""),
     pipfreezeMap: (f = msg.getPipfreezeMap()) ? f.toObject(includeInstance, undefined) : [],
-    misclassuri: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    misclassuri: jspb.Message.getFieldWithDefault(msg, 17, ""),
     impurityfeatureimportanceMap: (f = msg.getImpurityfeatureimportanceMap()) ? f.toObject(includeInstance, undefined) : [],
     permutationfeatureimportanceMap: (f = msg.getPermutationfeatureimportanceMap()) ? f.toObject(includeInstance, undefined) : [],
     traincm: (f = msg.getTraincm()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.toObject(includeInstance, f),
@@ -3023,72 +3025,80 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.deserializ
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setModelweightsclouduri(value);
+      msg.setTestingmodelweightsclouduri(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setModelmanifestclouduri(value);
+      msg.setTestinglabelencoder(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setModellogsclouduri(value);
+      msg.setFullmodelweightsclouduri(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPreweightsclouduri(value);
+      msg.setFulllabelencoder(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPremanifestclouduri(value);
+      msg.setModelmanifestclouduri(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPrelogsclouduri(value);
+      msg.setModellogsclouduri(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLabelencoder(value);
+      msg.setPreweightsclouduri(value);
       break;
     case 11:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPythoncmd(value);
+      msg.setPremanifestclouduri(value);
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOs(value);
+      msg.setPrelogsclouduri(value);
       break;
     case 13:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPythonversioninfo(value);
+      msg.setPythoncmd(value);
       break;
     case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOs(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPythonversioninfo(value);
+      break;
+    case 16:
       var value = msg.getPipfreezeMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 15:
+    case 17:
       var value = /** @type {string} */ (reader.readString());
       msg.setMisclassuri(value);
       break;
-    case 16:
+    case 18:
       var value = msg.getImpurityfeatureimportanceMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
          });
       break;
-    case 17:
+    case 19:
       var value = msg.getPermutationfeatureimportanceMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
          });
       break;
-    case 18:
+    case 20:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.deserializeBinaryFromReader);
       msg.setTraincm(value);
       break;
-    case 19:
+    case 21:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.deserializeBinaryFromReader);
       msg.setTestcm(value);
@@ -3146,99 +3156,113 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.serializeB
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.serializeBinaryToWriter
     );
   }
-  f = message.getModelweightsclouduri();
+  f = message.getTestingmodelweightsclouduri();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getModelmanifestclouduri();
+  f = message.getTestinglabelencoder();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getModellogsclouduri();
+  f = message.getFullmodelweightsclouduri();
   if (f.length > 0) {
     writer.writeString(
       6,
       f
     );
   }
-  f = message.getPreweightsclouduri();
+  f = message.getFulllabelencoder();
   if (f.length > 0) {
     writer.writeString(
       7,
       f
     );
   }
-  f = message.getPremanifestclouduri();
+  f = message.getModelmanifestclouduri();
   if (f.length > 0) {
     writer.writeString(
       8,
       f
     );
   }
-  f = message.getPrelogsclouduri();
+  f = message.getModellogsclouduri();
   if (f.length > 0) {
     writer.writeString(
       9,
       f
     );
   }
-  f = message.getLabelencoder();
+  f = message.getPreweightsclouduri();
   if (f.length > 0) {
     writer.writeString(
       10,
       f
     );
   }
-  f = message.getPythoncmd();
+  f = message.getPremanifestclouduri();
   if (f.length > 0) {
     writer.writeString(
       11,
       f
     );
   }
-  f = message.getOs();
+  f = message.getPrelogsclouduri();
   if (f.length > 0) {
     writer.writeString(
       12,
       f
     );
   }
-  f = message.getPythonversioninfo();
+  f = message.getPythoncmd();
   if (f.length > 0) {
     writer.writeString(
       13,
       f
     );
   }
-  f = message.getPipfreezeMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(14, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  f = message.getOs();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
+      f
+    );
   }
-  f = message.getMisclassuri();
+  f = message.getPythonversioninfo();
   if (f.length > 0) {
     writer.writeString(
       15,
       f
     );
   }
+  f = message.getPipfreezeMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(16, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getMisclassuri();
+  if (f.length > 0) {
+    writer.writeString(
+      17,
+      f
+    );
+  }
   f = message.getImpurityfeatureimportanceMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(16, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
+    f.serializeBinary(18, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
   }
   f = message.getPermutationfeatureimportanceMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(17, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
+    f.serializeBinary(19, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
   }
   f = message.getTraincm();
   if (f != null) {
     writer.writeMessage(
-      18,
+      20,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.serializeBinaryToWriter
     );
@@ -3246,7 +3270,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.serializeB
   f = message.getTestcm();
   if (f != null) {
     writer.writeMessage(
-      19,
+      21,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.serializeBinaryToWriter
     );
@@ -3369,10 +3393,10 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
 
 
 /**
- * optional string modelWeightsCloudUri = 4;
+ * optional string testingModelWeightsCloudUri = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getModelweightsclouduri = function() {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getTestingmodelweightsclouduri = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -3381,16 +3405,16 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setModelweightsclouduri = function(value) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setTestingmodelweightsclouduri = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string modelManifestCloudUri = 5;
+ * optional string testingLabelEncoder = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getModelmanifestclouduri = function() {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getTestinglabelencoder = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -3399,16 +3423,16 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setModelmanifestclouduri = function(value) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setTestinglabelencoder = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string modelLogsCloudUri = 6;
+ * optional string fullModelWeightsCloudUri = 6;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getModellogsclouduri = function() {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getFullmodelweightsclouduri = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -3417,16 +3441,16 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setModellogsclouduri = function(value) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setFullmodelweightsclouduri = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional string preWeightsCloudUri = 7;
+ * optional string fullLabelEncoder = 7;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPreweightsclouduri = function() {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getFulllabelencoder = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -3435,16 +3459,16 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setPreweightsclouduri = function(value) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setFulllabelencoder = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional string preManifestCloudUri = 8;
+ * optional string modelManifestCloudUri = 8;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPremanifestclouduri = function() {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getModelmanifestclouduri = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -3453,16 +3477,16 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setPremanifestclouduri = function(value) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setModelmanifestclouduri = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional string preLogsCloudUri = 9;
+ * optional string modelLogsCloudUri = 9;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPrelogsclouduri = function() {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getModellogsclouduri = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
@@ -3471,16 +3495,16 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setPrelogsclouduri = function(value) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setModellogsclouduri = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
 /**
- * optional string labelEncoder = 10;
+ * optional string preWeightsCloudUri = 10;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getLabelencoder = function() {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPreweightsclouduri = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
@@ -3489,16 +3513,16 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setLabelencoder = function(value) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setPreweightsclouduri = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
 /**
- * optional string pythonCMD = 11;
+ * optional string preManifestCloudUri = 11;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPythoncmd = function() {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPremanifestclouduri = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
@@ -3507,16 +3531,16 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setPythoncmd = function(value) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setPremanifestclouduri = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
 /**
- * optional string OS = 12;
+ * optional string preLogsCloudUri = 12;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getOs = function() {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPrelogsclouduri = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
@@ -3525,16 +3549,16 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setOs = function(value) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setPrelogsclouduri = function(value) {
   return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
 /**
- * optional string pythonVersionInfo = 13;
+ * optional string pythonCMD = 13;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPythonversioninfo = function() {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPythoncmd = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
@@ -3543,20 +3567,56 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setPythonversioninfo = function(value) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setPythoncmd = function(value) {
   return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
 /**
- * map<string, string> pipFreeze = 14;
+ * optional string OS = 14;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getOs = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setOs = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+/**
+ * optional string pythonVersionInfo = 15;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPythonversioninfo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setPythonversioninfo = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
+/**
+ * map<string, string> pipFreeze = 16;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPipfreezeMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 14, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 16, opt_noLazyCreate,
       null));
 };
 
@@ -3571,11 +3631,11 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
 
 
 /**
- * optional string misclassUri = 15;
+ * optional string misclassUri = 17;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getMisclassuri = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
 };
 
 
@@ -3584,19 +3644,19 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setMisclassuri = function(value) {
-  return jspb.Message.setProto3StringField(this, 15, value);
+  return jspb.Message.setProto3StringField(this, 17, value);
 };
 
 
 /**
- * map<string, float> impurityFeatureImportance = 16;
+ * map<string, float> impurityFeatureImportance = 18;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,number>}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getImpurityfeatureimportanceMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 16, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 18, opt_noLazyCreate,
       null));
 };
 
@@ -3611,14 +3671,14 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
 
 
 /**
- * map<string, float> permutationFeatureImportance = 17;
+ * map<string, float> permutationFeatureImportance = 19;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,number>}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getPermutationfeatureimportanceMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 17, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 19, opt_noLazyCreate,
       null));
 };
 
@@ -3633,12 +3693,12 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix trainCM = 18;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix trainCM = 20;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getTraincm = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix, 18));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix, 20));
 };
 
 
@@ -3647,7 +3707,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setTraincm = function(value) {
-  return jspb.Message.setWrapperField(this, 18, value);
+  return jspb.Message.setWrapperField(this, 20, value);
 };
 
 
@@ -3665,17 +3725,17 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.hasTraincm = function() {
-  return jspb.Message.getField(this, 18) != null;
+  return jspb.Message.getField(this, 20) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix testCM = 19;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix testCM = 21;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.getTestcm = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix, 19));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix, 21));
 };
 
 
@@ -3684,7 +3744,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.setTestcm = function(value) {
-  return jspb.Message.setWrapperField(this, 19, value);
+  return jspb.Message.setWrapperField(this, 21, value);
 };
 
 
@@ -3702,7 +3762,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.prototype.hasTestcm = function() {
-  return jspb.Message.getField(this, 19) != null;
+  return jspb.Message.getField(this, 21) != null;
 };
 
 
