@@ -3310,6 +3310,9 @@ spec:
               forecastURI:
                 description: The URI of the model forecast
                 type: string
+              fullWeightsURI:
+                description: The URI of the model test weights
+                type: string
               governance:
                 description: Governance specifies the current governance status for
                   the Model
@@ -4143,6 +4146,9 @@ spec:
                 description: The score for the objective metric based on the testing
                   dataset
                 type: number
+              testWeightsURI:
+                description: The URI of the model test weights
+                type: string
               testingCompletedAt:
                 description: TestingCompletedAt represents the time at which the Model
                   completed testing
@@ -4429,6 +4435,9 @@ spec:
                       the DataLocation
                     type: string
                 type: object
+              trainWeightsURI:
+                description: The URI of the model test weights
+                type: string
               trainedBy:
                 description: The Account which trained the model, derived from the
                   parent Study
@@ -4910,9 +4919,6 @@ spec:
                 description: The number of rows in the validation dataset, if applicable
                 format: int32
                 type: integer
-              weightsURI:
-                description: The URI of the model weights binary file
-                type: string
             type: object
         required:
         - spec

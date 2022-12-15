@@ -2877,8 +2877,14 @@ export class ModelStatus extends jspb.Message {
   getManifesturi(): string;
   setManifesturi(value: string): ModelStatus;
 
-  getWeightsuri(): string;
-  setWeightsuri(value: string): ModelStatus;
+  getTrainweightsuri(): string;
+  setTrainweightsuri(value: string): ModelStatus;
+
+  getTestweightsuri(): string;
+  setTestweightsuri(value: string): ModelStatus;
+
+  getFullweightsuri(): string;
+  setFullweightsuri(value: string): ModelStatus;
 
   getLabelencoderuri(): string;
   setLabelencoderuri(value: string): ModelStatus;
@@ -3119,7 +3125,9 @@ export namespace ModelStatus {
     reportname: string,
     reporturi: string,
     manifesturi: string,
-    weightsuri: string,
+    trainweightsuri: string,
+    testweightsuri: string,
+    fullweightsuri: string,
     labelencoderuri: string,
     logsuri: string,
     profileuri: string,
