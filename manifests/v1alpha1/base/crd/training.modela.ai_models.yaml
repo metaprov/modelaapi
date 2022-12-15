@@ -3313,6 +3313,10 @@ spec:
               forecastURI:
                 description: The URI of the model forecast
                 type: string
+              fullLabelEncoderURI:
+                description: Label encoder that was trained on the full data The URI
+                  of the label encoder binary file, if it exists
+                type: string
               fullWeightsURI:
                 description: The URI of the model test weights
                 type: string
@@ -3476,9 +3480,6 @@ spec:
                     description: The URI for the train SHAP values
                     type: string
                 type: object
-              labelEncoderURI:
-                description: The URI of the label encoder binary file, if it exists
-                type: string
               lastFeedbackDatasetRef:
                 description: The last feedback dataset
                 properties:
@@ -4145,6 +4146,11 @@ spec:
                       the DataLocation
                     type: string
                 type: object
+              testLabelEncoderURI:
+                description: Label encoder that was trained on train data and tested
+                  on the test data The URI of the label encoder binary file, if it
+                  exists
+                type: string
               testScore:
                 description: The score for the objective metric based on the testing
                   dataset
@@ -4438,6 +4444,10 @@ spec:
                       the DataLocation
                     type: string
                 type: object
+              trainLabelEncoderURI:
+                description: Label encoder that was trained on train data during cross
+                  validation The URI of the label encoder binary file, if it exists
+                type: string
               trainWeightsURI:
                 description: The URI of the model test weights
                 type: string

@@ -2889,8 +2889,14 @@ export class ModelStatus extends jspb.Message {
   getDriftdetectoruri(): string;
   setDriftdetectoruri(value: string): ModelStatus;
 
-  getLabelencoderuri(): string;
-  setLabelencoderuri(value: string): ModelStatus;
+  getTrainlabelencoderuri(): string;
+  setTrainlabelencoderuri(value: string): ModelStatus;
+
+  getTestlabelencoderuri(): string;
+  setTestlabelencoderuri(value: string): ModelStatus;
+
+  getFulllabelencoderuri(): string;
+  setFulllabelencoderuri(value: string): ModelStatus;
 
   getLogsuri(): string;
   setLogsuri(value: string): ModelStatus;
@@ -3132,7 +3138,9 @@ export namespace ModelStatus {
     testweightsuri: string,
     fullweightsuri: string,
     driftdetectoruri: string,
-    labelencoderuri: string,
+    trainlabelencoderuri: string,
+    testlabelencoderuri: string,
+    fulllabelencoderuri: string,
     logsuri: string,
     profileuri: string,
     misclassificationuri: string,

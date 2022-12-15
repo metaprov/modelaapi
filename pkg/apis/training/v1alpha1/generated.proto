@@ -2085,212 +2085,223 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional string driftDetectorURI = 27;
 
+  // Label encoder that was trained on train data during cross validation
   // The URI of the label encoder binary file, if it exists
   // +kubebuilder:validation:Optional
-  optional string labelEncoderURI = 28;
+  optional string trainLabelEncoderURI = 28;
+
+  // Label encoder that was trained on train data and tested on the test data
+  // The URI of the label encoder binary file, if it exists
+  // +kubebuilder:validation:Optional
+  optional string testLabelEncoderURI = 29;
+
+  // Label encoder that was trained on the full data
+  // The URI of the label encoder binary file, if it exists
+  // +kubebuilder:validation:Optional
+  optional string fullLabelEncoderURI = 30;
 
   // The URI of the logs file
   // +kubebuilder:validation:Optional
-  optional string logsURI = 29;
+  optional string logsURI = 31;
 
   // The URI of the model profile, which contains visualizations produced during the profiling phase
   // +kubebuilder:validation:Optional
-  optional string profileURI = 30;
+  optional string profileURI = 32;
 
   // The URI to the misclassification file produced during the testing phase
   // +kubebuilder:validation:Optional
-  optional string misclassificationURI = 31;
+  optional string misclassificationURI = 33;
 
   // The URI to the model tarbell file
   // +kubebuilder:validation:Optional
-  optional string tarURI = 32;
+  optional string tarURI = 34;
 
   // The URI to the model application file
   // +kubebuilder:validation:Optional
-  optional string appURI = 33;
+  optional string appURI = 35;
 
   // The name of the Docker image produced by the Model
   // +kubebuilder:validation:Optional
-  optional string imageName = 34;
+  optional string imageName = 36;
 
   // The collection of features and their importance, sorted by the greatest importance first
   // The collection is measured based on impuriry and uses the native measures by a tree algorithm
   // +kubebuilder:validation:Optional
-  repeated FeatureImportance impurityImportance = 35;
+  repeated FeatureImportance impurityImportance = 37;
 
   // The collection of features and their importance, sorted by the greatest importance first
   // The collection is measured using permutation importance
   // +kubebuilder:validation:Optional
-  repeated FeatureImportance permutationImportance = 36;
+  repeated FeatureImportance permutationImportance = 38;
 
   // The URI of the model forecast
   // +kubebuilder:validation:Optional
-  optional string forecastURI = 37;
+  optional string forecastURI = 39;
 
   // The runtime training details.
   // +kubebuilder:validation:Optional
-  optional RuntimeStatus runtime = 38;
+  optional RuntimeStatus runtime = 40;
 
   // TrainDatasetLocation specifies the location of the training dataset
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 39;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 41;
 
   // TestDatasetLocation specifies the location of the testing dataset
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 40;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 42;
 
   // ValidationDataset specifies the location of the validation dataset
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 41;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 43;
 
   // ObservedGeneration is the last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 42;
+  optional int64 observedGeneration = 44;
 
   // The number of rows in the training dataset
   // +kubebuilder:validation:Optional
-  optional int32 trainingRows = 43;
+  optional int32 trainingRows = 45;
 
   // The number of rows in the testing dataset
   // +kubebuilder:validation:Optional
-  optional int32 testingRows = 44;
+  optional int32 testingRows = 46;
 
   // The number of rows in the validation dataset, if applicable
   // +kubebuilder:validation:Optional
-  optional int32 validationRows = 45;
+  optional int32 validationRows = 47;
 
   // In the case of failure, the Model resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
-  optional string failureReason = 46;
+  optional string failureReason = 48;
 
   // In the case of failure, the Model resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 47;
+  optional string failureMessage = 49;
 
   // The progress percentage of the Model, which is derived from the Model's current phase
   // +kubebuilder:validation:Optional
-  optional int32 progress = 48;
+  optional int32 progress = 50;
 
   // The size of the model binary in bytes
   // +kubebuilder:validation:Optional
-  optional int32 sizeInBytes = 49;
+  optional int32 sizeInBytes = 51;
 
   // The measured prediction latency
   // +kubebuilder:validation:Optional
-  optional double latency = 50;
+  optional double latency = 52;
 
   // The URL to the released model
   // +kubebuilder:validation:Optional
-  optional string url = 51;
+  optional string url = 53;
 
   // The name of the Predictor in the case that the Model has been released and deployed
   // +kubebuilder:validation:Optional
-  optional string predictorName = 52;
+  optional string predictorName = 54;
 
   // The time at which the Model was set to release
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 53;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 55;
 
   // The time at which the Model was set to release
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time predictedAt = 54;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time predictedAt = 56;
 
   // Sha256 of the model tar file
   // +kubebuilder:validation:Optional
-  optional string tarFileHash = 55;
+  optional string tarFileHash = 57;
 
   // Sha256 of the model image
   // +kubebuilder:validation:Optional
-  optional string imageHash = 56;
+  optional string imageHash = 58;
 
   // TrainingDataHash specifies the hashes for datasets used by the Model
   // +kubebuilder:validation:Optional
-  optional DataHashes trainingDataHash = 57;
+  optional DataHashes trainingDataHash = 59;
 
   // TrainingResources details the resources that were consumed by the training workload
   // +kubebuilder:validation:Optional
-  optional ResourceConsumption trainingResources = 58;
+  optional ResourceConsumption trainingResources = 60;
 
   // TestingResources details the resources that were consumed by the testing workload
   // +kubebuilder:validation:Optional
-  optional ResourceConsumption testingResources = 59;
+  optional ResourceConsumption testingResources = 61;
 
   // The Account which trained the model, derived from the parent Study
   // +kubebuilder:validation:Optional
-  optional string trainedBy = 60;
+  optional string trainedBy = 62;
 
   // The team of the Account which trained the model, derived from the parent Study
   // +kubebuilder:validation:Optional
-  optional string team = 61;
+  optional string team = 63;
 
   // The endpoint of the Model, which is set after it is deployed to a Predictor
   // +kubebuilder:validation:Optional
-  optional string endpoint = 62;
+  optional string endpoint = 64;
 
   // Logs specifies the location of logs produced by workloads associated with the Model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 63;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 65;
 
   // The Roc/Auc curve of the trained model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RocAucCurve rocCurve = 64;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RocAucCurve rocCurve = 66;
 
   // The Precision/Recall curve of the trained model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PRCurve prCurve = 65;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PRCurve prCurve = 67;
 
   // The confusion matrix of the train data.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix trainConfusionMatrix = 66;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix trainConfusionMatrix = 68;
 
   // The confusion matrix of the test data
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix testConfusionMatrix = 67;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix testConfusionMatrix = 69;
 
   // The collection of correlations of the features of the training dataset and the target feature
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Correlation correlationsWithTarget = 68;
+  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Correlation correlationsWithTarget = 70;
 
   // The top correlations between features of the training dataset
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Correlation topCorrelations = 69;
+  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Correlation topCorrelations = 71;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 70;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 72;
 
   // Governance specifies the current governance status for the Model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus governance = 71;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus governance = 73;
 
   // Interpretability contains results produced during the explaining phase of the Model
   // +kubebuilder:validation:Optional
-  optional InterpretabilityStatus interpretability = 72;
+  optional InterpretabilityStatus interpretability = 74;
 
   // Images specifies the container images used to train the model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images images = 73;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images images = 75;
 
   // The result of running the unit tests
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 74;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 76;
 
   // The result of running the feedback unit tests, the feedback unit tests
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult feedbackTestsResult = 75;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult feedbackTestsResult = 77;
 
   // The sub models uri file contain the results of running the sub model
   // +kubebuilder:validation:Optional
-  optional ModelGroupByStatus groupby = 76;
+  optional ModelGroupByStatus groupby = 78;
 
   // The status of the model, when deploying via the stages
   // +kubebuilder:validation:Optional
-  repeated ModelStageStatus stages = 77;
+  repeated ModelStageStatus stages = 79;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 78;
+  repeated ModelCondition conditions = 80;
 }
 
 // ModelValidation defines a single validation to be run against a model
