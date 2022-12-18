@@ -220,10 +220,14 @@ type ModelClassTrainingSpec struct {
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,14,opt,name=trainers"`
-	// Aborted indicates that the execution of the ModelAutobuilder and any associated workloads should be permanently stopped
+	// Aborted indicates that the execution.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,15,opt,name=aborted"`
+	// Explained indicates that we want to explain models.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Explained *bool `json:"explained,omitempty" protobuf:"varint,16,opt,name=explained"`
 }
 
 type ModelClassServingSpec struct {

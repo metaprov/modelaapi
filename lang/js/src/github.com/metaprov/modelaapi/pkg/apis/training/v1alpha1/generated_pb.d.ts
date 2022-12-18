@@ -2283,6 +2283,9 @@ export class ModelClassTrainingSpec extends jspb.Message {
   getAborted(): boolean;
   setAborted(value: boolean): ModelClassTrainingSpec;
 
+  getExplained(): boolean;
+  setExplained(value: boolean): ModelClassTrainingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassTrainingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassTrainingSpec): ModelClassTrainingSpec.AsObject;
@@ -2307,6 +2310,7 @@ export namespace ModelClassTrainingSpec {
     maxmodels: number,
     trainers: number,
     aborted: boolean,
+    explained: boolean,
   }
 }
 

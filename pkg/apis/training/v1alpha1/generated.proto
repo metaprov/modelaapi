@@ -1591,10 +1591,15 @@ message ModelClassTrainingSpec {
   // +kubebuilder:validation:Optional
   optional int32 trainers = 14;
 
-  // Aborted indicates that the execution of the ModelAutobuilder and any associated workloads should be permanently stopped
+  // Aborted indicates that the execution.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool aborted = 15;
+
+  // Explained indicates that we want to explain models.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool explained = 16;
 }
 
 // ModelCondition describes the state of a Model at a certain point

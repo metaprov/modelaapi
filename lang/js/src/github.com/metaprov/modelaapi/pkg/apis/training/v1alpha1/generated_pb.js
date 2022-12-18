@@ -23134,7 +23134,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainin
     maxtime: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
     maxmodels: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
     trainers: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    aborted: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f
+    aborted: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
+    explained: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -23232,6 +23233,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainin
     case 15:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAborted(value);
+      break;
+    case 16:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setExplained(value);
       break;
     default:
       reader.skipField();
@@ -23363,6 +23368,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainin
   if (f != null) {
     writer.writeBool(
       15,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 16));
+  if (f != null) {
+    writer.writeBool(
+      16,
       f
     );
   }
@@ -23876,6 +23888,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainin
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.hasAborted = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional bool explained = 16;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.getExplained = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.setExplained = function(value) {
+  return jspb.Message.setField(this, 16, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.clearExplained = function() {
+  return jspb.Message.setField(this, 16, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassTrainingSpec.prototype.hasExplained = function() {
+  return jspb.Message.getField(this, 16) != null;
 };
 
 

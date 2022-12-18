@@ -2046,8 +2046,11 @@ spec:
                 properties:
                   aborted:
                     default: false
-                    description: Aborted indicates that the execution of the ModelAutobuilder
-                      and any associated workloads should be permanently stopped
+                    description: Aborted indicates that the execution.
+                    type: boolean
+                  explained:
+                    default: false
+                    description: Explained indicates that we want to explain models.
                     type: boolean
                   labRef:
                     description: The reference to the Lab under which the Model for
