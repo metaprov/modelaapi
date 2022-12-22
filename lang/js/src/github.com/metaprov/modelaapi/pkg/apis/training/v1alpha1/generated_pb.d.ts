@@ -1994,6 +1994,16 @@ export class ModelClassServingSpec extends jspb.Message {
   getShadowfirst(): boolean;
   setShadowfirst(value: boolean): ModelClassServingSpec;
 
+  getPresqlList(): Array<string>;
+  setPresqlList(value: Array<string>): ModelClassServingSpec;
+  clearPresqlList(): ModelClassServingSpec;
+  addPresql(value: string, index?: number): ModelClassServingSpec;
+
+  getPostsqlList(): Array<string>;
+  setPostsqlList(value: Array<string>): ModelClassServingSpec;
+  clearPostsqlList(): ModelClassServingSpec;
+  addPostsql(value: string, index?: number): ModelClassServingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassServingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassServingSpec): ModelClassServingSpec.AsObject;
@@ -2015,6 +2025,8 @@ export namespace ModelClassServingSpec {
     predictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     shadowfirst: boolean,
+    presqlList: Array<string>,
+    postsqlList: Array<string>,
   }
 }
 
@@ -2286,6 +2298,16 @@ export class ModelClassTrainingSpec extends jspb.Message {
   getExplained(): boolean;
   setExplained(value: boolean): ModelClassTrainingSpec;
 
+  getPresqlList(): Array<string>;
+  setPresqlList(value: Array<string>): ModelClassTrainingSpec;
+  clearPresqlList(): ModelClassTrainingSpec;
+  addPresql(value: string, index?: number): ModelClassTrainingSpec;
+
+  getPostsqlList(): Array<string>;
+  setPostsqlList(value: Array<string>): ModelClassTrainingSpec;
+  clearPostsqlList(): ModelClassTrainingSpec;
+  addPostsql(value: string, index?: number): ModelClassTrainingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassTrainingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassTrainingSpec): ModelClassTrainingSpec.AsObject;
@@ -2311,6 +2333,8 @@ export namespace ModelClassTrainingSpec {
     trainers: number,
     aborted: boolean,
     explained: boolean,
+    presqlList: Array<string>,
+    postsqlList: Array<string>,
   }
 }
 

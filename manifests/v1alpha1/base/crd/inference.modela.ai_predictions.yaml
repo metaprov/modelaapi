@@ -486,8 +486,8 @@ spec:
                         type: string
                     type: object
                   postSQL:
-                    description: List of SQL statements to run after performing the
-                      SQL
+                    description: List of SQL statements to run after the prediction
+                      was performed
                     items:
                       type: string
                     type: array

@@ -228,6 +228,12 @@ type ModelClassTrainingSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Explained *bool `json:"explained,omitempty" protobuf:"varint,16,opt,name=explained"`
+	// List of SQL statements to run before performing the prediction
+	// +kubebuilder:validation:Optional
+	PreSql []string `json:"preSQL,omitempty" protobuf:"bytes,17,opt,name=preSQL"`
+	// List of SQL statements to run before performing the prediction
+	// +kubebuilder:validation:Optional
+	PostSql []string `json:"postSQL,omitempty" protobuf:"bytes,18,opt,name=postSQL"`
 }
 
 type ModelClassServingSpec struct {
@@ -266,6 +272,12 @@ type ModelClassServingSpec struct {
 	// when a model is ready, deploy it as shadow model first.
 	// +kubebuilder:validation:Optional
 	ShadowFirst *bool `json:"shadowFirst,omitempty" protobuf:"varint,11,opt,name=shadowFirst"`
+	// List of SQL statements to run before performing the prediction
+	// +kubebuilder:validation:Optional
+	PreSql []string `json:"preSQL,omitempty" protobuf:"bytes,12,opt,name=preSQL"`
+	// List of SQL statements to run before performing the prediction
+	// +kubebuilder:validation:Optional
+	PostSql []string `json:"postSQL,omitempty" protobuf:"bytes,13,opt,name=postSQL"`
 }
 
 // Define a test stage

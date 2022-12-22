@@ -1356,6 +1356,14 @@ message ModelClassServingSpec {
   // when a model is ready, deploy it as shadow model first.
   // +kubebuilder:validation:Optional
   optional bool shadowFirst = 11;
+
+  // List of SQL statements to run before performing the prediction
+  // +kubebuilder:validation:Optional
+  repeated string preSQL = 12;
+
+  // List of SQL statements to run before performing the prediction
+  // +kubebuilder:validation:Optional
+  repeated string postSQL = 13;
 }
 
 // ModelClassSpec defines the desired state of a ModelClass and the parameters for a model search
@@ -1600,6 +1608,14 @@ message ModelClassTrainingSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool explained = 16;
+
+  // List of SQL statements to run before performing the prediction
+  // +kubebuilder:validation:Optional
+  repeated string preSQL = 17;
+
+  // List of SQL statements to run before performing the prediction
+  // +kubebuilder:validation:Optional
+  repeated string postSQL = 18;
 }
 
 // ModelCondition describes the state of a Model at a certain point

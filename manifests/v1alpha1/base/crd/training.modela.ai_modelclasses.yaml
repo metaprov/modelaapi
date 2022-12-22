@@ -1770,6 +1770,18 @@ spec:
                           type: object
                       type: object
                     type: array
+                  postSQL:
+                    description: List of SQL statements to run before performing the
+                      prediction
+                    items:
+                      type: string
+                    type: array
+                  preSQL:
+                    description: List of SQL statements to run before performing the
+                      prediction
+                    items:
+                      type: string
+                    type: array
                   predictionSchedule:
                     description: BatchPrediction schedule
                     properties:
@@ -2343,6 +2355,18 @@ spec:
                     description: Pause the training job or any additional training
                       job
                     type: boolean
+                  postSQL:
+                    description: List of SQL statements to run before performing the
+                      prediction
+                    items:
+                      type: string
+                    type: array
+                  preSQL:
+                    description: List of SQL statements to run before performing the
+                      prediction
+                    items:
+                      type: string
+                    type: array
                   promotionPolicy:
                     description: Promotion defines the way to promote models
                     enum:
