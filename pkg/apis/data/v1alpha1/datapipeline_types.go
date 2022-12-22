@@ -135,14 +135,17 @@ type DataPipelineStatus struct {
 
 // DataInputSpec specifies the format and location of an input dataset
 type DataInputSpec struct {
+	// List of SQL statements to run before performing the prediction
+	// +kubebuilder:validation:Optional
+	PreSql []string `json:"preSQL,omitempty" protobuf:"bytes,1,opt,name=preSQL"`
 	// The physical location of the observation file.
 	// the location can point to a database.
 	// +kubebuilder:validation:Optional
-	Observation *DataLocation `json:"observation,omitempty" protobuf:"bytes,1,opt,name=observation"`
+	Observation *DataLocation `json:"observation,omitempty" protobuf:"bytes,2,opt,name=observation"`
 	// The file format of the dataset, if applicable
 	// +kubebuilder:default:="csv"
 	// +kubebuilder:validation:Optional
-	Format *FlatFileType `json:"format,omitempty" protobuf:"bytes,2,opt,name=format"`
+	Format *FlatFileType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
 }
 
 // DataOutputSpec specifies the format, features, and output location of a transformed dataset
@@ -183,6 +186,9 @@ type DataOutputSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	DetectOutliers *bool `json:"detectOutliers,omitempty" protobuf:"varint,8,opt,name=detectOutliers"`
+	// List of SQL statements to run after the prediction was performed
+	// +kubebuilder:validation:Optional
+	PostSQL []string `json:"postSQL,omitempty" protobuf:"bytes,9,opt,name=postSQL"`
 }
 
 type RecipePartSpec struct {

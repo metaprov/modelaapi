@@ -298,6 +298,12 @@ spec:
                           which specifies the DataLocation
                         type: string
                     type: object
+                  preSQL:
+                    description: List of SQL statements to run before performing the
+                      prediction
+                    items:
+                      type: string
+                    type: array
                 type: object
               labeled:
                 default: false
@@ -479,6 +485,12 @@ spec:
                           which specifies the DataLocation
                         type: string
                     type: object
+                  postSQL:
+                    description: List of SQL statements to run after performing the
+                      SQL
+                    items:
+                      type: string
+                    type: array
                   xai:
                     default: false
                     description: If true, SHAP values for each predicted row will

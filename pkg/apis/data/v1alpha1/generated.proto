@@ -615,15 +615,19 @@ message CsvFileSpec {
 
 // DataInputSpec specifies the format and location of an input dataset
 message DataInputSpec {
+  // List of SQL statements to run before performing the prediction
+  // +kubebuilder:validation:Optional
+  repeated string preSQL = 1;
+
   // The physical location of the observation file.
   // the location can point to a database.
   // +kubebuilder:validation:Optional
-  optional DataLocation observation = 1;
+  optional DataLocation observation = 2;
 
   // The file format of the dataset, if applicable
   // +kubebuilder:default:="csv"
   // +kubebuilder:validation:Optional
-  optional string format = 2;
+  optional string format = 3;
 }
 
 // DataLocation describes the external location of data that will be accessed by Modela, and additional
@@ -734,6 +738,10 @@ message DataOutputSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool detectOutliers = 8;
+
+  // List of SQL statements to run after performing the SQL
+  // +kubebuilder:validation:Optional
+  repeated string postSQL = 9;
 }
 
 // +kubebuilder:object:root=true

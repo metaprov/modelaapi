@@ -728,6 +728,11 @@ export namespace CsvFileSpec {
 }
 
 export class DataInputSpec extends jspb.Message {
+  getPresqlList(): Array<string>;
+  setPresqlList(value: Array<string>): DataInputSpec;
+  clearPresqlList(): DataInputSpec;
+  addPresql(value: string, index?: number): DataInputSpec;
+
   getObservation(): DataLocation | undefined;
   setObservation(value?: DataLocation): DataInputSpec;
   hasObservation(): boolean;
@@ -746,6 +751,7 @@ export class DataInputSpec extends jspb.Message {
 
 export namespace DataInputSpec {
   export type AsObject = {
+    presqlList: Array<string>,
     observation?: DataLocation.AsObject,
     format: string,
   }
@@ -834,6 +840,11 @@ export class DataOutputSpec extends jspb.Message {
   getDetectoutliers(): boolean;
   setDetectoutliers(value: boolean): DataOutputSpec;
 
+  getPostsqlList(): Array<string>;
+  setPostsqlList(value: Array<string>): DataOutputSpec;
+  clearPostsqlList(): DataOutputSpec;
+  addPostsql(value: string, index?: number): DataOutputSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataOutputSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataOutputSpec): DataOutputSpec.AsObject;
@@ -852,6 +863,7 @@ export namespace DataOutputSpec {
     includefeatures: boolean,
     xai: boolean,
     detectoutliers: boolean,
+    postsqlList: Array<string>,
   }
 }
 

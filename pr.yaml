@@ -11,7 +11,7 @@ metadata:
     kind: ModelClass
     name: mc5
     uid: 246c53b9-14af-4f67-b74c-75be6716d347
-spec:`
+spec:
   aborted: false
   activeDeadlineSeconds: 600
   createDataset: false
