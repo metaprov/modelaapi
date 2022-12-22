@@ -479,6 +479,7 @@ message PredictResultLineItem {
     repeated string            outOfBound      = 6; // list of out of bounds columns
     float                      baseShapValue   = 7;
     repeated ShapValue         shapValues      = 8;
+    float                      probability     = 9; // probably of the label
 }
 
 // return the proba value for each label

@@ -42,7 +42,7 @@ spec:
     - jsonPath: .spec.task
       name: Task
       type: string
-    - jsonPath: .spec.search.objective
+    - jsonPath: .spec.search.objective.metric
       name: Objective
       type: string
     - jsonPath: .status.bestModelScore

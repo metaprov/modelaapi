@@ -134,7 +134,7 @@ type ModelCondition struct {
 // +kubebuilder:printcolumn:name="Study",type="string",JSONPath=".spec.studyName"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",priority=1
 // +kubebuilder:printcolumn:name="Algorithm",type="string",JSONPath=".spec.estimator.algorithmName"
-// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.objective"
+// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.objective.metric"
 // +kubebuilder:printcolumn:name="CV Score",type="number",JSONPath=".status.cvScore"
 // +kubebuilder:printcolumn:name="Train Score",type="number",JSONPath=".status.trainScore",priority=1
 // +kubebuilder:printcolumn:name="Test Score",type="number",JSONPath=".status.testScore"

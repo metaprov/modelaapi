@@ -1027,7 +1027,7 @@ message MedianPrunerOptions {
 // +kubebuilder:printcolumn:name="Study",type="string",JSONPath=".spec.studyName"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",priority=1
 // +kubebuilder:printcolumn:name="Algorithm",type="string",JSONPath=".spec.estimator.algorithmName"
-// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.objective"
+// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.objective.metric"
 // +kubebuilder:printcolumn:name="CV Score",type="number",JSONPath=".status.cvScore"
 // +kubebuilder:printcolumn:name="Train Score",type="number",JSONPath=".status.trainScore",priority=1
 // +kubebuilder:printcolumn:name="Test Score",type="number",JSONPath=".status.testScore"
@@ -1052,7 +1052,7 @@ message Model {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
-// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.objective"
+// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.objective.metric"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // ModelClass represents an automatic search for the best machine learning model for a given dataset
 message ModelClass {
@@ -2866,7 +2866,7 @@ message ServingSpec {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
 // +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.datasetName"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
-// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.search.objective"
+// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.search.objective.metric"
 // +kubebuilder:printcolumn:name="Score",type="number",JSONPath=".status.bestModelScore"
 // +kubebuilder:printcolumn:name="Best model",type="string",JSONPath=".status.bestModel"
 // +kubebuilder:printcolumn:name="Trained",type="number",JSONPath=".status.search.completed"

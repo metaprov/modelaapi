@@ -50,7 +50,7 @@ spec:
     - jsonPath: .spec.estimator.algorithmName
       name: Algorithm
       type: string
-    - jsonPath: .spec.objective
+    - jsonPath: .spec.objective.metric
       name: Objective
       type: string
     - jsonPath: .status.cvScore

@@ -48,7 +48,7 @@ type ModelClassCondition struct {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
-// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.objective"
+// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.objective.metric"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // ModelClass represents an automatic search for the best machine learning model for a given dataset
 type ModelClass struct {

@@ -137,7 +137,7 @@ type StudyCondition struct {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
 // +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.datasetName"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
-// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.search.objective"
+// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.search.objective.metric"
 // +kubebuilder:printcolumn:name="Score",type="number",JSONPath=".status.bestModelScore"
 // +kubebuilder:printcolumn:name="Best model",type="string",JSONPath=".status.bestModel"
 // +kubebuilder:printcolumn:name="Trained",type="number",JSONPath=".status.search.completed"

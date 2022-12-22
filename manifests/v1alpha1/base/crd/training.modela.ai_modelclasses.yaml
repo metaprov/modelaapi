@@ -35,7 +35,7 @@ spec:
     - jsonPath: .spec.task
       name: Task
       type: string
-    - jsonPath: .spec.objective
+    - jsonPath: .spec.objective.metric
       name: Objective
       type: string
     - jsonPath: .metadata.creationTimestamp

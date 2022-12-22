@@ -7556,7 +7556,8 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResu
     outofboundList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
     baseshapvalue: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
     shapvaluesList: jspb.Message.toObjectList(msg.getShapvaluesList(),
-    proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ShapValue.toObject, includeInstance)
+    proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ShapValue.toObject, includeInstance),
+    probability: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0)
   };
 
   if (includeInstance) {
@@ -7626,6 +7627,10 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResu
       var value = new proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ShapValue;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ShapValue.deserializeBinaryFromReader);
       msg.addShapvalues(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setProbability(value);
       break;
     default:
       reader.skipField();
@@ -7712,6 +7717,13 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResu
       8,
       f,
       proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ShapValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getProbability();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      9,
+      f
     );
   }
 };
@@ -7936,6 +7948,24 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResu
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResultLineItem.prototype.clearShapvaluesList = function() {
   return this.setShapvaluesList([]);
+};
+
+
+/**
+ * optional float probability = 9;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResultLineItem.prototype.getProbability = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 9, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResultLineItem} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResultLineItem.prototype.setProbability = function(value) {
+  return jspb.Message.setProto3FloatField(this, 9, value);
 };
 
 

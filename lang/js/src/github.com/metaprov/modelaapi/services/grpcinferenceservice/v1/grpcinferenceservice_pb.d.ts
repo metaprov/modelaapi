@@ -913,6 +913,9 @@ export class PredictResultLineItem extends jspb.Message {
   clearShapvaluesList(): PredictResultLineItem;
   addShapvalues(value?: ShapValue, index?: number): ShapValue;
 
+  getProbability(): number;
+  setProbability(value: number): PredictResultLineItem;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictResultLineItem.AsObject;
   static toObject(includeInstance: boolean, msg: PredictResultLineItem): PredictResultLineItem.AsObject;
@@ -931,6 +934,7 @@ export namespace PredictResultLineItem {
     outofboundList: Array<string>,
     baseshapvalue: number,
     shapvaluesList: Array<ShapValue.AsObject>,
+    probability: number,
   }
 }
 
