@@ -12,7 +12,7 @@ tains version a1d package information for deployment.
 __version_info__ = {
     "major": 0,
     "minor": 5,
-    "micro": 298,
+    "micro": 299,
     "releaselevel": "alpha",
     "post": 0,
     "serial": 1,

@@ -3491,3 +3491,321 @@ export namespace BatchPredictResponse {
   }
 }
 
+export class CreateDataProductRequest extends jspb.Message {
+  getDataproduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setDataproduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): CreateDataProductRequest;
+  hasDataproduct(): boolean;
+  clearDataproduct(): CreateDataProductRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateDataProductRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): CreateDataProductRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): CreateDataProductRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateDataProductRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDataProductRequest): CreateDataProductRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateDataProductRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDataProductRequest;
+  static deserializeBinaryFromReader(message: CreateDataProductRequest, reader: jspb.BinaryReader): CreateDataProductRequest;
+}
+
+export namespace CreateDataProductRequest {
+  export type AsObject = {
+    dataproduct?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
+export class CreateOrUpdateResponse extends jspb.Message {
+  getDbid(): number;
+  setDbid(value: number): CreateOrUpdateResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateOrUpdateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateOrUpdateResponse): CreateOrUpdateResponse.AsObject;
+  static serializeBinaryToWriter(message: CreateOrUpdateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateOrUpdateResponse;
+  static deserializeBinaryFromReader(message: CreateOrUpdateResponse, reader: jspb.BinaryReader): CreateOrUpdateResponse;
+}
+
+export namespace CreateOrUpdateResponse {
+  export type AsObject = {
+    dbid: number,
+  }
+}
+
+export class CreateDatasetRequest extends jspb.Message {
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateDatasetRequest;
+  hasDataset(): boolean;
+  clearDataset(): CreateDatasetRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateDatasetRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): CreateDatasetRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): CreateDatasetRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateDatasetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDatasetRequest): CreateDatasetRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateDatasetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDatasetRequest;
+  static deserializeBinaryFromReader(message: CreateDatasetRequest, reader: jspb.BinaryReader): CreateDatasetRequest;
+}
+
+export namespace CreateDatasetRequest {
+  export type AsObject = {
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
+export class CreateStudyRequest extends jspb.Message {
+  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): CreateStudyRequest;
+  hasStudy(): boolean;
+  clearStudy(): CreateStudyRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateStudyRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): CreateStudyRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): CreateStudyRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateStudyRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateStudyRequest): CreateStudyRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateStudyRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateStudyRequest;
+  static deserializeBinaryFromReader(message: CreateStudyRequest, reader: jspb.BinaryReader): CreateStudyRequest;
+}
+
+export namespace CreateStudyRequest {
+  export type AsObject = {
+    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
+export class CreateModelRequest extends jspb.Message {
+  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): CreateModelRequest;
+  hasModel(): boolean;
+  clearModel(): CreateModelRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateModelRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): CreateModelRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): CreateModelRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateModelRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateModelRequest): CreateModelRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateModelRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateModelRequest;
+  static deserializeBinaryFromReader(message: CreateModelRequest, reader: jspb.BinaryReader): CreateModelRequest;
+}
+
+export namespace CreateModelRequest {
+  export type AsObject = {
+    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
+export class CreateModelClassRequest extends jspb.Message {
+  getModelclass(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass | undefined;
+  setModelclass(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass): CreateModelClassRequest;
+  hasModelclass(): boolean;
+  clearModelclass(): CreateModelClassRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateModelClassRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): CreateModelClassRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): CreateModelClassRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateModelClassRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateModelClassRequest): CreateModelClassRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateModelClassRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateModelClassRequest;
+  static deserializeBinaryFromReader(message: CreateModelClassRequest, reader: jspb.BinaryReader): CreateModelClassRequest;
+}
+
+export namespace CreateModelClassRequest {
+  export type AsObject = {
+    modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
+export class CreateModelClassRunRequest extends jspb.Message {
+  getModelclassrun(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun | undefined;
+  setModelclassrun(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun): CreateModelClassRunRequest;
+  hasModelclassrun(): boolean;
+  clearModelclassrun(): CreateModelClassRunRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateModelClassRunRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): CreateModelClassRunRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): CreateModelClassRunRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateModelClassRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateModelClassRunRequest): CreateModelClassRunRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateModelClassRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateModelClassRunRequest;
+  static deserializeBinaryFromReader(message: CreateModelClassRunRequest, reader: jspb.BinaryReader): CreateModelClassRunRequest;
+}
+
+export namespace CreateModelClassRunRequest {
+  export type AsObject = {
+    modelclassrun?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.AsObject,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
+export class CreateEntityRequest extends jspb.Message {
+  getEntity(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity | undefined;
+  setEntity(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity): CreateEntityRequest;
+  hasEntity(): boolean;
+  clearEntity(): CreateEntityRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateEntityRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): CreateEntityRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): CreateEntityRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateEntityRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateEntityRequest): CreateEntityRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateEntityRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateEntityRequest;
+  static deserializeBinaryFromReader(message: CreateEntityRequest, reader: jspb.BinaryReader): CreateEntityRequest;
+}
+
+export namespace CreateEntityRequest {
+  export type AsObject = {
+    entity?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
+export class CreateFeatureGroupRequest extends jspb.Message {
+  getFeaturegroup(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup | undefined;
+  setFeaturegroup(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup): CreateFeatureGroupRequest;
+  hasFeaturegroup(): boolean;
+  clearFeaturegroup(): CreateFeatureGroupRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateFeatureGroupRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): CreateFeatureGroupRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): CreateFeatureGroupRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateFeatureGroupRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateFeatureGroupRequest): CreateFeatureGroupRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateFeatureGroupRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateFeatureGroupRequest;
+  static deserializeBinaryFromReader(message: CreateFeatureGroupRequest, reader: jspb.BinaryReader): CreateFeatureGroupRequest;
+}
+
+export namespace CreateFeatureGroupRequest {
+  export type AsObject = {
+    featuregroup?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
+export class CreatePredictionRequest extends jspb.Message {
+  getPrediction(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction | undefined;
+  setPrediction(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction): CreatePredictionRequest;
+  hasPrediction(): boolean;
+  clearPrediction(): CreatePredictionRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreatePredictionRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): CreatePredictionRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): CreatePredictionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePredictionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePredictionRequest): CreatePredictionRequest.AsObject;
+  static serializeBinaryToWriter(message: CreatePredictionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePredictionRequest;
+  static deserializeBinaryFromReader(message: CreatePredictionRequest, reader: jspb.BinaryReader): CreatePredictionRequest;
+}
+
+export namespace CreatePredictionRequest {
+  export type AsObject = {
+    prediction?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction.AsObject,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
+export class CreatePredictorRequest extends jspb.Message {
+  getPredictor(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
+  setPredictor(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): CreatePredictorRequest;
+  hasPredictor(): boolean;
+  clearPredictor(): CreatePredictorRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreatePredictorRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): CreatePredictorRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): CreatePredictorRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePredictorRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePredictorRequest): CreatePredictorRequest.AsObject;
+  static serializeBinaryToWriter(message: CreatePredictorRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePredictorRequest;
+  static deserializeBinaryFromReader(message: CreatePredictorRequest, reader: jspb.BinaryReader): CreatePredictorRequest;
+}
+
+export namespace CreatePredictorRequest {
+  export type AsObject = {
+    predictor?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+

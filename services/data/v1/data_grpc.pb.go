@@ -99,6 +99,17 @@ type DataServiceClient interface {
 	// Generate training dataset.
 	GenOnlineStoreDataset(ctx context.Context, in *GenOnlineStoreDatasetRequest, opts ...grpc.CallOption) (*GenOnlineStoreDatasetResponse, error)
 	BatchPredict(ctx context.Context, in *BatchPredictRequest, opts ...grpc.CallOption) (*BatchPredictResponse, error)
+	// metric store methods, used to save the
+	CreateOrUpdateDataProduct(ctx context.Context, in *CreateDataProductRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error)
+	CreateOrUpdateDataSet(ctx context.Context, in *CreateDatasetRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error)
+	CreateOrUpdateStudy(ctx context.Context, in *CreateStudyRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error)
+	CreateOrUpdateModel(ctx context.Context, in *CreateModelRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error)
+	CreateOrUpdateModelClass(ctx context.Context, in *CreateModelClassRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error)
+	CreateOrUpdateModelClassRun(ctx context.Context, in *CreateModelClassRunRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error)
+	CreateOrUpdateEntity(ctx context.Context, in *CreateEntityRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error)
+	CreateOrUpdateFeatureGroup(ctx context.Context, in *CreateFeatureGroupRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error)
+	CreateOrUpdatePrediction(ctx context.Context, in *CreatePredictionRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error)
+	CreateOrUpdatePredictor(ctx context.Context, in *CreatePredictorRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error)
 }
 
 type dataServiceClient struct {
@@ -550,6 +561,96 @@ func (c *dataServiceClient) BatchPredict(ctx context.Context, in *BatchPredictRe
 	return out, nil
 }
 
+func (c *dataServiceClient) CreateOrUpdateDataProduct(ctx context.Context, in *CreateDataProductRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error) {
+	out := new(CreateOrUpdateResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateDataProduct", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) CreateOrUpdateDataSet(ctx context.Context, in *CreateDatasetRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error) {
+	out := new(CreateOrUpdateResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateDataSet", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) CreateOrUpdateStudy(ctx context.Context, in *CreateStudyRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error) {
+	out := new(CreateOrUpdateResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateStudy", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) CreateOrUpdateModel(ctx context.Context, in *CreateModelRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error) {
+	out := new(CreateOrUpdateResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateModel", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) CreateOrUpdateModelClass(ctx context.Context, in *CreateModelClassRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error) {
+	out := new(CreateOrUpdateResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateModelClass", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) CreateOrUpdateModelClassRun(ctx context.Context, in *CreateModelClassRunRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error) {
+	out := new(CreateOrUpdateResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateModelClassRun", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) CreateOrUpdateEntity(ctx context.Context, in *CreateEntityRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error) {
+	out := new(CreateOrUpdateResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateEntity", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) CreateOrUpdateFeatureGroup(ctx context.Context, in *CreateFeatureGroupRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error) {
+	out := new(CreateOrUpdateResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateFeatureGroup", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) CreateOrUpdatePrediction(ctx context.Context, in *CreatePredictionRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error) {
+	out := new(CreateOrUpdateResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdatePrediction", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) CreateOrUpdatePredictor(ctx context.Context, in *CreatePredictorRequest, opts ...grpc.CallOption) (*CreateOrUpdateResponse, error) {
+	out := new(CreateOrUpdateResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdatePredictor", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DataServiceServer is the server API for DataService service.
 // All implementations must embed UnimplementedDataServiceServer
 // for forward compatibility
@@ -631,6 +732,17 @@ type DataServiceServer interface {
 	// Generate training dataset.
 	GenOnlineStoreDataset(context.Context, *GenOnlineStoreDatasetRequest) (*GenOnlineStoreDatasetResponse, error)
 	BatchPredict(context.Context, *BatchPredictRequest) (*BatchPredictResponse, error)
+	// metric store methods, used to save the
+	CreateOrUpdateDataProduct(context.Context, *CreateDataProductRequest) (*CreateOrUpdateResponse, error)
+	CreateOrUpdateDataSet(context.Context, *CreateDatasetRequest) (*CreateOrUpdateResponse, error)
+	CreateOrUpdateStudy(context.Context, *CreateStudyRequest) (*CreateOrUpdateResponse, error)
+	CreateOrUpdateModel(context.Context, *CreateModelRequest) (*CreateOrUpdateResponse, error)
+	CreateOrUpdateModelClass(context.Context, *CreateModelClassRequest) (*CreateOrUpdateResponse, error)
+	CreateOrUpdateModelClassRun(context.Context, *CreateModelClassRunRequest) (*CreateOrUpdateResponse, error)
+	CreateOrUpdateEntity(context.Context, *CreateEntityRequest) (*CreateOrUpdateResponse, error)
+	CreateOrUpdateFeatureGroup(context.Context, *CreateFeatureGroupRequest) (*CreateOrUpdateResponse, error)
+	CreateOrUpdatePrediction(context.Context, *CreatePredictionRequest) (*CreateOrUpdateResponse, error)
+	CreateOrUpdatePredictor(context.Context, *CreatePredictorRequest) (*CreateOrUpdateResponse, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -784,6 +896,36 @@ func (UnimplementedDataServiceServer) GenOnlineStoreDataset(context.Context, *Ge
 }
 func (UnimplementedDataServiceServer) BatchPredict(context.Context, *BatchPredictRequest) (*BatchPredictResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BatchPredict not implemented")
+}
+func (UnimplementedDataServiceServer) CreateOrUpdateDataProduct(context.Context, *CreateDataProductRequest) (*CreateOrUpdateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOrUpdateDataProduct not implemented")
+}
+func (UnimplementedDataServiceServer) CreateOrUpdateDataSet(context.Context, *CreateDatasetRequest) (*CreateOrUpdateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOrUpdateDataSet not implemented")
+}
+func (UnimplementedDataServiceServer) CreateOrUpdateStudy(context.Context, *CreateStudyRequest) (*CreateOrUpdateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOrUpdateStudy not implemented")
+}
+func (UnimplementedDataServiceServer) CreateOrUpdateModel(context.Context, *CreateModelRequest) (*CreateOrUpdateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOrUpdateModel not implemented")
+}
+func (UnimplementedDataServiceServer) CreateOrUpdateModelClass(context.Context, *CreateModelClassRequest) (*CreateOrUpdateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOrUpdateModelClass not implemented")
+}
+func (UnimplementedDataServiceServer) CreateOrUpdateModelClassRun(context.Context, *CreateModelClassRunRequest) (*CreateOrUpdateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOrUpdateModelClassRun not implemented")
+}
+func (UnimplementedDataServiceServer) CreateOrUpdateEntity(context.Context, *CreateEntityRequest) (*CreateOrUpdateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOrUpdateEntity not implemented")
+}
+func (UnimplementedDataServiceServer) CreateOrUpdateFeatureGroup(context.Context, *CreateFeatureGroupRequest) (*CreateOrUpdateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOrUpdateFeatureGroup not implemented")
+}
+func (UnimplementedDataServiceServer) CreateOrUpdatePrediction(context.Context, *CreatePredictionRequest) (*CreateOrUpdateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOrUpdatePrediction not implemented")
+}
+func (UnimplementedDataServiceServer) CreateOrUpdatePredictor(context.Context, *CreatePredictorRequest) (*CreateOrUpdateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOrUpdatePredictor not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -1680,6 +1822,186 @@ func _DataService_BatchPredict_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_CreateOrUpdateDataProduct_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateDataProductRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).CreateOrUpdateDataProduct(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateDataProduct",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).CreateOrUpdateDataProduct(ctx, req.(*CreateDataProductRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_CreateOrUpdateDataSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateDatasetRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).CreateOrUpdateDataSet(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateDataSet",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).CreateOrUpdateDataSet(ctx, req.(*CreateDatasetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_CreateOrUpdateStudy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateStudyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).CreateOrUpdateStudy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateStudy",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).CreateOrUpdateStudy(ctx, req.(*CreateStudyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_CreateOrUpdateModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateModelRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).CreateOrUpdateModel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateModel",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).CreateOrUpdateModel(ctx, req.(*CreateModelRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_CreateOrUpdateModelClass_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateModelClassRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).CreateOrUpdateModelClass(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateModelClass",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).CreateOrUpdateModelClass(ctx, req.(*CreateModelClassRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_CreateOrUpdateModelClassRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateModelClassRunRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).CreateOrUpdateModelClassRun(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateModelClassRun",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).CreateOrUpdateModelClassRun(ctx, req.(*CreateModelClassRunRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_CreateOrUpdateEntity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateEntityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).CreateOrUpdateEntity(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateEntity",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).CreateOrUpdateEntity(ctx, req.(*CreateEntityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_CreateOrUpdateFeatureGroup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateFeatureGroupRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).CreateOrUpdateFeatureGroup(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateFeatureGroup",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).CreateOrUpdateFeatureGroup(ctx, req.(*CreateFeatureGroupRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_CreateOrUpdatePrediction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreatePredictionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).CreateOrUpdatePrediction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdatePrediction",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).CreateOrUpdatePrediction(ctx, req.(*CreatePredictionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_CreateOrUpdatePredictor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreatePredictorRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).CreateOrUpdatePredictor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdatePredictor",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).CreateOrUpdatePredictor(ctx, req.(*CreatePredictorRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DataService_ServiceDesc is the grpc.ServiceDesc for DataService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1882,6 +2204,46 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "BatchPredict",
 			Handler:    _DataService_BatchPredict_Handler,
+		},
+		{
+			MethodName: "CreateOrUpdateDataProduct",
+			Handler:    _DataService_CreateOrUpdateDataProduct_Handler,
+		},
+		{
+			MethodName: "CreateOrUpdateDataSet",
+			Handler:    _DataService_CreateOrUpdateDataSet_Handler,
+		},
+		{
+			MethodName: "CreateOrUpdateStudy",
+			Handler:    _DataService_CreateOrUpdateStudy_Handler,
+		},
+		{
+			MethodName: "CreateOrUpdateModel",
+			Handler:    _DataService_CreateOrUpdateModel_Handler,
+		},
+		{
+			MethodName: "CreateOrUpdateModelClass",
+			Handler:    _DataService_CreateOrUpdateModelClass_Handler,
+		},
+		{
+			MethodName: "CreateOrUpdateModelClassRun",
+			Handler:    _DataService_CreateOrUpdateModelClassRun_Handler,
+		},
+		{
+			MethodName: "CreateOrUpdateEntity",
+			Handler:    _DataService_CreateOrUpdateEntity_Handler,
+		},
+		{
+			MethodName: "CreateOrUpdateFeatureGroup",
+			Handler:    _DataService_CreateOrUpdateFeatureGroup_Handler,
+		},
+		{
+			MethodName: "CreateOrUpdatePrediction",
+			Handler:    _DataService_CreateOrUpdatePrediction_Handler,
+		},
+		{
+			MethodName: "CreateOrUpdatePredictor",
+			Handler:    _DataService_CreateOrUpdatePredictor_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
