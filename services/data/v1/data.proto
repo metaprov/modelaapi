@@ -777,38 +777,44 @@ message BatchPredictResponse {
 
 
 message SaveDatasetRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            dataproduct    = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource             datasource     = 2;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         modelclass     = 3;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun      modelclassrun  = 4;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset                dataset        = 5;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab                   lab            = 6;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 7;
-    map<string,bytes>                                                           dbSecret       = 8;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection   = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         storageBucket       = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            dataproduct         = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource             datasource          = 4;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         modelclass          = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun      modelclassrun       = 6;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset                dataset             = 7;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab                   lab                 = 8;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection        = 9;
+    map<string,bytes>                                                           dbSecret            = 10;
 }
 
 message SaveModelRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            dataproduct    = 1;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study              study          = 2;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         modelclass     = 3;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun      modelclassrun  = 4;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model              model          = 5;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab                   lab            = 6;
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity        entities       = 7;
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup  groups         = 8;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 9;
-    map<string,bytes>                                                           dbSecret       = 10;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection   = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         storageBucket       = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            dataproduct         = 3;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study              study               = 4;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         modelclass          = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun      modelclassrun       = 6;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model              model               = 7;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab                   lab                 = 8;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity        entities            = 9;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup  groups              = 10;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection        = 11;
+    map<string,bytes>                                                           dbSecret            = 12;
 }
 
 
 message SavePredictionRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            dataproduct    = 1;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         modelclass     = 2;
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor         predictor      = 3;
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction        prediction     = 4;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite           servingsite    = 5;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 6;
-    map<string,bytes>                                                           dbSecret       = 7;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection   = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         storageBucket       = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            dataproduct         = 3;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         modelclass          = 4;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor         predictor           = 5;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction        prediction          = 6;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite           servingsite         = 7;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection        = 8;
+    map<string,bytes>                                                           dbSecret            = 9;
 }
 
 message SaveResponse {

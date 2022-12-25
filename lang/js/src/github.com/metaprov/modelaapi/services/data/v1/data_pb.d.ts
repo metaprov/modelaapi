@@ -3492,6 +3492,16 @@ export namespace BatchPredictResponse {
 }
 
 export class SaveDatasetRequest extends jspb.Message {
+  getStorageconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setStorageconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): SaveDatasetRequest;
+  hasStorageconnection(): boolean;
+  clearStorageconnection(): SaveDatasetRequest;
+
+  getStoragebucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setStoragebucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): SaveDatasetRequest;
+  hasStoragebucket(): boolean;
+  clearStoragebucket(): SaveDatasetRequest;
+
   getDataproduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
   setDataproduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): SaveDatasetRequest;
   hasDataproduct(): boolean;
@@ -3540,6 +3550,8 @@ export class SaveDatasetRequest extends jspb.Message {
 
 export namespace SaveDatasetRequest {
   export type AsObject = {
+    storageconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    storagebucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     dataproduct?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
@@ -3552,6 +3564,16 @@ export namespace SaveDatasetRequest {
 }
 
 export class SaveModelRequest extends jspb.Message {
+  getStorageconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setStorageconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): SaveModelRequest;
+  hasStorageconnection(): boolean;
+  clearStorageconnection(): SaveModelRequest;
+
+  getStoragebucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setStoragebucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): SaveModelRequest;
+  hasStoragebucket(): boolean;
+  clearStoragebucket(): SaveModelRequest;
+
   getDataproduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
   setDataproduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): SaveModelRequest;
   hasDataproduct(): boolean;
@@ -3610,6 +3632,8 @@ export class SaveModelRequest extends jspb.Message {
 
 export namespace SaveModelRequest {
   export type AsObject = {
+    storageconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    storagebucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     dataproduct?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
@@ -3624,6 +3648,16 @@ export namespace SaveModelRequest {
 }
 
 export class SavePredictionRequest extends jspb.Message {
+  getStorageconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setStorageconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): SavePredictionRequest;
+  hasStorageconnection(): boolean;
+  clearStorageconnection(): SavePredictionRequest;
+
+  getStoragebucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setStoragebucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): SavePredictionRequest;
+  hasStoragebucket(): boolean;
+  clearStoragebucket(): SavePredictionRequest;
+
   getDataproduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
   setDataproduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): SavePredictionRequest;
   hasDataproduct(): boolean;
@@ -3667,6 +3701,8 @@ export class SavePredictionRequest extends jspb.Message {
 
 export namespace SavePredictionRequest {
   export type AsObject = {
+    storageconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    storagebucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     dataproduct?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
     predictor?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
