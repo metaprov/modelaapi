@@ -775,97 +775,45 @@ message BatchPredictResponse {
 
 /////////// Metric store
 
-message CreateDataProductRequest {
+
+message SaveDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            dataproduct    = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 2;
-    map<string,bytes>                                                           dbSecret       = 3;
-
-
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource             datasource     = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         modelclass     = 3;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun      modelclassrun  = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset                dataset        = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab                   lab            = 6;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 7;
+    map<string,bytes>                                                           dbSecret       = 8;
 }
 
-message CreateOrUpdateResponse {
+message SaveModelRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            dataproduct    = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study              study          = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         modelclass     = 3;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun      modelclassrun  = 4;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model              model          = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab                   lab            = 6;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity        entities       = 7;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup  groups         = 8;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 9;
+    map<string,bytes>                                                           dbSecret       = 10;
+}
+
+
+message SavePredictionRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            dataproduct    = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         modelclass     = 2;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor         predictor      = 3;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction        prediction     = 4;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite           servingsite    = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 6;
+    map<string,bytes>                                                           dbSecret       = 7;
+}
+
+message SaveResponse {
     int32 dbid = 1;
 }
-
-message CreateDatasetRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset                dataset        = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 2;
-    map<string,bytes>                                                           dbSecret       = 3;
-
-
-}
-
-message CreateStudyRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study              study          = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 2;
-    map<string,bytes>                                                           dbSecret       = 3;
-
-
-}
-
-
-message CreateModelRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model              model          = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 2;
-    map<string,bytes>                                                           dbSecret       = 3;
-
-
-}
-
-
-message CreateModelClassRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         modelclass     = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 2;
-    map<string,bytes>                                                           dbSecret       = 3;
-
-
-}
-
-
-message CreateModelClassRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun      modelclassrun     = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection      = 2;
-    map<string,bytes>                                                           dbSecret          = 3;
-
-
-}
-
-
-message CreateEntityRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity                 entity         = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 2;
-    map<string,bytes>                                                           dbSecret       = 3;
-
-
-}
-
-
-message CreateFeatureGroupRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup           featuregroup   = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 2;
-    map<string,bytes>                                                           dbSecret       = 3;
-
-
-}
-
-
-message CreatePredictionRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction        prediction     = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 2;
-    map<string,bytes>                                                           dbSecret       = 3;
-
-
-}
-
-
-message CreatePredictorRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor         predictor      = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection   = 2;
-    map<string,bytes>                                                           dbSecret       = 3;
-
-
-}
-
 
 
 service DataService {
@@ -955,15 +903,9 @@ service DataService {
     rpc BatchPredict(BatchPredictRequest) returns (BatchPredictResponse) {}
 
     // metric store methods, used to save the
-    rpc CreateOrUpdateDataProduct(CreateDataProductRequest) returns (CreateOrUpdateResponse) {}
-    rpc CreateOrUpdateDataSet(CreateDatasetRequest) returns (CreateOrUpdateResponse) {}
-    rpc CreateOrUpdateStudy(CreateStudyRequest) returns (CreateOrUpdateResponse) {}
-    rpc CreateOrUpdateModel(CreateModelRequest) returns (CreateOrUpdateResponse) {}
-    rpc CreateOrUpdateModelClass(CreateModelClassRequest) returns (CreateOrUpdateResponse) {}
-    rpc CreateOrUpdateModelClassRun(CreateModelClassRunRequest) returns (CreateOrUpdateResponse) {}
-    rpc CreateOrUpdateEntity(CreateEntityRequest) returns (CreateOrUpdateResponse) {}
-    rpc CreateOrUpdateFeatureGroup(CreateFeatureGroupRequest) returns (CreateOrUpdateResponse) {}
-    rpc CreateOrUpdatePrediction(CreatePredictionRequest) returns (CreateOrUpdateResponse) {}
-    rpc CreateOrUpdatePredictor(CreatePredictorRequest) returns (CreateOrUpdateResponse) {}
+
+    rpc SaveDataSet(SaveDatasetRequest) returns (SaveResponse) {}
+    rpc SaveModel(SaveModelRequest) returns (SaveResponse) {}
+    rpc SavePrediction(SavePredictionRequest) returns (SaveResponse) {}
 
 }

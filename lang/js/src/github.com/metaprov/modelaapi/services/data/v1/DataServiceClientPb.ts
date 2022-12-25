@@ -2142,434 +2142,133 @@ export class DataServiceClient {
     this.methodInfoBatchPredict);
   }
 
-  methodInfoCreateOrUpdateDataProduct = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateDataProduct',
+  methodInfoSaveDataSet = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/SaveDataSet',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateDataProductRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateDataProductRequest) => {
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveDatasetRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveDatasetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse.deserializeBinary
   );
 
-  createOrUpdateDataProduct(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateDataProductRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
+  saveDataSet(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse>;
 
-  createOrUpdateDataProduct(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateDataProductRequest,
+  saveDataSet(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse>;
 
-  createOrUpdateDataProduct(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateDataProductRequest,
+  saveDataSet(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateDataProduct',
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/SaveDataSet',
         request,
         metadata || {},
-        this.methodInfoCreateOrUpdateDataProduct,
+        this.methodInfoSaveDataSet,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateDataProduct',
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/SaveDataSet',
     request,
     metadata || {},
-    this.methodInfoCreateOrUpdateDataProduct);
+    this.methodInfoSaveDataSet);
   }
 
-  methodInfoCreateOrUpdateDataSet = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateDataSet',
+  methodInfoSaveModel = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/SaveModel',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateDatasetRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateDatasetRequest) => {
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveModelRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse.deserializeBinary
   );
 
-  createOrUpdateDataSet(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateDatasetRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
+  saveModel(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse>;
 
-  createOrUpdateDataSet(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateDatasetRequest,
+  saveModel(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse>;
 
-  createOrUpdateDataSet(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateDatasetRequest,
+  saveModel(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateDataSet',
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/SaveModel',
         request,
         metadata || {},
-        this.methodInfoCreateOrUpdateDataSet,
+        this.methodInfoSaveModel,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateDataSet',
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/SaveModel',
     request,
     metadata || {},
-    this.methodInfoCreateOrUpdateDataSet);
+    this.methodInfoSaveModel);
   }
 
-  methodInfoCreateOrUpdateStudy = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateStudy',
+  methodInfoSavePrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/SavePrediction',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateStudyRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateStudyRequest) => {
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.SavePredictionRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.SavePredictionRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse.deserializeBinary
   );
 
-  createOrUpdateStudy(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateStudyRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
+  savePrediction(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.SavePredictionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse>;
 
-  createOrUpdateStudy(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateStudyRequest,
+  savePrediction(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.SavePredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse>;
 
-  createOrUpdateStudy(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateStudyRequest,
+  savePrediction(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.SavePredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.SaveResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateStudy',
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/SavePrediction',
         request,
         metadata || {},
-        this.methodInfoCreateOrUpdateStudy,
+        this.methodInfoSavePrediction,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateStudy',
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/SavePrediction',
     request,
     metadata || {},
-    this.methodInfoCreateOrUpdateStudy);
-  }
-
-  methodInfoCreateOrUpdateModel = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateModel',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateModelRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateModelRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse.deserializeBinary
-  );
-
-  createOrUpdateModel(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
-
-  createOrUpdateModel(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateModelRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
-
-  createOrUpdateModel(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateModelRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateModel',
-        request,
-        metadata || {},
-        this.methodInfoCreateOrUpdateModel,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateModel',
-    request,
-    metadata || {},
-    this.methodInfoCreateOrUpdateModel);
-  }
-
-  methodInfoCreateOrUpdateModelClass = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateModelClass',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateModelClassRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateModelClassRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse.deserializeBinary
-  );
-
-  createOrUpdateModelClass(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateModelClassRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
-
-  createOrUpdateModelClass(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateModelClassRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
-
-  createOrUpdateModelClass(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateModelClassRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateModelClass',
-        request,
-        metadata || {},
-        this.methodInfoCreateOrUpdateModelClass,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateModelClass',
-    request,
-    metadata || {},
-    this.methodInfoCreateOrUpdateModelClass);
-  }
-
-  methodInfoCreateOrUpdateModelClassRun = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateModelClassRun',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateModelClassRunRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateModelClassRunRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse.deserializeBinary
-  );
-
-  createOrUpdateModelClassRun(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateModelClassRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
-
-  createOrUpdateModelClassRun(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateModelClassRunRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
-
-  createOrUpdateModelClassRun(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateModelClassRunRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateModelClassRun',
-        request,
-        metadata || {},
-        this.methodInfoCreateOrUpdateModelClassRun,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateModelClassRun',
-    request,
-    metadata || {},
-    this.methodInfoCreateOrUpdateModelClassRun);
-  }
-
-  methodInfoCreateOrUpdateEntity = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateEntity',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateEntityRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateEntityRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse.deserializeBinary
-  );
-
-  createOrUpdateEntity(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateEntityRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
-
-  createOrUpdateEntity(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateEntityRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
-
-  createOrUpdateEntity(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateEntityRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateEntity',
-        request,
-        metadata || {},
-        this.methodInfoCreateOrUpdateEntity,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateEntity',
-    request,
-    metadata || {},
-    this.methodInfoCreateOrUpdateEntity);
-  }
-
-  methodInfoCreateOrUpdateFeatureGroup = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateFeatureGroup',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateFeatureGroupRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateFeatureGroupRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse.deserializeBinary
-  );
-
-  createOrUpdateFeatureGroup(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateFeatureGroupRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
-
-  createOrUpdateFeatureGroup(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateFeatureGroupRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
-
-  createOrUpdateFeatureGroup(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateFeatureGroupRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateFeatureGroup',
-        request,
-        metadata || {},
-        this.methodInfoCreateOrUpdateFeatureGroup,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdateFeatureGroup',
-    request,
-    metadata || {},
-    this.methodInfoCreateOrUpdateFeatureGroup);
-  }
-
-  methodInfoCreateOrUpdatePrediction = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdatePrediction',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreatePredictionRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreatePredictionRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse.deserializeBinary
-  );
-
-  createOrUpdatePrediction(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreatePredictionRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
-
-  createOrUpdatePrediction(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreatePredictionRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
-
-  createOrUpdatePrediction(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreatePredictionRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdatePrediction',
-        request,
-        metadata || {},
-        this.methodInfoCreateOrUpdatePrediction,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdatePrediction',
-    request,
-    metadata || {},
-    this.methodInfoCreateOrUpdatePrediction);
-  }
-
-  methodInfoCreateOrUpdatePredictor = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdatePredictor',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreatePredictorRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreatePredictorRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse.deserializeBinary
-  );
-
-  createOrUpdatePredictor(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreatePredictorRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
-
-  createOrUpdatePredictor(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreatePredictorRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse>;
-
-  createOrUpdatePredictor(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreatePredictorRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateOrUpdateResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdatePredictor',
-        request,
-        metadata || {},
-        this.methodInfoCreateOrUpdatePredictor,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateOrUpdatePredictor',
-    request,
-    metadata || {},
-    this.methodInfoCreateOrUpdatePredictor);
+    this.methodInfoSavePrediction);
   }
 
 }
