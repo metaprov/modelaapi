@@ -120,7 +120,7 @@ func (study *Study) Default() {
 	}
 
 	// if we search preprocessor, but we do not have an estimator
-	study.Status.Conditions = make([]StudyCondition, 0)
+	study.Status.Conditions = make([]metav1.Condition, 0)
 
 	if study.ObjectMeta.Labels == nil {
 		study.ObjectMeta.Labels = make(map[string]string)
