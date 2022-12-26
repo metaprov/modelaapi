@@ -12,7 +12,6 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -35,10 +34,6 @@ func (entity Entity) RepPath(root string) (string, error) {
 
 func (entity Entity) RepEntry() (string, error) {
 	return fmt.Sprintf("schemas/%s.yaml", entity.ObjectMeta.Name), nil
-}
-
-func (entity Entity) Age() string {
-	return humanize.Time(entity.CreationTimestamp.Time)
 }
 
 //==============================================================================

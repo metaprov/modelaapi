@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
 	"strings"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
@@ -54,10 +53,6 @@ func (fh *FeatureHistogram) RepPath(root string) (string, error) {
 
 func (fh *FeatureHistogram) RepEntry() (string, error) {
 	return fmt.Sprintf("schemas/%s.yaml", fh.ObjectMeta.Name), nil
-}
-
-func (fh *FeatureHistogram) Age() string {
-	return humanize.Time(fh.CreationTimestamp.Time)
 }
 
 //==============================================================================

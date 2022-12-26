@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
@@ -50,10 +49,6 @@ func (fg *FeatureGroup) RepPath(root string) (string, error) {
 
 func (fg *FeatureGroup) RepEntry() (string, error) {
 	return fmt.Sprintf("schemas/%s.yaml", fg.ObjectMeta.Name), nil
-}
-
-func (fg *FeatureGroup) Age() string {
-	return humanize.Time(fg.CreationTimestamp.Time)
 }
 
 func (fg FeatureGroup) IsDeleted() bool {

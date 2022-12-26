@@ -134,10 +134,6 @@ func (model Model) ReportType() ReportType {
 	return InvalidReport
 }
 
-func (model Model) Age() string {
-	return humanize.Time(model.CreationTimestamp.Time)
-}
-
 //==============================================================================
 // Finalizer
 //==============================================================================

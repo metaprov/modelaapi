@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	ctrl "sigs.k8s.io/controller-runtime"
 
@@ -45,10 +44,6 @@ func (mclass *ModelClass) DataAppName() string {
 
 func (mclass ModelClass) JobName() string {
 	return fmt.Sprintf("mclass-%s", mclass.Name)
-}
-
-func (mclass ModelClass) Age() string {
-	return humanize.Time(mclass.CreationTimestamp.Time)
 }
 
 //==============================================================================

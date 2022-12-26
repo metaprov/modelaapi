@@ -141,10 +141,6 @@ func (report Report) IsModelReport() bool {
 		*report.Spec.ReportType == PartitionTimeSeriesModelReport
 }
 
-func (report Report) Age() string {
-	return humanize.Time(report.CreationTimestamp.Time)
-}
-
 func (report Report) RootURI() string {
 	if *report.Spec.ReportType == PartitionTimeSeriesDatasetReport {
 		if len(report.Spec.Key) > 0 {
