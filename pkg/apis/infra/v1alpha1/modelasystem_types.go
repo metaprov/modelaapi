@@ -11,8 +11,8 @@ type ModelaSystemConditionType string
 
 // / ModelaSystem Condition
 const (
-	ModelaSystemReady ModelaSystemConditionType = "Ready"
-	ModelaSystemSaved ModelaSystemConditionType = "Saved"
+	ModelaSystemReady = "Ready"
+	ModelaSystemSaved = "Saved"
 )
 
 // +kubebuilder:object:root=true

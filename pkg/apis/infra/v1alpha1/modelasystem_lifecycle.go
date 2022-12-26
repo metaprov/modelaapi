@@ -10,7 +10,6 @@ import (
 	"fmt"
 
 	"github.com/metaprov/modelaapi/pkg/util"
-	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
@@ -40,11 +39,11 @@ func (ms *ModelaSystem) RemoveFinalizer() {
 }
 
 // Merge or update condition
-func (ms *ModelaSystem) CreateOrUpdateCond(cond ModelaSystemCondition) {
+func (ms *ModelaSystem) CreateOrUpdateCond(cond metav1.Condition) {
 	i := ms.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		ms.Status.Conditions = append(ms.Status.Conditions, cond)
 		return
 	}
@@ -52,14 +51,14 @@ func (ms *ModelaSystem) CreateOrUpdateCond(cond ModelaSystemCondition) {
 	current := ms.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	ms.Status.Conditions[i] = current
 }
 
-func (ms ModelaSystem) GetCondIdx(t ModelaSystemConditionType) int {
+func (ms ModelaSystem) GetCondIdx(t string) int {
 	for i, v := range ms.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -68,16 +67,16 @@ func (ms ModelaSystem) GetCondIdx(t ModelaSystemConditionType) int {
 	return -1
 }
 
-func (ms ModelaSystem) GetCond(t ModelaSystemConditionType) ModelaSystemCondition {
+func (ms ModelaSystem) GetCond(t string) metav1.Condition {
 	for _, v := range ms.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return ModelaSystemCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -85,7 +84,7 @@ func (ms ModelaSystem) GetCond(t ModelaSystemConditionType) ModelaSystemConditio
 }
 
 func (ms ModelaSystem) IsReady() bool {
-	return ms.GetCond(ModelaSystemReady).Status == v1.ConditionTrue
+	return ms.GetCond(ModelaSystemReady).Status == metav1.ConditionTrue
 }
 
 func (ms ModelaSystem) RootURI() string {
@@ -106,8 +105,8 @@ func ParseModelaSystemYaml(content []byte) (*ModelaSystem, error) {
 }
 
 func (ms *ModelaSystem) MarkArchived() {
-	ms.CreateOrUpdateCond(ModelaSystemCondition{
+	ms.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelaSystemSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
