@@ -7,7 +7,6 @@ import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	"github.com/metaprov/modelaapi/pkg/util"
-	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -150,11 +149,11 @@ func (datasource DataSource) CountTargetAttributes() int {
 
 // Merge or update condition
 // Merge or update condition
-func (datasource *DataSource) CreateOrUpdateCond(cond DataSourceCondition) {
+func (datasource *DataSource) CreateOrUpdateCond(cond metav1.Condition) {
 	i := datasource.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		datasource.Status.Conditions = append(datasource.Status.Conditions, cond)
 		return
 	}
@@ -162,14 +161,14 @@ func (datasource *DataSource) CreateOrUpdateCond(cond DataSourceCondition) {
 	current := datasource.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	datasource.Status.Conditions[i] = current
 }
 
-func (datasource DataSource) GetCondIdx(t DataSourceConditionType) int {
+func (datasource DataSource) GetCondIdx(t string) int {
 	for i, v := range datasource.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -178,16 +177,16 @@ func (datasource DataSource) GetCondIdx(t DataSourceConditionType) int {
 	return -1
 }
 
-func (datasource DataSource) GetCond(t DataSourceConditionType) DataSourceCondition {
+func (datasource DataSource) GetCond(t string) metav1.Condition {
 	for _, v := range datasource.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return DataSourceCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -195,7 +194,7 @@ func (datasource DataSource) GetCond(t DataSourceConditionType) DataSourceCondit
 }
 
 func (datasource DataSource) IsReady() bool {
-	return datasource.GetCond(DatasourceReady).Status == v1.ConditionTrue
+	return datasource.GetCond(DatasourceReady).Status == metav1.ConditionTrue
 }
 
 func (datasource DataSource) Key() string {
@@ -259,22 +258,22 @@ func (datasource *DataSource) SetupWebhookWithManager(mgr ctrl.Manager) error {
 }
 
 func (datasource *DataSource) MarkReady() {
-	datasource.CreateOrUpdateCond(DataSourceCondition{
+	datasource.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasourceReady,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 
 }
 
 func (datasource *DataSource) MarkSaved() {
-	datasource.CreateOrUpdateCond(DataSourceCondition{
+	datasource.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasourceSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (datasource DataSource) Saved() bool {
-	return datasource.GetCond(DatasourceSaved).Status == v1.ConditionTrue
+	return datasource.GetCond(DatasourceSaved).Status == metav1.ConditionTrue
 }
 
 func (datasource *DataSource) HaveValidationRules() bool {

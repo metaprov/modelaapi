@@ -24,20 +24,6 @@ const (
 	NotifierSaved NotifierConditionType = "Saved"
 )
 
-// NotifierCondition describes the state of a Notifier at a certain point
-type NotifierCondition struct {
-	// Type of account condition.
-	Type NotifierConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=NotifierConditionType"`
-	// Status of the condition, one of True, False, Unknown
-	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another
-	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,3,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition
-	Reason string `json:"reason,omitempty" protobuf:"bytes,4,opt,name=reason"`
-	// A human readable message indicating details about the transition
-	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
-}
-
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=notifiers,singular=notifier,categories={infra,modela}
 // +kubebuilder:subresource:status
@@ -98,7 +84,7 @@ type NotifierStatus struct {
 	// The status of Notification Channels after Alerts have been forwarded to them
 	ChannelsStatus []NotificationChannelStatus `json:"channelsStatus,omitempty" protobuf:"bytes,4,rep,name=channelsStatus"`
 	//+kubebuilder:validation:Optional
-	Conditions []NotifierCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }
 
 // NotificationChannelSpec describes a single Connection to an external messaging system and a destination channel within the system

@@ -17,31 +17,12 @@ const (
 	RecipeRunPhaseFailed      RecipeRunPhase = "Failed"
 )
 
-// Condition on the dataset
-type RecipeRunConditionType string
-
 // / RecipeName Condition
 const (
-	RecipeRunUnitTested RecipeConditionType = "UnitTested"
-	RecipeRunCompleted  RecipeConditionType = "Completed"
-	RecipeRunSaved      RecipeConditionType = "Saved"
+	RecipeRunUnitTested = "UnitTested"
+	RecipeRunCompleted  = "Completed"
+	RecipeRunSaved      = "Saved"
 )
-
-// RecipeRunCondition describes the state of a dataset at a certain point.
-type RecipeRunCondition struct {
-	Type RecipeConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=RecipeConditionType"`
-	// Status of the condition, one of True, False, Unknown.
-	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another.
-	// +kubebuilder:validation:Optional
-	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,3,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition.
-	// +kubebuilder:validation:Optional
-	Reason string `json:"reason,omitempty" protobuf:"bytes,4,opt,name=reason"`
-	// A human readable message indicating details about the transition.
-	// +kubebuilder:validation:Optional
-	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
-}
 
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=reciperuns,shortName=rcr,singular=reciperun,categories={data,modela,all}
@@ -132,5 +113,5 @@ type RecipeRunStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []RecipeCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,11,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,11,rep,name=conditions"`
 }

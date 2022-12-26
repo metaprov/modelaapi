@@ -123,24 +123,6 @@ message DataApp {
   optional DataAppStatus status = 3;
 }
 
-// DataAppCondition describes the state of a DataApp at a certain point
-message DataAppCondition {
-  // Type of DataApp condition
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
-
-  // The reason for the condition's last transition
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition
-  optional string message = 5;
-}
-
 // DataAppList contains a list of DataApps
 // +kubebuilder:object:root=true
 message DataAppList {
@@ -231,7 +213,7 @@ message DataAppStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataAppCondition conditions = 7;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 7;
 }
 
 message DriftDetectionSpec {
@@ -622,24 +604,6 @@ message PredictionCacheStatus {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastAccessed = 1;
 }
 
-// PredictionCondition describes the state of a Prediction at a certain point
-message PredictionCondition {
-  // Type of Prediction condition
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition
-  optional string reason = 4;
-
-  // A human-readable message indicating details about the transition
-  optional string message = 5;
-}
-
 // +kubebuilder:object:root=true
 // PredictionList is a list of Predictions
 message PredictionList {
@@ -840,7 +804,7 @@ message PredictionStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictionCondition conditions = 15;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 15;
 }
 
 // +kubebuilder:object:root=true
@@ -863,24 +827,6 @@ message Predictor {
 
   // +optional
   optional PredictorStatus status = 3;
-}
-
-// PredictorCondition describes the state of a Predictor at a certain point
-message PredictorCondition {
-  // Type of Predictor condition
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition
-  optional string reason = 4;
-
-  // A human-readable message indicating details about the transition
-  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
@@ -1075,7 +1021,7 @@ message PredictorStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictorCondition conditions = 17;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 17;
 }
 
 // PredictorletStatus describes the current state of a prediction proxy service associated with a Predictor

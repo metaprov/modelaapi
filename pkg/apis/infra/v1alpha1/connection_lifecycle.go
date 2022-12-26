@@ -61,11 +61,11 @@ func (connection Connection) ManifestURI() string {
 }
 
 // Merge or update condition
-func (connection *Connection) CreateOrUpdateCond(cond ConnectionCondition) {
+func (connection *Connection) CreateOrUpdateCond(cond metav1.Condition) {
 	i := connection.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		connection.Status.Conditions = append(connection.Status.Conditions, cond)
 		return
 	}
@@ -73,14 +73,14 @@ func (connection *Connection) CreateOrUpdateCond(cond ConnectionCondition) {
 	current := connection.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	connection.Status.Conditions[i] = current
 }
 
-func (connection *Connection) GetCondIdx(t ConnectionConditionType) int {
+func (connection *Connection) GetCondIdx(t string) int {
 	for i, v := range connection.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -89,16 +89,16 @@ func (connection *Connection) GetCondIdx(t ConnectionConditionType) int {
 	return -1
 }
 
-func (connection *Connection) GetCond(t ConnectionConditionType) ConnectionCondition {
+func (connection *Connection) GetCond(t string) metav1.Condition {
 	for _, v := range connection.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return ConnectionCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  corev1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -119,20 +119,20 @@ func ParseConnectionYaml(content []byte) (*Connection, error) {
 }
 
 func (connection Connection) IsReady() bool {
-	return connection.GetCond(ConnectionReady).Status == corev1.ConditionTrue
+	return connection.GetCond(string(ConnectionReady)).Status == metav1.ConditionTrue
 }
 
 func (connection *Connection) MarkReady() {
-	connection.CreateOrUpdateCond(ConnectionCondition{
-		Type:   ConnectionReady,
-		Status: corev1.ConditionTrue,
+	connection.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(ConnectionReady),
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (connection *Connection) MarkArchived() {
-	connection.CreateOrUpdateCond(ConnectionCondition{
-		Type:   ConnectionSaved,
-		Status: corev1.ConditionTrue,
+	connection.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(ConnectionSaved),
+		Status: metav1.ConditionTrue,
 	})
 }
 

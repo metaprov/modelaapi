@@ -6,37 +6,12 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// AlertPhase specifies the current phase of an Alert
-type AlertPhase string
-
-const (
-	AlertPhasePending AlertPhase = "Pending"
-	AlertPhaseSending AlertPhase = "Sending"
-	AlertPhaseSent    AlertPhase = "Sent"
-	AlertPhaseFailed  AlertPhase = "Failed"
-)
-
 // Alert condition
-type AlertConditionType string
 
 const (
-	AlertSent  AlertConditionType = "Sent"
-	AlertSaved AlertConditionType = "Saved"
+	AlertSent  = "Sent"
+	AlertSaved = "Saved"
 )
-
-// AlertCondition describes the state of an Alert at a certain point
-type AlertCondition struct {
-	// Type of account condition.
-	Type AlertConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=AlertConditionType"`
-	// Status of the condition, one of True, False, Unknown.
-	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another
-	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,3,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition
-	Reason string `json:"reason,omitempty" protobuf:"bytes,4,opt,name=reason"`
-	// A human-readable message indicating details about the transition
-	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
-}
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
@@ -123,10 +98,6 @@ type AlertSpec struct {
 
 // AlertStatus is the observed state of an Alert
 type AlertStatus struct {
-	// The current phase of the Alert
-	// +kubebuilder:default:="Pending"
-	// +kubebuilder:validation:Optional
-	Phase AlertPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// The time when the Alert was fired
 	// +kubebuilder:validation:Optional
 	FiredAt *metav1.Time `json:"firedAt" protobuf:"bytes,2,opt,name=firedAt"`
@@ -145,5 +116,5 @@ type AlertStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []AlertCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,7,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,7,rep,name=conditions"`
 }

@@ -12,12 +12,9 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
-
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	"github.com/metaprov/modelaapi/pkg/util"
-	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
@@ -71,11 +68,11 @@ func (entity *Entity) SetChanged() {
 }
 
 // Merge or update condition
-func (entity *Entity) CreateOrUpdateCond(cond EntityCondition) {
+func (entity *Entity) CreateOrUpdateCond(cond metav1.Condition) {
 	i := entity.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		entity.Status.Conditions = append(entity.Status.Conditions, cond)
 		return
 	}
@@ -83,14 +80,14 @@ func (entity *Entity) CreateOrUpdateCond(cond EntityCondition) {
 	current := entity.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	entity.Status.Conditions[i] = current
 }
 
-func (entity *Entity) GetCondIdx(t EntityConditionType) int {
+func (entity *Entity) GetCondIdx(t string) int {
 	for i, v := range entity.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -99,16 +96,16 @@ func (entity *Entity) GetCondIdx(t EntityConditionType) int {
 	return -1
 }
 
-func (entity *Entity) GetCond(t EntityConditionType) EntityCondition {
+func (entity *Entity) GetCond(t string) metav1.Condition {
 	for _, v := range entity.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return EntityCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -116,7 +113,7 @@ func (entity *Entity) GetCond(t EntityConditionType) EntityCondition {
 }
 
 func (entity Entity) IsReady() bool {
-	return entity.GetCond(EntityReady).Status == v1.ConditionTrue
+	return entity.GetCond(EntityReady).Status == metav1.ConditionTrue
 }
 
 func (entity Entity) Key() string {
@@ -132,19 +129,19 @@ func (entity *Entity) SetupWebhookWithManager(mgr ctrl.Manager) error {
 
 func (entity *Entity) MarkReady() {
 	// update the lab state to ready
-	entity.CreateOrUpdateCond(EntityCondition{
+	entity.CreateOrUpdateCond(metav1.Condition{
 		Type:   EntityReady,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (entity *Entity) MarkArchived() {
-	entity.CreateOrUpdateCond(EntityCondition{
+	entity.CreateOrUpdateCond(metav1.Condition{
 		Type:   EntitySaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (entity Entity) Archived() bool {
-	return entity.GetCond(EntitySaved).Status == v1.ConditionTrue
+	return entity.GetCond(EntitySaved).Status == metav1.ConditionTrue
 }

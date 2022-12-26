@@ -29,25 +29,11 @@ const (
 type FeatureGroupConditionType string
 
 const (
-	FeatureGroupReady    FeatureGroupConditionType = "Ready"
-	FeatureGroupSaved    FeatureGroupConditionType = "Saved"
-	FeatureGroupSynced   FeatureGroupConditionType = "Synced"
-	FeatureGroupIngested FeatureGroupConditionType = "Ingested"
+	FeatureGroupReady    = "Ready"
+	FeatureGroupSaved    = "Saved"
+	FeatureGroupSynced   = "Synced"
+	FeatureGroupIngested = "Ingested"
 )
-
-// FeatureGroupCondition describes the state of a deployment at a certain point.
-type FeatureGroupCondition struct {
-	// Type of account condition.
-	Type FeatureGroupConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=FeatureConditionType"`
-	// Status of the condition, one of True, False, Unknown
-	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another.
-	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,7,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition.
-	Reason string `json:"reason,omitempty" protobuf:"bytes,4,opt,name=reason"`
-	// A human readable message indicating details about the transition.
-	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
-}
 
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
@@ -183,7 +169,7 @@ type FeatureGroupStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeatureGroupCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,14,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,14,rep,name=conditions"`
 }
 
 type MaterializationSpec struct {

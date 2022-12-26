@@ -51,24 +51,6 @@ message Account {
   optional AccountStatus status = 3;
 }
 
-// AccountCondition describes the state of a account at a certain point.
-message AccountCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
-}
-
 // +kubebuilder:object:root=true
 // AccountList represent list of accounts.
 message AccountList {
@@ -210,7 +192,7 @@ message AccountStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated AccountCondition conditions = 11;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 11;
 }
 
 message AirTableSpec {
@@ -283,24 +265,6 @@ message Alert {
   optional AlertStatus status = 3;
 }
 
-// AlertCondition describes the state of an Alert at a certain point
-message AlertCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition
-  optional string reason = 4;
-
-  // A human-readable message indicating details about the transition
-  optional string message = 5;
-}
-
 // AlertList is a list of Alerts
 // +kubebuilder:object:root=true
 message AlertList {
@@ -367,11 +331,6 @@ message AlertSpec {
 
 // AlertStatus is the observed state of an Alert
 message AlertStatus {
-  // The current phase of the Alert
-  // +kubebuilder:default:="Pending"
-  // +kubebuilder:validation:Optional
-  optional string phase = 1;
-
   // The time when the Alert was fired
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time firedAt = 2;
@@ -395,7 +354,7 @@ message AlertStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated AlertCondition conditions = 7;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 7;
 }
 
 message AliCloudSpec {
@@ -605,24 +564,6 @@ message Attachment {
   optional AttachmentStatus status = 3;
 }
 
-// AttachmentCondition describes the state of the license at a certain point.
-message AttachmentCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human-readable message indicating details about the transition.
-  optional string message = 5;
-}
-
 // +kubebuilder:object:root=true
 // AttachmentList is a list of Attachments
 message AttachmentList {
@@ -680,7 +621,7 @@ message AttachmentStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated AttachmentCondition conditions = 5;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
 }
 
 // AvatarSpec specifies the location of an avatar for an Account
@@ -835,24 +776,6 @@ message Connection {
 
   // +optional
   optional ConnectionStatus status = 3;
-}
-
-// ConnectionCondition describes the state of a connection at a certain point.
-message ConnectionCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
-
-  // The reason for the condition's last transition.
-  optional string reason = 5;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 6;
 }
 
 // +kubebuilder:object:root=true
@@ -1137,7 +1060,7 @@ message ConnectionStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ConnectionCondition conditions = 5;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
 }
 
 message CouchbaseSpec {
@@ -1641,24 +1564,6 @@ message Lab {
   optional LabStatus status = 3;
 }
 
-// LabCondition describes the state of a Lab at a certain point
-message LabCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
-}
-
 // +kubebuilder:object:root=true
 // LabList is the list of Labs
 message LabList {
@@ -1707,7 +1612,7 @@ message LabStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated LabCondition conditions = 3;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 3;
 }
 
 // +kubebuilder:object:root=true
@@ -1732,24 +1637,6 @@ message License {
 
   // +optional
   optional LicenseStatus status = 3;
-}
-
-// LicenseCondition describes the state of the license at a certain point
-message LicenseCondition {
-  // Type of condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
@@ -1863,7 +1750,7 @@ message LicenseStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated LicenseCondition conditions = 5;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
 }
 
 message LinodeSpec {
@@ -1942,24 +1829,6 @@ message ModelaSystem {
   optional ModelaSystemStatus status = 3;
 }
 
-// ModelaSystemCondition describes the state of the ModelaSystem at a certain point
-message ModelaSystemCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
-}
-
 // +kubebuilder:object:root=true
 // ModelaSystemList is a list of ModelaSystems
 message ModelaSystemList {
@@ -2010,7 +1879,7 @@ message ModelaSystemStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelaSystemCondition conditions = 5;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
 }
 
 message MongoDbSpec {
@@ -2142,24 +2011,6 @@ message Notifier {
   optional NotifierStatus status = 3;
 }
 
-// NotifierCondition describes the state of a Notifier at a certain point
-message NotifierCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition
-  optional string message = 5;
-}
-
 // +kubebuilder:object:root=true
 // NotifierList is a list of Notifiers
 message NotifierList {
@@ -2210,7 +2061,7 @@ message NotifierStatus {
   repeated NotificationChannelStatus channelsStatus = 4;
 
   // +kubebuilder:validation:Optional
-  repeated NotifierCondition conditions = 5;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
 }
 
 message OdbcSpec {
@@ -2555,24 +2406,6 @@ message ServingSite {
   optional ServingSiteStatus status = 3;
 }
 
-// ServingSiteCondition describes the state of a servingsite at a certain point.
-message ServingSiteCondition {
-  // Type of  condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
-}
-
 // +kubebuilder:object:root=true
 // ServingSiteList is a list of ServingSite
 message ServingSiteList {
@@ -2675,7 +2508,7 @@ message ServingSiteStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ServingSiteCondition conditions = 15;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 15;
 }
 
 message SingleStoreSpec {
@@ -2819,24 +2652,6 @@ message Tenant {
   optional TenantStatus status = 3;
 }
 
-// TenantCondition describes the state of a Tenant at a certain point
-message TenantCondition {
-  // Type of tenant condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
-}
-
 // TenantList represent a list of Tenants
 // +kubebuilder:object:root=true
 message TenantList {
@@ -2935,7 +2750,7 @@ message TenantStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated TenantCondition conditions = 8;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 8;
 }
 
 message TeradataSpec {
@@ -3103,24 +2918,6 @@ message VirtualBucket {
   optional VirtualBucketStatus status = 3;
 }
 
-// VirtualBucketCondition describes the state of a VirtualBucket at a certain point
-message VirtualBucketCondition {
-  // Type of bucket condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
-}
-
 // VirtualBucketList is a list of VirtualBuckets
 // +kubebuilder:object:root=true
 message VirtualBucketList {
@@ -3191,7 +2988,7 @@ message VirtualBucketStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated VirtualBucketCondition conditions = 6;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 6;
 }
 
 message VirtualClusterSpec {

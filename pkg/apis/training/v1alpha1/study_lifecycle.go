@@ -121,11 +121,11 @@ func (study *Study) AddFinalizer()     { util.AddFin(&study.ObjectMeta, training
 func (study *Study) RemoveFinalizer()  { util.RemoveFin(&study.ObjectMeta, training.GroupName) }
 
 // Merge or update condition
-func (study *Study) CreateOrUpdateCond(cond StudyCondition) {
+func (study *Study) CreateOrUpdateCond(cond metav1.Condition) {
 	i := study.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		study.Status.Conditions = append(study.Status.Conditions, cond)
 		return
 	}
@@ -133,14 +133,14 @@ func (study *Study) CreateOrUpdateCond(cond StudyCondition) {
 	current := study.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	study.Status.Conditions[i] = current
 }
 
-func (study *Study) GetCondIdx(t StudyConditionType) int {
+func (study *Study) GetCondIdx(t string) int {
 	for i, v := range study.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -149,16 +149,16 @@ func (study *Study) GetCondIdx(t StudyConditionType) int {
 	return -1
 }
 
-func (study Study) GetCond(t StudyConditionType) StudyCondition {
+func (study Study) GetCond(t string) metav1.Condition {
 	for _, v := range study.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return StudyCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -173,11 +173,11 @@ func (r Study) IsFeatureEngineering() bool {
 }
 
 func (r Study) IsReady() bool {
-	return r.GetCond(StudyCompleted).Status == v1.ConditionTrue
+	return r.GetCond(StudyCompleted).Status == metav1.ConditionTrue
 }
 
 func (r Study) IsPartitioned() bool {
-	return r.GetCond(StudyPartitioned).Status == v1.ConditionTrue
+	return r.GetCond(StudyPartitioned).Status == metav1.ConditionTrue
 }
 
 func (r Study) IsForecast() bool {
@@ -219,9 +219,9 @@ func (study Study) ReportName() string {
 
 }
 
-func (study Study) IsInCond(ct StudyConditionType) bool {
+func (study Study) IsInCond(ct string) bool {
 	current := study.GetCond(ct)
-	return current.Status == v1.ConditionTrue
+	return current.Status == metav1.ConditionTrue
 }
 
 func (study Study) SelectSplitMethod() {
@@ -305,13 +305,13 @@ func (study *Study) AutoSplit(rows int32) {
 
 func (study Study) Splitted() bool {
 	cond := study.GetCond(StudySplit)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (study *Study) MarkSplitted() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudySplit,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	// set the training location
 	trainingLocation := data.DataLocation{}
@@ -337,9 +337,9 @@ func (study *Study) MarkSplitted() {
 }
 
 func (study *Study) MarkSplitFailed(err string) {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:    StudySplit,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(StudyPhaseFailed),
 		Message: err,
 	})
@@ -355,13 +355,13 @@ func (study *Study) MarkSplitFailed(err string) {
 
 func (study Study) Transformed() bool {
 	cond := study.GetCond(StudyTransformed)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (study *Study) MarkTransformed() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudySplit,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	// set the training location
 	trainingLocation := data.DataLocation{}
@@ -387,9 +387,9 @@ func (study *Study) MarkTransformed() {
 }
 
 func (study *Study) MarkTransformFailed(err string) {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:    StudyTransformed,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(StudyPhaseFailed),
 		Message: err,
 	})
@@ -405,13 +405,13 @@ func (study *Study) MarkTransformFailed(err string) {
 
 func (study Study) FeatureEngineered() bool {
 	cond := study.GetCond(StudyFeatureEngineered)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (study *Study) MarkFeatureEngineering() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyFeatureEngineered,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonFeatureEngineering,
 	})
 	now := metav1.Now()
@@ -420,9 +420,9 @@ func (study *Study) MarkFeatureEngineering() {
 }
 
 func (study *Study) MarkFeatureEngineered() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyFeatureEngineered,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	now := metav1.Now()
 	if study.Status.FeatureEngineeringStatus.CompletedAt == nil {
@@ -433,9 +433,9 @@ func (study *Study) MarkFeatureEngineered() {
 }
 
 func (study *Study) MarkFeatureEngineeringFailed(err string) {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:    StudyFeatureEngineered,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -451,13 +451,13 @@ func (study *Study) MarkFeatureEngineeringFailed(err string) {
 
 func (study Study) Baselined() bool {
 	cond := study.GetCond(StudyBaselined)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (study *Study) MarkBaselining() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyBaselined,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonBaselining,
 	})
 	now := metav1.Now()
@@ -469,9 +469,9 @@ func (study *Study) MarkBaselining() {
 }
 
 func (study *Study) MarkBaselined() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyBaselined,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	now := metav1.Now()
 	if study.Status.BaselineStatus.CompletedAt == nil {
@@ -482,9 +482,9 @@ func (study *Study) MarkBaselined() {
 }
 
 func (study *Study) MarkBaselineFailed(err string) {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:    StudyBaselined,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -495,9 +495,9 @@ func (study *Study) MarkBaselineFailed(err string) {
 }
 
 func (study *Study) MarkReadyFailed(err string) {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:    StudyCompleted,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -513,9 +513,9 @@ func (study *Study) UpdateEndTime() {
 }
 
 func (study *Study) MarkGCFailed(err string) {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:    StudyCompleted,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -531,13 +531,13 @@ func (study *Study) MarkGCFailed(err string) {
 
 func (study Study) Searched() bool {
 	cond := study.GetCond(StudySearched)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (study *Study) MarkSearching() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudySearched,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonTraining,
 	})
 	now := metav1.Now()
@@ -549,9 +549,9 @@ func (study *Study) MarkSearching() {
 }
 
 func (study *Study) MarkSearched() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudySearched,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	now := metav1.Now()
 	if study.Status.SearchStatus.CompletedAt == nil {
@@ -562,9 +562,9 @@ func (study *Study) MarkSearched() {
 }
 
 func (study *Study) MarkSearchFailed(err string) {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:    StudySearched,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -580,13 +580,13 @@ func (study *Study) MarkSearchFailed(err string) {
 
 func (study Study) Ensembled() bool {
 	cond := study.GetCond(StudyEnsembleCreated)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (study *Study) MarkEnsembling() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyEnsembleCreated,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonCreateEnsemble,
 	})
 	now := metav1.Now()
@@ -598,9 +598,9 @@ func (study *Study) MarkEnsembling() {
 }
 
 func (study *Study) MarkEnsembled() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyEnsembleCreated,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	now := metav1.Now()
 	if study.Status.EnsembleStatus.CompletedAt == nil {
@@ -611,9 +611,9 @@ func (study *Study) MarkEnsembled() {
 }
 
 func (study *Study) MarkEnsembleFailed(err string) {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:    StudyEnsembleCreated,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -634,13 +634,13 @@ func (study *Study) MarkEnsembleFailed(err string) {
 
 func (study Study) ModelTested() bool {
 	cond := study.GetCond(StudyTested)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (study *Study) MarkTesting() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyTested,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonTesting,
 	})
 	now := metav1.Now()
@@ -649,9 +649,9 @@ func (study *Study) MarkTesting() {
 }
 
 func (study *Study) MarkTested() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyTested,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	now := metav1.Now()
 	study.Status.TestStatus.CompletedAt = &now
@@ -660,9 +660,9 @@ func (study *Study) MarkTested() {
 }
 
 func (study *Study) MarkTestingFailed(err string) {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:    StudyTested,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -673,7 +673,7 @@ func (study *Study) MarkTestingFailed(err string) {
 }
 
 func (study Study) Tested() bool {
-	return study.GetCond(StudyTested).Status == v1.ConditionTrue
+	return study.GetCond(StudyTested).Status == metav1.ConditionTrue
 }
 
 //////////////////////////////////////////////////////
@@ -682,13 +682,13 @@ func (study Study) Tested() bool {
 
 func (study Study) ModelTuned() bool {
 	cond := study.GetCond(StudyTuned)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (study *Study) MarkTuning() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyTuned,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonTuning,
 	})
 	now := metav1.Now()
@@ -697,9 +697,9 @@ func (study *Study) MarkTuning() {
 }
 
 func (study *Study) MarkTuned() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyTuned,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	now := metav1.Now()
 	study.Status.TestStatus.CompletedAt = &now
@@ -708,9 +708,9 @@ func (study *Study) MarkTuned() {
 }
 
 func (study *Study) MarkTuningFailed(err string) {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:    StudyTuned,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -721,7 +721,7 @@ func (study *Study) MarkTuningFailed(err string) {
 }
 
 func (study Study) Tuned() bool {
-	return study.GetCond(StudyTuned).Status == v1.ConditionTrue
+	return study.GetCond(StudyTuned).Status == metav1.ConditionTrue
 }
 
 ///////////////////////////////////////////////////////
@@ -729,14 +729,14 @@ func (study Study) Tuned() bool {
 ///////////////////////////////////////////////////////
 
 func (study Study) Profiled() bool {
-	return *study.Spec.Profiled && study.GetCond(StudyProfiled).Status == v1.ConditionTrue
+	return *study.Spec.Profiled && study.GetCond(StudyProfiled).Status == metav1.ConditionTrue
 }
 
 func (study *Study) MarkProfiling() {
 	study.Status.Phase = StudyPhaseProfiling
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyProfiled,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonProfiling,
 	})
 }
@@ -745,18 +745,18 @@ func (study *Study) MarkProfiled(url string) {
 	study.Status.Phase = StudyPhaseProfiled
 	study.Status.ProfileURI = url
 	// update the condition
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyProfiled,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	study.RefreshProgress()
 
 }
 
 func (study *Study) MarkProfileFailed(err string) {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:    StudyProfiled,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -771,9 +771,9 @@ func (study *Study) MarkProfileFailed(err string) {
 ///////////////////////////////////////////////////////////
 
 func (study *Study) MarkReporting() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyReported,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonReporting,
 	})
 	study.Status.Phase = StudyPhaseReporting
@@ -781,14 +781,14 @@ func (study *Study) MarkReporting() {
 }
 
 func (study Study) Reported() bool {
-	return study.GetCond(StudyReported).Status == v1.ConditionTrue
+	return study.GetCond(StudyReported).Status == metav1.ConditionTrue
 }
 
 func (study *Study) MarkReported(name string) {
 	study.Status.ReportName = name
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyReported,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	study.Status.Phase = StudyPhaseReported
 	study.RefreshProgress()
@@ -797,20 +797,20 @@ func (study *Study) MarkReported(name string) {
 // ------------------- Paused
 func (study Study) Paused() bool {
 	cond := study.GetCond(StudyPaused)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 // ------------------- Abort
 
 func (study Study) Aborted() bool {
 	cond := study.GetCond(StudyAborted)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (study *Study) MarkAborted() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyAborted,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	study.Status.Phase = StudyPhaseAborted
 	study.RefreshProgress()
@@ -818,27 +818,27 @@ func (study *Study) MarkAborted() {
 
 func (study *Study) MarkPartitioned() bool {
 	cond := study.GetCond(StudyPartitioned)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (study Study) EnsembleTrained() bool {
-	return study.GetCond(StudyEnsembleCreated).Status == v1.ConditionTrue
+	return study.GetCond(StudyEnsembleCreated).Status == metav1.ConditionTrue
 }
 
 func (study Study) Ready() bool {
-	return study.GetCond(StudyCompleted).Status == v1.ConditionTrue
+	return study.GetCond(StudyCompleted).Status == metav1.ConditionTrue
 }
 
 func (study *Study) MarkSaved() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudySaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	study.RefreshProgress()
 }
 
 func (study Study) Saved() bool {
-	return study.GetCond(StudySaved).Status == v1.ConditionTrue
+	return study.GetCond(StudySaved).Status == metav1.ConditionTrue
 }
 
 func (study Study) PrintConditions() {
@@ -848,9 +848,9 @@ func (study Study) PrintConditions() {
 }
 
 func (study *Study) MarkResumed() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyPaused,
-		Status: v1.ConditionUnknown,
+		Status: metav1.ConditionUnknown,
 	})
 
 }
@@ -858,9 +858,9 @@ func (study *Study) MarkResumed() {
 func (study *Study) MarkReady() {
 	now := metav1.Now()
 	study.Status.CompletedAt = &now
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyCompleted,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	study.Status.Phase = StudyPhaseCompleted
 	study.RefreshProgress()
@@ -868,16 +868,16 @@ func (study *Study) MarkReady() {
 }
 
 func (study *Study) MarkEnsembleTrained() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyEnsembleCreated,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (study *Study) MarkPaused() {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyPaused,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	study.Status.Phase = StudyPhasePaused
 }
@@ -931,9 +931,9 @@ func (study *Study) MaxTimeOrModelReached() bool {
 }
 
 func (study *Study) MarkReportFailed(err string) {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:    StudyReported,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -947,9 +947,9 @@ func (study *Study) MarkReportFailed(err string) {
 }
 
 func (study *Study) MarkAbortFailed(err string) {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:    StudyAborted,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -962,9 +962,9 @@ func (study *Study) MarkAbortFailed(err string) {
 }
 
 func (study *Study) MarkPauseFailed(err string) {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:    StudyPaused,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -977,9 +977,9 @@ func (study *Study) MarkPauseFailed(err string) {
 }
 
 func (study *Study) MarkPartitionedFailed(err string) {
-	study.CreateOrUpdateCond(StudyCondition{
+	study.CreateOrUpdateCond(metav1.Condition{
 		Type:    StudyPartitioned,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -1021,7 +1021,7 @@ func (study Study) CreatePartitionsPaths() []string {
 // Ask the hirerchy to return forecast keys
 
 func (study Study) IsRunning() bool {
-	return study.GetCond(StudyCompleted).Status != v1.ConditionFalse &&
+	return study.GetCond(StudyCompleted).Status != metav1.ConditionFalse &&
 		study.GetCond(StudyCompleted).Reason == string(catalog.Running)
 }
 

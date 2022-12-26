@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
 	"strings"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
@@ -28,10 +27,10 @@ import (
 //==============================================================================
 
 func (fh *FeatureHistogram) AddConditions() {
-	fh.Status.Conditions = make([]FeatureHistogramCondition, 1)
-	fh.Status.Conditions[0] = FeatureHistogramCondition{
+	fh.Status.Conditions = make([]metav1.Condition, 1)
+	fh.Status.Conditions[0] = metav1.Condition{
 		Type:   FeatureHistogramReady,
-		Status: v1.ConditionUnknown,
+		Status: metav1.ConditionUnknown,
 	}
 }
 
@@ -85,11 +84,11 @@ func (fh *FeatureHistogram) SetChanged() {
 
 // Merge or update condition
 // Merge or update condition
-func (fh *FeatureHistogram) CreateOrUpdateCond(cond FeatureHistogramCondition) {
+func (fh *FeatureHistogram) CreateOrUpdateCond(cond metav1.Condition) {
 	i := fh.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		fh.Status.Conditions = append(fh.Status.Conditions, cond)
 		return
 	}
@@ -97,14 +96,14 @@ func (fh *FeatureHistogram) CreateOrUpdateCond(cond FeatureHistogramCondition) {
 	current := fh.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	fh.Status.Conditions[i] = current
 }
 
-func (fh FeatureHistogram) GetCondIdx(t FeatureHistogramConditionType) int {
+func (fh FeatureHistogram) GetCondIdx(t string) int {
 	for i, v := range fh.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -113,16 +112,16 @@ func (fh FeatureHistogram) GetCondIdx(t FeatureHistogramConditionType) int {
 	return -1
 }
 
-func (fh *FeatureHistogram) GetCond(t FeatureHistogramConditionType) FeatureHistogramCondition {
+func (fh *FeatureHistogram) GetCond(t string) metav1.Condition {
 	for _, v := range fh.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return FeatureHistogramCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -136,9 +135,9 @@ func (fh *FeatureHistogram) GetCond(t FeatureHistogramConditionType) FeatureHist
 // MarkLive
 func (fh *FeatureHistogram) MarkLive() {
 	fh.Spec.Live = util.BoolPtr(true)
-	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+	fh.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureHistogramReady,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(FeatureHistogramPhaseLive),
 	})
 	fh.Status.Phase = FeatureHistogramPhaseLive
@@ -155,24 +154,24 @@ func (fh *FeatureHistogram) Drifted() bool {
 
 func (fh *FeatureHistogram) MarkDrift() {
 	fh.Spec.Live = util.BoolPtr(true)
-	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+	fh.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureHistogramReady,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(FeatureHistogramPhaseDrift),
 	})
 	fh.Status.Phase = FeatureHistogramPhaseDrift
 }
 
 func (fh FeatureHistogram) Live() bool {
-	return fh.GetCond(FeatureHistogramReady).Status == v1.ConditionFalse &&
+	return fh.GetCond(FeatureHistogramReady).Status == metav1.ConditionFalse &&
 		fh.GetCond(FeatureHistogramReady).Reason == string(FeatureHistogramPhaseLive)
 }
 
 // Mark Expired
 func (fh *FeatureHistogram) MarkExpired() {
-	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+	fh.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureHistogramReady,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(FeatureHistogramPhaseLive),
 	})
 	fh.Status.Phase = FeatureHistogramPhaseExpired
@@ -180,9 +179,9 @@ func (fh *FeatureHistogram) MarkExpired() {
 
 // MarkGenTest
 func (fh *FeatureHistogram) MarkGenTest() {
-	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+	fh.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureHistogramReady,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(FeatureHistogramPhaseGenTest),
 	})
 	fh.Status.Phase = FeatureHistogramPhaseGenTest
@@ -190,9 +189,9 @@ func (fh *FeatureHistogram) MarkGenTest() {
 
 // MarkReadyToTest
 func (fh *FeatureHistogram) MarkReadyToTest() {
-	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+	fh.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureHistogramReady,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(FeatureHistogramPhaseReadyToTest),
 	})
 	fh.Status.Phase = FeatureHistogramPhaseReadyToTest
@@ -201,9 +200,9 @@ func (fh *FeatureHistogram) MarkReadyToTest() {
 // MarkUnitTesting
 func (fh *FeatureHistogram) MarkUnitTesting() {
 
-	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+	fh.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureHistogramUnitTested,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(FeatureHistogramPhaseUnitTesting),
 	})
 	fh.Status.Phase = FeatureHistogramPhaseUnitTesting
@@ -212,24 +211,24 @@ func (fh *FeatureHistogram) MarkUnitTesting() {
 
 func (fh *FeatureHistogram) MarkUnitTested() {
 
-	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+	fh.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureHistogramUnitTested,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 		Reason: "UnitTesting",
 	})
 
 }
 
 func (fh *FeatureHistogram) MarkUnitTestFailed(msg string, stop bool) {
-	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+	fh.CreateOrUpdateCond(metav1.Condition{
 		Type:    FeatureHistogramUnitTested,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(FeatureHistogramPhaseFailed),
 		Message: "Failed to unit test." + msg,
 	})
-	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+	fh.CreateOrUpdateCond(metav1.Condition{
 		Type:    FeatureHistogramReady,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(FeatureHistogramPhaseFailed),
 		Message: "Failed to unit test." + msg,
 	})
@@ -240,7 +239,7 @@ func (fh *FeatureHistogram) MarkUnitTestFailed(msg string, stop bool) {
 }
 
 func (fh FeatureHistogram) UnitTested() bool {
-	return fh.GetCond(FeatureHistogramUnitTested).Status == v1.ConditionTrue
+	return fh.GetCond(FeatureHistogramUnitTested).Status == metav1.ConditionTrue
 }
 
 // MarkReady
@@ -250,11 +249,11 @@ func (fh FeatureHistogram) UnitTested() bool {
 // MarkDrifted
 
 func (fh FeatureHistogram) IsReady() bool {
-	return fh.GetCond(FeatureHistogramReady).Status == v1.ConditionTrue
+	return fh.GetCond(FeatureHistogramReady).Status == metav1.ConditionTrue
 }
 
 func (fh FeatureHistogram) IsArchived() bool {
-	return fh.GetCond(FeatureHistogramSaved).Status == v1.ConditionTrue
+	return fh.GetCond(FeatureHistogramSaved).Status == metav1.ConditionTrue
 }
 
 func (fh FeatureHistogram) Key() string {
@@ -272,28 +271,28 @@ func ParseFeatureHistogramYaml(content []byte) (*FeatureHistogram, error) {
 
 func (fh *FeatureHistogram) MarkReady() {
 	// update the lab state to ready
-	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+	fh.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureHistogramReady,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	fh.Status.Phase = FeatureHistogramPhaseReady
 }
 
 func (fh *FeatureHistogram) MarkArchived() {
-	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+	fh.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureHistogramSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (fh FeatureHistogram) Archived() bool {
-	return fh.GetCond(FeatureHistogramSaved).Status == v1.ConditionTrue
+	return fh.GetCond(FeatureHistogramSaved).Status == metav1.ConditionTrue
 }
 
 func (fh *FeatureHistogram) MarkFailed(msg string) {
-	fh.CreateOrUpdateCond(FeatureHistogramCondition{
+	fh.CreateOrUpdateCond(metav1.Condition{
 		Type:    FeatureHistogramReady,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
 		Message: "Feature histogram failed." + msg,
 	})

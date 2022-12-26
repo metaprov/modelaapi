@@ -16,11 +16,11 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-func (run *ModelClassRun) CreateOrUpdateCond(cond ModelClassRunCondition) {
+func (run *ModelClassRun) CreateOrUpdateCond(cond metav1.Condition) {
 	i := run.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		run.Status.Conditions = append(run.Status.Conditions, cond)
 		return
 	}
@@ -28,14 +28,14 @@ func (run *ModelClassRun) CreateOrUpdateCond(cond ModelClassRunCondition) {
 	current := run.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	run.Status.Conditions[i] = current
 }
 
-func (run *ModelClassRun) GetCondIdx(t ModelClassRunConditionType) int {
+func (run *ModelClassRun) GetCondIdx(t string) int {
 	for i, v := range run.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -44,15 +44,15 @@ func (run *ModelClassRun) GetCondIdx(t ModelClassRunConditionType) int {
 	return -1
 }
 
-func (run *ModelClassRun) GetCond(t ModelClassRunConditionType) ModelClassRunCondition {
+func (run *ModelClassRun) GetCond(t string) metav1.Condition {
 	for _, v := range run.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
-	return ModelClassRunCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -78,9 +78,9 @@ func (mclass *ModelClassRun) StartTrainingProcess() {
 
 func (mclass *ModelClassRun) MarkCreatingTrainingDatasetSet(dataset string) {
 	mclass.Status.Phase = ModelClassRunPhaseTraining
-	mclass.CreateOrUpdateCond(ModelClassRunCondition{
+	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassRunTrainingDatasetReady,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonCreatingTrainingDataset,
 	})
 	mclass.Status.DatasetName = dataset
@@ -89,17 +89,17 @@ func (mclass *ModelClassRun) MarkCreatingTrainingDatasetSet(dataset string) {
 // when
 func (mclass *ModelClassRun) MarkCreatedTrainingSet() {
 	mclass.Status.Phase = ModelClassRunPhaseTraining
-	mclass.CreateOrUpdateCond(ModelClassRunCondition{
+	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassRunTrainingDatasetReady,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (mclass *ModelClassRun) MarkCreatingTrainingSetFailed(err string) {
 	mclass.Status.Phase = ModelClassRunPhaseFailed
-	mclass.CreateOrUpdateCond(ModelClassRunCondition{
+	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelClassRunTrainingDatasetReady,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailedToCreateTrainingDataset,
 		Message: err,
 	})
@@ -111,9 +111,9 @@ func (mclass *ModelClassRun) MarkCreatingTrainingSetFailed(err string) {
 // ////////////////////////////////////////////////////
 func (mclass *ModelClassRun) MarkTraining(study string) {
 	mclass.Status.Phase = ModelClassRunPhaseTraining
-	mclass.CreateOrUpdateCond(ModelClassRunCondition{
+	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassRunModelTrained,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonTraining,
 	})
 	mclass.Status.StudyName = study
@@ -121,9 +121,9 @@ func (mclass *ModelClassRun) MarkTraining(study string) {
 
 func (mclass *ModelClassRun) MarkModelTrained(model string) {
 	mclass.Status.Phase = ModelClassRunPhaseTrained
-	mclass.CreateOrUpdateCond(ModelClassRunCondition{
+	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassRunModelTrained,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	mclass.Status.ModelName = model
 	// If we do not promote, we can set the schedule to next cycle
@@ -136,9 +136,9 @@ func (mclass *ModelClassRun) MarkModelTrained(model string) {
 
 func (mclass *ModelClassRun) MarkTrainingFailed(err string) {
 	mclass.Status.Phase = ModelClassRunPhaseFailed
-	mclass.CreateOrUpdateCond(ModelClassRunCondition{
+	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelClassRunModelTrained,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -146,15 +146,15 @@ func (mclass *ModelClassRun) MarkTrainingFailed(err string) {
 
 func (mclass *ModelClassRun) MarkTrained() {
 	mclass.Status.Phase = ModelClassRunPhaseTrained
-	mclass.CreateOrUpdateCond(ModelClassRunCondition{
+	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassRunModelTrained,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (mclass *ModelClassRun) IsTrained() bool {
 	cond := mclass.GetCond(ModelClassRunModelTrained)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 ////////////////////////////////////////////
@@ -163,46 +163,46 @@ func (mclass *ModelClassRun) IsTrained() bool {
 
 func (mclass *ModelClassRun) MarkWaitingForPromotion() {
 	mclass.Status.Phase = ModelClassPhaseWaitingForPromotion
-	mclass.CreateOrUpdateCond(ModelClassRunCondition{
+	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassRunModelPromoted,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonWaitingForPromotion,
 	})
 }
 
 func (mclass *ModelClassRun) IsPromoted() bool {
 	cond := mclass.GetCond(ModelClassRunModelPromoted)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (mclass *ModelClassRun) MarkPromoted() {
 	mclass.Status.Phase = ModelClassRunPhaseCompleted
-	mclass.CreateOrUpdateCond(ModelClassRunCondition{
+	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassRunModelPromoted,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (mclass *ModelClassRun) MarkFailToPromote(err error) {
 	mclass.Status.Phase = ModelClassRunPhaseFailed
-	mclass.CreateOrUpdateCond(ModelClassRunCondition{
+	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelClassRunModelPromoted,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailedToPromote,
 		Message: err.Error(),
 	})
 }
 
 func (this *ModelClassRun) MarkSaved() {
-	this.CreateOrUpdateCond(ModelClassRunCondition{
+	this.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassRunArchived,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (this *ModelClassRun) IsSaved() bool {
 	cond := this.GetCond(ModelClassRunArchived)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (this *ModelClassRun) IsAborted() bool {

@@ -73,11 +73,11 @@ func (prediction Prediction) RepPath(root string) (string, error) {
 
 // Merge or update condition
 // Merge or update condition
-func (prediction *Prediction) CreateOrUpdateCond(cond PredictionCondition) {
+func (prediction *Prediction) CreateOrUpdateCond(cond metav1.Condition) {
 	i := prediction.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		prediction.Status.Conditions = append(prediction.Status.Conditions, cond)
 		return
 	}
@@ -85,14 +85,14 @@ func (prediction *Prediction) CreateOrUpdateCond(cond PredictionCondition) {
 	current := prediction.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	prediction.Status.Conditions[i] = current
 }
 
-func (prediction Prediction) GetCondIdx(t PredictionConditionType) int {
+func (prediction Prediction) GetCondIdx(t string) int {
 	for i, v := range prediction.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -101,23 +101,23 @@ func (prediction Prediction) GetCondIdx(t PredictionConditionType) int {
 	return -1
 }
 
-func (prediction Prediction) GetCond(t PredictionConditionType) PredictionCondition {
+func (prediction Prediction) GetCond(t string) metav1.Condition {
 	for _, v := range prediction.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return PredictionCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
 }
 
 func (prediction Prediction) IsCompleted() bool {
-	return prediction.GetCond(PredictionCompleted).Status == v1.ConditionTrue
+	return prediction.GetCond(PredictionCompleted).Status == metav1.ConditionTrue
 }
 
 func (prediction Prediction) Key() string {
@@ -134,9 +134,9 @@ func ParsePredictionYaml(content []byte) (*Prediction, error) {
 }
 
 func (prediction *Prediction) MarkFailed(msg string) {
-	prediction.CreateOrUpdateCond(PredictionCondition{
+	prediction.CreateOrUpdateCond(metav1.Condition{
 		Type:    PredictionCompleted,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(catalog.Failed),
 		Message: msg,
 	})
@@ -149,53 +149,53 @@ func (prediction *Prediction) MarkFailed(msg string) {
 
 // Mark Expired
 func (prediction *Prediction) MarkPending() {
-	prediction.CreateOrUpdateCond(PredictionCondition{
+	prediction.CreateOrUpdateCond(metav1.Condition{
 		Type:   PredictionCompleted,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(PredictionPhasePending),
 	})
 	prediction.Status.Phase = PredictionPhasePending
 }
 
 func (prediction *Prediction) MarkCreatingDataset() {
-	prediction.CreateOrUpdateCond(PredictionCondition{
+	prediction.CreateOrUpdateCond(metav1.Condition{
 		Type:   PredictionCompleted,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(PredictionPhaseCreatingDataset),
 	})
 	prediction.Status.Phase = PredictionPhaseCreatingDataset
 }
 
 func (prediction *Prediction) MarkWaitingForDataset() {
-	prediction.CreateOrUpdateCond(PredictionCondition{
+	prediction.CreateOrUpdateCond(metav1.Condition{
 		Type:   PredictionCompleted,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(PredictionPhaseWaitingForDataset),
 	})
 	prediction.Status.Phase = PredictionPhaseWaitingForDataset
 }
 
 func (prediction *Prediction) MarkUnitTesting() {
-	prediction.CreateOrUpdateCond(PredictionCondition{
+	prediction.CreateOrUpdateCond(metav1.Condition{
 		Type:   PredictionCompleted,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(PredictionPhaseUnitTesting),
 	})
 	prediction.Status.Phase = PredictionPhaseUnitTesting
 }
 
 func (prediction *Prediction) MarkUnitTested() {
-	prediction.CreateOrUpdateCond(PredictionCondition{
+	prediction.CreateOrUpdateCond(metav1.Condition{
 		Type:   PredictionUnitTested,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	prediction.Status.Phase = PredictionPhaseUnitTested
 }
 
 func (prediction *Prediction) MarkCompleted() {
-	prediction.CreateOrUpdateCond(PredictionCondition{
+	prediction.CreateOrUpdateCond(metav1.Condition{
 		Type:   PredictionCompleted,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	prediction.Status.Phase = PredictionPhaseCompleted
 	now := metav1.Now()
@@ -205,9 +205,9 @@ func (prediction *Prediction) MarkCompleted() {
 }
 
 func (prediction *Prediction) MarkUnitTestFailed(msg string) {
-	prediction.CreateOrUpdateCond(PredictionCondition{
+	prediction.CreateOrUpdateCond(metav1.Condition{
 		Type:    PredictionUnitTested,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(PredictionPhaseFailed),
 		Message: "Failed to validate." + msg,
 	})
@@ -215,9 +215,9 @@ func (prediction *Prediction) MarkUnitTestFailed(msg string) {
 }
 
 func (prediction *Prediction) MarkArchived() {
-	prediction.CreateOrUpdateCond(PredictionCondition{
+	prediction.CreateOrUpdateCond(metav1.Condition{
 		Type:   PredictionArchived,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
@@ -226,19 +226,19 @@ func (prediction Prediction) OpName() string {
 }
 
 func (prediction *Prediction) MarkSaved() {
-	prediction.CreateOrUpdateCond(PredictionCondition{
+	prediction.CreateOrUpdateCond(metav1.Condition{
 		Type:   PredictionSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (prediction Prediction) IsSaved() bool {
-	return prediction.GetCond(PredictionSaved).Status == v1.ConditionTrue
+	return prediction.GetCond(PredictionSaved).Status == metav1.ConditionTrue
 }
 
 func (prediction *Prediction) MarkRunning() {
-	prediction.CreateOrUpdateCond(PredictionCondition{
-		Status: v1.ConditionFalse,
+	prediction.CreateOrUpdateCond(metav1.Condition{
+		Status: metav1.ConditionFalse,
 		Reason: string(catalog.Running),
 	})
 	prediction.Status.Phase = PredictionPhaseRunning
@@ -346,7 +346,7 @@ func (prediction Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifierN
 
 func (prediction Prediction) IsFailed() bool {
 	cond := prediction.GetCond(PredictionCompleted)
-	return cond.Status == v1.ConditionFalse && cond.Reason == string(PredictionCompleted)
+	return cond.Status == metav1.ConditionFalse && cond.Reason == string(PredictionCompleted)
 }
 
 // Return the state of the run as RunStatus

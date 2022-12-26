@@ -11,7 +11,6 @@ import (
 
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
 	"github.com/metaprov/modelaapi/pkg/util"
-	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
@@ -30,11 +29,11 @@ func (bucket *VirtualBucket) AddFinalizer()    { util.AddFin(&bucket.ObjectMeta,
 func (bucket *VirtualBucket) RemoveFinalizer() { util.RemoveFin(&bucket.ObjectMeta, infra.GroupName) }
 
 // Merge or update condition
-func (bucket *VirtualBucket) CreateOrUpdateCond(cond VirtualBucketCondition) {
+func (bucket *VirtualBucket) CreateOrUpdateCond(cond metav1.Condition) {
 	i := bucket.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		bucket.Status.Conditions = append(bucket.Status.Conditions, cond)
 		return
 	}
@@ -42,14 +41,14 @@ func (bucket *VirtualBucket) CreateOrUpdateCond(cond VirtualBucketCondition) {
 	current := bucket.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	bucket.Status.Conditions[i] = current
 }
 
-func (bucket VirtualBucket) GetCondIdx(t VirtualBucketConditionType) int {
+func (bucket VirtualBucket) GetCondIdx(t string) int {
 	for i, v := range bucket.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -59,19 +58,19 @@ func (bucket VirtualBucket) GetCondIdx(t VirtualBucketConditionType) int {
 }
 
 func (bucket VirtualBucket) IsReady() bool {
-	return bucket.GetCond(VirtualBucketReady).Status == v1.ConditionTrue
+	return bucket.GetCond(VirtualBucketReady).Status == metav1.ConditionTrue
 }
 
-func (bucket VirtualBucket) GetCond(t VirtualBucketConditionType) VirtualBucketCondition {
+func (bucket VirtualBucket) GetCond(t string) metav1.Condition {
 	for _, v := range bucket.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return VirtualBucketCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -87,27 +86,27 @@ func (bucket VirtualBucket) ManifestURI() string {
 }
 
 func (bucket *VirtualBucket) MarkReady() {
-	bucket.CreateOrUpdateCond(VirtualBucketCondition{
+	bucket.CreateOrUpdateCond(metav1.Condition{
 		Type:   VirtualBucketReady,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (bucket *VirtualBucket) MarkArchived() {
-	bucket.CreateOrUpdateCond(VirtualBucketCondition{
+	bucket.CreateOrUpdateCond(metav1.Condition{
 		Type:   VirtualBucketSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (bucket VirtualBucket) Archived() bool {
-	return bucket.GetCond(VirtualBucketSaved).Status == v1.ConditionTrue
+	return bucket.GetCond(VirtualBucketSaved).Status == metav1.ConditionTrue
 }
 
 func (bucket *VirtualBucket) MarkFailed(err string) {
-	bucket.CreateOrUpdateCond(VirtualBucketCondition{
+	bucket.CreateOrUpdateCond(metav1.Condition{
 		Type:    VirtualBucketReady,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Message: err,
 	})
 	bucket.Status.FailureMessage = util.StrPtr(err)

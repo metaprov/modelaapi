@@ -28,11 +28,11 @@ func (run *DataPipelineRun) RemoveFinalizer() { util.RemoveFin(&run.ObjectMeta, 
 //==============================================================================
 
 // Merge or update condition
-func (run *DataPipelineRun) CreateOrUpdateCond(cond DataPipelineRunCondition) {
+func (run *DataPipelineRun) CreateOrUpdateCond(cond metav1.Condition) {
 	i := run.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		run.Status.Conditions = append(run.Status.Conditions, cond)
 		return
 	}
@@ -40,14 +40,14 @@ func (run *DataPipelineRun) CreateOrUpdateCond(cond DataPipelineRunCondition) {
 	current := run.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	run.Status.Conditions[i] = current
 }
 
-func (run DataPipelineRun) GetCondIdx(t DataPipelineRunConditionType) int {
+func (run DataPipelineRun) GetCondIdx(t string) int {
 	for i, v := range run.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -56,16 +56,16 @@ func (run DataPipelineRun) GetCondIdx(t DataPipelineRunConditionType) int {
 	return -1
 }
 
-func (run DataPipelineRun) GetCond(t DataPipelineRunConditionType) DataPipelineRunCondition {
+func (run DataPipelineRun) GetCond(t string) metav1.Condition {
 	for _, v := range run.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return DataPipelineRunCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -73,11 +73,11 @@ func (run DataPipelineRun) GetCond(t DataPipelineRunConditionType) DataPipelineR
 }
 
 func (w DataPipelineRun) IsReady() bool {
-	return w.GetCond(DataPipelineRunCompleted).Status == v1.ConditionTrue
+	return w.GetCond(DataPipelineRunCompleted).Status == metav1.ConditionTrue
 }
 
 func (w DataPipelineRun) IsSaved() bool {
-	return w.GetCond(DataPipelineRunSaved).Status == v1.ConditionTrue
+	return w.GetCond(DataPipelineRunSaved).Status == metav1.ConditionTrue
 }
 
 func (run DataPipelineRun) StatusString() string {
@@ -94,33 +94,33 @@ func (run DataPipelineRun) ManifestURI() string {
 
 func (in DataPipelineRun) Paused() bool {
 	cond := in.GetCond(DataPipelineRunCompleted)
-	return cond.Status == v1.ConditionFalse && cond.Reason == string(DataPipelineRunPhasePaused)
+	return cond.Status == metav1.ConditionFalse && cond.Reason == string(DataPipelineRunPhasePaused)
 }
 
 func (in DataPipelineRun) Aborted() bool {
 	cond := in.GetCond(DataPipelineRunCompleted)
-	return cond.Status == v1.ConditionFalse && cond.Reason == string(DataPipelineRunPhaseAborted)
+	return cond.Status == metav1.ConditionFalse && cond.Reason == string(DataPipelineRunPhaseAborted)
 }
 
 func (in DataPipelineRun) IsCompleted() bool {
-	return in.GetCond(DataPipelineRunCompleted).Status == v1.ConditionTrue
+	return in.GetCond(DataPipelineRunCompleted).Status == metav1.ConditionTrue
 }
 
 func (in DataPipelineRun) IsRunning() bool {
 	cond := in.GetCond(DataPipelineRunCompleted)
-	return cond.Status == v1.ConditionFalse && cond.Reason == string(DataPipelineRunPhaseRunning)
+	return cond.Status == metav1.ConditionFalse && cond.Reason == string(DataPipelineRunPhaseRunning)
 }
 
 func (in DataPipelineRun) IsFailed() bool {
 	cond := in.GetCond(DataPipelineRunCompleted)
-	return cond.Status == v1.ConditionFalse && cond.Reason == string(DataPipelineRunPhaseFailed)
+	return cond.Status == metav1.ConditionFalse && cond.Reason == string(DataPipelineRunPhaseFailed)
 }
 
 func (r *DataPipelineRun) MarkRunning() {
 	r.Status.Phase = DataPipelineRunPhaseRunning
-	r.CreateOrUpdateCond(DataPipelineRunCondition{
+	r.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataPipelineRunCompleted,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(DataPipelineRunPhaseRunning),
 	})
 	r.Status.Progress = util.Int32Ptr(10)
@@ -129,9 +129,9 @@ func (r *DataPipelineRun) MarkRunning() {
 
 func (in *DataPipelineRun) MarkComplete() {
 	in.Status.Phase = DataPipelineRunPhaseCompleted
-	in.CreateOrUpdateCond(DataPipelineRunCondition{
+	in.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataPipelineRunCompleted,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	now := metav1.Now()
 	if in.Status.CompletedAt == nil {
@@ -142,9 +142,9 @@ func (in *DataPipelineRun) MarkComplete() {
 
 func (in *DataPipelineRun) MarkFailed(err error) {
 	in.Status.Phase = DataPipelineRunPhaseFailed
-	in.CreateOrUpdateCond(DataPipelineRunCondition{
+	in.CreateOrUpdateCond(metav1.Condition{
 		Type:    DataPipelineRunCompleted,
-		Status:  v1.ConditionTrue,
+		Status:  metav1.ConditionTrue,
 		Reason:  string(DataPipelineRunPhaseFailed),
 		Message: err.Error(),
 	})
@@ -158,9 +158,9 @@ func (in *DataPipelineRun) MarkFailed(err error) {
 
 func (in *DataPipelineRun) MarkAborted(err error) {
 	in.Status.Phase = DataPipelineRunPhaseAborted
-	in.CreateOrUpdateCond(DataPipelineRunCondition{
-		Type:   DataPipelineRunConditionType(DataPipelineRunPhaseAborted),
-		Status: v1.ConditionTrue,
+	in.CreateOrUpdateCond(metav1.Condition{
+		Type:   DataPipelineRunCompleted,
+		Status: metav1.ConditionTrue,
 		Reason: string(DataPipelineRunPhaseAborted),
 	})
 	now := metav1.Now()
@@ -172,9 +172,9 @@ func (in *DataPipelineRun) MarkAborted(err error) {
 }
 
 func (in *DataPipelineRun) MarkSaved() {
-	in.CreateOrUpdateCond(DataPipelineRunCondition{
+	in.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataPipelineRunSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 

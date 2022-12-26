@@ -10,8 +10,6 @@ import (
 	"fmt"
 
 	"github.com/metaprov/modelaapi/pkg/util"
-	corev1 "k8s.io/api/core/v1"
-	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
@@ -39,11 +37,11 @@ func (notifier *Notifier) AddFinalizer()    { util.AddFin(&notifier.ObjectMeta, 
 func (notifier *Notifier) RemoveFinalizer() { util.RemoveFin(&notifier.ObjectMeta, metav1.GroupName) }
 
 // Merge or update condition
-func (notifier *Notifier) CreateOrUpdateCond(cond NotifierCondition) {
+func (notifier *Notifier) CreateOrUpdateCond(cond metav1.Condition) {
 	i := notifier.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		notifier.Status.Conditions = append(notifier.Status.Conditions, cond)
 		return
 	}
@@ -51,14 +49,14 @@ func (notifier *Notifier) CreateOrUpdateCond(cond NotifierCondition) {
 	current := notifier.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	notifier.Status.Conditions[i] = current
 }
 
-func (notifier Notifier) GetCondIdx(t NotifierConditionType) int {
+func (notifier Notifier) GetCondIdx(t string) int {
 	for i, v := range notifier.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -67,16 +65,16 @@ func (notifier Notifier) GetCondIdx(t NotifierConditionType) int {
 	return -1
 }
 
-func (notifier Notifier) GetCond(t NotifierConditionType) NotifierCondition {
+func (notifier Notifier) GetCond(t string) metav1.Condition {
 	for _, v := range notifier.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return NotifierCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -84,7 +82,7 @@ func (notifier Notifier) GetCond(t NotifierConditionType) NotifierCondition {
 }
 
 func (notifier Notifier) IsReady() bool {
-	return notifier.GetCond(NotifierReady).Status == v1.ConditionTrue
+	return notifier.GetCond(string(NotifierReady)).Status == metav1.ConditionTrue
 }
 
 func (notifier Notifier) RootURI() string {
@@ -105,8 +103,8 @@ func ParseNotifierYaml(content []byte) (*Notifier, error) {
 }
 
 func (notifier *Notifier) MarkArchived() {
-	notifier.CreateOrUpdateCond(NotifierCondition{
-		Type:   NotifierSaved,
-		Status: corev1.ConditionTrue,
+	notifier.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(NotifierSaved),
+		Status: metav1.ConditionTrue,
 	})
 }

@@ -10,7 +10,6 @@ import (
 	"fmt"
 
 	"github.com/metaprov/modelaapi/pkg/util"
-	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
@@ -38,11 +37,11 @@ func (alert *Alert) AddFinalizer()    { util.AddFin(&alert.ObjectMeta, metav1.Gr
 func (alert *Alert) RemoveFinalizer() { util.RemoveFin(&alert.ObjectMeta, metav1.GroupName) }
 
 // Merge or update condition
-func (alert *Alert) CreateOrUpdateCond(cond AlertCondition) {
+func (alert *Alert) CreateOrUpdateCond(cond metav1.Condition) {
 	i := alert.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		alert.Status.Conditions = append(alert.Status.Conditions, cond)
 		return
 	}
@@ -50,14 +49,14 @@ func (alert *Alert) CreateOrUpdateCond(cond AlertCondition) {
 	current := alert.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	alert.Status.Conditions[i] = current
 }
 
-func (alert Alert) GetCondIdx(t AlertConditionType) int {
+func (alert Alert) GetCondIdx(t string) int {
 	for i, v := range alert.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -66,16 +65,16 @@ func (alert Alert) GetCondIdx(t AlertConditionType) int {
 	return -1
 }
 
-func (alert Alert) GetCond(t AlertConditionType) AlertCondition {
+func (alert Alert) GetCond(t string) metav1.Condition {
 	for _, v := range alert.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return AlertCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -83,7 +82,7 @@ func (alert Alert) GetCond(t AlertConditionType) AlertCondition {
 }
 
 func (alert Alert) IsReady() bool {
-	return alert.GetCond(AlertSent).Status == v1.ConditionTrue
+	return alert.GetCond(AlertSent).Status == metav1.ConditionTrue
 }
 
 func (alert Alert) RootURI() string {
@@ -104,16 +103,16 @@ func ParseAlertYaml(content []byte) (*Alert, error) {
 }
 
 func (alert *Alert) MarkArchived() {
-	alert.CreateOrUpdateCond(AlertCondition{
+	alert.CreateOrUpdateCond(metav1.Condition{
 		Type:   AlertSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (alert *Alert) MarkFailed(err string) {
-	alert.CreateOrUpdateCond(AlertCondition{
+	alert.CreateOrUpdateCond(metav1.Condition{
 		Type:    AlertSent,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Message: err,
 	})
 }

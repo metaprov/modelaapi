@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
 	"strings"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
@@ -31,11 +30,11 @@ func (report *Report) SetupWebhookWithManager(mgr ctrl.Manager) error {
 }
 
 // Merge or update condition
-func (report *Report) CreateOrUpdateCond(cond ReportCondition) {
+func (report *Report) CreateOrUpdateCond(cond metav1.Condition) {
 	i := report.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		report.Status.Conditions = append(report.Status.Conditions, cond)
 		return
 	}
@@ -43,14 +42,14 @@ func (report *Report) CreateOrUpdateCond(cond ReportCondition) {
 	current := report.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	report.Status.Conditions[i] = current
 }
 
-func (report Report) GetCondIdx(t ReportConditionType) int {
+func (report Report) GetCondIdx(t string) int {
 	for i, v := range report.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -59,16 +58,16 @@ func (report Report) GetCondIdx(t ReportConditionType) int {
 	return -1
 }
 
-func (report Report) GetCond(t ReportConditionType) ReportCondition {
+func (report Report) GetCond(t string) metav1.Condition {
 	for _, v := range report.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return ReportCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -76,7 +75,7 @@ func (report Report) GetCond(t ReportConditionType) ReportCondition {
 }
 
 func (report Report) IsReady() bool {
-	return report.GetCond(ReportReady).Status == v1.ConditionTrue
+	return report.GetCond(ReportReady).Status == metav1.ConditionTrue
 }
 
 func NewReport(
@@ -242,29 +241,29 @@ func (report Report) TaskIndexFileKey(task string) string {
 
 func (report *Report) MarkRunning() {
 	report.Status.Phase = ReportPhaseRunning
-	report.CreateOrUpdateCond(ReportCondition{
+	report.CreateOrUpdateCond(metav1.Condition{
 		Type:   ReportReady,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(ReportPhaseRunning),
 	})
 }
 
 func (report *Report) MarkSaved() {
-	report.CreateOrUpdateCond(ReportCondition{
+	report.CreateOrUpdateCond(metav1.Condition{
 		Type:   ReportSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (report Report) IsSaved() bool {
 	cond := report.GetCond(ReportSaved)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (report *Report) MarkReportFailed(err string) {
-	report.CreateOrUpdateCond(ReportCondition{
+	report.CreateOrUpdateCond(metav1.Condition{
 		Type:    ReportReady,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(ReportPhaseFailed),
 		Message: err,
 	})
@@ -277,9 +276,9 @@ func (report *Report) MarkReportFailed(err string) {
 
 func (report *Report) MarkReportReady(uri string) {
 	report.Status.Phase = ReportPhaseCompleted
-	report.CreateOrUpdateCond(ReportCondition{
+	report.CreateOrUpdateCond(metav1.Condition{
 		Type:   ReportReady,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 
 	//liveURI := product.PrefixLiveURI(report.PdfURI())
@@ -360,7 +359,7 @@ func (report Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *str
 
 func (report Report) IsFailed() bool {
 	cond := report.GetCond(ReportReady)
-	return cond.Status == v1.ConditionFalse && cond.Reason == string(ReportReady)
+	return cond.Status == metav1.ConditionFalse && cond.Reason == string(ReportReady)
 }
 
 // Return the state of the run as RunStatus

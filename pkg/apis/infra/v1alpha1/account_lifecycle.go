@@ -11,7 +11,6 @@ import (
 
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
 	"github.com/metaprov/modelaapi/pkg/util"
-	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
@@ -46,11 +45,11 @@ func (account Account) ManifestURI() string {
 }
 
 // Merge or update condition
-func (account *Account) CreateOrUpdateCond(cond AccountCondition) {
+func (account *Account) CreateOrUpdateCond(cond metav1.Condition) {
 	i := account.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		account.Status.Conditions = append(account.Status.Conditions, cond)
 		return
 	}
@@ -58,14 +57,14 @@ func (account *Account) CreateOrUpdateCond(cond AccountCondition) {
 	current := account.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	account.Status.Conditions[i] = current
 }
 
-func (account Account) GetCondIdx(t AccountConditionType) int {
+func (account Account) GetCondIdx(t string) int {
 	for i, v := range account.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -74,16 +73,16 @@ func (account Account) GetCondIdx(t AccountConditionType) int {
 	return -1
 }
 
-func (account Account) GetCond(t AccountConditionType) AccountCondition {
+func (account Account) GetCond(t AccountConditionType) metav1.Condition {
 	for _, v := range account.Status.Conditions {
-		if v.Type == t {
+		if v.Type == string(t) {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return AccountCondition{
-		Type:    t,
-		Status:  v1.ConditionUnknown,
+	return metav1.Condition{
+		Type:    string(t),
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -91,7 +90,7 @@ func (account Account) GetCond(t AccountConditionType) AccountCondition {
 }
 
 func (account Account) IsReady() bool {
-	return account.GetCond(AccountReady).Status == v1.ConditionTrue
+	return account.GetCond(AccountReady).Status == metav1.ConditionTrue
 }
 
 func (account Account) Key() string {
@@ -132,27 +131,27 @@ func (account *Account) Populate(name string) {
 }
 
 func (account *Account) MarkArchived() {
-	account.CreateOrUpdateCond(AccountCondition{
-		Type:   AccountSaved,
-		Status: v1.ConditionTrue,
+	account.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(AccountSaved),
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (account Account) Archived() bool {
-	return account.GetCond(AccountSaved).Status == v1.ConditionTrue
+	return account.GetCond(AccountSaved).Status == metav1.ConditionTrue
 }
 
 func (account *Account) MarkReady() {
-	account.CreateOrUpdateCond(AccountCondition{
-		Type:   AccountReady,
-		Status: v1.ConditionTrue,
+	account.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(AccountReady),
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (account *Account) MarkFailed(err string) {
-	account.CreateOrUpdateCond(AccountCondition{
-		Type:    AccountReady,
-		Status:  v1.ConditionFalse,
+	account.CreateOrUpdateCond(metav1.Condition{
+		Type:    string(AccountReady),
+		Status:  metav1.ConditionFalse,
 		Reason:  "Failed",
 		Message: err,
 	})

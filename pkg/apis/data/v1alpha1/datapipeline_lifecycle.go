@@ -11,8 +11,6 @@ import (
 
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	"github.com/metaprov/modelaapi/pkg/util"
-	corev1 "k8s.io/api/core/v1"
-	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -21,7 +19,7 @@ import (
 //==============================================================================
 
 func (w DataPipeline) IsReady() bool {
-	return w.GetCond(DataPipelineReady).Status == corev1.ConditionTrue
+	return w.GetCond(DataPipelineReady).Status == metav1.ConditionTrue
 }
 
 func (wr DataPipeline) HasFinalizer() bool {
@@ -35,11 +33,11 @@ func (wr *DataPipeline) RemoveFinalizer() { util.RemoveFin(&wr.ObjectMeta, data.
 //==============================================================================
 
 // Merge or update condition
-func (wr *DataPipeline) CreateOrUpdateCond(cond DataPipelineCondition) {
+func (wr *DataPipeline) CreateOrUpdateCond(cond metav1.Condition) {
 	i := wr.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		wr.Status.Conditions = append(wr.Status.Conditions, cond)
 		return
 	}
@@ -47,14 +45,14 @@ func (wr *DataPipeline) CreateOrUpdateCond(cond DataPipelineCondition) {
 	current := wr.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	wr.Status.Conditions[i] = current
 }
 
-func (wr DataPipeline) GetCondIdx(t DataPipelineConditionType) int {
+func (wr DataPipeline) GetCondIdx(t string) int {
 	for i, v := range wr.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -63,16 +61,16 @@ func (wr DataPipeline) GetCondIdx(t DataPipelineConditionType) int {
 	return -1
 }
 
-func (wr DataPipeline) GetCond(t DataPipelineConditionType) DataPipelineCondition {
+func (wr DataPipeline) GetCond(t string) metav1.Condition {
 	for _, v := range wr.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return DataPipelineCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -88,30 +86,30 @@ func (wr DataPipeline) ManifestURI() string {
 }
 
 func (in *DataPipeline) MarkReady() {
-	in.CreateOrUpdateCond(DataPipelineCondition{
+	in.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataPipelineReady,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (in *DataPipeline) MarkFailed(err error) {
-	in.CreateOrUpdateCond(DataPipelineCondition{
+	in.CreateOrUpdateCond(metav1.Condition{
 		Type:    DataPipelineReady,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  "Failed",
 		Message: err.Error(),
 	})
 }
 
 func (in *DataPipeline) MarkSaved() {
-	in.CreateOrUpdateCond(DataPipelineCondition{
+	in.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataPipelineSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (w DataPipeline) IsSaved() bool {
-	return w.GetCond(DataPipelineSaved).Status == corev1.ConditionTrue
+	return w.GetCond(DataPipelineSaved).Status == metav1.ConditionTrue
 }
 
 func (in *DataPipeline) UpdateRunStatus(run DataPipelineRun) {

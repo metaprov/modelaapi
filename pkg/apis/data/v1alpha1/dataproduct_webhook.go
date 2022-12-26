@@ -10,6 +10,7 @@ import (
 	"github.com/metaprov/modelaapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/validation/field"
@@ -39,7 +40,7 @@ func (product *DataProduct) Default() {
 		product.Spec.Location.Path = util.StrPtr("modela/live/tenants/" + product.Spec.TenantRef.Name + "/dataproducts/" + product.Name)
 	}
 
-	product.Status.Conditions = make([]DataProductCondition, 0)
+	product.Status.Conditions = make([]metav1.Condition, 0)
 	if product.Spec.ImageLocation.Name == nil {
 		product.Spec.ImageLocation.Name = util.StrPtr(product.Name)
 		product.Spec.ImageLocation.RegistryConnectionName = util.StrPtr("")

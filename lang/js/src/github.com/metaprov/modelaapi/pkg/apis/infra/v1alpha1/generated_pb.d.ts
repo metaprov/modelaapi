@@ -70,42 +70,6 @@ export namespace Account {
   }
 }
 
-export class AccountCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): AccountCondition;
-
-  getStatus(): string;
-  setStatus(value: string): AccountCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AccountCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): AccountCondition;
-
-  getReason(): string;
-  setReason(value: string): AccountCondition;
-
-  getMessage(): string;
-  setMessage(value: string): AccountCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AccountCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: AccountCondition): AccountCondition.AsObject;
-  static serializeBinaryToWriter(message: AccountCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AccountCondition;
-  static deserializeBinaryFromReader(message: AccountCondition, reader: jspb.BinaryReader): AccountCondition;
-}
-
-export namespace AccountCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
 export class AccountList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): AccountList;
@@ -251,10 +215,10 @@ export class AccountStatus extends jspb.Message {
   getMemberscount(): number;
   setMemberscount(value: number): AccountStatus;
 
-  getConditionsList(): Array<AccountCondition>;
-  setConditionsList(value: Array<AccountCondition>): AccountStatus;
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): AccountStatus;
   clearConditionsList(): AccountStatus;
-  addConditions(value?: AccountCondition, index?: number): AccountCondition;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AccountStatus.AsObject;
@@ -276,7 +240,7 @@ export namespace AccountStatus {
     featuregroupscount: number,
     datasetscount: number,
     memberscount: number,
-    conditionsList: Array<AccountCondition.AsObject>,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 
@@ -388,42 +352,6 @@ export namespace Alert {
   }
 }
 
-export class AlertCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): AlertCondition;
-
-  getStatus(): string;
-  setStatus(value: string): AlertCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AlertCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): AlertCondition;
-
-  getReason(): string;
-  setReason(value: string): AlertCondition;
-
-  getMessage(): string;
-  setMessage(value: string): AlertCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AlertCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: AlertCondition): AlertCondition.AsObject;
-  static serializeBinaryToWriter(message: AlertCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AlertCondition;
-  static deserializeBinaryFromReader(message: AlertCondition, reader: jspb.BinaryReader): AlertCondition;
-}
-
-export namespace AlertCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
 export class AlertList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): AlertList;
@@ -513,9 +441,6 @@ export namespace AlertSpec {
 }
 
 export class AlertStatus extends jspb.Message {
-  getPhase(): string;
-  setPhase(value: string): AlertStatus;
-
   getFiredat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setFiredat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AlertStatus;
   hasFiredat(): boolean;
@@ -535,10 +460,10 @@ export class AlertStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): AlertStatus;
 
-  getConditionsList(): Array<AlertCondition>;
-  setConditionsList(value: Array<AlertCondition>): AlertStatus;
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): AlertStatus;
   clearConditionsList(): AlertStatus;
-  addConditions(value?: AlertCondition, index?: number): AlertCondition;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AlertStatus.AsObject;
@@ -550,13 +475,12 @@ export class AlertStatus extends jspb.Message {
 
 export namespace AlertStatus {
   export type AsObject = {
-    phase: string,
     firedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
-    conditionsList: Array<AlertCondition.AsObject>,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 
@@ -912,42 +836,6 @@ export namespace Attachment {
   }
 }
 
-export class AttachmentCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): AttachmentCondition;
-
-  getStatus(): string;
-  setStatus(value: string): AttachmentCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AttachmentCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): AttachmentCondition;
-
-  getReason(): string;
-  setReason(value: string): AttachmentCondition;
-
-  getMessage(): string;
-  setMessage(value: string): AttachmentCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AttachmentCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: AttachmentCondition): AttachmentCondition.AsObject;
-  static serializeBinaryToWriter(message: AttachmentCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AttachmentCondition;
-  static deserializeBinaryFromReader(message: AttachmentCondition, reader: jspb.BinaryReader): AttachmentCondition;
-}
-
-export namespace AttachmentCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
 export class AttachmentList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): AttachmentList;
@@ -1031,10 +919,10 @@ export class AttachmentStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): AttachmentStatus;
 
-  getConditionsList(): Array<AttachmentCondition>;
-  setConditionsList(value: Array<AttachmentCondition>): AttachmentStatus;
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): AttachmentStatus;
   clearConditionsList(): AttachmentStatus;
-  addConditions(value?: AttachmentCondition, index?: number): AttachmentCondition;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AttachmentStatus.AsObject;
@@ -1050,7 +938,7 @@ export namespace AttachmentStatus {
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
-    conditionsList: Array<AttachmentCondition.AsObject>,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 
@@ -1335,42 +1223,6 @@ export namespace Connection {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
     spec?: ConnectionSpec.AsObject,
     status?: ConnectionStatus.AsObject,
-  }
-}
-
-export class ConnectionCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): ConnectionCondition;
-
-  getStatus(): string;
-  setStatus(value: string): ConnectionCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ConnectionCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): ConnectionCondition;
-
-  getReason(): string;
-  setReason(value: string): ConnectionCondition;
-
-  getMessage(): string;
-  setMessage(value: string): ConnectionCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConnectionCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: ConnectionCondition): ConnectionCondition.AsObject;
-  static serializeBinaryToWriter(message: ConnectionCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConnectionCondition;
-  static deserializeBinaryFromReader(message: ConnectionCondition, reader: jspb.BinaryReader): ConnectionCondition;
-}
-
-export namespace ConnectionCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
   }
 }
 
@@ -1903,10 +1755,10 @@ export class ConnectionStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): ConnectionStatus;
 
-  getConditionsList(): Array<ConnectionCondition>;
-  setConditionsList(value: Array<ConnectionCondition>): ConnectionStatus;
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): ConnectionStatus;
   clearConditionsList(): ConnectionStatus;
-  addConditions(value?: ConnectionCondition, index?: number): ConnectionCondition;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConnectionStatus.AsObject;
@@ -1922,7 +1774,7 @@ export namespace ConnectionStatus {
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason: string,
     failuremessage: string,
-    conditionsList: Array<ConnectionCondition.AsObject>,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 
@@ -2826,42 +2678,6 @@ export namespace Lab {
   }
 }
 
-export class LabCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): LabCondition;
-
-  getStatus(): string;
-  setStatus(value: string): LabCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LabCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): LabCondition;
-
-  getReason(): string;
-  setReason(value: string): LabCondition;
-
-  getMessage(): string;
-  setMessage(value: string): LabCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LabCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: LabCondition): LabCondition.AsObject;
-  static serializeBinaryToWriter(message: LabCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LabCondition;
-  static deserializeBinaryFromReader(message: LabCondition, reader: jspb.BinaryReader): LabCondition;
-}
-
-export namespace LabCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
 export class LabList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): LabList;
@@ -2937,10 +2753,10 @@ export class LabStatus extends jspb.Message {
   hasUpdatedat(): boolean;
   clearUpdatedat(): LabStatus;
 
-  getConditionsList(): Array<LabCondition>;
-  setConditionsList(value: Array<LabCondition>): LabStatus;
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): LabStatus;
   clearConditionsList(): LabStatus;
-  addConditions(value?: LabCondition, index?: number): LabCondition;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LabStatus.AsObject;
@@ -2954,7 +2770,7 @@ export namespace LabStatus {
   export type AsObject = {
     observedgeneration: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    conditionsList: Array<LabCondition.AsObject>,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 
@@ -2987,42 +2803,6 @@ export namespace License {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
     spec?: LicenseSpec.AsObject,
     status?: LicenseStatus.AsObject,
-  }
-}
-
-export class LicenseCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): LicenseCondition;
-
-  getStatus(): string;
-  setStatus(value: string): LicenseCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LicenseCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): LicenseCondition;
-
-  getReason(): string;
-  setReason(value: string): LicenseCondition;
-
-  getMessage(): string;
-  setMessage(value: string): LicenseCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LicenseCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: LicenseCondition): LicenseCondition.AsObject;
-  static serializeBinaryToWriter(message: LicenseCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LicenseCondition;
-  static deserializeBinaryFromReader(message: LicenseCondition, reader: jspb.BinaryReader): LicenseCondition;
-}
-
-export namespace LicenseCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
   }
 }
 
@@ -3157,10 +2937,10 @@ export class LicenseStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): LicenseStatus;
 
-  getConditionsList(): Array<LicenseCondition>;
-  setConditionsList(value: Array<LicenseCondition>): LicenseStatus;
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): LicenseStatus;
   clearConditionsList(): LicenseStatus;
-  addConditions(value?: LicenseCondition, index?: number): LicenseCondition;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LicenseStatus.AsObject;
@@ -3176,7 +2956,7 @@ export namespace LicenseStatus {
     observedgeneration: number,
     failurereason: string,
     failuremessage: string,
-    conditionsList: Array<LicenseCondition.AsObject>,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 
@@ -3342,42 +3122,6 @@ export namespace ModelaSystem {
   }
 }
 
-export class ModelaSystemCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): ModelaSystemCondition;
-
-  getStatus(): string;
-  setStatus(value: string): ModelaSystemCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelaSystemCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): ModelaSystemCondition;
-
-  getReason(): string;
-  setReason(value: string): ModelaSystemCondition;
-
-  getMessage(): string;
-  setMessage(value: string): ModelaSystemCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelaSystemCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelaSystemCondition): ModelaSystemCondition.AsObject;
-  static serializeBinaryToWriter(message: ModelaSystemCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelaSystemCondition;
-  static deserializeBinaryFromReader(message: ModelaSystemCondition, reader: jspb.BinaryReader): ModelaSystemCondition;
-}
-
-export namespace ModelaSystemCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
 export class ModelaSystemList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ModelaSystemList;
@@ -3451,10 +3195,10 @@ export class ModelaSystemStatus extends jspb.Message {
   getLastrelease(): string;
   setLastrelease(value: string): ModelaSystemStatus;
 
-  getConditionsList(): Array<ModelaSystemCondition>;
-  setConditionsList(value: Array<ModelaSystemCondition>): ModelaSystemStatus;
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): ModelaSystemStatus;
   clearConditionsList(): ModelaSystemStatus;
-  addConditions(value?: ModelaSystemCondition, index?: number): ModelaSystemCondition;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelaSystemStatus.AsObject;
@@ -3470,7 +3214,7 @@ export namespace ModelaSystemStatus {
     failurereason: string,
     failuremessage: string,
     lastrelease: string,
-    conditionsList: Array<ModelaSystemCondition.AsObject>,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 
@@ -3690,42 +3434,6 @@ export namespace Notifier {
   }
 }
 
-export class NotifierCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): NotifierCondition;
-
-  getStatus(): string;
-  setStatus(value: string): NotifierCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotifierCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): NotifierCondition;
-
-  getReason(): string;
-  setReason(value: string): NotifierCondition;
-
-  getMessage(): string;
-  setMessage(value: string): NotifierCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): NotifierCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: NotifierCondition): NotifierCondition.AsObject;
-  static serializeBinaryToWriter(message: NotifierCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): NotifierCondition;
-  static deserializeBinaryFromReader(message: NotifierCondition, reader: jspb.BinaryReader): NotifierCondition;
-}
-
-export namespace NotifierCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
 export class NotifierList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): NotifierList;
@@ -3804,10 +3512,10 @@ export class NotifierStatus extends jspb.Message {
   clearChannelsstatusList(): NotifierStatus;
   addChannelsstatus(value?: NotificationChannelStatus, index?: number): NotificationChannelStatus;
 
-  getConditionsList(): Array<NotifierCondition>;
-  setConditionsList(value: Array<NotifierCondition>): NotifierStatus;
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): NotifierStatus;
   clearConditionsList(): NotifierStatus;
-  addConditions(value?: NotifierCondition, index?: number): NotifierCondition;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotifierStatus.AsObject;
@@ -3822,7 +3530,7 @@ export namespace NotifierStatus {
     observedgeneration: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     channelsstatusList: Array<NotificationChannelStatus.AsObject>,
-    conditionsList: Array<NotifierCondition.AsObject>,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 
@@ -4454,42 +4162,6 @@ export namespace ServingSite {
   }
 }
 
-export class ServingSiteCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): ServingSiteCondition;
-
-  getStatus(): string;
-  setStatus(value: string): ServingSiteCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ServingSiteCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): ServingSiteCondition;
-
-  getReason(): string;
-  setReason(value: string): ServingSiteCondition;
-
-  getMessage(): string;
-  setMessage(value: string): ServingSiteCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ServingSiteCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: ServingSiteCondition): ServingSiteCondition.AsObject;
-  static serializeBinaryToWriter(message: ServingSiteCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ServingSiteCondition;
-  static deserializeBinaryFromReader(message: ServingSiteCondition, reader: jspb.BinaryReader): ServingSiteCondition;
-}
-
-export namespace ServingSiteCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
 export class ServingSiteList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ServingSiteList;
@@ -4611,10 +4283,10 @@ export class ServingSiteStatus extends jspb.Message {
   getRestingressready(): boolean;
   setRestingressready(value: boolean): ServingSiteStatus;
 
-  getConditionsList(): Array<ServingSiteCondition>;
-  setConditionsList(value: Array<ServingSiteCondition>): ServingSiteStatus;
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): ServingSiteStatus;
   clearConditionsList(): ServingSiteStatus;
-  addConditions(value?: ServingSiteCondition, index?: number): ServingSiteCondition;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingSiteStatus.AsObject;
@@ -4640,7 +4312,7 @@ export namespace ServingSiteStatus {
     restingressname: string,
     grpcingressready: boolean,
     restingressready: boolean,
-    conditionsList: Array<ServingSiteCondition.AsObject>,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 
@@ -4888,42 +4560,6 @@ export namespace Tenant {
   }
 }
 
-export class TenantCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): TenantCondition;
-
-  getStatus(): string;
-  setStatus(value: string): TenantCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TenantCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): TenantCondition;
-
-  getReason(): string;
-  setReason(value: string): TenantCondition;
-
-  getMessage(): string;
-  setMessage(value: string): TenantCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TenantCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: TenantCondition): TenantCondition.AsObject;
-  static serializeBinaryToWriter(message: TenantCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TenantCondition;
-  static deserializeBinaryFromReader(message: TenantCondition, reader: jspb.BinaryReader): TenantCondition;
-}
-
-export namespace TenantCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
 export class TenantList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): TenantList;
@@ -5052,10 +4688,10 @@ export class TenantStatus extends jspb.Message {
   hasMetrics(): boolean;
   clearMetrics(): TenantStatus;
 
-  getConditionsList(): Array<TenantCondition>;
-  setConditionsList(value: Array<TenantCondition>): TenantStatus;
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): TenantStatus;
   clearConditionsList(): TenantStatus;
-  addConditions(value?: TenantCondition, index?: number): TenantCondition;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TenantStatus.AsObject;
@@ -5074,7 +4710,7 @@ export namespace TenantStatus {
     online?: FeatureStoreStatus.AsObject,
     offline?: FeatureStoreStatus.AsObject,
     metrics?: FeatureStoreStatus.AsObject,
-    conditionsList: Array<TenantCondition.AsObject>,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 
@@ -5392,42 +5028,6 @@ export namespace VirtualBucket {
   }
 }
 
-export class VirtualBucketCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): VirtualBucketCondition;
-
-  getStatus(): string;
-  setStatus(value: string): VirtualBucketCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): VirtualBucketCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): VirtualBucketCondition;
-
-  getReason(): string;
-  setReason(value: string): VirtualBucketCondition;
-
-  getMessage(): string;
-  setMessage(value: string): VirtualBucketCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VirtualBucketCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: VirtualBucketCondition): VirtualBucketCondition.AsObject;
-  static serializeBinaryToWriter(message: VirtualBucketCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VirtualBucketCondition;
-  static deserializeBinaryFromReader(message: VirtualBucketCondition, reader: jspb.BinaryReader): VirtualBucketCondition;
-}
-
-export namespace VirtualBucketCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
 export class VirtualBucketList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): VirtualBucketList;
@@ -5515,10 +5115,10 @@ export class VirtualBucketStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): VirtualBucketStatus;
 
-  getConditionsList(): Array<VirtualBucketCondition>;
-  setConditionsList(value: Array<VirtualBucketCondition>): VirtualBucketStatus;
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): VirtualBucketStatus;
   clearConditionsList(): VirtualBucketStatus;
-  addConditions(value?: VirtualBucketCondition, index?: number): VirtualBucketCondition;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VirtualBucketStatus.AsObject;
@@ -5534,7 +5134,7 @@ export namespace VirtualBucketStatus {
     observedgeneration: number,
     failurereason: string,
     failuremessage: string,
-    conditionsList: Array<VirtualBucketCondition.AsObject>,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 

@@ -74,11 +74,11 @@ func (lab Lab) RepEntry() (string, error) {
 }
 
 // Merge or update condition
-func (lab *Lab) CreateOrUpdateCond(cond LabCondition) {
-	i := lab.GetCondIdx(cond.Type)
+func (lab *Lab) CreateOrUpdateCond(cond metav1.Condition) {
+	i := lab.GetCondIdx(LabConditionType(cond.Type))
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		lab.Status.Conditions = append(lab.Status.Conditions, cond)
 		return
 	}
@@ -86,7 +86,7 @@ func (lab *Lab) CreateOrUpdateCond(cond LabCondition) {
 	current := lab.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
@@ -95,40 +95,40 @@ func (lab *Lab) CreateOrUpdateCond(cond LabCondition) {
 
 func (lab *Lab) GetCondIdx(t LabConditionType) int {
 	for i, v := range lab.Status.Conditions {
-		if v.Type == t {
+		if v.Type == string(t) {
 			return i
 		}
 	}
 	return -1
 }
 
-func (lab *Lab) GetCond(t LabConditionType) LabCondition {
+func (lab *Lab) GetCond(t LabConditionType) metav1.Condition {
 	for _, v := range lab.Status.Conditions {
-		if v.Type == t {
+		if v.Type == string(t) {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return LabCondition{
-		Type:    t,
-		Status:  corev1.ConditionUnknown,
+	return metav1.Condition{
+		Type:    string(t),
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
 }
 
 func (lab Lab) IsReady() bool {
-	return lab.GetCond(LabReady).Status == corev1.ConditionTrue
+	return lab.GetCond(LabReady).Status == metav1.ConditionTrue
 }
 
 func (lab Lab) IsArchived() bool {
-	return lab.GetCond(LabSaved).Status == corev1.ConditionTrue
+	return lab.GetCond(LabSaved).Status == metav1.ConditionTrue
 }
 
 func (lab *Lab) MarkArchived() {
-	lab.CreateOrUpdateCond(LabCondition{
-		Type:   LabSaved,
-		Status: corev1.ConditionTrue,
+	lab.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(LabSaved),
+		Status: metav1.ConditionTrue,
 	})
 }
 

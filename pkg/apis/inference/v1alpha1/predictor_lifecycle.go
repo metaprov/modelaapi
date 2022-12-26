@@ -62,11 +62,11 @@ func (predictor *Predictor) RemoveFinalizer() {
 
 // Merge or update condition
 // Merge or update condition
-func (predictor *Predictor) CreateOrUpdateCond(cond PredictorCondition) {
+func (predictor *Predictor) CreateOrUpdateCond(cond metav1.Condition) {
 	i := predictor.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		predictor.Status.Conditions = append(predictor.Status.Conditions, cond)
 		return
 	}
@@ -74,14 +74,14 @@ func (predictor *Predictor) CreateOrUpdateCond(cond PredictorCondition) {
 	current := predictor.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	predictor.Status.Conditions[i] = current
 }
 
-func (predictor *Predictor) GetCondIdx(t PredictorConditionType) int {
+func (predictor *Predictor) GetCondIdx(t string) int {
 	for i, v := range predictor.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -90,27 +90,27 @@ func (predictor *Predictor) GetCondIdx(t PredictorConditionType) int {
 	return -1
 }
 
-func (predictor *Predictor) GetCond(t PredictorConditionType) PredictorCondition {
+func (predictor *Predictor) GetCond(t string) metav1.Condition {
 	for _, v := range predictor.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return PredictorCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
 }
 
 func (predictor Predictor) IsReady() bool {
-	return predictor.GetCond(PredictorReady).Status == v1.ConditionTrue
+	return predictor.GetCond(PredictorReady).Status == metav1.ConditionTrue
 }
 
 func (predictor Predictor) IsFailed() bool {
-	return predictor.GetCond(PredictorReady).Status == v1.ConditionFalse &&
+	return predictor.GetCond(PredictorReady).Status == metav1.ConditionFalse &&
 		predictor.GetCond(PredictorReady).Reason == "Failed"
 }
 
@@ -164,27 +164,27 @@ func (predictor Predictor) MirrorName() string {
 }
 
 func (predictor *Predictor) MarkSaved() {
-	predictor.CreateOrUpdateCond(PredictorCondition{
+	predictor.CreateOrUpdateCond(metav1.Condition{
 		Type:   PredictorSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (predictor Predictor) IsSaved() bool {
-	return predictor.GetCond(PredictorSaved).Status == v1.ConditionTrue
+	return predictor.GetCond(PredictorSaved).Status == metav1.ConditionTrue
 }
 
 func (predictor *Predictor) MarkReady() {
-	predictor.CreateOrUpdateCond(PredictorCondition{
+	predictor.CreateOrUpdateCond(metav1.Condition{
 		Type:   PredictorReady,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (predictor *Predictor) MarkFailed(err string) {
-	predictor.CreateOrUpdateCond(PredictorCondition{
+	predictor.CreateOrUpdateCond(metav1.Condition{
 		Type:    PredictorReady,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  "Failed",
 		Message: err,
 	})

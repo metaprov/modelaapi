@@ -14,7 +14,6 @@ import (
 
 	"github.com/metaprov/modelaapi/pkg/apis/training"
 	"github.com/metaprov/modelaapi/pkg/util"
-	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -63,27 +62,27 @@ func (mclass *ModelClass) AddFinalizer()    { util.AddFin(&mclass.ObjectMeta, tr
 func (mclass *ModelClass) RemoveFinalizer() { util.RemoveFin(&mclass.ObjectMeta, training.GroupName) }
 
 // Merge or update condition
-func (mclass *ModelClass) CreateOrUpdateCond(cond ModelClassCondition) {
+func (mclass *ModelClass) CreateOrUpdateCond(cond metav1.Condition) {
 	i := mclass.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		mclass.Status.Conditions = append(mclass.Status.Conditions, cond)
 		return
 	}
 	current := mclass.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
-		current.LastTransitionTime = &now
+		current.LastTransitionTime = now
 		mclass.Status.Conditions[i] = current
 	}
 	mclass.Status.Conditions[i] = current
 }
 
-func (mclass ModelClass) GetCondIdx(t ModelClassConditionType) int {
+func (mclass ModelClass) GetCondIdx(t string) int {
 	for i, v := range mclass.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -92,16 +91,16 @@ func (mclass ModelClass) GetCondIdx(t ModelClassConditionType) int {
 	return -1
 }
 
-func (mclass ModelClass) GetCond(t ModelClassConditionType) ModelClassCondition {
+func (mclass ModelClass) GetCond(t string) metav1.Condition {
 	for _, v := range mclass.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return ModelClassCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  corev1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -110,7 +109,7 @@ func (mclass ModelClass) GetCond(t ModelClassConditionType) ModelClassCondition 
 
 func (mclass ModelClass) IsReady() bool {
 	cond := mclass.GetCond(ModelClassReady)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (mclass ModelClass) Key() string {
@@ -127,15 +126,15 @@ func ParseModelClassYaml(content []byte) (*ModelClass, error) {
 }
 
 func (mclass *ModelClass) MarkArchived() {
-	mclass.CreateOrUpdateCond(ModelClassCondition{
+	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassSaved,
-		Status: corev1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (mclass ModelClass) IsFailed() bool {
 	cond := mclass.GetCond(ModelClassReady)
-	return cond.Status == v1.ConditionFalse
+	return cond.Status == metav1.ConditionFalse
 }
 
 // FiredAt the start of training, mark the training dataset as pending
@@ -144,9 +143,9 @@ func (mclass ModelClass) IsFailed() bool {
 // Drifted
 // ////////////////////////////////////////////
 func (mclass *ModelClass) MarkDrifted() {
-	mclass.CreateOrUpdateCond(ModelClassCondition{
+	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassModelDrifted,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
@@ -212,9 +211,9 @@ func (mclass *ModelClass) ErrorAlert(tenantRef *v1.ObjectReference, notifierName
 }
 
 func (mclass *ModelClass) MarkFailed(err string) {
-	mclass.CreateOrUpdateCond(ModelClassCondition{
+	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelClassReady,
-		Status:  corev1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Message: err,
 	})
 	mclass.Status.FailureMessage = util.StrPtr(err)

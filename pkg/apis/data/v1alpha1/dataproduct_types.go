@@ -17,23 +17,9 @@ type DataProductConditionType string
 
 // / ProductRef Condition
 const (
-	DataProductReady DataProductConditionType = "Ready"
-	DataProductSaved DataProductConditionType = "Saved"
+	DataProductReady = "Ready"
+	DataProductSaved = "Saved"
 )
-
-// DataProductCondition describes the state of a DataProduct at a certain point
-type DataProductCondition struct {
-	// Type of condition.
-	Type DataProductConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=DataProductConditionType"`
-	// Status of the condition, one of True, False, Unknown
-	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another
-	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,4,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition
-	Reason string `json:"reason,omitempty" protobuf:"bytes,5,opt,name=reason"`
-	// A human readable message indicating details about the transition
-	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
-}
 
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=dataproducts,shortName=prod,singular=dataproduct,shortName="prod",categories={data,modela,all}
@@ -240,7 +226,7 @@ type DataProductStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DataProductCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,21,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,21,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true

@@ -12,7 +12,6 @@ import (
 
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
 	"github.com/metaprov/modelaapi/pkg/util"
-	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
@@ -45,11 +44,11 @@ func (license *License) AddFinalizer()     { util.AddFin(&license.ObjectMeta, in
 func (license *License) RemoveFinalizer()  { util.RemoveFin(&license.ObjectMeta, infra.GroupName) }
 
 // Merge or update condition
-func (license *License) CreateOrUpdateCond(cond LicenseCondition) {
+func (license *License) CreateOrUpdateCond(cond metav1.Condition) {
 	i := license.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		license.Status.Conditions = append(license.Status.Conditions, cond)
 		return
 	}
@@ -57,14 +56,14 @@ func (license *License) CreateOrUpdateCond(cond LicenseCondition) {
 	current := license.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	license.Status.Conditions[i] = current
 }
 
-func (license License) GetCondIdx(t LicenseConditionType) int {
+func (license License) GetCondIdx(t string) int {
 	for i, v := range license.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -73,16 +72,16 @@ func (license License) GetCondIdx(t LicenseConditionType) int {
 	return -1
 }
 
-func (license License) GetCond(t LicenseConditionType) LicenseCondition {
+func (license License) GetCond(t LicenseConditionType) metav1.Condition {
 	for _, v := range license.Status.Conditions {
-		if v.Type == t {
+		if v.Type == string(t) {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return LicenseCondition{
-		Type:    t,
-		Status:  v1.ConditionUnknown,
+	return metav1.Condition{
+		Type:    string(t),
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -90,7 +89,7 @@ func (license License) GetCond(t LicenseConditionType) LicenseCondition {
 }
 
 func (license License) IsValid() bool {
-	return license.GetCond(LicenseValid).Status == v1.ConditionTrue
+	return license.GetCond(LicenseValid).Status == metav1.ConditionTrue
 }
 
 func (license License) RootURI() string {
@@ -112,8 +111,8 @@ func ParseLicenseYaml(content []byte) (*License, error) {
 }
 
 func (license *License) MarkValid() {
-	license.CreateOrUpdateCond(LicenseCondition{
-		Type:   LicenseValid,
-		Status: v1.ConditionTrue,
+	license.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(LicenseValid),
+		Status: metav1.ConditionTrue,
 	})
 }

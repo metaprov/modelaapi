@@ -10,7 +10,6 @@ import (
 	"fmt"
 
 	"github.com/metaprov/modelaapi/pkg/util"
-	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
@@ -40,11 +39,11 @@ func (attachment *Attachment) RemoveFinalizer() {
 }
 
 // Merge or update condition
-func (attachment *Attachment) CreateOrUpdateCond(cond AttachmentCondition) {
+func (attachment *Attachment) CreateOrUpdateCond(cond metav1.Condition) {
 	i := attachment.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		attachment.Status.Conditions = append(attachment.Status.Conditions, cond)
 		return
 	}
@@ -52,14 +51,14 @@ func (attachment *Attachment) CreateOrUpdateCond(cond AttachmentCondition) {
 	current := attachment.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	attachment.Status.Conditions[i] = current
 }
 
-func (attachment Attachment) GetCondIdx(t AttachmentConditionType) int {
+func (attachment Attachment) GetCondIdx(t string) int {
 	for i, v := range attachment.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -68,16 +67,16 @@ func (attachment Attachment) GetCondIdx(t AttachmentConditionType) int {
 	return -1
 }
 
-func (attachment Attachment) GetCond(t AttachmentConditionType) AttachmentCondition {
+func (attachment Attachment) GetCond(t AttachmentConditionType) metav1.Condition {
 	for _, v := range attachment.Status.Conditions {
-		if v.Type == t {
+		if v.Type == string(t) {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return AttachmentCondition{
-		Type:    t,
-		Status:  v1.ConditionUnknown,
+	return metav1.Condition{
+		Type:    string(t),
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -85,7 +84,7 @@ func (attachment Attachment) GetCond(t AttachmentConditionType) AttachmentCondit
 }
 
 func (attachment Attachment) IsReady() bool {
-	return attachment.GetCond(AttachmentSent).Status == v1.ConditionTrue
+	return attachment.GetCond(AttachmentSent).Status == metav1.ConditionTrue
 }
 
 func (attachment Attachment) RootURI() string {
@@ -106,16 +105,16 @@ func ParseAttachmentYaml(content []byte) (*Attachment, error) {
 }
 
 func (attachment *Attachment) MarkArchived() {
-	attachment.CreateOrUpdateCond(AttachmentCondition{
-		Type:   AttachmentSaved,
-		Status: v1.ConditionTrue,
+	attachment.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(AttachmentSaved),
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (attachment *Attachment) MarkFailed(err string) {
-	attachment.CreateOrUpdateCond(AttachmentCondition{
-		Type:    AttachmentSent,
-		Status:  v1.ConditionFalse,
+	attachment.CreateOrUpdateCond(metav1.Condition{
+		Type:    string(AttachmentSent),
+		Status:  metav1.ConditionFalse,
 		Reason:  "Failed",
 		Message: err,
 	})

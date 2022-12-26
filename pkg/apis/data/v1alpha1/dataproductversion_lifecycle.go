@@ -11,7 +11,6 @@ import (
 
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	"github.com/metaprov/modelaapi/pkg/util"
-	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
@@ -30,11 +29,11 @@ func (version *DataProductVersion) RemoveFinalizer() {
 //==============================================================================
 
 // Merge or update condition
-func (version *DataProductVersion) CreateOrUpdateCond(cond DataProductVersionCondition) {
+func (version *DataProductVersion) CreateOrUpdateCond(cond metav1.Condition) {
 	i := version.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		version.Status.Conditions = append(version.Status.Conditions, cond)
 		return
 	}
@@ -42,14 +41,14 @@ func (version *DataProductVersion) CreateOrUpdateCond(cond DataProductVersionCon
 	current := version.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	version.Status.Conditions[i] = current
 }
 
-func (version DataProductVersion) GetCondIdx(t DataProductVersionConditionType) int {
+func (version DataProductVersion) GetCondIdx(t string) int {
 	for i, v := range version.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -58,16 +57,16 @@ func (version DataProductVersion) GetCondIdx(t DataProductVersionConditionType) 
 	return -1
 }
 
-func (version DataProductVersion) GetCond(t DataProductVersionConditionType) DataProductVersionCondition {
+func (version DataProductVersion) GetCond(t string) metav1.Condition {
 	for _, v := range version.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return DataProductVersionCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -75,7 +74,7 @@ func (version DataProductVersion) GetCond(t DataProductVersionConditionType) Dat
 }
 
 func (version DataProductVersion) IsReady() bool {
-	return version.GetCond(DataProductVersionReady).Status == v1.ConditionTrue
+	return version.GetCond(DataProductVersionReady).Status == metav1.ConditionTrue
 }
 
 func (version DataProductVersion) YamlURI() string {
@@ -96,28 +95,28 @@ func ParseDataProductVersionYaml(content []byte) (*DataProductVersion, error) {
 }
 
 func (version *DataProductVersion) MarkArchived() {
-	version.CreateOrUpdateCond(DataProductVersionCondition{
+	version.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataProductVersionSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (version *DataProductVersion) MarkReady() {
-	version.CreateOrUpdateCond(DataProductVersionCondition{
+	version.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataProductVersionReady,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (version *DataProductVersion) MarkFailed(err error) {
-	version.CreateOrUpdateCond(DataProductVersionCondition{
+	version.CreateOrUpdateCond(metav1.Condition{
 		Type:    DataProductVersionReady,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  "Failed",
 		Message: err.Error(),
 	})
 }
 
 func (version DataProductVersion) Archived() bool {
-	return version.GetCond(DataProductVersionSaved).Status == v1.ConditionTrue
+	return version.GetCond(DataProductVersionSaved).Status == metav1.ConditionTrue
 }

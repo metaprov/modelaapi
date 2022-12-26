@@ -161,42 +161,6 @@ export namespace DataApp {
   }
 }
 
-export class DataAppCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): DataAppCondition;
-
-  getStatus(): string;
-  setStatus(value: string): DataAppCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataAppCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): DataAppCondition;
-
-  getReason(): string;
-  setReason(value: string): DataAppCondition;
-
-  getMessage(): string;
-  setMessage(value: string): DataAppCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DataAppCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: DataAppCondition): DataAppCondition.AsObject;
-  static serializeBinaryToWriter(message: DataAppCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DataAppCondition;
-  static deserializeBinaryFromReader(message: DataAppCondition, reader: jspb.BinaryReader): DataAppCondition;
-}
-
-export namespace DataAppCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
 export class DataAppList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): DataAppList;
@@ -316,10 +280,10 @@ export class DataAppStatus extends jspb.Message {
   getFailuremessage(): string;
   setFailuremessage(value: string): DataAppStatus;
 
-  getConditionsList(): Array<DataAppCondition>;
-  setConditionsList(value: Array<DataAppCondition>): DataAppStatus;
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): DataAppStatus;
   clearConditionsList(): DataAppStatus;
-  addConditions(value?: DataAppCondition, index?: number): DataAppCondition;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataAppStatus.AsObject;
@@ -337,7 +301,7 @@ export namespace DataAppStatus {
     servicetstatus?: k8s_io_api_core_v1_generated_pb.ServiceStatus.AsObject,
     failurereason: string,
     failuremessage: string,
-    conditionsList: Array<DataAppCondition.AsObject>,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 
@@ -1017,42 +981,6 @@ export namespace PredictionCacheStatus {
   }
 }
 
-export class PredictionCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): PredictionCondition;
-
-  getStatus(): string;
-  setStatus(value: string): PredictionCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): PredictionCondition;
-
-  getReason(): string;
-  setReason(value: string): PredictionCondition;
-
-  getMessage(): string;
-  setMessage(value: string): PredictionCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionCondition): PredictionCondition.AsObject;
-  static serializeBinaryToWriter(message: PredictionCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionCondition;
-  static deserializeBinaryFromReader(message: PredictionCondition, reader: jspb.BinaryReader): PredictionCondition;
-}
-
-export namespace PredictionCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
 export class PredictionList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): PredictionList;
@@ -1290,10 +1218,10 @@ export class PredictionStatus extends jspb.Message {
   hasForecast(): boolean;
   clearForecast(): PredictionStatus;
 
-  getConditionsList(): Array<PredictionCondition>;
-  setConditionsList(value: Array<PredictionCondition>): PredictionStatus;
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): PredictionStatus;
   clearConditionsList(): PredictionStatus;
-  addConditions(value?: PredictionCondition, index?: number): PredictionCondition;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionStatus.AsObject;
@@ -1319,7 +1247,7 @@ export namespace PredictionStatus {
     columnsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram.AsObject>,
     drifted: boolean,
     forecast?: ForecastStatus.AsObject,
-    conditionsList: Array<PredictionCondition.AsObject>,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 
@@ -1352,42 +1280,6 @@ export namespace Predictor {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
     spec?: PredictorSpec.AsObject,
     status?: PredictorStatus.AsObject,
-  }
-}
-
-export class PredictorCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): PredictorCondition;
-
-  getStatus(): string;
-  setStatus(value: string): PredictorCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): PredictorCondition;
-
-  getReason(): string;
-  setReason(value: string): PredictorCondition;
-
-  getMessage(): string;
-  setMessage(value: string): PredictorCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictorCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictorCondition): PredictorCondition.AsObject;
-  static serializeBinaryToWriter(message: PredictorCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictorCondition;
-  static deserializeBinaryFromReader(message: PredictorCondition, reader: jspb.BinaryReader): PredictorCondition;
-}
-
-export namespace PredictorCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
   }
 }
 
@@ -1644,10 +1536,10 @@ export class PredictorStatus extends jspb.Message {
   hasPredictionschedule(): boolean;
   clearPredictionschedule(): PredictorStatus;
 
-  getConditionsList(): Array<PredictorCondition>;
-  setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): PredictorStatus;
   clearConditionsList(): PredictorStatus;
-  addConditions(value?: PredictorCondition, index?: number): PredictorCondition;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorStatus.AsObject;
@@ -1673,7 +1565,7 @@ export namespace PredictorStatus {
     lastpredictiondataset?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingtestsresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     predictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
-    conditionsList: Array<PredictorCondition.AsObject>,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 

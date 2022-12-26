@@ -68,64 +68,46 @@ const (
 	StudyPhasePaused             StudyPhase = "Paused"
 )
 
-// StudyConditionType is the condition of a Study
-type StudyConditionType string
+//  is the condition of a Study
 
 // / Study Condition
 const (
 	// StudyInitialized states that the resources needed for training are allocated and ready
-	StudyInitialized StudyConditionType = "Initialized"
+	StudyInitialized = "Initialized"
 	// StudySplit states that the training dataset has been split and is ready for use
-	StudySplit StudyConditionType = "StudySplit"
+	StudySplit = "StudySplit"
 	// Study Transformed states that the training dataset has been split and is ready for use
-	StudyTransformed StudyConditionType = "StudyTransformed"
+	StudyTransformed = "StudyTransformed"
 	// StudyFeatureEngineered states that the search for the best feature engineering pipeline is complete
-	StudyFeatureEngineered StudyConditionType = "StudyFeaturesEngineered"
+	StudyFeatureEngineered = "StudyFeaturesEngineered"
 	// StudyBaselined states that baseline models for each algorithm have been trained
-	StudyBaselined StudyConditionType = "Baselined"
+	StudyBaselined = "Baselined"
 	// StudySearched states that the primary model search for algorithm and hyper-parameters is complete
-	StudySearched StudyConditionType = "Searched"
+	StudySearched = "Searched"
 	// StudyEnsembleCreated states that ensemble models were trained
-	StudyEnsembleCreated StudyConditionType = "ModelsEnsembleCreated"
+	StudyEnsembleCreated = "ModelsEnsembleCreated"
 	// StudyTested states that the best model has been tested against training and testing datasets
-	StudyTested StudyConditionType = "Tested"
+	StudyTested = "Tested"
 	// StudyTested states that the best model has been tested against training and testing datasets
-	StudyTuned StudyConditionType = "Tuned"
+	StudyTuned = "Tuned"
 
 	// StudyReported states that a Report resource has been generated for the Study
-	StudyReported  StudyConditionType = "Reported"
-	StudyProfiled  StudyConditionType = "Profiled"
-	StudyExplained StudyConditionType = "Explained"
-	StudyAborted   StudyConditionType = "Aborted"
+	StudyReported  = "Reported"
+	StudyProfiled  = "Profiled"
+	StudyExplained = "Explained"
+	StudyAborted   = "Aborted"
 	// StudyPaused states that the execution of the Study is paused
-	StudyPaused StudyConditionType = "Paused"
+	StudyPaused = "Paused"
 	// StudySaved states that the Study has been archived in a database
-	StudySaved StudyConditionType = "Saved"
+	StudySaved = "Saved"
 	// StudyCompleted states that the Study has completed execution
-	StudyCompleted   StudyConditionType = "Completed"
-	StudyPartitioned StudyConditionType = "Partitioned"
-	StudyArchived    StudyConditionType = "Archived"
-	StudyUnitTested  StudyConditionType = "UnitTested"
+	StudyCompleted   = "Completed"
+	StudyPartitioned = "Partitioned"
+	StudyArchived    = "Archived"
+	StudyUnitTested  = "UnitTested"
 )
 
 // StudyCondition describes the state of a Study at a certain point
-type StudyCondition struct {
-	// Type of study condition
-	// +kubebuilder:validation:Optional
-	Type StudyConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=StudyConditionType"`
-	// Status of the condition, one of True, False, Unknown
-	// +kubebuilder:validation:Optional
-	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another
-	// +kubebuilder:validation:Optional
-	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,4,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition
-	// +kubebuilder:validation:Optional
-	Reason string `json:"reason,omitempty" protobuf:"bytes,5,opt,name=reason"`
-	// A human-readable message indicating details about the transition
-	// +kubebuilder:validation:Optional
-	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
-}
 
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=studies,singular=study,shortName=sd,categories={training,modela}
@@ -413,7 +395,7 @@ type StudyStatus struct {
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,36,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,36,rep,name=conditions"`
 }
 
 // ModelResult contains the records of a single garbage-collected model

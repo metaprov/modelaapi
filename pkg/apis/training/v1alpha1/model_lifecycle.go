@@ -9,7 +9,6 @@ package v1alpha1
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/dustin/go-humanize"
 	"path"
 	"time"
 
@@ -234,11 +233,11 @@ func (model Model) GetTestResult(metric catalog.Metric) float64 {
 }
 
 // Merge or update condition
-func (model *Model) CreateOrUpdateCond(cond ModelCondition) {
+func (model *Model) CreateOrUpdateCond(cond metav1.Condition) {
 	i := model.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		model.Status.Conditions = append(model.Status.Conditions, cond)
 		return
 	}
@@ -246,14 +245,14 @@ func (model *Model) CreateOrUpdateCond(cond ModelCondition) {
 	current := model.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	model.Status.Conditions[i] = current
 }
 
-func (model *Model) GetCondIdx(t ModelConditionType) int {
+func (model *Model) GetCondIdx(t string) int {
 	for i, v := range model.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -262,16 +261,16 @@ func (model *Model) GetCondIdx(t ModelConditionType) int {
 	return -1
 }
 
-func (model *Model) GetCond(t ModelConditionType) ModelCondition {
+func (model *Model) GetCond(t string) metav1.Condition {
 	for _, v := range model.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return ModelCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -386,9 +385,9 @@ const (
 func (model *Model) MarkWaitingToTrain() {
 	model.Status.Phase = ModelPhasePending
 	model.Status.Progress = 0
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelTrained,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonWaitingToTrain,
 	})
 
@@ -401,9 +400,9 @@ func (model *Model) MarkTraining() {
 	}
 	model.Status.Phase = ModelPhaseTraining
 	model.Status.Progress = 10
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelTrained,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonTraining,
 	})
 
@@ -411,14 +410,14 @@ func (model *Model) MarkTraining() {
 
 func (model *Model) MarkReleasing() {
 	model.Status.Phase = ModelPhaseReleasing
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelLive,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonReleasing,
 	})
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelShadow,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonReleasing,
 	})
 }
@@ -438,23 +437,23 @@ func (model *Model) MarkRole(predictor string, role catalog.ModelRole) {
 	switch role {
 	case catalog.LiveModelRole:
 		model.Status.Phase = ModelPhaseLive
-		model.CreateOrUpdateCond(ModelCondition{
+		model.CreateOrUpdateCond(metav1.Condition{
 			Type:   ModelLive,
-			Status: v1.ConditionTrue,
+			Status: metav1.ConditionTrue,
 		})
-		model.CreateOrUpdateCond(ModelCondition{
+		model.CreateOrUpdateCond(metav1.Condition{
 			Type:   ModelShadow,
-			Status: v1.ConditionFalse,
+			Status: metav1.ConditionFalse,
 		})
 	case catalog.ShadowModelRole:
 		model.Status.Phase = ModelPhaseShadow
-		model.CreateOrUpdateCond(ModelCondition{
+		model.CreateOrUpdateCond(metav1.Condition{
 			Type:   ModelLive,
-			Status: v1.ConditionFalse,
+			Status: metav1.ConditionFalse,
 		})
-		model.CreateOrUpdateCond(ModelCondition{
+		model.CreateOrUpdateCond(metav1.Condition{
 			Type:   ModelShadow,
-			Status: v1.ConditionTrue,
+			Status: metav1.ConditionTrue,
 		})
 	}
 
@@ -477,13 +476,13 @@ func (model *Model) Demote() {
 	noneRole := catalog.NoneModelRole
 	model.Spec.Role = &noneRole
 
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelLive,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 	})
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelShadow,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 	})
 }
 
@@ -502,17 +501,17 @@ func (model *Model) MarkTrained(ms []catalog.Measurement) {
 	}
 	model.Status.Train = ms
 	model.Status.Phase = ModelPhaseTrained
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelTrained,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	model.Status.Progress = 50
 }
 
 func (model *Model) MarkFailedToTrain(err string) {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelTrained,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -538,12 +537,12 @@ func (model Model) WaitingToTrain() bool {
 		return true
 	}
 	cond := model.GetCond(ModelTrained)
-	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonWaitingToTrain
+	return cond.Status == metav1.ConditionFalse && cond.Reason == ReasonWaitingToTrain
 }
 
 func (model Model) Training() bool {
 	cond := model.GetCond(ModelTrained)
-	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonTraining
+	return cond.Status == metav1.ConditionFalse && cond.Reason == ReasonTraining
 }
 
 func (model Model) TrainingFailed() bool {
@@ -551,19 +550,19 @@ func (model Model) TrainingFailed() bool {
 		return true
 	}
 	cond := model.GetCond(ModelTrained)
-	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonFailed
+	return cond.Status == metav1.ConditionFalse && cond.Reason == ReasonFailed
 }
 
 func (model Model) Trained() bool {
-	return model.GetCond(ModelTrained).Status == v1.ConditionTrue
+	return model.GetCond(ModelTrained).Status == metav1.ConditionTrue
 }
 
 // ---------------- Testing command
 
 func (model *Model) MarkWaitingToTest() {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelTested,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonWaitingToTest,
 	})
 	model.Status.Phase = ModelPhasePending
@@ -575,18 +574,18 @@ func (model *Model) MarkTesting() {
 		model.Status.TestingStartedAt = &now
 	}
 	model.Status.Phase = ModelPhaseTesting
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelTested,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonTesting,
 	})
 	model.Status.Progress = 70
 }
 
 func (model *Model) MarkTestingFailed(err string) {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelTested,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -602,9 +601,9 @@ func (model *Model) MarkTestingFailed(err string) {
 
 func (model *Model) MarkTested() {
 	model.Status.Phase = ModelPhaseTested
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelTested,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	if model.Status.TestingCompletedAt == nil {
 		now := metav1.Now()
@@ -617,16 +616,16 @@ func (model *Model) MarkTested() {
 
 func (model Model) TestingFailed() bool {
 	cond := model.GetCond(ModelTested)
-	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonFailed
+	return cond.Status == metav1.ConditionFalse && cond.Reason == ReasonFailed
 }
 
 func (model Model) Tested() bool {
-	return model.GetCond(ModelTested).Status == v1.ConditionTrue
+	return model.GetCond(ModelTested).Status == metav1.ConditionTrue
 }
 
 func (model Model) Testing() bool {
 	cond := model.GetCond(ModelTested)
-	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonTesting
+	return cond.Status == metav1.ConditionFalse && cond.Reason == ReasonTesting
 }
 
 func (model Model) WaitingToTest() bool {
@@ -637,9 +636,9 @@ func (model Model) WaitingToTest() bool {
 
 func (model *Model) MarkUnitTesting() {
 	model.Status.Phase = ModelPhaseUnitTesting
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelUnitTested,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonTesting,
 	})
 	model.Status.Progress = 75
@@ -647,18 +646,18 @@ func (model *Model) MarkUnitTesting() {
 
 func (model *Model) MarkUnitTested() {
 	model.Status.Phase = ModelPhaseUnitTested
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelUnitTested,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 		Reason: ReasonTesting,
 	})
 	model.Status.Progress = 80
 }
 
 func (model *Model) MarkUnitTestFailed(msg string, stop bool) {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelUnitTested,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(ModelPhaseFailed),
 		Message: "Failed to unit test." + msg,
 	})
@@ -674,48 +673,48 @@ func (model *Model) MarkUnitTestFailed(msg string, stop bool) {
 }
 
 func (model Model) UnitTested() bool {
-	return model.GetCond(ModelUnitTested).Status == v1.ConditionTrue
+	return model.GetCond(ModelUnitTested).Status == metav1.ConditionTrue
 }
 
 // -------------------- Feedback
 
 func (model *Model) MarkFeedbackTesting() {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelFeedbackTested,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonTesting,
 	})
 }
 
 func (model *Model) MarkFeedbackTested() {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelFeedbackTested,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 		Reason: ReasonTesting,
 	})
 
 }
 
 func (model *Model) MarkFeedbackTestFailed(msg string) {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelFeedbackTested,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(ModelPhaseFailed),
 		Message: "Failed to test feedback." + msg,
 	})
 }
 
 func (model Model) FeedbackTested() bool {
-	return model.GetCond(ModelFeedbackTested).Status == v1.ConditionTrue
+	return model.GetCond(ModelFeedbackTested).Status == metav1.ConditionTrue
 }
 
 //-------------------- profile command
 
 func (model *Model) MarkProfiling() {
 	model.Status.Phase = ModelPhaseProfiling
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelProfiled,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonProfiling,
 	})
 	model.Status.Progress = 85
@@ -723,18 +722,18 @@ func (model *Model) MarkProfiling() {
 
 func (model *Model) MarkProfiled(uri string) {
 	model.Status.Phase = ModelPhaseProfiled
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelProfiled,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	model.Status.ProfileURI = uri
 	model.Status.Progress = 90
 }
 
 func (model *Model) MarkProfiledFailed(err string) {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelProfiled,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -742,16 +741,16 @@ func (model *Model) MarkProfiledFailed(err string) {
 
 func (model Model) Profiled() bool {
 	cond := model.GetCond(ModelProfiled)
-	return cond.Status == v1.ConditionTrue || cond.Reason == ReasonFailed
+	return cond.Status == metav1.ConditionTrue || cond.Reason == ReasonFailed
 }
 
 // ----------------------- Pruned
 
 func (model *Model) MarkPruned(uri string) {
 	model.Status.Phase = ModelPhasePruned
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelPruned,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	model.Status.Progress = 100
 	if model.Status.CompletedAt == nil {
@@ -762,15 +761,15 @@ func (model *Model) MarkPruned(uri string) {
 
 func (model Model) Pruned() bool {
 	cond := model.GetCond(ModelPruned)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 // --------------- Reporting
 func (model *Model) MarkReporting() {
 	model.Status.Phase = ModelPhaseReporting
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelReported,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(ModelPhaseReporting),
 	})
 	model.Status.Progress = 95
@@ -780,17 +779,17 @@ func (model *Model) MarkReporting() {
 func (model *Model) MarkReported(name string) {
 	model.Status.Phase = ModelPhaseReported
 	model.Status.ReportName = name
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelReported,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	model.Status.Progress = 96
 }
 
 func (model *Model) MarkReportFailed(err string) {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelReported,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -798,7 +797,7 @@ func (model *Model) MarkReportFailed(err string) {
 
 func (model Model) Reported() bool {
 	cond := model.GetCond(ModelReported)
-	return cond.Status == v1.ConditionTrue || cond.Reason == ReasonFailed
+	return cond.Status == metav1.ConditionTrue || cond.Reason == ReasonFailed
 }
 
 // ------------------ Forecast
@@ -806,22 +805,22 @@ func (model Model) Reported() bool {
 // Answer true if the model has been forecasted
 func (model Model) Forecasted() bool {
 	cond := model.GetCond(ModelForecasted)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (model *Model) MarkForecasted() {
 	model.Status.Phase = ModelPhaseForecasted
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelForecasted,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	model.Status.Progress = 100
 }
 
 func (model *Model) MarkForecastFailed(err string) {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelForecasted,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -838,9 +837,9 @@ func (model *Model) MarkForecastFailed(err string) {
 
 func (model *Model) MarkForecasting() {
 	model.Status.Phase = ModelPhaseForecasting
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelForecasted,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: "Forecasting",
 	})
 	model.Status.Progress = 50
@@ -852,9 +851,9 @@ func (model *Model) MarkForecasting() {
 
 func (model *Model) MarkPackaging() {
 	model.Status.Phase = ModelPhasePackaging
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelPackaged,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: "Packaging",
 	})
 
@@ -862,22 +861,22 @@ func (model *Model) MarkPackaging() {
 
 func (model Model) Packaged() bool {
 	cond := model.GetCond(ModelPackaged)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (model *Model) MarkPackaged(image string) {
 	model.Status.ImageName = image
 	model.Status.Phase = ModelPhasePackaged
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelPackaged,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (model *Model) MarkPackgedFailed(err string) {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelPackaged,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -896,9 +895,9 @@ func (model *Model) MarkPackgedFailed(err string) {
 
 func (model *Model) MarkExplaining() {
 	model.Status.Phase = ModelPhaseExplaining
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelExplained,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: "Explaining",
 	})
 
@@ -906,22 +905,22 @@ func (model *Model) MarkExplaining() {
 
 func (model Model) Explained() bool {
 	cond := model.GetCond(ModelExplained)
-	return cond.Status == v1.ConditionTrue || cond.Reason == ReasonFailed
+	return cond.Status == metav1.ConditionTrue || cond.Reason == ReasonFailed
 }
 
 func (model *Model) MarkExplained(image string) {
 	model.Status.ImageName = image
 	model.Status.Phase = ModelPhaseExplained
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelExplained,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (model *Model) MarkExplainedFailed(err string) {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelExplained,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -931,9 +930,9 @@ func (model *Model) MarkExplainedFailed(err string) {
 
 func (model *Model) MarkPublishing() {
 	model.Status.Phase = ModelPhasePublishing
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelPublished,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonPublishing,
 	})
 
@@ -941,22 +940,22 @@ func (model *Model) MarkPublishing() {
 
 func (model Model) Published() bool {
 	cond := model.GetCond(ModelPublished)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (model *Model) MarkPublished(image string) {
 	model.Status.ImageName = image
 	model.Status.Phase = ModelPhasePublished
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelPublished,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (model *Model) MarkPublishFailed(err string) {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelPublished,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -972,9 +971,9 @@ func (model *Model) MarkPublishFailed(err string) {
 // --------------------- Train DriftStatus detector
 func (model *Model) MarkTrainingDriftDetector() {
 	model.Status.Phase = ModelPhaseTrainingDriftDetector
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelTrainedDriftDetector,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonPublishing,
 	})
 
@@ -982,22 +981,22 @@ func (model *Model) MarkTrainingDriftDetector() {
 
 func (model Model) TrainedDriftDetector() bool {
 	cond := model.GetCond(ModelTrainedDriftDetector)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (model *Model) MarkTrainedDriftDetector(image string) {
 	model.Status.ImageName = image
 	model.Status.Phase = ModelPhaseTrainedDriftDetector
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelTrainedDriftDetector,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (model *Model) MarkTrainedDriftDetectorFailed(err string) {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelTrainedDriftDetector,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -1011,9 +1010,9 @@ func (model *Model) MarkTrainedDriftDetectorFailed(err string) {
 }
 
 func (model *Model) MarkReleaseFailed(err string) {
-	model.CreateOrUpdateCond(ModelCondition{
-		Type:    ModelConditionType(ModelLive),
-		Status:  v1.ConditionFalse,
+	model.CreateOrUpdateCond(metav1.Condition{
+		Type:    ModelLive,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -1030,9 +1029,9 @@ func (model *Model) MarkReleaseFailed(err string) {
 
 func (model *Model) MarkResumed() {
 
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelPaused,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: "",
 	})
 }
@@ -1041,9 +1040,9 @@ func (model *Model) MarkResumed() {
 
 func (model *Model) MarkAborted() {
 	model.Status.Phase = ModelPhaseAborted
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelAborted,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	now := metav1.Now()
 	if model.Status.CompletedAt == nil {
@@ -1053,7 +1052,7 @@ func (model *Model) MarkAborted() {
 
 func (model Model) Aborted() bool {
 	cond := model.GetCond(ModelAborted)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 
 }
 
@@ -1065,23 +1064,23 @@ func (model Model) Failed() bool {
 
 func (model *Model) MarkMaintain() {
 	model.Status.Phase = ModelPhaseMaintenance
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelMaintenance,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (model Model) Maintain() bool {
 	cond := model.GetCond(ModelMaintenance)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 // ------------------ Ready
 
 func (model *Model) MarkReady() {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelReady,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	// mark the time
 	now := metav1.Now()
@@ -1092,47 +1091,47 @@ func (model *Model) MarkReady() {
 
 func (model Model) IsReady() bool {
 	cond := model.GetCond(ModelReady)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 /////////////////////// Paused
 
 func (model Model) Paused() bool {
 	cond := model.GetCond(ModelPaused)
-	return *model.Spec.Paused && (cond.Status == v1.ConditionFalse && cond.Reason == ReasonPausing) || cond.Status == v1.ConditionTrue
+	return *model.Spec.Paused && (cond.Status == metav1.ConditionFalse && cond.Reason == ReasonPausing) || cond.Status == metav1.ConditionTrue
 }
 
 func (model *Model) MarkPaused() {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelPaused,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 /////////////////////////////// Archive
 
 func (model *Model) MarkSaved() {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (model Model) IsSaved() bool {
 	cond := model.GetCond(ModelSaved)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (model *Model) MarkArchived() {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelArchived,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (model Model) IsArchived() bool {
 	cond := model.GetCond(ModelArchived)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 func (model *Model) InitModelFromStudy(study *Study) {
@@ -1288,17 +1287,17 @@ func (model *Model) MarkTuned(ms []catalog.Measurement) {
 	}
 	model.Status.Tune = ms
 	model.Status.Phase = ModelPhaseTuned
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelTuned,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	model.Status.Progress = 50
 }
 
 func (model *Model) MarkFailedToTune(err string) {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelTuned,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -1323,7 +1322,7 @@ func (model *Model) MarkFailedToTune(err string) {
 
 func (model Model) Tuning() bool {
 	cond := model.GetCond(ModelTuned)
-	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonTuned
+	return cond.Status == metav1.ConditionFalse && cond.Reason == ReasonTuned
 }
 
 func (model Model) TuningFailed() bool {
@@ -1331,11 +1330,11 @@ func (model Model) TuningFailed() bool {
 		return true
 	}
 	cond := model.GetCond(ModelTuned)
-	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonFailed
+	return cond.Status == metav1.ConditionFalse && cond.Reason == ReasonFailed
 }
 
 func (model Model) Tuned() bool {
-	return model.GetCond(ModelTuned).Status == v1.ConditionTrue
+	return model.GetCond(ModelTuned).Status == metav1.ConditionTrue
 }
 
 func (model *Model) MarkMerged() {
@@ -1344,17 +1343,17 @@ func (model *Model) MarkMerged() {
 		model.Status.TuningCompletedAt = &now
 	}
 	model.Status.Phase = ModelPhaseMerged
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelMerged,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	model.Status.Progress = 50
 }
 
 func (model *Model) MarkFailedToMerge(err string) {
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelMerged,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
@@ -1378,9 +1377,9 @@ func (model *Model) MarkMerging() {
 
 	model.Status.Phase = ModelPhaseMerging
 	model.Status.Progress = 10
-	model.CreateOrUpdateCond(ModelCondition{
+	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelMerged,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: ReasonMerging,
 	})
 
@@ -1388,7 +1387,7 @@ func (model *Model) MarkMerging() {
 
 func (model *Model) Merging() bool {
 	cond := model.GetCond(ModelMerged)
-	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonTuned
+	return cond.Status == metav1.ConditionFalse && cond.Reason == ReasonTuned
 }
 
 func (model *Model) MerginingFailed() bool {
@@ -1396,11 +1395,11 @@ func (model *Model) MerginingFailed() bool {
 		return true
 	}
 	cond := model.GetCond(ModelMerged)
-	return cond.Status == v1.ConditionFalse && cond.Reason == ReasonFailed
+	return cond.Status == metav1.ConditionFalse && cond.Reason == ReasonFailed
 }
 
 func (model Model) Merged() bool {
-	return model.GetCond(ModelMerged).Status == v1.ConditionTrue
+	return model.GetCond(ModelMerged).Status == metav1.ConditionTrue
 }
 
 ////////////////////////////

@@ -39,11 +39,11 @@ func (reciperun *RecipeRun) RemoveFinalizer() { util.RemoveFin(&reciperun.Object
 //==============================================================================
 
 // Merge or update condition
-func (reciperun *RecipeRun) CreateOrUpdateCond(cond RecipeCondition) {
+func (reciperun *RecipeRun) CreateOrUpdateCond(cond metav1.Condition) {
 	i := reciperun.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		reciperun.Status.Conditions = append(reciperun.Status.Conditions, cond)
 		return
 	}
@@ -51,14 +51,14 @@ func (reciperun *RecipeRun) CreateOrUpdateCond(cond RecipeCondition) {
 	current := reciperun.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	reciperun.Status.Conditions[i] = current
 }
 
-func (reciperun RecipeRun) GetCondIdx(t RecipeConditionType) int {
+func (reciperun RecipeRun) GetCondIdx(t string) int {
 	for i, v := range reciperun.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -67,16 +67,16 @@ func (reciperun RecipeRun) GetCondIdx(t RecipeConditionType) int {
 	return -1
 }
 
-func (reciperun RecipeRun) GetCond(t RecipeConditionType) RecipeCondition {
+func (reciperun RecipeRun) GetCond(t string) metav1.Condition {
 	for _, v := range reciperun.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return RecipeCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -84,7 +84,7 @@ func (reciperun RecipeRun) GetCond(t RecipeConditionType) RecipeCondition {
 }
 
 func (reciperun RecipeRun) IsReady() bool {
-	return reciperun.GetCond(RecipeReady).Status == v1.ConditionTrue
+	return reciperun.GetCond(RecipeReady).Status == metav1.ConditionTrue
 }
 
 func (reciperun RecipeRun) StatusString() string {
@@ -99,9 +99,9 @@ func (reciperun RecipeRun) ManifestURI() string {
 	return fmt.Sprintf("%s/%s-reciperun.yaml", reciperun.RootURI(), reciperun.Name)
 }
 
-func (reciperun RecipeRun) IsInCond(ct RecipeConditionType) bool {
+func (reciperun RecipeRun) IsInCond(ct string) bool {
 	current := reciperun.GetCond(ct)
-	return current.Status == v1.ConditionTrue
+	return current.Status == metav1.ConditionTrue
 }
 
 func (reciperun RecipeRun) PrintConditions() {
@@ -112,9 +112,9 @@ func (reciperun RecipeRun) PrintConditions() {
 
 func (reciperun *RecipeRun) MarkCompleted() {
 	reciperun.Status.Phase = RecipeRunPhaseSucceed
-	reciperun.CreateOrUpdateCond(RecipeCondition{
+	reciperun.CreateOrUpdateCond(metav1.Condition{
 		Type:   RecipeReady,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	now := metav1.Now()
 	if reciperun.Status.CompletedAt == nil {
@@ -123,17 +123,17 @@ func (reciperun *RecipeRun) MarkCompleted() {
 }
 
 func (reciperun *RecipeRun) MarkSaved() {
-	reciperun.CreateOrUpdateCond(RecipeCondition{
+	reciperun.CreateOrUpdateCond(metav1.Condition{
 		Type:   RecipeSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (reciperun *RecipeRun) MarkFailed(error string) {
 	reciperun.Status.Phase = RecipeRunPhaseFailed
-	reciperun.CreateOrUpdateCond(RecipeCondition{
+	reciperun.CreateOrUpdateCond(metav1.Condition{
 		Type:    RecipeReady,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  error,
 		Message: error,
 	})
@@ -146,9 +146,9 @@ func (reciperun *RecipeRun) MarkFailed(error string) {
 
 func (reciperun *RecipeRun) MarkRunning() {
 	reciperun.Status.Phase = RecipeRunPhaseRunning
-	reciperun.CreateOrUpdateCond(RecipeCondition{
+	reciperun.CreateOrUpdateCond(metav1.Condition{
 		Type:    RecipeReady,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Message: string(RecipeRunPhaseRunning),
 	})
 }
@@ -159,17 +159,17 @@ func (reciperun *RecipeRun) Deleted() bool {
 
 func (reciperun *RecipeRun) IsRunning() bool {
 	cond := reciperun.GetCond(RecipeRunCompleted)
-	return cond.Status == v1.ConditionFalse && cond.Reason == string(RecipeRunPhaseRunning)
+	return cond.Status == metav1.ConditionFalse && cond.Reason == string(RecipeRunPhaseRunning)
 }
 
 func (reciperun *RecipeRun) IsFailed() bool {
 	cond := reciperun.GetCond(RecipeRunCompleted)
-	return cond.Status == v1.ConditionFalse && cond.Reason == string(RecipeRunPhaseFailed)
+	return cond.Status == metav1.ConditionFalse && cond.Reason == string(RecipeRunPhaseFailed)
 }
 
 func (reciperun *RecipeRun) IsSaved() bool {
 	cond := reciperun.GetCond(RecipeRunSaved)
-	return cond.Status == v1.ConditionTrue
+	return cond.Status == metav1.ConditionTrue
 }
 
 // Generate a dataset completion alert

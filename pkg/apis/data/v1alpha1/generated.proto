@@ -763,24 +763,6 @@ message DataPipeline {
   optional DataPipelineStatus status = 3;
 }
 
-// DataPipelineCondition describes the state of a wrangler at a certain point.
-message DataPipelineCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
-
-  // The reason for the condition's last transition.
-  optional string reason = 5;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 6;
-}
-
 // +kubebuilder:object:root=true
 // DataPipelineList contain the list of DataPipeline
 message DataPipelineList {
@@ -931,7 +913,7 @@ message DataPipelineRunStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataPipelineRunCondition conditions = 12;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 12;
 }
 
 // DataPipelineSpec defines the desired state of a DataPipeline
@@ -1021,7 +1003,7 @@ message DataPipelineStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataPipelineCondition conditions = 6;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 6;
 }
 
 // +kubebuilder:object:root=true
@@ -1049,24 +1031,6 @@ message DataProduct {
 
   // +optional
   optional DataProductStatus status = 3;
-}
-
-// DataProductCondition describes the state of a DataProduct at a certain point
-message DataProductCondition {
-  // Type of condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
-
-  // The reason for the condition's last transition
-  optional string reason = 5;
-
-  // A human readable message indicating details about the transition
-  optional string message = 6;
 }
 
 // +kubebuilder:object:root=true
@@ -1265,7 +1229,7 @@ message DataProductStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataProductCondition conditions = 21;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 21;
 }
 
 // +kubebuilder:object:root=true
@@ -1285,24 +1249,6 @@ message DataProductVersion {
 
   // +optional
   optional DataProductVersionStatus status = 3;
-}
-
-// DataProductVersionCondition describes the state of a DataProductVersion at a certain point
-message DataProductVersionCondition {
-  // Type of condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
-
-  // The reason for the condition's last transition.
-  optional string reason = 5;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 6;
 }
 
 // +kubebuilder:object:root=true
@@ -1363,7 +1309,7 @@ message DataProductVersionStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataProductVersionCondition conditions = 5;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
 }
 
 // +kubebuilder:object:root=true
@@ -1385,24 +1331,6 @@ message DataSource {
 
   // +optional
   optional DataSourceStatus status = 3;
-}
-
-// DataSourceCondition describes the state of a DataSource at a certain point
-message DataSourceCondition {
-  // Type of condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, or Unknown
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
-
-  // The reason for the condition's last transition.
-  optional string reason = 5;
-
-  // A human readable message indicating details about the transition
-  optional string message = 6;
 }
 
 // DataSourceList contains a list of DataSource objects
@@ -1517,7 +1445,7 @@ message DataSourceStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataSourceCondition conditions = 8;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 8;
 }
 
 // +kubebuilder:object:root=true
@@ -1541,26 +1469,6 @@ message Dataset {
 
   // +optional
   optional DatasetStatus status = 3;
-}
-
-// DatasetCondition describes the state of a dataset at a certain point
-message DatasetCondition {
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
-
-  // The reason for the condition's last transition.
-  // +kubebuilder:validation:Optional
-  optional string reason = 5;
-
-  // A human readable message indicating details about the transition.
-  // +kubebuilder:validation:Optional
-  optional string message = 6;
 }
 
 // Represent the status of a groupby
@@ -1900,7 +1808,7 @@ message DatasetStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DatasetCondition conditions = 24;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 24;
 }
 
 // DatasetTemplate is used to generate new datasets
@@ -2015,7 +1923,7 @@ message EntityStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated EntityCondition conditions = 3;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 3;
 }
 
 // ExcelNotebookSpec specifies the format of an excel file
@@ -2082,24 +1990,6 @@ message FeatureGroup {
 
   // +optional
   optional FeatureGroupStatus status = 3;
-}
-
-// FeatureGroupCondition describes the state of a deployment at a certain point.
-message FeatureGroupCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
@@ -2243,7 +2133,7 @@ message FeatureGroupStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureGroupCondition conditions = 14;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 14;
 }
 
 // +kubebuilder:object:root=true
@@ -2265,24 +2155,6 @@ message FeatureHistogram {
 
   // +optional
   optional FeatureHistogramStatus status = 3;
-}
-
-// FeatureHistogramCondition describes the state of a deployment at a certain point.
-message FeatureHistogramCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
@@ -2415,7 +2287,7 @@ message FeatureHistogramStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureHistogramCondition conditions = 12;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 12;
 }
 
 // FlatFileFormatSpec defines the format for incoming flat-files to be parsed
@@ -2768,26 +2640,6 @@ message Recipe {
   optional RecipeStatus status = 3;
 }
 
-// RecipeCondition describes the state of a dataset at a certain point.
-message RecipeCondition {
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition.
-  // +kubebuilder:validation:Optional
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  // +kubebuilder:validation:Optional
-  optional string message = 5;
-}
-
 // RecipeInputSpec specify the input for a recipe
 message RecipeInputSpec {
   // DatasetName is the name of the dataset
@@ -2859,26 +2711,6 @@ message RecipeRun {
 
   // +optional
   optional RecipeRunStatus status = 3;
-}
-
-// RecipeRunCondition describes the state of a dataset at a certain point.
-message RecipeRunCondition {
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition.
-  // +kubebuilder:validation:Optional
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  // +kubebuilder:validation:Optional
-  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
@@ -2965,7 +2797,7 @@ message RecipeRunStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated RecipeCondition conditions = 11;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 11;
 }
 
 // RecipeSpec defines the desired state of a dataset
@@ -3036,7 +2868,7 @@ message RecipeStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated RecipeCondition conditions = 7;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 7;
 }
 
 // RecipeStep defines one step in the recipe

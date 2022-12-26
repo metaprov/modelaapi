@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
@@ -24,10 +23,10 @@ import (
 //==============================================================================
 
 func (fg *FeatureGroup) AddConfiditions() {
-	fg.Status.Conditions = make([]FeatureGroupCondition, 1)
-	fg.Status.Conditions[0] = FeatureGroupCondition{
+	fg.Status.Conditions = make([]metav1.Condition, 1)
+	fg.Status.Conditions[0] = metav1.Condition{
 		Type:   FeatureGroupReady,
-		Status: v1.ConditionUnknown,
+		Status: metav1.ConditionUnknown,
 	}
 }
 
@@ -66,9 +65,9 @@ func (fg FeatureGroup) IsDeleted() bool {
 func (fg *FeatureGroup) MarkIngesting() {
 	if fg.Status.Phase != FeatureGroupPhaseIngesting {
 		fg.Status.Phase = FeatureGroupPhaseIngesting
-		fg.CreateOrUpdateCond(FeatureGroupCondition{
+		fg.CreateOrUpdateCond(metav1.Condition{
 			Type:   FeatureGroupIngested,
-			Status: v1.ConditionFalse,
+			Status: metav1.ConditionFalse,
 			Reason: "Ingesting",
 		})
 		now := metav1.Now()
@@ -78,18 +77,18 @@ func (fg *FeatureGroup) MarkIngesting() {
 
 func (fg *FeatureGroup) MarkIngested() {
 	fg.Status.Phase = FeatureGroupPhaseReady
-	fg.CreateOrUpdateCond(FeatureGroupCondition{
+	fg.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureGroupIngested,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	nextRun := fg.Spec.IngestSchedule.NextRun()
 	fg.Spec.IngestSchedule.SetNext(*nextRun)
 }
 
 func (fg *FeatureGroup) MarkIngestFailed(msg string) {
-	fg.CreateOrUpdateCond(FeatureGroupCondition{
+	fg.CreateOrUpdateCond(metav1.Condition{
 		Type:    FeatureGroupIngested,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(FeatureGroupIngested),
 		Message: "Failed to ingest." + msg,
 	})
@@ -104,9 +103,9 @@ func (fg *FeatureGroup) MarkIngestFailed(msg string) {
 func (fg *FeatureGroup) MarkSyncing() {
 	if fg.Status.Phase != FeatureGroupPhaseSyncing {
 		fg.Status.Phase = FeatureGroupPhaseSyncing
-		fg.CreateOrUpdateCond(FeatureGroupCondition{
+		fg.CreateOrUpdateCond(metav1.Condition{
 			Type:   FeatureGroupSynced,
-			Status: v1.ConditionFalse,
+			Status: metav1.ConditionFalse,
 			Reason: "Syncing",
 		})
 		now := metav1.Now()
@@ -117,18 +116,18 @@ func (fg *FeatureGroup) MarkSyncing() {
 
 func (fg *FeatureGroup) MarkSynced() {
 	fg.Status.Phase = FeatureGroupPhaseReady
-	fg.CreateOrUpdateCond(FeatureGroupCondition{
+	fg.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureGroupSynced,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	nextRun := fg.Spec.Materialization.Schedule.NextRun()
 	fg.Spec.SyncSchedule.SetNext(*nextRun)
 }
 
 func (fg *FeatureGroup) MarkSyncFailed(msg string) {
-	fg.CreateOrUpdateCond(FeatureGroupCondition{
+	fg.CreateOrUpdateCond(metav1.Condition{
 		Type:    FeatureGroupSynced,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(FeatureGroupSynced),
 		Message: "Failed to sync." + msg,
 	})
@@ -137,7 +136,7 @@ func (fg *FeatureGroup) MarkSyncFailed(msg string) {
 }
 
 func (fg *FeatureGroup) IsSynced() bool {
-	return fg.GetCond(FeatureGroupSynced).Status == v1.ConditionTrue
+	return fg.GetCond(FeatureGroupSynced).Status == metav1.ConditionTrue
 }
 
 func (fg *FeatureGroup) IsSynching() bool {
@@ -173,11 +172,11 @@ func (fg *FeatureGroup) SetChanged() {
 
 // Merge or update condition
 // Merge or update condition
-func (fg *FeatureGroup) CreateOrUpdateCond(cond FeatureGroupCondition) {
+func (fg *FeatureGroup) CreateOrUpdateCond(cond metav1.Condition) {
 	i := fg.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		fg.Status.Conditions = append(fg.Status.Conditions, cond)
 		return
 	}
@@ -185,14 +184,14 @@ func (fg *FeatureGroup) CreateOrUpdateCond(cond FeatureGroupCondition) {
 	current := fg.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	fg.Status.Conditions[i] = current
 }
 
-func (fg FeatureGroup) GetCondIdx(t FeatureGroupConditionType) int {
+func (fg FeatureGroup) GetCondIdx(t string) int {
 	for i, v := range fg.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -201,16 +200,16 @@ func (fg FeatureGroup) GetCondIdx(t FeatureGroupConditionType) int {
 	return -1
 }
 
-func (fg FeatureGroup) GetCond(t FeatureGroupConditionType) FeatureGroupCondition {
+func (fg FeatureGroup) GetCond(t string) metav1.Condition {
 	for _, v := range fg.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return FeatureGroupCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -218,7 +217,7 @@ func (fg FeatureGroup) GetCond(t FeatureGroupConditionType) FeatureGroupConditio
 }
 
 func (fg FeatureGroup) IsReady() bool {
-	return fg.GetCond(FeatureGroupReady).Status == v1.ConditionTrue
+	return fg.GetCond(FeatureGroupReady).Status == metav1.ConditionTrue
 }
 
 func (fg FeatureGroup) Key() string {
@@ -236,16 +235,16 @@ func ParseFeatureGroupYaml(content []byte) (*FeatureGroup, error) {
 
 func (fg *FeatureGroup) MarkReady() {
 	// update the lab state to ready
-	fg.CreateOrUpdateCond(FeatureGroupCondition{
+	fg.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureGroupReady,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (fg *FeatureGroup) MarkArchived() {
-	fg.CreateOrUpdateCond(FeatureGroupCondition{
+	fg.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureGroupSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
@@ -254,7 +253,7 @@ func (fg *FeatureGroup) PrefixLiveURI(path string) string {
 }
 
 func (fg FeatureGroup) Archived() bool {
-	return fg.GetCond(FeatureGroupSaved).Status == v1.ConditionTrue
+	return fg.GetCond(FeatureGroupSaved).Status == metav1.ConditionTrue
 }
 
 func (fg FeatureGroup) TenantName() string {

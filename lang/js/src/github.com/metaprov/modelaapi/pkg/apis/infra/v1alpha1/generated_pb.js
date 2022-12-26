@@ -35,14 +35,12 @@ var k8s_io_apimachinery_pkg_runtime_schema_generated_pb = require('../../../../.
 goog.object.extend(proto, k8s_io_apimachinery_pkg_runtime_schema_generated_pb);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.APITokenSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountList', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AirTableSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AirWriteSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertList', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus', null, global);
@@ -55,7 +53,6 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.A
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheHiveSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheSparkSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentList', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus', null, global);
@@ -69,7 +66,6 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.B
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ClickHouseSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CockroachDBSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionList', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus', null, global);
@@ -101,12 +97,10 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.I
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.KafkaSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabList', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseList', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus', null, global);
@@ -116,7 +110,6 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.M
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.MattermostSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.MinioSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemList', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemStatus', null, global);
@@ -126,7 +119,6 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.N
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierList', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus', null, global);
@@ -149,7 +141,6 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.S
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SapCRMSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Scope', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteList', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus', null, global);
@@ -160,7 +151,6 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.S
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SqliteSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SybaseSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantList', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus', null, global);
@@ -174,7 +164,6 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.V
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VictorOpSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VictoriaMetricsSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketList', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus', null, global);
@@ -221,27 +210,6 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -368,27 +336,6 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -641,27 +588,6 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -935,27 +861,6 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1618,27 +1523,6 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabList = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabList.repeatedFields_, null);
 };
@@ -1712,27 +1596,6 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1933,27 +1796,6 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemList = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemList.repeatedFields_, null);
 };
@@ -2132,27 +1974,6 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2626,27 +2447,6 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteList = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteList.repeatedFields_, null);
 };
@@ -2846,27 +2646,6 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -3140,27 +2919,6 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -3776,349 +3534,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account.prototype.cl
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account.prototype.hasStatus = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    lasttransitiontime: (f = msg.getLasttransitiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    reason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    message: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStatus(value);
-      break;
-    case 3:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLasttransitiontime(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setReason(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMessage(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLasttransitiontime();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string type = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.setType = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.clearType = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.hasType = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string status = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.getLasttransitiontime = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.setLasttransitiontime = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.clearLasttransitiontime = function() {
-  return this.setLasttransitiontime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.hasLasttransitiontime = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string reason = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.getReason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.setReason = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.clearReason = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.hasReason = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string message = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.getMessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.setMessage = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.clearMessage = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.prototype.hasMessage = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -5270,7 +4685,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.toObje
     datasetscount: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     memberscount: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.toObject, includeInstance)
+    k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -5349,8 +4764,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.deseri
       msg.setMemberscount(value);
       break;
     case 11:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.deserializeBinaryFromReader);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.deserializeBinaryFromReader);
       msg.addConditions(value);
       break;
     default:
@@ -5458,7 +4873,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.serial
     writer.writeRepeatedMessage(
       11,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition.serializeBinaryToWriter
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.serializeBinaryToWriter
     );
   }
 };
@@ -5826,17 +5241,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
 
 
 /**
- * repeated AccountCondition conditions = 11;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition>}
+ * repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 11;
+ * @return {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.getConditionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition, 11));
+  return /** @type{!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, 11));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition>} value
+ * @param {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.setConditionsList = function(value) {
@@ -5845,12 +5260,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.protot
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition=} opt_value
+ * @param {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition}
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition, opt_index);
 };
 
 
@@ -6893,349 +6308,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert.prototype.hasS
 
 
 
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    lasttransitiontime: (f = msg.getLasttransitiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    reason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    message: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStatus(value);
-      break;
-    case 3:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLasttransitiontime(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setReason(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMessage(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLasttransitiontime();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string type = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.setType = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.clearType = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.hasType = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string status = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.getLasttransitiontime = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.setLasttransitiontime = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.clearLasttransitiontime = function() {
-  return this.setLasttransitiontime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.hasLasttransitiontime = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string reason = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.getReason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.setReason = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.clearReason = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.hasReason = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string message = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.getMessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.setMessage = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.clearMessage = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.prototype.hasMessage = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
@@ -8104,14 +7176,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    phase: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     firedat: (f = msg.getFiredat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     failurereason: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.toObject, includeInstance)
+    k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -8148,10 +7219,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.deserial
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPhase(value);
-      break;
     case 2:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
@@ -8175,8 +7242,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.deserial
       msg.setFailuremessage(value);
       break;
     case 7:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.deserializeBinaryFromReader);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.deserializeBinaryFromReader);
       msg.addConditions(value);
       break;
     default:
@@ -8208,13 +7275,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getFiredat();
   if (f != null) {
     writer.writeMessage(
@@ -8257,45 +7317,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.serializ
     writer.writeRepeatedMessage(
       7,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition.serializeBinaryToWriter
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.serializeBinaryToWriter
     );
   }
-};
-
-
-/**
- * optional string phase = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.getPhase = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.setPhase = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.clearPhase = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.hasPhase = function() {
-  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -8482,17 +7506,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
 
 
 /**
- * repeated AlertCondition conditions = 7;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition>}
+ * repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 7;
+ * @return {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.getConditionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition, 7));
+  return /** @type{!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, 7));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition>} value
+ * @param {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.setConditionsList = function(value) {
@@ -8501,12 +7525,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition=} opt_value
+ * @param {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition}
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition, opt_index);
 };
 
 
@@ -12069,349 +11093,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment.prototype
 
 
 
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    lasttransitiontime: (f = msg.getLasttransitiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    reason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    message: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStatus(value);
-      break;
-    case 3:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLasttransitiontime(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setReason(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMessage(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLasttransitiontime();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string type = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.setType = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.clearType = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.hasType = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string status = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.getLasttransitiontime = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.setLasttransitiontime = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.clearLasttransitiontime = function() {
-  return this.setLasttransitiontime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.hasLasttransitiontime = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string reason = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.getReason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.setReason = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.clearReason = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.hasReason = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string message = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.getMessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.setMessage = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.clearMessage = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.prototype.hasMessage = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
@@ -13060,7 +11741,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.toO
     failurereason: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.toObject, includeInstance)
+    k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -13115,8 +11796,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.des
       msg.setFailuremessage(value);
       break;
     case 5:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.deserializeBinaryFromReader);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.deserializeBinaryFromReader);
       msg.addConditions(value);
       break;
     default:
@@ -13182,7 +11863,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.ser
     writer.writeRepeatedMessage(
       5,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition.serializeBinaryToWriter
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.serializeBinaryToWriter
     );
   }
 };
@@ -13334,17 +12015,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
 
 
 /**
- * repeated AttachmentCondition conditions = 5;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition>}
+ * repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
+ * @return {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.getConditionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition, 5));
+  return /** @type{!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, 5));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition>} value
+ * @param {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.setConditionsList = function(value) {
@@ -13353,12 +12034,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.pro
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition=} opt_value
+ * @param {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition}
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition, opt_index);
 };
 
 
@@ -16012,349 +14693,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection.prototype.hasStatus = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    lasttransitiontime: (f = msg.getLasttransitiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    reason: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    message: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStatus(value);
-      break;
-    case 4:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLasttransitiontime(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setReason(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMessage(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLasttransitiontime();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
-  if (f != null) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string type = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.setType = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.clearType = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.hasType = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string status = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.getLasttransitiontime = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.setLasttransitiontime = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.clearLasttransitiontime = function() {
-  return this.setLasttransitiontime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.hasLasttransitiontime = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string reason = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.getReason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.setReason = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.clearReason = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.hasReason = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional string message = 6;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.getMessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.setMessage = function(value) {
-  return jspb.Message.setField(this, 6, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.clearMessage = function() {
-  return jspb.Message.setField(this, 6, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.prototype.hasMessage = function() {
-  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -20784,7 +19122,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.toO
     failurereason: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.toObject, includeInstance)
+    k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -20839,8 +19177,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.des
       msg.setFailuremessage(value);
       break;
     case 5:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.deserializeBinaryFromReader);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.deserializeBinaryFromReader);
       msg.addConditions(value);
       break;
     default:
@@ -20906,7 +19244,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.ser
     writer.writeRepeatedMessage(
       5,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition.serializeBinaryToWriter
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.serializeBinaryToWriter
     );
   }
 };
@@ -21058,17 +19396,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.pro
 
 
 /**
- * repeated ConnectionCondition conditions = 5;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition>}
+ * repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
+ * @return {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.getConditionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition, 5));
+  return /** @type{!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, 5));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition>} value
+ * @param {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.setConditionsList = function(value) {
@@ -21077,12 +19415,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.pro
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition=} opt_value
+ * @param {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition}
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition, opt_index);
 };
 
 
@@ -29851,349 +28189,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab.prototype.hasSta
 
 
 
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    lasttransitiontime: (f = msg.getLasttransitiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    reason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    message: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStatus(value);
-      break;
-    case 3:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLasttransitiontime(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setReason(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMessage(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLasttransitiontime();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string type = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.setType = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.clearType = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.hasType = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string status = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.getLasttransitiontime = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.setLasttransitiontime = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.clearLasttransitiontime = function() {
-  return this.setLasttransitiontime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.hasLasttransitiontime = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string reason = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.getReason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.setReason = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.clearReason = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.hasReason = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string message = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.getMessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.setMessage = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.clearMessage = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.prototype.hasMessage = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
@@ -30795,7 +28790,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.toObject =
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.toObject, includeInstance)
+    k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -30842,8 +28837,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.deserializ
       msg.setUpdatedat(value);
       break;
     case 3:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.deserializeBinaryFromReader);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.deserializeBinaryFromReader);
       msg.addConditions(value);
       break;
     default:
@@ -30895,7 +28890,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.serializeB
     writer.writeRepeatedMessage(
       3,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition.serializeBinaryToWriter
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.serializeBinaryToWriter
     );
   }
 };
@@ -30975,17 +28970,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.
 
 
 /**
- * repeated LabCondition conditions = 3;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition>}
+ * repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 3;
+ * @return {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.getConditionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition, 3));
+  return /** @type{!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, 3));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition>} value
+ * @param {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.setConditionsList = function(value) {
@@ -30994,12 +28989,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition=} opt_value
+ * @param {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition}
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition, opt_index);
 };
 
 
@@ -31262,349 +29257,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License.prototype.cl
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License.prototype.hasStatus = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    lasttransitiontime: (f = msg.getLasttransitiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    reason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    message: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStatus(value);
-      break;
-    case 3:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLasttransitiontime(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setReason(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMessage(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLasttransitiontime();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string type = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.setType = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.clearType = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.hasType = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string status = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.getLasttransitiontime = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.setLasttransitiontime = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.clearLasttransitiontime = function() {
-  return this.setLasttransitiontime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.hasLasttransitiontime = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string reason = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.getReason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.setReason = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.clearReason = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.hasReason = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string message = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.getMessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.setMessage = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.clearMessage = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.prototype.hasMessage = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -32791,7 +30443,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.toObje
     failurereason: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.toObject, includeInstance)
+    k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -32846,8 +30498,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.deseri
       msg.setFailuremessage(value);
       break;
     case 5:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.deserializeBinaryFromReader);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.deserializeBinaryFromReader);
       msg.addConditions(value);
       break;
     default:
@@ -32913,7 +30565,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.serial
     writer.writeRepeatedMessage(
       5,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition.serializeBinaryToWriter
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.serializeBinaryToWriter
     );
   }
 };
@@ -33065,17 +30717,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.protot
 
 
 /**
- * repeated LicenseCondition conditions = 5;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition>}
+ * repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
+ * @return {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.getConditionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition, 5));
+  return /** @type{!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, 5));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition>} value
+ * @param {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.setConditionsList = function(value) {
@@ -33084,12 +30736,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.protot
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition=} opt_value
+ * @param {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition}
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition, opt_index);
 };
 
 
@@ -34576,349 +32228,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem.prototy
 
 
 
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    lasttransitiontime: (f = msg.getLasttransitiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    reason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    message: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStatus(value);
-      break;
-    case 3:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLasttransitiontime(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setReason(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMessage(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLasttransitiontime();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string type = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.setType = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.clearType = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.hasType = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string status = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.getLasttransitiontime = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.setLasttransitiontime = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.clearLasttransitiontime = function() {
-  return this.setLasttransitiontime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.hasLasttransitiontime = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string reason = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.getReason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.setReason = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.clearReason = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.hasReason = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string message = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.getMessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.setMessage = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.clearMessage = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.prototype.hasMessage = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
@@ -35471,7 +32780,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemStatus.t
     failuremessage: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     lastrelease: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.toObject, includeInstance)
+    k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -35525,8 +32834,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemStatus.d
       msg.setLastrelease(value);
       break;
     case 5:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.deserializeBinaryFromReader);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.deserializeBinaryFromReader);
       msg.addConditions(value);
       break;
     default:
@@ -35591,7 +32900,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemStatus.s
     writer.writeRepeatedMessage(
       5,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition.serializeBinaryToWriter
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.serializeBinaryToWriter
     );
   }
 };
@@ -35742,17 +33051,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemStatus.p
 
 
 /**
- * repeated ModelaSystemCondition conditions = 5;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition>}
+ * repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
+ * @return {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemStatus.prototype.getConditionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition, 5));
+  return /** @type{!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, 5));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition>} value
+ * @param {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemStatus.prototype.setConditionsList = function(value) {
@@ -35761,12 +33070,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemStatus.p
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition=} opt_value
+ * @param {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition}
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition, opt_index);
 };
 
 
@@ -37838,349 +35147,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier.prototype.h
 
 
 
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    lasttransitiontime: (f = msg.getLasttransitiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    reason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    message: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStatus(value);
-      break;
-    case 3:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLasttransitiontime(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setReason(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMessage(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLasttransitiontime();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string type = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.setType = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.clearType = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.hasType = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string status = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.getLasttransitiontime = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.setLasttransitiontime = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.clearLasttransitiontime = function() {
-  return this.setLasttransitiontime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.hasLasttransitiontime = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string reason = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.getReason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.setReason = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.clearReason = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.hasReason = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string message = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.getMessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.setMessage = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.clearMessage = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.prototype.hasMessage = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
@@ -38790,7 +35756,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.toObj
     channelsstatusList: jspb.Message.toObjectList(msg.getChannelsstatusList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotificationChannelStatus.toObject, includeInstance),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.toObject, includeInstance)
+    k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -38842,8 +35808,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.deser
       msg.addChannelsstatus(value);
       break;
     case 5:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.deserializeBinaryFromReader);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.deserializeBinaryFromReader);
       msg.addConditions(value);
       break;
     default:
@@ -38903,7 +35869,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.seria
     writer.writeRepeatedMessage(
       5,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition.serializeBinaryToWriter
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.serializeBinaryToWriter
     );
   }
 };
@@ -39021,17 +35987,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
 
 
 /**
- * repeated NotifierCondition conditions = 5;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition>}
+ * repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
+ * @return {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.getConditionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition, 5));
+  return /** @type{!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, 5));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition>} value
+ * @param {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.setConditionsList = function(value) {
@@ -39040,12 +36006,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition=} opt_value
+ * @param {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition}
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition, opt_index);
 };
 
 
@@ -45124,349 +42090,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite.prototyp
 
 
 
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    lasttransitiontime: (f = msg.getLasttransitiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    reason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    message: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStatus(value);
-      break;
-    case 3:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLasttransitiontime(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setReason(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMessage(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLasttransitiontime();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string type = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.setType = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.clearType = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.hasType = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string status = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.getLasttransitiontime = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.setLasttransitiontime = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.clearLasttransitiontime = function() {
-  return this.setLasttransitiontime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.hasLasttransitiontime = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string reason = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.getReason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.setReason = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.clearReason = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.hasReason = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string message = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.getMessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.setMessage = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.clearMessage = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.prototype.hasMessage = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
@@ -46176,7 +42799,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.to
     grpcingressready: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
     restingressready: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.toObject, includeInstance)
+    k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -46273,8 +42896,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.de
       msg.setRestingressready(value);
       break;
     case 15:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.deserializeBinaryFromReader);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.deserializeBinaryFromReader);
       msg.addConditions(value);
       break;
     default:
@@ -46410,7 +43033,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.se
     writer.writeRepeatedMessage(
       15,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.serializeBinaryToWriter
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.serializeBinaryToWriter
     );
   }
 };
@@ -46923,17 +43546,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
 
 
 /**
- * repeated ServingSiteCondition conditions = 15;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition>}
+ * repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 15;
+ * @return {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getConditionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition, 15));
+  return /** @type{!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, 15));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition>} value
+ * @param {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setConditionsList = function(value) {
@@ -46942,12 +43565,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition=} opt_value
+ * @param {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition}
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 15, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 15, opt_value, proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition, opt_index);
 };
 
 
@@ -49350,349 +45973,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant.prototype.has
 
 
 
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    lasttransitiontime: (f = msg.getLasttransitiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    reason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    message: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStatus(value);
-      break;
-    case 3:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLasttransitiontime(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setReason(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMessage(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLasttransitiontime();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string type = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.setType = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.clearType = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.hasType = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string status = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.getLasttransitiontime = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.setLasttransitiontime = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.clearLasttransitiontime = function() {
-  return this.setLasttransitiontime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.hasLasttransitiontime = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string reason = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.getReason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.setReason = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.clearReason = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.hasReason = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string message = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.getMessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.setMessage = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.clearMessage = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.prototype.hasMessage = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
@@ -50599,7 +46879,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.toObjec
     offline: (f = msg.getOffline()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus.toObject(includeInstance, f),
     metrics: (f = msg.getMetrics()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FeatureStoreStatus.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.toObject, includeInstance)
+    k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -50669,8 +46949,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.deseria
       msg.setMetrics(value);
       break;
     case 8:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.deserializeBinaryFromReader);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.deserializeBinaryFromReader);
       msg.addConditions(value);
       break;
     default:
@@ -50760,7 +47040,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.seriali
     writer.writeRepeatedMessage(
       8,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition.serializeBinaryToWriter
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.serializeBinaryToWriter
     );
   }
 };
@@ -51023,17 +47303,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototy
 
 
 /**
- * repeated TenantCondition conditions = 8;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition>}
+ * repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 8;
+ * @return {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.getConditionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition, 8));
+  return /** @type{!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, 8));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition>} value
+ * @param {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.setConditionsList = function(value) {
@@ -51042,12 +47322,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototy
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition=} opt_value
+ * @param {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition}
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition, opt_index);
 };
 
 
@@ -53978,349 +50258,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket.protot
 
 
 
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    lasttransitiontime: (f = msg.getLasttransitiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    reason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    message: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStatus(value);
-      break;
-    case 3:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLasttransitiontime(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setReason(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMessage(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLasttransitiontime();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string type = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.setType = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.clearType = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.hasType = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string status = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.getLasttransitiontime = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.setLasttransitiontime = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.clearLasttransitiontime = function() {
-  return this.setLasttransitiontime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.hasLasttransitiontime = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string reason = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.getReason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.setReason = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.clearReason = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.hasReason = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string message = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.getMessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.setMessage = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.clearMessage = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.prototype.hasMessage = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
@@ -55017,7 +50954,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
     failurereason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.toObject, includeInstance)
+    k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -55072,8 +51009,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
       msg.setFailuremessage(value);
       break;
     case 6:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.deserializeBinaryFromReader);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.deserializeBinaryFromReader);
       msg.addConditions(value);
       break;
     default:
@@ -55139,7 +51076,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
     writer.writeRepeatedMessage(
       6,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.serializeBinaryToWriter
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.serializeBinaryToWriter
     );
   }
 };
@@ -55291,17 +51228,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
 
 
 /**
- * repeated VirtualBucketCondition conditions = 6;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition>}
+ * repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 6;
+ * @return {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.getConditionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition, 6));
+  return /** @type{!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, 6));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition>} value
+ * @param {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.setConditionsList = function(value) {
@@ -55310,12 +51247,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition=} opt_value
+ * @param {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition}
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition, opt_index);
 };
 
 

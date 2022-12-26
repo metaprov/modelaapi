@@ -60,67 +60,54 @@ type ModelConditionType string
 // / Model
 const (
 	// ModelInitialized states that the Model is populated with an algorithm and hyper-parameters
-	ModelInitialized ModelConditionType = "Initialized"
+	ModelInitialized = "Initialized"
+
 	// ModelTrained states that the Model was trained on a training dataset, and validated against a validation dataset
-	ModelTrained ModelConditionType = "Trained"
+	ModelTrained = "Trained"
 	// ModelTested states that the Model was tested against the test set.
-	ModelTested ModelConditionType = "Tested"
+	ModelTested = "Tested"
 	// ModelTested states that the Model was tuned,
-	ModelTuned ModelConditionType = "Tuned"
+	ModelTuned = "Tuned"
 	// ModelUnitTested states that the Model was unit tested
-	ModelUnitTested ModelConditionType = "UnitTested"
+	ModelUnitTested = "UnitTested"
 	// ModelUnitTested states that the Model was trained on the training dataset, and tested against the testing dataset
-	ModelFeedbackTested ModelConditionType = "FeedbackTested"
+	ModelFeedbackTested = "FeedbackTested"
 	// ModelReported states that a Report for the Model was generated and uploaded to a bucket
-	ModelReported ModelConditionType = "Reported"
+	ModelReported = "Reported"
 	// ModelPackaged states that the Model was baked into a Docker image
-	ModelPackaged ModelConditionType = "Packaged"
+	ModelPackaged = "Packaged"
 	// ModelPublished states the the Model was baked into a Docker image and published to a Docker image repository
-	ModelPublished ModelConditionType = "Published"
+	ModelPublished = "Published"
 	// ModelProfiled states that the Model was profiled
-	ModelProfiled ModelConditionType = "Profiled"
+	ModelProfiled = "Profiled"
 	// ModelReady states that the Model is ready for deployment
-	ModelReady ModelConditionType = "Ready"
+	ModelReady = "Ready"
 	// ModelArchived states that the Model artifacts were archived to a bucket
-	ModelSaved ModelConditionType = "Saved"
+	ModelSaved = "Saved"
 	// ModelArchived states that the Model artifacts were archived to a bucket
-	ModelArchived ModelConditionType = "Archived"
+	ModelArchived = "Archived"
 	// ModelExplained states that SHAP values were computed for the Model and diagrams were generated with them
-	ModelExplained ModelConditionType = "Explained"
+	ModelExplained = "Explained"
 	// ModelAborted states that training was aborted
-	ModelAborted ModelConditionType = "Aborted"
+	ModelAborted = "Aborted"
 	// ModelPaused states that training was paused
-	ModelPaused ModelConditionType = "Paused"
+	ModelPaused = "Paused"
 
-	ModelForecasted ModelConditionType = "Forecasted"
+	ModelForecasted = "Forecasted"
 	// ModelLive states that the Model is active and serving predictions
-	ModelLive ModelConditionType = "Live"
+	ModelLive = "Live"
 	// Model Shadow indicate the the model was promoted to shadow mode.
-	ModelShadow ModelConditionType = "Shadow"
+	ModelShadow = "Shadow"
 	// The model is in maintaince and cannot serve traffic.
-	ModelMaintenance ModelConditionType = "Maintenance"
+	ModelMaintenance = "Maintenance"
 
-	ModelTrainedDriftDetector ModelConditionType = "TrainedDriftDetector"
+	ModelTrainedDriftDetector = "TrainedDriftDetector"
 
-	ModelPruned ModelConditionType = "Pruned" // If the model was pruned by the optimizer
+	ModelPruned = "Pruned" // If the model was pruned by the optimizer
 
-	ModelMerged ModelConditionType = "Merged" // If the model was pruned by the optimizer
+	ModelMerged = "Merged" // If the model was pruned by the optimizer
 
 )
-
-// ModelCondition describes the state of a Model at a certain point
-type ModelCondition struct {
-	// Type of Model condition
-	Type ModelConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=ModelConditionType"`
-	// Status of the condition, one of True, False, Unknown
-	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another
-	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,4,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition
-	Reason string `json:"reason,omitempty" protobuf:"bytes,5,opt,name=reason"`
-	// A human-readable message indicating details about the transition
-	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
-}
 
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=models,singular=model,shortName=md,categories={training,modela,all}
@@ -645,7 +632,7 @@ type ModelStatus struct {
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,80,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,80,rep,name=conditions"`
 }
 
 // Holds the information about the execution environment.

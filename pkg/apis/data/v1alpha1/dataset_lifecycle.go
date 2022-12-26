@@ -39,11 +39,11 @@ func (dataset *Dataset) RemoveFinalizer()  { util.RemoveFin(&dataset.ObjectMeta,
 //==============================================================================
 
 // Merge or update condition
-func (dataset *Dataset) CreateOrUpdateCond(cond DatasetCondition) {
+func (dataset *Dataset) CreateOrUpdateCond(cond metav1.Condition) {
 	i := dataset.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		dataset.Status.Conditions = append(dataset.Status.Conditions, cond)
 		return
 	}
@@ -51,14 +51,14 @@ func (dataset *Dataset) CreateOrUpdateCond(cond DatasetCondition) {
 	current := dataset.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	dataset.Status.Conditions[i] = current
 }
 
-func (dataset Dataset) GetCondIdx(t DatasetConditionType) int {
+func (dataset Dataset) GetCondIdx(t string) int {
 	for i, v := range dataset.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -67,16 +67,16 @@ func (dataset Dataset) GetCondIdx(t DatasetConditionType) int {
 	return -1
 }
 
-func (dataset Dataset) GetCond(t DatasetConditionType) DatasetCondition {
+func (dataset Dataset) GetCond(t string) metav1.Condition {
 	for _, v := range dataset.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return DatasetCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -84,7 +84,7 @@ func (dataset Dataset) GetCond(t DatasetConditionType) DatasetCondition {
 }
 
 func (dataset Dataset) IsReady() bool {
-	return dataset.GetCond(DatasetReady).Status == v1.ConditionTrue
+	return dataset.GetCond(DatasetReady).Status == metav1.ConditionTrue
 }
 
 func (dataset Dataset) StatusString() string {
@@ -142,9 +142,9 @@ func (dataset *Dataset) UpdatePhaseFromConditions() {
 	}
 }
 
-func (dataset Dataset) IsInCond(ct DatasetConditionType) bool {
+func (dataset Dataset) IsInCond(ct string) bool {
 	current := dataset.GetCond(ct)
-	return current.Status == v1.ConditionTrue
+	return current.Status == metav1.ConditionTrue
 }
 
 func (dataset *Dataset) MarkSkewColumns() {
@@ -163,35 +163,35 @@ func (dataset Dataset) PrintConditions() {
 }
 
 func (dataset Dataset) Ingested() bool {
-	return dataset.GetCond(DatasetIngested).Status == v1.ConditionTrue
+	return dataset.GetCond(DatasetIngested).Status == metav1.ConditionTrue
 }
 
 func (dataset Dataset) UnitTested() bool {
-	return *dataset.Spec.UnitTested && dataset.GetCond(DatasetUnitTested).Status == v1.ConditionTrue
+	return *dataset.Spec.UnitTested && dataset.GetCond(DatasetUnitTested).Status == metav1.ConditionTrue
 }
 
 func (dataset Dataset) Snapshotted() bool {
-	return *dataset.Spec.Snapshotted && dataset.GetCond(DatasetSnapshotted).Status == v1.ConditionTrue
+	return *dataset.Spec.Snapshotted && dataset.GetCond(DatasetSnapshotted).Status == metav1.ConditionTrue
 }
 
 func (dataset Dataset) Profiled() bool {
-	return dataset.GetCond(DatasetProfiled).Status == v1.ConditionTrue
+	return dataset.GetCond(DatasetProfiled).Status == metav1.ConditionTrue
 }
 
 func (dataset Dataset) Reported() bool {
-	return dataset.GetCond(DatasetReported).Status == v1.ConditionTrue
+	return dataset.GetCond(DatasetReported).Status == metav1.ConditionTrue
 }
 
 func (dataset Dataset) Generated() bool {
-	return dataset.GetCond(DatasetGenerated).Status == v1.ConditionTrue
+	return dataset.GetCond(DatasetGenerated).Status == metav1.ConditionTrue
 }
 
 //------------------------------ Snapshot
 
 func (dataset *Dataset) MarkSnapshotFailed(msg string) {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:    DatasetSnapshotted,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
 		Message: "Failed to snapshot." + msg,
 	})
@@ -206,9 +206,9 @@ func (dataset *Dataset) MarkSnapshotFailed(msg string) {
 }
 
 func (dataset *Dataset) MarkSnapshotSuccess() {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetSnapshotted,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	dataset.Status.Phase = DatasetPhaseSnapshotSuccess
 	dataset.Status.Progress = 20
@@ -216,9 +216,9 @@ func (dataset *Dataset) MarkSnapshotSuccess() {
 }
 
 func (dataset *Dataset) MarkTakingSnapshot() {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetSnapshotted,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(DatasetPhaseSnapshotRunning),
 	})
 	dataset.Status.Phase = DatasetPhaseSnapshotRunning
@@ -228,7 +228,7 @@ func (dataset *Dataset) MarkTakingSnapshot() {
 //------------------------------ Group
 
 func (dataset Dataset) Grouped() bool {
-	return dataset.GetCond(DatasetGrouped).Status == v1.ConditionTrue
+	return dataset.GetCond(DatasetGrouped).Status == metav1.ConditionTrue
 }
 
 func (dataset Dataset) IndexFileKey() string {
@@ -246,9 +246,9 @@ func (dataset Dataset) TaskIndexFileKey(task string) string {
 }
 
 func (dataset *Dataset) MarkGroupFailed(msg string) {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:    DatasetGrouped,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
 		Message: "Failed to group." + msg,
 	})
@@ -263,9 +263,9 @@ func (dataset *Dataset) MarkGroupFailed(msg string) {
 }
 
 func (dataset *Dataset) MarkGroupSuccess() {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetGrouped,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	dataset.Status.Phase = DatasetPhaseGrouped
 	dataset.Status.Progress = 20
@@ -273,9 +273,9 @@ func (dataset *Dataset) MarkGroupSuccess() {
 }
 
 func (dataset *Dataset) MarkGrouping() {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetGrouped,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(DatasetPhaseGrouping),
 	})
 	dataset.Status.Phase = DatasetPhaseGrouping
@@ -285,9 +285,9 @@ func (dataset *Dataset) MarkGrouping() {
 // ----------------------------- Unit Tests --------------------
 
 func (dataset *Dataset) MarkUnitTestFailed(msg string) {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:    DatasetUnitTested,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
 		Message: "Failed to validate." + msg,
 	})
@@ -301,18 +301,18 @@ func (dataset *Dataset) MarkUnitTestFailed(msg string) {
 }
 
 func (dataset *Dataset) MarkUnitTested() {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetUnitTested,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	dataset.Status.Progress = 40
 
 }
 
 func (dataset *Dataset) MarkUnitTesting() {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetUnitTested,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(DatasetPhaseUnitTesting),
 	})
 	dataset.Status.Phase = DatasetPhaseUnitTesting
@@ -322,9 +322,9 @@ func (dataset *Dataset) MarkUnitTesting() {
 // ------------------------- injest
 
 func (dataset *Dataset) MarkIngesting() {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetIngested,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(DatasetPhaseIngestRunning),
 	})
 	dataset.Status.Phase = DatasetPhaseIngestRunning
@@ -333,9 +333,9 @@ func (dataset *Dataset) MarkIngesting() {
 }
 
 func (dataset *Dataset) MarkIngested() {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetIngested,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	dataset.Status.Phase = DatasetPhaseIngestSuccess
 	dataset.Status.Progress = 60
@@ -343,9 +343,9 @@ func (dataset *Dataset) MarkIngested() {
 }
 
 func (dataset *Dataset) MarkIngestFailed(msg string) {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:    DatasetIngested,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
 		Message: "Failed to ingest." + msg,
 	})
@@ -361,9 +361,9 @@ func (dataset *Dataset) MarkIngestFailed(msg string) {
 // -------------------- generating
 
 func (dataset *Dataset) MarkGenerting() {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetGenerated,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(DatasetPhaseGenerating),
 	})
 	dataset.Status.Phase = DatasetPhaseGenerating
@@ -372,9 +372,9 @@ func (dataset *Dataset) MarkGenerting() {
 }
 
 func (dataset *Dataset) MarkGenerated() {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetGenerated,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	dataset.Status.Phase = DatasetPhaseGenSuccess
 	dataset.Status.Progress = 70
@@ -382,9 +382,9 @@ func (dataset *Dataset) MarkGenerated() {
 }
 
 func (dataset *Dataset) MarkGeneratedFailed(msg string) {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:    DatasetGenerated,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
 		Message: "Failed to generate dataset." + msg,
 	})
@@ -400,9 +400,9 @@ func (dataset *Dataset) MarkGeneratedFailed(msg string) {
 // ------------------------- report
 
 func (dataset *Dataset) MarkReporting() {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetReported,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(DatasetPhaseReportRunning),
 	})
 	dataset.Status.Phase = DatasetPhaseReportRunning
@@ -410,18 +410,18 @@ func (dataset *Dataset) MarkReporting() {
 }
 
 func (dataset *Dataset) MarkReported() {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetReported,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	dataset.Status.Phase = DatasetPhaseReportSuccess
 	dataset.Status.Progress = 90
 }
 
 func (dataset *Dataset) MarkReportFailed(msg string) {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:    DatasetReported,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
 		Message: "Failed to report." + msg,
 	})
@@ -437,9 +437,9 @@ func (dataset *Dataset) MarkReportFailed(msg string) {
 // ----------------- profile
 
 func (dataset *Dataset) MarkProfiling() {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetProfiled,
-		Status: v1.ConditionFalse,
+		Status: metav1.ConditionFalse,
 		Reason: string(DatasetPhaseProfileRunning),
 	})
 	dataset.Status.Phase = DatasetPhaseProfileRunning
@@ -447,9 +447,9 @@ func (dataset *Dataset) MarkProfiling() {
 }
 
 func (dataset *Dataset) MarkProfiled(uri string) {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetProfiled,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	dataset.Status.ProfileURI = uri
 	dataset.Status.Phase = DatasetPhaseProfileSuccess
@@ -457,9 +457,9 @@ func (dataset *Dataset) MarkProfiled(uri string) {
 }
 
 func (dataset *Dataset) MarkProfiledFailed(msg string) {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:    DatasetProfiled,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
 		Message: "Failed to profiled." + msg,
 	})
@@ -478,9 +478,9 @@ func (r *Dataset) OpName() string {
 }
 
 func (dataset *Dataset) MarkReady() {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetReady,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 	dataset.Status.Phase = DatasetPhaseReady
 	dataset.Status.Progress = 100
@@ -493,25 +493,25 @@ func (dataset *Dataset) MarkReady() {
 // --------------------- Archive
 
 func (dataset *Dataset) MarkArchived() {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetArchived,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (dataset *Dataset) MarkSaved() {
-	dataset.CreateOrUpdateCond(DatasetCondition{
+	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (dataset Dataset) Archived() bool {
-	return dataset.GetCond(DatasetArchived).Status == v1.ConditionTrue
+	return dataset.GetCond(DatasetArchived).Status == metav1.ConditionTrue
 }
 
 func (dataset Dataset) Saved() bool {
-	return dataset.GetCond(DatasetSaved).Status == v1.ConditionTrue
+	return dataset.GetCond(DatasetSaved).Status == metav1.ConditionTrue
 }
 
 func (dataset Dataset) Deleted() bool {

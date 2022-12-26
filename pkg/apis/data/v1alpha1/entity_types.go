@@ -21,8 +21,8 @@ type EntityConditionType string
 
 // / Entity Condition
 const (
-	EntityReady EntityConditionType = "Ready"
-	EntitySaved EntityConditionType = "Saved"
+	EntityReady = "Ready"
+	EntitySaved = "Saved"
 )
 
 // EntityCondition describes the state of a deployment at a certain point.
@@ -105,5 +105,5 @@ type EntityStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []EntityCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
 }

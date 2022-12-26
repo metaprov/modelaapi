@@ -21,36 +21,19 @@ const (
 	ModelClassRunPhaseCompleted            ModelClassRunPhase = "Completed"
 )
 
-// Pipeline run condition
-type ModelClassRunConditionType string
-
 // / ModelClassRun Condition
 const (
 	// Condition to check if the training dataset is ready
-	ModelClassRunTrainingDatasetReady ModelClassRunConditionType = "TrainingDatasetReady"
+	ModelClassRunTrainingDatasetReady = "TrainingDatasetReady"
 	// Condition indicating if the current model was trained.
-	ModelClassRunModelTrained ModelClassRunConditionType = "ModelTrained"
+	ModelClassRunModelTrained = "ModelTrained"
 	// Condition to indicate if the current model was promoted
-	ModelClassRunModelPromoted ModelClassRunConditionType = "ModelPromoted"
+	ModelClassRunModelPromoted = "ModelPromoted"
 	// Condition to indicate that there is a model in production serving prediction
-	ModelClassRunModelServing ModelClassRunConditionType = "ModelServing"
+	ModelClassRunModelServing = "ModelServing"
 
-	ModelClassRunArchived ModelClassRunConditionType = "Archived"
+	ModelClassRunArchived = "Archived"
 )
-
-// ModelClassRunCondition describes the state of a ModelClassRun at a certain point.
-type ModelClassRunCondition struct {
-	// Type of  condition.
-	Type ModelClassRunConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=ModelClassRunConditionType"`
-	// Status of the condition, one of True, False, Unknown.
-	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another.
-	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,4,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition.
-	Reason string `json:"reason,omitempty" protobuf:"bytes,5,opt,name=reason"`
-	// A human readable message indicating details about the transition.
-	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
-}
 
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=modelclassruns,shortName=mcr,singular=modelclassrun,categories={train,modela,all}
@@ -170,5 +153,5 @@ type ModelClassRunStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ModelClassRunCondition `json:"conditions,omitempty" protobuf:"bytes,18,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" protobuf:"bytes,18,rep,name=conditions"`
 }

@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -68,11 +67,11 @@ func (servingsite *ServingSite) RemoveFinalizer() {
 }
 
 // Merge or update condition
-func (servingsite *ServingSite) CreateOrUpdateCond(cond ServingSiteCondition) {
+func (servingsite *ServingSite) CreateOrUpdateCond(cond metav1.Condition) {
 	i := servingsite.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		servingsite.Status.Conditions = append(servingsite.Status.Conditions, cond)
 		return
 	}
@@ -80,7 +79,7 @@ func (servingsite *ServingSite) CreateOrUpdateCond(cond ServingSiteCondition) {
 	current := servingsite.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
@@ -88,7 +87,7 @@ func (servingsite *ServingSite) CreateOrUpdateCond(cond ServingSiteCondition) {
 
 }
 
-func (servingsite ServingSite) GetCondIdx(t ServingSiteConditionType) int {
+func (servingsite ServingSite) GetCondIdx(t string) int {
 	for i, v := range servingsite.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -97,16 +96,16 @@ func (servingsite ServingSite) GetCondIdx(t ServingSiteConditionType) int {
 	return -1
 }
 
-func (servingsite ServingSite) GetCond(t ServingSiteConditionType) ServingSiteCondition {
+func (servingsite ServingSite) GetCond(t string) metav1.Condition {
 	for _, v := range servingsite.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return ServingSiteCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -114,7 +113,7 @@ func (servingsite ServingSite) GetCond(t ServingSiteConditionType) ServingSiteCo
 }
 
 func (servingsite ServingSite) IsReady() bool {
-	return servingsite.GetCond(ServingSiteReady).Status == v1.ConditionTrue
+	return servingsite.GetCond(string(ServingSiteReady)).Status == metav1.ConditionTrue
 }
 
 func (servingsite ServingSite) Key() string {
@@ -261,21 +260,21 @@ func (servingsite ServingSite) ServingSiteOps() *rbacv1.Role {
 }
 
 func (servingsite *ServingSite) MarkReady() {
-	servingsite.CreateOrUpdateCond(ServingSiteCondition{
-		Type:   ServingSiteReady,
-		Status: v1.ConditionTrue,
+	servingsite.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(ServingSiteReady),
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (servingsite *ServingSite) MarkArchived() {
-	servingsite.CreateOrUpdateCond(ServingSiteCondition{
-		Type:   ServingSiteSaved,
-		Status: v1.ConditionTrue,
+	servingsite.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(ServingSiteSaved),
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (servingsite ServingSite) Archived() bool {
-	return servingsite.GetCond(ServingSiteSaved).Status == v1.ConditionTrue
+	return servingsite.GetCond(string(ServingSiteSaved)).Status == metav1.ConditionTrue
 }
 
 func (servingsite ServingSite) JobRunnerRole() *rbacv1.Role {

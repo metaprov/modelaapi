@@ -33,33 +33,17 @@ type DatasetConditionType string
 
 // / DatasetName Condition
 const (
-	DatasetReported    DatasetConditionType = "Reported"
-	DatasetUnitTested  DatasetConditionType = "UnitTested"
-	DatasetSnapshotted DatasetConditionType = "Snapshotted"
-	DatasetProfiled    DatasetConditionType = "Profiled"
-	DatasetIngested    DatasetConditionType = "Ingested"
-	DatasetGrouped     DatasetConditionType = "Grouped"
-	DatasetGenerated   DatasetConditionType = "Generated"
-	DatasetSaved       DatasetConditionType = "Saved"
-	DatasetArchived    DatasetConditionType = "Archived"
-	DatasetReady       DatasetConditionType = "Ready"
+	DatasetReported    = "Reported"
+	DatasetUnitTested  = "UnitTested"
+	DatasetSnapshotted = "Snapshotted"
+	DatasetProfiled    = "Profiled"
+	DatasetIngested    = "Ingested"
+	DatasetGrouped     = "Grouped"
+	DatasetGenerated   = "Generated"
+	DatasetSaved       = "Saved"
+	DatasetArchived    = "Archived"
+	DatasetReady       = "Ready"
 )
-
-// DatasetCondition describes the state of a dataset at a certain point
-type DatasetCondition struct {
-	Type DatasetConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=DatasetConditionType"`
-	// Status of the condition, one of True, False, Unknown
-	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another.
-	// +kubebuilder:validation:Optional
-	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,4,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition.
-	// +kubebuilder:validation:Optional
-	Reason string `json:"reason,omitempty" protobuf:"bytes,5,opt,name=reason"`
-	// A human readable message indicating details about the transition.
-	// +kubebuilder:validation:Optional
-	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
-}
 
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=datasets,shortName=ds,singular=dataset,categories={data,modela,all}
@@ -309,7 +293,7 @@ type DatasetStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,24,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,24,rep,name=conditions"`
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The

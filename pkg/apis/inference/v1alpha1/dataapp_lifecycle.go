@@ -11,7 +11,6 @@ import (
 
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	"github.com/metaprov/modelaapi/pkg/util"
-	v1 "k8s.io/api/core/v1"
 	nwv1 "k8s.io/api/networking/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -32,11 +31,11 @@ func (dataapp *DataApp) RemoveFinalizer()  { util.RemoveFin(&dataapp.ObjectMeta,
 //==============================================================================
 
 // Merge or update condition
-func (dataapp *DataApp) CreateOrUpdateCond(cond DataAppCondition) {
+func (dataapp *DataApp) CreateOrUpdateCond(cond metav1.Condition) {
 	i := dataapp.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		dataapp.Status.Conditions = append(dataapp.Status.Conditions, cond)
 		return
 	}
@@ -44,14 +43,14 @@ func (dataapp *DataApp) CreateOrUpdateCond(cond DataAppCondition) {
 	current := dataapp.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	dataapp.Status.Conditions[i] = current
 }
 
-func (dataapp *DataApp) GetCondIdx(t DataAppConditionType) int {
+func (dataapp *DataApp) GetCondIdx(t string) int {
 	for i, v := range dataapp.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -60,16 +59,16 @@ func (dataapp *DataApp) GetCondIdx(t DataAppConditionType) int {
 	return -1
 }
 
-func (dataapp DataApp) GetCond(t DataAppConditionType) DataAppCondition {
+func (dataapp DataApp) GetCond(t string) metav1.Condition {
 	for _, v := range dataapp.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return DataAppCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -77,11 +76,11 @@ func (dataapp DataApp) GetCond(t DataAppConditionType) DataAppCondition {
 }
 
 func (dataapp DataApp) IsReady() bool {
-	return dataapp.GetCond(DataAppReady).Status == v1.ConditionTrue
+	return dataapp.GetCond(DataAppReady).Status == metav1.ConditionTrue
 }
 
 func (dataapp DataApp) IsFailed() bool {
-	return dataapp.GetCond(DataAppReady).Status == v1.ConditionFalse &&
+	return dataapp.GetCond(DataAppReady).Status == metav1.ConditionFalse &&
 		dataapp.GetCond(DataAppReady).Reason == "Failed"
 }
 
@@ -97,9 +96,9 @@ func (dataapp *DataApp) Populate(name string) {
 	}
 }
 
-func (dataapp *DataApp) IsInCond(ct DataAppConditionType) bool {
+func (dataapp *DataApp) IsInCond(ct string) bool {
 	current := dataapp.GetCond(ct)
-	return current.Status == v1.ConditionTrue
+	return current.Status == metav1.ConditionTrue
 }
 
 func (dataapp *DataApp) PrintConditions() {
@@ -109,9 +108,9 @@ func (dataapp *DataApp) PrintConditions() {
 }
 
 func (dataapp *DataApp) MarkReady() {
-	dataapp.CreateOrUpdateCond(DataAppCondition{
+	dataapp.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataAppReady,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
@@ -120,14 +119,14 @@ func (dataapp DataApp) Deleted() bool {
 }
 
 func (dataapp *DataApp) MarkSaved() {
-	dataapp.CreateOrUpdateCond(DataAppCondition{
+	dataapp.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataAppSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (dataapp DataApp) IsSaved() bool {
-	return dataapp.GetCond(DataAppSaved).Status == v1.ConditionTrue
+	return dataapp.GetCond(DataAppSaved).Status == metav1.ConditionTrue
 }
 
 func (dataapp DataApp) ConstructGrpcRule(fqdn string, serviceName string) *nwv1.IngressRule {

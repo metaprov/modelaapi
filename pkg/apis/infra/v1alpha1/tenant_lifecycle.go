@@ -11,7 +11,6 @@ import (
 
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
 	"github.com/metaprov/modelaapi/pkg/util"
-	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
@@ -39,11 +38,11 @@ func (tenant Tenant) ManifestURI() string {
 }
 
 // Merge or update condition
-func (tenant *Tenant) CreateOrUpdateCond(cond TenantCondition) {
+func (tenant *Tenant) CreateOrUpdateCond(cond metav1.Condition) {
 	i := tenant.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		tenant.Status.Conditions = append(tenant.Status.Conditions, cond)
 		return
 	}
@@ -51,32 +50,32 @@ func (tenant *Tenant) CreateOrUpdateCond(cond TenantCondition) {
 	current := tenant.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	tenant.Status.Conditions[i] = current
 }
 
-func (tenant Tenant) GetCondIdx(t TenantConditionType) int {
+func (tenant Tenant) GetCondIdx(t string) int {
 	for i, v := range tenant.Status.Conditions {
-		if v.Type == t {
+		if v.Type == string(t) {
 			return i
 		}
 	}
 	return -1
 }
 
-func (tenant Tenant) GetCond(t TenantConditionType) TenantCondition {
+func (tenant Tenant) GetCond(t string) metav1.Condition {
 	for _, v := range tenant.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return TenantCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
@@ -84,7 +83,7 @@ func (tenant Tenant) GetCond(t TenantConditionType) TenantCondition {
 }
 
 func (tenant Tenant) IsReady() bool {
-	return tenant.GetCond(TenantReady).Status == v1.ConditionTrue
+	return tenant.GetCond(string(TenantReady)).Status == metav1.ConditionTrue
 }
 
 func (tenant Tenant) Key() string {
@@ -123,21 +122,21 @@ func (tenant *Tenant) Populate(name string) {
 }
 
 func (tenant *Tenant) MarkReady() {
-	tenant.CreateOrUpdateCond(TenantCondition{
-		Type:   TenantReady,
-		Status: v1.ConditionTrue,
+	tenant.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(TenantReady),
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (tenant *Tenant) MarkArchived() {
-	tenant.CreateOrUpdateCond(TenantCondition{
-		Type:   TenantSaved,
-		Status: v1.ConditionTrue,
+	tenant.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(TenantSaved),
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (tenant Tenant) Archived() bool {
-	return tenant.GetCond(TenantSaved).Status == v1.ConditionTrue
+	return tenant.GetCond(string(TenantSaved)).Status == metav1.ConditionTrue
 }
 
 func (tenant Tenant) GetRolesForAccount(account *Account) []string {

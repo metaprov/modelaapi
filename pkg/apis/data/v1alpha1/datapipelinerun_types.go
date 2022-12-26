@@ -27,8 +27,8 @@ type DataPipelineRunConditionType string
 
 // / DataPipelineRun Condition
 const (
-	DataPipelineRunCompleted DataPipelineRunConditionType = "Completed"
-	DataPipelineRunSaved     DataPipelineRunConditionType = "Saved"
+	DataPipelineRunCompleted = "Completed"
+	DataPipelineRunSaved     = "Saved"
 )
 
 // DataPipelineRunCondition describes the state of a data processor run at a certain point.
@@ -154,5 +154,5 @@ type DataPipelineRunStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DataPipelineRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
 }

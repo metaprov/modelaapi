@@ -14,31 +14,12 @@ type ModelClassConditionType string
 // / ModelClass Condition
 const (
 	// ModelClassSaved states that the ModelClass has been archived in a database
-	ModelClassSaved ModelClassConditionType = "Saved"
+	ModelClassSaved = "Saved"
 	// ModelClassDrifted states that the latest model has drifted
-	ModelClassModelDrifted ModelClassConditionType = "ModelDrifted"
+	ModelClassModelDrifted = "ModelDrifted"
 	// ModelClassSaved states that the ModelClass has been archived in a database
-	ModelClassReady ModelClassConditionType = "Ready"
+	ModelClassReady = "Ready"
 )
-
-// ModelClassCondition describes the state of a ModelClass at a certain point
-type ModelClassCondition struct {
-	// Type of ModelClass condition
-	// +kubebuilder:validation:Optional
-	Type ModelClassConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=ModelClassConditionType"`
-	// Status of the condition, one of True, False, Unknown
-	// +kubebuilder:validation:Optional
-	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another
-	// +kubebuilder:validation:Optional
-	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,4,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition
-	// +kubebuilder:validation:Optional
-	Reason string `json:"reason,omitempty" protobuf:"bytes,5,opt,name=reason"`
-	// A human-readable message indicating details about the transition
-	// +kubebuilder:validation:Optional
-	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
-}
 
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=modelclasses,singular=modelclass,shortName=mc,categories={training,modela}
@@ -377,5 +358,5 @@ type ModelClassStatus struct {
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelClassCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,22,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,22,rep,name=conditions"`
 }

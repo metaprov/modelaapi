@@ -41,11 +41,11 @@ func (product DataProduct) IsClassification() bool {
 //==============================================================================
 
 // Merge or update condition
-func (product *DataProduct) CreateOrUpdateCond(cond DataProductCondition) {
+func (product *DataProduct) CreateOrUpdateCond(cond metav1.Condition) {
 	i := product.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
-		cond.LastTransitionTime = &now
+		cond.LastTransitionTime = now
 		product.Status.Conditions = append(product.Status.Conditions, cond)
 		return
 	}
@@ -53,14 +53,14 @@ func (product *DataProduct) CreateOrUpdateCond(cond DataProductCondition) {
 	current := product.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
-	current.LastTransitionTime = &now
+	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
 	product.Status.Conditions[i] = current
 }
 
-func (product DataProduct) GetCondIdx(t DataProductConditionType) int {
+func (product DataProduct) GetCondIdx(t string) int {
 	for i, v := range product.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -69,23 +69,23 @@ func (product DataProduct) GetCondIdx(t DataProductConditionType) int {
 	return -1
 }
 
-func (product DataProduct) GetCond(t DataProductConditionType) DataProductCondition {
+func (product DataProduct) GetCond(t string) metav1.Condition {
 	for _, v := range product.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return DataProductCondition{
+	return metav1.Condition{
 		Type:    t,
-		Status:  v1.ConditionUnknown,
+		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
 }
 
 func (product DataProduct) IsReady() bool {
-	return product.GetCond(DataProductReady).Status == v1.ConditionTrue
+	return product.GetCond(DataProductReady).Status == metav1.ConditionTrue
 }
 
 func (product DataProduct) YamlURI() string {
@@ -221,29 +221,29 @@ func (product DataProduct) ReportConsumer() *rbacv1.Role {
 }
 
 func (product *DataProduct) MarkSaved() {
-	product.CreateOrUpdateCond(DataProductCondition{
+	product.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataProductSaved,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
 func (product *DataProduct) IsSaved() bool {
-	return product.GetCond(DataProductSaved).Status == v1.ConditionTrue
+	return product.GetCond(DataProductSaved).Status == metav1.ConditionTrue
 }
 
 func (product *DataProduct) MarkFailed(err error) {
-	product.CreateOrUpdateCond(DataProductCondition{
+	product.CreateOrUpdateCond(metav1.Condition{
 		Type:    DataProductReady,
-		Status:  v1.ConditionFalse,
+		Status:  metav1.ConditionFalse,
 		Reason:  "Failed",
 		Message: err.Error(),
 	})
 }
 
 func (product *DataProduct) MarkReady() {
-	product.CreateOrUpdateCond(DataProductCondition{
+	product.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataProductReady,
-		Status: v1.ConditionTrue,
+		Status: metav1.ConditionTrue,
 	})
 }
 
