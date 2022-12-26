@@ -7,7 +7,6 @@
 package v1alpha1
 
 import (
-	corev1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -50,11 +49,4 @@ func (notifier Notifier) validate() error {
 
 func (notifier Notifier) ValidateDelete() error {
 	return nil
-}
-
-func (notifier *Notifier) MarkReady() {
-	notifier.CreateOrUpdateCond(NotifierCondition{
-		Type:   NotifierReady,
-		Status: corev1.ConditionTrue,
-	})
 }

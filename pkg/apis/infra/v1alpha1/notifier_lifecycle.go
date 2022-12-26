@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-
 	"github.com/metaprov/modelaapi/pkg/util"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -105,6 +104,13 @@ func ParseNotifierYaml(content []byte) (*Notifier, error) {
 func (notifier *Notifier) MarkArchived() {
 	notifier.CreateOrUpdateCond(metav1.Condition{
 		Type:   string(NotifierSaved),
+		Status: metav1.ConditionTrue,
+	})
+}
+
+func (notifier *Notifier) MarkReady() {
+	notifier.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(NotifierReady),
 		Status: metav1.ConditionTrue,
 	})
 }

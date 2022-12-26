@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-
 	"github.com/metaprov/modelaapi/pkg/util"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -107,6 +106,13 @@ func ParseModelaSystemYaml(content []byte) (*ModelaSystem, error) {
 func (ms *ModelaSystem) MarkArchived() {
 	ms.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelaSystemSaved,
+		Status: metav1.ConditionTrue,
+	})
+}
+
+func (ms *ModelaSystem) MarkReady() {
+	ms.CreateOrUpdateCond(metav1.Condition{
+		Type:   ModelaSystemReady,
 		Status: metav1.ConditionTrue,
 	})
 }

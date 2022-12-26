@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"github.com/metaprov/modelaapi/pkg/apis/common"
-	corev1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -76,11 +75,4 @@ func (ms ModelaSystem) validateSpec(fldPath *field.Path) field.ErrorList {
 
 func (ms ModelaSystem) ValidateDelete() error {
 	return nil
-}
-
-func (ms *ModelaSystem) MarkReady() {
-	ms.CreateOrUpdateCond(ModelaSystemCondition{
-		Type:   ModelaSystemReady,
-		Status: corev1.ConditionTrue,
-	})
 }
