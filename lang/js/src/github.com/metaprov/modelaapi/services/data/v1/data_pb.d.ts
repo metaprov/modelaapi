@@ -3725,6 +3725,34 @@ export namespace SavePredictionRequest {
   }
 }
 
+export class CreateMetricsStoreRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateMetricsStoreRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateMetricsStoreRequest): CreateMetricsStoreRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateMetricsStoreRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateMetricsStoreRequest;
+  static deserializeBinaryFromReader(message: CreateMetricsStoreRequest, reader: jspb.BinaryReader): CreateMetricsStoreRequest;
+}
+
+export namespace CreateMetricsStoreRequest {
+  export type AsObject = {
+  }
+}
+
+export class CreateMetricsStoreResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateMetricsStoreResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateMetricsStoreResponse): CreateMetricsStoreResponse.AsObject;
+  static serializeBinaryToWriter(message: CreateMetricsStoreResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateMetricsStoreResponse;
+  static deserializeBinaryFromReader(message: CreateMetricsStoreResponse, reader: jspb.BinaryReader): CreateMetricsStoreResponse;
+}
+
+export namespace CreateMetricsStoreResponse {
+  export type AsObject = {
+  }
+}
+
 export class SaveResponse extends jspb.Message {
   getDbid(): number;
   setDbid(value: number): SaveResponse;

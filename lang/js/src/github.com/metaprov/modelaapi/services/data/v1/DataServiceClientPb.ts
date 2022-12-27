@@ -2271,5 +2271,48 @@ export class DataServiceClient {
     this.methodInfoSavePrediction);
   }
 
+  methodInfoCreateMetricsStore = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateMetricsStore',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateMetricsStoreRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateMetricsStoreResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateMetricsStoreRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateMetricsStoreResponse.deserializeBinary
+  );
+
+  createMetricsStore(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateMetricsStoreRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateMetricsStoreResponse>;
+
+  createMetricsStore(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateMetricsStoreRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateMetricsStoreResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateMetricsStoreResponse>;
+
+  createMetricsStore(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateMetricsStoreRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.CreateMetricsStoreResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateMetricsStore',
+        request,
+        metadata || {},
+        this.methodInfoCreateMetricsStore,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateMetricsStore',
+    request,
+    metadata || {},
+    this.methodInfoCreateMetricsStore);
+  }
+
 }
 

@@ -102,6 +102,7 @@ type DataServiceClient interface {
 	SaveDataSet(ctx context.Context, in *SaveDatasetRequest, opts ...grpc.CallOption) (*SaveResponse, error)
 	SaveModel(ctx context.Context, in *SaveModelRequest, opts ...grpc.CallOption) (*SaveResponse, error)
 	SavePrediction(ctx context.Context, in *SavePredictionRequest, opts ...grpc.CallOption) (*SaveResponse, error)
+	CreateMetricsStore(ctx context.Context, in *CreateMetricsStoreRequest, opts ...grpc.CallOption) (*CreateMetricsStoreResponse, error)
 }
 
 type dataServiceClient struct {
@@ -580,6 +581,15 @@ func (c *dataServiceClient) SavePrediction(ctx context.Context, in *SavePredicti
 	return out, nil
 }
 
+func (c *dataServiceClient) CreateMetricsStore(ctx context.Context, in *CreateMetricsStoreRequest, opts ...grpc.CallOption) (*CreateMetricsStoreResponse, error) {
+	out := new(CreateMetricsStoreResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateMetricsStore", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DataServiceServer is the server API for DataService service.
 // All implementations must embed UnimplementedDataServiceServer
 // for forward compatibility
@@ -664,6 +674,7 @@ type DataServiceServer interface {
 	SaveDataSet(context.Context, *SaveDatasetRequest) (*SaveResponse, error)
 	SaveModel(context.Context, *SaveModelRequest) (*SaveResponse, error)
 	SavePrediction(context.Context, *SavePredictionRequest) (*SaveResponse, error)
+	CreateMetricsStore(context.Context, *CreateMetricsStoreRequest) (*CreateMetricsStoreResponse, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -826,6 +837,9 @@ func (UnimplementedDataServiceServer) SaveModel(context.Context, *SaveModelReque
 }
 func (UnimplementedDataServiceServer) SavePrediction(context.Context, *SavePredictionRequest) (*SaveResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SavePrediction not implemented")
+}
+func (UnimplementedDataServiceServer) CreateMetricsStore(context.Context, *CreateMetricsStoreRequest) (*CreateMetricsStoreResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateMetricsStore not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -1776,6 +1790,24 @@ func _DataService_SavePrediction_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_CreateMetricsStore_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateMetricsStoreRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).CreateMetricsStore(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateMetricsStore",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).CreateMetricsStore(ctx, req.(*CreateMetricsStoreRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DataService_ServiceDesc is the grpc.ServiceDesc for DataService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1990,6 +2022,10 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SavePrediction",
 			Handler:    _DataService_SavePrediction_Handler,
+		},
+		{
+			MethodName: "CreateMetricsStore",
+			Handler:    _DataService_CreateMetricsStore_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
