@@ -19,8 +19,8 @@ type TenantConditionType string
 
 // / Tenant Condition
 const (
-	TenantReady TenantConditionType = "Ready"
-	TenantSaved TenantConditionType = "Saved"
+	TenantReady               TenantConditionType = "Ready"
+	TenantMetricDatabaseReady TenantConditionType = "MetricDatabaseReady"
 )
 
 // +kubebuilder:object:root=true

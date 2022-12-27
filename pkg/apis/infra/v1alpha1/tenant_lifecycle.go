@@ -86,6 +86,10 @@ func (tenant Tenant) IsReady() bool {
 	return tenant.GetCond(string(TenantReady)).Status == metav1.ConditionTrue
 }
 
+func (tenant Tenant) IsMetricDatabaseReady() bool {
+	return tenant.GetCond(string(TenantMetricDatabaseReady)).Status == metav1.ConditionTrue
+}
+
 func (tenant Tenant) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "tenants", tenant.Namespace, tenant.Name)
 }
@@ -128,15 +132,11 @@ func (tenant *Tenant) MarkReady() {
 	})
 }
 
-func (tenant *Tenant) MarkArchived() {
+func (tenant *Tenant) MarkDatabaseReady() {
 	tenant.CreateOrUpdateCond(metav1.Condition{
-		Type:   string(TenantSaved),
+		Type:   string(TenantMetricDatabaseReady),
 		Status: metav1.ConditionTrue,
 	})
-}
-
-func (tenant Tenant) Archived() bool {
-	return tenant.GetCond(string(TenantSaved)).Status == metav1.ConditionTrue
 }
 
 func (tenant Tenant) GetRolesForAccount(account *Account) []string {
