@@ -820,7 +820,9 @@ message SavePredictionRequest {
     map<string,bytes>                                                           dbSecret            = 10;
 }
 
-message CreateMetricsStoreRequest {}
+message CreateMetricsStoreRequest {
+    string tenant = 1;
+}
 message CreateMetricsStoreResponse {}
 
 message SaveResponse {

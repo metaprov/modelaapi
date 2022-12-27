@@ -31745,7 +31745,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    tenant: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -31782,6 +31782,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.d
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTenant(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -31811,6 +31815,31 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getTenant();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string tenant = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.getTenant = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.setTenant = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

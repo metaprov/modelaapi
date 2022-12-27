@@ -3726,6 +3726,9 @@ export namespace SavePredictionRequest {
 }
 
 export class CreateMetricsStoreRequest extends jspb.Message {
+  getTenant(): string;
+  setTenant(value: string): CreateMetricsStoreRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateMetricsStoreRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateMetricsStoreRequest): CreateMetricsStoreRequest.AsObject;
@@ -3736,6 +3739,7 @@ export class CreateMetricsStoreRequest extends jspb.Message {
 
 export namespace CreateMetricsStoreRequest {
   export type AsObject = {
+    tenant: string,
   }
 }
 
