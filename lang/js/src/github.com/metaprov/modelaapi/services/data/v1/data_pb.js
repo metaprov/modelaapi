@@ -31745,7 +31745,12 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tenant: jspb.Message.getFieldWithDefault(msg, 1, "")
+    tenant: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    storageconnection: (f = msg.getStorageconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
+    storagebucket: (f = msg.getStoragebucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
+    storagesecretMap: (f = msg.getStoragesecretMap()) ? f.toObject(includeInstance, undefined) : [],
+    dbconnection: (f = msg.getDbconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
+    dbsecretMap: (f = msg.getDbsecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -31786,6 +31791,33 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.d
       var value = /** @type {string} */ (reader.readString());
       msg.setTenant(value);
       break;
+    case 2:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
+      msg.setStorageconnection(value);
+      break;
+    case 3:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
+      msg.setStoragebucket(value);
+      break;
+    case 4:
+      var value = msg.getStoragesecretMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
+         });
+      break;
+    case 5:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
+      msg.setDbconnection(value);
+      break;
+    case 6:
+      var value = msg.getDbsecretMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
+         });
+      break;
     default:
       reader.skipField();
       break;
@@ -31822,6 +31854,38 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.s
       f
     );
   }
+  f = message.getStorageconnection();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
+    );
+  }
+  f = message.getStoragebucket();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
+    );
+  }
+  f = message.getStoragesecretMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+  }
+  f = message.getDbconnection();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
+    );
+  }
+  f = message.getDbsecretMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+  }
 };
 
 
@@ -31841,6 +31905,161 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.p
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.setTenant = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection storageConnection = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.getStorageconnection = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.setStorageconnection = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.clearStorageconnection = function() {
+  return this.setStorageconnection(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.hasStorageconnection = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket storageBucket = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.getStoragebucket = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.setStoragebucket = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.clearStoragebucket = function() {
+  return this.setStoragebucket(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.hasStoragebucket = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * map<string, bytes> storageSecret = 4;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!(string|Uint8Array)>}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.getStoragesecretMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
+      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.clearStoragesecretMap = function() {
+  this.getStoragesecretMap().clear();
+  return this;};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection dbConnection = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.getDbconnection = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.setDbconnection = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.clearDbconnection = function() {
+  return this.setDbconnection(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.hasDbconnection = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * map<string, bytes> dbSecret = 6;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!(string|Uint8Array)>}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.getDbsecretMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
+      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.CreateMetricsStoreRequest.prototype.clearDbsecretMap = function() {
+  this.getDbsecretMap().clear();
+  return this;};
 
 
 

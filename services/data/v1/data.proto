@@ -822,6 +822,11 @@ message SavePredictionRequest {
 
 message CreateMetricsStoreRequest {
     string tenant = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection   = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         storageBucket       = 3;
+    map<string,bytes>                                                           storageSecret       = 4;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection        = 5;
+    map<string,bytes>                                                           dbSecret            = 6;
 }
 message CreateMetricsStoreResponse {}
 

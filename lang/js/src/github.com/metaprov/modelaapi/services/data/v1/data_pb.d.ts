@@ -3729,6 +3729,27 @@ export class CreateMetricsStoreRequest extends jspb.Message {
   getTenant(): string;
   setTenant(value: string): CreateMetricsStoreRequest;
 
+  getStorageconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setStorageconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateMetricsStoreRequest;
+  hasStorageconnection(): boolean;
+  clearStorageconnection(): CreateMetricsStoreRequest;
+
+  getStoragebucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setStoragebucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): CreateMetricsStoreRequest;
+  hasStoragebucket(): boolean;
+  clearStoragebucket(): CreateMetricsStoreRequest;
+
+  getStoragesecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearStoragesecretMap(): CreateMetricsStoreRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateMetricsStoreRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): CreateMetricsStoreRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): CreateMetricsStoreRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateMetricsStoreRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateMetricsStoreRequest): CreateMetricsStoreRequest.AsObject;
@@ -3740,6 +3761,11 @@ export class CreateMetricsStoreRequest extends jspb.Message {
 export namespace CreateMetricsStoreRequest {
   export type AsObject = {
     tenant: string,
+    storageconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    storagebucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    storagesecretMap: Array<[string, Uint8Array | string]>,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
