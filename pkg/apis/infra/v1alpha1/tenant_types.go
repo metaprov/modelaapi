@@ -133,9 +133,6 @@ type FeatureStoreSpec struct {
 	// UpdateUpdateStrategy in case of terminal failure message
 	//+kubebuilder:validation:Optional
 	ConnectionRef v1.ObjectReference `json:"connectionRef,omitempty" protobuf:"bytes,2,opt,name=connectionRef"`
-	// For offline and metrics store, the name of the database
-	//+kubebuilder:validation:Optional
-	DatabaseName string `json:"databaseName,omitempty" protobuf:"bytes,3,opt,name=databaseName"`
 }
 
 type FeatureStoreStatus struct {

@@ -1260,10 +1260,6 @@ message FeatureStoreSpec {
   // UpdateUpdateStrategy in case of terminal failure message
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference connectionRef = 2;
-
-  // For offline and metrics store, the name of the database
-  // +kubebuilder:validation:Optional
-  optional string databaseName = 3;
 }
 
 message FeatureStoreStatus {

@@ -180,9 +180,6 @@ spec:
                         type: string
                     type: object
                     x-kubernetes-map-type: atomic
-                  databaseName:
-                    description: For offline and metrics store, the name of the database
-                    type: string
                   name:
                     description: The name of the online feature store.
                     type: string
@@ -255,9 +252,6 @@ spec:
                         type: string
                     type: object
                     x-kubernetes-map-type: atomic
-                  databaseName:
-                    description: For offline and metrics store, the name of the database
-                    type: string
                   name:
                     description: The name of the online feature store.
                     type: string
@@ -304,9 +298,6 @@ spec:
                         type: string
                     type: object
                     x-kubernetes-map-type: atomic
-                  databaseName:
-                    description: For offline and metrics store, the name of the database
-                    type: string
                   name:
                     description: The name of the online feature store.
                     type: string
