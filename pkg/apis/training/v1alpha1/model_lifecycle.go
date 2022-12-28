@@ -756,6 +756,7 @@ func (model *Model) MarkPruned(uri string) {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelPruned,
 		Status: metav1.ConditionTrue,
+		Reason: ModelPruned,
 	})
 	model.Status.Progress = 100
 	if model.Status.CompletedAt == nil {

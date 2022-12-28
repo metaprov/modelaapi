@@ -267,6 +267,7 @@ func (dataset *Dataset) MarkGroupSuccess() {
 	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetGrouped,
 		Status: metav1.ConditionTrue,
+		Reason: DatasetGrouped,
 	})
 	dataset.Status.Phase = DatasetPhaseGrouped
 	dataset.Status.Progress = 20
@@ -305,6 +306,7 @@ func (dataset *Dataset) MarkUnitTested() {
 	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetUnitTested,
 		Status: metav1.ConditionTrue,
+		Reason: DatasetUnitTested,
 	})
 	dataset.Status.Progress = 40
 
@@ -486,6 +488,7 @@ func (dataset *Dataset) MarkReady() {
 	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetReady,
 		Status: metav1.ConditionTrue,
+		Reason: DatasetReady,
 	})
 	dataset.Status.Phase = DatasetPhaseReady
 	dataset.Status.Progress = 100
