@@ -89,24 +89,15 @@ func (bucket *VirtualBucket) MarkReady() {
 	bucket.CreateOrUpdateCond(metav1.Condition{
 		Type:   VirtualBucketReady,
 		Status: metav1.ConditionTrue,
+		Reason: VirtualBucketReady,
 	})
-}
-
-func (bucket *VirtualBucket) MarkArchived() {
-	bucket.CreateOrUpdateCond(metav1.Condition{
-		Type:   VirtualBucketSaved,
-		Status: metav1.ConditionTrue,
-	})
-}
-
-func (bucket VirtualBucket) Archived() bool {
-	return bucket.GetCond(VirtualBucketSaved).Status == metav1.ConditionTrue
 }
 
 func (bucket *VirtualBucket) MarkFailed(err string) {
 	bucket.CreateOrUpdateCond(metav1.Condition{
 		Type:    VirtualBucketReady,
 		Status:  metav1.ConditionFalse,
+		Reason:  VirtualBucketReady,
 		Message: err,
 	})
 	bucket.Status.FailureMessage = util.StrPtr(err)

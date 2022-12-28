@@ -220,17 +220,6 @@ func (product DataProduct) ReportConsumer() *rbacv1.Role {
 	}
 }
 
-func (product *DataProduct) MarkSaved() {
-	product.CreateOrUpdateCond(metav1.Condition{
-		Type:   DataProductSaved,
-		Status: metav1.ConditionTrue,
-	})
-}
-
-func (product *DataProduct) IsSaved() bool {
-	return product.GetCond(DataProductSaved).Status == metav1.ConditionTrue
-}
-
 func (product *DataProduct) MarkFailed(err error) {
 	product.CreateOrUpdateCond(metav1.Condition{
 		Type:    DataProductReady,
@@ -244,6 +233,7 @@ func (product *DataProduct) MarkReady() {
 	product.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataProductReady,
 		Status: metav1.ConditionTrue,
+		Reason: DataProductReady,
 	})
 }
 

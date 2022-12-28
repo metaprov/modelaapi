@@ -261,19 +261,9 @@ func (datasource *DataSource) MarkReady() {
 	datasource.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasourceReady,
 		Status: metav1.ConditionTrue,
+		Reason: DatasourceReady,
 	})
 
-}
-
-func (datasource *DataSource) MarkSaved() {
-	datasource.CreateOrUpdateCond(metav1.Condition{
-		Type:   DatasourceSaved,
-		Status: metav1.ConditionTrue,
-	})
-}
-
-func (datasource DataSource) Saved() bool {
-	return datasource.GetCond(DatasourceSaved).Status == metav1.ConditionTrue
 }
 
 func (datasource *DataSource) HaveValidationRules() bool {

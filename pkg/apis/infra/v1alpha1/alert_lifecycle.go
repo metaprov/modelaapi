@@ -102,13 +102,6 @@ func ParseAlertYaml(content []byte) (*Alert, error) {
 	return r, nil
 }
 
-func (alert *Alert) MarkArchived() {
-	alert.CreateOrUpdateCond(metav1.Condition{
-		Type:   AlertSaved,
-		Status: metav1.ConditionTrue,
-	})
-}
-
 func (alert *Alert) MarkFailed(err string) {
 	alert.CreateOrUpdateCond(metav1.Condition{
 		Type:    AlertSent,

@@ -89,6 +89,7 @@ func (in *DataPipeline) MarkReady() {
 	in.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataPipelineReady,
 		Status: metav1.ConditionTrue,
+		Reason: DataPipelineReady,
 	})
 }
 
@@ -99,19 +100,4 @@ func (in *DataPipeline) MarkFailed(err error) {
 		Reason:  "Failed",
 		Message: err.Error(),
 	})
-}
-
-func (in *DataPipeline) MarkSaved() {
-	in.CreateOrUpdateCond(metav1.Condition{
-		Type:   DataPipelineSaved,
-		Status: metav1.ConditionTrue,
-	})
-}
-
-func (w DataPipeline) IsSaved() bool {
-	return w.GetCond(DataPipelineSaved).Status == metav1.ConditionTrue
-}
-
-func (in *DataPipeline) UpdateRunStatus(run DataPipelineRun) {
-
 }

@@ -209,6 +209,7 @@ func (dataset *Dataset) MarkSnapshotSuccess() {
 	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetSnapshotted,
 		Status: metav1.ConditionTrue,
+		Reason: DatasetSnapshotted,
 	})
 	dataset.Status.Phase = DatasetPhaseSnapshotSuccess
 	dataset.Status.Progress = 20
@@ -336,6 +337,7 @@ func (dataset *Dataset) MarkIngested() {
 	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetIngested,
 		Status: metav1.ConditionTrue,
+		Reason: DatasetIngested,
 	})
 	dataset.Status.Phase = DatasetPhaseIngestSuccess
 	dataset.Status.Progress = 60
@@ -375,6 +377,7 @@ func (dataset *Dataset) MarkGenerated() {
 	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetGenerated,
 		Status: metav1.ConditionTrue,
+		Reason: DatasetGenerated,
 	})
 	dataset.Status.Phase = DatasetPhaseGenSuccess
 	dataset.Status.Progress = 70
@@ -413,6 +416,7 @@ func (dataset *Dataset) MarkReported() {
 	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetReported,
 		Status: metav1.ConditionTrue,
+		Reason: DatasetReported,
 	})
 	dataset.Status.Phase = DatasetPhaseReportSuccess
 	dataset.Status.Progress = 90
@@ -450,6 +454,7 @@ func (dataset *Dataset) MarkProfiled(uri string) {
 	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetProfiled,
 		Status: metav1.ConditionTrue,
+		Reason: DatasetProfiled,
 	})
 	dataset.Status.ProfileURI = uri
 	dataset.Status.Phase = DatasetPhaseProfileSuccess
@@ -496,6 +501,7 @@ func (dataset *Dataset) MarkArchived() {
 	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetArchived,
 		Status: metav1.ConditionTrue,
+		Reason: DatasetArchived,
 	})
 }
 
@@ -503,6 +509,7 @@ func (dataset *Dataset) MarkSaved() {
 	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetSaved,
 		Status: metav1.ConditionTrue,
+		Reason: DatasetSaved,
 	})
 }
 

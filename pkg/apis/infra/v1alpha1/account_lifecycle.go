@@ -130,21 +130,11 @@ func (account *Account) Populate(name string) {
 	account.Default()
 }
 
-func (account *Account) MarkArchived() {
-	account.CreateOrUpdateCond(metav1.Condition{
-		Type:   string(AccountSaved),
-		Status: metav1.ConditionTrue,
-	})
-}
-
-func (account Account) Archived() bool {
-	return account.GetCond(AccountSaved).Status == metav1.ConditionTrue
-}
-
 func (account *Account) MarkReady() {
 	account.CreateOrUpdateCond(metav1.Condition{
 		Type:   string(AccountReady),
 		Status: metav1.ConditionTrue,
+		Reason: string(AccountReady),
 	})
 }
 

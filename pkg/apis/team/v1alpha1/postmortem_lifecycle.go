@@ -100,6 +100,7 @@ func (pm *PostMortem) MarkReady() {
 	pm.CreateOrUpdateCond(PostMortemCondition{
 		Type:   PostMortemReady,
 		Status: corev1.ConditionTrue,
+		Reason: string(PostMortemReady),
 	})
 }
 

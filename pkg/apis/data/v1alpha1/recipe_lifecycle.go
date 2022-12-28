@@ -105,22 +105,12 @@ func (recipe *Recipe) MarkReady() {
 	recipe.CreateOrUpdateCond(metav1.Condition{
 		Type:   RecipeReady,
 		Status: metav1.ConditionTrue,
+		Reason: RecipeReady,
 	})
 }
 
 func (recipe Recipe) Deleted() bool {
 	return !recipe.ObjectMeta.DeletionTimestamp.IsZero()
-}
-
-func (recipe *Recipe) MarkSaved() {
-	recipe.CreateOrUpdateCond(metav1.Condition{
-		Type:   RecipeSaved,
-		Status: metav1.ConditionTrue,
-	})
-}
-
-func (recipe Recipe) IsSaved() bool {
-	return recipe.GetCond(RecipeSaved).Status == metav1.ConditionTrue
 }
 
 func (recipe *Recipe) UpdateRunStatus(run RecipeRun) {

@@ -163,21 +163,11 @@ func (predictor Predictor) MirrorName() string {
 	return "mirror-" + predictor.Name
 }
 
-func (predictor *Predictor) MarkSaved() {
-	predictor.CreateOrUpdateCond(metav1.Condition{
-		Type:   PredictorSaved,
-		Status: metav1.ConditionTrue,
-	})
-}
-
-func (predictor Predictor) IsSaved() bool {
-	return predictor.GetCond(PredictorSaved).Status == metav1.ConditionTrue
-}
-
 func (predictor *Predictor) MarkReady() {
 	predictor.CreateOrUpdateCond(metav1.Condition{
 		Type:   PredictorReady,
 		Status: metav1.ConditionTrue,
+		Reason: PredictorReady,
 	})
 }
 

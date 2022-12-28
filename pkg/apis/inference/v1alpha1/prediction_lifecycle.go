@@ -188,6 +188,7 @@ func (prediction *Prediction) MarkUnitTested() {
 	prediction.CreateOrUpdateCond(metav1.Condition{
 		Type:   PredictionUnitTested,
 		Status: metav1.ConditionTrue,
+		Reason: PredictionUnitTested,
 	})
 	prediction.Status.Phase = PredictionPhaseUnitTested
 }
@@ -196,6 +197,7 @@ func (prediction *Prediction) MarkCompleted() {
 	prediction.CreateOrUpdateCond(metav1.Condition{
 		Type:   PredictionCompleted,
 		Status: metav1.ConditionTrue,
+		Reason: PredictionCompleted,
 	})
 	prediction.Status.Phase = PredictionPhaseCompleted
 	now := metav1.Now()
@@ -214,26 +216,8 @@ func (prediction *Prediction) MarkUnitTestFailed(msg string) {
 
 }
 
-func (prediction *Prediction) MarkArchived() {
-	prediction.CreateOrUpdateCond(metav1.Condition{
-		Type:   PredictionArchived,
-		Status: metav1.ConditionTrue,
-	})
-}
-
 func (prediction Prediction) OpName() string {
 	return prediction.Namespace + "-" + prediction.Name
-}
-
-func (prediction *Prediction) MarkSaved() {
-	prediction.CreateOrUpdateCond(metav1.Condition{
-		Type:   PredictionSaved,
-		Status: metav1.ConditionTrue,
-	})
-}
-
-func (prediction Prediction) IsSaved() bool {
-	return prediction.GetCond(PredictionSaved).Status == metav1.ConditionTrue
 }
 
 func (prediction *Prediction) MarkRunning() {

@@ -248,6 +248,7 @@ func (report *Report) MarkSaved() {
 	report.CreateOrUpdateCond(metav1.Condition{
 		Type:   ReportSaved,
 		Status: metav1.ConditionTrue,
+		Reason: ReportSaved,
 	})
 }
 
@@ -275,6 +276,7 @@ func (report *Report) MarkReportReady(uri string) {
 	report.CreateOrUpdateCond(metav1.Condition{
 		Type:   ReportReady,
 		Status: metav1.ConditionTrue,
+		Reason: ReportReady,
 	})
 
 	//liveURI := product.PrefixLiveURI(report.PdfURI())

@@ -129,6 +129,7 @@ func (tenant *Tenant) MarkReady() {
 	tenant.CreateOrUpdateCond(metav1.Condition{
 		Type:   string(TenantReady),
 		Status: metav1.ConditionTrue,
+		Reason: string(TenantReady),
 	})
 }
 
@@ -136,6 +137,7 @@ func (tenant *Tenant) MarkDatabaseReady() {
 	tenant.CreateOrUpdateCond(metav1.Condition{
 		Type:   string(TenantMetricDatabaseReady),
 		Status: metav1.ConditionTrue,
+		Reason: string(TenantMetricDatabaseReady),
 	})
 }
 

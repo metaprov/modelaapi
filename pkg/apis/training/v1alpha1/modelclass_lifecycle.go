@@ -124,6 +124,7 @@ func (mclass *ModelClass) MarkArchived() {
 	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassSaved,
 		Status: metav1.ConditionTrue,
+		Reason: ModelClassSaved,
 	})
 }
 
@@ -141,6 +142,7 @@ func (mclass *ModelClass) MarkDrifted() {
 	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassModelDrifted,
 		Status: metav1.ConditionTrue,
+		Reason: ModelClassModelDrifted,
 	})
 }
 
@@ -210,6 +212,7 @@ func (mclass *ModelClass) MarkFailed(err string) {
 		Type:    ModelClassReady,
 		Status:  metav1.ConditionFalse,
 		Message: err,
+		Reason:  ModelClassReady,
 	})
 	mclass.Status.FailureMessage = util.StrPtr(err)
 }

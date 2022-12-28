@@ -111,6 +111,7 @@ func (dataapp *DataApp) MarkReady() {
 	dataapp.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataAppReady,
 		Status: metav1.ConditionTrue,
+		Reason: DataAppReady,
 	})
 }
 
@@ -122,6 +123,7 @@ func (dataapp *DataApp) MarkSaved() {
 	dataapp.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataAppSaved,
 		Status: metav1.ConditionTrue,
+		Reason: DataAppSaved,
 	})
 }
 

@@ -132,6 +132,7 @@ func (in *DataPipelineRun) MarkComplete() {
 	in.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataPipelineRunCompleted,
 		Status: metav1.ConditionTrue,
+		Reason: DataPipelineRunCompleted,
 	})
 	now := metav1.Now()
 	if in.Status.CompletedAt == nil {
@@ -169,13 +170,6 @@ func (in *DataPipelineRun) MarkAborted(err error) {
 	}
 	in.Status.Progress = util.Int32Ptr(100)
 	in.Status.FailureMessage = util.StrPtr(err.Error())
-}
-
-func (in *DataPipelineRun) MarkSaved() {
-	in.CreateOrUpdateCond(metav1.Condition{
-		Type:   DataPipelineRunSaved,
-		Status: metav1.ConditionTrue,
-	})
 }
 
 // Generate a dataset completion alert

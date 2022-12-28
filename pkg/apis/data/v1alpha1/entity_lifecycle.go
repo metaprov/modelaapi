@@ -128,16 +128,6 @@ func (entity *Entity) MarkReady() {
 	entity.CreateOrUpdateCond(metav1.Condition{
 		Type:   EntityReady,
 		Status: metav1.ConditionTrue,
+		Reason: EntityReady,
 	})
-}
-
-func (entity *Entity) MarkArchived() {
-	entity.CreateOrUpdateCond(metav1.Condition{
-		Type:   EntitySaved,
-		Status: metav1.ConditionTrue,
-	})
-}
-
-func (entity Entity) Archived() bool {
-	return entity.GetCond(EntitySaved).Status == metav1.ConditionTrue
 }

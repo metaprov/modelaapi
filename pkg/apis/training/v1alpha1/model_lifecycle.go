@@ -436,20 +436,24 @@ func (model *Model) MarkRole(predictor string, role catalog.ModelRole) {
 		model.CreateOrUpdateCond(metav1.Condition{
 			Type:   ModelLive,
 			Status: metav1.ConditionTrue,
+			Reason: ModelLive,
 		})
 		model.CreateOrUpdateCond(metav1.Condition{
 			Type:   ModelShadow,
 			Status: metav1.ConditionFalse,
+			Reason: ModelShadow,
 		})
 	case catalog.ShadowModelRole:
 		model.Status.Phase = ModelPhaseShadow
 		model.CreateOrUpdateCond(metav1.Condition{
 			Type:   ModelLive,
 			Status: metav1.ConditionFalse,
+			Reason: ModelLive,
 		})
 		model.CreateOrUpdateCond(metav1.Condition{
 			Type:   ModelShadow,
 			Status: metav1.ConditionTrue,
+			Reason: ModelShadow,
 		})
 	}
 
@@ -475,10 +479,12 @@ func (model *Model) Demote() {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelLive,
 		Status: metav1.ConditionFalse,
+		Reason: ModelLive,
 	})
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelShadow,
 		Status: metav1.ConditionFalse,
+		Reason: ModelShadow,
 	})
 }
 
@@ -500,6 +506,7 @@ func (model *Model) MarkTrained(ms []catalog.Measurement) {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelTrained,
 		Status: metav1.ConditionTrue,
+		Reason: ModelTrained,
 	})
 	model.Status.Progress = 50
 }
@@ -600,6 +607,7 @@ func (model *Model) MarkTested() {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelTested,
 		Status: metav1.ConditionTrue,
+		Reason: ModelTested,
 	})
 	if model.Status.TestingCompletedAt == nil {
 		now := metav1.Now()
@@ -721,6 +729,7 @@ func (model *Model) MarkProfiled(uri string) {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelProfiled,
 		Status: metav1.ConditionTrue,
+		Reason: ModelProfiled,
 	})
 	model.Status.ProfileURI = uri
 	model.Status.Progress = 90
@@ -778,6 +787,7 @@ func (model *Model) MarkReported(name string) {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelReported,
 		Status: metav1.ConditionTrue,
+		Reason: ModelReported,
 	})
 	model.Status.Progress = 96
 }
@@ -809,6 +819,7 @@ func (model *Model) MarkForecasted() {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelForecasted,
 		Status: metav1.ConditionTrue,
+		Reason: ModelForecasted,
 	})
 	model.Status.Progress = 100
 }
@@ -866,6 +877,7 @@ func (model *Model) MarkPackaged(image string) {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelPackaged,
 		Status: metav1.ConditionTrue,
+		Reason: ModelPackaged,
 	})
 }
 
@@ -910,6 +922,7 @@ func (model *Model) MarkExplained(image string) {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelExplained,
 		Status: metav1.ConditionTrue,
+		Reason: ModelExplained,
 	})
 }
 
@@ -945,6 +958,7 @@ func (model *Model) MarkPublished(image string) {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelPublished,
 		Status: metav1.ConditionTrue,
+		Reason: ModelPublished,
 	})
 }
 
@@ -986,6 +1000,7 @@ func (model *Model) MarkTrainedDriftDetector(image string) {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelTrainedDriftDetector,
 		Status: metav1.ConditionTrue,
+		Reason: ModelTrainedDriftDetector,
 	})
 }
 
@@ -1028,7 +1043,7 @@ func (model *Model) MarkResumed() {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelPaused,
 		Status: metav1.ConditionFalse,
-		Reason: "",
+		Reason: ModelPaused,
 	})
 }
 
@@ -1039,6 +1054,7 @@ func (model *Model) MarkAborted() {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelAborted,
 		Status: metav1.ConditionTrue,
+		Reason: ModelAborted,
 	})
 	now := metav1.Now()
 	if model.Status.CompletedAt == nil {
@@ -1063,6 +1079,7 @@ func (model *Model) MarkMaintain() {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelMaintenance,
 		Status: metav1.ConditionTrue,
+		Reason: ModelMaintenance,
 	})
 }
 
@@ -1077,6 +1094,7 @@ func (model *Model) MarkReady() {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelReady,
 		Status: metav1.ConditionTrue,
+		Reason: ModelReady,
 	})
 	// mark the time
 	now := metav1.Now()
@@ -1101,6 +1119,7 @@ func (model *Model) MarkPaused() {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelPaused,
 		Status: metav1.ConditionTrue,
+		Reason: ModelPaused,
 	})
 }
 
@@ -1110,6 +1129,7 @@ func (model *Model) MarkSaved() {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelSaved,
 		Status: metav1.ConditionTrue,
+		Reason: ModelSaved,
 	})
 }
 
@@ -1122,6 +1142,7 @@ func (model *Model) MarkArchived() {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelArchived,
 		Status: metav1.ConditionTrue,
+		Reason: ModelArchived,
 	})
 }
 
@@ -1286,6 +1307,7 @@ func (model *Model) MarkTuned(ms []catalog.Measurement) {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelTuned,
 		Status: metav1.ConditionTrue,
+		Reason: ModelTuned,
 	})
 	model.Status.Progress = 50
 }
@@ -1342,6 +1364,7 @@ func (model *Model) MarkMerged() {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelMerged,
 		Status: metav1.ConditionTrue,
+		Reason: ModelMerged,
 	})
 	model.Status.Progress = 50
 }

@@ -270,19 +270,9 @@ func (fh *FeatureHistogram) MarkReady() {
 	fh.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureHistogramReady,
 		Status: metav1.ConditionTrue,
+		Reason: FeatureHistogramReady,
 	})
 	fh.Status.Phase = FeatureHistogramPhaseReady
-}
-
-func (fh *FeatureHistogram) MarkArchived() {
-	fh.CreateOrUpdateCond(metav1.Condition{
-		Type:   FeatureHistogramSaved,
-		Status: metav1.ConditionTrue,
-	})
-}
-
-func (fh FeatureHistogram) Archived() bool {
-	return fh.GetCond(FeatureHistogramSaved).Status == metav1.ConditionTrue
 }
 
 func (fh *FeatureHistogram) MarkFailed(msg string) {

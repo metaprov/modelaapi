@@ -115,18 +115,12 @@ func (reciperun *RecipeRun) MarkCompleted() {
 	reciperun.CreateOrUpdateCond(metav1.Condition{
 		Type:   RecipeReady,
 		Status: metav1.ConditionTrue,
+		Reason: RecipeReady,
 	})
 	now := metav1.Now()
 	if reciperun.Status.CompletedAt == nil {
 		reciperun.Status.CompletedAt = &now
 	}
-}
-
-func (reciperun *RecipeRun) MarkSaved() {
-	reciperun.CreateOrUpdateCond(metav1.Condition{
-		Type:   RecipeSaved,
-		Status: metav1.ConditionTrue,
-	})
 }
 
 func (reciperun *RecipeRun) MarkFailed(error string) {
@@ -165,11 +159,6 @@ func (reciperun *RecipeRun) IsRunning() bool {
 func (reciperun *RecipeRun) IsFailed() bool {
 	cond := reciperun.GetCond(RecipeRunCompleted)
 	return cond.Status == metav1.ConditionFalse && cond.Reason == string(RecipeRunPhaseFailed)
-}
-
-func (reciperun *RecipeRun) IsSaved() bool {
-	cond := reciperun.GetCond(RecipeRunSaved)
-	return cond.Status == metav1.ConditionTrue
 }
 
 // Generate a dataset completion alert

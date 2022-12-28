@@ -312,6 +312,7 @@ func (study *Study) MarkSplitted() {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudySplit,
 		Status: metav1.ConditionTrue,
+		Reason: StudySplit,
 	})
 	// set the training location
 	trainingLocation := data.DataLocation{}
@@ -362,6 +363,7 @@ func (study *Study) MarkTransformed() {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudySplit,
 		Status: metav1.ConditionTrue,
+		Reason: StudySplit,
 	})
 	// set the training location
 	trainingLocation := data.DataLocation{}
@@ -423,6 +425,7 @@ func (study *Study) MarkFeatureEngineered() {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyFeatureEngineered,
 		Status: metav1.ConditionTrue,
+		Reason: StudyFeatureEngineered,
 	})
 	now := metav1.Now()
 	if study.Status.FeatureEngineeringStatus.CompletedAt == nil {
@@ -472,6 +475,7 @@ func (study *Study) MarkBaselined() {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyBaselined,
 		Status: metav1.ConditionTrue,
+		Reason: StudyBaselined,
 	})
 	now := metav1.Now()
 	if study.Status.BaselineStatus.CompletedAt == nil {
@@ -552,6 +556,7 @@ func (study *Study) MarkSearched() {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudySearched,
 		Status: metav1.ConditionTrue,
+		Reason: StudySearched,
 	})
 	now := metav1.Now()
 	if study.Status.SearchStatus.CompletedAt == nil {
@@ -601,6 +606,7 @@ func (study *Study) MarkEnsembled() {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyEnsembleCreated,
 		Status: metav1.ConditionTrue,
+		Reason: StudyEnsembleCreated,
 	})
 	now := metav1.Now()
 	if study.Status.EnsembleStatus.CompletedAt == nil {
@@ -652,6 +658,7 @@ func (study *Study) MarkTested() {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyTested,
 		Status: metav1.ConditionTrue,
+		Reason: StudyTested,
 	})
 	now := metav1.Now()
 	study.Status.TestStatus.CompletedAt = &now
@@ -700,6 +707,7 @@ func (study *Study) MarkTuned() {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyTuned,
 		Status: metav1.ConditionTrue,
+		Reason: StudyTuned,
 	})
 	now := metav1.Now()
 	study.Status.TestStatus.CompletedAt = &now
@@ -748,6 +756,7 @@ func (study *Study) MarkProfiled(url string) {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyProfiled,
 		Status: metav1.ConditionTrue,
+		Reason: StudyProfiled,
 	})
 	study.RefreshProgress()
 
@@ -789,6 +798,7 @@ func (study *Study) MarkReported(name string) {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyReported,
 		Status: metav1.ConditionTrue,
+		Reason: StudyReported,
 	})
 	study.Status.Phase = StudyPhaseReported
 	study.RefreshProgress()
@@ -811,6 +821,7 @@ func (study *Study) MarkAborted() {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyAborted,
 		Status: metav1.ConditionTrue,
+		Reason: StudyAborted,
 	})
 	study.Status.Phase = StudyPhaseAborted
 	study.RefreshProgress()
@@ -833,6 +844,7 @@ func (study *Study) MarkSaved() {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudySaved,
 		Status: metav1.ConditionTrue,
+		Reason: StudySaved,
 	})
 	study.RefreshProgress()
 }
@@ -851,6 +863,7 @@ func (study *Study) MarkResumed() {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyPaused,
 		Status: metav1.ConditionUnknown,
+		Reason: StudyPaused,
 	})
 
 }
@@ -861,6 +874,7 @@ func (study *Study) MarkReady() {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyCompleted,
 		Status: metav1.ConditionTrue,
+		Reason: StudyCompleted,
 	})
 	study.Status.Phase = StudyPhaseCompleted
 	study.RefreshProgress()
@@ -871,6 +885,7 @@ func (study *Study) MarkEnsembleTrained() {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyEnsembleCreated,
 		Status: metav1.ConditionTrue,
+		Reason: StudyEnsembleCreated,
 	})
 }
 
@@ -878,6 +893,7 @@ func (study *Study) MarkPaused() {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyPaused,
 		Status: metav1.ConditionTrue,
+		Reason: StudyPaused,
 	})
 	study.Status.Phase = StudyPhasePaused
 }

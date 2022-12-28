@@ -98,6 +98,7 @@ func (version *DataProductVersion) MarkArchived() {
 	version.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataProductVersionSaved,
 		Status: metav1.ConditionTrue,
+		Reason: DataProductVersionSaved,
 	})
 }
 
@@ -105,6 +106,7 @@ func (version *DataProductVersion) MarkReady() {
 	version.CreateOrUpdateCond(metav1.Condition{
 		Type:   DataProductVersionReady,
 		Status: metav1.ConditionTrue,
+		Reason: DataProductVersionReady,
 	})
 }
 

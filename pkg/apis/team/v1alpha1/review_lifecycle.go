@@ -115,6 +115,7 @@ func (conv *Review) MarkReady() {
 	conv.CreateOrUpdateCond(ReviewCondition{
 		Type:   ReviewReady,
 		Status: corev1.ConditionTrue,
+		Reason: string(ReviewReady),
 	})
 }
 

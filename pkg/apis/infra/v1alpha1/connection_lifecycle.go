@@ -126,13 +126,7 @@ func (connection *Connection) MarkReady() {
 	connection.CreateOrUpdateCond(metav1.Condition{
 		Type:   string(ConnectionReady),
 		Status: metav1.ConditionTrue,
-	})
-}
-
-func (connection *Connection) MarkArchived() {
-	connection.CreateOrUpdateCond(metav1.Condition{
-		Type:   string(ConnectionSaved),
-		Status: metav1.ConditionTrue,
+		Reason: string(ConnectionReady),
 	})
 }
 

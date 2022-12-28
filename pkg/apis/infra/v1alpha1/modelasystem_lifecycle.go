@@ -103,13 +103,6 @@ func ParseModelaSystemYaml(content []byte) (*ModelaSystem, error) {
 	return r, nil
 }
 
-func (ms *ModelaSystem) MarkArchived() {
-	ms.CreateOrUpdateCond(metav1.Condition{
-		Type:   ModelaSystemSaved,
-		Status: metav1.ConditionTrue,
-	})
-}
-
 func (ms *ModelaSystem) MarkReady() {
 	ms.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelaSystemReady,

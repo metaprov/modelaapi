@@ -115,6 +115,7 @@ func (fg *FeatureGroup) MarkSynced() {
 	fg.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureGroupSynced,
 		Status: metav1.ConditionTrue,
+		Reason: FeatureGroupSynced,
 	})
 	nextRun := fg.Spec.Materialization.Schedule.NextRun()
 	fg.Spec.SyncSchedule.SetNext(*nextRun)
@@ -234,22 +235,12 @@ func (fg *FeatureGroup) MarkReady() {
 	fg.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureGroupReady,
 		Status: metav1.ConditionTrue,
-	})
-}
-
-func (fg *FeatureGroup) MarkArchived() {
-	fg.CreateOrUpdateCond(metav1.Condition{
-		Type:   FeatureGroupSaved,
-		Status: metav1.ConditionTrue,
+		Reason: FeatureGroupReady,
 	})
 }
 
 func (fg *FeatureGroup) PrefixLiveURI(path string) string {
 	return fmt.Sprintf("modela/live/tenants/%s/%s", fg.Namespace, path)
-}
-
-func (fg FeatureGroup) Archived() bool {
-	return fg.GetCond(FeatureGroupSaved).Status == metav1.ConditionTrue
 }
 
 func (fg FeatureGroup) TenantName() string {

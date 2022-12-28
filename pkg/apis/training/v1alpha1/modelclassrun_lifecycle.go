@@ -92,6 +92,7 @@ func (mclass *ModelClassRun) MarkCreatedTrainingSet() {
 	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassRunTrainingDatasetReady,
 		Status: metav1.ConditionTrue,
+		Reason: ModelClassRunTrainingDatasetReady,
 	})
 }
 
@@ -124,6 +125,7 @@ func (mclass *ModelClassRun) MarkModelTrained(model string) {
 	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassRunModelTrained,
 		Status: metav1.ConditionTrue,
+		Reason: ModelClassRunModelTrained,
 	})
 	mclass.Status.ModelName = model
 	// If we do not promote, we can set the schedule to next cycle
@@ -149,6 +151,7 @@ func (mclass *ModelClassRun) MarkTrained() {
 	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassRunModelTrained,
 		Status: metav1.ConditionTrue,
+		Reason: ModelClassRunModelTrained,
 	})
 }
 
@@ -180,6 +183,7 @@ func (mclass *ModelClassRun) MarkPromoted() {
 	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassRunModelPromoted,
 		Status: metav1.ConditionTrue,
+		Reason: ModelClassRunModelPromoted,
 	})
 }
 
@@ -197,6 +201,7 @@ func (this *ModelClassRun) MarkSaved() {
 	this.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassRunArchived,
 		Status: metav1.ConditionTrue,
+		Reason: ModelClassRunArchived,
 	})
 }
 

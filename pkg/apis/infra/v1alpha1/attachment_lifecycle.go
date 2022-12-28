@@ -104,13 +104,6 @@ func ParseAttachmentYaml(content []byte) (*Attachment, error) {
 	return r, nil
 }
 
-func (attachment *Attachment) MarkArchived() {
-	attachment.CreateOrUpdateCond(metav1.Condition{
-		Type:   string(AttachmentSaved),
-		Status: metav1.ConditionTrue,
-	})
-}
-
 func (attachment *Attachment) MarkFailed(err string) {
 	attachment.CreateOrUpdateCond(metav1.Condition{
 		Type:    string(AttachmentSent),

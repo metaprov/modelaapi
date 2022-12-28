@@ -259,18 +259,8 @@ func (servingsite *ServingSite) MarkReady() {
 	servingsite.CreateOrUpdateCond(metav1.Condition{
 		Type:   string(ServingSiteReady),
 		Status: metav1.ConditionTrue,
+		Reason: string(ServingSiteReady),
 	})
-}
-
-func (servingsite *ServingSite) MarkArchived() {
-	servingsite.CreateOrUpdateCond(metav1.Condition{
-		Type:   string(ServingSiteSaved),
-		Status: metav1.ConditionTrue,
-	})
-}
-
-func (servingsite ServingSite) Archived() bool {
-	return servingsite.GetCond(string(ServingSiteSaved)).Status == metav1.ConditionTrue
 }
 
 func (servingsite ServingSite) JobRunnerRole() *rbacv1.Role {

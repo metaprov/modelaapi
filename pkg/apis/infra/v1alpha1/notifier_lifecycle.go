@@ -101,16 +101,10 @@ func ParseNotifierYaml(content []byte) (*Notifier, error) {
 	return r, nil
 }
 
-func (notifier *Notifier) MarkArchived() {
-	notifier.CreateOrUpdateCond(metav1.Condition{
-		Type:   string(NotifierSaved),
-		Status: metav1.ConditionTrue,
-	})
-}
-
 func (notifier *Notifier) MarkReady() {
 	notifier.CreateOrUpdateCond(metav1.Condition{
 		Type:   string(NotifierReady),
 		Status: metav1.ConditionTrue,
+		Reason: string(NotifierReady),
 	})
 }
