@@ -1089,7 +1089,8 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.toObject 
     modelindexuri: jspb.Message.getFieldWithDefault(msg, 13, ""),
     forecasturi: jspb.Message.getFieldWithDefault(msg, 14, ""),
     featuresList: jspb.Message.toObjectList(msg.getFeaturesList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance)
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance),
+    profileuri: jspb.Message.getFieldWithDefault(msg, 16, "")
   };
 
   if (includeInstance) {
@@ -1194,6 +1195,10 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.deseriali
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.deserializeBinaryFromReader);
       msg.addFeatures(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProfileuri(value);
       break;
     default:
       reader.skipField();
@@ -1321,6 +1326,13 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.serialize
       15,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.serializeBinaryToWriter
+    );
+  }
+  f = message.getProfileuri();
+  if (f.length > 0) {
+    writer.writeString(
+      16,
+      f
     );
   }
 };
@@ -1664,6 +1676,24 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.clearFeaturesList = function() {
   return this.setFeaturesList([]);
+};
+
+
+/**
+ * optional string profileURI = 16;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.getProfileuri = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.prototype.setProfileuri = function(value) {
+  return jspb.Message.setProto3StringField(this, 16, value);
 };
 
 

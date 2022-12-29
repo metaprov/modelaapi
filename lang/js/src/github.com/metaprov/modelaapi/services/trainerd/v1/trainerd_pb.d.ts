@@ -141,6 +141,9 @@ export class TrainResponse extends jspb.Message {
   clearFeaturesList(): TrainResponse;
   addFeatures(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
+  getProfileuri(): string;
+  setProfileuri(value: string): TrainResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainResponse.AsObject;
   static toObject(includeInstance: boolean, msg: TrainResponse): TrainResponse.AsObject;
@@ -166,6 +169,7 @@ export namespace TrainResponse {
     modelindexuri: string,
     forecasturi: string,
     featuresList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    profileuri: string,
   }
 }
 
