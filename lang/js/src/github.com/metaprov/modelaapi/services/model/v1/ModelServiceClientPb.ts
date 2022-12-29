@@ -422,6 +422,49 @@ export class ModelServiceClient {
     this.methodInfoGetModelProfile);
   }
 
+  methodInfoGetModelForecastProfile = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelForecastProfile',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelProfileRequest,
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelForecastProfileResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelProfileRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelForecastProfileResponse.deserializeBinary
+  );
+
+  getModelForecastProfile(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelProfileRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelForecastProfileResponse>;
+
+  getModelForecastProfile(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelProfileRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelForecastProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelForecastProfileResponse>;
+
+  getModelForecastProfile(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelProfileRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelForecastProfileResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelForecastProfile',
+        request,
+        metadata || {},
+        this.methodInfoGetModelForecastProfile,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelForecastProfile',
+    request,
+    metadata || {},
+    this.methodInfoGetModelForecastProfile);
+  }
+
   methodInfoGetModelMisclass = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelMisclass',
     grpcWeb.MethodType.UNARY,

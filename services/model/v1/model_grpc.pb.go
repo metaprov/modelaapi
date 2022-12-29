@@ -31,6 +31,7 @@ type ModelServiceClient interface {
 	PublishModel(ctx context.Context, in *PublishModelRequest, opts ...grpc.CallOption) (*PublishModelResponse, error)
 	CreateModelProfile(ctx context.Context, in *CreateModelProfileRequest, opts ...grpc.CallOption) (*CreateModelProfileResponse, error)
 	GetModelProfile(ctx context.Context, in *GetModelProfileRequest, opts ...grpc.CallOption) (*GetModelProfileResponse, error)
+	GetModelForecastProfile(ctx context.Context, in *GetModelProfileRequest, opts ...grpc.CallOption) (*GetModelForecastProfileResponse, error)
 	GetModelMisclass(ctx context.Context, in *GetMisclassRequest, opts ...grpc.CallOption) (*GetMisclassResponse, error)
 	GetModelLogs(ctx context.Context, in *GetModelLogsRequest, opts ...grpc.CallOption) (*GetModelLogsResponse, error)
 	AbortModel(ctx context.Context, in *AbortModelRequest, opts ...grpc.CallOption) (*AbortModelResponse, error)
@@ -130,6 +131,15 @@ func (c *modelServiceClient) CreateModelProfile(ctx context.Context, in *CreateM
 func (c *modelServiceClient) GetModelProfile(ctx context.Context, in *GetModelProfileRequest, opts ...grpc.CallOption) (*GetModelProfileResponse, error) {
 	out := new(GetModelProfileResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelProfile", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *modelServiceClient) GetModelForecastProfile(ctx context.Context, in *GetModelProfileRequest, opts ...grpc.CallOption) (*GetModelForecastProfileResponse, error) {
+	out := new(GetModelForecastProfileResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelForecastProfile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -248,6 +258,7 @@ type ModelServiceServer interface {
 	PublishModel(context.Context, *PublishModelRequest) (*PublishModelResponse, error)
 	CreateModelProfile(context.Context, *CreateModelProfileRequest) (*CreateModelProfileResponse, error)
 	GetModelProfile(context.Context, *GetModelProfileRequest) (*GetModelProfileResponse, error)
+	GetModelForecastProfile(context.Context, *GetModelProfileRequest) (*GetModelForecastProfileResponse, error)
 	GetModelMisclass(context.Context, *GetMisclassRequest) (*GetMisclassResponse, error)
 	GetModelLogs(context.Context, *GetModelLogsRequest) (*GetModelLogsResponse, error)
 	AbortModel(context.Context, *AbortModelRequest) (*AbortModelResponse, error)
@@ -295,6 +306,9 @@ func (UnimplementedModelServiceServer) CreateModelProfile(context.Context, *Crea
 }
 func (UnimplementedModelServiceServer) GetModelProfile(context.Context, *GetModelProfileRequest) (*GetModelProfileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetModelProfile not implemented")
+}
+func (UnimplementedModelServiceServer) GetModelForecastProfile(context.Context, *GetModelProfileRequest) (*GetModelForecastProfileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetModelForecastProfile not implemented")
 }
 func (UnimplementedModelServiceServer) GetModelMisclass(context.Context, *GetMisclassRequest) (*GetMisclassResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetModelMisclass not implemented")
@@ -500,6 +514,24 @@ func _ModelService_GetModelProfile_Handler(srv interface{}, ctx context.Context,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).GetModelProfile(ctx, req.(*GetModelProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ModelService_GetModelForecastProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetModelProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ModelServiceServer).GetModelForecastProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelForecastProfile",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ModelServiceServer).GetModelForecastProfile(ctx, req.(*GetModelProfileRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -744,6 +776,10 @@ var ModelService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetModelProfile",
 			Handler:    _ModelService_GetModelProfile_Handler,
+		},
+		{
+			MethodName: "GetModelForecastProfile",
+			Handler:    _ModelService_GetModelForecastProfile_Handler,
 		},
 		{
 			MethodName: "GetModelMisclass",
