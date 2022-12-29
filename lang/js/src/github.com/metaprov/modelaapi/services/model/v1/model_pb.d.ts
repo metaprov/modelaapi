@@ -118,26 +118,6 @@ export namespace GetModelProfileResponse {
   }
 }
 
-export class GetModelForecastProfileResponse extends jspb.Message {
-  getProfile(): github_com_metaprov_modelaapi_services_common_v1_common_pb.ForecastingAlgProfile | undefined;
-  setProfile(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.ForecastingAlgProfile): GetModelForecastProfileResponse;
-  hasProfile(): boolean;
-  clearProfile(): GetModelForecastProfileResponse;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetModelForecastProfileResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetModelForecastProfileResponse): GetModelForecastProfileResponse.AsObject;
-  static serializeBinaryToWriter(message: GetModelForecastProfileResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetModelForecastProfileResponse;
-  static deserializeBinaryFromReader(message: GetModelForecastProfileResponse, reader: jspb.BinaryReader): GetModelForecastProfileResponse;
-}
-
-export namespace GetModelForecastProfileResponse {
-  export type AsObject = {
-    profile?: github_com_metaprov_modelaapi_services_common_v1_common_pb.ForecastingAlgProfile.AsObject,
-  }
-}
-
 export class GetModelLogsResponse extends jspb.Message {
   getLogsMap(): jspb.Map<string, string>;
   clearLogsMap(): GetModelLogsResponse;

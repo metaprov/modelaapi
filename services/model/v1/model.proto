@@ -35,9 +35,6 @@ message GetModelProfileResponse {
     github.com.metaprov.modelaapi.services.common.v1.ModelProfile profile = 1;
 }
 
-message GetModelForecastProfileResponse {
-    github.com.metaprov.modelaapi.services.common.v1.ForecastingAlgProfile profile = 1;
-}
 
 
 message GetModelLogsResponse {
@@ -280,10 +277,6 @@ service ModelService {
 
     rpc GetModelProfile(GetModelProfileRequest) returns (GetModelProfileResponse) {
         option (google.api.http).post = "/v1/models/{namespace}/{name}:profile";
-    }
-
-    rpc GetModelForecastProfile(GetModelProfileRequest) returns (GetModelForecastProfileResponse) {
-        option (google.api.http).post = "/v1/models/{namespace}/{name}:forecastprofile";
     }
 
     rpc GetModelMisclass(GetMisclassRequest) returns (GetMisclassResponse) {

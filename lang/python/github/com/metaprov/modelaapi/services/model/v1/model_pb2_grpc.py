@@ -59,11 +59,6 @@ class ModelServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelProfileRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelProfileResponse.FromString,
                 )
-        self.GetModelForecastProfile = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelForecastProfile',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelProfileRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelForecastProfileResponse.FromString,
-                )
         self.GetModelMisclass = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelMisclass',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetMisclassRequest.SerializeToString,
@@ -173,12 +168,6 @@ class ModelServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetModelProfile(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetModelForecastProfile(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -300,11 +289,6 @@ def add_ModelServiceServicer_to_server(servicer, server):
                     servicer.GetModelProfile,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelProfileRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelProfileResponse.SerializeToString,
-            ),
-            'GetModelForecastProfile': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetModelForecastProfile,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelProfileRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelForecastProfileResponse.SerializeToString,
             ),
             'GetModelMisclass': grpc.unary_unary_rpc_method_handler(
                     servicer.GetModelMisclass,
@@ -521,23 +505,6 @@ class ModelService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelProfile',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelProfileRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelProfileResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetModelForecastProfile(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelForecastProfile',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelProfileRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelForecastProfileResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
