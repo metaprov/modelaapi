@@ -467,8 +467,8 @@ spec:
                 - weekly-report
                 - monthly-report
                 - summary-report
-                - group-timeseries-dataset-report
-                - group-timeseries-model-report
+                - partition-timeseries-dataset-report
+                - partition-timeseries-model-report
                 type: string
               resources:
                 description: Resources specifies the resource requirements that will
