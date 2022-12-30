@@ -9,7 +9,6 @@ package v1alpha1
 import (
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/validation/field"
@@ -76,11 +75,4 @@ func (alert *Alert) validateSpec(fldPath *field.Path) field.ErrorList {
 
 func (alert Alert) ValidateDelete() error {
 	return nil
-}
-
-func (alert *Alert) MarkSent() {
-	alert.CreateOrUpdateCond(metav1.Condition{
-		Type:   string(AlertSent),
-		Status: metav1.ConditionTrue,
-	})
 }

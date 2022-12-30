@@ -76,6 +76,7 @@ func (fg *FeatureGroup) MarkIngested() {
 	fg.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureGroupIngested,
 		Status: metav1.ConditionTrue,
+		Reason: FeatureGroupIngested,
 	})
 	nextRun := fg.Spec.IngestSchedule.NextRun()
 	fg.Spec.IngestSchedule.SetNext(*nextRun)

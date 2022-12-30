@@ -222,6 +222,7 @@ func (prediction Prediction) OpName() string {
 
 func (prediction *Prediction) MarkRunning() {
 	prediction.CreateOrUpdateCond(metav1.Condition{
+		Type:   PredictionUnitTested,
 		Status: metav1.ConditionFalse,
 		Reason: string(catalog.Running),
 	})

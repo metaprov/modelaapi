@@ -107,5 +107,6 @@ func (ms *ModelaSystem) MarkReady() {
 	ms.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelaSystemReady,
 		Status: metav1.ConditionTrue,
+		Reason: ModelaSystemReady,
 	})
 }

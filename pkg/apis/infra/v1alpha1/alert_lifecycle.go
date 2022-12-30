@@ -107,5 +107,14 @@ func (alert *Alert) MarkFailed(err string) {
 		Type:    AlertSent,
 		Status:  metav1.ConditionFalse,
 		Message: err,
+		Reason:  "Failed",
+	})
+}
+
+func (alert *Alert) MarkSent() {
+	alert.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(AlertSent),
+		Status: metav1.ConditionTrue,
+		Reason: string(AlertSent),
 	})
 }

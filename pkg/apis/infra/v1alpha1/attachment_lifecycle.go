@@ -114,3 +114,11 @@ func (attachment *Attachment) MarkFailed(err string) {
 	attachment.Status.FailureMessage = util.StrPtr(err)
 
 }
+
+func (attachment *Attachment) MarkSent() {
+	attachment.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(AttachmentSent),
+		Status: metav1.ConditionTrue,
+		Reason: string(AttachmentSent),
+	})
+}

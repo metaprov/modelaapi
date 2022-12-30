@@ -114,5 +114,6 @@ func (license *License) MarkValid() {
 	license.CreateOrUpdateCond(metav1.Condition{
 		Type:   string(LicenseValid),
 		Status: metav1.ConditionTrue,
+		Reason: string(LicenseValid),
 	})
 }

@@ -210,7 +210,7 @@ func (fh *FeatureHistogram) MarkUnitTested() {
 	fh.CreateOrUpdateCond(metav1.Condition{
 		Type:   FeatureHistogramUnitTested,
 		Status: metav1.ConditionTrue,
-		Reason: "UnitTesting",
+		Reason: FeatureHistogramUnitTested,
 	})
 
 }
