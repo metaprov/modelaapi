@@ -455,6 +455,19 @@ func (model *Model) MarkRole(predictor string, role catalog.ModelRole) {
 			Status: metav1.ConditionTrue,
 			Reason: ModelShadow,
 		})
+
+	case catalog.NoneModelRole:
+		model.Status.Phase = ModelPhaseCompleted
+		model.CreateOrUpdateCond(metav1.Condition{
+			Type:   ModelLive,
+			Status: metav1.ConditionFalse,
+			Reason: ModelLive,
+		})
+		model.CreateOrUpdateCond(metav1.Condition{
+			Type:   ModelShadow,
+			Status: metav1.ConditionFalse,
+			Reason: ModelShadow,
+		})
 	}
 
 }
