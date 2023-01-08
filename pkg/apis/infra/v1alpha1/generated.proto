@@ -1584,8 +1584,7 @@ message LabSpec {
   // +kubebuilder:validation:Optional
   optional ResourceLimitSpec limits = 3;
 
-  // ClusterName is the name of a VirtualCluster that exists under the same tenant as the object. If specified, Jobs
-  // assigned to the Lab will be executed inside the cluster (currently not implemented)
+  // External cluster specify the spec for execution on a remote cluster.
   // +kubebuilder:validation:Optional
   optional VirtualClusterSpec externalCluster = 4;
 
@@ -2430,11 +2429,10 @@ message ServingSiteSpec {
   // +kubebuilder:validation:Optional
   optional IngressSpec ingress = 4;
 
-  // ClusterName is the name of a VirtualCluster that exists under the same tenant as the object. If specified, workloads
-  // executed under the ServingSite will be executed inside the cluster (currently not implemented)
-  // +kubebuilder:default:=""
+  // External Cluster specify if the serving site will be served on external cluster using the cluster api.
+  // assigned to the Lab will be executed inside the cluster (currently not implemented)
   // +kubebuilder:validation:Optional
-  optional string clusterName = 6;
+  optional VirtualClusterSpec externalCluster = 5;
 
   // The name of the Account which created the object, which exists in the same tenant as the object
   // +kubebuilder:default:="no-one"
@@ -3076,6 +3074,10 @@ message VirtualClusterSpec {
   // Maximum number of nodes for auto scaling
   // +kubebuilder:validation:Optional
   optional int32 maxNodes = 17;
+
+  // a reference to the cloud object in the catalog that will host the external cluster
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference cloudRef = 18;
 }
 
 message WebhookSpec {

@@ -65,11 +65,10 @@ type ServingSiteSpec struct {
 	// to the resources which exist under the ServingSite's namespace
 	// +kubebuilder:validation:Optional
 	Ingress IngressSpec `json:"ingress,omitempty" protobuf:"bytes,4,opt,name=ingress"`
-	// ClusterName is the name of a VirtualCluster that exists under the same tenant as the object. If specified, workloads
-	// executed under the ServingSite will be executed inside the cluster (currently not implemented)
-	// +kubebuilder:default:=""
+	// External Cluster specify if the serving site will be served on external cluster using the cluster api.
+	// assigned to the Lab will be executed inside the cluster (currently not implemented)
 	// +kubebuilder:validation:Optional
-	ClusterName *string `json:"clusterName,omitempty" protobuf:"bytes,6,opt,name=clusterName"`
+	ExternalCluster *VirtualClusterSpec `json:"externalCluster,omitempty" protobuf:"bytes,5,opt,name=externalCluster"`
 	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional

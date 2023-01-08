@@ -42288,7 +42288,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.toOb
     tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     limits: (f = msg.getLimits()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.toObject(includeInstance, f),
     ingress: (f = msg.getIngress()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.toObject(includeInstance, f),
-    clustername: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    externalcluster: (f = msg.getExternalcluster()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     type: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
   };
@@ -42346,9 +42346,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.dese
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.deserializeBinaryFromReader);
       msg.setIngress(value);
       break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setClustername(value);
+    case 5:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.deserializeBinaryFromReader);
+      msg.setExternalcluster(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
@@ -42418,11 +42419,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.seri
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  f = message.getExternalcluster();
   if (f != null) {
-    writer.writeString(
-      6,
-      f
+    writer.writeMessage(
+      5,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 7));
@@ -42590,29 +42592,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prot
 
 
 /**
- * optional string clusterName = 6;
- * @return {string}
+ * optional VirtualClusterSpec externalCluster = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.getClustername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.getExternalcluster = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec, 5));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.setClustername = function(value) {
-  return jspb.Message.setField(this, 6, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.setExternalcluster = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.clearClustername = function() {
-  return jspb.Message.setField(this, 6, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.clearExternalcluster = function() {
+  return this.setExternalcluster(undefined);
 };
 
 
@@ -42620,8 +42623,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.hasClustername = function() {
-  return jspb.Message.getField(this, 6) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.hasExternalcluster = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -51265,7 +51268,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.t
     kubernetesversion: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
     autoscale: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
     minnodes: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
-    maxnodes: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f
+    maxnodes: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+    cloudref: (f = msg.getCloudref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -51370,6 +51374,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.d
     case 17:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setMaxnodes(value);
+      break;
+    case 18:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setCloudref(value);
       break;
     default:
       reader.skipField();
@@ -51518,6 +51527,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.s
     writer.writeInt32(
       17,
       f
+    );
+  }
+  f = message.getCloudref();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -52133,6 +52150,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasMaxnodes = function() {
   return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference cloudRef = 18;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getCloudref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 18));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setCloudref = function(value) {
+  return jspb.Message.setWrapperField(this, 18, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearCloudref = function() {
+  return this.setCloudref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasCloudref = function() {
+  return jspb.Message.getField(this, 18) != null;
 };
 
 

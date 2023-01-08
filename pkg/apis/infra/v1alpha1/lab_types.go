@@ -45,8 +45,7 @@ type LabSpec struct {
 	// Limits specifies the hard resource limits that can be allocated for workloads created under the Lab
 	// +kubebuilder:validation:Optional
 	Limits ResourceLimitSpec `json:"limits,omitempty" protobuf:"bytes,3,opt,name=limits"`
-	// ClusterName is the name of a VirtualCluster that exists under the same tenant as the object. If specified, Jobs
-	// assigned to the Lab will be executed inside the cluster (currently not implemented)
+	// External cluster specify the spec for execution on a remote cluster.
 	// +kubebuilder:validation:Optional
 	ExternalCluster *VirtualClusterSpec `json:"externalCluster,omitempty" protobuf:"bytes,4,opt,name=externalCluster"`
 	// The name of the Account which created the object, which exists in the same tenant as the object
@@ -176,4 +175,7 @@ type VirtualClusterSpec struct {
 	// Maximum number of nodes for auto scaling
 	// +kubebuilder:validation:Optional
 	MaxNodes *int32 `json:"maxNodes,omitempty" protobuf:"varint,17,opt,name=maxNodes"`
+	// a reference to the cloud object in the catalog that will host the external cluster
+	// +kubebuilder:validation:Optional
+	CloudRef corev1.ObjectReference `json:"cloudRef,omitempty" protobuf:"bytes,18,opt,name=cloudRef"`
 }

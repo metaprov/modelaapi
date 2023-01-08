@@ -4203,8 +4203,10 @@ export class ServingSiteSpec extends jspb.Message {
   hasIngress(): boolean;
   clearIngress(): ServingSiteSpec;
 
-  getClustername(): string;
-  setClustername(value: string): ServingSiteSpec;
+  getExternalcluster(): VirtualClusterSpec | undefined;
+  setExternalcluster(value?: VirtualClusterSpec): ServingSiteSpec;
+  hasExternalcluster(): boolean;
+  clearExternalcluster(): ServingSiteSpec;
 
   getOwner(): string;
   setOwner(value: string): ServingSiteSpec;
@@ -4226,7 +4228,7 @@ export namespace ServingSiteSpec {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     limits?: ResourceLimitSpec.AsObject,
     ingress?: IngressSpec.AsObject,
-    clustername: string,
+    externalcluster?: VirtualClusterSpec.AsObject,
     owner: string,
     type: string,
   }
@@ -5188,6 +5190,11 @@ export class VirtualClusterSpec extends jspb.Message {
   getMaxnodes(): number;
   setMaxnodes(value: number): VirtualClusterSpec;
 
+  getCloudref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setCloudref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): VirtualClusterSpec;
+  hasCloudref(): boolean;
+  clearCloudref(): VirtualClusterSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VirtualClusterSpec.AsObject;
   static toObject(includeInstance: boolean, msg: VirtualClusterSpec): VirtualClusterSpec.AsObject;
@@ -5215,6 +5222,7 @@ export namespace VirtualClusterSpec {
     autoscale: boolean,
     minnodes: number,
     maxnodes: number,
+    cloudref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
