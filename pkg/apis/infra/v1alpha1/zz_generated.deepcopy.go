@@ -4427,10 +4427,10 @@ func (in *ServingSiteSpec) DeepCopyInto(out *ServingSiteSpec) {
 	}
 	in.Limits.DeepCopyInto(&out.Limits)
 	in.Ingress.DeepCopyInto(&out.Ingress)
-	if in.ClusterName != nil {
-		in, out := &in.ClusterName, &out.ClusterName
-		*out = new(string)
-		**out = **in
+	if in.ExternalCluster != nil {
+		in, out := &in.ExternalCluster, &out.ExternalCluster
+		*out = new(VirtualClusterSpec)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
@@ -5372,13 +5372,13 @@ func (in *VirtualClusterSpec) DeepCopyInto(out *VirtualClusterSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Nodes != nil {
-		in, out := &in.Nodes, &out.Nodes
+	if in.Replicas != nil {
+		in, out := &in.Replicas, &out.Replicas
 		*out = new(int32)
 		**out = **in
 	}
-	if in.NodeClassName != nil {
-		in, out := &in.NodeClassName, &out.NodeClassName
+	if in.InstanceType != nil {
+		in, out := &in.InstanceType, &out.InstanceType
 		*out = new(string)
 		**out = **in
 	}
@@ -5445,6 +5445,12 @@ func (in *VirtualClusterSpec) DeepCopyInto(out *VirtualClusterSpec) {
 	if in.MaxNodes != nil {
 		in, out := &in.MaxNodes, &out.MaxNodes
 		*out = new(int32)
+		**out = **in
+	}
+	out.CloudRef = in.CloudRef
+	if in.SSHKey != nil {
+		in, out := &in.SSHKey, &out.SSHKey
+		*out = new(string)
 		**out = **in
 	}
 }
