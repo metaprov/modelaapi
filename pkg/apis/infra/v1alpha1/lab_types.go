@@ -117,12 +117,12 @@ type VirtualClusterSpec struct {
 	//+kubebuilder:validation:Minimum=1
 	//+kubebuilder:validation:Maximum=10
 	// +kubebuilder:validation:Optional
-	Nodes *int32 `json:"nodes,omitempty" protobuf:"varint,3,opt,name=nodes"`
+	Replicas *int32 `json:"nodes,omitempty" protobuf:"varint,3,opt,name=nodes"`
 	// +kubebuilder:validation:Optional
 	// NodeClassName is the class of nodes or vm
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	NodeClassName *string `json:"nodeClassName,omitempty" protobuf:"bytes,4,opt,name=nodeClassName"`
+	InstanceType *string `json:"instanceType,omitempty" protobuf:"bytes,4,opt,name=instanceType"`
 	// +kubebuilder:validation:Optional
 	// Gpus is the desired number of gpus
 	//+kubebuilder:default:=0
@@ -178,4 +178,7 @@ type VirtualClusterSpec struct {
 	// a reference to the cloud object in the catalog that will host the external cluster
 	// +kubebuilder:validation:Optional
 	CloudRef corev1.ObjectReference `json:"cloudRef,omitempty" protobuf:"bytes,18,opt,name=cloudRef"`
+	// a reference to the ssh key
+	// +kubebuilder:validation:Optional
+	SSHKey *string `json:"sshKey,omitempty" protobuf:"bytes,19,opt,name=sshKey"`
 }

@@ -144,6 +144,10 @@ spec:
                     maximum: 10
                     minimum: 0
                     type: integer
+                  instanceType:
+                    default: ""
+                    description: NodeClassName is the class of nodes or vm
+                    type: string
                   kubernetesVersion:
                     description: The cluster kubernetes version
                     type: string
@@ -333,10 +337,6 @@ spec:
                     description: Minimum number of nodes for auto scaling
                     format: int32
                     type: integer
-                  nodeClassName:
-                    default: ""
-                    description: NodeClassName is the class of nodes or vm
-                    type: string
                   nodes:
                     default: 1
                     description: Nodes is the desired number of nodes
@@ -356,6 +356,9 @@ spec:
                     default: false
                     description: Spot indicate if we should we use spot instances.
                     type: boolean
+                  sshKey:
+                    description: a reference to the ssh key
+                    type: string
                   volumeSize:
                     default: 0
                     description: VolumeSize is the size of the volume that would be

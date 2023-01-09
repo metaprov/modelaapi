@@ -5146,8 +5146,8 @@ export class VirtualClusterSpec extends jspb.Message {
   getNodes(): number;
   setNodes(value: number): VirtualClusterSpec;
 
-  getNodeclassname(): string;
-  setNodeclassname(value: string): VirtualClusterSpec;
+  getInstancetype(): string;
+  setInstancetype(value: string): VirtualClusterSpec;
 
   getGpus(): number;
   setGpus(value: number): VirtualClusterSpec;
@@ -5195,6 +5195,9 @@ export class VirtualClusterSpec extends jspb.Message {
   hasCloudref(): boolean;
   clearCloudref(): VirtualClusterSpec;
 
+  getSshkey(): string;
+  setSshkey(value: string): VirtualClusterSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VirtualClusterSpec.AsObject;
   static toObject(includeInstance: boolean, msg: VirtualClusterSpec): VirtualClusterSpec.AsObject;
@@ -5208,7 +5211,7 @@ export namespace VirtualClusterSpec {
     enabled: boolean,
     description: string,
     nodes: number,
-    nodeclassname: string,
+    instancetype: string,
     gpus: number,
     gpuclassname: string,
     volumesize: number,
@@ -5223,6 +5226,7 @@ export namespace VirtualClusterSpec {
     minnodes: number,
     maxnodes: number,
     cloudref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    sshkey: string,
   }
 }
 

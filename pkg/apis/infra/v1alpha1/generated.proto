@@ -3008,7 +3008,7 @@ message VirtualClusterSpec {
   // NodeClassName is the class of nodes or vm
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string nodeClassName = 4;
+  optional string instanceType = 4;
 
   // +kubebuilder:validation:Optional
   // Gpus is the desired number of gpus
@@ -3078,6 +3078,10 @@ message VirtualClusterSpec {
   // a reference to the cloud object in the catalog that will host the external cluster
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference cloudRef = 18;
+
+  // a reference to the ssh key
+  // +kubebuilder:validation:Optional
+  optional string sshKey = 19;
 }
 
 message WebhookSpec {

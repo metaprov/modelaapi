@@ -51255,7 +51255,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.t
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     nodes: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    nodeclassname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    instancetype: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     gpus: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     gpuclassname: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     volumesize: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
@@ -51269,7 +51269,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.t
     autoscale: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
     minnodes: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
     maxnodes: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
-    cloudref: (f = msg.getCloudref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
+    cloudref: (f = msg.getCloudref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    sshkey: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -51320,7 +51321,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.d
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNodeclassname(value);
+      msg.setInstancetype(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
@@ -51379,6 +51380,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.d
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setCloudref(value);
+      break;
+    case 19:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSshkey(value);
       break;
     default:
       reader.skipField();
@@ -51537,6 +51542,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.s
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 19));
+  if (f != null) {
+    writer.writeString(
+      19,
+      f
+    );
+  }
 };
 
 
@@ -51649,10 +51661,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
 
 
 /**
- * optional string nodeClassName = 4;
+ * optional string instanceType = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getNodeclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getInstancetype = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -51661,7 +51673,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setNodeclassname = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setInstancetype = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -51670,7 +51682,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearNodeclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearInstancetype = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -51679,7 +51691,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasNodeclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasInstancetype = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -52187,6 +52199,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasCloudref = function() {
   return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional string sshKey = 19;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getSshkey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setSshkey = function(value) {
+  return jspb.Message.setField(this, 19, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearSshkey = function() {
+  return jspb.Message.setField(this, 19, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasSshkey = function() {
+  return jspb.Message.getField(this, 19) != null;
 };
 
 
