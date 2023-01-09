@@ -193,7 +193,7 @@ spec:
                   profiling, and reporting phases will be skipped.
                 type: boolean
               generateFeatureHistogram:
-                default: false
+                default: true
                 description: If true generate feature histogram object from this dataset
                   columns.
                 type: boolean

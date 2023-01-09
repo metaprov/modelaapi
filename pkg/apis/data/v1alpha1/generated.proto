@@ -1645,7 +1645,7 @@ message DatasetSpec {
   optional k8s.io.api.core.v1.ObjectReference predictorRef = 28;
 
   // If true generate feature histogram object from this dataset columns.
-  // +kubebuilder:default:=false
+  // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool generateFeatureHistogram = 29;
 

@@ -188,7 +188,7 @@ type DatasetSpec struct {
 	// +kubebuilder:validation:Optional
 	PredictorRef v1.ObjectReference `json:"predictorRef,omitempty" protobuf:"bytes,28,opt,name=predictorRef"`
 	// If true generate feature histogram object from this dataset columns.
-	// +kubebuilder:default:=false
+	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	GenerateFeatureHistogram *bool `json:"generateFeatureHistogram,omitempty" protobuf:"varint,29,opt,name=generateFeatureHistogram"`
 	// The specification for tests for a new dataset
