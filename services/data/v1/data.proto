@@ -780,8 +780,10 @@ message SaveDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            dataproduct         = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource             datasource          = 2;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset                dataset             = 3;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection        = 4;
-    map<string,bytes>                                                           dbSecret            = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         modelclass          = 4;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun      modelclassrun       = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection        = 6;
+    map<string,bytes>                                                           dbSecret            = 7;
 }
 
 message SaveModelRequest {
