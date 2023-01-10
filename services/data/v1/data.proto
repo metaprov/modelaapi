@@ -259,11 +259,12 @@ message DsGenerateDatasetRequest {
     int32 rows = 7;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 8;
     map<string,bytes>                                                           dbSecret  = 9;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation           target   = 10; // the target location of the generated dataset
 
 }
 
 message DsGenerateDatasetResponse {
-    string key = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation           target   = 1;
 }
 
 message DsSplitDatasetRequest {
@@ -689,13 +690,13 @@ message DsSnapshotRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbconnection = 5;
     map<string,bytes>                                                           dbsecret     = 6;    
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageconnection = 7;
-    map<string,bytes>                                                           storagesecret     = 8;        
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket       = 9;
-    string                                                                      key          = 10;
+    map<string,bytes>                                                           storagesecret  = 8;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket         = 9;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation           target         = 10;
 }
 
 message DsSnapshotResponse {
-  
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation           target   = 1;
 }
 
 

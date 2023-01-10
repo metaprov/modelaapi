@@ -10667,7 +10667,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.to
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
     rows: jspb.Message.getFieldWithDefault(msg, 7, 0),
     dbconnection: (f = msg.getDbconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    dbsecretMap: (f = msg.getDbsecretMap()) ? f.toObject(includeInstance, undefined) : []
+    dbsecretMap: (f = msg.getDbsecretMap()) ? f.toObject(includeInstance, undefined) : [],
+    target: (f = msg.getTarget()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10749,6 +10750,11 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.de
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
+      break;
+    case 10:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
+      msg.setTarget(value);
       break;
     default:
       reader.skipField();
@@ -10841,6 +10847,14 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.se
   f = message.getDbsecretMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+  }
+  f = message.getTarget();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
+    );
   }
 };
 
@@ -11129,6 +11143,43 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.pr
   return this;};
 
 
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation target = 10;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.prototype.getTarget = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 10));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.prototype.setTarget = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.prototype.clearTarget = function() {
+  return this.setTarget(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.prototype.hasTarget = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
 
 
 
@@ -11161,7 +11212,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse.p
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 1, "")
+    target: (f = msg.getTarget()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11199,8 +11250,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse.d
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setKey(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
+      msg.setTarget(value);
       break;
     default:
       reader.skipField();
@@ -11231,31 +11283,51 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse.p
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getKey();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getTarget();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string key = 1;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation target = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse.prototype.getKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse.prototype.getTarget = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse.prototype.setTarget = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse.prototype.setKey = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse.prototype.clearTarget = function() {
+  return this.setTarget(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse.prototype.hasTarget = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -26386,7 +26458,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.toObject 
     storageconnection: (f = msg.getStorageconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     storagesecretMap: (f = msg.getStoragesecretMap()) ? f.toObject(includeInstance, undefined) : [],
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    key: jspb.Message.getFieldWithDefault(msg, 10, "")
+    target: (f = msg.getTarget()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -26471,8 +26543,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.deseriali
       msg.setBucket(value);
       break;
     case 10:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setKey(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
+      msg.setTarget(value);
       break;
     default:
       reader.skipField();
@@ -26567,11 +26640,12 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.serialize
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
   }
-  f = message.getKey();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getTarget();
+  if (f != null) {
+    writer.writeMessage(
       10,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
 };
@@ -26881,20 +26955,39 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.prototype
 
 
 /**
- * optional string key = 10;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation target = 10;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.prototype.getKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.prototype.getTarget = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 10));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.prototype.setTarget = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.prototype.setKey = function(value) {
-  return jspb.Message.setProto3StringField(this, 10, value);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.prototype.clearTarget = function() {
+  return this.setTarget(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.prototype.hasTarget = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
@@ -26930,7 +27023,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse.prototyp
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    target: (f = msg.getTarget()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -26967,6 +27060,11 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse.deserial
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
+      msg.setTarget(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -26996,6 +27094,51 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse.prototyp
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getTarget();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation target = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse.prototype.getTarget = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse.prototype.setTarget = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse.prototype.clearTarget = function() {
+  return this.setTarget(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse.prototype.hasTarget = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

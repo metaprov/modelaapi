@@ -1137,6 +1137,11 @@ export class DsGenerateDatasetRequest extends jspb.Message {
   getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
   clearDbsecretMap(): DsGenerateDatasetRequest;
 
+  getTarget(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setTarget(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): DsGenerateDatasetRequest;
+  hasTarget(): boolean;
+  clearTarget(): DsGenerateDatasetRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsGenerateDatasetRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsGenerateDatasetRequest): DsGenerateDatasetRequest.AsObject;
@@ -1156,12 +1161,15 @@ export namespace DsGenerateDatasetRequest {
     rows: number,
     dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     dbsecretMap: Array<[string, Uint8Array | string]>,
+    target?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
 export class DsGenerateDatasetResponse extends jspb.Message {
-  getKey(): string;
-  setKey(value: string): DsGenerateDatasetResponse;
+  getTarget(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setTarget(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): DsGenerateDatasetResponse;
+  hasTarget(): boolean;
+  clearTarget(): DsGenerateDatasetResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsGenerateDatasetResponse.AsObject;
@@ -1173,7 +1181,7 @@ export class DsGenerateDatasetResponse extends jspb.Message {
 
 export namespace DsGenerateDatasetResponse {
   export type AsObject = {
-    key: string,
+    target?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
@@ -3105,8 +3113,10 @@ export class DsSnapshotRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): DsSnapshotRequest;
 
-  getKey(): string;
-  setKey(value: string): DsSnapshotRequest;
+  getTarget(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setTarget(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): DsSnapshotRequest;
+  hasTarget(): boolean;
+  clearTarget(): DsSnapshotRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsSnapshotRequest.AsObject;
@@ -3127,11 +3137,16 @@ export namespace DsSnapshotRequest {
     storageconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     storagesecretMap: Array<[string, Uint8Array | string]>,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    key: string,
+    target?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
 export class DsSnapshotResponse extends jspb.Message {
+  getTarget(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setTarget(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): DsSnapshotResponse;
+  hasTarget(): boolean;
+  clearTarget(): DsSnapshotResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsSnapshotResponse.AsObject;
   static toObject(includeInstance: boolean, msg: DsSnapshotResponse): DsSnapshotResponse.AsObject;
@@ -3142,6 +3157,7 @@ export class DsSnapshotResponse extends jspb.Message {
 
 export namespace DsSnapshotResponse {
   export type AsObject = {
+    target?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
