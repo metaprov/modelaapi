@@ -605,6 +605,10 @@ spec:
                 description: The name of the Account which created the object, which
                   exists in the same tenant as the object
                 type: string
+              stage:
+                default: no-one
+                description: The stage of the serving class
+                type: string
               tenantRef:
                 description: The reference to the tenant which the object exists under
                 properties:
@@ -642,10 +646,6 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
-              type:
-                default: no-one
-                description: The type of the serving class
-                type: string
             type: object
           status:
             properties:

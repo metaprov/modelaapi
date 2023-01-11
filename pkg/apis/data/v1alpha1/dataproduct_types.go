@@ -18,7 +18,6 @@ type DataProductConditionType string
 // / ProductRef Condition
 const (
 	DataProductReady = "Ready"
-	DataProductSaved = "Saved"
 )
 
 // +kubebuilder:object:root=true
@@ -29,13 +28,13 @@ const (
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Public",type="boolean",JSONPath=".spec.public"
-// +kubebuilder:printcolumn:name="Errors",type="integer",JSONPath=".status.totalErrorAlerts"
-// +kubebuilder:printcolumn:name="Location Sources",type="integer",JSONPath=".status.totalDatasources",priority=1
-// +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.totalDatasets",priority=1
-// +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.totalStudies",priority=1
-// +kubebuilder:printcolumn:name="ModelsCount",type="integer",JSONPath=".status.totalModels",priority=1
-// +kubebuilder:printcolumn:name="Predictors",type="integer",JSONPath=".status.totalPredictors",priority=1
-// +kubebuilder:printcolumn:name="Apps",type="integer",JSONPath=".status.totalApps",priority=1
+// +kubebuilder:printcolumn:name="Errors",type="integer",JSONPath=".status.errorAlertsCount"
+// +kubebuilder:printcolumn:name="Location Sources",type="integer",JSONPath=".status.datasourcesCount",priority=1
+// +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.datasetsCount",priority=1
+// +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.studiesCount",priority=1
+// +kubebuilder:printcolumn:name="ModelsCount",type="integer",JSONPath=".status.modelsCount",priority=1
+// +kubebuilder:printcolumn:name="Predictors",type="integer",JSONPath=".status.predictorsCount",priority=1
+// +kubebuilder:printcolumn:name="Apps",type="integer",JSONPath=".status.appsCount",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // DataProduct represents a single DataProduct namespace, which contains all non-infrastructure resources. Additionally,
 // it specifies default parameters for resources to be created under the namespace, such as workload class and storage location

@@ -2439,10 +2439,10 @@ message ServingSiteSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 7;
 
-  // The type of the serving class
+  // The stage of the serving class
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string type = 8;
+  optional string stage = 8;
 }
 
 message ServingSiteStatus {

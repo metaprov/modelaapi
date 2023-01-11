@@ -3163,8 +3163,11 @@ spec:
               lastRunName:
                 description: The name of the last prediction for this class
                 type: string
+              live:
+                description: If true, a model of this class is in production
+                type: boolean
               modelsCount:
-                description: Total models created for the ModelClass
+                description: Total models in the system for this model class
                 format: int32
                 type: integer
               monitoringScheduleStatus:
@@ -3277,6 +3280,10 @@ spec:
               predictorName:
                 description: The name of the current predictor for this model class.
                 type: string
+              predictorsCount:
+                description: Total predictors in the system for this model class
+                format: int32
+                type: integer
               reportScheduleStatus:
                 description: Batch Prediction schedule
                 properties:
@@ -3332,7 +3339,8 @@ spec:
                   type: string
                 type: array
               runsCount:
-                description: Total number of batch predictions
+                description: Total number of batch  mode class run in the system for
+                  this model class.
                 format: int32
                 type: integer
               trainingScheduleStatus:

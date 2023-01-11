@@ -73,10 +73,10 @@ type ServingSiteSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
-	// The type of the serving class
+	// The stage of the serving class
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Type *catalog.ServingSiteType `json:"type,omitempty" protobuf:"bytes,8,opt,name=type"`
+	Stage *catalog.ServingSiteStage `json:"stage,omitempty" protobuf:"bytes,8,opt,name=stage"`
 }
 
 type ServingSiteStatus struct {

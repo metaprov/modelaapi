@@ -22,22 +22,7 @@ type EntityConditionType string
 // / Entity Condition
 const (
 	EntityReady = "Ready"
-	EntitySaved = "Saved"
 )
-
-// EntityCondition describes the state of a deployment at a certain point.
-type EntityCondition struct {
-	// Type of account condition.
-	Type EntityConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=EntityConditionType"`
-	// Status of the condition, one of True, False, Unknown.
-	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
-	// Last time the condition transitioned from one status to another.
-	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,7,opt,name=lastTransitionTime"`
-	// The reason for the condition's last transition.
-	Reason string `json:"reason,omitempty" protobuf:"bytes,4,opt,name=reason"`
-	// A human readable message indicating details about the transition.
-	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
-}
 
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
@@ -46,7 +31,8 @@ type EntityCondition struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
+// +kubebuilder:printcolumn:name="JoinKey",type="string",JSONPath=".spec.joinKey"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // Entity represents a entity object
 type Entity struct {

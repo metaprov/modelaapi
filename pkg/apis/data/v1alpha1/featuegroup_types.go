@@ -30,7 +30,6 @@ type FeatureGroupConditionType string
 
 const (
 	FeatureGroupReady    = "Ready"
-	FeatureGroupSaved    = "Saved"
 	FeatureGroupSynced   = "Synced"
 	FeatureGroupIngested = "Ingested"
 )
@@ -40,11 +39,11 @@ const (
 // +kubebuilder:resource:path=featuregroups,singular=featuregroup,shortName="fg",categories={data,modela}
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
 // +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.entityName"
 // +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule",description=""
-// +kubebuilder:printcolumn:name="Last Ingest",type="date",JSONPath=".status.ingestSchedule.lastRun",description=""
-// +kubebuilder:printcolumn:name="Last Sync",type="date",JSONPath=".status.syncScedule.lastRun",description=""
+// +kubebuilder:printcolumn:name="Next Ingest",type="date",JSONPath=".status.ingestSchedule.nextRunAt",description=""
+// +kubebuilder:printcolumn:name="Next Sync",type="date",JSONPath=".status.syncScedule.nextRunAt",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // FeatureGroup represent a group of features

@@ -1671,12 +1671,12 @@ const (
 	OnyxPredictor  PredictorFormat = "onyx"
 )
 
-type ServingSiteType string
+type ServingSiteStage string
 
 const (
-	DevServingSiteType   ServingSiteType = "dev"
-	ProdServingSiteType  ServingSiteType = "prod"
-	StageServingSiteType ServingSiteType = "stage"
+	DevServingSiteType   ServingSiteStage = "dev"
+	ProdServingSiteType  ServingSiteStage = "prod"
+	StageServingSiteType ServingSiteStage = "stage"
 )
 
 // +kubebuilder:validation:Enum="one-to-one";"one-to-many";"many-to-many";

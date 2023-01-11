@@ -24,7 +24,6 @@ type AccountConditionType string
 // / Account Condition
 const (
 	AccountReady AccountConditionType = "Ready"
-	AccountSaved AccountConditionType = "Saved"
 )
 
 // +kubebuilder:object:root=true

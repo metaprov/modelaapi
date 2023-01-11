@@ -351,6 +351,9 @@ type ModelSpec struct {
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	Role *catalog.ModelRole `json:"role,omitempty" protobuf:"bytes,55,opt,name=role"`
+	// The serving site that this model is released to
+	// +kubebuilder:validation:Optional
+	ServingSiteRef v1.ObjectReference `json:"ServingSiteRef,omitempty" protobuf:"bytes,56,opt,name=servingSiteRef"`
 }
 
 type SegmentSpec struct {

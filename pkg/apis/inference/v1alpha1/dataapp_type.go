@@ -19,7 +19,6 @@ type DataAppConditionType string
 // / DataApp Condition
 const (
 	DataAppReady = "Ready"
-	DataAppSaved = "Saved"
 )
 
 // +kubebuilder:object:root=true

@@ -34,30 +34,30 @@ spec:
     - jsonPath: .spec.public
       name: Public
       type: boolean
-    - jsonPath: .status.totalErrorAlerts
+    - jsonPath: .status.errorAlertsCount
       name: Errors
       type: integer
-    - jsonPath: .status.totalDatasources
+    - jsonPath: .status.datasourcesCount
       name: Location Sources
       priority: 1
       type: integer
-    - jsonPath: .status.totalDatasets
+    - jsonPath: .status.datasetsCount
       name: Datasets
       priority: 1
       type: integer
-    - jsonPath: .status.totalStudies
+    - jsonPath: .status.studiesCount
       name: Studies
       priority: 1
       type: integer
-    - jsonPath: .status.totalModels
+    - jsonPath: .status.modelsCount
       name: ModelsCount
       priority: 1
       type: integer
-    - jsonPath: .status.totalPredictors
+    - jsonPath: .status.predictorsCount
       name: Predictors
       priority: 1
       type: integer
-    - jsonPath: .status.totalApps
+    - jsonPath: .status.appsCount
       name: Apps
       priority: 1
       type: integer

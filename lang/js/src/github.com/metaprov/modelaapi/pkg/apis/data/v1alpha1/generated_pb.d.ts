@@ -2415,42 +2415,6 @@ export namespace Entity {
   }
 }
 
-export class EntityCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): EntityCondition;
-
-  getStatus(): string;
-  setStatus(value: string): EntityCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): EntityCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): EntityCondition;
-
-  getReason(): string;
-  setReason(value: string): EntityCondition;
-
-  getMessage(): string;
-  setMessage(value: string): EntityCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EntityCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: EntityCondition): EntityCondition.AsObject;
-  static serializeBinaryToWriter(message: EntityCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EntityCondition;
-  static deserializeBinaryFromReader(message: EntityCondition, reader: jspb.BinaryReader): EntityCondition;
-}
-
-export namespace EntityCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
 export class EntityList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): EntityList;

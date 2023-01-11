@@ -37,7 +37,7 @@ spec:
       priority: 1
       type: string
     - jsonPath: .spec.datasetName
-      name: Entity
+      name: Dataset
       type: string
     - jsonPath: .spec.task
       name: Task
@@ -57,11 +57,11 @@ spec:
     - jsonPath: .status.test.completed
       name: Tested
       type: number
-    - jsonPath: .status.startTime
+    - jsonPath: .status.startAt
       name: StartedAt
       priority: 1
       type: date
-    - jsonPath: .status.completionTime
+    - jsonPath: .status.completedAt
       name: CompletedAt
       priority: 1
       type: date

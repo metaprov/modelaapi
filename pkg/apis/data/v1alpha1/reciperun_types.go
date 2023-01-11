@@ -19,9 +19,7 @@ const (
 
 // / RecipeName Condition
 const (
-	RecipeRunUnitTested = "UnitTested"
-	RecipeRunCompleted  = "Completed"
-	RecipeRunSaved      = "Saved"
+	RecipeRunCompleted = "Completed"
 )
 
 // +kubebuilder:subresource:status

@@ -4211,8 +4211,8 @@ export class ServingSiteSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ServingSiteSpec;
 
-  getType(): string;
-  setType(value: string): ServingSiteSpec;
+  getStage(): string;
+  setStage(value: string): ServingSiteSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingSiteSpec.AsObject;
@@ -4230,7 +4230,7 @@ export namespace ServingSiteSpec {
     ingress?: IngressSpec.AsObject,
     externalcluster?: VirtualClusterSpec.AsObject,
     owner: string,
-    type: string,
+    stage: string,
   }
 }
 

@@ -2128,6 +2128,12 @@ export class ModelClassStatus extends jspb.Message {
   getModelscount(): number;
   setModelscount(value: number): ModelClassStatus;
 
+  getLive(): boolean;
+  setLive(value: boolean): ModelClassStatus;
+
+  getPredictorscount(): number;
+  setPredictorscount(value: number): ModelClassStatus;
+
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): ModelClassStatus;
   clearConditionsList(): ModelClassStatus;
@@ -2164,6 +2170,8 @@ export namespace ModelClassStatus {
     predictionscount: number,
     runscount: number,
     modelscount: number,
+    live: boolean,
+    predictorscount: number,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -2583,6 +2591,11 @@ export class ModelSpec extends jspb.Message {
   getRole(): string;
   setRole(value: string): ModelSpec;
 
+  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelSpec;
+  hasServingsiteref(): boolean;
+  clearServingsiteref(): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -2647,6 +2660,7 @@ export namespace ModelSpec {
     modelclassname: string,
     modelclassrunname: string,
     role: string,
+    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 

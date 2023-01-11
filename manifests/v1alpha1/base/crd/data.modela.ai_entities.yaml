@@ -30,8 +30,11 @@ spec:
     - jsonPath: .spec.description
       name: Description
       type: string
-    - jsonPath: .spec.versionName
+    - jsonPath: .spec.version
       name: Version
+      type: string
+    - jsonPath: .spec.joinKey
+      name: JoinKey
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age

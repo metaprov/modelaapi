@@ -24,7 +24,7 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
-    - jsonPath: .spec.versionName
+    - jsonPath: .spec.version
       name: Version
       type: string
     - jsonPath: .spec.entityName
@@ -33,11 +33,11 @@ spec:
     - jsonPath: .spec.schedule
       name: Schedule
       type: string
-    - jsonPath: .status.ingestSchedule.lastRun
-      name: Last Ingest
+    - jsonPath: .status.ingestSchedule.nextRunAt
+      name: Next Ingest
       type: date
-    - jsonPath: .status.syncScedule.lastRun
-      name: Last Sync
+    - jsonPath: .status.syncScedule.nextRunAt
+      name: Next Sync
       type: date
     - jsonPath: .metadata.creationTimestamp
       name: Age

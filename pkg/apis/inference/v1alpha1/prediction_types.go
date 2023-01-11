@@ -30,9 +30,7 @@ type PredictionConditionType string
 // / PredictionTemplate Condition
 const (
 	PredictionCompleted  = "Completed"
-	PredictionSaved      = "Saved"
 	PredictionUnitTested = "UnitTested"
-	PredictionArchived   = "Archived"
 )
 
 // +kubebuilder:object:root=true

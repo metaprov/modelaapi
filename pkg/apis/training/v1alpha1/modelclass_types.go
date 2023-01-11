@@ -349,14 +349,20 @@ type ModelClassStatus struct {
 	// Total number of batch predictions
 	//+kubebuilder:validation:Optional
 	PredictionsCount int32 `json:"predictionsCount,omitempty" protobuf:"varint,19,opt,name=predictionsCount"`
-	// Total number of batch predictions
+	// Total number of batch  mode class run in the system for this model class.
 	//+kubebuilder:validation:Optional
 	RunsCount int32 `json:"runsCount,omitempty" protobuf:"varint,20,opt,name=runsCount"`
-	// Total models created for the ModelClass
+	// Total models in the system for this model class
 	// +kubebuilder:validation:Optional
 	ModelsCount int32 `json:"modelsCount,omitempty" protobuf:"varint,21,opt,name=modelsCount"`
+	// If true, a model of this class is in production
+	// +kubebuilder:validation:Optional
+	Live bool `json:"live,omitempty" protobuf:"varint,22,opt,name=live"`
+	// Total predictors in the system for this model class
+	// +kubebuilder:validation:Optional
+	PredictorsCount int32 `json:"predictorsCount,omitempty" protobuf:"varint,23,opt,name=predictorsCount"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,22,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,24,rep,name=conditions"`
 }

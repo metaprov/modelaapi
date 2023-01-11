@@ -1014,13 +1014,13 @@ message DataPipelineStatus {
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Public",type="boolean",JSONPath=".spec.public"
-// +kubebuilder:printcolumn:name="Errors",type="integer",JSONPath=".status.totalErrorAlerts"
-// +kubebuilder:printcolumn:name="Location Sources",type="integer",JSONPath=".status.totalDatasources",priority=1
-// +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.totalDatasets",priority=1
-// +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.totalStudies",priority=1
-// +kubebuilder:printcolumn:name="ModelsCount",type="integer",JSONPath=".status.totalModels",priority=1
-// +kubebuilder:printcolumn:name="Predictors",type="integer",JSONPath=".status.totalPredictors",priority=1
-// +kubebuilder:printcolumn:name="Apps",type="integer",JSONPath=".status.totalApps",priority=1
+// +kubebuilder:printcolumn:name="Errors",type="integer",JSONPath=".status.errorAlertsCount"
+// +kubebuilder:printcolumn:name="Location Sources",type="integer",JSONPath=".status.datasourcesCount",priority=1
+// +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.datasetsCount",priority=1
+// +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.studiesCount",priority=1
+// +kubebuilder:printcolumn:name="ModelsCount",type="integer",JSONPath=".status.modelsCount",priority=1
+// +kubebuilder:printcolumn:name="Predictors",type="integer",JSONPath=".status.predictorsCount",priority=1
+// +kubebuilder:printcolumn:name="Apps",type="integer",JSONPath=".status.appsCount",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // DataProduct represents a single DataProduct namespace, which contains all non-infrastructure resources. Additionally,
 // it specifies default parameters for resources to be created under the namespace, such as workload class and storage location
@@ -1840,7 +1840,8 @@ message DriftThreshold {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
+// +kubebuilder:printcolumn:name="JoinKey",type="string",JSONPath=".spec.joinKey"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // Entity represents a entity object
 message Entity {
@@ -1850,24 +1851,6 @@ message Entity {
 
   // +optional
   optional EntityStatus status = 3;
-}
-
-// EntityCondition describes the state of a deployment at a certain point.
-message EntityCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
@@ -1975,11 +1958,11 @@ message ExcelSheetArea {
 // +kubebuilder:resource:path=featuregroups,singular=featuregroup,shortName="fg",categories={data,modela}
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
 // +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.entityName"
 // +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule",description=""
-// +kubebuilder:printcolumn:name="Last Ingest",type="date",JSONPath=".status.ingestSchedule.lastRun",description=""
-// +kubebuilder:printcolumn:name="Last Sync",type="date",JSONPath=".status.syncScedule.lastRun",description=""
+// +kubebuilder:printcolumn:name="Next Ingest",type="date",JSONPath=".status.ingestSchedule.nextRunAt",description=""
+// +kubebuilder:printcolumn:name="Next Sync",type="date",JSONPath=".status.syncScedule.nextRunAt",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // FeatureGroup represent a group of features

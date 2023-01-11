@@ -4437,9 +4437,9 @@ func (in *ServingSiteSpec) DeepCopyInto(out *ServingSiteSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Type != nil {
-		in, out := &in.Type, &out.Type
-		*out = new(catalogv1alpha1.ServingSiteType)
+	if in.Stage != nil {
+		in, out := &in.Stage, &out.Stage
+		*out = new(catalogv1alpha1.ServingSiteStage)
 		**out = **in
 	}
 }
