@@ -119,18 +119,6 @@ func (dataapp DataApp) Deleted() bool {
 	return !dataapp.ObjectMeta.DeletionTimestamp.IsZero()
 }
 
-func (dataapp *DataApp) MarkSaved() {
-	dataapp.CreateOrUpdateCond(metav1.Condition{
-		Type:   DataAppSaved,
-		Status: metav1.ConditionTrue,
-		Reason: DataAppSaved,
-	})
-}
-
-func (dataapp DataApp) IsSaved() bool {
-	return dataapp.GetCond(DataAppSaved).Status == metav1.ConditionTrue
-}
-
 func (dataapp DataApp) ConstructGrpcRule(fqdn string, serviceName string) *nwv1.IngressRule {
 	prefix := nwv1.PathTypePrefix
 	return &nwv1.IngressRule{
