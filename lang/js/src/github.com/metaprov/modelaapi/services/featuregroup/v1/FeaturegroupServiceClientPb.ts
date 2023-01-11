@@ -379,5 +379,48 @@ export class FeatureGroupServiceClient {
     this.methodInfoIngestNow);
   }
 
+  methodInfoSyncNow = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.featuregroup.v1.FeatureGroupService/SyncNow',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.SyncFeatureGroupRequest,
+    github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.SyncFeatureGroupResponse,
+    (request: github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.SyncFeatureGroupRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.SyncFeatureGroupResponse.deserializeBinary
+  );
+
+  syncNow(
+    request: github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.SyncFeatureGroupRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.SyncFeatureGroupResponse>;
+
+  syncNow(
+    request: github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.SyncFeatureGroupRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.SyncFeatureGroupResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.SyncFeatureGroupResponse>;
+
+  syncNow(
+    request: github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.SyncFeatureGroupRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.SyncFeatureGroupResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.featuregroup.v1.FeatureGroupService/SyncNow',
+        request,
+        metadata || {},
+        this.methodInfoSyncNow,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.featuregroup.v1.FeatureGroupService/SyncNow',
+    request,
+    metadata || {},
+    this.methodInfoSyncNow);
+  }
+
 }
 

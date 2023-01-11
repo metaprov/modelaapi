@@ -30,6 +30,7 @@ type FeatureGroupServiceClient interface {
 	PauseFeatureGroup(ctx context.Context, in *PauseFeatureGroupRequest, opts ...grpc.CallOption) (*PauseFeatureGroupResponse, error)
 	ResumeFeatureGroup(ctx context.Context, in *ResumeFeatureGroupRequest, opts ...grpc.CallOption) (*ResumeFeatureGroupResponse, error)
 	IngestNow(ctx context.Context, in *IngestFeatureGroupRequest, opts ...grpc.CallOption) (*IngestFeatureGroupResponse, error)
+	SyncNow(ctx context.Context, in *SyncFeatureGroupRequest, opts ...grpc.CallOption) (*SyncFeatureGroupResponse, error)
 }
 
 type featureGroupServiceClient struct {
@@ -112,6 +113,15 @@ func (c *featureGroupServiceClient) IngestNow(ctx context.Context, in *IngestFea
 	return out, nil
 }
 
+func (c *featureGroupServiceClient) SyncNow(ctx context.Context, in *SyncFeatureGroupRequest, opts ...grpc.CallOption) (*SyncFeatureGroupResponse, error) {
+	out := new(SyncFeatureGroupResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.featuregroup.v1.FeatureGroupService/SyncNow", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // FeatureGroupServiceServer is the server API for FeatureGroupService service.
 // All implementations must embed UnimplementedFeatureGroupServiceServer
 // for forward compatibility
@@ -124,6 +134,7 @@ type FeatureGroupServiceServer interface {
 	PauseFeatureGroup(context.Context, *PauseFeatureGroupRequest) (*PauseFeatureGroupResponse, error)
 	ResumeFeatureGroup(context.Context, *ResumeFeatureGroupRequest) (*ResumeFeatureGroupResponse, error)
 	IngestNow(context.Context, *IngestFeatureGroupRequest) (*IngestFeatureGroupResponse, error)
+	SyncNow(context.Context, *SyncFeatureGroupRequest) (*SyncFeatureGroupResponse, error)
 	mustEmbedUnimplementedFeatureGroupServiceServer()
 }
 
@@ -154,6 +165,9 @@ func (UnimplementedFeatureGroupServiceServer) ResumeFeatureGroup(context.Context
 }
 func (UnimplementedFeatureGroupServiceServer) IngestNow(context.Context, *IngestFeatureGroupRequest) (*IngestFeatureGroupResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IngestNow not implemented")
+}
+func (UnimplementedFeatureGroupServiceServer) SyncNow(context.Context, *SyncFeatureGroupRequest) (*SyncFeatureGroupResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SyncNow not implemented")
 }
 func (UnimplementedFeatureGroupServiceServer) mustEmbedUnimplementedFeatureGroupServiceServer() {}
 
@@ -312,6 +326,24 @@ func _FeatureGroupService_IngestNow_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _FeatureGroupService_SyncNow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SyncFeatureGroupRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FeatureGroupServiceServer).SyncNow(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.featuregroup.v1.FeatureGroupService/SyncNow",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FeatureGroupServiceServer).SyncNow(ctx, req.(*SyncFeatureGroupRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // FeatureGroupService_ServiceDesc is the grpc.ServiceDesc for FeatureGroupService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -350,6 +382,10 @@ var FeatureGroupService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "IngestNow",
 			Handler:    _FeatureGroupService_IngestNow_Handler,
+		},
+		{
+			MethodName: "SyncNow",
+			Handler:    _FeatureGroupService_SyncNow_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

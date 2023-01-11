@@ -327,3 +327,39 @@ export namespace IngestFeatureGroupResponse {
   }
 }
 
+export class SyncFeatureGroupRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): SyncFeatureGroupRequest;
+
+  getName(): string;
+  setName(value: string): SyncFeatureGroupRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SyncFeatureGroupRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SyncFeatureGroupRequest): SyncFeatureGroupRequest.AsObject;
+  static serializeBinaryToWriter(message: SyncFeatureGroupRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SyncFeatureGroupRequest;
+  static deserializeBinaryFromReader(message: SyncFeatureGroupRequest, reader: jspb.BinaryReader): SyncFeatureGroupRequest;
+}
+
+export namespace SyncFeatureGroupRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class SyncFeatureGroupResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SyncFeatureGroupResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SyncFeatureGroupResponse): SyncFeatureGroupResponse.AsObject;
+  static serializeBinaryToWriter(message: SyncFeatureGroupResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SyncFeatureGroupResponse;
+  static deserializeBinaryFromReader(message: SyncFeatureGroupResponse, reader: jspb.BinaryReader): SyncFeatureGroupResponse;
+}
+
+export namespace SyncFeatureGroupResponse {
+  export type AsObject = {
+  }
+}
+

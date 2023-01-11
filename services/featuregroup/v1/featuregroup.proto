@@ -84,6 +84,16 @@ message IngestFeatureGroupResponse {
 
 }
 
+message SyncFeatureGroupRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message SyncFeatureGroupResponse {
+
+}
+
+
 
 
 
@@ -125,9 +135,9 @@ service FeatureGroupService {
     rpc IngestNow(IngestFeatureGroupRequest) returns (IngestFeatureGroupResponse) {
         option (google.api.http).post = "/v1/modelclasses/{namespace}/{name}/ingest";
     }
-    
 
-
-
+    rpc SyncNow(SyncFeatureGroupRequest) returns (SyncFeatureGroupResponse) {
+        option (google.api.http).post = "/v1/modelclasses/{namespace}/{name}/sync";
+    }
 
 }
