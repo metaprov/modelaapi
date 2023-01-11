@@ -4377,7 +4377,8 @@ proto.github.com.metaprov.modelaapi.services.model.v1.DeployModelRequest.toObjec
     predictor: jspb.Message.getFieldWithDefault(msg, 3, ""),
     replicas: jspb.Message.getFieldWithDefault(msg, 4, 0),
     traffic: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    role: jspb.Message.getFieldWithDefault(msg, 6, "")
+    role: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    servingsite: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -4437,6 +4438,10 @@ proto.github.com.metaprov.modelaapi.services.model.v1.DeployModelRequest.deseria
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setRole(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setServingsite(value);
       break;
     default:
       reader.skipField();
@@ -4506,6 +4511,13 @@ proto.github.com.metaprov.modelaapi.services.model.v1.DeployModelRequest.seriali
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getServingsite();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -4617,6 +4629,24 @@ proto.github.com.metaprov.modelaapi.services.model.v1.DeployModelRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.model.v1.DeployModelRequest.prototype.setRole = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string servingsite = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.model.v1.DeployModelRequest.prototype.getServingsite = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.DeployModelRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.model.v1.DeployModelRequest.prototype.setServingsite = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

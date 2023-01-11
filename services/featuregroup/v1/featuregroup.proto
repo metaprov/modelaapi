@@ -75,6 +75,16 @@ message ResumeFeatureGroupRequest {
     string name      = 2;
 }
 
+message IngestFeatureGroupRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message IngestFeatureGroupResponse {
+
+}
+
+
 
 
 service FeatureGroupService {
@@ -110,6 +120,10 @@ service FeatureGroupService {
 
     rpc ResumeFeatureGroup(ResumeFeatureGroupRequest) returns (ResumeFeatureGroupResponse) {
         option (google.api.http).post = "/v1/featuregroups/{namespace}/{name}:pause";
+    }
+
+    rpc IngestNow(IngestFeatureGroupRequest) returns (IngestFeatureGroupResponse) {
+        option (google.api.http).post = "/v1/modelclasses/{namespace}/{name}/ingest";
     }
     
 

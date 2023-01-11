@@ -111,11 +111,9 @@ message CompileModelRequest {
 }
 
 message CompileModelResponse {
-    string namespace       = 1;
+    string namespace  = 1;
     string names  = 2;    
 }
-
-
 
 
 message DeployModelRequest {
@@ -125,6 +123,7 @@ message DeployModelRequest {
     int32  replicas  = 4;
     int32  traffic   = 5; // canary traffic
     string role      = 6;
+    string servingsite = 7;
 }
 
 message PublishModelRequest {

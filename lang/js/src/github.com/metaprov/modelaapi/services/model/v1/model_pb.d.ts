@@ -483,6 +483,9 @@ export class DeployModelRequest extends jspb.Message {
   getRole(): string;
   setRole(value: string): DeployModelRequest;
 
+  getServingsite(): string;
+  setServingsite(value: string): DeployModelRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeployModelRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DeployModelRequest): DeployModelRequest.AsObject;
@@ -499,6 +502,7 @@ export namespace DeployModelRequest {
     replicas: number,
     traffic: number,
     role: string,
+    servingsite: string,
   }
 }
 

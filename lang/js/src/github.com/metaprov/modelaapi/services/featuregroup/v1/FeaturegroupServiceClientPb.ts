@@ -336,5 +336,48 @@ export class FeatureGroupServiceClient {
     this.methodInfoResumeFeatureGroup);
   }
 
+  methodInfoIngestNow = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.featuregroup.v1.FeatureGroupService/IngestNow',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.IngestFeatureGroupRequest,
+    github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.IngestFeatureGroupResponse,
+    (request: github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.IngestFeatureGroupRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.IngestFeatureGroupResponse.deserializeBinary
+  );
+
+  ingestNow(
+    request: github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.IngestFeatureGroupRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.IngestFeatureGroupResponse>;
+
+  ingestNow(
+    request: github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.IngestFeatureGroupRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.IngestFeatureGroupResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.IngestFeatureGroupResponse>;
+
+  ingestNow(
+    request: github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.IngestFeatureGroupRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_featuregroup_v1_featuregroup_pb.IngestFeatureGroupResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.featuregroup.v1.FeatureGroupService/IngestNow',
+        request,
+        metadata || {},
+        this.methodInfoIngestNow,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.featuregroup.v1.FeatureGroupService/IngestNow',
+    request,
+    metadata || {},
+    this.methodInfoIngestNow);
+  }
+
 }
 
