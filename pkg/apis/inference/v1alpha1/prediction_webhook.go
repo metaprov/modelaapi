@@ -21,6 +21,9 @@ func (prediction *Prediction) Default() {
 	}
 	prediction.ObjectMeta.Labels[catalog.TenantLabelKey] = prediction.Spec.ServingSiteRef.Namespace
 	prediction.ObjectMeta.Labels[catalog.ServingSiteLabelKey] = prediction.Spec.ServingSiteRef.Name
+	if prediction.Spec.ModelClassName != nil {
+		prediction.ObjectMeta.Labels[catalog.ModelClassLabelKey] = *prediction.Spec.ModelClassName
+	}
 
 }
 

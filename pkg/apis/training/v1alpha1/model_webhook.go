@@ -81,22 +81,36 @@ func (model *Model) Default() {
 	// set study labeles
 	if model.ObjectMeta.Labels == nil {
 		model.ObjectMeta.Labels = make(map[string]string)
-		if model.Spec.ModelVersion != nil {
-			model.ObjectMeta.Labels["modela.ai/modelversion"] = *model.Spec.ModelVersion
-		}
-		if model.Spec.StudyName != nil {
-			model.ObjectMeta.Labels[catalog.StudyLabelKey] = *model.Spec.StudyName
-		}
-		if model.Spec.Estimator != nil {
-			model.ObjectMeta.Labels[catalog.AlgorithmLabelKey] = model.Spec.Estimator.AlgorithmName
-		}
-		if model.Spec.Owner != nil {
-			model.ObjectMeta.Labels["modela.ai/owner"] = *model.Spec.Owner
-		}
-		if model.Spec.DatasetName != nil {
-			model.ObjectMeta.Labels[catalog.DatasetLabelKey] = *model.Spec.DatasetName
-		}
 	}
+
+	if model.Spec.ModelVersion != nil {
+		model.ObjectMeta.Labels["modela.ai/modelversion"] = *model.Spec.ModelVersion
+	}
+
+	if model.Spec.StudyName != nil {
+		model.ObjectMeta.Labels[catalog.StudyLabelKey] = *model.Spec.StudyName
+	}
+
+	if model.Spec.Estimator != nil {
+		model.ObjectMeta.Labels[catalog.AlgorithmLabelKey] = model.Spec.Estimator.AlgorithmName
+	}
+
+	if model.Spec.Owner != nil {
+		model.ObjectMeta.Labels[catalog.OwnerKindLabelKey] = *model.Spec.Owner
+	}
+
+	if model.Spec.DatasetName != nil {
+		model.ObjectMeta.Labels[catalog.DatasetLabelKey] = *model.Spec.DatasetName
+	}
+
+	if model.Spec.ModelClassName != nil {
+		model.ObjectMeta.Labels[catalog.ModelClassLabelKey] = *model.Spec.ModelClassName
+	}
+
+	if model.Spec.ModelClassRunName != nil {
+		model.ObjectMeta.Labels[catalog.ModelClassRunLabelKey] = *model.Spec.ModelClassRunName
+	}
+
 	// update the status. this might be moved to the crd itself.
 	if model.Status.ImpurityImportance == nil {
 		model.Status.ImpurityImportance = make([]FeatureImportance, 0)

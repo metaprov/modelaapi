@@ -40,8 +40,15 @@ func (dataset *Dataset) Default() {
 		dataset.ObjectMeta.Labels[catalog.DataProductVersionLabelKey] = *dataset.Spec.VersionName
 	}
 	if dataset.Spec.Owner != nil {
-		dataset.ObjectMeta.Labels["modela.ai/owner"] = *dataset.Spec.Owner
+		dataset.ObjectMeta.Labels[catalog.OwnerKindLabelKey] = *dataset.Spec.Owner
 	}
+	if dataset.Spec.ModelClassName != nil {
+		dataset.ObjectMeta.Labels[catalog.ModelClassLabelKey] = *dataset.Spec.ModelClassName
+	}
+	if dataset.Spec.ModelClassRunName != nil {
+		dataset.ObjectMeta.Labels[catalog.ModelClassRunLabelKey] = *dataset.Spec.ModelClassRunName
+	}
+
 	dataset.ObjectMeta.Labels[catalog.TenantLabelKey] = dataset.Spec.LabRef.Namespace
 	dataset.ObjectMeta.Labels[catalog.LabLabelKey] = dataset.Spec.LabRef.Name
 

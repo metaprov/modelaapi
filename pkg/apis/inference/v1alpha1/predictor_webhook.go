@@ -45,6 +45,10 @@ func (predictor *Predictor) Default() {
 	predictor.ObjectMeta.Labels[catalog.TenantLabelKey] = predictor.Spec.ServingSiteRef.Namespace
 	predictor.ObjectMeta.Labels[catalog.ServingSiteLabelKey] = predictor.Spec.ServingSiteRef.Name
 
+	if predictor.Spec.ModelClassName != nil {
+		predictor.ObjectMeta.Labels[catalog.ModelClassLabelKey] = *predictor.Spec.ModelClassName
+	}
+
 	// set the default threshold if non exist.
 	if len(predictor.Spec.Drift.DriftThresholds) == 0 {
 		predictor.Spec.Drift.DriftThresholds = []data.DriftThreshold{

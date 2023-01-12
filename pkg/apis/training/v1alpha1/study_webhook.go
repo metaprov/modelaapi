@@ -126,14 +126,20 @@ func (study *Study) Default() {
 		study.ObjectMeta.Labels = make(map[string]string)
 	}
 	if study.Spec.Owner != nil {
-		study.ObjectMeta.Labels["modela.ai/owner"] = *study.Spec.Owner
+		study.ObjectMeta.Labels[catalog.OwnerKindLabelKey] = *study.Spec.Owner
 	}
 	if study.Spec.DatasetName != nil {
-		study.ObjectMeta.Labels["modela.ai/dataset"] = *study.Spec.DatasetName
+		study.ObjectMeta.Labels[catalog.DatasetLabelKey] = *study.Spec.DatasetName
 	}
 	study.ObjectMeta.Labels[catalog.TenantLabelKey] = study.Spec.LabRef.Namespace
 	study.ObjectMeta.Labels[catalog.LabLabelKey] = study.Spec.LabRef.Name
 	study.ObjectMeta.Labels[catalog.DataProductLabelKey] = *study.Spec.VersionName
+	if study.Spec.ModelClassName != nil {
+		study.ObjectMeta.Labels[catalog.ModelClassLabelKey] = *study.Spec.ModelClassName
+	}
+	if study.Spec.ModelClassRunName != nil {
+		study.ObjectMeta.Labels[catalog.ModelClassRunLabelKey] = *study.Spec.ModelClassRunName
+	}
 
 }
 
