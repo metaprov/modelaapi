@@ -1947,6 +1947,9 @@ spec:
                     description: Create an online predictor to host the model and
                       enable real time ML.
                     type: boolean
+                  predictorName:
+                    description: The name of the predictor if exist to update.
+                    type: string
                   predictorTemplateName:
                     description: The name of the predictor template to use when
                     type: string

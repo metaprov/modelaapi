@@ -2775,33 +2775,36 @@ message ServingSpec {
   // +kubebuilder:validation:Optional
   optional bool released = 1;
 
+  // The name of the predictor if exist to update.
+  optional string predictorName = 2;
+
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 2;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 3;
 
   // +kubebuilder:default:="cloudpickle"
   // +kubebuilder:validation:Optional
-  optional string format = 3;
+  optional string format = 4;
 
   // The name of the predictor template to use when
   // +kubebuilder:validation:Optional
-  optional string predictorTemplateName = 4;
+  optional string predictorTemplateName = 5;
 
   // The reference to the serving site, where online predictor will be served.
   // If unspecified, the default Lab from the parent DataProduct will be used
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 5;
+  optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 6;
 
   // Create an online predictor to host the model and enable real time ML.
   // +kubebuilder:validation:Optional
-  optional bool online = 6;
+  optional bool online = 7;
 
   // Setup a dashboard for the model.
   // +kubebuilder:validation:Optional
-  optional bool dashboard = 7;
+  optional bool dashboard = 8;
 
   // Access specifies the configuration for the Predictor service to be exposed externally
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 9;
 
   // The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
   // copies of the service in the case that automatic scaling is disabled

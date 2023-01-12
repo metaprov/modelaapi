@@ -3884,6 +3884,9 @@ export class ServingSpec extends jspb.Message {
   getReleased(): boolean;
   setReleased(value: boolean): ServingSpec;
 
+  getPredictorname(): string;
+  setPredictorname(value: string): ServingSpec;
+
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ServingSpec;
   hasResources(): boolean;
@@ -3934,6 +3937,7 @@ export class ServingSpec extends jspb.Message {
 export namespace ServingSpec {
   export type AsObject = {
     released: boolean,
+    predictorname: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     format: string,
     predictortemplatename: string,

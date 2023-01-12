@@ -937,27 +937,29 @@ type ServingSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"released,omitempty" protobuf:"varint,1,opt,name=released"`
+	// The name of the predictor if exist to update.
+	PredictorName *string `json:"predictorName,omitempty" protobuf:"varint,2,opt,name=predictorName"`
 	// +kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,2,opt,name=resources"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,3,opt,name=resources"`
 	// +kubebuilder:default:="cloudpickle"
 	// +kubebuilder:validation:Optional
-	Format *catalog.ModelServingFormat `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
+	Format *catalog.ModelServingFormat `json:"format,omitempty" protobuf:"bytes,4,opt,name=format"`
 	// The name of the predictor template to use when
 	// +kubebuilder:validation:Optional
-	PredictorTemplateName *string `json:"predictorTemplateName,omitempty" protobuf:"bytes,4,opt,name=predictorTemplateName"`
+	PredictorTemplateName *string `json:"predictorTemplateName,omitempty" protobuf:"bytes,5,opt,name=predictorTemplateName"`
 	// The reference to the serving site, where online predictor will be served.
 	// If unspecified, the default Lab from the parent DataProduct will be used
 	// +kubebuilder:validation:Optional
-	ServingSiteRef v1.ObjectReference `json:"servingSiteRef,omitempty" protobuf:"bytes,5,opt,name=servingSiteRef"`
+	ServingSiteRef v1.ObjectReference `json:"servingSiteRef,omitempty" protobuf:"bytes,6,opt,name=servingSiteRef"`
 	// Create an online predictor to host the model and enable real time ML.
 	// +kubebuilder:validation:Optional
-	Online *bool `json:"online,omitempty" protobuf:"varint,6,opt,name=online"`
+	Online *bool `json:"online,omitempty" protobuf:"varint,7,opt,name=online"`
 	// Setup a dashboard for the model.
 	// +kubebuilder:validation:Optional
-	Dashboard *bool `json:"dashboard,omitempty" protobuf:"varint,7,opt,name=dashboard"`
+	Dashboard *bool `json:"dashboard,omitempty" protobuf:"varint,8,opt,name=dashboard"`
 	// Access specifies the configuration for the Predictor service to be exposed externally
 	// +kubebuilder:validation:Optional
-	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,8,opt,name=access"`
+	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,9,opt,name=access"`
 	// The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
 	// copies of the service in the case that automatic scaling is disabled
 	// +kubebuilder:validation:Optional

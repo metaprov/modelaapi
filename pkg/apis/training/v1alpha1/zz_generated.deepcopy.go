@@ -3219,6 +3219,11 @@ func (in *ServingSpec) DeepCopyInto(out *ServingSpec) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PredictorName != nil {
+		in, out := &in.PredictorName, &out.PredictorName
+		*out = new(string)
+		**out = **in
+	}
 	in.Resources.DeepCopyInto(&out.Resources)
 	if in.Format != nil {
 		in, out := &in.Format, &out.Format
