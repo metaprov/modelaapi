@@ -229,41 +229,21 @@ type ModelClassServingSpec struct {
 	// The name of the predictor template to use when
 	// +kubebuilder:validation:Optional
 	PredictorTemplateName *string `json:"predictorTemplateName,omitempty" protobuf:"bytes,2,opt,name=predictorTemplateName"`
-	// The reference to the serving site, where online predictor will be served.
-	// If unspecified, the default Lab from the parent DataProduct will be used
+	// Define a template for the serving spec of new models created for this model class
 	// +kubebuilder:validation:Optional
-	ServingSiteRef v1.ObjectReference `json:"servingSiteRef,omitempty" protobuf:"bytes,3,opt,name=servingSiteRef"`
-	// Create an online predictor, if the model is used only for batch prediction, set this option to false.
+	Template ServingSpec `json:"template,omitempty" protobuf:"bytes,3,opt,name=template"`
+	// Schedule for monitoring drift
 	// +kubebuilder:validation:Optional
-	Online *bool `json:"online,omitempty" protobuf:"varint,4,opt,name=online"`
-	// Setup a dashboard for the predictor.
-	// +kubebuilder:validation:Optional
-	Dashboard *bool `json:"dashboard,omitempty" protobuf:"varint,5,opt,name=dashboard"`
-	// Access specifies the configuration for the Predictor service to be exposed externally
-	// +kubebuilder:validation:Optional
-	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,6,opt,name=access"`
-	// The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
-	// copies of the service in the case that automatic scaling is disabled
-	// +kubebuilder:validation:Optional
-	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,7,opt,name=replicas"`
-	// Schedule for computing drift
-	// +kubebuilder:validation:Optional
-	MonitoringSchedule catalog.RunSchedule `json:"monitoringSchedule,omitempty" protobuf:"bytes,8,opt,name=monitoringSchedule"`
+	MonitoringSchedule catalog.RunSchedule `json:"monitoringSchedule,omitempty" protobuf:"bytes,4,opt,name=monitoringSchedule"`
 	// BatchPrediction schedule
 	// +kubebuilder:validation:Optional
-	PredictionSchedule catalog.RunSchedule `json:"predictionSchedule,omitempty" protobuf:"bytes,9,opt,name=predictionSchedule"`
-	// The serving resources for batch or online prediction
-	// +kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,10,opt,name=resources"`
-	// when a model is ready, deploy it as shadow model first.
-	// +kubebuilder:validation:Optional
-	ShadowFirst *bool `json:"shadowFirst,omitempty" protobuf:"varint,11,opt,name=shadowFirst"`
+	PredictionSchedule catalog.RunSchedule `json:"predictionSchedule,omitempty" protobuf:"bytes,5,opt,name=predictionSchedule"`
 	// List of SQL statements to run before performing the prediction
 	// +kubebuilder:validation:Optional
-	PreSql []string `json:"preSQL,omitempty" protobuf:"bytes,12,opt,name=preSQL"`
+	PreSql []string `json:"preSQL,omitempty" protobuf:"bytes,6,opt,name=preSQL"`
 	// List of SQL statements to run before performing the prediction
 	// +kubebuilder:validation:Optional
-	PostSql []string `json:"postSQL,omitempty" protobuf:"bytes,13,opt,name=postSQL"`
+	PostSql []string `json:"postSQL,omitempty" protobuf:"bytes,7,opt,name=postSQL"`
 }
 
 // Define a test stage

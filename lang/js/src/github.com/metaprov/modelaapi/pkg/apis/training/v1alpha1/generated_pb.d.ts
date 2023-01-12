@@ -1885,24 +1885,10 @@ export class ModelClassServingSpec extends jspb.Message {
   getPredictortemplatename(): string;
   setPredictortemplatename(value: string): ModelClassServingSpec;
 
-  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelClassServingSpec;
-  hasServingsiteref(): boolean;
-  clearServingsiteref(): ModelClassServingSpec;
-
-  getOnline(): boolean;
-  setOnline(value: boolean): ModelClassServingSpec;
-
-  getDashboard(): boolean;
-  setDashboard(value: boolean): ModelClassServingSpec;
-
-  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
-  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): ModelClassServingSpec;
-  hasAccess(): boolean;
-  clearAccess(): ModelClassServingSpec;
-
-  getReplicas(): number;
-  setReplicas(value: number): ModelClassServingSpec;
+  getTemplate(): ServingSpec | undefined;
+  setTemplate(value?: ServingSpec): ModelClassServingSpec;
+  hasTemplate(): boolean;
+  clearTemplate(): ModelClassServingSpec;
 
   getMonitoringschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setMonitoringschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassServingSpec;
@@ -1913,14 +1899,6 @@ export class ModelClassServingSpec extends jspb.Message {
   setPredictionschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassServingSpec;
   hasPredictionschedule(): boolean;
   clearPredictionschedule(): ModelClassServingSpec;
-
-  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
-  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ModelClassServingSpec;
-  hasResources(): boolean;
-  clearResources(): ModelClassServingSpec;
-
-  getShadowfirst(): boolean;
-  setShadowfirst(value: boolean): ModelClassServingSpec;
 
   getPresqlList(): Array<string>;
   setPresqlList(value: Array<string>): ModelClassServingSpec;
@@ -1944,15 +1922,9 @@ export namespace ModelClassServingSpec {
   export type AsObject = {
     pipelineList: Array<PipelineStageSpec.AsObject>,
     predictortemplatename: string,
-    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    online: boolean,
-    dashboard: boolean,
-    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
-    replicas: number,
+    template?: ServingSpec.AsObject,
     monitoringschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     predictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    shadowfirst: boolean,
     presqlList: Array<string>,
     postsqlList: Array<string>,
   }

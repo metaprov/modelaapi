@@ -1278,51 +1278,25 @@ message ModelClassServingSpec {
   // +kubebuilder:validation:Optional
   optional string predictorTemplateName = 2;
 
-  // The reference to the serving site, where online predictor will be served.
-  // If unspecified, the default Lab from the parent DataProduct will be used
+  // Define a template for the serving spec of new models created for this model class
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 3;
+  optional ServingSpec template = 3;
 
-  // Create an online predictor, if the model is used only for batch prediction, set this option to false.
+  // Schedule for monitoring drift
   // +kubebuilder:validation:Optional
-  optional bool online = 4;
-
-  // Setup a dashboard for the predictor.
-  // +kubebuilder:validation:Optional
-  optional bool dashboard = 5;
-
-  // Access specifies the configuration for the Predictor service to be exposed externally
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 6;
-
-  // The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
-  // copies of the service in the case that automatic scaling is disabled
-  // +kubebuilder:validation:Optional
-  optional int32 replicas = 7;
-
-  // Schedule for computing drift
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule monitoringSchedule = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule monitoringSchedule = 4;
 
   // BatchPrediction schedule
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule predictionSchedule = 9;
-
-  // The serving resources for batch or online prediction
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 10;
-
-  // when a model is ready, deploy it as shadow model first.
-  // +kubebuilder:validation:Optional
-  optional bool shadowFirst = 11;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule predictionSchedule = 5;
 
   // List of SQL statements to run before performing the prediction
   // +kubebuilder:validation:Optional
-  repeated string preSQL = 12;
+  repeated string preSQL = 6;
 
   // List of SQL statements to run before performing the prediction
   // +kubebuilder:validation:Optional
-  repeated string postSQL = 13;
+  repeated string postSQL = 7;
 }
 
 // ModelClassSpec defines the desired state of a ModelClass and the parameters for a model search
