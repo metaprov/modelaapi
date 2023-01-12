@@ -1919,8 +1919,12 @@ spec:
                           by the Port field will be exposed to accept HTTP/1.1 traffic
                         type: boolean
                     type: object
+                  approvedBy:
+                    description: ApprovedBy indicates the account that approve this
+                      model.
+                    type: string
                   dashboard:
-                    description: Setup a dashboard for the predictor.
+                    description: Setup a dashboard for the model.
                     type: boolean
                   format:
                     default: cloudpickle
@@ -1935,9 +1939,13 @@ spec:
                     - pmml
                     - pt
                     type: string
+                  manual:
+                    description: If true, the model must be approved before moving
+                      it to production
+                    type: boolean
                   online:
-                    description: Create an online predictor, if the model is used
-                      only for batch prediction, set this option to false.
+                    description: Create an online predictor to host the model and
+                      enable real time ML.
                     type: boolean
                   predictorTemplateName:
                     description: The name of the predictor template to use when
@@ -3169,10 +3177,6 @@ spec:
               driftDetectorURI:
                 description: The URI of the model test weights
                 type: string
-              endpoint:
-                description: The endpoint of the Model, which is set after it is deployed
-                  to a Predictor
-                type: string
               failureMessage:
                 description: In the case of failure, the Model resource controller
                   will set this field with a failure message
@@ -3772,10 +3776,6 @@ spec:
                 description: The time at which the Model was set to release
                 format: date-time
                 type: string
-              predictorName:
-                description: The name of the Predictor in the case that the Model
-                  has been released and deployed
-                type: string
               profileURI:
                 description: The URI of the model profile, which contains visualizations
                   produced during the profiling phase
@@ -3826,6 +3826,27 @@ spec:
                   pythonVersion:
                     description: The Python version of the data plane used during
                       training
+                    type: string
+                type: object
+              serving:
+                description: The name of the Predictor in the case that the Model
+                  has been released and deployed
+                properties:
+                  approvedAt:
+                    description: ApprovedAt indicates the time of approval
+                    format: date-time
+                    type: string
+                  dashboardURI:
+                    description: The uri for the dashboard, if dashboard was created.
+                    type: string
+                  dataAppName:
+                    description: The name of the dataapp for this model
+                    type: string
+                  predictorName:
+                    description: The name of the predictor hosting this model
+                    type: string
+                  predictorURI:
+                    description: The URI of the predictor.
                     type: string
                 type: object
               sizeInBytes:

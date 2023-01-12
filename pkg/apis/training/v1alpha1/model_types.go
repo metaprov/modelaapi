@@ -544,7 +544,7 @@ type ModelStatus struct {
 	URL string `json:"url,omitempty" protobuf:"bytes,53,opt,name=url"`
 	// The name of the Predictor in the case that the Model has been released and deployed
 	// +kubebuilder:validation:Optional
-	PredictorName string `json:"predictorName,omitempty" protobuf:"bytes,54,opt,name=predictorName"`
+	Serving ServingStatus `json:"serving,omitempty" protobuf:"bytes,54,opt,name=serving"`
 	// The time at which the Model was set to release
 	// +kubebuilder:validation:Optional
 	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,55,opt,name=releasedAt"`
@@ -572,9 +572,6 @@ type ModelStatus struct {
 	// The team of the Account which trained the model, derived from the parent Study
 	// +kubebuilder:validation:Optional
 	Team string `json:"team,omitempty" protobuf:"bytes,63,opt,name=team"`
-	// The endpoint of the Model, which is set after it is deployed to a Predictor
-	// +kubebuilder:validation:Optional
-	EndPoint string `json:"endpoint,omitempty" protobuf:"bytes,64,opt,name=endpoint"`
 	// Logs specifies the location of logs produced by workloads associated with the Model
 	//+kubebuilder:validation:Optional
 	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,65,opt,name=logs"`
@@ -952,10 +949,10 @@ type ServingSpec struct {
 	// If unspecified, the default Lab from the parent DataProduct will be used
 	// +kubebuilder:validation:Optional
 	ServingSiteRef v1.ObjectReference `json:"servingSiteRef,omitempty" protobuf:"bytes,5,opt,name=servingSiteRef"`
-	// Create an online predictor, if the model is used only for batch prediction, set this option to false.
+	// Create an online predictor to host the model and enable real time ML.
 	// +kubebuilder:validation:Optional
 	Online *bool `json:"online,omitempty" protobuf:"varint,6,opt,name=online"`
-	// Setup a dashboard for the predictor.
+	// Setup a dashboard for the model.
 	// +kubebuilder:validation:Optional
 	Dashboard *bool `json:"dashboard,omitempty" protobuf:"varint,7,opt,name=dashboard"`
 	// Access specifies the configuration for the Predictor service to be exposed externally
@@ -967,7 +964,13 @@ type ServingSpec struct {
 	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,10,opt,name=replicas"`
 	// Deploy it as shadow model first.
 	// +kubebuilder:validation:Optional
-	Shadow *bool `json:"shadowFirst,omitempty" protobuf:"varint,12,opt,name=shadowFirst"`
+	Shadow *bool `json:"shadowFirst,omitempty" protobuf:"varint,11,opt,name=shadowFirst"`
+	// If true, the model must be approved before moving it to production
+	// +kubebuilder:validation:Optional
+	Manual *bool `json:"manual,omitempty" protobuf:"varint,12,opt,name=manual"`
+	// ApprovedBy indicates the account that approve this model.
+	// +kubebuilder:validation:Optional
+	ApprovedBy *string `json:"approvedBy,omitempty" protobuf:"bytes,13,opt,name=approvedBy"`
 }
 
 // TextPipelineSpec represents a single pipeline for transforming text data
@@ -1244,4 +1247,22 @@ type ModelStageStatus struct {
 	// Error record error.
 	//+kubebuilder:validation:Optional
 	Error string `json:"error,omitempty" protobuf:"bytes,10,opt,name=error"`
+}
+
+type ServingStatus struct {
+	// ApprovedAt indicates the time of approval
+	// +kubebuilder:validation:Optional
+	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,1,opt,name=approvedAt"`
+	// The name of the predictor hosting this model
+	// +kubebuilder:validation:Optional
+	PredictorName string `json:"predictorName,omitempty" protobuf:"bytes,2,opt,name=predictorName"`
+	// The name of the dataapp for this model
+	// +kubebuilder:validation:Optional
+	DataAppName string `json:"dataAppName,omitempty" protobuf:"bytes,3,opt,name=dataAppName"`
+	// The URI of the predictor.
+	// +kubebuilder:validation:Optional
+	PredictorURI string `json:"predictorURI,omitempty" protobuf:"bytes,4,opt,name=predictorURI"`
+	// The uri for the dashboard, if dashboard was created.
+	// +kubebuilder:validation:Optional
+	DashboardURI string `json:"dashboardURI,omitempty" protobuf:"bytes,5,opt,name=dashboardURI"`
 }

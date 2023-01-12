@@ -2903,8 +2903,10 @@ export class ModelStatus extends jspb.Message {
   getUrl(): string;
   setUrl(value: string): ModelStatus;
 
-  getPredictorname(): string;
-  setPredictorname(value: string): ModelStatus;
+  getServing(): ServingStatus | undefined;
+  setServing(value?: ServingStatus): ModelStatus;
+  hasServing(): boolean;
+  clearServing(): ModelStatus;
 
   getReleasedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setReleasedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
@@ -2942,9 +2944,6 @@ export class ModelStatus extends jspb.Message {
 
   getTeam(): string;
   setTeam(value: string): ModelStatus;
-
-  getEndpoint(): string;
-  setEndpoint(value: string): ModelStatus;
 
   getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
   setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): ModelStatus;
@@ -3088,7 +3087,7 @@ export namespace ModelStatus {
     sizeinbytes: number,
     latency: number,
     url: string,
-    predictorname: string,
+    serving?: ServingStatus.AsObject,
     releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     predictedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     tarfilehash: string,
@@ -3098,7 +3097,6 @@ export namespace ModelStatus {
     testingresources?: ResourceConsumption.AsObject,
     trainedby: string,
     team: string,
-    endpoint: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     roccurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.AsObject,
     prcurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PRCurve.AsObject,
@@ -3919,6 +3917,12 @@ export class ServingSpec extends jspb.Message {
   getShadowfirst(): boolean;
   setShadowfirst(value: boolean): ServingSpec;
 
+  getManual(): boolean;
+  setManual(value: boolean): ServingSpec;
+
+  getApprovedby(): string;
+  setApprovedby(value: string): ServingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ServingSpec): ServingSpec.AsObject;
@@ -3939,6 +3943,44 @@ export namespace ServingSpec {
     access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
     replicas: number,
     shadowfirst: boolean,
+    manual: boolean,
+    approvedby: string,
+  }
+}
+
+export class ServingStatus extends jspb.Message {
+  getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ServingStatus;
+  hasApprovedat(): boolean;
+  clearApprovedat(): ServingStatus;
+
+  getPredictorname(): string;
+  setPredictorname(value: string): ServingStatus;
+
+  getDataappname(): string;
+  setDataappname(value: string): ServingStatus;
+
+  getPredictoruri(): string;
+  setPredictoruri(value: string): ServingStatus;
+
+  getDashboarduri(): string;
+  setDashboarduri(value: string): ServingStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ServingStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ServingStatus): ServingStatus.AsObject;
+  static serializeBinaryToWriter(message: ServingStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ServingStatus;
+  static deserializeBinaryFromReader(message: ServingStatus, reader: jspb.BinaryReader): ServingStatus;
+}
+
+export namespace ServingStatus {
+  export type AsObject = {
+    approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    predictorname: string,
+    dataappname: string,
+    predictoruri: string,
+    dashboarduri: string,
   }
 }
 

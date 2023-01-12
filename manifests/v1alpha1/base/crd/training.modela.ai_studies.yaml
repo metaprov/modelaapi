@@ -1736,8 +1736,12 @@ spec:
                           by the Port field will be exposed to accept HTTP/1.1 traffic
                         type: boolean
                     type: object
+                  approvedBy:
+                    description: ApprovedBy indicates the account that approve this
+                      model.
+                    type: string
                   dashboard:
-                    description: Setup a dashboard for the predictor.
+                    description: Setup a dashboard for the model.
                     type: boolean
                   format:
                     default: cloudpickle
@@ -1752,9 +1756,13 @@ spec:
                     - pmml
                     - pt
                     type: string
+                  manual:
+                    description: If true, the model must be approved before moving
+                      it to production
+                    type: boolean
                   online:
-                    description: Create an online predictor, if the model is used
-                      only for batch prediction, set this option to false.
+                    description: Create an online predictor to host the model and
+                      enable real time ML.
                     type: boolean
                   predictorTemplateName:
                     description: The name of the predictor template to use when

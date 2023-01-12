@@ -2161,7 +2161,7 @@ message ModelStatus {
 
   // The name of the Predictor in the case that the Model has been released and deployed
   // +kubebuilder:validation:Optional
-  optional string predictorName = 54;
+  optional ServingStatus serving = 54;
 
   // The time at which the Model was set to release
   // +kubebuilder:validation:Optional
@@ -2198,10 +2198,6 @@ message ModelStatus {
   // The team of the Account which trained the model, derived from the parent Study
   // +kubebuilder:validation:Optional
   optional string team = 63;
-
-  // The endpoint of the Model, which is set after it is deployed to a Predictor
-  // +kubebuilder:validation:Optional
-  optional string endpoint = 64;
 
   // Logs specifies the location of logs produced by workloads associated with the Model
   // +kubebuilder:validation:Optional
@@ -2795,11 +2791,11 @@ message ServingSpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 5;
 
-  // Create an online predictor, if the model is used only for batch prediction, set this option to false.
+  // Create an online predictor to host the model and enable real time ML.
   // +kubebuilder:validation:Optional
   optional bool online = 6;
 
-  // Setup a dashboard for the predictor.
+  // Setup a dashboard for the model.
   // +kubebuilder:validation:Optional
   optional bool dashboard = 7;
 
@@ -2814,7 +2810,37 @@ message ServingSpec {
 
   // Deploy it as shadow model first.
   // +kubebuilder:validation:Optional
-  optional bool shadowFirst = 12;
+  optional bool shadowFirst = 11;
+
+  // If true, the model must be approved before moving it to production
+  // +kubebuilder:validation:Optional
+  optional bool manual = 12;
+
+  // ApprovedBy indicates the account that approve this model.
+  // +kubebuilder:validation:Optional
+  optional string approvedBy = 13;
+}
+
+message ServingStatus {
+  // ApprovedAt indicates the time of approval
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 1;
+
+  // The name of the predictor hosting this model
+  // +kubebuilder:validation:Optional
+  optional string predictorName = 2;
+
+  // The name of the dataapp for this model
+  // +kubebuilder:validation:Optional
+  optional string dataAppName = 3;
+
+  // The URI of the predictor.
+  // +kubebuilder:validation:Optional
+  optional string predictorURI = 4;
+
+  // The uri for the dashboard, if dashboard was created.
+  // +kubebuilder:validation:Optional
+  optional string dashboardURI = 5;
 }
 
 // +kubebuilder:subresource:status
