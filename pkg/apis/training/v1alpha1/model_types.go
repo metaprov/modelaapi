@@ -972,7 +972,10 @@ type ServingSpec struct {
 	Manual *bool `json:"manual,omitempty" protobuf:"varint,12,opt,name=manual"`
 	// ApprovedBy indicates the account that approve this model.
 	// +kubebuilder:validation:Optional
-	ApprovedBy *string `json:"approvedBy,omitempty" protobuf:"bytes,13,opt,name=approvedBy"`
+	ApprovedBy v1.ObjectReference `json:"approvedBy,omitempty" protobuf:"bytes,13,opt,name=approvedBy"`
+	// ApprovedAt indicates the time of approval
+	// +kubebuilder:validation:Optional
+	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,14,opt,name=approvedAt"`
 }
 
 // TextPipelineSpec represents a single pipeline for transforming text data
@@ -1228,15 +1231,6 @@ type ModelStageStatus struct {
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase StageStatusPhase `json:"phase,omitempty" protobuf:"bytes,1,opt,name=phase"`
-	// Approved indicates that the stage is approved.
-	// +kubebuilder:validation:Optional
-	Approved bool `json:"approved,omitempty" protobuf:"bytes,2,opt,name=approved"`
-	// ApprovedBy indicates the account that approve this model.
-	// +kubebuilder:validation:Optional
-	ApprovedBy string `json:"approvedBy,omitempty" protobuf:"bytes,3,opt,name=approvedBy"`
-	// ApprovedAt indicates the time of approval
-	// +kubebuilder:validation:Optional
-	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,4,opt,name=approvedAt"`
 	// Start time is the start time of the stage
 	// +kubebuilder:validation:Optional
 	StartedAt *metav1.Time `json:"startedAt,omitempty" protobuf:"bytes,7,opt,name=startedAt"`

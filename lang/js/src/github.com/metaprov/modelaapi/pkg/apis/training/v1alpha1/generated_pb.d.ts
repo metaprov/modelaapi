@@ -2630,17 +2630,6 @@ export class ModelStageStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): ModelStageStatus;
 
-  getApproved(): boolean;
-  setApproved(value: boolean): ModelStageStatus;
-
-  getApprovedby(): string;
-  setApprovedby(value: string): ModelStageStatus;
-
-  getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStageStatus;
-  hasApprovedat(): boolean;
-  clearApprovedat(): ModelStageStatus;
-
   getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStageStatus;
   hasStartedat(): boolean;
@@ -2670,9 +2659,6 @@ export class ModelStageStatus extends jspb.Message {
 export namespace ModelStageStatus {
   export type AsObject = {
     phase: string,
-    approved: boolean,
-    approvedby: string,
-    approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
@@ -3895,8 +3881,15 @@ export class ServingSpec extends jspb.Message {
   getManual(): boolean;
   setManual(value: boolean): ServingSpec;
 
-  getApprovedby(): string;
-  setApprovedby(value: string): ServingSpec;
+  getApprovedby(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setApprovedby(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ServingSpec;
+  hasApprovedby(): boolean;
+  clearApprovedby(): ServingSpec;
+
+  getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ServingSpec;
+  hasApprovedat(): boolean;
+  clearApprovedat(): ServingSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingSpec.AsObject;
@@ -3920,7 +3913,8 @@ export namespace ServingSpec {
     replicas: number,
     shadowfirst: boolean,
     manual: boolean,
-    approvedby: string,
+    approvedby?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 

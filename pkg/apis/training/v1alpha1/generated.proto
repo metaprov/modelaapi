@@ -1887,18 +1887,6 @@ message ModelStageStatus {
   // +kubebuilder:validation:Optional
   optional string phase = 1;
 
-  // Approved indicates that the stage is approved.
-  // +kubebuilder:validation:Optional
-  optional bool approved = 2;
-
-  // ApprovedBy indicates the account that approve this model.
-  // +kubebuilder:validation:Optional
-  optional string approvedBy = 3;
-
-  // ApprovedAt indicates the time of approval
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 4;
-
   // Start time is the start time of the stage
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 7;
@@ -2795,7 +2783,11 @@ message ServingSpec {
 
   // ApprovedBy indicates the account that approve this model.
   // +kubebuilder:validation:Optional
-  optional string approvedBy = 13;
+  optional k8s.io.api.core.v1.ObjectReference approvedBy = 13;
+
+  // ApprovedAt indicates the time of approval
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 14;
 }
 
 message ServingStatus {

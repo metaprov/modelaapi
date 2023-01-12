@@ -26988,9 +26988,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     phase: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    approved: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
-    approvedby: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    approvedat: (f = msg.getApprovedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     startedat: (f = msg.getStartedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     completedat: (f = msg.getCompletedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     unittestsresult: (f = msg.getUnittestsresult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
@@ -27034,19 +27031,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.
     case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setPhase(value);
-      break;
-    case 2:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setApproved(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setApprovedby(value);
-      break;
-    case 4:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setApprovedat(value);
       break;
     case 7:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
@@ -27101,28 +27085,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.
     writer.writeString(
       1,
       f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeBool(
-      2,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getApprovedat();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
   f = message.getStartedat();
@@ -27192,115 +27154,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.prototype.hasPhase = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional bool approved = 2;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.prototype.getApproved = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.prototype.setApproved = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.prototype.clearApproved = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.prototype.hasApproved = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string approvedBy = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.prototype.getApprovedby = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.prototype.setApprovedby = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.prototype.clearApprovedby = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.prototype.hasApprovedby = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 4;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.prototype.getApprovedat = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.prototype.setApprovedat = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.prototype.clearApprovedat = function() {
-  return this.setApprovedat(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.prototype.hasApprovedat = function() {
-  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -38528,7 +38381,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.toObj
     replicas: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     shadowfirst: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
     manual: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
-    approvedby: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f
+    approvedby: (f = msg.getApprovedby()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    approvedat: (f = msg.getApprovedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -38617,8 +38471,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.deser
       msg.setManual(value);
       break;
     case 13:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setApprovedby(value);
+      break;
+    case 14:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setApprovedat(value);
       break;
     default:
       reader.skipField();
@@ -38736,11 +38596,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.seria
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 13));
+  f = message.getApprovedby();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       13,
-      f
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+    );
+  }
+  f = message.getApprovedat();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
 };
@@ -39182,29 +39051,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.proto
 
 
 /**
- * optional string approvedBy = 13;
- * @return {string}
+ * optional k8s.io.api.core.v1.ObjectReference approvedBy = 13;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.getApprovedby = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 13));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec} returns this
- */
+*/
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.setApprovedby = function(value) {
-  return jspb.Message.setField(this, 13, value);
+  return jspb.Message.setWrapperField(this, 13, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.clearApprovedby = function() {
-  return jspb.Message.setField(this, 13, undefined);
+  return this.setApprovedby(undefined);
 };
 
 
@@ -39214,6 +39084,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.hasApprovedby = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 14;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.getApprovedat = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 14));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.setApprovedat = function(value) {
+  return jspb.Message.setWrapperField(this, 14, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.clearApprovedat = function() {
+  return this.setApprovedat(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.hasApprovedat = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
