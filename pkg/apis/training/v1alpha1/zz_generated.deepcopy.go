@@ -1767,31 +1767,9 @@ func (in *ModelClassServingSpec) DeepCopyInto(out *ModelClassServingSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	out.ServingSiteRef = in.ServingSiteRef
-	if in.Online != nil {
-		in, out := &in.Online, &out.Online
-		*out = new(bool)
-		**out = **in
-	}
-	if in.Dashboard != nil {
-		in, out := &in.Dashboard, &out.Dashboard
-		*out = new(bool)
-		**out = **in
-	}
-	in.Access.DeepCopyInto(&out.Access)
-	if in.Replicas != nil {
-		in, out := &in.Replicas, &out.Replicas
-		*out = new(int32)
-		**out = **in
-	}
+	in.Template.DeepCopyInto(&out.Template)
 	in.MonitoringSchedule.DeepCopyInto(&out.MonitoringSchedule)
 	in.PredictionSchedule.DeepCopyInto(&out.PredictionSchedule)
-	in.Resources.DeepCopyInto(&out.Resources)
-	if in.ShadowFirst != nil {
-		in, out := &in.ShadowFirst, &out.ShadowFirst
-		*out = new(bool)
-		**out = **in
-	}
 	if in.PreSql != nil {
 		in, out := &in.PreSql, &out.PreSql
 		*out = make([]string, len(*in))
