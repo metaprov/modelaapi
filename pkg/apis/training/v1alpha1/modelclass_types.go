@@ -101,6 +101,11 @@ type ModelClassSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Paused *bool `json:"paused,omitempty" protobuf:"varint,16,opt,name=paused"`
+	// Registered indicate if this model class is registered with the model registry.
+	// A registred model cannot be garbage collected, and apper in the model registry page.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Registered *bool `json:"registered,omitempty" protobuf:"varint,17,opt,name=registered"`
 }
 
 // Specification for the label information

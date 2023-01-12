@@ -20402,7 +20402,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.to
     notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f),
     reportschedule: (f = msg.getReportschedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     fast: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
-    paused: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f
+    paused: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
+    registered: (f = jspb.Message.getBooleanField(msg, 17)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -20505,6 +20506,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.de
     case 16:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPaused(value);
+      break;
+    case 17:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setRegistered(value);
       break;
     default:
       reader.skipField();
@@ -20644,6 +20649,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.se
   if (f != null) {
     writer.writeBool(
       16,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 17));
+  if (f != null) {
+    writer.writeBool(
+      17,
       f
     );
   }
@@ -21195,6 +21207,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.pr
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.hasPaused = function() {
   return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional bool registered = 17;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.getRegistered = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 17, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.setRegistered = function(value) {
+  return jspb.Message.setField(this, 17, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.clearRegistered = function() {
+  return jspb.Message.setField(this, 17, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassSpec.prototype.hasRegistered = function() {
+  return jspb.Message.getField(this, 17) != null;
 };
 
 
@@ -24588,7 +24636,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.toObjec
     archived: (f = jspb.Message.getBooleanField(msg, 26)) == null ? undefined : f,
     forecasted: (f = jspb.Message.getBooleanField(msg, 27)) == null ? undefined : f,
     released: (f = jspb.Message.getBooleanField(msg, 28)) == null ? undefined : f,
-    registered: (f = jspb.Message.getBooleanField(msg, 29)) == null ? undefined : f,
     predict: (f = jspb.Message.getBooleanField(msg, 30)) == null ? undefined : f,
     tuned: (f = jspb.Message.getBooleanField(msg, 31)) == null ? undefined : f,
     explained: (f = jspb.Message.getBooleanField(msg, 32)) == null ? undefined : f,
@@ -24768,10 +24815,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
     case 28:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setReleased(value);
-      break;
-    case 29:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setRegistered(value);
       break;
     case 30:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -25115,13 +25158,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
   if (f != null) {
     writer.writeBool(
       28,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 29));
-  if (f != null) {
-    writer.writeBool(
-      29,
       f
     );
   }
@@ -26305,42 +26341,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasReleased = function() {
   return jspb.Message.getField(this, 28) != null;
-};
-
-
-/**
- * optional bool registered = 29;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getRegistered = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 29, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setRegistered = function(value) {
-  return jspb.Message.setField(this, 29, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearRegistered = function() {
-  return jspb.Message.setField(this, 29, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasRegistered = function() {
-  return jspb.Message.getField(this, 29) != null;
 };
 
 

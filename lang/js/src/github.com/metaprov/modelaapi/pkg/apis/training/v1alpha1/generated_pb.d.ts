@@ -2018,6 +2018,9 @@ export class ModelClassSpec extends jspb.Message {
   getPaused(): boolean;
   setPaused(value: boolean): ModelClassSpec;
 
+  getRegistered(): boolean;
+  setRegistered(value: boolean): ModelClassSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassSpec): ModelClassSpec.AsObject;
@@ -2043,6 +2046,7 @@ export namespace ModelClassSpec {
     reportschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     fast: boolean,
     paused: boolean,
+    registered: boolean,
   }
 }
 
@@ -2492,9 +2496,6 @@ export class ModelSpec extends jspb.Message {
   getReleased(): boolean;
   setReleased(value: boolean): ModelSpec;
 
-  getRegistered(): boolean;
-  setRegistered(value: boolean): ModelSpec;
-
   getPredict(): boolean;
   setPredict(value: boolean): ModelSpec;
 
@@ -2633,7 +2634,6 @@ export namespace ModelSpec {
     archived: boolean,
     forecasted: boolean,
     released: boolean,
-    registered: boolean,
     predict: boolean,
     tuned: boolean,
     explained: boolean,

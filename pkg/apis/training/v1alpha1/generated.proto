@@ -1400,6 +1400,12 @@ message ModelClassSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool paused = 16;
+
+  // Registered indicate if this model class is registered with the model registry.
+  // A registred model cannot be garbage collected, and apper in the model registry page.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool registered = 17;
 }
 
 message ModelClassStatus {
@@ -1786,12 +1792,6 @@ message ModelSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool released = 28;
-
-  // Registered indicate if this model is registered with the model registry.
-  // A registred model cannot be garbage collected, and apper in the model registry page.
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool registered = 29;
 
   // Perform a prediction at the end of the study. This is for example apply to forecasting.
   // +kubebuilder:default:=false

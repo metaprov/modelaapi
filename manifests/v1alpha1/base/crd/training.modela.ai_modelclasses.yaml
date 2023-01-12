@@ -1187,6 +1187,12 @@ spec:
                 default: false
                 description: If true, pause the model class activities.
                 type: boolean
+              registered:
+                default: false
+                description: Registered indicate if this model class is registered
+                  with the model registry. A registred model cannot be garbage collected,
+                  and apper in the model registry page.
+                type: boolean
               reportSchedule:
                 description: The schedule for summary report
                 properties:

@@ -1859,12 +1859,6 @@ spec:
                 description: Pushed indicates that the Model image should be pushed
                   to a Docker image registry
                 type: boolean
-              registered:
-                default: false
-                description: Registered indicate if this model is registered with
-                  the model registry. A registred model cannot be garbage collected,
-                  and apper in the model registry page.
-                type: boolean
               released:
                 default: false
                 description: Released indicates that the Model will be deployed within

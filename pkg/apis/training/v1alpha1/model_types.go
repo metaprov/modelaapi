@@ -254,11 +254,6 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Released *bool `json:"released,omitempty" protobuf:"varint,28,opt,name=released"`
-	// Registered indicate if this model is registered with the model registry.
-	// A registred model cannot be garbage collected, and apper in the model registry page.
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Registered *bool `json:"registered,omitempty" protobuf:"varint,29,opt,name=registered"`
 	// Perform a prediction at the end of the study. This is for example apply to forecasting.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
