@@ -2493,9 +2493,6 @@ export class ModelSpec extends jspb.Message {
   getForecasted(): boolean;
   setForecasted(value: boolean): ModelSpec;
 
-  getReleased(): boolean;
-  setReleased(value: boolean): ModelSpec;
-
   getPredict(): boolean;
   setPredict(value: boolean): ModelSpec;
 
@@ -2592,11 +2589,6 @@ export class ModelSpec extends jspb.Message {
   getRole(): string;
   setRole(value: string): ModelSpec;
 
-  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelSpec;
-  hasServingsiteref(): boolean;
-  clearServingsiteref(): ModelSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -2633,7 +2625,6 @@ export namespace ModelSpec {
     profiled: boolean,
     archived: boolean,
     forecasted: boolean,
-    released: boolean,
     predict: boolean,
     tuned: boolean,
     explained: boolean,
@@ -2660,7 +2651,6 @@ export namespace ModelSpec {
     modelclassname: string,
     modelclassrunname: string,
     role: string,
-    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
@@ -3893,6 +3883,9 @@ export namespace SegmentSpec {
 }
 
 export class ServingSpec extends jspb.Message {
+  getReleased(): boolean;
+  setReleased(value: boolean): ServingSpec;
+
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ServingSpec;
   hasResources(): boolean;
@@ -3900,6 +3893,31 @@ export class ServingSpec extends jspb.Message {
 
   getFormat(): string;
   setFormat(value: string): ServingSpec;
+
+  getPredictortemplatename(): string;
+  setPredictortemplatename(value: string): ServingSpec;
+
+  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ServingSpec;
+  hasServingsiteref(): boolean;
+  clearServingsiteref(): ServingSpec;
+
+  getOnline(): boolean;
+  setOnline(value: boolean): ServingSpec;
+
+  getDashboard(): boolean;
+  setDashboard(value: boolean): ServingSpec;
+
+  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
+  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): ServingSpec;
+  hasAccess(): boolean;
+  clearAccess(): ServingSpec;
+
+  getReplicas(): number;
+  setReplicas(value: number): ServingSpec;
+
+  getShadowfirst(): boolean;
+  setShadowfirst(value: boolean): ServingSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingSpec.AsObject;
@@ -3911,8 +3929,16 @@ export class ServingSpec extends jspb.Message {
 
 export namespace ServingSpec {
   export type AsObject = {
+    released: boolean,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     format: string,
+    predictortemplatename: string,
+    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    online: boolean,
+    dashboard: boolean,
+    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
+    replicas: number,
+    shadowfirst: boolean,
   }
 }
 

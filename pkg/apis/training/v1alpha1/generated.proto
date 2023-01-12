@@ -1788,11 +1788,6 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional bool forecasted = 27;
 
-  // Released indicates that the Model will be deployed within Predictor
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool released = 28;
-
   // Perform a prediction at the end of the study. This is for example apply to forecasting.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
@@ -1910,10 +1905,6 @@ message ModelSpec {
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
   optional string role = 55;
-
-  // The serving site that this model is released to
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 56;
 }
 
 message ModelStageStatus {
@@ -2783,12 +2774,47 @@ message SegmentSpec {
 
 // ServingSpec specifies the requirements to serve a model
 message ServingSpec {
+  // If true, deploy the model if it is ready. The model is deployed to the serving site
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 1;
+  optional bool released = 1;
+
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 2;
 
   // +kubebuilder:default:="cloudpickle"
   // +kubebuilder:validation:Optional
-  optional string format = 2;
+  optional string format = 3;
+
+  // The name of the predictor template to use when
+  // +kubebuilder:validation:Optional
+  optional string predictorTemplateName = 4;
+
+  // The reference to the serving site, where online predictor will be served.
+  // If unspecified, the default Lab from the parent DataProduct will be used
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 5;
+
+  // Create an online predictor, if the model is used only for batch prediction, set this option to false.
+  // +kubebuilder:validation:Optional
+  optional bool online = 6;
+
+  // Setup a dashboard for the predictor.
+  // +kubebuilder:validation:Optional
+  optional bool dashboard = 7;
+
+  // Access specifies the configuration for the Predictor service to be exposed externally
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 8;
+
+  // The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
+  // copies of the service in the case that automatic scaling is disabled
+  // +kubebuilder:validation:Optional
+  optional int32 replicas = 10;
+
+  // Deploy it as shadow model first.
+  // +kubebuilder:validation:Optional
+  optional bool shadowFirst = 12;
 }
 
 // +kubebuilder:subresource:status

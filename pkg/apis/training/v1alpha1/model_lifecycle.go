@@ -485,7 +485,6 @@ func (model *Model) Demote() {
 	model.Status.Phase = ModelPhaseCompleted
 	model.Status.PredictorName = ""
 	// Mark released as false in order to avoid creating the predictor again.
-	model.Spec.Released = util.BoolPtr(false)
 	noneRole := catalog.NoneModelRole
 	model.Spec.Role = &noneRole
 
@@ -1181,6 +1180,7 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	model.Spec.Pushed = study.Spec.ModelImagePushed
 	model.Spec.Published = study.Spec.ModelPublished
 	model.Spec.Training.LabRef = study.Spec.LabRef
+	model.Spec.Serving = *study.Spec.ServingTemplate.DeepCopy()
 	model.Spec.Location = &data.DataLocation{
 		BucketName: study.Spec.Location.BucketName,
 		Path:       util.StrPtr(path.Join(*study.Spec.Location.Path, "models", model.Name)),

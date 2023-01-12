@@ -250,10 +250,6 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Forecasted *bool `json:"forecasted,omitempty" protobuf:"varint,27,opt,name=forecasted"`
-	// Released indicates that the Model will be deployed within Predictor
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Released *bool `json:"released,omitempty" protobuf:"varint,28,opt,name=released"`
 	// Perform a prediction at the end of the study. This is for example apply to forecasting.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -346,9 +342,6 @@ type ModelSpec struct {
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	Role *catalog.ModelRole `json:"role,omitempty" protobuf:"bytes,55,opt,name=role"`
-	// The serving site that this model is released to
-	// +kubebuilder:validation:Optional
-	ServingSiteRef v1.ObjectReference `json:"ServingSiteRef,omitempty" protobuf:"bytes,56,opt,name=servingSiteRef"`
 }
 
 type SegmentSpec struct {
@@ -943,11 +936,38 @@ type CheckpointSpec struct {
 
 // ServingSpec specifies the requirements to serve a model
 type ServingSpec struct {
+	// If true, deploy the model if it is ready. The model is deployed to the serving site
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,1,opt,name=resources"`
+	Enabled *bool `json:"released,omitempty" protobuf:"varint,1,opt,name=released"`
+	// +kubebuilder:validation:Optional
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,2,opt,name=resources"`
 	// +kubebuilder:default:="cloudpickle"
 	// +kubebuilder:validation:Optional
-	Format *catalog.ModelServingFormat `json:"format,omitempty" protobuf:"bytes,2,opt,name=format"`
+	Format *catalog.ModelServingFormat `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
+	// The name of the predictor template to use when
+	// +kubebuilder:validation:Optional
+	PredictorTemplateName *string `json:"predictorTemplateName,omitempty" protobuf:"bytes,4,opt,name=predictorTemplateName"`
+	// The reference to the serving site, where online predictor will be served.
+	// If unspecified, the default Lab from the parent DataProduct will be used
+	// +kubebuilder:validation:Optional
+	ServingSiteRef v1.ObjectReference `json:"servingSiteRef,omitempty" protobuf:"bytes,5,opt,name=servingSiteRef"`
+	// Create an online predictor, if the model is used only for batch prediction, set this option to false.
+	// +kubebuilder:validation:Optional
+	Online *bool `json:"online,omitempty" protobuf:"varint,6,opt,name=online"`
+	// Setup a dashboard for the predictor.
+	// +kubebuilder:validation:Optional
+	Dashboard *bool `json:"dashboard,omitempty" protobuf:"varint,7,opt,name=dashboard"`
+	// Access specifies the configuration for the Predictor service to be exposed externally
+	// +kubebuilder:validation:Optional
+	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,8,opt,name=access"`
+	// The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
+	// copies of the service in the case that automatic scaling is disabled
+	// +kubebuilder:validation:Optional
+	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,10,opt,name=replicas"`
+	// Deploy it as shadow model first.
+	// +kubebuilder:validation:Optional
+	Shadow *bool `json:"shadowFirst,omitempty" protobuf:"varint,12,opt,name=shadowFirst"`
 }
 
 // TextPipelineSpec represents a single pipeline for transforming text data
