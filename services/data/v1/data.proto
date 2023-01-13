@@ -802,10 +802,19 @@ message SaveModelRequest {
 message SavePredictionRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            dataproduct         = 1;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         modelclass          = 2;
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor         predictor           = 3;
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction        prediction          = 4;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection        = 5;
-    map<string,bytes>                                                           dbSecret            = 6;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun      modelclassrun       = 3;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor         predictor           = 4;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction        prediction          = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection        = 6;
+    map<string,bytes>                                                           dbSecret            = 7;
+}
+
+message SavePredictorRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            dataproduct         = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         modelclass          = 2;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction        predictor           = 3;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection        = 4;
+    map<string,bytes>                                                           dbSecret            = 5;
 }
 
 message CreateMetricsStoreRequest {
