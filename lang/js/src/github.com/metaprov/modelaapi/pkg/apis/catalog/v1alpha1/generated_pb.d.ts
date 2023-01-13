@@ -1651,6 +1651,32 @@ export namespace Region {
   }
 }
 
+export class ResourceConsumption extends jspb.Message {
+  getCpu(): number;
+  setCpu(value: number): ResourceConsumption;
+
+  getMem(): number;
+  setMem(value: number): ResourceConsumption;
+
+  getGpu(): number;
+  setGpu(value: number): ResourceConsumption;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResourceConsumption.AsObject;
+  static toObject(includeInstance: boolean, msg: ResourceConsumption): ResourceConsumption.AsObject;
+  static serializeBinaryToWriter(message: ResourceConsumption, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResourceConsumption;
+  static deserializeBinaryFromReader(message: ResourceConsumption, reader: jspb.BinaryReader): ResourceConsumption;
+}
+
+export namespace ResourceConsumption {
+  export type AsObject = {
+    cpu: number,
+    mem: number,
+    gpu: number,
+  }
+}
+
 export class ResourceSpec extends jspb.Message {
   getWorkloadname(): string;
   setWorkloadname(value: string): ResourceSpec;

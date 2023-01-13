@@ -388,10 +388,13 @@ type StudyStatus struct {
 	GC GarbageCollectionStatus `json:"gc,omitempty" protobuf:"bytes,34,opt,name=gc"`
 	// Study group by
 	GroupBy StudyGroupByStatus `json:"groupby,omitempty" protobuf:"bytes,35,opt,name=groupby"`
+	// The status of the model, when deploying via the stages
+	// +kubebuilder:validation:Optional
+	Usage catalog.ResourceConsumption `json:"usage,omitempty" protobuf:"bytes,36,rep,name=usage"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,36,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,37,rep,name=conditions"`
 }
 
 // ModelResult contains the records of a single garbage-collected model

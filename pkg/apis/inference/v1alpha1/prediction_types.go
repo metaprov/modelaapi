@@ -187,10 +187,13 @@ type PredictionStatus struct {
 	// the forecast results for this forecast
 	//+kubebuilder:validation:Optional
 	Forecast ForecastStatus `json:"forecast,omitempty" protobuf:"bytes,14,opt,name=forecast"`
+	// The status of the model, when deploying via the stages
+	// +kubebuilder:validation:Optional
+	Usage catalog.ResourceConsumption `json:"usage,omitempty" protobuf:"bytes,15,rep,name=usage"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,15,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,16,rep,name=conditions"`
 }
 
 // ForecastSpec specifies the details of a forecasting model

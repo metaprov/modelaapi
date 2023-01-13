@@ -613,10 +613,13 @@ type ModelStatus struct {
 	// The status of the model, when deploying via the stages
 	// +kubebuilder:validation:Optional
 	Stages []ModelStageStatus `json:"stages,omitempty" protobuf:"bytes,79,rep,name=stages"`
+	// The status of the model, when deploying via the stages
+	// +kubebuilder:validation:Optional
+	Usage catalog.ResourceConsumption `json:"usage,omitempty" protobuf:"bytes,80,rep,name=usage"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,80,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,81,rep,name=conditions"`
 }
 
 // Holds the information about the execution environment.

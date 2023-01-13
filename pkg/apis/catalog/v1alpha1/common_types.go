@@ -2320,3 +2320,10 @@ func FilterWorkerResult(runs []WorkerRunResult, task TaskName) []WorkerRunResult
 	return result
 
 }
+
+// Store resource consuption for a task
+type ResourceConsumption struct {
+	Cpu int64 `json:"cpu,omitempty" protobuf:"bytes,1,opt,name=cpu"`
+	Mem int64 `json:"mem,omitempty" protobuf:"bytes,2,opt,name=mem"`
+	Gpu int64 `json:"gpu,omitempty" protobuf:"bytes,3,opt,name=gpu"`
+}

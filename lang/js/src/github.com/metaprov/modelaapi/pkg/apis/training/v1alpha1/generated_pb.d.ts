@@ -2954,6 +2954,11 @@ export class ModelStatus extends jspb.Message {
   clearStagesList(): ModelStatus;
   addStages(value?: ModelStageStatus, index?: number): ModelStageStatus;
 
+  getUsage(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption | undefined;
+  setUsage(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption): ModelStatus;
+  hasUsage(): boolean;
+  clearUsage(): ModelStatus;
+
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -3046,6 +3051,7 @@ export namespace ModelStatus {
     feedbacktestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     groupby?: ModelGroupByStatus.AsObject,
     stagesList: Array<ModelStageStatus.AsObject>,
+    usage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -4366,6 +4372,11 @@ export class StudyStatus extends jspb.Message {
   hasGroupby(): boolean;
   clearGroupby(): StudyStatus;
 
+  getUsage(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption | undefined;
+  setUsage(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption): StudyStatus;
+  hasUsage(): boolean;
+  clearUsage(): StudyStatus;
+
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): StudyStatus;
   clearConditionsList(): StudyStatus;
@@ -4414,6 +4425,7 @@ export namespace StudyStatus {
     bestfe?: FeatureEngineeringSpec.AsObject,
     gc?: GarbageCollectionStatus.AsObject,
     groupby?: StudyGroupByStatus.AsObject,
+    usage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }

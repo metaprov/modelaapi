@@ -3584,6 +3584,19 @@ spec:
                 description: The last time the object was updated
                 format: date-time
                 type: string
+              usage:
+                description: The status of the model, when deploying via the stages
+                properties:
+                  cpu:
+                    format: int64
+                    type: integer
+                  gpu:
+                    format: int64
+                    type: integer
+                  mem:
+                    format: int64
+                    type: integer
+                type: object
               validationDataset:
                 description: ValidationDataset specifies the location of the validation
                   dataset

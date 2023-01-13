@@ -1218,6 +1218,11 @@ export class PredictionStatus extends jspb.Message {
   hasForecast(): boolean;
   clearForecast(): PredictionStatus;
 
+  getUsage(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption | undefined;
+  setUsage(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption): PredictionStatus;
+  hasUsage(): boolean;
+  clearUsage(): PredictionStatus;
+
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): PredictionStatus;
   clearConditionsList(): PredictionStatus;
@@ -1247,6 +1252,7 @@ export namespace PredictionStatus {
     columnsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram.AsObject>,
     drifted: boolean,
     forecast?: ForecastStatus.AsObject,
+    usage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
