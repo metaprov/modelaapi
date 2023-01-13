@@ -3839,8 +3839,8 @@ export namespace SegmentSpec {
 }
 
 export class ServingSpec extends jspb.Message {
-  getReleased(): boolean;
-  setReleased(value: boolean): ServingSpec;
+  getEnabled(): boolean;
+  setEnabled(value: boolean): ServingSpec;
 
   getPredictorname(): string;
   setPredictorname(value: string): ServingSpec;
@@ -3849,9 +3849,6 @@ export class ServingSpec extends jspb.Message {
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ServingSpec;
   hasResources(): boolean;
   clearResources(): ServingSpec;
-
-  getFormat(): string;
-  setFormat(value: string): ServingSpec;
 
   getPredictortemplatename(): string;
   setPredictortemplatename(value: string): ServingSpec;
@@ -3901,10 +3898,9 @@ export class ServingSpec extends jspb.Message {
 
 export namespace ServingSpec {
   export type AsObject = {
-    released: boolean,
+    enabled: boolean,
     predictorname: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    format: string,
     predictortemplatename: string,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     online: boolean,

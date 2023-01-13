@@ -2735,17 +2735,13 @@ message ServingSpec {
   // If true, deploy the model if it is ready. The model is deployed to the serving site
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool released = 1;
+  optional bool enabled = 1;
 
   // The name of the predictor if exist to update.
   optional string predictorName = 2;
 
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 3;
-
-  // +kubebuilder:default:="cloudpickle"
-  // +kubebuilder:validation:Optional
-  optional string format = 4;
 
   // The name of the predictor template to use when
   // +kubebuilder:validation:Optional
@@ -2760,7 +2756,7 @@ message ServingSpec {
   // +kubebuilder:validation:Optional
   optional bool online = 7;
 
-  // Setup a dashboard for the model.
+  // Create A DataApp, and enable dashboard access to the model
   // +kubebuilder:validation:Optional
   optional bool dashboard = 8;
 

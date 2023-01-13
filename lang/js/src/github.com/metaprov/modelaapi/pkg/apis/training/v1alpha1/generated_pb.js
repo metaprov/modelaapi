@@ -38369,10 +38369,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    released: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+    enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     predictorname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
-    format: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     predictortemplatename: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     servingsiteref: (f = msg.getServingsiteref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     online: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
@@ -38421,7 +38420,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.deser
     switch (field) {
     case 1:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setReleased(value);
+      msg.setEnabled(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -38431,10 +38430,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.deser
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
       msg.setResources(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFormat(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -38531,13 +38526,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.seria
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
   f = /** @type {string} */ (jspb.Message.getField(message, 5));
   if (f != null) {
     writer.writeString(
@@ -38616,10 +38604,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.seria
 
 
 /**
- * optional bool released = 1;
+ * optional bool enabled = 1;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.getReleased = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.getEnabled = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
@@ -38628,7 +38616,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.proto
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.setReleased = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.setEnabled = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -38637,7 +38625,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.clearReleased = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.clearEnabled = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -38646,7 +38634,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.hasReleased = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.hasEnabled = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -38721,42 +38709,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string format = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.getFormat = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.setFormat = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.clearFormat = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.hasFormat = function() {
-  return jspb.Message.getField(this, 4) != null;
 };
 
 

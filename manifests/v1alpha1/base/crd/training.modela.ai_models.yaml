@@ -1962,21 +1962,14 @@ spec:
                     type: object
                     x-kubernetes-map-type: atomic
                   dashboard:
-                    description: Setup a dashboard for the model.
+                    description: Create A DataApp, and enable dashboard access to
+                      the model
                     type: boolean
-                  format:
-                    default: cloudpickle
-                    enum:
-                    - protobuf
-                    - pickle
-                    - cloudpickle
-                    - mlleap
-                    - mlmodel
-                    - h5
-                    - onyx
-                    - pmml
-                    - pt
-                    type: string
+                  enabled:
+                    default: false
+                    description: If true, deploy the model if it is ready. The model
+                      is deployed to the serving site
+                    type: boolean
                   manual:
                     description: If true, the model must be approved before moving
                       it to production
@@ -1991,11 +1984,6 @@ spec:
                   predictorTemplateName:
                     description: The name of the predictor template to use when
                     type: string
-                  released:
-                    default: false
-                    description: If true, deploy the model if it is ready. The model
-                      is deployed to the serving site
-                    type: boolean
                   replicas:
                     description: The number of replicas for the Kubernetes Serving
                       associated with the Predictor, which will instantiate multiple

@@ -936,14 +936,11 @@ type ServingSpec struct {
 	// If true, deploy the model if it is ready. The model is deployed to the serving site
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"released,omitempty" protobuf:"varint,1,opt,name=released"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The name of the predictor if exist to update.
 	PredictorName *string `json:"predictorName,omitempty" protobuf:"varint,2,opt,name=predictorName"`
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,3,opt,name=resources"`
-	// +kubebuilder:default:="cloudpickle"
-	// +kubebuilder:validation:Optional
-	Format *catalog.ModelServingFormat `json:"format,omitempty" protobuf:"bytes,4,opt,name=format"`
 	// The name of the predictor template to use when
 	// +kubebuilder:validation:Optional
 	PredictorTemplateName *string `json:"predictorTemplateName,omitempty" protobuf:"bytes,5,opt,name=predictorTemplateName"`
@@ -954,7 +951,7 @@ type ServingSpec struct {
 	// Create an online predictor to host the model and enable real time ML.
 	// +kubebuilder:validation:Optional
 	Online *bool `json:"online,omitempty" protobuf:"varint,7,opt,name=online"`
-	// Setup a dashboard for the model.
+	// Create A DataApp, and enable dashboard access to the model
 	// +kubebuilder:validation:Optional
 	Dashboard *bool `json:"dashboard,omitempty" protobuf:"varint,8,opt,name=dashboard"`
 	// Access specifies the configuration for the Predictor service to be exposed externally
