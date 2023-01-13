@@ -1877,6 +1877,30 @@ export namespace ModelClassRunStatus {
 }
 
 export class ModelClassServingSpec extends jspb.Message {
+  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelClassServingSpec;
+  hasServingsiteref(): boolean;
+  clearServingsiteref(): ModelClassServingSpec;
+
+  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
+  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): ModelClassServingSpec;
+  hasAccess(): boolean;
+  clearAccess(): ModelClassServingSpec;
+
+  getReplicas(): number;
+  setReplicas(value: number): ModelClassServingSpec;
+
+  getOnline(): boolean;
+  setOnline(value: boolean): ModelClassServingSpec;
+
+  getDashboard(): boolean;
+  setDashboard(value: boolean): ModelClassServingSpec;
+
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ModelClassServingSpec;
+  hasResources(): boolean;
+  clearResources(): ModelClassServingSpec;
+
   getEnvironmentsList(): Array<ServingEnvironment>;
   setEnvironmentsList(value: Array<ServingEnvironment>): ModelClassServingSpec;
   clearEnvironmentsList(): ModelClassServingSpec;
@@ -1905,6 +1929,12 @@ export class ModelClassServingSpec extends jspb.Message {
 
 export namespace ModelClassServingSpec {
   export type AsObject = {
+    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
+    replicas: number,
+    online: boolean,
+    dashboard: boolean,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     environmentsList: Array<ServingEnvironment.AsObject>,
     predictortemplatename: string,
     monitoringschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
@@ -2538,6 +2568,9 @@ export class ModelSpec extends jspb.Message {
   getRole(): string;
   setRole(value: string): ModelSpec;
 
+  getReleased(): boolean;
+  setReleased(value: boolean): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -2599,6 +2632,7 @@ export namespace ModelSpec {
     modelclassname: string,
     modelclassrunname: string,
     role: string,
+    released: boolean,
   }
 }
 
@@ -3817,9 +3851,6 @@ export class ServingEnvironment extends jspb.Message {
   hasResources(): boolean;
   clearResources(): ServingEnvironment;
 
-  getEphemeral(): boolean;
-  setEphemeral(value: boolean): ServingEnvironment;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingEnvironment.AsObject;
   static toObject(includeInstance: boolean, msg: ServingEnvironment): ServingEnvironment.AsObject;
@@ -3838,7 +3869,82 @@ export namespace ServingEnvironment {
     online: boolean,
     dashboard: boolean,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    ephemeral: boolean,
+  }
+}
+
+export class ServingSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): ServingSpec;
+
+  getPredictorname(): string;
+  setPredictorname(value: string): ServingSpec;
+
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ServingSpec;
+  hasResources(): boolean;
+  clearResources(): ServingSpec;
+
+  getPredictortemplatename(): string;
+  setPredictortemplatename(value: string): ServingSpec;
+
+  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ServingSpec;
+  hasServingsiteref(): boolean;
+  clearServingsiteref(): ServingSpec;
+
+  getOnline(): boolean;
+  setOnline(value: boolean): ServingSpec;
+
+  getDashboard(): boolean;
+  setDashboard(value: boolean): ServingSpec;
+
+  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
+  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): ServingSpec;
+  hasAccess(): boolean;
+  clearAccess(): ServingSpec;
+
+  getReplicas(): number;
+  setReplicas(value: number): ServingSpec;
+
+  getShadowfirst(): boolean;
+  setShadowfirst(value: boolean): ServingSpec;
+
+  getManual(): boolean;
+  setManual(value: boolean): ServingSpec;
+
+  getApprovedby(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setApprovedby(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ServingSpec;
+  hasApprovedby(): boolean;
+  clearApprovedby(): ServingSpec;
+
+  getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ServingSpec;
+  hasApprovedat(): boolean;
+  clearApprovedat(): ServingSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ServingSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ServingSpec): ServingSpec.AsObject;
+  static serializeBinaryToWriter(message: ServingSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ServingSpec;
+  static deserializeBinaryFromReader(message: ServingSpec, reader: jspb.BinaryReader): ServingSpec;
+}
+
+export namespace ServingSpec {
+  export type AsObject = {
+    enabled: boolean,
+    predictorname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
+    predictortemplatename: string,
+    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    online: boolean,
+    dashboard: boolean,
+    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
+    replicas: number,
+    shadowfirst: boolean,
+    manual: boolean,
+    approvedby?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 
