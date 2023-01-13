@@ -3104,9 +3104,10 @@ proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequ
  */
 proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    bucket: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    path: jspb.Message.getFieldWithDefault(msg, 3, "")
+    tenant: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    bucket: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    path: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -3145,13 +3146,17 @@ proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequ
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
+      msg.setTenant(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setBucket(value);
+      msg.setNamespace(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBucket(value);
+      break;
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setPath(value);
       break;
@@ -3184,24 +3189,31 @@ proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequ
  */
 proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
+  f = message.getTenant();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getBucket();
+  f = message.getNamespace();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getPath();
+  f = message.getBucket();
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getPath();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -3209,10 +3221,10 @@ proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequ
 
 
 /**
- * optional string namespace = 1;
+ * optional string tenant = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.prototype.getTenant = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -3221,16 +3233,16 @@ proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequ
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.prototype.setTenant = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string bucket = 2;
+ * optional string namespace = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.prototype.getBucket = function() {
+proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -3239,16 +3251,16 @@ proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequ
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.prototype.setBucket = function(value) {
+proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string path = 3;
+ * optional string bucket = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.prototype.getPath = function() {
+proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.prototype.getBucket = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -3257,8 +3269,26 @@ proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequ
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.prototype.setPath = function(value) {
+proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.prototype.setBucket = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string path = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.prototype.getPath = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.prototype.setPath = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

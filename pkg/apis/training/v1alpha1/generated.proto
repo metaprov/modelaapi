@@ -1272,15 +1272,11 @@ message ModelClassRunStatus {
 message ModelClassServingSpec {
   // Define the stages to test the model before release
   // +kubebuilder:validation:Optional
-  repeated PipelineStageSpec pipeline = 1;
+  repeated ServingEnvironment environments = 1;
 
-  // The name of the predictor template to use when
+  // The name of the predictor template to use when creating the predictor
   // +kubebuilder:validation:Optional
   optional string predictorTemplateName = 2;
-
-  // Define a template for the serving spec of new models created for this model class
-  // +kubebuilder:validation:Optional
-  optional ServingSpec template = 3;
 
   // Schedule for monitoring drift
   // +kubebuilder:validation:Optional
@@ -1289,14 +1285,6 @@ message ModelClassServingSpec {
   // BatchPrediction schedule
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule predictionSchedule = 5;
-
-  // List of SQL statements to run before performing the prediction
-  // +kubebuilder:validation:Optional
-  repeated string preSQL = 6;
-
-  // List of SQL statements to run before performing the prediction
-  // +kubebuilder:validation:Optional
-  repeated string postSQL = 7;
 }
 
 // ModelClassSpec defines the desired state of a ModelClass and the parameters for a model search
@@ -1705,11 +1693,6 @@ message ModelSpec {
   // TrainingSpec specifies the configuration to prepare and train a model
   // +kubebuilder:validation:Optional
   optional TrainingSpec training = 16;
-
-  // ServingSpec defines the resource requirements that will be applied to a Predictor
-  // that will be created if the model is set to be released
-  // +kubebuilder:validation:Optional
-  optional ServingSpec serving = 17;
 
   // Tested indicates if a workload will be instantiated to test the model. The Study resource controller
   // will automatically set this field if the Model was found to be the highest-performing
@@ -2310,24 +2293,6 @@ message PercentilePrunerOptions {
   optional int32 minTrials = 5;
 }
 
-// Define a test stage
-message PipelineStageSpec {
-  // The stage name
-  optional string name = 1;
-
-  // the Tests to run on the stage
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 2;
-
-  // The serving site ref
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 3;
-
-  // The resources to use when running tests at this stage
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
-}
-
 message PrunerSpec {
   // The type of pruner to use during model search
   // +kubebuilder:default:=median-pruner
@@ -2730,67 +2695,49 @@ message SegmentSpec {
   optional string value = 3;
 }
 
-// ServingSpec specifies the requirements to serve a model
-message ServingSpec {
-  // If true, deploy the model if it is ready. The model is deployed to the serving site
+// Define a test stage
+message ServingEnvironment {
+  // The stage name
+  optional string name = 1;
+
+  // the Tests to run in this environment, once the predictor is ready.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite tests = 2;
+
+  // The serving site ref
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 3;
+
+  // Define the predictor access in this environment.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 4;
+
+  // The number of replicas in this environment.
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 replicas = 5;
+
+  // Deploy the predictor for online serving in this environment
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
+  optional bool online = 6;
 
-  // The name of the predictor if exist to update.
-  optional string predictorName = 2;
-
+  // Deploy the dashboard for online serving in this environment
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 3;
+  optional bool dashboard = 7;
 
-  // The name of the predictor template to use when
+  // The resources to use when running tests at this stage
   // +kubebuilder:validation:Optional
-  optional string predictorTemplateName = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 8;
 
-  // The reference to the serving site, where online predictor will be served.
-  // If unspecified, the default Lab from the parent DataProduct will be used
+  // If true, we create this environment for test purposes only.
+  // remove the predictor once the test is complete
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 6;
-
-  // Create an online predictor to host the model and enable real time ML.
-  // +kubebuilder:validation:Optional
-  optional bool online = 7;
-
-  // Create A DataApp, and enable dashboard access to the model
-  // +kubebuilder:validation:Optional
-  optional bool dashboard = 8;
-
-  // Access specifies the configuration for the Predictor service to be exposed externally
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 9;
-
-  // The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
-  // copies of the service in the case that automatic scaling is disabled
-  // +kubebuilder:validation:Optional
-  optional int32 replicas = 10;
-
-  // Deploy it as shadow model first.
-  // +kubebuilder:validation:Optional
-  optional bool shadowFirst = 11;
-
-  // If true, the model must be approved before moving it to production
-  // +kubebuilder:validation:Optional
-  optional bool manual = 12;
-
-  // ApprovedBy indicates the account that approve this model.
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference approvedBy = 13;
-
-  // ApprovedAt indicates the time of approval
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 14;
+  optional bool ephemeral = 9;
 }
 
 message ServingStatus {
-  // ApprovedAt indicates the time of approval
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 1;
-
   // The name of the predictor hosting this model
   // +kubebuilder:validation:Optional
   optional string predictorName = 2;
@@ -2961,11 +2908,6 @@ message StudySpec {
   // TrainingTemplate specifies the configuration to train and evaluate models
   // +kubebuilder:validation:Optional
   optional TrainingSpec trainingTemplate = 14;
-
-  // ServingTemplate specifies the model format and resource requirements that will be applied to
-  // the Predictor created for the Model that will be selected by the Study
-  // +kubebuilder:validation:Optional
-  optional ServingSpec servingTemplate = 15;
 
   // ForecastSpec specifies the parameters required when generating a forecasting model
   // +kubebuilder:validation:Optional

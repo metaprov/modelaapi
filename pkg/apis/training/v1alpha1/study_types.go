@@ -185,10 +185,6 @@ type StudySpec struct {
 	// TrainingTemplate specifies the configuration to train and evaluate models
 	// +kubebuilder:validation:Optional
 	TrainingTemplate TrainingSpec `json:"trainingTemplate,omitempty" protobuf:"bytes,14,opt,name=trainingTemplate"`
-	// ServingTemplate specifies the model format and resource requirements that will be applied to
-	// the Predictor created for the Model that will be selected by the Study
-	// +kubebuilder:validation:Optional
-	ServingTemplate ServingSpec `json:"servingTemplate,omitempty" protobuf:"bytes,15,opt,name=servingTemplate"`
 	// ForecastSpec specifies the parameters required when generating a forecasting model
 	// +kubebuilder:validation:Optional
 	FctTemplate ForecasterSpec `json:"fctTemplate,omitempty" protobuf:"bytes,16,opt,name=fctTemplate"`

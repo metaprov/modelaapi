@@ -347,6 +347,9 @@ export namespace ModelaSystemLogoutRequest {
 }
 
 export class DownloadLogFileRequest extends jspb.Message {
+  getTenant(): string;
+  setTenant(value: string): DownloadLogFileRequest;
+
   getNamespace(): string;
   setNamespace(value: string): DownloadLogFileRequest;
 
@@ -366,6 +369,7 @@ export class DownloadLogFileRequest extends jspb.Message {
 
 export namespace DownloadLogFileRequest {
   export type AsObject = {
+    tenant: string,
     namespace: string,
     bucket: string,
     path: string,

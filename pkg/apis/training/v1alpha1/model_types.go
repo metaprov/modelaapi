@@ -205,10 +205,6 @@ type ModelSpec struct {
 	// TrainingSpec specifies the configuration to prepare and train a model
 	// +kubebuilder:validation:Optional
 	Training TrainingSpec `json:"training,omitempty" protobuf:"bytes,16,opt,name=training"`
-	// ServingSpec defines the resource requirements that will be applied to a Predictor
-	// that will be created if the model is set to be released
-	// +kubebuilder:validation:Optional
-	Serving ServingSpec `json:"serving,omitempty" protobuf:"bytes,17,opt,name=serving"`
 	// Tested indicates if a workload will be instantiated to test the model. The Study resource controller
 	// will automatically set this field if the Model was found to be the highest-performing
 	// +kubebuilder:default:=false
@@ -931,50 +927,6 @@ type CheckpointSpec struct {
 	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
 }
 
-// ServingSpec specifies the requirements to serve a model
-type ServingSpec struct {
-	// If true, deploy the model if it is ready. The model is deployed to the serving site
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// The name of the predictor if exist to update.
-	PredictorName *string `json:"predictorName,omitempty" protobuf:"varint,2,opt,name=predictorName"`
-	// +kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,3,opt,name=resources"`
-	// The name of the predictor template to use when
-	// +kubebuilder:validation:Optional
-	PredictorTemplateName *string `json:"predictorTemplateName,omitempty" protobuf:"bytes,5,opt,name=predictorTemplateName"`
-	// The reference to the serving site, where online predictor will be served.
-	// If unspecified, the default Lab from the parent DataProduct will be used
-	// +kubebuilder:validation:Optional
-	ServingSiteRef v1.ObjectReference `json:"servingSiteRef,omitempty" protobuf:"bytes,6,opt,name=servingSiteRef"`
-	// Create an online predictor to host the model and enable real time ML.
-	// +kubebuilder:validation:Optional
-	Online *bool `json:"online,omitempty" protobuf:"varint,7,opt,name=online"`
-	// Create A DataApp, and enable dashboard access to the model
-	// +kubebuilder:validation:Optional
-	Dashboard *bool `json:"dashboard,omitempty" protobuf:"varint,8,opt,name=dashboard"`
-	// Access specifies the configuration for the Predictor service to be exposed externally
-	// +kubebuilder:validation:Optional
-	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,9,opt,name=access"`
-	// The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
-	// copies of the service in the case that automatic scaling is disabled
-	// +kubebuilder:validation:Optional
-	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,10,opt,name=replicas"`
-	// Deploy it as shadow model first.
-	// +kubebuilder:validation:Optional
-	Shadow *bool `json:"shadowFirst,omitempty" protobuf:"varint,11,opt,name=shadowFirst"`
-	// If true, the model must be approved before moving it to production
-	// +kubebuilder:validation:Optional
-	Manual *bool `json:"manual,omitempty" protobuf:"varint,12,opt,name=manual"`
-	// ApprovedBy indicates the account that approve this model.
-	// +kubebuilder:validation:Optional
-	ApprovedBy v1.ObjectReference `json:"approvedBy,omitempty" protobuf:"bytes,13,opt,name=approvedBy"`
-	// ApprovedAt indicates the time of approval
-	// +kubebuilder:validation:Optional
-	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,14,opt,name=approvedAt"`
-}
-
 // TextPipelineSpec represents a single pipeline for transforming text data
 type TextPipelineSpec struct {
 	// The text encoder (e.g. TFIDF)
@@ -1243,9 +1195,6 @@ type ModelStageStatus struct {
 }
 
 type ServingStatus struct {
-	// ApprovedAt indicates the time of approval
-	// +kubebuilder:validation:Optional
-	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,1,opt,name=approvedAt"`
 	// The name of the predictor hosting this model
 	// +kubebuilder:validation:Optional
 	PredictorName string `json:"predictorName,omitempty" protobuf:"bytes,2,opt,name=predictorName"`

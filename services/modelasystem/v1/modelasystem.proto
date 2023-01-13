@@ -82,9 +82,10 @@ message ModelaSystemLogoutRequest {
 }
 
 message DownloadLogFileRequest {
-    string namespace = 1;
-    string bucket = 2;
-    string path   = 3;
+    string tenant = 1;
+    string namespace = 2;
+    string bucket = 3;
+    string path   = 4;
 }
 
 message DownloadLogFileResponse {

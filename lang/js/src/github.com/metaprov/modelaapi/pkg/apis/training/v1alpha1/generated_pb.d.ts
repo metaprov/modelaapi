@@ -1877,18 +1877,13 @@ export namespace ModelClassRunStatus {
 }
 
 export class ModelClassServingSpec extends jspb.Message {
-  getPipelineList(): Array<PipelineStageSpec>;
-  setPipelineList(value: Array<PipelineStageSpec>): ModelClassServingSpec;
-  clearPipelineList(): ModelClassServingSpec;
-  addPipeline(value?: PipelineStageSpec, index?: number): PipelineStageSpec;
+  getEnvironmentsList(): Array<ServingEnvironment>;
+  setEnvironmentsList(value: Array<ServingEnvironment>): ModelClassServingSpec;
+  clearEnvironmentsList(): ModelClassServingSpec;
+  addEnvironments(value?: ServingEnvironment, index?: number): ServingEnvironment;
 
   getPredictortemplatename(): string;
   setPredictortemplatename(value: string): ModelClassServingSpec;
-
-  getTemplate(): ServingSpec | undefined;
-  setTemplate(value?: ServingSpec): ModelClassServingSpec;
-  hasTemplate(): boolean;
-  clearTemplate(): ModelClassServingSpec;
 
   getMonitoringschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setMonitoringschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassServingSpec;
@@ -1900,16 +1895,6 @@ export class ModelClassServingSpec extends jspb.Message {
   hasPredictionschedule(): boolean;
   clearPredictionschedule(): ModelClassServingSpec;
 
-  getPresqlList(): Array<string>;
-  setPresqlList(value: Array<string>): ModelClassServingSpec;
-  clearPresqlList(): ModelClassServingSpec;
-  addPresql(value: string, index?: number): ModelClassServingSpec;
-
-  getPostsqlList(): Array<string>;
-  setPostsqlList(value: Array<string>): ModelClassServingSpec;
-  clearPostsqlList(): ModelClassServingSpec;
-  addPostsql(value: string, index?: number): ModelClassServingSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassServingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassServingSpec): ModelClassServingSpec.AsObject;
@@ -1920,13 +1905,10 @@ export class ModelClassServingSpec extends jspb.Message {
 
 export namespace ModelClassServingSpec {
   export type AsObject = {
-    pipelineList: Array<PipelineStageSpec.AsObject>,
+    environmentsList: Array<ServingEnvironment.AsObject>,
     predictortemplatename: string,
-    template?: ServingSpec.AsObject,
     monitoringschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     predictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    presqlList: Array<string>,
-    postsqlList: Array<string>,
   }
 }
 
@@ -2430,11 +2412,6 @@ export class ModelSpec extends jspb.Message {
   hasTraining(): boolean;
   clearTraining(): ModelSpec;
 
-  getServing(): ServingSpec | undefined;
-  setServing(value?: ServingSpec): ModelSpec;
-  hasServing(): boolean;
-  clearServing(): ModelSpec;
-
   getTested(): boolean;
   setTested(value: boolean): ModelSpec;
 
@@ -2586,7 +2563,6 @@ export namespace ModelSpec {
     nlpestimator?: NLPEstimatorSpec.AsObject,
     ensemble?: EnsembleSpec.AsObject,
     training?: TrainingSpec.AsObject,
-    serving?: ServingSpec.AsObject,
     tested: boolean,
     aborted: boolean,
     packaged: boolean,
@@ -3218,42 +3194,6 @@ export namespace PercentilePrunerOptions {
   }
 }
 
-export class PipelineStageSpec extends jspb.Message {
-  getName(): string;
-  setName(value: string): PipelineStageSpec;
-
-  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): PipelineStageSpec;
-  hasTests(): boolean;
-  clearTests(): PipelineStageSpec;
-
-  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PipelineStageSpec;
-  hasServingsiteref(): boolean;
-  clearServingsiteref(): PipelineStageSpec;
-
-  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
-  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): PipelineStageSpec;
-  hasResources(): boolean;
-  clearResources(): PipelineStageSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PipelineStageSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: PipelineStageSpec): PipelineStageSpec.AsObject;
-  static serializeBinaryToWriter(message: PipelineStageSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PipelineStageSpec;
-  static deserializeBinaryFromReader(message: PipelineStageSpec, reader: jspb.BinaryReader): PipelineStageSpec;
-}
-
-export namespace PipelineStageSpec {
-  export type AsObject = {
-    name: string,
-    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-  }
-}
-
 export class PrunerSpec extends jspb.Message {
   getType(): string;
   setType(value: string): PrunerSpec;
@@ -3838,88 +3778,65 @@ export namespace SegmentSpec {
   }
 }
 
-export class ServingSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): ServingSpec;
+export class ServingEnvironment extends jspb.Message {
+  getName(): string;
+  setName(value: string): ServingEnvironment;
 
-  getPredictorname(): string;
-  setPredictorname(value: string): ServingSpec;
-
-  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
-  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ServingSpec;
-  hasResources(): boolean;
-  clearResources(): ServingSpec;
-
-  getPredictortemplatename(): string;
-  setPredictortemplatename(value: string): ServingSpec;
+  getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ServingEnvironment;
+  hasTests(): boolean;
+  clearTests(): ServingEnvironment;
 
   getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ServingSpec;
+  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ServingEnvironment;
   hasServingsiteref(): boolean;
-  clearServingsiteref(): ServingSpec;
-
-  getOnline(): boolean;
-  setOnline(value: boolean): ServingSpec;
-
-  getDashboard(): boolean;
-  setDashboard(value: boolean): ServingSpec;
+  clearServingsiteref(): ServingEnvironment;
 
   getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
-  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): ServingSpec;
+  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): ServingEnvironment;
   hasAccess(): boolean;
-  clearAccess(): ServingSpec;
+  clearAccess(): ServingEnvironment;
 
   getReplicas(): number;
-  setReplicas(value: number): ServingSpec;
+  setReplicas(value: number): ServingEnvironment;
 
-  getShadowfirst(): boolean;
-  setShadowfirst(value: boolean): ServingSpec;
+  getOnline(): boolean;
+  setOnline(value: boolean): ServingEnvironment;
 
-  getManual(): boolean;
-  setManual(value: boolean): ServingSpec;
+  getDashboard(): boolean;
+  setDashboard(value: boolean): ServingEnvironment;
 
-  getApprovedby(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setApprovedby(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ServingSpec;
-  hasApprovedby(): boolean;
-  clearApprovedby(): ServingSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ServingEnvironment;
+  hasResources(): boolean;
+  clearResources(): ServingEnvironment;
 
-  getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ServingSpec;
-  hasApprovedat(): boolean;
-  clearApprovedat(): ServingSpec;
+  getEphemeral(): boolean;
+  setEphemeral(value: boolean): ServingEnvironment;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ServingSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ServingSpec): ServingSpec.AsObject;
-  static serializeBinaryToWriter(message: ServingSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ServingSpec;
-  static deserializeBinaryFromReader(message: ServingSpec, reader: jspb.BinaryReader): ServingSpec;
+  toObject(includeInstance?: boolean): ServingEnvironment.AsObject;
+  static toObject(includeInstance: boolean, msg: ServingEnvironment): ServingEnvironment.AsObject;
+  static serializeBinaryToWriter(message: ServingEnvironment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ServingEnvironment;
+  static deserializeBinaryFromReader(message: ServingEnvironment, reader: jspb.BinaryReader): ServingEnvironment;
 }
 
-export namespace ServingSpec {
+export namespace ServingEnvironment {
   export type AsObject = {
-    enabled: boolean,
-    predictorname: string,
-    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    predictortemplatename: string,
+    name: string,
+    tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    online: boolean,
-    dashboard: boolean,
     access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
     replicas: number,
-    shadowfirst: boolean,
-    manual: boolean,
-    approvedby?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    online: boolean,
+    dashboard: boolean,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
+    ephemeral: boolean,
   }
 }
 
 export class ServingStatus extends jspb.Message {
-  getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ServingStatus;
-  hasApprovedat(): boolean;
-  clearApprovedat(): ServingStatus;
-
   getPredictorname(): string;
   setPredictorname(value: string): ServingStatus;
 
@@ -3942,7 +3859,6 @@ export class ServingStatus extends jspb.Message {
 
 export namespace ServingStatus {
   export type AsObject = {
-    approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     predictorname: string,
     dataappname: string,
     predictoruri: string,
@@ -4157,11 +4073,6 @@ export class StudySpec extends jspb.Message {
   hasTrainingtemplate(): boolean;
   clearTrainingtemplate(): StudySpec;
 
-  getServingtemplate(): ServingSpec | undefined;
-  setServingtemplate(value?: ServingSpec): StudySpec;
-  hasServingtemplate(): boolean;
-  clearServingtemplate(): StudySpec;
-
   getFcttemplate(): ForecasterSpec | undefined;
   setFcttemplate(value?: ForecasterSpec): StudySpec;
   hasFcttemplate(): boolean;
@@ -4290,7 +4201,6 @@ export namespace StudySpec {
     search?: SearchSpec.AsObject,
     ensembles?: EnsemblesSpec.AsObject,
     trainingtemplate?: TrainingSpec.AsObject,
-    servingtemplate?: ServingSpec.AsObject,
     fcttemplate?: ForecasterSpec.AsObject,
     schedule?: StudyScheduleSpec.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,

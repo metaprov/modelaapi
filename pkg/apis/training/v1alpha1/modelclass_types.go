@@ -225,40 +225,50 @@ type ModelClassTrainingSpec struct {
 type ModelClassServingSpec struct {
 	// Define the stages to test the model before release
 	// +kubebuilder:validation:Optional
-	Pipeline []PipelineStageSpec `json:"pipeline,omitempty" protobuf:"bytes,1,rep,name=pipeline"`
-	// The name of the predictor template to use when
+	Environments []ServingEnvironment `json:"environments,omitempty" protobuf:"bytes,1,opt,name=environments"`
+	// The name of the predictor template to use when creating the predictor
 	// +kubebuilder:validation:Optional
 	PredictorTemplateName *string `json:"predictorTemplateName,omitempty" protobuf:"bytes,2,opt,name=predictorTemplateName"`
-	// Define a template for the serving spec of new models created for this model class
-	// +kubebuilder:validation:Optional
-	Template ServingSpec `json:"template,omitempty" protobuf:"bytes,3,opt,name=template"`
 	// Schedule for monitoring drift
 	// +kubebuilder:validation:Optional
 	MonitoringSchedule catalog.RunSchedule `json:"monitoringSchedule,omitempty" protobuf:"bytes,4,opt,name=monitoringSchedule"`
 	// BatchPrediction schedule
 	// +kubebuilder:validation:Optional
 	PredictionSchedule catalog.RunSchedule `json:"predictionSchedule,omitempty" protobuf:"bytes,5,opt,name=predictionSchedule"`
-	// List of SQL statements to run before performing the prediction
-	// +kubebuilder:validation:Optional
-	PreSql []string `json:"preSQL,omitempty" protobuf:"bytes,6,opt,name=preSQL"`
-	// List of SQL statements to run before performing the prediction
-	// +kubebuilder:validation:Optional
-	PostSql []string `json:"postSQL,omitempty" protobuf:"bytes,7,opt,name=postSQL"`
 }
 
 // Define a test stage
-type PipelineStageSpec struct {
+type ServingEnvironment struct {
 	// The stage name
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// the Tests to run on the stage
+	// the Tests to run in this environment, once the predictor is ready.
 	// +kubebuilder:validation:Optional
 	Tests catalog.TestSuite `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
 	// The serving site ref
 	// +kubebuilder:validation:Optional
 	ServingSiteRef *v1.ObjectReference `json:"servingSiteRef,omitempty" protobuf:"bytes,3,opt,name=servingSiteRef"`
+	// Define the predictor access in this environment.
+	// +kubebuilder:validation:Optional
+	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,4,opt,name=access"`
+	// The number of replicas in this environment.
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	Replicas *int32 `json:"replicas,omitempty" protobuf:"bytes,5,opt,name=replicas"`
+	// Deploy the predictor for online serving in this environment
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Online *bool `json:"online,omitempty" protobuf:"bytes,6,opt,name=online"`
+	// Deploy the dashboard for online serving in this environment
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Dashboard *bool `json:"dashboard,omitempty" protobuf:"bytes,7,opt,name=dashboard"`
 	// The resources to use when running tests at this stage
 	// +kubebuilder:validation:Optional
-	Resources *catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,4,opt,name=resources"`
+	Resources *catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,8,opt,name=resources"`
+	// If true, we create this environment for test purposes only.
+	// remove the predictor once the test is complete
+	// +kubebuilder:validation:Optional
+	Ephemeral *bool `json:"ephemeral,omitempty" protobuf:"bytes,9,opt,name=ephemeral"`
 }
 
 type EntityRef struct {

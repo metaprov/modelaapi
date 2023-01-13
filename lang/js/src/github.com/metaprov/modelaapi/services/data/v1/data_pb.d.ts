@@ -3587,16 +3587,6 @@ export class SaveModelRequest extends jspb.Message {
   hasModel(): boolean;
   clearModel(): SaveModelRequest;
 
-  getLab(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab | undefined;
-  setLab(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab): SaveModelRequest;
-  hasLab(): boolean;
-  clearLab(): SaveModelRequest;
-
-  getEntitiesList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>;
-  setEntitiesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>): SaveModelRequest;
-  clearEntitiesList(): SaveModelRequest;
-  addEntities(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity;
-
   getGroupsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>;
   setGroupsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup>): SaveModelRequest;
   clearGroupsList(): SaveModelRequest;
@@ -3625,8 +3615,6 @@ export namespace SaveModelRequest {
     modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
     modelclassrun?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.AsObject,
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
-    lab?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.AsObject,
-    entitiesList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject>,
     groupsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject>,
     dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     dbsecretMap: Array<[string, Uint8Array | string]>,
@@ -3644,6 +3632,11 @@ export class SavePredictionRequest extends jspb.Message {
   hasModelclass(): boolean;
   clearModelclass(): SavePredictionRequest;
 
+  getModelclassrun(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun | undefined;
+  setModelclassrun(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun): SavePredictionRequest;
+  hasModelclassrun(): boolean;
+  clearModelclassrun(): SavePredictionRequest;
+
   getPredictor(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
   setPredictor(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): SavePredictionRequest;
   hasPredictor(): boolean;
@@ -3653,11 +3646,6 @@ export class SavePredictionRequest extends jspb.Message {
   setPrediction(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction): SavePredictionRequest;
   hasPrediction(): boolean;
   clearPrediction(): SavePredictionRequest;
-
-  getServingsite(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
-  setServingsite(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): SavePredictionRequest;
-  hasServingsite(): boolean;
-  clearServingsite(): SavePredictionRequest;
 
   getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
   setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): SavePredictionRequest;
@@ -3679,9 +3667,51 @@ export namespace SavePredictionRequest {
   export type AsObject = {
     dataproduct?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
+    modelclassrun?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.AsObject,
     predictor?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
     prediction?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction.AsObject,
-    servingsite?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
+    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    dbsecretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
+export class SavePredictorRequest extends jspb.Message {
+  getDataproduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setDataproduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): SavePredictorRequest;
+  hasDataproduct(): boolean;
+  clearDataproduct(): SavePredictorRequest;
+
+  getModelclass(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass | undefined;
+  setModelclass(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass): SavePredictorRequest;
+  hasModelclass(): boolean;
+  clearModelclass(): SavePredictorRequest;
+
+  getPredictor(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction | undefined;
+  setPredictor(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction): SavePredictorRequest;
+  hasPredictor(): boolean;
+  clearPredictor(): SavePredictorRequest;
+
+  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): SavePredictorRequest;
+  hasDbconnection(): boolean;
+  clearDbconnection(): SavePredictorRequest;
+
+  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearDbsecretMap(): SavePredictorRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SavePredictorRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SavePredictorRequest): SavePredictorRequest.AsObject;
+  static serializeBinaryToWriter(message: SavePredictorRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SavePredictorRequest;
+  static deserializeBinaryFromReader(message: SavePredictorRequest, reader: jspb.BinaryReader): SavePredictorRequest;
+}
+
+export namespace SavePredictorRequest {
+  export type AsObject = {
+    dataproduct?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
+    predictor?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction.AsObject,
     dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     dbsecretMap: Array<[string, Uint8Array | string]>,
   }
