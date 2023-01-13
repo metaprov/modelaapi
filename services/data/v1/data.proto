@@ -793,11 +793,9 @@ message SaveModelRequest {
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         modelclass          = 3;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun      modelclassrun       = 4;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model              model               = 5;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab                   lab                 = 6;
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity        entities            = 7;
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup  groups              = 8;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection        = 9;
-    map<string,bytes>                                                           dbSecret            = 10;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup  groups              = 6;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection        = 7;
+    map<string,bytes>                                                           dbSecret            = 8;
 }
 
 
