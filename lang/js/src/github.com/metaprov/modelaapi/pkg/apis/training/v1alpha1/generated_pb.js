@@ -1867,7 +1867,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -38233,6 +38233,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SegmentSpec.proto
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment.repeatedFields_ = [9,10];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -38271,7 +38278,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironmen
     replicas: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     online: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
     dashboard: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
-    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f)
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
+    presqlList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
+    postsqlList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -38343,6 +38352,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironmen
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
       msg.setResources(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addPresql(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addPostsql(value);
       break;
     default:
       reader.skipField();
@@ -38431,6 +38448,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironmen
       8,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getPresqlList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      9,
+      f
+    );
+  }
+  f = message.getPostsqlList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      10,
+      f
     );
   }
 };
@@ -38725,6 +38756,80 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironmen
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment.prototype.hasResources = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * repeated string preSQL = 9;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment.prototype.getPresqlList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment.prototype.setPresqlList = function(value) {
+  return jspb.Message.setField(this, 9, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment.prototype.addPresql = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment.prototype.clearPresqlList = function() {
+  return this.setPresqlList([]);
+};
+
+
+/**
+ * repeated string postSQL = 10;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment.prototype.getPostsqlList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 10));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment.prototype.setPostsqlList = function(value) {
+  return jspb.Message.setField(this, 10, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment.prototype.addPostsql = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 10, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment.prototype.clearPostsqlList = function() {
+  return this.setPostsqlList([]);
 };
 
 

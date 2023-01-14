@@ -1571,11 +1571,11 @@ message ModelClassTrainingSpec {
   // +kubebuilder:validation:Optional
   optional bool explained = 16;
 
-  // List of SQL statements to run before performing the prediction
+  // List of SQL statements to run before training
   // +kubebuilder:validation:Optional
   repeated string preSQL = 17;
 
-  // List of SQL statements to run before performing the prediction
+  // List of SQL statements to run after training
   // +kubebuilder:validation:Optional
   repeated string postSQL = 18;
 }
@@ -2766,6 +2766,14 @@ message ServingEnvironment {
   // The resources to use when running tests at this stage
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 8;
+
+  // List of SQL statements to run before training
+  // +kubebuilder:validation:Optional
+  repeated string preSQL = 9;
+
+  // List of SQL statements to run after training
+  // +kubebuilder:validation:Optional
+  repeated string postSQL = 10;
 }
 
 // ServingSpec specifies the requirements to serve a model

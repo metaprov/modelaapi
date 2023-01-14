@@ -3851,6 +3851,16 @@ export class ServingEnvironment extends jspb.Message {
   hasResources(): boolean;
   clearResources(): ServingEnvironment;
 
+  getPresqlList(): Array<string>;
+  setPresqlList(value: Array<string>): ServingEnvironment;
+  clearPresqlList(): ServingEnvironment;
+  addPresql(value: string, index?: number): ServingEnvironment;
+
+  getPostsqlList(): Array<string>;
+  setPostsqlList(value: Array<string>): ServingEnvironment;
+  clearPostsqlList(): ServingEnvironment;
+  addPostsql(value: string, index?: number): ServingEnvironment;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingEnvironment.AsObject;
   static toObject(includeInstance: boolean, msg: ServingEnvironment): ServingEnvironment.AsObject;
@@ -3869,6 +3879,8 @@ export namespace ServingEnvironment {
     online: boolean,
     dashboard: boolean,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
+    presqlList: Array<string>,
+    postsqlList: Array<string>,
   }
 }
 

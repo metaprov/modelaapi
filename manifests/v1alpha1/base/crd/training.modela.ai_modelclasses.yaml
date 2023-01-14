@@ -1421,6 +1421,16 @@ spec:
                           description: Deploy the predictor for online serving in
                             this environment
                           type: boolean
+                        postSQL:
+                          description: List of SQL statements to run after training
+                          items:
+                            type: string
+                          type: array
+                        preSQL:
+                          description: List of SQL statements to run before training
+                          items:
+                            type: string
+                          type: array
                         replicas:
                           default: 1
                           description: The number of replicas in this environment.
@@ -2441,14 +2451,12 @@ spec:
                       job
                     type: boolean
                   postSQL:
-                    description: List of SQL statements to run before performing the
-                      prediction
+                    description: List of SQL statements to run after training
                     items:
                       type: string
                     type: array
                   preSQL:
-                    description: List of SQL statements to run before performing the
-                      prediction
+                    description: List of SQL statements to run before training
                     items:
                       type: string
                     type: array

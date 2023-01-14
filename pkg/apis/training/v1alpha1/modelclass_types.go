@@ -214,11 +214,11 @@ type ModelClassTrainingSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Explained *bool `json:"explained,omitempty" protobuf:"varint,16,opt,name=explained"`
-	// List of SQL statements to run before performing the prediction
+	// List of SQL statements to run before training
 	// +kubebuilder:validation:Optional
 	PreSql []string `json:"preSQL,omitempty" protobuf:"bytes,17,opt,name=preSQL"`
-	// List of SQL statements to run before performing the prediction
-	// +kubebuilder:validation:Optional
+	// List of SQL statements to run after training
+	//+kubebuilder:validation:Optional
 	PostSql []string `json:"postSQL,omitempty" protobuf:"bytes,18,opt,name=postSQL"`
 }
 
@@ -286,6 +286,12 @@ type ServingEnvironment struct {
 	// The resources to use when running tests at this stage
 	// +kubebuilder:validation:Optional
 	Resources *catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,8,opt,name=resources"`
+	// List of SQL statements to run before training
+	// +kubebuilder:validation:Optional
+	PreSql []string `json:"preSQL,omitempty" protobuf:"bytes,9,opt,name=preSQL"`
+	// List of SQL statements to run after training
+	//+kubebuilder:validation:Optional
+	PostSql []string `json:"postSQL,omitempty" protobuf:"bytes,10,opt,name=postSQL"`
 }
 
 type EntityRef struct {
