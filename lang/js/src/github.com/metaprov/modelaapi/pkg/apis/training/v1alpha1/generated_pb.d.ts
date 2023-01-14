@@ -1901,11 +1901,6 @@ export class ModelClassServingSpec extends jspb.Message {
   hasResources(): boolean;
   clearResources(): ModelClassServingSpec;
 
-  getEnvironmentsList(): Array<ServingEnvironment>;
-  setEnvironmentsList(value: Array<ServingEnvironment>): ModelClassServingSpec;
-  clearEnvironmentsList(): ModelClassServingSpec;
-  addEnvironments(value?: ServingEnvironment, index?: number): ServingEnvironment;
-
   getPredictortemplatename(): string;
   setPredictortemplatename(value: string): ModelClassServingSpec;
 
@@ -1918,6 +1913,16 @@ export class ModelClassServingSpec extends jspb.Message {
   setPredictionschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassServingSpec;
   hasPredictionschedule(): boolean;
   clearPredictionschedule(): ModelClassServingSpec;
+
+  getPresqlList(): Array<string>;
+  setPresqlList(value: Array<string>): ModelClassServingSpec;
+  clearPresqlList(): ModelClassServingSpec;
+  addPresql(value: string, index?: number): ModelClassServingSpec;
+
+  getPostsqlList(): Array<string>;
+  setPostsqlList(value: Array<string>): ModelClassServingSpec;
+  clearPostsqlList(): ModelClassServingSpec;
+  addPostsql(value: string, index?: number): ModelClassServingSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassServingSpec.AsObject;
@@ -1935,10 +1940,11 @@ export namespace ModelClassServingSpec {
     online: boolean,
     dashboard: boolean,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    environmentsList: Array<ServingEnvironment.AsObject>,
     predictortemplatename: string,
     monitoringschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     predictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    presqlList: Array<string>,
+    postsqlList: Array<string>,
   }
 }
 

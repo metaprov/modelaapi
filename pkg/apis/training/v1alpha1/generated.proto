@@ -1297,10 +1297,6 @@ message ModelClassServingSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 6;
 
-  // Define the stages to test the model before release. not active for this release
-  // +kubebuilder:validation:Optional
-  repeated ServingEnvironment environments = 7;
-
   // The name of the predictor template to use when creating the predictor
   // +kubebuilder:validation:Optional
   optional string predictorTemplateName = 8;
@@ -1312,6 +1308,14 @@ message ModelClassServingSpec {
   // BatchPrediction schedule
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule predictionSchedule = 10;
+
+  // List of SQL statements to run before training
+  // +kubebuilder:validation:Optional
+  repeated string preSQL = 11;
+
+  // List of SQL statements to run after training
+  // +kubebuilder:validation:Optional
+  repeated string postSQL = 12;
 }
 
 // ModelClassSpec defines the desired state of a ModelClass and the parameters for a model search

@@ -244,9 +244,6 @@ type ModelClassServingSpec struct {
 	// The resources to use when running tests at this stage
 	// +kubebuilder:validation:Optional
 	Resources *catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,6,opt,name=resources"`
-	// Define the stages to test the model before release. not active for this release
-	// +kubebuilder:validation:Optional
-	Environments []ServingEnvironment `json:"environments,omitempty" protobuf:"bytes,7,opt,name=environments"`
 	// The name of the predictor template to use when creating the predictor
 	// +kubebuilder:validation:Optional
 	PredictorTemplateName *string `json:"predictorTemplateName,omitempty" protobuf:"bytes,8,opt,name=predictorTemplateName"`
@@ -256,6 +253,12 @@ type ModelClassServingSpec struct {
 	// BatchPrediction schedule
 	// +kubebuilder:validation:Optional
 	PredictionSchedule catalog.RunSchedule `json:"predictionSchedule,omitempty" protobuf:"bytes,10,opt,name=predictionSchedule"`
+	// List of SQL statements to run before training
+	// +kubebuilder:validation:Optional
+	PreSql []string `json:"preSQL,omitempty" protobuf:"bytes,11,opt,name=preSQL"`
+	// List of SQL statements to run after training
+	//+kubebuilder:validation:Optional
+	PostSql []string `json:"postSQL,omitempty" protobuf:"bytes,12,opt,name=postSQL"`
 }
 
 // Define a test stage
