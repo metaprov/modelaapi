@@ -852,6 +852,49 @@ export class ModelServiceClient {
     this.methodInfoPromoteModel);
   }
 
+  methodInfoCreateDashboard = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateDashboard',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardRequest,
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardResponse.deserializeBinary
+  );
+
+  createDashboard(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardResponse>;
+
+  createDashboard(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardResponse>;
+
+  createDashboard(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateDashboard',
+        request,
+        metadata || {},
+        this.methodInfoCreateDashboard,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateDashboard',
+    request,
+    metadata || {},
+    this.methodInfoCreateDashboard);
+  }
+
   methodInfoTestModel = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.model.v1.ModelService/TestModel',
     grpcWeb.MethodType.UNARY,

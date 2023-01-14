@@ -640,13 +640,15 @@ type ServingSpec struct {
 	// +kubebuilder:validation:Optional
 	PredictorTemplateName *string `json:"predictorTemplateName,omitempty" protobuf:"bytes,5,opt,name=predictorTemplateName"`
 	// The reference to the serving site, where online predictor will be served.
-	// If unspecified, the default Lab from the parent DataProduct will be used
+	// If unspecified, the default ServingSite from the parent DataProduct will be used
 	// +kubebuilder:validation:Optional
 	ServingSiteRef v1.ObjectReference `json:"servingSiteRef,omitempty" protobuf:"bytes,6,opt,name=servingSiteRef"`
 	// Create an online predictor to host the model and enable real time ML.
+	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Online *bool `json:"online,omitempty" protobuf:"varint,7,opt,name=online"`
 	// Create A DataApp, and enable dashboard access to the model
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Dashboard *bool `json:"dashboard,omitempty" protobuf:"varint,8,opt,name=dashboard"`
 	// Access specifies the configuration for the Predictor service to be exposed externally
@@ -654,14 +656,13 @@ type ServingSpec struct {
 	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,9,opt,name=access"`
 	// The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
 	// copies of the service in the case that automatic scaling is disabled
+	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,10,opt,name=replicas"`
-	// Deploy it as shadow model first.
+	// Define the promotion policy of a new model
+	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	Shadow *bool `json:"shadowFirst,omitempty" protobuf:"varint,11,opt,name=shadowFirst"`
-	// If true, the model must be approved before moving it to production
-	// +kubebuilder:validation:Optional
-	Manual *bool `json:"manual,omitempty" protobuf:"varint,12,opt,name=manual"`
+	Promotion *catalog.PromotionType `json:"promotion,omitempty" protobuf:"varint,12,opt,name=promotion"`
 	// ApprovedBy indicates the account that approve this model.
 	// +kubebuilder:validation:Optional
 	ApprovedBy v1.ObjectReference `json:"approvedBy,omitempty" protobuf:"bytes,13,opt,name=approvedBy"`

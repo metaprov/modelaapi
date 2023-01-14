@@ -214,6 +214,18 @@ message PromoteModelResponse {
 
 }
 
+message CreateDashboardRequest {
+    string namespace = 1;
+    string name      = 2;
+    bool   shadow    = 3; // if true the model become shadow model
+}
+
+// Answer the report in base 64
+message CreateDashboardResponse {
+
+}
+
+
 
 // Flag model
 message TestModelRequest {
@@ -320,6 +332,9 @@ service ModelService {
         option (google.api.http).post = "/v1/models/{namespace}/{name}:promote";
     }
 
+    rpc CreateDashboard(CreateDashboardRequest) returns (CreateDashboardResponse) {
+        option (google.api.http).post = "/v1/models/{namespace}/{name}:dashboard";
+    }
 
     // Mark the model to test
     rpc TestModel(TestModelRequest) returns (TestModelResponse) {

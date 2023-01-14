@@ -850,6 +850,46 @@ export namespace PromoteModelResponse {
   }
 }
 
+export class CreateDashboardRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): CreateDashboardRequest;
+
+  getName(): string;
+  setName(value: string): CreateDashboardRequest;
+
+  getShadow(): boolean;
+  setShadow(value: boolean): CreateDashboardRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateDashboardRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDashboardRequest): CreateDashboardRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateDashboardRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDashboardRequest;
+  static deserializeBinaryFromReader(message: CreateDashboardRequest, reader: jspb.BinaryReader): CreateDashboardRequest;
+}
+
+export namespace CreateDashboardRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+    shadow: boolean,
+  }
+}
+
+export class CreateDashboardResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateDashboardResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDashboardResponse): CreateDashboardResponse.AsObject;
+  static serializeBinaryToWriter(message: CreateDashboardResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDashboardResponse;
+  static deserializeBinaryFromReader(message: CreateDashboardResponse, reader: jspb.BinaryReader): CreateDashboardResponse;
+}
+
+export namespace CreateDashboardResponse {
+  export type AsObject = {
+  }
+}
+
 export class TestModelRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): TestModelRequest;

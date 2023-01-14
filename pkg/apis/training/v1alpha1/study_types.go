@@ -284,6 +284,10 @@ type StudySpec struct {
 	// If this study was created by a model class run, this is the run name
 	// +kubebuilder:validation:Optional
 	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,43,opt,name=modelClassRunName"`
+	// Define the serving policy once the best model is created.
+	// by default there is no serving policy
+	// +kubebuilder:validation:Optional
+	Serving ServingSpec `json:"serving,omitempty" protobuf:"bytes,44,opt,name=serving"`
 }
 
 // StudyStatus defines the observed state of a Study

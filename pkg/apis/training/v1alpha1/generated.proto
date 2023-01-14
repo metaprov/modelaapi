@@ -1270,52 +1270,25 @@ message ModelClassRunStatus {
 }
 
 message ModelClassServingSpec {
-  // The serving site ref
+  // Define the serving of the best model.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 1;
-
-  // Define the predictor access in this environment.
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 2;
-
-  // The number of replicas in this environment.
-  // +kubebuilder:default:=1
-  // +kubebuilder:validation:Optional
-  optional int32 replicas = 3;
-
-  // Deploy the predictor for online serving in this environment
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool online = 4;
-
-  // Deploy the dashboard for online serving in this environment
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool dashboard = 5;
-
-  // The resources to use when running tests at this stage
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 6;
-
-  // The name of the predictor template to use when creating the predictor
-  // +kubebuilder:validation:Optional
-  optional string predictorTemplateName = 8;
+  optional ServingSpec template = 1;
 
   // Schedule for monitoring drift
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule monitoringSchedule = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule monitoringSchedule = 2;
 
   // BatchPrediction schedule
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule predictionSchedule = 10;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule predictionSchedule = 3;
 
   // List of SQL statements to run before training
   // +kubebuilder:validation:Optional
-  repeated string preSQL = 11;
+  repeated string preSQL = 4;
 
   // List of SQL statements to run after training
   // +kubebuilder:validation:Optional
-  repeated string postSQL = 12;
+  repeated string postSQL = 5;
 }
 
 // ModelClassSpec defines the desired state of a ModelClass and the parameters for a model search
@@ -1521,10 +1494,6 @@ message ModelClassTrainingSpec {
   // ModelImage specifies the configuration to upload Docker images of models to an image registry
   // +kubebuilder:validation:Optional
   optional ModelImageSpec modelImage = 5;
-
-  // Promotion defines the way to promote models
-  // +kubebuilder:validation:Optional
-  optional string promotionPolicy = 6;
 
   // Define custom search space for this model class.
   // The search space defines which algorithm to include or execlude
@@ -2798,15 +2767,17 @@ message ServingSpec {
   optional string predictorTemplateName = 5;
 
   // The reference to the serving site, where online predictor will be served.
-  // If unspecified, the default Lab from the parent DataProduct will be used
+  // If unspecified, the default ServingSite from the parent DataProduct will be used
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 6;
 
   // Create an online predictor to host the model and enable real time ML.
+  // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool online = 7;
 
   // Create A DataApp, and enable dashboard access to the model
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool dashboard = 8;
 
@@ -2816,16 +2787,14 @@ message ServingSpec {
 
   // The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
   // copies of the service in the case that automatic scaling is disabled
+  // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   optional int32 replicas = 10;
 
-  // Deploy it as shadow model first.
+  // Define the promotion policy of a new model
+  // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional bool shadowFirst = 11;
-
-  // If true, the model must be approved before moving it to production
-  // +kubebuilder:validation:Optional
-  optional bool manual = 12;
+  optional string promotion = 12;
 
   // ApprovedBy indicates the account that approve this model.
   // +kubebuilder:validation:Optional
@@ -3134,6 +3103,11 @@ message StudySpec {
   // If this study was created by a model class run, this is the run name
   // +kubebuilder:validation:Optional
   optional string modelClassRunName = 43;
+
+  // Define the serving policy once the best model is created.
+  // by default there is no serving policy
+  // +kubebuilder:validation:Optional
+  optional ServingSpec serving = 44;
 }
 
 // StudyStatus defines the observed state of a Study

@@ -171,9 +171,6 @@ type ModelClassTrainingSpec struct {
 	// ModelImage specifies the configuration to upload Docker images of models to an image registry
 	//+kubebuilder:validation:Optional
 	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,5,opt,name=modelImage"`
-	// Promotion defines the way to promote models
-	//+kubebuilder:validation:Optional
-	PromotionPolicy catalog.PromotionType `json:"promotionPolicy,omitempty" protobuf:"bytes,6,opt,name=promotionPolicy"`
 	// Define custom search space for this model class.
 	// The search space defines which algorithm to include or execlude
 	// If not defined, we would use the search space in the model template.
@@ -223,42 +220,21 @@ type ModelClassTrainingSpec struct {
 }
 
 type ModelClassServingSpec struct {
-	// The serving site ref
+	// Define the serving of the best model.
 	// +kubebuilder:validation:Optional
-	ServingSiteRef *v1.ObjectReference `json:"servingSiteRef,omitempty" protobuf:"bytes,1,opt,name=servingSiteRef"`
-	// Define the predictor access in this environment.
-	// +kubebuilder:validation:Optional
-	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,2,opt,name=access"`
-	// The number of replicas in this environment.
-	// +kubebuilder:default:=1
-	// +kubebuilder:validation:Optional
-	Replicas *int32 `json:"replicas,omitempty" protobuf:"bytes,3,opt,name=replicas"`
-	// Deploy the predictor for online serving in this environment
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Online *bool `json:"online,omitempty" protobuf:"bytes,4,opt,name=online"`
-	// Deploy the dashboard for online serving in this environment
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Dashboard *bool `json:"dashboard,omitempty" protobuf:"bytes,5,opt,name=dashboard"`
-	// The resources to use when running tests at this stage
-	// +kubebuilder:validation:Optional
-	Resources *catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,6,opt,name=resources"`
-	// The name of the predictor template to use when creating the predictor
-	// +kubebuilder:validation:Optional
-	PredictorTemplateName *string `json:"predictorTemplateName,omitempty" protobuf:"bytes,8,opt,name=predictorTemplateName"`
+	Template ServingSpec `json:"template,omitempty" protobuf:"bytes,1,opt,name=template"`
 	// Schedule for monitoring drift
 	// +kubebuilder:validation:Optional
-	MonitoringSchedule catalog.RunSchedule `json:"monitoringSchedule,omitempty" protobuf:"bytes,9,opt,name=monitoringSchedule"`
+	MonitoringSchedule catalog.RunSchedule `json:"monitoringSchedule,omitempty" protobuf:"bytes,2,opt,name=monitoringSchedule"`
 	// BatchPrediction schedule
 	// +kubebuilder:validation:Optional
-	PredictionSchedule catalog.RunSchedule `json:"predictionSchedule,omitempty" protobuf:"bytes,10,opt,name=predictionSchedule"`
+	PredictionSchedule catalog.RunSchedule `json:"predictionSchedule,omitempty" protobuf:"bytes,3,opt,name=predictionSchedule"`
 	// List of SQL statements to run before training
 	// +kubebuilder:validation:Optional
-	PreSql []string `json:"preSQL,omitempty" protobuf:"bytes,11,opt,name=preSQL"`
+	PreSql []string `json:"preSQL,omitempty" protobuf:"bytes,4,opt,name=preSQL"`
 	// List of SQL statements to run after training
 	//+kubebuilder:validation:Optional
-	PostSql []string `json:"postSQL,omitempty" protobuf:"bytes,12,opt,name=postSQL"`
+	PostSql []string `json:"postSQL,omitempty" protobuf:"bytes,5,opt,name=postSQL"`
 }
 
 // Define a test stage
