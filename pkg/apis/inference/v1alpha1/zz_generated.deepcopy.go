@@ -1020,6 +1020,7 @@ func (in *PredictionStatus) DeepCopyInto(out *PredictionStatus) {
 		}
 	}
 	in.Forecast.DeepCopyInto(&out.Forecast)
+	out.Usage = in.Usage
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]metav1.Condition, len(*in))
