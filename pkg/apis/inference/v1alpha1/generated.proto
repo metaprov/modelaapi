@@ -849,7 +849,7 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
-  // The model class for this pipeline
+  // The model class for this pipeline. if was created to serve model class models.
   // +kubebuilder:validation:Optional
   optional string modelClassName = 2;
 
@@ -866,7 +866,7 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional bool template = 5;
 
-  // If true, create an online predictor. else this predictor is only for batch predictions.
+  // If true, create a deployment to serve online traffic.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool online = 6;
@@ -876,9 +876,11 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 7;
 
-  // If specified, the collection of shadow models. A shadow model receives prediction request, but does
-  // not serve the reply.
-  // +kubebuilder:validation:Optional
+  // If specified, the collection of models. There must be a least on live model
+  // +listType=map
+  // +listMapKey=name
+  // +kubebuilder:validation:MinItems=1
+  // +kubebuilder:validation:MaxItems=16
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec models = 8;
 
   // The specification to progressively deploy a new live model. ModelDeploymentSpec specifications within Models that have the
