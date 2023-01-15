@@ -32,6 +32,8 @@ const (
 	ModelPhasePackaged              ModelPhase = "Packaged"
 	ModelPhaseProfiling             ModelPhase = "Profiling"
 	ModelPhaseProfiled              ModelPhase = "Profiled"
+	ModelPhasePromoting             ModelPhase = "Promoting"
+	ModelPhasePromoted              ModelPhase = "Promoted"
 	ModelPhaseExplaining            ModelPhase = "Explaining"
 	ModelPhaseExplained             ModelPhase = "Explained"
 	ModelPhaseAborted               ModelPhase = "Aborted"

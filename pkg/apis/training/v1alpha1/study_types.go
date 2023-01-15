@@ -66,6 +66,8 @@ const (
 	StudyPhaseFailed             StudyPhase = "Failed"
 	StudyPhaseAborted            StudyPhase = "Aborted"
 	StudyPhasePaused             StudyPhase = "Paused"
+	StudyPhasePromoting          StudyPhase = "Promoting"
+	StudyPhasePromoted           StudyPhase = "Promoted"
 )
 
 //  is the condition of a Study
@@ -101,10 +103,11 @@ const (
 	// StudySaved states that the Study has been archived in a database
 	StudySaved = "Saved"
 	// StudyCompleted states that the Study has completed execution
-	StudyCompleted   = "Completed"
-	StudyPartitioned = "Partitioned"
-	StudyArchived    = "Archived"
-	StudyUnitTested  = "UnitTested"
+	StudyCompleted     = "Completed"
+	StudyPartitioned   = "Partitioned"
+	StudyArchived      = "Archived"
+	StudyUnitTested    = "UnitTested"
+	StudyModelPromoted = "ModelPromoted"
 )
 
 // StudyCondition describes the state of a Study at a certain point

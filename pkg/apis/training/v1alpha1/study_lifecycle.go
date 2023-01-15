@@ -775,6 +775,33 @@ func (study *Study) MarkProfileFailed(err string) {
 	study.RefreshProgress()
 }
 
+// /////////////////////////////////////////////////////////
+// --------------- Promotion
+// /////////////////////////////////////////////////////////
+func (study *Study) MarkPromoting() {
+	study.CreateOrUpdateCond(metav1.Condition{
+		Type:   StudyModelPromoted,
+		Status: metav1.ConditionFalse,
+		Reason: ReasonPromoting,
+	})
+	study.Status.Phase = StudyPhasePromoting
+
+}
+
+func (study Study) Promoted() bool {
+	return study.GetCond(StudyModelPromoted).Status == metav1.ConditionTrue
+}
+
+func (study *Study) MarkPromoted() {
+	study.CreateOrUpdateCond(metav1.Condition{
+		Type:   StudyModelPromoted,
+		Status: metav1.ConditionTrue,
+		Reason: StudyModelPromoted,
+	})
+	study.Status.Phase = StudyPhasePromoted
+	study.RefreshProgress()
+}
+
 ///////////////////////////////////////////////////////////
 // --------------- Report
 ///////////////////////////////////////////////////////////
