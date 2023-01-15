@@ -339,7 +339,7 @@ type ModelSpec struct {
 	// +kubebuilder:validation:Optional
 	Role *catalog.ModelRole `json:"role,omitempty" protobuf:"bytes,55,opt,name=role"`
 	// The desired serving state.
-	// +kubebuilder:default:="false"
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Released *bool `json:"released,omitempty" protobuf:"varint,56,opt,name=released"`
 }
