@@ -204,9 +204,12 @@ message FlagModelResponse {
 
 // Promote model
 message PromoteModelRequest {
-    string namespace = 1;
-    string name      = 2;
-    bool   shadow    = 3; // if true the model become shadow model
+    string namespace   = 1;
+    string name        = 2;
+    string tenant      = 3;
+    string servingsite = 4;
+    string predictor   = 5; // the name of the predictor, the predictor must exist.
+    bool   shadow      = 6; // if true the model become shadow model
 }
 
 // Answer the report in base 64

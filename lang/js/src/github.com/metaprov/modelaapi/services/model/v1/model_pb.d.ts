@@ -817,6 +817,15 @@ export class PromoteModelRequest extends jspb.Message {
   getName(): string;
   setName(value: string): PromoteModelRequest;
 
+  getTenant(): string;
+  setTenant(value: string): PromoteModelRequest;
+
+  getServingsite(): string;
+  setServingsite(value: string): PromoteModelRequest;
+
+  getPredictor(): string;
+  setPredictor(value: string): PromoteModelRequest;
+
   getShadow(): boolean;
   setShadow(value: boolean): PromoteModelRequest;
 
@@ -832,6 +841,9 @@ export namespace PromoteModelRequest {
   export type AsObject = {
     namespace: string,
     name: string,
+    tenant: string,
+    servingsite: string,
+    predictor: string,
     shadow: boolean,
   }
 }

@@ -6961,7 +6961,10 @@ proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest.toObje
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    shadow: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+    tenant: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    servingsite: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    predictor: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    shadow: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -7007,6 +7010,18 @@ proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest.deseri
       msg.setName(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTenant(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setServingsite(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPredictor(value);
+      break;
+    case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setShadow(value);
       break;
@@ -7053,10 +7068,31 @@ proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest.serial
       f
     );
   }
+  f = message.getTenant();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getServingsite();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getPredictor();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
   f = message.getShadow();
   if (f) {
     writer.writeBool(
-      3,
+      6,
       f
     );
   }
@@ -7100,11 +7136,65 @@ proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest.protot
 
 
 /**
- * optional bool shadow = 3;
+ * optional string tenant = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest.prototype.getTenant = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest.prototype.setTenant = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string servingsite = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest.prototype.getServingsite = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest.prototype.setServingsite = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string predictor = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest.prototype.getPredictor = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest.prototype.setPredictor = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional bool shadow = 6;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest.prototype.getShadow = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
 
@@ -7113,7 +7203,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest.protot
  * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest} returns this
  */
 proto.github.com.metaprov.modelaapi.services.model.v1.PromoteModelRequest.prototype.setShadow = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 3, value);
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
