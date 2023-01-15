@@ -1864,7 +1864,7 @@ message ModelSpec {
   optional string role = 55;
 
   // The desired serving state.
-  // +kubebuilder:default:="none"
+  // +kubebuilder:default:="false"
   // +kubebuilder:validation:Optional
   optional bool released = 56;
 }

@@ -291,8 +291,6 @@ type PredictorSpec struct {
 	// +kubebuilder:validation:Optional
 	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,7,opt,name=servingsiteRef"`
 	// If specified, the collection of models. There must be a least on live model
-	// +listType=map
-	// +listMapKey=name
 	// +kubebuilder:validation:MinItems=1
 	// +kubebuilder:validation:MaxItems=16
 	Models []catalog.ModelDeploymentSpec `json:"models,omitempty" protobuf:"bytes,8,rep,name=models"`

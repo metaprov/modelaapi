@@ -1823,7 +1823,7 @@ spec:
                   to a Docker image registry
                 type: boolean
               released:
-                default: none
+                default: "false"
                 description: The desired serving state.
                 type: boolean
               reported:

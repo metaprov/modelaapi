@@ -877,8 +877,6 @@ message PredictorSpec {
   optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 7;
 
   // If specified, the collection of models. There must be a least on live model
-  // +listType=map
-  // +listMapKey=name
   // +kubebuilder:validation:MinItems=1
   // +kubebuilder:validation:MaxItems=16
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec models = 8;

@@ -2387,9 +2387,6 @@ spec:
                 maxItems: 16
                 minItems: 1
                 type: array
-                x-kubernetes-list-map-keys:
-                - name
-                x-kubernetes-list-type: map
               notifierRef:
                 description: NotifierRef references a Notifier resource that will
                   be triggered in the case that a concept or data drift is detected
