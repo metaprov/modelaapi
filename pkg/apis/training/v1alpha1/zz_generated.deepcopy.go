@@ -3218,11 +3218,6 @@ func (in *ServingSpec) DeepCopyInto(out *ServingSpec) {
 		**out = **in
 	}
 	in.Resources.DeepCopyInto(&out.Resources)
-	if in.PredictorTemplateName != nil {
-		in, out := &in.PredictorTemplateName, &out.PredictorTemplateName
-		*out = new(string)
-		**out = **in
-	}
 	out.ServingSiteRef = in.ServingSiteRef
 	if in.Online != nil {
 		in, out := &in.Online, &out.Online

@@ -3870,9 +3870,6 @@ export class ServingSpec extends jspb.Message {
   hasResources(): boolean;
   clearResources(): ServingSpec;
 
-  getPredictortemplatename(): string;
-  setPredictortemplatename(value: string): ServingSpec;
-
   getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ServingSpec;
   hasServingsiteref(): boolean;
@@ -3918,7 +3915,6 @@ export namespace ServingSpec {
     enabled: boolean,
     predictorname: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    predictortemplatename: string,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     online: boolean,
     dashboard: boolean,

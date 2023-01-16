@@ -38571,7 +38571,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.toObj
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     predictorname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
-    predictortemplatename: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     servingsiteref: (f = msg.getServingsiteref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     online: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
     dashboard: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
@@ -38628,10 +38627,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.deser
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
       msg.setResources(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPredictortemplatename(value);
       break;
     case 6:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
@@ -38718,13 +38713,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.seria
       3,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
     );
   }
   f = message.getServingsiteref();
@@ -38896,42 +38884,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string predictorTemplateName = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.getPredictortemplatename = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.setPredictortemplatename = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.clearPredictortemplatename = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.hasPredictortemplatename = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 

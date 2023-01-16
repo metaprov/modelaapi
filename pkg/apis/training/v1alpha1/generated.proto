@@ -2762,10 +2762,6 @@ message ServingSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 3;
 
-  // The name of the predictor template to use when
-  // +kubebuilder:validation:Optional
-  optional string predictorTemplateName = 5;
-
   // The reference to the serving site, where online predictor will be served.
   // If unspecified, the default ServingSite from the parent DataProduct will be used
   // +kubebuilder:validation:Optional

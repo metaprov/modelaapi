@@ -1478,9 +1478,6 @@ spec:
                       predictorName:
                         description: The name of the predictor if exist to update.
                         type: string
-                      predictorTemplateName:
-                        description: The name of the predictor template to use when
-                        type: string
                       promotion:
                         default: none
                         description: Define the promotion policy of a new model

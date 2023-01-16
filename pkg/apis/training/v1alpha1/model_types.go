@@ -638,9 +638,6 @@ type ServingSpec struct {
 	PredictorName *string `json:"predictorName,omitempty" protobuf:"varint,2,opt,name=predictorName"`
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,3,opt,name=resources"`
-	// The name of the predictor template to use when
-	// +kubebuilder:validation:Optional
-	PredictorTemplateName *string `json:"predictorTemplateName,omitempty" protobuf:"bytes,5,opt,name=predictorTemplateName"`
 	// The reference to the serving site, where online predictor will be served.
 	// If unspecified, the default ServingSite from the parent DataProduct will be used
 	// +kubebuilder:validation:Optional
