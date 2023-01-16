@@ -115,12 +115,6 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
-              version:
-                default: ""
-                description: The entity version
-                type: string
-            required:
-            - version
             type: object
           status:
             description: EntityStatus defines the observed state of Entity

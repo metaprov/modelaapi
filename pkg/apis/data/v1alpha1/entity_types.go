@@ -48,9 +48,6 @@ type EntitySpec struct {
 	// The reference to the tenant which the object exists under
 	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,opt,name=tenantRef"`
-	// The entity version
-	// +kubebuilder:default:=""
-	Version *string `json:"version" protobuf:"bytes,2,opt,name=version"`
 	// Description of the entity
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
