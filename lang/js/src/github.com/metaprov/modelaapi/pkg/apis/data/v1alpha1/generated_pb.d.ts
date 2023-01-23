@@ -2447,9 +2447,6 @@ export class EntitySpec extends jspb.Message {
   hasTenantref(): boolean;
   clearTenantref(): EntitySpec;
 
-  getVersion(): string;
-  setVersion(value: string): EntitySpec;
-
   getDescription(): string;
   setDescription(value: string): EntitySpec;
 
@@ -2475,7 +2472,6 @@ export class EntitySpec extends jspb.Message {
 export namespace EntitySpec {
   export type AsObject = {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    version: string,
     description: string,
     joinkey: string,
     owner: string,
@@ -2650,9 +2646,6 @@ export class FeatureGroupSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): FeatureGroupSpec;
 
-  getVersion(): string;
-  setVersion(value: string): FeatureGroupSpec;
-
   getDescription(): string;
   setDescription(value: string): FeatureGroupSpec;
 
@@ -2728,7 +2721,6 @@ export namespace FeatureGroupSpec {
   export type AsObject = {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     owner: string,
-    version: string,
     description: string,
     ingesttype: string,
     entityname: string,
@@ -2772,15 +2764,15 @@ export class FeatureGroupStatus extends jspb.Message {
   hasSyncschedule(): boolean;
   clearSyncschedule(): FeatureGroupStatus;
 
-  getOnelinetable(): DataLocation | undefined;
-  setOnelinetable(value?: DataLocation): FeatureGroupStatus;
-  hasOnelinetable(): boolean;
-  clearOnelinetable(): FeatureGroupStatus;
+  getOnlinetable(): DataLocation | undefined;
+  setOnlinetable(value?: DataLocation): FeatureGroupStatus;
+  hasOnlinetable(): boolean;
+  clearOnlinetable(): FeatureGroupStatus;
 
-  getOnelinetablecreated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setOnelinetablecreated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureGroupStatus;
-  hasOnelinetablecreated(): boolean;
-  clearOnelinetablecreated(): FeatureGroupStatus;
+  getOnlinetablecreated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setOnlinetablecreated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureGroupStatus;
+  hasOnlinetablecreated(): boolean;
+  clearOnlinetablecreated(): FeatureGroupStatus;
 
   getIngestdatasetname(): string;
   setIngestdatasetname(value: string): FeatureGroupStatus;
@@ -2812,8 +2804,8 @@ export namespace FeatureGroupStatus {
     rows: number,
     ingestschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
-    onelinetable?: DataLocation.AsObject,
-    onelinetablecreated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    onlinetable?: DataLocation.AsObject,
+    onlinetablecreated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     ingestdatasetname: string,
     failurereason: string,
     failuremessage: string,

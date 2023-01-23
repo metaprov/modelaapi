@@ -171,9 +171,6 @@ type ModelClassTrainingSpec struct {
 	// ModelImage specifies the configuration to upload Docker images of models to an image registry
 	//+kubebuilder:validation:Optional
 	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,5,opt,name=modelImage"`
-	// Promotion defines the way to promote models
-	//+kubebuilder:validation:Optional
-	PromotionPolicy catalog.PromotionType `json:"promotionPolicy,omitempty" protobuf:"bytes,6,opt,name=promotionPolicy"`
 	// Define custom search space for this model class.
 	// The search space defines which algorithm to include or execlude
 	// If not defined, we would use the search space in the model template.
@@ -214,27 +211,30 @@ type ModelClassTrainingSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Explained *bool `json:"explained,omitempty" protobuf:"varint,16,opt,name=explained"`
-	// List of SQL statements to run before performing the prediction
+	// List of SQL statements to run before training
 	// +kubebuilder:validation:Optional
 	PreSql []string `json:"preSQL,omitempty" protobuf:"bytes,17,opt,name=preSQL"`
-	// List of SQL statements to run before performing the prediction
-	// +kubebuilder:validation:Optional
+	// List of SQL statements to run after training
+	//+kubebuilder:validation:Optional
 	PostSql []string `json:"postSQL,omitempty" protobuf:"bytes,18,opt,name=postSQL"`
 }
 
 type ModelClassServingSpec struct {
-	// Define the stages to test the model before release
+	// Define the serving of the best model.
 	// +kubebuilder:validation:Optional
-	Environments []ServingEnvironment `json:"environments,omitempty" protobuf:"bytes,1,opt,name=environments"`
-	// The name of the predictor template to use when creating the predictor
-	// +kubebuilder:validation:Optional
-	PredictorTemplateName *string `json:"predictorTemplateName,omitempty" protobuf:"bytes,2,opt,name=predictorTemplateName"`
+	Template ServingSpec `json:"template,omitempty" protobuf:"bytes,1,opt,name=template"`
 	// Schedule for monitoring drift
 	// +kubebuilder:validation:Optional
-	MonitoringSchedule catalog.RunSchedule `json:"monitoringSchedule,omitempty" protobuf:"bytes,4,opt,name=monitoringSchedule"`
+	MonitoringSchedule catalog.RunSchedule `json:"monitoringSchedule,omitempty" protobuf:"bytes,2,opt,name=monitoringSchedule"`
 	// BatchPrediction schedule
 	// +kubebuilder:validation:Optional
-	PredictionSchedule catalog.RunSchedule `json:"predictionSchedule,omitempty" protobuf:"bytes,5,opt,name=predictionSchedule"`
+	PredictionSchedule catalog.RunSchedule `json:"predictionSchedule,omitempty" protobuf:"bytes,3,opt,name=predictionSchedule"`
+	// List of SQL statements to run before training
+	// +kubebuilder:validation:Optional
+	PreSql []string `json:"preSQL,omitempty" protobuf:"bytes,4,opt,name=preSQL"`
+	// List of SQL statements to run after training
+	//+kubebuilder:validation:Optional
+	PostSql []string `json:"postSQL,omitempty" protobuf:"bytes,5,opt,name=postSQL"`
 }
 
 // Define a test stage
@@ -265,10 +265,12 @@ type ServingEnvironment struct {
 	// The resources to use when running tests at this stage
 	// +kubebuilder:validation:Optional
 	Resources *catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,8,opt,name=resources"`
-	// If true, we create this environment for test purposes only.
-	// remove the predictor once the test is complete
+	// List of SQL statements to run before training
 	// +kubebuilder:validation:Optional
-	Ephemeral *bool `json:"ephemeral,omitempty" protobuf:"bytes,9,opt,name=ephemeral"`
+	PreSql []string `json:"preSQL,omitempty" protobuf:"bytes,9,opt,name=preSQL"`
+	// List of SQL statements to run after training
+	//+kubebuilder:validation:Optional
+	PostSql []string `json:"postSQL,omitempty" protobuf:"bytes,10,opt,name=postSQL"`
 }
 
 type EntityRef struct {

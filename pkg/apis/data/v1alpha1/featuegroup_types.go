@@ -73,10 +73,6 @@ type FeatureGroupSpec struct {
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,2,opt,name=owner"`
-	// Version name is the product version for the feature group.
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Version *string `json:"version,omitempty" protobuf:"bytes,3,opt,name=version"`
 	// Description of the feature group.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
@@ -152,10 +148,10 @@ type FeatureGroupStatus struct {
 	SyncSchedule catalog.RunScheduleStatus `json:"syncSchedule,omitempty" protobuf:"bytes,8,opt,name=syncSchedule"`
 	// Holds the last online table location. set the null when running the sync process
 	//+kubebuilder:validation:Optional
-	OnlineTable DataLocation `json:"onlineTable,omitempty" protobuf:"bytes,9,opt,name=onelineTable"`
+	OnlineTable DataLocation `json:"onlineTable,omitempty" protobuf:"bytes,9,opt,name=onlineTable"`
 	// The last time an online table was created
 	//+kubebuilder:validation:Optional
-	OnlineTableCreated *metav1.Time `json:"onlineTableCreated,omitempty" protobuf:"bytes,10,opt,name=onelineTableCreated"`
+	OnlineTableCreated *metav1.Time `json:"onlineTableCreated,omitempty" protobuf:"bytes,10,opt,name=onlineTableCreated"`
 	// The last monitor dataset name
 	//+kubebuilder:validation:Optional
 	IngestDatasetName string `json:"ingestDatasetName,omitempty" protobuf:"bytes,11,opt,name=ingestDatasetName"`

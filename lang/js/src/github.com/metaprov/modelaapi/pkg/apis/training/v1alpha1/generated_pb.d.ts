@@ -1877,13 +1877,10 @@ export namespace ModelClassRunStatus {
 }
 
 export class ModelClassServingSpec extends jspb.Message {
-  getEnvironmentsList(): Array<ServingEnvironment>;
-  setEnvironmentsList(value: Array<ServingEnvironment>): ModelClassServingSpec;
-  clearEnvironmentsList(): ModelClassServingSpec;
-  addEnvironments(value?: ServingEnvironment, index?: number): ServingEnvironment;
-
-  getPredictortemplatename(): string;
-  setPredictortemplatename(value: string): ModelClassServingSpec;
+  getTemplate(): ServingSpec | undefined;
+  setTemplate(value?: ServingSpec): ModelClassServingSpec;
+  hasTemplate(): boolean;
+  clearTemplate(): ModelClassServingSpec;
 
   getMonitoringschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setMonitoringschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassServingSpec;
@@ -1895,6 +1892,16 @@ export class ModelClassServingSpec extends jspb.Message {
   hasPredictionschedule(): boolean;
   clearPredictionschedule(): ModelClassServingSpec;
 
+  getPresqlList(): Array<string>;
+  setPresqlList(value: Array<string>): ModelClassServingSpec;
+  clearPresqlList(): ModelClassServingSpec;
+  addPresql(value: string, index?: number): ModelClassServingSpec;
+
+  getPostsqlList(): Array<string>;
+  setPostsqlList(value: Array<string>): ModelClassServingSpec;
+  clearPostsqlList(): ModelClassServingSpec;
+  addPostsql(value: string, index?: number): ModelClassServingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassServingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassServingSpec): ModelClassServingSpec.AsObject;
@@ -1905,10 +1912,11 @@ export class ModelClassServingSpec extends jspb.Message {
 
 export namespace ModelClassServingSpec {
   export type AsObject = {
-    environmentsList: Array<ServingEnvironment.AsObject>,
-    predictortemplatename: string,
+    template?: ServingSpec.AsObject,
     monitoringschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     predictionschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    presqlList: Array<string>,
+    postsqlList: Array<string>,
   }
 }
 
@@ -2158,9 +2166,6 @@ export class ModelClassTrainingSpec extends jspb.Message {
   hasModelimage(): boolean;
   clearModelimage(): ModelClassTrainingSpec;
 
-  getPromotionpolicy(): string;
-  setPromotionpolicy(value: string): ModelClassTrainingSpec;
-
   getSearchspace(): AlgorithmSearchSpaceSpec | undefined;
   setSearchspace(value?: AlgorithmSearchSpaceSpec): ModelClassTrainingSpec;
   hasSearchspace(): boolean;
@@ -2217,7 +2222,6 @@ export namespace ModelClassTrainingSpec {
     modelunittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     trainingschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     modelimage?: ModelImageSpec.AsObject,
-    promotionpolicy: string,
     searchspace?: AlgorithmSearchSpaceSpec.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     triggeredby: string,
@@ -2538,6 +2542,9 @@ export class ModelSpec extends jspb.Message {
   getRole(): string;
   setRole(value: string): ModelSpec;
 
+  getReleased(): boolean;
+  setReleased(value: boolean): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -2599,6 +2606,7 @@ export namespace ModelSpec {
     modelclassname: string,
     modelclassrunname: string,
     role: string,
+    released: boolean,
   }
 }
 
@@ -3817,8 +3825,15 @@ export class ServingEnvironment extends jspb.Message {
   hasResources(): boolean;
   clearResources(): ServingEnvironment;
 
-  getEphemeral(): boolean;
-  setEphemeral(value: boolean): ServingEnvironment;
+  getPresqlList(): Array<string>;
+  setPresqlList(value: Array<string>): ServingEnvironment;
+  clearPresqlList(): ServingEnvironment;
+  addPresql(value: string, index?: number): ServingEnvironment;
+
+  getPostsqlList(): Array<string>;
+  setPostsqlList(value: Array<string>): ServingEnvironment;
+  clearPostsqlList(): ServingEnvironment;
+  addPostsql(value: string, index?: number): ServingEnvironment;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingEnvironment.AsObject;
@@ -3838,7 +3853,76 @@ export namespace ServingEnvironment {
     online: boolean,
     dashboard: boolean,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    ephemeral: boolean,
+    presqlList: Array<string>,
+    postsqlList: Array<string>,
+  }
+}
+
+export class ServingSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): ServingSpec;
+
+  getPredictorname(): string;
+  setPredictorname(value: string): ServingSpec;
+
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ServingSpec;
+  hasResources(): boolean;
+  clearResources(): ServingSpec;
+
+  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ServingSpec;
+  hasServingsiteref(): boolean;
+  clearServingsiteref(): ServingSpec;
+
+  getOnline(): boolean;
+  setOnline(value: boolean): ServingSpec;
+
+  getDashboard(): boolean;
+  setDashboard(value: boolean): ServingSpec;
+
+  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
+  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): ServingSpec;
+  hasAccess(): boolean;
+  clearAccess(): ServingSpec;
+
+  getReplicas(): number;
+  setReplicas(value: number): ServingSpec;
+
+  getPromotion(): string;
+  setPromotion(value: string): ServingSpec;
+
+  getApprovedby(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setApprovedby(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ServingSpec;
+  hasApprovedby(): boolean;
+  clearApprovedby(): ServingSpec;
+
+  getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ServingSpec;
+  hasApprovedat(): boolean;
+  clearApprovedat(): ServingSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ServingSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ServingSpec): ServingSpec.AsObject;
+  static serializeBinaryToWriter(message: ServingSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ServingSpec;
+  static deserializeBinaryFromReader(message: ServingSpec, reader: jspb.BinaryReader): ServingSpec;
+}
+
+export namespace ServingSpec {
+  export type AsObject = {
+    enabled: boolean,
+    predictorname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
+    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    online: boolean,
+    dashboard: boolean,
+    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
+    replicas: number,
+    promotion: string,
+    approvedby?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 
@@ -4185,6 +4269,11 @@ export class StudySpec extends jspb.Message {
   getModelclassrunname(): string;
   setModelclassrunname(value: string): StudySpec;
 
+  getServing(): ServingSpec | undefined;
+  setServing(value?: ServingSpec): StudySpec;
+  hasServing(): boolean;
+  clearServing(): StudySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -4235,6 +4324,7 @@ export namespace StudySpec {
     grouplocations?: GroupSplitLocationsSpec.AsObject,
     modelclassname: string,
     modelclassrunname: string,
+    serving?: ServingSpec.AsObject,
   }
 }
 

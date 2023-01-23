@@ -1822,6 +1822,10 @@ spec:
                 description: Pushed indicates that the Model image should be pushed
                   to a Docker image registry
                 type: boolean
+              released:
+                default: false
+                description: The desired serving state.
+                type: boolean
               reported:
                 default: false
                 description: Reported indicates that a Report will be generated for

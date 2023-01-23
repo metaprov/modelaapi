@@ -6,6 +6,7 @@ import (
 	"github.com/metaprov/modelaapi/pkg/apis/inference"
 	training "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
+	"github.com/pkg/errors"
 	kapps "k8s.io/api/apps/v1"
 	v1 "k8s.io/api/core/v1"
 	nwv1 "k8s.io/api/networking/v1"
@@ -285,6 +286,37 @@ func (predictor *Predictor) GetLiveModelName() string {
 		}
 	}
 	return ""
+}
+
+// Set the live model to the new model, if the new model is already a shadow model, return an error
+func (predictor *Predictor) SetLiveModel(model *training.Model) error {
+	role := catalog.LiveModelRole
+	if len(predictor.Spec.Models) == 0 {
+		predictor.Spec.Models = append(predictor.Spec.Models, catalog.ModelDeploymentSpec{
+			ModelRef:     v1.ObjectReference{Name: model.Name, Namespace: model.Namespace},
+			Port:         util.Int32Ptr(8080),
+			ModelVersion: nil,
+			Traffic:      util.Int32Ptr(100),
+			Role:         &role,
+		})
+	}
+	for _, v := range predictor.Spec.Models {
+		if *v.Role == catalog.ShadowModelRole {
+			if v.ModelRef.Name == model.Name && v.ModelRef.Namespace == model.Namespace {
+				return errors.New("model is already shadow")
+			}
+		}
+	}
+
+	for i, v := range predictor.Spec.Models {
+		if *v.Role == catalog.LiveModelRole {
+			predictor.Spec.Models[i].ModelRef = v1.ObjectReference{
+				Name:      model.Name,
+				Namespace: model.Namespace,
+			}
+		}
+	}
+	return nil
 }
 
 // Get the first live model or none if none exist

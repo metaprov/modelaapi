@@ -269,7 +269,7 @@ type PredictorSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
-	// The model class for this pipeline
+	// The model class for this pipeline. if was created to serve model class models.
 	// +kubebuilder:validation:Optional
 	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,2,opt,name=modelClassName"`
 	// If specified, the user-provided description of the Predictor
@@ -282,7 +282,7 @@ type PredictorSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Template *bool `json:"template" protobuf:"varint,5,opt,name=template"`
-	// If true, create an online predictor. else this predictor is only for batch predictions.
+	// If true, create a deployment to serve online traffic.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Online *bool `json:"online" protobuf:"varint,6,opt,name=online"`
@@ -290,9 +290,9 @@ type PredictorSpec struct {
 	// If not specified, the predictor will be hosted on the default serving site.
 	// +kubebuilder:validation:Optional
 	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,7,opt,name=servingsiteRef"`
-	// If specified, the collection of shadow models. A shadow model receives prediction request, but does
-	// not serve the reply.
-	// +kubebuilder:validation:Optional
+	// If specified, the collection of models. There must be a least on live model
+	// +kubebuilder:validation:MinItems=1
+	// +kubebuilder:validation:MaxItems=16
 	Models []catalog.ModelDeploymentSpec `json:"models,omitempty" protobuf:"bytes,8,rep,name=models"`
 	// The specification to progressively deploy a new live model. ModelDeploymentSpec specifications within Models that have the
 	// `Canary` field enabled will be progressively deployed according to the specification when they are applied to the Predictor

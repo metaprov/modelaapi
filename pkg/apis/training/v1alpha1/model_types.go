@@ -32,6 +32,8 @@ const (
 	ModelPhasePackaged              ModelPhase = "Packaged"
 	ModelPhaseProfiling             ModelPhase = "Profiling"
 	ModelPhaseProfiled              ModelPhase = "Profiled"
+	ModelPhasePromoting             ModelPhase = "Promoting"
+	ModelPhasePromoted              ModelPhase = "Promoted"
 	ModelPhaseExplaining            ModelPhase = "Explaining"
 	ModelPhaseExplained             ModelPhase = "Explained"
 	ModelPhaseAborted               ModelPhase = "Aborted"
@@ -338,6 +340,10 @@ type ModelSpec struct {
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	Role *catalog.ModelRole `json:"role,omitempty" protobuf:"bytes,55,opt,name=role"`
+	// The desired serving state.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Released *bool `json:"released,omitempty" protobuf:"varint,56,opt,name=released"`
 }
 
 type SegmentSpec struct {
@@ -620,6 +626,48 @@ type ModelStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,81,rep,name=conditions"`
+}
+
+// ServingSpec specifies the requirements to serve a model
+type ServingSpec struct {
+	// If true, deploy the model if it is ready. The model is deployed to the serving site
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// The name of the predictor if exist to update.
+	PredictorName *string `json:"predictorName,omitempty" protobuf:"varint,2,opt,name=predictorName"`
+	// +kubebuilder:validation:Optional
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,3,opt,name=resources"`
+	// The reference to the serving site, where online predictor will be served.
+	// If unspecified, the default ServingSite from the parent DataProduct will be used
+	// +kubebuilder:validation:Optional
+	ServingSiteRef v1.ObjectReference `json:"servingSiteRef,omitempty" protobuf:"bytes,6,opt,name=servingSiteRef"`
+	// Create an online predictor to host the model and enable real time ML.
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Online *bool `json:"online,omitempty" protobuf:"varint,7,opt,name=online"`
+	// Create A DataApp, and enable dashboard access to the model
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Dashboard *bool `json:"dashboard,omitempty" protobuf:"varint,8,opt,name=dashboard"`
+	// Access specifies the configuration for the Predictor service to be exposed externally
+	// +kubebuilder:validation:Optional
+	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,9,opt,name=access"`
+	// The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
+	// copies of the service in the case that automatic scaling is disabled
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,10,opt,name=replicas"`
+	// Define the promotion policy of a new model
+	// +kubebuilder:default:=none
+	// +kubebuilder:validation:Optional
+	Promotion *catalog.PromotionType `json:"promotion,omitempty" protobuf:"varint,12,opt,name=promotion"`
+	// ApprovedBy indicates the account that approve this model.
+	// +kubebuilder:validation:Optional
+	ApprovedBy v1.ObjectReference `json:"approvedBy,omitempty" protobuf:"bytes,13,opt,name=approvedBy"`
+	// ApprovedAt indicates the time of approval
+	// +kubebuilder:validation:Optional
+	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,14,opt,name=approvedAt"`
 }
 
 // Holds the information about the execution environment.

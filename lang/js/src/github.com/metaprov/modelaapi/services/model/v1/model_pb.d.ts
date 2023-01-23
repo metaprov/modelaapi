@@ -817,6 +817,15 @@ export class PromoteModelRequest extends jspb.Message {
   getName(): string;
   setName(value: string): PromoteModelRequest;
 
+  getTenant(): string;
+  setTenant(value: string): PromoteModelRequest;
+
+  getServingsite(): string;
+  setServingsite(value: string): PromoteModelRequest;
+
+  getPredictor(): string;
+  setPredictor(value: string): PromoteModelRequest;
+
   getShadow(): boolean;
   setShadow(value: boolean): PromoteModelRequest;
 
@@ -832,6 +841,9 @@ export namespace PromoteModelRequest {
   export type AsObject = {
     namespace: string,
     name: string,
+    tenant: string,
+    servingsite: string,
+    predictor: string,
     shadow: boolean,
   }
 }
@@ -846,6 +858,46 @@ export class PromoteModelResponse extends jspb.Message {
 }
 
 export namespace PromoteModelResponse {
+  export type AsObject = {
+  }
+}
+
+export class CreateDashboardRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): CreateDashboardRequest;
+
+  getName(): string;
+  setName(value: string): CreateDashboardRequest;
+
+  getShadow(): boolean;
+  setShadow(value: boolean): CreateDashboardRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateDashboardRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDashboardRequest): CreateDashboardRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateDashboardRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDashboardRequest;
+  static deserializeBinaryFromReader(message: CreateDashboardRequest, reader: jspb.BinaryReader): CreateDashboardRequest;
+}
+
+export namespace CreateDashboardRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+    shadow: boolean,
+  }
+}
+
+export class CreateDashboardResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateDashboardResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDashboardResponse): CreateDashboardResponse.AsObject;
+  static serializeBinaryToWriter(message: CreateDashboardResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDashboardResponse;
+  static deserializeBinaryFromReader(message: CreateDashboardResponse, reader: jspb.BinaryReader): CreateDashboardResponse;
+}
+
+export namespace CreateDashboardResponse {
   export type AsObject = {
   }
 }

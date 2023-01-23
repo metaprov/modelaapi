@@ -2256,11 +2256,12 @@ spec:
                     type: integer
                 type: object
               modelClassName:
-                description: The model class for this pipeline
+                description: The model class for this pipeline. if was created to
+                  serve model class models.
                 type: string
               models:
-                description: If specified, the collection of shadow models. A shadow
-                  model receives prediction request, but does not serve the reply.
+                description: If specified, the collection of models. There must be
+                  a least on live model
                 items:
                   description: ModelDeploymentSpec describes how a single model should
                     be deployed with a Predictor, and how prediction traffic will
@@ -2383,6 +2384,8 @@ spec:
                         model
                       type: string
                   type: object
+                maxItems: 16
+                minItems: 1
                 type: array
               notifierRef:
                 description: NotifierRef references a Notifier resource that will
@@ -2424,8 +2427,7 @@ spec:
                 x-kubernetes-map-type: atomic
               online:
                 default: false
-                description: If true, create an online predictor. else this predictor
-                  is only for batch predictions.
+                description: If true, create a deployment to serve online traffic.
                 type: boolean
               owner:
                 default: no-one

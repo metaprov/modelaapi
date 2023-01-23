@@ -43,6 +43,7 @@ type ModelServiceClient interface {
 	FlagModel(ctx context.Context, in *FlagModelRequest, opts ...grpc.CallOption) (*FlagModelResponse, error)
 	// promote model to live in model class
 	PromoteModel(ctx context.Context, in *PromoteModelRequest, opts ...grpc.CallOption) (*PromoteModelResponse, error)
+	CreateDashboard(ctx context.Context, in *CreateDashboardRequest, opts ...grpc.CallOption) (*CreateDashboardResponse, error)
 	// Mark the model to test
 	TestModel(ctx context.Context, in *TestModelRequest, opts ...grpc.CallOption) (*TestModelResponse, error)
 }
@@ -226,6 +227,15 @@ func (c *modelServiceClient) PromoteModel(ctx context.Context, in *PromoteModelR
 	return out, nil
 }
 
+func (c *modelServiceClient) CreateDashboard(ctx context.Context, in *CreateDashboardRequest, opts ...grpc.CallOption) (*CreateDashboardResponse, error) {
+	out := new(CreateDashboardResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateDashboard", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *modelServiceClient) TestModel(ctx context.Context, in *TestModelRequest, opts ...grpc.CallOption) (*TestModelResponse, error) {
 	out := new(TestModelResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/TestModel", in, out, opts...)
@@ -260,6 +270,7 @@ type ModelServiceServer interface {
 	FlagModel(context.Context, *FlagModelRequest) (*FlagModelResponse, error)
 	// promote model to live in model class
 	PromoteModel(context.Context, *PromoteModelRequest) (*PromoteModelResponse, error)
+	CreateDashboard(context.Context, *CreateDashboardRequest) (*CreateDashboardResponse, error)
 	// Mark the model to test
 	TestModel(context.Context, *TestModelRequest) (*TestModelResponse, error)
 	mustEmbedUnimplementedModelServiceServer()
@@ -325,6 +336,9 @@ func (UnimplementedModelServiceServer) FlagModel(context.Context, *FlagModelRequ
 }
 func (UnimplementedModelServiceServer) PromoteModel(context.Context, *PromoteModelRequest) (*PromoteModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PromoteModel not implemented")
+}
+func (UnimplementedModelServiceServer) CreateDashboard(context.Context, *CreateDashboardRequest) (*CreateDashboardResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateDashboard not implemented")
 }
 func (UnimplementedModelServiceServer) TestModel(context.Context, *TestModelRequest) (*TestModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TestModel not implemented")
@@ -684,6 +698,24 @@ func _ModelService_PromoteModel_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ModelService_CreateDashboard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateDashboardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ModelServiceServer).CreateDashboard(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateDashboard",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ModelServiceServer).CreateDashboard(ctx, req.(*CreateDashboardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ModelService_TestModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(TestModelRequest)
 	if err := dec(in); err != nil {
@@ -784,6 +816,10 @@ var ModelService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "PromoteModel",
 			Handler:    _ModelService_PromoteModel_Handler,
+		},
+		{
+			MethodName: "CreateDashboard",
+			Handler:    _ModelService_CreateDashboard_Handler,
 		},
 		{
 			MethodName: "TestModel",

@@ -1867,10 +1867,6 @@ message EntitySpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
-  // The entity version
-  // +kubebuilder:default:=""
-  optional string version = 2;
-
   // Description of the entity
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
@@ -1995,11 +1991,6 @@ message FeatureGroupSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 2;
 
-  // Version name is the product version for the feature group.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string version = 3;
-
   // Description of the feature group.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
@@ -2095,11 +2086,11 @@ message FeatureGroupStatus {
 
   // Holds the last online table location. set the null when running the sync process
   // +kubebuilder:validation:Optional
-  optional DataLocation onelineTable = 9;
+  optional DataLocation onlineTable = 9;
 
   // The last time an online table was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time onelineTableCreated = 10;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time onlineTableCreated = 10;
 
   // The last monitor dataset name
   // +kubebuilder:validation:Optional

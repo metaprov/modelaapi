@@ -1997,11 +1997,6 @@ func (in *EntitySpec) DeepCopyInto(out *EntitySpec) {
 		*out = new(corev1.ObjectReference)
 		**out = **in
 	}
-	if in.Version != nil {
-		in, out := &in.Version, &out.Version
-		*out = new(string)
-		**out = **in
-	}
 	if in.Description != nil {
 		in, out := &in.Description, &out.Description
 		*out = new(string)
@@ -2200,11 +2195,6 @@ func (in *FeatureGroupSpec) DeepCopyInto(out *FeatureGroupSpec) {
 	}
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
-		*out = new(string)
-		**out = **in
-	}
-	if in.Version != nil {
-		in, out := &in.Version, &out.Version
 		*out = new(string)
 		**out = **in
 	}
