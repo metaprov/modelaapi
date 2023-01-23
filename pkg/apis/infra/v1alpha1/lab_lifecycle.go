@@ -213,6 +213,13 @@ func (lab Lab) LabJobRole() *rbacv1.Role {
 				ResourceNames:   []string{},
 				NonResourceURLs: []string{},
 			},
+			{
+				Verbs:           []string{"*"},
+				APIGroups:       []string{"metrics.k8s.io"},
+				Resources:       []string{"*"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
 		},
 	}
 }
