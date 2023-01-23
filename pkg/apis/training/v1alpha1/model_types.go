@@ -558,10 +558,10 @@ type ModelStatus struct {
 	TrainingDataHash DataHashes `json:"trainingDataHash,omitempty" protobuf:"bytes,59,opt,name=trainingDataHash"`
 	// TrainingResources details the resources that were consumed by the training workload
 	// +kubebuilder:validation:Optional
-	TrainingResources ResourceConsumption `json:"trainingResources,omitempty" protobuf:"bytes,60,opt,name=trainingResources"`
+	TrainingResources catalog.ResourceConsumption `json:"trainingResources,omitempty" protobuf:"bytes,60,opt,name=trainingResources"`
 	// TestingResources details the resources that were consumed by the testing workload
 	// +kubebuilder:validation:Optional
-	TestingResources ResourceConsumption `json:"testingResources,omitempty" protobuf:"bytes,61,opt,name=testingResources"`
+	TestingResources catalog.ResourceConsumption `json:"testingResources,omitempty" protobuf:"bytes,61,opt,name=testingResources"`
 	// The Account which trained the model, derived from the parent Study
 	// +kubebuilder:validation:Optional
 	TrainedBy string `json:"trainedBy,omitempty" protobuf:"bytes,62,opt,name=trainedBy"`
@@ -990,13 +990,6 @@ type AudioPipelineSpec struct {
 	// +kubebuilder:default:="auto"
 	// +kubebuilder:validation:Optional
 	Featurizer *catalog.AudioFeaturizer `json:"featurizer,omitempty" protobuf:"bytes,1,opt,name=featurizer"`
-}
-
-// ResourceConsumption represents the total resources consumed by a workload
-type ResourceConsumption struct {
-	Cpu float64 `json:"cpu,omitempty" protobuf:"bytes,1,opt,name=cpu"`
-	Mem float64 `json:"mem,omitempty" protobuf:"bytes,2,opt,name=mem"`
-	Gpu float64 `json:"gpu,omitempty" protobuf:"bytes,3,opt,name=gpu"`
 }
 
 // DataHashes contains the hashes for datasets used during model training

@@ -2075,18 +2075,15 @@ type Logs struct {
 
 // Append the logs only if they are not already exists
 func (logs *Logs) Append(newLogs []ContainerLog) {
-	found := false
 	for _, v := range logs.Containers {
 		for _, l := range newLogs {
 			if l.Key == v.Key {
-				found = true
-				break
+				return
 			}
 		}
 	}
-	if !found {
-		logs.Containers = append(logs.Containers, newLogs...)
-	}
+
+	logs.Containers = append(logs.Containers, newLogs...)
 }
 
 // ContainerLog describes the location of logs for a single Job
@@ -2321,9 +2318,9 @@ func FilterWorkerResult(runs []WorkerRunResult, task TaskName) []WorkerRunResult
 
 }
 
-// Store resource consuption for a task
+// Store resource consumption for a task
 type ResourceConsumption struct {
-	Cpu int64 `json:"cpu,omitempty" protobuf:"bytes,1,opt,name=cpu"`
-	Mem int64 `json:"mem,omitempty" protobuf:"bytes,2,opt,name=mem"`
-	Gpu int64 `json:"gpu,omitempty" protobuf:"bytes,3,opt,name=gpu"`
+	Cpu    uint64 `json:"cpu,omitempty" protobuf:"bytes,1,opt,name=cpu"`
+	Memory uint64 `json:"memory,omitempty" protobuf:"bytes,2,opt,name=memory"`
+	Gpu    uint64 `json:"gpu,omitempty" protobuf:"bytes,3,opt,name=gpu"`
 }
