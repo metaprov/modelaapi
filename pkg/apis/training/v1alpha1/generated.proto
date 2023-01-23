@@ -18,6 +18,7 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1";
+// PKG
 
 // Define a single custom search spec for a single alg
 message AlgorithmParameterRange {
@@ -2135,11 +2136,11 @@ message ModelStatus {
 
   // TrainingResources details the resources that were consumed by the training workload
   // +kubebuilder:validation:Optional
-  optional ResourceConsumption trainingResources = 60;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumption trainingResources = 60;
 
   // TestingResources details the resources that were consumed by the testing workload
   // +kubebuilder:validation:Optional
-  optional ResourceConsumption testingResources = 61;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumption testingResources = 61;
 
   // The Account which trained the model, derived from the parent Study
   // +kubebuilder:validation:Optional
@@ -2524,15 +2525,6 @@ message ReportStatus {
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 10;
-}
-
-// ResourceConsumption represents the total resources consumed by a workload
-message ResourceConsumption {
-  optional double cpu = 1;
-
-  optional double mem = 2;
-
-  optional double gpu = 3;
 }
 
 // Holds the information about the execution environment.

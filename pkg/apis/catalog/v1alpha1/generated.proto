@@ -17,6 +17,7 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1";
+// PKG
 
 message AccessSpec {
   // The port number that will be exposed on the Predictor's Pods to serve prediction traffic through the GRPCInferenceService API.
@@ -991,13 +992,13 @@ message Region {
   repeated DataCenter datacenters = 5;
 }
 
-// Store resource consuption for a task
+// Store resource consumption for a task
 message ResourceConsumption {
-  optional int64 cpu = 1;
+  optional uint64 cpu = 1;
 
-  optional int64 mem = 2;
+  optional uint64 memory = 2;
 
-  optional int64 gpu = 3;
+  optional uint64 gpu = 3;
 }
 
 // ResourceSpec specifies the amount of resources that will be allocated to a workload

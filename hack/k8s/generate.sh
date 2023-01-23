@@ -27,7 +27,7 @@ else
   proto=$(which protoc)
 fi
 
-${dir}/dependencies.sh
+#${dir}/dependencies.sh
 
 # The format here is <file-name>;<generated-class-name>
 files="k8s.io/apimachinery/pkg/api/resource/generated.proto;Resource \

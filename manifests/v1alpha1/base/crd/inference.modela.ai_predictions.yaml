@@ -1605,7 +1605,7 @@ spec:
                   gpu:
                     format: int64
                     type: integer
-                  mem:
+                  memory:
                     format: int64
                     type: integer
                 type: object

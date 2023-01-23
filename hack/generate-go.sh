@@ -15,7 +15,7 @@ PATH="${PROJECT_ROOT}/dist:${PATH}"
 GIT_ROOT=$(cd $(dirname ${BASH_SOURCE})/../../../../; pwd)
 
 go mod vendor
-mv ${PROJECT_ROOT}/vendor /tmp/includes
+cp -R ${PROJECT_ROOT}/vendor /tmp/includes
 
 
 echo $PROJECT_ROOT
@@ -42,6 +42,7 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
         --go-grpc_opt paths=source_relative \
          google/api/annotations.proto \
          google/api/http.proto \
+         k8s.io/apimachinery/pkg/runtime/generated.proto \
          k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto \
          k8s.io/apimachinery/pkg/util/intstr/generated.proto \
          k8s.io/api/core/v1/generated.proto \
@@ -49,7 +50,6 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
          k8s.io/api/rbac/v1/generated.proto \
          k8s.io/apimachinery/pkg/api/resource/generated.proto \
          k8s.io/apimachinery/pkg/runtime/schema/generated.proto \
-         k8s.io/apimachinery/pkg/runtime/generated.proto \
          github.com/gogo/protobuf/gogoproto/gogo.proto \
          github.com/metaprov/modelaapi/services/common/v1/common.proto \
          github.com/metaprov/modelaapi/services/grpc/health/v1/health.proto \

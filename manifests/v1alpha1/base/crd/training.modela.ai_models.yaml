@@ -4058,11 +4058,14 @@ spec:
                   by the testing workload
                 properties:
                   cpu:
-                    type: number
+                    format: int64
+                    type: integer
                   gpu:
-                    type: number
-                  mem:
-                    type: number
+                    format: int64
+                    type: integer
+                  memory:
+                    format: int64
+                    type: integer
                 type: object
               testingRows:
                 description: The number of rows in the testing dataset
@@ -4369,11 +4372,14 @@ spec:
                   by the training workload
                 properties:
                   cpu:
-                    type: number
+                    format: int64
+                    type: integer
                   gpu:
-                    type: number
-                  mem:
-                    type: number
+                    format: int64
+                    type: integer
+                  memory:
+                    format: int64
+                    type: integer
                 type: object
               trainingRows:
                 description: The number of rows in the training dataset
@@ -4714,7 +4720,7 @@ spec:
                   gpu:
                     format: int64
                     type: integer
-                  mem:
+                  memory:
                     format: int64
                     type: integer
                 type: object
