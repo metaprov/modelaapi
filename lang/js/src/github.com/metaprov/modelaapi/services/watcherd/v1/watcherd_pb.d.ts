@@ -35,6 +35,9 @@ export class WatchDatasetRequest extends jspb.Message {
   getGeneration(): number;
   setGeneration(value: number): WatchDatasetRequest;
 
+  getNamespace(): string;
+  setNamespace(value: string): WatchDatasetRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WatchDatasetRequest.AsObject;
   static toObject(includeInstance: boolean, msg: WatchDatasetRequest): WatchDatasetRequest.AsObject;
@@ -46,6 +49,7 @@ export class WatchDatasetRequest extends jspb.Message {
 export namespace WatchDatasetRequest {
   export type AsObject = {
     generation: number,
+    namespace: string,
   }
 }
 

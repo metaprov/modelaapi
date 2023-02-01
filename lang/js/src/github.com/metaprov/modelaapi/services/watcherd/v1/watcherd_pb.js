@@ -302,7 +302,8 @@ proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchDatasetRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchDatasetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    generation: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    generation: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    namespace: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -343,6 +344,10 @@ proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchDatasetRequest.des
       var value = /** @type {number} */ (reader.readUint64());
       msg.setGeneration(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -379,6 +384,13 @@ proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchDatasetRequest.ser
       f
     );
   }
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -397,6 +409,24 @@ proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchDatasetRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchDatasetRequest.prototype.setGeneration = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string namespace = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchDatasetRequest.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchDatasetRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchDatasetRequest.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

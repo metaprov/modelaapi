@@ -25,6 +25,7 @@ message DatasetEvent {
 
 message WatchDatasetRequest {
   uint64 generation = 1;
+  string namespace  = 2;
 }
 
 message WatchDatasetResponse {
