@@ -18,7 +18,6 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1";
-// PKG
 
 message APITokenSpec {
   optional string name = 1;

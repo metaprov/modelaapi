@@ -12,18 +12,28 @@ import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../.
 export class AutoScalingSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): AutoScalingSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): AutoScalingSpec;
 
   getMinreplicas(): number;
   setMinreplicas(value: number): AutoScalingSpec;
+  hasMinreplicas(): boolean;
+  clearMinreplicas(): AutoScalingSpec;
 
   getMaxreplicas(): number;
   setMaxreplicas(value: number): AutoScalingSpec;
+  hasMaxreplicas(): boolean;
+  clearMaxreplicas(): AutoScalingSpec;
 
   getCpuavgutilization(): number;
   setCpuavgutilization(value: number): AutoScalingSpec;
+  hasCpuavgutilization(): boolean;
+  clearCpuavgutilization(): AutoScalingSpec;
 
   getMemavgutilization(): number;
   setMemavgutilization(value: number): AutoScalingSpec;
+  hasMemavgutilization(): boolean;
+  clearMemavgutilization(): AutoScalingSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AutoScalingSpec.AsObject;
@@ -35,17 +45,19 @@ export class AutoScalingSpec extends jspb.Message {
 
 export namespace AutoScalingSpec {
   export type AsObject = {
-    enabled: boolean,
-    minreplicas: number,
-    maxreplicas: number,
-    cpuavgutilization: number,
-    memavgutilization: number,
+    enabled?: boolean,
+    minreplicas?: number,
+    maxreplicas?: number,
+    cpuavgutilization?: number,
+    memavgutilization?: number,
   }
 }
 
 export class BackwardCurtainSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): BackwardCurtainSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): BackwardCurtainSpec;
 
   getAccountref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setAccountref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): BackwardCurtainSpec;
@@ -54,9 +66,13 @@ export class BackwardCurtainSpec extends jspb.Message {
 
   getConfidencelow(): number;
   setConfidencelow(value: number): BackwardCurtainSpec;
+  hasConfidencelow(): boolean;
+  clearConfidencelow(): BackwardCurtainSpec;
 
   getConfidencehigh(): number;
   setConfidencehigh(value: number): BackwardCurtainSpec;
+  hasConfidencehigh(): boolean;
+  clearConfidencehigh(): BackwardCurtainSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BackwardCurtainSpec.AsObject;
@@ -68,10 +84,10 @@ export class BackwardCurtainSpec extends jspb.Message {
 
 export namespace BackwardCurtainSpec {
   export type AsObject = {
-    enabled: boolean,
+    enabled?: boolean,
     accountref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    confidencelow: number,
-    confidencehigh: number,
+    confidencelow?: number,
+    confidencehigh?: number,
   }
 }
 
@@ -104,9 +120,13 @@ export namespace BatchPredictionSpec {
 export class CustomAppSpec extends jspb.Message {
   getOwner(): boolean;
   setOwner(value: boolean): CustomAppSpec;
+  hasOwner(): boolean;
+  clearOwner(): CustomAppSpec;
 
   getTitle(): string;
   setTitle(value: string): CustomAppSpec;
+  hasTitle(): boolean;
+  clearTitle(): CustomAppSpec;
 
   getPagesList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.PageSpec>;
   setPagesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.PageSpec>): CustomAppSpec;
@@ -123,8 +143,8 @@ export class CustomAppSpec extends jspb.Message {
 
 export namespace CustomAppSpec {
   export type AsObject = {
-    owner: boolean,
-    title: string,
+    owner?: boolean,
+    title?: string,
     pagesList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.PageSpec.AsObject>,
   }
 }
@@ -190,18 +210,28 @@ export namespace DataAppList {
 export class DataAppSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): DataAppSpec;
+  hasOwner(): boolean;
+  clearOwner(): DataAppSpec;
 
   getVersionname(): string;
   setVersionname(value: string): DataAppSpec;
+  hasVersionname(): boolean;
+  clearVersionname(): DataAppSpec;
 
   getModelclassname(): string;
   setModelclassname(value: string): DataAppSpec;
+  hasModelclassname(): boolean;
+  clearModelclassname(): DataAppSpec;
 
   getDescription(): string;
   setDescription(value: string): DataAppSpec;
+  hasDescription(): boolean;
+  clearDescription(): DataAppSpec;
 
   getModelname(): string;
   setModelname(value: string): DataAppSpec;
+  hasModelname(): boolean;
+  clearModelname(): DataAppSpec;
 
   getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
   setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): DataAppSpec;
@@ -210,6 +240,8 @@ export class DataAppSpec extends jspb.Message {
 
   getReplicas(): number;
   setReplicas(value: number): DataAppSpec;
+  hasReplicas(): boolean;
+  clearReplicas(): DataAppSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DataAppSpec;
@@ -241,13 +273,13 @@ export class DataAppSpec extends jspb.Message {
 
 export namespace DataAppSpec {
   export type AsObject = {
-    owner: string,
-    versionname: string,
-    modelclassname: string,
-    description: string,
-    modelname: string,
+    owner?: string,
+    versionname?: string,
+    modelclassname?: string,
+    description?: string,
+    modelname?: string,
     access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
-    replicas: number,
+    replicas?: number,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
@@ -258,6 +290,8 @@ export namespace DataAppSpec {
 export class DataAppStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataAppStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): DataAppStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataAppStatus;
@@ -276,9 +310,13 @@ export class DataAppStatus extends jspb.Message {
 
   getFailurereason(): string;
   setFailurereason(value: string): DataAppStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): DataAppStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): DataAppStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): DataAppStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): DataAppStatus;
@@ -295,12 +333,12 @@ export class DataAppStatus extends jspb.Message {
 
 export namespace DataAppStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     deploymentstatus?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servicetstatus?: k8s_io_api_core_v1_generated_pb.ServiceStatus.AsObject,
-    failurereason: string,
-    failuremessage: string,
+    failurereason?: string,
+    failuremessage?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -308,12 +346,18 @@ export namespace DataAppStatus {
 export class DriftDetectionSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): DriftDetectionSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): DriftDetectionSpec;
 
   getGendrifttests(): boolean;
   setGendrifttests(value: boolean): DriftDetectionSpec;
+  hasGendrifttests(): boolean;
+  clearGendrifttests(): DriftDetectionSpec;
 
   getMinpredictions(): number;
   setMinpredictions(value: number): DriftDetectionSpec;
+  hasMinpredictions(): boolean;
+  clearMinpredictions(): DriftDetectionSpec;
 
   getColumnsList(): Array<string>;
   setColumnsList(value: Array<string>): DriftDetectionSpec;
@@ -342,9 +386,13 @@ export class DriftDetectionSpec extends jspb.Message {
 
   getMaxhistograms(): number;
   setMaxhistograms(value: number): DriftDetectionSpec;
+  hasMaxhistograms(): boolean;
+  clearMaxhistograms(): DriftDetectionSpec;
 
   getPeriodseconds(): number;
   setPeriodseconds(value: number): DriftDetectionSpec;
+  hasPeriodseconds(): boolean;
+  clearPeriodseconds(): DriftDetectionSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DriftDetectionSpec.AsObject;
@@ -356,16 +404,16 @@ export class DriftDetectionSpec extends jspb.Message {
 
 export namespace DriftDetectionSpec {
   export type AsObject = {
-    enabled: boolean,
-    gendrifttests: boolean,
-    minpredictions: number,
+    enabled?: boolean,
+    gendrifttests?: boolean,
+    minpredictions?: number,
     columnsList: Array<string>,
     driftthresholdsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DriftThreshold.AsObject>,
     unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     outlierdetectionmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    maxhistograms: number,
-    periodseconds: number,
+    maxhistograms?: number,
+    periodseconds?: number,
   }
 }
 
@@ -386,6 +434,8 @@ export namespace DriftDetectionStatus {
 export class FastSlowModelSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): FastSlowModelSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): FastSlowModelSpec;
 
   getFastmodelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setFastmodelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FastSlowModelSpec;
@@ -399,9 +449,13 @@ export class FastSlowModelSpec extends jspb.Message {
 
   getProbalowpct(): number;
   setProbalowpct(value: number): FastSlowModelSpec;
+  hasProbalowpct(): boolean;
+  clearProbalowpct(): FastSlowModelSpec;
 
   getProbahighpct(): number;
   setProbahighpct(value: number): FastSlowModelSpec;
+  hasProbahighpct(): boolean;
+  clearProbahighpct(): FastSlowModelSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FastSlowModelSpec.AsObject;
@@ -413,17 +467,19 @@ export class FastSlowModelSpec extends jspb.Message {
 
 export namespace FastSlowModelSpec {
   export type AsObject = {
-    enabled: boolean,
+    enabled?: boolean,
     fastmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     slowmodelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    probalowpct: number,
-    probahighpct: number,
+    probalowpct?: number,
+    probahighpct?: number,
   }
 }
 
 export class FeedbackTestSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): FeedbackTestSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): FeedbackTestSpec;
 
   getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): FeedbackTestSpec;
@@ -445,7 +501,7 @@ export class FeedbackTestSpec extends jspb.Message {
 
 export namespace FeedbackTestSpec {
   export type AsObject = {
-    enabled: boolean,
+    enabled?: boolean,
     tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
@@ -478,9 +534,13 @@ export namespace ForecastPredictionSpec {
 export class ForecastRun extends jspb.Message {
   getKey(): string;
   setKey(value: string): ForecastRun;
+  hasKey(): boolean;
+  clearKey(): ForecastRun;
 
   getModeluri(): string;
   setModeluri(value: string): ForecastRun;
+  hasModeluri(): boolean;
+  clearModeluri(): ForecastRun;
 
   getHorizon(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec | undefined;
   setHorizon(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec): ForecastRun;
@@ -497,8 +557,8 @@ export class ForecastRun extends jspb.Message {
 
 export namespace ForecastRun {
   export type AsObject = {
-    key: string,
-    modeluri: string,
+    key?: string,
+    modeluri?: string,
     horizon?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.WindowSpec.AsObject,
   }
 }
@@ -524,18 +584,28 @@ export namespace ForecastSpec {
 export class ForecastStatus extends jspb.Message {
   getProfileuri(): string;
   setProfileuri(value: string): ForecastStatus;
+  hasProfileuri(): boolean;
+  clearProfileuri(): ForecastStatus;
 
   getReporturi(): string;
   setReporturi(value: string): ForecastStatus;
+  hasReporturi(): boolean;
+  clearReporturi(): ForecastStatus;
 
   getForecasturi(): string;
   setForecasturi(value: string): ForecastStatus;
+  hasForecasturi(): boolean;
+  clearForecasturi(): ForecastStatus;
 
   getFailed(): boolean;
   setFailed(value: boolean): ForecastStatus;
+  hasFailed(): boolean;
+  clearFailed(): ForecastStatus;
 
   getFailuremsg(): string;
   setFailuremsg(value: string): ForecastStatus;
+  hasFailuremsg(): boolean;
+  clearFailuremsg(): ForecastStatus;
 
   getWorkerresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>;
   setWorkerresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>): ForecastStatus;
@@ -552,11 +622,11 @@ export class ForecastStatus extends jspb.Message {
 
 export namespace ForecastStatus {
   export type AsObject = {
-    profileuri: string,
-    reporturi: string,
-    forecasturi: string,
-    failed: boolean,
-    failuremsg: string,
+    profileuri?: string,
+    reporturi?: string,
+    forecasturi?: string,
+    failed?: boolean,
+    failuremsg?: string,
     workerresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.AsObject>,
   }
 }
@@ -564,6 +634,8 @@ export namespace ForecastStatus {
 export class ForwardCurtainSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): ForwardCurtainSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): ForwardCurtainSpec;
 
   getAccountref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setAccountref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ForwardCurtainSpec;
@@ -572,6 +644,8 @@ export class ForwardCurtainSpec extends jspb.Message {
 
   getPercent(): number;
   setPercent(value: number): ForwardCurtainSpec;
+  hasPercent(): boolean;
+  clearPercent(): ForwardCurtainSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForwardCurtainSpec.AsObject;
@@ -583,9 +657,9 @@ export class ForwardCurtainSpec extends jspb.Message {
 
 export namespace ForwardCurtainSpec {
   export type AsObject = {
-    enabled: boolean,
+    enabled?: boolean,
     accountref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    percent: number,
+    percent?: number,
   }
 }
 
@@ -597,6 +671,8 @@ export class KubernetesObjectStatus extends jspb.Message {
 
   getStatus(): string;
   setStatus(value: string): KubernetesObjectStatus;
+  hasStatus(): boolean;
+  clearStatus(): KubernetesObjectStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): KubernetesObjectStatus.AsObject;
@@ -609,13 +685,15 @@ export class KubernetesObjectStatus extends jspb.Message {
 export namespace KubernetesObjectStatus {
   export type AsObject = {
     ref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    status: string,
+    status?: string,
   }
 }
 
 export class MetricHistory extends jspb.Message {
   getMetric(): string;
   setMetric(value: string): MetricHistory;
+  hasMetric(): boolean;
+  clearMetric(): MetricHistory;
 
   getHistoryList(): Array<number>;
   setHistoryList(value: Array<number>): MetricHistory;
@@ -632,7 +710,7 @@ export class MetricHistory extends jspb.Message {
 
 export namespace MetricHistory {
   export type AsObject = {
-    metric: string,
+    metric?: string,
     historyList: Array<number>,
   }
 }
@@ -640,12 +718,18 @@ export namespace MetricHistory {
 export class ModelDeploymentStatus extends jspb.Message {
   getModelname(): string;
   setModelname(value: string): ModelDeploymentStatus;
+  hasModelname(): boolean;
+  clearModelname(): ModelDeploymentStatus;
 
   getModelversion(): string;
   setModelversion(value: string): ModelDeploymentStatus;
+  hasModelversion(): boolean;
+  clearModelversion(): ModelDeploymentStatus;
 
   getImagename(): string;
   setImagename(value: string): ModelDeploymentStatus;
+  hasImagename(): boolean;
+  clearImagename(): ModelDeploymentStatus;
 
   getDeploymentref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setDeploymentref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelDeploymentStatus;
@@ -664,12 +748,18 @@ export class ModelDeploymentStatus extends jspb.Message {
 
   getP50(): number;
   setP50(value: number): ModelDeploymentStatus;
+  hasP50(): boolean;
+  clearP50(): ModelDeploymentStatus;
 
   getP95(): number;
   setP95(value: number): ModelDeploymentStatus;
+  hasP95(): boolean;
+  clearP95(): ModelDeploymentStatus;
 
   getP99(): number;
   setP99(value: number): ModelDeploymentStatus;
+  hasP99(): boolean;
+  clearP99(): ModelDeploymentStatus;
 
   getLastpredictiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastpredictiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
@@ -678,12 +768,18 @@ export class ModelDeploymentStatus extends jspb.Message {
 
   getDailypredictionavg(): number;
   setDailypredictionavg(value: number): ModelDeploymentStatus;
+  hasDailypredictionavg(): boolean;
+  clearDailypredictionavg(): ModelDeploymentStatus;
 
   getLastfailure(): string;
   setLastfailure(value: string): ModelDeploymentStatus;
+  hasLastfailure(): boolean;
+  clearLastfailure(): ModelDeploymentStatus;
 
   getPhase(): string;
   setPhase(value: string): ModelDeploymentStatus;
+  hasPhase(): boolean;
+  clearPhase(): ModelDeploymentStatus;
 
   getDeployedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setDeployedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
@@ -697,9 +793,13 @@ export class ModelDeploymentStatus extends jspb.Message {
 
   getDatadrift(): boolean;
   setDatadrift(value: boolean): ModelDeploymentStatus;
+  hasDatadrift(): boolean;
+  clearDatadrift(): ModelDeploymentStatus;
 
   getConceptdrift(): boolean;
   setConceptdrift(value: boolean): ModelDeploymentStatus;
+  hasConceptdrift(): boolean;
+  clearConceptdrift(): ModelDeploymentStatus;
 
   getLastdailypredictionsList(): Array<number>;
   setLastdailypredictionsList(value: Array<number>): ModelDeploymentStatus;
@@ -744,23 +844,23 @@ export class ModelDeploymentStatus extends jspb.Message {
 
 export namespace ModelDeploymentStatus {
   export type AsObject = {
-    modelname: string,
-    modelversion: string,
-    imagename: string,
+    modelname?: string,
+    modelversion?: string,
+    imagename?: string,
     deploymentref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     serviceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     hparef?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    p50: number,
-    p95: number,
-    p99: number,
+    p50?: number,
+    p95?: number,
+    p99?: number,
     lastpredictiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    dailypredictionavg: number,
-    lastfailure: string,
-    phase: string,
+    dailypredictionavg?: number,
+    lastfailure?: string,
+    phase?: string,
     deployedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    datadrift: boolean,
-    conceptdrift: boolean,
+    datadrift?: boolean,
+    conceptdrift?: boolean,
     lastdailypredictionsList: Array<number>,
     objectstatusesList: Array<KubernetesObjectStatus.AsObject>,
     errorsList: Array<ValidationError.AsObject>,
@@ -774,9 +874,13 @@ export namespace ModelDeploymentStatus {
 export class ModelRecord extends jspb.Message {
   getModelname(): string;
   setModelname(value: string): ModelRecord;
+  hasModelname(): boolean;
+  clearModelname(): ModelRecord;
 
   getModelversion(): string;
   setModelversion(value: string): ModelRecord;
+  hasModelversion(): boolean;
+  clearModelversion(): ModelRecord;
 
   getLiveat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLiveat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelRecord;
@@ -790,9 +894,13 @@ export class ModelRecord extends jspb.Message {
 
   getAvgdailyprediction(): number;
   setAvgdailyprediction(value: number): ModelRecord;
+  hasAvgdailyprediction(): boolean;
+  clearAvgdailyprediction(): ModelRecord;
 
   getAvglatency(): number;
   setAvglatency(value: number): ModelRecord;
+  hasAvglatency(): boolean;
+  clearAvglatency(): ModelRecord;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelRecord.AsObject;
@@ -804,18 +912,20 @@ export class ModelRecord extends jspb.Message {
 
 export namespace ModelRecord {
   export type AsObject = {
-    modelname: string,
-    modelversion: string,
+    modelname?: string,
+    modelversion?: string,
     liveat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     retiredat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    avgdailyprediction: number,
-    avglatency: number,
+    avgdailyprediction?: number,
+    avglatency?: number,
   }
 }
 
 export class ModelServingSpec extends jspb.Message {
   getServerless(): boolean;
   setServerless(value: boolean): ModelServingSpec;
+  hasServerless(): boolean;
+  clearServerless(): ModelServingSpec;
 
   getServingtests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setServingtests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelServingSpec;
@@ -832,7 +942,7 @@ export class ModelServingSpec extends jspb.Message {
 
 export namespace ModelServingSpec {
   export type AsObject = {
-    serverless: boolean,
+    serverless?: boolean,
     servingtests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
@@ -840,9 +950,13 @@ export namespace ModelServingSpec {
 export class OnlineFeatureStoreSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): OnlineFeatureStoreSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): OnlineFeatureStoreSpec;
 
   getHostname(): string;
   setHostname(value: string): OnlineFeatureStoreSpec;
+  hasHostname(): boolean;
+  clearHostname(): OnlineFeatureStoreSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OnlineFeatureStoreSpec.AsObject;
@@ -854,8 +968,8 @@ export class OnlineFeatureStoreSpec extends jspb.Message {
 
 export namespace OnlineFeatureStoreSpec {
   export type AsObject = {
-    enabled: boolean,
-    hostname: string,
+    enabled?: boolean,
+    hostname?: string,
   }
 }
 
@@ -882,6 +996,8 @@ export namespace OnlineStoreStatus {
 export class PartitionPredictionLocationsSpec extends jspb.Message {
   getGroupforecastfile(): string;
   setGroupforecastfile(value: string): PartitionPredictionLocationsSpec;
+  hasGroupforecastfile(): boolean;
+  clearGroupforecastfile(): PartitionPredictionLocationsSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PartitionPredictionLocationsSpec.AsObject;
@@ -893,7 +1009,7 @@ export class PartitionPredictionLocationsSpec extends jspb.Message {
 
 export namespace PartitionPredictionLocationsSpec {
   export type AsObject = {
-    groupforecastfile: string,
+    groupforecastfile?: string,
   }
 }
 
@@ -932,12 +1048,18 @@ export namespace Prediction {
 export class PredictionCacheSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): PredictionCacheSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): PredictionCacheSpec;
 
   getInmemory(): boolean;
   setInmemory(value: boolean): PredictionCacheSpec;
+  hasInmemory(): boolean;
+  clearInmemory(): PredictionCacheSpec;
 
   getRedis(): boolean;
   setRedis(value: boolean): PredictionCacheSpec;
+  hasRedis(): boolean;
+  clearRedis(): PredictionCacheSpec;
 
   getConnectionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setConnectionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionCacheSpec;
@@ -954,9 +1076,9 @@ export class PredictionCacheSpec extends jspb.Message {
 
 export namespace PredictionCacheSpec {
   export type AsObject = {
-    enabled: boolean,
-    inmemory: boolean,
-    redis: boolean,
+    enabled?: boolean,
+    inmemory?: boolean,
+    redis?: boolean,
     connectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
@@ -1010,15 +1132,23 @@ export namespace PredictionList {
 export class PredictionLoggingSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): PredictionLoggingSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): PredictionLoggingSpec;
 
   getSamplepercent(): number;
   setSamplepercent(value: number): PredictionLoggingSpec;
+  hasSamplepercent(): boolean;
+  clearSamplepercent(): PredictionLoggingSpec;
 
   getRows(): number;
   setRows(value: number): PredictionLoggingSpec;
+  hasRows(): boolean;
+  clearRows(): PredictionLoggingSpec;
 
   getBackupfreqseconds(): number;
   setBackupfreqseconds(value: number): PredictionLoggingSpec;
+  hasBackupfreqseconds(): boolean;
+  clearBackupfreqseconds(): PredictionLoggingSpec;
 
   getBackupconnectionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setBackupconnectionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionLoggingSpec;
@@ -1040,10 +1170,10 @@ export class PredictionLoggingSpec extends jspb.Message {
 
 export namespace PredictionLoggingSpec {
   export type AsObject = {
-    enabled: boolean,
-    samplepercent: number,
-    rows: number,
-    backupfreqseconds: number,
+    enabled?: boolean,
+    samplepercent?: number,
+    rows?: number,
+    backupfreqseconds?: number,
     backupconnectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
@@ -1052,9 +1182,13 @@ export namespace PredictionLoggingSpec {
 export class PredictionSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): PredictionSpec;
+  hasVersionname(): boolean;
+  clearVersionname(): PredictionSpec;
 
   getModelclassname(): string;
   setModelclassname(value: string): PredictionSpec;
+  hasModelclassname(): boolean;
+  clearModelclassname(): PredictionSpec;
 
   getPredictorref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setPredictorref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionSpec;
@@ -1063,9 +1197,13 @@ export class PredictionSpec extends jspb.Message {
 
   getLabeled(): boolean;
   setLabeled(value: boolean): PredictionSpec;
+  hasLabeled(): boolean;
+  clearLabeled(): PredictionSpec;
 
   getForecast(): boolean;
   setForecast(value: boolean): PredictionSpec;
+  hasForecast(): boolean;
+  clearForecast(): PredictionSpec;
 
   getDatasourceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setDatasourceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionSpec;
@@ -1084,6 +1222,8 @@ export class PredictionSpec extends jspb.Message {
 
   getCreatedataset(): boolean;
   setCreatedataset(value: boolean): PredictionSpec;
+  hasCreatedataset(): boolean;
+  clearCreatedataset(): PredictionSpec;
 
   getUnittests(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite | undefined;
   setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite): PredictionSpec;
@@ -1092,6 +1232,8 @@ export class PredictionSpec extends jspb.Message {
 
   getOwner(): string;
   setOwner(value: string): PredictionSpec;
+  hasOwner(): boolean;
+  clearOwner(): PredictionSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): PredictionSpec;
@@ -1100,15 +1242,23 @@ export class PredictionSpec extends jspb.Message {
 
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): PredictionSpec;
+  hasActivedeadlineseconds(): boolean;
+  clearActivedeadlineseconds(): PredictionSpec;
 
   getPriority(): string;
   setPriority(value: string): PredictionSpec;
+  hasPriority(): boolean;
+  clearPriority(): PredictionSpec;
 
   getAborted(): boolean;
   setAborted(value: boolean): PredictionSpec;
+  hasAborted(): boolean;
+  clearAborted(): PredictionSpec;
 
   getTtl(): number;
   setTtl(value: number): PredictionSpec;
+  hasTtl(): boolean;
+  clearTtl(): PredictionSpec;
 
   getForecastspec(): ForecastPredictionSpec | undefined;
   setForecastspec(value?: ForecastPredictionSpec): PredictionSpec;
@@ -1127,6 +1277,8 @@ export class PredictionSpec extends jspb.Message {
 
   getWorkers(): number;
   setWorkers(value: number): PredictionSpec;
+  hasWorkers(): boolean;
+  clearWorkers(): PredictionSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionSpec.AsObject;
@@ -1138,26 +1290,26 @@ export class PredictionSpec extends jspb.Message {
 
 export namespace PredictionSpec {
   export type AsObject = {
-    versionname: string,
-    modelclassname: string,
+    versionname?: string,
+    modelclassname?: string,
     predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    labeled: boolean,
-    forecast: boolean,
+    labeled?: boolean,
+    forecast?: boolean,
     datasourceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     input?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.AsObject,
     output?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
-    createdataset: boolean,
+    createdataset?: boolean,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite.AsObject,
-    owner: string,
+    owner?: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    activedeadlineseconds: number,
-    priority: string,
-    aborted: boolean,
-    ttl: number,
+    activedeadlineseconds?: number,
+    priority?: string,
+    aborted?: boolean,
+    ttl?: number,
     forecastspec?: ForecastPredictionSpec.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     partitionlocation?: PartitionPredictionLocationsSpec.AsObject,
-    workers: number,
+    workers?: number,
   }
 }
 
@@ -1169,6 +1321,8 @@ export class PredictionStatus extends jspb.Message {
 
   getPhase(): string;
   setPhase(value: string): PredictionStatus;
+  hasPhase(): boolean;
+  clearPhase(): PredictionStatus;
 
   getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
   setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): PredictionStatus;
@@ -1177,12 +1331,18 @@ export class PredictionStatus extends jspb.Message {
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): PredictionStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): PredictionStatus;
 
   getRows(): number;
   setRows(value: number): PredictionStatus;
+  hasRows(): boolean;
+  clearRows(): PredictionStatus;
 
   getTriggeredby(): string;
   setTriggeredby(value: string): PredictionStatus;
+  hasTriggeredby(): boolean;
+  clearTriggeredby(): PredictionStatus;
 
   getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
   setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): PredictionStatus;
@@ -1196,9 +1356,13 @@ export class PredictionStatus extends jspb.Message {
 
   getFailurereason(): string;
   setFailurereason(value: string): PredictionStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): PredictionStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): PredictionStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): PredictionStatus;
 
   getDatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setDatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionStatus;
@@ -1212,6 +1376,8 @@ export class PredictionStatus extends jspb.Message {
 
   getDrifted(): boolean;
   setDrifted(value: boolean): PredictionStatus;
+  hasDrifted(): boolean;
+  clearDrifted(): PredictionStatus;
 
   getForecast(): ForecastStatus | undefined;
   setForecast(value?: ForecastStatus): PredictionStatus;
@@ -1239,18 +1405,18 @@ export class PredictionStatus extends jspb.Message {
 export namespace PredictionStatus {
   export type AsObject = {
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    phase: string,
+    phase?: string,
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    observedgeneration: number,
-    rows: number,
-    triggeredby: string,
+    observedgeneration?: number,
+    rows?: number,
+    triggeredby?: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
+    failurereason?: string,
+    failuremessage?: string,
     datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     columnsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ColumnHistogram.AsObject>,
-    drifted: boolean,
+    drifted?: boolean,
     forecast?: ForecastStatus.AsObject,
     usage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
@@ -1318,12 +1484,18 @@ export namespace PredictorList {
 export class PredictorSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): PredictorSpec;
+  hasVersionname(): boolean;
+  clearVersionname(): PredictorSpec;
 
   getModelclassname(): string;
   setModelclassname(value: string): PredictorSpec;
+  hasModelclassname(): boolean;
+  clearModelclassname(): PredictorSpec;
 
   getDescription(): string;
   setDescription(value: string): PredictorSpec;
+  hasDescription(): boolean;
+  clearDescription(): PredictorSpec;
 
   getProductref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setProductref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorSpec;
@@ -1332,9 +1504,13 @@ export class PredictorSpec extends jspb.Message {
 
   getTemplate(): boolean;
   setTemplate(value: boolean): PredictorSpec;
+  hasTemplate(): boolean;
+  clearTemplate(): PredictorSpec;
 
   getOnline(): boolean;
   setOnline(value: boolean): PredictorSpec;
+  hasOnline(): boolean;
+  clearOnline(): PredictorSpec;
 
   getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorSpec;
@@ -1363,6 +1539,8 @@ export class PredictorSpec extends jspb.Message {
 
   getReplicas(): number;
   setReplicas(value: number): PredictorSpec;
+  hasReplicas(): boolean;
+  clearReplicas(): PredictorSpec;
 
   getAutoscaling(): AutoScalingSpec | undefined;
   setAutoscaling(value?: AutoScalingSpec): PredictorSpec;
@@ -1371,6 +1549,8 @@ export class PredictorSpec extends jspb.Message {
 
   getOwner(): string;
   setOwner(value: string): PredictorSpec;
+  hasOwner(): boolean;
+  clearOwner(): PredictorSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): PredictorSpec;
@@ -1394,9 +1574,13 @@ export class PredictorSpec extends jspb.Message {
 
   getTask(): string;
   setTask(value: string): PredictorSpec;
+  hasTask(): boolean;
+  clearTask(): PredictorSpec;
 
   getPredictionthreshold(): number;
   setPredictionthreshold(value: number): PredictorSpec;
+  hasPredictionthreshold(): boolean;
+  clearPredictionthreshold(): PredictorSpec;
 
   getDrift(): DriftDetectionSpec | undefined;
   setDrift(value?: DriftDetectionSpec): PredictorSpec;
@@ -1448,26 +1632,26 @@ export class PredictorSpec extends jspb.Message {
 
 export namespace PredictorSpec {
   export type AsObject = {
-    versionname: string,
-    modelclassname: string,
-    description: string,
+    versionname?: string,
+    modelclassname?: string,
+    description?: string,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    template: boolean,
-    online: boolean,
+    template?: boolean,
+    online?: boolean,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
     progressive?: ProgressiveSpec.AsObject,
     artifactsfolder?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
-    replicas: number,
+    replicas?: number,
     autoscaling?: AutoScalingSpec.AsObject,
-    owner: string,
+    owner?: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     cache?: PredictionCacheSpec.AsObject,
     store?: OnlineFeatureStoreSpec.AsObject,
     serving?: ModelServingSpec.AsObject,
-    task: string,
-    predictionthreshold: number,
+    task?: string,
+    predictionthreshold?: number,
     drift?: DriftDetectionSpec.AsObject,
     feedback?: FeedbackTestSpec.AsObject,
     notifierref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
@@ -1482,6 +1666,8 @@ export namespace PredictorSpec {
 export class PredictorStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): PredictorStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): PredictorStatus;
 
   getHistoryList(): Array<ModelRecord>;
   setHistoryList(value: Array<ModelRecord>): PredictorStatus;
@@ -1515,12 +1701,18 @@ export class PredictorStatus extends jspb.Message {
 
   getEndpoint(): string;
   setEndpoint(value: string): PredictorStatus;
+  hasEndpoint(): boolean;
+  clearEndpoint(): PredictorStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): PredictorStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): PredictorStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): PredictorStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): PredictorStatus;
 
   getLoadbalancerstatus(): k8s_io_api_core_v1_generated_pb.LoadBalancerStatus | undefined;
   setLoadbalancerstatus(value?: k8s_io_api_core_v1_generated_pb.LoadBalancerStatus): PredictorStatus;
@@ -1557,16 +1749,16 @@ export class PredictorStatus extends jspb.Message {
 
 export namespace PredictorStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     historyList: Array<ModelRecord.AsObject>,
     modelsstatusList: Array<ModelDeploymentStatus.AsObject>,
     predictorletstatus?: PredictorletStatus.AsObject,
     cachestatus?: PredictionCacheStatus.AsObject,
     onlinestorestatus?: OnlineStoreStatus.AsObject,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    endpoint: string,
-    failurereason: string,
-    failuremessage: string,
+    endpoint?: string,
+    failurereason?: string,
+    failuremessage?: string,
     loadbalancerstatus?: k8s_io_api_core_v1_generated_pb.LoadBalancerStatus.AsObject,
     lastpredictiondataset?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingtestsresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
@@ -1578,6 +1770,8 @@ export namespace PredictorStatus {
 export class PredictorletStatus extends jspb.Message {
   getImagename(): string;
   setImagename(value: string): PredictorletStatus;
+  hasImagename(): boolean;
+  clearImagename(): PredictorletStatus;
 
   getDeploymentref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setDeploymentref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorletStatus;
@@ -1591,18 +1785,28 @@ export class PredictorletStatus extends jspb.Message {
 
   getP50(): number;
   setP50(value: number): PredictorletStatus;
+  hasP50(): boolean;
+  clearP50(): PredictorletStatus;
 
   getP95(): number;
   setP95(value: number): PredictorletStatus;
+  hasP95(): boolean;
+  clearP95(): PredictorletStatus;
 
   getP99(): number;
   setP99(value: number): PredictorletStatus;
+  hasP99(): boolean;
+  clearP99(): PredictorletStatus;
 
   getDailypredictionavg(): number;
   setDailypredictionavg(value: number): PredictorletStatus;
+  hasDailypredictionavg(): boolean;
+  clearDailypredictionavg(): PredictorletStatus;
 
   getTotalpredictions(): number;
   setTotalpredictions(value: number): PredictorletStatus;
+  hasTotalpredictions(): boolean;
+  clearTotalpredictions(): PredictorletStatus;
 
   getLastdailypredictionsList(): Array<number>;
   setLastdailypredictionsList(value: Array<number>): PredictorletStatus;
@@ -1616,6 +1820,8 @@ export class PredictorletStatus extends jspb.Message {
 
   getLastfailure(): string;
   setLastfailure(value: string): PredictorletStatus;
+  hasLastfailure(): boolean;
+  clearLastfailure(): PredictorletStatus;
 
   getObjectstatusesList(): Array<KubernetesObjectStatus>;
   setObjectstatusesList(value: Array<KubernetesObjectStatus>): PredictorletStatus;
@@ -1632,17 +1838,17 @@ export class PredictorletStatus extends jspb.Message {
 
 export namespace PredictorletStatus {
   export type AsObject = {
-    imagename: string,
+    imagename?: string,
     deploymentref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     serviceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    p50: number,
-    p95: number,
-    p99: number,
-    dailypredictionavg: number,
-    totalpredictions: number,
+    p50?: number,
+    p95?: number,
+    p99?: number,
+    dailypredictionavg?: number,
+    totalpredictions?: number,
     lastdailypredictionsList: Array<number>,
     lastpredictiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lastfailure: string,
+    lastfailure?: string,
     objectstatusesList: Array<KubernetesObjectStatus.AsObject>,
   }
 }
@@ -1650,9 +1856,13 @@ export namespace PredictorletStatus {
 export class ProgressiveSpec extends jspb.Message {
   getWarmup(): number;
   setWarmup(value: number): ProgressiveSpec;
+  hasWarmup(): boolean;
+  clearWarmup(): ProgressiveSpec;
 
   getTrafficincrement(): number;
   setTrafficincrement(value: number): ProgressiveSpec;
+  hasTrafficincrement(): boolean;
+  clearTrafficincrement(): ProgressiveSpec;
 
   getCanarymetricsList(): Array<string>;
   setCanarymetricsList(value: Array<string>): ProgressiveSpec;
@@ -1669,8 +1879,8 @@ export class ProgressiveSpec extends jspb.Message {
 
 export namespace ProgressiveSpec {
   export type AsObject = {
-    warmup: number,
-    trafficincrement: number,
+    warmup?: number,
+    trafficincrement?: number,
     canarymetricsList: Array<string>,
   }
 }
@@ -1678,18 +1888,28 @@ export namespace ProgressiveSpec {
 export class ValidationError extends jspb.Message {
   getColumn(): string;
   setColumn(value: string): ValidationError;
+  hasColumn(): boolean;
+  clearColumn(): ValidationError;
 
   getMetric(): string;
   setMetric(value: string): ValidationError;
+  hasMetric(): boolean;
+  clearMetric(): ValidationError;
 
   getMin(): number;
   setMin(value: number): ValidationError;
+  hasMin(): boolean;
+  clearMin(): ValidationError;
 
   getMax(): number;
   setMax(value: number): ValidationError;
+  hasMax(): boolean;
+  clearMax(): ValidationError;
 
   getActual(): number;
   setActual(value: number): ValidationError;
+  hasActual(): boolean;
+  clearActual(): ValidationError;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ValidationError.AsObject;
@@ -1701,11 +1921,11 @@ export class ValidationError extends jspb.Message {
 
 export namespace ValidationError {
   export type AsObject = {
-    column: string,
-    metric: string,
-    min: number,
-    max: number,
-    actual: number,
+    column?: string,
+    metric?: string,
+    min?: number,
+    max?: number,
+    actual?: number,
   }
 }
 

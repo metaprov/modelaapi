@@ -11,6 +11,8 @@ import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../.
 export class APITokenSpec extends jspb.Message {
   getName(): string;
   setName(value: string): APITokenSpec;
+  hasName(): boolean;
+  clearName(): APITokenSpec;
 
   getScopesList(): Array<Scope>;
   setScopesList(value: Array<Scope>): APITokenSpec;
@@ -32,7 +34,7 @@ export class APITokenSpec extends jspb.Message {
 
 export namespace APITokenSpec {
   export type AsObject = {
-    name: string,
+    name?: string,
     scopesList: Array<Scope.AsObject>,
     secretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
   }
@@ -104,39 +106,63 @@ export class AccountSpec extends jspb.Message {
 
   getType(): string;
   setType(value: string): AccountSpec;
+  hasType(): boolean;
+  clearType(): AccountSpec;
 
   getUsername(): string;
   setUsername(value: string): AccountSpec;
+  hasUsername(): boolean;
+  clearUsername(): AccountSpec;
 
   getFirstname(): string;
   setFirstname(value: string): AccountSpec;
+  hasFirstname(): boolean;
+  clearFirstname(): AccountSpec;
 
   getLastname(): string;
   setLastname(value: string): AccountSpec;
+  hasLastname(): boolean;
+  clearLastname(): AccountSpec;
 
   getEmail(): string;
   setEmail(value: string): AccountSpec;
+  hasEmail(): boolean;
+  clearEmail(): AccountSpec;
 
   getPhone(): string;
   setPhone(value: string): AccountSpec;
+  hasPhone(): boolean;
+  clearPhone(): AccountSpec;
 
   getAdmin(): boolean;
   setAdmin(value: boolean): AccountSpec;
+  hasAdmin(): boolean;
+  clearAdmin(): AccountSpec;
 
   getTeam(): boolean;
   setTeam(value: boolean): AccountSpec;
+  hasTeam(): boolean;
+  clearTeam(): AccountSpec;
 
   getMemberof(): string;
   setMemberof(value: string): AccountSpec;
+  hasMemberof(): boolean;
+  clearMemberof(): AccountSpec;
 
   getEmailpassword(): boolean;
   setEmailpassword(value: boolean): AccountSpec;
+  hasEmailpassword(): boolean;
+  clearEmailpassword(): AccountSpec;
 
   getResetpassword(): boolean;
   setResetpassword(value: boolean): AccountSpec;
+  hasResetpassword(): boolean;
+  clearResetpassword(): AccountSpec;
 
   getClearancelevel(): string;
   setClearancelevel(value: string): AccountSpec;
+  hasClearancelevel(): boolean;
+  clearClearancelevel(): AccountSpec;
 
   getAvatar(): AvatarSpec | undefined;
   setAvatar(value?: AvatarSpec): AccountSpec;
@@ -164,18 +190,18 @@ export class AccountSpec extends jspb.Message {
 export namespace AccountSpec {
   export type AsObject = {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    type: string,
-    username: string,
-    firstname: string,
-    lastname: string,
-    email: string,
-    phone: string,
-    admin: boolean,
-    team: boolean,
-    memberof: string,
-    emailpassword: boolean,
-    resetpassword: boolean,
-    clearancelevel: string,
+    type?: string,
+    username?: string,
+    firstname?: string,
+    lastname?: string,
+    email?: string,
+    phone?: string,
+    admin?: boolean,
+    team?: boolean,
+    memberof?: string,
+    emailpassword?: boolean,
+    resetpassword?: boolean,
+    clearancelevel?: string,
     avatar?: AvatarSpec.AsObject,
     favoriteproductsList: Array<string>,
     tokensList: Array<APITokenSpec.AsObject>,
@@ -190,30 +216,48 @@ export class AccountStatus extends jspb.Message {
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): AccountStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): AccountStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): AccountStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): AccountStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): AccountStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): AccountStatus;
 
   getModelscount(): number;
   setModelscount(value: number): AccountStatus;
+  hasModelscount(): boolean;
+  clearModelscount(): AccountStatus;
 
   getModelclassescount(): number;
   setModelclassescount(value: number): AccountStatus;
+  hasModelclassescount(): boolean;
+  clearModelclassescount(): AccountStatus;
 
   getPredictorscount(): number;
   setPredictorscount(value: number): AccountStatus;
+  hasPredictorscount(): boolean;
+  clearPredictorscount(): AccountStatus;
 
   getFeaturegroupscount(): number;
   setFeaturegroupscount(value: number): AccountStatus;
+  hasFeaturegroupscount(): boolean;
+  clearFeaturegroupscount(): AccountStatus;
 
   getDatasetscount(): number;
   setDatasetscount(value: number): AccountStatus;
+  hasDatasetscount(): boolean;
+  clearDatasetscount(): AccountStatus;
 
   getMemberscount(): number;
   setMemberscount(value: number): AccountStatus;
+  hasMemberscount(): boolean;
+  clearMemberscount(): AccountStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): AccountStatus;
@@ -231,15 +275,15 @@ export class AccountStatus extends jspb.Message {
 export namespace AccountStatus {
   export type AsObject = {
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    observedgeneration: number,
-    failurereason: string,
-    failuremessage: string,
-    modelscount: number,
-    modelclassescount: number,
-    predictorscount: number,
-    featuregroupscount: number,
-    datasetscount: number,
-    memberscount: number,
+    observedgeneration?: number,
+    failurereason?: string,
+    failuremessage?: string,
+    modelscount?: number,
+    modelclassescount?: number,
+    predictorscount?: number,
+    featuregroupscount?: number,
+    datasetscount?: number,
+    memberscount?: number,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -247,21 +291,33 @@ export namespace AccountStatus {
 export class AirTableSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): AirTableSpec;
+  hasHost(): boolean;
+  clearHost(): AirTableSpec;
 
   getPort(): number;
   setPort(value: number): AirTableSpec;
+  hasPort(): boolean;
+  clearPort(): AirTableSpec;
 
   getKeyspace(): string;
   setKeyspace(value: string): AirTableSpec;
+  hasKeyspace(): boolean;
+  clearKeyspace(): AirTableSpec;
 
   getUsername(): string;
   setUsername(value: string): AirTableSpec;
+  hasUsername(): boolean;
+  clearUsername(): AirTableSpec;
 
   getPassword(): string;
   setPassword(value: string): AirTableSpec;
+  hasPassword(): boolean;
+  clearPassword(): AirTableSpec;
 
   getUrl(): string;
   setUrl(value: string): AirTableSpec;
+  hasUrl(): boolean;
+  clearUrl(): AirTableSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AirTableSpec.AsObject;
@@ -273,33 +329,45 @@ export class AirTableSpec extends jspb.Message {
 
 export namespace AirTableSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    keyspace: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    keyspace?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class AirWriteSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): AirWriteSpec;
+  hasHost(): boolean;
+  clearHost(): AirWriteSpec;
 
   getPort(): number;
   setPort(value: number): AirWriteSpec;
+  hasPort(): boolean;
+  clearPort(): AirWriteSpec;
 
   getKeyspace(): string;
   setKeyspace(value: string): AirWriteSpec;
+  hasKeyspace(): boolean;
+  clearKeyspace(): AirWriteSpec;
 
   getUsername(): string;
   setUsername(value: string): AirWriteSpec;
+  hasUsername(): boolean;
+  clearUsername(): AirWriteSpec;
 
   getPassword(): string;
   setPassword(value: string): AirWriteSpec;
+  hasPassword(): boolean;
+  clearPassword(): AirWriteSpec;
 
   getUrl(): string;
   setUrl(value: string): AirWriteSpec;
+  hasUrl(): boolean;
+  clearUrl(): AirWriteSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AirWriteSpec.AsObject;
@@ -311,12 +379,12 @@ export class AirWriteSpec extends jspb.Message {
 
 export namespace AirWriteSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    keyspace: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    keyspace?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
@@ -381,12 +449,18 @@ export namespace AlertList {
 export class AlertSpec extends jspb.Message {
   getSubject(): string;
   setSubject(value: string): AlertSpec;
+  hasSubject(): boolean;
+  clearSubject(): AlertSpec;
 
   getMessage(): string;
   setMessage(value: string): AlertSpec;
+  hasMessage(): boolean;
+  clearMessage(): AlertSpec;
 
   getLevel(): string;
   setLevel(value: string): AlertSpec;
+  hasLevel(): boolean;
+  clearLevel(): AlertSpec;
 
   getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): AlertSpec;
@@ -395,21 +469,31 @@ export class AlertSpec extends jspb.Message {
 
   getNotifiername(): string;
   setNotifiername(value: string): AlertSpec;
+  hasNotifiername(): boolean;
+  clearNotifiername(): AlertSpec;
 
   getOwner(): string;
   setOwner(value: string): AlertSpec;
+  hasOwner(): boolean;
+  clearOwner(): AlertSpec;
 
   getTtl(): number;
   setTtl(value: number): AlertSpec;
+  hasTtl(): boolean;
+  clearTtl(): AlertSpec;
 
   getFieldsMap(): jspb.Map<string, string>;
   clearFieldsMap(): AlertSpec;
 
   getUrl(): string;
   setUrl(value: string): AlertSpec;
+  hasUrl(): boolean;
+  clearUrl(): AlertSpec;
 
   getImage(): string;
   setImage(value: string): AlertSpec;
+  hasImage(): boolean;
+  clearImage(): AlertSpec;
 
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): AlertSpec;
@@ -426,16 +510,16 @@ export class AlertSpec extends jspb.Message {
 
 export namespace AlertSpec {
   export type AsObject = {
-    subject: string,
-    message: string,
-    level: string,
+    subject?: string,
+    message?: string,
+    level?: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    notifiername: string,
-    owner: string,
-    ttl: number,
+    notifiername?: string,
+    owner?: string,
+    ttl?: number,
     fieldsMap: Array<[string, string]>,
-    url: string,
-    image: string,
+    url?: string,
+    image?: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
@@ -448,6 +532,8 @@ export class AlertStatus extends jspb.Message {
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): AlertStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): AlertStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AlertStatus;
@@ -456,9 +542,13 @@ export class AlertStatus extends jspb.Message {
 
   getFailurereason(): string;
   setFailurereason(value: string): AlertStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): AlertStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): AlertStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): AlertStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): AlertStatus;
@@ -476,10 +566,10 @@ export class AlertStatus extends jspb.Message {
 export namespace AlertStatus {
   export type AsObject = {
     firedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    observedgeneration: number,
+    observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
+    failurereason?: string,
+    failuremessage?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -487,15 +577,23 @@ export namespace AlertStatus {
 export class AliCloudSpec extends jspb.Message {
   getAccesskey(): string;
   setAccesskey(value: string): AliCloudSpec;
+  hasAccesskey(): boolean;
+  clearAccesskey(): AliCloudSpec;
 
   getSecretkey(): string;
   setSecretkey(value: string): AliCloudSpec;
+  hasSecretkey(): boolean;
+  clearSecretkey(): AliCloudSpec;
 
   getRegion(): string;
   setRegion(value: string): AliCloudSpec;
+  hasRegion(): boolean;
+  clearRegion(): AliCloudSpec;
 
   getHost(): string;
   setHost(value: string): AliCloudSpec;
+  hasHost(): boolean;
+  clearHost(): AliCloudSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AliCloudSpec.AsObject;
@@ -507,28 +605,38 @@ export class AliCloudSpec extends jspb.Message {
 
 export namespace AliCloudSpec {
   export type AsObject = {
-    accesskey: string,
-    secretkey: string,
-    region: string,
-    host: string,
+    accesskey?: string,
+    secretkey?: string,
+    region?: string,
+    host?: string,
   }
 }
 
 export class AmazonAthenaSpec extends jspb.Message {
   getHostname(): string;
   setHostname(value: string): AmazonAthenaSpec;
+  hasHostname(): boolean;
+  clearHostname(): AmazonAthenaSpec;
 
   getUsername(): string;
   setUsername(value: string): AmazonAthenaSpec;
+  hasUsername(): boolean;
+  clearUsername(): AmazonAthenaSpec;
 
   getPassword(): string;
   setPassword(value: string): AmazonAthenaSpec;
+  hasPassword(): boolean;
+  clearPassword(): AmazonAthenaSpec;
 
   getRegion(): string;
   setRegion(value: string): AmazonAthenaSpec;
+  hasRegion(): boolean;
+  clearRegion(): AmazonAthenaSpec;
 
   getUrl(): string;
   setUrl(value: string): AmazonAthenaSpec;
+  hasUrl(): boolean;
+  clearUrl(): AmazonAthenaSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AmazonAthenaSpec.AsObject;
@@ -540,44 +648,64 @@ export class AmazonAthenaSpec extends jspb.Message {
 
 export namespace AmazonAthenaSpec {
   export type AsObject = {
-    hostname: string,
-    username: string,
-    password: string,
-    region: string,
-    url: string,
+    hostname?: string,
+    username?: string,
+    password?: string,
+    region?: string,
+    url?: string,
   }
 }
 
 export class AmazonRedShiftSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): AmazonRedShiftSpec;
+  hasHost(): boolean;
+  clearHost(): AmazonRedShiftSpec;
 
   getPort(): number;
   setPort(value: number): AmazonRedShiftSpec;
+  hasPort(): boolean;
+  clearPort(): AmazonRedShiftSpec;
 
   getDatabase(): string;
   setDatabase(value: string): AmazonRedShiftSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): AmazonRedShiftSpec;
 
   getUsername(): string;
   setUsername(value: string): AmazonRedShiftSpec;
+  hasUsername(): boolean;
+  clearUsername(): AmazonRedShiftSpec;
 
   getPassword(): string;
   setPassword(value: string): AmazonRedShiftSpec;
+  hasPassword(): boolean;
+  clearPassword(): AmazonRedShiftSpec;
 
   getUrl(): string;
   setUrl(value: string): AmazonRedShiftSpec;
+  hasUrl(): boolean;
+  clearUrl(): AmazonRedShiftSpec;
 
   getRegion(): string;
   setRegion(value: string): AmazonRedShiftSpec;
+  hasRegion(): boolean;
+  clearRegion(): AmazonRedShiftSpec;
 
   getClusterid(): string;
   setClusterid(value: string): AmazonRedShiftSpec;
+  hasClusterid(): boolean;
+  clearClusterid(): AmazonRedShiftSpec;
 
   getS3staginglocation(): string;
   setS3staginglocation(value: string): AmazonRedShiftSpec;
+  hasS3staginglocation(): boolean;
+  clearS3staginglocation(): AmazonRedShiftSpec;
 
   getIamrole(): string;
   setIamrole(value: string): AmazonRedShiftSpec;
+  hasIamrole(): boolean;
+  clearIamrole(): AmazonRedShiftSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AmazonRedShiftSpec.AsObject;
@@ -589,46 +717,64 @@ export class AmazonRedShiftSpec extends jspb.Message {
 
 export namespace AmazonRedShiftSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    database: string,
-    username: string,
-    password: string,
-    url: string,
-    region: string,
-    clusterid: string,
-    s3staginglocation: string,
-    iamrole: string,
+    host?: string,
+    port?: number,
+    database?: string,
+    username?: string,
+    password?: string,
+    url?: string,
+    region?: string,
+    clusterid?: string,
+    s3staginglocation?: string,
+    iamrole?: string,
   }
 }
 
 export class ApacheCassandraSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): ApacheCassandraSpec;
+  hasHost(): boolean;
+  clearHost(): ApacheCassandraSpec;
 
   getPort(): number;
   setPort(value: number): ApacheCassandraSpec;
+  hasPort(): boolean;
+  clearPort(): ApacheCassandraSpec;
 
   getKeyspace(): string;
   setKeyspace(value: string): ApacheCassandraSpec;
+  hasKeyspace(): boolean;
+  clearKeyspace(): ApacheCassandraSpec;
 
   getUsername(): string;
   setUsername(value: string): ApacheCassandraSpec;
+  hasUsername(): boolean;
+  clearUsername(): ApacheCassandraSpec;
 
   getPassword(): string;
   setPassword(value: string): ApacheCassandraSpec;
+  hasPassword(): boolean;
+  clearPassword(): ApacheCassandraSpec;
 
   getProtocolversion(): string;
   setProtocolversion(value: string): ApacheCassandraSpec;
+  hasProtocolversion(): boolean;
+  clearProtocolversion(): ApacheCassandraSpec;
 
   getLocaldc(): string;
   setLocaldc(value: string): ApacheCassandraSpec;
+  hasLocaldc(): boolean;
+  clearLocaldc(): ApacheCassandraSpec;
 
   getLoadbalancepolicy(): string;
   setLoadbalancepolicy(value: string): ApacheCassandraSpec;
+  hasLoadbalancepolicy(): boolean;
+  clearLoadbalancepolicy(): ApacheCassandraSpec;
 
   getUrl(): string;
   setUrl(value: string): ApacheCassandraSpec;
+  hasUrl(): boolean;
+  clearUrl(): ApacheCassandraSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ApacheCassandraSpec.AsObject;
@@ -640,36 +786,48 @@ export class ApacheCassandraSpec extends jspb.Message {
 
 export namespace ApacheCassandraSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    keyspace: string,
-    username: string,
-    password: string,
-    protocolversion: string,
-    localdc: string,
-    loadbalancepolicy: string,
-    url: string,
+    host?: string,
+    port?: number,
+    keyspace?: string,
+    username?: string,
+    password?: string,
+    protocolversion?: string,
+    localdc?: string,
+    loadbalancepolicy?: string,
+    url?: string,
   }
 }
 
 export class ApacheDrillSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): ApacheDrillSpec;
+  hasHost(): boolean;
+  clearHost(): ApacheDrillSpec;
 
   getPort(): number;
   setPort(value: number): ApacheDrillSpec;
+  hasPort(): boolean;
+  clearPort(): ApacheDrillSpec;
 
   getKeyspace(): string;
   setKeyspace(value: string): ApacheDrillSpec;
+  hasKeyspace(): boolean;
+  clearKeyspace(): ApacheDrillSpec;
 
   getUsername(): string;
   setUsername(value: string): ApacheDrillSpec;
+  hasUsername(): boolean;
+  clearUsername(): ApacheDrillSpec;
 
   getPassword(): string;
   setPassword(value: string): ApacheDrillSpec;
+  hasPassword(): boolean;
+  clearPassword(): ApacheDrillSpec;
 
   getUrl(): string;
   setUrl(value: string): ApacheDrillSpec;
+  hasUrl(): boolean;
+  clearUrl(): ApacheDrillSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ApacheDrillSpec.AsObject;
@@ -681,33 +839,45 @@ export class ApacheDrillSpec extends jspb.Message {
 
 export namespace ApacheDrillSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    keyspace: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    keyspace?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class ApacheDruidSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): ApacheDruidSpec;
+  hasHost(): boolean;
+  clearHost(): ApacheDruidSpec;
 
   getPort(): number;
   setPort(value: number): ApacheDruidSpec;
+  hasPort(): boolean;
+  clearPort(): ApacheDruidSpec;
 
   getKeyspace(): string;
   setKeyspace(value: string): ApacheDruidSpec;
+  hasKeyspace(): boolean;
+  clearKeyspace(): ApacheDruidSpec;
 
   getUsername(): string;
   setUsername(value: string): ApacheDruidSpec;
+  hasUsername(): boolean;
+  clearUsername(): ApacheDruidSpec;
 
   getPassword(): string;
   setPassword(value: string): ApacheDruidSpec;
+  hasPassword(): boolean;
+  clearPassword(): ApacheDruidSpec;
 
   getUrl(): string;
   setUrl(value: string): ApacheDruidSpec;
+  hasUrl(): boolean;
+  clearUrl(): ApacheDruidSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ApacheDruidSpec.AsObject;
@@ -719,33 +889,45 @@ export class ApacheDruidSpec extends jspb.Message {
 
 export namespace ApacheDruidSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    keyspace: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    keyspace?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class ApacheHiveSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): ApacheHiveSpec;
+  hasHost(): boolean;
+  clearHost(): ApacheHiveSpec;
 
   getPort(): number;
   setPort(value: number): ApacheHiveSpec;
+  hasPort(): boolean;
+  clearPort(): ApacheHiveSpec;
 
   getSchema(): string;
   setSchema(value: string): ApacheHiveSpec;
+  hasSchema(): boolean;
+  clearSchema(): ApacheHiveSpec;
 
   getUsername(): string;
   setUsername(value: string): ApacheHiveSpec;
+  hasUsername(): boolean;
+  clearUsername(): ApacheHiveSpec;
 
   getPassword(): string;
   setPassword(value: string): ApacheHiveSpec;
+  hasPassword(): boolean;
+  clearPassword(): ApacheHiveSpec;
 
   getUrl(): string;
   setUrl(value: string): ApacheHiveSpec;
+  hasUrl(): boolean;
+  clearUrl(): ApacheHiveSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ApacheHiveSpec.AsObject;
@@ -757,33 +939,45 @@ export class ApacheHiveSpec extends jspb.Message {
 
 export namespace ApacheHiveSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    schema: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    schema?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class ApacheSparkSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): ApacheSparkSpec;
+  hasHost(): boolean;
+  clearHost(): ApacheSparkSpec;
 
   getPort(): number;
   setPort(value: number): ApacheSparkSpec;
+  hasPort(): boolean;
+  clearPort(): ApacheSparkSpec;
 
   getSchema(): string;
   setSchema(value: string): ApacheSparkSpec;
+  hasSchema(): boolean;
+  clearSchema(): ApacheSparkSpec;
 
   getUsername(): string;
   setUsername(value: string): ApacheSparkSpec;
+  hasUsername(): boolean;
+  clearUsername(): ApacheSparkSpec;
 
   getPassword(): string;
   setPassword(value: string): ApacheSparkSpec;
+  hasPassword(): boolean;
+  clearPassword(): ApacheSparkSpec;
 
   getUrl(): string;
   setUrl(value: string): ApacheSparkSpec;
+  hasUrl(): boolean;
+  clearUrl(): ApacheSparkSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ApacheSparkSpec.AsObject;
@@ -795,12 +989,12 @@ export class ApacheSparkSpec extends jspb.Message {
 
 export namespace ApacheSparkSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    schema: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    schema?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
@@ -865,9 +1059,13 @@ export namespace AttachmentList {
 export class AttachmentSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): AttachmentSpec;
+  hasOwner(): boolean;
+  clearOwner(): AttachmentSpec;
 
   getDescription(): string;
   setDescription(value: string): AttachmentSpec;
+  hasDescription(): boolean;
+  clearDescription(): AttachmentSpec;
 
   getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): AttachmentSpec;
@@ -876,9 +1074,13 @@ export class AttachmentSpec extends jspb.Message {
 
   getBucketname(): string;
   setBucketname(value: string): AttachmentSpec;
+  hasBucketname(): boolean;
+  clearBucketname(): AttachmentSpec;
 
   getPath(): string;
   setPath(value: string): AttachmentSpec;
+  hasPath(): boolean;
+  clearPath(): AttachmentSpec;
 
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): AttachmentSpec;
@@ -895,11 +1097,11 @@ export class AttachmentSpec extends jspb.Message {
 
 export namespace AttachmentSpec {
   export type AsObject = {
-    owner: string,
-    description: string,
+    owner?: string,
+    description?: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    bucketname: string,
-    path: string,
+    bucketname?: string,
+    path?: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
@@ -907,6 +1109,8 @@ export namespace AttachmentSpec {
 export class AttachmentStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): AttachmentStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): AttachmentStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AttachmentStatus;
@@ -915,9 +1119,13 @@ export class AttachmentStatus extends jspb.Message {
 
   getFailurereason(): string;
   setFailurereason(value: string): AttachmentStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): AttachmentStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): AttachmentStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): AttachmentStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): AttachmentStatus;
@@ -934,10 +1142,10 @@ export class AttachmentStatus extends jspb.Message {
 
 export namespace AttachmentStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
+    failurereason?: string,
+    failuremessage?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -945,9 +1153,13 @@ export namespace AttachmentStatus {
 export class AvatarSpec extends jspb.Message {
   getBucketname(): string;
   setBucketname(value: string): AvatarSpec;
+  hasBucketname(): boolean;
+  clearBucketname(): AvatarSpec;
 
   getPath(): string;
   setPath(value: string): AvatarSpec;
+  hasPath(): boolean;
+  clearPath(): AvatarSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AvatarSpec.AsObject;
@@ -959,20 +1171,26 @@ export class AvatarSpec extends jspb.Message {
 
 export namespace AvatarSpec {
   export type AsObject = {
-    bucketname: string,
-    path: string,
+    bucketname?: string,
+    path?: string,
   }
 }
 
 export class AwsS3Spec extends jspb.Message {
   getDefaultregion(): string;
   setDefaultregion(value: string): AwsS3Spec;
+  hasDefaultregion(): boolean;
+  clearDefaultregion(): AwsS3Spec;
 
   getAccesskey(): string;
   setAccesskey(value: string): AwsS3Spec;
+  hasAccesskey(): boolean;
+  clearAccesskey(): AwsS3Spec;
 
   getSecretkey(): string;
   setSecretkey(value: string): AwsS3Spec;
+  hasSecretkey(): boolean;
+  clearSecretkey(): AwsS3Spec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AwsS3Spec.AsObject;
@@ -984,30 +1202,42 @@ export class AwsS3Spec extends jspb.Message {
 
 export namespace AwsS3Spec {
   export type AsObject = {
-    defaultregion: string,
-    accesskey: string,
-    secretkey: string,
+    defaultregion?: string,
+    accesskey?: string,
+    secretkey?: string,
   }
 }
 
 export class AzureSQLDatabaseSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): AzureSQLDatabaseSpec;
+  hasHost(): boolean;
+  clearHost(): AzureSQLDatabaseSpec;
 
   getPort(): number;
   setPort(value: number): AzureSQLDatabaseSpec;
+  hasPort(): boolean;
+  clearPort(): AzureSQLDatabaseSpec;
 
   getUsername(): string;
   setUsername(value: string): AzureSQLDatabaseSpec;
+  hasUsername(): boolean;
+  clearUsername(): AzureSQLDatabaseSpec;
 
   getPassword(): string;
   setPassword(value: string): AzureSQLDatabaseSpec;
+  hasPassword(): boolean;
+  clearPassword(): AzureSQLDatabaseSpec;
 
   getDatabase(): string;
   setDatabase(value: string): AzureSQLDatabaseSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): AzureSQLDatabaseSpec;
 
   getUrl(): string;
   setUrl(value: string): AzureSQLDatabaseSpec;
+  hasUrl(): boolean;
+  clearUrl(): AzureSQLDatabaseSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AzureSQLDatabaseSpec.AsObject;
@@ -1019,21 +1249,25 @@ export class AzureSQLDatabaseSpec extends jspb.Message {
 
 export namespace AzureSQLDatabaseSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    username: string,
-    password: string,
-    database: string,
-    url: string,
+    host?: string,
+    port?: number,
+    username?: string,
+    password?: string,
+    database?: string,
+    url?: string,
   }
 }
 
 export class AzureStorageSpec extends jspb.Message {
   getStorageaccount(): string;
   setStorageaccount(value: string): AzureStorageSpec;
+  hasStorageaccount(): boolean;
+  clearStorageaccount(): AzureStorageSpec;
 
   getAccesskey(): string;
   setAccesskey(value: string): AzureStorageSpec;
+  hasAccesskey(): boolean;
+  clearAccesskey(): AzureStorageSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AzureStorageSpec.AsObject;
@@ -1045,20 +1279,26 @@ export class AzureStorageSpec extends jspb.Message {
 
 export namespace AzureStorageSpec {
   export type AsObject = {
-    storageaccount: string,
-    accesskey: string,
+    storageaccount?: string,
+    accesskey?: string,
   }
 }
 
 export class BitbucketSpec extends jspb.Message {
   getToken(): string;
   setToken(value: string): BitbucketSpec;
+  hasToken(): boolean;
+  clearToken(): BitbucketSpec;
 
   getUsername(): string;
   setUsername(value: string): BitbucketSpec;
+  hasUsername(): boolean;
+  clearUsername(): BitbucketSpec;
 
   getSsh(): string;
   setSsh(value: string): BitbucketSpec;
+  hasSsh(): boolean;
+  clearSsh(): BitbucketSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BitbucketSpec.AsObject;
@@ -1070,15 +1310,17 @@ export class BitbucketSpec extends jspb.Message {
 
 export namespace BitbucketSpec {
   export type AsObject = {
-    token: string,
-    username: string,
-    ssh: string,
+    token?: string,
+    username?: string,
+    ssh?: string,
   }
 }
 
 export class BoxSpec extends jspb.Message {
   getToken(): string;
   setToken(value: string): BoxSpec;
+  hasToken(): boolean;
+  clearToken(): BoxSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BoxSpec.AsObject;
@@ -1090,13 +1332,15 @@ export class BoxSpec extends jspb.Message {
 
 export namespace BoxSpec {
   export type AsObject = {
-    token: string,
+    token?: string,
   }
 }
 
 export class BucketResourceQuotas extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): BucketResourceQuotas;
+  hasEnabled(): boolean;
+  clearEnabled(): BucketResourceQuotas;
 
   getHardlimit(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
   setHardlimit(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): BucketResourceQuotas;
@@ -1113,7 +1357,7 @@ export class BucketResourceQuotas extends jspb.Message {
 
 export namespace BucketResourceQuotas {
   export type AsObject = {
-    enabled: boolean,
+    enabled?: boolean,
     hardlimit?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
   }
 }
@@ -1121,21 +1365,33 @@ export namespace BucketResourceQuotas {
 export class ClickHouseSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): ClickHouseSpec;
+  hasHost(): boolean;
+  clearHost(): ClickHouseSpec;
 
   getPort(): number;
   setPort(value: number): ClickHouseSpec;
+  hasPort(): boolean;
+  clearPort(): ClickHouseSpec;
 
   getDatabase(): string;
   setDatabase(value: string): ClickHouseSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): ClickHouseSpec;
 
   getUsername(): string;
   setUsername(value: string): ClickHouseSpec;
+  hasUsername(): boolean;
+  clearUsername(): ClickHouseSpec;
 
   getPassword(): string;
   setPassword(value: string): ClickHouseSpec;
+  hasPassword(): boolean;
+  clearPassword(): ClickHouseSpec;
 
   getUrl(): string;
   setUrl(value: string): ClickHouseSpec;
+  hasUrl(): boolean;
+  clearUrl(): ClickHouseSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ClickHouseSpec.AsObject;
@@ -1147,33 +1403,45 @@ export class ClickHouseSpec extends jspb.Message {
 
 export namespace ClickHouseSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    database: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    database?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class CockroachDBSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): CockroachDBSpec;
+  hasHost(): boolean;
+  clearHost(): CockroachDBSpec;
 
   getPort(): number;
   setPort(value: number): CockroachDBSpec;
+  hasPort(): boolean;
+  clearPort(): CockroachDBSpec;
 
   getDatabase(): string;
   setDatabase(value: string): CockroachDBSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): CockroachDBSpec;
 
   getUsername(): string;
   setUsername(value: string): CockroachDBSpec;
+  hasUsername(): boolean;
+  clearUsername(): CockroachDBSpec;
 
   getPassword(): string;
   setPassword(value: string): CockroachDBSpec;
+  hasPassword(): boolean;
+  clearPassword(): CockroachDBSpec;
 
   getUrl(): string;
   setUrl(value: string): CockroachDBSpec;
+  hasUrl(): boolean;
+  clearUrl(): CockroachDBSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CockroachDBSpec.AsObject;
@@ -1185,12 +1453,12 @@ export class CockroachDBSpec extends jspb.Message {
 
 export namespace CockroachDBSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    database: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    database?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
@@ -1260,9 +1528,13 @@ export class ConnectionSpec extends jspb.Message {
 
   getCategory(): string;
   setCategory(value: string): ConnectionSpec;
+  hasCategory(): boolean;
+  clearCategory(): ConnectionSpec;
 
   getProvider(): string;
   setProvider(value: string): ConnectionSpec;
+  hasProvider(): boolean;
+  clearProvider(): ConnectionSpec;
 
   getSecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
   setSecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): ConnectionSpec;
@@ -1646,6 +1918,8 @@ export class ConnectionSpec extends jspb.Message {
 
   getOwner(): string;
   setOwner(value: string): ConnectionSpec;
+  hasOwner(): boolean;
+  clearOwner(): ConnectionSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConnectionSpec.AsObject;
@@ -1658,8 +1932,8 @@ export class ConnectionSpec extends jspb.Message {
 export namespace ConnectionSpec {
   export type AsObject = {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    category: string,
-    provider: string,
+    category?: string,
+    provider?: string,
     secretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
     athena?: AmazonAthenaSpec.AsObject,
     drill?: ApacheDrillSpec.AsObject,
@@ -1736,13 +2010,15 @@ export namespace ConnectionSpec {
     sapcrm?: SapCRMSpec.AsObject,
     airtable?: AirTableSpec.AsObject,
     appwrite?: AirWriteSpec.AsObject,
-    owner: string,
+    owner?: string,
   }
 }
 
 export class ConnectionStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ConnectionStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): ConnectionStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ConnectionStatus;
@@ -1751,9 +2027,13 @@ export class ConnectionStatus extends jspb.Message {
 
   getFailurereason(): string;
   setFailurereason(value: string): ConnectionStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): ConnectionStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): ConnectionStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): ConnectionStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): ConnectionStatus;
@@ -1770,10 +2050,10 @@ export class ConnectionStatus extends jspb.Message {
 
 export namespace ConnectionStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
+    failurereason?: string,
+    failuremessage?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -1781,24 +2061,38 @@ export namespace ConnectionStatus {
 export class CouchbaseSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): CouchbaseSpec;
+  hasHost(): boolean;
+  clearHost(): CouchbaseSpec;
 
   getPort(): number;
   setPort(value: number): CouchbaseSpec;
+  hasPort(): boolean;
+  clearPort(): CouchbaseSpec;
 
   getDatabase(): string;
   setDatabase(value: string): CouchbaseSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): CouchbaseSpec;
 
   getUsername(): string;
   setUsername(value: string): CouchbaseSpec;
+  hasUsername(): boolean;
+  clearUsername(): CouchbaseSpec;
 
   getPassword(): string;
   setPassword(value: string): CouchbaseSpec;
+  hasPassword(): boolean;
+  clearPassword(): CouchbaseSpec;
 
   getDefaultbucket(): string;
   setDefaultbucket(value: string): CouchbaseSpec;
+  hasDefaultbucket(): boolean;
+  clearDefaultbucket(): CouchbaseSpec;
 
   getUrl(): string;
   setUrl(value: string): CouchbaseSpec;
+  hasUrl(): boolean;
+  clearUrl(): CouchbaseSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CouchbaseSpec.AsObject;
@@ -1810,34 +2104,46 @@ export class CouchbaseSpec extends jspb.Message {
 
 export namespace CouchbaseSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    database: string,
-    username: string,
-    password: string,
-    defaultbucket: string,
-    url: string,
+    host?: string,
+    port?: number,
+    database?: string,
+    username?: string,
+    password?: string,
+    defaultbucket?: string,
+    url?: string,
   }
 }
 
 export class DB2Spec extends jspb.Message {
   getHost(): string;
   setHost(value: string): DB2Spec;
+  hasHost(): boolean;
+  clearHost(): DB2Spec;
 
   getPort(): number;
   setPort(value: number): DB2Spec;
+  hasPort(): boolean;
+  clearPort(): DB2Spec;
 
   getKeyspace(): string;
   setKeyspace(value: string): DB2Spec;
+  hasKeyspace(): boolean;
+  clearKeyspace(): DB2Spec;
 
   getUsername(): string;
   setUsername(value: string): DB2Spec;
+  hasUsername(): boolean;
+  clearUsername(): DB2Spec;
 
   getPassword(): string;
   setPassword(value: string): DB2Spec;
+  hasPassword(): boolean;
+  clearPassword(): DB2Spec;
 
   getUrl(): string;
   setUrl(value: string): DB2Spec;
+  hasUrl(): boolean;
+  clearUrl(): DB2Spec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DB2Spec.AsObject;
@@ -1849,30 +2155,40 @@ export class DB2Spec extends jspb.Message {
 
 export namespace DB2Spec {
   export type AsObject = {
-    host: string,
-    port: number,
-    keyspace: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    keyspace?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class DigitalOceanSpec extends jspb.Message {
   getToken(): string;
   setToken(value: string): DigitalOceanSpec;
+  hasToken(): boolean;
+  clearToken(): DigitalOceanSpec;
 
   getAccesskey(): string;
   setAccesskey(value: string): DigitalOceanSpec;
+  hasAccesskey(): boolean;
+  clearAccesskey(): DigitalOceanSpec;
 
   getSecretkey(): string;
   setSecretkey(value: string): DigitalOceanSpec;
+  hasSecretkey(): boolean;
+  clearSecretkey(): DigitalOceanSpec;
 
   getDefaultregion(): string;
   setDefaultregion(value: string): DigitalOceanSpec;
+  hasDefaultregion(): boolean;
+  clearDefaultregion(): DigitalOceanSpec;
 
   getHost(): string;
   setHost(value: string): DigitalOceanSpec;
+  hasHost(): boolean;
+  clearHost(): DigitalOceanSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DigitalOceanSpec.AsObject;
@@ -1884,29 +2200,37 @@ export class DigitalOceanSpec extends jspb.Message {
 
 export namespace DigitalOceanSpec {
   export type AsObject = {
-    token: string,
-    accesskey: string,
-    secretkey: string,
-    defaultregion: string,
-    host: string,
+    token?: string,
+    accesskey?: string,
+    secretkey?: string,
+    defaultregion?: string,
+    host?: string,
   }
 }
 
 export class DiscordSpec extends jspb.Message {
   getUrl(): string;
   setUrl(value: string): DiscordSpec;
+  hasUrl(): boolean;
+  clearUrl(): DiscordSpec;
 
   getContenttype(): string;
   setContenttype(value: string): DiscordSpec;
+  hasContenttype(): boolean;
+  clearContenttype(): DiscordSpec;
 
   getToken(): string;
   setToken(value: string): DiscordSpec;
+  hasToken(): boolean;
+  clearToken(): DiscordSpec;
 
   getHeadersMap(): jspb.Map<string, string>;
   clearHeadersMap(): DiscordSpec;
 
   getSsl(): boolean;
   setSsl(value: boolean): DiscordSpec;
+  hasSsl(): boolean;
+  clearSsl(): DiscordSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DiscordSpec.AsObject;
@@ -1918,32 +2242,44 @@ export class DiscordSpec extends jspb.Message {
 
 export namespace DiscordSpec {
   export type AsObject = {
-    url: string,
-    contenttype: string,
-    token: string,
+    url?: string,
+    contenttype?: string,
+    token?: string,
     headersMap: Array<[string, string]>,
-    ssl: boolean,
+    ssl?: boolean,
   }
 }
 
 export class DremioSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): DremioSpec;
+  hasHost(): boolean;
+  clearHost(): DremioSpec;
 
   getPort(): number;
   setPort(value: number): DremioSpec;
+  hasPort(): boolean;
+  clearPort(): DremioSpec;
 
   getKeyspace(): string;
   setKeyspace(value: string): DremioSpec;
+  hasKeyspace(): boolean;
+  clearKeyspace(): DremioSpec;
 
   getUsername(): string;
   setUsername(value: string): DremioSpec;
+  hasUsername(): boolean;
+  clearUsername(): DremioSpec;
 
   getPassword(): string;
   setPassword(value: string): DremioSpec;
+  hasPassword(): boolean;
+  clearPassword(): DremioSpec;
 
   getUrl(): string;
   setUrl(value: string): DremioSpec;
+  hasUrl(): boolean;
+  clearUrl(): DremioSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DremioSpec.AsObject;
@@ -1955,18 +2291,20 @@ export class DremioSpec extends jspb.Message {
 
 export namespace DremioSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    keyspace: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    keyspace?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class DropboxSpec extends jspb.Message {
   getToken(): string;
   setToken(value: string): DropboxSpec;
+  hasToken(): boolean;
+  clearToken(): DropboxSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DropboxSpec.AsObject;
@@ -1978,28 +2316,40 @@ export class DropboxSpec extends jspb.Message {
 
 export namespace DropboxSpec {
   export type AsObject = {
-    token: string,
+    token?: string,
   }
 }
 
 export class ElasticSearchSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): ElasticSearchSpec;
+  hasHost(): boolean;
+  clearHost(): ElasticSearchSpec;
 
   getPort(): number;
   setPort(value: number): ElasticSearchSpec;
+  hasPort(): boolean;
+  clearPort(): ElasticSearchSpec;
 
   getPrefix(): string;
   setPrefix(value: string): ElasticSearchSpec;
+  hasPrefix(): boolean;
+  clearPrefix(): ElasticSearchSpec;
 
   getUsername(): string;
   setUsername(value: string): ElasticSearchSpec;
+  hasUsername(): boolean;
+  clearUsername(): ElasticSearchSpec;
 
   getPassword(): string;
   setPassword(value: string): ElasticSearchSpec;
+  hasPassword(): boolean;
+  clearPassword(): ElasticSearchSpec;
 
   getUrl(): string;
   setUrl(value: string): ElasticSearchSpec;
+  hasUrl(): boolean;
+  clearUrl(): ElasticSearchSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ElasticSearchSpec.AsObject;
@@ -2011,30 +2361,40 @@ export class ElasticSearchSpec extends jspb.Message {
 
 export namespace ElasticSearchSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    prefix: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    prefix?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class ExasolSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): ExasolSpec;
+  hasHost(): boolean;
+  clearHost(): ExasolSpec;
 
   getPort(): number;
   setPort(value: number): ExasolSpec;
+  hasPort(): boolean;
+  clearPort(): ExasolSpec;
 
   getUsername(): string;
   setUsername(value: string): ExasolSpec;
+  hasUsername(): boolean;
+  clearUsername(): ExasolSpec;
 
   getPassword(): string;
   setPassword(value: string): ExasolSpec;
+  hasPassword(): boolean;
+  clearPassword(): ExasolSpec;
 
   getUrl(): string;
   setUrl(value: string): ExasolSpec;
+  hasUrl(): boolean;
+  clearUrl(): ExasolSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExasolSpec.AsObject;
@@ -2046,32 +2406,44 @@ export class ExasolSpec extends jspb.Message {
 
 export namespace ExasolSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class FTPSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): FTPSpec;
+  hasHost(): boolean;
+  clearHost(): FTPSpec;
 
   getPort(): number;
   setPort(value: number): FTPSpec;
+  hasPort(): boolean;
+  clearPort(): FTPSpec;
 
   getKeyspace(): string;
   setKeyspace(value: string): FTPSpec;
+  hasKeyspace(): boolean;
+  clearKeyspace(): FTPSpec;
 
   getUsername(): string;
   setUsername(value: string): FTPSpec;
+  hasUsername(): boolean;
+  clearUsername(): FTPSpec;
 
   getPassword(): string;
   setPassword(value: string): FTPSpec;
+  hasPassword(): boolean;
+  clearPassword(): FTPSpec;
 
   getUrl(): string;
   setUrl(value: string): FTPSpec;
+  hasUrl(): boolean;
+  clearUrl(): FTPSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FTPSpec.AsObject;
@@ -2083,18 +2455,20 @@ export class FTPSpec extends jspb.Message {
 
 export namespace FTPSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    keyspace: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    keyspace?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class FacebookSpec extends jspb.Message {
   getToken(): string;
   setToken(value: string): FacebookSpec;
+  hasToken(): boolean;
+  clearToken(): FacebookSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FacebookSpec.AsObject;
@@ -2106,13 +2480,15 @@ export class FacebookSpec extends jspb.Message {
 
 export namespace FacebookSpec {
   export type AsObject = {
-    token: string,
+    token?: string,
   }
 }
 
 export class FeatureStoreSpec extends jspb.Message {
   getName(): string;
   setName(value: string): FeatureStoreSpec;
+  hasName(): boolean;
+  clearName(): FeatureStoreSpec;
 
   getConnectionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setConnectionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeatureStoreSpec;
@@ -2129,7 +2505,7 @@ export class FeatureStoreSpec extends jspb.Message {
 
 export namespace FeatureStoreSpec {
   export type AsObject = {
-    name: string,
+    name?: string,
     connectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
@@ -2137,6 +2513,8 @@ export namespace FeatureStoreSpec {
 export class FeatureStoreStatus extends jspb.Message {
   getName(): string;
   setName(value: string): FeatureStoreStatus;
+  hasName(): boolean;
+  clearName(): FeatureStoreStatus;
 
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureStoreStatus;
@@ -2145,9 +2523,13 @@ export class FeatureStoreStatus extends jspb.Message {
 
   getFailurereason(): string;
   setFailurereason(value: string): FeatureStoreStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): FeatureStoreStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): FeatureStoreStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): FeatureStoreStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureStoreStatus.AsObject;
@@ -2159,25 +2541,33 @@ export class FeatureStoreStatus extends jspb.Message {
 
 export namespace FeatureStoreStatus {
   export type AsObject = {
-    name: string,
+    name?: string,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
+    failurereason?: string,
+    failuremessage?: string,
   }
 }
 
 export class FtpSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): FtpSpec;
+  hasHost(): boolean;
+  clearHost(): FtpSpec;
 
   getPort(): number;
   setPort(value: number): FtpSpec;
+  hasPort(): boolean;
+  clearPort(): FtpSpec;
 
   getUsername(): string;
   setUsername(value: string): FtpSpec;
+  hasUsername(): boolean;
+  clearUsername(): FtpSpec;
 
   getPassword(): string;
   setPassword(value: string): FtpSpec;
+  hasPassword(): boolean;
+  clearPassword(): FtpSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FtpSpec.AsObject;
@@ -2189,37 +2579,53 @@ export class FtpSpec extends jspb.Message {
 
 export namespace FtpSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    username: string,
-    password: string,
+    host?: string,
+    port?: number,
+    username?: string,
+    password?: string,
   }
 }
 
 export class GcpBigQuerySpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): GcpBigQuerySpec;
+  hasHost(): boolean;
+  clearHost(): GcpBigQuerySpec;
 
   getPort(): number;
   setPort(value: number): GcpBigQuerySpec;
+  hasPort(): boolean;
+  clearPort(): GcpBigQuerySpec;
 
   getUsername(): string;
   setUsername(value: string): GcpBigQuerySpec;
+  hasUsername(): boolean;
+  clearUsername(): GcpBigQuerySpec;
 
   getPassword(): string;
   setPassword(value: string): GcpBigQuerySpec;
+  hasPassword(): boolean;
+  clearPassword(): GcpBigQuerySpec;
 
   getProjectid(): string;
   setProjectid(value: string): GcpBigQuerySpec;
+  hasProjectid(): boolean;
+  clearProjectid(): GcpBigQuerySpec;
 
   getOauthtype(): string;
   setOauthtype(value: string): GcpBigQuerySpec;
+  hasOauthtype(): boolean;
+  clearOauthtype(): GcpBigQuerySpec;
 
   getServiceaccountkeypath(): string;
   setServiceaccountkeypath(value: string): GcpBigQuerySpec;
+  hasServiceaccountkeypath(): boolean;
+  clearServiceaccountkeypath(): GcpBigQuerySpec;
 
   getUrl(): string;
   setUrl(value: string): GcpBigQuerySpec;
+  hasUrl(): boolean;
+  clearUrl(): GcpBigQuerySpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GcpBigQuerySpec.AsObject;
@@ -2231,35 +2637,47 @@ export class GcpBigQuerySpec extends jspb.Message {
 
 export namespace GcpBigQuerySpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    username: string,
-    password: string,
-    projectid: string,
-    oauthtype: string,
-    serviceaccountkeypath: string,
-    url: string,
+    host?: string,
+    port?: number,
+    username?: string,
+    password?: string,
+    projectid?: string,
+    oauthtype?: string,
+    serviceaccountkeypath?: string,
+    url?: string,
   }
 }
 
 export class GcpSpannerSpec extends jspb.Message {
   getProject(): string;
   setProject(value: string): GcpSpannerSpec;
+  hasProject(): boolean;
+  clearProject(): GcpSpannerSpec;
 
   getInstance(): string;
   setInstance(value: string): GcpSpannerSpec;
+  hasInstance(): boolean;
+  clearInstance(): GcpSpannerSpec;
 
   getUsername(): string;
   setUsername(value: string): GcpSpannerSpec;
+  hasUsername(): boolean;
+  clearUsername(): GcpSpannerSpec;
 
   getPassword(): string;
   setPassword(value: string): GcpSpannerSpec;
+  hasPassword(): boolean;
+  clearPassword(): GcpSpannerSpec;
 
   getDatabase(): string;
   setDatabase(value: string): GcpSpannerSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): GcpSpannerSpec;
 
   getUrl(): string;
   setUrl(value: string): GcpSpannerSpec;
+  hasUrl(): boolean;
+  clearUrl(): GcpSpannerSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GcpSpannerSpec.AsObject;
@@ -2271,21 +2689,25 @@ export class GcpSpannerSpec extends jspb.Message {
 
 export namespace GcpSpannerSpec {
   export type AsObject = {
-    project: string,
-    instance: string,
-    username: string,
-    password: string,
-    database: string,
-    url: string,
+    project?: string,
+    instance?: string,
+    username?: string,
+    password?: string,
+    database?: string,
+    url?: string,
   }
 }
 
 export class GcpStorageSpec extends jspb.Message {
   getKeyfile(): string;
   setKeyfile(value: string): GcpStorageSpec;
+  hasKeyfile(): boolean;
+  clearKeyfile(): GcpStorageSpec;
 
   getProject(): string;
   setProject(value: string): GcpStorageSpec;
+  hasProject(): boolean;
+  clearProject(): GcpStorageSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GcpStorageSpec.AsObject;
@@ -2297,20 +2719,26 @@ export class GcpStorageSpec extends jspb.Message {
 
 export namespace GcpStorageSpec {
   export type AsObject = {
-    keyfile: string,
-    project: string,
+    keyfile?: string,
+    project?: string,
   }
 }
 
 export class GithubSpec extends jspb.Message {
   getToken(): string;
   setToken(value: string): GithubSpec;
+  hasToken(): boolean;
+  clearToken(): GithubSpec;
 
   getUsername(): string;
   setUsername(value: string): GithubSpec;
+  hasUsername(): boolean;
+  clearUsername(): GithubSpec;
 
   getSsh(): string;
   setSsh(value: string): GithubSpec;
+  hasSsh(): boolean;
+  clearSsh(): GithubSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GithubSpec.AsObject;
@@ -2322,18 +2750,22 @@ export class GithubSpec extends jspb.Message {
 
 export namespace GithubSpec {
   export type AsObject = {
-    token: string,
-    username: string,
-    ssh: string,
+    token?: string,
+    username?: string,
+    ssh?: string,
   }
 }
 
 export class GitlabSpec extends jspb.Message {
   getToken(): string;
   setToken(value: string): GitlabSpec;
+  hasToken(): boolean;
+  clearToken(): GitlabSpec;
 
   getSsh(): string;
   setSsh(value: string): GitlabSpec;
+  hasSsh(): boolean;
+  clearSsh(): GitlabSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GitlabSpec.AsObject;
@@ -2345,20 +2777,26 @@ export class GitlabSpec extends jspb.Message {
 
 export namespace GitlabSpec {
   export type AsObject = {
-    token: string,
-    ssh: string,
+    token?: string,
+    ssh?: string,
   }
 }
 
 export class GoogleSheetsSpec extends jspb.Message {
   getScopes(): string;
   setScopes(value: string): GoogleSheetsSpec;
+  hasScopes(): boolean;
+  clearScopes(): GoogleSheetsSpec;
 
   getId(): string;
   setId(value: string): GoogleSheetsSpec;
+  hasId(): boolean;
+  clearId(): GoogleSheetsSpec;
 
   getDatatopull(): string;
   setDatatopull(value: string): GoogleSheetsSpec;
+  hasDatatopull(): boolean;
+  clearDatatopull(): GoogleSheetsSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GoogleSheetsSpec.AsObject;
@@ -2370,30 +2808,42 @@ export class GoogleSheetsSpec extends jspb.Message {
 
 export namespace GoogleSheetsSpec {
   export type AsObject = {
-    scopes: string,
-    id: string,
-    datatopull: string,
+    scopes?: string,
+    id?: string,
+    datatopull?: string,
   }
 }
 
 export class GreenPlumSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): GreenPlumSpec;
+  hasHost(): boolean;
+  clearHost(): GreenPlumSpec;
 
   getPort(): number;
   setPort(value: number): GreenPlumSpec;
+  hasPort(): boolean;
+  clearPort(): GreenPlumSpec;
 
   getDatabase(): string;
   setDatabase(value: string): GreenPlumSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): GreenPlumSpec;
 
   getUsername(): string;
   setUsername(value: string): GreenPlumSpec;
+  hasUsername(): boolean;
+  clearUsername(): GreenPlumSpec;
 
   getPassword(): string;
   setPassword(value: string): GreenPlumSpec;
+  hasPassword(): boolean;
+  clearPassword(): GreenPlumSpec;
 
   getUrl(): string;
   setUrl(value: string): GreenPlumSpec;
+  hasUrl(): boolean;
+  clearUrl(): GreenPlumSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GreenPlumSpec.AsObject;
@@ -2405,21 +2855,25 @@ export class GreenPlumSpec extends jspb.Message {
 
 export namespace GreenPlumSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    database: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    database?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class HetznerSpec extends jspb.Message {
   getToken(): string;
   setToken(value: string): HetznerSpec;
+  hasToken(): boolean;
+  clearToken(): HetznerSpec;
 
   getSsh(): string;
   setSsh(value: string): HetznerSpec;
+  hasSsh(): boolean;
+  clearSsh(): HetznerSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HetznerSpec.AsObject;
@@ -2431,20 +2885,26 @@ export class HetznerSpec extends jspb.Message {
 
 export namespace HetznerSpec {
   export type AsObject = {
-    token: string,
-    ssh: string,
+    token?: string,
+    ssh?: string,
   }
 }
 
 export class HipchatSpec extends jspb.Message {
   getUrl(): string;
   setUrl(value: string): HipchatSpec;
+  hasUrl(): boolean;
+  clearUrl(): HipchatSpec;
 
   getToken(): string;
   setToken(value: string): HipchatSpec;
+  hasToken(): boolean;
+  clearToken(): HipchatSpec;
 
   getRoom(): string;
   setRoom(value: string): HipchatSpec;
+  hasRoom(): boolean;
+  clearRoom(): HipchatSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HipchatSpec.AsObject;
@@ -2456,21 +2916,27 @@ export class HipchatSpec extends jspb.Message {
 
 export namespace HipchatSpec {
   export type AsObject = {
-    url: string,
-    token: string,
-    room: string,
+    url?: string,
+    token?: string,
+    room?: string,
   }
 }
 
 export class ImageRegistrySpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): ImageRegistrySpec;
+  hasHost(): boolean;
+  clearHost(): ImageRegistrySpec;
 
   getUsername(): string;
   setUsername(value: string): ImageRegistrySpec;
+  hasUsername(): boolean;
+  clearUsername(): ImageRegistrySpec;
 
   getPassword(): string;
   setPassword(value: string): ImageRegistrySpec;
+  hasPassword(): boolean;
+  clearPassword(): ImageRegistrySpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ImageRegistrySpec.AsObject;
@@ -2482,30 +2948,42 @@ export class ImageRegistrySpec extends jspb.Message {
 
 export namespace ImageRegistrySpec {
   export type AsObject = {
-    host: string,
-    username: string,
-    password: string,
+    host?: string,
+    username?: string,
+    password?: string,
   }
 }
 
 export class InfluxDBSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): InfluxDBSpec;
+  hasHost(): boolean;
+  clearHost(): InfluxDBSpec;
 
   getPort(): number;
   setPort(value: number): InfluxDBSpec;
+  hasPort(): boolean;
+  clearPort(): InfluxDBSpec;
 
   getDatabase(): string;
   setDatabase(value: string): InfluxDBSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): InfluxDBSpec;
 
   getUsername(): string;
   setUsername(value: string): InfluxDBSpec;
+  hasUsername(): boolean;
+  clearUsername(): InfluxDBSpec;
 
   getPassword(): string;
   setPassword(value: string): InfluxDBSpec;
+  hasPassword(): boolean;
+  clearPassword(): InfluxDBSpec;
 
   getUrl(): string;
   setUrl(value: string): InfluxDBSpec;
+  hasUrl(): boolean;
+  clearUrl(): InfluxDBSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InfluxDBSpec.AsObject;
@@ -2517,33 +2995,45 @@ export class InfluxDBSpec extends jspb.Message {
 
 export namespace InfluxDBSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    database: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    database?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class InformixSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): InformixSpec;
+  hasHost(): boolean;
+  clearHost(): InformixSpec;
 
   getPort(): number;
   setPort(value: number): InformixSpec;
+  hasPort(): boolean;
+  clearPort(): InformixSpec;
 
   getDatabase(): string;
   setDatabase(value: string): InformixSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): InformixSpec;
 
   getUsername(): string;
   setUsername(value: string): InformixSpec;
+  hasUsername(): boolean;
+  clearUsername(): InformixSpec;
 
   getPassword(): string;
   setPassword(value: string): InformixSpec;
+  hasPassword(): boolean;
+  clearPassword(): InformixSpec;
 
   getUrl(): string;
   setUrl(value: string): InformixSpec;
+  hasUrl(): boolean;
+  clearUrl(): InformixSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InformixSpec.AsObject;
@@ -2555,30 +3045,40 @@ export class InformixSpec extends jspb.Message {
 
 export namespace InformixSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    database: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    database?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class IngressSpec extends jspb.Message {
   getFqdn(): string;
   setFqdn(value: string): IngressSpec;
+  hasFqdn(): boolean;
+  clearFqdn(): IngressSpec;
 
   getGrpc(): boolean;
   setGrpc(value: boolean): IngressSpec;
+  hasGrpc(): boolean;
+  clearGrpc(): IngressSpec;
 
   getRest(): boolean;
   setRest(value: boolean): IngressSpec;
+  hasRest(): boolean;
+  clearRest(): IngressSpec;
 
   getIngressclassname(): string;
   setIngressclassname(value: string): IngressSpec;
+  hasIngressclassname(): boolean;
+  clearIngressclassname(): IngressSpec;
 
   getClusterissuername(): string;
   setClusterissuername(value: string): IngressSpec;
+  hasClusterissuername(): boolean;
+  clearClusterissuername(): IngressSpec;
 
   getTlssecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
   setTlssecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): IngressSpec;
@@ -2595,11 +3095,11 @@ export class IngressSpec extends jspb.Message {
 
 export namespace IngressSpec {
   export type AsObject = {
-    fqdn: string,
-    grpc: boolean,
-    rest: boolean,
-    ingressclassname: string,
-    clusterissuername: string,
+    fqdn?: string,
+    grpc?: boolean,
+    rest?: boolean,
+    ingressclassname?: string,
+    clusterissuername?: string,
     tlssecretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
   }
 }
@@ -2607,21 +3107,33 @@ export namespace IngressSpec {
 export class KafkaSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): KafkaSpec;
+  hasHost(): boolean;
+  clearHost(): KafkaSpec;
 
   getPort(): number;
   setPort(value: number): KafkaSpec;
+  hasPort(): boolean;
+  clearPort(): KafkaSpec;
 
   getChannel(): string;
   setChannel(value: string): KafkaSpec;
+  hasChannel(): boolean;
+  clearChannel(): KafkaSpec;
 
   getUsername(): string;
   setUsername(value: string): KafkaSpec;
+  hasUsername(): boolean;
+  clearUsername(): KafkaSpec;
 
   getPassword(): string;
   setPassword(value: string): KafkaSpec;
+  hasPassword(): boolean;
+  clearPassword(): KafkaSpec;
 
   getUrl(): string;
   setUrl(value: string): KafkaSpec;
+  hasUrl(): boolean;
+  clearUrl(): KafkaSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): KafkaSpec.AsObject;
@@ -2633,12 +3145,12 @@ export class KafkaSpec extends jspb.Message {
 
 export namespace KafkaSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    channel: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    channel?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
@@ -2703,6 +3215,8 @@ export namespace LabList {
 export class LabSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): LabSpec;
+  hasDescription(): boolean;
+  clearDescription(): LabSpec;
 
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): LabSpec;
@@ -2721,6 +3235,8 @@ export class LabSpec extends jspb.Message {
 
   getOwner(): string;
   setOwner(value: string): LabSpec;
+  hasOwner(): boolean;
+  clearOwner(): LabSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LabSpec.AsObject;
@@ -2732,17 +3248,19 @@ export class LabSpec extends jspb.Message {
 
 export namespace LabSpec {
   export type AsObject = {
-    description: string,
+    description?: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     limits?: ResourceLimitSpec.AsObject,
     externalcluster?: VirtualClusterSpec.AsObject,
-    owner: string,
+    owner?: string,
   }
 }
 
 export class LabStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): LabStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): LabStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LabStatus;
@@ -2764,7 +3282,7 @@ export class LabStatus extends jspb.Message {
 
 export namespace LabStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
@@ -2836,6 +3354,8 @@ export class LicenseSpec extends jspb.Message {
 
   getEmail(): string;
   setEmail(value: string): LicenseSpec;
+  hasEmail(): boolean;
+  clearEmail(): LicenseSpec;
 
   getTrialstartat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setTrialstartat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LicenseSpec;
@@ -2849,36 +3369,58 @@ export class LicenseSpec extends jspb.Message {
 
   getMaxproducts(): number;
   setMaxproducts(value: number): LicenseSpec;
+  hasMaxproducts(): boolean;
+  clearMaxproducts(): LicenseSpec;
 
   getMaxtrainers(): number;
   setMaxtrainers(value: number): LicenseSpec;
+  hasMaxtrainers(): boolean;
+  clearMaxtrainers(): LicenseSpec;
 
   getMaxservers(): number;
   setMaxservers(value: number): LicenseSpec;
+  hasMaxservers(): boolean;
+  clearMaxservers(): LicenseSpec;
 
   getMaxusers(): number;
   setMaxusers(value: number): LicenseSpec;
+  hasMaxusers(): boolean;
+  clearMaxusers(): LicenseSpec;
 
   getMaxdataplanes(): number;
   setMaxdataplanes(value: number): LicenseSpec;
+  hasMaxdataplanes(): boolean;
+  clearMaxdataplanes(): LicenseSpec;
 
   getForecast(): boolean;
   setForecast(value: boolean): LicenseSpec;
+  hasForecast(): boolean;
+  clearForecast(): LicenseSpec;
 
   getNlp(): boolean;
   setNlp(value: boolean): LicenseSpec;
+  hasNlp(): boolean;
+  clearNlp(): LicenseSpec;
 
   getVision(): boolean;
   setVision(value: boolean): LicenseSpec;
+  hasVision(): boolean;
+  clearVision(): LicenseSpec;
 
   getChatbot(): boolean;
   setChatbot(value: boolean): LicenseSpec;
+  hasChatbot(): boolean;
+  clearChatbot(): LicenseSpec;
 
   getProductname(): string;
   setProductname(value: string): LicenseSpec;
+  hasProductname(): boolean;
+  clearProductname(): LicenseSpec;
 
   getPricename(): string;
   setPricename(value: string): LicenseSpec;
+  hasPricename(): boolean;
+  clearPricename(): LicenseSpec;
 
   getExpireat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setExpireat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LicenseSpec;
@@ -2887,6 +3429,8 @@ export class LicenseSpec extends jspb.Message {
 
   getNotifiername(): string;
   setNotifiername(value: string): LicenseSpec;
+  hasNotifiername(): boolean;
+  clearNotifiername(): LicenseSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LicenseSpec.AsObject;
@@ -2899,22 +3443,22 @@ export class LicenseSpec extends jspb.Message {
 export namespace LicenseSpec {
   export type AsObject = {
     secretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
-    email: string,
+    email?: string,
     trialstartat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     trialendat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    maxproducts: number,
-    maxtrainers: number,
-    maxservers: number,
-    maxusers: number,
-    maxdataplanes: number,
-    forecast: boolean,
-    nlp: boolean,
-    vision: boolean,
-    chatbot: boolean,
-    productname: string,
-    pricename: string,
+    maxproducts?: number,
+    maxtrainers?: number,
+    maxservers?: number,
+    maxusers?: number,
+    maxdataplanes?: number,
+    forecast?: boolean,
+    nlp?: boolean,
+    vision?: boolean,
+    chatbot?: boolean,
+    productname?: string,
+    pricename?: string,
     expireat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    notifiername: string,
+    notifiername?: string,
   }
 }
 
@@ -2926,12 +3470,18 @@ export class LicenseStatus extends jspb.Message {
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): LicenseStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): LicenseStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): LicenseStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): LicenseStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): LicenseStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): LicenseStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): LicenseStatus;
@@ -2949,9 +3499,9 @@ export class LicenseStatus extends jspb.Message {
 export namespace LicenseStatus {
   export type AsObject = {
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    observedgeneration: number,
-    failurereason: string,
-    failuremessage: string,
+    observedgeneration?: number,
+    failurereason?: string,
+    failuremessage?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -2959,6 +3509,8 @@ export namespace LicenseStatus {
 export class LinodeSpec extends jspb.Message {
   getToken(): string;
   setToken(value: string): LinodeSpec;
+  hasToken(): boolean;
+  clearToken(): LinodeSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LinodeSpec.AsObject;
@@ -2970,31 +3522,45 @@ export class LinodeSpec extends jspb.Message {
 
 export namespace LinodeSpec {
   export type AsObject = {
-    token: string,
+    token?: string,
   }
 }
 
 export class MSSqlServerSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): MSSqlServerSpec;
+  hasHost(): boolean;
+  clearHost(): MSSqlServerSpec;
 
   getPort(): number;
   setPort(value: number): MSSqlServerSpec;
+  hasPort(): boolean;
+  clearPort(): MSSqlServerSpec;
 
   getDatabase(): string;
   setDatabase(value: string): MSSqlServerSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): MSSqlServerSpec;
 
   getInstance(): string;
   setInstance(value: string): MSSqlServerSpec;
+  hasInstance(): boolean;
+  clearInstance(): MSSqlServerSpec;
 
   getUsername(): string;
   setUsername(value: string): MSSqlServerSpec;
+  hasUsername(): boolean;
+  clearUsername(): MSSqlServerSpec;
 
   getPassword(): string;
   setPassword(value: string): MSSqlServerSpec;
+  hasPassword(): boolean;
+  clearPassword(): MSSqlServerSpec;
 
   getUrl(): string;
   setUrl(value: string): MSSqlServerSpec;
+  hasUrl(): boolean;
+  clearUrl(): MSSqlServerSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MSSqlServerSpec.AsObject;
@@ -3006,19 +3572,21 @@ export class MSSqlServerSpec extends jspb.Message {
 
 export namespace MSSqlServerSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    database: string,
-    instance: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    database?: string,
+    instance?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class MSTeamSpec extends jspb.Message {
   getWebhook(): string;
   setWebhook(value: string): MSTeamSpec;
+  hasWebhook(): boolean;
+  clearWebhook(): MSTeamSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MSTeamSpec.AsObject;
@@ -3030,19 +3598,25 @@ export class MSTeamSpec extends jspb.Message {
 
 export namespace MSTeamSpec {
   export type AsObject = {
-    webhook: string,
+    webhook?: string,
   }
 }
 
 export class MattermostSpec extends jspb.Message {
   getUrl(): string;
   setUrl(value: string): MattermostSpec;
+  hasUrl(): boolean;
+  clearUrl(): MattermostSpec;
 
   getChannel(): string;
   setChannel(value: string): MattermostSpec;
+  hasChannel(): boolean;
+  clearChannel(): MattermostSpec;
 
   getUsername(): string;
   setUsername(value: string): MattermostSpec;
+  hasUsername(): boolean;
+  clearUsername(): MattermostSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MattermostSpec.AsObject;
@@ -3054,21 +3628,27 @@ export class MattermostSpec extends jspb.Message {
 
 export namespace MattermostSpec {
   export type AsObject = {
-    url: string,
-    channel: string,
-    username: string,
+    url?: string,
+    channel?: string,
+    username?: string,
   }
 }
 
 export class MinioSpec extends jspb.Message {
   getAccesskey(): string;
   setAccesskey(value: string): MinioSpec;
+  hasAccesskey(): boolean;
+  clearAccesskey(): MinioSpec;
 
   getSecretkey(): string;
   setSecretkey(value: string): MinioSpec;
+  hasSecretkey(): boolean;
+  clearSecretkey(): MinioSpec;
 
   getHost(): string;
   setHost(value: string): MinioSpec;
+  hasHost(): boolean;
+  clearHost(): MinioSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MinioSpec.AsObject;
@@ -3080,9 +3660,9 @@ export class MinioSpec extends jspb.Message {
 
 export namespace MinioSpec {
   export type AsObject = {
-    accesskey: string,
-    secretkey: string,
-    host: string,
+    accesskey?: string,
+    secretkey?: string,
+    host?: string,
   }
 }
 
@@ -3147,9 +3727,13 @@ export namespace ModelaSystemList {
 export class ModelaSystemSpec extends jspb.Message {
   getRelease(): string;
   setRelease(value: string): ModelaSystemSpec;
+  hasRelease(): boolean;
+  clearRelease(): ModelaSystemSpec;
 
   getActive(): boolean;
   setActive(value: boolean): ModelaSystemSpec;
+  hasActive(): boolean;
+  clearActive(): ModelaSystemSpec;
 
   getPodtemplate(): k8s_io_api_core_v1_generated_pb.PodTemplateSpec | undefined;
   setPodtemplate(value?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec): ModelaSystemSpec;
@@ -3171,8 +3755,8 @@ export class ModelaSystemSpec extends jspb.Message {
 
 export namespace ModelaSystemSpec {
   export type AsObject = {
-    release: string,
-    active: boolean,
+    release?: string,
+    active?: boolean,
     podtemplate?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
     publishertemplate?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
   }
@@ -3181,15 +3765,23 @@ export namespace ModelaSystemSpec {
 export class ModelaSystemStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelaSystemStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): ModelaSystemStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): ModelaSystemStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): ModelaSystemStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): ModelaSystemStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): ModelaSystemStatus;
 
   getLastrelease(): string;
   setLastrelease(value: string): ModelaSystemStatus;
+  hasLastrelease(): boolean;
+  clearLastrelease(): ModelaSystemStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): ModelaSystemStatus;
@@ -3206,10 +3798,10 @@ export class ModelaSystemStatus extends jspb.Message {
 
 export namespace ModelaSystemStatus {
   export type AsObject = {
-    observedgeneration: number,
-    failurereason: string,
-    failuremessage: string,
-    lastrelease: string,
+    observedgeneration?: number,
+    failurereason?: string,
+    failuremessage?: string,
+    lastrelease?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -3217,21 +3809,33 @@ export namespace ModelaSystemStatus {
 export class MongoDbSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): MongoDbSpec;
+  hasHost(): boolean;
+  clearHost(): MongoDbSpec;
 
   getPort(): number;
   setPort(value: number): MongoDbSpec;
+  hasPort(): boolean;
+  clearPort(): MongoDbSpec;
 
   getDatabase(): string;
   setDatabase(value: string): MongoDbSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): MongoDbSpec;
 
   getUsername(): string;
   setUsername(value: string): MongoDbSpec;
+  hasUsername(): boolean;
+  clearUsername(): MongoDbSpec;
 
   getPassword(): string;
   setPassword(value: string): MongoDbSpec;
+  hasPassword(): boolean;
+  clearPassword(): MongoDbSpec;
 
   getUrl(): string;
   setUrl(value: string): MongoDbSpec;
+  hasUrl(): boolean;
+  clearUrl(): MongoDbSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MongoDbSpec.AsObject;
@@ -3243,33 +3847,45 @@ export class MongoDbSpec extends jspb.Message {
 
 export namespace MongoDbSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    database: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    database?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class MySqlSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): MySqlSpec;
+  hasHost(): boolean;
+  clearHost(): MySqlSpec;
 
   getPort(): number;
   setPort(value: number): MySqlSpec;
+  hasPort(): boolean;
+  clearPort(): MySqlSpec;
 
   getDatabase(): string;
   setDatabase(value: string): MySqlSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): MySqlSpec;
 
   getUsername(): string;
   setUsername(value: string): MySqlSpec;
+  hasUsername(): boolean;
+  clearUsername(): MySqlSpec;
 
   getPassword(): string;
   setPassword(value: string): MySqlSpec;
+  hasPassword(): boolean;
+  clearPassword(): MySqlSpec;
 
   getUrl(): string;
   setUrl(value: string): MySqlSpec;
+  hasUrl(): boolean;
+  clearUrl(): MySqlSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MySqlSpec.AsObject;
@@ -3281,30 +3897,40 @@ export class MySqlSpec extends jspb.Message {
 
 export namespace MySqlSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    database: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    database?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class Neo4JSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): Neo4JSpec;
+  hasHost(): boolean;
+  clearHost(): Neo4JSpec;
 
   getPort(): number;
   setPort(value: number): Neo4JSpec;
+  hasPort(): boolean;
+  clearPort(): Neo4JSpec;
 
   getUsername(): string;
   setUsername(value: string): Neo4JSpec;
+  hasUsername(): boolean;
+  clearUsername(): Neo4JSpec;
 
   getPassword(): string;
   setPassword(value: string): Neo4JSpec;
+  hasPassword(): boolean;
+  clearPassword(): Neo4JSpec;
 
   getUrl(): string;
   setUrl(value: string): Neo4JSpec;
+  hasUrl(): boolean;
+  clearUrl(): Neo4JSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Neo4JSpec.AsObject;
@@ -3316,26 +3942,34 @@ export class Neo4JSpec extends jspb.Message {
 
 export namespace Neo4JSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class NotificationChannelSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): NotificationChannelSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): NotificationChannelSpec;
 
   getConnectionname(): string;
   setConnectionname(value: string): NotificationChannelSpec;
+  hasConnectionname(): boolean;
+  clearConnectionname(): NotificationChannelSpec;
 
   getInfo(): boolean;
   setInfo(value: boolean): NotificationChannelSpec;
+  hasInfo(): boolean;
+  clearInfo(): NotificationChannelSpec;
 
   getError(): boolean;
   setError(value: boolean): NotificationChannelSpec;
+  hasError(): boolean;
+  clearError(): NotificationChannelSpec;
 
   getFrom(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setFrom(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotificationChannelSpec;
@@ -3349,6 +3983,8 @@ export class NotificationChannelSpec extends jspb.Message {
 
   getDestination(): string;
   setDestination(value: string): NotificationChannelSpec;
+  hasDestination(): boolean;
+  clearDestination(): NotificationChannelSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotificationChannelSpec.AsObject;
@@ -3360,13 +3996,13 @@ export class NotificationChannelSpec extends jspb.Message {
 
 export namespace NotificationChannelSpec {
   export type AsObject = {
-    enabled: boolean,
-    connectionname: string,
-    info: boolean,
-    error: boolean,
+    enabled?: boolean,
+    connectionname?: string,
+    info?: boolean,
+    error?: boolean,
     from?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     to?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    destination: string,
+    destination?: string,
   }
 }
 
@@ -3378,9 +4014,13 @@ export class NotificationChannelStatus extends jspb.Message {
 
   getFailurereason(): string;
   setFailurereason(value: string): NotificationChannelStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): NotificationChannelStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): NotificationChannelStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): NotificationChannelStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotificationChannelStatus.AsObject;
@@ -3393,8 +4033,8 @@ export class NotificationChannelStatus extends jspb.Message {
 export namespace NotificationChannelStatus {
   export type AsObject = {
     lastmessageat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
+    failurereason?: string,
+    failuremessage?: string,
   }
 }
 
@@ -3459,6 +4099,8 @@ export namespace NotifierList {
 export class NotifierSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): NotifierSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): NotifierSpec;
 
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): NotifierSpec;
@@ -3467,9 +4109,13 @@ export class NotifierSpec extends jspb.Message {
 
   getDescription(): string;
   setDescription(value: string): NotifierSpec;
+  hasDescription(): boolean;
+  clearDescription(): NotifierSpec;
 
   getOwner(): string;
   setOwner(value: string): NotifierSpec;
+  hasOwner(): boolean;
+  clearOwner(): NotifierSpec;
 
   getChannelsList(): Array<NotificationChannelSpec>;
   setChannelsList(value: Array<NotificationChannelSpec>): NotifierSpec;
@@ -3486,10 +4132,10 @@ export class NotifierSpec extends jspb.Message {
 
 export namespace NotifierSpec {
   export type AsObject = {
-    enabled: boolean,
+    enabled?: boolean,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    description: string,
-    owner: string,
+    description?: string,
+    owner?: string,
     channelsList: Array<NotificationChannelSpec.AsObject>,
   }
 }
@@ -3497,6 +4143,8 @@ export namespace NotifierSpec {
 export class NotifierStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): NotifierStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): NotifierStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotifierStatus;
@@ -3523,7 +4171,7 @@ export class NotifierStatus extends jspb.Message {
 
 export namespace NotifierStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     channelsstatusList: Array<NotificationChannelStatus.AsObject>,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
@@ -3533,6 +4181,8 @@ export namespace NotifierStatus {
 export class OdbcSpec extends jspb.Message {
   getConntectionstring(): string;
   setConntectionstring(value: string): OdbcSpec;
+  hasConntectionstring(): boolean;
+  clearConntectionstring(): OdbcSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OdbcSpec.AsObject;
@@ -3544,25 +4194,35 @@ export class OdbcSpec extends jspb.Message {
 
 export namespace OdbcSpec {
   export type AsObject = {
-    conntectionstring: string,
+    conntectionstring?: string,
   }
 }
 
 export class OpenstackSpec extends jspb.Message {
   getUsername(): string;
   setUsername(value: string): OpenstackSpec;
+  hasUsername(): boolean;
+  clearUsername(): OpenstackSpec;
 
   getTenantname(): string;
   setTenantname(value: string): OpenstackSpec;
+  hasTenantname(): boolean;
+  clearTenantname(): OpenstackSpec;
 
   getPassword(): string;
   setPassword(value: string): OpenstackSpec;
+  hasPassword(): boolean;
+  clearPassword(): OpenstackSpec;
 
   getAuthurl(): string;
   setAuthurl(value: string): OpenstackSpec;
+  hasAuthurl(): boolean;
+  clearAuthurl(): OpenstackSpec;
 
   getRegion(): string;
   setRegion(value: string): OpenstackSpec;
+  hasRegion(): boolean;
+  clearRegion(): OpenstackSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OpenstackSpec.AsObject;
@@ -3574,23 +4234,29 @@ export class OpenstackSpec extends jspb.Message {
 
 export namespace OpenstackSpec {
   export type AsObject = {
-    username: string,
-    tenantname: string,
-    password: string,
-    authurl: string,
-    region: string,
+    username?: string,
+    tenantname?: string,
+    password?: string,
+    authurl?: string,
+    region?: string,
   }
 }
 
 export class OpsgenieSpec extends jspb.Message {
   getApiid(): string;
   setApiid(value: string): OpsgenieSpec;
+  hasApiid(): boolean;
+  clearApiid(): OpsgenieSpec;
 
   getApikey(): string;
   setApikey(value: string): OpsgenieSpec;
+  hasApikey(): boolean;
+  clearApikey(): OpsgenieSpec;
 
   getUrl(): string;
   setUrl(value: string): OpsgenieSpec;
+  hasUrl(): boolean;
+  clearUrl(): OpsgenieSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OpsgenieSpec.AsObject;
@@ -3602,33 +4268,47 @@ export class OpsgenieSpec extends jspb.Message {
 
 export namespace OpsgenieSpec {
   export type AsObject = {
-    apiid: string,
-    apikey: string,
-    url: string,
+    apiid?: string,
+    apikey?: string,
+    url?: string,
   }
 }
 
 export class OracleSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): OracleSpec;
+  hasHost(): boolean;
+  clearHost(): OracleSpec;
 
   getPort(): number;
   setPort(value: number): OracleSpec;
+  hasPort(): boolean;
+  clearPort(): OracleSpec;
 
   getSid(): string;
   setSid(value: string): OracleSpec;
+  hasSid(): boolean;
+  clearSid(): OracleSpec;
 
   getDriver(): string;
   setDriver(value: string): OracleSpec;
+  hasDriver(): boolean;
+  clearDriver(): OracleSpec;
 
   getUsername(): string;
   setUsername(value: string): OracleSpec;
+  hasUsername(): boolean;
+  clearUsername(): OracleSpec;
 
   getPassword(): string;
   setPassword(value: string): OracleSpec;
+  hasPassword(): boolean;
+  clearPassword(): OracleSpec;
 
   getUrl(): string;
   setUrl(value: string): OracleSpec;
+  hasUrl(): boolean;
+  clearUrl(): OracleSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OracleSpec.AsObject;
@@ -3640,28 +4320,36 @@ export class OracleSpec extends jspb.Message {
 
 export namespace OracleSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    sid: string,
-    driver: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    sid?: string,
+    driver?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class OvhSpec extends jspb.Message {
   getEndpoint(): string;
   setEndpoint(value: string): OvhSpec;
+  hasEndpoint(): boolean;
+  clearEndpoint(): OvhSpec;
 
   getApplication(): string;
   setApplication(value: string): OvhSpec;
+  hasApplication(): boolean;
+  clearApplication(): OvhSpec;
 
   getSecret(): string;
   setSecret(value: string): OvhSpec;
+  hasSecret(): boolean;
+  clearSecret(): OvhSpec;
 
   getConsumerkey(): string;
   setConsumerkey(value: string): OvhSpec;
+  hasConsumerkey(): boolean;
+  clearConsumerkey(): OvhSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OvhSpec.AsObject;
@@ -3673,22 +4361,28 @@ export class OvhSpec extends jspb.Message {
 
 export namespace OvhSpec {
   export type AsObject = {
-    endpoint: string,
-    application: string,
-    secret: string,
-    consumerkey: string,
+    endpoint?: string,
+    application?: string,
+    secret?: string,
+    consumerkey?: string,
   }
 }
 
 export class PagerDutySpec extends jspb.Message {
   getApiid(): string;
   setApiid(value: string): PagerDutySpec;
+  hasApiid(): boolean;
+  clearApiid(): PagerDutySpec;
 
   getApikey(): string;
   setApikey(value: string): PagerDutySpec;
+  hasApikey(): boolean;
+  clearApikey(): PagerDutySpec;
 
   getUrl(): string;
   setUrl(value: string): PagerDutySpec;
+  hasUrl(): boolean;
+  clearUrl(): PagerDutySpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PagerDutySpec.AsObject;
@@ -3700,33 +4394,47 @@ export class PagerDutySpec extends jspb.Message {
 
 export namespace PagerDutySpec {
   export type AsObject = {
-    apiid: string,
-    apikey: string,
-    url: string,
+    apiid?: string,
+    apikey?: string,
+    url?: string,
   }
 }
 
 export class PostgresSQLSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): PostgresSQLSpec;
+  hasHost(): boolean;
+  clearHost(): PostgresSQLSpec;
 
   getPort(): number;
   setPort(value: number): PostgresSQLSpec;
+  hasPort(): boolean;
+  clearPort(): PostgresSQLSpec;
 
   getDatabase(): string;
   setDatabase(value: string): PostgresSQLSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): PostgresSQLSpec;
 
   getSchema(): string;
   setSchema(value: string): PostgresSQLSpec;
+  hasSchema(): boolean;
+  clearSchema(): PostgresSQLSpec;
 
   getUsername(): string;
   setUsername(value: string): PostgresSQLSpec;
+  hasUsername(): boolean;
+  clearUsername(): PostgresSQLSpec;
 
   getPassword(): string;
   setPassword(value: string): PostgresSQLSpec;
+  hasPassword(): boolean;
+  clearPassword(): PostgresSQLSpec;
 
   getUrl(): string;
   setUrl(value: string): PostgresSQLSpec;
+  hasUrl(): boolean;
+  clearUrl(): PostgresSQLSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostgresSQLSpec.AsObject;
@@ -3738,37 +4446,51 @@ export class PostgresSQLSpec extends jspb.Message {
 
 export namespace PostgresSQLSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    database: string,
-    schema: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    database?: string,
+    schema?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class PrestoSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): PrestoSpec;
+  hasHost(): boolean;
+  clearHost(): PrestoSpec;
 
   getPort(): number;
   setPort(value: number): PrestoSpec;
+  hasPort(): boolean;
+  clearPort(): PrestoSpec;
 
   getCatalog(): string;
   setCatalog(value: string): PrestoSpec;
+  hasCatalog(): boolean;
+  clearCatalog(): PrestoSpec;
 
   getSchema(): string;
   setSchema(value: string): PrestoSpec;
+  hasSchema(): boolean;
+  clearSchema(): PrestoSpec;
 
   getUsername(): string;
   setUsername(value: string): PrestoSpec;
+  hasUsername(): boolean;
+  clearUsername(): PrestoSpec;
 
   getPassword(): string;
   setPassword(value: string): PrestoSpec;
+  hasPassword(): boolean;
+  clearPassword(): PrestoSpec;
 
   getUrl(): string;
   setUrl(value: string): PrestoSpec;
+  hasUrl(): boolean;
+  clearUrl(): PrestoSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PrestoSpec.AsObject;
@@ -3780,25 +4502,31 @@ export class PrestoSpec extends jspb.Message {
 
 export namespace PrestoSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    catalog: string,
-    schema: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    catalog?: string,
+    schema?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class PushoverSpec extends jspb.Message {
   getApiid(): string;
   setApiid(value: string): PushoverSpec;
+  hasApiid(): boolean;
+  clearApiid(): PushoverSpec;
 
   getApikey(): string;
   setApikey(value: string): PushoverSpec;
+  hasApikey(): boolean;
+  clearApikey(): PushoverSpec;
 
   getUrl(): string;
   setUrl(value: string): PushoverSpec;
+  hasUrl(): boolean;
+  clearUrl(): PushoverSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PushoverSpec.AsObject;
@@ -3810,24 +4538,32 @@ export class PushoverSpec extends jspb.Message {
 
 export namespace PushoverSpec {
   export type AsObject = {
-    apiid: string,
-    apikey: string,
-    url: string,
+    apiid?: string,
+    apikey?: string,
+    url?: string,
   }
 }
 
 export class RabbitMQSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): RabbitMQSpec;
+  hasHost(): boolean;
+  clearHost(): RabbitMQSpec;
 
   getPort(): number;
   setPort(value: number): RabbitMQSpec;
+  hasPort(): boolean;
+  clearPort(): RabbitMQSpec;
 
   getUsername(): string;
   setUsername(value: string): RabbitMQSpec;
+  hasUsername(): boolean;
+  clearUsername(): RabbitMQSpec;
 
   getPassword(): string;
   setPassword(value: string): RabbitMQSpec;
+  hasPassword(): boolean;
+  clearPassword(): RabbitMQSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RabbitMQSpec.AsObject;
@@ -3839,16 +4575,18 @@ export class RabbitMQSpec extends jspb.Message {
 
 export namespace RabbitMQSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    username: string,
-    password: string,
+    host?: string,
+    port?: number,
+    username?: string,
+    password?: string,
   }
 }
 
 export class ResourceLimitSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): ResourceLimitSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): ResourceLimitSpec;
 
   getMaxmem(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
   setMaxmem(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): ResourceLimitSpec;
@@ -3862,9 +4600,13 @@ export class ResourceLimitSpec extends jspb.Message {
 
   getMaxpods(): number;
   setMaxpods(value: number): ResourceLimitSpec;
+  hasMaxpods(): boolean;
+  clearMaxpods(): ResourceLimitSpec;
 
   getMaxpvc(): number;
   setMaxpvc(value: number): ResourceLimitSpec;
+  hasMaxpvc(): boolean;
+  clearMaxpvc(): ResourceLimitSpec;
 
   getQuota(): k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec | undefined;
   setQuota(value?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec): ResourceLimitSpec;
@@ -3886,11 +4628,11 @@ export class ResourceLimitSpec extends jspb.Message {
 
 export namespace ResourceLimitSpec {
   export type AsObject = {
-    enabled: boolean,
+    enabled?: boolean,
     maxmem?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
     maxcpu?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
-    maxpods: number,
-    maxpvc: number,
+    maxpods?: number,
+    maxpvc?: number,
     quota?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec.AsObject,
     limitrange?: k8s_io_api_core_v1_generated_pb.LimitRangeSpec.AsObject,
   }
@@ -3899,6 +4641,8 @@ export namespace ResourceLimitSpec {
 export class RuleSpec extends jspb.Message {
   getResource(): string;
   setResource(value: string): RuleSpec;
+  hasResource(): boolean;
+  clearResource(): RuleSpec;
 
   getVerbsList(): Array<string>;
   setVerbsList(value: Array<string>): RuleSpec;
@@ -3915,7 +4659,7 @@ export class RuleSpec extends jspb.Message {
 
 export namespace RuleSpec {
   export type AsObject = {
-    resource: string,
+    resource?: string,
     verbsList: Array<string>,
   }
 }
@@ -3923,21 +4667,33 @@ export namespace RuleSpec {
 export class SAPHanaSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): SAPHanaSpec;
+  hasHost(): boolean;
+  clearHost(): SAPHanaSpec;
 
   getPort(): number;
   setPort(value: number): SAPHanaSpec;
+  hasPort(): boolean;
+  clearPort(): SAPHanaSpec;
 
   getDatabase(): string;
   setDatabase(value: string): SAPHanaSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): SAPHanaSpec;
 
   getUsername(): string;
   setUsername(value: string): SAPHanaSpec;
+  hasUsername(): boolean;
+  clearUsername(): SAPHanaSpec;
 
   getPassword(): string;
   setPassword(value: string): SAPHanaSpec;
+  hasPassword(): boolean;
+  clearPassword(): SAPHanaSpec;
 
   getUrl(): string;
   setUrl(value: string): SAPHanaSpec;
+  hasUrl(): boolean;
+  clearUrl(): SAPHanaSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SAPHanaSpec.AsObject;
@@ -3949,33 +4705,45 @@ export class SAPHanaSpec extends jspb.Message {
 
 export namespace SAPHanaSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    database: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    database?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class SFTPSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): SFTPSpec;
+  hasHost(): boolean;
+  clearHost(): SFTPSpec;
 
   getPort(): number;
   setPort(value: number): SFTPSpec;
+  hasPort(): boolean;
+  clearPort(): SFTPSpec;
 
   getKeyspace(): string;
   setKeyspace(value: string): SFTPSpec;
+  hasKeyspace(): boolean;
+  clearKeyspace(): SFTPSpec;
 
   getUsername(): string;
   setUsername(value: string): SFTPSpec;
+  hasUsername(): boolean;
+  clearUsername(): SFTPSpec;
 
   getPassword(): string;
   setPassword(value: string): SFTPSpec;
+  hasPassword(): boolean;
+  clearPassword(): SFTPSpec;
 
   getUrl(): string;
   setUrl(value: string): SFTPSpec;
+  hasUrl(): boolean;
+  clearUrl(): SFTPSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SFTPSpec.AsObject;
@@ -3987,27 +4755,35 @@ export class SFTPSpec extends jspb.Message {
 
 export namespace SFTPSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    keyspace: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    keyspace?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class SFtpSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): SFtpSpec;
+  hasHost(): boolean;
+  clearHost(): SFtpSpec;
 
   getPort(): number;
   setPort(value: number): SFtpSpec;
+  hasPort(): boolean;
+  clearPort(): SFtpSpec;
 
   getUsername(): string;
   setUsername(value: string): SFtpSpec;
+  hasUsername(): boolean;
+  clearUsername(): SFtpSpec;
 
   getPassword(): string;
   setPassword(value: string): SFtpSpec;
+  hasPassword(): boolean;
+  clearPassword(): SFtpSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SFtpSpec.AsObject;
@@ -4019,31 +4795,43 @@ export class SFtpSpec extends jspb.Message {
 
 export namespace SFtpSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    username: string,
-    password: string,
+    host?: string,
+    port?: number,
+    username?: string,
+    password?: string,
   }
 }
 
 export class SaleforceSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): SaleforceSpec;
+  hasHost(): boolean;
+  clearHost(): SaleforceSpec;
 
   getPort(): number;
   setPort(value: number): SaleforceSpec;
+  hasPort(): boolean;
+  clearPort(): SaleforceSpec;
 
   getKeyspace(): string;
   setKeyspace(value: string): SaleforceSpec;
+  hasKeyspace(): boolean;
+  clearKeyspace(): SaleforceSpec;
 
   getUsername(): string;
   setUsername(value: string): SaleforceSpec;
+  hasUsername(): boolean;
+  clearUsername(): SaleforceSpec;
 
   getPassword(): string;
   setPassword(value: string): SaleforceSpec;
+  hasPassword(): boolean;
+  clearPassword(): SaleforceSpec;
 
   getUrl(): string;
   setUrl(value: string): SaleforceSpec;
+  hasUrl(): boolean;
+  clearUrl(): SaleforceSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SaleforceSpec.AsObject;
@@ -4055,33 +4843,45 @@ export class SaleforceSpec extends jspb.Message {
 
 export namespace SaleforceSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    keyspace: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    keyspace?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class SapCRMSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): SapCRMSpec;
+  hasHost(): boolean;
+  clearHost(): SapCRMSpec;
 
   getPort(): number;
   setPort(value: number): SapCRMSpec;
+  hasPort(): boolean;
+  clearPort(): SapCRMSpec;
 
   getKeyspace(): string;
   setKeyspace(value: string): SapCRMSpec;
+  hasKeyspace(): boolean;
+  clearKeyspace(): SapCRMSpec;
 
   getUsername(): string;
   setUsername(value: string): SapCRMSpec;
+  hasUsername(): boolean;
+  clearUsername(): SapCRMSpec;
 
   getPassword(): string;
   setPassword(value: string): SapCRMSpec;
+  hasPassword(): boolean;
+  clearPassword(): SapCRMSpec;
 
   getUrl(): string;
   setUrl(value: string): SapCRMSpec;
+  hasUrl(): boolean;
+  clearUrl(): SapCRMSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SapCRMSpec.AsObject;
@@ -4093,18 +4893,20 @@ export class SapCRMSpec extends jspb.Message {
 
 export namespace SapCRMSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    keyspace: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    keyspace?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class Scope extends jspb.Message {
   getName(): string;
   setName(value: string): Scope;
+  hasName(): boolean;
+  clearName(): Scope;
 
   getActionsList(): Array<string>;
   setActionsList(value: Array<string>): Scope;
@@ -4121,7 +4923,7 @@ export class Scope extends jspb.Message {
 
 export namespace Scope {
   export type AsObject = {
-    name: string,
+    name?: string,
     actionsList: Array<string>,
   }
 }
@@ -4187,6 +4989,8 @@ export namespace ServingSiteList {
 export class ServingSiteSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): ServingSiteSpec;
+  hasDescription(): boolean;
+  clearDescription(): ServingSiteSpec;
 
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ServingSiteSpec;
@@ -4210,9 +5014,13 @@ export class ServingSiteSpec extends jspb.Message {
 
   getOwner(): string;
   setOwner(value: string): ServingSiteSpec;
+  hasOwner(): boolean;
+  clearOwner(): ServingSiteSpec;
 
   getStage(): string;
   setStage(value: string): ServingSiteSpec;
+  hasStage(): boolean;
+  clearStage(): ServingSiteSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingSiteSpec.AsObject;
@@ -4224,19 +5032,21 @@ export class ServingSiteSpec extends jspb.Message {
 
 export namespace ServingSiteSpec {
   export type AsObject = {
-    description: string,
+    description?: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     limits?: ResourceLimitSpec.AsObject,
     ingress?: IngressSpec.AsObject,
     externalcluster?: VirtualClusterSpec.AsObject,
-    owner: string,
-    stage: string,
+    owner?: string,
+    stage?: string,
   }
 }
 
 export class ServingSiteStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ServingSiteStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): ServingSiteStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ServingSiteStatus;
@@ -4245,18 +5055,28 @@ export class ServingSiteStatus extends jspb.Message {
 
   getActivepredictors(): number;
   setActivepredictors(value: number): ServingSiteStatus;
+  hasActivepredictors(): boolean;
+  clearActivepredictors(): ServingSiteStatus;
 
   getInactivepredictors(): number;
   setInactivepredictors(value: number): ServingSiteStatus;
+  hasInactivepredictors(): boolean;
+  clearInactivepredictors(): ServingSiteStatus;
 
   getTotalpredictorservicefailed(): number;
   setTotalpredictorservicefailed(value: number): ServingSiteStatus;
+  hasTotalpredictorservicefailed(): boolean;
+  clearTotalpredictorservicefailed(): ServingSiteStatus;
 
   getTotalpredictordatadriftfailed(): number;
   setTotalpredictordatadriftfailed(value: number): ServingSiteStatus;
+  hasTotalpredictordatadriftfailed(): boolean;
+  clearTotalpredictordatadriftfailed(): ServingSiteStatus;
 
   getTotalpredictoraccuracyfailed(): number;
   setTotalpredictoraccuracyfailed(value: number): ServingSiteStatus;
+  hasTotalpredictoraccuracyfailed(): boolean;
+  clearTotalpredictoraccuracyfailed(): ServingSiteStatus;
 
   getDailypredictionscountsList(): Array<number>;
   setDailypredictionscountsList(value: Array<number>): ServingSiteStatus;
@@ -4265,21 +5085,33 @@ export class ServingSiteStatus extends jspb.Message {
 
   getFailurereason(): string;
   setFailurereason(value: string): ServingSiteStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): ServingSiteStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): ServingSiteStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): ServingSiteStatus;
 
   getGrpcingressname(): string;
   setGrpcingressname(value: string): ServingSiteStatus;
+  hasGrpcingressname(): boolean;
+  clearGrpcingressname(): ServingSiteStatus;
 
   getRestingressname(): string;
   setRestingressname(value: string): ServingSiteStatus;
+  hasRestingressname(): boolean;
+  clearRestingressname(): ServingSiteStatus;
 
   getGrpcingressready(): boolean;
   setGrpcingressready(value: boolean): ServingSiteStatus;
+  hasGrpcingressready(): boolean;
+  clearGrpcingressready(): ServingSiteStatus;
 
   getRestingressready(): boolean;
   setRestingressready(value: boolean): ServingSiteStatus;
+  hasRestingressready(): boolean;
+  clearRestingressready(): ServingSiteStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): ServingSiteStatus;
@@ -4296,20 +5128,20 @@ export class ServingSiteStatus extends jspb.Message {
 
 export namespace ServingSiteStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    activepredictors: number,
-    inactivepredictors: number,
-    totalpredictorservicefailed: number,
-    totalpredictordatadriftfailed: number,
-    totalpredictoraccuracyfailed: number,
+    activepredictors?: number,
+    inactivepredictors?: number,
+    totalpredictorservicefailed?: number,
+    totalpredictordatadriftfailed?: number,
+    totalpredictoraccuracyfailed?: number,
     dailypredictionscountsList: Array<number>,
-    failurereason: string,
-    failuremessage: string,
-    grpcingressname: string,
-    restingressname: string,
-    grpcingressready: boolean,
-    restingressready: boolean,
+    failurereason?: string,
+    failuremessage?: string,
+    grpcingressname?: string,
+    restingressname?: string,
+    grpcingressready?: boolean,
+    restingressready?: boolean,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -4317,18 +5149,28 @@ export namespace ServingSiteStatus {
 export class SingleStoreSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): SingleStoreSpec;
+  hasHost(): boolean;
+  clearHost(): SingleStoreSpec;
 
   getPort(): number;
   setPort(value: number): SingleStoreSpec;
+  hasPort(): boolean;
+  clearPort(): SingleStoreSpec;
 
   getUsername(): string;
   setUsername(value: string): SingleStoreSpec;
+  hasUsername(): boolean;
+  clearUsername(): SingleStoreSpec;
 
   getPassword(): string;
   setPassword(value: string): SingleStoreSpec;
+  hasPassword(): boolean;
+  clearPassword(): SingleStoreSpec;
 
   getUrl(): string;
   setUrl(value: string): SingleStoreSpec;
+  hasUrl(): boolean;
+  clearUrl(): SingleStoreSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleStoreSpec.AsObject;
@@ -4340,17 +5182,19 @@ export class SingleStoreSpec extends jspb.Message {
 
 export namespace SingleStoreSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class SlackSpec extends jspb.Message {
   getToken(): string;
   setToken(value: string): SlackSpec;
+  hasToken(): boolean;
+  clearToken(): SlackSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SlackSpec.AsObject;
@@ -4362,40 +5206,60 @@ export class SlackSpec extends jspb.Message {
 
 export namespace SlackSpec {
   export type AsObject = {
-    token: string,
+    token?: string,
   }
 }
 
 export class SmtpSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): SmtpSpec;
+  hasHost(): boolean;
+  clearHost(): SmtpSpec;
 
   getPort(): number;
   setPort(value: number): SmtpSpec;
+  hasPort(): boolean;
+  clearPort(): SmtpSpec;
 
   getHelo(): string;
   setHelo(value: string): SmtpSpec;
+  hasHelo(): boolean;
+  clearHelo(): SmtpSpec;
 
   getEmail(): string;
   setEmail(value: string): SmtpSpec;
+  hasEmail(): boolean;
+  clearEmail(): SmtpSpec;
 
   getSsl(): boolean;
   setSsl(value: boolean): SmtpSpec;
+  hasSsl(): boolean;
+  clearSsl(): SmtpSpec;
 
   getVerifypeer(): boolean;
   setVerifypeer(value: boolean): SmtpSpec;
+  hasVerifypeer(): boolean;
+  clearVerifypeer(): SmtpSpec;
 
   getVerifyhost(): boolean;
   setVerifyhost(value: boolean): SmtpSpec;
+  hasVerifyhost(): boolean;
+  clearVerifyhost(): SmtpSpec;
 
   getPasswordauth(): boolean;
   setPasswordauth(value: boolean): SmtpSpec;
+  hasPasswordauth(): boolean;
+  clearPasswordauth(): SmtpSpec;
 
   getUsername(): string;
   setUsername(value: string): SmtpSpec;
+  hasUsername(): boolean;
+  clearUsername(): SmtpSpec;
 
   getPassword(): string;
   setPassword(value: string): SmtpSpec;
+  hasPassword(): boolean;
+  clearPassword(): SmtpSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SmtpSpec.AsObject;
@@ -4407,46 +5271,64 @@ export class SmtpSpec extends jspb.Message {
 
 export namespace SmtpSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    helo: string,
-    email: string,
-    ssl: boolean,
-    verifypeer: boolean,
-    verifyhost: boolean,
-    passwordauth: boolean,
-    username: string,
-    password: string,
+    host?: string,
+    port?: number,
+    helo?: string,
+    email?: string,
+    ssl?: boolean,
+    verifypeer?: boolean,
+    verifyhost?: boolean,
+    passwordauth?: boolean,
+    username?: string,
+    password?: string,
   }
 }
 
 export class SnowflakeSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): SnowflakeSpec;
+  hasHost(): boolean;
+  clearHost(): SnowflakeSpec;
 
   getPort(): number;
   setPort(value: number): SnowflakeSpec;
+  hasPort(): boolean;
+  clearPort(): SnowflakeSpec;
 
   getUsername(): string;
   setUsername(value: string): SnowflakeSpec;
+  hasUsername(): boolean;
+  clearUsername(): SnowflakeSpec;
 
   getPassword(): string;
   setPassword(value: string): SnowflakeSpec;
+  hasPassword(): boolean;
+  clearPassword(): SnowflakeSpec;
 
   getDatabase(): string;
   setDatabase(value: string): SnowflakeSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): SnowflakeSpec;
 
   getSchema(): string;
   setSchema(value: string): SnowflakeSpec;
+  hasSchema(): boolean;
+  clearSchema(): SnowflakeSpec;
 
   getWarehouse(): string;
   setWarehouse(value: string): SnowflakeSpec;
+  hasWarehouse(): boolean;
+  clearWarehouse(): SnowflakeSpec;
 
   getRole(): string;
   setRole(value: string): SnowflakeSpec;
+  hasRole(): boolean;
+  clearRole(): SnowflakeSpec;
 
   getUrl(): string;
   setUrl(value: string): SnowflakeSpec;
+  hasUrl(): boolean;
+  clearUrl(): SnowflakeSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SnowflakeSpec.AsObject;
@@ -4458,21 +5340,23 @@ export class SnowflakeSpec extends jspb.Message {
 
 export namespace SnowflakeSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    username: string,
-    password: string,
-    database: string,
-    schema: string,
-    warehouse: string,
-    role: string,
-    url: string,
+    host?: string,
+    port?: number,
+    username?: string,
+    password?: string,
+    database?: string,
+    schema?: string,
+    warehouse?: string,
+    role?: string,
+    url?: string,
   }
 }
 
 export class SqliteSpec extends jspb.Message {
   getFilename(): string;
   setFilename(value: string): SqliteSpec;
+  hasFilename(): boolean;
+  clearFilename(): SqliteSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SqliteSpec.AsObject;
@@ -4484,28 +5368,40 @@ export class SqliteSpec extends jspb.Message {
 
 export namespace SqliteSpec {
   export type AsObject = {
-    filename: string,
+    filename?: string,
   }
 }
 
 export class SybaseSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): SybaseSpec;
+  hasHost(): boolean;
+  clearHost(): SybaseSpec;
 
   getPort(): number;
   setPort(value: number): SybaseSpec;
+  hasPort(): boolean;
+  clearPort(): SybaseSpec;
 
   getDatabase(): string;
   setDatabase(value: string): SybaseSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): SybaseSpec;
 
   getUsername(): string;
   setUsername(value: string): SybaseSpec;
+  hasUsername(): boolean;
+  clearUsername(): SybaseSpec;
 
   getPassword(): string;
   setPassword(value: string): SybaseSpec;
+  hasPassword(): boolean;
+  clearPassword(): SybaseSpec;
 
   getUrl(): string;
   setUrl(value: string): SybaseSpec;
+  hasUrl(): boolean;
+  clearUrl(): SybaseSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SybaseSpec.AsObject;
@@ -4517,12 +5413,12 @@ export class SybaseSpec extends jspb.Message {
 
 export namespace SybaseSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    database: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    database?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
@@ -4597,15 +5493,23 @@ export class TenantSpec extends jspb.Message {
 
   getDescription(): string;
   setDescription(value: string): TenantSpec;
+  hasDescription(): boolean;
+  clearDescription(): TenantSpec;
 
   getOwner(): string;
   setOwner(value: string): TenantSpec;
+  hasOwner(): boolean;
+  clearOwner(): TenantSpec;
 
   getBucketname(): string;
   setBucketname(value: string): TenantSpec;
+  hasBucketname(): boolean;
+  clearBucketname(): TenantSpec;
 
   getPath(): string;
   setPath(value: string): TenantSpec;
+  hasPath(): boolean;
+  clearPath(): TenantSpec;
 
   getPermissions(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec | undefined;
   setPermissions(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec): TenantSpec;
@@ -4644,10 +5548,10 @@ export namespace TenantSpec {
   export type AsObject = {
     defaultlab?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     defaultservingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    description: string,
-    owner: string,
-    bucketname: string,
-    path: string,
+    description?: string,
+    owner?: string,
+    bucketname?: string,
+    path?: string,
     permissions?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     online?: FeatureStoreSpec.AsObject,
@@ -4659,6 +5563,8 @@ export namespace TenantSpec {
 export class TenantStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): TenantStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): TenantStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TenantStatus;
@@ -4667,9 +5573,13 @@ export class TenantStatus extends jspb.Message {
 
   getFailurereason(): string;
   setFailurereason(value: string): TenantStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): TenantStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): TenantStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): TenantStatus;
 
   getOnline(): FeatureStoreStatus | undefined;
   setOnline(value?: FeatureStoreStatus): TenantStatus;
@@ -4701,10 +5611,10 @@ export class TenantStatus extends jspb.Message {
 
 export namespace TenantStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
+    failurereason?: string,
+    failuremessage?: string,
     online?: FeatureStoreStatus.AsObject,
     offline?: FeatureStoreStatus.AsObject,
     metrics?: FeatureStoreStatus.AsObject,
@@ -4715,21 +5625,33 @@ export namespace TenantStatus {
 export class TeradataSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): TeradataSpec;
+  hasHost(): boolean;
+  clearHost(): TeradataSpec;
 
   getPort(): number;
   setPort(value: number): TeradataSpec;
+  hasPort(): boolean;
+  clearPort(): TeradataSpec;
 
   getDatabase(): string;
   setDatabase(value: string): TeradataSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): TeradataSpec;
 
   getUsername(): string;
   setUsername(value: string): TeradataSpec;
+  hasUsername(): boolean;
+  clearUsername(): TeradataSpec;
 
   getPassword(): string;
   setPassword(value: string): TeradataSpec;
+  hasPassword(): boolean;
+  clearPassword(): TeradataSpec;
 
   getUrl(): string;
   setUrl(value: string): TeradataSpec;
+  hasUrl(): boolean;
+  clearUrl(): TeradataSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TeradataSpec.AsObject;
@@ -4741,33 +5663,45 @@ export class TeradataSpec extends jspb.Message {
 
 export namespace TeradataSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    database: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    database?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class TimescaleDBSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): TimescaleDBSpec;
+  hasHost(): boolean;
+  clearHost(): TimescaleDBSpec;
 
   getPort(): number;
   setPort(value: number): TimescaleDBSpec;
+  hasPort(): boolean;
+  clearPort(): TimescaleDBSpec;
 
   getKeyspace(): string;
   setKeyspace(value: string): TimescaleDBSpec;
+  hasKeyspace(): boolean;
+  clearKeyspace(): TimescaleDBSpec;
 
   getUsername(): string;
   setUsername(value: string): TimescaleDBSpec;
+  hasUsername(): boolean;
+  clearUsername(): TimescaleDBSpec;
 
   getPassword(): string;
   setPassword(value: string): TimescaleDBSpec;
+  hasPassword(): boolean;
+  clearPassword(): TimescaleDBSpec;
 
   getUrl(): string;
   setUrl(value: string): TimescaleDBSpec;
+  hasUrl(): boolean;
+  clearUrl(): TimescaleDBSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimescaleDBSpec.AsObject;
@@ -4779,18 +5713,20 @@ export class TimescaleDBSpec extends jspb.Message {
 
 export namespace TimescaleDBSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    keyspace: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    keyspace?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class TwitterSpec extends jspb.Message {
   getToken(): string;
   setToken(value: string): TwitterSpec;
+  hasToken(): boolean;
+  clearToken(): TwitterSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TwitterSpec.AsObject;
@@ -4802,7 +5738,7 @@ export class TwitterSpec extends jspb.Message {
 
 export namespace TwitterSpec {
   export type AsObject = {
-    token: string,
+    token?: string,
   }
 }
 
@@ -4866,9 +5802,13 @@ export class UserRoleClassSpec extends jspb.Message {
 
   getDescription(): string;
   setDescription(value: string): UserRoleClassSpec;
+  hasDescription(): boolean;
+  clearDescription(): UserRoleClassSpec;
 
   getOwner(): string;
   setOwner(value: string): UserRoleClassSpec;
+  hasOwner(): boolean;
+  clearOwner(): UserRoleClassSpec;
 
   getRulesList(): Array<RuleSpec>;
   setRulesList(value: Array<RuleSpec>): UserRoleClassSpec;
@@ -4886,8 +5826,8 @@ export class UserRoleClassSpec extends jspb.Message {
 export namespace UserRoleClassSpec {
   export type AsObject = {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    description: string,
-    owner: string,
+    description?: string,
+    owner?: string,
     rulesList: Array<RuleSpec.AsObject>,
   }
 }
@@ -4895,21 +5835,33 @@ export namespace UserRoleClassSpec {
 export class VerticaSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): VerticaSpec;
+  hasHost(): boolean;
+  clearHost(): VerticaSpec;
 
   getPort(): number;
   setPort(value: number): VerticaSpec;
+  hasPort(): boolean;
+  clearPort(): VerticaSpec;
 
   getDatabase(): string;
   setDatabase(value: string): VerticaSpec;
+  hasDatabase(): boolean;
+  clearDatabase(): VerticaSpec;
 
   getUsername(): string;
   setUsername(value: string): VerticaSpec;
+  hasUsername(): boolean;
+  clearUsername(): VerticaSpec;
 
   getPassword(): string;
   setPassword(value: string): VerticaSpec;
+  hasPassword(): boolean;
+  clearPassword(): VerticaSpec;
 
   getUrl(): string;
   setUrl(value: string): VerticaSpec;
+  hasUrl(): boolean;
+  clearUrl(): VerticaSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VerticaSpec.AsObject;
@@ -4921,24 +5873,30 @@ export class VerticaSpec extends jspb.Message {
 
 export namespace VerticaSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    database: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    database?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
 export class VictorOpSpec extends jspb.Message {
   getApiid(): string;
   setApiid(value: string): VictorOpSpec;
+  hasApiid(): boolean;
+  clearApiid(): VictorOpSpec;
 
   getApikey(): string;
   setApikey(value: string): VictorOpSpec;
+  hasApikey(): boolean;
+  clearApikey(): VictorOpSpec;
 
   getUrl(): string;
   setUrl(value: string): VictorOpSpec;
+  hasUrl(): boolean;
+  clearUrl(): VictorOpSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VictorOpSpec.AsObject;
@@ -4950,30 +5908,42 @@ export class VictorOpSpec extends jspb.Message {
 
 export namespace VictorOpSpec {
   export type AsObject = {
-    apiid: string,
-    apikey: string,
-    url: string,
+    apiid?: string,
+    apikey?: string,
+    url?: string,
   }
 }
 
 export class VictoriaMetricsSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): VictoriaMetricsSpec;
+  hasHost(): boolean;
+  clearHost(): VictoriaMetricsSpec;
 
   getPort(): number;
   setPort(value: number): VictoriaMetricsSpec;
+  hasPort(): boolean;
+  clearPort(): VictoriaMetricsSpec;
 
   getKeyspace(): string;
   setKeyspace(value: string): VictoriaMetricsSpec;
+  hasKeyspace(): boolean;
+  clearKeyspace(): VictoriaMetricsSpec;
 
   getUsername(): string;
   setUsername(value: string): VictoriaMetricsSpec;
+  hasUsername(): boolean;
+  clearUsername(): VictoriaMetricsSpec;
 
   getPassword(): string;
   setPassword(value: string): VictoriaMetricsSpec;
+  hasPassword(): boolean;
+  clearPassword(): VictoriaMetricsSpec;
 
   getUrl(): string;
   setUrl(value: string): VictoriaMetricsSpec;
+  hasUrl(): boolean;
+  clearUrl(): VictoriaMetricsSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VictoriaMetricsSpec.AsObject;
@@ -4985,12 +5955,12 @@ export class VictoriaMetricsSpec extends jspb.Message {
 
 export namespace VictoriaMetricsSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    keyspace: string,
-    username: string,
-    password: string,
-    url: string,
+    host?: string,
+    port?: number,
+    keyspace?: string,
+    username?: string,
+    password?: string,
+    url?: string,
   }
 }
 
@@ -5060,18 +6030,28 @@ export class VirtualBucketSpec extends jspb.Message {
 
   getConnectionname(): string;
   setConnectionname(value: string): VirtualBucketSpec;
+  hasConnectionname(): boolean;
+  clearConnectionname(): VirtualBucketSpec;
 
   getDescription(): string;
   setDescription(value: string): VirtualBucketSpec;
+  hasDescription(): boolean;
+  clearDescription(): VirtualBucketSpec;
 
   getOwner(): string;
   setOwner(value: string): VirtualBucketSpec;
+  hasOwner(): boolean;
+  clearOwner(): VirtualBucketSpec;
 
   getRegion(): string;
   setRegion(value: string): VirtualBucketSpec;
+  hasRegion(): boolean;
+  clearRegion(): VirtualBucketSpec;
 
   getVersioning(): boolean;
   setVersioning(value: boolean): VirtualBucketSpec;
+  hasVersioning(): boolean;
+  clearVersioning(): VirtualBucketSpec;
 
   getQuotas(): BucketResourceQuotas | undefined;
   setQuotas(value?: BucketResourceQuotas): VirtualBucketSpec;
@@ -5089,11 +6069,11 @@ export class VirtualBucketSpec extends jspb.Message {
 export namespace VirtualBucketSpec {
   export type AsObject = {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    connectionname: string,
-    description: string,
-    owner: string,
-    region: string,
-    versioning: boolean,
+    connectionname?: string,
+    description?: string,
+    owner?: string,
+    region?: string,
+    versioning?: boolean,
     quotas?: BucketResourceQuotas.AsObject,
   }
 }
@@ -5106,12 +6086,18 @@ export class VirtualBucketStatus extends jspb.Message {
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): VirtualBucketStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): VirtualBucketStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): VirtualBucketStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): VirtualBucketStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): VirtualBucketStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): VirtualBucketStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): VirtualBucketStatus;
@@ -5129,9 +6115,9 @@ export class VirtualBucketStatus extends jspb.Message {
 export namespace VirtualBucketStatus {
   export type AsObject = {
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    observedgeneration: number,
-    failurereason: string,
-    failuremessage: string,
+    observedgeneration?: number,
+    failurereason?: string,
+    failuremessage?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -5139,33 +6125,53 @@ export namespace VirtualBucketStatus {
 export class VirtualClusterSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): VirtualClusterSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): VirtualClusterSpec;
 
   getDescription(): string;
   setDescription(value: string): VirtualClusterSpec;
+  hasDescription(): boolean;
+  clearDescription(): VirtualClusterSpec;
 
   getNodes(): number;
   setNodes(value: number): VirtualClusterSpec;
+  hasNodes(): boolean;
+  clearNodes(): VirtualClusterSpec;
 
   getInstancetype(): string;
   setInstancetype(value: string): VirtualClusterSpec;
+  hasInstancetype(): boolean;
+  clearInstancetype(): VirtualClusterSpec;
 
   getGpus(): number;
   setGpus(value: number): VirtualClusterSpec;
+  hasGpus(): boolean;
+  clearGpus(): VirtualClusterSpec;
 
   getGpuclassname(): string;
   setGpuclassname(value: string): VirtualClusterSpec;
+  hasGpuclassname(): boolean;
+  clearGpuclassname(): VirtualClusterSpec;
 
   getVolumesize(): number;
   setVolumesize(value: number): VirtualClusterSpec;
+  hasVolumesize(): boolean;
+  clearVolumesize(): VirtualClusterSpec;
 
   getSpot(): boolean;
   setSpot(value: boolean): VirtualClusterSpec;
+  hasSpot(): boolean;
+  clearSpot(): VirtualClusterSpec;
 
   getConnectionname(): string;
   setConnectionname(value: string): VirtualClusterSpec;
+  hasConnectionname(): boolean;
+  clearConnectionname(): VirtualClusterSpec;
 
   getOwner(): string;
   setOwner(value: string): VirtualClusterSpec;
+  hasOwner(): boolean;
+  clearOwner(): VirtualClusterSpec;
 
   getLimits(): ResourceLimitSpec | undefined;
   setLimits(value?: ResourceLimitSpec): VirtualClusterSpec;
@@ -5174,21 +6180,33 @@ export class VirtualClusterSpec extends jspb.Message {
 
   getRegion(): string;
   setRegion(value: string): VirtualClusterSpec;
+  hasRegion(): boolean;
+  clearRegion(): VirtualClusterSpec;
 
   getAz(): string;
   setAz(value: string): VirtualClusterSpec;
+  hasAz(): boolean;
+  clearAz(): VirtualClusterSpec;
 
   getKubernetesversion(): string;
   setKubernetesversion(value: string): VirtualClusterSpec;
+  hasKubernetesversion(): boolean;
+  clearKubernetesversion(): VirtualClusterSpec;
 
   getAutoscale(): boolean;
   setAutoscale(value: boolean): VirtualClusterSpec;
+  hasAutoscale(): boolean;
+  clearAutoscale(): VirtualClusterSpec;
 
   getMinnodes(): number;
   setMinnodes(value: number): VirtualClusterSpec;
+  hasMinnodes(): boolean;
+  clearMinnodes(): VirtualClusterSpec;
 
   getMaxnodes(): number;
   setMaxnodes(value: number): VirtualClusterSpec;
+  hasMaxnodes(): boolean;
+  clearMaxnodes(): VirtualClusterSpec;
 
   getCloudref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setCloudref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): VirtualClusterSpec;
@@ -5197,6 +6215,8 @@ export class VirtualClusterSpec extends jspb.Message {
 
   getSshkey(): string;
   setSshkey(value: string): VirtualClusterSpec;
+  hasSshkey(): boolean;
+  clearSshkey(): VirtualClusterSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VirtualClusterSpec.AsObject;
@@ -5208,43 +6228,51 @@ export class VirtualClusterSpec extends jspb.Message {
 
 export namespace VirtualClusterSpec {
   export type AsObject = {
-    enabled: boolean,
-    description: string,
-    nodes: number,
-    instancetype: string,
-    gpus: number,
-    gpuclassname: string,
-    volumesize: number,
-    spot: boolean,
-    connectionname: string,
-    owner: string,
+    enabled?: boolean,
+    description?: string,
+    nodes?: number,
+    instancetype?: string,
+    gpus?: number,
+    gpuclassname?: string,
+    volumesize?: number,
+    spot?: boolean,
+    connectionname?: string,
+    owner?: string,
     limits?: ResourceLimitSpec.AsObject,
-    region: string,
-    az: string,
-    kubernetesversion: string,
-    autoscale: boolean,
-    minnodes: number,
-    maxnodes: number,
+    region?: string,
+    az?: string,
+    kubernetesversion?: string,
+    autoscale?: boolean,
+    minnodes?: number,
+    maxnodes?: number,
     cloudref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    sshkey: string,
+    sshkey?: string,
   }
 }
 
 export class WebhookSpec extends jspb.Message {
   getUrl(): string;
   setUrl(value: string): WebhookSpec;
+  hasUrl(): boolean;
+  clearUrl(): WebhookSpec;
 
   getContenttype(): string;
   setContenttype(value: string): WebhookSpec;
+  hasContenttype(): boolean;
+  clearContenttype(): WebhookSpec;
 
   getToken(): string;
   setToken(value: string): WebhookSpec;
+  hasToken(): boolean;
+  clearToken(): WebhookSpec;
 
   getHeadersMap(): jspb.Map<string, string>;
   clearHeadersMap(): WebhookSpec;
 
   getSsl(): boolean;
   setSsl(value: boolean): WebhookSpec;
+  hasSsl(): boolean;
+  clearSsl(): WebhookSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WebhookSpec.AsObject;
@@ -5256,11 +6284,11 @@ export class WebhookSpec extends jspb.Message {
 
 export namespace WebhookSpec {
   export type AsObject = {
-    url: string,
-    contenttype: string,
-    token: string,
+    url?: string,
+    contenttype?: string,
+    token?: string,
     headersMap: Array<[string, string]>,
-    ssl: boolean,
+    ssl?: boolean,
   }
 }
 

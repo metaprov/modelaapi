@@ -1,0 +1,33 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modelaapi/services/watcherd/v1";
+package github.com.metaprov.modelaapi.services.watcherd.v1;
+
+
+import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto";
+import "k8s.io/api/core/v1/generated.proto";
+
+enum EventType {
+  EVENT_UPDATE = 0;
+  EVENT_DELETE = 1;
+}
+
+service WatcherdService {
+  rpc WatchDataset (WatchDatasetRequest) returns (WatchDatasetResponse) {}
+}
+
+message DatasetEvent {
+  EventType event = 1;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 2;
+}
+
+message WatchDatasetRequest {
+  uint64 generation = 1;
+}
+
+message WatchDatasetResponse {
+  uint64 generation = 1;
+  repeated DatasetEvent events = 2;
+}

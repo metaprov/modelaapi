@@ -7,6 +7,8 @@ import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../.
 export class APIGroup extends jspb.Message {
   getName(): string;
   setName(value: string): APIGroup;
+  hasName(): boolean;
+  clearName(): APIGroup;
 
   getVersionsList(): Array<GroupVersionForDiscovery>;
   setVersionsList(value: Array<GroupVersionForDiscovery>): APIGroup;
@@ -33,7 +35,7 @@ export class APIGroup extends jspb.Message {
 
 export namespace APIGroup {
   export type AsObject = {
-    name: string,
+    name?: string,
     versionsList: Array<GroupVersionForDiscovery.AsObject>,
     preferredversion?: GroupVersionForDiscovery.AsObject,
     serveraddressbyclientcidrsList: Array<ServerAddressByClientCIDR.AsObject>,
@@ -63,21 +65,33 @@ export namespace APIGroupList {
 export class APIResource extends jspb.Message {
   getName(): string;
   setName(value: string): APIResource;
+  hasName(): boolean;
+  clearName(): APIResource;
 
   getSingularname(): string;
   setSingularname(value: string): APIResource;
+  hasSingularname(): boolean;
+  clearSingularname(): APIResource;
 
   getNamespaced(): boolean;
   setNamespaced(value: boolean): APIResource;
+  hasNamespaced(): boolean;
+  clearNamespaced(): APIResource;
 
   getGroup(): string;
   setGroup(value: string): APIResource;
+  hasGroup(): boolean;
+  clearGroup(): APIResource;
 
   getVersion(): string;
   setVersion(value: string): APIResource;
+  hasVersion(): boolean;
+  clearVersion(): APIResource;
 
   getKind(): string;
   setKind(value: string): APIResource;
+  hasKind(): boolean;
+  clearKind(): APIResource;
 
   getVerbs(): Verbs | undefined;
   setVerbs(value?: Verbs): APIResource;
@@ -96,6 +110,8 @@ export class APIResource extends jspb.Message {
 
   getStorageversionhash(): string;
   setStorageversionhash(value: string): APIResource;
+  hasStorageversionhash(): boolean;
+  clearStorageversionhash(): APIResource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): APIResource.AsObject;
@@ -107,22 +123,24 @@ export class APIResource extends jspb.Message {
 
 export namespace APIResource {
   export type AsObject = {
-    name: string,
-    singularname: string,
-    namespaced: boolean,
-    group: string,
-    version: string,
-    kind: string,
+    name?: string,
+    singularname?: string,
+    namespaced?: boolean,
+    group?: string,
+    version?: string,
+    kind?: string,
     verbs?: Verbs.AsObject,
     shortnamesList: Array<string>,
     categoriesList: Array<string>,
-    storageversionhash: string,
+    storageversionhash?: string,
   }
 }
 
 export class APIResourceList extends jspb.Message {
   getGroupversion(): string;
   setGroupversion(value: string): APIResourceList;
+  hasGroupversion(): boolean;
+  clearGroupversion(): APIResourceList;
 
   getResourcesList(): Array<APIResource>;
   setResourcesList(value: Array<APIResource>): APIResourceList;
@@ -139,7 +157,7 @@ export class APIResourceList extends jspb.Message {
 
 export namespace APIResourceList {
   export type AsObject = {
-    groupversion: string,
+    groupversion?: string,
     resourcesList: Array<APIResource.AsObject>,
   }
 }
@@ -178,9 +196,13 @@ export class ApplyOptions extends jspb.Message {
 
   getForce(): boolean;
   setForce(value: boolean): ApplyOptions;
+  hasForce(): boolean;
+  clearForce(): ApplyOptions;
 
   getFieldmanager(): string;
   setFieldmanager(value: string): ApplyOptions;
+  hasFieldmanager(): boolean;
+  clearFieldmanager(): ApplyOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ApplyOptions.AsObject;
@@ -193,20 +215,26 @@ export class ApplyOptions extends jspb.Message {
 export namespace ApplyOptions {
   export type AsObject = {
     dryrunList: Array<string>,
-    force: boolean,
-    fieldmanager: string,
+    force?: boolean,
+    fieldmanager?: string,
   }
 }
 
 export class Condition extends jspb.Message {
   getType(): string;
   setType(value: string): Condition;
+  hasType(): boolean;
+  clearType(): Condition;
 
   getStatus(): string;
   setStatus(value: string): Condition;
+  hasStatus(): boolean;
+  clearStatus(): Condition;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): Condition;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): Condition;
 
   getLasttransitiontime(): Time | undefined;
   setLasttransitiontime(value?: Time): Condition;
@@ -215,9 +243,13 @@ export class Condition extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): Condition;
+  hasReason(): boolean;
+  clearReason(): Condition;
 
   getMessage(): string;
   setMessage(value: string): Condition;
+  hasMessage(): boolean;
+  clearMessage(): Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Condition.AsObject;
@@ -229,12 +261,12 @@ export class Condition extends jspb.Message {
 
 export namespace Condition {
   export type AsObject = {
-    type: string,
-    status: string,
-    observedgeneration: number,
+    type?: string,
+    status?: string,
+    observedgeneration?: number,
     lasttransitiontime?: Time.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
@@ -246,9 +278,13 @@ export class CreateOptions extends jspb.Message {
 
   getFieldmanager(): string;
   setFieldmanager(value: string): CreateOptions;
+  hasFieldmanager(): boolean;
+  clearFieldmanager(): CreateOptions;
 
   getFieldvalidation(): string;
   setFieldvalidation(value: string): CreateOptions;
+  hasFieldvalidation(): boolean;
+  clearFieldvalidation(): CreateOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateOptions.AsObject;
@@ -261,14 +297,16 @@ export class CreateOptions extends jspb.Message {
 export namespace CreateOptions {
   export type AsObject = {
     dryrunList: Array<string>,
-    fieldmanager: string,
-    fieldvalidation: string,
+    fieldmanager?: string,
+    fieldvalidation?: string,
   }
 }
 
 export class DeleteOptions extends jspb.Message {
   getGraceperiodseconds(): number;
   setGraceperiodseconds(value: number): DeleteOptions;
+  hasGraceperiodseconds(): boolean;
+  clearGraceperiodseconds(): DeleteOptions;
 
   getPreconditions(): Preconditions | undefined;
   setPreconditions(value?: Preconditions): DeleteOptions;
@@ -277,9 +315,13 @@ export class DeleteOptions extends jspb.Message {
 
   getOrphandependents(): boolean;
   setOrphandependents(value: boolean): DeleteOptions;
+  hasOrphandependents(): boolean;
+  clearOrphandependents(): DeleteOptions;
 
   getPropagationpolicy(): string;
   setPropagationpolicy(value: string): DeleteOptions;
+  hasPropagationpolicy(): boolean;
+  clearPropagationpolicy(): DeleteOptions;
 
   getDryrunList(): Array<string>;
   setDryrunList(value: Array<string>): DeleteOptions;
@@ -296,10 +338,10 @@ export class DeleteOptions extends jspb.Message {
 
 export namespace DeleteOptions {
   export type AsObject = {
-    graceperiodseconds: number,
+    graceperiodseconds?: number,
     preconditions?: Preconditions.AsObject,
-    orphandependents: boolean,
-    propagationpolicy: string,
+    orphandependents?: boolean,
+    propagationpolicy?: string,
     dryrunList: Array<string>,
   }
 }
@@ -307,6 +349,8 @@ export namespace DeleteOptions {
 export class Duration extends jspb.Message {
   getDuration(): number;
   setDuration(value: number): Duration;
+  hasDuration(): boolean;
+  clearDuration(): Duration;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Duration.AsObject;
@@ -318,7 +362,7 @@ export class Duration extends jspb.Message {
 
 export namespace Duration {
   export type AsObject = {
-    duration: number,
+    duration?: number,
   }
 }
 
@@ -327,6 +371,8 @@ export class FieldsV1 extends jspb.Message {
   getRaw_asU8(): Uint8Array;
   getRaw_asB64(): string;
   setRaw(value: Uint8Array | string): FieldsV1;
+  hasRaw(): boolean;
+  clearRaw(): FieldsV1;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FieldsV1.AsObject;
@@ -338,13 +384,15 @@ export class FieldsV1 extends jspb.Message {
 
 export namespace FieldsV1 {
   export type AsObject = {
-    raw: Uint8Array | string,
+    raw?: Uint8Array | string,
   }
 }
 
 export class GetOptions extends jspb.Message {
   getResourceversion(): string;
   setResourceversion(value: string): GetOptions;
+  hasResourceversion(): boolean;
+  clearResourceversion(): GetOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetOptions.AsObject;
@@ -356,16 +404,20 @@ export class GetOptions extends jspb.Message {
 
 export namespace GetOptions {
   export type AsObject = {
-    resourceversion: string,
+    resourceversion?: string,
   }
 }
 
 export class GroupKind extends jspb.Message {
   getGroup(): string;
   setGroup(value: string): GroupKind;
+  hasGroup(): boolean;
+  clearGroup(): GroupKind;
 
   getKind(): string;
   setKind(value: string): GroupKind;
+  hasKind(): boolean;
+  clearKind(): GroupKind;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GroupKind.AsObject;
@@ -377,17 +429,21 @@ export class GroupKind extends jspb.Message {
 
 export namespace GroupKind {
   export type AsObject = {
-    group: string,
-    kind: string,
+    group?: string,
+    kind?: string,
   }
 }
 
 export class GroupResource extends jspb.Message {
   getGroup(): string;
   setGroup(value: string): GroupResource;
+  hasGroup(): boolean;
+  clearGroup(): GroupResource;
 
   getResource(): string;
   setResource(value: string): GroupResource;
+  hasResource(): boolean;
+  clearResource(): GroupResource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GroupResource.AsObject;
@@ -399,17 +455,21 @@ export class GroupResource extends jspb.Message {
 
 export namespace GroupResource {
   export type AsObject = {
-    group: string,
-    resource: string,
+    group?: string,
+    resource?: string,
   }
 }
 
 export class GroupVersion extends jspb.Message {
   getGroup(): string;
   setGroup(value: string): GroupVersion;
+  hasGroup(): boolean;
+  clearGroup(): GroupVersion;
 
   getVersion(): string;
   setVersion(value: string): GroupVersion;
+  hasVersion(): boolean;
+  clearVersion(): GroupVersion;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GroupVersion.AsObject;
@@ -421,17 +481,21 @@ export class GroupVersion extends jspb.Message {
 
 export namespace GroupVersion {
   export type AsObject = {
-    group: string,
-    version: string,
+    group?: string,
+    version?: string,
   }
 }
 
 export class GroupVersionForDiscovery extends jspb.Message {
   getGroupversion(): string;
   setGroupversion(value: string): GroupVersionForDiscovery;
+  hasGroupversion(): boolean;
+  clearGroupversion(): GroupVersionForDiscovery;
 
   getVersion(): string;
   setVersion(value: string): GroupVersionForDiscovery;
+  hasVersion(): boolean;
+  clearVersion(): GroupVersionForDiscovery;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GroupVersionForDiscovery.AsObject;
@@ -443,20 +507,26 @@ export class GroupVersionForDiscovery extends jspb.Message {
 
 export namespace GroupVersionForDiscovery {
   export type AsObject = {
-    groupversion: string,
-    version: string,
+    groupversion?: string,
+    version?: string,
   }
 }
 
 export class GroupVersionKind extends jspb.Message {
   getGroup(): string;
   setGroup(value: string): GroupVersionKind;
+  hasGroup(): boolean;
+  clearGroup(): GroupVersionKind;
 
   getVersion(): string;
   setVersion(value: string): GroupVersionKind;
+  hasVersion(): boolean;
+  clearVersion(): GroupVersionKind;
 
   getKind(): string;
   setKind(value: string): GroupVersionKind;
+  hasKind(): boolean;
+  clearKind(): GroupVersionKind;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GroupVersionKind.AsObject;
@@ -468,21 +538,27 @@ export class GroupVersionKind extends jspb.Message {
 
 export namespace GroupVersionKind {
   export type AsObject = {
-    group: string,
-    version: string,
-    kind: string,
+    group?: string,
+    version?: string,
+    kind?: string,
   }
 }
 
 export class GroupVersionResource extends jspb.Message {
   getGroup(): string;
   setGroup(value: string): GroupVersionResource;
+  hasGroup(): boolean;
+  clearGroup(): GroupVersionResource;
 
   getVersion(): string;
   setVersion(value: string): GroupVersionResource;
+  hasVersion(): boolean;
+  clearVersion(): GroupVersionResource;
 
   getResource(): string;
   setResource(value: string): GroupVersionResource;
+  hasResource(): boolean;
+  clearResource(): GroupVersionResource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GroupVersionResource.AsObject;
@@ -494,9 +570,9 @@ export class GroupVersionResource extends jspb.Message {
 
 export namespace GroupVersionResource {
   export type AsObject = {
-    group: string,
-    version: string,
-    resource: string,
+    group?: string,
+    version?: string,
+    resource?: string,
   }
 }
 
@@ -527,9 +603,13 @@ export namespace LabelSelector {
 export class LabelSelectorRequirement extends jspb.Message {
   getKey(): string;
   setKey(value: string): LabelSelectorRequirement;
+  hasKey(): boolean;
+  clearKey(): LabelSelectorRequirement;
 
   getOperator(): string;
   setOperator(value: string): LabelSelectorRequirement;
+  hasOperator(): boolean;
+  clearOperator(): LabelSelectorRequirement;
 
   getValuesList(): Array<string>;
   setValuesList(value: Array<string>): LabelSelectorRequirement;
@@ -546,8 +626,8 @@ export class LabelSelectorRequirement extends jspb.Message {
 
 export namespace LabelSelectorRequirement {
   export type AsObject = {
-    key: string,
-    operator: string,
+    key?: string,
+    operator?: string,
     valuesList: Array<string>,
   }
 }
@@ -581,15 +661,23 @@ export namespace List {
 export class ListMeta extends jspb.Message {
   getSelflink(): string;
   setSelflink(value: string): ListMeta;
+  hasSelflink(): boolean;
+  clearSelflink(): ListMeta;
 
   getResourceversion(): string;
   setResourceversion(value: string): ListMeta;
+  hasResourceversion(): boolean;
+  clearResourceversion(): ListMeta;
 
   getContinue(): string;
   setContinue(value: string): ListMeta;
+  hasContinue(): boolean;
+  clearContinue(): ListMeta;
 
   getRemainingitemcount(): number;
   setRemainingitemcount(value: number): ListMeta;
+  hasRemainingitemcount(): boolean;
+  clearRemainingitemcount(): ListMeta;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListMeta.AsObject;
@@ -601,40 +689,58 @@ export class ListMeta extends jspb.Message {
 
 export namespace ListMeta {
   export type AsObject = {
-    selflink: string,
-    resourceversion: string,
-    pb_continue: string,
-    remainingitemcount: number,
+    selflink?: string,
+    resourceversion?: string,
+    pb_continue?: string,
+    remainingitemcount?: number,
   }
 }
 
 export class ListOptions extends jspb.Message {
   getLabelselector(): string;
   setLabelselector(value: string): ListOptions;
+  hasLabelselector(): boolean;
+  clearLabelselector(): ListOptions;
 
   getFieldselector(): string;
   setFieldselector(value: string): ListOptions;
+  hasFieldselector(): boolean;
+  clearFieldselector(): ListOptions;
 
   getWatch(): boolean;
   setWatch(value: boolean): ListOptions;
+  hasWatch(): boolean;
+  clearWatch(): ListOptions;
 
   getAllowwatchbookmarks(): boolean;
   setAllowwatchbookmarks(value: boolean): ListOptions;
+  hasAllowwatchbookmarks(): boolean;
+  clearAllowwatchbookmarks(): ListOptions;
 
   getResourceversion(): string;
   setResourceversion(value: string): ListOptions;
+  hasResourceversion(): boolean;
+  clearResourceversion(): ListOptions;
 
   getResourceversionmatch(): string;
   setResourceversionmatch(value: string): ListOptions;
+  hasResourceversionmatch(): boolean;
+  clearResourceversionmatch(): ListOptions;
 
   getTimeoutseconds(): number;
   setTimeoutseconds(value: number): ListOptions;
+  hasTimeoutseconds(): boolean;
+  clearTimeoutseconds(): ListOptions;
 
   getLimit(): number;
   setLimit(value: number): ListOptions;
+  hasLimit(): boolean;
+  clearLimit(): ListOptions;
 
   getContinue(): string;
   setContinue(value: string): ListOptions;
+  hasContinue(): boolean;
+  clearContinue(): ListOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListOptions.AsObject;
@@ -646,27 +752,33 @@ export class ListOptions extends jspb.Message {
 
 export namespace ListOptions {
   export type AsObject = {
-    labelselector: string,
-    fieldselector: string,
-    watch: boolean,
-    allowwatchbookmarks: boolean,
-    resourceversion: string,
-    resourceversionmatch: string,
-    timeoutseconds: number,
-    limit: number,
-    pb_continue: string,
+    labelselector?: string,
+    fieldselector?: string,
+    watch?: boolean,
+    allowwatchbookmarks?: boolean,
+    resourceversion?: string,
+    resourceversionmatch?: string,
+    timeoutseconds?: number,
+    limit?: number,
+    pb_continue?: string,
   }
 }
 
 export class ManagedFieldsEntry extends jspb.Message {
   getManager(): string;
   setManager(value: string): ManagedFieldsEntry;
+  hasManager(): boolean;
+  clearManager(): ManagedFieldsEntry;
 
   getOperation(): string;
   setOperation(value: string): ManagedFieldsEntry;
+  hasOperation(): boolean;
+  clearOperation(): ManagedFieldsEntry;
 
   getApiversion(): string;
   setApiversion(value: string): ManagedFieldsEntry;
+  hasApiversion(): boolean;
+  clearApiversion(): ManagedFieldsEntry;
 
   getTime(): Time | undefined;
   setTime(value?: Time): ManagedFieldsEntry;
@@ -675,6 +787,8 @@ export class ManagedFieldsEntry extends jspb.Message {
 
   getFieldstype(): string;
   setFieldstype(value: string): ManagedFieldsEntry;
+  hasFieldstype(): boolean;
+  clearFieldstype(): ManagedFieldsEntry;
 
   getFieldsv1(): FieldsV1 | undefined;
   setFieldsv1(value?: FieldsV1): ManagedFieldsEntry;
@@ -683,6 +797,8 @@ export class ManagedFieldsEntry extends jspb.Message {
 
   getSubresource(): string;
   setSubresource(value: string): ManagedFieldsEntry;
+  hasSubresource(): boolean;
+  clearSubresource(): ManagedFieldsEntry;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ManagedFieldsEntry.AsObject;
@@ -694,22 +810,26 @@ export class ManagedFieldsEntry extends jspb.Message {
 
 export namespace ManagedFieldsEntry {
   export type AsObject = {
-    manager: string,
-    operation: string,
-    apiversion: string,
+    manager?: string,
+    operation?: string,
+    apiversion?: string,
     time?: Time.AsObject,
-    fieldstype: string,
+    fieldstype?: string,
     fieldsv1?: FieldsV1.AsObject,
-    subresource: string,
+    subresource?: string,
   }
 }
 
 export class MicroTime extends jspb.Message {
   getSeconds(): number;
   setSeconds(value: number): MicroTime;
+  hasSeconds(): boolean;
+  clearSeconds(): MicroTime;
 
   getNanos(): number;
   setNanos(value: number): MicroTime;
+  hasNanos(): boolean;
+  clearNanos(): MicroTime;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MicroTime.AsObject;
@@ -721,32 +841,46 @@ export class MicroTime extends jspb.Message {
 
 export namespace MicroTime {
   export type AsObject = {
-    seconds: number,
-    nanos: number,
+    seconds?: number,
+    nanos?: number,
   }
 }
 
 export class ObjectMeta extends jspb.Message {
   getName(): string;
   setName(value: string): ObjectMeta;
+  hasName(): boolean;
+  clearName(): ObjectMeta;
 
   getGeneratename(): string;
   setGeneratename(value: string): ObjectMeta;
+  hasGeneratename(): boolean;
+  clearGeneratename(): ObjectMeta;
 
   getNamespace(): string;
   setNamespace(value: string): ObjectMeta;
+  hasNamespace(): boolean;
+  clearNamespace(): ObjectMeta;
 
   getSelflink(): string;
   setSelflink(value: string): ObjectMeta;
+  hasSelflink(): boolean;
+  clearSelflink(): ObjectMeta;
 
   getUid(): string;
   setUid(value: string): ObjectMeta;
+  hasUid(): boolean;
+  clearUid(): ObjectMeta;
 
   getResourceversion(): string;
   setResourceversion(value: string): ObjectMeta;
+  hasResourceversion(): boolean;
+  clearResourceversion(): ObjectMeta;
 
   getGeneration(): number;
   setGeneration(value: number): ObjectMeta;
+  hasGeneration(): boolean;
+  clearGeneration(): ObjectMeta;
 
   getCreationtimestamp(): Time | undefined;
   setCreationtimestamp(value?: Time): ObjectMeta;
@@ -760,6 +894,8 @@ export class ObjectMeta extends jspb.Message {
 
   getDeletiongraceperiodseconds(): number;
   setDeletiongraceperiodseconds(value: number): ObjectMeta;
+  hasDeletiongraceperiodseconds(): boolean;
+  clearDeletiongraceperiodseconds(): ObjectMeta;
 
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ObjectMeta;
@@ -779,6 +915,8 @@ export class ObjectMeta extends jspb.Message {
 
   getClustername(): string;
   setClustername(value: string): ObjectMeta;
+  hasClustername(): boolean;
+  clearClustername(): ObjectMeta;
 
   getManagedfieldsList(): Array<ManagedFieldsEntry>;
   setManagedfieldsList(value: Array<ManagedFieldsEntry>): ObjectMeta;
@@ -795,21 +933,21 @@ export class ObjectMeta extends jspb.Message {
 
 export namespace ObjectMeta {
   export type AsObject = {
-    name: string,
-    generatename: string,
-    namespace: string,
-    selflink: string,
-    uid: string,
-    resourceversion: string,
-    generation: number,
+    name?: string,
+    generatename?: string,
+    namespace?: string,
+    selflink?: string,
+    uid?: string,
+    resourceversion?: string,
+    generation?: number,
     creationtimestamp?: Time.AsObject,
     deletiontimestamp?: Time.AsObject,
-    deletiongraceperiodseconds: number,
+    deletiongraceperiodseconds?: number,
     labelsMap: Array<[string, string]>,
     annotationsMap: Array<[string, string]>,
     ownerreferencesList: Array<OwnerReference.AsObject>,
     finalizersList: Array<string>,
-    clustername: string,
+    clustername?: string,
     managedfieldsList: Array<ManagedFieldsEntry.AsObject>,
   }
 }
@@ -817,21 +955,33 @@ export namespace ObjectMeta {
 export class OwnerReference extends jspb.Message {
   getApiversion(): string;
   setApiversion(value: string): OwnerReference;
+  hasApiversion(): boolean;
+  clearApiversion(): OwnerReference;
 
   getKind(): string;
   setKind(value: string): OwnerReference;
+  hasKind(): boolean;
+  clearKind(): OwnerReference;
 
   getName(): string;
   setName(value: string): OwnerReference;
+  hasName(): boolean;
+  clearName(): OwnerReference;
 
   getUid(): string;
   setUid(value: string): OwnerReference;
+  hasUid(): boolean;
+  clearUid(): OwnerReference;
 
   getController(): boolean;
   setController(value: boolean): OwnerReference;
+  hasController(): boolean;
+  clearController(): OwnerReference;
 
   getBlockownerdeletion(): boolean;
   setBlockownerdeletion(value: boolean): OwnerReference;
+  hasBlockownerdeletion(): boolean;
+  clearBlockownerdeletion(): OwnerReference;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OwnerReference.AsObject;
@@ -843,12 +993,12 @@ export class OwnerReference extends jspb.Message {
 
 export namespace OwnerReference {
   export type AsObject = {
-    apiversion: string,
-    kind: string,
-    name: string,
-    uid: string,
-    controller: boolean,
-    blockownerdeletion: boolean,
+    apiversion?: string,
+    kind?: string,
+    name?: string,
+    uid?: string,
+    controller?: boolean,
+    blockownerdeletion?: boolean,
   }
 }
 
@@ -920,12 +1070,18 @@ export class PatchOptions extends jspb.Message {
 
   getForce(): boolean;
   setForce(value: boolean): PatchOptions;
+  hasForce(): boolean;
+  clearForce(): PatchOptions;
 
   getFieldmanager(): string;
   setFieldmanager(value: string): PatchOptions;
+  hasFieldmanager(): boolean;
+  clearFieldmanager(): PatchOptions;
 
   getFieldvalidation(): string;
   setFieldvalidation(value: string): PatchOptions;
+  hasFieldvalidation(): boolean;
+  clearFieldvalidation(): PatchOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchOptions.AsObject;
@@ -938,18 +1094,22 @@ export class PatchOptions extends jspb.Message {
 export namespace PatchOptions {
   export type AsObject = {
     dryrunList: Array<string>,
-    force: boolean,
-    fieldmanager: string,
-    fieldvalidation: string,
+    force?: boolean,
+    fieldmanager?: string,
+    fieldvalidation?: string,
   }
 }
 
 export class Preconditions extends jspb.Message {
   getUid(): string;
   setUid(value: string): Preconditions;
+  hasUid(): boolean;
+  clearUid(): Preconditions;
 
   getResourceversion(): string;
   setResourceversion(value: string): Preconditions;
+  hasResourceversion(): boolean;
+  clearResourceversion(): Preconditions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Preconditions.AsObject;
@@ -961,8 +1121,8 @@ export class Preconditions extends jspb.Message {
 
 export namespace Preconditions {
   export type AsObject = {
-    uid: string,
-    resourceversion: string,
+    uid?: string,
+    resourceversion?: string,
   }
 }
 
@@ -989,9 +1149,13 @@ export namespace RootPaths {
 export class ServerAddressByClientCIDR extends jspb.Message {
   getClientcidr(): string;
   setClientcidr(value: string): ServerAddressByClientCIDR;
+  hasClientcidr(): boolean;
+  clearClientcidr(): ServerAddressByClientCIDR;
 
   getServeraddress(): string;
   setServeraddress(value: string): ServerAddressByClientCIDR;
+  hasServeraddress(): boolean;
+  clearServeraddress(): ServerAddressByClientCIDR;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServerAddressByClientCIDR.AsObject;
@@ -1003,8 +1167,8 @@ export class ServerAddressByClientCIDR extends jspb.Message {
 
 export namespace ServerAddressByClientCIDR {
   export type AsObject = {
-    clientcidr: string,
-    serveraddress: string,
+    clientcidr?: string,
+    serveraddress?: string,
   }
 }
 
@@ -1016,12 +1180,18 @@ export class Status extends jspb.Message {
 
   getStatus(): string;
   setStatus(value: string): Status;
+  hasStatus(): boolean;
+  clearStatus(): Status;
 
   getMessage(): string;
   setMessage(value: string): Status;
+  hasMessage(): boolean;
+  clearMessage(): Status;
 
   getReason(): string;
   setReason(value: string): Status;
+  hasReason(): boolean;
+  clearReason(): Status;
 
   getDetails(): StatusDetails | undefined;
   setDetails(value?: StatusDetails): Status;
@@ -1030,6 +1200,8 @@ export class Status extends jspb.Message {
 
   getCode(): number;
   setCode(value: number): Status;
+  hasCode(): boolean;
+  clearCode(): Status;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Status.AsObject;
@@ -1042,23 +1214,29 @@ export class Status extends jspb.Message {
 export namespace Status {
   export type AsObject = {
     metadata?: ListMeta.AsObject,
-    status: string,
-    message: string,
-    reason: string,
+    status?: string,
+    message?: string,
+    reason?: string,
     details?: StatusDetails.AsObject,
-    code: number,
+    code?: number,
   }
 }
 
 export class StatusCause extends jspb.Message {
   getReason(): string;
   setReason(value: string): StatusCause;
+  hasReason(): boolean;
+  clearReason(): StatusCause;
 
   getMessage(): string;
   setMessage(value: string): StatusCause;
+  hasMessage(): boolean;
+  clearMessage(): StatusCause;
 
   getField(): string;
   setField(value: string): StatusCause;
+  hasField(): boolean;
+  clearField(): StatusCause;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StatusCause.AsObject;
@@ -1070,24 +1248,32 @@ export class StatusCause extends jspb.Message {
 
 export namespace StatusCause {
   export type AsObject = {
-    reason: string,
-    message: string,
-    field: string,
+    reason?: string,
+    message?: string,
+    field?: string,
   }
 }
 
 export class StatusDetails extends jspb.Message {
   getName(): string;
   setName(value: string): StatusDetails;
+  hasName(): boolean;
+  clearName(): StatusDetails;
 
   getGroup(): string;
   setGroup(value: string): StatusDetails;
+  hasGroup(): boolean;
+  clearGroup(): StatusDetails;
 
   getKind(): string;
   setKind(value: string): StatusDetails;
+  hasKind(): boolean;
+  clearKind(): StatusDetails;
 
   getUid(): string;
   setUid(value: string): StatusDetails;
+  hasUid(): boolean;
+  clearUid(): StatusDetails;
 
   getCausesList(): Array<StatusCause>;
   setCausesList(value: Array<StatusCause>): StatusDetails;
@@ -1096,6 +1282,8 @@ export class StatusDetails extends jspb.Message {
 
   getRetryafterseconds(): number;
   setRetryafterseconds(value: number): StatusDetails;
+  hasRetryafterseconds(): boolean;
+  clearRetryafterseconds(): StatusDetails;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StatusDetails.AsObject;
@@ -1107,18 +1295,20 @@ export class StatusDetails extends jspb.Message {
 
 export namespace StatusDetails {
   export type AsObject = {
-    name: string,
-    group: string,
-    kind: string,
-    uid: string,
+    name?: string,
+    group?: string,
+    kind?: string,
+    uid?: string,
     causesList: Array<StatusCause.AsObject>,
-    retryafterseconds: number,
+    retryafterseconds?: number,
   }
 }
 
 export class TableOptions extends jspb.Message {
   getIncludeobject(): string;
   setIncludeobject(value: string): TableOptions;
+  hasIncludeobject(): boolean;
+  clearIncludeobject(): TableOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TableOptions.AsObject;
@@ -1130,16 +1320,20 @@ export class TableOptions extends jspb.Message {
 
 export namespace TableOptions {
   export type AsObject = {
-    includeobject: string,
+    includeobject?: string,
   }
 }
 
 export class Time extends jspb.Message {
   getSeconds(): number;
   setSeconds(value: number): Time;
+  hasSeconds(): boolean;
+  clearSeconds(): Time;
 
   getNanos(): number;
   setNanos(value: number): Time;
+  hasNanos(): boolean;
+  clearNanos(): Time;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Time.AsObject;
@@ -1151,17 +1345,21 @@ export class Time extends jspb.Message {
 
 export namespace Time {
   export type AsObject = {
-    seconds: number,
-    nanos: number,
+    seconds?: number,
+    nanos?: number,
   }
 }
 
 export class Timestamp extends jspb.Message {
   getSeconds(): number;
   setSeconds(value: number): Timestamp;
+  hasSeconds(): boolean;
+  clearSeconds(): Timestamp;
 
   getNanos(): number;
   setNanos(value: number): Timestamp;
+  hasNanos(): boolean;
+  clearNanos(): Timestamp;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Timestamp.AsObject;
@@ -1173,17 +1371,21 @@ export class Timestamp extends jspb.Message {
 
 export namespace Timestamp {
   export type AsObject = {
-    seconds: number,
-    nanos: number,
+    seconds?: number,
+    nanos?: number,
   }
 }
 
 export class TypeMeta extends jspb.Message {
   getKind(): string;
   setKind(value: string): TypeMeta;
+  hasKind(): boolean;
+  clearKind(): TypeMeta;
 
   getApiversion(): string;
   setApiversion(value: string): TypeMeta;
+  hasApiversion(): boolean;
+  clearApiversion(): TypeMeta;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TypeMeta.AsObject;
@@ -1195,8 +1397,8 @@ export class TypeMeta extends jspb.Message {
 
 export namespace TypeMeta {
   export type AsObject = {
-    kind: string,
-    apiversion: string,
+    kind?: string,
+    apiversion?: string,
   }
 }
 
@@ -1208,9 +1410,13 @@ export class UpdateOptions extends jspb.Message {
 
   getFieldmanager(): string;
   setFieldmanager(value: string): UpdateOptions;
+  hasFieldmanager(): boolean;
+  clearFieldmanager(): UpdateOptions;
 
   getFieldvalidation(): string;
   setFieldvalidation(value: string): UpdateOptions;
+  hasFieldvalidation(): boolean;
+  clearFieldvalidation(): UpdateOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateOptions.AsObject;
@@ -1223,8 +1429,8 @@ export class UpdateOptions extends jspb.Message {
 export namespace UpdateOptions {
   export type AsObject = {
     dryrunList: Array<string>,
-    fieldmanager: string,
-    fieldvalidation: string,
+    fieldmanager?: string,
+    fieldvalidation?: string,
   }
 }
 
@@ -1251,6 +1457,8 @@ export namespace Verbs {
 export class WatchEvent extends jspb.Message {
   getType(): string;
   setType(value: string): WatchEvent;
+  hasType(): boolean;
+  clearType(): WatchEvent;
 
   getObject(): k8s_io_apimachinery_pkg_runtime_generated_pb.RawExtension | undefined;
   setObject(value?: k8s_io_apimachinery_pkg_runtime_generated_pb.RawExtension): WatchEvent;
@@ -1267,7 +1475,7 @@ export class WatchEvent extends jspb.Message {
 
 export namespace WatchEvent {
   export type AsObject = {
-    type: string,
+    type?: string,
     object?: k8s_io_apimachinery_pkg_runtime_generated_pb.RawExtension.AsObject,
   }
 }

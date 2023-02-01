@@ -34,11 +34,9 @@ APIMACHINERY_PKGS=(
 )
 
 find  ${PROJECT_ROOT}/services -type f -name '*.pb.go' -delete
-go mod vendor
-mv ${PROJECT_ROOT}/vendor /tmp/includes
 
 $GOPATH/bin/go-to-protobuf \
-    --proto-import "/tmp/includes,${PROJECT_ROOT}/common-protos" \
+    --proto-import "${PROJECT_ROOT}/vendor,${PROJECT_ROOT}/common-protos" \
     --go-header-file ${PROJECT_ROOT}/hack/custom-boilerplate.go.txt \
      --packages=$(IFS=, ; echo "${PACKAGES[*]}") \
     --apimachinery-packages=$(IFS=, ; echo "${APIMACHINERY_PKGS[*]}") \

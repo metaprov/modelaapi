@@ -159,7 +159,7 @@ func (model Model) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "training.modela.ai", Kind: "dModel"},
+		schema.GroupKind{Group: "training.modela.ai", Kind: "Model"},
 		model.Name, allErrs)
 }
 

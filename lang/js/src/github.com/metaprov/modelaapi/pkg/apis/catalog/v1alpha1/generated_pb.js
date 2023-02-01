@@ -2,24 +2,15 @@
 /**
  * @fileoverview
  * @enhanceable
- * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
-/* eslint-disable */
-// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() {
-  if (this) { return this; }
-  if (typeof window !== 'undefined') { return window; }
-  if (typeof global !== 'undefined') { return global; }
-  if (typeof self !== 'undefined') { return self; }
-  return Function('return this')();
-}.call(null));
+var global = Function('return this')();
 
 var k8s_io_api_core_v1_generated_pb = require('../../../../../../../k8s.io/api/core/v1/generated_pb.js');
 goog.object.extend(proto, k8s_io_api_core_v1_generated_pb);
@@ -7623,20 +7614,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.dese
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addBins(values[i]);
-      }
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.addBins(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.addCategories(value);
       break;
     case 3:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addCounts(values[i]);
-      }
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.addCounts(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
@@ -16662,7 +16649,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumptio
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumption.toObject = function(includeInstance, msg) {
   var f, obj = {
     cpu: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    mem: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    memory: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     gpu: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
@@ -16701,15 +16688,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumptio
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {number} */ (reader.readUint64());
       msg.setCpu(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setMem(value);
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setMemory(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {number} */ (reader.readUint64());
       msg.setGpu(value);
       break;
     default:
@@ -16743,21 +16730,21 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumptio
   var f = undefined;
   f = /** @type {number} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeInt64(
+    writer.writeUint64(
       1,
       f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeInt64(
+    writer.writeUint64(
       2,
       f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeInt64(
+    writer.writeUint64(
       3,
       f
     );
@@ -16766,7 +16753,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumptio
 
 
 /**
- * optional int64 cpu = 1;
+ * optional uint64 cpu = 1;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumption.prototype.getCpu = function() {
@@ -16802,10 +16789,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumptio
 
 
 /**
- * optional int64 mem = 2;
+ * optional uint64 memory = 2;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumption.prototype.getMem = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumption.prototype.getMemory = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -16814,7 +16801,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumptio
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumption} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumption.prototype.setMem = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumption.prototype.setMemory = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -16823,7 +16810,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumptio
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumption} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumption.prototype.clearMem = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumption.prototype.clearMemory = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -16832,13 +16819,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumptio
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumption.prototype.hasMem = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumption.prototype.hasMemory = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional int64 gpu = 3;
+ * optional uint64 gpu = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumption.prototype.getGpu = function() {

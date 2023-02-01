@@ -298,12 +298,18 @@ export namespace RoleList {
 export class RoleRef extends jspb.Message {
   getApigroup(): string;
   setApigroup(value: string): RoleRef;
+  hasApigroup(): boolean;
+  clearApigroup(): RoleRef;
 
   getKind(): string;
   setKind(value: string): RoleRef;
+  hasKind(): boolean;
+  clearKind(): RoleRef;
 
   getName(): string;
   setName(value: string): RoleRef;
+  hasName(): boolean;
+  clearName(): RoleRef;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RoleRef.AsObject;
@@ -315,24 +321,32 @@ export class RoleRef extends jspb.Message {
 
 export namespace RoleRef {
   export type AsObject = {
-    apigroup: string,
-    kind: string,
-    name: string,
+    apigroup?: string,
+    kind?: string,
+    name?: string,
   }
 }
 
 export class Subject extends jspb.Message {
   getKind(): string;
   setKind(value: string): Subject;
+  hasKind(): boolean;
+  clearKind(): Subject;
 
   getApigroup(): string;
   setApigroup(value: string): Subject;
+  hasApigroup(): boolean;
+  clearApigroup(): Subject;
 
   getName(): string;
   setName(value: string): Subject;
+  hasName(): boolean;
+  clearName(): Subject;
 
   getNamespace(): string;
   setNamespace(value: string): Subject;
+  hasNamespace(): boolean;
+  clearNamespace(): Subject;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Subject.AsObject;
@@ -344,10 +358,10 @@ export class Subject extends jspb.Message {
 
 export namespace Subject {
   export type AsObject = {
-    kind: string,
-    apigroup: string,
-    name: string,
-    namespace: string,
+    kind?: string,
+    apigroup?: string,
+    name?: string,
+    namespace?: string,
   }
 }
 

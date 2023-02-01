@@ -18,7 +18,6 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1";
-// PKG
 
 // Define a single custom search spec for a single alg
 message AlgorithmParameterRange {

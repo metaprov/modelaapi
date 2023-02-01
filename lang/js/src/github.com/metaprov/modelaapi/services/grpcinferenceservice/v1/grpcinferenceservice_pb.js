@@ -2,24 +2,15 @@
 /**
  * @fileoverview
  * @enhanceable
- * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
-/* eslint-disable */
-// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() {
-  if (this) { return this; }
-  if (typeof window !== 'undefined') { return window; }
-  if (typeof global !== 'undefined') { return global; }
-  if (typeof self !== 'undefined') { return self; }
-  return Function('return this')();
-}.call(null));
+var global = Function('return this')();
 
 var protoc$gen$swagger_options_annotations_pb = require('../../../../../../protoc-gen-swagger/options/annotations_pb.js');
 goog.object.extend(proto, protoc$gen$swagger_options_annotations_pb);
@@ -2445,10 +2436,8 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetada
       msg.setDatatype(value);
       break;
     case 3:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addShape(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedInt64());
+      msg.setShapeList(value);
       break;
     default:
       reader.skipField();
@@ -3010,10 +2999,8 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferR
       msg.setDatatype(value);
       break;
     case 3:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addShape(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedInt64());
+      msg.setShapeList(value);
       break;
     case 4:
       var value = msg.getParametersMap();
@@ -3869,10 +3856,8 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferR
       msg.setDatatype(value);
       break;
     case 3:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addShape(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedInt64());
+      msg.setShapeList(value);
       break;
     case 4:
       var value = msg.getParametersMap();
@@ -4612,46 +4597,32 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferTensor
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<boolean>} */ (reader.isDelimited() ? reader.readPackedBool() : [reader.readBool()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addBoolContents(values[i]);
-      }
+      var value = /** @type {!Array<boolean>} */ (reader.readPackedBool());
+      msg.setBoolContentsList(value);
       break;
     case 2:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addIntContents(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedInt32());
+      msg.setIntContentsList(value);
       break;
     case 3:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addInt64Contents(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedInt64());
+      msg.setInt64ContentsList(value);
       break;
     case 4:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addUintContents(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedUint32());
+      msg.setUintContentsList(value);
       break;
     case 5:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint64() : [reader.readUint64()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addUint64Contents(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedUint64());
+      msg.setUint64ContentsList(value);
       break;
     case 6:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedFloat() : [reader.readFloat()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addFp32Contents(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedFloat());
+      msg.setFp32ContentsList(value);
       break;
     case 7:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addFp64Contents(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedDouble());
+      msg.setFp64ContentsList(value);
       break;
     case 8:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());

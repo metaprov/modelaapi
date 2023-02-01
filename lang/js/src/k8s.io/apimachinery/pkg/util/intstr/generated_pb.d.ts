@@ -5,12 +5,18 @@ import * as jspb from 'google-protobuf'
 export class IntOrString extends jspb.Message {
   getType(): number;
   setType(value: number): IntOrString;
+  hasType(): boolean;
+  clearType(): IntOrString;
 
   getIntval(): number;
   setIntval(value: number): IntOrString;
+  hasIntval(): boolean;
+  clearIntval(): IntOrString;
 
   getStrval(): string;
   setStrval(value: string): IntOrString;
+  hasStrval(): boolean;
+  clearStrval(): IntOrString;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IntOrString.AsObject;
@@ -22,9 +28,9 @@ export class IntOrString extends jspb.Message {
 
 export namespace IntOrString {
   export type AsObject = {
-    type: number,
-    intval: number,
-    strval: string,
+    type?: number,
+    intval?: number,
+    strval?: string,
   }
 }
 

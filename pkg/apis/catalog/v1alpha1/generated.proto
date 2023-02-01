@@ -17,7 +17,6 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1";
-// PKG
 
 message AccessSpec {
   // The port number that will be exposed on the Predictor's Pods to serve prediction traffic through the GRPCInferenceService API.

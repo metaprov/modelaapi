@@ -10,21 +10,33 @@ import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../.
 export class AccessSpec extends jspb.Message {
   getPort(): number;
   setPort(value: number): AccessSpec;
+  hasPort(): boolean;
+  clearPort(): AccessSpec;
 
   getNodeport(): number;
   setNodeport(value: number): AccessSpec;
+  hasNodeport(): boolean;
+  clearNodeport(): AccessSpec;
 
   getPath(): string;
   setPath(value: string): AccessSpec;
+  hasPath(): boolean;
+  clearPath(): AccessSpec;
 
   getAccesstype(): string;
   setAccesstype(value: string): AccessSpec;
+  hasAccesstype(): boolean;
+  clearAccesstype(): AccessSpec;
 
   getRest(): boolean;
   setRest(value: boolean): AccessSpec;
+  hasRest(): boolean;
+  clearRest(): AccessSpec;
 
   getAuthmethod(): string;
   setAuthmethod(value: string): AccessSpec;
+  hasAuthmethod(): boolean;
+  clearAuthmethod(): AccessSpec;
 
   getApikeysecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
   setApikeysecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): AccessSpec;
@@ -41,12 +53,12 @@ export class AccessSpec extends jspb.Message {
 
 export namespace AccessSpec {
   export type AsObject = {
-    port: number,
-    nodeport: number,
-    path: string,
-    accesstype: string,
-    rest: boolean,
-    authmethod: string,
+    port?: number,
+    nodeport?: number,
+    path?: string,
+    accesstype?: string,
+    rest?: boolean,
+    authmethod?: string,
     apikeysecretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
   }
 }
@@ -106,12 +118,18 @@ export namespace AlgorithmList {
 export class AlgorithmSpec extends jspb.Message {
   getFrameworkname(): string;
   setFrameworkname(value: string): AlgorithmSpec;
+  hasFrameworkname(): boolean;
+  clearFrameworkname(): AlgorithmSpec;
 
   getDescription(): string;
   setDescription(value: string): AlgorithmSpec;
+  hasDescription(): boolean;
+  clearDescription(): AlgorithmSpec;
 
   getUrl(): string;
   setUrl(value: string): AlgorithmSpec;
+  hasUrl(): boolean;
+  clearUrl(): AlgorithmSpec;
 
   getTasksList(): Array<string>;
   setTasksList(value: Array<string>): AlgorithmSpec;
@@ -120,6 +138,8 @@ export class AlgorithmSpec extends jspb.Message {
 
   getSparse(): boolean;
   setSparse(value: boolean): AlgorithmSpec;
+  hasSparse(): boolean;
+  clearSparse(): AlgorithmSpec;
 
   getRangesList(): Array<ParameterRange>;
   setRangesList(value: Array<ParameterRange>): AlgorithmSpec;
@@ -136,11 +156,11 @@ export class AlgorithmSpec extends jspb.Message {
 
 export namespace AlgorithmSpec {
   export type AsObject = {
-    frameworkname: string,
-    description: string,
-    url: string,
+    frameworkname?: string,
+    description?: string,
+    url?: string,
     tasksList: Array<string>,
-    sparse: boolean,
+    sparse?: boolean,
     rangesList: Array<ParameterRange.AsObject>,
   }
 }
@@ -206,12 +226,18 @@ export namespace CloudList {
 export class CloudSpec extends jspb.Message {
   getDefaultregionname(): string;
   setDefaultregionname(value: string): CloudSpec;
+  hasDefaultregionname(): boolean;
+  clearDefaultregionname(): CloudSpec;
 
   getDefaultmachineclassname(): string;
   setDefaultmachineclassname(value: string): CloudSpec;
+  hasDefaultmachineclassname(): boolean;
+  clearDefaultmachineclassname(): CloudSpec;
 
   getDefaultgpuclassname(): string;
   setDefaultgpuclassname(value: string): CloudSpec;
+  hasDefaultgpuclassname(): boolean;
+  clearDefaultgpuclassname(): CloudSpec;
 
   getMachineclassesList(): Array<MachineClass>;
   setMachineclassesList(value: Array<MachineClass>): CloudSpec;
@@ -238,9 +264,9 @@ export class CloudSpec extends jspb.Message {
 
 export namespace CloudSpec {
   export type AsObject = {
-    defaultregionname: string,
-    defaultmachineclassname: string,
-    defaultgpuclassname: string,
+    defaultregionname?: string,
+    defaultmachineclassname?: string,
+    defaultgpuclassname?: string,
     machineclassesList: Array<MachineClass.AsObject>,
     gpuclassesList: Array<GpuClass.AsObject>,
     regionsList: Array<Region.AsObject>,
@@ -276,9 +302,13 @@ export namespace CloudStatus {
 export class CompilerSpec extends jspb.Message {
   getEnable(): boolean;
   setEnable(value: boolean): CompilerSpec;
+  hasEnable(): boolean;
+  clearEnable(): CompilerSpec;
 
   getCompiler(): string;
   setCompiler(value: string): CompilerSpec;
+  hasCompiler(): boolean;
+  clearCompiler(): CompilerSpec;
 
   getTargetsList(): Array<string>;
   setTargetsList(value: Array<string>): CompilerSpec;
@@ -295,8 +325,8 @@ export class CompilerSpec extends jspb.Message {
 
 export namespace CompilerSpec {
   export type AsObject = {
-    enable: boolean,
-    compiler: string,
+    enable?: boolean,
+    compiler?: string,
     targetsList: Array<string>,
   }
 }
@@ -324,15 +354,23 @@ export namespace ConfusionMatrix {
 export class ConfusionMatrixRow extends jspb.Message {
   getT(): string;
   setT(value: string): ConfusionMatrixRow;
+  hasT(): boolean;
+  clearT(): ConfusionMatrixRow;
 
   getP(): string;
   setP(value: string): ConfusionMatrixRow;
+  hasP(): boolean;
+  clearP(): ConfusionMatrixRow;
 
   getCount(): number;
   setCount(value: number): ConfusionMatrixRow;
+  hasCount(): boolean;
+  clearCount(): ConfusionMatrixRow;
 
   getPct(): number;
   setPct(value: number): ConfusionMatrixRow;
+  hasPct(): boolean;
+  clearPct(): ConfusionMatrixRow;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfusionMatrixRow.AsObject;
@@ -344,22 +382,28 @@ export class ConfusionMatrixRow extends jspb.Message {
 
 export namespace ConfusionMatrixRow {
   export type AsObject = {
-    t: string,
-    p: string,
-    count: number,
-    pct: number,
+    t?: string,
+    p?: string,
+    count?: number,
+    pct?: number,
   }
 }
 
 export class ContainerLog extends jspb.Message {
   getJob(): string;
   setJob(value: string): ContainerLog;
+  hasJob(): boolean;
+  clearJob(): ContainerLog;
 
   getContainer(): string;
   setContainer(value: string): ContainerLog;
+  hasContainer(): boolean;
+  clearContainer(): ContainerLog;
 
   getKey(): string;
   setKey(value: string): ContainerLog;
+  hasKey(): boolean;
+  clearKey(): ContainerLog;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContainerLog.AsObject;
@@ -371,18 +415,22 @@ export class ContainerLog extends jspb.Message {
 
 export namespace ContainerLog {
   export type AsObject = {
-    job: string,
-    container: string,
-    key: string,
+    job?: string,
+    container?: string,
+    key?: string,
   }
 }
 
 export class CurvePoint extends jspb.Message {
   getX(): number;
   setX(value: number): CurvePoint;
+  hasX(): boolean;
+  clearX(): CurvePoint;
 
   getY(): number;
   setY(value: number): CurvePoint;
+  hasY(): boolean;
+  clearY(): CurvePoint;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CurvePoint.AsObject;
@@ -394,17 +442,21 @@ export class CurvePoint extends jspb.Message {
 
 export namespace CurvePoint {
   export type AsObject = {
-    x: number,
-    y: number,
+    x?: number,
+    y?: number,
   }
 }
 
 export class DataCenter extends jspb.Message {
   getName(): string;
   setName(value: string): DataCenter;
+  hasName(): boolean;
+  clearName(): DataCenter;
 
   getCode(): string;
   setCode(value: string): DataCenter;
+  hasCode(): boolean;
+  clearCode(): DataCenter;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataCenter.AsObject;
@@ -416,20 +468,26 @@ export class DataCenter extends jspb.Message {
 
 export namespace DataCenter {
   export type AsObject = {
-    name: string,
-    code: string,
+    name?: string,
+    code?: string,
   }
 }
 
 export class DataTestCase extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): DataTestCase;
+  hasEnabled(): boolean;
+  clearEnabled(): DataTestCase;
 
   getName(): string;
   setName(value: string): DataTestCase;
+  hasName(): boolean;
+  clearName(): DataTestCase;
 
   getAssertthat(): string;
   setAssertthat(value: string): DataTestCase;
+  hasAssertthat(): boolean;
+  clearAssertthat(): DataTestCase;
 
   getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataTestCase;
@@ -443,24 +501,38 @@ export class DataTestCase extends jspb.Message {
 
   getColumn(): string;
   setColumn(value: string): DataTestCase;
+  hasColumn(): boolean;
+  clearColumn(): DataTestCase;
 
   getType(): string;
   setType(value: string): DataTestCase;
+  hasType(): boolean;
+  clearType(): DataTestCase;
 
   getMetric(): string;
   setMetric(value: string): DataTestCase;
+  hasMetric(): boolean;
+  clearMetric(): DataTestCase;
 
   getExpectedvalue(): number;
   setExpectedvalue(value: number): DataTestCase;
+  hasExpectedvalue(): boolean;
+  clearExpectedvalue(): DataTestCase;
 
   getExpectedcategory(): string;
   setExpectedcategory(value: string): DataTestCase;
+  hasExpectedcategory(): boolean;
+  clearExpectedcategory(): DataTestCase;
 
   getLower(): number;
   setLower(value: number): DataTestCase;
+  hasLower(): boolean;
+  clearLower(): DataTestCase;
 
   getUpper(): number;
   setUpper(value: number): DataTestCase;
+  hasUpper(): boolean;
+  clearUpper(): DataTestCase;
 
   getExpectedsetList(): Array<string>;
   setExpectedsetList(value: Array<string>): DataTestCase;
@@ -469,12 +541,18 @@ export class DataTestCase extends jspb.Message {
 
   getLowerinclusive(): boolean;
   setLowerinclusive(value: boolean): DataTestCase;
+  hasLowerinclusive(): boolean;
+  clearLowerinclusive(): DataTestCase;
 
   getUpperinclusive(): boolean;
   setUpperinclusive(value: boolean): DataTestCase;
+  hasUpperinclusive(): boolean;
+  clearUpperinclusive(): DataTestCase;
 
   getGenerated(): boolean;
   setGenerated(value: boolean): DataTestCase;
+  hasGenerated(): boolean;
+  clearGenerated(): DataTestCase;
 
   getTagsList(): Array<string>;
   setTagsList(value: Array<string>): DataTestCase;
@@ -483,6 +561,8 @@ export class DataTestCase extends jspb.Message {
 
   getColumn2(): string;
   setColumn2(value: string): DataTestCase;
+  hasColumn2(): boolean;
+  clearColumn2(): DataTestCase;
 
   getEntityref2(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setEntityref2(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataTestCase;
@@ -496,15 +576,23 @@ export class DataTestCase extends jspb.Message {
 
   getFeaturefilter(): string;
   setFeaturefilter(value: string): DataTestCase;
+  hasFeaturefilter(): boolean;
+  clearFeaturefilter(): DataTestCase;
 
   getDatafilter(): string;
   setDatafilter(value: string): DataTestCase;
+  hasDatafilter(): boolean;
+  clearDatafilter(): DataTestCase;
 
   getReferencetype(): string;
   setReferencetype(value: string): DataTestCase;
+  hasReferencetype(): boolean;
+  clearReferencetype(): DataTestCase;
 
   getPeriods(): number;
   setPeriods(value: number): DataTestCase;
+  hasPeriods(): boolean;
+  clearPeriods(): DataTestCase;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataTestCase.AsObject;
@@ -516,36 +604,38 @@ export class DataTestCase extends jspb.Message {
 
 export namespace DataTestCase {
   export type AsObject = {
-    enabled: boolean,
-    name: string,
-    assertthat: string,
+    enabled?: boolean,
+    name?: string,
+    assertthat?: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     comparetoref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    column: string,
-    type: string,
-    metric: string,
-    expectedvalue: number,
-    expectedcategory: string,
-    lower: number,
-    upper: number,
+    column?: string,
+    type?: string,
+    metric?: string,
+    expectedvalue?: number,
+    expectedcategory?: string,
+    lower?: number,
+    upper?: number,
     expectedsetList: Array<string>,
-    lowerinclusive: boolean,
-    upperinclusive: boolean,
-    generated: boolean,
+    lowerinclusive?: boolean,
+    upperinclusive?: boolean,
+    generated?: boolean,
     tagsList: Array<string>,
-    column2: string,
+    column2?: string,
     entityref2?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     columnsList: Array<string>,
-    featurefilter: string,
-    datafilter: string,
-    referencetype: string,
-    periods: number,
+    featurefilter?: string,
+    datafilter?: string,
+    referencetype?: string,
+    periods?: number,
   }
 }
 
 export class DataTestCaseResult extends jspb.Message {
   getName(): string;
   setName(value: string): DataTestCaseResult;
+  hasName(): boolean;
+  clearName(): DataTestCaseResult;
 
   getActual(): Measurement | undefined;
   setActual(value?: Measurement): DataTestCaseResult;
@@ -554,12 +644,18 @@ export class DataTestCaseResult extends jspb.Message {
 
   getFailure(): boolean;
   setFailure(value: boolean): DataTestCaseResult;
+  hasFailure(): boolean;
+  clearFailure(): DataTestCaseResult;
 
   getError(): boolean;
   setError(value: boolean): DataTestCaseResult;
+  hasError(): boolean;
+  clearError(): DataTestCaseResult;
 
   getFailuremsg(): string;
   setFailuremsg(value: string): DataTestCaseResult;
+  hasFailuremsg(): boolean;
+  clearFailuremsg(): DataTestCaseResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataTestCaseResult.AsObject;
@@ -571,26 +667,34 @@ export class DataTestCaseResult extends jspb.Message {
 
 export namespace DataTestCaseResult {
   export type AsObject = {
-    name: string,
+    name?: string,
     actual?: Measurement.AsObject,
-    failure: boolean,
-    error: boolean,
-    failuremsg: string,
+    failure?: boolean,
+    error?: boolean,
+    failuremsg?: string,
   }
 }
 
 export class GithubEvents extends jspb.Message {
   getGitconnectionname(): string;
   setGitconnectionname(value: string): GithubEvents;
+  hasGitconnectionname(): boolean;
+  clearGitconnectionname(): GithubEvents;
 
   getRepository(): string;
   setRepository(value: string): GithubEvents;
+  hasRepository(): boolean;
+  clearRepository(): GithubEvents;
 
   getBranch(): string;
   setBranch(value: string): GithubEvents;
+  hasBranch(): boolean;
+  clearBranch(): GithubEvents;
 
   getBlobnameregex(): string;
   setBlobnameregex(value: string): GithubEvents;
+  hasBlobnameregex(): boolean;
+  clearBlobnameregex(): GithubEvents;
 
   getEventsList(): Array<string>;
   setEventsList(value: Array<string>): GithubEvents;
@@ -607,10 +711,10 @@ export class GithubEvents extends jspb.Message {
 
 export namespace GithubEvents {
   export type AsObject = {
-    gitconnectionname: string,
-    repository: string,
-    branch: string,
-    blobnameregex: string,
+    gitconnectionname?: string,
+    repository?: string,
+    branch?: string,
+    blobnameregex?: string,
     eventsList: Array<string>,
   }
 }
@@ -618,12 +722,18 @@ export namespace GithubEvents {
 export class GpuClass extends jspb.Message {
   getCode(): string;
   setCode(value: string): GpuClass;
+  hasCode(): boolean;
+  clearCode(): GpuClass;
 
   getRegionname(): string;
   setRegionname(value: string): GpuClass;
+  hasRegionname(): boolean;
+  clearRegionname(): GpuClass;
 
   getVcpu(): number;
   setVcpu(value: number): GpuClass;
+  hasVcpu(): boolean;
+  clearVcpu(): GpuClass;
 
   getGpumem(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
   setGpumem(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): GpuClass;
@@ -640,9 +750,9 @@ export class GpuClass extends jspb.Message {
 
 export namespace GpuClass {
   export type AsObject = {
-    code: string,
-    regionname: string,
-    vcpu: number,
+    code?: string,
+    regionname?: string,
+    vcpu?: number,
     gpumem?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
   }
 }
@@ -650,9 +760,13 @@ export namespace GpuClass {
 export class GpuClassCost extends jspb.Message {
   getCode(): string;
   setCode(value: string): GpuClassCost;
+  hasCode(): boolean;
+  clearCode(): GpuClassCost;
 
   getRegion(): string;
   setRegion(value: string): GpuClassCost;
+  hasRegion(): boolean;
+  clearRegion(): GpuClassCost;
 
   getCostperminute(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
   setCostperminute(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): GpuClassCost;
@@ -674,8 +788,8 @@ export class GpuClassCost extends jspb.Message {
 
 export namespace GpuClassCost {
   export type AsObject = {
-    code: string,
-    region: string,
+    code?: string,
+    region?: string,
     costperminute?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
     costspot?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
   }
@@ -699,9 +813,13 @@ export class HistogramData extends jspb.Message {
 
   getMissing(): number;
   setMissing(value: number): HistogramData;
+  hasMissing(): boolean;
+  clearMissing(): HistogramData;
 
   getInvalid(): number;
   setInvalid(value: number): HistogramData;
+  hasInvalid(): boolean;
+  clearInvalid(): HistogramData;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HistogramData.AsObject;
@@ -716,20 +834,26 @@ export namespace HistogramData {
     binsList: Array<number>,
     categoriesList: Array<string>,
     countsList: Array<number>,
-    missing: number,
-    invalid: number,
+    missing?: number,
+    invalid?: number,
   }
 }
 
 export class Images extends jspb.Message {
   getTrainerimage(): string;
   setTrainerimage(value: string): Images;
+  hasTrainerimage(): boolean;
+  clearTrainerimage(): Images;
 
   getDataimage(): string;
   setDataimage(value: string): Images;
+  hasDataimage(): boolean;
+  clearDataimage(): Images;
 
   getPublisherimage(): string;
   setPublisherimage(value: string): Images;
+  hasPublisherimage(): boolean;
+  clearPublisherimage(): Images;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Images.AsObject;
@@ -741,18 +865,22 @@ export class Images extends jspb.Message {
 
 export namespace Images {
   export type AsObject = {
-    trainerimage: string,
-    dataimage: string,
-    publisherimage: string,
+    trainerimage?: string,
+    dataimage?: string,
+    publisherimage?: string,
   }
 }
 
 export class LastRunStatus extends jspb.Message {
   getName(): string;
   setName(value: string): LastRunStatus;
+  hasName(): boolean;
+  clearName(): LastRunStatus;
 
   getStatus(): string;
   setStatus(value: string): LastRunStatus;
+  hasStatus(): boolean;
+  clearStatus(): LastRunStatus;
 
   getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LastRunStatus;
@@ -761,12 +889,18 @@ export class LastRunStatus extends jspb.Message {
 
   getDuration(): number;
   setDuration(value: number): LastRunStatus;
+  hasDuration(): boolean;
+  clearDuration(): LastRunStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): LastRunStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): LastRunStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): LastRunStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): LastRunStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LastRunStatus.AsObject;
@@ -778,21 +912,25 @@ export class LastRunStatus extends jspb.Message {
 
 export namespace LastRunStatus {
   export type AsObject = {
-    name: string,
-    status: string,
+    name?: string,
+    status?: string,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    duration: number,
-    failurereason: string,
-    failuremessage: string,
+    duration?: number,
+    failurereason?: string,
+    failuremessage?: string,
   }
 }
 
 export class Lib extends jspb.Message {
   getFrameworks(): string;
   setFrameworks(value: string): Lib;
+  hasFrameworks(): boolean;
+  clearFrameworks(): Lib;
 
   getVersion(): string;
   setVersion(value: string): Lib;
+  hasVersion(): boolean;
+  clearVersion(): Lib;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Lib.AsObject;
@@ -804,14 +942,16 @@ export class Lib extends jspb.Message {
 
 export namespace Lib {
   export type AsObject = {
-    frameworks: string,
-    version: string,
+    frameworks?: string,
+    version?: string,
   }
 }
 
 export class Logs extends jspb.Message {
   getBucketname(): string;
   setBucketname(value: string): Logs;
+  hasBucketname(): boolean;
+  clearBucketname(): Logs;
 
   getContainersList(): Array<ContainerLog>;
   setContainersList(value: Array<ContainerLog>): Logs;
@@ -828,7 +968,7 @@ export class Logs extends jspb.Message {
 
 export namespace Logs {
   export type AsObject = {
-    bucketname: string,
+    bucketname?: string,
     containersList: Array<ContainerLog.AsObject>,
   }
 }
@@ -888,15 +1028,23 @@ export namespace MLFrameworkList {
 export class MLFrameworkSpec extends jspb.Message {
   getUrl(): string;
   setUrl(value: string): MLFrameworkSpec;
+  hasUrl(): boolean;
+  clearUrl(): MLFrameworkSpec;
 
   getDescription(): string;
   setDescription(value: string): MLFrameworkSpec;
+  hasDescription(): boolean;
+  clearDescription(): MLFrameworkSpec;
 
   getVersion(): string;
   setVersion(value: string): MLFrameworkSpec;
+  hasVersion(): boolean;
+  clearVersion(): MLFrameworkSpec;
 
   getLang(): string;
   setLang(value: string): MLFrameworkSpec;
+  hasLang(): boolean;
+  clearLang(): MLFrameworkSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MLFrameworkSpec.AsObject;
@@ -908,19 +1056,23 @@ export class MLFrameworkSpec extends jspb.Message {
 
 export namespace MLFrameworkSpec {
   export type AsObject = {
-    url: string,
-    description: string,
-    version: string,
-    lang: string,
+    url?: string,
+    description?: string,
+    version?: string,
+    lang?: string,
   }
 }
 
 export class MachineClass extends jspb.Message {
   getCode(): string;
   setCode(value: string): MachineClass;
+  hasCode(): boolean;
+  clearCode(): MachineClass;
 
   getRegionname(): string;
   setRegionname(value: string): MachineClass;
+  hasRegionname(): boolean;
+  clearRegionname(): MachineClass;
 
   getMem(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
   setMem(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): MachineClass;
@@ -929,9 +1081,13 @@ export class MachineClass extends jspb.Message {
 
   getVcpu(): number;
   setVcpu(value: number): MachineClass;
+  hasVcpu(): boolean;
+  clearVcpu(): MachineClass;
 
   getStorage(): string;
   setStorage(value: string): MachineClass;
+  hasStorage(): boolean;
+  clearStorage(): MachineClass;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MachineClass.AsObject;
@@ -943,20 +1099,24 @@ export class MachineClass extends jspb.Message {
 
 export namespace MachineClass {
   export type AsObject = {
-    code: string,
-    regionname: string,
+    code?: string,
+    regionname?: string,
     mem?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
-    vcpu: number,
-    storage: string,
+    vcpu?: number,
+    storage?: string,
   }
 }
 
 export class MachineClassCost extends jspb.Message {
   getCode(): string;
   setCode(value: string): MachineClassCost;
+  hasCode(): boolean;
+  clearCode(): MachineClassCost;
 
   getRegion(): string;
   setRegion(value: string): MachineClassCost;
+  hasRegion(): boolean;
+  clearRegion(): MachineClassCost;
 
   getCostperminute(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
   setCostperminute(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): MachineClassCost;
@@ -978,8 +1138,8 @@ export class MachineClassCost extends jspb.Message {
 
 export namespace MachineClassCost {
   export type AsObject = {
-    code: string,
-    region: string,
+    code?: string,
+    region?: string,
     costperminute?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
     costspot?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
   }
@@ -1040,15 +1200,23 @@ export namespace ManagedImageList {
 export class ManagedImageSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): ManagedImageSpec;
+  hasDescription(): boolean;
+  clearDescription(): ManagedImageSpec;
 
   getRegistry(): string;
   setRegistry(value: string): ManagedImageSpec;
+  hasRegistry(): boolean;
+  clearRegistry(): ManagedImageSpec;
 
   getRepository(): string;
   setRepository(value: string): ManagedImageSpec;
+  hasRepository(): boolean;
+  clearRepository(): ManagedImageSpec;
 
   getTag(): string;
   setTag(value: string): ManagedImageSpec;
+  hasTag(): boolean;
+  clearTag(): ManagedImageSpec;
 
   getEnvList(): Array<k8s_io_api_core_v1_generated_pb.EnvVar>;
   setEnvList(value: Array<k8s_io_api_core_v1_generated_pb.EnvVar>): ManagedImageSpec;
@@ -1057,12 +1225,18 @@ export class ManagedImageSpec extends jspb.Message {
 
   getGpu(): boolean;
   setGpu(value: boolean): ManagedImageSpec;
+  hasGpu(): boolean;
+  clearGpu(): ManagedImageSpec;
 
   getActive(): boolean;
   setActive(value: boolean): ManagedImageSpec;
+  hasActive(): boolean;
+  clearActive(): ManagedImageSpec;
 
   getPreload(): boolean;
   setPreload(value: boolean): ManagedImageSpec;
+  hasPreload(): boolean;
+  clearPreload(): ManagedImageSpec;
 
   getConnectionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setConnectionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ManagedImageSpec;
@@ -1071,15 +1245,23 @@ export class ManagedImageSpec extends jspb.Message {
 
   getBase(): string;
   setBase(value: string): ManagedImageSpec;
+  hasBase(): boolean;
+  clearBase(): ManagedImageSpec;
 
   getRole(): string;
   setRole(value: string): ManagedImageSpec;
+  hasRole(): boolean;
+  clearRole(): ManagedImageSpec;
 
   getMantainedby(): string;
   setMantainedby(value: string): ManagedImageSpec;
+  hasMantainedby(): boolean;
+  clearMantainedby(): ManagedImageSpec;
 
   getUri(): string;
   setUri(value: string): ManagedImageSpec;
+  hasUri(): boolean;
+  clearUri(): ManagedImageSpec;
 
   getFrameworksList(): Array<string>;
   setFrameworksList(value: Array<string>): ManagedImageSpec;
@@ -1093,12 +1275,18 @@ export class ManagedImageSpec extends jspb.Message {
 
   getOs(): string;
   setOs(value: string): ManagedImageSpec;
+  hasOs(): boolean;
+  clearOs(): ManagedImageSpec;
 
   getOsversion(): string;
   setOsversion(value: string): ManagedImageSpec;
+  hasOsversion(): boolean;
+  clearOsversion(): ManagedImageSpec;
 
   getPrivate(): boolean;
   setPrivate(value: boolean): ManagedImageSpec;
+  hasPrivate(): boolean;
+  clearPrivate(): ManagedImageSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ManagedImageSpec.AsObject;
@@ -1110,24 +1298,24 @@ export class ManagedImageSpec extends jspb.Message {
 
 export namespace ManagedImageSpec {
   export type AsObject = {
-    description: string,
-    registry: string,
-    repository: string,
-    tag: string,
+    description?: string,
+    registry?: string,
+    repository?: string,
+    tag?: string,
     envList: Array<k8s_io_api_core_v1_generated_pb.EnvVar.AsObject>,
-    gpu: boolean,
-    active: boolean,
-    preload: boolean,
+    gpu?: boolean,
+    active?: boolean,
+    preload?: boolean,
     connectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    base: string,
-    role: string,
-    mantainedby: string,
-    uri: string,
+    base?: string,
+    role?: string,
+    mantainedby?: string,
+    uri?: string,
     frameworksList: Array<string>,
     libsList: Array<Lib.AsObject>,
-    os: string,
-    osversion: string,
-    pb_private: boolean,
+    os?: string,
+    osversion?: string,
+    pb_private?: boolean,
   }
 }
 
@@ -1139,21 +1327,33 @@ export class Measurement extends jspb.Message {
 
   getColumn(): string;
   setColumn(value: string): Measurement;
+  hasColumn(): boolean;
+  clearColumn(): Measurement;
 
   getMetric(): string;
   setMetric(value: string): Measurement;
+  hasMetric(): boolean;
+  clearMetric(): Measurement;
 
   getValue(): number;
   setValue(value: number): Measurement;
+  hasValue(): boolean;
+  clearValue(): Measurement;
 
   getStddev(): number;
   setStddev(value: number): Measurement;
+  hasStddev(): boolean;
+  clearStddev(): Measurement;
 
   getBoolqty(): boolean;
   setBoolqty(value: boolean): Measurement;
+  hasBoolqty(): boolean;
+  clearBoolqty(): Measurement;
 
   getCategory(): string;
   setCategory(value: string): Measurement;
+  hasCategory(): boolean;
+  clearCategory(): Measurement;
 
   getValuesetList(): Array<string>;
   setValuesetList(value: Array<string>): Measurement;
@@ -1167,9 +1367,13 @@ export class Measurement extends jspb.Message {
 
   getTasktype(): string;
   setTasktype(value: string): Measurement;
+  hasTasktype(): boolean;
+  clearTasktype(): Measurement;
 
   getAlgorithm(): string;
   setAlgorithm(value: string): Measurement;
+  hasAlgorithm(): boolean;
+  clearAlgorithm(): Measurement;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Measurement.AsObject;
@@ -1182,16 +1386,16 @@ export class Measurement extends jspb.Message {
 export namespace Measurement {
   export type AsObject = {
     entity?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    column: string,
-    metric: string,
-    value: number,
-    stddev: number,
-    boolqty: boolean,
-    category: string,
+    column?: string,
+    metric?: string,
+    value?: number,
+    stddev?: number,
+    boolqty?: boolean,
+    category?: string,
     valuesetList: Array<string>,
     timepoint?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    tasktype: string,
-    algorithm: string,
+    tasktype?: string,
+    algorithm?: string,
   }
 }
 
@@ -1203,21 +1407,33 @@ export class ModelDeploymentSpec extends jspb.Message {
 
   getPort(): number;
   setPort(value: number): ModelDeploymentSpec;
+  hasPort(): boolean;
+  clearPort(): ModelDeploymentSpec;
 
   getModelversion(): string;
   setModelversion(value: string): ModelDeploymentSpec;
+  hasModelversion(): boolean;
+  clearModelversion(): ModelDeploymentSpec;
 
   getTraffic(): number;
   setTraffic(value: number): ModelDeploymentSpec;
+  hasTraffic(): boolean;
+  clearTraffic(): ModelDeploymentSpec;
 
   getRole(): string;
   setRole(value: string): ModelDeploymentSpec;
+  hasRole(): boolean;
+  clearRole(): ModelDeploymentSpec;
 
   getMounttar(): boolean;
   setMounttar(value: boolean): ModelDeploymentSpec;
+  hasMounttar(): boolean;
+  clearMounttar(): ModelDeploymentSpec;
 
   getTrafficselector(): string;
   setTrafficselector(value: string): ModelDeploymentSpec;
+  hasTrafficselector(): boolean;
+  clearTrafficselector(): ModelDeploymentSpec;
 
   getApprovedby(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setApprovedby(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelDeploymentSpec;
@@ -1240,12 +1456,12 @@ export class ModelDeploymentSpec extends jspb.Message {
 export namespace ModelDeploymentSpec {
   export type AsObject = {
     modelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    port: number,
-    modelversion: string,
-    traffic: number,
-    role: string,
-    mounttar: boolean,
-    trafficselector: string,
+    port?: number,
+    modelversion?: string,
+    traffic?: number,
+    role?: string,
+    mounttar?: boolean,
+    trafficselector?: string,
     approvedby?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
@@ -1254,12 +1470,18 @@ export namespace ModelDeploymentSpec {
 export class NotificationSpec extends jspb.Message {
   getErrorttl(): number;
   setErrorttl(value: number): NotificationSpec;
+  hasErrorttl(): boolean;
+  clearErrorttl(): NotificationSpec;
 
   getSuccessttl(): number;
   setSuccessttl(value: number): NotificationSpec;
+  hasSuccessttl(): boolean;
+  clearSuccessttl(): NotificationSpec;
 
   getNotifiername(): string;
   setNotifiername(value: string): NotificationSpec;
+  hasNotifiername(): boolean;
+  clearNotifiername(): NotificationSpec;
 
   getSelectorMap(): jspb.Map<string, string>;
   clearSelectorMap(): NotificationSpec;
@@ -1274,9 +1496,9 @@ export class NotificationSpec extends jspb.Message {
 
 export namespace NotificationSpec {
   export type AsObject = {
-    errorttl: number,
-    successttl: number,
-    notifiername: string,
+    errorttl?: number,
+    successttl?: number,
+    notifiername?: string,
     selectorMap: Array<[string, string]>,
   }
 }
@@ -1284,9 +1506,13 @@ export namespace NotificationSpec {
 export class ObjectiveSpec extends jspb.Message {
   getMetric(): string;
   setMetric(value: string): ObjectiveSpec;
+  hasMetric(): boolean;
+  clearMetric(): ObjectiveSpec;
 
   getGoal(): string;
   setGoal(value: string): ObjectiveSpec;
+  hasGoal(): boolean;
+  clearGoal(): ObjectiveSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ObjectiveSpec.AsObject;
@@ -1298,8 +1524,8 @@ export class ObjectiveSpec extends jspb.Message {
 
 export namespace ObjectiveSpec {
   export type AsObject = {
-    metric: string,
-    goal: string,
+    metric?: string,
+    goal?: string,
   }
 }
 
@@ -1326,21 +1552,33 @@ export namespace PRCurve {
 export class ParameterRange extends jspb.Message {
   getName(): string;
   setName(value: string): ParameterRange;
+  hasName(): boolean;
+  clearName(): ParameterRange;
 
   getType(): string;
   setType(value: string): ParameterRange;
+  hasType(): boolean;
+  clearType(): ParameterRange;
 
   getLow(): number;
   setLow(value: number): ParameterRange;
+  hasLow(): boolean;
+  clearLow(): ParameterRange;
 
   getHigh(): number;
   setHigh(value: number): ParameterRange;
+  hasHigh(): boolean;
+  clearHigh(): ParameterRange;
 
   getStep(): number;
   setStep(value: number): ParameterRange;
+  hasStep(): boolean;
+  clearStep(): ParameterRange;
 
   getLog(): boolean;
   setLog(value: boolean): ParameterRange;
+  hasLog(): boolean;
+  clearLog(): ParameterRange;
 
   getChoicesList(): Array<string>;
   setChoicesList(value: Array<string>): ParameterRange;
@@ -1349,24 +1587,38 @@ export class ParameterRange extends jspb.Message {
 
   getDefaultvalue(): number;
   setDefaultvalue(value: number): ParameterRange;
+  hasDefaultvalue(): boolean;
+  clearDefaultvalue(): ParameterRange;
 
   getDefaultchoice(): string;
   setDefaultchoice(value: string): ParameterRange;
+  hasDefaultchoice(): boolean;
+  clearDefaultchoice(): ParameterRange;
 
   getConditional(): boolean;
   setConditional(value: boolean): ParameterRange;
+  hasConditional(): boolean;
+  clearConditional(): ParameterRange;
 
   getParent(): string;
   setParent(value: string): ParameterRange;
+  hasParent(): boolean;
+  clearParent(): ParameterRange;
 
   getParentvaluecat(): string;
   setParentvaluecat(value: string): ParameterRange;
+  hasParentvaluecat(): boolean;
+  clearParentvaluecat(): ParameterRange;
 
   getParentvalueinteger(): number;
   setParentvalueinteger(value: number): ParameterRange;
+  hasParentvalueinteger(): boolean;
+  clearParentvalueinteger(): ParameterRange;
 
   getParentvaluefloat(): number;
   setParentvaluefloat(value: number): ParameterRange;
+  hasParentvaluefloat(): boolean;
+  clearParentvaluefloat(): ParameterRange;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ParameterRange.AsObject;
@@ -1378,20 +1630,20 @@ export class ParameterRange extends jspb.Message {
 
 export namespace ParameterRange {
   export type AsObject = {
-    name: string,
-    type: string,
-    low: number,
-    high: number,
-    step: number,
-    log: boolean,
+    name?: string,
+    type?: string,
+    low?: number,
+    high?: number,
+    step?: number,
+    log?: boolean,
     choicesList: Array<string>,
-    defaultvalue: number,
-    defaultchoice: string,
-    conditional: boolean,
-    parent: string,
-    parentvaluecat: string,
-    parentvalueinteger: number,
-    parentvaluefloat: number,
+    defaultvalue?: number,
+    defaultchoice?: string,
+    conditional?: boolean,
+    parent?: string,
+    parentvaluecat?: string,
+    parentvalueinteger?: number,
+    parentvaluefloat?: number,
   }
 }
 
@@ -1470,6 +1722,8 @@ export namespace PretrainedModelList {
 export class PretrainedModelSpec extends jspb.Message {
   getImage(): string;
   setImage(value: string): PretrainedModelSpec;
+  hasImage(): boolean;
+  clearImage(): PretrainedModelSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PretrainedModelSpec.AsObject;
@@ -1481,7 +1735,7 @@ export class PretrainedModelSpec extends jspb.Message {
 
 export namespace PretrainedModelSpec {
   export type AsObject = {
-    image: string,
+    image?: string,
   }
 }
 
@@ -1540,51 +1794,83 @@ export namespace PublicDatasetList {
 export class PublicDatasetSpec extends jspb.Message {
   getUrl(): string;
   setUrl(value: string): PublicDatasetSpec;
+  hasUrl(): boolean;
+  clearUrl(): PublicDatasetSpec;
 
   getDescription(): string;
   setDescription(value: string): PublicDatasetSpec;
+  hasDescription(): boolean;
+  clearDescription(): PublicDatasetSpec;
 
   getTask(): string;
   setTask(value: string): PublicDatasetSpec;
+  hasTask(): boolean;
+  clearTask(): PublicDatasetSpec;
 
   getOpenmlid(): string;
   setOpenmlid(value: string): PublicDatasetSpec;
+  hasOpenmlid(): boolean;
+  clearOpenmlid(): PublicDatasetSpec;
 
   getDataurl(): string;
   setDataurl(value: string): PublicDatasetSpec;
+  hasDataurl(): boolean;
+  clearDataurl(): PublicDatasetSpec;
 
   getCitation(): string;
   setCitation(value: string): PublicDatasetSpec;
+  hasCitation(): boolean;
+  clearCitation(): PublicDatasetSpec;
 
   getRows(): number;
   setRows(value: number): PublicDatasetSpec;
+  hasRows(): boolean;
+  clearRows(): PublicDatasetSpec;
 
   getColumns(): number;
   setColumns(value: number): PublicDatasetSpec;
+  hasColumns(): boolean;
+  clearColumns(): PublicDatasetSpec;
 
   getFilesize(): number;
   setFilesize(value: number): PublicDatasetSpec;
+  hasFilesize(): boolean;
+  clearFilesize(): PublicDatasetSpec;
 
   getTargetcolumn(): string;
   setTargetcolumn(value: string): PublicDatasetSpec;
+  hasTargetcolumn(): boolean;
+  clearTargetcolumn(): PublicDatasetSpec;
 
   getIndustry(): string;
   setIndustry(value: string): PublicDatasetSpec;
+  hasIndustry(): boolean;
+  clearIndustry(): PublicDatasetSpec;
 
   getImbalanced(): boolean;
   setImbalanced(value: boolean): PublicDatasetSpec;
+  hasImbalanced(): boolean;
+  clearImbalanced(): PublicDatasetSpec;
 
   getDatasourcecr(): string;
   setDatasourcecr(value: string): PublicDatasetSpec;
+  hasDatasourcecr(): boolean;
+  clearDatasourcecr(): PublicDatasetSpec;
 
   getDatasetcr(): string;
   setDatasetcr(value: string): PublicDatasetSpec;
+  hasDatasetcr(): boolean;
+  clearDatasetcr(): PublicDatasetSpec;
 
   getStudycr(): string;
   setStudycr(value: string): PublicDatasetSpec;
+  hasStudycr(): boolean;
+  clearStudycr(): PublicDatasetSpec;
 
   getDataproductcr(): string;
   setDataproductcr(value: string): PublicDatasetSpec;
+  hasDataproductcr(): boolean;
+  clearDataproductcr(): PublicDatasetSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PublicDatasetSpec.AsObject;
@@ -1596,37 +1882,45 @@ export class PublicDatasetSpec extends jspb.Message {
 
 export namespace PublicDatasetSpec {
   export type AsObject = {
-    url: string,
-    description: string,
-    task: string,
-    openmlid: string,
-    dataurl: string,
-    citation: string,
-    rows: number,
-    columns: number,
-    filesize: number,
-    targetcolumn: string,
-    industry: string,
-    imbalanced: boolean,
-    datasourcecr: string,
-    datasetcr: string,
-    studycr: string,
-    dataproductcr: string,
+    url?: string,
+    description?: string,
+    task?: string,
+    openmlid?: string,
+    dataurl?: string,
+    citation?: string,
+    rows?: number,
+    columns?: number,
+    filesize?: number,
+    targetcolumn?: string,
+    industry?: string,
+    imbalanced?: boolean,
+    datasourcecr?: string,
+    datasetcr?: string,
+    studycr?: string,
+    dataproductcr?: string,
   }
 }
 
 export class Region extends jspb.Message {
   getCode(): string;
   setCode(value: string): Region;
+  hasCode(): boolean;
+  clearCode(): Region;
 
   getDefaultdatacentername(): string;
   setDefaultdatacentername(value: string): Region;
+  hasDefaultdatacentername(): boolean;
+  clearDefaultdatacentername(): Region;
 
   getLocation(): string;
   setLocation(value: string): Region;
+  hasLocation(): boolean;
+  clearLocation(): Region;
 
   getBillingcode(): string;
   setBillingcode(value: string): Region;
+  hasBillingcode(): boolean;
+  clearBillingcode(): Region;
 
   getDatacentersList(): Array<DataCenter>;
   setDatacentersList(value: Array<DataCenter>): Region;
@@ -1643,10 +1937,10 @@ export class Region extends jspb.Message {
 
 export namespace Region {
   export type AsObject = {
-    code: string,
-    defaultdatacentername: string,
-    location: string,
-    billingcode: string,
+    code?: string,
+    defaultdatacentername?: string,
+    location?: string,
+    billingcode?: string,
     datacentersList: Array<DataCenter.AsObject>,
   }
 }
@@ -1654,12 +1948,18 @@ export namespace Region {
 export class ResourceConsumption extends jspb.Message {
   getCpu(): number;
   setCpu(value: number): ResourceConsumption;
+  hasCpu(): boolean;
+  clearCpu(): ResourceConsumption;
 
-  getMem(): number;
-  setMem(value: number): ResourceConsumption;
+  getMemory(): number;
+  setMemory(value: number): ResourceConsumption;
+  hasMemory(): boolean;
+  clearMemory(): ResourceConsumption;
 
   getGpu(): number;
   setGpu(value: number): ResourceConsumption;
+  hasGpu(): boolean;
+  clearGpu(): ResourceConsumption;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResourceConsumption.AsObject;
@@ -1671,18 +1971,22 @@ export class ResourceConsumption extends jspb.Message {
 
 export namespace ResourceConsumption {
   export type AsObject = {
-    cpu: number,
-    mem: number,
-    gpu: number,
+    cpu?: number,
+    memory?: number,
+    gpu?: number,
   }
 }
 
 export class ResourceSpec extends jspb.Message {
   getWorkloadname(): string;
   setWorkloadname(value: string): ResourceSpec;
+  hasWorkloadname(): boolean;
+  clearWorkloadname(): ResourceSpec;
 
   getCustom(): boolean;
   setCustom(value: boolean): ResourceSpec;
+  hasCustom(): boolean;
+  clearCustom(): ResourceSpec;
 
   getCpuimage(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setCpuimage(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ResourceSpec;
@@ -1709,8 +2013,8 @@ export class ResourceSpec extends jspb.Message {
 
 export namespace ResourceSpec {
   export type AsObject = {
-    workloadname: string,
-    custom: boolean,
+    workloadname?: string,
+    custom?: boolean,
     cpuimage?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     gpuimage?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     requirements?: k8s_io_api_core_v1_generated_pb.ResourceRequirements.AsObject,
@@ -1740,24 +2044,38 @@ export namespace RocAucCurve {
 export class RunSchedule extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): RunSchedule;
+  hasEnabled(): boolean;
+  clearEnabled(): RunSchedule;
 
   getCron(): string;
   setCron(value: string): RunSchedule;
+  hasCron(): boolean;
+  clearCron(): RunSchedule;
 
   getType(): string;
   setType(value: string): RunSchedule;
+  hasType(): boolean;
+  clearType(): RunSchedule;
 
   getMaxretrycount(): number;
   setMaxretrycount(value: number): RunSchedule;
+  hasMaxretrycount(): boolean;
+  clearMaxretrycount(): RunSchedule;
 
   getRetrydelaysec(): number;
   setRetrydelaysec(value: number): RunSchedule;
+  hasRetrydelaysec(): boolean;
+  clearRetrydelaysec(): RunSchedule;
 
   getTimeoutsec(): number;
   setTimeoutsec(value: number): RunSchedule;
+  hasTimeoutsec(): boolean;
+  clearTimeoutsec(): RunSchedule;
 
   getTimezone(): string;
   setTimezone(value: string): RunSchedule;
+  hasTimezone(): boolean;
+  clearTimezone(): RunSchedule;
 
   getNextrunat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setNextrunat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunSchedule;
@@ -1774,13 +2092,13 @@ export class RunSchedule extends jspb.Message {
 
 export namespace RunSchedule {
   export type AsObject = {
-    enabled: boolean,
-    cron: string,
-    type: string,
-    maxretrycount: number,
-    retrydelaysec: number,
-    timeoutsec: number,
-    timezone: string,
+    enabled?: boolean,
+    cron?: string,
+    type?: string,
+    maxretrycount?: number,
+    retrydelaysec?: number,
+    timeoutsec?: number,
+    timezone?: string,
     nextrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
@@ -1793,12 +2111,18 @@ export class RunScheduleStatus extends jspb.Message {
 
   getFailurereason(): string;
   setFailurereason(value: string): RunScheduleStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): RunScheduleStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): RunScheduleStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): RunScheduleStatus;
 
   getLastrunname(): string;
   setLastrunname(value: string): RunScheduleStatus;
+  hasLastrunname(): boolean;
+  clearLastrunname(): RunScheduleStatus;
 
   getLastrunlogs(): Logs | undefined;
   setLastrunlogs(value?: Logs): RunScheduleStatus;
@@ -1807,6 +2131,8 @@ export class RunScheduleStatus extends jspb.Message {
 
   getRetrycount(): number;
   setRetrycount(value: number): RunScheduleStatus;
+  hasRetrycount(): boolean;
+  clearRetrycount(): RunScheduleStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunScheduleStatus.AsObject;
@@ -1819,17 +2145,19 @@ export class RunScheduleStatus extends jspb.Message {
 export namespace RunScheduleStatus {
   export type AsObject = {
     lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
-    lastrunname: string,
+    failurereason?: string,
+    failuremessage?: string,
+    lastrunname?: string,
     lastrunlogs?: Logs.AsObject,
-    retrycount: number,
+    retrycount?: number,
   }
 }
 
 export class Stakeholder extends jspb.Message {
   getAccount(): string;
   setAccount(value: string): Stakeholder;
+  hasAccount(): boolean;
+  clearAccount(): Stakeholder;
 
   getRolesList(): Array<k8s_io_api_core_v1_generated_pb.ObjectReference>;
   setRolesList(value: Array<k8s_io_api_core_v1_generated_pb.ObjectReference>): Stakeholder;
@@ -1846,7 +2174,7 @@ export class Stakeholder extends jspb.Message {
 
 export namespace Stakeholder {
   export type AsObject = {
-    account: string,
+    account?: string,
     rolesList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
   }
 }
@@ -1854,6 +2182,8 @@ export namespace Stakeholder {
 export class TestSuite extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): TestSuite;
+  hasEnabled(): boolean;
+  clearEnabled(): TestSuite;
 
   getTestsList(): Array<DataTestCase>;
   setTestsList(value: Array<DataTestCase>): TestSuite;
@@ -1870,7 +2200,7 @@ export class TestSuite extends jspb.Message {
 
 export namespace TestSuite {
   export type AsObject = {
-    enabled: boolean,
+    enabled?: boolean,
     testsList: Array<DataTestCase.AsObject>,
   }
 }
@@ -1883,9 +2213,13 @@ export class TestSuiteResult extends jspb.Message {
 
   getFailures(): number;
   setFailures(value: number): TestSuiteResult;
+  hasFailures(): boolean;
+  clearFailures(): TestSuiteResult;
 
   getErrors(): number;
   setErrors(value: number): TestSuiteResult;
+  hasErrors(): boolean;
+  clearErrors(): TestSuiteResult;
 
   getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TestSuiteResult;
@@ -1913,8 +2247,8 @@ export class TestSuiteResult extends jspb.Message {
 export namespace TestSuiteResult {
   export type AsObject = {
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    failures: number,
-    errors: number,
+    failures?: number,
+    errors?: number,
     startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     testsList: Array<DataTestCaseResult.AsObject>,
@@ -1924,15 +2258,23 @@ export namespace TestSuiteResult {
 export class WorkerRunResult extends jspb.Message {
   getId(): number;
   setId(value: number): WorkerRunResult;
+  hasId(): boolean;
+  clearId(): WorkerRunResult;
 
   getUri(): string;
   setUri(value: string): WorkerRunResult;
+  hasUri(): boolean;
+  clearUri(): WorkerRunResult;
 
   getTask(): string;
   setTask(value: string): WorkerRunResult;
+  hasTask(): boolean;
+  clearTask(): WorkerRunResult;
 
   getError(): string;
   setError(value: string): WorkerRunResult;
+  hasError(): boolean;
+  clearError(): WorkerRunResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WorkerRunResult.AsObject;
@@ -1944,10 +2286,10 @@ export class WorkerRunResult extends jspb.Message {
 
 export namespace WorkerRunResult {
   export type AsObject = {
-    id: number,
-    uri: string,
-    task: string,
-    error: string,
+    id?: number,
+    uri?: string,
+    task?: string,
+    error?: string,
   }
 }
 

@@ -22,6 +22,7 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
 protoc \
     -I${PROJECT_ROOT}/../../.. \
     -I${PROJECT_ROOT} \
+    -I${PROJECT_ROOT}/vendor \
     -I${GOOGLE_PROTO_API_PATH} \
     -I$GOPATH/src \
     -I${GOGO_PROTOBUF_PATH} \
@@ -94,5 +95,6 @@ protoc \
     github.com/metaprov/modelaapi/services/tenant/v1/tenant.proto \
     github.com/metaprov/modelaapi/services/trainerd/v1/trainerd.proto \
     github.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket.proto \
-    github.com/metaprov/modelaapi/services/batchpredictord/v1/batchpredictord.proto
+    github.com/metaprov/modelaapi/services/batchpredictord/v1/batchpredictord.proto \
+    github.com/metaprov/modelaapi/services/watcherd/v1/watcherd.proto \
 

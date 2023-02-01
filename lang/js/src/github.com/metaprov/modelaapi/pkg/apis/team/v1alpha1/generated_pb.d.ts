@@ -9,24 +9,38 @@ import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../.
 export class CheckListItem extends jspb.Message {
   getId(): string;
   setId(value: string): CheckListItem;
+  hasId(): boolean;
+  clearId(): CheckListItem;
 
   getInstruction(): string;
   setInstruction(value: string): CheckListItem;
+  hasInstruction(): boolean;
+  clearInstruction(): CheckListItem;
 
   getEnabled(): boolean;
   setEnabled(value: boolean): CheckListItem;
+  hasEnabled(): boolean;
+  clearEnabled(): CheckListItem;
 
   getCondition(): string;
   setCondition(value: string): CheckListItem;
+  hasCondition(): boolean;
+  clearCondition(): CheckListItem;
 
   getCommand(): string;
   setCommand(value: string): CheckListItem;
+  hasCommand(): boolean;
+  clearCommand(): CheckListItem;
 
   getPrecondition(): string;
   setPrecondition(value: string): CheckListItem;
+  hasPrecondition(): boolean;
+  clearPrecondition(): CheckListItem;
 
   getPostcondition(): string;
   setPostcondition(value: string): CheckListItem;
+  hasPostcondition(): boolean;
+  clearPostcondition(): CheckListItem;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CheckListItem.AsObject;
@@ -38,19 +52,21 @@ export class CheckListItem extends jspb.Message {
 
 export namespace CheckListItem {
   export type AsObject = {
-    id: string,
-    instruction: string,
-    enabled: boolean,
-    condition: string,
-    command: string,
-    precondition: string,
-    postcondition: string,
+    id?: string,
+    instruction?: string,
+    enabled?: boolean,
+    condition?: string,
+    command?: string,
+    precondition?: string,
+    postcondition?: string,
   }
 }
 
 export class Comment extends jspb.Message {
   getId(): string;
   setId(value: string): Comment;
+  hasId(): boolean;
+  clearId(): Comment;
 
   getAuthorref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setAuthorref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): Comment;
@@ -59,9 +75,13 @@ export class Comment extends jspb.Message {
 
   getReplyto(): string;
   setReplyto(value: string): Comment;
+  hasReplyto(): boolean;
+  clearReplyto(): Comment;
 
   getContent(): string;
   setContent(value: string): Comment;
+  hasContent(): boolean;
+  clearContent(): Comment;
 
   getPostedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setPostedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): Comment;
@@ -70,18 +90,28 @@ export class Comment extends jspb.Message {
 
   getSent(): boolean;
   setSent(value: boolean): Comment;
+  hasSent(): boolean;
+  clearSent(): Comment;
 
   getPinned(): boolean;
   setPinned(value: boolean): Comment;
+  hasPinned(): boolean;
+  clearPinned(): Comment;
 
   getReplyindicationid(): string;
   setReplyindicationid(value: string): Comment;
+  hasReplyindicationid(): boolean;
+  clearReplyindicationid(): Comment;
 
   getImageurl(): string;
   setImageurl(value: string): Comment;
+  hasImageurl(): boolean;
+  clearImageurl(): Comment;
 
   getAccountmentionid(): string;
   setAccountmentionid(value: string): Comment;
+  hasAccountmentionid(): boolean;
+  clearAccountmentionid(): Comment;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Comment.AsObject;
@@ -93,16 +123,16 @@ export class Comment extends jspb.Message {
 
 export namespace Comment {
   export type AsObject = {
-    id: string,
+    id?: string,
     authorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    replyto: string,
-    content: string,
+    replyto?: string,
+    content?: string,
     postedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    sent: boolean,
-    pinned: boolean,
-    replyindicationid: string,
-    imageurl: string,
-    accountmentionid: string,
+    sent?: boolean,
+    pinned?: boolean,
+    replyindicationid?: string,
+    imageurl?: string,
+    accountmentionid?: string,
   }
 }
 
@@ -141,9 +171,13 @@ export namespace PostMortem {
 export class PostMortemCondition extends jspb.Message {
   getType(): string;
   setType(value: string): PostMortemCondition;
+  hasType(): boolean;
+  clearType(): PostMortemCondition;
 
   getStatus(): string;
   setStatus(value: string): PostMortemCondition;
+  hasStatus(): boolean;
+  clearStatus(): PostMortemCondition;
 
   getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PostMortemCondition;
@@ -152,9 +186,13 @@ export class PostMortemCondition extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): PostMortemCondition;
+  hasReason(): boolean;
+  clearReason(): PostMortemCondition;
 
   getMessage(): string;
   setMessage(value: string): PostMortemCondition;
+  hasMessage(): boolean;
+  clearMessage(): PostMortemCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostMortemCondition.AsObject;
@@ -166,11 +204,11 @@ export class PostMortemCondition extends jspb.Message {
 
 export namespace PostMortemCondition {
   export type AsObject = {
-    type: string,
-    status: string,
+    type?: string,
+    status?: string,
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
@@ -203,6 +241,8 @@ export namespace PostMortemList {
 export class PostMortemSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): PostMortemSpec;
+  hasDescription(): boolean;
+  clearDescription(): PostMortemSpec;
 
   getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PostMortemSpec;
@@ -231,12 +271,18 @@ export class PostMortemSpec extends jspb.Message {
 
   getRootcause(): string;
   setRootcause(value: string): PostMortemSpec;
+  hasRootcause(): boolean;
+  clearRootcause(): PostMortemSpec;
 
   getSummary(): string;
   setSummary(value: string): PostMortemSpec;
+  hasSummary(): boolean;
+  clearSummary(): PostMortemSpec;
 
   getOwner(): string;
   setOwner(value: string): PostMortemSpec;
+  hasOwner(): boolean;
+  clearOwner(): PostMortemSpec;
 
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PostMortemSpec;
@@ -260,6 +306,8 @@ export class PostMortemSpec extends jspb.Message {
 
   getImageurl(): string;
   setImageurl(value: string): PostMortemSpec;
+  hasImageurl(): boolean;
+  clearImageurl(): PostMortemSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostMortemSpec.AsObject;
@@ -271,26 +319,28 @@ export class PostMortemSpec extends jspb.Message {
 
 export namespace PostMortemSpec {
   export type AsObject = {
-    description: string,
+    description?: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     locationref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     handledbyList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
     alertsList: Array<RaisedAlert.AsObject>,
     timelineList: Array<TimeLineEvent.AsObject>,
-    rootcause: string,
-    summary: string,
-    owner: string,
+    rootcause?: string,
+    summary?: string,
+    owner?: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     detectiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    imageurl: string,
+    imageurl?: string,
   }
 }
 
 export class PostMortemStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): PostMortemStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): PostMortemStatus;
 
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PostMortemStatus;
@@ -312,7 +362,7 @@ export class PostMortemStatus extends jspb.Message {
 
 export namespace PostMortemStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<PostMortemCondition.AsObject>,
   }
@@ -321,6 +371,8 @@ export namespace PostMortemStatus {
 export class RaisedAlert extends jspb.Message {
   getName(): string;
   setName(value: string): RaisedAlert;
+  hasName(): boolean;
+  clearName(): RaisedAlert;
 
   getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RaisedAlert;
@@ -337,7 +389,7 @@ export class RaisedAlert extends jspb.Message {
 
 export namespace RaisedAlert {
   export type AsObject = {
-    name: string,
+    name?: string,
     at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
@@ -377,9 +429,13 @@ export namespace Review {
 export class ReviewCondition extends jspb.Message {
   getType(): string;
   setType(value: string): ReviewCondition;
+  hasType(): boolean;
+  clearType(): ReviewCondition;
 
   getStatus(): string;
   setStatus(value: string): ReviewCondition;
+  hasStatus(): boolean;
+  clearStatus(): ReviewCondition;
 
   getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReviewCondition;
@@ -388,9 +444,13 @@ export class ReviewCondition extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): ReviewCondition;
+  hasReason(): boolean;
+  clearReason(): ReviewCondition;
 
   getMessage(): string;
   setMessage(value: string): ReviewCondition;
+  hasMessage(): boolean;
+  clearMessage(): ReviewCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReviewCondition.AsObject;
@@ -402,11 +462,11 @@ export class ReviewCondition extends jspb.Message {
 
 export namespace ReviewCondition {
   export type AsObject = {
-    type: string,
-    status: string,
+    type?: string,
+    status?: string,
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
@@ -449,9 +509,13 @@ export class ReviewSpec extends jspb.Message {
 
   getOwner(): string;
   setOwner(value: string): ReviewSpec;
+  hasOwner(): boolean;
+  clearOwner(): ReviewSpec;
 
   getNotifiername(): string;
   setNotifiername(value: string): ReviewSpec;
+  hasNotifiername(): boolean;
+  clearNotifiername(): ReviewSpec;
 
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ReviewSpec;
@@ -470,8 +534,8 @@ export namespace ReviewSpec {
   export type AsObject = {
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     messagesList: Array<Comment.AsObject>,
-    owner: string,
-    notifiername: string,
+    owner?: string,
+    notifiername?: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
@@ -484,6 +548,8 @@ export class ReviewStatus extends jspb.Message {
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ReviewStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): ReviewStatus;
 
   getConditionsList(): Array<ReviewCondition>;
   setConditionsList(value: Array<ReviewCondition>): ReviewStatus;
@@ -501,7 +567,7 @@ export class ReviewStatus extends jspb.Message {
 export namespace ReviewStatus {
   export type AsObject = {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    observedgeneration: number,
+    observedgeneration?: number,
     conditionsList: Array<ReviewCondition.AsObject>,
   }
 }
@@ -541,9 +607,13 @@ export namespace RunBook {
 export class RunBookCondition extends jspb.Message {
   getType(): string;
   setType(value: string): RunBookCondition;
+  hasType(): boolean;
+  clearType(): RunBookCondition;
 
   getStatus(): string;
   setStatus(value: string): RunBookCondition;
+  hasStatus(): boolean;
+  clearStatus(): RunBookCondition;
 
   getLastupdatetime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdatetime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunBookCondition;
@@ -557,9 +627,13 @@ export class RunBookCondition extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): RunBookCondition;
+  hasReason(): boolean;
+  clearReason(): RunBookCondition;
 
   getMessage(): string;
   setMessage(value: string): RunBookCondition;
+  hasMessage(): boolean;
+  clearMessage(): RunBookCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunBookCondition.AsObject;
@@ -571,12 +645,12 @@ export class RunBookCondition extends jspb.Message {
 
 export namespace RunBookCondition {
   export type AsObject = {
-    type: string,
-    status: string,
+    type?: string,
+    status?: string,
     lastupdatetime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
@@ -609,6 +683,8 @@ export namespace RunBookList {
 export class RunBookSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): RunBookSpec;
+  hasDescription(): boolean;
+  clearDescription(): RunBookSpec;
 
   getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): RunBookSpec;
@@ -627,6 +703,8 @@ export class RunBookSpec extends jspb.Message {
 
   getOwner(): string;
   setOwner(value: string): RunBookSpec;
+  hasOwner(): boolean;
+  clearOwner(): RunBookSpec;
 
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): RunBookSpec;
@@ -643,11 +721,11 @@ export class RunBookSpec extends jspb.Message {
 
 export namespace RunBookSpec {
   export type AsObject = {
-    description: string,
+    description?: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     authorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     checklistList: Array<CheckListItem.AsObject>,
-    owner: string,
+    owner?: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
@@ -655,6 +733,8 @@ export namespace RunBookSpec {
 export class RunBookStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): RunBookStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): RunBookStatus;
 
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunBookStatus;
@@ -676,7 +756,7 @@ export class RunBookStatus extends jspb.Message {
 
 export namespace RunBookStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<RunBookCondition.AsObject>,
   }
@@ -685,12 +765,18 @@ export namespace RunBookStatus {
 export class TaskSpec extends jspb.Message {
   getId(): string;
   setId(value: string): TaskSpec;
+  hasId(): boolean;
+  clearId(): TaskSpec;
 
   getDescription(): string;
   setDescription(value: string): TaskSpec;
+  hasDescription(): boolean;
+  clearDescription(): TaskSpec;
 
   getAssignedto(): string;
   setAssignedto(value: string): TaskSpec;
+  hasAssignedto(): boolean;
+  clearAssignedto(): TaskSpec;
 
   getDuedate(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setDuedate(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TaskSpec;
@@ -704,6 +790,8 @@ export class TaskSpec extends jspb.Message {
 
   getParenttask(): string;
   setParenttask(value: string): TaskSpec;
+  hasParenttask(): boolean;
+  clearParenttask(): TaskSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TaskSpec.AsObject;
@@ -715,18 +803,20 @@ export class TaskSpec extends jspb.Message {
 
 export namespace TaskSpec {
   export type AsObject = {
-    id: string,
-    description: string,
-    assignedto: string,
+    id?: string,
+    description?: string,
+    assignedto?: string,
     duedate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     reminder?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    parenttask: string,
+    parenttask?: string,
   }
 }
 
 export class TimeLineEvent extends jspb.Message {
   getContent(): string;
   setContent(value: string): TimeLineEvent;
+  hasContent(): boolean;
+  clearContent(): TimeLineEvent;
 
   getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TimeLineEvent;
@@ -743,7 +833,7 @@ export class TimeLineEvent extends jspb.Message {
 
 export namespace TimeLineEvent {
   export type AsObject = {
-    content: string,
+    content?: string,
     at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
@@ -783,9 +873,13 @@ export namespace Todo {
 export class TodoCondition extends jspb.Message {
   getType(): string;
   setType(value: string): TodoCondition;
+  hasType(): boolean;
+  clearType(): TodoCondition;
 
   getStatus(): string;
   setStatus(value: string): TodoCondition;
+  hasStatus(): boolean;
+  clearStatus(): TodoCondition;
 
   getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TodoCondition;
@@ -794,9 +888,13 @@ export class TodoCondition extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): TodoCondition;
+  hasReason(): boolean;
+  clearReason(): TodoCondition;
 
   getMessage(): string;
   setMessage(value: string): TodoCondition;
+  hasMessage(): boolean;
+  clearMessage(): TodoCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TodoCondition.AsObject;
@@ -808,11 +906,11 @@ export class TodoCondition extends jspb.Message {
 
 export namespace TodoCondition {
   export type AsObject = {
-    type: string,
-    status: string,
+    type?: string,
+    status?: string,
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
@@ -845,6 +943,8 @@ export namespace TodoList {
 export class TodoSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): TodoSpec;
+  hasDescription(): boolean;
+  clearDescription(): TodoSpec;
 
   getTasksList(): Array<TaskSpec>;
   setTasksList(value: Array<TaskSpec>): TodoSpec;
@@ -858,9 +958,13 @@ export class TodoSpec extends jspb.Message {
 
   getNotifiername(): string;
   setNotifiername(value: string): TodoSpec;
+  hasNotifiername(): boolean;
+  clearNotifiername(): TodoSpec;
 
   getFlagged(): boolean;
   setFlagged(value: boolean): TodoSpec;
+  hasFlagged(): boolean;
+  clearFlagged(): TodoSpec;
 
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TodoSpec;
@@ -877,11 +981,11 @@ export class TodoSpec extends jspb.Message {
 
 export namespace TodoSpec {
   export type AsObject = {
-    description: string,
+    description?: string,
     tasksList: Array<TaskSpec.AsObject>,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    notifiername: string,
-    flagged: boolean,
+    notifiername?: string,
+    flagged?: boolean,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
@@ -889,6 +993,8 @@ export namespace TodoSpec {
 export class TodoStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): TodoStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): TodoStatus;
 
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TodoStatus;
@@ -910,7 +1016,7 @@ export class TodoStatus extends jspb.Message {
 
 export namespace TodoStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<TodoCondition.AsObject>,
   }

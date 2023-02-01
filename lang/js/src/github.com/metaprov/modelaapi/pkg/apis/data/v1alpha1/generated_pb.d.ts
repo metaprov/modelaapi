@@ -10,18 +10,28 @@ import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../.
 export class BarChartSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): BarChartSpec;
+  hasDatasetname(): boolean;
+  clearDatasetname(): BarChartSpec;
 
   getX(): string;
   setX(value: string): BarChartSpec;
+  hasX(): boolean;
+  clearX(): BarChartSpec;
 
   getY(): string;
   setY(value: string): BarChartSpec;
+  hasY(): boolean;
+  clearY(): BarChartSpec;
 
   getLegend(): boolean;
   setLegend(value: boolean): BarChartSpec;
+  hasLegend(): boolean;
+  clearLegend(): BarChartSpec;
 
   getSort(): boolean;
   setSort(value: boolean): BarChartSpec;
+  hasSort(): boolean;
+  clearSort(): BarChartSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BarChartSpec.AsObject;
@@ -33,77 +43,119 @@ export class BarChartSpec extends jspb.Message {
 
 export namespace BarChartSpec {
   export type AsObject = {
-    datasetname: string,
-    x: string,
-    y: string,
-    legend: boolean,
-    sort: boolean,
+    datasetname?: string,
+    x?: string,
+    y?: string,
+    legend?: boolean,
+    sort?: boolean,
   }
 }
 
 export class Column extends jspb.Message {
   getName(): string;
   setName(value: string): Column;
+  hasName(): boolean;
+  clearName(): Column;
 
   getDisplayname(): string;
   setDisplayname(value: string): Column;
+  hasDisplayname(): boolean;
+  clearDisplayname(): Column;
 
   getDatatype(): string;
   setDatatype(value: string): Column;
+  hasDatatype(): boolean;
+  clearDatatype(): Column;
 
   getFormat(): string;
   setFormat(value: string): Column;
+  hasFormat(): boolean;
+  clearFormat(): Column;
 
   getDescription(): string;
   setDescription(value: string): Column;
+  hasDescription(): boolean;
+  clearDescription(): Column;
 
   getIgnore(): boolean;
   setIgnore(value: boolean): Column;
+  hasIgnore(): boolean;
+  clearIgnore(): Column;
 
   getTarget(): boolean;
   setTarget(value: boolean): Column;
+  hasTarget(): boolean;
+  clearTarget(): Column;
 
   getNullable(): boolean;
   setNullable(value: boolean): Column;
+  hasNullable(): boolean;
+  clearNullable(): Column;
 
   getPk(): boolean;
   setPk(value: boolean): Column;
+  hasPk(): boolean;
+  clearPk(): Column;
 
   getFk(): boolean;
   setFk(value: boolean): Column;
+  hasFk(): boolean;
+  clearFk(): Column;
 
   getMultipleof(): number;
   setMultipleof(value: number): Column;
+  hasMultipleof(): boolean;
+  clearMultipleof(): Column;
 
   getMaximum(): number;
   setMaximum(value: number): Column;
+  hasMaximum(): boolean;
+  clearMaximum(): Column;
 
   getExclusivemaximum(): boolean;
   setExclusivemaximum(value: boolean): Column;
+  hasExclusivemaximum(): boolean;
+  clearExclusivemaximum(): Column;
 
   getMinimum(): number;
   setMinimum(value: number): Column;
+  hasMinimum(): boolean;
+  clearMinimum(): Column;
 
   getExclusiveminimum(): boolean;
   setExclusiveminimum(value: boolean): Column;
+  hasExclusiveminimum(): boolean;
+  clearExclusiveminimum(): Column;
 
   getMaxlength(): number;
   setMaxlength(value: number): Column;
+  hasMaxlength(): boolean;
+  clearMaxlength(): Column;
 
   getMinlength(): number;
   setMinlength(value: number): Column;
+  hasMinlength(): boolean;
+  clearMinlength(): Column;
 
   getPattern(): string;
   setPattern(value: string): Column;
+  hasPattern(): boolean;
+  clearPattern(): Column;
 
   getRequired(): boolean;
   setRequired(value: boolean): Column;
+  hasRequired(): boolean;
+  clearRequired(): Column;
 
   getExample(): string;
   setExample(value: string): Column;
+  hasExample(): boolean;
+  clearExample(): Column;
 
   getExternaldocs(): string;
   setExternaldocs(value: string): Column;
+  hasExternaldocs(): boolean;
+  clearExternaldocs(): Column;
 
   getEnumList(): Array<string>;
   setEnumList(value: Array<string>): Column;
@@ -112,93 +164,153 @@ export class Column extends jspb.Message {
 
   getMaxitems(): number;
   setMaxitems(value: number): Column;
+  hasMaxitems(): boolean;
+  clearMaxitems(): Column;
 
   getMinitems(): number;
   setMinitems(value: number): Column;
+  hasMinitems(): boolean;
+  clearMinitems(): Column;
 
   getUniqueitems(): boolean;
   setUniqueitems(value: boolean): Column;
+  hasUniqueitems(): boolean;
+  clearUniqueitems(): Column;
 
   getPii(): boolean;
   setPii(value: boolean): Column;
+  hasPii(): boolean;
+  clearPii(): Column;
 
   getPhi(): boolean;
   setPhi(value: boolean): Column;
+  hasPhi(): boolean;
+  clearPhi(): Column;
 
   getProtected(): boolean;
   setProtected(value: boolean): Column;
+  hasProtected(): boolean;
+  clearProtected(): Column;
 
   getDefaultvaluenum(): number;
   setDefaultvaluenum(value: number): Column;
+  hasDefaultvaluenum(): boolean;
+  clearDefaultvaluenum(): Column;
 
   getLog(): boolean;
   setLog(value: boolean): Column;
+  hasLog(): boolean;
+  clearLog(): Column;
 
   getMu(): number;
   setMu(value: number): Column;
+  hasMu(): boolean;
+  clearMu(): Column;
 
   getSigma(): number;
   setSigma(value: number): Column;
+  hasSigma(): boolean;
+  clearSigma(): Column;
 
   getSkewthreshold(): number;
   setSkewthreshold(value: number): Column;
+  hasSkewthreshold(): boolean;
+  clearSkewthreshold(): Column;
 
   getDriftthreshold(): number;
   setDriftthreshold(value: number): Column;
+  hasDriftthreshold(): boolean;
+  clearDriftthreshold(): Column;
 
   getKey(): boolean;
   setKey(value: boolean): Column;
+  hasKey(): boolean;
+  clearKey(): Column;
 
   getFold(): boolean;
   setFold(value: boolean): Column;
+  hasFold(): boolean;
+  clearFold(): Column;
 
   getWeight(): boolean;
   setWeight(value: boolean): Column;
+  hasWeight(): boolean;
+  clearWeight(): Column;
 
   getReserved(): boolean;
   setReserved(value: boolean): Column;
+  hasReserved(): boolean;
+  clearReserved(): Column;
 
   getImputation(): string;
   setImputation(value: string): Column;
+  hasImputation(): boolean;
+  clearImputation(): Column;
 
   getScaling(): string;
   setScaling(value: string): Column;
+  hasScaling(): boolean;
+  clearScaling(): Column;
 
   getGenerated(): boolean;
   setGenerated(value: boolean): Column;
+  hasGenerated(): boolean;
+  clearGenerated(): Column;
 
   getFormula(): string;
   setFormula(value: string): Column;
+  hasFormula(): boolean;
+  clearFormula(): Column;
 
   getId(): boolean;
   setId(value: boolean): Column;
+  hasId(): boolean;
+  clearId(): Column;
 
   getStep(): number;
   setStep(value: number): Column;
+  hasStep(): boolean;
+  clearStep(): Column;
 
   getLoc(): number;
   setLoc(value: number): Column;
+  hasLoc(): boolean;
+  clearLoc(): Column;
 
   getDatetimeformat(): string;
   setDatetimeformat(value: string): Column;
+  hasDatetimeformat(): boolean;
+  clearDatetimeformat(): Column;
 
   getTimeseries(): boolean;
   setTimeseries(value: boolean): Column;
+  hasTimeseries(): boolean;
+  clearTimeseries(): Column;
 
   getRegressor(): boolean;
   setRegressor(value: boolean): Column;
+  hasRegressor(): boolean;
+  clearRegressor(): Column;
 
   getLaggedregressor(): boolean;
   setLaggedregressor(value: boolean): Column;
+  hasLaggedregressor(): boolean;
+  clearLaggedregressor(): Column;
 
   getTimeindex(): boolean;
   setTimeindex(value: boolean): Column;
+  hasTimeindex(): boolean;
+  clearTimeindex(): Column;
 
   getAggr(): string;
   setAggr(value: string): Column;
+  hasAggr(): boolean;
+  clearAggr(): Column;
 
   getWindow(): number;
   setWindow(value: number): Column;
+  hasWindow(): boolean;
+  clearWindow(): Column;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Column.AsObject;
@@ -210,64 +322,66 @@ export class Column extends jspb.Message {
 
 export namespace Column {
   export type AsObject = {
-    name: string,
-    displayname: string,
-    datatype: string,
-    format: string,
-    description: string,
-    ignore: boolean,
-    target: boolean,
-    nullable: boolean,
-    pk: boolean,
-    fk: boolean,
-    multipleof: number,
-    maximum: number,
-    exclusivemaximum: boolean,
-    minimum: number,
-    exclusiveminimum: boolean,
-    maxlength: number,
-    minlength: number,
-    pattern: string,
-    required: boolean,
-    example: string,
-    externaldocs: string,
+    name?: string,
+    displayname?: string,
+    datatype?: string,
+    format?: string,
+    description?: string,
+    ignore?: boolean,
+    target?: boolean,
+    nullable?: boolean,
+    pk?: boolean,
+    fk?: boolean,
+    multipleof?: number,
+    maximum?: number,
+    exclusivemaximum?: boolean,
+    minimum?: number,
+    exclusiveminimum?: boolean,
+    maxlength?: number,
+    minlength?: number,
+    pattern?: string,
+    required?: boolean,
+    example?: string,
+    externaldocs?: string,
     enumList: Array<string>,
-    maxitems: number,
-    minitems: number,
-    uniqueitems: boolean,
-    pii: boolean,
-    phi: boolean,
-    pb_protected: boolean,
-    defaultvaluenum: number,
-    log: boolean,
-    mu: number,
-    sigma: number,
-    skewthreshold: number,
-    driftthreshold: number,
-    key: boolean,
-    fold: boolean,
-    weight: boolean,
-    reserved: boolean,
-    imputation: string,
-    scaling: string,
-    generated: boolean,
-    formula: string,
-    id: boolean,
-    step: number,
-    loc: number,
-    datetimeformat: string,
-    timeseries: boolean,
-    regressor: boolean,
-    laggedregressor: boolean,
-    timeindex: boolean,
-    aggr: string,
-    window: number,
+    maxitems?: number,
+    minitems?: number,
+    uniqueitems?: boolean,
+    pii?: boolean,
+    phi?: boolean,
+    pb_protected?: boolean,
+    defaultvaluenum?: number,
+    log?: boolean,
+    mu?: number,
+    sigma?: number,
+    skewthreshold?: number,
+    driftthreshold?: number,
+    key?: boolean,
+    fold?: boolean,
+    weight?: boolean,
+    reserved?: boolean,
+    imputation?: string,
+    scaling?: string,
+    generated?: boolean,
+    formula?: string,
+    id?: boolean,
+    step?: number,
+    loc?: number,
+    datetimeformat?: string,
+    timeseries?: boolean,
+    regressor?: boolean,
+    laggedregressor?: boolean,
+    timeindex?: boolean,
+    aggr?: string,
+    window?: number,
   }
 }
 
 export class ColumnHistogram extends jspb.Message {
   getName(): string;
   setName(value: string): ColumnHistogram;
+  hasName(): boolean;
+  clearName(): ColumnHistogram;
 
   getHistogram(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData | undefined;
   setHistogram(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData): ColumnHistogram;
@@ -281,6 +395,8 @@ export class ColumnHistogram extends jspb.Message {
 
   getDrift(): boolean;
   setDrift(value: boolean): ColumnHistogram;
+  hasDrift(): boolean;
+  clearDrift(): ColumnHistogram;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ColumnHistogram.AsObject;
@@ -292,19 +408,23 @@ export class ColumnHistogram extends jspb.Message {
 
 export namespace ColumnHistogram {
   export type AsObject = {
-    name: string,
+    name?: string,
     histogram?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.AsObject,
     metricsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
-    drift: boolean,
+    drift?: boolean,
   }
 }
 
 export class ColumnSpec extends jspb.Message {
   getSpacer(): boolean;
   setSpacer(value: boolean): ColumnSpec;
+  hasSpacer(): boolean;
+  clearSpacer(): ColumnSpec;
 
   getWidth(): number;
   setWidth(value: number): ColumnSpec;
+  hasWidth(): boolean;
+  clearWidth(): ColumnSpec;
 
   getContent(): ComponentSpec | undefined;
   setContent(value?: ComponentSpec): ColumnSpec;
@@ -321,8 +441,8 @@ export class ColumnSpec extends jspb.Message {
 
 export namespace ColumnSpec {
   export type AsObject = {
-    spacer: boolean,
-    width: number,
+    spacer?: boolean,
+    width?: number,
     content?: ComponentSpec.AsObject,
   }
 }
@@ -330,120 +450,198 @@ export namespace ColumnSpec {
 export class ColumnStatistics extends jspb.Message {
   getName(): string;
   setName(value: string): ColumnStatistics;
+  hasName(): boolean;
+  clearName(): ColumnStatistics;
 
   getDatatype(): string;
   setDatatype(value: string): ColumnStatistics;
+  hasDatatype(): boolean;
+  clearDatatype(): ColumnStatistics;
 
   getCount(): number;
   setCount(value: number): ColumnStatistics;
+  hasCount(): boolean;
+  clearCount(): ColumnStatistics;
 
   getDistinct(): number;
   setDistinct(value: number): ColumnStatistics;
+  hasDistinct(): boolean;
+  clearDistinct(): ColumnStatistics;
 
   getMissing(): number;
   setMissing(value: number): ColumnStatistics;
+  hasMissing(): boolean;
+  clearMissing(): ColumnStatistics;
 
   getPercentmissing(): number;
   setPercentmissing(value: number): ColumnStatistics;
+  hasPercentmissing(): boolean;
+  clearPercentmissing(): ColumnStatistics;
 
   getMean(): number;
   setMean(value: number): ColumnStatistics;
+  hasMean(): boolean;
+  clearMean(): ColumnStatistics;
 
   getStddev(): number;
   setStddev(value: number): ColumnStatistics;
+  hasStddev(): boolean;
+  clearStddev(): ColumnStatistics;
 
   getVariance(): number;
   setVariance(value: number): ColumnStatistics;
+  hasVariance(): boolean;
+  clearVariance(): ColumnStatistics;
 
   getMin(): number;
   setMin(value: number): ColumnStatistics;
+  hasMin(): boolean;
+  clearMin(): ColumnStatistics;
 
   getMax(): number;
   setMax(value: number): ColumnStatistics;
+  hasMax(): boolean;
+  clearMax(): ColumnStatistics;
 
   getKurtosis(): number;
   setKurtosis(value: number): ColumnStatistics;
+  hasKurtosis(): boolean;
+  clearKurtosis(): ColumnStatistics;
 
   getSkewness(): number;
   setSkewness(value: number): ColumnStatistics;
+  hasSkewness(): boolean;
+  clearSkewness(): ColumnStatistics;
 
   getSum(): number;
   setSum(value: number): ColumnStatistics;
+  hasSum(): boolean;
+  clearSum(): ColumnStatistics;
 
   getMad(): number;
   setMad(value: number): ColumnStatistics;
+  hasMad(): boolean;
+  clearMad(): ColumnStatistics;
 
   getP25(): number;
   setP25(value: number): ColumnStatistics;
+  hasP25(): boolean;
+  clearP25(): ColumnStatistics;
 
   getP50(): number;
   setP50(value: number): ColumnStatistics;
+  hasP50(): boolean;
+  clearP50(): ColumnStatistics;
 
   getP75(): number;
   setP75(value: number): ColumnStatistics;
+  hasP75(): boolean;
+  clearP75(): ColumnStatistics;
 
   getIqr(): number;
   setIqr(value: number): ColumnStatistics;
+  hasIqr(): boolean;
+  clearIqr(): ColumnStatistics;
 
   getMode(): string;
   setMode(value: string): ColumnStatistics;
+  hasMode(): boolean;
+  clearMode(): ColumnStatistics;
 
   getZeros(): number;
   setZeros(value: number): ColumnStatistics;
+  hasZeros(): boolean;
+  clearZeros(): ColumnStatistics;
 
   getInvalid(): number;
   setInvalid(value: number): ColumnStatistics;
+  hasInvalid(): boolean;
+  clearInvalid(): ColumnStatistics;
 
   getImportance(): number;
   setImportance(value: number): ColumnStatistics;
+  hasImportance(): boolean;
+  clearImportance(): ColumnStatistics;
 
   getTarget(): boolean;
   setTarget(value: boolean): ColumnStatistics;
+  hasTarget(): boolean;
+  clearTarget(): ColumnStatistics;
 
   getIgnore(): boolean;
   setIgnore(value: boolean): ColumnStatistics;
+  hasIgnore(): boolean;
+  clearIgnore(): ColumnStatistics;
 
   getNullable(): boolean;
   setNullable(value: boolean): ColumnStatistics;
+  hasNullable(): boolean;
+  clearNullable(): ColumnStatistics;
 
   getHighcardinality(): boolean;
   setHighcardinality(value: boolean): ColumnStatistics;
+  hasHighcardinality(): boolean;
+  clearHighcardinality(): ColumnStatistics;
 
   getHighcorrwithotherfeatures(): boolean;
   setHighcorrwithotherfeatures(value: boolean): ColumnStatistics;
+  hasHighcorrwithotherfeatures(): boolean;
+  clearHighcorrwithotherfeatures(): ColumnStatistics;
 
   getLowcorrwithtarget(): boolean;
   setLowcorrwithtarget(value: boolean): ColumnStatistics;
+  hasLowcorrwithtarget(): boolean;
+  clearLowcorrwithtarget(): ColumnStatistics;
 
   getHighmissingpct(): boolean;
   setHighmissingpct(value: boolean): ColumnStatistics;
+  hasHighmissingpct(): boolean;
+  clearHighmissingpct(): ColumnStatistics;
 
   getSkewed(): boolean;
   setSkewed(value: boolean): ColumnStatistics;
+  hasSkewed(): boolean;
+  clearSkewed(): ColumnStatistics;
 
   getId(): boolean;
   setId(value: boolean): ColumnStatistics;
+  hasId(): boolean;
+  clearId(): ColumnStatistics;
 
   getConstant(): boolean;
   setConstant(value: boolean): ColumnStatistics;
+  hasConstant(): boolean;
+  clearConstant(): ColumnStatistics;
 
   getDuplicate(): boolean;
   setDuplicate(value: boolean): ColumnStatistics;
+  hasDuplicate(): boolean;
+  clearDuplicate(): ColumnStatistics;
 
   getReserved(): boolean;
   setReserved(value: boolean): ColumnStatistics;
+  hasReserved(): boolean;
+  clearReserved(): ColumnStatistics;
 
   getCompleteness(): number;
   setCompleteness(value: number): ColumnStatistics;
+  hasCompleteness(): boolean;
+  clearCompleteness(): ColumnStatistics;
 
   getDistinctvaluecount(): number;
   setDistinctvaluecount(value: number): ColumnStatistics;
+  hasDistinctvaluecount(): boolean;
+  clearDistinctvaluecount(): ColumnStatistics;
 
   getMostfreqvaluesratio(): number;
   setMostfreqvaluesratio(value: number): ColumnStatistics;
+  hasMostfreqvaluesratio(): boolean;
+  clearMostfreqvaluesratio(): ColumnStatistics;
 
   getIndexofpeculiarity(): number;
   setIndexofpeculiarity(value: number): ColumnStatistics;
+  hasIndexofpeculiarity(): boolean;
+  clearIndexofpeculiarity(): ColumnStatistics;
 
   getHistogram(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData | undefined;
   setHistogram(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData): ColumnStatistics;
@@ -452,9 +650,13 @@ export class ColumnStatistics extends jspb.Message {
 
   getCorrtotarget(): number;
   setCorrtotarget(value: number): ColumnStatistics;
+  hasCorrtotarget(): boolean;
+  clearCorrtotarget(): ColumnStatistics;
 
   getIndex(): number;
   setIndex(value: number): ColumnStatistics;
+  hasIndex(): boolean;
+  clearIndex(): ColumnStatistics;
 
   getOutliers(): OutlierStat | undefined;
   setOutliers(value?: OutlierStat): ColumnStatistics;
@@ -471,48 +673,48 @@ export class ColumnStatistics extends jspb.Message {
 
 export namespace ColumnStatistics {
   export type AsObject = {
-    name: string,
-    datatype: string,
-    count: number,
-    distinct: number,
-    missing: number,
-    percentmissing: number,
-    mean: number,
-    stddev: number,
-    variance: number,
-    min: number,
-    max: number,
-    kurtosis: number,
-    skewness: number,
-    sum: number,
-    mad: number,
-    p25: number,
-    p50: number,
-    p75: number,
-    iqr: number,
-    mode: string,
-    zeros: number,
-    invalid: number,
-    importance: number,
-    target: boolean,
-    ignore: boolean,
-    nullable: boolean,
-    highcardinality: boolean,
-    highcorrwithotherfeatures: boolean,
-    lowcorrwithtarget: boolean,
-    highmissingpct: boolean,
-    skewed: boolean,
-    id: boolean,
-    constant: boolean,
-    duplicate: boolean,
-    reserved: boolean,
-    completeness: number,
-    distinctvaluecount: number,
-    mostfreqvaluesratio: number,
-    indexofpeculiarity: number,
+    name?: string,
+    datatype?: string,
+    count?: number,
+    distinct?: number,
+    missing?: number,
+    percentmissing?: number,
+    mean?: number,
+    stddev?: number,
+    variance?: number,
+    min?: number,
+    max?: number,
+    kurtosis?: number,
+    skewness?: number,
+    sum?: number,
+    mad?: number,
+    p25?: number,
+    p50?: number,
+    p75?: number,
+    iqr?: number,
+    mode?: string,
+    zeros?: number,
+    invalid?: number,
+    importance?: number,
+    target?: boolean,
+    ignore?: boolean,
+    nullable?: boolean,
+    highcardinality?: boolean,
+    highcorrwithotherfeatures?: boolean,
+    lowcorrwithtarget?: boolean,
+    highmissingpct?: boolean,
+    skewed?: boolean,
+    id?: boolean,
+    constant?: boolean,
+    duplicate?: boolean,
+    reserved?: boolean,
+    completeness?: number,
+    distinctvaluecount?: number,
+    mostfreqvaluesratio?: number,
+    indexofpeculiarity?: number,
     histogram?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.AsObject,
-    corrtotarget: number,
-    index: number,
+    corrtotarget?: number,
+    index?: number,
     outliers?: OutlierStat.AsObject,
   }
 }
@@ -520,12 +722,18 @@ export namespace ColumnStatistics {
 export class ComponentSpec extends jspb.Message {
   getTitle(): string;
   setTitle(value: string): ComponentSpec;
+  hasTitle(): boolean;
+  clearTitle(): ComponentSpec;
 
   getSubtitle(): string;
   setSubtitle(value: string): ComponentSpec;
+  hasSubtitle(): boolean;
+  clearSubtitle(): ComponentSpec;
 
   getFooter(): string;
   setFooter(value: string): ComponentSpec;
+  hasFooter(): boolean;
+  clearFooter(): ComponentSpec;
 
   getContent(): ComponentView | undefined;
   setContent(value?: ComponentView): ComponentSpec;
@@ -542,9 +750,9 @@ export class ComponentSpec extends jspb.Message {
 
 export namespace ComponentSpec {
   export type AsObject = {
-    title: string,
-    subtitle: string,
-    footer: string,
+    title?: string,
+    subtitle?: string,
+    footer?: string,
     content?: ComponentView.AsObject,
   }
 }
@@ -608,15 +816,23 @@ export namespace ComponentView {
 export class Correlation extends jspb.Message {
   getFeature1(): string;
   setFeature1(value: string): Correlation;
+  hasFeature1(): boolean;
+  clearFeature1(): Correlation;
 
   getFeature2(): string;
   setFeature2(value: string): Correlation;
+  hasFeature2(): boolean;
+  clearFeature2(): Correlation;
 
   getValue(): number;
   setValue(value: number): Correlation;
+  hasValue(): boolean;
+  clearValue(): Correlation;
 
   getMethod(): string;
   setMethod(value: string): Correlation;
+  hasMethod(): boolean;
+  clearMethod(): Correlation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Correlation.AsObject;
@@ -628,22 +844,28 @@ export class Correlation extends jspb.Message {
 
 export namespace Correlation {
   export type AsObject = {
-    feature1: string,
-    feature2: string,
-    value: number,
-    method: string,
+    feature1?: string,
+    feature2?: string,
+    value?: number,
+    method?: string,
   }
 }
 
 export class CorrelationSpec extends jspb.Message {
   getCutoff(): number;
   setCutoff(value: number): CorrelationSpec;
+  hasCutoff(): boolean;
+  clearCutoff(): CorrelationSpec;
 
   getMethod(): string;
   setMethod(value: string): CorrelationSpec;
+  hasMethod(): boolean;
+  clearMethod(): CorrelationSpec;
 
   getTop(): number;
   setTop(value: number): CorrelationSpec;
+  hasTop(): boolean;
+  clearTop(): CorrelationSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CorrelationSpec.AsObject;
@@ -655,51 +877,77 @@ export class CorrelationSpec extends jspb.Message {
 
 export namespace CorrelationSpec {
   export type AsObject = {
-    cutoff: number,
-    method: string,
-    top: number,
+    cutoff?: number,
+    method?: string,
+    top?: number,
   }
 }
 
 export class CsvFileSpec extends jspb.Message {
   getColumndelimiter(): string;
   setColumndelimiter(value: string): CsvFileSpec;
+  hasColumndelimiter(): boolean;
+  clearColumndelimiter(): CsvFileSpec;
 
   getRowdelimiter(): string;
   setRowdelimiter(value: string): CsvFileSpec;
+  hasRowdelimiter(): boolean;
+  clearRowdelimiter(): CsvFileSpec;
 
   getQuote(): string;
   setQuote(value: string): CsvFileSpec;
+  hasQuote(): boolean;
+  clearQuote(): CsvFileSpec;
 
   getEscapechar(): string;
   setEscapechar(value: string): CsvFileSpec;
+  hasEscapechar(): boolean;
+  clearEscapechar(): CsvFileSpec;
 
   getCommentchars(): string;
   setCommentchars(value: string): CsvFileSpec;
+  hasCommentchars(): boolean;
+  clearCommentchars(): CsvFileSpec;
 
   getHeader(): boolean;
   setHeader(value: boolean): CsvFileSpec;
+  hasHeader(): boolean;
+  clearHeader(): CsvFileSpec;
 
   getSkiprows(): number;
   setSkiprows(value: number): CsvFileSpec;
+  hasSkiprows(): boolean;
+  clearSkiprows(): CsvFileSpec;
 
   getNullvalues(): string;
   setNullvalues(value: string): CsvFileSpec;
+  hasNullvalues(): boolean;
+  clearNullvalues(): CsvFileSpec;
 
   getEncoding(): string;
   setEncoding(value: string): CsvFileSpec;
+  hasEncoding(): boolean;
+  clearEncoding(): CsvFileSpec;
 
   getMaxrows(): number;
   setMaxrows(value: number): CsvFileSpec;
+  hasMaxrows(): boolean;
+  clearMaxrows(): CsvFileSpec;
 
   getStrict(): boolean;
   setStrict(value: boolean): CsvFileSpec;
+  hasStrict(): boolean;
+  clearStrict(): CsvFileSpec;
 
   getCompression(): string;
   setCompression(value: string): CsvFileSpec;
+  hasCompression(): boolean;
+  clearCompression(): CsvFileSpec;
 
   getHasindexcolumn(): boolean;
   setHasindexcolumn(value: boolean): CsvFileSpec;
+  hasHasindexcolumn(): boolean;
+  clearHasindexcolumn(): CsvFileSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CsvFileSpec.AsObject;
@@ -711,19 +959,19 @@ export class CsvFileSpec extends jspb.Message {
 
 export namespace CsvFileSpec {
   export type AsObject = {
-    columndelimiter: string,
-    rowdelimiter: string,
-    quote: string,
-    escapechar: string,
-    commentchars: string,
-    header: boolean,
-    skiprows: number,
-    nullvalues: string,
-    encoding: string,
-    maxrows: number,
-    strict: boolean,
-    compression: string,
-    hasindexcolumn: boolean,
+    columndelimiter?: string,
+    rowdelimiter?: string,
+    quote?: string,
+    escapechar?: string,
+    commentchars?: string,
+    header?: boolean,
+    skiprows?: number,
+    nullvalues?: string,
+    encoding?: string,
+    maxrows?: number,
+    strict?: boolean,
+    compression?: string,
+    hasindexcolumn?: boolean,
   }
 }
 
@@ -740,6 +988,8 @@ export class DataInputSpec extends jspb.Message {
 
   getFormat(): string;
   setFormat(value: string): DataInputSpec;
+  hasFormat(): boolean;
+  clearFormat(): DataInputSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataInputSpec.AsObject;
@@ -753,37 +1003,55 @@ export namespace DataInputSpec {
   export type AsObject = {
     presqlList: Array<string>,
     observation?: DataLocation.AsObject,
-    format: string,
+    format?: string,
   }
 }
 
 export class DataLocation extends jspb.Message {
   getType(): string;
   setType(value: string): DataLocation;
+  hasType(): boolean;
+  clearType(): DataLocation;
 
   getConnectionname(): string;
   setConnectionname(value: string): DataLocation;
+  hasConnectionname(): boolean;
+  clearConnectionname(): DataLocation;
 
   getBucketname(): string;
   setBucketname(value: string): DataLocation;
+  hasBucketname(): boolean;
+  clearBucketname(): DataLocation;
 
   getPath(): string;
   setPath(value: string): DataLocation;
+  hasPath(): boolean;
+  clearPath(): DataLocation;
 
   getTable(): string;
   setTable(value: string): DataLocation;
+  hasTable(): boolean;
+  clearTable(): DataLocation;
 
   getDatabase(): string;
   setDatabase(value: string): DataLocation;
+  hasDatabase(): boolean;
+  clearDatabase(): DataLocation;
 
   getSql(): string;
   setSql(value: string): DataLocation;
+  hasSql(): boolean;
+  clearSql(): DataLocation;
 
   getTopic(): string;
   setTopic(value: string): DataLocation;
+  hasTopic(): boolean;
+  clearTopic(): DataLocation;
 
   getUrl(): string;
   setUrl(value: string): DataLocation;
+  hasUrl(): boolean;
+  clearUrl(): DataLocation;
 
   getResourceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setResourceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataLocation;
@@ -800,15 +1068,15 @@ export class DataLocation extends jspb.Message {
 
 export namespace DataLocation {
   export type AsObject = {
-    type: string,
-    connectionname: string,
-    bucketname: string,
-    path: string,
-    table: string,
-    database: string,
-    sql: string,
-    topic: string,
-    url: string,
+    type?: string,
+    connectionname?: string,
+    bucketname?: string,
+    path?: string,
+    table?: string,
+    database?: string,
+    sql?: string,
+    topic?: string,
+    url?: string,
     resourceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
@@ -816,6 +1084,8 @@ export namespace DataLocation {
 export class DataOutputSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): DataOutputSpec;
+  hasDatasetname(): boolean;
+  clearDatasetname(): DataOutputSpec;
 
   getLocation(): DataLocation | undefined;
   setLocation(value?: DataLocation): DataOutputSpec;
@@ -824,21 +1094,33 @@ export class DataOutputSpec extends jspb.Message {
 
   getFormat(): string;
   setFormat(value: string): DataOutputSpec;
+  hasFormat(): boolean;
+  clearFormat(): DataOutputSpec;
 
   getAction(): string;
   setAction(value: string): DataOutputSpec;
+  hasAction(): boolean;
+  clearAction(): DataOutputSpec;
 
   getCreatetableifnotexist(): boolean;
   setCreatetableifnotexist(value: boolean): DataOutputSpec;
+  hasCreatetableifnotexist(): boolean;
+  clearCreatetableifnotexist(): DataOutputSpec;
 
   getIncludefeatures(): boolean;
   setIncludefeatures(value: boolean): DataOutputSpec;
+  hasIncludefeatures(): boolean;
+  clearIncludefeatures(): DataOutputSpec;
 
   getXai(): boolean;
   setXai(value: boolean): DataOutputSpec;
+  hasXai(): boolean;
+  clearXai(): DataOutputSpec;
 
   getDetectoutliers(): boolean;
   setDetectoutliers(value: boolean): DataOutputSpec;
+  hasDetectoutliers(): boolean;
+  clearDetectoutliers(): DataOutputSpec;
 
   getPostsqlList(): Array<string>;
   setPostsqlList(value: Array<string>): DataOutputSpec;
@@ -855,14 +1137,14 @@ export class DataOutputSpec extends jspb.Message {
 
 export namespace DataOutputSpec {
   export type AsObject = {
-    datasetname: string,
+    datasetname?: string,
     location?: DataLocation.AsObject,
-    format: string,
-    action: string,
-    createtableifnotexist: boolean,
-    includefeatures: boolean,
-    xai: boolean,
-    detectoutliers: boolean,
+    format?: string,
+    action?: string,
+    createtableifnotexist?: boolean,
+    includefeatures?: boolean,
+    xai?: boolean,
+    detectoutliers?: boolean,
     postsqlList: Array<string>,
   }
 }
@@ -960,9 +1242,13 @@ export namespace DataPipelineRun {
 export class DataPipelineRunCondition extends jspb.Message {
   getType(): string;
   setType(value: string): DataPipelineRunCondition;
+  hasType(): boolean;
+  clearType(): DataPipelineRunCondition;
 
   getStatus(): string;
   setStatus(value: string): DataPipelineRunCondition;
+  hasStatus(): boolean;
+  clearStatus(): DataPipelineRunCondition;
 
   getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataPipelineRunCondition;
@@ -971,9 +1257,13 @@ export class DataPipelineRunCondition extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): DataPipelineRunCondition;
+  hasReason(): boolean;
+  clearReason(): DataPipelineRunCondition;
 
   getMessage(): string;
   setMessage(value: string): DataPipelineRunCondition;
+  hasMessage(): boolean;
+  clearMessage(): DataPipelineRunCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataPipelineRunCondition.AsObject;
@@ -985,11 +1275,11 @@ export class DataPipelineRunCondition extends jspb.Message {
 
 export namespace DataPipelineRunCondition {
   export type AsObject = {
-    type: string,
-    status: string,
+    type?: string,
+    status?: string,
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
@@ -1022,12 +1312,18 @@ export namespace DataPipelineRunList {
 export class DataPipelineRunSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): DataPipelineRunSpec;
+  hasVersionname(): boolean;
+  clearVersionname(): DataPipelineRunSpec;
 
   getDatapipelinename(): string;
   setDatapipelinename(value: string): DataPipelineRunSpec;
+  hasDatapipelinename(): boolean;
+  clearDatapipelinename(): DataPipelineRunSpec;
 
   getOwner(): string;
   setOwner(value: string): DataPipelineRunSpec;
+  hasOwner(): boolean;
+  clearOwner(): DataPipelineRunSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DataPipelineRunSpec;
@@ -1036,12 +1332,18 @@ export class DataPipelineRunSpec extends jspb.Message {
 
   getPriority(): string;
   setPriority(value: string): DataPipelineRunSpec;
+  hasPriority(): boolean;
+  clearPriority(): DataPipelineRunSpec;
 
   getPaused(): boolean;
   setPaused(value: boolean): DataPipelineRunSpec;
+  hasPaused(): boolean;
+  clearPaused(): DataPipelineRunSpec;
 
   getAborted(): boolean;
   setAborted(value: boolean): DataPipelineRunSpec;
+  hasAborted(): boolean;
+  clearAborted(): DataPipelineRunSpec;
 
   getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataPipelineRunSpec;
@@ -1050,9 +1352,13 @@ export class DataPipelineRunSpec extends jspb.Message {
 
   getModelclassname(): string;
   setModelclassname(value: string): DataPipelineRunSpec;
+  hasModelclassname(): boolean;
+  clearModelclassname(): DataPipelineRunSpec;
 
   getModelclassrunname(): string;
   setModelclassrunname(value: string): DataPipelineRunSpec;
+  hasModelclassrunname(): boolean;
+  clearModelclassrunname(): DataPipelineRunSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataPipelineRunSpec.AsObject;
@@ -1064,16 +1370,16 @@ export class DataPipelineRunSpec extends jspb.Message {
 
 export namespace DataPipelineRunSpec {
   export type AsObject = {
-    versionname: string,
-    datapipelinename: string,
-    owner: string,
+    versionname?: string,
+    datapipelinename?: string,
+    owner?: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    priority: string,
-    paused: boolean,
-    aborted: boolean,
+    priority?: string,
+    paused?: boolean,
+    aborted?: boolean,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    modelclassname: string,
-    modelclassrunname: string,
+    modelclassname?: string,
+    modelclassrunname?: string,
   }
 }
 
@@ -1090,6 +1396,8 @@ export class DataPipelineRunStatus extends jspb.Message {
 
   getPhase(): string;
   setPhase(value: string): DataPipelineRunStatus;
+  hasPhase(): boolean;
+  clearPhase(): DataPipelineRunStatus;
 
   getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataPipelineRunStatus;
@@ -1098,15 +1406,23 @@ export class DataPipelineRunStatus extends jspb.Message {
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataPipelineRunStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): DataPipelineRunStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): DataPipelineRunStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): DataPipelineRunStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): DataPipelineRunStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): DataPipelineRunStatus;
 
   getProgress(): number;
   setProgress(value: number): DataPipelineRunStatus;
+  hasProgress(): boolean;
+  clearProgress(): DataPipelineRunStatus;
 
   getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
   setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): DataPipelineRunStatus;
@@ -1135,12 +1451,12 @@ export namespace DataPipelineRunStatus {
   export type AsObject = {
     reciperunsList: Array<string>,
     output?: DataLocation.AsObject,
-    phase: string,
+    phase?: string,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    observedgeneration: number,
-    failurereason: string,
-    failuremessage: string,
-    progress: number,
+    observedgeneration?: number,
+    failurereason?: string,
+    failuremessage?: string,
+    progress?: number,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
@@ -1150,12 +1466,18 @@ export namespace DataPipelineRunStatus {
 export class DataPipelineSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): DataPipelineSpec;
+  hasVersionname(): boolean;
+  clearVersionname(): DataPipelineSpec;
 
   getModelclassname(): string;
   setModelclassname(value: string): DataPipelineSpec;
+  hasModelclassname(): boolean;
+  clearModelclassname(): DataPipelineSpec;
 
   getDescription(): string;
   setDescription(value: string): DataPipelineSpec;
+  hasDescription(): boolean;
+  clearDescription(): DataPipelineSpec;
 
   getDatasetselectorMap(): jspb.Map<string, string>;
   clearDatasetselectorMap(): DataPipelineSpec;
@@ -1182,6 +1504,8 @@ export class DataPipelineSpec extends jspb.Message {
 
   getOwner(): string;
   setOwner(value: string): DataPipelineSpec;
+  hasOwner(): boolean;
+  clearOwner(): DataPipelineSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DataPipelineSpec;
@@ -1190,12 +1514,18 @@ export class DataPipelineSpec extends jspb.Message {
 
   getPriority(): string;
   setPriority(value: string): DataPipelineSpec;
+  hasPriority(): boolean;
+  clearPriority(): DataPipelineSpec;
 
   getPaused(): boolean;
   setPaused(value: boolean): DataPipelineSpec;
+  hasPaused(): boolean;
+  clearPaused(): DataPipelineSpec;
 
   getTtl(): number;
   setTtl(value: number): DataPipelineSpec;
+  hasTtl(): boolean;
+  clearTtl(): DataPipelineSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataPipelineSpec.AsObject;
@@ -1207,25 +1537,27 @@ export class DataPipelineSpec extends jspb.Message {
 
 export namespace DataPipelineSpec {
   export type AsObject = {
-    versionname: string,
-    modelclassname: string,
-    description: string,
+    versionname?: string,
+    modelclassname?: string,
+    description?: string,
     datasetselectorMap: Array<[string, string]>,
     recipesList: Array<RecipePartSpec.AsObject>,
     output?: DataOutputSpec.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
-    owner: string,
+    owner?: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    priority: string,
-    paused: boolean,
-    ttl: number,
+    priority?: string,
+    paused?: boolean,
+    ttl?: number,
   }
 }
 
 export class DataPipelineStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataPipelineStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): DataPipelineStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataPipelineStatus;
@@ -1239,9 +1571,13 @@ export class DataPipelineStatus extends jspb.Message {
 
   getLastrunname(): string;
   setLastrunname(value: string): DataPipelineStatus;
+  hasLastrunname(): boolean;
+  clearLastrunname(): DataPipelineStatus;
 
   getRunscount(): number;
   setRunscount(value: number): DataPipelineStatus;
+  hasRunscount(): boolean;
+  clearRunscount(): DataPipelineStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): DataPipelineStatus;
@@ -1258,11 +1594,11 @@ export class DataPipelineStatus extends jspb.Message {
 
 export namespace DataPipelineStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
-    lastrunname: string,
-    runscount: number,
+    lastrunname?: string,
+    runscount?: number,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -1328,9 +1664,13 @@ export namespace DataProductList {
 export class DataProductSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): DataProductSpec;
+  hasOwner(): boolean;
+  clearOwner(): DataProductSpec;
 
   getPublic(): boolean;
   setPublic(value: boolean): DataProductSpec;
+  hasPublic(): boolean;
+  clearPublic(): DataProductSpec;
 
   getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataProductSpec;
@@ -1349,18 +1689,28 @@ export class DataProductSpec extends jspb.Message {
 
   getLabname(): string;
   setLabname(value: string): DataProductSpec;
+  hasLabname(): boolean;
+  clearLabname(): DataProductSpec;
 
   getServingsitename(): string;
   setServingsitename(value: string): DataProductSpec;
+  hasServingsitename(): boolean;
+  clearServingsitename(): DataProductSpec;
 
   getTask(): string;
   setTask(value: string): DataProductSpec;
+  hasTask(): boolean;
+  clearTask(): DataProductSpec;
 
   getSubtask(): string;
   setSubtask(value: string): DataProductSpec;
+  hasSubtask(): boolean;
+  clearSubtask(): DataProductSpec;
 
   getDescription(): string;
   setDescription(value: string): DataProductSpec;
+  hasDescription(): boolean;
+  clearDescription(): DataProductSpec;
 
   getLocation(): DataLocation | undefined;
   setLocation(value?: DataLocation): DataProductSpec;
@@ -1384,6 +1734,8 @@ export class DataProductSpec extends jspb.Message {
 
   getRetriesonfailure(): number;
   setRetriesonfailure(value: number): DataProductSpec;
+  hasRetriesonfailure(): boolean;
+  clearRetriesonfailure(): DataProductSpec;
 
   getKpisList(): Array<KPI>;
   setKpisList(value: Array<KPI>): DataProductSpec;
@@ -1392,6 +1744,8 @@ export class DataProductSpec extends jspb.Message {
 
   getOncallaccountname(): string;
   setOncallaccountname(value: string): DataProductSpec;
+  hasOncallaccountname(): boolean;
+  clearOncallaccountname(): DataProductSpec;
 
   getCompilation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
   setCompilation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): DataProductSpec;
@@ -1400,12 +1754,18 @@ export class DataProductSpec extends jspb.Message {
 
   getClearancelevel(): string;
   setClearancelevel(value: string): DataProductSpec;
+  hasClearancelevel(): boolean;
+  clearClearancelevel(): DataProductSpec;
 
   getPriority(): string;
   setPriority(value: string): DataProductSpec;
+  hasPriority(): boolean;
+  clearPriority(): DataProductSpec;
 
   getColor(): string;
   setColor(value: string): DataProductSpec;
+  hasColor(): boolean;
+  clearColor(): DataProductSpec;
 
   getGovernance(): GovernanceSpec | undefined;
   setGovernance(value?: GovernanceSpec): DataProductSpec;
@@ -1432,27 +1792,27 @@ export class DataProductSpec extends jspb.Message {
 
 export namespace DataProductSpec {
   export type AsObject = {
-    owner: string,
-    pb_public: boolean,
+    owner?: string,
+    pb_public?: boolean,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     gitlocation?: GitLocation.AsObject,
     imagelocation?: ImageLocation.AsObject,
-    labname: string,
-    servingsitename: string,
-    task: string,
-    subtask: string,
-    description: string,
+    labname?: string,
+    servingsitename?: string,
+    task?: string,
+    subtask?: string,
+    description?: string,
     location?: DataLocation.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     trainingresources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     servingresources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    retriesonfailure: number,
+    retriesonfailure?: number,
     kpisList: Array<KPI.AsObject>,
-    oncallaccountname: string,
+    oncallaccountname?: string,
     compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
-    clearancelevel: string,
-    priority: string,
-    color: string,
+    clearancelevel?: string,
+    priority?: string,
+    color?: string,
     governance?: GovernanceSpec.AsObject,
     permissions?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.AsObject,
     tagsList: Array<string>,
@@ -1462,6 +1822,8 @@ export namespace DataProductSpec {
 export class DataProductStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataProductStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): DataProductStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataProductStatus;
@@ -1470,48 +1832,78 @@ export class DataProductStatus extends jspb.Message {
 
   getDatasourcescount(): number;
   setDatasourcescount(value: number): DataProductStatus;
+  hasDatasourcescount(): boolean;
+  clearDatasourcescount(): DataProductStatus;
 
   getDatasetscount(): number;
   setDatasetscount(value: number): DataProductStatus;
+  hasDatasetscount(): boolean;
+  clearDatasetscount(): DataProductStatus;
 
   getDatapipelinecount(): number;
   setDatapipelinecount(value: number): DataProductStatus;
+  hasDatapipelinecount(): boolean;
+  clearDatapipelinecount(): DataProductStatus;
 
   getTotaldatapipelineruns(): number;
   setTotaldatapipelineruns(value: number): DataProductStatus;
+  hasTotaldatapipelineruns(): boolean;
+  clearTotaldatapipelineruns(): DataProductStatus;
 
   getStudiescount(): number;
   setStudiescount(value: number): DataProductStatus;
+  hasStudiescount(): boolean;
+  clearStudiescount(): DataProductStatus;
 
   getModelscount(): number;
   setModelscount(value: number): DataProductStatus;
+  hasModelscount(): boolean;
+  clearModelscount(): DataProductStatus;
 
   getPredictorscount(): number;
   setPredictorscount(value: number): DataProductStatus;
+  hasPredictorscount(): boolean;
+  clearPredictorscount(): DataProductStatus;
 
   getDataappscount(): number;
   setDataappscount(value: number): DataProductStatus;
+  hasDataappscount(): boolean;
+  clearDataappscount(): DataProductStatus;
 
   getPredictionscount(): number;
   setPredictionscount(value: number): DataProductStatus;
+  hasPredictionscount(): boolean;
+  clearPredictionscount(): DataProductStatus;
 
   getInfoalertscount(): number;
   setInfoalertscount(value: number): DataProductStatus;
+  hasInfoalertscount(): boolean;
+  clearInfoalertscount(): DataProductStatus;
 
   getErroralertscount(): number;
   setErroralertscount(value: number): DataProductStatus;
+  hasErroralertscount(): boolean;
+  clearErroralertscount(): DataProductStatus;
 
   getModelclassescount(): number;
   setModelclassescount(value: number): DataProductStatus;
+  hasModelclassescount(): boolean;
+  clearModelclassescount(): DataProductStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): DataProductStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): DataProductStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): DataProductStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): DataProductStatus;
 
   getBaselineversion(): string;
   setBaselineversion(value: string): DataProductStatus;
+  hasBaselineversion(): boolean;
+  clearBaselineversion(): DataProductStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): DataProductStatus;
@@ -1528,23 +1920,23 @@ export class DataProductStatus extends jspb.Message {
 
 export namespace DataProductStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    datasourcescount: number,
-    datasetscount: number,
-    datapipelinecount: number,
-    totaldatapipelineruns: number,
-    studiescount: number,
-    modelscount: number,
-    predictorscount: number,
-    dataappscount: number,
-    predictionscount: number,
-    infoalertscount: number,
-    erroralertscount: number,
-    modelclassescount: number,
-    failurereason: string,
-    failuremessage: string,
-    baselineversion: string,
+    datasourcescount?: number,
+    datasetscount?: number,
+    datapipelinecount?: number,
+    totaldatapipelineruns?: number,
+    studiescount?: number,
+    modelscount?: number,
+    predictorscount?: number,
+    dataappscount?: number,
+    predictionscount?: number,
+    infoalertscount?: number,
+    erroralertscount?: number,
+    modelclassescount?: number,
+    failurereason?: string,
+    failuremessage?: string,
+    baselineversion?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -1615,15 +2007,23 @@ export class DataProductVersionSpec extends jspb.Message {
 
   getDescription(): string;
   setDescription(value: string): DataProductVersionSpec;
+  hasDescription(): boolean;
+  clearDescription(): DataProductVersionSpec;
 
   getPrevversionname(): string;
   setPrevversionname(value: string): DataProductVersionSpec;
+  hasPrevversionname(): boolean;
+  clearPrevversionname(): DataProductVersionSpec;
 
   getBaseline(): boolean;
   setBaseline(value: boolean): DataProductVersionSpec;
+  hasBaseline(): boolean;
+  clearBaseline(): DataProductVersionSpec;
 
   getOwner(): string;
   setOwner(value: string): DataProductVersionSpec;
+  hasOwner(): boolean;
+  clearOwner(): DataProductVersionSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataProductVersionSpec.AsObject;
@@ -1636,16 +2036,18 @@ export class DataProductVersionSpec extends jspb.Message {
 export namespace DataProductVersionSpec {
   export type AsObject = {
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    description: string,
-    prevversionname: string,
-    baseline: boolean,
-    owner: string,
+    description?: string,
+    prevversionname?: string,
+    baseline?: boolean,
+    owner?: string,
   }
 }
 
 export class DataProductVersionStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataProductVersionStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): DataProductVersionStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataProductVersionStatus;
@@ -1654,9 +2056,13 @@ export class DataProductVersionStatus extends jspb.Message {
 
   getFailurereason(): string;
   setFailurereason(value: string): DataProductVersionStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): DataProductVersionStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): DataProductVersionStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): DataProductVersionStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): DataProductVersionStatus;
@@ -1673,10 +2079,10 @@ export class DataProductVersionStatus extends jspb.Message {
 
 export namespace DataProductVersionStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
+    failurereason?: string,
+    failuremessage?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -1742,15 +2148,23 @@ export namespace DataSourceList {
 export class DataSourceSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): DataSourceSpec;
+  hasOwner(): boolean;
+  clearOwner(): DataSourceSpec;
 
   getVersionname(): string;
   setVersionname(value: string): DataSourceSpec;
+  hasVersionname(): boolean;
+  clearVersionname(): DataSourceSpec;
 
   getDescription(): string;
   setDescription(value: string): DataSourceSpec;
+  hasDescription(): boolean;
+  clearDescription(): DataSourceSpec;
 
   getDatasettype(): string;
   setDatasettype(value: string): DataSourceSpec;
+  hasDatasettype(): boolean;
+  clearDatasettype(): DataSourceSpec;
 
   getSchema(): Schema | undefined;
   setSchema(value?: Schema): DataSourceSpec;
@@ -1764,6 +2178,8 @@ export class DataSourceSpec extends jspb.Message {
 
   getLabeled(): boolean;
   setLabeled(value: boolean): DataSourceSpec;
+  hasLabeled(): boolean;
+  clearLabeled(): DataSourceSpec;
 
   getSample(): SampleSpec | undefined;
   setSample(value?: SampleSpec): DataSourceSpec;
@@ -1772,9 +2188,13 @@ export class DataSourceSpec extends jspb.Message {
 
   getTask(): string;
   setTask(value: string): DataSourceSpec;
+  hasTask(): boolean;
+  clearTask(): DataSourceSpec;
 
   getSubtask(): string;
   setSubtask(value: string): DataSourceSpec;
+  hasSubtask(): boolean;
+  clearSubtask(): DataSourceSpec;
 
   getRelationshipsList(): Array<RelationshipSpec>;
   setRelationshipsList(value: Array<RelationshipSpec>): DataSourceSpec;
@@ -1798,6 +2218,8 @@ export class DataSourceSpec extends jspb.Message {
 
   getIngestmethod(): string;
   setIngestmethod(value: string): DataSourceSpec;
+  hasIngestmethod(): boolean;
+  clearIngestmethod(): DataSourceSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataSourceSpec.AsObject;
@@ -1809,30 +2231,34 @@ export class DataSourceSpec extends jspb.Message {
 
 export namespace DataSourceSpec {
   export type AsObject = {
-    owner: string,
-    versionname: string,
-    description: string,
-    datasettype: string,
+    owner?: string,
+    versionname?: string,
+    description?: string,
+    datasettype?: string,
     schema?: Schema.AsObject,
     flatfile?: FlatFileFormatSpec.AsObject,
-    labeled: boolean,
+    labeled?: boolean,
     sample?: SampleSpec.AsObject,
-    task: string,
-    subtask: string,
+    task?: string,
+    subtask?: string,
     relationshipsList: Array<RelationshipSpec.AsObject>,
     labeling?: LabelingSpec.AsObject,
     inferredfrom?: DataLocation.AsObject,
     unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    ingestmethod: string,
+    ingestmethod?: string,
   }
 }
 
 export class DataSourceStatus extends jspb.Message {
   getCols(): number;
   setCols(value: number): DataSourceStatus;
+  hasCols(): boolean;
+  clearCols(): DataSourceStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataSourceStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): DataSourceStatus;
 
   getLastdatasetcreatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastdatasetcreatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataSourceStatus;
@@ -1841,6 +2267,8 @@ export class DataSourceStatus extends jspb.Message {
 
   getLastdatasetname(): string;
   setLastdatasetname(value: string): DataSourceStatus;
+  hasLastdatasetname(): boolean;
+  clearLastdatasetname(): DataSourceStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataSourceStatus;
@@ -1849,9 +2277,13 @@ export class DataSourceStatus extends jspb.Message {
 
   getFailurereason(): string;
   setFailurereason(value: string): DataSourceStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): DataSourceStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): DataSourceStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): DataSourceStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): DataSourceStatus;
@@ -1868,13 +2300,13 @@ export class DataSourceStatus extends jspb.Message {
 
 export namespace DataSourceStatus {
   export type AsObject = {
-    cols: number,
-    observedgeneration: number,
+    cols?: number,
+    observedgeneration?: number,
     lastdatasetcreatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lastdatasetname: string,
+    lastdatasetname?: string,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
+    failurereason?: string,
+    failuremessage?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -1914,18 +2346,28 @@ export namespace Dataset {
 export class DatasetGroupByStatus extends jspb.Message {
   getDatasetsuri(): string;
   setDatasetsuri(value: string): DatasetGroupByStatus;
+  hasDatasetsuri(): boolean;
+  clearDatasetsuri(): DatasetGroupByStatus;
 
   getProfilesuri(): string;
   setProfilesuri(value: string): DatasetGroupByStatus;
+  hasProfilesuri(): boolean;
+  clearProfilesuri(): DatasetGroupByStatus;
 
   getReportsuri(): string;
   setReportsuri(value: string): DatasetGroupByStatus;
+  hasReportsuri(): boolean;
+  clearReportsuri(): DatasetGroupByStatus;
 
   getUnittestsuri(): string;
   setUnittestsuri(value: string): DatasetGroupByStatus;
+  hasUnittestsuri(): boolean;
+  clearUnittestsuri(): DatasetGroupByStatus;
 
   getFeaturesuri(): string;
   setFeaturesuri(value: string): DatasetGroupByStatus;
+  hasFeaturesuri(): boolean;
+  clearFeaturesuri(): DatasetGroupByStatus;
 
   getWorkerresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>;
   setWorkerresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>): DatasetGroupByStatus;
@@ -1942,11 +2384,11 @@ export class DatasetGroupByStatus extends jspb.Message {
 
 export namespace DatasetGroupByStatus {
   export type AsObject = {
-    datasetsuri: string,
-    profilesuri: string,
-    reportsuri: string,
-    unittestsuri: string,
-    featuresuri: string,
+    datasetsuri?: string,
+    profilesuri?: string,
+    reportsuri?: string,
+    unittestsuri?: string,
+    featuresuri?: string,
     workerresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.AsObject>,
   }
 }
@@ -1980,24 +2422,38 @@ export namespace DatasetList {
 export class DatasetSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): DatasetSpec;
+  hasOwner(): boolean;
+  clearOwner(): DatasetSpec;
 
   getVersionname(): string;
   setVersionname(value: string): DatasetSpec;
+  hasVersionname(): boolean;
+  clearVersionname(): DatasetSpec;
 
   getDatasourcename(): string;
   setDatasourcename(value: string): DatasetSpec;
+  hasDatasourcename(): boolean;
+  clearDatasourcename(): DatasetSpec;
 
   getFeaturegroupname(): string;
   setFeaturegroupname(value: string): DatasetSpec;
+  hasFeaturegroupname(): boolean;
+  clearFeaturegroupname(): DatasetSpec;
 
   getDescription(): string;
   setDescription(value: string): DatasetSpec;
+  hasDescription(): boolean;
+  clearDescription(): DatasetSpec;
 
   getDisplayname(): string;
   setDisplayname(value: string): DatasetSpec;
+  hasDisplayname(): boolean;
+  clearDisplayname(): DatasetSpec;
 
   getRole(): string;
   setRole(value: string): DatasetSpec;
+  hasRole(): boolean;
+  clearRole(): DatasetSpec;
 
   getTagsList(): Array<string>;
   setTagsList(value: Array<string>): DatasetSpec;
@@ -2006,12 +2462,18 @@ export class DatasetSpec extends jspb.Message {
 
   getReported(): boolean;
   setReported(value: boolean): DatasetSpec;
+  hasReported(): boolean;
+  clearReported(): DatasetSpec;
 
   getSnapshotted(): boolean;
   setSnapshotted(value: boolean): DatasetSpec;
+  hasSnapshotted(): boolean;
+  clearSnapshotted(): DatasetSpec;
 
   getUnittested(): boolean;
   setUnittested(value: boolean): DatasetSpec;
+  hasUnittested(): boolean;
+  clearUnittested(): DatasetSpec;
 
   getOrigin(): DataLocation | undefined;
   setOrigin(value?: DataLocation): DatasetSpec;
@@ -2030,9 +2492,13 @@ export class DatasetSpec extends jspb.Message {
 
   getTimeout(): number;
   setTimeout(value: number): DatasetSpec;
+  hasTimeout(): boolean;
+  clearTimeout(): DatasetSpec;
 
   getType(): string;
   setType(value: string): DatasetSpec;
+  hasType(): boolean;
+  clearType(): DatasetSpec;
 
   getSample(): SampleSpec | undefined;
   setSample(value?: SampleSpec): DatasetSpec;
@@ -2046,9 +2512,13 @@ export class DatasetSpec extends jspb.Message {
 
   getTask(): string;
   setTask(value: string): DatasetSpec;
+  hasTask(): boolean;
+  clearTask(): DatasetSpec;
 
   getSubtask(): string;
   setSubtask(value: string): DatasetSpec;
+  hasSubtask(): boolean;
+  clearSubtask(): DatasetSpec;
 
   getCorrelation(): CorrelationSpec | undefined;
   setCorrelation(value?: CorrelationSpec): DatasetSpec;
@@ -2057,9 +2527,13 @@ export class DatasetSpec extends jspb.Message {
 
   getFast(): boolean;
   setFast(value: boolean): DatasetSpec;
+  hasFast(): boolean;
+  clearFast(): DatasetSpec;
 
   getFeaturized(): boolean;
   setFeaturized(value: boolean): DatasetSpec;
+  hasFeaturized(): boolean;
+  clearFeaturized(): DatasetSpec;
 
   getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetSpec;
@@ -2078,6 +2552,8 @@ export class DatasetSpec extends jspb.Message {
 
   getGeneratefeaturehistogram(): boolean;
   setGeneratefeaturehistogram(value: boolean): DatasetSpec;
+  hasGeneratefeaturehistogram(): boolean;
+  clearGeneratefeaturehistogram(): DatasetSpec;
 
   getUnittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DatasetSpec;
@@ -2111,9 +2587,13 @@ export class DatasetSpec extends jspb.Message {
 
   getModelclassname(): string;
   setModelclassname(value: string): DatasetSpec;
+  hasModelclassname(): boolean;
+  clearModelclassname(): DatasetSpec;
 
   getModelclassrunname(): string;
   setModelclassrunname(value: string): DatasetSpec;
+  hasModelclassrunname(): boolean;
+  clearModelclassrunname(): DatasetSpec;
 
   getFeaturegroupsList(): Array<k8s_io_api_core_v1_generated_pb.ObjectReference>;
   setFeaturegroupsList(value: Array<k8s_io_api_core_v1_generated_pb.ObjectReference>): DatasetSpec;
@@ -2130,41 +2610,41 @@ export class DatasetSpec extends jspb.Message {
 
 export namespace DatasetSpec {
   export type AsObject = {
-    owner: string,
-    versionname: string,
-    datasourcename: string,
-    featuregroupname: string,
-    description: string,
-    displayname: string,
-    role: string,
+    owner?: string,
+    versionname?: string,
+    datasourcename?: string,
+    featuregroupname?: string,
+    description?: string,
+    displayname?: string,
+    role?: string,
     tagsList: Array<string>,
-    reported: boolean,
-    snapshotted: boolean,
-    unittested: boolean,
+    reported?: boolean,
+    snapshotted?: boolean,
+    unittested?: boolean,
     origin?: DataLocation.AsObject,
     location?: DataLocation.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    timeout: number,
-    type: string,
+    timeout?: number,
+    type?: string,
     sample?: SampleSpec.AsObject,
     synthetic?: SyntheticSpec.AsObject,
-    task: string,
-    subtask: string,
+    task?: string,
+    subtask?: string,
     correlation?: CorrelationSpec.AsObject,
-    fast: boolean,
-    featurized: boolean,
+    fast?: boolean,
+    featurized?: boolean,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    generatefeaturehistogram: boolean,
+    generatefeaturehistogram?: boolean,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     groupby?: GroupBySpec.AsObject,
     grouplocations?: GroupDatasetLocationsSpec.AsObject,
     keyList: Array<string>,
     mineventtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     maxeventtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    modelclassname: string,
-    modelclassrunname: string,
+    modelclassname?: string,
+    modelclassrunname?: string,
     featuregroupsList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
   }
 }
@@ -2177,12 +2657,18 @@ export class DatasetStatistics extends jspb.Message {
 
   getRows(): number;
   setRows(value: number): DatasetStatistics;
+  hasRows(): boolean;
+  clearRows(): DatasetStatistics;
 
   getCols(): number;
   setCols(value: number): DatasetStatistics;
+  hasCols(): boolean;
+  clearCols(): DatasetStatistics;
 
   getFilesize(): number;
   setFilesize(value: number): DatasetStatistics;
+  hasFilesize(): boolean;
+  clearFilesize(): DatasetStatistics;
 
   getCorrelationswithtargetList(): Array<Correlation>;
   setCorrelationswithtargetList(value: Array<Correlation>): DatasetStatistics;
@@ -2205,9 +2691,9 @@ export class DatasetStatistics extends jspb.Message {
 export namespace DatasetStatistics {
   export type AsObject = {
     columnsList: Array<ColumnStatistics.AsObject>,
-    rows: number,
-    cols: number,
-    filesize: number,
+    rows?: number,
+    cols?: number,
+    filesize?: number,
     correlationswithtargetList: Array<Correlation.AsObject>,
     topcorrelationsList: Array<Correlation.AsObject>,
   }
@@ -2221,24 +2707,38 @@ export class DatasetStatus extends jspb.Message {
 
   getPhase(): string;
   setPhase(value: string): DatasetStatus;
+  hasPhase(): boolean;
+  clearPhase(): DatasetStatus;
 
   getReportname(): string;
   setReportname(value: string): DatasetStatus;
+  hasReportname(): boolean;
+  clearReportname(): DatasetStatus;
 
   getReporturi(): string;
   setReporturi(value: string): DatasetStatus;
+  hasReporturi(): boolean;
+  clearReporturi(): DatasetStatus;
 
   getProfileuri(): string;
   setProfileuri(value: string): DatasetStatus;
+  hasProfileuri(): boolean;
+  clearProfileuri(): DatasetStatus;
 
   getImbalanced(): boolean;
   setImbalanced(value: boolean): DatasetStatus;
+  hasImbalanced(): boolean;
+  clearImbalanced(): DatasetStatus;
 
   getAnomaliesuri(): string;
   setAnomaliesuri(value: string): DatasetStatus;
+  hasAnomaliesuri(): boolean;
+  clearAnomaliesuri(): DatasetStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DatasetStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): DatasetStatus;
 
   getTestresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
   setTestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetStatus;
@@ -2252,15 +2752,23 @@ export class DatasetStatus extends jspb.Message {
 
   getFailurereason(): string;
   setFailurereason(value: string): DatasetStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): DatasetStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): DatasetStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): DatasetStatus;
 
   getProgress(): number;
   setProgress(value: number): DatasetStatus;
+  hasProgress(): boolean;
+  clearProgress(): DatasetStatus;
 
   getHash(): string;
   setHash(value: string): DatasetStatus;
+  hasHash(): boolean;
+  clearHash(): DatasetStatus;
 
   getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
   setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): DatasetStatus;
@@ -2269,6 +2777,8 @@ export class DatasetStatus extends jspb.Message {
 
   getDerivedfromdataset(): string;
   setDerivedfromdataset(value: string): DatasetStatus;
+  hasDerivedfromdataset(): boolean;
+  clearDerivedfromdataset(): DatasetStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
@@ -2311,21 +2821,21 @@ export class DatasetStatus extends jspb.Message {
 export namespace DatasetStatus {
   export type AsObject = {
     statistics?: DatasetStatistics.AsObject,
-    phase: string,
-    reportname: string,
-    reporturi: string,
-    profileuri: string,
-    imbalanced: boolean,
-    anomaliesuri: string,
-    observedgeneration: number,
+    phase?: string,
+    reportname?: string,
+    reporturi?: string,
+    profileuri?: string,
+    imbalanced?: boolean,
+    anomaliesuri?: string,
+    observedgeneration?: number,
     testresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     laststudyat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason: string,
-    failuremessage: string,
-    progress: number,
-    hash: string,
+    failurereason?: string,
+    failuremessage?: string,
+    progress?: number,
+    hash?: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    derivedfromdataset: string,
+    derivedfromdataset?: string,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -2364,9 +2874,13 @@ export namespace DatasetTemplate {
 export class DriftThreshold extends jspb.Message {
   getMetric(): string;
   setMetric(value: string): DriftThreshold;
+  hasMetric(): boolean;
+  clearMetric(): DriftThreshold;
 
   getValue(): number;
   setValue(value: number): DriftThreshold;
+  hasValue(): boolean;
+  clearValue(): DriftThreshold;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DriftThreshold.AsObject;
@@ -2378,8 +2892,8 @@ export class DriftThreshold extends jspb.Message {
 
 export namespace DriftThreshold {
   export type AsObject = {
-    metric: string,
-    value: number,
+    metric?: string,
+    value?: number,
   }
 }
 
@@ -2449,12 +2963,18 @@ export class EntitySpec extends jspb.Message {
 
   getDescription(): string;
   setDescription(value: string): EntitySpec;
+  hasDescription(): boolean;
+  clearDescription(): EntitySpec;
 
   getJoinkey(): string;
   setJoinkey(value: string): EntitySpec;
+  hasJoinkey(): boolean;
+  clearJoinkey(): EntitySpec;
 
   getOwner(): string;
   setOwner(value: string): EntitySpec;
+  hasOwner(): boolean;
+  clearOwner(): EntitySpec;
 
   getTagsList(): Array<string>;
   setTagsList(value: Array<string>): EntitySpec;
@@ -2472,9 +2992,9 @@ export class EntitySpec extends jspb.Message {
 export namespace EntitySpec {
   export type AsObject = {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    description: string,
-    joinkey: string,
-    owner: string,
+    description?: string,
+    joinkey?: string,
+    owner?: string,
     tagsList: Array<string>,
   }
 }
@@ -2482,6 +3002,8 @@ export namespace EntitySpec {
 export class EntityStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): EntityStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): EntityStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): EntityStatus;
@@ -2503,7 +3025,7 @@ export class EntityStatus extends jspb.Message {
 
 export namespace EntityStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
@@ -2512,15 +3034,23 @@ export namespace EntityStatus {
 export class ExcelNotebookSpec extends jspb.Message {
   getFirstsheetwithdata(): boolean;
   setFirstsheetwithdata(value: boolean): ExcelNotebookSpec;
+  hasFirstsheetwithdata(): boolean;
+  clearFirstsheetwithdata(): ExcelNotebookSpec;
 
   getSheetname(): string;
   setSheetname(value: string): ExcelNotebookSpec;
+  hasSheetname(): boolean;
+  clearSheetname(): ExcelNotebookSpec;
 
   getSheetindex(): number;
   setSheetindex(value: number): ExcelNotebookSpec;
+  hasSheetindex(): boolean;
+  clearSheetindex(): ExcelNotebookSpec;
 
   getColumnnamerow(): number;
   setColumnnamerow(value: number): ExcelNotebookSpec;
+  hasColumnnamerow(): boolean;
+  clearColumnnamerow(): ExcelNotebookSpec;
 
   getData(): ExcelSheetArea | undefined;
   setData(value?: ExcelSheetArea): ExcelNotebookSpec;
@@ -2537,10 +3067,10 @@ export class ExcelNotebookSpec extends jspb.Message {
 
 export namespace ExcelNotebookSpec {
   export type AsObject = {
-    firstsheetwithdata: boolean,
-    sheetname: string,
-    sheetindex: number,
-    columnnamerow: number,
+    firstsheetwithdata?: boolean,
+    sheetname?: string,
+    sheetindex?: number,
+    columnnamerow?: number,
     data?: ExcelSheetArea.AsObject,
   }
 }
@@ -2548,18 +3078,28 @@ export namespace ExcelNotebookSpec {
 export class ExcelSheetArea extends jspb.Message {
   getEntiresheet(): boolean;
   setEntiresheet(value: boolean): ExcelSheetArea;
+  hasEntiresheet(): boolean;
+  clearEntiresheet(): ExcelSheetArea;
 
   getFromcolumn(): number;
   setFromcolumn(value: number): ExcelSheetArea;
+  hasFromcolumn(): boolean;
+  clearFromcolumn(): ExcelSheetArea;
 
   getTocolumn(): number;
   setTocolumn(value: number): ExcelSheetArea;
+  hasTocolumn(): boolean;
+  clearTocolumn(): ExcelSheetArea;
 
   getFromrow(): number;
   setFromrow(value: number): ExcelSheetArea;
+  hasFromrow(): boolean;
+  clearFromrow(): ExcelSheetArea;
 
   getTorow(): number;
   setTorow(value: number): ExcelSheetArea;
+  hasTorow(): boolean;
+  clearTorow(): ExcelSheetArea;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExcelSheetArea.AsObject;
@@ -2571,11 +3111,11 @@ export class ExcelSheetArea extends jspb.Message {
 
 export namespace ExcelSheetArea {
   export type AsObject = {
-    entiresheet: boolean,
-    fromcolumn: number,
-    tocolumn: number,
-    fromrow: number,
-    torow: number,
+    entiresheet?: boolean,
+    fromcolumn?: number,
+    tocolumn?: number,
+    fromrow?: number,
+    torow?: number,
   }
 }
 
@@ -2645,15 +3185,23 @@ export class FeatureGroupSpec extends jspb.Message {
 
   getOwner(): string;
   setOwner(value: string): FeatureGroupSpec;
+  hasOwner(): boolean;
+  clearOwner(): FeatureGroupSpec;
 
   getDescription(): string;
   setDescription(value: string): FeatureGroupSpec;
+  hasDescription(): boolean;
+  clearDescription(): FeatureGroupSpec;
 
   getIngesttype(): string;
   setIngesttype(value: string): FeatureGroupSpec;
+  hasIngesttype(): boolean;
+  clearIngesttype(): FeatureGroupSpec;
 
   getEntityname(): string;
   setEntityname(value: string): FeatureGroupSpec;
+  hasEntityname(): boolean;
+  clearEntityname(): FeatureGroupSpec;
 
   getTagsList(): Array<string>;
   setTagsList(value: Array<string>): FeatureGroupSpec;
@@ -2692,12 +3240,18 @@ export class FeatureGroupSpec extends jspb.Message {
 
   getTimecolumn(): string;
   setTimecolumn(value: string): FeatureGroupSpec;
+  hasTimecolumn(): boolean;
+  clearTimecolumn(): FeatureGroupSpec;
 
   getTimecolumnformat(): string;
   setTimecolumnformat(value: string): FeatureGroupSpec;
+  hasTimecolumnformat(): boolean;
+  clearTimecolumnformat(): FeatureGroupSpec;
 
   getKeycolumn(): string;
   setKeycolumn(value: string): FeatureGroupSpec;
+  hasKeycolumn(): boolean;
+  clearKeycolumn(): FeatureGroupSpec;
 
   getMaterialization(): MaterializationSpec | undefined;
   setMaterialization(value?: MaterializationSpec): FeatureGroupSpec;
@@ -2720,10 +3274,10 @@ export class FeatureGroupSpec extends jspb.Message {
 export namespace FeatureGroupSpec {
   export type AsObject = {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    owner: string,
-    description: string,
-    ingesttype: string,
-    entityname: string,
+    owner?: string,
+    description?: string,
+    ingesttype?: string,
+    entityname?: string,
     tagsList: Array<string>,
     ingestschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
@@ -2731,9 +3285,9 @@ export namespace FeatureGroupSpec {
     schema?: Schema.AsObject,
     tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     location?: DataLocation.AsObject,
-    timecolumn: string,
-    timecolumnformat: string,
-    keycolumn: string,
+    timecolumn?: string,
+    timecolumnformat?: string,
+    keycolumn?: string,
     materialization?: MaterializationSpec.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
@@ -2742,9 +3296,13 @@ export namespace FeatureGroupSpec {
 export class FeatureGroupStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): FeatureGroupStatus;
+  hasPhase(): boolean;
+  clearPhase(): FeatureGroupStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): FeatureGroupStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): FeatureGroupStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureGroupStatus;
@@ -2753,6 +3311,8 @@ export class FeatureGroupStatus extends jspb.Message {
 
   getRows(): number;
   setRows(value: number): FeatureGroupStatus;
+  hasRows(): boolean;
+  clearRows(): FeatureGroupStatus;
 
   getIngestschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
   setIngestschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): FeatureGroupStatus;
@@ -2776,12 +3336,18 @@ export class FeatureGroupStatus extends jspb.Message {
 
   getIngestdatasetname(): string;
   setIngestdatasetname(value: string): FeatureGroupStatus;
+  hasIngestdatasetname(): boolean;
+  clearIngestdatasetname(): FeatureGroupStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): FeatureGroupStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): FeatureGroupStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): FeatureGroupStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): FeatureGroupStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): FeatureGroupStatus;
@@ -2798,17 +3364,17 @@ export class FeatureGroupStatus extends jspb.Message {
 
 export namespace FeatureGroupStatus {
   export type AsObject = {
-    phase: string,
-    observedgeneration: number,
+    phase?: string,
+    observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    rows: number,
+    rows?: number,
     ingestschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     onlinetable?: DataLocation.AsObject,
     onlinetablecreated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    ingestdatasetname: string,
-    failurereason: string,
-    failuremessage: string,
+    ingestdatasetname?: string,
+    failurereason?: string,
+    failuremessage?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -2874,12 +3440,18 @@ export namespace FeatureHistogramList {
 export class FeatureHistogramSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): FeatureHistogramSpec;
+  hasOwner(): boolean;
+  clearOwner(): FeatureHistogramSpec;
 
   getVersionname(): string;
   setVersionname(value: string): FeatureHistogramSpec;
+  hasVersionname(): boolean;
+  clearVersionname(): FeatureHistogramSpec;
 
   getDescription(): string;
   setDescription(value: string): FeatureHistogramSpec;
+  hasDescription(): boolean;
+  clearDescription(): FeatureHistogramSpec;
 
   getColumnsList(): Array<string>;
   setColumnsList(value: Array<string>): FeatureHistogramSpec;
@@ -2893,9 +3465,13 @@ export class FeatureHistogramSpec extends jspb.Message {
 
   getTraining(): boolean;
   setTraining(value: boolean): FeatureHistogramSpec;
+  hasTraining(): boolean;
+  clearTraining(): FeatureHistogramSpec;
 
   getLive(): boolean;
   setLive(value: boolean): FeatureHistogramSpec;
+  hasLive(): boolean;
+  clearLive(): FeatureHistogramSpec;
 
   getStart(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStart(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureHistogramSpec;
@@ -2919,6 +3495,8 @@ export class FeatureHistogramSpec extends jspb.Message {
 
   getSyncintervalsec(): number;
   setSyncintervalsec(value: number): FeatureHistogramSpec;
+  hasSyncintervalsec(): boolean;
+  clearSyncintervalsec(): FeatureHistogramSpec;
 
   getUnittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): FeatureHistogramSpec;
@@ -2927,12 +3505,18 @@ export class FeatureHistogramSpec extends jspb.Message {
 
   getGenunittests(): boolean;
   setGenunittests(value: boolean): FeatureHistogramSpec;
+  hasGenunittests(): boolean;
+  clearGenunittests(): FeatureHistogramSpec;
 
   getFeaturefilter(): string;
   setFeaturefilter(value: string): FeatureHistogramSpec;
+  hasFeaturefilter(): boolean;
+  clearFeaturefilter(): FeatureHistogramSpec;
 
   getReferencetype(): string;
   setReferencetype(value: string): FeatureHistogramSpec;
+  hasReferencetype(): boolean;
+  clearReferencetype(): FeatureHistogramSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureHistogramSpec.AsObject;
@@ -2944,28 +3528,30 @@ export class FeatureHistogramSpec extends jspb.Message {
 
 export namespace FeatureHistogramSpec {
   export type AsObject = {
-    owner: string,
-    versionname: string,
-    description: string,
+    owner?: string,
+    versionname?: string,
+    description?: string,
     columnsList: Array<string>,
     sourceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    training: boolean,
-    live: boolean,
+    training?: boolean,
+    live?: boolean,
     start?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     end?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     baseref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     driftthresholdsList: Array<DriftThreshold.AsObject>,
-    syncintervalsec: number,
+    syncintervalsec?: number,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    genunittests: boolean,
-    featurefilter: string,
-    referencetype: string,
+    genunittests?: boolean,
+    featurefilter?: string,
+    referencetype?: string,
   }
 }
 
 export class FeatureHistogramStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): FeatureHistogramStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): FeatureHistogramStatus;
 
   getColumnsList(): Array<ColumnHistogram>;
   setColumnsList(value: Array<ColumnHistogram>): FeatureHistogramStatus;
@@ -2984,12 +3570,18 @@ export class FeatureHistogramStatus extends jspb.Message {
 
   getPhase(): string;
   setPhase(value: string): FeatureHistogramStatus;
+  hasPhase(): boolean;
+  clearPhase(): FeatureHistogramStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): FeatureHistogramStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): FeatureHistogramStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): FeatureHistogramStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): FeatureHistogramStatus;
 
   getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
   setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): FeatureHistogramStatus;
@@ -2998,9 +3590,13 @@ export class FeatureHistogramStatus extends jspb.Message {
 
   getTotal(): number;
   setTotal(value: number): FeatureHistogramStatus;
+  hasTotal(): boolean;
+  clearTotal(): FeatureHistogramStatus;
 
   getErrors(): number;
   setErrors(value: number): FeatureHistogramStatus;
+  hasErrors(): boolean;
+  clearErrors(): FeatureHistogramStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): FeatureHistogramStatus;
@@ -3017,16 +3613,16 @@ export class FeatureHistogramStatus extends jspb.Message {
 
 export namespace FeatureHistogramStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     columnsList: Array<ColumnHistogram.AsObject>,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    phase: string,
-    failurereason: string,
-    failuremessage: string,
+    phase?: string,
+    failurereason?: string,
+    failuremessage?: string,
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    total: number,
-    errors: number,
+    total?: number,
+    errors?: number,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -3034,6 +3630,8 @@ export namespace FeatureHistogramStatus {
 export class FlatFileFormatSpec extends jspb.Message {
   getFiletype(): string;
   setFiletype(value: string): FlatFileFormatSpec;
+  hasFiletype(): boolean;
+  clearFiletype(): FlatFileFormatSpec;
 
   getCsv(): CsvFileSpec | undefined;
   setCsv(value?: CsvFileSpec): FlatFileFormatSpec;
@@ -3060,7 +3658,7 @@ export class FlatFileFormatSpec extends jspb.Message {
 
 export namespace FlatFileFormatSpec {
   export type AsObject = {
-    filetype: string,
+    filetype?: string,
     csv?: CsvFileSpec.AsObject,
     excel?: ExcelNotebookSpec.AsObject,
     parquet?: ParquetFileSpec.AsObject,
@@ -3070,15 +3668,23 @@ export namespace FlatFileFormatSpec {
 export class GaugeSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): GaugeSpec;
+  hasDatasetname(): boolean;
+  clearDatasetname(): GaugeSpec;
 
   getColumn(): string;
   setColumn(value: string): GaugeSpec;
+  hasColumn(): boolean;
+  clearColumn(): GaugeSpec;
 
   getRow(): number;
   setRow(value: number): GaugeSpec;
+  hasRow(): boolean;
+  clearRow(): GaugeSpec;
 
   getScalar(): string;
   setScalar(value: string): GaugeSpec;
+  hasScalar(): boolean;
+  clearScalar(): GaugeSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GaugeSpec.AsObject;
@@ -3090,25 +3696,33 @@ export class GaugeSpec extends jspb.Message {
 
 export namespace GaugeSpec {
   export type AsObject = {
-    datasetname: string,
-    column: string,
-    row: number,
-    scalar: string,
+    datasetname?: string,
+    column?: string,
+    row?: number,
+    scalar?: string,
   }
 }
 
 export class GitLocation extends jspb.Message {
   getGitconnectionname(): string;
   setGitconnectionname(value: string): GitLocation;
+  hasGitconnectionname(): boolean;
+  clearGitconnectionname(): GitLocation;
 
   getUrl(): string;
   setUrl(value: string): GitLocation;
+  hasUrl(): boolean;
+  clearUrl(): GitLocation;
 
   getBranch(): string;
   setBranch(value: string): GitLocation;
+  hasBranch(): boolean;
+  clearBranch(): GitLocation;
 
   getPrivate(): boolean;
   setPrivate(value: boolean): GitLocation;
+  hasPrivate(): boolean;
+  clearPrivate(): GitLocation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GitLocation.AsObject;
@@ -3120,16 +3734,18 @@ export class GitLocation extends jspb.Message {
 
 export namespace GitLocation {
   export type AsObject = {
-    gitconnectionname: string,
-    url: string,
-    branch: string,
-    pb_private: boolean,
+    gitconnectionname?: string,
+    url?: string,
+    branch?: string,
+    pb_private?: boolean,
   }
 }
 
 export class GovernanceReviewStatus extends jspb.Message {
   getResult(): string;
   setResult(value: string): GovernanceReviewStatus;
+  hasResult(): boolean;
+  clearResult(): GovernanceReviewStatus;
 
   getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): GovernanceReviewStatus;
@@ -3138,6 +3754,8 @@ export class GovernanceReviewStatus extends jspb.Message {
 
   getNotes(): string;
   setNotes(value: string): GovernanceReviewStatus;
+  hasNotes(): boolean;
+  clearNotes(): GovernanceReviewStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GovernanceReviewStatus.AsObject;
@@ -3149,27 +3767,37 @@ export class GovernanceReviewStatus extends jspb.Message {
 
 export namespace GovernanceReviewStatus {
   export type AsObject = {
-    result: string,
+    result?: string,
     approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    notes: string,
+    notes?: string,
   }
 }
 
 export class GovernanceSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): GovernanceSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): GovernanceSpec;
 
   getCountry(): string;
   setCountry(value: string): GovernanceSpec;
+  hasCountry(): boolean;
+  clearCountry(): GovernanceSpec;
 
   getItreviewer(): string;
   setItreviewer(value: string): GovernanceSpec;
+  hasItreviewer(): boolean;
+  clearItreviewer(): GovernanceSpec;
 
   getCompliancereviewer(): string;
   setCompliancereviewer(value: string): GovernanceSpec;
+  hasCompliancereviewer(): boolean;
+  clearCompliancereviewer(): GovernanceSpec;
 
   getBusinessreviewer(): string;
   setBusinessreviewer(value: string): GovernanceSpec;
+  hasBusinessreviewer(): boolean;
+  clearBusinessreviewer(): GovernanceSpec;
 
   getMembersList(): Array<string>;
   setMembersList(value: Array<string>): GovernanceSpec;
@@ -3186,11 +3814,11 @@ export class GovernanceSpec extends jspb.Message {
 
 export namespace GovernanceSpec {
   export type AsObject = {
-    enabled: boolean,
-    country: string,
-    itreviewer: string,
-    compliancereviewer: string,
-    businessreviewer: string,
+    enabled?: boolean,
+    country?: string,
+    itreviewer?: string,
+    compliancereviewer?: string,
+    businessreviewer?: string,
     membersList: Array<string>,
   }
 }
@@ -3230,6 +3858,8 @@ export namespace GovernanceStatus {
 export class GroupBySpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): GroupBySpec;
+  hasEnabled(): boolean;
+  clearEnabled(): GroupBySpec;
 
   getGroupbyList(): Array<string>;
   setGroupbyList(value: Array<string>): GroupBySpec;
@@ -3238,12 +3868,18 @@ export class GroupBySpec extends jspb.Message {
 
   getFreq(): string;
   setFreq(value: string): GroupBySpec;
+  hasFreq(): boolean;
+  clearFreq(): GroupBySpec;
 
   getInterval(): number;
   setInterval(value: number): GroupBySpec;
+  hasInterval(): boolean;
+  clearInterval(): GroupBySpec;
 
   getAggr(): string;
   setAggr(value: string): GroupBySpec;
+  hasAggr(): boolean;
+  clearAggr(): GroupBySpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GroupBySpec.AsObject;
@@ -3255,35 +3891,49 @@ export class GroupBySpec extends jspb.Message {
 
 export namespace GroupBySpec {
   export type AsObject = {
-    enabled: boolean,
+    enabled?: boolean,
     groupbyList: Array<string>,
-    freq: string,
-    interval: number,
-    aggr: string,
+    freq?: string,
+    interval?: number,
+    aggr?: string,
   }
 }
 
 export class GroupDatasetLocationsSpec extends jspb.Message {
   getGroupsroot(): string;
   setGroupsroot(value: string): GroupDatasetLocationsSpec;
+  hasGroupsroot(): boolean;
+  clearGroupsroot(): GroupDatasetLocationsSpec;
 
   getGrouproot(): string;
   setGrouproot(value: string): GroupDatasetLocationsSpec;
+  hasGrouproot(): boolean;
+  clearGrouproot(): GroupDatasetLocationsSpec;
 
   getGroupdatafolder(): string;
   setGroupdatafolder(value: string): GroupDatasetLocationsSpec;
+  hasGroupdatafolder(): boolean;
+  clearGroupdatafolder(): GroupDatasetLocationsSpec;
 
   getGroupdatafile(): string;
   setGroupdatafile(value: string): GroupDatasetLocationsSpec;
+  hasGroupdatafile(): boolean;
+  clearGroupdatafile(): GroupDatasetLocationsSpec;
 
   getGroupprofilefolder(): string;
   setGroupprofilefolder(value: string): GroupDatasetLocationsSpec;
+  hasGroupprofilefolder(): boolean;
+  clearGroupprofilefolder(): GroupDatasetLocationsSpec;
 
   getGroupreportfile(): string;
   setGroupreportfile(value: string): GroupDatasetLocationsSpec;
+  hasGroupreportfile(): boolean;
+  clearGroupreportfile(): GroupDatasetLocationsSpec;
 
   getGroupfeaturesfile(): string;
   setGroupfeaturesfile(value: string): GroupDatasetLocationsSpec;
+  hasGroupfeaturesfile(): boolean;
+  clearGroupfeaturesfile(): GroupDatasetLocationsSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GroupDatasetLocationsSpec.AsObject;
@@ -3295,25 +3945,31 @@ export class GroupDatasetLocationsSpec extends jspb.Message {
 
 export namespace GroupDatasetLocationsSpec {
   export type AsObject = {
-    groupsroot: string,
-    grouproot: string,
-    groupdatafolder: string,
-    groupdatafile: string,
-    groupprofilefolder: string,
-    groupreportfile: string,
-    groupfeaturesfile: string,
+    groupsroot?: string,
+    grouproot?: string,
+    groupdatafolder?: string,
+    groupdatafile?: string,
+    groupprofilefolder?: string,
+    groupreportfile?: string,
+    groupfeaturesfile?: string,
   }
 }
 
 export class HistogramSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): HistogramSpec;
+  hasDatasetname(): boolean;
+  clearDatasetname(): HistogramSpec;
 
   getX(): string;
   setX(value: string): HistogramSpec;
+  hasX(): boolean;
+  clearX(): HistogramSpec;
 
   getBins(): number;
   setBins(value: number): HistogramSpec;
+  hasBins(): boolean;
+  clearBins(): HistogramSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HistogramSpec.AsObject;
@@ -3325,18 +3981,22 @@ export class HistogramSpec extends jspb.Message {
 
 export namespace HistogramSpec {
   export type AsObject = {
-    datasetname: string,
-    x: string,
-    bins: number,
+    datasetname?: string,
+    x?: string,
+    bins?: number,
   }
 }
 
 export class ImageLocation extends jspb.Message {
   getName(): string;
   setName(value: string): ImageLocation;
+  hasName(): boolean;
+  clearName(): ImageLocation;
 
   getRegistryconnectionname(): string;
   setRegistryconnectionname(value: string): ImageLocation;
+  hasRegistryconnectionname(): boolean;
+  clearRegistryconnectionname(): ImageLocation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ImageLocation.AsObject;
@@ -3348,17 +4008,21 @@ export class ImageLocation extends jspb.Message {
 
 export namespace ImageLocation {
   export type AsObject = {
-    name: string,
-    registryconnectionname: string,
+    name?: string,
+    registryconnectionname?: string,
   }
 }
 
 export class KPI extends jspb.Message {
   getName(): string;
   setName(value: string): KPI;
+  hasName(): boolean;
+  clearName(): KPI;
 
   getValue(): number;
   setValue(value: number): KPI;
+  hasValue(): boolean;
+  clearValue(): KPI;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): KPI.AsObject;
@@ -3370,20 +4034,26 @@ export class KPI extends jspb.Message {
 
 export namespace KPI {
   export type AsObject = {
-    name: string,
-    value: number,
+    name?: string,
+    value?: number,
   }
 }
 
 export class LabelingRule extends jspb.Message {
   getColumn(): string;
   setColumn(value: string): LabelingRule;
+  hasColumn(): boolean;
+  clearColumn(): LabelingRule;
 
   getOperator(): string;
   setOperator(value: string): LabelingRule;
+  hasOperator(): boolean;
+  clearOperator(): LabelingRule;
 
   getValue(): string;
   setValue(value: string): LabelingRule;
+  hasValue(): boolean;
+  clearValue(): LabelingRule;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LabelingRule.AsObject;
@@ -3395,18 +4065,22 @@ export class LabelingRule extends jspb.Message {
 
 export namespace LabelingRule {
   export type AsObject = {
-    column: string,
-    operator: string,
-    value: string,
+    column?: string,
+    operator?: string,
+    value?: string,
   }
 }
 
 export class LabelingSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): LabelingSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): LabelingSpec;
 
   getResultcolumn(): string;
   setResultcolumn(value: string): LabelingSpec;
+  hasResultcolumn(): boolean;
+  clearResultcolumn(): LabelingSpec;
 
   getPositiveList(): Array<LabelingRule>;
   setPositiveList(value: Array<LabelingRule>): LabelingSpec;
@@ -3428,8 +4102,8 @@ export class LabelingSpec extends jspb.Message {
 
 export namespace LabelingSpec {
   export type AsObject = {
-    enabled: boolean,
-    resultcolumn: string,
+    enabled?: boolean,
+    resultcolumn?: string,
     positiveList: Array<LabelingRule.AsObject>,
     negativeList: Array<LabelingRule.AsObject>,
   }
@@ -3438,15 +4112,23 @@ export namespace LabelingSpec {
 export class LineChartSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): LineChartSpec;
+  hasDatasetname(): boolean;
+  clearDatasetname(): LineChartSpec;
 
   getX(): string;
   setX(value: string): LineChartSpec;
+  hasX(): boolean;
+  clearX(): LineChartSpec;
 
   getY(): string;
   setY(value: string): LineChartSpec;
+  hasY(): boolean;
+  clearY(): LineChartSpec;
 
   getLegend(): boolean;
   setLegend(value: boolean): LineChartSpec;
+  hasLegend(): boolean;
+  clearLegend(): LineChartSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LineChartSpec.AsObject;
@@ -3458,19 +4140,23 @@ export class LineChartSpec extends jspb.Message {
 
 export namespace LineChartSpec {
   export type AsObject = {
-    datasetname: string,
-    x: string,
-    y: string,
-    legend: boolean,
+    datasetname?: string,
+    x?: string,
+    y?: string,
+    legend?: boolean,
   }
 }
 
 export class MaterializationSpec extends jspb.Message {
   getOnline(): boolean;
   setOnline(value: boolean): MaterializationSpec;
+  hasOnline(): boolean;
+  clearOnline(): MaterializationSpec;
 
   getOffline(): boolean;
   setOffline(value: boolean): MaterializationSpec;
+  hasOffline(): boolean;
+  clearOffline(): MaterializationSpec;
 
   getStartdate(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStartdate(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): MaterializationSpec;
@@ -3479,12 +4165,18 @@ export class MaterializationSpec extends jspb.Message {
 
   getOfflinettl(): number;
   setOfflinettl(value: number): MaterializationSpec;
+  hasOfflinettl(): boolean;
+  clearOfflinettl(): MaterializationSpec;
 
   getOnlinettl(): number;
   setOnlinettl(value: number): MaterializationSpec;
+  hasOnlinettl(): boolean;
+  clearOnlinettl(): MaterializationSpec;
 
   getBackfill(): number;
   setBackfill(value: number): MaterializationSpec;
+  hasBackfill(): boolean;
+  clearBackfill(): MaterializationSpec;
 
   getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): MaterializationSpec;
@@ -3501,12 +4193,12 @@ export class MaterializationSpec extends jspb.Message {
 
 export namespace MaterializationSpec {
   export type AsObject = {
-    online: boolean,
-    offline: boolean,
+    online?: boolean,
+    offline?: boolean,
     startdate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    offlinettl: number,
-    onlinettl: number,
-    backfill: number,
+    offlinettl?: number,
+    onlinettl?: number,
+    backfill?: number,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
@@ -3514,15 +4206,23 @@ export namespace MaterializationSpec {
 export class MetricSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): MetricSpec;
+  hasDatasetname(): boolean;
+  clearDatasetname(): MetricSpec;
 
   getColumn(): string;
   setColumn(value: string): MetricSpec;
+  hasColumn(): boolean;
+  clearColumn(): MetricSpec;
 
   getRow(): number;
   setRow(value: number): MetricSpec;
+  hasRow(): boolean;
+  clearRow(): MetricSpec;
 
   getScalar(): string;
   setScalar(value: string): MetricSpec;
+  hasScalar(): boolean;
+  clearScalar(): MetricSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MetricSpec.AsObject;
@@ -3534,22 +4234,28 @@ export class MetricSpec extends jspb.Message {
 
 export namespace MetricSpec {
   export type AsObject = {
-    datasetname: string,
-    column: string,
-    row: number,
-    scalar: string,
+    datasetname?: string,
+    column?: string,
+    row?: number,
+    scalar?: string,
   }
 }
 
 export class OutlierStat extends jspb.Message {
   getLower(): number;
   setLower(value: number): OutlierStat;
+  hasLower(): boolean;
+  clearLower(): OutlierStat;
 
   getUpper(): number;
   setUpper(value: number): OutlierStat;
+  hasUpper(): boolean;
+  clearUpper(): OutlierStat;
 
   getPercent(): number;
   setPercent(value: number): OutlierStat;
+  hasPercent(): boolean;
+  clearPercent(): OutlierStat;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OutlierStat.AsObject;
@@ -3561,9 +4267,9 @@ export class OutlierStat extends jspb.Message {
 
 export namespace OutlierStat {
   export type AsObject = {
-    lower: number,
-    upper: number,
-    percent: number,
+    lower?: number,
+    upper?: number,
+    percent?: number,
   }
 }
 
@@ -3590,6 +4296,8 @@ export namespace PageSpec {
 export class ParquetFileSpec extends jspb.Message {
   getEngine(): string;
   setEngine(value: string): ParquetFileSpec;
+  hasEngine(): boolean;
+  clearEngine(): ParquetFileSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ParquetFileSpec.AsObject;
@@ -3601,7 +4309,7 @@ export class ParquetFileSpec extends jspb.Message {
 
 export namespace ParquetFileSpec {
   export type AsObject = {
-    engine: string,
+    engine?: string,
   }
 }
 
@@ -3640,6 +4348,8 @@ export namespace Recipe {
 export class RecipeInputSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): RecipeInputSpec;
+  hasDatasetname(): boolean;
+  clearDatasetname(): RecipeInputSpec;
 
   getLocation(): DataLocation | undefined;
   setLocation(value?: DataLocation): RecipeInputSpec;
@@ -3648,6 +4358,8 @@ export class RecipeInputSpec extends jspb.Message {
 
   getFormat(): string;
   setFormat(value: string): RecipeInputSpec;
+  hasFormat(): boolean;
+  clearFormat(): RecipeInputSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RecipeInputSpec.AsObject;
@@ -3659,9 +4371,9 @@ export class RecipeInputSpec extends jspb.Message {
 
 export namespace RecipeInputSpec {
   export type AsObject = {
-    datasetname: string,
+    datasetname?: string,
     location?: DataLocation.AsObject,
-    format: string,
+    format?: string,
   }
 }
 
@@ -3694,9 +4406,13 @@ export namespace RecipeList {
 export class RecipeOutputSpec extends jspb.Message {
   getCreatedataset(): boolean;
   setCreatedataset(value: boolean): RecipeOutputSpec;
+  hasCreatedataset(): boolean;
+  clearCreatedataset(): RecipeOutputSpec;
 
   getDatasetname(): string;
   setDatasetname(value: string): RecipeOutputSpec;
+  hasDatasetname(): boolean;
+  clearDatasetname(): RecipeOutputSpec;
 
   getLocation(): DataLocation | undefined;
   setLocation(value?: DataLocation): RecipeOutputSpec;
@@ -3713,8 +4429,8 @@ export class RecipeOutputSpec extends jspb.Message {
 
 export namespace RecipeOutputSpec {
   export type AsObject = {
-    createdataset: boolean,
-    datasetname: string,
+    createdataset?: boolean,
+    datasetname?: string,
     location?: DataLocation.AsObject,
   }
 }
@@ -3722,6 +4438,8 @@ export namespace RecipeOutputSpec {
 export class RecipePartSpec extends jspb.Message {
   getRecipename(): string;
   setRecipename(value: string): RecipePartSpec;
+  hasRecipename(): boolean;
+  clearRecipename(): RecipePartSpec;
 
   getDependentsList(): Array<string>;
   setDependentsList(value: Array<string>): RecipePartSpec;
@@ -3738,7 +4456,7 @@ export class RecipePartSpec extends jspb.Message {
 
 export namespace RecipePartSpec {
   export type AsObject = {
-    recipename: string,
+    recipename?: string,
     dependentsList: Array<string>,
   }
 }
@@ -3804,9 +4522,13 @@ export namespace RecipeRunList {
 export class RecipeRunSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): RecipeRunSpec;
+  hasVersionname(): boolean;
+  clearVersionname(): RecipeRunSpec;
 
   getRecipename(): string;
   setRecipename(value: string): RecipeRunSpec;
+  hasRecipename(): boolean;
+  clearRecipename(): RecipeRunSpec;
 
   getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): RecipeRunSpec;
@@ -3825,12 +4547,18 @@ export class RecipeRunSpec extends jspb.Message {
 
   getTtl(): number;
   setTtl(value: number): RecipeRunSpec;
+  hasTtl(): boolean;
+  clearTtl(): RecipeRunSpec;
 
   getModelclassname(): string;
   setModelclassname(value: string): RecipeRunSpec;
+  hasModelclassname(): boolean;
+  clearModelclassname(): RecipeRunSpec;
 
   getModelclassrunname(): string;
   setModelclassrunname(value: string): RecipeRunSpec;
+  hasModelclassrunname(): boolean;
+  clearModelclassrunname(): RecipeRunSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RecipeRunSpec.AsObject;
@@ -3842,14 +4570,14 @@ export class RecipeRunSpec extends jspb.Message {
 
 export namespace RecipeRunSpec {
   export type AsObject = {
-    versionname: string,
-    recipename: string,
+    versionname?: string,
+    recipename?: string,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     location?: DataLocation.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    ttl: number,
-    modelclassname: string,
-    modelclassrunname: string,
+    ttl?: number,
+    modelclassname?: string,
+    modelclassrunname?: string,
   }
 }
 
@@ -3861,18 +4589,28 @@ export class RecipeRunStatus extends jspb.Message {
 
   getPhase(): string;
   setPhase(value: string): RecipeRunStatus;
+  hasPhase(): boolean;
+  clearPhase(): RecipeRunStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): RecipeRunStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): RecipeRunStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): RecipeRunStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): RecipeRunStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): RecipeRunStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): RecipeRunStatus;
 
   getTriggeredby(): string;
   setTriggeredby(value: string): RecipeRunStatus;
+  hasTriggeredby(): boolean;
+  clearTriggeredby(): RecipeRunStatus;
 
   getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
   setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): RecipeRunStatus;
@@ -3900,11 +4638,11 @@ export class RecipeRunStatus extends jspb.Message {
 export namespace RecipeRunStatus {
   export type AsObject = {
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    phase: string,
-    observedgeneration: number,
-    failurereason: string,
-    failuremessage: string,
-    triggeredby: string,
+    phase?: string,
+    observedgeneration?: number,
+    failurereason?: string,
+    failuremessage?: string,
+    triggeredby?: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
@@ -3914,12 +4652,18 @@ export namespace RecipeRunStatus {
 export class RecipeSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): RecipeSpec;
+  hasOwner(): boolean;
+  clearOwner(): RecipeSpec;
 
   getVersionname(): string;
   setVersionname(value: string): RecipeSpec;
+  hasVersionname(): boolean;
+  clearVersionname(): RecipeSpec;
 
   getDescription(): string;
   setDescription(value: string): RecipeSpec;
+  hasDescription(): boolean;
+  clearDescription(): RecipeSpec;
 
   getInput(): RecipeInputSpec | undefined;
   setInput(value?: RecipeInputSpec): RecipeSpec;
@@ -3948,9 +4692,13 @@ export class RecipeSpec extends jspb.Message {
 
   getTimeout(): number;
   setTimeout(value: number): RecipeSpec;
+  hasTimeout(): boolean;
+  clearTimeout(): RecipeSpec;
 
   getTtl(): number;
   setTtl(value: number): RecipeSpec;
+  hasTtl(): boolean;
+  clearTtl(): RecipeSpec;
 
   getUnitteststemplate(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setUnitteststemplate(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): RecipeSpec;
@@ -3967,16 +4715,16 @@ export class RecipeSpec extends jspb.Message {
 
 export namespace RecipeSpec {
   export type AsObject = {
-    owner: string,
-    versionname: string,
-    description: string,
+    owner?: string,
+    versionname?: string,
+    description?: string,
     input?: RecipeInputSpec.AsObject,
     stepsList: Array<RecipeStep.AsObject>,
     output?: RecipeOutputSpec.AsObject,
     sample?: SampleSpec.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    timeout: number,
-    ttl: number,
+    timeout?: number,
+    ttl?: number,
     unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
@@ -3984,6 +4732,8 @@ export namespace RecipeSpec {
 export class RecipeStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): RecipeStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): RecipeStatus;
 
   getLastrun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus | undefined;
   setLastrun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus): RecipeStatus;
@@ -4010,7 +4760,7 @@ export class RecipeStatus extends jspb.Message {
 
 export namespace RecipeStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     lastrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.LastRunStatus.AsObject,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
@@ -4020,6 +4770,8 @@ export namespace RecipeStatus {
 export class RecipeStep extends jspb.Message {
   getOp(): string;
   setOp(value: string): RecipeStep;
+  hasOp(): boolean;
+  clearOp(): RecipeStep;
 
   getParametersList(): Array<RecipeStepParam>;
   setParametersList(value: Array<RecipeStepParam>): RecipeStep;
@@ -4036,7 +4788,7 @@ export class RecipeStep extends jspb.Message {
 
 export namespace RecipeStep {
   export type AsObject = {
-    op: string,
+    op?: string,
     parametersList: Array<RecipeStepParam.AsObject>,
   }
 }
@@ -4044,9 +4796,13 @@ export namespace RecipeStep {
 export class RecipeStepParam extends jspb.Message {
   getName(): string;
   setName(value: string): RecipeStepParam;
+  hasName(): boolean;
+  clearName(): RecipeStepParam;
 
   getValue(): string;
   setValue(value: string): RecipeStepParam;
+  hasValue(): boolean;
+  clearValue(): RecipeStepParam;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RecipeStepParam.AsObject;
@@ -4058,20 +4814,26 @@ export class RecipeStepParam extends jspb.Message {
 
 export namespace RecipeStepParam {
   export type AsObject = {
-    name: string,
-    value: string,
+    name?: string,
+    value?: string,
   }
 }
 
 export class RecommendationSchema extends jspb.Message {
   getUseridcolumn(): string;
   setUseridcolumn(value: string): RecommendationSchema;
+  hasUseridcolumn(): boolean;
+  clearUseridcolumn(): RecommendationSchema;
 
   getItemidcolumn(): string;
   setItemidcolumn(value: string): RecommendationSchema;
+  hasItemidcolumn(): boolean;
+  clearItemidcolumn(): RecommendationSchema;
 
   getRatingcolumn(): string;
   setRatingcolumn(value: string): RecommendationSchema;
+  hasRatingcolumn(): boolean;
+  clearRatingcolumn(): RecommendationSchema;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RecommendationSchema.AsObject;
@@ -4083,24 +4845,32 @@ export class RecommendationSchema extends jspb.Message {
 
 export namespace RecommendationSchema {
   export type AsObject = {
-    useridcolumn: string,
-    itemidcolumn: string,
-    ratingcolumn: string,
+    useridcolumn?: string,
+    itemidcolumn?: string,
+    ratingcolumn?: string,
   }
 }
 
 export class RelationshipSpec extends jspb.Message {
   getType(): string;
   setType(value: string): RelationshipSpec;
+  hasType(): boolean;
+  clearType(): RelationshipSpec;
 
   getColumn(): string;
   setColumn(value: string): RelationshipSpec;
+  hasColumn(): boolean;
+  clearColumn(): RelationshipSpec;
 
   getArity(): string;
   setArity(value: string): RelationshipSpec;
+  hasArity(): boolean;
+  clearArity(): RelationshipSpec;
 
   getRelatesto(): string;
   setRelatesto(value: string): RelationshipSpec;
+  hasRelatesto(): boolean;
+  clearRelatesto(): RelationshipSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RelationshipSpec.AsObject;
@@ -4112,10 +4882,10 @@ export class RelationshipSpec extends jspb.Message {
 
 export namespace RelationshipSpec {
   export type AsObject = {
-    type: string,
-    column: string,
-    arity: string,
-    relatesto: string,
+    type?: string,
+    column?: string,
+    arity?: string,
+    relatesto?: string,
   }
 }
 
@@ -4142,21 +4912,33 @@ export namespace RowSpec {
 export class SampleSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): SampleSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): SampleSpec;
 
   getType(): string;
   setType(value: string): SampleSpec;
+  hasType(): boolean;
+  clearType(): SampleSpec;
 
   getRows(): number;
   setRows(value: number): SampleSpec;
+  hasRows(): boolean;
+  clearRows(): SampleSpec;
 
   getPercent(): number;
   setPercent(value: number): SampleSpec;
+  hasPercent(): boolean;
+  clearPercent(): SampleSpec;
 
   getFilter(): string;
   setFilter(value: string): SampleSpec;
+  hasFilter(): boolean;
+  clearFilter(): SampleSpec;
 
   getColumn(): string;
   setColumn(value: string): SampleSpec;
+  hasColumn(): boolean;
+  clearColumn(): SampleSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SampleSpec.AsObject;
@@ -4168,24 +4950,30 @@ export class SampleSpec extends jspb.Message {
 
 export namespace SampleSpec {
   export type AsObject = {
-    enabled: boolean,
-    type: string,
-    rows: number,
-    percent: number,
-    filter: string,
-    column: string,
+    enabled?: boolean,
+    type?: string,
+    rows?: number,
+    percent?: number,
+    filter?: string,
+    column?: string,
   }
 }
 
 export class ScatterPlotSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): ScatterPlotSpec;
+  hasDatasetname(): boolean;
+  clearDatasetname(): ScatterPlotSpec;
 
   getX(): string;
   setX(value: string): ScatterPlotSpec;
+  hasX(): boolean;
+  clearX(): ScatterPlotSpec;
 
   getY(): string;
   setY(value: string): ScatterPlotSpec;
+  hasY(): boolean;
+  clearY(): ScatterPlotSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ScatterPlotSpec.AsObject;
@@ -4197,9 +4985,9 @@ export class ScatterPlotSpec extends jspb.Message {
 
 export namespace ScatterPlotSpec {
   export type AsObject = {
-    datasetname: string,
-    x: string,
-    y: string,
+    datasetname?: string,
+    x?: string,
+    y?: string,
   }
 }
 
@@ -4244,9 +5032,13 @@ export namespace Schema {
 export class SyntheticSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): SyntheticSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): SyntheticSpec;
 
   getRows(): number;
   setRows(value: number): SyntheticSpec;
+  hasRows(): boolean;
+  clearRows(): SyntheticSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SyntheticSpec.AsObject;
@@ -4258,14 +5050,16 @@ export class SyntheticSpec extends jspb.Message {
 
 export namespace SyntheticSpec {
   export type AsObject = {
-    enabled: boolean,
-    rows: number,
+    enabled?: boolean,
+    rows?: number,
   }
 }
 
 export class TableSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): TableSpec;
+  hasDatasetname(): boolean;
+  clearDatasetname(): TableSpec;
 
   getColumnsList(): Array<string>;
   setColumnsList(value: Array<string>): TableSpec;
@@ -4284,12 +5078,18 @@ export class TableSpec extends jspb.Message {
 
   getRows(): number;
   setRows(value: number): TableSpec;
+  hasRows(): boolean;
+  clearRows(): TableSpec;
 
   getShowindex(): boolean;
   setShowindex(value: boolean): TableSpec;
+  hasShowindex(): boolean;
+  clearShowindex(): TableSpec;
 
   getBorder(): boolean;
   setBorder(value: boolean): TableSpec;
+  hasBorder(): boolean;
+  clearBorder(): TableSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TableSpec.AsObject;
@@ -4301,25 +5101,31 @@ export class TableSpec extends jspb.Message {
 
 export namespace TableSpec {
   export type AsObject = {
-    datasetname: string,
+    datasetname?: string,
     columnsList: Array<string>,
     filtersList: Array<string>,
     groupbyList: Array<string>,
-    rows: number,
-    showindex: boolean,
-    border: boolean,
+    rows?: number,
+    showindex?: boolean,
+    border?: boolean,
   }
 }
 
 export class TimeSeriesSchema extends jspb.Message {
   getType(): string;
   setType(value: string): TimeSeriesSchema;
+  hasType(): boolean;
+  clearType(): TimeSeriesSchema;
 
   getFreq(): string;
   setFreq(value: string): TimeSeriesSchema;
+  hasFreq(): boolean;
+  clearFreq(): TimeSeriesSchema;
 
   getInterval(): number;
   setInterval(value: number): TimeSeriesSchema;
+  hasInterval(): boolean;
+  clearInterval(): TimeSeriesSchema;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeSeriesSchema.AsObject;
@@ -4331,9 +5137,9 @@ export class TimeSeriesSchema extends jspb.Message {
 
 export namespace TimeSeriesSchema {
   export type AsObject = {
-    type: string,
-    freq: string,
-    interval: number,
+    type?: string,
+    freq?: string,
+    interval?: number,
   }
 }
 

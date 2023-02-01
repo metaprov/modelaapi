@@ -11,6 +11,8 @@ import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../.
 export class AlgorithmParameterRange extends jspb.Message {
   getName(): string;
   setName(value: string): AlgorithmParameterRange;
+  hasName(): boolean;
+  clearName(): AlgorithmParameterRange;
 
   getRangesList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ParameterRange>;
   setRangesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ParameterRange>): AlgorithmParameterRange;
@@ -27,7 +29,7 @@ export class AlgorithmParameterRange extends jspb.Message {
 
 export namespace AlgorithmParameterRange {
   export type AsObject = {
-    name: string,
+    name?: string,
     rangesList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ParameterRange.AsObject>,
   }
 }
@@ -67,18 +69,28 @@ export namespace AlgorithmSearchSpaceSpec {
 export class Anomaly extends jspb.Message {
   getName(): string;
   setName(value: string): Anomaly;
+  hasName(): boolean;
+  clearName(): Anomaly;
 
   getValuecolumn(): string;
   setValuecolumn(value: string): Anomaly;
+  hasValuecolumn(): boolean;
+  clearValuecolumn(): Anomaly;
 
   getAdjdeltacolumn(): string;
   setAdjdeltacolumn(value: string): Anomaly;
+  hasAdjdeltacolumn(): boolean;
+  clearAdjdeltacolumn(): Anomaly;
 
   getStart(): string;
   setStart(value: string): Anomaly;
+  hasStart(): boolean;
+  clearStart(): Anomaly;
 
   getEnd(): string;
   setEnd(value: string): Anomaly;
+  hasEnd(): boolean;
+  clearEnd(): Anomaly;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Anomaly.AsObject;
@@ -90,17 +102,19 @@ export class Anomaly extends jspb.Message {
 
 export namespace Anomaly {
   export type AsObject = {
-    name: string,
-    valuecolumn: string,
-    adjdeltacolumn: string,
-    start: string,
-    end: string,
+    name?: string,
+    valuecolumn?: string,
+    adjdeltacolumn?: string,
+    start?: string,
+    end?: string,
   }
 }
 
 export class AudioPipelineSpec extends jspb.Message {
   getFeaturizer(): string;
   setFeaturizer(value: string): AudioPipelineSpec;
+  hasFeaturizer(): boolean;
+  clearFeaturizer(): AudioPipelineSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AudioPipelineSpec.AsObject;
@@ -112,22 +126,30 @@ export class AudioPipelineSpec extends jspb.Message {
 
 export namespace AudioPipelineSpec {
   export type AsObject = {
-    featurizer: string,
+    featurizer?: string,
   }
 }
 
 export class BacktestSpec extends jspb.Message {
   getSliding(): boolean;
   setSliding(value: boolean): BacktestSpec;
+  hasSliding(): boolean;
+  clearSliding(): BacktestSpec;
 
   getSplits(): number;
   setSplits(value: number): BacktestSpec;
+  hasSplits(): boolean;
+  clearSplits(): BacktestSpec;
 
   getInitial(): number;
   setInitial(value: number): BacktestSpec;
+  hasInitial(): boolean;
+  clearInitial(): BacktestSpec;
 
   getGap(): number;
   setGap(value: number): BacktestSpec;
+  hasGap(): boolean;
+  clearGap(): BacktestSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BacktestSpec.AsObject;
@@ -139,16 +161,18 @@ export class BacktestSpec extends jspb.Message {
 
 export namespace BacktestSpec {
   export type AsObject = {
-    sliding: boolean,
-    splits: number,
-    initial: number,
-    gap: number,
+    sliding?: boolean,
+    splits?: number,
+    initial?: number,
+    gap?: number,
   }
 }
 
 export class BaselineSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): BaselineSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): BaselineSpec;
 
   getBaselinesList(): Array<string>;
   setBaselinesList(value: Array<string>): BaselineSpec;
@@ -157,6 +181,8 @@ export class BaselineSpec extends jspb.Message {
 
   getAll(): boolean;
   setAll(value: boolean): BaselineSpec;
+  hasAll(): boolean;
+  clearAll(): BaselineSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BaselineSpec.AsObject;
@@ -168,9 +194,9 @@ export class BaselineSpec extends jspb.Message {
 
 export namespace BaselineSpec {
   export type AsObject = {
-    enabled: boolean,
+    enabled?: boolean,
     baselinesList: Array<string>,
-    all: boolean,
+    all?: boolean,
   }
 }
 
@@ -191,6 +217,8 @@ export namespace ChangePoint {
 export class ChatbotEstimatorSpec extends jspb.Message {
   getBase(): string;
   setBase(value: string): ChatbotEstimatorSpec;
+  hasBase(): boolean;
+  clearBase(): ChatbotEstimatorSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ChatbotEstimatorSpec.AsObject;
@@ -202,16 +230,20 @@ export class ChatbotEstimatorSpec extends jspb.Message {
 
 export namespace ChatbotEstimatorSpec {
   export type AsObject = {
-    base: string,
+    base?: string,
   }
 }
 
 export class CheckpointSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): CheckpointSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): CheckpointSpec;
 
   getCheckpointinterval(): number;
   setCheckpointinterval(value: number): CheckpointSpec;
+  hasCheckpointinterval(): boolean;
+  clearCheckpointinterval(): CheckpointSpec;
 
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): CheckpointSpec;
@@ -228,8 +260,8 @@ export class CheckpointSpec extends jspb.Message {
 
 export namespace CheckpointSpec {
   export type AsObject = {
-    enabled: boolean,
-    checkpointinterval: number,
+    enabled?: boolean,
+    checkpointinterval?: number,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
@@ -237,6 +269,8 @@ export namespace CheckpointSpec {
 export class ClassicalEstimatorSpec extends jspb.Message {
   getAlgorithmname(): string;
   setAlgorithmname(value: string): ClassicalEstimatorSpec;
+  hasAlgorithmname(): boolean;
+  clearAlgorithmname(): ClassicalEstimatorSpec;
 
   getParametersList(): Array<HyperParameterValue>;
   setParametersList(value: Array<HyperParameterValue>): ClassicalEstimatorSpec;
@@ -253,7 +287,7 @@ export class ClassicalEstimatorSpec extends jspb.Message {
 
 export namespace ClassicalEstimatorSpec {
   export type AsObject = {
-    algorithmname: string,
+    algorithmname?: string,
     parametersList: Array<HyperParameterValue.AsObject>,
   }
 }
@@ -281,12 +315,18 @@ export namespace CustomReportSpec {
 export class DataHashes extends jspb.Message {
   getTrainhash(): string;
   setTrainhash(value: string): DataHashes;
+  hasTrainhash(): boolean;
+  clearTrainhash(): DataHashes;
 
   getTestinghash(): string;
   setTestinghash(value: string): DataHashes;
+  hasTestinghash(): boolean;
+  clearTestinghash(): DataHashes;
 
   getValidationhash(): string;
   setValidationhash(value: string): DataHashes;
+  hasValidationhash(): boolean;
+  clearValidationhash(): DataHashes;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataHashes.AsObject;
@@ -298,27 +338,37 @@ export class DataHashes extends jspb.Message {
 
 export namespace DataHashes {
   export type AsObject = {
-    trainhash: string,
-    testinghash: string,
-    validationhash: string,
+    trainhash?: string,
+    testinghash?: string,
+    validationhash?: string,
   }
 }
 
 export class DataSplitSpec extends jspb.Message {
   getMethod(): string;
   setMethod(value: string): DataSplitSpec;
+  hasMethod(): boolean;
+  clearMethod(): DataSplitSpec;
 
   getTrain(): number;
   setTrain(value: number): DataSplitSpec;
+  hasTrain(): boolean;
+  clearTrain(): DataSplitSpec;
 
   getValidation(): number;
   setValidation(value: number): DataSplitSpec;
+  hasValidation(): boolean;
+  clearValidation(): DataSplitSpec;
 
   getTest(): number;
   setTest(value: number): DataSplitSpec;
+  hasTest(): boolean;
+  clearTest(): DataSplitSpec;
 
   getSplitcolumn(): string;
   setSplitcolumn(value: string): DataSplitSpec;
+  hasSplitcolumn(): boolean;
+  clearSplitcolumn(): DataSplitSpec;
 
   getSegmentsList(): Array<SegmentSpec>;
   setSegmentsList(value: Array<SegmentSpec>): DataSplitSpec;
@@ -327,12 +377,18 @@ export class DataSplitSpec extends jspb.Message {
 
   getTraindataset(): string;
   setTraindataset(value: string): DataSplitSpec;
+  hasTraindataset(): boolean;
+  clearTraindataset(): DataSplitSpec;
 
   getTestdataset(): string;
   setTestdataset(value: string): DataSplitSpec;
+  hasTestdataset(): boolean;
+  clearTestdataset(): DataSplitSpec;
 
   getValidationdataset(): string;
   setValidationdataset(value: string): DataSplitSpec;
+  hasValidationdataset(): boolean;
+  clearValidationdataset(): DataSplitSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataSplitSpec.AsObject;
@@ -344,24 +400,28 @@ export class DataSplitSpec extends jspb.Message {
 
 export namespace DataSplitSpec {
   export type AsObject = {
-    method: string,
-    train: number,
-    validation: number,
-    test: number,
-    splitcolumn: string,
+    method?: string,
+    train?: number,
+    validation?: number,
+    test?: number,
+    splitcolumn?: string,
     segmentsList: Array<SegmentSpec.AsObject>,
-    traindataset: string,
-    testdataset: string,
-    validationdataset: string,
+    traindataset?: string,
+    testdataset?: string,
+    validationdataset?: string,
   }
 }
 
 export class DeepEstimatorLayer extends jspb.Message {
   getName(): string;
   setName(value: string): DeepEstimatorLayer;
+  hasName(): boolean;
+  clearName(): DeepEstimatorLayer;
 
   getType(): string;
   setType(value: string): DeepEstimatorLayer;
+  hasType(): boolean;
+  clearType(): DeepEstimatorLayer;
 
   getParametersList(): Array<NNLayerParameter>;
   setParametersList(value: Array<NNLayerParameter>): DeepEstimatorLayer;
@@ -383,8 +443,8 @@ export class DeepEstimatorLayer extends jspb.Message {
 
 export namespace DeepEstimatorLayer {
   export type AsObject = {
-    name: string,
-    type: string,
+    name?: string,
+    type?: string,
     parametersList: Array<NNLayerParameter.AsObject>,
     inputlayersList: Array<string>,
   }
@@ -398,24 +458,38 @@ export class DeepEstimatorSpec extends jspb.Message {
 
   getType(): string;
   setType(value: string): DeepEstimatorSpec;
+  hasType(): boolean;
+  clearType(): DeepEstimatorSpec;
 
   getBatchsize(): number;
   setBatchsize(value: number): DeepEstimatorSpec;
+  hasBatchsize(): boolean;
+  clearBatchsize(): DeepEstimatorSpec;
 
   getEpochs(): number;
   setEpochs(value: number): DeepEstimatorSpec;
+  hasEpochs(): boolean;
+  clearEpochs(): DeepEstimatorSpec;
 
   getValidationsplit(): number;
   setValidationsplit(value: number): DeepEstimatorSpec;
+  hasValidationsplit(): boolean;
+  clearValidationsplit(): DeepEstimatorSpec;
 
   getIsseq(): boolean;
   setIsseq(value: boolean): DeepEstimatorSpec;
+  hasIsseq(): boolean;
+  clearIsseq(): DeepEstimatorSpec;
 
   getGpus(): number;
   setGpus(value: number): DeepEstimatorSpec;
+  hasGpus(): boolean;
+  clearGpus(): DeepEstimatorSpec;
 
   getLoss(): string;
   setLoss(value: string): DeepEstimatorSpec;
+  hasLoss(): boolean;
+  clearLoss(): DeepEstimatorSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeepEstimatorSpec.AsObject;
@@ -428,19 +502,21 @@ export class DeepEstimatorSpec extends jspb.Message {
 export namespace DeepEstimatorSpec {
   export type AsObject = {
     layersList: Array<DeepEstimatorLayer.AsObject>,
-    type: string,
-    batchsize: number,
-    epochs: number,
-    validationsplit: number,
-    isseq: boolean,
-    gpus: number,
-    loss: string,
+    type?: string,
+    batchsize?: number,
+    epochs?: number,
+    validationsplit?: number,
+    isseq?: boolean,
+    gpus?: number,
+    loss?: string,
   }
 }
 
 export class DriftDetectorStatus extends jspb.Message {
   getOutliermodeluri(): string;
   setOutliermodeluri(value: string): DriftDetectorStatus;
+  hasOutliermodeluri(): boolean;
+  clearOutliermodeluri(): DriftDetectorStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DriftDetectorStatus.AsObject;
@@ -452,16 +528,20 @@ export class DriftDetectorStatus extends jspb.Message {
 
 export namespace DriftDetectorStatus {
   export type AsObject = {
-    outliermodeluri: string,
+    outliermodeluri?: string,
   }
 }
 
 export class DriftModelSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): DriftModelSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): DriftModelSpec;
 
   getOutlieralgorithm(): string;
   setOutlieralgorithm(value: string): DriftModelSpec;
+  hasOutlieralgorithm(): boolean;
+  clearOutlieralgorithm(): DriftModelSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DriftModelSpec.AsObject;
@@ -473,20 +553,26 @@ export class DriftModelSpec extends jspb.Message {
 
 export namespace DriftModelSpec {
   export type AsObject = {
-    enabled: boolean,
-    outlieralgorithm: string,
+    enabled?: boolean,
+    outlieralgorithm?: string,
   }
 }
 
 export class EarlyStopSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): EarlyStopSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): EarlyStopSpec;
 
   getInitial(): number;
   setInitial(value: number): EarlyStopSpec;
+  hasInitial(): boolean;
+  clearInitial(): EarlyStopSpec;
 
   getMinmodelswithnoprogress(): number;
   setMinmodelswithnoprogress(value: number): EarlyStopSpec;
+  hasMinmodelswithnoprogress(): boolean;
+  clearMinmodelswithnoprogress(): EarlyStopSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EarlyStopSpec.AsObject;
@@ -498,9 +584,9 @@ export class EarlyStopSpec extends jspb.Message {
 
 export namespace EarlyStopSpec {
   export type AsObject = {
-    enabled: boolean,
-    initial: number,
-    minmodelswithnoprogress: number,
+    enabled?: boolean,
+    initial?: number,
+    minmodelswithnoprogress?: number,
   }
 }
 
@@ -536,6 +622,8 @@ export class EnsembleSpec extends jspb.Message {
 
   getType(): string;
   setType(value: string): EnsembleSpec;
+  hasType(): boolean;
+  clearType(): EnsembleSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EnsembleSpec.AsObject;
@@ -550,22 +638,30 @@ export namespace EnsembleSpec {
     modelsList: Array<string>,
     estimatorsList: Array<ClassicalEstimatorSpec.AsObject>,
     pb_final?: ClassicalEstimatorSpec.AsObject,
-    type: string,
+    type?: string,
   }
 }
 
 export class EnsemblesSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): EnsemblesSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): EnsemblesSpec;
 
   getVotingensemble(): boolean;
   setVotingensemble(value: boolean): EnsemblesSpec;
+  hasVotingensemble(): boolean;
+  clearVotingensemble(): EnsemblesSpec;
 
   getStackingensemble(): boolean;
   setStackingensemble(value: boolean): EnsemblesSpec;
+  hasStackingensemble(): boolean;
+  clearStackingensemble(): EnsemblesSpec;
 
   getTop(): number;
   setTop(value: number): EnsemblesSpec;
+  hasTop(): boolean;
+  clearTop(): EnsemblesSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EnsemblesSpec.AsObject;
@@ -577,16 +673,18 @@ export class EnsemblesSpec extends jspb.Message {
 
 export namespace EnsemblesSpec {
   export type AsObject = {
-    enabled: boolean,
-    votingensemble: boolean,
-    stackingensemble: boolean,
-    top: number,
+    enabled?: boolean,
+    votingensemble?: boolean,
+    stackingensemble?: boolean,
+    top?: number,
   }
 }
 
 export class EntityRef extends jspb.Message {
   getName(): string;
   setName(value: string): EntityRef;
+  hasName(): boolean;
+  clearName(): EntityRef;
 
   getExcludeList(): Array<string>;
   setExcludeList(value: Array<string>): EntityRef;
@@ -603,7 +701,7 @@ export class EntityRef extends jspb.Message {
 
 export namespace EntityRef {
   export type AsObject = {
-    name: string,
+    name?: string,
     excludeList: Array<string>,
   }
 }
@@ -611,6 +709,8 @@ export namespace EntityRef {
 export class EvalMetrics extends jspb.Message {
   getSelection(): string;
   setSelection(value: string): EvalMetrics;
+  hasSelection(): boolean;
+  clearSelection(): EvalMetrics;
 
   getReportingList(): Array<string>;
   setReportingList(value: Array<string>): EvalMetrics;
@@ -619,15 +719,23 @@ export class EvalMetrics extends jspb.Message {
 
   getAggfunc(): string;
   setAggfunc(value: string): EvalMetrics;
+  hasAggfunc(): boolean;
+  clearAggfunc(): EvalMetrics;
 
   getAggperiod(): number;
   setAggperiod(value: number): EvalMetrics;
+  hasAggperiod(): boolean;
+  clearAggperiod(): EvalMetrics;
 
   getNullmodelparams(): string;
   setNullmodelparams(value: string): EvalMetrics;
+  hasNullmodelparams(): boolean;
+  clearNullmodelparams(): EvalMetrics;
 
   getRelerrtolerance(): number;
   setRelerrtolerance(value: number): EvalMetrics;
+  hasRelerrtolerance(): boolean;
+  clearRelerrtolerance(): EvalMetrics;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EvalMetrics.AsObject;
@@ -639,39 +747,55 @@ export class EvalMetrics extends jspb.Message {
 
 export namespace EvalMetrics {
   export type AsObject = {
-    selection: string,
+    selection?: string,
     reportingList: Array<string>,
-    aggfunc: string,
-    aggperiod: number,
-    nullmodelparams: string,
-    relerrtolerance: number,
+    aggfunc?: string,
+    aggperiod?: number,
+    nullmodelparams?: string,
+    relerrtolerance?: number,
   }
 }
 
 export class EvalPeriod extends jspb.Message {
   getTesthorizon(): number;
   setTesthorizon(value: number): EvalPeriod;
+  hasTesthorizon(): boolean;
+  clearTesthorizon(): EvalPeriod;
 
   getPeriodsbetweentraintest(): number;
   setPeriodsbetweentraintest(value: number): EvalPeriod;
+  hasPeriodsbetweentraintest(): boolean;
+  clearPeriodsbetweentraintest(): EvalPeriod;
 
   getCvperiodsbetweensplits(): number;
   setCvperiodsbetweensplits(value: number): EvalPeriod;
+  hasCvperiodsbetweensplits(): boolean;
+  clearCvperiodsbetweensplits(): EvalPeriod;
 
   getCvexpandingwindows(): boolean;
   setCvexpandingwindows(value: boolean): EvalPeriod;
+  hasCvexpandingwindows(): boolean;
+  clearCvexpandingwindows(): EvalPeriod;
 
   getCvhorizon(): number;
   setCvhorizon(value: number): EvalPeriod;
+  hasCvhorizon(): boolean;
+  clearCvhorizon(): EvalPeriod;
 
   getCvmintrainperiods(): number;
   setCvmintrainperiods(value: number): EvalPeriod;
+  hasCvmintrainperiods(): boolean;
+  clearCvmintrainperiods(): EvalPeriod;
 
   getCvmaxsplits(): number;
   setCvmaxsplits(value: number): EvalPeriod;
+  hasCvmaxsplits(): boolean;
+  clearCvmaxsplits(): EvalPeriod;
 
   getCvusemostrecentsplits(): boolean;
   setCvusemostrecentsplits(value: boolean): EvalPeriod;
+  hasCvusemostrecentsplits(): boolean;
+  clearCvusemostrecentsplits(): EvalPeriod;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EvalPeriod.AsObject;
@@ -683,23 +807,27 @@ export class EvalPeriod extends jspb.Message {
 
 export namespace EvalPeriod {
   export type AsObject = {
-    testhorizon: number,
-    periodsbetweentraintest: number,
-    cvperiodsbetweensplits: number,
-    cvexpandingwindows: boolean,
-    cvhorizon: number,
-    cvmintrainperiods: number,
-    cvmaxsplits: number,
-    cvusemostrecentsplits: boolean,
+    testhorizon?: number,
+    periodsbetweentraintest?: number,
+    cvperiodsbetweensplits?: number,
+    cvexpandingwindows?: boolean,
+    cvhorizon?: number,
+    cvmintrainperiods?: number,
+    cvmaxsplits?: number,
+    cvusemostrecentsplits?: boolean,
   }
 }
 
 export class FeatureEngineeringPipeline extends jspb.Message {
   getName(): string;
   setName(value: string): FeatureEngineeringPipeline;
+  hasName(): boolean;
+  clearName(): FeatureEngineeringPipeline;
 
   getDatatype(): string;
   setDatatype(value: string): FeatureEngineeringPipeline;
+  hasDatatype(): boolean;
+  clearDatatype(): FeatureEngineeringPipeline;
 
   getColumnsList(): Array<string>;
   setColumnsList(value: Array<string>): FeatureEngineeringPipeline;
@@ -708,24 +836,38 @@ export class FeatureEngineeringPipeline extends jspb.Message {
 
   getImputation(): string;
   setImputation(value: string): FeatureEngineeringPipeline;
+  hasImputation(): boolean;
+  clearImputation(): FeatureEngineeringPipeline;
 
   getEncoding(): string;
   setEncoding(value: string): FeatureEngineeringPipeline;
+  hasEncoding(): boolean;
+  clearEncoding(): FeatureEngineeringPipeline;
 
   getScaling(): string;
   setScaling(value: string): FeatureEngineeringPipeline;
+  hasScaling(): boolean;
+  clearScaling(): FeatureEngineeringPipeline;
 
   getDiscretisation(): string;
   setDiscretisation(value: string): FeatureEngineeringPipeline;
+  hasDiscretisation(): boolean;
+  clearDiscretisation(): FeatureEngineeringPipeline;
 
   getVariabletransformation(): string;
   setVariabletransformation(value: string): FeatureEngineeringPipeline;
+  hasVariabletransformation(): boolean;
+  clearVariabletransformation(): FeatureEngineeringPipeline;
 
   getOutlierhandling(): string;
   setOutlierhandling(value: string): FeatureEngineeringPipeline;
+  hasOutlierhandling(): boolean;
+  clearOutlierhandling(): FeatureEngineeringPipeline;
 
   getDatetimetransformation(): string;
   setDatetimetransformation(value: string): FeatureEngineeringPipeline;
+  hasDatetimetransformation(): boolean;
+  clearDatetimetransformation(): FeatureEngineeringPipeline;
 
   getText(): TextPipelineSpec | undefined;
   setText(value?: TextPipelineSpec): FeatureEngineeringPipeline;
@@ -759,9 +901,13 @@ export class FeatureEngineeringPipeline extends jspb.Message {
 
   getDrop(): boolean;
   setDrop(value: boolean): FeatureEngineeringPipeline;
+  hasDrop(): boolean;
+  clearDrop(): FeatureEngineeringPipeline;
 
   getPassthrough(): boolean;
   setPassthrough(value: boolean): FeatureEngineeringPipeline;
+  hasPassthrough(): boolean;
+  clearPassthrough(): FeatureEngineeringPipeline;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureEngineeringPipeline.AsObject;
@@ -773,54 +919,72 @@ export class FeatureEngineeringPipeline extends jspb.Message {
 
 export namespace FeatureEngineeringPipeline {
   export type AsObject = {
-    name: string,
-    datatype: string,
+    name?: string,
+    datatype?: string,
     columnsList: Array<string>,
-    imputation: string,
-    encoding: string,
-    scaling: string,
-    discretisation: string,
-    variabletransformation: string,
-    outlierhandling: string,
-    datetimetransformation: string,
+    imputation?: string,
+    encoding?: string,
+    scaling?: string,
+    discretisation?: string,
+    variabletransformation?: string,
+    outlierhandling?: string,
+    datetimetransformation?: string,
     text?: TextPipelineSpec.AsObject,
     image?: ImagePipelineSpec.AsObject,
     audio?: AudioPipelineSpec.AsObject,
     video?: VideoPipelineSpec.AsObject,
     generatedList: Array<GeneratedColumnSpec.AsObject>,
     customList: Array<GeneratedColumnSpec.AsObject>,
-    drop: boolean,
-    passthrough: boolean,
+    drop?: boolean,
+    passthrough?: boolean,
   }
 }
 
 export class FeatureEngineeringSearchSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): FeatureEngineeringSearchSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): FeatureEngineeringSearchSpec;
 
   getImbalancedhandler(): string;
   setImbalancedhandler(value: string): FeatureEngineeringSearchSpec;
+  hasImbalancedhandler(): boolean;
+  clearImbalancedhandler(): FeatureEngineeringSearchSpec;
 
   getEstimator(): string;
   setEstimator(value: string): FeatureEngineeringSearchSpec;
+  hasEstimator(): boolean;
+  clearEstimator(): FeatureEngineeringSearchSpec;
 
   getMaxmodels(): number;
   setMaxmodels(value: number): FeatureEngineeringSearchSpec;
+  hasMaxmodels(): boolean;
+  clearMaxmodels(): FeatureEngineeringSearchSpec;
 
   getMaxtime(): number;
   setMaxtime(value: number): FeatureEngineeringSearchSpec;
+  hasMaxtime(): boolean;
+  clearMaxtime(): FeatureEngineeringSearchSpec;
 
   getMaxtrainers(): number;
   setMaxtrainers(value: number): FeatureEngineeringSearchSpec;
+  hasMaxtrainers(): boolean;
+  clearMaxtrainers(): FeatureEngineeringSearchSpec;
 
   getSamplepct(): number;
   setSamplepct(value: number): FeatureEngineeringSearchSpec;
+  hasSamplepct(): boolean;
+  clearSamplepct(): FeatureEngineeringSearchSpec;
 
   getAutoremove(): boolean;
   setAutoremove(value: boolean): FeatureEngineeringSearchSpec;
+  hasAutoremove(): boolean;
+  clearAutoremove(): FeatureEngineeringSearchSpec;
 
   getReuse(): boolean;
   setReuse(value: boolean): FeatureEngineeringSearchSpec;
+  hasReuse(): boolean;
+  clearReuse(): FeatureEngineeringSearchSpec;
 
   getFeselection(): FeatureSelectionSpec | undefined;
   setFeselection(value?: FeatureSelectionSpec): FeatureEngineeringSearchSpec;
@@ -842,15 +1006,15 @@ export class FeatureEngineeringSearchSpec extends jspb.Message {
 
 export namespace FeatureEngineeringSearchSpec {
   export type AsObject = {
-    enabled: boolean,
-    imbalancedhandler: string,
-    estimator: string,
-    maxmodels: number,
-    maxtime: number,
-    maxtrainers: number,
-    samplepct: number,
-    autoremove: boolean,
-    reuse: boolean,
+    enabled?: boolean,
+    imbalancedhandler?: string,
+    estimator?: string,
+    maxmodels?: number,
+    maxtime?: number,
+    maxtrainers?: number,
+    samplepct?: number,
+    autoremove?: boolean,
+    reuse?: boolean,
     feselection?: FeatureSelectionSpec.AsObject,
     earlystop?: EarlyStopSpec.AsObject,
   }
@@ -884,6 +1048,8 @@ export class FeatureEngineeringSpec extends jspb.Message {
 
   getImbalance(): string;
   setImbalance(value: string): FeatureEngineeringSpec;
+  hasImbalance(): boolean;
+  clearImbalance(): FeatureEngineeringSpec;
 
   getSelection(): FeatureSelectionSpec | undefined;
   setSelection(value?: FeatureSelectionSpec): FeatureEngineeringSpec;
@@ -901,7 +1067,7 @@ export class FeatureEngineeringSpec extends jspb.Message {
 export namespace FeatureEngineeringSpec {
   export type AsObject = {
     pipelinesList: Array<FeatureEngineeringPipeline.AsObject>,
-    imbalance: string,
+    imbalance?: string,
     selection?: FeatureSelectionSpec.AsObject,
   }
 }
@@ -909,9 +1075,13 @@ export namespace FeatureEngineeringSpec {
 export class FeatureImportance extends jspb.Message {
   getFeature(): string;
   setFeature(value: string): FeatureImportance;
+  hasFeature(): boolean;
+  clearFeature(): FeatureImportance;
 
   getImportance(): number;
   setImportance(value: number): FeatureImportance;
+  hasImportance(): boolean;
+  clearImportance(): FeatureImportance;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureImportance.AsObject;
@@ -923,20 +1093,26 @@ export class FeatureImportance extends jspb.Message {
 
 export namespace FeatureImportance {
   export type AsObject = {
-    feature: string,
-    importance: number,
+    feature?: string,
+    importance?: number,
   }
 }
 
 export class FeatureInfo extends jspb.Message {
   getName(): string;
   setName(value: string): FeatureInfo;
+  hasName(): boolean;
+  clearName(): FeatureInfo;
 
   getReason(): string;
   setReason(value: string): FeatureInfo;
+  hasReason(): boolean;
+  clearReason(): FeatureInfo;
 
   getValue(): number;
   setValue(value: number): FeatureInfo;
+  hasValue(): boolean;
+  clearValue(): FeatureInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureInfo.AsObject;
@@ -948,18 +1124,22 @@ export class FeatureInfo extends jspb.Message {
 
 export namespace FeatureInfo {
   export type AsObject = {
-    name: string,
-    reason: string,
-    value: number,
+    name?: string,
+    reason?: string,
+    value?: number,
   }
 }
 
 export class FeaturePair extends jspb.Message {
   getX(): string;
   setX(value: string): FeaturePair;
+  hasX(): boolean;
+  clearX(): FeaturePair;
 
   getY(): string;
   setY(value: string): FeaturePair;
+  hasY(): boolean;
+  clearY(): FeaturePair;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeaturePair.AsObject;
@@ -971,23 +1151,31 @@ export class FeaturePair extends jspb.Message {
 
 export namespace FeaturePair {
   export type AsObject = {
-    x: string,
-    y: string,
+    x?: string,
+    y?: string,
   }
 }
 
 export class FeatureSelectionSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): FeatureSelectionSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): FeatureSelectionSpec;
 
   getEmbedding(): boolean;
   setEmbedding(value: boolean): FeatureSelectionSpec;
+  hasEmbedding(): boolean;
+  clearEmbedding(): FeatureSelectionSpec;
 
   getFilter(): boolean;
   setFilter(value: boolean): FeatureSelectionSpec;
+  hasFilter(): boolean;
+  clearFilter(): FeatureSelectionSpec;
 
   getWrapper(): boolean;
   setWrapper(value: boolean): FeatureSelectionSpec;
+  hasWrapper(): boolean;
+  clearWrapper(): FeatureSelectionSpec;
 
   getPipelineList(): Array<string>;
   setPipelineList(value: Array<string>): FeatureSelectionSpec;
@@ -996,15 +1184,23 @@ export class FeatureSelectionSpec extends jspb.Message {
 
   getVarthreshold(): number;
   setVarthreshold(value: number): FeatureSelectionSpec;
+  hasVarthreshold(): boolean;
+  clearVarthreshold(): FeatureSelectionSpec;
 
   getCorrthreshold(): number;
   setCorrthreshold(value: number): FeatureSelectionSpec;
+  hasCorrthreshold(): boolean;
+  clearCorrthreshold(): FeatureSelectionSpec;
 
   getMaxfeatures(): number;
   setMaxfeatures(value: number): FeatureSelectionSpec;
+  hasMaxfeatures(): boolean;
+  clearMaxfeatures(): FeatureSelectionSpec;
 
   getPercentile(): number;
   setPercentile(value: number): FeatureSelectionSpec;
+  hasPercentile(): boolean;
+  clearPercentile(): FeatureSelectionSpec;
 
   getReservedList(): Array<string>;
   setReservedList(value: Array<string>): FeatureSelectionSpec;
@@ -1021,15 +1217,15 @@ export class FeatureSelectionSpec extends jspb.Message {
 
 export namespace FeatureSelectionSpec {
   export type AsObject = {
-    enabled: boolean,
-    embedding: boolean,
-    filter: boolean,
-    wrapper: boolean,
+    enabled?: boolean,
+    embedding?: boolean,
+    filter?: boolean,
+    wrapper?: boolean,
     pipelineList: Array<string>,
-    varthreshold: number,
-    corrthreshold: number,
-    maxfeatures: number,
-    percentile: number,
+    varthreshold?: number,
+    corrthreshold?: number,
+    maxfeatures?: number,
+    percentile?: number,
     reservedList: Array<string>,
   }
 }
@@ -1052,9 +1248,13 @@ export class ForecasterSpec extends jspb.Message {
 
   getForecast(): boolean;
   setForecast(value: boolean): ForecasterSpec;
+  hasForecast(): boolean;
+  clearForecast(): ForecasterSpec;
 
   getCoverage(): number;
   setCoverage(value: number): ForecasterSpec;
+  hasCoverage(): boolean;
+  clearCoverage(): ForecasterSpec;
 
   getOutputlocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setOutputlocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ForecasterSpec;
@@ -1073,6 +1273,8 @@ export class ForecasterSpec extends jspb.Message {
 
   getPredefinedtemplate(): string;
   setPredefinedtemplate(value: string): ForecasterSpec;
+  hasPredefinedtemplate(): boolean;
+  clearPredefinedtemplate(): ForecasterSpec;
 
   getAnomaliesList(): Array<Anomaly>;
   setAnomaliesList(value: Array<Anomaly>): ForecasterSpec;
@@ -1081,12 +1283,18 @@ export class ForecasterSpec extends jspb.Message {
 
   getTrainenddata(): string;
   setTrainenddata(value: string): ForecasterSpec;
+  hasTrainenddata(): boolean;
+  clearTrainenddata(): ForecasterSpec;
 
   getValuecolumn(): string;
   setValuecolumn(value: string): ForecasterSpec;
+  hasValuecolumn(): boolean;
+  clearValuecolumn(): ForecasterSpec;
 
   getHpobudget(): number;
   setHpobudget(value: number): ForecasterSpec;
+  hasHpobudget(): boolean;
+  clearHpobudget(): ForecasterSpec;
 
   getEvaluationmetrics(): EvalMetrics | undefined;
   setEvaluationmetrics(value?: EvalMetrics): ForecasterSpec;
@@ -1115,6 +1323,8 @@ export class ForecasterSpec extends jspb.Message {
 
   getGrowth(): string;
   setGrowth(value: string): ForecasterSpec;
+  hasGrowth(): boolean;
+  clearGrowth(): ForecasterSpec;
 
   getKeyList(): Array<string>;
   setKeyList(value: Array<string>): ForecasterSpec;
@@ -1128,6 +1338,8 @@ export class ForecasterSpec extends jspb.Message {
 
   getHts(): string;
   setHts(value: string): ForecasterSpec;
+  hasHts(): boolean;
+  clearHts(): ForecasterSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecasterSpec.AsObject;
@@ -1142,37 +1354,43 @@ export namespace ForecasterSpec {
     eventsList: Array<TimeSeriesEvent.AsObject>,
     past?: WindowSpec.AsObject,
     future?: WindowSpec.AsObject,
-    forecast: boolean,
-    coverage: number,
+    forecast?: boolean,
+    coverage?: number,
     outputlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     featuresList: Array<string>,
     groupsList: Array<string>,
-    predefinedtemplate: string,
+    predefinedtemplate?: string,
     anomaliesList: Array<Anomaly.AsObject>,
-    trainenddata: string,
-    valuecolumn: string,
-    hpobudget: number,
+    trainenddata?: string,
+    valuecolumn?: string,
+    hpobudget?: number,
     evaluationmetrics?: EvalMetrics.AsObject,
     evaluationperiod?: EvalPeriod.AsObject,
     seasonality?: SeasonalitySpec.AsObject,
     regressorsList: Array<string>,
     laggedregressorsList: Array<string>,
-    growth: string,
+    growth?: string,
     keyList: Array<string>,
     estimatorsList: Array<string>,
-    hts: string,
+    hts?: string,
   }
 }
 
 export class GarbageCollectionSpec extends jspb.Message {
   getCollectatmodelclassend(): boolean;
   setCollectatmodelclassend(value: boolean): GarbageCollectionSpec;
+  hasCollectatmodelclassend(): boolean;
+  clearCollectatmodelclassend(): GarbageCollectionSpec;
 
   getKeeponlybestmodelperalgorithm(): boolean;
   setKeeponlybestmodelperalgorithm(value: boolean): GarbageCollectionSpec;
+  hasKeeponlybestmodelperalgorithm(): boolean;
+  clearKeeponlybestmodelperalgorithm(): GarbageCollectionSpec;
 
   getKeepprunedmodels(): boolean;
   setKeepprunedmodels(value: boolean): GarbageCollectionSpec;
+  hasKeepprunedmodels(): boolean;
+  clearKeepprunedmodels(): GarbageCollectionSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GarbageCollectionSpec.AsObject;
@@ -1184,15 +1402,17 @@ export class GarbageCollectionSpec extends jspb.Message {
 
 export namespace GarbageCollectionSpec {
   export type AsObject = {
-    collectatmodelclassend: boolean,
-    keeponlybestmodelperalgorithm: boolean,
-    keepprunedmodels: boolean,
+    collectatmodelclassend?: boolean,
+    keeponlybestmodelperalgorithm?: boolean,
+    keepprunedmodels?: boolean,
   }
 }
 
 export class GarbageCollectionStatus extends jspb.Message {
   getCollectedmodelscount(): number;
   setCollectedmodelscount(value: number): GarbageCollectionStatus;
+  hasCollectedmodelscount(): boolean;
+  clearCollectedmodelscount(): GarbageCollectionStatus;
 
   getModelsList(): Array<ModelResult>;
   setModelsList(value: Array<ModelResult>): GarbageCollectionStatus;
@@ -1209,7 +1429,7 @@ export class GarbageCollectionStatus extends jspb.Message {
 
 export namespace GarbageCollectionStatus {
   export type AsObject = {
-    collectedmodelscount: number,
+    collectedmodelscount?: number,
     modelsList: Array<ModelResult.AsObject>,
   }
 }
@@ -1217,18 +1437,28 @@ export namespace GarbageCollectionStatus {
 export class GeneratedColumnSpec extends jspb.Message {
   getName(): string;
   setName(value: string): GeneratedColumnSpec;
+  hasName(): boolean;
+  clearName(): GeneratedColumnSpec;
 
   getDatatype(): string;
   setDatatype(value: string): GeneratedColumnSpec;
+  hasDatatype(): boolean;
+  clearDatatype(): GeneratedColumnSpec;
 
   getFirst(): string;
   setFirst(value: string): GeneratedColumnSpec;
+  hasFirst(): boolean;
+  clearFirst(): GeneratedColumnSpec;
 
   getSecond(): string;
   setSecond(value: string): GeneratedColumnSpec;
+  hasSecond(): boolean;
+  clearSecond(): GeneratedColumnSpec;
 
   getOriginal(): string;
   setOriginal(value: string): GeneratedColumnSpec;
+  hasOriginal(): boolean;
+  clearOriginal(): GeneratedColumnSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GeneratedColumnSpec.AsObject;
@@ -1240,20 +1470,24 @@ export class GeneratedColumnSpec extends jspb.Message {
 
 export namespace GeneratedColumnSpec {
   export type AsObject = {
-    name: string,
-    datatype: string,
-    first: string,
-    second: string,
-    original: string,
+    name?: string,
+    datatype?: string,
+    first?: string,
+    second?: string,
+    original?: string,
   }
 }
 
 export class GroupSplitLocationsSpec extends jspb.Message {
   getGrouptrainingdatafile(): string;
   setGrouptrainingdatafile(value: string): GroupSplitLocationsSpec;
+  hasGrouptrainingdatafile(): boolean;
+  clearGrouptrainingdatafile(): GroupSplitLocationsSpec;
 
   getGrouptestingdatafile(): string;
   setGrouptestingdatafile(value: string): GroupSplitLocationsSpec;
+  hasGrouptestingdatafile(): boolean;
+  clearGrouptestingdatafile(): GroupSplitLocationsSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GroupSplitLocationsSpec.AsObject;
@@ -1265,17 +1499,21 @@ export class GroupSplitLocationsSpec extends jspb.Message {
 
 export namespace GroupSplitLocationsSpec {
   export type AsObject = {
-    grouptrainingdatafile: string,
-    grouptestingdatafile: string,
+    grouptrainingdatafile?: string,
+    grouptestingdatafile?: string,
   }
 }
 
 export class HyperParameterValue extends jspb.Message {
   getName(): string;
   setName(value: string): HyperParameterValue;
+  hasName(): boolean;
+  clearName(): HyperParameterValue;
 
   getValue(): string;
   setValue(value: string): HyperParameterValue;
+  hasValue(): boolean;
+  clearValue(): HyperParameterValue;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HyperParameterValue.AsObject;
@@ -1287,23 +1525,31 @@ export class HyperParameterValue extends jspb.Message {
 
 export namespace HyperParameterValue {
   export type AsObject = {
-    name: string,
-    value: string,
+    name?: string,
+    value?: string,
   }
 }
 
 export class HyperbandOptions extends jspb.Message {
   getMinresources(): number;
   setMinresources(value: number): HyperbandOptions;
+  hasMinresources(): boolean;
+  clearMinresources(): HyperbandOptions;
 
   getMaxresources(): number;
   setMaxresources(value: number): HyperbandOptions;
+  hasMaxresources(): boolean;
+  clearMaxresources(): HyperbandOptions;
 
   getReductionfactor(): number;
   setReductionfactor(value: number): HyperbandOptions;
+  hasReductionfactor(): boolean;
+  clearReductionfactor(): HyperbandOptions;
 
   getBootstrapcount(): number;
   setBootstrapcount(value: number): HyperbandOptions;
+  hasBootstrapcount(): boolean;
+  clearBootstrapcount(): HyperbandOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HyperbandOptions.AsObject;
@@ -1315,16 +1561,18 @@ export class HyperbandOptions extends jspb.Message {
 
 export namespace HyperbandOptions {
   export type AsObject = {
-    minresources: number,
-    maxresources: number,
-    reductionfactor: number,
-    bootstrapcount: number,
+    minresources?: number,
+    maxresources?: number,
+    reductionfactor?: number,
+    bootstrapcount?: number,
   }
 }
 
 export class ImagePipelineSpec extends jspb.Message {
   getFeaturizer(): string;
   setFeaturizer(value: string): ImagePipelineSpec;
+  hasFeaturizer(): boolean;
+  clearFeaturizer(): ImagePipelineSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ImagePipelineSpec.AsObject;
@@ -1336,16 +1584,20 @@ export class ImagePipelineSpec extends jspb.Message {
 
 export namespace ImagePipelineSpec {
   export type AsObject = {
-    featurizer: string,
+    featurizer?: string,
   }
 }
 
 export class ImbalanceHandlingSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): ImbalanceHandlingSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): ImbalanceHandlingSpec;
 
   getImbalance(): string;
   setImbalance(value: string): ImbalanceHandlingSpec;
+  hasImbalance(): boolean;
+  clearImbalance(): ImbalanceHandlingSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ImbalanceHandlingSpec.AsObject;
@@ -1357,14 +1609,16 @@ export class ImbalanceHandlingSpec extends jspb.Message {
 
 export namespace ImbalanceHandlingSpec {
   export type AsObject = {
-    enabled: boolean,
-    imbalance: string,
+    enabled?: boolean,
+    imbalance?: string,
   }
 }
 
 export class InterpretabilitySpec extends jspb.Message {
   getIce(): boolean;
   setIce(value: boolean): InterpretabilitySpec;
+  hasIce(): boolean;
+  clearIce(): InterpretabilitySpec;
 
   getIcepairsList(): Array<FeaturePair>;
   setIcepairsList(value: Array<FeaturePair>): InterpretabilitySpec;
@@ -1373,9 +1627,13 @@ export class InterpretabilitySpec extends jspb.Message {
 
   getLime(): boolean;
   setLime(value: boolean): InterpretabilitySpec;
+  hasLime(): boolean;
+  clearLime(): InterpretabilitySpec;
 
   getShap(): string;
   setShap(value: string): InterpretabilitySpec;
+  hasShap(): boolean;
+  clearShap(): InterpretabilitySpec;
 
   getShappairsList(): Array<FeaturePair>;
   setShappairsList(value: Array<FeaturePair>): InterpretabilitySpec;
@@ -1384,9 +1642,13 @@ export class InterpretabilitySpec extends jspb.Message {
 
   getCounterfactual(): boolean;
   setCounterfactual(value: boolean): InterpretabilitySpec;
+  hasCounterfactual(): boolean;
+  clearCounterfactual(): InterpretabilitySpec;
 
   getAnchor(): boolean;
   setAnchor(value: boolean): InterpretabilitySpec;
+  hasAnchor(): boolean;
+  clearAnchor(): InterpretabilitySpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InterpretabilitySpec.AsObject;
@@ -1398,13 +1660,13 @@ export class InterpretabilitySpec extends jspb.Message {
 
 export namespace InterpretabilitySpec {
   export type AsObject = {
-    ice: boolean,
+    ice?: boolean,
     icepairsList: Array<FeaturePair.AsObject>,
-    lime: boolean,
-    shap: string,
+    lime?: boolean,
+    shap?: string,
     shappairsList: Array<FeaturePair.AsObject>,
-    counterfactual: boolean,
-    anchor: boolean,
+    counterfactual?: boolean,
+    anchor?: boolean,
   }
 }
 
@@ -1421,12 +1683,18 @@ export class InterpretabilityStatus extends jspb.Message {
 
   getExplaineruri(): string;
   setExplaineruri(value: string): InterpretabilityStatus;
+  hasExplaineruri(): boolean;
+  clearExplaineruri(): InterpretabilityStatus;
 
   getTrainshapvaluesuri(): string;
   setTrainshapvaluesuri(value: string): InterpretabilityStatus;
+  hasTrainshapvaluesuri(): boolean;
+  clearTrainshapvaluesuri(): InterpretabilityStatus;
 
   getTestshapvaluesuri(): string;
   setTestshapvaluesuri(value: string): InterpretabilityStatus;
+  hasTestshapvaluesuri(): boolean;
+  clearTestshapvaluesuri(): InterpretabilityStatus;
 
   getImportanceList(): Array<FeatureImportance>;
   setImportanceList(value: Array<FeatureImportance>): InterpretabilityStatus;
@@ -1445,9 +1713,9 @@ export namespace InterpretabilityStatus {
   export type AsObject = {
     startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    explaineruri: string,
-    trainshapvaluesuri: string,
-    testshapvaluesuri: string,
+    explaineruri?: string,
+    trainshapvaluesuri?: string,
+    testshapvaluesuri?: string,
     importanceList: Array<FeatureImportance.AsObject>,
   }
 }
@@ -1455,6 +1723,8 @@ export namespace InterpretabilityStatus {
 export class Level extends jspb.Message {
   getName(): string;
   setName(value: string): Level;
+  hasName(): boolean;
+  clearName(): Level;
 
   getIndexList(): Array<string>;
   setIndexList(value: Array<string>): Level;
@@ -1463,12 +1733,18 @@ export class Level extends jspb.Message {
 
   getHorizon(): number;
   setHorizon(value: number): Level;
+  hasHorizon(): boolean;
+  clearHorizon(): Level;
 
   getFreq(): string;
   setFreq(value: string): Level;
+  hasFreq(): boolean;
+  clearFreq(): Level;
 
   getAggregate(): string;
   setAggregate(value: string): Level;
+  hasAggregate(): boolean;
+  clearAggregate(): Level;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Level.AsObject;
@@ -1480,26 +1756,34 @@ export class Level extends jspb.Message {
 
 export namespace Level {
   export type AsObject = {
-    name: string,
+    name?: string,
     indexList: Array<string>,
-    horizon: number,
-    freq: string,
-    aggregate: string,
+    horizon?: number,
+    freq?: string,
+    aggregate?: string,
   }
 }
 
 export class MedianPrunerOptions extends jspb.Message {
   getStartuptrials(): number;
   setStartuptrials(value: number): MedianPrunerOptions;
+  hasStartuptrials(): boolean;
+  clearStartuptrials(): MedianPrunerOptions;
 
   getWarmupsteps(): number;
   setWarmupsteps(value: number): MedianPrunerOptions;
+  hasWarmupsteps(): boolean;
+  clearWarmupsteps(): MedianPrunerOptions;
 
   getIntervalsteps(): number;
   setIntervalsteps(value: number): MedianPrunerOptions;
+  hasIntervalsteps(): boolean;
+  clearIntervalsteps(): MedianPrunerOptions;
 
   getMintrials(): number;
   setMintrials(value: number): MedianPrunerOptions;
+  hasMintrials(): boolean;
+  clearMintrials(): MedianPrunerOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MedianPrunerOptions.AsObject;
@@ -1511,10 +1795,10 @@ export class MedianPrunerOptions extends jspb.Message {
 
 export namespace MedianPrunerOptions {
   export type AsObject = {
-    startuptrials: number,
-    warmupsteps: number,
-    intervalsteps: number,
-    mintrials: number,
+    startuptrials?: number,
+    warmupsteps?: number,
+    intervalsteps?: number,
+    mintrials?: number,
   }
 }
 
@@ -1610,9 +1894,13 @@ export class ModelClassDataSpec extends jspb.Message {
 
   getPredictiontimecolumn(): string;
   setPredictiontimecolumn(value: string): ModelClassDataSpec;
+  hasPredictiontimecolumn(): boolean;
+  clearPredictiontimecolumn(): ModelClassDataSpec;
 
   getTarget(): string;
   setTarget(value: string): ModelClassDataSpec;
+  hasTarget(): boolean;
+  clearTarget(): ModelClassDataSpec;
 
   getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelClassDataSpec;
@@ -1621,9 +1909,13 @@ export class ModelClassDataSpec extends jspb.Message {
 
   getOnlinefeaturestorename(): string;
   setOnlinefeaturestorename(value: string): ModelClassDataSpec;
+  hasOnlinefeaturestorename(): boolean;
+  clearOnlinefeaturestorename(): ModelClassDataSpec;
 
   getOfflinefeaturestorename(): string;
   setOfflinefeaturestorename(value: string): ModelClassDataSpec;
+  hasOfflinefeaturestorename(): boolean;
+  clearOfflinefeaturestorename(): ModelClassDataSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassDataSpec.AsObject;
@@ -1640,11 +1932,11 @@ export namespace ModelClassDataSpec {
     schema?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema.AsObject,
     flatfile?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec.AsObject,
     primarykeyList: Array<string>,
-    predictiontimecolumn: string,
-    target: string,
+    predictiontimecolumn?: string,
+    target?: string,
     tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    onlinefeaturestorename: string,
-    offlinefeaturestorename: string,
+    onlinefeaturestorename?: string,
+    offlinefeaturestorename?: string,
   }
 }
 
@@ -1735,33 +2027,53 @@ export namespace ModelClassRunList {
 export class ModelClassRunSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): ModelClassRunSpec;
+  hasVersionname(): boolean;
+  clearVersionname(): ModelClassRunSpec;
 
   getDescription(): string;
   setDescription(value: string): ModelClassRunSpec;
+  hasDescription(): boolean;
+  clearDescription(): ModelClassRunSpec;
 
   getDatasetname(): string;
   setDatasetname(value: string): ModelClassRunSpec;
+  hasDatasetname(): boolean;
+  clearDatasetname(): ModelClassRunSpec;
 
   getModelclassname(): string;
   setModelclassname(value: string): ModelClassRunSpec;
+  hasModelclassname(): boolean;
+  clearModelclassname(): ModelClassRunSpec;
 
   getOwner(): string;
   setOwner(value: string): ModelClassRunSpec;
+  hasOwner(): boolean;
+  clearOwner(): ModelClassRunSpec;
 
   getPriority(): string;
   setPriority(value: string): ModelClassRunSpec;
+  hasPriority(): boolean;
+  clearPriority(): ModelClassRunSpec;
 
   getPaused(): boolean;
   setPaused(value: boolean): ModelClassRunSpec;
+  hasPaused(): boolean;
+  clearPaused(): ModelClassRunSpec;
 
   getAborted(): boolean;
   setAborted(value: boolean): ModelClassRunSpec;
+  hasAborted(): boolean;
+  clearAborted(): ModelClassRunSpec;
 
   getTtl(): number;
   setTtl(value: number): ModelClassRunSpec;
+  hasTtl(): boolean;
+  clearTtl(): ModelClassRunSpec;
 
   getTriggeredby(): string;
   setTriggeredby(value: string): ModelClassRunSpec;
+  hasTriggeredby(): boolean;
+  clearTriggeredby(): ModelClassRunSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassRunSpec.AsObject;
@@ -1773,28 +2085,34 @@ export class ModelClassRunSpec extends jspb.Message {
 
 export namespace ModelClassRunSpec {
   export type AsObject = {
-    versionname: string,
-    description: string,
-    datasetname: string,
-    modelclassname: string,
-    owner: string,
-    priority: string,
-    paused: boolean,
-    aborted: boolean,
-    ttl: number,
-    triggeredby: string,
+    versionname?: string,
+    description?: string,
+    datasetname?: string,
+    modelclassname?: string,
+    owner?: string,
+    priority?: string,
+    paused?: boolean,
+    aborted?: boolean,
+    ttl?: number,
+    triggeredby?: string,
   }
 }
 
 export class ModelClassRunStatus extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): ModelClassRunStatus;
+  hasDatasetname(): boolean;
+  clearDatasetname(): ModelClassRunStatus;
 
   getStudyname(): string;
   setStudyname(value: string): ModelClassRunStatus;
+  hasStudyname(): boolean;
+  clearStudyname(): ModelClassRunStatus;
 
   getModelname(): string;
   setModelname(value: string): ModelClassRunStatus;
+  hasModelname(): boolean;
+  clearModelname(): ModelClassRunStatus;
 
   getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassRunStatus;
@@ -1803,18 +2121,28 @@ export class ModelClassRunStatus extends jspb.Message {
 
   getPhase(): string;
   setPhase(value: string): ModelClassRunStatus;
+  hasPhase(): boolean;
+  clearPhase(): ModelClassRunStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelClassRunStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): ModelClassRunStatus;
 
   getEvalmetrics(): string;
   setEvalmetrics(value: string): ModelClassRunStatus;
+  hasEvalmetrics(): boolean;
+  clearEvalmetrics(): ModelClassRunStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): ModelClassRunStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): ModelClassRunStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): ModelClassRunStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): ModelClassRunStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassRunStatus;
@@ -1833,6 +2161,8 @@ export class ModelClassRunStatus extends jspb.Message {
 
   getAuto(): boolean;
   setAuto(value: boolean): ModelClassRunStatus;
+  hasAuto(): boolean;
+  clearAuto(): ModelClassRunStatus;
 
   getApprovedby(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setApprovedby(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelClassRunStatus;
@@ -1841,6 +2171,8 @@ export class ModelClassRunStatus extends jspb.Message {
 
   getModelscount(): number;
   setModelscount(value: number): ModelClassRunStatus;
+  hasModelscount(): boolean;
+  clearModelscount(): ModelClassRunStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): ModelClassRunStatus;
@@ -1857,21 +2189,21 @@ export class ModelClassRunStatus extends jspb.Message {
 
 export namespace ModelClassRunStatus {
   export type AsObject = {
-    datasetname: string,
-    studyname: string,
-    modelname: string,
+    datasetname?: string,
+    studyname?: string,
+    modelname?: string,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    phase: string,
-    observedgeneration: number,
-    evalmetrics: string,
-    failurereason: string,
-    failuremessage: string,
+    phase?: string,
+    observedgeneration?: number,
+    evalmetrics?: string,
+    failurereason?: string,
+    failuremessage?: string,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     promotedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    auto: boolean,
+    auto?: boolean,
     approvedby?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    modelscount: number,
+    modelscount?: number,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -1923,21 +2255,33 @@ export namespace ModelClassServingSpec {
 export class ModelClassSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ModelClassSpec;
+  hasOwner(): boolean;
+  clearOwner(): ModelClassSpec;
 
   getDataproductversionname(): string;
   setDataproductversionname(value: string): ModelClassSpec;
+  hasDataproductversionname(): boolean;
+  clearDataproductversionname(): ModelClassSpec;
 
   getVersion(): string;
   setVersion(value: string): ModelClassSpec;
+  hasVersion(): boolean;
+  clearVersion(): ModelClassSpec;
 
   getDescription(): string;
   setDescription(value: string): ModelClassSpec;
+  hasDescription(): boolean;
+  clearDescription(): ModelClassSpec;
 
   getTask(): string;
   setTask(value: string): ModelClassSpec;
+  hasTask(): boolean;
+  clearTask(): ModelClassSpec;
 
   getSubtask(): string;
   setSubtask(value: string): ModelClassSpec;
+  hasSubtask(): boolean;
+  clearSubtask(): ModelClassSpec;
 
   getObjective(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec | undefined;
   setObjective(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec): ModelClassSpec;
@@ -1976,12 +2320,18 @@ export class ModelClassSpec extends jspb.Message {
 
   getFast(): boolean;
   setFast(value: boolean): ModelClassSpec;
+  hasFast(): boolean;
+  clearFast(): ModelClassSpec;
 
   getPaused(): boolean;
   setPaused(value: boolean): ModelClassSpec;
+  hasPaused(): boolean;
+  clearPaused(): ModelClassSpec;
 
   getRegistered(): boolean;
   setRegistered(value: boolean): ModelClassSpec;
+  hasRegistered(): boolean;
+  clearRegistered(): ModelClassSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassSpec.AsObject;
@@ -1993,12 +2343,12 @@ export class ModelClassSpec extends jspb.Message {
 
 export namespace ModelClassSpec {
   export type AsObject = {
-    owner: string,
-    dataproductversionname: string,
-    version: string,
-    description: string,
-    task: string,
-    subtask: string,
+    owner?: string,
+    dataproductversionname?: string,
+    version?: string,
+    description?: string,
+    task?: string,
+    subtask?: string,
     objective?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.AsObject,
     entitiesList: Array<EntityRef.AsObject>,
     data?: ModelClassDataSpec.AsObject,
@@ -2006,15 +2356,17 @@ export namespace ModelClassSpec {
     serving?: ModelClassServingSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     reportschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    fast: boolean,
-    paused: boolean,
-    registered: boolean,
+    fast?: boolean,
+    paused?: boolean,
+    registered?: boolean,
   }
 }
 
 export class ModelClassStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelClassStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): ModelClassStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
@@ -2048,6 +2400,8 @@ export class ModelClassStatus extends jspb.Message {
 
   getBestmodelscore(): number;
   setBestmodelscore(value: number): ModelClassStatus;
+  hasBestmodelscore(): boolean;
+  clearBestmodelscore(): ModelClassStatus;
 
   getRetiredList(): Array<string>;
   setRetiredList(value: Array<string>): ModelClassStatus;
@@ -2056,18 +2410,28 @@ export class ModelClassStatus extends jspb.Message {
 
   getPredictorname(): string;
   setPredictorname(value: string): ModelClassStatus;
+  hasPredictorname(): boolean;
+  clearPredictorname(): ModelClassStatus;
 
   getDataappname(): string;
   setDataappname(value: string): ModelClassStatus;
+  hasDataappname(): boolean;
+  clearDataappname(): ModelClassStatus;
 
   getTriggeredby(): string;
   setTriggeredby(value: string): ModelClassStatus;
+  hasTriggeredby(): boolean;
+  clearTriggeredby(): ModelClassStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): ModelClassStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): ModelClassStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): ModelClassStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): ModelClassStatus;
 
   getLastrunat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastrunat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
@@ -2076,6 +2440,8 @@ export class ModelClassStatus extends jspb.Message {
 
   getLastrunname(): string;
   setLastrunname(value: string): ModelClassStatus;
+  hasLastrunname(): boolean;
+  clearLastrunname(): ModelClassStatus;
 
   getLastpredictionat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastpredictionat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelClassStatus;
@@ -2084,21 +2450,33 @@ export class ModelClassStatus extends jspb.Message {
 
   getLastpredictionname(): string;
   setLastpredictionname(value: string): ModelClassStatus;
+  hasLastpredictionname(): boolean;
+  clearLastpredictionname(): ModelClassStatus;
 
   getPredictionscount(): number;
   setPredictionscount(value: number): ModelClassStatus;
+  hasPredictionscount(): boolean;
+  clearPredictionscount(): ModelClassStatus;
 
   getRunscount(): number;
   setRunscount(value: number): ModelClassStatus;
+  hasRunscount(): boolean;
+  clearRunscount(): ModelClassStatus;
 
   getModelscount(): number;
   setModelscount(value: number): ModelClassStatus;
+  hasModelscount(): boolean;
+  clearModelscount(): ModelClassStatus;
 
   getLive(): boolean;
   setLive(value: boolean): ModelClassStatus;
+  hasLive(): boolean;
+  clearLive(): ModelClassStatus;
 
   getPredictorscount(): number;
   setPredictorscount(value: number): ModelClassStatus;
+  hasPredictorscount(): boolean;
+  clearPredictorscount(): ModelClassStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): ModelClassStatus;
@@ -2115,29 +2493,29 @@ export class ModelClassStatus extends jspb.Message {
 
 export namespace ModelClassStatus {
   export type AsObject = {
-    observedgeneration: number,
+    observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
     trainingschedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     predictionscedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     monitoringscedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     reportscedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
-    bestmodelscore: number,
+    bestmodelscore?: number,
     retiredList: Array<string>,
-    predictorname: string,
-    dataappname: string,
-    triggeredby: string,
-    failurereason: string,
-    failuremessage: string,
+    predictorname?: string,
+    dataappname?: string,
+    triggeredby?: string,
+    failurereason?: string,
+    failuremessage?: string,
     lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lastrunname: string,
+    lastrunname?: string,
     lastpredictionat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lastpredictionname: string,
-    predictionscount: number,
-    runscount: number,
-    modelscount: number,
-    live: boolean,
-    predictorscount: number,
+    lastpredictionname?: string,
+    predictionscount?: number,
+    runscount?: number,
+    modelscount?: number,
+    live?: boolean,
+    predictorscount?: number,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -2150,6 +2528,8 @@ export class ModelClassTrainingSpec extends jspb.Message {
 
   getStudytemplatename(): string;
   setStudytemplatename(value: string): ModelClassTrainingSpec;
+  hasStudytemplatename(): boolean;
+  clearStudytemplatename(): ModelClassTrainingSpec;
 
   getModelunittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setModelunittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelClassTrainingSpec;
@@ -2178,24 +2558,38 @@ export class ModelClassTrainingSpec extends jspb.Message {
 
   getTriggeredby(): string;
   setTriggeredby(value: string): ModelClassTrainingSpec;
+  hasTriggeredby(): boolean;
+  clearTriggeredby(): ModelClassTrainingSpec;
 
   getPaused(): boolean;
   setPaused(value: boolean): ModelClassTrainingSpec;
+  hasPaused(): boolean;
+  clearPaused(): ModelClassTrainingSpec;
 
   getMaxtime(): number;
   setMaxtime(value: number): ModelClassTrainingSpec;
+  hasMaxtime(): boolean;
+  clearMaxtime(): ModelClassTrainingSpec;
 
   getMaxmodels(): number;
   setMaxmodels(value: number): ModelClassTrainingSpec;
+  hasMaxmodels(): boolean;
+  clearMaxmodels(): ModelClassTrainingSpec;
 
   getTrainers(): number;
   setTrainers(value: number): ModelClassTrainingSpec;
+  hasTrainers(): boolean;
+  clearTrainers(): ModelClassTrainingSpec;
 
   getAborted(): boolean;
   setAborted(value: boolean): ModelClassTrainingSpec;
+  hasAborted(): boolean;
+  clearAborted(): ModelClassTrainingSpec;
 
   getExplained(): boolean;
   setExplained(value: boolean): ModelClassTrainingSpec;
+  hasExplained(): boolean;
+  clearExplained(): ModelClassTrainingSpec;
 
   getPresqlList(): Array<string>;
   setPresqlList(value: Array<string>): ModelClassTrainingSpec;
@@ -2218,19 +2612,19 @@ export class ModelClassTrainingSpec extends jspb.Message {
 export namespace ModelClassTrainingSpec {
   export type AsObject = {
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    studytemplatename: string,
+    studytemplatename?: string,
     modelunittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     trainingschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     modelimage?: ModelImageSpec.AsObject,
     searchspace?: AlgorithmSearchSpaceSpec.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    triggeredby: string,
-    paused: boolean,
-    maxtime: number,
-    maxmodels: number,
-    trainers: number,
-    aborted: boolean,
-    explained: boolean,
+    triggeredby?: string,
+    paused?: boolean,
+    maxtime?: number,
+    maxmodels?: number,
+    trainers?: number,
+    aborted?: boolean,
+    explained?: boolean,
     presqlList: Array<string>,
     postsqlList: Array<string>,
   }
@@ -2239,12 +2633,18 @@ export namespace ModelClassTrainingSpec {
 export class ModelGroupByStatus extends jspb.Message {
   getModelsuri(): string;
   setModelsuri(value: string): ModelGroupByStatus;
+  hasModelsuri(): boolean;
+  clearModelsuri(): ModelGroupByStatus;
 
   getProfilesuri(): string;
   setProfilesuri(value: string): ModelGroupByStatus;
+  hasProfilesuri(): boolean;
+  clearProfilesuri(): ModelGroupByStatus;
 
   getForecastsuri(): string;
   setForecastsuri(value: string): ModelGroupByStatus;
+  hasForecastsuri(): boolean;
+  clearForecastsuri(): ModelGroupByStatus;
 
   getWorkerresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>;
   setWorkerresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>): ModelGroupByStatus;
@@ -2261,9 +2661,9 @@ export class ModelGroupByStatus extends jspb.Message {
 
 export namespace ModelGroupByStatus {
   export type AsObject = {
-    modelsuri: string,
-    profilesuri: string,
-    forecastsuri: string,
+    modelsuri?: string,
+    profilesuri?: string,
+    forecastsuri?: string,
     workerresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.AsObject>,
   }
 }
@@ -2271,12 +2671,18 @@ export namespace ModelGroupByStatus {
 export class ModelImageSpec extends jspb.Message {
   getExist(): boolean;
   setExist(value: boolean): ModelImageSpec;
+  hasExist(): boolean;
+  clearExist(): ModelImageSpec;
 
   getImagename(): string;
   setImagename(value: string): ModelImageSpec;
+  hasImagename(): boolean;
+  clearImagename(): ModelImageSpec;
 
   getRegistryconnectionname(): string;
   setRegistryconnectionname(value: string): ModelImageSpec;
+  hasRegistryconnectionname(): boolean;
+  clearRegistryconnectionname(): ModelImageSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelImageSpec.AsObject;
@@ -2288,9 +2694,9 @@ export class ModelImageSpec extends jspb.Message {
 
 export namespace ModelImageSpec {
   export type AsObject = {
-    exist: boolean,
-    imagename: string,
-    registryconnectionname: string,
+    exist?: boolean,
+    imagename?: string,
+    registryconnectionname?: string,
   }
 }
 
@@ -2323,18 +2729,28 @@ export namespace ModelList {
 export class ModelResult extends jspb.Message {
   getName(): string;
   setName(value: string): ModelResult;
+  hasName(): boolean;
+  clearName(): ModelResult;
 
   getAlg(): string;
   setAlg(value: string): ModelResult;
+  hasAlg(): boolean;
+  clearAlg(): ModelResult;
 
   getScore(): number;
   setScore(value: number): ModelResult;
+  hasScore(): boolean;
+  clearScore(): ModelResult;
 
   getError(): boolean;
   setError(value: boolean): ModelResult;
+  hasError(): boolean;
+  clearError(): ModelResult;
 
   getTrialid(): number;
   setTrialid(value: number): ModelResult;
+  hasTrialid(): boolean;
+  clearTrialid(): ModelResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelResult.AsObject;
@@ -2346,35 +2762,49 @@ export class ModelResult extends jspb.Message {
 
 export namespace ModelResult {
   export type AsObject = {
-    name: string,
-    alg: string,
-    score: number,
-    error: boolean,
-    trialid: number,
+    name?: string,
+    alg?: string,
+    score?: number,
+    error?: boolean,
+    trialid?: number,
   }
 }
 
 export class ModelSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ModelSpec;
+  hasOwner(): boolean;
+  clearOwner(): ModelSpec;
 
   getVersionname(): string;
   setVersionname(value: string): ModelSpec;
+  hasVersionname(): boolean;
+  clearVersionname(): ModelSpec;
 
   getModelversion(): string;
   setModelversion(value: string): ModelSpec;
+  hasModelversion(): boolean;
+  clearModelversion(): ModelSpec;
 
   getStudyname(): string;
   setStudyname(value: string): ModelSpec;
+  hasStudyname(): boolean;
+  clearStudyname(): ModelSpec;
 
   getDatasetname(): string;
   setDatasetname(value: string): ModelSpec;
+  hasDatasetname(): boolean;
+  clearDatasetname(): ModelSpec;
 
   getTask(): string;
   setTask(value: string): ModelSpec;
+  hasTask(): boolean;
+  clearTask(): ModelSpec;
 
   getSubtask(): string;
   setSubtask(value: string): ModelSpec;
+  hasSubtask(): boolean;
+  clearSubtask(): ModelSpec;
 
   getObjective(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec | undefined;
   setObjective(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec): ModelSpec;
@@ -2418,57 +2848,93 @@ export class ModelSpec extends jspb.Message {
 
   getTested(): boolean;
   setTested(value: boolean): ModelSpec;
+  hasTested(): boolean;
+  clearTested(): ModelSpec;
 
   getAborted(): boolean;
   setAborted(value: boolean): ModelSpec;
+  hasAborted(): boolean;
+  clearAborted(): ModelSpec;
 
   getPackaged(): boolean;
   setPackaged(value: boolean): ModelSpec;
+  hasPackaged(): boolean;
+  clearPackaged(): ModelSpec;
 
   getPublished(): boolean;
   setPublished(value: boolean): ModelSpec;
+  hasPublished(): boolean;
+  clearPublished(): ModelSpec;
 
   getPushed(): boolean;
   setPushed(value: boolean): ModelSpec;
+  hasPushed(): boolean;
+  clearPushed(): ModelSpec;
 
   getReported(): boolean;
   setReported(value: boolean): ModelSpec;
+  hasReported(): boolean;
+  clearReported(): ModelSpec;
 
   getPaused(): boolean;
   setPaused(value: boolean): ModelSpec;
+  hasPaused(): boolean;
+  clearPaused(): ModelSpec;
 
   getProfiled(): boolean;
   setProfiled(value: boolean): ModelSpec;
+  hasProfiled(): boolean;
+  clearProfiled(): ModelSpec;
 
   getArchived(): boolean;
   setArchived(value: boolean): ModelSpec;
+  hasArchived(): boolean;
+  clearArchived(): ModelSpec;
 
   getForecasted(): boolean;
   setForecasted(value: boolean): ModelSpec;
+  hasForecasted(): boolean;
+  clearForecasted(): ModelSpec;
 
   getPredict(): boolean;
   setPredict(value: boolean): ModelSpec;
+  hasPredict(): boolean;
+  clearPredict(): ModelSpec;
 
   getTuned(): boolean;
   setTuned(value: boolean): ModelSpec;
+  hasTuned(): boolean;
+  clearTuned(): ModelSpec;
 
   getExplained(): boolean;
   setExplained(value: boolean): ModelSpec;
+  hasExplained(): boolean;
+  clearExplained(): ModelSpec;
 
   getCodegenerated(): boolean;
   setCodegenerated(value: boolean): ModelSpec;
+  hasCodegenerated(): boolean;
+  clearCodegenerated(): ModelSpec;
 
   getBaseline(): boolean;
   setBaseline(value: boolean): ModelSpec;
+  hasBaseline(): boolean;
+  clearBaseline(): ModelSpec;
 
   getGendriftdetector(): boolean;
   setGendriftdetector(value: boolean): ModelSpec;
+  hasGendriftdetector(): boolean;
+  clearGendriftdetector(): ModelSpec;
 
   getFast(): boolean;
   setFast(value: boolean): ModelSpec;
+  hasFast(): boolean;
+  clearFast(): ModelSpec;
 
   getUnittested(): boolean;
   setUnittested(value: boolean): ModelSpec;
+  hasUnittested(): boolean;
+  clearUnittested(): ModelSpec;
 
   getFeedbackdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setFeedbackdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelSpec;
@@ -2477,6 +2943,8 @@ export class ModelSpec extends jspb.Message {
 
   getFlagged(): boolean;
   setFlagged(value: boolean): ModelSpec;
+  hasFlagged(): boolean;
+  clearFlagged(): ModelSpec;
 
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelSpec;
@@ -2495,18 +2963,28 @@ export class ModelSpec extends jspb.Message {
 
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): ModelSpec;
+  hasActivedeadlineseconds(): boolean;
+  clearActivedeadlineseconds(): ModelSpec;
 
   getEstimatortype(): string;
   setEstimatortype(value: string): ModelSpec;
+  hasEstimatortype(): boolean;
+  clearEstimatortype(): ModelSpec;
 
   getTtl(): number;
   setTtl(value: number): ModelSpec;
+  hasTtl(): boolean;
+  clearTtl(): ModelSpec;
 
   getModelclass(): string;
   setModelclass(value: string): ModelSpec;
+  hasModelclass(): boolean;
+  clearModelclass(): ModelSpec;
 
   getTrialid(): number;
   setTrialid(value: number): ModelSpec;
+  hasTrialid(): boolean;
+  clearTrialid(): ModelSpec;
 
   getGovernance(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec | undefined;
   setGovernance(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec): ModelSpec;
@@ -2535,15 +3013,23 @@ export class ModelSpec extends jspb.Message {
 
   getModelclassname(): string;
   setModelclassname(value: string): ModelSpec;
+  hasModelclassname(): boolean;
+  clearModelclassname(): ModelSpec;
 
   getModelclassrunname(): string;
   setModelclassrunname(value: string): ModelSpec;
+  hasModelclassrunname(): boolean;
+  clearModelclassrunname(): ModelSpec;
 
   getRole(): string;
   setRole(value: string): ModelSpec;
+  hasRole(): boolean;
+  clearRole(): ModelSpec;
 
   getReleased(): boolean;
   setReleased(value: boolean): ModelSpec;
+  hasReleased(): boolean;
+  clearReleased(): ModelSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
@@ -2555,13 +3041,13 @@ export class ModelSpec extends jspb.Message {
 
 export namespace ModelSpec {
   export type AsObject = {
-    owner: string,
-    versionname: string,
-    modelversion: string,
-    studyname: string,
-    datasetname: string,
-    task: string,
-    subtask: string,
+    owner?: string,
+    versionname?: string,
+    modelversion?: string,
+    studyname?: string,
+    datasetname?: string,
+    task?: string,
+    subtask?: string,
     objective?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.AsObject,
     featureengineering?: FeatureEngineeringSpec.AsObject,
     estimator?: ClassicalEstimatorSpec.AsObject,
@@ -2570,49 +3056,51 @@ export namespace ModelSpec {
     nlpestimator?: NLPEstimatorSpec.AsObject,
     ensemble?: EnsembleSpec.AsObject,
     training?: TrainingSpec.AsObject,
-    tested: boolean,
-    aborted: boolean,
-    packaged: boolean,
-    published: boolean,
-    pushed: boolean,
-    reported: boolean,
-    paused: boolean,
-    profiled: boolean,
-    archived: boolean,
-    forecasted: boolean,
-    predict: boolean,
-    tuned: boolean,
-    explained: boolean,
-    codegenerated: boolean,
-    baseline: boolean,
-    gendriftdetector: boolean,
-    fast: boolean,
-    unittested: boolean,
+    tested?: boolean,
+    aborted?: boolean,
+    packaged?: boolean,
+    published?: boolean,
+    pushed?: boolean,
+    reported?: boolean,
+    paused?: boolean,
+    profiled?: boolean,
+    archived?: boolean,
+    forecasted?: boolean,
+    predict?: boolean,
+    tuned?: boolean,
+    explained?: boolean,
+    codegenerated?: boolean,
+    baseline?: boolean,
+    gendriftdetector?: boolean,
+    fast?: boolean,
+    unittested?: boolean,
     feedbackdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    flagged: boolean,
+    flagged?: boolean,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     forecasting?: ForecasterSpec.AsObject,
     compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
-    activedeadlineseconds: number,
-    estimatortype: string,
-    ttl: number,
-    modelclass: string,
-    trialid: number,
+    activedeadlineseconds?: number,
+    estimatortype?: string,
+    ttl?: number,
+    modelclass?: string,
+    trialid?: number,
     governance?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     feedbacktests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     partitionlocations?: PartitionModelLocationsSpec.AsObject,
-    modelclassname: string,
-    modelclassrunname: string,
-    role: string,
-    released: boolean,
+    modelclassname?: string,
+    modelclassrunname?: string,
+    role?: string,
+    released?: boolean,
   }
 }
 
 export class ModelStageStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): ModelStageStatus;
+  hasPhase(): boolean;
+  clearPhase(): ModelStageStatus;
 
   getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStageStatus;
@@ -2631,6 +3119,8 @@ export class ModelStageStatus extends jspb.Message {
 
   getError(): string;
   setError(value: string): ModelStageStatus;
+  hasError(): boolean;
+  clearError(): ModelStageStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelStageStatus.AsObject;
@@ -2642,11 +3132,11 @@ export class ModelStageStatus extends jspb.Message {
 
 export namespace ModelStageStatus {
   export type AsObject = {
-    phase: string,
+    phase?: string,
     startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    error: string,
+    error?: string,
   }
 }
 
@@ -2688,18 +3178,28 @@ export class ModelStatus extends jspb.Message {
 
   getCvscore(): number;
   setCvscore(value: number): ModelStatus;
+  hasCvscore(): boolean;
+  clearCvscore(): ModelStatus;
 
   getTrainingscore(): number;
   setTrainingscore(value: number): ModelStatus;
+  hasTrainingscore(): boolean;
+  clearTrainingscore(): ModelStatus;
 
   getTestscore(): number;
   setTestscore(value: number): ModelStatus;
+  hasTestscore(): boolean;
+  clearTestscore(): ModelStatus;
 
   getCost(): number;
   setCost(value: number): ModelStatus;
+  hasCost(): boolean;
+  clearCost(): ModelStatus;
 
   getBest(): boolean;
   setBest(value: boolean): ModelStatus;
+  hasBest(): boolean;
+  clearBest(): ModelStatus;
 
   getCvList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
   setCvList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ModelStatus;
@@ -2733,54 +3233,88 @@ export class ModelStatus extends jspb.Message {
 
   getPhase(): string;
   setPhase(value: string): ModelStatus;
+  hasPhase(): boolean;
+  clearPhase(): ModelStatus;
 
   getReportname(): string;
   setReportname(value: string): ModelStatus;
+  hasReportname(): boolean;
+  clearReportname(): ModelStatus;
 
   getReporturi(): string;
   setReporturi(value: string): ModelStatus;
+  hasReporturi(): boolean;
+  clearReporturi(): ModelStatus;
 
   getManifesturi(): string;
   setManifesturi(value: string): ModelStatus;
+  hasManifesturi(): boolean;
+  clearManifesturi(): ModelStatus;
 
   getTrainweightsuri(): string;
   setTrainweightsuri(value: string): ModelStatus;
+  hasTrainweightsuri(): boolean;
+  clearTrainweightsuri(): ModelStatus;
 
   getTestweightsuri(): string;
   setTestweightsuri(value: string): ModelStatus;
+  hasTestweightsuri(): boolean;
+  clearTestweightsuri(): ModelStatus;
 
   getFullweightsuri(): string;
   setFullweightsuri(value: string): ModelStatus;
+  hasFullweightsuri(): boolean;
+  clearFullweightsuri(): ModelStatus;
 
   getDriftdetectoruri(): string;
   setDriftdetectoruri(value: string): ModelStatus;
+  hasDriftdetectoruri(): boolean;
+  clearDriftdetectoruri(): ModelStatus;
 
   getTrainlabelencoderuri(): string;
   setTrainlabelencoderuri(value: string): ModelStatus;
+  hasTrainlabelencoderuri(): boolean;
+  clearTrainlabelencoderuri(): ModelStatus;
 
   getTestlabelencoderuri(): string;
   setTestlabelencoderuri(value: string): ModelStatus;
+  hasTestlabelencoderuri(): boolean;
+  clearTestlabelencoderuri(): ModelStatus;
 
   getFulllabelencoderuri(): string;
   setFulllabelencoderuri(value: string): ModelStatus;
+  hasFulllabelencoderuri(): boolean;
+  clearFulllabelencoderuri(): ModelStatus;
 
   getLogsuri(): string;
   setLogsuri(value: string): ModelStatus;
+  hasLogsuri(): boolean;
+  clearLogsuri(): ModelStatus;
 
   getProfileuri(): string;
   setProfileuri(value: string): ModelStatus;
+  hasProfileuri(): boolean;
+  clearProfileuri(): ModelStatus;
 
   getMisclassificationuri(): string;
   setMisclassificationuri(value: string): ModelStatus;
+  hasMisclassificationuri(): boolean;
+  clearMisclassificationuri(): ModelStatus;
 
   getTaruri(): string;
   setTaruri(value: string): ModelStatus;
+  hasTaruri(): boolean;
+  clearTaruri(): ModelStatus;
 
   getAppuri(): string;
   setAppuri(value: string): ModelStatus;
+  hasAppuri(): boolean;
+  clearAppuri(): ModelStatus;
 
   getImagename(): string;
   setImagename(value: string): ModelStatus;
+  hasImagename(): boolean;
+  clearImagename(): ModelStatus;
 
   getImpurityimportanceList(): Array<FeatureImportance>;
   setImpurityimportanceList(value: Array<FeatureImportance>): ModelStatus;
@@ -2794,6 +3328,8 @@ export class ModelStatus extends jspb.Message {
 
   getForecasturi(): string;
   setForecasturi(value: string): ModelStatus;
+  hasForecasturi(): boolean;
+  clearForecasturi(): ModelStatus;
 
   getRuntime(): RuntimeStatus | undefined;
   setRuntime(value?: RuntimeStatus): ModelStatus;
@@ -2817,33 +3353,53 @@ export class ModelStatus extends jspb.Message {
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): ModelStatus;
 
   getTrainingrows(): number;
   setTrainingrows(value: number): ModelStatus;
+  hasTrainingrows(): boolean;
+  clearTrainingrows(): ModelStatus;
 
   getTestingrows(): number;
   setTestingrows(value: number): ModelStatus;
+  hasTestingrows(): boolean;
+  clearTestingrows(): ModelStatus;
 
   getValidationrows(): number;
   setValidationrows(value: number): ModelStatus;
+  hasValidationrows(): boolean;
+  clearValidationrows(): ModelStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): ModelStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): ModelStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): ModelStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): ModelStatus;
 
   getProgress(): number;
   setProgress(value: number): ModelStatus;
+  hasProgress(): boolean;
+  clearProgress(): ModelStatus;
 
   getSizeinbytes(): number;
   setSizeinbytes(value: number): ModelStatus;
+  hasSizeinbytes(): boolean;
+  clearSizeinbytes(): ModelStatus;
 
   getLatency(): number;
   setLatency(value: number): ModelStatus;
+  hasLatency(): boolean;
+  clearLatency(): ModelStatus;
 
   getUrl(): string;
   setUrl(value: string): ModelStatus;
+  hasUrl(): boolean;
+  clearUrl(): ModelStatus;
 
   getServing(): ServingStatus | undefined;
   setServing(value?: ServingStatus): ModelStatus;
@@ -2862,30 +3418,38 @@ export class ModelStatus extends jspb.Message {
 
   getTarfilehash(): string;
   setTarfilehash(value: string): ModelStatus;
+  hasTarfilehash(): boolean;
+  clearTarfilehash(): ModelStatus;
 
   getImagehash(): string;
   setImagehash(value: string): ModelStatus;
+  hasImagehash(): boolean;
+  clearImagehash(): ModelStatus;
 
   getTrainingdatahash(): DataHashes | undefined;
   setTrainingdatahash(value?: DataHashes): ModelStatus;
   hasTrainingdatahash(): boolean;
   clearTrainingdatahash(): ModelStatus;
 
-  getTrainingresources(): ResourceConsumption | undefined;
-  setTrainingresources(value?: ResourceConsumption): ModelStatus;
+  getTrainingresources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption | undefined;
+  setTrainingresources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption): ModelStatus;
   hasTrainingresources(): boolean;
   clearTrainingresources(): ModelStatus;
 
-  getTestingresources(): ResourceConsumption | undefined;
-  setTestingresources(value?: ResourceConsumption): ModelStatus;
+  getTestingresources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption | undefined;
+  setTestingresources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption): ModelStatus;
   hasTestingresources(): boolean;
   clearTestingresources(): ModelStatus;
 
   getTrainedby(): string;
   setTrainedby(value: string): ModelStatus;
+  hasTrainedby(): boolean;
+  clearTrainedby(): ModelStatus;
 
   getTeam(): string;
   setTeam(value: string): ModelStatus;
+  hasTeam(): boolean;
+  clearTeam(): ModelStatus;
 
   getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
   setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): ModelStatus;
@@ -2989,61 +3553,61 @@ export namespace ModelStatus {
     tuningstartedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     tuningcompletedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    cvscore: number,
-    trainingscore: number,
-    testscore: number,
-    cost: number,
-    best: boolean,
+    cvscore?: number,
+    trainingscore?: number,
+    testscore?: number,
+    cost?: number,
+    best?: boolean,
     cvList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     trainList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     testList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     tuneList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     feedbackList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     lastfeedbackdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    phase: string,
-    reportname: string,
-    reporturi: string,
-    manifesturi: string,
-    trainweightsuri: string,
-    testweightsuri: string,
-    fullweightsuri: string,
-    driftdetectoruri: string,
-    trainlabelencoderuri: string,
-    testlabelencoderuri: string,
-    fulllabelencoderuri: string,
-    logsuri: string,
-    profileuri: string,
-    misclassificationuri: string,
-    taruri: string,
-    appuri: string,
-    imagename: string,
+    phase?: string,
+    reportname?: string,
+    reporturi?: string,
+    manifesturi?: string,
+    trainweightsuri?: string,
+    testweightsuri?: string,
+    fullweightsuri?: string,
+    driftdetectoruri?: string,
+    trainlabelencoderuri?: string,
+    testlabelencoderuri?: string,
+    fulllabelencoderuri?: string,
+    logsuri?: string,
+    profileuri?: string,
+    misclassificationuri?: string,
+    taruri?: string,
+    appuri?: string,
+    imagename?: string,
     impurityimportanceList: Array<FeatureImportance.AsObject>,
     permutationimportanceList: Array<FeatureImportance.AsObject>,
-    forecasturi: string,
+    forecasturi?: string,
     runtime?: RuntimeStatus.AsObject,
     traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     testdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     validationdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    observedgeneration: number,
-    trainingrows: number,
-    testingrows: number,
-    validationrows: number,
-    failurereason: string,
-    failuremessage: string,
-    progress: number,
-    sizeinbytes: number,
-    latency: number,
-    url: string,
+    observedgeneration?: number,
+    trainingrows?: number,
+    testingrows?: number,
+    validationrows?: number,
+    failurereason?: string,
+    failuremessage?: string,
+    progress?: number,
+    sizeinbytes?: number,
+    latency?: number,
+    url?: string,
     serving?: ServingStatus.AsObject,
     releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     predictedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    tarfilehash: string,
-    imagehash: string,
+    tarfilehash?: string,
+    imagehash?: string,
     trainingdatahash?: DataHashes.AsObject,
-    trainingresources?: ResourceConsumption.AsObject,
-    testingresources?: ResourceConsumption.AsObject,
-    trainedby: string,
-    team: string,
+    trainingresources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.AsObject,
+    testingresources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.AsObject,
+    trainedby?: string,
+    team?: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     roccurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.AsObject,
     prcurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PRCurve.AsObject,
@@ -3099,6 +3663,8 @@ export namespace ModelTestSuite {
 export class NLPEstimatorSpec extends jspb.Message {
   getBase(): string;
   setBase(value: string): NLPEstimatorSpec;
+  hasBase(): boolean;
+  clearBase(): NLPEstimatorSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NLPEstimatorSpec.AsObject;
@@ -3110,16 +3676,20 @@ export class NLPEstimatorSpec extends jspb.Message {
 
 export namespace NLPEstimatorSpec {
   export type AsObject = {
-    base: string,
+    base?: string,
   }
 }
 
 export class NNLayerParameter extends jspb.Message {
   getName(): string;
   setName(value: string): NNLayerParameter;
+  hasName(): boolean;
+  clearName(): NNLayerParameter;
 
   getValue(): string;
   setValue(value: string): NNLayerParameter;
+  hasValue(): boolean;
+  clearValue(): NNLayerParameter;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NNLayerParameter.AsObject;
@@ -3131,29 +3701,41 @@ export class NNLayerParameter extends jspb.Message {
 
 export namespace NNLayerParameter {
   export type AsObject = {
-    name: string,
-    value: string,
+    name?: string,
+    value?: string,
   }
 }
 
 export class PartitionModelLocationsSpec extends jspb.Message {
   getPartitionfolder(): string;
   setPartitionfolder(value: string): PartitionModelLocationsSpec;
+  hasPartitionfolder(): boolean;
+  clearPartitionfolder(): PartitionModelLocationsSpec;
 
   getPartitionprofilefolder(): string;
   setPartitionprofilefolder(value: string): PartitionModelLocationsSpec;
+  hasPartitionprofilefolder(): boolean;
+  clearPartitionprofilefolder(): PartitionModelLocationsSpec;
 
   getPartitionreportfile(): string;
   setPartitionreportfile(value: string): PartitionModelLocationsSpec;
+  hasPartitionreportfile(): boolean;
+  clearPartitionreportfile(): PartitionModelLocationsSpec;
 
   getPartitionmodelfolder(): string;
   setPartitionmodelfolder(value: string): PartitionModelLocationsSpec;
+  hasPartitionmodelfolder(): boolean;
+  clearPartitionmodelfolder(): PartitionModelLocationsSpec;
 
   getPartitionmodelfile(): string;
   setPartitionmodelfile(value: string): PartitionModelLocationsSpec;
+  hasPartitionmodelfile(): boolean;
+  clearPartitionmodelfile(): PartitionModelLocationsSpec;
 
   getPartitionforecastfile(): string;
   setPartitionforecastfile(value: string): PartitionModelLocationsSpec;
+  hasPartitionforecastfile(): boolean;
+  clearPartitionforecastfile(): PartitionModelLocationsSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PartitionModelLocationsSpec.AsObject;
@@ -3165,30 +3747,40 @@ export class PartitionModelLocationsSpec extends jspb.Message {
 
 export namespace PartitionModelLocationsSpec {
   export type AsObject = {
-    partitionfolder: string,
-    partitionprofilefolder: string,
-    partitionreportfile: string,
-    partitionmodelfolder: string,
-    partitionmodelfile: string,
-    partitionforecastfile: string,
+    partitionfolder?: string,
+    partitionprofilefolder?: string,
+    partitionreportfile?: string,
+    partitionmodelfolder?: string,
+    partitionmodelfile?: string,
+    partitionforecastfile?: string,
   }
 }
 
 export class PercentilePrunerOptions extends jspb.Message {
   getPercentile(): number;
   setPercentile(value: number): PercentilePrunerOptions;
+  hasPercentile(): boolean;
+  clearPercentile(): PercentilePrunerOptions;
 
   getStartuptrials(): number;
   setStartuptrials(value: number): PercentilePrunerOptions;
+  hasStartuptrials(): boolean;
+  clearStartuptrials(): PercentilePrunerOptions;
 
   getWarmupsteps(): number;
   setWarmupsteps(value: number): PercentilePrunerOptions;
+  hasWarmupsteps(): boolean;
+  clearWarmupsteps(): PercentilePrunerOptions;
 
   getIntervaltrials(): number;
   setIntervaltrials(value: number): PercentilePrunerOptions;
+  hasIntervaltrials(): boolean;
+  clearIntervaltrials(): PercentilePrunerOptions;
 
   getMintrials(): number;
   setMintrials(value: number): PercentilePrunerOptions;
+  hasMintrials(): boolean;
+  clearMintrials(): PercentilePrunerOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PercentilePrunerOptions.AsObject;
@@ -3200,17 +3792,19 @@ export class PercentilePrunerOptions extends jspb.Message {
 
 export namespace PercentilePrunerOptions {
   export type AsObject = {
-    percentile: number,
-    startuptrials: number,
-    warmupsteps: number,
-    intervaltrials: number,
-    mintrials: number,
+    percentile?: number,
+    startuptrials?: number,
+    warmupsteps?: number,
+    intervaltrials?: number,
+    mintrials?: number,
   }
 }
 
 export class PrunerSpec extends jspb.Message {
   getType(): string;
   setType(value: string): PrunerSpec;
+  hasType(): boolean;
+  clearType(): PrunerSpec;
 
   getMedian(): MedianPrunerOptions | undefined;
   setMedian(value?: MedianPrunerOptions): PrunerSpec;
@@ -3247,7 +3841,7 @@ export class PrunerSpec extends jspb.Message {
 
 export namespace PrunerSpec {
   export type AsObject = {
-    type: string,
+    type?: string,
     median?: MedianPrunerOptions.AsObject,
     percentile?: PercentilePrunerOptions.AsObject,
     successivehalving?: SuccessiveHalvingOptions.AsObject,
@@ -3259,18 +3853,28 @@ export namespace PrunerSpec {
 export class RegressionForecasterSpec extends jspb.Message {
   getEnsemble(): boolean;
   setEnsemble(value: boolean): RegressionForecasterSpec;
+  hasEnsemble(): boolean;
+  clearEnsemble(): RegressionForecasterSpec;
 
   getImputation(): string;
   setImputation(value: string): RegressionForecasterSpec;
+  hasImputation(): boolean;
+  clearImputation(): RegressionForecasterSpec;
 
   getEncoding(): string;
   setEncoding(value: string): RegressionForecasterSpec;
+  hasEncoding(): boolean;
+  clearEncoding(): RegressionForecasterSpec;
 
   getScaling(): string;
   setScaling(value: string): RegressionForecasterSpec;
+  hasScaling(): boolean;
+  clearScaling(): RegressionForecasterSpec;
 
   getDate(): boolean;
   setDate(value: boolean): RegressionForecasterSpec;
+  hasDate(): boolean;
+  clearDate(): RegressionForecasterSpec;
 
   getWindowsList(): Array<number>;
   setWindowsList(value: Array<number>): RegressionForecasterSpec;
@@ -3289,12 +3893,18 @@ export class RegressionForecasterSpec extends jspb.Message {
 
   getEma(): boolean;
   setEma(value: boolean): RegressionForecasterSpec;
+  hasEma(): boolean;
+  clearEma(): RegressionForecasterSpec;
 
   getLog(): boolean;
   setLog(value: boolean): RegressionForecasterSpec;
+  hasLog(): boolean;
+  clearLog(): RegressionForecasterSpec;
 
   getReduction(): string;
   setReduction(value: string): RegressionForecasterSpec;
+  hasReduction(): boolean;
+  clearReduction(): RegressionForecasterSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RegressionForecasterSpec.AsObject;
@@ -3306,17 +3916,17 @@ export class RegressionForecasterSpec extends jspb.Message {
 
 export namespace RegressionForecasterSpec {
   export type AsObject = {
-    ensemble: boolean,
-    imputation: string,
-    encoding: string,
-    scaling: string,
-    date: boolean,
+    ensemble?: boolean,
+    imputation?: string,
+    encoding?: string,
+    scaling?: string,
+    date?: boolean,
     windowsList: Array<number>,
     lagsList: Array<number>,
     functionsList: Array<string>,
-    ema: boolean,
-    log: boolean,
-    reduction: string,
+    ema?: boolean,
+    log?: boolean,
+    reduction?: string,
   }
 }
 
@@ -3355,6 +3965,8 @@ export namespace Report {
 export class ReportGroupByStatus extends jspb.Message {
   getReportsuri(): string;
   setReportsuri(value: string): ReportGroupByStatus;
+  hasReportsuri(): boolean;
+  clearReportsuri(): ReportGroupByStatus;
 
   getWorkerresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>;
   setWorkerresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>): ReportGroupByStatus;
@@ -3371,7 +3983,7 @@ export class ReportGroupByStatus extends jspb.Message {
 
 export namespace ReportGroupByStatus {
   export type AsObject = {
-    reportsuri: string,
+    reportsuri?: string,
     workerresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.AsObject>,
   }
 }
@@ -3405,6 +4017,8 @@ export namespace ReportList {
 export class ReportSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): ReportSpec;
+  hasVersionname(): boolean;
+  clearVersionname(): ReportSpec;
 
   getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ReportSpec;
@@ -3418,15 +4032,23 @@ export class ReportSpec extends jspb.Message {
 
   getReporttype(): string;
   setReporttype(value: string): ReportSpec;
+  hasReporttype(): boolean;
+  clearReporttype(): ReportSpec;
 
   getFormat(): string;
   setFormat(value: string): ReportSpec;
+  hasFormat(): boolean;
+  clearFormat(): ReportSpec;
 
   getNotifiername(): string;
   setNotifiername(value: string): ReportSpec;
+  hasNotifiername(): boolean;
+  clearNotifiername(): ReportSpec;
 
   getOwner(): string;
   setOwner(value: string): ReportSpec;
+  hasOwner(): boolean;
+  clearOwner(): ReportSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ReportSpec;
@@ -3435,6 +4057,8 @@ export class ReportSpec extends jspb.Message {
 
   getTimeout(): number;
   setTimeout(value: number): ReportSpec;
+  hasTimeout(): boolean;
+  clearTimeout(): ReportSpec;
 
   getCustom(): CustomReportSpec | undefined;
   setCustom(value?: CustomReportSpec): ReportSpec;
@@ -3453,9 +4077,13 @@ export class ReportSpec extends jspb.Message {
 
   getModelclassname(): string;
   setModelclassname(value: string): ReportSpec;
+  hasModelclassname(): boolean;
+  clearModelclassname(): ReportSpec;
 
   getModelclassrunname(): string;
   setModelclassrunname(value: string): ReportSpec;
+  hasModelclassrunname(): boolean;
+  clearModelclassrunname(): ReportSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportSpec.AsObject;
@@ -3467,20 +4095,20 @@ export class ReportSpec extends jspb.Message {
 
 export namespace ReportSpec {
   export type AsObject = {
-    versionname: string,
+    versionname?: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    reporttype: string,
-    format: string,
-    notifiername: string,
-    owner: string,
+    reporttype?: string,
+    format?: string,
+    notifiername?: string,
+    owner?: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    timeout: number,
+    timeout?: number,
     custom?: CustomReportSpec.AsObject,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     keyList: Array<string>,
-    modelclassname: string,
-    modelclassrunname: string,
+    modelclassname?: string,
+    modelclassrunname?: string,
   }
 }
 
@@ -3492,18 +4120,28 @@ export class ReportStatus extends jspb.Message {
 
   getPhase(): string;
   setPhase(value: string): ReportStatus;
+  hasPhase(): boolean;
+  clearPhase(): ReportStatus;
 
   getUri(): string;
   setUri(value: string): ReportStatus;
+  hasUri(): boolean;
+  clearUri(): ReportStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ReportStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): ReportStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): ReportStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): ReportStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): ReportStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): ReportStatus;
 
   getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
   setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): ReportStatus;
@@ -3536,11 +4174,11 @@ export class ReportStatus extends jspb.Message {
 export namespace ReportStatus {
   export type AsObject = {
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    phase: string,
-    uri: string,
-    observedgeneration: number,
-    failurereason: string,
-    failuremessage: string,
+    phase?: string,
+    uri?: string,
+    observedgeneration?: number,
+    failurereason?: string,
+    failuremessage?: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     groupby?: ReportGroupByStatus.AsObject,
@@ -3548,41 +4186,21 @@ export namespace ReportStatus {
   }
 }
 
-export class ResourceConsumption extends jspb.Message {
-  getCpu(): number;
-  setCpu(value: number): ResourceConsumption;
-
-  getMem(): number;
-  setMem(value: number): ResourceConsumption;
-
-  getGpu(): number;
-  setGpu(value: number): ResourceConsumption;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ResourceConsumption.AsObject;
-  static toObject(includeInstance: boolean, msg: ResourceConsumption): ResourceConsumption.AsObject;
-  static serializeBinaryToWriter(message: ResourceConsumption, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ResourceConsumption;
-  static deserializeBinaryFromReader(message: ResourceConsumption, reader: jspb.BinaryReader): ResourceConsumption;
-}
-
-export namespace ResourceConsumption {
-  export type AsObject = {
-    cpu: number,
-    mem: number,
-    gpu: number,
-  }
-}
-
 export class RuntimeStatus extends jspb.Message {
   getPythonversion(): string;
   setPythonversion(value: string): RuntimeStatus;
+  hasPythonversion(): boolean;
+  clearPythonversion(): RuntimeStatus;
 
   getPythoncmd(): string;
   setPythoncmd(value: string): RuntimeStatus;
+  hasPythoncmd(): boolean;
+  clearPythoncmd(): RuntimeStatus;
 
   getOs(): string;
   setOs(value: string): RuntimeStatus;
+  hasOs(): boolean;
+  clearOs(): RuntimeStatus;
 
   getPythonpackagesMap(): jspb.Map<string, string>;
   clearPythonpackagesMap(): RuntimeStatus;
@@ -3597,9 +4215,9 @@ export class RuntimeStatus extends jspb.Message {
 
 export namespace RuntimeStatus {
   export type AsObject = {
-    pythonversion: string,
-    pythoncmd: string,
-    os: string,
+    pythonversion?: string,
+    pythoncmd?: string,
+    os?: string,
     pythonpackagesMap: Array<[string, string]>,
   }
 }
@@ -3607,6 +4225,8 @@ export namespace RuntimeStatus {
 export class SearchSpec extends jspb.Message {
   getSampler(): string;
   setSampler(value: string): SearchSpec;
+  hasSampler(): boolean;
+  clearSampler(): SearchSpec;
 
   getPruner(): PrunerSpec | undefined;
   setPruner(value?: PrunerSpec): SearchSpec;
@@ -3615,27 +4235,43 @@ export class SearchSpec extends jspb.Message {
 
   getMaxcost(): number;
   setMaxcost(value: number): SearchSpec;
+  hasMaxcost(): boolean;
+  clearMaxcost(): SearchSpec;
 
   getMaxtime(): number;
   setMaxtime(value: number): SearchSpec;
+  hasMaxtime(): boolean;
+  clearMaxtime(): SearchSpec;
 
   getMaxmodels(): number;
   setMaxmodels(value: number): SearchSpec;
+  hasMaxmodels(): boolean;
+  clearMaxmodels(): SearchSpec;
 
   getMinbestscore(): number;
   setMinbestscore(value: number): SearchSpec;
+  hasMinbestscore(): boolean;
+  clearMinbestscore(): SearchSpec;
 
   getTrainers(): number;
   setTrainers(value: number): SearchSpec;
+  hasTrainers(): boolean;
+  clearTrainers(): SearchSpec;
 
   getTest(): number;
   setTest(value: number): SearchSpec;
+  hasTest(): boolean;
+  clearTest(): SearchSpec;
 
   getRetaintop(): number;
   setRetaintop(value: number): SearchSpec;
+  hasRetaintop(): boolean;
+  clearRetaintop(): SearchSpec;
 
   getRetainedfor(): number;
   setRetainedfor(value: number): SearchSpec;
+  hasRetainedfor(): boolean;
+  clearRetainedfor(): SearchSpec;
 
   getSearchspace(): AlgorithmSearchSpaceSpec | undefined;
   setSearchspace(value?: AlgorithmSearchSpaceSpec): SearchSpec;
@@ -3659,9 +4295,13 @@ export class SearchSpec extends jspb.Message {
 
   getTune(): boolean;
   setTune(value: boolean): SearchSpec;
+  hasTune(): boolean;
+  clearTune(): SearchSpec;
 
   getGoal(): string;
   setGoal(value: string): SearchSpec;
+  hasGoal(): boolean;
+  clearGoal(): SearchSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchSpec.AsObject;
@@ -3673,34 +4313,40 @@ export class SearchSpec extends jspb.Message {
 
 export namespace SearchSpec {
   export type AsObject = {
-    sampler: string,
+    sampler?: string,
     pruner?: PrunerSpec.AsObject,
-    maxcost: number,
-    maxtime: number,
-    maxmodels: number,
-    minbestscore: number,
-    trainers: number,
-    test: number,
-    retaintop: number,
-    retainedfor: number,
+    maxcost?: number,
+    maxtime?: number,
+    maxmodels?: number,
+    minbestscore?: number,
+    trainers?: number,
+    test?: number,
+    retaintop?: number,
+    retainedfor?: number,
     searchspace?: AlgorithmSearchSpaceSpec.AsObject,
     earlystop?: EarlyStopSpec.AsObject,
     objective?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.AsObject,
     objective2?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.AsObject,
-    tune: boolean,
-    goal: string,
+    tune?: boolean,
+    goal?: string,
   }
 }
 
 export class SeasonalityPeriodSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): SeasonalityPeriodSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): SeasonalityPeriodSpec;
 
   getAuto(): boolean;
   setAuto(value: boolean): SeasonalityPeriodSpec;
+  hasAuto(): boolean;
+  clearAuto(): SeasonalityPeriodSpec;
 
   getFourierorder(): number;
   setFourierorder(value: number): SeasonalityPeriodSpec;
+  hasFourierorder(): boolean;
+  clearFourierorder(): SeasonalityPeriodSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SeasonalityPeriodSpec.AsObject;
@@ -3712,15 +4358,17 @@ export class SeasonalityPeriodSpec extends jspb.Message {
 
 export namespace SeasonalityPeriodSpec {
   export type AsObject = {
-    enabled: boolean,
-    auto: boolean,
-    fourierorder: number,
+    enabled?: boolean,
+    auto?: boolean,
+    fourierorder?: number,
   }
 }
 
 export class SeasonalitySpec extends jspb.Message {
   getAuto(): boolean;
   setAuto(value: boolean): SeasonalitySpec;
+  hasAuto(): boolean;
+  clearAuto(): SeasonalitySpec;
 
   getYearly(): SeasonalityPeriodSpec | undefined;
   setYearly(value?: SeasonalityPeriodSpec): SeasonalitySpec;
@@ -3757,7 +4405,7 @@ export class SeasonalitySpec extends jspb.Message {
 
 export namespace SeasonalitySpec {
   export type AsObject = {
-    auto: boolean,
+    auto?: boolean,
     yearly?: SeasonalityPeriodSpec.AsObject,
     quarterly?: SeasonalityPeriodSpec.AsObject,
     monthly?: SeasonalityPeriodSpec.AsObject,
@@ -3769,12 +4417,18 @@ export namespace SeasonalitySpec {
 export class SegmentSpec extends jspb.Message {
   getColumnname(): string;
   setColumnname(value: string): SegmentSpec;
+  hasColumnname(): boolean;
+  clearColumnname(): SegmentSpec;
 
   getOp(): string;
   setOp(value: string): SegmentSpec;
+  hasOp(): boolean;
+  clearOp(): SegmentSpec;
 
   getValue(): string;
   setValue(value: string): SegmentSpec;
+  hasValue(): boolean;
+  clearValue(): SegmentSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SegmentSpec.AsObject;
@@ -3786,15 +4440,17 @@ export class SegmentSpec extends jspb.Message {
 
 export namespace SegmentSpec {
   export type AsObject = {
-    columnname: string,
-    op: string,
-    value: string,
+    columnname?: string,
+    op?: string,
+    value?: string,
   }
 }
 
 export class ServingEnvironment extends jspb.Message {
   getName(): string;
   setName(value: string): ServingEnvironment;
+  hasName(): boolean;
+  clearName(): ServingEnvironment;
 
   getTests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setTests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ServingEnvironment;
@@ -3813,12 +4469,18 @@ export class ServingEnvironment extends jspb.Message {
 
   getReplicas(): number;
   setReplicas(value: number): ServingEnvironment;
+  hasReplicas(): boolean;
+  clearReplicas(): ServingEnvironment;
 
   getOnline(): boolean;
   setOnline(value: boolean): ServingEnvironment;
+  hasOnline(): boolean;
+  clearOnline(): ServingEnvironment;
 
   getDashboard(): boolean;
   setDashboard(value: boolean): ServingEnvironment;
+  hasDashboard(): boolean;
+  clearDashboard(): ServingEnvironment;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ServingEnvironment;
@@ -3845,13 +4507,13 @@ export class ServingEnvironment extends jspb.Message {
 
 export namespace ServingEnvironment {
   export type AsObject = {
-    name: string,
+    name?: string,
     tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
-    replicas: number,
-    online: boolean,
-    dashboard: boolean,
+    replicas?: number,
+    online?: boolean,
+    dashboard?: boolean,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     presqlList: Array<string>,
     postsqlList: Array<string>,
@@ -3861,9 +4523,13 @@ export namespace ServingEnvironment {
 export class ServingSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): ServingSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): ServingSpec;
 
   getPredictorname(): string;
   setPredictorname(value: string): ServingSpec;
+  hasPredictorname(): boolean;
+  clearPredictorname(): ServingSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ServingSpec;
@@ -3877,9 +4543,13 @@ export class ServingSpec extends jspb.Message {
 
   getOnline(): boolean;
   setOnline(value: boolean): ServingSpec;
+  hasOnline(): boolean;
+  clearOnline(): ServingSpec;
 
   getDashboard(): boolean;
   setDashboard(value: boolean): ServingSpec;
+  hasDashboard(): boolean;
+  clearDashboard(): ServingSpec;
 
   getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
   setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): ServingSpec;
@@ -3888,9 +4558,13 @@ export class ServingSpec extends jspb.Message {
 
   getReplicas(): number;
   setReplicas(value: number): ServingSpec;
+  hasReplicas(): boolean;
+  clearReplicas(): ServingSpec;
 
   getPromotion(): string;
   setPromotion(value: string): ServingSpec;
+  hasPromotion(): boolean;
+  clearPromotion(): ServingSpec;
 
   getApprovedby(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setApprovedby(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ServingSpec;
@@ -3912,15 +4586,15 @@ export class ServingSpec extends jspb.Message {
 
 export namespace ServingSpec {
   export type AsObject = {
-    enabled: boolean,
-    predictorname: string,
+    enabled?: boolean,
+    predictorname?: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    online: boolean,
-    dashboard: boolean,
+    online?: boolean,
+    dashboard?: boolean,
     access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
-    replicas: number,
-    promotion: string,
+    replicas?: number,
+    promotion?: string,
     approvedby?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
@@ -3929,15 +4603,23 @@ export namespace ServingSpec {
 export class ServingStatus extends jspb.Message {
   getPredictorname(): string;
   setPredictorname(value: string): ServingStatus;
+  hasPredictorname(): boolean;
+  clearPredictorname(): ServingStatus;
 
   getDataappname(): string;
   setDataappname(value: string): ServingStatus;
+  hasDataappname(): boolean;
+  clearDataappname(): ServingStatus;
 
   getPredictoruri(): string;
   setPredictoruri(value: string): ServingStatus;
+  hasPredictoruri(): boolean;
+  clearPredictoruri(): ServingStatus;
 
   getDashboarduri(): string;
   setDashboarduri(value: string): ServingStatus;
+  hasDashboarduri(): boolean;
+  clearDashboarduri(): ServingStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingStatus.AsObject;
@@ -3949,10 +4631,10 @@ export class ServingStatus extends jspb.Message {
 
 export namespace ServingStatus {
   export type AsObject = {
-    predictorname: string,
-    dataappname: string,
-    predictoruri: string,
-    dashboarduri: string,
+    predictorname?: string,
+    dataappname?: string,
+    predictoruri?: string,
+    dashboarduri?: string,
   }
 }
 
@@ -3991,6 +4673,8 @@ export namespace Study {
 export class StudyGroupByStatus extends jspb.Message {
   getStudiesuri(): string;
   setStudiesuri(value: string): StudyGroupByStatus;
+  hasStudiesuri(): boolean;
+  clearStudiesuri(): StudyGroupByStatus;
 
   getWorkerresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>;
   setWorkerresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>): StudyGroupByStatus;
@@ -4007,7 +4691,7 @@ export class StudyGroupByStatus extends jspb.Message {
 
 export namespace StudyGroupByStatus {
   export type AsObject = {
-    studiesuri: string,
+    studiesuri?: string,
     workerresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.AsObject>,
   }
 }
@@ -4051,21 +4735,33 @@ export class StudyPhaseStatus extends jspb.Message {
 
   getWaitingmodelscount(): number;
   setWaitingmodelscount(value: number): StudyPhaseStatus;
+  hasWaitingmodelscount(): boolean;
+  clearWaitingmodelscount(): StudyPhaseStatus;
 
   getRunningmodelscount(): number;
   setRunningmodelscount(value: number): StudyPhaseStatus;
+  hasRunningmodelscount(): boolean;
+  clearRunningmodelscount(): StudyPhaseStatus;
 
   getFailedmodelscount(): number;
   setFailedmodelscount(value: number): StudyPhaseStatus;
+  hasFailedmodelscount(): boolean;
+  clearFailedmodelscount(): StudyPhaseStatus;
 
   getCompletedmodelscount(): number;
   setCompletedmodelscount(value: number): StudyPhaseStatus;
+  hasCompletedmodelscount(): boolean;
+  clearCompletedmodelscount(): StudyPhaseStatus;
 
   getBestscore(): number;
   setBestscore(value: number): StudyPhaseStatus;
+  hasBestscore(): boolean;
+  clearBestscore(): StudyPhaseStatus;
 
   getModelswithnoprogress(): number;
   setModelswithnoprogress(value: number): StudyPhaseStatus;
+  hasModelswithnoprogress(): boolean;
+  clearModelswithnoprogress(): StudyPhaseStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudyPhaseStatus.AsObject;
@@ -4079,18 +4775,20 @@ export namespace StudyPhaseStatus {
   export type AsObject = {
     startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    waitingmodelscount: number,
-    runningmodelscount: number,
-    failedmodelscount: number,
-    completedmodelscount: number,
-    bestscore: number,
-    modelswithnoprogress: number,
+    waitingmodelscount?: number,
+    runningmodelscount?: number,
+    failedmodelscount?: number,
+    completedmodelscount?: number,
+    bestscore?: number,
+    modelswithnoprogress?: number,
   }
 }
 
 export class StudyScheduleSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): StudyScheduleSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): StudyScheduleSpec;
 
   getStartat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStartat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyScheduleSpec;
@@ -4107,7 +4805,7 @@ export class StudyScheduleSpec extends jspb.Message {
 
 export namespace StudyScheduleSpec {
   export type AsObject = {
-    enabled: boolean,
+    enabled?: boolean,
     startat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
@@ -4115,9 +4813,13 @@ export namespace StudyScheduleSpec {
 export class StudySpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): StudySpec;
+  hasVersionname(): boolean;
+  clearVersionname(): StudySpec;
 
   getDescription(): string;
   setDescription(value: string): StudySpec;
+  hasDescription(): boolean;
+  clearDescription(): StudySpec;
 
   getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): StudySpec;
@@ -4126,12 +4828,18 @@ export class StudySpec extends jspb.Message {
 
   getDatasetname(): string;
   setDatasetname(value: string): StudySpec;
+  hasDatasetname(): boolean;
+  clearDatasetname(): StudySpec;
 
   getTask(): string;
   setTask(value: string): StudySpec;
+  hasTask(): boolean;
+  clearTask(): StudySpec;
 
   getSubtask(): string;
   setSubtask(value: string): StudySpec;
+  hasSubtask(): boolean;
+  clearSubtask(): StudySpec;
 
   getFesearch(): FeatureEngineeringSearchSpec | undefined;
   setFesearch(value?: FeatureEngineeringSearchSpec): StudySpec;
@@ -4185,27 +4893,43 @@ export class StudySpec extends jspb.Message {
 
   getAborted(): boolean;
   setAborted(value: boolean): StudySpec;
+  hasAborted(): boolean;
+  clearAborted(): StudySpec;
 
   getReported(): boolean;
   setReported(value: boolean): StudySpec;
+  hasReported(): boolean;
+  clearReported(): StudySpec;
 
   getPaused(): boolean;
   setPaused(value: boolean): StudySpec;
+  hasPaused(): boolean;
+  clearPaused(): StudySpec;
 
   getProfiled(): boolean;
   setProfiled(value: boolean): StudySpec;
+  hasProfiled(): boolean;
+  clearProfiled(): StudySpec;
 
   getModelpublished(): boolean;
   setModelpublished(value: boolean): StudySpec;
+  hasModelpublished(): boolean;
+  clearModelpublished(): StudySpec;
 
   getModelimagepushed(): boolean;
   setModelimagepushed(value: boolean): StudySpec;
+  hasModelimagepushed(): boolean;
+  clearModelimagepushed(): StudySpec;
 
   getModelexplained(): boolean;
   setModelexplained(value: boolean): StudySpec;
+  hasModelexplained(): boolean;
+  clearModelexplained(): StudySpec;
 
   getFast(): boolean;
   setFast(value: boolean): StudySpec;
+  hasFast(): boolean;
+  clearFast(): StudySpec;
 
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): StudySpec;
@@ -4214,6 +4938,8 @@ export class StudySpec extends jspb.Message {
 
   getOwner(): string;
   setOwner(value: string): StudySpec;
+  hasOwner(): boolean;
+  clearOwner(): StudySpec;
 
   getCompilation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
   setCompilation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): StudySpec;
@@ -4222,9 +4948,13 @@ export class StudySpec extends jspb.Message {
 
   getTemplate(): boolean;
   setTemplate(value: boolean): StudySpec;
+  hasTemplate(): boolean;
+  clearTemplate(): StudySpec;
 
   getFlagged(): boolean;
   setFlagged(value: boolean): StudySpec;
+  hasFlagged(): boolean;
+  clearFlagged(): StudySpec;
 
   getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
   setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): StudySpec;
@@ -4243,15 +4973,23 @@ export class StudySpec extends jspb.Message {
 
   getTtl(): number;
   setTtl(value: number): StudySpec;
+  hasTtl(): boolean;
+  clearTtl(): StudySpec;
 
   getModelversion(): string;
   setModelversion(value: string): StudySpec;
+  hasModelversion(): boolean;
+  clearModelversion(): StudySpec;
 
   getTimeout(): number;
   setTimeout(value: number): StudySpec;
+  hasTimeout(): boolean;
+  clearTimeout(): StudySpec;
 
   getCodegenerated(): boolean;
   setCodegenerated(value: boolean): StudySpec;
+  hasCodegenerated(): boolean;
+  clearCodegenerated(): StudySpec;
 
   getUnitteststemplate(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setUnitteststemplate(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): StudySpec;
@@ -4265,9 +5003,13 @@ export class StudySpec extends jspb.Message {
 
   getModelclassname(): string;
   setModelclassname(value: string): StudySpec;
+  hasModelclassname(): boolean;
+  clearModelclassname(): StudySpec;
 
   getModelclassrunname(): string;
   setModelclassrunname(value: string): StudySpec;
+  hasModelclassrunname(): boolean;
+  clearModelclassrunname(): StudySpec;
 
   getServing(): ServingSpec | undefined;
   setServing(value?: ServingSpec): StudySpec;
@@ -4284,12 +5026,12 @@ export class StudySpec extends jspb.Message {
 
 export namespace StudySpec {
   export type AsObject = {
-    versionname: string,
-    description: string,
+    versionname?: string,
+    description?: string,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    datasetname: string,
-    task: string,
-    subtask: string,
+    datasetname?: string,
+    task?: string,
+    subtask?: string,
     fesearch?: FeatureEngineeringSearchSpec.AsObject,
     imbalancehandler?: ImbalanceHandlingSpec.AsObject,
     baseline?: BaselineSpec.AsObject,
@@ -4300,30 +5042,30 @@ export namespace StudySpec {
     schedule?: StudyScheduleSpec.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,
     driftdetection?: DriftModelSpec.AsObject,
-    aborted: boolean,
-    reported: boolean,
-    paused: boolean,
-    profiled: boolean,
-    modelpublished: boolean,
-    modelimagepushed: boolean,
-    modelexplained: boolean,
-    fast: boolean,
+    aborted?: boolean,
+    reported?: boolean,
+    paused?: boolean,
+    profiled?: boolean,
+    modelpublished?: boolean,
+    modelimagepushed?: boolean,
+    modelexplained?: boolean,
+    fast?: boolean,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    owner: string,
+    owner?: string,
     compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
-    template: boolean,
-    flagged: boolean,
+    template?: boolean,
+    flagged?: boolean,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     modelimage?: ModelImageSpec.AsObject,
     gc?: GarbageCollectionSpec.AsObject,
-    ttl: number,
-    modelversion: string,
-    timeout: number,
-    codegenerated: boolean,
+    ttl?: number,
+    modelversion?: string,
+    timeout?: number,
+    codegenerated?: boolean,
     unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     grouplocations?: GroupSplitLocationsSpec.AsObject,
-    modelclassname: string,
-    modelclassrunname: string,
+    modelclassname?: string,
+    modelclassrunname?: string,
     serving?: ServingSpec.AsObject,
   }
 }
@@ -4331,6 +5073,8 @@ export namespace StudySpec {
 export class StudyStatus extends jspb.Message {
   getModelscount(): number;
   setModelscount(value: number): StudyStatus;
+  hasModelscount(): boolean;
+  clearModelscount(): StudyStatus;
 
   getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
@@ -4339,24 +5083,38 @@ export class StudyStatus extends jspb.Message {
 
   getBestmodel(): string;
   setBestmodel(value: string): StudyStatus;
+  hasBestmodel(): boolean;
+  clearBestmodel(): StudyStatus;
 
   getBestmodelscore(): number;
   setBestmodelscore(value: number): StudyStatus;
+  hasBestmodelscore(): boolean;
+  clearBestmodelscore(): StudyStatus;
 
   getProfileuri(): string;
   setProfileuri(value: string): StudyStatus;
+  hasProfileuri(): boolean;
+  clearProfileuri(): StudyStatus;
 
   getReporturi(): string;
   setReporturi(value: string): StudyStatus;
+  hasReporturi(): boolean;
+  clearReporturi(): StudyStatus;
 
   getReportname(): string;
   setReportname(value: string): StudyStatus;
+  hasReportname(): boolean;
+  clearReportname(): StudyStatus;
 
   getPhase(): string;
   setPhase(value: string): StudyStatus;
+  hasPhase(): boolean;
+  clearPhase(): StudyStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): StudyStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): StudyStatus;
 
   getTraindataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setTraindataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): StudyStatus;
@@ -4375,24 +5133,38 @@ export class StudyStatus extends jspb.Message {
 
   getLastmodelid(): number;
   setLastmodelid(value: number): StudyStatus;
+  hasLastmodelid(): boolean;
+  clearLastmodelid(): StudyStatus;
 
   getFailurereason(): string;
   setFailurereason(value: string): StudyStatus;
+  hasFailurereason(): boolean;
+  clearFailurereason(): StudyStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): StudyStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): StudyStatus;
 
   getTrainingrowscount(): number;
   setTrainingrowscount(value: number): StudyStatus;
+  hasTrainingrowscount(): boolean;
+  clearTrainingrowscount(): StudyStatus;
 
   getTestingrowscount(): number;
   setTestingrowscount(value: number): StudyStatus;
+  hasTestingrowscount(): boolean;
+  clearTestingrowscount(): StudyStatus;
 
   getValidationrowscount(): number;
   setValidationrowscount(value: number): StudyStatus;
+  hasValidationrowscount(): boolean;
+  clearValidationrowscount(): StudyStatus;
 
   getProgress(): number;
   setProgress(value: number): StudyStatus;
+  hasProgress(): boolean;
+  clearProgress(): StudyStatus;
 
   getTrainingdatahash(): DataHashes | undefined;
   setTrainingdatahash(value?: DataHashes): StudyStatus;
@@ -4401,6 +5173,8 @@ export class StudyStatus extends jspb.Message {
 
   getTriggeredby(): string;
   setTriggeredby(value: string): StudyStatus;
+  hasTriggeredby(): boolean;
+  clearTriggeredby(): StudyStatus;
 
   getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
   setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): StudyStatus;
@@ -4482,27 +5256,27 @@ export class StudyStatus extends jspb.Message {
 
 export namespace StudyStatus {
   export type AsObject = {
-    modelscount: number,
+    modelscount?: number,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    bestmodel: string,
-    bestmodelscore: number,
-    profileuri: string,
-    reporturi: string,
-    reportname: string,
-    phase: string,
-    observedgeneration: number,
+    bestmodel?: string,
+    bestmodelscore?: number,
+    profileuri?: string,
+    reporturi?: string,
+    reportname?: string,
+    phase?: string,
+    observedgeneration?: number,
     traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     testdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     validationdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    lastmodelid: number,
-    failurereason: string,
-    failuremessage: string,
-    trainingrowscount: number,
-    testingrowscount: number,
-    validationrowscount: number,
-    progress: number,
+    lastmodelid?: number,
+    failurereason?: string,
+    failuremessage?: string,
+    trainingrowscount?: number,
+    testingrowscount?: number,
+    validationrowscount?: number,
+    progress?: number,
     trainingdatahash?: DataHashes.AsObject,
-    triggeredby: string,
+    triggeredby?: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     featureengineering?: StudyPhaseStatus.AsObject,
     baseline?: StudyPhaseStatus.AsObject,
@@ -4523,15 +5297,23 @@ export namespace StudyStatus {
 export class SuccessiveHalvingOptions extends jspb.Message {
   getMinresources(): number;
   setMinresources(value: number): SuccessiveHalvingOptions;
+  hasMinresources(): boolean;
+  clearMinresources(): SuccessiveHalvingOptions;
 
   getReductionfactor(): number;
   setReductionfactor(value: number): SuccessiveHalvingOptions;
+  hasReductionfactor(): boolean;
+  clearReductionfactor(): SuccessiveHalvingOptions;
 
   getMinearlystoppingrate(): number;
   setMinearlystoppingrate(value: number): SuccessiveHalvingOptions;
+  hasMinearlystoppingrate(): boolean;
+  clearMinearlystoppingrate(): SuccessiveHalvingOptions;
 
   getBootstrapcount(): number;
   setBootstrapcount(value: number): SuccessiveHalvingOptions;
+  hasBootstrapcount(): boolean;
+  clearBootstrapcount(): SuccessiveHalvingOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SuccessiveHalvingOptions.AsObject;
@@ -4543,28 +5325,38 @@ export class SuccessiveHalvingOptions extends jspb.Message {
 
 export namespace SuccessiveHalvingOptions {
   export type AsObject = {
-    minresources: number,
-    reductionfactor: number,
-    minearlystoppingrate: number,
-    bootstrapcount: number,
+    minresources?: number,
+    reductionfactor?: number,
+    minearlystoppingrate?: number,
+    bootstrapcount?: number,
   }
 }
 
 export class SuccessiveHalvingSpec extends jspb.Message {
   getBudget(): number;
   setBudget(value: number): SuccessiveHalvingSpec;
+  hasBudget(): boolean;
+  clearBudget(): SuccessiveHalvingSpec;
 
   getBracket(): number;
   setBracket(value: number): SuccessiveHalvingSpec;
+  hasBracket(): boolean;
+  clearBracket(): SuccessiveHalvingSpec;
 
   getRung(): number;
   setRung(value: number): SuccessiveHalvingSpec;
+  hasRung(): boolean;
+  clearRung(): SuccessiveHalvingSpec;
 
   getConfid(): number;
   setConfid(value: number): SuccessiveHalvingSpec;
+  hasConfid(): boolean;
+  clearConfid(): SuccessiveHalvingSpec;
 
   getModality(): string;
   setModality(value: string): SuccessiveHalvingSpec;
+  hasModality(): boolean;
+  clearModality(): SuccessiveHalvingSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SuccessiveHalvingSpec.AsObject;
@@ -4576,41 +5368,59 @@ export class SuccessiveHalvingSpec extends jspb.Message {
 
 export namespace SuccessiveHalvingSpec {
   export type AsObject = {
-    budget: number,
-    bracket: number,
-    rung: number,
-    confid: number,
-    modality: string,
+    budget?: number,
+    bracket?: number,
+    rung?: number,
+    confid?: number,
+    modality?: string,
   }
 }
 
 export class TextPipelineSpec extends jspb.Message {
   getEncoder(): string;
   setEncoder(value: string): TextPipelineSpec;
+  hasEncoder(): boolean;
+  clearEncoder(): TextPipelineSpec;
 
   getTokenizer(): string;
   setTokenizer(value: string): TextPipelineSpec;
+  hasTokenizer(): boolean;
+  clearTokenizer(): TextPipelineSpec;
 
   getStopwords(): boolean;
   setStopwords(value: boolean): TextPipelineSpec;
+  hasStopwords(): boolean;
+  clearStopwords(): TextPipelineSpec;
 
   getPos(): boolean;
   setPos(value: boolean): TextPipelineSpec;
+  hasPos(): boolean;
+  clearPos(): TextPipelineSpec;
 
   getLemma(): boolean;
   setLemma(value: boolean): TextPipelineSpec;
+  hasLemma(): boolean;
+  clearLemma(): TextPipelineSpec;
 
   getStem(): boolean;
   setStem(value: boolean): TextPipelineSpec;
+  hasStem(): boolean;
+  clearStem(): TextPipelineSpec;
 
   getEmbedding(): string;
   setEmbedding(value: string): TextPipelineSpec;
+  hasEmbedding(): boolean;
+  clearEmbedding(): TextPipelineSpec;
 
   getSvd(): boolean;
   setSvd(value: boolean): TextPipelineSpec;
+  hasSvd(): boolean;
+  clearSvd(): TextPipelineSpec;
 
   getMaxsvdcomponents(): number;
   setMaxsvdcomponents(value: number): TextPipelineSpec;
+  hasMaxsvdcomponents(): boolean;
+  clearMaxsvdcomponents(): TextPipelineSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TextPipelineSpec.AsObject;
@@ -4622,30 +5432,38 @@ export class TextPipelineSpec extends jspb.Message {
 
 export namespace TextPipelineSpec {
   export type AsObject = {
-    encoder: string,
-    tokenizer: string,
-    stopwords: boolean,
-    pos: boolean,
-    lemma: boolean,
-    stem: boolean,
-    embedding: string,
-    svd: boolean,
-    maxsvdcomponents: number,
+    encoder?: string,
+    tokenizer?: string,
+    stopwords?: boolean,
+    pos?: boolean,
+    lemma?: boolean,
+    stem?: boolean,
+    embedding?: string,
+    svd?: boolean,
+    maxsvdcomponents?: number,
   }
 }
 
 export class ThresholdPrunerOptions extends jspb.Message {
   getLower(): number;
   setLower(value: number): ThresholdPrunerOptions;
+  hasLower(): boolean;
+  clearLower(): ThresholdPrunerOptions;
 
   getUpper(): number;
   setUpper(value: number): ThresholdPrunerOptions;
+  hasUpper(): boolean;
+  clearUpper(): ThresholdPrunerOptions;
 
   getWarmupsteps(): number;
   setWarmupsteps(value: number): ThresholdPrunerOptions;
+  hasWarmupsteps(): boolean;
+  clearWarmupsteps(): ThresholdPrunerOptions;
 
   getIntervalsteps(): number;
   setIntervalsteps(value: number): ThresholdPrunerOptions;
+  hasIntervalsteps(): boolean;
+  clearIntervalsteps(): ThresholdPrunerOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ThresholdPrunerOptions.AsObject;
@@ -4657,31 +5475,43 @@ export class ThresholdPrunerOptions extends jspb.Message {
 
 export namespace ThresholdPrunerOptions {
   export type AsObject = {
-    lower: number,
-    upper: number,
-    warmupsteps: number,
-    intervalsteps: number,
+    lower?: number,
+    upper?: number,
+    warmupsteps?: number,
+    intervalsteps?: number,
   }
 }
 
 export class TimeSeriesEvent extends jspb.Message {
   getName(): string;
   setName(value: string): TimeSeriesEvent;
+  hasName(): boolean;
+  clearName(): TimeSeriesEvent;
 
   getMethod(): string;
   setMethod(value: string): TimeSeriesEvent;
+  hasMethod(): boolean;
+  clearMethod(): TimeSeriesEvent;
 
   getHoliday(): boolean;
   setHoliday(value: boolean): TimeSeriesEvent;
+  hasHoliday(): boolean;
+  clearHoliday(): TimeSeriesEvent;
 
   getCountry(): string;
   setCountry(value: string): TimeSeriesEvent;
+  hasCountry(): boolean;
+  clearCountry(): TimeSeriesEvent;
 
   getPreevent(): number;
   setPreevent(value: number): TimeSeriesEvent;
+  hasPreevent(): boolean;
+  clearPreevent(): TimeSeriesEvent;
 
   getPostevent(): number;
   setPostevent(value: number): TimeSeriesEvent;
+  hasPostevent(): boolean;
+  clearPostevent(): TimeSeriesEvent;
 
   getTimepointsList(): Array<string>;
   setTimepointsList(value: Array<string>): TimeSeriesEvent;
@@ -4698,12 +5528,12 @@ export class TimeSeriesEvent extends jspb.Message {
 
 export namespace TimeSeriesEvent {
   export type AsObject = {
-    name: string,
-    method: string,
-    holiday: boolean,
-    country: string,
-    preevent: number,
-    postevent: number,
+    name?: string,
+    method?: string,
+    holiday?: boolean,
+    country?: string,
+    preevent?: number,
+    postevent?: number,
     timepointsList: Array<string>,
   }
 }
@@ -4716,15 +5546,23 @@ export class TrainingSpec extends jspb.Message {
 
   getPriority(): string;
   setPriority(value: string): TrainingSpec;
+  hasPriority(): boolean;
+  clearPriority(): TrainingSpec;
 
   getCvtype(): string;
   setCvtype(value: string): TrainingSpec;
+  hasCvtype(): boolean;
+  clearCvtype(): TrainingSpec;
 
   getCv(): boolean;
   setCv(value: boolean): TrainingSpec;
+  hasCv(): boolean;
+  clearCv(): TrainingSpec;
 
   getFolds(): number;
   setFolds(value: number): TrainingSpec;
+  hasFolds(): boolean;
+  clearFolds(): TrainingSpec;
 
   getSplit(): DataSplitSpec | undefined;
   setSplit(value?: DataSplitSpec): TrainingSpec;
@@ -4743,6 +5581,8 @@ export class TrainingSpec extends jspb.Message {
 
   getSeed(): number;
   setSeed(value: number): TrainingSpec;
+  hasSeed(): boolean;
+  clearSeed(): TrainingSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): TrainingSpec;
@@ -4751,18 +5591,28 @@ export class TrainingSpec extends jspb.Message {
 
   getGpu(): boolean;
   setGpu(value: boolean): TrainingSpec;
+  hasGpu(): boolean;
+  clearGpu(): TrainingSpec;
 
   getDistributed(): boolean;
   setDistributed(value: boolean): TrainingSpec;
+  hasDistributed(): boolean;
+  clearDistributed(): TrainingSpec;
 
   getFeatureimportance(): boolean;
   setFeatureimportance(value: boolean): TrainingSpec;
+  hasFeatureimportance(): boolean;
+  clearFeatureimportance(): TrainingSpec;
 
   getNodecount(): number;
   setNodecount(value: number): TrainingSpec;
+  hasNodecount(): boolean;
+  clearNodecount(): TrainingSpec;
 
   getSamplepct(): number;
   setSamplepct(value: number): TrainingSpec;
+  hasSamplepct(): boolean;
+  clearSamplepct(): TrainingSpec;
 
   getCheckpoint(): CheckpointSpec | undefined;
   setCheckpoint(value?: CheckpointSpec): TrainingSpec;
@@ -4771,9 +5621,13 @@ export class TrainingSpec extends jspb.Message {
 
   getLoglevel(): string;
   setLoglevel(value: string): TrainingSpec;
+  hasLoglevel(): boolean;
+  clearLoglevel(): TrainingSpec;
 
   getTimeoutinsecs(): number;
   setTimeoutinsecs(value: number): TrainingSpec;
+  hasTimeoutinsecs(): boolean;
+  clearTimeoutinsecs(): TrainingSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainingSpec.AsObject;
@@ -4786,29 +5640,31 @@ export class TrainingSpec extends jspb.Message {
 export namespace TrainingSpec {
   export type AsObject = {
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    priority: string,
-    cvtype: string,
-    cv: boolean,
-    folds: number,
+    priority?: string,
+    cvtype?: string,
+    cv?: boolean,
+    folds?: number,
     split?: DataSplitSpec.AsObject,
     evalmetricsList: Array<string>,
     sh?: SuccessiveHalvingSpec.AsObject,
-    seed: number,
+    seed?: number,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    gpu: boolean,
-    distributed: boolean,
-    featureimportance: boolean,
-    nodecount: number,
-    samplepct: number,
+    gpu?: boolean,
+    distributed?: boolean,
+    featureimportance?: boolean,
+    nodecount?: number,
+    samplepct?: number,
     checkpoint?: CheckpointSpec.AsObject,
-    loglevel: string,
-    timeoutinsecs: number,
+    loglevel?: string,
+    timeoutinsecs?: number,
   }
 }
 
 export class UnivariateForecastStatus extends jspb.Message {
   getGridsearchresulturi(): string;
   setGridsearchresulturi(value: string): UnivariateForecastStatus;
+  hasGridsearchresulturi(): boolean;
+  clearGridsearchresulturi(): UnivariateForecastStatus;
 
   getBaseestimator(): ClassicalEstimatorSpec | undefined;
   setBaseestimator(value?: ClassicalEstimatorSpec): UnivariateForecastStatus;
@@ -4817,12 +5673,18 @@ export class UnivariateForecastStatus extends jspb.Message {
 
   getModeluri(): string;
   setModeluri(value: string): UnivariateForecastStatus;
+  hasModeluri(): boolean;
+  clearModeluri(): UnivariateForecastStatus;
 
   getCvresulturi(): string;
   setCvresulturi(value: string): UnivariateForecastStatus;
+  hasCvresulturi(): boolean;
+  clearCvresulturi(): UnivariateForecastStatus;
 
   getForecasturi(): string;
   setForecasturi(value: string): UnivariateForecastStatus;
+  hasForecasturi(): boolean;
+  clearForecasturi(): UnivariateForecastStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UnivariateForecastStatus.AsObject;
@@ -4834,17 +5696,19 @@ export class UnivariateForecastStatus extends jspb.Message {
 
 export namespace UnivariateForecastStatus {
   export type AsObject = {
-    gridsearchresulturi: string,
+    gridsearchresulturi?: string,
     baseestimator?: ClassicalEstimatorSpec.AsObject,
-    modeluri: string,
-    cvresulturi: string,
-    forecasturi: string,
+    modeluri?: string,
+    cvresulturi?: string,
+    forecasturi?: string,
   }
 }
 
 export class VideoPipelineSpec extends jspb.Message {
   getFeaturizer(): string;
   setFeaturizer(value: string): VideoPipelineSpec;
+  hasFeaturizer(): boolean;
+  clearFeaturizer(): VideoPipelineSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VideoPipelineSpec.AsObject;
@@ -4856,19 +5720,25 @@ export class VideoPipelineSpec extends jspb.Message {
 
 export namespace VideoPipelineSpec {
   export type AsObject = {
-    featurizer: string,
+    featurizer?: string,
   }
 }
 
 export class WindowSpec extends jspb.Message {
   getInterval(): string;
   setInterval(value: string): WindowSpec;
+  hasInterval(): boolean;
+  clearInterval(): WindowSpec;
 
   getStart(): number;
   setStart(value: number): WindowSpec;
+  hasStart(): boolean;
+  clearStart(): WindowSpec;
 
   getLength(): number;
   setLength(value: number): WindowSpec;
+  hasLength(): boolean;
+  clearLength(): WindowSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WindowSpec.AsObject;
@@ -4880,9 +5750,9 @@ export class WindowSpec extends jspb.Message {
 
 export namespace WindowSpec {
   export type AsObject = {
-    interval: string,
-    start: number,
-    length: number,
+    interval?: string,
+    start?: number,
+    length?: number,
   }
 }
 

@@ -5,6 +5,8 @@ import * as jspb from 'google-protobuf'
 export class Quantity extends jspb.Message {
   getString(): string;
   setString(value: string): Quantity;
+  hasString(): boolean;
+  clearString(): Quantity;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Quantity.AsObject;
@@ -16,13 +18,15 @@ export class Quantity extends jspb.Message {
 
 export namespace Quantity {
   export type AsObject = {
-    string: string,
+    string?: string,
   }
 }
 
 export class QuantityValue extends jspb.Message {
   getString(): string;
   setString(value: string): QuantityValue;
+  hasString(): boolean;
+  clearString(): QuantityValue;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QuantityValue.AsObject;
@@ -34,7 +38,7 @@ export class QuantityValue extends jspb.Message {
 
 export namespace QuantityValue {
   export type AsObject = {
-    string: string,
+    string?: string,
   }
 }
 

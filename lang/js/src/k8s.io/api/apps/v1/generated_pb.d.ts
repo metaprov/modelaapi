@@ -20,6 +20,8 @@ export class ControllerRevision extends jspb.Message {
 
   getRevision(): number;
   setRevision(value: number): ControllerRevision;
+  hasRevision(): boolean;
+  clearRevision(): ControllerRevision;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ControllerRevision.AsObject;
@@ -33,7 +35,7 @@ export namespace ControllerRevision {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
     data?: k8s_io_apimachinery_pkg_runtime_generated_pb.RawExtension.AsObject,
-    revision: number,
+    revision?: number,
   }
 }
 
@@ -98,9 +100,13 @@ export namespace DaemonSet {
 export class DaemonSetCondition extends jspb.Message {
   getType(): string;
   setType(value: string): DaemonSetCondition;
+  hasType(): boolean;
+  clearType(): DaemonSetCondition;
 
   getStatus(): string;
   setStatus(value: string): DaemonSetCondition;
+  hasStatus(): boolean;
+  clearStatus(): DaemonSetCondition;
 
   getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DaemonSetCondition;
@@ -109,9 +115,13 @@ export class DaemonSetCondition extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): DaemonSetCondition;
+  hasReason(): boolean;
+  clearReason(): DaemonSetCondition;
 
   getMessage(): string;
   setMessage(value: string): DaemonSetCondition;
+  hasMessage(): boolean;
+  clearMessage(): DaemonSetCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DaemonSetCondition.AsObject;
@@ -123,11 +133,11 @@ export class DaemonSetCondition extends jspb.Message {
 
 export namespace DaemonSetCondition {
   export type AsObject = {
-    type: string,
-    status: string,
+    type?: string,
+    status?: string,
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
@@ -175,9 +185,13 @@ export class DaemonSetSpec extends jspb.Message {
 
   getMinreadyseconds(): number;
   setMinreadyseconds(value: number): DaemonSetSpec;
+  hasMinreadyseconds(): boolean;
+  clearMinreadyseconds(): DaemonSetSpec;
 
   getRevisionhistorylimit(): number;
   setRevisionhistorylimit(value: number): DaemonSetSpec;
+  hasRevisionhistorylimit(): boolean;
+  clearRevisionhistorylimit(): DaemonSetSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DaemonSetSpec.AsObject;
@@ -192,38 +206,56 @@ export namespace DaemonSetSpec {
     selector?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.AsObject,
     template?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
     updatestrategy?: DaemonSetUpdateStrategy.AsObject,
-    minreadyseconds: number,
-    revisionhistorylimit: number,
+    minreadyseconds?: number,
+    revisionhistorylimit?: number,
   }
 }
 
 export class DaemonSetStatus extends jspb.Message {
   getCurrentnumberscheduled(): number;
   setCurrentnumberscheduled(value: number): DaemonSetStatus;
+  hasCurrentnumberscheduled(): boolean;
+  clearCurrentnumberscheduled(): DaemonSetStatus;
 
   getNumbermisscheduled(): number;
   setNumbermisscheduled(value: number): DaemonSetStatus;
+  hasNumbermisscheduled(): boolean;
+  clearNumbermisscheduled(): DaemonSetStatus;
 
   getDesirednumberscheduled(): number;
   setDesirednumberscheduled(value: number): DaemonSetStatus;
+  hasDesirednumberscheduled(): boolean;
+  clearDesirednumberscheduled(): DaemonSetStatus;
 
   getNumberready(): number;
   setNumberready(value: number): DaemonSetStatus;
+  hasNumberready(): boolean;
+  clearNumberready(): DaemonSetStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DaemonSetStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): DaemonSetStatus;
 
   getUpdatednumberscheduled(): number;
   setUpdatednumberscheduled(value: number): DaemonSetStatus;
+  hasUpdatednumberscheduled(): boolean;
+  clearUpdatednumberscheduled(): DaemonSetStatus;
 
   getNumberavailable(): number;
   setNumberavailable(value: number): DaemonSetStatus;
+  hasNumberavailable(): boolean;
+  clearNumberavailable(): DaemonSetStatus;
 
   getNumberunavailable(): number;
   setNumberunavailable(value: number): DaemonSetStatus;
+  hasNumberunavailable(): boolean;
+  clearNumberunavailable(): DaemonSetStatus;
 
   getCollisioncount(): number;
   setCollisioncount(value: number): DaemonSetStatus;
+  hasCollisioncount(): boolean;
+  clearCollisioncount(): DaemonSetStatus;
 
   getConditionsList(): Array<DaemonSetCondition>;
   setConditionsList(value: Array<DaemonSetCondition>): DaemonSetStatus;
@@ -240,15 +272,15 @@ export class DaemonSetStatus extends jspb.Message {
 
 export namespace DaemonSetStatus {
   export type AsObject = {
-    currentnumberscheduled: number,
-    numbermisscheduled: number,
-    desirednumberscheduled: number,
-    numberready: number,
-    observedgeneration: number,
-    updatednumberscheduled: number,
-    numberavailable: number,
-    numberunavailable: number,
-    collisioncount: number,
+    currentnumberscheduled?: number,
+    numbermisscheduled?: number,
+    desirednumberscheduled?: number,
+    numberready?: number,
+    observedgeneration?: number,
+    updatednumberscheduled?: number,
+    numberavailable?: number,
+    numberunavailable?: number,
+    collisioncount?: number,
     conditionsList: Array<DaemonSetCondition.AsObject>,
   }
 }
@@ -256,6 +288,8 @@ export namespace DaemonSetStatus {
 export class DaemonSetUpdateStrategy extends jspb.Message {
   getType(): string;
   setType(value: string): DaemonSetUpdateStrategy;
+  hasType(): boolean;
+  clearType(): DaemonSetUpdateStrategy;
 
   getRollingupdate(): RollingUpdateDaemonSet | undefined;
   setRollingupdate(value?: RollingUpdateDaemonSet): DaemonSetUpdateStrategy;
@@ -272,7 +306,7 @@ export class DaemonSetUpdateStrategy extends jspb.Message {
 
 export namespace DaemonSetUpdateStrategy {
   export type AsObject = {
-    type: string,
+    type?: string,
     rollingupdate?: RollingUpdateDaemonSet.AsObject,
   }
 }
@@ -312,9 +346,13 @@ export namespace Deployment {
 export class DeploymentCondition extends jspb.Message {
   getType(): string;
   setType(value: string): DeploymentCondition;
+  hasType(): boolean;
+  clearType(): DeploymentCondition;
 
   getStatus(): string;
   setStatus(value: string): DeploymentCondition;
+  hasStatus(): boolean;
+  clearStatus(): DeploymentCondition;
 
   getLastupdatetime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdatetime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DeploymentCondition;
@@ -328,9 +366,13 @@ export class DeploymentCondition extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): DeploymentCondition;
+  hasReason(): boolean;
+  clearReason(): DeploymentCondition;
 
   getMessage(): string;
   setMessage(value: string): DeploymentCondition;
+  hasMessage(): boolean;
+  clearMessage(): DeploymentCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeploymentCondition.AsObject;
@@ -342,12 +384,12 @@ export class DeploymentCondition extends jspb.Message {
 
 export namespace DeploymentCondition {
   export type AsObject = {
-    type: string,
-    status: string,
+    type?: string,
+    status?: string,
     lastupdatetime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
@@ -380,6 +422,8 @@ export namespace DeploymentList {
 export class DeploymentSpec extends jspb.Message {
   getReplicas(): number;
   setReplicas(value: number): DeploymentSpec;
+  hasReplicas(): boolean;
+  clearReplicas(): DeploymentSpec;
 
   getSelector(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector | undefined;
   setSelector(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector): DeploymentSpec;
@@ -398,15 +442,23 @@ export class DeploymentSpec extends jspb.Message {
 
   getMinreadyseconds(): number;
   setMinreadyseconds(value: number): DeploymentSpec;
+  hasMinreadyseconds(): boolean;
+  clearMinreadyseconds(): DeploymentSpec;
 
   getRevisionhistorylimit(): number;
   setRevisionhistorylimit(value: number): DeploymentSpec;
+  hasRevisionhistorylimit(): boolean;
+  clearRevisionhistorylimit(): DeploymentSpec;
 
   getPaused(): boolean;
   setPaused(value: boolean): DeploymentSpec;
+  hasPaused(): boolean;
+  clearPaused(): DeploymentSpec;
 
   getProgressdeadlineseconds(): number;
   setProgressdeadlineseconds(value: number): DeploymentSpec;
+  hasProgressdeadlineseconds(): boolean;
+  clearProgressdeadlineseconds(): DeploymentSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeploymentSpec.AsObject;
@@ -418,35 +470,47 @@ export class DeploymentSpec extends jspb.Message {
 
 export namespace DeploymentSpec {
   export type AsObject = {
-    replicas: number,
+    replicas?: number,
     selector?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.AsObject,
     template?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
     strategy?: DeploymentStrategy.AsObject,
-    minreadyseconds: number,
-    revisionhistorylimit: number,
-    paused: boolean,
-    progressdeadlineseconds: number,
+    minreadyseconds?: number,
+    revisionhistorylimit?: number,
+    paused?: boolean,
+    progressdeadlineseconds?: number,
   }
 }
 
 export class DeploymentStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DeploymentStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): DeploymentStatus;
 
   getReplicas(): number;
   setReplicas(value: number): DeploymentStatus;
+  hasReplicas(): boolean;
+  clearReplicas(): DeploymentStatus;
 
   getUpdatedreplicas(): number;
   setUpdatedreplicas(value: number): DeploymentStatus;
+  hasUpdatedreplicas(): boolean;
+  clearUpdatedreplicas(): DeploymentStatus;
 
   getReadyreplicas(): number;
   setReadyreplicas(value: number): DeploymentStatus;
+  hasReadyreplicas(): boolean;
+  clearReadyreplicas(): DeploymentStatus;
 
   getAvailablereplicas(): number;
   setAvailablereplicas(value: number): DeploymentStatus;
+  hasAvailablereplicas(): boolean;
+  clearAvailablereplicas(): DeploymentStatus;
 
   getUnavailablereplicas(): number;
   setUnavailablereplicas(value: number): DeploymentStatus;
+  hasUnavailablereplicas(): boolean;
+  clearUnavailablereplicas(): DeploymentStatus;
 
   getConditionsList(): Array<DeploymentCondition>;
   setConditionsList(value: Array<DeploymentCondition>): DeploymentStatus;
@@ -455,6 +519,8 @@ export class DeploymentStatus extends jspb.Message {
 
   getCollisioncount(): number;
   setCollisioncount(value: number): DeploymentStatus;
+  hasCollisioncount(): boolean;
+  clearCollisioncount(): DeploymentStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeploymentStatus.AsObject;
@@ -466,20 +532,22 @@ export class DeploymentStatus extends jspb.Message {
 
 export namespace DeploymentStatus {
   export type AsObject = {
-    observedgeneration: number,
-    replicas: number,
-    updatedreplicas: number,
-    readyreplicas: number,
-    availablereplicas: number,
-    unavailablereplicas: number,
+    observedgeneration?: number,
+    replicas?: number,
+    updatedreplicas?: number,
+    readyreplicas?: number,
+    availablereplicas?: number,
+    unavailablereplicas?: number,
     conditionsList: Array<DeploymentCondition.AsObject>,
-    collisioncount: number,
+    collisioncount?: number,
   }
 }
 
 export class DeploymentStrategy extends jspb.Message {
   getType(): string;
   setType(value: string): DeploymentStrategy;
+  hasType(): boolean;
+  clearType(): DeploymentStrategy;
 
   getRollingupdate(): RollingUpdateDeployment | undefined;
   setRollingupdate(value?: RollingUpdateDeployment): DeploymentStrategy;
@@ -496,7 +564,7 @@ export class DeploymentStrategy extends jspb.Message {
 
 export namespace DeploymentStrategy {
   export type AsObject = {
-    type: string,
+    type?: string,
     rollingupdate?: RollingUpdateDeployment.AsObject,
   }
 }
@@ -536,9 +604,13 @@ export namespace ReplicaSet {
 export class ReplicaSetCondition extends jspb.Message {
   getType(): string;
   setType(value: string): ReplicaSetCondition;
+  hasType(): boolean;
+  clearType(): ReplicaSetCondition;
 
   getStatus(): string;
   setStatus(value: string): ReplicaSetCondition;
+  hasStatus(): boolean;
+  clearStatus(): ReplicaSetCondition;
 
   getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReplicaSetCondition;
@@ -547,9 +619,13 @@ export class ReplicaSetCondition extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): ReplicaSetCondition;
+  hasReason(): boolean;
+  clearReason(): ReplicaSetCondition;
 
   getMessage(): string;
   setMessage(value: string): ReplicaSetCondition;
+  hasMessage(): boolean;
+  clearMessage(): ReplicaSetCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReplicaSetCondition.AsObject;
@@ -561,11 +637,11 @@ export class ReplicaSetCondition extends jspb.Message {
 
 export namespace ReplicaSetCondition {
   export type AsObject = {
-    type: string,
-    status: string,
+    type?: string,
+    status?: string,
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
@@ -598,9 +674,13 @@ export namespace ReplicaSetList {
 export class ReplicaSetSpec extends jspb.Message {
   getReplicas(): number;
   setReplicas(value: number): ReplicaSetSpec;
+  hasReplicas(): boolean;
+  clearReplicas(): ReplicaSetSpec;
 
   getMinreadyseconds(): number;
   setMinreadyseconds(value: number): ReplicaSetSpec;
+  hasMinreadyseconds(): boolean;
+  clearMinreadyseconds(): ReplicaSetSpec;
 
   getSelector(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector | undefined;
   setSelector(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector): ReplicaSetSpec;
@@ -622,8 +702,8 @@ export class ReplicaSetSpec extends jspb.Message {
 
 export namespace ReplicaSetSpec {
   export type AsObject = {
-    replicas: number,
-    minreadyseconds: number,
+    replicas?: number,
+    minreadyseconds?: number,
     selector?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.AsObject,
     template?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
   }
@@ -632,18 +712,28 @@ export namespace ReplicaSetSpec {
 export class ReplicaSetStatus extends jspb.Message {
   getReplicas(): number;
   setReplicas(value: number): ReplicaSetStatus;
+  hasReplicas(): boolean;
+  clearReplicas(): ReplicaSetStatus;
 
   getFullylabeledreplicas(): number;
   setFullylabeledreplicas(value: number): ReplicaSetStatus;
+  hasFullylabeledreplicas(): boolean;
+  clearFullylabeledreplicas(): ReplicaSetStatus;
 
   getReadyreplicas(): number;
   setReadyreplicas(value: number): ReplicaSetStatus;
+  hasReadyreplicas(): boolean;
+  clearReadyreplicas(): ReplicaSetStatus;
 
   getAvailablereplicas(): number;
   setAvailablereplicas(value: number): ReplicaSetStatus;
+  hasAvailablereplicas(): boolean;
+  clearAvailablereplicas(): ReplicaSetStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ReplicaSetStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): ReplicaSetStatus;
 
   getConditionsList(): Array<ReplicaSetCondition>;
   setConditionsList(value: Array<ReplicaSetCondition>): ReplicaSetStatus;
@@ -660,11 +750,11 @@ export class ReplicaSetStatus extends jspb.Message {
 
 export namespace ReplicaSetStatus {
   export type AsObject = {
-    replicas: number,
-    fullylabeledreplicas: number,
-    readyreplicas: number,
-    availablereplicas: number,
-    observedgeneration: number,
+    replicas?: number,
+    fullylabeledreplicas?: number,
+    readyreplicas?: number,
+    availablereplicas?: number,
+    observedgeneration?: number,
     conditionsList: Array<ReplicaSetCondition.AsObject>,
   }
 }
@@ -724,6 +814,8 @@ export namespace RollingUpdateDeployment {
 export class RollingUpdateStatefulSetStrategy extends jspb.Message {
   getPartition(): number;
   setPartition(value: number): RollingUpdateStatefulSetStrategy;
+  hasPartition(): boolean;
+  clearPartition(): RollingUpdateStatefulSetStrategy;
 
   getMaxunavailable(): k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString | undefined;
   setMaxunavailable(value?: k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString): RollingUpdateStatefulSetStrategy;
@@ -740,7 +832,7 @@ export class RollingUpdateStatefulSetStrategy extends jspb.Message {
 
 export namespace RollingUpdateStatefulSetStrategy {
   export type AsObject = {
-    partition: number,
+    partition?: number,
     maxunavailable?: k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString.AsObject,
   }
 }
@@ -780,9 +872,13 @@ export namespace StatefulSet {
 export class StatefulSetCondition extends jspb.Message {
   getType(): string;
   setType(value: string): StatefulSetCondition;
+  hasType(): boolean;
+  clearType(): StatefulSetCondition;
 
   getStatus(): string;
   setStatus(value: string): StatefulSetCondition;
+  hasStatus(): boolean;
+  clearStatus(): StatefulSetCondition;
 
   getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StatefulSetCondition;
@@ -791,9 +887,13 @@ export class StatefulSetCondition extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): StatefulSetCondition;
+  hasReason(): boolean;
+  clearReason(): StatefulSetCondition;
 
   getMessage(): string;
   setMessage(value: string): StatefulSetCondition;
+  hasMessage(): boolean;
+  clearMessage(): StatefulSetCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StatefulSetCondition.AsObject;
@@ -805,11 +905,11 @@ export class StatefulSetCondition extends jspb.Message {
 
 export namespace StatefulSetCondition {
   export type AsObject = {
-    type: string,
-    status: string,
+    type?: string,
+    status?: string,
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
@@ -842,9 +942,13 @@ export namespace StatefulSetList {
 export class StatefulSetPersistentVolumeClaimRetentionPolicy extends jspb.Message {
   getWhendeleted(): string;
   setWhendeleted(value: string): StatefulSetPersistentVolumeClaimRetentionPolicy;
+  hasWhendeleted(): boolean;
+  clearWhendeleted(): StatefulSetPersistentVolumeClaimRetentionPolicy;
 
   getWhenscaled(): string;
   setWhenscaled(value: string): StatefulSetPersistentVolumeClaimRetentionPolicy;
+  hasWhenscaled(): boolean;
+  clearWhenscaled(): StatefulSetPersistentVolumeClaimRetentionPolicy;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StatefulSetPersistentVolumeClaimRetentionPolicy.AsObject;
@@ -856,14 +960,16 @@ export class StatefulSetPersistentVolumeClaimRetentionPolicy extends jspb.Messag
 
 export namespace StatefulSetPersistentVolumeClaimRetentionPolicy {
   export type AsObject = {
-    whendeleted: string,
-    whenscaled: string,
+    whendeleted?: string,
+    whenscaled?: string,
   }
 }
 
 export class StatefulSetSpec extends jspb.Message {
   getReplicas(): number;
   setReplicas(value: number): StatefulSetSpec;
+  hasReplicas(): boolean;
+  clearReplicas(): StatefulSetSpec;
 
   getSelector(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector | undefined;
   setSelector(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector): StatefulSetSpec;
@@ -882,9 +988,13 @@ export class StatefulSetSpec extends jspb.Message {
 
   getServicename(): string;
   setServicename(value: string): StatefulSetSpec;
+  hasServicename(): boolean;
+  clearServicename(): StatefulSetSpec;
 
   getPodmanagementpolicy(): string;
   setPodmanagementpolicy(value: string): StatefulSetSpec;
+  hasPodmanagementpolicy(): boolean;
+  clearPodmanagementpolicy(): StatefulSetSpec;
 
   getUpdatestrategy(): StatefulSetUpdateStrategy | undefined;
   setUpdatestrategy(value?: StatefulSetUpdateStrategy): StatefulSetSpec;
@@ -893,9 +1003,13 @@ export class StatefulSetSpec extends jspb.Message {
 
   getRevisionhistorylimit(): number;
   setRevisionhistorylimit(value: number): StatefulSetSpec;
+  hasRevisionhistorylimit(): boolean;
+  clearRevisionhistorylimit(): StatefulSetSpec;
 
   getMinreadyseconds(): number;
   setMinreadyseconds(value: number): StatefulSetSpec;
+  hasMinreadyseconds(): boolean;
+  clearMinreadyseconds(): StatefulSetSpec;
 
   getPersistentvolumeclaimretentionpolicy(): StatefulSetPersistentVolumeClaimRetentionPolicy | undefined;
   setPersistentvolumeclaimretentionpolicy(value?: StatefulSetPersistentVolumeClaimRetentionPolicy): StatefulSetSpec;
@@ -912,15 +1026,15 @@ export class StatefulSetSpec extends jspb.Message {
 
 export namespace StatefulSetSpec {
   export type AsObject = {
-    replicas: number,
+    replicas?: number,
     selector?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.AsObject,
     template?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
     volumeclaimtemplatesList: Array<k8s_io_api_core_v1_generated_pb.PersistentVolumeClaim.AsObject>,
-    servicename: string,
-    podmanagementpolicy: string,
+    servicename?: string,
+    podmanagementpolicy?: string,
     updatestrategy?: StatefulSetUpdateStrategy.AsObject,
-    revisionhistorylimit: number,
-    minreadyseconds: number,
+    revisionhistorylimit?: number,
+    minreadyseconds?: number,
     persistentvolumeclaimretentionpolicy?: StatefulSetPersistentVolumeClaimRetentionPolicy.AsObject,
   }
 }
@@ -928,27 +1042,43 @@ export namespace StatefulSetSpec {
 export class StatefulSetStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): StatefulSetStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): StatefulSetStatus;
 
   getReplicas(): number;
   setReplicas(value: number): StatefulSetStatus;
+  hasReplicas(): boolean;
+  clearReplicas(): StatefulSetStatus;
 
   getReadyreplicas(): number;
   setReadyreplicas(value: number): StatefulSetStatus;
+  hasReadyreplicas(): boolean;
+  clearReadyreplicas(): StatefulSetStatus;
 
   getCurrentreplicas(): number;
   setCurrentreplicas(value: number): StatefulSetStatus;
+  hasCurrentreplicas(): boolean;
+  clearCurrentreplicas(): StatefulSetStatus;
 
   getUpdatedreplicas(): number;
   setUpdatedreplicas(value: number): StatefulSetStatus;
+  hasUpdatedreplicas(): boolean;
+  clearUpdatedreplicas(): StatefulSetStatus;
 
   getCurrentrevision(): string;
   setCurrentrevision(value: string): StatefulSetStatus;
+  hasCurrentrevision(): boolean;
+  clearCurrentrevision(): StatefulSetStatus;
 
   getUpdaterevision(): string;
   setUpdaterevision(value: string): StatefulSetStatus;
+  hasUpdaterevision(): boolean;
+  clearUpdaterevision(): StatefulSetStatus;
 
   getCollisioncount(): number;
   setCollisioncount(value: number): StatefulSetStatus;
+  hasCollisioncount(): boolean;
+  clearCollisioncount(): StatefulSetStatus;
 
   getConditionsList(): Array<StatefulSetCondition>;
   setConditionsList(value: Array<StatefulSetCondition>): StatefulSetStatus;
@@ -957,6 +1087,8 @@ export class StatefulSetStatus extends jspb.Message {
 
   getAvailablereplicas(): number;
   setAvailablereplicas(value: number): StatefulSetStatus;
+  hasAvailablereplicas(): boolean;
+  clearAvailablereplicas(): StatefulSetStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StatefulSetStatus.AsObject;
@@ -968,22 +1100,24 @@ export class StatefulSetStatus extends jspb.Message {
 
 export namespace StatefulSetStatus {
   export type AsObject = {
-    observedgeneration: number,
-    replicas: number,
-    readyreplicas: number,
-    currentreplicas: number,
-    updatedreplicas: number,
-    currentrevision: string,
-    updaterevision: string,
-    collisioncount: number,
+    observedgeneration?: number,
+    replicas?: number,
+    readyreplicas?: number,
+    currentreplicas?: number,
+    updatedreplicas?: number,
+    currentrevision?: string,
+    updaterevision?: string,
+    collisioncount?: number,
     conditionsList: Array<StatefulSetCondition.AsObject>,
-    availablereplicas: number,
+    availablereplicas?: number,
   }
 }
 
 export class StatefulSetUpdateStrategy extends jspb.Message {
   getType(): string;
   setType(value: string): StatefulSetUpdateStrategy;
+  hasType(): boolean;
+  clearType(): StatefulSetUpdateStrategy;
 
   getRollingupdate(): RollingUpdateStatefulSetStrategy | undefined;
   setRollingupdate(value?: RollingUpdateStatefulSetStrategy): StatefulSetUpdateStrategy;
@@ -1000,7 +1134,7 @@ export class StatefulSetUpdateStrategy extends jspb.Message {
 
 export namespace StatefulSetUpdateStrategy {
   export type AsObject = {
-    type: string,
+    type?: string,
     rollingupdate?: RollingUpdateStatefulSetStrategy.AsObject,
   }
 }

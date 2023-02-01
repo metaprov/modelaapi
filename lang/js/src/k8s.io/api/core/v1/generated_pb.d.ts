@@ -10,15 +10,23 @@ import * as k8s_io_apimachinery_pkg_util_intstr_generated_pb from '../../../../k
 export class AWSElasticBlockStoreVolumeSource extends jspb.Message {
   getVolumeid(): string;
   setVolumeid(value: string): AWSElasticBlockStoreVolumeSource;
+  hasVolumeid(): boolean;
+  clearVolumeid(): AWSElasticBlockStoreVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): AWSElasticBlockStoreVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): AWSElasticBlockStoreVolumeSource;
 
   getPartition(): number;
   setPartition(value: number): AWSElasticBlockStoreVolumeSource;
+  hasPartition(): boolean;
+  clearPartition(): AWSElasticBlockStoreVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): AWSElasticBlockStoreVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): AWSElasticBlockStoreVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AWSElasticBlockStoreVolumeSource.AsObject;
@@ -30,10 +38,10 @@ export class AWSElasticBlockStoreVolumeSource extends jspb.Message {
 
 export namespace AWSElasticBlockStoreVolumeSource {
   export type AsObject = {
-    volumeid: string,
-    fstype: string,
-    partition: number,
-    readonly: boolean,
+    volumeid?: string,
+    fstype?: string,
+    partition?: number,
+    readonly?: boolean,
   }
 }
 
@@ -72,9 +80,13 @@ export namespace Affinity {
 export class AttachedVolume extends jspb.Message {
   getName(): string;
   setName(value: string): AttachedVolume;
+  hasName(): boolean;
+  clearName(): AttachedVolume;
 
   getDevicepath(): string;
   setDevicepath(value: string): AttachedVolume;
+  hasDevicepath(): boolean;
+  clearDevicepath(): AttachedVolume;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AttachedVolume.AsObject;
@@ -86,8 +98,8 @@ export class AttachedVolume extends jspb.Message {
 
 export namespace AttachedVolume {
   export type AsObject = {
-    name: string,
-    devicepath: string,
+    name?: string,
+    devicepath?: string,
   }
 }
 
@@ -114,21 +126,33 @@ export namespace AvoidPods {
 export class AzureDiskVolumeSource extends jspb.Message {
   getDiskname(): string;
   setDiskname(value: string): AzureDiskVolumeSource;
+  hasDiskname(): boolean;
+  clearDiskname(): AzureDiskVolumeSource;
 
   getDiskuri(): string;
   setDiskuri(value: string): AzureDiskVolumeSource;
+  hasDiskuri(): boolean;
+  clearDiskuri(): AzureDiskVolumeSource;
 
   getCachingmode(): string;
   setCachingmode(value: string): AzureDiskVolumeSource;
+  hasCachingmode(): boolean;
+  clearCachingmode(): AzureDiskVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): AzureDiskVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): AzureDiskVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): AzureDiskVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): AzureDiskVolumeSource;
 
   getKind(): string;
   setKind(value: string): AzureDiskVolumeSource;
+  hasKind(): boolean;
+  clearKind(): AzureDiskVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AzureDiskVolumeSource.AsObject;
@@ -140,27 +164,35 @@ export class AzureDiskVolumeSource extends jspb.Message {
 
 export namespace AzureDiskVolumeSource {
   export type AsObject = {
-    diskname: string,
-    diskuri: string,
-    cachingmode: string,
-    fstype: string,
-    readonly: boolean,
-    kind: string,
+    diskname?: string,
+    diskuri?: string,
+    cachingmode?: string,
+    fstype?: string,
+    readonly?: boolean,
+    kind?: string,
   }
 }
 
 export class AzureFilePersistentVolumeSource extends jspb.Message {
   getSecretname(): string;
   setSecretname(value: string): AzureFilePersistentVolumeSource;
+  hasSecretname(): boolean;
+  clearSecretname(): AzureFilePersistentVolumeSource;
 
   getSharename(): string;
   setSharename(value: string): AzureFilePersistentVolumeSource;
+  hasSharename(): boolean;
+  clearSharename(): AzureFilePersistentVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): AzureFilePersistentVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): AzureFilePersistentVolumeSource;
 
   getSecretnamespace(): string;
   setSecretnamespace(value: string): AzureFilePersistentVolumeSource;
+  hasSecretnamespace(): boolean;
+  clearSecretnamespace(): AzureFilePersistentVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AzureFilePersistentVolumeSource.AsObject;
@@ -172,22 +204,28 @@ export class AzureFilePersistentVolumeSource extends jspb.Message {
 
 export namespace AzureFilePersistentVolumeSource {
   export type AsObject = {
-    secretname: string,
-    sharename: string,
-    readonly: boolean,
-    secretnamespace: string,
+    secretname?: string,
+    sharename?: string,
+    readonly?: boolean,
+    secretnamespace?: string,
   }
 }
 
 export class AzureFileVolumeSource extends jspb.Message {
   getSecretname(): string;
   setSecretname(value: string): AzureFileVolumeSource;
+  hasSecretname(): boolean;
+  clearSecretname(): AzureFileVolumeSource;
 
   getSharename(): string;
   setSharename(value: string): AzureFileVolumeSource;
+  hasSharename(): boolean;
+  clearSharename(): AzureFileVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): AzureFileVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): AzureFileVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AzureFileVolumeSource.AsObject;
@@ -199,9 +237,9 @@ export class AzureFileVolumeSource extends jspb.Message {
 
 export namespace AzureFileVolumeSource {
   export type AsObject = {
-    secretname: string,
-    sharename: string,
-    readonly: boolean,
+    secretname?: string,
+    sharename?: string,
+    readonly?: boolean,
   }
 }
 
@@ -234,15 +272,23 @@ export namespace Binding {
 export class CSIPersistentVolumeSource extends jspb.Message {
   getDriver(): string;
   setDriver(value: string): CSIPersistentVolumeSource;
+  hasDriver(): boolean;
+  clearDriver(): CSIPersistentVolumeSource;
 
   getVolumehandle(): string;
   setVolumehandle(value: string): CSIPersistentVolumeSource;
+  hasVolumehandle(): boolean;
+  clearVolumehandle(): CSIPersistentVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): CSIPersistentVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): CSIPersistentVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): CSIPersistentVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): CSIPersistentVolumeSource;
 
   getVolumeattributesMap(): jspb.Map<string, string>;
   clearVolumeattributesMap(): CSIPersistentVolumeSource;
@@ -277,10 +323,10 @@ export class CSIPersistentVolumeSource extends jspb.Message {
 
 export namespace CSIPersistentVolumeSource {
   export type AsObject = {
-    driver: string,
-    volumehandle: string,
-    readonly: boolean,
-    fstype: string,
+    driver?: string,
+    volumehandle?: string,
+    readonly?: boolean,
+    fstype?: string,
     volumeattributesMap: Array<[string, string]>,
     controllerpublishsecretref?: SecretReference.AsObject,
     nodestagesecretref?: SecretReference.AsObject,
@@ -292,12 +338,18 @@ export namespace CSIPersistentVolumeSource {
 export class CSIVolumeSource extends jspb.Message {
   getDriver(): string;
   setDriver(value: string): CSIVolumeSource;
+  hasDriver(): boolean;
+  clearDriver(): CSIVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): CSIVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): CSIVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): CSIVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): CSIVolumeSource;
 
   getVolumeattributesMap(): jspb.Map<string, string>;
   clearVolumeattributesMap(): CSIVolumeSource;
@@ -317,9 +369,9 @@ export class CSIVolumeSource extends jspb.Message {
 
 export namespace CSIVolumeSource {
   export type AsObject = {
-    driver: string,
-    readonly: boolean,
-    fstype: string,
+    driver?: string,
+    readonly?: boolean,
+    fstype?: string,
     volumeattributesMap: Array<[string, string]>,
     nodepublishsecretref?: LocalObjectReference.AsObject,
   }
@@ -359,12 +411,18 @@ export class CephFSPersistentVolumeSource extends jspb.Message {
 
   getPath(): string;
   setPath(value: string): CephFSPersistentVolumeSource;
+  hasPath(): boolean;
+  clearPath(): CephFSPersistentVolumeSource;
 
   getUser(): string;
   setUser(value: string): CephFSPersistentVolumeSource;
+  hasUser(): boolean;
+  clearUser(): CephFSPersistentVolumeSource;
 
   getSecretfile(): string;
   setSecretfile(value: string): CephFSPersistentVolumeSource;
+  hasSecretfile(): boolean;
+  clearSecretfile(): CephFSPersistentVolumeSource;
 
   getSecretref(): SecretReference | undefined;
   setSecretref(value?: SecretReference): CephFSPersistentVolumeSource;
@@ -373,6 +431,8 @@ export class CephFSPersistentVolumeSource extends jspb.Message {
 
   getReadonly(): boolean;
   setReadonly(value: boolean): CephFSPersistentVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): CephFSPersistentVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CephFSPersistentVolumeSource.AsObject;
@@ -385,11 +445,11 @@ export class CephFSPersistentVolumeSource extends jspb.Message {
 export namespace CephFSPersistentVolumeSource {
   export type AsObject = {
     monitorsList: Array<string>,
-    path: string,
-    user: string,
-    secretfile: string,
+    path?: string,
+    user?: string,
+    secretfile?: string,
     secretref?: SecretReference.AsObject,
-    readonly: boolean,
+    readonly?: boolean,
   }
 }
 
@@ -401,12 +461,18 @@ export class CephFSVolumeSource extends jspb.Message {
 
   getPath(): string;
   setPath(value: string): CephFSVolumeSource;
+  hasPath(): boolean;
+  clearPath(): CephFSVolumeSource;
 
   getUser(): string;
   setUser(value: string): CephFSVolumeSource;
+  hasUser(): boolean;
+  clearUser(): CephFSVolumeSource;
 
   getSecretfile(): string;
   setSecretfile(value: string): CephFSVolumeSource;
+  hasSecretfile(): boolean;
+  clearSecretfile(): CephFSVolumeSource;
 
   getSecretref(): LocalObjectReference | undefined;
   setSecretref(value?: LocalObjectReference): CephFSVolumeSource;
@@ -415,6 +481,8 @@ export class CephFSVolumeSource extends jspb.Message {
 
   getReadonly(): boolean;
   setReadonly(value: boolean): CephFSVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): CephFSVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CephFSVolumeSource.AsObject;
@@ -427,23 +495,29 @@ export class CephFSVolumeSource extends jspb.Message {
 export namespace CephFSVolumeSource {
   export type AsObject = {
     monitorsList: Array<string>,
-    path: string,
-    user: string,
-    secretfile: string,
+    path?: string,
+    user?: string,
+    secretfile?: string,
     secretref?: LocalObjectReference.AsObject,
-    readonly: boolean,
+    readonly?: boolean,
   }
 }
 
 export class CinderPersistentVolumeSource extends jspb.Message {
   getVolumeid(): string;
   setVolumeid(value: string): CinderPersistentVolumeSource;
+  hasVolumeid(): boolean;
+  clearVolumeid(): CinderPersistentVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): CinderPersistentVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): CinderPersistentVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): CinderPersistentVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): CinderPersistentVolumeSource;
 
   getSecretref(): SecretReference | undefined;
   setSecretref(value?: SecretReference): CinderPersistentVolumeSource;
@@ -460,9 +534,9 @@ export class CinderPersistentVolumeSource extends jspb.Message {
 
 export namespace CinderPersistentVolumeSource {
   export type AsObject = {
-    volumeid: string,
-    fstype: string,
-    readonly: boolean,
+    volumeid?: string,
+    fstype?: string,
+    readonly?: boolean,
     secretref?: SecretReference.AsObject,
   }
 }
@@ -470,12 +544,18 @@ export namespace CinderPersistentVolumeSource {
 export class CinderVolumeSource extends jspb.Message {
   getVolumeid(): string;
   setVolumeid(value: string): CinderVolumeSource;
+  hasVolumeid(): boolean;
+  clearVolumeid(): CinderVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): CinderVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): CinderVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): CinderVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): CinderVolumeSource;
 
   getSecretref(): LocalObjectReference | undefined;
   setSecretref(value?: LocalObjectReference): CinderVolumeSource;
@@ -492,9 +572,9 @@ export class CinderVolumeSource extends jspb.Message {
 
 export namespace CinderVolumeSource {
   export type AsObject = {
-    volumeid: string,
-    fstype: string,
-    readonly: boolean,
+    volumeid?: string,
+    fstype?: string,
+    readonly?: boolean,
     secretref?: LocalObjectReference.AsObject,
   }
 }
@@ -502,6 +582,8 @@ export namespace CinderVolumeSource {
 export class ClientIPConfig extends jspb.Message {
   getTimeoutseconds(): number;
   setTimeoutseconds(value: number): ClientIPConfig;
+  hasTimeoutseconds(): boolean;
+  clearTimeoutseconds(): ClientIPConfig;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ClientIPConfig.AsObject;
@@ -513,22 +595,30 @@ export class ClientIPConfig extends jspb.Message {
 
 export namespace ClientIPConfig {
   export type AsObject = {
-    timeoutseconds: number,
+    timeoutseconds?: number,
   }
 }
 
 export class ComponentCondition extends jspb.Message {
   getType(): string;
   setType(value: string): ComponentCondition;
+  hasType(): boolean;
+  clearType(): ComponentCondition;
 
   getStatus(): string;
   setStatus(value: string): ComponentCondition;
+  hasStatus(): boolean;
+  clearStatus(): ComponentCondition;
 
   getMessage(): string;
   setMessage(value: string): ComponentCondition;
+  hasMessage(): boolean;
+  clearMessage(): ComponentCondition;
 
   getError(): string;
   setError(value: string): ComponentCondition;
+  hasError(): boolean;
+  clearError(): ComponentCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ComponentCondition.AsObject;
@@ -540,10 +630,10 @@ export class ComponentCondition extends jspb.Message {
 
 export namespace ComponentCondition {
   export type AsObject = {
-    type: string,
-    status: string,
-    message: string,
-    error: string,
+    type?: string,
+    status?: string,
+    message?: string,
+    error?: string,
   }
 }
 
@@ -607,6 +697,8 @@ export class ConfigMap extends jspb.Message {
 
   getImmutable(): boolean;
   setImmutable(value: boolean): ConfigMap;
+  hasImmutable(): boolean;
+  clearImmutable(): ConfigMap;
 
   getDataMap(): jspb.Map<string, string>;
   clearDataMap(): ConfigMap;
@@ -625,7 +717,7 @@ export class ConfigMap extends jspb.Message {
 export namespace ConfigMap {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    immutable: boolean,
+    immutable?: boolean,
     dataMap: Array<[string, string]>,
     binarydataMap: Array<[string, Uint8Array | string]>,
   }
@@ -639,6 +731,8 @@ export class ConfigMapEnvSource extends jspb.Message {
 
   getOptional(): boolean;
   setOptional(value: boolean): ConfigMapEnvSource;
+  hasOptional(): boolean;
+  clearOptional(): ConfigMapEnvSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigMapEnvSource.AsObject;
@@ -651,7 +745,7 @@ export class ConfigMapEnvSource extends jspb.Message {
 export namespace ConfigMapEnvSource {
   export type AsObject = {
     localobjectreference?: LocalObjectReference.AsObject,
-    optional: boolean,
+    optional?: boolean,
   }
 }
 
@@ -663,9 +757,13 @@ export class ConfigMapKeySelector extends jspb.Message {
 
   getKey(): string;
   setKey(value: string): ConfigMapKeySelector;
+  hasKey(): boolean;
+  clearKey(): ConfigMapKeySelector;
 
   getOptional(): boolean;
   setOptional(value: boolean): ConfigMapKeySelector;
+  hasOptional(): boolean;
+  clearOptional(): ConfigMapKeySelector;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigMapKeySelector.AsObject;
@@ -678,8 +776,8 @@ export class ConfigMapKeySelector extends jspb.Message {
 export namespace ConfigMapKeySelector {
   export type AsObject = {
     localobjectreference?: LocalObjectReference.AsObject,
-    key: string,
-    optional: boolean,
+    key?: string,
+    optional?: boolean,
   }
 }
 
@@ -712,18 +810,28 @@ export namespace ConfigMapList {
 export class ConfigMapNodeConfigSource extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ConfigMapNodeConfigSource;
+  hasNamespace(): boolean;
+  clearNamespace(): ConfigMapNodeConfigSource;
 
   getName(): string;
   setName(value: string): ConfigMapNodeConfigSource;
+  hasName(): boolean;
+  clearName(): ConfigMapNodeConfigSource;
 
   getUid(): string;
   setUid(value: string): ConfigMapNodeConfigSource;
+  hasUid(): boolean;
+  clearUid(): ConfigMapNodeConfigSource;
 
   getResourceversion(): string;
   setResourceversion(value: string): ConfigMapNodeConfigSource;
+  hasResourceversion(): boolean;
+  clearResourceversion(): ConfigMapNodeConfigSource;
 
   getKubeletconfigkey(): string;
   setKubeletconfigkey(value: string): ConfigMapNodeConfigSource;
+  hasKubeletconfigkey(): boolean;
+  clearKubeletconfigkey(): ConfigMapNodeConfigSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigMapNodeConfigSource.AsObject;
@@ -735,11 +843,11 @@ export class ConfigMapNodeConfigSource extends jspb.Message {
 
 export namespace ConfigMapNodeConfigSource {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    uid: string,
-    resourceversion: string,
-    kubeletconfigkey: string,
+    namespace?: string,
+    name?: string,
+    uid?: string,
+    resourceversion?: string,
+    kubeletconfigkey?: string,
   }
 }
 
@@ -756,6 +864,8 @@ export class ConfigMapProjection extends jspb.Message {
 
   getOptional(): boolean;
   setOptional(value: boolean): ConfigMapProjection;
+  hasOptional(): boolean;
+  clearOptional(): ConfigMapProjection;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigMapProjection.AsObject;
@@ -769,7 +879,7 @@ export namespace ConfigMapProjection {
   export type AsObject = {
     localobjectreference?: LocalObjectReference.AsObject,
     itemsList: Array<KeyToPath.AsObject>,
-    optional: boolean,
+    optional?: boolean,
   }
 }
 
@@ -786,9 +896,13 @@ export class ConfigMapVolumeSource extends jspb.Message {
 
   getDefaultmode(): number;
   setDefaultmode(value: number): ConfigMapVolumeSource;
+  hasDefaultmode(): boolean;
+  clearDefaultmode(): ConfigMapVolumeSource;
 
   getOptional(): boolean;
   setOptional(value: boolean): ConfigMapVolumeSource;
+  hasOptional(): boolean;
+  clearOptional(): ConfigMapVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigMapVolumeSource.AsObject;
@@ -802,17 +916,21 @@ export namespace ConfigMapVolumeSource {
   export type AsObject = {
     localobjectreference?: LocalObjectReference.AsObject,
     itemsList: Array<KeyToPath.AsObject>,
-    defaultmode: number,
-    optional: boolean,
+    defaultmode?: number,
+    optional?: boolean,
   }
 }
 
 export class Container extends jspb.Message {
   getName(): string;
   setName(value: string): Container;
+  hasName(): boolean;
+  clearName(): Container;
 
   getImage(): string;
   setImage(value: string): Container;
+  hasImage(): boolean;
+  clearImage(): Container;
 
   getCommandList(): Array<string>;
   setCommandList(value: Array<string>): Container;
@@ -826,6 +944,8 @@ export class Container extends jspb.Message {
 
   getWorkingdir(): string;
   setWorkingdir(value: string): Container;
+  hasWorkingdir(): boolean;
+  clearWorkingdir(): Container;
 
   getPortsList(): Array<ContainerPort>;
   setPortsList(value: Array<ContainerPort>): Container;
@@ -879,12 +999,18 @@ export class Container extends jspb.Message {
 
   getTerminationmessagepath(): string;
   setTerminationmessagepath(value: string): Container;
+  hasTerminationmessagepath(): boolean;
+  clearTerminationmessagepath(): Container;
 
   getTerminationmessagepolicy(): string;
   setTerminationmessagepolicy(value: string): Container;
+  hasTerminationmessagepolicy(): boolean;
+  clearTerminationmessagepolicy(): Container;
 
   getImagepullpolicy(): string;
   setImagepullpolicy(value: string): Container;
+  hasImagepullpolicy(): boolean;
+  clearImagepullpolicy(): Container;
 
   getSecuritycontext(): SecurityContext | undefined;
   setSecuritycontext(value?: SecurityContext): Container;
@@ -893,12 +1019,18 @@ export class Container extends jspb.Message {
 
   getStdin(): boolean;
   setStdin(value: boolean): Container;
+  hasStdin(): boolean;
+  clearStdin(): Container;
 
   getStdinonce(): boolean;
   setStdinonce(value: boolean): Container;
+  hasStdinonce(): boolean;
+  clearStdinonce(): Container;
 
   getTty(): boolean;
   setTty(value: boolean): Container;
+  hasTty(): boolean;
+  clearTty(): Container;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Container.AsObject;
@@ -910,11 +1042,11 @@ export class Container extends jspb.Message {
 
 export namespace Container {
   export type AsObject = {
-    name: string,
-    image: string,
+    name?: string,
+    image?: string,
     commandList: Array<string>,
     argsList: Array<string>,
-    workingdir: string,
+    workingdir?: string,
     portsList: Array<ContainerPort.AsObject>,
     envfromList: Array<EnvFromSource.AsObject>,
     envList: Array<EnvVar.AsObject>,
@@ -925,13 +1057,13 @@ export namespace Container {
     readinessprobe?: Probe.AsObject,
     startupprobe?: Probe.AsObject,
     lifecycle?: Lifecycle.AsObject,
-    terminationmessagepath: string,
-    terminationmessagepolicy: string,
-    imagepullpolicy: string,
+    terminationmessagepath?: string,
+    terminationmessagepolicy?: string,
+    imagepullpolicy?: string,
     securitycontext?: SecurityContext.AsObject,
-    stdin: boolean,
-    stdinonce: boolean,
-    tty: boolean,
+    stdin?: boolean,
+    stdinonce?: boolean,
+    tty?: boolean,
   }
 }
 
@@ -943,6 +1075,8 @@ export class ContainerImage extends jspb.Message {
 
   getSizebytes(): number;
   setSizebytes(value: number): ContainerImage;
+  hasSizebytes(): boolean;
+  clearSizebytes(): ContainerImage;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContainerImage.AsObject;
@@ -955,25 +1089,35 @@ export class ContainerImage extends jspb.Message {
 export namespace ContainerImage {
   export type AsObject = {
     namesList: Array<string>,
-    sizebytes: number,
+    sizebytes?: number,
   }
 }
 
 export class ContainerPort extends jspb.Message {
   getName(): string;
   setName(value: string): ContainerPort;
+  hasName(): boolean;
+  clearName(): ContainerPort;
 
   getHostport(): number;
   setHostport(value: number): ContainerPort;
+  hasHostport(): boolean;
+  clearHostport(): ContainerPort;
 
   getContainerport(): number;
   setContainerport(value: number): ContainerPort;
+  hasContainerport(): boolean;
+  clearContainerport(): ContainerPort;
 
   getProtocol(): string;
   setProtocol(value: string): ContainerPort;
+  hasProtocol(): boolean;
+  clearProtocol(): ContainerPort;
 
   getHostip(): string;
   setHostip(value: string): ContainerPort;
+  hasHostip(): boolean;
+  clearHostip(): ContainerPort;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContainerPort.AsObject;
@@ -985,11 +1129,11 @@ export class ContainerPort extends jspb.Message {
 
 export namespace ContainerPort {
   export type AsObject = {
-    name: string,
-    hostport: number,
-    containerport: number,
-    protocol: string,
-    hostip: string,
+    name?: string,
+    hostport?: number,
+    containerport?: number,
+    protocol?: string,
+    hostip?: string,
   }
 }
 
@@ -1048,15 +1192,23 @@ export namespace ContainerStateRunning {
 export class ContainerStateTerminated extends jspb.Message {
   getExitcode(): number;
   setExitcode(value: number): ContainerStateTerminated;
+  hasExitcode(): boolean;
+  clearExitcode(): ContainerStateTerminated;
 
   getSignal(): number;
   setSignal(value: number): ContainerStateTerminated;
+  hasSignal(): boolean;
+  clearSignal(): ContainerStateTerminated;
 
   getReason(): string;
   setReason(value: string): ContainerStateTerminated;
+  hasReason(): boolean;
+  clearReason(): ContainerStateTerminated;
 
   getMessage(): string;
   setMessage(value: string): ContainerStateTerminated;
+  hasMessage(): boolean;
+  clearMessage(): ContainerStateTerminated;
 
   getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ContainerStateTerminated;
@@ -1070,6 +1222,8 @@ export class ContainerStateTerminated extends jspb.Message {
 
   getContainerid(): string;
   setContainerid(value: string): ContainerStateTerminated;
+  hasContainerid(): boolean;
+  clearContainerid(): ContainerStateTerminated;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContainerStateTerminated.AsObject;
@@ -1081,22 +1235,26 @@ export class ContainerStateTerminated extends jspb.Message {
 
 export namespace ContainerStateTerminated {
   export type AsObject = {
-    exitcode: number,
-    signal: number,
-    reason: string,
-    message: string,
+    exitcode?: number,
+    signal?: number,
+    reason?: string,
+    message?: string,
     startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     finishedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    containerid: string,
+    containerid?: string,
   }
 }
 
 export class ContainerStateWaiting extends jspb.Message {
   getReason(): string;
   setReason(value: string): ContainerStateWaiting;
+  hasReason(): boolean;
+  clearReason(): ContainerStateWaiting;
 
   getMessage(): string;
   setMessage(value: string): ContainerStateWaiting;
+  hasMessage(): boolean;
+  clearMessage(): ContainerStateWaiting;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContainerStateWaiting.AsObject;
@@ -1108,14 +1266,16 @@ export class ContainerStateWaiting extends jspb.Message {
 
 export namespace ContainerStateWaiting {
   export type AsObject = {
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
 export class ContainerStatus extends jspb.Message {
   getName(): string;
   setName(value: string): ContainerStatus;
+  hasName(): boolean;
+  clearName(): ContainerStatus;
 
   getState(): ContainerState | undefined;
   setState(value?: ContainerState): ContainerStatus;
@@ -1129,21 +1289,33 @@ export class ContainerStatus extends jspb.Message {
 
   getReady(): boolean;
   setReady(value: boolean): ContainerStatus;
+  hasReady(): boolean;
+  clearReady(): ContainerStatus;
 
   getRestartcount(): number;
   setRestartcount(value: number): ContainerStatus;
+  hasRestartcount(): boolean;
+  clearRestartcount(): ContainerStatus;
 
   getImage(): string;
   setImage(value: string): ContainerStatus;
+  hasImage(): boolean;
+  clearImage(): ContainerStatus;
 
   getImageid(): string;
   setImageid(value: string): ContainerStatus;
+  hasImageid(): boolean;
+  clearImageid(): ContainerStatus;
 
   getContainerid(): string;
   setContainerid(value: string): ContainerStatus;
+  hasContainerid(): boolean;
+  clearContainerid(): ContainerStatus;
 
   getStarted(): boolean;
   setStarted(value: boolean): ContainerStatus;
+  hasStarted(): boolean;
+  clearStarted(): ContainerStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContainerStatus.AsObject;
@@ -1155,21 +1327,23 @@ export class ContainerStatus extends jspb.Message {
 
 export namespace ContainerStatus {
   export type AsObject = {
-    name: string,
+    name?: string,
     state?: ContainerState.AsObject,
     laststate?: ContainerState.AsObject,
-    ready: boolean,
-    restartcount: number,
-    image: string,
-    imageid: string,
-    containerid: string,
-    started: boolean,
+    ready?: boolean,
+    restartcount?: number,
+    image?: string,
+    imageid?: string,
+    containerid?: string,
+    started?: boolean,
   }
 }
 
 export class DaemonEndpoint extends jspb.Message {
   getPort(): number;
   setPort(value: number): DaemonEndpoint;
+  hasPort(): boolean;
+  clearPort(): DaemonEndpoint;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DaemonEndpoint.AsObject;
@@ -1181,7 +1355,7 @@ export class DaemonEndpoint extends jspb.Message {
 
 export namespace DaemonEndpoint {
   export type AsObject = {
-    port: number,
+    port?: number,
   }
 }
 
@@ -1208,6 +1382,8 @@ export namespace DownwardAPIProjection {
 export class DownwardAPIVolumeFile extends jspb.Message {
   getPath(): string;
   setPath(value: string): DownwardAPIVolumeFile;
+  hasPath(): boolean;
+  clearPath(): DownwardAPIVolumeFile;
 
   getFieldref(): ObjectFieldSelector | undefined;
   setFieldref(value?: ObjectFieldSelector): DownwardAPIVolumeFile;
@@ -1221,6 +1397,8 @@ export class DownwardAPIVolumeFile extends jspb.Message {
 
   getMode(): number;
   setMode(value: number): DownwardAPIVolumeFile;
+  hasMode(): boolean;
+  clearMode(): DownwardAPIVolumeFile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownwardAPIVolumeFile.AsObject;
@@ -1232,10 +1410,10 @@ export class DownwardAPIVolumeFile extends jspb.Message {
 
 export namespace DownwardAPIVolumeFile {
   export type AsObject = {
-    path: string,
+    path?: string,
     fieldref?: ObjectFieldSelector.AsObject,
     resourcefieldref?: ResourceFieldSelector.AsObject,
-    mode: number,
+    mode?: number,
   }
 }
 
@@ -1247,6 +1425,8 @@ export class DownwardAPIVolumeSource extends jspb.Message {
 
   getDefaultmode(): number;
   setDefaultmode(value: number): DownwardAPIVolumeSource;
+  hasDefaultmode(): boolean;
+  clearDefaultmode(): DownwardAPIVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownwardAPIVolumeSource.AsObject;
@@ -1259,13 +1439,15 @@ export class DownwardAPIVolumeSource extends jspb.Message {
 export namespace DownwardAPIVolumeSource {
   export type AsObject = {
     itemsList: Array<DownwardAPIVolumeFile.AsObject>,
-    defaultmode: number,
+    defaultmode?: number,
   }
 }
 
 export class EmptyDirVolumeSource extends jspb.Message {
   getMedium(): string;
   setMedium(value: string): EmptyDirVolumeSource;
+  hasMedium(): boolean;
+  clearMedium(): EmptyDirVolumeSource;
 
   getSizelimit(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
   setSizelimit(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): EmptyDirVolumeSource;
@@ -1282,7 +1464,7 @@ export class EmptyDirVolumeSource extends jspb.Message {
 
 export namespace EmptyDirVolumeSource {
   export type AsObject = {
-    medium: string,
+    medium?: string,
     sizelimit?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
   }
 }
@@ -1290,12 +1472,18 @@ export namespace EmptyDirVolumeSource {
 export class EndpointAddress extends jspb.Message {
   getIp(): string;
   setIp(value: string): EndpointAddress;
+  hasIp(): boolean;
+  clearIp(): EndpointAddress;
 
   getHostname(): string;
   setHostname(value: string): EndpointAddress;
+  hasHostname(): boolean;
+  clearHostname(): EndpointAddress;
 
   getNodename(): string;
   setNodename(value: string): EndpointAddress;
+  hasNodename(): boolean;
+  clearNodename(): EndpointAddress;
 
   getTargetref(): ObjectReference | undefined;
   setTargetref(value?: ObjectReference): EndpointAddress;
@@ -1312,9 +1500,9 @@ export class EndpointAddress extends jspb.Message {
 
 export namespace EndpointAddress {
   export type AsObject = {
-    ip: string,
-    hostname: string,
-    nodename: string,
+    ip?: string,
+    hostname?: string,
+    nodename?: string,
     targetref?: ObjectReference.AsObject,
   }
 }
@@ -1322,15 +1510,23 @@ export namespace EndpointAddress {
 export class EndpointPort extends jspb.Message {
   getName(): string;
   setName(value: string): EndpointPort;
+  hasName(): boolean;
+  clearName(): EndpointPort;
 
   getPort(): number;
   setPort(value: number): EndpointPort;
+  hasPort(): boolean;
+  clearPort(): EndpointPort;
 
   getProtocol(): string;
   setProtocol(value: string): EndpointPort;
+  hasProtocol(): boolean;
+  clearProtocol(): EndpointPort;
 
   getAppprotocol(): string;
   setAppprotocol(value: string): EndpointPort;
+  hasAppprotocol(): boolean;
+  clearAppprotocol(): EndpointPort;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EndpointPort.AsObject;
@@ -1342,10 +1538,10 @@ export class EndpointPort extends jspb.Message {
 
 export namespace EndpointPort {
   export type AsObject = {
-    name: string,
-    port: number,
-    protocol: string,
-    appprotocol: string,
+    name?: string,
+    port?: number,
+    protocol?: string,
+    appprotocol?: string,
   }
 }
 
@@ -1436,6 +1632,8 @@ export namespace EndpointsList {
 export class EnvFromSource extends jspb.Message {
   getPrefix(): string;
   setPrefix(value: string): EnvFromSource;
+  hasPrefix(): boolean;
+  clearPrefix(): EnvFromSource;
 
   getConfigmapref(): ConfigMapEnvSource | undefined;
   setConfigmapref(value?: ConfigMapEnvSource): EnvFromSource;
@@ -1457,7 +1655,7 @@ export class EnvFromSource extends jspb.Message {
 
 export namespace EnvFromSource {
   export type AsObject = {
-    prefix: string,
+    prefix?: string,
     configmapref?: ConfigMapEnvSource.AsObject,
     secretref?: SecretEnvSource.AsObject,
   }
@@ -1466,9 +1664,13 @@ export namespace EnvFromSource {
 export class EnvVar extends jspb.Message {
   getName(): string;
   setName(value: string): EnvVar;
+  hasName(): boolean;
+  clearName(): EnvVar;
 
   getValue(): string;
   setValue(value: string): EnvVar;
+  hasValue(): boolean;
+  clearValue(): EnvVar;
 
   getValuefrom(): EnvVarSource | undefined;
   setValuefrom(value?: EnvVarSource): EnvVar;
@@ -1485,8 +1687,8 @@ export class EnvVar extends jspb.Message {
 
 export namespace EnvVar {
   export type AsObject = {
-    name: string,
-    value: string,
+    name?: string,
+    value?: string,
     valuefrom?: EnvVarSource.AsObject,
   }
 }
@@ -1537,6 +1739,8 @@ export class EphemeralContainer extends jspb.Message {
 
   getTargetcontainername(): string;
   setTargetcontainername(value: string): EphemeralContainer;
+  hasTargetcontainername(): boolean;
+  clearTargetcontainername(): EphemeralContainer;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EphemeralContainer.AsObject;
@@ -1549,16 +1753,20 @@ export class EphemeralContainer extends jspb.Message {
 export namespace EphemeralContainer {
   export type AsObject = {
     ephemeralcontainercommon?: EphemeralContainerCommon.AsObject,
-    targetcontainername: string,
+    targetcontainername?: string,
   }
 }
 
 export class EphemeralContainerCommon extends jspb.Message {
   getName(): string;
   setName(value: string): EphemeralContainerCommon;
+  hasName(): boolean;
+  clearName(): EphemeralContainerCommon;
 
   getImage(): string;
   setImage(value: string): EphemeralContainerCommon;
+  hasImage(): boolean;
+  clearImage(): EphemeralContainerCommon;
 
   getCommandList(): Array<string>;
   setCommandList(value: Array<string>): EphemeralContainerCommon;
@@ -1572,6 +1780,8 @@ export class EphemeralContainerCommon extends jspb.Message {
 
   getWorkingdir(): string;
   setWorkingdir(value: string): EphemeralContainerCommon;
+  hasWorkingdir(): boolean;
+  clearWorkingdir(): EphemeralContainerCommon;
 
   getPortsList(): Array<ContainerPort>;
   setPortsList(value: Array<ContainerPort>): EphemeralContainerCommon;
@@ -1625,12 +1835,18 @@ export class EphemeralContainerCommon extends jspb.Message {
 
   getTerminationmessagepath(): string;
   setTerminationmessagepath(value: string): EphemeralContainerCommon;
+  hasTerminationmessagepath(): boolean;
+  clearTerminationmessagepath(): EphemeralContainerCommon;
 
   getTerminationmessagepolicy(): string;
   setTerminationmessagepolicy(value: string): EphemeralContainerCommon;
+  hasTerminationmessagepolicy(): boolean;
+  clearTerminationmessagepolicy(): EphemeralContainerCommon;
 
   getImagepullpolicy(): string;
   setImagepullpolicy(value: string): EphemeralContainerCommon;
+  hasImagepullpolicy(): boolean;
+  clearImagepullpolicy(): EphemeralContainerCommon;
 
   getSecuritycontext(): SecurityContext | undefined;
   setSecuritycontext(value?: SecurityContext): EphemeralContainerCommon;
@@ -1639,12 +1855,18 @@ export class EphemeralContainerCommon extends jspb.Message {
 
   getStdin(): boolean;
   setStdin(value: boolean): EphemeralContainerCommon;
+  hasStdin(): boolean;
+  clearStdin(): EphemeralContainerCommon;
 
   getStdinonce(): boolean;
   setStdinonce(value: boolean): EphemeralContainerCommon;
+  hasStdinonce(): boolean;
+  clearStdinonce(): EphemeralContainerCommon;
 
   getTty(): boolean;
   setTty(value: boolean): EphemeralContainerCommon;
+  hasTty(): boolean;
+  clearTty(): EphemeralContainerCommon;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EphemeralContainerCommon.AsObject;
@@ -1656,11 +1878,11 @@ export class EphemeralContainerCommon extends jspb.Message {
 
 export namespace EphemeralContainerCommon {
   export type AsObject = {
-    name: string,
-    image: string,
+    name?: string,
+    image?: string,
     commandList: Array<string>,
     argsList: Array<string>,
-    workingdir: string,
+    workingdir?: string,
     portsList: Array<ContainerPort.AsObject>,
     envfromList: Array<EnvFromSource.AsObject>,
     envList: Array<EnvVar.AsObject>,
@@ -1671,13 +1893,13 @@ export namespace EphemeralContainerCommon {
     readinessprobe?: Probe.AsObject,
     startupprobe?: Probe.AsObject,
     lifecycle?: Lifecycle.AsObject,
-    terminationmessagepath: string,
-    terminationmessagepolicy: string,
-    imagepullpolicy: string,
+    terminationmessagepath?: string,
+    terminationmessagepolicy?: string,
+    imagepullpolicy?: string,
     securitycontext?: SecurityContext.AsObject,
-    stdin: boolean,
-    stdinonce: boolean,
-    tty: boolean,
+    stdin?: boolean,
+    stdinonce?: boolean,
+    tty?: boolean,
   }
 }
 
@@ -1714,9 +1936,13 @@ export class Event extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): Event;
+  hasReason(): boolean;
+  clearReason(): Event;
 
   getMessage(): string;
   setMessage(value: string): Event;
+  hasMessage(): boolean;
+  clearMessage(): Event;
 
   getSource(): EventSource | undefined;
   setSource(value?: EventSource): Event;
@@ -1735,9 +1961,13 @@ export class Event extends jspb.Message {
 
   getCount(): number;
   setCount(value: number): Event;
+  hasCount(): boolean;
+  clearCount(): Event;
 
   getType(): string;
   setType(value: string): Event;
+  hasType(): boolean;
+  clearType(): Event;
 
   getEventtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.MicroTime | undefined;
   setEventtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.MicroTime): Event;
@@ -1751,6 +1981,8 @@ export class Event extends jspb.Message {
 
   getAction(): string;
   setAction(value: string): Event;
+  hasAction(): boolean;
+  clearAction(): Event;
 
   getRelated(): ObjectReference | undefined;
   setRelated(value?: ObjectReference): Event;
@@ -1759,9 +1991,13 @@ export class Event extends jspb.Message {
 
   getReportingcomponent(): string;
   setReportingcomponent(value: string): Event;
+  hasReportingcomponent(): boolean;
+  clearReportingcomponent(): Event;
 
   getReportinginstance(): string;
   setReportinginstance(value: string): Event;
+  hasReportinginstance(): boolean;
+  clearReportinginstance(): Event;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Event.AsObject;
@@ -1775,19 +2011,19 @@ export namespace Event {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
     involvedobject?: ObjectReference.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
     source?: EventSource.AsObject,
     firsttimestamp?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lasttimestamp?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    count: number,
-    type: string,
+    count?: number,
+    type?: string,
     eventtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.MicroTime.AsObject,
     series?: EventSeries.AsObject,
-    action: string,
+    action?: string,
     related?: ObjectReference.AsObject,
-    reportingcomponent: string,
-    reportinginstance: string,
+    reportingcomponent?: string,
+    reportinginstance?: string,
   }
 }
 
@@ -1820,6 +2056,8 @@ export namespace EventList {
 export class EventSeries extends jspb.Message {
   getCount(): number;
   setCount(value: number): EventSeries;
+  hasCount(): boolean;
+  clearCount(): EventSeries;
 
   getLastobservedtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.MicroTime | undefined;
   setLastobservedtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.MicroTime): EventSeries;
@@ -1836,7 +2074,7 @@ export class EventSeries extends jspb.Message {
 
 export namespace EventSeries {
   export type AsObject = {
-    count: number,
+    count?: number,
     lastobservedtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.MicroTime.AsObject,
   }
 }
@@ -1844,9 +2082,13 @@ export namespace EventSeries {
 export class EventSource extends jspb.Message {
   getComponent(): string;
   setComponent(value: string): EventSource;
+  hasComponent(): boolean;
+  clearComponent(): EventSource;
 
   getHost(): string;
   setHost(value: string): EventSource;
+  hasHost(): boolean;
+  clearHost(): EventSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EventSource.AsObject;
@@ -1858,8 +2100,8 @@ export class EventSource extends jspb.Message {
 
 export namespace EventSource {
   export type AsObject = {
-    component: string,
-    host: string,
+    component?: string,
+    host?: string,
   }
 }
 
@@ -1891,12 +2133,18 @@ export class FCVolumeSource extends jspb.Message {
 
   getLun(): number;
   setLun(value: number): FCVolumeSource;
+  hasLun(): boolean;
+  clearLun(): FCVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): FCVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): FCVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): FCVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): FCVolumeSource;
 
   getWwidsList(): Array<string>;
   setWwidsList(value: Array<string>): FCVolumeSource;
@@ -1914,9 +2162,9 @@ export class FCVolumeSource extends jspb.Message {
 export namespace FCVolumeSource {
   export type AsObject = {
     targetwwnsList: Array<string>,
-    lun: number,
-    fstype: string,
-    readonly: boolean,
+    lun?: number,
+    fstype?: string,
+    readonly?: boolean,
     wwidsList: Array<string>,
   }
 }
@@ -1924,9 +2172,13 @@ export namespace FCVolumeSource {
 export class FlexPersistentVolumeSource extends jspb.Message {
   getDriver(): string;
   setDriver(value: string): FlexPersistentVolumeSource;
+  hasDriver(): boolean;
+  clearDriver(): FlexPersistentVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): FlexPersistentVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): FlexPersistentVolumeSource;
 
   getSecretref(): SecretReference | undefined;
   setSecretref(value?: SecretReference): FlexPersistentVolumeSource;
@@ -1935,6 +2187,8 @@ export class FlexPersistentVolumeSource extends jspb.Message {
 
   getReadonly(): boolean;
   setReadonly(value: boolean): FlexPersistentVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): FlexPersistentVolumeSource;
 
   getOptionsMap(): jspb.Map<string, string>;
   clearOptionsMap(): FlexPersistentVolumeSource;
@@ -1949,10 +2203,10 @@ export class FlexPersistentVolumeSource extends jspb.Message {
 
 export namespace FlexPersistentVolumeSource {
   export type AsObject = {
-    driver: string,
-    fstype: string,
+    driver?: string,
+    fstype?: string,
     secretref?: SecretReference.AsObject,
-    readonly: boolean,
+    readonly?: boolean,
     optionsMap: Array<[string, string]>,
   }
 }
@@ -1960,9 +2214,13 @@ export namespace FlexPersistentVolumeSource {
 export class FlexVolumeSource extends jspb.Message {
   getDriver(): string;
   setDriver(value: string): FlexVolumeSource;
+  hasDriver(): boolean;
+  clearDriver(): FlexVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): FlexVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): FlexVolumeSource;
 
   getSecretref(): LocalObjectReference | undefined;
   setSecretref(value?: LocalObjectReference): FlexVolumeSource;
@@ -1971,6 +2229,8 @@ export class FlexVolumeSource extends jspb.Message {
 
   getReadonly(): boolean;
   setReadonly(value: boolean): FlexVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): FlexVolumeSource;
 
   getOptionsMap(): jspb.Map<string, string>;
   clearOptionsMap(): FlexVolumeSource;
@@ -1985,10 +2245,10 @@ export class FlexVolumeSource extends jspb.Message {
 
 export namespace FlexVolumeSource {
   export type AsObject = {
-    driver: string,
-    fstype: string,
+    driver?: string,
+    fstype?: string,
     secretref?: LocalObjectReference.AsObject,
-    readonly: boolean,
+    readonly?: boolean,
     optionsMap: Array<[string, string]>,
   }
 }
@@ -1996,9 +2256,13 @@ export namespace FlexVolumeSource {
 export class FlockerVolumeSource extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): FlockerVolumeSource;
+  hasDatasetname(): boolean;
+  clearDatasetname(): FlockerVolumeSource;
 
   getDatasetuuid(): string;
   setDatasetuuid(value: string): FlockerVolumeSource;
+  hasDatasetuuid(): boolean;
+  clearDatasetuuid(): FlockerVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FlockerVolumeSource.AsObject;
@@ -2010,23 +2274,31 @@ export class FlockerVolumeSource extends jspb.Message {
 
 export namespace FlockerVolumeSource {
   export type AsObject = {
-    datasetname: string,
-    datasetuuid: string,
+    datasetname?: string,
+    datasetuuid?: string,
   }
 }
 
 export class GCEPersistentDiskVolumeSource extends jspb.Message {
   getPdname(): string;
   setPdname(value: string): GCEPersistentDiskVolumeSource;
+  hasPdname(): boolean;
+  clearPdname(): GCEPersistentDiskVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): GCEPersistentDiskVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): GCEPersistentDiskVolumeSource;
 
   getPartition(): number;
   setPartition(value: number): GCEPersistentDiskVolumeSource;
+  hasPartition(): boolean;
+  clearPartition(): GCEPersistentDiskVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): GCEPersistentDiskVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): GCEPersistentDiskVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GCEPersistentDiskVolumeSource.AsObject;
@@ -2038,19 +2310,23 @@ export class GCEPersistentDiskVolumeSource extends jspb.Message {
 
 export namespace GCEPersistentDiskVolumeSource {
   export type AsObject = {
-    pdname: string,
-    fstype: string,
-    partition: number,
-    readonly: boolean,
+    pdname?: string,
+    fstype?: string,
+    partition?: number,
+    readonly?: boolean,
   }
 }
 
 export class GRPCAction extends jspb.Message {
   getPort(): number;
   setPort(value: number): GRPCAction;
+  hasPort(): boolean;
+  clearPort(): GRPCAction;
 
   getService(): string;
   setService(value: string): GRPCAction;
+  hasService(): boolean;
+  clearService(): GRPCAction;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GRPCAction.AsObject;
@@ -2062,20 +2338,26 @@ export class GRPCAction extends jspb.Message {
 
 export namespace GRPCAction {
   export type AsObject = {
-    port: number,
-    service: string,
+    port?: number,
+    service?: string,
   }
 }
 
 export class GitRepoVolumeSource extends jspb.Message {
   getRepository(): string;
   setRepository(value: string): GitRepoVolumeSource;
+  hasRepository(): boolean;
+  clearRepository(): GitRepoVolumeSource;
 
   getRevision(): string;
   setRevision(value: string): GitRepoVolumeSource;
+  hasRevision(): boolean;
+  clearRevision(): GitRepoVolumeSource;
 
   getDirectory(): string;
   setDirectory(value: string): GitRepoVolumeSource;
+  hasDirectory(): boolean;
+  clearDirectory(): GitRepoVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GitRepoVolumeSource.AsObject;
@@ -2087,24 +2369,32 @@ export class GitRepoVolumeSource extends jspb.Message {
 
 export namespace GitRepoVolumeSource {
   export type AsObject = {
-    repository: string,
-    revision: string,
-    directory: string,
+    repository?: string,
+    revision?: string,
+    directory?: string,
   }
 }
 
 export class GlusterfsPersistentVolumeSource extends jspb.Message {
   getEndpoints(): string;
   setEndpoints(value: string): GlusterfsPersistentVolumeSource;
+  hasEndpoints(): boolean;
+  clearEndpoints(): GlusterfsPersistentVolumeSource;
 
   getPath(): string;
   setPath(value: string): GlusterfsPersistentVolumeSource;
+  hasPath(): boolean;
+  clearPath(): GlusterfsPersistentVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): GlusterfsPersistentVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): GlusterfsPersistentVolumeSource;
 
   getEndpointsnamespace(): string;
   setEndpointsnamespace(value: string): GlusterfsPersistentVolumeSource;
+  hasEndpointsnamespace(): boolean;
+  clearEndpointsnamespace(): GlusterfsPersistentVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GlusterfsPersistentVolumeSource.AsObject;
@@ -2116,22 +2406,28 @@ export class GlusterfsPersistentVolumeSource extends jspb.Message {
 
 export namespace GlusterfsPersistentVolumeSource {
   export type AsObject = {
-    endpoints: string,
-    path: string,
-    readonly: boolean,
-    endpointsnamespace: string,
+    endpoints?: string,
+    path?: string,
+    readonly?: boolean,
+    endpointsnamespace?: string,
   }
 }
 
 export class GlusterfsVolumeSource extends jspb.Message {
   getEndpoints(): string;
   setEndpoints(value: string): GlusterfsVolumeSource;
+  hasEndpoints(): boolean;
+  clearEndpoints(): GlusterfsVolumeSource;
 
   getPath(): string;
   setPath(value: string): GlusterfsVolumeSource;
+  hasPath(): boolean;
+  clearPath(): GlusterfsVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): GlusterfsVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): GlusterfsVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GlusterfsVolumeSource.AsObject;
@@ -2143,15 +2439,17 @@ export class GlusterfsVolumeSource extends jspb.Message {
 
 export namespace GlusterfsVolumeSource {
   export type AsObject = {
-    endpoints: string,
-    path: string,
-    readonly: boolean,
+    endpoints?: string,
+    path?: string,
+    readonly?: boolean,
   }
 }
 
 export class HTTPGetAction extends jspb.Message {
   getPath(): string;
   setPath(value: string): HTTPGetAction;
+  hasPath(): boolean;
+  clearPath(): HTTPGetAction;
 
   getPort(): k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString | undefined;
   setPort(value?: k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString): HTTPGetAction;
@@ -2160,9 +2458,13 @@ export class HTTPGetAction extends jspb.Message {
 
   getHost(): string;
   setHost(value: string): HTTPGetAction;
+  hasHost(): boolean;
+  clearHost(): HTTPGetAction;
 
   getScheme(): string;
   setScheme(value: string): HTTPGetAction;
+  hasScheme(): boolean;
+  clearScheme(): HTTPGetAction;
 
   getHttpheadersList(): Array<HTTPHeader>;
   setHttpheadersList(value: Array<HTTPHeader>): HTTPGetAction;
@@ -2179,10 +2481,10 @@ export class HTTPGetAction extends jspb.Message {
 
 export namespace HTTPGetAction {
   export type AsObject = {
-    path: string,
+    path?: string,
     port?: k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString.AsObject,
-    host: string,
-    scheme: string,
+    host?: string,
+    scheme?: string,
     httpheadersList: Array<HTTPHeader.AsObject>,
   }
 }
@@ -2190,9 +2492,13 @@ export namespace HTTPGetAction {
 export class HTTPHeader extends jspb.Message {
   getName(): string;
   setName(value: string): HTTPHeader;
+  hasName(): boolean;
+  clearName(): HTTPHeader;
 
   getValue(): string;
   setValue(value: string): HTTPHeader;
+  hasValue(): boolean;
+  clearValue(): HTTPHeader;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HTTPHeader.AsObject;
@@ -2204,14 +2510,16 @@ export class HTTPHeader extends jspb.Message {
 
 export namespace HTTPHeader {
   export type AsObject = {
-    name: string,
-    value: string,
+    name?: string,
+    value?: string,
   }
 }
 
 export class HostAlias extends jspb.Message {
   getIp(): string;
   setIp(value: string): HostAlias;
+  hasIp(): boolean;
+  clearIp(): HostAlias;
 
   getHostnamesList(): Array<string>;
   setHostnamesList(value: Array<string>): HostAlias;
@@ -2228,7 +2536,7 @@ export class HostAlias extends jspb.Message {
 
 export namespace HostAlias {
   export type AsObject = {
-    ip: string,
+    ip?: string,
     hostnamesList: Array<string>,
   }
 }
@@ -2236,9 +2544,13 @@ export namespace HostAlias {
 export class HostPathVolumeSource extends jspb.Message {
   getPath(): string;
   setPath(value: string): HostPathVolumeSource;
+  hasPath(): boolean;
+  clearPath(): HostPathVolumeSource;
 
   getType(): string;
   setType(value: string): HostPathVolumeSource;
+  hasType(): boolean;
+  clearType(): HostPathVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HostPathVolumeSource.AsObject;
@@ -2250,29 +2562,41 @@ export class HostPathVolumeSource extends jspb.Message {
 
 export namespace HostPathVolumeSource {
   export type AsObject = {
-    path: string,
-    type: string,
+    path?: string,
+    type?: string,
   }
 }
 
 export class ISCSIPersistentVolumeSource extends jspb.Message {
   getTargetportal(): string;
   setTargetportal(value: string): ISCSIPersistentVolumeSource;
+  hasTargetportal(): boolean;
+  clearTargetportal(): ISCSIPersistentVolumeSource;
 
   getIqn(): string;
   setIqn(value: string): ISCSIPersistentVolumeSource;
+  hasIqn(): boolean;
+  clearIqn(): ISCSIPersistentVolumeSource;
 
   getLun(): number;
   setLun(value: number): ISCSIPersistentVolumeSource;
+  hasLun(): boolean;
+  clearLun(): ISCSIPersistentVolumeSource;
 
   getIscsiinterface(): string;
   setIscsiinterface(value: string): ISCSIPersistentVolumeSource;
+  hasIscsiinterface(): boolean;
+  clearIscsiinterface(): ISCSIPersistentVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): ISCSIPersistentVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): ISCSIPersistentVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): ISCSIPersistentVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): ISCSIPersistentVolumeSource;
 
   getPortalsList(): Array<string>;
   setPortalsList(value: Array<string>): ISCSIPersistentVolumeSource;
@@ -2281,9 +2605,13 @@ export class ISCSIPersistentVolumeSource extends jspb.Message {
 
   getChapauthdiscovery(): boolean;
   setChapauthdiscovery(value: boolean): ISCSIPersistentVolumeSource;
+  hasChapauthdiscovery(): boolean;
+  clearChapauthdiscovery(): ISCSIPersistentVolumeSource;
 
   getChapauthsession(): boolean;
   setChapauthsession(value: boolean): ISCSIPersistentVolumeSource;
+  hasChapauthsession(): boolean;
+  clearChapauthsession(): ISCSIPersistentVolumeSource;
 
   getSecretref(): SecretReference | undefined;
   setSecretref(value?: SecretReference): ISCSIPersistentVolumeSource;
@@ -2292,6 +2620,8 @@ export class ISCSIPersistentVolumeSource extends jspb.Message {
 
   getInitiatorname(): string;
   setInitiatorname(value: string): ISCSIPersistentVolumeSource;
+  hasInitiatorname(): boolean;
+  clearInitiatorname(): ISCSIPersistentVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ISCSIPersistentVolumeSource.AsObject;
@@ -2303,38 +2633,50 @@ export class ISCSIPersistentVolumeSource extends jspb.Message {
 
 export namespace ISCSIPersistentVolumeSource {
   export type AsObject = {
-    targetportal: string,
-    iqn: string,
-    lun: number,
-    iscsiinterface: string,
-    fstype: string,
-    readonly: boolean,
+    targetportal?: string,
+    iqn?: string,
+    lun?: number,
+    iscsiinterface?: string,
+    fstype?: string,
+    readonly?: boolean,
     portalsList: Array<string>,
-    chapauthdiscovery: boolean,
-    chapauthsession: boolean,
+    chapauthdiscovery?: boolean,
+    chapauthsession?: boolean,
     secretref?: SecretReference.AsObject,
-    initiatorname: string,
+    initiatorname?: string,
   }
 }
 
 export class ISCSIVolumeSource extends jspb.Message {
   getTargetportal(): string;
   setTargetportal(value: string): ISCSIVolumeSource;
+  hasTargetportal(): boolean;
+  clearTargetportal(): ISCSIVolumeSource;
 
   getIqn(): string;
   setIqn(value: string): ISCSIVolumeSource;
+  hasIqn(): boolean;
+  clearIqn(): ISCSIVolumeSource;
 
   getLun(): number;
   setLun(value: number): ISCSIVolumeSource;
+  hasLun(): boolean;
+  clearLun(): ISCSIVolumeSource;
 
   getIscsiinterface(): string;
   setIscsiinterface(value: string): ISCSIVolumeSource;
+  hasIscsiinterface(): boolean;
+  clearIscsiinterface(): ISCSIVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): ISCSIVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): ISCSIVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): ISCSIVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): ISCSIVolumeSource;
 
   getPortalsList(): Array<string>;
   setPortalsList(value: Array<string>): ISCSIVolumeSource;
@@ -2343,9 +2685,13 @@ export class ISCSIVolumeSource extends jspb.Message {
 
   getChapauthdiscovery(): boolean;
   setChapauthdiscovery(value: boolean): ISCSIVolumeSource;
+  hasChapauthdiscovery(): boolean;
+  clearChapauthdiscovery(): ISCSIVolumeSource;
 
   getChapauthsession(): boolean;
   setChapauthsession(value: boolean): ISCSIVolumeSource;
+  hasChapauthsession(): boolean;
+  clearChapauthsession(): ISCSIVolumeSource;
 
   getSecretref(): LocalObjectReference | undefined;
   setSecretref(value?: LocalObjectReference): ISCSIVolumeSource;
@@ -2354,6 +2700,8 @@ export class ISCSIVolumeSource extends jspb.Message {
 
   getInitiatorname(): string;
   setInitiatorname(value: string): ISCSIVolumeSource;
+  hasInitiatorname(): boolean;
+  clearInitiatorname(): ISCSIVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ISCSIVolumeSource.AsObject;
@@ -2365,29 +2713,35 @@ export class ISCSIVolumeSource extends jspb.Message {
 
 export namespace ISCSIVolumeSource {
   export type AsObject = {
-    targetportal: string,
-    iqn: string,
-    lun: number,
-    iscsiinterface: string,
-    fstype: string,
-    readonly: boolean,
+    targetportal?: string,
+    iqn?: string,
+    lun?: number,
+    iscsiinterface?: string,
+    fstype?: string,
+    readonly?: boolean,
     portalsList: Array<string>,
-    chapauthdiscovery: boolean,
-    chapauthsession: boolean,
+    chapauthdiscovery?: boolean,
+    chapauthsession?: boolean,
     secretref?: LocalObjectReference.AsObject,
-    initiatorname: string,
+    initiatorname?: string,
   }
 }
 
 export class KeyToPath extends jspb.Message {
   getKey(): string;
   setKey(value: string): KeyToPath;
+  hasKey(): boolean;
+  clearKey(): KeyToPath;
 
   getPath(): string;
   setPath(value: string): KeyToPath;
+  hasPath(): boolean;
+  clearPath(): KeyToPath;
 
   getMode(): number;
   setMode(value: number): KeyToPath;
+  hasMode(): boolean;
+  clearMode(): KeyToPath;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): KeyToPath.AsObject;
@@ -2399,9 +2753,9 @@ export class KeyToPath extends jspb.Message {
 
 export namespace KeyToPath {
   export type AsObject = {
-    key: string,
-    path: string,
-    mode: number,
+    key?: string,
+    path?: string,
+    mode?: number,
   }
 }
 
@@ -2492,6 +2846,8 @@ export namespace LimitRange {
 export class LimitRangeItem extends jspb.Message {
   getType(): string;
   setType(value: string): LimitRangeItem;
+  hasType(): boolean;
+  clearType(): LimitRangeItem;
 
   getMaxMap(): jspb.Map<string, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity>;
   clearMaxMap(): LimitRangeItem;
@@ -2518,7 +2874,7 @@ export class LimitRangeItem extends jspb.Message {
 
 export namespace LimitRangeItem {
   export type AsObject = {
-    type: string,
+    type?: string,
     maxMap: Array<[string, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject]>,
     minMap: Array<[string, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject]>,
     defaultMap: Array<[string, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject]>,
@@ -2602,9 +2958,13 @@ export namespace List {
 export class LoadBalancerIngress extends jspb.Message {
   getIp(): string;
   setIp(value: string): LoadBalancerIngress;
+  hasIp(): boolean;
+  clearIp(): LoadBalancerIngress;
 
   getHostname(): string;
   setHostname(value: string): LoadBalancerIngress;
+  hasHostname(): boolean;
+  clearHostname(): LoadBalancerIngress;
 
   getPortsList(): Array<PortStatus>;
   setPortsList(value: Array<PortStatus>): LoadBalancerIngress;
@@ -2621,8 +2981,8 @@ export class LoadBalancerIngress extends jspb.Message {
 
 export namespace LoadBalancerIngress {
   export type AsObject = {
-    ip: string,
-    hostname: string,
+    ip?: string,
+    hostname?: string,
     portsList: Array<PortStatus.AsObject>,
   }
 }
@@ -2650,6 +3010,8 @@ export namespace LoadBalancerStatus {
 export class LocalObjectReference extends jspb.Message {
   getName(): string;
   setName(value: string): LocalObjectReference;
+  hasName(): boolean;
+  clearName(): LocalObjectReference;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LocalObjectReference.AsObject;
@@ -2661,16 +3023,20 @@ export class LocalObjectReference extends jspb.Message {
 
 export namespace LocalObjectReference {
   export type AsObject = {
-    name: string,
+    name?: string,
   }
 }
 
 export class LocalVolumeSource extends jspb.Message {
   getPath(): string;
   setPath(value: string): LocalVolumeSource;
+  hasPath(): boolean;
+  clearPath(): LocalVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): LocalVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): LocalVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LocalVolumeSource.AsObject;
@@ -2682,20 +3048,26 @@ export class LocalVolumeSource extends jspb.Message {
 
 export namespace LocalVolumeSource {
   export type AsObject = {
-    path: string,
-    fstype: string,
+    path?: string,
+    fstype?: string,
   }
 }
 
 export class NFSVolumeSource extends jspb.Message {
   getServer(): string;
   setServer(value: string): NFSVolumeSource;
+  hasServer(): boolean;
+  clearServer(): NFSVolumeSource;
 
   getPath(): string;
   setPath(value: string): NFSVolumeSource;
+  hasPath(): boolean;
+  clearPath(): NFSVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): NFSVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): NFSVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NFSVolumeSource.AsObject;
@@ -2707,9 +3079,9 @@ export class NFSVolumeSource extends jspb.Message {
 
 export namespace NFSVolumeSource {
   export type AsObject = {
-    server: string,
-    path: string,
-    readonly: boolean,
+    server?: string,
+    path?: string,
+    readonly?: boolean,
   }
 }
 
@@ -2748,9 +3120,13 @@ export namespace Namespace {
 export class NamespaceCondition extends jspb.Message {
   getType(): string;
   setType(value: string): NamespaceCondition;
+  hasType(): boolean;
+  clearType(): NamespaceCondition;
 
   getStatus(): string;
   setStatus(value: string): NamespaceCondition;
+  hasStatus(): boolean;
+  clearStatus(): NamespaceCondition;
 
   getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NamespaceCondition;
@@ -2759,9 +3135,13 @@ export class NamespaceCondition extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): NamespaceCondition;
+  hasReason(): boolean;
+  clearReason(): NamespaceCondition;
 
   getMessage(): string;
   setMessage(value: string): NamespaceCondition;
+  hasMessage(): boolean;
+  clearMessage(): NamespaceCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NamespaceCondition.AsObject;
@@ -2773,11 +3153,11 @@ export class NamespaceCondition extends jspb.Message {
 
 export namespace NamespaceCondition {
   export type AsObject = {
-    type: string,
-    status: string,
+    type?: string,
+    status?: string,
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
@@ -2830,6 +3210,8 @@ export namespace NamespaceSpec {
 export class NamespaceStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): NamespaceStatus;
+  hasPhase(): boolean;
+  clearPhase(): NamespaceStatus;
 
   getConditionsList(): Array<NamespaceCondition>;
   setConditionsList(value: Array<NamespaceCondition>): NamespaceStatus;
@@ -2846,7 +3228,7 @@ export class NamespaceStatus extends jspb.Message {
 
 export namespace NamespaceStatus {
   export type AsObject = {
-    phase: string,
+    phase?: string,
     conditionsList: Array<NamespaceCondition.AsObject>,
   }
 }
@@ -2886,9 +3268,13 @@ export namespace Node {
 export class NodeAddress extends jspb.Message {
   getType(): string;
   setType(value: string): NodeAddress;
+  hasType(): boolean;
+  clearType(): NodeAddress;
 
   getAddress(): string;
   setAddress(value: string): NodeAddress;
+  hasAddress(): boolean;
+  clearAddress(): NodeAddress;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NodeAddress.AsObject;
@@ -2900,8 +3286,8 @@ export class NodeAddress extends jspb.Message {
 
 export namespace NodeAddress {
   export type AsObject = {
-    type: string,
-    address: string,
+    type?: string,
+    address?: string,
   }
 }
 
@@ -2934,9 +3320,13 @@ export namespace NodeAffinity {
 export class NodeCondition extends jspb.Message {
   getType(): string;
   setType(value: string): NodeCondition;
+  hasType(): boolean;
+  clearType(): NodeCondition;
 
   getStatus(): string;
   setStatus(value: string): NodeCondition;
+  hasStatus(): boolean;
+  clearStatus(): NodeCondition;
 
   getLastheartbeattime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastheartbeattime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NodeCondition;
@@ -2950,9 +3340,13 @@ export class NodeCondition extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): NodeCondition;
+  hasReason(): boolean;
+  clearReason(): NodeCondition;
 
   getMessage(): string;
   setMessage(value: string): NodeCondition;
+  hasMessage(): boolean;
+  clearMessage(): NodeCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NodeCondition.AsObject;
@@ -2964,12 +3358,12 @@ export class NodeCondition extends jspb.Message {
 
 export namespace NodeCondition {
   export type AsObject = {
-    type: string,
-    status: string,
+    type?: string,
+    status?: string,
     lastheartbeattime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
@@ -3011,6 +3405,8 @@ export class NodeConfigStatus extends jspb.Message {
 
   getError(): string;
   setError(value: string): NodeConfigStatus;
+  hasError(): boolean;
+  clearError(): NodeConfigStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NodeConfigStatus.AsObject;
@@ -3025,7 +3421,7 @@ export namespace NodeConfigStatus {
     assigned?: NodeConfigSource.AsObject,
     active?: NodeConfigSource.AsObject,
     lastknowngood?: NodeConfigSource.AsObject,
-    error: string,
+    error?: string,
   }
 }
 
@@ -3078,6 +3474,8 @@ export namespace NodeList {
 export class NodeProxyOptions extends jspb.Message {
   getPath(): string;
   setPath(value: string): NodeProxyOptions;
+  hasPath(): boolean;
+  clearPath(): NodeProxyOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NodeProxyOptions.AsObject;
@@ -3089,7 +3487,7 @@ export class NodeProxyOptions extends jspb.Message {
 
 export namespace NodeProxyOptions {
   export type AsObject = {
-    path: string,
+    path?: string,
   }
 }
 
@@ -3134,9 +3532,13 @@ export namespace NodeSelector {
 export class NodeSelectorRequirement extends jspb.Message {
   getKey(): string;
   setKey(value: string): NodeSelectorRequirement;
+  hasKey(): boolean;
+  clearKey(): NodeSelectorRequirement;
 
   getOperator(): string;
   setOperator(value: string): NodeSelectorRequirement;
+  hasOperator(): boolean;
+  clearOperator(): NodeSelectorRequirement;
 
   getValuesList(): Array<string>;
   setValuesList(value: Array<string>): NodeSelectorRequirement;
@@ -3153,8 +3555,8 @@ export class NodeSelectorRequirement extends jspb.Message {
 
 export namespace NodeSelectorRequirement {
   export type AsObject = {
-    key: string,
-    operator: string,
+    key?: string,
+    operator?: string,
     valuesList: Array<string>,
   }
 }
@@ -3188,6 +3590,8 @@ export namespace NodeSelectorTerm {
 export class NodeSpec extends jspb.Message {
   getPodcidr(): string;
   setPodcidr(value: string): NodeSpec;
+  hasPodcidr(): boolean;
+  clearPodcidr(): NodeSpec;
 
   getPodcidrsList(): Array<string>;
   setPodcidrsList(value: Array<string>): NodeSpec;
@@ -3196,9 +3600,13 @@ export class NodeSpec extends jspb.Message {
 
   getProviderid(): string;
   setProviderid(value: string): NodeSpec;
+  hasProviderid(): boolean;
+  clearProviderid(): NodeSpec;
 
   getUnschedulable(): boolean;
   setUnschedulable(value: boolean): NodeSpec;
+  hasUnschedulable(): boolean;
+  clearUnschedulable(): NodeSpec;
 
   getTaintsList(): Array<Taint>;
   setTaintsList(value: Array<Taint>): NodeSpec;
@@ -3212,6 +3620,8 @@ export class NodeSpec extends jspb.Message {
 
   getExternalid(): string;
   setExternalid(value: string): NodeSpec;
+  hasExternalid(): boolean;
+  clearExternalid(): NodeSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NodeSpec.AsObject;
@@ -3223,13 +3633,13 @@ export class NodeSpec extends jspb.Message {
 
 export namespace NodeSpec {
   export type AsObject = {
-    podcidr: string,
+    podcidr?: string,
     podcidrsList: Array<string>,
-    providerid: string,
-    unschedulable: boolean,
+    providerid?: string,
+    unschedulable?: boolean,
     taintsList: Array<Taint.AsObject>,
     configsource?: NodeConfigSource.AsObject,
-    externalid: string,
+    externalid?: string,
   }
 }
 
@@ -3242,6 +3652,8 @@ export class NodeStatus extends jspb.Message {
 
   getPhase(): string;
   setPhase(value: string): NodeStatus;
+  hasPhase(): boolean;
+  clearPhase(): NodeStatus;
 
   getConditionsList(): Array<NodeCondition>;
   setConditionsList(value: Array<NodeCondition>): NodeStatus;
@@ -3295,7 +3707,7 @@ export namespace NodeStatus {
   export type AsObject = {
     capacityMap: Array<[string, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject]>,
     allocatableMap: Array<[string, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject]>,
-    phase: string,
+    phase?: string,
     conditionsList: Array<NodeCondition.AsObject>,
     addressesList: Array<NodeAddress.AsObject>,
     daemonendpoints?: NodeDaemonEndpoints.AsObject,
@@ -3310,33 +3722,53 @@ export namespace NodeStatus {
 export class NodeSystemInfo extends jspb.Message {
   getMachineid(): string;
   setMachineid(value: string): NodeSystemInfo;
+  hasMachineid(): boolean;
+  clearMachineid(): NodeSystemInfo;
 
   getSystemuuid(): string;
   setSystemuuid(value: string): NodeSystemInfo;
+  hasSystemuuid(): boolean;
+  clearSystemuuid(): NodeSystemInfo;
 
   getBootid(): string;
   setBootid(value: string): NodeSystemInfo;
+  hasBootid(): boolean;
+  clearBootid(): NodeSystemInfo;
 
   getKernelversion(): string;
   setKernelversion(value: string): NodeSystemInfo;
+  hasKernelversion(): boolean;
+  clearKernelversion(): NodeSystemInfo;
 
   getOsimage(): string;
   setOsimage(value: string): NodeSystemInfo;
+  hasOsimage(): boolean;
+  clearOsimage(): NodeSystemInfo;
 
   getContainerruntimeversion(): string;
   setContainerruntimeversion(value: string): NodeSystemInfo;
+  hasContainerruntimeversion(): boolean;
+  clearContainerruntimeversion(): NodeSystemInfo;
 
   getKubeletversion(): string;
   setKubeletversion(value: string): NodeSystemInfo;
+  hasKubeletversion(): boolean;
+  clearKubeletversion(): NodeSystemInfo;
 
   getKubeproxyversion(): string;
   setKubeproxyversion(value: string): NodeSystemInfo;
+  hasKubeproxyversion(): boolean;
+  clearKubeproxyversion(): NodeSystemInfo;
 
   getOperatingsystem(): string;
   setOperatingsystem(value: string): NodeSystemInfo;
+  hasOperatingsystem(): boolean;
+  clearOperatingsystem(): NodeSystemInfo;
 
   getArchitecture(): string;
   setArchitecture(value: string): NodeSystemInfo;
+  hasArchitecture(): boolean;
+  clearArchitecture(): NodeSystemInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NodeSystemInfo.AsObject;
@@ -3348,25 +3780,29 @@ export class NodeSystemInfo extends jspb.Message {
 
 export namespace NodeSystemInfo {
   export type AsObject = {
-    machineid: string,
-    systemuuid: string,
-    bootid: string,
-    kernelversion: string,
-    osimage: string,
-    containerruntimeversion: string,
-    kubeletversion: string,
-    kubeproxyversion: string,
-    operatingsystem: string,
-    architecture: string,
+    machineid?: string,
+    systemuuid?: string,
+    bootid?: string,
+    kernelversion?: string,
+    osimage?: string,
+    containerruntimeversion?: string,
+    kubeletversion?: string,
+    kubeproxyversion?: string,
+    operatingsystem?: string,
+    architecture?: string,
   }
 }
 
 export class ObjectFieldSelector extends jspb.Message {
   getApiversion(): string;
   setApiversion(value: string): ObjectFieldSelector;
+  hasApiversion(): boolean;
+  clearApiversion(): ObjectFieldSelector;
 
   getFieldpath(): string;
   setFieldpath(value: string): ObjectFieldSelector;
+  hasFieldpath(): boolean;
+  clearFieldpath(): ObjectFieldSelector;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ObjectFieldSelector.AsObject;
@@ -3378,32 +3814,46 @@ export class ObjectFieldSelector extends jspb.Message {
 
 export namespace ObjectFieldSelector {
   export type AsObject = {
-    apiversion: string,
-    fieldpath: string,
+    apiversion?: string,
+    fieldpath?: string,
   }
 }
 
 export class ObjectReference extends jspb.Message {
   getKind(): string;
   setKind(value: string): ObjectReference;
+  hasKind(): boolean;
+  clearKind(): ObjectReference;
 
   getNamespace(): string;
   setNamespace(value: string): ObjectReference;
+  hasNamespace(): boolean;
+  clearNamespace(): ObjectReference;
 
   getName(): string;
   setName(value: string): ObjectReference;
+  hasName(): boolean;
+  clearName(): ObjectReference;
 
   getUid(): string;
   setUid(value: string): ObjectReference;
+  hasUid(): boolean;
+  clearUid(): ObjectReference;
 
   getApiversion(): string;
   setApiversion(value: string): ObjectReference;
+  hasApiversion(): boolean;
+  clearApiversion(): ObjectReference;
 
   getResourceversion(): string;
   setResourceversion(value: string): ObjectReference;
+  hasResourceversion(): boolean;
+  clearResourceversion(): ObjectReference;
 
   getFieldpath(): string;
   setFieldpath(value: string): ObjectReference;
+  hasFieldpath(): boolean;
+  clearFieldpath(): ObjectReference;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ObjectReference.AsObject;
@@ -3415,13 +3865,13 @@ export class ObjectReference extends jspb.Message {
 
 export namespace ObjectReference {
   export type AsObject = {
-    kind: string,
-    namespace: string,
-    name: string,
-    uid: string,
-    apiversion: string,
-    resourceversion: string,
-    fieldpath: string,
+    kind?: string,
+    namespace?: string,
+    name?: string,
+    uid?: string,
+    apiversion?: string,
+    resourceversion?: string,
+    fieldpath?: string,
   }
 }
 
@@ -3492,9 +3942,13 @@ export namespace PersistentVolumeClaim {
 export class PersistentVolumeClaimCondition extends jspb.Message {
   getType(): string;
   setType(value: string): PersistentVolumeClaimCondition;
+  hasType(): boolean;
+  clearType(): PersistentVolumeClaimCondition;
 
   getStatus(): string;
   setStatus(value: string): PersistentVolumeClaimCondition;
+  hasStatus(): boolean;
+  clearStatus(): PersistentVolumeClaimCondition;
 
   getLastprobetime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastprobetime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PersistentVolumeClaimCondition;
@@ -3508,9 +3962,13 @@ export class PersistentVolumeClaimCondition extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): PersistentVolumeClaimCondition;
+  hasReason(): boolean;
+  clearReason(): PersistentVolumeClaimCondition;
 
   getMessage(): string;
   setMessage(value: string): PersistentVolumeClaimCondition;
+  hasMessage(): boolean;
+  clearMessage(): PersistentVolumeClaimCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PersistentVolumeClaimCondition.AsObject;
@@ -3522,12 +3980,12 @@ export class PersistentVolumeClaimCondition extends jspb.Message {
 
 export namespace PersistentVolumeClaimCondition {
   export type AsObject = {
-    type: string,
-    status: string,
+    type?: string,
+    status?: string,
     lastprobetime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
@@ -3575,12 +4033,18 @@ export class PersistentVolumeClaimSpec extends jspb.Message {
 
   getVolumename(): string;
   setVolumename(value: string): PersistentVolumeClaimSpec;
+  hasVolumename(): boolean;
+  clearVolumename(): PersistentVolumeClaimSpec;
 
   getStorageclassname(): string;
   setStorageclassname(value: string): PersistentVolumeClaimSpec;
+  hasStorageclassname(): boolean;
+  clearStorageclassname(): PersistentVolumeClaimSpec;
 
   getVolumemode(): string;
   setVolumemode(value: string): PersistentVolumeClaimSpec;
+  hasVolumemode(): boolean;
+  clearVolumemode(): PersistentVolumeClaimSpec;
 
   getDatasource(): TypedLocalObjectReference | undefined;
   setDatasource(value?: TypedLocalObjectReference): PersistentVolumeClaimSpec;
@@ -3605,9 +4069,9 @@ export namespace PersistentVolumeClaimSpec {
     accessmodesList: Array<string>,
     selector?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.AsObject,
     resources?: ResourceRequirements.AsObject,
-    volumename: string,
-    storageclassname: string,
-    volumemode: string,
+    volumename?: string,
+    storageclassname?: string,
+    volumemode?: string,
     datasource?: TypedLocalObjectReference.AsObject,
     datasourceref?: TypedLocalObjectReference.AsObject,
   }
@@ -3616,6 +4080,8 @@ export namespace PersistentVolumeClaimSpec {
 export class PersistentVolumeClaimStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): PersistentVolumeClaimStatus;
+  hasPhase(): boolean;
+  clearPhase(): PersistentVolumeClaimStatus;
 
   getAccessmodesList(): Array<string>;
   setAccessmodesList(value: Array<string>): PersistentVolumeClaimStatus;
@@ -3635,6 +4101,8 @@ export class PersistentVolumeClaimStatus extends jspb.Message {
 
   getResizestatus(): string;
   setResizestatus(value: string): PersistentVolumeClaimStatus;
+  hasResizestatus(): boolean;
+  clearResizestatus(): PersistentVolumeClaimStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PersistentVolumeClaimStatus.AsObject;
@@ -3646,12 +4114,12 @@ export class PersistentVolumeClaimStatus extends jspb.Message {
 
 export namespace PersistentVolumeClaimStatus {
   export type AsObject = {
-    phase: string,
+    phase?: string,
     accessmodesList: Array<string>,
     capacityMap: Array<[string, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject]>,
     conditionsList: Array<PersistentVolumeClaimCondition.AsObject>,
     allocatedresourcesMap: Array<[string, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject]>,
-    resizestatus: string,
+    resizestatus?: string,
   }
 }
 
@@ -3684,9 +4152,13 @@ export namespace PersistentVolumeClaimTemplate {
 export class PersistentVolumeClaimVolumeSource extends jspb.Message {
   getClaimname(): string;
   setClaimname(value: string): PersistentVolumeClaimVolumeSource;
+  hasClaimname(): boolean;
+  clearClaimname(): PersistentVolumeClaimVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): PersistentVolumeClaimVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): PersistentVolumeClaimVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PersistentVolumeClaimVolumeSource.AsObject;
@@ -3698,8 +4170,8 @@ export class PersistentVolumeClaimVolumeSource extends jspb.Message {
 
 export namespace PersistentVolumeClaimVolumeSource {
   export type AsObject = {
-    claimname: string,
-    readonly: boolean,
+    claimname?: string,
+    readonly?: boolean,
   }
 }
 
@@ -3896,9 +4368,13 @@ export class PersistentVolumeSpec extends jspb.Message {
 
   getPersistentvolumereclaimpolicy(): string;
   setPersistentvolumereclaimpolicy(value: string): PersistentVolumeSpec;
+  hasPersistentvolumereclaimpolicy(): boolean;
+  clearPersistentvolumereclaimpolicy(): PersistentVolumeSpec;
 
   getStorageclassname(): string;
   setStorageclassname(value: string): PersistentVolumeSpec;
+  hasStorageclassname(): boolean;
+  clearStorageclassname(): PersistentVolumeSpec;
 
   getMountoptionsList(): Array<string>;
   setMountoptionsList(value: Array<string>): PersistentVolumeSpec;
@@ -3907,6 +4383,8 @@ export class PersistentVolumeSpec extends jspb.Message {
 
   getVolumemode(): string;
   setVolumemode(value: string): PersistentVolumeSpec;
+  hasVolumemode(): boolean;
+  clearVolumemode(): PersistentVolumeSpec;
 
   getNodeaffinity(): VolumeNodeAffinity | undefined;
   setNodeaffinity(value?: VolumeNodeAffinity): PersistentVolumeSpec;
@@ -3927,10 +4405,10 @@ export namespace PersistentVolumeSpec {
     persistentvolumesource?: PersistentVolumeSource.AsObject,
     accessmodesList: Array<string>,
     claimref?: ObjectReference.AsObject,
-    persistentvolumereclaimpolicy: string,
-    storageclassname: string,
+    persistentvolumereclaimpolicy?: string,
+    storageclassname?: string,
     mountoptionsList: Array<string>,
-    volumemode: string,
+    volumemode?: string,
     nodeaffinity?: VolumeNodeAffinity.AsObject,
   }
 }
@@ -3938,12 +4416,18 @@ export namespace PersistentVolumeSpec {
 export class PersistentVolumeStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): PersistentVolumeStatus;
+  hasPhase(): boolean;
+  clearPhase(): PersistentVolumeStatus;
 
   getMessage(): string;
   setMessage(value: string): PersistentVolumeStatus;
+  hasMessage(): boolean;
+  clearMessage(): PersistentVolumeStatus;
 
   getReason(): string;
   setReason(value: string): PersistentVolumeStatus;
+  hasReason(): boolean;
+  clearReason(): PersistentVolumeStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PersistentVolumeStatus.AsObject;
@@ -3955,18 +4439,22 @@ export class PersistentVolumeStatus extends jspb.Message {
 
 export namespace PersistentVolumeStatus {
   export type AsObject = {
-    phase: string,
-    message: string,
-    reason: string,
+    phase?: string,
+    message?: string,
+    reason?: string,
   }
 }
 
 export class PhotonPersistentDiskVolumeSource extends jspb.Message {
   getPdid(): string;
   setPdid(value: string): PhotonPersistentDiskVolumeSource;
+  hasPdid(): boolean;
+  clearPdid(): PhotonPersistentDiskVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): PhotonPersistentDiskVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): PhotonPersistentDiskVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PhotonPersistentDiskVolumeSource.AsObject;
@@ -3978,8 +4466,8 @@ export class PhotonPersistentDiskVolumeSource extends jspb.Message {
 
 export namespace PhotonPersistentDiskVolumeSource {
   export type AsObject = {
-    pdid: string,
-    fstype: string,
+    pdid?: string,
+    fstype?: string,
   }
 }
 
@@ -4054,6 +4542,8 @@ export class PodAffinityTerm extends jspb.Message {
 
   getTopologykey(): string;
   setTopologykey(value: string): PodAffinityTerm;
+  hasTopologykey(): boolean;
+  clearTopologykey(): PodAffinityTerm;
 
   getNamespaceselector(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector | undefined;
   setNamespaceselector(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector): PodAffinityTerm;
@@ -4072,7 +4562,7 @@ export namespace PodAffinityTerm {
   export type AsObject = {
     labelselector?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.AsObject,
     namespacesList: Array<string>,
-    topologykey: string,
+    topologykey?: string,
     namespaceselector?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.AsObject,
   }
 }
@@ -4106,18 +4596,28 @@ export namespace PodAntiAffinity {
 export class PodAttachOptions extends jspb.Message {
   getStdin(): boolean;
   setStdin(value: boolean): PodAttachOptions;
+  hasStdin(): boolean;
+  clearStdin(): PodAttachOptions;
 
   getStdout(): boolean;
   setStdout(value: boolean): PodAttachOptions;
+  hasStdout(): boolean;
+  clearStdout(): PodAttachOptions;
 
   getStderr(): boolean;
   setStderr(value: boolean): PodAttachOptions;
+  hasStderr(): boolean;
+  clearStderr(): PodAttachOptions;
 
   getTty(): boolean;
   setTty(value: boolean): PodAttachOptions;
+  hasTty(): boolean;
+  clearTty(): PodAttachOptions;
 
   getContainer(): string;
   setContainer(value: string): PodAttachOptions;
+  hasContainer(): boolean;
+  clearContainer(): PodAttachOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PodAttachOptions.AsObject;
@@ -4129,20 +4629,24 @@ export class PodAttachOptions extends jspb.Message {
 
 export namespace PodAttachOptions {
   export type AsObject = {
-    stdin: boolean,
-    stdout: boolean,
-    stderr: boolean,
-    tty: boolean,
-    container: string,
+    stdin?: boolean,
+    stdout?: boolean,
+    stderr?: boolean,
+    tty?: boolean,
+    container?: string,
   }
 }
 
 export class PodCondition extends jspb.Message {
   getType(): string;
   setType(value: string): PodCondition;
+  hasType(): boolean;
+  clearType(): PodCondition;
 
   getStatus(): string;
   setStatus(value: string): PodCondition;
+  hasStatus(): boolean;
+  clearStatus(): PodCondition;
 
   getLastprobetime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastprobetime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PodCondition;
@@ -4156,9 +4660,13 @@ export class PodCondition extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): PodCondition;
+  hasReason(): boolean;
+  clearReason(): PodCondition;
 
   getMessage(): string;
   setMessage(value: string): PodCondition;
+  hasMessage(): boolean;
+  clearMessage(): PodCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PodCondition.AsObject;
@@ -4170,12 +4678,12 @@ export class PodCondition extends jspb.Message {
 
 export namespace PodCondition {
   export type AsObject = {
-    type: string,
-    status: string,
+    type?: string,
+    status?: string,
     lastprobetime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
@@ -4214,9 +4722,13 @@ export namespace PodDNSConfig {
 export class PodDNSConfigOption extends jspb.Message {
   getName(): string;
   setName(value: string): PodDNSConfigOption;
+  hasName(): boolean;
+  clearName(): PodDNSConfigOption;
 
   getValue(): string;
   setValue(value: string): PodDNSConfigOption;
+  hasValue(): boolean;
+  clearValue(): PodDNSConfigOption;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PodDNSConfigOption.AsObject;
@@ -4228,26 +4740,36 @@ export class PodDNSConfigOption extends jspb.Message {
 
 export namespace PodDNSConfigOption {
   export type AsObject = {
-    name: string,
-    value: string,
+    name?: string,
+    value?: string,
   }
 }
 
 export class PodExecOptions extends jspb.Message {
   getStdin(): boolean;
   setStdin(value: boolean): PodExecOptions;
+  hasStdin(): boolean;
+  clearStdin(): PodExecOptions;
 
   getStdout(): boolean;
   setStdout(value: boolean): PodExecOptions;
+  hasStdout(): boolean;
+  clearStdout(): PodExecOptions;
 
   getStderr(): boolean;
   setStderr(value: boolean): PodExecOptions;
+  hasStderr(): boolean;
+  clearStderr(): PodExecOptions;
 
   getTty(): boolean;
   setTty(value: boolean): PodExecOptions;
+  hasTty(): boolean;
+  clearTty(): PodExecOptions;
 
   getContainer(): string;
   setContainer(value: string): PodExecOptions;
+  hasContainer(): boolean;
+  clearContainer(): PodExecOptions;
 
   getCommandList(): Array<string>;
   setCommandList(value: Array<string>): PodExecOptions;
@@ -4264,11 +4786,11 @@ export class PodExecOptions extends jspb.Message {
 
 export namespace PodExecOptions {
   export type AsObject = {
-    stdin: boolean,
-    stdout: boolean,
-    stderr: boolean,
-    tty: boolean,
-    container: string,
+    stdin?: boolean,
+    stdout?: boolean,
+    stderr?: boolean,
+    tty?: boolean,
+    container?: string,
     commandList: Array<string>,
   }
 }
@@ -4276,6 +4798,8 @@ export namespace PodExecOptions {
 export class PodIP extends jspb.Message {
   getIp(): string;
   setIp(value: string): PodIP;
+  hasIp(): boolean;
+  clearIp(): PodIP;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PodIP.AsObject;
@@ -4287,7 +4811,7 @@ export class PodIP extends jspb.Message {
 
 export namespace PodIP {
   export type AsObject = {
-    ip: string,
+    ip?: string,
   }
 }
 
@@ -4320,15 +4844,23 @@ export namespace PodList {
 export class PodLogOptions extends jspb.Message {
   getContainer(): string;
   setContainer(value: string): PodLogOptions;
+  hasContainer(): boolean;
+  clearContainer(): PodLogOptions;
 
   getFollow(): boolean;
   setFollow(value: boolean): PodLogOptions;
+  hasFollow(): boolean;
+  clearFollow(): PodLogOptions;
 
   getPrevious(): boolean;
   setPrevious(value: boolean): PodLogOptions;
+  hasPrevious(): boolean;
+  clearPrevious(): PodLogOptions;
 
   getSinceseconds(): number;
   setSinceseconds(value: number): PodLogOptions;
+  hasSinceseconds(): boolean;
+  clearSinceseconds(): PodLogOptions;
 
   getSincetime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setSincetime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PodLogOptions;
@@ -4337,15 +4869,23 @@ export class PodLogOptions extends jspb.Message {
 
   getTimestamps(): boolean;
   setTimestamps(value: boolean): PodLogOptions;
+  hasTimestamps(): boolean;
+  clearTimestamps(): PodLogOptions;
 
   getTaillines(): number;
   setTaillines(value: number): PodLogOptions;
+  hasTaillines(): boolean;
+  clearTaillines(): PodLogOptions;
 
   getLimitbytes(): number;
   setLimitbytes(value: number): PodLogOptions;
+  hasLimitbytes(): boolean;
+  clearLimitbytes(): PodLogOptions;
 
   getInsecureskiptlsverifybackend(): boolean;
   setInsecureskiptlsverifybackend(value: boolean): PodLogOptions;
+  hasInsecureskiptlsverifybackend(): boolean;
+  clearInsecureskiptlsverifybackend(): PodLogOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PodLogOptions.AsObject;
@@ -4357,21 +4897,23 @@ export class PodLogOptions extends jspb.Message {
 
 export namespace PodLogOptions {
   export type AsObject = {
-    container: string,
-    follow: boolean,
-    previous: boolean,
-    sinceseconds: number,
+    container?: string,
+    follow?: boolean,
+    previous?: boolean,
+    sinceseconds?: number,
     sincetime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    timestamps: boolean,
-    taillines: number,
-    limitbytes: number,
-    insecureskiptlsverifybackend: boolean,
+    timestamps?: boolean,
+    taillines?: number,
+    limitbytes?: number,
+    insecureskiptlsverifybackend?: boolean,
   }
 }
 
 export class PodOS extends jspb.Message {
   getName(): string;
   setName(value: string): PodOS;
+  hasName(): boolean;
+  clearName(): PodOS;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PodOS.AsObject;
@@ -4383,7 +4925,7 @@ export class PodOS extends jspb.Message {
 
 export namespace PodOS {
   export type AsObject = {
-    name: string,
+    name?: string,
   }
 }
 
@@ -4410,6 +4952,8 @@ export namespace PodPortForwardOptions {
 export class PodProxyOptions extends jspb.Message {
   getPath(): string;
   setPath(value: string): PodProxyOptions;
+  hasPath(): boolean;
+  clearPath(): PodProxyOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PodProxyOptions.AsObject;
@@ -4421,13 +4965,15 @@ export class PodProxyOptions extends jspb.Message {
 
 export namespace PodProxyOptions {
   export type AsObject = {
-    path: string,
+    path?: string,
   }
 }
 
 export class PodReadinessGate extends jspb.Message {
   getConditiontype(): string;
   setConditiontype(value: string): PodReadinessGate;
+  hasConditiontype(): boolean;
+  clearConditiontype(): PodReadinessGate;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PodReadinessGate.AsObject;
@@ -4439,7 +4985,7 @@ export class PodReadinessGate extends jspb.Message {
 
 export namespace PodReadinessGate {
   export type AsObject = {
-    conditiontype: string,
+    conditiontype?: string,
   }
 }
 
@@ -4456,12 +5002,18 @@ export class PodSecurityContext extends jspb.Message {
 
   getRunasuser(): number;
   setRunasuser(value: number): PodSecurityContext;
+  hasRunasuser(): boolean;
+  clearRunasuser(): PodSecurityContext;
 
   getRunasgroup(): number;
   setRunasgroup(value: number): PodSecurityContext;
+  hasRunasgroup(): boolean;
+  clearRunasgroup(): PodSecurityContext;
 
   getRunasnonroot(): boolean;
   setRunasnonroot(value: boolean): PodSecurityContext;
+  hasRunasnonroot(): boolean;
+  clearRunasnonroot(): PodSecurityContext;
 
   getSupplementalgroupsList(): Array<number>;
   setSupplementalgroupsList(value: Array<number>): PodSecurityContext;
@@ -4470,6 +5022,8 @@ export class PodSecurityContext extends jspb.Message {
 
   getFsgroup(): number;
   setFsgroup(value: number): PodSecurityContext;
+  hasFsgroup(): boolean;
+  clearFsgroup(): PodSecurityContext;
 
   getSysctlsList(): Array<Sysctl>;
   setSysctlsList(value: Array<Sysctl>): PodSecurityContext;
@@ -4478,6 +5032,8 @@ export class PodSecurityContext extends jspb.Message {
 
   getFsgroupchangepolicy(): string;
   setFsgroupchangepolicy(value: string): PodSecurityContext;
+  hasFsgroupchangepolicy(): boolean;
+  clearFsgroupchangepolicy(): PodSecurityContext;
 
   getSeccompprofile(): SeccompProfile | undefined;
   setSeccompprofile(value?: SeccompProfile): PodSecurityContext;
@@ -4496,13 +5052,13 @@ export namespace PodSecurityContext {
   export type AsObject = {
     selinuxoptions?: SELinuxOptions.AsObject,
     windowsoptions?: WindowsSecurityContextOptions.AsObject,
-    runasuser: number,
-    runasgroup: number,
-    runasnonroot: boolean,
+    runasuser?: number,
+    runasgroup?: number,
+    runasnonroot?: boolean,
     supplementalgroupsList: Array<number>,
-    fsgroup: number,
+    fsgroup?: number,
     sysctlsList: Array<Sysctl.AsObject>,
-    fsgroupchangepolicy: string,
+    fsgroupchangepolicy?: string,
     seccompprofile?: SeccompProfile.AsObject,
   }
 }
@@ -4550,42 +5106,66 @@ export class PodSpec extends jspb.Message {
 
   getRestartpolicy(): string;
   setRestartpolicy(value: string): PodSpec;
+  hasRestartpolicy(): boolean;
+  clearRestartpolicy(): PodSpec;
 
   getTerminationgraceperiodseconds(): number;
   setTerminationgraceperiodseconds(value: number): PodSpec;
+  hasTerminationgraceperiodseconds(): boolean;
+  clearTerminationgraceperiodseconds(): PodSpec;
 
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): PodSpec;
+  hasActivedeadlineseconds(): boolean;
+  clearActivedeadlineseconds(): PodSpec;
 
   getDnspolicy(): string;
   setDnspolicy(value: string): PodSpec;
+  hasDnspolicy(): boolean;
+  clearDnspolicy(): PodSpec;
 
   getNodeselectorMap(): jspb.Map<string, string>;
   clearNodeselectorMap(): PodSpec;
 
   getServiceaccountname(): string;
   setServiceaccountname(value: string): PodSpec;
+  hasServiceaccountname(): boolean;
+  clearServiceaccountname(): PodSpec;
 
   getServiceaccount(): string;
   setServiceaccount(value: string): PodSpec;
+  hasServiceaccount(): boolean;
+  clearServiceaccount(): PodSpec;
 
   getAutomountserviceaccounttoken(): boolean;
   setAutomountserviceaccounttoken(value: boolean): PodSpec;
+  hasAutomountserviceaccounttoken(): boolean;
+  clearAutomountserviceaccounttoken(): PodSpec;
 
   getNodename(): string;
   setNodename(value: string): PodSpec;
+  hasNodename(): boolean;
+  clearNodename(): PodSpec;
 
   getHostnetwork(): boolean;
   setHostnetwork(value: boolean): PodSpec;
+  hasHostnetwork(): boolean;
+  clearHostnetwork(): PodSpec;
 
   getHostpid(): boolean;
   setHostpid(value: boolean): PodSpec;
+  hasHostpid(): boolean;
+  clearHostpid(): PodSpec;
 
   getHostipc(): boolean;
   setHostipc(value: boolean): PodSpec;
+  hasHostipc(): boolean;
+  clearHostipc(): PodSpec;
 
   getShareprocessnamespace(): boolean;
   setShareprocessnamespace(value: boolean): PodSpec;
+  hasShareprocessnamespace(): boolean;
+  clearShareprocessnamespace(): PodSpec;
 
   getSecuritycontext(): PodSecurityContext | undefined;
   setSecuritycontext(value?: PodSecurityContext): PodSpec;
@@ -4599,9 +5179,13 @@ export class PodSpec extends jspb.Message {
 
   getHostname(): string;
   setHostname(value: string): PodSpec;
+  hasHostname(): boolean;
+  clearHostname(): PodSpec;
 
   getSubdomain(): string;
   setSubdomain(value: string): PodSpec;
+  hasSubdomain(): boolean;
+  clearSubdomain(): PodSpec;
 
   getAffinity(): Affinity | undefined;
   setAffinity(value?: Affinity): PodSpec;
@@ -4610,6 +5194,8 @@ export class PodSpec extends jspb.Message {
 
   getSchedulername(): string;
   setSchedulername(value: string): PodSpec;
+  hasSchedulername(): boolean;
+  clearSchedulername(): PodSpec;
 
   getTolerationsList(): Array<Toleration>;
   setTolerationsList(value: Array<Toleration>): PodSpec;
@@ -4623,9 +5209,13 @@ export class PodSpec extends jspb.Message {
 
   getPriorityclassname(): string;
   setPriorityclassname(value: string): PodSpec;
+  hasPriorityclassname(): boolean;
+  clearPriorityclassname(): PodSpec;
 
   getPriority(): number;
   setPriority(value: number): PodSpec;
+  hasPriority(): boolean;
+  clearPriority(): PodSpec;
 
   getDnsconfig(): PodDNSConfig | undefined;
   setDnsconfig(value?: PodDNSConfig): PodSpec;
@@ -4639,12 +5229,18 @@ export class PodSpec extends jspb.Message {
 
   getRuntimeclassname(): string;
   setRuntimeclassname(value: string): PodSpec;
+  hasRuntimeclassname(): boolean;
+  clearRuntimeclassname(): PodSpec;
 
   getEnableservicelinks(): boolean;
   setEnableservicelinks(value: boolean): PodSpec;
+  hasEnableservicelinks(): boolean;
+  clearEnableservicelinks(): PodSpec;
 
   getPreemptionpolicy(): string;
   setPreemptionpolicy(value: string): PodSpec;
+  hasPreemptionpolicy(): boolean;
+  clearPreemptionpolicy(): PodSpec;
 
   getOverheadMap(): jspb.Map<string, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity>;
   clearOverheadMap(): PodSpec;
@@ -4656,6 +5252,8 @@ export class PodSpec extends jspb.Message {
 
   getSethostnameasfqdn(): boolean;
   setSethostnameasfqdn(value: boolean): PodSpec;
+  hasSethostnameasfqdn(): boolean;
+  clearSethostnameasfqdn(): PodSpec;
 
   getOs(): PodOS | undefined;
   setOs(value?: PodOS): PodSpec;
@@ -4676,37 +5274,37 @@ export namespace PodSpec {
     initcontainersList: Array<Container.AsObject>,
     containersList: Array<Container.AsObject>,
     ephemeralcontainersList: Array<EphemeralContainer.AsObject>,
-    restartpolicy: string,
-    terminationgraceperiodseconds: number,
-    activedeadlineseconds: number,
-    dnspolicy: string,
+    restartpolicy?: string,
+    terminationgraceperiodseconds?: number,
+    activedeadlineseconds?: number,
+    dnspolicy?: string,
     nodeselectorMap: Array<[string, string]>,
-    serviceaccountname: string,
-    serviceaccount: string,
-    automountserviceaccounttoken: boolean,
-    nodename: string,
-    hostnetwork: boolean,
-    hostpid: boolean,
-    hostipc: boolean,
-    shareprocessnamespace: boolean,
+    serviceaccountname?: string,
+    serviceaccount?: string,
+    automountserviceaccounttoken?: boolean,
+    nodename?: string,
+    hostnetwork?: boolean,
+    hostpid?: boolean,
+    hostipc?: boolean,
+    shareprocessnamespace?: boolean,
     securitycontext?: PodSecurityContext.AsObject,
     imagepullsecretsList: Array<LocalObjectReference.AsObject>,
-    hostname: string,
-    subdomain: string,
+    hostname?: string,
+    subdomain?: string,
     affinity?: Affinity.AsObject,
-    schedulername: string,
+    schedulername?: string,
     tolerationsList: Array<Toleration.AsObject>,
     hostaliasesList: Array<HostAlias.AsObject>,
-    priorityclassname: string,
-    priority: number,
+    priorityclassname?: string,
+    priority?: number,
     dnsconfig?: PodDNSConfig.AsObject,
     readinessgatesList: Array<PodReadinessGate.AsObject>,
-    runtimeclassname: string,
-    enableservicelinks: boolean,
-    preemptionpolicy: string,
+    runtimeclassname?: string,
+    enableservicelinks?: boolean,
+    preemptionpolicy?: string,
     overheadMap: Array<[string, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject]>,
     topologyspreadconstraintsList: Array<TopologySpreadConstraint.AsObject>,
-    sethostnameasfqdn: boolean,
+    sethostnameasfqdn?: boolean,
     os?: PodOS.AsObject,
   }
 }
@@ -4714,6 +5312,8 @@ export namespace PodSpec {
 export class PodStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): PodStatus;
+  hasPhase(): boolean;
+  clearPhase(): PodStatus;
 
   getConditionsList(): Array<PodCondition>;
   setConditionsList(value: Array<PodCondition>): PodStatus;
@@ -4722,18 +5322,28 @@ export class PodStatus extends jspb.Message {
 
   getMessage(): string;
   setMessage(value: string): PodStatus;
+  hasMessage(): boolean;
+  clearMessage(): PodStatus;
 
   getReason(): string;
   setReason(value: string): PodStatus;
+  hasReason(): boolean;
+  clearReason(): PodStatus;
 
   getNominatednodename(): string;
   setNominatednodename(value: string): PodStatus;
+  hasNominatednodename(): boolean;
+  clearNominatednodename(): PodStatus;
 
   getHostip(): string;
   setHostip(value: string): PodStatus;
+  hasHostip(): boolean;
+  clearHostip(): PodStatus;
 
   getPodip(): string;
   setPodip(value: string): PodStatus;
+  hasPodip(): boolean;
+  clearPodip(): PodStatus;
 
   getPodipsList(): Array<PodIP>;
   setPodipsList(value: Array<PodIP>): PodStatus;
@@ -4757,6 +5367,8 @@ export class PodStatus extends jspb.Message {
 
   getQosclass(): string;
   setQosclass(value: string): PodStatus;
+  hasQosclass(): boolean;
+  clearQosclass(): PodStatus;
 
   getEphemeralcontainerstatusesList(): Array<ContainerStatus>;
   setEphemeralcontainerstatusesList(value: Array<ContainerStatus>): PodStatus;
@@ -4773,18 +5385,18 @@ export class PodStatus extends jspb.Message {
 
 export namespace PodStatus {
   export type AsObject = {
-    phase: string,
+    phase?: string,
     conditionsList: Array<PodCondition.AsObject>,
-    message: string,
-    reason: string,
-    nominatednodename: string,
-    hostip: string,
-    podip: string,
+    message?: string,
+    reason?: string,
+    nominatednodename?: string,
+    hostip?: string,
+    podip?: string,
     podipsList: Array<PodIP.AsObject>,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     initcontainerstatusesList: Array<ContainerStatus.AsObject>,
     containerstatusesList: Array<ContainerStatus.AsObject>,
-    qosclass: string,
+    qosclass?: string,
     ephemeralcontainerstatusesList: Array<ContainerStatus.AsObject>,
   }
 }
@@ -4896,12 +5508,18 @@ export namespace PodTemplateSpec {
 export class PortStatus extends jspb.Message {
   getPort(): number;
   setPort(value: number): PortStatus;
+  hasPort(): boolean;
+  clearPort(): PortStatus;
 
   getProtocol(): string;
   setProtocol(value: string): PortStatus;
+  hasProtocol(): boolean;
+  clearProtocol(): PortStatus;
 
   getError(): string;
   setError(value: string): PortStatus;
+  hasError(): boolean;
+  clearError(): PortStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PortStatus.AsObject;
@@ -4913,21 +5531,27 @@ export class PortStatus extends jspb.Message {
 
 export namespace PortStatus {
   export type AsObject = {
-    port: number,
-    protocol: string,
-    error: string,
+    port?: number,
+    protocol?: string,
+    error?: string,
   }
 }
 
 export class PortworxVolumeSource extends jspb.Message {
   getVolumeid(): string;
   setVolumeid(value: string): PortworxVolumeSource;
+  hasVolumeid(): boolean;
+  clearVolumeid(): PortworxVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): PortworxVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): PortworxVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): PortworxVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): PortworxVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PortworxVolumeSource.AsObject;
@@ -4939,15 +5563,17 @@ export class PortworxVolumeSource extends jspb.Message {
 
 export namespace PortworxVolumeSource {
   export type AsObject = {
-    volumeid: string,
-    fstype: string,
-    readonly: boolean,
+    volumeid?: string,
+    fstype?: string,
+    readonly?: boolean,
   }
 }
 
 export class Preconditions extends jspb.Message {
   getUid(): string;
   setUid(value: string): Preconditions;
+  hasUid(): boolean;
+  clearUid(): Preconditions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Preconditions.AsObject;
@@ -4959,7 +5585,7 @@ export class Preconditions extends jspb.Message {
 
 export namespace Preconditions {
   export type AsObject = {
-    uid: string,
+    uid?: string,
   }
 }
 
@@ -4976,9 +5602,13 @@ export class PreferAvoidPodsEntry extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): PreferAvoidPodsEntry;
+  hasReason(): boolean;
+  clearReason(): PreferAvoidPodsEntry;
 
   getMessage(): string;
   setMessage(value: string): PreferAvoidPodsEntry;
+  hasMessage(): boolean;
+  clearMessage(): PreferAvoidPodsEntry;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PreferAvoidPodsEntry.AsObject;
@@ -4992,14 +5622,16 @@ export namespace PreferAvoidPodsEntry {
   export type AsObject = {
     podsignature?: PodSignature.AsObject,
     evictiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
 export class PreferredSchedulingTerm extends jspb.Message {
   getWeight(): number;
   setWeight(value: number): PreferredSchedulingTerm;
+  hasWeight(): boolean;
+  clearWeight(): PreferredSchedulingTerm;
 
   getPreference(): NodeSelectorTerm | undefined;
   setPreference(value?: NodeSelectorTerm): PreferredSchedulingTerm;
@@ -5016,7 +5648,7 @@ export class PreferredSchedulingTerm extends jspb.Message {
 
 export namespace PreferredSchedulingTerm {
   export type AsObject = {
-    weight: number,
+    weight?: number,
     preference?: NodeSelectorTerm.AsObject,
   }
 }
@@ -5029,21 +5661,33 @@ export class Probe extends jspb.Message {
 
   getInitialdelayseconds(): number;
   setInitialdelayseconds(value: number): Probe;
+  hasInitialdelayseconds(): boolean;
+  clearInitialdelayseconds(): Probe;
 
   getTimeoutseconds(): number;
   setTimeoutseconds(value: number): Probe;
+  hasTimeoutseconds(): boolean;
+  clearTimeoutseconds(): Probe;
 
   getPeriodseconds(): number;
   setPeriodseconds(value: number): Probe;
+  hasPeriodseconds(): boolean;
+  clearPeriodseconds(): Probe;
 
   getSuccessthreshold(): number;
   setSuccessthreshold(value: number): Probe;
+  hasSuccessthreshold(): boolean;
+  clearSuccessthreshold(): Probe;
 
   getFailurethreshold(): number;
   setFailurethreshold(value: number): Probe;
+  hasFailurethreshold(): boolean;
+  clearFailurethreshold(): Probe;
 
   getTerminationgraceperiodseconds(): number;
   setTerminationgraceperiodseconds(value: number): Probe;
+  hasTerminationgraceperiodseconds(): boolean;
+  clearTerminationgraceperiodseconds(): Probe;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Probe.AsObject;
@@ -5056,12 +5700,12 @@ export class Probe extends jspb.Message {
 export namespace Probe {
   export type AsObject = {
     handler?: ProbeHandler.AsObject,
-    initialdelayseconds: number,
-    timeoutseconds: number,
-    periodseconds: number,
-    successthreshold: number,
-    failurethreshold: number,
-    terminationgraceperiodseconds: number,
+    initialdelayseconds?: number,
+    timeoutseconds?: number,
+    periodseconds?: number,
+    successthreshold?: number,
+    failurethreshold?: number,
+    terminationgraceperiodseconds?: number,
   }
 }
 
@@ -5111,6 +5755,8 @@ export class ProjectedVolumeSource extends jspb.Message {
 
   getDefaultmode(): number;
   setDefaultmode(value: number): ProjectedVolumeSource;
+  hasDefaultmode(): boolean;
+  clearDefaultmode(): ProjectedVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProjectedVolumeSource.AsObject;
@@ -5123,28 +5769,40 @@ export class ProjectedVolumeSource extends jspb.Message {
 export namespace ProjectedVolumeSource {
   export type AsObject = {
     sourcesList: Array<VolumeProjection.AsObject>,
-    defaultmode: number,
+    defaultmode?: number,
   }
 }
 
 export class QuobyteVolumeSource extends jspb.Message {
   getRegistry(): string;
   setRegistry(value: string): QuobyteVolumeSource;
+  hasRegistry(): boolean;
+  clearRegistry(): QuobyteVolumeSource;
 
   getVolume(): string;
   setVolume(value: string): QuobyteVolumeSource;
+  hasVolume(): boolean;
+  clearVolume(): QuobyteVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): QuobyteVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): QuobyteVolumeSource;
 
   getUser(): string;
   setUser(value: string): QuobyteVolumeSource;
+  hasUser(): boolean;
+  clearUser(): QuobyteVolumeSource;
 
   getGroup(): string;
   setGroup(value: string): QuobyteVolumeSource;
+  hasGroup(): boolean;
+  clearGroup(): QuobyteVolumeSource;
 
   getTenant(): string;
   setTenant(value: string): QuobyteVolumeSource;
+  hasTenant(): boolean;
+  clearTenant(): QuobyteVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QuobyteVolumeSource.AsObject;
@@ -5156,12 +5814,12 @@ export class QuobyteVolumeSource extends jspb.Message {
 
 export namespace QuobyteVolumeSource {
   export type AsObject = {
-    registry: string,
-    volume: string,
-    readonly: boolean,
-    user: string,
-    group: string,
-    tenant: string,
+    registry?: string,
+    volume?: string,
+    readonly?: boolean,
+    user?: string,
+    group?: string,
+    tenant?: string,
   }
 }
 
@@ -5173,18 +5831,28 @@ export class RBDPersistentVolumeSource extends jspb.Message {
 
   getImage(): string;
   setImage(value: string): RBDPersistentVolumeSource;
+  hasImage(): boolean;
+  clearImage(): RBDPersistentVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): RBDPersistentVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): RBDPersistentVolumeSource;
 
   getPool(): string;
   setPool(value: string): RBDPersistentVolumeSource;
+  hasPool(): boolean;
+  clearPool(): RBDPersistentVolumeSource;
 
   getUser(): string;
   setUser(value: string): RBDPersistentVolumeSource;
+  hasUser(): boolean;
+  clearUser(): RBDPersistentVolumeSource;
 
   getKeyring(): string;
   setKeyring(value: string): RBDPersistentVolumeSource;
+  hasKeyring(): boolean;
+  clearKeyring(): RBDPersistentVolumeSource;
 
   getSecretref(): SecretReference | undefined;
   setSecretref(value?: SecretReference): RBDPersistentVolumeSource;
@@ -5193,6 +5861,8 @@ export class RBDPersistentVolumeSource extends jspb.Message {
 
   getReadonly(): boolean;
   setReadonly(value: boolean): RBDPersistentVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): RBDPersistentVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RBDPersistentVolumeSource.AsObject;
@@ -5205,13 +5875,13 @@ export class RBDPersistentVolumeSource extends jspb.Message {
 export namespace RBDPersistentVolumeSource {
   export type AsObject = {
     monitorsList: Array<string>,
-    image: string,
-    fstype: string,
-    pool: string,
-    user: string,
-    keyring: string,
+    image?: string,
+    fstype?: string,
+    pool?: string,
+    user?: string,
+    keyring?: string,
     secretref?: SecretReference.AsObject,
-    readonly: boolean,
+    readonly?: boolean,
   }
 }
 
@@ -5223,18 +5893,28 @@ export class RBDVolumeSource extends jspb.Message {
 
   getImage(): string;
   setImage(value: string): RBDVolumeSource;
+  hasImage(): boolean;
+  clearImage(): RBDVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): RBDVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): RBDVolumeSource;
 
   getPool(): string;
   setPool(value: string): RBDVolumeSource;
+  hasPool(): boolean;
+  clearPool(): RBDVolumeSource;
 
   getUser(): string;
   setUser(value: string): RBDVolumeSource;
+  hasUser(): boolean;
+  clearUser(): RBDVolumeSource;
 
   getKeyring(): string;
   setKeyring(value: string): RBDVolumeSource;
+  hasKeyring(): boolean;
+  clearKeyring(): RBDVolumeSource;
 
   getSecretref(): LocalObjectReference | undefined;
   setSecretref(value?: LocalObjectReference): RBDVolumeSource;
@@ -5243,6 +5923,8 @@ export class RBDVolumeSource extends jspb.Message {
 
   getReadonly(): boolean;
   setReadonly(value: boolean): RBDVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): RBDVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RBDVolumeSource.AsObject;
@@ -5255,13 +5937,13 @@ export class RBDVolumeSource extends jspb.Message {
 export namespace RBDVolumeSource {
   export type AsObject = {
     monitorsList: Array<string>,
-    image: string,
-    fstype: string,
-    pool: string,
-    user: string,
-    keyring: string,
+    image?: string,
+    fstype?: string,
+    pool?: string,
+    user?: string,
+    keyring?: string,
     secretref?: LocalObjectReference.AsObject,
-    readonly: boolean,
+    readonly?: boolean,
   }
 }
 
@@ -5273,11 +5955,15 @@ export class RangeAllocation extends jspb.Message {
 
   getRange(): string;
   setRange(value: string): RangeAllocation;
+  hasRange(): boolean;
+  clearRange(): RangeAllocation;
 
   getData(): Uint8Array | string;
   getData_asU8(): Uint8Array;
   getData_asB64(): string;
   setData(value: Uint8Array | string): RangeAllocation;
+  hasData(): boolean;
+  clearData(): RangeAllocation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RangeAllocation.AsObject;
@@ -5290,8 +5976,8 @@ export class RangeAllocation extends jspb.Message {
 export namespace RangeAllocation {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    range: string,
-    data: Uint8Array | string,
+    range?: string,
+    data?: Uint8Array | string,
   }
 }
 
@@ -5330,9 +6016,13 @@ export namespace ReplicationController {
 export class ReplicationControllerCondition extends jspb.Message {
   getType(): string;
   setType(value: string): ReplicationControllerCondition;
+  hasType(): boolean;
+  clearType(): ReplicationControllerCondition;
 
   getStatus(): string;
   setStatus(value: string): ReplicationControllerCondition;
+  hasStatus(): boolean;
+  clearStatus(): ReplicationControllerCondition;
 
   getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReplicationControllerCondition;
@@ -5341,9 +6031,13 @@ export class ReplicationControllerCondition extends jspb.Message {
 
   getReason(): string;
   setReason(value: string): ReplicationControllerCondition;
+  hasReason(): boolean;
+  clearReason(): ReplicationControllerCondition;
 
   getMessage(): string;
   setMessage(value: string): ReplicationControllerCondition;
+  hasMessage(): boolean;
+  clearMessage(): ReplicationControllerCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReplicationControllerCondition.AsObject;
@@ -5355,11 +6049,11 @@ export class ReplicationControllerCondition extends jspb.Message {
 
 export namespace ReplicationControllerCondition {
   export type AsObject = {
-    type: string,
-    status: string,
+    type?: string,
+    status?: string,
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
+    reason?: string,
+    message?: string,
   }
 }
 
@@ -5392,9 +6086,13 @@ export namespace ReplicationControllerList {
 export class ReplicationControllerSpec extends jspb.Message {
   getReplicas(): number;
   setReplicas(value: number): ReplicationControllerSpec;
+  hasReplicas(): boolean;
+  clearReplicas(): ReplicationControllerSpec;
 
   getMinreadyseconds(): number;
   setMinreadyseconds(value: number): ReplicationControllerSpec;
+  hasMinreadyseconds(): boolean;
+  clearMinreadyseconds(): ReplicationControllerSpec;
 
   getSelectorMap(): jspb.Map<string, string>;
   clearSelectorMap(): ReplicationControllerSpec;
@@ -5414,8 +6112,8 @@ export class ReplicationControllerSpec extends jspb.Message {
 
 export namespace ReplicationControllerSpec {
   export type AsObject = {
-    replicas: number,
-    minreadyseconds: number,
+    replicas?: number,
+    minreadyseconds?: number,
     selectorMap: Array<[string, string]>,
     template?: PodTemplateSpec.AsObject,
   }
@@ -5424,18 +6122,28 @@ export namespace ReplicationControllerSpec {
 export class ReplicationControllerStatus extends jspb.Message {
   getReplicas(): number;
   setReplicas(value: number): ReplicationControllerStatus;
+  hasReplicas(): boolean;
+  clearReplicas(): ReplicationControllerStatus;
 
   getFullylabeledreplicas(): number;
   setFullylabeledreplicas(value: number): ReplicationControllerStatus;
+  hasFullylabeledreplicas(): boolean;
+  clearFullylabeledreplicas(): ReplicationControllerStatus;
 
   getReadyreplicas(): number;
   setReadyreplicas(value: number): ReplicationControllerStatus;
+  hasReadyreplicas(): boolean;
+  clearReadyreplicas(): ReplicationControllerStatus;
 
   getAvailablereplicas(): number;
   setAvailablereplicas(value: number): ReplicationControllerStatus;
+  hasAvailablereplicas(): boolean;
+  clearAvailablereplicas(): ReplicationControllerStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ReplicationControllerStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): ReplicationControllerStatus;
 
   getConditionsList(): Array<ReplicationControllerCondition>;
   setConditionsList(value: Array<ReplicationControllerCondition>): ReplicationControllerStatus;
@@ -5452,11 +6160,11 @@ export class ReplicationControllerStatus extends jspb.Message {
 
 export namespace ReplicationControllerStatus {
   export type AsObject = {
-    replicas: number,
-    fullylabeledreplicas: number,
-    readyreplicas: number,
-    availablereplicas: number,
-    observedgeneration: number,
+    replicas?: number,
+    fullylabeledreplicas?: number,
+    readyreplicas?: number,
+    availablereplicas?: number,
+    observedgeneration?: number,
     conditionsList: Array<ReplicationControllerCondition.AsObject>,
   }
 }
@@ -5464,9 +6172,13 @@ export namespace ReplicationControllerStatus {
 export class ResourceFieldSelector extends jspb.Message {
   getContainername(): string;
   setContainername(value: string): ResourceFieldSelector;
+  hasContainername(): boolean;
+  clearContainername(): ResourceFieldSelector;
 
   getResource(): string;
   setResource(value: string): ResourceFieldSelector;
+  hasResource(): boolean;
+  clearResource(): ResourceFieldSelector;
 
   getDivisor(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
   setDivisor(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): ResourceFieldSelector;
@@ -5483,8 +6195,8 @@ export class ResourceFieldSelector extends jspb.Message {
 
 export namespace ResourceFieldSelector {
   export type AsObject = {
-    containername: string,
-    resource: string,
+    containername?: string,
+    resource?: string,
     divisor?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
   }
 }
@@ -5624,15 +6336,23 @@ export namespace ResourceRequirements {
 export class SELinuxOptions extends jspb.Message {
   getUser(): string;
   setUser(value: string): SELinuxOptions;
+  hasUser(): boolean;
+  clearUser(): SELinuxOptions;
 
   getRole(): string;
   setRole(value: string): SELinuxOptions;
+  hasRole(): boolean;
+  clearRole(): SELinuxOptions;
 
   getType(): string;
   setType(value: string): SELinuxOptions;
+  hasType(): boolean;
+  clearType(): SELinuxOptions;
 
   getLevel(): string;
   setLevel(value: string): SELinuxOptions;
+  hasLevel(): boolean;
+  clearLevel(): SELinuxOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SELinuxOptions.AsObject;
@@ -5644,19 +6364,23 @@ export class SELinuxOptions extends jspb.Message {
 
 export namespace SELinuxOptions {
   export type AsObject = {
-    user: string,
-    role: string,
-    type: string,
-    level: string,
+    user?: string,
+    role?: string,
+    type?: string,
+    level?: string,
   }
 }
 
 export class ScaleIOPersistentVolumeSource extends jspb.Message {
   getGateway(): string;
   setGateway(value: string): ScaleIOPersistentVolumeSource;
+  hasGateway(): boolean;
+  clearGateway(): ScaleIOPersistentVolumeSource;
 
   getSystem(): string;
   setSystem(value: string): ScaleIOPersistentVolumeSource;
+  hasSystem(): boolean;
+  clearSystem(): ScaleIOPersistentVolumeSource;
 
   getSecretref(): SecretReference | undefined;
   setSecretref(value?: SecretReference): ScaleIOPersistentVolumeSource;
@@ -5665,24 +6389,38 @@ export class ScaleIOPersistentVolumeSource extends jspb.Message {
 
   getSslenabled(): boolean;
   setSslenabled(value: boolean): ScaleIOPersistentVolumeSource;
+  hasSslenabled(): boolean;
+  clearSslenabled(): ScaleIOPersistentVolumeSource;
 
   getProtectiondomain(): string;
   setProtectiondomain(value: string): ScaleIOPersistentVolumeSource;
+  hasProtectiondomain(): boolean;
+  clearProtectiondomain(): ScaleIOPersistentVolumeSource;
 
   getStoragepool(): string;
   setStoragepool(value: string): ScaleIOPersistentVolumeSource;
+  hasStoragepool(): boolean;
+  clearStoragepool(): ScaleIOPersistentVolumeSource;
 
   getStoragemode(): string;
   setStoragemode(value: string): ScaleIOPersistentVolumeSource;
+  hasStoragemode(): boolean;
+  clearStoragemode(): ScaleIOPersistentVolumeSource;
 
   getVolumename(): string;
   setVolumename(value: string): ScaleIOPersistentVolumeSource;
+  hasVolumename(): boolean;
+  clearVolumename(): ScaleIOPersistentVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): ScaleIOPersistentVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): ScaleIOPersistentVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): ScaleIOPersistentVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): ScaleIOPersistentVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ScaleIOPersistentVolumeSource.AsObject;
@@ -5694,25 +6432,29 @@ export class ScaleIOPersistentVolumeSource extends jspb.Message {
 
 export namespace ScaleIOPersistentVolumeSource {
   export type AsObject = {
-    gateway: string,
-    system: string,
+    gateway?: string,
+    system?: string,
     secretref?: SecretReference.AsObject,
-    sslenabled: boolean,
-    protectiondomain: string,
-    storagepool: string,
-    storagemode: string,
-    volumename: string,
-    fstype: string,
-    readonly: boolean,
+    sslenabled?: boolean,
+    protectiondomain?: string,
+    storagepool?: string,
+    storagemode?: string,
+    volumename?: string,
+    fstype?: string,
+    readonly?: boolean,
   }
 }
 
 export class ScaleIOVolumeSource extends jspb.Message {
   getGateway(): string;
   setGateway(value: string): ScaleIOVolumeSource;
+  hasGateway(): boolean;
+  clearGateway(): ScaleIOVolumeSource;
 
   getSystem(): string;
   setSystem(value: string): ScaleIOVolumeSource;
+  hasSystem(): boolean;
+  clearSystem(): ScaleIOVolumeSource;
 
   getSecretref(): LocalObjectReference | undefined;
   setSecretref(value?: LocalObjectReference): ScaleIOVolumeSource;
@@ -5721,24 +6463,38 @@ export class ScaleIOVolumeSource extends jspb.Message {
 
   getSslenabled(): boolean;
   setSslenabled(value: boolean): ScaleIOVolumeSource;
+  hasSslenabled(): boolean;
+  clearSslenabled(): ScaleIOVolumeSource;
 
   getProtectiondomain(): string;
   setProtectiondomain(value: string): ScaleIOVolumeSource;
+  hasProtectiondomain(): boolean;
+  clearProtectiondomain(): ScaleIOVolumeSource;
 
   getStoragepool(): string;
   setStoragepool(value: string): ScaleIOVolumeSource;
+  hasStoragepool(): boolean;
+  clearStoragepool(): ScaleIOVolumeSource;
 
   getStoragemode(): string;
   setStoragemode(value: string): ScaleIOVolumeSource;
+  hasStoragemode(): boolean;
+  clearStoragemode(): ScaleIOVolumeSource;
 
   getVolumename(): string;
   setVolumename(value: string): ScaleIOVolumeSource;
+  hasVolumename(): boolean;
+  clearVolumename(): ScaleIOVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): ScaleIOVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): ScaleIOVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): ScaleIOVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): ScaleIOVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ScaleIOVolumeSource.AsObject;
@@ -5750,16 +6506,16 @@ export class ScaleIOVolumeSource extends jspb.Message {
 
 export namespace ScaleIOVolumeSource {
   export type AsObject = {
-    gateway: string,
-    system: string,
+    gateway?: string,
+    system?: string,
     secretref?: LocalObjectReference.AsObject,
-    sslenabled: boolean,
-    protectiondomain: string,
-    storagepool: string,
-    storagemode: string,
-    volumename: string,
-    fstype: string,
-    readonly: boolean,
+    sslenabled?: boolean,
+    protectiondomain?: string,
+    storagepool?: string,
+    storagemode?: string,
+    volumename?: string,
+    fstype?: string,
+    readonly?: boolean,
   }
 }
 
@@ -5786,9 +6542,13 @@ export namespace ScopeSelector {
 export class ScopedResourceSelectorRequirement extends jspb.Message {
   getScopename(): string;
   setScopename(value: string): ScopedResourceSelectorRequirement;
+  hasScopename(): boolean;
+  clearScopename(): ScopedResourceSelectorRequirement;
 
   getOperator(): string;
   setOperator(value: string): ScopedResourceSelectorRequirement;
+  hasOperator(): boolean;
+  clearOperator(): ScopedResourceSelectorRequirement;
 
   getValuesList(): Array<string>;
   setValuesList(value: Array<string>): ScopedResourceSelectorRequirement;
@@ -5805,8 +6565,8 @@ export class ScopedResourceSelectorRequirement extends jspb.Message {
 
 export namespace ScopedResourceSelectorRequirement {
   export type AsObject = {
-    scopename: string,
-    operator: string,
+    scopename?: string,
+    operator?: string,
     valuesList: Array<string>,
   }
 }
@@ -5814,9 +6574,13 @@ export namespace ScopedResourceSelectorRequirement {
 export class SeccompProfile extends jspb.Message {
   getType(): string;
   setType(value: string): SeccompProfile;
+  hasType(): boolean;
+  clearType(): SeccompProfile;
 
   getLocalhostprofile(): string;
   setLocalhostprofile(value: string): SeccompProfile;
+  hasLocalhostprofile(): boolean;
+  clearLocalhostprofile(): SeccompProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SeccompProfile.AsObject;
@@ -5828,8 +6592,8 @@ export class SeccompProfile extends jspb.Message {
 
 export namespace SeccompProfile {
   export type AsObject = {
-    type: string,
-    localhostprofile: string,
+    type?: string,
+    localhostprofile?: string,
   }
 }
 
@@ -5841,6 +6605,8 @@ export class Secret extends jspb.Message {
 
   getImmutable(): boolean;
   setImmutable(value: boolean): Secret;
+  hasImmutable(): boolean;
+  clearImmutable(): Secret;
 
   getDataMap(): jspb.Map<string, Uint8Array | string>;
   clearDataMap(): Secret;
@@ -5850,6 +6616,8 @@ export class Secret extends jspb.Message {
 
   getType(): string;
   setType(value: string): Secret;
+  hasType(): boolean;
+  clearType(): Secret;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Secret.AsObject;
@@ -5862,10 +6630,10 @@ export class Secret extends jspb.Message {
 export namespace Secret {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    immutable: boolean,
+    immutable?: boolean,
     dataMap: Array<[string, Uint8Array | string]>,
     stringdataMap: Array<[string, string]>,
-    type: string,
+    type?: string,
   }
 }
 
@@ -5877,6 +6645,8 @@ export class SecretEnvSource extends jspb.Message {
 
   getOptional(): boolean;
   setOptional(value: boolean): SecretEnvSource;
+  hasOptional(): boolean;
+  clearOptional(): SecretEnvSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SecretEnvSource.AsObject;
@@ -5889,7 +6659,7 @@ export class SecretEnvSource extends jspb.Message {
 export namespace SecretEnvSource {
   export type AsObject = {
     localobjectreference?: LocalObjectReference.AsObject,
-    optional: boolean,
+    optional?: boolean,
   }
 }
 
@@ -5901,9 +6671,13 @@ export class SecretKeySelector extends jspb.Message {
 
   getKey(): string;
   setKey(value: string): SecretKeySelector;
+  hasKey(): boolean;
+  clearKey(): SecretKeySelector;
 
   getOptional(): boolean;
   setOptional(value: boolean): SecretKeySelector;
+  hasOptional(): boolean;
+  clearOptional(): SecretKeySelector;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SecretKeySelector.AsObject;
@@ -5916,8 +6690,8 @@ export class SecretKeySelector extends jspb.Message {
 export namespace SecretKeySelector {
   export type AsObject = {
     localobjectreference?: LocalObjectReference.AsObject,
-    key: string,
-    optional: boolean,
+    key?: string,
+    optional?: boolean,
   }
 }
 
@@ -5960,6 +6734,8 @@ export class SecretProjection extends jspb.Message {
 
   getOptional(): boolean;
   setOptional(value: boolean): SecretProjection;
+  hasOptional(): boolean;
+  clearOptional(): SecretProjection;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SecretProjection.AsObject;
@@ -5973,16 +6749,20 @@ export namespace SecretProjection {
   export type AsObject = {
     localobjectreference?: LocalObjectReference.AsObject,
     itemsList: Array<KeyToPath.AsObject>,
-    optional: boolean,
+    optional?: boolean,
   }
 }
 
 export class SecretReference extends jspb.Message {
   getName(): string;
   setName(value: string): SecretReference;
+  hasName(): boolean;
+  clearName(): SecretReference;
 
   getNamespace(): string;
   setNamespace(value: string): SecretReference;
+  hasNamespace(): boolean;
+  clearNamespace(): SecretReference;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SecretReference.AsObject;
@@ -5994,14 +6774,16 @@ export class SecretReference extends jspb.Message {
 
 export namespace SecretReference {
   export type AsObject = {
-    name: string,
-    namespace: string,
+    name?: string,
+    namespace?: string,
   }
 }
 
 export class SecretVolumeSource extends jspb.Message {
   getSecretname(): string;
   setSecretname(value: string): SecretVolumeSource;
+  hasSecretname(): boolean;
+  clearSecretname(): SecretVolumeSource;
 
   getItemsList(): Array<KeyToPath>;
   setItemsList(value: Array<KeyToPath>): SecretVolumeSource;
@@ -6010,9 +6792,13 @@ export class SecretVolumeSource extends jspb.Message {
 
   getDefaultmode(): number;
   setDefaultmode(value: number): SecretVolumeSource;
+  hasDefaultmode(): boolean;
+  clearDefaultmode(): SecretVolumeSource;
 
   getOptional(): boolean;
   setOptional(value: boolean): SecretVolumeSource;
+  hasOptional(): boolean;
+  clearOptional(): SecretVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SecretVolumeSource.AsObject;
@@ -6024,10 +6810,10 @@ export class SecretVolumeSource extends jspb.Message {
 
 export namespace SecretVolumeSource {
   export type AsObject = {
-    secretname: string,
+    secretname?: string,
     itemsList: Array<KeyToPath.AsObject>,
-    defaultmode: number,
-    optional: boolean,
+    defaultmode?: number,
+    optional?: boolean,
   }
 }
 
@@ -6039,6 +6825,8 @@ export class SecurityContext extends jspb.Message {
 
   getPrivileged(): boolean;
   setPrivileged(value: boolean): SecurityContext;
+  hasPrivileged(): boolean;
+  clearPrivileged(): SecurityContext;
 
   getSelinuxoptions(): SELinuxOptions | undefined;
   setSelinuxoptions(value?: SELinuxOptions): SecurityContext;
@@ -6052,21 +6840,33 @@ export class SecurityContext extends jspb.Message {
 
   getRunasuser(): number;
   setRunasuser(value: number): SecurityContext;
+  hasRunasuser(): boolean;
+  clearRunasuser(): SecurityContext;
 
   getRunasgroup(): number;
   setRunasgroup(value: number): SecurityContext;
+  hasRunasgroup(): boolean;
+  clearRunasgroup(): SecurityContext;
 
   getRunasnonroot(): boolean;
   setRunasnonroot(value: boolean): SecurityContext;
+  hasRunasnonroot(): boolean;
+  clearRunasnonroot(): SecurityContext;
 
   getReadonlyrootfilesystem(): boolean;
   setReadonlyrootfilesystem(value: boolean): SecurityContext;
+  hasReadonlyrootfilesystem(): boolean;
+  clearReadonlyrootfilesystem(): SecurityContext;
 
   getAllowprivilegeescalation(): boolean;
   setAllowprivilegeescalation(value: boolean): SecurityContext;
+  hasAllowprivilegeescalation(): boolean;
+  clearAllowprivilegeescalation(): SecurityContext;
 
   getProcmount(): string;
   setProcmount(value: string): SecurityContext;
+  hasProcmount(): boolean;
+  clearProcmount(): SecurityContext;
 
   getSeccompprofile(): SeccompProfile | undefined;
   setSeccompprofile(value?: SeccompProfile): SecurityContext;
@@ -6084,15 +6884,15 @@ export class SecurityContext extends jspb.Message {
 export namespace SecurityContext {
   export type AsObject = {
     capabilities?: Capabilities.AsObject,
-    privileged: boolean,
+    privileged?: boolean,
     selinuxoptions?: SELinuxOptions.AsObject,
     windowsoptions?: WindowsSecurityContextOptions.AsObject,
-    runasuser: number,
-    runasgroup: number,
-    runasnonroot: boolean,
-    readonlyrootfilesystem: boolean,
-    allowprivilegeescalation: boolean,
-    procmount: string,
+    runasuser?: number,
+    runasgroup?: number,
+    runasnonroot?: boolean,
+    readonlyrootfilesystem?: boolean,
+    allowprivilegeescalation?: boolean,
+    procmount?: string,
     seccompprofile?: SeccompProfile.AsObject,
   }
 }
@@ -6167,6 +6967,8 @@ export class ServiceAccount extends jspb.Message {
 
   getAutomountserviceaccounttoken(): boolean;
   setAutomountserviceaccounttoken(value: boolean): ServiceAccount;
+  hasAutomountserviceaccounttoken(): boolean;
+  clearAutomountserviceaccounttoken(): ServiceAccount;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServiceAccount.AsObject;
@@ -6181,7 +6983,7 @@ export namespace ServiceAccount {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
     secretsList: Array<ObjectReference.AsObject>,
     imagepullsecretsList: Array<LocalObjectReference.AsObject>,
-    automountserviceaccounttoken: boolean,
+    automountserviceaccounttoken?: boolean,
   }
 }
 
@@ -6214,12 +7016,18 @@ export namespace ServiceAccountList {
 export class ServiceAccountTokenProjection extends jspb.Message {
   getAudience(): string;
   setAudience(value: string): ServiceAccountTokenProjection;
+  hasAudience(): boolean;
+  clearAudience(): ServiceAccountTokenProjection;
 
   getExpirationseconds(): number;
   setExpirationseconds(value: number): ServiceAccountTokenProjection;
+  hasExpirationseconds(): boolean;
+  clearExpirationseconds(): ServiceAccountTokenProjection;
 
   getPath(): string;
   setPath(value: string): ServiceAccountTokenProjection;
+  hasPath(): boolean;
+  clearPath(): ServiceAccountTokenProjection;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServiceAccountTokenProjection.AsObject;
@@ -6231,9 +7039,9 @@ export class ServiceAccountTokenProjection extends jspb.Message {
 
 export namespace ServiceAccountTokenProjection {
   export type AsObject = {
-    audience: string,
-    expirationseconds: number,
-    path: string,
+    audience?: string,
+    expirationseconds?: number,
+    path?: string,
   }
 }
 
@@ -6266,15 +7074,23 @@ export namespace ServiceList {
 export class ServicePort extends jspb.Message {
   getName(): string;
   setName(value: string): ServicePort;
+  hasName(): boolean;
+  clearName(): ServicePort;
 
   getProtocol(): string;
   setProtocol(value: string): ServicePort;
+  hasProtocol(): boolean;
+  clearProtocol(): ServicePort;
 
   getAppprotocol(): string;
   setAppprotocol(value: string): ServicePort;
+  hasAppprotocol(): boolean;
+  clearAppprotocol(): ServicePort;
 
   getPort(): number;
   setPort(value: number): ServicePort;
+  hasPort(): boolean;
+  clearPort(): ServicePort;
 
   getTargetport(): k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString | undefined;
   setTargetport(value?: k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString): ServicePort;
@@ -6283,6 +7099,8 @@ export class ServicePort extends jspb.Message {
 
   getNodeport(): number;
   setNodeport(value: number): ServicePort;
+  hasNodeport(): boolean;
+  clearNodeport(): ServicePort;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServicePort.AsObject;
@@ -6294,18 +7112,20 @@ export class ServicePort extends jspb.Message {
 
 export namespace ServicePort {
   export type AsObject = {
-    name: string,
-    protocol: string,
-    appprotocol: string,
-    port: number,
+    name?: string,
+    protocol?: string,
+    appprotocol?: string,
+    port?: number,
     targetport?: k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString.AsObject,
-    nodeport: number,
+    nodeport?: number,
   }
 }
 
 export class ServiceProxyOptions extends jspb.Message {
   getPath(): string;
   setPath(value: string): ServiceProxyOptions;
+  hasPath(): boolean;
+  clearPath(): ServiceProxyOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServiceProxyOptions.AsObject;
@@ -6317,7 +7137,7 @@ export class ServiceProxyOptions extends jspb.Message {
 
 export namespace ServiceProxyOptions {
   export type AsObject = {
-    path: string,
+    path?: string,
   }
 }
 
@@ -6332,6 +7152,8 @@ export class ServiceSpec extends jspb.Message {
 
   getClusterip(): string;
   setClusterip(value: string): ServiceSpec;
+  hasClusterip(): boolean;
+  clearClusterip(): ServiceSpec;
 
   getClusteripsList(): Array<string>;
   setClusteripsList(value: Array<string>): ServiceSpec;
@@ -6340,6 +7162,8 @@ export class ServiceSpec extends jspb.Message {
 
   getType(): string;
   setType(value: string): ServiceSpec;
+  hasType(): boolean;
+  clearType(): ServiceSpec;
 
   getExternalipsList(): Array<string>;
   setExternalipsList(value: Array<string>): ServiceSpec;
@@ -6348,9 +7172,13 @@ export class ServiceSpec extends jspb.Message {
 
   getSessionaffinity(): string;
   setSessionaffinity(value: string): ServiceSpec;
+  hasSessionaffinity(): boolean;
+  clearSessionaffinity(): ServiceSpec;
 
   getLoadbalancerip(): string;
   setLoadbalancerip(value: string): ServiceSpec;
+  hasLoadbalancerip(): boolean;
+  clearLoadbalancerip(): ServiceSpec;
 
   getLoadbalancersourcerangesList(): Array<string>;
   setLoadbalancersourcerangesList(value: Array<string>): ServiceSpec;
@@ -6359,15 +7187,23 @@ export class ServiceSpec extends jspb.Message {
 
   getExternalname(): string;
   setExternalname(value: string): ServiceSpec;
+  hasExternalname(): boolean;
+  clearExternalname(): ServiceSpec;
 
   getExternaltrafficpolicy(): string;
   setExternaltrafficpolicy(value: string): ServiceSpec;
+  hasExternaltrafficpolicy(): boolean;
+  clearExternaltrafficpolicy(): ServiceSpec;
 
   getHealthchecknodeport(): number;
   setHealthchecknodeport(value: number): ServiceSpec;
+  hasHealthchecknodeport(): boolean;
+  clearHealthchecknodeport(): ServiceSpec;
 
   getPublishnotreadyaddresses(): boolean;
   setPublishnotreadyaddresses(value: boolean): ServiceSpec;
+  hasPublishnotreadyaddresses(): boolean;
+  clearPublishnotreadyaddresses(): ServiceSpec;
 
   getSessionaffinityconfig(): SessionAffinityConfig | undefined;
   setSessionaffinityconfig(value?: SessionAffinityConfig): ServiceSpec;
@@ -6381,15 +7217,23 @@ export class ServiceSpec extends jspb.Message {
 
   getIpfamilypolicy(): string;
   setIpfamilypolicy(value: string): ServiceSpec;
+  hasIpfamilypolicy(): boolean;
+  clearIpfamilypolicy(): ServiceSpec;
 
   getAllocateloadbalancernodeports(): boolean;
   setAllocateloadbalancernodeports(value: boolean): ServiceSpec;
+  hasAllocateloadbalancernodeports(): boolean;
+  clearAllocateloadbalancernodeports(): ServiceSpec;
 
   getLoadbalancerclass(): string;
   setLoadbalancerclass(value: string): ServiceSpec;
+  hasLoadbalancerclass(): boolean;
+  clearLoadbalancerclass(): ServiceSpec;
 
   getInternaltrafficpolicy(): string;
   setInternaltrafficpolicy(value: string): ServiceSpec;
+  hasInternaltrafficpolicy(): boolean;
+  clearInternaltrafficpolicy(): ServiceSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServiceSpec.AsObject;
@@ -6403,23 +7247,23 @@ export namespace ServiceSpec {
   export type AsObject = {
     portsList: Array<ServicePort.AsObject>,
     selectorMap: Array<[string, string]>,
-    clusterip: string,
+    clusterip?: string,
     clusteripsList: Array<string>,
-    type: string,
+    type?: string,
     externalipsList: Array<string>,
-    sessionaffinity: string,
-    loadbalancerip: string,
+    sessionaffinity?: string,
+    loadbalancerip?: string,
     loadbalancersourcerangesList: Array<string>,
-    externalname: string,
-    externaltrafficpolicy: string,
-    healthchecknodeport: number,
-    publishnotreadyaddresses: boolean,
+    externalname?: string,
+    externaltrafficpolicy?: string,
+    healthchecknodeport?: number,
+    publishnotreadyaddresses?: boolean,
     sessionaffinityconfig?: SessionAffinityConfig.AsObject,
     ipfamiliesList: Array<string>,
-    ipfamilypolicy: string,
-    allocateloadbalancernodeports: boolean,
-    loadbalancerclass: string,
-    internaltrafficpolicy: string,
+    ipfamilypolicy?: string,
+    allocateloadbalancernodeports?: boolean,
+    loadbalancerclass?: string,
+    internaltrafficpolicy?: string,
   }
 }
 
@@ -6472,15 +7316,23 @@ export namespace SessionAffinityConfig {
 export class StorageOSPersistentVolumeSource extends jspb.Message {
   getVolumename(): string;
   setVolumename(value: string): StorageOSPersistentVolumeSource;
+  hasVolumename(): boolean;
+  clearVolumename(): StorageOSPersistentVolumeSource;
 
   getVolumenamespace(): string;
   setVolumenamespace(value: string): StorageOSPersistentVolumeSource;
+  hasVolumenamespace(): boolean;
+  clearVolumenamespace(): StorageOSPersistentVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): StorageOSPersistentVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): StorageOSPersistentVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): StorageOSPersistentVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): StorageOSPersistentVolumeSource;
 
   getSecretref(): ObjectReference | undefined;
   setSecretref(value?: ObjectReference): StorageOSPersistentVolumeSource;
@@ -6497,10 +7349,10 @@ export class StorageOSPersistentVolumeSource extends jspb.Message {
 
 export namespace StorageOSPersistentVolumeSource {
   export type AsObject = {
-    volumename: string,
-    volumenamespace: string,
-    fstype: string,
-    readonly: boolean,
+    volumename?: string,
+    volumenamespace?: string,
+    fstype?: string,
+    readonly?: boolean,
     secretref?: ObjectReference.AsObject,
   }
 }
@@ -6508,15 +7360,23 @@ export namespace StorageOSPersistentVolumeSource {
 export class StorageOSVolumeSource extends jspb.Message {
   getVolumename(): string;
   setVolumename(value: string): StorageOSVolumeSource;
+  hasVolumename(): boolean;
+  clearVolumename(): StorageOSVolumeSource;
 
   getVolumenamespace(): string;
   setVolumenamespace(value: string): StorageOSVolumeSource;
+  hasVolumenamespace(): boolean;
+  clearVolumenamespace(): StorageOSVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): StorageOSVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): StorageOSVolumeSource;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): StorageOSVolumeSource;
+  hasReadonly(): boolean;
+  clearReadonly(): StorageOSVolumeSource;
 
   getSecretref(): LocalObjectReference | undefined;
   setSecretref(value?: LocalObjectReference): StorageOSVolumeSource;
@@ -6533,10 +7393,10 @@ export class StorageOSVolumeSource extends jspb.Message {
 
 export namespace StorageOSVolumeSource {
   export type AsObject = {
-    volumename: string,
-    volumenamespace: string,
-    fstype: string,
-    readonly: boolean,
+    volumename?: string,
+    volumenamespace?: string,
+    fstype?: string,
+    readonly?: boolean,
     secretref?: LocalObjectReference.AsObject,
   }
 }
@@ -6544,9 +7404,13 @@ export namespace StorageOSVolumeSource {
 export class Sysctl extends jspb.Message {
   getName(): string;
   setName(value: string): Sysctl;
+  hasName(): boolean;
+  clearName(): Sysctl;
 
   getValue(): string;
   setValue(value: string): Sysctl;
+  hasValue(): boolean;
+  clearValue(): Sysctl;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Sysctl.AsObject;
@@ -6558,8 +7422,8 @@ export class Sysctl extends jspb.Message {
 
 export namespace Sysctl {
   export type AsObject = {
-    name: string,
-    value: string,
+    name?: string,
+    value?: string,
   }
 }
 
@@ -6571,6 +7435,8 @@ export class TCPSocketAction extends jspb.Message {
 
   getHost(): string;
   setHost(value: string): TCPSocketAction;
+  hasHost(): boolean;
+  clearHost(): TCPSocketAction;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TCPSocketAction.AsObject;
@@ -6583,19 +7449,25 @@ export class TCPSocketAction extends jspb.Message {
 export namespace TCPSocketAction {
   export type AsObject = {
     port?: k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString.AsObject,
-    host: string,
+    host?: string,
   }
 }
 
 export class Taint extends jspb.Message {
   getKey(): string;
   setKey(value: string): Taint;
+  hasKey(): boolean;
+  clearKey(): Taint;
 
   getValue(): string;
   setValue(value: string): Taint;
+  hasValue(): boolean;
+  clearValue(): Taint;
 
   getEffect(): string;
   setEffect(value: string): Taint;
+  hasEffect(): boolean;
+  clearEffect(): Taint;
 
   getTimeadded(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setTimeadded(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): Taint;
@@ -6612,9 +7484,9 @@ export class Taint extends jspb.Message {
 
 export namespace Taint {
   export type AsObject = {
-    key: string,
-    value: string,
-    effect: string,
+    key?: string,
+    value?: string,
+    effect?: string,
     timeadded?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
@@ -6622,18 +7494,28 @@ export namespace Taint {
 export class Toleration extends jspb.Message {
   getKey(): string;
   setKey(value: string): Toleration;
+  hasKey(): boolean;
+  clearKey(): Toleration;
 
   getOperator(): string;
   setOperator(value: string): Toleration;
+  hasOperator(): boolean;
+  clearOperator(): Toleration;
 
   getValue(): string;
   setValue(value: string): Toleration;
+  hasValue(): boolean;
+  clearValue(): Toleration;
 
   getEffect(): string;
   setEffect(value: string): Toleration;
+  hasEffect(): boolean;
+  clearEffect(): Toleration;
 
   getTolerationseconds(): number;
   setTolerationseconds(value: number): Toleration;
+  hasTolerationseconds(): boolean;
+  clearTolerationseconds(): Toleration;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Toleration.AsObject;
@@ -6645,17 +7527,19 @@ export class Toleration extends jspb.Message {
 
 export namespace Toleration {
   export type AsObject = {
-    key: string,
-    operator: string,
-    value: string,
-    effect: string,
-    tolerationseconds: number,
+    key?: string,
+    operator?: string,
+    value?: string,
+    effect?: string,
+    tolerationseconds?: number,
   }
 }
 
 export class TopologySelectorLabelRequirement extends jspb.Message {
   getKey(): string;
   setKey(value: string): TopologySelectorLabelRequirement;
+  hasKey(): boolean;
+  clearKey(): TopologySelectorLabelRequirement;
 
   getValuesList(): Array<string>;
   setValuesList(value: Array<string>): TopologySelectorLabelRequirement;
@@ -6672,7 +7556,7 @@ export class TopologySelectorLabelRequirement extends jspb.Message {
 
 export namespace TopologySelectorLabelRequirement {
   export type AsObject = {
-    key: string,
+    key?: string,
     valuesList: Array<string>,
   }
 }
@@ -6700,12 +7584,18 @@ export namespace TopologySelectorTerm {
 export class TopologySpreadConstraint extends jspb.Message {
   getMaxskew(): number;
   setMaxskew(value: number): TopologySpreadConstraint;
+  hasMaxskew(): boolean;
+  clearMaxskew(): TopologySpreadConstraint;
 
   getTopologykey(): string;
   setTopologykey(value: string): TopologySpreadConstraint;
+  hasTopologykey(): boolean;
+  clearTopologykey(): TopologySpreadConstraint;
 
   getWhenunsatisfiable(): string;
   setWhenunsatisfiable(value: string): TopologySpreadConstraint;
+  hasWhenunsatisfiable(): boolean;
+  clearWhenunsatisfiable(): TopologySpreadConstraint;
 
   getLabelselector(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector | undefined;
   setLabelselector(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector): TopologySpreadConstraint;
@@ -6714,6 +7604,8 @@ export class TopologySpreadConstraint extends jspb.Message {
 
   getMindomains(): number;
   setMindomains(value: number): TopologySpreadConstraint;
+  hasMindomains(): boolean;
+  clearMindomains(): TopologySpreadConstraint;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TopologySpreadConstraint.AsObject;
@@ -6725,23 +7617,29 @@ export class TopologySpreadConstraint extends jspb.Message {
 
 export namespace TopologySpreadConstraint {
   export type AsObject = {
-    maxskew: number,
-    topologykey: string,
-    whenunsatisfiable: string,
+    maxskew?: number,
+    topologykey?: string,
+    whenunsatisfiable?: string,
     labelselector?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.AsObject,
-    mindomains: number,
+    mindomains?: number,
   }
 }
 
 export class TypedLocalObjectReference extends jspb.Message {
   getApigroup(): string;
   setApigroup(value: string): TypedLocalObjectReference;
+  hasApigroup(): boolean;
+  clearApigroup(): TypedLocalObjectReference;
 
   getKind(): string;
   setKind(value: string): TypedLocalObjectReference;
+  hasKind(): boolean;
+  clearKind(): TypedLocalObjectReference;
 
   getName(): string;
   setName(value: string): TypedLocalObjectReference;
+  hasName(): boolean;
+  clearName(): TypedLocalObjectReference;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TypedLocalObjectReference.AsObject;
@@ -6753,15 +7651,17 @@ export class TypedLocalObjectReference extends jspb.Message {
 
 export namespace TypedLocalObjectReference {
   export type AsObject = {
-    apigroup: string,
-    kind: string,
-    name: string,
+    apigroup?: string,
+    kind?: string,
+    name?: string,
   }
 }
 
 export class Volume extends jspb.Message {
   getName(): string;
   setName(value: string): Volume;
+  hasName(): boolean;
+  clearName(): Volume;
 
   getVolumesource(): VolumeSource | undefined;
   setVolumesource(value?: VolumeSource): Volume;
@@ -6778,7 +7678,7 @@ export class Volume extends jspb.Message {
 
 export namespace Volume {
   export type AsObject = {
-    name: string,
+    name?: string,
     volumesource?: VolumeSource.AsObject,
   }
 }
@@ -6786,9 +7686,13 @@ export namespace Volume {
 export class VolumeDevice extends jspb.Message {
   getName(): string;
   setName(value: string): VolumeDevice;
+  hasName(): boolean;
+  clearName(): VolumeDevice;
 
   getDevicepath(): string;
   setDevicepath(value: string): VolumeDevice;
+  hasDevicepath(): boolean;
+  clearDevicepath(): VolumeDevice;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VolumeDevice.AsObject;
@@ -6800,29 +7704,41 @@ export class VolumeDevice extends jspb.Message {
 
 export namespace VolumeDevice {
   export type AsObject = {
-    name: string,
-    devicepath: string,
+    name?: string,
+    devicepath?: string,
   }
 }
 
 export class VolumeMount extends jspb.Message {
   getName(): string;
   setName(value: string): VolumeMount;
+  hasName(): boolean;
+  clearName(): VolumeMount;
 
   getReadonly(): boolean;
   setReadonly(value: boolean): VolumeMount;
+  hasReadonly(): boolean;
+  clearReadonly(): VolumeMount;
 
   getMountpath(): string;
   setMountpath(value: string): VolumeMount;
+  hasMountpath(): boolean;
+  clearMountpath(): VolumeMount;
 
   getSubpath(): string;
   setSubpath(value: string): VolumeMount;
+  hasSubpath(): boolean;
+  clearSubpath(): VolumeMount;
 
   getMountpropagation(): string;
   setMountpropagation(value: string): VolumeMount;
+  hasMountpropagation(): boolean;
+  clearMountpropagation(): VolumeMount;
 
   getSubpathexpr(): string;
   setSubpathexpr(value: string): VolumeMount;
+  hasSubpathexpr(): boolean;
+  clearSubpathexpr(): VolumeMount;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VolumeMount.AsObject;
@@ -6834,12 +7750,12 @@ export class VolumeMount extends jspb.Message {
 
 export namespace VolumeMount {
   export type AsObject = {
-    name: string,
-    readonly: boolean,
-    mountpath: string,
-    subpath: string,
-    mountpropagation: string,
-    subpathexpr: string,
+    name?: string,
+    readonly?: boolean,
+    mountpath?: string,
+    subpath?: string,
+    mountpropagation?: string,
+    subpathexpr?: string,
   }
 }
 
@@ -7092,15 +8008,23 @@ export namespace VolumeSource {
 export class VsphereVirtualDiskVolumeSource extends jspb.Message {
   getVolumepath(): string;
   setVolumepath(value: string): VsphereVirtualDiskVolumeSource;
+  hasVolumepath(): boolean;
+  clearVolumepath(): VsphereVirtualDiskVolumeSource;
 
   getFstype(): string;
   setFstype(value: string): VsphereVirtualDiskVolumeSource;
+  hasFstype(): boolean;
+  clearFstype(): VsphereVirtualDiskVolumeSource;
 
   getStoragepolicyname(): string;
   setStoragepolicyname(value: string): VsphereVirtualDiskVolumeSource;
+  hasStoragepolicyname(): boolean;
+  clearStoragepolicyname(): VsphereVirtualDiskVolumeSource;
 
   getStoragepolicyid(): string;
   setStoragepolicyid(value: string): VsphereVirtualDiskVolumeSource;
+  hasStoragepolicyid(): boolean;
+  clearStoragepolicyid(): VsphereVirtualDiskVolumeSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VsphereVirtualDiskVolumeSource.AsObject;
@@ -7112,16 +8036,18 @@ export class VsphereVirtualDiskVolumeSource extends jspb.Message {
 
 export namespace VsphereVirtualDiskVolumeSource {
   export type AsObject = {
-    volumepath: string,
-    fstype: string,
-    storagepolicyname: string,
-    storagepolicyid: string,
+    volumepath?: string,
+    fstype?: string,
+    storagepolicyname?: string,
+    storagepolicyid?: string,
   }
 }
 
 export class WeightedPodAffinityTerm extends jspb.Message {
   getWeight(): number;
   setWeight(value: number): WeightedPodAffinityTerm;
+  hasWeight(): boolean;
+  clearWeight(): WeightedPodAffinityTerm;
 
   getPodaffinityterm(): PodAffinityTerm | undefined;
   setPodaffinityterm(value?: PodAffinityTerm): WeightedPodAffinityTerm;
@@ -7138,7 +8064,7 @@ export class WeightedPodAffinityTerm extends jspb.Message {
 
 export namespace WeightedPodAffinityTerm {
   export type AsObject = {
-    weight: number,
+    weight?: number,
     podaffinityterm?: PodAffinityTerm.AsObject,
   }
 }
@@ -7146,15 +8072,23 @@ export namespace WeightedPodAffinityTerm {
 export class WindowsSecurityContextOptions extends jspb.Message {
   getGmsacredentialspecname(): string;
   setGmsacredentialspecname(value: string): WindowsSecurityContextOptions;
+  hasGmsacredentialspecname(): boolean;
+  clearGmsacredentialspecname(): WindowsSecurityContextOptions;
 
   getGmsacredentialspec(): string;
   setGmsacredentialspec(value: string): WindowsSecurityContextOptions;
+  hasGmsacredentialspec(): boolean;
+  clearGmsacredentialspec(): WindowsSecurityContextOptions;
 
   getRunasusername(): string;
   setRunasusername(value: string): WindowsSecurityContextOptions;
+  hasRunasusername(): boolean;
+  clearRunasusername(): WindowsSecurityContextOptions;
 
   getHostprocess(): boolean;
   setHostprocess(value: boolean): WindowsSecurityContextOptions;
+  hasHostprocess(): boolean;
+  clearHostprocess(): WindowsSecurityContextOptions;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WindowsSecurityContextOptions.AsObject;
@@ -7166,10 +8100,10 @@ export class WindowsSecurityContextOptions extends jspb.Message {
 
 export namespace WindowsSecurityContextOptions {
   export type AsObject = {
-    gmsacredentialspecname: string,
-    gmsacredentialspec: string,
-    runasusername: string,
-    hostprocess: boolean,
+    gmsacredentialspecname?: string,
+    gmsacredentialspec?: string,
+    runasusername?: string,
+    hostprocess?: boolean,
   }
 }
 

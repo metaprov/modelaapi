@@ -7,6 +7,8 @@ export class RawExtension extends jspb.Message {
   getRaw_asU8(): Uint8Array;
   getRaw_asB64(): string;
   setRaw(value: Uint8Array | string): RawExtension;
+  hasRaw(): boolean;
+  clearRaw(): RawExtension;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RawExtension.AsObject;
@@ -18,16 +20,20 @@ export class RawExtension extends jspb.Message {
 
 export namespace RawExtension {
   export type AsObject = {
-    raw: Uint8Array | string,
+    raw?: Uint8Array | string,
   }
 }
 
 export class TypeMeta extends jspb.Message {
   getApiversion(): string;
   setApiversion(value: string): TypeMeta;
+  hasApiversion(): boolean;
+  clearApiversion(): TypeMeta;
 
   getKind(): string;
   setKind(value: string): TypeMeta;
+  hasKind(): boolean;
+  clearKind(): TypeMeta;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TypeMeta.AsObject;
@@ -39,8 +45,8 @@ export class TypeMeta extends jspb.Message {
 
 export namespace TypeMeta {
   export type AsObject = {
-    apiversion: string,
-    kind: string,
+    apiversion?: string,
+    kind?: string,
   }
 }
 
@@ -54,12 +60,18 @@ export class Unknown extends jspb.Message {
   getRaw_asU8(): Uint8Array;
   getRaw_asB64(): string;
   setRaw(value: Uint8Array | string): Unknown;
+  hasRaw(): boolean;
+  clearRaw(): Unknown;
 
   getContentencoding(): string;
   setContentencoding(value: string): Unknown;
+  hasContentencoding(): boolean;
+  clearContentencoding(): Unknown;
 
   getContenttype(): string;
   setContenttype(value: string): Unknown;
+  hasContenttype(): boolean;
+  clearContenttype(): Unknown;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Unknown.AsObject;
@@ -72,9 +84,9 @@ export class Unknown extends jspb.Message {
 export namespace Unknown {
   export type AsObject = {
     typemeta?: TypeMeta.AsObject,
-    raw: Uint8Array | string,
-    contentencoding: string,
-    contenttype: string,
+    raw?: Uint8Array | string,
+    contentencoding?: string,
+    contenttype?: string,
   }
 }
 
