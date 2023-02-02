@@ -23,6 +23,8 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type WatcherdServiceClient interface {
 	WatchDataset(ctx context.Context, in *WatchDatasetRequest, opts ...grpc.CallOption) (*WatchDatasetResponse, error)
+	WatchModel(ctx context.Context, in *WatchModelRequest, opts ...grpc.CallOption) (*WatchModelResponse, error)
+	WatchAlert(ctx context.Context, in *WatchAlertRequest, opts ...grpc.CallOption) (*WatchAlertResponse, error)
 }
 
 type watcherdServiceClient struct {
@@ -42,11 +44,31 @@ func (c *watcherdServiceClient) WatchDataset(ctx context.Context, in *WatchDatas
 	return out, nil
 }
 
+func (c *watcherdServiceClient) WatchModel(ctx context.Context, in *WatchModelRequest, opts ...grpc.CallOption) (*WatchModelResponse, error) {
+	out := new(WatchModelResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchModel", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *watcherdServiceClient) WatchAlert(ctx context.Context, in *WatchAlertRequest, opts ...grpc.CallOption) (*WatchAlertResponse, error) {
+	out := new(WatchAlertResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchAlert", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // WatcherdServiceServer is the server API for WatcherdService service.
 // All implementations must embed UnimplementedWatcherdServiceServer
 // for forward compatibility
 type WatcherdServiceServer interface {
 	WatchDataset(context.Context, *WatchDatasetRequest) (*WatchDatasetResponse, error)
+	WatchModel(context.Context, *WatchModelRequest) (*WatchModelResponse, error)
+	WatchAlert(context.Context, *WatchAlertRequest) (*WatchAlertResponse, error)
 	mustEmbedUnimplementedWatcherdServiceServer()
 }
 
@@ -56,6 +78,12 @@ type UnimplementedWatcherdServiceServer struct {
 
 func (UnimplementedWatcherdServiceServer) WatchDataset(context.Context, *WatchDatasetRequest) (*WatchDatasetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WatchDataset not implemented")
+}
+func (UnimplementedWatcherdServiceServer) WatchModel(context.Context, *WatchModelRequest) (*WatchModelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WatchModel not implemented")
+}
+func (UnimplementedWatcherdServiceServer) WatchAlert(context.Context, *WatchAlertRequest) (*WatchAlertResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WatchAlert not implemented")
 }
 func (UnimplementedWatcherdServiceServer) mustEmbedUnimplementedWatcherdServiceServer() {}
 
@@ -88,6 +116,42 @@ func _WatcherdService_WatchDataset_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WatcherdService_WatchModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(WatchModelRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WatcherdServiceServer).WatchModel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchModel",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WatcherdServiceServer).WatchModel(ctx, req.(*WatchModelRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WatcherdService_WatchAlert_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(WatchAlertRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WatcherdServiceServer).WatchAlert(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchAlert",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WatcherdServiceServer).WatchAlert(ctx, req.(*WatchAlertRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // WatcherdService_ServiceDesc is the grpc.ServiceDesc for WatcherdService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -98,6 +162,14 @@ var WatcherdService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "WatchDataset",
 			Handler:    _WatcherdService_WatchDataset_Handler,
+		},
+		{
+			MethodName: "WatchModel",
+			Handler:    _WatcherdService_WatchModel_Handler,
+		},
+		{
+			MethodName: "WatchAlert",
+			Handler:    _WatcherdService_WatchAlert_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

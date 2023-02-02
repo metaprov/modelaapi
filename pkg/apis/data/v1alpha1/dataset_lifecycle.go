@@ -193,7 +193,7 @@ func (dataset *Dataset) MarkSnapshotFailed(msg string) {
 		Type:    DatasetSnapshotted,
 		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
-		Message: "Failed to snapshot." + msg,
+		Message: "Failed to snapshot: " + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(msg)
@@ -212,7 +212,7 @@ func (dataset *Dataset) MarkSnapshotSuccess() {
 		Reason: DatasetSnapshotted,
 	})
 	dataset.Status.Phase = DatasetPhaseSnapshotSuccess
-	dataset.Status.Progress = 20
+	dataset.Status.Progress = 10
 
 }
 
@@ -223,7 +223,7 @@ func (dataset *Dataset) MarkTakingSnapshot() {
 		Reason: string(DatasetPhaseSnapshotRunning),
 	})
 	dataset.Status.Phase = DatasetPhaseSnapshotRunning
-	dataset.Status.Progress = 10
+	dataset.Status.Progress = 0
 }
 
 //------------------------------ Group
@@ -251,7 +251,7 @@ func (dataset *Dataset) MarkGroupFailed(msg string) {
 		Type:    DatasetGrouped,
 		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
-		Message: "Failed to group." + msg,
+		Message: "Failed to group: " + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(msg)
@@ -270,7 +270,7 @@ func (dataset *Dataset) MarkGroupSuccess() {
 		Reason: DatasetGrouped,
 	})
 	dataset.Status.Phase = DatasetPhaseGrouped
-	dataset.Status.Progress = 20
+	dataset.Status.Progress = 30
 
 }
 
@@ -281,7 +281,7 @@ func (dataset *Dataset) MarkGrouping() {
 		Reason: string(DatasetPhaseGrouping),
 	})
 	dataset.Status.Phase = DatasetPhaseGrouping
-	dataset.Status.Progress = 55
+	dataset.Status.Progress = 20
 }
 
 // ----------------------------- Unit Tests --------------------
@@ -291,7 +291,7 @@ func (dataset *Dataset) MarkUnitTestFailed(msg string) {
 		Type:    DatasetUnitTested,
 		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
-		Message: "Failed to validate." + msg,
+		Message: "Failed to validate: " + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(msg)
@@ -308,7 +308,7 @@ func (dataset *Dataset) MarkUnitTested() {
 		Status: metav1.ConditionTrue,
 		Reason: DatasetUnitTested,
 	})
-	dataset.Status.Progress = 40
+	dataset.Status.Progress = 90
 
 }
 
@@ -319,7 +319,7 @@ func (dataset *Dataset) MarkUnitTesting() {
 		Reason: string(DatasetPhaseUnitTesting),
 	})
 	dataset.Status.Phase = DatasetPhaseUnitTesting
-	dataset.Status.Progress = 10
+	dataset.Status.Progress = 80
 }
 
 // ------------------------- injest
@@ -331,7 +331,7 @@ func (dataset *Dataset) MarkIngesting() {
 		Reason: string(DatasetPhaseIngestRunning),
 	})
 	dataset.Status.Phase = DatasetPhaseIngestRunning
-	dataset.Status.Progress = 50
+	dataset.Status.Progress = 20
 
 }
 
@@ -342,7 +342,7 @@ func (dataset *Dataset) MarkIngested() {
 		Reason: DatasetIngested,
 	})
 	dataset.Status.Phase = DatasetPhaseIngestSuccess
-	dataset.Status.Progress = 60
+	dataset.Status.Progress = 30
 
 }
 
@@ -351,7 +351,7 @@ func (dataset *Dataset) MarkIngestFailed(msg string) {
 		Type:    DatasetIngested,
 		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
-		Message: "Failed to ingest." + msg,
+		Message: "Failed to ingest: " + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(msg)
@@ -371,7 +371,7 @@ func (dataset *Dataset) MarkGenerting() {
 		Reason: string(DatasetPhaseGenerating),
 	})
 	dataset.Status.Phase = DatasetPhaseGenerating
-	dataset.Status.Progress = 60
+	dataset.Status.Progress = 40
 
 }
 
@@ -382,7 +382,7 @@ func (dataset *Dataset) MarkGenerated() {
 		Reason: DatasetGenerated,
 	})
 	dataset.Status.Phase = DatasetPhaseGenSuccess
-	dataset.Status.Progress = 70
+	dataset.Status.Progress = 50
 
 }
 
@@ -391,7 +391,7 @@ func (dataset *Dataset) MarkGeneratedFailed(msg string) {
 		Type:    DatasetGenerated,
 		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
-		Message: "Failed to generate dataset." + msg,
+		Message: "Failed to generate dataset: " + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(msg)
@@ -429,7 +429,7 @@ func (dataset *Dataset) MarkReportFailed(msg string) {
 		Type:    DatasetReported,
 		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
-		Message: "Failed to report." + msg,
+		Message: "Failed to report: " + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(msg)
@@ -449,7 +449,7 @@ func (dataset *Dataset) MarkProfiling() {
 		Reason: string(DatasetPhaseProfileRunning),
 	})
 	dataset.Status.Phase = DatasetPhaseProfileRunning
-	dataset.Status.Progress = 70
+	dataset.Status.Progress = 60
 }
 
 func (dataset *Dataset) MarkProfiled(uri string) {
@@ -460,7 +460,7 @@ func (dataset *Dataset) MarkProfiled(uri string) {
 	})
 	dataset.Status.ProfileURI = uri
 	dataset.Status.Phase = DatasetPhaseProfileSuccess
-	dataset.Status.Progress = 80
+	dataset.Status.Progress = 70
 }
 
 func (dataset *Dataset) MarkProfiledFailed(msg string) {
@@ -468,7 +468,7 @@ func (dataset *Dataset) MarkProfiledFailed(msg string) {
 		Type:    DatasetProfiled,
 		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
-		Message: "Failed to profiled." + msg,
+		Message: "Failed to profiled: " + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(msg)

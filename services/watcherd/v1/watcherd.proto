@@ -11,11 +11,14 @@ import "k8s.io/api/core/v1/generated.proto";
 
 enum EventType {
   EVENT_UPDATE = 0;
-  EVENT_DELETE = 1;
+  EVENT_ADD = 1;
+  EVENT_DELETE = 2;
 }
 
 service WatcherdService {
   rpc WatchDataset (WatchDatasetRequest) returns (WatchDatasetResponse) {}
+  rpc WatchModel   (WatchModelRequest)   returns (WatchModelResponse) {}
+  rpc WatchAlert   (WatchAlertRequest)   returns (WatchAlertResponse) {}
 }
 
 message DatasetEvent {
@@ -25,10 +28,40 @@ message DatasetEvent {
 
 message WatchDatasetRequest {
   uint64 generation = 1;
-  string namespace  = 2;
+  string namespace = 2;
 }
 
 message WatchDatasetResponse {
   uint64 generation = 1;
   repeated DatasetEvent events = 2;
+}
+
+message ModelEvent {
+  EventType event = 1;
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 2;
+}
+
+message WatchModelRequest {
+  uint64 generation = 1;
+  string namespace = 2;
+}
+
+message WatchModelResponse {
+  uint64 generation = 1;
+  repeated ModelEvent events = 2;
+}
+
+message AlertEvent {
+  EventType event = 1;
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert alert = 2;
+}
+
+message WatchAlertRequest {
+  uint64 generation = 1;
+  string namespace = 2;
+}
+
+message WatchAlertResponse {
+  uint64 generation = 1;
+  repeated AlertEvent events = 2;
 }
