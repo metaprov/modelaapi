@@ -1,6 +1,6 @@
 .PHONY: generate-proto  
 generate-proto:
-	cd hack && ./generate-proto.sh
+	hack/generate-proto.sh
 
 .PHONY: generate-go
 generate-go:

@@ -375,8 +375,9 @@ spec:
                 properties:
                   clusterIssuerName:
                     default: ""
-                    description: ClusterIssuerName is a cert manager resource that
-                      provide TLS certificate to the ingress.
+                    description: ClusterIssuerName specifies the name of a cert-manager
+                      ClusterIssuer resource that will provide a TLS certificate to
+                      the ingress. This will be added as an annotation to the ingress.
                     type: string
                   fqdn:
                     default: serving.vcap.me
@@ -400,6 +401,12 @@ spec:
                       that will be applied to created Ingress resources (defaults
                       to nginx)
                     type: string
+                  issuerName:
+                    description: IssuerName specifies the name of a cert-manager Issuer
+                      resource in the same namespace as the Serving Site that will
+                      provide a TLS certificate to the ingress. This will be added
+                      as an annotation to the ingress.
+                    type: string
                   rest:
                     default: false
                     description: Rest indicates if the ServingSite will create an
@@ -411,19 +418,9 @@ spec:
                   tlsSecretRef:
                     description: TlsSecretName specifies the name of the secret that
                       contains the TLS certificate for the ingress. If it does not
-                      exist, ClusterIssuerName must be specified for Cert Manager
-                      to generate the certificate
-                    properties:
-                      name:
-                        description: name is unique within a namespace to reference
-                          a secret resource.
-                        type: string
-                      namespace:
-                        description: namespace defines the space within which the
-                          secret name must be unique.
-                        type: string
-                    type: object
-                    x-kubernetes-map-type: atomic
+                      exist, ClusterIssuerName or IssuerName must be specified for
+                      Cert Manager to generate the serving certificate
+                    type: string
                 type: object
               limits:
                 description: Limits specifies the hard resource limits that can be
