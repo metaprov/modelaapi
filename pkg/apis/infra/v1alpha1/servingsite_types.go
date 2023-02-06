@@ -158,7 +158,7 @@ type IngressSpec struct {
 	ClusterIssuerName *string `json:"clusterIssuerName,omitempty" protobuf:"bytes,6,opt,name=clusterIssuerName"`
 	// TlsSecretName specifies the name of the secret that contains the TLS certificate for the ingress.
 	// If it does not exist, ClusterIssuerName or IssuerName must be specified for Cert Manager to
-	// generate the serving certificate
+	// generate the serving certificate. If this field is specified, TLS will be implicitly enabled.
 	// +kubebuilder:validation:Optional
-	TlsSecretName string `json:"tlsSecretRef,omitempty" protobuf:"bytes,7,opt,name=tlsSecretName"`
+	TlsSecretName string `json:"tlsSecretName,omitempty" protobuf:"bytes,7,opt,name=tlsSecretName"`
 }

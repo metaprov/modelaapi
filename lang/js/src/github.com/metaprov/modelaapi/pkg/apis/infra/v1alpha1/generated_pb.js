@@ -27135,8 +27135,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.toObject
     grpc: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
     rest: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
     ingressclassname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    clusterissuername: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    tlssecretref: (f = msg.getTlssecretref()) && k8s_io_api_core_v1_generated_pb.SecretReference.toObject(includeInstance, f)
+    issuername: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    clusterissuername: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    tlssecretname: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -27191,12 +27192,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.deserial
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setClusterissuername(value);
+      msg.setIssuername(value);
       break;
     case 6:
-      var value = new k8s_io_api_core_v1_generated_pb.SecretReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.SecretReference.deserializeBinaryFromReader);
-      msg.setTlssecretref(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setClusterissuername(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTlssecretname(value);
       break;
     default:
       reader.skipField();
@@ -27262,12 +27266,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.serializ
       f
     );
   }
-  f = message.getTlssecretref();
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       6,
-      f,
-      k8s_io_api_core_v1_generated_pb.SecretReference.serializeBinaryToWriter
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
+      f
     );
   }
 };
@@ -27418,10 +27428,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
 
 
 /**
- * optional string clusterIssuerName = 5;
+ * optional string issuerName = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.getClusterissuername = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.getIssuername = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -27430,7 +27440,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.setClusterissuername = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.setIssuername = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -27439,7 +27449,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.clearClusterissuername = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.clearIssuername = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -27448,36 +27458,35 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.hasClusterissuername = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.hasIssuername = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.SecretReference tlsSecretRef = 6;
- * @return {?proto.k8s.io.api.core.v1.SecretReference}
+ * optional string clusterIssuerName = 6;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.getTlssecretref = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.SecretReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.SecretReference, 6));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.getClusterissuername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.core.v1.SecretReference|undefined} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.setTlssecretref = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.setClusterissuername = function(value) {
+  return jspb.Message.setField(this, 6, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.clearTlssecretref = function() {
-  return this.setTlssecretref(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.clearClusterissuername = function() {
+  return jspb.Message.setField(this, 6, undefined);
 };
 
 
@@ -27485,8 +27494,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.hasTlssecretref = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.hasClusterissuername = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string tlsSecretName = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.getTlssecretname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.setTlssecretname = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.clearTlssecretname = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.hasTlssecretname = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

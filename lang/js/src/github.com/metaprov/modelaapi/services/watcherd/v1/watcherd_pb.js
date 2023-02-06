@@ -1819,8 +1819,7 @@ proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchAlertResponse.prot
  */
 proto.github.com.metaprov.modelaapi.services.watcherd.v1.EventType = {
   EVENT_UPDATE: 0,
-  EVENT_ADD: 1,
-  EVENT_DELETE: 2
+  EVENT_DELETE: 1
 };
 
 goog.object.extend(exports, proto.github.com.metaprov.modelaapi.services.watcherd.v1);

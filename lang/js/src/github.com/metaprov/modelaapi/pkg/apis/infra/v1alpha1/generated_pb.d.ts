@@ -3075,15 +3075,20 @@ export class IngressSpec extends jspb.Message {
   hasIngressclassname(): boolean;
   clearIngressclassname(): IngressSpec;
 
+  getIssuername(): string;
+  setIssuername(value: string): IngressSpec;
+  hasIssuername(): boolean;
+  clearIssuername(): IngressSpec;
+
   getClusterissuername(): string;
   setClusterissuername(value: string): IngressSpec;
   hasClusterissuername(): boolean;
   clearClusterissuername(): IngressSpec;
 
-  getTlssecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
-  setTlssecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): IngressSpec;
-  hasTlssecretref(): boolean;
-  clearTlssecretref(): IngressSpec;
+  getTlssecretname(): string;
+  setTlssecretname(value: string): IngressSpec;
+  hasTlssecretname(): boolean;
+  clearTlssecretname(): IngressSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IngressSpec.AsObject;
@@ -3099,8 +3104,9 @@ export namespace IngressSpec {
     grpc?: boolean,
     rest?: boolean,
     ingressclassname?: string,
+    issuername?: string,
     clusterissuername?: string,
-    tlssecretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
+    tlssecretname?: string,
   }
 }
 

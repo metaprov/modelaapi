@@ -415,7 +415,7 @@ spec:
                       FQDN of the ServingSite (i.e. predictors.model-serving.modela.ai).
                       RestIngress must be enabled to serve DataApps over Ingress
                     type: boolean
-                  tlsSecretRef:
+                  tlsSecretName:
                     description: TlsSecretName specifies the name of the secret that
                       contains the TLS certificate for the ingress. If it does not
                       exist, ClusterIssuerName or IssuerName must be specified for

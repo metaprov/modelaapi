@@ -158,6 +158,8 @@ func (servingsite ServingSite) ConstructGrpcIngress() *nwv1.Ingress {
 
 	if servingsite.Spec.Ingress.ClusterIssuerName != nil && *servingsite.Spec.Ingress.ClusterIssuerName != "" {
 		result.ObjectMeta.Annotations["cert-manager.io/cluster-issuer"] = *servingsite.Spec.Ingress.ClusterIssuerName
+	} else if servingsite.Spec.Ingress.IssuerName != nil && *servingsite.Spec.Ingress.IssuerName != "" {
+		result.ObjectMeta.Annotations["cert-manager.io/issuer"] = *servingsite.Spec.Ingress.IssuerName
 	}
 
 	return result
@@ -192,8 +194,10 @@ func (servingsite ServingSite) ConstructRestIngress() *nwv1.Ingress {
 	}
 	if servingsite.Spec.Ingress.ClusterIssuerName != nil && *servingsite.Spec.Ingress.ClusterIssuerName != "" {
 		result.ObjectMeta.Annotations["cert-manager.io/cluster-issuer"] = *servingsite.Spec.Ingress.ClusterIssuerName
-
+	} else if servingsite.Spec.Ingress.IssuerName != nil && *servingsite.Spec.Ingress.IssuerName != "" {
+		result.ObjectMeta.Annotations["cert-manager.io/issuer"] = *servingsite.Spec.Ingress.IssuerName
 	}
+
 	return result
 }
 

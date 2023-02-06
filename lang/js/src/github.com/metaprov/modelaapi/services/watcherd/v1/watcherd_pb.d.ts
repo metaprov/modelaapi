@@ -219,6 +219,5 @@ export namespace WatchAlertResponse {
 
 export enum EventType { 
   EVENT_UPDATE = 0,
-  EVENT_ADD = 1,
-  EVENT_DELETE = 2,
+  EVENT_DELETE = 1,
 }
