@@ -72,11 +72,11 @@ func (servingsite ServingSite) validateSpec(fldPath *field.Path) field.ErrorList
 
 func (servingsite ServingSite) validateIngress(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	if servingsite.Spec.Ingress.ClusterIssuerName != nil && servingsite.Spec.Ingress.IssuerName != nil {
+	if servingsite.Spec.Ingress.ClusterIssuerName != nil && servingsite.Spec.Ingress.IssuerName != nil &&
+		*servingsite.Spec.Ingress.ClusterIssuerName != "" && *servingsite.Spec.Ingress.IssuerName != "" {
 		err := errors.Errorf("Cluster-issuer and issuer resources cannot be both set on a Serving Site")
-		allErrs = append(allErrs, field.Invalid(
+		allErrs = append(allErrs, field.Forbidden(
 			fldPath,
-			nil,
 			err.Error()))
 	}
 
