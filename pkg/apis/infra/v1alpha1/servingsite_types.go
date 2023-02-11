@@ -151,10 +151,12 @@ type IngressSpec struct {
 	IngressClassName *string `json:"ingressClassName,omitempty" protobuf:"bytes,4,opt,name=ingressClassName"`
 	// IssuerName specifies the name of a cert-manager Issuer resource in the same namespace as the Serving Site
 	// that will provide a TLS certificate to the ingress. This will be added as an annotation to the ingress.
+	// +kubebuilder:validation:Optional
 	IssuerName *string `json:"issuerName,omitempty" protobuf:"bytes,5,opt,name=issuerName"`
 	// ClusterIssuerName specifies the name of a cert-manager ClusterIssuer resource
 	// that will provide a TLS certificate to the ingress. This will be added as an annotation to the ingress.
 	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
 	ClusterIssuerName *string `json:"clusterIssuerName,omitempty" protobuf:"bytes,6,opt,name=clusterIssuerName"`
 	// TlsSecretName specifies the name of the secret that contains the TLS certificate for the ingress.
 	// If it does not exist, ClusterIssuerName or IssuerName must be specified for Cert Manager to

@@ -298,3 +298,37 @@ export namespace DeleteTenantResponse {
   }
 }
 
+export class ListTenantNamesRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTenantNamesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTenantNamesRequest): ListTenantNamesRequest.AsObject;
+  static serializeBinaryToWriter(message: ListTenantNamesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTenantNamesRequest;
+  static deserializeBinaryFromReader(message: ListTenantNamesRequest, reader: jspb.BinaryReader): ListTenantNamesRequest;
+}
+
+export namespace ListTenantNamesRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListTenantNamesResponse extends jspb.Message {
+  getNamesList(): Array<string>;
+  setNamesList(value: Array<string>): ListTenantNamesResponse;
+  clearNamesList(): ListTenantNamesResponse;
+  addNames(value: string, index?: number): ListTenantNamesResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTenantNamesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTenantNamesResponse): ListTenantNamesResponse.AsObject;
+  static serializeBinaryToWriter(message: ListTenantNamesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTenantNamesResponse;
+  static deserializeBinaryFromReader(message: ListTenantNamesResponse, reader: jspb.BinaryReader): ListTenantNamesResponse;
+}
+
+export namespace ListTenantNamesResponse {
+  export type AsObject = {
+    namesList: Array<string>,
+  }
+}
+

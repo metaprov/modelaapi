@@ -9,27 +9,27 @@ import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.prot
 
 
 message ListPredictorsRequest {
-    string namespace = 1;
-    map<string,string> labels = 2;
-    int32              page_size  = 3;
-    string             page_token = 4;
-    string             order_by   = 5;
+  string namespace = 1;
+  map<string, string> labels = 2;
+  int32              page_size = 3;
+  string             page_token = 4;
+  string             order_by = 5;
 }
 
 message ListPredictorsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorList predictors = 1;
-    string next_page_token = 2;
+  github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorList predictors = 1;
+  string next_page_token = 2;
 }
 
 message CreatePredictorResponse {}
 
 message CreatePredictorRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor predictor = 1;
+  github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor predictor = 1;
 }
 
 message UpdatePredictorRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor predictor = 1;
-    google.protobuf.FieldMask field_mask = 2;
+  github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor predictor = 1;
+  google.protobuf.FieldMask field_mask = 2;
 }
 
 message UpdatePredictorResponse {
@@ -37,19 +37,19 @@ message UpdatePredictorResponse {
 }
 
 message GetPredictorRequest {
-    string namespace = 1;
-    string name      = 2;
+  string namespace = 1;
+  string name = 2;
 }
 
 message GetPredictorResponse {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor predictor = 1;
-    string yaml = 2;
+  github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor predictor = 1;
+  string yaml = 2;
 
 }
 
 message DeletePredictorRequest {
-    string namespace = 1;
-    string name      = 2;
+  string namespace = 1;
+  string name = 2;
 }
 
 message DeletePredictorResponse {
@@ -57,9 +57,9 @@ message DeletePredictorResponse {
 }
 
 message RollbackRequest {
-    string namespace = 1;
-    string name      = 2;
-    string modelName = 3; // the model to roll back to
+  string namespace = 1;
+  string name = 2;
+  string modelName = 3; // the model to roll back to
 }
 
 message RollbackResponse {
@@ -68,57 +68,57 @@ message RollbackResponse {
 
 
 message PredictOneRequest {
-    string namespace = 1;
-    string name      = 2;
-    string fields    = 3;
-    string values    = 4;
+  string namespace = 1;
+  string name = 2;
+  string fields = 3;
+  string values = 4;
 }
 
 message PredictOneResponse {
-    string namespace = 1;
-    string name      = 2;
-    string label     = 3; // for classification
-    float  score     = 4; // for regression
-    map<string,float> proba = 5; // proba response
+  string namespace = 1;
+  string name = 2;
+  string label = 3; // for classification
+  float  score = 4; // for regression
+  map<string, float> proba = 5; // proba response
 }
 
 service PredictorService {
-    rpc ListPredictors(ListPredictorsRequest) returns (ListPredictorsResponse) {
-        option (google.api.http).get = "/v1/predictors/{namespace}";
-    }
+  rpc ListPredictors(ListPredictorsRequest) returns (ListPredictorsResponse) {
+    option (google.api.http).get = "/v1/predictors/{namespace}";
+  }
 
-    rpc CreatePredictor(CreatePredictorRequest) returns (CreatePredictorResponse) {
-        option (google.api.http) = {
-			post: "/v1/predictors"
-			body: "*"
-		};
-    }
+  rpc CreatePredictor(CreatePredictorRequest) returns (CreatePredictorResponse) {
+    option (google.api.http) = {
+      post: "/v1/predictors"
+      body: "*"
+    };
+  }
 
-    rpc GetPredictor(GetPredictorRequest) returns (GetPredictorResponse) {
-        option (google.api.http).get = "/v1/predictors/{namespace}/{name}";
-    }
+  rpc GetPredictor(GetPredictorRequest) returns (GetPredictorResponse) {
+    option (google.api.http).get = "/v1/predictors/{namespace}/{name}";
+  }
 
-    rpc UpdatePredictor(UpdatePredictorRequest) returns (UpdatePredictorResponse) {
-        option (google.api.http) = {
-			put: "/v1/predictors/{predictor.metadata.namespace}/{predictor.metadata.name}"
-			body: "*"
-		};
-    }
+  rpc UpdatePredictor(UpdatePredictorRequest) returns (UpdatePredictorResponse) {
+    option (google.api.http) = {
+      put: "/v1/predictors/{predictor.metadata.namespace}/{predictor.metadata.name}"
+      body: "*"
+    };
+  }
 
-    rpc RollBack(RollbackRequest) returns (RollbackResponse) {
-        option (google.api.http) = {
-			post: "/v1/predictors/{namespace}/{name}:rollback"
-			body: "*"
-		};
-    }
+  rpc RollBack(RollbackRequest) returns (RollbackResponse) {
+    option (google.api.http) = {
+      post: "/v1/predictors/{namespace}/{name}:rollback"
+      body: "*"
+    };
+  }
 
 
-    rpc DeletePredictor(DeletePredictorRequest) returns (DeletePredictorResponse) {
-        option (google.api.http).delete = "/v1/predictors/{namespace}/{name}";
-    }
+  rpc DeletePredictor(DeletePredictorRequest) returns (DeletePredictorResponse) {
+    option (google.api.http).delete = "/v1/predictors/{namespace}/{name}";
+  }
 
-    rpc PredictOne(PredictOneRequest) returns (PredictOneResponse) {
-        option (google.api.http).post = "/v1/predictors/{namespace}/{name}:predictone";
-    }
+  rpc PredictOne(PredictOneRequest) returns (PredictOneResponse) {
+    option (google.api.http).post = "/v1/predictors/{namespace}/{name}:predictone";
+  }
 
 }

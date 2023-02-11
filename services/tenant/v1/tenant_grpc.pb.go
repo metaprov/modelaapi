@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type TenantServiceClient interface {
 	ListTenantAlerts(ctx context.Context, in *ListTenantAlertsRequest, opts ...grpc.CallOption) (*ListTenantAlertsResponse, error)
 	ListTenants(ctx context.Context, in *ListTenantsRequest, opts ...grpc.CallOption) (*ListTenantsResponse, error)
+	ListTenantNames(ctx context.Context, in *ListTenantNamesRequest, opts ...grpc.CallOption) (*ListTenantNamesResponse, error)
 	CreateTenant(ctx context.Context, in *CreateTenantRequest, opts ...grpc.CallOption) (*CreateTenantResponse, error)
 	GetTenant(ctx context.Context, in *GetTenantRequest, opts ...grpc.CallOption) (*GetTenantResponse, error)
 	UpdateTenant(ctx context.Context, in *UpdateTenantRequest, opts ...grpc.CallOption) (*UpdateTenantResponse, error)
@@ -50,6 +51,15 @@ func (c *tenantServiceClient) ListTenantAlerts(ctx context.Context, in *ListTena
 func (c *tenantServiceClient) ListTenants(ctx context.Context, in *ListTenantsRequest, opts ...grpc.CallOption) (*ListTenantsResponse, error) {
 	out := new(ListTenantsResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/ListTenants", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *tenantServiceClient) ListTenantNames(ctx context.Context, in *ListTenantNamesRequest, opts ...grpc.CallOption) (*ListTenantNamesResponse, error) {
+	out := new(ListTenantNamesResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/ListTenantNames", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,6 +108,7 @@ func (c *tenantServiceClient) DeleteTenant(ctx context.Context, in *DeleteTenant
 type TenantServiceServer interface {
 	ListTenantAlerts(context.Context, *ListTenantAlertsRequest) (*ListTenantAlertsResponse, error)
 	ListTenants(context.Context, *ListTenantsRequest) (*ListTenantsResponse, error)
+	ListTenantNames(context.Context, *ListTenantNamesRequest) (*ListTenantNamesResponse, error)
 	CreateTenant(context.Context, *CreateTenantRequest) (*CreateTenantResponse, error)
 	GetTenant(context.Context, *GetTenantRequest) (*GetTenantResponse, error)
 	UpdateTenant(context.Context, *UpdateTenantRequest) (*UpdateTenantResponse, error)
@@ -114,6 +125,9 @@ func (UnimplementedTenantServiceServer) ListTenantAlerts(context.Context, *ListT
 }
 func (UnimplementedTenantServiceServer) ListTenants(context.Context, *ListTenantsRequest) (*ListTenantsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListTenants not implemented")
+}
+func (UnimplementedTenantServiceServer) ListTenantNames(context.Context, *ListTenantNamesRequest) (*ListTenantNamesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListTenantNames not implemented")
 }
 func (UnimplementedTenantServiceServer) CreateTenant(context.Context, *CreateTenantRequest) (*CreateTenantResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTenant not implemented")
@@ -172,6 +186,24 @@ func _TenantService_ListTenants_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TenantServiceServer).ListTenants(ctx, req.(*ListTenantsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TenantService_ListTenantNames_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListTenantNamesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TenantServiceServer).ListTenantNames(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/ListTenantNames",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TenantServiceServer).ListTenantNames(ctx, req.(*ListTenantNamesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -262,6 +294,10 @@ var TenantService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListTenants",
 			Handler:    _TenantService_ListTenants_Handler,
+		},
+		{
+			MethodName: "ListTenantNames",
+			Handler:    _TenantService_ListTenantNames_Handler,
 		},
 		{
 			MethodName: "CreateTenant",

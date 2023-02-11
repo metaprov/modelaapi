@@ -1511,16 +1511,18 @@ message IngressSpec {
 
   // IssuerName specifies the name of a cert-manager Issuer resource in the same namespace as the Serving Site
   // that will provide a TLS certificate to the ingress. This will be added as an annotation to the ingress.
+  // +kubebuilder:validation:Optional
   optional string issuerName = 5;
 
   // ClusterIssuerName specifies the name of a cert-manager ClusterIssuer resource
   // that will provide a TLS certificate to the ingress. This will be added as an annotation to the ingress.
   // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
   optional string clusterIssuerName = 6;
 
   // TlsSecretName specifies the name of the secret that contains the TLS certificate for the ingress.
   // If it does not exist, ClusterIssuerName or IssuerName must be specified for Cert Manager to
-  // generate the serving certificate
+  // generate the serving certificate. If this field is specified, TLS will be implicitly enabled.
   // +kubebuilder:validation:Optional
   optional string tlsSecretName = 7;
 }
