@@ -625,7 +625,6 @@ message DataInputSpec {
   optional DataLocation observation = 2;
 
   // The file format of the input file, if applicable
-  // +kubebuilder:default:="csv"
   // +kubebuilder:validation:Optional
   optional FlatFileFormatSpec format = 3;
 }

@@ -82,47 +82,47 @@ export class BatchClient {
     this.methodDescriptorBatchPredict);
   }
 
-  methodDescriptorBatchPredictMC = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictMC',
+  methodDescriptorBatchPredictModelClass = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictModelClass',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictMCRequest,
+    github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictModelClassRequest,
     github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictResponse,
-    (request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictMCRequest) => {
+    (request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictModelClassRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictResponse.deserializeBinary
   );
 
-  batchPredictMC(
-    request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictMCRequest,
+  batchPredictModelClass(
+    request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictModelClassRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictResponse>;
 
-  batchPredictMC(
-    request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictMCRequest,
+  batchPredictModelClass(
+    request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictModelClassRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictResponse>;
 
-  batchPredictMC(
-    request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictMCRequest,
+  batchPredictModelClass(
+    request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictModelClassRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictMC',
+          '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictModelClass',
         request,
         metadata || {},
-        this.methodDescriptorBatchPredictMC,
+        this.methodDescriptorBatchPredictModelClass,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictMC',
+      '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictModelClass',
     request,
     metadata || {},
-    this.methodDescriptorBatchPredictMC);
+    this.methodDescriptorBatchPredictModelClass);
   }
 
   methodDescriptorShutdown = new grpcWeb.MethodDescriptor(

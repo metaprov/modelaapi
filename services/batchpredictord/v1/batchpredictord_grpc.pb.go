@@ -22,10 +22,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type BatchClient interface {
-	// Ingest a new dataset to the store, the store creates a new layouts and set of keys
-	// for the new dataset
 	BatchPredict(ctx context.Context, in *BatchPredictRequest, opts ...grpc.CallOption) (*BatchPredictResponse, error)
-	BatchPredictMC(ctx context.Context, in *BatchPredictMCRequest, opts ...grpc.CallOption) (*BatchPredictResponse, error)
+	BatchPredictModelClass(ctx context.Context, in *BatchPredictModelClassRequest, opts ...grpc.CallOption) (*BatchPredictResponse, error)
 	Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error)
 }
 
@@ -46,9 +44,9 @@ func (c *batchClient) BatchPredict(ctx context.Context, in *BatchPredictRequest,
 	return out, nil
 }
 
-func (c *batchClient) BatchPredictMC(ctx context.Context, in *BatchPredictMCRequest, opts ...grpc.CallOption) (*BatchPredictResponse, error) {
+func (c *batchClient) BatchPredictModelClass(ctx context.Context, in *BatchPredictModelClassRequest, opts ...grpc.CallOption) (*BatchPredictResponse, error) {
 	out := new(BatchPredictResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictMC", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictModelClass", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -68,10 +66,8 @@ func (c *batchClient) Shutdown(ctx context.Context, in *ShutdownRequest, opts ..
 // All implementations must embed UnimplementedBatchServer
 // for forward compatibility
 type BatchServer interface {
-	// Ingest a new dataset to the store, the store creates a new layouts and set of keys
-	// for the new dataset
 	BatchPredict(context.Context, *BatchPredictRequest) (*BatchPredictResponse, error)
-	BatchPredictMC(context.Context, *BatchPredictMCRequest) (*BatchPredictResponse, error)
+	BatchPredictModelClass(context.Context, *BatchPredictModelClassRequest) (*BatchPredictResponse, error)
 	Shutdown(context.Context, *ShutdownRequest) (*ShutdownResponse, error)
 	mustEmbedUnimplementedBatchServer()
 }
@@ -83,8 +79,8 @@ type UnimplementedBatchServer struct {
 func (UnimplementedBatchServer) BatchPredict(context.Context, *BatchPredictRequest) (*BatchPredictResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BatchPredict not implemented")
 }
-func (UnimplementedBatchServer) BatchPredictMC(context.Context, *BatchPredictMCRequest) (*BatchPredictResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method BatchPredictMC not implemented")
+func (UnimplementedBatchServer) BatchPredictModelClass(context.Context, *BatchPredictModelClassRequest) (*BatchPredictResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BatchPredictModelClass not implemented")
 }
 func (UnimplementedBatchServer) Shutdown(context.Context, *ShutdownRequest) (*ShutdownResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Shutdown not implemented")
@@ -120,20 +116,20 @@ func _Batch_BatchPredict_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Batch_BatchPredictMC_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(BatchPredictMCRequest)
+func _Batch_BatchPredictModelClass_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BatchPredictModelClassRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BatchServer).BatchPredictMC(ctx, in)
+		return srv.(BatchServer).BatchPredictModelClass(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictMC",
+		FullMethod: "/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictModelClass",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BatchServer).BatchPredictMC(ctx, req.(*BatchPredictMCRequest))
+		return srv.(BatchServer).BatchPredictModelClass(ctx, req.(*BatchPredictModelClassRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -168,8 +164,8 @@ var Batch_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Batch_BatchPredict_Handler,
 		},
 		{
-			MethodName: "BatchPredictMC",
-			Handler:    _Batch_BatchPredictMC_Handler,
+			MethodName: "BatchPredictModelClass",
+			Handler:    _Batch_BatchPredictModelClass_Handler,
 		},
 		{
 			MethodName: "Shutdown",
