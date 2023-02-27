@@ -19,9 +19,9 @@ class BatchStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictResponse.FromString,
                 )
-        self.BatchPredictMC = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictMC',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictMCRequest.SerializeToString,
+        self.BatchPredictModelClass = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictModelClass',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictModelClassRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictResponse.FromString,
                 )
         self.Shutdown = channel.unary_unary(
@@ -35,14 +35,12 @@ class BatchServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def BatchPredict(self, request, context):
-        """Ingest a new dataset to the store, the store creates a new layouts and set of keys
-        for the new dataset
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def BatchPredictMC(self, request, context):
+    def BatchPredictModelClass(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -62,9 +60,9 @@ def add_BatchServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictResponse.SerializeToString,
             ),
-            'BatchPredictMC': grpc.unary_unary_rpc_method_handler(
-                    servicer.BatchPredictMC,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictMCRequest.FromString,
+            'BatchPredictModelClass': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchPredictModelClass,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictModelClassRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictResponse.SerializeToString,
             ),
             'Shutdown': grpc.unary_unary_rpc_method_handler(
@@ -100,7 +98,7 @@ class Batch(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def BatchPredictMC(request,
+    def BatchPredictModelClass(request,
             target,
             options=(),
             channel_credentials=None,
@@ -110,8 +108,8 @@ class Batch(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictMC',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictMCRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredictModelClass',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictModelClassRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_batchpredictord_dot_v1_dot_batchpredictord__pb2.BatchPredictResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
