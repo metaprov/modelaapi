@@ -624,10 +624,10 @@ message DataInputSpec {
   // +kubebuilder:validation:Optional
   optional DataLocation observation = 2;
 
-  // The file format of the dataset, if applicable
+  // The file format of the input file, if applicable
   // +kubebuilder:default:="csv"
   // +kubebuilder:validation:Optional
-  optional string format = 3;
+  optional FlatFileFormatSpec format = 3;
 }
 
 // DataLocation describes the external location of data that will be accessed by Modela, and additional

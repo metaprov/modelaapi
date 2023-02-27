@@ -2159,7 +2159,6 @@ type DataTestCase struct {
 	// Reference to an entity.
 	// +kubebuilder:validation:Optional
 	EntityRef2 v1.ObjectReference `json:"entityRef2,omitempty" protobuf:"bytes,19,opt,name=entityRef2"`
-
 	// If unit test is column test, this is the name of the column
 	// +kubebuilder:validation:Optional
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,20,rep,name=columns"`

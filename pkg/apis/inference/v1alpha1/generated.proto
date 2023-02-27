@@ -656,7 +656,7 @@ message PredictionSpec {
   optional string modelClassName = 2;
 
   // PredictorRef is the name of the Predictor resource that will be used to evaluate predictions for the
-  // unlabeled input dataset. The Predictor must exist in the same DataProduct namespace as the resource
+  // unlabeled input dataset. The Predictor must exist in the same Data Product namespace as the resource
   // +kubebuilder:validation:Required
   // +required
   optional k8s.io.api.core.v1.ObjectReference predictorRef = 3;

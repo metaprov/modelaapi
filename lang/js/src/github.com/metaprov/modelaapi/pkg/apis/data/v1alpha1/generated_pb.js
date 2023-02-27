@@ -9877,7 +9877,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.toObjec
   var f, obj = {
     presqlList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     observation: (f = msg.getObservation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
-    format: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    format: (f = msg.getFormat()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9924,7 +9924,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.deseria
       msg.setObservation(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec.deserializeBinaryFromReader);
       msg.setFormat(value);
       break;
     default:
@@ -9971,11 +9972,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.seriali
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = message.getFormat();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       3,
-      f
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec.serializeBinaryToWriter
     );
   }
 };
@@ -10056,29 +10058,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
 
 
 /**
- * optional string format = 3;
- * @return {string}
+ * optional FlatFileFormatSpec format = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.getFormat = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec, 3));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec} returns this
- */
+*/
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.setFormat = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.clearFormat = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return this.setFormat(undefined);
 };
 
 

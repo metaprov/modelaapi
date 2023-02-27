@@ -986,8 +986,8 @@ export class DataInputSpec extends jspb.Message {
   hasObservation(): boolean;
   clearObservation(): DataInputSpec;
 
-  getFormat(): string;
-  setFormat(value: string): DataInputSpec;
+  getFormat(): FlatFileFormatSpec | undefined;
+  setFormat(value?: FlatFileFormatSpec): DataInputSpec;
   hasFormat(): boolean;
   clearFormat(): DataInputSpec;
 
@@ -1003,7 +1003,7 @@ export namespace DataInputSpec {
   export type AsObject = {
     presqlList: Array<string>,
     observation?: DataLocation.AsObject,
-    format?: string,
+    format?: FlatFileFormatSpec.AsObject,
   }
 }
 

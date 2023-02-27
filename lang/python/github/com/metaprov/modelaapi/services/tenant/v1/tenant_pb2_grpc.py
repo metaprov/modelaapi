@@ -24,6 +24,11 @@ class TenantServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.ListTenantsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.ListTenantsResponse.FromString,
                 )
+        self.ListTenantNames = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/ListTenantNames',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.ListTenantNamesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.ListTenantNamesResponse.FromString,
+                )
         self.CreateTenant = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/CreateTenant',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.CreateTenantRequest.SerializeToString,
@@ -56,6 +61,12 @@ class TenantServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListTenants(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListTenantNames(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -97,6 +108,11 @@ def add_TenantServiceServicer_to_server(servicer, server):
                     servicer.ListTenants,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.ListTenantsRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.ListTenantsResponse.SerializeToString,
+            ),
+            'ListTenantNames': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListTenantNames,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.ListTenantNamesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.ListTenantNamesResponse.SerializeToString,
             ),
             'CreateTenant': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateTenant,
@@ -159,6 +175,23 @@ class TenantService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/ListTenants',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.ListTenantsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.ListTenantsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListTenantNames(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/ListTenantNames',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.ListTenantNamesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.ListTenantNamesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

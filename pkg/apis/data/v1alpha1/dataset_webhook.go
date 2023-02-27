@@ -8,7 +8,11 @@ package v1alpha1
 
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	"github.com/pkg/errors"
+	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/apimachinery/pkg/runtime/schema"
+	"k8s.io/apimachinery/pkg/util/validation/field"
 	"strings"
 
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -76,7 +80,33 @@ func (dataset Dataset) ValidateUpdate(old runtime.Object) error {
 }
 
 func (dataset Dataset) validate() error {
-	return nil
+	var allErrs field.ErrorList
+	allErrs = append(allErrs, dataset.validateSpec(field.NewPath("spec"))...)
+	if len(allErrs) == 0 {
+		return nil
+	}
+
+	return apierrors.NewInvalid(
+		schema.GroupKind{Group: "data.modela.ai", Kind: "Dataset"},
+		dataset.Name, allErrs)
+}
+
+func (dataset Dataset) validateSpec(fldPath *field.Path) field.ErrorList {
+	var allErrs field.ErrorList
+	allErrs = append(allErrs, dataset.validateLocation(fldPath.Child("location"))...)
+	return allErrs
+}
+
+func (dataset Dataset) validateLocation(fldPath *field.Path) field.ErrorList {
+	var allErrs field.ErrorList
+	if dataset.Spec.Location.Type != nil && *dataset.Spec.Location.Type != DataLocationObjectStorage {
+		err := errors.Errorf("Dataset location must be object storage")
+		allErrs = append(allErrs, field.Invalid(
+			fldPath,
+			*dataset.Spec.Location.Type,
+			err.Error()))
+	}
+	return allErrs
 }
 
 func (dataset Dataset) ValidateDelete() error {

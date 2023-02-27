@@ -37,7 +37,7 @@ AUTHOR       = "The modelaapi developers"
 EMAIL        = "info@modela.ai"
 MAINTAINER   = "The modela developers"
 LICENSE      = "Apache 2"
-REPOSITORY   = "https://github.com/metaptov/modelaapi"
+REPOSITORY   = "https://github.com/metaprov/modelaapi"
 PACKAGE      = "modelaapi"
 URL          = "http://www.modela.ai"
 

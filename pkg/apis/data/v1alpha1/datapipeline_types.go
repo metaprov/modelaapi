@@ -122,15 +122,14 @@ type DataPipelineStatus struct {
 type DataInputSpec struct {
 	// List of SQL statements to run before performing the prediction
 	// +kubebuilder:validation:Optional
-	PreSql []string `json:"preSQL,omitempty" protobuf:"bytes,1,opt,name=preSQL"`
+	PreSQL []string `json:"preSQL,omitempty" protobuf:"bytes,1,opt,name=preSQL"`
 	// The physical location of the observation file.
 	// the location can point to a database.
 	// +kubebuilder:validation:Optional
 	Observation *DataLocation `json:"observation,omitempty" protobuf:"bytes,2,opt,name=observation"`
-	// The file format of the dataset, if applicable
-	// +kubebuilder:default:="csv"
+	// The file format of the input file, if applicable
 	// +kubebuilder:validation:Optional
-	Format *FlatFileType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
+	Format FlatFileFormatSpec `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
 }
 
 // DataOutputSpec specifies the format, features, and output location of a transformed dataset

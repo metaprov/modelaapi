@@ -73,7 +73,7 @@ type PredictionSpec struct {
 	// +kubebuilder:validation:Optional
 	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,2,opt,name=modelClassName"`
 	// PredictorRef is the name of the Predictor resource that will be used to evaluate predictions for the
-	// unlabeled input dataset. The Predictor must exist in the same DataProduct namespace as the resource
+	// unlabeled input dataset. The Predictor must exist in the same Data Product namespace as the resource
 	// +kubebuilder:validation:Required
 	// +required
 	PredictorRef *v1.ObjectReference `json:"predictorRef,omitempty" protobuf:"bytes,3,opt,name=predictorRef"`
