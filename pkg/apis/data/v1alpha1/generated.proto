@@ -622,7 +622,7 @@ message DataInputSpec {
   // The physical location of the observation file.
   // the location can point to a database.
   // +kubebuilder:validation:Optional
-  optional DataLocation observation = 2;
+  optional DataLocation location = 2;
 
   // The file format of the input file, if applicable
   // +kubebuilder:validation:Optional

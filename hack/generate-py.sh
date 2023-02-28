@@ -18,8 +18,6 @@ PROJECT_ROOT=$(cd $(dirname ${BASH_SOURCE})/..; pwd)
 #rm -rf ${PROJECT_ROOT}/lang/python/k8s.io
 
 go mod vendor
-mv ${PROJECT_ROOT}/vendor /tmp/includes
-
 
 
 

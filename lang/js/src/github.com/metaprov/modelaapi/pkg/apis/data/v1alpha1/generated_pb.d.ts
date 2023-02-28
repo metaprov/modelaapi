@@ -981,10 +981,10 @@ export class DataInputSpec extends jspb.Message {
   clearPresqlList(): DataInputSpec;
   addPresql(value: string, index?: number): DataInputSpec;
 
-  getObservation(): DataLocation | undefined;
-  setObservation(value?: DataLocation): DataInputSpec;
-  hasObservation(): boolean;
-  clearObservation(): DataInputSpec;
+  getLocation(): DataLocation | undefined;
+  setLocation(value?: DataLocation): DataInputSpec;
+  hasLocation(): boolean;
+  clearLocation(): DataInputSpec;
 
   getFormat(): FlatFileFormatSpec | undefined;
   setFormat(value?: FlatFileFormatSpec): DataInputSpec;
@@ -1002,7 +1002,7 @@ export class DataInputSpec extends jspb.Message {
 export namespace DataInputSpec {
   export type AsObject = {
     presqlList: Array<string>,
-    observation?: DataLocation.AsObject,
+    location?: DataLocation.AsObject,
     format?: FlatFileFormatSpec.AsObject,
   }
 }

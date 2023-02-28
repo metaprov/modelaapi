@@ -126,7 +126,7 @@ type DataInputSpec struct {
 	// The physical location of the observation file.
 	// the location can point to a database.
 	// +kubebuilder:validation:Optional
-	Observation *DataLocation `json:"observation,omitempty" protobuf:"bytes,2,opt,name=observation"`
+	Location *DataLocation `json:"observation,omitempty" protobuf:"bytes,2,opt,name=location"`
 	// The file format of the input file, if applicable
 	// +kubebuilder:validation:Optional
 	Format FlatFileFormatSpec `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`

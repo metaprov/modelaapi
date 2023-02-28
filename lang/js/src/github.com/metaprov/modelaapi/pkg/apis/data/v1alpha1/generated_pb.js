@@ -9876,7 +9876,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     presqlList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    observation: (f = msg.getObservation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
+    location: (f = msg.getLocation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
     format: (f = msg.getFormat()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec.toObject(includeInstance, f)
   };
 
@@ -9921,7 +9921,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.deseria
     case 2:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.deserializeBinaryFromReader);
-      msg.setObservation(value);
+      msg.setLocation(value);
       break;
     case 3:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec;
@@ -9964,7 +9964,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.seriali
       f
     );
   }
-  f = message.getObservation();
+  f = message.getLocation();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -10021,10 +10021,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
 
 
 /**
- * optional DataLocation observation = 2;
+ * optional DataLocation location = 2;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.getObservation = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.getLocation = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation, 2));
 };
@@ -10034,7 +10034,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.setObservation = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.setLocation = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -10043,8 +10043,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.clearObservation = function() {
-  return this.setObservation(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.clearLocation = function() {
+  return this.setLocation(undefined);
 };
 
 
@@ -10052,7 +10052,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.hasObservation = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.hasLocation = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
