@@ -593,8 +593,8 @@ func (in *DataInputSpec) DeepCopyInto(out *DataInputSpec) {
 		*out = make([]string, len(*in))
 		copy(*out, *in)
 	}
-	if in.Observation != nil {
-		in, out := &in.Observation, &out.Observation
+	if in.Location != nil {
+		in, out := &in.Location, &out.Location
 		*out = new(DataLocation)
 		(*in).DeepCopyInto(*out)
 	}
