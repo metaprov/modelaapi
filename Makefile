@@ -112,6 +112,13 @@ install-gen:
 .PHONY: generate
 generate: install-gen generate-proto fix-packages generate-go generate-js generate-py generate-crd generate-deepcopy 
 
+.PHONY: generate-py-bp
+generate-py-bp:
+	pip install grpcio-tools
+	pip install "betterproto[compiler]"
+	pip install -U betterproto --pre
+	hack/generate-py-betterproto.sh
+
 
 .PHONY: install-crd
 install-crd:

@@ -171,7 +171,7 @@ func (dataset Dataset) UnitTested() bool {
 }
 
 func (dataset Dataset) Snapshotted() bool {
-	return *dataset.Spec.Snapshotted && dataset.GetCond(DatasetSnapshotted).Status == metav1.ConditionTrue
+	return dataset.GetCond(DatasetSnapshotted).Status == metav1.ConditionTrue
 }
 
 func (dataset Dataset) Profiled() bool {

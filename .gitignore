@@ -39,5 +39,6 @@ bin
 
 .idea/
 .vscode/
+venv/
 lang/python/modelaapi.egg-info/
 gateway/

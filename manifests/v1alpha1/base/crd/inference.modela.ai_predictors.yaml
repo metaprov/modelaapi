@@ -689,7 +689,7 @@ spec:
                                     type: string
                                 type: object
                             type: object
-                          observation:
+                          location:
                             description: The physical location of the observation
                               file. the location can point to a database.
                             properties:

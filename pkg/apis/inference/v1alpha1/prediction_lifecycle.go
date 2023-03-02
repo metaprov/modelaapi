@@ -243,8 +243,7 @@ func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
 			Owner:          prediction.Spec.Owner,
 			VersionName:    prediction.Spec.VersionName,
 			Description:    util.StrPtr("dataset for prediction " + prediction.Name),
-			Origin:         *prediction.Spec.Input.Observation,
-			Location:       *prediction.Spec.Input.Observation,
+			Origin:         *prediction.Spec.Input.Location,
 			DataSourceName: &prediction.Spec.DataSourceRef.Name,
 			PredictorRef: v1.ObjectReference{
 				Name:      prediction.Spec.PredictorRef.Name,
