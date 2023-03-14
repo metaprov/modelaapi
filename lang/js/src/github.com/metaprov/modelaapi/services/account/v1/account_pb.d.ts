@@ -294,20 +294,6 @@ export namespace AccountCreateResponse {
   }
 }
 
-export class LogoutResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LogoutResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: LogoutResponse): LogoutResponse.AsObject;
-  static serializeBinaryToWriter(message: LogoutResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LogoutResponse;
-  static deserializeBinaryFromReader(message: LogoutResponse, reader: jspb.BinaryReader): LogoutResponse;
-}
-
-export namespace LogoutResponse {
-  export type AsObject = {
-  }
-}
-
 export class ResetPasswordResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResetPasswordResponse.AsObject;
@@ -385,24 +371,6 @@ export namespace AccountGetByNameRequest {
   export type AsObject = {
     namespace: string,
     name: string,
-  }
-}
-
-export class AccountLogoutRequest extends jspb.Message {
-  getToken(): string;
-  setToken(value: string): AccountLogoutRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AccountLogoutRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: AccountLogoutRequest): AccountLogoutRequest.AsObject;
-  static serializeBinaryToWriter(message: AccountLogoutRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AccountLogoutRequest;
-  static deserializeBinaryFromReader(message: AccountLogoutRequest, reader: jspb.BinaryReader): AccountLogoutRequest;
-}
-
-export namespace AccountLogoutRequest {
-  export type AsObject = {
-    token: string,
   }
 }
 
@@ -484,20 +452,6 @@ export namespace ResetPasswordRequest {
   }
 }
 
-export class ResetPasswordReponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ResetPasswordReponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ResetPasswordReponse): ResetPasswordReponse.AsObject;
-  static serializeBinaryToWriter(message: ResetPasswordReponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ResetPasswordReponse;
-  static deserializeBinaryFromReader(message: ResetPasswordReponse, reader: jspb.BinaryReader): ResetPasswordReponse;
-}
-
-export namespace ResetPasswordReponse {
-  export type AsObject = {
-  }
-}
-
 export class UploadAvatarRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): UploadAvatarRequest;
@@ -530,16 +484,16 @@ export namespace UploadAvatarRequest {
   }
 }
 
-export class UploadAvatarReponse extends jspb.Message {
+export class UploadAvatarResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UploadAvatarReponse.AsObject;
-  static toObject(includeInstance: boolean, msg: UploadAvatarReponse): UploadAvatarReponse.AsObject;
-  static serializeBinaryToWriter(message: UploadAvatarReponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UploadAvatarReponse;
-  static deserializeBinaryFromReader(message: UploadAvatarReponse, reader: jspb.BinaryReader): UploadAvatarReponse;
+  toObject(includeInstance?: boolean): UploadAvatarResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadAvatarResponse): UploadAvatarResponse.AsObject;
+  static serializeBinaryToWriter(message: UploadAvatarResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadAvatarResponse;
+  static deserializeBinaryFromReader(message: UploadAvatarResponse, reader: jspb.BinaryReader): UploadAvatarResponse;
 }
 
-export namespace UploadAvatarReponse {
+export namespace UploadAvatarResponse {
   export type AsObject = {
   }
 }

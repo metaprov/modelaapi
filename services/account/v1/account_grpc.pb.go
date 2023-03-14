@@ -29,10 +29,9 @@ type AccountServiceClient interface {
 	DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error)
 	GetAccountNamespaces(ctx context.Context, in *GetAccountNamespacesRequest, opts ...grpc.CallOption) (*GetAccountNamespacesResponse, error)
 	Login(ctx context.Context, in *AccountLoginRequest, opts ...grpc.CallOption) (*AccountLoginResponse, error)
-	Logout(ctx context.Context, in *AccountLogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error)
 	ChangePassword(ctx context.Context, in *ChangePasswordRequest, opts ...grpc.CallOption) (*ChangePasswordResponse, error)
 	ResetPassword(ctx context.Context, in *ResetPasswordRequest, opts ...grpc.CallOption) (*ResetPasswordResponse, error)
-	UploadAvatar(ctx context.Context, in *UploadAvatarRequest, opts ...grpc.CallOption) (*UploadAvatarReponse, error)
+	UploadAvatar(ctx context.Context, in *UploadAvatarRequest, opts ...grpc.CallOption) (*UploadAvatarResponse, error)
 	DownloadAvatar(ctx context.Context, in *DownloadAvatarRequest, opts ...grpc.CallOption) (*DownloadAvatarReponse, error)
 }
 
@@ -107,15 +106,6 @@ func (c *accountServiceClient) Login(ctx context.Context, in *AccountLoginReques
 	return out, nil
 }
 
-func (c *accountServiceClient) Logout(ctx context.Context, in *AccountLogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error) {
-	out := new(LogoutResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.account.v1.AccountService/Logout", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *accountServiceClient) ChangePassword(ctx context.Context, in *ChangePasswordRequest, opts ...grpc.CallOption) (*ChangePasswordResponse, error) {
 	out := new(ChangePasswordResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.account.v1.AccountService/ChangePassword", in, out, opts...)
@@ -134,8 +124,8 @@ func (c *accountServiceClient) ResetPassword(ctx context.Context, in *ResetPassw
 	return out, nil
 }
 
-func (c *accountServiceClient) UploadAvatar(ctx context.Context, in *UploadAvatarRequest, opts ...grpc.CallOption) (*UploadAvatarReponse, error) {
-	out := new(UploadAvatarReponse)
+func (c *accountServiceClient) UploadAvatar(ctx context.Context, in *UploadAvatarRequest, opts ...grpc.CallOption) (*UploadAvatarResponse, error) {
+	out := new(UploadAvatarResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.account.v1.AccountService/UploadAvatar", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -163,10 +153,9 @@ type AccountServiceServer interface {
 	DeleteAccount(context.Context, *DeleteAccountRequest) (*DeleteAccountResponse, error)
 	GetAccountNamespaces(context.Context, *GetAccountNamespacesRequest) (*GetAccountNamespacesResponse, error)
 	Login(context.Context, *AccountLoginRequest) (*AccountLoginResponse, error)
-	Logout(context.Context, *AccountLogoutRequest) (*LogoutResponse, error)
 	ChangePassword(context.Context, *ChangePasswordRequest) (*ChangePasswordResponse, error)
 	ResetPassword(context.Context, *ResetPasswordRequest) (*ResetPasswordResponse, error)
-	UploadAvatar(context.Context, *UploadAvatarRequest) (*UploadAvatarReponse, error)
+	UploadAvatar(context.Context, *UploadAvatarRequest) (*UploadAvatarResponse, error)
 	DownloadAvatar(context.Context, *DownloadAvatarRequest) (*DownloadAvatarReponse, error)
 	mustEmbedUnimplementedAccountServiceServer()
 }
@@ -196,16 +185,13 @@ func (UnimplementedAccountServiceServer) GetAccountNamespaces(context.Context, *
 func (UnimplementedAccountServiceServer) Login(context.Context, *AccountLoginRequest) (*AccountLoginResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
 }
-func (UnimplementedAccountServiceServer) Logout(context.Context, *AccountLogoutRequest) (*LogoutResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Logout not implemented")
-}
 func (UnimplementedAccountServiceServer) ChangePassword(context.Context, *ChangePasswordRequest) (*ChangePasswordResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ChangePassword not implemented")
 }
 func (UnimplementedAccountServiceServer) ResetPassword(context.Context, *ResetPasswordRequest) (*ResetPasswordResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ResetPassword not implemented")
 }
-func (UnimplementedAccountServiceServer) UploadAvatar(context.Context, *UploadAvatarRequest) (*UploadAvatarReponse, error) {
+func (UnimplementedAccountServiceServer) UploadAvatar(context.Context, *UploadAvatarRequest) (*UploadAvatarResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UploadAvatar not implemented")
 }
 func (UnimplementedAccountServiceServer) DownloadAvatar(context.Context, *DownloadAvatarRequest) (*DownloadAvatarReponse, error) {
@@ -350,24 +336,6 @@ func _AccountService_Login_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AccountService_Logout_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AccountLogoutRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AccountServiceServer).Logout(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.account.v1.AccountService/Logout",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AccountServiceServer).Logout(ctx, req.(*AccountLogoutRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _AccountService_ChangePassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ChangePasswordRequest)
 	if err := dec(in); err != nil {
@@ -474,10 +442,6 @@ var AccountService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Login",
 			Handler:    _AccountService_Login_Handler,
-		},
-		{
-			MethodName: "Logout",
-			Handler:    _AccountService_Logout_Handler,
 		},
 		{
 			MethodName: "ChangePassword",

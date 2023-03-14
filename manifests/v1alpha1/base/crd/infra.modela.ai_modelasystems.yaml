@@ -64,6 +64,7 @@ spec:
                   to connect to the local Vault server installed by the Modela Operator.
                 type: string
               vaultMountPath:
+                default: modela/secrets
                 description: VaultMountPath specifies the mount path where a KVv2
                   secret engine is mounted
                 type: string

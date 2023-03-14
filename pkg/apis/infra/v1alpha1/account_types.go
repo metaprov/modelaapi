@@ -122,7 +122,7 @@ type AccountSpec struct {
 	Avatar AvatarSpec `json:"avatar,omitempty" protobuf:"bytes,18,opt,name=avatar"`
 	// The collection of DataProduct names that will be displayed with priority on the tenant dashboard for the Account
 	// +kubebuilder:validation:Optional
-	FavoritesProducts []string `json:"favoriteProducts,omitempty" protobuf:"bytes,19,rep,name=favoriteProducts"`
+	FavoriteProducts []string `json:"favoriteProducts,omitempty" protobuf:"bytes,19,rep,name=favoriteProducts"`
 	// +kubebuilder:validation:Optional
 	Tokens []APITokenSpec `json:"tokens,omitempty" protobuf:"bytes,20,rep,name=tokens"`
 }

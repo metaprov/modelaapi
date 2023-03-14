@@ -53,9 +53,11 @@ type ModelaSystemSpec struct {
 	// VaultAddress indicates the address of the Vault server Modela will use for the storage of Secrets. The Vault
 	// server must be configured to authenticate all Modela service accounts at the mount path specified by VaultMountPath.
 	// If empty, Modela will attempt to connect to the local Vault server installed by the Modela Operator.
+	// +kubebuilder:validation:Optional
 	VaultAddress *string `json:"vaultAddress" protobuf:"varint,3,opt,name=vaultAddress"`
 
 	// VaultMountPath specifies the mount path where a KVv2 secret engine is mounted
+	// +kubebuilder:default:="modela/secrets"
 	VaultMountPath *string `json:"vaultMountPath" protobuf:"varint,4,opt,name=vaultMountPath"`
 }
 

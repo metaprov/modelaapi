@@ -49,11 +49,6 @@ class AccountServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLoginRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLoginResponse.FromString,
                 )
-        self.Logout = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.account.v1.AccountService/Logout',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLogoutRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.LogoutResponse.FromString,
-                )
         self.ChangePassword = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.account.v1.AccountService/ChangePassword',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ChangePasswordRequest.SerializeToString,
@@ -67,7 +62,7 @@ class AccountServiceStub(object):
         self.UploadAvatar = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.account.v1.AccountService/UploadAvatar',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarReponse.FromString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarResponse.FromString,
                 )
         self.DownloadAvatar = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.account.v1.AccountService/DownloadAvatar',
@@ -116,12 +111,6 @@ class AccountServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Login(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Logout(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -189,11 +178,6 @@ def add_AccountServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLoginRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLoginResponse.SerializeToString,
             ),
-            'Logout': grpc.unary_unary_rpc_method_handler(
-                    servicer.Logout,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLogoutRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.LogoutResponse.SerializeToString,
-            ),
             'ChangePassword': grpc.unary_unary_rpc_method_handler(
                     servicer.ChangePassword,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ChangePasswordRequest.FromString,
@@ -207,7 +191,7 @@ def add_AccountServiceServicer_to_server(servicer, server):
             'UploadAvatar': grpc.unary_unary_rpc_method_handler(
                     servicer.UploadAvatar,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarReponse.SerializeToString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarResponse.SerializeToString,
             ),
             'DownloadAvatar': grpc.unary_unary_rpc_method_handler(
                     servicer.DownloadAvatar,
@@ -344,23 +328,6 @@ class AccountService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Logout(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.account.v1.AccountService/Logout',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLogoutRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.LogoutResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def ChangePassword(request,
             target,
             options=(),
@@ -407,7 +374,7 @@ class AccountService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.account.v1.AccountService/UploadAvatar',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarReponse.FromString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

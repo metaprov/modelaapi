@@ -8,24 +8,24 @@ import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListAccountsRequest {
-    string             namespace = 1;
-    map<string,string> labels    = 2;   
-    int32              page_size  = 3;
-    string             page_token = 4;
-    string             order_by   = 5;
+  string             namespace = 1;
+  map<string, string> labels = 2;
+  int32              page_size = 3;
+  string             page_token = 4;
+  string             order_by = 5;
 }
 
 message ListAccountsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountList accounts = 1;   
-    string next_page_token = 2;
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountList accounts = 1;
+  string next_page_token = 2;
 
 }
 
 message AccountResponse {}
 
 message CreateAccountRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account account = 1;
-    string password = 2;    
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account account = 1;
+  string password = 2;
 }
 
 message CreateAccountResponse {
@@ -33,8 +33,8 @@ message CreateAccountResponse {
 }
 
 message UpdateAccountRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account account = 1;
-    google.protobuf.FieldMask update_mask = 2;
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account account = 1;
+  google.protobuf.FieldMask update_mask = 2;
 }
 
 
@@ -43,130 +43,117 @@ message UpdateAccountResponse {
 }
 
 message GetAccountRequest {
-    string namespace = 1;
-    string name      = 2;
+  string namespace = 1;
+  string name = 2;
 }
 
 
 message GetAccountResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account account = 1;
-    string yaml = 2;
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account account = 1;
+  string yaml = 2;
 }
 
 message GetAccountNamespacesRequest {
-    string namespace = 1;
-    string name      = 2;
+  string namespace = 1;
+  string name = 2;
 }
 
 message GetAccountNamespacesResponse {
-    repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces = 1;
+  repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces = 1;
 }
 
 message DeleteAccountRequest {
-    string namespace = 1;
-    string name      = 2;
+  string namespace = 1;
+  string name = 2;
 }
 
 message DeleteAccountResponse {}
 
 
 message AccountCreateResponse {}
-message LogoutResponse {}
 message ResetPasswordResponse {}
 
 message AccountLoginRequest {
-    string namespace = 1;
-    string name      = 2;
-    string password  = 3;
+  string namespace = 1;
+  string name = 2;
+  string password = 3;
 }
 
 message AccountLoginResponse {
-    string token = 1; // jwt token
+  string token = 1; // jwt token
 }
 
 message AccountGetByNameRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message AccountLogoutRequest {
-    string token = 1; // jwt token
+  string namespace = 1;
+  string name = 2;
 }
 
 message ChangePasswordRequest {
-    string namespace = 1;
-    string name      = 2;
-    string old       = 3;
-    string new       = 4;
-    string confirmedNew = 5;
+  string namespace = 1;
+  string name = 2;
+  string old = 3;
+  string new = 4;
+  string confirmedNew = 5;
 }
 
 message ChangePasswordResponse {}
 
 message ResetPasswordRequest {
-    string namespace = 1;
-    string name      = 2;
-    string new       = 3;
-    string confirmedNew = 4;
+  string namespace = 1;
+  string name = 2;
+  string new = 3;
+  string confirmedNew = 4;
 }
-
-message ResetPasswordReponse {
-
-}
-
 
 message UploadAvatarRequest {
-    string namespace  = 1;
-    string name       = 2;
-    string bucketName = 3;
-    bytes  avatar     = 4;
+  string namespace = 1;
+  string name = 2;
+  string bucketName = 3;
+  bytes  avatar = 4;
 }
 
-message UploadAvatarReponse {
-
-}
+message UploadAvatarResponse {}
 
 message DownloadAvatarRequest {
-    string namespace  = 1;
-    string name       = 2;        
+  string namespace = 1;
+  string name = 2;
 }
 
 message DownloadAvatarReponse {
-    bytes  avatar = 1;
+  bytes  avatar = 1;
 }
 
 service AccountService {
-    rpc ListAccounts(ListAccountsRequest) returns (ListAccountsResponse) {
-        option (google.api.http).get = "/v1/accounts/{namespace}";
-    }
-    rpc CreateAccount(CreateAccountRequest) returns (CreateAccountResponse) {
-        option (google.api.http) = {
-			post: "/v1/accounts"
-			body: "*"
-		};
-    }
-    rpc GetAccount(GetAccountRequest) returns (GetAccountResponse) {
-        option (google.api.http).get = "/v1/accounts/{namespace}/{name}";
-    }
-    rpc UpdateAccount(UpdateAccountRequest) returns (UpdateAccountResponse) {
-        option (google.api.http) = {
-			put: "/v1/accounts/{account.metadata.namespace}/{account.metadata.name}"
-			body: "*"
-		};
-    }
+  rpc ListAccounts(ListAccountsRequest) returns (ListAccountsResponse) {
+    option (google.api.http).get = "/v1/accounts/{namespace}";
+  }
+  rpc CreateAccount(CreateAccountRequest) returns (CreateAccountResponse) {
+    option (google.api.http) = {
+      post: "/v1/accounts"
+      body: "*"
+    };
+  }
+  rpc GetAccount(GetAccountRequest) returns (GetAccountResponse) {
+    option (google.api.http).get = "/v1/accounts/{namespace}/{name}";
+  }
+  rpc UpdateAccount(UpdateAccountRequest) returns (UpdateAccountResponse) {
+    option (google.api.http) = {
+      put: "/v1/accounts/{account.metadata.namespace}/{account.metadata.name}"
+      body: "*"
+    };
+  }
 
-    rpc DeleteAccount(DeleteAccountRequest) returns (DeleteAccountResponse) {
-        option (google.api.http).delete = "/v1/accounts/{namespace}/{name}";
-    }
+  rpc DeleteAccount(DeleteAccountRequest) returns (DeleteAccountResponse) {
+    option (google.api.http).delete = "/v1/accounts/{namespace}/{name}";
+  }
 
-    rpc GetAccountNamespaces(GetAccountNamespacesRequest) returns (GetAccountNamespacesResponse) {
-        option (google.api.http).get = "/v1/accounts/{namespace}/{name}:namespaces";
-    }
+  rpc GetAccountNamespaces(GetAccountNamespacesRequest) returns (GetAccountNamespacesResponse) {
+    option (google.api.http).get = "/v1/accounts/{namespace}/{name}:namespaces";
+  }
 
-    rpc Login          (AccountLoginRequest)        returns (AccountLoginResponse) {}
-    rpc Logout         (AccountLogoutRequest)       returns (LogoutResponse)   {}
-    rpc ChangePassword (ChangePasswordRequest)      returns (ChangePasswordResponse)   {}
-    rpc ResetPassword  (ResetPasswordRequest)       returns (ResetPasswordResponse)   {}
-    rpc UploadAvatar   (UploadAvatarRequest)        returns (UploadAvatarReponse)   {}
-    rpc DownloadAvatar (DownloadAvatarRequest)      returns (DownloadAvatarReponse)   {}
+  rpc Login          (AccountLoginRequest)        returns (AccountLoginResponse) {}
+  rpc ChangePassword (ChangePasswordRequest)      returns (ChangePasswordResponse)   {}
+  rpc ResetPassword  (ResetPasswordRequest)       returns (ResetPasswordResponse)   {}
+  rpc UploadAvatar   (UploadAvatarRequest)        returns (UploadAvatarResponse)   {}
+  rpc DownloadAvatar (DownloadAvatarRequest)      returns (DownloadAvatarReponse)   {}
 }
