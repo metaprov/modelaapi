@@ -32459,9 +32459,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.pro
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     release: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    active: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
-    podtemplate: (f = msg.getPodtemplate()) && k8s_io_api_core_v1_generated_pb.PodTemplateSpec.toObject(includeInstance, f),
-    publishertemplate: (f = msg.getPublishertemplate()) && k8s_io_api_core_v1_generated_pb.PodTemplateSpec.toObject(includeInstance, f)
+    imagepullpolicy: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    vaultaddress: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    vaultmountpath: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -32503,18 +32503,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.des
       msg.setRelease(value);
       break;
     case 2:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setActive(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImagepullpolicy(value);
       break;
     case 3:
-      var value = new k8s_io_api_core_v1_generated_pb.PodTemplateSpec;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.PodTemplateSpec.deserializeBinaryFromReader);
-      msg.setPodtemplate(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setVaultaddress(value);
       break;
     case 4:
-      var value = new k8s_io_api_core_v1_generated_pb.PodTemplateSpec;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.PodTemplateSpec.deserializeBinaryFromReader);
-      msg.setPublishertemplate(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setVaultmountpath(value);
       break;
     default:
       reader.skipField();
@@ -32552,27 +32550,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.ser
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       2,
       f
     );
   }
-  f = message.getPodtemplate();
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       3,
-      f,
-      k8s_io_api_core_v1_generated_pb.PodTemplateSpec.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getPublishertemplate();
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       4,
-      f,
-      k8s_io_api_core_v1_generated_pb.PodTemplateSpec.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -32615,19 +32611,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.pro
 
 
 /**
- * optional bool active = 2;
- * @return {boolean}
+ * optional string imagePullPolicy = 2;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.getActive = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.getImagepullpolicy = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.setActive = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.setImagepullpolicy = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -32636,7 +32632,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.clearActive = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.clearImagepullpolicy = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -32645,36 +32641,35 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.hasActive = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.hasImagepullpolicy = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 3;
- * @return {?proto.k8s.io.api.core.v1.PodTemplateSpec}
+ * optional string vaultAddress = 3;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.getPodtemplate = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.PodTemplateSpec} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.PodTemplateSpec, 3));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.getVaultaddress = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.core.v1.PodTemplateSpec|undefined} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.setPodtemplate = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.setVaultaddress = function(value) {
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.clearPodtemplate = function() {
-  return this.setPodtemplate(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.clearVaultaddress = function() {
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -32682,36 +32677,35 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.hasPodtemplate = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.hasVaultaddress = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.PodTemplateSpec publisherTemplate = 4;
- * @return {?proto.k8s.io.api.core.v1.PodTemplateSpec}
+ * optional string vaultMountPath = 4;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.getPublishertemplate = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.PodTemplateSpec} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.PodTemplateSpec, 4));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.getVaultmountpath = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.core.v1.PodTemplateSpec|undefined} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.setPublishertemplate = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.setVaultmountpath = function(value) {
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.clearPublishertemplate = function() {
-  return this.setPublishertemplate(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.clearVaultmountpath = function() {
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -32719,7 +32713,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.hasPublishertemplate = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.hasVaultmountpath = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 

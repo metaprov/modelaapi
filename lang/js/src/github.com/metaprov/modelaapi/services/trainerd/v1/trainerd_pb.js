@@ -392,7 +392,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.toObject =
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    isecretMap: (f = msg.getIsecretMap()) ? f.toObject(includeInstance, undefined) : [],
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
     testdataset: (f = msg.getTestdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     traindataset: (f = msg.getTraindataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     group: jspb.Message.getBooleanFieldWithDefault(msg, 13, false)
@@ -473,7 +473,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.deserializ
       msg.setConnection(value);
       break;
     case 10:
-      var value = msg.getIsecretMap();
+      var value = msg.getSecretMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
@@ -585,7 +585,7 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.serializeB
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
-  f = message.getIsecretMap(true);
+  f = message.getSecretMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
@@ -912,12 +912,12 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.prototype.
 
 
 /**
- * map<string, bytes> Isecret = 10;
+ * map<string, bytes> secret = 10;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.prototype.getIsecretMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
       jspb.Message.getMapField(this, 10, opt_noLazyCreate,
       null));
@@ -928,8 +928,8 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.prototype.
  * Clears values from the map. The map will be non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.prototype.clearIsecretMap = function() {
-  this.getIsecretMap().clear();
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.prototype.clearSecretMap = function() {
+  this.getSecretMap().clear();
   return this;};
 
 

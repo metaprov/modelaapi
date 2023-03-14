@@ -3736,20 +3736,20 @@ export class ModelaSystemSpec extends jspb.Message {
   hasRelease(): boolean;
   clearRelease(): ModelaSystemSpec;
 
-  getActive(): boolean;
-  setActive(value: boolean): ModelaSystemSpec;
-  hasActive(): boolean;
-  clearActive(): ModelaSystemSpec;
+  getImagepullpolicy(): string;
+  setImagepullpolicy(value: string): ModelaSystemSpec;
+  hasImagepullpolicy(): boolean;
+  clearImagepullpolicy(): ModelaSystemSpec;
 
-  getPodtemplate(): k8s_io_api_core_v1_generated_pb.PodTemplateSpec | undefined;
-  setPodtemplate(value?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec): ModelaSystemSpec;
-  hasPodtemplate(): boolean;
-  clearPodtemplate(): ModelaSystemSpec;
+  getVaultaddress(): string;
+  setVaultaddress(value: string): ModelaSystemSpec;
+  hasVaultaddress(): boolean;
+  clearVaultaddress(): ModelaSystemSpec;
 
-  getPublishertemplate(): k8s_io_api_core_v1_generated_pb.PodTemplateSpec | undefined;
-  setPublishertemplate(value?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec): ModelaSystemSpec;
-  hasPublishertemplate(): boolean;
-  clearPublishertemplate(): ModelaSystemSpec;
+  getVaultmountpath(): string;
+  setVaultmountpath(value: string): ModelaSystemSpec;
+  hasVaultmountpath(): boolean;
+  clearVaultmountpath(): ModelaSystemSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelaSystemSpec.AsObject;
@@ -3762,9 +3762,9 @@ export class ModelaSystemSpec extends jspb.Message {
 export namespace ModelaSystemSpec {
   export type AsObject = {
     release?: string,
-    active?: boolean,
-    podtemplate?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
-    publishertemplate?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
+    imagepullpolicy?: string,
+    vaultaddress?: string,
+    vaultmountpath?: string,
   }
 }
 

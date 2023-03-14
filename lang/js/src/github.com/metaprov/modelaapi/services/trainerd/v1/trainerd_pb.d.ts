@@ -48,8 +48,8 @@ export class TrainRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): TrainRequest;
 
-  getIsecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearIsecretMap(): TrainRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): TrainRequest;
 
   getTestdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
   setTestdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): TrainRequest;
@@ -82,7 +82,7 @@ export namespace TrainRequest {
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    isecretMap: Array<[string, Uint8Array | string]>,
+    secretMap: Array<[string, Uint8Array | string]>,
     testdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     group: boolean,

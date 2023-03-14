@@ -14,7 +14,7 @@ cp hack/patch* venv/lib/py*/site-packages/betterproto/plugin/models.py
 
 PROJECT_ROOT=$(cd $(dirname ${BASH_SOURCE})/..; pwd)
 
-python3 -m grpc_tools.protoc \
+venv/bin/python3 -m grpc_tools.protoc \
     -I${PROJECT_ROOT}/../../.. \
     -I${PROJECT_ROOT}/pkg \
     -I/tmp/includes \

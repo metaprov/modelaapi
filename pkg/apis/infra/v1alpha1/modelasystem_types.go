@@ -38,22 +38,25 @@ type ModelaSystemList struct {
 	Items           []ModelaSystem `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// ModelaSystemSpec defines the desired state of ModelaSystem
+// ModelaSystemSpec defines the desired state of a ModelaSystem
 type ModelaSystemSpec struct {
-	// The current software version of modela
+	// Release describes the active version for all ManagedImages under the `modela-catalog` namespace. This release
+	// version will be applied to the `tag` field of the ManagedImage specification. When changed, this will
+	// force a restart of every Deployment and Job managed by Modela.
 	// +kubebuilder:validation:Required
 	// +required
 	Release string `json:"release" protobuf:"bytes,1,opt,name=release"`
-	// Set the release to active
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Active *bool `json:"active" protobuf:"varint,2,opt,name=active"`
-	// +kubebuilder:validation:Optional
-	// +optional
-	Template *v1.PodTemplateSpec `json:"podTemplate,omitempty" protobuf:"bytes,3,opt,name=podTemplate"`
-	// +kubebuilder:validation:Optional
-	// +optional
-	PublisherTemplate *v1.PodTemplateSpec `json:"publisherTemplate,omitempty" protobuf:"bytes,4,opt,name=publisherTemplate"`
+
+	// ImagePullPolicy indicates the ImagePullPolicy for all Jobs and Deployments managed by Modela.
+	ImagePullPolicy *v1.PullPolicy `json:"imagePullPolicy" protobuf:"bytes,2,opt,name=imagePullPolicy"`
+
+	// VaultAddress indicates the address of the Vault server Modela will use for the storage of Secrets. The Vault
+	// server must be configured to authenticate all Modela service accounts at the mount path specified by VaultMountPath.
+	// If empty, Modela will attempt to connect to the local Vault server installed by the Modela Operator.
+	VaultAddress *string `json:"vaultAddress" protobuf:"varint,3,opt,name=vaultAddress"`
+
+	// VaultMountPath specifies the mount path where a KVv2 secret engine is mounted
+	VaultMountPath *string `json:"vaultMountPath" protobuf:"varint,4,opt,name=vaultMountPath"`
 }
 
 // ModelaSystemStatus is the observed state of a ModelaSystem

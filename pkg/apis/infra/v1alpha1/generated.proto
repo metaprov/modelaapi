@@ -1840,25 +1840,25 @@ message ModelaSystemList {
   repeated ModelaSystem items = 2;
 }
 
-// ModelaSystemSpec defines the desired state of ModelaSystem
+// ModelaSystemSpec defines the desired state of a ModelaSystem
 message ModelaSystemSpec {
-  // The current software version of modela
+  // Release describes the active version for all ManagedImages under the `modela-catalog` namespace. This release
+  // version will be applied to the `tag` field of the ManagedImage specification. When changed, this will
+  // force a restart of every Deployment and Job managed by Modela.
   // +kubebuilder:validation:Required
   // +required
   optional string release = 1;
 
-  // Set the release to active
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool active = 2;
+  // ImagePullPolicy indicates the ImagePullPolicy for all Jobs and Deployments managed by Modela.
+  optional string imagePullPolicy = 2;
 
-  // +kubebuilder:validation:Optional
-  // +optional
-  optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 3;
+  // VaultAddress indicates the address of the Vault server Modela will use for the storage of Secrets. The Vault
+  // server must be configured to authenticate all Modela service accounts at the mount path specified by VaultMountPath.
+  // If empty, Modela will attempt to connect to the local Vault server installed by the Modela Operator.
+  optional string vaultAddress = 3;
 
-  // +kubebuilder:validation:Optional
-  // +optional
-  optional k8s.io.api.core.v1.PodTemplateSpec publisherTemplate = 4;
+  // VaultMountPath specifies the mount path where a KVv2 secret engine is mounted
+  optional string vaultMountPath = 4;
 }
 
 // ModelaSystemStatus is the observed state of a ModelaSystem
