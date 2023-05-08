@@ -578,9 +578,7 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRe
  */
 proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
+    bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -622,17 +620,6 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRe
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
       msg.setBucket(value);
       break;
-    case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setConnection(value);
-      break;
-    case 3:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
-      break;
     default:
       reader.skipField();
       break;
@@ -669,18 +656,6 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRe
       f,
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
-  }
-  f = message.getConnection();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -720,65 +695,6 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRe
 proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.prototype.hasBucket = function() {
   return jspb.Message.getField(this, 1) != null;
 };
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.prototype.getConnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 2));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.prototype.clearConnection = function() {
-  return this.setConnection(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * map<string, bytes> secret = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
 
 
 
@@ -945,9 +861,7 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBuc
   var f, obj = {
     region: jspb.Message.getFieldWithDefault(msg, 1, ""),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    key: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
+    key: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -996,17 +910,6 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBuc
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setKey(value);
-      break;
-    case 4:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setConnection(value);
-      break;
-    case 5:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
       break;
     default:
       reader.skipField();
@@ -1058,18 +961,6 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBuc
       3,
       f
     );
-  }
-  f = message.getConnection();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -1145,65 +1036,6 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBuc
 proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.prototype.setKey = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 4;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.prototype.getConnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 4));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.prototype.clearConnection = function() {
-  return this.setConnection(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * map<string, bytes> secret = 5;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
 
 
 
@@ -1472,9 +1304,7 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.
     key: jspb.Message.getFieldWithDefault(msg, 1, ""),
     path: jspb.Message.getFieldWithDefault(msg, 2, ""),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    tenant: jspb.Message.getFieldWithDefault(msg, 6, "")
+    tenant: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1525,17 +1355,6 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.
       msg.setBucket(value);
       break;
     case 4:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setConnection(value);
-      break;
-    case 5:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
-      break;
-    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setTenant(value);
       break;
@@ -1590,22 +1409,10 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
   }
-  f = message.getConnection();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
   f = message.getTenant();
   if (f.length > 0) {
     writer.writeString(
-      6,
+      4,
       f
     );
   }
@@ -1686,70 +1493,11 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 4;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.prototype.getConnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 4));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.prototype.clearConnection = function() {
-  return this.setConnection(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * map<string, bytes> secret = 5;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
-
-
-/**
- * optional string tenant = 6;
+ * optional string tenant = 4;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.prototype.getTenant = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -1758,7 +1506,7 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.
  * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest} returns this
  */
 proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.prototype.setTenant = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -1897,9 +1645,7 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest.t
   var f, obj = {
     prefix: jspb.Message.getFieldWithDefault(msg, 1, ""),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    tenant: jspb.Message.getFieldWithDefault(msg, 5, "")
+    tenant: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1946,17 +1692,6 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest.d
       msg.setBucket(value);
       break;
     case 3:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setConnection(value);
-      break;
-    case 4:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
-      break;
-    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setTenant(value);
       break;
@@ -2004,22 +1739,10 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest.s
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
   }
-  f = message.getConnection();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
   f = message.getTenant();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      3,
       f
     );
   }
@@ -2082,70 +1805,11 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest.p
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 3;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest.prototype.getConnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 3));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest.prototype.clearConnection = function() {
-  return this.setConnection(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * map<string, bytes> secret = 4;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
-
-
-/**
- * optional string tenant = 5;
+ * optional string tenant = 3;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest.prototype.getTenant = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -2154,7 +1818,7 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest.p
  * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest} returns this
  */
 proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest.prototype.setTenant = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -2349,7 +2013,6 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.to
     key: jspb.Message.getFieldWithDefault(msg, 1, ""),
     path: jspb.Message.getFieldWithDefault(msg, 2, ""),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
@@ -2401,11 +2064,6 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.de
       msg.setBucket(value);
       break;
     case 4:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setConnection(value);
-      break;
-    case 5:
       var value = msg.getSecretMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
@@ -2462,17 +2120,9 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.se
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
   }
-  f = message.getConnection();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
   f = message.getSecretMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -2551,51 +2201,14 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.pr
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 4;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.prototype.getConnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 4));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.prototype.clearConnection = function() {
-  return this.setConnection(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * map<string, bytes> secret = 5;
+ * map<string, bytes> secret = 4;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
 proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
       null));
 };
 
@@ -2742,9 +2355,7 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketR
  */
 proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
+    bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2786,17 +2397,6 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketR
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
       msg.setBucket(value);
       break;
-    case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setConnection(value);
-      break;
-    case 3:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
-      break;
     default:
       reader.skipField();
       break;
@@ -2833,18 +2433,6 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketR
       f,
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
-  }
-  f = message.getConnection();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -2884,65 +2472,6 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketR
 proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.prototype.hasBucket = function() {
   return jspb.Message.getField(this, 1) != null;
 };
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.prototype.getConnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 2));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.prototype.clearConnection = function() {
-  return this.setConnection(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * map<string, bytes> secret = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
 
 
 

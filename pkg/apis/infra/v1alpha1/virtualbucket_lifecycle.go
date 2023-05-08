@@ -16,13 +16,13 @@ import (
 )
 
 // Set up the webhook with the manager.
-func (r *VirtualBucket) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (bucket *VirtualBucket) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(r).
+		For(bucket).
 		Complete()
 }
 
-func (bucket VirtualBucket) HasFinalizer() bool {
+func (bucket *VirtualBucket) HasFinalizer() bool {
 	return util.HasFin(&bucket.ObjectMeta, infra.GroupName)
 }
 func (bucket *VirtualBucket) AddFinalizer()    { util.AddFin(&bucket.ObjectMeta, infra.GroupName) }
@@ -48,7 +48,7 @@ func (bucket *VirtualBucket) CreateOrUpdateCond(cond metav1.Condition) {
 	bucket.Status.Conditions[i] = current
 }
 
-func (bucket VirtualBucket) GetCondIdx(t string) int {
+func (bucket *VirtualBucket) GetCondIdx(t string) int {
 	for i, v := range bucket.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -57,11 +57,11 @@ func (bucket VirtualBucket) GetCondIdx(t string) int {
 	return -1
 }
 
-func (bucket VirtualBucket) IsReady() bool {
+func (bucket *VirtualBucket) IsReady() bool {
 	return bucket.GetCond(VirtualBucketReady).Status == metav1.ConditionTrue
 }
 
-func (bucket VirtualBucket) GetCond(t string) metav1.Condition {
+func (bucket *VirtualBucket) GetCond(t string) metav1.Condition {
 	for _, v := range bucket.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -77,11 +77,11 @@ func (bucket VirtualBucket) GetCond(t string) metav1.Condition {
 
 }
 
-func (bucket VirtualBucket) RootURI() string {
+func (bucket *VirtualBucket) RootURI() string {
 	return fmt.Sprintf("tenants/%s/virtualbuckets/%s", bucket.Namespace, bucket.Name)
 }
 
-func (bucket VirtualBucket) ManifestURI() string {
+func (bucket *VirtualBucket) ManifestURI() string {
 	return fmt.Sprintf("%s/%s-virtualbucket.yaml", bucket.RootURI(), bucket.Name)
 }
 
@@ -101,4 +101,13 @@ func (bucket *VirtualBucket) MarkFailed(err string) {
 		Message: err,
 	})
 	bucket.Status.FailureMessage = util.StrPtr(err)
+}
+
+func (bucket *VirtualBucket) GetConnection() *Connection {
+	var connectionName string
+	if bucket.Spec.ConnectionName != nil {
+		connectionName = *bucket.Spec.ConnectionName
+	}
+
+	return &Connection{ObjectMeta: metav1.ObjectMeta{Namespace: bucket.Namespace, Name: connectionName}}
 }

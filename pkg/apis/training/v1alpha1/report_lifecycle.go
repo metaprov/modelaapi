@@ -11,7 +11,6 @@ import (
 	"strings"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
-	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/training"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -89,7 +88,7 @@ func NewReport(
 	result.Default()
 	result.ObjectMeta.Name = name
 	result.ObjectMeta.Namespace = ns
-	result.Spec.Location = data.DataLocation{
+	result.Spec.Location = catalog.DataLocation{
 		Path:       util.StrPtr(key),
 		BucketName: util.StrPtr(bucketName)}
 	result.Spec.EntityRef.Name = entity
@@ -310,7 +309,7 @@ func (report Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierName
 			Owner:        report.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": report.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Bucket":     *report.Spec.Location.BucketName,
+				"BucketName": *report.Spec.Location.BucketName,
 				"URL":        *report.Spec.Location.Path,
 			},
 		},
@@ -343,7 +342,7 @@ func (report Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *str
 			Owner:        report.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": report.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"Bucket":     *report.Spec.Location.BucketName,
+				"BucketName": *report.Spec.Location.BucketName,
 				"URL":        *report.Spec.Location.Path,
 				"Type":       string(*report.Spec.ReportType),
 			},

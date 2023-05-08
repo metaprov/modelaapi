@@ -7,30 +7,29 @@ import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 
 message ListConnectionsRequest {
-    string             namespace  = 1;
-    map<string,string> labels     = 2; 
-    int32              page_size  = 3;
-    string             page_token = 4;
-    string             order_by   = 5;     
+  string             namespace = 1;
+  map<string, string> labels = 2;
+  int32              page_size = 3;
+  string             page_token = 4;
+  string             order_by = 5;
 }
 
 message ListConnectionsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionList connections = 1;
-    string next_page_token = 2;
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionList connections = 1;
+  string next_page_token = 2;
 }
 
 message CreateConnectionRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
-    map<string,string> secret = 5;
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
+  map<string, string> secret = 5;
 }
 
 message CreateConnectionResponse {
 }
 
 message UpdateConnectionRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
-    map<string,string> secret = 2;
-    google.protobuf.FieldMask field_mask = 3;
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
+  google.protobuf.FieldMask field_mask = 2;
 }
 
 message UpdateConnectionResponse {
@@ -38,19 +37,21 @@ message UpdateConnectionResponse {
 }
 
 message GetConnectionRequest {
-    string namespace = 1;
-    string name      = 2;
+  string namespace = 1;
+  string name = 2;
 }
 
 message GetConnectionResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
-    string yaml = 2;
-    
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
+  map<string, string> secret = 2;
+  bool isAdmin = 3;
+  string yaml = 4;
+
 }
 
 message DeleteConnectionRequest {
-    string namespace = 1;
-    string name      = 2;
+  string namespace = 1;
+  string name = 2;
 }
 
 message DeleteConnectionResponse {
@@ -58,43 +59,43 @@ message DeleteConnectionResponse {
 }
 
 message TestConnectionRequest {
-    string namespace = 1;
-    string name      = 2;
+  string namespace = 1;
+  string name = 2;
 }
 
 message TestConnectionResponse {
-    bool status = 1;
-    string msg  = 2; 
+  bool status = 1;
+  string msg = 2;
 }
 
 
 
 service ConnectionService {
-    rpc ListConnections(ListConnectionsRequest) returns (ListConnectionsResponse) {
-        option (google.api.http).get = "/v1/connections/{namespace}";
-    }
-    rpc CreateConnection(CreateConnectionRequest) returns (CreateConnectionResponse) {
-        option (google.api.http) = {
-			post: "/v1/connections"
-			body: "*"
-		};
-    }
-    rpc GetConnection(GetConnectionRequest) returns (GetConnectionResponse) {
-        option (google.api.http).get = "/v1/connections/{namespace}/{name}";
-    }
-    rpc UpdateConnection(UpdateConnectionRequest) returns (UpdateConnectionResponse) {
-        option (google.api.http) = {
-			put: "/v1/connections/{connection.metadata.namespace}/{connection.metadata.name}"
-			body: "*"
-		};
-    }
+  rpc ListConnections(ListConnectionsRequest) returns (ListConnectionsResponse) {
+    option (google.api.http).get = "/v1/connections/{namespace}";
+  }
+  rpc CreateConnection(CreateConnectionRequest) returns (CreateConnectionResponse) {
+    option (google.api.http) = {
+      post: "/v1/connections"
+      body: "*"
+    };
+  }
+  rpc GetConnection(GetConnectionRequest) returns (GetConnectionResponse) {
+    option (google.api.http).get = "/v1/connections/{namespace}/{name}";
+  }
+  rpc UpdateConnection(UpdateConnectionRequest) returns (UpdateConnectionResponse) {
+    option (google.api.http) = {
+      put: "/v1/connections/{connection.metadata.namespace}/{connection.metadata.name}"
+      body: "*"
+    };
+  }
 
-    rpc DeleteConnection(DeleteConnectionRequest) returns (DeleteConnectionResponse) {
-        option (google.api.http).delete = "/api/v1/connections/{namespace}/{name}";
-    }
+  rpc DeleteConnection(DeleteConnectionRequest) returns (DeleteConnectionResponse) {
+    option (google.api.http).delete = "/api/v1/connections/{namespace}/{name}";
+  }
 
-    rpc TestConnection(TestConnectionRequest) returns (TestConnectionResponse) {
-        option (google.api.http).get = "/api/v1/connections/{namespace}/{name}:test";
-    }
+  rpc TestConnection(TestConnectionRequest) returns (TestConnectionResponse) {
+    option (google.api.http).get = "/api/v1/connections/{namespace}/{name}:test";
+  }
 
 }

@@ -185,8 +185,6 @@ spec:
                 default: ""
                 description: The URL of the subject
                 type: string
-            required:
-            - notifierName
             type: object
           status:
             description: AlertStatus is the observed state of an Alert
@@ -281,6 +279,8 @@ spec:
                 format: date-time
                 type: string
             type: object
+        required:
+        - spec
         type: object
     served: true
     storage: true

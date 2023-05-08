@@ -241,17 +241,17 @@ func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
 		},
 		Spec: data.DatasetSpec{
 			Owner:          prediction.Spec.Owner,
-			VersionName:    prediction.Spec.VersionName,
+			VersionName:    *prediction.Spec.VersionName,
 			Description:    util.StrPtr("dataset for prediction " + prediction.Name),
 			Origin:         *prediction.Spec.Input.Location,
-			DataSourceName: &prediction.Spec.DataSourceRef.Name,
+			DataSourceName: prediction.Spec.DataSourceRef.Name,
 			PredictorRef: v1.ObjectReference{
 				Name:      prediction.Spec.PredictorRef.Name,
 				Namespace: prediction.Spec.PredictorRef.Namespace,
 			},
 			GenerateFeatureHistogram: util.BoolPtr(true),
 			Type:                     &datasettype,
-			Role:                     &datasetrole,
+			Role:                     datasetrole,
 		},
 		Status: data.DatasetStatus{
 			ObservedGeneration: 0,

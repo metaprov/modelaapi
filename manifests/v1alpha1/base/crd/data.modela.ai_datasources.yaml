@@ -266,9 +266,9 @@ spec:
                 type: object
               inferredFrom:
                 description: InferredFrom specifies the location of the data that
-                  was used to generate the schema of the Location Source
+                  was used to generate the schema of the Data Source
                 properties:
-                  bucketName:
+                  bucket:
                     default: ""
                     description: In the case of the location type being an object
                       storage system, BucketName is the name of the VirtualBucket
@@ -277,13 +277,13 @@ spec:
                       storage system, and will access the file from the path specified
                       by the Path field
                     type: string
-                  connectionName:
+                  connection:
                     default: ""
                     description: In the case of the type of location being a database,
-                      ConnectionName specifies the name of the Connection resource
+                      ConnectionName specifies the name of the ConnectionName resource
                       that exists in the same tenant as the resource specifying the
                       DataLocation. Modela will attempt to connect to the database
-                      using the credentials specified in the Connection, and will
+                      using the credentials specified in the ConnectionName, and will
                       execute the query specified by the SQL field
                     type: string
                   database:
@@ -914,10 +914,8 @@ spec:
                 - none
                 type: string
               task:
-                description: The default task for Dataset resources created from the
-                  Location Source. If null, the task type will default to the the
-                  default task type of the Location Product which contains the Location
-                  Source
+                description: The machine learning task relevant to the Dataset. This
+                  field *must* be the same as the Data Source of the object
                 enum:
                 - binary-classification
                 - multi-classification

@@ -22,6 +22,8 @@ var github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb = require
 goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb);
 var github_com_metaprov_modelaapi_services_common_v1_common_pb = require('../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb.js');
 goog.object.extend(proto, github_com_metaprov_modelaapi_services_common_v1_common_pb);
+var github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated_pb.js');
+goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest', null, global);
@@ -1953,10 +1955,9 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.pr
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    tenant: jspb.Message.getFieldWithDefault(msg, 1, ""),
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
-    location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
+    location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1995,20 +1996,16 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.de
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
+      msg.setTenant(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
       msg.setDatasource(value);
       break;
-    case 4:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
+    case 3:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
       msg.setLocation(value);
       break;
     default:
@@ -2040,24 +2037,17 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.pr
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
+  f = message.getTenant();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getDatasource();
   if (f != null) {
     writer.writeMessage(
-      3,
+      2,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
     );
@@ -2065,19 +2055,19 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.se
   f = message.getLocation();
   if (f != null) {
     writer.writeMessage(
-      4,
+      3,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string namespace = 1;
+ * optional string tenant = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.getTenant = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -2086,36 +2076,18 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.pr
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.setTenant = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string name = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 2;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.getDatasource = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 3));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 2));
 };
 
 
@@ -2124,7 +2096,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.pr
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.setDatasource = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -2142,26 +2114,26 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.hasDatasource = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 4;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation location = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation}
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.getLocation = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 4));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation, 3));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.setLocation = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -2179,7 +2151,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.hasLocation = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -2377,7 +2349,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.t
   var f, obj = {
     tenant: jspb.Message.getFieldWithDefault(msg, 1, ""),
     format: (f = msg.getFormat()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec.toObject(includeInstance, f),
-    location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
+    location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2424,8 +2396,8 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.d
       msg.setFormat(value);
       break;
     case 3:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
       msg.setLocation(value);
       break;
     default:
@@ -2477,7 +2449,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.s
     writer.writeMessage(
       3,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
 };
@@ -2539,17 +2511,17 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.p
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 3;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation location = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation}
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.getLocation = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 3));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation, 3));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.setLocation = function(value) {

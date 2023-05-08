@@ -506,7 +506,6 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.toObject =
     proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.toObject, includeInstance),
     table: (f = msg.getTable()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
     hash: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    anomalyuri: jspb.Message.getFieldWithDefault(msg, 9, ""),
     groups: (f = msg.getGroups()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
     ts: (f = msg.getTs()) && proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.toObject(includeInstance, f)
   };
@@ -580,16 +579,12 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.deserializ
       var value = /** @type {string} */ (reader.readString());
       msg.setHash(value);
       break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAnomalyuri(value);
-      break;
-    case 11:
+    case 10:
       var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
       msg.setGroups(value);
       break;
-    case 12:
+    case 11:
       var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.deserializeBinaryFromReader);
       msg.setTs(value);
@@ -682,17 +677,10 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.serializeB
       f
     );
   }
-  f = message.getAnomalyuri();
-  if (f.length > 0) {
-    writer.writeString(
-      9,
-      f
-    );
-  }
   f = message.getGroups();
   if (f != null) {
     writer.writeMessage(
-      11,
+      10,
       f,
       proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
     );
@@ -700,7 +688,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.serializeB
   f = message.getTs();
   if (f != null) {
     writer.writeMessage(
-      12,
+      11,
       f,
       proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile.serializeBinaryToWriter
     );
@@ -912,30 +900,12 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.
 
 
 /**
- * optional string anomalyURI = 9;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.getAnomalyuri = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile} returns this
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.setAnomalyuri = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
-};
-
-
-/**
- * optional TableView groups = 11;
+ * optional TableView groups = 10;
  * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.getGroups = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TableView} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 11));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TableView, 10));
 };
 
 
@@ -944,7 +914,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile} returns this
 */
 proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.setGroups = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -962,17 +932,17 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.hasGroups = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional TimeSeriesProfile ts = 12;
+ * optional TimeSeriesProfile ts = 11;
  * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile}
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.getTs = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile, 12));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.TimeSeriesProfile, 11));
 };
 
 
@@ -981,7 +951,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile} returns this
 */
 proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.setTs = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -999,7 +969,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.hasTs = function() {
-  return jspb.Message.getField(this, 12) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 

@@ -473,7 +473,7 @@ class DataServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def TellPartialModel(self, request, context):
-        """If a model is a partial model (sample < 100%) 
+        """If a model is a partial model (sample < 100%)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

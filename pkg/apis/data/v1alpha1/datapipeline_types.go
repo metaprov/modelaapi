@@ -126,7 +126,7 @@ type DataInputSpec struct {
 	// The physical location of the observation file.
 	// the location can point to a database.
 	// +kubebuilder:validation:Optional
-	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
+	Location *catalog.DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
 	// The file format of the input file, if applicable
 	// +kubebuilder:validation:Optional
 	Format FlatFileFormatSpec `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
@@ -141,7 +141,7 @@ type DataOutputSpec struct {
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
 	// The location where the dataset will be stored
 	// +kubebuilder:validation:Optional
-	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
+	Location *catalog.DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
 	// The format of the dataset, applicable if the output location is a flat-file
 	// +kubebuilder:default:="csv"
 	// +kubebuilder:validation:Optional

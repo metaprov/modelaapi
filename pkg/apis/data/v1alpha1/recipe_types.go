@@ -341,7 +341,6 @@ const (
 	ToNumberColumnStep RecipeStepOperation = "to-number-column"
 	ToStringColumnStep RecipeStepOperation = "to-string-column"
 
-	// Location cleaning
 	CapitalCaseStepOp              RecipeStepOperation = "capital-case"
 	FormatDateStepOp               RecipeStepOperation = "format-date"
 	AddDoubleQuotesStepOp          RecipeStepOperation = "add-double-quotes"
@@ -356,7 +355,6 @@ const (
 	ReplaceBetweenPositionsStepOp  RecipeStepOperation = "replace-between-positions"
 	ReplaceTextStepOp              RecipeStepOperation = "replace-text"
 
-	// Location quality
 	FillWithAvgStepOp       RecipeStepOperation = "fill-with-average"
 	FillWithCustomStepOp    RecipeStepOperation = "fill-with-custom"
 	FillWithEmptyStepOp     RecipeStepOperation = "fill-with-empty"
@@ -381,7 +379,6 @@ const (
 	SplitColumnSingleDelimiterStepOp   RecipeStepOperation = "split-column-single-delimiter"
 	SplitColumnWithIntervalsStepOp     RecipeStepOperation = "split-column-with-intervals"
 
-	// Location structure
 	CatMappingStepOp   RecipeStepOperation = "category-mapping"
 	GroupByStepOp      RecipeStepOperation = "group-by"
 	JoinStepOp         RecipeStepOperation = "join"
@@ -430,7 +427,7 @@ type RecipeInputSpec struct {
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
 	// Location is the folder of the actual data resides, if not using dataset
 	// +required.
-	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
+	Location *catalog.DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
 	// Format is the dataset format
 	// +kubebuilder:default:=csv
 	Format *FlatFileType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
@@ -449,5 +446,5 @@ type RecipeOutputSpec struct {
 	// Location is the data location folder of the actual data resides.
 	// +kubebuilder:validation:Required
 	// +required
-	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
+	Location *catalog.DataLocation `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
 }

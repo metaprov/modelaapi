@@ -245,8 +245,8 @@ export class CheckpointSpec extends jspb.Message {
   hasCheckpointinterval(): boolean;
   clearCheckpointinterval(): CheckpointSpec;
 
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): CheckpointSpec;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): CheckpointSpec;
   hasLocation(): boolean;
   clearLocation(): CheckpointSpec;
 
@@ -262,7 +262,7 @@ export namespace CheckpointSpec {
   export type AsObject = {
     enabled?: boolean,
     checkpointinterval?: number,
-    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
@@ -1256,8 +1256,8 @@ export class ForecasterSpec extends jspb.Message {
   hasCoverage(): boolean;
   clearCoverage(): ForecasterSpec;
 
-  getOutputlocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setOutputlocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ForecasterSpec;
+  getOutputlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setOutputlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): ForecasterSpec;
   hasOutputlocation(): boolean;
   clearOutputlocation(): ForecasterSpec;
 
@@ -1356,7 +1356,7 @@ export namespace ForecasterSpec {
     future?: WindowSpec.AsObject,
     forecast?: boolean,
     coverage?: number,
-    outputlocation?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    outputlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
     featuresList: Array<string>,
     groupsList: Array<string>,
     predefinedtemplate?: string,
@@ -1867,13 +1867,13 @@ export namespace ModelClass {
 }
 
 export class ModelClassDataSpec extends jspb.Message {
-  getObservations(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setObservations(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassDataSpec;
+  getObservations(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setObservations(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): ModelClassDataSpec;
   hasObservations(): boolean;
   clearObservations(): ModelClassDataSpec;
 
-  getPredictions(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setPredictions(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelClassDataSpec;
+  getPredictions(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setPredictions(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): ModelClassDataSpec;
   hasPredictions(): boolean;
   clearPredictions(): ModelClassDataSpec;
 
@@ -1927,8 +1927,8 @@ export class ModelClassDataSpec extends jspb.Message {
 
 export namespace ModelClassDataSpec {
   export type AsObject = {
-    observations?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    predictions?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    observations?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
+    predictions?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
     schema?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Schema.AsObject,
     flatfile?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec.AsObject,
     primarykeyList: Array<string>,
@@ -2946,8 +2946,8 @@ export class ModelSpec extends jspb.Message {
   hasFlagged(): boolean;
   clearFlagged(): ModelSpec;
 
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelSpec;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): ModelSpec;
   hasLocation(): boolean;
   clearLocation(): ModelSpec;
 
@@ -3076,7 +3076,7 @@ export namespace ModelSpec {
     unittested?: boolean,
     feedbackdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     flagged?: boolean,
-    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
     forecasting?: ForecasterSpec.AsObject,
     compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     activedeadlineseconds?: number,
@@ -3336,20 +3336,20 @@ export class ModelStatus extends jspb.Message {
   hasRuntime(): boolean;
   clearRuntime(): ModelStatus;
 
-  getTraindataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setTraindataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelStatus;
-  hasTraindataset(): boolean;
-  clearTraindataset(): ModelStatus;
+  getTraindatasetlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setTraindatasetlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
+  hasTraindatasetlocation(): boolean;
+  clearTraindatasetlocation(): ModelStatus;
 
-  getTestdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setTestdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelStatus;
-  hasTestdataset(): boolean;
-  clearTestdataset(): ModelStatus;
+  getTestdatasetlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setTestdatasetlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
+  hasTestdatasetlocation(): boolean;
+  clearTestdatasetlocation(): ModelStatus;
 
-  getValidationdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setValidationdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelStatus;
-  hasValidationdataset(): boolean;
-  clearValidationdataset(): ModelStatus;
+  getValidationdatasetlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setValidationdatasetlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
+  hasValidationdatasetlocation(): boolean;
+  clearValidationdatasetlocation(): ModelStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelStatus;
@@ -3585,9 +3585,9 @@ export namespace ModelStatus {
     permutationimportanceList: Array<FeatureImportance.AsObject>,
     forecasturi?: string,
     runtime?: RuntimeStatus.AsObject,
-    traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    testdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    validationdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    traindatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    testdatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    validationdatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     observedgeneration?: number,
     trainingrows?: number,
     testingrows?: number,
@@ -4025,8 +4025,8 @@ export class ReportSpec extends jspb.Message {
   hasEntityref(): boolean;
   clearEntityref(): ReportSpec;
 
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ReportSpec;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): ReportSpec;
   hasLocation(): boolean;
   clearLocation(): ReportSpec;
 
@@ -4097,7 +4097,7 @@ export namespace ReportSpec {
   export type AsObject = {
     versionname?: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
     reporttype?: string,
     format?: string,
     notifiername?: string,
@@ -4931,10 +4931,10 @@ export class StudySpec extends jspb.Message {
   hasFast(): boolean;
   clearFast(): StudySpec;
 
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): StudySpec;
-  hasLocation(): boolean;
-  clearLocation(): StudySpec;
+  getArtifactbucketname(): string;
+  setArtifactbucketname(value: string): StudySpec;
+  hasArtifactbucketname(): boolean;
+  clearArtifactbucketname(): StudySpec;
 
   getOwner(): string;
   setOwner(value: string): StudySpec;
@@ -5050,7 +5050,7 @@ export namespace StudySpec {
     modelimagepushed?: boolean,
     modelexplained?: boolean,
     fast?: boolean,
-    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    artifactbucketname?: string,
     owner?: string,
     compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     template?: boolean,
@@ -5116,20 +5116,20 @@ export class StudyStatus extends jspb.Message {
   hasObservedgeneration(): boolean;
   clearObservedgeneration(): StudyStatus;
 
-  getTraindataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setTraindataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): StudyStatus;
-  hasTraindataset(): boolean;
-  clearTraindataset(): StudyStatus;
+  getTraindatasetlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setTraindatasetlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyStatus;
+  hasTraindatasetlocation(): boolean;
+  clearTraindatasetlocation(): StudyStatus;
 
-  getTestdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setTestdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): StudyStatus;
-  hasTestdataset(): boolean;
-  clearTestdataset(): StudyStatus;
+  getTestdatasetlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setTestdatasetlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyStatus;
+  hasTestdatasetlocation(): boolean;
+  clearTestdatasetlocation(): StudyStatus;
 
-  getValidationdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setValidationdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): StudyStatus;
-  hasValidationdataset(): boolean;
-  clearValidationdataset(): StudyStatus;
+  getValidationdatasetlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setValidationdatasetlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyStatus;
+  hasValidationdatasetlocation(): boolean;
+  clearValidationdatasetlocation(): StudyStatus;
 
   getLastmodelid(): number;
   setLastmodelid(value: number): StudyStatus;
@@ -5265,9 +5265,9 @@ export namespace StudyStatus {
     reportname?: string,
     phase?: string,
     observedgeneration?: number,
-    traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    testdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    validationdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    traindatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    testdatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    validationdatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     lastmodelid?: number,
     failurereason?: string,
     failuremessage?: string,

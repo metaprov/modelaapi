@@ -16,10 +16,9 @@ message DatasetProfile {
   repeated ColumnProfile   columns = 6;
   TableView    table = 7;
   string       hash = 8; // signature of the dataset profile.
-  string       anomalyURI = 9;
 
-  TableView groups = 11;  // return the list of group datasets in this dataset profile. only for datasets of type group forecast
-  TimeSeriesProfile ts = 12;// if the dataset is a group dataset series, this is one profile of a single time series.
+  TableView groups = 10;  // return the list of group datasets in this dataset profile. only for datasets of type group forecast
+  TimeSeriesProfile ts = 11;// if the dataset is a group dataset series, this is one profile of a single time series.
 }
 
 

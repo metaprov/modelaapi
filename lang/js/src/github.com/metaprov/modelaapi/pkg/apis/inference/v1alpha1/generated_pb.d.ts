@@ -1155,8 +1155,8 @@ export class PredictionLoggingSpec extends jspb.Message {
   hasBackupconnectionref(): boolean;
   clearBackupconnectionref(): PredictionLoggingSpec;
 
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictionLoggingSpec;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): PredictionLoggingSpec;
   hasLocation(): boolean;
   clearLocation(): PredictionLoggingSpec;
 
@@ -1175,7 +1175,7 @@ export namespace PredictionLoggingSpec {
     rows?: number,
     backupfreqseconds?: number,
     backupconnectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
@@ -1527,8 +1527,8 @@ export class PredictorSpec extends jspb.Message {
   hasProgressive(): boolean;
   clearProgressive(): PredictorSpec;
 
-  getArtifactsfolder(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setArtifactsfolder(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictorSpec;
+  getArtifactsfolder(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setArtifactsfolder(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): PredictorSpec;
   hasArtifactsfolder(): boolean;
   clearArtifactsfolder(): PredictorSpec;
 
@@ -1641,7 +1641,7 @@ export namespace PredictorSpec {
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
     progressive?: ProgressiveSpec.AsObject,
-    artifactsfolder?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    artifactsfolder?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
     access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
     replicas?: number,
     autoscaling?: AutoScalingSpec.AsObject,

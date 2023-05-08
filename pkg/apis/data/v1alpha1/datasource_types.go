@@ -544,8 +544,7 @@ type DataSourceSpec struct {
 	// The specification for how incoming data should be sampled (i.e. how many rows should be used). Applicable
 	// primarily for very large datasets
 	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,9,opt,name=sample"`
-	// The default task for Dataset resources created from the Location Source. If null, the task type will default to the
-	// the default task type of the Location Product which contains the Location Source
+	// The machine learning task relevant to the Dataset. This field *must* be the same as the Data Source of the object
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,10,opt,name=task"`
 	// The machine learning subtask relevant to the primary task (text classification, image object detection, etc.)
@@ -558,9 +557,9 @@ type DataSourceSpec struct {
 	// Labeling specificies how to automatically label the dataset using positive and negative rules
 	// +kubebuilder:validation:Optional
 	Labeling LabelingSpec `json:"labeling,omitempty" protobuf:"bytes,13,rep,name=labeling"`
-	// InferredFrom specifies the location of the data that was used to generate the schema of the Location Source
+	// InferredFrom specifies the location of the data that was used to generate the schema of the Data Source
 	// +kubebuilder:validation:Optional
-	InferredFrom *DataLocation `json:"inferredFrom,omitempty" protobuf:"bytes,14,opt,name=inferredFrom"`
+	InferredFrom *catalog.DataLocation `json:"inferredFrom,omitempty" protobuf:"bytes,14,opt,name=inferredFrom"`
 	// The specification for tests for a new dataset
 	// +kubebuilder:validation:Optional
 	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,15,opt,name=unitTestsTemplate"`

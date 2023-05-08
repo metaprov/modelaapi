@@ -110,7 +110,7 @@ type FeatureGroupSpec struct {
 	// Specify the data for this feature group
 	// This can be a table,  a view or a file on S3.
 	// +kubebuilder:validation:Optional
-	Location DataLocation `json:"location,omitempty" protobuf:"bytes,13,opt,name=location"`
+	Location catalog.DataLocation `json:"location,omitempty" protobuf:"bytes,13,opt,name=location"`
 	// the time column index. Might be null, if the fg does not have time column.
 	// +kubebuilder:validation:Optional
 	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,14,opt,name=timeColumn"`
@@ -148,7 +148,7 @@ type FeatureGroupStatus struct {
 	SyncSchedule catalog.RunScheduleStatus `json:"syncSchedule,omitempty" protobuf:"bytes,8,opt,name=syncSchedule"`
 	// Holds the last online table location. set the null when running the sync process
 	//+kubebuilder:validation:Optional
-	OnlineTable DataLocation `json:"onlineTable,omitempty" protobuf:"bytes,9,opt,name=onlineTable"`
+	OnlineTable catalog.DataLocation `json:"onlineTable,omitempty" protobuf:"bytes,9,opt,name=onlineTable"`
 	// The last time an online table was created
 	//+kubebuilder:validation:Optional
 	OnlineTableCreated *metav1.Time `json:"onlineTableCreated,omitempty" protobuf:"bytes,10,opt,name=onlineTableCreated"`

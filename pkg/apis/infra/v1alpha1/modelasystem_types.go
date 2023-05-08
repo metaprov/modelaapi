@@ -48,6 +48,7 @@ type ModelaSystemSpec struct {
 	Release string `json:"release" protobuf:"bytes,1,opt,name=release"`
 
 	// ImagePullPolicy indicates the ImagePullPolicy for all Jobs and Deployments managed by Modela.
+	// +kubebuilder:validation:Optional
 	ImagePullPolicy *v1.PullPolicy `json:"imagePullPolicy" protobuf:"bytes,2,opt,name=imagePullPolicy"`
 
 	// VaultAddress indicates the address of the Vault server Modela will use for the storage of Secrets. The Vault
@@ -59,6 +60,10 @@ type ModelaSystemSpec struct {
 	// VaultMountPath specifies the mount path where a KVv2 secret engine is mounted
 	// +kubebuilder:default:="modela/secrets"
 	VaultMountPath *string `json:"vaultMountPath" protobuf:"varint,4,opt,name=vaultMountPath"`
+
+	// Template defines the Pod template for Jobs created by Modela
+	// +kubebuilder:validation:Optional
+	Template v1.PodTemplateSpec `json:"template" protobuf:"varint,5,opt,name=template"`
 }
 
 // ModelaSystemStatus is the observed state of a ModelaSystem

@@ -38,7 +38,7 @@ spec:
       name: Errors
       type: integer
     - jsonPath: .status.datasourcesCount
-      name: Location Sources
+      name: Data Sources
       priority: 1
       type: integer
     - jsonPath: .status.datasetsCount
@@ -153,8 +153,8 @@ spec:
                     type: string
                   gitConnectionName:
                     default: ""
-                    description: The Git Connection resource which exists in the same
-                      tenant as the parent DataProduct
+                    description: The Git ConnectionName resource which exists in the
+                      same tenant as the parent DataProduct
                     type: string
                   private:
                     default: true
@@ -205,10 +205,10 @@ spec:
                     type: string
                   registryConnectionName:
                     default: ""
-                    description: The image repository Connection resource which exists
-                      in the same tenant as the parent DataProduct. If the field is
-                      not set, Modela will ignore the image location and not push
-                      images
+                    description: The image repository ConnectionName resource which
+                      exists in the same tenant as the parent DataProduct. If the
+                      field is not set, Modela will ignore the image location and
+                      not push images
                     type: string
                 type: object
               kpis:
@@ -238,113 +238,9 @@ spec:
                   the DataProduct. All data-producing resources will use the VirtualBucket
                   specified by the Location by default
                 properties:
-                  bucketName:
-                    default: ""
-                    description: In the case of the location type being an object
-                      storage system, BucketName is the name of the VirtualBucket
-                      resource that exists in the same tenant as the resource specifying
-                      the DataLocation. Modela will connect to the external object
-                      storage system, and will access the file from the path specified
-                      by the Path field
-                    type: string
-                  connectionName:
-                    default: ""
-                    description: In the case of the type of location being a database,
-                      ConnectionName specifies the name of the Connection resource
-                      that exists in the same tenant as the resource specifying the
-                      DataLocation. Modela will attempt to connect to the database
-                      using the credentials specified in the Connection, and will
-                      execute the query specified by the SQL field
-                    type: string
-                  database:
-                    default: ""
-                    description: The name of a database inside the database system
-                      specified by the ConnectionName field
+                  bucket:
                     type: string
                   path:
-                    default: ""
-                    description: The path to a flat-file inside an object storage
-                      system. When using the Modela API to upload files (through the
-                      FileService API), Modela will upload the data to a predetermined
-                      path based on the Tenant, DataProduct, DataProductVersion, and
-                      resource type of the resource in relation to the file being
-                      uploaded. The path does not need to adhere to this format; you
-                      can give the path to a file inside a bucket not managed by Modela
-                    type: string
-                  resourceRef:
-                    description: In the case of the location type being Dataset or
-                      PublicDataset, ResourceRef references another resource that
-                      containing data that will be used as a data source
-                    properties:
-                      apiVersion:
-                        description: API version of the referent.
-                        type: string
-                      fieldPath:
-                        description: 'If referring to a piece of an object instead
-                          of an entire object, this string should contain a valid
-                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
-                          For example, if the object reference is to a container within
-                          a pod, this would take on a value like: "spec.containers{name}"
-                          (where "name" refers to the name of the container that triggered
-                          the event) or if no container name is specified "spec.containers[2]"
-                          (container with index 2 in this pod). This syntax is chosen
-                          only to have some well-defined way of referencing a part
-                          of an object. TODO: this design is not final and this field
-                          is subject to change in the future.'
-                        type: string
-                      kind:
-                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                        type: string
-                      name:
-                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                        type: string
-                      namespace:
-                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                        type: string
-                      resourceVersion:
-                        description: 'Specific resourceVersion to which this reference
-                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                        type: string
-                      uid:
-                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                        type: string
-                    type: object
-                    x-kubernetes-map-type: atomic
-                  sql:
-                    default: ""
-                    description: The SQL statement which will be executed to query
-                      data from the table specified by Table
-                    type: string
-                  table:
-                    default: ""
-                    description: The name of a table inside a database, if applicable
-                    type: string
-                  topic:
-                    default: ""
-                    description: The name of the streaming topic (currently unsupported)
-                    type: string
-                  type:
-                    default: object
-                    description: The type of location where the data resides, which
-                      can either be an object inside an object storage system (i.e.
-                      Minio), a SQL location like a table or a view, a data stream
-                      (i.e. Kafka, currently unsupported), or a web location (currently
-                      unsupported)
-                    enum:
-                    - object
-                    - table
-                    - view
-                    - stream
-                    - web
-                    - public-dataset
-                    - dataset
-                    type: string
-                  url:
-                    default: ""
-                    description: In the case of the location type being WebApi, URL
-                      specifies the external location (HTTP or Git) that will be queried
-                      and then stored as flat-file by the resource which specifies
-                      the DataLocation
                     type: string
                 type: object
               notification:

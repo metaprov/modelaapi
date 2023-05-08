@@ -35,9 +35,6 @@ export class DatasetProfile extends jspb.Message {
   getHash(): string;
   setHash(value: string): DatasetProfile;
 
-  getAnomalyuri(): string;
-  setAnomalyuri(value: string): DatasetProfile;
-
   getGroups(): TableView | undefined;
   setGroups(value?: TableView): DatasetProfile;
   hasGroups(): boolean;
@@ -66,7 +63,6 @@ export namespace DatasetProfile {
     columnsList: Array<ColumnProfile.AsObject>,
     table?: TableView.AsObject,
     hash: string,
-    anomalyuri: string,
     groups?: TableView.AsObject,
     ts?: TimeSeriesProfile.AsObject,
   }

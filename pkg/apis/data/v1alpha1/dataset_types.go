@@ -52,7 +52,7 @@ const (
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Location Source",type="string",JSONPath=".spec.datasourceName"
+// +kubebuilder:printcolumn:name="Data Source",type="string",JSONPath=".spec.datasourceName"
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type"
 // +kubebuilder:printcolumn:name="Rows",type="integer",JSONPath=".status.statistics.rows"
 // +kubebuilder:printcolumn:name="Columns",type="integer",JSONPath=".status.statistics.cols"
@@ -87,15 +87,15 @@ type DatasetSpec struct {
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Required
 	// +required
-	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
-	// The reference to the Location Source resource which exists in the same Location Product namespace as the object.
-	// The Location Source must represent the columns and the task type of the Dataset. The validation rules associated with
-	// the Location Source will be validated against the raw data of the Dataset once it is created
+	VersionName string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
+	// The reference to the Data Source resource which exists in the same Data Product namespace as the object.
+	// The Data Source must represent the columns and the task type of the Dataset. The validation rules associated with
+	// the Data Source will be validated against the raw data of the Dataset once it is created
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:default:=""
 	// +required
-	DataSourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,3,opt,name=datasourceName"`
+	DataSourceName string `json:"dataSourceName,omitempty" protobuf:"bytes,3,opt,name=dataSourceName"`
 	// In case of training data, this is the model class name that created it.
 	// +kubebuilder:validation:Optional
 	FeatureGroupName *string `json:"featureGroupName,omitempty" protobuf:"bytes,4,opt,name=featureGroupName"`
@@ -111,33 +111,33 @@ type DatasetSpec struct {
 	// The dataset role
 	// +kubebuilder:default:="training"
 	// +kubebuilder:validation:Optional
-	Role *DatasetRole `json:"role,omitempty" protobuf:"bytes,9,opt,name=role"`
+	Role DatasetRole `json:"role,omitempty" protobuf:"bytes,9,opt,name=role"`
 	// Tags attached to the dataset
 	// +kubebuilder:validation:Optional
 	Tags []string `json:"tags,omitempty" protobuf:"bytes,10,rep,name=tags"`
 	// Indicates if a PDF report containing the Dataset's profile should be generated
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"reported,omitempty" protobuf:"varint,11,opt,name=reported"`
-	// Indicates if the resource controller has created a snapshot of the data in the case that it is being read
-	// directly from a database, and must be converted to a flat-file type such as a CSV as a result
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Snapshotted *bool `json:"snapshotted,omitempty" protobuf:"varint,12,opt,name=snapshotted"`
-	// Indicates if the Dataset should be checked against the validation rules of its Location Source
+	Report *bool `json:"reported,omitempty" protobuf:"varint,11,opt,name=report"`
+	// Indicates if the Dataset should be checked against the validation rules of its Data Source
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	UnitTested *bool `json:"unitTested,omitempty" protobuf:"varint,13,opt,name=unitTested"`
+	UnitTest *bool `json:"unitTest,omitempty" protobuf:"varint,12,opt,name=unitTest"`
 	// Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
-	// created, the resource controller will retrieve the data from the location, validate it against its Location Source
-	// if applicable, and store it inside the `live` section of the Virtual Bucket resource specified by the location
+	// created, the resource controller will retrieve the data from the location, validate it against its Data Source
+	// if applicable, and store it inside the `live` section of the Virtual BucketName resource specified by the location
 	// +kubebuilder:validation:Optional
-	Origin DataLocation `json:"origin,omitempty" protobuf:"bytes,14,opt,name=origin"`
+	Origin catalog.DataLocation `json:"origin,omitempty" protobuf:"bytes,13,opt,name=origin"`
 	// Location is the final location of the data which was copied from the `Origin` location during the ingestion phase.
-	// This field is set by the Dataset resource controller and should not be changed by any end-users
+	// This field is set by the Dataset resource controller and should not be changed by any end-users. This location
+	// points strictly to a flat file.
 	// +kubebuilder:validation:Required
 	// +required
-	Location DataLocation `json:"location,omitempty" protobuf:"bytes,15,opt,name=location"`
+	Location catalog.FileLocation `json:"location,omitempty" protobuf:"bytes,14,opt,name=location"`
+	// The name of the VirtualBucket where Dataset artifacts (reports, snapshots) generated by
+	// the Study will be stored. If empty, it will default to the default VirtualBucket of the Data Product
+	// +kubebuilder:validation:Optional
+	ArtifactBucketName *string `json:"artifactBucketName,omitempty" protobuf:"bytes,15,opt,name=artifactBucketName"`
 	// Resources specifies the resource requirements which the Dataset will request when creating Jobs to analyze the data
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,16,opt,name=resources"`
@@ -152,32 +152,32 @@ type DatasetSpec struct {
 	// The specification for how the data should be sampled, if applicable. Sampling may improve dataset and model creation
 	// time in the case of very large datasets that are being rapidly prototyped and iterated on
 	// +kubebuilder:validation:Optional
-	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,19,opt,name=sample"`
+	Sample *SampleSpec `json:"sample,omitempty" protobuf:"bytes,19,opt,name=sample"`
 	// If the dataset is Synthetic , this is the syntactic spec
 	// +kubebuilder:validation:Optional
-	Synthetic SyntheticSpec `json:"synthetic,omitempty" protobuf:"bytes,20,opt,name=synthetic "`
-	// The machine learning task relevant to the Dataset. This field *must* be the same as the Location Source of the object
+	Synthetic *SyntheticSpec `json:"synthetic,omitempty" protobuf:"bytes,20,opt,name=synthetic "`
+	// The machine learning task relevant to the Dataset. This field *must* be the same as the Data Source of the object
 	// +kubebuilder:validation:Optional
-	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,21,opt,name=task"`
-	// The machine learning sub task relevant to the Dataset. This field *must* be the same as the Location Source of the object
+	Task catalog.MLTask `json:"task,omitempty" protobuf:"bytes,21,opt,name=task"`
+	// The machine learning sub-task relevant to the Dataset. This field *must* be the same as the Data Source of the object
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
 	SubTask *catalog.MLSubtask `json:"subtask,omitempty" protobuf:"bytes,22,opt,name=subtask"`
 	// The specification for how to find the correlations of the Dataset's features during the profiling phase.
 	// Based on the specification, the data plane will compute the correlation between each feature and will store the highest-scoring
 	// +kubebuilder:validation:Optional
-	Correlation CorrelationSpec `json:"correlation,omitempty" protobuf:"bytes,23,opt,name=correlation"`
+	Correlation *CorrelationSpec `json:"correlation,omitempty" protobuf:"bytes,23,opt,name=correlation"`
 	// Indicates if the Dataset should be quickly processed.
 	// If enabled, the validation, profiling, and reporting phases will be skipped.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Fast *bool `json:"fast,omitempty" protobuf:"varint,24,opt,name=fast"`
-	// Indicates if the Dataset should be featurized. Features are computed using tsfresh.
+	// Indicates if the Dataset should be featurize. Features are computed using tsfresh.
 	// If the dataset is grouped dataset, a feature will be computed to each group.
 	// If enabled, the validation, profiling, and reporting phases will be skipped.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Featurized *bool `json:"featurized,omitempty" protobuf:"varint,25,opt,name=featurized"`
+	Featurize *bool `json:"featurize,omitempty" protobuf:"varint,25,opt,name=featurize"`
 	// The reference to the Lab under which Jobs created by the Dataset will be executed
 	// +kubebuilder:validation:Optional
 	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,26,opt,name=labRef"`
@@ -200,25 +200,19 @@ type DatasetSpec struct {
 	// Define how to group by the base dataset, before making the forecasts.
 	// By default, this dataset is assigned
 	GroupLocations GroupDatasetLocationsSpec `json:"groupLocations,omitempty" protobuf:"bytes,32,opt,name=groupLocations"`
-	// If this dataset represent a group in a multi series dataset, these are the values of the group key.
+	// If this dataset represent a group in a multi-series dataset, these are the values of the group key.
 	// +kubebuilder:validation:Optional
 	Key []string `json:"key,omitempty" protobuf:"bytes,33,rep,name=key"`
-	// For filtering
-	// +kubebuilder:validation:Optional
-	MinEventTime *metav1.Time `json:"minEventTime,omitempty" protobuf:"bytes,34,opt,name=minEventTime"`
-	// For filtering
-	// +kubebuilder:validation:Optional
-	MaxEventTime *metav1.Time `json:"maxEventTime,omitempty" protobuf:"bytes,35,opt,name=maxEventTime"`
 	// The model class for this dataset if the dataset was created by a model class
 	// +kubebuilder:validation:Optional
-	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,36,opt,name=modelClassName"`
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,34,opt,name=modelClassName"`
 	// If this report was created by a model class run, this is the run name
 	// +kubebuilder:validation:Optional
-	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,37,opt,name=modelClassRunName"`
+	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,35,opt,name=modelClassRunName"`
 	// List the feature groups that were used to create this dataset
 	// This is used for lineage.
 	// +kubebuilder:validation:Optional
-	FeatureGroups []v1.ObjectReference `json:"featureGroups,omitempty" protobuf:"bytes,38,rep,name=featureGroups"`
+	FeatureGroups []v1.ObjectReference `json:"featureGroups,omitempty" protobuf:"bytes,36,rep,name=featureGroups"`
 }
 
 // DatasetStatus defines the observed state of a Dataset object
@@ -236,21 +230,20 @@ type DatasetStatus struct {
 	ReportName string `json:"reportName,omitempty" protobuf:"bytes,3,opt,name=reportName"`
 	// The location of report generated during the reporting phase. This field is intended for internal use
 	// +kubebuilder:validation:Optional
-	ReportURI string `json:"reportURI,omitempty" protobuf:"bytes,4,opt,name=reportURI"`
+	ReportLocation catalog.FileLocation `json:"reportLocation,omitempty" protobuf:"bytes,4,opt,name=reportLocation"`
 	// The location of raw profile data. This field is intended for internal use
 	// +kubebuilder:validation:Optional
-	ProfileURI string `json:"profileURI" protobuf:"bytes,5,opt,name=profileURI"`
-	// Whether or not the data was detected as imbalanced
-	//+kubebuilder:validation:Optional
-	Imbalanced bool `json:"imbalanced,omitempty" protobuf:"varint,6,opt,name=imbalanced"`
-	// The location of anomaly file. The file contain the list of rows that were marked as anomaly by an isolation forest.
-	// algorithm
+	ProfileLocation catalog.FileLocation `json:"profileLocation" protobuf:"bytes,5,opt,name=profileLocation"`
+	// The location of anomaly file. The file contain the list of rows that were marked as anomaly by an isolation forest algorithm
 	// +kubebuilder:validation:Optional
-	AnomaliesURI string `json:"anomaliesURI" protobuf:"bytes,7,opt,name=anomaliesURI"`
+	AnomaliesLocation catalog.FileLocation `json:"anomaliesLocation" protobuf:"bytes,6,opt,name=anomaliesLocation"`
+	// Indicates if the classes in the dataset were detected as imbalanced
+	//+kubebuilder:validation:Optional
+	Imbalanced bool `json:"imbalanced,omitempty" protobuf:"varint,7,opt,name=imbalanced"`
 	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,8,opt,name=observedGeneration"`
-	// List of validation results which are generated for every validation rule associated with the Dataset's Location Source
+	// List of validation results which are generated for every validation rule associated with the Dataset's Data Source
 	//+kubebuilder:validation:Optional
 	TestResults catalog.TestSuiteResult `json:"testResults,omitempty" protobuf:"bytes,9,opt,name=testResults"`
 	// Last time the Dataset was used with a Study
@@ -471,20 +464,6 @@ type DatasetTemplate struct {
 	Spec              DatasetSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 }
 
-// +kubebuilder:validation:Enum="object";"table";"view";"stream";"web";"public-dataset";"dataset"
-type DataLocationType string
-
-const (
-	DataLocationObjectStorage DataLocationType = "object"
-	DataLocationSQLTable      DataLocationType = "table"
-	DataLocationSQLView       DataLocationType = "view"
-	DataLocationStream        DataLocationType = "stream"
-	DataLocationWebApi        DataLocationType = "web"
-	DataLocationPublicDataset DataLocationType = "public-dataset" // The data reside in a public dataset
-	DataLocationDataset       DataLocationType = "dataset"        // The data reside inside another dataset
-
-)
-
 // +kubebuilder:validation:Enum="unlabled";"serving";"feedback";"training";"prediction";"featuregroup";
 type DatasetRole string
 
@@ -497,60 +476,6 @@ const (
 	DatasetRolePrediction   DatasetRole = "prediction"   // Regular Labeled dataset
 
 )
-
-// DataLocation describes the external location of data that will be accessed by Modela, and additional
-// information on how to query the data if the location is a non flat-file source.
-type DataLocation struct {
-	// The type of location where the data resides, which can either be an object inside an object storage system (i.e. Minio), a SQL location
-	// like a table or a view, a data stream (i.e. Kafka, currently unsupported), or a web location (currently unsupported)
-	// +kubebuilder:default:="object"
-	// +kubebuilder:validation:Optional
-	Type *DataLocationType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
-	// In the case of the type of location being a database, ConnectionName specifies the name of the Connection resource
-	// that exists in the same tenant as the resource specifying the DataLocation. Modela will attempt to connect
-	// to the database using the credentials specified in the Connection, and will execute the query specified by the SQL field
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
-	// In the case of the location type being an object storage system, BucketName is the name of the VirtualBucket resource
-	// that exists in the same tenant as the resource specifying the DataLocation. Modela will connect to the external
-	// object storage system, and will access the file from the path specified by the Path field
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	BucketName *string `json:"bucketName,omitempty" protobuf:"bytes,3,opt,name=bucketName"`
-	// The path to a flat-file inside an object storage system. When using the Modela API to upload files (through the
-	// FileService API), Modela will upload the data to a predetermined path based on the Tenant, DataProduct,
-	// DataProductVersion, and resource type of the resource in relation to the file being uploaded.
-	// The path does not need to adhere to this format; you can give the path to a file inside a bucket not managed by Modela
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Path *string `json:"path,omitempty" protobuf:"bytes,4,opt,name=path"`
-	// The name of a table inside a database, if applicable
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Table *string `json:"table,omitempty" protobuf:"bytes,5,opt,name=table"`
-	// The name of a database inside the database system specified by the ConnectionName field
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Database *string `json:"database,omitempty" protobuf:"bytes,6,opt,name=database"`
-	// The SQL statement which will be executed to query data from the table specified by Table
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Sql *string `json:"sql,omitempty" protobuf:"bytes,7,opt,name=sql"`
-	// The name of the streaming topic (currently unsupported)
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Topic *string `json:"topic,omitempty" protobuf:"bytes,8,opt,name=topic"`
-	// In the case of the location type being WebApi, URL specifies the external location (HTTP or Git) that will be queried
-	// and then stored as flat-file by the resource which specifies the DataLocation
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	URL *string `json:"url,omitempty" protobuf:"bytes,9,opt,name=url"`
-	// In the case of the location type being Dataset or PublicDataset, ResourceRef references another resource that
-	// containing data that will be used as a data source
-	// +kubebuilder:validation:Optional
-	ResourceRef *v1.ObjectReference `json:"resourceRef,omitempty" protobuf:"bytes,10,opt,name=resourceRef"`
-}
 
 // Correlation records the correlation between two features in a Dataset
 type Correlation struct {
@@ -581,7 +506,7 @@ type CorrelationSpec struct {
 }
 
 type SyntheticSpec struct {
-	// Enabled syntatic data
+	// Indicates if the generation of synthetic data is enabled
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The number of top correlations to be included in the correlation results

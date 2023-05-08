@@ -132,7 +132,7 @@ func (p *ManagedImage) Default() {
 }
 
 func (p *ManagedImage) URL() string {
-	if *p.Spec.Registry != "" {
+	if p.Spec.Registry != nil && *p.Spec.Registry != "" {
 		return fmt.Sprintf("%s/%s:%s", *p.Spec.Registry, p.Spec.Repository, *p.Spec.Tag)
 	}
 	return fmt.Sprintf("%s:%s", p.Spec.Repository, *p.Spec.Tag)

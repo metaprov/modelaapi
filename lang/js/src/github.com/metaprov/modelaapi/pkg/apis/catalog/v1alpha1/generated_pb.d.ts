@@ -473,6 +473,80 @@ export namespace DataCenter {
   }
 }
 
+export class DataLocation extends jspb.Message {
+  getType(): string;
+  setType(value: string): DataLocation;
+  hasType(): boolean;
+  clearType(): DataLocation;
+
+  getConnection(): string;
+  setConnection(value: string): DataLocation;
+  hasConnection(): boolean;
+  clearConnection(): DataLocation;
+
+  getBucket(): string;
+  setBucket(value: string): DataLocation;
+  hasBucket(): boolean;
+  clearBucket(): DataLocation;
+
+  getPath(): string;
+  setPath(value: string): DataLocation;
+  hasPath(): boolean;
+  clearPath(): DataLocation;
+
+  getTable(): string;
+  setTable(value: string): DataLocation;
+  hasTable(): boolean;
+  clearTable(): DataLocation;
+
+  getDatabase(): string;
+  setDatabase(value: string): DataLocation;
+  hasDatabase(): boolean;
+  clearDatabase(): DataLocation;
+
+  getSql(): string;
+  setSql(value: string): DataLocation;
+  hasSql(): boolean;
+  clearSql(): DataLocation;
+
+  getTopic(): string;
+  setTopic(value: string): DataLocation;
+  hasTopic(): boolean;
+  clearTopic(): DataLocation;
+
+  getUrl(): string;
+  setUrl(value: string): DataLocation;
+  hasUrl(): boolean;
+  clearUrl(): DataLocation;
+
+  getResourceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setResourceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataLocation;
+  hasResourceref(): boolean;
+  clearResourceref(): DataLocation;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DataLocation.AsObject;
+  static toObject(includeInstance: boolean, msg: DataLocation): DataLocation.AsObject;
+  static serializeBinaryToWriter(message: DataLocation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DataLocation;
+  static deserializeBinaryFromReader(message: DataLocation, reader: jspb.BinaryReader): DataLocation;
+}
+
+export namespace DataLocation {
+  export type AsObject = {
+    type?: string,
+    connection?: string,
+    bucket?: string,
+    path?: string,
+    table?: string,
+    database?: string,
+    sql?: string,
+    topic?: string,
+    url?: string,
+    resourceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+  }
+}
+
 export class DataTestCase extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): DataTestCase;
@@ -672,6 +746,32 @@ export namespace DataTestCaseResult {
     failure?: boolean,
     error?: boolean,
     failuremsg?: string,
+  }
+}
+
+export class FileLocation extends jspb.Message {
+  getBucket(): string;
+  setBucket(value: string): FileLocation;
+  hasBucket(): boolean;
+  clearBucket(): FileLocation;
+
+  getPath(): string;
+  setPath(value: string): FileLocation;
+  hasPath(): boolean;
+  clearPath(): FileLocation;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FileLocation.AsObject;
+  static toObject(includeInstance: boolean, msg: FileLocation): FileLocation.AsObject;
+  static serializeBinaryToWriter(message: FileLocation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FileLocation;
+  static deserializeBinaryFromReader(message: FileLocation, reader: jspb.BinaryReader): FileLocation;
+}
+
+export namespace FileLocation {
+  export type AsObject = {
+    bucket?: string,
+    path?: string,
   }
 }
 
@@ -948,10 +1048,10 @@ export namespace Lib {
 }
 
 export class Logs extends jspb.Message {
-  getBucketname(): string;
-  setBucketname(value: string): Logs;
-  hasBucketname(): boolean;
-  clearBucketname(): Logs;
+  getBucket(): string;
+  setBucket(value: string): Logs;
+  hasBucket(): boolean;
+  clearBucket(): Logs;
 
   getContainersList(): Array<ContainerLog>;
   setContainersList(value: Array<ContainerLog>): Logs;
@@ -968,7 +1068,7 @@ export class Logs extends jspb.Message {
 
 export namespace Logs {
   export type AsObject = {
-    bucketname?: string,
+    bucket?: string,
     containersList: Array<ContainerLog.AsObject>,
   }
 }

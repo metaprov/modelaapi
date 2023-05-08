@@ -29,7 +29,7 @@ spec:
       name: Entity Name
       type: string
     - jsonPath: .spec.bucketName
-      name: Bucket
+      name: BucketName
       type: string
     - jsonPath: .spec.path
       name: Path
@@ -233,6 +233,8 @@ spec:
                 format: date-time
                 type: string
             type: object
+        required:
+        - spec
         type: object
     served: true
     storage: true

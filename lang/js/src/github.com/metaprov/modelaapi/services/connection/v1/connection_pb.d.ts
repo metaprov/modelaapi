@@ -107,9 +107,6 @@ export class UpdateConnectionRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): UpdateConnectionRequest;
 
-  getSecretMap(): jspb.Map<string, string>;
-  clearSecretMap(): UpdateConnectionRequest;
-
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateConnectionRequest;
   hasFieldMask(): boolean;
@@ -126,7 +123,6 @@ export class UpdateConnectionRequest extends jspb.Message {
 export namespace UpdateConnectionRequest {
   export type AsObject = {
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, string]>,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -173,6 +169,12 @@ export class GetConnectionResponse extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): GetConnectionResponse;
 
+  getSecretMap(): jspb.Map<string, string>;
+  clearSecretMap(): GetConnectionResponse;
+
+  getIsadmin(): boolean;
+  setIsadmin(value: boolean): GetConnectionResponse;
+
   getYaml(): string;
   setYaml(value: string): GetConnectionResponse;
 
@@ -187,6 +189,8 @@ export class GetConnectionResponse extends jspb.Message {
 export namespace GetConnectionResponse {
   export type AsObject = {
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    secretMap: Array<[string, string]>,
+    isadmin: boolean,
     yaml: string,
   }
 }

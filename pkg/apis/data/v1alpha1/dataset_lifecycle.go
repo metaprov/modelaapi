@@ -92,7 +92,7 @@ func (dataset Dataset) StatusString() string {
 }
 
 func (dataset Dataset) RootURI() string {
-	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s", dataset.Namespace, *dataset.Spec.VersionName, dataset.Name)
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s", dataset.Namespace, dataset.Spec.VersionName, dataset.Name)
 }
 
 func (dataset Dataset) ReportURI() string {
@@ -124,8 +124,8 @@ func (dataset *Dataset) Populate(name string) {
 	}
 
 	dataset.Spec = DatasetSpec{
-		VersionName:    util.StrPtr("iris-0.0.1"),
-		DataSourceName: util.StrPtr("iris-source"),
+		VersionName:    "iris-0.0.1",
+		DataSourceName: "iris-source",
 	}
 }
 
@@ -167,7 +167,7 @@ func (dataset Dataset) Ingested() bool {
 }
 
 func (dataset Dataset) UnitTested() bool {
-	return *dataset.Spec.UnitTested && dataset.GetCond(DatasetUnitTested).Status == metav1.ConditionTrue
+	return dataset.GetCond(DatasetUnitTested).Status == metav1.ConditionTrue
 }
 
 func (dataset Dataset) Snapshotted() bool {
@@ -452,13 +452,13 @@ func (dataset *Dataset) MarkProfiling() {
 	dataset.Status.Progress = 60
 }
 
-func (dataset *Dataset) MarkProfiled(uri string) {
+func (dataset *Dataset) MarkProfiled(profileLocation catalog.FileLocation) {
 	dataset.CreateOrUpdateCond(metav1.Condition{
 		Type:   DatasetProfiled,
 		Status: metav1.ConditionTrue,
 		Reason: DatasetProfiled,
 	})
-	dataset.Status.ProfileURI = uri
+	dataset.Status.ProfileLocation = profileLocation
 	dataset.Status.Phase = DatasetPhaseProfileSuccess
 	dataset.Status.Progress = 70
 }
@@ -533,12 +533,12 @@ func (dataset Dataset) IsFailed() bool {
 }
 
 func (dataset Dataset) IsGroup() bool {
-	return *dataset.Spec.Task == catalog.PartitionForecast
+	return dataset.Spec.Task == catalog.PartitionForecast
 }
 
 // Answer true if the dataset is used for feature groupp monitoring.
 func (dataset Dataset) IsFeatureGroup() bool {
-	return *dataset.Spec.Role == DatasetRoleFeatureGroup
+	return dataset.Spec.Role == DatasetRoleFeatureGroup
 }
 
 // Generate a dataset completion alert
@@ -636,7 +636,7 @@ func (dataset Dataset) ConstuctFeatureHistogram() (*FeatureHistogram, error) {
 		},
 		Spec: FeatureHistogramSpec{
 			Owner:       dataset.Spec.Owner,
-			VersionName: dataset.Spec.VersionName,
+			VersionName: &dataset.Spec.VersionName,
 			Description: util.StrPtr(""),
 			Columns:     columns,
 			SourceRef: &v1.ObjectReference{

@@ -114,10 +114,10 @@ type ModelClassDataSpec struct {
 	// The observations are the source for training (observations which have a value for the target
 	// columns) or for prediction (observations with no targets).
 	// +kubebuilder:validation:Optional
-	Observations data.DataLocation `json:"observations,omitempty" protobuf:"bytes,1,opt,name=observations"`
+	Observations catalog.DataLocation `json:"observations,omitempty" protobuf:"bytes,1,opt,name=observations"`
 	// The location of the predictions table. The predictions table contains all the latest predictions.
 	// +kubebuilder:validation:Optional
-	Predictions data.DataLocation `json:"predictions,omitempty" protobuf:"bytes,2,opt,name=predictions"`
+	Predictions catalog.DataLocation `json:"predictions,omitempty" protobuf:"bytes,2,opt,name=predictions"`
 	// The schema of the observation file. The schema is used as the basis for training and serving.
 	// +kubebuilder:validation:Optional
 	Schema data.Schema `json:"schema,omitempty" protobuf:"bytes,3,opt,name=schema"`

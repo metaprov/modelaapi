@@ -16,7 +16,7 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nEgithub.com/metaprov/modelaapi/services/connection/v1/connection.proto\x12\x34github.com.metaprov.modelaapi.services.connection.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\"\xfd\x01\n\x16ListConnectionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x06labels\x18\x02 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8e\x01\n\x17ListConnectionsResponse\x12Z\n\x0b\x63onnections\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8a\x02\n\x17\x43reateConnectionRequest\x12U\n\nconnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12i\n\x06secret\x18\x05 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18\x43reateConnectionResponse\"\xba\x02\n\x17UpdateConnectionRequest\x12U\n\nconnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12i\n\x06secret\x18\x02 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.SecretEntry\x12.\n\nfield_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18UpdateConnectionResponse\"7\n\x14GetConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"|\n\x15GetConnectionResponse\x12U\n\nconnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65leteConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteConnectionResponse\"8\n\x15TestConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"5\n\x16TestConnectionResponse\x12\x0e\n\x06status\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\t2\xe2\n\n\x11\x43onnectionService\x12\xd3\x01\n\x0fListConnections\x12L.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRequest\x1aM.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/connections/{namespace}\x12\xcd\x01\n\x10\x43reateConnection\x12M.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest\x1aN.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/connections:\x01*\x12\xd4\x01\n\rGetConnection\x12J.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionRequest\x1aK.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/connections/{namespace}/{name}\x12\x88\x02\n\x10UpdateConnection\x12M.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest\x1aN.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionResponse\"U\x82\xd3\xe4\x93\x02O\x1aJ/v1/connections/{connection.metadata.namespace}/{connection.metadata.name}:\x01*\x12\xe1\x01\n\x10\x44\x65leteConnection\x12M.github.com.metaprov.modelaapi.services.connection.v1.DeleteConnectionRequest\x1aN.github.com.metaprov.modelaapi.services.connection.v1.DeleteConnectionResponse\".\x82\xd3\xe4\x93\x02(*&/api/v1/connections/{namespace}/{name}\x12\xe0\x01\n\x0eTestConnection\x12K.github.com.metaprov.modelaapi.services.connection.v1.TestConnectionRequest\x1aL.github.com.metaprov.modelaapi.services.connection.v1.TestConnectionResponse\"3\x82\xd3\xe4\x93\x02-\x12+/api/v1/connections/{namespace}/{name}:testB6Z4github.com/metaprov/modelaapi/services/connection/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nEgithub.com/metaprov/modelaapi/services/connection/v1/connection.proto\x12\x34github.com.metaprov.modelaapi.services.connection.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\"\xfd\x01\n\x16ListConnectionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x06labels\x18\x02 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8e\x01\n\x17ListConnectionsResponse\x12Z\n\x0b\x63onnections\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8a\x02\n\x17\x43reateConnectionRequest\x12U\n\nconnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12i\n\x06secret\x18\x05 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18\x43reateConnectionResponse\"\xa0\x01\n\x17UpdateConnectionRequest\x12U\n\nconnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1a\n\x18UpdateConnectionResponse\"7\n\x14GetConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\xa5\x02\n\x15GetConnectionResponse\x12U\n\nconnection\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12g\n\x06secret\x18\x02 \x03(\x0b\x32W.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.SecretEntry\x12\x0f\n\x07isAdmin\x18\x03 \x01(\x08\x12\x0c\n\x04yaml\x18\x04 \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\":\n\x17\x44\x65leteConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteConnectionResponse\"8\n\x15TestConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"5\n\x16TestConnectionResponse\x12\x0e\n\x06status\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\t2\xe2\n\n\x11\x43onnectionService\x12\xd3\x01\n\x0fListConnections\x12L.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRequest\x1aM.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/connections/{namespace}\x12\xcd\x01\n\x10\x43reateConnection\x12M.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest\x1aN.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/connections:\x01*\x12\xd4\x01\n\rGetConnection\x12J.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionRequest\x1aK.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/connections/{namespace}/{name}\x12\x88\x02\n\x10UpdateConnection\x12M.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest\x1aN.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionResponse\"U\x82\xd3\xe4\x93\x02O\x1aJ/v1/connections/{connection.metadata.namespace}/{connection.metadata.name}:\x01*\x12\xe1\x01\n\x10\x44\x65leteConnection\x12M.github.com.metaprov.modelaapi.services.connection.v1.DeleteConnectionRequest\x1aN.github.com.metaprov.modelaapi.services.connection.v1.DeleteConnectionResponse\".\x82\xd3\xe4\x93\x02(*&/api/v1/connections/{namespace}/{name}\x12\xe0\x01\n\x0eTestConnection\x12K.github.com.metaprov.modelaapi.services.connection.v1.TestConnectionRequest\x1aL.github.com.metaprov.modelaapi.services.connection.v1.TestConnectionResponse\"3\x82\xd3\xe4\x93\x02-\x12+/api/v1/connections/{namespace}/{name}:testB6Z4github.com/metaprov/modelaapi/services/connection/v1b\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'github.com.metaprov.modelaapi.services.connection.v1.connection_pb2', globals())
@@ -28,8 +28,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _LISTCONNECTIONSREQUEST_LABELSENTRY._serialized_options = b'8\001'
   _CREATECONNECTIONREQUEST_SECRETENTRY._options = None
   _CREATECONNECTIONREQUEST_SECRETENTRY._serialized_options = b'8\001'
-  _UPDATECONNECTIONREQUEST_SECRETENTRY._options = None
-  _UPDATECONNECTIONREQUEST_SECRETENTRY._serialized_options = b'8\001'
+  _GETCONNECTIONRESPONSE_SECRETENTRY._options = None
+  _GETCONNECTIONRESPONSE_SECRETENTRY._serialized_options = b'8\001'
   _CONNECTIONSERVICE.methods_by_name['ListConnections']._options = None
   _CONNECTIONSERVICE.methods_by_name['ListConnections']._serialized_options = b'\202\323\344\223\002\035\022\033/v1/connections/{namespace}'
   _CONNECTIONSERVICE.methods_by_name['CreateConnection']._options = None
@@ -55,23 +55,23 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CREATECONNECTIONRESPONSE._serialized_start=932
   _CREATECONNECTIONRESPONSE._serialized_end=958
   _UPDATECONNECTIONREQUEST._serialized_start=961
-  _UPDATECONNECTIONREQUEST._serialized_end=1275
-  _UPDATECONNECTIONREQUEST_SECRETENTRY._serialized_start=885
-  _UPDATECONNECTIONREQUEST_SECRETENTRY._serialized_end=930
-  _UPDATECONNECTIONRESPONSE._serialized_start=1277
-  _UPDATECONNECTIONRESPONSE._serialized_end=1303
-  _GETCONNECTIONREQUEST._serialized_start=1305
-  _GETCONNECTIONREQUEST._serialized_end=1360
-  _GETCONNECTIONRESPONSE._serialized_start=1362
-  _GETCONNECTIONRESPONSE._serialized_end=1486
-  _DELETECONNECTIONREQUEST._serialized_start=1488
-  _DELETECONNECTIONREQUEST._serialized_end=1546
-  _DELETECONNECTIONRESPONSE._serialized_start=1548
-  _DELETECONNECTIONRESPONSE._serialized_end=1574
-  _TESTCONNECTIONREQUEST._serialized_start=1576
-  _TESTCONNECTIONREQUEST._serialized_end=1632
-  _TESTCONNECTIONRESPONSE._serialized_start=1634
-  _TESTCONNECTIONRESPONSE._serialized_end=1687
-  _CONNECTIONSERVICE._serialized_start=1690
-  _CONNECTIONSERVICE._serialized_end=3068
+  _UPDATECONNECTIONREQUEST._serialized_end=1121
+  _UPDATECONNECTIONRESPONSE._serialized_start=1123
+  _UPDATECONNECTIONRESPONSE._serialized_end=1149
+  _GETCONNECTIONREQUEST._serialized_start=1151
+  _GETCONNECTIONREQUEST._serialized_end=1206
+  _GETCONNECTIONRESPONSE._serialized_start=1209
+  _GETCONNECTIONRESPONSE._serialized_end=1502
+  _GETCONNECTIONRESPONSE_SECRETENTRY._serialized_start=885
+  _GETCONNECTIONRESPONSE_SECRETENTRY._serialized_end=930
+  _DELETECONNECTIONREQUEST._serialized_start=1504
+  _DELETECONNECTIONREQUEST._serialized_end=1562
+  _DELETECONNECTIONRESPONSE._serialized_start=1564
+  _DELETECONNECTIONRESPONSE._serialized_end=1590
+  _TESTCONNECTIONREQUEST._serialized_start=1592
+  _TESTCONNECTIONREQUEST._serialized_end=1648
+  _TESTCONNECTIONRESPONSE._serialized_start=1650
+  _TESTCONNECTIONRESPONSE._serialized_end=1703
+  _CONNECTIONSERVICE._serialized_start=1706
+  _CONNECTIONSERVICE._serialized_end=3084
 # @@protoc_insertion_point(module_scope)

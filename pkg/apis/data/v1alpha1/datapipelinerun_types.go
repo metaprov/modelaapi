@@ -121,7 +121,7 @@ type DataPipelineRunStatus struct {
 	RecipeRuns []string `json:"recipeRuns" protobuf:"bytes,1,rep,name=recipeRuns"`
 	// the resulting dataset from the flow
 	//+kubebuilder:validation:Optional
-	Output DataLocation `json:"output" protobuf:"bytes,2,opt,name=output"`
+	Output catalog.DataLocation `json:"output" protobuf:"bytes,2,opt,name=output"`
 	// the phase of the run
 	// +kubebuilder:default:="Pending"
 	//+kubebuilder:validation:Optional

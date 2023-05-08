@@ -5,6 +5,7 @@ import * as google_api_annotations_pb from '../../../../../../google/api/annotat
 import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated_pb';
 
 
 export class ListDataSourceRequest extends jspb.Message {
@@ -222,19 +223,16 @@ export namespace DeleteDataSourceResponse {
 }
 
 export class InferSchemaRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): InferSchemaRequest;
-
-  getName(): string;
-  setName(value: string): InferSchemaRequest;
+  getTenant(): string;
+  setTenant(value: string): InferSchemaRequest;
 
   getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
   setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): InferSchemaRequest;
   hasDatasource(): boolean;
   clearDatasource(): InferSchemaRequest;
 
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): InferSchemaRequest;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): InferSchemaRequest;
   hasLocation(): boolean;
   clearLocation(): InferSchemaRequest;
 
@@ -248,10 +246,9 @@ export class InferSchemaRequest extends jspb.Message {
 
 export namespace InferSchemaRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
+    tenant: string,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
-    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
@@ -284,8 +281,8 @@ export class GetTableViewRequest extends jspb.Message {
   hasFormat(): boolean;
   clearFormat(): GetTableViewRequest;
 
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): GetTableViewRequest;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): GetTableViewRequest;
   hasLocation(): boolean;
   clearLocation(): GetTableViewRequest;
 
@@ -301,7 +298,7 @@ export namespace GetTableViewRequest {
   export type AsObject = {
     tenant: string,
     format?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileFormatSpec.AsObject,
-    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 

@@ -126,7 +126,7 @@ type ReportSpec struct {
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,2,opt,name=entityRef"`
 	// The location of the flat-file containing the PDF report
 	// +kubebuilder:validation:Optional
-	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,5,opt,name=location"`
+	Location catalog.DataLocation `json:"location,omitempty" protobuf:"bytes,5,opt,name=location"`
 	// The type of report (e.g. classification model report, study report)
 	// +kubebuilder:validation:Required
 	// +required

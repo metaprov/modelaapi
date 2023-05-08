@@ -8,82 +8,71 @@ import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 
 
 service CloudProxyService {
-    rpc Download(FileDownloadRequest)                             returns (FileDownloadResponse)     {}
-    rpc List(ListObjectsRequest)                                  returns (ListObjectsResponse)     {}
-    rpc Upload  (FileUploadRequest)                               returns (FileUploadResponse)     {}
-    rpc KeyExistInVirtualBucket(KeyExistInVirtualBucketRequest)   returns (KeyExistInVirtualBucketResponse)     {}
-    rpc VirtualBucketExist(VirtualBucketExistRequest)             returns (VirtualBucketExistResponse)     {}
-    rpc CreateVirtualBucketIfNotExist(CreateVirtualBucketRequest) returns (CreateVirtualBucketResponse)     {}
-    rpc Shutdown(ShutdownRequest)                                 returns (ShutdownResponse) {} 
+  rpc Download(FileDownloadRequest)                             returns (FileDownloadResponse)     {}
+  rpc List(ListObjectsRequest)                                  returns (ListObjectsResponse)     {}
+  rpc Upload  (FileUploadRequest)                               returns (FileUploadResponse)     {}
+  rpc KeyExistInVirtualBucket(KeyExistInVirtualBucketRequest)   returns (KeyExistInVirtualBucketResponse)     {}
+  rpc VirtualBucketExist(VirtualBucketExistRequest)             returns (VirtualBucketExistResponse)     {}
+  rpc CreateVirtualBucketIfNotExist(CreateVirtualBucketRequest) returns (CreateVirtualBucketResponse)     {}
+  rpc Shutdown(ShutdownRequest)                                 returns (ShutdownResponse) {}
 }
 
 message ShutdownRequest {}
 message ShutdownResponse {}
 
 message VirtualBucketExistRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection    connection = 2;
-    map<string,bytes>  secret    = 3;
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 1;
 }
 
 message VirtualBucketExistResponse {
-    bool exist = 1;
+  bool exist = 1;
 }
 
 message KeyExistInVirtualBucketRequest {
-    string region = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 2;
-    string key    = 3;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection    connection = 4;
-    map<string,bytes>  secret    = 5;
-
+  string region = 1;
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 2;
+  string key = 3;
 }
 
 message KeyExistInVirtualBucketResponse {
-    bool exist = 1;
+  bool exist = 1;
 }
+
 message CloudVirtualBucketResponse {}
 
 // Ask the bucket to download a file
 message FileDownloadRequest {
-    string key    = 1; // key on the cloud storage
-    string path   = 2; // local path
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 3;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection       connection = 4;
-    map<string,bytes>  secret    = 5;
-    string tenant   = 6; // local path
+  string key = 1; // key on the cloud storage
+  string path = 2; // local path
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 3;
+  string tenant = 4;
 }
 
 message FileDownloadResponse {}
 
 
 message ListObjectsRequest {
-    string prefix   = 1; // local path
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 2;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection       connection = 3;
-    map<string,bytes>  secret    = 4;
-    string tenant   = 5; // local path
+  string prefix = 1; // local path
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 2;
+  string tenant = 3;
 }
 
 message ListObjectsResponse {
-    repeated string keys   = 1; // local path
+  repeated string keys = 1;
 }
 
 message FileUploadRequest {
-    string key    = 1; // key on the cloud storage
-    string path   = 2; // local path
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 3;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection       connection = 4;
-    map<string,bytes>  secret    = 5;
+  string key = 1; // key on the cloud storage
+  string path = 2; // local path
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 3;
+  map<string, bytes>  secret = 4;
 }
 
 message FileUploadResponse {}
 
 
 message CreateVirtualBucketRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection       connection = 2;
-    map<string,bytes>  secret    = 3;
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 1;
 }
 
 message CreateVirtualBucketResponse {

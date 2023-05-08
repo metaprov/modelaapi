@@ -249,7 +249,7 @@ spec:
                 description: The log file specification that determines the location
                   of all logs produced by the object
                 properties:
-                  bucketName:
+                  bucket:
                     description: The name of the VirtualBucket resource where the
                       logs are stored
                     type: string

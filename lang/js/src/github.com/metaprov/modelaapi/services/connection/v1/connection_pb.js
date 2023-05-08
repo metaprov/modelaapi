@@ -1034,7 +1034,6 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionReque
 proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1078,12 +1077,6 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionReque
       msg.setConnection(value);
       break;
     case 2:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
-    case 3:
       var value = new google_protobuf_field_mask_pb.FieldMask;
       reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
       msg.setFieldMask(value);
@@ -1125,14 +1118,10 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionReque
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
   f = message.getFieldMask();
   if (f != null) {
     writer.writeMessage(
-      3,
+      2,
       f,
       google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
@@ -1178,34 +1167,12 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionReque
 
 
 /**
- * map<string, string> secret = 2;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
-
-
-/**
- * optional google.protobuf.FieldMask field_mask = 3;
+ * optional google.protobuf.FieldMask field_mask = 2;
  * @return {?proto.google.protobuf.FieldMask}
  */
 proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.prototype.getFieldMask = function() {
   return /** @type{?proto.google.protobuf.FieldMask} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 3));
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
 };
 
 
@@ -1214,7 +1181,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionReque
  * @return {!proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.prototype.setFieldMask = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -1232,7 +1199,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionReque
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.prototype.hasFieldMask = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -1530,7 +1497,9 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse
 proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
+    isadmin: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    yaml: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1573,6 +1542,16 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse
       msg.setConnection(value);
       break;
     case 2:
+      var value = msg.getSecretMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
+      break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsadmin(value);
+      break;
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setYaml(value);
       break;
@@ -1613,10 +1592,21 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
+  f = message.getSecretMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getIsadmin();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
   f = message.getYaml();
   if (f.length > 0) {
     writer.writeString(
-      2,
+      4,
       f
     );
   }
@@ -1661,11 +1651,51 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse
 
 
 /**
- * optional string yaml = 2;
+ * map<string, string> secret = 2;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.prototype.getSecretMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.prototype.clearSecretMap = function() {
+  this.getSecretMap().clear();
+  return this;};
+
+
+/**
+ * optional bool isAdmin = 3;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.prototype.getIsadmin = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.prototype.setIsadmin = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional string yaml = 4;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.prototype.getYaml = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -1674,7 +1704,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse
  * @return {!proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse} returns this
  */
 proto.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.prototype.setYaml = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

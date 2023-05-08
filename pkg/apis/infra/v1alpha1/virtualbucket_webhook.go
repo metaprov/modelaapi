@@ -20,19 +20,19 @@ func (bucket *VirtualBucket) Default() {}
 var _ webhook.Validator = &VirtualBucket{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (bucket VirtualBucket) ValidateCreate() error {
+func (bucket *VirtualBucket) ValidateCreate() error {
 	return bucket.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (bucket VirtualBucket) ValidateUpdate(old runtime.Object) error {
+func (bucket *VirtualBucket) ValidateUpdate(old runtime.Object) error {
 	return bucket.validate()
 }
 
-func (bucket VirtualBucket) validate() error {
+func (bucket *VirtualBucket) validate() error {
 	return nil
 }
 
-func (bucket VirtualBucket) ValidateDelete() error {
+func (bucket *VirtualBucket) ValidateDelete() error {
 	return nil
 }

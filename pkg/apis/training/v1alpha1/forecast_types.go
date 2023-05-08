@@ -2,7 +2,6 @@ package v1alpha1
 
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
-	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 )
 
 // +kubebuilder:validation:Enum="silverkite";"prophet";"auto-arima";"lag-based";"sk";"two-stage";"wow";"daily-1-config-1";"daily-1-config-2";"daily-1-config-3";"daily-1";"daily-90";"weekly";"monthly";"hourly-1";"hourly-24";"hourly-168";"hourly-336"
@@ -160,7 +159,7 @@ type ForecasterSpec struct {
 	Coverage *float64 `json:"coverage,omitempty" protobuf:"bytes,6,opt,name=coverage"`
 	// The data location that would store the forecast result.
 	// +kubebuilder:validation:Optional
-	OutputLocation data.DataLocation `json:"outputLocation,omitempty" protobuf:"bytes,7,opt,name=outputLocation"`
+	OutputLocation catalog.DataLocation `json:"outputLocation,omitempty" protobuf:"bytes,7,opt,name=outputLocation"`
 	// List of time series features to compute on each time series.
 	// +kubebuilder:validation:Optional
 	Features []catalog.Metric `json:"features,omitempty" protobuf:"bytes,8,rep,name=features"`

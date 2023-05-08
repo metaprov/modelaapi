@@ -981,8 +981,8 @@ export class DataInputSpec extends jspb.Message {
   clearPresqlList(): DataInputSpec;
   addPresql(value: string, index?: number): DataInputSpec;
 
-  getLocation(): DataLocation | undefined;
-  setLocation(value?: DataLocation): DataInputSpec;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): DataInputSpec;
   hasLocation(): boolean;
   clearLocation(): DataInputSpec;
 
@@ -1002,82 +1002,8 @@ export class DataInputSpec extends jspb.Message {
 export namespace DataInputSpec {
   export type AsObject = {
     presqlList: Array<string>,
-    location?: DataLocation.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
     format?: FlatFileFormatSpec.AsObject,
-  }
-}
-
-export class DataLocation extends jspb.Message {
-  getType(): string;
-  setType(value: string): DataLocation;
-  hasType(): boolean;
-  clearType(): DataLocation;
-
-  getConnectionname(): string;
-  setConnectionname(value: string): DataLocation;
-  hasConnectionname(): boolean;
-  clearConnectionname(): DataLocation;
-
-  getBucketname(): string;
-  setBucketname(value: string): DataLocation;
-  hasBucketname(): boolean;
-  clearBucketname(): DataLocation;
-
-  getPath(): string;
-  setPath(value: string): DataLocation;
-  hasPath(): boolean;
-  clearPath(): DataLocation;
-
-  getTable(): string;
-  setTable(value: string): DataLocation;
-  hasTable(): boolean;
-  clearTable(): DataLocation;
-
-  getDatabase(): string;
-  setDatabase(value: string): DataLocation;
-  hasDatabase(): boolean;
-  clearDatabase(): DataLocation;
-
-  getSql(): string;
-  setSql(value: string): DataLocation;
-  hasSql(): boolean;
-  clearSql(): DataLocation;
-
-  getTopic(): string;
-  setTopic(value: string): DataLocation;
-  hasTopic(): boolean;
-  clearTopic(): DataLocation;
-
-  getUrl(): string;
-  setUrl(value: string): DataLocation;
-  hasUrl(): boolean;
-  clearUrl(): DataLocation;
-
-  getResourceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setResourceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataLocation;
-  hasResourceref(): boolean;
-  clearResourceref(): DataLocation;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DataLocation.AsObject;
-  static toObject(includeInstance: boolean, msg: DataLocation): DataLocation.AsObject;
-  static serializeBinaryToWriter(message: DataLocation, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DataLocation;
-  static deserializeBinaryFromReader(message: DataLocation, reader: jspb.BinaryReader): DataLocation;
-}
-
-export namespace DataLocation {
-  export type AsObject = {
-    type?: string,
-    connectionname?: string,
-    bucketname?: string,
-    path?: string,
-    table?: string,
-    database?: string,
-    sql?: string,
-    topic?: string,
-    url?: string,
-    resourceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
@@ -1087,8 +1013,8 @@ export class DataOutputSpec extends jspb.Message {
   hasDatasetname(): boolean;
   clearDatasetname(): DataOutputSpec;
 
-  getLocation(): DataLocation | undefined;
-  setLocation(value?: DataLocation): DataOutputSpec;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): DataOutputSpec;
   hasLocation(): boolean;
   clearLocation(): DataOutputSpec;
 
@@ -1138,7 +1064,7 @@ export class DataOutputSpec extends jspb.Message {
 export namespace DataOutputSpec {
   export type AsObject = {
     datasetname?: string,
-    location?: DataLocation.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
     format?: string,
     action?: string,
     createtableifnotexist?: boolean,
@@ -1389,8 +1315,8 @@ export class DataPipelineRunStatus extends jspb.Message {
   clearReciperunsList(): DataPipelineRunStatus;
   addReciperuns(value: string, index?: number): DataPipelineRunStatus;
 
-  getOutput(): DataLocation | undefined;
-  setOutput(value?: DataLocation): DataPipelineRunStatus;
+  getOutput(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setOutput(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): DataPipelineRunStatus;
   hasOutput(): boolean;
   clearOutput(): DataPipelineRunStatus;
 
@@ -1450,7 +1376,7 @@ export class DataPipelineRunStatus extends jspb.Message {
 export namespace DataPipelineRunStatus {
   export type AsObject = {
     reciperunsList: Array<string>,
-    output?: DataLocation.AsObject,
+    output?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
     phase?: string,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration?: number,
@@ -1712,8 +1638,8 @@ export class DataProductSpec extends jspb.Message {
   hasDescription(): boolean;
   clearDescription(): DataProductSpec;
 
-  getLocation(): DataLocation | undefined;
-  setLocation(value?: DataLocation): DataProductSpec;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DataProductSpec;
   hasLocation(): boolean;
   clearLocation(): DataProductSpec;
 
@@ -1802,7 +1728,7 @@ export namespace DataProductSpec {
     task?: string,
     subtask?: string,
     description?: string,
-    location?: DataLocation.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     trainingresources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     servingresources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
@@ -2206,8 +2132,8 @@ export class DataSourceSpec extends jspb.Message {
   hasLabeling(): boolean;
   clearLabeling(): DataSourceSpec;
 
-  getInferredfrom(): DataLocation | undefined;
-  setInferredfrom(value?: DataLocation): DataSourceSpec;
+  getInferredfrom(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setInferredfrom(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): DataSourceSpec;
   hasInferredfrom(): boolean;
   clearInferredfrom(): DataSourceSpec;
 
@@ -2243,7 +2169,7 @@ export namespace DataSourceSpec {
     subtask?: string,
     relationshipsList: Array<RelationshipSpec.AsObject>,
     labeling?: LabelingSpec.AsObject,
-    inferredfrom?: DataLocation.AsObject,
+    inferredfrom?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
     unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     ingestmethod?: string,
   }
@@ -2460,30 +2386,30 @@ export class DatasetSpec extends jspb.Message {
   clearTagsList(): DatasetSpec;
   addTags(value: string, index?: number): DatasetSpec;
 
-  getReported(): boolean;
-  setReported(value: boolean): DatasetSpec;
-  hasReported(): boolean;
-  clearReported(): DatasetSpec;
+  getReport(): boolean;
+  setReport(value: boolean): DatasetSpec;
+  hasReport(): boolean;
+  clearReport(): DatasetSpec;
 
-  getSnapshotted(): boolean;
-  setSnapshotted(value: boolean): DatasetSpec;
-  hasSnapshotted(): boolean;
-  clearSnapshotted(): DatasetSpec;
+  getUnittest(): boolean;
+  setUnittest(value: boolean): DatasetSpec;
+  hasUnittest(): boolean;
+  clearUnittest(): DatasetSpec;
 
-  getUnittested(): boolean;
-  setUnittested(value: boolean): DatasetSpec;
-  hasUnittested(): boolean;
-  clearUnittested(): DatasetSpec;
-
-  getOrigin(): DataLocation | undefined;
-  setOrigin(value?: DataLocation): DatasetSpec;
+  getOrigin(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setOrigin(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): DatasetSpec;
   hasOrigin(): boolean;
   clearOrigin(): DatasetSpec;
 
-  getLocation(): DataLocation | undefined;
-  setLocation(value?: DataLocation): DatasetSpec;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetSpec;
   hasLocation(): boolean;
   clearLocation(): DatasetSpec;
+
+  getArtifactbucketname(): string;
+  setArtifactbucketname(value: string): DatasetSpec;
+  hasArtifactbucketname(): boolean;
+  clearArtifactbucketname(): DatasetSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
   setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DatasetSpec;
@@ -2530,10 +2456,10 @@ export class DatasetSpec extends jspb.Message {
   hasFast(): boolean;
   clearFast(): DatasetSpec;
 
-  getFeaturized(): boolean;
-  setFeaturized(value: boolean): DatasetSpec;
-  hasFeaturized(): boolean;
-  clearFeaturized(): DatasetSpec;
+  getFeaturize(): boolean;
+  setFeaturize(value: boolean): DatasetSpec;
+  hasFeaturize(): boolean;
+  clearFeaturize(): DatasetSpec;
 
   getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetSpec;
@@ -2575,16 +2501,6 @@ export class DatasetSpec extends jspb.Message {
   clearKeyList(): DatasetSpec;
   addKey(value: string, index?: number): DatasetSpec;
 
-  getMineventtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setMineventtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetSpec;
-  hasMineventtime(): boolean;
-  clearMineventtime(): DatasetSpec;
-
-  getMaxeventtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setMaxeventtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetSpec;
-  hasMaxeventtime(): boolean;
-  clearMaxeventtime(): DatasetSpec;
-
   getModelclassname(): string;
   setModelclassname(value: string): DatasetSpec;
   hasModelclassname(): boolean;
@@ -2618,11 +2534,11 @@ export namespace DatasetSpec {
     displayname?: string,
     role?: string,
     tagsList: Array<string>,
-    reported?: boolean,
-    snapshotted?: boolean,
-    unittested?: boolean,
-    origin?: DataLocation.AsObject,
-    location?: DataLocation.AsObject,
+    report?: boolean,
+    unittest?: boolean,
+    origin?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    artifactbucketname?: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     timeout?: number,
     type?: string,
@@ -2632,7 +2548,7 @@ export namespace DatasetSpec {
     subtask?: string,
     correlation?: CorrelationSpec.AsObject,
     fast?: boolean,
-    featurized?: boolean,
+    featurize?: boolean,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
@@ -2641,8 +2557,6 @@ export namespace DatasetSpec {
     groupby?: GroupBySpec.AsObject,
     grouplocations?: GroupDatasetLocationsSpec.AsObject,
     keyList: Array<string>,
-    mineventtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    maxeventtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     modelclassname?: string,
     modelclassrunname?: string,
     featuregroupsList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
@@ -2715,25 +2629,25 @@ export class DatasetStatus extends jspb.Message {
   hasReportname(): boolean;
   clearReportname(): DatasetStatus;
 
-  getReporturi(): string;
-  setReporturi(value: string): DatasetStatus;
-  hasReporturi(): boolean;
-  clearReporturi(): DatasetStatus;
+  getReportlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setReportlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetStatus;
+  hasReportlocation(): boolean;
+  clearReportlocation(): DatasetStatus;
 
-  getProfileuri(): string;
-  setProfileuri(value: string): DatasetStatus;
-  hasProfileuri(): boolean;
-  clearProfileuri(): DatasetStatus;
+  getProfilelocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setProfilelocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetStatus;
+  hasProfilelocation(): boolean;
+  clearProfilelocation(): DatasetStatus;
+
+  getAnomalieslocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setAnomalieslocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetStatus;
+  hasAnomalieslocation(): boolean;
+  clearAnomalieslocation(): DatasetStatus;
 
   getImbalanced(): boolean;
   setImbalanced(value: boolean): DatasetStatus;
   hasImbalanced(): boolean;
   clearImbalanced(): DatasetStatus;
-
-  getAnomaliesuri(): string;
-  setAnomaliesuri(value: string): DatasetStatus;
-  hasAnomaliesuri(): boolean;
-  clearAnomaliesuri(): DatasetStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DatasetStatus;
@@ -2823,10 +2737,10 @@ export namespace DatasetStatus {
     statistics?: DatasetStatistics.AsObject,
     phase?: string,
     reportname?: string,
-    reporturi?: string,
-    profileuri?: string,
+    reportlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    profilelocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    anomalieslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     imbalanced?: boolean,
-    anomaliesuri?: string,
     observedgeneration?: number,
     testresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     laststudyat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -3233,8 +3147,8 @@ export class FeatureGroupSpec extends jspb.Message {
   hasTests(): boolean;
   clearTests(): FeatureGroupSpec;
 
-  getLocation(): DataLocation | undefined;
-  setLocation(value?: DataLocation): FeatureGroupSpec;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): FeatureGroupSpec;
   hasLocation(): boolean;
   clearLocation(): FeatureGroupSpec;
 
@@ -3284,7 +3198,7 @@ export namespace FeatureGroupSpec {
     flatfile?: FlatFileFormatSpec.AsObject,
     schema?: Schema.AsObject,
     tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    location?: DataLocation.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
     timecolumn?: string,
     timecolumnformat?: string,
     keycolumn?: string,
@@ -3324,8 +3238,8 @@ export class FeatureGroupStatus extends jspb.Message {
   hasSyncschedule(): boolean;
   clearSyncschedule(): FeatureGroupStatus;
 
-  getOnlinetable(): DataLocation | undefined;
-  setOnlinetable(value?: DataLocation): FeatureGroupStatus;
+  getOnlinetable(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setOnlinetable(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): FeatureGroupStatus;
   hasOnlinetable(): boolean;
   clearOnlinetable(): FeatureGroupStatus;
 
@@ -3370,7 +3284,7 @@ export namespace FeatureGroupStatus {
     rows?: number,
     ingestschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     syncschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
-    onlinetable?: DataLocation.AsObject,
+    onlinetable?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
     onlinetablecreated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     ingestdatasetname?: string,
     failurereason?: string,
@@ -4351,8 +4265,8 @@ export class RecipeInputSpec extends jspb.Message {
   hasDatasetname(): boolean;
   clearDatasetname(): RecipeInputSpec;
 
-  getLocation(): DataLocation | undefined;
-  setLocation(value?: DataLocation): RecipeInputSpec;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): RecipeInputSpec;
   hasLocation(): boolean;
   clearLocation(): RecipeInputSpec;
 
@@ -4372,7 +4286,7 @@ export class RecipeInputSpec extends jspb.Message {
 export namespace RecipeInputSpec {
   export type AsObject = {
     datasetname?: string,
-    location?: DataLocation.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
     format?: string,
   }
 }
@@ -4414,8 +4328,8 @@ export class RecipeOutputSpec extends jspb.Message {
   hasDatasetname(): boolean;
   clearDatasetname(): RecipeOutputSpec;
 
-  getLocation(): DataLocation | undefined;
-  setLocation(value?: DataLocation): RecipeOutputSpec;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): RecipeOutputSpec;
   hasLocation(): boolean;
   clearLocation(): RecipeOutputSpec;
 
@@ -4431,7 +4345,7 @@ export namespace RecipeOutputSpec {
   export type AsObject = {
     createdataset?: boolean,
     datasetname?: string,
-    location?: DataLocation.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
@@ -4535,8 +4449,8 @@ export class RecipeRunSpec extends jspb.Message {
   hasLabref(): boolean;
   clearLabref(): RecipeRunSpec;
 
-  getLocation(): DataLocation | undefined;
-  setLocation(value?: DataLocation): RecipeRunSpec;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): RecipeRunSpec;
   hasLocation(): boolean;
   clearLocation(): RecipeRunSpec;
 
@@ -4573,7 +4487,7 @@ export namespace RecipeRunSpec {
     versionname?: string,
     recipename?: string,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    location?: DataLocation.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     ttl?: number,
     modelclassname?: string,

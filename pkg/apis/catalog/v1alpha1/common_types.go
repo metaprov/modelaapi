@@ -111,28 +111,28 @@ const (
 	GenTrainingDatasetTask       TaskName = "gen-training-dataset"
 )
 
-// ApiKeyName is the secret or in env variable
+// SecretKeyName is the secret or in env variable
 // +kubebuilder:validation:Enum="provider";"keyfile";"accessKey";"secretKey";"host";"token";"username";"password";"port";"ssh";"openstack-authurl"
-type ApiKeyName string
+type SecretKeyName string
 
 const (
-	ProviderApiKeyName         ApiKeyName = "provider"
-	KeyFileApiKeyName          ApiKeyName = "keyfile"
-	AccessKeyApiKeyName        ApiKeyName = "accessKey"
-	ApiKeyNameSecretKey        ApiKeyName = "secretKey"
-	ApiKeyNameHost             ApiKeyName = "host"
-	ApiKeyNameToken            ApiKeyName = "token"
-	ApiKeyNameApiKey           ApiKeyName = "apikey"
-	ApiKeyNameUsername         ApiKeyName = "username"
-	ApiKeyNamePassword         ApiKeyName = "password"
-	ApiKeyNameURL              ApiKeyName = "url"
-	ApiKeyNamePort             ApiKeyName = "port"
-	ApiKeyNameDatabase         ApiKeyName = "database"
-	ApiKeyNameSsh              ApiKeyName = "ssh"
-	ApiKeyNameOpenstackAuthUrl ApiKeyName = "openstack-authurl"
+	SecretKeyNameProvider         SecretKeyName = "provider"
+	SecretKeyNameKeyFile          SecretKeyName = "keyfile"
+	SecretKeyNameAccessKey        SecretKeyName = "accessKey"
+	SecretKeyNameSecretKey        SecretKeyName = "secretKey"
+	SecretKeyNameHost             SecretKeyName = "host"
+	SecretKeyNameToken            SecretKeyName = "token"
+	SecretKeyNameApiKey           SecretKeyName = "apikey"
+	SecretKeyNameUsername         SecretKeyName = "username"
+	SecretKeyNamePassword         SecretKeyName = "password"
+	SecretKeyNameURL              SecretKeyName = "url"
+	SecretKeyNamePort             SecretKeyName = "port"
+	SecretKeyNameDatabase         SecretKeyName = "database"
+	SecretKeyNameSsh              SecretKeyName = "ssh"
+	SecretKeyNameOpenstackAuthUrl SecretKeyName = "openstack-authurl"
 )
 
-func (ak ApiKeyName) AsCliOption() string {
+func (ak SecretKeyName) AsCliOption() string {
 	return string(ak)
 }
 
@@ -209,7 +209,7 @@ const (
 	NoneSubtask MLSubtask = "none"
 )
 
-// ProviderName is the machine learning task name
+// ProviderName is the name of a provider of an external data source
 type ProviderName string
 
 const (
@@ -226,10 +226,10 @@ const (
 	AzureSqlDatabase           ProviderName = "azuresqldatabase"
 	GcpBigQuery                ProviderName = "bigquery"
 	ApacheCassandra            ProviderName = "cassandra"
-	CockrouchDB                ProviderName = "cockrouchdb"
+	CockroachDB                ProviderName = "cockroachdb"
 	Clickhouse                 ProviderName = "clickhouse"
 	Couchbase                  ProviderName = "couchbase"
-	Dermio                     ProviderName = "dermio"
+	Dremio                     ProviderName = "dremio"
 	DB2                        ProviderName = "db2"
 	ElasticSearch              ProviderName = "elasticsearch"
 	Exasol                     ProviderName = "exasol"
@@ -237,10 +237,10 @@ const (
 	GoogleSheets               ProviderName = "googlesheets"
 	GcpSpanner                 ProviderName = "spanner"
 	Greenplum                  ProviderName = "greenplum"
-	MySql                      ProviderName = "mysql"
-	MongoDb                    ProviderName = "mongodb"
+	MySQL                      ProviderName = "mysql"
+	MongoDB                    ProviderName = "mongodb"
 	Oracle                     ProviderName = "oracle"
-	PostgresSQL                ProviderName = "postgres"
+	PostgreSQL                 ProviderName = "postgresql"
 	Presto                     ProviderName = "presto"
 	SAPHana                    ProviderName = "hana"
 	Snowflake                  ProviderName = "snowflake"
@@ -251,7 +251,7 @@ const (
 	RabbitMQ                   ProviderName = "rabbitmq"
 	Teradata                   ProviderName = "teradata"
 	Vertica                    ProviderName = "vertica"
-	Odbc                       ProviderName = "odbc"
+	ODBC                       ProviderName = "odbc"
 	Informix                   ProviderName = "informix"
 
 	// graph databases
@@ -259,11 +259,11 @@ const (
 
 	// Cloud Storage
 	AliCloud     ProviderName = "alicloud"
-	Azure        ProviderName = "azure"
+	AzureStorage ProviderName = "azurestorage"
 	DigitalOcean ProviderName = "digitalocean"
 	Hetzner      ProviderName = "hetzner"
 	Linode       ProviderName = "linode"
-	Gcp          ProviderName = "gcp"
+	Gcs          ProviderName = "gcs"
 	Minio        ProviderName = "minio"
 	Ovh          ProviderName = "ovh"
 	Aws          ProviderName = "aws"
@@ -544,7 +544,7 @@ const (
 	ReqSec                     Metric = "req-per-sec"
 	UncertainPredictionPercent Metric = "uncertain-prediction-percent"
 
-	// Location drift metrics
+	// Data drift metrics
 	TwoSampleKSTest      Metric = "two-sample-ks-test"
 	ChiSqrTest           Metric = "chi-squared-test"
 	ProportionDifference Metric = "proportion-difference"
@@ -1156,14 +1156,15 @@ const (
 )
 
 //==============================================================================
-// Connection Categoty Type
+// ConnectionName Categoty Type
 //==============================================================================
 
-// +kubebuilder:validation:Enum="general";"cloud";"docker-image-registry";"database";"git";"messaging";
+// +kubebuilder:validation:Enum="general";"cloud";"docker-image-registry";"database";"git";"messaging";"storage";
 type ConnectionCategory string
 
 const (
 	GeneralConnectionCategory             ConnectionCategory = "general"
+	StorageConnectionCategory             ConnectionCategory = "storage"
 	CloudProviderConnectionCategory       ConnectionCategory = "cloud"
 	DockerImageRegistryConnectionCategory ConnectionCategory = "docker-image-registry"
 	DatabaseConnectionCategory            ConnectionCategory = "database"
@@ -1838,8 +1839,85 @@ const (
 )
 
 //////////////////////////////////////////////////////////
-// Test
+// Data Location
 ///////////////////////////////////////////////////////////
+
+// +kubebuilder:validation:Enum="object";"table";"view";"stream";"web";"public-dataset";"dataset"
+type DataLocationType string
+
+const (
+	DataLocationObjectStorage DataLocationType = "object"
+	DataLocationSQLTable      DataLocationType = "table"
+	DataLocationSQLView       DataLocationType = "view"
+	DataLocationStream        DataLocationType = "stream"
+	DataLocationWebApi        DataLocationType = "web"
+	DataLocationPublicDataset DataLocationType = "public-dataset" // The data reside in a public dataset
+	DataLocationDataset       DataLocationType = "dataset"        // The data reside inside another dataset
+)
+
+// DataLocation describes the external location of data that will be accessed by Modela, and additional
+// information on how to query the data if the location is a non flat-file source.
+type DataLocation struct {
+	// The type of location where the data resides, which can either be an object inside an object storage system (i.e. Minio), a SQL location
+	// like a table or a view, a data stream (i.e. Kafka, currently unsupported), or a web location (currently unsupported)
+	// +kubebuilder:default:="object"
+	// +kubebuilder:validation:Optional
+	Type *DataLocationType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	// In the case of the type of location being a database, ConnectionName specifies the name of the ConnectionName resource
+	// that exists in the same tenant as the resource specifying the DataLocation. Modela will attempt to connect
+	// to the database using the credentials specified in the ConnectionName, and will execute the query specified by the SQL field
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	ConnectionName *string `json:"connection,omitempty" protobuf:"bytes,2,opt,name=connection"`
+	// In the case of the location type being an object storage system, BucketName is the name of the VirtualBucket resource
+	// that exists in the same tenant as the resource specifying the DataLocation. Modela will connect to the external
+	// object storage system, and will access the file from the path specified by the Path field
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	BucketName *string `json:"bucket,omitempty" protobuf:"bytes,3,opt,name=bucket"`
+	// The path to a flat-file inside an object storage system. When using the Modela API to upload files (through the
+	// FileService API), Modela will upload the data to a predetermined path based on the Tenant, DataProduct,
+	// DataProductVersion, and resource type of the resource in relation to the file being uploaded.
+	// The path does not need to adhere to this format; you can give the path to a file inside a bucket not managed by Modela
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Path *string `json:"path,omitempty" protobuf:"bytes,4,opt,name=path"`
+	// The name of a table inside a database, if applicable
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Table *string `json:"table,omitempty" protobuf:"bytes,5,opt,name=table"`
+	// The name of a database inside the database system specified by the ConnectionName field
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Database *string `json:"database,omitempty" protobuf:"bytes,6,opt,name=database"`
+	// The SQL statement which will be executed to query data from the table specified by Table
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Sql *string `json:"sql,omitempty" protobuf:"bytes,7,opt,name=sql"`
+	// The name of the streaming topic (currently unsupported)
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Topic *string `json:"topic,omitempty" protobuf:"bytes,8,opt,name=topic"`
+	// In the case of the location type being WebApi, URL specifies the external location (HTTP or Git) that will be queried
+	// and then stored as flat-file by the resource which specifies the DataLocation
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	URL *string `json:"url,omitempty" protobuf:"bytes,9,opt,name=url"`
+	// In the case of the location type being Dataset or PublicDataset, ResourceRef references another resource that
+	// containing data that will be used as a data source
+	// +kubebuilder:validation:Optional
+	ResourceRef *v1.ObjectReference `json:"resourceRef,omitempty" protobuf:"bytes,10,opt,name=resourceRef"`
+}
+
+// FileLocation denotes the location of a flat-file, which is the name of a VirtualBucket and the path within it
+type FileLocation struct {
+	BucketName string `json:"bucket,omitempty" protobuf:"bytes,1,opt,name=bucket"`
+	Path       string `json:"path,omitempty" protobuf:"bytes,2,opt,name=path"`
+}
+
+//////////////////////////////////////////////////////////
+// Test
+//////////////////////////////////////////////////////////
 
 type DataTestType string
 
@@ -2067,7 +2145,7 @@ type NotificationSpec struct {
 type Logs struct {
 	// The name of the VirtualBucket resource where the logs are stored
 	// +kubebuilder:validation:Optional
-	BucketName string `json:"bucketName,omitempty" protobuf:"bytes,1,opt,name=bucketName"`
+	BucketName string `json:"bucket,omitempty" protobuf:"bytes,1,opt,name=bucket"`
 	// The collection of ContainerLog objects that describe the location of logs per container
 	// +kubebuilder:validation:Optional
 	Containers []ContainerLog `json:"containers,omitempty" protobuf:"bytes,2,rep,name=containers"`

@@ -39,7 +39,7 @@ const (
 // +kubebuilder:resource:path=predictions,shortName=pred,singular=prediction,categories={inference,modela}
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorRef.Name"
-// +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.output.bucketName",priority=1
+// +kubebuilder:printcolumn:name="BucketName",type="string",JSONPath=".spec.output.bucketName",priority=1
 // +kubebuilder:printcolumn:name="Key",type="string",JSONPath=".spec.output.path",priority=1
 // +kubebuilder:printcolumn:name="Score",type="string",JSONPath=".status.score"
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"

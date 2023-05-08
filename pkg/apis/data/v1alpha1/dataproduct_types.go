@@ -29,7 +29,7 @@ const (
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Public",type="boolean",JSONPath=".spec.public"
 // +kubebuilder:printcolumn:name="Errors",type="integer",JSONPath=".status.errorAlertsCount"
-// +kubebuilder:printcolumn:name="Location Sources",type="integer",JSONPath=".status.datasourcesCount",priority=1
+// +kubebuilder:printcolumn:name="Data Sources",type="integer",JSONPath=".status.datasourcesCount",priority=1
 // +kubebuilder:printcolumn:name="Datasets",type="integer",JSONPath=".status.datasetsCount",priority=1
 // +kubebuilder:printcolumn:name="Studies",type="integer",JSONPath=".status.studiesCount",priority=1
 // +kubebuilder:printcolumn:name="ModelsCount",type="integer",JSONPath=".status.modelsCount",priority=1
@@ -48,7 +48,7 @@ type DataProduct struct {
 
 // GitLocation specifies the Git location where Modela will track resources as YAML
 type GitLocation struct {
-	// The Git Connection resource which exists in the same tenant as the parent DataProduct
+	// The Git ConnectionName resource which exists in the same tenant as the parent DataProduct
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	GitConnectionName *string `json:"gitConnectionName,omitempty" protobuf:"bytes,1,opt,name=gitConnectionName"`
@@ -71,7 +71,7 @@ type ImageLocation struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=256
 	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// The image repository Connection resource which exists in the same tenant as the parent DataProduct. If the field
+	// The image repository ConnectionName resource which exists in the same tenant as the parent DataProduct. If the field
 	// is not set, Modela will ignore the image location and not push images
 	// +kubebuilder:default:=""
 	RegistryConnectionName *string `json:"registryConnectionName,omitempty" protobuf:"bytes,2,opt,name=registryConnectionName"`
@@ -121,7 +121,7 @@ type DataProductSpec struct {
 	// The default location for all artifacts created under the DataProduct. All data-producing resources will
 	// use the VirtualBucket specified by the Location by default
 	// +kubebuilder:validation:Optional
-	Location DataLocation `json:"location,omitempty" protobuf:"bytes,12,opt,name=location"`
+	Location catalog.FileLocation `json:"location,omitempty" protobuf:"bytes,12,opt,name=location"`
 	// The default notification specification for all resources under the DataProduct
 	// +kubebuilder:validation:Optional
 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,13,opt,name=notification"`

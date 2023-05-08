@@ -37,14 +37,6 @@ export class VirtualBucketExistRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): VirtualBucketExistRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): VirtualBucketExistRequest;
-  hasConnection(): boolean;
-  clearConnection(): VirtualBucketExistRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): VirtualBucketExistRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VirtualBucketExistRequest.AsObject;
   static toObject(includeInstance: boolean, msg: VirtualBucketExistRequest): VirtualBucketExistRequest.AsObject;
@@ -56,8 +48,6 @@ export class VirtualBucketExistRequest extends jspb.Message {
 export namespace VirtualBucketExistRequest {
   export type AsObject = {
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -91,14 +81,6 @@ export class KeyExistInVirtualBucketRequest extends jspb.Message {
   getKey(): string;
   setKey(value: string): KeyExistInVirtualBucketRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): KeyExistInVirtualBucketRequest;
-  hasConnection(): boolean;
-  clearConnection(): KeyExistInVirtualBucketRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): KeyExistInVirtualBucketRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): KeyExistInVirtualBucketRequest.AsObject;
   static toObject(includeInstance: boolean, msg: KeyExistInVirtualBucketRequest): KeyExistInVirtualBucketRequest.AsObject;
@@ -112,8 +94,6 @@ export namespace KeyExistInVirtualBucketRequest {
     region: string,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     key: string,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -161,14 +141,6 @@ export class FileDownloadRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): FileDownloadRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): FileDownloadRequest;
-  hasConnection(): boolean;
-  clearConnection(): FileDownloadRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): FileDownloadRequest;
-
   getTenant(): string;
   setTenant(value: string): FileDownloadRequest;
 
@@ -185,8 +157,6 @@ export namespace FileDownloadRequest {
     key: string,
     path: string,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
     tenant: string,
   }
 }
@@ -214,14 +184,6 @@ export class ListObjectsRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): ListObjectsRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): ListObjectsRequest;
-  hasConnection(): boolean;
-  clearConnection(): ListObjectsRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): ListObjectsRequest;
-
   getTenant(): string;
   setTenant(value: string): ListObjectsRequest;
 
@@ -237,8 +199,6 @@ export namespace ListObjectsRequest {
   export type AsObject = {
     prefix: string,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
     tenant: string,
   }
 }
@@ -275,11 +235,6 @@ export class FileUploadRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): FileUploadRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): FileUploadRequest;
-  hasConnection(): boolean;
-  clearConnection(): FileUploadRequest;
-
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): FileUploadRequest;
 
@@ -296,7 +251,6 @@ export namespace FileUploadRequest {
     key: string,
     path: string,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
   }
 }
@@ -321,14 +275,6 @@ export class CreateVirtualBucketRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): CreateVirtualBucketRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateVirtualBucketRequest;
-  hasConnection(): boolean;
-  clearConnection(): CreateVirtualBucketRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): CreateVirtualBucketRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateVirtualBucketRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateVirtualBucketRequest): CreateVirtualBucketRequest.AsObject;
@@ -340,8 +286,6 @@ export class CreateVirtualBucketRequest extends jspb.Message {
 export namespace CreateVirtualBucketRequest {
   export type AsObject = {
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 

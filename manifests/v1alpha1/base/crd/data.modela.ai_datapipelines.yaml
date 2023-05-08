@@ -153,7 +153,7 @@ spec:
                   location:
                     description: The location where the dataset will be stored
                     properties:
-                      bucketName:
+                      bucket:
                         default: ""
                         description: In the case of the location type being an object
                           storage system, BucketName is the name of the VirtualBucket
@@ -162,13 +162,13 @@ spec:
                           external object storage system, and will access the file
                           from the path specified by the Path field
                         type: string
-                      connectionName:
+                      connection:
                         default: ""
                         description: In the case of the type of location being a database,
-                          ConnectionName specifies the name of the Connection resource
-                          that exists in the same tenant as the resource specifying
-                          the DataLocation. Modela will attempt to connect to the
-                          database using the credentials specified in the Connection,
+                          ConnectionName specifies the name of the ConnectionName
+                          resource that exists in the same tenant as the resource
+                          specifying the DataLocation. Modela will attempt to connect
+                          to the database using the credentials specified in the ConnectionName,
                           and will execute the query specified by the SQL field
                         type: string
                       database:
@@ -583,7 +583,7 @@ spec:
                   lastRunLogs:
                     description: Logs from the last run
                     properties:
-                      bucketName:
+                      bucket:
                         description: The name of the VirtualBucket resource where
                           the logs are stored
                         type: string

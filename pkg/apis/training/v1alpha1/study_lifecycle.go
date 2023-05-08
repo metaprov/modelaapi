@@ -8,12 +8,11 @@ package v1alpha1
 
 import (
 	"fmt"
+	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	"path"
-	strings "strings"
 	"time"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
-	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/training"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -50,15 +49,6 @@ func (study Study) CanStart() bool {
 	}
 	now := metav1.Now()
 	return study.Spec.Schedule.StartAt.Before(&now)
-}
-
-func (study Study) PipelineName() string {
-	return study.ObjectMeta.Labels["pipeline"]
-}
-
-func (study *Study) AddPipelineLable(pipeline string) {
-	study.ObjectMeta.Labels["modela.ai/pipeline"] = pipeline
-
 }
 
 func (study Study) ReachedMaxFETime() bool {
@@ -102,18 +92,8 @@ func (s Study) ModelsWaiting() bool {
 	return s.Status.TestStatus.WaitingModelsCount > 0
 }
 
-func (study Study) LiveKey() string {
-	return *study.Spec.Location.Path
-}
-
-func (study Study) ArchiveKey() string {
-	return strings.Replace(*study.Spec.Location.Path, "/live/", "/archive/", -1)
-}
-
-// Enabled if we reached max candidates
-
 //==============================================================================
-// StudyName Finilizer
+// Study Finalizers
 //==============================================================================
 
 func (study Study) HasFinalizer() bool { return util.HasFin(&study.ObjectMeta, training.GroupName) }
@@ -314,24 +294,7 @@ func (study *Study) MarkSplitted() {
 		Status: metav1.ConditionTrue,
 		Reason: StudySplit,
 	})
-	// set the training location
-	trainingLocation := data.DataLocation{}
-	trainingLocation.BucketName = study.Spec.Location.BucketName
-	trainingLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "training.parquet"))
-	study.Status.TrainDatasetLocation = trainingLocation
 
-	// set the testing location
-	testingLocation := data.DataLocation{}
-	testingLocation.BucketName = study.Spec.Location.BucketName
-	testingLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "testing.parquet"))
-	study.Status.TestDatasetLocation = testingLocation
-
-	if *study.Spec.TrainingTemplate.Split.Validation > 0 {
-		valLocation := data.DataLocation{}
-		valLocation.BucketName = study.Spec.Location.BucketName
-		valLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "validation.parquet"))
-		study.Status.ValidationDataset = valLocation
-	}
 	study.Status.Phase = StudyPhaseSplit
 	study.RefreshProgress()
 
@@ -359,30 +322,13 @@ func (study Study) Transformed() bool {
 	return cond.Status == metav1.ConditionTrue
 }
 
-func (study *Study) MarkTransformed() {
+func (study *Study) MarkTransformed(product *data.DataProduct) {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudySplit,
 		Status: metav1.ConditionTrue,
 		Reason: StudySplit,
 	})
-	// set the training location
-	trainingLocation := data.DataLocation{}
-	trainingLocation.BucketName = study.Spec.Location.BucketName
-	trainingLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "training.transformed.parquet"))
-	study.Status.TrainDatasetLocation = trainingLocation
 
-	// set the testing location
-	testingLocation := data.DataLocation{}
-	testingLocation.BucketName = study.Spec.Location.BucketName
-	testingLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "testing.transformed.parquet"))
-	study.Status.TestDatasetLocation = testingLocation
-
-	if *study.Spec.TrainingTemplate.Split.Validation > 0 {
-		valLocation := data.DataLocation{}
-		valLocation.BucketName = study.Spec.Location.BucketName
-		valLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "validation.transformed.parquet"))
-		study.Status.ValidationDataset = valLocation
-	}
 	study.Status.Phase = StudyPhaseSplit
 	study.RefreshProgress()
 

@@ -257,7 +257,7 @@ spec:
                       have a value for the target columns) or for prediction (observations
                       with no targets).
                     properties:
-                      bucketName:
+                      bucket:
                         default: ""
                         description: In the case of the location type being an object
                           storage system, BucketName is the name of the VirtualBucket
@@ -266,13 +266,13 @@ spec:
                           external object storage system, and will access the file
                           from the path specified by the Path field
                         type: string
-                      connectionName:
+                      connection:
                         default: ""
                         description: In the case of the type of location being a database,
-                          ConnectionName specifies the name of the Connection resource
-                          that exists in the same tenant as the resource specifying
-                          the DataLocation. Modela will attempt to connect to the
-                          database using the credentials specified in the Connection,
+                          ConnectionName specifies the name of the ConnectionName
+                          resource that exists in the same tenant as the resource
+                          specifying the DataLocation. Modela will attempt to connect
+                          to the database using the credentials specified in the ConnectionName,
                           and will execute the query specified by the SQL field
                         type: string
                       database:
@@ -390,7 +390,7 @@ spec:
                     description: The location of the predictions table. The predictions
                       table contains all the latest predictions.
                     properties:
-                      bucketName:
+                      bucket:
                         default: ""
                         description: In the case of the location type being an object
                           storage system, BucketName is the name of the VirtualBucket
@@ -399,13 +399,13 @@ spec:
                           external object storage system, and will access the file
                           from the path specified by the Path field
                         type: string
-                      connectionName:
+                      connection:
                         default: ""
                         description: In the case of the type of location being a database,
-                          ConnectionName specifies the name of the Connection resource
-                          that exists in the same tenant as the resource specifying
-                          the DataLocation. Modela will attempt to connect to the
-                          database using the credentials specified in the Connection,
+                          ConnectionName specifies the name of the ConnectionName
+                          resource that exists in the same tenant as the resource
+                          specifying the DataLocation. Modela will attempt to connect
+                          to the database using the credentials specified in the ConnectionName,
                           and will execute the query specified by the SQL field
                         type: string
                       database:
@@ -1796,8 +1796,8 @@ spec:
                         type: string
                       registryConnectionName:
                         default: ""
-                        description: The name of the Connection resource to an external
-                          Docker image registry
+                        description: The name of the ConnectionName resource to an
+                          external Docker image registry
                         type: string
                     type: object
                   modelUnitTests:
@@ -2842,7 +2842,7 @@ spec:
                   lastRunLogs:
                     description: Logs from the last run
                     properties:
-                      bucketName:
+                      bucket:
                         description: The name of the VirtualBucket resource where
                           the logs are stored
                         type: string
@@ -2896,7 +2896,7 @@ spec:
                   lastRunLogs:
                     description: Logs from the last run
                     properties:
-                      bucketName:
+                      bucket:
                         description: The name of the VirtualBucket resource where
                           the logs are stored
                         type: string
@@ -2956,7 +2956,7 @@ spec:
                   lastRunLogs:
                     description: Logs from the last run
                     properties:
-                      bucketName:
+                      bucket:
                         description: The name of the VirtualBucket resource where
                           the logs are stored
                         type: string
@@ -3015,7 +3015,7 @@ spec:
                   lastRunLogs:
                     description: Logs from the last run
                     properties:
-                      bucketName:
+                      bucket:
                         description: The name of the VirtualBucket resource where
                           the logs are stored
                         type: string

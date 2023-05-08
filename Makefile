@@ -119,6 +119,16 @@ generate-py-bp:
 	pip install -U betterproto --pre
 	hack/generate-py-betterproto.sh
 
+.PHONY: generate-go-copy
+generate-go-copy:
+	hack/generate-proto.sh
+	hack/generate-go.sh
+	$(CONTROLLER_GEN) object:headerFile=./hack/custom-boilerplate.go.txt paths=./pkg/apis/...
+	hack/copy-go.sh
+
+.PHONY: go-copy
+go-copy:
+	hack/copy-go.sh
 
 .PHONY: install-crd
 install-crd:
