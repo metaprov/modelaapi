@@ -91,7 +91,7 @@ func (mclass *ModelClass) Default() {
 	//}
 
 	if mclass.Spec.Objective == nil {
-		o := DefaultObjective(*mclass.Spec.Task)
+		o := DefaultObjective(mclass.Spec.Task)
 		mclass.Spec.Objective = &o
 	}
 
@@ -161,7 +161,7 @@ func (mclass ModelClass) validateDataset(fldPath *field.Path) field.ErrorList {
 func (mclass ModelClass) validateTask(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	// Task must be defined.
-	if mclass.Spec.Task == nil {
+	if mclass.Spec.Task == "" {
 		err := errors.Errorf("task must be defined")
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,
@@ -181,7 +181,7 @@ func (svo *SuccessiveHalvingOptions) Default() {
 
 }
 
-func (ms *SearchSpec) Default(task *catalog.MLTask) {
+func (ms *SearchSpec) Default(task catalog.MLTask) {
 	name := TPESearch
 	if ms.Sampler == nil {
 		ms.Sampler = &name
@@ -281,7 +281,7 @@ func (ms *SearchSpec) Default(task *catalog.MLTask) {
 	}
 
 	if ms.Objective == nil {
-		o := DefaultObjective(*task)
+		o := DefaultObjective(task)
 		ms.Objective = &o
 	}
 

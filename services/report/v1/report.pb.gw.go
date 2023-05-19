@@ -367,6 +367,10 @@ func local_request_ReportService_DeleteReport_0(ctx context.Context, marshaler r
 
 }
 
+var (
+	filter_ReportService_Download_0 = &utilities.DoubleArray{Encoding: map[string]int{"namespace": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+)
+
 func request_ReportService_Download_0(ctx context.Context, marshaler runtime.Marshaler, client ReportServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq DownloadReportRequest
 	var metadata runtime.ServerMetadata
@@ -396,6 +400,13 @@ func request_ReportService_Download_0(ctx context.Context, marshaler runtime.Mar
 	protoReq.Name, err = runtime.String(val)
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
+	}
+
+	if err := req.ParseForm(); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_ReportService_Download_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	msg, err := client.Download(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -434,6 +445,13 @@ func local_request_ReportService_Download_0(ctx context.Context, marshaler runti
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
 	}
 
+	if err := req.ParseForm(); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_ReportService_Download_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
 	msg, err := server.Download(ctx, &protoReq)
 	return msg, metadata, err
 
@@ -451,12 +469,13 @@ func RegisterReportServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/ListReports", runtime.WithHTTPPathPattern("/v1/reports/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/ListReports", runtime.WithHTTPPathPattern("/v1/reports/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ReportService_ListReports_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ReportService_ListReports_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -474,12 +493,13 @@ func RegisterReportServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/CreateReport", runtime.WithHTTPPathPattern("/v1/reports"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/CreateReport", runtime.WithHTTPPathPattern("/v1/reports"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ReportService_CreateReport_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ReportService_CreateReport_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -497,12 +517,13 @@ func RegisterReportServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/GetReport", runtime.WithHTTPPathPattern("/v1/reports/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/GetReport", runtime.WithHTTPPathPattern("/v1/reports/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ReportService_GetReport_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ReportService_GetReport_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -520,12 +541,13 @@ func RegisterReportServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/UpdateReport", runtime.WithHTTPPathPattern("/v1/reports/{report.metadata.namespace}/{report.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/UpdateReport", runtime.WithHTTPPathPattern("/v1/reports/{report.metadata.namespace}/{report.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ReportService_UpdateReport_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ReportService_UpdateReport_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -543,12 +565,13 @@ func RegisterReportServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/DeleteReport", runtime.WithHTTPPathPattern("/v1/reports/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/DeleteReport", runtime.WithHTTPPathPattern("/v1/reports/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ReportService_DeleteReport_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ReportService_DeleteReport_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -566,12 +589,13 @@ func RegisterReportServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/Download", runtime.WithHTTPPathPattern("/v1/reports/{namespace}/{name}:download"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/Download", runtime.WithHTTPPathPattern("/v1/reports/{namespace}/{name}:download"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ReportService_Download_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_ReportService_Download_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -628,12 +652,13 @@ func RegisterReportServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/ListReports", runtime.WithHTTPPathPattern("/v1/reports/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/ListReports", runtime.WithHTTPPathPattern("/v1/reports/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ReportService_ListReports_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ReportService_ListReports_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -648,12 +673,13 @@ func RegisterReportServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/CreateReport", runtime.WithHTTPPathPattern("/v1/reports"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/CreateReport", runtime.WithHTTPPathPattern("/v1/reports"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ReportService_CreateReport_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ReportService_CreateReport_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -668,12 +694,13 @@ func RegisterReportServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/GetReport", runtime.WithHTTPPathPattern("/v1/reports/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/GetReport", runtime.WithHTTPPathPattern("/v1/reports/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ReportService_GetReport_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ReportService_GetReport_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -688,12 +715,13 @@ func RegisterReportServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/UpdateReport", runtime.WithHTTPPathPattern("/v1/reports/{report.metadata.namespace}/{report.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/UpdateReport", runtime.WithHTTPPathPattern("/v1/reports/{report.metadata.namespace}/{report.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ReportService_UpdateReport_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ReportService_UpdateReport_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -708,12 +736,13 @@ func RegisterReportServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/DeleteReport", runtime.WithHTTPPathPattern("/v1/reports/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/DeleteReport", runtime.WithHTTPPathPattern("/v1/reports/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ReportService_DeleteReport_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ReportService_DeleteReport_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -728,12 +757,13 @@ func RegisterReportServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/Download", runtime.WithHTTPPathPattern("/v1/reports/{namespace}/{name}:download"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/Download", runtime.WithHTTPPathPattern("/v1/reports/{namespace}/{name}:download"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ReportService_Download_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ReportService_Download_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)

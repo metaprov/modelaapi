@@ -379,12 +379,13 @@ func RegisterDataProductServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/ListDataProducts", runtime.WithHTTPPathPattern("/v1/dataproducts/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/ListDataProducts", runtime.WithHTTPPathPattern("/v1/dataproducts/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataProductService_ListDataProducts_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataProductService_ListDataProducts_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -402,12 +403,13 @@ func RegisterDataProductServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/CreateDataProduct", runtime.WithHTTPPathPattern("/v1/dataproducts"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/CreateDataProduct", runtime.WithHTTPPathPattern("/v1/dataproducts"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataProductService_CreateDataProduct_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataProductService_CreateDataProduct_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -425,12 +427,13 @@ func RegisterDataProductServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/GetDataProduct", runtime.WithHTTPPathPattern("/v1/dataproducts/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/GetDataProduct", runtime.WithHTTPPathPattern("/v1/dataproducts/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataProductService_GetDataProduct_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataProductService_GetDataProduct_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -448,12 +451,13 @@ func RegisterDataProductServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/UpdateDataProduct", runtime.WithHTTPPathPattern("/v1/dataproducts/{dataproduct.metadata.namespace}/{dataproduct.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/UpdateDataProduct", runtime.WithHTTPPathPattern("/v1/dataproducts/{dataproduct.metadata.namespace}/{dataproduct.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataProductService_UpdateDataProduct_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataProductService_UpdateDataProduct_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -471,12 +475,13 @@ func RegisterDataProductServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/DeleteDataProduct", runtime.WithHTTPPathPattern("/v1/dataproducts/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/DeleteDataProduct", runtime.WithHTTPPathPattern("/v1/dataproducts/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataProductService_DeleteDataProduct_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataProductService_DeleteDataProduct_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -533,12 +538,13 @@ func RegisterDataProductServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/ListDataProducts", runtime.WithHTTPPathPattern("/v1/dataproducts/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/ListDataProducts", runtime.WithHTTPPathPattern("/v1/dataproducts/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataProductService_ListDataProducts_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataProductService_ListDataProducts_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -553,12 +559,13 @@ func RegisterDataProductServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/CreateDataProduct", runtime.WithHTTPPathPattern("/v1/dataproducts"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/CreateDataProduct", runtime.WithHTTPPathPattern("/v1/dataproducts"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataProductService_CreateDataProduct_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataProductService_CreateDataProduct_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -573,12 +580,13 @@ func RegisterDataProductServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/GetDataProduct", runtime.WithHTTPPathPattern("/v1/dataproducts/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/GetDataProduct", runtime.WithHTTPPathPattern("/v1/dataproducts/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataProductService_GetDataProduct_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataProductService_GetDataProduct_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -593,12 +601,13 @@ func RegisterDataProductServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/UpdateDataProduct", runtime.WithHTTPPathPattern("/v1/dataproducts/{dataproduct.metadata.namespace}/{dataproduct.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/UpdateDataProduct", runtime.WithHTTPPathPattern("/v1/dataproducts/{dataproduct.metadata.namespace}/{dataproduct.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataProductService_UpdateDataProduct_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataProductService_UpdateDataProduct_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -613,12 +622,13 @@ func RegisterDataProductServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/DeleteDataProduct", runtime.WithHTTPPathPattern("/v1/dataproducts/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/DeleteDataProduct", runtime.WithHTTPPathPattern("/v1/dataproducts/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataProductService_DeleteDataProduct_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataProductService_DeleteDataProduct_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)

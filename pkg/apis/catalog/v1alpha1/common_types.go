@@ -59,10 +59,10 @@ type CompilerSpec struct {
 type TaskName string
 
 const (
-	BatchPredictTaskName         TaskName = "batch-predict"
-	BatchPredictMCTaskName       TaskName = "batch-predict-multi-class"
-	ForecastTaskName             TaskName = "forecast"
-	ProfileDatasetTaskName       TaskName = "profile-dataset"
+	BatchPredictTask             TaskName = "batch-predict"
+	BatchPredictMCTask           TaskName = "batch-predict-multi-class"
+	ForecastTask                 TaskName = "forecast"
+	ProfileDatasetTask           TaskName = "profile-dataset"
 	SnapshotDatasetTask          TaskName = "snapshot-dataset"
 	ProfileStudyTask             TaskName = "profile-study"
 	ProfileModelTask             TaskName = "profile-model"
@@ -81,8 +81,8 @@ const (
 	TrainModelTask               TaskName = "train-model"
 	MergeForecastTask            TaskName = "merge-forecast"
 	PartitionForecastTask        TaskName = "partition-forecast"
-	SplitDatasetToRungs          TaskName = "split-dataset-to-rungs"
-	TransformDataset             TaskName = "transform-dataset"
+	SplitDatasetToRungsTask      TaskName = "split-dataset-to-rungs"
+	TransformDatasetTask         TaskName = "transform-dataset"
 	CompileTask                  TaskName = "compile-model"
 	PackageModelTask             TaskName = "package-model"
 	ExplainModelTask             TaskName = "explain-model"
@@ -90,13 +90,13 @@ const (
 	FeatureSelectTask            TaskName = "feature-select"
 	RunSqlQueryTask              TaskName = "run-sql-query"
 	RunWebRequestTask            TaskName = "run-web-request"
-	GenerateDataset              TaskName = "generate-dataset"
-	UnitTestDataset              TaskName = "unittest-dataset"
-	UnitTestModel                TaskName = "unittest-model"
-	UnitTestFeedback             TaskName = "unittest-feedback"
-	UnitTestFeatureHistogram     TaskName = "unittest-feature-histogram"
-	UnitTestPredictor            TaskName = "unittest-predictor"
-	TrainDriftDetector           TaskName = "train-drift-detector"
+	GenerateDatasetTask          TaskName = "generate-dataset"
+	UnitTestDatasetTask          TaskName = "unittest-dataset"
+	UnitTestModelTask            TaskName = "unittest-model"
+	UnitTestFeedbackTask         TaskName = "unittest-feedback"
+	UnitTestFeatureHistogramTask TaskName = "unittest-feature-histogram"
+	UnitTestPredictorTask        TaskName = "unittest-predictor"
+	TrainDriftDetectorTask       TaskName = "train-drift-detector"
 	PartitionDatasetTask         TaskName = "partition-dataset"
 	ProfilePartitionDatasetTask  TaskName = "profile-partition-dataset"
 	ProfilePartitionModelTask    TaskName = "profile-partition-model"
@@ -1909,6 +1909,22 @@ type DataLocation struct {
 	ResourceRef *v1.ObjectReference `json:"resourceRef,omitempty" protobuf:"bytes,10,opt,name=resourceRef"`
 }
 
+func (location *DataLocation) ToFileLocation() *FileLocation {
+	var bucketName, path string
+	if location.BucketName != nil {
+		bucketName = *location.BucketName
+	}
+
+	if location.Path != nil {
+		path = *location.Path
+	}
+
+	return &FileLocation{
+		BucketName: bucketName,
+		Path:       path,
+	}
+}
+
 // FileLocation denotes the location of a flat-file, which is the name of a VirtualBucket and the path within it
 type FileLocation struct {
 	BucketName string `json:"bucket,omitempty" protobuf:"bytes,1,opt,name=bucket"`
@@ -2009,13 +2025,9 @@ type ResourceSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Custom *bool `json:"custom,omitempty" protobuf:"varint,2,opt,name=custom"`
-	// Reference to the managed CPU trainer image, used internally
-	CpuImage v1.ObjectReference `json:"cpuImage,omitempty" protobuf:"bytes,3,opt,name=cpuImage"`
-	// Reference to the managed GPU trainer image, used internally
-	GpuImage v1.ObjectReference `json:"gpuImage,omitempty" protobuf:"bytes,4,opt,name=gpuImage"`
 	// The custom resource requirements for the workload, which are used if `WorkloadName` is not set
 	// +kubebuilder:validation:Optional
-	Requirements *v1.ResourceRequirements `json:"requirements,omitempty" protobuf:"bytes,5,opt,name=requirements"`
+	Requirements *v1.ResourceRequirements `json:"requirements,omitempty" protobuf:"bytes,3,opt,name=requirements"`
 }
 
 // HistogramData contains the data to construct a histogram image

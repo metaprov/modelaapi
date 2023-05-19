@@ -3107,6 +3107,11 @@ export class FeatureGroupSpec extends jspb.Message {
   hasDescription(): boolean;
   clearDescription(): FeatureGroupSpec;
 
+  getArtifactbucketname(): string;
+  setArtifactbucketname(value: string): FeatureGroupSpec;
+  hasArtifactbucketname(): boolean;
+  clearArtifactbucketname(): FeatureGroupSpec;
+
   getIngesttype(): string;
   setIngesttype(value: string): FeatureGroupSpec;
   hasIngesttype(): boolean;
@@ -3177,6 +3182,11 @@ export class FeatureGroupSpec extends jspb.Message {
   hasResources(): boolean;
   clearResources(): FeatureGroupSpec;
 
+  getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeatureGroupSpec;
+  hasLabref(): boolean;
+  clearLabref(): FeatureGroupSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureGroupSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureGroupSpec): FeatureGroupSpec.AsObject;
@@ -3190,6 +3200,7 @@ export namespace FeatureGroupSpec {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     owner?: string,
     description?: string,
+    artifactbucketname?: string,
     ingesttype?: string,
     entityname?: string,
     tagsList: Array<string>,
@@ -3204,6 +3215,7 @@ export namespace FeatureGroupSpec {
     keycolumn?: string,
     materialization?: MaterializationSpec.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
+    labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 

@@ -645,13 +645,12 @@ message PredictionLoggingSpec {
 
 // PredictionSpec represent the desired state of Prediction
 message PredictionSpec {
-  // The name of the DataProductVersion which describes the version of the resource
-  // that exists in the same DataProduct namespace as the resource
+  // VersionName references the name of a Data Product Version that describes the version of the resource
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
-  // The model class for this pipeline
+  // ModelClassName referencesa the name of the Model Class that created the resource, if applicable
   // +kubebuilder:validation:Optional
   optional string modelClassName = 2;
 

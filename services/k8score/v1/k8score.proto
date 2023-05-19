@@ -259,7 +259,7 @@ service CoreK8sService {
 
     ////////////////////////////// container log
     rpc GetContainerLog(GetContainerLogRequest) returns (GetContainerLogResponse) {
-        option (google.api.http).get = "/v1/pods/{namespace}";
+        option (google.api.http).get = "/v1/pods/{namespace}:logs";
     }
 
 

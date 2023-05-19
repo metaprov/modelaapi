@@ -141,12 +141,11 @@ type Study struct {
 
 // StudySpec defines the desired state of a Study and the parameters for a model search
 type StudySpec struct {
-	// The name of the DataProductVersion which describes the version of the resource
-	// that exists in the same DataProduct namespace as the resource
+	// VersionName references the name of a Data Product Version that describes the version of the resource
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
+	VersionName string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
 	// The user-provided description of the Study
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
@@ -155,7 +154,7 @@ type StudySpec struct {
 	// The reference to the Lab under which the Model resources created by the Study will be trained.
 	// If unspecified, the default Lab from the parent DataProduct will be used
 	// +kubebuilder:validation:Optional
-	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,5,opt,name=labRef"`
+	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,5,opt,name=labRef"`
 	// The name of the Entity resource that will be used to train models with.
 	// The dataset will be split into individual training, testing, and validation datasets
 	// +kubebuilder:validation:Required
@@ -164,7 +163,7 @@ type StudySpec struct {
 	// The machine learning task type (i.e. regression, classification)
 	// +kubebuilder:validation:Required
 	// +required
-	Task *catalog.MLTask `json:"task" protobuf:"bytes,7,opt,name=task"`
+	Task catalog.MLTask `json:"task" protobuf:"bytes,7,opt,name=task"`
 	// The machine learning subtask relevant to the primary task (text classification, image object detection, etc.)
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional

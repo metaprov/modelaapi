@@ -847,12 +847,13 @@ func RegisterStudyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/ListStudies", runtime.WithHTTPPathPattern("/v1/studies/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/ListStudies", runtime.WithHTTPPathPattern("/v1/studies/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_StudyService_ListStudies_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_StudyService_ListStudies_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -870,12 +871,13 @@ func RegisterStudyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudy", runtime.WithHTTPPathPattern("/v1/studies"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudy", runtime.WithHTTPPathPattern("/v1/studies"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_StudyService_CreateStudy_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_StudyService_CreateStudy_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -893,12 +895,13 @@ func RegisterStudyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_StudyService_GetStudy_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_StudyService_GetStudy_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -916,12 +919,13 @@ func RegisterStudyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/UpdateStudy", runtime.WithHTTPPathPattern("/v1/studies/{study.metadata.namespace}/{study.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/UpdateStudy", runtime.WithHTTPPathPattern("/v1/studies/{study.metadata.namespace}/{study.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_StudyService_UpdateStudy_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_StudyService_UpdateStudy_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -939,12 +943,13 @@ func RegisterStudyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/DeleteStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/DeleteStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_StudyService_DeleteStudy_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_StudyService_DeleteStudy_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -962,12 +967,13 @@ func RegisterStudyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudyProfile", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/profile"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudyProfile", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/profile"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_StudyService_CreateStudyProfile_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_StudyService_CreateStudyProfile_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -985,12 +991,13 @@ func RegisterStudyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyProfile", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/profile"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyProfile", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/profile"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_StudyService_GetStudyProfile_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_StudyService_GetStudyProfile_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1008,12 +1015,13 @@ func RegisterStudyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/AbortStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/abort"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/AbortStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/abort"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_StudyService_AbortStudy_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_StudyService_AbortStudy_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1031,12 +1039,13 @@ func RegisterStudyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/PauseStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/pause"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/PauseStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/pause"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_StudyService_PauseStudy_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_StudyService_PauseStudy_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1054,12 +1063,13 @@ func RegisterStudyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/ResumeStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/resume"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/ResumeStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/resume"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_StudyService_ResumeStudy_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_StudyService_ResumeStudy_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1077,12 +1087,13 @@ func RegisterStudyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMu
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/complete-search"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/complete-search"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_StudyService_CompleteSearch_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_StudyService_CompleteSearch_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1139,12 +1150,13 @@ func RegisterStudyServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/ListStudies", runtime.WithHTTPPathPattern("/v1/studies/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/ListStudies", runtime.WithHTTPPathPattern("/v1/studies/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_StudyService_ListStudies_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_StudyService_ListStudies_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1159,12 +1171,13 @@ func RegisterStudyServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudy", runtime.WithHTTPPathPattern("/v1/studies"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudy", runtime.WithHTTPPathPattern("/v1/studies"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_StudyService_CreateStudy_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_StudyService_CreateStudy_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1179,12 +1192,13 @@ func RegisterStudyServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_StudyService_GetStudy_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_StudyService_GetStudy_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1199,12 +1213,13 @@ func RegisterStudyServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/UpdateStudy", runtime.WithHTTPPathPattern("/v1/studies/{study.metadata.namespace}/{study.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/UpdateStudy", runtime.WithHTTPPathPattern("/v1/studies/{study.metadata.namespace}/{study.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_StudyService_UpdateStudy_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_StudyService_UpdateStudy_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1219,12 +1234,13 @@ func RegisterStudyServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/DeleteStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/DeleteStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_StudyService_DeleteStudy_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_StudyService_DeleteStudy_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1239,12 +1255,13 @@ func RegisterStudyServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudyProfile", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/profile"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudyProfile", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/profile"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_StudyService_CreateStudyProfile_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_StudyService_CreateStudyProfile_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1259,12 +1276,13 @@ func RegisterStudyServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyProfile", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/profile"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyProfile", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/profile"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_StudyService_GetStudyProfile_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_StudyService_GetStudyProfile_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1279,12 +1297,13 @@ func RegisterStudyServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/AbortStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/abort"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/AbortStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/abort"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_StudyService_AbortStudy_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_StudyService_AbortStudy_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1299,12 +1318,13 @@ func RegisterStudyServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/PauseStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/pause"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/PauseStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/pause"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_StudyService_PauseStudy_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_StudyService_PauseStudy_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1319,12 +1339,13 @@ func RegisterStudyServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/ResumeStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/resume"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/ResumeStudy", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/resume"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_StudyService_ResumeStudy_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_StudyService_ResumeStudy_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1339,12 +1360,13 @@ func RegisterStudyServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/complete-search"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch", runtime.WithHTTPPathPattern("/v1/studies/{namespace}/{name}/complete-search"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_StudyService_CompleteSearch_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_StudyService_CompleteSearch_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)

@@ -214,29 +214,9 @@ message RunTestSuiteRequest {
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 6;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 7;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 8;
-    map<string, bytes> secret = 10;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram histogram = 9;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram refHistogram = 10;
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite suite = 11;
-    oneof sut_oneof {
-        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset  sutDataset = 12;
-        github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study sutStudy = 13;
-        github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model sutModel = 14;
-        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe sutRecipe = 15;
-        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram sutHistogram = 16;
-        github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor sutPredictor = 17;
-
-    }
-    oneof sut_ref {
-        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset  refDataset = 20;
-        github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study refStudy = 21;
-        github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model refModel = 22;
-        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe refRecipe = 23;
-        github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram refHistogram = 24;
-        github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor refPredictor = 25;
-    }
-    bool group = 26;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 27;
-    map<string, bytes>                                                           dbSecret = 28;
-
 }
 
 message RunTestSuiteResponse{
@@ -784,7 +764,6 @@ message SavePredictorRequest {
 message CreateMetricsStoreRequest {
     string tenant = 1;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 2;
-    map<string, bytes>                                                           dbSecret = 3;
 }
 message CreateMetricsStoreResponse {}
 

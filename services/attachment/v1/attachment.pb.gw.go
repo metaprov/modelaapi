@@ -379,12 +379,13 @@ func RegisterAttachmentServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/ListAttachments", runtime.WithHTTPPathPattern("/v1/attachments/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/ListAttachments", runtime.WithHTTPPathPattern("/v1/attachments/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AttachmentService_ListAttachments_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AttachmentService_ListAttachments_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -402,12 +403,13 @@ func RegisterAttachmentServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/CreateAttachment", runtime.WithHTTPPathPattern("/v1/attachments"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/CreateAttachment", runtime.WithHTTPPathPattern("/v1/attachments"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AttachmentService_CreateAttachment_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AttachmentService_CreateAttachment_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -425,12 +427,13 @@ func RegisterAttachmentServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/GetAttachment", runtime.WithHTTPPathPattern("/v1/attachments/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/GetAttachment", runtime.WithHTTPPathPattern("/v1/attachments/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AttachmentService_GetAttachment_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AttachmentService_GetAttachment_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -448,12 +451,13 @@ func RegisterAttachmentServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/UpdateAttachment", runtime.WithHTTPPathPattern("/v1/attachments/{attachment.metadata.namespace}/{attachment.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/UpdateAttachment", runtime.WithHTTPPathPattern("/v1/attachments/{attachment.metadata.namespace}/{attachment.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AttachmentService_UpdateAttachment_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AttachmentService_UpdateAttachment_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -471,12 +475,13 @@ func RegisterAttachmentServiceHandlerServer(ctx context.Context, mux *runtime.Se
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/DeleteAttachment", runtime.WithHTTPPathPattern("/v1/attachments/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/DeleteAttachment", runtime.WithHTTPPathPattern("/v1/attachments/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_AttachmentService_DeleteAttachment_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_AttachmentService_DeleteAttachment_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -533,12 +538,13 @@ func RegisterAttachmentServiceHandlerClient(ctx context.Context, mux *runtime.Se
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/ListAttachments", runtime.WithHTTPPathPattern("/v1/attachments/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/ListAttachments", runtime.WithHTTPPathPattern("/v1/attachments/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AttachmentService_ListAttachments_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AttachmentService_ListAttachments_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -553,12 +559,13 @@ func RegisterAttachmentServiceHandlerClient(ctx context.Context, mux *runtime.Se
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/CreateAttachment", runtime.WithHTTPPathPattern("/v1/attachments"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/CreateAttachment", runtime.WithHTTPPathPattern("/v1/attachments"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AttachmentService_CreateAttachment_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AttachmentService_CreateAttachment_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -573,12 +580,13 @@ func RegisterAttachmentServiceHandlerClient(ctx context.Context, mux *runtime.Se
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/GetAttachment", runtime.WithHTTPPathPattern("/v1/attachments/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/GetAttachment", runtime.WithHTTPPathPattern("/v1/attachments/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AttachmentService_GetAttachment_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AttachmentService_GetAttachment_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -593,12 +601,13 @@ func RegisterAttachmentServiceHandlerClient(ctx context.Context, mux *runtime.Se
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/UpdateAttachment", runtime.WithHTTPPathPattern("/v1/attachments/{attachment.metadata.namespace}/{attachment.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/UpdateAttachment", runtime.WithHTTPPathPattern("/v1/attachments/{attachment.metadata.namespace}/{attachment.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AttachmentService_UpdateAttachment_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AttachmentService_UpdateAttachment_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -613,12 +622,13 @@ func RegisterAttachmentServiceHandlerClient(ctx context.Context, mux *runtime.Se
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/DeleteAttachment", runtime.WithHTTPPathPattern("/v1/attachments/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/DeleteAttachment", runtime.WithHTTPPathPattern("/v1/attachments/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_AttachmentService_DeleteAttachment_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AttachmentService_DeleteAttachment_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)

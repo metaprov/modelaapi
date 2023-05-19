@@ -557,12 +557,13 @@ func RegisterPredictorServiceHandlerServer(ctx context.Context, mux *runtime.Ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/ListPredictors", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/ListPredictors", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_PredictorService_ListPredictors_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_PredictorService_ListPredictors_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -580,12 +581,13 @@ func RegisterPredictorServiceHandlerServer(ctx context.Context, mux *runtime.Ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/CreatePredictor", runtime.WithHTTPPathPattern("/v1/predictors"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/CreatePredictor", runtime.WithHTTPPathPattern("/v1/predictors"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_PredictorService_CreatePredictor_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_PredictorService_CreatePredictor_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -603,12 +605,13 @@ func RegisterPredictorServiceHandlerServer(ctx context.Context, mux *runtime.Ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/GetPredictor", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/GetPredictor", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_PredictorService_GetPredictor_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_PredictorService_GetPredictor_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -626,12 +629,13 @@ func RegisterPredictorServiceHandlerServer(ctx context.Context, mux *runtime.Ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/UpdatePredictor", runtime.WithHTTPPathPattern("/v1/predictors/{predictor.metadata.namespace}/{predictor.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/UpdatePredictor", runtime.WithHTTPPathPattern("/v1/predictors/{predictor.metadata.namespace}/{predictor.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_PredictorService_UpdatePredictor_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_PredictorService_UpdatePredictor_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -649,12 +653,13 @@ func RegisterPredictorServiceHandlerServer(ctx context.Context, mux *runtime.Ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/RollBack", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}/{name}:rollback"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/RollBack", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}/{name}:rollback"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_PredictorService_RollBack_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_PredictorService_RollBack_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -672,12 +677,13 @@ func RegisterPredictorServiceHandlerServer(ctx context.Context, mux *runtime.Ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/DeletePredictor", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/DeletePredictor", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_PredictorService_DeletePredictor_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_PredictorService_DeletePredictor_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -695,12 +701,13 @@ func RegisterPredictorServiceHandlerServer(ctx context.Context, mux *runtime.Ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/PredictOne", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}/{name}:predictone"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/PredictOne", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}/{name}:predictone"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_PredictorService_PredictOne_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_PredictorService_PredictOne_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -757,12 +764,13 @@ func RegisterPredictorServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/ListPredictors", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/ListPredictors", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_PredictorService_ListPredictors_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_PredictorService_ListPredictors_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -777,12 +785,13 @@ func RegisterPredictorServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/CreatePredictor", runtime.WithHTTPPathPattern("/v1/predictors"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/CreatePredictor", runtime.WithHTTPPathPattern("/v1/predictors"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_PredictorService_CreatePredictor_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_PredictorService_CreatePredictor_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -797,12 +806,13 @@ func RegisterPredictorServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/GetPredictor", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/GetPredictor", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_PredictorService_GetPredictor_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_PredictorService_GetPredictor_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -817,12 +827,13 @@ func RegisterPredictorServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/UpdatePredictor", runtime.WithHTTPPathPattern("/v1/predictors/{predictor.metadata.namespace}/{predictor.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/UpdatePredictor", runtime.WithHTTPPathPattern("/v1/predictors/{predictor.metadata.namespace}/{predictor.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_PredictorService_UpdatePredictor_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_PredictorService_UpdatePredictor_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -837,12 +848,13 @@ func RegisterPredictorServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/RollBack", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}/{name}:rollback"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/RollBack", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}/{name}:rollback"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_PredictorService_RollBack_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_PredictorService_RollBack_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -857,12 +869,13 @@ func RegisterPredictorServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/DeletePredictor", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/DeletePredictor", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_PredictorService_DeletePredictor_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_PredictorService_DeletePredictor_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -877,12 +890,13 @@ func RegisterPredictorServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/PredictOne", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}/{name}:predictone"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/PredictOne", runtime.WithHTTPPathPattern("/v1/predictors/{namespace}/{name}:predictone"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_PredictorService_PredictOne_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_PredictorService_PredictOne_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)

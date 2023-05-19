@@ -613,12 +613,13 @@ func RegisterDataAppServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ListDataApps", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ListDataApps", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataAppService_ListDataApps_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataAppService_ListDataApps_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -636,12 +637,13 @@ func RegisterDataAppServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/CreateDataApp", runtime.WithHTTPPathPattern("/v1/dataapps"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/CreateDataApp", runtime.WithHTTPPathPattern("/v1/dataapps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataAppService_CreateDataApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataAppService_CreateDataApp_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -659,12 +661,13 @@ func RegisterDataAppServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/GetDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/GetDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataAppService_GetDataApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataAppService_GetDataApp_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -682,12 +685,13 @@ func RegisterDataAppServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/UpdateDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/UpdateDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataAppService_UpdateDataApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataAppService_UpdateDataApp_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -705,12 +709,13 @@ func RegisterDataAppServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/DeleteDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/DeleteDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataAppService_DeleteDataApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataAppService_DeleteDataApp_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -728,12 +733,13 @@ func RegisterDataAppServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/PauseDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}/{name}:pause"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/PauseDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}/{name}:pause"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataAppService_PauseDataApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataAppService_PauseDataApp_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -751,12 +757,13 @@ func RegisterDataAppServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/RunDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}:run"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/RunDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}:run"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataAppService_RunDataApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataAppService_RunDataApp_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -774,12 +781,13 @@ func RegisterDataAppServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ResumeDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}/{name}:resume"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ResumeDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}/{name}:resume"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataAppService_ResumeDataApp_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataAppService_ResumeDataApp_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -836,12 +844,13 @@ func RegisterDataAppServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ListDataApps", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ListDataApps", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataAppService_ListDataApps_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataAppService_ListDataApps_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -856,12 +865,13 @@ func RegisterDataAppServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/CreateDataApp", runtime.WithHTTPPathPattern("/v1/dataapps"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/CreateDataApp", runtime.WithHTTPPathPattern("/v1/dataapps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataAppService_CreateDataApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataAppService_CreateDataApp_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -876,12 +886,13 @@ func RegisterDataAppServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/GetDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/GetDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataAppService_GetDataApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataAppService_GetDataApp_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -896,12 +907,13 @@ func RegisterDataAppServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/UpdateDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/UpdateDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataAppService_UpdateDataApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataAppService_UpdateDataApp_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -916,12 +928,13 @@ func RegisterDataAppServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/DeleteDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/DeleteDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataAppService_DeleteDataApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataAppService_DeleteDataApp_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -936,12 +949,13 @@ func RegisterDataAppServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/PauseDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}/{name}:pause"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/PauseDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}/{name}:pause"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataAppService_PauseDataApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataAppService_PauseDataApp_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -956,12 +970,13 @@ func RegisterDataAppServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/RunDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}:run"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/RunDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}:run"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataAppService_RunDataApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataAppService_RunDataApp_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -976,12 +991,13 @@ func RegisterDataAppServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ResumeDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}/{name}:resume"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ResumeDataApp", runtime.WithHTTPPathPattern("/v1/dataapps/{namespace}/{name}:resume"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataAppService_ResumeDataApp_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataAppService_ResumeDataApp_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)

@@ -110,7 +110,7 @@ install-gen:
 	
 
 .PHONY: generate
-generate: install-gen generate-proto fix-packages generate-go generate-js generate-py generate-crd generate-deepcopy 
+generate: install-gen generate-proto fix-packages generate-go generate-js generate-py generate-deepcopy generate-crd
 
 .PHONY: generate-py-bp
 generate-py-bp:

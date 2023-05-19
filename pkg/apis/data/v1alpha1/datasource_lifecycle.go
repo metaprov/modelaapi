@@ -198,33 +198,15 @@ func (datasource DataSource) IsReady() bool {
 }
 
 func (datasource DataSource) Key() string {
-	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasources/%s-datasource.yaml", datasource.Namespace, *datasource.Spec.VersionName, datasource.Name)
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasources/%s-datasource.yaml", datasource.Namespace, datasource.Spec.VersionName, datasource.Name)
 }
 
 func (datasource DataSource) RootURI() string {
-	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasources/%s", datasource.Namespace, *datasource.Spec.VersionName, datasource.Name)
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasources/%s", datasource.Namespace, datasource.Spec.VersionName, datasource.Name)
 }
 
 func (datasource DataSource) ManifestURI() string {
 	return fmt.Sprintf("%s/%s-datasource.yaml", datasource.RootURI(), datasource.Name)
-}
-
-func (datasource *DataSource) Poplulate() {
-	datasource.ObjectMeta = metav1.ObjectMeta{
-		Name:      "binary-classification",
-		Namespace: "iris-product",
-	}
-	datasource.Spec = DataSourceSpec{
-		VersionName: util.StrPtr("iris"),
-	}
-
-	datasource.Spec.Schema.Columns = make([]Column, 0)
-	datasource.AddColumn("a", catalog.DataTypeNumber, catalog.DataDomainNone, false, false, false)
-	datasource.AddColumn("b", catalog.DataTypeNumber, catalog.DataDomainNone, false, false, false)
-	datasource.AddColumn("c", catalog.DataTypeNumber, catalog.DataDomainNone, false, false, false)
-	datasource.AddColumn("d", catalog.DataTypeNumber, catalog.DataDomainNone, false, false, false)
-	datasource.AddColumn("class", catalog.DataTypeCategorical, catalog.DataDomainNone, false, true, false)
-
 }
 
 func (datasource DataSource) ActiveColumns() (string, error) {

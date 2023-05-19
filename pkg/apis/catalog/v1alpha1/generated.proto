@@ -1083,15 +1083,9 @@ message ResourceSpec {
   // +kubebuilder:validation:Optional
   optional bool custom = 2;
 
-  // Reference to the managed CPU trainer image, used internally
-  optional k8s.io.api.core.v1.ObjectReference cpuImage = 3;
-
-  // Reference to the managed GPU trainer image, used internally
-  optional k8s.io.api.core.v1.ObjectReference gpuImage = 4;
-
   // The custom resource requirements for the workload, which are used if `WorkloadName` is not set
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ResourceRequirements requirements = 5;
+  optional k8s.io.api.core.v1.ResourceRequirements requirements = 3;
 }
 
 message RocAucCurve {

@@ -268,7 +268,7 @@ type PredictorSpec struct {
 	// that exists in the same DataProduct namespace as the resource
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+	VersionName string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// The model class for this pipeline. if was created to serve model class models.
 	// +kubebuilder:validation:Optional
 	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,2,opt,name=modelClassName"`

@@ -129,7 +129,7 @@ service FeatureGroupService {
     }
 
     rpc ResumeFeatureGroup(ResumeFeatureGroupRequest) returns (ResumeFeatureGroupResponse) {
-        option (google.api.http).post = "/v1/featuregroups/{namespace}/{name}:pause";
+        option (google.api.http).post = "/v1/featuregroups/{namespace}/{name}:resume";
     }
 
     rpc IngestNow(IngestFeatureGroupRequest) returns (IngestFeatureGroupResponse) {

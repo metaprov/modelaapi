@@ -20,9 +20,7 @@ func (report *Report) Default() {
 	if report.ObjectMeta.Labels == nil {
 		report.ObjectMeta.Labels = make(map[string]string)
 	}
-	if report.Spec.VersionName != nil {
-		report.ObjectMeta.Labels[catalog.DataProductLabelKey] = *report.Spec.VersionName
-	}
+
 	report.ObjectMeta.Labels[catalog.TenantLabelKey] = report.Spec.LabRef.Namespace
 	report.ObjectMeta.Labels[catalog.LabLabelKey] = report.Spec.LabRef.Name
 }

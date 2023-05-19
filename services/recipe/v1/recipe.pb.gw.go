@@ -559,12 +559,13 @@ func RegisterRecipeServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/ListRecipes", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/ListRecipes", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_RecipeService_ListRecipes_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_RecipeService_ListRecipes_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -582,12 +583,13 @@ func RegisterRecipeServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/CreateRecipe", runtime.WithHTTPPathPattern("/v1/recipes"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/CreateRecipe", runtime.WithHTTPPathPattern("/v1/recipes"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_RecipeService_CreateRecipe_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_RecipeService_CreateRecipe_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -605,12 +607,13 @@ func RegisterRecipeServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/GetRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/GetRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_RecipeService_GetRecipe_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_RecipeService_GetRecipe_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -628,12 +631,13 @@ func RegisterRecipeServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/RunRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}/{name}:run"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/RunRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}/{name}:run"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_RecipeService_RunRecipe_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_RecipeService_RunRecipe_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -651,12 +655,13 @@ func RegisterRecipeServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/ProfileRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}/{name}:profile"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/ProfileRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}/{name}:profile"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_RecipeService_ProfileRecipe_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_RecipeService_ProfileRecipe_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -674,12 +679,13 @@ func RegisterRecipeServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/UpdateRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{recipe.metadata.namespace}/{recipe.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/UpdateRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{recipe.metadata.namespace}/{recipe.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_RecipeService_UpdateRecipe_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_RecipeService_UpdateRecipe_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -697,12 +703,13 @@ func RegisterRecipeServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/DeleteRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/DeleteRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_RecipeService_DeleteRecipe_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_RecipeService_DeleteRecipe_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -759,12 +766,13 @@ func RegisterRecipeServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/ListRecipes", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/ListRecipes", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_RecipeService_ListRecipes_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_RecipeService_ListRecipes_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -779,12 +787,13 @@ func RegisterRecipeServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/CreateRecipe", runtime.WithHTTPPathPattern("/v1/recipes"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/CreateRecipe", runtime.WithHTTPPathPattern("/v1/recipes"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_RecipeService_CreateRecipe_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_RecipeService_CreateRecipe_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -799,12 +808,13 @@ func RegisterRecipeServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/GetRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/GetRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_RecipeService_GetRecipe_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_RecipeService_GetRecipe_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -819,12 +829,13 @@ func RegisterRecipeServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/RunRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}/{name}:run"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/RunRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}/{name}:run"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_RecipeService_RunRecipe_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_RecipeService_RunRecipe_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -839,12 +850,13 @@ func RegisterRecipeServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/ProfileRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}/{name}:profile"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/ProfileRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}/{name}:profile"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_RecipeService_ProfileRecipe_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_RecipeService_ProfileRecipe_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -859,12 +871,13 @@ func RegisterRecipeServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/UpdateRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{recipe.metadata.namespace}/{recipe.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/UpdateRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{recipe.metadata.namespace}/{recipe.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_RecipeService_UpdateRecipe_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_RecipeService_UpdateRecipe_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -879,12 +892,13 @@ func RegisterRecipeServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/DeleteRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/DeleteRecipe", runtime.WithHTTPPathPattern("/v1/recipes/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_RecipeService_DeleteRecipe_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_RecipeService_DeleteRecipe_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)

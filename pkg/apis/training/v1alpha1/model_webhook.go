@@ -77,8 +77,6 @@ func (model *Model) Default() {
 		model.Spec.Forecasted = util.BoolPtr(false)
 	}
 
-	// set labels
-	// set study labeles
 	if model.ObjectMeta.Labels == nil {
 		model.ObjectMeta.Labels = make(map[string]string)
 	}
@@ -87,9 +85,7 @@ func (model *Model) Default() {
 		model.ObjectMeta.Labels["modela.ai/modelversion"] = *model.Spec.ModelVersion
 	}
 
-	if model.Spec.StudyName != nil {
-		model.ObjectMeta.Labels[catalog.StudyLabelKey] = *model.Spec.StudyName
-	}
+	model.ObjectMeta.Labels[catalog.StudyLabelKey] = model.Spec.StudyName
 
 	if model.Spec.Estimator != nil {
 		model.ObjectMeta.Labels[catalog.AlgorithmLabelKey] = model.Spec.Estimator.AlgorithmName

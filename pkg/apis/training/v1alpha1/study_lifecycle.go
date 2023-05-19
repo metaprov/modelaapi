@@ -161,7 +161,7 @@ func (r Study) IsPartitioned() bool {
 }
 
 func (r Study) IsForecast() bool {
-	return *r.Spec.Task == catalog.Forecasting
+	return r.Spec.Task == catalog.Forecasting
 }
 
 // Compute the current phase based on the condition
@@ -170,7 +170,7 @@ func (study Study) Phase() StudyPhase {
 }
 
 func (study Study) RootURI() string {
-	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s", study.Namespace, *study.Spec.VersionName, study.Name)
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s", study.Namespace, study.Spec.VersionName, study.Name)
 }
 
 func (study Study) ManifestURI() string {
@@ -205,15 +205,15 @@ func (study Study) IsInCond(ct string) bool {
 }
 
 func (study Study) SelectSplitMethod() {
-	if *study.Spec.Task == catalog.Forecasting || *study.Spec.Task == catalog.PartitionForecast {
+	if study.Spec.Task == catalog.Forecasting || study.Spec.Task == catalog.PartitionForecast {
 		v := catalog.DataSplitMethodTime
 		study.Spec.TrainingTemplate.Split.Method = &v
 	}
-	if *study.Spec.Task == catalog.Regression {
+	if study.Spec.Task == catalog.Regression {
 		v := catalog.DataSplitMethodRandom
 		study.Spec.TrainingTemplate.Split.Method = &v
 	}
-	if *study.Spec.Task == catalog.BinaryClassification || *study.Spec.Task == catalog.MultiClassification {
+	if study.Spec.Task == catalog.BinaryClassification || study.Spec.Task == catalog.MultiClassification {
 		v := catalog.DataSplitMethodRandomStratified
 		study.Spec.TrainingTemplate.Split.Method = &v
 	}
@@ -257,22 +257,22 @@ func (study *Study) AutoSplit(rows int32) {
 	}
 
 	// Set the split method based on the task
-	if *study.Spec.Task == catalog.Regression {
+	if study.Spec.Task == catalog.Regression {
 		method := catalog.DataSplitMethodRandom
 		study.Spec.TrainingTemplate.Split.Method = &method
 	}
 
-	if *study.Spec.Task == catalog.BinaryClassification {
+	if study.Spec.Task == catalog.BinaryClassification {
 		method := catalog.DataSplitMethodRandomStratified
 		study.Spec.TrainingTemplate.Split.Method = &method
 	}
 
-	if *study.Spec.Task == catalog.MultiClassification {
+	if study.Spec.Task == catalog.MultiClassification {
 		method := catalog.DataSplitMethodRandomStratified
 		study.Spec.TrainingTemplate.Split.Method = &method
 	}
 
-	if *study.Spec.Task == catalog.Forecasting || *study.Spec.Task == catalog.PartitionForecast {
+	if study.Spec.Task == catalog.Forecasting || study.Spec.Task == catalog.PartitionForecast {
 		method := catalog.DataSplitMethodTime
 		study.Spec.TrainingTemplate.Split.Method = &method
 	}
@@ -1049,7 +1049,7 @@ func (study Study) IsFailed() bool {
 }
 
 func (study Study) IsGroup() bool {
-	return *study.Spec.Task == catalog.PartitionForecast
+	return study.Spec.Task == catalog.PartitionForecast
 }
 
 func (study *Study) RefreshProgress() {
@@ -1097,7 +1097,7 @@ func (study Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *
 			Owner:        study.Spec.Owner,
 			Fields: map[string]string{
 				"Entity":     *study.Spec.DatasetName,
-				"Task":       string(*study.Spec.Task),
+				"Task":       string(study.Spec.Task),
 				"Phase":      string(study.Status.Phase),
 				"Start Time": study.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
@@ -1130,7 +1130,7 @@ func (study Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *strin
 			Owner:        study.Spec.Owner,
 			Fields: map[string]string{
 				"Entity":     *study.Spec.DatasetName,
-				"Task":       string(*study.Spec.Task),
+				"Task":       string(study.Spec.Task),
 				"Phase":      string(study.Status.Phase),
 				"Start Time": study.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
@@ -1142,9 +1142,10 @@ func (study Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *strin
 	return result
 }
 
-// /////////////////////////////////////////////////
+///////////////////////////////////////////////////
 // Mark study failed due to model failure
-// ////////////////////////////////////////////////
+//////////////////////////////////////////////////
+
 func (study *Study) MarkModelFailed(model *Model, err error) {
 	study.Status.Phase = StudyPhaseFailed
 	msg := fmt.Sprintf("model %s failed with messasge %s", model.Name, err.Error())

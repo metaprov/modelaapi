@@ -1383,11 +1383,6 @@ export class ModelaSystemSpec extends jspb.Message {
   hasVaultmountpath(): boolean;
   clearVaultmountpath(): ModelaSystemSpec;
 
-  getTemplate(): k8s_io_api_core_v1_generated_pb.PodTemplateSpec | undefined;
-  setTemplate(value?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec): ModelaSystemSpec;
-  hasTemplate(): boolean;
-  clearTemplate(): ModelaSystemSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelaSystemSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelaSystemSpec): ModelaSystemSpec.AsObject;
@@ -1402,7 +1397,6 @@ export namespace ModelaSystemSpec {
     imagepullpolicy?: string,
     vaultaddress?: string,
     vaultmountpath?: string,
-    template?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
   }
 }
 

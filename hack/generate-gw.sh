@@ -55,7 +55,7 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
 protoc \
         -I${PROJECT_ROOT}/../../.. \
         -I${PROJECT_ROOT} \
-        -I/tmp/includes \
+        -I${PROJECT_ROOT}/vendor \
         -I${GOOGLE_PROTO_API_PATH} \
         -I$GOPATH/src \
         -I${GOGO_PROTOBUF_PATH} \

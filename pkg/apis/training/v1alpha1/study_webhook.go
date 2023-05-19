@@ -72,7 +72,7 @@ var _ webhook.Defaulter = &Study{}
 func (study *Study) Default() {
 
 	if study.Spec.FESearch.Estimator == nil || string(*study.Spec.FESearch.Estimator) == "" {
-		estimator := study.DefaultFESearchEstimator(*study.Spec.Task)
+		estimator := study.DefaultFESearchEstimator(study.Spec.Task)
 		study.Spec.FESearch.Estimator = &estimator
 	}
 
@@ -88,7 +88,7 @@ func (study *Study) Default() {
 
 	if study.Spec.Baseline.Enabled != nil && *study.Spec.Baseline.Enabled {
 		if len(study.Spec.Baseline.Baselines) == 0 {
-			study.Spec.Baseline.Baselines = append(study.Spec.Baseline.Baselines, study.DefaultBaselineEstimator(*study.Spec.Task))
+			study.Spec.Baseline.Baselines = append(study.Spec.Baseline.Baselines, study.DefaultBaselineEstimator(study.Spec.Task))
 		}
 	}
 
@@ -133,7 +133,7 @@ func (study *Study) Default() {
 	}
 	study.ObjectMeta.Labels[catalog.TenantLabelKey] = study.Spec.LabRef.Namespace
 	study.ObjectMeta.Labels[catalog.LabLabelKey] = study.Spec.LabRef.Name
-	study.ObjectMeta.Labels[catalog.DataProductLabelKey] = *study.Spec.VersionName
+
 	if study.Spec.ModelClassName != nil {
 		study.ObjectMeta.Labels[catalog.ModelClassLabelKey] = *study.Spec.ModelClassName
 	}
@@ -214,7 +214,7 @@ func (study Study) validateDataset(fldPath *field.Path) field.ErrorList {
 func (study Study) validateTask(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	// Task must be defined.
-	if study.Spec.Task == nil {
+	if study.Spec.Task == "" {
 		err := errors.Errorf("task must be defined")
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,
@@ -223,28 +223,28 @@ func (study Study) validateTask(fldPath *field.Path) field.ErrorList {
 		return allErrs
 	}
 
-	if *study.Spec.Task == catalog.Regression && !study.Spec.Search.Objective.Metric.IsRegression() {
+	if study.Spec.Task == catalog.Regression && !study.Spec.Search.Objective.Metric.IsRegression() {
 		err := errors.Errorf("objective %v is not a regression metric", study.Spec.Search.Objective.Metric)
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,
 			study.Spec.Task,
 			err.Error()))
 	}
-	if *study.Spec.Task == catalog.BinaryClassification && !study.Spec.Search.Objective.Metric.IsClassification() {
+	if study.Spec.Task == catalog.BinaryClassification && !study.Spec.Search.Objective.Metric.IsClassification() {
 		err := errors.Errorf("objective %v is not a binary classification metric", study.Spec.Search.Objective.Metric)
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,
 			study.Spec.Task,
 			err.Error()))
 	}
-	if *study.Spec.Task == catalog.MultiClassification && !study.Spec.Search.Objective.Metric.IsMultiClass() {
+	if study.Spec.Task == catalog.MultiClassification && !study.Spec.Search.Objective.Metric.IsMultiClass() {
 		err := errors.Errorf("objective %v is not a multi classification metric", study.Spec.Search.Objective.Metric)
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,
 			study.Spec.Task,
 			err.Error()))
 	}
-	if *study.Spec.Task == catalog.Clustering && !study.Spec.Search.Objective.Metric.IsClustering() {
+	if study.Spec.Task == catalog.Clustering && !study.Spec.Search.Objective.Metric.IsClustering() {
 		err := errors.Errorf("objective %v is not a clustering metric", study.Spec.Search.Objective.Metric)
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,
@@ -252,7 +252,7 @@ func (study Study) validateTask(fldPath *field.Path) field.ErrorList {
 			err.Error()))
 	}
 
-	if (*study.Spec.Task == catalog.Forecasting || *study.Spec.Task == catalog.PartitionForecast) && !study.Spec.Search.Objective.Metric.IsForecast() {
+	if (study.Spec.Task == catalog.Forecasting || study.Spec.Task == catalog.PartitionForecast) && !study.Spec.Search.Objective.Metric.IsForecast() {
 		err := errors.Errorf("objective %v is not a forecasting metric", study.Spec.Search.Objective.Metric)
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,

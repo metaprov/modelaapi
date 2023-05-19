@@ -869,6 +869,10 @@ func local_request_DatasetService_ValidateDataset_0(ctx context.Context, marshal
 
 }
 
+var (
+	filter_DatasetService_DownloadDataset_0 = &utilities.DoubleArray{Encoding: map[string]int{"namespace": 0, "name": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+)
+
 func request_DatasetService_DownloadDataset_0(ctx context.Context, marshaler runtime.Marshaler, client DatasetServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq DownloadDatasetRequest
 	var metadata runtime.ServerMetadata
@@ -898,6 +902,13 @@ func request_DatasetService_DownloadDataset_0(ctx context.Context, marshaler run
 	protoReq.Name, err = runtime.String(val)
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
+	}
+
+	if err := req.ParseForm(); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DatasetService_DownloadDataset_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	msg, err := client.DownloadDataset(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -934,6 +945,13 @@ func local_request_DatasetService_DownloadDataset_0(ctx context.Context, marshal
 	protoReq.Name, err = runtime.String(val)
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "name", err)
+	}
+
+	if err := req.ParseForm(); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DatasetService_DownloadDataset_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	msg, err := server.DownloadDataset(ctx, &protoReq)
@@ -1277,12 +1295,13 @@ func RegisterDatasetServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ListDatasets", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ListDatasets", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DatasetService_ListDatasets_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DatasetService_ListDatasets_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1300,12 +1319,13 @@ func RegisterDatasetServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDataset", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDataset", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DatasetService_GetDataset_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DatasetService_GetDataset_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1323,12 +1343,13 @@ func RegisterDatasetServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDataset", runtime.WithHTTPPathPattern("/v1/datasets"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDataset", runtime.WithHTTPPathPattern("/v1/datasets"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DatasetService_CreateDataset_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DatasetService_CreateDataset_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1346,12 +1367,13 @@ func RegisterDatasetServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/UpdateDataset", runtime.WithHTTPPathPattern("/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/UpdateDataset", runtime.WithHTTPPathPattern("/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DatasetService_UpdateDataset_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DatasetService_UpdateDataset_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1369,12 +1391,13 @@ func RegisterDatasetServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/DeleteDataset", runtime.WithHTTPPathPattern("/v1/datasets/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/DeleteDataset", runtime.WithHTTPPathPattern("/v1/datasets/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DatasetService_DeleteDataset_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DatasetService_DeleteDataset_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1392,12 +1415,13 @@ func RegisterDatasetServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CompareDatasets", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{names}:compare"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CompareDatasets", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{names}:compare"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DatasetService_CompareDatasets_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DatasetService_CompareDatasets_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1415,12 +1439,13 @@ func RegisterDatasetServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatasetProfile", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}:profile"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatasetProfile", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}:profile"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DatasetService_GetDatasetProfile_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DatasetService_GetDatasetProfile_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1438,12 +1463,13 @@ func RegisterDatasetServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDatasetProfile", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}:profile"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDatasetProfile", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}:profile"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DatasetService_CreateDatasetProfile_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DatasetService_CreateDatasetProfile_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1461,12 +1487,13 @@ func RegisterDatasetServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateColumnProfile", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}/columnplot"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateColumnProfile", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}/columnplot"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DatasetService_CreateColumnProfile_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DatasetService_CreateColumnProfile_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1484,12 +1511,13 @@ func RegisterDatasetServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GenerateDataset", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{names}:generate"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GenerateDataset", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{names}:generate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DatasetService_GenerateDataset_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DatasetService_GenerateDataset_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1507,12 +1535,13 @@ func RegisterDatasetServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ValidateDataset", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{names}:validate"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ValidateDataset", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{names}:validate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DatasetService_ValidateDataset_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DatasetService_ValidateDataset_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1530,12 +1559,13 @@ func RegisterDatasetServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/DownloadDataset", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}:download"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/DownloadDataset", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}:download"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DatasetService_DownloadDataset_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DatasetService_DownloadDataset_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1553,12 +1583,13 @@ func RegisterDatasetServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatabases", runtime.WithHTTPPathPattern("/v1/datasets/{connectionNamespace}/{connectionName}:databases"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatabases", runtime.WithHTTPPathPattern("/v1/datasets/{connectionNamespace}/{connectionName}:databases"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DatasetService_GetDatabases_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DatasetService_GetDatabases_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1576,12 +1607,13 @@ func RegisterDatasetServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetTables", runtime.WithHTTPPathPattern("/v1/datasets/{connectionNamespace}/{connectionName}:tables"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetTables", runtime.WithHTTPPathPattern("/v1/datasets/{connectionNamespace}/{connectionName}:tables"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DatasetService_GetTables_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DatasetService_GetTables_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1599,12 +1631,13 @@ func RegisterDatasetServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ExecuteSql", runtime.WithHTTPPathPattern("/v1/datasets/{connectionNamespace}/{connectionName}:executesql"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ExecuteSql", runtime.WithHTTPPathPattern("/v1/datasets/{connectionNamespace}/{connectionName}:executesql"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DatasetService_ExecuteSql_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DatasetService_ExecuteSql_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1622,12 +1655,13 @@ func RegisterDatasetServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetAnomalies", runtime.WithHTTPPathPattern("/v1/models/{namespace}/{name}:anomalies"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetAnomalies", runtime.WithHTTPPathPattern("/v1/models/{namespace}/{name}:anomalies"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DatasetService_GetAnomalies_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DatasetService_GetAnomalies_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1684,12 +1718,13 @@ func RegisterDatasetServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ListDatasets", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ListDatasets", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DatasetService_ListDatasets_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DatasetService_ListDatasets_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1704,12 +1739,13 @@ func RegisterDatasetServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDataset", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDataset", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DatasetService_GetDataset_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DatasetService_GetDataset_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1724,12 +1760,13 @@ func RegisterDatasetServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDataset", runtime.WithHTTPPathPattern("/v1/datasets"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDataset", runtime.WithHTTPPathPattern("/v1/datasets"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DatasetService_CreateDataset_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DatasetService_CreateDataset_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1744,12 +1781,13 @@ func RegisterDatasetServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/UpdateDataset", runtime.WithHTTPPathPattern("/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/UpdateDataset", runtime.WithHTTPPathPattern("/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DatasetService_UpdateDataset_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DatasetService_UpdateDataset_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1764,12 +1802,13 @@ func RegisterDatasetServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/DeleteDataset", runtime.WithHTTPPathPattern("/v1/datasets/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/DeleteDataset", runtime.WithHTTPPathPattern("/v1/datasets/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DatasetService_DeleteDataset_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DatasetService_DeleteDataset_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1784,12 +1823,13 @@ func RegisterDatasetServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CompareDatasets", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{names}:compare"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CompareDatasets", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{names}:compare"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DatasetService_CompareDatasets_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DatasetService_CompareDatasets_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1804,12 +1844,13 @@ func RegisterDatasetServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatasetProfile", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}:profile"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatasetProfile", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}:profile"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DatasetService_GetDatasetProfile_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DatasetService_GetDatasetProfile_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1824,12 +1865,13 @@ func RegisterDatasetServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDatasetProfile", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}:profile"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDatasetProfile", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}:profile"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DatasetService_CreateDatasetProfile_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DatasetService_CreateDatasetProfile_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1844,12 +1886,13 @@ func RegisterDatasetServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateColumnProfile", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}/columnplot"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateColumnProfile", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}/columnplot"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DatasetService_CreateColumnProfile_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DatasetService_CreateColumnProfile_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1864,12 +1907,13 @@ func RegisterDatasetServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GenerateDataset", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{names}:generate"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GenerateDataset", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{names}:generate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DatasetService_GenerateDataset_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DatasetService_GenerateDataset_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1884,12 +1928,13 @@ func RegisterDatasetServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ValidateDataset", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{names}:validate"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ValidateDataset", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{names}:validate"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DatasetService_ValidateDataset_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DatasetService_ValidateDataset_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1904,12 +1949,13 @@ func RegisterDatasetServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/DownloadDataset", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}:download"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/DownloadDataset", runtime.WithHTTPPathPattern("/v1/datasets/{namespace}/{name}:download"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DatasetService_DownloadDataset_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DatasetService_DownloadDataset_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1924,12 +1970,13 @@ func RegisterDatasetServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatabases", runtime.WithHTTPPathPattern("/v1/datasets/{connectionNamespace}/{connectionName}:databases"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatabases", runtime.WithHTTPPathPattern("/v1/datasets/{connectionNamespace}/{connectionName}:databases"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DatasetService_GetDatabases_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DatasetService_GetDatabases_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1944,12 +1991,13 @@ func RegisterDatasetServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetTables", runtime.WithHTTPPathPattern("/v1/datasets/{connectionNamespace}/{connectionName}:tables"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetTables", runtime.WithHTTPPathPattern("/v1/datasets/{connectionNamespace}/{connectionName}:tables"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DatasetService_GetTables_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DatasetService_GetTables_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1964,12 +2012,13 @@ func RegisterDatasetServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ExecuteSql", runtime.WithHTTPPathPattern("/v1/datasets/{connectionNamespace}/{connectionName}:executesql"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ExecuteSql", runtime.WithHTTPPathPattern("/v1/datasets/{connectionNamespace}/{connectionName}:executesql"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DatasetService_ExecuteSql_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DatasetService_ExecuteSql_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1984,12 +2033,13 @@ func RegisterDatasetServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetAnomalies", runtime.WithHTTPPathPattern("/v1/models/{namespace}/{name}:anomalies"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetAnomalies", runtime.WithHTTPPathPattern("/v1/models/{namespace}/{name}:anomalies"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DatasetService_GetAnomalies_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DatasetService_GetAnomalies_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)

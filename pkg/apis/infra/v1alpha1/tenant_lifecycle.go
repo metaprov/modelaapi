@@ -37,6 +37,10 @@ func (tenant Tenant) ManifestURI() string {
 	return fmt.Sprintf("%s/%s-tenant.yaml", tenant.RootURI(), tenant.Name)
 }
 
+func (tenant Tenant) PrefixLiveURI() string {
+	return fmt.Sprintf("%s/%s-tenant.yaml", tenant.RootURI(), tenant.Name)
+}
+
 // Merge or update condition
 func (tenant *Tenant) CreateOrUpdateCond(cond metav1.Condition) {
 	i := tenant.GetCondIdx(cond.Type)

@@ -95,7 +95,7 @@ service LicenseService {
 
     rpc CreateLicenseFromKey(CreateLicenseFromKeyRequest) returns (CreateLicenseResponse) {
         option (google.api.http) = {
-			post: "/v1/licenses"
+			post: "/v1/licenses:key"
 			body: "*"
 		};
     }

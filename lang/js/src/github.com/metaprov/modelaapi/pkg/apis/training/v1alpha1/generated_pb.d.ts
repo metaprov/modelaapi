@@ -2258,15 +2258,10 @@ export class ModelClassSpec extends jspb.Message {
   hasOwner(): boolean;
   clearOwner(): ModelClassSpec;
 
-  getDataproductversionname(): string;
-  setDataproductversionname(value: string): ModelClassSpec;
-  hasDataproductversionname(): boolean;
-  clearDataproductversionname(): ModelClassSpec;
-
-  getVersion(): string;
-  setVersion(value: string): ModelClassSpec;
-  hasVersion(): boolean;
-  clearVersion(): ModelClassSpec;
+  getVersionname(): string;
+  setVersionname(value: string): ModelClassSpec;
+  hasVersionname(): boolean;
+  clearVersionname(): ModelClassSpec;
 
   getDescription(): string;
   setDescription(value: string): ModelClassSpec;
@@ -2333,6 +2328,11 @@ export class ModelClassSpec extends jspb.Message {
   hasRegistered(): boolean;
   clearRegistered(): ModelClassSpec;
 
+  getArtifactbucketname(): string;
+  setArtifactbucketname(value: string): ModelClassSpec;
+  hasArtifactbucketname(): boolean;
+  clearArtifactbucketname(): ModelClassSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelClassSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelClassSpec): ModelClassSpec.AsObject;
@@ -2344,8 +2344,7 @@ export class ModelClassSpec extends jspb.Message {
 export namespace ModelClassSpec {
   export type AsObject = {
     owner?: string,
-    dataproductversionname?: string,
-    version?: string,
+    versionname?: string,
     description?: string,
     task?: string,
     subtask?: string,
@@ -2359,6 +2358,7 @@ export namespace ModelClassSpec {
     fast?: boolean,
     paused?: boolean,
     registered?: boolean,
+    artifactbucketname?: string,
   }
 }
 
@@ -4060,11 +4060,6 @@ export class ReportSpec extends jspb.Message {
   hasTimeout(): boolean;
   clearTimeout(): ReportSpec;
 
-  getCustom(): CustomReportSpec | undefined;
-  setCustom(value?: CustomReportSpec): ReportSpec;
-  hasCustom(): boolean;
-  clearCustom(): ReportSpec;
-
   getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ReportSpec;
   hasLabref(): boolean;
@@ -4104,7 +4099,6 @@ export namespace ReportSpec {
     owner?: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     timeout?: number,
-    custom?: CustomReportSpec.AsObject,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     keyList: Array<string>,
     modelclassname?: string,

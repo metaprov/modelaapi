@@ -17,18 +17,11 @@ import (
 )
 
 func (run *ModelClassRun) Default() {
-	run.Status.Folder = "modela/live/tenants/default-tenant/dataproducts/" + run.Namespace +
-		"/dataproductversions/" +
-		*run.Spec.VersionName +
-		"/modelclasses/" + *run.Spec.ModelClassName + "/modelclassruns/" + run.Name
-
 	if run.ObjectMeta.Labels == nil {
 		run.ObjectMeta.Labels = make(map[string]string)
 	}
-	if run.Spec.VersionName != nil {
-		run.ObjectMeta.Labels[catalog.DataProductVersionLabelKey] = *run.Spec.VersionName
-	}
 
+	run.ObjectMeta.Labels[catalog.DataProductVersionLabelKey] = run.Spec.VersionName
 }
 
 // validation

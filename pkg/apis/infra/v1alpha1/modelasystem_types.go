@@ -60,10 +60,6 @@ type ModelaSystemSpec struct {
 	// VaultMountPath specifies the mount path where a KVv2 secret engine is mounted
 	// +kubebuilder:default:="modela/secrets"
 	VaultMountPath *string `json:"vaultMountPath" protobuf:"varint,4,opt,name=vaultMountPath"`
-
-	// Template defines the Pod template for Jobs created by Modela
-	// +kubebuilder:validation:Optional
-	Template v1.PodTemplateSpec `json:"template" protobuf:"varint,5,opt,name=template"`
 }
 
 // ModelaSystemStatus is the observed state of a ModelaSystem

@@ -66,7 +66,7 @@ type ModelClassRunSpec struct {
 	// VersionName is the data product version of the run
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+	VersionName string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// Description is the user provided description
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional

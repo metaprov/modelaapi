@@ -415,7 +415,8 @@ spec:
                 type: object
               versionName:
                 default: ""
-                description: The product version for the feature.
+                description: VersionName references the name of a Data Product Version
+                  that describes the version of the resource.
                 type: string
             type: object
           status:

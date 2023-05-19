@@ -52,7 +52,7 @@ type NotifierList struct {
 // NotifierSpec defines the desired state of a Notifier
 type NotifierSpec struct {
 	// Indicates if the Notifier will send notifications
-	// +kubebuilder:default:= true
+	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The reference to the tenant which the object exists under
@@ -90,7 +90,7 @@ type NotifierStatus struct {
 // NotificationChannelSpec describes a single Connection to an external messaging system and a destination channel within the system
 type NotificationChannelSpec struct {
 	// Indicates if the channel is enabled to send forwarded Alerts
-	// +kubebuilder:default:= true
+	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The name of the Connection resource which exists in the same tenant as the parent Notifier
@@ -111,8 +111,8 @@ type NotificationChannelSpec struct {
 	// This channel end time
 	// +kubebuilder:validation:Optional
 	To *metav1.Time `json:"to,omitempty" protobuf:"bytes,6,opt,name=to"`
-	// The destination channel that exists in the external system that `ConnectionName` references. For example, a Slack
-	// channel name, a Discord channel ID, or an e-mail address
+	// The destination channel that exists in the external system that ConnectionName references.
+	// For example, a Slack channel name, a Discord channel ID, or an e-mail address
 	Destination string `json:"destination,omitempty" protobuf:"bytes,7,opt,name=destination"`
 }
 

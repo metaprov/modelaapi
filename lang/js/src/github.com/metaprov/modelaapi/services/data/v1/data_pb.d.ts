@@ -914,88 +914,20 @@ export class RunTestSuiteRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): RunTestSuiteRequest;
 
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): RunTestSuiteRequest;
-
-  getSuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setSuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): RunTestSuiteRequest;
-  hasSuite(): boolean;
-  clearSuite(): RunTestSuiteRequest;
-
-  getSutdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setSutdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): RunTestSuiteRequest;
-  hasSutdataset(): boolean;
-  clearSutdataset(): RunTestSuiteRequest;
-
-  getSutstudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setSutstudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): RunTestSuiteRequest;
-  hasSutstudy(): boolean;
-  clearSutstudy(): RunTestSuiteRequest;
-
-  getSutmodel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setSutmodel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): RunTestSuiteRequest;
-  hasSutmodel(): boolean;
-  clearSutmodel(): RunTestSuiteRequest;
-
-  getSutrecipe(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
-  setSutrecipe(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): RunTestSuiteRequest;
-  hasSutrecipe(): boolean;
-  clearSutrecipe(): RunTestSuiteRequest;
-
-  getSuthistogram(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
-  setSuthistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): RunTestSuiteRequest;
-  hasSuthistogram(): boolean;
-  clearSuthistogram(): RunTestSuiteRequest;
-
-  getSutpredictor(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
-  setSutpredictor(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): RunTestSuiteRequest;
-  hasSutpredictor(): boolean;
-  clearSutpredictor(): RunTestSuiteRequest;
-
-  getRefdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setRefdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): RunTestSuiteRequest;
-  hasRefdataset(): boolean;
-  clearRefdataset(): RunTestSuiteRequest;
-
-  getRefstudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setRefstudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): RunTestSuiteRequest;
-  hasRefstudy(): boolean;
-  clearRefstudy(): RunTestSuiteRequest;
-
-  getRefmodel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setRefmodel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): RunTestSuiteRequest;
-  hasRefmodel(): boolean;
-  clearRefmodel(): RunTestSuiteRequest;
-
-  getRefrecipe(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
-  setRefrecipe(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): RunTestSuiteRequest;
-  hasRefrecipe(): boolean;
-  clearRefrecipe(): RunTestSuiteRequest;
+  getHistogram(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
+  setHistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): RunTestSuiteRequest;
+  hasHistogram(): boolean;
+  clearHistogram(): RunTestSuiteRequest;
 
   getRefhistogram(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
   setRefhistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): RunTestSuiteRequest;
   hasRefhistogram(): boolean;
   clearRefhistogram(): RunTestSuiteRequest;
 
-  getRefpredictor(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
-  setRefpredictor(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): RunTestSuiteRequest;
-  hasRefpredictor(): boolean;
-  clearRefpredictor(): RunTestSuiteRequest;
-
-  getGroup(): boolean;
-  setGroup(value: boolean): RunTestSuiteRequest;
-
-  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): RunTestSuiteRequest;
-  hasDbconnection(): boolean;
-  clearDbconnection(): RunTestSuiteRequest;
-
-  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearDbsecretMap(): RunTestSuiteRequest;
-
-  getSutOneofCase(): RunTestSuiteRequest.SutOneofCase;
-
-  getSutRefCase(): RunTestSuiteRequest.SutRefCase;
+  getSuite(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setSuite(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): RunTestSuiteRequest;
+  hasSuite(): boolean;
+  clearSuite(): RunTestSuiteRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunTestSuiteRequest.AsObject;
@@ -1015,43 +947,9 @@ export namespace RunTestSuiteRequest {
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
-    suite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    sutdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    sutstudy?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
-    sutmodel?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
-    sutrecipe?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
-    suthistogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
-    sutpredictor?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
-    refdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    refstudy?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
-    refmodel?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
-    refrecipe?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
+    histogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
     refhistogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
-    refpredictor?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
-    group: boolean,
-    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    dbsecretMap: Array<[string, Uint8Array | string]>,
-  }
-
-  export enum SutOneofCase { 
-    SUT_ONEOF_NOT_SET = 0,
-    SUTDATASET = 12,
-    SUTSTUDY = 13,
-    SUTMODEL = 14,
-    SUTRECIPE = 15,
-    SUTHISTOGRAM = 16,
-    SUTPREDICTOR = 17,
-  }
-
-  export enum SutRefCase { 
-    SUT_REF_NOT_SET = 0,
-    REFDATASET = 20,
-    REFSTUDY = 21,
-    REFMODEL = 22,
-    REFRECIPE = 23,
-    REFHISTOGRAM = 24,
-    REFPREDICTOR = 25,
+    suite?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
   }
 }
 
@@ -3602,9 +3500,6 @@ export class CreateMetricsStoreRequest extends jspb.Message {
   hasDbconnection(): boolean;
   clearDbconnection(): CreateMetricsStoreRequest;
 
-  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearDbsecretMap(): CreateMetricsStoreRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateMetricsStoreRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateMetricsStoreRequest): CreateMetricsStoreRequest.AsObject;
@@ -3617,7 +3512,6 @@ export namespace CreateMetricsStoreRequest {
   export type AsObject = {
     tenant: string,
     dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 

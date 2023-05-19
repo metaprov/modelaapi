@@ -153,13 +153,13 @@ type ModelSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// The name of the DataProductVersion which describes the version of the resource
-	// that exists in the same DataProduct namespace as the resource, derived from the parent Study
+	// VersionName references the name of a Data Product Version that describes the version of the resource.
+	// This field is derived from the Study that created the Model
 	// +kubebuilder:validation:Required
 	// +kubebuilder:default:="latest"
 	// +kubebuilder:validation:MaxLength=63
 	// +required
-	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
+	VersionName string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// The user-assigned version of the Model, derived from the parent Study
 	// +kubebuilder:default:=""
 	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,4,opt,name=modelVersion"`
@@ -167,8 +167,8 @@ type ModelSpec struct {
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
 	// +required
-	StudyName *string `json:"studyName,omitempty" protobuf:"bytes,5,opt,name=studyName"`
-	// The name of the Entity resource which the Model is being trained with
+	StudyName string `json:"studyName,omitempty" protobuf:"bytes,5,opt,name=studyName"`
+	// The name of the Dataset resource which the Model is being trained with
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
 	// +required
@@ -176,7 +176,7 @@ type ModelSpec struct {
 	// The machine learning task type of the Model (i.e. regression, classification), derived from the parent Study
 	// +kubebuilder:validation:Required
 	// +required
-	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,7,opt,name=task"`
+	Task catalog.MLTask `json:"task,omitempty" protobuf:"bytes,7,opt,name=task"`
 	// The sub task
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
@@ -300,7 +300,7 @@ type ModelSpec struct {
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,43,opt,name=activeDeadlineSeconds"`
-	// ModelType is the type of model for this estimator
+	// EstimatorType is the type of estimator for this Model
 	// +kubebuilder:default:=classical
 	// +kubebuilder:validation:Optional
 	EstimatorType *catalog.ModelType `json:"estimatorType,omitempty" protobuf:"bytes,44,opt,name=estimatorType"`
@@ -894,7 +894,7 @@ type DataSplitSpec struct {
 // TrainingSpec specifies the configuration of a model training workload
 type TrainingSpec struct {
 	// The reference to the Lab under which the model training Job will be created
-	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,1,opt,name=labRef"`
+	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,1,opt,name=labRef"`
 	// The priority of the Kubernetes Job created by the Model (medium, by default)
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="medium"

@@ -68,8 +68,8 @@ func NewModel(
 	result.ObjectMeta.Namespace = ns
 
 	result.Default()
-	result.Spec.StudyName = &study
-	result.Spec.Task = &task
+	result.Spec.StudyName = study
+	result.Spec.Task = task
 	result.ObjectMeta.Labels = map[string]string{
 		"study":      study,
 		"datasource": schema,
@@ -79,19 +79,21 @@ func NewModel(
 
 func (model Model) DefaultObjective() catalog.ObjectiveSpec {
 	result := catalog.ObjectiveSpec{}
-	if *model.Spec.Task == catalog.BinaryClassification {
+	if model.Spec.Task == catalog.BinaryClassification {
 		return catalog.ObjectiveSpec{
 			Metric: catalog.RocAuc,
 			Goal:   catalog.MaximizeGoalType,
 		}
 	}
-	if *model.Spec.Task == catalog.Regression {
+
+	if model.Spec.Task == catalog.Regression {
 		return catalog.ObjectiveSpec{
 			Metric: catalog.RMSE,
 			Goal:   catalog.MinimizeGoalType,
 		}
 	}
-	if *model.Spec.Task == catalog.Forecasting || *model.Spec.Task == catalog.PartitionForecast {
+
+	if model.Spec.Task == catalog.Forecasting || model.Spec.Task == catalog.PartitionForecast {
 		return catalog.ObjectiveSpec{
 			Metric: catalog.MAPE,
 			Goal:   catalog.MinimizeGoalType,
@@ -118,7 +120,7 @@ func (model Model) IsEnsemble() bool {
 }
 
 func (model Model) ReportType() ReportType {
-	switch *model.Spec.Task {
+	switch model.Spec.Task {
 	case catalog.BinaryClassification:
 		return BinaryClassificationModelReport
 	case catalog.MultiClassification:
@@ -152,8 +154,8 @@ func (model *Model) RemoveFinalizer() {
 func (model Model) RootURI() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s",
 		model.Namespace,
-		*model.Spec.VersionName,
-		*model.Spec.StudyName,
+		model.Spec.VersionName,
+		model.Spec.StudyName,
 		model.Name)
 }
 
@@ -1165,7 +1167,7 @@ func (model Model) IsArchived() bool {
 func (model *Model) InitModelFromStudy(study *Study) {
 	model.Namespace = study.Namespace
 	model.Spec.Training = *study.Spec.TrainingTemplate.DeepCopy()
-	model.Spec.StudyName = &study.Name
+	model.Spec.StudyName = study.Name
 	model.Spec.VersionName = study.Spec.VersionName
 	model.Spec.DatasetName = study.Spec.DatasetName
 	model.Spec.ModelClassName = study.Spec.ModelClassName
@@ -1201,7 +1203,7 @@ func (model Model) OpName() string {
 }
 
 func (model Model) IsGroup() bool {
-	return *model.Spec.Task == catalog.PartitionForecast
+	return model.Spec.Task == catalog.PartitionForecast
 }
 
 ////////////////////////////////
@@ -1226,6 +1228,7 @@ func (model Model) IsTest() bool {
 
 ////////////////////////////////////////////////////////////
 // Model Alerts
+////////////////////////////////////////////////////////////
 
 func (model Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
@@ -1248,8 +1251,8 @@ func (model Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *
 			Owner:        model.Spec.Owner,
 			Fields: map[string]string{
 				"Entity":     *model.Spec.DatasetName,
-				"Study":      *model.Spec.StudyName,
-				"Task":       string(*model.Spec.Task),
+				"Study":      model.Spec.StudyName,
+				"Task":       string(model.Spec.Task),
 				"Objective":  string(model.Spec.Objective.Metric),
 				"Algorithm":  model.Spec.Estimator.AlgorithmName,
 				"Phase":      string(model.Status.Phase),
@@ -1286,8 +1289,8 @@ func (model Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *strin
 			Owner:        model.Spec.Owner,
 			Fields: map[string]string{
 				"Entity":     *model.Spec.DatasetName,
-				"Study":      *model.Spec.StudyName,
-				"Task":       string(*model.Spec.Task),
+				"Study":      model.Spec.StudyName,
+				"Task":       string(model.Spec.Task),
 				"Objective":  string(model.Spec.Objective.Metric),
 				"Algorithm":  model.Spec.Estimator.AlgorithmName,
 				"Phase":      string(model.Status.Phase),
@@ -1296,9 +1299,11 @@ func (model Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *strin
 			},
 		},
 	}
+
 	if model.Status.CompletedAt != nil {
 		result.Spec.Fields["Completion Time"] = model.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
+
 	return result
 }
 

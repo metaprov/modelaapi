@@ -64,12 +64,11 @@ type PredictionList struct {
 
 // PredictionSpec represent the desired state of Prediction
 type PredictionSpec struct {
-	// The name of the DataProductVersion which describes the version of the resource
-	// that exists in the same DataProduct namespace as the resource
+	// VersionName references the name of a Data Product Version that describes the version of the resource
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
-	// The model class for this pipeline
+	VersionName string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+	// ModelClassName referencesa the name of the Model Class that created the resource, if applicable
 	// +kubebuilder:validation:Optional
 	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,2,opt,name=modelClassName"`
 	// PredictorRef is the name of the Predictor resource that will be used to evaluate predictions for the

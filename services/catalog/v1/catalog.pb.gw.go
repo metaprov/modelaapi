@@ -889,12 +889,13 @@ func RegisterCatalogServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListAlgorithm", runtime.WithHTTPPathPattern("/v1/algorithms"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListAlgorithm", runtime.WithHTTPPathPattern("/v1/algorithms"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CatalogService_ListAlgorithm_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CatalogService_ListAlgorithm_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -912,12 +913,13 @@ func RegisterCatalogServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetAlgorithm", runtime.WithHTTPPathPattern("/v1/algorithms/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetAlgorithm", runtime.WithHTTPPathPattern("/v1/algorithms/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CatalogService_GetAlgorithm_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CatalogService_GetAlgorithm_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -935,12 +937,13 @@ func RegisterCatalogServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListManagedImages", runtime.WithHTTPPathPattern("/v1/managedimages"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListManagedImages", runtime.WithHTTPPathPattern("/v1/managedimages"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CatalogService_ListManagedImages_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CatalogService_ListManagedImages_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -958,12 +961,13 @@ func RegisterCatalogServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetManagedImage", runtime.WithHTTPPathPattern("/v1/managedimages/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetManagedImage", runtime.WithHTTPPathPattern("/v1/managedimages/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CatalogService_GetManagedImage_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CatalogService_GetManagedImage_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -981,12 +985,13 @@ func RegisterCatalogServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListMLFrameworks", runtime.WithHTTPPathPattern("/v1/mlframeworks"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListMLFrameworks", runtime.WithHTTPPathPattern("/v1/mlframeworks"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CatalogService_ListMLFrameworks_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CatalogService_ListMLFrameworks_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1004,12 +1009,13 @@ func RegisterCatalogServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetMLFramework", runtime.WithHTTPPathPattern("/v1/mlframeworks/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetMLFramework", runtime.WithHTTPPathPattern("/v1/mlframeworks/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CatalogService_GetMLFramework_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CatalogService_GetMLFramework_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1027,12 +1033,13 @@ func RegisterCatalogServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListClouds", runtime.WithHTTPPathPattern("/v1/clouds"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListClouds", runtime.WithHTTPPathPattern("/v1/clouds"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CatalogService_ListClouds_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CatalogService_ListClouds_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1050,12 +1057,13 @@ func RegisterCatalogServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetCloud", runtime.WithHTTPPathPattern("/v1/clouds/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetCloud", runtime.WithHTTPPathPattern("/v1/clouds/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CatalogService_GetCloud_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CatalogService_GetCloud_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1073,12 +1081,13 @@ func RegisterCatalogServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListWorkloadClasses", runtime.WithHTTPPathPattern("/v1/workloadclasses"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListWorkloadClasses", runtime.WithHTTPPathPattern("/v1/workloadclasses"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CatalogService_ListWorkloadClasses_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CatalogService_ListWorkloadClasses_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1096,12 +1105,13 @@ func RegisterCatalogServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetWorkloadClass", runtime.WithHTTPPathPattern("/v1/workloadclasses/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetWorkloadClass", runtime.WithHTTPPathPattern("/v1/workloadclasses/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CatalogService_GetWorkloadClass_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CatalogService_GetWorkloadClass_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1119,12 +1129,13 @@ func RegisterCatalogServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListPublicDataset", runtime.WithHTTPPathPattern("/v1/publicdatasets"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListPublicDataset", runtime.WithHTTPPathPattern("/v1/publicdatasets"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CatalogService_ListPublicDataset_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CatalogService_ListPublicDataset_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1142,12 +1153,13 @@ func RegisterCatalogServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetPublicDataset", runtime.WithHTTPPathPattern("/v1/publicdatasets/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetPublicDataset", runtime.WithHTTPPathPattern("/v1/publicdatasets/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CatalogService_GetPublicDataset_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CatalogService_GetPublicDataset_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1165,12 +1177,13 @@ func RegisterCatalogServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/DownloadPublicDataset", runtime.WithHTTPPathPattern("/v1/publicdatasets/{name}:download"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/DownloadPublicDataset", runtime.WithHTTPPathPattern("/v1/publicdatasets/{name}:download"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CatalogService_DownloadPublicDataset_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CatalogService_DownloadPublicDataset_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1188,12 +1201,13 @@ func RegisterCatalogServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/PreviewPublicDataset", runtime.WithHTTPPathPattern("/v1/publicdatasets/{name}:preview"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/PreviewPublicDataset", runtime.WithHTTPPathPattern("/v1/publicdatasets/{name}:preview"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CatalogService_PreviewPublicDataset_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CatalogService_PreviewPublicDataset_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1211,12 +1225,13 @@ func RegisterCatalogServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ApplyPublicDatasetCR", runtime.WithHTTPPathPattern("/v1/publicdatasets/{name}:apply"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ApplyPublicDatasetCR", runtime.WithHTTPPathPattern("/v1/publicdatasets/{name}:apply"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CatalogService_ApplyPublicDatasetCR_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CatalogService_ApplyPublicDatasetCR_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1273,12 +1288,13 @@ func RegisterCatalogServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListAlgorithm", runtime.WithHTTPPathPattern("/v1/algorithms"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListAlgorithm", runtime.WithHTTPPathPattern("/v1/algorithms"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CatalogService_ListAlgorithm_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CatalogService_ListAlgorithm_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1293,12 +1309,13 @@ func RegisterCatalogServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetAlgorithm", runtime.WithHTTPPathPattern("/v1/algorithms/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetAlgorithm", runtime.WithHTTPPathPattern("/v1/algorithms/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CatalogService_GetAlgorithm_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CatalogService_GetAlgorithm_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1313,12 +1330,13 @@ func RegisterCatalogServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListManagedImages", runtime.WithHTTPPathPattern("/v1/managedimages"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListManagedImages", runtime.WithHTTPPathPattern("/v1/managedimages"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CatalogService_ListManagedImages_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CatalogService_ListManagedImages_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1333,12 +1351,13 @@ func RegisterCatalogServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetManagedImage", runtime.WithHTTPPathPattern("/v1/managedimages/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetManagedImage", runtime.WithHTTPPathPattern("/v1/managedimages/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CatalogService_GetManagedImage_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CatalogService_GetManagedImage_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1353,12 +1372,13 @@ func RegisterCatalogServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListMLFrameworks", runtime.WithHTTPPathPattern("/v1/mlframeworks"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListMLFrameworks", runtime.WithHTTPPathPattern("/v1/mlframeworks"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CatalogService_ListMLFrameworks_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CatalogService_ListMLFrameworks_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1373,12 +1393,13 @@ func RegisterCatalogServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetMLFramework", runtime.WithHTTPPathPattern("/v1/mlframeworks/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetMLFramework", runtime.WithHTTPPathPattern("/v1/mlframeworks/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CatalogService_GetMLFramework_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CatalogService_GetMLFramework_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1393,12 +1414,13 @@ func RegisterCatalogServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListClouds", runtime.WithHTTPPathPattern("/v1/clouds"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListClouds", runtime.WithHTTPPathPattern("/v1/clouds"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CatalogService_ListClouds_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CatalogService_ListClouds_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1413,12 +1435,13 @@ func RegisterCatalogServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetCloud", runtime.WithHTTPPathPattern("/v1/clouds/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetCloud", runtime.WithHTTPPathPattern("/v1/clouds/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CatalogService_GetCloud_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CatalogService_GetCloud_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1433,12 +1456,13 @@ func RegisterCatalogServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListWorkloadClasses", runtime.WithHTTPPathPattern("/v1/workloadclasses"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListWorkloadClasses", runtime.WithHTTPPathPattern("/v1/workloadclasses"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CatalogService_ListWorkloadClasses_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CatalogService_ListWorkloadClasses_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1453,12 +1477,13 @@ func RegisterCatalogServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetWorkloadClass", runtime.WithHTTPPathPattern("/v1/workloadclasses/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetWorkloadClass", runtime.WithHTTPPathPattern("/v1/workloadclasses/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CatalogService_GetWorkloadClass_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CatalogService_GetWorkloadClass_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1473,12 +1498,13 @@ func RegisterCatalogServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListPublicDataset", runtime.WithHTTPPathPattern("/v1/publicdatasets"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListPublicDataset", runtime.WithHTTPPathPattern("/v1/publicdatasets"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CatalogService_ListPublicDataset_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CatalogService_ListPublicDataset_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1493,12 +1519,13 @@ func RegisterCatalogServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetPublicDataset", runtime.WithHTTPPathPattern("/v1/publicdatasets/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetPublicDataset", runtime.WithHTTPPathPattern("/v1/publicdatasets/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CatalogService_GetPublicDataset_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CatalogService_GetPublicDataset_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1513,12 +1540,13 @@ func RegisterCatalogServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/DownloadPublicDataset", runtime.WithHTTPPathPattern("/v1/publicdatasets/{name}:download"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/DownloadPublicDataset", runtime.WithHTTPPathPattern("/v1/publicdatasets/{name}:download"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CatalogService_DownloadPublicDataset_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CatalogService_DownloadPublicDataset_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1533,12 +1561,13 @@ func RegisterCatalogServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/PreviewPublicDataset", runtime.WithHTTPPathPattern("/v1/publicdatasets/{name}:preview"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/PreviewPublicDataset", runtime.WithHTTPPathPattern("/v1/publicdatasets/{name}:preview"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CatalogService_PreviewPublicDataset_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CatalogService_PreviewPublicDataset_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1553,12 +1582,13 @@ func RegisterCatalogServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ApplyPublicDatasetCR", runtime.WithHTTPPathPattern("/v1/publicdatasets/{name}:apply"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ApplyPublicDatasetCR", runtime.WithHTTPPathPattern("/v1/publicdatasets/{name}:apply"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CatalogService_ApplyPublicDatasetCR_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CatalogService_ApplyPublicDatasetCR_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)

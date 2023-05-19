@@ -12,10 +12,10 @@ import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto"
 
 message ListDataSourceRequest {
     string namespace = 1;
-    map<string,string> labels = 2;
-    int32              page_size  = 3;
+    map<string, string> labels = 2;
+    int32              page_size = 3;
     string             page_token = 4;
-    string             order_by   = 5;
+    string             order_by = 5;
 }
 
 message ListDataSourceResponse {
@@ -26,8 +26,8 @@ message ListDataSourceResponse {
 
 message GetDataSourceRequest {
     string namespace = 1;
-    string name      = 2;
-    
+    string name = 2;
+
 }
 
 message GetDataSourceResponse {
@@ -53,7 +53,7 @@ message CreateDataSourceResponse {}
 
 message DeleteDataSourceRequest {
     string namespace = 1;
-    string name      = 2;
+    string name = 2;
 }
 
 message DeleteDataSourceResponse {}
@@ -66,17 +66,16 @@ message InferSchemaRequest {
 
 message InferSchemaResponse {
     repeated github.com.metaprov.modelaapi.services.common.v1.ColumnProfile  columns = 1;
-
 }
 
 message GetTableViewRequest {
     string tenant = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec   format = 2; // contain the csv or table definition
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation         location = 3; // contain the csv or table definition
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec   format = 2;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation      location = 3;
 }
 
 message GetTableViewResponse {
-    github.com.metaprov.modelaapi.services.common.v1.TableView table   =1;
+    github.com.metaprov.modelaapi.services.common.v1.TableView table = 1;
 }
 
 
@@ -89,9 +88,9 @@ service DataSourceService {
 
     rpc CreateDataSource(CreateDataSourceRequest) returns (CreateDataSourceResponse) {
         option (google.api.http) = {
-			post: "/v1/datasources"
-			body: "*"
-		};
+            post: "/v1/datasources"
+            body: "*"
+        };
     }
     rpc GetDataSource(GetDataSourceRequest) returns (GetDataSourceResponse) {
         option (google.api.http).get = "/v1/datasources/{namespace}/{name}";
@@ -99,9 +98,9 @@ service DataSourceService {
 
     rpc UpdateDataSource(UpdateDataSourceRequest) returns (UpdateDataSourceResponse) {
         option (google.api.http) = {
-			put: "/v1/datasources/{datasource.metadata.namespace}/{datasource.metadata.name}"
-			body: "*"
-		};
+            put: "/v1/datasources/{datasource.metadata.namespace}/{datasource.metadata.name}"
+            body: "*"
+        };
     }
 
     rpc DeleteDataSource(DeleteDataSourceRequest) returns (DeleteDataSourceResponse) {
@@ -109,12 +108,11 @@ service DataSourceService {
     }
 
     rpc InferSchema(InferSchemaRequest) returns (InferSchemaResponse) {
-        option (google.api.http).post = "/v1/datasources/{namespace}/{name}:infer";
+        option (google.api.http).post = "/v1/datasources/{datasource.metadata.namespace}/{datasource.metadata.name}:infer";
     }
 
     // get the table view from the data source. used to present table view.
     rpc GetTableView(GetTableViewRequest) returns (GetTableViewResponse) {}
-
 
 
 }

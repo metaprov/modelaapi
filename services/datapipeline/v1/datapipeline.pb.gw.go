@@ -451,12 +451,13 @@ func RegisterDataPipelineServiceHandlerServer(ctx context.Context, mux *runtime.
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/ListDataPipelines", runtime.WithHTTPPathPattern("/v1/datapipelines/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/ListDataPipelines", runtime.WithHTTPPathPattern("/v1/datapipelines/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataPipelineService_ListDataPipelines_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataPipelineService_ListDataPipelines_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -474,12 +475,13 @@ func RegisterDataPipelineServiceHandlerServer(ctx context.Context, mux *runtime.
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/CreateDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/CreateDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataPipelineService_CreateDataPipeline_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataPipelineService_CreateDataPipeline_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -497,12 +499,13 @@ func RegisterDataPipelineServiceHandlerServer(ctx context.Context, mux *runtime.
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/GetDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/GetDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataPipelineService_GetDataPipeline_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataPipelineService_GetDataPipeline_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -520,12 +523,13 @@ func RegisterDataPipelineServiceHandlerServer(ctx context.Context, mux *runtime.
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/UpdateDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines/{datapipeline.metadata.namespace}/{datapipeline.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/UpdateDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines/{datapipeline.metadata.namespace}/{datapipeline.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataPipelineService_UpdateDataPipeline_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataPipelineService_UpdateDataPipeline_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -543,12 +547,13 @@ func RegisterDataPipelineServiceHandlerServer(ctx context.Context, mux *runtime.
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/DeleteDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/DeleteDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataPipelineService_DeleteDataPipeline_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataPipelineService_DeleteDataPipeline_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -566,12 +571,13 @@ func RegisterDataPipelineServiceHandlerServer(ctx context.Context, mux *runtime.
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/RunDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines/{namespace}/{name}:run"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/RunDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines/{namespace}/{name}:run"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DataPipelineService_RunDataPipeline_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_DataPipelineService_RunDataPipeline_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -628,12 +634,13 @@ func RegisterDataPipelineServiceHandlerClient(ctx context.Context, mux *runtime.
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/ListDataPipelines", runtime.WithHTTPPathPattern("/v1/datapipelines/{namespace}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/ListDataPipelines", runtime.WithHTTPPathPattern("/v1/datapipelines/{namespace}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataPipelineService_ListDataPipelines_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataPipelineService_ListDataPipelines_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -648,12 +655,13 @@ func RegisterDataPipelineServiceHandlerClient(ctx context.Context, mux *runtime.
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/CreateDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/CreateDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataPipelineService_CreateDataPipeline_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataPipelineService_CreateDataPipeline_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -668,12 +676,13 @@ func RegisterDataPipelineServiceHandlerClient(ctx context.Context, mux *runtime.
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/GetDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/GetDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataPipelineService_GetDataPipeline_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataPipelineService_GetDataPipeline_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -688,12 +697,13 @@ func RegisterDataPipelineServiceHandlerClient(ctx context.Context, mux *runtime.
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/UpdateDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines/{datapipeline.metadata.namespace}/{datapipeline.metadata.name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/UpdateDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines/{datapipeline.metadata.namespace}/{datapipeline.metadata.name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataPipelineService_UpdateDataPipeline_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataPipelineService_UpdateDataPipeline_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -708,12 +718,13 @@ func RegisterDataPipelineServiceHandlerClient(ctx context.Context, mux *runtime.
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/DeleteDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines/{namespace}/{name}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/DeleteDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines/{namespace}/{name}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataPipelineService_DeleteDataPipeline_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataPipelineService_DeleteDataPipeline_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -728,12 +739,13 @@ func RegisterDataPipelineServiceHandlerClient(ctx context.Context, mux *runtime.
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/RunDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines/{namespace}/{name}:run"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/RunDataPipeline", runtime.WithHTTPPathPattern("/v1/datapipelines/{namespace}/{name}:run"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DataPipelineService_RunDataPipeline_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_DataPipelineService_RunDataPipeline_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)

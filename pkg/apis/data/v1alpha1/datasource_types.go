@@ -518,12 +518,11 @@ type DataSourceSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// The name of the DataProductVersion which describes the version of the resource
-	// that exists in the same DataProduct namespace as the resource
+	// VersionName references the name of a Data Product Version that describes the version of the resource
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
+	VersionName string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// User-provided description of the object
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:validation:Optional
@@ -546,7 +545,7 @@ type DataSourceSpec struct {
 	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,9,opt,name=sample"`
 	// The machine learning task relevant to the Dataset. This field *must* be the same as the Data Source of the object
 	// +kubebuilder:validation:Optional
-	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,10,opt,name=task"`
+	Task catalog.MLTask `json:"task,omitempty" protobuf:"bytes,10,opt,name=task"`
 	// The machine learning subtask relevant to the primary task (text classification, image object detection, etc.)
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional

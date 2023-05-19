@@ -26,13 +26,13 @@ func (r *Dataset) SetupWebhookWithManager(mgr ctrl.Manager) error {
 		Complete()
 }
 
-func (dataset Dataset) ReportName() string {
+func (dataset *Dataset) ReportName() string {
 	return "dataset-report-" + dataset.Name
 }
 
-func (dataset Dataset) HasFinalizer() bool { return util.HasFin(&dataset.ObjectMeta, data.GroupName) }
-func (dataset *Dataset) AddFinalizer()     { util.AddFin(&dataset.ObjectMeta, data.GroupName) }
-func (dataset *Dataset) RemoveFinalizer()  { util.RemoveFin(&dataset.ObjectMeta, data.GroupName) }
+func (dataset *Dataset) HasFinalizer() bool { return util.HasFin(&dataset.ObjectMeta, data.GroupName) }
+func (dataset *Dataset) AddFinalizer()      { util.AddFin(&dataset.ObjectMeta, data.GroupName) }
+func (dataset *Dataset) RemoveFinalizer()   { util.RemoveFin(&dataset.ObjectMeta, data.GroupName) }
 
 //==============================================================================
 // Validate
@@ -58,7 +58,7 @@ func (dataset *Dataset) CreateOrUpdateCond(cond metav1.Condition) {
 	dataset.Status.Conditions[i] = current
 }
 
-func (dataset Dataset) GetCondIdx(t string) int {
+func (dataset *Dataset) GetCondIdx(t string) int {
 	for i, v := range dataset.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -67,7 +67,7 @@ func (dataset Dataset) GetCondIdx(t string) int {
 	return -1
 }
 
-func (dataset Dataset) GetCond(t string) metav1.Condition {
+func (dataset *Dataset) GetCond(t string) metav1.Condition {
 	for _, v := range dataset.Status.Conditions {
 		if v.Type == t {
 			return v
@@ -83,27 +83,27 @@ func (dataset Dataset) GetCond(t string) metav1.Condition {
 
 }
 
-func (dataset Dataset) IsReady() bool {
+func (dataset *Dataset) IsReady() bool {
 	return dataset.GetCond(DatasetReady).Status == metav1.ConditionTrue
 }
 
-func (dataset Dataset) StatusString() string {
+func (dataset *Dataset) StatusString() string {
 	return string(dataset.Status.Phase)
 }
 
-func (dataset Dataset) RootURI() string {
+func (dataset *Dataset) RootURI() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s", dataset.Namespace, dataset.Spec.VersionName, dataset.Name)
 }
 
-func (dataset Dataset) ReportURI() string {
+func (dataset *Dataset) ReportURI() string {
 	return fmt.Sprintf("%s/%s-report.pdf", dataset.RootURI(), dataset.Name)
 }
 
-func (dataset Dataset) ManifestURI() string {
+func (dataset *Dataset) ManifestURI() string {
 	return fmt.Sprintf("%s/%s-dataset.yaml", dataset.RootURI(), dataset.Name)
 }
 
-func (dataset Dataset) ProfileURI() string {
+func (dataset *Dataset) ProfileURI() string {
 	return fmt.Sprintf("%s/profile/dataset_profile.json", dataset.RootURI())
 }
 
@@ -142,7 +142,7 @@ func (dataset *Dataset) UpdatePhaseFromConditions() {
 	}
 }
 
-func (dataset Dataset) IsInCond(ct string) bool {
+func (dataset *Dataset) IsInCond(ct string) bool {
 	current := dataset.GetCond(ct)
 	return current.Status == metav1.ConditionTrue
 }
@@ -156,33 +156,33 @@ func (dataset *Dataset) MarkSkewColumns() {
 
 }
 
-func (dataset Dataset) PrintConditions() {
+func (dataset *Dataset) PrintConditions() {
 	for _, v := range dataset.Status.Conditions {
 		fmt.Println(v)
 	}
 }
 
-func (dataset Dataset) Ingested() bool {
+func (dataset *Dataset) Ingested() bool {
 	return dataset.GetCond(DatasetIngested).Status == metav1.ConditionTrue
 }
 
-func (dataset Dataset) UnitTested() bool {
+func (dataset *Dataset) UnitTested() bool {
 	return dataset.GetCond(DatasetUnitTested).Status == metav1.ConditionTrue
 }
 
-func (dataset Dataset) Snapshotted() bool {
+func (dataset *Dataset) Snapshotted() bool {
 	return dataset.GetCond(DatasetSnapshotted).Status == metav1.ConditionTrue
 }
 
-func (dataset Dataset) Profiled() bool {
+func (dataset *Dataset) Profiled() bool {
 	return dataset.GetCond(DatasetProfiled).Status == metav1.ConditionTrue
 }
 
-func (dataset Dataset) Reported() bool {
+func (dataset *Dataset) Reported() bool {
 	return dataset.GetCond(DatasetReported).Status == metav1.ConditionTrue
 }
 
-func (dataset Dataset) Generated() bool {
+func (dataset *Dataset) Generated() bool {
 	return dataset.GetCond(DatasetGenerated).Status == metav1.ConditionTrue
 }
 
@@ -228,21 +228,21 @@ func (dataset *Dataset) MarkTakingSnapshot() {
 
 //------------------------------ Group
 
-func (dataset Dataset) Grouped() bool {
+func (dataset *Dataset) Grouped() bool {
 	return dataset.GetCond(DatasetGrouped).Status == metav1.ConditionTrue
 }
 
-func (dataset Dataset) IndexFileKey() string {
+func (dataset *Dataset) IndexFileKey() string {
 	return dataset.RootURI() + "/" + "groups.json"
 }
 
 // Return the location of the worker index file for the key
-func (dataset Dataset) WorkerIndexFileKey(workerIndex int, task string) string {
+func (dataset *Dataset) WorkerIndexFileKey(workerIndex int, task string) string {
 	return fmt.Sprintf("%s/%s_%d.json", dataset.RootURI(), task, workerIndex)
 }
 
 // This is the index file for task
-func (dataset Dataset) TaskIndexFileKey(task string) string {
+func (dataset *Dataset) TaskIndexFileKey(task string) string {
 	return fmt.Sprintf("%s/%s.json", dataset.RootURI(), task)
 }
 
@@ -516,35 +516,35 @@ func (dataset *Dataset) MarkSaved() {
 	})
 }
 
-func (dataset Dataset) Archived() bool {
+func (dataset *Dataset) Archived() bool {
 	return dataset.GetCond(DatasetArchived).Status == metav1.ConditionTrue
 }
 
-func (dataset Dataset) Saved() bool {
+func (dataset *Dataset) Saved() bool {
 	return dataset.GetCond(DatasetSaved).Status == metav1.ConditionTrue
 }
 
-func (dataset Dataset) Deleted() bool {
+func (dataset *Dataset) Deleted() bool {
 	return !dataset.ObjectMeta.DeletionTimestamp.IsZero()
 }
 
-func (dataset Dataset) IsFailed() bool {
+func (dataset *Dataset) IsFailed() bool {
 	return dataset.Status.Phase == DatasetPhaseFailed
 }
 
-func (dataset Dataset) IsGroup() bool {
+func (dataset *Dataset) IsGroup() bool {
 	return dataset.Spec.Task == catalog.PartitionForecast
 }
 
 // Answer true if the dataset is used for feature groupp monitoring.
-func (dataset Dataset) IsFeatureGroup() bool {
+func (dataset *Dataset) IsFeatureGroup() bool {
 	return dataset.Spec.Role == DatasetRoleFeatureGroup
 }
 
 // Generate a dataset completion alert
-func (dataset Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
 	level := infra.Info
-	subject := fmt.Sprintf("Entity %s completed successfully ", dataset.Name)
+	subject := fmt.Sprintf("Dataset %s completed successfully", dataset.Name)
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: dataset.Name,
@@ -575,9 +575,9 @@ func (dataset Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierNa
 	return result
 }
 
-func (dataset Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
 	level := infra.Error
-	subject := fmt.Sprintf("Entity %s failed with error %v", dataset.Name, err.Error())
+	subject := fmt.Sprintf("Dataset %s failed with error: %v", dataset.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: dataset.Name,
@@ -609,7 +609,7 @@ func (dataset Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *s
 	return result
 }
 
-func (dataset Dataset) ConstuctFeatureHistogram() (*FeatureHistogram, error) {
+func (dataset *Dataset) ConstuctFeatureHistogram() (*FeatureHistogram, error) {
 	// get the columns that we need to track drift for
 	columns := dataset.DriftColumnNames()
 
@@ -636,7 +636,7 @@ func (dataset Dataset) ConstuctFeatureHistogram() (*FeatureHistogram, error) {
 		},
 		Spec: FeatureHistogramSpec{
 			Owner:       dataset.Spec.Owner,
-			VersionName: &dataset.Spec.VersionName,
+			VersionName: dataset.Spec.VersionName,
 			Description: util.StrPtr(""),
 			Columns:     columns,
 			SourceRef: &v1.ObjectReference{
@@ -661,7 +661,7 @@ func (dataset Dataset) ConstuctFeatureHistogram() (*FeatureHistogram, error) {
 }
 
 // return the list of drift. Currently return the drift columns
-func (dataset Dataset) DriftColumnNames() []string {
+func (dataset *Dataset) DriftColumnNames() []string {
 	result := make([]string, 0)
 	for _, v := range dataset.Status.Statistics.Columns {
 		if !v.Target {
@@ -673,7 +673,7 @@ func (dataset Dataset) DriftColumnNames() []string {
 }
 
 // Search for a column stat, based on name
-func (dataset Dataset) GetColumn(name string) (*ColumnStatistics, error) {
+func (dataset *Dataset) GetColumn(name string) (*ColumnStatistics, error) {
 	for _, v := range dataset.Status.Statistics.Columns {
 		if v.Name == name {
 			return &v, nil
@@ -819,27 +819,27 @@ func (col ColumnStatistics) BigBoolTest(thresholds []DriftThreshold, rowCount in
 ///////////////////////////////////////
 // Group folders. This is
 
-func (dataset Dataset) GroupsFolder() string {
+func (dataset *Dataset) GroupsFolder() string {
 	return dataset.RootURI() + "/groups"
 }
 
-func (dataset Dataset) GroupFolder() string {
+func (dataset *Dataset) GroupFolder() string {
 	return path.Join(dataset.GroupsFolder(), path.Join(dataset.Spec.Key...))
 }
 
-func (dataset Dataset) GroupDataFolder() string {
+func (dataset *Dataset) GroupDataFolder() string {
 	return dataset.GroupFolder() + "/data"
 }
 
-func (dataset Dataset) GroupDataFile() string {
+func (dataset *Dataset) GroupDataFile() string {
 	return dataset.GroupDataFolder() + "/raw.csv"
 }
 
-func (dataset Dataset) GroupProfileFolder() string {
+func (dataset *Dataset) GroupProfileFolder() string {
 	return dataset.GroupFolder() + "/profile"
 }
 
-func (dataset Dataset) GroupReportFile() string {
+func (dataset *Dataset) GroupReportFile() string {
 	return dataset.GroupFolder() + "/" + dataset.ReportName() + ".pdf"
 }
 

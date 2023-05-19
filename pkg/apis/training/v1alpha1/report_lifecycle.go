@@ -78,21 +78,22 @@ func (report Report) IsReady() bool {
 }
 
 func NewReport(
-	ns string,
+	namespace string,
 	name string,
 	entity string,
 	key string,
 	reportType ReportType,
 	bucketName string) *Report {
+
 	result := &Report{}
 	result.Default()
 	result.ObjectMeta.Name = name
-	result.ObjectMeta.Namespace = ns
+	result.ObjectMeta.Namespace = namespace
 	result.Spec.Location = catalog.DataLocation{
 		Path:       util.StrPtr(key),
 		BucketName: util.StrPtr(bucketName)}
 	result.Spec.EntityRef.Name = entity
-	result.Spec.ReportType = &reportType
+	result.Spec.ReportType = reportType
 	result.ObjectMeta.Labels = make(map[string]string)
 
 	return result
@@ -115,60 +116,58 @@ func (report *Report) RemoveFinalizer()  { util.RemoveFin(&report.ObjectMeta, tr
 //==============================================================================
 
 func (report Report) IsDatasetReport() bool {
-	return *report.Spec.ReportType == ClassificationDatasetReport ||
-		*report.Spec.ReportType == RegressionDatasetReport ||
-		*report.Spec.ReportType == TextClassificationDatasetReport ||
-		*report.Spec.ReportType == ForecastDatasetReport ||
-		*report.Spec.ReportType == PartitionTimeSeriesDatasetReport
+	return report.Spec.ReportType == BinaryClassificationDatasetReport ||
+		report.Spec.ReportType == MultiClassificationDatasetReport ||
+		report.Spec.ReportType == RegressionDatasetReport ||
+		report.Spec.ReportType == ForecastDatasetReport ||
+		report.Spec.ReportType == PartitionTimeSeriesDatasetReport
 }
 
 func (report Report) IsStudyReport() bool {
-	return *report.Spec.ReportType == StudyReport
+	return report.Spec.ReportType == StudyReport
 }
 
 func (report Report) IsForecastReport() bool {
-	return *report.Spec.ReportType == ForecastReport
+	return report.Spec.ReportType == ForecastReport
 }
 
 func (report Report) IsModelReport() bool {
-	// Binary classification report
-	return *report.Spec.ReportType == BinaryClassificationModelReport ||
-		*report.Spec.ReportType == ForecastModelReport ||
-		*report.Spec.ReportType == MultiClassificationModelReport ||
-		*report.Spec.ReportType == TextClassificationModelReport ||
-		*report.Spec.ReportType == RegressionModelReport ||
-		*report.Spec.ReportType == PartitionTimeSeriesModelReport
+	return report.Spec.ReportType == BinaryClassificationModelReport ||
+		report.Spec.ReportType == ForecastModelReport ||
+		report.Spec.ReportType == MultiClassificationModelReport ||
+		report.Spec.ReportType == RegressionModelReport ||
+		report.Spec.ReportType == PartitionTimeSeriesModelReport
 }
 
 func (report Report) RootURI() string {
-	if *report.Spec.ReportType == PartitionTimeSeriesDatasetReport {
+	if report.Spec.ReportType == PartitionTimeSeriesDatasetReport {
 		if len(report.Spec.Key) > 0 {
 			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s/groups/%s",
 				report.Namespace,
-				*report.Spec.VersionName,
+				report.Spec.VersionName,
 				report.Spec.EntityRef.Name,
 				strings.Join(report.Spec.Key, "/"))
 		} else {
 			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s",
 				report.Namespace,
-				*report.Spec.VersionName,
+				report.Spec.VersionName,
 				report.Spec.EntityRef.Name)
 		}
 
 	}
 
-	if *report.Spec.ReportType == PartitionTimeSeriesModelReport {
+	if report.Spec.ReportType == PartitionTimeSeriesModelReport {
 		if len(report.Spec.Key) > 0 {
 			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s/groups/%s",
 				report.Namespace,
-				*report.Spec.VersionName,
+				report.Spec.VersionName,
 				report.Labels["study"],
 				report.Spec.EntityRef.Name,
 				strings.Join(report.Spec.Key, "/"))
 		} else {
 			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s",
 				report.Namespace,
-				*report.Spec.VersionName,
+				report.Spec.VersionName,
 				report.Labels["study"],
 				report.Spec.EntityRef.Name)
 		}
@@ -177,7 +176,7 @@ func (report Report) RootURI() string {
 	if report.IsModelReport() {
 		return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s",
 			report.Namespace,
-			*report.Spec.VersionName,
+			report.Spec.VersionName,
 			report.Labels["study"],
 			report.Spec.EntityRef.Name)
 
@@ -185,14 +184,15 @@ func (report Report) RootURI() string {
 	if report.IsDatasetReport() {
 		return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s",
 			report.Namespace,
-			*report.Spec.VersionName,
+			report.Spec.VersionName,
 			report.Spec.EntityRef.Name)
 	}
+
 	if report.IsStudyReport() {
-		return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s", report.Namespace, *report.Spec.VersionName, report.Spec.EntityRef.Name)
+		return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s", report.Namespace, report.Spec.VersionName, report.Spec.EntityRef.Name)
 	}
 
-	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/reports", report.Namespace, *report.Spec.VersionName)
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/reports", report.Namespace, report.Spec.VersionName)
 }
 
 func (report Report) ManifestURI() string {
@@ -205,7 +205,7 @@ func (report Report) PdfURI() string {
 }
 
 func (report Report) IsGroup() bool {
-	return *report.Spec.ReportType == PartitionTimeSeriesDatasetReport || *report.Spec.ReportType == PartitionTimeSeriesModelReport
+	return report.Spec.ReportType == PartitionTimeSeriesDatasetReport || report.Spec.ReportType == PartitionTimeSeriesModelReport
 }
 
 func ParseReportYaml(content []byte) (*Report, error) {
@@ -344,7 +344,7 @@ func (report Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *str
 				"Start Time": report.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 				"BucketName": *report.Spec.Location.BucketName,
 				"URL":        *report.Spec.Location.Path,
-				"Type":       string(*report.Spec.ReportType),
+				"Type":       string(report.Spec.ReportType),
 			},
 		},
 	}
@@ -369,5 +369,38 @@ func (report Report) RunStatus() *catalog.LastRunStatus {
 	}
 	result.Status = string(report.Status.Phase)
 	return result
+}
 
+func ConvertTaskToDatasetReportType(name catalog.MLTask) ReportType {
+	switch name {
+	case catalog.BinaryClassification:
+		return BinaryClassificationModelReport
+	case catalog.MultiClassification:
+		return MultiClassificationDatasetReport
+	case catalog.Regression:
+		return RegressionDatasetReport
+	case catalog.Forecasting:
+		return ForecastDatasetReport
+	case catalog.PartitionForecast:
+		return PartitionTimeSeriesDatasetReport
+	default:
+		return InvalidReport
+	}
+}
+
+func ConvertTaskToModelReportType(name catalog.MLTask) ReportType {
+	switch name {
+	case catalog.BinaryClassification:
+		return BinaryClassificationModelReport
+	case catalog.MultiClassification:
+		return MultiClassificationModelReport
+	case catalog.Regression:
+		return RegressionModelReport
+	case catalog.Forecasting:
+		return ForecastModelReport
+	case catalog.PartitionForecast:
+		return PartitionTimeSeriesModelReport
+	default:
+		return InvalidReport
+	}
 }

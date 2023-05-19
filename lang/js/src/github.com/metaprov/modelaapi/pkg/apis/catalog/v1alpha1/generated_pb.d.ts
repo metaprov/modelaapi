@@ -2088,16 +2088,6 @@ export class ResourceSpec extends jspb.Message {
   hasCustom(): boolean;
   clearCustom(): ResourceSpec;
 
-  getCpuimage(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setCpuimage(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ResourceSpec;
-  hasCpuimage(): boolean;
-  clearCpuimage(): ResourceSpec;
-
-  getGpuimage(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setGpuimage(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ResourceSpec;
-  hasGpuimage(): boolean;
-  clearGpuimage(): ResourceSpec;
-
   getRequirements(): k8s_io_api_core_v1_generated_pb.ResourceRequirements | undefined;
   setRequirements(value?: k8s_io_api_core_v1_generated_pb.ResourceRequirements): ResourceSpec;
   hasRequirements(): boolean;
@@ -2115,8 +2105,6 @@ export namespace ResourceSpec {
   export type AsObject = {
     workloadname?: string,
     custom?: boolean,
-    cpuimage?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    gpuimage?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     requirements?: k8s_io_api_core_v1_generated_pb.ResourceRequirements.AsObject,
   }
 }

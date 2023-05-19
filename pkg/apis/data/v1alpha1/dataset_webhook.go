@@ -50,16 +50,16 @@ func (dataset *Dataset) Default() {
 var _ webhook.Validator = &Dataset{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (dataset Dataset) ValidateCreate() error {
+func (dataset *Dataset) ValidateCreate() error {
 	return dataset.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (dataset Dataset) ValidateUpdate(old runtime.Object) error {
+func (dataset *Dataset) ValidateUpdate(old runtime.Object) error {
 	return dataset.validate()
 }
 
-func (dataset Dataset) validate() error {
+func (dataset *Dataset) validate() error {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, dataset.validateSpec(field.NewPath("spec"))...)
 	if len(allErrs) == 0 {
@@ -71,18 +71,18 @@ func (dataset Dataset) validate() error {
 		dataset.Name, allErrs)
 }
 
-func (dataset Dataset) validateSpec(fldPath *field.Path) field.ErrorList {
+func (dataset *Dataset) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, dataset.validateLocation(fldPath.Child("location"))...)
 	return allErrs
 }
 
-func (dataset Dataset) validateLocation(fldPath *field.Path) field.ErrorList {
+func (dataset *Dataset) validateLocation(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	return allErrs
 }
 
-func (dataset Dataset) ValidateDelete() error {
+func (dataset *Dataset) ValidateDelete() error {
 	return nil
 }
 

@@ -1138,9 +1138,8 @@ spec:
                 type: object
               versionName:
                 default: ""
-                description: The name of the DataProductVersion which describes the
-                  version of the resource that exists in the same DataProduct namespace
-                  as the resource
+                description: VersionName references the name of a Data Product Version
+                  that describes the version of the resource
                 maxLength: 63
                 type: string
             type: object

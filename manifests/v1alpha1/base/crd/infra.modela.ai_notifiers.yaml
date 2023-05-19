@@ -69,7 +69,7 @@ spec:
                       type: string
                     destination:
                       description: The destination channel that exists in the external
-                        system that `ConnectionName` references. For example, a Slack
+                        system that ConnectionName references. For example, a Slack
                         channel name, a Discord channel ID, or an e-mail address
                       type: string
                     enabled:

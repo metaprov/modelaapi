@@ -290,7 +290,7 @@ service ModelService {
     }
 
     rpc GetModelProfile(GetModelProfileRequest) returns (GetModelProfileResponse) {
-        option (google.api.http).post = "/v1/models/{namespace}/{name}:profile";
+        option (google.api.http).get = "/v1/models/{namespace}/{name}:profile";
     }
 
     rpc GetModelMisclass(GetMisclassRequest) returns (GetMisclassResponse) {

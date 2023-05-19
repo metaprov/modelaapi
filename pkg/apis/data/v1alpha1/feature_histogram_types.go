@@ -80,10 +80,10 @@ type FeatureHistogramSpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="no-one"
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// The product version for the feature.
+	// VersionName references the name of a Data Product Version that describes the version of the resource.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
+	VersionName string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// Comments is a description of the feature
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""

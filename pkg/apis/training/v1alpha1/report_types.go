@@ -24,23 +24,20 @@ const (
 type ReportType string
 
 const (
-	BinaryClassificationModelReport  ReportType = "binary-classification-model"
-	ForecastModelReport              ReportType = "forecast-model"
-	RegressionModelReport            ReportType = "regression-model"
-	MultiClassificationModelReport   ReportType = "multi-classification-model"
-	TextClassificationModelReport    ReportType = "text-classification-model"
-	ClassificationDatasetReport      ReportType = "classification-dataset"
-	ForecastDatasetReport            ReportType = "forecast-dataset"
-	TextClassificationDatasetReport  ReportType = "text-classification-dataset"
-	RegressionDatasetReport          ReportType = "regression-dataset"
-	SummaryReport                    ReportType = "summary-report"
-	CustomReport                     ReportType = "custom-report"
-	PartitionTimeSeriesModelReport   ReportType = "partition-timeseries-model-report"
-	PartitionTimeSeriesDatasetReport ReportType = "partition-timeseries-dataset-report"
-	StudyReport                      ReportType = "study-report"
-	ForecastReport                   ReportType = "forecast-report"
-	FeatureReport                    ReportType = "feature-report"
-	InvalidReport                    ReportType = "invalid-report"
+	BinaryClassificationModelReport   ReportType = "binary-classification-model"
+	ForecastModelReport               ReportType = "forecast-model"
+	RegressionModelReport             ReportType = "regression-model"
+	MultiClassificationModelReport    ReportType = "multi-classification-model"
+	PartitionTimeSeriesModelReport    ReportType = "partition-timeseries-model-report"
+	BinaryClassificationDatasetReport ReportType = "binary-classification-dataset"
+	MultiClassificationDatasetReport  ReportType = "multi-classification-dataset"
+	ForecastDatasetReport             ReportType = "forecast-dataset"
+	RegressionDatasetReport           ReportType = "regression-dataset"
+	PartitionTimeSeriesDatasetReport  ReportType = "partition-timeseries-dataset-report"
+	StudyReport                       ReportType = "study-report"
+	ForecastReport                    ReportType = "forecast-report"
+	SummaryReport                     ReportType = "summary-report"
+	InvalidReport                     ReportType = "invalid-report"
 )
 
 // +kubebuilder:validation:Enum="pdf"
@@ -50,32 +47,6 @@ const (
 	Pdf ReportFormat = "pdf"
 )
 
-func ConvertStringToReportType(s string) ReportType {
-	switch s {
-	case "binary-classification-model-report":
-		return BinaryClassificationModelReport
-	case "classification-data-report":
-		return ClassificationDatasetReport
-	case "forecast-data-report":
-		return ForecastDatasetReport
-	case "forecast-model-report":
-		return ForecastModelReport
-	case "multi-classification-model-report":
-		return MultiClassificationModelReport
-	case "regression-data-report":
-		return RegressionDatasetReport
-	case "regression-model-report":
-		return RegressionModelReport
-	case "studies-report":
-		return StudyReport
-	case "text-classification-data-report":
-		return TextClassificationDatasetReport
-	case "text-classification-model-report":
-		return TextClassificationModelReport
-	}
-	return InvalidReport
-}
-
 //==============================================================================
 // ReportName
 //==============================================================================
@@ -83,9 +54,6 @@ func ConvertStringToReportType(s string) ReportType {
 const (
 	// The report was generated
 	ReportReady = "Ready"
-	// If the notifier is valid, the report was sent
-	ReportSent = "Sent"
-
 	ReportSaved = "Saved"
 )
 
@@ -120,8 +88,7 @@ type ReportSpec struct {
 	// The name of the DataProductVersion which describes the version of the resource
 	// that exists in the same DataProduct namespace as the resource
 	// +kubebuilder:default:="latest"
-	// +kubebuilder:validation:Optional
-	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+	VersionName string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// EntityRef specifies the entity which the Report references. The supported entities consist of Entity, Model, and Study resources
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,2,opt,name=entityRef"`
 	// The location of the flat-file containing the PDF report
@@ -130,7 +97,7 @@ type ReportSpec struct {
 	// The type of report (e.g. classification model report, study report)
 	// +kubebuilder:validation:Required
 	// +required
-	ReportType *ReportType `json:"reportType,omitempty" protobuf:"bytes,6,opt,name=reportType"`
+	ReportType ReportType `json:"reportType,omitempty" protobuf:"bytes,6,opt,name=reportType"`
 	// The format of the Report. `pdf` is the only supported type as of the current release
 	// +kubebuilder:default:=pdf
 	// +kubebuilder:validation:Optional
@@ -149,22 +116,19 @@ type ReportSpec struct {
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
 	Timeout *int64 `json:"timeout,omitempty" protobuf:"varint,11,opt,name=timeout"`
-	// Custom contains the specification to generate a custom report (currently unimplemented)
-	// +kubebuilder:validation:Optional
-	Custom CustomReportSpec `json:"custom,omitempty" protobuf:"bytes,12,opt,name=custom"`
 	// The reference to the Lab namespace under which the report generation Job will be executed under.
-	// If unspecified, the default Lab from the parent DataProduct will be used
+	// If unspecified, the default Lab of the Data Product for the Report will be used
 	// +kubebuilder:validation:Optional
-	LabRef v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,14,opt,name=labRef"`
+	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,12,opt,name=labRef"`
 	// For group forecasting, this is the key of the group
 	// +kubebuilder:validation:Optional
-	Key []string `json:"key,omitempty" protobuf:"bytes,15,rep,name=key"`
+	Key []string `json:"key,omitempty" protobuf:"bytes,13,rep,name=key"`
 	// The model class for this report if the model was created by a model class
 	// +kubebuilder:validation:Optional
-	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,16,opt,name=modelClassName"`
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,14,opt,name=modelClassName"`
 	// If this report was created by a model class run, this is the run name
 	// +kubebuilder:validation:Optional
-	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,17,opt,name=modelClassRunName"`
+	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,15,opt,name=modelClassRunName"`
 }
 
 // ReportStatus defines the observed state of a Report
