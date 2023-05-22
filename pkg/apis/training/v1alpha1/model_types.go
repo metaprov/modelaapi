@@ -317,7 +317,7 @@ type ModelSpec struct {
 	TrialID *int32 `json:"trialID,omitempty" protobuf:"varint,47,opt,name=trialID"`
 	// Governance specifies the model governance requirements (currently unimplemented)
 	// +kubebuilder:validation:Optional
-	Governance *data.GovernanceSpec `json:"governance,omitempty" protobuf:"bytes,48,opt,name=governance"`
+	Approval *data.ApprovalSpec `json:"approval,omitempty" protobuf:"bytes,48,opt,name=approval"`
 	// Interpretability specifies the configuration to generate model interpretability visualizations
 	// +kubebuilder:validation:Optional
 	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,49,opt,name=interpretability"`
@@ -598,9 +598,9 @@ type ModelStatus struct {
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,72,opt,name=updatedAt"`
-	// Governance specifies the current governance status for the Model
+	// Approval specifies the current approval status for the Model
 	// +kubebuilder:validation:Optional
-	Governance data.GovernanceStatus `json:"governance,omitempty" protobuf:"bytes,73,opt,name=governance"`
+	Approval data.ApprovalStatus `json:"approval,omitempty" protobuf:"bytes,73,opt,name=approval"`
 	// Interpretability contains results produced during the explaining phase of the Model
 	// +kubebuilder:validation:Optional
 	Interpretability InterpretabilityStatus `json:"interpretability,omitempty" protobuf:"bytes,74,opt,name=interpretability"`
@@ -1178,7 +1178,7 @@ type ModelGroupByStatus struct {
 	// The locations of forecasts
 	// +kubebuilder:validation:Optional
 	ForecastsURI string `json:"forecastsURI,omitempty" protobuf:"bytes,3,opt,name=forecastsURI"`
-	// Holds the worker on going result, when a worker finish, we update the location of thier result files
+	// Holds the worker on-going result, when a worker finish, we update the location of their result files
 	// +kubebuilder:validation:Optional
 	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,4,rep,name=workerResults"`
 }

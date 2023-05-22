@@ -51,48 +51,33 @@ type TenantList struct {
 
 // TenantSpec defines the desired state of a Tenant
 type TenantSpec struct {
-	// The reference to the Lab resource that will be used as a default when creating new DataProduct namespaces
+	// DefaultLabName specifies a Lab resource that will be used as a default for all resources that
+	// do not specify a Lab or have a Data Product which specifies a default Lab
 	// +kubebuilder:validation:Optional
-	DefaultLabRef *v1.ObjectReference `json:"defaultLabRef,omitempty" protobuf:"bytes,1,opt,name=defaultLab"`
-	// The reference to the ServingSite resource that will be used as a default when creating new DataProduct namespaces
+	DefaultLabName *string `json:"defaultLabName,omitempty" protobuf:"bytes,1,opt,name=defaultLabName"`
+	// DefaultServingSiteName specifies a Serving Site resource that will be used as a default for all resources that
+	// do not specify a Serving Site or have a Data Product which specifies a default Serving Site
 	// +kubebuilder:validation:Optional
-	DefaultServingSiteRef *v1.ObjectReference `json:"defaultServingSiteRef,omitempty" protobuf:"bytes,2,opt,name=defaultServingSiteRef"`
-	// The user-provided description of the Tenant
+	DefaultServingSiteName *string `json:"defaultServingSiteName,omitempty" protobuf:"bytes,2,opt,name=defaultServingSiteName"`
+	// DefaultBucketName specifies a Virtual Bucket resource that will be used as a default for all resources that
+	// do not specify a Virtual Bucket or have a Data Product which specifies a default Virtual Bucket
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:MaxLength=512
+	DefaultBucketName *string `json:"defaultBucketName,omitempty" protobuf:"bytes,3,opt,name=defaultBucketName"`
+	// Permissions defines the set of permissions applied to each Account when accessing resources within the Tenant
 	// +kubebuilder:validation:Optional
-	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
-	// Owner indicates the name of the Account under the Tenant which created the Tenant (i.e. the Tenant administrator)
-	// +kubebuilder:default:="no-one"
-	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
-	// The default bucket name for tenant artifacts
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	BucketName *string `json:"bucketName,omitempty" protobuf:"bytes,5,opt,name=bucketName"`
-	// The root path to
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Path *string `json:"path,omitempty" protobuf:"bytes,6,opt,name=path"`
-	// Permissions denotes the specification that determines which Accounts
-	// can access the resources under the Tenant namespace and what actions they can perform
-	// +kubebuilder:validation:Optional
-	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,7,opt,name=permissions"`
+	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,4,opt,name=permissions"`
 	// The default notification specification for all resources under the tenant
 	// +kubebuilder:validation:Optional
-	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,8,opt,name=notification"`
-	// The connection to the online feature store for the tenant.
-	// The online store serves all the feature groups for this tenant.
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,5,opt,name=notification"`
+	// OnlineStore references a Connection resource to an external database that the Modela online store microservice
+	// will use as an online store. The online store service must be installed through the Modela Operator
 	// +kubebuilder:validation:Optional
-	Online FeatureStoreSpec `json:"online,omitempty" protobuf:"bytes,9,opt,name=online"`
-	// The connection to the offline feature store. This feature store holds the observations as well as the feature groups.
+	OnlineStoreConnectionRef *v1.ObjectReference `json:"onlineStoreConnection,omitempty" protobuf:"bytes,6,opt,name=onlineStoreConnection"`
+	// MetricStore references a Connection resource to an external database that will act as the metric store for the Tenant.
+	// The metric store stores metadata about resources that perform workloads (i.e. datasets, models, studies, etc.)
 	// +kubebuilder:validation:Optional
-	Offline FeatureStoreSpec `json:"offline,omitempty" protobuf:"bytes,10,opt,name=offline"`
-	// The connection to the metrics store. The metrics store hold the metadata about objects in the system (e.g. models)
-	// The metrics store is used for reports and general analytics.
-	// +kubebuilder:validation:Optional
-	Metrics FeatureStoreSpec `json:"metrics,omitempty" protobuf:"bytes,11,opt,name=metrics"`
+	MetricStoreConnectionRef *v1.ObjectReference `json:"metricStoreConnection,omitempty" protobuf:"bytes,7,opt,name=metricStoreConnection"`
 }
 
 // TenantStatus defines the actual state of a Tenant
@@ -110,41 +95,8 @@ type TenantStatus struct {
 	// UpdateUpdateStrategy in case of terminal failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,4,opt,name=failureMessage"`
-	// the status of the online store
-	//+kubebuilder:validation:Optional
-	Online FeatureStoreStatus `json:"online,omitempty" protobuf:"bytes,5,rep,name=online"`
-	// the status of the offline store
-	//+kubebuilder:validation:Optional
-	Offline FeatureStoreStatus `json:"offline,omitempty" protobuf:"bytes,6,rep,name=offline"`
-	// the status of the metrics store
-	//+kubebuilder:validation:Optional
-	Metrics FeatureStoreStatus `json:"metrics,omitempty" protobuf:"bytes,7,rep,name=metrics"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
-}
-
-// Specifiction for an online feature store
-type FeatureStoreSpec struct {
-	// The name of the online feature store.
-	//+kubebuilder:validation:Optional
-	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// UpdateUpdateStrategy in case of terminal failure message
-	//+kubebuilder:validation:Optional
-	ConnectionRef v1.ObjectReference `json:"connectionRef,omitempty" protobuf:"bytes,2,opt,name=connectionRef"`
-}
-
-type FeatureStoreStatus struct {
-	// Feature store name
-	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// Last check of the feature store status
-	LastCheck *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
-	// UpdateUpdateStrategy in case of terminal failure
-	// Borrowed from cluster api controller
-	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,3,opt,name=failureReason"`
-	// UpdateUpdateStrategy in case of terminal failure message
-	//+kubebuilder:validation:Optional
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,4,opt,name=failureMessage"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }

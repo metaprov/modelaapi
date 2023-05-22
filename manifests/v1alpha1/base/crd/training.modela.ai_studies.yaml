@@ -3384,7 +3384,7 @@ spec:
                 description: TestDatasetLocation specifies the location of the testing
                   dataset
                 properties:
-                  bucket:
+                  bucketName:
                     type: string
                   path:
                     type: string
@@ -3397,7 +3397,7 @@ spec:
                 description: TrainDatasetLocation specifies the location of the training
                   dataset
                 properties:
-                  bucket:
+                  bucketName:
                     type: string
                   path:
                     type: string
@@ -3451,7 +3451,7 @@ spec:
                 description: ValidationDataset specifies the location of the validation
                   dataset
                 properties:
-                  bucket:
+                  bucketName:
                     type: string
                   path:
                     type: string

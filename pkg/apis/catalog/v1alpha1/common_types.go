@@ -37,7 +37,7 @@ const (
 	PredictorRole string = "predictor"
 )
 
-// Compiler spec is used when there is a specification for model compilation
+// CompilerSpec is used when there is a specification for model compilation
 type CompilerSpec struct {
 	// Enable set the enable to
 	// +kubebuilder:default:=false
@@ -1600,7 +1600,7 @@ const (
 	Stratified SamplingType = "stratified"
 )
 
-// Define how a model is promoted to production
+// PromotionType defines how a model is promoted to a predictor
 // +kubebuilder:validation:Enum="manual";"best";"latest";"none"
 type PromotionType string
 
@@ -1611,17 +1611,7 @@ const (
 	NonePromotion   PromotionType = "none"
 )
 
-// +kubebuilder:validation:Enum="unclassified";"confidential";"secret";"top-secret"
-type SecurityClearanceLevel string
-
-const (
-	UnclassifiedSecurityClearanceLevel SecurityClearanceLevel = "unclassified"
-	ConfidentialSecurityClearanceLevel SecurityClearanceLevel = "confidential"
-	SecretSecurityClearanceLevel       SecurityClearanceLevel = "secret"
-	TopSecretSecurityClearanceLevel    SecurityClearanceLevel = "top-secret"
-)
-
-// the priority level for a task
+// PriorityLevel defines the priority class assigned to a Modela Job
 // +kubebuilder:validation:Enum="low";"medium";"high";"urgent"
 type PriorityLevel string
 
@@ -1727,33 +1717,8 @@ const (
 	ErrorLogLevel LogLevel = "error"
 )
 
-// Use for color attribute
-// Based on this: https://pkg.go.dev/golang.org/x/image/colornames
-
+// Color defines an implementation-specific color
 type Color string
-
-const (
-	AliceblueColor      Color = "aliceblue"
-	AntiquewhiteColor   Color = "antiquewhite"
-	AquaColor           Color = "aqua"
-	AquamarineColor     Color = "aquamarine"
-	AzureColor          Color = "azure"
-	BeigeColor          Color = "beige"
-	BisqueColor         Color = "bisque"
-	BlackColor          Color = "black"
-	BlanchedalmondColor Color = "blanchedalmond"
-	BlueColor           Color = "blue"
-	BluevioletColor     Color = "blueviolet"
-	BrownColor          Color = "brown"
-	BurlywoodColor      Color = "burlywood"
-	CadetblueColor      Color = "cadetblue"
-	ChartreuseColor     Color = "chartreuse"
-	ChocolateColor      Color = "chocolate"
-	CoralColor          Color = "coral"
-	CornflowerblueColor Color = "cornflowerblue"
-	CornsilkColor       Color = "cornsilk"
-	NoneColor           Color = "none"
-)
 
 // +kubebuilder:validation:Enum="random";"split-column";"time";"random-stratified";"auto";"test-dataset";
 type DataSplitMethod string
@@ -1927,7 +1892,7 @@ func (location *DataLocation) ToFileLocation() *FileLocation {
 
 // FileLocation denotes the location of a flat-file, which is the name of a VirtualBucket and the path within it
 type FileLocation struct {
-	BucketName string `json:"bucket,omitempty" protobuf:"bytes,1,opt,name=bucket"`
+	BucketName string `json:"bucketName,omitempty" protobuf:"bytes,1,opt,name=bucketName"`
 	Path       string `json:"path,omitempty" protobuf:"bytes,2,opt,name=path"`
 }
 
@@ -2046,18 +2011,17 @@ type HistogramData struct {
 	InvalidCount int32 `json:"invalid,omitempty" protobuf:"varint,5,opt,name=invalid"`
 }
 
-// PermissionsSpec specifies the Accounts that have access to a DataProduct or Tenant namespace and what permissions
-// they possess for resources under the namespace
+// PermissionsSpec defines the permissions for one or more accounts
 type PermissionsSpec struct {
-	Stakeholders []Stakeholder `json:"stakeholders,omitempty" protobuf:"bytes,1,rep,name=stakeholders"`
+	Accounts []AccountPermissions `json:"accounts,omitempty" protobuf:"bytes,1,rep,name=accounts"`
 }
 
-// Stakeholder specifies the User Role Classes of an individual Account
-type Stakeholder struct {
-	// The name of an Account
-	AccountName string `json:"account,omitempty" protobuf:"bytes,1,opt,name=account"`
-	// The object references to UserRoleClass resources which describe the actions the Account may perform
-	Roles []v1.ObjectReference `json:"roles,omitempty" protobuf:"bytes,2,rep,name=roles"`
+// AccountPermissions specifies the User Role Classes of an individual Account
+type AccountPermissions struct {
+	// The name of the Account receiving the permissions
+	AccountName string `json:"accountName,omitempty" protobuf:"bytes,1,opt,name=accountName"`
+	// Roles contains a list of User Role Classes that will be bound to the Account
+	Roles []v1.LocalObjectReference `json:"roles,omitempty" protobuf:"bytes,2,rep,name=roles"`
 }
 
 // Images describes the Docker images used internally to perform workloads

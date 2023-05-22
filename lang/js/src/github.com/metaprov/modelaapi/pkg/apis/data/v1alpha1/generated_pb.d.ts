@@ -7,6 +7,102 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
+export class ApprovalReviewStatus extends jspb.Message {
+  getReviewer(): string;
+  setReviewer(value: string): ApprovalReviewStatus;
+  hasReviewer(): boolean;
+  clearReviewer(): ApprovalReviewStatus;
+
+  getResult(): string;
+  setResult(value: string): ApprovalReviewStatus;
+  hasResult(): boolean;
+  clearResult(): ApprovalReviewStatus;
+
+  getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ApprovalReviewStatus;
+  hasApprovedat(): boolean;
+  clearApprovedat(): ApprovalReviewStatus;
+
+  getNotes(): string;
+  setNotes(value: string): ApprovalReviewStatus;
+  hasNotes(): boolean;
+  clearNotes(): ApprovalReviewStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApprovalReviewStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ApprovalReviewStatus): ApprovalReviewStatus.AsObject;
+  static serializeBinaryToWriter(message: ApprovalReviewStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApprovalReviewStatus;
+  static deserializeBinaryFromReader(message: ApprovalReviewStatus, reader: jspb.BinaryReader): ApprovalReviewStatus;
+}
+
+export namespace ApprovalReviewStatus {
+  export type AsObject = {
+    reviewer?: string,
+    result?: string,
+    approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    notes?: string,
+  }
+}
+
+export class ApprovalSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): ApprovalSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): ApprovalSpec;
+
+  getDecisiontype(): string;
+  setDecisiontype(value: string): ApprovalSpec;
+  hasDecisiontype(): boolean;
+  clearDecisiontype(): ApprovalSpec;
+
+  getMembersList(): Array<string>;
+  setMembersList(value: Array<string>): ApprovalSpec;
+  clearMembersList(): ApprovalSpec;
+  addMembers(value: string, index?: number): ApprovalSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApprovalSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ApprovalSpec): ApprovalSpec.AsObject;
+  static serializeBinaryToWriter(message: ApprovalSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApprovalSpec;
+  static deserializeBinaryFromReader(message: ApprovalSpec, reader: jspb.BinaryReader): ApprovalSpec;
+}
+
+export namespace ApprovalSpec {
+  export type AsObject = {
+    enabled?: boolean,
+    decisiontype?: string,
+    membersList: Array<string>,
+  }
+}
+
+export class ApprovalStatus extends jspb.Message {
+  getStatus(): string;
+  setStatus(value: string): ApprovalStatus;
+  hasStatus(): boolean;
+  clearStatus(): ApprovalStatus;
+
+  getReviewsList(): Array<ApprovalReviewStatus>;
+  setReviewsList(value: Array<ApprovalReviewStatus>): ApprovalStatus;
+  clearReviewsList(): ApprovalStatus;
+  addReviews(value?: ApprovalReviewStatus, index?: number): ApprovalReviewStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApprovalStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ApprovalStatus): ApprovalStatus.AsObject;
+  static serializeBinaryToWriter(message: ApprovalStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApprovalStatus;
+  static deserializeBinaryFromReader(message: ApprovalStatus, reader: jspb.BinaryReader): ApprovalStatus;
+}
+
+export namespace ApprovalStatus {
+  export type AsObject = {
+    status?: string,
+    reviewsList: Array<ApprovalReviewStatus.AsObject>,
+  }
+}
+
 export class BarChartSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): BarChartSpec;
@@ -1613,15 +1709,20 @@ export class DataProductSpec extends jspb.Message {
   hasImagelocation(): boolean;
   clearImagelocation(): DataProductSpec;
 
-  getLabname(): string;
-  setLabname(value: string): DataProductSpec;
-  hasLabname(): boolean;
-  clearLabname(): DataProductSpec;
+  getDefaultlabname(): string;
+  setDefaultlabname(value: string): DataProductSpec;
+  hasDefaultlabname(): boolean;
+  clearDefaultlabname(): DataProductSpec;
 
-  getServingsitename(): string;
-  setServingsitename(value: string): DataProductSpec;
-  hasServingsitename(): boolean;
-  clearServingsitename(): DataProductSpec;
+  getDefaultservingsitename(): string;
+  setDefaultservingsitename(value: string): DataProductSpec;
+  hasDefaultservingsitename(): boolean;
+  clearDefaultservingsitename(): DataProductSpec;
+
+  getDefaultbucketname(): string;
+  setDefaultbucketname(value: string): DataProductSpec;
+  hasDefaultbucketname(): boolean;
+  clearDefaultbucketname(): DataProductSpec;
 
   getTask(): string;
   setTask(value: string): DataProductSpec;
@@ -1637,11 +1738,6 @@ export class DataProductSpec extends jspb.Message {
   setDescription(value: string): DataProductSpec;
   hasDescription(): boolean;
   clearDescription(): DataProductSpec;
-
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DataProductSpec;
-  hasLocation(): boolean;
-  clearLocation(): DataProductSpec;
 
   getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
   setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): DataProductSpec;
@@ -1663,26 +1759,6 @@ export class DataProductSpec extends jspb.Message {
   hasRetriesonfailure(): boolean;
   clearRetriesonfailure(): DataProductSpec;
 
-  getKpisList(): Array<KPI>;
-  setKpisList(value: Array<KPI>): DataProductSpec;
-  clearKpisList(): DataProductSpec;
-  addKpis(value?: KPI, index?: number): KPI;
-
-  getOncallaccountname(): string;
-  setOncallaccountname(value: string): DataProductSpec;
-  hasOncallaccountname(): boolean;
-  clearOncallaccountname(): DataProductSpec;
-
-  getCompilation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
-  setCompilation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): DataProductSpec;
-  hasCompilation(): boolean;
-  clearCompilation(): DataProductSpec;
-
-  getClearancelevel(): string;
-  setClearancelevel(value: string): DataProductSpec;
-  hasClearancelevel(): boolean;
-  clearClearancelevel(): DataProductSpec;
-
   getPriority(): string;
   setPriority(value: string): DataProductSpec;
   hasPriority(): boolean;
@@ -1693,10 +1769,10 @@ export class DataProductSpec extends jspb.Message {
   hasColor(): boolean;
   clearColor(): DataProductSpec;
 
-  getGovernance(): GovernanceSpec | undefined;
-  setGovernance(value?: GovernanceSpec): DataProductSpec;
-  hasGovernance(): boolean;
-  clearGovernance(): DataProductSpec;
+  getApproval(): ApprovalSpec | undefined;
+  setApproval(value?: ApprovalSpec): DataProductSpec;
+  hasApproval(): boolean;
+  clearApproval(): DataProductSpec;
 
   getPermissions(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec | undefined;
   setPermissions(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec): DataProductSpec;
@@ -1723,23 +1799,19 @@ export namespace DataProductSpec {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     gitlocation?: GitLocation.AsObject,
     imagelocation?: ImageLocation.AsObject,
-    labname?: string,
-    servingsitename?: string,
+    defaultlabname?: string,
+    defaultservingsitename?: string,
+    defaultbucketname?: string,
     task?: string,
     subtask?: string,
     description?: string,
-    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     trainingresources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     servingresources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     retriesonfailure?: number,
-    kpisList: Array<KPI.AsObject>,
-    oncallaccountname?: string,
-    compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
-    clearancelevel?: string,
     priority?: string,
     color?: string,
-    governance?: GovernanceSpec.AsObject,
+    approval?: ApprovalSpec.AsObject,
     permissions?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.AsObject,
     tagsList: Array<string>,
   }
@@ -3664,120 +3736,6 @@ export namespace GitLocation {
     url?: string,
     branch?: string,
     pb_private?: boolean,
-  }
-}
-
-export class GovernanceReviewStatus extends jspb.Message {
-  getResult(): string;
-  setResult(value: string): GovernanceReviewStatus;
-  hasResult(): boolean;
-  clearResult(): GovernanceReviewStatus;
-
-  getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): GovernanceReviewStatus;
-  hasApprovedat(): boolean;
-  clearApprovedat(): GovernanceReviewStatus;
-
-  getNotes(): string;
-  setNotes(value: string): GovernanceReviewStatus;
-  hasNotes(): boolean;
-  clearNotes(): GovernanceReviewStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GovernanceReviewStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: GovernanceReviewStatus): GovernanceReviewStatus.AsObject;
-  static serializeBinaryToWriter(message: GovernanceReviewStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GovernanceReviewStatus;
-  static deserializeBinaryFromReader(message: GovernanceReviewStatus, reader: jspb.BinaryReader): GovernanceReviewStatus;
-}
-
-export namespace GovernanceReviewStatus {
-  export type AsObject = {
-    result?: string,
-    approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    notes?: string,
-  }
-}
-
-export class GovernanceSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): GovernanceSpec;
-  hasEnabled(): boolean;
-  clearEnabled(): GovernanceSpec;
-
-  getCountry(): string;
-  setCountry(value: string): GovernanceSpec;
-  hasCountry(): boolean;
-  clearCountry(): GovernanceSpec;
-
-  getItreviewer(): string;
-  setItreviewer(value: string): GovernanceSpec;
-  hasItreviewer(): boolean;
-  clearItreviewer(): GovernanceSpec;
-
-  getCompliancereviewer(): string;
-  setCompliancereviewer(value: string): GovernanceSpec;
-  hasCompliancereviewer(): boolean;
-  clearCompliancereviewer(): GovernanceSpec;
-
-  getBusinessreviewer(): string;
-  setBusinessreviewer(value: string): GovernanceSpec;
-  hasBusinessreviewer(): boolean;
-  clearBusinessreviewer(): GovernanceSpec;
-
-  getMembersList(): Array<string>;
-  setMembersList(value: Array<string>): GovernanceSpec;
-  clearMembersList(): GovernanceSpec;
-  addMembers(value: string, index?: number): GovernanceSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GovernanceSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: GovernanceSpec): GovernanceSpec.AsObject;
-  static serializeBinaryToWriter(message: GovernanceSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GovernanceSpec;
-  static deserializeBinaryFromReader(message: GovernanceSpec, reader: jspb.BinaryReader): GovernanceSpec;
-}
-
-export namespace GovernanceSpec {
-  export type AsObject = {
-    enabled?: boolean,
-    country?: string,
-    itreviewer?: string,
-    compliancereviewer?: string,
-    businessreviewer?: string,
-    membersList: Array<string>,
-  }
-}
-
-export class GovernanceStatus extends jspb.Message {
-  getItreviewstatus(): GovernanceReviewStatus | undefined;
-  setItreviewstatus(value?: GovernanceReviewStatus): GovernanceStatus;
-  hasItreviewstatus(): boolean;
-  clearItreviewstatus(): GovernanceStatus;
-
-  getCompliancereviewstatus(): GovernanceReviewStatus | undefined;
-  setCompliancereviewstatus(value?: GovernanceReviewStatus): GovernanceStatus;
-  hasCompliancereviewstatus(): boolean;
-  clearCompliancereviewstatus(): GovernanceStatus;
-
-  getBusinessreviewstatus(): GovernanceReviewStatus | undefined;
-  setBusinessreviewstatus(value?: GovernanceReviewStatus): GovernanceStatus;
-  hasBusinessreviewstatus(): boolean;
-  clearBusinessreviewstatus(): GovernanceStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GovernanceStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: GovernanceStatus): GovernanceStatus.AsObject;
-  static serializeBinaryToWriter(message: GovernanceStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GovernanceStatus;
-  static deserializeBinaryFromReader(message: GovernanceStatus, reader: jspb.BinaryReader): GovernanceStatus;
-}
-
-export namespace GovernanceStatus {
-  export type AsObject = {
-    itreviewstatus?: GovernanceReviewStatus.AsObject,
-    compliancereviewstatus?: GovernanceReviewStatus.AsObject,
-    businessreviewstatus?: GovernanceReviewStatus.AsObject,
   }
 }
 

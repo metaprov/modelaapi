@@ -83,29 +83,35 @@ type DataProductSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// Indicates if the DataProduct is public and can be accessed without permissions
+	// Public indicates if the Data Product can be accessed without any permissions.
+	// If enabled, all resources and verbs will be accessible
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Public *bool `json:"public,omitempty" protobuf:"varint,2,opt,name=public"`
-	// The reference to the Tenant which owns the DataProduct. Defaults to `default-tenant`
+	// The reference to the Tenant of the Data Product (which must equal the namespace of the Data Product)
 	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,3,opt,name=tenantRef"`
-	// GitLocation is the default Git location where all child resources will be tracked as YAML
+	// GitLocation specifies the location of a Git repository where resources under the Data Product will be saved as YAML
 	// +kubebuilder:validation:Optional
 	GitLocation GitLocation `json:"gitLocation,omitempty" protobuf:"bytes,4,opt,name=gitLocation"`
-	// ImageLocation is the default Docker image repository where model images produced under the DataProduct will be stored
+	// ImageLocation specifies the default Docker image repository where images produced under the Data Product will be stored
 	// +kubebuilder:validation:Optional
 	ImageLocation *ImageLocation `json:"imageLocation,omitempty" protobuf:"bytes,5,opt,name=imageLocation"`
 	// The name of the Lab that will be used by default with all compute-requiring child resources
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Optional
-	LabName *string `json:"labName" protobuf:"bytes,7,opt,name=labName"`
+	DefaultLabName *string `json:"defaultLabName" protobuf:"bytes,6,opt,name=defaultLabName"`
 	// The name of the Serving Site which will be used by default with all Predictor resources
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
-	ServingSiteName *string `json:"servingSiteName" protobuf:"bytes,8,opt,name=servingSiteName"`
+	DefaultServingSiteName *string `json:"defaultServingSiteName" protobuf:"bytes,7,opt,name=defaultServingSiteName"`
+	// The name of the Virtual Bucket that resources under the Data Product will use by default
+	// +kubebuilder:validation:MaxLength=63
+	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+	// +kubebuilder:validation:Optional
+	DefaultBucketName *string `json:"defaultBucketName,omitempty" protobuf:"bytes,8,opt,name=defaultBucketName"`
 	// Task specifies the default machine learning task of the product (classification, regression, etc.)
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,9,opt,name=task"`
@@ -118,57 +124,38 @@ type DataProductSpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,11,opt,name=description"`
-	// The default location for all artifacts created under the DataProduct. All data-producing resources will
-	// use the VirtualBucket specified by the Location by default
-	// +kubebuilder:validation:Optional
-	Location catalog.FileLocation `json:"location,omitempty" protobuf:"bytes,12,opt,name=location"`
 	// The default notification specification for all resources under the DataProduct
 	// +kubebuilder:validation:Optional
-	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,13,opt,name=notification"`
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,12,opt,name=notification"`
 	// The default resource allocation for model training and data workloads that takes place under the DataProduct
 	// +kubebuilder:validation:Optional
-	DefaultTrainingResources catalog.ResourceSpec `json:"trainingResources,omitempty" protobuf:"bytes,14,opt,name=trainingResources"`
+	DefaultTrainingResources catalog.ResourceSpec `json:"trainingResources,omitempty" protobuf:"bytes,13,opt,name=trainingResources"`
 	// The default resource allocation for model serving workloads that takes place under the DataProduct
 	// +kubebuilder:validation:Optional
-	DefaultServingResources catalog.ResourceSpec `json:"servingResources,omitempty" protobuf:"bytes,15,opt,name=servingResources"`
-	// Specifies how many times Jobs created under the DataProduct namespace will retry after failure
-	// +kubebuilder:default:=3
+	DefaultServingResources catalog.ResourceSpec `json:"servingResources,omitempty" protobuf:"bytes,14,opt,name=servingResources"`
+	// RetriesOnFailure defines the backoff limit for Jobs created by resources under the Data Product.
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:validation:Optional
-	RetriesOnFailure *int32 `json:"retriesOnFailure,omitempty" protobuf:"varint,16,opt,name=retriesOnFailure"`
-	// KPIs define key performance indicators for the DataProduct (not functional as of the current release)
-	//+kubebuilder:validation:Optional
-	KPIs []KPI `json:"kpis,omitempty" protobuf:"bytes,17,rep,name=kpis"`
-	// The name of the Account which should be responsible for events that occur under the DataProduct
-	//+kubebuilder:validation:Optional
-	OnCallAccountName string `json:"onCallAccountName,omitempty" protobuf:"bytes,18,opt,name=onCallAccountName"`
-	// The default compilation specification for Study resources created under the DataProduct
-	//+kubebuilder:validation:Optional
-	Compilation catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,19,opt,name=compilation"`
-	// The clearance level required to access the DataProduct. Accounts which do not have a clearance level
-	// greater than or equal to ClearanceLevel will be denied access to the DataProduct namespace
-	// +kubebuilder:default:=unclassified
-	// +kubebuilder:validation:Optional
-	ClearanceLevel *catalog.SecurityClearanceLevel `json:"clearanceLevel,omitempty" protobuf:"bytes,20,opt,name=clearanceLevel"`
-	// The default priority level assigned to Jobs created under the DataProduct namespace
+	RetriesOnFailure *int32 `json:"retriesOnFailure,omitempty" protobuf:"varint,15,opt,name=retriesOnFailure"`
+	// The default priority level assigned to Jobs created by resources under the Data Product
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="medium"
-	DefaultPriority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,21,opt,name=priority"`
-	// The color assigned to the product, for visual purposes only
+	DefaultPriority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,16,opt,name=priority"`
+	// The implementation-specific color assigned to the Data Product, for visual purposes only
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
-	Color *catalog.Color `json:"color,omitempty" protobuf:"bytes,22,opt,name=color"`
-	// The Governance requirements (not functional as of the current release)
+	Color *catalog.Color `json:"color,omitempty" protobuf:"bytes,17,opt,name=color"`
+	// Approval specifies the default model approval requirements
 	// +kubebuilder:validation:Optional
-	Governance GovernanceSpec `json:"governance,omitempty" protobuf:"bytes,23,opt,name=governance"`
-	// Permissions denotes the specification that determines which Accounts
-	// can access the DataProduct and what actions they can perform
+	Approval *ApprovalSpec `json:"approval,omitempty" protobuf:"bytes,18,opt,name=approval"`
+	// Permissions defines the set of permissions applied to each Account when accessing resources within the Data Product
 	// +kubebuilder:validation:Optional
-	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,24,opt,name=permissions"`
-	// Assign tags to data product
+	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,19,opt,name=permissions"`
+	// Tags contain user-defined tags associated with the Data Product
 	// +kubebuilder:validation:Optional
-	Tags []string `json:"tags,omitempty" protobuf:"bytes,25,opt,name=tags"`
+	Tags []string `json:"tags,omitempty" protobuf:"bytes,20,opt,name=tags"`
 }
 
 // DataProductStatus defines the observed state of DataProduct
@@ -229,7 +216,7 @@ type DataProductStatus struct {
 }
 
 // +kubebuilder:object:root=true
-// DataProductList contains a list of DataProducts
+// DataProductList contains a list of Data Products
 type DataProductList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -246,54 +233,51 @@ type KPI struct {
 	Value *float64 `json:"value,omitempty" protobuf:"bytes,2,opt,name=value"`
 }
 
-// GovernanceSpec describes the governance requirements for models produced under a DataProduct
-type GovernanceSpec struct {
-	// Indicates if governance is enabled
+type DecisionType string
+
+const (
+	DecisionTypeUnanimous ApprovalType = "unanimous"
+	DecisionTypeMajority  ApprovalType = "majority"
+	DecisionTypeOneOrMore ApprovalType = "one-or-more"
+)
+
+// ApprovalSpec describes the approval requirements for a Model
+type ApprovalSpec struct {
+	// Enabled indicates if model approval is enabled
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// The country whose regulations are under consideration
+	// DecisionType specifies the requirements for the model to be approved in the case of there being multiple reviewers
 	// +kubebuilder:validation:Optional
-	Country *string `json:"country,omitempty" protobuf:"bytes,2,opt,name=country"`
-	// The account name of the IT reviewer
+	DecisionType *DecisionType `json:"decisionType,omitempty" protobuf:"varint,2,opt,name=decisionType"`
+	// Reviewers contains the name of Accounts that will be required to approve models for promotion
 	// +kubebuilder:validation:Optional
-	ITReviewer *string `json:"itReviewer,omitempty" protobuf:"bytes,3,opt,name=itReviewer"`
-	// The account name of the compliance reviewer
-	// +kubebuilder:validation:Optional
-	ComplianceReviewer *string `json:"complianceReviewer,omitempty" protobuf:"bytes,4,opt,name=complianceReviewer"`
-	// The account name of the business reviewer
-	// +kubebuilder:validation:Optional
-	BusinessReviewer *string `json:"businessReviewer,omitempty" protobuf:"bytes,5,opt,name=businessReviewer"`
-	// The name of the team members account that goveren this data product.
-	// +kubebuilder:validation:Optional
-	Members []string `json:"members,omitempty" protobuf:"bytes,6,rep,name=members"`
+	Reviewers []string `json:"members,omitempty" protobuf:"bytes,3,rep,name=members"`
 }
 
 type ApprovalType string
 
 const (
-	ApprovalTypeApproved ApprovalType = "approved"
-	ApprovalTypeReject   ApprovalType = "reject"
+	ApprovalTypeApproved    ApprovalType = "approved"
+	ApprovalTypeReject      ApprovalType = "rejected"
+	ApprovalTypeUnconfirmed ApprovalType = "unconfirmed"
 )
 
-type GovernanceReviewStatus struct {
-	// The approval status, which can be approved or rejected
-	Result ApprovalType `json:"result,omitempty" protobuf:"bytes,1,opt,name=result"`
-	// The date of the approval
-	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,2,opt,name=approvedAt"`
-	// Notes taken during the review
-	Notes string `json:"notes,omitempty" protobuf:"bytes,3,opt,name=notes"`
+type ApprovalReviewStatus struct {
+	// Reviewer specifies the name of the Account which is responsible for this review
+	Reviewer string `json:"reviewer,omitempty" protobuf:"bytes,1,opt,name=reviewer"`
+	// The approval status, which can be approved, rejected, or unconfirmed
+	Result ApprovalType `json:"result,omitempty" protobuf:"bytes,2,opt,name=result"`
+	// The date at which the review took place. If empty, the review is still unconfirmed
+	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,3,opt,name=approvedAt"`
+	// The notes for the review, created by the reviewer at the time of the decision
+	Notes string `json:"notes,omitempty" protobuf:"bytes,4,opt,name=notes"`
 }
 
-// GovernanceStatus describes the current state of a governance review for a model
-type GovernanceStatus struct {
-	// The review status for IT department
-	// +kubebuilder:validation:Optional
-	ITReviewStatus GovernanceReviewStatus `json:"ITReviewStatus,omitempty" protobuf:"bytes,1,opt,name=ITReviewStatus"`
-	// The review status for the compliance department
-	// +kubebuilder:validation:Optional
-	ComplianceReviewStatus GovernanceReviewStatus `json:"complianceReviewStatus,omitempty" protobuf:"bytes,2,opt,name=complianceReviewStatus"`
-	// The review status for the management department
-	// +kubebuilder:validation:Optional
-	BusinessReviewStatus GovernanceReviewStatus `json:"businessReviewStatus,omitempty" protobuf:"bytes,3,opt,name=businessReviewStatus"`
+// ApprovalStatus describes the current state of a Model's approval review
+type ApprovalStatus struct {
+	// Status defines the overall approval status of the Model
+	Status ApprovalType `json:"status,omitempty" protobuf:"bytes,1,opt,name=status"`
+	// Reviews contains an ApprovalReviewStatus for each reviewer specified by the ApprovalSpec for the Model
+	Reviews []ApprovalReviewStatus `json:"reviews,omitempty" protobuf:"bytes,2,opt,name=reviews"`
 }

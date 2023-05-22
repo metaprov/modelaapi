@@ -8,38 +8,6 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
-export class APITokenSpec extends jspb.Message {
-  getName(): string;
-  setName(value: string): APITokenSpec;
-  hasName(): boolean;
-  clearName(): APITokenSpec;
-
-  getScopesList(): Array<Scope>;
-  setScopesList(value: Array<Scope>): APITokenSpec;
-  clearScopesList(): APITokenSpec;
-  addScopes(value?: Scope, index?: number): Scope;
-
-  getSecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
-  setSecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): APITokenSpec;
-  hasSecretref(): boolean;
-  clearSecretref(): APITokenSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): APITokenSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: APITokenSpec): APITokenSpec.AsObject;
-  static serializeBinaryToWriter(message: APITokenSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): APITokenSpec;
-  static deserializeBinaryFromReader(message: APITokenSpec, reader: jspb.BinaryReader): APITokenSpec;
-}
-
-export namespace APITokenSpec {
-  export type AsObject = {
-    name?: string,
-    scopesList: Array<Scope.AsObject>,
-    secretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
-  }
-}
-
 export class Account extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Account;
@@ -139,33 +107,18 @@ export class AccountSpec extends jspb.Message {
   hasAdmin(): boolean;
   clearAdmin(): AccountSpec;
 
-  getTeam(): boolean;
-  setTeam(value: boolean): AccountSpec;
-  hasTeam(): boolean;
-  clearTeam(): AccountSpec;
-
   getMemberof(): string;
   setMemberof(value: string): AccountSpec;
   hasMemberof(): boolean;
   clearMemberof(): AccountSpec;
-
-  getEmailpassword(): boolean;
-  setEmailpassword(value: boolean): AccountSpec;
-  hasEmailpassword(): boolean;
-  clearEmailpassword(): AccountSpec;
 
   getResetpassword(): boolean;
   setResetpassword(value: boolean): AccountSpec;
   hasResetpassword(): boolean;
   clearResetpassword(): AccountSpec;
 
-  getClearancelevel(): string;
-  setClearancelevel(value: string): AccountSpec;
-  hasClearancelevel(): boolean;
-  clearClearancelevel(): AccountSpec;
-
-  getAvatar(): AvatarSpec | undefined;
-  setAvatar(value?: AvatarSpec): AccountSpec;
+  getAvatar(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setAvatar(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): AccountSpec;
   hasAvatar(): boolean;
   clearAvatar(): AccountSpec;
 
@@ -173,11 +126,6 @@ export class AccountSpec extends jspb.Message {
   setFavoriteproductsList(value: Array<string>): AccountSpec;
   clearFavoriteproductsList(): AccountSpec;
   addFavoriteproducts(value: string, index?: number): AccountSpec;
-
-  getTokensList(): Array<APITokenSpec>;
-  setTokensList(value: Array<APITokenSpec>): AccountSpec;
-  clearTokensList(): AccountSpec;
-  addTokens(value?: APITokenSpec, index?: number): APITokenSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AccountSpec.AsObject;
@@ -197,14 +145,10 @@ export namespace AccountSpec {
     email?: string,
     phone?: string,
     admin?: boolean,
-    team?: boolean,
     memberof?: string,
-    emailpassword?: boolean,
     resetpassword?: boolean,
-    clearancelevel?: string,
-    avatar?: AvatarSpec.AsObject,
+    avatar?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     favoriteproductsList: Array<string>,
-    tokensList: Array<APITokenSpec.AsObject>,
   }
 }
 
@@ -626,32 +570,6 @@ export namespace AttachmentStatus {
   }
 }
 
-export class AvatarSpec extends jspb.Message {
-  getBucketname(): string;
-  setBucketname(value: string): AvatarSpec;
-  hasBucketname(): boolean;
-  clearBucketname(): AvatarSpec;
-
-  getPath(): string;
-  setPath(value: string): AvatarSpec;
-  hasPath(): boolean;
-  clearPath(): AvatarSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AvatarSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: AvatarSpec): AvatarSpec.AsObject;
-  static serializeBinaryToWriter(message: AvatarSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AvatarSpec;
-  static deserializeBinaryFromReader(message: AvatarSpec, reader: jspb.BinaryReader): AvatarSpec;
-}
-
-export namespace AvatarSpec {
-  export type AsObject = {
-    bucketname?: string,
-    path?: string,
-  }
-}
-
 export class BucketResourceQuotas extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): BucketResourceQuotas;
@@ -829,70 +747,6 @@ export namespace ConnectionStatus {
     failurereason?: string,
     failuremessage?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
-  }
-}
-
-export class FeatureStoreSpec extends jspb.Message {
-  getName(): string;
-  setName(value: string): FeatureStoreSpec;
-  hasName(): boolean;
-  clearName(): FeatureStoreSpec;
-
-  getConnectionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setConnectionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): FeatureStoreSpec;
-  hasConnectionref(): boolean;
-  clearConnectionref(): FeatureStoreSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeatureStoreSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: FeatureStoreSpec): FeatureStoreSpec.AsObject;
-  static serializeBinaryToWriter(message: FeatureStoreSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeatureStoreSpec;
-  static deserializeBinaryFromReader(message: FeatureStoreSpec, reader: jspb.BinaryReader): FeatureStoreSpec;
-}
-
-export namespace FeatureStoreSpec {
-  export type AsObject = {
-    name?: string,
-    connectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-  }
-}
-
-export class FeatureStoreStatus extends jspb.Message {
-  getName(): string;
-  setName(value: string): FeatureStoreStatus;
-  hasName(): boolean;
-  clearName(): FeatureStoreStatus;
-
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureStoreStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): FeatureStoreStatus;
-
-  getFailurereason(): string;
-  setFailurereason(value: string): FeatureStoreStatus;
-  hasFailurereason(): boolean;
-  clearFailurereason(): FeatureStoreStatus;
-
-  getFailuremessage(): string;
-  setFailuremessage(value: string): FeatureStoreStatus;
-  hasFailuremessage(): boolean;
-  clearFailuremessage(): FeatureStoreStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeatureStoreStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: FeatureStoreStatus): FeatureStoreStatus.AsObject;
-  static serializeBinaryToWriter(message: FeatureStoreStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeatureStoreStatus;
-  static deserializeBinaryFromReader(message: FeatureStoreStatus, reader: jspb.BinaryReader): FeatureStoreStatus;
-}
-
-export namespace FeatureStoreStatus {
-  export type AsObject = {
-    name?: string,
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason?: string,
-    failuremessage?: string,
   }
 }
 
@@ -1754,32 +1608,6 @@ export namespace RuleSpec {
   }
 }
 
-export class Scope extends jspb.Message {
-  getName(): string;
-  setName(value: string): Scope;
-  hasName(): boolean;
-  clearName(): Scope;
-
-  getActionsList(): Array<string>;
-  setActionsList(value: Array<string>): Scope;
-  clearActionsList(): Scope;
-  addActions(value: string, index?: number): Scope;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Scope.AsObject;
-  static toObject(includeInstance: boolean, msg: Scope): Scope.AsObject;
-  static serializeBinaryToWriter(message: Scope, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Scope;
-  static deserializeBinaryFromReader(message: Scope, reader: jspb.BinaryReader): Scope;
-}
-
-export namespace Scope {
-  export type AsObject = {
-    name?: string,
-    actionsList: Array<string>,
-  }
-}
-
 export class ServingSite extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): ServingSite;
@@ -2057,35 +1885,20 @@ export namespace TenantList {
 }
 
 export class TenantSpec extends jspb.Message {
-  getDefaultlab(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setDefaultlab(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TenantSpec;
-  hasDefaultlab(): boolean;
-  clearDefaultlab(): TenantSpec;
+  getDefaultlabname(): string;
+  setDefaultlabname(value: string): TenantSpec;
+  hasDefaultlabname(): boolean;
+  clearDefaultlabname(): TenantSpec;
 
-  getDefaultservingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setDefaultservingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TenantSpec;
-  hasDefaultservingsiteref(): boolean;
-  clearDefaultservingsiteref(): TenantSpec;
+  getDefaultservingsitename(): string;
+  setDefaultservingsitename(value: string): TenantSpec;
+  hasDefaultservingsitename(): boolean;
+  clearDefaultservingsitename(): TenantSpec;
 
-  getDescription(): string;
-  setDescription(value: string): TenantSpec;
-  hasDescription(): boolean;
-  clearDescription(): TenantSpec;
-
-  getOwner(): string;
-  setOwner(value: string): TenantSpec;
-  hasOwner(): boolean;
-  clearOwner(): TenantSpec;
-
-  getBucketname(): string;
-  setBucketname(value: string): TenantSpec;
-  hasBucketname(): boolean;
-  clearBucketname(): TenantSpec;
-
-  getPath(): string;
-  setPath(value: string): TenantSpec;
-  hasPath(): boolean;
-  clearPath(): TenantSpec;
+  getDefaultbucketname(): string;
+  setDefaultbucketname(value: string): TenantSpec;
+  hasDefaultbucketname(): boolean;
+  clearDefaultbucketname(): TenantSpec;
 
   getPermissions(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec | undefined;
   setPermissions(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec): TenantSpec;
@@ -2097,20 +1910,15 @@ export class TenantSpec extends jspb.Message {
   hasNotification(): boolean;
   clearNotification(): TenantSpec;
 
-  getOnline(): FeatureStoreSpec | undefined;
-  setOnline(value?: FeatureStoreSpec): TenantSpec;
-  hasOnline(): boolean;
-  clearOnline(): TenantSpec;
+  getOnlinestoreconnection(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setOnlinestoreconnection(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TenantSpec;
+  hasOnlinestoreconnection(): boolean;
+  clearOnlinestoreconnection(): TenantSpec;
 
-  getOffline(): FeatureStoreSpec | undefined;
-  setOffline(value?: FeatureStoreSpec): TenantSpec;
-  hasOffline(): boolean;
-  clearOffline(): TenantSpec;
-
-  getMetrics(): FeatureStoreSpec | undefined;
-  setMetrics(value?: FeatureStoreSpec): TenantSpec;
-  hasMetrics(): boolean;
-  clearMetrics(): TenantSpec;
+  getMetricstoreconnection(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setMetricstoreconnection(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TenantSpec;
+  hasMetricstoreconnection(): boolean;
+  clearMetricstoreconnection(): TenantSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TenantSpec.AsObject;
@@ -2122,17 +1930,13 @@ export class TenantSpec extends jspb.Message {
 
 export namespace TenantSpec {
   export type AsObject = {
-    defaultlab?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    defaultservingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    description?: string,
-    owner?: string,
-    bucketname?: string,
-    path?: string,
+    defaultlabname?: string,
+    defaultservingsitename?: string,
+    defaultbucketname?: string,
     permissions?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
-    online?: FeatureStoreSpec.AsObject,
-    offline?: FeatureStoreSpec.AsObject,
-    metrics?: FeatureStoreSpec.AsObject,
+    onlinestoreconnection?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    metricstoreconnection?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
@@ -2157,21 +1961,6 @@ export class TenantStatus extends jspb.Message {
   hasFailuremessage(): boolean;
   clearFailuremessage(): TenantStatus;
 
-  getOnline(): FeatureStoreStatus | undefined;
-  setOnline(value?: FeatureStoreStatus): TenantStatus;
-  hasOnline(): boolean;
-  clearOnline(): TenantStatus;
-
-  getOffline(): FeatureStoreStatus | undefined;
-  setOffline(value?: FeatureStoreStatus): TenantStatus;
-  hasOffline(): boolean;
-  clearOffline(): TenantStatus;
-
-  getMetrics(): FeatureStoreStatus | undefined;
-  setMetrics(value?: FeatureStoreStatus): TenantStatus;
-  hasMetrics(): boolean;
-  clearMetrics(): TenantStatus;
-
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): TenantStatus;
   clearConditionsList(): TenantStatus;
@@ -2191,9 +1980,6 @@ export namespace TenantStatus {
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failurereason?: string,
     failuremessage?: string,
-    online?: FeatureStoreStatus.AsObject,
-    offline?: FeatureStoreStatus.AsObject,
-    metrics?: FeatureStoreStatus.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }

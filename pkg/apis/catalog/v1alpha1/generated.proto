@@ -66,6 +66,15 @@ message AccessSpec {
   optional k8s.io.api.core.v1.SecretReference apikeySecretRef = 7;
 }
 
+// AccountPermissions specifies the User Role Classes of an individual Account
+message AccountPermissions {
+  // The name of the Account receiving the permissions
+  optional string accountName = 1;
+
+  // Roles contains a list of User Role Classes that will be bound to the Account
+  repeated k8s.io.api.core.v1.LocalObjectReference roles = 2;
+}
+
 // +genclient
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=algorithms,singular=algorithm,shortName="alg",categories={catalog,modela,all}
@@ -174,7 +183,7 @@ message CloudStatus {
   repeated GpuClassCost gpuCosts = 2;
 }
 
-// Compiler spec is used when there is a specification for model compilation
+// CompilerSpec is used when there is a specification for model compilation
 message CompilerSpec {
   // Enable set the enable to
   // +kubebuilder:default:=false
@@ -416,7 +425,7 @@ message DataTestCaseResult {
 
 // FileLocation denotes the location of a flat-file, which is the name of a VirtualBucket and the path within it
 message FileLocation {
-  optional string bucket = 1;
+  optional string bucketName = 1;
 
   optional string path = 2;
 }
@@ -919,10 +928,9 @@ message ParameterRange {
   optional double parentValueFloat = 14;
 }
 
-// PermissionsSpec specifies the Accounts that have access to a DataProduct or Tenant namespace and what permissions
-// they possess for resources under the namespace
+// PermissionsSpec defines the permissions for one or more accounts
 message PermissionsSpec {
-  repeated Stakeholder stakeholders = 1;
+  repeated AccountPermissions accounts = 1;
 }
 
 // Pretrained model contain the metadata about a pretrained model
@@ -1148,15 +1156,6 @@ message RunScheduleStatus {
   // Actual retry count
   // +kubebuilder:validation:Optional
   optional int32 retryCount = 6;
-}
-
-// Stakeholder specifies the User Role Classes of an individual Account
-message Stakeholder {
-  // The name of an Account
-  optional string account = 1;
-
-  // The object references to UserRoleClass resources which describe the actions the Account may perform
-  repeated k8s.io.api.core.v1.ObjectReference roles = 2;
 }
 
 message TestSuite {

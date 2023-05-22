@@ -18,6 +18,45 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1";
 
+message ApprovalReviewStatus {
+  // Reviewer specifies the name of the Account which is responsible for this review
+  optional string reviewer = 1;
+
+  // The approval status, which can be approved, rejected, or unconfirmed
+  optional string result = 2;
+
+  // The date at which the review took place. If empty, the review is still unconfirmed
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 3;
+
+  // The notes for the review, created by the reviewer at the time of the decision
+  optional string notes = 4;
+}
+
+// ApprovalSpec describes the approval requirements for a Model
+message ApprovalSpec {
+  // Enabled indicates if model approval is enabled
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // DecisionType specifies the requirements for the model to be approved in the case of there being multiple reviewers
+  // +kubebuilder:validation:Optional
+  optional string decisionType = 2;
+
+  // Reviewers contains the name of Accounts that will be required to approve models for promotion
+  // +kubebuilder:validation:Optional
+  repeated string members = 3;
+}
+
+// ApprovalStatus describes the current state of a Model's approval review
+message ApprovalStatus {
+  // Status defines the overall approval status of the Model
+  optional string status = 1;
+
+  // Reviews contains an ApprovalReviewStatus for each reviewer specified by the ApprovalSpec for the Model
+  repeated ApprovalReviewStatus reviews = 2;
+}
+
 // Bar Chart
 message BarChartSpec {
   // Dataset is the name of the dataset
@@ -970,7 +1009,7 @@ message DataProduct {
 }
 
 // +kubebuilder:object:root=true
-// DataProductList contains a list of DataProducts
+// DataProductList contains a list of Data Products
 message DataProductList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
@@ -984,20 +1023,21 @@ message DataProductSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
-  // Indicates if the DataProduct is public and can be accessed without permissions
+  // Public indicates if the Data Product can be accessed without any permissions.
+  // If enabled, all resources and verbs will be accessible
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool public = 2;
 
-  // The reference to the Tenant which owns the DataProduct. Defaults to `default-tenant`
+  // The reference to the Tenant of the Data Product (which must equal the namespace of the Data Product)
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 3;
 
-  // GitLocation is the default Git location where all child resources will be tracked as YAML
+  // GitLocation specifies the location of a Git repository where resources under the Data Product will be saved as YAML
   // +kubebuilder:validation:Optional
   optional GitLocation gitLocation = 4;
 
-  // ImageLocation is the default Docker image repository where model images produced under the DataProduct will be stored
+  // ImageLocation specifies the default Docker image repository where images produced under the Data Product will be stored
   // +kubebuilder:validation:Optional
   optional ImageLocation imageLocation = 5;
 
@@ -1005,13 +1045,19 @@ message DataProductSpec {
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Optional
-  optional string labName = 7;
+  optional string defaultLabName = 6;
 
   // The name of the Serving Site which will be used by default with all Predictor resources
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string servingSiteName = 8;
+  optional string defaultServingSiteName = 7;
+
+  // The name of the Virtual Bucket that resources under the Data Product will use by default
+  // +kubebuilder:validation:MaxLength=63
+  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+  // +kubebuilder:validation:Optional
+  optional string defaultBucketName = 8;
 
   // Task specifies the default machine learning task of the product (classification, regression, etc.)
   // +kubebuilder:validation:Optional
@@ -1028,70 +1074,46 @@ message DataProductSpec {
   // +kubebuilder:validation:MaxLength=512
   optional string description = 11;
 
-  // The default location for all artifacts created under the DataProduct. All data-producing resources will
-  // use the VirtualBucket specified by the Location by default
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation location = 12;
-
   // The default notification specification for all resources under the DataProduct
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 13;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 12;
 
   // The default resource allocation for model training and data workloads that takes place under the DataProduct
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec trainingResources = 14;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec trainingResources = 13;
 
   // The default resource allocation for model serving workloads that takes place under the DataProduct
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec servingResources = 15;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec servingResources = 14;
 
-  // Specifies how many times Jobs created under the DataProduct namespace will retry after failure
-  // +kubebuilder:default:=3
+  // RetriesOnFailure defines the backoff limit for Jobs created by resources under the Data Product.
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Optional
-  optional int32 retriesOnFailure = 16;
+  optional int32 retriesOnFailure = 15;
 
-  // KPIs define key performance indicators for the DataProduct (not functional as of the current release)
-  // +kubebuilder:validation:Optional
-  repeated KPI kpis = 17;
-
-  // The name of the Account which should be responsible for events that occur under the DataProduct
-  // +kubebuilder:validation:Optional
-  optional string onCallAccountName = 18;
-
-  // The default compilation specification for Study resources created under the DataProduct
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 19;
-
-  // The clearance level required to access the DataProduct. Accounts which do not have a clearance level
-  // greater than or equal to ClearanceLevel will be denied access to the DataProduct namespace
-  // +kubebuilder:default:=unclassified
-  // +kubebuilder:validation:Optional
-  optional string clearanceLevel = 20;
-
-  // The default priority level assigned to Jobs created under the DataProduct namespace
+  // The default priority level assigned to Jobs created by resources under the Data Product
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:="medium"
-  optional string priority = 21;
+  optional string priority = 16;
 
-  // The color assigned to the product, for visual purposes only
+  // The implementation-specific color assigned to the Data Product, for visual purposes only
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
-  optional string color = 22;
+  optional string color = 17;
 
-  // The Governance requirements (not functional as of the current release)
+  // Approval specifies the default model approval requirements
   // +kubebuilder:validation:Optional
-  optional GovernanceSpec governance = 23;
+  optional ApprovalSpec approval = 18;
 
-  // Permissions denotes the specification that determines which Accounts
-  // can access the DataProduct and what actions they can perform
+  // Permissions defines the set of permissions applied to each Account when accessing resources within the Data Product
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 24;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 19;
 
-  // Assign tags to data product
+  // Tags contain user-defined tags associated with the Data Product
   // +kubebuilder:validation:Optional
-  repeated string tags = 25;
+  repeated string tags = 20;
 }
 
 // DataProductStatus defines the observed state of DataProduct
@@ -2258,60 +2280,6 @@ message GitLocation {
   // Indicates if the repository is private
   // +kubebuilder:default:=true
   optional bool private = 4;
-}
-
-message GovernanceReviewStatus {
-  // The approval status, which can be approved or rejected
-  optional string result = 1;
-
-  // The date of the approval
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 2;
-
-  // Notes taken during the review
-  optional string notes = 3;
-}
-
-// GovernanceSpec describes the governance requirements for models produced under a DataProduct
-message GovernanceSpec {
-  // Indicates if governance is enabled
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-
-  // The country whose regulations are under consideration
-  // +kubebuilder:validation:Optional
-  optional string country = 2;
-
-  // The account name of the IT reviewer
-  // +kubebuilder:validation:Optional
-  optional string itReviewer = 3;
-
-  // The account name of the compliance reviewer
-  // +kubebuilder:validation:Optional
-  optional string complianceReviewer = 4;
-
-  // The account name of the business reviewer
-  // +kubebuilder:validation:Optional
-  optional string businessReviewer = 5;
-
-  // The name of the team members account that goveren this data product.
-  // +kubebuilder:validation:Optional
-  repeated string members = 6;
-}
-
-// GovernanceStatus describes the current state of a governance review for a model
-message GovernanceStatus {
-  // The review status for IT department
-  // +kubebuilder:validation:Optional
-  optional GovernanceReviewStatus ITReviewStatus = 1;
-
-  // The review status for the compliance department
-  // +kubebuilder:validation:Optional
-  optional GovernanceReviewStatus complianceReviewStatus = 2;
-
-  // The review status for the management department
-  // +kubebuilder:validation:Optional
-  optional GovernanceReviewStatus businessReviewStatus = 3;
 }
 
 // Define how to group by the data, before processing.

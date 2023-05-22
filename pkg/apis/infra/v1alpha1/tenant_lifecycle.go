@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	v1 "k8s.io/api/core/v1"
 
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -21,9 +22,9 @@ import (
 // Finilizer
 //==============================================================================
 
-func (tenant Tenant) HasFinalizer() bool { return util.HasFin(&tenant.ObjectMeta, infra.GroupName) }
-func (tenant *Tenant) AddFinalizer()     { util.AddFin(&tenant.ObjectMeta, infra.GroupName) }
-func (tenant *Tenant) RemoveFinalizer()  { util.RemoveFin(&tenant.ObjectMeta, infra.GroupName) }
+func (tenant *Tenant) HasFinalizer() bool { return util.HasFin(&tenant.ObjectMeta, infra.GroupName) }
+func (tenant *Tenant) AddFinalizer()      { util.AddFin(&tenant.ObjectMeta, infra.GroupName) }
+func (tenant *Tenant) RemoveFinalizer()   { util.RemoveFin(&tenant.ObjectMeta, infra.GroupName) }
 
 //==============================================================================
 // Trackable
@@ -121,10 +122,7 @@ func (tenant *Tenant) Populate(name string) {
 		Name:      name,
 		Namespace: "modela-system",
 	}
-	tenant.Spec = TenantSpec{
-		DefaultLabRef:         nil,
-		DefaultServingSiteRef: nil,
-	}
+
 	tenant.Default()
 
 }
@@ -147,7 +145,7 @@ func (tenant *Tenant) MarkDatabaseReady() {
 
 func (tenant Tenant) GetRolesForAccount(account *Account) []string {
 	result := make([]string, 0)
-	for _, v := range tenant.Spec.Permissions.Stakeholders {
+	for _, v := range tenant.Spec.Permissions.Accounts {
 		if v.AccountName == account.Name {
 			for _, x := range v.Roles {
 				result = append(result, x.Name)
@@ -155,4 +153,18 @@ func (tenant Tenant) GetRolesForAccount(account *Account) []string {
 		}
 	}
 	return result
+}
+
+func (tenant Tenant) DefaultLabRef() *v1.ObjectReference {
+	return &v1.ObjectReference{
+		Name:      *tenant.Spec.DefaultLabName,
+		Namespace: tenant.Name,
+	}
+}
+
+func (tenant Tenant) DefaultServingSiteRef() *v1.ObjectReference {
+	return &v1.ObjectReference{
+		Name:      *tenant.Spec.DefaultServingSiteName,
+		Namespace: tenant.Name,
+	}
 }

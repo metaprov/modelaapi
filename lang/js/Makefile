@@ -32,7 +32,11 @@ build:
 install:
 	npm install
 
+copy:
+	rm -rf ~/go/src/github.com/metaprov/modela/frontend/modela-client/node_modules/modelaapi
+	cp -R . ~/go/src/github.com/metaprov/modela/frontend/modela-client/node_modules/modelaapi
+
 # Deploy to PyPI
 upload: build
 	npm publish --access public
-	
+

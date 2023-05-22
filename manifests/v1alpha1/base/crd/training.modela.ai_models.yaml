@@ -103,6 +103,25 @@ spec:
                   be completed in seconds
                 format: int64
                 type: integer
+              approval:
+                description: Governance specifies the model governance requirements
+                  (currently unimplemented)
+                properties:
+                  decisionType:
+                    description: DecisionType specifies the requirements for the model
+                      to be approved in the case of there being multiple reviewers
+                    type: string
+                  enabled:
+                    default: false
+                    description: Enabled indicates if model approval is enabled
+                    type: boolean
+                  members:
+                    description: Reviewers contains the name of Accounts that will
+                      be required to approve models for promotion
+                    items:
+                      type: string
+                    type: array
+                type: object
               archived:
                 default: false
                 description: Archived indicates that the Model should be archived
@@ -1520,33 +1539,6 @@ spec:
                 description: GenDriftDetector indicates if we should generate a drift
                   detector model for this model
                 type: boolean
-              governance:
-                description: Governance specifies the model governance requirements
-                  (currently unimplemented)
-                properties:
-                  businessReviewer:
-                    description: The account name of the business reviewer
-                    type: string
-                  complianceReviewer:
-                    description: The account name of the compliance reviewer
-                    type: string
-                  country:
-                    description: The country whose regulations are under consideration
-                    type: string
-                  enabled:
-                    default: false
-                    description: Indicates if governance is enabled
-                    type: boolean
-                  itReviewer:
-                    description: The account name of the IT reviewer
-                    type: string
-                  members:
-                    description: The name of the team members account that goveren
-                      this data product.
-                    items:
-                      type: string
-                    type: array
-                type: object
               interpretability:
                 description: Interpretability specifies the configuration to generate
                   model interpretability visualizations
@@ -2592,6 +2584,39 @@ spec:
               appURI:
                 description: The URI to the model application file
                 type: string
+              approval:
+                description: Approval specifies the current approval status for the
+                  Model
+                properties:
+                  reviews:
+                    description: Reviews contains an ApprovalReviewStatus for each
+                      reviewer specified by the ApprovalSpec for the Model
+                    items:
+                      properties:
+                        approvedAt:
+                          description: The date at which the review took place. If
+                            empty, the review is still unconfirmed
+                          format: date-time
+                          type: string
+                        notes:
+                          description: The notes for the review, created by the reviewer
+                            at the time of the decision
+                          type: string
+                        result:
+                          description: The approval status, which can be approved,
+                            rejected, or unconfirmed
+                          type: string
+                        reviewer:
+                          description: Reviewer specifies the name of the Account
+                            which is responsible for this review
+                          type: string
+                      type: object
+                    type: array
+                  status:
+                    description: Status defines the overall approval status of the
+                      Model
+                    type: string
+                type: object
               best:
                 description: Best indicates if the Model was found to be the best
                   model produced by a Study
@@ -3130,56 +3155,6 @@ spec:
               fullWeightsURI:
                 description: The URI of the model test weights
                 type: string
-              governance:
-                description: Governance specifies the current governance status for
-                  the Model
-                properties:
-                  ITReviewStatus:
-                    description: The review status for IT department
-                    properties:
-                      approvedAt:
-                        description: The date of the approval
-                        format: date-time
-                        type: string
-                      notes:
-                        description: Notes taken during the review
-                        type: string
-                      result:
-                        description: The approval status, which can be approved or
-                          rejected
-                        type: string
-                    type: object
-                  businessReviewStatus:
-                    description: The review status for the management department
-                    properties:
-                      approvedAt:
-                        description: The date of the approval
-                        format: date-time
-                        type: string
-                      notes:
-                        description: Notes taken during the review
-                        type: string
-                      result:
-                        description: The approval status, which can be approved or
-                          rejected
-                        type: string
-                    type: object
-                  complianceReviewStatus:
-                    description: The review status for the compliance department
-                    properties:
-                      approvedAt:
-                        description: The date of the approval
-                        format: date-time
-                        type: string
-                      notes:
-                        description: Notes taken during the review
-                        type: string
-                      result:
-                        description: The approval status, which can be approved or
-                          rejected
-                        type: string
-                    type: object
-                type: object
               groupby:
                 description: The sub models uri file contain the results of running
                   the sub model
@@ -3195,8 +3170,8 @@ spec:
                     description: The locations of the datasets profiles files.
                     type: string
                   workerResults:
-                    description: Holds the worker on going result, when a worker finish,
-                      we update the location of thier result files
+                    description: Holds the worker on-going result, when a worker finish,
+                      we update the location of their result files
                     items:
                       properties:
                         error:
@@ -3849,7 +3824,7 @@ spec:
                 description: TestDatasetLocation specifies the location of the testing
                   dataset
                 properties:
-                  bucket:
+                  bucketName:
                     type: string
                   path:
                     type: string
@@ -4046,7 +4021,7 @@ spec:
                 description: TrainDatasetLocation specifies the location of the training
                   dataset
                 properties:
-                  bucket:
+                  bucketName:
                     type: string
                   path:
                     type: string
@@ -4442,7 +4417,7 @@ spec:
                 description: ValidationDataset specifies the location of the validation
                   dataset
                 properties:
-                  bucket:
+                  bucketName:
                     type: string
                   path:
                     type: string

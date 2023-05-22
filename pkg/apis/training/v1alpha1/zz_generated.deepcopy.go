@@ -2248,9 +2248,9 @@ func (in *ModelSpec) DeepCopyInto(out *ModelSpec) {
 		*out = new(int32)
 		**out = **in
 	}
-	if in.Governance != nil {
-		in, out := &in.Governance, &out.Governance
-		*out = new(datav1alpha1.GovernanceSpec)
+	if in.Approval != nil {
+		in, out := &in.Approval, &out.Approval
+		*out = new(datav1alpha1.ApprovalSpec)
 		(*in).DeepCopyInto(*out)
 	}
 	in.Interpretability.DeepCopyInto(&out.Interpretability)
@@ -2435,7 +2435,7 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 		in, out := &in.UpdatedAt, &out.UpdatedAt
 		*out = (*in).DeepCopy()
 	}
-	in.Governance.DeepCopyInto(&out.Governance)
+	in.Approval.DeepCopyInto(&out.Approval)
 	in.Interpretability.DeepCopyInto(&out.Interpretability)
 	in.Images.DeepCopyInto(&out.Images)
 	in.UnitTestsResult.DeepCopyInto(&out.UnitTestsResult)

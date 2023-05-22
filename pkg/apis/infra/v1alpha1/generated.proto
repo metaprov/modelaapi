@@ -19,17 +19,6 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1";
 
-message APITokenSpec {
-  optional string name = 1;
-
-  // Scopes is the list of scopes for this token.
-  // +kubebuilder:validation:Optional
-  repeated Scope scopes = 2;
-
-  // The token itself
-  optional k8s.io.api.core.v1.SecretReference secretRef = 3;
-}
-
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=accounts,shortName=acct,singular=account,categories={infra,modela}
 // +kubebuilder:subresource:status
@@ -102,49 +91,30 @@ message AccountSpec {
   // +kubebuilder:validation:MaxLength=64
   optional string phone = 8;
 
-  // Indicates if the Account has admin permissions. Admin accounts have unrestricted access to all resources and
-  // full control to modify and create other Accounts
+  // Indicates if the Account has admin permissions. Admin accounts have unrestricted access
+  // to all resources and full control to modify and create other Accounts
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool admin = 9;
 
-  // Indicates if the Account is a team account
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool team = 10;
-
-  // MemberOf specifies the name of the team that the Account belongs to. An account can belong to one other team Account
+  // MemberOf specifies the name of the team that the Account belongs to.
+  // The Account will assume all the permissions of the parent Account
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string memberOf = 11;
 
-  // Indicates if an e-mail will be sent to the address specified by the Email field, that notifies the Account owner
-  // about the creation of the Account
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool emailPassword = 12;
-
-  // Indicates if the Account owner will be prompted to reset their password upon login
+  // Indicates if the Account will be prompted to reset their password upon login
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool resetPassword = 13;
 
-  // The clearance level of the account. Accounts which do not have a clearance level greater than or equal to the
-  // clearance level of a DataProduct will not have access to their namespace
-  // +kubebuilder:default:=unclassified
+  // Avatar specifies the location of the Account's avatar image
   // +kubebuilder:validation:Optional
-  optional string clearanceLevel = 17;
-
-  // The specification for the Account avatar image
-  // +kubebuilder:validation:Optional
-  optional AvatarSpec avatar = 18;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation avatar = 18;
 
   // The collection of DataProduct names that will be displayed with priority on the tenant dashboard for the Account
   // +kubebuilder:validation:Optional
   repeated string favoriteProducts = 19;
-
-  // +kubebuilder:validation:Optional
-  repeated APITokenSpec tokens = 20;
 }
 
 // AccountStatus defines the actual state of the api object
@@ -185,7 +155,7 @@ message AccountStatus {
   // +kubebuilder:validation:Optional
   optional int32 datasetsCount = 9;
 
-  // If group, this is the total members.
+  // If the Account is a group account, the total number of Accounts that exist under the group
   // +kubebuilder:validation:Optional
   optional int32 membersCount = 10;
 
@@ -389,19 +359,6 @@ message AttachmentStatus {
   repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
 }
 
-// AvatarSpec specifies the location of an avatar for an Account
-message AvatarSpec {
-  // +kubebuilder:default:=""
-  // BucketName is the name of the VirtualBucket resource that exists on the same tenant as the Account
-  // +kubebuilder:validation:Optional
-  optional string bucketName = 1;
-
-  // Path specifies the path to an image file on the VirtualBucket (e.g. a PNG file)
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string path = 2;
-}
-
 message BucketResourceQuotas {
   // Indicates if the resource quota is enabled
   // +kubebuilder:default:=false
@@ -493,34 +450,6 @@ message ConnectionStatus {
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
-}
-
-// Specifiction for an online feature store
-message FeatureStoreSpec {
-  // The name of the online feature store.
-  // +kubebuilder:validation:Optional
-  optional string name = 1;
-
-  // UpdateUpdateStrategy in case of terminal failure message
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference connectionRef = 2;
-}
-
-message FeatureStoreStatus {
-  // Feature store name
-  optional string name = 1;
-
-  // Last check of the feature store status
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
-
-  // UpdateUpdateStrategy in case of terminal failure
-  // Borrowed from cluster api controller
-  // +kubebuilder:validation:Optional
-  optional string failureReason = 3;
-
-  // UpdateUpdateStrategy in case of terminal failure message
-  // +kubebuilder:validation:Optional
-  optional string failureMessage = 4;
 }
 
 // IngressSpec defines the configuration to for a ServingSite to create Ingress resources
@@ -1006,14 +935,6 @@ message RuleSpec {
   repeated string verbs = 2;
 }
 
-message Scope {
-  // +kubebuilder:validation:Optional
-  optional string name = 1;
-
-  // +kubebuilder:validation:Optional
-  repeated string actions = 2;
-}
-
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=servingsites,singular=servingsite,categories={infra,modela}
 // +kubebuilder:subresource:status
@@ -1168,58 +1089,39 @@ message TenantList {
 
 // TenantSpec defines the desired state of a Tenant
 message TenantSpec {
-  // The reference to the Lab resource that will be used as a default when creating new DataProduct namespaces
+  // DefaultLabName specifies a Lab resource that will be used as a default for all resources that
+  // do not specify a Lab or have a Data Product which specifies a default Lab
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference defaultLab = 1;
+  optional string defaultLabName = 1;
 
-  // The reference to the ServingSite resource that will be used as a default when creating new DataProduct namespaces
+  // DefaultServingSiteName specifies a Serving Site resource that will be used as a default for all resources that
+  // do not specify a Serving Site or have a Data Product which specifies a default Serving Site
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference defaultServingSiteRef = 2;
+  optional string defaultServingSiteName = 2;
 
-  // The user-provided description of the Tenant
+  // DefaultBucketName specifies a Virtual Bucket resource that will be used as a default for all resources that
+  // do not specify a Virtual Bucket or have a Data Product which specifies a default Virtual Bucket
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:MaxLength=512
-  // +kubebuilder:validation:Optional
-  optional string description = 3;
+  optional string defaultBucketName = 3;
 
-  // Owner indicates the name of the Account under the Tenant which created the Tenant (i.e. the Tenant administrator)
-  // +kubebuilder:default:="no-one"
+  // Permissions defines the set of permissions applied to each Account when accessing resources within the Tenant
   // +kubebuilder:validation:Optional
-  optional string owner = 4;
-
-  // The default bucket name for tenant artifacts
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string bucketName = 5;
-
-  // The root path to
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string path = 6;
-
-  // Permissions denotes the specification that determines which Accounts
-  // can access the resources under the Tenant namespace and what actions they can perform
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 4;
 
   // The default notification specification for all resources under the tenant
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 5;
 
-  // The connection to the online feature store for the tenant.
-  // The online store serves all the feature groups for this tenant.
+  // OnlineStore references a Connection resource to an external database that the Modela online store microservice
+  // will use as an online store. The online store service must be installed through the Modela Operator
   // +kubebuilder:validation:Optional
-  optional FeatureStoreSpec online = 9;
+  optional k8s.io.api.core.v1.ObjectReference onlineStoreConnection = 6;
 
-  // The connection to the offline feature store. This feature store holds the observations as well as the feature groups.
+  // MetricStore references a Connection resource to an external database that will act as the metric store for the Tenant.
+  // The metric store stores metadata about resources that perform workloads (i.e. datasets, models, studies, etc.)
   // +kubebuilder:validation:Optional
-  optional FeatureStoreSpec offline = 10;
-
-  // The connection to the metrics store. The metrics store hold the metadata about objects in the system (e.g. models)
-  // The metrics store is used for reports and general analytics.
-  // +kubebuilder:validation:Optional
-  optional FeatureStoreSpec metrics = 11;
+  optional k8s.io.api.core.v1.ObjectReference metricStoreConnection = 7;
 }
 
 // TenantStatus defines the actual state of a Tenant
@@ -1241,22 +1143,10 @@ message TenantStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 4;
 
-  // the status of the online store
-  // +kubebuilder:validation:Optional
-  optional FeatureStoreStatus online = 5;
-
-  // the status of the offline store
-  // +kubebuilder:validation:Optional
-  optional FeatureStoreStatus offline = 6;
-
-  // the status of the metrics store
-  // +kubebuilder:validation:Optional
-  optional FeatureStoreStatus metrics = 7;
-
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 8;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
 }
 
 // +kubebuilder:storageversion

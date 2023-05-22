@@ -90,41 +90,26 @@ type AccountSpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=64
 	Phone *string `json:"phone,omitempty" protobuf:"bytes,8,opt,name=phone"`
-	// Indicates if the Account has admin permissions. Admin accounts have unrestricted access to all resources and
-	// full control to modify and create other Accounts
+	// Indicates if the Account has admin permissions. Admin accounts have unrestricted access
+	// to all resources and full control to modify and create other Accounts
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Admin *bool `json:"admin,omitempty" protobuf:"varint,9,opt,name=admin"`
-	// Indicates if the Account is a team account
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Team *bool `json:"team,omitempty" protobuf:"varint,10,opt,name=team"`
-	// MemberOf specifies the name of the team that the Account belongs to. An account can belong to one other team Account
+	// MemberOf specifies the name of the team that the Account belongs to.
+	// The Account will assume all the permissions of the parent Account
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	MemberOf *string `json:"memberOf,omitempty" protobuf:"bytes,11,opt,name=memberOf"`
-	// Indicates if an e-mail will be sent to the address specified by the Email field, that notifies the Account owner
-	// about the creation of the Account
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	EmailPassword *bool `json:"emailPassword,omitempty" protobuf:"varint,12,opt,name=emailPassword"`
-	// Indicates if the Account owner will be prompted to reset their password upon login
+	// Indicates if the Account will be prompted to reset their password upon login
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ResetPassword *bool `json:"resetPassword,omitempty" protobuf:"varint,13,opt,name=resetPassword"`
-	// The clearance level of the account. Accounts which do not have a clearance level greater than or equal to the
-	// clearance level of a DataProduct will not have access to their namespace
-	// +kubebuilder:default:=unclassified
+	// Avatar specifies the location of the Account's avatar image
 	// +kubebuilder:validation:Optional
-	ClearanceLevel *catalog.SecurityClearanceLevel `json:"clearanceLevel,omitempty" protobuf:"bytes,17,opt,name=clearanceLevel"`
-	// The specification for the Account avatar image
-	// +kubebuilder:validation:Optional
-	Avatar AvatarSpec `json:"avatar,omitempty" protobuf:"bytes,18,opt,name=avatar"`
+	Avatar *catalog.FileLocation `json:"avatar,omitempty" protobuf:"bytes,18,opt,name=avatar"`
 	// The collection of DataProduct names that will be displayed with priority on the tenant dashboard for the Account
 	// +kubebuilder:validation:Optional
 	FavoriteProducts []string `json:"favoriteProducts,omitempty" protobuf:"bytes,19,rep,name=favoriteProducts"`
-	// +kubebuilder:validation:Optional
-	Tokens []APITokenSpec `json:"tokens,omitempty" protobuf:"bytes,20,rep,name=tokens"`
 }
 
 // AccountStatus defines the actual state of the api object
@@ -156,7 +141,7 @@ type AccountStatus struct {
 	// Total number of feature groups that this user is responsible for.
 	//+kubebuilder:validation:Optional
 	DatasetsCount int32 `json:"datasetsCount,omitempty" protobuf:"bytes,9,opt,name=datasetsCount"`
-	// If group, this is the total members.
+	// If the Account is a group account, the total number of Accounts that exist under the group
 	//+kubebuilder:validation:Optional
 	MembersCount int32 `json:"membersCount,omitempty" protobuf:"bytes,10,opt,name=membersCount"`
 	// +patchMergeKey=type
@@ -164,39 +149,3 @@ type AccountStatus struct {
 	// +kubebuilder:validation:Optional
 	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,11,rep,name=conditions"`
 }
-
-// AvatarSpec specifies the location of an avatar for an Account
-type AvatarSpec struct {
-	// +kubebuilder:default:=""
-	// BucketName is the name of the VirtualBucket resource that exists on the same tenant as the Account
-	// +kubebuilder:validation:Optional
-	BucketName *string `json:"bucketName,omitempty" protobuf:"bytes,1,opt,name=bucketName"`
-	// Path specifies the path to an image file on the VirtualBucket (e.g. a PNG file)
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Path *string `json:"path,omitempty" protobuf:"bytes,2,opt,name=path"`
-}
-
-type APITokenSpec struct {
-	Name string `json:"name,omitempty" protobuf:"bytes,1,rep,name=name"`
-	// Scopes is the list of scopes for this token.
-	// +kubebuilder:validation:Optional
-	Scopes []Scope `json:"scopes,omitempty" protobuf:"bytes,2,rep,name=scopes"`
-	// The token itself
-	SecretRef v1.SecretReference `json:"secretRef,omitempty" protobuf:"bytes,3,rep,name=secretRef"`
-}
-
-type Scope struct {
-	// +kubebuilder:validation:Optional
-	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// +kubebuilder:validation:Optional
-	Actions []ScopeVerb `json:"actions,omitempty" protobuf:"bytes,2,rep,name=actions"`
-}
-
-type ScopeVerb string
-
-const (
-	ScopeVerbRead  ScopeVerb = "read"
-	ScopeVerbWrite ScopeVerb = "write"
-	ScopeVerbList  ScopeVerb = "list"
-)

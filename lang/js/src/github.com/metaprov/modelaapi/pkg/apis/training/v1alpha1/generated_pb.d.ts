@@ -2986,10 +2986,10 @@ export class ModelSpec extends jspb.Message {
   hasTrialid(): boolean;
   clearTrialid(): ModelSpec;
 
-  getGovernance(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec | undefined;
-  setGovernance(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec): ModelSpec;
-  hasGovernance(): boolean;
-  clearGovernance(): ModelSpec;
+  getApproval(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ApprovalSpec | undefined;
+  setApproval(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ApprovalSpec): ModelSpec;
+  hasApproval(): boolean;
+  clearApproval(): ModelSpec;
 
   getInterpretability(): InterpretabilitySpec | undefined;
   setInterpretability(value?: InterpretabilitySpec): ModelSpec;
@@ -3084,7 +3084,7 @@ export namespace ModelSpec {
     ttl?: number,
     modelclass?: string,
     trialid?: number,
-    governance?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec.AsObject,
+    approval?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ApprovalSpec.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     feedbacktests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
@@ -3491,10 +3491,10 @@ export class ModelStatus extends jspb.Message {
   hasUpdatedat(): boolean;
   clearUpdatedat(): ModelStatus;
 
-  getGovernance(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus | undefined;
-  setGovernance(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus): ModelStatus;
-  hasGovernance(): boolean;
-  clearGovernance(): ModelStatus;
+  getApproval(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ApprovalStatus | undefined;
+  setApproval(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ApprovalStatus): ModelStatus;
+  hasApproval(): boolean;
+  clearApproval(): ModelStatus;
 
   getInterpretability(): InterpretabilityStatus | undefined;
   setInterpretability(value?: InterpretabilityStatus): ModelStatus;
@@ -3616,7 +3616,7 @@ export namespace ModelStatus {
     correlationswithtargetList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation.AsObject>,
     topcorrelationsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation.AsObject>,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    governance?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus.AsObject,
+    approval?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ApprovalStatus.AsObject,
     interpretability?: InterpretabilityStatus.AsObject,
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,

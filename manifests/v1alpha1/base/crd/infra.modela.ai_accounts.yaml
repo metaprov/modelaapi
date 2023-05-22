@@ -72,41 +72,19 @@ spec:
                   to modify and create other Accounts
                 type: boolean
               avatar:
-                description: The specification for the Account avatar image
+                description: Avatar specifies the location of the Account's avatar
+                  image
                 properties:
                   bucketName:
-                    default: ""
-                    description: BucketName is the name of the VirtualBucket resource
-                      that exists on the same tenant as the Account
                     type: string
                   path:
-                    default: ""
-                    description: Path specifies the path to an image file on the VirtualBucket
-                      (e.g. a PNG file)
                     type: string
                 type: object
-              clearanceLevel:
-                default: unclassified
-                description: The clearance level of the account. Accounts which do
-                  not have a clearance level greater than or equal to the clearance
-                  level of a DataProduct will not have access to their namespace
-                enum:
-                - unclassified
-                - confidential
-                - secret
-                - top-secret
-                type: string
               email:
                 default: ""
                 description: The e-mail address of the person using the Account
                 maxLength: 64
                 type: string
-              emailPassword:
-                default: false
-                description: Indicates if an e-mail will be sent to the address specified
-                  by the Email field, that notifies the Account owner about the creation
-                  of the Account
-                type: boolean
               favoriteProducts:
                 description: The collection of DataProduct names that will be displayed
                   with priority on the tenant dashboard for the Account
@@ -126,7 +104,8 @@ spec:
               memberOf:
                 default: ""
                 description: MemberOf specifies the name of the team that the Account
-                  belongs to. An account can belong to one other team Account
+                  belongs to. The Account will assume all the permissions of the parent
+                  Account
                 type: string
               phone:
                 default: ""
@@ -135,12 +114,8 @@ spec:
                 type: string
               resetPassword:
                 default: false
-                description: Indicates if the Account owner will be prompted to reset
-                  their password upon login
-                type: boolean
-              team:
-                default: false
-                description: Indicates if the Account is a team account
+                description: Indicates if the Account will be prompted to reset their
+                  password upon login
                 type: boolean
               tenantRef:
                 description: The reference to the tenant which the object exists under
@@ -179,38 +154,6 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
-              tokens:
-                items:
-                  properties:
-                    name:
-                      type: string
-                    scopes:
-                      description: Scopes is the list of scopes for this token.
-                      items:
-                        properties:
-                          actions:
-                            items:
-                              type: string
-                            type: array
-                          name:
-                            type: string
-                        type: object
-                      type: array
-                    secretRef:
-                      description: The token itself
-                      properties:
-                        name:
-                          description: name is unique within a namespace to reference
-                            a secret resource.
-                          type: string
-                        namespace:
-                          description: namespace defines the space within which the
-                            secret name must be unique.
-                          type: string
-                      type: object
-                      x-kubernetes-map-type: atomic
-                  type: object
-                type: array
               type:
                 default: user
                 description: The type of Account, which can be a user or a group
@@ -315,7 +258,8 @@ spec:
                 format: int32
                 type: integer
               membersCount:
-                description: If group, this is the total members.
+                description: If the Account is a group account, the total number of
+                  Accounts that exist under the group
                 format: int32
                 type: integer
               modelClassessCount:

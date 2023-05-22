@@ -31,11 +31,6 @@ func (product *DataProduct) Default() {
 		product.Spec.TenantRef = &v1.ObjectReference{Namespace: "modela-system", Name: "default-tenant"}
 	}
 
-	// set the default folder, if non was given
-	if product.Spec.Location.Path == "" {
-		product.Spec.Location.Path = "modela/live/tenants/" + product.Spec.TenantRef.Name + "/dataproducts/" + product.Name
-	}
-
 	product.Status.Conditions = make([]metav1.Condition, 0)
 	if product.Spec.ImageLocation.Name == nil {
 		product.Spec.ImageLocation.Name = util.StrPtr(product.Name)

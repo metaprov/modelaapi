@@ -1561,7 +1561,7 @@ message ModelGroupByStatus {
   // +kubebuilder:validation:Optional
   optional string forecastsURI = 3;
 
-  // Holds the worker on going result, when a worker finish, we update the location of thier result files
+  // Holds the worker on-going result, when a worker finish, we update the location of their result files
   // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkerRunResult workerResults = 4;
 }
@@ -1827,7 +1827,7 @@ message ModelSpec {
 
   // Governance specifies the model governance requirements (currently unimplemented)
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec governance = 48;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ApprovalSpec approval = 48;
 
   // Interpretability specifies the configuration to generate model interpretability visualizations
   // +kubebuilder:validation:Optional
@@ -2176,9 +2176,9 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 72;
 
-  // Governance specifies the current governance status for the Model
+  // Approval specifies the current approval status for the Model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus governance = 73;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ApprovalStatus approval = 73;
 
   // Interpretability contains results produced during the explaining phase of the Model
   // +kubebuilder:validation:Optional
