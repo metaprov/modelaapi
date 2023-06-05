@@ -216,3 +216,23 @@ func (mclass *ModelClass) MarkFailed(err string) {
 	})
 	mclass.Status.FailureMessage = util.StrPtr(err)
 }
+
+func (modelclass ModelClass) GetStatus() interface{} {
+	return modelclass.Status
+}
+
+func (modelclass ModelClass) GetObservedGeneration() int64 {
+	return modelclass.Status.ObservedGeneration
+}
+
+func (modelclass *ModelClass) SetObservedGeneration(generation int64) {
+	modelclass.Status.ObservedGeneration = generation
+}
+
+func (modelclass *ModelClass) SetUpdatedAt(time *metav1.Time) {
+	modelclass.Status.UpdatedAt = time
+}
+
+func (modelclass *ModelClass) SetStatus(status interface{}) {
+	modelclass.Status = status.(ModelClassStatus)
+}

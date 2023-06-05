@@ -9877,8 +9877,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    columndelimiter: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    rowdelimiter: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    delimiter: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     quote: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     escapechar: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     commentchars: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
@@ -9928,11 +9927,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.deseriali
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setColumndelimiter(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setRowdelimiter(value);
+      msg.setDelimiter(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -10011,13 +10006,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.serialize
   if (f != null) {
     writer.writeString(
       1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
       f
     );
   }
@@ -10102,10 +10090,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.serialize
 
 
 /**
- * optional string columnDelimiter = 1;
+ * optional string delimiter = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getColumndelimiter = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getDelimiter = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -10114,7 +10102,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setColumndelimiter = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setDelimiter = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -10123,7 +10111,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearColumndelimiter = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearDelimiter = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -10132,44 +10120,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasColumndelimiter = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasDelimiter = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string rowDelimiter = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getRowdelimiter = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setRowdelimiter = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearRowdelimiter = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasRowdelimiter = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 

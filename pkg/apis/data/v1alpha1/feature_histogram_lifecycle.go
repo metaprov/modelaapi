@@ -397,3 +397,23 @@ func (fh *FeatureHistogram) Expired() bool {
 	}
 	return fh.Spec.End.Before(&now)
 }
+
+func (featurehistogram FeatureHistogram) GetStatus() interface{} {
+	return featurehistogram.Status
+}
+
+func (featurehistogram FeatureHistogram) GetObservedGeneration() int64 {
+	return featurehistogram.Status.ObservedGeneration
+}
+
+func (featurehistogram *FeatureHistogram) SetObservedGeneration(generation int64) {
+	featurehistogram.Status.ObservedGeneration = generation
+}
+
+func (featurehistogram *FeatureHistogram) SetUpdatedAt(time *metav1.Time) {
+	featurehistogram.Status.UpdatedAt = time
+}
+
+func (featurehistogram *FeatureHistogram) SetStatus(status interface{}) {
+	featurehistogram.Status = status.(FeatureHistogramStatus)
+}

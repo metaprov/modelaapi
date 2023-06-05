@@ -1178,3 +1178,23 @@ func (study Study) PartitionTrainFile(key []string) string {
 func (study Study) PartitionTestFile(key []string) string {
 	return study.PartitionFolder(key) + "/data/test.parquet"
 }
+
+func (study Study) GetStatus() interface{} {
+	return study.Status
+}
+
+func (study Study) GetObservedGeneration() int64 {
+	return study.Status.ObservedGeneration
+}
+
+func (study *Study) SetObservedGeneration(generation int64) {
+	study.Status.ObservedGeneration = generation
+}
+
+func (study *Study) SetUpdatedAt(time *metav1.Time) {
+	study.Status.UpdatedAt = time
+}
+
+func (study *Study) SetStatus(status interface{}) {
+	study.Status = status.(StudyStatus)
+}

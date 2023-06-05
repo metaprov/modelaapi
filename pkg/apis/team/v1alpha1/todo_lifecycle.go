@@ -98,3 +98,23 @@ func (alert *Todo) MarkArchived() {
 		Status: v1.ConditionTrue,
 	})
 }
+
+func (todo Todo) GetStatus() interface{} {
+	return todo.Status
+}
+
+func (todo Todo) GetObservedGeneration() int64 {
+	return todo.Status.ObservedGeneration
+}
+
+func (todo Todo) SetObservedGeneration(generation int64) {
+	todo.Status.ObservedGeneration = generation
+}
+
+func (todo Todo) SetUpdatedAt(time *metav1.Time) {
+	todo.Status.LastUpdated = time
+}
+
+func (todo *Todo) SetStatus(status interface{}) {
+	todo.Status = status.(TodoStatus)
+}

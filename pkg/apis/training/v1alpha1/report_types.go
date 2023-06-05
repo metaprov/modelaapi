@@ -19,8 +19,6 @@ const (
 	ReportPhaseFailed    ReportPhase = "Failed"
 )
 
-// ReportType is the type of a Report
-// +kubebuilder:validation:Enum="binary-classification-model";"forecast-model";"regression-model";"multi-classification-model";"text-classification-model";"classification-dataset";"forecast-dataset";"text-classification-dataset";"regression-dataset";"study-report";"feature-report";"invalid-report";"daily-report";"weekly-report";"monthly-report";"summary-report";"partition-timeseries-dataset-report";"partition-timeseries-model-report"
 type ReportType string
 
 const (
@@ -91,44 +89,45 @@ type ReportSpec struct {
 	VersionName string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// EntityRef specifies the entity which the Report references. The supported entities consist of Entity, Model, and Study resources
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,2,opt,name=entityRef"`
-	// The location of the flat-file containing the PDF report
-	// +kubebuilder:validation:Optional
-	Location catalog.DataLocation `json:"location,omitempty" protobuf:"bytes,5,opt,name=location"`
 	// The type of report (e.g. classification model report, study report)
 	// +kubebuilder:validation:Required
 	// +required
-	ReportType ReportType `json:"reportType,omitempty" protobuf:"bytes,6,opt,name=reportType"`
+	ReportType ReportType `json:"reportType,omitempty" protobuf:"bytes,3,opt,name=reportType"`
 	// The format of the Report. `pdf` is the only supported type as of the current release
 	// +kubebuilder:default:=pdf
 	// +kubebuilder:validation:Optional
-	Format *ReportFormat `json:"format,omitempty" protobuf:"bytes,7,opt,name=format"`
+	Format *ReportFormat `json:"format,omitempty" protobuf:"bytes,4,opt,name=format"`
 	// The name of the Notifier resource which Alerts created by the Report will be forwarded to
 	// +kubebuilder:validation:Optional
-	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,8,opt,name=notifierName"`
+	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,5,opt,name=notifierName"`
 	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,9,opt,name=owner"`
-	// Resources specifies the resource requirements that will be allocated to the report generation workload
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`
+	// Resources specifies the resource requirements that will be allocated to the workload
 	// +kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,10,opt,name=resources"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,7,opt,name=resources"`
 	// The deadline for any Jobs associated with the Report to be completed in seconds
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	Timeout *int64 `json:"timeout,omitempty" protobuf:"varint,11,opt,name=timeout"`
+	Timeout *int64 `json:"timeout,omitempty" protobuf:"varint,8,opt,name=timeout"`
 	// The reference to the Lab namespace under which the report generation Job will be executed under.
-	// If unspecified, the default Lab of the Data Product for the Report will be used
+	// If unspecified, the default Lab for the Data Product of the Report will be used
 	// +kubebuilder:validation:Optional
-	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,12,opt,name=labRef"`
+	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,9,opt,name=labRef"`
 	// For group forecasting, this is the key of the group
 	// +kubebuilder:validation:Optional
-	Key []string `json:"key,omitempty" protobuf:"bytes,13,rep,name=key"`
+	Key []string `json:"key,omitempty" protobuf:"bytes,10,rep,name=key"`
+	// The name of the Virtual Bucket where report artifacts will be stored.
+	// If empty, it will default to the default Virtual Bucket for the Data Product of the Report
+	// +kubebuilder:validation:Optional
+	ArtifactBucketName *string `json:"artifactBucketName,omitempty" protobuf:"bytes,11,opt,name=artifactBucketName"`
 	// The model class for this report if the model was created by a model class
 	// +kubebuilder:validation:Optional
-	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,14,opt,name=modelClassName"`
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,12,opt,name=modelClassName"`
 	// If this report was created by a model class run, this is the run name
 	// +kubebuilder:validation:Optional
-	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,15,opt,name=modelClassRunName"`
+	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,13,opt,name=modelClassRunName"`
 }
 
 // ReportStatus defines the observed state of a Report
@@ -140,9 +139,9 @@ type ReportStatus struct {
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase ReportPhase `json:"phase,omitempty" protobuf:"bytes,2,opt,name=phase"`
-	// The URI to the flat-file report within the VirtualBucket specified by the Report
+	// The location of the report file, set after the Report is finished generating
 	// +kubebuilder:validation:Optional
-	URI string `json:"uri,omitempty" protobuf:"bytes,3,opt,name=uri"`
+	Location catalog.FileLocation `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
 	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`

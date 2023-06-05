@@ -185,17 +185,13 @@ type CsvFileSpec struct {
 	// The character used to separate fields (by default, a comma)
 	// +kubebuilder:default:="comma"
 	// +kubebuilder:validation:Optional
-	ColumnDelimiter *Delimiter `json:"columnDelimiter,omitempty" protobuf:"bytes,1,opt,name=columnDelimiter"`
-	// The character used to signal the end of a row (by default, a newline \n)
-	// +kubebuilder:default:="crlf"
-	// +kubebuilder:validation:Optional
-	RowDelimiter *Delimiter `json:"rowDelimiter,omitempty" protobuf:"bytes,2,opt,name=rowDelimiter"`
-	// The charcter used for quotes (by default, a double quote ")
+	Delimiter *Delimiter `json:"delimiter,omitempty" protobuf:"bytes,1,opt,name=delimiter"`
+	// The character used for quotes (by default, a double quote ")
 	// +kubebuilder:default:="double-quote"
 	// +kubebuilder:validation:Optional
 	QuoteChar QuoteChar `json:"quote,omitempty" protobuf:"bytes,3,opt,name=quote"`
 	// The character used to escape the delimiter
-	// +kubebuilder:default:="none"
+	// +kubebuilder:default:="single-quote"
 	// +kubebuilder:validation:Optional
 	EscapeChar EscapeChar `json:"escapeChar,omitempty" protobuf:"bytes,4,opt,name=escapeChar"`
 	// The comment character used to split comments off the end of lines (by default, a hashtag #)

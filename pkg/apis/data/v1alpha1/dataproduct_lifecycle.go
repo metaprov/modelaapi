@@ -256,3 +256,23 @@ func (product *DataProduct) UpdateBaselineVersion(versions DataProductVersionLis
 		}
 	}
 }
+
+func (dataproduct DataProduct) GetStatus() interface{} {
+	return dataproduct.Status
+}
+
+func (dataproduct DataProduct) GetObservedGeneration() int64 {
+	return dataproduct.Status.ObservedGeneration
+}
+
+func (dataproduct *DataProduct) SetObservedGeneration(generation int64) {
+	dataproduct.Status.ObservedGeneration = generation
+}
+
+func (dataproduct *DataProduct) SetUpdatedAt(time *metav1.Time) {
+	dataproduct.Status.UpdatedAt = time
+}
+
+func (dataproduct *DataProduct) SetStatus(status interface{}) {
+	dataproduct.Status = status.(DataProductStatus)
+}

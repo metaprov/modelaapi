@@ -372,3 +372,23 @@ func (prediction *Prediction) DriftAlert(tenantRef *v1.ObjectReference, notifier
 		},
 	}
 }
+
+func (prediction Prediction) GetStatus() interface{} {
+	return prediction.Status
+}
+
+func (prediction Prediction) GetObservedGeneration() int64 {
+	return prediction.Status.ObservedGeneration
+}
+
+func (prediction *Prediction) SetObservedGeneration(generation int64) {
+	prediction.Status.ObservedGeneration = generation
+}
+
+func (prediction *Prediction) SetUpdatedAt(time *metav1.Time) {
+	prediction.Status.UpdatedAt = time
+}
+
+func (prediction *Prediction) SetStatus(status interface{}) {
+	prediction.Status = status.(PredictionStatus)
+}

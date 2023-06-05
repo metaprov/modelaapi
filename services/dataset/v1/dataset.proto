@@ -188,11 +188,9 @@ message GetDatabasesResponse {
     repeated string databases = 1;
 }
 
-
 message GetTablesRequest {
     string connectionNamespace = 1;
     string connectionName      = 2;    
-    string databaseName        = 3;    
 }
 
 message GetTablesResponse {
@@ -202,8 +200,7 @@ message GetTablesResponse {
 message ExecuteSqlRequest {
     string connectionNamespace = 1;
     string connectionName      = 2;    
-    string databaseName        = 3;  
-    string sql                 = 4;  
+    string sql                 = 4;
 }
 
 message ExecuteSqlResponse {

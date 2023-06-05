@@ -168,3 +168,23 @@ func (tenant Tenant) DefaultServingSiteRef() *v1.ObjectReference {
 		Namespace: tenant.Name,
 	}
 }
+
+func (tenant Tenant) GetStatus() interface{} {
+	return tenant.Status
+}
+
+func (tenant Tenant) GetObservedGeneration() int64 {
+	return tenant.Status.ObservedGeneration
+}
+
+func (tenant *Tenant) SetObservedGeneration(generation int64) {
+	tenant.Status.ObservedGeneration = generation
+}
+
+func (tenant *Tenant) SetUpdatedAt(time *metav1.Time) {
+	tenant.Status.UpdatedAt = time
+}
+
+func (tenant *Tenant) SetStatus(status interface{}) {
+	tenant.Status = status.(TenantStatus)
+}

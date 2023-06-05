@@ -31,7 +31,6 @@ message UploadResult {
 }
 
 service FileServicesService {
-
     rpc UploadChunk(stream DataBlock) returns (UploadResult) {
         //    option (google.api.http).post = "/v1/datasets/{namespace}/{name}:upload";
     }

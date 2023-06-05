@@ -59,8 +59,6 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 		&ServingSiteList{},
 		&Notifier{},
 		&NotifierList{},
-		&ModelaSystem{},
-		&ModelaSystemList{},
 		&Tenant{},
 		&TenantList{},
 		&UserRoleClass{},

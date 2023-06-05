@@ -4025,11 +4025,6 @@ export class ReportSpec extends jspb.Message {
   hasEntityref(): boolean;
   clearEntityref(): ReportSpec;
 
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): ReportSpec;
-  hasLocation(): boolean;
-  clearLocation(): ReportSpec;
-
   getReporttype(): string;
   setReporttype(value: string): ReportSpec;
   hasReporttype(): boolean;
@@ -4070,6 +4065,11 @@ export class ReportSpec extends jspb.Message {
   clearKeyList(): ReportSpec;
   addKey(value: string, index?: number): ReportSpec;
 
+  getArtifactbucketname(): string;
+  setArtifactbucketname(value: string): ReportSpec;
+  hasArtifactbucketname(): boolean;
+  clearArtifactbucketname(): ReportSpec;
+
   getModelclassname(): string;
   setModelclassname(value: string): ReportSpec;
   hasModelclassname(): boolean;
@@ -4092,7 +4092,6 @@ export namespace ReportSpec {
   export type AsObject = {
     versionname?: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
     reporttype?: string,
     format?: string,
     notifiername?: string,
@@ -4101,6 +4100,7 @@ export namespace ReportSpec {
     timeout?: number,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     keyList: Array<string>,
+    artifactbucketname?: string,
     modelclassname?: string,
     modelclassrunname?: string,
   }
@@ -4117,10 +4117,10 @@ export class ReportStatus extends jspb.Message {
   hasPhase(): boolean;
   clearPhase(): ReportStatus;
 
-  getUri(): string;
-  setUri(value: string): ReportStatus;
-  hasUri(): boolean;
-  clearUri(): ReportStatus;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ReportStatus;
+  hasLocation(): boolean;
+  clearLocation(): ReportStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ReportStatus;
@@ -4169,7 +4169,7 @@ export namespace ReportStatus {
   export type AsObject = {
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase?: string,
-    uri?: string,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     observedgeneration?: number,
     failurereason?: string,
     failuremessage?: string,

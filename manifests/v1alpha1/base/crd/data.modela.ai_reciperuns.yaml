@@ -131,10 +131,10 @@ spec:
                     description: The path to a flat-file inside an object storage
                       system. When using the Modela API to upload files (through the
                       FileService API), Modela will upload the data to a predetermined
-                      path based on the Tenant, DataProduct, DataProductVersion, and
-                      resource type of the resource in relation to the file being
+                      path based on the Tenant, Data Product, Data Product Version,
+                      and resource type of the resource in relation to the file being
                       uploaded. The path does not need to adhere to this format; you
-                      can give the path to a file inside a bucket not managed by Modela
+                      may also specify an arbitrary path
                     type: string
                   resourceRef:
                     description: In the case of the location type being Dataset or
@@ -361,16 +361,19 @@ spec:
                 description: Holds the location of log paths
                 properties:
                   bucket:
-                    description: The name of the VirtualBucket resource where the
+                    description: The name of the Virtual Bucket resource where the
                       logs are stored
                     type: string
                   containers:
-                    description: The collection of ContainerLog objects that describe
-                      the location of logs per container
+                    description: The collection of logs for each container of the
+                      workload
                     items:
                       description: ContainerLog describes the location of logs for
                         a single Job
                       properties:
+                        bucket:
+                          description: The bucket the log was stored in
+                          type: string
                         container:
                           description: The container name
                           type: string

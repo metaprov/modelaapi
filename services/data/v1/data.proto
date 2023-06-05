@@ -372,17 +372,13 @@ message DsGetTableViewResponse {
 
 
 message CreateModelReportRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion     version = 2;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study              study = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset                dataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource             datasource = 5;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model              model = 6;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 7;
-    map<string, bytes>                                                           secret = 8;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report              report = 10;
-    bool                                                                         group = 11;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 6;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report         report = 7;
 }
 
 
@@ -421,37 +417,32 @@ message CreateReportResponse {
 }
 
 message CreateDatasetReportRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report report = 5;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 4;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report         report = 5;
 }
 
 
 message CreateStudyReportRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion     version = 2;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study   study = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource = 5;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList   models = 6;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 7;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 8;
-    map<string, bytes>     secret = 9;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report              report = 10;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 11;
-    map<string, bytes>                                                           dbSecret = 12;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList      models = 6;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report         report = 7;
 
 }
 
 
 message AskModelRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct  product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study   study = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource = 4;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 5;
     int32  budget = 6;
     bool   defaultHP = 7; // use default HP
     string algorithm = 8; // ask for a specific algorithm.
@@ -606,19 +597,15 @@ message SaveOptimizerDBResponse {
 }
 
 message DsGetDatabasesRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            connection = 1;
-    map<string, bytes>                                                           secret = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
 }
 
 message DsGetDatabasesResponse {
     repeated string databases = 1;
 }
 
-
 message DsGetTablesRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            connection = 1;
-    map<string, bytes>                                                           secret = 2;
-    string                                                                      databaseName = 3;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
 }
 
 message DsGetTablesResponse {
@@ -627,8 +614,6 @@ message DsGetTablesResponse {
 
 message DsExecuteSqlRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            connection = 1;
-    map<string, bytes>                                                           secret = 2;
-    string                                                                      databaseName = 3;
     string                                                                      sql = 4;
 }
 message DsExecuteSqlResponse {

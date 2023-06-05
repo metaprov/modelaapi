@@ -131,3 +131,23 @@ func (entity *Entity) MarkReady() {
 		Reason: EntityReady,
 	})
 }
+
+func (entity Entity) GetStatus() interface{} {
+	return entity.Status
+}
+
+func (entity Entity) GetObservedGeneration() int64 {
+	return entity.Status.ObservedGeneration
+}
+
+func (entity Entity) SetObservedGeneration(generation int64) {
+	entity.Status.ObservedGeneration = generation
+}
+
+func (entity Entity) SetUpdatedAt(time *metav1.Time) {
+	entity.Status.UpdatedAt = time
+}
+
+func (entity *Entity) SetStatus(status interface{}) {
+	entity.Status = status.(EntityStatus)
+}

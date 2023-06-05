@@ -147,3 +147,23 @@ func (connection *Connection) GetIntOption(key string, defaultValue int) int {
 
 	return defaultValue
 }
+
+func (connection Connection) GetStatus() interface{} {
+	return connection.Status
+}
+
+func (connection Connection) GetObservedGeneration() int64 {
+	return connection.Status.ObservedGeneration
+}
+
+func (connection *Connection) SetObservedGeneration(generation int64) {
+	connection.Status.ObservedGeneration = generation
+}
+
+func (connection *Connection) SetUpdatedAt(time *metav1.Time) {
+	connection.Status.UpdatedAt = time
+}
+
+func (connection *Connection) SetStatus(status interface{}) {
+	connection.Status = status.(ConnectionStatus)
+}

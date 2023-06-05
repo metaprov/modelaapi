@@ -122,3 +122,23 @@ func (attachment *Attachment) MarkSent() {
 		Reason: string(AttachmentSent),
 	})
 }
+
+func (attachment Attachment) GetStatus() interface{} {
+	return attachment.Status
+}
+
+func (attachment Attachment) GetObservedGeneration() int64 {
+	return attachment.Status.ObservedGeneration
+}
+
+func (attachment *Attachment) SetObservedGeneration(generation int64) {
+	attachment.Status.ObservedGeneration = generation
+}
+
+func (attachment *Attachment) SetUpdatedAt(time *metav1.Time) {
+	attachment.Status.UpdatedAt = time
+}
+
+func (attachment *Attachment) SetStatus(status interface{}) {
+	attachment.Status = status.(AttachmentStatus)
+}

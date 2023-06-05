@@ -117,3 +117,23 @@ func (license *License) MarkValid() {
 		Reason: string(LicenseValid),
 	})
 }
+
+func (license License) GetStatus() interface{} {
+	return license.Status
+}
+
+func (license License) GetObservedGeneration() int64 {
+	return license.Status.ObservedGeneration
+}
+
+func (license *License) SetObservedGeneration(generation int64) {
+	license.Status.ObservedGeneration = generation
+}
+
+func (license *License) SetUpdatedAt(time *metav1.Time) {
+	license.Status.UpdatedAt = time
+}
+
+func (license *License) SetStatus(status interface{}) {
+	license.Status = status.(LicenseStatus)
+}

@@ -277,7 +277,7 @@ func (servingsite ServingSite) JobRunnerRole() *rbacv1.Role {
 			{
 				Verbs:           []string{"*"},
 				APIGroups:       []string{""},
-				Resources:       []string{"pods", "pods/log"},
+				Resources:       []string{"pods", "pods/log", "configmaps"},
 				ResourceNames:   []string{},
 				NonResourceURLs: []string{},
 			},
@@ -322,4 +322,24 @@ func (servingsite ServingSite) JobRunnerServiceAccount() *corev1.ServiceAccount 
 			Namespace: servingsite.Name,
 		},
 	}
+}
+
+func (servingsite ServingSite) GetStatus() interface{} {
+	return servingsite.Status
+}
+
+func (servingsite ServingSite) GetObservedGeneration() int64 {
+	return servingsite.Status.ObservedGeneration
+}
+
+func (servingsite *ServingSite) SetObservedGeneration(generation int64) {
+	servingsite.Status.ObservedGeneration = generation
+}
+
+func (servingsite *ServingSite) SetUpdatedAt(time *metav1.Time) {
+	servingsite.Status.UpdatedAt = time
+}
+
+func (servingsite *ServingSite) SetStatus(status interface{}) {
+	servingsite.Status = status.(ServingSiteStatus)
 }

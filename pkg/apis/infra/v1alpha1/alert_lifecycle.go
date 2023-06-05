@@ -118,3 +118,23 @@ func (alert *Alert) MarkSent() {
 		Reason: string(AlertSent),
 	})
 }
+
+func (alert Alert) GetStatus() interface{} {
+	return alert.Status
+}
+
+func (alert Alert) GetObservedGeneration() int64 {
+	return alert.Status.ObservedGeneration
+}
+
+func (alert *Alert) SetObservedGeneration(generation int64) {
+	alert.Status.ObservedGeneration = generation
+}
+
+func (alert *Alert) SetUpdatedAt(time *metav1.Time) {
+	alert.Status.UpdatedAt = time
+}
+
+func (alert *Alert) SetStatus(status interface{}) {
+	alert.Status = status.(AlertStatus)
+}

@@ -116,3 +116,23 @@ func (recipe Recipe) Deleted() bool {
 func (recipe *Recipe) UpdateRunStatus(run RecipeRun) {
 
 }
+
+func (recipe Recipe) GetStatus() interface{} {
+	return recipe.Status
+}
+
+func (recipe Recipe) GetObservedGeneration() int64 {
+	return recipe.Status.ObservedGeneration
+}
+
+func (recipe *Recipe) SetObservedGeneration(generation int64) {
+	recipe.Status.ObservedGeneration = generation
+}
+
+func (recipe *Recipe) SetUpdatedAt(time *metav1.Time) {
+	recipe.Status.UpdatedAt = time
+}
+
+func (recipe *Recipe) SetStatus(status interface{}) {
+	recipe.Status = status.(RecipeStatus)
+}

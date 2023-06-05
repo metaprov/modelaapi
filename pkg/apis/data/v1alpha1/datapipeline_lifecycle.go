@@ -101,3 +101,23 @@ func (in *DataPipeline) MarkFailed(err error) {
 		Message: err.Error(),
 	})
 }
+
+func (datapipeline DataPipeline) GetStatus() interface{} {
+	return datapipeline.Status
+}
+
+func (datapipeline DataPipeline) GetObservedGeneration() int64 {
+	return datapipeline.Status.ObservedGeneration
+}
+
+func (datapipeline *DataPipeline) SetObservedGeneration(generation int64) {
+	datapipeline.Status.ObservedGeneration = generation
+}
+
+func (datapipeline *DataPipeline) SetUpdatedAt(time *metav1.Time) {
+	datapipeline.Status.UpdatedAt = time
+}
+
+func (datapipeline *DataPipeline) SetStatus(status interface{}) {
+	datapipeline.Status = status.(DataPipelineStatus)
+}

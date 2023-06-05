@@ -980,15 +980,10 @@ export namespace CorrelationSpec {
 }
 
 export class CsvFileSpec extends jspb.Message {
-  getColumndelimiter(): string;
-  setColumndelimiter(value: string): CsvFileSpec;
-  hasColumndelimiter(): boolean;
-  clearColumndelimiter(): CsvFileSpec;
-
-  getRowdelimiter(): string;
-  setRowdelimiter(value: string): CsvFileSpec;
-  hasRowdelimiter(): boolean;
-  clearRowdelimiter(): CsvFileSpec;
+  getDelimiter(): string;
+  setDelimiter(value: string): CsvFileSpec;
+  hasDelimiter(): boolean;
+  clearDelimiter(): CsvFileSpec;
 
   getQuote(): string;
   setQuote(value: string): CsvFileSpec;
@@ -1055,8 +1050,7 @@ export class CsvFileSpec extends jspb.Message {
 
 export namespace CsvFileSpec {
   export type AsObject = {
-    columndelimiter?: string,
-    rowdelimiter?: string,
+    delimiter?: string,
     quote?: string,
     escapechar?: string,
     commentchars?: string,

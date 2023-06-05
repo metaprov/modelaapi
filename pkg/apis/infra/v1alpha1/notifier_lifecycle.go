@@ -108,3 +108,23 @@ func (notifier *Notifier) MarkReady() {
 		Reason: string(NotifierReady),
 	})
 }
+
+func (notifier Notifier) GetStatus() interface{} {
+	return notifier.Status
+}
+
+func (notifier Notifier) GetObservedGeneration() int64 {
+	return notifier.Status.ObservedGeneration
+}
+
+func (notifier *Notifier) SetObservedGeneration(generation int64) {
+	notifier.Status.ObservedGeneration = generation
+}
+
+func (notifier *Notifier) SetUpdatedAt(time *metav1.Time) {
+	notifier.Status.UpdatedAt = time
+}
+
+func (notifier *Notifier) SetStatus(status interface{}) {
+	notifier.Status = status.(NotifierStatus)
+}

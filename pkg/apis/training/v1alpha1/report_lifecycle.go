@@ -89,9 +89,6 @@ func NewReport(
 	result.Default()
 	result.ObjectMeta.Name = name
 	result.ObjectMeta.Namespace = namespace
-	result.Spec.Location = catalog.DataLocation{
-		Path:       util.StrPtr(key),
-		BucketName: util.StrPtr(bucketName)}
 	result.Spec.EntityRef.Name = entity
 	result.Spec.ReportType = reportType
 	result.ObjectMeta.Labels = make(map[string]string)
@@ -234,6 +231,10 @@ func (report Report) TaskIndexFileKey(task string) string {
 	return fmt.Sprintf("%s/%s.json", report.RootURI(), task)
 }
 
+func (report *Report) MarkPending() {
+	report.Status.Phase = ReportPhasePending
+}
+
 func (report *Report) MarkRunning() {
 	report.Status.Phase = ReportPhaseRunning
 	report.CreateOrUpdateCond(metav1.Condition{
@@ -241,19 +242,6 @@ func (report *Report) MarkRunning() {
 		Status: metav1.ConditionFalse,
 		Reason: string(ReportPhaseRunning),
 	})
-}
-
-func (report *Report) MarkSaved() {
-	report.CreateOrUpdateCond(metav1.Condition{
-		Type:   ReportSaved,
-		Status: metav1.ConditionTrue,
-		Reason: ReportSaved,
-	})
-}
-
-func (report Report) IsSaved() bool {
-	cond := report.GetCond(ReportSaved)
-	return cond.Status == metav1.ConditionTrue
 }
 
 func (report *Report) MarkReportFailed(err string) {
@@ -270,7 +258,7 @@ func (report *Report) MarkReportFailed(err string) {
 
 }
 
-func (report *Report) MarkReportReady(uri string) {
+func (report *Report) MarkReportReady(location catalog.FileLocation) {
 	report.Status.Phase = ReportPhaseCompleted
 	report.CreateOrUpdateCond(metav1.Condition{
 		Type:   ReportReady,
@@ -278,8 +266,7 @@ func (report *Report) MarkReportReady(uri string) {
 		Reason: ReportReady,
 	})
 
-	//liveURI := product.PrefixLiveURI(report.PdfURI())
-	report.Status.URI = uri
+	report.Status.Location = location
 	now := metav1.Now()
 	report.Status.CompletedAt = &now
 
@@ -309,8 +296,8 @@ func (report Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierName
 			Owner:        report.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": report.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"BucketName": *report.Spec.Location.BucketName,
-				"URL":        *report.Spec.Location.Path,
+				"BucketName": report.Status.Location.BucketName,
+				"URL":        report.Status.Location.Path,
 			},
 		},
 	}
@@ -342,8 +329,6 @@ func (report Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *str
 			Owner:        report.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": report.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
-				"BucketName": *report.Spec.Location.BucketName,
-				"URL":        *report.Spec.Location.Path,
 				"Type":       string(report.Spec.ReportType),
 			},
 		},
@@ -356,7 +341,7 @@ func (report Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *str
 
 func (report Report) IsFailed() bool {
 	cond := report.GetCond(ReportReady)
-	return cond.Status == metav1.ConditionFalse && cond.Reason == string(ReportReady)
+	return cond.Status == metav1.ConditionFalse && cond.Reason == string(ReportPhaseFailed)
 }
 
 // Return the state of the run as RunStatus
@@ -374,7 +359,7 @@ func (report Report) RunStatus() *catalog.LastRunStatus {
 func ConvertTaskToDatasetReportType(name catalog.MLTask) ReportType {
 	switch name {
 	case catalog.BinaryClassification:
-		return BinaryClassificationModelReport
+		return BinaryClassificationDatasetReport
 	case catalog.MultiClassification:
 		return MultiClassificationDatasetReport
 	case catalog.Regression:
@@ -403,4 +388,24 @@ func ConvertTaskToModelReportType(name catalog.MLTask) ReportType {
 	default:
 		return InvalidReport
 	}
+}
+
+func (report Report) GetStatus() interface{} {
+	return report.Status
+}
+
+func (report Report) GetObservedGeneration() int64 {
+	return report.Status.ObservedGeneration
+}
+
+func (report *Report) SetObservedGeneration(generation int64) {
+	report.Status.ObservedGeneration = generation
+}
+
+func (report *Report) SetUpdatedAt(time *metav1.Time) {
+	report.Status.UpdatedAt = time
+}
+
+func (report *Report) SetStatus(status interface{}) {
+	report.Status = status.(ReportStatus)
 }

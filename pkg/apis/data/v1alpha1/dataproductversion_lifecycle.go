@@ -122,3 +122,23 @@ func (version *DataProductVersion) MarkFailed(err error) {
 func (version DataProductVersion) Archived() bool {
 	return version.GetCond(DataProductVersionSaved).Status == metav1.ConditionTrue
 }
+
+func (dataproductversion DataProductVersion) GetStatus() interface{} {
+	return dataproductversion.Status
+}
+
+func (dataproductversion DataProductVersion) GetObservedGeneration() int64 {
+	return dataproductversion.Status.ObservedGeneration
+}
+
+func (dataproductversion *DataProductVersion) SetObservedGeneration(generation int64) {
+	dataproductversion.Status.ObservedGeneration = generation
+}
+
+func (dataproductversion *DataProductVersion) SetUpdatedAt(time *metav1.Time) {
+	dataproductversion.Status.UpdatedAt = time
+}
+
+func (dataproductversion *DataProductVersion) SetStatus(status interface{}) {
+	dataproductversion.Status = status.(DataProductVersionStatus)
+}

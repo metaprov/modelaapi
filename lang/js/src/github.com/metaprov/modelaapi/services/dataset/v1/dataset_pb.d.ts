@@ -702,9 +702,6 @@ export class GetTablesRequest extends jspb.Message {
   getConnectionname(): string;
   setConnectionname(value: string): GetTablesRequest;
 
-  getDatabasename(): string;
-  setDatabasename(value: string): GetTablesRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetTablesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetTablesRequest): GetTablesRequest.AsObject;
@@ -717,7 +714,6 @@ export namespace GetTablesRequest {
   export type AsObject = {
     connectionnamespace: string,
     connectionname: string,
-    databasename: string,
   }
 }
 
@@ -748,9 +744,6 @@ export class ExecuteSqlRequest extends jspb.Message {
   getConnectionname(): string;
   setConnectionname(value: string): ExecuteSqlRequest;
 
-  getDatabasename(): string;
-  setDatabasename(value: string): ExecuteSqlRequest;
-
   getSql(): string;
   setSql(value: string): ExecuteSqlRequest;
 
@@ -766,7 +759,6 @@ export namespace ExecuteSqlRequest {
   export type AsObject = {
     connectionnamespace: string,
     connectionname: string,
-    databasename: string,
     sql: string,
   }
 }

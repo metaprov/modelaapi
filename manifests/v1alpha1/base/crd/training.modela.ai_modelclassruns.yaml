@@ -250,16 +250,19 @@ spec:
                   of all logs produced by the object
                 properties:
                   bucket:
-                    description: The name of the VirtualBucket resource where the
+                    description: The name of the Virtual Bucket resource where the
                       logs are stored
                     type: string
                   containers:
-                    description: The collection of ContainerLog objects that describe
-                      the location of logs per container
+                    description: The collection of logs for each container of the
+                      workload
                     items:
                       description: ContainerLog describes the location of logs for
                         a single Job
                       properties:
+                        bucket:
+                          description: The bucket the log was stored in
+                          type: string
                         container:
                           description: The container name
                           type: string

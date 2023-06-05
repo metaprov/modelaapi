@@ -114,3 +114,23 @@ func (pm *PostMortem) MarkArchived() {
 func (pm *PostMortem) Archived() bool {
 	return pm.GetCond(PostMortemSaved).Status == corev1.ConditionTrue
 }
+
+func (postmortem PostMortem) GetStatus() interface{} {
+	return postmortem.Status
+}
+
+func (postmortem PostMortem) GetObservedGeneration() int64 {
+	return postmortem.Status.ObservedGeneration
+}
+
+func (postmortem PostMortem) SetObservedGeneration(generation int64) {
+	postmortem.Status.ObservedGeneration = generation
+}
+
+func (postmortem PostMortem) SetUpdatedAt(time *metav1.Time) {
+	postmortem.Status.LastUpdated = time
+}
+
+func (postmortem *PostMortem) SetStatus(status interface{}) {
+	postmortem.Status = status.(PostMortemStatus)
+}

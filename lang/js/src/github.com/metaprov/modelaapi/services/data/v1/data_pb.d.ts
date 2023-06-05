@@ -1668,26 +1668,10 @@ export class CreateModelReportRequest extends jspb.Message {
   hasModel(): boolean;
   clearModel(): CreateModelReportRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateModelReportRequest;
-  hasConnection(): boolean;
-  clearConnection(): CreateModelReportRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): CreateModelReportRequest;
-
-  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): CreateModelReportRequest;
-  hasBucket(): boolean;
-  clearBucket(): CreateModelReportRequest;
-
   getReport(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
   setReport(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report): CreateModelReportRequest;
   hasReport(): boolean;
   clearReport(): CreateModelReportRequest;
-
-  getGroup(): boolean;
-  setGroup(value: boolean): CreateModelReportRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateModelReportRequest.AsObject;
@@ -1705,11 +1689,7 @@ export namespace CreateModelReportRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
-    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     report?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
-    group: boolean,
   }
 }
 
@@ -1952,31 +1932,10 @@ export class CreateStudyReportRequest extends jspb.Message {
   hasModels(): boolean;
   clearModels(): CreateStudyReportRequest;
 
-  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): CreateStudyReportRequest;
-  hasBucket(): boolean;
-  clearBucket(): CreateStudyReportRequest;
-
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateStudyReportRequest;
-  hasConnection(): boolean;
-  clearConnection(): CreateStudyReportRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): CreateStudyReportRequest;
-
   getReport(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
   setReport(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report): CreateStudyReportRequest;
   hasReport(): boolean;
   clearReport(): CreateStudyReportRequest;
-
-  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateStudyReportRequest;
-  hasDbconnection(): boolean;
-  clearDbconnection(): CreateStudyReportRequest;
-
-  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearDbsecretMap(): CreateStudyReportRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateStudyReportRequest.AsObject;
@@ -1994,12 +1953,7 @@ export namespace CreateStudyReportRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     models?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList.AsObject,
-    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
     report?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
-    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -2745,9 +2699,6 @@ export class DsGetDatabasesRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): DsGetDatabasesRequest;
 
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): DsGetDatabasesRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsGetDatabasesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsGetDatabasesRequest): DsGetDatabasesRequest.AsObject;
@@ -2759,7 +2710,6 @@ export class DsGetDatabasesRequest extends jspb.Message {
 export namespace DsGetDatabasesRequest {
   export type AsObject = {
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -2789,12 +2739,6 @@ export class DsGetTablesRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): DsGetTablesRequest;
 
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): DsGetTablesRequest;
-
-  getDatabasename(): string;
-  setDatabasename(value: string): DsGetTablesRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsGetTablesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsGetTablesRequest): DsGetTablesRequest.AsObject;
@@ -2806,8 +2750,6 @@ export class DsGetTablesRequest extends jspb.Message {
 export namespace DsGetTablesRequest {
   export type AsObject = {
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
-    databasename: string,
   }
 }
 
@@ -2837,12 +2779,6 @@ export class DsExecuteSqlRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): DsExecuteSqlRequest;
 
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): DsExecuteSqlRequest;
-
-  getDatabasename(): string;
-  setDatabasename(value: string): DsExecuteSqlRequest;
-
   getSql(): string;
   setSql(value: string): DsExecuteSqlRequest;
 
@@ -2857,8 +2793,6 @@ export class DsExecuteSqlRequest extends jspb.Message {
 export namespace DsExecuteSqlRequest {
   export type AsObject = {
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
-    databasename: string,
     sql: string,
   }
 }

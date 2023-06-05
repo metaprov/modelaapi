@@ -252,3 +252,23 @@ func (datasource *DataSource) HaveValidationRules() bool {
 	return len(datasource.Spec.UnitTestsTemplate.Tests) > 0
 
 }
+
+func (datasource DataSource) GetStatus() interface{} {
+	return datasource.Status
+}
+
+func (datasource DataSource) GetObservedGeneration() int64 {
+	return datasource.Status.ObservedGeneration
+}
+
+func (datasource *DataSource) SetObservedGeneration(generation int64) {
+	datasource.Status.ObservedGeneration = generation
+}
+
+func (datasource *DataSource) SetUpdatedAt(time *metav1.Time) {
+	datasource.Status.UpdatedAt = time
+}
+
+func (datasource *DataSource) SetStatus(status interface{}) {
+	datasource.Status = status.(DataSourceStatus)
+}

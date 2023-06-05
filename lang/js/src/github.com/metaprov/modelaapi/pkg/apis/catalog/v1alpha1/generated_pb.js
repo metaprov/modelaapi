@@ -4628,7 +4628,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog.toObj
   var f, obj = {
     job: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     container: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    key: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    key: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    bucket: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4677,6 +4678,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog.deser
       var value = /** @type {string} */ (reader.readString());
       msg.setKey(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBucket(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4724,6 +4729,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog.seria
   if (f != null) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -4835,6 +4847,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog.prototype.hasKey = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string bucket = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog.prototype.getBucket = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog.prototype.setBucket = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog.prototype.clearBucket = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog.prototype.hasBucket = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -5263,8 +5311,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.proto
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    connection: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    bucket: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    connectionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    bucketname: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     path: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     table: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     database: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
@@ -5314,11 +5362,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.deser
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setConnection(value);
+      msg.setConnectionname(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setBucket(value);
+      msg.setBucketname(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -5489,10 +5537,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.proto
 
 
 /**
- * optional string connection = 2;
+ * optional string connectionName = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.prototype.getConnection = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.prototype.getConnectionname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -5501,7 +5549,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.proto
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.prototype.setConnection = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.prototype.setConnectionname = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -5510,7 +5558,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.prototype.clearConnection = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.prototype.clearConnectionname = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -5519,16 +5567,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.prototype.hasConnection = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.prototype.hasConnectionname = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string bucket = 3;
+ * optional string bucketName = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.prototype.getBucket = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.prototype.getBucketname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -5537,7 +5585,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.proto
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.prototype.setBucket = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.prototype.setBucketname = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -5546,7 +5594,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.prototype.clearBucket = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.prototype.clearBucketname = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -5555,7 +5603,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.prototype.hasBucket = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation.prototype.hasBucketname = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

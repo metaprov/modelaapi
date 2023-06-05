@@ -177,10 +177,10 @@ spec:
                     description: The path to a flat-file inside an object storage
                       system. When using the Modela API to upload files (through the
                       FileService API), Modela will upload the data to a predetermined
-                      path based on the Tenant, DataProduct, DataProductVersion, and
-                      resource type of the resource in relation to the file being
+                      path based on the Tenant, Data Product, Data Product Version,
+                      and resource type of the resource in relation to the file being
                       uploaded. The path does not need to adhere to this format; you
-                      can give the path to a file inside a bucket not managed by Modela
+                      may also specify an arbitrary path
                     type: string
                   resourceRef:
                     description: In the case of the location type being Dataset or
@@ -504,7 +504,18 @@ spec:
                               csv:
                                 description: The file format for CSV files, if applicable
                                 properties:
-                                  columnDelimiter:
+                                  commentChars:
+                                    default: '#'
+                                    description: 'The comment character used to split
+                                      comments off the end of lines (by default, a
+                                      hashtag #)'
+                                    type: string
+                                  compression:
+                                    default: none
+                                    description: The compression type, if the file
+                                      is compressed
+                                    type: string
+                                  delimiter:
                                     default: comma
                                     description: The character used to separate fields
                                       (by default, a comma)
@@ -519,17 +530,6 @@ spec:
                                     - space
                                     - pipe
                                     type: string
-                                  commentChars:
-                                    default: '#'
-                                    description: 'The comment character used to split
-                                      comments off the end of lines (by default, a
-                                      hashtag #)'
-                                    type: string
-                                  compression:
-                                    default: none
-                                    description: The compression type, if the file
-                                      is compressed
-                                    type: string
                                   encoding:
                                     default: utf-8
                                     description: The unicode encoding of the file
@@ -540,7 +540,7 @@ spec:
                                     - utf-16
                                     type: string
                                   escapeChar:
-                                    default: none
+                                    default: single-quote
                                     description: The character used to escape the
                                       delimiter
                                     enum:
@@ -571,26 +571,11 @@ spec:
                                     type: string
                                   quote:
                                     default: double-quote
-                                    description: The charcter used for quotes (by
+                                    description: The character used for quotes (by
                                       default, a double quote ")
                                     enum:
                                     - double-quote
                                     - single-quote
-                                    type: string
-                                  rowDelimiter:
-                                    default: crlf
-                                    description: The character used to signal the
-                                      end of a row (by default, a newline \n)
-                                    enum:
-                                    - crlf
-                                    - cr
-                                    - lf
-                                    - semicolon
-                                    - colon
-                                    - comma
-                                    - tab
-                                    - space
-                                    - pipe
                                     type: string
                                   skipRows:
                                     default: 0
@@ -725,11 +710,11 @@ spec:
                                   storage system. When using the Modela API to upload
                                   files (through the FileService API), Modela will
                                   upload the data to a predetermined path based on
-                                  the Tenant, DataProduct, DataProductVersion, and
-                                  resource type of the resource in relation to the
-                                  file being uploaded. The path does not need to adhere
-                                  to this format; you can give the path to a file
-                                  inside a bucket not managed by Modela
+                                  the Tenant, Data Product, Data Product Version,
+                                  and resource type of the resource in relation to
+                                  the file being uploaded. The path does not need
+                                  to adhere to this format; you may also specify an
+                                  arbitrary path
                                 type: string
                               resourceRef:
                                 description: In the case of the location type being
@@ -929,11 +914,11 @@ spec:
                                   storage system. When using the Modela API to upload
                                   files (through the FileService API), Modela will
                                   upload the data to a predetermined path based on
-                                  the Tenant, DataProduct, DataProductVersion, and
-                                  resource type of the resource in relation to the
-                                  file being uploaded. The path does not need to adhere
-                                  to this format; you can give the path to a file
-                                  inside a bucket not managed by Modela
+                                  the Tenant, Data Product, Data Product Version,
+                                  and resource type of the resource in relation to
+                                  the file being uploaded. The path does not need
+                                  to adhere to this format; you may also specify an
+                                  arbitrary path
                                 type: string
                               resourceRef:
                                 description: In the case of the location type being
@@ -2608,11 +2593,10 @@ spec:
                         description: The path to a flat-file inside an object storage
                           system. When using the Modela API to upload files (through
                           the FileService API), Modela will upload the data to a predetermined
-                          path based on the Tenant, DataProduct, DataProductVersion,
+                          path based on the Tenant, Data Product, Data Product Version,
                           and resource type of the resource in relation to the file
                           being uploaded. The path does not need to adhere to this
-                          format; you can give the path to a file inside a bucket
-                          not managed by Modela
+                          format; you may also specify an arbitrary path
                         type: string
                       resourceRef:
                         description: In the case of the location type being Dataset
@@ -3800,16 +3784,19 @@ spec:
                     description: Logs from the last run
                     properties:
                       bucket:
-                        description: The name of the VirtualBucket resource where
+                        description: The name of the Virtual Bucket resource where
                           the logs are stored
                         type: string
                       containers:
-                        description: The collection of ContainerLog objects that describe
-                          the location of logs per container
+                        description: The collection of logs for each container of
+                          the workload
                         items:
                           description: ContainerLog describes the location of logs
                             for a single Job
                           properties:
+                            bucket:
+                              description: The bucket the log was stored in
+                              type: string
                             container:
                               description: The container name
                               type: string

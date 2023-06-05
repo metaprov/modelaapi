@@ -425,3 +425,23 @@ func (predictor Predictor) ServiceAccount() *v1.ServiceAccount {
 		},
 	}
 }
+
+func (predictor Predictor) GetStatus() interface{} {
+	return predictor.Status
+}
+
+func (predictor Predictor) GetObservedGeneration() int64 {
+	return predictor.Status.ObservedGeneration
+}
+
+func (predictor *Predictor) SetObservedGeneration(generation int64) {
+	predictor.Status.ObservedGeneration = generation
+}
+
+func (predictor *Predictor) SetUpdatedAt(time *metav1.Time) {
+	predictor.Status.UpdatedAt = time
+}
+
+func (predictor *Predictor) SetStatus(status interface{}) {
+	predictor.Status = status.(PredictorStatus)
+}

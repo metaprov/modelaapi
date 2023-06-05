@@ -14,31 +14,6 @@ class ModelaSystemServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.ListModelaSystems = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/ListModelaSystems',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.ListModelaSystemsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.ListModelaSystemsResponse.FromString,
-                )
-        self.CreateModelaSystem = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/CreateModelaSystem',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.CreateModelaSystemRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.CreateModelaSystemResponse.FromString,
-                )
-        self.GetModelaSystem = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/GetModelaSystem',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.GetModelaSystemRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.GetModelaSystemResponse.FromString,
-                )
-        self.UpdateModelaSystem = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/UpdateModelaSystem',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.UpdateModelaSystemRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.UpdateModelaSystemResponse.FromString,
-                )
-        self.DeleteModelaSystem = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/DeleteModelaSystem',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModelaSystemRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModelaSystemResponse.FromString,
-                )
         self.DownloadLogfile = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/DownloadLogfile',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DownloadLogFileRequest.SerializeToString,
@@ -58,36 +33,6 @@ class ModelaSystemServiceStub(object):
 
 class ModelaSystemServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
-
-    def ListModelaSystems(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def CreateModelaSystem(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetModelaSystem(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def UpdateModelaSystem(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def DeleteModelaSystem(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
 
     def DownloadLogfile(self, request, context):
         """Missing associated documentation comment in .proto file."""
@@ -110,31 +55,6 @@ class ModelaSystemServiceServicer(object):
 
 def add_ModelaSystemServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'ListModelaSystems': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListModelaSystems,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.ListModelaSystemsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.ListModelaSystemsResponse.SerializeToString,
-            ),
-            'CreateModelaSystem': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateModelaSystem,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.CreateModelaSystemRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.CreateModelaSystemResponse.SerializeToString,
-            ),
-            'GetModelaSystem': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetModelaSystem,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.GetModelaSystemRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.GetModelaSystemResponse.SerializeToString,
-            ),
-            'UpdateModelaSystem': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateModelaSystem,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.UpdateModelaSystemRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.UpdateModelaSystemResponse.SerializeToString,
-            ),
-            'DeleteModelaSystem': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteModelaSystem,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModelaSystemRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModelaSystemResponse.SerializeToString,
-            ),
             'DownloadLogfile': grpc.unary_unary_rpc_method_handler(
                     servicer.DownloadLogfile,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DownloadLogFileRequest.FromString,
@@ -159,91 +79,6 @@ def add_ModelaSystemServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class ModelaSystemService(object):
     """Missing associated documentation comment in .proto file."""
-
-    @staticmethod
-    def ListModelaSystems(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/ListModelaSystems',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.ListModelaSystemsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.ListModelaSystemsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def CreateModelaSystem(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/CreateModelaSystem',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.CreateModelaSystemRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.CreateModelaSystemResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetModelaSystem(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/GetModelaSystem',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.GetModelaSystemRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.GetModelaSystemResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def UpdateModelaSystem(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/UpdateModelaSystem',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.UpdateModelaSystemRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.UpdateModelaSystemResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DeleteModelaSystem(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/DeleteModelaSystem',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModelaSystemRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModelaSystemResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DownloadLogfile(request,

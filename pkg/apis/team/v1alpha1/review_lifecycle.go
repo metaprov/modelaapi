@@ -129,3 +129,23 @@ func (conv *Review) MarkArchived() {
 func (conv *Review) Archived() bool {
 	return conv.GetCond(ReviewSaved).Status == corev1.ConditionTrue
 }
+
+func (review Review) GetStatus() interface{} {
+	return review.Status
+}
+
+func (review Review) GetObservedGeneration() int64 {
+	return review.Status.ObservedGeneration
+}
+
+func (review Review) SetObservedGeneration(generation int64) {
+	review.Status.ObservedGeneration = generation
+}
+
+func (review Review) SetUpdatedAt(time *metav1.Time) {
+	review.Status.LastUpdated = time
+}
+
+func (review *Review) SetStatus(status interface{}) {
+	review.Status = status.(ReviewStatus)
+}

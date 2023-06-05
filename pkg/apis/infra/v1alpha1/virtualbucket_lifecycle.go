@@ -111,3 +111,23 @@ func (bucket *VirtualBucket) GetConnection() *Connection {
 
 	return &Connection{ObjectMeta: metav1.ObjectMeta{Namespace: bucket.Namespace, Name: connectionName}}
 }
+
+func (virtualbucket VirtualBucket) GetStatus() interface{} {
+	return virtualbucket.Status
+}
+
+func (virtualbucket VirtualBucket) GetObservedGeneration() int64 {
+	return virtualbucket.Status.ObservedGeneration
+}
+
+func (virtualbucket *VirtualBucket) SetObservedGeneration(generation int64) {
+	virtualbucket.Status.ObservedGeneration = generation
+}
+
+func (virtualbucket *VirtualBucket) SetUpdatedAt(time *metav1.Time) {
+	virtualbucket.Status.UpdatedAt = time
+}
+
+func (virtualbucket *VirtualBucket) SetStatus(status interface{}) {
+	virtualbucket.Status = status.(VirtualBucketStatus)
+}

@@ -1480,3 +1480,23 @@ func (model Model) PartitionModelForecastFile() string {
 func (model Model) CompareTestingScore(other *Model) bool {
 	return model.Spec.Objective.Compare(model.Status.TestScore, other.Status.TestScore)
 }
+
+func (model Model) GetStatus() interface{} {
+	return model.Status
+}
+
+func (model Model) GetObservedGeneration() int64 {
+	return model.Status.ObservedGeneration
+}
+
+func (model *Model) SetObservedGeneration(generation int64) {
+	model.Status.ObservedGeneration = generation
+}
+
+func (model *Model) SetUpdatedAt(time *metav1.Time) {
+	model.Status.UpdatedAt = time
+}
+
+func (model *Model) SetStatus(status interface{}) {
+	model.Status = status.(ModelStatus)
+}

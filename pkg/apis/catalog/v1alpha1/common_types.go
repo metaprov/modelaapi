@@ -26,9 +26,10 @@ const (
 // ===========================================================
 
 const (
-	LabJobRunnerRole        string = "lab-job-runner"
-	LabJobRunnerSa          string = "lab-job-sa"
-	LabJobRunnerRoleBinding string = "lab-job-runner-binding"
+	LabJobRunnerRole                     string = "lab-job-runner"
+	LabJobRunnerSa                       string = "lab-job-sa"
+	LabJobRunnerRoleBinding              string = "lab-job-runner-binding"
+	LabJobRunnerClusterRoleBindingPrefix string = "job-runner-binding"
 
 	ServingSiteJobRunnerRole        string = "servingsite-job-runner"
 	ServingSiteJobRunnerSa          string = "servingsite-job-sa"
@@ -1833,17 +1834,17 @@ type DataLocation struct {
 	// to the database using the credentials specified in the ConnectionName, and will execute the query specified by the SQL field
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ConnectionName *string `json:"connection,omitempty" protobuf:"bytes,2,opt,name=connection"`
+	ConnectionName *string `json:"connection,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
 	// In the case of the location type being an object storage system, BucketName is the name of the VirtualBucket resource
 	// that exists in the same tenant as the resource specifying the DataLocation. Modela will connect to the external
 	// object storage system, and will access the file from the path specified by the Path field
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	BucketName *string `json:"bucket,omitempty" protobuf:"bytes,3,opt,name=bucket"`
+	BucketName *string `json:"bucket,omitempty" protobuf:"bytes,3,opt,name=bucketName"`
 	// The path to a flat-file inside an object storage system. When using the Modela API to upload files (through the
-	// FileService API), Modela will upload the data to a predetermined path based on the Tenant, DataProduct,
-	// DataProductVersion, and resource type of the resource in relation to the file being uploaded.
-	// The path does not need to adhere to this format; you can give the path to a file inside a bucket not managed by Modela
+	// FileService API), Modela will upload the data to a predetermined path based on the Tenant, Data Product,
+	// Data Product Version, and resource type of the resource in relation to the file being uploaded.
+	// The path does not need to adhere to this format; you may also specify an arbitrary path
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Path *string `json:"path,omitempty" protobuf:"bytes,4,opt,name=path"`
@@ -2119,10 +2120,10 @@ type NotificationSpec struct {
 
 // Logs describes the location of logs produced by workloads associated with a resource
 type Logs struct {
-	// The name of the VirtualBucket resource where the logs are stored
+	// The name of the Virtual Bucket resource where the logs are stored
 	// +kubebuilder:validation:Optional
 	BucketName string `json:"bucket,omitempty" protobuf:"bytes,1,opt,name=bucket"`
-	// The collection of ContainerLog objects that describe the location of logs per container
+	// The collection of logs for each container of the workload
 	// +kubebuilder:validation:Optional
 	Containers []ContainerLog `json:"containers,omitempty" protobuf:"bytes,2,rep,name=containers"`
 }
@@ -2148,6 +2149,8 @@ type ContainerLog struct {
 	Container string `json:"container,omitempty" protobuf:"bytes,2,rep,name=container"`
 	// The path to the log in the bucket
 	Key string `json:"key,omitempty" protobuf:"bytes,3,rep,name=key"`
+	// The bucket the log was stored in
+	Bucket string `json:"bucket,omitempty" protobuf:"bytes,4,rep,name=bucket"`
 }
 
 type TestSuite struct {

@@ -272,3 +272,23 @@ func (fh FeatureGroup) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *s
 		},
 	}
 }
+
+func (featuregroup FeatureGroup) GetStatus() interface{} {
+	return featuregroup.Status
+}
+
+func (featuregroup FeatureGroup) GetObservedGeneration() int64 {
+	return featuregroup.Status.ObservedGeneration
+}
+
+func (featuregroup *FeatureGroup) SetObservedGeneration(generation int64) {
+	featuregroup.Status.ObservedGeneration = generation
+}
+
+func (featuregroup *FeatureGroup) SetUpdatedAt(time *metav1.Time) {
+	featuregroup.Status.UpdatedAt = time
+}
+
+func (featuregroup *FeatureGroup) SetStatus(status interface{}) {
+	featuregroup.Status = status.(FeatureGroupStatus)
+}

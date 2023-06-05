@@ -17,7 +17,7 @@ from github.com.metaprov.modelaapi.services.common.v1 import common_pb2 as githu
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nIgithub.com/metaprov/modelaapi/services/modelasystem/v1/modelasystem.proto\x12\x36github.com.metaprov.modelaapi.services.modelasystem.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\x1a google/protobuf/field_mask.proto\"\xca\x01\n\x18ListModelaSystemsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12l\n\x06labels\x18\x02 \x03(\x0b\x32\\.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"{\n\x19ListModelaSystemsResponse\x12^\n\rmodelasystems\x18\x01 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemList\"\x16\n\x14ModelaSystemResponse\"\x88\x01\n\x19\x43reateModelaSystemRequest\x12Y\n\x0cmodelasystem\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem\x12\x10\n\x08password\x18\x02 \x01(\t\"\x1c\n\x1a\x43reateModelaSystemResponse\"\xa6\x01\n\x19UpdateModelaSystemRequest\x12Y\n\x0cmodelasystem\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1c\n\x1aUpdateModelaSystemResponse\"9\n\x16GetModelaSystemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x82\x01\n\x17GetModelaSystemResponse\x12Y\n\x0cmodelasystem\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"C\n GetModelaSystemNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"x\n!GetModelaSystemNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"<\n\x19\x44\x65leteModelaSystemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1c\n\x1a\x44\x65leteModelaSystemResponse\"\x1c\n\x1aModelaSystemCreateResponse\"\x10\n\x0eLogoutResponse\"\x17\n\x15ResetPasswordResponse\"?\n\x1cModelaSystemGetByNameRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"*\n\x19ModelaSystemLogoutRequest\x12\r\n\x05token\x18\x01 \x01(\t\"Y\n\x16\x44ownloadLogFileRequest\x12\x0e\n\x06tenant\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x0e\n\x06\x62ucket\x18\x03 \x01(\t\x12\x0c\n\x04path\x18\x04 \x01(\t\")\n\x17\x44ownloadLogFileResponse\x12\x0e\n\x06result\x18\x01 \x01(\x0c\"H\n\x15\x42\x61\x63kupDatabaseRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0e\n\x06\x62ucket\x18\x02 \x01(\t\x12\x0c\n\x04path\x18\x03 \x01(\t\"&\n\x16\x42\x61\x63kupDatabaseResponse\x12\x0c\n\x04path\x18\x01 \x01(\t\"D\n\x11\x42\x61\x63kupEtcdRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0e\n\x06\x62ucket\x18\x02 \x01(\t\x12\x0c\n\x04path\x18\x03 \x01(\t\"\"\n\x12\x42\x61\x63kupEtcdResponse\x12\x0c\n\x04path\x18\x01 \x01(\t2\xb2\x0e\n\x13ModelaSystemService\x12\xdf\x01\n\x11ListModelaSystems\x12P.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRequest\x1aQ.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/v1/modelasystems/{namespace}\x12\xd9\x01\n\x12\x43reateModelaSystem\x12Q.github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModelaSystemRequest\x1aR.github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModelaSystemResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/modelasystems:\x01*\x12\xe0\x01\n\x0fGetModelaSystem\x12N.github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemRequest\x1aO.github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemResponse\",\x82\xd3\xe4\x93\x02&\x12$/v1/modelasystems/{namespace}/{name}\x12\x98\x02\n\x12UpdateModelaSystem\x12Q.github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModelaSystemRequest\x1aR.github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModelaSystemResponse\"[\x82\xd3\xe4\x93\x02U\x1aP/v1/modelasystems/{modelasystem.metadata.namespace}/{modelasystem.metadata.name}:\x01*\x12\xe9\x01\n\x12\x44\x65leteModelaSystem\x12Q.github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModelaSystemRequest\x1aR.github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModelaSystemResponse\",\x82\xd3\xe4\x93\x02&*$/v1/modelasystems/{namespace}/{name}\x12\xd4\x01\n\x0f\x44ownloadLogfile\x12N.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest\x1aO.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/download/{namespace}\x12\xd1\x01\n\x0e\x42\x61\x63kupDatabase\x12M.github.com.metaprov.modelaapi.services.modelasystem.v1.BackupDatabaseRequest\x1aN.github.com.metaprov.modelaapi.services.modelasystem.v1.BackupDatabaseResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x18/v1/backupdb/{namespace}\x12\xc7\x01\n\nBackupEtcd\x12I.github.com.metaprov.modelaapi.services.modelasystem.v1.BackupEtcdRequest\x1aJ.github.com.metaprov.modelaapi.services.modelasystem.v1.BackupEtcdResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x1a/v1/backupetcd/{namespace}B8Z6github.com/metaprov/modelaapi/services/modelasystem/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nIgithub.com/metaprov/modelaapi/services/modelasystem/v1/modelasystem.proto\x12\x36github.com.metaprov.modelaapi.services.modelasystem.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\x1a google/protobuf/field_mask.proto\"Y\n\x16\x44ownloadLogFileRequest\x12\x0e\n\x06tenant\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x0e\n\x06\x62ucket\x18\x03 \x01(\t\x12\x0c\n\x04path\x18\x04 \x01(\t\")\n\x17\x44ownloadLogFileResponse\x12\x0e\n\x06result\x18\x01 \x01(\x0c\"H\n\x15\x42\x61\x63kupDatabaseRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0e\n\x06\x62ucket\x18\x02 \x01(\t\x12\x0c\n\x04path\x18\x03 \x01(\t\"&\n\x16\x42\x61\x63kupDatabaseResponse\x12\x0c\n\x04path\x18\x01 \x01(\t\"D\n\x11\x42\x61\x63kupEtcdRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0e\n\x06\x62ucket\x18\x02 \x01(\t\x12\x0c\n\x04path\x18\x03 \x01(\t\"\"\n\x12\x42\x61\x63kupEtcdResponse\x12\x0c\n\x04path\x18\x01 \x01(\t2\x8a\x05\n\x13ModelaSystemService\x12\xd4\x01\n\x0f\x44ownloadLogfile\x12N.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest\x1aO.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/download/{namespace}\x12\xd1\x01\n\x0e\x42\x61\x63kupDatabase\x12M.github.com.metaprov.modelaapi.services.modelasystem.v1.BackupDatabaseRequest\x1aN.github.com.metaprov.modelaapi.services.modelasystem.v1.BackupDatabaseResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x18/v1/backupdb/{namespace}\x12\xc7\x01\n\nBackupEtcd\x12I.github.com.metaprov.modelaapi.services.modelasystem.v1.BackupEtcdRequest\x1aJ.github.com.metaprov.modelaapi.services.modelasystem.v1.BackupEtcdResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x1a/v1/backupetcd/{namespace}B8Z6github.com/metaprov/modelaapi/services/modelasystem/v1b\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2', globals())
@@ -25,74 +25,24 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z6github.com/metaprov/modelaapi/services/modelasystem/v1'
-  _LISTMODELASYSTEMSREQUEST_LABELSENTRY._options = None
-  _LISTMODELASYSTEMSREQUEST_LABELSENTRY._serialized_options = b'8\001'
-  _MODELASYSTEMSERVICE.methods_by_name['ListModelaSystems']._options = None
-  _MODELASYSTEMSERVICE.methods_by_name['ListModelaSystems']._serialized_options = b'\202\323\344\223\002\037\022\035/v1/modelasystems/{namespace}'
-  _MODELASYSTEMSERVICE.methods_by_name['CreateModelaSystem']._options = None
-  _MODELASYSTEMSERVICE.methods_by_name['CreateModelaSystem']._serialized_options = b'\202\323\344\223\002\026\"\021/v1/modelasystems:\001*'
-  _MODELASYSTEMSERVICE.methods_by_name['GetModelaSystem']._options = None
-  _MODELASYSTEMSERVICE.methods_by_name['GetModelaSystem']._serialized_options = b'\202\323\344\223\002&\022$/v1/modelasystems/{namespace}/{name}'
-  _MODELASYSTEMSERVICE.methods_by_name['UpdateModelaSystem']._options = None
-  _MODELASYSTEMSERVICE.methods_by_name['UpdateModelaSystem']._serialized_options = b'\202\323\344\223\002U\032P/v1/modelasystems/{modelasystem.metadata.namespace}/{modelasystem.metadata.name}:\001*'
-  _MODELASYSTEMSERVICE.methods_by_name['DeleteModelaSystem']._options = None
-  _MODELASYSTEMSERVICE.methods_by_name['DeleteModelaSystem']._serialized_options = b'\202\323\344\223\002&*$/v1/modelasystems/{namespace}/{name}'
   _MODELASYSTEMSERVICE.methods_by_name['DownloadLogfile']._options = None
   _MODELASYSTEMSERVICE.methods_by_name['DownloadLogfile']._serialized_options = b'\202\323\344\223\002\032\022\030/v1/download/{namespace}'
   _MODELASYSTEMSERVICE.methods_by_name['BackupDatabase']._options = None
   _MODELASYSTEMSERVICE.methods_by_name['BackupDatabase']._serialized_options = b'\202\323\344\223\002\032\"\030/v1/backupdb/{namespace}'
   _MODELASYSTEMSERVICE.methods_by_name['BackupEtcd']._options = None
   _MODELASYSTEMSERVICE.methods_by_name['BackupEtcd']._serialized_options = b'\202\323\344\223\002\034\"\032/v1/backupetcd/{namespace}'
-  _LISTMODELASYSTEMSREQUEST._serialized_start=332
-  _LISTMODELASYSTEMSREQUEST._serialized_end=534
-  _LISTMODELASYSTEMSREQUEST_LABELSENTRY._serialized_start=489
-  _LISTMODELASYSTEMSREQUEST_LABELSENTRY._serialized_end=534
-  _LISTMODELASYSTEMSRESPONSE._serialized_start=536
-  _LISTMODELASYSTEMSRESPONSE._serialized_end=659
-  _MODELASYSTEMRESPONSE._serialized_start=661
-  _MODELASYSTEMRESPONSE._serialized_end=683
-  _CREATEMODELASYSTEMREQUEST._serialized_start=686
-  _CREATEMODELASYSTEMREQUEST._serialized_end=822
-  _CREATEMODELASYSTEMRESPONSE._serialized_start=824
-  _CREATEMODELASYSTEMRESPONSE._serialized_end=852
-  _UPDATEMODELASYSTEMREQUEST._serialized_start=855
-  _UPDATEMODELASYSTEMREQUEST._serialized_end=1021
-  _UPDATEMODELASYSTEMRESPONSE._serialized_start=1023
-  _UPDATEMODELASYSTEMRESPONSE._serialized_end=1051
-  _GETMODELASYSTEMREQUEST._serialized_start=1053
-  _GETMODELASYSTEMREQUEST._serialized_end=1110
-  _GETMODELASYSTEMRESPONSE._serialized_start=1113
-  _GETMODELASYSTEMRESPONSE._serialized_end=1243
-  _GETMODELASYSTEMNAMESPACESREQUEST._serialized_start=1245
-  _GETMODELASYSTEMNAMESPACESREQUEST._serialized_end=1312
-  _GETMODELASYSTEMNAMESPACESRESPONSE._serialized_start=1314
-  _GETMODELASYSTEMNAMESPACESRESPONSE._serialized_end=1434
-  _DELETEMODELASYSTEMREQUEST._serialized_start=1436
-  _DELETEMODELASYSTEMREQUEST._serialized_end=1496
-  _DELETEMODELASYSTEMRESPONSE._serialized_start=1498
-  _DELETEMODELASYSTEMRESPONSE._serialized_end=1526
-  _MODELASYSTEMCREATERESPONSE._serialized_start=1528
-  _MODELASYSTEMCREATERESPONSE._serialized_end=1556
-  _LOGOUTRESPONSE._serialized_start=1558
-  _LOGOUTRESPONSE._serialized_end=1574
-  _RESETPASSWORDRESPONSE._serialized_start=1576
-  _RESETPASSWORDRESPONSE._serialized_end=1599
-  _MODELASYSTEMGETBYNAMEREQUEST._serialized_start=1601
-  _MODELASYSTEMGETBYNAMEREQUEST._serialized_end=1664
-  _MODELASYSTEMLOGOUTREQUEST._serialized_start=1666
-  _MODELASYSTEMLOGOUTREQUEST._serialized_end=1708
-  _DOWNLOADLOGFILEREQUEST._serialized_start=1710
-  _DOWNLOADLOGFILEREQUEST._serialized_end=1799
-  _DOWNLOADLOGFILERESPONSE._serialized_start=1801
-  _DOWNLOADLOGFILERESPONSE._serialized_end=1842
-  _BACKUPDATABASEREQUEST._serialized_start=1844
-  _BACKUPDATABASEREQUEST._serialized_end=1916
-  _BACKUPDATABASERESPONSE._serialized_start=1918
-  _BACKUPDATABASERESPONSE._serialized_end=1956
-  _BACKUPETCDREQUEST._serialized_start=1958
-  _BACKUPETCDREQUEST._serialized_end=2026
-  _BACKUPETCDRESPONSE._serialized_start=2028
-  _BACKUPETCDRESPONSE._serialized_end=2062
-  _MODELASYSTEMSERVICE._serialized_start=2065
-  _MODELASYSTEMSERVICE._serialized_end=3907
+  _DOWNLOADLOGFILEREQUEST._serialized_start=331
+  _DOWNLOADLOGFILEREQUEST._serialized_end=420
+  _DOWNLOADLOGFILERESPONSE._serialized_start=422
+  _DOWNLOADLOGFILERESPONSE._serialized_end=463
+  _BACKUPDATABASEREQUEST._serialized_start=465
+  _BACKUPDATABASEREQUEST._serialized_end=537
+  _BACKUPDATABASERESPONSE._serialized_start=539
+  _BACKUPDATABASERESPONSE._serialized_end=577
+  _BACKUPETCDREQUEST._serialized_start=579
+  _BACKUPETCDREQUEST._serialized_end=647
+  _BACKUPETCDRESPONSE._serialized_start=649
+  _BACKUPETCDRESPONSE._serialized_end=683
+  _MODELASYSTEMSERVICE._serialized_start=686
+  _MODELASYSTEMSERVICE._serialized_end=1336
 # @@protoc_insertion_point(module_scope)

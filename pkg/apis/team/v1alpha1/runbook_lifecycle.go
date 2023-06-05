@@ -117,3 +117,23 @@ func (runbook *RunBook) MarkSaved() {
 func (runbook *RunBook) Saved() bool {
 	return runbook.GetCond(RunBookSaved).Status == corev1.ConditionTrue
 }
+
+func (runbook RunBook) GetStatus() interface{} {
+	return runbook.Status
+}
+
+func (runbook RunBook) GetObservedGeneration() int64 {
+	return runbook.Status.ObservedGeneration
+}
+
+func (runbook RunBook) SetObservedGeneration(generation int64) {
+	runbook.Status.ObservedGeneration = generation
+}
+
+func (runbook RunBook) SetUpdatedAt(time *metav1.Time) {
+	runbook.Status.LastUpdated = time
+}
+
+func (runbook *RunBook) SetStatus(status interface{}) {
+	runbook.Status = status.(RunBookStatus)
+}

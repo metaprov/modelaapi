@@ -57,6 +57,11 @@ spec:
           spec:
             description: ReportSpec specifies the desired state of a Report
             properties:
+              artifactBucketName:
+                description: The name of the Virtual Bucket where report artifacts
+                  will be stored. If empty, it will default to the default Virtual
+                  Bucket for the Data Product of the Report
+                type: string
               entityRef:
                 description: EntityRef specifies the entity which the Report references.
                   The supported entities consist of Entity, Model, and Study resources
@@ -110,7 +115,7 @@ spec:
               labRef:
                 description: The reference to the Lab namespace under which the report
                   generation Job will be executed under. If unspecified, the default
-                  Lab of the Data Product for the Report will be used
+                  Lab for the Data Product of the Report will be used
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -146,118 +151,6 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
-              location:
-                description: The location of the flat-file containing the PDF report
-                properties:
-                  bucket:
-                    default: ""
-                    description: In the case of the location type being an object
-                      storage system, BucketName is the name of the VirtualBucket
-                      resource that exists in the same tenant as the resource specifying
-                      the DataLocation. Modela will connect to the external object
-                      storage system, and will access the file from the path specified
-                      by the Path field
-                    type: string
-                  connection:
-                    default: ""
-                    description: In the case of the type of location being a database,
-                      ConnectionName specifies the name of the ConnectionName resource
-                      that exists in the same tenant as the resource specifying the
-                      DataLocation. Modela will attempt to connect to the database
-                      using the credentials specified in the ConnectionName, and will
-                      execute the query specified by the SQL field
-                    type: string
-                  database:
-                    default: ""
-                    description: The name of a database inside the database system
-                      specified by the ConnectionName field
-                    type: string
-                  path:
-                    default: ""
-                    description: The path to a flat-file inside an object storage
-                      system. When using the Modela API to upload files (through the
-                      FileService API), Modela will upload the data to a predetermined
-                      path based on the Tenant, DataProduct, DataProductVersion, and
-                      resource type of the resource in relation to the file being
-                      uploaded. The path does not need to adhere to this format; you
-                      can give the path to a file inside a bucket not managed by Modela
-                    type: string
-                  resourceRef:
-                    description: In the case of the location type being Dataset or
-                      PublicDataset, ResourceRef references another resource that
-                      containing data that will be used as a data source
-                    properties:
-                      apiVersion:
-                        description: API version of the referent.
-                        type: string
-                      fieldPath:
-                        description: 'If referring to a piece of an object instead
-                          of an entire object, this string should contain a valid
-                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
-                          For example, if the object reference is to a container within
-                          a pod, this would take on a value like: "spec.containers{name}"
-                          (where "name" refers to the name of the container that triggered
-                          the event) or if no container name is specified "spec.containers[2]"
-                          (container with index 2 in this pod). This syntax is chosen
-                          only to have some well-defined way of referencing a part
-                          of an object. TODO: this design is not final and this field
-                          is subject to change in the future.'
-                        type: string
-                      kind:
-                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                        type: string
-                      name:
-                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                        type: string
-                      namespace:
-                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                        type: string
-                      resourceVersion:
-                        description: 'Specific resourceVersion to which this reference
-                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                        type: string
-                      uid:
-                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                        type: string
-                    type: object
-                    x-kubernetes-map-type: atomic
-                  sql:
-                    default: ""
-                    description: The SQL statement which will be executed to query
-                      data from the table specified by Table
-                    type: string
-                  table:
-                    default: ""
-                    description: The name of a table inside a database, if applicable
-                    type: string
-                  topic:
-                    default: ""
-                    description: The name of the streaming topic (currently unsupported)
-                    type: string
-                  type:
-                    default: object
-                    description: The type of location where the data resides, which
-                      can either be an object inside an object storage system (i.e.
-                      Minio), a SQL location like a table or a view, a data stream
-                      (i.e. Kafka, currently unsupported), or a web location (currently
-                      unsupported)
-                    enum:
-                    - object
-                    - table
-                    - view
-                    - stream
-                    - web
-                    - public-dataset
-                    - dataset
-                    type: string
-                  url:
-                    default: ""
-                    description: In the case of the location type being WebApi, URL
-                      specifies the external location (HTTP or Git) that will be queried
-                      and then stored as flat-file by the resource which specifies
-                      the DataLocation
-                    type: string
-                type: object
               modelClassName:
                 description: The model class for this report if the model was created
                   by a model class
@@ -278,29 +171,10 @@ spec:
               reportType:
                 description: The type of report (e.g. classification model report,
                   study report)
-                enum:
-                - binary-classification-model
-                - forecast-model
-                - regression-model
-                - multi-classification-model
-                - text-classification-model
-                - classification-dataset
-                - forecast-dataset
-                - text-classification-dataset
-                - regression-dataset
-                - study-report
-                - feature-report
-                - invalid-report
-                - daily-report
-                - weekly-report
-                - monthly-report
-                - summary-report
-                - partition-timeseries-dataset-report
-                - partition-timeseries-model-report
                 type: string
               resources:
                 description: Resources specifies the resource requirements that will
-                  be allocated to the report generation workload
+                  be allocated to the workload
                 properties:
                   custom:
                     default: false
@@ -465,21 +339,33 @@ spec:
                       type: object
                     type: array
                 type: object
+              location:
+                description: The location of the report file, set after the Report
+                  is finished generating
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    type: string
+                type: object
               logs:
                 description: Logs specifies the location of logs produced by workloads
                   associated with the Report
                 properties:
                   bucket:
-                    description: The name of the VirtualBucket resource where the
+                    description: The name of the Virtual Bucket resource where the
                       logs are stored
                     type: string
                   containers:
-                    description: The collection of ContainerLog objects that describe
-                      the location of logs per container
+                    description: The collection of logs for each container of the
+                      workload
                     items:
                       description: ContainerLog describes the location of logs for
                         a single Job
                       properties:
+                        bucket:
+                          description: The bucket the log was stored in
+                          type: string
                         container:
                           description: The container name
                           type: string
@@ -504,10 +390,6 @@ spec:
               updatedAt:
                 description: The last time the object was updated
                 format: date-time
-                type: string
-              uri:
-                description: The URI to the flat-file report within the VirtualBucket
-                  specified by the Report
                 type: string
             type: object
         required:

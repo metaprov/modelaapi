@@ -846,3 +846,23 @@ func (dataset *Dataset) GroupReportFile() string {
 func (dataset *Dataset) GroupForecastFile() string {
 	return dataset.GroupFolder() + "/forecasts/forecast.csv"
 }
+
+func (dataset Dataset) GetStatus() interface{} {
+	return dataset.Status
+}
+
+func (dataset Dataset) GetObservedGeneration() int64 {
+	return dataset.Status.ObservedGeneration
+}
+
+func (dataset *Dataset) SetObservedGeneration(generation int64) {
+	dataset.Status.ObservedGeneration = generation
+}
+
+func (dataset *Dataset) SetUpdatedAt(time *metav1.Time) {
+	dataset.Status.UpdatedAt = time
+}
+
+func (dataset *Dataset) SetStatus(status interface{}) {
+	dataset.Status = status.(DatasetStatus)
+}

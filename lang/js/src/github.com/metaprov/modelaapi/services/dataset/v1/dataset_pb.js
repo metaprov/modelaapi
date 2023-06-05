@@ -6055,8 +6055,7 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetTablesRequest.prototy
 proto.github.com.metaprov.modelaapi.services.dataset.v1.GetTablesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     connectionnamespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    connectionname: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    databasename: jspb.Message.getFieldWithDefault(msg, 3, "")
+    connectionname: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -6101,10 +6100,6 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetTablesRequest.deseria
       var value = /** @type {string} */ (reader.readString());
       msg.setConnectionname(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatabasename(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -6148,13 +6143,6 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetTablesRequest.seriali
       f
     );
   }
-  f = message.getDatabasename();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
 };
 
 
@@ -6191,24 +6179,6 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetTablesRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.GetTablesRequest.prototype.setConnectionname = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string databaseName = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.GetTablesRequest.prototype.getDatabasename = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.GetTablesRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.GetTablesRequest.prototype.setDatabasename = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -6402,7 +6372,6 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.ExecuteSqlRequest.toObje
   var f, obj = {
     connectionnamespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     connectionname: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    databasename: jspb.Message.getFieldWithDefault(msg, 3, ""),
     sql: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
@@ -6447,10 +6416,6 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.ExecuteSqlRequest.deseri
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setConnectionname(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatabasename(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -6499,13 +6464,6 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.ExecuteSqlRequest.serial
       f
     );
   }
-  f = message.getDatabasename();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getSql();
   if (f.length > 0) {
     writer.writeString(
@@ -6549,24 +6507,6 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.ExecuteSqlRequest.protot
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.ExecuteSqlRequest.prototype.setConnectionname = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string databaseName = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.ExecuteSqlRequest.prototype.getDatabasename = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.ExecuteSqlRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.ExecuteSqlRequest.prototype.setDatabasename = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

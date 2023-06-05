@@ -202,7 +202,7 @@ func (lab Lab) LabJobRole() *rbacv1.Role {
 			{
 				Verbs:           []string{"*"},
 				APIGroups:       []string{""},
-				Resources:       []string{"pods", "pods/log"},
+				Resources:       []string{"pods", "pods/log", "configmaps"},
 				ResourceNames:   []string{},
 				NonResourceURLs: []string{},
 			},
@@ -224,7 +224,6 @@ func (lab Lab) LabJobRole() *rbacv1.Role {
 	}
 }
 
-// Create a role binding for a job
 func (lab Lab) LabJobRoleBinding() *rbacv1.RoleBinding {
 	return &rbacv1.RoleBinding{
 		ObjectMeta: metav1.ObjectMeta{
@@ -247,6 +246,52 @@ func (lab Lab) LabJobRoleBinding() *rbacv1.RoleBinding {
 	}
 }
 
+func (lab Lab) LabJobClusterRole() *rbacv1.ClusterRole {
+	return &rbacv1.ClusterRole{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      catalog.LabJobRunnerRole,
+			Namespace: lab.Name,
+		},
+		Rules: []rbacv1.PolicyRule{
+			{
+				Verbs:           []string{"get"},
+				APIGroups:       []string{""},
+				Resources:       []string{"configmaps"},
+				ResourceNames:   []string{"modela-config"},
+				NonResourceURLs: []string{},
+			},
+			{
+				Verbs:           []string{"*"},
+				APIGroups:       []string{"infra.modela.ai"},
+				Resources:       []string{"*"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+		},
+	}
+}
+
+func (lab Lab) LabJobClusterRoleBinding() *rbacv1.ClusterRoleBinding {
+	return &rbacv1.ClusterRoleBinding{
+		ObjectMeta: metav1.ObjectMeta{
+			Name: fmt.Sprintf("%s-%s", lab.Name, catalog.LabJobRunnerRoleBinding),
+		},
+		Subjects: []rbacv1.Subject{
+			{
+				Kind:      "ServiceAccount",
+				APIGroup:  "",
+				Name:      catalog.LabJobRunnerSa,
+				Namespace: lab.Name,
+			},
+		},
+		RoleRef: rbacv1.RoleRef{
+			APIGroup: "rbac.authorization.k8s.io",
+			Kind:     "ClusterRole",
+			Name:     catalog.LabJobRunnerRole,
+		},
+	}
+}
+
 func (lab Lab) LabServiceAccount() *corev1.ServiceAccount {
 	return &corev1.ServiceAccount{
 		ObjectMeta: metav1.ObjectMeta{
@@ -254,4 +299,24 @@ func (lab Lab) LabServiceAccount() *corev1.ServiceAccount {
 			Namespace: lab.Name,
 		},
 	}
+}
+
+func (lab Lab) GetStatus() interface{} {
+	return lab.Status
+}
+
+func (lab Lab) GetObservedGeneration() int64 {
+	return lab.Status.ObservedGeneration
+}
+
+func (lab *Lab) SetObservedGeneration(generation int64) {
+	lab.Status.ObservedGeneration = generation
+}
+
+func (lab *Lab) SetUpdatedAt(time *metav1.Time) {
+	lab.Status.UpdatedAt = time
+}
+
+func (lab *Lab) SetStatus(status interface{}) {
+	lab.Status = status.(LabStatus)
 }

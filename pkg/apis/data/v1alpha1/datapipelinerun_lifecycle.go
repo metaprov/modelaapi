@@ -245,3 +245,23 @@ func (run DataPipelineRun) RunStatus() *catalog.LastRunStatus {
 	return result
 
 }
+
+func (datapipelinerun DataPipelineRun) GetStatus() interface{} {
+	return datapipelinerun.Status
+}
+
+func (datapipelinerun DataPipelineRun) GetObservedGeneration() int64 {
+	return datapipelinerun.Status.ObservedGeneration
+}
+
+func (datapipelinerun *DataPipelineRun) SetObservedGeneration(generation int64) {
+	datapipelinerun.Status.ObservedGeneration = generation
+}
+
+func (datapipelinerun *DataPipelineRun) SetUpdatedAt(time *metav1.Time) {
+	datapipelinerun.Status.UpdatedAt = time
+}
+
+func (datapipelinerun *DataPipelineRun) SetStatus(status interface{}) {
+	datapipelinerun.Status = status.(DataPipelineRunStatus)
+}

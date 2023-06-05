@@ -15047,11 +15047,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.to
     dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    report: (f = msg.getReport()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.toObject(includeInstance, f),
-    group: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
+    report: (f = msg.getReport()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -15119,29 +15115,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.de
       msg.setModel(value);
       break;
     case 7:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setConnection(value);
-      break;
-    case 8:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
-      break;
-    case 9:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
-      msg.setBucket(value);
-      break;
-    case 10:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.deserializeBinaryFromReader);
       msg.setReport(value);
-      break;
-    case 11:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setGroup(value);
       break;
     default:
       reader.skipField();
@@ -15220,39 +15196,12 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.se
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.serializeBinaryToWriter
     );
   }
-  f = message.getConnection();
+  f = message.getReport();
   if (f != null) {
     writer.writeMessage(
       7,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(8, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getBucket();
-  if (f != null) {
-    writer.writeMessage(
-      9,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
-    );
-  }
-  f = message.getReport();
-  if (f != null) {
-    writer.writeMessage(
-      10,
-      f,
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.serializeBinaryToWriter
-    );
-  }
-  f = message.getGroup();
-  if (f) {
-    writer.writeBool(
-      11,
-      f
     );
   }
 };
@@ -15481,108 +15430,12 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.pr
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 7;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.getConnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 7));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.clearConnection = function() {
-  return this.setConnection(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * map<string, bytes> secret = 8;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 8, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.getBucket = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 9));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.setBucket = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.clearBucket = function() {
-  return this.setBucket(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.hasBucket = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report report = 10;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report report = 7;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.getReport = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report, 10));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report, 7));
 };
 
 
@@ -15591,7 +15444,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.pr
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.setReport = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -15609,25 +15462,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.hasReport = function() {
-  return jspb.Message.getField(this, 10) != null;
-};
-
-
-/**
- * optional bool group = 11;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.getGroup = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.prototype.setGroup = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 11, value);
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -17356,12 +17191,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.to
     dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     models: (f = msg.getModels()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList.toObject(includeInstance, f),
-    bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    report: (f = msg.getReport()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.toObject(includeInstance, f),
-    dbconnection: (f = msg.getDbconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    dbsecretMap: (f = msg.getDbsecretMap()) ? f.toObject(includeInstance, undefined) : []
+    report: (f = msg.getReport()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17429,36 +17259,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.de
       msg.setModels(value);
       break;
     case 7:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
-      msg.setBucket(value);
-      break;
-    case 8:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setConnection(value);
-      break;
-    case 9:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
-      break;
-    case 10:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.deserializeBinaryFromReader);
       msg.setReport(value);
-      break;
-    case 11:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setDbconnection(value);
-      break;
-    case 12:
-      var value = msg.getDbsecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
       break;
     default:
       reader.skipField();
@@ -17537,45 +17340,13 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.se
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList.serializeBinaryToWriter
     );
   }
-  f = message.getBucket();
+  f = message.getReport();
   if (f != null) {
     writer.writeMessage(
       7,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
-    );
-  }
-  f = message.getConnection();
-  if (f != null) {
-    writer.writeMessage(
-      8,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getReport();
-  if (f != null) {
-    writer.writeMessage(
-      10,
-      f,
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.serializeBinaryToWriter
     );
-  }
-  f = message.getDbconnection();
-  if (f != null) {
-    writer.writeMessage(
-      11,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
-  f = message.getDbsecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(12, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -17803,108 +17574,12 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.pr
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 7;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.getBucket = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 7));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.setBucket = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.clearBucket = function() {
-  return this.setBucket(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.hasBucket = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 8;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.getConnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 8));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.clearConnection = function() {
-  return this.setConnection(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * map<string, bytes> secret = 9;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report report = 10;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report report = 7;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.getReport = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report, 10));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report, 7));
 };
 
 
@@ -17913,7 +17588,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.pr
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.setReport = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -17931,67 +17606,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.hasReport = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection dbConnection = 11;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.getDbconnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 11));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.setDbconnection = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.clearDbconnection = function() {
-  return this.setDbconnection(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.hasDbconnection = function() {
-  return jspb.Message.getField(this, 11) != null;
-};
-
-
-/**
- * map<string, bytes> dbSecret = 12;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.getDbsecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 12, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.prototype.clearDbsecretMap = function() {
-  this.getDbsecretMap().clear();
-  return this;};
 
 
 
@@ -23928,8 +23544,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
+    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -23971,12 +23586,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.deser
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
       msg.setConnection(value);
       break;
-    case 2:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
-      break;
     default:
       reader.skipField();
       break;
@@ -24013,10 +23622,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.seria
       f,
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
-  }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -24056,28 +23661,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.proto
 proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.prototype.hasConnection = function() {
   return jspb.Message.getField(this, 1) != null;
 };
-
-
-/**
- * map<string, bytes> secret = 2;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
 
 
 
@@ -24268,9 +23851,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototyp
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    databasename: jspb.Message.getFieldWithDefault(msg, 3, "")
+    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -24312,16 +23893,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.deserial
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
       msg.setConnection(value);
       break;
-    case 2:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatabasename(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -24357,17 +23928,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.serializ
       1,
       f,
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getDatabasename();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
     );
   }
 };
@@ -24407,46 +23967,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototyp
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototype.hasConnection = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * map<string, bytes> secret = 2;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
-
-
-/**
- * optional string databaseName = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototype.getDatabasename = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototype.setDatabasename = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -24639,8 +24159,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototy
 proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    databasename: jspb.Message.getFieldWithDefault(msg, 3, ""),
     sql: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
@@ -24683,16 +24201,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.deseria
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
       msg.setConnection(value);
       break;
-    case 2:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatabasename(value);
-      break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setSql(value);
@@ -24732,17 +24240,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.seriali
       1,
       f,
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getDatabasename();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
     );
   }
   f = message.getSql();
@@ -24789,46 +24286,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototype.hasConnection = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * map<string, bytes> secret = 2;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
-
-
-/**
- * optional string databaseName = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototype.getDatabasename = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototype.setDatabasename = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

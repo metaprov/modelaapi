@@ -2799,7 +2799,6 @@ func (in *ReportList) DeepCopyObject() runtime.Object {
 func (in *ReportSpec) DeepCopyInto(out *ReportSpec) {
 	*out = *in
 	out.EntityRef = in.EntityRef
-	in.Location.DeepCopyInto(&out.Location)
 	if in.Format != nil {
 		in, out := &in.Format, &out.Format
 		*out = new(ReportFormat)
@@ -2831,6 +2830,11 @@ func (in *ReportSpec) DeepCopyInto(out *ReportSpec) {
 		*out = make([]string, len(*in))
 		copy(*out, *in)
 	}
+	if in.ArtifactBucketName != nil {
+		in, out := &in.ArtifactBucketName, &out.ArtifactBucketName
+		*out = new(string)
+		**out = **in
+	}
 	if in.ModelClassName != nil {
 		in, out := &in.ModelClassName, &out.ModelClassName
 		*out = new(string)
@@ -2860,6 +2864,7 @@ func (in *ReportStatus) DeepCopyInto(out *ReportStatus) {
 		in, out := &in.CompletedAt, &out.CompletedAt
 		*out = (*in).DeepCopy()
 	}
+	out.Location = in.Location
 	if in.FailureReason != nil {
 		in, out := &in.FailureReason, &out.FailureReason
 		*out = new(catalogv1alpha1.StatusError)

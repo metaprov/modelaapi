@@ -232,3 +232,23 @@ func (reciperun RecipeRun) RunStatus() *catalog.LastRunStatus {
 	return result
 
 }
+
+func (reciperun RecipeRun) GetStatus() interface{} {
+	return reciperun.Status
+}
+
+func (reciperun RecipeRun) GetObservedGeneration() int64 {
+	return reciperun.Status.ObservedGeneration
+}
+
+func (reciperun *RecipeRun) SetObservedGeneration(generation int64) {
+	reciperun.Status.ObservedGeneration = generation
+}
+
+func (reciperun *RecipeRun) SetUpdatedAt(time *metav1.Time) {
+	reciperun.Status.UpdatedAt = time
+}
+
+func (reciperun *RecipeRun) SetStatus(status interface{}) {
+	reciperun.Status = status.(RecipeRunStatus)
+}

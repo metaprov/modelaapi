@@ -147,3 +147,23 @@ func (account *Account) MarkFailed(err string) {
 	})
 	account.Status.FailureMessage = util.StrPtr(err)
 }
+
+func (account Account) GetStatus() interface{} {
+	return account.Status
+}
+
+func (account Account) GetObservedGeneration() int64 {
+	return account.Status.ObservedGeneration
+}
+
+func (account *Account) SetObservedGeneration(generation int64) {
+	account.Status.ObservedGeneration = generation
+}
+
+func (account *Account) SetUpdatedAt(time *metav1.Time) {
+	account.Status.UpdatedAt = time
+}
+
+func (account *Account) SetStatus(status interface{}) {
+	account.Status = status.(AccountStatus)
+}

@@ -431,6 +431,11 @@ export class ContainerLog extends jspb.Message {
   hasKey(): boolean;
   clearKey(): ContainerLog;
 
+  getBucket(): string;
+  setBucket(value: string): ContainerLog;
+  hasBucket(): boolean;
+  clearBucket(): ContainerLog;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContainerLog.AsObject;
   static toObject(includeInstance: boolean, msg: ContainerLog): ContainerLog.AsObject;
@@ -444,6 +449,7 @@ export namespace ContainerLog {
     job?: string,
     container?: string,
     key?: string,
+    bucket?: string,
   }
 }
 
@@ -505,15 +511,15 @@ export class DataLocation extends jspb.Message {
   hasType(): boolean;
   clearType(): DataLocation;
 
-  getConnection(): string;
-  setConnection(value: string): DataLocation;
-  hasConnection(): boolean;
-  clearConnection(): DataLocation;
+  getConnectionname(): string;
+  setConnectionname(value: string): DataLocation;
+  hasConnectionname(): boolean;
+  clearConnectionname(): DataLocation;
 
-  getBucket(): string;
-  setBucket(value: string): DataLocation;
-  hasBucket(): boolean;
-  clearBucket(): DataLocation;
+  getBucketname(): string;
+  setBucketname(value: string): DataLocation;
+  hasBucketname(): boolean;
+  clearBucketname(): DataLocation;
 
   getPath(): string;
   setPath(value: string): DataLocation;
@@ -561,8 +567,8 @@ export class DataLocation extends jspb.Message {
 export namespace DataLocation {
   export type AsObject = {
     type?: string,
-    connection?: string,
-    bucket?: string,
+    connectionname?: string,
+    bucketname?: string,
     path?: string,
     table?: string,
     database?: string,
