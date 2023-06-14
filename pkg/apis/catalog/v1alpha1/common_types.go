@@ -590,9 +590,6 @@ func (metric Metric) Compare(i float64, j float64) bool {
 
 }
 
-// ==============================================================================
-// CategoricalEncoding
-// ==============================================================================
 // +kubebuilder:validation:Enum="one-hot-encoding";"one-hot-encoding-top-categories";"ordinal-encoding";"count-encoding";"target-encoding";"weight-of-evidence-encoding";"binary-encoding";"label-encoding";"hash-encoding";"catboost-encoding";"loo-encoding";"no-encoding";"auto";"none"
 type CategoricalEncoding string
 
@@ -635,9 +632,6 @@ func ParseCategoricalEncoding(name string) CategoricalEncoding {
 	return AutoEncoding
 }
 
-// ==============================================================================
-// Imputation
-// ==============================================================================
 // +kubebuilder:validation:Enum="remove-rows-with-missing-values";"replace-with-mean";"replace-with-median";"replace-with-arbitrary-value";"freq-category-imputation";"add-missing-value-indicator";"knn";"iterative";"mice";"no-imputation";"auto";"none"
 type Imputation string
 
@@ -655,9 +649,6 @@ const (
 	NoneImputation                        Imputation = "none"
 )
 
-// ==============================================================================
-// Scaling
-// ==============================================================================
 // +kubebuilder:validation:Enum="standard-scaling";"max-abs-scaling";"min-max-scaling";"normalization-scaling";"robust-scaling";"scale-to-unit-norm";"none";"auto";
 type Scaling string
 
@@ -672,24 +663,9 @@ const (
 	AutoScaling            Scaling = "auto"
 )
 
-// ==============================================================================
-// Image Featurizer
-// ==============================================================================
 type ImageFeaturizer string
-
-// ==============================================================================
-// Audio Featurizer
-// ==============================================================================
 type AudioFeaturizer string
-
-// ==============================================================================
-// Video Featurizer
-// ==============================================================================
 type VideoFeaturizer string
-
-//==============================================================================
-// Variable Transformation
-//==============================================================================
 
 // +kubebuilder:validation:Enum="log-transformation";"reciprocal-transformation";"sqrt-transformation";"power-transformation";"box-cox-transformation";"yj-transformation";"none";"auto"
 type VariableTransformation string
@@ -705,9 +681,6 @@ const (
 	AutoTransform             VariableTransformation = "auto"
 )
 
-// ==============================================================================
-// Discretisation
-// ==============================================================================
 // +kubebuilder:validation:Enum="equal-width-discretisation-";"equal-freq-discretisation";"kbin-discretisation";"kernel-centerer-discretisation";"label-binarizer-discretisation";"multi-label-binarizer-discretisation";"none";"auto"
 type Discretisation string
 
@@ -737,9 +710,6 @@ const (
 	AutoOutlierHandling       OutlierHandling = "auto"
 )
 
-// ==============================================================================
-// Datatime Transformation
-// ==============================================================================
 // +kubebuilder:validation:Enum="extract-datetime-information";"none";"auto"
 type DatetimeTransformation string
 
@@ -749,9 +719,6 @@ const (
 	AutoDatetimeTransformation    DatetimeTransformation = "auto"
 )
 
-// ==============================================================================
-// Imbalance Handling
-// ==============================================================================
 // +kubebuilder:validation:Enum="adasyn";"baseline-smote";"kmean-smote";"random-over-sampler";"smote";"smotenc";"svmsmote";"none";"auto";class-weights;
 type ImbalanceHandling string
 
@@ -1205,7 +1172,7 @@ const (
 // Trigger Type
 //==============================================================================
 
-// +kubebuilder:validation:Enum="on-demand";"on-schedule";"on-new-data";"on-github-event";"on-concept-drift";"on-pref-degradation"
+// +kubebuilder:validation:Enum="on-demand";"on-schedule";"on-new-data";"on-github-event";"on-concept-drift";"on-perf-degradation"
 type TriggerType string
 
 const (
@@ -1214,7 +1181,7 @@ const (
 	NewDataTriggerType         TriggerType = "on-new-data"
 	GithubEventTriggerType     TriggerType = "on-github-event"
 	ConceptDriftTriggerType    TriggerType = "on-concept-drift"
-	PrefDegragationTriggerType TriggerType = "on-pref-degradation"
+	PerfDegragationTriggerType TriggerType = "on-perf-degradation"
 )
 
 //==============================================================================
@@ -1577,19 +1544,19 @@ const (
 	UpdateUpdateStrategy UpdateStrategy = "update"
 )
 
-// Classify the model per the study phase. for example, feature engineering models, baseline models,
-// +kubebuilder:validation:Enum="feature-engineering";"baseline";"search";"ensemble";"test"
+// ModelClassType classifies a model by the phase of the Study which created it
+// +kubebuilder:validation:Enum="feature-engineering";"baseline";"search";"ensemble"
 type ModelClassType string
 
 const (
-	FEModelStudyPhaseClassType       ModelClassType = "feature-engineering" // for feature engineering models
-	BaselineModelStudyPhaseClassType ModelClassType = "baseline"            // for baseline models
-	ModelStudyPhaseClassTypeSearch   ModelClassType = "search"              // for search model
-	ModelStudyPhaseClassTypeEnsemble ModelClassType = "ensemble"            // for ensemble models
-	ModelStudyPhaseClassTypeTest     ModelClassType = "test"                // for model in the search phase
+	ModelClassTypeFeatureEngineering ModelClassType = "feature-engineering"
+	ModelClassTypeBaseline           ModelClassType = "baseline"
+	ModelClassTypeSearch             ModelClassType = "search"
+	ModelClassTypeEnsemble           ModelClassType = "ensemble"
+	ModelClassTypeTest               ModelClassType = "test"
 )
 
-// SamplingType defines how the recipe file is sampled.
+// SamplingType defines how a dataset is sampled
 // +kubebuilder:validation:Enum="header";"random";"filter";"anomaly";"stratified"
 type SamplingType string
 
@@ -1623,7 +1590,7 @@ const (
 	PriorityLevelUrgent PriorityLevel = "urgent"
 )
 
-// ModelType enamurate the model type
+// ModelType enumerates the possible model types
 // +kubebuilder:validation:Enum="classical";"dnn";"transformer";"chatbot";"rl";"hierarchy";
 type ModelType string
 
@@ -1980,18 +1947,17 @@ type ConfusionMatrix struct {
 	Rows []ConfusionMatrixRow `json:"rows,omitempty" protobuf:"bytes,1,rep,name=rows"`
 }
 
-// ResourceSpec specifies the amount of resources that will be allocated to a workload
+// ResourceSpec specifies the resources that will be allocated to a workload
 type ResourceSpec struct {
-	// If this resource is based on the workload, this field contain the name of the workload.
-	// The name of a WorkloadClass. The system will use the resource requirements described by the WorkloadClass
-	// +kubebuilder:default:="general-large"
+	// WorkloadName references the name of a Workload Class resource that will be used to determine the resource
+	// requirements of the workload. If specified, WorkloadName will take precedence over custom requirements
 	// +kubebuilder:validation:Optional
 	WorkloadName *string `json:"workloadName,omitempty" protobuf:"bytes,1,opt,name=workloadName"`
-	// If true, ignore the workload class name.
+	// Custom indicates if the custom requirements specified by Requirements will be used
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Custom *bool `json:"custom,omitempty" protobuf:"varint,2,opt,name=custom"`
-	// The custom resource requirements for the workload, which are used if `WorkloadName` is not set
+	// Requirements specifies the custom resource requirements for the workload
 	// +kubebuilder:validation:Optional
 	Requirements *v1.ResourceRequirements `json:"requirements,omitempty" protobuf:"bytes,3,opt,name=requirements"`
 }
@@ -2099,23 +2065,18 @@ type AccessSpec struct {
 	ApiKeySecretRef *v1.SecretReference `json:"apikeySecretRef,omitempty" protobuf:"bytes,7,opt,name=apikeySecretRef"`
 }
 
-// NotificationSpec specifies which Notifiers to forward Alert resources to
+// NotificationSpec defines the notification configuration for an Alert resource
 type NotificationSpec struct {
-	// Time-to-live for error messages, in seconds
+	// TTL defines the time-to-live for Alerts, in seconds, after which they will be deleted
 	// +kubebuilder:default:=3600
 	// +kubebuilder:validation:Optional
-	ErrorTTL *int32 `json:"errorTTL,omitempty" protobuf:"varint,2,opt,name=errorTTL"`
-	// Time-to-live for success messages. In seconds
-	// +kubebuilder:default:=3600
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,1,opt,name=ttl"`
+	// NotifierName specifies the name of a single Notifier resource which the Alert will be forwarded to
 	// +kubebuilder:validation:Optional
-	SuccessTTL *int32 `json:"successTTL,omitempty" protobuf:"varint,4,opt,name=successTTL"`
-	// The name of the Notifier which exists in the same tenant as the resource specifying the NotificationSpec
-	// +kubebuilder:default:= ""
+	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,2,opt,name=notifierName"`
+	// Selector defines a map of labels that will be matched to find multiple Notifier resource to forward alerts to
 	// +kubebuilder:validation:Optional
-	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,5,opt,name=notifierName"`
-	// The labels which will be searched for in all Notifiers to determine the target Notifiers
-	// +kubebuilder:validation:Optional
-	Selector map[string]string `json:"selector,omitempty" protobuf:"bytes,6,opt,name=selector"`
+	Selector map[string]string `json:"selector,omitempty" protobuf:"bytes,3,opt,name=selector"`
 }
 
 // Logs describes the location of logs produced by workloads associated with a resource

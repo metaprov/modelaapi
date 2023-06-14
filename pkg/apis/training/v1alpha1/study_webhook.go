@@ -103,20 +103,16 @@ func (study *Study) Default() {
 		study.Spec.Schedule.StartAt = &now
 	}
 
-	if study.Spec.Aborted == nil {
-		study.Spec.Aborted = util.BoolPtr(false)
+	if study.Spec.Abort == nil {
+		study.Spec.Abort = util.BoolPtr(false)
 	}
 
-	if study.Spec.Reported == nil {
-		study.Spec.Reported = util.BoolPtr(true)
+	if study.Spec.Report == nil {
+		study.Spec.Report = util.BoolPtr(true)
 	}
 
-	if study.Spec.Profiled == nil {
-		study.Spec.Profiled = util.BoolPtr(true)
-	}
-
-	if study.Spec.ModelPublished == nil {
-		study.Spec.ModelPublished = util.BoolPtr(false)
+	if study.Spec.Profile == nil {
+		study.Spec.Profile = util.BoolPtr(true)
 	}
 
 	// if we search preprocessor, but we do not have an estimator

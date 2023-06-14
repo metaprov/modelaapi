@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	ctrl "sigs.k8s.io/controller-runtime"
 
@@ -146,7 +147,7 @@ func (mclass *ModelClass) MarkDrifted() {
 	})
 }
 
-func (mclass *ModelClass) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+func (mclass *ModelClass) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("model class %s completed successfully", mclass.Name)
 	result := &infra.Alert{
@@ -155,15 +156,14 @@ func (mclass *ModelClass) CompletionAlert(tenantRef *v1.ObjectReference, notifie
 			Namespace:    mclass.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
+			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "ModelClass",
 				Name:      mclass.Name,
 				Namespace: mclass.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			Owner:        mclass.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": mclass.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
@@ -176,24 +176,23 @@ func (mclass *ModelClass) CompletionAlert(tenantRef *v1.ObjectReference, notifie
 	return result
 }
 
-func (mclass *ModelClass) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (mclass *ModelClass) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
 	level := infra.Error
-	subject := fmt.Sprintf("Model Class %s failed with error %v", mclass.Name, err.Error())
+	subject := fmt.Sprintf("Model Class %s failed with error: %v", mclass.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: mclass.Name,
 			Namespace:    mclass.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
+			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "ModelClass",
 				Name:      mclass.Name,
 				Namespace: mclass.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			Owner:        mclass.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": mclass.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),

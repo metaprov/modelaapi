@@ -408,7 +408,7 @@ type SampleSpec struct {
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	Pct *int32 `json:"percent,omitempty" protobuf:"varint,4,opt,name=percent"`
+	Percent *int32 `json:"percent,omitempty" protobuf:"varint,4,opt,name=percent"`
 	// The filter formula, valid only if the sample type is a filter
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional

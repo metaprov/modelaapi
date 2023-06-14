@@ -214,26 +214,6 @@ export namespace ChangePoint {
   }
 }
 
-export class ChatbotEstimatorSpec extends jspb.Message {
-  getBase(): string;
-  setBase(value: string): ChatbotEstimatorSpec;
-  hasBase(): boolean;
-  clearBase(): ChatbotEstimatorSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ChatbotEstimatorSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ChatbotEstimatorSpec): ChatbotEstimatorSpec.AsObject;
-  static serializeBinaryToWriter(message: ChatbotEstimatorSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ChatbotEstimatorSpec;
-  static deserializeBinaryFromReader(message: ChatbotEstimatorSpec, reader: jspb.BinaryReader): ChatbotEstimatorSpec;
-}
-
-export namespace ChatbotEstimatorSpec {
-  export type AsObject = {
-    base?: string,
-  }
-}
-
 export class CheckpointSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): CheckpointSpec;
@@ -370,11 +350,6 @@ export class DataSplitSpec extends jspb.Message {
   hasSplitcolumn(): boolean;
   clearSplitcolumn(): DataSplitSpec;
 
-  getSegmentsList(): Array<SegmentSpec>;
-  setSegmentsList(value: Array<SegmentSpec>): DataSplitSpec;
-  clearSegmentsList(): DataSplitSpec;
-  addSegments(value?: SegmentSpec, index?: number): SegmentSpec;
-
   getTraindataset(): string;
   setTraindataset(value: string): DataSplitSpec;
   hasTraindataset(): boolean;
@@ -405,7 +380,6 @@ export namespace DataSplitSpec {
     validation?: number,
     test?: number,
     splitcolumn?: string,
-    segmentsList: Array<SegmentSpec.AsObject>,
     traindataset?: string,
     testdataset?: string,
     validationdataset?: string,
@@ -532,32 +506,6 @@ export namespace DriftDetectorStatus {
   }
 }
 
-export class DriftModelSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): DriftModelSpec;
-  hasEnabled(): boolean;
-  clearEnabled(): DriftModelSpec;
-
-  getOutlieralgorithm(): string;
-  setOutlieralgorithm(value: string): DriftModelSpec;
-  hasOutlieralgorithm(): boolean;
-  clearOutlieralgorithm(): DriftModelSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DriftModelSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: DriftModelSpec): DriftModelSpec.AsObject;
-  static serializeBinaryToWriter(message: DriftModelSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DriftModelSpec;
-  static deserializeBinaryFromReader(message: DriftModelSpec, reader: jspb.BinaryReader): DriftModelSpec;
-}
-
-export namespace DriftModelSpec {
-  export type AsObject = {
-    enabled?: boolean,
-    outlieralgorithm?: string,
-  }
-}
-
 export class EarlyStopSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): EarlyStopSpec;
@@ -569,10 +517,10 @@ export class EarlyStopSpec extends jspb.Message {
   hasInitial(): boolean;
   clearInitial(): EarlyStopSpec;
 
-  getMinmodelswithnoprogress(): number;
-  setMinmodelswithnoprogress(value: number): EarlyStopSpec;
-  hasMinmodelswithnoprogress(): boolean;
-  clearMinmodelswithnoprogress(): EarlyStopSpec;
+  getModelswithnoprogress(): number;
+  setModelswithnoprogress(value: number): EarlyStopSpec;
+  hasModelswithnoprogress(): boolean;
+  clearModelswithnoprogress(): EarlyStopSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EarlyStopSpec.AsObject;
@@ -586,7 +534,7 @@ export namespace EarlyStopSpec {
   export type AsObject = {
     enabled?: boolean,
     initial?: number,
-    minmodelswithnoprogress?: number,
+    modelswithnoprogress?: number,
   }
 }
 
@@ -615,10 +563,10 @@ export class EnsembleSpec extends jspb.Message {
   clearEstimatorsList(): EnsembleSpec;
   addEstimators(value?: ClassicalEstimatorSpec, index?: number): ClassicalEstimatorSpec;
 
-  getFinal(): ClassicalEstimatorSpec | undefined;
-  setFinal(value?: ClassicalEstimatorSpec): EnsembleSpec;
-  hasFinal(): boolean;
-  clearFinal(): EnsembleSpec;
+  getBaseestimator(): ClassicalEstimatorSpec | undefined;
+  setBaseestimator(value?: ClassicalEstimatorSpec): EnsembleSpec;
+  hasBaseestimator(): boolean;
+  clearBaseestimator(): EnsembleSpec;
 
   getType(): string;
   setType(value: string): EnsembleSpec;
@@ -637,7 +585,7 @@ export namespace EnsembleSpec {
   export type AsObject = {
     modelsList: Array<string>,
     estimatorsList: Array<ClassicalEstimatorSpec.AsObject>,
-    pb_final?: ClassicalEstimatorSpec.AsObject,
+    baseestimator?: ClassicalEstimatorSpec.AsObject,
     type?: string,
   }
 }
@@ -874,31 +822,6 @@ export class FeatureEngineeringPipeline extends jspb.Message {
   hasText(): boolean;
   clearText(): FeatureEngineeringPipeline;
 
-  getImage(): ImagePipelineSpec | undefined;
-  setImage(value?: ImagePipelineSpec): FeatureEngineeringPipeline;
-  hasImage(): boolean;
-  clearImage(): FeatureEngineeringPipeline;
-
-  getAudio(): AudioPipelineSpec | undefined;
-  setAudio(value?: AudioPipelineSpec): FeatureEngineeringPipeline;
-  hasAudio(): boolean;
-  clearAudio(): FeatureEngineeringPipeline;
-
-  getVideo(): VideoPipelineSpec | undefined;
-  setVideo(value?: VideoPipelineSpec): FeatureEngineeringPipeline;
-  hasVideo(): boolean;
-  clearVideo(): FeatureEngineeringPipeline;
-
-  getGeneratedList(): Array<GeneratedColumnSpec>;
-  setGeneratedList(value: Array<GeneratedColumnSpec>): FeatureEngineeringPipeline;
-  clearGeneratedList(): FeatureEngineeringPipeline;
-  addGenerated(value?: GeneratedColumnSpec, index?: number): GeneratedColumnSpec;
-
-  getCustomList(): Array<GeneratedColumnSpec>;
-  setCustomList(value: Array<GeneratedColumnSpec>): FeatureEngineeringPipeline;
-  clearCustomList(): FeatureEngineeringPipeline;
-  addCustom(value?: GeneratedColumnSpec, index?: number): GeneratedColumnSpec;
-
   getDrop(): boolean;
   setDrop(value: boolean): FeatureEngineeringPipeline;
   hasDrop(): boolean;
@@ -930,11 +853,6 @@ export namespace FeatureEngineeringPipeline {
     outlierhandling?: string,
     datetimetransformation?: string,
     text?: TextPipelineSpec.AsObject,
-    image?: ImagePipelineSpec.AsObject,
-    audio?: AudioPipelineSpec.AsObject,
-    video?: VideoPipelineSpec.AsObject,
-    generatedList: Array<GeneratedColumnSpec.AsObject>,
-    customList: Array<GeneratedColumnSpec.AsObject>,
     drop?: boolean,
     passthrough?: boolean,
   }
@@ -945,11 +863,6 @@ export class FeatureEngineeringSearchSpec extends jspb.Message {
   setEnabled(value: boolean): FeatureEngineeringSearchSpec;
   hasEnabled(): boolean;
   clearEnabled(): FeatureEngineeringSearchSpec;
-
-  getImbalancedhandler(): string;
-  setImbalancedhandler(value: string): FeatureEngineeringSearchSpec;
-  hasImbalancedhandler(): boolean;
-  clearImbalancedhandler(): FeatureEngineeringSearchSpec;
 
   getEstimator(): string;
   setEstimator(value: string): FeatureEngineeringSearchSpec;
@@ -966,30 +879,20 @@ export class FeatureEngineeringSearchSpec extends jspb.Message {
   hasMaxtime(): boolean;
   clearMaxtime(): FeatureEngineeringSearchSpec;
 
-  getMaxtrainers(): number;
-  setMaxtrainers(value: number): FeatureEngineeringSearchSpec;
-  hasMaxtrainers(): boolean;
-  clearMaxtrainers(): FeatureEngineeringSearchSpec;
-
-  getSamplepct(): number;
-  setSamplepct(value: number): FeatureEngineeringSearchSpec;
-  hasSamplepct(): boolean;
-  clearSamplepct(): FeatureEngineeringSearchSpec;
-
-  getAutoremove(): boolean;
-  setAutoremove(value: boolean): FeatureEngineeringSearchSpec;
-  hasAutoremove(): boolean;
-  clearAutoremove(): FeatureEngineeringSearchSpec;
+  getTrainers(): number;
+  setTrainers(value: number): FeatureEngineeringSearchSpec;
+  hasTrainers(): boolean;
+  clearTrainers(): FeatureEngineeringSearchSpec;
 
   getReuse(): boolean;
   setReuse(value: boolean): FeatureEngineeringSearchSpec;
   hasReuse(): boolean;
   clearReuse(): FeatureEngineeringSearchSpec;
 
-  getFeselection(): FeatureSelectionSpec | undefined;
-  setFeselection(value?: FeatureSelectionSpec): FeatureEngineeringSearchSpec;
-  hasFeselection(): boolean;
-  clearFeselection(): FeatureEngineeringSearchSpec;
+  getFeatureselection(): FeatureSelectionSpec | undefined;
+  setFeatureselection(value?: FeatureSelectionSpec): FeatureEngineeringSearchSpec;
+  hasFeatureselection(): boolean;
+  clearFeatureselection(): FeatureEngineeringSearchSpec;
 
   getEarlystop(): EarlyStopSpec | undefined;
   setEarlystop(value?: EarlyStopSpec): FeatureEngineeringSearchSpec;
@@ -1007,15 +910,12 @@ export class FeatureEngineeringSearchSpec extends jspb.Message {
 export namespace FeatureEngineeringSearchSpec {
   export type AsObject = {
     enabled?: boolean,
-    imbalancedhandler?: string,
     estimator?: string,
     maxmodels?: number,
     maxtime?: number,
-    maxtrainers?: number,
-    samplepct?: number,
-    autoremove?: boolean,
+    trainers?: number,
     reuse?: boolean,
-    feselection?: FeatureSelectionSpec.AsObject,
+    featureselection?: FeatureSelectionSpec.AsObject,
     earlystop?: EarlyStopSpec.AsObject,
   }
 }
@@ -1377,15 +1277,15 @@ export namespace ForecasterSpec {
 }
 
 export class GarbageCollectionSpec extends jspb.Message {
-  getCollectatmodelclassend(): boolean;
-  setCollectatmodelclassend(value: boolean): GarbageCollectionSpec;
-  hasCollectatmodelclassend(): boolean;
-  clearCollectatmodelclassend(): GarbageCollectionSpec;
+  getEnabled(): boolean;
+  setEnabled(value: boolean): GarbageCollectionSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): GarbageCollectionSpec;
 
-  getKeeponlybestmodelperalgorithm(): boolean;
-  setKeeponlybestmodelperalgorithm(value: boolean): GarbageCollectionSpec;
-  hasKeeponlybestmodelperalgorithm(): boolean;
-  clearKeeponlybestmodelperalgorithm(): GarbageCollectionSpec;
+  getKeepbestmodelperalgorithm(): boolean;
+  setKeepbestmodelperalgorithm(value: boolean): GarbageCollectionSpec;
+  hasKeepbestmodelperalgorithm(): boolean;
+  clearKeepbestmodelperalgorithm(): GarbageCollectionSpec;
 
   getKeepprunedmodels(): boolean;
   setKeepprunedmodels(value: boolean): GarbageCollectionSpec;
@@ -1402,8 +1302,8 @@ export class GarbageCollectionSpec extends jspb.Message {
 
 export namespace GarbageCollectionSpec {
   export type AsObject = {
-    collectatmodelclassend?: boolean,
-    keeponlybestmodelperalgorithm?: boolean,
+    enabled?: boolean,
+    keepbestmodelperalgorithm?: boolean,
     keepprunedmodels?: boolean,
   }
 }
@@ -1717,50 +1617,6 @@ export namespace InterpretabilityStatus {
     trainshapvaluesuri?: string,
     testshapvaluesuri?: string,
     importanceList: Array<FeatureImportance.AsObject>,
-  }
-}
-
-export class Level extends jspb.Message {
-  getName(): string;
-  setName(value: string): Level;
-  hasName(): boolean;
-  clearName(): Level;
-
-  getIndexList(): Array<string>;
-  setIndexList(value: Array<string>): Level;
-  clearIndexList(): Level;
-  addIndex(value: string, index?: number): Level;
-
-  getHorizon(): number;
-  setHorizon(value: number): Level;
-  hasHorizon(): boolean;
-  clearHorizon(): Level;
-
-  getFreq(): string;
-  setFreq(value: string): Level;
-  hasFreq(): boolean;
-  clearFreq(): Level;
-
-  getAggregate(): string;
-  setAggregate(value: string): Level;
-  hasAggregate(): boolean;
-  clearAggregate(): Level;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Level.AsObject;
-  static toObject(includeInstance: boolean, msg: Level): Level.AsObject;
-  static serializeBinaryToWriter(message: Level, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Level;
-  static deserializeBinaryFromReader(message: Level, reader: jspb.BinaryReader): Level;
-}
-
-export namespace Level {
-  export type AsObject = {
-    name?: string,
-    indexList: Array<string>,
-    horizon?: number,
-    freq?: string,
-    aggregate?: string,
   }
 }
 
@@ -2383,20 +2239,20 @@ export class ModelClassStatus extends jspb.Message {
   hasTrainingschedulestatus(): boolean;
   clearTrainingschedulestatus(): ModelClassStatus;
 
-  getPredictionscedulestatus(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
-  setPredictionscedulestatus(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): ModelClassStatus;
-  hasPredictionscedulestatus(): boolean;
-  clearPredictionscedulestatus(): ModelClassStatus;
+  getPredictionschedulestatus(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
+  setPredictionschedulestatus(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): ModelClassStatus;
+  hasPredictionschedulestatus(): boolean;
+  clearPredictionschedulestatus(): ModelClassStatus;
 
-  getMonitoringscedulestatus(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
-  setMonitoringscedulestatus(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): ModelClassStatus;
-  hasMonitoringscedulestatus(): boolean;
-  clearMonitoringscedulestatus(): ModelClassStatus;
+  getMonitoringschedulestatus(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
+  setMonitoringschedulestatus(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): ModelClassStatus;
+  hasMonitoringschedulestatus(): boolean;
+  clearMonitoringschedulestatus(): ModelClassStatus;
 
-  getReportscedulestatus(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
-  setReportscedulestatus(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): ModelClassStatus;
-  hasReportscedulestatus(): boolean;
-  clearReportscedulestatus(): ModelClassStatus;
+  getReportschedulestatus(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
+  setReportschedulestatus(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): ModelClassStatus;
+  hasReportschedulestatus(): boolean;
+  clearReportschedulestatus(): ModelClassStatus;
 
   getBestmodelscore(): number;
   setBestmodelscore(value: number): ModelClassStatus;
@@ -2422,11 +2278,6 @@ export class ModelClassStatus extends jspb.Message {
   setTriggeredby(value: string): ModelClassStatus;
   hasTriggeredby(): boolean;
   clearTriggeredby(): ModelClassStatus;
-
-  getFailurereason(): string;
-  setFailurereason(value: string): ModelClassStatus;
-  hasFailurereason(): boolean;
-  clearFailurereason(): ModelClassStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): ModelClassStatus;
@@ -2497,15 +2348,14 @@ export namespace ModelClassStatus {
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
     trainingschedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
-    predictionscedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
-    monitoringscedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
-    reportscedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
+    predictionschedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
+    monitoringschedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
+    reportschedulestatus?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     bestmodelscore?: number,
     retiredList: Array<string>,
     predictorname?: string,
     dataappname?: string,
     triggeredby?: string,
-    failurereason?: string,
     failuremessage?: string,
     lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastrunname?: string,
@@ -2540,11 +2390,6 @@ export class ModelClassTrainingSpec extends jspb.Message {
   setTrainingschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelClassTrainingSpec;
   hasTrainingschedule(): boolean;
   clearTrainingschedule(): ModelClassTrainingSpec;
-
-  getModelimage(): ModelImageSpec | undefined;
-  setModelimage(value?: ModelImageSpec): ModelClassTrainingSpec;
-  hasModelimage(): boolean;
-  clearModelimage(): ModelClassTrainingSpec;
 
   getSearchspace(): AlgorithmSearchSpaceSpec | undefined;
   setSearchspace(value?: AlgorithmSearchSpaceSpec): ModelClassTrainingSpec;
@@ -2615,7 +2460,6 @@ export namespace ModelClassTrainingSpec {
     studytemplatename?: string,
     modelunittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     trainingschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    modelimage?: ModelImageSpec.AsObject,
     searchspace?: AlgorithmSearchSpaceSpec.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     triggeredby?: string,
@@ -2668,38 +2512,6 @@ export namespace ModelGroupByStatus {
   }
 }
 
-export class ModelImageSpec extends jspb.Message {
-  getExist(): boolean;
-  setExist(value: boolean): ModelImageSpec;
-  hasExist(): boolean;
-  clearExist(): ModelImageSpec;
-
-  getImagename(): string;
-  setImagename(value: string): ModelImageSpec;
-  hasImagename(): boolean;
-  clearImagename(): ModelImageSpec;
-
-  getRegistryconnectionname(): string;
-  setRegistryconnectionname(value: string): ModelImageSpec;
-  hasRegistryconnectionname(): boolean;
-  clearRegistryconnectionname(): ModelImageSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelImageSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelImageSpec): ModelImageSpec.AsObject;
-  static serializeBinaryToWriter(message: ModelImageSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelImageSpec;
-  static deserializeBinaryFromReader(message: ModelImageSpec, reader: jspb.BinaryReader): ModelImageSpec;
-}
-
-export namespace ModelImageSpec {
-  export type AsObject = {
-    exist?: boolean,
-    imagename?: string,
-    registryconnectionname?: string,
-  }
-}
-
 export class ModelList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ModelList;
@@ -2732,10 +2544,10 @@ export class ModelResult extends jspb.Message {
   hasName(): boolean;
   clearName(): ModelResult;
 
-  getAlg(): string;
-  setAlg(value: string): ModelResult;
-  hasAlg(): boolean;
-  clearAlg(): ModelResult;
+  getAlgorithm(): string;
+  setAlgorithm(value: string): ModelResult;
+  hasAlgorithm(): boolean;
+  clearAlgorithm(): ModelResult;
 
   getScore(): number;
   setScore(value: number): ModelResult;
@@ -2763,7 +2575,7 @@ export class ModelResult extends jspb.Message {
 export namespace ModelResult {
   export type AsObject = {
     name?: string,
-    alg?: string,
+    algorithm?: string,
     score?: number,
     error?: boolean,
     trialid?: number,
@@ -2821,21 +2633,6 @@ export class ModelSpec extends jspb.Message {
   hasEstimator(): boolean;
   clearEstimator(): ModelSpec;
 
-  getDnn(): DeepEstimatorSpec | undefined;
-  setDnn(value?: DeepEstimatorSpec): ModelSpec;
-  hasDnn(): boolean;
-  clearDnn(): ModelSpec;
-
-  getChatbot(): ChatbotEstimatorSpec | undefined;
-  setChatbot(value?: ChatbotEstimatorSpec): ModelSpec;
-  hasChatbot(): boolean;
-  clearChatbot(): ModelSpec;
-
-  getNlpestimator(): NLPEstimatorSpec | undefined;
-  setNlpestimator(value?: NLPEstimatorSpec): ModelSpec;
-  hasNlpestimator(): boolean;
-  clearNlpestimator(): ModelSpec;
-
   getEnsemble(): EnsembleSpec | undefined;
   setEnsemble(value?: EnsembleSpec): ModelSpec;
   hasEnsemble(): boolean;
@@ -2846,120 +2643,70 @@ export class ModelSpec extends jspb.Message {
   hasTraining(): boolean;
   clearTraining(): ModelSpec;
 
-  getTested(): boolean;
-  setTested(value: boolean): ModelSpec;
-  hasTested(): boolean;
-  clearTested(): ModelSpec;
+  getTest(): boolean;
+  setTest(value: boolean): ModelSpec;
+  hasTest(): boolean;
+  clearTest(): ModelSpec;
 
-  getAborted(): boolean;
-  setAborted(value: boolean): ModelSpec;
-  hasAborted(): boolean;
-  clearAborted(): ModelSpec;
+  getAbort(): boolean;
+  setAbort(value: boolean): ModelSpec;
+  hasAbort(): boolean;
+  clearAbort(): ModelSpec;
 
-  getPackaged(): boolean;
-  setPackaged(value: boolean): ModelSpec;
-  hasPackaged(): boolean;
-  clearPackaged(): ModelSpec;
+  getPackage(): boolean;
+  setPackage(value: boolean): ModelSpec;
+  hasPackage(): boolean;
+  clearPackage(): ModelSpec;
 
-  getPublished(): boolean;
-  setPublished(value: boolean): ModelSpec;
-  hasPublished(): boolean;
-  clearPublished(): ModelSpec;
+  getReport(): boolean;
+  setReport(value: boolean): ModelSpec;
+  hasReport(): boolean;
+  clearReport(): ModelSpec;
 
-  getPushed(): boolean;
-  setPushed(value: boolean): ModelSpec;
-  hasPushed(): boolean;
-  clearPushed(): ModelSpec;
+  getPause(): boolean;
+  setPause(value: boolean): ModelSpec;
+  hasPause(): boolean;
+  clearPause(): ModelSpec;
 
-  getReported(): boolean;
-  setReported(value: boolean): ModelSpec;
-  hasReported(): boolean;
-  clearReported(): ModelSpec;
+  getProfile(): boolean;
+  setProfile(value: boolean): ModelSpec;
+  hasProfile(): boolean;
+  clearProfile(): ModelSpec;
 
-  getPaused(): boolean;
-  setPaused(value: boolean): ModelSpec;
-  hasPaused(): boolean;
-  clearPaused(): ModelSpec;
+  getForecast(): boolean;
+  setForecast(value: boolean): ModelSpec;
+  hasForecast(): boolean;
+  clearForecast(): ModelSpec;
 
-  getProfiled(): boolean;
-  setProfiled(value: boolean): ModelSpec;
-  hasProfiled(): boolean;
-  clearProfiled(): ModelSpec;
+  getExplain(): boolean;
+  setExplain(value: boolean): ModelSpec;
+  hasExplain(): boolean;
+  clearExplain(): ModelSpec;
 
-  getArchived(): boolean;
-  setArchived(value: boolean): ModelSpec;
-  hasArchived(): boolean;
-  clearArchived(): ModelSpec;
-
-  getForecasted(): boolean;
-  setForecasted(value: boolean): ModelSpec;
-  hasForecasted(): boolean;
-  clearForecasted(): ModelSpec;
-
-  getPredict(): boolean;
-  setPredict(value: boolean): ModelSpec;
-  hasPredict(): boolean;
-  clearPredict(): ModelSpec;
-
-  getTuned(): boolean;
-  setTuned(value: boolean): ModelSpec;
-  hasTuned(): boolean;
-  clearTuned(): ModelSpec;
-
-  getExplained(): boolean;
-  setExplained(value: boolean): ModelSpec;
-  hasExplained(): boolean;
-  clearExplained(): ModelSpec;
-
-  getCodegenerated(): boolean;
-  setCodegenerated(value: boolean): ModelSpec;
-  hasCodegenerated(): boolean;
-  clearCodegenerated(): ModelSpec;
+  getUnittest(): boolean;
+  setUnittest(value: boolean): ModelSpec;
+  hasUnittest(): boolean;
+  clearUnittest(): ModelSpec;
 
   getBaseline(): boolean;
   setBaseline(value: boolean): ModelSpec;
   hasBaseline(): boolean;
   clearBaseline(): ModelSpec;
 
-  getGendriftdetector(): boolean;
-  setGendriftdetector(value: boolean): ModelSpec;
-  hasGendriftdetector(): boolean;
-  clearGendriftdetector(): ModelSpec;
-
   getFast(): boolean;
   setFast(value: boolean): ModelSpec;
   hasFast(): boolean;
   clearFast(): ModelSpec;
 
-  getUnittested(): boolean;
-  setUnittested(value: boolean): ModelSpec;
-  hasUnittested(): boolean;
-  clearUnittested(): ModelSpec;
-
-  getFeedbackdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setFeedbackdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelSpec;
-  hasFeedbackdatasetref(): boolean;
-  clearFeedbackdatasetref(): ModelSpec;
-
-  getFlagged(): boolean;
-  setFlagged(value: boolean): ModelSpec;
-  hasFlagged(): boolean;
-  clearFlagged(): ModelSpec;
-
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): ModelSpec;
-  hasLocation(): boolean;
-  clearLocation(): ModelSpec;
+  getArtifactbucketname(): string;
+  setArtifactbucketname(value: string): ModelSpec;
+  hasArtifactbucketname(): boolean;
+  clearArtifactbucketname(): ModelSpec;
 
   getForecasting(): ForecasterSpec | undefined;
   setForecasting(value?: ForecasterSpec): ModelSpec;
   hasForecasting(): boolean;
   clearForecasting(): ModelSpec;
-
-  getCompilation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
-  setCompilation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): ModelSpec;
-  hasCompilation(): boolean;
-  clearCompilation(): ModelSpec;
 
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): ModelSpec;
@@ -2970,11 +2717,6 @@ export class ModelSpec extends jspb.Message {
   setEstimatortype(value: string): ModelSpec;
   hasEstimatortype(): boolean;
   clearEstimatortype(): ModelSpec;
-
-  getTtl(): number;
-  setTtl(value: number): ModelSpec;
-  hasTtl(): boolean;
-  clearTtl(): ModelSpec;
 
   getModelclass(): string;
   setModelclass(value: string): ModelSpec;
@@ -3001,11 +2743,6 @@ export class ModelSpec extends jspb.Message {
   hasUnittests(): boolean;
   clearUnittests(): ModelSpec;
 
-  getFeedbacktests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setFeedbacktests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): ModelSpec;
-  hasFeedbacktests(): boolean;
-  clearFeedbacktests(): ModelSpec;
-
   getPartitionlocations(): PartitionModelLocationsSpec | undefined;
   setPartitionlocations(value?: PartitionModelLocationsSpec): ModelSpec;
   hasPartitionlocations(): boolean;
@@ -3025,11 +2762,6 @@ export class ModelSpec extends jspb.Message {
   setRole(value: string): ModelSpec;
   hasRole(): boolean;
   clearRole(): ModelSpec;
-
-  getReleased(): boolean;
-  setReleased(value: boolean): ModelSpec;
-  hasReleased(): boolean;
-  clearReleased(): ModelSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
@@ -3051,48 +2783,32 @@ export namespace ModelSpec {
     objective?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.AsObject,
     featureengineering?: FeatureEngineeringSpec.AsObject,
     estimator?: ClassicalEstimatorSpec.AsObject,
-    dnn?: DeepEstimatorSpec.AsObject,
-    chatbot?: ChatbotEstimatorSpec.AsObject,
-    nlpestimator?: NLPEstimatorSpec.AsObject,
     ensemble?: EnsembleSpec.AsObject,
     training?: TrainingSpec.AsObject,
-    tested?: boolean,
-    aborted?: boolean,
-    packaged?: boolean,
-    published?: boolean,
-    pushed?: boolean,
-    reported?: boolean,
-    paused?: boolean,
-    profiled?: boolean,
-    archived?: boolean,
-    forecasted?: boolean,
-    predict?: boolean,
-    tuned?: boolean,
-    explained?: boolean,
-    codegenerated?: boolean,
+    test?: boolean,
+    abort?: boolean,
+    pb_package?: boolean,
+    report?: boolean,
+    pause?: boolean,
+    profile?: boolean,
+    forecast?: boolean,
+    explain?: boolean,
+    unittest?: boolean,
     baseline?: boolean,
-    gendriftdetector?: boolean,
     fast?: boolean,
-    unittested?: boolean,
-    feedbackdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    flagged?: boolean,
-    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
+    artifactbucketname?: string,
     forecasting?: ForecasterSpec.AsObject,
-    compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     activedeadlineseconds?: number,
     estimatortype?: string,
-    ttl?: number,
     modelclass?: string,
     trialid?: number,
     approval?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ApprovalSpec.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    feedbacktests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     partitionlocations?: PartitionModelLocationsSpec.AsObject,
     modelclassname?: string,
     modelclassrunname?: string,
     role?: string,
-    released?: boolean,
   }
 }
 
@@ -3161,25 +2877,15 @@ export class ModelStatus extends jspb.Message {
   hasTestingcompletedat(): boolean;
   clearTestingcompletedat(): ModelStatus;
 
-  getTuningstartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTuningstartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasTuningstartedat(): boolean;
-  clearTuningstartedat(): ModelStatus;
-
-  getTuningcompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTuningcompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasTuningcompletedat(): boolean;
-  clearTuningcompletedat(): ModelStatus;
-
   getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
   hasCompletedat(): boolean;
   clearCompletedat(): ModelStatus;
 
-  getCvscore(): number;
-  setCvscore(value: number): ModelStatus;
-  hasCvscore(): boolean;
-  clearCvscore(): ModelStatus;
+  getValidationscore(): number;
+  setValidationscore(value: number): ModelStatus;
+  hasValidationscore(): boolean;
+  clearValidationscore(): ModelStatus;
 
   getTrainingscore(): number;
   setTrainingscore(value: number): ModelStatus;
@@ -3191,20 +2897,10 @@ export class ModelStatus extends jspb.Message {
   hasTestscore(): boolean;
   clearTestscore(): ModelStatus;
 
-  getCost(): number;
-  setCost(value: number): ModelStatus;
-  hasCost(): boolean;
-  clearCost(): ModelStatus;
-
-  getBest(): boolean;
-  setBest(value: boolean): ModelStatus;
-  hasBest(): boolean;
-  clearBest(): ModelStatus;
-
-  getCvList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
-  setCvList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ModelStatus;
-  clearCvList(): ModelStatus;
-  addCv(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+  getValidationList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setValidationList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ModelStatus;
+  clearValidationList(): ModelStatus;
+  addValidation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
   getTrainList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
   setTrainList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ModelStatus;
@@ -3226,11 +2922,6 @@ export class ModelStatus extends jspb.Message {
   clearFeedbackList(): ModelStatus;
   addFeedback(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
-  getLastfeedbackdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setLastfeedbackdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelStatus;
-  hasLastfeedbackdatasetref(): boolean;
-  clearLastfeedbackdatasetref(): ModelStatus;
-
   getPhase(): string;
   setPhase(value: string): ModelStatus;
   hasPhase(): boolean;
@@ -3241,80 +2932,60 @@ export class ModelStatus extends jspb.Message {
   hasReportname(): boolean;
   clearReportname(): ModelStatus;
 
-  getReporturi(): string;
-  setReporturi(value: string): ModelStatus;
-  hasReporturi(): boolean;
-  clearReporturi(): ModelStatus;
+  getReportlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setReportlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
+  hasReportlocation(): boolean;
+  clearReportlocation(): ModelStatus;
 
-  getManifesturi(): string;
-  setManifesturi(value: string): ModelStatus;
-  hasManifesturi(): boolean;
-  clearManifesturi(): ModelStatus;
+  getTrainweightslocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setTrainweightslocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
+  hasTrainweightslocation(): boolean;
+  clearTrainweightslocation(): ModelStatus;
 
-  getTrainweightsuri(): string;
-  setTrainweightsuri(value: string): ModelStatus;
-  hasTrainweightsuri(): boolean;
-  clearTrainweightsuri(): ModelStatus;
+  getTestweightslocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setTestweightslocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
+  hasTestweightslocation(): boolean;
+  clearTestweightslocation(): ModelStatus;
 
-  getTestweightsuri(): string;
-  setTestweightsuri(value: string): ModelStatus;
-  hasTestweightsuri(): boolean;
-  clearTestweightsuri(): ModelStatus;
+  getFullweightslocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setFullweightslocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
+  hasFullweightslocation(): boolean;
+  clearFullweightslocation(): ModelStatus;
 
-  getFullweightsuri(): string;
-  setFullweightsuri(value: string): ModelStatus;
-  hasFullweightsuri(): boolean;
-  clearFullweightsuri(): ModelStatus;
+  getTrainlabelencoderlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setTrainlabelencoderlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
+  hasTrainlabelencoderlocation(): boolean;
+  clearTrainlabelencoderlocation(): ModelStatus;
 
-  getDriftdetectoruri(): string;
-  setDriftdetectoruri(value: string): ModelStatus;
-  hasDriftdetectoruri(): boolean;
-  clearDriftdetectoruri(): ModelStatus;
+  getTestlabelencoderlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setTestlabelencoderlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
+  hasTestlabelencoderlocation(): boolean;
+  clearTestlabelencoderlocation(): ModelStatus;
 
-  getTrainlabelencoderuri(): string;
-  setTrainlabelencoderuri(value: string): ModelStatus;
-  hasTrainlabelencoderuri(): boolean;
-  clearTrainlabelencoderuri(): ModelStatus;
+  getFulllabelencoderlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setFulllabelencoderlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
+  hasFulllabelencoderlocation(): boolean;
+  clearFulllabelencoderlocation(): ModelStatus;
 
-  getTestlabelencoderuri(): string;
-  setTestlabelencoderuri(value: string): ModelStatus;
-  hasTestlabelencoderuri(): boolean;
-  clearTestlabelencoderuri(): ModelStatus;
+  getProfilelocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setProfilelocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
+  hasProfilelocation(): boolean;
+  clearProfilelocation(): ModelStatus;
 
-  getFulllabelencoderuri(): string;
-  setFulllabelencoderuri(value: string): ModelStatus;
-  hasFulllabelencoderuri(): boolean;
-  clearFulllabelencoderuri(): ModelStatus;
+  getMisclassificationlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setMisclassificationlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
+  hasMisclassificationlocation(): boolean;
+  clearMisclassificationlocation(): ModelStatus;
 
-  getLogsuri(): string;
-  setLogsuri(value: string): ModelStatus;
-  hasLogsuri(): boolean;
-  clearLogsuri(): ModelStatus;
+  getForecastlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setForecastlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
+  hasForecastlocation(): boolean;
+  clearForecastlocation(): ModelStatus;
 
-  getProfileuri(): string;
-  setProfileuri(value: string): ModelStatus;
-  hasProfileuri(): boolean;
-  clearProfileuri(): ModelStatus;
-
-  getMisclassificationuri(): string;
-  setMisclassificationuri(value: string): ModelStatus;
-  hasMisclassificationuri(): boolean;
-  clearMisclassificationuri(): ModelStatus;
-
-  getTaruri(): string;
-  setTaruri(value: string): ModelStatus;
-  hasTaruri(): boolean;
-  clearTaruri(): ModelStatus;
-
-  getAppuri(): string;
-  setAppuri(value: string): ModelStatus;
-  hasAppuri(): boolean;
-  clearAppuri(): ModelStatus;
-
-  getImagename(): string;
-  setImagename(value: string): ModelStatus;
-  hasImagename(): boolean;
-  clearImagename(): ModelStatus;
+  getPackagelocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setPackagelocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
+  hasPackagelocation(): boolean;
+  clearPackagelocation(): ModelStatus;
 
   getImpurityimportanceList(): Array<FeatureImportance>;
   setImpurityimportanceList(value: Array<FeatureImportance>): ModelStatus;
@@ -3325,11 +2996,6 @@ export class ModelStatus extends jspb.Message {
   setPermutationimportanceList(value: Array<FeatureImportance>): ModelStatus;
   clearPermutationimportanceList(): ModelStatus;
   addPermutationimportance(value?: FeatureImportance, index?: number): FeatureImportance;
-
-  getForecasturi(): string;
-  setForecasturi(value: string): ModelStatus;
-  hasForecasturi(): boolean;
-  clearForecasturi(): ModelStatus;
 
   getRuntime(): RuntimeStatus | undefined;
   setRuntime(value?: RuntimeStatus): ModelStatus;
@@ -3396,35 +3062,15 @@ export class ModelStatus extends jspb.Message {
   hasLatency(): boolean;
   clearLatency(): ModelStatus;
 
-  getUrl(): string;
-  setUrl(value: string): ModelStatus;
-  hasUrl(): boolean;
-  clearUrl(): ModelStatus;
-
   getServing(): ServingStatus | undefined;
   setServing(value?: ServingStatus): ModelStatus;
   hasServing(): boolean;
   clearServing(): ModelStatus;
 
-  getReleasedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setReleasedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasReleasedat(): boolean;
-  clearReleasedat(): ModelStatus;
-
-  getPredictedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setPredictedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasPredictedat(): boolean;
-  clearPredictedat(): ModelStatus;
-
   getTarfilehash(): string;
   setTarfilehash(value: string): ModelStatus;
   hasTarfilehash(): boolean;
   clearTarfilehash(): ModelStatus;
-
-  getImagehash(): string;
-  setImagehash(value: string): ModelStatus;
-  hasImagehash(): boolean;
-  clearImagehash(): ModelStatus;
 
   getTrainingdatahash(): DataHashes | undefined;
   setTrainingdatahash(value?: DataHashes): ModelStatus;
@@ -3445,11 +3091,6 @@ export class ModelStatus extends jspb.Message {
   setTrainedby(value: string): ModelStatus;
   hasTrainedby(): boolean;
   clearTrainedby(): ModelStatus;
-
-  getTeam(): string;
-  setTeam(value: string): ModelStatus;
-  hasTeam(): boolean;
-  clearTeam(): ModelStatus;
 
   getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
   setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): ModelStatus;
@@ -3521,11 +3162,6 @@ export class ModelStatus extends jspb.Message {
   hasGroupby(): boolean;
   clearGroupby(): ModelStatus;
 
-  getStagesList(): Array<ModelStageStatus>;
-  setStagesList(value: Array<ModelStageStatus>): ModelStatus;
-  clearStagesList(): ModelStatus;
-  addStages(value?: ModelStageStatus, index?: number): ModelStageStatus;
-
   getUsage(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption | undefined;
   setUsage(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption): ModelStatus;
   hasUsage(): boolean;
@@ -3550,40 +3186,30 @@ export namespace ModelStatus {
     trainingcompletedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     testingstartedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     testingcompletedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    tuningstartedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    tuningcompletedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    cvscore?: number,
+    validationscore?: number,
     trainingscore?: number,
     testscore?: number,
-    cost?: number,
-    best?: boolean,
-    cvList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    validationList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     trainList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     testList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     tuneList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     feedbackList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
-    lastfeedbackdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     phase?: string,
     reportname?: string,
-    reporturi?: string,
-    manifesturi?: string,
-    trainweightsuri?: string,
-    testweightsuri?: string,
-    fullweightsuri?: string,
-    driftdetectoruri?: string,
-    trainlabelencoderuri?: string,
-    testlabelencoderuri?: string,
-    fulllabelencoderuri?: string,
-    logsuri?: string,
-    profileuri?: string,
-    misclassificationuri?: string,
-    taruri?: string,
-    appuri?: string,
-    imagename?: string,
+    reportlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    trainweightslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    testweightslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    fullweightslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    trainlabelencoderlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    testlabelencoderlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    fulllabelencoderlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    profilelocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    misclassificationlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    forecastlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    packagelocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     impurityimportanceList: Array<FeatureImportance.AsObject>,
     permutationimportanceList: Array<FeatureImportance.AsObject>,
-    forecasturi?: string,
     runtime?: RuntimeStatus.AsObject,
     traindatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     testdatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
@@ -3597,17 +3223,12 @@ export namespace ModelStatus {
     progress?: number,
     sizeinbytes?: number,
     latency?: number,
-    url?: string,
     serving?: ServingStatus.AsObject,
-    releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    predictedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     tarfilehash?: string,
-    imagehash?: string,
     trainingdatahash?: DataHashes.AsObject,
     trainingresources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.AsObject,
     testingresources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.AsObject,
     trainedby?: string,
-    team?: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     roccurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.AsObject,
     prcurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PRCurve.AsObject,
@@ -3622,7 +3243,6 @@ export namespace ModelStatus {
     unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     feedbacktestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     groupby?: ModelGroupByStatus.AsObject,
-    stagesList: Array<ModelStageStatus.AsObject>,
     usage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
@@ -3660,26 +3280,6 @@ export namespace ModelTestSuite {
   }
 }
 
-export class NLPEstimatorSpec extends jspb.Message {
-  getBase(): string;
-  setBase(value: string): NLPEstimatorSpec;
-  hasBase(): boolean;
-  clearBase(): NLPEstimatorSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): NLPEstimatorSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: NLPEstimatorSpec): NLPEstimatorSpec.AsObject;
-  static serializeBinaryToWriter(message: NLPEstimatorSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): NLPEstimatorSpec;
-  static deserializeBinaryFromReader(message: NLPEstimatorSpec, reader: jspb.BinaryReader): NLPEstimatorSpec;
-}
-
-export namespace NLPEstimatorSpec {
-  export type AsObject = {
-    base?: string,
-  }
-}
-
 export class NNLayerParameter extends jspb.Message {
   getName(): string;
   setName(value: string): NNLayerParameter;
@@ -3703,6 +3303,32 @@ export namespace NNLayerParameter {
   export type AsObject = {
     name?: string,
     value?: string,
+  }
+}
+
+export class OutlierModelSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): OutlierModelSpec;
+  hasEnabled(): boolean;
+  clearEnabled(): OutlierModelSpec;
+
+  getOutlieralgorithm(): string;
+  setOutlieralgorithm(value: string): OutlierModelSpec;
+  hasOutlieralgorithm(): boolean;
+  clearOutlieralgorithm(): OutlierModelSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OutlierModelSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: OutlierModelSpec): OutlierModelSpec.AsObject;
+  static serializeBinaryToWriter(message: OutlierModelSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OutlierModelSpec;
+  static deserializeBinaryFromReader(message: OutlierModelSpec, reader: jspb.BinaryReader): OutlierModelSpec;
+}
+
+export namespace OutlierModelSpec {
+  export type AsObject = {
+    enabled?: boolean,
+    outlieralgorithm?: string,
   }
 }
 
@@ -4035,10 +3661,10 @@ export class ReportSpec extends jspb.Message {
   hasFormat(): boolean;
   clearFormat(): ReportSpec;
 
-  getNotifiername(): string;
-  setNotifiername(value: string): ReportSpec;
-  hasNotifiername(): boolean;
-  clearNotifiername(): ReportSpec;
+  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
+  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): ReportSpec;
+  hasNotification(): boolean;
+  clearNotification(): ReportSpec;
 
   getOwner(): string;
   setOwner(value: string): ReportSpec;
@@ -4094,7 +3720,7 @@ export namespace ReportSpec {
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     reporttype?: string,
     format?: string,
-    notifiername?: string,
+    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     owner?: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     timeout?: number,
@@ -4186,11 +3812,6 @@ export class RuntimeStatus extends jspb.Message {
   hasPythonversion(): boolean;
   clearPythonversion(): RuntimeStatus;
 
-  getPythoncmd(): string;
-  setPythoncmd(value: string): RuntimeStatus;
-  hasPythoncmd(): boolean;
-  clearPythoncmd(): RuntimeStatus;
-
   getOs(): string;
   setOs(value: string): RuntimeStatus;
   hasOs(): boolean;
@@ -4210,7 +3831,6 @@ export class RuntimeStatus extends jspb.Message {
 export namespace RuntimeStatus {
   export type AsObject = {
     pythonversion?: string,
-    pythoncmd?: string,
     os?: string,
     pythonpackagesMap: Array<[string, string]>,
   }
@@ -4227,11 +3847,6 @@ export class SearchSpec extends jspb.Message {
   hasPruner(): boolean;
   clearPruner(): SearchSpec;
 
-  getMaxcost(): number;
-  setMaxcost(value: number): SearchSpec;
-  hasMaxcost(): boolean;
-  clearMaxcost(): SearchSpec;
-
   getMaxtime(): number;
   setMaxtime(value: number): SearchSpec;
   hasMaxtime(): boolean;
@@ -4242,10 +3857,10 @@ export class SearchSpec extends jspb.Message {
   hasMaxmodels(): boolean;
   clearMaxmodels(): SearchSpec;
 
-  getMinbestscore(): number;
-  setMinbestscore(value: number): SearchSpec;
-  hasMinbestscore(): boolean;
-  clearMinbestscore(): SearchSpec;
+  getMaxscore(): number;
+  setMaxscore(value: number): SearchSpec;
+  hasMaxscore(): boolean;
+  clearMaxscore(): SearchSpec;
 
   getTrainers(): number;
   setTrainers(value: number): SearchSpec;
@@ -4282,15 +3897,10 @@ export class SearchSpec extends jspb.Message {
   hasObjective(): boolean;
   clearObjective(): SearchSpec;
 
-  getObjective2(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec | undefined;
-  setObjective2(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec): SearchSpec;
-  hasObjective2(): boolean;
-  clearObjective2(): SearchSpec;
-
-  getTune(): boolean;
-  setTune(value: boolean): SearchSpec;
-  hasTune(): boolean;
-  clearTune(): SearchSpec;
+  getSecondaryobjective(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec | undefined;
+  setSecondaryobjective(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec): SearchSpec;
+  hasSecondaryobjective(): boolean;
+  clearSecondaryobjective(): SearchSpec;
 
   getGoal(): string;
   setGoal(value: string): SearchSpec;
@@ -4309,10 +3919,9 @@ export namespace SearchSpec {
   export type AsObject = {
     sampler?: string,
     pruner?: PrunerSpec.AsObject,
-    maxcost?: number,
     maxtime?: number,
     maxmodels?: number,
-    minbestscore?: number,
+    maxscore?: number,
     trainers?: number,
     test?: number,
     retaintop?: number,
@@ -4320,8 +3929,7 @@ export namespace SearchSpec {
     searchspace?: AlgorithmSearchSpaceSpec.AsObject,
     earlystop?: EarlyStopSpec.AsObject,
     objective?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.AsObject,
-    objective2?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.AsObject,
-    tune?: boolean,
+    secondaryobjective?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.AsObject,
     goal?: string,
   }
 }
@@ -4405,38 +4013,6 @@ export namespace SeasonalitySpec {
     monthly?: SeasonalityPeriodSpec.AsObject,
     weekly?: SeasonalityPeriodSpec.AsObject,
     daily?: SeasonalityPeriodSpec.AsObject,
-  }
-}
-
-export class SegmentSpec extends jspb.Message {
-  getColumnname(): string;
-  setColumnname(value: string): SegmentSpec;
-  hasColumnname(): boolean;
-  clearColumnname(): SegmentSpec;
-
-  getOp(): string;
-  setOp(value: string): SegmentSpec;
-  hasOp(): boolean;
-  clearOp(): SegmentSpec;
-
-  getValue(): string;
-  setValue(value: string): SegmentSpec;
-  hasValue(): boolean;
-  clearValue(): SegmentSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SegmentSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: SegmentSpec): SegmentSpec.AsObject;
-  static serializeBinaryToWriter(message: SegmentSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SegmentSpec;
-  static deserializeBinaryFromReader(message: SegmentSpec, reader: jspb.BinaryReader): SegmentSpec;
-}
-
-export namespace SegmentSpec {
-  export type AsObject = {
-    columnname?: string,
-    op?: string,
-    value?: string,
   }
 }
 
@@ -4664,32 +4240,6 @@ export namespace Study {
   }
 }
 
-export class StudyGroupByStatus extends jspb.Message {
-  getStudiesuri(): string;
-  setStudiesuri(value: string): StudyGroupByStatus;
-  hasStudiesuri(): boolean;
-  clearStudiesuri(): StudyGroupByStatus;
-
-  getWorkerresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>;
-  setWorkerresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>): StudyGroupByStatus;
-  clearWorkerresultsList(): StudyGroupByStatus;
-  addWorkerresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): StudyGroupByStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: StudyGroupByStatus): StudyGroupByStatus.AsObject;
-  static serializeBinaryToWriter(message: StudyGroupByStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): StudyGroupByStatus;
-  static deserializeBinaryFromReader(message: StudyGroupByStatus, reader: jspb.BinaryReader): StudyGroupByStatus;
-}
-
-export namespace StudyGroupByStatus {
-  export type AsObject = {
-    studiesuri?: string,
-    workerresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.AsObject>,
-  }
-}
-
 export class StudyList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): StudyList;
@@ -4865,10 +4415,10 @@ export class StudySpec extends jspb.Message {
   hasTrainingtemplate(): boolean;
   clearTrainingtemplate(): StudySpec;
 
-  getFcttemplate(): ForecasterSpec | undefined;
-  setFcttemplate(value?: ForecasterSpec): StudySpec;
-  hasFcttemplate(): boolean;
-  clearFcttemplate(): StudySpec;
+  getForecasttemplate(): ForecasterSpec | undefined;
+  setForecasttemplate(value?: ForecasterSpec): StudySpec;
+  hasForecasttemplate(): boolean;
+  clearForecasttemplate(): StudySpec;
 
   getSchedule(): StudyScheduleSpec | undefined;
   setSchedule(value?: StudyScheduleSpec): StudySpec;
@@ -4880,45 +4430,35 @@ export class StudySpec extends jspb.Message {
   hasInterpretability(): boolean;
   clearInterpretability(): StudySpec;
 
-  getDriftdetection(): DriftModelSpec | undefined;
-  setDriftdetection(value?: DriftModelSpec): StudySpec;
-  hasDriftdetection(): boolean;
-  clearDriftdetection(): StudySpec;
+  getOutliermodel(): OutlierModelSpec | undefined;
+  setOutliermodel(value?: OutlierModelSpec): StudySpec;
+  hasOutliermodel(): boolean;
+  clearOutliermodel(): StudySpec;
 
-  getAborted(): boolean;
-  setAborted(value: boolean): StudySpec;
-  hasAborted(): boolean;
-  clearAborted(): StudySpec;
+  getAbort(): boolean;
+  setAbort(value: boolean): StudySpec;
+  hasAbort(): boolean;
+  clearAbort(): StudySpec;
 
-  getReported(): boolean;
-  setReported(value: boolean): StudySpec;
-  hasReported(): boolean;
-  clearReported(): StudySpec;
+  getReport(): boolean;
+  setReport(value: boolean): StudySpec;
+  hasReport(): boolean;
+  clearReport(): StudySpec;
 
-  getPaused(): boolean;
-  setPaused(value: boolean): StudySpec;
-  hasPaused(): boolean;
-  clearPaused(): StudySpec;
+  getPause(): boolean;
+  setPause(value: boolean): StudySpec;
+  hasPause(): boolean;
+  clearPause(): StudySpec;
 
-  getProfiled(): boolean;
-  setProfiled(value: boolean): StudySpec;
-  hasProfiled(): boolean;
-  clearProfiled(): StudySpec;
+  getProfile(): boolean;
+  setProfile(value: boolean): StudySpec;
+  hasProfile(): boolean;
+  clearProfile(): StudySpec;
 
-  getModelpublished(): boolean;
-  setModelpublished(value: boolean): StudySpec;
-  hasModelpublished(): boolean;
-  clearModelpublished(): StudySpec;
-
-  getModelimagepushed(): boolean;
-  setModelimagepushed(value: boolean): StudySpec;
-  hasModelimagepushed(): boolean;
-  clearModelimagepushed(): StudySpec;
-
-  getModelexplained(): boolean;
-  setModelexplained(value: boolean): StudySpec;
-  hasModelexplained(): boolean;
-  clearModelexplained(): StudySpec;
+  getExplain(): boolean;
+  setExplain(value: boolean): StudySpec;
+  hasExplain(): boolean;
+  clearExplain(): StudySpec;
 
   getFast(): boolean;
   setFast(value: boolean): StudySpec;
@@ -4935,40 +4475,20 @@ export class StudySpec extends jspb.Message {
   hasOwner(): boolean;
   clearOwner(): StudySpec;
 
-  getCompilation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
-  setCompilation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): StudySpec;
-  hasCompilation(): boolean;
-  clearCompilation(): StudySpec;
-
   getTemplate(): boolean;
   setTemplate(value: boolean): StudySpec;
   hasTemplate(): boolean;
   clearTemplate(): StudySpec;
-
-  getFlagged(): boolean;
-  setFlagged(value: boolean): StudySpec;
-  hasFlagged(): boolean;
-  clearFlagged(): StudySpec;
 
   getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
   setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): StudySpec;
   hasNotification(): boolean;
   clearNotification(): StudySpec;
 
-  getModelimage(): ModelImageSpec | undefined;
-  setModelimage(value?: ModelImageSpec): StudySpec;
-  hasModelimage(): boolean;
-  clearModelimage(): StudySpec;
-
   getGc(): GarbageCollectionSpec | undefined;
   setGc(value?: GarbageCollectionSpec): StudySpec;
   hasGc(): boolean;
   clearGc(): StudySpec;
-
-  getTtl(): number;
-  setTtl(value: number): StudySpec;
-  hasTtl(): boolean;
-  clearTtl(): StudySpec;
 
   getModelversion(): string;
   setModelversion(value: string): StudySpec;
@@ -4979,11 +4499,6 @@ export class StudySpec extends jspb.Message {
   setTimeout(value: number): StudySpec;
   hasTimeout(): boolean;
   clearTimeout(): StudySpec;
-
-  getCodegenerated(): boolean;
-  setCodegenerated(value: boolean): StudySpec;
-  hasCodegenerated(): boolean;
-  clearCodegenerated(): StudySpec;
 
   getUnitteststemplate(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
   setUnitteststemplate(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): StudySpec;
@@ -5032,30 +4547,23 @@ export namespace StudySpec {
     search?: SearchSpec.AsObject,
     ensembles?: EnsemblesSpec.AsObject,
     trainingtemplate?: TrainingSpec.AsObject,
-    fcttemplate?: ForecasterSpec.AsObject,
+    forecasttemplate?: ForecasterSpec.AsObject,
     schedule?: StudyScheduleSpec.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,
-    driftdetection?: DriftModelSpec.AsObject,
-    aborted?: boolean,
-    reported?: boolean,
-    paused?: boolean,
-    profiled?: boolean,
-    modelpublished?: boolean,
-    modelimagepushed?: boolean,
-    modelexplained?: boolean,
+    outliermodel?: OutlierModelSpec.AsObject,
+    abort?: boolean,
+    report?: boolean,
+    pause?: boolean,
+    profile?: boolean,
+    explain?: boolean,
     fast?: boolean,
     artifactbucketname?: string,
     owner?: string,
-    compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     template?: boolean,
-    flagged?: boolean,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
-    modelimage?: ModelImageSpec.AsObject,
     gc?: GarbageCollectionSpec.AsObject,
-    ttl?: number,
     modelversion?: string,
     timeout?: number,
-    codegenerated?: boolean,
     unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     grouplocations?: GroupSplitLocationsSpec.AsObject,
     modelclassname?: string,
@@ -5085,15 +4593,15 @@ export class StudyStatus extends jspb.Message {
   hasBestmodelscore(): boolean;
   clearBestmodelscore(): StudyStatus;
 
-  getProfileuri(): string;
-  setProfileuri(value: string): StudyStatus;
-  hasProfileuri(): boolean;
-  clearProfileuri(): StudyStatus;
+  getProfilelocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setProfilelocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyStatus;
+  hasProfilelocation(): boolean;
+  clearProfilelocation(): StudyStatus;
 
-  getReporturi(): string;
-  setReporturi(value: string): StudyStatus;
-  hasReporturi(): boolean;
-  clearReporturi(): StudyStatus;
+  getReportlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setReportlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyStatus;
+  hasReportlocation(): boolean;
+  clearReportlocation(): StudyStatus;
 
   getReportname(): string;
   setReportname(value: string): StudyStatus;
@@ -5124,6 +4632,11 @@ export class StudyStatus extends jspb.Message {
   setValidationdatasetlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyStatus;
   hasValidationdatasetlocation(): boolean;
   clearValidationdatasetlocation(): StudyStatus;
+
+  getOptimizerlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setOptimizerlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyStatus;
+  hasOptimizerlocation(): boolean;
+  clearOptimizerlocation(): StudyStatus;
 
   getLastmodelid(): number;
   setLastmodelid(value: number): StudyStatus;
@@ -5215,25 +4728,15 @@ export class StudyStatus extends jspb.Message {
   hasUpdatedat(): boolean;
   clearUpdatedat(): StudyStatus;
 
-  getBestfe(): FeatureEngineeringSpec | undefined;
-  setBestfe(value?: FeatureEngineeringSpec): StudyStatus;
-  hasBestfe(): boolean;
-  clearBestfe(): StudyStatus;
+  getBestfeatureengineering(): FeatureEngineeringSpec | undefined;
+  setBestfeatureengineering(value?: FeatureEngineeringSpec): StudyStatus;
+  hasBestfeatureengineering(): boolean;
+  clearBestfeatureengineering(): StudyStatus;
 
   getGc(): GarbageCollectionStatus | undefined;
   setGc(value?: GarbageCollectionStatus): StudyStatus;
   hasGc(): boolean;
   clearGc(): StudyStatus;
-
-  getGroupby(): StudyGroupByStatus | undefined;
-  setGroupby(value?: StudyGroupByStatus): StudyStatus;
-  hasGroupby(): boolean;
-  clearGroupby(): StudyStatus;
-
-  getUsage(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption | undefined;
-  setUsage(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption): StudyStatus;
-  hasUsage(): boolean;
-  clearUsage(): StudyStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): StudyStatus;
@@ -5254,14 +4757,15 @@ export namespace StudyStatus {
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestmodel?: string,
     bestmodelscore?: number,
-    profileuri?: string,
-    reporturi?: string,
+    profilelocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    reportlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     reportname?: string,
     phase?: string,
     observedgeneration?: number,
     traindatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     testdatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     validationdatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    optimizerlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     lastmodelid?: number,
     failurereason?: string,
     failuremessage?: string,
@@ -5280,10 +4784,8 @@ export namespace StudyStatus {
     explain?: StudyPhaseStatus.AsObject,
     driftdetection?: DriftDetectorStatus.AsObject,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    bestfe?: FeatureEngineeringSpec.AsObject,
+    bestfeatureengineering?: FeatureEngineeringSpec.AsObject,
     gc?: GarbageCollectionStatus.AsObject,
-    groupby?: StudyGroupByStatus.AsObject,
-    usage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -5548,11 +5050,6 @@ export class TrainingSpec extends jspb.Message {
   hasCvtype(): boolean;
   clearCvtype(): TrainingSpec;
 
-  getCv(): boolean;
-  setCv(value: boolean): TrainingSpec;
-  hasCv(): boolean;
-  clearCv(): TrainingSpec;
-
   getFolds(): number;
   setFolds(value: number): TrainingSpec;
   hasFolds(): boolean;
@@ -5588,20 +5085,10 @@ export class TrainingSpec extends jspb.Message {
   hasGpu(): boolean;
   clearGpu(): TrainingSpec;
 
-  getDistributed(): boolean;
-  setDistributed(value: boolean): TrainingSpec;
-  hasDistributed(): boolean;
-  clearDistributed(): TrainingSpec;
-
   getFeatureimportance(): boolean;
   setFeatureimportance(value: boolean): TrainingSpec;
   hasFeatureimportance(): boolean;
   clearFeatureimportance(): TrainingSpec;
-
-  getNodecount(): number;
-  setNodecount(value: number): TrainingSpec;
-  hasNodecount(): boolean;
-  clearNodecount(): TrainingSpec;
 
   getSamplepct(): number;
   setSamplepct(value: number): TrainingSpec;
@@ -5618,10 +5105,10 @@ export class TrainingSpec extends jspb.Message {
   hasLoglevel(): boolean;
   clearLoglevel(): TrainingSpec;
 
-  getTimeoutinsecs(): number;
-  setTimeoutinsecs(value: number): TrainingSpec;
-  hasTimeoutinsecs(): boolean;
-  clearTimeoutinsecs(): TrainingSpec;
+  getTimeout(): number;
+  setTimeout(value: number): TrainingSpec;
+  hasTimeout(): boolean;
+  clearTimeout(): TrainingSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainingSpec.AsObject;
@@ -5636,7 +5123,6 @@ export namespace TrainingSpec {
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     priority?: string,
     cvtype?: string,
-    cv?: boolean,
     folds?: number,
     split?: DataSplitSpec.AsObject,
     evalmetricsList: Array<string>,
@@ -5644,13 +5130,11 @@ export namespace TrainingSpec {
     seed?: number,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     gpu?: boolean,
-    distributed?: boolean,
     featureimportance?: boolean,
-    nodecount?: number,
     samplepct?: number,
     checkpoint?: CheckpointSpec.AsObject,
     loglevel?: string,
-    timeoutinsecs?: number,
+    timeout?: number,
   }
 }
 

@@ -268,7 +268,7 @@ func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
 ////////////////////////////////////////////////////////////
 // Model Alerts
 
-func (prediction Prediction) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+func (prediction Prediction) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("BatchPrediction %s completed successfully", prediction.Name)
 	result := &infra.Alert{
@@ -277,15 +277,14 @@ func (prediction Prediction) CompletionAlert(tenantRef *v1.ObjectReference, noti
 			Namespace:    prediction.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
+			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "BatchPrediction",
 				Name:      prediction.Name,
 				Namespace: prediction.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			Owner:        prediction.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": prediction.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
@@ -298,24 +297,23 @@ func (prediction Prediction) CompletionAlert(tenantRef *v1.ObjectReference, noti
 	return result
 }
 
-func (prediction Prediction) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (prediction Prediction) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
 	level := infra.Error
-	subject := fmt.Sprintf("BatchPrediction %s failed with error %v", prediction.Name, err.Error())
+	subject := fmt.Sprintf("Prediction %s failed with error: %v", prediction.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: prediction.Name,
 			Namespace:    prediction.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
+			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "BatchPrediction",
 				Name:      prediction.Name,
 				Namespace: prediction.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			Owner:        prediction.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": prediction.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
@@ -355,11 +353,8 @@ func (prediction *Prediction) DriftAlert(tenantRef *v1.ObjectReference, notifier
 			Namespace:    prediction.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject:      util.StrPtr(subject),
-			Message:      util.StrPtr("drift was detected"),
-			Level:        &level,
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Subject: subject,
+			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Entity",
 				Name:      prediction.Name,

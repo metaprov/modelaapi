@@ -538,11 +538,12 @@ spec:
                 properties:
                   custom:
                     default: false
-                    description: If true, ignore the workload class name.
+                    description: Custom indicates if the custom requirements specified
+                      by Requirements will be used
                     type: boolean
                   requirements:
-                    description: The custom resource requirements for the workload,
-                      which are used if `WorkloadName` is not set
+                    description: Requirements specifies the custom resource requirements
+                      for the workload
                     properties:
                       limits:
                         additionalProperties:
@@ -568,11 +569,10 @@ spec:
                         type: object
                     type: object
                   workloadName:
-                    default: general-large
-                    description: If this resource is based on the workload, this field
-                      contain the name of the workload. The name of a WorkloadClass.
-                      The system will use the resource requirements described by the
-                      WorkloadClass
+                    description: WorkloadName references the name of a Workload Class
+                      resource that will be used to determine the resource requirements
+                      of the workload. If specified, WorkloadName will take precedence
+                      over custom requirements
                     type: string
                 type: object
               schema:

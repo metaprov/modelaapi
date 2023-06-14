@@ -65,11 +65,10 @@ spec:
           metadata:
             type: object
           spec:
-            description: AlertSpec defines the contents of an Alert. Alerts are generated
-              by Modela resource controllers and should not be created manually.
             properties:
               entityRef:
-                description: The entity which the Alert is in reference to
+                description: EntityRef references the custom resource relevant to
+                  the Alert
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -108,82 +107,29 @@ spec:
               fields:
                 additionalProperties:
                   type: string
-                description: Additional key-value information about the event
+                description: Fields defines additional key-value information about
+                  the event
                 type: object
               image:
-                default: ""
-                description: The URL of an image in reference to the Alert
+                description: Image specifies the link to an image relevant to the
+                  subject
                 type: string
               level:
                 default: normal
-                description: The significance of the Alert, which can be normal, warning,
-                  or error
-                type: string
-              message:
-                default: ""
-                description: The message of the Alert
-                type: string
-              notifierName:
-                default: ""
-                description: The name of the Notifier resource that exists in the
-                  same tenant as the Alert which the contents of the Alert will be
-                  forwarded to
+                description: Level specifies the significance of the Alert, which
+                  can be normal, warning, or error
                 type: string
               owner:
                 default: no-one
-                description: The name of the Account which owns the resource that
-                  the Alert references
+                description: Owner references the name of the Account which owns the
+                  Alert
                 type: string
               subject:
                 default: ""
-                description: The subject of the Alert
+                description: Subject details the primary message of the Alert
                 type: string
-              tenantRef:
-                description: The reference to the tenant which the object exists under
-                properties:
-                  apiVersion:
-                    description: API version of the referent.
-                    type: string
-                  fieldPath:
-                    description: 'If referring to a piece of an object instead of
-                      an entire object, this string should contain a valid JSON/Go
-                      field access statement, such as desiredState.manifest.containers[2].
-                      For example, if the object reference is to a container within
-                      a pod, this would take on a value like: "spec.containers{name}"
-                      (where "name" refers to the name of the container that triggered
-                      the event) or if no container name is specified "spec.containers[2]"
-                      (container with index 2 in this pod). This syntax is chosen
-                      only to have some well-defined way of referencing a part of
-                      an object. TODO: this design is not final and this field is
-                      subject to change in the future.'
-                    type: string
-                  kind:
-                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                    type: string
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                    type: string
-                  namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                    type: string
-                  resourceVersion:
-                    description: 'Specific resourceVersion to which this reference
-                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                    type: string
-                  uid:
-                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                    type: string
-                type: object
-                x-kubernetes-map-type: atomic
-              ttl:
-                default: 3600
-                description: The time-to-live of the Alert, after which the Alert
-                  will be archived
-                format: int32
-                type: integer
               url:
-                default: ""
-                description: The URL of the subject
+                description: URL specifies a link relevant to the subject
                 type: string
             type: object
           status:
@@ -260,10 +206,6 @@ spec:
               failureMessage:
                 description: In the case of failure, the Alert resource controller
                   will set this field with a failure message
-                type: string
-              failureReason:
-                description: In the case of failure, the Alert resource controller
-                  will set this field with a failure reason
                 type: string
               firedAt:
                 description: The time when the Alert was fired

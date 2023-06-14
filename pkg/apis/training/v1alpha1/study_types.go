@@ -73,40 +73,22 @@ const (
 
 // / Study Condition
 const (
-	// StudyInitialized states that the resources needed for training are allocated and ready
-	StudyInitialized = "Initialized"
-	// StudySplit states that the training dataset has been split and is ready for use
-	StudySplit = "StudySplit"
-	// Study Transformed states that the training dataset has been split and is ready for use
-	StudyTransformed = "StudyTransformed"
-	// StudyFeatureEngineered states that the search for the best feature engineering pipeline is complete
+	StudySplit             = "StudySplit"
+	StudyTransformed       = "StudyTransformed"
 	StudyFeatureEngineered = "StudyFeaturesEngineered"
-	// StudyBaselined states that baseline models for each algorithm have been trained
-	StudyBaselined = "Baselined"
-	// StudySearched states that the primary model search for algorithm and hyper-parameters is complete
-	StudySearched = "Searched"
-	// StudyEnsembleCreated states that ensemble models were trained
-	StudyEnsembleCreated = "ModelsEnsembleCreated"
-	// StudyTested states that the best model has been tested against training and testing datasets
-	StudyTested = "Tested"
-	// StudyTested states that the best model has been tested against training and testing datasets
-	StudyTuned = "Tuned"
-
-	// StudyReported states that a Report resource has been generated for the Study
-	StudyReported  = "Reported"
-	StudyProfiled  = "Profiled"
-	StudyExplained = "Explained"
-	StudyAborted   = "Aborted"
-	// StudyPaused states that the execution of the Study is paused
-	StudyPaused = "Paused"
-	// StudySaved states that the Study has been archived in a database
-	StudySaved = "Saved"
-	// StudyCompleted states that the Study has completed execution
-	StudyCompleted     = "Completed"
-	StudyPartitioned   = "Partitioned"
-	StudyArchived      = "Archived"
-	StudyUnitTested    = "UnitTested"
-	StudyModelPromoted = "ModelPromoted"
+	StudyBaselined         = "Baselined"
+	StudySearched          = "Searched"
+	StudyEnsembleCreated   = "EnsembleCreated"
+	StudyTested            = "Tested"
+	StudyTuned             = "Tuned"
+	StudyReported          = "Reported"
+	StudyProfiled          = "Profiled"
+	StudyExplained         = "Explained"
+	StudyAborted           = "Aborted"
+	StudyPaused            = "Paused"
+	StudyCompleted         = "Completed"
+	StudyPartitioned       = "Partitioned"
+	StudyModelPromoted     = "ModelPromoted"
 )
 
 // StudyCondition describes the state of a Study at a certain point
@@ -150,146 +132,120 @@ type StudySpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:validation:Optional
-	Description *string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The reference to the Lab under which the Model resources created by the Study will be trained.
-	// If unspecified, the default Lab from the parent DataProduct will be used
+	// If unspecified, the default Lab from the parent Data Product will be used
 	// +kubebuilder:validation:Optional
-	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,5,opt,name=labRef"`
-	// The name of the Entity resource that will be used to train models with.
+	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,3,opt,name=labRef"`
+	// The name of the Dataset resource that will be used to train models.
 	// The dataset will be split into individual training, testing, and validation datasets
 	// +kubebuilder:validation:Required
 	// +required
-	DatasetName *string `json:"datasetName" protobuf:"bytes,6,opt,name=datasetName"`
+	DatasetName *string `json:"datasetName" protobuf:"bytes,4,opt,name=datasetName"`
 	// The machine learning task type (i.e. regression, classification)
 	// +kubebuilder:validation:Required
 	// +required
-	Task catalog.MLTask `json:"task" protobuf:"bytes,7,opt,name=task"`
+	Task catalog.MLTask `json:"task" protobuf:"bytes,5,opt,name=task"`
 	// The machine learning subtask relevant to the primary task (text classification, image object detection, etc.)
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	SubTask *catalog.MLSubtask `json:"subtask" protobuf:"bytes,8,opt,name=subtask"`
+	SubTask *catalog.MLSubtask `json:"subtask" protobuf:"bytes,6,opt,name=subtask"`
 	// FESearch specifies the parameters to perform a feature engineering search
 	// +kubebuilder:validation:Optional
-	FESearch FeatureEngineeringSearchSpec `json:"feSearch,omitempty" protobuf:"bytes,9,opt,name=feSearch"`
+	FESearch FeatureEngineeringSearchSpec `json:"feSearch,omitempty" protobuf:"bytes,7,opt,name=feSearch"`
 	// Set the imbalance dataset handling.
 	// +kubebuilder:validation:Optional
-	ImbalanceHandler ImbalanceHandlingSpec `json:"imbalanceHandler,omitempty" protobuf:"bytes,10,opt,name=imbalanceHandler"`
+	ImbalanceHandler ImbalanceHandlingSpec `json:"imbalanceHandler,omitempty" protobuf:"bytes,8,opt,name=imbalanceHandler"`
 	// Baseline specifies the parameters to generate baseline (default hyper-parameters) models
 	// +kubebuilder:validation:Optional
-	Baseline BaselineSpec `json:"baseline,omitempty" protobuf:"bytes,11,opt,name=baseline"`
+	Baseline BaselineSpec `json:"baseline,omitempty" protobuf:"bytes,9,opt,name=baseline"`
 	// Search specifies the configuration to perform the model search for the best algorithm and hyper-parameters
 	// +kubebuilder:validation:Optional
-	Search SearchSpec `json:"search,omitempty" protobuf:"bytes,12,opt,name=search"`
+	Search SearchSpec `json:"search,omitempty" protobuf:"bytes,10,opt,name=search"`
 	// Ensembles specifies to parameters to generate ensemble models
 	// +kubebuilder:validation:Optional
-	Ensembles EnsemblesSpec `json:"ensembles,omitempty" protobuf:"bytes,13,opt,name=ensembles"`
+	Ensembles EnsemblesSpec `json:"ensembles,omitempty" protobuf:"bytes,11,opt,name=ensembles"`
 	// TrainingTemplate specifies the configuration to train and evaluate models
 	// +kubebuilder:validation:Optional
-	TrainingTemplate TrainingSpec `json:"trainingTemplate,omitempty" protobuf:"bytes,14,opt,name=trainingTemplate"`
+	TrainingTemplate TrainingSpec `json:"trainingTemplate,omitempty" protobuf:"bytes,12,opt,name=trainingTemplate"`
 	// ForecastSpec specifies the parameters required when generating a forecasting model
 	// +kubebuilder:validation:Optional
-	FctTemplate ForecasterSpec `json:"fctTemplate,omitempty" protobuf:"bytes,16,opt,name=fctTemplate"`
+	ForecastTemplate ForecasterSpec `json:"forecastTemplate,omitempty" protobuf:"bytes,13,opt,name=forecastTemplate"`
 	// Schedule specifies the configuration to execute the Study at a later date
 	// +kubebuilder:validation:Optional
-	Schedule StudyScheduleSpec `json:"schedule,omitempty" protobuf:"bytes,17,opt,name=schedule"`
+	Schedule StudyScheduleSpec `json:"schedule,omitempty" protobuf:"bytes,14,opt,name=schedule"`
 	// Interpretability specifies the parameters to create interpretability visualizations for the final model
 	// +kubebuilder:validation:Optional
-	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,18,opt,name=interpretability"`
+	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,15,opt,name=interpretability"`
 	// +kubebuilder:validation:Optional
-	DriftDetector DriftModelSpec `json:"driftDetection,omitempty" protobuf:"bytes,19,opt,name=driftDetection"`
-	// Aborted indicates that the execution of the Study and associated Models should be permanently stopped
+	OutlierModel OutlierModelSpec `json:"outlierModel,omitempty" protobuf:"bytes,16,opt,name=outlierModel"`
+	// If true, the execution of the Study and associated Models will be
+	// permanently stopped, and all workloads related to the Study will be removed
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,20,opt,name=aborted"`
-	// Reported indicates that a report will be generated for the Study
+	Abort *bool `json:"abort,omitempty" protobuf:"varint,17,opt,name=abort"`
+	// If true, a report will be generated for the Study
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"reported,omitempty" protobuf:"varint,21,opt,name=reported"`
-	// Paused indicates that the execution of new workloads associated with the Study should be paused
+	Report *bool `json:"report,omitempty" protobuf:"varint,18,opt,name=report"`
+	// If true, the execution of new workloads associated with the Study will be paused
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"varint,22,opt,name=paused"`
-	// Profiled indicates that the Study will be profiled after the conclusion of it's model search
+	Pause *bool `json:"pause,omitempty" protobuf:"varint,19,opt,name=pause"`
+	// If true, the Study will be profiled after the conclusion of it's model search
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Profiled *bool `json:"profiled,omitempty" protobuf:"varint,23,opt,name=profiled"`
-	// ModelPublished indicates that a Docker image will be created containing the best model produced by the Study
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	ModelPublished *bool `json:"modelPublished,omitempty" protobuf:"varint,24,opt,name=modelPublished"`
-	// ModelImagePushed indicates that if a Docker image of the best model will be pushed to a Docker image registry
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"varint,25,opt,name=modelImagePushed"`
-	// ModelExplained indicates if interpretability diagrams, as specified
-	// by the Interpretability field, will be produced for the final model
+	Profile *bool `json:"profile,omitempty" protobuf:"varint,20,opt,name=profile"`
+	// If true, Shapley values (and relevant visualizations) will be calculated for the highest-performing Model
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	ModelExplained *bool `json:"modelExplained,omitempty" protobuf:"varint,26,opt,name=modelExplained"`
-	// Fast indicates if ModelsCount associated with the Study should skip profiling, explaining, and reporting
+	Explain *bool `json:"explain,omitempty" protobuf:"varint,21,opt,name=explain"`
+	// Fast indicates if Models associated with the Study should skip profiling, explaining, and reporting
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Fast *bool `json:"fast,omitempty" protobuf:"varint,27,opt,name=fast"`
-	// The name of the VirtualBucket where Study artifacts (metadata, reports, and model artifacts) generated by
-	// the Study will be stored. If empty, it will default to the default VirtualBucket of the Data Product.
+	Fast *bool `json:"fast,omitempty" protobuf:"varint,22,opt,name=fast"`
+	// The name of the Virtual Bucket where Study artifacts (metadata, reports, and model artifacts) generated by
+	// the Study will be stored. If empty, it will default to the default Virtual Bucket of the Data Product
 	// +kubebuilder:validation:Optional
-	ArtifactBucketName *string `json:"artifactBucketName,omitempty" protobuf:"bytes,28,opt,name=artifactBucketName"`
+	ArtifactBucketName *string `json:"artifactBucketName,omitempty" protobuf:"bytes,23,opt,name=artifactBucketName"`
 	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,29,opt,name=owner"`
-	// CompilerSpec specifies the configuration to compile the best-selected model to a binary (currently unimplemented)
-	//+kubebuilder:validation:Optional
-	Compilation catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,30,opt,name=compilation"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,24,opt,name=owner"`
 	// Indicates if the Study is a template, in which case it will not be executed
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Template *bool `json:"template,omitempty" protobuf:"varint,31,opt,name=template"`
-	// Indicates if the Study is flagged
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,32,opt,name=flagged"`
+	Template *bool `json:"template,omitempty" protobuf:"varint,25,opt,name=template"`
 	// The notification specification that determines which notifiers will receive Alerts generated by the object
 	//+kubebuilder:validation:Optional
-	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,33,opt,name=notification"`
-	// ModelImage specifies the configuration to upload Docker images of models to an image registry
-	//+kubebuilder:validation:Optional
-	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,34,opt,name=modelImage"`
+	Notification *catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,26,opt,name=notification"`
 	// GarbageCollectionSpec specifies the configuration to automatically clean-up unused models
 	//+kubebuilder:validation:Optional
-	GC GarbageCollectionSpec `json:"gc,omitempty" protobuf:"bytes,35,opt,name=gc"`
-	// The time-to-live, in seconds, for Model resources produced by the Study
-	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,36,opt,name=ttl"`
+	GC *GarbageCollectionSpec `json:"gc,omitempty" protobuf:"bytes,27,opt,name=gc"`
 	// ModelVersion specifies the version assigned to all the Model resources produced by the Study
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,37,opt,name=modelVersion"`
+	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,28,opt,name=modelVersion"`
 	// The time, in seconds, after which the execution of the Study will be forcefully aborted (4 hours, by default)
-	// +kubebuilder:default:= 14400
+	// +kubebuilder:default:=14400
 	// +kubebuilder:validation:Optional
-	Timeout *int32 `json:"timeout,omitempty" protobuf:"varint,38,opt,name=timeout"`
-	// Not implemented. For future use. If true,generate code when the best model
-	// +kubebuilder:default:=false
+	Timeout *int32 `json:"timeout,omitempty" protobuf:"varint,29,opt,name=timeout"`
+	// UnitTestsTemplate defines the test suite that will be executed on the model produced by the Study
 	// +kubebuilder:validation:Optional
-	CodeGenerated *bool `json:"codeGenerated,omitempty" protobuf:"varint,39,opt,name=codeGenerated"`
-	// A template for models unit tests
-	// +kubebuilder:validation:Optional
-	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,40,opt,name=unitTestsTemplate"`
+	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,30,opt,name=unitTestsTemplate"`
 	// In case of a group by, those are the group locations
 	// +kubebuilder:validation:Optional
-	GroupLocations GroupSplitLocationsSpec `json:"groupLocations,omitempty" protobuf:"bytes,41,opt,name=groupLocations"`
-	// The model class for this study if the model was created by a model class
+	GroupLocations GroupSplitLocationsSpec `json:"groupLocations,omitempty" protobuf:"bytes,31,opt,name=groupLocations"`
+	// The Model Class which created the Study, if applicable
 	// +kubebuilder:validation:Optional
-	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,42,opt,name=modelClassName"`
-	// If this study was created by a model class run, this is the run name
+	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,32,opt,name=modelClassName"`
+	// The Model Class Run which created the Study, if applicable
 	// +kubebuilder:validation:Optional
-	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,43,opt,name=modelClassRunName"`
+	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,33,opt,name=modelClassRunName"`
 	// Define the serving policy once the best model is created.
 	// by default there is no serving policy
 	// +kubebuilder:validation:Optional
-	Serving ServingSpec `json:"serving,omitempty" protobuf:"bytes,44,opt,name=serving"`
+	Serving ServingSpec `json:"serving,omitempty" protobuf:"bytes,34,opt,name=serving"`
 }
 
 // StudyStatus defines the observed state of a Study
@@ -299,39 +255,42 @@ type StudyStatus struct {
 	ModelsCount int32 `json:"modelsCount,omitempty" protobuf:"varint,1,opt,name=modelsCount"`
 	// CompletedAt represents the time at which the Study was marked as completed, failed, or aborted
 	// +kubebuilder:validation:Optional
-	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,3,opt,name=completedAt"`
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,2,opt,name=completedAt"`
 	// The name of the Model resource which was determined to be the highest-performing
 	// +kubebuilder:validation:Optional
-	BestModel string `json:"bestModel,omitempty" protobuf:"bytes,4,opt,name=bestModel"`
+	BestModel string `json:"bestModel,omitempty" protobuf:"bytes,3,opt,name=bestModel"`
 	// The score of the Model resource which was determined to be the highest-performing
 	// +kubebuilder:validation:Optional
-	BestModelScore float64 `json:"bestModelScore,omitempty" protobuf:"bytes,5,opt,name=bestModelScore"`
+	BestModelScore float64 `json:"bestModelScore,omitempty" protobuf:"bytes,4,opt,name=bestModelScore"`
 	// The URI of the raw profile data produced by the Study
 	// +kubebuilder:validation:Optional
-	ProfileURI string `json:"profileURI" protobuf:"bytes,6,opt,name=profileURI"`
+	ProfileLocation catalog.FileLocation `json:"profileLocation" protobuf:"bytes,5,opt,name=profileLocation"`
 	// The name of the Report resource produced by the Study
 	// +kubebuilder:validation:Optional
-	ReportURI string `json:"reportURI,omitempty" protobuf:"bytes,7,opt,name=reportURI"`
+	ReportLocation catalog.FileLocation `json:"reportLocation,omitempty" protobuf:"bytes,6,opt,name=reportLocation"`
 	// Reference to the report object that was generated for the dataset, which exists in the same Location Product namespace
 	// as the object
 	// +kubebuilder:validation:Optional
-	ReportName string `json:"reportName,omitempty" protobuf:"bytes,8,opt,name=reportName"`
+	ReportName string `json:"reportName,omitempty" protobuf:"bytes,7,opt,name=reportName"`
 	// The phase of the Study
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
-	Phase StudyPhase `json:"phase" protobuf:"bytes,9,opt,name=phase"`
-	// ObservedGeneration is the last generation that was acted on
+	Phase StudyPhase `json:"phase" protobuf:"bytes,8,opt,name=phase"`
+	// ObservedGeneration is the last generation that was reconciled
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,10,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,9,opt,name=observedGeneration"`
 	// TrainDatasetLocation specifies the location of the training dataset
 	// +kubebuilder:validation:Optional
-	TrainDatasetLocation catalog.FileLocation `json:"trainDatasetLocation,omitempty" protobuf:"bytes,11,opt,name=trainDatasetLocation"`
+	TrainDatasetLocation catalog.FileLocation `json:"trainDatasetLocation,omitempty" protobuf:"bytes,10,opt,name=trainDatasetLocation"`
 	// TestDatasetLocation specifies the location of the testing dataset
 	// +kubebuilder:validation:Optional
-	TestDatasetLocation catalog.FileLocation `json:"testDatasetLocation,omitempty" protobuf:"bytes,12,opt,name=testDatasetLocation"`
-	// ValidationDataset specifies the location of the validation dataset
+	TestDatasetLocation catalog.FileLocation `json:"testDatasetLocation,omitempty" protobuf:"bytes,11,opt,name=testDatasetLocation"`
+	// ValidationDatasetLocation specifies the location of the validation dataset
 	// +kubebuilder:validation:Optional
-	ValidationDatasetLocation catalog.FileLocation `json:"validationDatasetLocation,omitempty" protobuf:"bytes,13,opt,name=validationDatasetLocation"`
+	ValidationDatasetLocation *catalog.FileLocation `json:"validationDatasetLocation,omitempty" protobuf:"bytes,12,opt,name=validationDatasetLocation"`
+	// OptimizerLocation specifies the location of the Optuna optimizer relevant to the Study
+	// +kubebuilder:validation:Optional
+	OptimizerLocation *catalog.FileLocation `json:"optimizerLocation,omitempty" protobuf:"bytes,13,opt,name=optimizerLocation"`
 	// The Kubernetes-internal ID of the last Model resource generated by the Study
 	LastModelID *int64 `json:"lastModelID,omitempty" protobuf:"varint,14,opt,name=lastModelID"`
 	// In the case of failure, the Study resource controller will set this field with a failure reason
@@ -352,51 +311,44 @@ type StudyStatus struct {
 	// The progress percentage of the Study, which is derived from the Study's current phase
 	// +kubebuilder:validation:Optional
 	Progress int32 `json:"progress" protobuf:"varint,20,opt,name=progress"`
-	// Sha 256 of the data sig
-	// +kubebuilder:validation:Optional
 	// TrainingDataHash specifies the hashes for datasets used by the Study
 	//+kubebuilder:validation:Optional
-	TrainingDataHash DataHashes `json:"trainingDataHash,omitempty" protobuf:"bytes,22,opt,name=trainingDataHash"`
+	TrainingDataHash DataHashes `json:"trainingDataHash,omitempty" protobuf:"bytes,21,opt,name=trainingDataHash"`
 	// The type of trigger which started the Study
-	//+kubebuilder:validation:Optional
-	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,23,opt,name=triggeredBy"`
+	// +kubebuilder:validation:Optional
+	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,22,opt,name=triggeredBy"`
 	// Logs specifies the location of logs produced by workloads associated with the Study
 	//+kubebuilder:validation:Optional
-	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,24,opt,name=logs"`
+	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,23,opt,name=logs"`
 	// FeatureEngineeringStatus contains the status of the feature engineering phase
 	//+kubebuilder:validation:Optional
-	FeatureEngineeringStatus StudyPhaseStatus `json:"featureEngineering,,omitempty" protobuf:"bytes,25,opt,name=featureEngineering"`
+	FeatureEngineeringStatus StudyPhaseStatus `json:"featureEngineering,,omitempty" protobuf:"bytes,24,opt,name=featureEngineering"`
 	// BaselineStatus contains the status of the baseline phase
 	//+kubebuilder:validation:Optional
-	BaselineStatus StudyPhaseStatus `json:"baseline,omitempty" protobuf:"bytes,26,opt,name=baseline"`
+	BaselineStatus StudyPhaseStatus `json:"baseline,omitempty" protobuf:"bytes,25,opt,name=baseline"`
 	// SearchStatus contains the status of the model search phase
 	//+kubebuilder:validation:Optional
-	SearchStatus StudyPhaseStatus `json:"search,omitempty" protobuf:"bytes,27,opt,name=search"`
+	SearchStatus StudyPhaseStatus `json:"search,omitempty" protobuf:"bytes,26,opt,name=search"`
 	// EnsembleStatus contains the status of the ensemble phase
 	//+kubebuilder:validation:Optional
-	EnsembleStatus StudyPhaseStatus `json:"ensemble,omitempty" protobuf:"bytes,28,opt,name=ensemble"`
+	EnsembleStatus StudyPhaseStatus `json:"ensemble,omitempty" protobuf:"bytes,27,opt,name=ensemble"`
 	// TestStatus contains the status of the testing phase
 	//+kubebuilder:validation:Optional
-	TestStatus StudyPhaseStatus `json:"test,omitempty" protobuf:"bytes,29,opt,name=test"`
+	TestStatus StudyPhaseStatus `json:"test,omitempty" protobuf:"bytes,28,opt,name=test"`
 	// ExplainStatus contains the status of the explaining phase
 	//+kubebuilder:validation:Optional
-	ExplainStatus StudyPhaseStatus `json:"explain,omitempty" protobuf:"bytes,30,opt,name=explain"`
+	ExplainStatus StudyPhaseStatus `json:"explain,omitempty" protobuf:"bytes,29,opt,name=explain"`
 	// OutlierDetection is the status for outlier detection
 	//+kubebuilder:validation:Optional
-	DriftDetection DriftDetectorStatus `json:"driftDetection,omitempty" protobuf:"bytes,31,opt,name=driftDetection"`
+	DriftDetection DriftDetectorStatus `json:"driftDetection,omitempty" protobuf:"bytes,30,opt,name=driftDetection"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,32,opt,name=updatedAt"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,31,opt,name=updatedAt"`
 	// BestFE specifies the best feature engineering pipeline produced by the Study
 	//+kubebuilder:validation:Optional
-	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,33,opt,name=bestFE"`
+	BestFeatureEngineering *FeatureEngineeringSpec `json:"bestFeatureEngineering,omitempty" protobuf:"bytes,32,opt,name=bestFeatureEngineering"`
 	// GC specifies the status of garbage collection relevant to the Study
-	GC GarbageCollectionStatus `json:"gc,omitempty" protobuf:"bytes,34,opt,name=gc"`
-	// Study group by
-	GroupBy StudyGroupByStatus `json:"groupby,omitempty" protobuf:"bytes,35,opt,name=groupby"`
-	// The status of the model, when deploying via the stages
-	// +kubebuilder:validation:Optional
-	Usage catalog.ResourceConsumption `json:"usage,omitempty" protobuf:"bytes,36,rep,name=usage"`
+	GC GarbageCollectionStatus `json:"gc,omitempty" protobuf:"bytes,33,opt,name=gc"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
@@ -410,7 +362,7 @@ type ModelResult struct {
 	Name string `json:"name" protobuf:"bytes,1,opt,name=name"`
 	// The type of estimator of the model
 	// +kubebuilder:validation:Optional
-	Alg string `json:"alg,omitempty" protobuf:"bytes,2,opt,name=alg"`
+	Algorithm string `json:"algorithm,omitempty" protobuf:"bytes,2,opt,name=algorithm"`
 	// The objective score of the model
 	// +kubebuilder:validation:Optional
 	Score float64 `json:"score,omitempty" protobuf:"bytes,3,opt,name=score"`
@@ -461,26 +413,17 @@ type StudyPhaseStatus struct {
 
 // GarbageCollectionStatus contains the records for garbage-collected models
 type GarbageCollectionStatus struct {
-	// The number of models that were collected, equal to len(Models)
+	// The number of models that were collected, equal to the length of Models
 	// +kubebuilder:validation:Optional
 	CollectedModelsCount int32 `json:"collectedModelsCount,omitempty" protobuf:"varint,1,opt,name=collectedModelsCount"`
-	// The collection of models that were archived
+	// The collection of models that were deleted
 	// +kubebuilder:validation:Optional
 	Models []ModelResult `json:"models,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,rep,name=models"`
 }
 
 type DriftDetectorStatus struct {
-	// The location of the prediction outlier detection
-	OutlierModelURI string `json:"outlierModelURI,omitempty" protobuf:"bytes,1,opt,name=outlierModelURI"`
-}
-
-type StudyGroupByStatus struct {
-	// The locations of the datasets profile files. Each file is the group
-	// +kubebuilder:validation:Optional
-	StudiesURI string `json:"studiesURI,omitempty" protobuf:"bytes,1,opt,name=studiesURI"`
-	// Holds the worker on going result, when a worker finish, we update the location of thier result files
-	// +kubebuilder:validation:Optional
-	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,2,rep,name=workerResults"`
+	// The location of the drift detector model
+	OutlierModelLocation string `json:"outlierModelURI,omitempty" protobuf:"bytes,1,opt,name=outlierModelURI"`
 }
 
 // SearchSpec specifies the configuration for a distributed model search
@@ -492,30 +435,24 @@ type SearchSpec struct {
 	// Pruner specifies the configuration to run a model search using a pruning algorithm. Using a pruning
 	// algorithm allows you to train a large number of candidate models with a subset of the dataset
 	// +kubebuilder:validation:Optional
-	Pruner PrunerSpec `json:"pruner,omitempty" protobuf:"bytes,2,opt,name=pruner"`
-	// The maximum cost that can be incurred before stopping the model search (applicable for deep learning models)
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:default:=100
-	// +kubebuilder:validation:Minimum=1
-	// +kubebuilder:validation:Maximum=1000
-	MaxCost *int32 `json:"maxCost,omitempty" protobuf:"varint,3,opt,name=maxCost"`
+	Pruner *PrunerSpec `json:"pruner,omitempty" protobuf:"bytes,2,opt,name=pruner"`
 	// The maximum number of minutes, that the model search can run for
 	// +kubebuilder:default:=60
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=10000
 	// +kubebuilder:validation:Optional
-	MaxTime *int32 `json:"maxTime,omitempty" protobuf:"varint,4,opt,name=maxTime"`
+	MaxTime int32 `json:"maxTime,omitempty" protobuf:"varint,4,opt,name=maxTime"`
 	// The maximum number of candidate models that will be sampled and trained
 	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=1000
 	// +kubebuilder:validation:Optional
-	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,5,opt,name=maxModels"`
-	// The minimum best score needed to finish the search. The system will finish the search when the minimum is reached.
-	// Note that this number can be negative for a regression.
+	MaxModels int32 `json:"maxModels,omitempty" protobuf:"varint,5,opt,name=maxModels"`
+	// The maximum value for the primary objective needed to finish the search, after which the
+	// search will automatically conclude if it is reached
 	// +kubebuilder:default:=9999999999
 	// +kubebuilder:validation:Optional
-	MinBestScore *float64 `json:"minBestScore,omitempty" protobuf:"bytes,6,opt,name=minBestScore"`
+	MaxScore *float64 `json:"maxScore,omitempty" protobuf:"bytes,6,opt,name=maxScore"`
 	// The desired number of trainers that will train candidate models in parallel. The number
 	// of trainers is restricted based on the allowance provided by the active License
 	// +kubebuilder:default:=1
@@ -524,13 +461,14 @@ type SearchSpec struct {
 	// +kubebuilder:validation:Minimum=0
 	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,7,opt,name=trainers"`
 	// The number of top candidate models that will be moved to the testing phase once the model search is complete.
-	// By default, only the best model will be retained
+	// If unspecified, only the best model will be retained
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=5
 	Test *int32 `json:"test,omitempty" protobuf:"varint,8,opt,name=test"`
 	// The number of top candidate models, sorted by their objective score, that will be retained in
-	// the case that garbage collection is enabled. All other models will be archived
+	// the case that garbage collection is enabled. If this number is less than Test, then RetainTop will
+	// be ignored and the value of Test will be used instead
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=100
@@ -540,49 +478,47 @@ type SearchSpec struct {
 	// +kubebuilder:default:=60
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=2400
+	// +kubebuilder:validation:Optional
 	RetainFor *int32 `json:"retainedFor,omitempty" protobuf:"varint,10,opt,name=retainedFor"`
 	// SearchSpace specifies the algorithms available to candidate models
 	// +kubebuilder:validation:Optional
 	SearchSpace AlgorithmSearchSpaceSpec `json:"searchSpace,omitempty" protobuf:"bytes,11,opt,name=searchSpace"`
-	// The number of new models produced by the search which, if there is no improvement
-	// in score, the model search will conclude
+	// EarlyStop specifies the configuration for early stopping
 	// +kubebuilder:validation:Optional
-	EarlyStop EarlyStopSpec `json:"earlyStop,omitempty" protobuf:"bytes,12,opt,name=earlyStop"`
+	EarlyStop *EarlyStopSpec `json:"earlyStop,omitempty" protobuf:"bytes,12,opt,name=earlyStop"`
 	// The objective metric that will be measured against all models to evaluate their performance
 	// +kubebuilder:validation:Optional
-	Objective *catalog.ObjectiveSpec `json:"objective,omitempty" protobuf:"bytes,14,opt,name=objective"`
+	Objective catalog.ObjectiveSpec `json:"objective,omitempty" protobuf:"bytes,13,opt,name=objective"`
 	// The second objective metric that will be measured and evaluated in tandem with the primary objective.
 	// The model search optimizer will attempt to optimize both metrics
 	// +kubebuilder:validation:Optional
-	Objective2 *catalog.ObjectiveSpec `json:"objective2,omitempty" protobuf:"bytes,15,opt,name=objective2"`
-	// Tune best model
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Tune *bool `json:"tune,omitempty" protobuf:"varint,16,opt,name=tune"`
+	SecondaryObjective *catalog.ObjectiveSpec `json:"secondaryObjective,omitempty" protobuf:"bytes,14,opt,name=secondaryObjective"`
 	// +kubebuilder:default:="maximize"
 	// +kubebuilder:validation:Optional
-	Goal *catalog.GoalType `json:"goal,omitempty" protobuf:"bytes,17,opt,name=goal"`
+	Goal catalog.GoalType `json:"goal,omitempty" protobuf:"bytes,15,opt,name=goal"`
 }
 
 // EarlyStopSpec specifies the configuration to automatically abort a model search
-// if further improvements in model performance cannot be produced
+// when improvements in the objective metric are not being produced
 type EarlyStopSpec struct {
-	// Indicates if early stopping is enabled
+	// Enabled indicates if early stopping is enabled
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// The number of models to train before model objective metrics will begin to be checked for early stopping
+	// The number of models to train before model objective metrics will begin to be checked for early stopping.
+	// If unspecified, Modela will ignore the first 10 models by default
 	// +kubebuilder:default:=20
 	// +kubebuilder:validation:Optional
 	Initial *int32 `json:"initial,omitempty" protobuf:"varint,2,opt,name=initial"`
-	// The number of models with no improvement in score that are required to abort the model search
+	// The number of models with no improvement in score that are required to abort the model search.
+	// If unspecified, Modela will abort the search after 20 models by default
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
-	MinModelsWithNoProgress *int32 `json:"minModelsWithNoProgress,omitempty" protobuf:"varint,3,opt,name=minModelsWithNoProgress"`
+	ModelsWithNoProgress *int32 `json:"modelsWithNoProgress,omitempty" protobuf:"varint,3,opt,name=modelsWithNoProgress"`
 }
 
-// The spec for generating a density model for this ModelClass.
-type DriftModelSpec struct {
+// OutlierModelSpec specifies the configuration to train an outlier model
+type OutlierModelSpec struct {
 	// Indicates if density models should be created.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -613,17 +549,16 @@ type EnsemblesSpec struct {
 	Top *int32 `json:"top,omitempty" protobuf:"varint,4,opt,name=top"`
 }
 
-// BaselineSpec specifies the configuration to produce baseline models
+// BaselineSpec specifies the configuration for the baseline phase of a Study
 type BaselineSpec struct {
-	// Indicates if baseline models will be produced. Enabling baseline will create a model for each
-	// algorithm in the parent ModelClass's search space with default hyper-parameters
+	// Indicates if baseline (default hyper-parameters) models will be trained
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// Baselines contains the collection of algorithms that models will be created with
+	// Algorithms contains a list of estimators that will be trained
 	// +kubebuilder:validation:Optional
-	Baselines []catalog.ClassicEstimatorName `json:"baselines,omitempty" protobuf:"bytes,2,rep,name=baselines"`
-	// Indicates if models will be created for every algorithm
+	Algorithms []catalog.ClassicEstimatorName `json:"baselines,omitempty" protobuf:"bytes,2,rep,name=baselines"`
+	// All indicates if a baseline model will be created for every estimator
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	All *bool `json:"all,omitempty" protobuf:"varint,3,opt,name=all"`
@@ -639,19 +574,17 @@ type AlgorithmSearchSpaceSpec struct {
 	// If empty, all algorithms will be available for training
 	// +kubebuilder:validation:Optional
 	Exclude []catalog.ClassicEstimatorName `json:"exclude,omitempty" protobuf:"bytes,2,rep,name=exclude"`
-	// Set a custom hyper parameter spaace.
-	// Specify custom ranges per estimator.
+	// Custom specifies custom hyperparameter ranges for specific algorithms
 	// +kubebuilder:validation:Optional
 	Custom []AlgorithmParameterRange `json:"custom,omitempty" protobuf:"bytes,3,rep,name=custom"`
 }
 
-// Define a single custom search spec for a single alg
+// AlgorithmParameterRange defines a custom hyperparameter range for a single algorithm
 type AlgorithmParameterRange struct {
 	// The algorithm name
 	// +kubebuilder:validation:Optional
 	Name catalog.ClassicEstimatorName `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Specify one or more parameters ranges. This parameters will override the default
-	// ranges
 	// +kubebuilder:validation:Optional
 	Ranges []catalog.ParameterRange `json:"ranges,omitempty" protobuf:"bytes,2,rep,name=ranges"`
 }
@@ -792,96 +725,50 @@ type FeatureEngineeringSearchSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// The method to use when handling an imbalanced dataset
-	// +kubebuilder:default:=auto
-	// +kubebuilder:validation:Optional
-	ImbalanceHandler *catalog.ImbalanceHandling `json:"imbalanceHandler,omitempty" protobuf:"bytes,2,opt,name=imbalancedHandler"`
 	// The algorithm to use when evaluating models with different feature engineering pipelines
 	// +kubebuilder:validation:Optional
-	Estimator *catalog.ClassicEstimatorName `json:"estimator,omitempty" protobuf:"bytes,3,opt,name=estimator"`
-	// The number of models to sample, after which the feature engineering with the highest
-	// score will be used with Model resources produced by the primary model search of the parent ModelClass
+	Estimator catalog.ClassicEstimatorName `json:"estimator,omitempty" protobuf:"bytes,3,opt,name=estimator"`
+	// The number of models to sample, after which the feature engineering search will conclude
 	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Optional
-	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,4,opt,name=maxModels"`
+	MaxModels int32 `json:"maxModels,omitempty" protobuf:"varint,4,opt,name=maxModels"`
 	// The deadline, in seconds, for models produced by the search to be trained
 	// +kubebuilder:default:=3600
 	// +kubebuilder:validation:Optional
-	MaxTimeSec *int32 `json:"maxTime,omitempty" protobuf:"varint,5,opt,name=maxTime"`
+	MaxTime int32 `json:"maxTime,omitempty" protobuf:"varint,5,opt,name=maxTime"`
 	// The desired number of trainers that will train candidate models in parallel. The number
 	// of trainers is restricted based on the allowance provided by the active License
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	MaxTrainers *int32 `json:"maxTrainers,omitempty" protobuf:"varint,6,opt,name=maxTrainers"`
-	// The number percentage (0 through 100) of the dataset to train models with
-	// +kubebuilder:default:=100
-	// +kubebuilder:validation:Optional
-	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"varint,7,opt,name=samplePct"`
-	// Indicates if models produced by the feature engineering search should be
-	// automatically removed at the conclusion of the search
-	// +kubebuilder:default:=true
-	AutoRemove *bool `json:"autoRemove,omitempty" protobuf:"varint,8,opt,name=autoRemove"`
+	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,6,opt,name=trainers"`
 	// If true, if a feature engineering pipeline was previously produced for
 	// the same dataset it will be used as a starting point for the search
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Reuse *bool `json:"reuse,omitempty" protobuf:"varint,9,opt,name=reuse"`
-	// Specification for feature selection.
-	// successful ModelClass.
+	// Specification for feature selection
 	// +kubebuilder:validation:Optional
-	FSelection FeatureSelectionSpec `json:"feSelection,omitempty" protobuf:"bytes,10,opt,name=feSelection"`
+	FeatureSelection *FeatureSelectionSpec `json:"featureSelection,omitempty" protobuf:"bytes,10,opt,name=featureSelection"`
 	// The number of new models produced by the fe search which, if there is no improvement
 	// in score, the model search will conclude
 	// +kubebuilder:validation:Optional
-	EarlyStop EarlyStopSpec `json:"earlyStop,omitempty" protobuf:"bytes,12,opt,name=earlyStop"`
-}
-
-// ModelClassStatus defines the observed state of a ModelClass
-
-type Level struct {
-	// The level name, must be unique
-	Name string `json:"name,omitempty" protobuf:"bytes,1,rep,name=name"`
-	// The key for the levels
-	Index []string `json:"index,omitempty" protobuf:"bytes,2,rep,name=index"`
-	// The forecast horizon
-	Horizon *int32 `json:"horizon,omitempty" protobuf:"varint,3,opt,name=horizon"`
-	// The freq of the level
-	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,4,opt,name=freq"`
-	// The aggregate function used to roll up the lower level
-	Aggregate *catalog.Aggregate `json:"aggregate,omitempty" protobuf:"bytes,5,opt,name=aggregate"`
-}
-
-// ModelImageSpec specifies the destination of Docker images produced by a ModelClass
-type ModelImageSpec struct {
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:default:=false
-	Exist *bool `json:"exist,omitempty" protobuf:"varint,1,opt,name=exist"`
-	// The full name of the image to upload to
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	ImageName *string `json:"imageName,omitempty" protobuf:"bytes,2,opt,name=imageName"`
-	// The name of the ConnectionName resource to an external Docker image registry
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	RegistryConnection *string `json:"registryConnectionName,omitempty" protobuf:"bytes,3,opt,name=registryConnectionName"`
+	EarlyStop *EarlyStopSpec `json:"earlyStop,omitempty" protobuf:"bytes,12,opt,name=earlyStop"`
 }
 
 // GarbageCollectionSpec specifies the configuration to garbage-collect unused Model resources
 type GarbageCollectionSpec struct {
-	// Indicates if all models of the ModelClass, excluding the highest-performing model, will be archived
+	// Enabled indicates if garbage collection is enabled, in which case all models will be deleted at the end of the
+	// Study excluding an amount of the top highest-performing models defined by the SearchSpec of the Study
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=true
-	CollectAtStudyEnd *bool `json:"collectAtModelClassEnd,omitempty" protobuf:"varint,1,opt,name=collectAtModelClassEnd"`
-	// Indicates if multiple models with the same algorithm are produced by the ModelClass, the
-	// model with the lowest score will be garbage-collected
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// If true, the best models per algorithm will be prevented from deletion
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=false
-	KeepOnlyBestModelPerAlgorithm *bool `json:"keepOnlyBestModelPerAlgorithm,omitempty" protobuf:"varint,2,opt,name=keepOnlyBestModelPerAlgorithm"`
-	// Indicates if we should keep pruned models
-	// model with the lowest score will be garbage-collected
+	KeepBestModelPerAlgorithm *bool `json:"keepBestModelPerAlgorithm,omitempty" protobuf:"varint,2,opt,name=keepBestModelPerAlgorithm"`
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=false
-	KeepPrunedModel *bool `json:"keepPrunedModels,omitempty" protobuf:"varint,3,opt,name=keepPrunedModels"`
+	KeepPrunedModels *bool `json:"keepPrunedModels,omitempty" protobuf:"varint,3,opt,name=keepPrunedModels"`
 }
 
 // ImbalanceHandlingSpec specifies the configuration to process an imbalanced dataset

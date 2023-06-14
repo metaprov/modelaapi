@@ -1054,7 +1054,7 @@ message DataProductSpec {
   // +kubebuilder:validation:Optional
   optional string defaultBucketName = 8;
 
-  // Task specifies the default machine learning task of the product (classification, regression, etc.)
+  // Task specifies the default machine learning task of the Data Product (classification, regression, etc.)
   // +kubebuilder:validation:Optional
   optional string task = 9;
 
@@ -1080,13 +1080,6 @@ message DataProductSpec {
   // The default resource allocation for model serving workloads that takes place under the DataProduct
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec servingResources = 14;
-
-  // RetriesOnFailure defines the backoff limit for Jobs created by resources under the Data Product.
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Maximum=10
-  // +kubebuilder:validation:Optional
-  optional int32 retriesOnFailure = 15;
 
   // The default priority level assigned to Jobs created by resources under the Data Product
   // +kubebuilder:validation:Optional
@@ -1464,8 +1457,7 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
-  // The name of the DataProductVersion which describes the version of the resource
-  // that exists in the same DataProduct namespace as the resource
+  // VersionName references the name of a Data Product Version that describes the version of the resource
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Required
@@ -1480,10 +1472,6 @@ message DatasetSpec {
   // +kubebuilder:default:=""
   // +required
   optional string dataSourceName = 3;
-
-  // In case of training data, this is the model class name that created it.
-  // +kubebuilder:validation:Optional
-  optional string featureGroupName = 4;
 
   // User-provided description of the object
   // +kubebuilder:validation:MaxLength=512
@@ -1522,8 +1510,7 @@ message DatasetSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation origin = 13;
 
   // Location is the final location of the data which was copied from the `Origin` location during the ingestion phase.
-  // This field is set by the Dataset resource controller and should not be changed by any end-users. This location
-  // points strictly to a flat file.
+  // This field is set by the Dataset resource controller and should not be changed by any end-users
   // +kubebuilder:validation:Required
   // +required
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation location = 14;
@@ -1533,7 +1520,7 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional string artifactBucketName = 15;
 
-  // Resources specifies the resource requirements which the Dataset will request when creating Jobs to analyze the data
+  // Resources specifies the resource requirements that will be allocated for the Dataset
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 16;
 
@@ -1547,12 +1534,11 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional string type = 18;
 
-  // The specification for how the data should be sampled, if applicable. Sampling may improve dataset and model creation
-  // time in the case of very large datasets that are being rapidly prototyped and iterated on
+  // Sample specifies the configuration to sample the dataset's data
   // +kubebuilder:validation:Optional
   optional SampleSpec sample = 19;
 
-  // If the dataset is Synthetic , this is the syntactic spec
+  // Synthetic specifies to configuration to augment the dataset with synthetic data
   // +kubebuilder:validation:Optional
   optional SyntheticSpec synthetic  = 20;
 
@@ -1570,8 +1556,7 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional CorrelationSpec correlation = 23;
 
-  // Indicates if the Dataset should be quickly processed.
-  // If enabled, the validation, profiling, and reporting phases will be skipped.
+  // Indicates if the Dataset should be quickly processed. If enabled, the validation, profiling, and reporting will be skipped
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool fast = 24;
@@ -1616,18 +1601,21 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   repeated string key = 33;
 
-  // The model class for this dataset if the dataset was created by a model class
+  // ModelClassName specifies the name of the Model Class which created the Dataset, if applicable
   // +kubebuilder:validation:Optional
   optional string modelClassName = 34;
 
-  // If this report was created by a model class run, this is the run name
+  // ModelClassRunName specifies the name of the Model Class Run which created the Dataset, if applicable
   // +kubebuilder:validation:Optional
   optional string modelClassRunName = 35;
 
-  // FeatureGroups contains the list of feature groups that were used to create the dataset
-  // This is used for lineage.
+  // FeatureGroups contains the list of feature groups that were used to construct the dataset, if applicable
   // +kubebuilder:validation:Optional
   repeated k8s.io.api.core.v1.ObjectReference featureGroups = 36;
+
+  // FeatureGroupName specifies the name of the Feature Group that created the Dataset, if applicable
+  // +kubebuilder:validation:Optional
+  optional string featureGroupName = 37;
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The
@@ -1702,10 +1690,6 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudyAt = 10;
 
-  // In the case of failure, the Dataset resource controller will set this field with a failure reason
-  // +kubebuilder:validation:Optional
-  optional string failureReason = 12;
-
   // In the case of failure, the Dataset resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
   optional string failureMessage = 13;
@@ -1722,10 +1706,6 @@ message DatasetStatus {
 
   // The log file specification that determines the location of all logs produced by the object
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 16;
-
-  // If the dataset is derived, the name of the Dataset that the object is derived from
-  // +kubebuilder:validation:Optional
-  optional string derivedFromDataset = 17;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional

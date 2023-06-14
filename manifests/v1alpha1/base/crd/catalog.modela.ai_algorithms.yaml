@@ -68,7 +68,7 @@ spec:
                 description: IntegerParameters is the list of integer hyper parameter
                   ranges.
                 items:
-                  description: Parameter range indicate a single hyper parameter range
+                  description: ParameterRange defines the limits for a single hyperparameter
                   properties:
                     choices:
                       description: Set of choices for categorical variable
@@ -86,18 +86,16 @@ spec:
                       description: DefaultValue is the default value of the parameter
                       type: number
                     high:
-                      description: High is the maximum value of the hyper parameter
-                        range
+                      description: High is the maximum value of the hyperparameter
                       type: number
                     log:
-                      description: If the scale is logaritimic
+                      description: Log indicates if the scale is logarithmic
                       type: boolean
                     low:
                       description: Low is the minimum value of the hyperparameter
-                        range
                       type: number
                     name:
-                      description: Name is the name of the hyper parameter
+                      description: Name is the name of the hyperparameter
                       type: string
                     parent:
                       description: Parent parameter name

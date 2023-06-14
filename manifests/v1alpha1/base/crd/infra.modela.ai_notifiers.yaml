@@ -82,19 +82,11 @@ spec:
                       description: Indicates if the channel will send Alerts with
                         the `error` level
                       type: boolean
-                    from:
-                      description: This channel start time
-                      format: date-time
-                      type: string
                     info:
                       default: false
                       description: Indicates if the channel will send Alerts with
                         the `info` level
                       type: boolean
-                    to:
-                      description: This channel end time
-                      format: date-time
-                      type: string
                   required:
                   - connectionName
                   type: object
@@ -154,22 +146,25 @@ spec:
             description: NotifierStatus is the observed state of a Notifier
             properties:
               channelsStatus:
-                description: The status of Notification Channels after Alerts have
-                  been forwarded to them
+                description: ChannelsStatus describes the status of each notification
+                  channel (per individual Connection)
                 items:
                   properties:
+                    connectionName:
+                      default: ""
+                      description: The name of the Connection resource which exists
+                        in the same tenant as the parent Notifier
+                      type: string
                     failureMessage:
                       description: In the case of failure, the Notifier resource controller
                         will set this field with a failure message
-                      type: string
-                    failureReason:
-                      description: In the case of failure, the Notifier resource controller
-                        will set this field with a failure reason
                       type: string
                     lastMessageAt:
                       description: The last time a message was sent on this channel
                       format: date-time
                       type: string
+                  required:
+                  - connectionName
                   type: object
                 type: array
               conditions:
@@ -241,12 +236,12 @@ spec:
                   type: object
                 type: array
               observedGeneration:
-                description: ObservedGeneration is the last generation that was acted
-                  on
+                description: ObservedGeneration is the last generation that was reconciled
+                  by Modela
                 format: int64
                 type: integer
               updatedAt:
-                description: The last time the object was updated
+                description: UpdatedAt specifies the last time the object was updated
                 format: date-time
                 type: string
             type: object

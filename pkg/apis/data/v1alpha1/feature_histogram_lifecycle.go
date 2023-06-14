@@ -286,20 +286,18 @@ func (fh *FeatureHistogram) MarkFailed(msg string) {
 	fh.Status.FailureMessage = msg
 }
 
-func (fh FeatureHistogram) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (fh FeatureHistogram) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
 	level := infra.Error
-	subject := fmt.Sprintf("Entity %s failed with error %v", fh.Name, err.Error())
+	subject := fmt.Sprintf("Feature Histogram %s failed with error: %v", fh.Name, err.Error())
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: fh.Name,
 			Namespace:    fh.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject:      util.StrPtr(subject),
-			Message:      util.StrPtr(err.Error()),
+			Subject:      subject,
 			Level:        &level,
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Entity",
 				Name:      fh.Name,
@@ -320,11 +318,8 @@ func (fh FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierNam
 			Namespace:    fh.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject:      util.StrPtr(subject),
-			Message:      util.StrPtr("drift was detected"),
-			Level:        &level,
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Subject: subject,
+			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Entity",
 				Name:      fh.Name,

@@ -35,25 +35,25 @@ const (
 	OptimizerNameNadam    OptimizerName = "nadam"
 )
 
-type IinitializerName string
+type InitializerName string
 
 const (
-	IinitializerZeros            IinitializerName = "zeros"
-	IinitializerOnes             IinitializerName = "ones"
-	IinitializerConstant         IinitializerName = "constant"
-	IinitializerRandom_normal    IinitializerName = "random-normal"
-	IinitializerRandom_uniform   IinitializerName = "random-uniform"
-	IinitializerTruncated_normal IinitializerName = "truncated-normal"
-	IinitializerVariance_scaling IinitializerName = "variance-scaling"
-	IinitializerOrthogonal       IinitializerName = "orthogonal"
-	IinitializerIdentity         IinitializerName = "identity"
-	IinitializerLecun_uniform    IinitializerName = "lecun-uniform"
-	IinitializerGlorot_normal    IinitializerName = "glorot-normal"
-	IinitializerGlorot_uniform   IinitializerName = "glorot-uniform"
-	IinitializerHe_normal        IinitializerName = "he-normal"
-	Iinitializerlecun_normal     IinitializerName = "lecun-normal"
-	IinitializerHeUniform        IinitializerName = "uniform"
-	IinitializerNone             IinitializerName = "none"
+	IinitializerZeros            InitializerName = "zeros"
+	IinitializerOnes             InitializerName = "ones"
+	IinitializerConstant         InitializerName = "constant"
+	IinitializerRandom_normal    InitializerName = "random-normal"
+	IinitializerRandom_uniform   InitializerName = "random-uniform"
+	IinitializerTruncated_normal InitializerName = "truncated-normal"
+	IinitializerVariance_scaling InitializerName = "variance-scaling"
+	IinitializerOrthogonal       InitializerName = "orthogonal"
+	IinitializerIdentity         InitializerName = "identity"
+	IinitializerLecun_uniform    InitializerName = "lecun-uniform"
+	IinitializerGlorot_normal    InitializerName = "glorot-normal"
+	IinitializerGlorot_uniform   InitializerName = "glorot-uniform"
+	IinitializerHe_normal        InitializerName = "he-normal"
+	Iinitializerlecun_normal     InitializerName = "lecun-normal"
+	IinitializerHeUniform        InitializerName = "uniform"
+	IinitializerNone             InitializerName = "none"
 )
 
 type ConstraintName string

@@ -1600,15 +1600,10 @@ export namespace ModelDeploymentSpec {
 }
 
 export class NotificationSpec extends jspb.Message {
-  getErrorttl(): number;
-  setErrorttl(value: number): NotificationSpec;
-  hasErrorttl(): boolean;
-  clearErrorttl(): NotificationSpec;
-
-  getSuccessttl(): number;
-  setSuccessttl(value: number): NotificationSpec;
-  hasSuccessttl(): boolean;
-  clearSuccessttl(): NotificationSpec;
+  getTtl(): number;
+  setTtl(value: number): NotificationSpec;
+  hasTtl(): boolean;
+  clearTtl(): NotificationSpec;
 
   getNotifiername(): string;
   setNotifiername(value: string): NotificationSpec;
@@ -1628,8 +1623,7 @@ export class NotificationSpec extends jspb.Message {
 
 export namespace NotificationSpec {
   export type AsObject = {
-    errorttl?: number,
-    successttl?: number,
+    ttl?: number,
     notifiername?: string,
     selectorMap: Array<[string, string]>,
   }

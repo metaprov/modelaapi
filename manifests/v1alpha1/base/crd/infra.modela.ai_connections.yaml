@@ -88,7 +88,7 @@ spec:
                   type: string
                 description: SecretData contains a map of sensitive parameters relevant
                   to the connection and their values. Modela will automatically clear
-                  this map and transfer the values to Vault.
+                  this map and transfer the values to Vault
                 type: object
               secretRef:
                 description: SecretReference represents a Secret Reference. It has

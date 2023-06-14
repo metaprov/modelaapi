@@ -64,7 +64,7 @@ spec:
                 type: string
               entityRef:
                 description: EntityRef specifies the entity which the Report references.
-                  The supported entities consist of Entity, Model, and Study resources
+                  The supported entities consist of Dataset, Model, and Study resources
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -152,17 +152,34 @@ spec:
                 type: object
                 x-kubernetes-map-type: atomic
               modelClassName:
-                description: The model class for this report if the model was created
-                  by a model class
+                description: ModelClassName specifies the name of the Model Class
+                  which created the Dataset, if applicable
                 type: string
               modelClassRunName:
-                description: If this report was created by a model class run, this
-                  is the run name
+                description: ModelClassRunName specifies the name of the Model Class
+                  Run which created the Dataset, if applicable
                 type: string
-              notifierName:
+              notification:
                 description: The name of the Notifier resource which Alerts created
                   by the Report will be forwarded to
-                type: string
+                properties:
+                  notifierName:
+                    description: NotifierName specifies the name of a single Notifier
+                      resource which the Alert will be forwarded to
+                    type: string
+                  selector:
+                    additionalProperties:
+                      type: string
+                    description: Selector defines a map of labels that will be matched
+                      to find multiple Notifier resource to forward alerts to
+                    type: object
+                  ttl:
+                    default: 3600
+                    description: TTL defines the time-to-live for Alerts, in seconds,
+                      after which they will be deleted
+                    format: int32
+                    type: integer
+                type: object
               owner:
                 default: no-one
                 description: The name of the Account which created the object, which
@@ -174,15 +191,16 @@ spec:
                 type: string
               resources:
                 description: Resources specifies the resource requirements that will
-                  be allocated to the workload
+                  be allocated for the Report
                 properties:
                   custom:
                     default: false
-                    description: If true, ignore the workload class name.
+                    description: Custom indicates if the custom requirements specified
+                      by Requirements will be used
                     type: boolean
                   requirements:
-                    description: The custom resource requirements for the workload,
-                      which are used if `WorkloadName` is not set
+                    description: Requirements specifies the custom resource requirements
+                      for the workload
                     properties:
                       limits:
                         additionalProperties:
@@ -208,11 +226,10 @@ spec:
                         type: object
                     type: object
                   workloadName:
-                    default: general-large
-                    description: If this resource is based on the workload, this field
-                      contain the name of the workload. The name of a WorkloadClass.
-                      The system will use the resource requirements described by the
-                      WorkloadClass
+                    description: WorkloadName references the name of a Workload Class
+                      resource that will be used to determine the resource requirements
+                      of the workload. If specified, WorkloadName will take precedence
+                      over custom requirements
                     type: string
                 type: object
               timeout:
@@ -223,9 +240,8 @@ spec:
                 type: integer
               versionName:
                 default: latest
-                description: The name of the DataProductVersion which describes the
-                  version of the resource that exists in the same DataProduct namespace
-                  as the resource
+                description: VersionName references the name of a Data Product Version
+                  that describes the version of the resource
                 type: string
             type: object
           status:

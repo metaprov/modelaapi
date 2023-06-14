@@ -102,7 +102,7 @@ spec:
                 - on-new-data
                 - on-github-event
                 - on-concept-drift
-                - on-pref-degradation
+                - on-perf-degradation
                 type: string
               ttl:
                 default: 0

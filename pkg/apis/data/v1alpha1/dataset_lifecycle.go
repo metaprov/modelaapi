@@ -193,10 +193,10 @@ func (dataset *Dataset) MarkSnapshotFailed(msg string) {
 		Type:    DatasetSnapshotted,
 		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
-		Message: "Failed to snapshot: " + msg,
+		Message: msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
-	dataset.Status.FailureMessage = util.StrPtr(msg)
+	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Snapshot failed: %s", msg))
 	dataset.Status.Progress = 100
 	now := metav1.Now()
 	if dataset.Status.CompletedAt == nil {
@@ -251,10 +251,10 @@ func (dataset *Dataset) MarkGroupFailed(msg string) {
 		Type:    DatasetGrouped,
 		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
-		Message: "Failed to group: " + msg,
+		Message: msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
-	dataset.Status.FailureMessage = util.StrPtr(msg)
+	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Group by failed: %s", msg))
 	dataset.Status.Progress = 100
 	now := metav1.Now()
 	if dataset.Status.CompletedAt == nil {
@@ -291,10 +291,10 @@ func (dataset *Dataset) MarkUnitTestFailed(msg string) {
 		Type:    DatasetUnitTested,
 		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
-		Message: "Failed to validate: " + msg,
+		Message: msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
-	dataset.Status.FailureMessage = util.StrPtr(msg)
+	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Unit test failed: %s", msg))
 	dataset.Status.Progress = 100
 	now := metav1.Now()
 	if dataset.Status.CompletedAt == nil {
@@ -320,46 +320,6 @@ func (dataset *Dataset) MarkUnitTesting() {
 	})
 	dataset.Status.Phase = DatasetPhaseUnitTesting
 	dataset.Status.Progress = 80
-}
-
-// ------------------------- injest
-
-func (dataset *Dataset) MarkIngesting() {
-	dataset.CreateOrUpdateCond(metav1.Condition{
-		Type:   DatasetIngested,
-		Status: metav1.ConditionFalse,
-		Reason: string(DatasetPhaseIngestRunning),
-	})
-	dataset.Status.Phase = DatasetPhaseIngestRunning
-	dataset.Status.Progress = 20
-
-}
-
-func (dataset *Dataset) MarkIngested() {
-	dataset.CreateOrUpdateCond(metav1.Condition{
-		Type:   DatasetIngested,
-		Status: metav1.ConditionTrue,
-		Reason: DatasetIngested,
-	})
-	dataset.Status.Phase = DatasetPhaseIngestSuccess
-	dataset.Status.Progress = 30
-
-}
-
-func (dataset *Dataset) MarkIngestFailed(msg string) {
-	dataset.CreateOrUpdateCond(metav1.Condition{
-		Type:    DatasetIngested,
-		Status:  metav1.ConditionFalse,
-		Reason:  string(DatasetPhaseFailed),
-		Message: "Failed to ingest: " + msg,
-	})
-	dataset.Status.Phase = DatasetPhaseFailed
-	dataset.Status.FailureMessage = util.StrPtr(msg)
-	dataset.Status.Progress = 100
-	now := metav1.Now()
-	if dataset.Status.CompletedAt == nil {
-		dataset.Status.CompletedAt = &now
-	}
 }
 
 // -------------------- generating
@@ -391,10 +351,10 @@ func (dataset *Dataset) MarkGeneratedFailed(msg string) {
 		Type:    DatasetGenerated,
 		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
-		Message: "Failed to generate dataset: " + msg,
+		Message: msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
-	dataset.Status.FailureMessage = util.StrPtr(msg)
+	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Generation failed: %s", msg))
 	dataset.Status.Progress = 100
 	now := metav1.Now()
 	if dataset.Status.CompletedAt == nil {
@@ -429,15 +389,8 @@ func (dataset *Dataset) MarkReportFailed(msg string) {
 		Type:    DatasetReported,
 		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
-		Message: "Failed to report: " + msg,
+		Message: msg,
 	})
-	dataset.Status.Phase = DatasetPhaseFailed
-	dataset.Status.FailureMessage = util.StrPtr(msg)
-	dataset.Status.Progress = 100
-	now := metav1.Now()
-	if dataset.Status.CompletedAt == nil {
-		dataset.Status.CompletedAt = &now
-	}
 }
 
 // ----------------- profile
@@ -468,15 +421,8 @@ func (dataset *Dataset) MarkProfiledFailed(msg string) {
 		Type:    DatasetProfiled,
 		Status:  metav1.ConditionFalse,
 		Reason:  string(DatasetPhaseFailed),
-		Message: "Failed to profiled: " + msg,
+		Message: msg,
 	})
-	dataset.Status.Phase = DatasetPhaseFailed
-	dataset.Status.FailureMessage = util.StrPtr(msg)
-	dataset.Status.Progress = 100
-	now := metav1.Now()
-	if dataset.Status.CompletedAt == nil {
-		dataset.Status.CompletedAt = &now
-	}
 }
 
 func (r *Dataset) OpName() string {
@@ -491,6 +437,22 @@ func (dataset *Dataset) MarkReady() {
 		Reason: DatasetReady,
 	})
 	dataset.Status.Phase = DatasetPhaseReady
+	dataset.Status.Progress = 100
+	now := metav1.Now()
+	if dataset.Status.CompletedAt == nil {
+		dataset.Status.CompletedAt = &now
+	}
+}
+
+func (dataset *Dataset) MarkReadyFailed(err string) {
+	dataset.CreateOrUpdateCond(metav1.Condition{
+		Type:    DatasetReady,
+		Status:  metav1.ConditionFalse,
+		Reason:  string(DatasetPhaseFailed),
+		Message: err,
+	})
+	dataset.Status.Phase = DatasetPhaseFailed
+	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Mark ready failed: %s", err))
 	dataset.Status.Progress = 100
 	now := metav1.Now()
 	if dataset.Status.CompletedAt == nil {
@@ -542,7 +504,7 @@ func (dataset *Dataset) IsFeatureGroup() bool {
 }
 
 // Generate a dataset completion alert
-func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+func (dataset *Dataset) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Dataset %s completed successfully", dataset.Name)
 	result := &infra.Alert{
@@ -551,16 +513,15 @@ func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 			Namespace:    dataset.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
-			Level:   &level,
+			Subject:      subject,
+			Level:        &level,
+			Notification: notification,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Entity",
 				Name:      dataset.Name,
 				Namespace: dataset.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
-			Owner:        dataset.Spec.Owner,
+			Owner: dataset.Spec.Owner,
 			Fields: map[string]string{
 				"Rows":       util.ItoA(&dataset.Status.Statistics.Rows),
 				"Columns":    util.ItoA(&dataset.Status.Statistics.Cols),
@@ -575,7 +536,7 @@ func (dataset *Dataset) CompletionAlert(tenantRef *v1.ObjectReference, notifierN
 	return result
 }
 
-func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (dataset *Dataset) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
 	level := infra.Error
 	subject := fmt.Sprintf("Dataset %s failed with error: %v", dataset.Name, err.Error())
 	result := &infra.Alert{
@@ -584,11 +545,9 @@ func (dataset *Dataset) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *
 			Namespace:    dataset.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject:      util.StrPtr(subject),
-			Message:      util.StrPtr(err.Error()),
+			Subject:      subject,
 			Level:        &level,
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Entity",
 				Name:      dataset.Name,

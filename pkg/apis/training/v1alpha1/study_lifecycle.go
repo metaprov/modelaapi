@@ -56,26 +56,7 @@ func (study Study) ReachedMaxFETime() bool {
 		return false // not started
 	}
 	duration := metav1.Now().Unix() - study.Status.FeatureEngineeringStatus.StartedAt.Unix()
-	return int32(duration/60) >= *study.Spec.FESearch.MaxTimeSec
-}
-
-func (study Study) ReachedMaxFEModels() bool {
-	totalModels := study.Status.FeatureEngineeringStatus.FailedModelsCount + study.Status.FeatureEngineeringStatus.CompletedModelsCount
-	return *study.Spec.FESearch.MaxModels == totalModels
-}
-
-func (study Study) ShouldEarlyStopTraining() bool {
-	if *study.Spec.Search.EarlyStop.Enabled {
-		return study.Status.SearchStatus.FailedModelsCount+study.Status.SearchStatus.CompletedModelsCount >= *study.Spec.Search.EarlyStop.Initial && study.Status.SearchStatus.ModelsWithNoProgress >= *study.Spec.Search.EarlyStop.MinModelsWithNoProgress
-	}
-	return false
-}
-
-func (study Study) ShouldEarlyStopFE() bool {
-	if *study.Spec.FESearch.EarlyStop.Enabled {
-		return study.Status.FeatureEngineeringStatus.FailedModelsCount+study.Status.FeatureEngineeringStatus.CompletedModelsCount >= *study.Spec.FESearch.EarlyStop.Initial && study.Status.FeatureEngineeringStatus.ModelsWithNoProgress >= *study.Spec.FESearch.EarlyStop.MinModelsWithNoProgress
-	}
-	return false
+	return int32(duration/60) >= study.Spec.FESearch.MaxTime
 }
 
 // Enabled if we reached max time
@@ -84,7 +65,7 @@ func (study Study) ReachedMaxTime() bool {
 		return false // not started
 	}
 	duration := metav1.Now().Unix() - study.Status.SearchStatus.StartedAt.Unix()
-	return int32(duration/60) >= *study.Spec.Search.MaxTime
+	return int32(duration/60) >= study.Spec.Search.MaxTime
 }
 
 // Tru if there are models waiting for test
@@ -142,6 +123,27 @@ func (study Study) GetCond(t string) metav1.Condition {
 		Reason:  "",
 		Message: "",
 	}
+}
+
+func (r Study) IsFast() bool {
+	if r.Spec.Fast == nil {
+		return false
+	}
+	return *r.Spec.Fast
+}
+
+func (r Study) IsTemplate() bool {
+	if r.Spec.Template == nil {
+		return false
+	}
+	return *r.Spec.Template
+}
+
+func (r Study) IsTestDataset() bool {
+	if r.Spec.TrainingTemplate.Split.Method == nil {
+		return false
+	}
+	return *r.Spec.TrainingTemplate.Split.Method == catalog.DataSplitMethodUseTestDataset
 }
 
 func (r Study) IsSearching() bool {
@@ -228,21 +230,18 @@ func (study *Study) AutoGenTSFeatures() {
 func (study *Study) AutoSplit(rows int32) {
 	if rows < 1000 {
 		study.Spec.TrainingTemplate.Folds = util.Int32Ptr(10)
-		study.Spec.TrainingTemplate.CV = util.BoolPtr(true)
 		study.Spec.TrainingTemplate.Split.Test = util.Int32Ptr(20)
 		study.Spec.TrainingTemplate.Split.Train = util.Int32Ptr(80)
 		study.Spec.TrainingTemplate.Split.Validation = util.Int32Ptr(0)
 	}
 	if rows > 1000 && rows < 10000 {
 		study.Spec.TrainingTemplate.Folds = util.Int32Ptr(5)
-		study.Spec.TrainingTemplate.CV = util.BoolPtr(true)
 		study.Spec.TrainingTemplate.Split.Test = util.Int32Ptr(20)
 		study.Spec.TrainingTemplate.Split.Train = util.Int32Ptr(80)
 		study.Spec.TrainingTemplate.Split.Validation = util.Int32Ptr(0)
 	}
 	if rows >= 10000 && rows < 20000 {
 		study.Spec.TrainingTemplate.Folds = util.Int32Ptr(3)
-		study.Spec.TrainingTemplate.CV = util.BoolPtr(true)
 		study.Spec.TrainingTemplate.Split.Test = util.Int32Ptr(20)
 		study.Spec.TrainingTemplate.Split.Train = util.Int32Ptr(80)
 		study.Spec.TrainingTemplate.Split.Validation = util.Int32Ptr(0)
@@ -250,7 +249,6 @@ func (study *Study) AutoSplit(rows int32) {
 	// at this point we woud use validation set
 	if rows >= 20000 {
 		study.Spec.TrainingTemplate.Folds = util.Int32Ptr(0)
-		study.Spec.TrainingTemplate.CV = util.BoolPtr(false)
 		study.Spec.TrainingTemplate.Split.Test = util.Int32Ptr(10)
 		study.Spec.TrainingTemplate.Split.Train = util.Int32Ptr(80)
 		study.Spec.TrainingTemplate.Split.Validation = util.Int32Ptr(10)
@@ -288,6 +286,17 @@ func (study Study) Splitted() bool {
 	return cond.Status == metav1.ConditionTrue
 }
 
+func (study *Study) MarkSplitting() {
+	study.CreateOrUpdateCond(metav1.Condition{
+		Type:   StudySplit,
+		Status: metav1.ConditionFalse,
+		Reason: StudySplit,
+	})
+
+	study.Status.Phase = StudyPhaseSplitting
+	study.RefreshProgress()
+}
+
 func (study *Study) MarkSplitted() {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudySplit,
@@ -297,7 +306,6 @@ func (study *Study) MarkSplitted() {
 
 	study.Status.Phase = StudyPhaseSplit
 	study.RefreshProgress()
-
 }
 
 func (study *Study) MarkSplitFailed(err string) {
@@ -309,7 +317,7 @@ func (study *Study) MarkSplitFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("Failed to split." + err)
+	study.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Split failed: %s", err))
 	study.RefreshProgress()
 }
 
@@ -343,7 +351,7 @@ func (study *Study) MarkTransformFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("Failed to transform." + err)
+	study.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Transform failed: %s", err))
 	study.RefreshProgress()
 }
 
@@ -352,8 +360,7 @@ func (study *Study) MarkTransformFailed(err string) {
 ////////////////////////////////////////////////
 
 func (study Study) FeatureEngineered() bool {
-	cond := study.GetCond(StudyFeatureEngineered)
-	return cond.Status == metav1.ConditionTrue
+	return study.GetCond(StudyFeatureEngineered).Status == metav1.ConditionTrue
 }
 
 func (study *Study) MarkFeatureEngineering() {
@@ -390,7 +397,7 @@ func (study *Study) MarkFeatureEngineeringFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("Failed to engineer features." + err)
+	study.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Feature engineering failed: %s", err))
 	study.RefreshProgress()
 }
 
@@ -399,8 +406,7 @@ func (study *Study) MarkFeatureEngineeringFailed(err string) {
 ///////////////////////////////////////////////////////////////
 
 func (study Study) Baselined() bool {
-	cond := study.GetCond(StudyBaselined)
-	return cond.Status == metav1.ConditionTrue
+	return study.GetCond(StudyBaselined).Reason == ReasonFailed
 }
 
 func (study *Study) MarkBaselining() {
@@ -438,10 +444,6 @@ func (study *Study) MarkBaselineFailed(err string) {
 		Reason:  ReasonFailed,
 		Message: err,
 	})
-	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to create baseline models." + err)
-	study.UpdateEndTime()
-	study.RefreshProgress()
 }
 
 func (study *Study) MarkReadyFailed(err string) {
@@ -452,7 +454,7 @@ func (study *Study) MarkReadyFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to mark study as ready." + err)
+	study.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Mark ready failed: %s", err))
 	study.UpdateEndTime()
 	study.RefreshProgress()
 }
@@ -470,7 +472,7 @@ func (study *Study) MarkGCFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to gc study." + err)
+	study.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Garbage collection failed: %s", err))
 	study.UpdateEndTime()
 	study.RefreshProgress()
 }
@@ -520,7 +522,7 @@ func (study *Study) MarkSearchFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to search models." + err)
+	study.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Model search failed: %s", err))
 	study.UpdateEndTime()
 	study.RefreshProgress()
 }
@@ -530,8 +532,7 @@ func (study *Study) MarkSearchFailed(err string) {
 ///////////////////////////////////////////////////////
 
 func (study Study) Ensembled() bool {
-	cond := study.GetCond(StudyEnsembleCreated)
-	return cond.Status == metav1.ConditionTrue
+	return study.GetCond(StudyEnsembleCreated).Status == metav1.ConditionTrue
 }
 
 func (study *Study) MarkEnsembling() {
@@ -575,7 +576,7 @@ func (study *Study) MarkEnsembleFailed(err string) {
 	}
 
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to ensemble models." + err)
+	study.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Ensemble phase failed: %s", err))
 	study.UpdateEndTime()
 	study.RefreshProgress()
 }
@@ -621,7 +622,7 @@ func (study *Study) MarkTestingFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("Failed to test model." + err)
+	study.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Testing phase failed: %s", err))
 	study.RefreshProgress()
 }
 
@@ -670,7 +671,7 @@ func (study *Study) MarkTuningFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("Failed to tune model." + err)
+	study.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Tuning phase failed: %s", err))
 	study.RefreshProgress()
 }
 
@@ -683,7 +684,7 @@ func (study Study) Tuned() bool {
 ///////////////////////////////////////////////////////
 
 func (study Study) Profiled() bool {
-	return *study.Spec.Profiled && study.GetCond(StudyProfiled).Status == metav1.ConditionTrue
+	return study.IsFast() || (study.Spec.Profile == nil) || !*study.Spec.Profile || study.GetCond(StudyProfiled).Status == metav1.ConditionTrue
 }
 
 func (study *Study) MarkProfiling() {
@@ -695,9 +696,9 @@ func (study *Study) MarkProfiling() {
 	})
 }
 
-func (study *Study) MarkProfiled(url string) {
+func (study *Study) MarkProfiled(location catalog.FileLocation) {
 	study.Status.Phase = StudyPhaseProfiled
-	study.Status.ProfileURI = url
+	study.Status.ProfileLocation = location
 	// update the condition
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyProfiled,
@@ -715,10 +716,6 @@ func (study *Study) MarkProfileFailed(err string) {
 		Reason:  ReasonFailed,
 		Message: err,
 	})
-	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to profile." + err)
-	study.UpdateEndTime()
-	study.RefreshProgress()
 }
 
 // /////////////////////////////////////////////////////////
@@ -757,7 +754,7 @@ func (study *Study) PromotionAlert(tenantRef *v1.ObjectReference, notifierName *
 			Namespace:    study.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
+			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Model",
@@ -796,8 +793,7 @@ func (study Study) Reported() bool {
 	return study.GetCond(StudyReported).Status == metav1.ConditionTrue
 }
 
-func (study *Study) MarkReported(name string) {
-	study.Status.ReportName = name
+func (study *Study) MarkReported() {
 	study.CreateOrUpdateCond(metav1.Condition{
 		Type:   StudyReported,
 		Status: metav1.ConditionTrue,
@@ -809,15 +805,13 @@ func (study *Study) MarkReported(name string) {
 
 // ------------------- Paused
 func (study Study) Paused() bool {
-	cond := study.GetCond(StudyPaused)
-	return cond.Status == metav1.ConditionTrue
+	return study.GetCond(StudyPaused).Status == metav1.ConditionTrue
 }
 
 // ------------------- Abort
 
 func (study Study) Aborted() bool {
-	cond := study.GetCond(StudyAborted)
-	return cond.Status == metav1.ConditionTrue
+	return study.GetCond(StudyAborted).Status == metav1.ConditionTrue
 }
 
 func (study *Study) MarkAborted() {
@@ -835,25 +829,8 @@ func (study *Study) MarkPartitioned() bool {
 	return cond.Status == metav1.ConditionTrue
 }
 
-func (study Study) EnsembleTrained() bool {
-	return study.GetCond(StudyEnsembleCreated).Status == metav1.ConditionTrue
-}
-
 func (study Study) Ready() bool {
 	return study.GetCond(StudyCompleted).Status == metav1.ConditionTrue
-}
-
-func (study *Study) MarkSaved() {
-	study.CreateOrUpdateCond(metav1.Condition{
-		Type:   StudySaved,
-		Status: metav1.ConditionTrue,
-		Reason: StudySaved,
-	})
-	study.RefreshProgress()
-}
-
-func (study Study) Saved() bool {
-	return study.GetCond(StudySaved).Status == metav1.ConditionTrue
 }
 
 func (study Study) PrintConditions() {
@@ -916,17 +893,16 @@ func (study Study) Deleted() bool {
 	return !study.ObjectMeta.DeletionTimestamp.IsZero()
 }
 
-func (study *Study) CreateReport(key string, bucketName string) *Report {
+func (study *Study) CreateReport(bucketName string) *Report {
 	// RunModelJob the studies report
 	report := NewReport(
 		study.ObjectMeta.Namespace,
 		study.ReportName(),
 		study.ObjectMeta.Name,
-		key,
 		StudyReport,
 		bucketName)
 
-	report.Label("study", study.Name)
+	report.Label(catalog.StudyLabelKey, study.Name)
 	report.Spec.VersionName = study.Spec.VersionName
 	report.Spec.EntityRef = v1.ObjectReference{
 		Namespace: study.Namespace,
@@ -940,10 +916,10 @@ func (study *Study) MaxTimeOrModelReached() bool {
 
 	now := time.Now()
 	diff := now.Sub(study.CreationTimestamp.Time)
-	timeOver := diff.Minutes() > float64(*study.Spec.Search.MaxTime)
+	timeOver := diff.Minutes() > float64(study.Spec.Search.MaxTime)
 
 	// compare the model. We take the ensemble into consideration
-	modelOver := (study.Status.SearchStatus.CompletedModelsCount + study.Status.SearchStatus.FailedModelsCount) >= *study.Spec.Search.MaxModels
+	modelOver := (study.Status.SearchStatus.CompletedModelsCount + study.Status.SearchStatus.FailedModelsCount) >= study.Spec.Search.MaxModels
 
 	return timeOver || modelOver
 
@@ -956,13 +932,6 @@ func (study *Study) MarkReportFailed(err string) {
 		Reason:  ReasonFailed,
 		Message: err,
 	})
-	study.Status.Phase = StudyPhaseFailed
-	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr("Failed to report." + err)
-	study.RefreshProgress()
-	now := metav1.Now()
-	study.Status.CompletedAt = &now
-
 }
 
 func (study *Study) MarkAbortFailed(err string) {
@@ -973,7 +942,7 @@ func (study *Study) MarkAbortFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to abort." + err)
+	study.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Abort failed: %s", err))
 	study.RefreshProgress()
 	now := metav1.Now()
 	study.Status.CompletedAt = &now
@@ -988,7 +957,7 @@ func (study *Study) MarkPauseFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.FailureMessage = util.StrPtr("Failed to pause." + err)
+	study.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Pause failed: %s", err))
 	study.RefreshProgress()
 	now := metav1.Now()
 	study.Status.CompletedAt = &now
@@ -1012,7 +981,7 @@ func (study *Study) MarkPartitionedFailed(err string) {
 func (study Study) ReachedMaxModels() bool {
 	return study.Status.SearchStatus.FailedModelsCount+
 		study.Status.SearchStatus.CompletedModelsCount+
-		study.Status.SearchStatus.WaitingModelsCount >= *study.Spec.Search.MaxModels
+		study.Status.SearchStatus.WaitingModelsCount >= study.Spec.Search.MaxModels
 }
 
 // Set the train/test validation based on the number of rows
@@ -1076,7 +1045,7 @@ func (study *Study) RefreshProgress() {
 ////////////////////////////////////////////////////////////
 // Model Alerts
 
-func (study Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+func (study Study) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Study %s completed successfully", study.Name)
 	result := &infra.Alert{
@@ -1085,15 +1054,14 @@ func (study Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *
 			Namespace:    study.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
+			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Study",
 				Name:      study.Name,
 				Namespace: study.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			Owner:        study.Spec.Owner,
 			Fields: map[string]string{
 				"Entity":     *study.Spec.DatasetName,
@@ -1109,24 +1077,23 @@ func (study Study) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *
 	return result
 }
 
-func (study Study) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (study Study) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
 	level := infra.Error
-	subject := fmt.Sprintf("Study %s failed with error %v", study.Name, err.Error())
+	subject := fmt.Sprintf("Study %s failed with error: %v", study.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: study.Name,
 			Namespace:    study.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
+			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Study",
 				Name:      study.Name,
 				Namespace: study.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			Owner:        study.Spec.Owner,
 			Fields: map[string]string{
 				"Entity":     *study.Spec.DatasetName,

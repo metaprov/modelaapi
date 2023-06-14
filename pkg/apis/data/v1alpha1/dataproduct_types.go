@@ -112,7 +112,7 @@ type DataProductSpec struct {
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	DefaultBucketName *string `json:"defaultBucketName,omitempty" protobuf:"bytes,8,opt,name=defaultBucketName"`
-	// Task specifies the default machine learning task of the product (classification, regression, etc.)
+	// Task specifies the default machine learning task of the Data Product (classification, regression, etc.)
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,9,opt,name=task"`
 	// Subtask specifies the default subtask relevant to the primary task (text classification, image object detection, etc.)
@@ -126,19 +126,13 @@ type DataProductSpec struct {
 	Description *string `json:"description,omitempty" protobuf:"bytes,11,opt,name=description"`
 	// The default notification specification for all resources under the DataProduct
 	// +kubebuilder:validation:Optional
-	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,12,opt,name=notification"`
+	Notification *catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,12,opt,name=notification"`
 	// The default resource allocation for model training and data workloads that takes place under the DataProduct
 	// +kubebuilder:validation:Optional
 	DefaultTrainingResources catalog.ResourceSpec `json:"trainingResources,omitempty" protobuf:"bytes,13,opt,name=trainingResources"`
 	// The default resource allocation for model serving workloads that takes place under the DataProduct
 	// +kubebuilder:validation:Optional
 	DefaultServingResources catalog.ResourceSpec `json:"servingResources,omitempty" protobuf:"bytes,14,opt,name=servingResources"`
-	// RetriesOnFailure defines the backoff limit for Jobs created by resources under the Data Product.
-	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:validation:Maximum=10
-	// +kubebuilder:validation:Optional
-	RetriesOnFailure *int32 `json:"retriesOnFailure,omitempty" protobuf:"varint,15,opt,name=retriesOnFailure"`
 	// The default priority level assigned to Jobs created by resources under the Data Product
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="medium"

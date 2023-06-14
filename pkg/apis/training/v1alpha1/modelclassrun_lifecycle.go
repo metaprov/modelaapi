@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/training"
@@ -226,20 +227,18 @@ func (this *ModelClassRun) Pause() {
 	this.Spec.Paused = util.BoolPtr(true)
 }
 
-func (run *ModelClassRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (run *ModelClassRun) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
 	level := infra.Error
-	subject := fmt.Sprintf("ModelClassRun %s failed with error %v", run.Name, err.Error())
+	subject := fmt.Sprintf("Model Class Run %s failed with error: %v", run.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: run.Name,
 			Namespace:    run.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject:      util.StrPtr(subject),
-			Message:      util.StrPtr(err.Error()),
+			Subject:      subject,
 			Level:        &level,
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			EntityRef: v1.ObjectReference{
 				Kind:      "ModelClassRun",
 				Name:      run.Name,
@@ -257,7 +256,7 @@ func (run *ModelClassRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName
 	return result
 }
 
-func (run *ModelClassRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+func (run *ModelClassRun) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Entity %s completed successfully ", run.Name)
 	result := &infra.Alert{
@@ -266,15 +265,14 @@ func (run *ModelClassRun) CompletionAlert(tenantRef *v1.ObjectReference, notifie
 			Namespace:    run.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
+			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "ModelClassRun",
 				Name:      run.Name,
 				Namespace: run.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
@@ -296,7 +294,7 @@ func (mclass *ModelClass) PromotionAlert(tenantRef *v1.ObjectReference, notifier
 			Namespace:    mclass.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
+			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Model",

@@ -13960,9 +13960,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errorttl: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    successttl: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    notifiername: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    ttl: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    notifiername: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     selectorMap: (f = msg.getSelectorMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
@@ -14000,19 +13999,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.d
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTtl(value);
+      break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setErrorttl(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setSuccessttl(value);
-      break;
-    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setNotifiername(value);
       break;
-    case 6:
+    case 3:
       var value = msg.getSelectorMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
@@ -14047,40 +14042,33 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
   if (f != null) {
     writer.writeInt32(
-      2,
+      1,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeInt32(
-      4,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeString(
-      5,
+      2,
       f
     );
   }
   f = message.getSelectorMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
 
 /**
- * optional int32 errorTTL = 2;
+ * optional int32 ttl = 1;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.getErrorttl = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.getTtl = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
@@ -14088,8 +14076,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.setErrorttl = function(value) {
-  return jspb.Message.setField(this, 2, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.setTtl = function(value) {
+  return jspb.Message.setField(this, 1, value);
 };
 
 
@@ -14097,8 +14085,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.clearErrorttl = function() {
-  return jspb.Message.setField(this, 2, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.clearTtl = function() {
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -14106,53 +14094,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.hasErrorttl = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.hasTtl = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional int32 successTTL = 4;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.getSuccessttl = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.setSuccessttl = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.clearSuccessttl = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.hasSuccessttl = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string notifierName = 5;
+ * optional string notifierName = 2;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.getNotifiername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -14161,7 +14113,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.setNotifiername = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
@@ -14170,7 +14122,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.clearNotifiername = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -14179,19 +14131,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.hasNotifiername = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * map<string, string> selector = 6;
+ * map<string, string> selector = 3;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.getSelectorMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
 };
 

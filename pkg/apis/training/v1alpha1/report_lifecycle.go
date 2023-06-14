@@ -81,7 +81,6 @@ func NewReport(
 	namespace string,
 	name string,
 	entity string,
-	key string,
 	reportType ReportType,
 	bucketName string) *Report {
 
@@ -91,6 +90,7 @@ func NewReport(
 	result.ObjectMeta.Namespace = namespace
 	result.Spec.EntityRef.Name = entity
 	result.Spec.ReportType = reportType
+	result.Spec.ArtifactBucketName = util.StrPtr(bucketName)
 	result.ObjectMeta.Labels = make(map[string]string)
 
 	return result
@@ -275,7 +275,7 @@ func (report *Report) MarkReportReady(location catalog.FileLocation) {
 ////////////////////////////////////////////////////////////
 // Model Alerts
 
-func (report Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+func (report Report) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Report %s completed successfully", report.Name)
 	result := &infra.Alert{
@@ -284,15 +284,14 @@ func (report Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierName
 			Namespace:    report.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
+			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Report",
 				Name:      report.Name,
 				Namespace: report.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			Owner:        report.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": report.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
@@ -308,24 +307,23 @@ func (report Report) CompletionAlert(tenantRef *v1.ObjectReference, notifierName
 	return result
 }
 
-func (report Report) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (report Report) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
 	level := infra.Error
-	subject := fmt.Sprintf("Report %s failed with error %v", report.Name, err.Error())
+	subject := fmt.Sprintf("Report %s failed with error: %v", report.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: report.Name,
 			Namespace:    report.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
+			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Report",
 				Name:      report.Name,
 				Namespace: report.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			Owner:        report.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": report.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),

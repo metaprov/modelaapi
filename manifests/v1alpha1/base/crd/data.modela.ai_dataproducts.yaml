@@ -179,25 +179,20 @@ spec:
                 description: The default notification specification for all resources
                   under the DataProduct
                 properties:
-                  errorTTL:
-                    default: 3600
-                    description: Time-to-live for error messages, in seconds
-                    format: int32
-                    type: integer
                   notifierName:
-                    default: ""
-                    description: The name of the Notifier which exists in the same
-                      tenant as the resource specifying the NotificationSpec
+                    description: NotifierName specifies the name of a single Notifier
+                      resource which the Alert will be forwarded to
                     type: string
                   selector:
                     additionalProperties:
                       type: string
-                    description: The labels which will be searched for in all Notifiers
-                      to determine the target Notifiers
+                    description: Selector defines a map of labels that will be matched
+                      to find multiple Notifier resource to forward alerts to
                     type: object
-                  successTTL:
+                  ttl:
                     default: 3600
-                    description: Time-to-live for success messages. In seconds
+                    description: TTL defines the time-to-live for Alerts, in seconds,
+                      after which they will be deleted
                     format: int32
                     type: integer
                 type: object
@@ -253,25 +248,18 @@ spec:
                   without any permissions. If enabled, all resources and verbs will
                   be accessible
                 type: boolean
-              retriesOnFailure:
-                default: 0
-                description: RetriesOnFailure defines the backoff limit for Jobs created
-                  by resources under the Data Product.
-                format: int32
-                maximum: 10
-                minimum: 0
-                type: integer
               servingResources:
                 description: The default resource allocation for model serving workloads
                   that takes place under the DataProduct
                 properties:
                   custom:
                     default: false
-                    description: If true, ignore the workload class name.
+                    description: Custom indicates if the custom requirements specified
+                      by Requirements will be used
                     type: boolean
                   requirements:
-                    description: The custom resource requirements for the workload,
-                      which are used if `WorkloadName` is not set
+                    description: Requirements specifies the custom resource requirements
+                      for the workload
                     properties:
                       limits:
                         additionalProperties:
@@ -297,11 +285,10 @@ spec:
                         type: object
                     type: object
                   workloadName:
-                    default: general-large
-                    description: If this resource is based on the workload, this field
-                      contain the name of the workload. The name of a WorkloadClass.
-                      The system will use the resource requirements described by the
-                      WorkloadClass
+                    description: WorkloadName references the name of a Workload Class
+                      resource that will be used to determine the resource requirements
+                      of the workload. If specified, WorkloadName will take precedence
+                      over custom requirements
                     type: string
                 type: object
               subtask:
@@ -349,7 +336,7 @@ spec:
                 type: array
               task:
                 description: Task specifies the default machine learning task of the
-                  product (classification, regression, etc.)
+                  Data Product (classification, regression, etc.)
                 enum:
                 - binary-classification
                 - multi-classification
@@ -408,11 +395,12 @@ spec:
                 properties:
                   custom:
                     default: false
-                    description: If true, ignore the workload class name.
+                    description: Custom indicates if the custom requirements specified
+                      by Requirements will be used
                     type: boolean
                   requirements:
-                    description: The custom resource requirements for the workload,
-                      which are used if `WorkloadName` is not set
+                    description: Requirements specifies the custom resource requirements
+                      for the workload
                     properties:
                       limits:
                         additionalProperties:
@@ -438,11 +426,10 @@ spec:
                         type: object
                     type: object
                   workloadName:
-                    default: general-large
-                    description: If this resource is based on the workload, this field
-                      contain the name of the workload. The name of a WorkloadClass.
-                      The system will use the resource requirements described by the
-                      WorkloadClass
+                    description: WorkloadName references the name of a Workload Class
+                      resource that will be used to determine the resource requirements
+                      of the workload. If specified, WorkloadName will take precedence
+                      over custom requirements
                     type: string
                 type: object
             type: object

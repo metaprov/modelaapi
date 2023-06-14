@@ -23,6 +23,14 @@ import (
 	"k8s.io/client-go/kubernetes/scheme"
 )
 
+func (m *ModelList) ToPointerList() []*Model {
+	var list []*Model
+	for _, model := range m.Items {
+		list = append(list, &model)
+	}
+	return list
+}
+
 func NewHyperParameterValue() *HyperParameterValue {
 	return &HyperParameterValue{}
 }
@@ -370,7 +378,8 @@ const (
 	ReasonDeploying                     = "Deploying"
 	ReasonBaselining                    = "Baselining"
 	ReasonFeatureEngineering            = "FeatureEngineering"
-	ReasonCreateEnsemble                = "CreateEnsemble"
+	ReasonCreateEnsemble                = "EnsembleCreated"
+	ReasonEnsembleMissingAlgorithms     = "EnsembleMissingAlgorithms"
 	ReasonPausing                       = "Pausing"
 	ReasonWaitingToTrain                = "WaitingToTrain"
 	ReasonWaitingToTest                 = "WaitingToTest"
@@ -405,29 +414,7 @@ func (model *Model) MarkTraining() {
 
 }
 
-func (model *Model) MarkReleasing() {
-	model.Status.Phase = ModelPhaseReleasing
-	model.CreateOrUpdateCond(metav1.Condition{
-		Type:   ModelLive,
-		Status: metav1.ConditionFalse,
-		Reason: ReasonReleasing,
-	})
-	model.CreateOrUpdateCond(metav1.Condition{
-		Type:   ModelShadow,
-		Status: metav1.ConditionFalse,
-		Reason: ReasonReleasing,
-	})
-}
-
-func (model Model) IsReleasing() bool {
-	return model.Status.Phase == ModelPhaseReleasing
-}
-
 func (model *Model) MarkRole(predictor string, role catalog.ModelRole) {
-	if model.Status.ReleasedAt == nil {
-		now := metav1.Now()
-		model.Status.ReleasedAt = &now
-	}
 	model.Spec.Role = &role
 	model.Labels[catalog.PredictorLabelKey] = predictor
 	model.Labels[catalog.ModelRoleLabelKey] = string(role)
@@ -474,7 +461,6 @@ func (model *Model) MarkRole(predictor string, role catalog.ModelRole) {
 }
 
 func (model *Model) Demote() {
-	model.Status.ReleasedAt = nil
 	labels := make(map[string]string)
 	for k, v := range model.Labels {
 		if k == catalog.PredictorLabelKey || k == catalog.ModelRoleLabelKey {
@@ -645,7 +631,7 @@ func (model Model) Testing() bool {
 }
 
 func (model Model) WaitingToTest() bool {
-	return *model.Spec.Tested && model.Status.TestingStartedAt == nil
+	return *model.Spec.Test && model.Status.TestingStartedAt == nil
 }
 
 // -------------------- Unit testing
@@ -736,14 +722,14 @@ func (model *Model) MarkProfiling() {
 	model.Status.Progress = 85
 }
 
-func (model *Model) MarkProfiled(uri string) {
+func (model *Model) MarkProfiled(location catalog.FileLocation) {
 	model.Status.Phase = ModelPhaseProfiled
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelProfiled,
 		Status: metav1.ConditionTrue,
 		Reason: ModelProfiled,
 	})
-	model.Status.ProfileURI = uri
+	model.Status.ProfileLocation = location
 	model.Status.Progress = 90
 }
 
@@ -1172,19 +1158,18 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	model.Spec.DatasetName = study.Spec.DatasetName
 	model.Spec.ModelClassName = study.Spec.ModelClassName
 	model.Spec.ModelClassRunName = study.Spec.ModelClassRunName
+	model.Spec.ArtifactBucketName = study.Spec.ArtifactBucketName
 	model.Spec.Task = study.Spec.Task
-	model.Spec.Forecasting = study.Spec.FctTemplate.DeepCopy()
+	model.Spec.Forecasting = study.Spec.ForecastTemplate.DeepCopy()
 	model.Spec.Objective = study.Spec.Search.Objective
 	model.ObjectMeta.Labels = study.ObjectMeta.Labels
 	model.ObjectMeta.Labels[catalog.StudyLabelKey] = study.Name
-	model.Spec.Pushed = study.Spec.ModelImagePushed
-	model.Spec.Published = study.Spec.ModelPublished
 	model.Spec.Training.LabRef = study.Spec.LabRef
-	model.Spec.Fast = util.BoolPtr(*study.Spec.Fast)
+	model.Spec.Fast = study.Spec.Fast
 	model.Spec.ModelVersion = study.Spec.ModelVersion
 	model.Status.TrainDatasetLocation = study.Status.TrainDatasetLocation
 	model.Status.TestDatasetLocation = study.Status.TestDatasetLocation
-	model.Status.ValidationDataset = study.Status.ValidationDatasetLocation
+	model.Status.ValidationDatasetLocation = study.Status.ValidationDatasetLocation
 	model.Status.TrainingDataHash.TestingHash = study.Status.TrainingDataHash.TestingHash
 	model.Status.TrainingDataHash.TrainingHash = study.Status.TrainingDataHash.TrainingHash
 	model.Status.TrainingDataHash.ValidationHash = study.Status.TrainingDataHash.TrainingHash
@@ -1211,15 +1196,15 @@ func (model Model) IsGroup() bool {
 ////////////////////////////////
 
 func (model Model) IsFE() bool {
-	return model.Spec.ModelClass == catalog.FEModelStudyPhaseClassType
+	return model.Spec.ModelClass == catalog.ModelClassTypeFeatureEngineering
 }
 
 func (model Model) IsBaseline() bool {
-	return model.Spec.ModelClass == catalog.BaselineModelStudyPhaseClassType
+	return model.Spec.ModelClass == catalog.ModelClassTypeBaseline
 }
 
 func (model Model) IsSearch() bool {
-	return model.Spec.ModelClass == catalog.ModelStudyPhaseClassTypeSearch
+	return model.Spec.ModelClass == catalog.ModelClassTypeSearch
 }
 
 func (model Model) IsTest() bool {
@@ -1230,7 +1215,7 @@ func (model Model) IsTest() bool {
 // Model Alerts
 ////////////////////////////////////////////////////////////
 
-func (model Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+func (model Model) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Model %s completed successfully", model.Name)
 	result := &infra.Alert{
@@ -1239,15 +1224,14 @@ func (model Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *
 			Namespace:    model.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
+			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Model",
 				Name:      model.Name,
 				Namespace: model.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			Owner:        model.Spec.Owner,
 			Fields: map[string]string{
 				"Entity":     *model.Spec.DatasetName,
@@ -1268,24 +1252,23 @@ func (model Model) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *
 
 }
 
-func (model Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (model Model) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
 	level := infra.Error
-	subject := fmt.Sprintf("Model %s failed with error %v", model.Name, err.Error())
+	subject := fmt.Sprintf("Model %s failed with error: %v", model.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: model.Name,
 			Namespace:    model.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
+			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Model",
 				Name:      model.Name,
 				Namespace: model.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			Owner:        model.Spec.Owner,
 			Fields: map[string]string{
 				"Entity":     *model.Spec.DatasetName,
@@ -1294,7 +1277,7 @@ func (model Model) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *strin
 				"Objective":  string(model.Spec.Objective.Metric),
 				"Algorithm":  model.Spec.Estimator.AlgorithmName,
 				"Phase":      string(model.Status.Phase),
-				"Score":      util.FtoA(&model.Status.CVScore),
+				"Score":      util.FtoA(&model.Status.ValidationScore),
 				"Start Time": model.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
 		},

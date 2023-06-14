@@ -69,7 +69,7 @@ type TenantSpec struct {
 	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,4,opt,name=permissions"`
 	// The default notification specification for all resources under the tenant
 	// +kubebuilder:validation:Optional
-	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,5,opt,name=notification"`
+	Notification *catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,5,opt,name=notification"`
 	// OnlineStore references a Connection resource to an external database that the Modela online store microservice
 	// will use as an online store. The online store service must be installed through the Modela Operator
 	// +kubebuilder:validation:Optional

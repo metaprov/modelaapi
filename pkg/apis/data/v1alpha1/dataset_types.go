@@ -81,8 +81,7 @@ type DatasetSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// The name of the DataProductVersion which describes the version of the resource
-	// that exists in the same DataProduct namespace as the resource
+	// VersionName references the name of a Data Product Version that describes the version of the resource
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Required
@@ -96,9 +95,6 @@ type DatasetSpec struct {
 	// +kubebuilder:default:=""
 	// +required
 	DataSourceName string `json:"dataSourceName,omitempty" protobuf:"bytes,3,opt,name=dataSourceName"`
-	// In case of training data, this is the model class name that created it.
-	// +kubebuilder:validation:Optional
-	FeatureGroupName *string `json:"featureGroupName,omitempty" protobuf:"bytes,4,opt,name=featureGroupName"`
 	// User-provided description of the object
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:default:=""
@@ -129,8 +125,7 @@ type DatasetSpec struct {
 	// +kubebuilder:validation:Optional
 	Origin catalog.DataLocation `json:"origin,omitempty" protobuf:"bytes,13,opt,name=origin"`
 	// Location is the final location of the data which was copied from the `Origin` location during the ingestion phase.
-	// This field is set by the Dataset resource controller and should not be changed by any end-users. This location
-	// points strictly to a flat file.
+	// This field is set by the Dataset resource controller and should not be changed by any end-users
 	// +kubebuilder:validation:Required
 	// +required
 	Location catalog.FileLocation `json:"location,omitempty" protobuf:"bytes,14,opt,name=location"`
@@ -138,7 +133,7 @@ type DatasetSpec struct {
 	// the Study will be stored. If empty, it will default to the default Virtual Bucket of the Data Product
 	// +kubebuilder:validation:Optional
 	ArtifactBucketName *string `json:"artifactBucketName,omitempty" protobuf:"bytes,15,opt,name=artifactBucketName"`
-	// Resources specifies the resource requirements which the Dataset will request when creating Jobs to analyze the data
+	// Resources specifies the resource requirements that will be allocated for the Dataset
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,16,opt,name=resources"`
 	// The deadline in seconds for all Jobs created by the Dataset
@@ -149,11 +144,10 @@ type DatasetSpec struct {
 	// +kubebuilder:default:="tabular"
 	// +kubebuilder:validation:Optional
 	Type *catalog.DatasetType `json:"type,omitempty" protobuf:"bytes,18,opt,name=type"`
-	// The specification for how the data should be sampled, if applicable. Sampling may improve dataset and model creation
-	// time in the case of very large datasets that are being rapidly prototyped and iterated on
+	// Sample specifies the configuration to sample the dataset's data
 	// +kubebuilder:validation:Optional
 	Sample *SampleSpec `json:"sample,omitempty" protobuf:"bytes,19,opt,name=sample"`
-	// If the dataset is Synthetic , this is the syntactic spec
+	// Synthetic specifies to configuration to augment the dataset with synthetic data
 	// +kubebuilder:validation:Optional
 	Synthetic *SyntheticSpec `json:"synthetic,omitempty" protobuf:"bytes,20,opt,name=synthetic "`
 	// The machine learning task relevant to the Dataset. This field *must* be the same as the Data Source of the object
@@ -167,8 +161,7 @@ type DatasetSpec struct {
 	// Based on the specification, the data plane will compute the correlation between each feature and will store the highest-scoring
 	// +kubebuilder:validation:Optional
 	Correlation *CorrelationSpec `json:"correlation,omitempty" protobuf:"bytes,23,opt,name=correlation"`
-	// Indicates if the Dataset should be quickly processed.
-	// If enabled, the validation, profiling, and reporting phases will be skipped.
+	// Indicates if the Dataset should be quickly processed. If enabled, the validation, profiling, and reporting will be skipped
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Fast *bool `json:"fast,omitempty" protobuf:"varint,24,opt,name=fast"`
@@ -203,16 +196,21 @@ type DatasetSpec struct {
 	// If this dataset represent a group in a multi-series dataset, these are the values of the group key.
 	// +kubebuilder:validation:Optional
 	Key []string `json:"key,omitempty" protobuf:"bytes,33,rep,name=key"`
-	// The model class for this dataset if the dataset was created by a model class
+	// ModelClassName specifies the name of the Model Class which created the Dataset, if applicable
 	// +kubebuilder:validation:Optional
 	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,34,opt,name=modelClassName"`
-	// If this report was created by a model class run, this is the run name
+	// ModelClassRunName specifies the name of the Model Class Run which created the Dataset, if applicable
 	// +kubebuilder:validation:Optional
 	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,35,opt,name=modelClassRunName"`
-	// FeatureGroups contains the list of feature groups that were used to create the dataset
-	// This is used for lineage.
+	// FeatureGroups contains the list of feature groups that were used to construct the dataset, if applicable
 	// +kubebuilder:validation:Optional
 	FeatureGroups []v1.ObjectReference `json:"featureGroups,omitempty" protobuf:"bytes,36,rep,name=featureGroups"`
+	// FeatureGroupName specifies the name of the Feature Group that created the Dataset, if applicable
+	// +kubebuilder:validation:Optional
+	FeatureGroupName *string `json:"featureGroupName,omitempty" protobuf:"bytes,37,opt,name=featureGroupName"`
+	// Notification specifies the configuration for Alerts generated by the resource
+	//+kubebuilder:validation:Optional
+	//Notification *catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,37,opt,name=notification"`
 }
 
 // DatasetStatus defines the observed state of a Dataset object
@@ -249,9 +247,6 @@ type DatasetStatus struct {
 	// Last time the Dataset was used with a Study
 	//+kubebuilder:validation:Optional
 	LastStudyAt *metav1.Time `json:"lastStudyAt,omitempty" protobuf:"bytes,10,opt,name=lastStudyAt"`
-	// In the case of failure, the Dataset resource controller will set this field with a failure reason
-	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,12,opt,name=failureReason"`
 	// In the case of failure, the Dataset resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,13,opt,name=failureMessage"`
@@ -265,9 +260,6 @@ type DatasetStatus struct {
 	Hash string `json:"hash,omitempty" protobuf:"bytes,15,opt,name=hash"`
 	// The log file specification that determines the location of all logs produced by the object
 	Logs catalog.Logs `json:"logs" protobuf:"bytes,16,opt,name=logs"`
-	// If the dataset is derived, the name of the Dataset that the object is derived from
-	// +kubebuilder:validation:Optional
-	DerivedFromDataset *string `json:"derivedFromDataset,omitempty" protobuf:"bytes,17,opt,name=derivedFromDataset"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
 	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,18,opt,name=updatedAt"`

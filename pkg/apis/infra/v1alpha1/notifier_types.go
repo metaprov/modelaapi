@@ -1,7 +1,6 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -75,16 +74,17 @@ type NotifierSpec struct {
 
 // NotifierStatus is the observed state of a Notifier
 type NotifierStatus struct {
-	// ObservedGeneration is the last generation that was acted on
+	// ObservedGeneration is the last generation that was reconciled by Modela
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
-	// The last time the object was updated
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
+	// UpdatedAt specifies the last time the object was updated
 	//+kubebuilder:validation:Optional
-	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,3,opt,name=updatedAt"`
-	// The status of Notification Channels after Alerts have been forwarded to them
-	ChannelsStatus []NotificationChannelStatus `json:"channelsStatus,omitempty" protobuf:"bytes,4,rep,name=channelsStatus"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,2,opt,name=updatedAt"`
+	// ChannelsStatus describes the status of each notification channel (per individual Connection)
 	//+kubebuilder:validation:Optional
-	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
+	ChannelsStatus []NotificationChannelStatus `json:"channelsStatus,omitempty" protobuf:"bytes,3,rep,name=channelsStatus"`
+	//+kubebuilder:validation:Optional
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
 }
 
 // NotificationChannelSpec describes a single Connection to an external messaging system and a destination channel within the system
@@ -105,23 +105,18 @@ type NotificationChannelSpec struct {
 	// +kubebuilder:default:= true
 	// +kubebuilder:validation:Optional
 	Error *bool `json:"error,omitempty" protobuf:"varint,4,opt,name=error"`
-	// This channel start time
-	// +kubebuilder:validation:Optional
-	From *metav1.Time `json:"from,omitempty" protobuf:"bytes,5,opt,name=from"`
-	// This channel end time
-	// +kubebuilder:validation:Optional
-	To *metav1.Time `json:"to,omitempty" protobuf:"bytes,6,opt,name=to"`
 	// The destination channel that exists in the external system that ConnectionName references.
 	// For example, a Slack channel name, a Discord channel ID, or an e-mail address
 	Destination string `json:"destination,omitempty" protobuf:"bytes,7,opt,name=destination"`
 }
 
 type NotificationChannelStatus struct {
+	// The name of the Connection resource which exists in the same tenant as the parent Notifier
+	// +kubebuilder:validation:Required
+	// +kubebuilder:default:=""
+	ConnectionName *string `json:"connectionName" protobuf:"bytes,2,opt,name=connectionName"`
 	// The last time a message was sent on this channel
 	LastMessageAt *metav1.Time `json:"lastMessageAt,omitempty" protobuf:"bytes,1,opt,name=lastMessageAt"`
-	// In the case of failure, the Notifier resource controller will set this field with a failure reason
-	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,2,opt,name=failureReason"`
 	// In the case of failure, the Notifier resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,3,opt,name=failureMessage"`

@@ -837,26 +837,20 @@ message ModelDeploymentSpec {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 13;
 }
 
-// NotificationSpec specifies which Notifiers to forward Alert resources to
+// NotificationSpec defines the notification configuration for an Alert resource
 message NotificationSpec {
-  // Time-to-live for error messages, in seconds
+  // TTL defines the time-to-live for Alerts, in seconds, after which they will be deleted
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
-  optional int32 errorTTL = 2;
+  optional int32 ttl = 1;
 
-  // Time-to-live for success messages. In seconds
-  // +kubebuilder:default:=3600
+  // NotifierName specifies the name of a single Notifier resource which the Alert will be forwarded to
   // +kubebuilder:validation:Optional
-  optional int32 successTTL = 4;
+  optional string notifierName = 2;
 
-  // The name of the Notifier which exists in the same tenant as the resource specifying the NotificationSpec
-  // +kubebuilder:default:= ""
+  // Selector defines a map of labels that will be matched to find multiple Notifier resource to forward alerts to
   // +kubebuilder:validation:Optional
-  optional string notifierName = 5;
-
-  // The labels which will be searched for in all Notifiers to determine the target Notifiers
-  // +kubebuilder:validation:Optional
-  map<string, string> selector = 6;
+  map<string, string> selector = 3;
 }
 
 message ObjectiveSpec {
@@ -872,9 +866,9 @@ message PRCurve {
   repeated CurvePoint values = 1;
 }
 
-// Parameter range indicate a single hyper parameter range
+// ParameterRange defines the limits for a single hyperparameter
 message ParameterRange {
-  // Name is the name of the hyper parameter
+  // Name is the name of the hyperparameter
   // +kubebuilder:validation:Optional
   optional string name = 1;
 
@@ -882,11 +876,11 @@ message ParameterRange {
   // +kubebuilder:validation:Optional
   optional string type = 2;
 
-  // Low is the minimum value of the hyperparameter range
+  // Low is the minimum value of the hyperparameter
   // +kubebuilder:validation:Optional
   optional double low = 3;
 
-  // High is the maximum value of the hyper parameter range
+  // High is the maximum value of the hyperparameter
   // +kubebuilder:validation:Optional
   optional double high = 4;
 
@@ -894,7 +888,7 @@ message ParameterRange {
   // +kubebuilder:validation:Optional
   optional int32 step = 5;
 
-  // If the scale is logaritimic
+  // Log indicates if the scale is logarithmic
   // +kubebuilder:validation:Optional
   optional bool log = 6;
 
@@ -1081,20 +1075,19 @@ message ResourceConsumption {
   optional uint64 gpu = 3;
 }
 
-// ResourceSpec specifies the amount of resources that will be allocated to a workload
+// ResourceSpec specifies the resources that will be allocated to a workload
 message ResourceSpec {
-  // If this resource is based on the workload, this field contain the name of the workload.
-  // The name of a WorkloadClass. The system will use the resource requirements described by the WorkloadClass
-  // +kubebuilder:default:="general-large"
+  // WorkloadName references the name of a Workload Class resource that will be used to determine the resource
+  // requirements of the workload. If specified, WorkloadName will take precedence over custom requirements
   // +kubebuilder:validation:Optional
   optional string workloadName = 1;
 
-  // If true, ignore the workload class name.
+  // Custom indicates if the custom requirements specified by Requirements will be used
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool custom = 2;
 
-  // The custom resource requirements for the workload, which are used if `WorkloadName` is not set
+  // Requirements specifies the custom resource requirements for the workload
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ResourceRequirements requirements = 3;
 }

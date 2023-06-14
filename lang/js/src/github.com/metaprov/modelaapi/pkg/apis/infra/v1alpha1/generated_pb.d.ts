@@ -296,11 +296,6 @@ export class AlertSpec extends jspb.Message {
   hasSubject(): boolean;
   clearSubject(): AlertSpec;
 
-  getMessage(): string;
-  setMessage(value: string): AlertSpec;
-  hasMessage(): boolean;
-  clearMessage(): AlertSpec;
-
   getLevel(): string;
   setLevel(value: string): AlertSpec;
   hasLevel(): boolean;
@@ -311,20 +306,10 @@ export class AlertSpec extends jspb.Message {
   hasEntityref(): boolean;
   clearEntityref(): AlertSpec;
 
-  getNotifiername(): string;
-  setNotifiername(value: string): AlertSpec;
-  hasNotifiername(): boolean;
-  clearNotifiername(): AlertSpec;
-
   getOwner(): string;
   setOwner(value: string): AlertSpec;
   hasOwner(): boolean;
   clearOwner(): AlertSpec;
-
-  getTtl(): number;
-  setTtl(value: number): AlertSpec;
-  hasTtl(): boolean;
-  clearTtl(): AlertSpec;
 
   getFieldsMap(): jspb.Map<string, string>;
   clearFieldsMap(): AlertSpec;
@@ -339,11 +324,6 @@ export class AlertSpec extends jspb.Message {
   hasImage(): boolean;
   clearImage(): AlertSpec;
 
-  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): AlertSpec;
-  hasTenantref(): boolean;
-  clearTenantref(): AlertSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AlertSpec.AsObject;
   static toObject(includeInstance: boolean, msg: AlertSpec): AlertSpec.AsObject;
@@ -355,16 +335,12 @@ export class AlertSpec extends jspb.Message {
 export namespace AlertSpec {
   export type AsObject = {
     subject?: string,
-    message?: string,
     level?: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    notifiername?: string,
     owner?: string,
-    ttl?: number,
     fieldsMap: Array<[string, string]>,
     url?: string,
     image?: string,
-    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
@@ -383,11 +359,6 @@ export class AlertStatus extends jspb.Message {
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AlertStatus;
   hasUpdatedat(): boolean;
   clearUpdatedat(): AlertStatus;
-
-  getFailurereason(): string;
-  setFailurereason(value: string): AlertStatus;
-  hasFailurereason(): boolean;
-  clearFailurereason(): AlertStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): AlertStatus;
@@ -412,7 +383,6 @@ export namespace AlertStatus {
     firedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason?: string,
     failuremessage?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
@@ -1179,16 +1149,6 @@ export class NotificationChannelSpec extends jspb.Message {
   hasError(): boolean;
   clearError(): NotificationChannelSpec;
 
-  getFrom(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setFrom(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotificationChannelSpec;
-  hasFrom(): boolean;
-  clearFrom(): NotificationChannelSpec;
-
-  getTo(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTo(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotificationChannelSpec;
-  hasTo(): boolean;
-  clearTo(): NotificationChannelSpec;
-
   getDestination(): string;
   setDestination(value: string): NotificationChannelSpec;
   hasDestination(): boolean;
@@ -1208,22 +1168,20 @@ export namespace NotificationChannelSpec {
     connectionname?: string,
     info?: boolean,
     error?: boolean,
-    from?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    to?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     destination?: string,
   }
 }
 
 export class NotificationChannelStatus extends jspb.Message {
+  getConnectionname(): string;
+  setConnectionname(value: string): NotificationChannelStatus;
+  hasConnectionname(): boolean;
+  clearConnectionname(): NotificationChannelStatus;
+
   getLastmessageat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastmessageat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotificationChannelStatus;
   hasLastmessageat(): boolean;
   clearLastmessageat(): NotificationChannelStatus;
-
-  getFailurereason(): string;
-  setFailurereason(value: string): NotificationChannelStatus;
-  hasFailurereason(): boolean;
-  clearFailurereason(): NotificationChannelStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): NotificationChannelStatus;
@@ -1240,8 +1198,8 @@ export class NotificationChannelStatus extends jspb.Message {
 
 export namespace NotificationChannelStatus {
   export type AsObject = {
+    connectionname?: string,
     lastmessageat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason?: string,
     failuremessage?: string,
   }
 }

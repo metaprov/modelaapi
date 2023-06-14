@@ -118,16 +118,15 @@ spec:
               fast:
                 default: false
                 description: Indicates if the Dataset should be quickly processed.
-                  If enabled, the validation, profiling, and reporting phases will
-                  be skipped.
+                  If enabled, the validation, profiling, and reporting will be skipped
                 type: boolean
               featureGroupName:
-                description: In case of training data, this is the model class name
-                  that created it.
+                description: FeatureGroupName specifies the name of the Feature Group
+                  that created the Dataset, if applicable
                 type: string
               featureGroups:
                 description: FeatureGroups contains the list of feature groups that
-                  were used to create the dataset This is used for lineage.
+                  were used to construct the dataset, if applicable
                 items:
                   description: 'ObjectReference contains enough information to let
                     you inspect or modify the referred object. --- New uses of this
@@ -326,8 +325,7 @@ spec:
                 description: Location is the final location of the data which was
                   copied from the `Origin` location during the ingestion phase. This
                   field is set by the Dataset resource controller and should not be
-                  changed by any end-users. This location points strictly to a flat
-                  file.
+                  changed by any end-users
                 properties:
                   bucketName:
                     type: string
@@ -335,12 +333,12 @@ spec:
                     type: string
                 type: object
               modelClassName:
-                description: The model class for this dataset if the dataset was created
-                  by a model class
+                description: ModelClassName specifies the name of the Model Class
+                  which created the Dataset, if applicable
                 type: string
               modelClassRunName:
-                description: If this report was created by a model class run, this
-                  is the run name
+                description: ModelClassRunName specifies the name of the Model Class
+                  Run which created the Dataset, if applicable
                 type: string
               origin:
                 description: Origin is the location of the data file or database query
@@ -508,16 +506,17 @@ spec:
                   should be generated
                 type: boolean
               resources:
-                description: Resources specifies the resource requirements which the
-                  Dataset will request when creating Jobs to analyze the data
+                description: Resources specifies the resource requirements that will
+                  be allocated for the Dataset
                 properties:
                   custom:
                     default: false
-                    description: If true, ignore the workload class name.
+                    description: Custom indicates if the custom requirements specified
+                      by Requirements will be used
                     type: boolean
                   requirements:
-                    description: The custom resource requirements for the workload,
-                      which are used if `WorkloadName` is not set
+                    description: Requirements specifies the custom resource requirements
+                      for the workload
                     properties:
                       limits:
                         additionalProperties:
@@ -543,11 +542,10 @@ spec:
                         type: object
                     type: object
                   workloadName:
-                    default: general-large
-                    description: If this resource is based on the workload, this field
-                      contain the name of the workload. The name of a WorkloadClass.
-                      The system will use the resource requirements described by the
-                      WorkloadClass
+                    description: WorkloadName references the name of a Workload Class
+                      resource that will be used to determine the resource requirements
+                      of the workload. If specified, WorkloadName will take precedence
+                      over custom requirements
                     type: string
                 type: object
               role:
@@ -562,10 +560,8 @@ spec:
                 - featuregroup
                 type: string
               sample:
-                description: The specification for how the data should be sampled,
-                  if applicable. Sampling may improve dataset and model creation time
-                  in the case of very large datasets that are being rapidly prototyped
-                  and iterated on
+                description: Sample specifies the configuration to sample the dataset's
+                  data
                 properties:
                   column:
                     default: ""
@@ -680,7 +676,8 @@ spec:
                 - none
                 type: string
               synthetic:
-                description: If the dataset is Synthetic , this is the syntactic spec
+                description: Synthetic specifies to configuration to augment the dataset
+                  with synthetic data
                 properties:
                   enabled:
                     description: Indicates if the generation of synthetic data is
@@ -944,9 +941,8 @@ spec:
                 type: object
               versionName:
                 default: ""
-                description: The name of the DataProductVersion which describes the
-                  version of the resource that exists in the same DataProduct namespace
-                  as the resource
+                description: VersionName references the name of a Data Product Version
+                  that describes the version of the resource
                 maxLength: 63
                 type: string
             type: object
@@ -1035,17 +1031,9 @@ spec:
                   - type
                   type: object
                 type: array
-              derivedFromDataset:
-                description: If the dataset is derived, the name of the Dataset that
-                  the object is derived from
-                type: string
               failureMessage:
                 description: In the case of failure, the Dataset resource controller
                   will set this field with a failure message
-                type: string
-              failureReason:
-                description: In the case of failure, the Dataset resource controller
-                  will set this field with a failure reason
                 type: string
               featureHistogramRef:
                 description: The generated training feature histogram, Empty if no

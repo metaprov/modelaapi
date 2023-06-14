@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
@@ -248,20 +249,18 @@ func (fg FeatureGroup) TenantName() string {
 	return fg.Spec.TenantRef.Name
 }
 
-func (fh FeatureGroup) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (fh FeatureGroup) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
 	level := infra.Error
-	subject := fmt.Sprintf("FeatureGroup %s failed with error %v", fh.Name, err.Error())
+	subject := fmt.Sprintf("Feature Group %s failed with error: %v", fh.Name, err.Error())
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: fh.Name,
 			Namespace:    fh.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject:      util.StrPtr(subject),
-			Message:      util.StrPtr(err.Error()),
+			Subject:      subject,
 			Level:        &level,
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			EntityRef: v1.ObjectReference{
 				Kind:      "FeatureGroup",
 				Name:      fh.Name,

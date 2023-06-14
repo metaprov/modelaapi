@@ -53,24 +53,24 @@ type AlgorithmSpec struct {
 	Ranges []ParameterRange `json:"ranges,omitempty" protobuf:"bytes,6,rep,name=ranges"`
 }
 
-// Parameter range indicate a single hyper parameter range
+// ParameterRange defines the limits for a single hyperparameter
 type ParameterRange struct {
-	// Name is the name of the hyper parameter
+	// Name is the name of the hyperparameter
 	// +kubebuilder:validation:Optional
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Type is the datatype of the parameter
 	// +kubebuilder:validation:Optional
 	Type HyperParameterDataType `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
-	// Low is the minimum value of the hyperparameter range
+	// Low is the minimum value of the hyperparameter
 	// +kubebuilder:validation:Optional
 	Low *float64 `json:"low,omitempty" protobuf:"bytes,3,opt,name=low"`
-	// High is the maximum value of the hyper parameter range
+	// High is the maximum value of the hyperparameter
 	// +kubebuilder:validation:Optional
 	High *float64 `json:"high,omitempty" protobuf:"bytes,4,opt,name=high"`
 	// Step for discrete variable.
 	// +kubebuilder:validation:Optional
 	Step *int32 `json:"step,omitempty" protobuf:"varint,5,opt,name=step"`
-	// If the scale is logaritimic
+	// Log indicates if the scale is logarithmic
 	// +kubebuilder:validation:Optional
 	Log *bool `json:"log,omitempty" protobuf:"varint,6,opt,name=log"`
 	// Set of choices for categorical variable

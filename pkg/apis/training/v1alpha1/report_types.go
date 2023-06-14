@@ -83,11 +83,10 @@ type ReportList struct {
 
 // ReportSpec specifies the desired state of a Report
 type ReportSpec struct {
-	// The name of the DataProductVersion which describes the version of the resource
-	// that exists in the same DataProduct namespace as the resource
+	// VersionName references the name of a Data Product Version that describes the version of the resource
 	// +kubebuilder:default:="latest"
 	VersionName string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
-	// EntityRef specifies the entity which the Report references. The supported entities consist of Entity, Model, and Study resources
+	// EntityRef specifies the entity which the Report references. The supported entities consist of Dataset, Model, and Study resources
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,2,opt,name=entityRef"`
 	// The type of report (e.g. classification model report, study report)
 	// +kubebuilder:validation:Required
@@ -99,12 +98,12 @@ type ReportSpec struct {
 	Format *ReportFormat `json:"format,omitempty" protobuf:"bytes,4,opt,name=format"`
 	// The name of the Notifier resource which Alerts created by the Report will be forwarded to
 	// +kubebuilder:validation:Optional
-	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,5,opt,name=notifierName"`
+	Notification *catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,5,opt,name=notification"`
 	// The name of the Account which created the object, which exists in the same tenant as the object
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`
-	// Resources specifies the resource requirements that will be allocated to the workload
+	// Resources specifies the resource requirements that will be allocated for the Report
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,7,opt,name=resources"`
 	// The deadline for any Jobs associated with the Report to be completed in seconds
@@ -122,10 +121,10 @@ type ReportSpec struct {
 	// If empty, it will default to the default Virtual Bucket for the Data Product of the Report
 	// +kubebuilder:validation:Optional
 	ArtifactBucketName *string `json:"artifactBucketName,omitempty" protobuf:"bytes,11,opt,name=artifactBucketName"`
-	// The model class for this report if the model was created by a model class
+	// ModelClassName specifies the name of the Model Class which created the Dataset, if applicable
 	// +kubebuilder:validation:Optional
 	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,12,opt,name=modelClassName"`
-	// If this report was created by a model class run, this is the run name
+	// ModelClassRunName specifies the name of the Model Class Run which created the Dataset, if applicable
 	// +kubebuilder:validation:Optional
 	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,13,opt,name=modelClassRunName"`
 }

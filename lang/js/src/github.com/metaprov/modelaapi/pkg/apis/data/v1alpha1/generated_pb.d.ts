@@ -1748,11 +1748,6 @@ export class DataProductSpec extends jspb.Message {
   hasServingresources(): boolean;
   clearServingresources(): DataProductSpec;
 
-  getRetriesonfailure(): number;
-  setRetriesonfailure(value: number): DataProductSpec;
-  hasRetriesonfailure(): boolean;
-  clearRetriesonfailure(): DataProductSpec;
-
   getPriority(): string;
   setPriority(value: string): DataProductSpec;
   hasPriority(): boolean;
@@ -1802,7 +1797,6 @@ export namespace DataProductSpec {
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     trainingresources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     servingresources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    retriesonfailure?: number,
     priority?: string,
     color?: string,
     approval?: ApprovalSpec.AsObject,
@@ -2427,11 +2421,6 @@ export class DatasetSpec extends jspb.Message {
   hasDatasourcename(): boolean;
   clearDatasourcename(): DatasetSpec;
 
-  getFeaturegroupname(): string;
-  setFeaturegroupname(value: string): DatasetSpec;
-  hasFeaturegroupname(): boolean;
-  clearFeaturegroupname(): DatasetSpec;
-
   getDescription(): string;
   setDescription(value: string): DatasetSpec;
   hasDescription(): boolean;
@@ -2582,6 +2571,11 @@ export class DatasetSpec extends jspb.Message {
   clearFeaturegroupsList(): DatasetSpec;
   addFeaturegroups(value?: k8s_io_api_core_v1_generated_pb.ObjectReference, index?: number): k8s_io_api_core_v1_generated_pb.ObjectReference;
 
+  getFeaturegroupname(): string;
+  setFeaturegroupname(value: string): DatasetSpec;
+  hasFeaturegroupname(): boolean;
+  clearFeaturegroupname(): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -2595,7 +2589,6 @@ export namespace DatasetSpec {
     owner?: string,
     versionname?: string,
     datasourcename?: string,
-    featuregroupname?: string,
     description?: string,
     displayname?: string,
     role?: string,
@@ -2626,6 +2619,7 @@ export namespace DatasetSpec {
     modelclassname?: string,
     modelclassrunname?: string,
     featuregroupsList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
+    featuregroupname?: string,
   }
 }
 
@@ -2730,11 +2724,6 @@ export class DatasetStatus extends jspb.Message {
   hasLaststudyat(): boolean;
   clearLaststudyat(): DatasetStatus;
 
-  getFailurereason(): string;
-  setFailurereason(value: string): DatasetStatus;
-  hasFailurereason(): boolean;
-  clearFailurereason(): DatasetStatus;
-
   getFailuremessage(): string;
   setFailuremessage(value: string): DatasetStatus;
   hasFailuremessage(): boolean;
@@ -2754,11 +2743,6 @@ export class DatasetStatus extends jspb.Message {
   setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): DatasetStatus;
   hasLogs(): boolean;
   clearLogs(): DatasetStatus;
-
-  getDerivedfromdataset(): string;
-  setDerivedfromdataset(value: string): DatasetStatus;
-  hasDerivedfromdataset(): boolean;
-  clearDerivedfromdataset(): DatasetStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
@@ -2810,12 +2794,10 @@ export namespace DatasetStatus {
     observedgeneration?: number,
     testresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     laststudyat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason?: string,
     failuremessage?: string,
     progress?: number,
     hash?: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    derivedfromdataset?: string,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,

@@ -114,25 +114,20 @@ spec:
                 description: The default notification specification for all resources
                   under the tenant
                 properties:
-                  errorTTL:
-                    default: 3600
-                    description: Time-to-live for error messages, in seconds
-                    format: int32
-                    type: integer
                   notifierName:
-                    default: ""
-                    description: The name of the Notifier which exists in the same
-                      tenant as the resource specifying the NotificationSpec
+                    description: NotifierName specifies the name of a single Notifier
+                      resource which the Alert will be forwarded to
                     type: string
                   selector:
                     additionalProperties:
                       type: string
-                    description: The labels which will be searched for in all Notifiers
-                      to determine the target Notifiers
+                    description: Selector defines a map of labels that will be matched
+                      to find multiple Notifier resource to forward alerts to
                     type: object
-                  successTTL:
+                  ttl:
                     default: 3600
-                    description: Time-to-live for success messages. In seconds
+                    description: TTL defines the time-to-live for Alerts, in seconds,
+                      after which they will be deleted
                     format: int32
                     type: integer
                 type: object

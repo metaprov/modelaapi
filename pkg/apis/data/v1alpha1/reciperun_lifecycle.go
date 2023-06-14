@@ -162,7 +162,7 @@ func (reciperun *RecipeRun) IsFailed() bool {
 }
 
 // Generate a dataset completion alert
-func (reciperun RecipeRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+func (reciperun RecipeRun) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Recipe reciperun %s completed successfully", reciperun.Name)
 	result := &infra.Alert{
@@ -171,15 +171,14 @@ func (reciperun RecipeRun) CompletionAlert(tenantRef *v1.ObjectReference, notifi
 			Namespace:    reciperun.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
+			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "RecipeRun",
 				Name:      reciperun.Name,
 				Namespace: reciperun.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			Fields: map[string]string{
 				"Start Time": reciperun.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
@@ -191,24 +190,23 @@ func (reciperun RecipeRun) CompletionAlert(tenantRef *v1.ObjectReference, notifi
 	return result
 }
 
-func (reciperun RecipeRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (reciperun RecipeRun) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
 	level := infra.Error
-	subject := fmt.Sprintf("Recipe reciperun %s failed with error %v", reciperun.Name, err.Error())
+	subject := fmt.Sprintf("Recipe %s failed with error: %v", reciperun.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: reciperun.Name,
 			Namespace:    reciperun.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
+			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "RecipeRun",
 				Name:      reciperun.Name,
 				Namespace: reciperun.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			Fields: map[string]string{
 				"Start Time": reciperun.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},

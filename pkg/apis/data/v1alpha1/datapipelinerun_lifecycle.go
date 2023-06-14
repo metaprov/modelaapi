@@ -173,7 +173,7 @@ func (in *DataPipelineRun) MarkAborted(err error) {
 }
 
 // Generate a dataset completion alert
-func (run DataPipelineRun) CompletionAlert(tenantRef *v1.ObjectReference, notifierName *string) *infra.Alert {
+func (run DataPipelineRun) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Location pipeline run %s completed successfully", run.Name)
 	result := &infra.Alert{
@@ -182,15 +182,14 @@ func (run DataPipelineRun) CompletionAlert(tenantRef *v1.ObjectReference, notifi
 			Namespace:    run.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject: util.StrPtr(subject),
+			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
 				Kind:      "DataPipelineRun",
 				Name:      run.Name,
 				Namespace: run.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			Owner:        run.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": run.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
@@ -203,19 +202,18 @@ func (run DataPipelineRun) CompletionAlert(tenantRef *v1.ObjectReference, notifi
 	return result
 }
 
-func (run DataPipelineRun) ErrorAlert(tenantRef *v1.ObjectReference, notifierName *string, err error) *infra.Alert {
+func (run DataPipelineRun) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
 	level := infra.Error
-	subject := fmt.Sprintf("Location pipeline run %s failed with error %v", run.Name, err.Error())
+	subject := fmt.Sprintf("Data Pipeline Run %s failed with error: %v", run.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: run.Name,
 			Namespace:    run.Namespace,
 		},
 		Spec: infra.AlertSpec{
-			Subject:      util.StrPtr(subject),
+			Subject:      subject,
 			Level:        &level,
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
+			Notification: notification,
 			EntityRef: v1.ObjectReference{
 				Kind:      "DataPipelineRun",
 				Name:      run.Name,

@@ -163,9 +163,6 @@ type ModelClassTrainingSpec struct {
 	// Training schedule
 	// +kubebuilder:validation:Optional
 	TrainingSchedule catalog.RunSchedule `json:"trainingSchedule,omitempty" protobuf:"bytes,4,opt,name=trainingSchedule"`
-	// ModelImage specifies the configuration to upload Docker images of models to an image registry
-	//+kubebuilder:validation:Optional
-	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,5,opt,name=modelImage"`
 	// Define custom search space for this model class.
 	// The search space defines which algorithm to include or execlude
 	// If not defined, we would use the search space in the model template.
@@ -300,13 +297,13 @@ type ModelClassStatus struct {
 	TrainingScheduleStatus catalog.RunScheduleStatus `json:"trainingScheduleStatus,omitempty" protobuf:"bytes,4,opt,name=trainingScheduleStatus"`
 	// Batch Prediction schedule
 	//+kubebuilder:validation:Optional
-	PredictionScheduleStatus catalog.RunScheduleStatus `json:"predictionScheduleStatus,omitempty" protobuf:"bytes,5,opt,name=predictionSceduleStatus"`
+	PredictionScheduleStatus catalog.RunScheduleStatus `json:"predictionScheduleStatus,omitempty" protobuf:"bytes,5,opt,name=predictionScheduleStatus"`
 	// Batch Prediction schedule
 	//+kubebuilder:validation:Optional
-	MonitoringScheduleStatus catalog.RunScheduleStatus `json:"monitoringScheduleStatus,omitempty" protobuf:"bytes,6,opt,name=monitoringSceduleStatus"`
+	MonitoringScheduleStatus catalog.RunScheduleStatus `json:"monitoringScheduleStatus,omitempty" protobuf:"bytes,6,opt,name=monitoringScheduleStatus"`
 	// Batch Prediction schedule
 	//+kubebuilder:validation:Optional
-	ReportScheduleStatus catalog.RunScheduleStatus `json:"reportScheduleStatus,omitempty" protobuf:"bytes,7,opt,name=reportSceduleStatus"`
+	ReportScheduleStatus catalog.RunScheduleStatus `json:"reportScheduleStatus,omitempty" protobuf:"bytes,7,opt,name=reportScheduleStatus"`
 	// The highest score out of all ModelsCount created by the associated Study resource
 	// +kubebuilder:validation:Optional
 	BestModelScore float64 `json:"bestModelScore,omitempty" protobuf:"bytes,8,opt,name=bestModelScore"`
@@ -319,10 +316,6 @@ type ModelClassStatus struct {
 	// The name of triggered by.
 	// +kubebuilder:validation:Optional
 	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,12,opt,name=triggeredBy"`
-	// UpdateUpdateStrategy in case of terminal failure
-	// Borrowed from cluster api controller
-	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,13,opt,name=failureReason"`
 	// UpdateUpdateStrategy in case of terminal failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,14,opt,name=failureMessage"`
