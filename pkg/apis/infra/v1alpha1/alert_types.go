@@ -1,6 +1,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -73,7 +74,7 @@ type AlertSpec struct {
 	Image *string `json:"image,omitempty" protobuf:"bytes,7,opt,name=image"`
 	// Notification defines to configuration to forward the Alert to an external Notifier
 	// +kubebuilder:validation:Optional
-	//Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,8,opt,name=notification"`
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,8,opt,name=notification"`
 }
 
 // AlertStatus is the observed state of an Alert

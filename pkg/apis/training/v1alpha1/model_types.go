@@ -359,11 +359,7 @@ type ModelStatus struct {
 	// +kubebuilder:validation:Optional
 	FullWeightsLocation catalog.FileLocation `json:"fullWeightsLocation,omitempty" protobuf:"bytes,23,opt,name=fullWeightsLocation"`
 	// +kubebuilder:validation:Optional
-	TrainLabelEncoderURI catalog.FileLocation `json:"trainLabelEncoderLocation,omitempty" protobuf:"bytes,24,opt,name=trainLabelEncoderLocation"`
-	// +kubebuilder:validation:Optional
-	TestLabelEncoderURI catalog.FileLocation `json:"testLabelEncoderLocation,omitempty" protobuf:"bytes,25,opt,name=testLabelEncoderLocation"`
-	// +kubebuilder:validation:Optional
-	FullLabelEncoderURI catalog.FileLocation `json:"fullLabelEncoderLocation,omitempty" protobuf:"bytes,26,opt,name=fullLabelEncoderLocation"`
+	LabelEncoderLocation catalog.FileLocation `json:"trainLabelEncoderLocation,omitempty" protobuf:"bytes,24,opt,name=trainLabelEncoderLocation"`
 	// The location of the model profile, which contains visualizations produced during the profiling phase
 	// +kubebuilder:validation:Optional
 	ProfileLocation catalog.FileLocation `json:"profileLocation" protobuf:"bytes,27,opt,name=profileLocation"`

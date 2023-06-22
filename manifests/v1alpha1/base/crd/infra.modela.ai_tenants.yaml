@@ -52,12 +52,18 @@ spec:
           spec:
             description: TenantSpec defines the desired state of a Tenant
             properties:
+              cacheBucketName:
+                description: CacheBucketName specifies the name of the Virtual Bucket
+                  which workloads for resources under the Tenant will use internally
+                  for caching workloads. Setting CacheBucketName to a valid Virtual
+                  Bucket is highly recommended for stability and performance
+                type: string
               defaultBucketName:
                 default: ""
                 description: DefaultBucketName specifies a Virtual Bucket resource
                   that will be used as a default for all resources that do not specify
-                  a Virtual Bucket or have a Data Product which specifies a default
-                  Virtual Bucket
+                  a Virtual Bucket and has a Data Product that does not specify a
+                  default Virtual Bucket
                 type: string
               defaultLabName:
                 description: DefaultLabName specifies a Lab resource that will be
@@ -67,7 +73,7 @@ spec:
               defaultServingSiteName:
                 description: DefaultServingSiteName specifies a Serving Site resource
                   that will be used as a default for all resources that do not specify
-                  a Serving Site or have a Data Product which specifies a default
+                  a Serving Site and has a Data Product that does not specify a default
                   Serving Site
                 type: string
               metricStoreConnection:

@@ -70,10 +70,8 @@ func (study Study) DefaultBaselineEstimator(task catalog.MLTask) catalog.Classic
 var _ webhook.Defaulter = &Study{}
 
 func (study *Study) Default() {
-
-	if study.Spec.FESearch.Estimator == nil || string(*study.Spec.FESearch.Estimator) == "" {
-		estimator := study.DefaultFESearchEstimator(study.Spec.Task)
-		study.Spec.FESearch.Estimator = &estimator
+	if study.Spec.FESearch.Estimator == "" {
+		study.Spec.FESearch.Estimator = study.DefaultFESearchEstimator(study.Spec.Task)
 	}
 
 	study.Spec.Search.Default(study.Spec.DeepCopy().Task)
@@ -87,8 +85,8 @@ func (study *Study) Default() {
 	}
 
 	if study.Spec.Baseline.Enabled != nil && *study.Spec.Baseline.Enabled {
-		if len(study.Spec.Baseline.Baselines) == 0 {
-			study.Spec.Baseline.Baselines = append(study.Spec.Baseline.Baselines, study.DefaultBaselineEstimator(study.Spec.Task))
+		if len(study.Spec.Baseline.Algorithms) == 0 {
+			study.Spec.Baseline.Algorithms = append(study.Spec.Baseline.Algorithms, study.DefaultBaselineEstimator(study.Spec.Task))
 		}
 	}
 

@@ -16,65 +16,32 @@ service TrainerdService {
   rpc Explain (ExplainRequest) returns (ExplainResponse) {}
   rpc Forecast (ForecastRequest) returns (ForecastResponse) {}
   rpc Test (TestRequest) returns (TestResponse) {}
-  rpc TrainEnsemble (TrainEnsembleRequest) returns (TrainResponse) {}
   rpc TrainDriftDetector (TrainDriftDetectorRequest) returns (TrainResponse) {}
-  rpc TestEnsemble (TestEnsembleRequest) returns (TestResponse) {}
   rpc Shutdown(ShutdownRequest) returns (ShutdownResponse) {}
 }
-
-
-//////////////////////////////////// CrossValidate
-// Transform a dataset based on a prep
 
 message TrainRequest {
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
   github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
-  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 5;
-  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 6;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 7;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 9;
-  map<string, bytes> secret = 10;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            testDataset = 11;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            trainDataset = 12;
-  bool                                                                    group = 13;
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 4;
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 5;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 6;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 7;
+  repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model baseModels = 8;
 }
 
 message TrainResponse {
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement result = 1;
-  // The location in the bucket of the trained bin model
-  string weightsCloudUri = 2;
-  // The location in the bucket of the cloud manifest.
-  string manifestCloudUri = 3;
-  // The location in the bucket of the logs.
-  string logsCloudUri = 4;
-  // The uri for the label encoder, in case of a categorical class.
-  string labelEncoder = 5;
-  // python version info
-  string pythonVersionInfo = 6;
-  // python command line
-  string pythonCMD = 7;
-  // The operating system
-  string OS = 8;
-  // pip freeze string
-  map<string, string> pipFreeze = 9;
-  // feature importance
-  map<string, float> impurityFeatureImportance = 10;
-  // permutation feature importance
-  map<string, float> permutationFeatureImportance = 11;
-  // confusion matrix
-  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix cm = 12;
-  // this is the model uri
-  string modelIndexURI = 13;
-  // This is used in cases where the training is also performing the forecast
-  string forecastURI = 14;
-  // Compute the features on the time series.
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement features = 15;
-  // For forecasting, we are doing the profile during training, so this is the profile uri
-  string profileURI = 16;
-
-
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement results = 1;
+  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation weightsLocation = 2;
+  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation labelEncoderLocation = 3;
+  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation forecastLocation = 4;
+  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation profileLocation = 5;
+  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix confusionMatrix = 6;
+  string pythonVersionInfo = 7;
+  string OS = 9;
+  map<string, string> pipFreeze = 10;
+  map<string, float> impurityFeatureImportance = 11;
 }
 
 
@@ -84,12 +51,10 @@ message CompileRequest {
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
   github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
-  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 5;
-  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 6;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 7;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 9;
-  map<string, bytes> secret = 10;
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 4;
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 5;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 6;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 7;
 }
 
 message CompileResponse {
@@ -112,87 +77,20 @@ message TestRequest {
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 6;
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 7;
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 9;
-  map<string, bytes> secret = 10;
-  bool    group = 11;
+  repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model baseModels = 9;
 }
 
 message TestResponse {
-  // measurements on the training set
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement train_result = 1;
-  // measurements on the testing set
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement test_result = 2;
-  // The benchmark measurments
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement benchmark_result = 3;
-  // The location in the bucket of the model binary trained on the testing data
-  string testingModelWeightsCloudUri = 4;
-  // The location in the bucket of the model binary trained on the testing label encoder
-  string testingLabelEncoder = 5;
-  // The location in the bucket of the model binary trained on the full data
-  string fullModelWeightsCloudUri = 6;
-  // The location in the bucket of the model binary trained on the full data
-  string fullLabelEncoder = 7;
-  // The location in the bucket of the cloud manifest.
-  string modelManifestCloudUri = 8;
-  // The location in the bucket of the logs.
-  string modelLogsCloudUri = 9;
-  // The location in the bucket of the trained bin model
-  string preWeightsCloudUri = 10;
-  // The location in the bucket of the cloud manifest.
-  string preManifestCloudUri = 11;
-  // The location in the bucket of the logs.
-  string preLogsCloudUri = 12;
-  // python command line
-  string pythonCMD = 13;
-  // The operating system
-  string OS = 14;
-  // python version info
-  string pythonVersionInfo = 15;
-  // pip freeze string
-  map<string, string> pipFreeze = 16;
-  // Misclassfied uri
-  string misclassUri = 17;
-  // feature importance
-  map<string, float> impurityFeatureImportance = 18;
-  // permutation feature importance
-  map<string, float> permutationFeatureImportance = 19;
-  // train confusion matrix
-  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix trainCM = 20;
-  // test confusion matrix
-  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix testCM = 21;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement trainResults = 1;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement testResults = 2;
+  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation testWeightsLocation = 3;
+  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation fullWeightsLocation = 4;
+  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation misclassLocation = 5;
+  map<string, float> permutationFeatureImportance = 6;
+  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix trainConfusionMatrix = 7;
+  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrix testConfusionMatrix = 8;
 
 
-}
-// used for ensable training
-message TrainEnsembleRequest  {
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
-  // the spec for the base models
-  repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model   base = 5;
-  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 6;
-  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 7;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 8;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 9;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 10;
-  map<string, bytes> secret = 11;
-  bool    group = 12;
-}
-
-
-message TestEnsembleRequest  {
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
-  // the spec for the base models
-  repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model base = 5;
-  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 6;
-  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 7;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 8;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 9;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 10;
-  map<string, bytes> secret = 11;
-  bool    group = 12;
 }
 
 message TrainDriftDetectorRequest  {
@@ -205,9 +103,6 @@ message TrainDriftDetectorRequest  {
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 7;
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 8;
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 9;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 10;
-  map<string, bytes> secret = 11;
-  bool    group = 12;
 }
 
 
@@ -219,20 +114,14 @@ message ForecastRequest {
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 6;
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 7;
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 9;
-  map<string, bytes> secret = 10;
-  bool                                                                    group = 11;
 }
 
 message ForecastResponse {
-  // The location in the bucket of the forecast
-  string forecastCloudUri = 2;
+  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation forecastLocation = 1;
 }
 
 message ShutdownRequest {}
 message ShutdownResponse {}
-
-
 
 message ExplainRequest {
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
@@ -242,19 +131,11 @@ message ExplainRequest {
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 6;
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 7;
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 9;
-  map<string, bytes> secret = 10;
-  bool    group = 11;
 }
 
 message ExplainResponse {
-  // The location in the bucket of the trained bin model
-  string explainerUri = 1;
-  // The location in the bucket of the cloud manifest.
-  string trainShapValuesUri = 2;
-  // The location in the bucket of the logs.
-  string testShapValuesUri = 3;
-  // feature importance
-  map<string, float> shapFeaturesImportance = 4;
+  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation explainerLocation = 1;
+  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation trainShapValuesLocation = 2;
+  github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation testShapValuesLocation = 3;
 }
 

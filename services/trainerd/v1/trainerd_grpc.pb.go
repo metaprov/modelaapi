@@ -26,9 +26,7 @@ type TrainerdServiceClient interface {
 	Explain(ctx context.Context, in *ExplainRequest, opts ...grpc.CallOption) (*ExplainResponse, error)
 	Forecast(ctx context.Context, in *ForecastRequest, opts ...grpc.CallOption) (*ForecastResponse, error)
 	Test(ctx context.Context, in *TestRequest, opts ...grpc.CallOption) (*TestResponse, error)
-	TrainEnsemble(ctx context.Context, in *TrainEnsembleRequest, opts ...grpc.CallOption) (*TrainResponse, error)
 	TrainDriftDetector(ctx context.Context, in *TrainDriftDetectorRequest, opts ...grpc.CallOption) (*TrainResponse, error)
-	TestEnsemble(ctx context.Context, in *TestEnsembleRequest, opts ...grpc.CallOption) (*TestResponse, error)
 	Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error)
 }
 
@@ -76,27 +74,9 @@ func (c *trainerdServiceClient) Test(ctx context.Context, in *TestRequest, opts 
 	return out, nil
 }
 
-func (c *trainerdServiceClient) TrainEnsemble(ctx context.Context, in *TrainEnsembleRequest, opts ...grpc.CallOption) (*TrainResponse, error) {
-	out := new(TrainResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainEnsemble", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *trainerdServiceClient) TrainDriftDetector(ctx context.Context, in *TrainDriftDetectorRequest, opts ...grpc.CallOption) (*TrainResponse, error) {
 	out := new(TrainResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainDriftDetector", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *trainerdServiceClient) TestEnsemble(ctx context.Context, in *TestEnsembleRequest, opts ...grpc.CallOption) (*TestResponse, error) {
-	out := new(TestResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TestEnsemble", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -120,9 +100,7 @@ type TrainerdServiceServer interface {
 	Explain(context.Context, *ExplainRequest) (*ExplainResponse, error)
 	Forecast(context.Context, *ForecastRequest) (*ForecastResponse, error)
 	Test(context.Context, *TestRequest) (*TestResponse, error)
-	TrainEnsemble(context.Context, *TrainEnsembleRequest) (*TrainResponse, error)
 	TrainDriftDetector(context.Context, *TrainDriftDetectorRequest) (*TrainResponse, error)
-	TestEnsemble(context.Context, *TestEnsembleRequest) (*TestResponse, error)
 	Shutdown(context.Context, *ShutdownRequest) (*ShutdownResponse, error)
 	mustEmbedUnimplementedTrainerdServiceServer()
 }
@@ -143,14 +121,8 @@ func (UnimplementedTrainerdServiceServer) Forecast(context.Context, *ForecastReq
 func (UnimplementedTrainerdServiceServer) Test(context.Context, *TestRequest) (*TestResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Test not implemented")
 }
-func (UnimplementedTrainerdServiceServer) TrainEnsemble(context.Context, *TrainEnsembleRequest) (*TrainResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method TrainEnsemble not implemented")
-}
 func (UnimplementedTrainerdServiceServer) TrainDriftDetector(context.Context, *TrainDriftDetectorRequest) (*TrainResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TrainDriftDetector not implemented")
-}
-func (UnimplementedTrainerdServiceServer) TestEnsemble(context.Context, *TestEnsembleRequest) (*TestResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method TestEnsemble not implemented")
 }
 func (UnimplementedTrainerdServiceServer) Shutdown(context.Context, *ShutdownRequest) (*ShutdownResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Shutdown not implemented")
@@ -240,24 +212,6 @@ func _TrainerdService_Test_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TrainerdService_TrainEnsemble_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(TrainEnsembleRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(TrainerdServiceServer).TrainEnsemble(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainEnsemble",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TrainerdServiceServer).TrainEnsemble(ctx, req.(*TrainEnsembleRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _TrainerdService_TrainDriftDetector_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(TrainDriftDetectorRequest)
 	if err := dec(in); err != nil {
@@ -272,24 +226,6 @@ func _TrainerdService_TrainDriftDetector_Handler(srv interface{}, ctx context.Co
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TrainerdServiceServer).TrainDriftDetector(ctx, req.(*TrainDriftDetectorRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _TrainerdService_TestEnsemble_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(TestEnsembleRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(TrainerdServiceServer).TestEnsemble(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TestEnsemble",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TrainerdServiceServer).TestEnsemble(ctx, req.(*TestEnsembleRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -336,16 +272,8 @@ var TrainerdService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _TrainerdService_Test_Handler,
 		},
 		{
-			MethodName: "TrainEnsemble",
-			Handler:    _TrainerdService_TrainEnsemble_Handler,
-		},
-		{
 			MethodName: "TrainDriftDetector",
 			Handler:    _TrainerdService_TrainDriftDetector_Handler,
-		},
-		{
-			MethodName: "TestEnsemble",
-			Handler:    _TrainerdService_TestEnsemble_Handler,
 		},
 		{
 			MethodName: "Shutdown",

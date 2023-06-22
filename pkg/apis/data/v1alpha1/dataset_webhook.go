@@ -39,11 +39,7 @@ func (dataset *Dataset) Default() {
 		dataset.ObjectMeta.Labels[catalog.ModelClassRunLabelKey] = *dataset.Spec.ModelClassRunName
 	}
 
-	dataset.ObjectMeta.Labels[catalog.TenantLabelKey] = dataset.Spec.LabRef.Namespace
-	dataset.ObjectMeta.Labels[catalog.LabLabelKey] = dataset.Spec.LabRef.Name
-
 	dataset.Status.Statistics.Columns = make([]ColumnStatistics, 0)
-
 }
 
 // validation

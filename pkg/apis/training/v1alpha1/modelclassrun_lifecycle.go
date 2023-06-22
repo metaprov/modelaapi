@@ -301,9 +301,7 @@ func (mclass *ModelClass) PromotionAlert(tenantRef *v1.ObjectReference, notifier
 				Name:      model.Name,
 				Namespace: model.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
-			Owner:        model.Spec.Owner,
+			Owner: model.Spec.Owner,
 			Fields: map[string]string{
 				"Model Class Namespace": mclass.Namespace,
 				"ModelClass":            mclass.Name,

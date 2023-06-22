@@ -324,6 +324,11 @@ export class AlertSpec extends jspb.Message {
   hasImage(): boolean;
   clearImage(): AlertSpec;
 
+  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
+  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): AlertSpec;
+  hasNotification(): boolean;
+  clearNotification(): AlertSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AlertSpec.AsObject;
   static toObject(includeInstance: boolean, msg: AlertSpec): AlertSpec.AsObject;
@@ -341,6 +346,7 @@ export namespace AlertSpec {
     fieldsMap: Array<[string, string]>,
     url?: string,
     image?: string,
+    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
   }
 }
 
@@ -1718,6 +1724,11 @@ export class TenantSpec extends jspb.Message {
   hasDefaultbucketname(): boolean;
   clearDefaultbucketname(): TenantSpec;
 
+  getCachebucketname(): string;
+  setCachebucketname(value: string): TenantSpec;
+  hasCachebucketname(): boolean;
+  clearCachebucketname(): TenantSpec;
+
   getPermissions(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec | undefined;
   setPermissions(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec): TenantSpec;
   hasPermissions(): boolean;
@@ -1751,6 +1762,7 @@ export namespace TenantSpec {
     defaultlabname?: string,
     defaultservingsitename?: string,
     defaultbucketname?: string,
+    cachebucketname?: string,
     permissions?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     onlinestoreconnection?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,

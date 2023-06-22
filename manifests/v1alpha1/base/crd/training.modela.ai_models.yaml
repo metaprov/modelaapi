@@ -2360,15 +2360,6 @@ spec:
                   path:
                     type: string
                 type: object
-              fullLabelEncoderLocation:
-                description: FileLocation denotes the location of a flat-file, which
-                  is the name of a VirtualBucket and the path within it
-                properties:
-                  bucketName:
-                    type: string
-                  path:
-                    type: string
-                type: object
               fullWeightsLocation:
                 description: FileLocation denotes the location of a flat-file, which
                   is the name of a VirtualBucket and the path within it
@@ -2776,15 +2767,6 @@ spec:
               testDatasetLocation:
                 description: TestDatasetLocation specifies the location of the testing
                   dataset
-                properties:
-                  bucketName:
-                    type: string
-                  path:
-                    type: string
-                type: object
-              testLabelEncoderLocation:
-                description: FileLocation denotes the location of a flat-file, which
-                  is the name of a VirtualBucket and the path within it
                 properties:
                   bucketName:
                     type: string

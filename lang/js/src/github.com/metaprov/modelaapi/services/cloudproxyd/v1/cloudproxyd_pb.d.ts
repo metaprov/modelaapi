@@ -31,100 +31,120 @@ export namespace ShutdownResponse {
   }
 }
 
-export class VirtualBucketExistRequest extends jspb.Message {
+export class BucketExistRequest extends jspb.Message {
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): VirtualBucketExistRequest;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): BucketExistRequest;
   hasBucket(): boolean;
-  clearBucket(): VirtualBucketExistRequest;
+  clearBucket(): BucketExistRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VirtualBucketExistRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: VirtualBucketExistRequest): VirtualBucketExistRequest.AsObject;
-  static serializeBinaryToWriter(message: VirtualBucketExistRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VirtualBucketExistRequest;
-  static deserializeBinaryFromReader(message: VirtualBucketExistRequest, reader: jspb.BinaryReader): VirtualBucketExistRequest;
+  toObject(includeInstance?: boolean): BucketExistRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: BucketExistRequest): BucketExistRequest.AsObject;
+  static serializeBinaryToWriter(message: BucketExistRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BucketExistRequest;
+  static deserializeBinaryFromReader(message: BucketExistRequest, reader: jspb.BinaryReader): BucketExistRequest;
 }
 
-export namespace VirtualBucketExistRequest {
+export namespace BucketExistRequest {
   export type AsObject = {
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
   }
 }
 
-export class VirtualBucketExistResponse extends jspb.Message {
+export class BucketExistResponse extends jspb.Message {
   getExist(): boolean;
-  setExist(value: boolean): VirtualBucketExistResponse;
+  setExist(value: boolean): BucketExistResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VirtualBucketExistResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: VirtualBucketExistResponse): VirtualBucketExistResponse.AsObject;
-  static serializeBinaryToWriter(message: VirtualBucketExistResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VirtualBucketExistResponse;
-  static deserializeBinaryFromReader(message: VirtualBucketExistResponse, reader: jspb.BinaryReader): VirtualBucketExistResponse;
+  toObject(includeInstance?: boolean): BucketExistResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: BucketExistResponse): BucketExistResponse.AsObject;
+  static serializeBinaryToWriter(message: BucketExistResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BucketExistResponse;
+  static deserializeBinaryFromReader(message: BucketExistResponse, reader: jspb.BinaryReader): BucketExistResponse;
 }
 
-export namespace VirtualBucketExistResponse {
+export namespace BucketExistResponse {
   export type AsObject = {
     exist: boolean,
   }
 }
 
-export class KeyExistInVirtualBucketRequest extends jspb.Message {
-  getRegion(): string;
-  setRegion(value: string): KeyExistInVirtualBucketRequest;
-
+export class ExistsInBucketRequest extends jspb.Message {
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): KeyExistInVirtualBucketRequest;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): ExistsInBucketRequest;
   hasBucket(): boolean;
-  clearBucket(): KeyExistInVirtualBucketRequest;
+  clearBucket(): ExistsInBucketRequest;
 
   getKey(): string;
-  setKey(value: string): KeyExistInVirtualBucketRequest;
+  setKey(value: string): ExistsInBucketRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): KeyExistInVirtualBucketRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: KeyExistInVirtualBucketRequest): KeyExistInVirtualBucketRequest.AsObject;
-  static serializeBinaryToWriter(message: KeyExistInVirtualBucketRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): KeyExistInVirtualBucketRequest;
-  static deserializeBinaryFromReader(message: KeyExistInVirtualBucketRequest, reader: jspb.BinaryReader): KeyExistInVirtualBucketRequest;
+  toObject(includeInstance?: boolean): ExistsInBucketRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ExistsInBucketRequest): ExistsInBucketRequest.AsObject;
+  static serializeBinaryToWriter(message: ExistsInBucketRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExistsInBucketRequest;
+  static deserializeBinaryFromReader(message: ExistsInBucketRequest, reader: jspb.BinaryReader): ExistsInBucketRequest;
 }
 
-export namespace KeyExistInVirtualBucketRequest {
+export namespace ExistsInBucketRequest {
   export type AsObject = {
-    region: string,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     key: string,
   }
 }
 
-export class KeyExistInVirtualBucketResponse extends jspb.Message {
+export class ExistsInBucketResponse extends jspb.Message {
   getExist(): boolean;
-  setExist(value: boolean): KeyExistInVirtualBucketResponse;
+  setExist(value: boolean): ExistsInBucketResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): KeyExistInVirtualBucketResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: KeyExistInVirtualBucketResponse): KeyExistInVirtualBucketResponse.AsObject;
-  static serializeBinaryToWriter(message: KeyExistInVirtualBucketResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): KeyExistInVirtualBucketResponse;
-  static deserializeBinaryFromReader(message: KeyExistInVirtualBucketResponse, reader: jspb.BinaryReader): KeyExistInVirtualBucketResponse;
+  toObject(includeInstance?: boolean): ExistsInBucketResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ExistsInBucketResponse): ExistsInBucketResponse.AsObject;
+  static serializeBinaryToWriter(message: ExistsInBucketResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExistsInBucketResponse;
+  static deserializeBinaryFromReader(message: ExistsInBucketResponse, reader: jspb.BinaryReader): ExistsInBucketResponse;
 }
 
-export namespace KeyExistInVirtualBucketResponse {
+export namespace ExistsInBucketResponse {
   export type AsObject = {
     exist: boolean,
   }
 }
 
-export class CloudVirtualBucketResponse extends jspb.Message {
+export class DeleteRequest extends jspb.Message {
+  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DeleteRequest;
+  hasBucket(): boolean;
+  clearBucket(): DeleteRequest;
+
+  getKey(): string;
+  setKey(value: string): DeleteRequest;
+
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CloudVirtualBucketResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CloudVirtualBucketResponse): CloudVirtualBucketResponse.AsObject;
-  static serializeBinaryToWriter(message: CloudVirtualBucketResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CloudVirtualBucketResponse;
-  static deserializeBinaryFromReader(message: CloudVirtualBucketResponse, reader: jspb.BinaryReader): CloudVirtualBucketResponse;
+  toObject(includeInstance?: boolean): DeleteRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteRequest): DeleteRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteRequest;
+  static deserializeBinaryFromReader(message: DeleteRequest, reader: jspb.BinaryReader): DeleteRequest;
 }
 
-export namespace CloudVirtualBucketResponse {
+export namespace DeleteRequest {
+  export type AsObject = {
+    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    key: string,
+  }
+}
+
+export class DeleteResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteResponse): DeleteResponse.AsObject;
+  static serializeBinaryToWriter(message: DeleteResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteResponse;
+  static deserializeBinaryFromReader(message: DeleteResponse, reader: jspb.BinaryReader): DeleteResponse;
+}
+
+export namespace DeleteResponse {
   export type AsObject = {
   }
 }
@@ -235,9 +255,6 @@ export class FileUploadRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): FileUploadRequest;
 
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): FileUploadRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FileUploadRequest.AsObject;
   static toObject(includeInstance: boolean, msg: FileUploadRequest): FileUploadRequest.AsObject;
@@ -251,7 +268,6 @@ export namespace FileUploadRequest {
     key: string,
     path: string,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -269,36 +285,36 @@ export namespace FileUploadResponse {
   }
 }
 
-export class CreateVirtualBucketRequest extends jspb.Message {
+export class CreateBucketRequest extends jspb.Message {
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): CreateVirtualBucketRequest;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): CreateBucketRequest;
   hasBucket(): boolean;
-  clearBucket(): CreateVirtualBucketRequest;
+  clearBucket(): CreateBucketRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateVirtualBucketRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateVirtualBucketRequest): CreateVirtualBucketRequest.AsObject;
-  static serializeBinaryToWriter(message: CreateVirtualBucketRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateVirtualBucketRequest;
-  static deserializeBinaryFromReader(message: CreateVirtualBucketRequest, reader: jspb.BinaryReader): CreateVirtualBucketRequest;
+  toObject(includeInstance?: boolean): CreateBucketRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateBucketRequest): CreateBucketRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateBucketRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateBucketRequest;
+  static deserializeBinaryFromReader(message: CreateBucketRequest, reader: jspb.BinaryReader): CreateBucketRequest;
 }
 
-export namespace CreateVirtualBucketRequest {
+export namespace CreateBucketRequest {
   export type AsObject = {
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
   }
 }
 
-export class CreateVirtualBucketResponse extends jspb.Message {
+export class CreateBucketResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateVirtualBucketResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateVirtualBucketResponse): CreateVirtualBucketResponse.AsObject;
-  static serializeBinaryToWriter(message: CreateVirtualBucketResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateVirtualBucketResponse;
-  static deserializeBinaryFromReader(message: CreateVirtualBucketResponse, reader: jspb.BinaryReader): CreateVirtualBucketResponse;
+  toObject(includeInstance?: boolean): CreateBucketResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateBucketResponse): CreateBucketResponse.AsObject;
+  static serializeBinaryToWriter(message: CreateBucketResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateBucketResponse;
+  static deserializeBinaryFromReader(message: CreateBucketResponse, reader: jspb.BinaryReader): CreateBucketResponse;
 }
 
-export namespace CreateVirtualBucketResponse {
+export namespace CreateBucketResponse {
   export type AsObject = {
   }
 }

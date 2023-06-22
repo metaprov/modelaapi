@@ -30,51 +30,8 @@ func (model *Model) Default() {
 		model.Spec.Training.Priority = &p
 	}
 
-	if model.Spec.Objective == nil {
-		o := model.DefaultObjective()
-		model.Spec.Objective = &o
-	}
-	if model.Spec.Estimator == nil {
-		model.Spec.Estimator = &ClassicalEstimatorSpec{}
-	}
-
-	if model.Spec.Tested == nil {
-		model.Spec.Tested = util.BoolPtr(false)
-	}
-	if model.Spec.Aborted == nil {
-		model.Spec.Aborted = util.BoolPtr(false)
-	}
-
-	if model.Spec.Packaged == nil {
-		model.Spec.Packaged = util.BoolPtr(false)
-	}
-
-	if model.Spec.Published == nil {
-		model.Spec.Published = util.BoolPtr(false)
-	}
-
-	if model.Spec.Pushed == nil {
-		model.Spec.Pushed = util.BoolPtr(false)
-	}
-
-	if model.Spec.Reported == nil {
-		model.Spec.Reported = util.BoolPtr(false)
-	}
-
-	if model.Spec.Paused == nil {
-		model.Spec.Paused = util.BoolPtr(false)
-	}
-
-	if model.Spec.Profiled == nil {
-		model.Spec.Profiled = util.BoolPtr(false)
-	}
-
-	if model.Spec.Archived == nil {
-		model.Spec.Archived = util.BoolPtr(false)
-	}
-
-	if model.Spec.Forecasted == nil {
-		model.Spec.Forecasted = util.BoolPtr(false)
+	if model.Spec.Objective.Metric == "" {
+		model.Spec.Objective = model.DefaultObjective()
 	}
 
 	if model.ObjectMeta.Labels == nil {
@@ -86,10 +43,7 @@ func (model *Model) Default() {
 	}
 
 	model.ObjectMeta.Labels[catalog.StudyLabelKey] = model.Spec.StudyName
-
-	if model.Spec.Estimator != nil {
-		model.ObjectMeta.Labels[catalog.AlgorithmLabelKey] = model.Spec.Estimator.AlgorithmName
-	}
+	model.ObjectMeta.Labels[catalog.AlgorithmLabelKey] = model.Spec.Estimator.AlgorithmName
 
 	if model.Spec.Owner != nil {
 		model.ObjectMeta.Labels[catalog.OwnerKindLabelKey] = *model.Spec.Owner

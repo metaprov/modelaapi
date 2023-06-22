@@ -494,10 +494,6 @@ message ColumnStatistics {
   // +kubebuilder:validation:Optional
   optional double mostFreqValuesRatio = 39;
 
-  // Used for text attributes
-  // +kubebuilder:validation:Optional
-  optional double indexOfPeculiarity = 40;
-
   // Histogram data representing the distribution of the values in the column
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData histogram = 41;
@@ -1036,50 +1032,57 @@ message DataProductSpec {
   // +kubebuilder:validation:Optional
   optional ImageLocation imageLocation = 5;
 
+  // CacheBucketName specifies the name of the Virtual Bucket which workloads for resources under the Data Product
+  // will use internally for caching workloads. Setting CacheBucketName to a valid Virtual Bucket is highly
+  // recommended for stability and performance
+  // +kubebuilder:validation:Required
+  // +required
+  optional string cacheBucketName = 6;
+
   // The name of the Lab that will be used by default with all compute-requiring child resources
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Optional
-  optional string defaultLabName = 6;
+  optional string defaultLabName = 7;
 
   // The name of the Serving Site which will be used by default with all Predictor resources
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string defaultServingSiteName = 7;
+  optional string defaultServingSiteName = 8;
 
   // The name of the Virtual Bucket that resources under the Data Product will use by default
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string defaultBucketName = 8;
+  optional string defaultBucketName = 9;
 
   // Task specifies the default machine learning task of the Data Product (classification, regression, etc.)
   // +kubebuilder:validation:Optional
-  optional string task = 9;
+  optional string task = 10;
 
   // Subtask specifies the default subtask relevant to the primary task (text classification, image object detection, etc.)
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional string subtask = 10;
+  optional string subtask = 11;
 
   // User-provided description of the object
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
-  optional string description = 11;
+  optional string description = 12;
 
   // The default notification specification for all resources under the DataProduct
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 12;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 13;
 
   // The default resource allocation for model training and data workloads that takes place under the DataProduct
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec trainingResources = 13;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec trainingResources = 14;
 
   // The default resource allocation for model serving workloads that takes place under the DataProduct
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec servingResources = 14;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec servingResources = 15;
 
   // The default priority level assigned to Jobs created by resources under the Data Product
   // +kubebuilder:validation:Optional
@@ -1505,12 +1508,12 @@ message DatasetSpec {
 
   // Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
   // created, the resource controller will retrieve the data from the location, validate it against its Data Source
-  // if applicable, and store it inside the `live` section of the Virtual BucketName resource specified by the location
+  // if applicable, and store it in the automatically generated (or user specified) location specified by Location
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation origin = 13;
 
-  // Location is the final location of the data which was copied from the `Origin` location during the ingestion phase.
-  // This field is set by the Dataset resource controller and should not be changed by any end-users
+  // Location stores the physical location of the data which was read from the Origin during the snapshot phase.
+  // This field is set by the Dataset resource controller and will always link to a parquet file
   // +kubebuilder:validation:Required
   // +required
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation location = 14;
@@ -1616,6 +1619,10 @@ message DatasetSpec {
   // FeatureGroupName specifies the name of the Feature Group that created the Dataset, if applicable
   // +kubebuilder:validation:Optional
   optional string featureGroupName = 37;
+
+  // Notification specifies the configuration for Alerts generated by the resource
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 38;
 }
 
 // DatasetStatistics contains statistics about the Dataset's overall data, as well as every feature of the data. The

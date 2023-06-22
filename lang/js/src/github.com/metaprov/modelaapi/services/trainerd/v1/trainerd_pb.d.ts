@@ -43,26 +43,10 @@ export class TrainRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): TrainRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): TrainRequest;
-  hasConnection(): boolean;
-  clearConnection(): TrainRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): TrainRequest;
-
-  getTestdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setTestdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): TrainRequest;
-  hasTestdataset(): boolean;
-  clearTestdataset(): TrainRequest;
-
-  getTraindataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setTraindataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): TrainRequest;
-  hasTraindataset(): boolean;
-  clearTraindataset(): TrainRequest;
-
-  getGroup(): boolean;
-  setGroup(value: boolean): TrainRequest;
+  getBasemodelsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
+  setBasemodelsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>): TrainRequest;
+  clearBasemodelsList(): TrainRequest;
+  addBasemodels(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainRequest.AsObject;
@@ -81,37 +65,43 @@ export namespace TrainRequest {
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
-    testdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    group: boolean,
+    basemodelsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
   }
 }
 
 export class TrainResponse extends jspb.Message {
-  getResultList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
-  setResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): TrainResponse;
-  clearResultList(): TrainResponse;
-  addResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+  getResultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setResultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): TrainResponse;
+  clearResultsList(): TrainResponse;
+  addResults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
-  getWeightsclouduri(): string;
-  setWeightsclouduri(value: string): TrainResponse;
+  getWeightslocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setWeightslocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): TrainResponse;
+  hasWeightslocation(): boolean;
+  clearWeightslocation(): TrainResponse;
 
-  getManifestclouduri(): string;
-  setManifestclouduri(value: string): TrainResponse;
+  getLabelencoderlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setLabelencoderlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): TrainResponse;
+  hasLabelencoderlocation(): boolean;
+  clearLabelencoderlocation(): TrainResponse;
 
-  getLogsclouduri(): string;
-  setLogsclouduri(value: string): TrainResponse;
+  getForecastlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setForecastlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): TrainResponse;
+  hasForecastlocation(): boolean;
+  clearForecastlocation(): TrainResponse;
 
-  getLabelencoder(): string;
-  setLabelencoder(value: string): TrainResponse;
+  getProfilelocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setProfilelocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): TrainResponse;
+  hasProfilelocation(): boolean;
+  clearProfilelocation(): TrainResponse;
+
+  getConfusionmatrix(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix | undefined;
+  setConfusionmatrix(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix): TrainResponse;
+  hasConfusionmatrix(): boolean;
+  clearConfusionmatrix(): TrainResponse;
 
   getPythonversioninfo(): string;
   setPythonversioninfo(value: string): TrainResponse;
-
-  getPythoncmd(): string;
-  setPythoncmd(value: string): TrainResponse;
 
   getOs(): string;
   setOs(value: string): TrainResponse;
@@ -121,28 +111,6 @@ export class TrainResponse extends jspb.Message {
 
   getImpurityfeatureimportanceMap(): jspb.Map<string, number>;
   clearImpurityfeatureimportanceMap(): TrainResponse;
-
-  getPermutationfeatureimportanceMap(): jspb.Map<string, number>;
-  clearPermutationfeatureimportanceMap(): TrainResponse;
-
-  getCm(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix | undefined;
-  setCm(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix): TrainResponse;
-  hasCm(): boolean;
-  clearCm(): TrainResponse;
-
-  getModelindexuri(): string;
-  setModelindexuri(value: string): TrainResponse;
-
-  getForecasturi(): string;
-  setForecasturi(value: string): TrainResponse;
-
-  getFeaturesList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
-  setFeaturesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): TrainResponse;
-  clearFeaturesList(): TrainResponse;
-  addFeatures(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
-
-  getProfileuri(): string;
-  setProfileuri(value: string): TrainResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainResponse.AsObject;
@@ -154,22 +122,16 @@ export class TrainResponse extends jspb.Message {
 
 export namespace TrainResponse {
   export type AsObject = {
-    resultList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
-    weightsclouduri: string,
-    manifestclouduri: string,
-    logsclouduri: string,
-    labelencoder: string,
+    resultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    weightslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    labelencoderlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    forecastlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    profilelocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    confusionmatrix?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
     pythonversioninfo: string,
-    pythoncmd: string,
     os: string,
     pipfreezeMap: Array<[string, string]>,
     impurityfeatureimportanceMap: Array<[string, number]>,
-    permutationfeatureimportanceMap: Array<[string, number]>,
-    cm?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
-    modelindexuri: string,
-    forecasturi: string,
-    featuresList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
-    profileuri: string,
   }
 }
 
@@ -209,14 +171,6 @@ export class CompileRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): CompileRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CompileRequest;
-  hasConnection(): boolean;
-  clearConnection(): CompileRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): CompileRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CompileRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CompileRequest): CompileRequest.AsObject;
@@ -234,8 +188,6 @@ export namespace CompileRequest {
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -293,16 +245,10 @@ export class TestRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): TestRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): TestRequest;
-  hasConnection(): boolean;
-  clearConnection(): TestRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): TestRequest;
-
-  getGroup(): boolean;
-  setGroup(value: boolean): TestRequest;
+  getBasemodelsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
+  setBasemodelsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>): TestRequest;
+  clearBasemodelsList(): TestRequest;
+  addBasemodels(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestRequest.AsObject;
@@ -321,85 +267,48 @@ export namespace TestRequest {
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
-    group: boolean,
+    basemodelsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
   }
 }
 
 export class TestResponse extends jspb.Message {
-  getTrainResultList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
-  setTrainResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): TestResponse;
-  clearTrainResultList(): TestResponse;
-  addTrainResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+  getTrainresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setTrainresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): TestResponse;
+  clearTrainresultsList(): TestResponse;
+  addTrainresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
-  getTestResultList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
-  setTestResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): TestResponse;
-  clearTestResultList(): TestResponse;
-  addTestResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+  getTestresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setTestresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): TestResponse;
+  clearTestresultsList(): TestResponse;
+  addTestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
-  getBenchmarkResultList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
-  setBenchmarkResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): TestResponse;
-  clearBenchmarkResultList(): TestResponse;
-  addBenchmarkResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+  getTestweightslocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setTestweightslocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): TestResponse;
+  hasTestweightslocation(): boolean;
+  clearTestweightslocation(): TestResponse;
 
-  getTestingmodelweightsclouduri(): string;
-  setTestingmodelweightsclouduri(value: string): TestResponse;
+  getFullweightslocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setFullweightslocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): TestResponse;
+  hasFullweightslocation(): boolean;
+  clearFullweightslocation(): TestResponse;
 
-  getTestinglabelencoder(): string;
-  setTestinglabelencoder(value: string): TestResponse;
-
-  getFullmodelweightsclouduri(): string;
-  setFullmodelweightsclouduri(value: string): TestResponse;
-
-  getFulllabelencoder(): string;
-  setFulllabelencoder(value: string): TestResponse;
-
-  getModelmanifestclouduri(): string;
-  setModelmanifestclouduri(value: string): TestResponse;
-
-  getModellogsclouduri(): string;
-  setModellogsclouduri(value: string): TestResponse;
-
-  getPreweightsclouduri(): string;
-  setPreweightsclouduri(value: string): TestResponse;
-
-  getPremanifestclouduri(): string;
-  setPremanifestclouduri(value: string): TestResponse;
-
-  getPrelogsclouduri(): string;
-  setPrelogsclouduri(value: string): TestResponse;
-
-  getPythoncmd(): string;
-  setPythoncmd(value: string): TestResponse;
-
-  getOs(): string;
-  setOs(value: string): TestResponse;
-
-  getPythonversioninfo(): string;
-  setPythonversioninfo(value: string): TestResponse;
-
-  getPipfreezeMap(): jspb.Map<string, string>;
-  clearPipfreezeMap(): TestResponse;
-
-  getMisclassuri(): string;
-  setMisclassuri(value: string): TestResponse;
-
-  getImpurityfeatureimportanceMap(): jspb.Map<string, number>;
-  clearImpurityfeatureimportanceMap(): TestResponse;
+  getMisclasslocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setMisclasslocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): TestResponse;
+  hasMisclasslocation(): boolean;
+  clearMisclasslocation(): TestResponse;
 
   getPermutationfeatureimportanceMap(): jspb.Map<string, number>;
   clearPermutationfeatureimportanceMap(): TestResponse;
 
-  getTraincm(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix | undefined;
-  setTraincm(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix): TestResponse;
-  hasTraincm(): boolean;
-  clearTraincm(): TestResponse;
+  getTrainconfusionmatrix(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix | undefined;
+  setTrainconfusionmatrix(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix): TestResponse;
+  hasTrainconfusionmatrix(): boolean;
+  clearTrainconfusionmatrix(): TestResponse;
 
-  getTestcm(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix | undefined;
-  setTestcm(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix): TestResponse;
-  hasTestcm(): boolean;
-  clearTestcm(): TestResponse;
+  getTestconfusionmatrix(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix | undefined;
+  setTestconfusionmatrix(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix): TestResponse;
+  hasTestconfusionmatrix(): boolean;
+  clearTestconfusionmatrix(): TestResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestResponse.AsObject;
@@ -411,179 +320,14 @@ export class TestResponse extends jspb.Message {
 
 export namespace TestResponse {
   export type AsObject = {
-    trainResultList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
-    testResultList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
-    benchmarkResultList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
-    testingmodelweightsclouduri: string,
-    testinglabelencoder: string,
-    fullmodelweightsclouduri: string,
-    fulllabelencoder: string,
-    modelmanifestclouduri: string,
-    modellogsclouduri: string,
-    preweightsclouduri: string,
-    premanifestclouduri: string,
-    prelogsclouduri: string,
-    pythoncmd: string,
-    os: string,
-    pythonversioninfo: string,
-    pipfreezeMap: Array<[string, string]>,
-    misclassuri: string,
-    impurityfeatureimportanceMap: Array<[string, number]>,
+    trainresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    testresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    testweightslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    fullweightslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    misclasslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     permutationfeatureimportanceMap: Array<[string, number]>,
-    traincm?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
-    testcm?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
-  }
-}
-
-export class TrainEnsembleRequest extends jspb.Message {
-  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): TrainEnsembleRequest;
-  hasProduct(): boolean;
-  clearProduct(): TrainEnsembleRequest;
-
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): TrainEnsembleRequest;
-  hasVersion(): boolean;
-  clearVersion(): TrainEnsembleRequest;
-
-  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): TrainEnsembleRequest;
-  hasBucket(): boolean;
-  clearBucket(): TrainEnsembleRequest;
-
-  getBaseList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
-  setBaseList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>): TrainEnsembleRequest;
-  clearBaseList(): TrainEnsembleRequest;
-  addBase(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
-
-  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): TrainEnsembleRequest;
-  hasModel(): boolean;
-  clearModel(): TrainEnsembleRequest;
-
-  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): TrainEnsembleRequest;
-  hasStudy(): boolean;
-  clearStudy(): TrainEnsembleRequest;
-
-  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): TrainEnsembleRequest;
-  hasDatasource(): boolean;
-  clearDatasource(): TrainEnsembleRequest;
-
-  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): TrainEnsembleRequest;
-  hasDataset(): boolean;
-  clearDataset(): TrainEnsembleRequest;
-
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): TrainEnsembleRequest;
-  hasConnection(): boolean;
-  clearConnection(): TrainEnsembleRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): TrainEnsembleRequest;
-
-  getGroup(): boolean;
-  setGroup(value: boolean): TrainEnsembleRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TrainEnsembleRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: TrainEnsembleRequest): TrainEnsembleRequest.AsObject;
-  static serializeBinaryToWriter(message: TrainEnsembleRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TrainEnsembleRequest;
-  static deserializeBinaryFromReader(message: TrainEnsembleRequest, reader: jspb.BinaryReader): TrainEnsembleRequest;
-}
-
-export namespace TrainEnsembleRequest {
-  export type AsObject = {
-    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
-    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    baseList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
-    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
-    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
-    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
-    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
-    group: boolean,
-  }
-}
-
-export class TestEnsembleRequest extends jspb.Message {
-  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): TestEnsembleRequest;
-  hasProduct(): boolean;
-  clearProduct(): TestEnsembleRequest;
-
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): TestEnsembleRequest;
-  hasVersion(): boolean;
-  clearVersion(): TestEnsembleRequest;
-
-  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): TestEnsembleRequest;
-  hasBucket(): boolean;
-  clearBucket(): TestEnsembleRequest;
-
-  getBaseList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
-  setBaseList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>): TestEnsembleRequest;
-  clearBaseList(): TestEnsembleRequest;
-  addBase(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
-
-  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): TestEnsembleRequest;
-  hasModel(): boolean;
-  clearModel(): TestEnsembleRequest;
-
-  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): TestEnsembleRequest;
-  hasStudy(): boolean;
-  clearStudy(): TestEnsembleRequest;
-
-  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): TestEnsembleRequest;
-  hasDatasource(): boolean;
-  clearDatasource(): TestEnsembleRequest;
-
-  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): TestEnsembleRequest;
-  hasDataset(): boolean;
-  clearDataset(): TestEnsembleRequest;
-
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): TestEnsembleRequest;
-  hasConnection(): boolean;
-  clearConnection(): TestEnsembleRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): TestEnsembleRequest;
-
-  getGroup(): boolean;
-  setGroup(value: boolean): TestEnsembleRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TestEnsembleRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: TestEnsembleRequest): TestEnsembleRequest.AsObject;
-  static serializeBinaryToWriter(message: TestEnsembleRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TestEnsembleRequest;
-  static deserializeBinaryFromReader(message: TestEnsembleRequest, reader: jspb.BinaryReader): TestEnsembleRequest;
-}
-
-export namespace TestEnsembleRequest {
-  export type AsObject = {
-    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
-    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    baseList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
-    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
-    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
-    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
-    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
-    group: boolean,
+    trainconfusionmatrix?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
+    testconfusionmatrix?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
   }
 }
 
@@ -628,17 +372,6 @@ export class TrainDriftDetectorRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): TrainDriftDetectorRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): TrainDriftDetectorRequest;
-  hasConnection(): boolean;
-  clearConnection(): TrainDriftDetectorRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): TrainDriftDetectorRequest;
-
-  getGroup(): boolean;
-  setGroup(value: boolean): TrainDriftDetectorRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainDriftDetectorRequest.AsObject;
   static toObject(includeInstance: boolean, msg: TrainDriftDetectorRequest): TrainDriftDetectorRequest.AsObject;
@@ -657,9 +390,6 @@ export namespace TrainDriftDetectorRequest {
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
-    group: boolean,
   }
 }
 
@@ -699,17 +429,6 @@ export class ForecastRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): ForecastRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): ForecastRequest;
-  hasConnection(): boolean;
-  clearConnection(): ForecastRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): ForecastRequest;
-
-  getGroup(): boolean;
-  setGroup(value: boolean): ForecastRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecastRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ForecastRequest): ForecastRequest.AsObject;
@@ -727,15 +446,14 @@ export namespace ForecastRequest {
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
-    group: boolean,
   }
 }
 
 export class ForecastResponse extends jspb.Message {
-  getForecastclouduri(): string;
-  setForecastclouduri(value: string): ForecastResponse;
+  getForecastlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setForecastlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ForecastResponse;
+  hasForecastlocation(): boolean;
+  clearForecastlocation(): ForecastResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecastResponse.AsObject;
@@ -747,7 +465,7 @@ export class ForecastResponse extends jspb.Message {
 
 export namespace ForecastResponse {
   export type AsObject = {
-    forecastclouduri: string,
+    forecastlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
   }
 }
 
@@ -815,17 +533,6 @@ export class ExplainRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): ExplainRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): ExplainRequest;
-  hasConnection(): boolean;
-  clearConnection(): ExplainRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): ExplainRequest;
-
-  getGroup(): boolean;
-  setGroup(value: boolean): ExplainRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExplainRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ExplainRequest): ExplainRequest.AsObject;
@@ -843,24 +550,24 @@ export namespace ExplainRequest {
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
-    group: boolean,
   }
 }
 
 export class ExplainResponse extends jspb.Message {
-  getExplaineruri(): string;
-  setExplaineruri(value: string): ExplainResponse;
+  getExplainerlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setExplainerlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ExplainResponse;
+  hasExplainerlocation(): boolean;
+  clearExplainerlocation(): ExplainResponse;
 
-  getTrainshapvaluesuri(): string;
-  setTrainshapvaluesuri(value: string): ExplainResponse;
+  getTrainshapvalueslocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setTrainshapvalueslocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ExplainResponse;
+  hasTrainshapvalueslocation(): boolean;
+  clearTrainshapvalueslocation(): ExplainResponse;
 
-  getTestshapvaluesuri(): string;
-  setTestshapvaluesuri(value: string): ExplainResponse;
-
-  getShapfeaturesimportanceMap(): jspb.Map<string, number>;
-  clearShapfeaturesimportanceMap(): ExplainResponse;
+  getTestshapvalueslocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setTestshapvalueslocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ExplainResponse;
+  hasTestshapvalueslocation(): boolean;
+  clearTestshapvalueslocation(): ExplainResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExplainResponse.AsObject;
@@ -872,10 +579,9 @@ export class ExplainResponse extends jspb.Message {
 
 export namespace ExplainResponse {
   export type AsObject = {
-    explaineruri: string,
-    trainshapvaluesuri: string,
-    testshapvaluesuri: string,
-    shapfeaturesimportanceMap: Array<[string, number]>,
+    explainerlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    trainshapvalueslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    testshapvalueslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
   }
 }
 

@@ -734,11 +734,6 @@ export class ColumnStatistics extends jspb.Message {
   hasMostfreqvaluesratio(): boolean;
   clearMostfreqvaluesratio(): ColumnStatistics;
 
-  getIndexofpeculiarity(): number;
-  setIndexofpeculiarity(value: number): ColumnStatistics;
-  hasIndexofpeculiarity(): boolean;
-  clearIndexofpeculiarity(): ColumnStatistics;
-
   getHistogram(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData | undefined;
   setHistogram(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData): ColumnStatistics;
   hasHistogram(): boolean;
@@ -807,7 +802,6 @@ export namespace ColumnStatistics {
     completeness?: number,
     distinctvaluecount?: number,
     mostfreqvaluesratio?: number,
-    indexofpeculiarity?: number,
     histogram?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.AsObject,
     corrtotarget?: number,
     index?: number,
@@ -1703,6 +1697,11 @@ export class DataProductSpec extends jspb.Message {
   hasImagelocation(): boolean;
   clearImagelocation(): DataProductSpec;
 
+  getCachebucketname(): string;
+  setCachebucketname(value: string): DataProductSpec;
+  hasCachebucketname(): boolean;
+  clearCachebucketname(): DataProductSpec;
+
   getDefaultlabname(): string;
   setDefaultlabname(value: string): DataProductSpec;
   hasDefaultlabname(): boolean;
@@ -1788,6 +1787,7 @@ export namespace DataProductSpec {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     gitlocation?: GitLocation.AsObject,
     imagelocation?: ImageLocation.AsObject,
+    cachebucketname?: string,
     defaultlabname?: string,
     defaultservingsitename?: string,
     defaultbucketname?: string,
@@ -2576,6 +2576,11 @@ export class DatasetSpec extends jspb.Message {
   hasFeaturegroupname(): boolean;
   clearFeaturegroupname(): DatasetSpec;
 
+  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
+  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): DatasetSpec;
+  hasNotification(): boolean;
+  clearNotification(): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -2620,6 +2625,7 @@ export namespace DatasetSpec {
     modelclassrunname?: string,
     featuregroupsList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
     featuregroupname?: string,
+    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
   }
 }
 

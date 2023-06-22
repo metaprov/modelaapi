@@ -494,12 +494,11 @@ func (model Model) IsShadow() bool {
 	return *model.Spec.Role == catalog.ShadowModelRole
 }
 
-func (model *Model) MarkTrained(ms []catalog.Measurement) {
+func (model *Model) MarkTrained() {
 	if model.Status.TrainingCompletedAt == nil {
 		now := metav1.Now()
 		model.Status.TrainingCompletedAt = &now
 	}
-	model.Status.Train = ms
 	model.Status.Phase = ModelPhaseTrained
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelTrained,
@@ -526,7 +525,7 @@ func (model *Model) MarkFailedToTrain(err string) {
 		model.Status.CompletedAt = &now
 	}
 	// set the scores to 0, since Nan is invalid value
-	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
+	model.Status.ValidationScore = 0 // we must put it at 0, since NaN is invalid value
 	model.Status.Train = make([]catalog.Measurement, 0)
 	model.Status.FailureMessage = util.StrPtr("Failed to train." + err)
 	model.Status.Progress = 100
@@ -871,7 +870,6 @@ func (model Model) Packaged() bool {
 }
 
 func (model *Model) MarkPackaged(image string) {
-	model.Status.ImageName = image
 	model.Status.Phase = ModelPhasePackaged
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelPackaged,
@@ -916,7 +914,6 @@ func (model Model) Explained() bool {
 }
 
 func (model *Model) MarkExplained(image string) {
-	model.Status.ImageName = image
 	model.Status.Phase = ModelPhaseExplained
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelExplained,
@@ -952,7 +949,6 @@ func (model Model) Published() bool {
 }
 
 func (model *Model) MarkPublished(image string) {
-	model.Status.ImageName = image
 	model.Status.Phase = ModelPhasePublished
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelPublished,
@@ -994,7 +990,6 @@ func (model Model) TrainedDriftDetector() bool {
 }
 
 func (model *Model) MarkTrainedDriftDetector(image string) {
-	model.Status.ImageName = image
 	model.Status.Phase = ModelPhaseTrainedDriftDetector
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelTrainedDriftDetector,
@@ -1111,7 +1106,7 @@ func (model Model) IsReady() bool {
 
 func (model Model) Paused() bool {
 	cond := model.GetCond(ModelPaused)
-	return *model.Spec.Paused && (cond.Status == metav1.ConditionFalse && cond.Reason == ReasonPausing) || cond.Status == metav1.ConditionTrue
+	return (cond.Status == metav1.ConditionFalse && cond.Reason == ReasonPausing) || cond.Status == metav1.ConditionTrue
 }
 
 func (model *Model) MarkPaused() {
@@ -1177,7 +1172,7 @@ func (model *Model) InitModelFromStudy(study *Study) {
 }
 
 func (model Model) Done() bool {
-	if *model.Spec.Tested {
+	if *model.Spec.Test {
 		return model.Tested() || model.TestingFailed()
 	}
 	return model.Trained() || model.TrainingFailed()
@@ -1208,7 +1203,7 @@ func (model Model) IsSearch() bool {
 }
 
 func (model Model) IsTest() bool {
-	return model.Spec.ModelClass == catalog.ModelStudyPhaseClassTypeTest
+	return model.Spec.ModelClass == catalog.ModelClassTypeTest
 }
 
 ////////////////////////////////////////////////////////////
@@ -1240,7 +1235,7 @@ func (model Model) CompletionAlert(notification catalog.NotificationSpec) *infra
 				"Objective":  string(model.Spec.Objective.Metric),
 				"Algorithm":  model.Spec.Estimator.AlgorithmName,
 				"Phase":      string(model.Status.Phase),
-				"Score":      util.FtoA(&model.Status.CVScore),
+				"Score":      util.FtoA(&model.Status.ValidationScore),
 				"Start Time": model.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
 		},
@@ -1290,47 +1285,6 @@ func (model Model) ErrorAlert(notification catalog.NotificationSpec, err error) 
 	return result
 }
 
-// =================== Tun
-
-func (model *Model) MarkTuned(ms []catalog.Measurement) {
-	if model.Status.TuningCompletedAt == nil {
-		now := metav1.Now()
-		model.Status.TuningCompletedAt = &now
-	}
-	model.Status.Tune = ms
-	model.Status.Phase = ModelPhaseTuned
-	model.CreateOrUpdateCond(metav1.Condition{
-		Type:   ModelTuned,
-		Status: metav1.ConditionTrue,
-		Reason: ModelTuned,
-	})
-	model.Status.Progress = 50
-}
-
-func (model *Model) MarkFailedToTune(err string) {
-	model.CreateOrUpdateCond(metav1.Condition{
-		Type:    ModelTuned,
-		Status:  metav1.ConditionFalse,
-		Reason:  ReasonFailed,
-		Message: err,
-	})
-	model.Status.Phase = ModelPhaseFailed
-	if model.Status.TuningCompletedAt == nil {
-		now := metav1.Now()
-		model.Status.TuningCompletedAt = &now
-	}
-	if model.Status.CompletedAt == nil {
-		now := metav1.Now()
-		model.Status.CompletedAt = &now
-	}
-	// set the scores to 0, since Nan is invalid value
-	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
-	model.Status.Tune = make([]catalog.Measurement, 0)
-	model.Status.FailureMessage = util.StrPtr("Failed to tune." + err)
-	model.Status.Progress = 100
-
-}
-
 //////// Tuning
 
 func (model Model) Tuning() bool {
@@ -1350,20 +1304,6 @@ func (model Model) Tuned() bool {
 	return model.GetCond(ModelTuned).Status == metav1.ConditionTrue
 }
 
-func (model *Model) MarkMerged() {
-	if model.Status.TuningCompletedAt == nil {
-		now := metav1.Now()
-		model.Status.TuningCompletedAt = &now
-	}
-	model.Status.Phase = ModelPhaseMerged
-	model.CreateOrUpdateCond(metav1.Condition{
-		Type:   ModelMerged,
-		Status: metav1.ConditionTrue,
-		Reason: ModelMerged,
-	})
-	model.Status.Progress = 50
-}
-
 func (model *Model) MarkFailedToMerge(err string) {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelMerged,
@@ -1372,16 +1312,11 @@ func (model *Model) MarkFailedToMerge(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseMerged
-	if model.Status.TuningCompletedAt == nil {
-		now := metav1.Now()
-		model.Status.TuningCompletedAt = &now
-	}
 	if model.Status.CompletedAt == nil {
 		now := metav1.Now()
 		model.Status.CompletedAt = &now
 	}
-	// set the scores to 0, since Nan is invalid value
-	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
+
 	model.Status.FailureMessage = util.StrPtr("Failed to merge." + err)
 	model.Status.Progress = 100
 

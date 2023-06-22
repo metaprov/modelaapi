@@ -745,7 +745,16 @@ func (study *Study) MarkPromoted() {
 	study.RefreshProgress()
 }
 
-func (study *Study) PromotionAlert(tenantRef *v1.ObjectReference, notifierName *string, model Model) *infra.Alert {
+func (study *Study) MarkPromotionFailed(err string) {
+	study.CreateOrUpdateCond(metav1.Condition{
+		Type:    StudyModelPromoted,
+		Status:  metav1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
+	})
+}
+
+func (study *Study) PromotionAlert(model Model) *infra.Alert {
 	level := infra.Info
 	subject := fmt.Sprintf("Model %s is waiting for manual promotion", model.Name)
 	result := &infra.Alert{
@@ -761,9 +770,7 @@ func (study *Study) PromotionAlert(tenantRef *v1.ObjectReference, notifierName *
 				Name:      model.Name,
 				Namespace: model.Namespace,
 			},
-			TenantRef:    tenantRef,
-			NotifierName: notifierName,
-			Owner:        model.Spec.Owner,
+			Owner: model.Spec.Owner,
 			Fields: map[string]string{
 				"Data Product": study.Namespace,
 				"Study":        study.Name,

@@ -295,10 +295,6 @@ message EarlyStopSpec {
   optional int32 modelsWithNoProgress = 3;
 }
 
-// EnsembleRules is an algorithm class that decide
-message EnsembleRules {
-}
-
 // EnsembleSpec specifies the parameters of an ensemble model
 message EnsembleSpec {
   // The collection of models (by their name) to be used as estimators in the ensemble
@@ -1778,12 +1774,6 @@ message ModelStatus {
 
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation trainLabelEncoderLocation = 24;
-
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation testLabelEncoderLocation = 25;
-
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation fullLabelEncoderLocation = 26;
 
   // The location of the model profile, which contains visualizations produced during the profiling phase
   // +kubebuilder:validation:Optional

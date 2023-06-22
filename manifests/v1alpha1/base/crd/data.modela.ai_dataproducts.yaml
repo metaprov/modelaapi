@@ -105,6 +105,12 @@ spec:
                       type: string
                     type: array
                 type: object
+              cacheBucketName:
+                description: CacheBucketName specifies the name of the Virtual Bucket
+                  which workloads for resources under the Data Product will use internally
+                  for caching workloads. Setting CacheBucketName to a valid Virtual
+                  Bucket is highly recommended for stability and performance
+                type: string
               color:
                 default: none
                 description: The implementation-specific color assigned to the Data

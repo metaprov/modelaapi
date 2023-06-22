@@ -186,10 +186,8 @@ func (ms *SearchSpec) Default(task catalog.MLTask) {
 	if ms.Sampler == nil {
 		ms.Sampler = &name
 	}
-	ms.Pruner = PrunerSpec{}
 
-	// set default pruner.
-
+	ms.Pruner = &PrunerSpec{}
 	if ms.Pruner.Type == nil {
 		if *ms.Sampler == TPESearch {
 			v := HyperbandPruner
@@ -255,17 +253,8 @@ func (ms *SearchSpec) Default(task catalog.MLTask) {
 
 	}
 
-	if ms.MaxCost == nil {
-		ms.MaxCost = util.Int32Ptr(100)
-	}
-	if ms.MaxTime == nil {
-		ms.MaxTime = util.Int32Ptr(30)
-	}
-	if ms.MaxModels == nil {
-		ms.MaxModels = util.Int32Ptr(10)
-	}
-	if ms.MinBestScore == nil {
-		ms.MinBestScore = util.Float64Ptr(9999999)
+	if ms.MaxScore == nil {
+		ms.MaxScore = util.Float64Ptr(1)
 	}
 	if ms.Trainers == nil {
 		ms.Trainers = util.Int32Ptr(1)
@@ -280,9 +269,8 @@ func (ms *SearchSpec) Default(task catalog.MLTask) {
 		ms.RetainFor = util.Int32Ptr(60)
 	}
 
-	if ms.Objective == nil {
-		o := DefaultObjective(task)
-		ms.Objective = &o
+	if ms.Objective.Metric == "" {
+		ms.Objective = DefaultObjective(task)
 	}
 
 }

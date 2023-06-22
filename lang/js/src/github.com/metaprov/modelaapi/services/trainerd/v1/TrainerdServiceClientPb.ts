@@ -211,49 +211,6 @@ export class TrainerdServiceClient {
     this.methodDescriptorTest);
   }
 
-  methodDescriptorTrainEnsemble = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainEnsemble',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainEnsembleRequest,
-    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse,
-    (request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainEnsembleRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse.deserializeBinary
-  );
-
-  trainEnsemble(
-    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainEnsembleRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse>;
-
-  trainEnsemble(
-    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainEnsembleRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse>;
-
-  trainEnsemble(
-    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainEnsembleRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainEnsemble',
-        request,
-        metadata || {},
-        this.methodDescriptorTrainEnsemble,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainEnsemble',
-    request,
-    metadata || {},
-    this.methodDescriptorTrainEnsemble);
-  }
-
   methodDescriptorTrainDriftDetector = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainDriftDetector',
     grpcWeb.MethodType.UNARY,
@@ -295,49 +252,6 @@ export class TrainerdServiceClient {
     request,
     metadata || {},
     this.methodDescriptorTrainDriftDetector);
-  }
-
-  methodDescriptorTestEnsemble = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TestEnsemble',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestEnsembleRequest,
-    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse,
-    (request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestEnsembleRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse.deserializeBinary
-  );
-
-  testEnsemble(
-    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestEnsembleRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse>;
-
-  testEnsemble(
-    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestEnsembleRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse>;
-
-  testEnsemble(
-    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestEnsembleRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TestEnsemble',
-        request,
-        metadata || {},
-        this.methodDescriptorTestEnsemble,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TestEnsemble',
-    request,
-    metadata || {},
-    this.methodDescriptorTestEnsemble);
   }
 
   methodDescriptorShutdown = new grpcWeb.MethodDescriptor(

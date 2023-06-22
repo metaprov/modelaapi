@@ -223,6 +223,10 @@ message AlertSpec {
   // Image specifies the link to an image relevant to the subject
   // +kubebuilder:validation:Optional
   optional string image = 7;
+
+  // Notification defines to configuration to forward the Alert to an external Notifier
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 8;
 }
 
 // AlertStatus is the observed state of an Alert
@@ -987,33 +991,40 @@ message TenantSpec {
   optional string defaultLabName = 1;
 
   // DefaultServingSiteName specifies a Serving Site resource that will be used as a default for all resources that
-  // do not specify a Serving Site or have a Data Product which specifies a default Serving Site
+  // do not specify a Serving Site and has a Data Product that does not specify a default Serving Site
   // +kubebuilder:validation:Optional
   optional string defaultServingSiteName = 2;
 
   // DefaultBucketName specifies a Virtual Bucket resource that will be used as a default for all resources that
-  // do not specify a Virtual Bucket or have a Data Product which specifies a default Virtual Bucket
+  // do not specify a Virtual Bucket and has a Data Product that does not specify a default Virtual Bucket
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string defaultBucketName = 3;
 
+  // CacheBucketName specifies the name of the Virtual Bucket which workloads for resources under the Tenant
+  // will use internally for caching workloads. Setting CacheBucketName to a valid Virtual Bucket is highly
+  // recommended for stability and performance
+  // +kubebuilder:validation:Required
+  // +required
+  optional string cacheBucketName = 4;
+
   // Permissions defines the set of permissions applied to each Account when accessing resources within the Tenant
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 5;
 
   // The default notification specification for all resources under the tenant
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 6;
 
   // OnlineStore references a Connection resource to an external database that the Modela online store microservice
   // will use as an online store. The online store service must be installed through the Modela Operator
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference onlineStoreConnection = 6;
+  optional k8s.io.api.core.v1.ObjectReference onlineStoreConnection = 7;
 
   // MetricStore references a Connection resource to an external database that will act as the metric store for the Tenant.
   // The metric store stores metadata about resources that perform workloads (i.e. datasets, models, studies, etc.)
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference metricStoreConnection = 7;
+  optional k8s.io.api.core.v1.ObjectReference metricStoreConnection = 8;
 }
 
 // TenantStatus defines the actual state of a Tenant

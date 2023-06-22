@@ -29,20 +29,25 @@ class CloudProxyServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.FileUploadRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.FileUploadResponse.FromString,
                 )
-        self.KeyExistInVirtualBucket = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/KeyExistInVirtualBucket',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.KeyExistInVirtualBucketRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.KeyExistInVirtualBucketResponse.FromString,
+        self.Delete = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Delete',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.DeleteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.DeleteResponse.FromString,
                 )
-        self.VirtualBucketExist = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/VirtualBucketExist',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.VirtualBucketExistRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.VirtualBucketExistResponse.FromString,
+        self.ExistsInBucket = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/ExistsInBucket',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.ExistsInBucketRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.ExistsInBucketResponse.FromString,
                 )
-        self.CreateVirtualBucketIfNotExist = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/CreateVirtualBucketIfNotExist',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.CreateVirtualBucketRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.CreateVirtualBucketResponse.FromString,
+        self.BucketExist = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/BucketExist',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.BucketExistRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.BucketExistResponse.FromString,
+                )
+        self.CreateBucket = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/CreateBucket',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.CreateBucketRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.CreateBucketResponse.FromString,
                 )
         self.Shutdown = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Shutdown',
@@ -72,19 +77,25 @@ class CloudProxyServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def KeyExistInVirtualBucket(self, request, context):
+    def Delete(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def VirtualBucketExist(self, request, context):
+    def ExistsInBucket(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CreateVirtualBucketIfNotExist(self, request, context):
+    def BucketExist(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateBucket(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -114,20 +125,25 @@ def add_CloudProxyServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.FileUploadRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.FileUploadResponse.SerializeToString,
             ),
-            'KeyExistInVirtualBucket': grpc.unary_unary_rpc_method_handler(
-                    servicer.KeyExistInVirtualBucket,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.KeyExistInVirtualBucketRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.KeyExistInVirtualBucketResponse.SerializeToString,
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.DeleteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.DeleteResponse.SerializeToString,
             ),
-            'VirtualBucketExist': grpc.unary_unary_rpc_method_handler(
-                    servicer.VirtualBucketExist,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.VirtualBucketExistRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.VirtualBucketExistResponse.SerializeToString,
+            'ExistsInBucket': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExistsInBucket,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.ExistsInBucketRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.ExistsInBucketResponse.SerializeToString,
             ),
-            'CreateVirtualBucketIfNotExist': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateVirtualBucketIfNotExist,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.CreateVirtualBucketRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.CreateVirtualBucketResponse.SerializeToString,
+            'BucketExist': grpc.unary_unary_rpc_method_handler(
+                    servicer.BucketExist,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.BucketExistRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.BucketExistResponse.SerializeToString,
+            ),
+            'CreateBucket': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateBucket,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.CreateBucketRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.CreateBucketResponse.SerializeToString,
             ),
             'Shutdown': grpc.unary_unary_rpc_method_handler(
                     servicer.Shutdown,
@@ -196,7 +212,7 @@ class CloudProxyService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def KeyExistInVirtualBucket(request,
+    def Delete(request,
             target,
             options=(),
             channel_credentials=None,
@@ -206,14 +222,14 @@ class CloudProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/KeyExistInVirtualBucket',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.KeyExistInVirtualBucketRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.KeyExistInVirtualBucketResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Delete',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.DeleteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.DeleteResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def VirtualBucketExist(request,
+    def ExistsInBucket(request,
             target,
             options=(),
             channel_credentials=None,
@@ -223,14 +239,14 @@ class CloudProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/VirtualBucketExist',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.VirtualBucketExistRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.VirtualBucketExistResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/ExistsInBucket',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.ExistsInBucketRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.ExistsInBucketResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CreateVirtualBucketIfNotExist(request,
+    def BucketExist(request,
             target,
             options=(),
             channel_credentials=None,
@@ -240,9 +256,26 @@ class CloudProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/CreateVirtualBucketIfNotExist',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.CreateVirtualBucketRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.CreateVirtualBucketResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/BucketExist',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.BucketExistRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.BucketExistResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateBucket(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/CreateBucket',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.CreateBucketRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cloudproxyd_dot_v1_dot_cloudproxyd__pb2.CreateBucketResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

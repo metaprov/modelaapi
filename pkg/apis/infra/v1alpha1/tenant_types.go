@@ -56,28 +56,34 @@ type TenantSpec struct {
 	// +kubebuilder:validation:Optional
 	DefaultLabName *string `json:"defaultLabName,omitempty" protobuf:"bytes,1,opt,name=defaultLabName"`
 	// DefaultServingSiteName specifies a Serving Site resource that will be used as a default for all resources that
-	// do not specify a Serving Site or have a Data Product which specifies a default Serving Site
+	// do not specify a Serving Site and has a Data Product that does not specify a default Serving Site
 	// +kubebuilder:validation:Optional
 	DefaultServingSiteName *string `json:"defaultServingSiteName,omitempty" protobuf:"bytes,2,opt,name=defaultServingSiteName"`
 	// DefaultBucketName specifies a Virtual Bucket resource that will be used as a default for all resources that
-	// do not specify a Virtual Bucket or have a Data Product which specifies a default Virtual Bucket
+	// do not specify a Virtual Bucket and has a Data Product that does not specify a default Virtual Bucket
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	DefaultBucketName *string `json:"defaultBucketName,omitempty" protobuf:"bytes,3,opt,name=defaultBucketName"`
+	// CacheBucketName specifies the name of the Virtual Bucket which workloads for resources under the Tenant
+	// will use internally for caching workloads. Setting CacheBucketName to a valid Virtual Bucket is highly
+	// recommended for stability and performance
+	// +kubebuilder:validation:Required
+	// +required
+	CacheBucketName string `json:"cacheBucketName,omitempty" protobuf:"bytes,4,opt,name=cacheBucketName"`
 	// Permissions defines the set of permissions applied to each Account when accessing resources within the Tenant
 	// +kubebuilder:validation:Optional
-	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,4,opt,name=permissions"`
+	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,5,opt,name=permissions"`
 	// The default notification specification for all resources under the tenant
 	// +kubebuilder:validation:Optional
-	Notification *catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,5,opt,name=notification"`
+	Notification *catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,6,opt,name=notification"`
 	// OnlineStore references a Connection resource to an external database that the Modela online store microservice
 	// will use as an online store. The online store service must be installed through the Modela Operator
 	// +kubebuilder:validation:Optional
-	OnlineStoreConnectionRef *v1.ObjectReference `json:"onlineStoreConnection,omitempty" protobuf:"bytes,6,opt,name=onlineStoreConnection"`
+	OnlineStoreConnectionRef *v1.ObjectReference `json:"onlineStoreConnection,omitempty" protobuf:"bytes,7,opt,name=onlineStoreConnection"`
 	// MetricStore references a Connection resource to an external database that will act as the metric store for the Tenant.
 	// The metric store stores metadata about resources that perform workloads (i.e. datasets, models, studies, etc.)
 	// +kubebuilder:validation:Optional
-	MetricStoreConnectionRef *v1.ObjectReference `json:"metricStoreConnection,omitempty" protobuf:"bytes,7,opt,name=metricStoreConnection"`
+	MetricStoreConnectionRef *v1.ObjectReference `json:"metricStoreConnection,omitempty" protobuf:"bytes,8,opt,name=metricStoreConnection"`
 }
 
 // TenantStatus defines the actual state of a Tenant

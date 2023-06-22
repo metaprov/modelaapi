@@ -538,20 +538,6 @@ export namespace EarlyStopSpec {
   }
 }
 
-export class EnsembleRules extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EnsembleRules.AsObject;
-  static toObject(includeInstance: boolean, msg: EnsembleRules): EnsembleRules.AsObject;
-  static serializeBinaryToWriter(message: EnsembleRules, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EnsembleRules;
-  static deserializeBinaryFromReader(message: EnsembleRules, reader: jspb.BinaryReader): EnsembleRules;
-}
-
-export namespace EnsembleRules {
-  export type AsObject = {
-  }
-}
-
 export class EnsembleSpec extends jspb.Message {
   getModelsList(): Array<string>;
   setModelsList(value: Array<string>): EnsembleSpec;
@@ -2957,16 +2943,6 @@ export class ModelStatus extends jspb.Message {
   hasTrainlabelencoderlocation(): boolean;
   clearTrainlabelencoderlocation(): ModelStatus;
 
-  getTestlabelencoderlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setTestlabelencoderlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
-  hasTestlabelencoderlocation(): boolean;
-  clearTestlabelencoderlocation(): ModelStatus;
-
-  getFulllabelencoderlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setFulllabelencoderlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
-  hasFulllabelencoderlocation(): boolean;
-  clearFulllabelencoderlocation(): ModelStatus;
-
   getProfilelocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
   setProfilelocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelStatus;
   hasProfilelocation(): boolean;
@@ -3202,8 +3178,6 @@ export namespace ModelStatus {
     testweightslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     fullweightslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     trainlabelencoderlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
-    testlabelencoderlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
-    fulllabelencoderlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     profilelocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     misclassificationlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     forecastlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,

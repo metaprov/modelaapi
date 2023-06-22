@@ -25,9 +25,10 @@ type CloudProxyServiceClient interface {
 	Download(ctx context.Context, in *FileDownloadRequest, opts ...grpc.CallOption) (*FileDownloadResponse, error)
 	List(ctx context.Context, in *ListObjectsRequest, opts ...grpc.CallOption) (*ListObjectsResponse, error)
 	Upload(ctx context.Context, in *FileUploadRequest, opts ...grpc.CallOption) (*FileUploadResponse, error)
-	KeyExistInVirtualBucket(ctx context.Context, in *KeyExistInVirtualBucketRequest, opts ...grpc.CallOption) (*KeyExistInVirtualBucketResponse, error)
-	VirtualBucketExist(ctx context.Context, in *VirtualBucketExistRequest, opts ...grpc.CallOption) (*VirtualBucketExistResponse, error)
-	CreateVirtualBucketIfNotExist(ctx context.Context, in *CreateVirtualBucketRequest, opts ...grpc.CallOption) (*CreateVirtualBucketResponse, error)
+	Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*DeleteResponse, error)
+	ExistsInBucket(ctx context.Context, in *ExistsInBucketRequest, opts ...grpc.CallOption) (*ExistsInBucketResponse, error)
+	BucketExist(ctx context.Context, in *BucketExistRequest, opts ...grpc.CallOption) (*BucketExistResponse, error)
+	CreateBucket(ctx context.Context, in *CreateBucketRequest, opts ...grpc.CallOption) (*CreateBucketResponse, error)
 	Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error)
 }
 
@@ -66,27 +67,36 @@ func (c *cloudProxyServiceClient) Upload(ctx context.Context, in *FileUploadRequ
 	return out, nil
 }
 
-func (c *cloudProxyServiceClient) KeyExistInVirtualBucket(ctx context.Context, in *KeyExistInVirtualBucketRequest, opts ...grpc.CallOption) (*KeyExistInVirtualBucketResponse, error) {
-	out := new(KeyExistInVirtualBucketResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/KeyExistInVirtualBucket", in, out, opts...)
+func (c *cloudProxyServiceClient) Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*DeleteResponse, error) {
+	out := new(DeleteResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Delete", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudProxyServiceClient) VirtualBucketExist(ctx context.Context, in *VirtualBucketExistRequest, opts ...grpc.CallOption) (*VirtualBucketExistResponse, error) {
-	out := new(VirtualBucketExistResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/VirtualBucketExist", in, out, opts...)
+func (c *cloudProxyServiceClient) ExistsInBucket(ctx context.Context, in *ExistsInBucketRequest, opts ...grpc.CallOption) (*ExistsInBucketResponse, error) {
+	out := new(ExistsInBucketResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/ExistsInBucket", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudProxyServiceClient) CreateVirtualBucketIfNotExist(ctx context.Context, in *CreateVirtualBucketRequest, opts ...grpc.CallOption) (*CreateVirtualBucketResponse, error) {
-	out := new(CreateVirtualBucketResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/CreateVirtualBucketIfNotExist", in, out, opts...)
+func (c *cloudProxyServiceClient) BucketExist(ctx context.Context, in *BucketExistRequest, opts ...grpc.CallOption) (*BucketExistResponse, error) {
+	out := new(BucketExistResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/BucketExist", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudProxyServiceClient) CreateBucket(ctx context.Context, in *CreateBucketRequest, opts ...grpc.CallOption) (*CreateBucketResponse, error) {
+	out := new(CreateBucketResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/CreateBucket", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -109,9 +119,10 @@ type CloudProxyServiceServer interface {
 	Download(context.Context, *FileDownloadRequest) (*FileDownloadResponse, error)
 	List(context.Context, *ListObjectsRequest) (*ListObjectsResponse, error)
 	Upload(context.Context, *FileUploadRequest) (*FileUploadResponse, error)
-	KeyExistInVirtualBucket(context.Context, *KeyExistInVirtualBucketRequest) (*KeyExistInVirtualBucketResponse, error)
-	VirtualBucketExist(context.Context, *VirtualBucketExistRequest) (*VirtualBucketExistResponse, error)
-	CreateVirtualBucketIfNotExist(context.Context, *CreateVirtualBucketRequest) (*CreateVirtualBucketResponse, error)
+	Delete(context.Context, *DeleteRequest) (*DeleteResponse, error)
+	ExistsInBucket(context.Context, *ExistsInBucketRequest) (*ExistsInBucketResponse, error)
+	BucketExist(context.Context, *BucketExistRequest) (*BucketExistResponse, error)
+	CreateBucket(context.Context, *CreateBucketRequest) (*CreateBucketResponse, error)
 	Shutdown(context.Context, *ShutdownRequest) (*ShutdownResponse, error)
 	mustEmbedUnimplementedCloudProxyServiceServer()
 }
@@ -129,14 +140,17 @@ func (UnimplementedCloudProxyServiceServer) List(context.Context, *ListObjectsRe
 func (UnimplementedCloudProxyServiceServer) Upload(context.Context, *FileUploadRequest) (*FileUploadResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Upload not implemented")
 }
-func (UnimplementedCloudProxyServiceServer) KeyExistInVirtualBucket(context.Context, *KeyExistInVirtualBucketRequest) (*KeyExistInVirtualBucketResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method KeyExistInVirtualBucket not implemented")
+func (UnimplementedCloudProxyServiceServer) Delete(context.Context, *DeleteRequest) (*DeleteResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
-func (UnimplementedCloudProxyServiceServer) VirtualBucketExist(context.Context, *VirtualBucketExistRequest) (*VirtualBucketExistResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method VirtualBucketExist not implemented")
+func (UnimplementedCloudProxyServiceServer) ExistsInBucket(context.Context, *ExistsInBucketRequest) (*ExistsInBucketResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExistsInBucket not implemented")
 }
-func (UnimplementedCloudProxyServiceServer) CreateVirtualBucketIfNotExist(context.Context, *CreateVirtualBucketRequest) (*CreateVirtualBucketResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateVirtualBucketIfNotExist not implemented")
+func (UnimplementedCloudProxyServiceServer) BucketExist(context.Context, *BucketExistRequest) (*BucketExistResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BucketExist not implemented")
+}
+func (UnimplementedCloudProxyServiceServer) CreateBucket(context.Context, *CreateBucketRequest) (*CreateBucketResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateBucket not implemented")
 }
 func (UnimplementedCloudProxyServiceServer) Shutdown(context.Context, *ShutdownRequest) (*ShutdownResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Shutdown not implemented")
@@ -208,56 +222,74 @@ func _CloudProxyService_Upload_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudProxyService_KeyExistInVirtualBucket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(KeyExistInVirtualBucketRequest)
+func _CloudProxyService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudProxyServiceServer).KeyExistInVirtualBucket(ctx, in)
+		return srv.(CloudProxyServiceServer).Delete(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/KeyExistInVirtualBucket",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Delete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudProxyServiceServer).KeyExistInVirtualBucket(ctx, req.(*KeyExistInVirtualBucketRequest))
+		return srv.(CloudProxyServiceServer).Delete(ctx, req.(*DeleteRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudProxyService_VirtualBucketExist_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(VirtualBucketExistRequest)
+func _CloudProxyService_ExistsInBucket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExistsInBucketRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudProxyServiceServer).VirtualBucketExist(ctx, in)
+		return srv.(CloudProxyServiceServer).ExistsInBucket(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/VirtualBucketExist",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/ExistsInBucket",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudProxyServiceServer).VirtualBucketExist(ctx, req.(*VirtualBucketExistRequest))
+		return srv.(CloudProxyServiceServer).ExistsInBucket(ctx, req.(*ExistsInBucketRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudProxyService_CreateVirtualBucketIfNotExist_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateVirtualBucketRequest)
+func _CloudProxyService_BucketExist_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BucketExistRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudProxyServiceServer).CreateVirtualBucketIfNotExist(ctx, in)
+		return srv.(CloudProxyServiceServer).BucketExist(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/CreateVirtualBucketIfNotExist",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/BucketExist",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudProxyServiceServer).CreateVirtualBucketIfNotExist(ctx, req.(*CreateVirtualBucketRequest))
+		return srv.(CloudProxyServiceServer).BucketExist(ctx, req.(*BucketExistRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudProxyService_CreateBucket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateBucketRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudProxyServiceServer).CreateBucket(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/CreateBucket",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudProxyServiceServer).CreateBucket(ctx, req.(*CreateBucketRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -300,16 +332,20 @@ var CloudProxyService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CloudProxyService_Upload_Handler,
 		},
 		{
-			MethodName: "KeyExistInVirtualBucket",
-			Handler:    _CloudProxyService_KeyExistInVirtualBucket_Handler,
+			MethodName: "Delete",
+			Handler:    _CloudProxyService_Delete_Handler,
 		},
 		{
-			MethodName: "VirtualBucketExist",
-			Handler:    _CloudProxyService_VirtualBucketExist_Handler,
+			MethodName: "ExistsInBucket",
+			Handler:    _CloudProxyService_ExistsInBucket_Handler,
 		},
 		{
-			MethodName: "CreateVirtualBucketIfNotExist",
-			Handler:    _CloudProxyService_CreateVirtualBucketIfNotExist_Handler,
+			MethodName: "BucketExist",
+			Handler:    _CloudProxyService_BucketExist_Handler,
+		},
+		{
+			MethodName: "CreateBucket",
+			Handler:    _CloudProxyService_CreateBucket_Handler,
 		},
 		{
 			MethodName: "Shutdown",

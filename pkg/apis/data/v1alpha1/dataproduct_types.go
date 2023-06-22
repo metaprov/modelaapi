@@ -97,42 +97,48 @@ type DataProductSpec struct {
 	// ImageLocation specifies the default Docker image repository where images produced under the Data Product will be stored
 	// +kubebuilder:validation:Optional
 	ImageLocation *ImageLocation `json:"imageLocation,omitempty" protobuf:"bytes,5,opt,name=imageLocation"`
+	// CacheBucketName specifies the name of the Virtual Bucket which workloads for resources under the Data Product
+	// will use internally for caching workloads. Setting CacheBucketName to a valid Virtual Bucket is highly
+	// recommended for stability and performance
+	// +kubebuilder:validation:Required
+	// +required
+	CacheBucketName string `json:"cacheBucketName,omitempty" protobuf:"bytes,6,opt,name=cacheBucketName"`
 	// The name of the Lab that will be used by default with all compute-requiring child resources
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Optional
-	DefaultLabName *string `json:"defaultLabName" protobuf:"bytes,6,opt,name=defaultLabName"`
+	DefaultLabName *string `json:"defaultLabName" protobuf:"bytes,7,opt,name=defaultLabName"`
 	// The name of the Serving Site which will be used by default with all Predictor resources
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
-	DefaultServingSiteName *string `json:"defaultServingSiteName" protobuf:"bytes,7,opt,name=defaultServingSiteName"`
+	DefaultServingSiteName *string `json:"defaultServingSiteName" protobuf:"bytes,8,opt,name=defaultServingSiteName"`
 	// The name of the Virtual Bucket that resources under the Data Product will use by default
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
-	DefaultBucketName *string `json:"defaultBucketName,omitempty" protobuf:"bytes,8,opt,name=defaultBucketName"`
+	DefaultBucketName *string `json:"defaultBucketName,omitempty" protobuf:"bytes,9,opt,name=defaultBucketName"`
 	// Task specifies the default machine learning task of the Data Product (classification, regression, etc.)
 	// +kubebuilder:validation:Optional
-	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,9,opt,name=task"`
+	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,10,opt,name=task"`
 	// Subtask specifies the default subtask relevant to the primary task (text classification, image object detection, etc.)
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	SubTask *catalog.MLSubtask `json:"subtask,omitempty" protobuf:"bytes,10,opt,name=subtask"`
+	SubTask *catalog.MLSubtask `json:"subtask,omitempty" protobuf:"bytes,11,opt,name=subtask"`
 	// User-provided description of the object
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
-	Description *string `json:"description,omitempty" protobuf:"bytes,11,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,12,opt,name=description"`
 	// The default notification specification for all resources under the DataProduct
 	// +kubebuilder:validation:Optional
-	Notification *catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,12,opt,name=notification"`
+	Notification *catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,13,opt,name=notification"`
 	// The default resource allocation for model training and data workloads that takes place under the DataProduct
 	// +kubebuilder:validation:Optional
-	DefaultTrainingResources catalog.ResourceSpec `json:"trainingResources,omitempty" protobuf:"bytes,13,opt,name=trainingResources"`
+	DefaultTrainingResources catalog.ResourceSpec `json:"trainingResources,omitempty" protobuf:"bytes,14,opt,name=trainingResources"`
 	// The default resource allocation for model serving workloads that takes place under the DataProduct
 	// +kubebuilder:validation:Optional
-	DefaultServingResources catalog.ResourceSpec `json:"servingResources,omitempty" protobuf:"bytes,14,opt,name=servingResources"`
+	DefaultServingResources catalog.ResourceSpec `json:"servingResources,omitempty" protobuf:"bytes,15,opt,name=servingResources"`
 	// The default priority level assigned to Jobs created by resources under the Data Product
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="medium"

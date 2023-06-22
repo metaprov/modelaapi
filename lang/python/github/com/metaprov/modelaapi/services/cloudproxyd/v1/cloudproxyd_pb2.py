@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nGgithub.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd.proto\x12\x35github.com.metaprov.modelaapi.services.cloudproxyd.v1\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse\"q\n\x19VirtualBucketExistRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"+\n\x1aVirtualBucketExistResponse\x12\r\n\x05\x65xist\x18\x01 \x01(\x08\"\x93\x01\n\x1eKeyExistInVirtualBucketRequest\x12\x0e\n\x06region\x18\x01 \x01(\t\x12T\n\x06\x62ucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x0b\n\x03key\x18\x03 \x01(\t\"0\n\x1fKeyExistInVirtualBucketResponse\x12\r\n\x05\x65xist\x18\x01 \x01(\x08\"\x1c\n\x1a\x43loudVirtualBucketResponse\"\x96\x01\n\x13\x46ileDownloadRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x0e\n\x06tenant\x18\x04 \x01(\t\"\x16\n\x14\x46ileDownloadResponse\"\x8a\x01\n\x12ListObjectsRequest\x12\x0e\n\x06prefix\x18\x01 \x01(\t\x12T\n\x06\x62ucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x0e\n\x06tenant\x18\x03 \x01(\t\"#\n\x13ListObjectsResponse\x12\x0c\n\x04keys\x18\x01 \x03(\t\"\x99\x02\n\x11\x46ileUploadRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x64\n\x06secret\x18\x04 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x14\n\x12\x46ileUploadResponse\"r\n\x1a\x43reateVirtualBucketRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x1d\n\x1b\x43reateVirtualBucketResponse2\xf5\t\n\x11\x43loudProxyService\x12\xa5\x01\n\x08\x44ownload\x12J.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest\x1aK.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadResponse\"\x00\x12\x9f\x01\n\x04List\x12I.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest\x1aJ.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsResponse\"\x00\x12\x9f\x01\n\x06Upload\x12H.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest\x1aI.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadResponse\"\x00\x12\xca\x01\n\x17KeyExistInVirtualBucket\x12U.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest\x1aV.github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketResponse\"\x00\x12\xbb\x01\n\x12VirtualBucketExist\x12P.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest\x1aQ.github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistResponse\"\x00\x12\xc8\x01\n\x1d\x43reateVirtualBucketIfNotExist\x12Q.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest\x1aR.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketResponse\"\x00\x12\x9d\x01\n\x08Shutdown\x12\x46.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ShutdownRequest\x1aG.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ShutdownResponse\"\x00\x42\x37Z5github.com/metaprov/modelaapi/services/cloudproxyd/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nGgithub.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd.proto\x12\x35github.com.metaprov.modelaapi.services.cloudproxyd.v1\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse\"j\n\x12\x42ucketExistRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"$\n\x13\x42ucketExistResponse\x12\r\n\x05\x65xist\x18\x01 \x01(\x08\"z\n\x15\x45xistsInBucketRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x0b\n\x03key\x18\x02 \x01(\t\"\'\n\x16\x45xistsInBucketResponse\x12\r\n\x05\x65xist\x18\x01 \x01(\x08\"r\n\rDeleteRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x0b\n\x03key\x18\x02 \x01(\t\"\x10\n\x0e\x44\x65leteResponse\"\x96\x01\n\x13\x46ileDownloadRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x0e\n\x06tenant\x18\x04 \x01(\t\"\x16\n\x14\x46ileDownloadResponse\"\x8a\x01\n\x12ListObjectsRequest\x12\x0e\n\x06prefix\x18\x01 \x01(\t\x12T\n\x06\x62ucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x0e\n\x06tenant\x18\x03 \x01(\t\"#\n\x13ListObjectsResponse\x12\x0c\n\x04keys\x18\x01 \x03(\t\"\x84\x01\n\x11\x46ileUploadRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x14\n\x12\x46ileUploadResponse\"k\n\x13\x43reateBucketRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x16\n\x14\x43reateBucketResponse2\xc0\n\n\x11\x43loudProxyService\x12\xa5\x01\n\x08\x44ownload\x12J.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest\x1aK.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadResponse\"\x00\x12\x9f\x01\n\x04List\x12I.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsRequest\x1aJ.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ListObjectsResponse\"\x00\x12\x9f\x01\n\x06Upload\x12H.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest\x1aI.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadResponse\"\x00\x12\x97\x01\n\x06\x44\x65lete\x12\x44.github.com.metaprov.modelaapi.services.cloudproxyd.v1.DeleteRequest\x1a\x45.github.com.metaprov.modelaapi.services.cloudproxyd.v1.DeleteResponse\"\x00\x12\xaf\x01\n\x0e\x45xistsInBucket\x12L.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ExistsInBucketRequest\x1aM.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ExistsInBucketResponse\"\x00\x12\xa6\x01\n\x0b\x42ucketExist\x12I.github.com.metaprov.modelaapi.services.cloudproxyd.v1.BucketExistRequest\x1aJ.github.com.metaprov.modelaapi.services.cloudproxyd.v1.BucketExistResponse\"\x00\x12\xa9\x01\n\x0c\x43reateBucket\x12J.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateBucketRequest\x1aK.github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateBucketResponse\"\x00\x12\x9d\x01\n\x08Shutdown\x12\x46.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ShutdownRequest\x1aG.github.com.metaprov.modelaapi.services.cloudproxyd.v1.ShutdownResponse\"\x00\x42\x37Z5github.com/metaprov/modelaapi/services/cloudproxyd/v1b\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'github.com.metaprov.modelaapi.services.cloudproxyd.v1.cloudproxyd_pb2', globals())
@@ -22,40 +22,38 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z5github.com/metaprov/modelaapi/services/cloudproxyd/v1'
-  _FILEUPLOADREQUEST_SECRETENTRY._options = None
-  _FILEUPLOADREQUEST_SECRETENTRY._serialized_options = b'8\001'
   _SHUTDOWNREQUEST._serialized_start=201
   _SHUTDOWNREQUEST._serialized_end=218
   _SHUTDOWNRESPONSE._serialized_start=220
   _SHUTDOWNRESPONSE._serialized_end=238
-  _VIRTUALBUCKETEXISTREQUEST._serialized_start=240
-  _VIRTUALBUCKETEXISTREQUEST._serialized_end=353
-  _VIRTUALBUCKETEXISTRESPONSE._serialized_start=355
-  _VIRTUALBUCKETEXISTRESPONSE._serialized_end=398
-  _KEYEXISTINVIRTUALBUCKETREQUEST._serialized_start=401
-  _KEYEXISTINVIRTUALBUCKETREQUEST._serialized_end=548
-  _KEYEXISTINVIRTUALBUCKETRESPONSE._serialized_start=550
-  _KEYEXISTINVIRTUALBUCKETRESPONSE._serialized_end=598
-  _CLOUDVIRTUALBUCKETRESPONSE._serialized_start=600
-  _CLOUDVIRTUALBUCKETRESPONSE._serialized_end=628
-  _FILEDOWNLOADREQUEST._serialized_start=631
-  _FILEDOWNLOADREQUEST._serialized_end=781
-  _FILEDOWNLOADRESPONSE._serialized_start=783
-  _FILEDOWNLOADRESPONSE._serialized_end=805
-  _LISTOBJECTSREQUEST._serialized_start=808
-  _LISTOBJECTSREQUEST._serialized_end=946
-  _LISTOBJECTSRESPONSE._serialized_start=948
-  _LISTOBJECTSRESPONSE._serialized_end=983
-  _FILEUPLOADREQUEST._serialized_start=986
-  _FILEUPLOADREQUEST._serialized_end=1267
-  _FILEUPLOADREQUEST_SECRETENTRY._serialized_start=1222
-  _FILEUPLOADREQUEST_SECRETENTRY._serialized_end=1267
-  _FILEUPLOADRESPONSE._serialized_start=1269
-  _FILEUPLOADRESPONSE._serialized_end=1289
-  _CREATEVIRTUALBUCKETREQUEST._serialized_start=1291
-  _CREATEVIRTUALBUCKETREQUEST._serialized_end=1405
-  _CREATEVIRTUALBUCKETRESPONSE._serialized_start=1407
-  _CREATEVIRTUALBUCKETRESPONSE._serialized_end=1436
-  _CLOUDPROXYSERVICE._serialized_start=1439
-  _CLOUDPROXYSERVICE._serialized_end=2708
+  _BUCKETEXISTREQUEST._serialized_start=240
+  _BUCKETEXISTREQUEST._serialized_end=346
+  _BUCKETEXISTRESPONSE._serialized_start=348
+  _BUCKETEXISTRESPONSE._serialized_end=384
+  _EXISTSINBUCKETREQUEST._serialized_start=386
+  _EXISTSINBUCKETREQUEST._serialized_end=508
+  _EXISTSINBUCKETRESPONSE._serialized_start=510
+  _EXISTSINBUCKETRESPONSE._serialized_end=549
+  _DELETEREQUEST._serialized_start=551
+  _DELETEREQUEST._serialized_end=665
+  _DELETERESPONSE._serialized_start=667
+  _DELETERESPONSE._serialized_end=683
+  _FILEDOWNLOADREQUEST._serialized_start=686
+  _FILEDOWNLOADREQUEST._serialized_end=836
+  _FILEDOWNLOADRESPONSE._serialized_start=838
+  _FILEDOWNLOADRESPONSE._serialized_end=860
+  _LISTOBJECTSREQUEST._serialized_start=863
+  _LISTOBJECTSREQUEST._serialized_end=1001
+  _LISTOBJECTSRESPONSE._serialized_start=1003
+  _LISTOBJECTSRESPONSE._serialized_end=1038
+  _FILEUPLOADREQUEST._serialized_start=1041
+  _FILEUPLOADREQUEST._serialized_end=1173
+  _FILEUPLOADRESPONSE._serialized_start=1175
+  _FILEUPLOADRESPONSE._serialized_end=1195
+  _CREATEBUCKETREQUEST._serialized_start=1197
+  _CREATEBUCKETREQUEST._serialized_end=1304
+  _CREATEBUCKETRESPONSE._serialized_start=1306
+  _CREATEBUCKETRESPONSE._serialized_end=1328
+  _CLOUDPROXYSERVICE._serialized_start=1331
+  _CLOUDPROXYSERVICE._serialized_end=2675
 # @@protoc_insertion_point(module_scope)

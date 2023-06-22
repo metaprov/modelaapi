@@ -322,10 +322,10 @@ spec:
                 type: object
                 x-kubernetes-map-type: atomic
               location:
-                description: Location is the final location of the data which was
-                  copied from the `Origin` location during the ingestion phase. This
-                  field is set by the Dataset resource controller and should not be
-                  changed by any end-users
+                description: Location stores the physical location of the data which
+                  was read from the Origin during the snapshot phase. This field is
+                  set by the Dataset resource controller and will always link to a
+                  parquet file
                 properties:
                   bucketName:
                     type: string
@@ -340,13 +340,34 @@ spec:
                 description: ModelClassRunName specifies the name of the Model Class
                   Run which created the Dataset, if applicable
                 type: string
+              notification:
+                description: Notification specifies the configuration for Alerts generated
+                  by the resource
+                properties:
+                  notifierName:
+                    description: NotifierName specifies the name of a single Notifier
+                      resource which the Alert will be forwarded to
+                    type: string
+                  selector:
+                    additionalProperties:
+                      type: string
+                    description: Selector defines a map of labels that will be matched
+                      to find multiple Notifier resource to forward alerts to
+                    type: object
+                  ttl:
+                    default: 3600
+                    description: TTL defines the time-to-live for Alerts, in seconds,
+                      after which they will be deleted
+                    format: int32
+                    type: integer
+                type: object
               origin:
                 description: Origin is the location of the data file or database query
                   which holds the raw data of the Dataset. When the Dataset is created,
                   the resource controller will retrieve the data from the location,
                   validate it against its Data Source if applicable, and store it
-                  inside the `live` section of the Virtual BucketName resource specified
-                  by the location
+                  in the automatically generated (or user specified) location specified
+                  by Location
                 properties:
                   bucket:
                     default: ""
@@ -1322,9 +1343,6 @@ spec:
                           description: The column index in the dataset
                           format: int32
                           type: integer
-                        indexOfPeculiarity:
-                          description: Used for text attributes
-                          type: number
                         invalid:
                           description: The number of invalid values in the column
                           format: int32

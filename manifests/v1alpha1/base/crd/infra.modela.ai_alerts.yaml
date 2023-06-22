@@ -119,6 +119,27 @@ spec:
                 description: Level specifies the significance of the Alert, which
                   can be normal, warning, or error
                 type: string
+              notification:
+                description: Notification defines to configuration to forward the
+                  Alert to an external Notifier
+                properties:
+                  notifierName:
+                    description: NotifierName specifies the name of a single Notifier
+                      resource which the Alert will be forwarded to
+                    type: string
+                  selector:
+                    additionalProperties:
+                      type: string
+                    description: Selector defines a map of labels that will be matched
+                      to find multiple Notifier resource to forward alerts to
+                    type: object
+                  ttl:
+                    default: 3600
+                    description: TTL defines the time-to-live for Alerts, in seconds,
+                      after which they will be deleted
+                    format: int32
+                    type: integer
+                type: object
               owner:
                 default: no-one
                 description: Owner references the name of the Account which owns the
