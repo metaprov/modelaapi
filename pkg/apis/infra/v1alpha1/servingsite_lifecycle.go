@@ -108,8 +108,12 @@ func (servingsite ServingSite) GetCond(t string) metav1.Condition {
 
 }
 
-func (servingsite ServingSite) IsReady() bool {
-	return servingsite.GetCond(string(ServingSiteReady)).Status == metav1.ConditionTrue
+func (servingsite ServingSite) IsNamespaceReady() bool {
+	return servingsite.GetCond(string(ServingSiteNamespaceReady)).Status == metav1.ConditionTrue
+}
+
+func (servingsite ServingSite) IsRbacReady() bool {
+	return servingsite.GetCond(string(ServingSiteRbacReady)).Status == metav1.ConditionTrue
 }
 
 func (servingsite ServingSite) Key() string {
@@ -259,11 +263,51 @@ func (servingsite ServingSite) ServingSiteOps() *rbacv1.Role {
 	}
 }
 
-func (servingsite *ServingSite) MarkReady() {
+func (servingsite *ServingSite) MarkRbacNotReady(reason string) {
 	servingsite.CreateOrUpdateCond(metav1.Condition{
-		Type:   string(ServingSiteReady),
+		Type:   string(ServingSiteRbacReady),
+		Status: metav1.ConditionFalse,
+		Reason: reason,
+	})
+}
+
+func (servingsite *ServingSite) MarkNamespaceNotReady(reason string) {
+	servingsite.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(ServingSiteNamespaceReady),
+		Status: metav1.ConditionFalse,
+		Reason: reason,
+	})
+}
+
+func (servingsite *ServingSite) MarkIngressNotReady(reason string) {
+	servingsite.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(ServingSiteIngressReady),
+		Status: metav1.ConditionFalse,
+		Reason: reason,
+	})
+}
+
+func (servingsite *ServingSite) MarkRbacReady() {
+	servingsite.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(ServingSiteRbacReady),
 		Status: metav1.ConditionTrue,
-		Reason: string(ServingSiteReady),
+		Reason: string(ServingSiteRbacReady),
+	})
+}
+
+func (servingsite *ServingSite) MarkNamespaceReady() {
+	servingsite.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(ServingSiteNamespaceReady),
+		Status: metav1.ConditionTrue,
+		Reason: string(ServingSiteNamespaceReady),
+	})
+}
+
+func (servingsite *ServingSite) MarkIngressReady() {
+	servingsite.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(ServingSiteIngressReady),
+		Status: metav1.ConditionTrue,
+		Reason: string(ServingSiteIngressReady),
 	})
 }
 

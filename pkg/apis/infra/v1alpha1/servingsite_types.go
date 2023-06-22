@@ -15,8 +15,9 @@ type ServingSiteConditionType string
 
 // / ServingSite Condition
 const (
-	ServingSiteReady ServingSiteConditionType = "Ready"
-	ServingSiteSaved ServingSiteConditionType = "Saved"
+	ServingSiteNamespaceReady ServingSiteConditionType = "NamespaceReady"
+	ServingSiteRbacReady      ServingSiteConditionType = "RbacReady"
+	ServingSiteIngressReady   ServingSiteConditionType = "IngressReady"
 )
 
 // +kubebuilder:object:root=true

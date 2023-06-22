@@ -1197,6 +1197,7 @@ const (
 	WaitingForApproval ConditionReason = "WaitingForApproval"
 	Approved           ConditionReason = "Approved"
 	Denied             ConditionReason = "Denied"
+	MissingResources   ConditionReason = "MissingResources"
 )
 
 //==============================================================================
