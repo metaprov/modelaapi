@@ -1567,20 +1567,20 @@ export class InterpretabilityStatus extends jspb.Message {
   hasCompletedat(): boolean;
   clearCompletedat(): InterpretabilityStatus;
 
-  getExplaineruri(): string;
-  setExplaineruri(value: string): InterpretabilityStatus;
-  hasExplaineruri(): boolean;
-  clearExplaineruri(): InterpretabilityStatus;
+  getExplainerlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setExplainerlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): InterpretabilityStatus;
+  hasExplainerlocation(): boolean;
+  clearExplainerlocation(): InterpretabilityStatus;
 
-  getTrainshapvaluesuri(): string;
-  setTrainshapvaluesuri(value: string): InterpretabilityStatus;
-  hasTrainshapvaluesuri(): boolean;
-  clearTrainshapvaluesuri(): InterpretabilityStatus;
+  getTrainshapvalueslocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setTrainshapvalueslocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): InterpretabilityStatus;
+  hasTrainshapvalueslocation(): boolean;
+  clearTrainshapvalueslocation(): InterpretabilityStatus;
 
-  getTestshapvaluesuri(): string;
-  setTestshapvaluesuri(value: string): InterpretabilityStatus;
-  hasTestshapvaluesuri(): boolean;
-  clearTestshapvaluesuri(): InterpretabilityStatus;
+  getTestshapvalueslocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setTestshapvalueslocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): InterpretabilityStatus;
+  hasTestshapvalueslocation(): boolean;
+  clearTestshapvalueslocation(): InterpretabilityStatus;
 
   getImportanceList(): Array<FeatureImportance>;
   setImportanceList(value: Array<FeatureImportance>): InterpretabilityStatus;
@@ -1599,9 +1599,9 @@ export namespace InterpretabilityStatus {
   export type AsObject = {
     startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    explaineruri?: string,
-    trainshapvaluesuri?: string,
-    testshapvaluesuri?: string,
+    explainerlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    trainshapvalueslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    testshapvalueslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     importanceList: Array<FeatureImportance.AsObject>,
   }
 }
@@ -2749,6 +2749,11 @@ export class ModelSpec extends jspb.Message {
   hasRole(): boolean;
   clearRole(): ModelSpec;
 
+  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
+  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): ModelSpec;
+  hasNotification(): boolean;
+  clearNotification(): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -2795,6 +2800,7 @@ export namespace ModelSpec {
     modelclassname?: string,
     modelclassrunname?: string,
     role?: string,
+    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
   }
 }
 
@@ -3123,15 +3129,15 @@ export class ModelStatus extends jspb.Message {
   hasImages(): boolean;
   clearImages(): ModelStatus;
 
-  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelStatus;
-  hasUnittestsresult(): boolean;
-  clearUnittestsresult(): ModelStatus;
+  getUnittestresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelStatus;
+  hasUnittestresults(): boolean;
+  clearUnittestresults(): ModelStatus;
 
-  getFeedbacktestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setFeedbacktestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelStatus;
-  hasFeedbacktestsresult(): boolean;
-  clearFeedbacktestsresult(): ModelStatus;
+  getFeedbacktestresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setFeedbacktestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): ModelStatus;
+  hasFeedbacktestresults(): boolean;
+  clearFeedbacktestresults(): ModelStatus;
 
   getGroupby(): ModelGroupByStatus | undefined;
   setGroupby(value?: ModelGroupByStatus): ModelStatus;
@@ -3214,8 +3220,8 @@ export namespace ModelStatus {
     approval?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ApprovalStatus.AsObject,
     interpretability?: InterpretabilityStatus.AsObject,
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
-    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    feedbacktestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    unittestresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    feedbacktestresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     groupby?: ModelGroupByStatus.AsObject,
     usage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,

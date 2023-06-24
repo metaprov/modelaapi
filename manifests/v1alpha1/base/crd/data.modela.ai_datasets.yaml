@@ -1514,7 +1514,7 @@ spec:
                       type: object
                     type: array
                 type: object
-              testResults:
+              unitTestResults:
                 description: List of validation results which are generated for every
                   validation rule associated with the Dataset's Data Source
                 properties:

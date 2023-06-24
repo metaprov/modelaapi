@@ -1145,6 +1145,27 @@ spec:
                 description: The version of the Model, derived from the Study which
                   created the Model
                 type: string
+              notification:
+                description: The name of the Notifier resource which Alerts created
+                  by the Model will be forwarded to
+                properties:
+                  notifierName:
+                    description: NotifierName specifies the name of a single Notifier
+                      resource which the Alert will be forwarded to
+                    type: string
+                  selector:
+                    additionalProperties:
+                      type: string
+                    description: Selector defines a map of labels that will be matched
+                      to find multiple Notifier resource to forward alerts to
+                    type: object
+                  ttl:
+                    default: 3600
+                    description: TTL defines the time-to-live for Alerts, in seconds,
+                      after which they will be deleted
+                    format: int32
+                    type: integer
+                type: object
               objective:
                 description: The objective metric that will be used to evaluate the
                   performance of the model
@@ -2156,7 +2177,7 @@ spec:
                       type: array
                   type: object
                 type: array
-              feedbackTestsResult:
+              feedbackTestResults:
                 description: The result of running the feedback unit tests, the feedback
                   unit tests
                 properties:
@@ -2442,9 +2463,14 @@ spec:
                       phase ended
                     format: date-time
                     type: string
-                  explainerURI:
-                    description: The URI for the generated explanation data
-                    type: string
+                  explainerLocation:
+                    description: The location of the generated explanation data
+                    properties:
+                      bucketName:
+                        type: string
+                      path:
+                        type: string
+                    type: object
                   importance:
                     description: The collection of feature importances generated from
                       the computed SHAP values
@@ -2466,12 +2492,22 @@ spec:
                       phase started
                     format: date-time
                     type: string
-                  testShapValuesURI:
-                    description: The URI for the test SHAP values
-                    type: string
-                  trainShapValuesURI:
-                    description: The URI for the train SHAP values
-                    type: string
+                  testShapValuesLocation:
+                    description: The location of the test SHAP values
+                    properties:
+                      bucketName:
+                        type: string
+                      path:
+                        type: string
+                    type: object
+                  trainShapValuesLocation:
+                    description: The location of the train SHAP values
+                    properties:
+                      bucketName:
+                        type: string
+                      path:
+                        type: string
+                    type: object
                 type: object
               latency:
                 description: The measured prediction latency
@@ -3145,7 +3181,7 @@ spec:
                       type: array
                   type: object
                 type: array
-              unitTestsResult:
+              unitTestResults:
                 description: The result of running the unit tests
                 properties:
                   completedAt:

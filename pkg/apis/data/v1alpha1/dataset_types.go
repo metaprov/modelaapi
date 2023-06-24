@@ -243,7 +243,7 @@ type DatasetStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,8,opt,name=observedGeneration"`
 	// List of validation results which are generated for every validation rule associated with the Dataset's Data Source
 	//+kubebuilder:validation:Optional
-	TestResults catalog.TestSuiteResult `json:"testResults,omitempty" protobuf:"bytes,9,opt,name=testResults"`
+	UnitTestResults catalog.TestSuiteResult `json:"unitTestResults,omitempty" protobuf:"bytes,9,opt,name=unitTestResults"`
 	// Last time the Dataset was used with a Study
 	//+kubebuilder:validation:Optional
 	LastStudyAt *metav1.Time `json:"lastStudyAt,omitempty" protobuf:"bytes,10,opt,name=lastStudyAt"`

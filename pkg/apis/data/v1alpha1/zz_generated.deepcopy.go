@@ -1824,7 +1824,7 @@ func (in *DatasetStatus) DeepCopyInto(out *DatasetStatus) {
 	out.ReportLocation = in.ReportLocation
 	out.ProfileLocation = in.ProfileLocation
 	out.AnomaliesLocation = in.AnomaliesLocation
-	in.TestResults.DeepCopyInto(&out.TestResults)
+	in.UnitTestResults.DeepCopyInto(&out.UnitTestResults)
 	if in.LastStudyAt != nil {
 		in, out := &in.LastStudyAt, &out.LastStudyAt
 		*out = (*in).DeepCopy()

@@ -892,14 +892,17 @@ message InterpretabilityStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 2;
 
-  // The URI for the generated explanation data
-  optional string explainerURI = 3;
+  // The location of the generated explanation data
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation explainerLocation = 3;
 
-  // The URI for the train SHAP values
-  optional string trainShapValuesURI = 4;
+  // The location of the train SHAP values
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation trainShapValuesLocation = 4;
 
-  // The URI for the test SHAP values
-  optional string testShapValuesURI = 5;
+  // The location of the test SHAP values
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation testShapValuesLocation = 5;
 
   // The collection of feature importances generated from the computed SHAP values
   repeated FeatureImportance importance = 6;
@@ -1671,6 +1674,10 @@ message ModelSpec {
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
   optional string role = 36;
+
+  // The name of the Notifier resource which Alerts created by the Model will be forwarded to
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 37;
 }
 
 message ModelStageStatus {
@@ -1922,11 +1929,11 @@ message ModelStatus {
 
   // The result of running the unit tests
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestsResult = 64;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestResults = 64;
 
   // The result of running the feedback unit tests, the feedback unit tests
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult feedbackTestsResult = 65;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult feedbackTestResults = 65;
 
   // The sub models uri file contain the results of running the sub model
   // +kubebuilder:validation:Optional

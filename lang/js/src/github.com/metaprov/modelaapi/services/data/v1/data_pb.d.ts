@@ -622,26 +622,10 @@ export class DsCreateModelProfileRequest extends jspb.Message {
   hasModel(): boolean;
   clearModel(): DsCreateModelProfileRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsCreateModelProfileRequest;
-  hasConnection(): boolean;
-  clearConnection(): DsCreateModelProfileRequest;
-
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
   setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsCreateModelProfileRequest;
   hasBucket(): boolean;
   clearBucket(): DsCreateModelProfileRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): DsCreateModelProfileRequest;
-
-  getDbconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setDbconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsCreateModelProfileRequest;
-  hasDbconnection(): boolean;
-  clearDbconnection(): DsCreateModelProfileRequest;
-
-  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearDbsecretMap(): DsCreateModelProfileRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsCreateModelProfileRequest.AsObject;
@@ -659,17 +643,15 @@ export namespace DsCreateModelProfileRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
-    dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
 export class DsCreateModelProfileResponse extends jspb.Message {
-  getUri(): string;
-  setUri(value: string): DsCreateModelProfileResponse;
+  getProfilelocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setProfilelocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DsCreateModelProfileResponse;
+  hasProfilelocation(): boolean;
+  clearProfilelocation(): DsCreateModelProfileResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsCreateModelProfileResponse.AsObject;
@@ -681,7 +663,7 @@ export class DsCreateModelProfileResponse extends jspb.Message {
 
 export namespace DsCreateModelProfileResponse {
   export type AsObject = {
-    uri: string,
+    profilelocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
   }
 }
 

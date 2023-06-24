@@ -283,6 +283,9 @@ type ModelSpec struct {
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	Role *catalog.ModelRole `json:"role,omitempty" protobuf:"bytes,36,opt,name=role"`
+	// The name of the Notifier resource which Alerts created by the Model will be forwarded to
+	// +kubebuilder:validation:Optional
+	Notification *catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,37,opt,name=notification"`
 }
 
 // EnsembleSpec specifies the parameters of an ensemble model
@@ -471,10 +474,10 @@ type ModelStatus struct {
 	Images catalog.Images `json:"images,omitempty" protobuf:"bytes,63,opt,name=images"`
 	// The result of running the unit tests
 	// +kubebuilder:validation:Optional
-	UnitTestsResult catalog.TestSuiteResult `json:"unitTestsResult,omitempty" protobuf:"bytes,64,opt,name=unitTestsResult"`
+	UnitTestResults catalog.TestSuiteResult `json:"unitTestResults,omitempty" protobuf:"bytes,64,opt,name=unitTestResults"`
 	// The result of running the feedback unit tests, the feedback unit tests
 	// +kubebuilder:validation:Optional
-	FeedbackTestsResult catalog.TestSuiteResult `json:"feedbackTestsResult,omitempty" protobuf:"bytes,65,opt,name=feedbackTestsResult"`
+	FeedbackTestResults catalog.TestSuiteResult `json:"feedbackTestResults,omitempty" protobuf:"bytes,65,opt,name=feedbackTestResults"`
 	// The sub models uri file contain the results of running the sub model
 	// +kubebuilder:validation:Optional
 	GroupBy ModelGroupByStatus `json:"groupby,omitempty" protobuf:"bytes,66,opt,name=groupby"`
@@ -964,12 +967,15 @@ type InterpretabilityStatus struct {
 	// CompletedAt represents the time when the model explanation phase ended
 	// +kubebuilder:validation:Optional
 	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,2,opt,name=completedAt"`
-	// The URI for the generated explanation data
-	ExplainerURI string `json:"explainerURI,omitempty" protobuf:"bytes,3,opt,name=explainerURI"`
-	// The URI for the train SHAP values
-	TrainShapValuesURI string `json:"trainShapValuesURI,omitempty" protobuf:"bytes,4,opt,name=trainShapValuesURI"`
-	// The URI for the test SHAP values
-	TestShapValuesURI string `json:"testShapValuesURI,omitempty" protobuf:"bytes,5,opt,name=testShapValuesURI"`
+	// The location of the generated explanation data
+	// +kubebuilder:validation:Optional
+	ExplainerLocation catalog.FileLocation `json:"explainerLocation,omitempty" protobuf:"bytes,3,opt,name=explainerLocation"`
+	// The location of the train SHAP values
+	// +kubebuilder:validation:Optional
+	TrainShapValuesLocation catalog.FileLocation `json:"trainShapValuesLocation,omitempty" protobuf:"bytes,4,opt,name=trainShapValuesLocation"`
+	// The location of the test SHAP values
+	// +kubebuilder:validation:Optional
+	TestShapValuesLocation catalog.FileLocation `json:"testShapValuesLocation,omitempty" protobuf:"bytes,5,opt,name=testShapValuesLocation"`
 	// The collection of feature importances generated from the computed SHAP values
 	Importance []FeatureImportance `json:"importance,omitempty" protobuf:"bytes,6,rep,name=importance"`
 }
