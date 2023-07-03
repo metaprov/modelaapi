@@ -56,23 +56,21 @@ type DataAppSpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="no-one"
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// The name of the DataProductVersion which describes the version of the resource
-	// that exists in the same DataProduct namespace as the resource
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
-	// The model class for this pipeline
+	// ModelClassName specifies the name of the Model Class which created the Data App, if applicable
 	// +kubebuilder:validation:Optional
 	ModelClassName *string `json:"modelClassName,omitempty" protobuf:"bytes,3,opt,name=modelClassName"`
-	// The user-provided description of the DataApp
+	// The user-provided description of the Data App
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	Description *string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
-	// The name of the predictive app model. The model will be used
+	// Model specifies the name of the Model resource which the Data App will create a dashboard for
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ModelName *string `json:"modelName,omitempty" protobuf:"bytes,5,opt,name=modelName"`
-	// Define how to access the app.
+	// Access specifies the configuration for the Data App service to be exposed externally
 	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,6,opt,name=access"`
 	// The number of replicas for the Kubernetes Serving associated with the DataApp, which will instantiate multiple
 	// copies of the service in the case that automatic scaling is disabled
@@ -82,12 +80,9 @@ type DataAppSpec struct {
 	// Resources specifies the resource requirements allocated to the DataApp's web server
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,10,opt,name=resources"`
-	// The reference to the DataProduct that the resource exists under
-	// +kubebuilder:validation:Optional
-	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,12,opt,name=productRef"`
 	// The reference to the ServingSite resource that hosts the Predictor
 	// +kubebuilder:validation:Optional
-	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,13,opt,name=servingsiteRef"`
+	ServingSiteRef v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,13,opt,name=servingsiteRef"`
 	// The specification to create a custom data application (currently unimplemented)
 	// +kubebuilder:validation:Optional
 	Custom CustomAppSpec `json:"custom" protobuf:"bytes,14,opt,name=custom"`

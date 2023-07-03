@@ -26,10 +26,9 @@ const (
 // ===========================================================
 
 const (
-	LabJobRunnerRole                     string = "lab-job-runner"
-	LabJobRunnerSa                       string = "lab-job-sa"
-	LabJobRunnerRoleBinding              string = "lab-job-runner-binding"
-	LabJobRunnerClusterRoleBindingPrefix string = "job-runner-binding"
+	LabJobRunnerRole        string = "lab-job-runner"
+	LabJobRunnerSa          string = "lab-job-sa"
+	LabJobRunnerRoleBinding string = "lab-job-runner-binding"
 
 	ServingSiteJobRunnerRole        string = "servingsite-job-runner"
 	ServingSiteJobRunnerSa          string = "servingsite-job-sa"
@@ -1455,8 +1454,7 @@ const (
 // ModelDeploymentSpec describes how a single model should be deployed with a Predictor, and
 // how prediction traffic will be routed to the model
 type ModelDeploymentSpec struct {
-	// The reference to a Model resource which has been packaged and exists in the same Location Product
-	// as the Predictor which specifies the ModelDeploymentSpec
+	// The reference to a Model resource which has been packaged
 	// +kubebuilder:validation:Required
 	// +required
 	ModelRef v1.ObjectReference `json:"modelRef,omitempty" protobuf:"bytes,1,opt,name=modelRef"`
@@ -1464,32 +1462,21 @@ type ModelDeploymentSpec struct {
 	// +kubebuilder:default:=8080
 	// +kubebuilder:validation:Optional
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
-	// The version of the model, derived from the Study which created it
-	// +kubebuilder:validation:Optional
-	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,3,opt,name=modelVersion"`
 	// The minimum percentage (0 through 100) of traffic that will be served by the model
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
-	Traffic *int32 `json:"traffic,omitempty" protobuf:"varint,4,opt,name=traffic"`
+	Traffic *int32 `json:"traffic,omitempty" protobuf:"varint,3,opt,name=traffic"`
 	// Role denotes the role of this model
 	// +kubebuilder:default:=live
 	// +kubebuilder:validation:Optional
-	Role *ModelRole `json:"role,omitempty" protobuf:"bytes,5,opt,name=role"`
-	// MountTar means that we would mount the model tar file. Else we would use baked image.
-	// +kubebuilder:default:=true
+	Role ModelRole `json:"role,omitempty" protobuf:"bytes,4,opt,name=role"`
+	// The URL of the model server image; applicable when rolling back a model
+	ImageName *string `json:"imageName,omitempty" protobuf:"bytes,5,opt,name=imageName"`
+	// The name of the account which approved the model, if applicable
 	// +kubebuilder:validation:Optional
-	MountTar *bool `json:"mountTar,omitempty" protobuf:"varint,9,opt,name=mountTar"`
-	// TrafficSelector is a filter on the traffic to this model
-	// +kubebuilder:validation:Optional
-	TrafficSelector *string `json:"trafficSelector,omitempty" protobuf:"bytes,10,opt,name=trafficSelector"`
-	// The approver account name
-	// +kubebuilder:validation:Optional
-	ApprovedBy v1.ObjectReference `json:"approvedBy,omitempty" protobuf:"bytes,12,opt,name=approvedBy"`
-	// The time of approval
-	// +kubebuilder:validation:Optional
-	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,13,opt,name=approvedAt"`
+	ApprovedBy *v1.ObjectReference `json:"approvedBy,omitempty" protobuf:"bytes,6,opt,name=approvedBy"`
 }
 
 // +kubebuilder:validation:Enum="tabular";"image";"nlp";"video";"audio"
@@ -1516,8 +1503,6 @@ const (
 	LoadBalancerAccessType AccessType = "load-balancer"
 	// Use ingress if the predictor should register with an ingress.
 	IngressAccessType AccessType = "ingress"
-	// Use service mesh if the predictor should register with a service mesh
-	MeshAccessType AccessType = "mesh"
 	// Use none if the desired port is none
 	NoneAccessType AccessType = "none"
 )
@@ -1764,8 +1749,10 @@ const (
 	JobLabelKey           = "kubernetes.io/job"
 	OwnerKindLabelKey     = "modela.ai/owner-kind"
 
-	ModelRoleLabelKey    = "models.ai/role"
-	ModelVersionLabelKey = "models.ai/modelversion"
+	ModelRoleLabelKey    = "modela.ai/role"
+	ModelVersionLabelKey = "modela.ai/modelversion"
+
+	ComponentLabelKey = "app.kubernetes.io/component"
 
 	BranchLabelKey  = "branch"
 	RoleLabelKey    = "labels"
@@ -2048,16 +2035,14 @@ type AccessSpec struct {
 	Path *string `json:"path,omitempty" protobuf:"bytes,3,opt,name=path"`
 	// The Kubernetes-native access method which specifies how the Kubernetes Service created by the Predictor will be exposed.
 	// See https://modela.ai/docs/docs/serving/production/#access-method for a detailed description of each access type
-	// (defaults to cluster-ip)
 	// +kubebuilder:default:="cluster-ip"
 	// +kubebuilder:validation:Optional
-	AccessType *AccessType `json:"accessType,omitempty" protobuf:"bytes,4,opt,name=accessType"`
-	// Indicates if the prediction service should expose an additional port to serve the GRPCInferenceService API through REST.
+	AccessType AccessType `json:"accessType,omitempty" protobuf:"bytes,4,opt,name=accessType"`
+	// Indicates if the prediction service should expose an additional port to serve the Modela prediction API through HTTP.
 	// The port one digit above the number specified by the Port field will be exposed to accept HTTP/1.1 traffic
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	REST *bool `json:"rest,omitempty" protobuf:"varint,5,opt,name=rest"`
-	// Indicates
+	HTTP *bool `json:"http,omitempty" protobuf:"varint,5,opt,name=http"`
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
 	AuthMethod *AuthMethod `json:"authMethod,omitempty" protobuf:"bytes,6,opt,name=authMethod"`

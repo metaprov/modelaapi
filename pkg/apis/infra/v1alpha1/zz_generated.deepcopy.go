@@ -636,8 +636,8 @@ func (in *IngressSpec) DeepCopyInto(out *IngressSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.REST != nil {
-		in, out := &in.REST, &out.REST
+	if in.HTTP != nil {
+		in, out := &in.HTTP, &out.HTTP
 		*out = new(bool)
 		**out = **in
 	}

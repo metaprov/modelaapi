@@ -10,10 +10,8 @@ import (
 // ServingSite
 //==============================================================================
 
-// / ServingSiteConditionType site condition
 type ServingSiteConditionType string
 
-// / ServingSite Condition
 const (
 	ServingSiteNamespaceReady ServingSiteConditionType = "NamespaceReady"
 	ServingSiteRbacReady      ServingSiteConditionType = "RbacReady"
@@ -126,26 +124,26 @@ type ServingSiteStatus struct {
 	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,15,rep,name=conditions"`
 }
 
-// IngressSpec defines the configuration to for a ServingSite to create Ingress resources
+// IngressSpec defines the configuration to for a Serving Site to create Ingress resources
 type IngressSpec struct {
-	// FQDN specifies the fully-qualified domain name that the ServingSite's Ingress will use as the base host for the
-	// endpoint of services deployed under the ServingSite. For example, setting the FQDN as `model-serving.modela.ai`
+	// FQDN specifies the fully-qualified domain name that the Serving Site's Ingress will use as the base host for the
+	// endpoint of services deployed under the Serving Site. For example, setting the FQDN as `model-serving.modela.ai`
 	// will automatically serve Predictors using the REST API at `predictors.model-serving.modela.ai`
 	// +kubebuilder:default:="serving.vcap.me"
 	// +kubebuilder:validation:Optional
 	FQDN *string `json:"fqdn,omitempty" protobuf:"bytes,1,opt,name=fqdn"`
-	// Grpc indicates if the ServingSite will create an Ingress resource to serve GRPC prediction traffic.
-	// All Predictor resources created under the ServingSite will receive a unique host in the Ingress
+	// Grpc indicates if the Serving Site will create an Ingress resource to serve GRPC prediction traffic.
+	// All Predictor resources created under the Serving Site will receive a unique host in the Ingress
 	// determined by the name of the Predictor and the FQDN of the ServingSite (i.e. my-predictor.model-serving.modela.ai)
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	GRPC *bool `json:"grpc,omitempty" protobuf:"varint,2,opt,name=grpc"`
-	// Rest indicates if the ServingSite will create an Ingress resource to serve REST prediction traffic.
-	// All REST traffic will be served under a single host determined by the FQDN of the ServingSite
-	// (i.e. predictors.model-serving.modela.ai). RestIngress must be enabled to serve DataApps over Ingress
+	// HTTP indicates if the Serving Site will create an Ingress resource to serve HTTP prediction traffic.
+	// All HTTP traffic will be served under a single host determined by the FQDN of the ServingSite
+	// (i.e. predictors.model-serving.modela.ai). HTTP must be enabled to serve Data Apps over Ingress
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	REST *bool `json:"rest,omitempty" protobuf:"varint,3,opt,name=rest"`
+	HTTP *bool `json:"http,omitempty" protobuf:"varint,3,opt,name=http"`
 	// IngressClassName is the name of the ingress class that will be applied to created Ingress resources
 	// (defaults to nginx)
 	// +kubebuilder:default:="nginx"

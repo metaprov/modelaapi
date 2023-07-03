@@ -1225,15 +1225,6 @@ spec:
                 description: If true, a Report resource will be generated for the
                   Model succeeding completion
                 type: boolean
-              role:
-                default: none
-                description: Role specifies the role of the model in relation to an
-                  online Predictor
-                enum:
-                - live
-                - shadow
-                - none
-                type: string
               studyName:
                 description: The name of the Study which created the Model. If empty,
                   the Model will be trained as a stand-alone model
@@ -2067,10 +2058,6 @@ spec:
                 description: In the case of failure, the Model resource controller
                   will set this field with a failure message
                 type: string
-              failureReason:
-                description: In the case of failure, the Model resource controller
-                  will set this field with a failure reason
-                type: string
               feedback:
                 description: Feedback contain the collection of measurements produced
                   by validation on the feedback dataset
@@ -2653,20 +2640,29 @@ spec:
                     type: string
                 type: object
               serving:
-                description: The name of the Predictor in the case that the Model
-                  has been released and deployed
+                description: ServingStatus contains the status of the model in the
+                  case that it was deployed to a Predictor or Data App
                 properties:
-                  dashboardURI:
-                    description: The uri for the dashboard, if dashboard was created.
+                  dashboardEndpoint:
+                    description: The endpoint of the model served by a Data App
                     type: string
                   dataAppName:
-                    description: The name of the dataapp for this model
+                    description: The name of the Data App hosting the model
+                    type: string
+                  predictorEndpoint:
+                    description: The endpoint of the model served by a Predictor
                     type: string
                   predictorName:
-                    description: The name of the predictor hosting this model
+                    description: The name of the Predictor hosting this model
                     type: string
-                  predictorURI:
-                    description: The URI of the predictor.
+                  role:
+                    default: none
+                    description: Role indicates the role of the model deployed after
+                      it is deployed within a Predictor
+                    enum:
+                    - live
+                    - shadow
+                    - none
                     type: string
                 type: object
               sizeInBytes:

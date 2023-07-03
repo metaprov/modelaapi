@@ -7,7 +7,6 @@ import (
 	training "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
 	"github.com/pkg/errors"
-	kapps "k8s.io/api/apps/v1"
 	v1 "k8s.io/api/core/v1"
 	nwv1 "k8s.io/api/networking/v1"
 	rbacv1 "k8s.io/api/rbac/v1"
@@ -21,20 +20,6 @@ func (predictor *Predictor) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(predictor).
 		Complete()
-}
-
-func AddOrUpdateK8sStatuses(current []KubernetesObjectStatus, status KubernetesObjectStatus) []KubernetesObjectStatus {
-	// check
-	for i := 0; i < len(current); i++ {
-		if current[i].Ref.Name == status.Ref.Name && current[i].Ref.Namespace == status.Ref.Namespace && current[i].Ref.Kind == status.Ref.Kind {
-			current[i].Status = status.Status
-			return current
-		}
-	}
-	// this point we add the status
-	current = append(current, status)
-	return current
-
 }
 
 func (predictor Predictor) Selector() *metav1.LabelSelector {
@@ -172,11 +157,11 @@ func (predictor *Predictor) MarkReady() {
 	})
 }
 
-func (predictor *Predictor) MarkFailed(err string) {
+func (predictor *Predictor) MarkFailed(reason string, err string) {
 	predictor.CreateOrUpdateCond(metav1.Condition{
 		Type:    PredictorReady,
 		Status:  metav1.ConditionFalse,
-		Reason:  "Failed",
+		Reason:  reason,
 		Message: err,
 	})
 	predictor.Status.FailureMessage = util.StrPtr(err)
@@ -224,64 +209,10 @@ func (predictor Predictor) ConstructRESTRule(serviceName string) *nwv1.HTTPIngre
 	}
 }
 
-func (predictor *Predictor) UpdateK8sDeploymentStatus(model training.Model, deployment kapps.Deployment, k8sStatus KubernetesObjectStatus) {
-	// update live model
-	found := false
-	// else update shddow model k8sStatus
-	for i, v := range predictor.Status.ModelStatus {
-		if v.ModelName == model.Name {
-			found = true
-			shadowModelStatus := predictor.Status.ModelStatus[i]
-			shadowModelStatus.ObjectStatuses = AddOrUpdateK8sStatuses(shadowModelStatus.ObjectStatuses, k8sStatus)
-			predictor.Status.ModelStatus[i] = shadowModelStatus
-		}
-	}
-	if !found {
-		status := ModelDeploymentStatus{
-			DeploymentRef: v1.ObjectReference{
-				Name:      deployment.Name,
-				Namespace: deployment.Namespace,
-				Kind:      "Serving",
-			},
-			ModelName:    model.Name,
-			ModelVersion: *model.Spec.ModelVersion,
-		}
-		status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
-		predictor.Status.ModelStatus = append(predictor.Status.ModelStatus, status)
-	}
-}
-
-func (predictor *Predictor) UpdateK8sServiceStatus(model training.Model, service v1.Service, k8sStatus KubernetesObjectStatus) {
-	// update live model
-	found := false
-	// else update shddow model k8sStatus
-	for i, v := range predictor.Status.ModelStatus {
-		if v.ModelName == model.Name {
-			found = true
-			shadowModelStatus := predictor.Status.ModelStatus[i]
-			shadowModelStatus.ObjectStatuses = AddOrUpdateK8sStatuses(shadowModelStatus.ObjectStatuses, k8sStatus)
-			predictor.Status.ModelStatus[i] = shadowModelStatus
-		}
-	}
-	if !found {
-		status := ModelDeploymentStatus{
-			DeploymentRef: v1.ObjectReference{
-				Name:      service.Name,
-				Namespace: service.Namespace,
-				Kind:      "Service",
-			},
-			ModelName:    model.Name,
-			ModelVersion: *model.Spec.ModelVersion,
-		}
-		status.ObjectStatuses = AddOrUpdateK8sStatuses(status.ObjectStatuses, k8sStatus)
-		predictor.Status.ModelStatus = append(predictor.Status.ModelStatus, status)
-	}
-}
-
 // Return the live model name.
 func (predictor *Predictor) GetLiveModelName() string {
 	for _, v := range predictor.Spec.Models {
-		if *v.Role == catalog.LiveModelRole {
+		if v.Role == catalog.LiveModelRole {
 			return v.ModelRef.Name
 		}
 	}
@@ -293,15 +224,14 @@ func (predictor *Predictor) SetLiveModel(model *training.Model) error {
 	role := catalog.LiveModelRole
 	if len(predictor.Spec.Models) == 0 {
 		predictor.Spec.Models = append(predictor.Spec.Models, catalog.ModelDeploymentSpec{
-			ModelRef:     v1.ObjectReference{Name: model.Name, Namespace: model.Namespace},
-			Port:         util.Int32Ptr(8080),
-			ModelVersion: nil,
-			Traffic:      util.Int32Ptr(100),
-			Role:         &role,
+			ModelRef: v1.ObjectReference{Name: model.Name, Namespace: model.Namespace},
+			Port:     util.Int32Ptr(8080),
+			Traffic:  util.Int32Ptr(100),
+			Role:     role,
 		})
 	}
 	for _, v := range predictor.Spec.Models {
-		if *v.Role == catalog.ShadowModelRole {
+		if v.Role == catalog.ShadowModelRole {
 			if v.ModelRef.Name == model.Name && v.ModelRef.Namespace == model.Namespace {
 				return errors.New("model is already shadow")
 			}
@@ -309,7 +239,7 @@ func (predictor *Predictor) SetLiveModel(model *training.Model) error {
 	}
 
 	for i, v := range predictor.Spec.Models {
-		if *v.Role == catalog.LiveModelRole {
+		if v.Role == catalog.LiveModelRole {
 			predictor.Spec.Models[i].ModelRef = v1.ObjectReference{
 				Name:      model.Name,
 				Namespace: model.Namespace,
@@ -322,7 +252,7 @@ func (predictor *Predictor) SetLiveModel(model *training.Model) error {
 // Get the first live model or none if none exist
 func (predictor Predictor) GetLiveModel() *catalog.ModelDeploymentSpec {
 	for _, v := range predictor.Spec.Models {
-		if *v.Role == catalog.LiveModelRole {
+		if v.Role == catalog.LiveModelRole {
 			return &v
 		}
 	}
@@ -332,7 +262,7 @@ func (predictor Predictor) GetLiveModel() *catalog.ModelDeploymentSpec {
 func (predictor Predictor) GetShadowModels() []catalog.ModelDeploymentSpec {
 	result := make([]catalog.ModelDeploymentSpec, 0)
 	for _, v := range predictor.Spec.Models {
-		if *v.Role == catalog.LiveModelRole {
+		if v.Role == catalog.LiveModelRole {
 			continue
 		}
 		result = append(result, v)
@@ -415,15 +345,25 @@ func (predictor Predictor) RoleBinding(ns string) *rbacv1.RoleBinding {
 	}
 }
 
-// The serving site service account by which
-// the predictor deployments are running.
-func (predictor Predictor) ServiceAccount() *v1.ServiceAccount {
-	return &v1.ServiceAccount{
-		ObjectMeta: metav1.ObjectMeta{
-			Name:      predictor.Name,
-			Namespace: predictor.Spec.ServingSiteRef.Name,
-		},
+func (predictor Predictor) GetDeploymentStatus(name, image string, role catalog.ModelRole) *ModelDeploymentStatus {
+	for _, liveStatus := range predictor.Status.ModelStatus {
+		if liveStatus.ModelName == name && liveStatus.ImageName == image && liveStatus.ModelRole == role {
+			return &liveStatus
+		}
 	}
+	return &ModelDeploymentStatus{
+		ModelName: name,
+		ModelRole: role,
+		ImageName: image,
+	}
+}
+
+func (predictor Predictor) ActiveModels() map[string]string {
+	activeModels := make(map[string]string)
+	for _, v := range predictor.Spec.Models {
+		activeModels[v.ModelRef.Name] = v.ModelRef.Name
+	}
+	return activeModels
 }
 
 func (predictor Predictor) GetStatus() interface{} {

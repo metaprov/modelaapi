@@ -6895,7 +6895,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.toObject
   var f, obj = {
     fqdn: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     grpc: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
-    rest: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+    http: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
     ingressclassname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     issuername: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     clusterissuername: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
@@ -6946,7 +6946,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.deserial
       break;
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setRest(value);
+      msg.setHttp(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -7118,10 +7118,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
 
 
 /**
- * optional bool rest = 3;
+ * optional bool http = 3;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.getRest = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.getHttp = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
@@ -7130,7 +7130,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.setRest = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.setHttp = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -7139,7 +7139,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.clearRest = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.clearHttp = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -7148,7 +7148,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.hasRest = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.IngressSpec.prototype.hasHttp = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

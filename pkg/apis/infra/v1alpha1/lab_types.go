@@ -6,13 +6,11 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// LabConditionType is the condition of the lab
 type LabConditionType string
 
-// / TenantRef Condition
 const (
-	LabReady LabConditionType = "Ready"
-	LabSaved LabConditionType = "Saved"
+	LabNamespaceReady ServingSiteConditionType = "NamespaceReady"
+	LabRbacReady      ServingSiteConditionType = "RbacReady"
 )
 
 // +kubebuilder:object:root=true

@@ -2744,11 +2744,6 @@ export class ModelSpec extends jspb.Message {
   hasModelclassrunname(): boolean;
   clearModelclassrunname(): ModelSpec;
 
-  getRole(): string;
-  setRole(value: string): ModelSpec;
-  hasRole(): boolean;
-  clearRole(): ModelSpec;
-
   getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
   setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): ModelSpec;
   hasNotification(): boolean;
@@ -2799,7 +2794,6 @@ export namespace ModelSpec {
     partitionlocations?: PartitionModelLocationsSpec.AsObject,
     modelclassname?: string,
     modelclassrunname?: string,
-    role?: string,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
   }
 }
@@ -3019,11 +3013,6 @@ export class ModelStatus extends jspb.Message {
   hasValidationrows(): boolean;
   clearValidationrows(): ModelStatus;
 
-  getFailurereason(): string;
-  setFailurereason(value: string): ModelStatus;
-  hasFailurereason(): boolean;
-  clearFailurereason(): ModelStatus;
-
   getFailuremessage(): string;
   setFailuremessage(value: string): ModelStatus;
   hasFailuremessage(): boolean;
@@ -3198,7 +3187,6 @@ export namespace ModelStatus {
     trainingrows?: number,
     testingrows?: number,
     validationrows?: number,
-    failurereason?: string,
     failuremessage?: string,
     progress?: number,
     sizeinbytes?: number,
@@ -4161,15 +4149,20 @@ export class ServingStatus extends jspb.Message {
   hasDataappname(): boolean;
   clearDataappname(): ServingStatus;
 
-  getPredictoruri(): string;
-  setPredictoruri(value: string): ServingStatus;
-  hasPredictoruri(): boolean;
-  clearPredictoruri(): ServingStatus;
+  getPredictorendpoint(): string;
+  setPredictorendpoint(value: string): ServingStatus;
+  hasPredictorendpoint(): boolean;
+  clearPredictorendpoint(): ServingStatus;
 
-  getDashboarduri(): string;
-  setDashboarduri(value: string): ServingStatus;
-  hasDashboarduri(): boolean;
-  clearDashboarduri(): ServingStatus;
+  getDashboardendpoint(): string;
+  setDashboardendpoint(value: string): ServingStatus;
+  hasDashboardendpoint(): boolean;
+  clearDashboardendpoint(): ServingStatus;
+
+  getRole(): string;
+  setRole(value: string): ServingStatus;
+  hasRole(): boolean;
+  clearRole(): ServingStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingStatus.AsObject;
@@ -4183,8 +4176,9 @@ export namespace ServingStatus {
   export type AsObject = {
     predictorname?: string,
     dataappname?: string,
-    predictoruri?: string,
-    dashboarduri?: string,
+    predictorendpoint?: string,
+    dashboardendpoint?: string,
+    role?: string,
   }
 }
 

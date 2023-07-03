@@ -18,6 +18,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
+	"k8s.io/utils/pointer"
 )
 
 func (servingsite ServingSite) IsMarkedForDeletion() bool {
@@ -263,27 +264,30 @@ func (servingsite ServingSite) ServingSiteOps() *rbacv1.Role {
 	}
 }
 
-func (servingsite *ServingSite) MarkRbacNotReady(reason string) {
+func (servingsite *ServingSite) MarkRbacNotReady(reason string, message string) {
 	servingsite.CreateOrUpdateCond(metav1.Condition{
-		Type:   string(ServingSiteRbacReady),
-		Status: metav1.ConditionFalse,
-		Reason: reason,
+		Type:    string(ServingSiteRbacReady),
+		Status:  metav1.ConditionFalse,
+		Reason:  reason,
+		Message: message,
 	})
 }
 
-func (servingsite *ServingSite) MarkNamespaceNotReady(reason string) {
+func (servingsite *ServingSite) MarkNamespaceNotReady(reason string, message string) {
 	servingsite.CreateOrUpdateCond(metav1.Condition{
-		Type:   string(ServingSiteNamespaceReady),
-		Status: metav1.ConditionFalse,
-		Reason: reason,
+		Type:    string(ServingSiteNamespaceReady),
+		Status:  metav1.ConditionFalse,
+		Reason:  reason,
+		Message: message,
 	})
 }
 
-func (servingsite *ServingSite) MarkIngressNotReady(reason string) {
+func (servingsite *ServingSite) MarkIngressNotReady(reason string, message string) {
 	servingsite.CreateOrUpdateCond(metav1.Condition{
-		Type:   string(ServingSiteIngressReady),
-		Status: metav1.ConditionFalse,
-		Reason: reason,
+		Type:    string(ServingSiteIngressReady),
+		Status:  metav1.ConditionFalse,
+		Reason:  reason,
+		Message: message,
 	})
 }
 
@@ -311,7 +315,53 @@ func (servingsite *ServingSite) MarkIngressReady() {
 	})
 }
 
-func (servingsite ServingSite) JobRunnerRole() *rbacv1.Role {
+func (servingsite ServingSite) HttpIngressEnabled() bool {
+	return pointer.BoolDeref(servingsite.Spec.Ingress.HTTP, false)
+}
+
+func (servingsite ServingSite) GrpcIngressEnabled() bool {
+	return pointer.BoolDeref(servingsite.Spec.Ingress.GRPC, false)
+}
+
+func (servingsite ServingSite) ResourceQuotaEnabled() bool {
+	return servingsite.Spec.Limits.QuotaSpec != nil
+}
+
+func (servingsite ServingSite) LimitRangeEnabled() bool {
+	return servingsite.Spec.Limits.LimitRangeSpec != nil
+}
+
+func (servingsite ServingSite) LimitsEnabled() bool {
+	return pointer.BoolDeref(servingsite.Spec.Limits.Enabled, false)
+}
+
+func (servingsite ServingSite) LimitRange() *v1.LimitRange {
+	limitRange := &v1.LimitRange{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      fmt.Sprintf("%s-limitrange", servingsite.Name),
+			Namespace: servingsite.Name,
+		},
+	}
+	if servingsite.Spec.Limits.LimitRangeSpec != nil {
+		limitRange.Spec = *servingsite.Spec.Limits.LimitRangeSpec
+	}
+	return limitRange
+}
+
+func (servingsite ServingSite) ResourceQuota() *v1.ResourceQuota {
+	resourceQuota := &v1.ResourceQuota{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      fmt.Sprintf("%s-resourcequota", servingsite.Name),
+			Namespace: servingsite.Name,
+		},
+	}
+	if servingsite.Spec.Limits.QuotaSpec != nil {
+		resourceQuota.Spec = *servingsite.Spec.Limits.QuotaSpec
+	}
+	return resourceQuota
+}
+
+func (servingsite ServingSite) ServingSiteRole() *rbacv1.Role {
 	return &rbacv1.Role{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.ServingSiteJobRunnerRole,
@@ -332,12 +382,19 @@ func (servingsite ServingSite) JobRunnerRole() *rbacv1.Role {
 				ResourceNames:   []string{},
 				NonResourceURLs: []string{},
 			},
+			{
+				Verbs:           []string{"*"},
+				APIGroups:       []string{"metrics.k8s.io"},
+				Resources:       []string{"*"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
 		},
 	}
 }
 
 // Create a role binding for a job
-func (servingsite ServingSite) JobRunnerRoleBinding() *rbacv1.RoleBinding {
+func (servingsite ServingSite) ServingSiteRoleBinding() *rbacv1.RoleBinding {
 	return &rbacv1.RoleBinding{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.ServingSiteJobRunnerRoleBinding,
@@ -359,7 +416,53 @@ func (servingsite ServingSite) JobRunnerRoleBinding() *rbacv1.RoleBinding {
 	}
 }
 
-func (servingsite ServingSite) JobRunnerServiceAccount() *corev1.ServiceAccount {
+func (servingsite ServingSite) ServingSiteClusterRole() *rbacv1.ClusterRole {
+	return &rbacv1.ClusterRole{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      catalog.ServingSiteJobRunnerRole,
+			Namespace: servingsite.Name,
+		},
+		Rules: []rbacv1.PolicyRule{
+			{
+				Verbs:           []string{"get"},
+				APIGroups:       []string{""},
+				Resources:       []string{"configmaps"},
+				ResourceNames:   []string{"modela-config"},
+				NonResourceURLs: []string{},
+			},
+			{
+				Verbs:           []string{"get"},
+				APIGroups:       []string{"infra.modela.ai"},
+				Resources:       []string{"*"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+		},
+	}
+}
+
+func (servingsite ServingSite) ServingSiteClusterRoleBinding() *rbacv1.ClusterRoleBinding {
+	return &rbacv1.ClusterRoleBinding{
+		ObjectMeta: metav1.ObjectMeta{
+			Name: fmt.Sprintf("%s-%s", servingsite.Name, catalog.ServingSiteJobRunnerRoleBinding),
+		},
+		Subjects: []rbacv1.Subject{
+			{
+				Kind:      "ServiceAccount",
+				APIGroup:  "",
+				Name:      catalog.LabJobRunnerSa,
+				Namespace: servingsite.Name,
+			},
+		},
+		RoleRef: rbacv1.RoleRef{
+			APIGroup: "rbac.authorization.k8s.io",
+			Kind:     "ClusterRole",
+			Name:     catalog.LabJobRunnerRole,
+		},
+	}
+}
+
+func (servingsite ServingSite) ServingSiteServiceAccount() *corev1.ServiceAccount {
 	return &corev1.ServiceAccount{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.ServingSiteJobRunnerSa,

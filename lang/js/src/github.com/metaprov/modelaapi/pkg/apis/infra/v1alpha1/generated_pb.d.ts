@@ -737,10 +737,10 @@ export class IngressSpec extends jspb.Message {
   hasGrpc(): boolean;
   clearGrpc(): IngressSpec;
 
-  getRest(): boolean;
-  setRest(value: boolean): IngressSpec;
-  hasRest(): boolean;
-  clearRest(): IngressSpec;
+  getHttp(): boolean;
+  setHttp(value: boolean): IngressSpec;
+  hasHttp(): boolean;
+  clearHttp(): IngressSpec;
 
   getIngressclassname(): string;
   setIngressclassname(value: string): IngressSpec;
@@ -774,7 +774,7 @@ export namespace IngressSpec {
   export type AsObject = {
     fqdn?: string,
     grpc?: boolean,
-    rest?: boolean,
+    http?: boolean,
     ingressclassname?: string,
     issuername?: string,
     clusterissuername?: string,

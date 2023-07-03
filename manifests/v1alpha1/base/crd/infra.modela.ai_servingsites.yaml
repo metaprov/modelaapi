@@ -382,18 +382,26 @@ spec:
                   fqdn:
                     default: serving.vcap.me
                     description: FQDN specifies the fully-qualified domain name that
-                      the ServingSite's Ingress will use as the base host for the
-                      endpoint of services deployed under the ServingSite. For example,
+                      the Serving Site's Ingress will use as the base host for the
+                      endpoint of services deployed under the Serving Site. For example,
                       setting the FQDN as `model-serving.modela.ai` will automatically
                       serve Predictors using the REST API at `predictors.model-serving.modela.ai`
                     type: string
                   grpc:
                     default: true
-                    description: Grpc indicates if the ServingSite will create an
+                    description: Grpc indicates if the Serving Site will create an
                       Ingress resource to serve GRPC prediction traffic. All Predictor
-                      resources created under the ServingSite will receive a unique
+                      resources created under the Serving Site will receive a unique
                       host in the Ingress determined by the name of the Predictor
                       and the FQDN of the ServingSite (i.e. my-predictor.model-serving.modela.ai)
+                    type: boolean
+                  http:
+                    default: false
+                    description: HTTP indicates if the Serving Site will create an
+                      Ingress resource to serve HTTP prediction traffic. All HTTP
+                      traffic will be served under a single host determined by the
+                      FQDN of the ServingSite (i.e. predictors.model-serving.modela.ai).
+                      HTTP must be enabled to serve Data Apps over Ingress
                     type: boolean
                   ingressClassName:
                     default: nginx
@@ -407,14 +415,6 @@ spec:
                       provide a TLS certificate to the ingress. This will be added
                       as an annotation to the ingress.
                     type: string
-                  rest:
-                    default: false
-                    description: Rest indicates if the ServingSite will create an
-                      Ingress resource to serve REST prediction traffic. All REST
-                      traffic will be served under a single host determined by the
-                      FQDN of the ServingSite (i.e. predictors.model-serving.modela.ai).
-                      RestIngress must be enabled to serve DataApps over Ingress
-                    type: boolean
                   tlsSecretName:
                     description: TlsSecretName specifies the name of the secret that
                       contains the TLS certificate for the ingress. If it does not

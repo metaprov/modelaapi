@@ -1378,7 +1378,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec.toObjec
     nodeport: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     path: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     accesstype: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    rest: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+    http: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
     authmethod: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     apikeysecretref: (f = msg.getApikeysecretref()) && k8s_io_api_core_v1_generated_pb.SecretReference.toObject(includeInstance, f)
   };
@@ -1435,7 +1435,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec.deseria
       break;
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setRest(value);
+      msg.setHttp(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -1673,10 +1673,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec.prototy
 
 
 /**
- * optional bool rest = 5;
+ * optional bool http = 5;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec.prototype.getRest = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec.prototype.getHttp = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
@@ -1685,7 +1685,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec.prototy
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec.prototype.setRest = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec.prototype.setHttp = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -1694,7 +1694,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec.prototype.clearRest = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec.prototype.clearHttp = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -1703,7 +1703,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec.prototype.hasRest = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec.prototype.hasHttp = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -13421,13 +13421,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
   var f, obj = {
     modelref: (f = msg.getModelref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     port: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    modelversion: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    traffic: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    role: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    mounttar: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
-    trafficselector: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
-    approvedby: (f = msg.getApprovedby()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    approvedat: (f = msg.getApprovedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
+    traffic: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    role: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    imagename: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    approvedby: (f = msg.getApprovedby()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -13474,34 +13471,21 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
       msg.setPort(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setModelversion(value);
-      break;
-    case 4:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTraffic(value);
       break;
-    case 5:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setRole(value);
       break;
-    case 9:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setMounttar(value);
-      break;
-    case 10:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTrafficselector(value);
+      msg.setImagename(value);
       break;
-    case 12:
+    case 6:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setApprovedby(value);
-      break;
-    case 13:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setApprovedat(value);
       break;
     default:
       reader.skipField();
@@ -13547,16 +13531,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeString(
+    writer.writeInt32(
       3,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       4,
       f
     );
@@ -13568,34 +13552,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 9));
-  if (f != null) {
-    writer.writeBool(
-      9,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 10));
-  if (f != null) {
-    writer.writeString(
-      10,
-      f
-    );
-  }
   f = message.getApprovedby();
   if (f != null) {
     writer.writeMessage(
-      12,
+      6,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
-    );
-  }
-  f = message.getApprovedat();
-  if (f != null) {
-    writer.writeMessage(
-      13,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
 };
@@ -13675,47 +13637,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
 
 
 /**
- * optional string modelVersion = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getModelversion = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setModelversion = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearModelversion = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasModelversion = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional int32 traffic = 4;
+ * optional int32 traffic = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getTraffic = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -13724,7 +13650,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setTraffic = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -13733,7 +13659,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearTraffic = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -13742,16 +13668,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasTraffic = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string role = 5;
+ * optional string role = 4;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getRole = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -13760,7 +13686,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setRole = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
@@ -13769,7 +13695,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearRole = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -13778,52 +13704,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasRole = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional bool mountTar = 9;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getMounttar = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setMounttar = function(value) {
-  return jspb.Message.setField(this, 9, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearMounttar = function() {
-  return jspb.Message.setField(this, 9, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasMounttar = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
- * optional string trafficSelector = 10;
+ * optional string imageName = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getTrafficselector = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getImagename = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -13831,8 +13721,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setTrafficselector = function(value) {
-  return jspb.Message.setField(this, 10, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setImagename = function(value) {
+  return jspb.Message.setField(this, 5, value);
 };
 
 
@@ -13840,8 +13730,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearTrafficselector = function() {
-  return jspb.Message.setField(this, 10, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearImagename = function() {
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -13849,18 +13739,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasTrafficselector = function() {
-  return jspb.Message.getField(this, 10) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasImagename = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference approvedBy = 12;
+ * optional k8s.io.api.core.v1.ObjectReference approvedBy = 6;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getApprovedby = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 12));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 6));
 };
 
 
@@ -13869,7 +13759,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setApprovedby = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -13887,44 +13777,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasApprovedby = function() {
-  return jspb.Message.getField(this, 12) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 13;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getApprovedat = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 13));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setApprovedat = function(value) {
-  return jspb.Message.setWrapperField(this, 13, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearApprovedat = function() {
-  return this.setApprovedat(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasApprovedat = function() {
-  return jspb.Message.getField(this, 13) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

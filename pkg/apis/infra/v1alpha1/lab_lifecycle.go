@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"k8s.io/utils/pointer"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
@@ -64,16 +65,6 @@ func (lab *Lab) RemoveFinalizer()   { util.RemoveFin(&lab.ObjectMeta, infra.Grou
 // Trackable
 //==============================================================================
 
-// Return the on disk rep location
-func (lab Lab) RepPath(root string) (string, error) {
-	return fmt.Sprintf("%s/labs/%s.yaml", root, lab.ObjectMeta.Name), nil
-}
-
-func (lab Lab) RepEntry() (string, error) {
-	return fmt.Sprintf("labs/%s.yaml", lab.ObjectMeta.Name), nil
-}
-
-// Merge or update condition
 func (lab *Lab) CreateOrUpdateCond(cond metav1.Condition) {
 	i := lab.GetCondIdx(LabConditionType(cond.Type))
 	now := metav1.Now()
@@ -117,10 +108,6 @@ func (lab *Lab) GetCond(t LabConditionType) metav1.Condition {
 	}
 }
 
-func (lab Lab) IsReady() bool {
-	return lab.GetCond(LabReady).Status == metav1.ConditionTrue
-}
-
 func (lab *Lab) Key() string {
 	return fmt.Sprintf("tenanets/%s/labs/%s", lab.Namespace, lab.Name)
 }
@@ -134,65 +121,83 @@ func ParseLabYaml(content []byte) (*Lab, error) {
 	return r, nil
 }
 
+func (lab Lab) ResourceQuotaEnabled() bool {
+	return lab.Spec.Limits.QuotaSpec != nil
+}
+
+func (lab Lab) LimitRangeEnabled() bool {
+	return lab.Spec.Limits.LimitRangeSpec != nil
+}
+
+func (lab Lab) LimitsEnabled() bool {
+	return pointer.BoolDeref(lab.Spec.Limits.Enabled, false)
+}
+
+func (lab Lab) LimitRange() *corev1.LimitRange {
+	limitRange := &corev1.LimitRange{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      fmt.Sprintf("%s-limitrange", lab.Name),
+			Namespace: lab.Name,
+		},
+	}
+	if lab.Spec.Limits.LimitRangeSpec != nil {
+		limitRange.Spec = *lab.Spec.Limits.LimitRangeSpec
+	}
+	return limitRange
+}
+
+func (lab Lab) ResourceQuota() *corev1.ResourceQuota {
+	resourceQuota := &corev1.ResourceQuota{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      fmt.Sprintf("%s-resourcequota", lab.Name),
+			Namespace: lab.Name,
+		},
+	}
+	if lab.Spec.Limits.QuotaSpec != nil {
+		resourceQuota.Spec = *lab.Spec.Limits.QuotaSpec
+	}
+	return resourceQuota
+}
+
+func (lab *Lab) MarkRbacNotReady(reason string, message string) {
+	lab.CreateOrUpdateCond(metav1.Condition{
+		Type:    string(ServingSiteRbacReady),
+		Status:  metav1.ConditionFalse,
+		Reason:  reason,
+		Message: message,
+	})
+}
+
+func (lab *Lab) MarkNamespaceNotReady(reason string, message string) {
+	lab.CreateOrUpdateCond(metav1.Condition{
+		Type:    string(ServingSiteNamespaceReady),
+		Status:  metav1.ConditionFalse,
+		Reason:  reason,
+		Message: message,
+	})
+}
+
+func (lab *Lab) MarkRbacReady() {
+	lab.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(LabRbacReady),
+		Status: metav1.ConditionTrue,
+		Reason: string(LabRbacReady),
+	})
+}
+
+func (lab *Lab) MarkNamespaceReady() {
+	lab.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(LabNamespaceReady),
+		Status: metav1.ConditionTrue,
+		Reason: string(LabNamespaceReady),
+	})
+}
+
 //////////////////////////////////////////
 /// Roles
 /////////////////////////////////////////
 
-func (lab Lab) LabAdmin() *rbacv1.Role {
-	return &rbacv1.Role{
-		ObjectMeta: metav1.ObjectMeta{
-			Name:      "lab-admin",
-			Namespace: lab.Name,
-		},
-		Rules: []rbacv1.PolicyRule{
-			{
-				Verbs:           []string{},
-				APIGroups:       []string{},
-				Resources:       []string{},
-				ResourceNames:   []string{},
-				NonResourceURLs: []string{},
-			},
-		},
-	}
-}
-
-func (lab Lab) LabDev() *rbacv1.Role {
-	return &rbacv1.Role{
-		ObjectMeta: metav1.ObjectMeta{
-			Name:      "lab-dev",
-			Namespace: lab.Name,
-		},
-		Rules: []rbacv1.PolicyRule{
-			{
-				Verbs:           []string{},
-				APIGroups:       []string{},
-				Resources:       []string{},
-				ResourceNames:   []string{},
-				NonResourceURLs: []string{},
-			},
-		},
-	}
-}
-
-func (lab Lab) LabOps() *rbacv1.Role {
-	return &rbacv1.Role{
-		ObjectMeta: metav1.ObjectMeta{
-			Name:      "lab-ops",
-			Namespace: lab.Name,
-		},
-		Rules: []rbacv1.PolicyRule{
-			{
-				Verbs:           []string{},
-				APIGroups:       []string{},
-				Resources:       []string{},
-				ResourceNames:   []string{},
-				NonResourceURLs: []string{},
-			},
-		},
-	}
-}
-
-func (lab Lab) LabJobRole() *rbacv1.Role {
+func (lab Lab) LabRole() *rbacv1.Role {
 	return &rbacv1.Role{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.LabJobRunnerRole,
@@ -224,7 +229,7 @@ func (lab Lab) LabJobRole() *rbacv1.Role {
 	}
 }
 
-func (lab Lab) LabJobRoleBinding() *rbacv1.RoleBinding {
+func (lab Lab) LabRoleBinding() *rbacv1.RoleBinding {
 	return &rbacv1.RoleBinding{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.LabJobRunnerRoleBinding,
@@ -246,7 +251,7 @@ func (lab Lab) LabJobRoleBinding() *rbacv1.RoleBinding {
 	}
 }
 
-func (lab Lab) LabJobClusterRole() *rbacv1.ClusterRole {
+func (lab Lab) LabClusterRole() *rbacv1.ClusterRole {
 	return &rbacv1.ClusterRole{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.LabJobRunnerRole,
@@ -261,7 +266,7 @@ func (lab Lab) LabJobClusterRole() *rbacv1.ClusterRole {
 				NonResourceURLs: []string{},
 			},
 			{
-				Verbs:           []string{"*"},
+				Verbs:           []string{"get"},
 				APIGroups:       []string{"infra.modela.ai"},
 				Resources:       []string{"*"},
 				ResourceNames:   []string{},
@@ -271,7 +276,7 @@ func (lab Lab) LabJobClusterRole() *rbacv1.ClusterRole {
 	}
 }
 
-func (lab Lab) LabJobClusterRoleBinding() *rbacv1.ClusterRoleBinding {
+func (lab Lab) LabClusterRoleBinding() *rbacv1.ClusterRoleBinding {
 	return &rbacv1.ClusterRoleBinding{
 		ObjectMeta: metav1.ObjectMeta{
 			Name: fmt.Sprintf("%s-%s", lab.Name, catalog.LabJobRunnerRoleBinding),

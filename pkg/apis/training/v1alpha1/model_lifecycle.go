@@ -440,7 +440,7 @@ func (model *Model) MarkTraining() {
 }
 
 func (model *Model) MarkRole(predictor string, role catalog.ModelRole) {
-	model.Spec.Role = &role
+	model.Status.Serving.Role = &role
 	model.Labels[catalog.PredictorLabelKey] = predictor
 	model.Labels[catalog.ModelRoleLabelKey] = string(role)
 	switch role {
@@ -496,7 +496,7 @@ func (model *Model) Demote() {
 	model.Labels = labels
 	model.Status.Phase = ModelPhaseCompleted
 	noneRole := catalog.NoneModelRole
-	model.Spec.Role = &noneRole
+	model.Status.Serving.Role = &noneRole
 
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelLive,
@@ -511,11 +511,17 @@ func (model *Model) Demote() {
 }
 
 func (model Model) IsLive() bool {
-	return *model.Spec.Role == catalog.LiveModelRole
+	if model.Status.Serving.Role == nil {
+		return false
+	}
+	return *model.Status.Serving.Role == catalog.LiveModelRole
 }
 
 func (model Model) IsShadow() bool {
-	return *model.Spec.Role == catalog.ShadowModelRole
+	if model.Status.Serving.Role == nil {
+		return false
+	}
+	return *model.Status.Serving.Role == catalog.ShadowModelRole
 }
 
 func (model *Model) MarkTrained() {
@@ -911,7 +917,7 @@ func (model *Model) MarkPackaged() {
 	model.RefreshProgress()
 }
 
-func (model *Model) MarkPackgedFailed(err string) {
+func (model *Model) MarkPackageFailed(err string) {
 	model.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelPackaged,
 		Status:  metav1.ConditionFalse,

@@ -195,7 +195,7 @@ type PredictionStatus struct {
 	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,16,rep,name=conditions"`
 }
 
-// ForecastSpec specifies the details of a forecasting model
+// ForecastPredictionSpec specifies the details of a forecasting model
 type ForecastPredictionSpec struct {
 	// The hierarchy specification, which maps columns to values
 	// +kubebuilder:validation:Optional

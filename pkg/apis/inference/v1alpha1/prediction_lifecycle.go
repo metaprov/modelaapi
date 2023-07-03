@@ -11,8 +11,6 @@ import (
 	"github.com/metaprov/modelaapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/kubernetes/scheme"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
@@ -41,14 +39,6 @@ func (prediction Prediction) ManifestURI() string {
 }
 
 //==============================================================================
-// Validate
-//==============================================================================
-
-func (prediction Prediction) PipelineName() string {
-	return prediction.ObjectMeta.Labels[PipelineLabelKey]
-}
-
-//==============================================================================
 // Finalizer
 //==============================================================================
 
@@ -66,13 +56,6 @@ func (prediction *Prediction) RemoveFinalizer() {
 // Trackable
 //==============================================================================
 
-// Return the on disk rep location
-func (prediction Prediction) RepPath(root string) (string, error) {
-	return fmt.Sprintf("%s/predictions/%s.yaml", root, prediction.ObjectMeta.Name), nil
-}
-
-// Merge or update condition
-// Merge or update condition
 func (prediction *Prediction) CreateOrUpdateCond(cond metav1.Condition) {
 	i := prediction.GetCondIdx(cond.Type)
 	now := metav1.Now()
@@ -122,15 +105,6 @@ func (prediction Prediction) IsCompleted() bool {
 
 func (prediction Prediction) Key() string {
 	return fmt.Sprintf("dataproducts/%s/predictions/%s", prediction.Namespace, prediction.Name)
-}
-
-func ParsePredictionYaml(content []byte) (*Prediction, error) {
-	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
-	if err != nil {
-		return nil, err
-	}
-	r := requiredObj.(*Prediction)
-	return r, nil
 }
 
 func (prediction *Prediction) MarkFailed(msg string) {
@@ -238,11 +212,14 @@ func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      prediction.Name,
 			Namespace: prediction.Namespace,
+			Labels: map[string]string{
+				catalog.PredictionLabelKey:  prediction.Name,
+				catalog.DataProductLabelKey: prediction.Namespace,
+			},
 		},
 		Spec: data.DatasetSpec{
 			Owner:          prediction.Spec.Owner,
 			VersionName:    prediction.Spec.VersionName,
-			Description:    util.StrPtr("dataset for prediction " + prediction.Name),
 			Origin:         *prediction.Spec.Input.Location,
 			DataSourceName: prediction.Spec.DataSourceRef.Name,
 			PredictorRef: v1.ObjectReference{
@@ -328,7 +305,7 @@ func (prediction Prediction) ErrorAlert(notification catalog.NotificationSpec, e
 
 func (prediction Prediction) IsFailed() bool {
 	cond := prediction.GetCond(PredictionCompleted)
-	return cond.Status == metav1.ConditionFalse && cond.Reason == string(PredictionCompleted)
+	return cond.Status == metav1.ConditionFalse && cond.Reason == PredictionCompleted
 }
 
 // Return the state of the run as RunStatus

@@ -28,10 +28,10 @@ export class AccessSpec extends jspb.Message {
   hasAccesstype(): boolean;
   clearAccesstype(): AccessSpec;
 
-  getRest(): boolean;
-  setRest(value: boolean): AccessSpec;
-  hasRest(): boolean;
-  clearRest(): AccessSpec;
+  getHttp(): boolean;
+  setHttp(value: boolean): AccessSpec;
+  hasHttp(): boolean;
+  clearHttp(): AccessSpec;
 
   getAuthmethod(): string;
   setAuthmethod(value: string): AccessSpec;
@@ -57,7 +57,7 @@ export namespace AccessSpec {
     nodeport?: number,
     path?: string,
     accesstype?: string,
-    rest?: boolean,
+    http?: boolean,
     authmethod?: string,
     apikeysecretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
   }
@@ -1542,11 +1542,6 @@ export class ModelDeploymentSpec extends jspb.Message {
   hasPort(): boolean;
   clearPort(): ModelDeploymentSpec;
 
-  getModelversion(): string;
-  setModelversion(value: string): ModelDeploymentSpec;
-  hasModelversion(): boolean;
-  clearModelversion(): ModelDeploymentSpec;
-
   getTraffic(): number;
   setTraffic(value: number): ModelDeploymentSpec;
   hasTraffic(): boolean;
@@ -1557,25 +1552,15 @@ export class ModelDeploymentSpec extends jspb.Message {
   hasRole(): boolean;
   clearRole(): ModelDeploymentSpec;
 
-  getMounttar(): boolean;
-  setMounttar(value: boolean): ModelDeploymentSpec;
-  hasMounttar(): boolean;
-  clearMounttar(): ModelDeploymentSpec;
-
-  getTrafficselector(): string;
-  setTrafficselector(value: string): ModelDeploymentSpec;
-  hasTrafficselector(): boolean;
-  clearTrafficselector(): ModelDeploymentSpec;
+  getImagename(): string;
+  setImagename(value: string): ModelDeploymentSpec;
+  hasImagename(): boolean;
+  clearImagename(): ModelDeploymentSpec;
 
   getApprovedby(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setApprovedby(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelDeploymentSpec;
   hasApprovedby(): boolean;
   clearApprovedby(): ModelDeploymentSpec;
-
-  getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentSpec;
-  hasApprovedat(): boolean;
-  clearApprovedat(): ModelDeploymentSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelDeploymentSpec.AsObject;
@@ -1589,13 +1574,10 @@ export namespace ModelDeploymentSpec {
   export type AsObject = {
     modelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     port?: number,
-    modelversion?: string,
     traffic?: number,
     role?: string,
-    mounttar?: boolean,
-    trafficselector?: string,
+    imagename?: string,
     approvedby?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 

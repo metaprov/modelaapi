@@ -34,13 +34,8 @@ func (in *AccessSpec) DeepCopyInto(out *AccessSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.AccessType != nil {
-		in, out := &in.AccessType, &out.AccessType
-		*out = new(AccessType)
-		**out = **in
-	}
-	if in.REST != nil {
-		in, out := &in.REST, &out.REST
+	if in.HTTP != nil {
+		in, out := &in.HTTP, &out.HTTP
 		*out = new(bool)
 		**out = **in
 	}
@@ -1190,35 +1185,20 @@ func (in *ModelDeploymentSpec) DeepCopyInto(out *ModelDeploymentSpec) {
 		*out = new(int32)
 		**out = **in
 	}
-	if in.ModelVersion != nil {
-		in, out := &in.ModelVersion, &out.ModelVersion
-		*out = new(string)
-		**out = **in
-	}
 	if in.Traffic != nil {
 		in, out := &in.Traffic, &out.Traffic
 		*out = new(int32)
 		**out = **in
 	}
-	if in.Role != nil {
-		in, out := &in.Role, &out.Role
-		*out = new(ModelRole)
-		**out = **in
-	}
-	if in.MountTar != nil {
-		in, out := &in.MountTar, &out.MountTar
-		*out = new(bool)
-		**out = **in
-	}
-	if in.TrafficSelector != nil {
-		in, out := &in.TrafficSelector, &out.TrafficSelector
+	if in.ImageName != nil {
+		in, out := &in.ImageName, &out.ImageName
 		*out = new(string)
 		**out = **in
 	}
-	out.ApprovedBy = in.ApprovedBy
-	if in.ApprovedAt != nil {
-		in, out := &in.ApprovedAt, &out.ApprovedAt
-		*out = (*in).DeepCopy()
+	if in.ApprovedBy != nil {
+		in, out := &in.ApprovedBy, &out.ApprovedBy
+		*out = new(v1.ObjectReference)
+		**out = **in
 	}
 }
 

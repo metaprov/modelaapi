@@ -1670,14 +1670,9 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional string modelClassRunName = 35;
 
-  // Role specifies the role of the model in relation to an online Predictor
-  // +kubebuilder:default:="none"
-  // +kubebuilder:validation:Optional
-  optional string role = 36;
-
   // The name of the Notifier resource which Alerts created by the Model will be forwarded to
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 37;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 36;
 }
 
 message ModelStageStatus {
@@ -1839,10 +1834,6 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional int32 validationRows = 40;
 
-  // In the case of failure, the Model resource controller will set this field with a failure reason
-  // +kubebuilder:validation:Optional
-  optional string failureReason = 41;
-
   // In the case of failure, the Model resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
   optional string failureMessage = 42;
@@ -1859,7 +1850,7 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional double latency = 45;
 
-  // The name of the Predictor in the case that the Model has been released and deployed
+  // ServingStatus contains the status of the model in the case that it was deployed to a Predictor or Data App
   // +kubebuilder:validation:Optional
   optional ServingStatus serving = 47;
 
@@ -2492,21 +2483,26 @@ message ServingSpec {
 }
 
 message ServingStatus {
-  // The name of the predictor hosting this model
+  // The name of the Predictor hosting this model
   // +kubebuilder:validation:Optional
   optional string predictorName = 2;
 
-  // The name of the dataapp for this model
+  // The name of the Data App hosting the model
   // +kubebuilder:validation:Optional
   optional string dataAppName = 3;
 
-  // The URI of the predictor.
+  // The endpoint of the model served by a Predictor
   // +kubebuilder:validation:Optional
-  optional string predictorURI = 4;
+  optional string predictorEndpoint = 4;
 
-  // The uri for the dashboard, if dashboard was created.
+  // The endpoint of the model served by a Data App
   // +kubebuilder:validation:Optional
-  optional string dashboardURI = 5;
+  optional string dashboardEndpoint = 5;
+
+  // Role indicates the role of the model deployed after it is deployed within a Predictor
+  // +kubebuilder:default:="none"
+  // +kubebuilder:validation:Optional
+  optional string role = 6;
 }
 
 // +kubebuilder:subresource:status

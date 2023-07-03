@@ -7,8 +7,7 @@
 package v1alpha1
 
 import (
-	"fmt"
-
+	"github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	"github.com/metaprov/modelaapi/pkg/util"
 	nwv1 "k8s.io/api/networking/v1"
@@ -81,30 +80,7 @@ func (dataapp DataApp) IsReady() bool {
 
 func (dataapp DataApp) IsFailed() bool {
 	return dataapp.GetCond(DataAppReady).Status == metav1.ConditionFalse &&
-		dataapp.GetCond(DataAppReady).Reason == "Failed"
-}
-
-func (dataapp *DataApp) Populate(name string) {
-
-	dataapp.ObjectMeta = metav1.ObjectMeta{
-		Name:      "iris",
-		Namespace: "modela-data",
-	}
-
-	dataapp.Spec = DataAppSpec{
-		VersionName: util.StrPtr("iris-0.0.1"),
-	}
-}
-
-func (dataapp *DataApp) IsInCond(ct string) bool {
-	current := dataapp.GetCond(ct)
-	return current.Status == metav1.ConditionTrue
-}
-
-func (dataapp *DataApp) PrintConditions() {
-	for _, v := range dataapp.Status.Conditions {
-		fmt.Println(v)
-	}
+		dataapp.GetCond(DataAppReady).Reason == string(v1alpha1.Failed)
 }
 
 func (dataapp *DataApp) MarkReady() {
@@ -112,6 +88,15 @@ func (dataapp *DataApp) MarkReady() {
 		Type:   DataAppReady,
 		Status: metav1.ConditionTrue,
 		Reason: DataAppReady,
+	})
+}
+
+func (dataapp *DataApp) MarkFailed(err string) {
+	dataapp.CreateOrUpdateCond(metav1.Condition{
+		Type:    DataAppReady,
+		Status:  metav1.ConditionTrue,
+		Reason:  string(v1alpha1.Failed),
+		Message: err,
 	})
 }
 
@@ -169,4 +154,24 @@ func (dataapp DataApp) ConstructRESTRule(fqdn string, serviceName string) *nwv1.
 			},
 		},
 	}
+}
+
+func (dataapp DataApp) GetStatus() interface{} {
+	return dataapp.Status
+}
+
+func (dataapp DataApp) GetObservedGeneration() int64 {
+	return dataapp.Status.ObservedGeneration
+}
+
+func (dataapp *DataApp) SetObservedGeneration(generation int64) {
+	dataapp.Status.ObservedGeneration = generation
+}
+
+func (dataapp *DataApp) SetUpdatedAt(time *metav1.Time) {
+	dataapp.Status.UpdatedAt = time
+}
+
+func (dataapp *DataApp) SetStatus(status interface{}) {
+	dataapp.Status = status.(DataAppStatus)
 }

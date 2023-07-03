@@ -64,15 +64,15 @@ spec:
             description: DataAppSpec defines the desired state of a DataApp
             properties:
               access:
-                description: Define how to access the app.
+                description: Access specifies the configuration for the Data App service
+                  to be exposed externally
                 properties:
                   accessType:
                     default: cluster-ip
                     description: The Kubernetes-native access method which specifies
                       how the Kubernetes Service created by the Predictor will be
                       exposed. See https://modela.ai/docs/docs/serving/production/#access-method
-                      for a detailed description of each access type (defaults to
-                      cluster-ip)
+                      for a detailed description of each access type
                     enum:
                     - cluster-ip
                     - node-port
@@ -98,12 +98,18 @@ spec:
                     x-kubernetes-map-type: atomic
                   authMethod:
                     default: none
-                    description: Indicates
                     enum:
                     - api-token
                     - jwt-token
                     - none
                     type: string
+                  http:
+                    default: false
+                    description: Indicates if the prediction service should expose
+                      an additional port to serve the Modela prediction API through
+                      HTTP. The port one digit above the number specified by the Port
+                      field will be exposed to accept HTTP/1.1 traffic
+                    type: boolean
                   nodePort:
                     description: The port number that will be exposed on the external
                       address of every node on the cluster, in the case of the Predictor's
@@ -132,13 +138,6 @@ spec:
                     maximum: 65535
                     minimum: 1024
                     type: integer
-                  rest:
-                    default: false
-                    description: Indicates if the prediction service should expose
-                      an additional port to serve the GRPCInferenceService API through
-                      REST. The port one digit above the number specified by the Port
-                      field will be exposed to accept HTTP/1.1 traffic
-                    type: boolean
                 type: object
               custom:
                 description: The specification to create a custom data application
@@ -321,59 +320,22 @@ spec:
                 type: object
               description:
                 default: ""
-                description: The user-provided description of the DataApp
+                description: The user-provided description of the Data App
                 type: string
               modelClassName:
-                description: The model class for this pipeline
+                description: ModelClassName specifies the name of the Model Class
+                  which created the Data App, if applicable
                 type: string
               modelName:
                 default: ""
-                description: The name of the predictive app model. The model will
-                  be used
+                description: Model specifies the name of the Model resource which
+                  the Data App will create a dashboard for
                 type: string
               owner:
                 default: no-one
                 description: The name of the Account which created the object, which
                   exists in the same tenant as the object
                 type: string
-              productRef:
-                description: The reference to the DataProduct that the resource exists
-                  under
-                properties:
-                  apiVersion:
-                    description: API version of the referent.
-                    type: string
-                  fieldPath:
-                    description: 'If referring to a piece of an object instead of
-                      an entire object, this string should contain a valid JSON/Go
-                      field access statement, such as desiredState.manifest.containers[2].
-                      For example, if the object reference is to a container within
-                      a pod, this would take on a value like: "spec.containers{name}"
-                      (where "name" refers to the name of the container that triggered
-                      the event) or if no container name is specified "spec.containers[2]"
-                      (container with index 2 in this pod). This syntax is chosen
-                      only to have some well-defined way of referencing a part of
-                      an object. TODO: this design is not final and this field is
-                      subject to change in the future.'
-                    type: string
-                  kind:
-                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                    type: string
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                    type: string
-                  namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                    type: string
-                  resourceVersion:
-                    description: 'Specific resourceVersion to which this reference
-                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                    type: string
-                  uid:
-                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                    type: string
-                type: object
-                x-kubernetes-map-type: atomic
               replicas:
                 default: 1
                 description: The number of replicas for the Kubernetes Serving associated
@@ -464,9 +426,6 @@ spec:
                 x-kubernetes-map-type: atomic
               versionName:
                 default: ""
-                description: The name of the DataProductVersion which describes the
-                  version of the resource that exists in the same DataProduct namespace
-                  as the resource
                 type: string
             type: object
           status:

@@ -20,7 +20,7 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1";
 
-// AutoScaling defines the configuration for the automatic scaling of a service
+// AutoScalingSpec defines the configuration for the automatic scaling of a service
 message AutoScalingSpec {
   // Indicates if automatic scaling is enabled
   // +kubebuilder:default:=false
@@ -73,15 +73,6 @@ message BackwardCurtainSpec {
   // For backward curtain is the confidence high
   // +kubebuilder:validation:Optional
   optional double confidenceHigh = 5;
-}
-
-message BatchPredictionSpec {
-  // The schedule at which new Prediction resources will be created
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 1;
-
-  // Template specifies the template to create new Prediction resources
-  optional PredictionSpec template = 2;
 }
 
 // CustomAppSpec defines the custom pages for a DataApp
@@ -138,27 +129,25 @@ message DataAppSpec {
   // +kubebuilder:default:="no-one"
   optional string owner = 1;
 
-  // The name of the DataProductVersion which describes the version of the resource
-  // that exists in the same DataProduct namespace as the resource
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string versionName = 2;
 
-  // The model class for this pipeline
+  // ModelClassName specifies the name of the Model Class which created the Data App, if applicable
   // +kubebuilder:validation:Optional
   optional string modelClassName = 3;
 
-  // The user-provided description of the DataApp
+  // The user-provided description of the Data App
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   optional string description = 4;
 
-  // The name of the predictive app model. The model will be used
+  // Model specifies the name of the Model resource which the Data App will create a dashboard for
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string modelName = 5;
 
-  // Define how to access the app.
+  // Access specifies the configuration for the Data App service to be exposed externally
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 6;
 
   // The number of replicas for the Kubernetes Serving associated with the DataApp, which will instantiate multiple
@@ -170,10 +159,6 @@ message DataAppSpec {
   // Resources specifies the resource requirements allocated to the DataApp's web server
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 10;
-
-  // The reference to the DataProduct that the resource exists under
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference productRef = 12;
 
   // The reference to the ServingSite resource that hosts the Predictor
   // +kubebuilder:validation:Optional
@@ -247,8 +232,7 @@ message DriftDetectionSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 7;
 
-  // Reference to a model that will be used for outlier detection. If empty, an outlier detection model.
-  // Currently not in use.
+  // Reference to a model that will be used for outlier detection
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference outlierDetectionModelRef = 8;
 
@@ -262,9 +246,6 @@ message DriftDetectionSpec {
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
   optional int32 periodSeconds = 10;
-}
-
-message DriftDetectionStatus {
 }
 
 // Fast slow model mode, use two models as the live.
@@ -307,7 +288,7 @@ message FeedbackTestSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
 }
 
-// ForecastSpec specifies the details of a forecasting model
+// ForecastPredictionSpec specifies the details of a forecasting model
 message ForecastPredictionSpec {
   // The hierarchy specification, which maps columns to values
   // +kubebuilder:validation:Optional
@@ -318,13 +299,11 @@ message ForecastPredictionSpec {
 }
 
 message ForecastRun {
-  // The reference to the ServingSite resource that
   // +kubebuilder:validation:Optional
   optional string key = 1;
 
-  // The reference to the ServingSite resource that
   // +kubebuilder:validation:Optional
-  optional string modelURI = 2;
+  optional string modelLocation = 2;
 
   // the prediction horizon
   // +kubebuilder:validation:Optional
@@ -380,17 +359,6 @@ message ForwardCurtainSpec {
   optional int32 percent = 3;
 }
 
-// KubernetesObjectStatus describes the location and status of a Kubernetes-native resource
-message KubernetesObjectStatus {
-  // The object reference
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference ref = 1;
-
-  // The status of the object
-  // +kubebuilder:validation:Optional
-  optional string status = 2;
-}
-
 // Hold the Last X measurments of a metric
 message MetricHistory {
   // The Metric Name
@@ -402,6 +370,37 @@ message MetricHistory {
   repeated double history = 2;
 }
 
+// ModelDeploymentRecord holds the state of a model that was previously live or shadowed
+message ModelDeploymentRecord {
+  // +kubebuilder:validation:Optional
+  optional string modelName = 1;
+
+  // +kubebuilder:validation:Optional
+  optional string modelVersion = 2;
+
+  // The role of the previously deployed model
+  optional string modelRole = 3;
+
+  // The image name that the deployment is currently running
+  // +kubebuilder:validation:Optional
+  optional string imageName = 4;
+
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time deployedAt = 5;
+
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time retiredAt = 6;
+
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 7;
+
+  // +kubebuilder:validation:Optional
+  optional int32 avgDailyPrediction = 8;
+
+  // +kubebuilder:validation:Optional
+  optional double avgLatency = 9;
+}
+
 message ModelDeploymentStatus {
   // The name of the Model resource associated with the deployment
   // +kubebuilder:validation:Optional
@@ -411,118 +410,58 @@ message ModelDeploymentStatus {
   // +kubebuilder:validation:Optional
   optional string modelVersion = 2;
 
+  // The role of the model (live or shadow)
+  optional string modelRole = 3;
+
   // The image name that the deployment is currently running
   // +kubebuilder:validation:Optional
-  optional string imageName = 3;
+  optional string imageName = 4;
 
-  // The name of the Kubernetes Serving that manages the pods of the Model
+  // The reference to the Kubernetes Deployment that manages the pods for the Model
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference deploymentRef = 4;
+  optional k8s.io.api.core.v1.ObjectReference deploymentRef = 5;
 
-  // The name of the Kubernetes Service which exposes the Model externally
+  // The reference to the Kubernetes Service which exposes the Model externally
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference serviceRef = 5;
+  optional k8s.io.api.core.v1.ObjectReference serviceRef = 6;
 
-  // the name of the horizonal pod autoscaler, if autoscaling is true
+  // The reference to the Horizontal Pod Autoscaler, if enabled
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference hpaRef = 6;
+  optional k8s.io.api.core.v1.ObjectReference hpaRef = 7;
 
-  // 50% latency (median) for predictions served by the model
+  // FailureMessage contains the details of the last failure that occurred while deploying the Model
   // +kubebuilder:validation:Optional
-  optional double p50 = 7;
+  optional string failureMessage = 8;
 
-  // 95% latency for predictions served by the model
+  // DeployedAt specifies the time that the Model deployment was created
   // +kubebuilder:validation:Optional
-  optional double p95 = 8;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time deployedAt = 9;
 
-  // 99% latency for predictions served by the model
+  // Reference to the last ground truth dataset that the model was tested against
   // +kubebuilder:validation:Optional
-  optional double p99 = 9;
+  optional k8s.io.api.core.v1.ObjectReference lastFeedbackDatasetRef = 10;
 
-  // The last time a prediction was served by the Predictorlet
+  // The time at which the last ground truth test was performed
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionTime = 10;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastFeedbackTestAt = 11;
 
+  // The results of the last ground truth test performed
   // +kubebuilder:validation:Optional
-  optional int32 dailyPredictionAvg = 11;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement lastFeedbackTestResults = 12;
 
-  // LastFailure is the last failure that occured with the model
+  // MetricHistory contains the historical measurements of all previously performed ground truth tests
   // +kubebuilder:validation:Optional
-  optional string lastFailure = 12;
-
-  // Phase is the current phase of the model deployment
-  // +kubebuilder:validation:Optional
-  optional string phase = 13;
-
-  // DeployedAt is the last time that the model was deployed
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time deployedAt = 14;
-
-  // ReleasedAt is the time that the model was released
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 15;
-
-  // Indicates if a data drift has been detected based on incoming prediction data
-  // +kubebuilder:validation:Optional
-  optional bool dataDrift = 16;
-
-  // Indicates if a concept drift has been detected based on incoming prediction data
-  // +kubebuilder:validation:Optional
-  optional bool conceptDrift = 17;
-
-  // The predictions from the last 7 days
-  // +kubebuilder:validation:Optional
-  repeated int32 lastDailyPredictions = 18;
+  map<string, MetricHistory> metricsHistory = 13;
 
   // +kubebuilder:validation:Optional
-  repeated KubernetesObjectStatus objectStatuses = 19;
+  optional int32 avgDailyPrediction = 14;
 
-  // the set of validation errors
   // +kubebuilder:validation:Optional
-  repeated ValidationError errors = 20;
+  optional double avgLatency = 15;
 
-  // Ref to the last ground true dataset that this model was tested against.
+  // The end-point URL of the Model, in the case that the Predictor is exposed via an HTTP Ingress
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference lastFeedbackDatasetRef = 21;
-
-  // Last time that a ground true test was done.
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastFeedbackTest = 22;
-
-  // Last results of the ground truth tests.
-  // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement lastFeedbackTestResults = 23;
-
-  // Holds the last N metrics for this model
-  // +kubebuilder:validation:Optional
-  map<string, MetricHistory> metricsHistory = 24;
-}
-
-// ModelRecord hold the state of a model that was in production
-message ModelRecord {
-  // Model Name is the name of the model
-  // +kubebuilder:validation:Optional
-  optional string modelName = 1;
-
-  // Model version is the version of the model
-  // +kubebuilder:validation:Optional
-  optional string modelVersion = 2;
-
-  // Live at is the time that the model were placed in production
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time liveAt = 3;
-
-  // Retried at is the time that the model was retired from production.
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time retiredAt = 4;
-
-  // Retried at is the time that the model was retired from production.
-  // +kubebuilder:validation:Optional
-  optional int32 avgDailyPrediction = 5;
-
-  // Retried at is the time that the model was retired from production.
-  // +kubebuilder:validation:Optional
-  optional double avgLatency = 6;
+  optional string endpoint = 16;
 }
 
 // ModelServingSpec specifies the configuration for models to be served by a Predictor
@@ -531,6 +470,7 @@ message ModelServingSpec {
   // until it starts to receive prediction traffic, and will be destroyed once the model becomes dormant
   optional bool serverless = 2;
 
+  // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite servingTests = 4;
 }
 
@@ -597,11 +537,6 @@ message PredictionCacheSpec {
 
   // The reference to a ConnectionName resource to an external Redis deployment
   optional k8s.io.api.core.v1.ObjectReference connectionRef = 4;
-}
-
-message PredictionCacheStatus {
-  // LastAccessed specifies the last time the prediction cache was accessed
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastAccessed = 1;
 }
 
 // +kubebuilder:object:root=true
@@ -865,15 +800,9 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional bool template = 5;
 
-  // If true, create a deployment to serve online traffic.
-  // +kubebuilder:default:=false
+  // ServingSiteRef specifies the reference to the Serving Site that the Predictor will be hosted under
   // +kubebuilder:validation:Optional
-  optional bool online = 6;
-
-  // If specified, the reference to the ServingSite resource that hosts the Predictor
-  // If not specified, the predictor will be hosted on the default serving site.
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 7;
+  optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 7;
 
   // If specified, the collection of models. There must be a least on live model
   // +kubebuilder:validation:MinItems=1
@@ -884,10 +813,6 @@ message PredictorSpec {
   // `Canary` field enabled will be progressively deployed according to the specification when they are applied to the Predictor
   // +kubebuilder:validation:Optional
   optional ProgressiveSpec progressive = 9;
-
-  // The data location where artifacts generated by the Predictor will be stored
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation artifactsFolder = 10;
 
   // Access specifies the configuration for the Predictor service to be exposed externally
   // +kubebuilder:validation:Optional
@@ -925,21 +850,17 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional string task = 19;
 
-  // The prediction threshold
-  // +kubebuilder:validation:Optional
-  optional double predictionThreshold = 20;
-
   // Spec for the drift detection process
   // +kubebuilder:validation:Optional
   optional DriftDetectionSpec drift = 21;
 
-  // Spec for the ground truth process.
+  // Feedback specifies the configuration to generate feedback datasets
   // +kubebuilder:validation:Optional
   optional FeedbackTestSpec feedback = 22;
 
-  // NotifierRef references a Notifier resource that will be triggered in the case that a concept or data drift is detected
+  // The notification specification that determines which notifiers will receive Alerts generated by the object
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference notifierRef = 23;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 23;
 
   // Monitor spec specify the monitor for this predictor.
   // +kubebuilder:validation:Optional
@@ -956,10 +877,6 @@ message PredictorSpec {
   // Fast slow is the specification of deployment of a fast - slow models.
   // +kubebuilder:validation:Optional
   optional FastSlowModelSpec fastSlow = 27;
-
-  // The batch prediction settings for this predictor
-  // +kubebuilder:validation:Optional
-  optional BatchPredictionSpec batch = 28;
 }
 
 // PredictorStatus contain the current state of the Predictor resource
@@ -968,22 +885,20 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // The collection of historical records of models deployed to the Predictor, used internally to roll-back models
+  // The collection of historical records of models deployed to the Predictor, used internally to roll-back models.
+  // When the name, role, or image of a previously deployed model is changed, it will be removed from ModelStatus
+  // and appended as a record to History
   // +kubebuilder:validation:Optional
-  repeated ModelRecord history = 2;
+  repeated ModelDeploymentRecord history = 2;
 
-  // The status of the shadow models
+  // ModelStatus contains the collection of statuses for all live models
   // +kubebuilder:validation:Optional
-  repeated ModelDeploymentStatus modelsStatus = 4;
+  repeated ModelDeploymentStatus modelStatus = 4;
 
   // The status of the Predictorlet associated with the Predictor. The Predictorlet is a service which handles prediction traffic
   // and routes predictions to individual models based on the specification of the Predictor
   // +kubebuilder:validation:Optional
   optional PredictorletStatus predictorletStatus = 5;
-
-  // The status of the prediction cache managed by the Predictor
-  // +kubebuilder:validation:Optional
-  optional PredictionCacheStatus cacheStatus = 6;
 
   // The status of the online store managed by the Predictor
   // +kubebuilder:validation:Optional
@@ -992,14 +907,6 @@ message PredictorStatus {
   // The last time the object was updated
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 8;
-
-  // The end-point URL of the Predictor
-  // +kubebuilder:validation:Optional
-  optional string endPoint = 9;
-
-  // In the case of failure, the Predictor resource controller will set this field with a failure reason
-  // +kubebuilder:validation:Optional
-  optional string failureReason = 10;
 
   // In the case of failure, the Predictor resource controller will set this field with a failure reason
   // +kubebuilder:validation:Optional
@@ -1017,10 +924,6 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult servingTestsResults = 14;
 
-  // The status for the batch prediction.
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus predictionSchedule = 15;
-
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
@@ -1029,19 +932,18 @@ message PredictorStatus {
 
 // PredictorletStatus describes the current state of a prediction proxy service associated with a Predictor
 message PredictorletStatus {
-  // The image name that the Predictorlet is currently running
+  // The reference to the Kubernetes Deployment that manages the pods for the prediction proxy
   // +kubebuilder:validation:Optional
-  optional string imageName = 1;
+  optional k8s.io.api.core.v1.ObjectReference deploymentRef = 1;
 
-  // The name of the Kubernetes Serving that manages the pods of the Predictorlet
+  // The reference to the Kubernetes Service which exposes the Predictor externally
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference deploymentRef = 2;
+  optional k8s.io.api.core.v1.ObjectReference serviceRef = 2;
 
-  // The name of the Kubernetes Service which exposes the Predictorlet externally
+  // DeployedAt specifies the time that the Predictorlet deployment was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference serviceRef = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time deployedAt = 3;
 
-  // 50% latency (median) for predictions served by the Predictorlet
   // +kubebuilder:validation:Optional
   optional double p50 = 4;
 
@@ -1054,24 +956,18 @@ message PredictorletStatus {
   optional double p99 = 6;
 
   // +kubebuilder:validation:Optional
-  optional int32 dailyPredictionAvg = 7;
+  optional int32 avgDailyPrediction = 7;
 
   // The total number of predictions served by the Predictorlet
   optional int32 totalPredictions = 8;
 
-  // The predictions from the last 7 days
-  repeated int32 lastDailyPredictions = 9;
-
   // The last time a prediction was served by the Predictorlet
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionTime = 10;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionTime = 9;
 
-  // LastFailure contains the last failure that occured with a model served by the Predictorlet
+  // FailureMessage contains the details of the last failure that occurred while deploying the Predictorlet
   // +kubebuilder:validation:Optional
-  optional string lastFailure = 11;
-
-  // +kubebuilder:validation:Optional
-  repeated KubernetesObjectStatus objectStatuses = 12;
+  optional string failureMessage = 10;
 }
 
 // ProgressiveSpec defines the specification to progressively deploy a model to production

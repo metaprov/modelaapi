@@ -45,18 +45,16 @@ message AccessSpec {
 
   // The Kubernetes-native access method which specifies how the Kubernetes Service created by the Predictor will be exposed.
   // See https://modela.ai/docs/docs/serving/production/#access-method for a detailed description of each access type
-  // (defaults to cluster-ip)
   // +kubebuilder:default:="cluster-ip"
   // +kubebuilder:validation:Optional
   optional string accessType = 4;
 
-  // Indicates if the prediction service should expose an additional port to serve the GRPCInferenceService API through REST.
+  // Indicates if the prediction service should expose an additional port to serve the Modela prediction API through HTTP.
   // The port one digit above the number specified by the Port field will be exposed to accept HTTP/1.1 traffic
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool rest = 5;
+  optional bool http = 5;
 
-  // Indicates
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional string authMethod = 6;
@@ -792,8 +790,7 @@ message Measurement {
 // ModelDeploymentSpec describes how a single model should be deployed with a Predictor, and
 // how prediction traffic will be routed to the model
 message ModelDeploymentSpec {
-  // The reference to a Model resource which has been packaged and exists in the same Location Product
-  // as the Predictor which specifies the ModelDeploymentSpec
+  // The reference to a Model resource which has been packaged
   // +kubebuilder:validation:Required
   // +required
   optional k8s.io.api.core.v1.ObjectReference modelRef = 1;
@@ -803,38 +800,24 @@ message ModelDeploymentSpec {
   // +kubebuilder:validation:Optional
   optional int32 port = 2;
 
-  // The version of the model, derived from the Study which created it
-  // +kubebuilder:validation:Optional
-  optional string modelVersion = 3;
-
   // The minimum percentage (0 through 100) of traffic that will be served by the model
   // +kubebuilder:validation:Maximum=100
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:default:=100
   // +kubebuilder:validation:Optional
-  optional int32 traffic = 4;
+  optional int32 traffic = 3;
 
   // Role denotes the role of this model
   // +kubebuilder:default:=live
   // +kubebuilder:validation:Optional
-  optional string role = 5;
+  optional string role = 4;
 
-  // MountTar means that we would mount the model tar file. Else we would use baked image.
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool mountTar = 9;
+  // The URL of the model server image; applicable when rolling back a model
+  optional string imageName = 5;
 
-  // TrafficSelector is a filter on the traffic to this model
+  // The name of the account which approved the model, if applicable
   // +kubebuilder:validation:Optional
-  optional string trafficSelector = 10;
-
-  // The approver account name
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference approvedBy = 12;
-
-  // The time of approval
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 13;
+  optional k8s.io.api.core.v1.ObjectReference approvedBy = 6;
 }
 
 // NotificationSpec defines the notification configuration for an Alert resource

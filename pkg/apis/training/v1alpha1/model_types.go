@@ -279,13 +279,9 @@ type ModelSpec struct {
 	// The Model Class Run which created the Model, if applicable
 	// +kubebuilder:validation:Optional
 	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,35,opt,name=modelClassRunName"`
-	// Role specifies the role of the model in relation to an online Predictor
-	// +kubebuilder:default:="none"
-	// +kubebuilder:validation:Optional
-	Role *catalog.ModelRole `json:"role,omitempty" protobuf:"bytes,36,opt,name=role"`
 	// The name of the Notifier resource which Alerts created by the Model will be forwarded to
 	// +kubebuilder:validation:Optional
-	Notification *catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,37,opt,name=notification"`
+	Notification *catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,36,opt,name=notification"`
 }
 
 // EnsembleSpec specifies the parameters of an ensemble model
@@ -406,9 +402,6 @@ type ModelStatus struct {
 	// The number of rows in the validation dataset, if applicable
 	// +kubebuilder:validation:Optional
 	ValidationRows int32 `json:"validationRows" protobuf:"varint,40,opt,name=validationRows"`
-	// In the case of failure, the Model resource controller will set this field with a failure reason
-	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,41,opt,name=failureReason"`
 	// In the case of failure, the Model resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,42,opt,name=failureMessage"`
@@ -421,7 +414,7 @@ type ModelStatus struct {
 	// The measured prediction latency
 	// +kubebuilder:validation:Optional
 	Latency float64 `json:"latency,omitempty" protobuf:"bytes,45,opt,name=latency"`
-	// The name of the Predictor in the case that the Model has been released and deployed
+	// ServingStatus contains the status of the model in the case that it was deployed to a Predictor or Data App
 	// +kubebuilder:validation:Optional
 	Serving ServingStatus `json:"serving,omitempty" protobuf:"bytes,47,opt,name=serving"`
 	// Sha256 of the model tar file
@@ -1051,16 +1044,20 @@ type ModelStageStatus struct {
 }
 
 type ServingStatus struct {
-	// The name of the predictor hosting this model
+	// The name of the Predictor hosting this model
 	// +kubebuilder:validation:Optional
-	PredictorName string `json:"predictorName,omitempty" protobuf:"bytes,2,opt,name=predictorName"`
-	// The name of the dataapp for this model
+	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,2,opt,name=predictorName"`
+	// The name of the Data App hosting the model
 	// +kubebuilder:validation:Optional
-	DataAppName string `json:"dataAppName,omitempty" protobuf:"bytes,3,opt,name=dataAppName"`
-	// The URI of the predictor.
+	DataAppName *string `json:"dataAppName,omitempty" protobuf:"bytes,3,opt,name=dataAppName"`
+	// The endpoint of the model served by a Predictor
 	// +kubebuilder:validation:Optional
-	PredictorURI string `json:"predictorURI,omitempty" protobuf:"bytes,4,opt,name=predictorURI"`
-	// The uri for the dashboard, if dashboard was created.
+	PredictorEndpoint *string `json:"predictorEndpoint,omitempty" protobuf:"bytes,4,opt,name=predictorEndpoint"`
+	// The endpoint of the model served by a Data App
 	// +kubebuilder:validation:Optional
-	DashboardURI string `json:"dashboardURI,omitempty" protobuf:"bytes,5,opt,name=dashboardURI"`
+	DashboardEndpoint *string `json:"dashboardEndpoint,omitempty" protobuf:"bytes,5,opt,name=dashboardEndpoint"`
+	// Role indicates the role of the model deployed after it is deployed within a Predictor
+	// +kubebuilder:default:="none"
+	// +kubebuilder:validation:Optional
+	Role *catalog.ModelRole `json:"role,omitempty" protobuf:"bytes,6,opt,name=role"`
 }

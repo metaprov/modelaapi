@@ -22448,7 +22448,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.toObjec
     partitionlocations: (f = msg.getPartitionlocations()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PartitionModelLocationsSpec.toObject(includeInstance, f),
     modelclassname: (f = jspb.Message.getField(msg, 34)) == null ? undefined : f,
     modelclassrunname: (f = jspb.Message.getField(msg, 35)) == null ? undefined : f,
-    role: (f = jspb.Message.getField(msg, 36)) == null ? undefined : f,
     notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f)
   };
 
@@ -22637,10 +22636,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
       msg.setModelclassrunname(value);
       break;
     case 36:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setRole(value);
-      break;
-    case 37:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.deserializeBinaryFromReader);
       msg.setNotification(value);
@@ -22929,17 +22924,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 36));
-  if (f != null) {
-    writer.writeString(
-      36,
-      f
-    );
-  }
   f = message.getNotification();
   if (f != null) {
     writer.writeMessage(
-      37,
+      36,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.serializeBinaryToWriter
     );
@@ -24218,48 +24206,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
 
 
 /**
- * optional string role = 36;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getRole = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 36, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setRole = function(value) {
-  return jspb.Message.setField(this, 36, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearRole = function() {
-  return jspb.Message.setField(this, 36, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasRole = function() {
-  return jspb.Message.getField(this, 36) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 37;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 36;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getNotification = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec, 37));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec, 36));
 };
 
 
@@ -24268,7 +24220,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setNotification = function(value) {
-  return jspb.Message.setWrapperField(this, 37, value);
+  return jspb.Message.setWrapperField(this, 36, value);
 };
 
 
@@ -24286,7 +24238,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasNotification = function() {
-  return jspb.Message.getField(this, 37) != null;
+  return jspb.Message.getField(this, 36) != null;
 };
 
 
@@ -24719,7 +24671,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.toObj
     trainingrows: (f = jspb.Message.getField(msg, 38)) == null ? undefined : f,
     testingrows: (f = jspb.Message.getField(msg, 39)) == null ? undefined : f,
     validationrows: (f = jspb.Message.getField(msg, 40)) == null ? undefined : f,
-    failurereason: (f = jspb.Message.getField(msg, 41)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 42)) == null ? undefined : f,
     progress: (f = jspb.Message.getField(msg, 43)) == null ? undefined : f,
     sizeinbytes: (f = jspb.Message.getField(msg, 44)) == null ? undefined : f,
@@ -24945,10 +24896,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.deser
     case 40:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setValidationrows(value);
-      break;
-    case 41:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFailurereason(value);
       break;
     case 42:
       var value = /** @type {string} */ (reader.readString());
@@ -25363,13 +25310,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
   if (f != null) {
     writer.writeInt32(
       40,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 41));
-  if (f != null) {
-    writer.writeString(
-      41,
       f
     );
   }
@@ -26831,42 +26771,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasValidationrows = function() {
   return jspb.Message.getField(this, 40) != null;
-};
-
-
-/**
- * optional string failureReason = 41;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getFailurereason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 41, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setFailurereason = function(value) {
-  return jspb.Message.setField(this, 41, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearFailurereason = function() {
-  return jspb.Message.setField(this, 41, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasFailurereason = function() {
-  return jspb.Message.getField(this, 41) != null;
 };
 
 
@@ -35207,8 +35111,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.toO
   var f, obj = {
     predictorname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     dataappname: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    predictoruri: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    dashboarduri: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    predictorendpoint: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    dashboardendpoint: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    role: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -35255,11 +35160,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.des
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPredictoruri(value);
+      msg.setPredictorendpoint(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDashboarduri(value);
+      msg.setDashboardendpoint(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRole(value);
       break;
     default:
       reader.skipField();
@@ -35315,6 +35224,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.ser
   if (f != null) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -35394,10 +35310,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.pro
 
 
 /**
- * optional string predictorURI = 4;
+ * optional string predictorEndpoint = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.getPredictoruri = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.getPredictorendpoint = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -35406,7 +35322,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.setPredictoruri = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.setPredictorendpoint = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -35415,7 +35331,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.clearPredictoruri = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.clearPredictorendpoint = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -35424,16 +35340,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.hasPredictoruri = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.hasPredictorendpoint = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string dashboardURI = 5;
+ * optional string dashboardEndpoint = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.getDashboarduri = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.getDashboardendpoint = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -35442,7 +35358,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.setDashboarduri = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.setDashboardendpoint = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -35451,7 +35367,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.clearDashboarduri = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.clearDashboardendpoint = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -35460,8 +35376,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.hasDashboarduri = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.hasDashboardendpoint = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string role = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.getRole = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.setRole = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.clearRole = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.prototype.hasRole = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

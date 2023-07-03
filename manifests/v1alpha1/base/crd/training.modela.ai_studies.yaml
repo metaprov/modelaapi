@@ -1443,8 +1443,7 @@ spec:
                         description: The Kubernetes-native access method which specifies
                           how the Kubernetes Service created by the Predictor will
                           be exposed. See https://modela.ai/docs/docs/serving/production/#access-method
-                          for a detailed description of each access type (defaults
-                          to cluster-ip)
+                          for a detailed description of each access type
                         enum:
                         - cluster-ip
                         - node-port
@@ -1470,12 +1469,18 @@ spec:
                         x-kubernetes-map-type: atomic
                       authMethod:
                         default: none
-                        description: Indicates
                         enum:
                         - api-token
                         - jwt-token
                         - none
                         type: string
+                      http:
+                        default: false
+                        description: Indicates if the prediction service should expose
+                          an additional port to serve the Modela prediction API through
+                          HTTP. The port one digit above the number specified by the
+                          Port field will be exposed to accept HTTP/1.1 traffic
+                        type: boolean
                       nodePort:
                         description: The port number that will be exposed on the external
                           address of every node on the cluster, in the case of the
@@ -1505,13 +1510,6 @@ spec:
                         maximum: 65535
                         minimum: 1024
                         type: integer
-                      rest:
-                        default: false
-                        description: Indicates if the prediction service should expose
-                          an additional port to serve the GRPCInferenceService API
-                          through REST. The port one digit above the number specified
-                          by the Port field will be exposed to accept HTTP/1.1 traffic
-                        type: boolean
                     type: object
                   approvedAt:
                     description: ApprovedAt indicates the time of approval
