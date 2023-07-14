@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -419,8 +420,7 @@ func (servingsite ServingSite) ServingSiteRoleBinding() *rbacv1.RoleBinding {
 func (servingsite ServingSite) ServingSiteClusterRole() *rbacv1.ClusterRole {
 	return &rbacv1.ClusterRole{
 		ObjectMeta: metav1.ObjectMeta{
-			Name:      catalog.ServingSiteJobRunnerRole,
-			Namespace: servingsite.Name,
+			Name: catalog.ServingSiteJobRunnerRole,
 		},
 		Rules: []rbacv1.PolicyRule{
 			{
@@ -433,6 +433,27 @@ func (servingsite ServingSite) ServingSiteClusterRole() *rbacv1.ClusterRole {
 			{
 				Verbs:           []string{"get"},
 				APIGroups:       []string{"infra.modela.ai"},
+				Resources:       []string{"*"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+			{
+				Verbs:           []string{"get"},
+				APIGroups:       []string{"inference.modela.ai"},
+				Resources:       []string{"*"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+			{
+				Verbs:           []string{"get"},
+				APIGroups:       []string{"data.modela.ai"},
+				Resources:       []string{"*"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+			{
+				Verbs:           []string{"get"},
+				APIGroups:       []string{"inference.modela.ai"},
 				Resources:       []string{"*"},
 				ResourceNames:   []string{},
 				NonResourceURLs: []string{},
@@ -450,14 +471,14 @@ func (servingsite ServingSite) ServingSiteClusterRoleBinding() *rbacv1.ClusterRo
 			{
 				Kind:      "ServiceAccount",
 				APIGroup:  "",
-				Name:      catalog.LabJobRunnerSa,
+				Name:      catalog.ServingSiteJobRunnerSa,
 				Namespace: servingsite.Name,
 			},
 		},
 		RoleRef: rbacv1.RoleRef{
 			APIGroup: "rbac.authorization.k8s.io",
 			Kind:     "ClusterRole",
-			Name:     catalog.LabJobRunnerRole,
+			Name:     catalog.ServingSiteJobRunnerRole,
 		},
 	}
 }
@@ -471,8 +492,8 @@ func (servingsite ServingSite) ServingSiteServiceAccount() *corev1.ServiceAccoun
 	}
 }
 
-func (servingsite ServingSite) GetStatus() interface{} {
-	return servingsite.Status
+func (servingsite ServingSite) GetStatus() proto.Message {
+	return &servingsite.Status
 }
 
 func (servingsite ServingSite) GetObservedGeneration() int64 {
@@ -488,5 +509,5 @@ func (servingsite *ServingSite) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (servingsite *ServingSite) SetStatus(status interface{}) {
-	servingsite.Status = status.(ServingSiteStatus)
+	servingsite.Status = *status.(*ServingSiteStatus)
 }

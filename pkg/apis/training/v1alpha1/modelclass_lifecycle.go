@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -148,7 +149,7 @@ func (mclass *ModelClass) MarkDrifted() {
 }
 
 func (mclass *ModelClass) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
-	level := infra.Info
+	level := infra.InfoAlertLevel
 	subject := fmt.Sprintf("model class %s completed successfully", mclass.Name)
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -177,7 +178,7 @@ func (mclass *ModelClass) CompletionAlert(notification catalog.NotificationSpec)
 }
 
 func (mclass *ModelClass) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
-	level := infra.Error
+	level := infra.ErrorAlertLevel
 	subject := fmt.Sprintf("Model Class %s failed with error: %v", mclass.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -216,8 +217,8 @@ func (mclass *ModelClass) MarkFailed(err string) {
 	mclass.Status.FailureMessage = util.StrPtr(err)
 }
 
-func (modelclass ModelClass) GetStatus() interface{} {
-	return modelclass.Status
+func (modelclass ModelClass) GetStatus() proto.Message {
+	return &modelclass.Status
 }
 
 func (modelclass ModelClass) GetObservedGeneration() int64 {
@@ -233,5 +234,5 @@ func (modelclass *ModelClass) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (modelclass *ModelClass) SetStatus(status interface{}) {
-	modelclass.Status = status.(ModelClassStatus)
+	modelclass.Status = *status.(*ModelClassStatus)
 }

@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -148,8 +149,8 @@ func (account *Account) MarkFailed(err string) {
 	account.Status.FailureMessage = util.StrPtr(err)
 }
 
-func (account Account) GetStatus() interface{} {
-	return account.Status
+func (account Account) GetStatus() proto.Message {
+	return &account.Status
 }
 
 func (account Account) GetObservedGeneration() int64 {
@@ -165,5 +166,5 @@ func (account *Account) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (account *Account) SetStatus(status interface{}) {
-	account.Status = status.(AccountStatus)
+	account.Status = *status.(*AccountStatus)
 }

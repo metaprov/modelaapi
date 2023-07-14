@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	"path"
 	"time"
@@ -755,7 +756,7 @@ func (study *Study) MarkPromotionFailed(err string) {
 }
 
 func (study *Study) PromotionAlert(model Model) *infra.Alert {
-	level := infra.Info
+	level := infra.InfoAlertLevel
 	subject := fmt.Sprintf("Model %s is waiting for manual promotion", model.Name)
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -1053,8 +1054,12 @@ func (study *Study) RefreshProgress() {
 // Model Alerts
 
 func (study Study) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
-	level := infra.Info
+	level := infra.InfoAlertLevel
 	subject := fmt.Sprintf("Study %s completed successfully", study.Name)
+	if study.Spec.Notification != nil {
+		notification = *study.Spec.Notification
+	}
+
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: study.Name,
@@ -1085,8 +1090,12 @@ func (study Study) CompletionAlert(notification catalog.NotificationSpec) *infra
 }
 
 func (study Study) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
-	level := infra.Error
+	level := infra.ErrorAlertLevel
 	subject := fmt.Sprintf("Study %s failed with error: %v", study.Name, err.Error())
+	if study.Spec.Notification != nil {
+		notification = *study.Spec.Notification
+	}
+
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: study.Name,
@@ -1153,8 +1162,8 @@ func (study Study) PartitionTestFile(key []string) string {
 	return study.PartitionFolder(key) + "/data/test.parquet"
 }
 
-func (study Study) GetStatus() interface{} {
-	return study.Status
+func (study Study) GetStatus() proto.Message {
+	return &study.Status
 }
 
 func (study Study) GetObservedGeneration() int64 {
@@ -1170,5 +1179,5 @@ func (study *Study) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (study *Study) SetStatus(status interface{}) {
-	study.Status = status.(StudyStatus)
+	study.Status = *status.(*StudyStatus)
 }

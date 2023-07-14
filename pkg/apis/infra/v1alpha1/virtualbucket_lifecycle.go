@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -93,27 +94,34 @@ func (bucket *VirtualBucket) MarkReady() {
 	})
 }
 
-func (bucket *VirtualBucket) MarkFailed(err string) {
+func (bucket *VirtualBucket) MarkFailed(reason string, err string) {
 	bucket.CreateOrUpdateCond(metav1.Condition{
 		Type:    VirtualBucketReady,
 		Status:  metav1.ConditionFalse,
-		Reason:  VirtualBucketReady,
+		Reason:  reason,
 		Message: err,
 	})
 	bucket.Status.FailureMessage = util.StrPtr(err)
 }
 
-func (bucket *VirtualBucket) GetConnection() *Connection {
-	var connectionName string
-	if bucket.Spec.ConnectionName != nil {
-		connectionName = *bucket.Spec.ConnectionName
+func (bucket *VirtualBucket) Strip() *VirtualBucket {
+	return &VirtualBucket{
+		ObjectMeta: metav1.ObjectMeta{
+			Namespace: bucket.Namespace,
+			Name:      bucket.Name,
+		},
+		Spec: VirtualBucketSpec{
+			ConnectionName: bucket.Spec.ConnectionName,
+		},
 	}
-
-	return &Connection{ObjectMeta: metav1.ObjectMeta{Namespace: bucket.Namespace, Name: connectionName}}
 }
 
-func (virtualbucket VirtualBucket) GetStatus() interface{} {
-	return virtualbucket.Status
+func (bucket *VirtualBucket) GetConnection() *Connection {
+	return &Connection{ObjectMeta: metav1.ObjectMeta{Namespace: bucket.Namespace, Name: bucket.Spec.ConnectionName}}
+}
+
+func (virtualbucket VirtualBucket) GetStatus() proto.Message {
+	return &virtualbucket.Status
 }
 
 func (virtualbucket VirtualBucket) GetObservedGeneration() int64 {
@@ -129,5 +137,5 @@ func (virtualbucket *VirtualBucket) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (virtualbucket *VirtualBucket) SetStatus(status interface{}) {
-	virtualbucket.Status = status.(VirtualBucketStatus)
+	virtualbucket.Status = *status.(*VirtualBucketStatus)
 }

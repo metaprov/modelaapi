@@ -9,6 +9,7 @@ package v1alpha1
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 	"path"
 	"time"
 
@@ -122,6 +123,9 @@ func (model Model) ReportName() string {
 }
 
 func (model Model) IsEnsemble() bool {
+	if model.Spec.Ensemble == nil {
+		return false
+	}
 	return len(model.Spec.Ensemble.Models) > 0
 }
 
@@ -902,6 +906,16 @@ func (model *Model) MarkPackaging() {
 	model.RefreshProgress()
 }
 
+func (model *Model) MarkPackageDisabled() {
+	model.Status.Phase = ModelPhasePackaging
+	model.CreateOrUpdateCond(metav1.Condition{
+		Type:   ModelPackaged,
+		Status: metav1.ConditionFalse,
+		Reason: "PackageDisabled",
+	})
+	model.RefreshProgress()
+}
+
 func (model Model) Packaged() bool {
 	cond := model.GetCond(ModelPackaged)
 	return cond.Status == metav1.ConditionTrue
@@ -1218,7 +1232,7 @@ func (model Model) IsTest() bool {
 ////////////////////////////////////////////////////////////
 
 func (model Model) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
-	level := infra.Info
+	level := infra.InfoAlertLevel
 	subject := fmt.Sprintf("Model %s completed successfully", model.Name)
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -1255,7 +1269,7 @@ func (model Model) CompletionAlert(notification catalog.NotificationSpec) *infra
 }
 
 func (model Model) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
-	level := infra.Error
+	level := infra.ErrorAlertLevel
 	subject := fmt.Sprintf("Model %s failed with error: %v", model.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -1405,8 +1419,8 @@ func (model Model) CompareTestingScore(other *Model) bool {
 	return model.Spec.Objective.Compare(model.Status.TestScore, other.Status.TestScore)
 }
 
-func (model Model) GetStatus() interface{} {
-	return model.Status
+func (model Model) GetStatus() proto.Message {
+	return &model.Status
 }
 
 func (model Model) GetObservedGeneration() int64 {
@@ -1422,5 +1436,5 @@ func (model *Model) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (model *Model) SetStatus(status interface{}) {
-	model.Status = status.(ModelStatus)
+	model.Status = *status.(*ModelStatus)
 }

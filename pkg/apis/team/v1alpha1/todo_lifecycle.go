@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 
 	"github.com/metaprov/modelaapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
@@ -99,8 +100,8 @@ func (alert *Todo) MarkArchived() {
 	})
 }
 
-func (todo Todo) GetStatus() interface{} {
-	return todo.Status
+func (todo Todo) GetStatus() proto.Message {
+	return &todo.Status
 }
 
 func (todo Todo) GetObservedGeneration() int64 {
@@ -116,5 +117,5 @@ func (todo Todo) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (todo *Todo) SetStatus(status interface{}) {
-	todo.Status = status.(TodoStatus)
+	todo.Status = *status.(*TodoStatus)
 }

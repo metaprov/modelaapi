@@ -93,6 +93,11 @@ spec:
               output:
                 description: The output definition
                 properties:
+                  IncludeShapValues:
+                    default: false
+                    description: If true, SHAP values for each predicted row will
+                      be included as JSON as an additional column of the dataset
+                    type: boolean
                   action:
                     default: upsert
                     description: The update strategy for the dataset in the case that
@@ -119,7 +124,8 @@ spec:
                     default: false
                     description: If true, an additional column will be added to the
                       dataset which indicates if each predicted row was detected to
-                      be an outlier
+                      be an outlier. The predicting model must have been trained with
+                      an outlier model
                     type: boolean
                   format:
                     default: csv
@@ -258,17 +264,6 @@ spec:
                           which specifies the DataLocation
                         type: string
                     type: object
-                  postSQL:
-                    description: List of SQL statements to run after the prediction
-                      was performed
-                    items:
-                      type: string
-                    type: array
-                  xai:
-                    default: false
-                    description: If true, SHAP values for each predicted row will
-                      be included as JSON as an additional column of the dataset
-                    type: boolean
                 type: object
               owner:
                 default: no-one

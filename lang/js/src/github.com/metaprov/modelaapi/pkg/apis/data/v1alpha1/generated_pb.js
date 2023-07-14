@@ -402,7 +402,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -423,7 +423,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -10474,13 +10474,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.repeatedFields_ = [1];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -10512,7 +10505,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    presqlList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     format: (f = msg.getFormat()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec.toObject(includeInstance, f)
   };
@@ -10551,10 +10543,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.deseria
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addPresql(value);
-      break;
     case 2:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
@@ -10594,13 +10582,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPresqlList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      1,
-      f
-    );
-  }
   f = message.getLocation();
   if (f != null) {
     writer.writeMessage(
@@ -10617,43 +10598,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.seriali
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec.serializeBinaryToWriter
     );
   }
-};
-
-
-/**
- * repeated string preSQL = 1;
- * @return {!Array<string>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.getPresqlList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.setPresqlList = function(value) {
-  return jspb.Message.setField(this, 1, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.addPresql = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototype.clearPresqlList = function() {
-  return this.setPresqlList([]);
 };
 
 
@@ -10732,13 +10676,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataInputSpec.prototy
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.repeatedFields_ = [9];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -10776,9 +10713,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.toObje
     action: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     createtableifnotexist: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
     includefeatures: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
-    xai: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
-    detectoutliers: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
-    postsqlList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f
+    includeshapvalues: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
+    detectoutliers: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -10842,15 +10778,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.deseri
       break;
     case 7:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setXai(value);
+      msg.setIncludeshapvalues(value);
       break;
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDetectoutliers(value);
-      break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addPostsql(value);
       break;
     default:
       reader.skipField();
@@ -10935,13 +10867,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.serial
   if (f != null) {
     writer.writeBool(
       8,
-      f
-    );
-  }
-  f = message.getPostsqlList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      9,
       f
     );
   }
@@ -11166,10 +11091,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.protot
 
 
 /**
- * optional bool xai = 7;
+ * optional bool includeShapValues = 7;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.getXai = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.getIncludeshapvalues = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
@@ -11178,7 +11103,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.protot
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.setXai = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.setIncludeshapvalues = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -11187,7 +11112,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.clearXai = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.clearIncludeshapvalues = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -11196,7 +11121,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.hasXai = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.hasIncludeshapvalues = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
@@ -11234,43 +11159,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.hasDetectoutliers = function() {
   return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * repeated string postSQL = 9;
- * @return {!Array<string>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.getPostsqlList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.setPostsqlList = function(value) {
-  return jspb.Message.setField(this, 9, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.addPostsql = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.clearPostsqlList = function() {
-  return this.setPostsqlList([]);
 };
 
 
@@ -15430,7 +15318,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.toObj
     pb_public: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
     tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     gitlocation: (f = msg.getGitlocation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GitLocation.toObject(includeInstance, f),
-    imagelocation: (f = msg.getImagelocation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ImageLocation.toObject(includeInstance, f),
     cachebucketname: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     defaultlabname: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     defaultservingsitename: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
@@ -15499,11 +15386,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.deser
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GitLocation;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GitLocation.deserializeBinaryFromReader);
       msg.setGitlocation(value);
-      break;
-    case 5:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ImageLocation;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ImageLocation.deserializeBinaryFromReader);
-      msg.setImagelocation(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -15627,14 +15509,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.seria
       4,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GitLocation.serializeBinaryToWriter
-    );
-  }
-  f = message.getImagelocation();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ImageLocation.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 6));
@@ -15893,43 +15767,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.hasGitlocation = function() {
   return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional ImageLocation imageLocation = 5;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ImageLocation}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.getImagelocation = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ImageLocation} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ImageLocation, 5));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ImageLocation|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.setImagelocation = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.clearImagelocation = function() {
-  return this.setImagelocation(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.hasImagelocation = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 

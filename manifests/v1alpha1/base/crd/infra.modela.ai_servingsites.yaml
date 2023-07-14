@@ -32,8 +32,8 @@ spec:
     - jsonPath: .status.grpcIngressName
       name: GRPC Ingress
       type: string
-    - jsonPath: .status.restIngressName
-      name: REST Ingress
+    - jsonPath: .status.httpIngressName
+      name: HTTP Ingress
       type: string
     - jsonPath: .status.activePredictors
       name: Predictors
@@ -729,21 +729,15 @@ spec:
                 description: In the case of failure, the ServingSite resource controller
                   will set this field with a failure message
                 type: string
-              failureReason:
-                description: In the case of failure, the ServingSite resource controller
-                  will set this field with a failure reason
-                type: string
               grpcIngressName:
                 description: GrpcIngressName specifies the name of the Kubernetes
-                  Ingress resource which the ServingSite uses to define external access
-                  points for resources that accept GRPC-based traffic to their services
-                  (i.e. Predictors). This field is set only after one or more resources
-                  are created which use the Ingress access method. If there are no
-                  Ingress rules to serve then the Ingress will be destroyed
+                  Ingress resource which the Serving Site uses to define external
+                  access points for resources that accept GRPC-based traffic to their
+                  services (i.e. Predictors). This field is set only after one or
+                  more resources are created which use the Ingress access method.
+                  If there are no Ingress rules to serve then the Ingress will be
+                  destroyed
                 type: string
-              grpcIngressReady:
-                description: Store the status of the grpc ingress
-                type: boolean
               inactivePredictors:
                 description: The number of inactive (non-deployed) predictors
                 format: int32
@@ -754,17 +748,14 @@ spec:
                 format: int64
                 type: integer
               restIngressName:
-                description: RestIngressName specifies the name of the Kubernetes
-                  Ingress resource which the ServingSite uses to define external access
-                  points for resources that accept HTTP-based traffic to their services
-                  (i.e. DataApps). This field is set only after one or more resources
-                  are created which use the Ingress access method to serve REST traffic.
-                  If there are no Ingress rules to serve then the Ingress will be
-                  destroyed
+                description: HttpIngressName specifies the name of the Kubernetes
+                  Ingress resource which the Serving Site uses to define external
+                  access points for resources that accept HTTP-based traffic to their
+                  services (i.e. Data Apps). This field is set only after one or more
+                  resources are created which use the Ingress access method to serve
+                  HTTP traffic. If there are no Ingress rules to serve then the Ingress
+                  will be destroyed
                 type: string
-              restIngressReady:
-                description: Status of rest ingress.
-                type: boolean
               totalPredictorAccuracyFailed:
                 description: The number of predictors that have detected average inaccurate
                   results

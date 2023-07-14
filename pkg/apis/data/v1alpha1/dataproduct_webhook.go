@@ -27,15 +27,12 @@ func (product *DataProduct) Default() {
 		product.Spec.Owner = util.StrPtr("")
 	}
 
+	// TODO(liam): remove
 	if product.Spec.TenantRef == nil {
-		product.Spec.TenantRef = &v1.ObjectReference{Namespace: "modela-system", Name: "default-tenant"}
+		product.Spec.TenantRef = &v1.ObjectReference{Namespace: "modela-system", Name: "modela"}
 	}
 
 	product.Status.Conditions = make([]metav1.Condition, 0)
-	if product.Spec.ImageLocation.Name == nil {
-		product.Spec.ImageLocation.Name = util.StrPtr(product.Name)
-		product.Spec.ImageLocation.RegistryConnectionName = util.StrPtr("")
-	}
 }
 
 // validation

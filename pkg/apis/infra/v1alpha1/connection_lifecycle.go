@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
 	"github.com/metaprov/modelaapi/pkg/util"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -148,8 +149,8 @@ func (connection *Connection) GetIntOption(key string, defaultValue int) int {
 	return defaultValue
 }
 
-func (connection Connection) GetStatus() interface{} {
-	return connection.Status
+func (connection Connection) GetStatus() proto.Message {
+	return &connection.Status
 }
 
 func (connection Connection) GetObservedGeneration() int64 {
@@ -165,5 +166,5 @@ func (connection *Connection) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (connection *Connection) SetStatus(status interface{}) {
-	connection.Status = status.(ConnectionStatus)
+	connection.Status = *status.(*ConnectionStatus)
 }

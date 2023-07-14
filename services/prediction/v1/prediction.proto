@@ -80,7 +80,6 @@ message AbortPredictionResponse {
 }
 
 
-
 service PredictionService {
     rpc ListPredictions(ListPredictionsRequest) returns (ListPredictionsResponse) {
         option (google.api.http).get = "/v1/predictions/{namespace}";

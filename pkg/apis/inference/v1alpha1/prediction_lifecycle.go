@@ -2,6 +2,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 	strings "strings"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
@@ -107,21 +108,23 @@ func (prediction Prediction) Key() string {
 	return fmt.Sprintf("dataproducts/%s/predictions/%s", prediction.Namespace, prediction.Name)
 }
 
-func (prediction *Prediction) MarkFailed(msg string) {
+func (prediction *Prediction) MarkFailed(err string) {
 	prediction.CreateOrUpdateCond(metav1.Condition{
 		Type:    PredictionCompleted,
 		Status:  metav1.ConditionFalse,
 		Reason:  string(catalog.Failed),
-		Message: msg,
+		Message: err,
 	})
 	now := metav1.Now()
 	if prediction.Status.CompletedAt == nil {
 		prediction.Status.CompletedAt = &now
 	}
-	prediction.Status.FailureMessage = util.StrPtr(msg)
+
+	prediction.Status.Phase = PredictionPhaseFailed
+	prediction.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Prediction failed: %s", err))
+	prediction.Status.Runs.CreateRecord(0, prediction.Spec.Schedule.GetMaxRecords(), prediction.Status.FailureMessage)
 }
 
-// Mark Expired
 func (prediction *Prediction) MarkPending() {
 	prediction.CreateOrUpdateCond(metav1.Condition{
 		Type:   PredictionCompleted,
@@ -138,15 +141,6 @@ func (prediction *Prediction) MarkCreatingDataset() {
 		Reason: string(PredictionPhaseCreatingDataset),
 	})
 	prediction.Status.Phase = PredictionPhaseCreatingDataset
-}
-
-func (prediction *Prediction) MarkWaitingForDataset() {
-	prediction.CreateOrUpdateCond(metav1.Condition{
-		Type:   PredictionCompleted,
-		Status: metav1.ConditionFalse,
-		Reason: string(PredictionPhaseWaitingForDataset),
-	})
-	prediction.Status.Phase = PredictionPhaseWaitingForDataset
 }
 
 func (prediction *Prediction) MarkUnitTesting() {
@@ -178,29 +172,42 @@ func (prediction *Prediction) MarkCompleted() {
 	if prediction.Status.CompletedAt == nil {
 		prediction.Status.CompletedAt = &now
 	}
+
+	prediction.Status.Runs.CreateRecord(0, prediction.Spec.Schedule.GetMaxRecords(), nil)
 }
 
-func (prediction *Prediction) MarkUnitTestFailed(msg string) {
+func (prediction *Prediction) MarkUnitTestFailed(err string) {
 	prediction.CreateOrUpdateCond(metav1.Condition{
 		Type:    PredictionUnitTested,
 		Status:  metav1.ConditionFalse,
 		Reason:  string(PredictionPhaseFailed),
-		Message: "Failed to validate." + msg,
+		Message: err,
 	})
-
-}
-
-func (prediction Prediction) OpName() string {
-	return prediction.Namespace + "-" + prediction.Name
+	prediction.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Unit testing failed: %s", err))
+	prediction.Status.Runs.CreateRecord(0, prediction.Spec.Schedule.GetMaxRecords(), prediction.Status.FailureMessage)
 }
 
 func (prediction *Prediction) MarkRunning() {
 	prediction.CreateOrUpdateCond(metav1.Condition{
-		Type:   PredictionUnitTested,
+		Type:   PredictionCompleted,
 		Status: metav1.ConditionFalse,
 		Reason: string(catalog.Running),
 	})
 	prediction.Status.Phase = PredictionPhaseRunning
+}
+
+func (prediction Prediction) Aborted() bool {
+	return prediction.GetCond(PredictionAborted).Status == metav1.ConditionTrue
+}
+
+func (prediction *Prediction) MarkAborted() {
+	prediction.CreateOrUpdateCond(metav1.Condition{
+		Type:   PredictionAborted,
+		Status: metav1.ConditionTrue,
+		Reason: PredictionAborted,
+	})
+	prediction.Status.Phase = PredictionPhaseAborted
+	prediction.Status.Runs.CreateRecord(0, prediction.Spec.Schedule.GetMaxRecords(), util.StrPtr("Run aborted"))
 }
 
 func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
@@ -218,14 +225,9 @@ func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
 			},
 		},
 		Spec: data.DatasetSpec{
-			Owner:          prediction.Spec.Owner,
-			VersionName:    prediction.Spec.VersionName,
-			Origin:         *prediction.Spec.Input.Location,
-			DataSourceName: prediction.Spec.DataSourceRef.Name,
-			PredictorRef: v1.ObjectReference{
-				Name:      prediction.Spec.PredictorRef.Name,
-				Namespace: prediction.Spec.PredictorRef.Namespace,
-			},
+			Owner:                    prediction.Spec.Owner,
+			VersionName:              prediction.Spec.VersionName,
+			Origin:                   *prediction.Spec.Input.Location,
 			GenerateFeatureHistogram: util.BoolPtr(true),
 			Type:                     &datasettype,
 			Role:                     datasetrole,
@@ -246,8 +248,8 @@ func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
 // Model Alerts
 
 func (prediction Prediction) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
-	level := infra.Info
-	subject := fmt.Sprintf("BatchPrediction %s completed successfully", prediction.Name)
+	level := infra.InfoAlertLevel
+	subject := fmt.Sprintf("Prediction %s completed successfully", prediction.Name)
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: prediction.Name,
@@ -257,7 +259,7 @@ func (prediction Prediction) CompletionAlert(notification catalog.NotificationSp
 			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
-				Kind:      "BatchPrediction",
+				Kind:      "Prediction",
 				Name:      prediction.Name,
 				Namespace: prediction.Namespace,
 			},
@@ -265,6 +267,7 @@ func (prediction Prediction) CompletionAlert(notification catalog.NotificationSp
 			Owner:        prediction.Spec.Owner,
 			Fields: map[string]string{
 				"Start Time": prediction.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Rows":       fmt.Sprint(prediction.Status.Rows),
 			},
 		},
 	}
@@ -275,7 +278,7 @@ func (prediction Prediction) CompletionAlert(notification catalog.NotificationSp
 }
 
 func (prediction Prediction) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
-	level := infra.Error
+	level := infra.ErrorAlertLevel
 	subject := fmt.Sprintf("Prediction %s failed with error: %v", prediction.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -286,7 +289,7 @@ func (prediction Prediction) ErrorAlert(notification catalog.NotificationSpec, e
 			Subject: subject,
 			Level:   &level,
 			EntityRef: v1.ObjectReference{
-				Kind:      "BatchPrediction",
+				Kind:      "Prediction",
 				Name:      prediction.Name,
 				Namespace: prediction.Namespace,
 			},
@@ -313,16 +316,14 @@ func (prediction *Prediction) RunStatus() *catalog.LastRunStatus {
 	result := &catalog.LastRunStatus{
 		CompletedAt:    prediction.Status.CompletedAt,
 		Duration:       int32(prediction.Status.CompletedAt.Unix() - prediction.CreationTimestamp.Unix()),
-		FailureReason:  prediction.Status.FailureReason,
 		FailureMessage: prediction.Status.FailureMessage,
 	}
 	result.Status = string(prediction.Status.Phase)
 	return result
-
 }
 
 func (prediction *Prediction) DriftAlert(tenantRef *v1.ObjectReference, notifierName *string, columns []string) *infra.Alert {
-	level := infra.Error
+	level := infra.ErrorAlertLevel
 	subject := fmt.Sprintf("drift detected")
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -345,8 +346,8 @@ func (prediction *Prediction) DriftAlert(tenantRef *v1.ObjectReference, notifier
 	}
 }
 
-func (prediction Prediction) GetStatus() interface{} {
-	return prediction.Status
+func (prediction Prediction) GetStatus() proto.Message {
+	return &prediction.Status
 }
 
 func (prediction Prediction) GetObservedGeneration() int64 {
@@ -362,5 +363,5 @@ func (prediction *Prediction) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (prediction *Prediction) SetStatus(status interface{}) {
-	prediction.Status = status.(PredictionStatus)
+	prediction.Status = *status.(*PredictionStatus)
 }

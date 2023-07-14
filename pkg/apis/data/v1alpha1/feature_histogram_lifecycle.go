@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 	"strings"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
@@ -287,7 +288,7 @@ func (fh *FeatureHistogram) MarkFailed(msg string) {
 }
 
 func (fh FeatureHistogram) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
-	level := infra.Error
+	level := infra.ErrorAlertLevel
 	subject := fmt.Sprintf("Feature Histogram %s failed with error: %v", fh.Name, err.Error())
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -310,7 +311,7 @@ func (fh FeatureHistogram) ErrorAlert(notification catalog.NotificationSpec, err
 }
 
 func (fh FeatureHistogram) DriftAlert(tenantRef *v1.ObjectReference, notifierName *string, columns []string) *infra.Alert {
-	level := infra.Error
+	level := infra.ErrorAlertLevel
 	subject := fmt.Sprintf("drift detected")
 	return &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -393,8 +394,8 @@ func (fh *FeatureHistogram) Expired() bool {
 	return fh.Spec.End.Before(&now)
 }
 
-func (featurehistogram FeatureHistogram) GetStatus() interface{} {
-	return featurehistogram.Status
+func (featurehistogram FeatureHistogram) GetStatus() proto.Message {
+	return &featurehistogram.Status
 }
 
 func (featurehistogram FeatureHistogram) GetObservedGeneration() int64 {
@@ -410,5 +411,5 @@ func (featurehistogram *FeatureHistogram) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (featurehistogram *FeatureHistogram) SetStatus(status interface{}) {
-	featurehistogram.Status = status.(FeatureHistogramStatus)
+	featurehistogram.Status = *status.(*FeatureHistogramStatus)
 }

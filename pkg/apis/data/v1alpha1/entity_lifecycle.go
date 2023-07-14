@@ -12,6 +12,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 	"github.com/metaprov/modelaapi/pkg/apis/common"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -132,8 +133,8 @@ func (entity *Entity) MarkReady() {
 	})
 }
 
-func (entity Entity) GetStatus() interface{} {
-	return entity.Status
+func (entity Entity) GetStatus() proto.Message {
+	return &entity.Status
 }
 
 func (entity Entity) GetObservedGeneration() int64 {
@@ -149,5 +150,5 @@ func (entity Entity) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (entity *Entity) SetStatus(status interface{}) {
-	entity.Status = status.(EntityStatus)
+	entity.Status = *status.(*EntityStatus)
 }

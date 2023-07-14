@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 	"time"
 
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
@@ -118,8 +119,8 @@ func (license *License) MarkValid() {
 	})
 }
 
-func (license License) GetStatus() interface{} {
-	return license.Status
+func (license License) GetStatus() proto.Message {
+	return &license.Status
 }
 
 func (license License) GetObservedGeneration() int64 {
@@ -135,5 +136,5 @@ func (license *License) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (license *License) SetStatus(status interface{}) {
-	license.Status = status.(LicenseStatus)
+	license.Status = *status.(*LicenseStatus)
 }

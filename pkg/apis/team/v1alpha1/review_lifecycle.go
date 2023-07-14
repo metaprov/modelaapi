@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 
 	team "github.com/metaprov/modelaapi/pkg/apis/team"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -130,8 +131,8 @@ func (conv *Review) Archived() bool {
 	return conv.GetCond(ReviewSaved).Status == corev1.ConditionTrue
 }
 
-func (review Review) GetStatus() interface{} {
-	return review.Status
+func (review Review) GetStatus() proto.Message {
+	return &review.Status
 }
 
 func (review Review) GetObservedGeneration() int64 {
@@ -147,5 +148,5 @@ func (review Review) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (review *Review) SetStatus(status interface{}) {
-	review.Status = status.(ReviewStatus)
+	review.Status = *status.(*ReviewStatus)
 }

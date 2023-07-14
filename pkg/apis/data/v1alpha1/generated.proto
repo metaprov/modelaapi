@@ -645,12 +645,7 @@ message CsvFileSpec {
 
 // DataInputSpec specifies the format and location of an input dataset
 message DataInputSpec {
-  // List of SQL statements to run before performing the prediction
-  // +kubebuilder:validation:Optional
-  repeated string preSQL = 1;
-
-  // The physical location of the observation file.
-  // the location can point to a database.
+  // The location where the dataset is stored
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation location = 2;
 
@@ -697,17 +692,13 @@ message DataOutputSpec {
   // If true, SHAP values for each predicted row will be included as JSON as an additional column of the dataset
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool xai = 7;
+  optional bool includeShapValues = 7;
 
-  // If true, an additional column will be added to the dataset which
-  // indicates if each predicted row was detected to be an outlier
+  // If true, an additional column will be added to the dataset which indicates if each predicted row was detected
+  // to be an outlier. The predicting model must have been trained with an outlier model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool detectOutliers = 8;
-
-  // List of SQL statements to run after the prediction was performed
-  // +kubebuilder:validation:Optional
-  repeated string postSQL = 9;
 }
 
 // +kubebuilder:object:root=true
@@ -1028,10 +1019,6 @@ message DataProductSpec {
   // +kubebuilder:validation:Optional
   optional GitLocation gitLocation = 4;
 
-  // ImageLocation specifies the default Docker image repository where images produced under the Data Product will be stored
-  // +kubebuilder:validation:Optional
-  optional ImageLocation imageLocation = 5;
-
   // CacheBucketName specifies the name of the Virtual Bucket which workloads for resources under the Data Product
   // will use internally for caching workloads. Setting CacheBucketName to a valid Virtual Bucket is highly
   // recommended for stability and performance
@@ -1039,13 +1026,15 @@ message DataProductSpec {
   // +required
   optional string cacheBucketName = 6;
 
-  // The name of the Lab that will be used by default with all compute-requiring child resources
+  // The name of the Lab which will be used by all training and data-related workloads, in the case
+  // that the resource creating the workload does not specify a Lab
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Optional
   optional string defaultLabName = 7;
 
-  // The name of the Serving Site which will be used by default with all Predictor resources
+  // The name of the Serving Site which will be used by all inference-related workloads, in the case
+  // that the resource creating the workload does not specify a Serving Site
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
@@ -1570,8 +1559,8 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional bool featurize = 25;
 
-  // The reference to the Lab under which Jobs created by the Dataset will be executed. If empty, it will default to
-  // the default Lab of the Data Product of the Dataset.
+  // The reference to the Lab under which Jobs created by the Dataset will be executed.
+  // If empty, it will default to the default Lab of the Data Product for the Dataset
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference labRef = 26;
 

@@ -1069,8 +1069,8 @@ spec:
                     be routed to the model
                   properties:
                     approvedBy:
-                      description: The name of the account which approved the model,
-                        if applicable
+                      description: The reference to the account which approved the
+                        model, if applicable
                       properties:
                         apiVersion:
                           description: API version of the referent.
@@ -1157,7 +1157,14 @@ spec:
                       type: integer
                     role:
                       default: live
-                      description: Role denotes the role of this model
+                      description: Role denotes the role of the model, which can be
+                        either live or shadow. When a model is deployed as a live
+                        model, prediction requests will be served by the model. The
+                        chance that the prediction request will be forwarded to the
+                        model is determined by Traffic. When a model is deployed as
+                        a shadow model, the model will still receive and log prediction
+                        requests and results but will not have the result sent back
+                        the Predictor
                       enum:
                       - live
                       - shadow

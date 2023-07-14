@@ -1060,11 +1060,6 @@ export namespace CsvFileSpec {
 }
 
 export class DataInputSpec extends jspb.Message {
-  getPresqlList(): Array<string>;
-  setPresqlList(value: Array<string>): DataInputSpec;
-  clearPresqlList(): DataInputSpec;
-  addPresql(value: string, index?: number): DataInputSpec;
-
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): DataInputSpec;
   hasLocation(): boolean;
@@ -1085,7 +1080,6 @@ export class DataInputSpec extends jspb.Message {
 
 export namespace DataInputSpec {
   export type AsObject = {
-    presqlList: Array<string>,
     location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
     format?: FlatFileFormatSpec.AsObject,
   }
@@ -1122,20 +1116,15 @@ export class DataOutputSpec extends jspb.Message {
   hasIncludefeatures(): boolean;
   clearIncludefeatures(): DataOutputSpec;
 
-  getXai(): boolean;
-  setXai(value: boolean): DataOutputSpec;
-  hasXai(): boolean;
-  clearXai(): DataOutputSpec;
+  getIncludeshapvalues(): boolean;
+  setIncludeshapvalues(value: boolean): DataOutputSpec;
+  hasIncludeshapvalues(): boolean;
+  clearIncludeshapvalues(): DataOutputSpec;
 
   getDetectoutliers(): boolean;
   setDetectoutliers(value: boolean): DataOutputSpec;
   hasDetectoutliers(): boolean;
   clearDetectoutliers(): DataOutputSpec;
-
-  getPostsqlList(): Array<string>;
-  setPostsqlList(value: Array<string>): DataOutputSpec;
-  clearPostsqlList(): DataOutputSpec;
-  addPostsql(value: string, index?: number): DataOutputSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataOutputSpec.AsObject;
@@ -1153,9 +1142,8 @@ export namespace DataOutputSpec {
     action?: string,
     createtableifnotexist?: boolean,
     includefeatures?: boolean,
-    xai?: boolean,
+    includeshapvalues?: boolean,
     detectoutliers?: boolean,
-    postsqlList: Array<string>,
   }
 }
 
@@ -1692,11 +1680,6 @@ export class DataProductSpec extends jspb.Message {
   hasGitlocation(): boolean;
   clearGitlocation(): DataProductSpec;
 
-  getImagelocation(): ImageLocation | undefined;
-  setImagelocation(value?: ImageLocation): DataProductSpec;
-  hasImagelocation(): boolean;
-  clearImagelocation(): DataProductSpec;
-
   getCachebucketname(): string;
   setCachebucketname(value: string): DataProductSpec;
   hasCachebucketname(): boolean;
@@ -1786,7 +1769,6 @@ export namespace DataProductSpec {
     pb_public?: boolean,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     gitlocation?: GitLocation.AsObject,
-    imagelocation?: ImageLocation.AsObject,
     cachebucketname?: string,
     defaultlabname?: string,
     defaultservingsitename?: string,

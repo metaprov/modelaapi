@@ -56,12 +56,7 @@ type RuleSpec struct {
 	Verbs []common.VerbName `json:"verbs,omitempty" protobuf:"bytes,2,rep,name=verbs"`
 }
 
-func (role *UserRoleClass) Allow(
-	action common.VerbName,
-	resource common.KindName,
-	subject string,
-	ns string,
-	name string) bool {
+func (role *UserRoleClass) Allow(action common.VerbName, resource common.KindName) bool {
 	for _, v := range role.Spec.Rules {
 		if resource == v.Resource {
 			for _, verb := range v.Verbs {

@@ -67,62 +67,22 @@ spec:
           spec:
             description: PredictionSpec represent the desired state of Prediction
             properties:
-              aborted:
+              abort:
                 default: false
-                description: Indicates if the Prediction was aborted and should stop
-                  execution
+                description: If true, all workloads created by the Prediction will
+                  be removed and the Prediction will no longer be reconciled
                 type: boolean
               activeDeadlineSeconds:
                 default: 600
-                description: The deadline for the batch prediction Job to be completed
-                  in seconds
+                description: The deadline for any Jobs associated with the Prediction
+                  to be completed in seconds
                 format: int64
                 minimum: 0
                 type: integer
               createDataset:
                 default: false
-                description: If true create output dataset
-                type: boolean
-              dataSourceRef:
-                description: A reference to the input data source ref
-                properties:
-                  apiVersion:
-                    description: API version of the referent.
-                    type: string
-                  fieldPath:
-                    description: 'If referring to a piece of an object instead of
-                      an entire object, this string should contain a valid JSON/Go
-                      field access statement, such as desiredState.manifest.containers[2].
-                      For example, if the object reference is to a container within
-                      a pod, this would take on a value like: "spec.containers{name}"
-                      (where "name" refers to the name of the container that triggered
-                      the event) or if no container name is specified "spec.containers[2]"
-                      (container with index 2 in this pod). This syntax is chosen
-                      only to have some well-defined way of referencing a part of
-                      an object. TODO: this design is not final and this field is
-                      subject to change in the future.'
-                    type: string
-                  kind:
-                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                    type: string
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                    type: string
-                  namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                    type: string
-                  resourceVersion:
-                    description: 'Specific resourceVersion to which this reference
-                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                    type: string
-                  uid:
-                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                    type: string
-                type: object
-                x-kubernetes-map-type: atomic
-              forecast:
-                default: false
-                description: Indicates if the prediction is a forecast
+                description: If true, a feedback dataset is created containing the
+                  prediction data and results
                 type: boolean
               forecastSpec:
                 description: The forecasting specification in the case that the predicted
@@ -163,8 +123,7 @@ spec:
                     type: object
                 type: object
               input:
-                description: Output specifies the location where the predicted dataset
-                  will be stored
+                description: Input specifies the location of the prediction dataset
                 properties:
                   format:
                     description: The file format of the input file, if applicable
@@ -336,8 +295,7 @@ spec:
                         type: object
                     type: object
                   location:
-                    description: The physical location of the observation file. the
-                      location can point to a database.
+                    description: The location where the dataset is stored
                     properties:
                       bucket:
                         default: ""
@@ -449,28 +407,65 @@ spec:
                           which specifies the DataLocation
                         type: string
                     type: object
-                  preSQL:
-                    description: List of SQL statements to run before performing the
-                      prediction
-                    items:
-                      type: string
-                    type: array
                 type: object
               labeled:
                 default: false
-                description: If true, measurements for the metrics specified by the
-                  `Tests` field will be computed for each prediction and stored in
-                  the Prediction's status with the average result of all predictions
-                  Used usually for unit testing
+                description: Labeled indicates if the input dataset is labeled, in
+                  which case a batch prediction workload will not be created. If enabled,
+                  a workload will be created to compute the metrics of the model based
+                  on the labeled dataset and run the tests specified by UnitTests
                 type: boolean
               modelClassName:
-                description: ModelClassName referencesa the name of the Model Class
+                description: ModelClassName references the name of the Model Class
                   that created the resource, if applicable
                 type: string
+              modelRef:
+                description: The reference to the Model which will be served during
+                  the batch prediction workload
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+                x-kubernetes-map-type: atomic
               output:
-                description: Output specifies the location where the predicted dataset
+                description: Output specifies the location where the prediction results
                   will be stored
                 properties:
+                  IncludeShapValues:
+                    default: false
+                    description: If true, SHAP values for each predicted row will
+                      be included as JSON as an additional column of the dataset
+                    type: boolean
                   action:
                     default: upsert
                     description: The update strategy for the dataset in the case that
@@ -497,7 +492,8 @@ spec:
                     default: false
                     description: If true, an additional column will be added to the
                       dataset which indicates if each predicted row was detected to
-                      be an outlier
+                      be an outlier. The predicting model must have been trained with
+                      an outlier model
                     type: boolean
                   format:
                     default: csv
@@ -636,17 +632,6 @@ spec:
                           which specifies the DataLocation
                         type: string
                     type: object
-                  postSQL:
-                    description: List of SQL statements to run after the prediction
-                      was performed
-                    items:
-                      type: string
-                    type: array
-                  xai:
-                    default: false
-                    description: If true, SHAP values for each predicted row will
-                      be included as JSON as an additional column of the dataset
-                    type: boolean
                 type: object
               owner:
                 default: no-one
@@ -654,65 +639,14 @@ spec:
                   exists in the same tenant as the object
                 type: string
               partitionLocation:
-                description: Locations for group forecasts
                 properties:
                   groupForecastFile:
                     description: The folder of group data
                     type: string
                 type: object
-              predictorRef:
-                description: PredictorRef is the name of the Predictor resource that
-                  will be used to evaluate predictions for the unlabeled input dataset.
-                  The Predictor must exist in the same Data Product namespace as the
-                  resource
-                properties:
-                  apiVersion:
-                    description: API version of the referent.
-                    type: string
-                  fieldPath:
-                    description: 'If referring to a piece of an object instead of
-                      an entire object, this string should contain a valid JSON/Go
-                      field access statement, such as desiredState.manifest.containers[2].
-                      For example, if the object reference is to a container within
-                      a pod, this would take on a value like: "spec.containers{name}"
-                      (where "name" refers to the name of the container that triggered
-                      the event) or if no container name is specified "spec.containers[2]"
-                      (container with index 2 in this pod). This syntax is chosen
-                      only to have some well-defined way of referencing a part of
-                      an object. TODO: this design is not final and this field is
-                      subject to change in the future.'
-                    type: string
-                  kind:
-                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                    type: string
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                    type: string
-                  namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                    type: string
-                  resourceVersion:
-                    description: 'Specific resourceVersion to which this reference
-                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                    type: string
-                  uid:
-                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                    type: string
-                type: object
-                x-kubernetes-map-type: atomic
-              priority:
-                default: medium
-                description: The priority of the Kubernetes Job created by the Prediction
-                  (medium, by default)
-                enum:
-                - low
-                - medium
-                - high
-                - urgent
-                type: string
               resources:
-                description: Resources specifies the resource requirements that will
-                  be allocated to the batch prediction Job
+                description: Resources specifies the resource requirements allocated
+                  to the batch prediction workload
                 properties:
                   custom:
                     default: false
@@ -753,9 +687,46 @@ spec:
                       over custom requirements
                     type: string
                 type: object
-              servingsiteRef:
-                description: The reference to the ServingSite resource that hosts
-                  the Prediction
+              schedule:
+                description: Schedule specifies the schedule for the Prediction to
+                  be executed
+                properties:
+                  cron:
+                    description: The cron string for the schedule, applicable if the
+                      trigger type is Cron. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                      for more information
+                    type: string
+                  enabled:
+                    default: false
+                    description: Enabled indicates if the schedule is enabled. When
+                      enabled, a CronJob will be created which when triggered will
+                      initiate the regeneration of the resource that specifies the
+                      schedule
+                    type: boolean
+                  maxRecords:
+                    default: 10
+                    description: The number of historical run records that the resource
+                      will maintain
+                    format: int32
+                    type: integer
+                  type:
+                    description: The type of schedule, which can be a frequency interval
+                      or a cron expression
+                    enum:
+                    - now
+                    - once
+                    - hourly
+                    - daily
+                    - weekly
+                    - monthly
+                    - yearly
+                    - cron
+                    type: string
+                type: object
+              servingSiteRef:
+                description: The reference to the Serving Site under which Jobs created
+                  by the Prediction will be executed. If empty, it will default to
+                  the default Serving Site of the Data Product for the Prediction
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -791,16 +762,7 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
-              ttl:
-                default: 0
-                description: The time-to-live of the Prediction, after which the Prediction
-                  will be archived
-                format: int32
-                type: integer
               unitTests:
-                description: Tests specifies a collection of metrics that will be
-                  computed for each prediction if the Labeled field of the Prediction
-                  is enabled
                 properties:
                   baselineModelRef:
                     description: Baseline Model Ref specifies a previous model to
@@ -879,7 +841,6 @@ spec:
                     type: object
                     x-kubernetes-map-type: atomic
                   unitTests:
-                    description: Define the column name for the validation role
                     properties:
                       enabled:
                         description: If false, this test case is disabled
@@ -1095,172 +1056,11 @@ spec:
                 type: object
               versionName:
                 default: ""
-                description: VersionName references the name of a Data Product Version
-                  that describes the version of the resource
                 type: string
-              workers:
-                default: 1
-                description: In case of batch prediction, how many workers.
-                format: int32
-                type: integer
             type: object
           status:
             description: PredictionStatus is the observed state of a Prediction
             properties:
-              columns:
-                description: The histogram values, map from column name to an histogram
-                items:
-                  properties:
-                    drift:
-                      description: true if drift was detected for this column
-                      type: boolean
-                    histogram:
-                      description: Measure of drift for a column
-                      properties:
-                        bins:
-                          description: The bins if the histogram describes continous
-                            variables
-                          items:
-                            type: number
-                          type: array
-                        categories:
-                          description: The name of the categories, one per bin if
-                            this is a categorical histogram
-                          items:
-                            type: string
-                          type: array
-                        counts:
-                          description: The set of values per bin
-                          items:
-                            type: number
-                          type: array
-                        invalid:
-                          description: The number of invalid values
-                          format: int32
-                          minimum: 0
-                          type: integer
-                        missing:
-                          description: The number of missing values
-                          format: int32
-                          minimum: 0
-                          type: integer
-                      type: object
-                    metrics:
-                      description: Measure of drift for this column
-                      items:
-                        description: Measurement is a value for a specific metric
-                        properties:
-                          algorithm:
-                            description: The name of the algorithm that generated
-                              this measurment
-                            type: string
-                          boolQty:
-                            description: If the metric refer to a bool unit, store
-                              the bool value
-                            type: boolean
-                          category:
-                            description: If the metric refer to categorical measure,store
-                              the category.
-                            type: string
-                          column:
-                            type: string
-                          entity:
-                            description: 'ObjectReference contains enough information
-                              to let you inspect or modify the referred object. ---
-                              New uses of this type are discouraged because of difficulty
-                              describing its usage when embedded in APIs. 1. Ignored
-                              fields.  It includes many fields which are not generally
-                              honored.  For instance, ResourceVersion and FieldPath
-                              are both very rarely valid in actual usage. 2. Invalid
-                              usage help.  It is impossible to add specific help for
-                              individual usage.  In most embedded usages, there are
-                              particular restrictions like, "must refer only to types
-                              A and B" or "UID not honored" or "name must be restricted".
-                              Those cannot be well described when embedded. 3. Inconsistent
-                              validation.  Because the usages are different, the validation
-                              rules are different by usage, which makes it hard for
-                              users to predict what will happen. 4. The fields are
-                              both imprecise and overly precise.  Kind is not a precise
-                              mapping to a URL. This can produce ambiguity during
-                              interpretation and require a REST mapping.  In most
-                              cases, the dependency is on the group,resource tuple
-                              and the version of the actual struct is irrelevant.
-                              5. We cannot easily change it.  Because this type is
-                              embedded in many locations, updates to this type will
-                              affect numerous schemas.  Don''t make new APIs embed
-                              an underspecified API type they do not control. Instead
-                              of using this type, create a locally provided and used
-                              type that is well-focused on your reference. For example,
-                              ServiceReferences for admission registration: https://github.com/kubernetes/api/blob/release-1.17/admissionregistration/v1/types.go#L533
-                              .'
-                            properties:
-                              apiVersion:
-                                description: API version of the referent.
-                                type: string
-                              fieldPath:
-                                description: 'If referring to a piece of an object
-                                  instead of an entire object, this string should
-                                  contain a valid JSON/Go field access statement,
-                                  such as desiredState.manifest.containers[2]. For
-                                  example, if the object reference is to a container
-                                  within a pod, this would take on a value like: "spec.containers{name}"
-                                  (where "name" refers to the name of the container
-                                  that triggered the event) or if no container name
-                                  is specified "spec.containers[2]" (container with
-                                  index 2 in this pod). This syntax is chosen only
-                                  to have some well-defined way of referencing a part
-                                  of an object. TODO: this design is not final and
-                                  this field is subject to change in the future.'
-                                type: string
-                              kind:
-                                description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                                type: string
-                              name:
-                                description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                                type: string
-                              namespace:
-                                description: 'Namespace of the referent. More info:
-                                  https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                                type: string
-                              resourceVersion:
-                                description: 'Specific resourceVersion to which this
-                                  reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                                type: string
-                              uid:
-                                description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                                type: string
-                            type: object
-                            x-kubernetes-map-type: atomic
-                          metric:
-                            description: The metric type name (e.g. F1 / Accuracy)
-                            type: string
-                          stddev:
-                            description: Metric standard diviation for quantative
-                              observations.
-                            type: number
-                          taskType:
-                            description: The measurment task type (e.g. train, test,
-                              cv, feature)
-                            type: string
-                          timePoint:
-                            description: The Time when the observation was taken
-                            format: date-time
-                            type: string
-                          value:
-                            description: The value of the metric for quantitive observations
-                            type: number
-                          valueSet:
-                            description: Capture a set of values.
-                            items:
-                              type: string
-                            type: array
-                        type: object
-                      type: array
-                    name:
-                      description: The name of the column
-                      type: string
-                  type: object
-                type: array
               completedAt:
                 description: CompletedAt denotes the time when the batch prediction
                   Job completed or failed
@@ -1335,7 +1135,7 @@ spec:
                   type: object
                 type: array
               datasetRef:
-                description: The dataset that was generated.
+                description: The reference to the Dataset that was generated
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -1371,19 +1171,12 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
-              drifted:
-                description: Set to true if drifted
-                type: boolean
               failureMessage:
                 description: In the case of failure, the Prediction resource controller
                   will set this field with a failure message
                 type: string
-              failureReason:
-                description: In the case of failure, the Prediction resource controller
-                  will set this field with a failure reason
-                type: string
               forecast:
-                description: the forecast results for this forecast
+                description: Forecast contains the forecast results for the prediction
                 properties:
                   failed:
                     description: Mark forecast as a failure.
@@ -1463,20 +1256,91 @@ spec:
                 description: The number of rows predicted
                 format: int32
                 type: integer
-              triggeredBy:
-                description: The trigger that started the batch prediction
-                enum:
-                - on-demand
-                - on-schedule
-                - on-new-data
-                - on-github-event
-                - on-concept-drift
-                - on-perf-degradation
-                type: string
+              runs:
+                properties:
+                  activeRunId:
+                    description: The unique ID of the currently active run
+                    type: string
+                  lastFailureMessage:
+                    description: The logs of the currently active run
+                    items:
+                      description: ContainerLog describes the location of logs for
+                        a single Job
+                      properties:
+                        bucket:
+                          description: The bucket the log was stored in
+                          type: string
+                        container:
+                          description: The container name
+                          type: string
+                        job:
+                          description: The name of the Job
+                          type: string
+                        key:
+                          description: The path to the log in the bucket
+                          type: string
+                      type: object
+                    type: array
+                  lastRunAt:
+                    description: Last time the job started
+                    format: date-time
+                    type: string
+                  lastRunId:
+                    description: The unique ID of the last run created by the schedule.
+                    type: string
+                  runRecords:
+                    description: RunRecords contains the collection of previously
+                      recorded runs
+                    items:
+                      properties:
+                        completedAt:
+                          description: CompletedAt specifies the time at which the
+                            run was completed
+                          format: date-time
+                          type: string
+                        failureMessage:
+                          description: FailureMessage contains the failure produced
+                            by the run, if applicable
+                          type: string
+                        id:
+                          description: ID specifies the unique ID or resource name
+                            for the run
+                          type: string
+                        logs:
+                          description: Logs contains the logs for all workloads produced
+                            by the run
+                          items:
+                            description: ContainerLog describes the location of logs
+                              for a single Job
+                            properties:
+                              bucket:
+                                description: The bucket the log was stored in
+                                type: string
+                              container:
+                                description: The container name
+                                type: string
+                              job:
+                                description: The name of the Job
+                                type: string
+                              key:
+                                description: The path to the log in the bucket
+                                type: string
+                            type: object
+                          type: array
+                        resourceVersion:
+                          description: ResourceVersion specifies the version of the
+                            resource relevant to the run at the time of completion
+                          format: int32
+                          type: integer
+                        startedAt:
+                          description: StartedAt specifies the time at which the run
+                            started
+                          format: date-time
+                          type: string
+                      type: object
+                    type: array
+                type: object
               unitTestsResult:
-                description: The collection of metrics that represent the average
-                  measurement across all predictions for each metric specified by
-                  the Tests field of the Predictor
                 properties:
                   completedAt:
                     description: Stop time of running the suite.
@@ -1674,7 +1538,7 @@ spec:
                 format: date-time
                 type: string
               usage:
-                description: The status of the model, when deploying via the stages
+                description: Store resource consumption for a task
                 properties:
                   cpu:
                     format: int64

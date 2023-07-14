@@ -2839,11 +2839,6 @@ func (in *ServingSpec) DeepCopyInto(out *ServingSpec) {
 	}
 	in.Resources.DeepCopyInto(&out.Resources)
 	out.ServingSiteRef = in.ServingSiteRef
-	if in.Online != nil {
-		in, out := &in.Online, &out.Online
-		*out = new(bool)
-		**out = **in
-	}
 	if in.Dashboard != nil {
 		in, out := &in.Dashboard, &out.Dashboard
 		*out = new(bool)

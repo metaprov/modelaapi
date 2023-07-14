@@ -1391,12 +1391,12 @@ spec:
                             type: integer
                         type: object
                       approvedAt:
-                        description: ApprovedAt indicates the time of approval
+                        description: ApprovedAt indicates the time of manual approval
                         format: date-time
                         type: string
                       approvedBy:
-                        description: ApprovedBy indicates the account that approve
-                          this model.
+                        description: ApprovedBy indicates the account that approved
+                          the model
                         properties:
                           apiVersion:
                             description: API version of the referent.
@@ -1435,25 +1435,25 @@ spec:
                         x-kubernetes-map-type: atomic
                       dashboard:
                         default: false
-                        description: Create A DataApp, and enable dashboard access
-                          to the model
+                        description: Dashboard indicates if a Data App will be created
+                          for the Model
                         type: boolean
                       enabled:
                         default: false
-                        description: If true, deploy the model if it is ready. The
-                          model is deployed to the serving site
-                        type: boolean
-                      online:
-                        default: true
-                        description: Create an online predictor to host the model
-                          and enable real time ML.
+                        description: Enabled indicates if automatic model serving
+                          is enabled. If false or unspecified, the Study or Model
+                          Class managing the model will not create or update serving
+                          resources for the Model
                         type: boolean
                       predictorName:
-                        description: The name of the predictor if exist to update.
+                        description: PredictorName specifies the name of a Predictor
+                          to create or update. If unspecified, a live Predictor will
+                          not be created for the model
                         type: string
                       promotion:
                         default: none
-                        description: Define the promotion policy of a new model
+                        description: Promotion specifies the promotion policy for
+                          the Predictor
                         enum:
                         - manual
                         - best
@@ -1462,15 +1462,13 @@ spec:
                         type: string
                       replicas:
                         default: 1
-                        description: The number of replicas for the Kubernetes Serving
-                          associated with the Predictor, which will instantiate multiple
-                          copies of the service in the case that automatic scaling
-                          is disabled
+                        description: Replicas specifies the number of replicas that
+                          will be created for the Predictor
                         format: int32
                         type: integer
                       resources:
-                        description: ResourceSpec specifies the resources that will
-                          be allocated to a workload
+                        description: Resources specifies the resources that will be
+                          allocated to the Predictor
                         properties:
                           custom:
                             default: false
@@ -1513,9 +1511,8 @@ spec:
                             type: string
                         type: object
                       servingSiteRef:
-                        description: The reference to the serving site, where online
-                          predictor will be served. If unspecified, the default Serving
-                          Site from the Data Product will be used
+                        description: The reference to the Serving Site under which
+                          serving resources will be created
                         properties:
                           apiVersion:
                             description: API version of the referent.

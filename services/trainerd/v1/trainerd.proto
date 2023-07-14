@@ -22,7 +22,6 @@ service TrainerdService {
 
 message TrainRequest {
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
   github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 4;
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 5;
@@ -44,34 +43,10 @@ message TrainResponse {
   map<string, float> impurityFeatureImportance = 11;
 }
 
-
-/////////////////////// compile model
-
-message CompileRequest {
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
-  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 4;
-  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 5;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 6;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 7;
-}
-
-message CompileResponse {
-  // The location in the bucket of the trained bin model
-  string compiledModelUri = 1;
-
-}
-
-
-
-
 //////////////////////////////////// Train
-// Do a full training on the testing set, and validate on the test set.
 
 message TestRequest {
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
   github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 5;
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 6;
@@ -95,7 +70,6 @@ message TestResponse {
 
 message TrainDriftDetectorRequest  {
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
   github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
   // the spec for the base models
   repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model base = 5;
@@ -108,7 +82,6 @@ message TrainDriftDetectorRequest  {
 
 message ForecastRequest {
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
   github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 5;
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 6;
@@ -125,7 +98,6 @@ message ShutdownResponse {}
 
 message ExplainRequest {
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
   github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 5;
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 6;

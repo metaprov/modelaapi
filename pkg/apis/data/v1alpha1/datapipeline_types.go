@@ -120,11 +120,7 @@ type DataPipelineStatus struct {
 
 // DataInputSpec specifies the format and location of an input dataset
 type DataInputSpec struct {
-	// List of SQL statements to run before performing the prediction
-	// +kubebuilder:validation:Optional
-	PreSQL []string `json:"preSQL,omitempty" protobuf:"bytes,1,opt,name=preSQL"`
-	// The physical location of the observation file.
-	// the location can point to a database.
+	// The location where the dataset is stored
 	// +kubebuilder:validation:Optional
 	Location *catalog.DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
 	// The file format of the input file, if applicable
@@ -164,15 +160,12 @@ type DataOutputSpec struct {
 	// If true, SHAP values for each predicted row will be included as JSON as an additional column of the dataset
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	XAI *bool `json:"xai,omitempty" protobuf:"varint,7,opt,name=xai"`
-	// If true, an additional column will be added to the dataset which
-	// indicates if each predicted row was detected to be an outlier
+	IncludeShapValues *bool `json:"IncludeShapValues,omitempty" protobuf:"varint,7,opt,name=includeShapValues"`
+	// If true, an additional column will be added to the dataset which indicates if each predicted row was detected
+	// to be an outlier. The predicting model must have been trained with an outlier model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	DetectOutliers *bool `json:"detectOutliers,omitempty" protobuf:"varint,8,opt,name=detectOutliers"`
-	// List of SQL statements to run after the prediction was performed
-	// +kubebuilder:validation:Optional
-	PostSQL []string `json:"postSQL,omitempty" protobuf:"bytes,9,opt,name=postSQL"`
 }
 
 type RecipePartSpec struct {

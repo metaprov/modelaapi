@@ -165,12 +165,9 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequ
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     prediction: (f = msg.getPrediction()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction.toObject(includeInstance, f),
-    frombucket: (f = msg.getFrombucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    fromconnection: (f = msg.getFromconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    fromsecretMap: (f = msg.getFromsecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    tobucket: (f = msg.getTobucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    toconnection: (f = msg.getToconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    tosecretMap: (f = msg.getTosecretMap()) ? f.toObject(includeInstance, undefined) : []
+    model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
+    datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
+    tenant: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -213,36 +210,18 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequ
       msg.setPrediction(value);
       break;
     case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
-      msg.setFrombucket(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.deserializeBinaryFromReader);
+      msg.setModel(value);
       break;
     case 3:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setFromconnection(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
+      msg.setDatasource(value);
       break;
     case 4:
-      var value = msg.getFromsecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
-      break;
-    case 5:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
-      msg.setTobucket(value);
-      break;
-    case 6:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setToconnection(value);
-      break;
-    case 7:
-      var value = msg.getTosecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTenant(value);
       break;
     default:
       reader.skipField();
@@ -281,45 +260,28 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequ
       github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction.serializeBinaryToWriter
     );
   }
-  f = message.getFrombucket();
+  f = message.getModel();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.serializeBinaryToWriter
     );
   }
-  f = message.getFromconnection();
+  f = message.getDatasource();
   if (f != null) {
     writer.writeMessage(
       3,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
     );
   }
-  f = message.getFromsecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getTobucket();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
+  f = message.getTenant();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
-  }
-  f = message.getToconnection();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
-  f = message.getTosecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -362,20 +324,20 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequ
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket fromBucket = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model}
  */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.getFrombucket = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 2));
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.getModel = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, 2));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.setFrombucket = function(value) {
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.setModel = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -384,8 +346,8 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequ
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.clearFrombucket = function() {
-  return this.setFrombucket(undefined);
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.clearModel = function() {
+  return this.setModel(undefined);
 };
 
 
@@ -393,26 +355,26 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequ
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.hasFrombucket = function() {
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.hasModel = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection fromConnection = 3;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
  */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.getFromconnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 3));
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.getDatasource = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 3));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.setFromconnection = function(value) {
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.setDatasource = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -421,8 +383,8 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequ
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.clearFromconnection = function() {
-  return this.setFromconnection(undefined);
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.clearDatasource = function() {
+  return this.setDatasource(undefined);
 };
 
 
@@ -430,127 +392,27 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequ
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.hasFromconnection = function() {
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.hasDatasource = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * map<string, bytes> fromSecret = 4;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
+ * optional string tenant = 4;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.getFromsecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
-      null));
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.getTenant = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * Clears values from the map. The map will be non-null.
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.clearFromsecretMap = function() {
-  this.getFromsecretMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket toBucket = 5;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.getTobucket = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 5));
+proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.setTenant = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.setTobucket = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.clearTobucket = function() {
-  return this.setTobucket(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.hasTobucket = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection toConnection = 6;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.getToconnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 6));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.setToconnection = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.clearToconnection = function() {
-  return this.setToconnection(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.hasToconnection = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * map<string, bytes> toSecret = 7;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.getTosecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prototype.clearTosecretMap = function() {
-  this.getTosecretMap().clear();
-  return this;};
 
 
 
@@ -599,13 +461,7 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMode
     entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.toObject, includeInstance),
     groupsList: jspb.Message.toObjectList(msg.getGroupsList(),
-    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject, includeInstance),
-    frombucket: (f = msg.getFrombucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    fromconnection: (f = msg.getFromconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    fromsecretMap: (f = msg.getFromsecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    tobucket: (f = msg.getTobucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    toconnection: (f = msg.getToconnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    tosecretMap: (f = msg.getTosecretMap()) ? f.toObject(includeInstance, undefined) : []
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -671,38 +527,6 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMode
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.deserializeBinaryFromReader);
       msg.addGroups(value);
-      break;
-    case 7:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
-      msg.setFrombucket(value);
-      break;
-    case 8:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setFromconnection(value);
-      break;
-    case 9:
-      var value = msg.getFromsecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
-      break;
-    case 10:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
-      msg.setTobucket(value);
-      break;
-    case 11:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setToconnection(value);
-      break;
-    case 12:
-      var value = msg.getTosecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
-         });
       break;
     default:
       reader.skipField();
@@ -780,46 +604,6 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMode
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.serializeBinaryToWriter
     );
-  }
-  f = message.getFrombucket();
-  if (f != null) {
-    writer.writeMessage(
-      7,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
-    );
-  }
-  f = message.getFromconnection();
-  if (f != null) {
-    writer.writeMessage(
-      8,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
-  f = message.getFromsecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getTobucket();
-  if (f != null) {
-    writer.writeMessage(
-      10,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
-    );
-  }
-  f = message.getToconnection();
-  if (f != null) {
-    writer.writeMessage(
-      11,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
-    );
-  }
-  f = message.getTosecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(12, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -1048,198 +832,6 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictMode
 };
 
 
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket fromBucket = 7;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.getFrombucket = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 7));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.setFrombucket = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.clearFrombucket = function() {
-  return this.setFrombucket(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.hasFrombucket = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection fromConnection = 8;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.getFromconnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 8));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.setFromconnection = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.clearFromconnection = function() {
-  return this.setFromconnection(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.hasFromconnection = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * map<string, bytes> fromSecret = 9;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.getFromsecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.clearFromsecretMap = function() {
-  this.getFromsecretMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket toBucket = 10;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.getTobucket = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 10));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.setTobucket = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.clearTobucket = function() {
-  return this.setTobucket(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.hasTobucket = function() {
-  return jspb.Message.getField(this, 10) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection toConnection = 11;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.getToconnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 11));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.setToconnection = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.clearToconnection = function() {
-  return this.setToconnection(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.hasToconnection = function() {
-  return jspb.Message.getField(this, 11) != null;
-};
-
-
-/**
- * map<string, bytes> toSecret = 12;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.getTosecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 12, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictModelClassRequest.prototype.clearTosecretMap = function() {
-  this.getTosecretMap().clear();
-  return this;};
-
-
 
 
 
@@ -1272,8 +864,7 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResp
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    rows: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    rows: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -1311,10 +902,6 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResp
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setKey(value);
-      break;
-    case 2:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setRows(value);
       break;
@@ -1347,47 +934,22 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResp
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getKey();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getRows();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
       f
     );
   }
-  f = message.getRows();
-  if (f !== 0) {
-    writer.writeInt32(
-      2,
-      f
-    );
-  }
 };
 
 
 /**
- * optional string key = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse.prototype.getKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse} returns this
- */
-proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse.prototype.setKey = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional int32 rows = 2;
+ * optional int32 rows = 1;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse.prototype.getRows = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
@@ -1396,7 +958,7 @@ proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResp
  * @return {!proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse} returns this
  */
 proto.github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse.prototype.setRows = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 

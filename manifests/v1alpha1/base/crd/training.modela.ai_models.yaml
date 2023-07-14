@@ -1133,6 +1133,7 @@ spec:
                 - baseline
                 - search
                 - ensemble
+                - test
                 type: string
               modelClassName:
                 description: The Model Class which created the Model, if applicable

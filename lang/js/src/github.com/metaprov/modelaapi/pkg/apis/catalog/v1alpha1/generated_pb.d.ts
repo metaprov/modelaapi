@@ -453,6 +453,44 @@ export namespace ContainerLog {
   }
 }
 
+export class CronSchedule extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): CronSchedule;
+  hasEnabled(): boolean;
+  clearEnabled(): CronSchedule;
+
+  getCron(): string;
+  setCron(value: string): CronSchedule;
+  hasCron(): boolean;
+  clearCron(): CronSchedule;
+
+  getType(): string;
+  setType(value: string): CronSchedule;
+  hasType(): boolean;
+  clearType(): CronSchedule;
+
+  getMaxrecords(): number;
+  setMaxrecords(value: number): CronSchedule;
+  hasMaxrecords(): boolean;
+  clearMaxrecords(): CronSchedule;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronSchedule.AsObject;
+  static toObject(includeInstance: boolean, msg: CronSchedule): CronSchedule.AsObject;
+  static serializeBinaryToWriter(message: CronSchedule, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronSchedule;
+  static deserializeBinaryFromReader(message: CronSchedule, reader: jspb.BinaryReader): CronSchedule;
+}
+
+export namespace CronSchedule {
+  export type AsObject = {
+    enabled?: boolean,
+    cron?: string,
+    type?: string,
+    maxrecords?: number,
+  }
+}
+
 export class CurvePoint extends jspb.Message {
   getX(): number;
   setX(value: number): CurvePoint;
@@ -2137,6 +2175,56 @@ export namespace RocAucCurve {
   }
 }
 
+export class RunRecord extends jspb.Message {
+  getId(): string;
+  setId(value: string): RunRecord;
+  hasId(): boolean;
+  clearId(): RunRecord;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): RunRecord;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): RunRecord;
+
+  getResourceversion(): number;
+  setResourceversion(value: number): RunRecord;
+  hasResourceversion(): boolean;
+  clearResourceversion(): RunRecord;
+
+  getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunRecord;
+  hasStartedat(): boolean;
+  clearStartedat(): RunRecord;
+
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunRecord;
+  hasCompletedat(): boolean;
+  clearCompletedat(): RunRecord;
+
+  getLogsList(): Array<ContainerLog>;
+  setLogsList(value: Array<ContainerLog>): RunRecord;
+  clearLogsList(): RunRecord;
+  addLogs(value?: ContainerLog, index?: number): ContainerLog;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RunRecord.AsObject;
+  static toObject(includeInstance: boolean, msg: RunRecord): RunRecord.AsObject;
+  static serializeBinaryToWriter(message: RunRecord, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunRecord;
+  static deserializeBinaryFromReader(message: RunRecord, reader: jspb.BinaryReader): RunRecord;
+}
+
+export namespace RunRecord {
+  export type AsObject = {
+    id?: string,
+    failuremessage?: string,
+    resourceversion?: number,
+    startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    logsList: Array<ContainerLog.AsObject>,
+  }
+}
+
 export class RunSchedule extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): RunSchedule;
@@ -2246,6 +2334,50 @@ export namespace RunScheduleStatus {
     lastrunname?: string,
     lastrunlogs?: Logs.AsObject,
     retrycount?: number,
+  }
+}
+
+export class RunStatus extends jspb.Message {
+  getLastrunat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrunat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunStatus;
+  hasLastrunat(): boolean;
+  clearLastrunat(): RunStatus;
+
+  getLastrunid(): string;
+  setLastrunid(value: string): RunStatus;
+  hasLastrunid(): boolean;
+  clearLastrunid(): RunStatus;
+
+  getActiverunid(): string;
+  setActiverunid(value: string): RunStatus;
+  hasActiverunid(): boolean;
+  clearActiverunid(): RunStatus;
+
+  getLastfailuremessageList(): Array<ContainerLog>;
+  setLastfailuremessageList(value: Array<ContainerLog>): RunStatus;
+  clearLastfailuremessageList(): RunStatus;
+  addLastfailuremessage(value?: ContainerLog, index?: number): ContainerLog;
+
+  getRunrecordsList(): Array<RunRecord>;
+  setRunrecordsList(value: Array<RunRecord>): RunStatus;
+  clearRunrecordsList(): RunStatus;
+  addRunrecords(value?: RunRecord, index?: number): RunRecord;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RunStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: RunStatus): RunStatus.AsObject;
+  static serializeBinaryToWriter(message: RunStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunStatus;
+  static deserializeBinaryFromReader(message: RunStatus, reader: jspb.BinaryReader): RunStatus;
+}
+
+export namespace RunStatus {
+  export type AsObject = {
+    lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastrunid?: string,
+    activerunid?: string,
+    lastfailuremessageList: Array<ContainerLog.AsObject>,
+    runrecordsList: Array<RunRecord.AsObject>,
   }
 }
 

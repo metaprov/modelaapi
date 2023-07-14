@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 	"github.com/metaprov/modelaapi/pkg/util"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -109,8 +110,8 @@ func (notifier *Notifier) MarkReady() {
 	})
 }
 
-func (notifier Notifier) GetStatus() interface{} {
-	return notifier.Status
+func (notifier Notifier) GetStatus() proto.Message {
+	return &notifier.Status
 }
 
 func (notifier Notifier) GetObservedGeneration() int64 {
@@ -126,5 +127,5 @@ func (notifier *Notifier) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (notifier *Notifier) SetStatus(status interface{}) {
-	notifier.Status = status.(NotifierStatus)
+	notifier.Status = *status.(*NotifierStatus)
 }

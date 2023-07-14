@@ -26,11 +26,6 @@ func (predictor *Predictor) Default() {
 		predictor.Spec.Access.Path = util.StrPtr("/predict")
 	}
 
-	if predictor.Spec.Access.AccessType == nil {
-		defaultAccess := catalog.IngressAccessType
-		predictor.Spec.Access.AccessType = &defaultAccess
-	}
-
 	if predictor.Spec.Progressive == nil {
 		predictor.Spec.Progressive = &ProgressiveSpec{
 			Warmup:           util.Int32Ptr(15),

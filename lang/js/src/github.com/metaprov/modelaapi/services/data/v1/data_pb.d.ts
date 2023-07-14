@@ -521,11 +521,6 @@ export class DsCreateDatasetProfileRequest extends jspb.Message {
   hasProduct(): boolean;
   clearProduct(): DsCreateDatasetProfileRequest;
 
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsCreateDatasetProfileRequest;
-  hasVersion(): boolean;
-  clearVersion(): DsCreateDatasetProfileRequest;
-
   getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
   setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsCreateDatasetProfileRequest;
   hasDatasource(): boolean;
@@ -552,7 +547,6 @@ export class DsCreateDatasetProfileRequest extends jspb.Message {
 export namespace DsCreateDatasetProfileRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
@@ -597,11 +591,6 @@ export class DsCreateModelProfileRequest extends jspb.Message {
   hasProduct(): boolean;
   clearProduct(): DsCreateModelProfileRequest;
 
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsCreateModelProfileRequest;
-  hasVersion(): boolean;
-  clearVersion(): DsCreateModelProfileRequest;
-
   getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
   setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsCreateModelProfileRequest;
   hasDatasource(): boolean;
@@ -638,7 +627,6 @@ export class DsCreateModelProfileRequest extends jspb.Message {
 export namespace DsCreateModelProfileRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
@@ -849,11 +837,6 @@ export class RunTestSuiteRequest extends jspb.Message {
   hasProduct(): boolean;
   clearProduct(): RunTestSuiteRequest;
 
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): RunTestSuiteRequest;
-  hasVersion(): boolean;
-  clearVersion(): RunTestSuiteRequest;
-
   getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
   setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): RunTestSuiteRequest;
   hasDatasource(): boolean;
@@ -910,7 +893,6 @@ export class RunTestSuiteRequest extends jspb.Message {
 export namespace RunTestSuiteRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
@@ -1037,11 +1019,6 @@ export class DsSplitDatasetRequest extends jspb.Message {
   hasProduct(): boolean;
   clearProduct(): DsSplitDatasetRequest;
 
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsSplitDatasetRequest;
-  hasVersion(): boolean;
-  clearVersion(): DsSplitDatasetRequest;
-
   getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
   setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsSplitDatasetRequest;
   hasDatasource(): boolean;
@@ -1083,7 +1060,6 @@ export class DsSplitDatasetRequest extends jspb.Message {
 export namespace DsSplitDatasetRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
@@ -1597,11 +1573,6 @@ export class CreateModelReportRequest extends jspb.Message {
   hasProduct(): boolean;
   clearProduct(): CreateModelReportRequest;
 
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): CreateModelReportRequest;
-  hasVersion(): boolean;
-  clearVersion(): CreateModelReportRequest;
-
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
   setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): CreateModelReportRequest;
   hasStudy(): boolean;
@@ -1638,7 +1609,6 @@ export class CreateModelReportRequest extends jspb.Message {
 export namespace CreateModelReportRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
@@ -1817,11 +1787,6 @@ export class CreateDatasetReportRequest extends jspb.Message {
   hasProduct(): boolean;
   clearProduct(): CreateDatasetReportRequest;
 
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): CreateDatasetReportRequest;
-  hasVersion(): boolean;
-  clearVersion(): CreateDatasetReportRequest;
-
   getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
   setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): CreateDatasetReportRequest;
   hasDatasource(): boolean;
@@ -1848,7 +1813,6 @@ export class CreateDatasetReportRequest extends jspb.Message {
 export namespace CreateDatasetReportRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     report?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
@@ -1860,11 +1824,6 @@ export class CreateStudyReportRequest extends jspb.Message {
   setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): CreateStudyReportRequest;
   hasProduct(): boolean;
   clearProduct(): CreateStudyReportRequest;
-
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): CreateStudyReportRequest;
-  hasVersion(): boolean;
-  clearVersion(): CreateStudyReportRequest;
 
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
   setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): CreateStudyReportRequest;
@@ -1902,7 +1861,6 @@ export class CreateStudyReportRequest extends jspb.Message {
 export namespace CreateStudyReportRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
@@ -1916,11 +1874,6 @@ export class AskModelRequest extends jspb.Message {
   setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): AskModelRequest;
   hasProduct(): boolean;
   clearProduct(): AskModelRequest;
-
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): AskModelRequest;
-  hasVersion(): boolean;
-  clearVersion(): AskModelRequest;
 
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
   setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): AskModelRequest;
@@ -1962,7 +1915,6 @@ export class AskModelRequest extends jspb.Message {
 export namespace AskModelRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
@@ -2043,11 +1995,6 @@ export class AskForecastModelRequest extends jspb.Message {
   hasProduct(): boolean;
   clearProduct(): AskForecastModelRequest;
 
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): AskForecastModelRequest;
-  hasVersion(): boolean;
-  clearVersion(): AskForecastModelRequest;
-
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
   setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): AskForecastModelRequest;
   hasStudy(): boolean;
@@ -2084,7 +2031,6 @@ export class AskForecastModelRequest extends jspb.Message {
 export namespace AskForecastModelRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
@@ -2118,11 +2064,6 @@ export class AskEnsembleRequest extends jspb.Message {
   setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): AskEnsembleRequest;
   hasProduct(): boolean;
   clearProduct(): AskEnsembleRequest;
-
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): AskEnsembleRequest;
-  hasVersion(): boolean;
-  clearVersion(): AskEnsembleRequest;
 
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
   setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): AskEnsembleRequest;
@@ -2160,7 +2101,6 @@ export class AskEnsembleRequest extends jspb.Message {
 export namespace AskEnsembleRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
@@ -2194,11 +2134,6 @@ export class AskBaselineRequest extends jspb.Message {
   setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): AskBaselineRequest;
   hasProduct(): boolean;
   clearProduct(): AskBaselineRequest;
-
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): AskBaselineRequest;
-  hasVersion(): boolean;
-  clearVersion(): AskBaselineRequest;
 
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
   setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): AskBaselineRequest;
@@ -2239,7 +2174,6 @@ export class AskBaselineRequest extends jspb.Message {
 export namespace AskBaselineRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
@@ -2274,11 +2208,6 @@ export class AskAllModelsForTaskRequest extends jspb.Message {
   setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): AskAllModelsForTaskRequest;
   hasProduct(): boolean;
   clearProduct(): AskAllModelsForTaskRequest;
-
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): AskAllModelsForTaskRequest;
-  hasVersion(): boolean;
-  clearVersion(): AskAllModelsForTaskRequest;
 
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
   setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): AskAllModelsForTaskRequest;
@@ -2317,7 +2246,6 @@ export class AskAllModelsForTaskRequest extends jspb.Message {
 export namespace AskAllModelsForTaskRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
@@ -2353,11 +2281,6 @@ export class TellModelRequest extends jspb.Message {
   hasProduct(): boolean;
   clearProduct(): TellModelRequest;
 
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): TellModelRequest;
-  hasVersion(): boolean;
-  clearVersion(): TellModelRequest;
-
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
   setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): TellModelRequest;
   hasStudy(): boolean;
@@ -2392,7 +2315,6 @@ export class TellModelRequest extends jspb.Message {
 export namespace TellModelRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
@@ -2505,11 +2427,6 @@ export class DsStudyEndedRequest extends jspb.Message {
   hasProduct(): boolean;
   clearProduct(): DsStudyEndedRequest;
 
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsStudyEndedRequest;
-  hasVersion(): boolean;
-  clearVersion(): DsStudyEndedRequest;
-
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
   setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): DsStudyEndedRequest;
   hasStudy(): boolean;
@@ -2526,7 +2443,6 @@ export class DsStudyEndedRequest extends jspb.Message {
 export namespace DsStudyEndedRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
   }
 }
@@ -2551,11 +2467,6 @@ export class SaveOptimizerDBRequest extends jspb.Message {
   hasProduct(): boolean;
   clearProduct(): SaveOptimizerDBRequest;
 
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): SaveOptimizerDBRequest;
-  hasVersion(): boolean;
-  clearVersion(): SaveOptimizerDBRequest;
-
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
   setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): SaveOptimizerDBRequest;
   hasStudy(): boolean;
@@ -2577,7 +2488,6 @@ export class SaveOptimizerDBRequest extends jspb.Message {
 export namespace SaveOptimizerDBRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
   }
@@ -2733,11 +2643,6 @@ export class DsSnapshotRequest extends jspb.Message {
   hasProduct(): boolean;
   clearProduct(): DsSnapshotRequest;
 
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsSnapshotRequest;
-  hasVersion(): boolean;
-  clearVersion(): DsSnapshotRequest;
-
   getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
   setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsSnapshotRequest;
   hasDatasource(): boolean;
@@ -2759,7 +2664,6 @@ export class DsSnapshotRequest extends jspb.Message {
 export namespace DsSnapshotRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
@@ -3156,9 +3060,6 @@ export class SaveDatasetRequest extends jspb.Message {
   hasDbconnection(): boolean;
   clearDbconnection(): SaveDatasetRequest;
 
-  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearDbsecretMap(): SaveDatasetRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SaveDatasetRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SaveDatasetRequest): SaveDatasetRequest.AsObject;
@@ -3175,7 +3076,6 @@ export namespace SaveDatasetRequest {
     modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
     modelclassrun?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClassRun.AsObject,
     dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -3215,9 +3115,6 @@ export class SaveModelRequest extends jspb.Message {
   hasDbconnection(): boolean;
   clearDbconnection(): SaveModelRequest;
 
-  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearDbsecretMap(): SaveModelRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SaveModelRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SaveModelRequest): SaveModelRequest.AsObject;
@@ -3235,7 +3132,6 @@ export namespace SaveModelRequest {
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     groupsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureGroup.AsObject>,
     dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -3270,9 +3166,6 @@ export class SavePredictionRequest extends jspb.Message {
   hasDbconnection(): boolean;
   clearDbconnection(): SavePredictionRequest;
 
-  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearDbsecretMap(): SavePredictionRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SavePredictionRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SavePredictionRequest): SavePredictionRequest.AsObject;
@@ -3289,7 +3182,6 @@ export namespace SavePredictionRequest {
     predictor?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
     prediction?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction.AsObject,
     dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -3314,9 +3206,6 @@ export class SavePredictorRequest extends jspb.Message {
   hasDbconnection(): boolean;
   clearDbconnection(): SavePredictorRequest;
 
-  getDbsecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearDbsecretMap(): SavePredictorRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SavePredictorRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SavePredictorRequest): SavePredictorRequest.AsObject;
@@ -3331,7 +3220,6 @@ export namespace SavePredictorRequest {
     modelclass?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelClass.AsObject,
     predictor?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction.AsObject,
     dbconnection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    dbsecretMap: Array<[string, Uint8Array | string]>,
   }
 }
 

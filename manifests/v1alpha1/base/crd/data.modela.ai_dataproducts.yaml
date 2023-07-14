@@ -123,14 +123,16 @@ spec:
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               defaultLabName:
-                description: The name of the Lab that will be used by default with
-                  all compute-requiring child resources
+                description: The name of the Lab which will be used by all training
+                  and data-related workloads, in the case that the resource creating
+                  the workload does not specify a Lab
                 maxLength: 63
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               defaultServingSiteName:
-                description: The name of the Serving Site which will be used by default
-                  with all Predictor resources
+                description: The name of the Serving Site which will be used by all
+                  inference-related workloads, in the case that the resource creating
+                  the workload does not specify a Serving Site
                 maxLength: 63
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
@@ -161,24 +163,6 @@ spec:
                     default: ""
                     description: The URL to the destination Git repository
                     maxLength: 256
-                    type: string
-                type: object
-              imageLocation:
-                description: ImageLocation specifies the default Docker image repository
-                  where images produced under the Data Product will be stored
-                properties:
-                  name:
-                    default: ""
-                    description: The canonical name of the image repository. If not
-                      set, it will default to docker/{dataproduct_name}
-                    maxLength: 256
-                    type: string
-                  registryConnectionName:
-                    default: ""
-                    description: The image repository ConnectionName resource which
-                      exists in the same tenant as the parent DataProduct. If the
-                      field is not set, Modela will ignore the image location and
-                      not push images
                     type: string
                 type: object
               notification:

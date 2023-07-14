@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 	"strings"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
@@ -276,7 +277,7 @@ func (report *Report) MarkReportReady(location catalog.FileLocation) {
 // Model Alerts
 
 func (report Report) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
-	level := infra.Info
+	level := infra.InfoAlertLevel
 	subject := fmt.Sprintf("Report %s completed successfully", report.Name)
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -308,7 +309,7 @@ func (report Report) CompletionAlert(notification catalog.NotificationSpec) *inf
 }
 
 func (report Report) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
-	level := infra.Error
+	level := infra.ErrorAlertLevel
 	subject := fmt.Sprintf("Report %s failed with error: %v", report.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -388,8 +389,8 @@ func ConvertTaskToModelReportType(name catalog.MLTask) ReportType {
 	}
 }
 
-func (report Report) GetStatus() interface{} {
-	return report.Status
+func (report Report) GetStatus() proto.Message {
+	return &report.Status
 }
 
 func (report Report) GetObservedGeneration() int64 {
@@ -405,5 +406,5 @@ func (report *Report) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (report *Report) SetStatus(status interface{}) {
-	report.Status = status.(ReportStatus)
+	report.Status = *status.(*ReportStatus)
 }

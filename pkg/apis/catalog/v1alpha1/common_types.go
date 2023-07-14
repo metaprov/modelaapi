@@ -2,8 +2,10 @@ package v1alpha1
 
 import (
 	"github.com/aptible/supercronic/cronexpr"
+	"github.com/metaprov/modelaapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/utils/pointer"
 	"time"
 )
 
@@ -1288,6 +1290,137 @@ type GithubEvents struct {
 	Events []string `json:"events,omitempty" protobuf:"bytes,5,rep,name=events"`
 }
 
+// CronSchedule specifies the schedule for a Job to be executed
+type CronSchedule struct {
+	// Enabled indicates if the schedule is enabled. When enabled, a CronJob will be created which when triggered
+	// will initiate the regeneration of the resource that specifies the schedule
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// The cron string for the schedule, applicable if the trigger type is Cron.
+	// See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm for more information
+	// +kubebuilder:validation:Optional
+	Cron *string `json:"cron,omitempty" protobuf:"bytes,2,opt,name=cron"`
+	// The type of schedule, which can be a frequency interval or a cron expression
+	// +kubebuilder:validation:Optional
+	Type TriggerScheduleEventType `json:"type,omitempty" protobuf:"bytes,3,opt,name=type"`
+	// The number of historical run records that the resource will maintain
+	// +kubebuilder:default:=10
+	// +kubebuilder:validation:Optional
+	MaxRecords *int32 `json:"maxRecords,omitempty" protobuf:"varint,4,opt,name=maxRecords"`
+}
+
+func (schedule *CronSchedule) GetMaxRecords() int {
+	if schedule == nil {
+		return 10
+	}
+	return int(pointer.Int32Deref(schedule.MaxRecords, 10))
+}
+
+func (schedule *CronSchedule) GetEnabled() bool {
+	if schedule == nil {
+		return false
+	}
+	return pointer.BoolDeref(schedule.Enabled, false)
+}
+
+func (schedule *CronSchedule) CronString() *string {
+	if schedule == nil {
+		return nil
+	}
+
+	if !pointer.BoolDeref(schedule.Enabled, false) {
+		return nil
+	}
+
+	switch schedule.Type {
+	case HourlyTriggerScheduleEventType:
+		return util.StrPtr("@hourly")
+	case DailyTriggerScheduleEventType:
+		return util.StrPtr("@daily")
+	case WeeklyTriggerScheduleEventType:
+		return util.StrPtr("@weekly")
+	case MonthlyTriggerScheduleEventType:
+		return util.StrPtr("@monthly")
+	case YearlyTriggerScheduleEventType:
+		return util.StrPtr("@yearly")
+	case CronTriggerScheduleEventType:
+		return schedule.Cron
+	}
+
+	return nil
+}
+
+type ContainerLogs []ContainerLog
+
+func (c ContainerLogs) Append(logs []ContainerLog) ContainerLogs {
+	return append(c, logs...)
+}
+
+type RunRecord struct {
+	// ID specifies the unique ID or resource name for the run
+	ID string `json:"id,omitempty" protobuf:"bytes,1,opt,name=id"`
+	// FailureMessage contains the failure produced by the run, if applicable
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,2,opt,name=failureMessage"`
+	// ResourceVersion specifies the version of the resource relevant to the run at the time of completion
+	ResourceVersion int32 `json:"resourceVersion,omitempty" protobuf:"varint,3,opt,name=resourceVersion"`
+	// StartedAt specifies the time at which the run started
+	// +kubebuilder:validation:Optional
+	StartedAt *metav1.Time `json:"startedAt,omitempty" protobuf:"bytes,4,opt,name=startedAt"`
+	// CompletedAt specifies the time at which the run was completed
+	// +kubebuilder:validation:Optional
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,5,opt,name=completedAt"`
+	// Logs contains the logs for all workloads produced by the run
+	Logs ContainerLogs `json:"logs,omitempty" protobuf:"bytes,6,opt,name=logs"`
+}
+
+type RunStatus struct {
+	// Last time the job started
+	// +kubebuilder:validation:Optional
+	LastRunAt *metav1.Time `json:"lastRunAt,omitempty" protobuf:"bytes,1,opt,name=lastRunAt"`
+	// The unique ID of the last run created by the schedule.
+	// +kubebuilder:validation:Optional
+	LastRunId *string `json:"lastRunId,omitempty" protobuf:"bytes,2,opt,name=lastRunId"`
+	// The unique ID of the currently active run
+	// +kubebuilder:validation:Optional
+	ActiveRunId *string `json:"activeRunId,omitempty" protobuf:"bytes,3,opt,name=activeRunId"`
+	// The logs of the currently active run
+	// +kubebuilder:validation:Optional
+	ActiveRunLogs ContainerLogs `json:"lastFailureMessage,omitempty" protobuf:"bytes,4,opt,name=lastFailureMessage"`
+	// RunRecords contains the collection of previously recorded runs
+	// +kubebuilder:validation:Optional
+	RunRecords []RunRecord `json:"runRecords,omitempty" protobuf:"bytes,5,opt,name=runRecords"`
+}
+
+func (status *RunStatus) CreateRecord(version, maxRecords int, failureMessage *string) {
+	if status.ActiveRunId == nil {
+		status.ActiveRunLogs = nil
+		return
+	}
+
+	now := metav1.Now()
+	record := RunRecord{
+		ID:              *status.ActiveRunId,
+		FailureMessage:  failureMessage,
+		ResourceVersion: int32(version),
+		Logs:            status.ActiveRunLogs,
+		CompletedAt:     &now,
+	}
+
+	if status.LastRunAt != nil {
+		record.StartedAt = status.LastRunAt
+	}
+
+	status.RunRecords = append(status.RunRecords, record)
+
+	if len(status.RunRecords) > maxRecords {
+		status.RunRecords = status.RunRecords[len(status.RunRecords)-maxRecords:]
+	}
+
+	status.ActiveRunId = nil
+	status.ActiveRunLogs = nil
+}
+
 // RunSchedule specifies the schedule for a Job to be executed
 type RunSchedule struct {
 	// Indicates if the schedule is enabled and the Jobs associated it will be created at the specified time
@@ -1468,13 +1601,17 @@ type ModelDeploymentSpec struct {
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
 	Traffic *int32 `json:"traffic,omitempty" protobuf:"varint,3,opt,name=traffic"`
-	// Role denotes the role of this model
+	// Role denotes the role of the model, which can be either live or shadow.
+	// When a model is deployed as a live model, prediction requests will be served by the model. The chance that the
+	// prediction request will be forwarded to the model is determined by Traffic.
+	// When a model is deployed as a shadow model, the model will still receive and log prediction requests and results
+	// but will not have the result sent back the Predictor
 	// +kubebuilder:default:=live
 	// +kubebuilder:validation:Optional
 	Role ModelRole `json:"role,omitempty" protobuf:"bytes,4,opt,name=role"`
 	// The URL of the model server image; applicable when rolling back a model
 	ImageName *string `json:"imageName,omitempty" protobuf:"bytes,5,opt,name=imageName"`
-	// The name of the account which approved the model, if applicable
+	// The reference to the account which approved the model, if applicable
 	// +kubebuilder:validation:Optional
 	ApprovedBy *v1.ObjectReference `json:"approvedBy,omitempty" protobuf:"bytes,6,opt,name=approvedBy"`
 }
@@ -1531,7 +1668,7 @@ const (
 )
 
 // ModelClassType classifies a model by the phase of the Study which created it
-// +kubebuilder:validation:Enum="feature-engineering";"baseline";"search";"ensemble"
+// +kubebuilder:validation:Enum="feature-engineering";"baseline";"search";"ensemble";"test"
 type ModelClassType string
 
 const (

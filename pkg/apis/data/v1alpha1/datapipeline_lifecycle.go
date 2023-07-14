@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -102,8 +103,8 @@ func (in *DataPipeline) MarkFailed(err error) {
 	})
 }
 
-func (datapipeline DataPipeline) GetStatus() interface{} {
-	return datapipeline.Status
+func (datapipeline DataPipeline) GetStatus() proto.Message {
+	return &datapipeline.Status
 }
 
 func (datapipeline DataPipeline) GetObservedGeneration() int64 {
@@ -119,5 +120,5 @@ func (datapipeline *DataPipeline) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (datapipeline *DataPipeline) SetStatus(status interface{}) {
-	datapipeline.Status = status.(DataPipelineStatus)
+	datapipeline.Status = *status.(*DataPipelineStatus)
 }

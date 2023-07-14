@@ -8,46 +8,28 @@ import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto
 import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto";
 import "google/protobuf/empty.proto";
 
-
-// A request to batch predictor
 message BatchPredictRequest {
     github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction prediction = 1;
-
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket  fromBucket     = 2;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection     fromConnection = 3;
-    map<string,bytes>                                                    fromSecret     = 4;
-
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket  toBucket     = 5;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection     toConnection = 6;
-    map<string,bytes>                                                    toSecret     = 7;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    string tenant = 4;
 }
 
 message BatchPredictModelClassRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction       prediction = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource            datasource = 2;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model             model      = 3;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass        modelClass = 4;
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity       entities   = 5;
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups     = 6;
-
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket  fromBucket     = 7;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection     fromConnection = 8;
-    map<string,bytes>                                                    fromSecret     = 9;
-
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket  toBucket     = 10;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection     toConnection = 11;
-    map<string,bytes>                                                    toSecret     = 12;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction prediction = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 3;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass modelClass = 4;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entities   = 5;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup groups = 6;
 }
 
-
 message BatchPredictResponse {
-    string key = 1; // the object key to the prediction file.
-    int32 rows = 2; // number of predicted rows
+    int32 rows = 1;
 }
 
 message ShutdownRequest {}
-message ShutdownResponse{}
-
+message ShutdownResponse {}
 
 service Batch {
     rpc BatchPredict(BatchPredictRequest) returns (BatchPredictResponse) {}

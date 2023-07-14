@@ -228,7 +228,7 @@ func (this *ModelClassRun) Pause() {
 }
 
 func (run *ModelClassRun) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
-	level := infra.Error
+	level := infra.ErrorAlertLevel
 	subject := fmt.Sprintf("Model Class Run %s failed with error: %v", run.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -257,7 +257,7 @@ func (run *ModelClassRun) ErrorAlert(notification catalog.NotificationSpec, err 
 }
 
 func (run *ModelClassRun) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
-	level := infra.Info
+	level := infra.InfoAlertLevel
 	subject := fmt.Sprintf("Entity %s completed successfully ", run.Name)
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -286,7 +286,7 @@ func (run *ModelClassRun) CompletionAlert(notification catalog.NotificationSpec)
 }
 
 func (mclass *ModelClass) PromotionAlert(tenantRef *v1.ObjectReference, notifierName *string, model Model) *infra.Alert {
-	level := infra.Info
+	level := infra.InfoAlertLevel
 	subject := fmt.Sprintf("Model %s is waiting for manual promotion", model.Name)
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{

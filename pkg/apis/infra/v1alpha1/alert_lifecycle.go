@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 
 	"github.com/metaprov/modelaapi/pkg/util"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -102,12 +103,12 @@ func ParseAlertYaml(content []byte) (*Alert, error) {
 	return r, nil
 }
 
-func (alert *Alert) MarkFailed(err string) {
+func (alert *Alert) MarkFailed(reason string, err string) {
 	alert.CreateOrUpdateCond(metav1.Condition{
 		Type:    AlertSent,
 		Status:  metav1.ConditionFalse,
 		Message: err,
-		Reason:  "Failed",
+		Reason:  reason,
 	})
 }
 
@@ -119,8 +120,8 @@ func (alert *Alert) MarkSent() {
 	})
 }
 
-func (alert Alert) GetStatus() interface{} {
-	return alert.Status
+func (alert Alert) GetStatus() proto.Message {
+	return &alert.Status
 }
 
 func (alert Alert) GetObservedGeneration() int64 {
@@ -136,5 +137,5 @@ func (alert *Alert) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (alert *Alert) SetStatus(status interface{}) {
-	alert.Status = status.(AlertStatus)
+	alert.Status = *status.(*AlertStatus)
 }

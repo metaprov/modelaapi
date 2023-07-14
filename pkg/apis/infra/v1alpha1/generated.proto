@@ -333,17 +333,6 @@ message AttachmentStatus {
   repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
 }
 
-message BucketResourceQuotas {
-  // Indicates if the resource quota is enabled
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-
-  // The maximum amount of storage the bucket may use
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity hardLimit = 2;
-}
-
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=connections,shortName=conn,singular=connection,categories={infra,modela}
@@ -839,7 +828,7 @@ message RuleSpec {
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description="owner"
 // +kubebuilder:printcolumn:name="FQDN",type="string",JSONPath=".spec.ingress.fqdn",description=""
 // +kubebuilder:printcolumn:name="GRPC Ingress",type="string",JSONPath=".status.grpcIngressName",description=""
-// +kubebuilder:printcolumn:name="REST Ingress",type="string",JSONPath=".status.restIngressName",description=""
+// +kubebuilder:printcolumn:name="HTTP Ingress",type="string",JSONPath=".status.httpIngressName",description=""
 // +kubebuilder:printcolumn:name="Predictors",type="number",JSONPath=".status.activePredictors",description=""
 // +kubebuilder:printcolumn:name="Cluster",type="string",JSONPath=".spec.clusterName",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
@@ -924,32 +913,22 @@ message ServingSiteStatus {
   // The collection of predictions from the last 7 days
   repeated int32 dailyPredictionsCounts = 8;
 
-  // In the case of failure, the ServingSite resource controller will set this field with a failure reason
-  // +kubebuilder:validation:Optional
-  optional string failureReason = 9;
-
   // In the case of failure, the ServingSite resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional
   optional string failureMessage = 10;
 
-  // GrpcIngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
+  // GrpcIngressName specifies the name of the Kubernetes Ingress resource which the Serving Site uses to define
   // external access points for resources that accept GRPC-based traffic to their services (i.e. Predictors).
   // This field is set only after one or more resources are created which use the Ingress access method.
   // If there are no Ingress rules to serve then the Ingress will be destroyed
   // +kubebuilder:validation:Optional
   optional string grpcIngressName = 11;
 
-  // RestIngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
-  // external access points for resources that accept HTTP-based traffic to their services (i.e. DataApps).
-  // This field is set only after one or more resources are created which use the Ingress access method to serve REST traffic.
+  // HttpIngressName specifies the name of the Kubernetes Ingress resource which the Serving Site uses to define
+  // external access points for resources that accept HTTP-based traffic to their services (i.e. Data Apps).
+  // This field is set only after one or more resources are created which use the Ingress access method to serve HTTP traffic.
   // If there are no Ingress rules to serve then the Ingress will be destroyed
   optional string restIngressName = 12;
-
-  // Store the status of the grpc ingress
-  optional bool grpcIngressReady = 13;
-
-  // Status of rest ingress.
-  optional bool restIngressReady = 14;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
@@ -1119,10 +1098,6 @@ message VirtualBucketList {
 
 // VirtualBucketSpec defines the desired state of VirtualBucket
 message VirtualBucketSpec {
-  // The reference to the tenant which the object exists under
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
-
   // The name of the Connection resource which exists under the same tenant as the object. The Connection
   // should represent the external location and access credentials of an object storage system
   // +kubebuilder:validation:Required
@@ -1140,22 +1115,6 @@ message VirtualBucketSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 4;
-
-  // For cloud based bucket, this is the region of the bucket
-  // In the case of a cloud-based Connection, Region specifies the region of the bucket
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string region = 5;
-
-  // If true, the bucket supports versioning, which applies to the S3 API. See
-  // https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html for more information
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool versioning = 6;
-
-  // The resource quotas of the bucket, which can restrict how much storage the bucket may use
-  // +kubebuilder:validation:Optional
-  optional BucketResourceQuotas quotas = 7;
 }
 
 // VirtualBucketStatus defines the observed state of a VirtualBucket
@@ -1167,10 +1126,6 @@ message VirtualBucketStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
-
-  // In the case of failure, the VirtualBucket resource controller will set this field with a failure reason
-  // +kubebuilder:validation:Optional
-  optional string failureReason = 4;
 
   // In the case of failure, the VirtualBucket resource controller will set this field with a failure message
   // +kubebuilder:validation:Optional

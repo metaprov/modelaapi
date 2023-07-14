@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
@@ -220,12 +221,12 @@ func (product DataProduct) ReportConsumer() *rbacv1.Role {
 	}
 }
 
-func (product *DataProduct) MarkFailed(err error) {
+func (product *DataProduct) MarkFailed(reason string, err string) {
 	product.CreateOrUpdateCond(metav1.Condition{
 		Type:    DataProductReady,
 		Status:  metav1.ConditionFalse,
-		Reason:  "Failed",
-		Message: err.Error(),
+		Reason:  reason,
+		Message: err,
 	})
 }
 
@@ -257,8 +258,8 @@ func (product *DataProduct) UpdateBaselineVersion(versions DataProductVersionLis
 	}
 }
 
-func (dataproduct DataProduct) GetStatus() interface{} {
-	return dataproduct.Status
+func (dataproduct DataProduct) GetStatus() proto.Message {
+	return &dataproduct.Status
 }
 
 func (dataproduct DataProduct) GetObservedGeneration() int64 {
@@ -274,5 +275,5 @@ func (dataproduct *DataProduct) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (dataproduct *DataProduct) SetStatus(status interface{}) {
-	dataproduct.Status = status.(DataProductStatus)
+	dataproduct.Status = *status.(*DataProductStatus)
 }

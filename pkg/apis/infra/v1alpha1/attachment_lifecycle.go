@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 
 	"github.com/metaprov/modelaapi/pkg/util"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -123,8 +124,8 @@ func (attachment *Attachment) MarkSent() {
 	})
 }
 
-func (attachment Attachment) GetStatus() interface{} {
-	return attachment.Status
+func (attachment Attachment) GetStatus() proto.Message {
+	return &attachment.Status
 }
 
 func (attachment Attachment) GetObservedGeneration() int64 {
@@ -140,5 +141,5 @@ func (attachment *Attachment) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (attachment *Attachment) SetStatus(status interface{}) {
-	attachment.Status = status.(AttachmentStatus)
+	attachment.Status = *status.(*AttachmentStatus)
 }

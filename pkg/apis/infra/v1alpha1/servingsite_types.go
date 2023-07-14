@@ -26,7 +26,7 @@ const (
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description="owner"
 // +kubebuilder:printcolumn:name="FQDN",type="string",JSONPath=".spec.ingress.fqdn",description=""
 // +kubebuilder:printcolumn:name="GRPC Ingress",type="string",JSONPath=".status.grpcIngressName",description=""
-// +kubebuilder:printcolumn:name="REST Ingress",type="string",JSONPath=".status.restIngressName",description=""
+// +kubebuilder:printcolumn:name="HTTP Ingress",type="string",JSONPath=".status.httpIngressName",description=""
 // +kubebuilder:printcolumn:name="Predictors",type="number",JSONPath=".status.activePredictors",description=""
 // +kubebuilder:printcolumn:name="Cluster",type="string",JSONPath=".spec.clusterName",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
@@ -97,27 +97,20 @@ type ServingSiteStatus struct {
 	TotalPredictorAccuracyFailed int32 `json:"totalPredictorAccuracyFailed,omitempty" protobuf:"varint,7,opt,name=totalPredictorAccuracyFailed"`
 	// The collection of predictions from the last 7 days
 	DailyPredictionsCounts []int32 `json:"dailyPredictionsCounts,omitempty" protobuf:"bytes,8,rep,name=dailyPredictionsCounts"`
-	// In the case of failure, the ServingSite resource controller will set this field with a failure reason
-	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,9,opt,name=failureReason"`
 	// In the case of failure, the ServingSite resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,10,opt,name=failureMessage"`
-	// GrpcIngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
+	// GrpcIngressName specifies the name of the Kubernetes Ingress resource which the Serving Site uses to define
 	// external access points for resources that accept GRPC-based traffic to their services (i.e. Predictors).
 	// This field is set only after one or more resources are created which use the Ingress access method.
 	// If there are no Ingress rules to serve then the Ingress will be destroyed
 	//+kubebuilder:validation:Optional
-	GrpcIngressName string `json:"grpcIngressName,omitempty" protobuf:"bytes,11,opt,name=grpcIngressName"`
-	// RestIngressName specifies the name of the Kubernetes Ingress resource which the ServingSite uses to define
-	// external access points for resources that accept HTTP-based traffic to their services (i.e. DataApps).
-	// This field is set only after one or more resources are created which use the Ingress access method to serve REST traffic.
+	GrpcIngressName *string `json:"grpcIngressName,omitempty" protobuf:"bytes,11,opt,name=grpcIngressName"`
+	// HttpIngressName specifies the name of the Kubernetes Ingress resource which the Serving Site uses to define
+	// external access points for resources that accept HTTP-based traffic to their services (i.e. Data Apps).
+	// This field is set only after one or more resources are created which use the Ingress access method to serve HTTP traffic.
 	// If there are no Ingress rules to serve then the Ingress will be destroyed
-	RestIngressName string `json:"restIngressName,omitempty" protobuf:"bytes,12,opt,name=restIngressName"`
-	// Store the status of the grpc ingress
-	GrpcIngressReady bool `json:"grpcIngressReady,omitempty" protobuf:"varint,13,opt,name=grpcIngressReady"`
-	// Status of rest ingress.
-	RestIngressReady bool `json:"restIngressReady,omitempty" protobuf:"varint,14,opt,name=restIngressReady"`
+	HttpIngressName *string `json:"restIngressName,omitempty" protobuf:"bytes,12,opt,name=restIngressName"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

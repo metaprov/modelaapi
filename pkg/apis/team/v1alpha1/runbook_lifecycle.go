@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 
 	team "github.com/metaprov/modelaapi/pkg/apis/team"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -118,8 +119,8 @@ func (runbook *RunBook) Saved() bool {
 	return runbook.GetCond(RunBookSaved).Status == corev1.ConditionTrue
 }
 
-func (runbook RunBook) GetStatus() interface{} {
-	return runbook.Status
+func (runbook RunBook) GetStatus() proto.Message {
+	return &runbook.Status
 }
 
 func (runbook RunBook) GetObservedGeneration() int64 {
@@ -135,5 +136,5 @@ func (runbook RunBook) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (runbook *RunBook) SetStatus(status interface{}) {
-	runbook.Status = status.(RunBookStatus)
+	runbook.Status = *status.(*RunBookStatus)
 }

@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 	v1 "k8s.io/api/core/v1"
 
 	"github.com/metaprov/modelaapi/pkg/apis/infra"
@@ -169,8 +170,8 @@ func (tenant Tenant) DefaultServingSiteRef() *v1.ObjectReference {
 	}
 }
 
-func (tenant Tenant) GetStatus() interface{} {
-	return tenant.Status
+func (tenant Tenant) GetStatus() proto.Message {
+	return &tenant.Status
 }
 
 func (tenant Tenant) GetObservedGeneration() int64 {
@@ -186,5 +187,5 @@ func (tenant *Tenant) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (tenant *Tenant) SetStatus(status interface{}) {
-	tenant.Status = status.(TenantStatus)
+	tenant.Status = *status.(*TenantStatus)
 }

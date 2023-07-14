@@ -94,21 +94,20 @@ type DataProductSpec struct {
 	// GitLocation specifies the location of a Git repository where resources under the Data Product will be saved as YAML
 	// +kubebuilder:validation:Optional
 	GitLocation GitLocation `json:"gitLocation,omitempty" protobuf:"bytes,4,opt,name=gitLocation"`
-	// ImageLocation specifies the default Docker image repository where images produced under the Data Product will be stored
-	// +kubebuilder:validation:Optional
-	ImageLocation *ImageLocation `json:"imageLocation,omitempty" protobuf:"bytes,5,opt,name=imageLocation"`
 	// CacheBucketName specifies the name of the Virtual Bucket which workloads for resources under the Data Product
 	// will use internally for caching workloads. Setting CacheBucketName to a valid Virtual Bucket is highly
 	// recommended for stability and performance
 	// +kubebuilder:validation:Required
 	// +required
 	CacheBucketName string `json:"cacheBucketName,omitempty" protobuf:"bytes,6,opt,name=cacheBucketName"`
-	// The name of the Lab that will be used by default with all compute-requiring child resources
+	// The name of the Lab which will be used by all training and data-related workloads, in the case
+	// that the resource creating the workload does not specify a Lab
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Optional
 	DefaultLabName *string `json:"defaultLabName" protobuf:"bytes,7,opt,name=defaultLabName"`
-	// The name of the Serving Site which will be used by default with all Predictor resources
+	// The name of the Serving Site which will be used by all inference-related workloads, in the case
+	// that the resource creating the workload does not specify a Serving Site
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional

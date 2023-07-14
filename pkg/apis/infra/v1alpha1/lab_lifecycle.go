@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 	"k8s.io/utils/pointer"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
@@ -254,8 +255,7 @@ func (lab Lab) LabRoleBinding() *rbacv1.RoleBinding {
 func (lab Lab) LabClusterRole() *rbacv1.ClusterRole {
 	return &rbacv1.ClusterRole{
 		ObjectMeta: metav1.ObjectMeta{
-			Name:      catalog.LabJobRunnerRole,
-			Namespace: lab.Name,
+			Name: catalog.LabJobRunnerRole,
 		},
 		Rules: []rbacv1.PolicyRule{
 			{
@@ -306,8 +306,8 @@ func (lab Lab) LabServiceAccount() *corev1.ServiceAccount {
 	}
 }
 
-func (lab Lab) GetStatus() interface{} {
-	return lab.Status
+func (lab Lab) GetStatus() proto.Message {
+	return &lab.Status
 }
 
 func (lab Lab) GetObservedGeneration() int64 {
@@ -323,5 +323,5 @@ func (lab *Lab) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (lab *Lab) SetStatus(status interface{}) {
-	lab.Status = status.(LabStatus)
+	lab.Status = *status.(*LabStatus)
 }

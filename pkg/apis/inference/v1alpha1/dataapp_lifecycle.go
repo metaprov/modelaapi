@@ -7,6 +7,7 @@
 package v1alpha1
 
 import (
+	"github.com/gogo/protobuf/proto"
 	"github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -156,8 +157,8 @@ func (dataapp DataApp) ConstructRESTRule(fqdn string, serviceName string) *nwv1.
 	}
 }
 
-func (dataapp DataApp) GetStatus() interface{} {
-	return dataapp.Status
+func (dataapp DataApp) GetStatus() proto.Message {
+	return &dataapp.Status
 }
 
 func (dataapp DataApp) GetObservedGeneration() int64 {
@@ -173,5 +174,5 @@ func (dataapp *DataApp) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (dataapp *DataApp) SetStatus(status interface{}) {
-	dataapp.Status = status.(DataAppStatus)
+	dataapp.Status = *status.(*DataAppStatus)
 }

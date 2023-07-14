@@ -45,9 +45,8 @@ type AlertList struct {
 type AlertLevel string
 
 const (
-	Info    AlertLevel = "normal"
-	Warning AlertLevel = "warning "
-	Error   AlertLevel = "error"
+	InfoAlertLevel  AlertLevel = "normal"
+	ErrorAlertLevel AlertLevel = "error"
 )
 
 type AlertSpec struct {

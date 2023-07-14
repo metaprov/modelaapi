@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
@@ -505,7 +506,7 @@ func (dataset *Dataset) IsFeatureGroup() bool {
 
 // Generate a dataset completion alert
 func (dataset *Dataset) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
-	level := infra.Info
+	level := infra.InfoAlertLevel
 	subject := fmt.Sprintf("Dataset %s completed successfully", dataset.Name)
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -537,7 +538,7 @@ func (dataset *Dataset) CompletionAlert(notification catalog.NotificationSpec) *
 }
 
 func (dataset *Dataset) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
-	level := infra.Error
+	level := infra.ErrorAlertLevel
 	subject := fmt.Sprintf("Dataset %s failed with error: %v", dataset.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -806,8 +807,8 @@ func (dataset *Dataset) GroupForecastFile() string {
 	return dataset.GroupFolder() + "/forecasts/forecast.csv"
 }
 
-func (dataset Dataset) GetStatus() interface{} {
-	return dataset.Status
+func (dataset Dataset) GetStatus() proto.Message {
+	return &dataset.Status
 }
 
 func (dataset Dataset) GetObservedGeneration() int64 {
@@ -823,5 +824,5 @@ func (dataset *Dataset) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (dataset *Dataset) SetStatus(status interface{}) {
-	dataset.Status = status.(DatasetStatus)
+	dataset.Status = *status.(*DatasetStatus)
 }

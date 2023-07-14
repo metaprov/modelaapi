@@ -2,6 +2,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/inference"
 	training "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
@@ -366,8 +367,8 @@ func (predictor Predictor) ActiveModels() map[string]string {
 	return activeModels
 }
 
-func (predictor Predictor) GetStatus() interface{} {
-	return predictor.Status
+func (predictor Predictor) GetStatus() proto.Message {
+	return &predictor.Status
 }
 
 func (predictor Predictor) GetObservedGeneration() int64 {
@@ -383,5 +384,5 @@ func (predictor *Predictor) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (predictor *Predictor) SetStatus(status interface{}) {
-	predictor.Status = status.(PredictorStatus)
+	predictor.Status = *status.(*PredictorStatus)
 }

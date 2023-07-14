@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
@@ -163,7 +164,7 @@ func (reciperun *RecipeRun) IsFailed() bool {
 
 // Generate a dataset completion alert
 func (reciperun RecipeRun) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
-	level := infra.Info
+	level := infra.InfoAlertLevel
 	subject := fmt.Sprintf("Recipe reciperun %s completed successfully", reciperun.Name)
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -191,7 +192,7 @@ func (reciperun RecipeRun) CompletionAlert(notification catalog.NotificationSpec
 }
 
 func (reciperun RecipeRun) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
-	level := infra.Error
+	level := infra.ErrorAlertLevel
 	subject := fmt.Sprintf("Recipe %s failed with error: %v", reciperun.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -231,8 +232,8 @@ func (reciperun RecipeRun) RunStatus() *catalog.LastRunStatus {
 
 }
 
-func (reciperun RecipeRun) GetStatus() interface{} {
-	return reciperun.Status
+func (reciperun RecipeRun) GetStatus() proto.Message {
+	return &reciperun.Status
 }
 
 func (reciperun RecipeRun) GetObservedGeneration() int64 {
@@ -248,5 +249,5 @@ func (reciperun *RecipeRun) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (reciperun *RecipeRun) SetStatus(status interface{}) {
-	reciperun.Status = status.(RecipeRunStatus)
+	reciperun.Status = *status.(*RecipeRunStatus)
 }

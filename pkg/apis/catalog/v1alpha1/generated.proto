@@ -229,6 +229,29 @@ message ContainerLog {
   optional string bucket = 4;
 }
 
+// CronSchedule specifies the schedule for a Job to be executed
+message CronSchedule {
+  // Enabled indicates if the schedule is enabled. When enabled, a CronJob will be created which when triggered
+  // will initiate the regeneration of the resource that specifies the schedule
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // The cron string for the schedule, applicable if the trigger type is Cron.
+  // See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm for more information
+  // +kubebuilder:validation:Optional
+  optional string cron = 2;
+
+  // The type of schedule, which can be a frequency interval or a cron expression
+  // +kubebuilder:validation:Optional
+  optional string type = 3;
+
+  // The number of historical run records that the resource will maintain
+  // +kubebuilder:default:=10
+  // +kubebuilder:validation:Optional
+  optional int32 maxRecords = 4;
+}
+
 message CurvePoint {
   optional double x = 1;
 
@@ -807,7 +830,11 @@ message ModelDeploymentSpec {
   // +kubebuilder:validation:Optional
   optional int32 traffic = 3;
 
-  // Role denotes the role of this model
+  // Role denotes the role of the model, which can be either live or shadow.
+  // When a model is deployed as a live model, prediction requests will be served by the model. The chance that the
+  // prediction request will be forwarded to the model is determined by Traffic.
+  // When a model is deployed as a shadow model, the model will still receive and log prediction requests and results
+  // but will not have the result sent back the Predictor
   // +kubebuilder:default:=live
   // +kubebuilder:validation:Optional
   optional string role = 4;
@@ -815,7 +842,7 @@ message ModelDeploymentSpec {
   // The URL of the model server image; applicable when rolling back a model
   optional string imageName = 5;
 
-  // The name of the account which approved the model, if applicable
+  // The reference to the account which approved the model, if applicable
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference approvedBy = 6;
 }
@@ -1079,6 +1106,28 @@ message RocAucCurve {
   repeated CurvePoint values = 1;
 }
 
+message RunRecord {
+  // ID specifies the unique ID or resource name for the run
+  optional string id = 1;
+
+  // FailureMessage contains the failure produced by the run, if applicable
+  optional string failureMessage = 2;
+
+  // ResourceVersion specifies the version of the resource relevant to the run at the time of completion
+  optional int32 resourceVersion = 3;
+
+  // StartedAt specifies the time at which the run started
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 4;
+
+  // CompletedAt specifies the time at which the run was completed
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 5;
+
+  // Logs contains the logs for all workloads produced by the run
+  repeated ContainerLog logs = 6;
+}
+
 // RunSchedule specifies the schedule for a Job to be executed
 message RunSchedule {
   // Indicates if the schedule is enabled and the Jobs associated it will be created at the specified time
@@ -1135,6 +1184,28 @@ message RunScheduleStatus {
   // Actual retry count
   // +kubebuilder:validation:Optional
   optional int32 retryCount = 6;
+}
+
+message RunStatus {
+  // Last time the job started
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRunAt = 1;
+
+  // The unique ID of the last run created by the schedule.
+  // +kubebuilder:validation:Optional
+  optional string lastRunId = 2;
+
+  // The unique ID of the currently active run
+  // +kubebuilder:validation:Optional
+  optional string activeRunId = 3;
+
+  // The logs of the currently active run
+  // +kubebuilder:validation:Optional
+  repeated ContainerLog lastFailureMessage = 4;
+
+  // RunRecords contains the collection of previously recorded runs
+  // +kubebuilder:validation:Optional
+  repeated RunRecord runRecords = 5;
 }
 
 message TestSuite {

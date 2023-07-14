@@ -546,32 +546,6 @@ export namespace AttachmentStatus {
   }
 }
 
-export class BucketResourceQuotas extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): BucketResourceQuotas;
-  hasEnabled(): boolean;
-  clearEnabled(): BucketResourceQuotas;
-
-  getHardlimit(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
-  setHardlimit(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): BucketResourceQuotas;
-  hasHardlimit(): boolean;
-  clearHardlimit(): BucketResourceQuotas;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BucketResourceQuotas.AsObject;
-  static toObject(includeInstance: boolean, msg: BucketResourceQuotas): BucketResourceQuotas.AsObject;
-  static serializeBinaryToWriter(message: BucketResourceQuotas, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BucketResourceQuotas;
-  static deserializeBinaryFromReader(message: BucketResourceQuotas, reader: jspb.BinaryReader): BucketResourceQuotas;
-}
-
-export namespace BucketResourceQuotas {
-  export type AsObject = {
-    enabled?: boolean,
-    hardlimit?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
-  }
-}
-
 export class Connection extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Connection;
@@ -1587,11 +1561,6 @@ export class ServingSiteStatus extends jspb.Message {
   clearDailypredictionscountsList(): ServingSiteStatus;
   addDailypredictionscounts(value: number, index?: number): ServingSiteStatus;
 
-  getFailurereason(): string;
-  setFailurereason(value: string): ServingSiteStatus;
-  hasFailurereason(): boolean;
-  clearFailurereason(): ServingSiteStatus;
-
   getFailuremessage(): string;
   setFailuremessage(value: string): ServingSiteStatus;
   hasFailuremessage(): boolean;
@@ -1606,16 +1575,6 @@ export class ServingSiteStatus extends jspb.Message {
   setRestingressname(value: string): ServingSiteStatus;
   hasRestingressname(): boolean;
   clearRestingressname(): ServingSiteStatus;
-
-  getGrpcingressready(): boolean;
-  setGrpcingressready(value: boolean): ServingSiteStatus;
-  hasGrpcingressready(): boolean;
-  clearGrpcingressready(): ServingSiteStatus;
-
-  getRestingressready(): boolean;
-  setRestingressready(value: boolean): ServingSiteStatus;
-  hasRestingressready(): boolean;
-  clearRestingressready(): ServingSiteStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): ServingSiteStatus;
@@ -1640,12 +1599,9 @@ export namespace ServingSiteStatus {
     totalpredictordatadriftfailed?: number,
     totalpredictoraccuracyfailed?: number,
     dailypredictionscountsList: Array<number>,
-    failurereason?: string,
     failuremessage?: string,
     grpcingressname?: string,
     restingressname?: string,
-    grpcingressready?: boolean,
-    restingressready?: boolean,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -1963,11 +1919,6 @@ export namespace VirtualBucketList {
 }
 
 export class VirtualBucketSpec extends jspb.Message {
-  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): VirtualBucketSpec;
-  hasTenantref(): boolean;
-  clearTenantref(): VirtualBucketSpec;
-
   getConnectionname(): string;
   setConnectionname(value: string): VirtualBucketSpec;
   hasConnectionname(): boolean;
@@ -1983,21 +1934,6 @@ export class VirtualBucketSpec extends jspb.Message {
   hasOwner(): boolean;
   clearOwner(): VirtualBucketSpec;
 
-  getRegion(): string;
-  setRegion(value: string): VirtualBucketSpec;
-  hasRegion(): boolean;
-  clearRegion(): VirtualBucketSpec;
-
-  getVersioning(): boolean;
-  setVersioning(value: boolean): VirtualBucketSpec;
-  hasVersioning(): boolean;
-  clearVersioning(): VirtualBucketSpec;
-
-  getQuotas(): BucketResourceQuotas | undefined;
-  setQuotas(value?: BucketResourceQuotas): VirtualBucketSpec;
-  hasQuotas(): boolean;
-  clearQuotas(): VirtualBucketSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VirtualBucketSpec.AsObject;
   static toObject(includeInstance: boolean, msg: VirtualBucketSpec): VirtualBucketSpec.AsObject;
@@ -2008,13 +1944,9 @@ export class VirtualBucketSpec extends jspb.Message {
 
 export namespace VirtualBucketSpec {
   export type AsObject = {
-    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     connectionname?: string,
     description?: string,
     owner?: string,
-    region?: string,
-    versioning?: boolean,
-    quotas?: BucketResourceQuotas.AsObject,
   }
 }
 
@@ -2028,11 +1960,6 @@ export class VirtualBucketStatus extends jspb.Message {
   setObservedgeneration(value: number): VirtualBucketStatus;
   hasObservedgeneration(): boolean;
   clearObservedgeneration(): VirtualBucketStatus;
-
-  getFailurereason(): string;
-  setFailurereason(value: string): VirtualBucketStatus;
-  hasFailurereason(): boolean;
-  clearFailurereason(): VirtualBucketStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): VirtualBucketStatus;
@@ -2056,7 +1983,6 @@ export namespace VirtualBucketStatus {
   export type AsObject = {
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration?: number,
-    failurereason?: string,
     failuremessage?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }

@@ -1,18 +1,13 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
-	v1 "k8s.io/api/core/v1"
-	resource "k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 type VirtualBucketConditionType string
 
-// / BucketName Condition
 const (
 	VirtualBucketReady = "Ready"
-	VirtualBucketSaved = "Saved"
 )
 
 // +kubebuilder:object:root=true
@@ -43,15 +38,12 @@ type VirtualBucketList struct {
 
 // VirtualBucketSpec defines the desired state of VirtualBucket
 type VirtualBucketSpec struct {
-	// The reference to the tenant which the object exists under
-	// +kubebuilder:validation:Optional
-	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,name=tenantRef"`
 	// The name of the Connection resource which exists under the same tenant as the object. The Connection
 	// should represent the external location and access credentials of an object storage system
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:default:=""
-	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
+	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
 	// User-provided description of the object
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:default:=""
@@ -61,29 +53,6 @@ type VirtualBucketSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
-	// For cloud based bucket, this is the region of the bucket
-	// In the case of a cloud-based Connection, Region specifies the region of the bucket
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Region *string `json:"region,omitempty" protobuf:"bytes,5,opt,name=region"`
-	// If true, the bucket supports versioning, which applies to the S3 API. See
-	// https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html for more information
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Versioning *bool `json:"versioning,omitempty" protobuf:"varint,6,opt,name=versioning"`
-	// The resource quotas of the bucket, which can restrict how much storage the bucket may use
-	// +kubebuilder:validation:Optional
-	Quotas BucketResourceQuotas `json:"quotas,omitempty" protobuf:"bytes,7,opt,name=quotas"`
-}
-
-type BucketResourceQuotas struct {
-	// Indicates if the resource quota is enabled
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// The maximum amount of storage the bucket may use
-	// +kubebuilder:validation:Optional
-	HardLimit *resource.Quantity `json:"hardLimit,omitempty" protobuf:"bytes,2,opt,name=hardLimit"`
 }
 
 // VirtualBucketStatus defines the observed state of a VirtualBucket
@@ -94,13 +63,9 @@ type VirtualBucketStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
-	// In the case of failure, the VirtualBucket resource controller will set this field with a failure reason
-	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,4,opt,name=failureReason"`
 	// In the case of failure, the VirtualBucket resource controller will set this field with a failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,5,opt,name=failureMessage"`
-
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

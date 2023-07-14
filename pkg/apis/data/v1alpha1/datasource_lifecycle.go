@@ -3,6 +3,7 @@ package v1alpha1
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
@@ -253,8 +254,8 @@ func (datasource *DataSource) HaveValidationRules() bool {
 
 }
 
-func (datasource DataSource) GetStatus() interface{} {
-	return datasource.Status
+func (datasource DataSource) GetStatus() proto.Message {
+	return &datasource.Status
 }
 
 func (datasource DataSource) GetObservedGeneration() int64 {
@@ -270,5 +271,5 @@ func (datasource *DataSource) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (datasource *DataSource) SetStatus(status interface{}) {
-	datasource.Status = status.(DataSourceStatus)
+	datasource.Status = *status.(*DataSourceStatus)
 }

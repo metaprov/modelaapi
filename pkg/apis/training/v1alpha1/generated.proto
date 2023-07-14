@@ -1940,7 +1940,6 @@ message ModelStatus {
   repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 69;
 }
 
-// ModelValidation defines a single validation to be run against a model
 message ModelTestSuite {
   // Baseline Model Ref specifies a previous model to compare against
   // +kubebuilder:validation:Optional
@@ -1950,7 +1949,6 @@ message ModelTestSuite {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference datasetRef = 2;
 
-  // Define the column name for the validation role
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 3;
 }
@@ -2432,28 +2430,25 @@ message ServingEnvironment {
 
 // ServingSpec specifies the requirements to serve a model
 message ServingSpec {
-  // If true, deploy the model if it is ready. The model is deployed to the serving site
+  // Enabled indicates if automatic model serving is enabled. If false or unspecified, the Study or Model Class
+  // managing the model will not create or update serving resources for the Model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // The name of the predictor if exist to update.
+  // PredictorName specifies the name of a Predictor to create or update.
+  // If unspecified, a live Predictor will not be created for the model
   optional string predictorName = 2;
 
+  // Resources specifies the resources that will be allocated to the Predictor
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 3;
 
-  // The reference to the serving site, where online predictor will be served.
-  // If unspecified, the default Serving Site from the Data Product will be used
+  // The reference to the Serving Site under which serving resources will be created
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference servingSiteRef = 6;
 
-  // Create an online predictor to host the model and enable real time ML.
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool online = 7;
-
-  // Create A DataApp, and enable dashboard access to the model
+  // Dashboard indicates if a Data App will be created for the Model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool dashboard = 8;
@@ -2462,22 +2457,21 @@ message ServingSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 9;
 
-  // The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
-  // copies of the service in the case that automatic scaling is disabled
+  // Replicas specifies the number of replicas that will be created for the Predictor
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   optional int32 replicas = 10;
 
-  // Define the promotion policy of a new model
+  // Promotion specifies the promotion policy for the Predictor
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional string promotion = 12;
 
-  // ApprovedBy indicates the account that approve this model.
+  // ApprovedBy indicates the account that approved the model
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference approvedBy = 13;
 
-  // ApprovedAt indicates the time of approval
+  // ApprovedAt indicates the time of manual approval
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 14;
 }

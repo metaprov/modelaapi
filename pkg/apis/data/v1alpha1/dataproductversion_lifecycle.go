@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -123,8 +124,8 @@ func (version DataProductVersion) Archived() bool {
 	return version.GetCond(DataProductVersionSaved).Status == metav1.ConditionTrue
 }
 
-func (dataproductversion DataProductVersion) GetStatus() interface{} {
-	return dataproductversion.Status
+func (dataproductversion DataProductVersion) GetStatus() proto.Message {
+	return &dataproductversion.Status
 }
 
 func (dataproductversion DataProductVersion) GetObservedGeneration() int64 {
@@ -140,5 +141,5 @@ func (dataproductversion *DataProductVersion) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (dataproductversion *DataProductVersion) SetStatus(status interface{}) {
-	dataproductversion.Status = status.(DataProductVersionStatus)
+	dataproductversion.Status = *status.(*DataProductVersionStatus)
 }

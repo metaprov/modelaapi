@@ -170,8 +170,8 @@ type DatasetSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Featurize *bool `json:"featurize,omitempty" protobuf:"varint,25,opt,name=featurize"`
-	// The reference to the Lab under which Jobs created by the Dataset will be executed. If empty, it will default to
-	// the default Lab of the Data Product of the Dataset.
+	// The reference to the Lab under which Jobs created by the Dataset will be executed.
+	// If empty, it will default to the default Lab of the Data Product for the Dataset
 	// +kubebuilder:validation:Optional
 	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,26,opt,name=labRef"`
 	// For dataset that contain feedback information, this is reference to the serving dataset

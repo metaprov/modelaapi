@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 
 	team "github.com/metaprov/modelaapi/pkg/apis/team"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -115,8 +116,8 @@ func (pm *PostMortem) Archived() bool {
 	return pm.GetCond(PostMortemSaved).Status == corev1.ConditionTrue
 }
 
-func (postmortem PostMortem) GetStatus() interface{} {
-	return postmortem.Status
+func (postmortem PostMortem) GetStatus() proto.Message {
+	return &postmortem.Status
 }
 
 func (postmortem PostMortem) GetObservedGeneration() int64 {
@@ -132,5 +133,5 @@ func (postmortem PostMortem) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (postmortem *PostMortem) SetStatus(status interface{}) {
-	postmortem.Status = status.(PostMortemStatus)
+	postmortem.Status = *status.(*PostMortemStatus)
 }

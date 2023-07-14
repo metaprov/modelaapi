@@ -107,7 +107,6 @@ const (
 	ModelMAPELessThanBaseline         catalog.AssertionType = "model-mape-less-than-baseline"
 )
 
-// ModelValidation defines a single validation to be run against a model
 type ModelTestSuite struct {
 	// Baseline Model Ref specifies a previous model to compare against
 	// +kubebuilder:validation:Optional
@@ -115,7 +114,6 @@ type ModelTestSuite struct {
 	// The name of a labeled dataset used to test the model, when measuring a performance metric
 	// +kubebuilder:validation:Optional
 	DatasetRef v1.ObjectReference `json:"datasetRef,omitempty" protobuf:"bytes,2,opt,name=datasetRef"`
-	// Define the column name for the validation role
 	// +kubebuilder:validation:Optional
 	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,3,opt,name=unitTests"`
 }

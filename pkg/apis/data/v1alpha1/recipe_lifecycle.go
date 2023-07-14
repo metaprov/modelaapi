@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 
 	"github.com/metaprov/modelaapi/pkg/apis/data"
 	"github.com/metaprov/modelaapi/pkg/util"
@@ -117,8 +118,8 @@ func (recipe *Recipe) UpdateRunStatus(run RecipeRun) {
 
 }
 
-func (recipe Recipe) GetStatus() interface{} {
-	return recipe.Status
+func (recipe Recipe) GetStatus() proto.Message {
+	return &recipe.Status
 }
 
 func (recipe Recipe) GetObservedGeneration() int64 {
@@ -134,5 +135,5 @@ func (recipe *Recipe) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (recipe *Recipe) SetStatus(status interface{}) {
-	recipe.Status = status.(RecipeStatus)
+	recipe.Status = *status.(*RecipeStatus)
 }

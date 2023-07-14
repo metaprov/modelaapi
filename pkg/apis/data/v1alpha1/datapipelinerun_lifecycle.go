@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
@@ -174,7 +175,7 @@ func (in *DataPipelineRun) MarkAborted(err error) {
 
 // Generate a dataset completion alert
 func (run DataPipelineRun) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
-	level := infra.Info
+	level := infra.InfoAlertLevel
 	subject := fmt.Sprintf("Location pipeline run %s completed successfully", run.Name)
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -203,7 +204,7 @@ func (run DataPipelineRun) CompletionAlert(notification catalog.NotificationSpec
 }
 
 func (run DataPipelineRun) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
-	level := infra.Error
+	level := infra.ErrorAlertLevel
 	subject := fmt.Sprintf("Data Pipeline Run %s failed with error: %v", run.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
@@ -244,8 +245,8 @@ func (run DataPipelineRun) RunStatus() *catalog.LastRunStatus {
 
 }
 
-func (datapipelinerun DataPipelineRun) GetStatus() interface{} {
-	return datapipelinerun.Status
+func (datapipelinerun DataPipelineRun) GetStatus() proto.Message {
+	return &datapipelinerun.Status
 }
 
 func (datapipelinerun DataPipelineRun) GetObservedGeneration() int64 {
@@ -261,5 +262,5 @@ func (datapipelinerun *DataPipelineRun) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (datapipelinerun *DataPipelineRun) SetStatus(status interface{}) {
-	datapipelinerun.Status = status.(DataPipelineRunStatus)
+	datapipelinerun.Status = *status.(*DataPipelineRunStatus)
 }
