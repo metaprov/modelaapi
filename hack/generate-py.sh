@@ -32,6 +32,7 @@ python3 -m grpc_tools.protoc \
     -I${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf \
     --grpc_python_out=${PROJECT_ROOT}/lang/python \
     --python_out=${PROJECT_ROOT}/lang/python \
+    --pyi_out=${PROJECT_ROOT}/lang/python \
     google/api/annotations.proto \
     google/api/http.proto \
     k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto \

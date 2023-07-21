@@ -1544,11 +1544,6 @@ func (in *ModelClassRunStatus) DeepCopyInto(out *ModelClassRunStatus) {
 		in, out := &in.CompletedAt, &out.CompletedAt
 		*out = (*in).DeepCopy()
 	}
-	if in.FailureReason != nil {
-		in, out := &in.FailureReason, &out.FailureReason
-		*out = new(catalogv1alpha1.StatusError)
-		**out = **in
-	}
 	if in.FailureMessage != nil {
 		in, out := &in.FailureMessage, &out.FailureMessage
 		*out = new(string)
@@ -1879,13 +1874,8 @@ func (in *ModelSpec) DeepCopyInto(out *ModelSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.ModelVersion != nil {
-		in, out := &in.ModelVersion, &out.ModelVersion
-		*out = new(string)
-		**out = **in
-	}
-	if in.DatasetName != nil {
-		in, out := &in.DatasetName, &out.DatasetName
+	if in.Version != nil {
+		in, out := &in.Version, &out.Version
 		*out = new(string)
 		**out = **in
 	}

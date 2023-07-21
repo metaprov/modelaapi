@@ -212,7 +212,6 @@ message DriftDetectionSpec {
   // +kubebuilder:validation:Optional
   optional bool genDriftTests = 2;
 
-  // If true, automatically generate drift test to all the columns based on the column type
   // +kubebuilder:default:=1000
   // +kubebuilder:validation:Optional
   optional int32 minPredictions = 3;
@@ -224,9 +223,6 @@ message DriftDetectionSpec {
   // The drift threshold for drift metrics.
   // If empty will be set the modela
   repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DriftThreshold driftThresholds = 5;
-
-  // Define the tests to run against the predictor.
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTestsTemplate = 6;
 
   // The schedule on which model monitoring computations will be performed
   // +kubebuilder:validation:Optional

@@ -1,0 +1,81 @@
+apiVersion: inference.modela.ai/v1alpha1
+kind: Prediction
+metadata:
+  name: prediction-test
+  namespace: default-product
+spec:
+  abort: false
+  activeDeadlineSeconds: 600
+  createDataset: false
+  forecastSpec:
+    horizon:
+      start: 0
+  schedule:
+    enabled: true
+    type: hourly
+  input:
+    format:
+      csv:
+        commentChars: '#'
+        compression: none
+        delimiter: comma
+        encoding: utf-8
+        escapeChar: single-quote
+        hasIndexColumn: false
+        header: true
+        maxRows: 0
+        nullValues: ''
+        quote: double-quote
+        skipRows: 0
+        strict: false
+      excel:
+        data:
+          entireSheet: false
+        firstSheetWithData: false
+      fileType: csv
+      parquet:
+        engine: auto
+    location:
+      bucket: default-minio-bucket
+      connection: ''
+      database: ''
+      path: >-
+        modela/live/tenants/modela/dataproducts/default-product/predictions/prediction-20230712-112050/versions/v1/data/raw/iris.csv
+      sql: ''
+      table: ''
+      topic: ''
+      type: object
+      url: ''
+  labeled: false
+  modelRef:
+    name: model-20230711-1502360
+    namespace: default-product
+  output:
+    IncludeShapValues: false
+    action: upsert
+    createTableIfNotExist: false
+    datasetName: ''
+    detectOutliers: false
+    format: csv
+    includeFeatures: true
+    location:
+      bucket: default-minio-bucket
+      connection: ''
+      database: ''
+      path: >-
+        modela/live/tenants/modela/dataproducts/default-product/predictions/prediction-20230712-112050/versions/v1/data/raw/iris.csv.out
+      sql: ''
+      table: ''
+      topic: ''
+      type: object
+      url: ''
+  owner: admin
+  partitionLocation: {}
+  resources:
+    custom: false
+    workloadName: general-large
+  servingSiteRef:
+    name: modela-serving-site
+    namespace: modela
+  unitTests: {}
+  versionName: v1

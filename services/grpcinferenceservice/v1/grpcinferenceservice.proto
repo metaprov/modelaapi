@@ -432,10 +432,6 @@ message SchemaInfo {
 message ColumnInfo {
     string name          = 1; // column name
     string type          = 2; // column type
-    float  datasetMin    = 3; // training data set min
-    float  datasetMean   = 4; // training dataset mean
-    float  datasetStdDev = 5; // training dataset stddev
-    float  datasetMax    = 6; // trainin dataset max
 }
 
 /// request / response

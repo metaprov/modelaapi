@@ -134,6 +134,8 @@ def get_description_type(path=PKG_DESCRIBE):
 ## Define the configuration
 ##########################################################################
 
+print(find_packages(where=PROJECT, exclude=EXCLUDES))
+
 config = {
     "name": NAME,
     "version": get_version(),
@@ -156,7 +158,7 @@ config = {
     },
     "download_url": "{}/tarball/v{}".format(REPOSITORY, get_version()),
     "packages": find_packages(where=PROJECT, exclude=EXCLUDES),
-    "package_data": {"yellowbrick": ["datasets/manifest.json"]},
+    "package_data": {"yellowbrick": ["datasets/manifest.json"], "github": ["**/*.pyi"], "google": ["**/*.pyi"], "k8s": ["**/*.pyi"]},
     "zip_safe": False,
     "entry_points": {"console_scripts": []},
     "install_requires": list(get_requires()),

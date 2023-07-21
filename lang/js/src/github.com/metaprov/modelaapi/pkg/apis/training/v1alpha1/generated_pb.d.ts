@@ -1976,11 +1976,6 @@ export class ModelClassRunStatus extends jspb.Message {
   hasEvalmetrics(): boolean;
   clearEvalmetrics(): ModelClassRunStatus;
 
-  getFailurereason(): string;
-  setFailurereason(value: string): ModelClassRunStatus;
-  hasFailurereason(): boolean;
-  clearFailurereason(): ModelClassRunStatus;
-
   getFailuremessage(): string;
   setFailuremessage(value: string): ModelClassRunStatus;
   hasFailuremessage(): boolean;
@@ -2038,7 +2033,6 @@ export namespace ModelClassRunStatus {
     phase?: string,
     observedgeneration?: number,
     evalmetrics?: string,
-    failurereason?: string,
     failuremessage?: string,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
@@ -2574,25 +2568,15 @@ export class ModelSpec extends jspb.Message {
   hasOwner(): boolean;
   clearOwner(): ModelSpec;
 
-  getVersionname(): string;
-  setVersionname(value: string): ModelSpec;
-  hasVersionname(): boolean;
-  clearVersionname(): ModelSpec;
-
-  getModelversion(): string;
-  setModelversion(value: string): ModelSpec;
-  hasModelversion(): boolean;
-  clearModelversion(): ModelSpec;
+  getVersion(): string;
+  setVersion(value: string): ModelSpec;
+  hasVersion(): boolean;
+  clearVersion(): ModelSpec;
 
   getStudyname(): string;
   setStudyname(value: string): ModelSpec;
   hasStudyname(): boolean;
   clearStudyname(): ModelSpec;
-
-  getDatasetname(): string;
-  setDatasetname(value: string): ModelSpec;
-  hasDatasetname(): boolean;
-  clearDatasetname(): ModelSpec;
 
   getTask(): string;
   setTask(value: string): ModelSpec;
@@ -2760,10 +2744,8 @@ export class ModelSpec extends jspb.Message {
 export namespace ModelSpec {
   export type AsObject = {
     owner?: string,
-    versionname?: string,
-    modelversion?: string,
+    version?: string,
     studyname?: string,
-    datasetname?: string,
     task?: string,
     subtask?: string,
     objective?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.AsObject,
@@ -3023,15 +3005,15 @@ export class ModelStatus extends jspb.Message {
   hasProgress(): boolean;
   clearProgress(): ModelStatus;
 
-  getSizeinbytes(): number;
-  setSizeinbytes(value: number): ModelStatus;
-  hasSizeinbytes(): boolean;
-  clearSizeinbytes(): ModelStatus;
+  getDatasetname(): string;
+  setDatasetname(value: string): ModelStatus;
+  hasDatasetname(): boolean;
+  clearDatasetname(): ModelStatus;
 
-  getLatency(): number;
-  setLatency(value: number): ModelStatus;
-  hasLatency(): boolean;
-  clearLatency(): ModelStatus;
+  getDatasourcename(): string;
+  setDatasourcename(value: string): ModelStatus;
+  hasDatasourcename(): boolean;
+  clearDatasourcename(): ModelStatus;
 
   getServing(): ServingStatus | undefined;
   setServing(value?: ServingStatus): ModelStatus;
@@ -3189,8 +3171,8 @@ export namespace ModelStatus {
     validationrows?: number,
     failuremessage?: string,
     progress?: number,
-    sizeinbytes?: number,
-    latency?: number,
+    datasetname?: string,
+    datasourcename?: string,
     serving?: ServingStatus.AsObject,
     tarfilehash?: string,
     trainingdatahash?: DataHashes.AsObject,

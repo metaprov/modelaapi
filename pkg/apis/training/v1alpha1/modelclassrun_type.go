@@ -130,10 +130,6 @@ type ModelClassRunStatus struct {
 	// The folder contains all the pipeline artifacts - metadata, logs
 	// +kubebuilder:validation:Optional
 	Folder string `json:"folder,omitempty" protobuf:"bytes,8,opt,name=evalMetrics"`
-	// UpdateUpdateStrategy in case of terminal failure
-	// Borrowed from cluster api controller
-	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,9,opt,name=failureReason"`
 	// UpdateUpdateStrategy in case of terminal failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,10,opt,name=failureMessage"`

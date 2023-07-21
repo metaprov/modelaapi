@@ -38,19 +38,11 @@ func (model *Model) Default() {
 		model.ObjectMeta.Labels = make(map[string]string)
 	}
 
-	if model.Spec.ModelVersion != nil {
-		model.ObjectMeta.Labels["modela.ai/modelversion"] = *model.Spec.ModelVersion
-	}
-
 	model.ObjectMeta.Labels[catalog.StudyLabelKey] = model.Spec.StudyName
 	model.ObjectMeta.Labels[catalog.AlgorithmLabelKey] = model.Spec.Estimator.AlgorithmName
 
 	if model.Spec.Owner != nil {
 		model.ObjectMeta.Labels[catalog.OwnerKindLabelKey] = *model.Spec.Owner
-	}
-
-	if model.Spec.DatasetName != nil {
-		model.ObjectMeta.Labels[catalog.DatasetLabelKey] = *model.Spec.DatasetName
 	}
 
 	if model.Spec.ModelClassName != nil {

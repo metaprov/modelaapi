@@ -1201,7 +1201,7 @@ message RunStatus {
 
   // The logs of the currently active run
   // +kubebuilder:validation:Optional
-  repeated ContainerLog lastFailureMessage = 4;
+  repeated ContainerLog activeRunLogs = 4;
 
   // RunRecords contains the collection of previously recorded runs
   // +kubebuilder:validation:Optional

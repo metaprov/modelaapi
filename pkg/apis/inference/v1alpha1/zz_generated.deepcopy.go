@@ -300,7 +300,6 @@ func (in *DriftDetectionSpec) DeepCopyInto(out *DriftDetectionSpec) {
 		*out = make([]datav1alpha1.DriftThreshold, len(*in))
 		copy(*out, *in)
 	}
-	in.UnitTestsTemplate.DeepCopyInto(&out.UnitTestsTemplate)
 	in.Schedule.DeepCopyInto(&out.Schedule)
 	out.OutlierDetectionModelRef = in.OutlierDetectionModelRef
 	if in.MaxHistograms != nil {

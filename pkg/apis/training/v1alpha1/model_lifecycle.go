@@ -164,7 +164,7 @@ func (model *Model) RemoveFinalizer() {
 func (model Model) RootURI() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s",
 		model.Namespace,
-		model.Spec.VersionName,
+		model.Spec.Version,
 		model.Spec.StudyName,
 		model.Name)
 }
@@ -1169,8 +1169,6 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	model.Namespace = study.Namespace
 	model.Spec.Training = *study.Spec.TrainingTemplate.DeepCopy()
 	model.Spec.StudyName = study.Name
-	model.Spec.VersionName = study.Spec.VersionName
-	model.Spec.DatasetName = study.Spec.DatasetName
 	model.Spec.ModelClassName = study.Spec.ModelClassName
 	model.Spec.ModelClassRunName = study.Spec.ModelClassRunName
 	model.Spec.ArtifactBucketName = study.Spec.ArtifactBucketName
@@ -1182,7 +1180,7 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	model.ObjectMeta.Labels[catalog.StudyLabelKey] = study.Name
 	model.Spec.Training.LabRef = study.Spec.LabRef
 	model.Spec.Fast = study.Spec.Fast
-	model.Spec.ModelVersion = study.Spec.ModelVersion
+	model.Spec.Version = study.Spec.ModelVersion
 	model.Status.TrainDatasetLocation = study.Status.TrainDatasetLocation
 	model.Status.TestDatasetLocation = study.Status.TestDatasetLocation
 	model.Status.ValidationDatasetLocation = study.Status.ValidationDatasetLocation
@@ -1250,7 +1248,6 @@ func (model Model) CompletionAlert(notification catalog.NotificationSpec) *infra
 			Notification: notification,
 			Owner:        model.Spec.Owner,
 			Fields: map[string]string{
-				"Entity":     *model.Spec.DatasetName,
 				"Study":      model.Spec.StudyName,
 				"Task":       string(model.Spec.Task),
 				"Objective":  string(model.Spec.Objective.Metric),
@@ -1287,7 +1284,7 @@ func (model Model) ErrorAlert(notification catalog.NotificationSpec, err error) 
 			Notification: notification,
 			Owner:        model.Spec.Owner,
 			Fields: map[string]string{
-				"Entity":     *model.Spec.DatasetName,
+				"Entity":     model.Status.DatasetName,
 				"Study":      model.Spec.StudyName,
 				"Task":       string(model.Spec.Task),
 				"Objective":  string(model.Spec.Objective.Metric),

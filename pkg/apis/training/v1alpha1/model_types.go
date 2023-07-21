@@ -152,25 +152,14 @@ type ModelSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// VersionName references the name of a Data Product Version that describes the version of the resource
-	// +kubebuilder:validation:Required
-	// +kubebuilder:default:="latest"
-	// +kubebuilder:validation:MaxLength=63
-	// +required
-	VersionName string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// The version of the Model, derived from the Study which created the Model
 	// +kubebuilder:default:=""
-	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,3,opt,name=modelVersion"`
+	Version *string `json:"version,omitempty" protobuf:"bytes,3,opt,name=version"`
 	// The name of the Study which created the Model. If empty, the Model will be trained as a stand-alone model
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
 	// +required
 	StudyName string `json:"studyName,omitempty" protobuf:"bytes,4,opt,name=studyName"`
-	// The name of the Dataset resource which the Model is being trained with
-	// +kubebuilder:validation:Required
-	// +kubebuilder:validation:MaxLength=63
-	// +required
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,5,opt,name=datasetName"`
 	// The machine learning task type of the Model (i.e. regression, classification), derived from the parent Study
 	// +kubebuilder:validation:Required
 	// +required
@@ -408,12 +397,10 @@ type ModelStatus struct {
 	// The progress percentage of the Model, which is derived from the Model's current phase
 	// +kubebuilder:validation:Optional
 	Progress int32 `json:"progress,omitempty" protobuf:"varint,43,opt,name=progress"`
-	// The size of the model binary in bytes
-	// +kubebuilder:validation:Optional
-	SizeInBytes int32 `json:"sizeInBytes,omitempty" protobuf:"varint,44,opt,name=sizeInBytes"`
-	// The measured prediction latency
-	// +kubebuilder:validation:Optional
-	Latency float64 `json:"latency,omitempty" protobuf:"bytes,45,opt,name=latency"`
+	// The name of the Dataset resource which the Model was trained with
+	DatasetName string `json:"datasetName,omitempty" protobuf:"bytes,44,opt,name=datasetName"`
+	// The name of the Data Source resource which the Model was trained with
+	DataSourceName string `json:"dataSourceName,omitempty" protobuf:"bytes,45,opt,name=dataSourceName"`
 	// ServingStatus contains the status of the model in the case that it was deployed to a Predictor or Data App
 	// +kubebuilder:validation:Optional
 	Serving ServingStatus `json:"serving,omitempty" protobuf:"bytes,47,opt,name=serving"`

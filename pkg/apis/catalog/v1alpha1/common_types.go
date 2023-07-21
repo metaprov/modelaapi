@@ -1386,7 +1386,7 @@ type RunStatus struct {
 	ActiveRunId *string `json:"activeRunId,omitempty" protobuf:"bytes,3,opt,name=activeRunId"`
 	// The logs of the currently active run
 	// +kubebuilder:validation:Optional
-	ActiveRunLogs ContainerLogs `json:"lastFailureMessage,omitempty" protobuf:"bytes,4,opt,name=lastFailureMessage"`
+	ActiveRunLogs ContainerLogs `json:"activeRunLogs,omitempty" protobuf:"bytes,4,opt,name=activeRunLogs"`
 	// RunRecords contains the collection of previously recorded runs
 	// +kubebuilder:validation:Optional
 	RunRecords []RunRecord `json:"runRecords,omitempty" protobuf:"bytes,5,opt,name=runRecords"`

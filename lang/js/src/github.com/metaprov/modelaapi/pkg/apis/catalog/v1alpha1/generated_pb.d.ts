@@ -2353,10 +2353,10 @@ export class RunStatus extends jspb.Message {
   hasActiverunid(): boolean;
   clearActiverunid(): RunStatus;
 
-  getLastfailuremessageList(): Array<ContainerLog>;
-  setLastfailuremessageList(value: Array<ContainerLog>): RunStatus;
-  clearLastfailuremessageList(): RunStatus;
-  addLastfailuremessage(value?: ContainerLog, index?: number): ContainerLog;
+  getActiverunlogsList(): Array<ContainerLog>;
+  setActiverunlogsList(value: Array<ContainerLog>): RunStatus;
+  clearActiverunlogsList(): RunStatus;
+  addActiverunlogs(value?: ContainerLog, index?: number): ContainerLog;
 
   getRunrecordsList(): Array<RunRecord>;
   setRunrecordsList(value: Array<RunRecord>): RunStatus;
@@ -2376,7 +2376,7 @@ export namespace RunStatus {
     lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastrunid?: string,
     activerunid?: string,
-    lastfailuremessageList: Array<ContainerLog.AsObject>,
+    activerunlogsList: Array<ContainerLog.AsObject>,
     runrecordsList: Array<RunRecord.AsObject>,
   }
 }

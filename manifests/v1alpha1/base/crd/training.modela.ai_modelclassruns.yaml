@@ -236,10 +236,6 @@ spec:
               failureMessage:
                 description: UpdateUpdateStrategy in case of terminal failure message
                 type: string
-              failureReason:
-                description: UpdateUpdateStrategy in case of terminal failure Borrowed
-                  from cluster api controller
-                type: string
               folder:
                 description: Folder for pipeline run artifacts. This is assigned by
                   the system The folder contains all the pipeline artifacts - metadata,

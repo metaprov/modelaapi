@@ -1149,11 +1149,6 @@ message ModelClassRunStatus {
   // +kubebuilder:validation:Optional
   optional string evalMetrics = 8;
 
-  // UpdateUpdateStrategy in case of terminal failure
-  // Borrowed from cluster api controller
-  // +kubebuilder:validation:Optional
-  optional string failureReason = 9;
-
   // UpdateUpdateStrategy in case of terminal failure message
   // +kubebuilder:validation:Optional
   optional string failureMessage = 10;
@@ -1509,28 +1504,15 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
-  // VersionName references the name of a Data Product Version that describes the version of the resource
-  // +kubebuilder:validation:Required
-  // +kubebuilder:default:="latest"
-  // +kubebuilder:validation:MaxLength=63
-  // +required
-  optional string versionName = 2;
-
   // The version of the Model, derived from the Study which created the Model
   // +kubebuilder:default:=""
-  optional string modelVersion = 3;
+  optional string version = 3;
 
   // The name of the Study which created the Model. If empty, the Model will be trained as a stand-alone model
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
   // +required
   optional string studyName = 4;
-
-  // The name of the Dataset resource which the Model is being trained with
-  // +kubebuilder:validation:Required
-  // +kubebuilder:validation:MaxLength=63
-  // +required
-  optional string datasetName = 5;
 
   // The machine learning task type of the Model (i.e. regression, classification), derived from the parent Study
   // +kubebuilder:validation:Required
@@ -1842,13 +1824,11 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional int32 progress = 43;
 
-  // The size of the model binary in bytes
-  // +kubebuilder:validation:Optional
-  optional int32 sizeInBytes = 44;
+  // The name of the Dataset resource which the Model was trained with
+  optional string datasetName = 44;
 
-  // The measured prediction latency
-  // +kubebuilder:validation:Optional
-  optional double latency = 45;
+  // The name of the Data Source resource which the Model was trained with
+  optional string dataSourceName = 45;
 
   // ServingStatus contains the status of the model in the case that it was deployed to a Predictor or Data App
   // +kubebuilder:validation:Optional

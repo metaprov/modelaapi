@@ -19838,7 +19838,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus.toObject
     lastrunat: (f = msg.getLastrunat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     lastrunid: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     activerunid: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    lastfailuremessageList: jspb.Message.toObjectList(msg.getLastfailuremessageList(),
+    activerunlogsList: jspb.Message.toObjectList(msg.getActiverunlogsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog.toObject, includeInstance),
     runrecordsList: jspb.Message.toObjectList(msg.getRunrecordsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunRecord.toObject, includeInstance)
@@ -19894,7 +19894,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus.deserial
     case 4:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog.deserializeBinaryFromReader);
-      msg.addLastfailuremessage(value);
+      msg.addActiverunlogs(value);
       break;
     case 5:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunRecord;
@@ -19952,7 +19952,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus.serializ
       f
     );
   }
-  f = message.getLastfailuremessageList();
+  f = message.getActiverunlogsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       4,
@@ -20081,10 +20081,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus.prototyp
 
 
 /**
- * repeated ContainerLog lastFailureMessage = 4;
+ * repeated ContainerLog activeRunLogs = 4;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus.prototype.getLastfailuremessageList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus.prototype.getActiverunlogsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog, 4));
 };
@@ -20094,7 +20094,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus.prototyp
  * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus.prototype.setLastfailuremessageList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus.prototype.setActiverunlogsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
@@ -20104,7 +20104,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus.prototyp
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus.prototype.addLastfailuremessage = function(opt_value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus.prototype.addActiverunlogs = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog, opt_index);
 };
 
@@ -20113,8 +20113,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus.prototyp
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus.prototype.clearLastfailuremessageList = function() {
-  return this.setLastfailuremessageList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus.prototype.clearActiverunlogsList = function() {
+  return this.setActiverunlogsList([]);
 };
 
 

@@ -21,7 +21,6 @@ type DriftDetectionSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	GenDriftTests *bool `json:"genDriftTests,omitempty" protobuf:"varint,2,opt,name=genDriftTests"`
-	// If true, automatically generate drift test to all the columns based on the column type
 	// +kubebuilder:default:=1000
 	// +kubebuilder:validation:Optional
 	MinPredictions *int32 `json:"minPredictions,omitempty" protobuf:"varint,3,opt,name=minPredictions"`
@@ -31,8 +30,6 @@ type DriftDetectionSpec struct {
 	// The drift threshold for drift metrics.
 	// If empty will be set the modela
 	DriftThresholds []data.DriftThreshold `json:"driftThresholds,omitempty" protobuf:"bytes,5,rep,name=driftThresholds"`
-	// Define the tests to run against the predictor.
-	UnitTestsTemplate catalog.TestSuite `json:"unitTestsTemplate,omitempty" protobuf:"bytes,6,opt,name=unitTestsTemplate"`
 	// The schedule on which model monitoring computations will be performed
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,7,opt,name=schedule"`

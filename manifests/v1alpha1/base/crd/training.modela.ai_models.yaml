@@ -131,11 +131,6 @@ spec:
                 description: Baseline indicates if the Model was produced by the baseline
                   phase of a Study
                 type: boolean
-              datasetName:
-                description: The name of the Dataset resource which the Model is being
-                  trained with
-                maxLength: 63
-                type: string
               ensemble:
                 description: Ensemble specifies the configuration to create an ensemble
                   model
@@ -1141,11 +1136,6 @@ spec:
               modelClassRunName:
                 description: The Model Class Run which created the Model, if applicable
                 type: string
-              modelVersion:
-                default: ""
-                description: The version of the Model, derived from the Study which
-                  created the Model
-                type: string
               notification:
                 description: The name of the Notifier resource which Alerts created
                   by the Model will be forwarded to
@@ -1915,11 +1905,10 @@ spec:
                       type: object
                     type: array
                 type: object
-              versionName:
-                default: latest
-                description: VersionName references the name of a Data Product Version
-                  that describes the version of the resource
-                maxLength: 63
+              version:
+                default: ""
+                description: The version of the Model, derived from the Study which
+                  created the Model
                 type: string
             type: object
           status:
@@ -2055,6 +2044,14 @@ spec:
                   - feature2
                   type: object
                 type: array
+              dataSourceName:
+                description: The name of the Data Source resource which the Model
+                  was trained with
+                type: string
+              datasetName:
+                description: The name of the Dataset resource which the Model was
+                  trained with
+                type: string
               failureMessage:
                 description: In the case of failure, the Model resource controller
                   will set this field with a failure message
@@ -2497,9 +2494,6 @@ spec:
                         type: string
                     type: object
                 type: object
-              latency:
-                description: The measured prediction latency
-                type: number
               logs:
                 description: Logs specifies the location of logs produced by workloads
                   associated with the Model
@@ -2666,10 +2660,6 @@ spec:
                     - none
                     type: string
                 type: object
-              sizeInBytes:
-                description: The size of the model binary in bytes
-                format: int32
-                type: integer
               tarFileHash:
                 description: Sha256 of the model tar file
                 type: string

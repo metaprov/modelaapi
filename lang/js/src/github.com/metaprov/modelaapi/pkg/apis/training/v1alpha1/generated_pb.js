@@ -17336,7 +17336,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStat
     phase: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     evalmetrics: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    failurereason: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
@@ -17410,10 +17409,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStat
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setEvalmetrics(value);
-      break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFailurereason(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
@@ -17528,13 +17523,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStat
   if (f != null) {
     writer.writeString(
       8,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 9));
-  if (f != null) {
-    writer.writeString(
-      9,
       f
     );
   }
@@ -17852,42 +17840,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStat
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus.prototype.hasEvalmetrics = function() {
   return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional string failureReason = 9;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus.prototype.getFailurereason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus.prototype.setFailurereason = function(value) {
-  return jspb.Message.setField(this, 9, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus.prototype.clearFailurereason = function() {
-  return jspb.Message.setField(this, 9, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus.prototype.hasFailurereason = function() {
-  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -22414,10 +22366,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    modelversion: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    version: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     studyname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    datasetname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     task: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     subtask: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     objective: (f = msg.getObjective()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.toObject(includeInstance, f),
@@ -22489,21 +22439,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setVersionname(value);
-      break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setModelversion(value);
+      msg.setVersion(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setStudyname(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatasetname(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -22676,13 +22618,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
     writer.writeString(
@@ -22694,13 +22629,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
   if (f != null) {
     writer.writeString(
       4,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
       f
     );
   }
@@ -22972,46 +22900,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
 
 
 /**
- * optional string versionName = 2;
+ * optional string version = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getVersionname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setVersionname = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearVersionname = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasVersionname = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string modelVersion = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getModelversion = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getVersion = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -23020,7 +22912,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setModelversion = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setVersion = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -23029,7 +22921,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearModelversion = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearVersion = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -23038,7 +22930,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasModelversion = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasVersion = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -23076,42 +22968,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasStudyname = function() {
   return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string datasetName = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getDatasetname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setDatasetname = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearDatasetname = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasDatasetname = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -24673,8 +24529,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.toObj
     validationrows: (f = jspb.Message.getField(msg, 40)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 42)) == null ? undefined : f,
     progress: (f = jspb.Message.getField(msg, 43)) == null ? undefined : f,
-    sizeinbytes: (f = jspb.Message.getField(msg, 44)) == null ? undefined : f,
-    latency: (f = jspb.Message.getOptionalFloatingPointField(msg, 45)) == null ? undefined : f,
+    datasetname: (f = jspb.Message.getField(msg, 44)) == null ? undefined : f,
+    datasourcename: (f = jspb.Message.getField(msg, 45)) == null ? undefined : f,
     serving: (f = msg.getServing()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus.toObject(includeInstance, f),
     tarfilehash: (f = jspb.Message.getField(msg, 48)) == null ? undefined : f,
     trainingdatahash: (f = msg.getTrainingdatahash()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.toObject(includeInstance, f),
@@ -24906,12 +24762,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.deser
       msg.setProgress(value);
       break;
     case 44:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setSizeinbytes(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasetname(value);
       break;
     case 45:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setLatency(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasourcename(value);
       break;
     case 47:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingStatus;
@@ -25327,16 +25183,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 44));
+  f = /** @type {string} */ (jspb.Message.getField(message, 44));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       44,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 45));
+  f = /** @type {string} */ (jspb.Message.getField(message, 45));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeString(
       45,
       f
     );
@@ -26847,19 +26703,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
 
 
 /**
- * optional int32 sizeInBytes = 44;
- * @return {number}
+ * optional string datasetName = 44;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getSizeinbytes = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 44, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getDatasetname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 44, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setSizeinbytes = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setDatasetname = function(value) {
   return jspb.Message.setField(this, 44, value);
 };
 
@@ -26868,7 +26724,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearSizeinbytes = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearDatasetname = function() {
   return jspb.Message.setField(this, 44, undefined);
 };
 
@@ -26877,25 +26733,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasSizeinbytes = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasDatasetname = function() {
   return jspb.Message.getField(this, 44) != null;
 };
 
 
 /**
- * optional double latency = 45;
- * @return {number}
+ * optional string dataSourceName = 45;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getLatency = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 45, 0.0));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getDatasourcename = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 45, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setLatency = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setDatasourcename = function(value) {
   return jspb.Message.setField(this, 45, value);
 };
 
@@ -26904,7 +26760,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearLatency = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearDatasourcename = function() {
   return jspb.Message.setField(this, 45, undefined);
 };
 
@@ -26913,7 +26769,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasLatency = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasDatasourcename = function() {
   return jspb.Message.getField(this, 45) != null;
 };
 

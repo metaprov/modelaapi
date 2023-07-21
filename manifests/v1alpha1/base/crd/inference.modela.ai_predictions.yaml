@@ -1261,7 +1261,7 @@ spec:
                   activeRunId:
                     description: The unique ID of the currently active run
                     type: string
-                  lastFailureMessage:
+                  activeRunLogs:
                     description: The logs of the currently active run
                     items:
                       description: ContainerLog describes the location of logs for
