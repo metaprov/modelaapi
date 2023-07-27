@@ -453,7 +453,7 @@ func (servingsite ServingSite) ServingSiteClusterRole() *rbacv1.ClusterRole {
 			},
 			{
 				Verbs:           []string{"get"},
-				APIGroups:       []string{"inference.modela.ai"},
+				APIGroups:       []string{"training.modela.ai"},
 				Resources:       []string{"*"},
 				ResourceNames:   []string{},
 				NonResourceURLs: []string{},

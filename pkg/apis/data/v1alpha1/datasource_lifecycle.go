@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/gogo/protobuf/proto"
+	"k8s.io/apimachinery/pkg/runtime"
+	"k8s.io/client-go/kubernetes/scheme"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
@@ -124,6 +126,15 @@ func (column *Column) ValidateColumn() (bool, []metav1.StatusCause) {
 		})
 	}
 	return len(causes) == 0, causes
+}
+
+func ParseDataSourceYaml(content []byte) (*DataSource, error) {
+	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
+	if err != nil {
+		return nil, err
+	}
+	r := requiredObj.(*DataSource)
+	return r, nil
 }
 
 // CountActiveAttributes counts the number of attributes that we should not ignore
