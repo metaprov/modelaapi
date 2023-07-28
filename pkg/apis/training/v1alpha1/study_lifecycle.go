@@ -52,14 +52,6 @@ func (study Study) CanStart() bool {
 	return study.Spec.Schedule.StartAt.Before(&now)
 }
 
-func (study Study) ReachedMaxFETime() bool {
-	if study.Status.FeatureEngineeringStatus.StartedAt == nil {
-		return false // not started
-	}
-	duration := metav1.Now().Unix() - study.Status.FeatureEngineeringStatus.StartedAt.Unix()
-	return int32(duration/60) >= study.Spec.FESearch.MaxTime
-}
-
 // Enabled if we reached max time
 func (study Study) ReachedMaxTime() bool {
 	if study.Status.SearchStatus.StartedAt == nil {
@@ -353,52 +345,6 @@ func (study *Study) MarkTransformFailed(err string) {
 	study.Status.Phase = StudyPhaseFailed
 	study.UpdateEndTime()
 	study.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Transform failed: %s", err))
-	study.RefreshProgress()
-}
-
-////////////////////////////////////////////////
-// Feature engineering
-////////////////////////////////////////////////
-
-func (study Study) FeatureEngineered() bool {
-	return study.GetCond(StudyFeatureEngineered).Status == metav1.ConditionTrue
-}
-
-func (study *Study) MarkFeatureEngineering() {
-	study.CreateOrUpdateCond(metav1.Condition{
-		Type:   StudyFeatureEngineered,
-		Status: metav1.ConditionFalse,
-		Reason: ReasonFeatureEngineering,
-	})
-	now := metav1.Now()
-	study.Status.FeatureEngineeringStatus.StartedAt = &now
-	study.Status.Phase = StudyPhaseEngineeringFeature
-}
-
-func (study *Study) MarkFeatureEngineered() {
-	study.CreateOrUpdateCond(metav1.Condition{
-		Type:   StudyFeatureEngineered,
-		Status: metav1.ConditionTrue,
-		Reason: StudyFeatureEngineered,
-	})
-	now := metav1.Now()
-	if study.Status.FeatureEngineeringStatus.CompletedAt == nil {
-		study.Status.FeatureEngineeringStatus.CompletedAt = &now
-	}
-	study.Status.Phase = StudyPhaseFeatureEngineered
-	study.RefreshProgress()
-}
-
-func (study *Study) MarkFeatureEngineeringFailed(err string) {
-	study.CreateOrUpdateCond(metav1.Condition{
-		Type:    StudyFeatureEngineered,
-		Status:  metav1.ConditionFalse,
-		Reason:  ReasonFailed,
-		Message: err,
-	})
-	study.Status.Phase = StudyPhaseFailed
-	study.UpdateEndTime()
-	study.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Feature engineering failed: %s", err))
 	study.RefreshProgress()
 }
 
@@ -1034,17 +980,15 @@ func (study *Study) RefreshProgress() {
 	if study.IsReady() || study.IsFailed() || study.Aborted() {
 		study.Status.Progress = 100
 	} else if study.Reported() {
-		study.Status.Progress = 95
+		study.Status.Progress = 85
 	} else if study.Profiled() {
-		study.Status.Progress = 90
+		study.Status.Progress = 70
 	} else if study.Tested() {
-		study.Status.Progress = 80
+		study.Status.Progress = 55
 	} else if study.Searched() {
-		study.Status.Progress = 50
+		study.Status.Progress = 40
 	} else if study.Baselined() {
-		study.Status.Progress = 35
-	} else if study.FeatureEngineered() {
-		study.Status.Progress = 20
+		study.Status.Progress = 25
 	} else if study.Splitted() {
 		study.Status.Progress = 10
 	}
