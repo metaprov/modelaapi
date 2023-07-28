@@ -70,10 +70,6 @@ func (study Study) DefaultBaselineEstimator(task catalog.MLTask) catalog.Classic
 var _ webhook.Defaulter = &Study{}
 
 func (study *Study) Default() {
-	if study.Spec.FESearch.Estimator == "" {
-		study.Spec.FESearch.Estimator = study.DefaultFESearchEstimator(study.Spec.Task)
-	}
-
 	study.Spec.Search.Default(study.Spec.DeepCopy().Task)
 
 	if study.Spec.Ensembles.VotingEnsemble == nil {
