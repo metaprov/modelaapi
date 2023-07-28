@@ -150,9 +150,9 @@ type StudySpec struct {
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
 	SubTask *catalog.MLSubtask `json:"subtask" protobuf:"bytes,6,opt,name=subtask"`
-	// FESearch specifies the parameters to perform a feature engineering search
+	// FeatureEngineering specifies the feature engineering pipeline for models created by the Study
 	// +kubebuilder:validation:Optional
-	FESearch FeatureEngineeringSearchSpec `json:"feSearch,omitempty" protobuf:"bytes,7,opt,name=feSearch"`
+	FeatureEngineering FeatureEngineeringSpec `json:"featureEngineering,omitempty" protobuf:"bytes,7,opt,name=featureEngineering"`
 	// Set the imbalance dataset handling.
 	// +kubebuilder:validation:Optional
 	ImbalanceHandler ImbalanceHandlingSpec `json:"imbalanceHandler,omitempty" protobuf:"bytes,8,opt,name=imbalanceHandler"`
@@ -320,39 +320,33 @@ type StudyStatus struct {
 	// Logs specifies the location of logs produced by workloads associated with the Study
 	//+kubebuilder:validation:Optional
 	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,23,opt,name=logs"`
-	// FeatureEngineeringStatus contains the status of the feature engineering phase
-	//+kubebuilder:validation:Optional
-	FeatureEngineeringStatus StudyPhaseStatus `json:"featureEngineering,,omitempty" protobuf:"bytes,24,opt,name=featureEngineering"`
 	// BaselineStatus contains the status of the baseline phase
 	//+kubebuilder:validation:Optional
-	BaselineStatus StudyPhaseStatus `json:"baseline,omitempty" protobuf:"bytes,25,opt,name=baseline"`
+	BaselineStatus StudyPhaseStatus `json:"baseline,omitempty" protobuf:"bytes,24,opt,name=baseline"`
 	// SearchStatus contains the status of the model search phase
 	//+kubebuilder:validation:Optional
-	SearchStatus StudyPhaseStatus `json:"search,omitempty" protobuf:"bytes,26,opt,name=search"`
+	SearchStatus StudyPhaseStatus `json:"search,omitempty" protobuf:"bytes,25,opt,name=search"`
 	// EnsembleStatus contains the status of the ensemble phase
 	//+kubebuilder:validation:Optional
-	EnsembleStatus StudyPhaseStatus `json:"ensemble,omitempty" protobuf:"bytes,27,opt,name=ensemble"`
+	EnsembleStatus StudyPhaseStatus `json:"ensemble,omitempty" protobuf:"bytes,26,opt,name=ensemble"`
 	// TestStatus contains the status of the testing phase
 	//+kubebuilder:validation:Optional
-	TestStatus StudyPhaseStatus `json:"test,omitempty" protobuf:"bytes,28,opt,name=test"`
+	TestStatus StudyPhaseStatus `json:"test,omitempty" protobuf:"bytes,27,opt,name=test"`
 	// ExplainStatus contains the status of the explaining phase
 	//+kubebuilder:validation:Optional
-	ExplainStatus StudyPhaseStatus `json:"explain,omitempty" protobuf:"bytes,29,opt,name=explain"`
+	ExplainStatus StudyPhaseStatus `json:"explain,omitempty" protobuf:"bytes,28,opt,name=explain"`
 	// OutlierDetection is the status for outlier detection
 	//+kubebuilder:validation:Optional
-	DriftDetection DriftDetectorStatus `json:"driftDetection,omitempty" protobuf:"bytes,30,opt,name=driftDetection"`
+	DriftDetection DriftDetectorStatus `json:"driftDetection,omitempty" protobuf:"bytes,29,opt,name=driftDetection"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,31,opt,name=updatedAt"`
-	// BestFE specifies the best feature engineering pipeline produced by the Study
-	//+kubebuilder:validation:Optional
-	BestFeatureEngineering *FeatureEngineeringSpec `json:"bestFeatureEngineering,omitempty" protobuf:"bytes,32,opt,name=bestFeatureEngineering"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,30,opt,name=updatedAt"`
 	// GC specifies the status of garbage collection relevant to the Study
-	GC GarbageCollectionStatus `json:"gc,omitempty" protobuf:"bytes,33,opt,name=gc"`
+	GC GarbageCollectionStatus `json:"gc,omitempty" protobuf:"bytes,31,opt,name=gc"`
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,37,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,32,rep,name=conditions"`
 }
 
 // ModelResult contains the records of a single garbage-collected model
@@ -716,43 +710,6 @@ type ThresholdPrunerOptions struct {
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	IntervalSteps *int32 `json:"intervalSteps,omitempty" protobuf:"varint,4,opt,name=intervalSteps"`
-}
-
-// FeatureEngineeringSearchSpec specifies the configuration to produce
-// the best-performing feature engineering pipeline for a given dataset
-type FeatureEngineeringSearchSpec struct {
-	// Indicates if the feature engineering search will be performed
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// The algorithm to use when evaluating models with different feature engineering pipelines
-	// +kubebuilder:validation:Optional
-	Estimator catalog.ClassicEstimatorName `json:"estimator,omitempty" protobuf:"bytes,3,opt,name=estimator"`
-	// The number of models to sample, after which the feature engineering search will conclude
-	// +kubebuilder:default:=10
-	// +kubebuilder:validation:Optional
-	MaxModels int32 `json:"maxModels,omitempty" protobuf:"varint,4,opt,name=maxModels"`
-	// The deadline, in seconds, for models produced by the search to be trained
-	// +kubebuilder:default:=3600
-	// +kubebuilder:validation:Optional
-	MaxTime int32 `json:"maxTime,omitempty" protobuf:"varint,5,opt,name=maxTime"`
-	// The desired number of trainers that will train candidate models in parallel. The number
-	// of trainers is restricted based on the allowance provided by the active License
-	// +kubebuilder:default:=1
-	// +kubebuilder:validation:Optional
-	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,6,opt,name=trainers"`
-	// If true, if a feature engineering pipeline was previously produced for
-	// the same dataset it will be used as a starting point for the search
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Reuse *bool `json:"reuse,omitempty" protobuf:"varint,9,opt,name=reuse"`
-	// Specification for feature selection
-	// +kubebuilder:validation:Optional
-	FeatureSelection *FeatureSelectionSpec `json:"featureSelection,omitempty" protobuf:"bytes,10,opt,name=featureSelection"`
-	// The number of new models produced by the fe search which, if there is no improvement
-	// in score, the model search will conclude
-	// +kubebuilder:validation:Optional
-	EarlyStop *EarlyStopSpec `json:"earlyStop,omitempty" protobuf:"bytes,12,opt,name=earlyStop"`
 }
 
 // GarbageCollectionSpec specifies the configuration to garbage-collect unused Model resources

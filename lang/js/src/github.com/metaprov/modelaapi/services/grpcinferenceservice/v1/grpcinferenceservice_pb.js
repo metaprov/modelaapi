@@ -2,15 +2,18 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var protoc$gen$swagger_options_annotations_pb = require('../../../../../../protoc-gen-swagger/options/annotations_pb.js');
 goog.object.extend(proto, protoc$gen$swagger_options_annotations_pb);
@@ -2436,8 +2439,10 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetada
       msg.setDatatype(value);
       break;
     case 3:
-      var value = /** @type {!Array<number>} */ (reader.readPackedInt64());
-      msg.setShapeList(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addShape(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -2999,8 +3004,10 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferR
       msg.setDatatype(value);
       break;
     case 3:
-      var value = /** @type {!Array<number>} */ (reader.readPackedInt64());
-      msg.setShapeList(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addShape(values[i]);
+      }
       break;
     case 4:
       var value = msg.getParametersMap();
@@ -3856,8 +3863,10 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferR
       msg.setDatatype(value);
       break;
     case 3:
-      var value = /** @type {!Array<number>} */ (reader.readPackedInt64());
-      msg.setShapeList(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addShape(values[i]);
+      }
       break;
     case 4:
       var value = msg.getParametersMap();
@@ -4597,32 +4606,46 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferTensor
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!Array<boolean>} */ (reader.readPackedBool());
-      msg.setBoolContentsList(value);
+      var values = /** @type {!Array<boolean>} */ (reader.isDelimited() ? reader.readPackedBool() : [reader.readBool()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addBoolContents(values[i]);
+      }
       break;
     case 2:
-      var value = /** @type {!Array<number>} */ (reader.readPackedInt32());
-      msg.setIntContentsList(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addIntContents(values[i]);
+      }
       break;
     case 3:
-      var value = /** @type {!Array<number>} */ (reader.readPackedInt64());
-      msg.setInt64ContentsList(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addInt64Contents(values[i]);
+      }
       break;
     case 4:
-      var value = /** @type {!Array<number>} */ (reader.readPackedUint32());
-      msg.setUintContentsList(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addUintContents(values[i]);
+      }
       break;
     case 5:
-      var value = /** @type {!Array<number>} */ (reader.readPackedUint64());
-      msg.setUint64ContentsList(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint64() : [reader.readUint64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addUint64Contents(values[i]);
+      }
       break;
     case 6:
-      var value = /** @type {!Array<number>} */ (reader.readPackedFloat());
-      msg.setFp32ContentsList(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedFloat() : [reader.readFloat()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addFp32Contents(values[i]);
+      }
       break;
     case 7:
-      var value = /** @type {!Array<number>} */ (reader.readPackedDouble());
-      msg.setFp64ContentsList(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addFp64Contents(values[i]);
+      }
       break;
     case 8:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
@@ -6140,11 +6163,7 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo.
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    datasetmin: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    datasetmean: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    datasetstddev: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    datasetmax: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0)
+    type: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -6189,22 +6208,6 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo.
       var value = /** @type {string} */ (reader.readString());
       msg.setType(value);
       break;
-    case 3:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setDatasetmin(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setDatasetmean(value);
-      break;
-    case 5:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setDatasetstddev(value);
-      break;
-    case 6:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setDatasetmax(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -6248,34 +6251,6 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo.
       f
     );
   }
-  f = message.getDatasetmin();
-  if (f !== 0.0) {
-    writer.writeFloat(
-      3,
-      f
-    );
-  }
-  f = message.getDatasetmean();
-  if (f !== 0.0) {
-    writer.writeFloat(
-      4,
-      f
-    );
-  }
-  f = message.getDatasetstddev();
-  if (f !== 0.0) {
-    writer.writeFloat(
-      5,
-      f
-    );
-  }
-  f = message.getDatasetmax();
-  if (f !== 0.0) {
-    writer.writeFloat(
-      6,
-      f
-    );
-  }
 };
 
 
@@ -6312,78 +6287,6 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo.
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo.prototype.setType = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional float datasetMin = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo.prototype.getDatasetmin = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo} returns this
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo.prototype.setDatasetmin = function(value) {
-  return jspb.Message.setProto3FloatField(this, 3, value);
-};
-
-
-/**
- * optional float datasetMean = 4;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo.prototype.getDatasetmean = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo} returns this
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo.prototype.setDatasetmean = function(value) {
-  return jspb.Message.setProto3FloatField(this, 4, value);
-};
-
-
-/**
- * optional float datasetStdDev = 5;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo.prototype.getDatasetstddev = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo} returns this
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo.prototype.setDatasetstddev = function(value) {
-  return jspb.Message.setProto3FloatField(this, 5, value);
-};
-
-
-/**
- * optional float datasetMax = 6;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo.prototype.getDatasetmax = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo} returns this
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo.prototype.setDatasetmax = function(value) {
-  return jspb.Message.setProto3FloatField(this, 6, value);
 };
 
 

@@ -705,18 +705,6 @@ export class ColumnInfo extends jspb.Message {
   getType(): string;
   setType(value: string): ColumnInfo;
 
-  getDatasetmin(): number;
-  setDatasetmin(value: number): ColumnInfo;
-
-  getDatasetmean(): number;
-  setDatasetmean(value: number): ColumnInfo;
-
-  getDatasetstddev(): number;
-  setDatasetstddev(value: number): ColumnInfo;
-
-  getDatasetmax(): number;
-  setDatasetmax(value: number): ColumnInfo;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ColumnInfo.AsObject;
   static toObject(includeInstance: boolean, msg: ColumnInfo): ColumnInfo.AsObject;
@@ -729,10 +717,6 @@ export namespace ColumnInfo {
   export type AsObject = {
     name: string,
     type: string,
-    datasetmin: number,
-    datasetmean: number,
-    datasetstddev: number,
-    datasetmax: number,
   }
 }
 

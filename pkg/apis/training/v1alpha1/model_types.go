@@ -541,70 +541,58 @@ type ClassicalEstimatorSpec struct {
 // FeatureEngineeringSpec specifies the feature engineering to be performed on the training data
 type FeatureEngineeringSpec struct {
 	// Pipelines contains the collection of feature engineering pipelines that
-	// will be applied to a dataset prior to model training
+	// will be applied to the dataset prior to model training
 	// +kubebuilder:validation:Optional
 	Pipelines []FeatureEngineeringPipeline `json:"pipelines,omitempty" protobuf:"bytes,1,rep,name=pipelines"`
 	// Imbalance specifies the method which will be used to handle an imbalanced dataset
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	Imbalance *catalog.ImbalanceHandling `json:"imbalance,omitempty" protobuf:"bytes,2,opt,name=imbalance"`
-	// FeatureSelection specifies the configuration to perform feature selection on a dataset prior to model training
-	// +kubebuilder:validation:Optional
-	FeatureSelection FeatureSelectionSpec `json:"selection,omitempty" protobuf:"bytes,3,opt,name=selection"`
 }
 
 // FeatureEngineeringPipeline represents a single pipeline to transform a dataset
 type FeatureEngineeringPipeline struct {
-	// The name of the pipeline
+	// Name specifies the unique name of the pipeline
 	// +kubebuilder:validation:Required
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// The type of data which the pipeline applies to
-	// +kubebuilder:validation:Required
-	// +required
-	DataType catalog.DataType `json:"datatype,omitempty" protobuf:"bytes,2,opt,name=datatype"`
-	// The collection of columns which the pipeline applies to. Each column in the dataset with the
-	// data type of the pipeline should be added to the collection of columns
+	// Features contains the collection of features which the pipeline will be applied to
 	// +kubebuilder:validation:Optional
-	Columns []string `json:"columns,omitempty" protobuf:"bytes,3,rep,name=columns"`
-	// The imputation method to use, which fills in missing values within the columns
+	Features []string `json:"features,omitempty" protobuf:"bytes,2,rep,name=features"`
+	// Imputation specifies the imputation method to use when handling missing values
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	Imputation *catalog.Imputation `json:"imputation,omitempty" protobuf:"bytes,4,opt,name=imputation"`
-	// The encoding method to use for categorical data types
+	Imputation *catalog.Imputation `json:"imputation,omitempty" protobuf:"bytes,3,opt,name=imputation"`
+	// Encoding specifies the encoding method to use for categorical features
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	Encoding *catalog.CategoricalEncoding `json:"encoding,omitempty" protobuf:"bytes,5,opt,name=encoding"`
-	// The scaling method to use for numerical data types
+	Encoding *catalog.CategoricalEncoding `json:"encoding,omitempty" protobuf:"bytes,4,opt,name=encoding"`
+	// Scaling specifies the scaling method to use for numerical features
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	Scaling *catalog.Scaling `json:"scaling,omitempty" protobuf:"bytes,6,opt,name=scaling"`
-	// The discretisation method, which converts numerical data types to discrete variables
+	Scaling *catalog.Scaling `json:"scaling,omitempty" protobuf:"bytes,5,opt,name=scaling"`
+	// Discretisation specifies the discretisation method to convert numerical features to discrete variables
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	Discretisation *catalog.Discretisation `json:"discretisation,omitempty" protobuf:"bytes,7,opt,name=discretisation"`
-	// The transformation method to use for numerical data types
+	Discretisation *catalog.Discretisation `json:"discretisation,omitempty" protobuf:"bytes,6,opt,name=discretisation"`
+	// VariableTransformation specifies the transformation method to use for numerical feature
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	VariableTransformation *catalog.VariableTransformation `json:"variableTransformation,omitempty" protobuf:"bytes,8,opt,name=variableTransformation"`
-	// The method to use when handling outliers
+	VariableTransformation *catalog.VariableTransformation `json:"variableTransformation,omitempty" protobuf:"bytes,7,opt,name=variableTransformation"`
+	// OutlierHandling specifies the method to use when handling outliers
 	// +kubebuilder:default:=none
 	// Apply only to numeric data types.
-	OutlierHandling *catalog.OutlierHandling `json:"outlierHandling,omitempty" protobuf:"bytes,9,opt,name=outlierHandling"`
-	// The method to use when handling the date-time data type
+	OutlierHandling *catalog.OutlierHandling `json:"outlierHandling,omitempty" protobuf:"bytes,8,opt,name=outlierHandling"`
+	// DatetimeTransformation specifies the method to use when handling the date-time data type
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	DatetimeTransformation *catalog.DatetimeTransformation `json:"datetimeTransformation,omitempty" protobuf:"bytes,10,opt,name=datetimeTransformation"`
-	// Text specifies the pipeline to handle raw text
+	DatetimeTransformation *catalog.DatetimeTransformation `json:"datetimeTransformation,omitempty" protobuf:"bytes,9,opt,name=datetimeTransformation"`
+	// Text defines the configuration for the pipeline to handle text features
 	// +kubebuilder:validation:Optional
-	Text *TextPipelineSpec `json:"text,omitempty" protobuf:"bytes,11,opt,name=text"`
-	// Indicates if all of all the columns specified by the Columns field should be dropped
+	Text *TextPipelineSpec `json:"text,omitempty" protobuf:"bytes,10,opt,name=text"`
+	// Drop indicates if all of all the features for the pipeline will be dropped
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Drop *bool `json:"drop,omitempty" protobuf:"varint,12,opt,name=drop"`
-	// Indicates if the pipeline should not be applied and the columns should remain unchanged
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Passthrough *bool `json:"passthrough,omitempty" protobuf:"varint,13,opt,name=passthrough"`
+	Drop *bool `json:"drop,omitempty" protobuf:"varint,11,opt,name=drop"`
 }
 
 // FeatureImportance records the computed importance of a single feature
@@ -837,11 +825,6 @@ type DataHashes struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ValidationHash string `json:"validationHash,omitempty" protobuf:"bytes,3,opt,name=validationHash"`
-}
-
-type FeatureEngineeringSearchStatus struct {
-	// The recommended pipeline after feature engineering was done
-	Best FeatureEngineeringSpec `json:"best,omitempty" protobuf:"bytes,1,opt,name=best"`
 }
 
 // GeneratedColumnSpec describes a column to be generated and applied to a dataset

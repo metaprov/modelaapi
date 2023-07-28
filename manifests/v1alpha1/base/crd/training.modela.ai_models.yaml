@@ -269,37 +269,16 @@ spec:
                     type: string
                   pipelines:
                     description: Pipelines contains the collection of feature engineering
-                      pipelines that will be applied to a dataset prior to model training
+                      pipelines that will be applied to the dataset prior to model
+                      training
                     items:
                       description: FeatureEngineeringPipeline represents a single
                         pipeline to transform a dataset
                       properties:
-                        columns:
-                          description: The collection of columns which the pipeline
-                            applies to. Each column in the dataset with the data type
-                            of the pipeline should be added to the collection of columns
-                          items:
-                            type: string
-                          type: array
-                        datatype:
-                          description: The type of data which the pipeline applies
-                            to
-                          enum:
-                          - boolean
-                          - datetime
-                          - number
-                          - categorical
-                          - ordinal
-                          - text
-                          - json
-                          - number-list
-                          - categorical-list
-                          - text-list
-                          type: string
                         datetimeTransformation:
                           default: none
-                          description: The method to use when handling the date-time
-                            data type
+                          description: DatetimeTransformation specifies the method
+                            to use when handling the date-time data type
                           enum:
                           - extract-datetime-information
                           - none
@@ -307,8 +286,8 @@ spec:
                           type: string
                         discretisation:
                           default: none
-                          description: The discretisation method, which converts numerical
-                            data types to discrete variables
+                          description: Discretisation specifies the discretisation
+                            method to convert numerical features to discrete variables
                           enum:
                           - equal-width-discretisation-
                           - equal-freq-discretisation
@@ -321,13 +300,13 @@ spec:
                           type: string
                         drop:
                           default: false
-                          description: Indicates if all of all the columns specified
-                            by the Columns field should be dropped
+                          description: Drop indicates if all of all the features for
+                            the pipeline will be dropped
                           type: boolean
                         encoding:
                           default: none
-                          description: The encoding method to use for categorical
-                            data types
+                          description: Encoding specifies the encoding method to use
+                            for categorical features
                           enum:
                           - one-hot-encoding
                           - one-hot-encoding-top-categories
@@ -344,10 +323,16 @@ spec:
                           - auto
                           - none
                           type: string
+                        features:
+                          description: Features contains the collection of features
+                            which the pipeline will be applied to
+                          items:
+                            type: string
+                          type: array
                         imputation:
                           default: none
-                          description: The imputation method to use, which fills in
-                            missing values within the columns
+                          description: Imputation specifies the imputation method
+                            to use when handling missing values
                           enum:
                           - remove-rows-with-missing-values
                           - replace-with-mean
@@ -363,12 +348,12 @@ spec:
                           - none
                           type: string
                         name:
-                          description: The name of the pipeline
+                          description: Name specifies the unique name of the pipeline
                           type: string
                         outlierHandling:
                           default: none
-                          description: The method to use when handling outliers Apply
-                            only to numeric data types.
+                          description: OutlierHandling specifies the method to use
+                            when handling outliers Apply only to numeric data types.
                           enum:
                           - trim-outliers
                           - winsorizer-outliers
@@ -377,15 +362,10 @@ spec:
                           - none
                           - auto
                           type: string
-                        passthrough:
-                          default: false
-                          description: Indicates if the pipeline should not be applied
-                            and the columns should remain unchanged
-                          type: boolean
                         scaling:
                           default: none
-                          description: The scaling method to use for numerical data
-                            types
+                          description: Scaling specifies the scaling method to use
+                            for numerical features
                           enum:
                           - standard-scaling
                           - max-abs-scaling
@@ -397,7 +377,8 @@ spec:
                           - auto
                           type: string
                         text:
-                          description: Text specifies the pipeline to handle raw text
+                          description: Text defines the configuration for the pipeline
+                            to handle text features
                           properties:
                             embedding:
                               description: Indicates if the pipeline will generate
@@ -450,8 +431,8 @@ spec:
                           type: object
                         variableTransformation:
                           default: none
-                          description: The transformation method to use for numerical
-                            data types
+                          description: VariableTransformation specifies the transformation
+                            method to use for numerical feature
                           enum:
                           - log-transformation
                           - reciprocal-transformation
@@ -464,87 +445,6 @@ spec:
                           type: string
                       type: object
                     type: array
-                  selection:
-                    description: FeatureSelection specifies the configuration to perform
-                      feature selection on a dataset prior to model training
-                    properties:
-                      corrThreshold:
-                        default: 95
-                        description: The threshold to remove features with high correlations
-                        format: int32
-                        type: integer
-                      embedding:
-                        default: true
-                        description: Indicates if embedded methods will be tested
-                          as part of the candidate algorithms (e.g. tree-based selection)
-                        type: boolean
-                      enabled:
-                        default: true
-                        description: Indicates if feature selection is enabled
-                        type: boolean
-                      filter:
-                        default: true
-                        description: Indicates if filter methods will be tested as
-                          part of the candidate algorithms (e.g. chi-square or anova
-                          tests)
-                        type: boolean
-                      maxFeatures:
-                        default: 0
-                        description: The number of features that will be selected
-                          based on importance. If TopN is 0, all features will be
-                          selected
-                        format: int32
-                        type: integer
-                      percentile:
-                        default: 20
-                        description: Percent of features to keep
-                        format: int32
-                        type: integer
-                      pipeline:
-                        description: The collection of feature selection methods that
-                          will be applied in order to the dataset
-                        items:
-                          enum:
-                          - drop-features
-                          - drop-constant-features
-                          - drop-duplicated-features
-                          - drop-correlated-features
-                          - mutual-information
-                          - chisquare
-                          - anova
-                          - step-forward
-                          - step-backward
-                          - lasso-regression
-                          - tree-importance
-                          - recursive-feature-elimination
-                          - recursive-feature-addition
-                          - select-percentile
-                          - select-kbest
-                          - select-fpr
-                          - select-fdr
-                          - variance-threshold
-                          - none
-                          - auto
-                          type: string
-                        type: array
-                      reserved:
-                        description: List of features that are reserved and will always
-                          be included in the final feature selection
-                        items:
-                          type: string
-                        type: array
-                      varThreshold:
-                        default: 5
-                        description: The threshold as a percentage to remove low variance
-                          features
-                        format: int32
-                        type: integer
-                      wrapper:
-                        default: true
-                        description: Indicates if wrapper methods will be tested as
-                          part of the candidate algorithms
-                        type: boolean
-                    type: object
                 type: object
               forecast:
                 default: false

@@ -2,15 +2,18 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var k8s_io_apimachinery_pkg_api_resource_generated_pb = require('../../../../k8s.io/apimachinery/pkg/api/resource/generated_pb.js');
 goog.object.extend(proto, k8s_io_apimachinery_pkg_api_resource_generated_pb);
@@ -43616,8 +43619,10 @@ proto.k8s.io.api.core.v1.PodPortForwardOptions.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.addPorts(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addPorts(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -44100,8 +44105,10 @@ proto.k8s.io.api.core.v1.PodSecurityContext.deserializeBinaryFromReader = functi
       msg.setRunasnonroot(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.addSupplementalgroups(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addSupplementalgroups(values[i]);
+      }
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt64());

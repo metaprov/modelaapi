@@ -169,148 +169,204 @@ spec:
                 description: Fast indicates if Models associated with the Study should
                   skip profiling, explaining, and reporting
                 type: boolean
-              feSearch:
-                description: FESearch specifies the parameters to perform a feature
-                  engineering search
+              featureEngineering:
+                description: FeatureEngineering specifies the feature engineering
+                  pipeline for models created by the Study
                 properties:
-                  earlyStop:
-                    description: The number of new models produced by the fe search
-                      which, if there is no improvement in score, the model search
-                      will conclude
-                    properties:
-                      enabled:
-                        default: true
-                        description: Enabled indicates if early stopping is enabled
-                        type: boolean
-                      initial:
-                        default: 20
-                        description: The number of models to train before model objective
-                          metrics will begin to be checked for early stopping. If
-                          unspecified, Modela will ignore the first 10 models by default
-                        format: int32
-                        type: integer
-                      modelsWithNoProgress:
-                        default: 5
-                        description: The number of models with no improvement in score
-                          that are required to abort the model search. If unspecified,
-                          Modela will abort the search after 20 models by default
-                        format: int32
-                        type: integer
-                    type: object
-                  enabled:
-                    default: true
-                    description: Indicates if the feature engineering search will
-                      be performed
-                    type: boolean
-                  estimator:
-                    description: The algorithm to use when evaluating models with
-                      different feature engineering pipelines
+                  imbalance:
+                    default: auto
+                    description: Imbalance specifies the method which will be used
+                      to handle an imbalanced dataset
+                    enum:
+                    - adasyn
+                    - baseline-smote
+                    - kmean-smote
+                    - random-over-sampler
+                    - smote
+                    - smotenc
+                    - svmsmote
+                    - none
+                    - auto
+                    - class-weights
                     type: string
-                  featureSelection:
-                    description: Specification for feature selection
-                    properties:
-                      corrThreshold:
-                        default: 95
-                        description: The threshold to remove features with high correlations
-                        format: int32
-                        type: integer
-                      embedding:
-                        default: true
-                        description: Indicates if embedded methods will be tested
-                          as part of the candidate algorithms (e.g. tree-based selection)
-                        type: boolean
-                      enabled:
-                        default: true
-                        description: Indicates if feature selection is enabled
-                        type: boolean
-                      filter:
-                        default: true
-                        description: Indicates if filter methods will be tested as
-                          part of the candidate algorithms (e.g. chi-square or anova
-                          tests)
-                        type: boolean
-                      maxFeatures:
-                        default: 0
-                        description: The number of features that will be selected
-                          based on importance. If TopN is 0, all features will be
-                          selected
-                        format: int32
-                        type: integer
-                      percentile:
-                        default: 20
-                        description: Percent of features to keep
-                        format: int32
-                        type: integer
-                      pipeline:
-                        description: The collection of feature selection methods that
-                          will be applied in order to the dataset
-                        items:
+                  pipelines:
+                    description: Pipelines contains the collection of feature engineering
+                      pipelines that will be applied to the dataset prior to model
+                      training
+                    items:
+                      description: FeatureEngineeringPipeline represents a single
+                        pipeline to transform a dataset
+                      properties:
+                        datetimeTransformation:
+                          default: none
+                          description: DatetimeTransformation specifies the method
+                            to use when handling the date-time data type
                           enum:
-                          - drop-features
-                          - drop-constant-features
-                          - drop-duplicated-features
-                          - drop-correlated-features
-                          - mutual-information
-                          - chisquare
-                          - anova
-                          - step-forward
-                          - step-backward
-                          - lasso-regression
-                          - tree-importance
-                          - recursive-feature-elimination
-                          - recursive-feature-addition
-                          - select-percentile
-                          - select-kbest
-                          - select-fpr
-                          - select-fdr
-                          - variance-threshold
+                          - extract-datetime-information
                           - none
                           - auto
                           type: string
-                        type: array
-                      reserved:
-                        description: List of features that are reserved and will always
-                          be included in the final feature selection
-                        items:
+                        discretisation:
+                          default: none
+                          description: Discretisation specifies the discretisation
+                            method to convert numerical features to discrete variables
+                          enum:
+                          - equal-width-discretisation-
+                          - equal-freq-discretisation
+                          - kbin-discretisation
+                          - kernel-centerer-discretisation
+                          - label-binarizer-discretisation
+                          - multi-label-binarizer-discretisation
+                          - none
+                          - auto
                           type: string
-                        type: array
-                      varThreshold:
-                        default: 5
-                        description: The threshold as a percentage to remove low variance
-                          features
-                        format: int32
-                        type: integer
-                      wrapper:
-                        default: true
-                        description: Indicates if wrapper methods will be tested as
-                          part of the candidate algorithms
-                        type: boolean
-                    type: object
-                  maxModels:
-                    default: 10
-                    description: The number of models to sample, after which the feature
-                      engineering search will conclude
-                    format: int32
-                    type: integer
-                  maxTime:
-                    default: 3600
-                    description: The deadline, in seconds, for models produced by
-                      the search to be trained
-                    format: int32
-                    type: integer
-                  reuse:
-                    default: false
-                    description: If true, if a feature engineering pipeline was previously
-                      produced for the same dataset it will be used as a starting
-                      point for the search
-                    type: boolean
-                  trainers:
-                    default: 1
-                    description: The desired number of trainers that will train candidate
-                      models in parallel. The number of trainers is restricted based
-                      on the allowance provided by the active License
-                    format: int32
-                    type: integer
+                        drop:
+                          default: false
+                          description: Drop indicates if all of all the features for
+                            the pipeline will be dropped
+                          type: boolean
+                        encoding:
+                          default: none
+                          description: Encoding specifies the encoding method to use
+                            for categorical features
+                          enum:
+                          - one-hot-encoding
+                          - one-hot-encoding-top-categories
+                          - ordinal-encoding
+                          - count-encoding
+                          - target-encoding
+                          - weight-of-evidence-encoding
+                          - binary-encoding
+                          - label-encoding
+                          - hash-encoding
+                          - catboost-encoding
+                          - loo-encoding
+                          - no-encoding
+                          - auto
+                          - none
+                          type: string
+                        features:
+                          description: Features contains the collection of features
+                            which the pipeline will be applied to
+                          items:
+                            type: string
+                          type: array
+                        imputation:
+                          default: none
+                          description: Imputation specifies the imputation method
+                            to use when handling missing values
+                          enum:
+                          - remove-rows-with-missing-values
+                          - replace-with-mean
+                          - replace-with-median
+                          - replace-with-arbitrary-value
+                          - freq-category-imputation
+                          - add-missing-value-indicator
+                          - knn
+                          - iterative
+                          - mice
+                          - no-imputation
+                          - auto
+                          - none
+                          type: string
+                        name:
+                          description: Name specifies the unique name of the pipeline
+                          type: string
+                        outlierHandling:
+                          default: none
+                          description: OutlierHandling specifies the method to use
+                            when handling outliers Apply only to numeric data types.
+                          enum:
+                          - trim-outliers
+                          - winsorizer-outliers
+                          - cap-outliers
+                          - zero-code-outliers
+                          - none
+                          - auto
+                          type: string
+                        scaling:
+                          default: none
+                          description: Scaling specifies the scaling method to use
+                            for numerical features
+                          enum:
+                          - standard-scaling
+                          - max-abs-scaling
+                          - min-max-scaling
+                          - normalization-scaling
+                          - robust-scaling
+                          - scale-to-unit-norm
+                          - none
+                          - auto
+                          type: string
+                        text:
+                          description: Text defines the configuration for the pipeline
+                            to handle text features
+                          properties:
+                            embedding:
+                              description: Indicates if the pipeline will generate
+                                a word embedding
+                              type: string
+                            encoder:
+                              default: auto
+                              description: The text encoder (e.g. TFIDF)
+                              enum:
+                              - tfidf
+                              - count-vec
+                              - hasing-vec
+                              - none
+                              - auto
+                              type: string
+                            lemma:
+                              default: true
+                              description: Indicates if the pipeline will implement
+                                lemmatization
+                              type: boolean
+                            maxSvdComponents:
+                              default: 0
+                              description: The maximum number of SVD components to
+                                use, if applicable
+                              format: int32
+                              type: integer
+                            pos:
+                              default: true
+                              description: Indicates if the pipeline will add part-of-speech
+                                handling
+                              type: boolean
+                            stem:
+                              default: true
+                              description: Indicates if the pipeline will implement
+                                word stemming
+                              type: boolean
+                            stopwords:
+                              default: true
+                              description: Indicates if the pipeline will add stop
+                                word handling
+                              type: boolean
+                            svd:
+                              default: true
+                              description: Indicates if the pipeline will add singular
+                                value decomposition
+                              type: boolean
+                            tokenizer:
+                              description: The text tokenizer character
+                              type: string
+                          type: object
+                        variableTransformation:
+                          default: none
+                          description: VariableTransformation specifies the transformation
+                            method to use for numerical feature
+                          enum:
+                          - log-transformation
+                          - reciprocal-transformation
+                          - sqrt-transformation
+                          - power-transformation
+                          - box-cox-transformation
+                          - yj-transformation
+                          - none
+                          - auto
+                          type: string
+                      type: object
+                    type: array
                 type: object
               forecastTemplate:
                 description: ForecastSpec specifies the parameters required when generating
@@ -2398,305 +2454,6 @@ spec:
                     format: int32
                     type: integer
                 type: object
-              bestFeatureEngineering:
-                description: BestFE specifies the best feature engineering pipeline
-                  produced by the Study
-                properties:
-                  imbalance:
-                    default: auto
-                    description: Imbalance specifies the method which will be used
-                      to handle an imbalanced dataset
-                    enum:
-                    - adasyn
-                    - baseline-smote
-                    - kmean-smote
-                    - random-over-sampler
-                    - smote
-                    - smotenc
-                    - svmsmote
-                    - none
-                    - auto
-                    - class-weights
-                    type: string
-                  pipelines:
-                    description: Pipelines contains the collection of feature engineering
-                      pipelines that will be applied to a dataset prior to model training
-                    items:
-                      description: FeatureEngineeringPipeline represents a single
-                        pipeline to transform a dataset
-                      properties:
-                        columns:
-                          description: The collection of columns which the pipeline
-                            applies to. Each column in the dataset with the data type
-                            of the pipeline should be added to the collection of columns
-                          items:
-                            type: string
-                          type: array
-                        datatype:
-                          description: The type of data which the pipeline applies
-                            to
-                          enum:
-                          - boolean
-                          - datetime
-                          - number
-                          - categorical
-                          - ordinal
-                          - text
-                          - json
-                          - number-list
-                          - categorical-list
-                          - text-list
-                          type: string
-                        datetimeTransformation:
-                          default: none
-                          description: The method to use when handling the date-time
-                            data type
-                          enum:
-                          - extract-datetime-information
-                          - none
-                          - auto
-                          type: string
-                        discretisation:
-                          default: none
-                          description: The discretisation method, which converts numerical
-                            data types to discrete variables
-                          enum:
-                          - equal-width-discretisation-
-                          - equal-freq-discretisation
-                          - kbin-discretisation
-                          - kernel-centerer-discretisation
-                          - label-binarizer-discretisation
-                          - multi-label-binarizer-discretisation
-                          - none
-                          - auto
-                          type: string
-                        drop:
-                          default: false
-                          description: Indicates if all of all the columns specified
-                            by the Columns field should be dropped
-                          type: boolean
-                        encoding:
-                          default: none
-                          description: The encoding method to use for categorical
-                            data types
-                          enum:
-                          - one-hot-encoding
-                          - one-hot-encoding-top-categories
-                          - ordinal-encoding
-                          - count-encoding
-                          - target-encoding
-                          - weight-of-evidence-encoding
-                          - binary-encoding
-                          - label-encoding
-                          - hash-encoding
-                          - catboost-encoding
-                          - loo-encoding
-                          - no-encoding
-                          - auto
-                          - none
-                          type: string
-                        imputation:
-                          default: none
-                          description: The imputation method to use, which fills in
-                            missing values within the columns
-                          enum:
-                          - remove-rows-with-missing-values
-                          - replace-with-mean
-                          - replace-with-median
-                          - replace-with-arbitrary-value
-                          - freq-category-imputation
-                          - add-missing-value-indicator
-                          - knn
-                          - iterative
-                          - mice
-                          - no-imputation
-                          - auto
-                          - none
-                          type: string
-                        name:
-                          description: The name of the pipeline
-                          type: string
-                        outlierHandling:
-                          default: none
-                          description: The method to use when handling outliers Apply
-                            only to numeric data types.
-                          enum:
-                          - trim-outliers
-                          - winsorizer-outliers
-                          - cap-outliers
-                          - zero-code-outliers
-                          - none
-                          - auto
-                          type: string
-                        passthrough:
-                          default: false
-                          description: Indicates if the pipeline should not be applied
-                            and the columns should remain unchanged
-                          type: boolean
-                        scaling:
-                          default: none
-                          description: The scaling method to use for numerical data
-                            types
-                          enum:
-                          - standard-scaling
-                          - max-abs-scaling
-                          - min-max-scaling
-                          - normalization-scaling
-                          - robust-scaling
-                          - scale-to-unit-norm
-                          - none
-                          - auto
-                          type: string
-                        text:
-                          description: Text specifies the pipeline to handle raw text
-                          properties:
-                            embedding:
-                              description: Indicates if the pipeline will generate
-                                a word embedding
-                              type: string
-                            encoder:
-                              default: auto
-                              description: The text encoder (e.g. TFIDF)
-                              enum:
-                              - tfidf
-                              - count-vec
-                              - hasing-vec
-                              - none
-                              - auto
-                              type: string
-                            lemma:
-                              default: true
-                              description: Indicates if the pipeline will implement
-                                lemmatization
-                              type: boolean
-                            maxSvdComponents:
-                              default: 0
-                              description: The maximum number of SVD components to
-                                use, if applicable
-                              format: int32
-                              type: integer
-                            pos:
-                              default: true
-                              description: Indicates if the pipeline will add part-of-speech
-                                handling
-                              type: boolean
-                            stem:
-                              default: true
-                              description: Indicates if the pipeline will implement
-                                word stemming
-                              type: boolean
-                            stopwords:
-                              default: true
-                              description: Indicates if the pipeline will add stop
-                                word handling
-                              type: boolean
-                            svd:
-                              default: true
-                              description: Indicates if the pipeline will add singular
-                                value decomposition
-                              type: boolean
-                            tokenizer:
-                              description: The text tokenizer character
-                              type: string
-                          type: object
-                        variableTransformation:
-                          default: none
-                          description: The transformation method to use for numerical
-                            data types
-                          enum:
-                          - log-transformation
-                          - reciprocal-transformation
-                          - sqrt-transformation
-                          - power-transformation
-                          - box-cox-transformation
-                          - yj-transformation
-                          - none
-                          - auto
-                          type: string
-                      type: object
-                    type: array
-                  selection:
-                    description: FeatureSelection specifies the configuration to perform
-                      feature selection on a dataset prior to model training
-                    properties:
-                      corrThreshold:
-                        default: 95
-                        description: The threshold to remove features with high correlations
-                        format: int32
-                        type: integer
-                      embedding:
-                        default: true
-                        description: Indicates if embedded methods will be tested
-                          as part of the candidate algorithms (e.g. tree-based selection)
-                        type: boolean
-                      enabled:
-                        default: true
-                        description: Indicates if feature selection is enabled
-                        type: boolean
-                      filter:
-                        default: true
-                        description: Indicates if filter methods will be tested as
-                          part of the candidate algorithms (e.g. chi-square or anova
-                          tests)
-                        type: boolean
-                      maxFeatures:
-                        default: 0
-                        description: The number of features that will be selected
-                          based on importance. If TopN is 0, all features will be
-                          selected
-                        format: int32
-                        type: integer
-                      percentile:
-                        default: 20
-                        description: Percent of features to keep
-                        format: int32
-                        type: integer
-                      pipeline:
-                        description: The collection of feature selection methods that
-                          will be applied in order to the dataset
-                        items:
-                          enum:
-                          - drop-features
-                          - drop-constant-features
-                          - drop-duplicated-features
-                          - drop-correlated-features
-                          - mutual-information
-                          - chisquare
-                          - anova
-                          - step-forward
-                          - step-backward
-                          - lasso-regression
-                          - tree-importance
-                          - recursive-feature-elimination
-                          - recursive-feature-addition
-                          - select-percentile
-                          - select-kbest
-                          - select-fpr
-                          - select-fdr
-                          - variance-threshold
-                          - none
-                          - auto
-                          type: string
-                        type: array
-                      reserved:
-                        description: List of features that are reserved and will always
-                          be included in the final feature selection
-                        items:
-                          type: string
-                        type: array
-                      varThreshold:
-                        default: 5
-                        description: The threshold as a percentage to remove low variance
-                          features
-                        format: int32
-                        type: integer
-                      wrapper:
-                        default: true
-                        description: Indicates if wrapper methods will be tested as
-                          part of the candidate algorithms
-                        type: boolean
-                    type: object
-                type: object
               bestModel:
                 description: The name of the Model resource which was determined to
                   be the highest-performing
@@ -2871,46 +2628,6 @@ spec:
                 description: In the case of failure, the Study resource controller
                   will set this field with a failure reason
                 type: string
-              featureEngineering:
-                description: FeatureEngineeringStatus contains the status of the feature
-                  engineering phase
-                properties:
-                  bestScore:
-                    description: Best score so far in this phase. The best score is
-                      the value of the objective.
-                    type: number
-                  completedAt:
-                    description: The time at which the phase concluded
-                    format: date-time
-                    type: string
-                  completedModelsCount:
-                    description: The number of models that have been successfully
-                      trained
-                    format: int32
-                    type: integer
-                  failedModelsCount:
-                    description: The number of models that experienced an error whilst
-                      training
-                    format: int32
-                    type: integer
-                  modelsWithNoProgress:
-                    description: Actual number of models where no progress was made.
-                      This used to decide on early stop.
-                    format: int32
-                    type: integer
-                  runningModelsCount:
-                    description: The number of models currently being trained
-                    format: int32
-                    type: integer
-                  startedAt:
-                    description: The time at which the phase started
-                    format: date-time
-                    type: string
-                  waitingModelsCount:
-                    description: The number of models pending training
-                    format: int32
-                    type: integer
-                type: object
               gc:
                 description: GC specifies the status of garbage collection relevant
                   to the Study

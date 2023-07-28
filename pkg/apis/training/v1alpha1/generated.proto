@@ -436,123 +436,63 @@ message EvalPeriod {
 
 // FeatureEngineeringPipeline represents a single pipeline to transform a dataset
 message FeatureEngineeringPipeline {
-  // The name of the pipeline
+  // Name specifies the unique name of the pipeline
   // +kubebuilder:validation:Required
   optional string name = 1;
 
-  // The type of data which the pipeline applies to
-  // +kubebuilder:validation:Required
-  // +required
-  optional string datatype = 2;
-
-  // The collection of columns which the pipeline applies to. Each column in the dataset with the
-  // data type of the pipeline should be added to the collection of columns
+  // Features contains the collection of features which the pipeline will be applied to
   // +kubebuilder:validation:Optional
-  repeated string columns = 3;
+  repeated string features = 2;
 
-  // The imputation method to use, which fills in missing values within the columns
+  // Imputation specifies the imputation method to use when handling missing values
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional string imputation = 4;
+  optional string imputation = 3;
 
-  // The encoding method to use for categorical data types
+  // Encoding specifies the encoding method to use for categorical features
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional string encoding = 5;
+  optional string encoding = 4;
 
-  // The scaling method to use for numerical data types
+  // Scaling specifies the scaling method to use for numerical features
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional string scaling = 6;
+  optional string scaling = 5;
 
-  // The discretisation method, which converts numerical data types to discrete variables
+  // Discretisation specifies the discretisation method to convert numerical features to discrete variables
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional string discretisation = 7;
+  optional string discretisation = 6;
 
-  // The transformation method to use for numerical data types
+  // VariableTransformation specifies the transformation method to use for numerical feature
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional string variableTransformation = 8;
+  optional string variableTransformation = 7;
 
-  // The method to use when handling outliers
+  // OutlierHandling specifies the method to use when handling outliers
   // +kubebuilder:default:=none
   // Apply only to numeric data types.
-  optional string outlierHandling = 9;
+  optional string outlierHandling = 8;
 
-  // The method to use when handling the date-time data type
+  // DatetimeTransformation specifies the method to use when handling the date-time data type
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional string datetimeTransformation = 10;
+  optional string datetimeTransformation = 9;
 
-  // Text specifies the pipeline to handle raw text
+  // Text defines the configuration for the pipeline to handle text features
   // +kubebuilder:validation:Optional
-  optional TextPipelineSpec text = 11;
+  optional TextPipelineSpec text = 10;
 
-  // Indicates if all of all the columns specified by the Columns field should be dropped
+  // Drop indicates if all of all the features for the pipeline will be dropped
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool drop = 12;
-
-  // Indicates if the pipeline should not be applied and the columns should remain unchanged
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool passthrough = 13;
-}
-
-// FeatureEngineeringSearchSpec specifies the configuration to produce
-// the best-performing feature engineering pipeline for a given dataset
-message FeatureEngineeringSearchSpec {
-  // Indicates if the feature engineering search will be performed
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-
-  // The algorithm to use when evaluating models with different feature engineering pipelines
-  // +kubebuilder:validation:Optional
-  optional string estimator = 3;
-
-  // The number of models to sample, after which the feature engineering search will conclude
-  // +kubebuilder:default:=10
-  // +kubebuilder:validation:Optional
-  optional int32 maxModels = 4;
-
-  // The deadline, in seconds, for models produced by the search to be trained
-  // +kubebuilder:default:=3600
-  // +kubebuilder:validation:Optional
-  optional int32 maxTime = 5;
-
-  // The desired number of trainers that will train candidate models in parallel. The number
-  // of trainers is restricted based on the allowance provided by the active License
-  // +kubebuilder:default:=1
-  // +kubebuilder:validation:Optional
-  optional int32 trainers = 6;
-
-  // If true, if a feature engineering pipeline was previously produced for
-  // the same dataset it will be used as a starting point for the search
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool reuse = 9;
-
-  // Specification for feature selection
-  // +kubebuilder:validation:Optional
-  optional FeatureSelectionSpec featureSelection = 10;
-
-  // The number of new models produced by the fe search which, if there is no improvement
-  // in score, the model search will conclude
-  // +kubebuilder:validation:Optional
-  optional EarlyStopSpec earlyStop = 12;
-}
-
-message FeatureEngineeringSearchStatus {
-  // The recommended pipeline after feature engineering was done
-  optional FeatureEngineeringSpec best = 1;
+  optional bool drop = 11;
 }
 
 // FeatureEngineeringSpec specifies the feature engineering to be performed on the training data
 message FeatureEngineeringSpec {
   // Pipelines contains the collection of feature engineering pipelines that
-  // will be applied to a dataset prior to model training
+  // will be applied to the dataset prior to model training
   // +kubebuilder:validation:Optional
   repeated FeatureEngineeringPipeline pipelines = 1;
 
@@ -560,10 +500,6 @@ message FeatureEngineeringSpec {
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
   optional string imbalance = 2;
-
-  // FeatureSelection specifies the configuration to perform feature selection on a dataset prior to model training
-  // +kubebuilder:validation:Optional
-  optional FeatureSelectionSpec selection = 3;
 }
 
 // FeatureImportance records the computed importance of a single feature
@@ -2598,9 +2534,9 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional string subtask = 6;
 
-  // FESearch specifies the parameters to perform a feature engineering search
+  // FeatureEngineering specifies the feature engineering pipeline for models created by the Study
   // +kubebuilder:validation:Optional
-  optional FeatureEngineeringSearchSpec feSearch = 7;
+  optional FeatureEngineeringSpec featureEngineering = 7;
 
   // Set the imbalance dataset handling.
   // +kubebuilder:validation:Optional
@@ -2818,49 +2754,41 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 23;
 
-  // FeatureEngineeringStatus contains the status of the feature engineering phase
-  // +kubebuilder:validation:Optional
-  optional StudyPhaseStatus featureEngineering = 24;
-
   // BaselineStatus contains the status of the baseline phase
   // +kubebuilder:validation:Optional
-  optional StudyPhaseStatus baseline = 25;
+  optional StudyPhaseStatus baseline = 24;
 
   // SearchStatus contains the status of the model search phase
   // +kubebuilder:validation:Optional
-  optional StudyPhaseStatus search = 26;
+  optional StudyPhaseStatus search = 25;
 
   // EnsembleStatus contains the status of the ensemble phase
   // +kubebuilder:validation:Optional
-  optional StudyPhaseStatus ensemble = 27;
+  optional StudyPhaseStatus ensemble = 26;
 
   // TestStatus contains the status of the testing phase
   // +kubebuilder:validation:Optional
-  optional StudyPhaseStatus test = 28;
+  optional StudyPhaseStatus test = 27;
 
   // ExplainStatus contains the status of the explaining phase
   // +kubebuilder:validation:Optional
-  optional StudyPhaseStatus explain = 29;
+  optional StudyPhaseStatus explain = 28;
 
   // OutlierDetection is the status for outlier detection
   // +kubebuilder:validation:Optional
-  optional DriftDetectorStatus driftDetection = 30;
+  optional DriftDetectorStatus driftDetection = 29;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 31;
-
-  // BestFE specifies the best feature engineering pipeline produced by the Study
-  // +kubebuilder:validation:Optional
-  optional FeatureEngineeringSpec bestFeatureEngineering = 32;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 30;
 
   // GC specifies the status of garbage collection relevant to the Study
-  optional GarbageCollectionStatus gc = 33;
+  optional GarbageCollectionStatus gc = 31;
 
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 37;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 32;
 }
 
 message SuccessiveHalvingOptions {

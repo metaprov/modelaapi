@@ -8,6 +8,35 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class ListServingSitesRequest(_message.Message):
+    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
+    class LabelsEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    LABELS_FIELD_NUMBER: _ClassVar[int]
+    PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
+    PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    ORDER_BY_FIELD_NUMBER: _ClassVar[int]
+    namespace: str
+    labels: _containers.ScalarMap[str, str]
+    page_size: int
+    page_token: str
+    order_by: str
+    def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
+
+class ListServingSitesResponse(_message.Message):
+    __slots__ = ["servingsites", "next_page_token"]
+    SERVINGSITES_FIELD_NUMBER: _ClassVar[int]
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    servingsites: _generated_pb2.ServingSiteList
+    next_page_token: str
+    def __init__(self, servingsites: _Optional[_Union[_generated_pb2.ServingSiteList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
+
 class CreateServingSiteRequest(_message.Message):
     __slots__ = ["servingsite"]
     SERVINGSITE_FIELD_NUMBER: _ClassVar[int]
@@ -18,38 +47,24 @@ class CreateServingSiteResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class DeleteServingSiteRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+class UpdateServingSiteRequest(_message.Message):
+    __slots__ = ["servingsite", "field_mask"]
+    SERVINGSITE_FIELD_NUMBER: _ClassVar[int]
+    FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
+    servingsite: _generated_pb2.ServingSite
+    field_mask: _field_mask_pb2.FieldMask
+    def __init__(self, servingsite: _Optional[_Union[_generated_pb2.ServingSite, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
-class DeleteServingSiteResponse(_message.Message):
+class UpdateServingSiteResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class GetPublicKeyRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
-
-class GetPublicKeyResponse(_message.Message):
-    __slots__ = ["publickey"]
-    PUBLICKEY_FIELD_NUMBER: _ClassVar[int]
-    publickey: bytes
-    def __init__(self, publickey: _Optional[bytes] = ...) -> None: ...
-
 class GetServingSiteRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+    __slots__ = ["namespace", "name"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
     namespace: str
+    name: str
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetServingSiteResponse(_message.Message):
@@ -60,43 +75,28 @@ class GetServingSiteResponse(_message.Message):
     yaml: str
     def __init__(self, servingsite: _Optional[_Union[_generated_pb2.ServingSite, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
-class ListServingSitesRequest(_message.Message):
-    __slots__ = ["labels", "namespace", "order_by", "page_size", "page_token"]
-    class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: str
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-    LABELS_FIELD_NUMBER: _ClassVar[int]
+class GetPublicKeyRequest(_message.Message):
+    __slots__ = ["namespace", "name"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    ORDER_BY_FIELD_NUMBER: _ClassVar[int]
-    PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
-    PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    labels: _containers.ScalarMap[str, str]
+    NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    order_by: str
-    page_size: int
-    page_token: str
-    def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
+    name: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
-class ListServingSitesResponse(_message.Message):
-    __slots__ = ["next_page_token", "servingsites"]
-    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    SERVINGSITES_FIELD_NUMBER: _ClassVar[int]
-    next_page_token: str
-    servingsites: _generated_pb2.ServingSiteList
-    def __init__(self, servingsites: _Optional[_Union[_generated_pb2.ServingSiteList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
+class GetPublicKeyResponse(_message.Message):
+    __slots__ = ["publickey"]
+    PUBLICKEY_FIELD_NUMBER: _ClassVar[int]
+    publickey: bytes
+    def __init__(self, publickey: _Optional[bytes] = ...) -> None: ...
 
-class UpdateServingSiteRequest(_message.Message):
-    __slots__ = ["field_mask", "servingsite"]
-    FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
-    SERVINGSITE_FIELD_NUMBER: _ClassVar[int]
-    field_mask: _field_mask_pb2.FieldMask
-    servingsite: _generated_pb2.ServingSite
-    def __init__(self, servingsite: _Optional[_Union[_generated_pb2.ServingSite, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+class DeleteServingSiteRequest(_message.Message):
+    __slots__ = ["namespace", "name"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    namespace: str
+    name: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
-class UpdateServingSiteResponse(_message.Message):
+class DeleteServingSiteResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
