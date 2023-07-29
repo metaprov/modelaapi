@@ -1,0 +1,866 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.10.0
+  creationTimestamp: null
+  name: datasetruns.data.modela.ai
+spec:
+  group: data.modela.ai
+  names:
+    categories:
+    - data
+    - modela
+    - all
+    kind: DatasetRun
+    listKind: DatasetRunList
+    plural: datasetruns
+    shortNames:
+    - dsr
+    singular: datasetrun
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.phase
+      name: Phase
+      type: string
+    - jsonPath: .spec.owner
+      name: Owner
+      type: string
+    - jsonPath: .spec.runVersion
+      name: Version
+      type: integer
+    - jsonPath: .spec.datasetName
+      name: Dataset
+      type: string
+    - jsonPath: .status.statistics.rows
+      name: Rows
+      type: integer
+    - jsonPath: .status.statistics.columns
+      name: Columns
+      type: integer
+    - jsonPath: .status.statistics.sizeInBytes
+      name: Size
+      type: integer
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: DatasetRun represents a single execution of a Dataset
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: DatasetRunSpec defines the run configuration for a Dataset
+            properties:
+              abort:
+                default: false
+                description: If true, the run will be permanently aborted and all
+                  workloads created by the run will be removed
+                type: boolean
+              datasetName:
+                description: DatasetName specifies the name of the Dataset resource
+                  that defines the location and analysis options for the dataset
+                type: string
+              datasetVersion:
+                description: DatasetVersion specifies the version of the Dataset resource
+                  defined by DatasetName to be retrieved and used for the lifetime
+                  of the run
+                format: int32
+                type: integer
+              modelClassRunName:
+                description: ModelClassRunName specifies the name of the Model Class
+                  Run which created the run, if applicable
+                type: string
+              owner:
+                default: no-one
+                description: Owner specifies the name of the Account which the object
+                  belongs to
+                type: string
+              pause:
+                default: false
+                description: If true, the execution of new workloads associated with
+                  the run will be paused
+                type: boolean
+              runVersion:
+                description: RunVersion specifies the version of the run set by the
+                  parent Dataset. This version is unique is incremented for each new
+                  run
+                format: int32
+                type: integer
+              timeout:
+                description: Timout specifies the time in seconds for the run to be
+                  completed. If unspecified, the run deadline specified by the Dataset
+                  will be used
+                format: int64
+                type: integer
+            type: object
+          status:
+            description: DatasetRunStatus specifies the observed state of a DatasetRun
+            properties:
+              anomaliesLocation:
+                description: AnomaliesLocation contains the location of the anomaly
+                  file, containing a list of rows which were determined as anomalies
+                  by an isolation forest algorithm
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    type: string
+                type: object
+              completedAt:
+                description: CompletedAt specifies the time at which the run completed
+                  or failed
+                format: date-time
+                type: string
+              conditions:
+                items:
+                  description: "Condition contains details for one aspect of the current
+                    state of this API Resource. --- This struct is intended for direct
+                    use as an array at the field path .status.conditions.  For example,
+                    type FooStatus struct{ // Represents the observations of a foo's
+                    current state. // Known .status.conditions.type are: \"Available\",
+                    \"Progressing\", and \"Degraded\" // +patchMergeKey=type // +patchStrategy=merge
+                    // +listType=map // +listMapKey=type Conditions []metav1.Condition
+                    `json:\"conditions,omitempty\" patchStrategy:\"merge\" patchMergeKey:\"type\"
+                    protobuf:\"bytes,1,rep,name=conditions\"` \n // other fields }"
+                  properties:
+                    lastTransitionTime:
+                      description: lastTransitionTime is the last time the condition
+                        transitioned from one status to another. This should be when
+                        the underlying condition changed.  If that is not known, then
+                        using the time when the API field changed is acceptable.
+                      format: date-time
+                      type: string
+                    message:
+                      description: message is a human readable message indicating
+                        details about the transition. This may be an empty string.
+                      maxLength: 32768
+                      type: string
+                    observedGeneration:
+                      description: observedGeneration represents the .metadata.generation
+                        that the condition was set based upon. For instance, if .metadata.generation
+                        is currently 12, but the .status.conditions[x].observedGeneration
+                        is 9, the condition is out of date with respect to the current
+                        state of the instance.
+                      format: int64
+                      minimum: 0
+                      type: integer
+                    reason:
+                      description: reason contains a programmatic identifier indicating
+                        the reason for the condition's last transition. Producers
+                        of specific condition types may define expected values and
+                        meanings for this field, and whether the values are considered
+                        a guaranteed API. The value should be a CamelCase string.
+                        This field may not be empty.
+                      maxLength: 1024
+                      minLength: 1
+                      pattern: ^[A-Za-z]([A-Za-z0-9_,:]*[A-Za-z0-9_])?$
+                      type: string
+                    status:
+                      description: status of the condition, one of True, False, Unknown.
+                      enum:
+                      - "True"
+                      - "False"
+                      - Unknown
+                      type: string
+                    type:
+                      description: type of condition in CamelCase or in foo.example.com/CamelCase.
+                        --- Many .condition.type values are consistent across resources
+                        like Available, but because arbitrary conditions can be useful
+                        (see .node.status.conditions), the ability to deconflict is
+                        important. The regex it matches is (dns1123SubdomainFmt/)?(qualifiedNameFmt)
+                      maxLength: 316
+                      pattern: ^([a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*/)?(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])$
+                      type: string
+                  required:
+                  - lastTransitionTime
+                  - message
+                  - reason
+                  - status
+                  - type
+                  type: object
+                type: array
+              failureMessage:
+                description: FailureMessage is set to an failure message in the case
+                  that an error occured during the run
+                type: string
+              featureHistogramRef:
+                description: FeatureHistogramRef references the feature histogram
+                  generated by the run
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+                x-kubernetes-map-type: atomic
+              groupby:
+                description: GroupBy contains the index files for datasets produced
+                  through group-by operations
+                properties:
+                  datasetsURI:
+                    description: The locations of the datasets files. Each file is
+                      the group
+                    type: string
+                  featuresURI:
+                    description: The locations of the time series feature files. The
+                      file contain a line for each feature
+                    type: string
+                  profilesURI:
+                    description: The locations of the datasets files.
+                    type: string
+                  reportsURI:
+                    description: The locations of the report file. One report for
+                      each key
+                    type: string
+                  unitTestsURI:
+                    description: The locations of the report file. One report for
+                      each key
+                    type: string
+                  workerResults:
+                    description: Holds the worker on going result, when a worker finish,
+                      we update the location of thier result files
+                    items:
+                      properties:
+                        error:
+                          type: string
+                        id:
+                          description: Worker ID
+                          format: int32
+                          type: integer
+                        task:
+                          type: string
+                        uri:
+                          description: URI
+                          type: string
+                      type: object
+                    type: array
+                type: object
+              hash:
+                type: string
+              images:
+                description: Images contains the container images used by the run
+                properties:
+                  dataImage:
+                    description: The image used for data operations
+                    type: string
+                  publisherImage:
+                    description: The image used to deploy models
+                    type: string
+                  trainerImage:
+                    description: The image used during training
+                    type: string
+                type: object
+              imbalanced:
+                description: Imbalanced indicates if the classes in the dataset were
+                  detected as imbalanced
+                type: boolean
+              lastStudyAt:
+                description: LastStudyAt specifies the last time the run was used
+                  to create a Study
+                format: date-time
+                type: string
+              logs:
+                description: Logs contains the location of all logs produced by run
+                  workloads
+                properties:
+                  bucket:
+                    description: The name of the Virtual Bucket resource where the
+                      logs are stored
+                    type: string
+                  containers:
+                    description: The collection of logs for each container of the
+                      workload
+                    items:
+                      description: ContainerLog describes the location of logs for
+                        a single Job
+                      properties:
+                        bucket:
+                          description: The bucket the log was stored in
+                          type: string
+                        container:
+                          description: The container name
+                          type: string
+                        job:
+                          description: The name of the Job
+                          type: string
+                        key:
+                          description: The path to the log in the bucket
+                          type: string
+                      type: object
+                    type: array
+                type: object
+              manifestLocation:
+                description: ManifestLocation specifies the location of the dataset
+                  manifest used during the course of the run
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    type: string
+                type: object
+              observedGeneration:
+                description: ObservedGeneration is the last generation that was reconciled
+                format: int64
+                type: integer
+              phase:
+                default: Pending
+                description: Phase defines the current phase of the DatasetRun relative
+                  to its progress
+                type: string
+              profileLocation:
+                description: ProfileLocation contains the location for the raw profile
+                  data
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    type: string
+                type: object
+              progress:
+                default: 0
+                description: Progress defines the current numerical progress of the
+                  Dataset, from 0 to 100
+                format: int32
+                type: integer
+              reportLocation:
+                description: ReportLocation contains the location of the report file
+                  generated by the run's Report resource
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    type: string
+                type: object
+              reportName:
+                description: ReportName specifies the name of the Report created by
+                  the run
+                type: string
+              statistics:
+                description: DatasetStatistics contains statistics for each column
+                  of the dataset generated during the dataset profile
+                properties:
+                  columns:
+                    description: Columns specifies the number of columns observed
+                      from the data
+                    format: int32
+                    type: integer
+                  correlationsWithTarget:
+                    description: The top correlations between all features and the
+                      target feature
+                    items:
+                      description: Correlation records the correlation between two
+                        features in a Dataset
+                      properties:
+                        method:
+                          description: How the value was calculated
+                          type: string
+                        value:
+                          description: The correlation value
+                          type: number
+                        x:
+                          description: The name of the feature on the X axis
+                          type: string
+                        "y":
+                          description: The name of the feature on the Y axis
+                          type: string
+                      required:
+                      - x
+                      - "y"
+                      type: object
+                    type: array
+                  features:
+                    description: Columns contains the collection of statistics for
+                      each feature
+                    items:
+                      description: FeatureStatistics contains statistical parameters
+                        for a single feature from a dataset
+                      properties:
+                        completeness:
+                          description: The ratio between non-null and null values
+                            in the feature
+                          type: number
+                        constant:
+                          type: boolean
+                        corrToTarget:
+                          description: The correlation to the target feature of the
+                            dataset
+                          type: number
+                        count:
+                          description: Amount of rows which contain a value for the
+                            feature
+                          type: number
+                        datatype:
+                          description: The data type of the feature
+                          enum:
+                          - boolean
+                          - datetime
+                          - number
+                          - categorical
+                          - ordinal
+                          - text
+                          - json
+                          - number-list
+                          - categorical-list
+                          - text-list
+                          type: string
+                        distinct:
+                          description: Amount of unique values present in the feature
+                          format: int32
+                          type: integer
+                        distinctValueCount:
+                          description: The ratio between unique values and non-unique
+                            values in the feature
+                          type: number
+                        duplicate:
+                          description: Indicates if the feature is a duplicate of
+                            another feature
+                          type: boolean
+                        highCardinality:
+                          description: Indicates if the feature has high cardinality
+                            and should use the high cardinality encoder during feature
+                            engineering
+                          type: boolean
+                        highCorrWithOtherFeatures:
+                          description: Indicates if the feature has high correlation
+                            with another feature, and that it should be dropped
+                          type: boolean
+                        highMissingPct:
+                          description: Indicates if the feature has a high percentage
+                            of missing values, and that it should be dropped
+                          type: boolean
+                        histogram:
+                          description: Histogram data representing the distribution
+                            of the values in the column
+                          properties:
+                            bins:
+                              description: The bins if the histogram describes continous
+                                variables
+                              items:
+                                type: number
+                              type: array
+                            categories:
+                              description: The name of the categories, one per bin
+                                if this is a categorical histogram
+                              items:
+                                type: string
+                              type: array
+                            counts:
+                              description: The set of values per bin
+                              items:
+                                type: number
+                              type: array
+                            invalid:
+                              description: The number of invalid values
+                              format: int32
+                              minimum: 0
+                              type: integer
+                            missing:
+                              description: The number of missing values
+                              format: int32
+                              minimum: 0
+                              type: integer
+                          type: object
+                        ignore:
+                          description: Indicates if the column should be ignored
+                          type: boolean
+                        importance:
+                          description: The feature importance of the feature
+                          type: number
+                        index:
+                          description: The index of the column in the dataset
+                          format: int32
+                          type: integer
+                        invalid:
+                          description: The number of invalid values in the feature
+                          format: int32
+                          type: integer
+                        iqr:
+                          description: The interquartile range of the feature values
+                          type: number
+                        kurtosis:
+                          description: The computed kurtosis, which measures the peakness
+                            of the distribution of values in the feature
+                          type: number
+                        lowCorrWithTarget:
+                          description: Indicate that the feature has low correlation
+                            with the target feature, and that it should be dropped
+                          type: boolean
+                        mad:
+                          description: Mad contains the mean absolute deviation of
+                            the feature
+                          type: number
+                        max:
+                          description: The maximum value of all values in the feature
+                          type: number
+                        mean:
+                          description: The mean of all values in the feature
+                          type: number
+                        min:
+                          description: The minimum value of all values in the feature
+                          type: number
+                        missing:
+                          description: Amount of missing values present in the feature
+                          format: int32
+                          type: integer
+                        mode:
+                          description: The mode value of the feature, also known as
+                            the most frequent value
+                          type: string
+                        mostFreqValuesRatio:
+                          description: The ratio between most the most frequent value
+                            to the number of total values in the feature
+                          type: number
+                        name:
+                          description: The name of the feature
+                          type: string
+                        nullable:
+                          description: Indicates if the feature may contain null values
+                          type: boolean
+                        outliers:
+                          description: Statistics relevant to outliers
+                          properties:
+                            lower:
+                              description: The number of outliers below baseline
+                              format: int32
+                              type: integer
+                            percent:
+                              description: Percentage of rows detected as outliers
+                              type: number
+                            upper:
+                              description: The number of outliers above baseline
+                              format: int32
+                              type: integer
+                          type: object
+                        p25:
+                          description: The 25% point of all the values of the feature
+                            order
+                          type: number
+                        p50:
+                          description: The 50% point of all the values of the feature
+                            in order, also known as the median
+                          type: number
+                        p75:
+                          description: The 75% point of all the values of the feature
+                            in order
+                          type: number
+                        percentMissing:
+                          description: Percentage of missing values in the feature
+                          type: number
+                        reserved:
+                          description: Indicates if the feature is reserved and must
+                            be included in model training
+                          type: boolean
+                        skewed:
+                          description: Marks that the feature is skewed and would
+                            require a power transform
+                          type: boolean
+                        skewness:
+                          description: The computed skewness, which measures the asymmetry
+                            of the distribution of values in the feature
+                          type: number
+                        stddev:
+                          description: The standard deviation of the feature values
+                          type: number
+                        sum:
+                          description: Sum contains the sum of all values in the column
+                          format: int64
+                          type: integer
+                        target:
+                          description: Indicates if the feature is the target attribute
+                            for a Study
+                          type: boolean
+                        variance:
+                          description: The variability of the feature values
+                          type: number
+                        zeros:
+                          description: The number of zero values in the feature
+                          type: number
+                      type: object
+                    type: array
+                  rows:
+                    description: Rows specifies the number of rows observed in the
+                      dataset
+                    format: int32
+                    type: integer
+                  sizeInBytes:
+                    description: SizeInBytes specifies the size of the data in bytes
+                    format: int32
+                    type: integer
+                  topCorrelations:
+                    description: The top correlations between features computed per
+                      the CorrelationSpec of the dataset
+                    items:
+                      description: Correlation records the correlation between two
+                        features in a Dataset
+                      properties:
+                        method:
+                          description: How the value was calculated
+                          type: string
+                        value:
+                          description: The correlation value
+                          type: number
+                        x:
+                          description: The name of the feature on the X axis
+                          type: string
+                        "y":
+                          description: The name of the feature on the Y axis
+                          type: string
+                      required:
+                      - x
+                      - "y"
+                      type: object
+                    type: array
+                type: object
+              unitTestResults:
+                description: UnitTestResults contains the results of the unit test
+                  phase
+                properties:
+                  completedAt:
+                    description: Stop time of running the suite.
+                    format: date-time
+                    type: string
+                  entityRef:
+                    description: A reference to the object under test. Best practice
+                      is to have one suite for an object
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                    x-kubernetes-map-type: atomic
+                  errors:
+                    description: Total number of assertion errors.
+                    format: int32
+                    type: integer
+                  failures:
+                    description: Total number of failures. A failure is an unplanned
+                      error, e.g. cannot connect to a dataset
+                    format: int32
+                    type: integer
+                  startedAt:
+                    description: Start time of running the suite
+                    format: date-time
+                    type: string
+                  tests:
+                    description: The result of executing the test suite. The result
+                      contain one result object per test case.
+                    items:
+                      description: Result for a specific case
+                      properties:
+                        actual:
+                          description: Actual observation
+                          properties:
+                            algorithm:
+                              description: The name of the algorithm that generated
+                                this measurment
+                              type: string
+                            boolQty:
+                              description: If the metric refer to a bool unit, store
+                                the bool value
+                              type: boolean
+                            category:
+                              description: If the metric refer to categorical measure,store
+                                the category.
+                              type: string
+                            column:
+                              type: string
+                            entity:
+                              description: 'ObjectReference contains enough information
+                                to let you inspect or modify the referred object.
+                                --- New uses of this type are discouraged because
+                                of difficulty describing its usage when embedded in
+                                APIs. 1. Ignored fields.  It includes many fields
+                                which are not generally honored.  For instance, ResourceVersion
+                                and FieldPath are both very rarely valid in actual
+                                usage. 2. Invalid usage help.  It is impossible to
+                                add specific help for individual usage.  In most embedded
+                                usages, there are particular restrictions like, "must
+                                refer only to types A and B" or "UID not honored"
+                                or "name must be restricted". Those cannot be well
+                                described when embedded. 3. Inconsistent validation.  Because
+                                the usages are different, the validation rules are
+                                different by usage, which makes it hard for users
+                                to predict what will happen. 4. The fields are both
+                                imprecise and overly precise.  Kind is not a precise
+                                mapping to a URL. This can produce ambiguity during
+                                interpretation and require a REST mapping.  In most
+                                cases, the dependency is on the group,resource tuple
+                                and the version of the actual struct is irrelevant.
+                                5. We cannot easily change it.  Because this type
+                                is embedded in many locations, updates to this type
+                                will affect numerous schemas.  Don''t make new APIs
+                                embed an underspecified API type they do not control.
+                                Instead of using this type, create a locally provided
+                                and used type that is well-focused on your reference.
+                                For example, ServiceReferences for admission registration:
+                                https://github.com/kubernetes/api/blob/release-1.17/admissionregistration/v1/types.go#L533
+                                .'
+                              properties:
+                                apiVersion:
+                                  description: API version of the referent.
+                                  type: string
+                                fieldPath:
+                                  description: 'If referring to a piece of an object
+                                    instead of an entire object, this string should
+                                    contain a valid JSON/Go field access statement,
+                                    such as desiredState.manifest.containers[2]. For
+                                    example, if the object reference is to a container
+                                    within a pod, this would take on a value like:
+                                    "spec.containers{name}" (where "name" refers to
+                                    the name of the container that triggered the event)
+                                    or if no container name is specified "spec.containers[2]"
+                                    (container with index 2 in this pod). This syntax
+                                    is chosen only to have some well-defined way of
+                                    referencing a part of an object. TODO: this design
+                                    is not final and this field is subject to change
+                                    in the future.'
+                                  type: string
+                                kind:
+                                  description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                                  type: string
+                                name:
+                                  description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                                  type: string
+                                namespace:
+                                  description: 'Namespace of the referent. More info:
+                                    https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                                  type: string
+                                resourceVersion:
+                                  description: 'Specific resourceVersion to which
+                                    this reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                                  type: string
+                                uid:
+                                  description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                                  type: string
+                              type: object
+                              x-kubernetes-map-type: atomic
+                            metric:
+                              description: The metric type name (e.g. F1 / Accuracy)
+                              type: string
+                            stddev:
+                              description: Metric standard diviation for quantative
+                                observations.
+                              type: number
+                            taskType:
+                              description: The measurment task type (e.g. train, test,
+                                cv, feature)
+                              type: string
+                            timePoint:
+                              description: The Time when the observation was taken
+                              format: date-time
+                              type: string
+                            value:
+                              description: The value of the metric for quantitive
+                                observations
+                              type: number
+                            valueSet:
+                              description: Capture a set of values.
+                              items:
+                                type: string
+                              type: array
+                          type: object
+                        error:
+                          description: An error occur if the system cannot execute
+                            the test case (e.g. connection error).
+                          type: boolean
+                        failure:
+                          description: A failure occur on assertion failure
+                          type: boolean
+                        failureMsg:
+                          description: An optional
+                          type: string
+                        name:
+                          description: The test case name for this result.
+                          type: string
+                      required:
+                      - name
+                      type: object
+                    type: array
+                type: object
+              updatedAt:
+                description: UpdatedAt specifies the last time the run was updated
+                format: date-time
+                type: string
+            required:
+            - logs
+            type: object
+        required:
+        - metadata
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
