@@ -8,8 +8,90 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class AbortModelClassRunRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class AbortModelClassRunResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class ApproveModelClassRunRequest(_message.Message):
+    __slots__ = ["account", "name", "namespace", "stage"]
+    ACCOUNT_FIELD_NUMBER: _ClassVar[int]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    STAGE_FIELD_NUMBER: _ClassVar[int]
+    account: str
+    name: str
+    namespace: str
+    stage: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., stage: _Optional[str] = ..., account: _Optional[str] = ...) -> None: ...
+
+class ApproveModelClassRunResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class CreateModelClassRunRequest(_message.Message):
+    __slots__ = ["modelclassrun"]
+    MODELCLASSRUN_FIELD_NUMBER: _ClassVar[int]
+    modelclassrun: _generated_pb2.ModelClassRun
+    def __init__(self, modelclassrun: _Optional[_Union[_generated_pb2.ModelClassRun, _Mapping]] = ...) -> None: ...
+
+class CreateModelClassRunResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class DeleteModelClassRunRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class DeleteModelClassRunResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class DenyModelClassRunRequest(_message.Message):
+    __slots__ = ["account", "name", "namespace", "stage"]
+    ACCOUNT_FIELD_NUMBER: _ClassVar[int]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    STAGE_FIELD_NUMBER: _ClassVar[int]
+    account: str
+    name: str
+    namespace: str
+    stage: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., stage: _Optional[str] = ..., account: _Optional[str] = ...) -> None: ...
+
+class DenyModelClassRunResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class GetModelClassRunRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class GetModelClassRunResponse(_message.Message):
+    __slots__ = ["modelclassrun", "yaml"]
+    MODELCLASSRUN_FIELD_NUMBER: _ClassVar[int]
+    YAML_FIELD_NUMBER: _ClassVar[int]
+    modelclassrun: _generated_pb2.ModelClassRun
+    yaml: str
+    def __init__(self, modelclassrun: _Optional[_Union[_generated_pb2.ModelClassRun, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
+
 class ListModelClassRunsRequest(_message.Message):
-    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
+    __slots__ = ["labels", "namespace", "order_by", "page_size", "page_token"]
     class LabelsEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -17,16 +99,16 @@ class ListModelClassRunsRequest(_message.Message):
         key: str
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     LABELS_FIELD_NUMBER: _ClassVar[int]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    ORDER_BY_FIELD_NUMBER: _ClassVar[int]
     PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
     PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    ORDER_BY_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
     labels: _containers.ScalarMap[str, str]
+    namespace: str
+    order_by: str
     page_size: int
     page_token: str
-    order_by: str
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListModelClassRunsResponse(_message.Message):
@@ -41,120 +123,38 @@ class ModelClassRunResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class CreateModelClassRunRequest(_message.Message):
-    __slots__ = ["modelclassrun"]
-    MODELCLASSRUN_FIELD_NUMBER: _ClassVar[int]
-    modelclassrun: _generated_pb2.ModelClassRun
-    def __init__(self, modelclassrun: _Optional[_Union[_generated_pb2.ModelClassRun, _Mapping]] = ...) -> None: ...
-
-class CreateModelClassRunResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class UpdateModelClassRunRequest(_message.Message):
-    __slots__ = ["modelclassrun", "field_mask"]
-    MODELCLASSRUN_FIELD_NUMBER: _ClassVar[int]
-    FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
-    modelclassrun: _generated_pb2.ModelClassRun
-    field_mask: _field_mask_pb2.FieldMask
-    def __init__(self, modelclassrun: _Optional[_Union[_generated_pb2.ModelClassRun, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
-
-class UpdateModelClassRunResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class GetModelClassRunRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+class PauseModelClassRunRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
     name: str
+    namespace: str
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
-
-class GetModelClassRunResponse(_message.Message):
-    __slots__ = ["modelclassrun", "yaml"]
-    MODELCLASSRUN_FIELD_NUMBER: _ClassVar[int]
-    YAML_FIELD_NUMBER: _ClassVar[int]
-    modelclassrun: _generated_pb2.ModelClassRun
-    yaml: str
-    def __init__(self, modelclassrun: _Optional[_Union[_generated_pb2.ModelClassRun, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
-
-class DeleteModelClassRunRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
-
-class DeleteModelClassRunResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class ApproveModelClassRunRequest(_message.Message):
-    __slots__ = ["namespace", "name", "stage", "account"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    STAGE_FIELD_NUMBER: _ClassVar[int]
-    ACCOUNT_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    stage: str
-    account: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., stage: _Optional[str] = ..., account: _Optional[str] = ...) -> None: ...
-
-class ApproveModelClassRunResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class DenyModelClassRunRequest(_message.Message):
-    __slots__ = ["namespace", "name", "stage", "account"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    STAGE_FIELD_NUMBER: _ClassVar[int]
-    ACCOUNT_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    stage: str
-    account: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., stage: _Optional[str] = ..., account: _Optional[str] = ...) -> None: ...
-
-class DenyModelClassRunResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
 
 class PauseModelClassRunResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class PauseModelClassRunRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+class ResumeModelClassRunRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
     name: str
+    namespace: str
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class ResumeModelClassRunResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class ResumeModelClassRunRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+class UpdateModelClassRunRequest(_message.Message):
+    __slots__ = ["field_mask", "modelclassrun"]
+    FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
+    MODELCLASSRUN_FIELD_NUMBER: _ClassVar[int]
+    field_mask: _field_mask_pb2.FieldMask
+    modelclassrun: _generated_pb2.ModelClassRun
+    def __init__(self, modelclassrun: _Optional[_Union[_generated_pb2.ModelClassRun, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
-class AbortModelClassRunResponse(_message.Message):
+class UpdateModelClassRunResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
-
-class AbortModelClassRunRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...

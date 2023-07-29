@@ -9,45 +9,177 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class AbortModelRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class AbortModelResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class CompareModelsRequest(_message.Message):
+    __slots__ = ["names", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAMES_FIELD_NUMBER: _ClassVar[int]
+    names: _containers.RepeatedScalarFieldContainer[str]
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., names: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class CompareModelsResponse(_message.Message):
+    __slots__ = ["names", "namespace", "profiles"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAMES_FIELD_NUMBER: _ClassVar[int]
+    PROFILES_FIELD_NUMBER: _ClassVar[int]
+    names: _containers.RepeatedScalarFieldContainer[str]
+    namespace: str
+    profiles: _containers.RepeatedCompositeFieldContainer[_common_pb2.ModelProfile]
+    def __init__(self, namespace: _Optional[str] = ..., names: _Optional[_Iterable[str]] = ..., profiles: _Optional[_Iterable[_Union[_common_pb2.ModelProfile, _Mapping]]] = ...) -> None: ...
+
+class CompileModelRequest(_message.Message):
+    __slots__ = ["compiler", "name", "namespace", "target"]
+    COMPILER_FIELD_NUMBER: _ClassVar[int]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    TARGET_FIELD_NUMBER: _ClassVar[int]
+    compiler: str
+    name: str
+    namespace: str
+    target: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., target: _Optional[str] = ..., compiler: _Optional[str] = ...) -> None: ...
+
+class CompileModelResponse(_message.Message):
+    __slots__ = ["names", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAMES_FIELD_NUMBER: _ClassVar[int]
+    names: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., names: _Optional[str] = ...) -> None: ...
+
+class CreateDashboardRequest(_message.Message):
+    __slots__ = ["name", "namespace", "shadow"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    SHADOW_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    shadow: bool
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., shadow: bool = ...) -> None: ...
+
+class CreateDashboardResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class CreateModelProfileRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
 class CreateModelProfileResponse(_message.Message):
     __slots__ = ["uri"]
     URI_FIELD_NUMBER: _ClassVar[int]
     uri: str
     def __init__(self, uri: _Optional[str] = ...) -> None: ...
 
-class CreateModelProfileRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+class CreateModelRequest(_message.Message):
+    __slots__ = ["model"]
+    MODEL_FIELD_NUMBER: _ClassVar[int]
+    model: _generated_pb2.Model
+    def __init__(self, model: _Optional[_Union[_generated_pb2.Model, _Mapping]] = ...) -> None: ...
+
+class CreateModelResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class DeleteModelRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
     name: str
+    namespace: str
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
-class ListModelProfileRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+class DeleteModelResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
-class GetModelProfileRequest(_message.Message):
-    __slots__ = ["namespace", "name", "uri", "group"]
+class DeployModelRequest(_message.Message):
+    __slots__ = ["name", "namespace", "predictor", "replicas", "role", "servingsite", "traffic"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    URI_FIELD_NUMBER: _ClassVar[int]
+    PREDICTOR_FIELD_NUMBER: _ClassVar[int]
+    REPLICAS_FIELD_NUMBER: _ClassVar[int]
+    ROLE_FIELD_NUMBER: _ClassVar[int]
+    SERVINGSITE_FIELD_NUMBER: _ClassVar[int]
+    TRAFFIC_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    predictor: str
+    replicas: int
+    role: str
+    servingsite: str
+    traffic: int
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., predictor: _Optional[str] = ..., replicas: _Optional[int] = ..., traffic: _Optional[int] = ..., role: _Optional[str] = ..., servingsite: _Optional[str] = ...) -> None: ...
+
+class DeployModelResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class DownloadModelRequest(_message.Message):
+    __slots__ = ["group", "name", "namespace"]
     GROUP_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    uri: str
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
     group: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., uri: _Optional[str] = ..., group: _Optional[str] = ...) -> None: ...
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., group: _Optional[str] = ...) -> None: ...
 
-class GetModelProfileResponse(_message.Message):
-    __slots__ = ["profile"]
-    PROFILE_FIELD_NUMBER: _ClassVar[int]
-    profile: _common_pb2.ModelProfile
-    def __init__(self, profile: _Optional[_Union[_common_pb2.ModelProfile, _Mapping]] = ...) -> None: ...
+class DownloadModelResponse(_message.Message):
+    __slots__ = ["raw"]
+    RAW_FIELD_NUMBER: _ClassVar[int]
+    raw: bytes
+    def __init__(self, raw: _Optional[bytes] = ...) -> None: ...
+
+class FlagModelRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class FlagModelResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class GetMisclassRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class GetMisclassResponse(_message.Message):
+    __slots__ = ["table"]
+    TABLE_FIELD_NUMBER: _ClassVar[int]
+    table: _common_pb2.TableView
+    def __init__(self, table: _Optional[_Union[_common_pb2.TableView, _Mapping]] = ...) -> None: ...
+
+class GetModelLogsRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetModelLogsResponse(_message.Message):
     __slots__ = ["logs"]
@@ -62,21 +194,142 @@ class GetModelLogsResponse(_message.Message):
     logs: _containers.ScalarMap[str, str]
     def __init__(self, logs: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
-class GetModelLogsRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+class GetModelProfileRequest(_message.Message):
+    __slots__ = ["group", "name", "namespace", "uri"]
+    GROUP_FIELD_NUMBER: _ClassVar[int]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
+    URI_FIELD_NUMBER: _ClassVar[int]
+    group: str
     name: str
+    namespace: str
+    uri: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., uri: _Optional[str] = ..., group: _Optional[str] = ...) -> None: ...
+
+class GetModelProfileResponse(_message.Message):
+    __slots__ = ["profile"]
+    PROFILE_FIELD_NUMBER: _ClassVar[int]
+    profile: _common_pb2.ModelProfile
+    def __init__(self, profile: _Optional[_Union[_common_pb2.ModelProfile, _Mapping]] = ...) -> None: ...
+
+class GetModelRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
-class CreateModelRequest(_message.Message):
-    __slots__ = ["model"]
+class GetModelResponse(_message.Message):
+    __slots__ = ["model", "yaml"]
     MODEL_FIELD_NUMBER: _ClassVar[int]
+    YAML_FIELD_NUMBER: _ClassVar[int]
     model: _generated_pb2.Model
-    def __init__(self, model: _Optional[_Union[_generated_pb2.Model, _Mapping]] = ...) -> None: ...
+    yaml: str
+    def __init__(self, model: _Optional[_Union[_generated_pb2.Model, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
-class CreateModelResponse(_message.Message):
+class ListModelProfileRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class ListModelsRequest(_message.Message):
+    __slots__ = ["labels", "namespace", "order_by", "page_size", "page_token"]
+    class LabelsEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    LABELS_FIELD_NUMBER: _ClassVar[int]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    ORDER_BY_FIELD_NUMBER: _ClassVar[int]
+    PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
+    PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    labels: _containers.ScalarMap[str, str]
+    namespace: str
+    order_by: str
+    page_size: int
+    page_token: str
+    def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
+
+class ListModelsResponse(_message.Message):
+    __slots__ = ["models"]
+    MODELS_FIELD_NUMBER: _ClassVar[int]
+    models: _generated_pb2.ModelList
+    def __init__(self, models: _Optional[_Union[_generated_pb2.ModelList, _Mapping]] = ...) -> None: ...
+
+class PauseModelRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class PauseModelResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class PromoteModelRequest(_message.Message):
+    __slots__ = ["name", "namespace", "predictor", "servingsite", "shadow", "tenant"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    PREDICTOR_FIELD_NUMBER: _ClassVar[int]
+    SERVINGSITE_FIELD_NUMBER: _ClassVar[int]
+    SHADOW_FIELD_NUMBER: _ClassVar[int]
+    TENANT_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    predictor: str
+    servingsite: str
+    shadow: bool
+    tenant: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., tenant: _Optional[str] = ..., servingsite: _Optional[str] = ..., predictor: _Optional[str] = ..., shadow: bool = ...) -> None: ...
+
+class PromoteModelResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class PublishModelRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class PublishModelResponse(_message.Message):
+    __slots__ = ["modelTarHash"]
+    MODELTARHASH_FIELD_NUMBER: _ClassVar[int]
+    modelTarHash: str
+    def __init__(self, modelTarHash: _Optional[str] = ...) -> None: ...
+
+class ResumeModelRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class ResumeModelResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class TestModelRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class TestModelResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
@@ -90,259 +343,6 @@ class UpdateModelResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class GetModelResponse(_message.Message):
-    __slots__ = ["model", "yaml"]
-    MODEL_FIELD_NUMBER: _ClassVar[int]
-    YAML_FIELD_NUMBER: _ClassVar[int]
-    model: _generated_pb2.Model
-    yaml: str
-    def __init__(self, model: _Optional[_Union[_generated_pb2.Model, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
-
-class AbortModelRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
-
-class AbortModelResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class PauseModelRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
-
-class PauseModelResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class ResumeModelRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
-
-class ResumeModelResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class CompareModelsRequest(_message.Message):
-    __slots__ = ["namespace", "names"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAMES_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    names: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, namespace: _Optional[str] = ..., names: _Optional[_Iterable[str]] = ...) -> None: ...
-
-class CompareModelsResponse(_message.Message):
-    __slots__ = ["namespace", "names", "profiles"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAMES_FIELD_NUMBER: _ClassVar[int]
-    PROFILES_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    names: _containers.RepeatedScalarFieldContainer[str]
-    profiles: _containers.RepeatedCompositeFieldContainer[_common_pb2.ModelProfile]
-    def __init__(self, namespace: _Optional[str] = ..., names: _Optional[_Iterable[str]] = ..., profiles: _Optional[_Iterable[_Union[_common_pb2.ModelProfile, _Mapping]]] = ...) -> None: ...
-
-class CompileModelRequest(_message.Message):
-    __slots__ = ["namespace", "name", "target", "compiler"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    TARGET_FIELD_NUMBER: _ClassVar[int]
-    COMPILER_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    target: str
-    compiler: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., target: _Optional[str] = ..., compiler: _Optional[str] = ...) -> None: ...
-
-class CompileModelResponse(_message.Message):
-    __slots__ = ["namespace", "names"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAMES_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    names: str
-    def __init__(self, namespace: _Optional[str] = ..., names: _Optional[str] = ...) -> None: ...
-
-class DeployModelRequest(_message.Message):
-    __slots__ = ["namespace", "name", "predictor", "replicas", "traffic", "role", "servingsite"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    PREDICTOR_FIELD_NUMBER: _ClassVar[int]
-    REPLICAS_FIELD_NUMBER: _ClassVar[int]
-    TRAFFIC_FIELD_NUMBER: _ClassVar[int]
-    ROLE_FIELD_NUMBER: _ClassVar[int]
-    SERVINGSITE_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    predictor: str
-    replicas: int
-    traffic: int
-    role: str
-    servingsite: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., predictor: _Optional[str] = ..., replicas: _Optional[int] = ..., traffic: _Optional[int] = ..., role: _Optional[str] = ..., servingsite: _Optional[str] = ...) -> None: ...
-
-class PublishModelRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
-
-class DeployModelResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class ListModelsRequest(_message.Message):
-    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
-    class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: str
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    LABELS_FIELD_NUMBER: _ClassVar[int]
-    PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
-    PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    ORDER_BY_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    labels: _containers.ScalarMap[str, str]
-    page_size: int
-    page_token: str
-    order_by: str
-    def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
-
-class ListModelsResponse(_message.Message):
-    __slots__ = ["models"]
-    MODELS_FIELD_NUMBER: _ClassVar[int]
-    models: _generated_pb2.ModelList
-    def __init__(self, models: _Optional[_Union[_generated_pb2.ModelList, _Mapping]] = ...) -> None: ...
-
-class GetModelRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
-
 class UpdateModelResult(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class DeleteModelRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
-
-class DeleteModelResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class PublishModelResponse(_message.Message):
-    __slots__ = ["modelTarHash"]
-    MODELTARHASH_FIELD_NUMBER: _ClassVar[int]
-    modelTarHash: str
-    def __init__(self, modelTarHash: _Optional[str] = ...) -> None: ...
-
-class GetMisclassRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
-
-class GetMisclassResponse(_message.Message):
-    __slots__ = ["table"]
-    TABLE_FIELD_NUMBER: _ClassVar[int]
-    table: _common_pb2.TableView
-    def __init__(self, table: _Optional[_Union[_common_pb2.TableView, _Mapping]] = ...) -> None: ...
-
-class DownloadModelRequest(_message.Message):
-    __slots__ = ["namespace", "name", "group"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    GROUP_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    group: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., group: _Optional[str] = ...) -> None: ...
-
-class DownloadModelResponse(_message.Message):
-    __slots__ = ["raw"]
-    RAW_FIELD_NUMBER: _ClassVar[int]
-    raw: bytes
-    def __init__(self, raw: _Optional[bytes] = ...) -> None: ...
-
-class FlagModelRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
-
-class FlagModelResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class PromoteModelRequest(_message.Message):
-    __slots__ = ["namespace", "name", "tenant", "servingsite", "predictor", "shadow"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    TENANT_FIELD_NUMBER: _ClassVar[int]
-    SERVINGSITE_FIELD_NUMBER: _ClassVar[int]
-    PREDICTOR_FIELD_NUMBER: _ClassVar[int]
-    SHADOW_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    tenant: str
-    servingsite: str
-    predictor: str
-    shadow: bool
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., tenant: _Optional[str] = ..., servingsite: _Optional[str] = ..., predictor: _Optional[str] = ..., shadow: bool = ...) -> None: ...
-
-class PromoteModelResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class CreateDashboardRequest(_message.Message):
-    __slots__ = ["namespace", "name", "shadow"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    SHADOW_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    shadow: bool
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., shadow: bool = ...) -> None: ...
-
-class CreateDashboardResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class TestModelRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
-
-class TestModelResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
