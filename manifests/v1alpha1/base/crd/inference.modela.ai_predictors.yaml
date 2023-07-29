@@ -388,31 +388,18 @@ spec:
                     description: The schedule on which model monitoring computations
                       will be performed
                     properties:
-                      MaxRetryCount:
-                        format: int32
-                        type: integer
                       cron:
-                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                        description: The cron string for the schedule, applicable
+                          if the trigger type is Cron. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
                           for more information
                         type: string
                       enabled:
                         default: false
-                        description: Indicates if the schedule is enabled and the
-                          Jobs associated it will be created at the specified time
+                        description: Enabled indicates if the schedule is enabled.
+                          When enabled, a CronJob will be created which when triggered
+                          will initiate the creation of a run for the resource that
+                          specifies the schedule
                         type: boolean
-                      nextRunAt:
-                        description: The time of the day when the schedule will be
-                          executed
-                        format: date-time
-                        type: string
-                      retryDelaySec:
-                        format: int32
-                        type: integer
-                      timeoutSec:
-                        format: int32
-                        type: integer
-                      timezone:
-                        type: string
                       type:
                         description: The type of schedule, which can be a frequency
                           interval or a cron expression
@@ -536,31 +523,18 @@ spec:
                     description: The schedule on which model monitoring computations
                       will be performed
                     properties:
-                      MaxRetryCount:
-                        format: int32
-                        type: integer
                       cron:
-                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                        description: The cron string for the schedule, applicable
+                          if the trigger type is Cron. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
                           for more information
                         type: string
                       enabled:
                         default: false
-                        description: Indicates if the schedule is enabled and the
-                          Jobs associated it will be created at the specified time
+                        description: Enabled indicates if the schedule is enabled.
+                          When enabled, a CronJob will be created which when triggered
+                          will initiate the creation of a run for the resource that
+                          specifies the schedule
                         type: boolean
-                      nextRunAt:
-                        description: The time of the day when the schedule will be
-                          executed
-                        format: date-time
-                        type: string
-                      retryDelaySec:
-                        format: int32
-                        type: integer
-                      timeoutSec:
-                        format: int32
-                        type: integer
-                      timezone:
-                        type: string
                       type:
                         description: The type of schedule, which can be a frequency
                           interval or a cron expression

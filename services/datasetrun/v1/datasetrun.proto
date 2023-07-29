@@ -1,0 +1,160 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modelaapi/services/dataset/v1";
+package github.com.metaprov.modelaapi.services.dataset.v1;
+
+
+import "google/protobuf/field_mask.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
+
+/////// List Dataset Run ///////
+
+message ListDatasetRunsRequest {
+    string namespace = 1;
+    map<string, string> labels = 2;
+    int32              page_size = 3;
+    string             page_token = 4;
+    string             order_by = 5;
+}
+
+message ListDatasetRunsResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetList datasets = 1;
+    string next_page_token = 2;
+}
+
+/////// Get Dataset Run ///////
+
+message GetDatasetRunRequest {
+    string namespace = 1;
+    string name = 2;
+    map<string, string> labels = 3;
+
+}
+
+message GetDatasetRunResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetRun datasetRun = 1;
+    string yaml = 2;
+}
+
+/////// Create Dataset Run ///////
+
+message CreateDatasetRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetRun datasetRun = 1;
+}
+
+message CreateDatasetRunResponse {}
+
+/////// Update Dataset Run ///////
+
+message UpdateDatasetRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetRun datasetRun = 1;
+    google.protobuf.FieldMask field_mask = 2;
+}
+
+message UpdateDatasetRunResponse {}
+
+/////// Delete Dataset Run ///////
+
+message DeleteDatasetRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message DeleteDatasetRunResponse {}
+
+/////// Get Dataset Run Profile ///////
+
+message GetDatasetRunProfileRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message GetDatasetRunProfileResponse {
+    string namespace = 1;
+    string name = 2;
+    github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profile = 3;
+}
+
+/////// Compare Runs ///////
+
+message CompareDatasetRunsRequest {
+    string namespace = 1;
+    repeated string names = 2;
+}
+
+message CompareDatasetRunsResponse {
+    string namespace = 1;
+    repeated string names = 2;
+    repeated github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profiles = 3;
+}
+
+/////// Download Dataset Run ///////
+
+message DownloadDatasetRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message DownloadDatasetRunResponse {
+    bytes raw = 1;
+}
+
+/////// Download Dataset Run Anomalies ///////
+
+message GetDatasetRunAnomaliesRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message GetDatasetRunAnomaliesResponse {
+    github.com.metaprov.modelaapi.services.common.v1.TableView table = 1;
+}
+
+/////// Dataset Run Service ///////
+
+service DatasetRunService {
+    // Datasets
+    rpc ListDatasetRuns(ListDatasetRunsRequest) returns (ListDatasetRunsResponse) {
+        option (google.api.http).get = "/v1/datasetruns/{namespace}";
+    }
+
+    rpc GetDatasetRun(GetDatasetRunRequest) returns (GetDatasetRunResponse) {
+        option (google.api.http).get = "/v1/datasetruns/{namespace}/{name}";
+    }
+
+    rpc CreateDataset(CreateDatasetRunRequest) returns (CreateDatasetRunResponse) {
+        option (google.api.http) = {
+            post: "/v1/datasetruns"
+            body: "*"
+        };
+    }
+
+    rpc UpdateDataset(UpdateDatasetRunRequest) returns (UpdateDatasetRunResponse) {
+        option (google.api.http) = {
+            put: "/v1/datasetruns/{datasetRun.metadata.namespace}/{datasetRun.metadata.name}"
+            body: "*"
+        };
+    }
+
+    rpc DeleteDataset(DeleteDatasetRunRequest) returns (DeleteDatasetRunResponse) {
+        option (google.api.http).delete = "/v1/datasetruns/{name}";
+    }
+
+    rpc CompareDatasets(CompareDatasetRunsRequest) returns (CompareDatasetRunsResponse) {
+        option (google.api.http).post = "/v1/datasetruns/{namespace}/{names}:compare";
+    }
+
+    rpc GetDatasetRunProfile(GetDatasetRunProfileRequest) returns (GetDatasetRunProfileResponse) {
+        option (google.api.http).get = "/v1/datasetruns/{namespace}/{name}:profile";
+    }
+
+    rpc DownloadDatasetRun(DownloadDatasetRunRequest) returns (DownloadDatasetRunResponse) {
+        option (google.api.http).post = "/v1/datasetruns/{namespace}/{name}:download";
+    }
+
+    rpc GetAnomalies(GetDatasetRunAnomaliesRequest) returns (GetDatasetRunAnomaliesResponse) {
+        option (google.api.http).get = "/v1/datasetruns/{namespace}/{name}:anomalies";
+    }
+}

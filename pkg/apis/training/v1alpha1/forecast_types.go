@@ -130,7 +130,7 @@ type SeasonalityPeriodSpec struct {
 type WindowSpec struct {
 	// The period interval
 	// +kubebuilder:validation:Optional
-	Interval *catalog.Freq `json:"interval,omitempty" protobuf:"bytes,1,opt,name=interval"`
+	Interval *catalog.Frequency `json:"interval,omitempty" protobuf:"bytes,1,opt,name=interval"`
 	// The number of intervals to start. If the start is more than 0, there is a gap.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional

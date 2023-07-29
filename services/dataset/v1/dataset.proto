@@ -9,15 +9,14 @@ import "google/protobuf/empty.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
+/////// List Dataset ///////
 
-
-// list datasets req/response
 message ListDatasetsRequest {
-    string namespace              = 1;
-    map<string,string> labels     = 2;
-    int32              page_size  = 3;
+    string namespace = 1;
+    map<string, string> labels = 2;
+    int32              page_size = 3;
     string             page_token = 4;
-    string             order_by   = 5;
+    string             order_by = 5;
 }
 
 message ListDatasetsResponse {
@@ -25,13 +24,13 @@ message ListDatasetsResponse {
     string next_page_token = 2;
 }
 
+/////// Get Dataset ///////
 
-// Get Dataset
 message GetDatasetRequest {
     string namespace = 1;
-    string name      = 2;
-    map<string,string> labels =3;
-    
+    string name = 2;
+    map<string, string> labels = 3;
+
 }
 
 message GetDatasetResponse {
@@ -39,200 +38,73 @@ message GetDatasetResponse {
     string yaml = 2;
 }
 
+/////// Create Dataset ///////
 
-
-// Create Dataset
 message CreateDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 1;
 }
 
-message CreateDatasetResponse {
+message CreateDatasetResponse {}
 
-}
+/////// Update Dataset ///////
 
-// update dataset
 message UpdateDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
-message UpdateDatasetResponse {
+message UpdateDatasetResponse {}
 
-}
+/////// Delete Dataset ///////
 
 message DeleteDatasetRequest {
     string namespace = 1;
-    string name      = 2;
+    string name = 2;
 }
 
-message DeleteDatasetResponse {
+message DeleteDatasetResponse {}
 
-}
-
-// Chunk is used to send
-message UploadChunkRequest  {
-    string fname   = 1;  // the file name
-    bytes  content = 2; // the chunk content
-    int32  index   = 3; // the chunk index
-    bool   last    = 4; // this is the last chunk
-}
-
-// return the result
-message UploadChunkResponse {
-    string fname = 1;
-    bool   ok    = 2;
-}
-
-
-
-
-///////////////////////////////////////////////////////
-/// Profile
-///////////////////////////////////////////////////////
-
-
-// create profile
-message CreateDatasetProfileRequest {
-    string namespace   = 1;
-    string name        = 2;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 3;
-}
-
-message CreateDatasetProfileResponse {
-    string uri = 1; // the profile uri
-    github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profile = 2;
-}
-
-
-message CreateColumnProfileRequest {
-    string namespace   = 1;
-    string name        = 2;
-    string col         = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
-}
-
-message CreateColumnProfileResponse {
-    string name = 1;
-    github.com.metaprov.modelaapi.services.common.v1.Plot plot = 2;
-}
+/////// Get Dataset Profile ///////
 
 message GetDatasetProfileRequest {
     string namespace = 1;
-    string name      = 2;
-    string uri       = 3; // this is optional. used when we do the analysis from the ui (vs in batch mode)
-    string group     = 4; // if not null, this is a group profile.
+    string name = 2;
+    int32 runVersion = 3;
 }
 
 message GetDatasetProfileResponse {
     string namespace = 1;
-    string name      = 2;
-    github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profile = 3;
-    
+    string name = 2;
+    int32 runVersion = 3;
 }
 
-// compare the profile of one or more datasets
-message CompareDatasetsRequest {
-    string namespace       = 1;
-    repeated string names  = 2;
-}
-// return the profile of one or more datasets
-message CompareDatasetsResponse {
-    string namespace       = 1;
-    repeated string names  = 2;
-    repeated github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profiles = 3;
-}
-
-// compare the profile of one or more datasets
-message GenerateDatasetRequest {
-    string namespace       = 1;
-    repeated string names  = 2;
-}
-// return the profile of one or more datasets
-message GenerateDatasetResponse {
-    string namespace       = 1;
-    repeated string names  = 2;
-    repeated github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profiles = 3;
-}
-
-
-// compare the profile of one or more datasets
-message ValidateDatasetRequest {
-    string namespace       = 1;
-    repeated string names  = 2;
-}
-// return the profile of one or more datasets
-message ValidateDatasetResponse {
-    string namespace       = 1;
-    repeated string names  = 2;
-    repeated github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profiles = 3;
-}
-
+/////// Download Dataset ///////
 
 message DownloadDatasetRequest {
     string namespace = 1;
-    string name      = 2;
-    string group       = 3; // if not null this is a group request
+    string name = 2;
+    int32  runVersion = 3;
 }
 
-// Answer the report in base 64
 message DownloadDatasetResponse {
     bytes raw = 1;
 }
 
-message GetDatabasesRequest {
-    string connectionNamespace = 1;
-    string connectionName      = 2;        
-}
+/////// Download Dataset Anomalies ///////
 
-message GetDatabasesResponse {
-    repeated string databases = 1;
-}
-
-message GetTablesRequest {
-    string connectionNamespace = 1;
-    string connectionName      = 2;    
-}
-
-message GetTablesResponse {
-    repeated string tables = 1;
-}
-
-message ExecuteSqlRequest {
-    string connectionNamespace = 1;
-    string connectionName      = 2;    
-    string sql                 = 4;
-}
-
-message ExecuteSqlResponse {
-    github.com.metaprov.modelaapi.services.common.v1.TableView tableview = 1;
-}
-
-
-message SnapshotRequest {
-    string connectionNamespace = 1;
-    string connectionName      = 2;    
-    string databaseName        = 3;  
-    string sql                 = 4;  
-}
-
-message SnapshotResponse {
-    string bucket = 1;
-    string path   = 2;
-}
-
-
-message GetAnomaliesRequest {
+message GetDatasetAnomaliesRequest {
     string namespace = 1;
-    string name      = 2;
+    string name = 2;
+    int32 runVersion = 3;
 }
 
-message GetAnomaliesResponse {
-    github.com.metaprov.modelaapi.services.common.v1.TableView   table   =1;
+message GetDatasetAnomaliesResponse {
+    github.com.metaprov.modelaapi.services.common.v1.TableView table = 1;
 }
 
+/////// Dataset Service ///////
 
 service DatasetService {
-    // Datasets
     rpc ListDatasets(ListDatasetsRequest) returns (ListDatasetsResponse) {
         option (google.api.http).get = "/v1/datasets/{namespace}";
     }
@@ -243,70 +115,31 @@ service DatasetService {
 
     rpc CreateDataset(CreateDatasetRequest) returns (CreateDatasetResponse) {
         option (google.api.http) = {
-			post: "/v1/datasets"
-			body: "*"
-		};
+            post: "/v1/datasets"
+            body: "*"
+        };
     }
 
     rpc UpdateDataset(UpdateDatasetRequest) returns (UpdateDatasetResponse) {
         option (google.api.http) = {
-			put: "/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}"
-			body: "*"
-		};
+            put: "/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}"
+            body: "*"
+        };
     }
 
     rpc DeleteDataset(DeleteDatasetRequest) returns (DeleteDatasetResponse) {
         option (google.api.http).delete = "/v1/datasets/{name}";
     }
 
-    // compare one or more datasets
-    rpc CompareDatasets(CompareDatasetsRequest) returns (CompareDatasetsResponse) {
-        option (google.api.http).post = "/v1/datasets/{namespace}/{names}:compare";
-    }
-
     rpc GetDatasetProfile(GetDatasetProfileRequest) returns (GetDatasetProfileResponse) {
-        option (google.api.http).get = "/v1/datasets/{namespace}/{name}:profile";
+        option (google.api.http).get = "/v1/datasets/{namespace}/{name}/{runVersion}:profile";
     }
 
-    rpc CreateDatasetProfile(CreateDatasetProfileRequest) returns (CreateDatasetProfileResponse) {
-        option (google.api.http).post = "/v1/datasets/{namespace}/{name}:profile";
-    }
-
-    // Get a single column viz, we do that since we want to parallelize the computation of the viz
-    rpc CreateColumnProfile(CreateColumnProfileRequest) returns (CreateColumnProfileResponse) {
-        option (google.api.http).post = "/v1/datasets/{namespace}/{name}/columnplot";
-    }
-
-    // generate a syntatic dataset
-    rpc GenerateDataset(GenerateDatasetRequest) returns (GenerateDatasetResponse) {
-        option (google.api.http).post = "/v1/datasets/{namespace}/{names}:generate";
-    }
-
-    rpc ValidateDataset(ValidateDatasetRequest) returns (ValidateDatasetResponse) {
-        option (google.api.http).post = "/v1/datasets/{namespace}/{names}:validate";
-    }
-
- 
     rpc DownloadDataset(DownloadDatasetRequest) returns (DownloadDatasetResponse) {
-        option (google.api.http).post = "/v1/datasets/{namespace}/{name}:download";
+        option (google.api.http).post = "/v1/datasets/{namespace}/{name}/{runVersion}:download";
     }
 
-    rpc GetDatabases(GetDatabasesRequest) returns (GetDatabasesResponse) {
-        option (google.api.http).get = "/v1/datasets/{connectionNamespace}/{connectionName}:databases";
+    rpc GetAnomalies(GetDatasetAnomaliesRequest) returns (GetDatasetAnomaliesResponse) {
+        option (google.api.http).get = "/v1/models/{namespace}/{name}/{runVersion}:anomalies";
     }
-
-    rpc GetTables(GetTablesRequest) returns (GetTablesResponse) {
-        option (google.api.http).get = "/v1/datasets/{connectionNamespace}/{connectionName}:tables";
-    }
-
-    rpc ExecuteSql(ExecuteSqlRequest) returns (ExecuteSqlResponse) {
-        option (google.api.http).post = "/v1/datasets/{connectionNamespace}/{connectionName}:executesql";
-    }
-
-    rpc GetAnomalies(GetAnomaliesRequest) returns (GetAnomaliesResponse) {
-        option (google.api.http).get = "/v1/models/{namespace}/{name}:anomalies";
-    }
-
-    
-
 }

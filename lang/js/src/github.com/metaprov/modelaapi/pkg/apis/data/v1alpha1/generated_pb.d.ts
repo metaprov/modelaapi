@@ -543,272 +543,6 @@ export namespace ColumnSpec {
   }
 }
 
-export class ColumnStatistics extends jspb.Message {
-  getName(): string;
-  setName(value: string): ColumnStatistics;
-  hasName(): boolean;
-  clearName(): ColumnStatistics;
-
-  getDatatype(): string;
-  setDatatype(value: string): ColumnStatistics;
-  hasDatatype(): boolean;
-  clearDatatype(): ColumnStatistics;
-
-  getCount(): number;
-  setCount(value: number): ColumnStatistics;
-  hasCount(): boolean;
-  clearCount(): ColumnStatistics;
-
-  getDistinct(): number;
-  setDistinct(value: number): ColumnStatistics;
-  hasDistinct(): boolean;
-  clearDistinct(): ColumnStatistics;
-
-  getMissing(): number;
-  setMissing(value: number): ColumnStatistics;
-  hasMissing(): boolean;
-  clearMissing(): ColumnStatistics;
-
-  getPercentmissing(): number;
-  setPercentmissing(value: number): ColumnStatistics;
-  hasPercentmissing(): boolean;
-  clearPercentmissing(): ColumnStatistics;
-
-  getMean(): number;
-  setMean(value: number): ColumnStatistics;
-  hasMean(): boolean;
-  clearMean(): ColumnStatistics;
-
-  getStddev(): number;
-  setStddev(value: number): ColumnStatistics;
-  hasStddev(): boolean;
-  clearStddev(): ColumnStatistics;
-
-  getVariance(): number;
-  setVariance(value: number): ColumnStatistics;
-  hasVariance(): boolean;
-  clearVariance(): ColumnStatistics;
-
-  getMin(): number;
-  setMin(value: number): ColumnStatistics;
-  hasMin(): boolean;
-  clearMin(): ColumnStatistics;
-
-  getMax(): number;
-  setMax(value: number): ColumnStatistics;
-  hasMax(): boolean;
-  clearMax(): ColumnStatistics;
-
-  getKurtosis(): number;
-  setKurtosis(value: number): ColumnStatistics;
-  hasKurtosis(): boolean;
-  clearKurtosis(): ColumnStatistics;
-
-  getSkewness(): number;
-  setSkewness(value: number): ColumnStatistics;
-  hasSkewness(): boolean;
-  clearSkewness(): ColumnStatistics;
-
-  getSum(): number;
-  setSum(value: number): ColumnStatistics;
-  hasSum(): boolean;
-  clearSum(): ColumnStatistics;
-
-  getMad(): number;
-  setMad(value: number): ColumnStatistics;
-  hasMad(): boolean;
-  clearMad(): ColumnStatistics;
-
-  getP25(): number;
-  setP25(value: number): ColumnStatistics;
-  hasP25(): boolean;
-  clearP25(): ColumnStatistics;
-
-  getP50(): number;
-  setP50(value: number): ColumnStatistics;
-  hasP50(): boolean;
-  clearP50(): ColumnStatistics;
-
-  getP75(): number;
-  setP75(value: number): ColumnStatistics;
-  hasP75(): boolean;
-  clearP75(): ColumnStatistics;
-
-  getIqr(): number;
-  setIqr(value: number): ColumnStatistics;
-  hasIqr(): boolean;
-  clearIqr(): ColumnStatistics;
-
-  getMode(): string;
-  setMode(value: string): ColumnStatistics;
-  hasMode(): boolean;
-  clearMode(): ColumnStatistics;
-
-  getZeros(): number;
-  setZeros(value: number): ColumnStatistics;
-  hasZeros(): boolean;
-  clearZeros(): ColumnStatistics;
-
-  getInvalid(): number;
-  setInvalid(value: number): ColumnStatistics;
-  hasInvalid(): boolean;
-  clearInvalid(): ColumnStatistics;
-
-  getImportance(): number;
-  setImportance(value: number): ColumnStatistics;
-  hasImportance(): boolean;
-  clearImportance(): ColumnStatistics;
-
-  getTarget(): boolean;
-  setTarget(value: boolean): ColumnStatistics;
-  hasTarget(): boolean;
-  clearTarget(): ColumnStatistics;
-
-  getIgnore(): boolean;
-  setIgnore(value: boolean): ColumnStatistics;
-  hasIgnore(): boolean;
-  clearIgnore(): ColumnStatistics;
-
-  getNullable(): boolean;
-  setNullable(value: boolean): ColumnStatistics;
-  hasNullable(): boolean;
-  clearNullable(): ColumnStatistics;
-
-  getHighcardinality(): boolean;
-  setHighcardinality(value: boolean): ColumnStatistics;
-  hasHighcardinality(): boolean;
-  clearHighcardinality(): ColumnStatistics;
-
-  getHighcorrwithotherfeatures(): boolean;
-  setHighcorrwithotherfeatures(value: boolean): ColumnStatistics;
-  hasHighcorrwithotherfeatures(): boolean;
-  clearHighcorrwithotherfeatures(): ColumnStatistics;
-
-  getLowcorrwithtarget(): boolean;
-  setLowcorrwithtarget(value: boolean): ColumnStatistics;
-  hasLowcorrwithtarget(): boolean;
-  clearLowcorrwithtarget(): ColumnStatistics;
-
-  getHighmissingpct(): boolean;
-  setHighmissingpct(value: boolean): ColumnStatistics;
-  hasHighmissingpct(): boolean;
-  clearHighmissingpct(): ColumnStatistics;
-
-  getSkewed(): boolean;
-  setSkewed(value: boolean): ColumnStatistics;
-  hasSkewed(): boolean;
-  clearSkewed(): ColumnStatistics;
-
-  getId(): boolean;
-  setId(value: boolean): ColumnStatistics;
-  hasId(): boolean;
-  clearId(): ColumnStatistics;
-
-  getConstant(): boolean;
-  setConstant(value: boolean): ColumnStatistics;
-  hasConstant(): boolean;
-  clearConstant(): ColumnStatistics;
-
-  getDuplicate(): boolean;
-  setDuplicate(value: boolean): ColumnStatistics;
-  hasDuplicate(): boolean;
-  clearDuplicate(): ColumnStatistics;
-
-  getReserved(): boolean;
-  setReserved(value: boolean): ColumnStatistics;
-  hasReserved(): boolean;
-  clearReserved(): ColumnStatistics;
-
-  getCompleteness(): number;
-  setCompleteness(value: number): ColumnStatistics;
-  hasCompleteness(): boolean;
-  clearCompleteness(): ColumnStatistics;
-
-  getDistinctvaluecount(): number;
-  setDistinctvaluecount(value: number): ColumnStatistics;
-  hasDistinctvaluecount(): boolean;
-  clearDistinctvaluecount(): ColumnStatistics;
-
-  getMostfreqvaluesratio(): number;
-  setMostfreqvaluesratio(value: number): ColumnStatistics;
-  hasMostfreqvaluesratio(): boolean;
-  clearMostfreqvaluesratio(): ColumnStatistics;
-
-  getHistogram(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData | undefined;
-  setHistogram(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData): ColumnStatistics;
-  hasHistogram(): boolean;
-  clearHistogram(): ColumnStatistics;
-
-  getCorrtotarget(): number;
-  setCorrtotarget(value: number): ColumnStatistics;
-  hasCorrtotarget(): boolean;
-  clearCorrtotarget(): ColumnStatistics;
-
-  getIndex(): number;
-  setIndex(value: number): ColumnStatistics;
-  hasIndex(): boolean;
-  clearIndex(): ColumnStatistics;
-
-  getOutliers(): OutlierStat | undefined;
-  setOutliers(value?: OutlierStat): ColumnStatistics;
-  hasOutliers(): boolean;
-  clearOutliers(): ColumnStatistics;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ColumnStatistics.AsObject;
-  static toObject(includeInstance: boolean, msg: ColumnStatistics): ColumnStatistics.AsObject;
-  static serializeBinaryToWriter(message: ColumnStatistics, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ColumnStatistics;
-  static deserializeBinaryFromReader(message: ColumnStatistics, reader: jspb.BinaryReader): ColumnStatistics;
-}
-
-export namespace ColumnStatistics {
-  export type AsObject = {
-    name?: string,
-    datatype?: string,
-    count?: number,
-    distinct?: number,
-    missing?: number,
-    percentmissing?: number,
-    mean?: number,
-    stddev?: number,
-    variance?: number,
-    min?: number,
-    max?: number,
-    kurtosis?: number,
-    skewness?: number,
-    sum?: number,
-    mad?: number,
-    p25?: number,
-    p50?: number,
-    p75?: number,
-    iqr?: number,
-    mode?: string,
-    zeros?: number,
-    invalid?: number,
-    importance?: number,
-    target?: boolean,
-    ignore?: boolean,
-    nullable?: boolean,
-    highcardinality?: boolean,
-    highcorrwithotherfeatures?: boolean,
-    lowcorrwithtarget?: boolean,
-    highmissingpct?: boolean,
-    skewed?: boolean,
-    id?: boolean,
-    constant?: boolean,
-    duplicate?: boolean,
-    reserved?: boolean,
-    completeness?: number,
-    distinctvaluecount?: number,
-    mostfreqvaluesratio?: number,
-    histogram?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.AsObject,
-    corrtotarget?: number,
-    index?: number,
-    outliers?: OutlierStat.AsObject,
-  }
-}
-
 export class ComponentSpec extends jspb.Message {
   getTitle(): string;
   setTitle(value: string): ComponentSpec;
@@ -904,15 +638,15 @@ export namespace ComponentView {
 }
 
 export class Correlation extends jspb.Message {
-  getFeature1(): string;
-  setFeature1(value: string): Correlation;
-  hasFeature1(): boolean;
-  clearFeature1(): Correlation;
+  getX(): string;
+  setX(value: string): Correlation;
+  hasX(): boolean;
+  clearX(): Correlation;
 
-  getFeature2(): string;
-  setFeature2(value: string): Correlation;
-  hasFeature2(): boolean;
-  clearFeature2(): Correlation;
+  getY(): string;
+  setY(value: string): Correlation;
+  hasY(): boolean;
+  clearY(): Correlation;
 
   getValue(): number;
   setValue(value: number): Correlation;
@@ -934,8 +668,8 @@ export class Correlation extends jspb.Message {
 
 export namespace Correlation {
   export type AsObject = {
-    feature1?: string,
-    feature2?: string,
+    x?: string,
+    y?: string,
     value?: number,
     method?: string,
   }
@@ -2387,16 +2121,271 @@ export namespace DatasetList {
   }
 }
 
+export class DatasetRun extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): DatasetRun;
+  hasMetadata(): boolean;
+  clearMetadata(): DatasetRun;
+
+  getSpec(): DatasetRunSpec | undefined;
+  setSpec(value?: DatasetRunSpec): DatasetRun;
+  hasSpec(): boolean;
+  clearSpec(): DatasetRun;
+
+  getStatus(): DatasetRunStatus | undefined;
+  setStatus(value?: DatasetRunStatus): DatasetRun;
+  hasStatus(): boolean;
+  clearStatus(): DatasetRun;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DatasetRun.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetRun): DatasetRun.AsObject;
+  static serializeBinaryToWriter(message: DatasetRun, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetRun;
+  static deserializeBinaryFromReader(message: DatasetRun, reader: jspb.BinaryReader): DatasetRun;
+}
+
+export namespace DatasetRun {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: DatasetRunSpec.AsObject,
+    status?: DatasetRunStatus.AsObject,
+  }
+}
+
+export class DatasetRunList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): DatasetRunList;
+  hasMetadata(): boolean;
+  clearMetadata(): DatasetRunList;
+
+  getItemsList(): Array<DatasetRun>;
+  setItemsList(value: Array<DatasetRun>): DatasetRunList;
+  clearItemsList(): DatasetRunList;
+  addItems(value?: DatasetRun, index?: number): DatasetRun;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DatasetRunList.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetRunList): DatasetRunList.AsObject;
+  static serializeBinaryToWriter(message: DatasetRunList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetRunList;
+  static deserializeBinaryFromReader(message: DatasetRunList, reader: jspb.BinaryReader): DatasetRunList;
+}
+
+export namespace DatasetRunList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<DatasetRun.AsObject>,
+  }
+}
+
+export class DatasetRunSpec extends jspb.Message {
+  getOwner(): string;
+  setOwner(value: string): DatasetRunSpec;
+  hasOwner(): boolean;
+  clearOwner(): DatasetRunSpec;
+
+  getRunversion(): number;
+  setRunversion(value: number): DatasetRunSpec;
+  hasRunversion(): boolean;
+  clearRunversion(): DatasetRunSpec;
+
+  getDatasetname(): string;
+  setDatasetname(value: string): DatasetRunSpec;
+  hasDatasetname(): boolean;
+  clearDatasetname(): DatasetRunSpec;
+
+  getDatasetversion(): number;
+  setDatasetversion(value: number): DatasetRunSpec;
+  hasDatasetversion(): boolean;
+  clearDatasetversion(): DatasetRunSpec;
+
+  getTimeout(): number;
+  setTimeout(value: number): DatasetRunSpec;
+  hasTimeout(): boolean;
+  clearTimeout(): DatasetRunSpec;
+
+  getPause(): boolean;
+  setPause(value: boolean): DatasetRunSpec;
+  hasPause(): boolean;
+  clearPause(): DatasetRunSpec;
+
+  getAbort(): boolean;
+  setAbort(value: boolean): DatasetRunSpec;
+  hasAbort(): boolean;
+  clearAbort(): DatasetRunSpec;
+
+  getModelclassrunname(): string;
+  setModelclassrunname(value: string): DatasetRunSpec;
+  hasModelclassrunname(): boolean;
+  clearModelclassrunname(): DatasetRunSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DatasetRunSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetRunSpec): DatasetRunSpec.AsObject;
+  static serializeBinaryToWriter(message: DatasetRunSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetRunSpec;
+  static deserializeBinaryFromReader(message: DatasetRunSpec, reader: jspb.BinaryReader): DatasetRunSpec;
+}
+
+export namespace DatasetRunSpec {
+  export type AsObject = {
+    owner?: string,
+    runversion?: number,
+    datasetname?: string,
+    datasetversion?: number,
+    timeout?: number,
+    pause?: boolean,
+    abort?: boolean,
+    modelclassrunname?: string,
+  }
+}
+
+export class DatasetRunStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): DatasetRunStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): DatasetRunStatus;
+
+  getManifestlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setManifestlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetRunStatus;
+  hasManifestlocation(): boolean;
+  clearManifestlocation(): DatasetRunStatus;
+
+  getStatistics(): DatasetStatistics | undefined;
+  setStatistics(value?: DatasetStatistics): DatasetRunStatus;
+  hasStatistics(): boolean;
+  clearStatistics(): DatasetRunStatus;
+
+  getPhase(): string;
+  setPhase(value: string): DatasetRunStatus;
+  hasPhase(): boolean;
+  clearPhase(): DatasetRunStatus;
+
+  getReportname(): string;
+  setReportname(value: string): DatasetRunStatus;
+  hasReportname(): boolean;
+  clearReportname(): DatasetRunStatus;
+
+  getReportlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setReportlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetRunStatus;
+  hasReportlocation(): boolean;
+  clearReportlocation(): DatasetRunStatus;
+
+  getProfilelocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setProfilelocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetRunStatus;
+  hasProfilelocation(): boolean;
+  clearProfilelocation(): DatasetRunStatus;
+
+  getAnomalieslocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setAnomalieslocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetRunStatus;
+  hasAnomalieslocation(): boolean;
+  clearAnomalieslocation(): DatasetRunStatus;
+
+  getImbalanced(): boolean;
+  setImbalanced(value: boolean): DatasetRunStatus;
+  hasImbalanced(): boolean;
+  clearImbalanced(): DatasetRunStatus;
+
+  getUnittestresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetRunStatus;
+  hasUnittestresults(): boolean;
+  clearUnittestresults(): DatasetRunStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): DatasetRunStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): DatasetRunStatus;
+
+  getProgress(): number;
+  setProgress(value: number): DatasetRunStatus;
+  hasProgress(): boolean;
+  clearProgress(): DatasetRunStatus;
+
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): DatasetRunStatus;
+  hasLogs(): boolean;
+  clearLogs(): DatasetRunStatus;
+
+  getHash(): string;
+  setHash(value: string): DatasetRunStatus;
+  hasHash(): boolean;
+  clearHash(): DatasetRunStatus;
+
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetRunStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): DatasetRunStatus;
+
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetRunStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): DatasetRunStatus;
+
+  getLaststudyat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLaststudyat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetRunStatus;
+  hasLaststudyat(): boolean;
+  clearLaststudyat(): DatasetRunStatus;
+
+  getImages(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images | undefined;
+  setImages(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images): DatasetRunStatus;
+  hasImages(): boolean;
+  clearImages(): DatasetRunStatus;
+
+  getFeaturehistogramref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setFeaturehistogramref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetRunStatus;
+  hasFeaturehistogramref(): boolean;
+  clearFeaturehistogramref(): DatasetRunStatus;
+
+  getGroupby(): DatasetGroupByStatus | undefined;
+  setGroupby(value?: DatasetGroupByStatus): DatasetRunStatus;
+  hasGroupby(): boolean;
+  clearGroupby(): DatasetRunStatus;
+
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): DatasetRunStatus;
+  clearConditionsList(): DatasetRunStatus;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DatasetRunStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetRunStatus): DatasetRunStatus.AsObject;
+  static serializeBinaryToWriter(message: DatasetRunStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetRunStatus;
+  static deserializeBinaryFromReader(message: DatasetRunStatus, reader: jspb.BinaryReader): DatasetRunStatus;
+}
+
+export namespace DatasetRunStatus {
+  export type AsObject = {
+    observedgeneration?: number,
+    manifestlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    statistics?: DatasetStatistics.AsObject,
+    phase?: string,
+    reportname?: string,
+    reportlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    profilelocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    anomalieslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    imbalanced?: boolean,
+    unittestresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    failuremessage?: string,
+    progress?: number,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
+    hash?: string,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    laststudyat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
+    featurehistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    groupby?: DatasetGroupByStatus.AsObject,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
+  }
+}
+
 export class DatasetSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): DatasetSpec;
   hasOwner(): boolean;
   clearOwner(): DatasetSpec;
-
-  getVersionname(): string;
-  setVersionname(value: string): DatasetSpec;
-  hasVersionname(): boolean;
-  clearVersionname(): DatasetSpec;
 
   getDatasourcename(): string;
   setDatasourcename(value: string): DatasetSpec;
@@ -2408,70 +2397,20 @@ export class DatasetSpec extends jspb.Message {
   hasDescription(): boolean;
   clearDescription(): DatasetSpec;
 
-  getDisplayname(): string;
-  setDisplayname(value: string): DatasetSpec;
-  hasDisplayname(): boolean;
-  clearDisplayname(): DatasetSpec;
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSpec | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSpec): DatasetSpec;
+  hasRun(): boolean;
+  clearRun(): DatasetSpec;
+
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): DatasetSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): DatasetSpec;
 
   getRole(): string;
   setRole(value: string): DatasetSpec;
   hasRole(): boolean;
   clearRole(): DatasetSpec;
-
-  getTagsList(): Array<string>;
-  setTagsList(value: Array<string>): DatasetSpec;
-  clearTagsList(): DatasetSpec;
-  addTags(value: string, index?: number): DatasetSpec;
-
-  getReport(): boolean;
-  setReport(value: boolean): DatasetSpec;
-  hasReport(): boolean;
-  clearReport(): DatasetSpec;
-
-  getUnittest(): boolean;
-  setUnittest(value: boolean): DatasetSpec;
-  hasUnittest(): boolean;
-  clearUnittest(): DatasetSpec;
-
-  getOrigin(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
-  setOrigin(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): DatasetSpec;
-  hasOrigin(): boolean;
-  clearOrigin(): DatasetSpec;
-
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetSpec;
-  hasLocation(): boolean;
-  clearLocation(): DatasetSpec;
-
-  getArtifactbucketname(): string;
-  setArtifactbucketname(value: string): DatasetSpec;
-  hasArtifactbucketname(): boolean;
-  clearArtifactbucketname(): DatasetSpec;
-
-  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
-  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DatasetSpec;
-  hasResources(): boolean;
-  clearResources(): DatasetSpec;
-
-  getTimeout(): number;
-  setTimeout(value: number): DatasetSpec;
-  hasTimeout(): boolean;
-  clearTimeout(): DatasetSpec;
-
-  getType(): string;
-  setType(value: string): DatasetSpec;
-  hasType(): boolean;
-  clearType(): DatasetSpec;
-
-  getSample(): SampleSpec | undefined;
-  setSample(value?: SampleSpec): DatasetSpec;
-  hasSample(): boolean;
-  clearSample(): DatasetSpec;
-
-  getSynthetic(): SyntheticSpec | undefined;
-  setSynthetic(value?: SyntheticSpec): DatasetSpec;
-  hasSynthetic(): boolean;
-  clearSynthetic(): DatasetSpec;
 
   getTask(): string;
   setTask(value: string): DatasetSpec;
@@ -2483,20 +2422,65 @@ export class DatasetSpec extends jspb.Message {
   hasSubtask(): boolean;
   clearSubtask(): DatasetSpec;
 
-  getCorrelation(): CorrelationSpec | undefined;
-  setCorrelation(value?: CorrelationSpec): DatasetSpec;
-  hasCorrelation(): boolean;
-  clearCorrelation(): DatasetSpec;
+  getType(): string;
+  setType(value: string): DatasetSpec;
+  hasType(): boolean;
+  clearType(): DatasetSpec;
+
+  getOrigin(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
+  setOrigin(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): DatasetSpec;
+  hasOrigin(): boolean;
+  clearOrigin(): DatasetSpec;
+
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DatasetSpec;
+  hasResources(): boolean;
+  clearResources(): DatasetSpec;
+
+  getUnittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DatasetSpec;
+  hasUnittests(): boolean;
+  clearUnittests(): DatasetSpec;
+
+  getReport(): boolean;
+  setReport(value: boolean): DatasetSpec;
+  hasReport(): boolean;
+  clearReport(): DatasetSpec;
+
+  getUnittest(): boolean;
+  setUnittest(value: boolean): DatasetSpec;
+  hasUnittest(): boolean;
+  clearUnittest(): DatasetSpec;
+
+  getGeneratefeaturehistogram(): boolean;
+  setGeneratefeaturehistogram(value: boolean): DatasetSpec;
+  hasGeneratefeaturehistogram(): boolean;
+  clearGeneratefeaturehistogram(): DatasetSpec;
 
   getFast(): boolean;
   setFast(value: boolean): DatasetSpec;
   hasFast(): boolean;
   clearFast(): DatasetSpec;
 
-  getFeaturize(): boolean;
-  setFeaturize(value: boolean): DatasetSpec;
-  hasFeaturize(): boolean;
-  clearFeaturize(): DatasetSpec;
+  getArtifactbucketname(): string;
+  setArtifactbucketname(value: string): DatasetSpec;
+  hasArtifactbucketname(): boolean;
+  clearArtifactbucketname(): DatasetSpec;
+
+  getSample(): SampleSpec | undefined;
+  setSample(value?: SampleSpec): DatasetSpec;
+  hasSample(): boolean;
+  clearSample(): DatasetSpec;
+
+  getSynthetic(): SyntheticSpec | undefined;
+  setSynthetic(value?: SyntheticSpec): DatasetSpec;
+  hasSynthetic(): boolean;
+  clearSynthetic(): DatasetSpec;
+
+  getCorrelation(): CorrelationSpec | undefined;
+  setCorrelation(value?: CorrelationSpec): DatasetSpec;
+  hasCorrelation(): boolean;
+  clearCorrelation(): DatasetSpec;
 
   getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetSpec;
@@ -2513,23 +2497,13 @@ export class DatasetSpec extends jspb.Message {
   hasPredictorref(): boolean;
   clearPredictorref(): DatasetSpec;
 
-  getGeneratefeaturehistogram(): boolean;
-  setGeneratefeaturehistogram(value: boolean): DatasetSpec;
-  hasGeneratefeaturehistogram(): boolean;
-  clearGeneratefeaturehistogram(): DatasetSpec;
-
-  getUnittests(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setUnittests(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): DatasetSpec;
-  hasUnittests(): boolean;
-  clearUnittests(): DatasetSpec;
-
   getGroupby(): GroupBySpec | undefined;
   setGroupby(value?: GroupBySpec): DatasetSpec;
   hasGroupby(): boolean;
   clearGroupby(): DatasetSpec;
 
-  getGrouplocations(): GroupDatasetLocationsSpec | undefined;
-  setGrouplocations(value?: GroupDatasetLocationsSpec): DatasetSpec;
+  getGrouplocations(): GroupDatasetLocationSpec | undefined;
+  setGrouplocations(value?: GroupDatasetLocationSpec): DatasetSpec;
   hasGrouplocations(): boolean;
   clearGrouplocations(): DatasetSpec;
 
@@ -2563,6 +2537,11 @@ export class DatasetSpec extends jspb.Message {
   hasNotification(): boolean;
   clearNotification(): DatasetSpec;
 
+  getTagsList(): Array<string>;
+  setTagsList(value: Array<string>): DatasetSpec;
+  clearTagsList(): DatasetSpec;
+  addTags(value: string, index?: number): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -2574,63 +2553,60 @@ export class DatasetSpec extends jspb.Message {
 export namespace DatasetSpec {
   export type AsObject = {
     owner?: string,
-    versionname?: string,
     datasourcename?: string,
     description?: string,
-    displayname?: string,
+    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSpec.AsObject,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     role?: string,
-    tagsList: Array<string>,
-    report?: boolean,
-    unittest?: boolean,
-    origin?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
-    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
-    artifactbucketname?: string,
-    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    timeout?: number,
-    type?: string,
-    sample?: SampleSpec.AsObject,
-    synthetic?: SyntheticSpec.AsObject,
     task?: string,
     subtask?: string,
-    correlation?: CorrelationSpec.AsObject,
+    type?: string,
+    origin?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
+    unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    report?: boolean,
+    unittest?: boolean,
+    generatefeaturehistogram?: boolean,
     fast?: boolean,
-    featurize?: boolean,
+    artifactbucketname?: string,
+    sample?: SampleSpec.AsObject,
+    synthetic?: SyntheticSpec.AsObject,
+    correlation?: CorrelationSpec.AsObject,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    generatefeaturehistogram?: boolean,
-    unittests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     groupby?: GroupBySpec.AsObject,
-    grouplocations?: GroupDatasetLocationsSpec.AsObject,
+    grouplocations?: GroupDatasetLocationSpec.AsObject,
     keyList: Array<string>,
     modelclassname?: string,
     modelclassrunname?: string,
     featuregroupsList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
     featuregroupname?: string,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
+    tagsList: Array<string>,
   }
 }
 
 export class DatasetStatistics extends jspb.Message {
-  getColumnsList(): Array<ColumnStatistics>;
-  setColumnsList(value: Array<ColumnStatistics>): DatasetStatistics;
-  clearColumnsList(): DatasetStatistics;
-  addColumns(value?: ColumnStatistics, index?: number): ColumnStatistics;
+  getFeaturesList(): Array<FeatureStatistics>;
+  setFeaturesList(value: Array<FeatureStatistics>): DatasetStatistics;
+  clearFeaturesList(): DatasetStatistics;
+  addFeatures(value?: FeatureStatistics, index?: number): FeatureStatistics;
 
   getRows(): number;
   setRows(value: number): DatasetStatistics;
   hasRows(): boolean;
   clearRows(): DatasetStatistics;
 
-  getCols(): number;
-  setCols(value: number): DatasetStatistics;
-  hasCols(): boolean;
-  clearCols(): DatasetStatistics;
+  getColumns(): number;
+  setColumns(value: number): DatasetStatistics;
+  hasColumns(): boolean;
+  clearColumns(): DatasetStatistics;
 
-  getFilesize(): number;
-  setFilesize(value: number): DatasetStatistics;
-  hasFilesize(): boolean;
-  clearFilesize(): DatasetStatistics;
+  getSizeinbytes(): number;
+  setSizeinbytes(value: number): DatasetStatistics;
+  hasSizeinbytes(): boolean;
+  clearSizeinbytes(): DatasetStatistics;
 
   getCorrelationswithtargetList(): Array<Correlation>;
   setCorrelationswithtargetList(value: Array<Correlation>): DatasetStatistics;
@@ -2652,110 +2628,50 @@ export class DatasetStatistics extends jspb.Message {
 
 export namespace DatasetStatistics {
   export type AsObject = {
-    columnsList: Array<ColumnStatistics.AsObject>,
+    featuresList: Array<FeatureStatistics.AsObject>,
     rows?: number,
-    cols?: number,
-    filesize?: number,
+    columns?: number,
+    sizeinbytes?: number,
     correlationswithtargetList: Array<Correlation.AsObject>,
     topcorrelationsList: Array<Correlation.AsObject>,
   }
 }
 
 export class DatasetStatus extends jspb.Message {
-  getStatistics(): DatasetStatistics | undefined;
-  setStatistics(value?: DatasetStatistics): DatasetStatus;
-  hasStatistics(): boolean;
-  clearStatistics(): DatasetStatus;
-
-  getPhase(): string;
-  setPhase(value: string): DatasetStatus;
-  hasPhase(): boolean;
-  clearPhase(): DatasetStatus;
-
-  getReportname(): string;
-  setReportname(value: string): DatasetStatus;
-  hasReportname(): boolean;
-  clearReportname(): DatasetStatus;
-
-  getReportlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setReportlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetStatus;
-  hasReportlocation(): boolean;
-  clearReportlocation(): DatasetStatus;
-
-  getProfilelocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setProfilelocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetStatus;
-  hasProfilelocation(): boolean;
-  clearProfilelocation(): DatasetStatus;
-
-  getAnomalieslocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setAnomalieslocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetStatus;
-  hasAnomalieslocation(): boolean;
-  clearAnomalieslocation(): DatasetStatus;
-
-  getImbalanced(): boolean;
-  setImbalanced(value: boolean): DatasetStatus;
-  hasImbalanced(): boolean;
-  clearImbalanced(): DatasetStatus;
-
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DatasetStatus;
   hasObservedgeneration(): boolean;
   clearObservedgeneration(): DatasetStatus;
 
-  getUnittestresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setUnittestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetStatus;
-  hasUnittestresults(): boolean;
-  clearUnittestresults(): DatasetStatus;
+  getVersion(): number;
+  setVersion(value: number): DatasetStatus;
+  hasVersion(): boolean;
+  clearVersion(): DatasetStatus;
 
-  getLaststudyat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLaststudyat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
-  hasLaststudyat(): boolean;
-  clearLaststudyat(): DatasetStatus;
+  getRunversion(): number;
+  setRunversion(value: number): DatasetStatus;
+  hasRunversion(): boolean;
+  clearRunversion(): DatasetStatus;
+
+  getLastrunat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrunat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
+  hasLastrunat(): boolean;
+  clearLastrunat(): DatasetStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): DatasetStatus;
   hasFailuremessage(): boolean;
   clearFailuremessage(): DatasetStatus;
 
-  getProgress(): number;
-  setProgress(value: number): DatasetStatus;
-  hasProgress(): boolean;
-  clearProgress(): DatasetStatus;
-
-  getHash(): string;
-  setHash(value: string): DatasetStatus;
-  hasHash(): boolean;
-  clearHash(): DatasetStatus;
-
-  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
-  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): DatasetStatus;
-  hasLogs(): boolean;
-  clearLogs(): DatasetStatus;
-
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
   hasUpdatedat(): boolean;
   clearUpdatedat(): DatasetStatus;
 
-  getImages(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images | undefined;
-  setImages(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images): DatasetStatus;
-  hasImages(): boolean;
-  clearImages(): DatasetStatus;
-
-  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
-  hasCompletedat(): boolean;
-  clearCompletedat(): DatasetStatus;
-
-  getFeaturehistogramref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setFeaturehistogramref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetStatus;
-  hasFeaturehistogramref(): boolean;
-  clearFeaturehistogramref(): DatasetStatus;
-
-  getGroupby(): DatasetGroupByStatus | undefined;
-  setGroupby(value?: DatasetGroupByStatus): DatasetStatus;
-  hasGroupby(): boolean;
-  clearGroupby(): DatasetStatus;
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): DatasetStatus;
+  hasSchedule(): boolean;
+  clearSchedule(): DatasetStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): DatasetStatus;
@@ -2772,52 +2688,14 @@ export class DatasetStatus extends jspb.Message {
 
 export namespace DatasetStatus {
   export type AsObject = {
-    statistics?: DatasetStatistics.AsObject,
-    phase?: string,
-    reportname?: string,
-    reportlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
-    profilelocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
-    anomalieslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
-    imbalanced?: boolean,
     observedgeneration?: number,
-    unittestresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
-    laststudyat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    version?: number,
+    runversion?: number,
+    lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failuremessage?: string,
-    progress?: number,
-    hash?: string,
-    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
-    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    featurehistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    groupby?: DatasetGroupByStatus.AsObject,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
-  }
-}
-
-export class DatasetTemplate extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): DatasetTemplate;
-  hasMetadata(): boolean;
-  clearMetadata(): DatasetTemplate;
-
-  getSpec(): DatasetSpec | undefined;
-  setSpec(value?: DatasetSpec): DatasetTemplate;
-  hasSpec(): boolean;
-  clearSpec(): DatasetTemplate;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetTemplate.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetTemplate): DatasetTemplate.AsObject;
-  static serializeBinaryToWriter(message: DatasetTemplate, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetTemplate;
-  static deserializeBinaryFromReader(message: DatasetTemplate, reader: jspb.BinaryReader): DatasetTemplate;
-}
-
-export namespace DatasetTemplate {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    spec?: DatasetSpec.AsObject,
   }
 }
 
@@ -3589,6 +3467,266 @@ export namespace FeatureHistogramStatus {
   }
 }
 
+export class FeatureStatistics extends jspb.Message {
+  getName(): string;
+  setName(value: string): FeatureStatistics;
+  hasName(): boolean;
+  clearName(): FeatureStatistics;
+
+  getDatatype(): string;
+  setDatatype(value: string): FeatureStatistics;
+  hasDatatype(): boolean;
+  clearDatatype(): FeatureStatistics;
+
+  getCount(): number;
+  setCount(value: number): FeatureStatistics;
+  hasCount(): boolean;
+  clearCount(): FeatureStatistics;
+
+  getDistinct(): number;
+  setDistinct(value: number): FeatureStatistics;
+  hasDistinct(): boolean;
+  clearDistinct(): FeatureStatistics;
+
+  getMissing(): number;
+  setMissing(value: number): FeatureStatistics;
+  hasMissing(): boolean;
+  clearMissing(): FeatureStatistics;
+
+  getPercentmissing(): number;
+  setPercentmissing(value: number): FeatureStatistics;
+  hasPercentmissing(): boolean;
+  clearPercentmissing(): FeatureStatistics;
+
+  getMean(): number;
+  setMean(value: number): FeatureStatistics;
+  hasMean(): boolean;
+  clearMean(): FeatureStatistics;
+
+  getStddev(): number;
+  setStddev(value: number): FeatureStatistics;
+  hasStddev(): boolean;
+  clearStddev(): FeatureStatistics;
+
+  getVariance(): number;
+  setVariance(value: number): FeatureStatistics;
+  hasVariance(): boolean;
+  clearVariance(): FeatureStatistics;
+
+  getMin(): number;
+  setMin(value: number): FeatureStatistics;
+  hasMin(): boolean;
+  clearMin(): FeatureStatistics;
+
+  getMax(): number;
+  setMax(value: number): FeatureStatistics;
+  hasMax(): boolean;
+  clearMax(): FeatureStatistics;
+
+  getKurtosis(): number;
+  setKurtosis(value: number): FeatureStatistics;
+  hasKurtosis(): boolean;
+  clearKurtosis(): FeatureStatistics;
+
+  getSkewness(): number;
+  setSkewness(value: number): FeatureStatistics;
+  hasSkewness(): boolean;
+  clearSkewness(): FeatureStatistics;
+
+  getSum(): number;
+  setSum(value: number): FeatureStatistics;
+  hasSum(): boolean;
+  clearSum(): FeatureStatistics;
+
+  getMad(): number;
+  setMad(value: number): FeatureStatistics;
+  hasMad(): boolean;
+  clearMad(): FeatureStatistics;
+
+  getP25(): number;
+  setP25(value: number): FeatureStatistics;
+  hasP25(): boolean;
+  clearP25(): FeatureStatistics;
+
+  getP50(): number;
+  setP50(value: number): FeatureStatistics;
+  hasP50(): boolean;
+  clearP50(): FeatureStatistics;
+
+  getP75(): number;
+  setP75(value: number): FeatureStatistics;
+  hasP75(): boolean;
+  clearP75(): FeatureStatistics;
+
+  getIqr(): number;
+  setIqr(value: number): FeatureStatistics;
+  hasIqr(): boolean;
+  clearIqr(): FeatureStatistics;
+
+  getMode(): string;
+  setMode(value: string): FeatureStatistics;
+  hasMode(): boolean;
+  clearMode(): FeatureStatistics;
+
+  getZeros(): number;
+  setZeros(value: number): FeatureStatistics;
+  hasZeros(): boolean;
+  clearZeros(): FeatureStatistics;
+
+  getInvalid(): number;
+  setInvalid(value: number): FeatureStatistics;
+  hasInvalid(): boolean;
+  clearInvalid(): FeatureStatistics;
+
+  getImportance(): number;
+  setImportance(value: number): FeatureStatistics;
+  hasImportance(): boolean;
+  clearImportance(): FeatureStatistics;
+
+  getTarget(): boolean;
+  setTarget(value: boolean): FeatureStatistics;
+  hasTarget(): boolean;
+  clearTarget(): FeatureStatistics;
+
+  getIgnore(): boolean;
+  setIgnore(value: boolean): FeatureStatistics;
+  hasIgnore(): boolean;
+  clearIgnore(): FeatureStatistics;
+
+  getNullable(): boolean;
+  setNullable(value: boolean): FeatureStatistics;
+  hasNullable(): boolean;
+  clearNullable(): FeatureStatistics;
+
+  getHighcardinality(): boolean;
+  setHighcardinality(value: boolean): FeatureStatistics;
+  hasHighcardinality(): boolean;
+  clearHighcardinality(): FeatureStatistics;
+
+  getHighcorrwithotherfeatures(): boolean;
+  setHighcorrwithotherfeatures(value: boolean): FeatureStatistics;
+  hasHighcorrwithotherfeatures(): boolean;
+  clearHighcorrwithotherfeatures(): FeatureStatistics;
+
+  getLowcorrwithtarget(): boolean;
+  setLowcorrwithtarget(value: boolean): FeatureStatistics;
+  hasLowcorrwithtarget(): boolean;
+  clearLowcorrwithtarget(): FeatureStatistics;
+
+  getHighmissingpct(): boolean;
+  setHighmissingpct(value: boolean): FeatureStatistics;
+  hasHighmissingpct(): boolean;
+  clearHighmissingpct(): FeatureStatistics;
+
+  getSkewed(): boolean;
+  setSkewed(value: boolean): FeatureStatistics;
+  hasSkewed(): boolean;
+  clearSkewed(): FeatureStatistics;
+
+  getConstant(): boolean;
+  setConstant(value: boolean): FeatureStatistics;
+  hasConstant(): boolean;
+  clearConstant(): FeatureStatistics;
+
+  getDuplicate(): boolean;
+  setDuplicate(value: boolean): FeatureStatistics;
+  hasDuplicate(): boolean;
+  clearDuplicate(): FeatureStatistics;
+
+  getReserved(): boolean;
+  setReserved(value: boolean): FeatureStatistics;
+  hasReserved(): boolean;
+  clearReserved(): FeatureStatistics;
+
+  getCompleteness(): number;
+  setCompleteness(value: number): FeatureStatistics;
+  hasCompleteness(): boolean;
+  clearCompleteness(): FeatureStatistics;
+
+  getDistinctvaluecount(): number;
+  setDistinctvaluecount(value: number): FeatureStatistics;
+  hasDistinctvaluecount(): boolean;
+  clearDistinctvaluecount(): FeatureStatistics;
+
+  getMostfreqvaluesratio(): number;
+  setMostfreqvaluesratio(value: number): FeatureStatistics;
+  hasMostfreqvaluesratio(): boolean;
+  clearMostfreqvaluesratio(): FeatureStatistics;
+
+  getHistogram(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData | undefined;
+  setHistogram(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData): FeatureStatistics;
+  hasHistogram(): boolean;
+  clearHistogram(): FeatureStatistics;
+
+  getCorrtotarget(): number;
+  setCorrtotarget(value: number): FeatureStatistics;
+  hasCorrtotarget(): boolean;
+  clearCorrtotarget(): FeatureStatistics;
+
+  getIndex(): number;
+  setIndex(value: number): FeatureStatistics;
+  hasIndex(): boolean;
+  clearIndex(): FeatureStatistics;
+
+  getOutliers(): OutlierStatistics | undefined;
+  setOutliers(value?: OutlierStatistics): FeatureStatistics;
+  hasOutliers(): boolean;
+  clearOutliers(): FeatureStatistics;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureStatistics.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureStatistics): FeatureStatistics.AsObject;
+  static serializeBinaryToWriter(message: FeatureStatistics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureStatistics;
+  static deserializeBinaryFromReader(message: FeatureStatistics, reader: jspb.BinaryReader): FeatureStatistics;
+}
+
+export namespace FeatureStatistics {
+  export type AsObject = {
+    name?: string,
+    datatype?: string,
+    count?: number,
+    distinct?: number,
+    missing?: number,
+    percentmissing?: number,
+    mean?: number,
+    stddev?: number,
+    variance?: number,
+    min?: number,
+    max?: number,
+    kurtosis?: number,
+    skewness?: number,
+    sum?: number,
+    mad?: number,
+    p25?: number,
+    p50?: number,
+    p75?: number,
+    iqr?: number,
+    mode?: string,
+    zeros?: number,
+    invalid?: number,
+    importance?: number,
+    target?: boolean,
+    ignore?: boolean,
+    nullable?: boolean,
+    highcardinality?: boolean,
+    highcorrwithotherfeatures?: boolean,
+    lowcorrwithtarget?: boolean,
+    highmissingpct?: boolean,
+    skewed?: boolean,
+    constant?: boolean,
+    duplicate?: boolean,
+    reserved?: boolean,
+    completeness?: number,
+    distinctvaluecount?: number,
+    mostfreqvaluesratio?: number,
+    histogram?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.AsObject,
+    corrtotarget?: number,
+    index?: number,
+    outliers?: OutlierStatistics.AsObject,
+  }
+}
+
 export class FlatFileFormatSpec extends jspb.Message {
   getFiletype(): string;
   setFiletype(value: string): FlatFileFormatSpec;
@@ -3714,20 +3852,20 @@ export class GroupBySpec extends jspb.Message {
   clearGroupbyList(): GroupBySpec;
   addGroupby(value: string, index?: number): GroupBySpec;
 
-  getFreq(): string;
-  setFreq(value: string): GroupBySpec;
-  hasFreq(): boolean;
-  clearFreq(): GroupBySpec;
+  getFrequency(): string;
+  setFrequency(value: string): GroupBySpec;
+  hasFrequency(): boolean;
+  clearFrequency(): GroupBySpec;
 
   getInterval(): number;
   setInterval(value: number): GroupBySpec;
   hasInterval(): boolean;
   clearInterval(): GroupBySpec;
 
-  getAggr(): string;
-  setAggr(value: string): GroupBySpec;
-  hasAggr(): boolean;
-  clearAggr(): GroupBySpec;
+  getAggregate(): string;
+  setAggregate(value: string): GroupBySpec;
+  hasAggregate(): boolean;
+  clearAggregate(): GroupBySpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GroupBySpec.AsObject;
@@ -3741,57 +3879,57 @@ export namespace GroupBySpec {
   export type AsObject = {
     enabled?: boolean,
     groupbyList: Array<string>,
-    freq?: string,
+    frequency?: string,
     interval?: number,
-    aggr?: string,
+    aggregate?: string,
   }
 }
 
-export class GroupDatasetLocationsSpec extends jspb.Message {
+export class GroupDatasetLocationSpec extends jspb.Message {
   getGroupsroot(): string;
-  setGroupsroot(value: string): GroupDatasetLocationsSpec;
+  setGroupsroot(value: string): GroupDatasetLocationSpec;
   hasGroupsroot(): boolean;
-  clearGroupsroot(): GroupDatasetLocationsSpec;
+  clearGroupsroot(): GroupDatasetLocationSpec;
 
   getGrouproot(): string;
-  setGrouproot(value: string): GroupDatasetLocationsSpec;
+  setGrouproot(value: string): GroupDatasetLocationSpec;
   hasGrouproot(): boolean;
-  clearGrouproot(): GroupDatasetLocationsSpec;
+  clearGrouproot(): GroupDatasetLocationSpec;
 
   getGroupdatafolder(): string;
-  setGroupdatafolder(value: string): GroupDatasetLocationsSpec;
+  setGroupdatafolder(value: string): GroupDatasetLocationSpec;
   hasGroupdatafolder(): boolean;
-  clearGroupdatafolder(): GroupDatasetLocationsSpec;
+  clearGroupdatafolder(): GroupDatasetLocationSpec;
 
   getGroupdatafile(): string;
-  setGroupdatafile(value: string): GroupDatasetLocationsSpec;
+  setGroupdatafile(value: string): GroupDatasetLocationSpec;
   hasGroupdatafile(): boolean;
-  clearGroupdatafile(): GroupDatasetLocationsSpec;
+  clearGroupdatafile(): GroupDatasetLocationSpec;
 
   getGroupprofilefolder(): string;
-  setGroupprofilefolder(value: string): GroupDatasetLocationsSpec;
+  setGroupprofilefolder(value: string): GroupDatasetLocationSpec;
   hasGroupprofilefolder(): boolean;
-  clearGroupprofilefolder(): GroupDatasetLocationsSpec;
+  clearGroupprofilefolder(): GroupDatasetLocationSpec;
 
   getGroupreportfile(): string;
-  setGroupreportfile(value: string): GroupDatasetLocationsSpec;
+  setGroupreportfile(value: string): GroupDatasetLocationSpec;
   hasGroupreportfile(): boolean;
-  clearGroupreportfile(): GroupDatasetLocationsSpec;
+  clearGroupreportfile(): GroupDatasetLocationSpec;
 
   getGroupfeaturesfile(): string;
-  setGroupfeaturesfile(value: string): GroupDatasetLocationsSpec;
+  setGroupfeaturesfile(value: string): GroupDatasetLocationSpec;
   hasGroupfeaturesfile(): boolean;
-  clearGroupfeaturesfile(): GroupDatasetLocationsSpec;
+  clearGroupfeaturesfile(): GroupDatasetLocationSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GroupDatasetLocationsSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: GroupDatasetLocationsSpec): GroupDatasetLocationsSpec.AsObject;
-  static serializeBinaryToWriter(message: GroupDatasetLocationsSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GroupDatasetLocationsSpec;
-  static deserializeBinaryFromReader(message: GroupDatasetLocationsSpec, reader: jspb.BinaryReader): GroupDatasetLocationsSpec;
+  toObject(includeInstance?: boolean): GroupDatasetLocationSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: GroupDatasetLocationSpec): GroupDatasetLocationSpec.AsObject;
+  static serializeBinaryToWriter(message: GroupDatasetLocationSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GroupDatasetLocationSpec;
+  static deserializeBinaryFromReader(message: GroupDatasetLocationSpec, reader: jspb.BinaryReader): GroupDatasetLocationSpec;
 }
 
-export namespace GroupDatasetLocationsSpec {
+export namespace GroupDatasetLocationSpec {
   export type AsObject = {
     groupsroot?: string,
     grouproot?: string,
@@ -4089,31 +4227,31 @@ export namespace MetricSpec {
   }
 }
 
-export class OutlierStat extends jspb.Message {
+export class OutlierStatistics extends jspb.Message {
   getLower(): number;
-  setLower(value: number): OutlierStat;
+  setLower(value: number): OutlierStatistics;
   hasLower(): boolean;
-  clearLower(): OutlierStat;
+  clearLower(): OutlierStatistics;
 
   getUpper(): number;
-  setUpper(value: number): OutlierStat;
+  setUpper(value: number): OutlierStatistics;
   hasUpper(): boolean;
-  clearUpper(): OutlierStat;
+  clearUpper(): OutlierStatistics;
 
   getPercent(): number;
-  setPercent(value: number): OutlierStat;
+  setPercent(value: number): OutlierStatistics;
   hasPercent(): boolean;
-  clearPercent(): OutlierStat;
+  clearPercent(): OutlierStatistics;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OutlierStat.AsObject;
-  static toObject(includeInstance: boolean, msg: OutlierStat): OutlierStat.AsObject;
-  static serializeBinaryToWriter(message: OutlierStat, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OutlierStat;
-  static deserializeBinaryFromReader(message: OutlierStat, reader: jspb.BinaryReader): OutlierStat;
+  toObject(includeInstance?: boolean): OutlierStatistics.AsObject;
+  static toObject(includeInstance: boolean, msg: OutlierStatistics): OutlierStatistics.AsObject;
+  static serializeBinaryToWriter(message: OutlierStatistics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OutlierStatistics;
+  static deserializeBinaryFromReader(message: OutlierStatistics, reader: jspb.BinaryReader): OutlierStatistics;
 }
 
-export namespace OutlierStat {
+export namespace OutlierStatistics {
   export type AsObject = {
     lower?: number,
     upper?: number,

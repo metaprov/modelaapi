@@ -1128,62 +1128,59 @@ message RunRecord {
   repeated ContainerLog logs = 6;
 }
 
-// RunSchedule specifies the schedule for a Job to be executed
+// RunSchedule specifies the schedule for a run to be executed
 message RunSchedule {
-  // Indicates if the schedule is enabled and the Jobs associated it will be created at the specified time
+  // Enabled indicates if the schedule is enabled. When enabled, a CronJob will be created which when triggered
+  // will initiate the creation of a run for the resource that specifies the schedule
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm for more information
+  // The cron string for the schedule, applicable if the trigger type is Cron.
+  // See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm for more information
   // +kubebuilder:validation:Optional
   optional string cron = 2;
 
-  // +kubebuilder:validation:Optional
   // The type of schedule, which can be a frequency interval or a cron expression
+  // +kubebuilder:validation:Optional
   optional string type = 3;
-
-  // +kubebuilder:validation:Optional
-  optional int32 maxRetryCount = 4;
-
-  // +kubebuilder:validation:Optional
-  optional int32 retryDelaySec = 5;
-
-  // +kubebuilder:validation:Optional
-  optional int32 timeoutSec = 6;
-
-  // +kubebuilder:validation:Optional
-  optional string timezone = 7;
-
-  // The time of the day when the schedule will be executed
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time nextRunAt = 8;
 }
 
 message RunScheduleStatus {
-  // Last time the job started
+  // Last time a run was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRunAt = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRunCreationAt = 1;
 
-  // In the case of failure, the resource controller which created the run will set this field with a failure reason
+  // Last time a run ended in completion or failure
   // +kubebuilder:validation:Optional
-  optional string failureReason = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRunCompletionAt = 2;
 
-  // In the case of failure, the resource controller which created the run will set this field with a failure message
+  // The failure message of the last run; if the run succeeded, the field will be set to empty
   // +kubebuilder:validation:Optional
   optional string failureMessage = 3;
 
-  // Last run name
+  // The version of the last run
   // +kubebuilder:validation:Optional
-  optional string lastRunName = 4;
+  optional int32 lastRunName = 4;
 
-  // Logs from the last run
+  // The logs from the last run
   // +kubebuilder:validation:Optional
-  optional Logs lastRunLogs = 5;
+  repeated ContainerLog lastRunLogs = 5;
+}
 
-  // Actual retry count
+// RunSpec specifies the configuration for all runs created by the resource
+message RunSpec {
+  // Timeout specifies the deadline in seconds for a run to complete, after which it will be aborted.
+  // If empty, runs will not have a deadline
   // +kubebuilder:validation:Optional
-  optional int32 retryCount = 6;
+  optional int32 timeout = 1;
+
+  // MaxPreviousRuns specifies the amount of previous runs to maintain, sorted by their run version.
+  // When a new run is created, any runs with a version below that of the latest version minus
+  // MaxPreviousRuns will be garbage collected. Runs which are still in progress will not be affected
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 maxPreviousRuns = 2;
 }
 
 message RunStatus {

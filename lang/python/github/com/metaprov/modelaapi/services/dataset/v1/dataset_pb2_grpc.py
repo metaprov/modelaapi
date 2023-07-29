@@ -6,7 +6,9 @@ from github.com.metaprov.modelaapi.services.dataset.v1 import dataset_pb2 as git
 
 
 class DatasetServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """///// Dataset Service ///////
+
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -39,69 +41,30 @@ class DatasetServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DeleteDatasetRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DeleteDatasetResponse.FromString,
                 )
-        self.CompareDatasets = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CompareDatasets',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CompareDatasetsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CompareDatasetsResponse.FromString,
-                )
         self.GetDatasetProfile = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatasetProfile',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatasetProfileRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatasetProfileResponse.FromString,
-                )
-        self.CreateDatasetProfile = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDatasetProfile',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CreateDatasetProfileRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CreateDatasetProfileResponse.FromString,
-                )
-        self.CreateColumnProfile = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateColumnProfile',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CreateColumnProfileRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CreateColumnProfileResponse.FromString,
-                )
-        self.GenerateDataset = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GenerateDataset',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GenerateDatasetRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GenerateDatasetResponse.FromString,
-                )
-        self.ValidateDataset = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ValidateDataset',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ValidateDatasetRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ValidateDatasetResponse.FromString,
                 )
         self.DownloadDataset = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/DownloadDataset',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DownloadDatasetRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DownloadDatasetResponse.FromString,
                 )
-        self.GetDatabases = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatabases',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatabasesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatabasesResponse.FromString,
-                )
-        self.GetTables = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetTables',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetTablesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetTablesResponse.FromString,
-                )
-        self.ExecuteSql = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ExecuteSql',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ExecuteSqlRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ExecuteSqlResponse.FromString,
-                )
         self.GetAnomalies = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetAnomalies',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetAnomaliesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetAnomaliesResponse.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatasetAnomaliesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatasetAnomaliesResponse.FromString,
                 )
 
 
 class DatasetServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """///// Dataset Service ///////
+
+    """
 
     def ListDatasets(self, request, context):
-        """Datasets
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -130,64 +93,13 @@ class DatasetServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CompareDatasets(self, request, context):
-        """compare one or more datasets
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def GetDatasetProfile(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CreateDatasetProfile(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def CreateColumnProfile(self, request, context):
-        """Get a single column viz, we do that since we want to parallelize the computation of the viz
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GenerateDataset(self, request, context):
-        """generate a syntatic dataset
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ValidateDataset(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def DownloadDataset(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetDatabases(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetTables(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ExecuteSql(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -227,60 +139,20 @@ def add_DatasetServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DeleteDatasetRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DeleteDatasetResponse.SerializeToString,
             ),
-            'CompareDatasets': grpc.unary_unary_rpc_method_handler(
-                    servicer.CompareDatasets,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CompareDatasetsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CompareDatasetsResponse.SerializeToString,
-            ),
             'GetDatasetProfile': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDatasetProfile,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatasetProfileRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatasetProfileResponse.SerializeToString,
-            ),
-            'CreateDatasetProfile': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateDatasetProfile,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CreateDatasetProfileRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CreateDatasetProfileResponse.SerializeToString,
-            ),
-            'CreateColumnProfile': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateColumnProfile,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CreateColumnProfileRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CreateColumnProfileResponse.SerializeToString,
-            ),
-            'GenerateDataset': grpc.unary_unary_rpc_method_handler(
-                    servicer.GenerateDataset,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GenerateDatasetRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GenerateDatasetResponse.SerializeToString,
-            ),
-            'ValidateDataset': grpc.unary_unary_rpc_method_handler(
-                    servicer.ValidateDataset,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ValidateDatasetRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ValidateDatasetResponse.SerializeToString,
             ),
             'DownloadDataset': grpc.unary_unary_rpc_method_handler(
                     servicer.DownloadDataset,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DownloadDatasetRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DownloadDatasetResponse.SerializeToString,
             ),
-            'GetDatabases': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetDatabases,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatabasesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatabasesResponse.SerializeToString,
-            ),
-            'GetTables': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetTables,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetTablesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetTablesResponse.SerializeToString,
-            ),
-            'ExecuteSql': grpc.unary_unary_rpc_method_handler(
-                    servicer.ExecuteSql,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ExecuteSqlRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ExecuteSqlResponse.SerializeToString,
-            ),
             'GetAnomalies': grpc.unary_unary_rpc_method_handler(
                     servicer.GetAnomalies,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetAnomaliesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetAnomaliesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatasetAnomaliesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatasetAnomaliesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -290,7 +162,9 @@ def add_DatasetServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class DatasetService(object):
-    """Missing associated documentation comment in .proto file."""
+    """///// Dataset Service ///////
+
+    """
 
     @staticmethod
     def ListDatasets(request,
@@ -378,23 +252,6 @@ class DatasetService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CompareDatasets(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CompareDatasets',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CompareDatasetsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CompareDatasetsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def GetDatasetProfile(request,
             target,
             options=(),
@@ -408,74 +265,6 @@ class DatasetService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatasetProfile',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatasetProfileRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatasetProfileResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def CreateDatasetProfile(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDatasetProfile',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CreateDatasetProfileRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CreateDatasetProfileResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def CreateColumnProfile(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateColumnProfile',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CreateColumnProfileRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.CreateColumnProfileResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GenerateDataset(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GenerateDataset',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GenerateDatasetRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GenerateDatasetResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ValidateDataset(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ValidateDataset',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ValidateDatasetRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ValidateDatasetResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -497,57 +286,6 @@ class DatasetService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetDatabases(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatabases',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatabasesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatabasesResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetTables(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetTables',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetTablesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetTablesResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ExecuteSql(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ExecuteSql',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ExecuteSqlRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ExecuteSqlResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def GetAnomalies(request,
             target,
             options=(),
@@ -559,7 +297,7 @@ class DatasetService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetAnomalies',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetAnomaliesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetAnomaliesResponse.FromString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatasetAnomaliesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatasetAnomaliesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

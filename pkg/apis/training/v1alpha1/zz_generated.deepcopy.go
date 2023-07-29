@@ -3461,7 +3461,7 @@ func (in *WindowSpec) DeepCopyInto(out *WindowSpec) {
 	*out = *in
 	if in.Interval != nil {
 		in, out := &in.Interval, &out.Interval
-		*out = new(catalogv1alpha1.Freq)
+		*out = new(catalogv1alpha1.Frequency)
 		**out = **in
 	}
 	if in.Start != nil {

@@ -1,12 +1,10 @@
 package v1alpha1
 
 import (
-	"github.com/aptible/supercronic/cronexpr"
 	"github.com/metaprov/modelaapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/utils/pointer"
-	"time"
 )
 
 // ===========================================================
@@ -1010,18 +1008,18 @@ func (this NotificationReceiver) Code() int32 {
 
 // The Horizon unit
 // +kubebuilder:validation:Enum="second";"minute";"hour";"day";"week";"month";"quarter";"year";"multi-year"
-type Freq string
+type Frequency string
 
 const (
-	FreqSeconds    Freq = "second"
-	FreqMinutes    Freq = "minute"
-	FreqHours      Freq = "hour"
-	FreqDays       Freq = "day"
-	FreqWeeks      Freq = "week"
-	FreqMonths     Freq = "month"
-	FreqQtrs       Freq = "quarter"
-	FreqYears      Freq = "year"
-	FreqMultiYears Freq = "multi-year"
+	FreqSeconds    Frequency = "second"
+	FreqMinutes    Frequency = "minute"
+	FreqHours      Frequency = "hour"
+	FreqDays       Frequency = "day"
+	FreqWeeks      Frequency = "week"
+	FreqMonths     Frequency = "month"
+	FreqQtrs       Frequency = "quarter"
+	FreqYears      Frequency = "year"
+	FreqMultiYears Frequency = "multi-year"
 )
 
 // The Aggregate unit
@@ -1421,114 +1419,81 @@ func (status *RunStatus) CreateRecord(version, maxRecords int, failureMessage *s
 	status.ActiveRunLogs = nil
 }
 
-// RunSchedule specifies the schedule for a Job to be executed
+// RunSpec specifies the configuration for all runs created by the resource
+type RunSpec struct {
+	// Timeout specifies the deadline in seconds for a run to complete, after which it will be aborted.
+	// If empty, runs will not have a deadline
+	// +kubebuilder:validation:Optional
+	Timeout *int32 `json:"timeout,omitempty" protobuf:"varint,1,opt,name=timeout"`
+	// MaxPreviousRuns specifies the amount of previous runs to maintain, sorted by their run version.
+	// When a new run is created, any runs with a version below that of the latest version minus
+	// MaxPreviousRuns will be garbage collected. Runs which are still in progress will not be affected
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	MaxPreviousRuns *int32 `json:"maxPreviousRuns,omitempty" protobuf:"varint,2,opt,name=maxPreviousRuns"`
+}
+
+// RunSchedule specifies the schedule for a run to be executed
 type RunSchedule struct {
-	// Indicates if the schedule is enabled and the Jobs associated it will be created at the specified time
+	// Enabled indicates if the schedule is enabled. When enabled, a CronJob will be created which when triggered
+	// will initiate the creation of a run for the resource that specifies the schedule
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm for more information
+	// The cron string for the schedule, applicable if the trigger type is Cron.
+	// See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm for more information
 	// +kubebuilder:validation:Optional
 	Cron *string `json:"cron,omitempty" protobuf:"bytes,2,opt,name=cron"`
-	// +kubebuilder:validation:Optional
 	// The type of schedule, which can be a frequency interval or a cron expression
+	// +kubebuilder:validation:Optional
 	Type TriggerScheduleEventType `json:"type,omitempty" protobuf:"bytes,3,opt,name=type"`
-	// +kubebuilder:validation:Optional
-	MaxRetryCount *int32 `json:"MaxRetryCount,omitempty" protobuf:"varint,4,opt,name=maxRetryCount"`
-	// +kubebuilder:validation:Optional
-	RetryDelaySec *int32 `json:"retryDelaySec,omitempty" protobuf:"varint,5,opt,name=retryDelaySec"`
-	// +kubebuilder:validation:Optional
-	TimeoutSec *int32 `json:"timeoutSec,omitempty" protobuf:"varint,6,opt,name=timeoutSec"`
-	// +kubebuilder:validation:Optional
-	TimeZone *string `json:"timezone,omitempty" protobuf:"bytes,7,opt,name=timezone"`
-	// The time of the day when the schedule will be executed
-	// +kubebuilder:validation:Optional
-	NextRunAt *metav1.Time `json:"nextRunAt,omitempty" protobuf:"bytes,8,opt,name=nextRunAt"`
 }
 
 // Compute the next run. return nil if the schedule is disabled.
-func (schedule RunSchedule) NextRun() *metav1.Time {
-	if schedule.Enabled == nil || !*schedule.Enabled {
+func (schedule RunSchedule) NextRun() *string {
+	if !pointer.BoolDeref(schedule.Enabled, false) {
 		return nil
 	}
-	now := metav1.Now()
-	hour := now.Hour()
-	day := now.Day()
-	month := now.Month()
-	year := now.Year()
 
 	switch schedule.Type {
-	case NowTriggerScheduleEventType:
-		return &now
 	case HourlyTriggerScheduleEventType:
-		nextTime := time.Date(year, month, day, hour+1, 0, 0, 0, now.Location())
-		next := metav1.NewTime(nextTime)
-		return &next
+		return util.StrPtr("@hourly")
 	case DailyTriggerScheduleEventType:
-		nextTime := time.Date(year, month, day+1, 0, 0, 0, 0, now.Location())
-		next := metav1.NewTime(nextTime)
-		return &next
+		return util.StrPtr("@daily")
 	case WeeklyTriggerScheduleEventType:
-		nextTime := time.Date(year, month, day+7, 0, 0, 0, 0, now.Location())
-		// roll back to monday
-		if wd := nextTime.Weekday(); wd == time.Sunday {
-			nextTime = nextTime.AddDate(0, 0, -6)
-		} else {
-			nextTime = nextTime.AddDate(0, 0, -int(wd)+1)
-		}
-		next := metav1.NewTime(nextTime)
-		return &next
+		return util.StrPtr("@weekly")
 	case MonthlyTriggerScheduleEventType:
-
-		if month == 12 {
-			nextTime := time.Date(year+1, 1, 1, 0, 0, 0, 0, now.Location())
-			next := metav1.NewTime(nextTime)
-			return &next
-		} else {
-			nextTime := time.Date(year, month+1, 1, 0, 0, 0, 0, now.Location())
-			next := metav1.NewTime(nextTime)
-			return &next
-		}
+		return util.StrPtr("@monthly")
 	case YearlyTriggerScheduleEventType:
-		nextTime := time.Date(year+1, 1, 1, 0, 0, 0, 0, now.Location())
-		next := metav1.NewTime(nextTime)
-		return &next
+		return util.StrPtr("@yearly")
 	case CronTriggerScheduleEventType:
-		nextTime := cronexpr.MustParse(*schedule.Cron).Next(time.Now())
-		next := metav1.NewTime(nextTime)
-		return &next
+		return schedule.Cron
 	}
+
 	return nil
 }
 
 type RunScheduleStatus struct {
-	// Last time the job started
+	// Last time a run was created
 	// +kubebuilder:validation:Optional
-	LastRunAt *metav1.Time `json:"lastRunAt,omitempty" protobuf:"bytes,1,opt,name=lastRunAt"`
-	// In the case of failure, the resource controller which created the run will set this field with a failure reason
+	LastRunCreationAt *metav1.Time `json:"lastRunCreationAt,omitempty" protobuf:"bytes,1,opt,name=lastRunCreationAt"`
+	// Last time a run ended in completion or failure
 	// +kubebuilder:validation:Optional
-	FailureReason *StatusError `json:"failureReason,omitempty" protobuf:"bytes,2,opt,name=failureReason"`
-	// In the case of failure, the resource controller which created the run will set this field with a failure message
+	LastRunCompletionAt *metav1.Time `json:"lastRunCompletionAt,omitempty" protobuf:"bytes,2,opt,name=lastRunCompletionAt"`
+	// The failure message of the last run; if the run succeeded, the field will be set to empty
 	// +kubebuilder:validation:Optional
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,3,opt,name=failureMessage"`
-	// Last run name
+	LastRunFailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,3,opt,name=failureMessage"`
+	// The version of the last run
 	// +kubebuilder:validation:Optional
-	LastRunName *string `json:"lastRunName,omitempty" protobuf:"bytes,4,opt,name=lastRunName"`
-	// Logs from the last run
+	LastRunVersion *int32 `json:"lastRunName,omitempty" protobuf:"bytes,4,opt,name=lastRunName"`
+	// The logs from the last run
 	// +kubebuilder:validation:Optional
-	LastRunLogs Logs `json:"lastRunLogs,omitempty" protobuf:"bytes,5,opt,name=lastRunLogs"`
-	// Actual retry count
-	// +kubebuilder:validation:Optional
-	RetryCount int32 `json:"retryCount,omitempty" protobuf:"bytes,6,opt,name=retryCount"`
+	LastRunLogs ContainerLogs `json:"lastRunLogs,omitempty" protobuf:"bytes,5,opt,name=lastRunLogs"`
 }
 
 // Check if we are due for a run. next run must be set.
 func (runs *RunSchedule) IsDue() bool {
-	if runs.NextRunAt == nil {
-		return true
-	}
-	now := metav1.Now()
-	return runs.NextRunAt.Time.Before(now.Time)
+	return false
 }
 
 func (runs *RunScheduleStatus) Start() {
@@ -1536,9 +1501,7 @@ func (runs *RunScheduleStatus) Start() {
 	runs.LastRunAt = &now
 }
 
-func (runs *RunSchedule) SetNext(nextRun metav1.Time) {
-	runs.NextRunAt = &nextRun
-}
+func (runs *RunSchedule) SetNext(nextRun metav1.Time) {}
 
 // Measurement is a value for a specific metric
 type Measurement struct {
@@ -1826,6 +1789,9 @@ const (
 // The labels key for modela objects
 
 const (
+	VersionLabelKey    = "modela.ai/version"
+	RunVersionLabelKey = "modela.ai/run-version"
+
 	// catalog group
 	AlgorithmLabelKey       = "modela.ai/algorithm"
 	CloudLabelKey           = "modela.ai/cloud"
@@ -1885,6 +1851,7 @@ const (
 	ModelClassRunLabelKey = "modela.ai/modelclassrun"
 	JobLabelKey           = "kubernetes.io/job"
 	OwnerKindLabelKey     = "modela.ai/owner-kind"
+	OwnerLabelKey         = "modela.ai/owner"
 
 	ModelRoleLabelKey    = "modela.ai/role"
 	ModelVersionLabelKey = "modela.ai/modelversion"

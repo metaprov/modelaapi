@@ -293,7 +293,7 @@ type TimeSeriesSchema struct {
 	// The time series frequency
 	// +kubebuilder:default:="day"
 	// +kubebuilder:validation:Optional
-	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,2,opt,name=freq"`
+	Freq *catalog.Frequency `json:"freq,omitempty" protobuf:"bytes,2,opt,name=freq"`
 	// The interval to forecast at this level
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional

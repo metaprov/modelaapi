@@ -1171,30 +1171,18 @@ spec:
               reportSchedule:
                 description: The schedule for summary report
                 properties:
-                  MaxRetryCount:
-                    format: int32
-                    type: integer
                   cron:
-                    description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                    description: The cron string for the schedule, applicable if the
+                      trigger type is Cron. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
                       for more information
                     type: string
                   enabled:
                     default: false
-                    description: Indicates if the schedule is enabled and the Jobs
-                      associated it will be created at the specified time
+                    description: Enabled indicates if the schedule is enabled. When
+                      enabled, a CronJob will be created which when triggered will
+                      initiate the creation of a run for the resource that specifies
+                      the schedule
                     type: boolean
-                  nextRunAt:
-                    description: The time of the day when the schedule will be executed
-                    format: date-time
-                    type: string
-                  retryDelaySec:
-                    format: int32
-                    type: integer
-                  timeoutSec:
-                    format: int32
-                    type: integer
-                  timezone:
-                    type: string
                   type:
                     description: The type of schedule, which can be a frequency interval
                       or a cron expression
@@ -1217,31 +1205,18 @@ spec:
                   monitoringSchedule:
                     description: Schedule for monitoring drift
                     properties:
-                      MaxRetryCount:
-                        format: int32
-                        type: integer
                       cron:
-                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                        description: The cron string for the schedule, applicable
+                          if the trigger type is Cron. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
                           for more information
                         type: string
                       enabled:
                         default: false
-                        description: Indicates if the schedule is enabled and the
-                          Jobs associated it will be created at the specified time
+                        description: Enabled indicates if the schedule is enabled.
+                          When enabled, a CronJob will be created which when triggered
+                          will initiate the creation of a run for the resource that
+                          specifies the schedule
                         type: boolean
-                      nextRunAt:
-                        description: The time of the day when the schedule will be
-                          executed
-                        format: date-time
-                        type: string
-                      retryDelaySec:
-                        format: int32
-                        type: integer
-                      timeoutSec:
-                        format: int32
-                        type: integer
-                      timezone:
-                        type: string
                       type:
                         description: The type of schedule, which can be a frequency
                           interval or a cron expression
@@ -1269,31 +1244,18 @@ spec:
                   predictionSchedule:
                     description: BatchPrediction schedule
                     properties:
-                      MaxRetryCount:
-                        format: int32
-                        type: integer
                       cron:
-                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                        description: The cron string for the schedule, applicable
+                          if the trigger type is Cron. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
                           for more information
                         type: string
                       enabled:
                         default: false
-                        description: Indicates if the schedule is enabled and the
-                          Jobs associated it will be created at the specified time
+                        description: Enabled indicates if the schedule is enabled.
+                          When enabled, a CronJob will be created which when triggered
+                          will initiate the creation of a run for the resource that
+                          specifies the schedule
                         type: boolean
-                      nextRunAt:
-                        description: The time of the day when the schedule will be
-                          executed
-                        format: date-time
-                        type: string
-                      retryDelaySec:
-                        format: int32
-                        type: integer
-                      timeoutSec:
-                        format: int32
-                        type: integer
-                      timezone:
-                        type: string
                       type:
                         description: The type of schedule, which can be a frequency
                           interval or a cron expression
@@ -2053,31 +2015,18 @@ spec:
                   trainingSchedule:
                     description: Training schedule
                     properties:
-                      MaxRetryCount:
-                        format: int32
-                        type: integer
                       cron:
-                        description: The cron string of the schedule. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                        description: The cron string for the schedule, applicable
+                          if the trigger type is Cron. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
                           for more information
                         type: string
                       enabled:
                         default: false
-                        description: Indicates if the schedule is enabled and the
-                          Jobs associated it will be created at the specified time
+                        description: Enabled indicates if the schedule is enabled.
+                          When enabled, a CronJob will be created which when triggered
+                          will initiate the creation of a run for the resource that
+                          specifies the schedule
                         type: boolean
-                      nextRunAt:
-                        description: The time of the day when the schedule will be
-                          executed
-                        format: date-time
-                        type: string
-                      retryDelaySec:
-                        format: int32
-                        type: integer
-                      timeoutSec:
-                        format: int32
-                        type: integer
-                      timezone:
-                        type: string
                       type:
                         description: The type of schedule, which can be a frequency
                           interval or a cron expression
@@ -2415,51 +2364,39 @@ spec:
                 description: Batch Prediction schedule
                 properties:
                   failureMessage:
-                    description: In the case of failure, the resource controller which
-                      created the run will set this field with a failure message
+                    description: The failure message of the last run; if the run succeeded,
+                      the field will be set to empty
                     type: string
-                  failureReason:
-                    description: In the case of failure, the resource controller which
-                      created the run will set this field with a failure reason
+                  lastRunCompletionAt:
+                    description: Last time a run ended in completion or failure
+                    format: date-time
                     type: string
-                  lastRunAt:
-                    description: Last time the job started
+                  lastRunCreationAt:
+                    description: Last time a run was created
                     format: date-time
                     type: string
                   lastRunLogs:
-                    description: Logs from the last run
-                    properties:
-                      bucket:
-                        description: The name of the Virtual Bucket resource where
-                          the logs are stored
-                        type: string
-                      containers:
-                        description: The collection of logs for each container of
-                          the workload
-                        items:
-                          description: ContainerLog describes the location of logs
-                            for a single Job
-                          properties:
-                            bucket:
-                              description: The bucket the log was stored in
-                              type: string
-                            container:
-                              description: The container name
-                              type: string
-                            job:
-                              description: The name of the Job
-                              type: string
-                            key:
-                              description: The path to the log in the bucket
-                              type: string
-                          type: object
-                        type: array
-                    type: object
+                    description: The logs from the last run
+                    items:
+                      description: ContainerLog describes the location of logs for
+                        a single Job
+                      properties:
+                        bucket:
+                          description: The bucket the log was stored in
+                          type: string
+                        container:
+                          description: The container name
+                          type: string
+                        job:
+                          description: The name of the Job
+                          type: string
+                        key:
+                          description: The path to the log in the bucket
+                          type: string
+                      type: object
+                    type: array
                   lastRunName:
-                    description: Last run name
-                    type: string
-                  retryCount:
-                    description: Actual retry count
+                    description: The version of the last run
                     format: int32
                     type: integer
                 type: object
@@ -2472,51 +2409,39 @@ spec:
                 description: Batch Prediction schedule
                 properties:
                   failureMessage:
-                    description: In the case of failure, the resource controller which
-                      created the run will set this field with a failure message
+                    description: The failure message of the last run; if the run succeeded,
+                      the field will be set to empty
                     type: string
-                  failureReason:
-                    description: In the case of failure, the resource controller which
-                      created the run will set this field with a failure reason
+                  lastRunCompletionAt:
+                    description: Last time a run ended in completion or failure
+                    format: date-time
                     type: string
-                  lastRunAt:
-                    description: Last time the job started
+                  lastRunCreationAt:
+                    description: Last time a run was created
                     format: date-time
                     type: string
                   lastRunLogs:
-                    description: Logs from the last run
-                    properties:
-                      bucket:
-                        description: The name of the Virtual Bucket resource where
-                          the logs are stored
-                        type: string
-                      containers:
-                        description: The collection of logs for each container of
-                          the workload
-                        items:
-                          description: ContainerLog describes the location of logs
-                            for a single Job
-                          properties:
-                            bucket:
-                              description: The bucket the log was stored in
-                              type: string
-                            container:
-                              description: The container name
-                              type: string
-                            job:
-                              description: The name of the Job
-                              type: string
-                            key:
-                              description: The path to the log in the bucket
-                              type: string
-                          type: object
-                        type: array
-                    type: object
+                    description: The logs from the last run
+                    items:
+                      description: ContainerLog describes the location of logs for
+                        a single Job
+                      properties:
+                        bucket:
+                          description: The bucket the log was stored in
+                          type: string
+                        container:
+                          description: The container name
+                          type: string
+                        job:
+                          description: The name of the Job
+                          type: string
+                        key:
+                          description: The path to the log in the bucket
+                          type: string
+                      type: object
+                    type: array
                   lastRunName:
-                    description: Last run name
-                    type: string
-                  retryCount:
-                    description: Actual retry count
+                    description: The version of the last run
                     format: int32
                     type: integer
                 type: object
@@ -2535,51 +2460,39 @@ spec:
                 description: Batch Prediction schedule
                 properties:
                   failureMessage:
-                    description: In the case of failure, the resource controller which
-                      created the run will set this field with a failure message
+                    description: The failure message of the last run; if the run succeeded,
+                      the field will be set to empty
                     type: string
-                  failureReason:
-                    description: In the case of failure, the resource controller which
-                      created the run will set this field with a failure reason
+                  lastRunCompletionAt:
+                    description: Last time a run ended in completion or failure
+                    format: date-time
                     type: string
-                  lastRunAt:
-                    description: Last time the job started
+                  lastRunCreationAt:
+                    description: Last time a run was created
                     format: date-time
                     type: string
                   lastRunLogs:
-                    description: Logs from the last run
-                    properties:
-                      bucket:
-                        description: The name of the Virtual Bucket resource where
-                          the logs are stored
-                        type: string
-                      containers:
-                        description: The collection of logs for each container of
-                          the workload
-                        items:
-                          description: ContainerLog describes the location of logs
-                            for a single Job
-                          properties:
-                            bucket:
-                              description: The bucket the log was stored in
-                              type: string
-                            container:
-                              description: The container name
-                              type: string
-                            job:
-                              description: The name of the Job
-                              type: string
-                            key:
-                              description: The path to the log in the bucket
-                              type: string
-                          type: object
-                        type: array
-                    type: object
+                    description: The logs from the last run
+                    items:
+                      description: ContainerLog describes the location of logs for
+                        a single Job
+                      properties:
+                        bucket:
+                          description: The bucket the log was stored in
+                          type: string
+                        container:
+                          description: The container name
+                          type: string
+                        job:
+                          description: The name of the Job
+                          type: string
+                        key:
+                          description: The path to the log in the bucket
+                          type: string
+                      type: object
+                    type: array
                   lastRunName:
-                    description: Last run name
-                    type: string
-                  retryCount:
-                    description: Actual retry count
+                    description: The version of the last run
                     format: int32
                     type: integer
                 type: object
@@ -2597,51 +2510,39 @@ spec:
                 description: Training schedule status
                 properties:
                   failureMessage:
-                    description: In the case of failure, the resource controller which
-                      created the run will set this field with a failure message
+                    description: The failure message of the last run; if the run succeeded,
+                      the field will be set to empty
                     type: string
-                  failureReason:
-                    description: In the case of failure, the resource controller which
-                      created the run will set this field with a failure reason
+                  lastRunCompletionAt:
+                    description: Last time a run ended in completion or failure
+                    format: date-time
                     type: string
-                  lastRunAt:
-                    description: Last time the job started
+                  lastRunCreationAt:
+                    description: Last time a run was created
                     format: date-time
                     type: string
                   lastRunLogs:
-                    description: Logs from the last run
-                    properties:
-                      bucket:
-                        description: The name of the Virtual Bucket resource where
-                          the logs are stored
-                        type: string
-                      containers:
-                        description: The collection of logs for each container of
-                          the workload
-                        items:
-                          description: ContainerLog describes the location of logs
-                            for a single Job
-                          properties:
-                            bucket:
-                              description: The bucket the log was stored in
-                              type: string
-                            container:
-                              description: The container name
-                              type: string
-                            job:
-                              description: The name of the Job
-                              type: string
-                            key:
-                              description: The path to the log in the bucket
-                              type: string
-                          type: object
-                        type: array
-                    type: object
+                    description: The logs from the last run
+                    items:
+                      description: ContainerLog describes the location of logs for
+                        a single Job
+                      properties:
+                        bucket:
+                          description: The bucket the log was stored in
+                          type: string
+                        container:
+                          description: The container name
+                          type: string
+                        job:
+                          description: The name of the Job
+                          type: string
+                        key:
+                          description: The path to the log in the bucket
+                          type: string
+                      type: object
+                    type: array
                   lastRunName:
-                    description: Last run name
-                    type: string
-                  retryCount:
-                    description: Actual retry count
+                    description: The version of the last run
                     format: int32
                     type: integer
                 type: object

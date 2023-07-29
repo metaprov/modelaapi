@@ -1927,21 +1927,21 @@ spec:
                   description: Correlation records the correlation between two features
                     in a Dataset
                   properties:
-                    feature1:
-                      description: The first feature name
-                      type: string
-                    feature2:
-                      description: The second feature name
-                      type: string
                     method:
                       description: How the value was calculated
                       type: string
                     value:
                       description: The correlation value
                       type: number
+                    x:
+                      description: The name of the feature on the X axis
+                      type: string
+                    "y":
+                      description: The name of the feature on the Y axis
+                      type: string
                   required:
-                  - feature1
-                  - feature2
+                  - x
+                  - "y"
                   type: object
                 type: array
               dataSourceName:
@@ -2744,21 +2744,21 @@ spec:
                   description: Correlation records the correlation between two features
                     in a Dataset
                   properties:
-                    feature1:
-                      description: The first feature name
-                      type: string
-                    feature2:
-                      description: The second feature name
-                      type: string
                     method:
                       description: How the value was calculated
                       type: string
                     value:
                       description: The correlation value
                       type: number
+                    x:
+                      description: The name of the feature on the X axis
+                      type: string
+                    "y":
+                      description: The name of the feature on the Y axis
+                      type: string
                   required:
-                  - feature1
-                  - feature2
+                  - x
+                  - "y"
                   type: object
                 type: array
               train:

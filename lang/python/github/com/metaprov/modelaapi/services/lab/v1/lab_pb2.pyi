@@ -9,39 +9,6 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class ListLabsRequest(_message.Message):
-    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
-    class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: str
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    LABELS_FIELD_NUMBER: _ClassVar[int]
-    PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
-    PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    ORDER_BY_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    labels: _containers.ScalarMap[str, str]
-    page_size: int
-    page_token: str
-    order_by: str
-    def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
-
-class ListLabsResponse(_message.Message):
-    __slots__ = ["labs", "next_page_token"]
-    LABS_FIELD_NUMBER: _ClassVar[int]
-    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    labs: _generated_pb2.LabList
-    next_page_token: str
-    def __init__(self, labs: _Optional[_Union[_generated_pb2.LabList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
-
-class LabResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
 class CreateLabRequest(_message.Message):
     __slots__ = ["lab"]
     LAB_FIELD_NUMBER: _ClassVar[int]
@@ -52,24 +19,38 @@ class CreateLabResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class UpdateLabRequest(_message.Message):
-    __slots__ = ["lab", "field_mask"]
-    LAB_FIELD_NUMBER: _ClassVar[int]
-    FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
-    lab: _generated_pb2.Lab
-    field_mask: _field_mask_pb2.FieldMask
-    def __init__(self, lab: _Optional[_Union[_generated_pb2.Lab, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+class DeleteLabRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
-class UpdateLabResponse(_message.Message):
+class DeleteLabResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class GetLabRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+class GetLabNamespacesRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
     name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class GetLabNamespacesResponse(_message.Message):
+    __slots__ = ["namespaces"]
+    NAMESPACES_FIELD_NUMBER: _ClassVar[int]
+    namespaces: _containers.RepeatedCompositeFieldContainer[_common_pb2.NamespaceInfo]
+    def __init__(self, namespaces: _Optional[_Iterable[_Union[_common_pb2.NamespaceInfo, _Mapping]]] = ...) -> None: ...
+
+class GetLabRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetLabResponse(_message.Message):
@@ -80,28 +61,47 @@ class GetLabResponse(_message.Message):
     yaml: str
     def __init__(self, lab: _Optional[_Union[_generated_pb2.Lab, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
-class GetLabNamespacesRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+class LabResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class ListLabsRequest(_message.Message):
+    __slots__ = ["labels", "namespace", "order_by", "page_size", "page_token"]
+    class LabelsEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    LABELS_FIELD_NUMBER: _ClassVar[int]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
+    ORDER_BY_FIELD_NUMBER: _ClassVar[int]
+    PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
+    PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    labels: _containers.ScalarMap[str, str]
     namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+    order_by: str
+    page_size: int
+    page_token: str
+    def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
-class GetLabNamespacesResponse(_message.Message):
-    __slots__ = ["namespaces"]
-    NAMESPACES_FIELD_NUMBER: _ClassVar[int]
-    namespaces: _containers.RepeatedCompositeFieldContainer[_common_pb2.NamespaceInfo]
-    def __init__(self, namespaces: _Optional[_Iterable[_Union[_common_pb2.NamespaceInfo, _Mapping]]] = ...) -> None: ...
+class ListLabsResponse(_message.Message):
+    __slots__ = ["labs", "next_page_token"]
+    LABS_FIELD_NUMBER: _ClassVar[int]
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    labs: _generated_pb2.LabList
+    next_page_token: str
+    def __init__(self, labs: _Optional[_Union[_generated_pb2.LabList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
-class DeleteLabRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+class UpdateLabRequest(_message.Message):
+    __slots__ = ["field_mask", "lab"]
+    FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
+    LAB_FIELD_NUMBER: _ClassVar[int]
+    field_mask: _field_mask_pb2.FieldMask
+    lab: _generated_pb2.Lab
+    def __init__(self, lab: _Optional[_Union[_generated_pb2.Lab, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
-class DeleteLabResponse(_message.Message):
+class UpdateLabResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...

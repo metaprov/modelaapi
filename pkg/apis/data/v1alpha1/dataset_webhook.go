@@ -26,20 +26,20 @@ func (dataset *Dataset) Default() {
 	if dataset.Spec.DataSourceName != "" {
 		dataset.ObjectMeta.Labels[catalog.DatasourceLabelKey] = dataset.Spec.DataSourceName
 	}
-	if dataset.Spec.VersionName != "" {
-		dataset.ObjectMeta.Labels[catalog.DataProductVersionLabelKey] = dataset.Spec.VersionName
-	}
+
 	if dataset.Spec.Owner != nil {
-		dataset.ObjectMeta.Labels[catalog.OwnerKindLabelKey] = *dataset.Spec.Owner
+		dataset.ObjectMeta.Labels[catalog.OwnerLabelKey] = *dataset.Spec.Owner
 	}
+
 	if dataset.Spec.ModelClassName != nil {
 		dataset.ObjectMeta.Labels[catalog.ModelClassLabelKey] = *dataset.Spec.ModelClassName
 	}
+
 	if dataset.Spec.ModelClassRunName != nil {
 		dataset.ObjectMeta.Labels[catalog.ModelClassRunLabelKey] = *dataset.Spec.ModelClassRunName
 	}
 
-	dataset.Status.Statistics.Columns = make([]ColumnStatistics, 0)
+	dataset.ObjectMeta.Labels[catalog.VersionLabelKey] = "1"
 }
 
 // validation
@@ -82,20 +82,6 @@ func (dataset *Dataset) ValidateDelete() error {
 	return nil
 }
 
-func (loc Dataset) Validate(field string) ([]metav1.StatusCause, bool) {
-	// if type is object
-	// if type is table
-	// if type is view
-	// if type is stream
-	// if type is web
-	return nil, true
-}
-
-func (gb GroupBySpec) Validate(field string) ([]metav1.StatusCause, bool) {
-	// if type is object
-	// if type is table
-	// if type is view
-	// if type is stream
-	// if type is web
+func (dataset *Dataset) Validate(field string) ([]metav1.StatusCause, bool) {
 	return nil, true
 }

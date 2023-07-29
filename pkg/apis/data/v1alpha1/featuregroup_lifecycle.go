@@ -80,8 +80,8 @@ func (fg *FeatureGroup) MarkIngested() {
 		Status: metav1.ConditionTrue,
 		Reason: FeatureGroupIngested,
 	})
-	nextRun := fg.Spec.IngestSchedule.NextRun()
-	fg.Spec.IngestSchedule.SetNext(*nextRun)
+	//nextRun := fg.Spec.IngestSchedule.NextRun()
+	//fg.Spec.IngestSchedule.SetNext(*nextRun)
 }
 
 func (fg *FeatureGroup) MarkIngestFailed(msg string) {
@@ -120,8 +120,8 @@ func (fg *FeatureGroup) MarkSynced() {
 		Status: metav1.ConditionTrue,
 		Reason: FeatureGroupSynced,
 	})
-	nextRun := fg.Spec.Materialization.Schedule.NextRun()
-	fg.Spec.SyncSchedule.SetNext(*nextRun)
+	//nextRun := fg.Spec.Materialization.Schedule.NextRun()
+	//fg.Spec.SyncSchedule.SetNext(*nextRun)
 }
 
 func (fg *FeatureGroup) MarkSyncFailed(msg string) {

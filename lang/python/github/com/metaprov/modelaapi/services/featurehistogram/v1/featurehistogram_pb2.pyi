@@ -8,35 +8,6 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class ListFeatureHistogramsRequest(_message.Message):
-    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
-    class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: str
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    LABELS_FIELD_NUMBER: _ClassVar[int]
-    PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
-    PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    ORDER_BY_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    labels: _containers.ScalarMap[str, str]
-    page_size: int
-    page_token: str
-    order_by: str
-    def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
-
-class ListFeatureHistogramsResponse(_message.Message):
-    __slots__ = ["histograms", "next_page_token"]
-    HISTOGRAMS_FIELD_NUMBER: _ClassVar[int]
-    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    histograms: _generated_pb2.FeatureHistogramList
-    next_page_token: str
-    def __init__(self, histograms: _Optional[_Union[_generated_pb2.FeatureHistogramList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
-
 class CreateFeatureHistogramRequest(_message.Message):
     __slots__ = ["histogram", "next_page_token"]
     HISTOGRAM_FIELD_NUMBER: _ClassVar[int]
@@ -49,24 +20,24 @@ class CreateFeatureHistogramResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class UpdateFeatureHistogramRequest(_message.Message):
-    __slots__ = ["histogram", "field_mask"]
-    HISTOGRAM_FIELD_NUMBER: _ClassVar[int]
-    FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
-    histogram: _generated_pb2.FeatureHistogram
-    field_mask: _field_mask_pb2.FieldMask
-    def __init__(self, histogram: _Optional[_Union[_generated_pb2.FeatureHistogram, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+class DeleteFeatureHistogramRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
-class UpdateFeatureHistogramResponse(_message.Message):
+class DeleteFeatureHistogramResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class GetFeatureHistogramRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ["name", "namespace"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
     name: str
+    namespace: str
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetFeatureHistogramResponse(_message.Message):
@@ -77,14 +48,43 @@ class GetFeatureHistogramResponse(_message.Message):
     yaml: str
     def __init__(self, histogram: _Optional[_Union[_generated_pb2.FeatureHistogram, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
-class DeleteFeatureHistogramRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+class ListFeatureHistogramsRequest(_message.Message):
+    __slots__ = ["labels", "namespace", "order_by", "page_size", "page_token"]
+    class LabelsEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    LABELS_FIELD_NUMBER: _ClassVar[int]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
+    ORDER_BY_FIELD_NUMBER: _ClassVar[int]
+    PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
+    PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    labels: _containers.ScalarMap[str, str]
     namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+    order_by: str
+    page_size: int
+    page_token: str
+    def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
-class DeleteFeatureHistogramResponse(_message.Message):
+class ListFeatureHistogramsResponse(_message.Message):
+    __slots__ = ["histograms", "next_page_token"]
+    HISTOGRAMS_FIELD_NUMBER: _ClassVar[int]
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    histograms: _generated_pb2.FeatureHistogramList
+    next_page_token: str
+    def __init__(self, histograms: _Optional[_Union[_generated_pb2.FeatureHistogramList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
+
+class UpdateFeatureHistogramRequest(_message.Message):
+    __slots__ = ["field_mask", "histogram"]
+    FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
+    HISTOGRAM_FIELD_NUMBER: _ClassVar[int]
+    field_mask: _field_mask_pb2.FieldMask
+    histogram: _generated_pb2.FeatureHistogram
+    def __init__(self, histogram: _Optional[_Union[_generated_pb2.FeatureHistogram, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+
+class UpdateFeatureHistogramResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...

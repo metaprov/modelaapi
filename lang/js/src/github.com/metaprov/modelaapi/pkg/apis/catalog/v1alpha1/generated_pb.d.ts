@@ -2241,31 +2241,6 @@ export class RunSchedule extends jspb.Message {
   hasType(): boolean;
   clearType(): RunSchedule;
 
-  getMaxretrycount(): number;
-  setMaxretrycount(value: number): RunSchedule;
-  hasMaxretrycount(): boolean;
-  clearMaxretrycount(): RunSchedule;
-
-  getRetrydelaysec(): number;
-  setRetrydelaysec(value: number): RunSchedule;
-  hasRetrydelaysec(): boolean;
-  clearRetrydelaysec(): RunSchedule;
-
-  getTimeoutsec(): number;
-  setTimeoutsec(value: number): RunSchedule;
-  hasTimeoutsec(): boolean;
-  clearTimeoutsec(): RunSchedule;
-
-  getTimezone(): string;
-  setTimezone(value: string): RunSchedule;
-  hasTimezone(): boolean;
-  clearTimezone(): RunSchedule;
-
-  getNextrunat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setNextrunat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunSchedule;
-  hasNextrunat(): boolean;
-  clearNextrunat(): RunSchedule;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunSchedule.AsObject;
   static toObject(includeInstance: boolean, msg: RunSchedule): RunSchedule.AsObject;
@@ -2279,44 +2254,34 @@ export namespace RunSchedule {
     enabled?: boolean,
     cron?: string,
     type?: string,
-    maxretrycount?: number,
-    retrydelaysec?: number,
-    timeoutsec?: number,
-    timezone?: string,
-    nextrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 
 export class RunScheduleStatus extends jspb.Message {
-  getLastrunat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrunat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunScheduleStatus;
-  hasLastrunat(): boolean;
-  clearLastrunat(): RunScheduleStatus;
+  getLastruncreationat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastruncreationat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunScheduleStatus;
+  hasLastruncreationat(): boolean;
+  clearLastruncreationat(): RunScheduleStatus;
 
-  getFailurereason(): string;
-  setFailurereason(value: string): RunScheduleStatus;
-  hasFailurereason(): boolean;
-  clearFailurereason(): RunScheduleStatus;
+  getLastruncompletionat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastruncompletionat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunScheduleStatus;
+  hasLastruncompletionat(): boolean;
+  clearLastruncompletionat(): RunScheduleStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): RunScheduleStatus;
   hasFailuremessage(): boolean;
   clearFailuremessage(): RunScheduleStatus;
 
-  getLastrunname(): string;
-  setLastrunname(value: string): RunScheduleStatus;
+  getLastrunname(): number;
+  setLastrunname(value: number): RunScheduleStatus;
   hasLastrunname(): boolean;
   clearLastrunname(): RunScheduleStatus;
 
-  getLastrunlogs(): Logs | undefined;
-  setLastrunlogs(value?: Logs): RunScheduleStatus;
-  hasLastrunlogs(): boolean;
-  clearLastrunlogs(): RunScheduleStatus;
-
-  getRetrycount(): number;
-  setRetrycount(value: number): RunScheduleStatus;
-  hasRetrycount(): boolean;
-  clearRetrycount(): RunScheduleStatus;
+  getLastrunlogsList(): Array<ContainerLog>;
+  setLastrunlogsList(value: Array<ContainerLog>): RunScheduleStatus;
+  clearLastrunlogsList(): RunScheduleStatus;
+  addLastrunlogs(value?: ContainerLog, index?: number): ContainerLog;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunScheduleStatus.AsObject;
@@ -2328,12 +2293,37 @@ export class RunScheduleStatus extends jspb.Message {
 
 export namespace RunScheduleStatus {
   export type AsObject = {
-    lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason?: string,
+    lastruncreationat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastruncompletionat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failuremessage?: string,
-    lastrunname?: string,
-    lastrunlogs?: Logs.AsObject,
-    retrycount?: number,
+    lastrunname?: number,
+    lastrunlogsList: Array<ContainerLog.AsObject>,
+  }
+}
+
+export class RunSpec extends jspb.Message {
+  getTimeout(): number;
+  setTimeout(value: number): RunSpec;
+  hasTimeout(): boolean;
+  clearTimeout(): RunSpec;
+
+  getMaxpreviousruns(): number;
+  setMaxpreviousruns(value: number): RunSpec;
+  hasMaxpreviousruns(): boolean;
+  clearMaxpreviousruns(): RunSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RunSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: RunSpec): RunSpec.AsObject;
+  static serializeBinaryToWriter(message: RunSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunSpec;
+  static deserializeBinaryFromReader(message: RunSpec, reader: jspb.BinaryReader): RunSpec;
+}
+
+export namespace RunSpec {
+  export type AsObject = {
+    timeout?: number,
+    maxpreviousruns?: number,
   }
 }
 
