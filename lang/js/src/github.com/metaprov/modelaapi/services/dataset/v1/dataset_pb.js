@@ -2220,9 +2220,7 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileRespons
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    runversion: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    profile: (f = msg.getProfile()) && github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2260,16 +2258,9 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileRespons
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setRunversion(value);
+      var value = new github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile;
+      reader.readMessage(value,github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile.deserializeBinaryFromReader);
+      msg.setProfile(value);
       break;
     default:
       reader.skipField();
@@ -2300,81 +2291,51 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileRespons
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getProfile();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getRunversion();
-  if (f !== 0) {
-    writer.writeInt32(
-      3,
-      f
+      f,
+      github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string namespace = 1;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profile = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile}
  */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse.prototype.getProfile = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse.prototype.setProfile = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse.prototype.clearProfile = function() {
+  return this.setProfile(undefined);
 };
 
 
 /**
- * optional string name = 2;
- * @return {string}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse} returns this
- */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional int32 runVersion = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse.prototype.getRunversion = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse} returns this
- */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse.prototype.setRunversion = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse.prototype.hasProfile = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

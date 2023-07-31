@@ -22034,7 +22034,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f)
+    connectionnamespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    connectionname: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -22072,9 +22073,12 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.deser
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setConnection(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConnectionnamespace(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConnectionname(value);
       break;
     default:
       reader.skipField();
@@ -22105,51 +22109,56 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getConnection();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getConnectionnamespace();
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
+      f
+    );
+  }
+  f = message.getConnectionname();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
+ * optional string connectionNamespace = 1;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.prototype.getConnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 1));
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.prototype.getConnectionnamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.prototype.clearConnection = function() {
-  return this.setConnection(undefined);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.prototype.setConnectionnamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {boolean}
+ * optional string connectionName = 2;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.prototype.getConnectionname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.prototype.setConnectionname = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -22341,7 +22350,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototyp
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f)
+    connectionnamespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    connectionname: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -22379,9 +22389,12 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.deserial
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setConnection(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConnectionnamespace(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConnectionname(value);
       break;
     default:
       reader.skipField();
@@ -22412,51 +22425,56 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototyp
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getConnection();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getConnectionnamespace();
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
+      f
+    );
+  }
+  f = message.getConnectionname();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
+ * optional string connectionNamespace = 1;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototype.getConnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 1));
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototype.getConnectionnamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototype.clearConnection = function() {
-  return this.setConnection(undefined);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototype.setConnectionnamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {boolean}
+ * optional string connectionName = 2;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototype.getConnectionname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.prototype.setConnectionname = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -22648,8 +22666,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    sql: jspb.Message.getFieldWithDefault(msg, 4, "")
+    connectionnamespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    connectionname: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    sql: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -22687,11 +22706,14 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.deseria
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setConnection(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConnectionnamespace(value);
       break;
-    case 4:
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConnectionname(value);
+      break;
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setSql(value);
       break;
@@ -22724,18 +22746,24 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototy
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getConnection();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getConnectionnamespace();
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
+      f
+    );
+  }
+  f = message.getConnectionname();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
   f = message.getSql();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      3,
       f
     );
   }
@@ -22743,48 +22771,47 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.seriali
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
+ * optional string connectionNamespace = 1;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototype.getConnection = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 1));
+proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototype.getConnectionnamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototype.clearConnection = function() {
-  return this.setConnection(undefined);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototype.setConnectionnamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {boolean}
+ * optional string connectionName = 2;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototype.getConnectionname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * optional string sql = 4;
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototype.setConnectionname = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string sql = 3;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototype.getSql = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -22793,7 +22820,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototy
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest} returns this
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.prototype.setSql = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

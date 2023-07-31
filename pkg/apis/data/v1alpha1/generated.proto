@@ -1305,8 +1305,6 @@ message DatasetRunSpec {
 
   // RunVersion specifies the version of the run set by the parent Dataset.
   // This version is unique is incremented for each new run
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Required
   // +required
   optional int32 runVersion = 2;
@@ -1314,15 +1312,12 @@ message DatasetRunSpec {
   // DatasetName specifies the name of the Dataset resource that defines
   // the location and analysis options for the dataset
   // +kubebuilder:validation:Required
-  // +kubebuilder:validation:MaxLength=63
-  // +kubebuilder:default:=""
   // +required
   optional string datasetName = 3;
 
   // DatasetVersion specifies the version of the Dataset resource defined by DatasetName
   // to be retrieved and used for the lifetime of the run
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Required
   optional int32 datasetVersion = 4;
 
   // Timout specifies the time in seconds for the run to be completed. If unspecified, the run

@@ -75,14 +75,10 @@ class GetDatasetProfileRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., runVersion: _Optional[int] = ...) -> None: ...
 
 class GetDatasetProfileResponse(_message.Message):
-    __slots__ = ["name", "namespace", "runVersion"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    RUNVERSION_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    namespace: str
-    runVersion: int
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., runVersion: _Optional[int] = ...) -> None: ...
+    __slots__ = ["profile"]
+    PROFILE_FIELD_NUMBER: _ClassVar[int]
+    profile: _common_pb2.DatasetProfile
+    def __init__(self, profile: _Optional[_Union[_common_pb2.DatasetProfile, _Mapping]] = ...) -> None: ...
 
 class GetDatasetRequest(_message.Message):
     __slots__ = ["labels", "name", "namespace"]

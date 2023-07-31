@@ -72,9 +72,7 @@ message GetDatasetRunProfileRequest {
 }
 
 message GetDatasetRunProfileResponse {
-    string namespace = 1;
-    string name = 2;
-    github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profile = 3;
+    github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profile = 1;
 }
 
 /////// Compare Runs ///////

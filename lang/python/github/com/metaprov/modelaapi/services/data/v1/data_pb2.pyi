@@ -483,12 +483,14 @@ class DsCreateStudyProfileResponse(_message.Message):
     def __init__(self, profileLocation: _Optional[_Union[_generated_pb2_1_1_1_1.FileLocation, _Mapping]] = ...) -> None: ...
 
 class DsExecuteSqlRequest(_message.Message):
-    __slots__ = ["connection", "sql"]
-    CONNECTION_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["connectionName", "connectionNamespace", "sql"]
+    CONNECTIONNAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
     SQL_FIELD_NUMBER: _ClassVar[int]
-    connection: _generated_pb2_1_1_1.Connection
+    connectionName: str
+    connectionNamespace: str
     sql: str
-    def __init__(self, connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., sql: _Optional[str] = ...) -> None: ...
+    def __init__(self, connectionNamespace: _Optional[str] = ..., connectionName: _Optional[str] = ..., sql: _Optional[str] = ...) -> None: ...
 
 class DsExecuteSqlResponse(_message.Message):
     __slots__ = ["tableview"]
@@ -541,10 +543,12 @@ class DsGenerateDatasetResponse(_message.Message):
     def __init__(self, target: _Optional[_Union[_generated_pb2_1_1_1_1.DataLocation, _Mapping]] = ...) -> None: ...
 
 class DsGetDatabasesRequest(_message.Message):
-    __slots__ = ["connection"]
-    CONNECTION_FIELD_NUMBER: _ClassVar[int]
-    connection: _generated_pb2_1_1_1.Connection
-    def __init__(self, connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ...) -> None: ...
+    __slots__ = ["connectionName", "connectionNamespace"]
+    CONNECTIONNAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
+    connectionName: str
+    connectionNamespace: str
+    def __init__(self, connectionNamespace: _Optional[str] = ..., connectionName: _Optional[str] = ...) -> None: ...
 
 class DsGetDatabasesResponse(_message.Message):
     __slots__ = ["databases"]
@@ -569,10 +573,12 @@ class DsGetTableViewResponse(_message.Message):
     def __init__(self, tableview: _Optional[_Union[_common_pb2.TableView, _Mapping]] = ...) -> None: ...
 
 class DsGetTablesRequest(_message.Message):
-    __slots__ = ["connection"]
-    CONNECTION_FIELD_NUMBER: _ClassVar[int]
-    connection: _generated_pb2_1_1_1.Connection
-    def __init__(self, connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ...) -> None: ...
+    __slots__ = ["connectionName", "connectionNamespace"]
+    CONNECTIONNAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
+    connectionName: str
+    connectionNamespace: str
+    def __init__(self, connectionNamespace: _Optional[str] = ..., connectionName: _Optional[str] = ...) -> None: ...
 
 class DsGetTablesResponse(_message.Message):
     __slots__ = ["tables"]

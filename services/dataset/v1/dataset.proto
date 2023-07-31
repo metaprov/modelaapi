@@ -73,9 +73,7 @@ message GetDatasetProfileRequest {
 }
 
 message GetDatasetProfileResponse {
-    string namespace = 1;
-    string name = 2;
-    int32 runVersion = 3;
+    github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profile = 1;
 }
 
 /////// Download Dataset ///////
@@ -83,7 +81,7 @@ message GetDatasetProfileResponse {
 message DownloadDatasetRequest {
     string namespace = 1;
     string name = 2;
-    int32  runVersion = 3;
+    int32 runVersion = 3;
 }
 
 message DownloadDatasetResponse {

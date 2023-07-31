@@ -5,6 +5,7 @@ package github.com.metaprov.modelaapi.services.connection.v1;
 import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListConnectionsRequest {
   string             namespace = 1;
@@ -46,7 +47,6 @@ message GetConnectionResponse {
   map<string, string> secret = 2;
   bool isAdmin = 3;
   string yaml = 4;
-
 }
 
 message DeleteConnectionRequest {
@@ -54,9 +54,7 @@ message DeleteConnectionRequest {
   string name = 2;
 }
 
-message DeleteConnectionResponse {
-
-}
+message DeleteConnectionResponse {}
 
 message TestConnectionRequest {
   string namespace = 1;
@@ -68,6 +66,35 @@ message TestConnectionResponse {
   string msg = 2;
 }
 
+/////// Data Plane Methods ////////
+
+message GetDatabasesRequest {
+  string namespace = 1;
+  string name = 2;
+}
+
+message GetDatabasesResponse {
+  repeated string databases = 1;
+}
+
+message GetTablesRequest {
+  string namespace = 1;
+  string name = 2;
+}
+
+message GetTablesResponse {
+  repeated string tables = 1;
+}
+
+message ExecuteSqlRequest {
+  string namespace = 1;
+  string name = 2;
+  string sql = 3;
+}
+
+message ExecuteSqlResponse {
+  github.com.metaprov.modelaapi.services.common.v1.TableView tableview = 1;
+}
 
 
 service ConnectionService {
@@ -98,4 +125,15 @@ service ConnectionService {
     option (google.api.http).get = "/api/v1/connections/{namespace}/{name}:test";
   }
 
+  rpc GetDatabases(GetDatabasesRequest) returns (GetDatabasesResponse) {
+    option (google.api.http).get = "/v1/connections/{namespace}/{name}:databases";
+  }
+
+  rpc GetTables(GetTablesRequest) returns (GetTablesResponse) {
+    option (google.api.http).get = "/v1/connections/{namespace}/{name}:tables";
+  }
+
+  rpc ExecuteSql(ExecuteSqlRequest) returns (ExecuteSqlResponse) {
+    option (google.api.http).post = "/v1/connections/{namespace}/{name}:executesql";
+  }
 }

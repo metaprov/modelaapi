@@ -2514,10 +2514,11 @@ export namespace SaveOptimizerDBResponse {
 }
 
 export class DsGetDatabasesRequest extends jspb.Message {
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsGetDatabasesRequest;
-  hasConnection(): boolean;
-  clearConnection(): DsGetDatabasesRequest;
+  getConnectionnamespace(): string;
+  setConnectionnamespace(value: string): DsGetDatabasesRequest;
+
+  getConnectionname(): string;
+  setConnectionname(value: string): DsGetDatabasesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsGetDatabasesRequest.AsObject;
@@ -2529,7 +2530,8 @@ export class DsGetDatabasesRequest extends jspb.Message {
 
 export namespace DsGetDatabasesRequest {
   export type AsObject = {
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    connectionnamespace: string,
+    connectionname: string,
   }
 }
 
@@ -2554,10 +2556,11 @@ export namespace DsGetDatabasesResponse {
 }
 
 export class DsGetTablesRequest extends jspb.Message {
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsGetTablesRequest;
-  hasConnection(): boolean;
-  clearConnection(): DsGetTablesRequest;
+  getConnectionnamespace(): string;
+  setConnectionnamespace(value: string): DsGetTablesRequest;
+
+  getConnectionname(): string;
+  setConnectionname(value: string): DsGetTablesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsGetTablesRequest.AsObject;
@@ -2569,7 +2572,8 @@ export class DsGetTablesRequest extends jspb.Message {
 
 export namespace DsGetTablesRequest {
   export type AsObject = {
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    connectionnamespace: string,
+    connectionname: string,
   }
 }
 
@@ -2594,10 +2598,11 @@ export namespace DsGetTablesResponse {
 }
 
 export class DsExecuteSqlRequest extends jspb.Message {
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsExecuteSqlRequest;
-  hasConnection(): boolean;
-  clearConnection(): DsExecuteSqlRequest;
+  getConnectionnamespace(): string;
+  setConnectionnamespace(value: string): DsExecuteSqlRequest;
+
+  getConnectionname(): string;
+  setConnectionname(value: string): DsExecuteSqlRequest;
 
   getSql(): string;
   setSql(value: string): DsExecuteSqlRequest;
@@ -2612,7 +2617,8 @@ export class DsExecuteSqlRequest extends jspb.Message {
 
 export namespace DsExecuteSqlRequest {
   export type AsObject = {
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    connectionnamespace: string,
+    connectionname: string,
     sql: string,
   }
 }

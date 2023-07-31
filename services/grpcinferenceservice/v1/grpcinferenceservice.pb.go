@@ -1441,7 +1441,7 @@ func (x *ColumnInfo) GetType() string {
 	return ""
 }
 
-// / request / response
+/// request / response
 type GetPredictorRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

@@ -28,6 +28,9 @@ type ConnectionServiceClient interface {
 	UpdateConnection(ctx context.Context, in *UpdateConnectionRequest, opts ...grpc.CallOption) (*UpdateConnectionResponse, error)
 	DeleteConnection(ctx context.Context, in *DeleteConnectionRequest, opts ...grpc.CallOption) (*DeleteConnectionResponse, error)
 	TestConnection(ctx context.Context, in *TestConnectionRequest, opts ...grpc.CallOption) (*TestConnectionResponse, error)
+	GetDatabases(ctx context.Context, in *GetDatabasesRequest, opts ...grpc.CallOption) (*GetDatabasesResponse, error)
+	GetTables(ctx context.Context, in *GetTablesRequest, opts ...grpc.CallOption) (*GetTablesResponse, error)
+	ExecuteSql(ctx context.Context, in *ExecuteSqlRequest, opts ...grpc.CallOption) (*ExecuteSqlResponse, error)
 }
 
 type connectionServiceClient struct {
@@ -92,6 +95,33 @@ func (c *connectionServiceClient) TestConnection(ctx context.Context, in *TestCo
 	return out, nil
 }
 
+func (c *connectionServiceClient) GetDatabases(ctx context.Context, in *GetDatabasesRequest, opts ...grpc.CallOption) (*GetDatabasesResponse, error) {
+	out := new(GetDatabasesResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/GetDatabases", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *connectionServiceClient) GetTables(ctx context.Context, in *GetTablesRequest, opts ...grpc.CallOption) (*GetTablesResponse, error) {
+	out := new(GetTablesResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/GetTables", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *connectionServiceClient) ExecuteSql(ctx context.Context, in *ExecuteSqlRequest, opts ...grpc.CallOption) (*ExecuteSqlResponse, error) {
+	out := new(ExecuteSqlResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/ExecuteSql", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ConnectionServiceServer is the server API for ConnectionService service.
 // All implementations must embed UnimplementedConnectionServiceServer
 // for forward compatibility
@@ -102,6 +132,9 @@ type ConnectionServiceServer interface {
 	UpdateConnection(context.Context, *UpdateConnectionRequest) (*UpdateConnectionResponse, error)
 	DeleteConnection(context.Context, *DeleteConnectionRequest) (*DeleteConnectionResponse, error)
 	TestConnection(context.Context, *TestConnectionRequest) (*TestConnectionResponse, error)
+	GetDatabases(context.Context, *GetDatabasesRequest) (*GetDatabasesResponse, error)
+	GetTables(context.Context, *GetTablesRequest) (*GetTablesResponse, error)
+	ExecuteSql(context.Context, *ExecuteSqlRequest) (*ExecuteSqlResponse, error)
 	mustEmbedUnimplementedConnectionServiceServer()
 }
 
@@ -126,6 +159,15 @@ func (UnimplementedConnectionServiceServer) DeleteConnection(context.Context, *D
 }
 func (UnimplementedConnectionServiceServer) TestConnection(context.Context, *TestConnectionRequest) (*TestConnectionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TestConnection not implemented")
+}
+func (UnimplementedConnectionServiceServer) GetDatabases(context.Context, *GetDatabasesRequest) (*GetDatabasesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetDatabases not implemented")
+}
+func (UnimplementedConnectionServiceServer) GetTables(context.Context, *GetTablesRequest) (*GetTablesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTables not implemented")
+}
+func (UnimplementedConnectionServiceServer) ExecuteSql(context.Context, *ExecuteSqlRequest) (*ExecuteSqlResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExecuteSql not implemented")
 }
 func (UnimplementedConnectionServiceServer) mustEmbedUnimplementedConnectionServiceServer() {}
 
@@ -248,6 +290,60 @@ func _ConnectionService_TestConnection_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ConnectionService_GetDatabases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDatabasesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ConnectionServiceServer).GetDatabases(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/GetDatabases",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ConnectionServiceServer).GetDatabases(ctx, req.(*GetDatabasesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ConnectionService_GetTables_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTablesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ConnectionServiceServer).GetTables(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/GetTables",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ConnectionServiceServer).GetTables(ctx, req.(*GetTablesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ConnectionService_ExecuteSql_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExecuteSqlRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ConnectionServiceServer).ExecuteSql(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/ExecuteSql",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ConnectionServiceServer).ExecuteSql(ctx, req.(*ExecuteSqlRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ConnectionService_ServiceDesc is the grpc.ServiceDesc for ConnectionService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -278,6 +374,18 @@ var ConnectionService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "TestConnection",
 			Handler:    _ConnectionService_TestConnection_Handler,
+		},
+		{
+			MethodName: "GetDatabases",
+			Handler:    _ConnectionService_GetDatabases_Handler,
+		},
+		{
+			MethodName: "GetTables",
+			Handler:    _ConnectionService_GetTables_Handler,
+		},
+		{
+			MethodName: "ExecuteSql",
+			Handler:    _ConnectionService_ExecuteSql_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

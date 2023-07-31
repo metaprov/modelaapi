@@ -252,14 +252,10 @@ export namespace GetDatasetProfileRequest {
 }
 
 export class GetDatasetProfileResponse extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): GetDatasetProfileResponse;
-
-  getName(): string;
-  setName(value: string): GetDatasetProfileResponse;
-
-  getRunversion(): number;
-  setRunversion(value: number): GetDatasetProfileResponse;
+  getProfile(): github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile | undefined;
+  setProfile(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile): GetDatasetProfileResponse;
+  hasProfile(): boolean;
+  clearProfile(): GetDatasetProfileResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDatasetProfileResponse.AsObject;
@@ -271,9 +267,7 @@ export class GetDatasetProfileResponse extends jspb.Message {
 
 export namespace GetDatasetProfileResponse {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    runversion: number,
+    profile?: github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile.AsObject,
   }
 }
 

@@ -38,10 +38,6 @@ type DataServiceClient interface {
 	GenerateDataset(ctx context.Context, in *DsGenerateDatasetRequest, opts ...grpc.CallOption) (*DsGenerateDatasetResponse, error)
 	// Preform the split. The dataset is assumed to be in the live area after validation
 	SplitDataset(ctx context.Context, in *DsSplitDatasetRequest, opts ...grpc.CallOption) (*DsSplitDatasetResponse, error)
-	// Preform the split. The dataset is assumed to be in the live area after validation
-	Transform(ctx context.Context, in *DsTransformRequest, opts ...grpc.CallOption) (*DsTransformResponse, error)
-	// Visualize a specific column
-	CreateColumnProfile(ctx context.Context, in *DsCreateColumnProfileRequest, opts ...grpc.CallOption) (*DsCreateColumnProfileResponse, error)
 	// Just infer the datasource, do no plots
 	InferSchema(ctx context.Context, in *DsInferSchemaRequest, opts ...grpc.CallOption) (*DsInferSchemaResponse, error)
 	// Just infer the datasource, do no plots
@@ -54,7 +50,6 @@ type DataServiceClient interface {
 	CreateModelProfile(ctx context.Context, in *DsCreateModelProfileRequest, opts ...grpc.CallOption) (*DsCreateModelProfileResponse, error)
 	// create study profile
 	CreateStudyProfile(ctx context.Context, in *DsCreateStudyProfileRequest, opts ...grpc.CallOption) (*DsCreateStudyProfileResponse, error)
-	CreateRecipeProfile(ctx context.Context, in *DsCreateRecipeProfileRequest, opts ...grpc.CallOption) (*DsCreateRecipeProfileResponse, error)
 	// report services
 	CreateModelReport(ctx context.Context, in *CreateModelReportRequest, opts ...grpc.CallOption) (*CreateReportResponse, error)
 	CreateStudyReport(ctx context.Context, in *CreateStudyReportRequest, opts ...grpc.CallOption) (*CreateReportResponse, error)
@@ -185,24 +180,6 @@ func (c *dataServiceClient) SplitDataset(ctx context.Context, in *DsSplitDataset
 	return out, nil
 }
 
-func (c *dataServiceClient) Transform(ctx context.Context, in *DsTransformRequest, opts ...grpc.CallOption) (*DsTransformResponse, error) {
-	out := new(DsTransformResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/Transform", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *dataServiceClient) CreateColumnProfile(ctx context.Context, in *DsCreateColumnProfileRequest, opts ...grpc.CallOption) (*DsCreateColumnProfileResponse, error) {
-	out := new(DsCreateColumnProfileResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateColumnProfile", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *dataServiceClient) InferSchema(ctx context.Context, in *DsInferSchemaRequest, opts ...grpc.CallOption) (*DsInferSchemaResponse, error) {
 	out := new(DsInferSchemaResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/InferSchema", in, out, opts...)
@@ -251,15 +228,6 @@ func (c *dataServiceClient) CreateModelProfile(ctx context.Context, in *DsCreate
 func (c *dataServiceClient) CreateStudyProfile(ctx context.Context, in *DsCreateStudyProfileRequest, opts ...grpc.CallOption) (*DsCreateStudyProfileResponse, error) {
 	out := new(DsCreateStudyProfileResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateStudyProfile", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *dataServiceClient) CreateRecipeProfile(ctx context.Context, in *DsCreateRecipeProfileRequest, opts ...grpc.CallOption) (*DsCreateRecipeProfileResponse, error) {
-	out := new(DsCreateRecipeProfileResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateRecipeProfile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -610,10 +578,6 @@ type DataServiceServer interface {
 	GenerateDataset(context.Context, *DsGenerateDatasetRequest) (*DsGenerateDatasetResponse, error)
 	// Preform the split. The dataset is assumed to be in the live area after validation
 	SplitDataset(context.Context, *DsSplitDatasetRequest) (*DsSplitDatasetResponse, error)
-	// Preform the split. The dataset is assumed to be in the live area after validation
-	Transform(context.Context, *DsTransformRequest) (*DsTransformResponse, error)
-	// Visualize a specific column
-	CreateColumnProfile(context.Context, *DsCreateColumnProfileRequest) (*DsCreateColumnProfileResponse, error)
 	// Just infer the datasource, do no plots
 	InferSchema(context.Context, *DsInferSchemaRequest) (*DsInferSchemaResponse, error)
 	// Just infer the datasource, do no plots
@@ -626,7 +590,6 @@ type DataServiceServer interface {
 	CreateModelProfile(context.Context, *DsCreateModelProfileRequest) (*DsCreateModelProfileResponse, error)
 	// create study profile
 	CreateStudyProfile(context.Context, *DsCreateStudyProfileRequest) (*DsCreateStudyProfileResponse, error)
-	CreateRecipeProfile(context.Context, *DsCreateRecipeProfileRequest) (*DsCreateRecipeProfileResponse, error)
 	// report services
 	CreateModelReport(context.Context, *CreateModelReportRequest) (*CreateReportResponse, error)
 	CreateStudyReport(context.Context, *CreateStudyReportRequest) (*CreateReportResponse, error)
@@ -706,12 +669,6 @@ func (UnimplementedDataServiceServer) GenerateDataset(context.Context, *DsGenera
 func (UnimplementedDataServiceServer) SplitDataset(context.Context, *DsSplitDatasetRequest) (*DsSplitDatasetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SplitDataset not implemented")
 }
-func (UnimplementedDataServiceServer) Transform(context.Context, *DsTransformRequest) (*DsTransformResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Transform not implemented")
-}
-func (UnimplementedDataServiceServer) CreateColumnProfile(context.Context, *DsCreateColumnProfileRequest) (*DsCreateColumnProfileResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateColumnProfile not implemented")
-}
 func (UnimplementedDataServiceServer) InferSchema(context.Context, *DsInferSchemaRequest) (*DsInferSchemaResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method InferSchema not implemented")
 }
@@ -729,9 +686,6 @@ func (UnimplementedDataServiceServer) CreateModelProfile(context.Context, *DsCre
 }
 func (UnimplementedDataServiceServer) CreateStudyProfile(context.Context, *DsCreateStudyProfileRequest) (*DsCreateStudyProfileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateStudyProfile not implemented")
-}
-func (UnimplementedDataServiceServer) CreateRecipeProfile(context.Context, *DsCreateRecipeProfileRequest) (*DsCreateRecipeProfileResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateRecipeProfile not implemented")
 }
 func (UnimplementedDataServiceServer) CreateModelReport(context.Context, *CreateModelReportRequest) (*CreateReportResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateModelReport not implemented")
@@ -998,42 +952,6 @@ func _DataService_SplitDataset_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_Transform_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DsTransformRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DataServiceServer).Transform(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/Transform",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).Transform(ctx, req.(*DsTransformRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DataService_CreateColumnProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DsCreateColumnProfileRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DataServiceServer).CreateColumnProfile(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateColumnProfile",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).CreateColumnProfile(ctx, req.(*DsCreateColumnProfileRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _DataService_InferSchema_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DsInferSchemaRequest)
 	if err := dec(in); err != nil {
@@ -1138,24 +1056,6 @@ func _DataService_CreateStudyProfile_Handler(srv interface{}, ctx context.Contex
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).CreateStudyProfile(ctx, req.(*DsCreateStudyProfileRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DataService_CreateRecipeProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DsCreateRecipeProfileRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DataServiceServer).CreateRecipeProfile(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateRecipeProfile",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).CreateRecipeProfile(ctx, req.(*DsCreateRecipeProfileRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1848,14 +1748,6 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DataService_SplitDataset_Handler,
 		},
 		{
-			MethodName: "Transform",
-			Handler:    _DataService_Transform_Handler,
-		},
-		{
-			MethodName: "CreateColumnProfile",
-			Handler:    _DataService_CreateColumnProfile_Handler,
-		},
-		{
 			MethodName: "InferSchema",
 			Handler:    _DataService_InferSchema_Handler,
 		},
@@ -1878,10 +1770,6 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateStudyProfile",
 			Handler:    _DataService_CreateStudyProfile_Handler,
-		},
-		{
-			MethodName: "CreateRecipeProfile",
-			Handler:    _DataService_CreateRecipeProfile_Handler,
 		},
 		{
 			MethodName: "CreateModelReport",
