@@ -107,73 +107,8 @@ spec:
                 type: boolean
               featureGroupName:
                 description: FeatureGroupName specifies the name of the Feature Group
-                  that created the Dataset, if applicable
+                  that will be used to create the Dataset, if applicable
                 type: string
-              featureGroups:
-                description: FeatureGroups contains the list of feature groups that
-                  were used to construct the dataset, if applicable
-                items:
-                  description: 'ObjectReference contains enough information to let
-                    you inspect or modify the referred object. --- New uses of this
-                    type are discouraged because of difficulty describing its usage
-                    when embedded in APIs. 1. Ignored fields.  It includes many fields
-                    which are not generally honored.  For instance, ResourceVersion
-                    and FieldPath are both very rarely valid in actual usage. 2. Invalid
-                    usage help.  It is impossible to add specific help for individual
-                    usage.  In most embedded usages, there are particular restrictions
-                    like, "must refer only to types A and B" or "UID not honored"
-                    or "name must be restricted". Those cannot be well described when
-                    embedded. 3. Inconsistent validation.  Because the usages are
-                    different, the validation rules are different by usage, which
-                    makes it hard for users to predict what will happen. 4. The fields
-                    are both imprecise and overly precise.  Kind is not a precise
-                    mapping to a URL. This can produce ambiguity during interpretation
-                    and require a REST mapping.  In most cases, the dependency is
-                    on the group,resource tuple and the version of the actual struct
-                    is irrelevant. 5. We cannot easily change it.  Because this type
-                    is embedded in many locations, updates to this type will affect
-                    numerous schemas.  Don''t make new APIs embed an underspecified
-                    API type they do not control. Instead of using this type, create
-                    a locally provided and used type that is well-focused on your
-                    reference. For example, ServiceReferences for admission registration:
-                    https://github.com/kubernetes/api/blob/release-1.17/admissionregistration/v1/types.go#L533
-                    .'
-                  properties:
-                    apiVersion:
-                      description: API version of the referent.
-                      type: string
-                    fieldPath:
-                      description: 'If referring to a piece of an object instead of
-                        an entire object, this string should contain a valid JSON/Go
-                        field access statement, such as desiredState.manifest.containers[2].
-                        For example, if the object reference is to a container within
-                        a pod, this would take on a value like: "spec.containers{name}"
-                        (where "name" refers to the name of the container that triggered
-                        the event) or if no container name is specified "spec.containers[2]"
-                        (container with index 2 in this pod). This syntax is chosen
-                        only to have some well-defined way of referencing a part of
-                        an object. TODO: this design is not final and this field is
-                        subject to change in the future.'
-                      type: string
-                    kind:
-                      description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                      type: string
-                    name:
-                      description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                      type: string
-                    namespace:
-                      description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                      type: string
-                    resourceVersion:
-                      description: 'Specific resourceVersion to which this reference
-                        is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                      type: string
-                    uid:
-                      description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                      type: string
-                  type: object
-                  x-kubernetes-map-type: atomic
-                type: array
               generateFeatureHistogram:
                 default: true
                 description: Indicates if a Feature Histogram will be generated from
@@ -303,10 +238,6 @@ spec:
               modelClassName:
                 description: ModelClassName specifies the name of the Model Class
                   which created the Dataset, if applicable
-                type: string
-              modelClassRunName:
-                description: ModelClassRunName specifies the name of the Model Class
-                  Run which created the Dataset, if applicable
                 type: string
               notification:
                 description: Notification specifies the configuration for Alerts generated
@@ -548,8 +479,8 @@ spec:
                 - featuregroup
                 type: string
               run:
-                description: RunSpec specifies the configuration for runs created
-                  by the Dataset
+                description: RunSpec specifies the configuration for snapshot runs
+                  created by the Dataset
                 properties:
                   maxPreviousRuns:
                     default: 1
@@ -609,8 +540,8 @@ spec:
                     type: string
                 type: object
               schedule:
-                description: Schedule specifies the schedule to create new runs for
-                  the Dataset
+                description: Schedule specifies the schedule to create new snapshots
+                  for the Dataset
                 properties:
                   cron:
                     description: The cron string for the schedule, applicable if the
@@ -978,6 +909,14 @@ spec:
           status:
             description: DatasetStatus defines the observed state of a Dataset object
             properties:
+              availableSnapshotVersions:
+                description: AvailableSnapshotVersions contains the collection of
+                  snapshot versions which are ready for use. Each version corresponds
+                  with an existing DatasetSnapshot resource
+                items:
+                  format: int32
+                  type: integer
+                type: array
               conditions:
                 items:
                   description: "Condition contains details for one aspect of the current
@@ -1048,23 +987,24 @@ spec:
                 type: array
               failureMessage:
                 description: LastFailureMessage specifies the failure message of the
-                  last run. If the last run succeeded, the field will be cleared
+                  last snapshot. If the last snapshot succeeded, the field will be
+                  cleared
                 type: string
-              lastRunAt:
-                description: LastRunAt specifies the time at which a run was last
-                  created for the Dataset
+              lastSnapshotAt:
+                description: LastSnapshotAt specifies the time at which a snapshot
+                  was last created for the Dataset
                 format: date-time
                 type: string
+              lastSnapshotVersion:
+                default: 0
+                description: LastSnapshotVersion contains the integer version last
+                  used to create a snapshot
+                format: int32
+                type: integer
               observedGeneration:
                 description: ObservedGeneration specifies the last generation that
                   was reconciled
                 format: int64
-                type: integer
-              runVersion:
-                default: 1
-                description: RunVersion contains the version of the last run, which
-                  is incremented for each new run
-                format: int32
                 type: integer
               schedule:
                 description: Schedule specifies the status of the run schedule
@@ -1112,9 +1052,8 @@ spec:
                 type: string
               version:
                 default: 1
-                description: Version specifies the numerical generation of the object
-                  as tracked by Modela, which is incremented each time the object
-                  is changed
+                description: Version specifies the version of the Dataset as tracked
+                  by Modela, which is incremented each time the object is changed
                 format: int32
                 type: integer
             type: object

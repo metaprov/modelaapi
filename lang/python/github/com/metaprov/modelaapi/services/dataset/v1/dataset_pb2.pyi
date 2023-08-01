@@ -2,6 +2,7 @@ from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from google.api import annotations_pb2 as _annotations_pb2
 from google.protobuf import empty_pb2 as _empty_pb2
 from github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1 import generated_pb2 as _generated_pb2
+from github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1 import generated_pb2 as _generated_pb2_1
 from github.com.metaprov.modelaapi.services.common.v1 import common_pb2 as _common_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -33,14 +34,12 @@ class DeleteDatasetResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class DownloadDatasetRequest(_message.Message):
-    __slots__ = ["name", "namespace", "runVersion"]
+    __slots__ = ["namespace", "snapshot"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    RUNVERSION_FIELD_NUMBER: _ClassVar[int]
-    name: str
+    SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    runVersion: int
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., runVersion: _Optional[int] = ...) -> None: ...
+    snapshot: _generated_pb2_1.SnapshotReference
+    def __init__(self, namespace: _Optional[str] = ..., snapshot: _Optional[_Union[_generated_pb2_1.SnapshotReference, _Mapping]] = ...) -> None: ...
 
 class DownloadDatasetResponse(_message.Message):
     __slots__ = ["raw"]

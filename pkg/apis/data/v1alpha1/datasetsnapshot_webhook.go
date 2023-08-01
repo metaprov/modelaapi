@@ -14,9 +14,9 @@ import (
 )
 
 // defaulting
-var _ webhook.Defaulter = &Dataset{}
+var _ webhook.Defaulter = &DatasetSnapshot{}
 
-func (dataset *DatasetRun) Default() {
+func (dataset *DatasetSnapshot) Default() {
 	if dataset.ObjectMeta.Labels == nil {
 		dataset.ObjectMeta.Labels = make(map[string]string)
 	}
@@ -36,18 +36,23 @@ func (dataset *DatasetRun) Default() {
 }
 
 // validation
-var _ webhook.Validator = &Dataset{}
+var _ webhook.Validator = &DatasetSnapshot{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (dataset *DatasetRun) ValidateCreate() error {
+func (dataset *DatasetSnapshot) ValidateCreate() error {
 	return dataset.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (dataset *DatasetRun) ValidateUpdate(old runtime.Object) error {
+func (dataset *DatasetSnapshot) ValidateUpdate(old runtime.Object) error {
+
 	return dataset.validate()
 }
 
-func (dataset *DatasetRun) validate() error {
+func (dataset *DatasetSnapshot) ValidateDelete() error {
+	return dataset.validate()
+}
+
+func (dataset *DatasetSnapshot) validate() error {
 	return nil
 }

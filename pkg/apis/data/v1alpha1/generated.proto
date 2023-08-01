@@ -1268,7 +1268,7 @@ message DatasetList {
 }
 
 // +kubebuilder:object:root=true
-// +kubebuilder:resource:path=datasetruns,shortName=dsr,singular=datasetrun,categories={data,modela,all}
+// +kubebuilder:resource:path=DatasetSnapshots,shortName=dsr,singular=DatasetSnapshot,categories={data,modela,all}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Phase",type="string",JSONPath=".status.phase"
@@ -1279,153 +1279,148 @@ message DatasetList {
 // +kubebuilder:printcolumn:name="Columns",type="integer",JSONPath=".status.statistics.columns"
 // +kubebuilder:printcolumn:name="Size",type="integer",JSONPath=".status.statistics.sizeInBytes"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// DatasetRun represents a single execution of a Dataset
-message DatasetRun {
+// DatasetSnapshot represents a single execution of a Dataset
+message DatasetSnapshot {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional DatasetRunSpec spec = 2;
+  optional DatasetSnapshotSpec spec = 2;
 
-  optional DatasetRunStatus status = 3;
+  optional DatasetSnapshotStatus status = 3;
 }
 
 // +kubebuilder:object:root=true
 // DatasetList contains a list of Datasets
-message DatasetRunList {
+message DatasetSnapshotList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated DatasetRun items = 2;
+  repeated DatasetSnapshot items = 2;
 }
 
-// DatasetRunSpec defines the run configuration for a Dataset
-message DatasetRunSpec {
+// DatasetSnapshotSpec defines the run configuration for a Dataset
+message DatasetSnapshotSpec {
   // Owner specifies the name of the Account which the object belongs to
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
-  // RunVersion specifies the version of the run set by the parent Dataset.
-  // This version is unique is incremented for each new run
+  // DatasetName specifies the name of the Dataset resource which the snapshot will use to
+  // determine the location, format, and post-processing options for the dataset
   // +kubebuilder:validation:Required
   // +required
-  optional int32 runVersion = 2;
-
-  // DatasetName specifies the name of the Dataset resource that defines
-  // the location and analysis options for the dataset
-  // +kubebuilder:validation:Required
-  // +required
-  optional string datasetName = 3;
-
-  // DatasetVersion specifies the version of the Dataset resource defined by DatasetName
-  // to be retrieved and used for the lifetime of the run
-  // +kubebuilder:validation:Required
-  optional int32 datasetVersion = 4;
+  optional string datasetName = 2;
 
   // Timout specifies the time in seconds for the run to be completed. If unspecified, the run
   // deadline specified by the Dataset will be used
   // +kubebuilder:validation:Optional
-  optional int64 timeout = 5;
+  optional int64 timeout = 3;
 
   // If true, the execution of new workloads associated with the run will be paused
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool pause = 6;
+  optional bool pause = 4;
 
   // If true, the run will be permanently aborted and all workloads created by the run will be removed
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool abort = 7;
+  optional bool abort = 5;
 
   // ModelClassRunName specifies the name of the Model Class Run which created the run, if applicable
   // +kubebuilder:validation:Optional
-  optional string modelClassRunName = 8;
+  optional string modelClassRunName = 6;
 }
 
-// DatasetRunStatus specifies the observed state of a DatasetRun
-message DatasetRunStatus {
+// DatasetSnapshotStatus specifies the observed state of a DatasetSnapshot
+message DatasetSnapshotStatus {
   // ObservedGeneration is the last generation that was reconciled
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // ManifestLocation specifies the location of the dataset manifest used during the course of the run
+  // ManifestLocation specifies the location of the dataset manifest used during the course of the snapshot
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation manifestLocation = 2;
+
+  // ManifestVersion specifies the version of the saved dataset manifest
+  optional int32 manifestVersion = 3;
+
+  // SnapshotVersion specifies the version of the snapshot, which is determined when the Dataset manifest is saved
+  optional int32 snapshotVersion = 4;
 
   // DatasetStatistics contains statistics for each column of the dataset generated during the dataset profile
   // +kubebuilder:validation:Optional
-  optional DatasetStatistics statistics = 3;
+  optional DatasetStatistics statistics = 5;
 
-  // Phase defines the current phase of the DatasetRun relative to its progress
+  // Phase defines the current phase of the run relative to its progress
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 4;
+  optional string phase = 6;
 
   // ReportName specifies the name of the Report created by the run
   // +kubebuilder:validation:Optional
-  optional string reportName = 5;
+  optional string reportName = 7;
 
   // ReportLocation contains the location of the report file generated by the run's Report resource
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation reportLocation = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation reportLocation = 8;
 
   // ProfileLocation contains the location for the raw profile data
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation profileLocation = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation profileLocation = 9;
 
   // AnomaliesLocation contains the location of the anomaly file, containing a list of rows
   // which were determined as anomalies by an isolation forest algorithm
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation anomaliesLocation = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation anomaliesLocation = 10;
 
   // Imbalanced indicates if the classes in the dataset were detected as imbalanced
   // +kubebuilder:validation:Optional
-  optional bool imbalanced = 9;
+  optional bool imbalanced = 11;
 
   // UnitTestResults contains the results of the unit test phase
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestResults = 10;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestResults = 12;
 
-  // FailureMessage is set to an failure message in the case that an error occured during the run
+  // FailureMessage is set to a failure message in the case that an error occurred during the run
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 11;
+  optional string failureMessage = 13;
 
-  // Progress defines the current numerical progress of the Dataset, from 0 to 100
+  // Progress defines the current numerical progress of the run, from 0 to 100
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 progress = 12;
+  optional int32 progress = 14;
 
   // Logs contains the location of all logs produced by run workloads
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 13;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 15;
 
   // +kubebuilder:validation:Optional
-  optional string hash = 14;
+  optional string hash = 16;
 
   // UpdatedAt specifies the last time the run was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 15;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 17;
 
   // CompletedAt specifies the time at which the run completed or failed
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 16;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 18;
 
   // LastStudyAt specifies the last time the run was used to create a Study
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudyAt = 17;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudyAt = 19;
 
   // Images contains the container images used by the run
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images images = 18;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images images = 20;
 
-  // FeatureHistogramRef references the feature histogram generated by the run
+  // FeatureHistogramRef references the feature histogram generated by the snapshot
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference featureHistogramRef = 19;
+  optional k8s.io.api.core.v1.ObjectReference featureHistogramRef = 21;
 
   // GroupBy contains the index files for datasets produced through group-by operations
   // +kubebuilder:validation:Optional
-  optional DatasetGroupByStatus groupby = 20;
+  optional DatasetGroupByStatus groupBy = 22;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 21;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 23;
 }
 
 // DatasetSpec defines the desired state of the Dataset
@@ -1448,11 +1443,11 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional string description = 3;
 
-  // RunSpec specifies the configuration for runs created by the Dataset
+  // RunSpec specifies the configuration for snapshot runs created by the Dataset
   // +kubebuilder:validation:Required
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSpec run = 4;
 
-  // Schedule specifies the schedule to create new runs for the Dataset
+  // Schedule specifies the schedule to create new snapshots for the Dataset
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
 
@@ -1555,15 +1550,7 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional string modelClassName = 27;
 
-  // ModelClassRunName specifies the name of the Model Class Run which created the Dataset, if applicable
-  // +kubebuilder:validation:Optional
-  optional string modelClassRunName = 28;
-
-  // FeatureGroups contains the list of feature groups that were used to construct the dataset, if applicable
-  // +kubebuilder:validation:Optional
-  repeated k8s.io.api.core.v1.ObjectReference featureGroups = 29;
-
-  // FeatureGroupName specifies the name of the Feature Group that created the Dataset, if applicable
+  // FeatureGroupName specifies the name of the Feature Group that will be used to create the Dataset, if applicable
   // +kubebuilder:validation:Optional
   optional string featureGroupName = 30;
 
@@ -1609,37 +1596,39 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // Version specifies the numerical generation of the object as tracked by Modela, which is
+  // Version specifies the version of the Dataset as tracked by Modela, which is
   // incremented each time the object is changed
   // +kubebuilder:default:=1
-  // +kubebuilder:validation:Required
-  // +required
   optional int32 version = 2;
 
-  // RunVersion contains the version of the last run, which is incremented for each new run
-  // +kubebuilder:default:=1
-  optional int32 runVersion = 3;
+  // LastSnapshotVersion contains the integer version last used to create a snapshot
+  // +kubebuilder:default:=0
+  optional int32 lastSnapshotVersion = 3;
 
-  // LastRunAt specifies the time at which a run was last created for the Dataset
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRunAt = 4;
+  // AvailableSnapshotVersions contains the collection of snapshot versions which are ready for use.
+  // Each version corresponds with an existing DatasetSnapshot resource
+  repeated int32 availableSnapshotVersions = 4;
 
-  // LastFailureMessage specifies the failure message of the last run. If the last run succeeded, the field will be cleared
+  // LastSnapshotAt specifies the time at which a snapshot was last created for the Dataset
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastSnapshotAt = 5;
+
+  // LastFailureMessage specifies the failure message of the last snapshot. If the last snapshot succeeded, the field will be cleared
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 6;
 
   // UpdatedAt specifies the last time the Dataset was changed
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 6;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 7;
 
   // Schedule specifies the status of the run schedule
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus schedule = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunScheduleStatus schedule = 8;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 8;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 9;
 }
 
 // Define a threshold

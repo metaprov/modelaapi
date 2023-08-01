@@ -2371,6 +2371,32 @@ export namespace RunStatus {
   }
 }
 
+export class SnapshotReference extends jspb.Message {
+  getOwner(): string;
+  setOwner(value: string): SnapshotReference;
+  hasOwner(): boolean;
+  clearOwner(): SnapshotReference;
+
+  getVersion(): number;
+  setVersion(value: number): SnapshotReference;
+  hasVersion(): boolean;
+  clearVersion(): SnapshotReference;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SnapshotReference.AsObject;
+  static toObject(includeInstance: boolean, msg: SnapshotReference): SnapshotReference.AsObject;
+  static serializeBinaryToWriter(message: SnapshotReference, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SnapshotReference;
+  static deserializeBinaryFromReader(message: SnapshotReference, reader: jspb.BinaryReader): SnapshotReference;
+}
+
+export namespace SnapshotReference {
+  export type AsObject = {
+    owner?: string,
+    version?: number,
+  }
+}
+
 export class TestSuite extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): TestSuite;

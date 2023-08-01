@@ -4,6 +4,7 @@ import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
 import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
 
@@ -275,11 +276,10 @@ export class DownloadDatasetRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): DownloadDatasetRequest;
 
-  getName(): string;
-  setName(value: string): DownloadDatasetRequest;
-
-  getRunversion(): number;
-  setRunversion(value: number): DownloadDatasetRequest;
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference): DownloadDatasetRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): DownloadDatasetRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownloadDatasetRequest.AsObject;
@@ -292,8 +292,7 @@ export class DownloadDatasetRequest extends jspb.Message {
 export namespace DownloadDatasetRequest {
   export type AsObject = {
     namespace: string,
-    name: string,
-    runversion: number,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject,
   }
 }
 

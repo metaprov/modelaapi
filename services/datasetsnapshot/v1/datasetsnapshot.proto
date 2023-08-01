@@ -1,0 +1,143 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modelaapi/services/dataset/v1";
+package github.com.metaprov.modelaapi.services.dataset.v1;
+
+
+import "google/protobuf/field_mask.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
+
+/////// List Dataset Run ///////
+
+message ListDatasetSnapshotsRequest {
+    string namespace = 1;
+    map<string, string> labels = 2;
+    int32              page_size = 3;
+    string             page_token = 4;
+    string             order_by = 5;
+}
+
+message ListDatasetSnapshotsResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotList datasetSnapshots = 1;
+    string next_page_token = 2;
+}
+
+/////// Get Dataset Run ///////
+
+message GetDatasetSnapshotRequest {
+    string namespace = 1;
+    string name = 2;
+    map<string, string> labels = 3;
+
+}
+
+message GetDatasetSnapshotResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot datasetSnapshot = 1;
+    string yaml = 2;
+}
+
+/////// Update Dataset Run ///////
+
+message UpdateDatasetSnapshotRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot datasetSnapshot = 1;
+    google.protobuf.FieldMask field_mask = 2;
+}
+
+message UpdateDatasetSnapshotResponse {}
+
+/////// Delete Dataset Run ///////
+
+message DeleteDatasetSnapshotRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message DeleteDatasetSnapshotResponse {}
+
+/////// Get Dataset Run Profile ///////
+
+message GetDatasetSnapshotProfileRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message GetDatasetSnapshotProfileResponse {
+    github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profile = 1;
+}
+
+/////// Compare Runs ///////
+
+message CompareDatasetSnapshotsRequest {
+    string namespace = 1;
+    repeated string names = 2;
+}
+
+message CompareDatasetSnapshotsResponse {
+    string namespace = 1;
+    repeated string names = 2;
+    repeated github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profiles = 3;
+}
+
+/////// Download Dataset Run ///////
+
+message DownloadDatasetSnapshotRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message DownloadDatasetSnapshotResponse {
+    bytes raw = 1;
+}
+
+/////// Download Dataset Run Anomalies ///////
+
+message GetDatasetSnapshotAnomaliesRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message GetDatasetSnapshotAnomaliesResponse {
+    github.com.metaprov.modelaapi.services.common.v1.TableView table = 1;
+}
+
+/////// Dataset Run Service ///////
+
+service DatasetSnapshotService {
+    // Datasets
+    rpc ListDatasetSnapshots(ListDatasetSnapshotsRequest) returns (ListDatasetSnapshotsResponse) {
+        option (google.api.http).get = "/v1/datasetsnapshots/{namespace}";
+    }
+
+    rpc GetDatasetSnapshot(GetDatasetSnapshotRequest) returns (GetDatasetSnapshotResponse) {
+        option (google.api.http).get = "/v1/datasetsnapshots/{namespace}/{name}";
+    }
+
+    rpc UpdateDataset(UpdateDatasetSnapshotRequest) returns (UpdateDatasetSnapshotResponse) {
+        option (google.api.http) = {
+            put: "/v1/datasetsnapshots/{datasetSnapshot.metadata.namespace}/{datasetSnapshot.metadata.name}"
+            body: "*"
+        };
+    }
+
+    rpc DeleteDataset(DeleteDatasetSnapshotRequest) returns (DeleteDatasetSnapshotResponse) {
+        option (google.api.http).delete = "/v1/datasetsnapshots/{name}";
+    }
+
+    rpc CompareDatasets(CompareDatasetSnapshotsRequest) returns (CompareDatasetSnapshotsResponse) {
+        option (google.api.http).post = "/v1/datasetsnapshots/{namespace}/{names}:compare";
+    }
+
+    rpc GetDatasetSnapshotProfile(GetDatasetSnapshotProfileRequest) returns (GetDatasetSnapshotProfileResponse) {
+        option (google.api.http).get = "/v1/datasetsnapshots/{namespace}/{name}:profile";
+    }
+
+    rpc DownloadDatasetSnapshot(DownloadDatasetSnapshotRequest) returns (DownloadDatasetSnapshotResponse) {
+        option (google.api.http).post = "/v1/datasetsnapshots/{namespace}/{name}:download";
+    }
+
+    rpc GetAnomalies(GetDatasetSnapshotAnomaliesRequest) returns (GetDatasetSnapshotAnomaliesResponse) {
+        option (google.api.http).get = "/v1/datasetsnapshots/{namespace}/{name}:anomalies";
+    }
+}

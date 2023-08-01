@@ -7,6 +7,7 @@ import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 /////// List Dataset ///////
@@ -80,8 +81,7 @@ message GetDatasetProfileResponse {
 
 message DownloadDatasetRequest {
     string namespace = 1;
-    string name = 2;
-    int32 runVersion = 3;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference snapshot = 2;
 }
 
 message DownloadDatasetResponse {

@@ -187,7 +187,7 @@ class CreateDatasetReportRequest(_message.Message):
     def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., report: _Optional[_Union[_generated_pb2_1.Report, _Mapping]] = ...) -> None: ...
 
 class CreateForecastReportRequest(_message.Message):
-    __slots__ = ["bucket", "connection", "dataset", "datasource", "dbConnection", "dbSecret", "forecast", "group", "product", "report", "secret", "study", "version"]
+    __slots__ = ["bucket", "connection", "dataset", "datasource", "dbConnection", "dbSecret", "forecast", "group", "product", "report", "secret", "study"]
     class DbSecretEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -214,7 +214,6 @@ class CreateForecastReportRequest(_message.Message):
     REPORT_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
     STUDY_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
     bucket: _generated_pb2_1_1_1.VirtualBucket
     connection: _generated_pb2_1_1_1.Connection
     dataset: _generated_pb2.Dataset
@@ -227,8 +226,7 @@ class CreateForecastReportRequest(_message.Message):
     report: _generated_pb2_1.Report
     secret: _containers.ScalarMap[str, bytes]
     study: _generated_pb2_1.Study
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2_1.Study, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., forecast: _Optional[_Union[_generated_pb2_1.Model, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., report: _Optional[_Union[_generated_pb2_1.Report, _Mapping]] = ..., group: bool = ..., dbConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., dbSecret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2_1.Study, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., forecast: _Optional[_Union[_generated_pb2_1.Model, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., report: _Optional[_Union[_generated_pb2_1.Report, _Mapping]] = ..., group: bool = ..., dbConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., dbSecret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
 
 class CreateMetricsStoreRequest(_message.Message):
     __slots__ = ["dbConnection", "tenant"]
@@ -281,38 +279,12 @@ class CreateStudyReportRequest(_message.Message):
     def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2_1.Study, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., models: _Optional[_Union[_generated_pb2_1.ModelList, _Mapping]] = ..., report: _Optional[_Union[_generated_pb2_1.Report, _Mapping]] = ...) -> None: ...
 
 class CreateSummaryReportRequest(_message.Message):
-    __slots__ = ["bucket", "connection", "dbConnection", "dbSecret", "product", "report", "secret", "version"]
-    class DbSecretEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: bytes
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[bytes] = ...) -> None: ...
-    class SecretEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: bytes
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[bytes] = ...) -> None: ...
-    BUCKET_FIELD_NUMBER: _ClassVar[int]
-    CONNECTION_FIELD_NUMBER: _ClassVar[int]
-    DBCONNECTION_FIELD_NUMBER: _ClassVar[int]
-    DBSECRET_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["product", "reports"]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
-    REPORT_FIELD_NUMBER: _ClassVar[int]
-    SECRET_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
-    bucket: _generated_pb2_1_1_1.VirtualBucket
-    connection: _generated_pb2_1_1_1.Connection
-    dbConnection: _generated_pb2_1_1_1.Connection
-    dbSecret: _containers.ScalarMap[str, bytes]
+    REPORTS_FIELD_NUMBER: _ClassVar[int]
     product: _generated_pb2.DataProduct
-    report: _generated_pb2_1.Report
-    secret: _containers.ScalarMap[str, bytes]
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., report: _Optional[_Union[_generated_pb2_1.Report, _Mapping]] = ..., dbConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., dbSecret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
+    reports: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1.Report]
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., reports: _Optional[_Iterable[_Union[_generated_pb2_1.Report, _Mapping]]] = ...) -> None: ...
 
 class DataSourceResponse(_message.Message):
     __slots__ = []
@@ -321,54 +293,6 @@ class DataSourceResponse(_message.Message):
 class DatasetResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
-
-class DsCreateColumnProfileRequest(_message.Message):
-    __slots__ = ["bucket", "columnName", "columnType", "connection", "dataset", "datasource", "dbConnection", "dbSecret", "product", "secret", "version"]
-    class DbSecretEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: bytes
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[bytes] = ...) -> None: ...
-    class SecretEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: bytes
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[bytes] = ...) -> None: ...
-    BUCKET_FIELD_NUMBER: _ClassVar[int]
-    COLUMNNAME_FIELD_NUMBER: _ClassVar[int]
-    COLUMNTYPE_FIELD_NUMBER: _ClassVar[int]
-    CONNECTION_FIELD_NUMBER: _ClassVar[int]
-    DATASET_FIELD_NUMBER: _ClassVar[int]
-    DATASOURCE_FIELD_NUMBER: _ClassVar[int]
-    DBCONNECTION_FIELD_NUMBER: _ClassVar[int]
-    DBSECRET_FIELD_NUMBER: _ClassVar[int]
-    PRODUCT_FIELD_NUMBER: _ClassVar[int]
-    SECRET_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
-    bucket: _generated_pb2_1_1_1.VirtualBucket
-    columnName: str
-    columnType: str
-    connection: _generated_pb2_1_1_1.Connection
-    dataset: _generated_pb2.Dataset
-    datasource: _generated_pb2.DataSource
-    dbConnection: _generated_pb2_1_1_1.Connection
-    dbSecret: _containers.ScalarMap[str, bytes]
-    product: _generated_pb2.DataProduct
-    secret: _containers.ScalarMap[str, bytes]
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ..., columnType: _Optional[str] = ..., columnName: _Optional[str] = ..., dbConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., dbSecret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
-
-class DsCreateColumnProfileResponse(_message.Message):
-    __slots__ = ["name", "plot"]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    PLOT_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    plot: _common_pb2.Plot
-    def __init__(self, name: _Optional[str] = ..., plot: _Optional[_Union[_common_pb2.Plot, _Mapping]] = ...) -> None: ...
 
 class DsCreateDatasetProfileRequest(_message.Message):
     __slots__ = ["bucket", "dataset", "datasource", "product"]
@@ -414,67 +338,21 @@ class DsCreateModelProfileResponse(_message.Message):
     profileLocation: _generated_pb2_1_1_1_1.FileLocation
     def __init__(self, profileLocation: _Optional[_Union[_generated_pb2_1_1_1_1.FileLocation, _Mapping]] = ...) -> None: ...
 
-class DsCreateRecipeProfileRequest(_message.Message):
-    __slots__ = ["bucket", "dataset", "datasource", "dbConnection", "dbSecret", "product", "recipe", "storageConnection", "storageSecret", "version"]
-    class DbSecretEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: bytes
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[bytes] = ...) -> None: ...
-    class StorageSecretEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: bytes
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[bytes] = ...) -> None: ...
-    BUCKET_FIELD_NUMBER: _ClassVar[int]
-    DATASET_FIELD_NUMBER: _ClassVar[int]
-    DATASOURCE_FIELD_NUMBER: _ClassVar[int]
-    DBCONNECTION_FIELD_NUMBER: _ClassVar[int]
-    DBSECRET_FIELD_NUMBER: _ClassVar[int]
-    PRODUCT_FIELD_NUMBER: _ClassVar[int]
-    RECIPE_FIELD_NUMBER: _ClassVar[int]
-    STORAGECONNECTION_FIELD_NUMBER: _ClassVar[int]
-    STORAGESECRET_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
-    bucket: _generated_pb2_1_1_1.VirtualBucket
-    dataset: _generated_pb2.Dataset
-    datasource: _generated_pb2.DataSource
-    dbConnection: _generated_pb2_1_1_1.Connection
-    dbSecret: _containers.ScalarMap[str, bytes]
-    product: _generated_pb2.DataProduct
-    recipe: _generated_pb2.Recipe
-    storageConnection: _generated_pb2_1_1_1.Connection
-    storageSecret: _containers.ScalarMap[str, bytes]
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., storageConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., storageSecret: _Optional[_Mapping[str, bytes]] = ..., dbConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., dbSecret: _Optional[_Mapping[str, bytes]] = ..., recipe: _Optional[_Union[_generated_pb2.Recipe, _Mapping]] = ...) -> None: ...
-
-class DsCreateRecipeProfileResponse(_message.Message):
-    __slots__ = ["result"]
-    RESULT_FIELD_NUMBER: _ClassVar[int]
-    result: _common_pb2.TableView
-    def __init__(self, result: _Optional[_Union[_common_pb2.TableView, _Mapping]] = ...) -> None: ...
-
 class DsCreateStudyProfileRequest(_message.Message):
-    __slots__ = ["bucket", "dataset", "datasource", "models", "product", "study", "version"]
+    __slots__ = ["bucket", "dataset", "datasource", "models", "product", "study"]
     BUCKET_FIELD_NUMBER: _ClassVar[int]
     DATASET_FIELD_NUMBER: _ClassVar[int]
     DATASOURCE_FIELD_NUMBER: _ClassVar[int]
     MODELS_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     STUDY_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
     bucket: _generated_pb2_1_1_1.VirtualBucket
     dataset: _generated_pb2.Dataset
     datasource: _generated_pb2.DataSource
     models: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1.Model]
     product: _generated_pb2.DataProduct
     study: _generated_pb2_1.Study
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2_1.Study, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., models: _Optional[_Iterable[_Union[_generated_pb2_1.Model, _Mapping]]] = ...) -> None: ...
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2_1.Study, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., models: _Optional[_Iterable[_Union[_generated_pb2_1.Model, _Mapping]]] = ...) -> None: ...
 
 class DsCreateStudyProfileResponse(_message.Message):
     __slots__ = ["profileLocation"]
@@ -483,14 +361,12 @@ class DsCreateStudyProfileResponse(_message.Message):
     def __init__(self, profileLocation: _Optional[_Union[_generated_pb2_1_1_1_1.FileLocation, _Mapping]] = ...) -> None: ...
 
 class DsExecuteSqlRequest(_message.Message):
-    __slots__ = ["connectionName", "connectionNamespace", "sql"]
-    CONNECTIONNAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["connection", "sql"]
+    CONNECTION_FIELD_NUMBER: _ClassVar[int]
     SQL_FIELD_NUMBER: _ClassVar[int]
-    connectionName: str
-    connectionNamespace: str
+    connection: _generated_pb2_1_1_1.Connection
     sql: str
-    def __init__(self, connectionNamespace: _Optional[str] = ..., connectionName: _Optional[str] = ..., sql: _Optional[str] = ...) -> None: ...
+    def __init__(self, connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., sql: _Optional[str] = ...) -> None: ...
 
 class DsExecuteSqlResponse(_message.Message):
     __slots__ = ["tableview"]
@@ -499,42 +375,18 @@ class DsExecuteSqlResponse(_message.Message):
     def __init__(self, tableview: _Optional[_Union[_common_pb2.TableView, _Mapping]] = ...) -> None: ...
 
 class DsGenerateDatasetRequest(_message.Message):
-    __slots__ = ["bucket", "connection", "datasource", "dbConnection", "dbSecret", "product", "rows", "secret", "target", "version"]
-    class DbSecretEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: bytes
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[bytes] = ...) -> None: ...
-    class SecretEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: bytes
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[bytes] = ...) -> None: ...
-    BUCKET_FIELD_NUMBER: _ClassVar[int]
-    CONNECTION_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["dataset", "datasource", "product", "rows", "target"]
+    DATASET_FIELD_NUMBER: _ClassVar[int]
     DATASOURCE_FIELD_NUMBER: _ClassVar[int]
-    DBCONNECTION_FIELD_NUMBER: _ClassVar[int]
-    DBSECRET_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     ROWS_FIELD_NUMBER: _ClassVar[int]
-    SECRET_FIELD_NUMBER: _ClassVar[int]
     TARGET_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
-    bucket: _generated_pb2_1_1_1.VirtualBucket
-    connection: _generated_pb2_1_1_1.Connection
+    dataset: _generated_pb2.Dataset
     datasource: _generated_pb2.DataSource
-    dbConnection: _generated_pb2_1_1_1.Connection
-    dbSecret: _containers.ScalarMap[str, bytes]
     product: _generated_pb2.DataProduct
     rows: int
-    secret: _containers.ScalarMap[str, bytes]
     target: _generated_pb2_1_1_1_1.DataLocation
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ..., rows: _Optional[int] = ..., dbConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., dbSecret: _Optional[_Mapping[str, bytes]] = ..., target: _Optional[_Union[_generated_pb2_1_1_1_1.DataLocation, _Mapping]] = ...) -> None: ...
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., target: _Optional[_Union[_generated_pb2_1_1_1_1.DataLocation, _Mapping]] = ..., rows: _Optional[int] = ...) -> None: ...
 
 class DsGenerateDatasetResponse(_message.Message):
     __slots__ = ["target"]
@@ -543,12 +395,10 @@ class DsGenerateDatasetResponse(_message.Message):
     def __init__(self, target: _Optional[_Union[_generated_pb2_1_1_1_1.DataLocation, _Mapping]] = ...) -> None: ...
 
 class DsGetDatabasesRequest(_message.Message):
-    __slots__ = ["connectionName", "connectionNamespace"]
-    CONNECTIONNAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
-    connectionName: str
-    connectionNamespace: str
-    def __init__(self, connectionNamespace: _Optional[str] = ..., connectionName: _Optional[str] = ...) -> None: ...
+    __slots__ = ["connection"]
+    CONNECTION_FIELD_NUMBER: _ClassVar[int]
+    connection: _generated_pb2_1_1_1.Connection
+    def __init__(self, connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ...) -> None: ...
 
 class DsGetDatabasesResponse(_message.Message):
     __slots__ = ["databases"]
@@ -573,12 +423,10 @@ class DsGetTableViewResponse(_message.Message):
     def __init__(self, tableview: _Optional[_Union[_common_pb2.TableView, _Mapping]] = ...) -> None: ...
 
 class DsGetTablesRequest(_message.Message):
-    __slots__ = ["connectionName", "connectionNamespace"]
-    CONNECTIONNAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
-    connectionName: str
-    connectionNamespace: str
-    def __init__(self, connectionNamespace: _Optional[str] = ..., connectionName: _Optional[str] = ...) -> None: ...
+    __slots__ = ["connection"]
+    CONNECTION_FIELD_NUMBER: _ClassVar[int]
+    connection: _generated_pb2_1_1_1.Connection
+    def __init__(self, connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ...) -> None: ...
 
 class DsGetTablesResponse(_message.Message):
     __slots__ = ["tables"]
@@ -603,7 +451,7 @@ class DsInferSchemaResponse(_message.Message):
     def __init__(self, profile: _Optional[_Union[_common_pb2.DatasetProfile, _Mapping]] = ...) -> None: ...
 
 class DsMergeForecastFileRequest(_message.Message):
-    __slots__ = ["bucket", "connection", "dataset", "datasource", "dbConnection", "dbSecret", "forecasts", "model", "product", "secret", "study", "version"]
+    __slots__ = ["bucket", "connection", "dataset", "datasource", "dbConnection", "dbSecret", "forecasts", "model", "product", "secret", "study"]
     class DbSecretEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -629,7 +477,6 @@ class DsMergeForecastFileRequest(_message.Message):
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
     STUDY_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
     bucket: _generated_pb2_1_1_1.VirtualBucket
     connection: _generated_pb2_1_1_1.Connection
     dataset: _generated_pb2.Dataset
@@ -641,8 +488,7 @@ class DsMergeForecastFileRequest(_message.Message):
     product: _generated_pb2.DataProduct
     secret: _containers.ScalarMap[str, bytes]
     study: _generated_pb2_1.Study
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2_1.Study, _Mapping]] = ..., model: _Optional[_Union[_generated_pb2_1.Model, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ..., forecasts: _Optional[_Iterable[str]] = ..., dbConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., dbSecret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2_1.Study, _Mapping]] = ..., model: _Optional[_Union[_generated_pb2_1.Model, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ..., forecasts: _Optional[_Iterable[str]] = ..., dbConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., dbSecret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
 
 class DsMergeForecastFileResponse(_message.Message):
     __slots__ = ["uri"]
@@ -668,7 +514,7 @@ class DsReadAudioRequest(_message.Message):
     def __init__(self, bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
 
 class DsReadFeatureRequest(_message.Message):
-    __slots__ = ["bucket", "connection", "product", "secret", "version"]
+    __slots__ = ["bucket", "connection", "product", "secret"]
     class SecretEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -680,16 +526,14 @@ class DsReadFeatureRequest(_message.Message):
     CONNECTION_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
     bucket: _generated_pb2_1_1_1.VirtualBucket
     connection: _generated_pb2_1_1_1.Connection
     product: _generated_pb2.DataProduct
     secret: _containers.ScalarMap[str, bytes]
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
 
 class DsReadFileRequest(_message.Message):
-    __slots__ = ["bucket", "connection", "product", "secret", "version"]
+    __slots__ = ["bucket", "connection", "product", "secret"]
     class SecretEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -701,16 +545,14 @@ class DsReadFileRequest(_message.Message):
     CONNECTION_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
     bucket: _generated_pb2_1_1_1.VirtualBucket
     connection: _generated_pb2_1_1_1.Connection
     product: _generated_pb2.DataProduct
     secret: _containers.ScalarMap[str, bytes]
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
 
 class DsReadFromStoreResponse(_message.Message):
-    __slots__ = ["bucket", "connection", "product", "result", "secret", "version"]
+    __slots__ = ["bucket", "connection", "product", "result", "secret"]
     class SecretEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -723,17 +565,15 @@ class DsReadFromStoreResponse(_message.Message):
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     RESULT_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
     bucket: _generated_pb2_1_1_1.VirtualBucket
     connection: _generated_pb2_1_1_1.Connection
     product: _generated_pb2.DataProduct
     result: _generated_pb2.Dataset
     secret: _containers.ScalarMap[str, bytes]
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., result: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., result: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
 
 class DsReadTextCorpusRequest(_message.Message):
-    __slots__ = ["bucket", "connection", "product", "secret", "version"]
+    __slots__ = ["bucket", "connection", "product", "secret"]
     class SecretEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -745,13 +585,11 @@ class DsReadTextCorpusRequest(_message.Message):
     CONNECTION_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
     bucket: _generated_pb2_1_1_1.VirtualBucket
     connection: _generated_pb2_1_1_1.Connection
     product: _generated_pb2.DataProduct
     secret: _containers.ScalarMap[str, bytes]
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
 
 class DsRunDataPipelineRequest(_message.Message):
     __slots__ = ["pipeline"]
@@ -766,7 +604,7 @@ class DsRunDataPipelineResponse(_message.Message):
     def __init__(self, result: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ...) -> None: ...
 
 class DsRunRecipeRequest(_message.Message):
-    __slots__ = ["bucket", "dataset", "datasource", "dbConnection", "dbSecret", "product", "recipe", "reciperun", "storageConnection", "storageSecret", "version"]
+    __slots__ = ["bucket", "dataset", "datasource", "dbConnection", "dbSecret", "product", "recipe", "reciperun", "storageConnection", "storageSecret"]
     class DbSecretEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -791,7 +629,6 @@ class DsRunRecipeRequest(_message.Message):
     RECIPE_FIELD_NUMBER: _ClassVar[int]
     STORAGECONNECTION_FIELD_NUMBER: _ClassVar[int]
     STORAGESECRET_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
     bucket: _generated_pb2_1_1_1.VirtualBucket
     dataset: _generated_pb2.Dataset
     datasource: _generated_pb2.DataSource
@@ -802,8 +639,7 @@ class DsRunRecipeRequest(_message.Message):
     reciperun: _generated_pb2.RecipeRun
     storageConnection: _generated_pb2_1_1_1.Connection
     storageSecret: _containers.ScalarMap[str, bytes]
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., storageConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., storageSecret: _Optional[_Mapping[str, bytes]] = ..., dbConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., dbSecret: _Optional[_Mapping[str, bytes]] = ..., recipe: _Optional[_Union[_generated_pb2.Recipe, _Mapping]] = ..., reciperun: _Optional[_Union[_generated_pb2.RecipeRun, _Mapping]] = ...) -> None: ...
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., storageConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., storageSecret: _Optional[_Mapping[str, bytes]] = ..., dbConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., dbSecret: _Optional[_Mapping[str, bytes]] = ..., recipe: _Optional[_Union[_generated_pb2.Recipe, _Mapping]] = ..., reciperun: _Optional[_Union[_generated_pb2.RecipeRun, _Mapping]] = ...) -> None: ...
 
 class DsRunRecipeResponse(_message.Message):
     __slots__ = ["result"]
@@ -876,20 +712,16 @@ class DsSplitDatasetResponse(_message.Message):
     def __init__(self, training: _Optional[int] = ..., testing: _Optional[int] = ..., validation: _Optional[int] = ..., trainingHash: _Optional[str] = ..., testingHash: _Optional[str] = ..., validationHash: _Optional[str] = ..., indexFile: _Optional[str] = ..., trainLocation: _Optional[_Union[_generated_pb2_1_1_1_1.FileLocation, _Mapping]] = ..., testLocation: _Optional[_Union[_generated_pb2_1_1_1_1.FileLocation, _Mapping]] = ..., validationLocation: _Optional[_Union[_generated_pb2_1_1_1_1.FileLocation, _Mapping]] = ...) -> None: ...
 
 class DsSplitDatasetToRungsRequest(_message.Message):
-    __slots__ = ["bucket", "dataset", "datasource", "product", "rungs", "version"]
-    BUCKET_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["dataset", "datasource", "product", "rungs"]
     DATASET_FIELD_NUMBER: _ClassVar[int]
     DATASOURCE_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     RUNGS_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
-    bucket: _generated_pb2_1_1_1.VirtualBucket
     dataset: _generated_pb2.Dataset
     datasource: _generated_pb2.DataSource
     product: _generated_pb2.DataProduct
     rungs: int
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., rungs: _Optional[int] = ...) -> None: ...
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., rungs: _Optional[int] = ...) -> None: ...
 
 class DsSplitDatasetToRungsResponse(_message.Message):
     __slots__ = []
@@ -932,49 +764,8 @@ class DsTestConnectionResponse(_message.Message):
     status: bool
     def __init__(self, status: bool = ..., msg: _Optional[str] = ...) -> None: ...
 
-class DsTransformRequest(_message.Message):
-    __slots__ = ["bucket", "connection", "dataset", "datasource", "product", "secret", "study", "testingDataset", "trainingDataset", "version"]
-    class SecretEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: bytes
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[bytes] = ...) -> None: ...
-    BUCKET_FIELD_NUMBER: _ClassVar[int]
-    CONNECTION_FIELD_NUMBER: _ClassVar[int]
-    DATASET_FIELD_NUMBER: _ClassVar[int]
-    DATASOURCE_FIELD_NUMBER: _ClassVar[int]
-    PRODUCT_FIELD_NUMBER: _ClassVar[int]
-    SECRET_FIELD_NUMBER: _ClassVar[int]
-    STUDY_FIELD_NUMBER: _ClassVar[int]
-    TESTINGDATASET_FIELD_NUMBER: _ClassVar[int]
-    TRAININGDATASET_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
-    bucket: _generated_pb2_1_1_1.VirtualBucket
-    connection: _generated_pb2_1_1_1.Connection
-    dataset: _generated_pb2.Dataset
-    datasource: _generated_pb2.DataSource
-    product: _generated_pb2.DataProduct
-    secret: _containers.ScalarMap[str, bytes]
-    study: _generated_pb2_1.Study
-    testingDataset: _generated_pb2.Dataset
-    trainingDataset: _generated_pb2.Dataset
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2_1.Study, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ..., trainingDataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., testingDataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ...) -> None: ...
-
-class DsTransformResponse(_message.Message):
-    __slots__ = ["testing_hash", "training_hash", "validation_hash"]
-    TESTING_HASH_FIELD_NUMBER: _ClassVar[int]
-    TRAINING_HASH_FIELD_NUMBER: _ClassVar[int]
-    VALIDATION_HASH_FIELD_NUMBER: _ClassVar[int]
-    testing_hash: str
-    training_hash: str
-    validation_hash: str
-    def __init__(self, training_hash: _Optional[str] = ..., testing_hash: _Optional[str] = ..., validation_hash: _Optional[str] = ...) -> None: ...
-
 class DsWriteFileRequest(_message.Message):
-    __slots__ = ["bucket", "connection", "content", "product", "secret", "version"]
+    __slots__ = ["bucket", "connection", "content", "product", "secret"]
     class SecretEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -987,14 +778,12 @@ class DsWriteFileRequest(_message.Message):
     CONTENT_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     SECRET_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
     bucket: _generated_pb2_1_1_1.VirtualBucket
     connection: _generated_pb2_1_1_1.Connection
     content: _generated_pb2.Dataset
     product: _generated_pb2.DataProduct
     secret: _containers.ScalarMap[str, bytes]
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., content: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., content: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
 
 class GenOnlineStoreDatasetRequest(_message.Message):
     __slots__ = ["dbConnection", "dbSecret", "fg", "location", "model", "storageBucket", "storageConnection", "storageSecret"]
@@ -1037,62 +826,36 @@ class GenOnlineStoreDatasetResponse(_message.Message):
     def __init__(self, location: _Optional[_Union[_generated_pb2_1_1_1_1.DataLocation, _Mapping]] = ...) -> None: ...
 
 class GenTrainingDataRequest(_message.Message):
-    __slots__ = ["dbConnection", "dbSecret", "entities", "groups", "model", "product", "storageBucket", "storageConnection", "storageSecret", "version"]
-    class DbSecretEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: bytes
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[bytes] = ...) -> None: ...
-    class StorageSecretEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: bytes
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[bytes] = ...) -> None: ...
-    DBCONNECTION_FIELD_NUMBER: _ClassVar[int]
-    DBSECRET_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["entities", "groups", "modelClass", "modelClassRun", "product"]
     ENTITIES_FIELD_NUMBER: _ClassVar[int]
     GROUPS_FIELD_NUMBER: _ClassVar[int]
-    MODEL_FIELD_NUMBER: _ClassVar[int]
+    MODELCLASSRUN_FIELD_NUMBER: _ClassVar[int]
+    MODELCLASS_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
-    STORAGEBUCKET_FIELD_NUMBER: _ClassVar[int]
-    STORAGECONNECTION_FIELD_NUMBER: _ClassVar[int]
-    STORAGESECRET_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
-    dbConnection: _generated_pb2_1_1_1.Connection
-    dbSecret: _containers.ScalarMap[str, bytes]
     entities: _containers.RepeatedCompositeFieldContainer[_generated_pb2.Entity]
     groups: _containers.RepeatedCompositeFieldContainer[_generated_pb2.FeatureGroup]
-    model: _generated_pb2_1.ModelClass
+    modelClass: _generated_pb2_1.ModelClass
+    modelClassRun: _generated_pb2_1.ModelClassRun
     product: _generated_pb2.DataProduct
-    storageBucket: _generated_pb2_1_1_1.VirtualBucket
-    storageConnection: _generated_pb2_1_1_1.Connection
-    storageSecret: _containers.ScalarMap[str, bytes]
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., storageConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., storageBucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., storageSecret: _Optional[_Mapping[str, bytes]] = ..., dbConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., dbSecret: _Optional[_Mapping[str, bytes]] = ..., model: _Optional[_Union[_generated_pb2_1.ModelClass, _Mapping]] = ..., entities: _Optional[_Iterable[_Union[_generated_pb2.Entity, _Mapping]]] = ..., groups: _Optional[_Iterable[_Union[_generated_pb2.FeatureGroup, _Mapping]]] = ...) -> None: ...
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., modelClass: _Optional[_Union[_generated_pb2_1.ModelClass, _Mapping]] = ..., modelClassRun: _Optional[_Union[_generated_pb2_1.ModelClassRun, _Mapping]] = ..., entities: _Optional[_Iterable[_Union[_generated_pb2.Entity, _Mapping]]] = ..., groups: _Optional[_Iterable[_Union[_generated_pb2.FeatureGroup, _Mapping]]] = ...) -> None: ...
 
 class GenTrainingDataResponse(_message.Message):
-    __slots__ = ["path"]
-    PATH_FIELD_NUMBER: _ClassVar[int]
-    path: str
-    def __init__(self, path: _Optional[str] = ...) -> None: ...
+    __slots__ = ["location"]
+    LOCATION_FIELD_NUMBER: _ClassVar[int]
+    location: _generated_pb2_1_1_1_1.FileLocation
+    def __init__(self, location: _Optional[_Union[_generated_pb2_1_1_1_1.FileLocation, _Mapping]] = ...) -> None: ...
 
 class GetTimeSeriesDatasetKeysRequest(_message.Message):
-    __slots__ = ["dataset", "datasource", "product", "study", "version"]
+    __slots__ = ["dataset", "datasource", "product", "study"]
     DATASET_FIELD_NUMBER: _ClassVar[int]
     DATASOURCE_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     STUDY_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
     dataset: _generated_pb2.Dataset
     datasource: _generated_pb2.DataSource
     product: _generated_pb2.DataProduct
     study: _generated_pb2_1.Study
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2_1.Study, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ...) -> None: ...
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2_1.Study, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ...) -> None: ...
 
 class GetTimeSeriesDatasetKeysResponse(_message.Message):
     __slots__ = ["keys"]
@@ -1101,40 +864,14 @@ class GetTimeSeriesDatasetKeysResponse(_message.Message):
     def __init__(self, keys: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class GroupByDatasetRequest(_message.Message):
-    __slots__ = ["bucket", "connection", "dataset", "datasource", "dbConnection", "dbSecret", "product", "secret", "version"]
-    class DbSecretEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: bytes
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[bytes] = ...) -> None: ...
-    class SecretEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: bytes
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[bytes] = ...) -> None: ...
-    BUCKET_FIELD_NUMBER: _ClassVar[int]
-    CONNECTION_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["dataset", "datasource", "product"]
     DATASET_FIELD_NUMBER: _ClassVar[int]
     DATASOURCE_FIELD_NUMBER: _ClassVar[int]
-    DBCONNECTION_FIELD_NUMBER: _ClassVar[int]
-    DBSECRET_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
-    SECRET_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
-    bucket: _generated_pb2_1_1_1.VirtualBucket
-    connection: _generated_pb2_1_1_1.Connection
     dataset: _generated_pb2.Dataset
     datasource: _generated_pb2.DataSource
-    dbConnection: _generated_pb2_1_1_1.Connection
-    dbSecret: _containers.ScalarMap[str, bytes]
     product: _generated_pb2.DataProduct
-    secret: _containers.ScalarMap[str, bytes]
-    version: _generated_pb2.DataProductVersion
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., version: _Optional[_Union[_generated_pb2.DataProductVersion, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ..., dbConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., dbSecret: _Optional[_Mapping[str, bytes]] = ...) -> None: ...
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ...) -> None: ...
 
 class GroupByDatasetResponse(_message.Message):
     __slots__ = ["uri"]

@@ -1,10 +1,11 @@
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from google.api import annotations_pb2 as _annotations_pb2
 from github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1 import generated_pb2 as _generated_pb2
+from github.com.metaprov.modelaapi.services.common.v1 import common_pb2 as _common_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -39,6 +40,22 @@ class DeleteConnectionResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
+class ExecuteSqlRequest(_message.Message):
+    __slots__ = ["name", "namespace", "sql"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    SQL_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    sql: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., sql: _Optional[str] = ...) -> None: ...
+
+class ExecuteSqlResponse(_message.Message):
+    __slots__ = ["tableview"]
+    TABLEVIEW_FIELD_NUMBER: _ClassVar[int]
+    tableview: _common_pb2.TableView
+    def __init__(self, tableview: _Optional[_Union[_common_pb2.TableView, _Mapping]] = ...) -> None: ...
+
 class GetConnectionRequest(_message.Message):
     __slots__ = ["name", "namespace"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
@@ -65,6 +82,34 @@ class GetConnectionResponse(_message.Message):
     secret: _containers.ScalarMap[str, str]
     yaml: str
     def __init__(self, connection: _Optional[_Union[_generated_pb2.Connection, _Mapping]] = ..., secret: _Optional[_Mapping[str, str]] = ..., isAdmin: bool = ..., yaml: _Optional[str] = ...) -> None: ...
+
+class GetDatabasesRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class GetDatabasesResponse(_message.Message):
+    __slots__ = ["databases"]
+    DATABASES_FIELD_NUMBER: _ClassVar[int]
+    databases: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, databases: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class GetTablesRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class GetTablesResponse(_message.Message):
+    __slots__ = ["tables"]
+    TABLES_FIELD_NUMBER: _ClassVar[int]
+    tables: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, tables: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class ListConnectionsRequest(_message.Message):
     __slots__ = ["labels", "namespace", "order_by", "page_size", "page_token"]

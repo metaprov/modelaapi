@@ -79,7 +79,7 @@ func (dataset *Dataset) GetCondition(condType DatasetConditionType) metav1.Condi
 }
 
 func (dataset *Dataset) RootURI() string {
-	return fmt.Sprintf("dataproducts/%s/datasets/%s/%s", dataset.Namespace, dataset.Name, strconv.Itoa(int(dataset.Status.Version)))
+	return fmt.Sprintf("dataproducts/%s/datasets/%s/versions/%s", dataset.Namespace, dataset.Name, strconv.Itoa(int(dataset.Status.Version)))
 }
 
 func ParseDatasetYaml(content []byte) (*Dataset, error) {

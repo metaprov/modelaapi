@@ -23,6 +23,7 @@ func (dataset *Dataset) Default() {
 	if dataset.ObjectMeta.Labels == nil {
 		dataset.ObjectMeta.Labels = make(map[string]string)
 	}
+
 	if dataset.Spec.DataSourceName != "" {
 		dataset.ObjectMeta.Labels[catalog.DatasourceLabelKey] = dataset.Spec.DataSourceName
 	}
@@ -33,10 +34,6 @@ func (dataset *Dataset) Default() {
 
 	if dataset.Spec.ModelClassName != nil {
 		dataset.ObjectMeta.Labels[catalog.ModelClassLabelKey] = *dataset.Spec.ModelClassName
-	}
-
-	if dataset.Spec.ModelClassRunName != nil {
-		dataset.ObjectMeta.Labels[catalog.ModelClassRunLabelKey] = *dataset.Spec.ModelClassRunName
 	}
 
 	dataset.ObjectMeta.Labels[catalog.VersionLabelKey] = "1"

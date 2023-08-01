@@ -1,6 +1,6 @@
 package common
 
-//KindName is the name of the kinds
+// KindName is the name of the kinds
 type KindName string
 
 const (
@@ -19,6 +19,7 @@ const (
 	DataProductKind        KindName = "dataproducts"
 	DataProductVersionKind KindName = "dataproductversions"
 	DatasetKind            KindName = "datasets"
+	DatasetRunKind         KindName = "datasetruns"
 	DataSourceKind         KindName = "datasources"
 	EntityKind             KindName = "entities"
 	FeatureGroupKind       KindName = "featuregroup"

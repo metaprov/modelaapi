@@ -6,43 +6,43 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-type DatasetRunPhase string
+type DatasetSnapshotPhase string
 
 const (
-	DatasetRunPhasePending         DatasetRunPhase = "Pending"    // when generating
-	DatasetRunPhaseGenerating      DatasetRunPhase = "Generating" // when generating
-	DatasetRunPhaseGenerateSuccess DatasetRunPhase = "Generated"  // when synthetic gen success
-	DatasetRunPhaseIngestRunning   DatasetRunPhase = "Ingesting"
-	DatasetRunPhaseIngestSuccess   DatasetRunPhase = "Ingested"
-	DatasetRunPhaseGrouping        DatasetRunPhase = "Grouping"
-	DatasetRunPhaseGrouped         DatasetRunPhase = "Grouped"
-	DatasetRunPhaseReportRunning   DatasetRunPhase = "Reporting"
-	DatasetRunPhaseReportSuccess   DatasetRunPhase = "Reported"
-	DatasetRunPhaseProfileRunning  DatasetRunPhase = "Profiling"
-	DatasetRunPhaseProfileSuccess  DatasetRunPhase = "Profiled"
-	DatasetRunPhaseUnitTesting     DatasetRunPhase = "UnitTesting"
-	DatasetRunPhaseSnapshotRunning DatasetRunPhase = "Taking Snapshot"
-	DatasetRunPhaseSnapshotSuccess DatasetRunPhase = "Snapshotted"
-	DatasetRunPhaseFailed          DatasetRunPhase = "Failed"
-	DatasetRunPhaseAborted         DatasetRunPhase = "Aborted"
-	DatasetRunPhaseReady           DatasetRunPhase = "Ready"
+	DatasetSnapshotPhasePending         DatasetSnapshotPhase = "Pending"    // when generating
+	DatasetSnapshotPhaseGenerating      DatasetSnapshotPhase = "Generating" // when generating
+	DatasetSnapshotPhaseGenerateSuccess DatasetSnapshotPhase = "Generated"  // when synthetic gen success
+	DatasetSnapshotPhaseIngestRunning   DatasetSnapshotPhase = "Ingesting"
+	DatasetSnapshotPhaseIngestSuccess   DatasetSnapshotPhase = "Ingested"
+	DatasetSnapshotPhaseGrouping        DatasetSnapshotPhase = "Grouping"
+	DatasetSnapshotPhaseGrouped         DatasetSnapshotPhase = "Grouped"
+	DatasetSnapshotPhaseReportRunning   DatasetSnapshotPhase = "Reporting"
+	DatasetSnapshotPhaseReportSuccess   DatasetSnapshotPhase = "Reported"
+	DatasetSnapshotPhaseProfileRunning  DatasetSnapshotPhase = "Profiling"
+	DatasetSnapshotPhaseProfileSuccess  DatasetSnapshotPhase = "Profiled"
+	DatasetSnapshotPhaseUnitTesting     DatasetSnapshotPhase = "UnitTesting"
+	DatasetSnapshotPhaseSnapshotRunning DatasetSnapshotPhase = "Taking Snapshot"
+	DatasetSnapshotPhaseSnapshotSuccess DatasetSnapshotPhase = "Snapshotted"
+	DatasetSnapshotPhaseFailed          DatasetSnapshotPhase = "Failed"
+	DatasetSnapshotPhaseAborted         DatasetSnapshotPhase = "Aborted"
+	DatasetSnapshotPhaseReady           DatasetSnapshotPhase = "Ready"
 )
 
-type DatasetRunConditionType string
+type DatasetSnapshotConditionType string
 
 const (
-	DatasetRunReported    DatasetRunConditionType = "Reported"
-	DatasetRunUnitTested  DatasetRunConditionType = "UnitTested"
-	DatasetRunSnapshotted DatasetRunConditionType = "Snapshotted"
-	DatasetRunProfiled    DatasetRunConditionType = "Profiled"
-	DatasetRunIngested    DatasetRunConditionType = "Ingested"
-	DatasetRunGrouped     DatasetRunConditionType = "Grouped"
-	DatasetRunGenerated   DatasetRunConditionType = "Generated"
-	DatasetRunReady       DatasetRunConditionType = "Ready"
+	DatasetSnapshotReported    DatasetSnapshotConditionType = "Reported"
+	DatasetSnapshotUnitTested  DatasetSnapshotConditionType = "UnitTested"
+	DatasetSnapshotSnapshotted DatasetSnapshotConditionType = "Snapshotted"
+	DatasetSnapshotProfiled    DatasetSnapshotConditionType = "Profiled"
+	DatasetSnapshotIngested    DatasetSnapshotConditionType = "Ingested"
+	DatasetSnapshotGrouped     DatasetSnapshotConditionType = "Grouped"
+	DatasetSnapshotGenerated   DatasetSnapshotConditionType = "Generated"
+	DatasetSnapshotReady       DatasetSnapshotConditionType = "Ready"
 )
 
 // +kubebuilder:object:root=true
-// +kubebuilder:resource:path=datasetruns,shortName=dsr,singular=datasetrun,categories={data,modela,all}
+// +kubebuilder:resource:path=datasetsnapshots,shortName=dss,singular=datasetsnapshot,categories={data,modela,all}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Phase",type="string",JSONPath=".status.phase"
@@ -53,125 +53,120 @@ const (
 // +kubebuilder:printcolumn:name="Columns",type="integer",JSONPath=".status.statistics.columns"
 // +kubebuilder:printcolumn:name="Size",type="integer",JSONPath=".status.statistics.sizeInBytes"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// DatasetRun represents a single execution of a Dataset
-type DatasetRun struct {
+// DatasetSnapshot represents a single execution of a Dataset
+type DatasetSnapshot struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              DatasetRunSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            DatasetRunStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              DatasetSnapshotSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            DatasetSnapshotStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true
 // DatasetList contains a list of Datasets
-type DatasetRunList struct {
+type DatasetSnapshotList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Items           []DatasetRun `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []DatasetSnapshot `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// DatasetRunSpec defines the run configuration for a Dataset
-type DatasetRunSpec struct {
+// DatasetSnapshotSpec defines the run configuration for a Dataset
+type DatasetSnapshotSpec struct {
 	// Owner specifies the name of the Account which the object belongs to
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// RunVersion specifies the version of the run set by the parent Dataset.
-	// This version is unique is incremented for each new run
+	// DatasetName specifies the name of the Dataset resource which the snapshot will use to
+	// determine the location, format, and post-processing options for the dataset
 	// +kubebuilder:validation:Required
 	// +required
-	RunVersion int32 `json:"runVersion,omitempty" protobuf:"varint,2,opt,name=runVersion"`
-	// DatasetName specifies the name of the Dataset resource that defines
-	// the location and analysis options for the dataset
-	// +kubebuilder:validation:Required
-	// +required
-	DatasetName string `json:"datasetName,omitempty" protobuf:"bytes,3,opt,name=datasetName"`
-	// DatasetVersion specifies the version of the Dataset resource defined by DatasetName
-	// to be retrieved and used for the lifetime of the run
-	// +kubebuilder:validation:Required
-	DatasetVersion int32 `json:"datasetVersion,omitempty" protobuf:"varint,4,opt,name=datasetVersion"`
+	DatasetName string `json:"datasetName,omitempty" protobuf:"varint,2,opt,name=datasetName"`
 	// Timout specifies the time in seconds for the run to be completed. If unspecified, the run
 	// deadline specified by the Dataset will be used
 	// +kubebuilder:validation:Optional
-	Timeout *int64 `json:"timeout,omitempty" protobuf:"varint,5,opt,name=timeout"`
+	Timeout *int64 `json:"timeout,omitempty" protobuf:"varint,3,opt,name=timeout"`
 	// If true, the execution of new workloads associated with the run will be paused
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Pause *bool `json:"pause,omitempty" protobuf:"varint,6,opt,name=pause"`
+	Pause *bool `json:"pause,omitempty" protobuf:"varint,4,opt,name=pause"`
 	// If true, the run will be permanently aborted and all workloads created by the run will be removed
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Abort *bool `json:"abort,omitempty" protobuf:"varint,7,opt,name=abort"`
+	Abort *bool `json:"abort,omitempty" protobuf:"varint,5,opt,name=abort"`
 	// ModelClassRunName specifies the name of the Model Class Run which created the run, if applicable
 	// +kubebuilder:validation:Optional
-	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,8,opt,name=modelClassRunName"`
+	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,6,opt,name=modelClassRunName"`
 }
 
-// DatasetRunStatus specifies the observed state of a DatasetRun
-type DatasetRunStatus struct {
+// DatasetSnapshotStatus specifies the observed state of a DatasetSnapshot
+type DatasetSnapshotStatus struct {
 	// ObservedGeneration is the last generation that was reconciled
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
-	// ManifestLocation specifies the location of the dataset manifest used during the course of the run
+	// ManifestLocation specifies the location of the dataset manifest used during the course of the snapshot
 	ManifestLocation catalog.FileLocation `json:"manifestLocation,omitempty" protobuf:"bytes,2,opt,name=manifestLocation"`
+	// ManifestVersion specifies the version of the saved dataset manifest
+	ManifestVersion catalog.Version `json:"manifestVersion,omitempty" protobuf:"varint,3,opt,name=manifestVersion"`
+	// SnapshotVersion specifies the version of the snapshot, which is determined when the Dataset manifest is saved
+	SnapshotVersion catalog.Version `json:"snapshotVersion,omitempty" protobuf:"varint,4,opt,name=snapshotVersion"`
 	// DatasetStatistics contains statistics for each column of the dataset generated during the dataset profile
 	// +kubebuilder:validation:Optional
-	Statistics DatasetStatistics `json:"statistics,omitempty" protobuf:"bytes,3,opt,name=statistics"`
-	// Phase defines the current phase of the DatasetRun relative to its progress
+	Statistics DatasetStatistics `json:"statistics,omitempty" protobuf:"bytes,5,opt,name=statistics"`
+	// Phase defines the current phase of the run relative to its progress
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
-	Phase DatasetRunPhase `json:"phase,omitempty" protobuf:"bytes,4,opt,name=phase"`
+	Phase DatasetSnapshotPhase `json:"phase,omitempty" protobuf:"bytes,6,opt,name=phase"`
 	// ReportName specifies the name of the Report created by the run
 	// +kubebuilder:validation:Optional
-	ReportName string `json:"reportName,omitempty" protobuf:"bytes,5,opt,name=reportName"`
+	ReportName string `json:"reportName,omitempty" protobuf:"bytes,7,opt,name=reportName"`
 	// ReportLocation contains the location of the report file generated by the run's Report resource
 	// +kubebuilder:validation:Optional
-	ReportLocation catalog.FileLocation `json:"reportLocation,omitempty" protobuf:"bytes,6,opt,name=reportLocation"`
+	ReportLocation catalog.FileLocation `json:"reportLocation,omitempty" protobuf:"bytes,8,opt,name=reportLocation"`
 	// ProfileLocation contains the location for the raw profile data
 	// +kubebuilder:validation:Optional
-	ProfileLocation catalog.FileLocation `json:"profileLocation" protobuf:"bytes,7,opt,name=profileLocation"`
+	ProfileLocation catalog.FileLocation `json:"profileLocation" protobuf:"bytes,9,opt,name=profileLocation"`
 	// AnomaliesLocation contains the location of the anomaly file, containing a list of rows
 	// which were determined as anomalies by an isolation forest algorithm
 	// +kubebuilder:validation:Optional
-	AnomaliesLocation catalog.FileLocation `json:"anomaliesLocation" protobuf:"bytes,8,opt,name=anomaliesLocation"`
+	AnomaliesLocation catalog.FileLocation `json:"anomaliesLocation" protobuf:"bytes,10,opt,name=anomaliesLocation"`
 	// Imbalanced indicates if the classes in the dataset were detected as imbalanced
-	//+kubebuilder:validation:Optional
-	Imbalanced bool `json:"imbalanced,omitempty" protobuf:"varint,9,opt,name=imbalanced"`
+	// +kubebuilder:validation:Optional
+	Imbalanced bool `json:"imbalanced,omitempty" protobuf:"varint,11,opt,name=imbalanced"`
 	// UnitTestResults contains the results of the unit test phase
 	//+kubebuilder:validation:Optional
-	UnitTestResults catalog.TestSuiteResult `json:"unitTestResults,omitempty" protobuf:"bytes,10,opt,name=unitTestResults"`
-	// FailureMessage is set to an failure message in the case that an error occured during the run
+	UnitTestResults catalog.TestSuiteResult `json:"unitTestResults,omitempty" protobuf:"bytes,12,opt,name=unitTestResults"`
+	// FailureMessage is set to a failure message in the case that an error occurred during the run
 	//+kubebuilder:validation:Optional
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,11,opt,name=failureMessage"`
-	// Progress defines the current numerical progress of the Dataset, from 0 to 100
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,13,opt,name=failureMessage"`
+	// Progress defines the current numerical progress of the run, from 0 to 100
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Progress int32 `json:"progress,omitempty" protobuf:"varint,12,opt,name=progress"`
+	Progress int32 `json:"progress,omitempty" protobuf:"varint,14,opt,name=progress"`
 	// Logs contains the location of all logs produced by run workloads
-	Logs catalog.Logs `json:"logs" protobuf:"bytes,13,opt,name=logs"`
+	Logs catalog.Logs `json:"logs" protobuf:"bytes,15,opt,name=logs"`
 	// +kubebuilder:validation:Optional
-	Hash string `json:"hash,omitempty" protobuf:"bytes,14,opt,name=hash"`
+	Hash string `json:"hash,omitempty" protobuf:"bytes,16,opt,name=hash"`
 	// UpdatedAt specifies the last time the run was updated
 	//+kubebuilder:validation:Optional
-	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,15,opt,name=updatedAt"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,17,opt,name=updatedAt"`
 	// CompletedAt specifies the time at which the run completed or failed
 	// +kubebuilder:validation:Optional
-	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,16,opt,name=completedAt"`
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,18,opt,name=completedAt"`
 	// LastStudyAt specifies the last time the run was used to create a Study
 	//+kubebuilder:validation:Optional
-	LastStudyAt *metav1.Time `json:"lastStudyAt,omitempty" protobuf:"bytes,17,opt,name=lastStudyAt"`
+	LastStudyAt *metav1.Time `json:"lastStudyAt,omitempty" protobuf:"bytes,19,opt,name=lastStudyAt"`
 	// Images contains the container images used by the run
 	// +kubebuilder:validation:Optional
-	Images catalog.Images `json:"images,omitempty" protobuf:"bytes,18,opt,name=images"`
-	// FeatureHistogramRef references the feature histogram generated by the run
+	Images catalog.Images `json:"images,omitempty" protobuf:"bytes,20,opt,name=images"`
+	// FeatureHistogramRef references the feature histogram generated by the snapshot
 	// +kubebuilder:validation:Optional
-	FeatureHistogramRef v1.ObjectReference `json:"featureHistogramRef,omitempty" protobuf:"bytes,19,opt,name=featureHistogramRef"`
+	FeatureHistogramRef v1.ObjectReference `json:"featureHistogramRef,omitempty" protobuf:"bytes,21,opt,name=featureHistogramRef"`
 	// GroupBy contains the index files for datasets produced through group-by operations
 	// +kubebuilder:validation:Optional
-	GroupBy DatasetGroupByStatus `json:"groupby,omitempty" protobuf:"bytes,20,opt,name=groupby"`
+	GroupBy DatasetGroupByStatus `json:"groupBy,omitempty" protobuf:"bytes,22,opt,name=groupBy"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,21,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,23,rep,name=conditions"`
 }
 
 // Correlation records the correlation between two features in a Dataset

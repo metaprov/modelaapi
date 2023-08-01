@@ -2121,119 +2121,107 @@ export namespace DatasetList {
   }
 }
 
-export class DatasetRun extends jspb.Message {
+export class DatasetSnapshot extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): DatasetRun;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): DatasetSnapshot;
   hasMetadata(): boolean;
-  clearMetadata(): DatasetRun;
+  clearMetadata(): DatasetSnapshot;
 
-  getSpec(): DatasetRunSpec | undefined;
-  setSpec(value?: DatasetRunSpec): DatasetRun;
+  getSpec(): DatasetSnapshotSpec | undefined;
+  setSpec(value?: DatasetSnapshotSpec): DatasetSnapshot;
   hasSpec(): boolean;
-  clearSpec(): DatasetRun;
+  clearSpec(): DatasetSnapshot;
 
-  getStatus(): DatasetRunStatus | undefined;
-  setStatus(value?: DatasetRunStatus): DatasetRun;
+  getStatus(): DatasetSnapshotStatus | undefined;
+  setStatus(value?: DatasetSnapshotStatus): DatasetSnapshot;
   hasStatus(): boolean;
-  clearStatus(): DatasetRun;
+  clearStatus(): DatasetSnapshot;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetRun.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetRun): DatasetRun.AsObject;
-  static serializeBinaryToWriter(message: DatasetRun, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetRun;
-  static deserializeBinaryFromReader(message: DatasetRun, reader: jspb.BinaryReader): DatasetRun;
+  toObject(includeInstance?: boolean): DatasetSnapshot.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetSnapshot): DatasetSnapshot.AsObject;
+  static serializeBinaryToWriter(message: DatasetSnapshot, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetSnapshot;
+  static deserializeBinaryFromReader(message: DatasetSnapshot, reader: jspb.BinaryReader): DatasetSnapshot;
 }
 
-export namespace DatasetRun {
+export namespace DatasetSnapshot {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    spec?: DatasetRunSpec.AsObject,
-    status?: DatasetRunStatus.AsObject,
+    spec?: DatasetSnapshotSpec.AsObject,
+    status?: DatasetSnapshotStatus.AsObject,
   }
 }
 
-export class DatasetRunList extends jspb.Message {
+export class DatasetSnapshotList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): DatasetRunList;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): DatasetSnapshotList;
   hasMetadata(): boolean;
-  clearMetadata(): DatasetRunList;
+  clearMetadata(): DatasetSnapshotList;
 
-  getItemsList(): Array<DatasetRun>;
-  setItemsList(value: Array<DatasetRun>): DatasetRunList;
-  clearItemsList(): DatasetRunList;
-  addItems(value?: DatasetRun, index?: number): DatasetRun;
+  getItemsList(): Array<DatasetSnapshot>;
+  setItemsList(value: Array<DatasetSnapshot>): DatasetSnapshotList;
+  clearItemsList(): DatasetSnapshotList;
+  addItems(value?: DatasetSnapshot, index?: number): DatasetSnapshot;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetRunList.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetRunList): DatasetRunList.AsObject;
-  static serializeBinaryToWriter(message: DatasetRunList, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetRunList;
-  static deserializeBinaryFromReader(message: DatasetRunList, reader: jspb.BinaryReader): DatasetRunList;
+  toObject(includeInstance?: boolean): DatasetSnapshotList.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetSnapshotList): DatasetSnapshotList.AsObject;
+  static serializeBinaryToWriter(message: DatasetSnapshotList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetSnapshotList;
+  static deserializeBinaryFromReader(message: DatasetSnapshotList, reader: jspb.BinaryReader): DatasetSnapshotList;
 }
 
-export namespace DatasetRunList {
+export namespace DatasetSnapshotList {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
-    itemsList: Array<DatasetRun.AsObject>,
+    itemsList: Array<DatasetSnapshot.AsObject>,
   }
 }
 
-export class DatasetRunSpec extends jspb.Message {
+export class DatasetSnapshotSpec extends jspb.Message {
   getOwner(): string;
-  setOwner(value: string): DatasetRunSpec;
+  setOwner(value: string): DatasetSnapshotSpec;
   hasOwner(): boolean;
-  clearOwner(): DatasetRunSpec;
-
-  getRunversion(): number;
-  setRunversion(value: number): DatasetRunSpec;
-  hasRunversion(): boolean;
-  clearRunversion(): DatasetRunSpec;
+  clearOwner(): DatasetSnapshotSpec;
 
   getDatasetname(): string;
-  setDatasetname(value: string): DatasetRunSpec;
+  setDatasetname(value: string): DatasetSnapshotSpec;
   hasDatasetname(): boolean;
-  clearDatasetname(): DatasetRunSpec;
-
-  getDatasetversion(): number;
-  setDatasetversion(value: number): DatasetRunSpec;
-  hasDatasetversion(): boolean;
-  clearDatasetversion(): DatasetRunSpec;
+  clearDatasetname(): DatasetSnapshotSpec;
 
   getTimeout(): number;
-  setTimeout(value: number): DatasetRunSpec;
+  setTimeout(value: number): DatasetSnapshotSpec;
   hasTimeout(): boolean;
-  clearTimeout(): DatasetRunSpec;
+  clearTimeout(): DatasetSnapshotSpec;
 
   getPause(): boolean;
-  setPause(value: boolean): DatasetRunSpec;
+  setPause(value: boolean): DatasetSnapshotSpec;
   hasPause(): boolean;
-  clearPause(): DatasetRunSpec;
+  clearPause(): DatasetSnapshotSpec;
 
   getAbort(): boolean;
-  setAbort(value: boolean): DatasetRunSpec;
+  setAbort(value: boolean): DatasetSnapshotSpec;
   hasAbort(): boolean;
-  clearAbort(): DatasetRunSpec;
+  clearAbort(): DatasetSnapshotSpec;
 
   getModelclassrunname(): string;
-  setModelclassrunname(value: string): DatasetRunSpec;
+  setModelclassrunname(value: string): DatasetSnapshotSpec;
   hasModelclassrunname(): boolean;
-  clearModelclassrunname(): DatasetRunSpec;
+  clearModelclassrunname(): DatasetSnapshotSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetRunSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetRunSpec): DatasetRunSpec.AsObject;
-  static serializeBinaryToWriter(message: DatasetRunSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetRunSpec;
-  static deserializeBinaryFromReader(message: DatasetRunSpec, reader: jspb.BinaryReader): DatasetRunSpec;
+  toObject(includeInstance?: boolean): DatasetSnapshotSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetSnapshotSpec): DatasetSnapshotSpec.AsObject;
+  static serializeBinaryToWriter(message: DatasetSnapshotSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetSnapshotSpec;
+  static deserializeBinaryFromReader(message: DatasetSnapshotSpec, reader: jspb.BinaryReader): DatasetSnapshotSpec;
 }
 
-export namespace DatasetRunSpec {
+export namespace DatasetSnapshotSpec {
   export type AsObject = {
     owner?: string,
-    runversion?: number,
     datasetname?: string,
-    datasetversion?: number,
     timeout?: number,
     pause?: boolean,
     abort?: boolean,
@@ -2241,124 +2229,136 @@ export namespace DatasetRunSpec {
   }
 }
 
-export class DatasetRunStatus extends jspb.Message {
+export class DatasetSnapshotStatus extends jspb.Message {
   getObservedgeneration(): number;
-  setObservedgeneration(value: number): DatasetRunStatus;
+  setObservedgeneration(value: number): DatasetSnapshotStatus;
   hasObservedgeneration(): boolean;
-  clearObservedgeneration(): DatasetRunStatus;
+  clearObservedgeneration(): DatasetSnapshotStatus;
 
   getManifestlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setManifestlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetRunStatus;
+  setManifestlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetSnapshotStatus;
   hasManifestlocation(): boolean;
-  clearManifestlocation(): DatasetRunStatus;
+  clearManifestlocation(): DatasetSnapshotStatus;
+
+  getManifestversion(): number;
+  setManifestversion(value: number): DatasetSnapshotStatus;
+  hasManifestversion(): boolean;
+  clearManifestversion(): DatasetSnapshotStatus;
+
+  getSnapshotversion(): number;
+  setSnapshotversion(value: number): DatasetSnapshotStatus;
+  hasSnapshotversion(): boolean;
+  clearSnapshotversion(): DatasetSnapshotStatus;
 
   getStatistics(): DatasetStatistics | undefined;
-  setStatistics(value?: DatasetStatistics): DatasetRunStatus;
+  setStatistics(value?: DatasetStatistics): DatasetSnapshotStatus;
   hasStatistics(): boolean;
-  clearStatistics(): DatasetRunStatus;
+  clearStatistics(): DatasetSnapshotStatus;
 
   getPhase(): string;
-  setPhase(value: string): DatasetRunStatus;
+  setPhase(value: string): DatasetSnapshotStatus;
   hasPhase(): boolean;
-  clearPhase(): DatasetRunStatus;
+  clearPhase(): DatasetSnapshotStatus;
 
   getReportname(): string;
-  setReportname(value: string): DatasetRunStatus;
+  setReportname(value: string): DatasetSnapshotStatus;
   hasReportname(): boolean;
-  clearReportname(): DatasetRunStatus;
+  clearReportname(): DatasetSnapshotStatus;
 
   getReportlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setReportlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetRunStatus;
+  setReportlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetSnapshotStatus;
   hasReportlocation(): boolean;
-  clearReportlocation(): DatasetRunStatus;
+  clearReportlocation(): DatasetSnapshotStatus;
 
   getProfilelocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setProfilelocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetRunStatus;
+  setProfilelocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetSnapshotStatus;
   hasProfilelocation(): boolean;
-  clearProfilelocation(): DatasetRunStatus;
+  clearProfilelocation(): DatasetSnapshotStatus;
 
   getAnomalieslocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setAnomalieslocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetRunStatus;
+  setAnomalieslocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetSnapshotStatus;
   hasAnomalieslocation(): boolean;
-  clearAnomalieslocation(): DatasetRunStatus;
+  clearAnomalieslocation(): DatasetSnapshotStatus;
 
   getImbalanced(): boolean;
-  setImbalanced(value: boolean): DatasetRunStatus;
+  setImbalanced(value: boolean): DatasetSnapshotStatus;
   hasImbalanced(): boolean;
-  clearImbalanced(): DatasetRunStatus;
+  clearImbalanced(): DatasetSnapshotStatus;
 
   getUnittestresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setUnittestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetRunStatus;
+  setUnittestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): DatasetSnapshotStatus;
   hasUnittestresults(): boolean;
-  clearUnittestresults(): DatasetRunStatus;
+  clearUnittestresults(): DatasetSnapshotStatus;
 
   getFailuremessage(): string;
-  setFailuremessage(value: string): DatasetRunStatus;
+  setFailuremessage(value: string): DatasetSnapshotStatus;
   hasFailuremessage(): boolean;
-  clearFailuremessage(): DatasetRunStatus;
+  clearFailuremessage(): DatasetSnapshotStatus;
 
   getProgress(): number;
-  setProgress(value: number): DatasetRunStatus;
+  setProgress(value: number): DatasetSnapshotStatus;
   hasProgress(): boolean;
-  clearProgress(): DatasetRunStatus;
+  clearProgress(): DatasetSnapshotStatus;
 
   getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
-  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): DatasetRunStatus;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): DatasetSnapshotStatus;
   hasLogs(): boolean;
-  clearLogs(): DatasetRunStatus;
+  clearLogs(): DatasetSnapshotStatus;
 
   getHash(): string;
-  setHash(value: string): DatasetRunStatus;
+  setHash(value: string): DatasetSnapshotStatus;
   hasHash(): boolean;
-  clearHash(): DatasetRunStatus;
+  clearHash(): DatasetSnapshotStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetRunStatus;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetSnapshotStatus;
   hasUpdatedat(): boolean;
-  clearUpdatedat(): DatasetRunStatus;
+  clearUpdatedat(): DatasetSnapshotStatus;
 
   getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetRunStatus;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetSnapshotStatus;
   hasCompletedat(): boolean;
-  clearCompletedat(): DatasetRunStatus;
+  clearCompletedat(): DatasetSnapshotStatus;
 
   getLaststudyat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLaststudyat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetRunStatus;
+  setLaststudyat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetSnapshotStatus;
   hasLaststudyat(): boolean;
-  clearLaststudyat(): DatasetRunStatus;
+  clearLaststudyat(): DatasetSnapshotStatus;
 
   getImages(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images | undefined;
-  setImages(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images): DatasetRunStatus;
+  setImages(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images): DatasetSnapshotStatus;
   hasImages(): boolean;
-  clearImages(): DatasetRunStatus;
+  clearImages(): DatasetSnapshotStatus;
 
   getFeaturehistogramref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setFeaturehistogramref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetRunStatus;
+  setFeaturehistogramref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetSnapshotStatus;
   hasFeaturehistogramref(): boolean;
-  clearFeaturehistogramref(): DatasetRunStatus;
+  clearFeaturehistogramref(): DatasetSnapshotStatus;
 
   getGroupby(): DatasetGroupByStatus | undefined;
-  setGroupby(value?: DatasetGroupByStatus): DatasetRunStatus;
+  setGroupby(value?: DatasetGroupByStatus): DatasetSnapshotStatus;
   hasGroupby(): boolean;
-  clearGroupby(): DatasetRunStatus;
+  clearGroupby(): DatasetSnapshotStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
-  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): DatasetRunStatus;
-  clearConditionsList(): DatasetRunStatus;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): DatasetSnapshotStatus;
+  clearConditionsList(): DatasetSnapshotStatus;
   addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetRunStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetRunStatus): DatasetRunStatus.AsObject;
-  static serializeBinaryToWriter(message: DatasetRunStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetRunStatus;
-  static deserializeBinaryFromReader(message: DatasetRunStatus, reader: jspb.BinaryReader): DatasetRunStatus;
+  toObject(includeInstance?: boolean): DatasetSnapshotStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetSnapshotStatus): DatasetSnapshotStatus.AsObject;
+  static serializeBinaryToWriter(message: DatasetSnapshotStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetSnapshotStatus;
+  static deserializeBinaryFromReader(message: DatasetSnapshotStatus, reader: jspb.BinaryReader): DatasetSnapshotStatus;
 }
 
-export namespace DatasetRunStatus {
+export namespace DatasetSnapshotStatus {
   export type AsObject = {
     observedgeneration?: number,
     manifestlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    manifestversion?: number,
+    snapshotversion?: number,
     statistics?: DatasetStatistics.AsObject,
     phase?: string,
     reportname?: string,
@@ -2517,16 +2517,6 @@ export class DatasetSpec extends jspb.Message {
   hasModelclassname(): boolean;
   clearModelclassname(): DatasetSpec;
 
-  getModelclassrunname(): string;
-  setModelclassrunname(value: string): DatasetSpec;
-  hasModelclassrunname(): boolean;
-  clearModelclassrunname(): DatasetSpec;
-
-  getFeaturegroupsList(): Array<k8s_io_api_core_v1_generated_pb.ObjectReference>;
-  setFeaturegroupsList(value: Array<k8s_io_api_core_v1_generated_pb.ObjectReference>): DatasetSpec;
-  clearFeaturegroupsList(): DatasetSpec;
-  addFeaturegroups(value?: k8s_io_api_core_v1_generated_pb.ObjectReference, index?: number): k8s_io_api_core_v1_generated_pb.ObjectReference;
-
   getFeaturegroupname(): string;
   setFeaturegroupname(value: string): DatasetSpec;
   hasFeaturegroupname(): boolean;
@@ -2579,8 +2569,6 @@ export namespace DatasetSpec {
     grouplocations?: GroupDatasetLocationSpec.AsObject,
     keyList: Array<string>,
     modelclassname?: string,
-    modelclassrunname?: string,
-    featuregroupsList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
     featuregroupname?: string,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     tagsList: Array<string>,
@@ -2648,15 +2636,20 @@ export class DatasetStatus extends jspb.Message {
   hasVersion(): boolean;
   clearVersion(): DatasetStatus;
 
-  getRunversion(): number;
-  setRunversion(value: number): DatasetStatus;
-  hasRunversion(): boolean;
-  clearRunversion(): DatasetStatus;
+  getLastsnapshotversion(): number;
+  setLastsnapshotversion(value: number): DatasetStatus;
+  hasLastsnapshotversion(): boolean;
+  clearLastsnapshotversion(): DatasetStatus;
 
-  getLastrunat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrunat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
-  hasLastrunat(): boolean;
-  clearLastrunat(): DatasetStatus;
+  getAvailablesnapshotversionsList(): Array<number>;
+  setAvailablesnapshotversionsList(value: Array<number>): DatasetStatus;
+  clearAvailablesnapshotversionsList(): DatasetStatus;
+  addAvailablesnapshotversions(value: number, index?: number): DatasetStatus;
+
+  getLastsnapshotat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastsnapshotat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
+  hasLastsnapshotat(): boolean;
+  clearLastsnapshotat(): DatasetStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): DatasetStatus;
@@ -2690,8 +2683,9 @@ export namespace DatasetStatus {
   export type AsObject = {
     observedgeneration?: number,
     version?: number,
-    runversion?: number,
-    lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastsnapshotversion?: number,
+    availablesnapshotversionsList: Array<number>,
+    lastsnapshotat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failuremessage?: string,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,

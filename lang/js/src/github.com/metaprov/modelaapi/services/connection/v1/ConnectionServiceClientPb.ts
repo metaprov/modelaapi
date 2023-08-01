@@ -297,5 +297,134 @@ export class ConnectionServiceClient {
     this.methodDescriptorTestConnection);
   }
 
+  methodDescriptorGetDatabases = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/GetDatabases',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetDatabasesRequest,
+    github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetDatabasesResponse,
+    (request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetDatabasesRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetDatabasesResponse.deserializeBinary
+  );
+
+  getDatabases(
+    request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetDatabasesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetDatabasesResponse>;
+
+  getDatabases(
+    request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetDatabasesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetDatabasesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetDatabasesResponse>;
+
+  getDatabases(
+    request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetDatabasesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetDatabasesResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/GetDatabases',
+        request,
+        metadata || {},
+        this.methodDescriptorGetDatabases,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/GetDatabases',
+    request,
+    metadata || {},
+    this.methodDescriptorGetDatabases);
+  }
+
+  methodDescriptorGetTables = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/GetTables',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetTablesRequest,
+    github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetTablesResponse,
+    (request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetTablesRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetTablesResponse.deserializeBinary
+  );
+
+  getTables(
+    request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetTablesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetTablesResponse>;
+
+  getTables(
+    request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetTablesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetTablesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetTablesResponse>;
+
+  getTables(
+    request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetTablesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetTablesResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/GetTables',
+        request,
+        metadata || {},
+        this.methodDescriptorGetTables,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/GetTables',
+    request,
+    metadata || {},
+    this.methodDescriptorGetTables);
+  }
+
+  methodDescriptorExecuteSql = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/ExecuteSql',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ExecuteSqlRequest,
+    github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ExecuteSqlResponse,
+    (request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ExecuteSqlRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ExecuteSqlResponse.deserializeBinary
+  );
+
+  executeSql(
+    request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ExecuteSqlRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ExecuteSqlResponse>;
+
+  executeSql(
+    request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ExecuteSqlRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ExecuteSqlResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ExecuteSqlResponse>;
+
+  executeSql(
+    request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ExecuteSqlRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ExecuteSqlResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/ExecuteSql',
+        request,
+        metadata || {},
+        this.methodDescriptorExecuteSql,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/ExecuteSql',
+    request,
+    metadata || {},
+    this.methodDescriptorExecuteSql);
+  }
+
 }
 

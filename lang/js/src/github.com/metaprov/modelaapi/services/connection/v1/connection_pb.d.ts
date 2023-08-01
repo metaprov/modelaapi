@@ -3,6 +3,7 @@ import * as jspb from 'google-protobuf'
 import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
 
 export class ListConnectionsRequest extends jspb.Message {
@@ -272,6 +273,136 @@ export namespace TestConnectionResponse {
   export type AsObject = {
     status: boolean,
     msg: string,
+  }
+}
+
+export class GetDatabasesRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetDatabasesRequest;
+
+  getName(): string;
+  setName(value: string): GetDatabasesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDatabasesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDatabasesRequest): GetDatabasesRequest.AsObject;
+  static serializeBinaryToWriter(message: GetDatabasesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDatabasesRequest;
+  static deserializeBinaryFromReader(message: GetDatabasesRequest, reader: jspb.BinaryReader): GetDatabasesRequest;
+}
+
+export namespace GetDatabasesRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class GetDatabasesResponse extends jspb.Message {
+  getDatabasesList(): Array<string>;
+  setDatabasesList(value: Array<string>): GetDatabasesResponse;
+  clearDatabasesList(): GetDatabasesResponse;
+  addDatabases(value: string, index?: number): GetDatabasesResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDatabasesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDatabasesResponse): GetDatabasesResponse.AsObject;
+  static serializeBinaryToWriter(message: GetDatabasesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDatabasesResponse;
+  static deserializeBinaryFromReader(message: GetDatabasesResponse, reader: jspb.BinaryReader): GetDatabasesResponse;
+}
+
+export namespace GetDatabasesResponse {
+  export type AsObject = {
+    databasesList: Array<string>,
+  }
+}
+
+export class GetTablesRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetTablesRequest;
+
+  getName(): string;
+  setName(value: string): GetTablesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTablesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTablesRequest): GetTablesRequest.AsObject;
+  static serializeBinaryToWriter(message: GetTablesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTablesRequest;
+  static deserializeBinaryFromReader(message: GetTablesRequest, reader: jspb.BinaryReader): GetTablesRequest;
+}
+
+export namespace GetTablesRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class GetTablesResponse extends jspb.Message {
+  getTablesList(): Array<string>;
+  setTablesList(value: Array<string>): GetTablesResponse;
+  clearTablesList(): GetTablesResponse;
+  addTables(value: string, index?: number): GetTablesResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTablesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTablesResponse): GetTablesResponse.AsObject;
+  static serializeBinaryToWriter(message: GetTablesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTablesResponse;
+  static deserializeBinaryFromReader(message: GetTablesResponse, reader: jspb.BinaryReader): GetTablesResponse;
+}
+
+export namespace GetTablesResponse {
+  export type AsObject = {
+    tablesList: Array<string>,
+  }
+}
+
+export class ExecuteSqlRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ExecuteSqlRequest;
+
+  getName(): string;
+  setName(value: string): ExecuteSqlRequest;
+
+  getSql(): string;
+  setSql(value: string): ExecuteSqlRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteSqlRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSqlRequest): ExecuteSqlRequest.AsObject;
+  static serializeBinaryToWriter(message: ExecuteSqlRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSqlRequest;
+  static deserializeBinaryFromReader(message: ExecuteSqlRequest, reader: jspb.BinaryReader): ExecuteSqlRequest;
+}
+
+export namespace ExecuteSqlRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+    sql: string,
+  }
+}
+
+export class ExecuteSqlResponse extends jspb.Message {
+  getTableview(): github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView | undefined;
+  setTableview(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView): ExecuteSqlResponse;
+  hasTableview(): boolean;
+  clearTableview(): ExecuteSqlResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteSqlResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSqlResponse): ExecuteSqlResponse.AsObject;
+  static serializeBinaryToWriter(message: ExecuteSqlResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSqlResponse;
+  static deserializeBinaryFromReader(message: ExecuteSqlResponse, reader: jspb.BinaryReader): ExecuteSqlResponse;
+}
+
+export namespace ExecuteSqlResponse {
+  export type AsObject = {
+    tableview?: github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView.AsObject,
   }
 }
 

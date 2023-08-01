@@ -1498,10 +1498,19 @@ func (runs *RunSchedule) IsDue() bool {
 
 func (runs *RunScheduleStatus) Start() {
 	now := metav1.Now()
-	runs.LastRunAt = &now
+	runs.LastRunCreationAt = &now
 }
 
 func (runs *RunSchedule) SetNext(nextRun metav1.Time) {}
+
+type SnapshotReference struct {
+	// Dataset specifies the name of the dataset which the snapshot belongs to
+	Dataset string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
+	// Version specifies the version of the snapshot to use. If empty, the latest available snapshot will be used
+	Version *int32 `json:"version,omitempty" protobuf:"varint,2,opt,name=version"`
+}
+
+type Version int32
 
 // Measurement is a value for a specific metric
 type Measurement struct {

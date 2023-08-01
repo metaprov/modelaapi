@@ -20,6 +20,8 @@ var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb
 goog.object.extend(proto, google_protobuf_empty_pb);
 var github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb);
+var github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated_pb.js');
+goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb);
 var github_com_metaprov_modelaapi_services_common_v1_common_pb = require('../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb.js');
 goog.object.extend(proto, github_com_metaprov_modelaapi_services_common_v1_common_pb);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dataset.v1.CreateDatasetRequest', null, global);
@@ -2372,8 +2374,7 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.p
 proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    runversion: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    snapshot: (f = msg.getSnapshot()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2415,12 +2416,9 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.d
       msg.setNamespace(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setRunversion(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.deserializeBinaryFromReader);
+      msg.setSnapshot(value);
       break;
     default:
       reader.skipField();
@@ -2458,18 +2456,12 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.s
       f
     );
   }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getSnapshot();
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
-    );
-  }
-  f = message.getRunversion();
-  if (f !== 0) {
-    writer.writeInt32(
-      3,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.serializeBinaryToWriter
     );
   }
 };
@@ -2494,38 +2486,39 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.p
 
 
 /**
- * optional string name = 2;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference snapshot = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference}
  */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.prototype.getSnapshot = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference, 2));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.prototype.setSnapshot = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.prototype.clearSnapshot = function() {
+  return this.setSnapshot(undefined);
 };
 
 
 /**
- * optional int32 runVersion = 3;
- * @return {number}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.prototype.getRunversion = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.prototype.setRunversion = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest.prototype.hasSnapshot = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
