@@ -2265,6 +2265,11 @@ export class DatasetSnapshotStatus extends jspb.Message {
   hasReportname(): boolean;
   clearReportname(): DatasetSnapshotStatus;
 
+  getDatalocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setDatalocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetSnapshotStatus;
+  hasDatalocation(): boolean;
+  clearDatalocation(): DatasetSnapshotStatus;
+
   getReportlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
   setReportlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetSnapshotStatus;
   hasReportlocation(): boolean;
@@ -2362,6 +2367,7 @@ export namespace DatasetSnapshotStatus {
     statistics?: DatasetStatistics.AsObject,
     phase?: string,
     reportname?: string,
+    datalocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     reportlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     profilelocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     anomalieslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,

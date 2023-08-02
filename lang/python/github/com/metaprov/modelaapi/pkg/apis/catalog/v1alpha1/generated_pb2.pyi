@@ -768,12 +768,12 @@ class RunStatus(_message.Message):
     def __init__(self, lastRunAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastRunId: _Optional[str] = ..., activeRunId: _Optional[str] = ..., activeRunLogs: _Optional[_Iterable[_Union[ContainerLog, _Mapping]]] = ..., runRecords: _Optional[_Iterable[_Union[RunRecord, _Mapping]]] = ...) -> None: ...
 
 class SnapshotReference(_message.Message):
-    __slots__ = ["owner", "version"]
-    OWNER_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["dataset", "version"]
+    DATASET_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
-    owner: str
+    dataset: str
     version: int
-    def __init__(self, owner: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+    def __init__(self, dataset: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class TestSuite(_message.Message):
     __slots__ = ["enabled", "tests"]

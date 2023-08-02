@@ -69,8 +69,7 @@ message DeleteDatasetResponse {}
 
 message GetDatasetProfileRequest {
     string namespace = 1;
-    string name = 2;
-    int32 runVersion = 3;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference snapshot = 2;
 }
 
 message GetDatasetProfileResponse {
@@ -92,12 +91,22 @@ message DownloadDatasetResponse {
 
 message GetDatasetAnomaliesRequest {
     string namespace = 1;
-    string name = 2;
-    int32 runVersion = 3;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference snapshot = 2;
 }
 
 message GetDatasetAnomaliesResponse {
     github.com.metaprov.modelaapi.services.common.v1.TableView table = 1;
+}
+
+/////// Compare Datasets ///////
+
+message CompareDatasetsRequest {
+    string namespace = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference snapshots = 2;
+}
+
+message CompareDatasetsResponse {
+    repeated github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profiles = 1;
 }
 
 /////// Dataset Service ///////
@@ -126,18 +135,22 @@ service DatasetService {
     }
 
     rpc DeleteDataset(DeleteDatasetRequest) returns (DeleteDatasetResponse) {
-        option (google.api.http).delete = "/v1/datasets/{name}";
+        option (google.api.http).delete = "/v1/datasets/{namespace}/{name}";
     }
 
     rpc GetDatasetProfile(GetDatasetProfileRequest) returns (GetDatasetProfileResponse) {
-        option (google.api.http).get = "/v1/datasets/{namespace}/{name}/{runVersion}:profile";
+        option (google.api.http).post = "/v1/datasets/{namespace}/{snapshot.dataset}:profile";
     }
 
     rpc DownloadDataset(DownloadDatasetRequest) returns (DownloadDatasetResponse) {
-        option (google.api.http).post = "/v1/datasets/{namespace}/{name}/{runVersion}:download";
+        option (google.api.http).post = "/v1/datasets/{namespace}/{snapshot.dataset}:download";
     }
 
     rpc GetAnomalies(GetDatasetAnomaliesRequest) returns (GetDatasetAnomaliesResponse) {
-        option (google.api.http).get = "/v1/models/{namespace}/{name}/{runVersion}:anomalies";
+        option (google.api.http).post = "/v1/datasets/{namespace}/{snapshot.dataset}:anomalies";
+    }
+
+    rpc CompareDatasets(CompareDatasetsRequest) returns (CompareDatasetsResponse) {
+        option (google.api.http).post = "/v1/datasets/{namespace}:compare";
     }
 }

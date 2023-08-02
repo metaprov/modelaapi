@@ -131,8 +131,34 @@ func (dataset *DatasetSnapshot) MarkSkewColumns() {
 	}
 }
 
-func (dataset *DatasetSnapshot) Ingested() bool {
-	return dataset.GetCondition(DatasetSnapshotIngested).Status == metav1.ConditionTrue
+func (dataset *DatasetSnapshot) RefreshProgress() {
+	if dataset.IsReady() || dataset.IsFailed() || dataset.Aborted() {
+		dataset.Status.Progress = 100
+	} else if dataset.Reported() {
+		dataset.Status.Progress = 80
+	} else if dataset.Profiled() {
+		dataset.Status.Progress = 60
+	} else if dataset.UnitTested() {
+		dataset.Status.Progress = 60
+	} else if dataset.Snapshotted() {
+		dataset.Status.Progress = 40
+	} else if dataset.Generated() {
+		dataset.Status.Progress = 40
+	} else if dataset.Prepared() {
+		dataset.Status.Progress = 20
+	}
+}
+
+func (dataset *DatasetSnapshot) ReachedMaxTime() bool {
+	if dataset.Spec.Timeout == nil {
+		return false
+	}
+	duration := metav1.Now().Unix() - dataset.CreationTimestamp.Unix()
+	return int32(duration/60) >= int32(*dataset.Spec.Timeout)
+}
+
+func (dataset *DatasetSnapshot) Prepared() bool {
+	return dataset.GetCondition(DatasetSnapshotPrepared).Status == metav1.ConditionTrue
 }
 
 func (dataset *DatasetSnapshot) UnitTested() bool {
@@ -155,6 +181,62 @@ func (dataset *DatasetSnapshot) Generated() bool {
 	return dataset.GetCondition(DatasetSnapshotGenerated).Status == metav1.ConditionTrue
 }
 
+func (dataset *DatasetSnapshot) Aborted() bool {
+	return dataset.GetCondition(DatasetSnapshotAborted).Status == metav1.ConditionTrue
+}
+
+func (dataset *DatasetSnapshot) Paused() bool {
+	return dataset.GetCondition(DatasetSnapshotPaused).Status == metav1.ConditionTrue
+}
+
+func (dataset *DatasetSnapshot) MarkAborted() {
+	dataset.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(DatasetSnapshotAborted),
+		Status: metav1.ConditionTrue,
+		Reason: string(DatasetSnapshotAborted),
+	})
+	dataset.Status.Phase = DatasetSnapshotPhaseAborted
+	dataset.RefreshProgress()
+}
+
+/////// Preparing Condition ///////
+
+func (dataset *DatasetSnapshot) MarkPrepareFailed(reason string, msg string) {
+	dataset.CreateOrUpdateCondition(metav1.Condition{
+		Type:    string(DatasetSnapshotPrepared),
+		Status:  metav1.ConditionFalse,
+		Reason:  reason,
+		Message: msg,
+	})
+	dataset.Status.Phase = DatasetSnapshotPhaseFailed
+	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Prepare failed: %s", msg))
+	dataset.RefreshProgress()
+	now := metav1.Now()
+	if dataset.Status.CompletedAt == nil {
+		dataset.Status.CompletedAt = &now
+	}
+
+}
+
+func (dataset *DatasetSnapshot) MarkPrepareSuccess() {
+	dataset.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(DatasetSnapshotPrepared),
+		Status: metav1.ConditionTrue,
+	})
+	dataset.Status.Phase = DatasetSnapshotPhasePrepared
+	dataset.RefreshProgress()
+}
+
+func (dataset *DatasetSnapshot) MarkPreparing() {
+	dataset.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(DatasetSnapshotSnapshotted),
+		Status: metav1.ConditionFalse,
+		Reason: string(DatasetSnapshotPhasePreparing),
+	})
+	dataset.Status.Phase = DatasetSnapshotPhasePreparing
+	dataset.RefreshProgress()
+}
+
 /////// Snapshot Condition ///////
 
 func (dataset *DatasetSnapshot) MarkSnapshotFailed(reason string, msg string) {
@@ -166,7 +248,7 @@ func (dataset *DatasetSnapshot) MarkSnapshotFailed(reason string, msg string) {
 	})
 	dataset.Status.Phase = DatasetSnapshotPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Snapshot failed: %s", msg))
-	dataset.Status.Progress = 100
+	dataset.RefreshProgress()
 	now := metav1.Now()
 	if dataset.Status.CompletedAt == nil {
 		dataset.Status.CompletedAt = &now
@@ -180,8 +262,7 @@ func (dataset *DatasetSnapshot) MarkSnapshotSuccess() {
 		Status: metav1.ConditionTrue,
 	})
 	dataset.Status.Phase = DatasetSnapshotPhaseSnapshotSuccess
-	dataset.Status.Progress = 10
-
+	dataset.RefreshProgress()
 }
 
 func (dataset *DatasetSnapshot) MarkTakingSnapshot() {
@@ -191,7 +272,7 @@ func (dataset *DatasetSnapshot) MarkTakingSnapshot() {
 		Reason: string(DatasetSnapshotPhaseSnapshotRunning),
 	})
 	dataset.Status.Phase = DatasetSnapshotPhaseSnapshotRunning
-	dataset.Status.Progress = 0
+	dataset.RefreshProgress()
 }
 
 /////// Group Lifecycle ///////
@@ -251,7 +332,7 @@ func (dataset *DatasetSnapshot) MarkGroupFailed(reason string, msg string) {
 	})
 	dataset.Status.Phase = DatasetSnapshotPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Group by failed: %s", msg))
-	dataset.Status.Progress = 100
+	dataset.RefreshProgress()
 	now := metav1.Now()
 	if dataset.Status.CompletedAt == nil {
 		dataset.Status.CompletedAt = &now
@@ -266,8 +347,7 @@ func (dataset *DatasetSnapshot) MarkGroupSuccess() {
 		Reason: string(DatasetSnapshotGrouped),
 	})
 	dataset.Status.Phase = DatasetSnapshotPhaseGrouped
-	dataset.Status.Progress = 30
-
+	dataset.RefreshProgress()
 }
 
 func (dataset *DatasetSnapshot) MarkGrouping() {
@@ -277,7 +357,7 @@ func (dataset *DatasetSnapshot) MarkGrouping() {
 		Reason: string(DatasetSnapshotPhaseGrouping),
 	})
 	dataset.Status.Phase = DatasetSnapshotPhaseGrouping
-	dataset.Status.Progress = 20
+	dataset.RefreshProgress()
 }
 
 /////// Unit Test Condition ///////
@@ -292,7 +372,7 @@ func (dataset *DatasetSnapshot) MarkUnitTestFailed(reason string, msg string) {
 
 	dataset.Status.Phase = DatasetSnapshotPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Unit test failed: %s", msg))
-	dataset.Status.Progress = 100
+	dataset.RefreshProgress()
 	now := metav1.Now()
 	if dataset.Status.CompletedAt == nil {
 		dataset.Status.CompletedAt = &now
@@ -305,8 +385,7 @@ func (dataset *DatasetSnapshot) MarkUnitTested() {
 		Status: metav1.ConditionTrue,
 		Reason: string(DatasetSnapshotUnitTested),
 	})
-	dataset.Status.Progress = 90
-
+	dataset.RefreshProgress()
 }
 
 func (dataset *DatasetSnapshot) MarkUnitTesting() {
@@ -316,7 +395,7 @@ func (dataset *DatasetSnapshot) MarkUnitTesting() {
 		Reason: string(DatasetSnapshotPhaseUnitTesting),
 	})
 	dataset.Status.Phase = DatasetSnapshotPhaseUnitTesting
-	dataset.Status.Progress = 80
+	dataset.RefreshProgress()
 }
 
 /////// Generating Condition ///////
@@ -328,8 +407,7 @@ func (dataset *DatasetSnapshot) MarkGenerating() {
 		Reason: string(DatasetSnapshotPhaseGenerating),
 	})
 	dataset.Status.Phase = DatasetSnapshotPhaseGenerating
-	dataset.Status.Progress = 40
-
+	dataset.RefreshProgress()
 }
 
 func (dataset *DatasetSnapshot) MarkGenerated() {
@@ -339,8 +417,7 @@ func (dataset *DatasetSnapshot) MarkGenerated() {
 		Reason: string(DatasetSnapshotGenerated),
 	})
 	dataset.Status.Phase = DatasetSnapshotPhaseGenerateSuccess
-	dataset.Status.Progress = 50
-
+	dataset.RefreshProgress()
 }
 
 func (dataset *DatasetSnapshot) MarkGeneratedFailed(reason string, msg string) {
@@ -352,7 +429,7 @@ func (dataset *DatasetSnapshot) MarkGeneratedFailed(reason string, msg string) {
 	})
 	dataset.Status.Phase = DatasetSnapshotPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Generation failed: %s", msg))
-	dataset.Status.Progress = 100
+	dataset.RefreshProgress()
 	now := metav1.Now()
 	if dataset.Status.CompletedAt == nil {
 		dataset.Status.CompletedAt = &now
@@ -368,7 +445,7 @@ func (dataset *DatasetSnapshot) MarkReporting() {
 		Reason: string(DatasetSnapshotPhaseReportRunning),
 	})
 	dataset.Status.Phase = DatasetSnapshotPhaseReportRunning
-	dataset.Status.Progress = 80
+	dataset.RefreshProgress()
 }
 
 func (dataset *DatasetSnapshot) MarkReported() {
@@ -378,7 +455,7 @@ func (dataset *DatasetSnapshot) MarkReported() {
 		Reason: string(DatasetSnapshotReported),
 	})
 	dataset.Status.Phase = DatasetSnapshotPhaseReportSuccess
-	dataset.Status.Progress = 90
+	dataset.RefreshProgress()
 }
 
 func (dataset *DatasetSnapshot) MarkReportFailed(reason string, msg string) {
@@ -399,7 +476,7 @@ func (dataset *DatasetSnapshot) MarkProfiling() {
 		Reason: string(DatasetSnapshotPhaseProfileRunning),
 	})
 	dataset.Status.Phase = DatasetSnapshotPhaseProfileRunning
-	dataset.Status.Progress = 60
+	dataset.RefreshProgress()
 }
 
 func (dataset *DatasetSnapshot) MarkProfiled(profileLocation catalog.FileLocation) {
@@ -410,7 +487,7 @@ func (dataset *DatasetSnapshot) MarkProfiled(profileLocation catalog.FileLocatio
 	})
 	dataset.Status.ProfileLocation = profileLocation
 	dataset.Status.Phase = DatasetSnapshotPhaseProfileSuccess
-	dataset.Status.Progress = 70
+	dataset.RefreshProgress()
 }
 
 func (dataset *DatasetSnapshot) MarkProfiledFailed(msg string) {
@@ -435,7 +512,7 @@ func (dataset *DatasetSnapshot) MarkReady() {
 		Reason: string(DatasetSnapshotReady),
 	})
 	dataset.Status.Phase = DatasetSnapshotPhaseReady
-	dataset.Status.Progress = 100
+	dataset.RefreshProgress()
 	now := metav1.Now()
 	if dataset.Status.CompletedAt == nil {
 		dataset.Status.CompletedAt = &now
@@ -451,7 +528,7 @@ func (dataset *DatasetSnapshot) MarkReadyFailed(reason string, err string) {
 	})
 	dataset.Status.Phase = DatasetSnapshotPhaseFailed
 	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Mark ready failed: %s", err))
-	dataset.Status.Progress = 100
+	dataset.RefreshProgress()
 	now := metav1.Now()
 	if dataset.Status.CompletedAt == nil {
 		dataset.Status.CompletedAt = &now
@@ -468,7 +545,7 @@ func (dataset *DatasetSnapshot) IsFailed() bool {
 
 func (dataset *DatasetSnapshot) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
 	level := infra.InfoAlertLevel
-	subject := fmt.Sprintf("Dataset run %s completed successfully", dataset.Name)
+	subject := fmt.Sprintf("Dataset snapshot %s completed successfully", dataset.Name)
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: dataset.Name,
@@ -500,7 +577,7 @@ func (dataset *DatasetSnapshot) CompletionAlert(notification catalog.Notificatio
 
 func (dataset *DatasetSnapshot) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
 	level := infra.ErrorAlertLevel
-	subject := fmt.Sprintf("Dataset %s failed with error: %v", dataset.Name, err.Error())
+	subject := fmt.Sprintf("Dataset snapshot %s failed with error: %v", dataset.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: dataset.Name,

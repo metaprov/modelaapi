@@ -1719,6 +1719,7 @@ func (in *DatasetSnapshotStatus) DeepCopyInto(out *DatasetSnapshotStatus) {
 	*out = *in
 	out.ManifestLocation = in.ManifestLocation
 	in.Statistics.DeepCopyInto(&out.Statistics)
+	out.DataLocation = in.DataLocation
 	out.ReportLocation = in.ReportLocation
 	out.ProfileLocation = in.ProfileLocation
 	out.AnomaliesLocation = in.AnomaliesLocation

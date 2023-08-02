@@ -19,7 +19,7 @@ const (
 	DataProductKind        KindName = "dataproducts"
 	DataProductVersionKind KindName = "dataproductversions"
 	DatasetKind            KindName = "datasets"
-	DatasetRunKind         KindName = "datasetruns"
+	DatasetSnapshotKind    KindName = "datasetsnapshots"
 	DataSourceKind         KindName = "datasources"
 	EntityKind             KindName = "entities"
 	FeatureGroupKind       KindName = "featuregroup"

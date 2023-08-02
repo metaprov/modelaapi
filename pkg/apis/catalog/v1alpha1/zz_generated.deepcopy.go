@@ -1898,7 +1898,7 @@ func (in *SnapshotReference) DeepCopyInto(out *SnapshotReference) {
 	*out = *in
 	if in.Version != nil {
 		in, out := &in.Version, &out.Version
-		*out = new(int32)
+		*out = new(Version)
 		**out = **in
 	}
 }

@@ -49,7 +49,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: DatasetSnapshot represents a single execution of a Dataset
+        description: DatasetSnapshot represents an ephemeral snapshot of a Dataset
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -183,6 +183,14 @@ spec:
                   - type
                   type: object
                 type: array
+              dataLocation:
+                description: DataLocation contains the location of the dataset snapshot
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    type: string
+                type: object
               failureMessage:
                 description: FailureMessage is set to a failure message in the case
                   that an error occurred during the run

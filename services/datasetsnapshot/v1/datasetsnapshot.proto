@@ -125,7 +125,7 @@ service DatasetSnapshotService {
         option (google.api.http).delete = "/v1/datasetsnapshots/{name}";
     }
 
-    rpc CompareDatasets(CompareDatasetSnapshotsRequest) returns (CompareDatasetSnapshotsResponse) {
+    rpc CompareDatasetSnapshots(CompareDatasetSnapshotsRequest) returns (CompareDatasetSnapshotsResponse) {
         option (google.api.http).post = "/v1/datasetsnapshots/{namespace}/{names}:compare";
     }
 

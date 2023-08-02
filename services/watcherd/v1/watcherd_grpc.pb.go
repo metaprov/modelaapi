@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type WatcherdServiceClient interface {
 	WatchDataset(ctx context.Context, in *WatchDatasetRequest, opts ...grpc.CallOption) (*WatchDatasetResponse, error)
+	WatchDatasetSnapshot(ctx context.Context, in *WatchDatasetSnapshotRequest, opts ...grpc.CallOption) (*WatchDatasetSnapshotResponse, error)
 	WatchModel(ctx context.Context, in *WatchModelRequest, opts ...grpc.CallOption) (*WatchModelResponse, error)
 	WatchAlert(ctx context.Context, in *WatchAlertRequest, opts ...grpc.CallOption) (*WatchAlertResponse, error)
 }
@@ -38,6 +39,15 @@ func NewWatcherdServiceClient(cc grpc.ClientConnInterface) WatcherdServiceClient
 func (c *watcherdServiceClient) WatchDataset(ctx context.Context, in *WatchDatasetRequest, opts ...grpc.CallOption) (*WatchDatasetResponse, error) {
 	out := new(WatchDatasetResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDataset", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *watcherdServiceClient) WatchDatasetSnapshot(ctx context.Context, in *WatchDatasetSnapshotRequest, opts ...grpc.CallOption) (*WatchDatasetSnapshotResponse, error) {
+	out := new(WatchDatasetSnapshotResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDatasetSnapshot", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -67,6 +77,7 @@ func (c *watcherdServiceClient) WatchAlert(ctx context.Context, in *WatchAlertRe
 // for forward compatibility
 type WatcherdServiceServer interface {
 	WatchDataset(context.Context, *WatchDatasetRequest) (*WatchDatasetResponse, error)
+	WatchDatasetSnapshot(context.Context, *WatchDatasetSnapshotRequest) (*WatchDatasetSnapshotResponse, error)
 	WatchModel(context.Context, *WatchModelRequest) (*WatchModelResponse, error)
 	WatchAlert(context.Context, *WatchAlertRequest) (*WatchAlertResponse, error)
 	mustEmbedUnimplementedWatcherdServiceServer()
@@ -78,6 +89,9 @@ type UnimplementedWatcherdServiceServer struct {
 
 func (UnimplementedWatcherdServiceServer) WatchDataset(context.Context, *WatchDatasetRequest) (*WatchDatasetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WatchDataset not implemented")
+}
+func (UnimplementedWatcherdServiceServer) WatchDatasetSnapshot(context.Context, *WatchDatasetSnapshotRequest) (*WatchDatasetSnapshotResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WatchDatasetSnapshot not implemented")
 }
 func (UnimplementedWatcherdServiceServer) WatchModel(context.Context, *WatchModelRequest) (*WatchModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WatchModel not implemented")
@@ -112,6 +126,24 @@ func _WatcherdService_WatchDataset_Handler(srv interface{}, ctx context.Context,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WatcherdServiceServer).WatchDataset(ctx, req.(*WatchDatasetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WatcherdService_WatchDatasetSnapshot_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(WatchDatasetSnapshotRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WatcherdServiceServer).WatchDatasetSnapshot(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDatasetSnapshot",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WatcherdServiceServer).WatchDatasetSnapshot(ctx, req.(*WatchDatasetSnapshotRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -162,6 +194,10 @@ var WatcherdService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "WatchDataset",
 			Handler:    _WatcherdService_WatchDataset_Handler,
+		},
+		{
+			MethodName: "WatchDatasetSnapshot",
+			Handler:    _WatcherdService_WatchDatasetSnapshot_Handler,
 		},
 		{
 			MethodName: "WatchModel",

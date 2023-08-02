@@ -19939,7 +19939,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotSpec.p
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.repeatedFields_ = [23];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.repeatedFields_ = [24];
 
 
 
@@ -19979,15 +19979,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
     statistics: (f = msg.getStatistics()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatistics.toObject(includeInstance, f),
     phase: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     reportname: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    datalocation: (f = msg.getDatalocation()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.toObject(includeInstance, f),
     reportlocation: (f = msg.getReportlocation()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.toObject(includeInstance, f),
     profilelocation: (f = msg.getProfilelocation()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.toObject(includeInstance, f),
     anomalieslocation: (f = msg.getAnomalieslocation()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.toObject(includeInstance, f),
-    imbalanced: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
+    imbalanced: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
     unittestresults: (f = msg.getUnittestresults()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
-    failuremessage: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
-    progress: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
+    progress: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
     logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
-    hash: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
+    hash: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
     updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     completedat: (f = msg.getCompletedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     laststudyat: (f = msg.getLaststudyat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
@@ -20042,11 +20043,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
       msg.setManifestlocation(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setManifestversion(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setSnapshotversion(value);
       break;
     case 5:
@@ -20065,75 +20066,80 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
     case 8:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.deserializeBinaryFromReader);
-      msg.setReportlocation(value);
+      msg.setDatalocation(value);
       break;
     case 9:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.deserializeBinaryFromReader);
-      msg.setProfilelocation(value);
+      msg.setReportlocation(value);
       break;
     case 10:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.deserializeBinaryFromReader);
-      msg.setAnomalieslocation(value);
+      msg.setProfilelocation(value);
       break;
     case 11:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.deserializeBinaryFromReader);
+      msg.setAnomalieslocation(value);
+      break;
+    case 12:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setImbalanced(value);
       break;
-    case 12:
+    case 13:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.deserializeBinaryFromReader);
       msg.setUnittestresults(value);
       break;
-    case 13:
+    case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setFailuremessage(value);
       break;
-    case 14:
+    case 15:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setProgress(value);
       break;
-    case 15:
+    case 16:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
       msg.setLogs(value);
       break;
-    case 16:
+    case 17:
       var value = /** @type {string} */ (reader.readString());
       msg.setHash(value);
-      break;
-    case 17:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setUpdatedat(value);
       break;
     case 18:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setCompletedat(value);
+      msg.setUpdatedat(value);
       break;
     case 19:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLaststudyat(value);
+      msg.setCompletedat(value);
       break;
     case 20:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setLaststudyat(value);
+      break;
+    case 21:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.deserializeBinaryFromReader);
       msg.setImages(value);
       break;
-    case 21:
+    case 22:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setFeaturehistogramref(value);
       break;
-    case 22:
+    case 23:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus.deserializeBinaryFromReader);
       msg.setGroupby(value);
       break;
-    case 23:
+    case 24:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -20184,14 +20190,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeUint32(
       3,
       f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeUint32(
       4,
       f
     );
@@ -20218,7 +20224,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
       f
     );
   }
-  f = message.getReportlocation();
+  f = message.getDatalocation();
   if (f != null) {
     writer.writeMessage(
       8,
@@ -20226,7 +20232,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.serializeBinaryToWriter
     );
   }
-  f = message.getProfilelocation();
+  f = message.getReportlocation();
   if (f != null) {
     writer.writeMessage(
       9,
@@ -20234,7 +20240,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.serializeBinaryToWriter
     );
   }
-  f = message.getAnomalieslocation();
+  f = message.getProfilelocation();
   if (f != null) {
     writer.writeMessage(
       10,
@@ -20242,59 +20248,59 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.serializeBinaryToWriter
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 11));
+  f = message.getAnomalieslocation();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 12));
   if (f != null) {
     writer.writeBool(
-      11,
+      12,
       f
     );
   }
   f = message.getUnittestresults();
   if (f != null) {
     writer.writeMessage(
-      12,
+      13,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 13));
+  f = /** @type {string} */ (jspb.Message.getField(message, 14));
   if (f != null) {
     writer.writeString(
-      13,
+      14,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 14));
+  f = /** @type {number} */ (jspb.Message.getField(message, 15));
   if (f != null) {
     writer.writeInt32(
-      14,
+      15,
       f
     );
   }
   f = message.getLogs();
   if (f != null) {
     writer.writeMessage(
-      15,
+      16,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 16));
+  f = /** @type {string} */ (jspb.Message.getField(message, 17));
   if (f != null) {
     writer.writeString(
-      16,
+      17,
       f
     );
   }
   f = message.getUpdatedat();
-  if (f != null) {
-    writer.writeMessage(
-      17,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = message.getCompletedat();
   if (f != null) {
     writer.writeMessage(
       18,
@@ -20302,7 +20308,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getLaststudyat();
+  f = message.getCompletedat();
   if (f != null) {
     writer.writeMessage(
       19,
@@ -20310,10 +20316,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getImages();
+  f = message.getLaststudyat();
   if (f != null) {
     writer.writeMessage(
       20,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = message.getImages();
+  if (f != null) {
+    writer.writeMessage(
+      21,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.serializeBinaryToWriter
     );
@@ -20321,7 +20335,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
   f = message.getFeaturehistogramref();
   if (f != null) {
     writer.writeMessage(
-      21,
+      22,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
@@ -20329,7 +20343,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
   f = message.getGroupby();
   if (f != null) {
     writer.writeMessage(
-      22,
+      23,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus.serializeBinaryToWriter
     );
@@ -20337,7 +20351,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      23,
+      24,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.serializeBinaryToWriter
     );
@@ -20419,7 +20433,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
 
 
 /**
- * optional int32 manifestVersion = 3;
+ * optional uint32 manifestVersion = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getManifestversion = function() {
@@ -20455,7 +20469,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
 
 
 /**
- * optional int32 snapshotVersion = 4;
+ * optional uint32 snapshotVersion = 4;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getSnapshotversion = function() {
@@ -20600,10 +20614,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation reportLocation = 8;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation dataLocation = 8;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getReportlocation = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getDatalocation = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation, 8));
 };
@@ -20613,8 +20627,45 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setReportlocation = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setDatalocation = function(value) {
   return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.clearDatalocation = function() {
+  return this.setDatalocation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasDatalocation = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation reportLocation = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getReportlocation = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setReportlocation = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -20632,17 +20683,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasReportlocation = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation profileLocation = 9;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation profileLocation = 10;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getProfilelocation = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation, 9));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation, 10));
 };
 
 
@@ -20651,7 +20702,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setProfilelocation = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -20669,17 +20720,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasProfilelocation = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation anomaliesLocation = 10;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation anomaliesLocation = 11;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getAnomalieslocation = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation, 10));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation, 11));
 };
 
 
@@ -20688,7 +20739,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setAnomalieslocation = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -20706,16 +20757,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasAnomalieslocation = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional bool imbalanced = 11;
+ * optional bool imbalanced = 12;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getImbalanced = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
 };
 
 
@@ -20724,7 +20775,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setImbalanced = function(value) {
-  return jspb.Message.setField(this, 11, value);
+  return jspb.Message.setField(this, 12, value);
 };
 
 
@@ -20733,7 +20784,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.clearImbalanced = function() {
-  return jspb.Message.setField(this, 11, undefined);
+  return jspb.Message.setField(this, 12, undefined);
 };
 
 
@@ -20742,17 +20793,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasImbalanced = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestResults = 12;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult unitTestResults = 13;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getUnittestresults = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 12));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult, 13));
 };
 
 
@@ -20761,7 +20812,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setUnittestresults = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
+  return jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -20779,16 +20830,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasUnittestresults = function() {
-  return jspb.Message.getField(this, 12) != null;
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional string failureMessage = 13;
+ * optional string failureMessage = 14;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getFailuremessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
 };
 
 
@@ -20797,42 +20848,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setFailuremessage = function(value) {
-  return jspb.Message.setField(this, 13, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.clearFailuremessage = function() {
-  return jspb.Message.setField(this, 13, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasFailuremessage = function() {
-  return jspb.Message.getField(this, 13) != null;
-};
-
-
-/**
- * optional int32 progress = 14;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getProgress = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setProgress = function(value) {
   return jspb.Message.setField(this, 14, value);
 };
 
@@ -20841,7 +20856,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.clearProgress = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.clearFailuremessage = function() {
   return jspb.Message.setField(this, 14, undefined);
 };
 
@@ -20850,18 +20865,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasProgress = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasFailuremessage = function() {
   return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 15;
+ * optional int32 progress = 15;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getProgress = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setProgress = function(value) {
+  return jspb.Message.setField(this, 15, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.clearProgress = function() {
+  return jspb.Message.setField(this, 15, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasProgress = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 16;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getLogs = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 15));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 16));
 };
 
 
@@ -20870,7 +20921,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setLogs = function(value) {
-  return jspb.Message.setWrapperField(this, 15, value);
+  return jspb.Message.setWrapperField(this, 16, value);
 };
 
 
@@ -20888,16 +20939,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasLogs = function() {
-  return jspb.Message.getField(this, 15) != null;
+  return jspb.Message.getField(this, 16) != null;
 };
 
 
 /**
- * optional string hash = 16;
+ * optional string hash = 17;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getHash = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
 };
 
 
@@ -20906,7 +20957,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setHash = function(value) {
-  return jspb.Message.setField(this, 16, value);
+  return jspb.Message.setField(this, 17, value);
 };
 
 
@@ -20915,7 +20966,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.clearHash = function() {
-  return jspb.Message.setField(this, 16, undefined);
+  return jspb.Message.setField(this, 17, undefined);
 };
 
 
@@ -20924,17 +20975,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasHash = function() {
-  return jspb.Message.getField(this, 16) != null;
+  return jspb.Message.getField(this, 17) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 17;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 18;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getUpdatedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 17));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 18));
 };
 
 
@@ -20943,7 +20994,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setUpdatedat = function(value) {
-  return jspb.Message.setWrapperField(this, 17, value);
+  return jspb.Message.setWrapperField(this, 18, value);
 };
 
 
@@ -20961,17 +21012,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasUpdatedat = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 18) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 18;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 19;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getCompletedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 18));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 19));
 };
 
 
@@ -20980,7 +21031,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setCompletedat = function(value) {
-  return jspb.Message.setWrapperField(this, 18, value);
+  return jspb.Message.setWrapperField(this, 19, value);
 };
 
 
@@ -20998,17 +21049,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasCompletedat = function() {
-  return jspb.Message.getField(this, 18) != null;
+  return jspb.Message.getField(this, 19) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudyAt = 19;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudyAt = 20;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getLaststudyat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 19));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 20));
 };
 
 
@@ -21017,7 +21068,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setLaststudyat = function(value) {
-  return jspb.Message.setWrapperField(this, 19, value);
+  return jspb.Message.setWrapperField(this, 20, value);
 };
 
 
@@ -21035,17 +21086,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasLaststudyat = function() {
-  return jspb.Message.getField(this, 19) != null;
+  return jspb.Message.getField(this, 20) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images images = 20;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images images = 21;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getImages = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images, 20));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images, 21));
 };
 
 
@@ -21054,7 +21105,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setImages = function(value) {
-  return jspb.Message.setWrapperField(this, 20, value);
+  return jspb.Message.setWrapperField(this, 21, value);
 };
 
 
@@ -21072,17 +21123,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasImages = function() {
-  return jspb.Message.getField(this, 20) != null;
+  return jspb.Message.getField(this, 21) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference featureHistogramRef = 21;
+ * optional k8s.io.api.core.v1.ObjectReference featureHistogramRef = 22;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getFeaturehistogramref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 21));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 22));
 };
 
 
@@ -21091,7 +21142,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setFeaturehistogramref = function(value) {
-  return jspb.Message.setWrapperField(this, 21, value);
+  return jspb.Message.setWrapperField(this, 22, value);
 };
 
 
@@ -21109,17 +21160,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasFeaturehistogramref = function() {
-  return jspb.Message.getField(this, 21) != null;
+  return jspb.Message.getField(this, 22) != null;
 };
 
 
 /**
- * optional DatasetGroupByStatus groupBy = 22;
+ * optional DatasetGroupByStatus groupBy = 23;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getGroupby = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus, 22));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus, 23));
 };
 
 
@@ -21128,7 +21179,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setGroupby = function(value) {
-  return jspb.Message.setWrapperField(this, 22, value);
+  return jspb.Message.setWrapperField(this, 23, value);
 };
 
 
@@ -21146,17 +21197,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasGroupby = function() {
-  return jspb.Message.getField(this, 22) != null;
+  return jspb.Message.getField(this, 23) != null;
 };
 
 
 /**
- * repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 23;
+ * repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 24;
  * @return {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, 23));
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, 24));
 };
 
 
@@ -21165,7 +21216,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 23, value);
+  return jspb.Message.setRepeatedWrapperField(this, 24, value);
 };
 
 
@@ -21175,7 +21226,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 23, opt_value, proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 24, opt_value, proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition, opt_index);
 };
 
 
@@ -23279,15 +23330,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.deseria
       msg.setObservedgeneration(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setVersion(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setLastsnapshotversion(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.addAvailablesnapshotversions(value);
       break;
     case 5:
@@ -23352,21 +23403,21 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.seriali
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeUint32(
       2,
       f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeUint32(
       3,
       f
     );
   }
   f = message.getAvailablesnapshotversionsList();
   if (f.length > 0) {
-    writer.writeRepeatedInt32(
+    writer.writeRepeatedUint32(
       4,
       f
     );
@@ -23450,7 +23501,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
 
 
 /**
- * optional int32 version = 2;
+ * optional uint32 version = 2;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getVersion = function() {
@@ -23486,7 +23537,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
 
 
 /**
- * optional int32 lastSnapshotVersion = 3;
+ * optional uint32 lastSnapshotVersion = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getLastsnapshotversion = function() {
@@ -23522,7 +23573,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
 
 
 /**
- * repeated int32 availableSnapshotVersions = 4;
+ * repeated uint32 availableSnapshotVersions = 4;
  * @return {!Array<number>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getAvailablesnapshotversionsList = function() {

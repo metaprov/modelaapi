@@ -1505,12 +1505,12 @@ func (runs *RunSchedule) SetNext(nextRun metav1.Time) {}
 
 type SnapshotReference struct {
 	// Dataset specifies the name of the dataset which the snapshot belongs to
-	Dataset string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
+	Dataset string `json:"dataset,omitempty" protobuf:"bytes,1,opt,name=dataset"`
 	// Version specifies the version of the snapshot to use. If empty, the latest available snapshot will be used
-	Version *int32 `json:"version,omitempty" protobuf:"varint,2,opt,name=version"`
+	Version *Version `json:"version,omitempty" protobuf:"varint,2,opt,name=version"`
 }
 
-type Version int32
+type Version uint32
 
 // Measurement is a value for a specific metric
 type Measurement struct {
@@ -1822,6 +1822,7 @@ const (
 	FeatureGroupLabelKey       = "modela.ai/featuregroup"
 	RecipeLabelKey             = "modela.ai/recipe"
 	RecipeRunLabelKey          = "modela.ai/reciperun"
+	SnapshotVersionLabelKey    = "modela.ai/snapshot-version"
 
 	// inference
 	DataAppLabelKey    = "modela.ai/dataapp"

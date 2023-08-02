@@ -15,52 +15,72 @@ enum EventType {
 }
 
 service WatcherdService {
-  rpc WatchDataset (WatchDatasetRequest) returns (WatchDatasetResponse) {}
-  rpc WatchModel   (WatchModelRequest)   returns (WatchModelResponse) {}
-  rpc WatchAlert   (WatchAlertRequest)   returns (WatchAlertResponse) {}
+  rpc WatchDataset         (WatchDatasetRequest)         returns (WatchDatasetResponse) {}
+  rpc WatchDatasetSnapshot (WatchDatasetSnapshotRequest) returns (WatchDatasetSnapshotResponse) {}
+  rpc WatchModel           (WatchModelRequest)           returns (WatchModelResponse) {}
+  rpc WatchAlert           (WatchAlertRequest)           returns (WatchAlertResponse) {}
 }
 
-message DatasetEvent {
-  EventType event = 1;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 2;
-}
-
+/////// Dataset Watch ///////
 message WatchDatasetRequest {
   uint64 generation = 1;
   string namespace = 2;
 }
 
 message WatchDatasetResponse {
+  message DatasetEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 2;
+  }
+
   uint64 generation = 1;
   repeated DatasetEvent events = 2;
 }
 
-message ModelEvent {
-  EventType event = 1;
-  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 2;
-}
-
+/////// Model Watch ///////
 message WatchModelRequest {
   uint64 generation = 1;
   string namespace = 2;
 }
 
 message WatchModelResponse {
+  message ModelEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 2;
+  }
+
   uint64 generation = 1;
   repeated ModelEvent events = 2;
 }
 
-message AlertEvent {
-  EventType event = 1;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert alert = 2;
-}
-
+/////// Alert Watch ///////
 message WatchAlertRequest {
   uint64 generation = 1;
   string namespace = 2;
 }
 
 message WatchAlertResponse {
+  message AlertEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert alert = 2;
+  }
+
   uint64 generation = 1;
   repeated AlertEvent events = 2;
+}
+
+/////// Dataset Snapshot Watch ///////
+message WatchDatasetSnapshotRequest {
+  uint64 generation = 1;
+  string namespace = 2;
+}
+
+message WatchDatasetSnapshotResponse {
+  message DatasetSnapshotEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 2;
+  }
+
+  uint64 generation = 1;
+  repeated DatasetSnapshotEvent events = 2;
 }

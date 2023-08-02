@@ -230,11 +230,10 @@ export class GetDatasetProfileRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): GetDatasetProfileRequest;
 
-  getName(): string;
-  setName(value: string): GetDatasetProfileRequest;
-
-  getRunversion(): number;
-  setRunversion(value: number): GetDatasetProfileRequest;
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference): GetDatasetProfileRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): GetDatasetProfileRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDatasetProfileRequest.AsObject;
@@ -247,8 +246,7 @@ export class GetDatasetProfileRequest extends jspb.Message {
 export namespace GetDatasetProfileRequest {
   export type AsObject = {
     namespace: string,
-    name: string,
-    runversion: number,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject,
   }
 }
 
@@ -320,11 +318,10 @@ export class GetDatasetAnomaliesRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): GetDatasetAnomaliesRequest;
 
-  getName(): string;
-  setName(value: string): GetDatasetAnomaliesRequest;
-
-  getRunversion(): number;
-  setRunversion(value: number): GetDatasetAnomaliesRequest;
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference): GetDatasetAnomaliesRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): GetDatasetAnomaliesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDatasetAnomaliesRequest.AsObject;
@@ -337,8 +334,7 @@ export class GetDatasetAnomaliesRequest extends jspb.Message {
 export namespace GetDatasetAnomaliesRequest {
   export type AsObject = {
     namespace: string,
-    name: string,
-    runversion: number,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject,
   }
 }
 

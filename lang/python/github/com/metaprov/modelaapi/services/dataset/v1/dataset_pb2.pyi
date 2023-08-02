@@ -48,14 +48,12 @@ class DownloadDatasetResponse(_message.Message):
     def __init__(self, raw: _Optional[bytes] = ...) -> None: ...
 
 class GetDatasetAnomaliesRequest(_message.Message):
-    __slots__ = ["name", "namespace", "runVersion"]
+    __slots__ = ["namespace", "snapshot"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    RUNVERSION_FIELD_NUMBER: _ClassVar[int]
-    name: str
+    SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    runVersion: int
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., runVersion: _Optional[int] = ...) -> None: ...
+    snapshot: _generated_pb2_1.SnapshotReference
+    def __init__(self, namespace: _Optional[str] = ..., snapshot: _Optional[_Union[_generated_pb2_1.SnapshotReference, _Mapping]] = ...) -> None: ...
 
 class GetDatasetAnomaliesResponse(_message.Message):
     __slots__ = ["table"]
@@ -64,14 +62,12 @@ class GetDatasetAnomaliesResponse(_message.Message):
     def __init__(self, table: _Optional[_Union[_common_pb2.TableView, _Mapping]] = ...) -> None: ...
 
 class GetDatasetProfileRequest(_message.Message):
-    __slots__ = ["name", "namespace", "runVersion"]
+    __slots__ = ["namespace", "snapshot"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    RUNVERSION_FIELD_NUMBER: _ClassVar[int]
-    name: str
+    SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    runVersion: int
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., runVersion: _Optional[int] = ...) -> None: ...
+    snapshot: _generated_pb2_1.SnapshotReference
+    def __init__(self, namespace: _Optional[str] = ..., snapshot: _Optional[_Union[_generated_pb2_1.SnapshotReference, _Mapping]] = ...) -> None: ...
 
 class GetDatasetProfileResponse(_message.Message):
     __slots__ = ["profile"]

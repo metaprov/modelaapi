@@ -1207,10 +1207,10 @@ message RunStatus {
 
 message SnapshotReference {
   // Dataset specifies the name of the dataset which the snapshot belongs to
-  optional string owner = 1;
+  optional string dataset = 1;
 
   // Version specifies the version of the snapshot to use. If empty, the latest available snapshot will be used
-  optional int32 version = 2;
+  optional uint32 version = 2;
 }
 
 message TestSuite {

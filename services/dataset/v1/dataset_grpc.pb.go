@@ -30,6 +30,7 @@ type DatasetServiceClient interface {
 	GetDatasetProfile(ctx context.Context, in *GetDatasetProfileRequest, opts ...grpc.CallOption) (*GetDatasetProfileResponse, error)
 	DownloadDataset(ctx context.Context, in *DownloadDatasetRequest, opts ...grpc.CallOption) (*DownloadDatasetResponse, error)
 	GetAnomalies(ctx context.Context, in *GetDatasetAnomaliesRequest, opts ...grpc.CallOption) (*GetDatasetAnomaliesResponse, error)
+	CompareDatasets(ctx context.Context, in *CompareDatasetsRequest, opts ...grpc.CallOption) (*CompareDatasetsResponse, error)
 }
 
 type datasetServiceClient struct {
@@ -112,6 +113,15 @@ func (c *datasetServiceClient) GetAnomalies(ctx context.Context, in *GetDatasetA
 	return out, nil
 }
 
+func (c *datasetServiceClient) CompareDatasets(ctx context.Context, in *CompareDatasetsRequest, opts ...grpc.CallOption) (*CompareDatasetsResponse, error) {
+	out := new(CompareDatasetsResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CompareDatasets", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatasetServiceServer is the server API for DatasetService service.
 // All implementations must embed UnimplementedDatasetServiceServer
 // for forward compatibility
@@ -124,6 +134,7 @@ type DatasetServiceServer interface {
 	GetDatasetProfile(context.Context, *GetDatasetProfileRequest) (*GetDatasetProfileResponse, error)
 	DownloadDataset(context.Context, *DownloadDatasetRequest) (*DownloadDatasetResponse, error)
 	GetAnomalies(context.Context, *GetDatasetAnomaliesRequest) (*GetDatasetAnomaliesResponse, error)
+	CompareDatasets(context.Context, *CompareDatasetsRequest) (*CompareDatasetsResponse, error)
 	mustEmbedUnimplementedDatasetServiceServer()
 }
 
@@ -154,6 +165,9 @@ func (UnimplementedDatasetServiceServer) DownloadDataset(context.Context, *Downl
 }
 func (UnimplementedDatasetServiceServer) GetAnomalies(context.Context, *GetDatasetAnomaliesRequest) (*GetDatasetAnomaliesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAnomalies not implemented")
+}
+func (UnimplementedDatasetServiceServer) CompareDatasets(context.Context, *CompareDatasetsRequest) (*CompareDatasetsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CompareDatasets not implemented")
 }
 func (UnimplementedDatasetServiceServer) mustEmbedUnimplementedDatasetServiceServer() {}
 
@@ -312,6 +326,24 @@ func _DatasetService_GetAnomalies_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatasetService_CompareDatasets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompareDatasetsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatasetServiceServer).CompareDatasets(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CompareDatasets",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatasetServiceServer).CompareDatasets(ctx, req.(*CompareDatasetsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DatasetService_ServiceDesc is the grpc.ServiceDesc for DatasetService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -350,6 +382,10 @@ var DatasetService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAnomalies",
 			Handler:    _DatasetService_GetAnomalies_Handler,
+		},
+		{
+			MethodName: "CompareDatasets",
+			Handler:    _DatasetService_CompareDatasets_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

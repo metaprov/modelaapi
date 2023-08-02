@@ -20149,7 +20149,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.toObject = function(includeInstance, msg) {
   var f, obj = {
-    owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    dataset: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     version: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
@@ -20189,10 +20189,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOwner(value);
+      msg.setDataset(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setVersion(value);
       break;
     default:
@@ -20233,7 +20233,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeUint32(
       2,
       f
     );
@@ -20242,10 +20242,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.
 
 
 /**
- * optional string owner = 1;
+ * optional string dataset = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.prototype.getOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.prototype.getDataset = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -20254,7 +20254,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.prototype.setOwner = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.prototype.setDataset = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -20263,7 +20263,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.prototype.clearOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.prototype.clearDataset = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -20272,13 +20272,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.prototype.hasOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.prototype.hasDataset = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional int32 version = 2;
+ * optional uint32 version = 2;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.prototype.getVersion = function() {

@@ -2372,10 +2372,10 @@ export namespace RunStatus {
 }
 
 export class SnapshotReference extends jspb.Message {
-  getOwner(): string;
-  setOwner(value: string): SnapshotReference;
-  hasOwner(): boolean;
-  clearOwner(): SnapshotReference;
+  getDataset(): string;
+  setDataset(value: string): SnapshotReference;
+  hasDataset(): boolean;
+  clearDataset(): SnapshotReference;
 
   getVersion(): number;
   setVersion(value: number): SnapshotReference;
@@ -2392,7 +2392,7 @@ export class SnapshotReference extends jspb.Message {
 
 export namespace SnapshotReference {
   export type AsObject = {
-    owner?: string,
+    dataset?: string,
     version?: number,
   }
 }
