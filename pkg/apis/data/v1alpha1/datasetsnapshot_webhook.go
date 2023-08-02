@@ -22,7 +22,7 @@ func (dataset *DatasetSnapshot) Default() {
 	}
 
 	dataset.ObjectMeta.Labels[catalog.DatasetLabelKey] = dataset.Spec.DatasetName
-	dataset.ObjectMeta.Labels[catalog.RunVersionLabelKey] = strconv.Itoa(int(dataset.Spec.RunVersion))
+	dataset.ObjectMeta.Labels[catalog.RunVersionLabelKey] = strconv.Itoa(int(dataset.Status.SnapshotVersion))
 
 	if dataset.Spec.Owner != nil {
 		dataset.ObjectMeta.Labels[catalog.OwnerKindLabelKey] = *dataset.Spec.Owner

@@ -69,7 +69,7 @@ func (fg *FeatureGroup) MarkIngesting() {
 			Reason: "Ingesting",
 		})
 		now := metav1.Now()
-		fg.Status.IngestSchedule.LastRunAt = &now
+		fg.Status.IngestSchedule.LastRunCompletionAt = &now
 	}
 }
 
@@ -92,7 +92,7 @@ func (fg *FeatureGroup) MarkIngestFailed(msg string) {
 		Message: "Failed to ingest." + msg,
 	})
 	fg.Status.Phase = FeatureGroupPhaseFailed
-	fg.Status.IngestSchedule.FailureMessage = util.StrPtr(msg)
+	fg.Status.IngestSchedule.LastRunFailureMessage = util.StrPtr(msg)
 
 }
 
@@ -108,7 +108,7 @@ func (fg *FeatureGroup) MarkSyncing() {
 			Reason: "Syncing",
 		})
 		now := metav1.Now()
-		fg.Status.SyncSchedule.LastRunAt = &now
+		fg.Status.SyncSchedule.LastRunCreationAt = &now
 	}
 
 }
@@ -132,7 +132,7 @@ func (fg *FeatureGroup) MarkSyncFailed(msg string) {
 		Message: "Failed to sync." + msg,
 	})
 	fg.Status.Phase = FeatureGroupPhaseFailed
-	fg.Status.SyncSchedule.FailureMessage = util.StrPtr(msg)
+	fg.Status.SyncSchedule.LastRunFailureMessage = util.StrPtr(msg)
 }
 
 func (fg *FeatureGroup) IsSynced() bool {

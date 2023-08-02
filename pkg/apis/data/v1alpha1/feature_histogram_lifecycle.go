@@ -280,7 +280,7 @@ func (fh *FeatureHistogram) MarkFailed(msg string) {
 	fh.CreateOrUpdateCond(metav1.Condition{
 		Type:    FeatureHistogramReady,
 		Status:  metav1.ConditionFalse,
-		Reason:  string(DatasetPhaseFailed),
+		Reason:  string(FeatureHistogramPhaseFailed),
 		Message: "Feature histogram failed." + msg,
 	})
 	fh.Status.Phase = FeatureHistogramPhaseFailed
