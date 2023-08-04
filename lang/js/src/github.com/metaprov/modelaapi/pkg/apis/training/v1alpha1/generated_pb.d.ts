@@ -758,6 +758,11 @@ export class FeatureEngineeringPipeline extends jspb.Message {
   hasName(): boolean;
   clearName(): FeatureEngineeringPipeline;
 
+  getDatatype(): string;
+  setDatatype(value: string): FeatureEngineeringPipeline;
+  hasDatatype(): boolean;
+  clearDatatype(): FeatureEngineeringPipeline;
+
   getFeaturesList(): Array<string>;
   setFeaturesList(value: Array<string>): FeatureEngineeringPipeline;
   clearFeaturesList(): FeatureEngineeringPipeline;
@@ -819,6 +824,7 @@ export class FeatureEngineeringPipeline extends jspb.Message {
 export namespace FeatureEngineeringPipeline {
   export type AsObject = {
     name?: string,
+    datatype?: string,
     featuresList: Array<string>,
     imputation?: string,
     encoding?: string,

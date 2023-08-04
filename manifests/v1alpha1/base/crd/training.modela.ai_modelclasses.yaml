@@ -2089,6 +2089,22 @@ spec:
                       description: FeatureEngineeringPipeline represents a single
                         pipeline to transform a dataset
                       properties:
+                        dataType:
+                          description: DataType specifies the data type of the pipeline,
+                            which corresponds to the data type of all features in
+                            the pipeline
+                          enum:
+                          - boolean
+                          - datetime
+                          - number
+                          - categorical
+                          - ordinal
+                          - text
+                          - json
+                          - number-list
+                          - categorical-list
+                          - text-list
+                          type: string
                         datetimeTransformation:
                           default: none
                           description: DatetimeTransformation specifies the method

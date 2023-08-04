@@ -440,53 +440,58 @@ message FeatureEngineeringPipeline {
   // +kubebuilder:validation:Required
   optional string name = 1;
 
+  // DataType specifies the data type of the pipeline, which corresponds to the
+  // data type of all features in the pipeline
+  // +kubebuilder:validation:Required
+  optional string dataType = 2;
+
   // Features contains the collection of features which the pipeline will be applied to
   // +kubebuilder:validation:Optional
-  repeated string features = 2;
+  repeated string features = 3;
 
   // Imputation specifies the imputation method to use when handling missing values
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional string imputation = 3;
+  optional string imputation = 4;
 
   // Encoding specifies the encoding method to use for categorical features
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional string encoding = 4;
+  optional string encoding = 5;
 
   // Scaling specifies the scaling method to use for numerical features
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional string scaling = 5;
+  optional string scaling = 6;
 
   // Discretisation specifies the discretisation method to convert numerical features to discrete variables
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional string discretisation = 6;
+  optional string discretisation = 7;
 
   // VariableTransformation specifies the transformation method to use for numerical feature
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional string variableTransformation = 7;
+  optional string variableTransformation = 8;
 
   // OutlierHandling specifies the method to use when handling outliers
   // +kubebuilder:default:=none
   // Apply only to numeric data types.
-  optional string outlierHandling = 8;
+  optional string outlierHandling = 9;
 
   // DatetimeTransformation specifies the method to use when handling the date-time data type
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional string datetimeTransformation = 9;
+  optional string datetimeTransformation = 10;
 
   // Text defines the configuration for the pipeline to handle text features
   // +kubebuilder:validation:Optional
-  optional TextPipelineSpec text = 10;
+  optional TextPipelineSpec text = 11;
 
   // Drop indicates if all of all the features for the pipeline will be dropped
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool drop = 11;
+  optional bool drop = 12;
 }
 
 // FeatureEngineeringSpec specifies the feature engineering to be performed on the training data

@@ -1966,6 +1966,10 @@ type FileLocation struct {
 	Path       string `json:"path,omitempty" protobuf:"bytes,2,opt,name=path"`
 }
 
+func (f *FileLocation) Hash() string {
+	return f.BucketName + f.Path
+}
+
 //////////////////////////////////////////////////////////
 // Test
 //////////////////////////////////////////////////////////

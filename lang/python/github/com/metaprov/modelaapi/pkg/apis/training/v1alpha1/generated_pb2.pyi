@@ -246,7 +246,8 @@ class EvalPeriod(_message.Message):
     def __init__(self, testHorizon: _Optional[int] = ..., periodsBetweenTrainTest: _Optional[int] = ..., cvPeriodsBetweenSplits: _Optional[int] = ..., cvExpandingWindows: bool = ..., cvHorizon: _Optional[int] = ..., cvMinTrainPeriods: _Optional[int] = ..., cvMaxSplits: _Optional[int] = ..., cvUseMostRecentSplits: bool = ...) -> None: ...
 
 class FeatureEngineeringPipeline(_message.Message):
-    __slots__ = ["datetimeTransformation", "discretisation", "drop", "encoding", "features", "imputation", "name", "outlierHandling", "scaling", "text", "variableTransformation"]
+    __slots__ = ["dataType", "datetimeTransformation", "discretisation", "drop", "encoding", "features", "imputation", "name", "outlierHandling", "scaling", "text", "variableTransformation"]
+    DATATYPE_FIELD_NUMBER: _ClassVar[int]
     DATETIMETRANSFORMATION_FIELD_NUMBER: _ClassVar[int]
     DISCRETISATION_FIELD_NUMBER: _ClassVar[int]
     DROP_FIELD_NUMBER: _ClassVar[int]
@@ -258,6 +259,7 @@ class FeatureEngineeringPipeline(_message.Message):
     SCALING_FIELD_NUMBER: _ClassVar[int]
     TEXT_FIELD_NUMBER: _ClassVar[int]
     VARIABLETRANSFORMATION_FIELD_NUMBER: _ClassVar[int]
+    dataType: str
     datetimeTransformation: str
     discretisation: str
     drop: bool
@@ -269,7 +271,7 @@ class FeatureEngineeringPipeline(_message.Message):
     scaling: str
     text: TextPipelineSpec
     variableTransformation: str
-    def __init__(self, name: _Optional[str] = ..., features: _Optional[_Iterable[str]] = ..., imputation: _Optional[str] = ..., encoding: _Optional[str] = ..., scaling: _Optional[str] = ..., discretisation: _Optional[str] = ..., variableTransformation: _Optional[str] = ..., outlierHandling: _Optional[str] = ..., datetimeTransformation: _Optional[str] = ..., text: _Optional[_Union[TextPipelineSpec, _Mapping]] = ..., drop: bool = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., dataType: _Optional[str] = ..., features: _Optional[_Iterable[str]] = ..., imputation: _Optional[str] = ..., encoding: _Optional[str] = ..., scaling: _Optional[str] = ..., discretisation: _Optional[str] = ..., variableTransformation: _Optional[str] = ..., outlierHandling: _Optional[str] = ..., datetimeTransformation: _Optional[str] = ..., text: _Optional[_Union[TextPipelineSpec, _Mapping]] = ..., drop: bool = ...) -> None: ...
 
 class FeatureEngineeringSpec(_message.Message):
     __slots__ = ["imbalance", "pipelines"]

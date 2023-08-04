@@ -42,9 +42,9 @@ message DsReadAudioRequest {
 
 
 message DsReadTextCorpusRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection        connection = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 3;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 4;
     map<string, bytes>  secret = 5;
 
 }
@@ -66,16 +66,16 @@ message DsRunDataPipelineResponse {
 }
 
 message DsRunRecipeRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource             datasource = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset                dataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket = 5;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection = 6;
-    map<string, bytes>                                                           storageSecret = 7;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 8;
-    map<string, bytes>                                                           dbSecret = 9;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe                 recipe = 10;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun              reciperun = 11;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 3;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 4;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection storageConnection = 5;
+    map<string, bytes> storageSecret = 6;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection dbConnection = 7;
+    map<string, bytes> dbSecret = 8;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe recipe = 9;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun reciperun = 10;
 }
 
 message DsRunRecipeResponse {
@@ -85,12 +85,14 @@ message DsRunRecipeResponse {
 message DataSourceResponse {}
 message DatasetResponse {}
 
-// Create dataset profile
+//////// Dataset Profile ////////
+
 message DsCreateDatasetProfileRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 5;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
 }
 
 message DsCreateDatasetProfileResponse {
@@ -100,12 +102,13 @@ message DsCreateDatasetProfileResponse {
 }
 
 
-///////////////////////////////// Model profile
+//////// Model Profile ////////
 
 message DsCreateModelProfileRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 4;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 6;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 7;
@@ -115,9 +118,8 @@ message DsCreateModelProfileResponse {
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation profileLocation = 1;
 }
 
-///////////////////////////////// Merge Forecast Files
+//////// Merge Profile ////////
 
-// Send the forecast
 message DsMergeForecastFileRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
@@ -128,8 +130,8 @@ message DsMergeForecastFileRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
     map<string, bytes> secret = 10;
     repeated string forecasts = 11;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 12;
-    map<string, bytes>                                                           dbSecret = 13;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection dbConnection = 12;
+    map<string, bytes> dbSecret = 13;
 
 }
 
@@ -137,13 +139,13 @@ message DsMergeForecastFileResponse {
     string uri = 1; // the uri of the merge file
 }
 
-
-///////////////////////////////////  Study profile
+//////// Study Profile ////////
 
 message DsCreateStudyProfileRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 4;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
     repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model models = 7;
@@ -166,8 +168,7 @@ message RunTestSuiteRequest {
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite suite = 11;
 }
 
-message RunTestSuiteResponse{
-    // For each histogram answer the value of the drift parameter.
+message RunTestSuiteResponse {
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuiteResult result = 1;
 }
 
@@ -175,8 +176,9 @@ message DsGenerateDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 2;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 3;
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation target = 4;
-    int32 rows = 5;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 4;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation target = 5;
+    int32 rows = 6;
 }
 
 message DsGenerateDatasetResponse {
@@ -185,12 +187,13 @@ message DsGenerateDatasetResponse {
 
 message DsSplitDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 4;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset trainingDataset = 7;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset testingDataset = 8;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot trainingDataset = 7;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot testingDataset = 8;
 }
 
 message DsSplitDatasetResponse {
@@ -211,20 +214,21 @@ message DsSplitDatasetToRungsRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 2;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 3;
-    int32 rungs = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 4;
+    int32 rungs = 5;
 }
 
 message DsSplitDatasetToRungsResponse {}
 
-// Create dataset profile
 message GroupByDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 2;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 4;
 }
 
 message GroupByDatasetResponse {
-    string uri = 1; // the index file uri
+    string uri = 1;
 }
 
 message DsInferSchemaRequest {
@@ -236,7 +240,6 @@ message DsInferSchemaRequest {
 message DsInferSchemaResponse {
     github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profile = 1;
 }
-
 
 message DsGetTableViewRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileFormatSpec       flatfile = 1;
@@ -267,12 +270,12 @@ message CreateForecastReportRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource             datasource = 5;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model           forecast = 6;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 7;
-    map<string, bytes>     secret = 8;
+    map<string, bytes> secret = 8;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report              report = 10;
-    bool                                                                         group = 11;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 12;
-    map<string, bytes>                                                           dbSecret = 13;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report report = 10;
+    bool group = 11;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection dbConnection = 12;
+    map<string, bytes> dbSecret = 13;
 }
 
 
@@ -286,42 +289,45 @@ message CreateReportResponse {
 }
 
 message CreateDatasetReportRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report         report = 5;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report report = 6;
 }
 
 
 message CreateStudyReportRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 5;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList      models = 6;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report         report = 7;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 4;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList models = 6;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report report = 7;
 }
 
 
 message AskModelRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 4;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 5;
-    int32  budget = 6;
-    bool   defaultHP = 7; // use default HP
-    string algorithm = 8; // ask for a specific algorithm.
-    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm     algorithms = 9;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 5;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 6;
+    int32 budget = 7;
+    bool defaultHP = 8;
+    string algorithm = 9;
+    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm algorithms = 10;
 
 }
 
 
 
 message GetTimeSeriesDatasetKeysRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct  product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study   study = 2;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
 }
 
 message GetTimeSeriesDatasetKeysResponse {
@@ -348,72 +354,70 @@ message AskForecastModelResponse {
 // Ensemble
 
 message AskEnsembleRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct  product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study   study = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource = 4;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset = 5;
-    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model models = 6;
-    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm     algorithms = 7;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 5;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 6;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model models = 7;
+    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm algorithms = 8;
 }
-// Return one or more ensembles
+
 message AskEnsembleResponse {
     repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
 }
 
 message AskBaselineRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct  product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study   study = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource = 4;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset = 5;
-    repeated string algnames = 6; // ask for a list of algorithms
-    bool all = 7; // ask for all algorithms
-    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm     algorithms = 8;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 5;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 6;
+    repeated string algnames = 7;
+    bool all = 8;
+    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm algorithms = 9;
 }
 
 message AskBaselineResponse {
     repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
 }
 
-
-
 // ask all models for task
 
 message AskAllModelsForTaskRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct  product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study   study = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource = 4;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset = 5;
-    int32  budget = 6;
-    string task = 7; // use default HP
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 5;
+    int32 budget = 6;
+    string task = 7;
     repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm     algorithms = 8;
 }
-
 
 message AskAllModelsForTaskResponse {
     repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
 }
 
-
-
-message TellModelRequest{
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct  product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study   study = 2;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model   model = 5;
+message TellModelRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 5;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 6;
     bool failed = 7;
 }
 message TellModelResponse {
     bool pruned = 1;
 }
 
-message DsShutdownRequest {
-}
+message DsShutdownRequest {}
 message DsShutdownResponse {}
 
 message DsTestConnectionRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            connection = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 2;
     map<string, bytes>     secret = 3;
 }
 
@@ -423,18 +427,17 @@ message DsTestConnectionResponse {
 }
 
 message DsStudyEndedRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study              study = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 2;
 
 }
 
 message DsStudyEndedResponse {}
 
-
 message SaveOptimizerDBRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study              study = 5;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket = 6;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
 }
 
 message SaveOptimizerDBResponse {
@@ -641,11 +644,9 @@ service DataService {
 
     // If a model is a partial model (sample < 100%)
     rpc TellPartialModel (TellModelRequest) returns (TellModelResponse) {}
-    // for bayaisn optimization, we tell the planner the result of the model evaluation
     rpc TellModel (TellModelRequest) returns (TellModelResponse) {}
     // Merge the forecast back to one file.
     rpc MergeForecastFile(DsMergeForecastFileRequest) returns (DsMergeForecastFileResponse) {}
-    // test connection from python presepective
     rpc DsTestConnection(DsTestConnectionRequest) returns (DsTestConnectionResponse) {}
     rpc ShutDown(DsShutdownRequest) returns (DsShutdownResponse) {}
     rpc StudyEnded(DsStudyEndedRequest) returns (DsStudyEndedResponse) {}

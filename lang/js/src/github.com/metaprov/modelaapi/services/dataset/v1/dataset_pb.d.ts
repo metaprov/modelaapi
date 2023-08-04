@@ -358,3 +358,47 @@ export namespace GetDatasetAnomaliesResponse {
   }
 }
 
+export class CompareDatasetsRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): CompareDatasetsRequest;
+
+  getSnapshotsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference>;
+  setSnapshotsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference>): CompareDatasetsRequest;
+  clearSnapshotsList(): CompareDatasetsRequest;
+  addSnapshots(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CompareDatasetsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CompareDatasetsRequest): CompareDatasetsRequest.AsObject;
+  static serializeBinaryToWriter(message: CompareDatasetsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CompareDatasetsRequest;
+  static deserializeBinaryFromReader(message: CompareDatasetsRequest, reader: jspb.BinaryReader): CompareDatasetsRequest;
+}
+
+export namespace CompareDatasetsRequest {
+  export type AsObject = {
+    namespace: string,
+    snapshotsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject>,
+  }
+}
+
+export class CompareDatasetsResponse extends jspb.Message {
+  getProfilesList(): Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile>;
+  setProfilesList(value: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile>): CompareDatasetsResponse;
+  clearProfilesList(): CompareDatasetsResponse;
+  addProfiles(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile, index?: number): github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CompareDatasetsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CompareDatasetsResponse): CompareDatasetsResponse.AsObject;
+  static serializeBinaryToWriter(message: CompareDatasetsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CompareDatasetsResponse;
+  static deserializeBinaryFromReader(message: CompareDatasetsResponse, reader: jspb.BinaryReader): CompareDatasetsResponse;
+}
+
+export namespace CompareDatasetsResponse {
+  export type AsObject = {
+    profilesList: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile.AsObject>,
+  }
+}
+

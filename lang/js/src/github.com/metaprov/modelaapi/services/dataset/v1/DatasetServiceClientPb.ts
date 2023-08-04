@@ -383,5 +383,48 @@ export class DatasetServiceClient {
     this.methodDescriptorGetAnomalies);
   }
 
+  methodDescriptorCompareDatasets = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CompareDatasets',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse.deserializeBinary
+  );
+
+  compareDatasets(
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse>;
+
+  compareDatasets(
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse>;
+
+  compareDatasets(
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CompareDatasets',
+        request,
+        metadata || {},
+        this.methodDescriptorCompareDatasets,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CompareDatasets',
+    request,
+    metadata || {},
+    this.methodDescriptorCompareDatasets);
+  }
+
 }
 

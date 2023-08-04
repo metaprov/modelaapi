@@ -555,44 +555,48 @@ type FeatureEngineeringPipeline struct {
 	// Name specifies the unique name of the pipeline
 	// +kubebuilder:validation:Required
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	// DataType specifies the data type of the pipeline, which corresponds to the
+	// data type of all features in the pipeline
+	// +kubebuilder:validation:Required
+	DataType catalog.DataType `json:"dataType,omitempty" protobuf:"bytes,2,opt,name=dataType"`
 	// Features contains the collection of features which the pipeline will be applied to
 	// +kubebuilder:validation:Optional
-	Features []string `json:"features,omitempty" protobuf:"bytes,2,rep,name=features"`
+	Features []string `json:"features,omitempty" protobuf:"bytes,3,rep,name=features"`
 	// Imputation specifies the imputation method to use when handling missing values
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	Imputation *catalog.Imputation `json:"imputation,omitempty" protobuf:"bytes,3,opt,name=imputation"`
+	Imputation *catalog.Imputation `json:"imputation,omitempty" protobuf:"bytes,4,opt,name=imputation"`
 	// Encoding specifies the encoding method to use for categorical features
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	Encoding *catalog.CategoricalEncoding `json:"encoding,omitempty" protobuf:"bytes,4,opt,name=encoding"`
+	Encoding *catalog.CategoricalEncoding `json:"encoding,omitempty" protobuf:"bytes,5,opt,name=encoding"`
 	// Scaling specifies the scaling method to use for numerical features
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	Scaling *catalog.Scaling `json:"scaling,omitempty" protobuf:"bytes,5,opt,name=scaling"`
+	Scaling *catalog.Scaling `json:"scaling,omitempty" protobuf:"bytes,6,opt,name=scaling"`
 	// Discretisation specifies the discretisation method to convert numerical features to discrete variables
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	Discretisation *catalog.Discretisation `json:"discretisation,omitempty" protobuf:"bytes,6,opt,name=discretisation"`
+	Discretisation *catalog.Discretisation `json:"discretisation,omitempty" protobuf:"bytes,7,opt,name=discretisation"`
 	// VariableTransformation specifies the transformation method to use for numerical feature
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	VariableTransformation *catalog.VariableTransformation `json:"variableTransformation,omitempty" protobuf:"bytes,7,opt,name=variableTransformation"`
+	VariableTransformation *catalog.VariableTransformation `json:"variableTransformation,omitempty" protobuf:"bytes,8,opt,name=variableTransformation"`
 	// OutlierHandling specifies the method to use when handling outliers
 	// +kubebuilder:default:=none
 	// Apply only to numeric data types.
-	OutlierHandling *catalog.OutlierHandling `json:"outlierHandling,omitempty" protobuf:"bytes,8,opt,name=outlierHandling"`
+	OutlierHandling *catalog.OutlierHandling `json:"outlierHandling,omitempty" protobuf:"bytes,9,opt,name=outlierHandling"`
 	// DatetimeTransformation specifies the method to use when handling the date-time data type
 	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
-	DatetimeTransformation *catalog.DatetimeTransformation `json:"datetimeTransformation,omitempty" protobuf:"bytes,9,opt,name=datetimeTransformation"`
+	DatetimeTransformation *catalog.DatetimeTransformation `json:"datetimeTransformation,omitempty" protobuf:"bytes,10,opt,name=datetimeTransformation"`
 	// Text defines the configuration for the pipeline to handle text features
 	// +kubebuilder:validation:Optional
-	Text *TextPipelineSpec `json:"text,omitempty" protobuf:"bytes,10,opt,name=text"`
+	Text *TextPipelineSpec `json:"text,omitempty" protobuf:"bytes,11,opt,name=text"`
 	// Drop indicates if all of all the features for the pipeline will be dropped
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Drop *bool `json:"drop,omitempty" protobuf:"varint,11,opt,name=drop"`
+	Drop *bool `json:"drop,omitempty" protobuf:"varint,12,opt,name=drop"`
 }
 
 // FeatureImportance records the computed importance of a single feature

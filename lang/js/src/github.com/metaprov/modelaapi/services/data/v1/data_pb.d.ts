@@ -405,6 +405,11 @@ export class DsCreateDatasetProfileRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): DsCreateDatasetProfileRequest;
 
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): DsCreateDatasetProfileRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): DsCreateDatasetProfileRequest;
+
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
   setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsCreateDatasetProfileRequest;
   hasBucket(): boolean;
@@ -423,6 +428,7 @@ export namespace DsCreateDatasetProfileRequest {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
   }
 }
@@ -475,6 +481,11 @@ export class DsCreateModelProfileRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): DsCreateModelProfileRequest;
 
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): DsCreateModelProfileRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): DsCreateModelProfileRequest;
+
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
   setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): DsCreateModelProfileRequest;
   hasStudy(): boolean;
@@ -503,6 +514,7 @@ export namespace DsCreateModelProfileRequest {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
@@ -639,6 +651,11 @@ export class DsCreateStudyProfileRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): DsCreateStudyProfileRequest;
 
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): DsCreateStudyProfileRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): DsCreateStudyProfileRequest;
+
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
   setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): DsCreateStudyProfileRequest;
   hasStudy(): boolean;
@@ -667,6 +684,7 @@ export namespace DsCreateStudyProfileRequest {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
@@ -803,6 +821,11 @@ export class DsGenerateDatasetRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): DsGenerateDatasetRequest;
 
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): DsGenerateDatasetRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): DsGenerateDatasetRequest;
+
   getTarget(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation | undefined;
   setTarget(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation): DsGenerateDatasetRequest;
   hasTarget(): boolean;
@@ -824,6 +847,7 @@ export namespace DsGenerateDatasetRequest {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
     target?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.DataLocation.AsObject,
     rows: number,
   }
@@ -865,6 +889,11 @@ export class DsSplitDatasetRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): DsSplitDatasetRequest;
 
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): DsSplitDatasetRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): DsSplitDatasetRequest;
+
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
   setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): DsSplitDatasetRequest;
   hasStudy(): boolean;
@@ -875,13 +904,13 @@ export class DsSplitDatasetRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): DsSplitDatasetRequest;
 
-  getTrainingdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setTrainingdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsSplitDatasetRequest;
+  getTrainingdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setTrainingdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): DsSplitDatasetRequest;
   hasTrainingdataset(): boolean;
   clearTrainingdataset(): DsSplitDatasetRequest;
 
-  getTestingdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setTestingdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsSplitDatasetRequest;
+  getTestingdataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setTestingdataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): DsSplitDatasetRequest;
   hasTestingdataset(): boolean;
   clearTestingdataset(): DsSplitDatasetRequest;
 
@@ -898,10 +927,11 @@ export namespace DsSplitDatasetRequest {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    trainingdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    testingdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    trainingdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
+    testingdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
   }
 }
 
@@ -981,6 +1011,11 @@ export class DsSplitDatasetToRungsRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): DsSplitDatasetToRungsRequest;
 
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): DsSplitDatasetToRungsRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): DsSplitDatasetToRungsRequest;
+
   getRungs(): number;
   setRungs(value: number): DsSplitDatasetToRungsRequest;
 
@@ -997,6 +1032,7 @@ export namespace DsSplitDatasetToRungsRequest {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
     rungs: number,
   }
 }
@@ -1031,6 +1067,11 @@ export class GroupByDatasetRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): GroupByDatasetRequest;
 
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): GroupByDatasetRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): GroupByDatasetRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GroupByDatasetRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GroupByDatasetRequest): GroupByDatasetRequest.AsObject;
@@ -1044,6 +1085,7 @@ export namespace GroupByDatasetRequest {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
   }
 }
 
@@ -1357,6 +1399,11 @@ export class CreateDatasetReportRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): CreateDatasetReportRequest;
 
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): CreateDatasetReportRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): CreateDatasetReportRequest;
+
   getReport(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
   setReport(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report): CreateDatasetReportRequest;
   hasReport(): boolean;
@@ -1375,6 +1422,7 @@ export namespace CreateDatasetReportRequest {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
     report?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
   }
 }
@@ -1385,20 +1433,25 @@ export class CreateStudyReportRequest extends jspb.Message {
   hasProduct(): boolean;
   clearProduct(): CreateStudyReportRequest;
 
-  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): CreateStudyReportRequest;
-  hasStudy(): boolean;
-  clearStudy(): CreateStudyReportRequest;
+  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): CreateStudyReportRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): CreateStudyReportRequest;
 
   getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
   setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateStudyReportRequest;
   hasDataset(): boolean;
   clearDataset(): CreateStudyReportRequest;
 
-  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): CreateStudyReportRequest;
-  hasDatasource(): boolean;
-  clearDatasource(): CreateStudyReportRequest;
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): CreateStudyReportRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): CreateStudyReportRequest;
+
+  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): CreateStudyReportRequest;
+  hasStudy(): boolean;
+  clearStudy(): CreateStudyReportRequest;
 
   getModels(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList | undefined;
   setModels(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList): CreateStudyReportRequest;
@@ -1421,9 +1474,10 @@ export class CreateStudyReportRequest extends jspb.Message {
 export namespace CreateStudyReportRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
-    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
+    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     models?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList.AsObject,
     report?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
   }
@@ -1449,6 +1503,11 @@ export class AskModelRequest extends jspb.Message {
   setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): AskModelRequest;
   hasDataset(): boolean;
   clearDataset(): AskModelRequest;
+
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): AskModelRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): AskModelRequest;
 
   getBudget(): number;
   setBudget(value: number): AskModelRequest;
@@ -1478,6 +1537,7 @@ export namespace AskModelRequest {
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
     budget: number,
     defaulthp: boolean,
     algorithm: string,
@@ -1634,6 +1694,11 @@ export class AskEnsembleRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): AskEnsembleRequest;
 
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): AskEnsembleRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): AskEnsembleRequest;
+
   getModelsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
   setModelsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>): AskEnsembleRequest;
   clearModelsList(): AskEnsembleRequest;
@@ -1658,6 +1723,7 @@ export namespace AskEnsembleRequest {
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
     modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
     algorithmsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.AsObject>,
   }
@@ -1704,6 +1770,11 @@ export class AskBaselineRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): AskBaselineRequest;
 
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): AskBaselineRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): AskBaselineRequest;
+
   getAlgnamesList(): Array<string>;
   setAlgnamesList(value: Array<string>): AskBaselineRequest;
   clearAlgnamesList(): AskBaselineRequest;
@@ -1731,6 +1802,7 @@ export namespace AskBaselineRequest {
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
     algnamesList: Array<string>,
     all: boolean,
     algorithmsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.AsObject>,
@@ -1778,6 +1850,11 @@ export class AskAllModelsForTaskRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): AskAllModelsForTaskRequest;
 
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): AskAllModelsForTaskRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): AskAllModelsForTaskRequest;
+
   getBudget(): number;
   setBudget(value: number): AskAllModelsForTaskRequest;
 
@@ -1803,6 +1880,7 @@ export namespace AskAllModelsForTaskRequest {
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
     budget: number,
     task: string,
     algorithmsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.AsObject>,
@@ -1850,6 +1928,11 @@ export class TellModelRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): TellModelRequest;
 
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): TellModelRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): TellModelRequest;
+
   getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
   setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): TellModelRequest;
   hasModel(): boolean;
@@ -1872,6 +1955,7 @@ export namespace TellModelRequest {
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     failed: boolean,
   }

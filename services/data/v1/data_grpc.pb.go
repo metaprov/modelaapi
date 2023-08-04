@@ -67,11 +67,9 @@ type DataServiceClient interface {
 	AskAllModelsForTask(ctx context.Context, in *AskAllModelsForTaskRequest, opts ...grpc.CallOption) (*AskAllModelsForTaskResponse, error)
 	// If a model is a partial model (sample < 100%)
 	TellPartialModel(ctx context.Context, in *TellModelRequest, opts ...grpc.CallOption) (*TellModelResponse, error)
-	// for bayaisn optimization, we tell the planner the result of the model evaluation
 	TellModel(ctx context.Context, in *TellModelRequest, opts ...grpc.CallOption) (*TellModelResponse, error)
 	// Merge the forecast back to one file.
 	MergeForecastFile(ctx context.Context, in *DsMergeForecastFileRequest, opts ...grpc.CallOption) (*DsMergeForecastFileResponse, error)
-	// test connection from python presepective
 	DsTestConnection(ctx context.Context, in *DsTestConnectionRequest, opts ...grpc.CallOption) (*DsTestConnectionResponse, error)
 	ShutDown(ctx context.Context, in *DsShutdownRequest, opts ...grpc.CallOption) (*DsShutdownResponse, error)
 	StudyEnded(ctx context.Context, in *DsStudyEndedRequest, opts ...grpc.CallOption) (*DsStudyEndedResponse, error)
@@ -607,11 +605,9 @@ type DataServiceServer interface {
 	AskAllModelsForTask(context.Context, *AskAllModelsForTaskRequest) (*AskAllModelsForTaskResponse, error)
 	// If a model is a partial model (sample < 100%)
 	TellPartialModel(context.Context, *TellModelRequest) (*TellModelResponse, error)
-	// for bayaisn optimization, we tell the planner the result of the model evaluation
 	TellModel(context.Context, *TellModelRequest) (*TellModelResponse, error)
 	// Merge the forecast back to one file.
 	MergeForecastFile(context.Context, *DsMergeForecastFileRequest) (*DsMergeForecastFileResponse, error)
-	// test connection from python presepective
 	DsTestConnection(context.Context, *DsTestConnectionRequest) (*DsTestConnectionResponse, error)
 	ShutDown(context.Context, *DsShutdownRequest) (*DsShutdownResponse, error)
 	StudyEnded(context.Context, *DsStudyEndedRequest) (*DsStudyEndedResponse, error)

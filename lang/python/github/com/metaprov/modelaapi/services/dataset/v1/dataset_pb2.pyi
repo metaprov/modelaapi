@@ -7,9 +7,23 @@ from github.com.metaprov.modelaapi.services.common.v1 import common_pb2 as _comm
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class CompareDatasetsRequest(_message.Message):
+    __slots__ = ["namespace", "snapshots"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    SNAPSHOTS_FIELD_NUMBER: _ClassVar[int]
+    namespace: str
+    snapshots: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1.SnapshotReference]
+    def __init__(self, namespace: _Optional[str] = ..., snapshots: _Optional[_Iterable[_Union[_generated_pb2_1.SnapshotReference, _Mapping]]] = ...) -> None: ...
+
+class CompareDatasetsResponse(_message.Message):
+    __slots__ = ["profiles"]
+    PROFILES_FIELD_NUMBER: _ClassVar[int]
+    profiles: _containers.RepeatedCompositeFieldContainer[_common_pb2.DatasetProfile]
+    def __init__(self, profiles: _Optional[_Iterable[_Union[_common_pb2.DatasetProfile, _Mapping]]] = ...) -> None: ...
 
 class CreateDatasetRequest(_message.Message):
     __slots__ = ["dataset"]

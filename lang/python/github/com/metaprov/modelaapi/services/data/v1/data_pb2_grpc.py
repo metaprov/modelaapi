@@ -445,8 +445,7 @@ class DataServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def TellModel(self, request, context):
-        """for bayaisn optimization, we tell the planner the result of the model evaluation
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -459,8 +458,7 @@ class DataServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def DsTestConnection(self, request, context):
-        """test connection from python presepective
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
