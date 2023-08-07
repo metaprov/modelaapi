@@ -289,10 +289,10 @@ message CreateReportResponse {
 
 message CreateDatasetReportRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 5;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report report = 6;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 4;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report report = 5;
 }
 
 

@@ -70,6 +70,7 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/dataproduct/v1/dataproduct.proto \
     github.com/metaprov/modelaapi/services/dataproductversion/v1/dataproductversion.proto \
     github.com/metaprov/modelaapi/services/dataset/v1/dataset.proto \
+    github.com/metaprov/modelaapi/services/datasetsnapshot/v1/datasetsnapshot.proto \
     github.com/metaprov/modelaapi/services/datasource/v1/datasource.proto \
     github.com/metaprov/modelaapi/services/dataapp/v1/dataapp.proto \
     github.com/metaprov/modelaapi/services/entity/v1/entity.proto \

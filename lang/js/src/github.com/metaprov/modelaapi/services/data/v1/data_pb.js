@@ -12841,22 +12841,22 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinaryFromReader);
       msg.setProduct(value);
       break;
-    case 3:
+    case 2:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
       msg.setDatasource(value);
       break;
-    case 4:
+    case 3:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
       msg.setDataset(value);
       break;
-    case 5:
+    case 4:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.deserializeBinaryFromReader);
       msg.setSnapshot(value);
       break;
-    case 6:
+    case 5:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.deserializeBinaryFromReader);
       msg.setReport(value);
@@ -12901,7 +12901,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
   f = message.getDatasource();
   if (f != null) {
     writer.writeMessage(
-      3,
+      2,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
     );
@@ -12909,7 +12909,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
   f = message.getDataset();
   if (f != null) {
     writer.writeMessage(
-      4,
+      3,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
     );
@@ -12917,7 +12917,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
   f = message.getSnapshot();
   if (f != null) {
     writer.writeMessage(
-      5,
+      4,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.serializeBinaryToWriter
     );
@@ -12925,7 +12925,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
   f = message.getReport();
   if (f != null) {
     writer.writeMessage(
-      6,
+      5,
       f,
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.serializeBinaryToWriter
     );
@@ -12971,12 +12971,12 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 2;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.prototype.getDatasource = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 3));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 2));
 };
 
 
@@ -12985,7 +12985,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.prototype.setDatasource = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -13003,17 +13003,17 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.prototype.hasDatasource = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 3;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.prototype.getDataset = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 4));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 3));
 };
 
 
@@ -13022,7 +13022,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.prototype.setDataset = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -13040,17 +13040,17 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.prototype.hasDataset = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 5;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 4;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.prototype.getSnapshot = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot, 5));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot, 4));
 };
 
 
@@ -13059,7 +13059,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.prototype.setSnapshot = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -13077,17 +13077,17 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.prototype.hasSnapshot = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report report = 6;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report report = 5;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.prototype.getReport = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report, 6));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report, 5));
 };
 
 
@@ -13096,7 +13096,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.prototype.setReport = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -13114,7 +13114,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.prototype.hasReport = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
