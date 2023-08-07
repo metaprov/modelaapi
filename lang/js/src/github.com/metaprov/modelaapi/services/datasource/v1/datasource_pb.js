@@ -2194,8 +2194,8 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.p
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
-    github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile.toObject, includeInstance)
+    featuresList: jspb.Message.toObjectList(msg.getFeaturesList(),
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2233,9 +2233,9 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.d
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile;
-      reader.readMessage(value,github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile.deserializeBinaryFromReader);
-      msg.addColumns(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics.deserializeBinaryFromReader);
+      msg.addFeatures(value);
       break;
     default:
       reader.skipField();
@@ -2266,43 +2266,43 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.p
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getColumnsList();
+  f = message.getFeaturesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated github.com.metaprov.modelaapi.services.common.v1.ColumnProfile columns = 1;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile>}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics features = 1;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics>}
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.prototype.getColumnsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile, 1));
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.prototype.getFeaturesList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.prototype.setColumnsList = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.prototype.setFeaturesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics}
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.prototype.addColumns = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile, opt_index);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.prototype.addFeatures = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics, opt_index);
 };
 
 
@@ -2310,8 +2310,8 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.p
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.prototype.clearColumnsList = function() {
-  return this.setColumnsList([]);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.prototype.clearFeaturesList = function() {
+  return this.setFeaturesList([]);
 };
 
 

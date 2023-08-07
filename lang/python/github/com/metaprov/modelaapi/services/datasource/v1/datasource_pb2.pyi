@@ -76,10 +76,10 @@ class InferSchemaRequest(_message.Message):
     def __init__(self, tenant: _Optional[str] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., location: _Optional[_Union[_generated_pb2_1_1.DataLocation, _Mapping]] = ...) -> None: ...
 
 class InferSchemaResponse(_message.Message):
-    __slots__ = ["columns"]
-    COLUMNS_FIELD_NUMBER: _ClassVar[int]
-    columns: _containers.RepeatedCompositeFieldContainer[_common_pb2.ColumnProfile]
-    def __init__(self, columns: _Optional[_Iterable[_Union[_common_pb2.ColumnProfile, _Mapping]]] = ...) -> None: ...
+    __slots__ = ["features"]
+    FEATURES_FIELD_NUMBER: _ClassVar[int]
+    features: _containers.RepeatedCompositeFieldContainer[_generated_pb2.FeatureStatistics]
+    def __init__(self, features: _Optional[_Iterable[_Union[_generated_pb2.FeatureStatistics, _Mapping]]] = ...) -> None: ...
 
 class ListDataSourceRequest(_message.Message):
     __slots__ = ["labels", "namespace", "order_by", "page_size", "page_token"]

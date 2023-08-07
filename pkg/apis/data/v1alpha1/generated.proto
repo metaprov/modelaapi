@@ -2250,6 +2250,9 @@ message FeatureStatistics {
 
   // Statistics relevant to outliers
   optional OutlierStatistics outliers = 44;
+
+  // Distinct values, in the case the feature is categorical
+  repeated string values = 45;
 }
 
 // FlatFileFormatSpec defines the format for incoming flat-files to be parsed

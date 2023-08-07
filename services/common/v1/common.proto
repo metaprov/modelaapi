@@ -4,27 +4,26 @@ package github.com.metaprov.modelaapi.services.common.v1;
 
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
-
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 
 message DatasetProfile {
-  int32    cols = 1;
-  int32    rows = 2;
-  int32    filesize = 3;
-  // return true if this dataset is imbalance.
-  bool     imbalance = 4;
+  int32 cols = 1;
+  int32 rows = 2;
+  int32 filesize = 3;
+  bool imbalance = 4;
+
   repeated Plot plots = 5;
-  repeated ColumnProfile   columns = 6;
-  TableView    table = 7;
-  string       hash = 8; // signature of the dataset profile.
+  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics columns = 6;
+  TableView table = 7;
+
+  string hash = 8; // signature of the dataset profile.
 
   TableView groups = 10;  // return the list of group datasets in this dataset profile. only for datasets of type group forecast
   TimeSeriesProfile ts = 11;// if the dataset is a group dataset series, this is one profile of a single time series.
 }
 
+/////// Model Profile ///////
 
-/////////////////////////////////////////////////////////////////////////
-///// Model profile
-////////////////////////////////////////////////////////////////////////
 message ModelProfile {
   string name = 1;
   repeated Plot plots = 2;
@@ -48,7 +47,6 @@ message ForecastingAlgProfile {
   TableView forecast = 6;
   TableView metrics = 7;
   TableView changePoints = 8;
-
   repeated Plot plots = 10; // plots for this time series.
 }
 
@@ -61,8 +59,6 @@ message TimeStat  {
     google.protobuf.Timestamp min_timestamp = 6;
     google.protobuf.Timestamp max_timestamp = 7;
 }
-
-
 
 message ROCCurve {
   string classname = 1;
@@ -80,15 +76,15 @@ message PrecisionRecallCurve {
   repeated double thresholds = 5;
 }
 
+/////// Forecast Profile ///////
 
-// Profile of time series datasets.
 message TimeSeriesProfile {
     KPSS kpss = 1;
     ADF  adf  = 2;
     ZivotAndrew zivot = 3;
     MannKendall kendall = 4;
     DurbinWatson dw = 5;
-    string key      = 6;
+    string key = 6;
     TableView series = 7; // the series itself
     TableView valueStat = 8; // stat about the value column
     TableView featuresView = 9; // stat about the value column
@@ -140,23 +136,13 @@ message DurbinWatson {
 
 }
 
-
-
-
-
-
-/////////////////////////////////////////////////////////////////////////
-///// Forecast profile
-////////////////////////////////////////////////////////////////////////
 message ForecastProfile {
   string name = 1;
   repeated Plot plots = 2;
 }
 
+/////// Study Profile ///////
 
-/////////////////////////////////////////////////////////////////////////
-///// Study profile
-////////////////////////////////////////////////////////////////////////
 message StudyProfile {
   repeated Plot plots = 1;
   repeated ModelProfile models = 2;
@@ -166,83 +152,24 @@ message StudyProfile {
 }
 
 message Plot {
+  // The name of the visualization
   string name = 1;
-  // The visualization title
+  // The title of the visualization
   string title = 2;
-  // image as bin
+  // The binary image data
   bytes  img = 3;
-  // image file name
+  // The image file name
   string fname = 4;
-  // The url in the bucket
   string url = 5;
-}
-
-
-message ColumnProfile {
-  string    name = 1;
-  int32     count = 2;
-  string    type = 3;
-  int32     missing = 4;
-  float     percentMissing = 5;
-  int32     distinct = 6;
-  double    mean = 7;
-  string    mode = 8;
-  double    stddev = 9;
-  double    variance = 10;
-  double    min = 11;
-  double    max = 12;
-  double    kurtosis = 13;
-  double    skewness = 14;
-  double    sum = 15;
-  double    mad = 16;
-  double    zeros = 17;
-  double    p25 = 18;
-  double    p50 = 19;
-  double    p75 = 20;
-  double    p100 = 21;
-  double    iqr = 22;
-  double    cv = 23;
-  int32     top = 24;
-  int32     freq = 25;
-  bool      ignore = 26;
-  bool      target = 27;
-  Histogram histogram = 28;
-  int32     invalid = 29;
-  double    importance = 30;
-  bool      nullable = 31;
-  bool      highCardinality = 32;
-  bool      highCorrWithOtherFeatures = 33;
-  bool      lowCorrWithTarget = 34;
-  bool      highMissingPct = 35;
-  bool      skewed = 36;
-  bool      id = 37;
-  bool      constant = 38;
-  bool      duplicate = 39;
-  bool      reserved = 40;
-  int32     outliersUpper = 41;
-  int32     outliersLower = 42;
-  float     outliersPercent = 43;
-  double    completeness = 44;
-  double    distinctValueCount = 45;
-  double    mostFreqValuesRatio = 46;
-  double    indexOfPeculiarity = 47;
-  repeated  string values = 48; // Enum set of values
-  double    corrToTarget = 49;
-  int32     index = 50; // column index
-
-
 }
 
 message Histogram {
   repeated double values = 1;
   repeated double bins = 2;
-  repeated string categories = 3; // for categorical variables those are the cateogries.
+  repeated string categories = 3;
 }
 
-
-/////////////////////////////////////////////////////////////////////
-//// Namespace Info
-////////////////////////////////////////////////////////////////////
+/////// Namespace Info ///////
 
 message NamespaceInfo {
   enum NamespaceType {
@@ -266,11 +193,11 @@ message NamespaceInfo {
 }
 
 message TableView {
-  repeated string        cols = 1;
-  repeated TableViewRow  rows = 2;
-  repeated ColumnProfile profiles = 3;
+  repeated string cols = 1;
+  repeated TableViewRow rows = 2;
+  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics profiles = 3;
 }
 
 message TableViewRow {
-  repeated string values = 2;
+  repeated string values = 1;
 }

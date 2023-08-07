@@ -1,5 +1,6 @@
 from google.protobuf import duration_pb2 as _duration_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
+from github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1 import generated_pb2 as _generated_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -29,110 +30,6 @@ class ADF(_message.Message):
     usedlag: int
     def __init__(self, adf: _Optional[float] = ..., pvalue: _Optional[float] = ..., usedlag: _Optional[int] = ..., nobs: _Optional[int] = ..., crit: _Optional[_Mapping[str, float]] = ...) -> None: ...
 
-class ColumnProfile(_message.Message):
-    __slots__ = ["completeness", "constant", "corrToTarget", "count", "cv", "distinct", "distinctValueCount", "duplicate", "freq", "highCardinality", "highCorrWithOtherFeatures", "highMissingPct", "histogram", "id", "ignore", "importance", "index", "indexOfPeculiarity", "invalid", "iqr", "kurtosis", "lowCorrWithTarget", "mad", "max", "mean", "min", "missing", "mode", "mostFreqValuesRatio", "name", "nullable", "outliersLower", "outliersPercent", "outliersUpper", "p100", "p25", "p50", "p75", "percentMissing", "reserved", "skewed", "skewness", "stddev", "sum", "target", "top", "type", "values", "variance", "zeros"]
-    COMPLETENESS_FIELD_NUMBER: _ClassVar[int]
-    CONSTANT_FIELD_NUMBER: _ClassVar[int]
-    CORRTOTARGET_FIELD_NUMBER: _ClassVar[int]
-    COUNT_FIELD_NUMBER: _ClassVar[int]
-    CV_FIELD_NUMBER: _ClassVar[int]
-    DISTINCTVALUECOUNT_FIELD_NUMBER: _ClassVar[int]
-    DISTINCT_FIELD_NUMBER: _ClassVar[int]
-    DUPLICATE_FIELD_NUMBER: _ClassVar[int]
-    FREQ_FIELD_NUMBER: _ClassVar[int]
-    HIGHCARDINALITY_FIELD_NUMBER: _ClassVar[int]
-    HIGHCORRWITHOTHERFEATURES_FIELD_NUMBER: _ClassVar[int]
-    HIGHMISSINGPCT_FIELD_NUMBER: _ClassVar[int]
-    HISTOGRAM_FIELD_NUMBER: _ClassVar[int]
-    ID_FIELD_NUMBER: _ClassVar[int]
-    IGNORE_FIELD_NUMBER: _ClassVar[int]
-    IMPORTANCE_FIELD_NUMBER: _ClassVar[int]
-    INDEXOFPECULIARITY_FIELD_NUMBER: _ClassVar[int]
-    INDEX_FIELD_NUMBER: _ClassVar[int]
-    INVALID_FIELD_NUMBER: _ClassVar[int]
-    IQR_FIELD_NUMBER: _ClassVar[int]
-    KURTOSIS_FIELD_NUMBER: _ClassVar[int]
-    LOWCORRWITHTARGET_FIELD_NUMBER: _ClassVar[int]
-    MAD_FIELD_NUMBER: _ClassVar[int]
-    MAX_FIELD_NUMBER: _ClassVar[int]
-    MEAN_FIELD_NUMBER: _ClassVar[int]
-    MIN_FIELD_NUMBER: _ClassVar[int]
-    MISSING_FIELD_NUMBER: _ClassVar[int]
-    MODE_FIELD_NUMBER: _ClassVar[int]
-    MOSTFREQVALUESRATIO_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    NULLABLE_FIELD_NUMBER: _ClassVar[int]
-    OUTLIERSLOWER_FIELD_NUMBER: _ClassVar[int]
-    OUTLIERSPERCENT_FIELD_NUMBER: _ClassVar[int]
-    OUTLIERSUPPER_FIELD_NUMBER: _ClassVar[int]
-    P100_FIELD_NUMBER: _ClassVar[int]
-    P25_FIELD_NUMBER: _ClassVar[int]
-    P50_FIELD_NUMBER: _ClassVar[int]
-    P75_FIELD_NUMBER: _ClassVar[int]
-    PERCENTMISSING_FIELD_NUMBER: _ClassVar[int]
-    RESERVED_FIELD_NUMBER: _ClassVar[int]
-    SKEWED_FIELD_NUMBER: _ClassVar[int]
-    SKEWNESS_FIELD_NUMBER: _ClassVar[int]
-    STDDEV_FIELD_NUMBER: _ClassVar[int]
-    SUM_FIELD_NUMBER: _ClassVar[int]
-    TARGET_FIELD_NUMBER: _ClassVar[int]
-    TOP_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
-    VALUES_FIELD_NUMBER: _ClassVar[int]
-    VARIANCE_FIELD_NUMBER: _ClassVar[int]
-    ZEROS_FIELD_NUMBER: _ClassVar[int]
-    completeness: float
-    constant: bool
-    corrToTarget: float
-    count: int
-    cv: float
-    distinct: int
-    distinctValueCount: float
-    duplicate: bool
-    freq: int
-    highCardinality: bool
-    highCorrWithOtherFeatures: bool
-    highMissingPct: bool
-    histogram: Histogram
-    id: bool
-    ignore: bool
-    importance: float
-    index: int
-    indexOfPeculiarity: float
-    invalid: int
-    iqr: float
-    kurtosis: float
-    lowCorrWithTarget: bool
-    mad: float
-    max: float
-    mean: float
-    min: float
-    missing: int
-    mode: str
-    mostFreqValuesRatio: float
-    name: str
-    nullable: bool
-    outliersLower: int
-    outliersPercent: float
-    outliersUpper: int
-    p100: float
-    p25: float
-    p50: float
-    p75: float
-    percentMissing: float
-    reserved: bool
-    skewed: bool
-    skewness: float
-    stddev: float
-    sum: float
-    target: bool
-    top: int
-    type: str
-    values: _containers.RepeatedScalarFieldContainer[str]
-    variance: float
-    zeros: float
-    def __init__(self, name: _Optional[str] = ..., count: _Optional[int] = ..., type: _Optional[str] = ..., missing: _Optional[int] = ..., percentMissing: _Optional[float] = ..., distinct: _Optional[int] = ..., mean: _Optional[float] = ..., mode: _Optional[str] = ..., stddev: _Optional[float] = ..., variance: _Optional[float] = ..., min: _Optional[float] = ..., max: _Optional[float] = ..., kurtosis: _Optional[float] = ..., skewness: _Optional[float] = ..., sum: _Optional[float] = ..., mad: _Optional[float] = ..., zeros: _Optional[float] = ..., p25: _Optional[float] = ..., p50: _Optional[float] = ..., p75: _Optional[float] = ..., p100: _Optional[float] = ..., iqr: _Optional[float] = ..., cv: _Optional[float] = ..., top: _Optional[int] = ..., freq: _Optional[int] = ..., ignore: bool = ..., target: bool = ..., histogram: _Optional[_Union[Histogram, _Mapping]] = ..., invalid: _Optional[int] = ..., importance: _Optional[float] = ..., nullable: bool = ..., highCardinality: bool = ..., highCorrWithOtherFeatures: bool = ..., lowCorrWithTarget: bool = ..., highMissingPct: bool = ..., skewed: bool = ..., id: bool = ..., constant: bool = ..., duplicate: bool = ..., reserved: bool = ..., outliersUpper: _Optional[int] = ..., outliersLower: _Optional[int] = ..., outliersPercent: _Optional[float] = ..., completeness: _Optional[float] = ..., distinctValueCount: _Optional[float] = ..., mostFreqValuesRatio: _Optional[float] = ..., indexOfPeculiarity: _Optional[float] = ..., values: _Optional[_Iterable[str]] = ..., corrToTarget: _Optional[float] = ..., index: _Optional[int] = ...) -> None: ...
-
 class DatasetProfile(_message.Message):
     __slots__ = ["cols", "columns", "filesize", "groups", "hash", "imbalance", "plots", "rows", "table", "ts"]
     COLS_FIELD_NUMBER: _ClassVar[int]
@@ -146,7 +43,7 @@ class DatasetProfile(_message.Message):
     TABLE_FIELD_NUMBER: _ClassVar[int]
     TS_FIELD_NUMBER: _ClassVar[int]
     cols: int
-    columns: _containers.RepeatedCompositeFieldContainer[ColumnProfile]
+    columns: _containers.RepeatedCompositeFieldContainer[_generated_pb2.FeatureStatistics]
     filesize: int
     groups: TableView
     hash: str
@@ -155,7 +52,7 @@ class DatasetProfile(_message.Message):
     rows: int
     table: TableView
     ts: TimeSeriesProfile
-    def __init__(self, cols: _Optional[int] = ..., rows: _Optional[int] = ..., filesize: _Optional[int] = ..., imbalance: bool = ..., plots: _Optional[_Iterable[_Union[Plot, _Mapping]]] = ..., columns: _Optional[_Iterable[_Union[ColumnProfile, _Mapping]]] = ..., table: _Optional[_Union[TableView, _Mapping]] = ..., hash: _Optional[str] = ..., groups: _Optional[_Union[TableView, _Mapping]] = ..., ts: _Optional[_Union[TimeSeriesProfile, _Mapping]] = ...) -> None: ...
+    def __init__(self, cols: _Optional[int] = ..., rows: _Optional[int] = ..., filesize: _Optional[int] = ..., imbalance: bool = ..., plots: _Optional[_Iterable[_Union[Plot, _Mapping]]] = ..., columns: _Optional[_Iterable[_Union[_generated_pb2.FeatureStatistics, _Mapping]]] = ..., table: _Optional[_Union[TableView, _Mapping]] = ..., hash: _Optional[str] = ..., groups: _Optional[_Union[TableView, _Mapping]] = ..., ts: _Optional[_Union[TimeSeriesProfile, _Mapping]] = ...) -> None: ...
 
 class DurbinWatson(_message.Message):
     __slots__ = ["dw"]
@@ -369,9 +266,9 @@ class TableView(_message.Message):
     PROFILES_FIELD_NUMBER: _ClassVar[int]
     ROWS_FIELD_NUMBER: _ClassVar[int]
     cols: _containers.RepeatedScalarFieldContainer[str]
-    profiles: _containers.RepeatedCompositeFieldContainer[ColumnProfile]
+    profiles: _containers.RepeatedCompositeFieldContainer[_generated_pb2.FeatureStatistics]
     rows: _containers.RepeatedCompositeFieldContainer[TableViewRow]
-    def __init__(self, cols: _Optional[_Iterable[str]] = ..., rows: _Optional[_Iterable[_Union[TableViewRow, _Mapping]]] = ..., profiles: _Optional[_Iterable[_Union[ColumnProfile, _Mapping]]] = ...) -> None: ...
+    def __init__(self, cols: _Optional[_Iterable[str]] = ..., rows: _Optional[_Iterable[_Union[TableViewRow, _Mapping]]] = ..., profiles: _Optional[_Iterable[_Union[_generated_pb2.FeatureStatistics, _Mapping]]] = ...) -> None: ...
 
 class TableViewRow(_message.Message):
     __slots__ = ["values"]

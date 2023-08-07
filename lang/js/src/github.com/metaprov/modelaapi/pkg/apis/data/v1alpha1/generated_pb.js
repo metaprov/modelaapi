@@ -1392,7 +1392,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -29979,6 +29979,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics.repeatedFields_ = [45];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -30050,7 +30057,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics.toO
     histogram: (f = msg.getHistogram()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.toObject(includeInstance, f),
     corrtotarget: (f = jspb.Message.getOptionalFloatingPointField(msg, 42)) == null ? undefined : f,
     index: (f = jspb.Message.getField(msg, 43)) == null ? undefined : f,
-    outliers: (f = msg.getOutliers()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.OutlierStatistics.toObject(includeInstance, f)
+    outliers: (f = msg.getOutliers()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.OutlierStatistics.toObject(includeInstance, f),
+    valuesList: (f = jspb.Message.getRepeatedField(msg, 45)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -30252,6 +30260,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics.des
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.OutlierStatistics;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.OutlierStatistics.deserializeBinaryFromReader);
       msg.setOutliers(value);
+      break;
+    case 45:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addValues(value);
       break;
     default:
       reader.skipField();
@@ -30569,6 +30581,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics.ser
       44,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.OutlierStatistics.serializeBinaryToWriter
+    );
+  }
+  f = message.getValuesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      45,
+      f
     );
   }
 };
@@ -32049,6 +32068,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics.prototype.hasOutliers = function() {
   return jspb.Message.getField(this, 44) != null;
+};
+
+
+/**
+ * repeated string values = 45;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics.prototype.getValuesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 45));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics.prototype.setValuesList = function(value) {
+  return jspb.Message.setField(this, 45, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics.prototype.addValues = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 45, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics.prototype.clearValuesList = function() {
+  return this.setValuesList([]);
 };
 
 

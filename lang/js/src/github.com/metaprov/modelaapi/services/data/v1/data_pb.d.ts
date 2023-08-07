@@ -737,11 +737,6 @@ export class RunTestSuiteRequest extends jspb.Message {
   hasModel(): boolean;
   clearModel(): RunTestSuiteRequest;
 
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): RunTestSuiteRequest;
-  hasConnection(): boolean;
-  clearConnection(): RunTestSuiteRequest;
-
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
   setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): RunTestSuiteRequest;
   hasBucket(): boolean;
@@ -777,7 +772,6 @@ export namespace RunTestSuiteRequest {
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     histogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
     refhistogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
@@ -2281,6 +2275,11 @@ export class DsSnapshotRequest extends jspb.Message {
   hasProduct(): boolean;
   clearProduct(): DsSnapshotRequest;
 
+  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsSnapshotRequest;
+  hasBucket(): boolean;
+  clearBucket(): DsSnapshotRequest;
+
   getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
   setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsSnapshotRequest;
   hasDatasource(): boolean;
@@ -2290,6 +2289,11 @@ export class DsSnapshotRequest extends jspb.Message {
   setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsSnapshotRequest;
   hasDataset(): boolean;
   clearDataset(): DsSnapshotRequest;
+
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): DsSnapshotRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): DsSnapshotRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsSnapshotRequest.AsObject;
@@ -2302,12 +2306,19 @@ export class DsSnapshotRequest extends jspb.Message {
 export namespace DsSnapshotRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
   }
 }
 
 export class DsSnapshotResponse extends jspb.Message {
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DsSnapshotResponse;
+  hasLocation(): boolean;
+  clearLocation(): DsSnapshotResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsSnapshotResponse.AsObject;
   static toObject(includeInstance: boolean, msg: DsSnapshotResponse): DsSnapshotResponse.AsObject;
@@ -2318,6 +2329,7 @@ export class DsSnapshotResponse extends jspb.Message {
 
 export namespace DsSnapshotResponse {
   export type AsObject = {
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
   }
 }
 

@@ -333,6 +333,8 @@ type FeatureStatistics struct {
 	Index int32 `json:"index,omitempty" protobuf:"bytes,43,opt,name=index"`
 	// Statistics relevant to outliers
 	Outliers OutlierStatistics `json:"outliers,omitempty" protobuf:"bytes,44,opt,name=outliers"`
+	// Distinct values, in the case the feature is categorical
+	Values []string `json:"values,omitempty" protobuf:"bytes,45,opt,name=values"`
 }
 
 type OutlierStatistics struct {

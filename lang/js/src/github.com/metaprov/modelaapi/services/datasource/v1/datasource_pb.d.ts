@@ -253,10 +253,10 @@ export namespace InferSchemaRequest {
 }
 
 export class InferSchemaResponse extends jspb.Message {
-  getColumnsList(): Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile>;
-  setColumnsList(value: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile>): InferSchemaResponse;
-  clearColumnsList(): InferSchemaResponse;
-  addColumns(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile, index?: number): github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile;
+  getFeaturesList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics>;
+  setFeaturesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics>): InferSchemaResponse;
+  clearFeaturesList(): InferSchemaResponse;
+  addFeatures(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InferSchemaResponse.AsObject;
@@ -268,7 +268,7 @@ export class InferSchemaResponse extends jspb.Message {
 
 export namespace InferSchemaResponse {
   export type AsObject = {
-    columnsList: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile.AsObject>,
+    featuresList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics.AsObject>,
   }
 }
 

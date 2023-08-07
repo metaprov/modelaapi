@@ -2,6 +2,7 @@ import * as jspb from 'google-protobuf'
 
 import * as google_protobuf_duration_pb from 'google-protobuf/google/protobuf/duration_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 
 
 export class DatasetProfile extends jspb.Message {
@@ -22,10 +23,10 @@ export class DatasetProfile extends jspb.Message {
   clearPlotsList(): DatasetProfile;
   addPlots(value?: Plot, index?: number): Plot;
 
-  getColumnsList(): Array<ColumnProfile>;
-  setColumnsList(value: Array<ColumnProfile>): DatasetProfile;
+  getColumnsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics>;
+  setColumnsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics>): DatasetProfile;
   clearColumnsList(): DatasetProfile;
-  addColumns(value?: ColumnProfile, index?: number): ColumnProfile;
+  addColumns(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics;
 
   getTable(): TableView | undefined;
   setTable(value?: TableView): DatasetProfile;
@@ -60,7 +61,7 @@ export namespace DatasetProfile {
     filesize: number,
     imbalance: boolean,
     plotsList: Array<Plot.AsObject>,
-    columnsList: Array<ColumnProfile.AsObject>,
+    columnsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics.AsObject>,
     table?: TableView.AsObject,
     hash: string,
     groups?: TableView.AsObject,
@@ -666,224 +667,6 @@ export namespace Plot {
   }
 }
 
-export class ColumnProfile extends jspb.Message {
-  getName(): string;
-  setName(value: string): ColumnProfile;
-
-  getCount(): number;
-  setCount(value: number): ColumnProfile;
-
-  getType(): string;
-  setType(value: string): ColumnProfile;
-
-  getMissing(): number;
-  setMissing(value: number): ColumnProfile;
-
-  getPercentmissing(): number;
-  setPercentmissing(value: number): ColumnProfile;
-
-  getDistinct(): number;
-  setDistinct(value: number): ColumnProfile;
-
-  getMean(): number;
-  setMean(value: number): ColumnProfile;
-
-  getMode(): string;
-  setMode(value: string): ColumnProfile;
-
-  getStddev(): number;
-  setStddev(value: number): ColumnProfile;
-
-  getVariance(): number;
-  setVariance(value: number): ColumnProfile;
-
-  getMin(): number;
-  setMin(value: number): ColumnProfile;
-
-  getMax(): number;
-  setMax(value: number): ColumnProfile;
-
-  getKurtosis(): number;
-  setKurtosis(value: number): ColumnProfile;
-
-  getSkewness(): number;
-  setSkewness(value: number): ColumnProfile;
-
-  getSum(): number;
-  setSum(value: number): ColumnProfile;
-
-  getMad(): number;
-  setMad(value: number): ColumnProfile;
-
-  getZeros(): number;
-  setZeros(value: number): ColumnProfile;
-
-  getP25(): number;
-  setP25(value: number): ColumnProfile;
-
-  getP50(): number;
-  setP50(value: number): ColumnProfile;
-
-  getP75(): number;
-  setP75(value: number): ColumnProfile;
-
-  getP100(): number;
-  setP100(value: number): ColumnProfile;
-
-  getIqr(): number;
-  setIqr(value: number): ColumnProfile;
-
-  getCv(): number;
-  setCv(value: number): ColumnProfile;
-
-  getTop(): number;
-  setTop(value: number): ColumnProfile;
-
-  getFreq(): number;
-  setFreq(value: number): ColumnProfile;
-
-  getIgnore(): boolean;
-  setIgnore(value: boolean): ColumnProfile;
-
-  getTarget(): boolean;
-  setTarget(value: boolean): ColumnProfile;
-
-  getHistogram(): Histogram | undefined;
-  setHistogram(value?: Histogram): ColumnProfile;
-  hasHistogram(): boolean;
-  clearHistogram(): ColumnProfile;
-
-  getInvalid(): number;
-  setInvalid(value: number): ColumnProfile;
-
-  getImportance(): number;
-  setImportance(value: number): ColumnProfile;
-
-  getNullable(): boolean;
-  setNullable(value: boolean): ColumnProfile;
-
-  getHighcardinality(): boolean;
-  setHighcardinality(value: boolean): ColumnProfile;
-
-  getHighcorrwithotherfeatures(): boolean;
-  setHighcorrwithotherfeatures(value: boolean): ColumnProfile;
-
-  getLowcorrwithtarget(): boolean;
-  setLowcorrwithtarget(value: boolean): ColumnProfile;
-
-  getHighmissingpct(): boolean;
-  setHighmissingpct(value: boolean): ColumnProfile;
-
-  getSkewed(): boolean;
-  setSkewed(value: boolean): ColumnProfile;
-
-  getId(): boolean;
-  setId(value: boolean): ColumnProfile;
-
-  getConstant(): boolean;
-  setConstant(value: boolean): ColumnProfile;
-
-  getDuplicate(): boolean;
-  setDuplicate(value: boolean): ColumnProfile;
-
-  getReserved(): boolean;
-  setReserved(value: boolean): ColumnProfile;
-
-  getOutliersupper(): number;
-  setOutliersupper(value: number): ColumnProfile;
-
-  getOutlierslower(): number;
-  setOutlierslower(value: number): ColumnProfile;
-
-  getOutlierspercent(): number;
-  setOutlierspercent(value: number): ColumnProfile;
-
-  getCompleteness(): number;
-  setCompleteness(value: number): ColumnProfile;
-
-  getDistinctvaluecount(): number;
-  setDistinctvaluecount(value: number): ColumnProfile;
-
-  getMostfreqvaluesratio(): number;
-  setMostfreqvaluesratio(value: number): ColumnProfile;
-
-  getIndexofpeculiarity(): number;
-  setIndexofpeculiarity(value: number): ColumnProfile;
-
-  getValuesList(): Array<string>;
-  setValuesList(value: Array<string>): ColumnProfile;
-  clearValuesList(): ColumnProfile;
-  addValues(value: string, index?: number): ColumnProfile;
-
-  getCorrtotarget(): number;
-  setCorrtotarget(value: number): ColumnProfile;
-
-  getIndex(): number;
-  setIndex(value: number): ColumnProfile;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ColumnProfile.AsObject;
-  static toObject(includeInstance: boolean, msg: ColumnProfile): ColumnProfile.AsObject;
-  static serializeBinaryToWriter(message: ColumnProfile, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ColumnProfile;
-  static deserializeBinaryFromReader(message: ColumnProfile, reader: jspb.BinaryReader): ColumnProfile;
-}
-
-export namespace ColumnProfile {
-  export type AsObject = {
-    name: string,
-    count: number,
-    type: string,
-    missing: number,
-    percentmissing: number,
-    distinct: number,
-    mean: number,
-    mode: string,
-    stddev: number,
-    variance: number,
-    min: number,
-    max: number,
-    kurtosis: number,
-    skewness: number,
-    sum: number,
-    mad: number,
-    zeros: number,
-    p25: number,
-    p50: number,
-    p75: number,
-    p100: number,
-    iqr: number,
-    cv: number,
-    top: number,
-    freq: number,
-    ignore: boolean,
-    target: boolean,
-    histogram?: Histogram.AsObject,
-    invalid: number,
-    importance: number,
-    nullable: boolean,
-    highcardinality: boolean,
-    highcorrwithotherfeatures: boolean,
-    lowcorrwithtarget: boolean,
-    highmissingpct: boolean,
-    skewed: boolean,
-    id: boolean,
-    constant: boolean,
-    duplicate: boolean,
-    reserved: boolean,
-    outliersupper: number,
-    outlierslower: number,
-    outlierspercent: number,
-    completeness: number,
-    distinctvaluecount: number,
-    mostfreqvaluesratio: number,
-    indexofpeculiarity: number,
-    valuesList: Array<string>,
-    corrtotarget: number,
-    index: number,
-  }
-}
-
 export class Histogram extends jspb.Message {
   getValuesList(): Array<number>;
   setValuesList(value: Array<number>): Histogram;
@@ -990,10 +773,10 @@ export class TableView extends jspb.Message {
   clearRowsList(): TableView;
   addRows(value?: TableViewRow, index?: number): TableViewRow;
 
-  getProfilesList(): Array<ColumnProfile>;
-  setProfilesList(value: Array<ColumnProfile>): TableView;
+  getProfilesList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics>;
+  setProfilesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics>): TableView;
   clearProfilesList(): TableView;
-  addProfiles(value?: ColumnProfile, index?: number): ColumnProfile;
+  addProfiles(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TableView.AsObject;
@@ -1007,7 +790,7 @@ export namespace TableView {
   export type AsObject = {
     colsList: Array<string>,
     rowsList: Array<TableViewRow.AsObject>,
-    profilesList: Array<ColumnProfile.AsObject>,
+    profilesList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureStatistics.AsObject>,
   }
 }
 

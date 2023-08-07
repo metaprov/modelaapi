@@ -619,6 +619,12 @@ spec:
                           description: Indicates if the feature is the target attribute
                             for a Study
                           type: boolean
+                        values:
+                          description: Distinct values, in the case the feature is
+                            categorical
+                          items:
+                            type: string
+                          type: array
                         variance:
                           description: The variability of the feature values
                           type: number

@@ -3673,6 +3673,11 @@ export class FeatureStatistics extends jspb.Message {
   hasOutliers(): boolean;
   clearOutliers(): FeatureStatistics;
 
+  getValuesList(): Array<string>;
+  setValuesList(value: Array<string>): FeatureStatistics;
+  clearValuesList(): FeatureStatistics;
+  addValues(value: string, index?: number): FeatureStatistics;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureStatistics.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureStatistics): FeatureStatistics.AsObject;
@@ -3724,6 +3729,7 @@ export namespace FeatureStatistics {
     corrtotarget?: number,
     index?: number,
     outliers?: OutlierStatistics.AsObject,
+    valuesList: Array<string>,
   }
 }
 

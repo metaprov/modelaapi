@@ -1132,7 +1132,7 @@ class FeatureHistogramStatus(_message.Message):
     def __init__(self, observedGeneration: _Optional[int] = ..., columns: _Optional[_Iterable[_Union[ColumnHistogram, _Mapping]]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., logs: _Optional[_Union[_generated_pb2.Logs, _Mapping]] = ..., phase: _Optional[str] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., unitTestsResult: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., total: _Optional[int] = ..., errors: _Optional[int] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class FeatureStatistics(_message.Message):
-    __slots__ = ["completeness", "constant", "corrToTarget", "count", "datatype", "distinct", "distinctValueCount", "duplicate", "highCardinality", "highCorrWithOtherFeatures", "highMissingPct", "histogram", "ignore", "importance", "index", "invalid", "iqr", "kurtosis", "lowCorrWithTarget", "mad", "max", "mean", "min", "missing", "mode", "mostFreqValuesRatio", "name", "nullable", "outliers", "p25", "p50", "p75", "percentMissing", "reserved", "skewed", "skewness", "stddev", "sum", "target", "variance", "zeros"]
+    __slots__ = ["completeness", "constant", "corrToTarget", "count", "datatype", "distinct", "distinctValueCount", "duplicate", "highCardinality", "highCorrWithOtherFeatures", "highMissingPct", "histogram", "ignore", "importance", "index", "invalid", "iqr", "kurtosis", "lowCorrWithTarget", "mad", "max", "mean", "min", "missing", "mode", "mostFreqValuesRatio", "name", "nullable", "outliers", "p25", "p50", "p75", "percentMissing", "reserved", "skewed", "skewness", "stddev", "sum", "target", "values", "variance", "zeros"]
     COMPLETENESS_FIELD_NUMBER: _ClassVar[int]
     CONSTANT_FIELD_NUMBER: _ClassVar[int]
     CORRTOTARGET_FIELD_NUMBER: _ClassVar[int]
@@ -1172,6 +1172,7 @@ class FeatureStatistics(_message.Message):
     STDDEV_FIELD_NUMBER: _ClassVar[int]
     SUM_FIELD_NUMBER: _ClassVar[int]
     TARGET_FIELD_NUMBER: _ClassVar[int]
+    VALUES_FIELD_NUMBER: _ClassVar[int]
     VARIANCE_FIELD_NUMBER: _ClassVar[int]
     ZEROS_FIELD_NUMBER: _ClassVar[int]
     completeness: float
@@ -1213,9 +1214,10 @@ class FeatureStatistics(_message.Message):
     stddev: float
     sum: int
     target: bool
+    values: _containers.RepeatedScalarFieldContainer[str]
     variance: float
     zeros: float
-    def __init__(self, name: _Optional[str] = ..., datatype: _Optional[str] = ..., count: _Optional[float] = ..., distinct: _Optional[int] = ..., missing: _Optional[int] = ..., percentMissing: _Optional[float] = ..., mean: _Optional[float] = ..., stddev: _Optional[float] = ..., variance: _Optional[float] = ..., min: _Optional[float] = ..., max: _Optional[float] = ..., kurtosis: _Optional[float] = ..., skewness: _Optional[float] = ..., sum: _Optional[int] = ..., mad: _Optional[float] = ..., p25: _Optional[float] = ..., p50: _Optional[float] = ..., p75: _Optional[float] = ..., iqr: _Optional[float] = ..., mode: _Optional[str] = ..., zeros: _Optional[float] = ..., invalid: _Optional[int] = ..., importance: _Optional[float] = ..., target: bool = ..., ignore: bool = ..., nullable: bool = ..., highCardinality: bool = ..., highCorrWithOtherFeatures: bool = ..., lowCorrWithTarget: bool = ..., highMissingPct: bool = ..., skewed: bool = ..., constant: bool = ..., duplicate: bool = ..., reserved: bool = ..., completeness: _Optional[float] = ..., distinctValueCount: _Optional[float] = ..., mostFreqValuesRatio: _Optional[float] = ..., histogram: _Optional[_Union[_generated_pb2.HistogramData, _Mapping]] = ..., corrToTarget: _Optional[float] = ..., index: _Optional[int] = ..., outliers: _Optional[_Union[OutlierStatistics, _Mapping]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., datatype: _Optional[str] = ..., count: _Optional[float] = ..., distinct: _Optional[int] = ..., missing: _Optional[int] = ..., percentMissing: _Optional[float] = ..., mean: _Optional[float] = ..., stddev: _Optional[float] = ..., variance: _Optional[float] = ..., min: _Optional[float] = ..., max: _Optional[float] = ..., kurtosis: _Optional[float] = ..., skewness: _Optional[float] = ..., sum: _Optional[int] = ..., mad: _Optional[float] = ..., p25: _Optional[float] = ..., p50: _Optional[float] = ..., p75: _Optional[float] = ..., iqr: _Optional[float] = ..., mode: _Optional[str] = ..., zeros: _Optional[float] = ..., invalid: _Optional[int] = ..., importance: _Optional[float] = ..., target: bool = ..., ignore: bool = ..., nullable: bool = ..., highCardinality: bool = ..., highCorrWithOtherFeatures: bool = ..., lowCorrWithTarget: bool = ..., highMissingPct: bool = ..., skewed: bool = ..., constant: bool = ..., duplicate: bool = ..., reserved: bool = ..., completeness: _Optional[float] = ..., distinctValueCount: _Optional[float] = ..., mostFreqValuesRatio: _Optional[float] = ..., histogram: _Optional[_Union[_generated_pb2.HistogramData, _Mapping]] = ..., corrToTarget: _Optional[float] = ..., index: _Optional[int] = ..., outliers: _Optional[_Union[OutlierStatistics, _Mapping]] = ..., values: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class FlatFileFormatSpec(_message.Message):
     __slots__ = ["csv", "excel", "fileType", "parquet"]

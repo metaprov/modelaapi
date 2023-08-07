@@ -65,7 +65,7 @@ message InferSchemaRequest {
 }
 
 message InferSchemaResponse {
-    repeated github.com.metaprov.modelaapi.services.common.v1.ColumnProfile  columns = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureStatistics features = 1;
 }
 
 message GetTableViewRequest {

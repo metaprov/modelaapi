@@ -676,18 +676,24 @@ class DsShutdownResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class DsSnapshotRequest(_message.Message):
-    __slots__ = ["dataset", "datasource", "product"]
+    __slots__ = ["bucket", "dataset", "datasource", "product", "snapshot"]
+    BUCKET_FIELD_NUMBER: _ClassVar[int]
     DATASET_FIELD_NUMBER: _ClassVar[int]
     DATASOURCE_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
+    SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
+    bucket: _generated_pb2_1_1_1.VirtualBucket
     dataset: _generated_pb2.Dataset
     datasource: _generated_pb2.DataSource
     product: _generated_pb2.DataProduct
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ...) -> None: ...
+    snapshot: _generated_pb2.DatasetSnapshot
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., snapshot: _Optional[_Union[_generated_pb2.DatasetSnapshot, _Mapping]] = ...) -> None: ...
 
 class DsSnapshotResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["location"]
+    LOCATION_FIELD_NUMBER: _ClassVar[int]
+    location: _generated_pb2_1_1_1_1.FileLocation
+    def __init__(self, location: _Optional[_Union[_generated_pb2_1_1_1_1.FileLocation, _Mapping]] = ...) -> None: ...
 
 class DsSplitDatasetRequest(_message.Message):
     __slots__ = ["bucket", "dataset", "datasource", "product", "snapshot", "study", "testingDataset", "trainingDataset"]
@@ -906,9 +912,8 @@ class GroupByDatasetResponse(_message.Message):
     def __init__(self, uri: _Optional[str] = ...) -> None: ...
 
 class RunTestSuiteRequest(_message.Message):
-    __slots__ = ["bucket", "connection", "dataset", "datasource", "histogram", "model", "product", "refHistogram", "study", "suite"]
+    __slots__ = ["bucket", "dataset", "datasource", "histogram", "model", "product", "refHistogram", "study", "suite"]
     BUCKET_FIELD_NUMBER: _ClassVar[int]
-    CONNECTION_FIELD_NUMBER: _ClassVar[int]
     DATASET_FIELD_NUMBER: _ClassVar[int]
     DATASOURCE_FIELD_NUMBER: _ClassVar[int]
     HISTOGRAM_FIELD_NUMBER: _ClassVar[int]
@@ -918,7 +923,6 @@ class RunTestSuiteRequest(_message.Message):
     STUDY_FIELD_NUMBER: _ClassVar[int]
     SUITE_FIELD_NUMBER: _ClassVar[int]
     bucket: _generated_pb2_1_1_1.VirtualBucket
-    connection: _generated_pb2_1_1_1.Connection
     dataset: _generated_pb2.Dataset
     datasource: _generated_pb2.DataSource
     histogram: _generated_pb2.FeatureHistogram
@@ -927,7 +931,7 @@ class RunTestSuiteRequest(_message.Message):
     refHistogram: _generated_pb2.FeatureHistogram
     study: _generated_pb2_1.Study
     suite: _generated_pb2_1_1_1_1.TestSuite
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2_1.Study, _Mapping]] = ..., model: _Optional[_Union[_generated_pb2_1.Model, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., histogram: _Optional[_Union[_generated_pb2.FeatureHistogram, _Mapping]] = ..., refHistogram: _Optional[_Union[_generated_pb2.FeatureHistogram, _Mapping]] = ..., suite: _Optional[_Union[_generated_pb2_1_1_1_1.TestSuite, _Mapping]] = ...) -> None: ...
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2_1.Study, _Mapping]] = ..., model: _Optional[_Union[_generated_pb2_1.Model, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., histogram: _Optional[_Union[_generated_pb2.FeatureHistogram, _Mapping]] = ..., refHistogram: _Optional[_Union[_generated_pb2.FeatureHistogram, _Mapping]] = ..., suite: _Optional[_Union[_generated_pb2_1_1_1_1.TestSuite, _Mapping]] = ...) -> None: ...
 
 class RunTestSuiteResponse(_message.Message):
     __slots__ = ["result"]
