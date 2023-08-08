@@ -235,6 +235,11 @@ export class GetDatasetProfileRequest extends jspb.Message {
   hasSnapshot(): boolean;
   clearSnapshot(): GetDatasetProfileRequest;
 
+  getGroupsList(): Array<string>;
+  setGroupsList(value: Array<string>): GetDatasetProfileRequest;
+  clearGroupsList(): GetDatasetProfileRequest;
+  addGroups(value: string, index?: number): GetDatasetProfileRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDatasetProfileRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetDatasetProfileRequest): GetDatasetProfileRequest.AsObject;
@@ -247,6 +252,7 @@ export namespace GetDatasetProfileRequest {
   export type AsObject = {
     namespace: string,
     snapshot?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject,
+    groupsList: Array<string>,
   }
 }
 
@@ -279,6 +285,11 @@ export class DownloadDatasetRequest extends jspb.Message {
   hasSnapshot(): boolean;
   clearSnapshot(): DownloadDatasetRequest;
 
+  getGroupsList(): Array<string>;
+  setGroupsList(value: Array<string>): DownloadDatasetRequest;
+  clearGroupsList(): DownloadDatasetRequest;
+  addGroups(value: string, index?: number): DownloadDatasetRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownloadDatasetRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DownloadDatasetRequest): DownloadDatasetRequest.AsObject;
@@ -291,6 +302,7 @@ export namespace DownloadDatasetRequest {
   export type AsObject = {
     namespace: string,
     snapshot?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject,
+    groupsList: Array<string>,
   }
 }
 
@@ -323,6 +335,11 @@ export class GetDatasetAnomaliesRequest extends jspb.Message {
   hasSnapshot(): boolean;
   clearSnapshot(): GetDatasetAnomaliesRequest;
 
+  getGroupsList(): Array<string>;
+  setGroupsList(value: Array<string>): GetDatasetAnomaliesRequest;
+  clearGroupsList(): GetDatasetAnomaliesRequest;
+  addGroups(value: string, index?: number): GetDatasetAnomaliesRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDatasetAnomaliesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetDatasetAnomaliesRequest): GetDatasetAnomaliesRequest.AsObject;
@@ -335,6 +352,7 @@ export namespace GetDatasetAnomaliesRequest {
   export type AsObject = {
     namespace: string,
     snapshot?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject,
+    groupsList: Array<string>,
   }
 }
 
@@ -409,6 +427,11 @@ export class SnapshotDatasetRequest extends jspb.Message {
   getName(): string;
   setName(value: string): SnapshotDatasetRequest;
 
+  getGroupsList(): Array<string>;
+  setGroupsList(value: Array<string>): SnapshotDatasetRequest;
+  clearGroupsList(): SnapshotDatasetRequest;
+  addGroups(value: string, index?: number): SnapshotDatasetRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SnapshotDatasetRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SnapshotDatasetRequest): SnapshotDatasetRequest.AsObject;
@@ -421,6 +444,7 @@ export namespace SnapshotDatasetRequest {
   export type AsObject = {
     namespace: string,
     name: string,
+    groupsList: Array<string>,
   }
 }
 

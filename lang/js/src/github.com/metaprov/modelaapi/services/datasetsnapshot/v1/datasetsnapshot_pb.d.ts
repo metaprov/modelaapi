@@ -232,6 +232,11 @@ export class GetDatasetSnapshotProfileRequest extends jspb.Message {
   getName(): string;
   setName(value: string): GetDatasetSnapshotProfileRequest;
 
+  getGroupsList(): Array<string>;
+  setGroupsList(value: Array<string>): GetDatasetSnapshotProfileRequest;
+  clearGroupsList(): GetDatasetSnapshotProfileRequest;
+  addGroups(value: string, index?: number): GetDatasetSnapshotProfileRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDatasetSnapshotProfileRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetDatasetSnapshotProfileRequest): GetDatasetSnapshotProfileRequest.AsObject;
@@ -244,6 +249,7 @@ export namespace GetDatasetSnapshotProfileRequest {
   export type AsObject = {
     namespace: string,
     name: string,
+    groupsList: Array<string>,
   }
 }
 
@@ -328,6 +334,11 @@ export class DownloadDatasetSnapshotRequest extends jspb.Message {
   getName(): string;
   setName(value: string): DownloadDatasetSnapshotRequest;
 
+  getGroupsList(): Array<string>;
+  setGroupsList(value: Array<string>): DownloadDatasetSnapshotRequest;
+  clearGroupsList(): DownloadDatasetSnapshotRequest;
+  addGroups(value: string, index?: number): DownloadDatasetSnapshotRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownloadDatasetSnapshotRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DownloadDatasetSnapshotRequest): DownloadDatasetSnapshotRequest.AsObject;
@@ -340,6 +351,7 @@ export namespace DownloadDatasetSnapshotRequest {
   export type AsObject = {
     namespace: string,
     name: string,
+    groupsList: Array<string>,
   }
 }
 
@@ -370,6 +382,11 @@ export class GetDatasetSnapshotAnomaliesRequest extends jspb.Message {
   getName(): string;
   setName(value: string): GetDatasetSnapshotAnomaliesRequest;
 
+  getGroupsList(): Array<string>;
+  setGroupsList(value: Array<string>): GetDatasetSnapshotAnomaliesRequest;
+  clearGroupsList(): GetDatasetSnapshotAnomaliesRequest;
+  addGroups(value: string, index?: number): GetDatasetSnapshotAnomaliesRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDatasetSnapshotAnomaliesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetDatasetSnapshotAnomaliesRequest): GetDatasetSnapshotAnomaliesRequest.AsObject;
@@ -382,6 +399,7 @@ export namespace GetDatasetSnapshotAnomaliesRequest {
   export type AsObject = {
     namespace: string,
     name: string,
+    groupsList: Array<string>,
   }
 }
 

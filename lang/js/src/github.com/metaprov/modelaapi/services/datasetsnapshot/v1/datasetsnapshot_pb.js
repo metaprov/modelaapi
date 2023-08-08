@@ -261,7 +261,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfileRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfileRequest.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfileRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -345,7 +345,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -387,7 +387,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomaliesRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomaliesRequest.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomaliesRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -2043,6 +2043,13 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DeleteDatasetSnapshotRes
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfileRequest.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2075,7 +2082,8 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfil
 proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    groupsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2120,6 +2128,10 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfil
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addGroups(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2163,6 +2175,13 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfil
       f
     );
   }
+  f = message.getGroupsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -2199,6 +2218,43 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfil
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfileRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * repeated string groups = 3;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfileRequest.prototype.getGroupsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfileRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfileRequest.prototype.setGroupsList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfileRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfileRequest.prototype.addGroups = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfileRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotProfileRequest.prototype.clearGroupsList = function() {
+  return this.setGroupsList([]);
 };
 
 
@@ -2779,6 +2835,13 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.CompareDatasetSnapshotsR
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2811,7 +2874,8 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotR
 proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    groupsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2856,6 +2920,10 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotR
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addGroups(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2899,6 +2967,13 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotR
       f
     );
   }
+  f = message.getGroupsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -2935,6 +3010,43 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotR
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * repeated string groups = 3;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest.prototype.getGroupsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest.prototype.setGroupsList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest.prototype.addGroups = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest.prototype.clearGroupsList = function() {
+  return this.setGroupsList([]);
 };
 
 
@@ -3093,6 +3205,13 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotR
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomaliesRequest.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -3125,7 +3244,8 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomal
 proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomaliesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    groupsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3170,6 +3290,10 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomal
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addGroups(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3213,6 +3337,13 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomal
       f
     );
   }
+  f = message.getGroupsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -3249,6 +3380,43 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomal
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomaliesRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * repeated string groups = 3;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomaliesRequest.prototype.getGroupsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomaliesRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomaliesRequest.prototype.setGroupsList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomaliesRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomaliesRequest.prototype.addGroups = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomaliesRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotAnomaliesRequest.prototype.clearGroupsList = function() {
+  return this.setGroupsList([]);
 };
 
 

@@ -51,12 +51,14 @@ class DeleteDatasetSnapshotResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class DownloadDatasetSnapshotRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+    __slots__ = ["groups", "name", "namespace"]
+    GROUPS_FIELD_NUMBER: _ClassVar[int]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    groups: _containers.RepeatedScalarFieldContainer[str]
     name: str
     namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., groups: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class DownloadDatasetSnapshotResponse(_message.Message):
     __slots__ = ["raw"]
@@ -65,12 +67,14 @@ class DownloadDatasetSnapshotResponse(_message.Message):
     def __init__(self, raw: _Optional[bytes] = ...) -> None: ...
 
 class GetDatasetSnapshotAnomaliesRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+    __slots__ = ["groups", "name", "namespace"]
+    GROUPS_FIELD_NUMBER: _ClassVar[int]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    groups: _containers.RepeatedScalarFieldContainer[str]
     name: str
     namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., groups: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class GetDatasetSnapshotAnomaliesResponse(_message.Message):
     __slots__ = ["table"]
@@ -79,12 +83,14 @@ class GetDatasetSnapshotAnomaliesResponse(_message.Message):
     def __init__(self, table: _Optional[_Union[_common_pb2.TableView, _Mapping]] = ...) -> None: ...
 
 class GetDatasetSnapshotProfileRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+    __slots__ = ["groups", "name", "namespace"]
+    GROUPS_FIELD_NUMBER: _ClassVar[int]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    groups: _containers.RepeatedScalarFieldContainer[str]
     name: str
     namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., groups: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class GetDatasetSnapshotProfileResponse(_message.Message):
     __slots__ = ["profile"]

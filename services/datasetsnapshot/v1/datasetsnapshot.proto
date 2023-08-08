@@ -69,6 +69,7 @@ message DeleteDatasetSnapshotResponse {}
 message GetDatasetSnapshotProfileRequest {
     string namespace = 1;
     string name = 2;
+    repeated string groups = 3;
 }
 
 message GetDatasetSnapshotProfileResponse {
@@ -93,6 +94,7 @@ message CompareDatasetSnapshotsResponse {
 message DownloadDatasetSnapshotRequest {
     string namespace = 1;
     string name = 2;
+    repeated string groups = 3;
 }
 
 message DownloadDatasetSnapshotResponse {
@@ -104,6 +106,7 @@ message DownloadDatasetSnapshotResponse {
 message GetDatasetSnapshotAnomaliesRequest {
     string namespace = 1;
     string name = 2;
+    repeated string groups = 3;
 }
 
 message GetDatasetSnapshotAnomaliesResponse {
