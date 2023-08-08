@@ -143,6 +143,20 @@ class ListDatasetsResponse(_message.Message):
     next_page_token: str
     def __init__(self, datasets: _Optional[_Union[_generated_pb2.DatasetList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
+class SnapshotDatasetRequest(_message.Message):
+    __slots__ = ["name", "namespace"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    namespace: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class SnapshotDatasetResponse(_message.Message):
+    __slots__ = ["name"]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    def __init__(self, name: _Optional[str] = ...) -> None: ...
+
 class UpdateDatasetRequest(_message.Message):
     __slots__ = ["dataset", "field_mask"]
     DATASET_FIELD_NUMBER: _ClassVar[int]

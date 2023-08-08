@@ -109,6 +109,17 @@ message CompareDatasetsResponse {
     repeated github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profiles = 1;
 }
 
+/////// Snapshot Dataset ///////
+
+message SnapshotDatasetRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message SnapshotDatasetResponse {
+    string name = 1;
+}
+
 /////// Dataset Service ///////
 
 service DatasetService {
@@ -152,5 +163,9 @@ service DatasetService {
 
     rpc CompareDatasets(CompareDatasetsRequest) returns (CompareDatasetsResponse) {
         option (google.api.http).post = "/v1/datasets/{namespace}:compare";
+    }
+
+    rpc SnapshotDataset(SnapshotDatasetRequest) returns (SnapshotDatasetResponse) {
+        option (google.api.http).post = "/v1/datasets/{namespace}/{name}:snapshot";
     }
 }

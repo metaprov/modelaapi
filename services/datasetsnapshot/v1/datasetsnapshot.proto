@@ -9,7 +9,7 @@ import "google/protobuf/empty.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
-/////// List Dataset Run ///////
+/////// List Dataset Snapshot ///////
 
 message ListDatasetSnapshotsRequest {
     string namespace = 1;
@@ -24,7 +24,7 @@ message ListDatasetSnapshotsResponse {
     string next_page_token = 2;
 }
 
-/////// Get Dataset Run ///////
+/////// Get Dataset Snapshot ///////
 
 message GetDatasetSnapshotRequest {
     string namespace = 1;
@@ -38,7 +38,15 @@ message GetDatasetSnapshotResponse {
     string yaml = 2;
 }
 
-/////// Update Dataset Run ///////
+/////// Create Dataset Snapshot ///////
+
+message CreateDatasetSnapshotRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot datasetSnapshot = 1;
+}
+
+message CreateDatasetSnapshotResponse {}
+
+/////// Update Dataset Snapshot ///////
 
 message UpdateDatasetSnapshotRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot datasetSnapshot = 1;
@@ -47,7 +55,7 @@ message UpdateDatasetSnapshotRequest {
 
 message UpdateDatasetSnapshotResponse {}
 
-/////// Delete Dataset Run ///////
+/////// Delete Dataset Snapshot ///////
 
 message DeleteDatasetSnapshotRequest {
     string namespace = 1;
@@ -56,7 +64,7 @@ message DeleteDatasetSnapshotRequest {
 
 message DeleteDatasetSnapshotResponse {}
 
-/////// Get Dataset Run Profile ///////
+/////// Get Dataset Snapshot Profile ///////
 
 message GetDatasetSnapshotProfileRequest {
     string namespace = 1;
@@ -80,7 +88,7 @@ message CompareDatasetSnapshotsResponse {
     repeated github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profiles = 3;
 }
 
-/////// Download Dataset Run ///////
+/////// Download Dataset Snapshot ///////
 
 message DownloadDatasetSnapshotRequest {
     string namespace = 1;
@@ -91,7 +99,7 @@ message DownloadDatasetSnapshotResponse {
     bytes raw = 1;
 }
 
-/////// Download Dataset Run Anomalies ///////
+/////// Download Dataset Snapshot Anomalies ///////
 
 message GetDatasetSnapshotAnomaliesRequest {
     string namespace = 1;
@@ -102,7 +110,7 @@ message GetDatasetSnapshotAnomaliesResponse {
     github.com.metaprov.modelaapi.services.common.v1.TableView table = 1;
 }
 
-/////// Dataset Run Service ///////
+/////// Dataset Snapshot Service ///////
 
 service DatasetSnapshotService {
     // Datasets
@@ -112,6 +120,13 @@ service DatasetSnapshotService {
 
     rpc GetDatasetSnapshot(GetDatasetSnapshotRequest) returns (GetDatasetSnapshotResponse) {
         option (google.api.http).get = "/v1/datasetsnapshots/{namespace}/{name}";
+    }
+
+    rpc CreateDatasetSnapshot(CreateDatasetSnapshotRequest) returns (CreateDatasetSnapshotResponse) {
+        option (google.api.http) = {
+            post: "/v1/datasetsnapshots"
+            body: "*"
+        };
     }
 
     rpc UpdateDataset(UpdateDatasetSnapshotRequest) returns (UpdateDatasetSnapshotResponse) {
@@ -126,7 +141,7 @@ service DatasetSnapshotService {
     }
 
     rpc CompareDatasetSnapshots(CompareDatasetSnapshotsRequest) returns (CompareDatasetSnapshotsResponse) {
-        option (google.api.http).post = "/v1/datasetsnapshots/{namespace}/{names}:compare";
+        option (google.api.http).post = "/v1/datasetsnapshots/{namespace}/{name}:compare";
     }
 
     rpc GetDatasetSnapshotProfile(GetDatasetSnapshotProfileRequest) returns (GetDatasetSnapshotProfileResponse) {

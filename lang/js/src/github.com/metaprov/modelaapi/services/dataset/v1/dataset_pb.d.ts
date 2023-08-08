@@ -402,3 +402,43 @@ export namespace CompareDatasetsResponse {
   }
 }
 
+export class SnapshotDatasetRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): SnapshotDatasetRequest;
+
+  getName(): string;
+  setName(value: string): SnapshotDatasetRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SnapshotDatasetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SnapshotDatasetRequest): SnapshotDatasetRequest.AsObject;
+  static serializeBinaryToWriter(message: SnapshotDatasetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SnapshotDatasetRequest;
+  static deserializeBinaryFromReader(message: SnapshotDatasetRequest, reader: jspb.BinaryReader): SnapshotDatasetRequest;
+}
+
+export namespace SnapshotDatasetRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class SnapshotDatasetResponse extends jspb.Message {
+  getName(): string;
+  setName(value: string): SnapshotDatasetResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SnapshotDatasetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SnapshotDatasetResponse): SnapshotDatasetResponse.AsObject;
+  static serializeBinaryToWriter(message: SnapshotDatasetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SnapshotDatasetResponse;
+  static deserializeBinaryFromReader(message: SnapshotDatasetResponse, reader: jspb.BinaryReader): SnapshotDatasetResponse;
+}
+
+export namespace SnapshotDatasetResponse {
+  export type AsObject = {
+    name: string,
+  }
+}
+

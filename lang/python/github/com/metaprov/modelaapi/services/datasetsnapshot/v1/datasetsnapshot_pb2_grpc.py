@@ -6,7 +6,7 @@ from github.com.metaprov.modelaapi.services.datasetsnapshot.v1 import datasetsna
 
 
 class DatasetSnapshotServiceStub(object):
-    """///// Dataset Run Service ///////
+    """///// Dataset Snapshot Service ///////
 
     """
 
@@ -25,6 +25,11 @@ class DatasetSnapshotServiceStub(object):
                 '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/GetDatasetSnapshot',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.GetDatasetSnapshotRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.GetDatasetSnapshotResponse.FromString,
+                )
+        self.CreateDatasetSnapshot = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/CreateDatasetSnapshot',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.CreateDatasetSnapshotRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.CreateDatasetSnapshotResponse.FromString,
                 )
         self.UpdateDataset = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/UpdateDataset',
@@ -59,7 +64,7 @@ class DatasetSnapshotServiceStub(object):
 
 
 class DatasetSnapshotServiceServicer(object):
-    """///// Dataset Run Service ///////
+    """///// Dataset Snapshot Service ///////
 
     """
 
@@ -71,6 +76,12 @@ class DatasetSnapshotServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetDatasetSnapshot(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateDatasetSnapshot(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -125,6 +136,11 @@ def add_DatasetSnapshotServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.GetDatasetSnapshotRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.GetDatasetSnapshotResponse.SerializeToString,
             ),
+            'CreateDatasetSnapshot': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateDatasetSnapshot,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.CreateDatasetSnapshotRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.CreateDatasetSnapshotResponse.SerializeToString,
+            ),
             'UpdateDataset': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateDataset,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.UpdateDatasetSnapshotRequest.FromString,
@@ -163,7 +179,7 @@ def add_DatasetSnapshotServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class DatasetSnapshotService(object):
-    """///// Dataset Run Service ///////
+    """///// Dataset Snapshot Service ///////
 
     """
 
@@ -198,6 +214,23 @@ class DatasetSnapshotService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/GetDatasetSnapshot',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.GetDatasetSnapshotRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.GetDatasetSnapshotResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateDatasetSnapshot(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/CreateDatasetSnapshot',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.CreateDatasetSnapshotRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.CreateDatasetSnapshotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

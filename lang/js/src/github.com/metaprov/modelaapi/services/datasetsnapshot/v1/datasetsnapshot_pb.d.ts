@@ -115,6 +115,40 @@ export namespace GetDatasetSnapshotResponse {
   }
 }
 
+export class CreateDatasetSnapshotRequest extends jspb.Message {
+  getDatasetsnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setDatasetsnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): CreateDatasetSnapshotRequest;
+  hasDatasetsnapshot(): boolean;
+  clearDatasetsnapshot(): CreateDatasetSnapshotRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateDatasetSnapshotRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDatasetSnapshotRequest): CreateDatasetSnapshotRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateDatasetSnapshotRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDatasetSnapshotRequest;
+  static deserializeBinaryFromReader(message: CreateDatasetSnapshotRequest, reader: jspb.BinaryReader): CreateDatasetSnapshotRequest;
+}
+
+export namespace CreateDatasetSnapshotRequest {
+  export type AsObject = {
+    datasetsnapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
+  }
+}
+
+export class CreateDatasetSnapshotResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateDatasetSnapshotResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDatasetSnapshotResponse): CreateDatasetSnapshotResponse.AsObject;
+  static serializeBinaryToWriter(message: CreateDatasetSnapshotResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDatasetSnapshotResponse;
+  static deserializeBinaryFromReader(message: CreateDatasetSnapshotResponse, reader: jspb.BinaryReader): CreateDatasetSnapshotResponse;
+}
+
+export namespace CreateDatasetSnapshotResponse {
+  export type AsObject = {
+  }
+}
+
 export class UpdateDatasetSnapshotRequest extends jspb.Message {
   getDatasetsnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
   setDatasetsnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): UpdateDatasetSnapshotRequest;

@@ -28,6 +28,16 @@ class CompareDatasetSnapshotsResponse(_message.Message):
     profiles: _containers.RepeatedCompositeFieldContainer[_common_pb2.DatasetProfile]
     def __init__(self, namespace: _Optional[str] = ..., names: _Optional[_Iterable[str]] = ..., profiles: _Optional[_Iterable[_Union[_common_pb2.DatasetProfile, _Mapping]]] = ...) -> None: ...
 
+class CreateDatasetSnapshotRequest(_message.Message):
+    __slots__ = ["datasetSnapshot"]
+    DATASETSNAPSHOT_FIELD_NUMBER: _ClassVar[int]
+    datasetSnapshot: _generated_pb2.DatasetSnapshot
+    def __init__(self, datasetSnapshot: _Optional[_Union[_generated_pb2.DatasetSnapshot, _Mapping]] = ...) -> None: ...
+
+class CreateDatasetSnapshotResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
 class DeleteDatasetSnapshotRequest(_message.Message):
     __slots__ = ["name", "namespace"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
