@@ -129,14 +129,14 @@ service DatasetSnapshotService {
         };
     }
 
-    rpc UpdateDataset(UpdateDatasetSnapshotRequest) returns (UpdateDatasetSnapshotResponse) {
+    rpc UpdateDatasetSnapshot(UpdateDatasetSnapshotRequest) returns (UpdateDatasetSnapshotResponse) {
         option (google.api.http) = {
             put: "/v1/datasetsnapshots/{datasetSnapshot.metadata.namespace}/{datasetSnapshot.metadata.name}"
             body: "*"
         };
     }
 
-    rpc DeleteDataset(DeleteDatasetSnapshotRequest) returns (DeleteDatasetSnapshotResponse) {
+    rpc DeleteDatasetSnapshot(DeleteDatasetSnapshotRequest) returns (DeleteDatasetSnapshotResponse) {
         option (google.api.http).delete = "/v1/datasetsnapshots/{name}";
     }
 

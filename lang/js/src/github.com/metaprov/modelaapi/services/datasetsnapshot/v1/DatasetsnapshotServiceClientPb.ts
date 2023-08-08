@@ -168,8 +168,8 @@ export class DatasetSnapshotServiceClient {
     this.methodDescriptorCreateDatasetSnapshot);
   }
 
-  methodDescriptorUpdateDataset = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/UpdateDataset',
+  methodDescriptorUpdateDatasetSnapshot = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/UpdateDatasetSnapshot',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.UpdateDatasetSnapshotRequest,
     github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.UpdateDatasetSnapshotResponse,
@@ -179,17 +179,17 @@ export class DatasetSnapshotServiceClient {
     github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.UpdateDatasetSnapshotResponse.deserializeBinary
   );
 
-  updateDataset(
+  updateDatasetSnapshot(
     request: github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.UpdateDatasetSnapshotRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.UpdateDatasetSnapshotResponse>;
 
-  updateDataset(
+  updateDatasetSnapshot(
     request: github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.UpdateDatasetSnapshotRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.UpdateDatasetSnapshotResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.UpdateDatasetSnapshotResponse>;
 
-  updateDataset(
+  updateDatasetSnapshot(
     request: github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.UpdateDatasetSnapshotRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
@@ -197,22 +197,22 @@ export class DatasetSnapshotServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/UpdateDataset',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/UpdateDatasetSnapshot',
         request,
         metadata || {},
-        this.methodDescriptorUpdateDataset,
+        this.methodDescriptorUpdateDatasetSnapshot,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/UpdateDataset',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/UpdateDatasetSnapshot',
     request,
     metadata || {},
-    this.methodDescriptorUpdateDataset);
+    this.methodDescriptorUpdateDatasetSnapshot);
   }
 
-  methodDescriptorDeleteDataset = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/DeleteDataset',
+  methodDescriptorDeleteDatasetSnapshot = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/DeleteDatasetSnapshot',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.DeleteDatasetSnapshotRequest,
     github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.DeleteDatasetSnapshotResponse,
@@ -222,17 +222,17 @@ export class DatasetSnapshotServiceClient {
     github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.DeleteDatasetSnapshotResponse.deserializeBinary
   );
 
-  deleteDataset(
+  deleteDatasetSnapshot(
     request: github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.DeleteDatasetSnapshotRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.DeleteDatasetSnapshotResponse>;
 
-  deleteDataset(
+  deleteDatasetSnapshot(
     request: github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.DeleteDatasetSnapshotRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.DeleteDatasetSnapshotResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.DeleteDatasetSnapshotResponse>;
 
-  deleteDataset(
+  deleteDatasetSnapshot(
     request: github_com_metaprov_modelaapi_services_datasetsnapshot_v1_datasetsnapshot_pb.DeleteDatasetSnapshotRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
@@ -240,18 +240,18 @@ export class DatasetSnapshotServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/DeleteDataset',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/DeleteDatasetSnapshot',
         request,
         metadata || {},
-        this.methodDescriptorDeleteDataset,
+        this.methodDescriptorDeleteDatasetSnapshot,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/DeleteDataset',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/DeleteDatasetSnapshot',
     request,
     metadata || {},
-    this.methodDescriptorDeleteDataset);
+    this.methodDescriptorDeleteDatasetSnapshot);
   }
 
   methodDescriptorCompareDatasetSnapshots = new grpcWeb.MethodDescriptor(

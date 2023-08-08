@@ -26,8 +26,8 @@ type DatasetSnapshotServiceClient interface {
 	ListDatasetSnapshots(ctx context.Context, in *ListDatasetSnapshotsRequest, opts ...grpc.CallOption) (*ListDatasetSnapshotsResponse, error)
 	GetDatasetSnapshot(ctx context.Context, in *GetDatasetSnapshotRequest, opts ...grpc.CallOption) (*GetDatasetSnapshotResponse, error)
 	CreateDatasetSnapshot(ctx context.Context, in *CreateDatasetSnapshotRequest, opts ...grpc.CallOption) (*CreateDatasetSnapshotResponse, error)
-	UpdateDataset(ctx context.Context, in *UpdateDatasetSnapshotRequest, opts ...grpc.CallOption) (*UpdateDatasetSnapshotResponse, error)
-	DeleteDataset(ctx context.Context, in *DeleteDatasetSnapshotRequest, opts ...grpc.CallOption) (*DeleteDatasetSnapshotResponse, error)
+	UpdateDatasetSnapshot(ctx context.Context, in *UpdateDatasetSnapshotRequest, opts ...grpc.CallOption) (*UpdateDatasetSnapshotResponse, error)
+	DeleteDatasetSnapshot(ctx context.Context, in *DeleteDatasetSnapshotRequest, opts ...grpc.CallOption) (*DeleteDatasetSnapshotResponse, error)
 	CompareDatasetSnapshots(ctx context.Context, in *CompareDatasetSnapshotsRequest, opts ...grpc.CallOption) (*CompareDatasetSnapshotsResponse, error)
 	GetDatasetSnapshotProfile(ctx context.Context, in *GetDatasetSnapshotProfileRequest, opts ...grpc.CallOption) (*GetDatasetSnapshotProfileResponse, error)
 	DownloadDatasetSnapshot(ctx context.Context, in *DownloadDatasetSnapshotRequest, opts ...grpc.CallOption) (*DownloadDatasetSnapshotResponse, error)
@@ -69,18 +69,18 @@ func (c *datasetSnapshotServiceClient) CreateDatasetSnapshot(ctx context.Context
 	return out, nil
 }
 
-func (c *datasetSnapshotServiceClient) UpdateDataset(ctx context.Context, in *UpdateDatasetSnapshotRequest, opts ...grpc.CallOption) (*UpdateDatasetSnapshotResponse, error) {
+func (c *datasetSnapshotServiceClient) UpdateDatasetSnapshot(ctx context.Context, in *UpdateDatasetSnapshotRequest, opts ...grpc.CallOption) (*UpdateDatasetSnapshotResponse, error) {
 	out := new(UpdateDatasetSnapshotResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/UpdateDataset", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/UpdateDatasetSnapshot", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *datasetSnapshotServiceClient) DeleteDataset(ctx context.Context, in *DeleteDatasetSnapshotRequest, opts ...grpc.CallOption) (*DeleteDatasetSnapshotResponse, error) {
+func (c *datasetSnapshotServiceClient) DeleteDatasetSnapshot(ctx context.Context, in *DeleteDatasetSnapshotRequest, opts ...grpc.CallOption) (*DeleteDatasetSnapshotResponse, error) {
 	out := new(DeleteDatasetSnapshotResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/DeleteDataset", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/DeleteDatasetSnapshot", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -131,8 +131,8 @@ type DatasetSnapshotServiceServer interface {
 	ListDatasetSnapshots(context.Context, *ListDatasetSnapshotsRequest) (*ListDatasetSnapshotsResponse, error)
 	GetDatasetSnapshot(context.Context, *GetDatasetSnapshotRequest) (*GetDatasetSnapshotResponse, error)
 	CreateDatasetSnapshot(context.Context, *CreateDatasetSnapshotRequest) (*CreateDatasetSnapshotResponse, error)
-	UpdateDataset(context.Context, *UpdateDatasetSnapshotRequest) (*UpdateDatasetSnapshotResponse, error)
-	DeleteDataset(context.Context, *DeleteDatasetSnapshotRequest) (*DeleteDatasetSnapshotResponse, error)
+	UpdateDatasetSnapshot(context.Context, *UpdateDatasetSnapshotRequest) (*UpdateDatasetSnapshotResponse, error)
+	DeleteDatasetSnapshot(context.Context, *DeleteDatasetSnapshotRequest) (*DeleteDatasetSnapshotResponse, error)
 	CompareDatasetSnapshots(context.Context, *CompareDatasetSnapshotsRequest) (*CompareDatasetSnapshotsResponse, error)
 	GetDatasetSnapshotProfile(context.Context, *GetDatasetSnapshotProfileRequest) (*GetDatasetSnapshotProfileResponse, error)
 	DownloadDatasetSnapshot(context.Context, *DownloadDatasetSnapshotRequest) (*DownloadDatasetSnapshotResponse, error)
@@ -153,11 +153,11 @@ func (UnimplementedDatasetSnapshotServiceServer) GetDatasetSnapshot(context.Cont
 func (UnimplementedDatasetSnapshotServiceServer) CreateDatasetSnapshot(context.Context, *CreateDatasetSnapshotRequest) (*CreateDatasetSnapshotResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateDatasetSnapshot not implemented")
 }
-func (UnimplementedDatasetSnapshotServiceServer) UpdateDataset(context.Context, *UpdateDatasetSnapshotRequest) (*UpdateDatasetSnapshotResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateDataset not implemented")
+func (UnimplementedDatasetSnapshotServiceServer) UpdateDatasetSnapshot(context.Context, *UpdateDatasetSnapshotRequest) (*UpdateDatasetSnapshotResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateDatasetSnapshot not implemented")
 }
-func (UnimplementedDatasetSnapshotServiceServer) DeleteDataset(context.Context, *DeleteDatasetSnapshotRequest) (*DeleteDatasetSnapshotResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteDataset not implemented")
+func (UnimplementedDatasetSnapshotServiceServer) DeleteDatasetSnapshot(context.Context, *DeleteDatasetSnapshotRequest) (*DeleteDatasetSnapshotResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteDatasetSnapshot not implemented")
 }
 func (UnimplementedDatasetSnapshotServiceServer) CompareDatasetSnapshots(context.Context, *CompareDatasetSnapshotsRequest) (*CompareDatasetSnapshotsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CompareDatasetSnapshots not implemented")
@@ -239,38 +239,38 @@ func _DatasetSnapshotService_CreateDatasetSnapshot_Handler(srv interface{}, ctx 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatasetSnapshotService_UpdateDataset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DatasetSnapshotService_UpdateDatasetSnapshot_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateDatasetSnapshotRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DatasetSnapshotServiceServer).UpdateDataset(ctx, in)
+		return srv.(DatasetSnapshotServiceServer).UpdateDatasetSnapshot(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/UpdateDataset",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/UpdateDatasetSnapshot",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatasetSnapshotServiceServer).UpdateDataset(ctx, req.(*UpdateDatasetSnapshotRequest))
+		return srv.(DatasetSnapshotServiceServer).UpdateDatasetSnapshot(ctx, req.(*UpdateDatasetSnapshotRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatasetSnapshotService_DeleteDataset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DatasetSnapshotService_DeleteDatasetSnapshot_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteDatasetSnapshotRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DatasetSnapshotServiceServer).DeleteDataset(ctx, in)
+		return srv.(DatasetSnapshotServiceServer).DeleteDatasetSnapshot(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/DeleteDataset",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/DeleteDatasetSnapshot",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatasetSnapshotServiceServer).DeleteDataset(ctx, req.(*DeleteDatasetSnapshotRequest))
+		return srv.(DatasetSnapshotServiceServer).DeleteDatasetSnapshot(ctx, req.(*DeleteDatasetSnapshotRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -367,12 +367,12 @@ var DatasetSnapshotService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DatasetSnapshotService_CreateDatasetSnapshot_Handler,
 		},
 		{
-			MethodName: "UpdateDataset",
-			Handler:    _DatasetSnapshotService_UpdateDataset_Handler,
+			MethodName: "UpdateDatasetSnapshot",
+			Handler:    _DatasetSnapshotService_UpdateDatasetSnapshot_Handler,
 		},
 		{
-			MethodName: "DeleteDataset",
-			Handler:    _DatasetSnapshotService_DeleteDataset_Handler,
+			MethodName: "DeleteDatasetSnapshot",
+			Handler:    _DatasetSnapshotService_DeleteDatasetSnapshot_Handler,
 		},
 		{
 			MethodName: "CompareDatasetSnapshots",

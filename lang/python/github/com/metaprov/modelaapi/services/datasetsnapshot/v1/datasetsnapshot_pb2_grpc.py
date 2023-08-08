@@ -31,13 +31,13 @@ class DatasetSnapshotServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.CreateDatasetSnapshotRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.CreateDatasetSnapshotResponse.FromString,
                 )
-        self.UpdateDataset = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/UpdateDataset',
+        self.UpdateDatasetSnapshot = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/UpdateDatasetSnapshot',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.UpdateDatasetSnapshotRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.UpdateDatasetSnapshotResponse.FromString,
                 )
-        self.DeleteDataset = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/DeleteDataset',
+        self.DeleteDatasetSnapshot = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/DeleteDatasetSnapshot',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.DeleteDatasetSnapshotRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.DeleteDatasetSnapshotResponse.FromString,
                 )
@@ -87,13 +87,13 @@ class DatasetSnapshotServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateDataset(self, request, context):
+    def UpdateDatasetSnapshot(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteDataset(self, request, context):
+    def DeleteDatasetSnapshot(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -141,13 +141,13 @@ def add_DatasetSnapshotServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.CreateDatasetSnapshotRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.CreateDatasetSnapshotResponse.SerializeToString,
             ),
-            'UpdateDataset': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateDataset,
+            'UpdateDatasetSnapshot': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateDatasetSnapshot,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.UpdateDatasetSnapshotRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.UpdateDatasetSnapshotResponse.SerializeToString,
             ),
-            'DeleteDataset': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteDataset,
+            'DeleteDatasetSnapshot': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteDatasetSnapshot,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.DeleteDatasetSnapshotRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.DeleteDatasetSnapshotResponse.SerializeToString,
             ),
@@ -235,7 +235,7 @@ class DatasetSnapshotService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def UpdateDataset(request,
+    def UpdateDatasetSnapshot(request,
             target,
             options=(),
             channel_credentials=None,
@@ -245,14 +245,14 @@ class DatasetSnapshotService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/UpdateDataset',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/UpdateDatasetSnapshot',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.UpdateDatasetSnapshotRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.UpdateDatasetSnapshotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DeleteDataset(request,
+    def DeleteDatasetSnapshot(request,
             target,
             options=(),
             channel_credentials=None,
@@ -262,7 +262,7 @@ class DatasetSnapshotService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/DeleteDataset',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetSnapshotService/DeleteDatasetSnapshot',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.DeleteDatasetSnapshotRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasetsnapshot_dot_v1_dot_datasetsnapshot__pb2.DeleteDatasetSnapshotResponse.FromString,
             options, channel_credentials,
