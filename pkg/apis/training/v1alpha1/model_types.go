@@ -238,7 +238,7 @@ type ModelSpec struct {
 	// The deadline for any Jobs associated with the Model to be completed in seconds
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,26,opt,name=activeDeadlineSeconds"`
+	Timeout *int64 `json:"timeout,omitempty" protobuf:"varint,26,opt,name=timeout"`
 	// EstimatorType specifies the type of estimator for the Model
 	// +kubebuilder:default:=classical
 	// +kubebuilder:validation:Optional
@@ -637,50 +637,6 @@ type SuccessiveHalvingSpec struct {
 	Modality *catalog.ModalityType `json:"modality,omitempty" protobuf:"bytes,26,opt,name=modality"`
 }
 
-// DataSplitSpec specifies the configuration to split a dataset into training and testing datasets
-type DataSplitSpec struct {
-	// Method defines the type of split method
-	// +kubebuilder:default:="auto"
-	// +kubebuilder:validation:Optional
-	Method *catalog.DataSplitMethod `json:"method,omitempty" protobuf:"bytes,1,opt,name=method"`
-	// The number percentage (0 through 100) of rows that will be allocated to the training dataset
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:default:=80
-	// +kubebuilder:validation:Minimum=1
-	// +kubebuilder:validation:Maximum=100
-	Train *int32 `json:"train,omitempty" protobuf:"varint,2,opt,name=train"`
-	// The number percentage (0 through 100) of rows that will be allocated to the validation dataset.
-	// If Validation is set to 0 the benchmarking process will use cross-validation
-	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Maximum=50
-	// +kubebuilder:validation:Optional
-	Validation *int32 `json:"validation,omitempty" protobuf:"varint,3,opt,name=validation"`
-	// The number percentage (0 through 100) of rows that will be allocated to the training dataset
-	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:validation:Maximum=100
-	// +kubebuilder:default:=20
-	// +kubebuilder:validation:Optional
-	Test *int32 `json:"test,omitempty" protobuf:"varint,4,opt,name=test"`
-	// The name of the column containing a binary value that indicates if the row should be split.
-	// The split type must use split-column in order for SplitColumn to have an effect
-	// +kubebuilder:validation:Optional
-	SplitColumn *string `json:"splitColumn,omitempty" protobuf:"bytes,5,opt,name=splitColumn"`
-	// The name of the Dataset resource which will be used as the training dataset
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	TrainDatasetName *string `json:"trainDataset,omitempty" protobuf:"bytes,7,rep,name=trainDataset"`
-	// The name of the Dataset resource which will be used as the testing dataset
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	TestDatasetName *string `json:"testDataset,omitempty" protobuf:"bytes,8,rep,name=testDataset"`
-	// The name of the Dataset resource which will be used as the validation dataset, applicable
-	// if the split type uses test-dataset. If enabled, the training dataset will not be split and used as-is
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	ValidationDatasetName *string `json:"validationDataset,omitempty" protobuf:"bytes,9,rep,name=validationDataset"`
-}
-
 // TrainingSpec specifies the configuration of a model training workload
 type TrainingSpec struct {
 	// The reference to the Lab under which the model training Job will be created
@@ -697,12 +653,6 @@ type TrainingSpec struct {
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
 	Folds *int32 `json:"folds,omitempty" protobuf:"varint,5,opt,name=folds"`
-	// Split specifies the configuration to generate training, testing, and validation datasets
-	// +kubebuilder:validation:Optional
-	Split DataSplitSpec `json:"split,omitempty" protobuf:"bytes,6,opt,name=split"`
-	// EvalMetrics specifies the collection of metrics that will be evaluated after model training is complete
-	// +kubebuilder:validation:Optional
-	EvalMetrics []catalog.Metric `json:"evalMetrics,omitempty" protobuf:"bytes,7,rep,name=evalMetrics"`
 	// SuccessiveHalving specifies the configuration for a Study to execute a model search using successive halving
 	// +kubebuilder:validation:Optional
 	SH *SuccessiveHalvingSpec `json:"sh,omitempty" protobuf:"bytes,10,opt,name=sh"`

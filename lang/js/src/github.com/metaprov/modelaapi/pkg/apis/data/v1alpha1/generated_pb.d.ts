@@ -2066,11 +2066,6 @@ export class DatasetGroupByStatus extends jspb.Message {
   hasUnittestsuri(): boolean;
   clearUnittestsuri(): DatasetGroupByStatus;
 
-  getFeaturesuri(): string;
-  setFeaturesuri(value: string): DatasetGroupByStatus;
-  hasFeaturesuri(): boolean;
-  clearFeaturesuri(): DatasetGroupByStatus;
-
   getWorkerresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>;
   setWorkerresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>): DatasetGroupByStatus;
   clearWorkerresultsList(): DatasetGroupByStatus;
@@ -2090,7 +2085,6 @@ export namespace DatasetGroupByStatus {
     profilesuri?: string,
     reportsuri?: string,
     unittestsuri?: string,
-    featuresuri?: string,
     workerresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.AsObject>,
   }
 }
@@ -2493,25 +2487,10 @@ export class DatasetSpec extends jspb.Message {
   hasLabref(): boolean;
   clearLabref(): DatasetSpec;
 
-  getServingdatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setServingdatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetSpec;
-  hasServingdatasetref(): boolean;
-  clearServingdatasetref(): DatasetSpec;
-
-  getPredictorref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setPredictorref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetSpec;
-  hasPredictorref(): boolean;
-  clearPredictorref(): DatasetSpec;
-
   getGroupby(): GroupBySpec | undefined;
   setGroupby(value?: GroupBySpec): DatasetSpec;
   hasGroupby(): boolean;
   clearGroupby(): DatasetSpec;
-
-  getGrouplocations(): GroupDatasetLocationSpec | undefined;
-  setGrouplocations(value?: GroupDatasetLocationSpec): DatasetSpec;
-  hasGrouplocations(): boolean;
-  clearGrouplocations(): DatasetSpec;
 
   getKeyList(): Array<string>;
   setKeyList(value: Array<string>): DatasetSpec;
@@ -2532,11 +2511,6 @@ export class DatasetSpec extends jspb.Message {
   setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): DatasetSpec;
   hasNotification(): boolean;
   clearNotification(): DatasetSpec;
-
-  getTagsList(): Array<string>;
-  setTagsList(value: Array<string>): DatasetSpec;
-  clearTagsList(): DatasetSpec;
-  addTags(value: string, index?: number): DatasetSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
@@ -2569,15 +2543,11 @@ export namespace DatasetSpec {
     synthetic?: SyntheticSpec.AsObject,
     correlation?: CorrelationSpec.AsObject,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    servingdatasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    predictorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     groupby?: GroupBySpec.AsObject,
-    grouplocations?: GroupDatasetLocationSpec.AsObject,
     keyList: Array<string>,
     modelclassname?: string,
     featuregroupname?: string,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
-    tagsList: Array<string>,
   }
 }
 
@@ -2637,6 +2607,11 @@ export class DatasetStatus extends jspb.Message {
   hasObservedgeneration(): boolean;
   clearObservedgeneration(): DatasetStatus;
 
+  getActiveList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference>;
+  setActiveList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference>): DatasetStatus;
+  clearActiveList(): DatasetStatus;
+  addActive(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference;
+
   getVersion(): number;
   setVersion(value: number): DatasetStatus;
   hasVersion(): boolean;
@@ -2657,10 +2632,10 @@ export class DatasetStatus extends jspb.Message {
   hasLastsnapshotat(): boolean;
   clearLastsnapshotat(): DatasetStatus;
 
-  getFailuremessage(): string;
-  setFailuremessage(value: string): DatasetStatus;
-  hasFailuremessage(): boolean;
-  clearFailuremessage(): DatasetStatus;
+  getLastfailuremessage(): string;
+  setLastfailuremessage(value: string): DatasetStatus;
+  hasLastfailuremessage(): boolean;
+  clearLastfailuremessage(): DatasetStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
@@ -2688,11 +2663,12 @@ export class DatasetStatus extends jspb.Message {
 export namespace DatasetStatus {
   export type AsObject = {
     observedgeneration?: number,
+    activeList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject>,
     version?: number,
     lastsnapshotversion?: number,
     availablesnapshotversionsList: Array<number>,
     lastsnapshotat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failuremessage?: string,
+    lastfailuremessage?: string,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
@@ -3891,51 +3867,51 @@ export namespace GroupBySpec {
   }
 }
 
-export class GroupDatasetLocationSpec extends jspb.Message {
+export class GroupDatasetLocationStatus extends jspb.Message {
   getGroupsroot(): string;
-  setGroupsroot(value: string): GroupDatasetLocationSpec;
+  setGroupsroot(value: string): GroupDatasetLocationStatus;
   hasGroupsroot(): boolean;
-  clearGroupsroot(): GroupDatasetLocationSpec;
+  clearGroupsroot(): GroupDatasetLocationStatus;
 
   getGrouproot(): string;
-  setGrouproot(value: string): GroupDatasetLocationSpec;
+  setGrouproot(value: string): GroupDatasetLocationStatus;
   hasGrouproot(): boolean;
-  clearGrouproot(): GroupDatasetLocationSpec;
+  clearGrouproot(): GroupDatasetLocationStatus;
 
   getGroupdatafolder(): string;
-  setGroupdatafolder(value: string): GroupDatasetLocationSpec;
+  setGroupdatafolder(value: string): GroupDatasetLocationStatus;
   hasGroupdatafolder(): boolean;
-  clearGroupdatafolder(): GroupDatasetLocationSpec;
+  clearGroupdatafolder(): GroupDatasetLocationStatus;
 
   getGroupdatafile(): string;
-  setGroupdatafile(value: string): GroupDatasetLocationSpec;
+  setGroupdatafile(value: string): GroupDatasetLocationStatus;
   hasGroupdatafile(): boolean;
-  clearGroupdatafile(): GroupDatasetLocationSpec;
+  clearGroupdatafile(): GroupDatasetLocationStatus;
 
   getGroupprofilefolder(): string;
-  setGroupprofilefolder(value: string): GroupDatasetLocationSpec;
+  setGroupprofilefolder(value: string): GroupDatasetLocationStatus;
   hasGroupprofilefolder(): boolean;
-  clearGroupprofilefolder(): GroupDatasetLocationSpec;
+  clearGroupprofilefolder(): GroupDatasetLocationStatus;
 
   getGroupreportfile(): string;
-  setGroupreportfile(value: string): GroupDatasetLocationSpec;
+  setGroupreportfile(value: string): GroupDatasetLocationStatus;
   hasGroupreportfile(): boolean;
-  clearGroupreportfile(): GroupDatasetLocationSpec;
+  clearGroupreportfile(): GroupDatasetLocationStatus;
 
   getGroupfeaturesfile(): string;
-  setGroupfeaturesfile(value: string): GroupDatasetLocationSpec;
+  setGroupfeaturesfile(value: string): GroupDatasetLocationStatus;
   hasGroupfeaturesfile(): boolean;
-  clearGroupfeaturesfile(): GroupDatasetLocationSpec;
+  clearGroupfeaturesfile(): GroupDatasetLocationStatus;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GroupDatasetLocationSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: GroupDatasetLocationSpec): GroupDatasetLocationSpec.AsObject;
-  static serializeBinaryToWriter(message: GroupDatasetLocationSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GroupDatasetLocationSpec;
-  static deserializeBinaryFromReader(message: GroupDatasetLocationSpec, reader: jspb.BinaryReader): GroupDatasetLocationSpec;
+  toObject(includeInstance?: boolean): GroupDatasetLocationStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: GroupDatasetLocationStatus): GroupDatasetLocationStatus.AsObject;
+  static serializeBinaryToWriter(message: GroupDatasetLocationStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GroupDatasetLocationStatus;
+  static deserializeBinaryFromReader(message: GroupDatasetLocationStatus, reader: jspb.BinaryReader): GroupDatasetLocationStatus;
 }
 
-export namespace GroupDatasetLocationSpec {
+export namespace GroupDatasetLocationStatus {
   export type AsObject = {
     groupsroot?: string,
     grouproot?: string,

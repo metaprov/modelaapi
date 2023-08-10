@@ -1128,6 +1128,15 @@ message RunRecord {
   repeated ContainerLog logs = 6;
 }
 
+// RunReference defines a generic reference to any type of run
+message RunReference {
+  // Name specifies the name of the resource
+  optional string name = 1;
+
+  // Version specifies the version of the run
+  optional uint32 version = 2;
+}
+
 // RunSchedule specifies the schedule for a run to be executed
 message RunSchedule {
   // Enabled indicates if the schedule is enabled. When enabled, a CronJob will be created which when triggered
@@ -1147,25 +1156,17 @@ message RunSchedule {
 }
 
 message RunScheduleStatus {
-  // Last time a run was created
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRunCreationAt = 1;
+  // Active contains a collection of references to currently active runs
+  // +optional
+  repeated RunReference active = 1;
 
-  // Last time a run ended in completion or failure
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRunCompletionAt = 2;
+  // LastScheduleTime specifies when was the last time a run was successfully scheduled
+  // +optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastScheduleTime = 2;
 
-  // The failure message of the last run; if the run succeeded, the field will be set to empty
-  // +kubebuilder:validation:Optional
-  optional string failureMessage = 3;
-
-  // The version of the last run
-  // +kubebuilder:validation:Optional
-  optional int32 lastRunName = 4;
-
-  // The logs from the last run
-  // +kubebuilder:validation:Optional
-  repeated ContainerLog lastRunLogs = 5;
+  // LastSuccessfulTime specifies when was the last time a run successfully completed
+  // +optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastSuccessfulTime = 3;
 }
 
 // RunSpec specifies the configuration for all runs created by the resource
@@ -1183,7 +1184,7 @@ message RunSpec {
   optional int32 maxPreviousRuns = 2;
 }
 
-message RunStatus {
+message RunStatusOld {
   // Last time the job started
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRunAt = 1;
@@ -1205,11 +1206,21 @@ message RunStatus {
   repeated RunRecord runRecords = 5;
 }
 
+// SnapshotReference defines a reference to a specific snapshot for a Dataset
 message SnapshotReference {
   // Dataset specifies the name of the dataset which the snapshot belongs to
   optional string dataset = 1;
 
   // Version specifies the version of the snapshot to use. If empty, the latest available snapshot will be used
+  optional uint32 version = 2;
+}
+
+// StudyRunReference defines a reference to a specific run for a Study
+message StudyRunReference {
+  // Study specifies the name of the study which the run belongs to
+  optional string study = 1;
+
+  // Version specifies the version of the run to use. If empty, the latest available run will be used
   optional uint32 version = 2;
 }
 

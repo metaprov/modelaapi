@@ -254,49 +254,6 @@ export class StudyServiceClient {
     this.methodDescriptorDeleteStudy);
   }
 
-  methodDescriptorCreateStudyProfile = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudyProfile',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileRequest,
-    github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileResponse,
-    (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileResponse.deserializeBinary
-  );
-
-  createStudyProfile(
-    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileResponse>;
-
-  createStudyProfile(
-    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileResponse>;
-
-  createStudyProfile(
-    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudyProfile',
-        request,
-        metadata || {},
-        this.methodDescriptorCreateStudyProfile,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudyProfile',
-    request,
-    metadata || {},
-    this.methodDescriptorCreateStudyProfile);
-  }
-
   methodDescriptorGetStudyProfile = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyProfile',
     grpcWeb.MethodType.UNARY,
@@ -469,47 +426,47 @@ export class StudyServiceClient {
     this.methodDescriptorResumeStudy);
   }
 
-  methodDescriptorCompleteSearch = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch',
+  methodDescriptorCompleteStudySearch = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteStudySearch',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchRequest,
-    github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchResponse,
-    (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchRequest) => {
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteStudySearchRequest,
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteStudySearchResponse,
+    (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteStudySearchRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteStudySearchResponse.deserializeBinary
   );
 
-  completeSearch(
-    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchResponse>;
+  completeStudySearch(
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteStudySearchRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteStudySearchResponse>;
 
-  completeSearch(
-    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchRequest,
+  completeStudySearch(
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteStudySearchRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchResponse>;
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteStudySearchResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteStudySearchResponse>;
 
-  completeSearch(
-    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchRequest,
+  completeStudySearch(
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteStudySearchRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteSearchResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.CompleteStudySearchResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch',
+          '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteStudySearch',
         request,
         metadata || {},
-        this.methodDescriptorCompleteSearch,
+        this.methodDescriptorCompleteStudySearch,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch',
+      '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteStudySearch',
     request,
     metadata || {},
-    this.methodDescriptorCompleteSearch);
+    this.methodDescriptorCompleteStudySearch);
   }
 
 }

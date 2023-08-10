@@ -22,7 +22,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type DatasetSnapshotServiceClient interface {
-	// Datasets
 	ListDatasetSnapshots(ctx context.Context, in *ListDatasetSnapshotsRequest, opts ...grpc.CallOption) (*ListDatasetSnapshotsResponse, error)
 	GetDatasetSnapshot(ctx context.Context, in *GetDatasetSnapshotRequest, opts ...grpc.CallOption) (*GetDatasetSnapshotResponse, error)
 	CreateDatasetSnapshot(ctx context.Context, in *CreateDatasetSnapshotRequest, opts ...grpc.CallOption) (*CreateDatasetSnapshotResponse, error)
@@ -127,7 +126,6 @@ func (c *datasetSnapshotServiceClient) GetAnomalies(ctx context.Context, in *Get
 // All implementations must embed UnimplementedDatasetSnapshotServiceServer
 // for forward compatibility
 type DatasetSnapshotServiceServer interface {
-	// Datasets
 	ListDatasetSnapshots(context.Context, *ListDatasetSnapshotsRequest) (*ListDatasetSnapshotsResponse, error)
 	GetDatasetSnapshot(context.Context, *GetDatasetSnapshotRequest) (*GetDatasetSnapshotResponse, error)
 	CreateDatasetSnapshot(context.Context, *CreateDatasetSnapshotRequest) (*CreateDatasetSnapshotResponse, error)

@@ -5,7 +5,22 @@ package github.com.metaprov.modelaapi.services.study.v1;
 import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
+
+/////// List Study ///////
+
+message ListStudyRequest {
+    string namespace = 1;
+    map<string,string> labels = 2;
+}
+
+message ListStudyResponse {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyList studies = 1;
+    string next_page_token = 2;
+}
+
+/////// Get Study ///////
 
 message GetStudyRequest {
     string namespace = 1;
@@ -17,17 +32,16 @@ message GetStudyResponse {
     string yaml = 2;
 }
 
+/////// Delete Study ///////
 
-message ListStudyRequest {
+message DeleteStudyRequest {
     string namespace = 1;
-    map<string,string> labels =3;
+    string name      = 2;
 }
 
-message ListStudyResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyList studies = 1;
-    string next_page_token = 2;
-}
+message DeleteStudyResponse {}
 
+/////// Create Study ///////
 
 message CreateStudyRequest {
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 1;
@@ -35,30 +49,21 @@ message CreateStudyRequest {
 
 message CreateStudyResponse {}
 
+/////// Update Study ///////
 
 message UpdateStudyRequest {
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
+message UpdateStudyResponse {}
 
-message CreateStudyProfileRequest {
-    string namespace = 1;
-    string name      = 2;
-    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model models   = 3;
-}
+/////// Get Study Profile ///////
 
-message CreateStudyProfileResponse {
-    string namespace = 1;
-    string name      = 2;
-    string uri       = 3;
-}
-
-// Ask for the actual profile.
 message GetStudyProfileRequest {
     string namespace = 1;
-    string name      = 2;
-    int32  models    = 3; // the number of models.
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference run = 2;
+    int32 models = 3;
 }
 
 message GetStudyProfileResponse {
@@ -66,60 +71,45 @@ message GetStudyProfileResponse {
     repeated github.com.metaprov.modelaapi.services.common.v1.ModelProfile modelsProfile = 2;
 }
 
+/////// Abort Study ///////
+
 message AbortStudyRequest {
     string namespace = 1;
-    string name      = 2;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference run = 2;
 }
 
-message AbortStudyResponse {
+message AbortStudyResponse {}
 
-}
+/////// Pause Study ///////
 
 message PauseStudyRequest {
     string namespace = 1;
-    string name      = 2;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference run = 2;
 }
 
-message PauseStudyResponse {
+message PauseStudyResponse {}
 
-}
+/////// Resume Study ///////
 
 message ResumeStudyRequest {
     string namespace = 1;
-    string name      = 2;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference run = 2;
 }
 
-message ResumeStudyResponse {
+message ResumeStudyResponse {}
 
-}
+/////// Complete Study Search ///////
 
-
-message CompleteSearchRequest {
+message CompleteStudySearchRequest {
     string namespace = 1;
-    string name      = 2;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference run = 2;
 }
 
-message CompleteSearchResponse {
+message CompleteStudySearchResponse {}
 
-}
-
-message DeleteStudyRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
-message DeleteStudyResponse {
-
-}
-
-
-message UpdateStudyResponse {
-
-}
 
 
 service StudyService {
-
     rpc ListStudies(ListStudyRequest) returns (ListStudyResponse) {
         option (google.api.http).get = "/v1/studies/{namespace}";
     }
@@ -146,28 +136,24 @@ service StudyService {
         option (google.api.http).delete = "/v1/studies/{namespace}/{name}";
     }
 
-    rpc CreateStudyProfile(CreateStudyProfileRequest) returns (CreateStudyProfileResponse) {
-        option (google.api.http).post = "/v1/studies/{namespace}/{name}/profile";
-    }
-
     rpc GetStudyProfile(GetStudyProfileRequest) returns (GetStudyProfileResponse) {
-        option (google.api.http).get = "/v1/studies/{namespace}/{name}/profile";
+        option (google.api.http).get = "/v1/studies/{namespace}/{run.study}:profile";
     }
 
     rpc AbortStudy(AbortStudyRequest) returns (AbortStudyResponse) {
-        option (google.api.http).post = "/v1/studies/{namespace}/{name}/abort";
+        option (google.api.http).post = "/v1/studies/{namespace}/{run.study}:abort";
     }
 
     rpc PauseStudy(PauseStudyRequest) returns (PauseStudyResponse) {
-        option (google.api.http).post = "/v1/studies/{namespace}/{name}/pause";
+        option (google.api.http).post = "/v1/studies/{namespace}/{run.study}:pause";
     }
 
     rpc ResumeStudy(ResumeStudyRequest) returns (ResumeStudyResponse) {
-        option (google.api.http).post = "/v1/studies/{namespace}/{name}/resume";
+        option (google.api.http).post = "/v1/studies/{namespace}/{run.study}:resume";
     }
 
     // Force completion of the search.
-    rpc CompleteSearch(CompleteSearchRequest) returns (CompleteSearchResponse) {
-        option (google.api.http).post = "/v1/studies/{namespace}/{name}/complete-search";
+    rpc CompleteStudySearch(CompleteStudySearchRequest) returns (CompleteStudySearchResponse) {
+        option (google.api.http).post = "/v1/studies/{namespace}/{run.study}:complete";
     }
 }

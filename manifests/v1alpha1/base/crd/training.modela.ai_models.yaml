@@ -96,12 +96,6 @@ spec:
                 description: If true, all workloads created by the Model will be removed
                   and the Model will no longer be reconciled
                 type: boolean
-              activeDeadlineSeconds:
-                default: 600
-                description: The deadline for any Jobs associated with the Model to
-                  be completed in seconds
-                format: int64
-                type: integer
               approval:
                 description: Approval specifies the model approval requirements (unimplemented)
                 properties:
@@ -1196,6 +1190,12 @@ spec:
                 description: Test indicates if the model will be moved to testing.
                   The model will be measured against all available benchmarks
                 type: boolean
+              timeout:
+                default: 600
+                description: The deadline for any Jobs associated with the Model to
+                  be completed in seconds
+                format: int64
+                type: integer
               training:
                 description: TrainingSpec specifies the configuration to prepare and
                   train a model
@@ -1360,12 +1360,6 @@ spec:
                     - stratified-group-k-fold
                     - time-series-split
                     type: string
-                  evalMetrics:
-                    description: EvalMetrics specifies the collection of metrics that
-                      will be evaluated after model training is complete
-                    items:
-                      type: string
-                    type: array
                   featureImportance:
                     default: true
                     description: Indicates if feature importance for the model will
@@ -1531,70 +1525,6 @@ spec:
                         maximum: 128
                         minimum: 0
                         type: integer
-                    type: object
-                  split:
-                    description: Split specifies the configuration to generate training,
-                      testing, and validation datasets
-                    properties:
-                      method:
-                        default: auto
-                        description: Method defines the type of split method
-                        enum:
-                        - random
-                        - split-column
-                        - time
-                        - random-stratified
-                        - auto
-                        - test-dataset
-                        type: string
-                      splitColumn:
-                        description: The name of the column containing a binary value
-                          that indicates if the row should be split. The split type
-                          must use split-column in order for SplitColumn to have an
-                          effect
-                        type: string
-                      test:
-                        default: 20
-                        description: The number percentage (0 through 100) of rows
-                          that will be allocated to the training dataset
-                        format: int32
-                        maximum: 100
-                        minimum: 0
-                        type: integer
-                      testDataset:
-                        default: ""
-                        description: The name of the Dataset resource which will be
-                          used as the testing dataset
-                        type: string
-                      train:
-                        default: 80
-                        description: The number percentage (0 through 100) of rows
-                          that will be allocated to the training dataset
-                        format: int32
-                        maximum: 100
-                        minimum: 1
-                        type: integer
-                      trainDataset:
-                        default: ""
-                        description: The name of the Dataset resource which will be
-                          used as the training dataset
-                        type: string
-                      validation:
-                        default: 0
-                        description: The number percentage (0 through 100) of rows
-                          that will be allocated to the validation dataset. If Validation
-                          is set to 0 the benchmarking process will use cross-validation
-                        format: int32
-                        maximum: 50
-                        minimum: 0
-                        type: integer
-                      validationDataset:
-                        default: ""
-                        description: The name of the Dataset resource which will be
-                          used as the validation dataset, applicable if the split
-                          type uses test-dataset. If enabled, the training dataset
-                          will not be split and used as-is
-                        type: string
                     type: object
                   timeout:
                     default: 600

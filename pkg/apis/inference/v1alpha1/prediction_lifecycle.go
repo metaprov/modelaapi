@@ -225,8 +225,8 @@ func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
 			},
 		},
 		Spec: data.DatasetSpec{
-			Owner:                    prediction.Spec.Owner,
-			VersionName:              prediction.Spec.VersionName,
+			Owner: prediction.Spec.Owner,
+			//VersionName:              prediction.Spec.VersionName,
 			Origin:                   *prediction.Spec.Input.Location,
 			GenerateFeatureHistogram: util.BoolPtr(true),
 			Type:                     &datasettype,
@@ -235,8 +235,6 @@ func (prediction *Prediction) ConstructDataset() (*data.Dataset, error) {
 		Status: data.DatasetStatus{
 			ObservedGeneration: 0,
 			UpdatedAt:          nil,
-			Logs:               catalog.Logs{},
-			Phase:              "",
 		},
 	}
 

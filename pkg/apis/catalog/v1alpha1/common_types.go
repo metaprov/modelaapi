@@ -163,6 +163,10 @@ const (
 	UnknownTask MLTask = "unknown"
 )
 
+func (task MLTask) IsClassification() bool {
+	return task == BinaryClassification || task == MultiClassification
+}
+
 // Define NLP sub tasks
 // +kubebuilder:validation:Enum="text-ner";"text-classification";"text-multi-classification";"text-regression";"text-multi-label-classification";"text-conversation";"text-lang-generation";"text-lang-model";"text-multi-modal";"text-ner";"text-qa";"text-summarization";"text-sentence-pair";"text-representation-generation";"text-sentiment-analysis";"text-code-generation";"text-translation";"text-lang-detection";"text-grammar-correction";"text-paraphrasing";"text-intent-classification";"text-semantic-similarity";"text-keyword-extraction";"text-pos";"text-tokenization";"text-lemma";"image-classification";"image-multi-label-classification";"image-object-detection";"image-segmentation";"none"
 type MLSubtask string
@@ -1372,7 +1376,7 @@ type RunRecord struct {
 	Logs ContainerLogs `json:"logs,omitempty" protobuf:"bytes,6,opt,name=logs"`
 }
 
-type RunStatus struct {
+type RunStatusOld struct {
 	// Last time the job started
 	// +kubebuilder:validation:Optional
 	LastRunAt *metav1.Time `json:"lastRunAt,omitempty" protobuf:"bytes,1,opt,name=lastRunAt"`
@@ -1390,7 +1394,7 @@ type RunStatus struct {
 	RunRecords []RunRecord `json:"runRecords,omitempty" protobuf:"bytes,5,opt,name=runRecords"`
 }
 
-func (status *RunStatus) CreateRecord(version, maxRecords int, failureMessage *string) {
+func (status *RunStatusOld) CreateRecord(version, maxRecords int, failureMessage *string) {
 	if status.ActiveRunId == nil {
 		status.ActiveRunLogs = nil
 		return
@@ -1474,21 +1478,15 @@ func (schedule RunSchedule) NextRun() *string {
 }
 
 type RunScheduleStatus struct {
-	// Last time a run was created
-	// +kubebuilder:validation:Optional
-	LastRunCreationAt *metav1.Time `json:"lastRunCreationAt,omitempty" protobuf:"bytes,1,opt,name=lastRunCreationAt"`
-	// Last time a run ended in completion or failure
-	// +kubebuilder:validation:Optional
-	LastRunCompletionAt *metav1.Time `json:"lastRunCompletionAt,omitempty" protobuf:"bytes,2,opt,name=lastRunCompletionAt"`
-	// The failure message of the last run; if the run succeeded, the field will be set to empty
-	// +kubebuilder:validation:Optional
-	LastRunFailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,3,opt,name=failureMessage"`
-	// The version of the last run
-	// +kubebuilder:validation:Optional
-	LastRunVersion *int32 `json:"lastRunName,omitempty" protobuf:"bytes,4,opt,name=lastRunName"`
-	// The logs from the last run
-	// +kubebuilder:validation:Optional
-	LastRunLogs ContainerLogs `json:"lastRunLogs,omitempty" protobuf:"bytes,5,opt,name=lastRunLogs"`
+	// Active contains a collection of references to currently active runs
+	// +optional
+	Active RunReferenceList `json:"active,omitempty" protobuf:"bytes,1,rep,name=active"`
+	// LastScheduleTime specifies when was the last time a run was successfully scheduled
+	// +optional
+	LastScheduleTime *metav1.Time `json:"lastScheduleTime,omitempty" protobuf:"bytes,2,opt,name=lastScheduleTime"`
+	// LastSuccessfulTime specifies when was the last time a run successfully completed
+	// +optional
+	LastSuccessfulTime *metav1.Time `json:"lastSuccessfulTime,omitempty" protobuf:"bytes,3,opt,name=lastSuccessfulTime"`
 }
 
 // Check if we are due for a run. next run must be set.
@@ -1498,11 +1496,20 @@ func (runs *RunSchedule) IsDue() bool {
 
 func (runs *RunScheduleStatus) Start() {
 	now := metav1.Now()
-	runs.LastRunCreationAt = &now
+	runs.LastScheduleTime = &now
 }
 
 func (runs *RunSchedule) SetNext(nextRun metav1.Time) {}
 
+// RunReference defines a generic reference to any type of run
+type RunReference struct {
+	// Name specifies the name of the resource
+	Name string `json:"dataset,omitempty" protobuf:"bytes,1,opt,name=name"`
+	// Version specifies the version of the run
+	Version Version `json:"version,omitempty" protobuf:"varint,2,opt,name=version"`
+}
+
+// SnapshotReference defines a reference to a specific snapshot for a Dataset
 type SnapshotReference struct {
 	// Dataset specifies the name of the dataset which the snapshot belongs to
 	Dataset string `json:"dataset,omitempty" protobuf:"bytes,1,opt,name=dataset"`
@@ -1510,7 +1517,55 @@ type SnapshotReference struct {
 	Version *Version `json:"version,omitempty" protobuf:"varint,2,opt,name=version"`
 }
 
+// StudyRunReference defines a reference to a specific run for a Study
+type StudyRunReference struct {
+	// Study specifies the name of the study which the run belongs to
+	Study string `json:"dataset,omitempty" protobuf:"bytes,1,opt,name=study"`
+	// Version specifies the version of the run to use. If empty, the latest available run will be used
+	Version *Version `json:"version,omitempty" protobuf:"varint,2,opt,name=version"`
+}
+
 type Version uint32
+
+type VersionList []Version
+
+func (v VersionList) RecordVersion(version Version, shouldExist bool) VersionList {
+	if shouldExist {
+		for _, x := range v {
+			if x == version {
+				return v
+			}
+		}
+		return append(v, version)
+	} else {
+		for i, x := range v {
+			if x == version {
+				return append(v[:i], v[i+1:]...)
+			}
+		}
+		return v
+	}
+}
+
+type RunReferenceList []RunReference
+
+func (v RunReferenceList) RecordReference(reference RunReference, shouldExist bool) RunReferenceList {
+	if shouldExist {
+		for _, x := range v {
+			if x.Name == reference.Name {
+				return v
+			}
+		}
+		return append(v, reference)
+	} else {
+		for i, x := range v {
+			if x.Name == reference.Name {
+				return append(v[:i], v[i+1:]...)
+			}
+		}
+		return v
+	}
+}
 
 // Measurement is a value for a specific metric
 type Measurement struct {
@@ -1800,6 +1855,7 @@ const (
 const (
 	VersionLabelKey    = "modela.ai/version"
 	RunVersionLabelKey = "modela.ai/run-version"
+	TriggerLabelKey    = "modela.ai/trigger"
 
 	// catalog group
 	AlgorithmLabelKey       = "modela.ai/algorithm"
@@ -1816,6 +1872,7 @@ const (
 	DataProductLabelKey        = "modela.ai/dataproduct"
 	DataProductVersionLabelKey = "modela.ai/dataproductversion"
 	DatasetLabelKey            = "modela.ai/dataset"
+	DatasetSnapshotLabelKey    = "modela.ai/datasetsnapshot"
 	DatasourceLabelKey         = "modela.ai/datasource"
 	EntityLabelKey             = "modela.ai/entity"
 	FeatureHistogramLabelKey   = "modela.ai/featurehistorgram"
@@ -1856,6 +1913,7 @@ const (
 	ModelLabelKey         = "modela.ai/model"
 	ReportLabelKey        = "modela.ai/report"
 	StudyLabelKey         = "modela.ai/study"
+	StudyRunLabelKey      = "modela.ai/studyrun"
 	TaskLabelKey          = "modela.ai/task"
 	ModelClassLabelKey    = "modela.ai/modelclass"
 	ModelClassRunLabelKey = "modela.ai/modelclassrun"

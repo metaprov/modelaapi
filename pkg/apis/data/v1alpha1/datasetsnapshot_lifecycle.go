@@ -89,12 +89,44 @@ func (dataset *DatasetSnapshot) GetCondition(condType DatasetSnapshotConditionTy
 
 }
 
-func (dataset *DatasetSnapshot) IsReady() bool {
+func (dataset *DatasetSnapshot) Ready() bool {
 	return dataset.GetCondition(DatasetSnapshotReady).Status == metav1.ConditionTrue
 }
 
-func (dataset *DatasetSnapshot) StatusString() string {
-	return string(dataset.Status.Phase)
+func (dataset *DatasetSnapshot) Prepared() bool {
+	return dataset.GetCondition(DatasetSnapshotPrepared).Status == metav1.ConditionTrue
+}
+
+func (dataset *DatasetSnapshot) UnitTested() bool {
+	return dataset.GetCondition(DatasetSnapshotUnitTested).Status == metav1.ConditionTrue
+}
+
+func (dataset *DatasetSnapshot) Snapshotted() bool {
+	return dataset.GetCondition(DatasetSnapshotSnapshotted).Status == metav1.ConditionTrue
+}
+
+func (dataset *DatasetSnapshot) Profiled() bool {
+	return dataset.GetCondition(DatasetSnapshotProfiled).Status == metav1.ConditionTrue
+}
+
+func (dataset *DatasetSnapshot) Reported() bool {
+	return dataset.GetCondition(DatasetSnapshotReported).Status == metav1.ConditionTrue
+}
+
+func (dataset *DatasetSnapshot) Generated() bool {
+	return dataset.GetCondition(DatasetSnapshotGenerated).Status == metav1.ConditionTrue
+}
+
+func (dataset *DatasetSnapshot) Aborted() bool {
+	return dataset.GetCondition(DatasetSnapshotAborted).Status == metav1.ConditionTrue
+}
+
+func (dataset *DatasetSnapshot) Paused() bool {
+	return dataset.GetCondition(DatasetSnapshotPaused).Status == metav1.ConditionTrue
+}
+
+func (dataset *DatasetSnapshot) ExternalStatusUpdated() bool {
+	return dataset.GetCondition(DatasetSnapshotExternalStatusUpdated).Status == metav1.ConditionTrue
 }
 
 func (dataset *DatasetSnapshot) RootURI() string {
@@ -132,7 +164,7 @@ func (dataset *DatasetSnapshot) MarkSkewColumns() {
 }
 
 func (dataset *DatasetSnapshot) RefreshProgress() {
-	if dataset.IsReady() || dataset.IsFailed() || dataset.Aborted() {
+	if dataset.Ready() || dataset.Failed() || dataset.Aborted() {
 		dataset.Status.Progress = 100
 	} else if dataset.Reported() {
 		dataset.Status.Progress = 80
@@ -155,38 +187,6 @@ func (dataset *DatasetSnapshot) ReachedMaxTime() bool {
 	}
 	duration := metav1.Now().Unix() - dataset.CreationTimestamp.Unix()
 	return int32(duration/60) >= int32(*dataset.Spec.Timeout)
-}
-
-func (dataset *DatasetSnapshot) Prepared() bool {
-	return dataset.GetCondition(DatasetSnapshotPrepared).Status == metav1.ConditionTrue
-}
-
-func (dataset *DatasetSnapshot) UnitTested() bool {
-	return dataset.GetCondition(DatasetSnapshotUnitTested).Status == metav1.ConditionTrue
-}
-
-func (dataset *DatasetSnapshot) Snapshotted() bool {
-	return dataset.GetCondition(DatasetSnapshotSnapshotted).Status == metav1.ConditionTrue
-}
-
-func (dataset *DatasetSnapshot) Profiled() bool {
-	return dataset.GetCondition(DatasetSnapshotProfiled).Status == metav1.ConditionTrue
-}
-
-func (dataset *DatasetSnapshot) Reported() bool {
-	return dataset.GetCondition(DatasetSnapshotReported).Status == metav1.ConditionTrue
-}
-
-func (dataset *DatasetSnapshot) Generated() bool {
-	return dataset.GetCondition(DatasetSnapshotGenerated).Status == metav1.ConditionTrue
-}
-
-func (dataset *DatasetSnapshot) Aborted() bool {
-	return dataset.GetCondition(DatasetSnapshotAborted).Status == metav1.ConditionTrue
-}
-
-func (dataset *DatasetSnapshot) Paused() bool {
-	return dataset.GetCondition(DatasetSnapshotPaused).Status == metav1.ConditionTrue
 }
 
 func (dataset *DatasetSnapshot) MarkAborted() {
@@ -490,12 +490,12 @@ func (dataset *DatasetSnapshot) MarkProfiled(profileLocation catalog.FileLocatio
 	dataset.RefreshProgress()
 }
 
-func (dataset *DatasetSnapshot) MarkProfiledFailed(msg string) {
+func (dataset *DatasetSnapshot) MarkProfileFailed(reason string, err string) {
 	dataset.CreateOrUpdateCondition(metav1.Condition{
 		Type:    string(DatasetSnapshotProfiled),
 		Status:  metav1.ConditionFalse,
-		Reason:  string(DatasetSnapshotPhaseFailed),
-		Message: msg,
+		Reason:  reason,
+		Message: err,
 	})
 }
 
@@ -535,11 +535,29 @@ func (dataset *DatasetSnapshot) MarkReadyFailed(reason string, err string) {
 	}
 }
 
+/////// External Status Updated Condition ///////
+
+func (dataset *DatasetSnapshot) MarkExternalStatusNotUpdated() {
+	dataset.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(DatasetSnapshotExternalStatusUpdated),
+		Status: metav1.ConditionFalse,
+		Reason: "ExternalStatusStale",
+	})
+}
+
+func (dataset *DatasetSnapshot) MarkExternalStatusUpdated() {
+	dataset.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(DatasetSnapshotExternalStatusUpdated),
+		Status: metav1.ConditionFalse,
+		Reason: string(DatasetSnapshotExternalStatusUpdated),
+	})
+}
+
 func (dataset *DatasetSnapshot) Deleted() bool {
 	return !dataset.ObjectMeta.DeletionTimestamp.IsZero()
 }
 
-func (dataset *DatasetSnapshot) IsFailed() bool {
+func (dataset *DatasetSnapshot) Failed() bool {
 	return dataset.Status.Phase == DatasetSnapshotPhaseFailed
 }
 
@@ -810,6 +828,18 @@ func (feature FeatureStatistics) BigBoolTest(thresholds []DriftThreshold, rowCou
 		ExpectedValue: util.Float64Ptr(threshold),
 		Generated:     util.BoolPtr(true),
 	}
+}
+
+func (dataset *DatasetSnapshot) ToRunReference() catalog.RunReference {
+	return catalog.RunReference{Name: dataset.Name, Version: dataset.Status.SnapshotVersion}
+}
+
+func (dataset *DatasetSnapshot) HasScheduleTrigger() bool {
+	trigger, ok := dataset.Labels[catalog.TriggerLabelKey]
+	if ok {
+		return trigger == string(catalog.ScheduleTriggerType)
+	}
+	return false
 }
 
 func (dataset *DatasetSnapshot) GetStatus() proto.Message {

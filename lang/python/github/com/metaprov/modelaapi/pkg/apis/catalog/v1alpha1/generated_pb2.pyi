@@ -721,6 +721,14 @@ class RunRecord(_message.Message):
     startedAt: _generated_pb2_1_1.Time
     def __init__(self, id: _Optional[str] = ..., failureMessage: _Optional[str] = ..., resourceVersion: _Optional[int] = ..., startedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., logs: _Optional[_Iterable[_Union[ContainerLog, _Mapping]]] = ...) -> None: ...
 
+class RunReference(_message.Message):
+    __slots__ = ["name", "version"]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    version: int
+    def __init__(self, name: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+
 class RunSchedule(_message.Message):
     __slots__ = ["cron", "enabled", "type"]
     CRON_FIELD_NUMBER: _ClassVar[int]
@@ -732,18 +740,14 @@ class RunSchedule(_message.Message):
     def __init__(self, enabled: bool = ..., cron: _Optional[str] = ..., type: _Optional[str] = ...) -> None: ...
 
 class RunScheduleStatus(_message.Message):
-    __slots__ = ["failureMessage", "lastRunCompletionAt", "lastRunCreationAt", "lastRunLogs", "lastRunName"]
-    FAILUREMESSAGE_FIELD_NUMBER: _ClassVar[int]
-    LASTRUNCOMPLETIONAT_FIELD_NUMBER: _ClassVar[int]
-    LASTRUNCREATIONAT_FIELD_NUMBER: _ClassVar[int]
-    LASTRUNLOGS_FIELD_NUMBER: _ClassVar[int]
-    LASTRUNNAME_FIELD_NUMBER: _ClassVar[int]
-    failureMessage: str
-    lastRunCompletionAt: _generated_pb2_1_1.Time
-    lastRunCreationAt: _generated_pb2_1_1.Time
-    lastRunLogs: _containers.RepeatedCompositeFieldContainer[ContainerLog]
-    lastRunName: int
-    def __init__(self, lastRunCreationAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastRunCompletionAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., failureMessage: _Optional[str] = ..., lastRunName: _Optional[int] = ..., lastRunLogs: _Optional[_Iterable[_Union[ContainerLog, _Mapping]]] = ...) -> None: ...
+    __slots__ = ["active", "lastScheduleTime", "lastSuccessfulTime"]
+    ACTIVE_FIELD_NUMBER: _ClassVar[int]
+    LASTSCHEDULETIME_FIELD_NUMBER: _ClassVar[int]
+    LASTSUCCESSFULTIME_FIELD_NUMBER: _ClassVar[int]
+    active: _containers.RepeatedCompositeFieldContainer[RunReference]
+    lastScheduleTime: _generated_pb2_1_1.Time
+    lastSuccessfulTime: _generated_pb2_1_1.Time
+    def __init__(self, active: _Optional[_Iterable[_Union[RunReference, _Mapping]]] = ..., lastScheduleTime: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastSuccessfulTime: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ...) -> None: ...
 
 class RunSpec(_message.Message):
     __slots__ = ["maxPreviousRuns", "timeout"]
@@ -753,7 +757,7 @@ class RunSpec(_message.Message):
     timeout: int
     def __init__(self, timeout: _Optional[int] = ..., maxPreviousRuns: _Optional[int] = ...) -> None: ...
 
-class RunStatus(_message.Message):
+class RunStatusOld(_message.Message):
     __slots__ = ["activeRunId", "activeRunLogs", "lastRunAt", "lastRunId", "runRecords"]
     ACTIVERUNID_FIELD_NUMBER: _ClassVar[int]
     ACTIVERUNLOGS_FIELD_NUMBER: _ClassVar[int]
@@ -774,6 +778,14 @@ class SnapshotReference(_message.Message):
     dataset: str
     version: int
     def __init__(self, dataset: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+
+class StudyRunReference(_message.Message):
+    __slots__ = ["study", "version"]
+    STUDY_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    study: str
+    version: int
+    def __init__(self, study: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
 
 class TestSuite(_message.Message):
     __slots__ = ["enabled", "tests"]

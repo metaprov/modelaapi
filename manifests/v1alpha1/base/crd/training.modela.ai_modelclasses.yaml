@@ -1918,11 +1918,12 @@ spec:
                             range for a single algorithm
                           properties:
                             name:
-                              description: The algorithm name
+                              description: Name specifies the name of the algorithm
+                                to override
                               type: string
                             ranges:
-                              description: Specify one or more parameters ranges.
-                                This parameters will override the default
+                              description: Ranges contain the collection of hyperparameter
+                                ranges to override
                               items:
                                 description: ParameterRange defines the limits for
                                   a single hyperparameter
@@ -2379,42 +2380,32 @@ spec:
               monitoringScheduleStatus:
                 description: Batch Prediction schedule
                 properties:
-                  failureMessage:
-                    description: The failure message of the last run; if the run succeeded,
-                      the field will be set to empty
-                    type: string
-                  lastRunCompletionAt:
-                    description: Last time a run ended in completion or failure
-                    format: date-time
-                    type: string
-                  lastRunCreationAt:
-                    description: Last time a run was created
-                    format: date-time
-                    type: string
-                  lastRunLogs:
-                    description: The logs from the last run
+                  active:
+                    description: Active contains a collection of references to currently
+                      active runs
                     items:
-                      description: ContainerLog describes the location of logs for
-                        a single Job
+                      description: RunReference defines a generic reference to any
+                        type of run
                       properties:
-                        bucket:
-                          description: The bucket the log was stored in
+                        dataset:
+                          description: Name specifies the name of the resource
                           type: string
-                        container:
-                          description: The container name
-                          type: string
-                        job:
-                          description: The name of the Job
-                          type: string
-                        key:
-                          description: The path to the log in the bucket
-                          type: string
+                        version:
+                          description: Version specifies the version of the run
+                          format: int32
+                          type: integer
                       type: object
                     type: array
-                  lastRunName:
-                    description: The version of the last run
-                    format: int32
-                    type: integer
+                  lastScheduleTime:
+                    description: LastScheduleTime specifies when was the last time
+                      a run was successfully scheduled
+                    format: date-time
+                    type: string
+                  lastSuccessfulTime:
+                    description: LastSuccessfulTime specifies when was the last time
+                      a run successfully completed
+                    format: date-time
+                    type: string
                 type: object
               observedGeneration:
                 description: ObservedGeneration is the last generation that was acted
@@ -2424,42 +2415,32 @@ spec:
               predictionScheduleStatus:
                 description: Batch Prediction schedule
                 properties:
-                  failureMessage:
-                    description: The failure message of the last run; if the run succeeded,
-                      the field will be set to empty
-                    type: string
-                  lastRunCompletionAt:
-                    description: Last time a run ended in completion or failure
-                    format: date-time
-                    type: string
-                  lastRunCreationAt:
-                    description: Last time a run was created
-                    format: date-time
-                    type: string
-                  lastRunLogs:
-                    description: The logs from the last run
+                  active:
+                    description: Active contains a collection of references to currently
+                      active runs
                     items:
-                      description: ContainerLog describes the location of logs for
-                        a single Job
+                      description: RunReference defines a generic reference to any
+                        type of run
                       properties:
-                        bucket:
-                          description: The bucket the log was stored in
+                        dataset:
+                          description: Name specifies the name of the resource
                           type: string
-                        container:
-                          description: The container name
-                          type: string
-                        job:
-                          description: The name of the Job
-                          type: string
-                        key:
-                          description: The path to the log in the bucket
-                          type: string
+                        version:
+                          description: Version specifies the version of the run
+                          format: int32
+                          type: integer
                       type: object
                     type: array
-                  lastRunName:
-                    description: The version of the last run
-                    format: int32
-                    type: integer
+                  lastScheduleTime:
+                    description: LastScheduleTime specifies when was the last time
+                      a run was successfully scheduled
+                    format: date-time
+                    type: string
+                  lastSuccessfulTime:
+                    description: LastSuccessfulTime specifies when was the last time
+                      a run successfully completed
+                    format: date-time
+                    type: string
                 type: object
               predictionsCount:
                 description: Total number of batch predictions
@@ -2475,42 +2456,32 @@ spec:
               reportScheduleStatus:
                 description: Batch Prediction schedule
                 properties:
-                  failureMessage:
-                    description: The failure message of the last run; if the run succeeded,
-                      the field will be set to empty
-                    type: string
-                  lastRunCompletionAt:
-                    description: Last time a run ended in completion or failure
-                    format: date-time
-                    type: string
-                  lastRunCreationAt:
-                    description: Last time a run was created
-                    format: date-time
-                    type: string
-                  lastRunLogs:
-                    description: The logs from the last run
+                  active:
+                    description: Active contains a collection of references to currently
+                      active runs
                     items:
-                      description: ContainerLog describes the location of logs for
-                        a single Job
+                      description: RunReference defines a generic reference to any
+                        type of run
                       properties:
-                        bucket:
-                          description: The bucket the log was stored in
+                        dataset:
+                          description: Name specifies the name of the resource
                           type: string
-                        container:
-                          description: The container name
-                          type: string
-                        job:
-                          description: The name of the Job
-                          type: string
-                        key:
-                          description: The path to the log in the bucket
-                          type: string
+                        version:
+                          description: Version specifies the version of the run
+                          format: int32
+                          type: integer
                       type: object
                     type: array
-                  lastRunName:
-                    description: The version of the last run
-                    format: int32
-                    type: integer
+                  lastScheduleTime:
+                    description: LastScheduleTime specifies when was the last time
+                      a run was successfully scheduled
+                    format: date-time
+                    type: string
+                  lastSuccessfulTime:
+                    description: LastSuccessfulTime specifies when was the last time
+                      a run successfully completed
+                    format: date-time
+                    type: string
                 type: object
               retired:
                 description: List of the last 5 retired models
@@ -2525,42 +2496,32 @@ spec:
               trainingScheduleStatus:
                 description: Training schedule status
                 properties:
-                  failureMessage:
-                    description: The failure message of the last run; if the run succeeded,
-                      the field will be set to empty
-                    type: string
-                  lastRunCompletionAt:
-                    description: Last time a run ended in completion or failure
-                    format: date-time
-                    type: string
-                  lastRunCreationAt:
-                    description: Last time a run was created
-                    format: date-time
-                    type: string
-                  lastRunLogs:
-                    description: The logs from the last run
+                  active:
+                    description: Active contains a collection of references to currently
+                      active runs
                     items:
-                      description: ContainerLog describes the location of logs for
-                        a single Job
+                      description: RunReference defines a generic reference to any
+                        type of run
                       properties:
-                        bucket:
-                          description: The bucket the log was stored in
+                        dataset:
+                          description: Name specifies the name of the resource
                           type: string
-                        container:
-                          description: The container name
-                          type: string
-                        job:
-                          description: The name of the Job
-                          type: string
-                        key:
-                          description: The path to the log in the bucket
-                          type: string
+                        version:
+                          description: Version specifies the version of the run
+                          format: int32
+                          type: integer
                       type: object
                     type: array
-                  lastRunName:
-                    description: The version of the last run
-                    format: int32
-                    type: integer
+                  lastScheduleTime:
+                    description: LastScheduleTime specifies when was the last time
+                      a run was successfully scheduled
+                    format: date-time
+                    type: string
+                  lastSuccessfulTime:
+                    description: LastSuccessfulTime specifies when was the last time
+                      a run successfully completed
+                    format: date-time
+                    type: string
                 type: object
               triggeredBy:
                 description: The name of triggered by.

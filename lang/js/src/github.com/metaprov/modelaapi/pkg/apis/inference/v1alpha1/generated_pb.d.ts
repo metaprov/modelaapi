@@ -1217,8 +1217,8 @@ export class PredictionStatus extends jspb.Message {
   hasUsage(): boolean;
   clearUsage(): PredictionStatus;
 
-  getRuns(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunStatus | undefined;
-  setRuns(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunStatus): PredictionStatus;
+  getRuns(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunStatusOld | undefined;
+  setRuns(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunStatusOld): PredictionStatus;
   hasRuns(): boolean;
   clearRuns(): PredictionStatus;
 
@@ -1248,7 +1248,7 @@ export namespace PredictionStatus {
     datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     forecast?: ForecastStatus.AsObject,
     usage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.AsObject,
-    runs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunStatus.AsObject,
+    runs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunStatusOld.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }

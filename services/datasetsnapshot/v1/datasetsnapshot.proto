@@ -116,7 +116,6 @@ message GetDatasetSnapshotAnomaliesResponse {
 /////// Dataset Snapshot Service ///////
 
 service DatasetSnapshotService {
-    // Datasets
     rpc ListDatasetSnapshots(ListDatasetSnapshotsRequest) returns (ListDatasetSnapshotsResponse) {
         option (google.api.http).get = "/v1/datasetsnapshots/{namespace}";
     }

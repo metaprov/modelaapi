@@ -154,7 +154,7 @@ type PredictionStatus struct {
 	// +kubebuilder:validation:Optional
 	Usage catalog.ResourceConsumption `json:"usage,omitempty" protobuf:"bytes,15,rep,name=usage"`
 	// +kubebuilder:validation:Optional
-	Runs catalog.RunStatus `json:"runs,omitempty" protobuf:"bytes,16,rep,name=runs"`
+	Runs catalog.RunStatusOld `json:"runs,omitempty" protobuf:"bytes,16,rep,name=runs"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

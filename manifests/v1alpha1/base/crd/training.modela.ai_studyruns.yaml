@@ -1,0 +1,583 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.10.0
+  creationTimestamp: null
+  name: studyruns.training.modela.ai
+spec:
+  group: training.modela.ai
+  names:
+    categories:
+    - training
+    - modela
+    kind: StudyRun
+    listKind: StudyRunList
+    plural: studyruns
+    shortNames:
+    - sr
+    singular: studyrun
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.phase
+      name: Phase
+      type: string
+    - jsonPath: .spec.owner
+      name: Owner
+      priority: 1
+      type: string
+    - jsonPath: .status.runVersion
+      name: Version
+      priority: 1
+      type: string
+    - jsonPath: .status.progress
+      name: Progress
+      priority: 1
+      type: number
+    - jsonPath: .spec.studyName
+      name: Study
+      type: string
+    - jsonPath: .status.bestModelScore
+      name: Best Score
+      type: number
+    - jsonPath: .status.bestModel
+      name: Best Model
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: StudyRun represents the single execution of a Study
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: StudyRunSpec defines the run configuration for a Study
+            properties:
+              abort:
+                default: false
+                description: If true, the run will be permanently aborted and all
+                  workloads created by the run will be removed
+                type: boolean
+              modelClassRunName:
+                description: ModelClassRunName specifies the name of the Model Class
+                  Run which created the run, if applicable
+                type: string
+              owner:
+                default: no-one
+                description: Owner specifies the name of the Account which the object
+                  belongs to
+                type: string
+              pause:
+                default: false
+                description: If true, the execution of new workloads associated with
+                  the run will be paused
+                type: boolean
+              studyName:
+                description: DatasetName specifies the name of the Study resource
+                  which the run will use to determine the parameters for the model
+                  search
+                type: string
+              timeout:
+                description: Timout specifies the time in seconds for the run to be
+                  completed. If unspecified, the run deadline specified by the Study
+                  will be used
+                format: int64
+                type: integer
+            type: object
+          status:
+            description: StudyStatus defines the observed state of a Study
+            properties:
+              baseline:
+                description: BaselineStatus contains the status of the baseline phase
+                properties:
+                  bestScore:
+                    description: Best score so far in this phase. The best score is
+                      the value of the objective.
+                    type: number
+                  completedAt:
+                    description: The time at which the phase concluded
+                    format: date-time
+                    type: string
+                  completedModelsCount:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  failedModelsCount:
+                    description: The number of models that experienced an error whilst
+                      training
+                    format: int32
+                    type: integer
+                  modelsWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
+                    format: int32
+                    type: integer
+                  runningModelsCount:
+                    description: The number of models currently being trained
+                    format: int32
+                    type: integer
+                  startedAt:
+                    description: The time at which the phase started
+                    format: date-time
+                    type: string
+                  waitingModelsCount:
+                    description: The number of models pending training
+                    format: int32
+                    type: integer
+                type: object
+              bestModel:
+                description: The name of the Model resource which was determined to
+                  be the highest-performing
+                type: string
+              bestModelScore:
+                description: The score of the Model resource which was determined
+                  to be the highest-performing
+                type: number
+              completedAt:
+                description: CompletedAt represents the time at which the Study was
+                  marked as completed, failed, or aborted
+                format: date-time
+                type: string
+              conditions:
+                items:
+                  description: "Condition contains details for one aspect of the current
+                    state of this API Resource. --- This struct is intended for direct
+                    use as an array at the field path .status.conditions.  For example,
+                    type FooStatus struct{ // Represents the observations of a foo's
+                    current state. // Known .status.conditions.type are: \"Available\",
+                    \"Progressing\", and \"Degraded\" // +patchMergeKey=type // +patchStrategy=merge
+                    // +listType=map // +listMapKey=type Conditions []metav1.Condition
+                    `json:\"conditions,omitempty\" patchStrategy:\"merge\" patchMergeKey:\"type\"
+                    protobuf:\"bytes,1,rep,name=conditions\"` \n // other fields }"
+                  properties:
+                    lastTransitionTime:
+                      description: lastTransitionTime is the last time the condition
+                        transitioned from one status to another. This should be when
+                        the underlying condition changed.  If that is not known, then
+                        using the time when the API field changed is acceptable.
+                      format: date-time
+                      type: string
+                    message:
+                      description: message is a human readable message indicating
+                        details about the transition. This may be an empty string.
+                      maxLength: 32768
+                      type: string
+                    observedGeneration:
+                      description: observedGeneration represents the .metadata.generation
+                        that the condition was set based upon. For instance, if .metadata.generation
+                        is currently 12, but the .status.conditions[x].observedGeneration
+                        is 9, the condition is out of date with respect to the current
+                        state of the instance.
+                      format: int64
+                      minimum: 0
+                      type: integer
+                    reason:
+                      description: reason contains a programmatic identifier indicating
+                        the reason for the condition's last transition. Producers
+                        of specific condition types may define expected values and
+                        meanings for this field, and whether the values are considered
+                        a guaranteed API. The value should be a CamelCase string.
+                        This field may not be empty.
+                      maxLength: 1024
+                      minLength: 1
+                      pattern: ^[A-Za-z]([A-Za-z0-9_,:]*[A-Za-z0-9_])?$
+                      type: string
+                    status:
+                      description: status of the condition, one of True, False, Unknown.
+                      enum:
+                      - "True"
+                      - "False"
+                      - Unknown
+                      type: string
+                    type:
+                      description: type of condition in CamelCase or in foo.example.com/CamelCase.
+                        --- Many .condition.type values are consistent across resources
+                        like Available, but because arbitrary conditions can be useful
+                        (see .node.status.conditions), the ability to deconflict is
+                        important. The regex it matches is (dns1123SubdomainFmt/)?(qualifiedNameFmt)
+                      maxLength: 316
+                      pattern: ^([a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*/)?(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])$
+                      type: string
+                  required:
+                  - lastTransitionTime
+                  - message
+                  - reason
+                  - status
+                  - type
+                  type: object
+                type: array
+              ensemble:
+                description: EnsembleStatus contains the status of the ensemble phase
+                properties:
+                  bestScore:
+                    description: Best score so far in this phase. The best score is
+                      the value of the objective.
+                    type: number
+                  completedAt:
+                    description: The time at which the phase concluded
+                    format: date-time
+                    type: string
+                  completedModelsCount:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  failedModelsCount:
+                    description: The number of models that experienced an error whilst
+                      training
+                    format: int32
+                    type: integer
+                  modelsWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
+                    format: int32
+                    type: integer
+                  runningModelsCount:
+                    description: The number of models currently being trained
+                    format: int32
+                    type: integer
+                  startedAt:
+                    description: The time at which the phase started
+                    format: date-time
+                    type: string
+                  waitingModelsCount:
+                    description: The number of models pending training
+                    format: int32
+                    type: integer
+                type: object
+              explain:
+                description: ExplainStatus contains the status of the explaining phase
+                properties:
+                  bestScore:
+                    description: Best score so far in this phase. The best score is
+                      the value of the objective.
+                    type: number
+                  completedAt:
+                    description: The time at which the phase concluded
+                    format: date-time
+                    type: string
+                  completedModelsCount:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  failedModelsCount:
+                    description: The number of models that experienced an error whilst
+                      training
+                    format: int32
+                    type: integer
+                  modelsWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
+                    format: int32
+                    type: integer
+                  runningModelsCount:
+                    description: The number of models currently being trained
+                    format: int32
+                    type: integer
+                  startedAt:
+                    description: The time at which the phase started
+                    format: date-time
+                    type: string
+                  waitingModelsCount:
+                    description: The number of models pending training
+                    format: int32
+                    type: integer
+                type: object
+              failureMessage:
+                description: FailureMessage is set to a failure message in the case
+                  that an error occurred during the run
+                type: string
+              gc:
+                description: GC specifies the status of garbage collection relevant
+                  to the Study
+                properties:
+                  collectedModelsCount:
+                    description: The number of models that were collected, equal to
+                      the length of Models
+                    format: int32
+                    type: integer
+                  models:
+                    description: The collection of models that were deleted
+                    items:
+                      description: ModelResult contains the records of a single garbage-collected
+                        model
+                      properties:
+                        algorithm:
+                          description: The type of estimator of the model
+                          type: string
+                        error:
+                          description: Indicates if the model experience an error
+                            whilst training
+                          type: boolean
+                        name:
+                          description: The name of the model
+                          type: string
+                        score:
+                          description: The objective score of the model
+                          type: number
+                        trialID:
+                          description: The optimizer trial ID of the model
+                          format: int32
+                          type: integer
+                      type: object
+                    type: array
+                type: object
+              lastModelID:
+                description: The Kubernetes-internal ID of the last Model resource
+                  generated by the Study
+                format: int64
+                type: integer
+              logs:
+                description: Logs specifies the location of logs produced by workloads
+                  associated with the Study
+                properties:
+                  bucket:
+                    description: The name of the Virtual Bucket resource where the
+                      logs are stored
+                    type: string
+                  containers:
+                    description: The collection of logs for each container of the
+                      workload
+                    items:
+                      description: ContainerLog describes the location of logs for
+                        a single Job
+                      properties:
+                        bucket:
+                          description: The bucket the log was stored in
+                          type: string
+                        container:
+                          description: The container name
+                          type: string
+                        job:
+                          description: The name of the Job
+                          type: string
+                        key:
+                          description: The path to the log in the bucket
+                          type: string
+                      type: object
+                    type: array
+                type: object
+              manifestLocation:
+                description: ManifestLocation specifies the location of the Study
+                  manifest used during the course of the snapshot
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    type: string
+                type: object
+              manifestVersion:
+                description: ManifestVersion specifies the version of the saved Study
+                  manifest
+                format: int32
+                type: integer
+              modelsCount:
+                description: Total models created for the study
+                format: int32
+                type: integer
+              observedGeneration:
+                description: ObservedGeneration is the last generation that was reconciled
+                format: int64
+                type: integer
+              optimizerLocation:
+                description: OptimizerLocation specifies the location of the optimizer
+                  database relevant to the Study
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    type: string
+                type: object
+              outlierDetection:
+                description: OutlierDetection is the status for outlier detection
+                properties:
+                  outlierModelURI:
+                    description: The location of the drift detector model
+                    type: string
+                type: object
+              phase:
+                default: Pending
+                description: The phase of the Study
+                type: string
+              profileLocation:
+                description: ProfileLocation specifies the location of the profile
+                  file produced by the StudyRun
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    type: string
+                type: object
+              progress:
+                description: The progress percentage of the Study, which is derived
+                  from the Study's current phase
+                format: int32
+                type: integer
+              reportName:
+                description: ReportName specifies the name of the Report generated
+                  by the StudyRun
+                type: string
+              runVersion:
+                description: RunVersion specifies the version of the run, which is
+                  determined when the Study manifest is saved
+                format: int32
+                type: integer
+              search:
+                description: SearchStatus contains the status of the model search
+                  phase
+                properties:
+                  bestScore:
+                    description: Best score so far in this phase. The best score is
+                      the value of the objective.
+                    type: number
+                  completedAt:
+                    description: The time at which the phase concluded
+                    format: date-time
+                    type: string
+                  completedModelsCount:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  failedModelsCount:
+                    description: The number of models that experienced an error whilst
+                      training
+                    format: int32
+                    type: integer
+                  modelsWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
+                    format: int32
+                    type: integer
+                  runningModelsCount:
+                    description: The number of models currently being trained
+                    format: int32
+                    type: integer
+                  startedAt:
+                    description: The time at which the phase started
+                    format: date-time
+                    type: string
+                  waitingModelsCount:
+                    description: The number of models pending training
+                    format: int32
+                    type: integer
+                type: object
+              test:
+                description: TestStatus contains the status of the testing phase
+                properties:
+                  bestScore:
+                    description: Best score so far in this phase. The best score is
+                      the value of the objective.
+                    type: number
+                  completedAt:
+                    description: The time at which the phase concluded
+                    format: date-time
+                    type: string
+                  completedModelsCount:
+                    description: The number of models that have been successfully
+                      trained
+                    format: int32
+                    type: integer
+                  failedModelsCount:
+                    description: The number of models that experienced an error whilst
+                      training
+                    format: int32
+                    type: integer
+                  modelsWithNoProgress:
+                    description: Actual number of models where no progress was made.
+                      This used to decide on early stop.
+                    format: int32
+                    type: integer
+                  runningModelsCount:
+                    description: The number of models currently being trained
+                    format: int32
+                    type: integer
+                  startedAt:
+                    description: The time at which the phase started
+                    format: date-time
+                    type: string
+                  waitingModelsCount:
+                    description: The number of models pending training
+                    format: int32
+                    type: integer
+                type: object
+              testDatasetLocation:
+                description: TestDatasetLocation specifies the location of the testing
+                  dataset
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    type: string
+                type: object
+              testingRowsCount:
+                description: The number of rows in the testing dataset
+                format: int32
+                type: integer
+              trainDatasetLocation:
+                description: TrainDatasetLocation specifies the location of the training
+                  dataset
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    type: string
+                type: object
+              trainingDataHash:
+                description: TrainingDataHash specifies the hashes for datasets used
+                  by the Study
+                properties:
+                  testingHash:
+                    default: ""
+                    type: string
+                  trainingHash:
+                    default: ""
+                    type: string
+                  validationHash:
+                    default: ""
+                    type: string
+                type: object
+              trainingRowsCount:
+                description: The number of rows in the training dataset
+                format: int32
+                type: integer
+              updatedAt:
+                description: UpdatedAt specifies the last time the run was updated
+                format: date-time
+                type: string
+              validationDatasetLocation:
+                description: ValidationDatasetLocation specifies the location of the
+                  validation dataset
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    type: string
+                type: object
+              validationRowsCount:
+                description: The number of rows in the validation dataset
+                format: int32
+                type: integer
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

@@ -692,7 +692,7 @@ message PredictionStatus {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceConsumption usage = 15;
 
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatus runs = 16;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunStatusOld runs = 16;
 
   // +patchMergeKey=type
   // +patchStrategy=merge

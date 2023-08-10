@@ -19,7 +19,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
 
-func (study Study) DefaultObjective(task catalog.MLTask) catalog.Metric {
+func (study *Study) DefaultObjective(task catalog.MLTask) catalog.Metric {
 	if task == catalog.BinaryClassification {
 		return catalog.RocAuc
 	}
@@ -35,23 +35,7 @@ func (study Study) DefaultObjective(task catalog.MLTask) catalog.Metric {
 	return catalog.Accuracy
 }
 
-func (study Study) DefaultFESearchEstimator(task catalog.MLTask) catalog.ClassicEstimatorName {
-	if task == catalog.BinaryClassification {
-		return catalog.DecisionTreeClassifier
-	}
-	if task == catalog.MultiClassification {
-		return catalog.DecisionTreeClassifier
-	}
-	if task == catalog.Regression {
-		return catalog.DecisionTreeRegressor
-	}
-	if task == catalog.Forecasting || task == catalog.PartitionForecast {
-		return catalog.AutoARIMA
-	}
-	return catalog.UnknownEstimatorName
-}
-
-func (study Study) DefaultBaselineEstimator(task catalog.MLTask) catalog.ClassicEstimatorName {
+func (study *Study) DefaultBaselineEstimator(task catalog.MLTask) catalog.ClassicEstimatorName {
 	if task == catalog.BinaryClassification {
 		return catalog.RandomForestClassifier
 	}
@@ -86,20 +70,11 @@ func (study *Study) Default() {
 		}
 	}
 
-	if study.Spec.TrainingTemplate.Split.Method == nil || *study.Spec.TrainingTemplate.Split.Method == catalog.DataSplitAuto {
+	if study.Spec.Split.Method == nil || *study.Spec.Split.Method == catalog.DataSplitAuto {
 		study.SelectSplitMethod()
 	}
 
 	study.Spec.Ensembles.StackingEnsemble = util.BoolPtr(true)
-
-	if study.Spec.Schedule.StartAt == nil {
-		now := metav1.Now()
-		study.Spec.Schedule.StartAt = &now
-	}
-
-	if study.Spec.Abort == nil {
-		study.Spec.Abort = util.BoolPtr(false)
-	}
 
 	if study.Spec.Report == nil {
 		study.Spec.Report = util.BoolPtr(true)
@@ -118,39 +93,34 @@ func (study *Study) Default() {
 	if study.Spec.Owner != nil {
 		study.ObjectMeta.Labels[catalog.OwnerKindLabelKey] = *study.Spec.Owner
 	}
-	if study.Spec.DatasetName != nil {
-		study.ObjectMeta.Labels[catalog.DatasetLabelKey] = *study.Spec.DatasetName
-	}
+
+	study.ObjectMeta.Labels[catalog.DatasetLabelKey] = study.Spec.Snapshot.Dataset
 	study.ObjectMeta.Labels[catalog.TenantLabelKey] = study.Spec.LabRef.Namespace
 	study.ObjectMeta.Labels[catalog.LabLabelKey] = study.Spec.LabRef.Name
 
 	if study.Spec.ModelClassName != nil {
 		study.ObjectMeta.Labels[catalog.ModelClassLabelKey] = *study.Spec.ModelClassName
 	}
-	if study.Spec.ModelClassRunName != nil {
-		study.ObjectMeta.Labels[catalog.ModelClassRunLabelKey] = *study.Spec.ModelClassRunName
-	}
-
 }
 
 // validation
 var _ webhook.Validator = &Study{}
 
-func (study Study) ValidateDelete() error {
+func (study *Study) ValidateDelete() error {
 	return nil
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (study Study) ValidateCreate() error {
+func (study *Study) ValidateCreate() error {
 	return study.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (study Study) ValidateUpdate(old runtime.Object) error {
+func (study *Study) ValidateUpdate(old runtime.Object) error {
 	return study.validate()
 }
 
-func (study Study) validate() error {
+func (study *Study) validate() error {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, study.validateMeta(field.NewPath("metadata"))...)
 	allErrs = append(allErrs, study.validateSpec(field.NewPath("spec"))...)
@@ -163,13 +133,13 @@ func (study Study) validate() error {
 		study.Name, allErrs)
 }
 
-func (study Study) validateMeta(fldPath *field.Path) field.ErrorList {
+func (study *Study) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, study.validateName(fldPath.Child("name"))...)
 	return allErrs
 }
 
-func (study Study) validateName(fldPath *field.Path) field.ErrorList {
+func (study *Study) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	err := common.ValidateResourceName(study.Name)
 	if err != nil {
@@ -178,30 +148,14 @@ func (study Study) validateName(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (study Study) validateSpec(fldPath *field.Path) field.ErrorList {
+func (study *Study) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, study.validateTask(fldPath.Child("Task"))...)
-	allErrs = append(allErrs, study.validateDataset(fldPath.Child("Entity"))...)
 	return allErrs
 }
 
 // Validate task checks that the
-func (study Study) validateDataset(fldPath *field.Path) field.ErrorList {
-	var allErrs field.ErrorList
-	// Task must be defined.
-	if study.Spec.DatasetName == nil {
-		err := errors.Errorf("dataset name must be defined")
-		allErrs = append(allErrs, field.Invalid(
-			fldPath,
-			study.Spec.Task,
-			err.Error()))
-		return allErrs
-	}
-	return allErrs
-}
-
-// Validate task checks that the
-func (study Study) validateTask(fldPath *field.Path) field.ErrorList {
+func (study *Study) validateTask(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	// Task must be defined.
 	if study.Spec.Task == "" {

@@ -425,11 +425,11 @@ class PredictionStatus(_message.Message):
     observedGeneration: int
     phase: str
     rows: int
-    runs: _generated_pb2.RunStatus
+    runs: _generated_pb2.RunStatusOld
     unitTestsResult: _generated_pb2.TestSuiteResult
     updatedAt: _generated_pb2_1_1_1_1.Time
     usage: _generated_pb2.ResourceConsumption
-    def __init__(self, completedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., phase: _Optional[str] = ..., unitTestsResult: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., observedGeneration: _Optional[int] = ..., rows: _Optional[int] = ..., logs: _Optional[_Union[_generated_pb2.Logs, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., failureMessage: _Optional[str] = ..., datasetRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., forecast: _Optional[_Union[ForecastStatus, _Mapping]] = ..., usage: _Optional[_Union[_generated_pb2.ResourceConsumption, _Mapping]] = ..., runs: _Optional[_Union[_generated_pb2.RunStatus, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, completedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., phase: _Optional[str] = ..., unitTestsResult: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., observedGeneration: _Optional[int] = ..., rows: _Optional[int] = ..., logs: _Optional[_Union[_generated_pb2.Logs, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., failureMessage: _Optional[str] = ..., datasetRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., forecast: _Optional[_Union[ForecastStatus, _Mapping]] = ..., usage: _Optional[_Union[_generated_pb2.ResourceConsumption, _Mapping]] = ..., runs: _Optional[_Union[_generated_pb2.RunStatusOld, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class Predictor(_message.Message):
     __slots__ = ["metadata", "spec", "status"]

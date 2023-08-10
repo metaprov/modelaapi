@@ -28,7 +28,7 @@ spec:
     - jsonPath: .spec.owner
       name: Owner
       type: string
-    - jsonPath: .spec.versionName
+    - jsonPath: .status.version
       name: Version
       type: string
     - jsonPath: .spec.datasourceName
@@ -39,6 +39,9 @@ spec:
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age
+      type: date
+    - jsonPath: .status.lastSnapshotAt
+      name: Last Snapshot
       type: date
     name: v1alpha1
     schema:
@@ -112,11 +115,12 @@ spec:
               generateFeatureHistogram:
                 default: true
                 description: Indicates if a Feature Histogram will be generated from
-                  the dataset's columns
+                  the dataset's columns. A feature histogram may only be generated
+                  if the dataset profile succeeded
                 type: boolean
               groupBy:
-                description: Define how to group by the base dataset, before making
-                  the forecasts. By default, this dataset is assigned
+                description: GroupBy specifies the configuration to partition the
+                  dataset by groups By default, this dataset is assigned
                 properties:
                   aggregate:
                     default: sum
@@ -164,35 +168,10 @@ spec:
                     format: int32
                     type: integer
                 type: object
-              groupLocations:
-                description: Define how to group by the base dataset, before making
-                  the forecasts. By default, this dataset is assigned
-                properties:
-                  groupDataFile:
-                    description: The folder of group data
-                    type: string
-                  groupDataFolder:
-                    description: The folder of group data
-                    type: string
-                  groupFeaturesFile:
-                    description: The path of the group features files
-                    type: string
-                  groupProfileFolder:
-                    description: The folder group data profile
-                    type: string
-                  groupReportFile:
-                    description: The path of the group report
-                    type: string
-                  groupRoot:
-                    description: The root of the group folders and files
-                    type: string
-                  groupsRoot:
-                    description: The root folder of all the groups
-                    type: string
-                type: object
               key:
-                description: If this dataset represent a group in a multi-series dataset,
-                  these are the values of the group key.
+                description: Key contains the collection of group keys, in the case
+                  that the dataset represents hierarchical time-series data. The keys
+                  will be used to perform a group by
                 items:
                   type: string
                 type: array
@@ -380,44 +359,6 @@ spec:
                 description: Owner specifies the name of the Account which the object
                   belongs to
                 type: string
-              predictorRef:
-                description: Used for prediction dataset, contain a reference to the
-                  predictor resource that created the dataset
-                properties:
-                  apiVersion:
-                    description: API version of the referent.
-                    type: string
-                  fieldPath:
-                    description: 'If referring to a piece of an object instead of
-                      an entire object, this string should contain a valid JSON/Go
-                      field access statement, such as desiredState.manifest.containers[2].
-                      For example, if the object reference is to a container within
-                      a pod, this would take on a value like: "spec.containers{name}"
-                      (where "name" refers to the name of the container that triggered
-                      the event) or if no container name is specified "spec.containers[2]"
-                      (container with index 2 in this pod). This syntax is chosen
-                      only to have some well-defined way of referencing a part of
-                      an object. TODO: this design is not final and this field is
-                      subject to change in the future.'
-                    type: string
-                  kind:
-                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                    type: string
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                    type: string
-                  namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                    type: string
-                  resourceVersion:
-                    description: 'Specific resourceVersion to which this reference
-                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                    type: string
-                  uid:
-                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                    type: string
-                type: object
-                x-kubernetes-map-type: atomic
               reported:
                 default: true
                 description: Indicates if a PDF report containing the Dataset profile
@@ -569,44 +510,6 @@ spec:
                     - cron
                     type: string
                 type: object
-              servingDatasetRef:
-                description: For dataset that contain feedback information, this is
-                  reference to the serving dataset
-                properties:
-                  apiVersion:
-                    description: API version of the referent.
-                    type: string
-                  fieldPath:
-                    description: 'If referring to a piece of an object instead of
-                      an entire object, this string should contain a valid JSON/Go
-                      field access statement, such as desiredState.manifest.containers[2].
-                      For example, if the object reference is to a container within
-                      a pod, this would take on a value like: "spec.containers{name}"
-                      (where "name" refers to the name of the container that triggered
-                      the event) or if no container name is specified "spec.containers[2]"
-                      (container with index 2 in this pod). This syntax is chosen
-                      only to have some well-defined way of referencing a part of
-                      an object. TODO: this design is not final and this field is
-                      subject to change in the future.'
-                    type: string
-                  kind:
-                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                    type: string
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                    type: string
-                  namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                    type: string
-                  resourceVersion:
-                    description: 'Specific resourceVersion to which this reference
-                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                    type: string
-                  uid:
-                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                    type: string
-                type: object
-                x-kubernetes-map-type: atomic
               subtask:
                 default: none
                 description: The machine learning sub-task relevant to the Dataset.
@@ -660,11 +563,6 @@ spec:
                     format: int32
                     type: integer
                 type: object
-              tags:
-                description: Tags attached to the dataset
-                items:
-                  type: string
-                type: array
               task:
                 description: The machine learning task relevant to the Dataset. This
                   field must be the same as the task specified by the Data Source
@@ -909,6 +807,22 @@ spec:
           status:
             description: DatasetStatus defines the observed state of a Dataset object
             properties:
+              active:
+                description: Active contains a collection of references to currently
+                  active snapshots
+                items:
+                  description: RunReference defines a generic reference to any type
+                    of run
+                  properties:
+                    dataset:
+                      description: Name specifies the name of the resource
+                      type: string
+                    version:
+                      description: Version specifies the version of the run
+                      format: int32
+                      type: integer
+                  type: object
+                type: array
               availableSnapshotVersions:
                 description: AvailableSnapshotVersions contains the collection of
                   snapshot versions which are ready for use. Each version corresponds
@@ -985,7 +899,7 @@ spec:
                   - type
                   type: object
                 type: array
-              failureMessage:
+              lastFailureMessage:
                 description: LastFailureMessage specifies the failure message of the
                   last snapshot. If the last snapshot succeeded, the field will be
                   cleared
@@ -1009,42 +923,32 @@ spec:
               schedule:
                 description: Schedule specifies the status of the run schedule
                 properties:
-                  failureMessage:
-                    description: The failure message of the last run; if the run succeeded,
-                      the field will be set to empty
-                    type: string
-                  lastRunCompletionAt:
-                    description: Last time a run ended in completion or failure
-                    format: date-time
-                    type: string
-                  lastRunCreationAt:
-                    description: Last time a run was created
-                    format: date-time
-                    type: string
-                  lastRunLogs:
-                    description: The logs from the last run
+                  active:
+                    description: Active contains a collection of references to currently
+                      active runs
                     items:
-                      description: ContainerLog describes the location of logs for
-                        a single Job
+                      description: RunReference defines a generic reference to any
+                        type of run
                       properties:
-                        bucket:
-                          description: The bucket the log was stored in
+                        dataset:
+                          description: Name specifies the name of the resource
                           type: string
-                        container:
-                          description: The container name
-                          type: string
-                        job:
-                          description: The name of the Job
-                          type: string
-                        key:
-                          description: The path to the log in the bucket
-                          type: string
+                        version:
+                          description: Version specifies the version of the run
+                          format: int32
+                          type: integer
                       type: object
                     type: array
-                  lastRunName:
-                    description: The version of the last run
-                    format: int32
-                    type: integer
+                  lastScheduleTime:
+                    description: LastScheduleTime specifies when was the last time
+                      a run was successfully scheduled
+                    format: date-time
+                    type: string
+                  lastSuccessfulTime:
+                    description: LastSuccessfulTime specifies when was the last time
+                      a run successfully completed
+                    format: date-time
+                    type: string
                 type: object
               updatedAt:
                 description: UpdatedAt specifies the last time the Dataset was changed

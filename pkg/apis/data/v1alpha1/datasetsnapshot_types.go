@@ -33,17 +33,18 @@ const (
 type DatasetSnapshotConditionType string
 
 const (
-	DatasetSnapshotPrepared    DatasetSnapshotConditionType = "Prepared"
-	DatasetSnapshotReported    DatasetSnapshotConditionType = "Reported"
-	DatasetSnapshotUnitTested  DatasetSnapshotConditionType = "UnitTested"
-	DatasetSnapshotSnapshotted DatasetSnapshotConditionType = "Snapshotted"
-	DatasetSnapshotProfiled    DatasetSnapshotConditionType = "Profiled"
-	DatasetSnapshotIngested    DatasetSnapshotConditionType = "Ingested"
-	DatasetSnapshotGrouped     DatasetSnapshotConditionType = "Grouped"
-	DatasetSnapshotGenerated   DatasetSnapshotConditionType = "Generated"
-	DatasetSnapshotReady       DatasetSnapshotConditionType = "Ready"
-	DatasetSnapshotPaused      DatasetSnapshotConditionType = "Paused"
-	DatasetSnapshotAborted     DatasetSnapshotConditionType = "Aborted"
+	DatasetSnapshotPrepared              DatasetSnapshotConditionType = "Prepared"
+	DatasetSnapshotReported              DatasetSnapshotConditionType = "Reported"
+	DatasetSnapshotUnitTested            DatasetSnapshotConditionType = "UnitTested"
+	DatasetSnapshotSnapshotted           DatasetSnapshotConditionType = "Snapshotted"
+	DatasetSnapshotProfiled              DatasetSnapshotConditionType = "Profiled"
+	DatasetSnapshotIngested              DatasetSnapshotConditionType = "Ingested"
+	DatasetSnapshotGrouped               DatasetSnapshotConditionType = "Grouped"
+	DatasetSnapshotGenerated             DatasetSnapshotConditionType = "Generated"
+	DatasetSnapshotReady                 DatasetSnapshotConditionType = "Ready"
+	DatasetSnapshotPaused                DatasetSnapshotConditionType = "Paused"
+	DatasetSnapshotAborted               DatasetSnapshotConditionType = "Aborted"
+	DatasetSnapshotExternalStatusUpdated DatasetSnapshotConditionType = "ExternalStatusUpdated"
 )
 
 // +kubebuilder:object:root=true
@@ -142,7 +143,7 @@ type DatasetSnapshotStatus struct {
 	// UnitTestResults contains the results of the unit test phase
 	//+kubebuilder:validation:Optional
 	UnitTestResults catalog.TestSuiteResult `json:"unitTestResults,omitempty" protobuf:"bytes,13,opt,name=unitTestResults"`
-	// FailureMessage is set to a failure message in the case that an error occurred during the run
+	// FailureMessage is set to a failure message in the case that an error occurred during the snapshot
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,14,opt,name=failureMessage"`
 	// Progress defines the current numerical progress of the run, from 0 to 100
@@ -360,9 +361,6 @@ type DatasetGroupByStatus struct {
 	// The locations of the report file. One report for each key
 	// +kubebuilder:validation:Optional
 	UnitTestsURI string `json:"unitTestsURI,omitempty" protobuf:"bytes,4,opt,name=unitTestsURI"`
-	// The locations of the time series feature files. The file contain a line for each feature
-	// +kubebuilder:validation:Optional
-	FeaturesURI string `json:"featuresURI,omitempty" protobuf:"bytes,5,opt,name=featuresURI"`
 	// Holds the worker on going result, when a worker finish, we update the location of thier result files
 	// +kubebuilder:validation:Optional
 	WorkerResults []catalog.WorkerRunResult `json:"workerResults,omitempty" protobuf:"bytes,6,rep,name=workerResults"`

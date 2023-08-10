@@ -265,6 +265,7 @@ func (ms *SearchSpec) Default(task catalog.MLTask) {
 	if ms.RetainTop == nil {
 		ms.RetainTop = util.Int32Ptr(10)
 	}
+
 	if ms.RetainFor == nil {
 		ms.RetainFor = util.Int32Ptr(60)
 	}

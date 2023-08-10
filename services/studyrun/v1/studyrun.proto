@@ -1,0 +1,157 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modelaapi/services/study/v1";
+package github.com.metaprov.modelaapi.services.study.v1;
+
+import "google/protobuf/field_mask.proto";
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
+
+/////// List Study Run ///////
+
+message ListStudyRunRequest {
+    string namespace = 1;
+    map<string,string> labels = 2;
+}
+
+message ListStudyRunResponse {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunList studyRuns = 1;
+    string next_page_token = 2;
+}
+
+/////// Get Study Run ///////
+
+message GetStudyRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetStudyRunResponse {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRun studyRun = 1;
+    string yaml = 2;
+}
+
+/////// Delete Study Run ///////
+
+message DeleteStudyRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteStudyRunResponse {}
+
+/////// Create Study Run ///////
+
+message CreateStudyRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRun studyRun = 1;
+}
+
+message CreateStudyRunResponse {}
+
+/////// Update Study Run ///////
+
+message UpdateStudyRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRun studyRun = 1;
+    google.protobuf.FieldMask field_mask = 2;
+}
+
+message UpdateStudyRunResponse {}
+
+/////// Get Study Run Profile ///////
+
+message GetStudyRunProfileRequest {
+    string namespace = 1;
+    string name = 2;
+    int32 models = 3;
+}
+
+message GetStudyRunProfileResponse {
+    github.com.metaprov.modelaapi.services.common.v1.StudyProfile profile = 1;
+    repeated github.com.metaprov.modelaapi.services.common.v1.ModelProfile modelsProfile = 2;
+}
+
+/////// Abort Study Run ///////
+
+message AbortStudyRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message AbortStudyRunResponse {}
+
+/////// Pause Study Run ///////
+
+message PauseStudyRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message PauseStudyRunResponse {}
+
+/////// Resume Study Run ///////
+
+message ResumeStudyRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message ResumeStudyRunResponse {}
+
+/////// Complete Study Run Search ///////
+
+message CompleteStudyRunSearchRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message CompleteStudyRunSearchResponse {}
+
+
+service StudyRunService {
+    rpc ListStudyRuns(ListStudyRunRequest) returns (ListStudyRunResponse) {
+        option (google.api.http).get = "/v1/studyruns/{namespace}";
+    }
+
+    rpc CreateStudyRun(CreateStudyRunRequest) returns (CreateStudyRunResponse) {
+        option (google.api.http) = {
+            post: "/v1/studyruns"
+            body: "*"
+        };
+    }
+
+    rpc GetStudyRun(GetStudyRunRequest) returns (GetStudyRunResponse) {
+        option (google.api.http).get = "/v1/studyruns/{namespace}/{name}";
+    }
+
+    rpc UpdateStudyRun(UpdateStudyRunRequest) returns (UpdateStudyRunResponse) {
+        option (google.api.http) = {
+            put: "/v1/studyruns/{study.metadata.namespace}/{study.metadata.name}"
+            body: "*"
+        };
+    }
+
+    rpc DeleteStudyRun(DeleteStudyRunRequest) returns (DeleteStudyRunResponse) {
+        option (google.api.http).delete = "/v1/studyruns/{namespace}/{name}";
+    }
+
+    rpc GetStudyRunProfile(GetStudyRunProfileRequest) returns (GetStudyRunProfileResponse) {
+        option (google.api.http).get = "/v1/studyruns/{namespace}/{name}:profile";
+    }
+
+    rpc AbortStudyRun(AbortStudyRunRequest) returns (AbortStudyRunResponse) {
+        option (google.api.http).post = "/v1/studyruns/{namespace}/{name}:abort";
+    }
+
+    rpc PauseStudyRun(PauseStudyRunRequest) returns (PauseStudyRunResponse) {
+        option (google.api.http).post = "/v1/studyruns/{namespace}/{name}:pause";
+    }
+
+    rpc ResumeStudyRun(ResumeStudyRunRequest) returns (ResumeStudyRunResponse) {
+        option (google.api.http).post = "/v1/studyruns/{namespace}/{name}:resume";
+    }
+
+    rpc CompleteSearch(CompleteStudyRunSearchRequest) returns (CompleteStudyRunSearchResponse) {
+        option (google.api.http).post = "/v1/studyruns/{namespace}/{name}:complete";
+    }
+}

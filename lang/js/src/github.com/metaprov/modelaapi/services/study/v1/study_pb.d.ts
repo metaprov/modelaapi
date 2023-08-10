@@ -3,8 +3,55 @@ import * as jspb from 'google-protobuf'
 import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
+
+export class ListStudyRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListStudyRequest;
+
+  getLabelsMap(): jspb.Map<string, string>;
+  clearLabelsMap(): ListStudyRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListStudyRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListStudyRequest): ListStudyRequest.AsObject;
+  static serializeBinaryToWriter(message: ListStudyRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListStudyRequest;
+  static deserializeBinaryFromReader(message: ListStudyRequest, reader: jspb.BinaryReader): ListStudyRequest;
+}
+
+export namespace ListStudyRequest {
+  export type AsObject = {
+    namespace: string,
+    labelsMap: Array<[string, string]>,
+  }
+}
+
+export class ListStudyResponse extends jspb.Message {
+  getStudies(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyList | undefined;
+  setStudies(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyList): ListStudyResponse;
+  hasStudies(): boolean;
+  clearStudies(): ListStudyResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListStudyResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListStudyResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListStudyResponse): ListStudyResponse.AsObject;
+  static serializeBinaryToWriter(message: ListStudyResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListStudyResponse;
+  static deserializeBinaryFromReader(message: ListStudyResponse, reader: jspb.BinaryReader): ListStudyResponse;
+}
+
+export namespace ListStudyResponse {
+  export type AsObject = {
+    studies?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyList.AsObject,
+    nextPageToken: string,
+  }
+}
 
 export class GetStudyRequest extends jspb.Message {
   getNamespace(): string;
@@ -52,49 +99,39 @@ export namespace GetStudyResponse {
   }
 }
 
-export class ListStudyRequest extends jspb.Message {
+export class DeleteStudyRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): ListStudyRequest;
+  setNamespace(value: string): DeleteStudyRequest;
 
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): ListStudyRequest;
+  getName(): string;
+  setName(value: string): DeleteStudyRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListStudyRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListStudyRequest): ListStudyRequest.AsObject;
-  static serializeBinaryToWriter(message: ListStudyRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListStudyRequest;
-  static deserializeBinaryFromReader(message: ListStudyRequest, reader: jspb.BinaryReader): ListStudyRequest;
+  toObject(includeInstance?: boolean): DeleteStudyRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteStudyRequest): DeleteStudyRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteStudyRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteStudyRequest;
+  static deserializeBinaryFromReader(message: DeleteStudyRequest, reader: jspb.BinaryReader): DeleteStudyRequest;
 }
 
-export namespace ListStudyRequest {
+export namespace DeleteStudyRequest {
   export type AsObject = {
     namespace: string,
-    labelsMap: Array<[string, string]>,
+    name: string,
   }
 }
 
-export class ListStudyResponse extends jspb.Message {
-  getStudies(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyList | undefined;
-  setStudies(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyList): ListStudyResponse;
-  hasStudies(): boolean;
-  clearStudies(): ListStudyResponse;
-
-  getNextPageToken(): string;
-  setNextPageToken(value: string): ListStudyResponse;
-
+export class DeleteStudyResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListStudyResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListStudyResponse): ListStudyResponse.AsObject;
-  static serializeBinaryToWriter(message: ListStudyResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListStudyResponse;
-  static deserializeBinaryFromReader(message: ListStudyResponse, reader: jspb.BinaryReader): ListStudyResponse;
+  toObject(includeInstance?: boolean): DeleteStudyResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteStudyResponse): DeleteStudyResponse.AsObject;
+  static serializeBinaryToWriter(message: DeleteStudyResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteStudyResponse;
+  static deserializeBinaryFromReader(message: DeleteStudyResponse, reader: jspb.BinaryReader): DeleteStudyResponse;
 }
 
-export namespace ListStudyResponse {
+export namespace DeleteStudyResponse {
   export type AsObject = {
-    studies?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyList.AsObject,
-    nextPageToken: string,
   }
 }
 
@@ -158,57 +195,17 @@ export namespace UpdateStudyRequest {
   }
 }
 
-export class CreateStudyProfileRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateStudyProfileRequest;
-
-  getName(): string;
-  setName(value: string): CreateStudyProfileRequest;
-
-  getModelsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
-  setModelsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>): CreateStudyProfileRequest;
-  clearModelsList(): CreateStudyProfileRequest;
-  addModels(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
-
+export class UpdateStudyResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateStudyProfileRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateStudyProfileRequest): CreateStudyProfileRequest.AsObject;
-  static serializeBinaryToWriter(message: CreateStudyProfileRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateStudyProfileRequest;
-  static deserializeBinaryFromReader(message: CreateStudyProfileRequest, reader: jspb.BinaryReader): CreateStudyProfileRequest;
+  toObject(includeInstance?: boolean): UpdateStudyResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateStudyResponse): UpdateStudyResponse.AsObject;
+  static serializeBinaryToWriter(message: UpdateStudyResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateStudyResponse;
+  static deserializeBinaryFromReader(message: UpdateStudyResponse, reader: jspb.BinaryReader): UpdateStudyResponse;
 }
 
-export namespace CreateStudyProfileRequest {
+export namespace UpdateStudyResponse {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
-  }
-}
-
-export class CreateStudyProfileResponse extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateStudyProfileResponse;
-
-  getName(): string;
-  setName(value: string): CreateStudyProfileResponse;
-
-  getUri(): string;
-  setUri(value: string): CreateStudyProfileResponse;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateStudyProfileResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateStudyProfileResponse): CreateStudyProfileResponse.AsObject;
-  static serializeBinaryToWriter(message: CreateStudyProfileResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateStudyProfileResponse;
-  static deserializeBinaryFromReader(message: CreateStudyProfileResponse, reader: jspb.BinaryReader): CreateStudyProfileResponse;
-}
-
-export namespace CreateStudyProfileResponse {
-  export type AsObject = {
-    namespace: string,
-    name: string,
-    uri: string,
   }
 }
 
@@ -216,8 +213,10 @@ export class GetStudyProfileRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): GetStudyProfileRequest;
 
-  getName(): string;
-  setName(value: string): GetStudyProfileRequest;
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference): GetStudyProfileRequest;
+  hasRun(): boolean;
+  clearRun(): GetStudyProfileRequest;
 
   getModels(): number;
   setModels(value: number): GetStudyProfileRequest;
@@ -233,7 +232,7 @@ export class GetStudyProfileRequest extends jspb.Message {
 export namespace GetStudyProfileRequest {
   export type AsObject = {
     namespace: string,
-    name: string,
+    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject,
     models: number,
   }
 }
@@ -268,8 +267,10 @@ export class AbortStudyRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): AbortStudyRequest;
 
-  getName(): string;
-  setName(value: string): AbortStudyRequest;
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference): AbortStudyRequest;
+  hasRun(): boolean;
+  clearRun(): AbortStudyRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AbortStudyRequest.AsObject;
@@ -282,7 +283,7 @@ export class AbortStudyRequest extends jspb.Message {
 export namespace AbortStudyRequest {
   export type AsObject = {
     namespace: string,
-    name: string,
+    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject,
   }
 }
 
@@ -304,8 +305,10 @@ export class PauseStudyRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): PauseStudyRequest;
 
-  getName(): string;
-  setName(value: string): PauseStudyRequest;
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference): PauseStudyRequest;
+  hasRun(): boolean;
+  clearRun(): PauseStudyRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PauseStudyRequest.AsObject;
@@ -318,7 +321,7 @@ export class PauseStudyRequest extends jspb.Message {
 export namespace PauseStudyRequest {
   export type AsObject = {
     namespace: string,
-    name: string,
+    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject,
   }
 }
 
@@ -340,8 +343,10 @@ export class ResumeStudyRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ResumeStudyRequest;
 
-  getName(): string;
-  setName(value: string): ResumeStudyRequest;
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference): ResumeStudyRequest;
+  hasRun(): boolean;
+  clearRun(): ResumeStudyRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResumeStudyRequest.AsObject;
@@ -354,7 +359,7 @@ export class ResumeStudyRequest extends jspb.Message {
 export namespace ResumeStudyRequest {
   export type AsObject = {
     namespace: string,
-    name: string,
+    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject,
   }
 }
 
@@ -372,88 +377,40 @@ export namespace ResumeStudyResponse {
   }
 }
 
-export class CompleteSearchRequest extends jspb.Message {
+export class CompleteStudySearchRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): CompleteSearchRequest;
+  setNamespace(value: string): CompleteStudySearchRequest;
 
-  getName(): string;
-  setName(value: string): CompleteSearchRequest;
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference): CompleteStudySearchRequest;
+  hasRun(): boolean;
+  clearRun(): CompleteStudySearchRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CompleteSearchRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CompleteSearchRequest): CompleteSearchRequest.AsObject;
-  static serializeBinaryToWriter(message: CompleteSearchRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CompleteSearchRequest;
-  static deserializeBinaryFromReader(message: CompleteSearchRequest, reader: jspb.BinaryReader): CompleteSearchRequest;
+  toObject(includeInstance?: boolean): CompleteStudySearchRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CompleteStudySearchRequest): CompleteStudySearchRequest.AsObject;
+  static serializeBinaryToWriter(message: CompleteStudySearchRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CompleteStudySearchRequest;
+  static deserializeBinaryFromReader(message: CompleteStudySearchRequest, reader: jspb.BinaryReader): CompleteStudySearchRequest;
 }
 
-export namespace CompleteSearchRequest {
+export namespace CompleteStudySearchRequest {
   export type AsObject = {
     namespace: string,
-    name: string,
+    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject,
   }
 }
 
-export class CompleteSearchResponse extends jspb.Message {
+export class CompleteStudySearchResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CompleteSearchResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CompleteSearchResponse): CompleteSearchResponse.AsObject;
-  static serializeBinaryToWriter(message: CompleteSearchResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CompleteSearchResponse;
-  static deserializeBinaryFromReader(message: CompleteSearchResponse, reader: jspb.BinaryReader): CompleteSearchResponse;
+  toObject(includeInstance?: boolean): CompleteStudySearchResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CompleteStudySearchResponse): CompleteStudySearchResponse.AsObject;
+  static serializeBinaryToWriter(message: CompleteStudySearchResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CompleteStudySearchResponse;
+  static deserializeBinaryFromReader(message: CompleteStudySearchResponse, reader: jspb.BinaryReader): CompleteStudySearchResponse;
 }
 
-export namespace CompleteSearchResponse {
-  export type AsObject = {
-  }
-}
-
-export class DeleteStudyRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): DeleteStudyRequest;
-
-  getName(): string;
-  setName(value: string): DeleteStudyRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteStudyRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteStudyRequest): DeleteStudyRequest.AsObject;
-  static serializeBinaryToWriter(message: DeleteStudyRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteStudyRequest;
-  static deserializeBinaryFromReader(message: DeleteStudyRequest, reader: jspb.BinaryReader): DeleteStudyRequest;
-}
-
-export namespace DeleteStudyRequest {
-  export type AsObject = {
-    namespace: string,
-    name: string,
-  }
-}
-
-export class DeleteStudyResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteStudyResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteStudyResponse): DeleteStudyResponse.AsObject;
-  static serializeBinaryToWriter(message: DeleteStudyResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteStudyResponse;
-  static deserializeBinaryFromReader(message: DeleteStudyResponse, reader: jspb.BinaryReader): DeleteStudyResponse;
-}
-
-export namespace DeleteStudyResponse {
-  export type AsObject = {
-  }
-}
-
-export class UpdateStudyResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateStudyResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateStudyResponse): UpdateStudyResponse.AsObject;
-  static serializeBinaryToWriter(message: UpdateStudyResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateStudyResponse;
-  static deserializeBinaryFromReader(message: UpdateStudyResponse, reader: jspb.BinaryReader): UpdateStudyResponse;
-}
-
-export namespace UpdateStudyResponse {
+export namespace CompleteStudySearchResponse {
   export type AsObject = {
   }
 }

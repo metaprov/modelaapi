@@ -350,15 +350,15 @@ export class DataSplitSpec extends jspb.Message {
   hasSplitcolumn(): boolean;
   clearSplitcolumn(): DataSplitSpec;
 
-  getTraindataset(): string;
-  setTraindataset(value: string): DataSplitSpec;
-  hasTraindataset(): boolean;
-  clearTraindataset(): DataSplitSpec;
+  getTrainsnapshot(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference | undefined;
+  setTrainsnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference): DataSplitSpec;
+  hasTrainsnapshot(): boolean;
+  clearTrainsnapshot(): DataSplitSpec;
 
-  getTestdataset(): string;
-  setTestdataset(value: string): DataSplitSpec;
-  hasTestdataset(): boolean;
-  clearTestdataset(): DataSplitSpec;
+  getTestsnapshot(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference | undefined;
+  setTestsnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference): DataSplitSpec;
+  hasTestsnapshot(): boolean;
+  clearTestsnapshot(): DataSplitSpec;
 
   getValidationdataset(): string;
   setValidationdataset(value: string): DataSplitSpec;
@@ -380,8 +380,8 @@ export namespace DataSplitSpec {
     validation?: number,
     test?: number,
     splitcolumn?: string,
-    traindataset?: string,
-    testdataset?: string,
+    trainsnapshot?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject,
+    testsnapshot?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject,
     validationdataset?: string,
   }
 }
@@ -483,26 +483,6 @@ export namespace DeepEstimatorSpec {
     isseq?: boolean,
     gpus?: number,
     loss?: string,
-  }
-}
-
-export class DriftDetectorStatus extends jspb.Message {
-  getOutliermodeluri(): string;
-  setOutliermodeluri(value: string): DriftDetectorStatus;
-  hasOutliermodeluri(): boolean;
-  clearOutliermodeluri(): DriftDetectorStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DriftDetectorStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: DriftDetectorStatus): DriftDetectorStatus.AsObject;
-  static serializeBinaryToWriter(message: DriftDetectorStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DriftDetectorStatus;
-  static deserializeBinaryFromReader(message: DriftDetectorStatus, reader: jspb.BinaryReader): DriftDetectorStatus;
-}
-
-export namespace DriftDetectorStatus {
-  export type AsObject = {
-    outliermodeluri?: string,
   }
 }
 
@@ -1267,32 +1247,6 @@ export namespace GeneratedColumnSpec {
     first?: string,
     second?: string,
     original?: string,
-  }
-}
-
-export class GroupSplitLocationsSpec extends jspb.Message {
-  getGrouptrainingdatafile(): string;
-  setGrouptrainingdatafile(value: string): GroupSplitLocationsSpec;
-  hasGrouptrainingdatafile(): boolean;
-  clearGrouptrainingdatafile(): GroupSplitLocationsSpec;
-
-  getGrouptestingdatafile(): string;
-  setGrouptestingdatafile(value: string): GroupSplitLocationsSpec;
-  hasGrouptestingdatafile(): boolean;
-  clearGrouptestingdatafile(): GroupSplitLocationsSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GroupSplitLocationsSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: GroupSplitLocationsSpec): GroupSplitLocationsSpec.AsObject;
-  static serializeBinaryToWriter(message: GroupSplitLocationsSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GroupSplitLocationsSpec;
-  static deserializeBinaryFromReader(message: GroupSplitLocationsSpec, reader: jspb.BinaryReader): GroupSplitLocationsSpec;
-}
-
-export namespace GroupSplitLocationsSpec {
-  export type AsObject = {
-    grouptrainingdatafile?: string,
-    grouptestingdatafile?: string,
   }
 }
 
@@ -2584,10 +2538,10 @@ export class ModelSpec extends jspb.Message {
   hasForecasting(): boolean;
   clearForecasting(): ModelSpec;
 
-  getActivedeadlineseconds(): number;
-  setActivedeadlineseconds(value: number): ModelSpec;
-  hasActivedeadlineseconds(): boolean;
-  clearActivedeadlineseconds(): ModelSpec;
+  getTimeout(): number;
+  setTimeout(value: number): ModelSpec;
+  hasTimeout(): boolean;
+  clearTimeout(): ModelSpec;
 
   getEstimatortype(): string;
   setEstimatortype(value: string): ModelSpec;
@@ -2672,7 +2626,7 @@ export namespace ModelSpec {
     fast?: boolean,
     artifactbucketname?: string,
     forecasting?: ForecasterSpec.AsObject,
-    activedeadlineseconds?: number,
+    timeout?: number,
     estimatortype?: string,
     modelclass?: string,
     trialid?: number,
@@ -3159,6 +3113,26 @@ export namespace NNLayerParameter {
   export type AsObject = {
     name?: string,
     value?: string,
+  }
+}
+
+export class OutlierDetectorStatus extends jspb.Message {
+  getOutliermodeluri(): string;
+  setOutliermodeluri(value: string): OutlierDetectorStatus;
+  hasOutliermodeluri(): boolean;
+  clearOutliermodeluri(): OutlierDetectorStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OutlierDetectorStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: OutlierDetectorStatus): OutlierDetectorStatus.AsObject;
+  static serializeBinaryToWriter(message: OutlierDetectorStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OutlierDetectorStatus;
+  static deserializeBinaryFromReader(message: OutlierDetectorStatus, reader: jspb.BinaryReader): OutlierDetectorStatus;
+}
+
+export namespace OutlierDetectorStatus {
+  export type AsObject = {
+    outliermodeluri?: string,
   }
 }
 
@@ -3733,10 +3707,10 @@ export class SearchSpec extends jspb.Message {
   hasRetaintop(): boolean;
   clearRetaintop(): SearchSpec;
 
-  getRetainedfor(): number;
-  setRetainedfor(value: number): SearchSpec;
-  hasRetainedfor(): boolean;
-  clearRetainedfor(): SearchSpec;
+  getRetainfor(): number;
+  setRetainfor(value: number): SearchSpec;
+  hasRetainfor(): boolean;
+  clearRetainfor(): SearchSpec;
 
   getSearchspace(): AlgorithmSearchSpaceSpec | undefined;
   setSearchspace(value?: AlgorithmSearchSpaceSpec): SearchSpec;
@@ -3781,7 +3755,7 @@ export namespace SearchSpec {
     trainers?: number,
     test?: number,
     retaintop?: number,
-    retainedfor?: number,
+    retainfor?: number,
     searchspace?: AlgorithmSearchSpaceSpec.AsObject,
     earlystop?: EarlyStopSpec.AsObject,
     objective?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.AsObject,
@@ -4122,56 +4096,114 @@ export namespace StudyList {
   }
 }
 
-export class StudyPhaseStatus extends jspb.Message {
-  getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyPhaseStatus;
-  hasStartedat(): boolean;
-  clearStartedat(): StudyPhaseStatus;
+export class StudyRun extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): StudyRun;
+  hasMetadata(): boolean;
+  clearMetadata(): StudyRun;
 
-  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyPhaseStatus;
-  hasCompletedat(): boolean;
-  clearCompletedat(): StudyPhaseStatus;
+  getSpec(): StudyRunSpec | undefined;
+  setSpec(value?: StudyRunSpec): StudyRun;
+  hasSpec(): boolean;
+  clearSpec(): StudyRun;
 
-  getWaitingmodelscount(): number;
-  setWaitingmodelscount(value: number): StudyPhaseStatus;
-  hasWaitingmodelscount(): boolean;
-  clearWaitingmodelscount(): StudyPhaseStatus;
-
-  getRunningmodelscount(): number;
-  setRunningmodelscount(value: number): StudyPhaseStatus;
-  hasRunningmodelscount(): boolean;
-  clearRunningmodelscount(): StudyPhaseStatus;
-
-  getFailedmodelscount(): number;
-  setFailedmodelscount(value: number): StudyPhaseStatus;
-  hasFailedmodelscount(): boolean;
-  clearFailedmodelscount(): StudyPhaseStatus;
-
-  getCompletedmodelscount(): number;
-  setCompletedmodelscount(value: number): StudyPhaseStatus;
-  hasCompletedmodelscount(): boolean;
-  clearCompletedmodelscount(): StudyPhaseStatus;
-
-  getBestscore(): number;
-  setBestscore(value: number): StudyPhaseStatus;
-  hasBestscore(): boolean;
-  clearBestscore(): StudyPhaseStatus;
-
-  getModelswithnoprogress(): number;
-  setModelswithnoprogress(value: number): StudyPhaseStatus;
-  hasModelswithnoprogress(): boolean;
-  clearModelswithnoprogress(): StudyPhaseStatus;
+  getStatus(): StudyRunStatus | undefined;
+  setStatus(value?: StudyRunStatus): StudyRun;
+  hasStatus(): boolean;
+  clearStatus(): StudyRun;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): StudyPhaseStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: StudyPhaseStatus): StudyPhaseStatus.AsObject;
-  static serializeBinaryToWriter(message: StudyPhaseStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): StudyPhaseStatus;
-  static deserializeBinaryFromReader(message: StudyPhaseStatus, reader: jspb.BinaryReader): StudyPhaseStatus;
+  toObject(includeInstance?: boolean): StudyRun.AsObject;
+  static toObject(includeInstance: boolean, msg: StudyRun): StudyRun.AsObject;
+  static serializeBinaryToWriter(message: StudyRun, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StudyRun;
+  static deserializeBinaryFromReader(message: StudyRun, reader: jspb.BinaryReader): StudyRun;
 }
 
-export namespace StudyPhaseStatus {
+export namespace StudyRun {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: StudyRunSpec.AsObject,
+    status?: StudyRunStatus.AsObject,
+  }
+}
+
+export class StudyRunList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): StudyRunList;
+  hasMetadata(): boolean;
+  clearMetadata(): StudyRunList;
+
+  getItemsList(): Array<StudyRun>;
+  setItemsList(value: Array<StudyRun>): StudyRunList;
+  clearItemsList(): StudyRunList;
+  addItems(value?: StudyRun, index?: number): StudyRun;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StudyRunList.AsObject;
+  static toObject(includeInstance: boolean, msg: StudyRunList): StudyRunList.AsObject;
+  static serializeBinaryToWriter(message: StudyRunList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StudyRunList;
+  static deserializeBinaryFromReader(message: StudyRunList, reader: jspb.BinaryReader): StudyRunList;
+}
+
+export namespace StudyRunList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<StudyRun.AsObject>,
+  }
+}
+
+export class StudyRunPhaseStatus extends jspb.Message {
+  getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyRunPhaseStatus;
+  hasStartedat(): boolean;
+  clearStartedat(): StudyRunPhaseStatus;
+
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyRunPhaseStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): StudyRunPhaseStatus;
+
+  getWaitingmodelscount(): number;
+  setWaitingmodelscount(value: number): StudyRunPhaseStatus;
+  hasWaitingmodelscount(): boolean;
+  clearWaitingmodelscount(): StudyRunPhaseStatus;
+
+  getRunningmodelscount(): number;
+  setRunningmodelscount(value: number): StudyRunPhaseStatus;
+  hasRunningmodelscount(): boolean;
+  clearRunningmodelscount(): StudyRunPhaseStatus;
+
+  getFailedmodelscount(): number;
+  setFailedmodelscount(value: number): StudyRunPhaseStatus;
+  hasFailedmodelscount(): boolean;
+  clearFailedmodelscount(): StudyRunPhaseStatus;
+
+  getCompletedmodelscount(): number;
+  setCompletedmodelscount(value: number): StudyRunPhaseStatus;
+  hasCompletedmodelscount(): boolean;
+  clearCompletedmodelscount(): StudyRunPhaseStatus;
+
+  getBestscore(): number;
+  setBestscore(value: number): StudyRunPhaseStatus;
+  hasBestscore(): boolean;
+  clearBestscore(): StudyRunPhaseStatus;
+
+  getModelswithnoprogress(): number;
+  setModelswithnoprogress(value: number): StudyRunPhaseStatus;
+  hasModelswithnoprogress(): boolean;
+  clearModelswithnoprogress(): StudyRunPhaseStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StudyRunPhaseStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: StudyRunPhaseStatus): StudyRunPhaseStatus.AsObject;
+  static serializeBinaryToWriter(message: StudyRunPhaseStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StudyRunPhaseStatus;
+  static deserializeBinaryFromReader(message: StudyRunPhaseStatus, reader: jspb.BinaryReader): StudyRunPhaseStatus;
+}
+
+export namespace StudyRunPhaseStatus {
   export type AsObject = {
     startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -4184,52 +4216,282 @@ export namespace StudyPhaseStatus {
   }
 }
 
-export class StudyScheduleSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): StudyScheduleSpec;
-  hasEnabled(): boolean;
-  clearEnabled(): StudyScheduleSpec;
+export class StudyRunSpec extends jspb.Message {
+  getOwner(): string;
+  setOwner(value: string): StudyRunSpec;
+  hasOwner(): boolean;
+  clearOwner(): StudyRunSpec;
 
-  getStartat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStartat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyScheduleSpec;
-  hasStartat(): boolean;
-  clearStartat(): StudyScheduleSpec;
+  getStudyname(): string;
+  setStudyname(value: string): StudyRunSpec;
+  hasStudyname(): boolean;
+  clearStudyname(): StudyRunSpec;
+
+  getTimeout(): number;
+  setTimeout(value: number): StudyRunSpec;
+  hasTimeout(): boolean;
+  clearTimeout(): StudyRunSpec;
+
+  getPause(): boolean;
+  setPause(value: boolean): StudyRunSpec;
+  hasPause(): boolean;
+  clearPause(): StudyRunSpec;
+
+  getAbort(): boolean;
+  setAbort(value: boolean): StudyRunSpec;
+  hasAbort(): boolean;
+  clearAbort(): StudyRunSpec;
+
+  getModelclassrunname(): string;
+  setModelclassrunname(value: string): StudyRunSpec;
+  hasModelclassrunname(): boolean;
+  clearModelclassrunname(): StudyRunSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): StudyScheduleSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: StudyScheduleSpec): StudyScheduleSpec.AsObject;
-  static serializeBinaryToWriter(message: StudyScheduleSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): StudyScheduleSpec;
-  static deserializeBinaryFromReader(message: StudyScheduleSpec, reader: jspb.BinaryReader): StudyScheduleSpec;
+  toObject(includeInstance?: boolean): StudyRunSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: StudyRunSpec): StudyRunSpec.AsObject;
+  static serializeBinaryToWriter(message: StudyRunSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StudyRunSpec;
+  static deserializeBinaryFromReader(message: StudyRunSpec, reader: jspb.BinaryReader): StudyRunSpec;
 }
 
-export namespace StudyScheduleSpec {
+export namespace StudyRunSpec {
   export type AsObject = {
-    enabled?: boolean,
-    startat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    owner?: string,
+    studyname?: string,
+    timeout?: number,
+    pause?: boolean,
+    abort?: boolean,
+    modelclassrunname?: string,
+  }
+}
+
+export class StudyRunStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): StudyRunStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): StudyRunStatus;
+
+  getManifestlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setManifestlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyRunStatus;
+  hasManifestlocation(): boolean;
+  clearManifestlocation(): StudyRunStatus;
+
+  getManifestversion(): number;
+  setManifestversion(value: number): StudyRunStatus;
+  hasManifestversion(): boolean;
+  clearManifestversion(): StudyRunStatus;
+
+  getRunversion(): number;
+  setRunversion(value: number): StudyRunStatus;
+  hasRunversion(): boolean;
+  clearRunversion(): StudyRunStatus;
+
+  getPhase(): string;
+  setPhase(value: string): StudyRunStatus;
+  hasPhase(): boolean;
+  clearPhase(): StudyRunStatus;
+
+  getTrainingrowscount(): number;
+  setTrainingrowscount(value: number): StudyRunStatus;
+  hasTrainingrowscount(): boolean;
+  clearTrainingrowscount(): StudyRunStatus;
+
+  getTestingrowscount(): number;
+  setTestingrowscount(value: number): StudyRunStatus;
+  hasTestingrowscount(): boolean;
+  clearTestingrowscount(): StudyRunStatus;
+
+  getValidationrowscount(): number;
+  setValidationrowscount(value: number): StudyRunStatus;
+  hasValidationrowscount(): boolean;
+  clearValidationrowscount(): StudyRunStatus;
+
+  getProgress(): number;
+  setProgress(value: number): StudyRunStatus;
+  hasProgress(): boolean;
+  clearProgress(): StudyRunStatus;
+
+  getModelscount(): number;
+  setModelscount(value: number): StudyRunStatus;
+  hasModelscount(): boolean;
+  clearModelscount(): StudyRunStatus;
+
+  getBestmodel(): string;
+  setBestmodel(value: string): StudyRunStatus;
+  hasBestmodel(): boolean;
+  clearBestmodel(): StudyRunStatus;
+
+  getBestmodelscore(): number;
+  setBestmodelscore(value: number): StudyRunStatus;
+  hasBestmodelscore(): boolean;
+  clearBestmodelscore(): StudyRunStatus;
+
+  getReportname(): string;
+  setReportname(value: string): StudyRunStatus;
+  hasReportname(): boolean;
+  clearReportname(): StudyRunStatus;
+
+  getProfilelocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setProfilelocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyRunStatus;
+  hasProfilelocation(): boolean;
+  clearProfilelocation(): StudyRunStatus;
+
+  getTraindatasetlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setTraindatasetlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyRunStatus;
+  hasTraindatasetlocation(): boolean;
+  clearTraindatasetlocation(): StudyRunStatus;
+
+  getTestdatasetlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setTestdatasetlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyRunStatus;
+  hasTestdatasetlocation(): boolean;
+  clearTestdatasetlocation(): StudyRunStatus;
+
+  getValidationdatasetlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setValidationdatasetlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyRunStatus;
+  hasValidationdatasetlocation(): boolean;
+  clearValidationdatasetlocation(): StudyRunStatus;
+
+  getOptimizerlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setOptimizerlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyRunStatus;
+  hasOptimizerlocation(): boolean;
+  clearOptimizerlocation(): StudyRunStatus;
+
+  getLastmodelid(): number;
+  setLastmodelid(value: number): StudyRunStatus;
+  hasLastmodelid(): boolean;
+  clearLastmodelid(): StudyRunStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): StudyRunStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): StudyRunStatus;
+
+  getGc(): GarbageCollectionStatus | undefined;
+  setGc(value?: GarbageCollectionStatus): StudyRunStatus;
+  hasGc(): boolean;
+  clearGc(): StudyRunStatus;
+
+  getTrainingdatahash(): DataHashes | undefined;
+  setTrainingdatahash(value?: DataHashes): StudyRunStatus;
+  hasTrainingdatahash(): boolean;
+  clearTrainingdatahash(): StudyRunStatus;
+
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): StudyRunStatus;
+  hasLogs(): boolean;
+  clearLogs(): StudyRunStatus;
+
+  getBaseline(): StudyRunPhaseStatus | undefined;
+  setBaseline(value?: StudyRunPhaseStatus): StudyRunStatus;
+  hasBaseline(): boolean;
+  clearBaseline(): StudyRunStatus;
+
+  getSearch(): StudyRunPhaseStatus | undefined;
+  setSearch(value?: StudyRunPhaseStatus): StudyRunStatus;
+  hasSearch(): boolean;
+  clearSearch(): StudyRunStatus;
+
+  getEnsemble(): StudyRunPhaseStatus | undefined;
+  setEnsemble(value?: StudyRunPhaseStatus): StudyRunStatus;
+  hasEnsemble(): boolean;
+  clearEnsemble(): StudyRunStatus;
+
+  getTest(): StudyRunPhaseStatus | undefined;
+  setTest(value?: StudyRunPhaseStatus): StudyRunStatus;
+  hasTest(): boolean;
+  clearTest(): StudyRunStatus;
+
+  getExplain(): StudyRunPhaseStatus | undefined;
+  setExplain(value?: StudyRunPhaseStatus): StudyRunStatus;
+  hasExplain(): boolean;
+  clearExplain(): StudyRunStatus;
+
+  getOutlierdetection(): OutlierDetectorStatus | undefined;
+  setOutlierdetection(value?: OutlierDetectorStatus): StudyRunStatus;
+  hasOutlierdetection(): boolean;
+  clearOutlierdetection(): StudyRunStatus;
+
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyRunStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): StudyRunStatus;
+
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyRunStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): StudyRunStatus;
+
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): StudyRunStatus;
+  clearConditionsList(): StudyRunStatus;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StudyRunStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: StudyRunStatus): StudyRunStatus.AsObject;
+  static serializeBinaryToWriter(message: StudyRunStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StudyRunStatus;
+  static deserializeBinaryFromReader(message: StudyRunStatus, reader: jspb.BinaryReader): StudyRunStatus;
+}
+
+export namespace StudyRunStatus {
+  export type AsObject = {
+    observedgeneration?: number,
+    manifestlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    manifestversion?: number,
+    runversion?: number,
+    phase?: string,
+    trainingrowscount?: number,
+    testingrowscount?: number,
+    validationrowscount?: number,
+    progress?: number,
+    modelscount?: number,
+    bestmodel?: string,
+    bestmodelscore?: number,
+    reportname?: string,
+    profilelocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    traindatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    testdatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    validationdatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    optimizerlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    lastmodelid?: number,
+    failuremessage?: string,
+    gc?: GarbageCollectionStatus.AsObject,
+    trainingdatahash?: DataHashes.AsObject,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
+    baseline?: StudyRunPhaseStatus.AsObject,
+    search?: StudyRunPhaseStatus.AsObject,
+    ensemble?: StudyRunPhaseStatus.AsObject,
+    test?: StudyRunPhaseStatus.AsObject,
+    explain?: StudyRunPhaseStatus.AsObject,
+    outlierdetection?: OutlierDetectorStatus.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 
 export class StudySpec extends jspb.Message {
-  getVersionname(): string;
-  setVersionname(value: string): StudySpec;
-  hasVersionname(): boolean;
-  clearVersionname(): StudySpec;
+  getOwner(): string;
+  setOwner(value: string): StudySpec;
+  hasOwner(): boolean;
+  clearOwner(): StudySpec;
 
   getDescription(): string;
   setDescription(value: string): StudySpec;
   hasDescription(): boolean;
   clearDescription(): StudySpec;
 
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference): StudySpec;
+  hasSnapshot(): boolean;
+  clearSnapshot(): StudySpec;
+
   getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): StudySpec;
   hasLabref(): boolean;
   clearLabref(): StudySpec;
-
-  getDatasetname(): string;
-  setDatasetname(value: string): StudySpec;
-  hasDatasetname(): boolean;
-  clearDatasetname(): StudySpec;
 
   getTask(): string;
   setTask(value: string): StudySpec;
@@ -4271,13 +4533,18 @@ export class StudySpec extends jspb.Message {
   hasTrainingtemplate(): boolean;
   clearTrainingtemplate(): StudySpec;
 
+  getSplit(): DataSplitSpec | undefined;
+  setSplit(value?: DataSplitSpec): StudySpec;
+  hasSplit(): boolean;
+  clearSplit(): StudySpec;
+
   getForecasttemplate(): ForecasterSpec | undefined;
   setForecasttemplate(value?: ForecasterSpec): StudySpec;
   hasForecasttemplate(): boolean;
   clearForecasttemplate(): StudySpec;
 
-  getSchedule(): StudyScheduleSpec | undefined;
-  setSchedule(value?: StudyScheduleSpec): StudySpec;
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): StudySpec;
   hasSchedule(): boolean;
   clearSchedule(): StudySpec;
 
@@ -4291,20 +4558,30 @@ export class StudySpec extends jspb.Message {
   hasOutliermodel(): boolean;
   clearOutliermodel(): StudySpec;
 
-  getAbort(): boolean;
-  setAbort(value: boolean): StudySpec;
-  hasAbort(): boolean;
-  clearAbort(): StudySpec;
+  getUnitteststemplate(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
+  setUnitteststemplate(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): StudySpec;
+  hasUnitteststemplate(): boolean;
+  clearUnitteststemplate(): StudySpec;
+
+  getServing(): ServingSpec | undefined;
+  setServing(value?: ServingSpec): StudySpec;
+  hasServing(): boolean;
+  clearServing(): StudySpec;
+
+  getGc(): GarbageCollectionSpec | undefined;
+  setGc(value?: GarbageCollectionSpec): StudySpec;
+  hasGc(): boolean;
+  clearGc(): StudySpec;
+
+  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
+  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): StudySpec;
+  hasNotification(): boolean;
+  clearNotification(): StudySpec;
 
   getReport(): boolean;
   setReport(value: boolean): StudySpec;
   hasReport(): boolean;
   clearReport(): StudySpec;
-
-  getPause(): boolean;
-  setPause(value: boolean): StudySpec;
-  hasPause(): boolean;
-  clearPause(): StudySpec;
 
   getProfile(): boolean;
   setProfile(value: boolean): StudySpec;
@@ -4326,60 +4603,15 @@ export class StudySpec extends jspb.Message {
   hasArtifactbucketname(): boolean;
   clearArtifactbucketname(): StudySpec;
 
-  getOwner(): string;
-  setOwner(value: string): StudySpec;
-  hasOwner(): boolean;
-  clearOwner(): StudySpec;
-
-  getTemplate(): boolean;
-  setTemplate(value: boolean): StudySpec;
-  hasTemplate(): boolean;
-  clearTemplate(): StudySpec;
-
-  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
-  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): StudySpec;
-  hasNotification(): boolean;
-  clearNotification(): StudySpec;
-
-  getGc(): GarbageCollectionSpec | undefined;
-  setGc(value?: GarbageCollectionSpec): StudySpec;
-  hasGc(): boolean;
-  clearGc(): StudySpec;
-
-  getModelversion(): string;
-  setModelversion(value: string): StudySpec;
-  hasModelversion(): boolean;
-  clearModelversion(): StudySpec;
-
   getTimeout(): number;
   setTimeout(value: number): StudySpec;
   hasTimeout(): boolean;
   clearTimeout(): StudySpec;
 
-  getUnitteststemplate(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite | undefined;
-  setUnitteststemplate(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite): StudySpec;
-  hasUnitteststemplate(): boolean;
-  clearUnitteststemplate(): StudySpec;
-
-  getGrouplocations(): GroupSplitLocationsSpec | undefined;
-  setGrouplocations(value?: GroupSplitLocationsSpec): StudySpec;
-  hasGrouplocations(): boolean;
-  clearGrouplocations(): StudySpec;
-
   getModelclassname(): string;
   setModelclassname(value: string): StudySpec;
   hasModelclassname(): boolean;
   clearModelclassname(): StudySpec;
-
-  getModelclassrunname(): string;
-  setModelclassrunname(value: string): StudySpec;
-  hasModelclassrunname(): boolean;
-  clearModelclassrunname(): StudySpec;
-
-  getServing(): ServingSpec | undefined;
-  setServing(value?: ServingSpec): StudySpec;
-  hasServing(): boolean;
-  clearServing(): StudySpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
@@ -4391,10 +4623,10 @@ export class StudySpec extends jspb.Message {
 
 export namespace StudySpec {
   export type AsObject = {
-    versionname?: string,
+    owner?: string,
     description?: string,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    datasetname?: string,
     task?: string,
     subtask?: string,
     featureengineering?: FeatureEngineeringSpec.AsObject,
@@ -4403,186 +4635,70 @@ export namespace StudySpec {
     search?: SearchSpec.AsObject,
     ensembles?: EnsemblesSpec.AsObject,
     trainingtemplate?: TrainingSpec.AsObject,
+    split?: DataSplitSpec.AsObject,
     forecasttemplate?: ForecasterSpec.AsObject,
-    schedule?: StudyScheduleSpec.AsObject,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,
     outliermodel?: OutlierModelSpec.AsObject,
-    abort?: boolean,
+    unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
+    serving?: ServingSpec.AsObject,
+    gc?: GarbageCollectionSpec.AsObject,
+    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     report?: boolean,
-    pause?: boolean,
     profile?: boolean,
     explain?: boolean,
     fast?: boolean,
     artifactbucketname?: string,
-    owner?: string,
-    template?: boolean,
-    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
-    gc?: GarbageCollectionSpec.AsObject,
-    modelversion?: string,
     timeout?: number,
-    unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
-    grouplocations?: GroupSplitLocationsSpec.AsObject,
     modelclassname?: string,
-    modelclassrunname?: string,
-    serving?: ServingSpec.AsObject,
   }
 }
 
 export class StudyStatus extends jspb.Message {
-  getModelscount(): number;
-  setModelscount(value: number): StudyStatus;
-  hasModelscount(): boolean;
-  clearModelscount(): StudyStatus;
-
-  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasCompletedat(): boolean;
-  clearCompletedat(): StudyStatus;
-
-  getBestmodel(): string;
-  setBestmodel(value: string): StudyStatus;
-  hasBestmodel(): boolean;
-  clearBestmodel(): StudyStatus;
-
-  getBestmodelscore(): number;
-  setBestmodelscore(value: number): StudyStatus;
-  hasBestmodelscore(): boolean;
-  clearBestmodelscore(): StudyStatus;
-
-  getProfilelocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setProfilelocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyStatus;
-  hasProfilelocation(): boolean;
-  clearProfilelocation(): StudyStatus;
-
-  getReportlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setReportlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyStatus;
-  hasReportlocation(): boolean;
-  clearReportlocation(): StudyStatus;
-
-  getReportname(): string;
-  setReportname(value: string): StudyStatus;
-  hasReportname(): boolean;
-  clearReportname(): StudyStatus;
-
-  getPhase(): string;
-  setPhase(value: string): StudyStatus;
-  hasPhase(): boolean;
-  clearPhase(): StudyStatus;
-
   getObservedgeneration(): number;
   setObservedgeneration(value: number): StudyStatus;
   hasObservedgeneration(): boolean;
   clearObservedgeneration(): StudyStatus;
 
-  getTraindatasetlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setTraindatasetlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyStatus;
-  hasTraindatasetlocation(): boolean;
-  clearTraindatasetlocation(): StudyStatus;
+  getActiveList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference>;
+  setActiveList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference>): StudyStatus;
+  clearActiveList(): StudyStatus;
+  addActive(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference;
 
-  getTestdatasetlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setTestdatasetlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyStatus;
-  hasTestdatasetlocation(): boolean;
-  clearTestdatasetlocation(): StudyStatus;
+  getVersion(): number;
+  setVersion(value: number): StudyStatus;
+  hasVersion(): boolean;
+  clearVersion(): StudyStatus;
 
-  getValidationdatasetlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setValidationdatasetlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyStatus;
-  hasValidationdatasetlocation(): boolean;
-  clearValidationdatasetlocation(): StudyStatus;
+  getLastrunversion(): number;
+  setLastrunversion(value: number): StudyStatus;
+  hasLastrunversion(): boolean;
+  clearLastrunversion(): StudyStatus;
 
-  getOptimizerlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setOptimizerlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyStatus;
-  hasOptimizerlocation(): boolean;
-  clearOptimizerlocation(): StudyStatus;
+  getAvailablerunversionsList(): Array<number>;
+  setAvailablerunversionsList(value: Array<number>): StudyStatus;
+  clearAvailablerunversionsList(): StudyStatus;
+  addAvailablerunversions(value: number, index?: number): StudyStatus;
 
-  getLastmodelid(): number;
-  setLastmodelid(value: number): StudyStatus;
-  hasLastmodelid(): boolean;
-  clearLastmodelid(): StudyStatus;
-
-  getFailurereason(): string;
-  setFailurereason(value: string): StudyStatus;
-  hasFailurereason(): boolean;
-  clearFailurereason(): StudyStatus;
+  getLastsnapshotat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastsnapshotat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
+  hasLastsnapshotat(): boolean;
+  clearLastsnapshotat(): StudyStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): StudyStatus;
   hasFailuremessage(): boolean;
   clearFailuremessage(): StudyStatus;
 
-  getTrainingrowscount(): number;
-  setTrainingrowscount(value: number): StudyStatus;
-  hasTrainingrowscount(): boolean;
-  clearTrainingrowscount(): StudyStatus;
-
-  getTestingrowscount(): number;
-  setTestingrowscount(value: number): StudyStatus;
-  hasTestingrowscount(): boolean;
-  clearTestingrowscount(): StudyStatus;
-
-  getValidationrowscount(): number;
-  setValidationrowscount(value: number): StudyStatus;
-  hasValidationrowscount(): boolean;
-  clearValidationrowscount(): StudyStatus;
-
-  getProgress(): number;
-  setProgress(value: number): StudyStatus;
-  hasProgress(): boolean;
-  clearProgress(): StudyStatus;
-
-  getTrainingdatahash(): DataHashes | undefined;
-  setTrainingdatahash(value?: DataHashes): StudyStatus;
-  hasTrainingdatahash(): boolean;
-  clearTrainingdatahash(): StudyStatus;
-
-  getTriggeredby(): string;
-  setTriggeredby(value: string): StudyStatus;
-  hasTriggeredby(): boolean;
-  clearTriggeredby(): StudyStatus;
-
-  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
-  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): StudyStatus;
-  hasLogs(): boolean;
-  clearLogs(): StudyStatus;
-
-  getBaseline(): StudyPhaseStatus | undefined;
-  setBaseline(value?: StudyPhaseStatus): StudyStatus;
-  hasBaseline(): boolean;
-  clearBaseline(): StudyStatus;
-
-  getSearch(): StudyPhaseStatus | undefined;
-  setSearch(value?: StudyPhaseStatus): StudyStatus;
-  hasSearch(): boolean;
-  clearSearch(): StudyStatus;
-
-  getEnsemble(): StudyPhaseStatus | undefined;
-  setEnsemble(value?: StudyPhaseStatus): StudyStatus;
-  hasEnsemble(): boolean;
-  clearEnsemble(): StudyStatus;
-
-  getTest(): StudyPhaseStatus | undefined;
-  setTest(value?: StudyPhaseStatus): StudyStatus;
-  hasTest(): boolean;
-  clearTest(): StudyStatus;
-
-  getExplain(): StudyPhaseStatus | undefined;
-  setExplain(value?: StudyPhaseStatus): StudyStatus;
-  hasExplain(): boolean;
-  clearExplain(): StudyStatus;
-
-  getDriftdetection(): DriftDetectorStatus | undefined;
-  setDriftdetection(value?: DriftDetectorStatus): StudyStatus;
-  hasDriftdetection(): boolean;
-  clearDriftdetection(): StudyStatus;
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): StudyStatus;
+  hasSchedule(): boolean;
+  clearSchedule(): StudyStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
   hasUpdatedat(): boolean;
   clearUpdatedat(): StudyStatus;
-
-  getGc(): GarbageCollectionStatus | undefined;
-  setGc(value?: GarbageCollectionStatus): StudyStatus;
-  hasGc(): boolean;
-  clearGc(): StudyStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): StudyStatus;
@@ -4599,37 +4715,15 @@ export class StudyStatus extends jspb.Message {
 
 export namespace StudyStatus {
   export type AsObject = {
-    modelscount?: number,
-    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    bestmodel?: string,
-    bestmodelscore?: number,
-    profilelocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
-    reportlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
-    reportname?: string,
-    phase?: string,
     observedgeneration?: number,
-    traindatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
-    testdatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
-    validationdatasetlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
-    optimizerlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
-    lastmodelid?: number,
-    failurereason?: string,
+    activeList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject>,
+    version?: number,
+    lastrunversion?: number,
+    availablerunversionsList: Array<number>,
+    lastsnapshotat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failuremessage?: string,
-    trainingrowscount?: number,
-    testingrowscount?: number,
-    validationrowscount?: number,
-    progress?: number,
-    trainingdatahash?: DataHashes.AsObject,
-    triggeredby?: string,
-    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    baseline?: StudyPhaseStatus.AsObject,
-    search?: StudyPhaseStatus.AsObject,
-    ensemble?: StudyPhaseStatus.AsObject,
-    test?: StudyPhaseStatus.AsObject,
-    explain?: StudyPhaseStatus.AsObject,
-    driftdetection?: DriftDetectorStatus.AsObject,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    gc?: GarbageCollectionStatus.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
@@ -4899,16 +4993,6 @@ export class TrainingSpec extends jspb.Message {
   hasFolds(): boolean;
   clearFolds(): TrainingSpec;
 
-  getSplit(): DataSplitSpec | undefined;
-  setSplit(value?: DataSplitSpec): TrainingSpec;
-  hasSplit(): boolean;
-  clearSplit(): TrainingSpec;
-
-  getEvalmetricsList(): Array<string>;
-  setEvalmetricsList(value: Array<string>): TrainingSpec;
-  clearEvalmetricsList(): TrainingSpec;
-  addEvalmetrics(value: string, index?: number): TrainingSpec;
-
   getSh(): SuccessiveHalvingSpec | undefined;
   setSh(value?: SuccessiveHalvingSpec): TrainingSpec;
   hasSh(): boolean;
@@ -4968,8 +5052,6 @@ export namespace TrainingSpec {
     priority?: string,
     cvtype?: string,
     folds?: number,
-    split?: DataSplitSpec.AsObject,
-    evalmetricsList: Array<string>,
     sh?: SuccessiveHalvingSpec.AsObject,
     seed?: number,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,

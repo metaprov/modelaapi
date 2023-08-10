@@ -27,13 +27,12 @@ type StudyServiceClient interface {
 	GetStudy(ctx context.Context, in *GetStudyRequest, opts ...grpc.CallOption) (*GetStudyResponse, error)
 	UpdateStudy(ctx context.Context, in *UpdateStudyRequest, opts ...grpc.CallOption) (*UpdateStudyResponse, error)
 	DeleteStudy(ctx context.Context, in *DeleteStudyRequest, opts ...grpc.CallOption) (*DeleteStudyResponse, error)
-	CreateStudyProfile(ctx context.Context, in *CreateStudyProfileRequest, opts ...grpc.CallOption) (*CreateStudyProfileResponse, error)
 	GetStudyProfile(ctx context.Context, in *GetStudyProfileRequest, opts ...grpc.CallOption) (*GetStudyProfileResponse, error)
 	AbortStudy(ctx context.Context, in *AbortStudyRequest, opts ...grpc.CallOption) (*AbortStudyResponse, error)
 	PauseStudy(ctx context.Context, in *PauseStudyRequest, opts ...grpc.CallOption) (*PauseStudyResponse, error)
 	ResumeStudy(ctx context.Context, in *ResumeStudyRequest, opts ...grpc.CallOption) (*ResumeStudyResponse, error)
 	// Force completion of the search.
-	CompleteSearch(ctx context.Context, in *CompleteSearchRequest, opts ...grpc.CallOption) (*CompleteSearchResponse, error)
+	CompleteStudySearch(ctx context.Context, in *CompleteStudySearchRequest, opts ...grpc.CallOption) (*CompleteStudySearchResponse, error)
 }
 
 type studyServiceClient struct {
@@ -89,15 +88,6 @@ func (c *studyServiceClient) DeleteStudy(ctx context.Context, in *DeleteStudyReq
 	return out, nil
 }
 
-func (c *studyServiceClient) CreateStudyProfile(ctx context.Context, in *CreateStudyProfileRequest, opts ...grpc.CallOption) (*CreateStudyProfileResponse, error) {
-	out := new(CreateStudyProfileResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudyProfile", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *studyServiceClient) GetStudyProfile(ctx context.Context, in *GetStudyProfileRequest, opts ...grpc.CallOption) (*GetStudyProfileResponse, error) {
 	out := new(GetStudyProfileResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyProfile", in, out, opts...)
@@ -134,9 +124,9 @@ func (c *studyServiceClient) ResumeStudy(ctx context.Context, in *ResumeStudyReq
 	return out, nil
 }
 
-func (c *studyServiceClient) CompleteSearch(ctx context.Context, in *CompleteSearchRequest, opts ...grpc.CallOption) (*CompleteSearchResponse, error) {
-	out := new(CompleteSearchResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch", in, out, opts...)
+func (c *studyServiceClient) CompleteStudySearch(ctx context.Context, in *CompleteStudySearchRequest, opts ...grpc.CallOption) (*CompleteStudySearchResponse, error) {
+	out := new(CompleteStudySearchResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteStudySearch", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -152,13 +142,12 @@ type StudyServiceServer interface {
 	GetStudy(context.Context, *GetStudyRequest) (*GetStudyResponse, error)
 	UpdateStudy(context.Context, *UpdateStudyRequest) (*UpdateStudyResponse, error)
 	DeleteStudy(context.Context, *DeleteStudyRequest) (*DeleteStudyResponse, error)
-	CreateStudyProfile(context.Context, *CreateStudyProfileRequest) (*CreateStudyProfileResponse, error)
 	GetStudyProfile(context.Context, *GetStudyProfileRequest) (*GetStudyProfileResponse, error)
 	AbortStudy(context.Context, *AbortStudyRequest) (*AbortStudyResponse, error)
 	PauseStudy(context.Context, *PauseStudyRequest) (*PauseStudyResponse, error)
 	ResumeStudy(context.Context, *ResumeStudyRequest) (*ResumeStudyResponse, error)
 	// Force completion of the search.
-	CompleteSearch(context.Context, *CompleteSearchRequest) (*CompleteSearchResponse, error)
+	CompleteStudySearch(context.Context, *CompleteStudySearchRequest) (*CompleteStudySearchResponse, error)
 	mustEmbedUnimplementedStudyServiceServer()
 }
 
@@ -181,9 +170,6 @@ func (UnimplementedStudyServiceServer) UpdateStudy(context.Context, *UpdateStudy
 func (UnimplementedStudyServiceServer) DeleteStudy(context.Context, *DeleteStudyRequest) (*DeleteStudyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteStudy not implemented")
 }
-func (UnimplementedStudyServiceServer) CreateStudyProfile(context.Context, *CreateStudyProfileRequest) (*CreateStudyProfileResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateStudyProfile not implemented")
-}
 func (UnimplementedStudyServiceServer) GetStudyProfile(context.Context, *GetStudyProfileRequest) (*GetStudyProfileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStudyProfile not implemented")
 }
@@ -196,8 +182,8 @@ func (UnimplementedStudyServiceServer) PauseStudy(context.Context, *PauseStudyRe
 func (UnimplementedStudyServiceServer) ResumeStudy(context.Context, *ResumeStudyRequest) (*ResumeStudyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ResumeStudy not implemented")
 }
-func (UnimplementedStudyServiceServer) CompleteSearch(context.Context, *CompleteSearchRequest) (*CompleteSearchResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CompleteSearch not implemented")
+func (UnimplementedStudyServiceServer) CompleteStudySearch(context.Context, *CompleteStudySearchRequest) (*CompleteStudySearchResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CompleteStudySearch not implemented")
 }
 func (UnimplementedStudyServiceServer) mustEmbedUnimplementedStudyServiceServer() {}
 
@@ -302,24 +288,6 @@ func _StudyService_DeleteStudy_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _StudyService_CreateStudyProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateStudyProfileRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(StudyServiceServer).CreateStudyProfile(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudyProfile",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StudyServiceServer).CreateStudyProfile(ctx, req.(*CreateStudyProfileRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _StudyService_GetStudyProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetStudyProfileRequest)
 	if err := dec(in); err != nil {
@@ -392,20 +360,20 @@ func _StudyService_ResumeStudy_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _StudyService_CompleteSearch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CompleteSearchRequest)
+func _StudyService_CompleteStudySearch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompleteStudySearchRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(StudyServiceServer).CompleteSearch(ctx, in)
+		return srv.(StudyServiceServer).CompleteStudySearch(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteSearch",
+		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CompleteStudySearch",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StudyServiceServer).CompleteSearch(ctx, req.(*CompleteSearchRequest))
+		return srv.(StudyServiceServer).CompleteStudySearch(ctx, req.(*CompleteStudySearchRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -438,10 +406,6 @@ var StudyService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _StudyService_DeleteStudy_Handler,
 		},
 		{
-			MethodName: "CreateStudyProfile",
-			Handler:    _StudyService_CreateStudyProfile_Handler,
-		},
-		{
 			MethodName: "GetStudyProfile",
 			Handler:    _StudyService_GetStudyProfile_Handler,
 		},
@@ -458,8 +422,8 @@ var StudyService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _StudyService_ResumeStudy_Handler,
 		},
 		{
-			MethodName: "CompleteSearch",
-			Handler:    _StudyService_CompleteSearch_Handler,
+			MethodName: "CompleteStudySearch",
+			Handler:    _StudyService_CompleteStudySearch_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

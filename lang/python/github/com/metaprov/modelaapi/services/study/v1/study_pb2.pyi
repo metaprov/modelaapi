@@ -1,6 +1,7 @@
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from google.api import annotations_pb2 as _annotations_pb2
 from github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1 import generated_pb2 as _generated_pb2
+from github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1 import generated_pb2 as _generated_pb2_1
 from github.com.metaprov.modelaapi.services.common.v1 import common_pb2 as _common_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -10,48 +11,28 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AbortStudyRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+    __slots__ = ["namespace", "run"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
+    RUN_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+    run: _generated_pb2_1.RunReference
+    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.RunReference, _Mapping]] = ...) -> None: ...
 
 class AbortStudyResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class CompleteSearchRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+class CompleteStudySearchRequest(_message.Message):
+    __slots__ = ["namespace", "run"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
+    RUN_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+    run: _generated_pb2_1.RunReference
+    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.RunReference, _Mapping]] = ...) -> None: ...
 
-class CompleteSearchResponse(_message.Message):
+class CompleteStudySearchResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
-
-class CreateStudyProfileRequest(_message.Message):
-    __slots__ = ["models", "name", "namespace"]
-    MODELS_FIELD_NUMBER: _ClassVar[int]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    models: _containers.RepeatedCompositeFieldContainer[_generated_pb2.Model]
-    name: str
-    namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., models: _Optional[_Iterable[_Union[_generated_pb2.Model, _Mapping]]] = ...) -> None: ...
-
-class CreateStudyProfileResponse(_message.Message):
-    __slots__ = ["name", "namespace", "uri"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    URI_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    namespace: str
-    uri: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., uri: _Optional[str] = ...) -> None: ...
 
 class CreateStudyRequest(_message.Message):
     __slots__ = ["study"]
@@ -76,14 +57,14 @@ class DeleteStudyResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class GetStudyProfileRequest(_message.Message):
-    __slots__ = ["models", "name", "namespace"]
+    __slots__ = ["models", "namespace", "run"]
     MODELS_FIELD_NUMBER: _ClassVar[int]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
+    RUN_FIELD_NUMBER: _ClassVar[int]
     models: int
-    name: str
     namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., models: _Optional[int] = ...) -> None: ...
+    run: _generated_pb2_1.RunReference
+    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.RunReference, _Mapping]] = ..., models: _Optional[int] = ...) -> None: ...
 
 class GetStudyProfileResponse(_message.Message):
     __slots__ = ["modelsProfile", "profile"]
@@ -133,24 +114,24 @@ class ListStudyResponse(_message.Message):
     def __init__(self, studies: _Optional[_Union[_generated_pb2.StudyList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class PauseStudyRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+    __slots__ = ["namespace", "run"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
+    RUN_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+    run: _generated_pb2_1.RunReference
+    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.RunReference, _Mapping]] = ...) -> None: ...
 
 class PauseStudyResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class ResumeStudyRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+    __slots__ = ["namespace", "run"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
+    RUN_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+    run: _generated_pb2_1.RunReference
+    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.RunReference, _Mapping]] = ...) -> None: ...
 
 class ResumeStudyResponse(_message.Message):
     __slots__ = []

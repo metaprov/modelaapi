@@ -52,6 +52,7 @@ const (
 	ModelClassRunKind KindName = "modelclassrun"
 	ReportKind        KindName = "reports"
 	StudyKind         KindName = "studies"
+	StudyRunKind      KindName = "studyruns"
 
 	// team
 	ReviewKind     KindName = "reviews"

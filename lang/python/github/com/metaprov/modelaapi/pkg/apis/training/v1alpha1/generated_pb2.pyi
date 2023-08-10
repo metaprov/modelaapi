@@ -110,24 +110,24 @@ class DataHashes(_message.Message):
     def __init__(self, trainHash: _Optional[str] = ..., testingHash: _Optional[str] = ..., validationHash: _Optional[str] = ...) -> None: ...
 
 class DataSplitSpec(_message.Message):
-    __slots__ = ["method", "splitColumn", "test", "testDataset", "train", "trainDataset", "validation", "validationDataset"]
+    __slots__ = ["method", "splitColumn", "test", "testSnapshot", "train", "trainSnapshot", "validation", "validationDataset"]
     METHOD_FIELD_NUMBER: _ClassVar[int]
     SPLITCOLUMN_FIELD_NUMBER: _ClassVar[int]
-    TESTDATASET_FIELD_NUMBER: _ClassVar[int]
+    TESTSNAPSHOT_FIELD_NUMBER: _ClassVar[int]
     TEST_FIELD_NUMBER: _ClassVar[int]
-    TRAINDATASET_FIELD_NUMBER: _ClassVar[int]
+    TRAINSNAPSHOT_FIELD_NUMBER: _ClassVar[int]
     TRAIN_FIELD_NUMBER: _ClassVar[int]
     VALIDATIONDATASET_FIELD_NUMBER: _ClassVar[int]
     VALIDATION_FIELD_NUMBER: _ClassVar[int]
     method: str
     splitColumn: str
     test: int
-    testDataset: str
+    testSnapshot: _generated_pb2.SnapshotReference
     train: int
-    trainDataset: str
+    trainSnapshot: _generated_pb2.SnapshotReference
     validation: int
     validationDataset: str
-    def __init__(self, method: _Optional[str] = ..., train: _Optional[int] = ..., validation: _Optional[int] = ..., test: _Optional[int] = ..., splitColumn: _Optional[str] = ..., trainDataset: _Optional[str] = ..., testDataset: _Optional[str] = ..., validationDataset: _Optional[str] = ...) -> None: ...
+    def __init__(self, method: _Optional[str] = ..., train: _Optional[int] = ..., validation: _Optional[int] = ..., test: _Optional[int] = ..., splitColumn: _Optional[str] = ..., trainSnapshot: _Optional[_Union[_generated_pb2.SnapshotReference, _Mapping]] = ..., testSnapshot: _Optional[_Union[_generated_pb2.SnapshotReference, _Mapping]] = ..., validationDataset: _Optional[str] = ...) -> None: ...
 
 class DeepEstimatorLayer(_message.Message):
     __slots__ = ["inputLayers", "name", "parameters", "type"]
@@ -160,12 +160,6 @@ class DeepEstimatorSpec(_message.Message):
     type: str
     validationSplit: int
     def __init__(self, layers: _Optional[_Iterable[_Union[DeepEstimatorLayer, _Mapping]]] = ..., type: _Optional[str] = ..., batchSize: _Optional[int] = ..., epochs: _Optional[int] = ..., validationSplit: _Optional[int] = ..., isSeq: bool = ..., gpus: _Optional[int] = ..., loss: _Optional[str] = ...) -> None: ...
-
-class DriftDetectorStatus(_message.Message):
-    __slots__ = ["outlierModelURI"]
-    OUTLIERMODELURI_FIELD_NUMBER: _ClassVar[int]
-    outlierModelURI: str
-    def __init__(self, outlierModelURI: _Optional[str] = ...) -> None: ...
 
 class EarlyStopSpec(_message.Message):
     __slots__ = ["enabled", "initial", "modelsWithNoProgress"]
@@ -410,14 +404,6 @@ class GeneratedColumnSpec(_message.Message):
     original: str
     second: str
     def __init__(self, name: _Optional[str] = ..., datatype: _Optional[str] = ..., first: _Optional[str] = ..., second: _Optional[str] = ..., original: _Optional[str] = ...) -> None: ...
-
-class GroupSplitLocationsSpec(_message.Message):
-    __slots__ = ["groupTestingDataFile", "groupTrainingDataFile"]
-    GROUPTESTINGDATAFILE_FIELD_NUMBER: _ClassVar[int]
-    GROUPTRAININGDATAFILE_FIELD_NUMBER: _ClassVar[int]
-    groupTestingDataFile: str
-    groupTrainingDataFile: str
-    def __init__(self, groupTrainingDataFile: _Optional[str] = ..., groupTestingDataFile: _Optional[str] = ...) -> None: ...
 
 class HyperParameterValue(_message.Message):
     __slots__ = ["name", "value"]
@@ -796,9 +782,8 @@ class ModelResult(_message.Message):
     def __init__(self, name: _Optional[str] = ..., algorithm: _Optional[str] = ..., score: _Optional[float] = ..., error: bool = ..., trialID: _Optional[int] = ...) -> None: ...
 
 class ModelSpec(_message.Message):
-    __slots__ = ["abort", "activeDeadlineSeconds", "approval", "artifactBucketName", "baseline", "ensemble", "estimator", "estimatorType", "explain", "fast", "featureEngineering", "forecast", "forecasting", "interpretability", "modelClass", "modelClassName", "modelClassRunName", "notification", "objective", "owner", "package", "partitionLocations", "pause", "profile", "report", "studyName", "subtask", "task", "test", "training", "trialID", "unitTest", "unitTests", "version"]
+    __slots__ = ["abort", "approval", "artifactBucketName", "baseline", "ensemble", "estimator", "estimatorType", "explain", "fast", "featureEngineering", "forecast", "forecasting", "interpretability", "modelClass", "modelClassName", "modelClassRunName", "notification", "objective", "owner", "package", "partitionLocations", "pause", "profile", "report", "studyName", "subtask", "task", "test", "timeout", "training", "trialID", "unitTest", "unitTests", "version"]
     ABORT_FIELD_NUMBER: _ClassVar[int]
-    ACTIVEDEADLINESECONDS_FIELD_NUMBER: _ClassVar[int]
     APPROVAL_FIELD_NUMBER: _ClassVar[int]
     ARTIFACTBUCKETNAME_FIELD_NUMBER: _ClassVar[int]
     BASELINE_FIELD_NUMBER: _ClassVar[int]
@@ -826,13 +811,13 @@ class ModelSpec(_message.Message):
     SUBTASK_FIELD_NUMBER: _ClassVar[int]
     TASK_FIELD_NUMBER: _ClassVar[int]
     TEST_FIELD_NUMBER: _ClassVar[int]
+    TIMEOUT_FIELD_NUMBER: _ClassVar[int]
     TRAINING_FIELD_NUMBER: _ClassVar[int]
     TRIALID_FIELD_NUMBER: _ClassVar[int]
     UNITTESTS_FIELD_NUMBER: _ClassVar[int]
     UNITTEST_FIELD_NUMBER: _ClassVar[int]
     VERSION_FIELD_NUMBER: _ClassVar[int]
     abort: bool
-    activeDeadlineSeconds: int
     approval: _generated_pb2_1.ApprovalSpec
     artifactBucketName: str
     baseline: bool
@@ -860,12 +845,13 @@ class ModelSpec(_message.Message):
     subtask: str
     task: str
     test: bool
+    timeout: int
     training: TrainingSpec
     trialID: int
     unitTest: bool
     unitTests: _generated_pb2.TestSuite
     version: str
-    def __init__(self, owner: _Optional[str] = ..., version: _Optional[str] = ..., studyName: _Optional[str] = ..., task: _Optional[str] = ..., subtask: _Optional[str] = ..., objective: _Optional[_Union[_generated_pb2.ObjectiveSpec, _Mapping]] = ..., featureEngineering: _Optional[_Union[FeatureEngineeringSpec, _Mapping]] = ..., estimator: _Optional[_Union[ClassicalEstimatorSpec, _Mapping]] = ..., ensemble: _Optional[_Union[EnsembleSpec, _Mapping]] = ..., training: _Optional[_Union[TrainingSpec, _Mapping]] = ..., test: bool = ..., abort: bool = ..., package: bool = ..., report: bool = ..., pause: bool = ..., profile: bool = ..., forecast: bool = ..., explain: bool = ..., unitTest: bool = ..., baseline: bool = ..., fast: bool = ..., artifactBucketName: _Optional[str] = ..., forecasting: _Optional[_Union[ForecasterSpec, _Mapping]] = ..., activeDeadlineSeconds: _Optional[int] = ..., estimatorType: _Optional[str] = ..., modelClass: _Optional[str] = ..., trialID: _Optional[int] = ..., approval: _Optional[_Union[_generated_pb2_1.ApprovalSpec, _Mapping]] = ..., interpretability: _Optional[_Union[InterpretabilitySpec, _Mapping]] = ..., unitTests: _Optional[_Union[_generated_pb2.TestSuite, _Mapping]] = ..., partitionLocations: _Optional[_Union[PartitionModelLocationsSpec, _Mapping]] = ..., modelClassName: _Optional[str] = ..., modelClassRunName: _Optional[str] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ...) -> None: ...
+    def __init__(self, owner: _Optional[str] = ..., version: _Optional[str] = ..., studyName: _Optional[str] = ..., task: _Optional[str] = ..., subtask: _Optional[str] = ..., objective: _Optional[_Union[_generated_pb2.ObjectiveSpec, _Mapping]] = ..., featureEngineering: _Optional[_Union[FeatureEngineeringSpec, _Mapping]] = ..., estimator: _Optional[_Union[ClassicalEstimatorSpec, _Mapping]] = ..., ensemble: _Optional[_Union[EnsembleSpec, _Mapping]] = ..., training: _Optional[_Union[TrainingSpec, _Mapping]] = ..., test: bool = ..., abort: bool = ..., package: bool = ..., report: bool = ..., pause: bool = ..., profile: bool = ..., forecast: bool = ..., explain: bool = ..., unitTest: bool = ..., baseline: bool = ..., fast: bool = ..., artifactBucketName: _Optional[str] = ..., forecasting: _Optional[_Union[ForecasterSpec, _Mapping]] = ..., timeout: _Optional[int] = ..., estimatorType: _Optional[str] = ..., modelClass: _Optional[str] = ..., trialID: _Optional[int] = ..., approval: _Optional[_Union[_generated_pb2_1.ApprovalSpec, _Mapping]] = ..., interpretability: _Optional[_Union[InterpretabilitySpec, _Mapping]] = ..., unitTests: _Optional[_Union[_generated_pb2.TestSuite, _Mapping]] = ..., partitionLocations: _Optional[_Union[PartitionModelLocationsSpec, _Mapping]] = ..., modelClassName: _Optional[str] = ..., modelClassRunName: _Optional[str] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ...) -> None: ...
 
 class ModelStageStatus(_message.Message):
     __slots__ = ["completedAt", "error", "phase", "startedAt", "unitTestsResult"]
@@ -1022,6 +1008,12 @@ class NNLayerParameter(_message.Message):
     name: str
     value: str
     def __init__(self, name: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+
+class OutlierDetectorStatus(_message.Message):
+    __slots__ = ["outlierModelURI"]
+    OUTLIERMODELURI_FIELD_NUMBER: _ClassVar[int]
+    outlierModelURI: str
+    def __init__(self, outlierModelURI: _Optional[str] = ...) -> None: ...
 
 class OutlierModelSpec(_message.Message):
     __slots__ = ["enabled", "outlierAlgorithm"]
@@ -1201,7 +1193,7 @@ class RuntimeStatus(_message.Message):
     def __init__(self, pythonVersion: _Optional[str] = ..., os: _Optional[str] = ..., pythonPackages: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class SearchSpec(_message.Message):
-    __slots__ = ["earlyStop", "goal", "maxModels", "maxScore", "maxTime", "objective", "pruner", "retainTop", "retainedFor", "sampler", "searchSpace", "secondaryObjective", "test", "trainers"]
+    __slots__ = ["earlyStop", "goal", "maxModels", "maxScore", "maxTime", "objective", "pruner", "retainFor", "retainTop", "sampler", "searchSpace", "secondaryObjective", "test", "trainers"]
     EARLYSTOP_FIELD_NUMBER: _ClassVar[int]
     GOAL_FIELD_NUMBER: _ClassVar[int]
     MAXMODELS_FIELD_NUMBER: _ClassVar[int]
@@ -1209,7 +1201,7 @@ class SearchSpec(_message.Message):
     MAXTIME_FIELD_NUMBER: _ClassVar[int]
     OBJECTIVE_FIELD_NUMBER: _ClassVar[int]
     PRUNER_FIELD_NUMBER: _ClassVar[int]
-    RETAINEDFOR_FIELD_NUMBER: _ClassVar[int]
+    RETAINFOR_FIELD_NUMBER: _ClassVar[int]
     RETAINTOP_FIELD_NUMBER: _ClassVar[int]
     SAMPLER_FIELD_NUMBER: _ClassVar[int]
     SEARCHSPACE_FIELD_NUMBER: _ClassVar[int]
@@ -1223,14 +1215,14 @@ class SearchSpec(_message.Message):
     maxTime: int
     objective: _generated_pb2.ObjectiveSpec
     pruner: PrunerSpec
+    retainFor: int
     retainTop: int
-    retainedFor: int
     sampler: str
     searchSpace: AlgorithmSearchSpaceSpec
     secondaryObjective: _generated_pb2.ObjectiveSpec
     test: int
     trainers: int
-    def __init__(self, sampler: _Optional[str] = ..., pruner: _Optional[_Union[PrunerSpec, _Mapping]] = ..., maxTime: _Optional[int] = ..., maxModels: _Optional[int] = ..., maxScore: _Optional[float] = ..., trainers: _Optional[int] = ..., test: _Optional[int] = ..., retainTop: _Optional[int] = ..., retainedFor: _Optional[int] = ..., searchSpace: _Optional[_Union[AlgorithmSearchSpaceSpec, _Mapping]] = ..., earlyStop: _Optional[_Union[EarlyStopSpec, _Mapping]] = ..., objective: _Optional[_Union[_generated_pb2.ObjectiveSpec, _Mapping]] = ..., secondaryObjective: _Optional[_Union[_generated_pb2.ObjectiveSpec, _Mapping]] = ..., goal: _Optional[str] = ...) -> None: ...
+    def __init__(self, sampler: _Optional[str] = ..., pruner: _Optional[_Union[PrunerSpec, _Mapping]] = ..., maxTime: _Optional[int] = ..., maxModels: _Optional[int] = ..., maxScore: _Optional[float] = ..., trainers: _Optional[int] = ..., test: _Optional[int] = ..., retainTop: _Optional[int] = ..., retainFor: _Optional[int] = ..., searchSpace: _Optional[_Union[AlgorithmSearchSpaceSpec, _Mapping]] = ..., earlyStop: _Optional[_Union[EarlyStopSpec, _Mapping]] = ..., objective: _Optional[_Union[_generated_pb2.ObjectiveSpec, _Mapping]] = ..., secondaryObjective: _Optional[_Union[_generated_pb2.ObjectiveSpec, _Mapping]] = ..., goal: _Optional[str] = ...) -> None: ...
 
 class SeasonalityPeriodSpec(_message.Message):
     __slots__ = ["auto", "enabled", "fourierOrder"]
@@ -1338,7 +1330,25 @@ class StudyList(_message.Message):
     metadata: _generated_pb2_1_1_1.ListMeta
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[Study, _Mapping]]] = ...) -> None: ...
 
-class StudyPhaseStatus(_message.Message):
+class StudyRun(_message.Message):
+    __slots__ = ["metadata", "spec", "status"]
+    METADATA_FIELD_NUMBER: _ClassVar[int]
+    SPEC_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    metadata: _generated_pb2_1_1_1.ObjectMeta
+    spec: StudyRunSpec
+    status: StudyRunStatus
+    def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[StudyRunSpec, _Mapping]] = ..., status: _Optional[_Union[StudyRunStatus, _Mapping]] = ...) -> None: ...
+
+class StudyRunList(_message.Message):
+    __slots__ = ["items", "metadata"]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    METADATA_FIELD_NUMBER: _ClassVar[int]
+    items: _containers.RepeatedCompositeFieldContainer[StudyRun]
+    metadata: _generated_pb2_1_1_1.ListMeta
+    def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[StudyRun, _Mapping]]] = ...) -> None: ...
+
+class StudyRunPhaseStatus(_message.Message):
     __slots__ = ["bestScore", "completedAt", "completedModelsCount", "failedModelsCount", "modelsWithNoProgress", "runningModelsCount", "startedAt", "waitingModelsCount"]
     BESTSCORE_FIELD_NUMBER: _ClassVar[int]
     COMPLETEDAT_FIELD_NUMBER: _ClassVar[int]
@@ -1358,109 +1368,46 @@ class StudyPhaseStatus(_message.Message):
     waitingModelsCount: int
     def __init__(self, startedAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., waitingModelsCount: _Optional[int] = ..., runningModelsCount: _Optional[int] = ..., failedModelsCount: _Optional[int] = ..., completedModelsCount: _Optional[int] = ..., bestScore: _Optional[float] = ..., modelsWithNoProgress: _Optional[int] = ...) -> None: ...
 
-class StudyScheduleSpec(_message.Message):
-    __slots__ = ["enabled", "startAt"]
-    ENABLED_FIELD_NUMBER: _ClassVar[int]
-    STARTAT_FIELD_NUMBER: _ClassVar[int]
-    enabled: bool
-    startAt: _generated_pb2_1_1_1.Time
-    def __init__(self, enabled: bool = ..., startAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ...) -> None: ...
-
-class StudySpec(_message.Message):
-    __slots__ = ["abort", "artifactBucketName", "baseline", "datasetName", "description", "ensembles", "explain", "fast", "featureEngineering", "forecastTemplate", "gc", "groupLocations", "imbalanceHandler", "interpretability", "labRef", "modelClassName", "modelClassRunName", "modelVersion", "notification", "outlierModel", "owner", "pause", "profile", "report", "schedule", "search", "serving", "subtask", "task", "template", "timeout", "trainingTemplate", "unitTestsTemplate", "versionName"]
+class StudyRunSpec(_message.Message):
+    __slots__ = ["abort", "modelClassRunName", "owner", "pause", "studyName", "timeout"]
     ABORT_FIELD_NUMBER: _ClassVar[int]
-    ARTIFACTBUCKETNAME_FIELD_NUMBER: _ClassVar[int]
-    BASELINE_FIELD_NUMBER: _ClassVar[int]
-    DATASETNAME_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    ENSEMBLES_FIELD_NUMBER: _ClassVar[int]
-    EXPLAIN_FIELD_NUMBER: _ClassVar[int]
-    FAST_FIELD_NUMBER: _ClassVar[int]
-    FEATUREENGINEERING_FIELD_NUMBER: _ClassVar[int]
-    FORECASTTEMPLATE_FIELD_NUMBER: _ClassVar[int]
-    GC_FIELD_NUMBER: _ClassVar[int]
-    GROUPLOCATIONS_FIELD_NUMBER: _ClassVar[int]
-    IMBALANCEHANDLER_FIELD_NUMBER: _ClassVar[int]
-    INTERPRETABILITY_FIELD_NUMBER: _ClassVar[int]
-    LABREF_FIELD_NUMBER: _ClassVar[int]
-    MODELCLASSNAME_FIELD_NUMBER: _ClassVar[int]
     MODELCLASSRUNNAME_FIELD_NUMBER: _ClassVar[int]
-    MODELVERSION_FIELD_NUMBER: _ClassVar[int]
-    NOTIFICATION_FIELD_NUMBER: _ClassVar[int]
-    OUTLIERMODEL_FIELD_NUMBER: _ClassVar[int]
     OWNER_FIELD_NUMBER: _ClassVar[int]
     PAUSE_FIELD_NUMBER: _ClassVar[int]
-    PROFILE_FIELD_NUMBER: _ClassVar[int]
-    REPORT_FIELD_NUMBER: _ClassVar[int]
-    SCHEDULE_FIELD_NUMBER: _ClassVar[int]
-    SEARCH_FIELD_NUMBER: _ClassVar[int]
-    SERVING_FIELD_NUMBER: _ClassVar[int]
-    SUBTASK_FIELD_NUMBER: _ClassVar[int]
-    TASK_FIELD_NUMBER: _ClassVar[int]
-    TEMPLATE_FIELD_NUMBER: _ClassVar[int]
+    STUDYNAME_FIELD_NUMBER: _ClassVar[int]
     TIMEOUT_FIELD_NUMBER: _ClassVar[int]
-    TRAININGTEMPLATE_FIELD_NUMBER: _ClassVar[int]
-    UNITTESTSTEMPLATE_FIELD_NUMBER: _ClassVar[int]
-    VERSIONNAME_FIELD_NUMBER: _ClassVar[int]
     abort: bool
-    artifactBucketName: str
-    baseline: BaselineSpec
-    datasetName: str
-    description: str
-    ensembles: EnsemblesSpec
-    explain: bool
-    fast: bool
-    featureEngineering: FeatureEngineeringSpec
-    forecastTemplate: ForecasterSpec
-    gc: GarbageCollectionSpec
-    groupLocations: GroupSplitLocationsSpec
-    imbalanceHandler: ImbalanceHandlingSpec
-    interpretability: InterpretabilitySpec
-    labRef: _generated_pb2_1_1.ObjectReference
-    modelClassName: str
     modelClassRunName: str
-    modelVersion: str
-    notification: _generated_pb2.NotificationSpec
-    outlierModel: OutlierModelSpec
     owner: str
     pause: bool
-    profile: bool
-    report: bool
-    schedule: StudyScheduleSpec
-    search: SearchSpec
-    serving: ServingSpec
-    subtask: str
-    task: str
-    template: bool
+    studyName: str
     timeout: int
-    trainingTemplate: TrainingSpec
-    unitTestsTemplate: _generated_pb2.TestSuite
-    versionName: str
-    def __init__(self, versionName: _Optional[str] = ..., description: _Optional[str] = ..., labRef: _Optional[_Union[_generated_pb2_1_1.ObjectReference, _Mapping]] = ..., datasetName: _Optional[str] = ..., task: _Optional[str] = ..., subtask: _Optional[str] = ..., featureEngineering: _Optional[_Union[FeatureEngineeringSpec, _Mapping]] = ..., imbalanceHandler: _Optional[_Union[ImbalanceHandlingSpec, _Mapping]] = ..., baseline: _Optional[_Union[BaselineSpec, _Mapping]] = ..., search: _Optional[_Union[SearchSpec, _Mapping]] = ..., ensembles: _Optional[_Union[EnsemblesSpec, _Mapping]] = ..., trainingTemplate: _Optional[_Union[TrainingSpec, _Mapping]] = ..., forecastTemplate: _Optional[_Union[ForecasterSpec, _Mapping]] = ..., schedule: _Optional[_Union[StudyScheduleSpec, _Mapping]] = ..., interpretability: _Optional[_Union[InterpretabilitySpec, _Mapping]] = ..., outlierModel: _Optional[_Union[OutlierModelSpec, _Mapping]] = ..., abort: bool = ..., report: bool = ..., pause: bool = ..., profile: bool = ..., explain: bool = ..., fast: bool = ..., artifactBucketName: _Optional[str] = ..., owner: _Optional[str] = ..., template: bool = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ..., gc: _Optional[_Union[GarbageCollectionSpec, _Mapping]] = ..., modelVersion: _Optional[str] = ..., timeout: _Optional[int] = ..., unitTestsTemplate: _Optional[_Union[_generated_pb2.TestSuite, _Mapping]] = ..., groupLocations: _Optional[_Union[GroupSplitLocationsSpec, _Mapping]] = ..., modelClassName: _Optional[str] = ..., modelClassRunName: _Optional[str] = ..., serving: _Optional[_Union[ServingSpec, _Mapping]] = ...) -> None: ...
+    def __init__(self, owner: _Optional[str] = ..., studyName: _Optional[str] = ..., timeout: _Optional[int] = ..., pause: bool = ..., abort: bool = ..., modelClassRunName: _Optional[str] = ...) -> None: ...
 
-class StudyStatus(_message.Message):
-    __slots__ = ["baseline", "bestModel", "bestModelScore", "completedAt", "conditions", "driftDetection", "ensemble", "explain", "failureMessage", "failureReason", "gc", "lastModelID", "logs", "modelsCount", "observedGeneration", "optimizerLocation", "phase", "profileLocation", "progress", "reportLocation", "reportName", "search", "test", "testDatasetLocation", "testingRowsCount", "trainDatasetLocation", "trainingDataHash", "trainingRowsCount", "triggeredBy", "updatedAt", "validationDatasetLocation", "validationRowsCount"]
+class StudyRunStatus(_message.Message):
+    __slots__ = ["baseline", "bestModel", "bestModelScore", "completedAt", "conditions", "ensemble", "explain", "failureMessage", "gc", "lastModelID", "logs", "manifestLocation", "manifestVersion", "modelsCount", "observedGeneration", "optimizerLocation", "outlierDetection", "phase", "profileLocation", "progress", "reportName", "runVersion", "search", "test", "testDatasetLocation", "testingRowsCount", "trainDatasetLocation", "trainingDataHash", "trainingRowsCount", "updatedAt", "validationDatasetLocation", "validationRowsCount"]
     BASELINE_FIELD_NUMBER: _ClassVar[int]
     BESTMODELSCORE_FIELD_NUMBER: _ClassVar[int]
     BESTMODEL_FIELD_NUMBER: _ClassVar[int]
     COMPLETEDAT_FIELD_NUMBER: _ClassVar[int]
     CONDITIONS_FIELD_NUMBER: _ClassVar[int]
-    DRIFTDETECTION_FIELD_NUMBER: _ClassVar[int]
     ENSEMBLE_FIELD_NUMBER: _ClassVar[int]
     EXPLAIN_FIELD_NUMBER: _ClassVar[int]
     FAILUREMESSAGE_FIELD_NUMBER: _ClassVar[int]
-    FAILUREREASON_FIELD_NUMBER: _ClassVar[int]
     GC_FIELD_NUMBER: _ClassVar[int]
     LASTMODELID_FIELD_NUMBER: _ClassVar[int]
     LOGS_FIELD_NUMBER: _ClassVar[int]
+    MANIFESTLOCATION_FIELD_NUMBER: _ClassVar[int]
+    MANIFESTVERSION_FIELD_NUMBER: _ClassVar[int]
     MODELSCOUNT_FIELD_NUMBER: _ClassVar[int]
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     OPTIMIZERLOCATION_FIELD_NUMBER: _ClassVar[int]
+    OUTLIERDETECTION_FIELD_NUMBER: _ClassVar[int]
     PHASE_FIELD_NUMBER: _ClassVar[int]
     PROFILELOCATION_FIELD_NUMBER: _ClassVar[int]
     PROGRESS_FIELD_NUMBER: _ClassVar[int]
-    REPORTLOCATION_FIELD_NUMBER: _ClassVar[int]
     REPORTNAME_FIELD_NUMBER: _ClassVar[int]
+    RUNVERSION_FIELD_NUMBER: _ClassVar[int]
     SEARCH_FIELD_NUMBER: _ClassVar[int]
     TESTDATASETLOCATION_FIELD_NUMBER: _ClassVar[int]
     TESTINGROWSCOUNT_FIELD_NUMBER: _ClassVar[int]
@@ -1468,43 +1415,126 @@ class StudyStatus(_message.Message):
     TRAINDATASETLOCATION_FIELD_NUMBER: _ClassVar[int]
     TRAININGDATAHASH_FIELD_NUMBER: _ClassVar[int]
     TRAININGROWSCOUNT_FIELD_NUMBER: _ClassVar[int]
-    TRIGGEREDBY_FIELD_NUMBER: _ClassVar[int]
     UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
     VALIDATIONDATASETLOCATION_FIELD_NUMBER: _ClassVar[int]
     VALIDATIONROWSCOUNT_FIELD_NUMBER: _ClassVar[int]
-    baseline: StudyPhaseStatus
+    baseline: StudyRunPhaseStatus
     bestModel: str
     bestModelScore: float
     completedAt: _generated_pb2_1_1_1.Time
     conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1_1.Condition]
-    driftDetection: DriftDetectorStatus
-    ensemble: StudyPhaseStatus
-    explain: StudyPhaseStatus
+    ensemble: StudyRunPhaseStatus
+    explain: StudyRunPhaseStatus
     failureMessage: str
-    failureReason: str
     gc: GarbageCollectionStatus
     lastModelID: int
     logs: _generated_pb2.Logs
+    manifestLocation: _generated_pb2.FileLocation
+    manifestVersion: int
     modelsCount: int
     observedGeneration: int
     optimizerLocation: _generated_pb2.FileLocation
+    outlierDetection: OutlierDetectorStatus
     phase: str
     profileLocation: _generated_pb2.FileLocation
     progress: int
-    reportLocation: _generated_pb2.FileLocation
     reportName: str
-    search: StudyPhaseStatus
-    test: StudyPhaseStatus
+    runVersion: int
+    search: StudyRunPhaseStatus
+    test: StudyRunPhaseStatus
     testDatasetLocation: _generated_pb2.FileLocation
     testingRowsCount: int
     trainDatasetLocation: _generated_pb2.FileLocation
     trainingDataHash: DataHashes
     trainingRowsCount: int
-    triggeredBy: str
     updatedAt: _generated_pb2_1_1_1.Time
     validationDatasetLocation: _generated_pb2.FileLocation
     validationRowsCount: int
-    def __init__(self, modelsCount: _Optional[int] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., bestModel: _Optional[str] = ..., bestModelScore: _Optional[float] = ..., profileLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., reportLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., reportName: _Optional[str] = ..., phase: _Optional[str] = ..., observedGeneration: _Optional[int] = ..., trainDatasetLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., testDatasetLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., validationDatasetLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., optimizerLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., lastModelID: _Optional[int] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., trainingRowsCount: _Optional[int] = ..., testingRowsCount: _Optional[int] = ..., validationRowsCount: _Optional[int] = ..., progress: _Optional[int] = ..., trainingDataHash: _Optional[_Union[DataHashes, _Mapping]] = ..., triggeredBy: _Optional[str] = ..., logs: _Optional[_Union[_generated_pb2.Logs, _Mapping]] = ..., baseline: _Optional[_Union[StudyPhaseStatus, _Mapping]] = ..., search: _Optional[_Union[StudyPhaseStatus, _Mapping]] = ..., ensemble: _Optional[_Union[StudyPhaseStatus, _Mapping]] = ..., test: _Optional[_Union[StudyPhaseStatus, _Mapping]] = ..., explain: _Optional[_Union[StudyPhaseStatus, _Mapping]] = ..., driftDetection: _Optional[_Union[DriftDetectorStatus, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., gc: _Optional[_Union[GarbageCollectionStatus, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, observedGeneration: _Optional[int] = ..., manifestLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., manifestVersion: _Optional[int] = ..., runVersion: _Optional[int] = ..., phase: _Optional[str] = ..., trainingRowsCount: _Optional[int] = ..., testingRowsCount: _Optional[int] = ..., validationRowsCount: _Optional[int] = ..., progress: _Optional[int] = ..., modelsCount: _Optional[int] = ..., bestModel: _Optional[str] = ..., bestModelScore: _Optional[float] = ..., reportName: _Optional[str] = ..., profileLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., trainDatasetLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., testDatasetLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., validationDatasetLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., optimizerLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., lastModelID: _Optional[int] = ..., failureMessage: _Optional[str] = ..., gc: _Optional[_Union[GarbageCollectionStatus, _Mapping]] = ..., trainingDataHash: _Optional[_Union[DataHashes, _Mapping]] = ..., logs: _Optional[_Union[_generated_pb2.Logs, _Mapping]] = ..., baseline: _Optional[_Union[StudyRunPhaseStatus, _Mapping]] = ..., search: _Optional[_Union[StudyRunPhaseStatus, _Mapping]] = ..., ensemble: _Optional[_Union[StudyRunPhaseStatus, _Mapping]] = ..., test: _Optional[_Union[StudyRunPhaseStatus, _Mapping]] = ..., explain: _Optional[_Union[StudyRunPhaseStatus, _Mapping]] = ..., outlierDetection: _Optional[_Union[OutlierDetectorStatus, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
+
+class StudySpec(_message.Message):
+    __slots__ = ["artifactBucketName", "baseline", "description", "ensembles", "explain", "fast", "featureEngineering", "forecastTemplate", "gc", "imbalanceHandler", "interpretability", "labRef", "modelClassName", "notification", "outlierModel", "owner", "profile", "report", "schedule", "search", "serving", "snapshot", "split", "subtask", "task", "timeout", "trainingTemplate", "unitTestsTemplate"]
+    ARTIFACTBUCKETNAME_FIELD_NUMBER: _ClassVar[int]
+    BASELINE_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    ENSEMBLES_FIELD_NUMBER: _ClassVar[int]
+    EXPLAIN_FIELD_NUMBER: _ClassVar[int]
+    FAST_FIELD_NUMBER: _ClassVar[int]
+    FEATUREENGINEERING_FIELD_NUMBER: _ClassVar[int]
+    FORECASTTEMPLATE_FIELD_NUMBER: _ClassVar[int]
+    GC_FIELD_NUMBER: _ClassVar[int]
+    IMBALANCEHANDLER_FIELD_NUMBER: _ClassVar[int]
+    INTERPRETABILITY_FIELD_NUMBER: _ClassVar[int]
+    LABREF_FIELD_NUMBER: _ClassVar[int]
+    MODELCLASSNAME_FIELD_NUMBER: _ClassVar[int]
+    NOTIFICATION_FIELD_NUMBER: _ClassVar[int]
+    OUTLIERMODEL_FIELD_NUMBER: _ClassVar[int]
+    OWNER_FIELD_NUMBER: _ClassVar[int]
+    PROFILE_FIELD_NUMBER: _ClassVar[int]
+    REPORT_FIELD_NUMBER: _ClassVar[int]
+    SCHEDULE_FIELD_NUMBER: _ClassVar[int]
+    SEARCH_FIELD_NUMBER: _ClassVar[int]
+    SERVING_FIELD_NUMBER: _ClassVar[int]
+    SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
+    SPLIT_FIELD_NUMBER: _ClassVar[int]
+    SUBTASK_FIELD_NUMBER: _ClassVar[int]
+    TASK_FIELD_NUMBER: _ClassVar[int]
+    TIMEOUT_FIELD_NUMBER: _ClassVar[int]
+    TRAININGTEMPLATE_FIELD_NUMBER: _ClassVar[int]
+    UNITTESTSTEMPLATE_FIELD_NUMBER: _ClassVar[int]
+    artifactBucketName: str
+    baseline: BaselineSpec
+    description: str
+    ensembles: EnsemblesSpec
+    explain: bool
+    fast: bool
+    featureEngineering: FeatureEngineeringSpec
+    forecastTemplate: ForecasterSpec
+    gc: GarbageCollectionSpec
+    imbalanceHandler: ImbalanceHandlingSpec
+    interpretability: InterpretabilitySpec
+    labRef: _generated_pb2_1_1.ObjectReference
+    modelClassName: str
+    notification: _generated_pb2.NotificationSpec
+    outlierModel: OutlierModelSpec
+    owner: str
+    profile: bool
+    report: bool
+    schedule: _generated_pb2.RunSchedule
+    search: SearchSpec
+    serving: ServingSpec
+    snapshot: _generated_pb2.SnapshotReference
+    split: DataSplitSpec
+    subtask: str
+    task: str
+    timeout: int
+    trainingTemplate: TrainingSpec
+    unitTestsTemplate: _generated_pb2.TestSuite
+    def __init__(self, owner: _Optional[str] = ..., description: _Optional[str] = ..., snapshot: _Optional[_Union[_generated_pb2.SnapshotReference, _Mapping]] = ..., labRef: _Optional[_Union[_generated_pb2_1_1.ObjectReference, _Mapping]] = ..., task: _Optional[str] = ..., subtask: _Optional[str] = ..., featureEngineering: _Optional[_Union[FeatureEngineeringSpec, _Mapping]] = ..., imbalanceHandler: _Optional[_Union[ImbalanceHandlingSpec, _Mapping]] = ..., baseline: _Optional[_Union[BaselineSpec, _Mapping]] = ..., search: _Optional[_Union[SearchSpec, _Mapping]] = ..., ensembles: _Optional[_Union[EnsemblesSpec, _Mapping]] = ..., trainingTemplate: _Optional[_Union[TrainingSpec, _Mapping]] = ..., split: _Optional[_Union[DataSplitSpec, _Mapping]] = ..., forecastTemplate: _Optional[_Union[ForecasterSpec, _Mapping]] = ..., schedule: _Optional[_Union[_generated_pb2.RunSchedule, _Mapping]] = ..., interpretability: _Optional[_Union[InterpretabilitySpec, _Mapping]] = ..., outlierModel: _Optional[_Union[OutlierModelSpec, _Mapping]] = ..., unitTestsTemplate: _Optional[_Union[_generated_pb2.TestSuite, _Mapping]] = ..., serving: _Optional[_Union[ServingSpec, _Mapping]] = ..., gc: _Optional[_Union[GarbageCollectionSpec, _Mapping]] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ..., report: bool = ..., profile: bool = ..., explain: bool = ..., fast: bool = ..., artifactBucketName: _Optional[str] = ..., timeout: _Optional[int] = ..., modelClassName: _Optional[str] = ...) -> None: ...
+
+class StudyStatus(_message.Message):
+    __slots__ = ["active", "availableRunVersions", "conditions", "failureMessage", "lastRunVersion", "lastSnapshotAt", "observedGeneration", "schedule", "updatedAt", "version"]
+    ACTIVE_FIELD_NUMBER: _ClassVar[int]
+    AVAILABLERUNVERSIONS_FIELD_NUMBER: _ClassVar[int]
+    CONDITIONS_FIELD_NUMBER: _ClassVar[int]
+    FAILUREMESSAGE_FIELD_NUMBER: _ClassVar[int]
+    LASTRUNVERSION_FIELD_NUMBER: _ClassVar[int]
+    LASTSNAPSHOTAT_FIELD_NUMBER: _ClassVar[int]
+    OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
+    SCHEDULE_FIELD_NUMBER: _ClassVar[int]
+    UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    active: _containers.RepeatedCompositeFieldContainer[_generated_pb2.RunReference]
+    availableRunVersions: _containers.RepeatedScalarFieldContainer[int]
+    conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1_1.Condition]
+    failureMessage: str
+    lastRunVersion: int
+    lastSnapshotAt: _generated_pb2_1_1_1.Time
+    observedGeneration: int
+    schedule: _generated_pb2.RunScheduleStatus
+    updatedAt: _generated_pb2_1_1_1.Time
+    version: int
+    def __init__(self, observedGeneration: _Optional[int] = ..., active: _Optional[_Iterable[_Union[_generated_pb2.RunReference, _Mapping]]] = ..., version: _Optional[int] = ..., lastRunVersion: _Optional[int] = ..., availableRunVersions: _Optional[_Iterable[int]] = ..., lastSnapshotAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., failureMessage: _Optional[str] = ..., schedule: _Optional[_Union[_generated_pb2.RunScheduleStatus, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class SuccessiveHalvingOptions(_message.Message):
     __slots__ = ["bootstrapCount", "minEarlyStoppingRate", "minResources", "reductionFactor"]
@@ -1585,10 +1615,9 @@ class TimeSeriesEvent(_message.Message):
     def __init__(self, name: _Optional[str] = ..., method: _Optional[str] = ..., holiday: bool = ..., country: _Optional[str] = ..., preEvent: _Optional[int] = ..., postEvent: _Optional[int] = ..., timePoints: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class TrainingSpec(_message.Message):
-    __slots__ = ["checkpoint", "cvtype", "evalMetrics", "featureImportance", "folds", "gpu", "labRef", "logLevel", "priority", "resources", "samplePct", "seed", "sh", "split", "timeout"]
+    __slots__ = ["checkpoint", "cvtype", "featureImportance", "folds", "gpu", "labRef", "logLevel", "priority", "resources", "samplePct", "seed", "sh", "timeout"]
     CHECKPOINT_FIELD_NUMBER: _ClassVar[int]
     CVTYPE_FIELD_NUMBER: _ClassVar[int]
-    EVALMETRICS_FIELD_NUMBER: _ClassVar[int]
     FEATUREIMPORTANCE_FIELD_NUMBER: _ClassVar[int]
     FOLDS_FIELD_NUMBER: _ClassVar[int]
     GPU_FIELD_NUMBER: _ClassVar[int]
@@ -1599,11 +1628,9 @@ class TrainingSpec(_message.Message):
     SAMPLEPCT_FIELD_NUMBER: _ClassVar[int]
     SEED_FIELD_NUMBER: _ClassVar[int]
     SH_FIELD_NUMBER: _ClassVar[int]
-    SPLIT_FIELD_NUMBER: _ClassVar[int]
     TIMEOUT_FIELD_NUMBER: _ClassVar[int]
     checkpoint: CheckpointSpec
     cvtype: str
-    evalMetrics: _containers.RepeatedScalarFieldContainer[str]
     featureImportance: bool
     folds: int
     gpu: bool
@@ -1614,9 +1641,8 @@ class TrainingSpec(_message.Message):
     samplePct: int
     seed: float
     sh: SuccessiveHalvingSpec
-    split: DataSplitSpec
     timeout: int
-    def __init__(self, labRef: _Optional[_Union[_generated_pb2_1_1.ObjectReference, _Mapping]] = ..., priority: _Optional[str] = ..., cvtype: _Optional[str] = ..., folds: _Optional[int] = ..., split: _Optional[_Union[DataSplitSpec, _Mapping]] = ..., evalMetrics: _Optional[_Iterable[str]] = ..., sh: _Optional[_Union[SuccessiveHalvingSpec, _Mapping]] = ..., seed: _Optional[float] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., gpu: bool = ..., featureImportance: bool = ..., samplePct: _Optional[int] = ..., checkpoint: _Optional[_Union[CheckpointSpec, _Mapping]] = ..., logLevel: _Optional[str] = ..., timeout: _Optional[int] = ...) -> None: ...
+    def __init__(self, labRef: _Optional[_Union[_generated_pb2_1_1.ObjectReference, _Mapping]] = ..., priority: _Optional[str] = ..., cvtype: _Optional[str] = ..., folds: _Optional[int] = ..., sh: _Optional[_Union[SuccessiveHalvingSpec, _Mapping]] = ..., seed: _Optional[float] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., gpu: bool = ..., featureImportance: bool = ..., samplePct: _Optional[int] = ..., checkpoint: _Optional[_Union[CheckpointSpec, _Mapping]] = ..., logLevel: _Optional[str] = ..., timeout: _Optional[int] = ...) -> None: ...
 
 class UnivariateForecastStatus(_message.Message):
     __slots__ = ["baseEstimator", "cvResultURI", "forecastURI", "gridSearchResultURI", "modelURI"]

@@ -193,7 +193,7 @@ spec:
                 type: object
               failureMessage:
                 description: FailureMessage is set to a failure message in the case
-                  that an error occurred during the run
+                  that an error occurred during the snapshot
                 type: string
               featureHistogramRef:
                 description: FeatureHistogramRef references the feature histogram
@@ -240,10 +240,6 @@ spec:
                   datasetsURI:
                     description: The locations of the datasets files. Each file is
                       the group
-                    type: string
-                  featuresURI:
-                    description: The locations of the time series feature files. The
-                      file contain a line for each feature
                     type: string
                   profilesURI:
                     description: The locations of the datasets files.

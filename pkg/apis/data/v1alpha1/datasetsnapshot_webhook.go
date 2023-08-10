@@ -10,7 +10,6 @@ import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
-	"strconv"
 )
 
 // defaulting
@@ -22,10 +21,9 @@ func (dataset *DatasetSnapshot) Default() {
 	}
 
 	dataset.ObjectMeta.Labels[catalog.DatasetLabelKey] = dataset.Spec.DatasetName
-	dataset.ObjectMeta.Labels[catalog.RunVersionLabelKey] = strconv.Itoa(int(dataset.Status.SnapshotVersion))
 
 	if dataset.Spec.Owner != nil {
-		dataset.ObjectMeta.Labels[catalog.OwnerKindLabelKey] = *dataset.Spec.Owner
+		dataset.ObjectMeta.Labels[catalog.OwnerLabelKey] = *dataset.Spec.Owner
 	}
 
 	if dataset.Spec.ModelClassRunName != nil {

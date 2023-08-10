@@ -69,8 +69,7 @@ class DatasetSnapshotServiceServicer(object):
     """
 
     def ListDatasetSnapshots(self, request, context):
-        """Datasets
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
