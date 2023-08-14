@@ -22,9 +22,6 @@ spec:
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
-    - jsonPath: .status.phase
-      name: Status
-      type: string
     - jsonPath: .spec.owner
       name: Owner
       type: string
@@ -62,7 +59,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: DatasetSpec defines the desired state of the Dataset
+            description: DatasetSpec defines the desired parameters for a Dataset
             properties:
               artifactBucketName:
                 description: The name of the Virtual Bucket where Dataset artifacts

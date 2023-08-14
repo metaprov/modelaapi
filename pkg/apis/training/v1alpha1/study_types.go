@@ -45,7 +45,7 @@ const (
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".status.version",priority=1
-// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetName"
+// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.snapshot.dataset"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.search.objective.metric"
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRunAt",description=""
@@ -59,7 +59,7 @@ type Study struct {
 	Status StudyStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
-// StudySpec defines the desired state of a Study and the parameters for a model search
+// StudySpec defines the desired parameters for a Study
 type StudySpec struct {
 	// Owner specifies the name of the Account which the object belongs to
 	// +kubebuilder:default:="no-one"
@@ -182,8 +182,8 @@ type StudyStatus struct {
 	AvailableRunVersions catalog.VersionList `json:"availableRunVersions,omitempty" protobuf:"bytes,5,opt,name=availableRunVersions"`
 	// LastRunAt specifies the time at which a run was last created for the Study
 	//+kubebuilder:validation:Optional
-	LastSnapshotAt *metav1.Time `json:"lastSnapshotAt,omitempty" protobuf:"bytes,6,opt,name=lastSnapshotAt"`
-	// LastFailureMessage specifies the failure message of the last snapshot. If the last snapshot succeeded, the field will be cleared
+	LastRunAt *metav1.Time `json:"lastRunAt,omitempty" protobuf:"bytes,6,opt,name=lastRunAt"`
+	// LastFailureMessage specifies the failure message of the last run. If the last snapshot succeeded, the field will be cleared
 	//+kubebuilder:validation:Optional
 	LastFailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,7,opt,name=failureMessage"`
 	// Schedule specifies the status of the run schedule

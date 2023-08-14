@@ -2,6 +2,7 @@ import * as jspb from 'google-protobuf'
 
 import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated_pb';
 
 
@@ -63,20 +64,6 @@ export namespace ListPredictionsResponse {
   }
 }
 
-export class CreatePredictionResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreatePredictionResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CreatePredictionResponse): CreatePredictionResponse.AsObject;
-  static serializeBinaryToWriter(message: CreatePredictionResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreatePredictionResponse;
-  static deserializeBinaryFromReader(message: CreatePredictionResponse, reader: jspb.BinaryReader): CreatePredictionResponse;
-}
-
-export namespace CreatePredictionResponse {
-  export type AsObject = {
-  }
-}
-
 export class CreatePredictionRequest extends jspb.Message {
   getPrediction(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction | undefined;
   setPrediction(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction): CreatePredictionRequest;
@@ -94,6 +81,20 @@ export class CreatePredictionRequest extends jspb.Message {
 export namespace CreatePredictionRequest {
   export type AsObject = {
     prediction?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction.AsObject,
+  }
+}
+
+export class CreatePredictionResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePredictionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePredictionResponse): CreatePredictionResponse.AsObject;
+  static serializeBinaryToWriter(message: CreatePredictionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePredictionResponse;
+  static deserializeBinaryFromReader(message: CreatePredictionResponse, reader: jspb.BinaryReader): CreatePredictionResponse;
+}
+
+export namespace CreatePredictionResponse {
+  export type AsObject = {
   }
 }
 
@@ -223,8 +224,10 @@ export class DownloadPredictionRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): DownloadPredictionRequest;
 
-  getName(): string;
-  setName(value: string): DownloadPredictionRequest;
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictionRunReference | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictionRunReference): DownloadPredictionRequest;
+  hasRun(): boolean;
+  clearRun(): DownloadPredictionRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownloadPredictionRequest.AsObject;
@@ -237,7 +240,7 @@ export class DownloadPredictionRequest extends jspb.Message {
 export namespace DownloadPredictionRequest {
   export type AsObject = {
     namespace: string,
-    name: string,
+    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictionRunReference.AsObject,
   }
 }
 
@@ -265,8 +268,10 @@ export class AbortPredictionRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): AbortPredictionRequest;
 
-  getName(): string;
-  setName(value: string): AbortPredictionRequest;
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictionRunReference | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictionRunReference): AbortPredictionRequest;
+  hasRun(): boolean;
+  clearRun(): AbortPredictionRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AbortPredictionRequest.AsObject;
@@ -279,7 +284,7 @@ export class AbortPredictionRequest extends jspb.Message {
 export namespace AbortPredictionRequest {
   export type AsObject = {
     namespace: string,
-    name: string,
+    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictionRunReference.AsObject,
   }
 }
 

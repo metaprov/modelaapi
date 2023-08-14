@@ -1,0 +1,120 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modelaapi/services/prediction/v1";
+package github.com.metaprov.modelaapi.services.prediction.v1;
+
+import "google/protobuf/field_mask.proto";
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto";
+
+/////// List Prediction Runs ///////
+
+message ListPredictionRunsRequest {
+    string namespace = 1;
+    map<string,string> labels =2;
+    int32 page_size  = 3;
+    string page_token = 4;
+    string order_by   = 5;
+}
+
+message ListPredictionRunsResponse {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunList predictions = 1;
+    string next_page_token = 2;
+}
+
+/////// Create Prediction Run ///////
+
+message CreatePredictionRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun prediction = 1;
+}
+
+message CreatePredictionRunResponse {}
+
+/////// Update Prediction Run ///////
+
+message UpdatePredictionRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun prediction = 1;
+    google.protobuf.FieldMask field_mask = 2;
+}
+
+message UpdatePredictionRunResponse {}
+
+/////// Get Prediction Run ///////
+
+message GetPredictionRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetPredictionRunResponse {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun prediction = 1;
+    string yaml = 2;
+}
+
+/////// Delete Prediction Run ///////
+
+message DeletePredictionRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeletePredictionRunResponse {}
+
+/////// Download Prediction Run ///////
+
+message DownloadPredictionRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message DownloadPredictionRunResponse {
+    bytes raw = 1;
+}
+
+/////// Abort Prediction Run ///////
+
+message AbortPredictionRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message AbortPredictionRunResponse {}
+
+/////// Prediction Run Service ///////
+
+service PredictionRunService {
+    rpc ListPredictionRuns(ListPredictionRunsRequest) returns (ListPredictionRunsResponse) {
+        option (google.api.http).get = "/v1/predictionruns/{namespace}";
+    }
+
+    rpc CreatePredictionRun(CreatePredictionRunRequest) returns (CreatePredictionRunResponse) {
+        option (google.api.http) = {
+            post: "/v1/predictions"
+            body: "*"
+        };
+    }
+
+    rpc GetPredictionRun(GetPredictionRunRequest) returns (GetPredictionRunResponse) {
+        option (google.api.http).get = "/v1/predictionruns/{namespace}/{name}";
+    }
+
+    rpc UpdatePredictionRun(UpdatePredictionRunRequest) returns (UpdatePredictionRunResponse) {
+        option (google.api.http) = {
+            put: "/v1/predictionruns/{prediction.metadata.namespace}/{prediction.metadata.name}"
+            body: "*"
+        };
+    }
+
+    rpc DeletePredictionRun(DeletePredictionRunRequest) returns (DeletePredictionRunResponse) {
+        option (google.api.http).delete = "/v1/predictionruns/{namespace}/{name}";
+    }
+
+    rpc DownloadPredictionRun(DownloadPredictionRunRequest) returns (DownloadPredictionRunResponse) {
+        option (google.api.http).get = "/v1/predictionruns/{namespace}/{name}:download";
+    }
+
+    rpc AbortPredictionRun(AbortPredictionRunRequest) returns (AbortPredictionRunResponse) {
+        option (google.api.http).post = "/v1/predictionruns/{namespace}/{name}:abort";
+    }
+}

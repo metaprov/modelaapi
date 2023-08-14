@@ -62,7 +62,7 @@ message UpdateStudyResponse {}
 
 message GetStudyProfileRequest {
     string namespace = 1;
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference run = 2;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference run = 2;
     int32 models = 3;
 }
 
@@ -75,7 +75,7 @@ message GetStudyProfileResponse {
 
 message AbortStudyRequest {
     string namespace = 1;
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference run = 2;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference run = 2;
 }
 
 message AbortStudyResponse {}
@@ -84,7 +84,7 @@ message AbortStudyResponse {}
 
 message PauseStudyRequest {
     string namespace = 1;
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference run = 2;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference run = 2;
 }
 
 message PauseStudyResponse {}
@@ -93,7 +93,7 @@ message PauseStudyResponse {}
 
 message ResumeStudyRequest {
     string namespace = 1;
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference run = 2;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference run = 2;
 }
 
 message ResumeStudyResponse {}
@@ -102,12 +102,12 @@ message ResumeStudyResponse {}
 
 message CompleteStudySearchRequest {
     string namespace = 1;
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference run = 2;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference run = 2;
 }
 
 message CompleteStudySearchResponse {}
 
-
+/////// Study Service ///////
 
 service StudyService {
     rpc ListStudies(ListStudyRequest) returns (ListStudyResponse) {
@@ -152,7 +152,6 @@ service StudyService {
         option (google.api.http).post = "/v1/studies/{namespace}/{run.study}:resume";
     }
 
-    // Force completion of the search.
     rpc CompleteStudySearch(CompleteStudySearchRequest) returns (CompleteStudySearchResponse) {
         option (google.api.http).post = "/v1/studies/{namespace}/{run.study}:complete";
     }

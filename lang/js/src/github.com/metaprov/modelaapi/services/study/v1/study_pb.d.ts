@@ -213,8 +213,8 @@ export class GetStudyProfileRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): GetStudyProfileRequest;
 
-  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference | undefined;
-  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference): GetStudyProfileRequest;
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference): GetStudyProfileRequest;
   hasRun(): boolean;
   clearRun(): GetStudyProfileRequest;
 
@@ -232,7 +232,7 @@ export class GetStudyProfileRequest extends jspb.Message {
 export namespace GetStudyProfileRequest {
   export type AsObject = {
     namespace: string,
-    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject,
+    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.AsObject,
     models: number,
   }
 }
@@ -267,8 +267,8 @@ export class AbortStudyRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): AbortStudyRequest;
 
-  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference | undefined;
-  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference): AbortStudyRequest;
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference): AbortStudyRequest;
   hasRun(): boolean;
   clearRun(): AbortStudyRequest;
 
@@ -283,7 +283,7 @@ export class AbortStudyRequest extends jspb.Message {
 export namespace AbortStudyRequest {
   export type AsObject = {
     namespace: string,
-    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject,
+    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.AsObject,
   }
 }
 
@@ -305,8 +305,8 @@ export class PauseStudyRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): PauseStudyRequest;
 
-  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference | undefined;
-  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference): PauseStudyRequest;
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference): PauseStudyRequest;
   hasRun(): boolean;
   clearRun(): PauseStudyRequest;
 
@@ -321,7 +321,7 @@ export class PauseStudyRequest extends jspb.Message {
 export namespace PauseStudyRequest {
   export type AsObject = {
     namespace: string,
-    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject,
+    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.AsObject,
   }
 }
 
@@ -343,8 +343,8 @@ export class ResumeStudyRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ResumeStudyRequest;
 
-  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference | undefined;
-  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference): ResumeStudyRequest;
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference): ResumeStudyRequest;
   hasRun(): boolean;
   clearRun(): ResumeStudyRequest;
 
@@ -359,7 +359,7 @@ export class ResumeStudyRequest extends jspb.Message {
 export namespace ResumeStudyRequest {
   export type AsObject = {
     namespace: string,
-    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject,
+    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.AsObject,
   }
 }
 
@@ -381,8 +381,8 @@ export class CompleteStudySearchRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): CompleteStudySearchRequest;
 
-  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference | undefined;
-  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference): CompleteStudySearchRequest;
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference): CompleteStudySearchRequest;
   hasRun(): boolean;
   clearRun(): CompleteStudySearchRequest;
 
@@ -397,7 +397,7 @@ export class CompleteStudySearchRequest extends jspb.Message {
 export namespace CompleteStudySearchRequest {
   export type AsObject = {
     namespace: string,
-    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject,
+    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.AsObject,
   }
 }
 

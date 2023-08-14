@@ -1813,6 +1813,32 @@ export namespace PermissionsSpec {
   }
 }
 
+export class PredictionRunReference extends jspb.Message {
+  getPrediction(): string;
+  setPrediction(value: string): PredictionRunReference;
+  hasPrediction(): boolean;
+  clearPrediction(): PredictionRunReference;
+
+  getVersion(): number;
+  setVersion(value: number): PredictionRunReference;
+  hasVersion(): boolean;
+  clearVersion(): PredictionRunReference;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictionRunReference.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionRunReference): PredictionRunReference.AsObject;
+  static serializeBinaryToWriter(message: PredictionRunReference, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionRunReference;
+  static deserializeBinaryFromReader(message: PredictionRunReference, reader: jspb.BinaryReader): PredictionRunReference;
+}
+
+export namespace PredictionRunReference {
+  export type AsObject = {
+    prediction?: string,
+    version?: number,
+  }
+}
+
 export class PretrainedModel extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): PretrainedModel;

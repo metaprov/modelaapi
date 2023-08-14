@@ -28,7 +28,6 @@ const (
 // +kubebuilder:resource:path=datasets,shortName=ds,singular=dataset,categories={data,modela,all}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".status.version"
 // +kubebuilder:printcolumn:name="Data Source",type="string",JSONPath=".spec.datasourceName"
@@ -52,7 +51,7 @@ type DatasetList struct {
 	Items           []Dataset `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// DatasetSpec defines the desired state of the Dataset
+// DatasetSpec defines the desired parameters for a Dataset
 type DatasetSpec struct {
 	// Owner specifies the name of the Account which the object belongs to
 	// +kubebuilder:default:="no-one"

@@ -139,7 +139,7 @@ type Model struct {
 }
 
 // +kubebuilder:object:root=true
-// ModelList is a list of ModelsCount
+// ModelList is a list of Models
 type ModelList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -155,11 +155,11 @@ type ModelSpec struct {
 	// The version of the Model, derived from the Study which created the Model
 	// +kubebuilder:default:=""
 	Version *string `json:"version,omitempty" protobuf:"bytes,3,opt,name=version"`
-	// The name of the Study which created the Model. If empty, the Model will be trained as a stand-alone model
+	// The name of the Study Run which created the Model. If empty, the Model will be trained as a stand-alone model
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
 	// +required
-	StudyName string `json:"studyName,omitempty" protobuf:"bytes,4,opt,name=studyName"`
+	StudyRunName string `json:"studyRunName,omitempty" protobuf:"bytes,4,opt,name=studyRunName"`
 	// The machine learning task type of the Model (i.e. regression, classification), derived from the parent Study
 	// +kubebuilder:validation:Required
 	// +required

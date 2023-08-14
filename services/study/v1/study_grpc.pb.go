@@ -31,7 +31,6 @@ type StudyServiceClient interface {
 	AbortStudy(ctx context.Context, in *AbortStudyRequest, opts ...grpc.CallOption) (*AbortStudyResponse, error)
 	PauseStudy(ctx context.Context, in *PauseStudyRequest, opts ...grpc.CallOption) (*PauseStudyResponse, error)
 	ResumeStudy(ctx context.Context, in *ResumeStudyRequest, opts ...grpc.CallOption) (*ResumeStudyResponse, error)
-	// Force completion of the search.
 	CompleteStudySearch(ctx context.Context, in *CompleteStudySearchRequest, opts ...grpc.CallOption) (*CompleteStudySearchResponse, error)
 }
 
@@ -146,7 +145,6 @@ type StudyServiceServer interface {
 	AbortStudy(context.Context, *AbortStudyRequest) (*AbortStudyResponse, error)
 	PauseStudy(context.Context, *PauseStudyRequest) (*PauseStudyResponse, error)
 	ResumeStudy(context.Context, *ResumeStudyRequest) (*ResumeStudyResponse, error)
-	// Force completion of the search.
 	CompleteStudySearch(context.Context, *CompleteStudySearchRequest) (*CompleteStudySearchResponse, error)
 	mustEmbedUnimplementedStudyServiceServer()
 }

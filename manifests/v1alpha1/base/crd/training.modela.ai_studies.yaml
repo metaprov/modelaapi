@@ -29,7 +29,7 @@ spec:
       name: Version
       priority: 1
       type: string
-    - jsonPath: .spec.datasetName
+    - jsonPath: .spec.snapshot.dataset
       name: Dataset
       type: string
     - jsonPath: .spec.task
@@ -63,8 +63,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: StudySpec defines the desired state of a Study and the parameters
-              for a model search
+            description: StudySpec defines the desired parameters for a Study
             properties:
               artifactBucketName:
                 description: The name of the Virtual Bucket where Study artifacts
@@ -1704,7 +1703,7 @@ spec:
                   individual training, testing, and validation datasets
                 properties:
                   dataset:
-                    description: Dataset specifies the name of the dataset which the
+                    description: Dataset specifies the name of the Dataset which the
                       snapshot belongs to
                     type: string
                   version:
@@ -1747,7 +1746,7 @@ spec:
                       as the testing dataset
                     properties:
                       dataset:
-                        description: Dataset specifies the name of the dataset which
+                        description: Dataset specifies the name of the Dataset which
                           the snapshot belongs to
                         type: string
                       version:
@@ -1771,7 +1770,7 @@ spec:
                       be used as the training dataset
                     properties:
                       dataset:
-                        description: Dataset specifies the name of the dataset which
+                        description: Dataset specifies the name of the Dataset which
                           the snapshot belongs to
                         type: string
                       version:
@@ -2502,8 +2501,12 @@ spec:
                 type: array
               failureMessage:
                 description: LastFailureMessage specifies the failure message of the
-                  last snapshot. If the last snapshot succeeded, the field will be
-                  cleared
+                  last run. If the last snapshot succeeded, the field will be cleared
+                type: string
+              lastRunAt:
+                description: LastRunAt specifies the time at which a run was last
+                  created for the Study
+                format: date-time
                 type: string
               lastRunVersion:
                 default: 0
@@ -2511,11 +2514,6 @@ spec:
                   to create a run
                 format: int32
                 type: integer
-              lastSnapshotAt:
-                description: LastRunAt specifies the time at which a run was last
-                  created for the Study
-                format: date-time
-                type: string
               observedGeneration:
                 description: ObservedGeneration specifies the last generation that
                   was reconciled

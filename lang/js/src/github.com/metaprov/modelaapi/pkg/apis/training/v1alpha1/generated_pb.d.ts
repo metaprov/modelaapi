@@ -2433,10 +2433,10 @@ export class ModelSpec extends jspb.Message {
   hasVersion(): boolean;
   clearVersion(): ModelSpec;
 
-  getStudyname(): string;
-  setStudyname(value: string): ModelSpec;
-  hasStudyname(): boolean;
-  clearStudyname(): ModelSpec;
+  getStudyrunname(): string;
+  setStudyrunname(value: string): ModelSpec;
+  hasStudyrunname(): boolean;
+  clearStudyrunname(): ModelSpec;
 
   getTask(): string;
   setTask(value: string): ModelSpec;
@@ -2605,7 +2605,7 @@ export namespace ModelSpec {
   export type AsObject = {
     owner?: string,
     version?: string,
-    studyname?: string,
+    studyrunname?: string,
     task?: string,
     subtask?: string,
     objective?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ObjectiveSpec.AsObject,
@@ -4680,10 +4680,10 @@ export class StudyStatus extends jspb.Message {
   clearAvailablerunversionsList(): StudyStatus;
   addAvailablerunversions(value: number, index?: number): StudyStatus;
 
-  getLastsnapshotat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastsnapshotat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasLastsnapshotat(): boolean;
-  clearLastsnapshotat(): StudyStatus;
+  getLastrunat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrunat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
+  hasLastrunat(): boolean;
+  clearLastrunat(): StudyStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): StudyStatus;
@@ -4720,7 +4720,7 @@ export namespace StudyStatus {
     version?: number,
     lastrunversion?: number,
     availablerunversionsList: Array<number>,
-    lastsnapshotat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failuremessage?: string,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,

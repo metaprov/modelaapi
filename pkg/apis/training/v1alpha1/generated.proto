@@ -1393,7 +1393,7 @@ message ModelGroupByStatus {
 }
 
 // +kubebuilder:object:root=true
-// ModelList is a list of ModelsCount
+// ModelList is a list of Models
 message ModelList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
@@ -1434,11 +1434,11 @@ message ModelSpec {
   // +kubebuilder:default:=""
   optional string version = 3;
 
-  // The name of the Study which created the Model. If empty, the Model will be trained as a stand-alone model
+  // The name of the Study Run which created the Model. If empty, the Model will be trained as a stand-alone model
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
   // +required
-  optional string studyName = 4;
+  optional string studyRunName = 4;
 
   // The machine learning task type of the Model (i.e. regression, classification), derived from the parent Study
   // +kubebuilder:validation:Required
@@ -2416,7 +2416,7 @@ message ServingStatus {
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".status.version",priority=1
-// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetName"
+// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.snapshot.dataset"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.search.objective.metric"
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRunAt",description=""
@@ -2665,7 +2665,7 @@ message StudyRunStatus {
   repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 32;
 }
 
-// StudySpec defines the desired state of a Study and the parameters for a model search
+// StudySpec defines the desired parameters for a Study
 message StudySpec {
   // Owner specifies the name of the Account which the object belongs to
   // +kubebuilder:default:="no-one"
@@ -2820,9 +2820,9 @@ message StudyStatus {
 
   // LastRunAt specifies the time at which a run was last created for the Study
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastSnapshotAt = 6;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRunAt = 6;
 
-  // LastFailureMessage specifies the failure message of the last snapshot. If the last snapshot succeeded, the field will be cleared
+  // LastFailureMessage specifies the failure message of the last run. If the last snapshot succeeded, the field will be cleared
   // +kubebuilder:validation:Optional
   optional string failureMessage = 7;
 

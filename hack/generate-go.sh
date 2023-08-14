@@ -91,6 +91,7 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
          github.com/metaprov/modelaapi/services/review/v1/review.proto \
          github.com/metaprov/modelaapi/services/runbook/v1/runbook.proto \
          github.com/metaprov/modelaapi/services/prediction/v1/prediction.proto \
+         github.com/metaprov/modelaapi/services/predictionrun/v1/predictionrun.proto \
          github.com/metaprov/modelaapi/services/predictionstore/v1/predictionstore.proto \
          github.com/metaprov/modelaapi/services/grpcinferenceservice/v1/grpcinferenceservice.proto \
          github.com/metaprov/modelaapi/services/predictor/v1/predictor.proto \

@@ -27,8 +27,8 @@ type PredictionServiceClient interface {
 	GetPrediction(ctx context.Context, in *GetPredictionRequest, opts ...grpc.CallOption) (*GetPredictionResponse, error)
 	UpdatePrediction(ctx context.Context, in *UpdatePredictionRequest, opts ...grpc.CallOption) (*UpdatePredictionResponse, error)
 	DeletePrediction(ctx context.Context, in *DeletePredictionRequest, opts ...grpc.CallOption) (*DeletePredictionResponse, error)
-	Download(ctx context.Context, in *DownloadPredictionRequest, opts ...grpc.CallOption) (*DownloadPredictionResponse, error)
-	Abort(ctx context.Context, in *AbortPredictionRequest, opts ...grpc.CallOption) (*AbortPredictionResponse, error)
+	DownloadPrediction(ctx context.Context, in *DownloadPredictionRequest, opts ...grpc.CallOption) (*DownloadPredictionResponse, error)
+	AbortPrediction(ctx context.Context, in *AbortPredictionRequest, opts ...grpc.CallOption) (*AbortPredictionResponse, error)
 }
 
 type predictionServiceClient struct {
@@ -84,18 +84,18 @@ func (c *predictionServiceClient) DeletePrediction(ctx context.Context, in *Dele
 	return out, nil
 }
 
-func (c *predictionServiceClient) Download(ctx context.Context, in *DownloadPredictionRequest, opts ...grpc.CallOption) (*DownloadPredictionResponse, error) {
+func (c *predictionServiceClient) DownloadPrediction(ctx context.Context, in *DownloadPredictionRequest, opts ...grpc.CallOption) (*DownloadPredictionResponse, error) {
 	out := new(DownloadPredictionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/Download", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/DownloadPrediction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *predictionServiceClient) Abort(ctx context.Context, in *AbortPredictionRequest, opts ...grpc.CallOption) (*AbortPredictionResponse, error) {
+func (c *predictionServiceClient) AbortPrediction(ctx context.Context, in *AbortPredictionRequest, opts ...grpc.CallOption) (*AbortPredictionResponse, error) {
 	out := new(AbortPredictionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/Abort", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/AbortPrediction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -111,8 +111,8 @@ type PredictionServiceServer interface {
 	GetPrediction(context.Context, *GetPredictionRequest) (*GetPredictionResponse, error)
 	UpdatePrediction(context.Context, *UpdatePredictionRequest) (*UpdatePredictionResponse, error)
 	DeletePrediction(context.Context, *DeletePredictionRequest) (*DeletePredictionResponse, error)
-	Download(context.Context, *DownloadPredictionRequest) (*DownloadPredictionResponse, error)
-	Abort(context.Context, *AbortPredictionRequest) (*AbortPredictionResponse, error)
+	DownloadPrediction(context.Context, *DownloadPredictionRequest) (*DownloadPredictionResponse, error)
+	AbortPrediction(context.Context, *AbortPredictionRequest) (*AbortPredictionResponse, error)
 	mustEmbedUnimplementedPredictionServiceServer()
 }
 
@@ -135,11 +135,11 @@ func (UnimplementedPredictionServiceServer) UpdatePrediction(context.Context, *U
 func (UnimplementedPredictionServiceServer) DeletePrediction(context.Context, *DeletePredictionRequest) (*DeletePredictionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeletePrediction not implemented")
 }
-func (UnimplementedPredictionServiceServer) Download(context.Context, *DownloadPredictionRequest) (*DownloadPredictionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Download not implemented")
+func (UnimplementedPredictionServiceServer) DownloadPrediction(context.Context, *DownloadPredictionRequest) (*DownloadPredictionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DownloadPrediction not implemented")
 }
-func (UnimplementedPredictionServiceServer) Abort(context.Context, *AbortPredictionRequest) (*AbortPredictionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Abort not implemented")
+func (UnimplementedPredictionServiceServer) AbortPrediction(context.Context, *AbortPredictionRequest) (*AbortPredictionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AbortPrediction not implemented")
 }
 func (UnimplementedPredictionServiceServer) mustEmbedUnimplementedPredictionServiceServer() {}
 
@@ -244,38 +244,38 @@ func _PredictionService_DeletePrediction_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
-func _PredictionService_Download_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _PredictionService_DownloadPrediction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DownloadPredictionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(PredictionServiceServer).Download(ctx, in)
+		return srv.(PredictionServiceServer).DownloadPrediction(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/Download",
+		FullMethod: "/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/DownloadPrediction",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PredictionServiceServer).Download(ctx, req.(*DownloadPredictionRequest))
+		return srv.(PredictionServiceServer).DownloadPrediction(ctx, req.(*DownloadPredictionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _PredictionService_Abort_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _PredictionService_AbortPrediction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AbortPredictionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(PredictionServiceServer).Abort(ctx, in)
+		return srv.(PredictionServiceServer).AbortPrediction(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/Abort",
+		FullMethod: "/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/AbortPrediction",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PredictionServiceServer).Abort(ctx, req.(*AbortPredictionRequest))
+		return srv.(PredictionServiceServer).AbortPrediction(ctx, req.(*AbortPredictionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -308,12 +308,12 @@ var PredictionService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _PredictionService_DeletePrediction_Handler,
 		},
 		{
-			MethodName: "Download",
-			Handler:    _PredictionService_Download_Handler,
+			MethodName: "DownloadPrediction",
+			Handler:    _PredictionService_DownloadPrediction_Handler,
 		},
 		{
-			MethodName: "Abort",
-			Handler:    _PredictionService_Abort_Handler,
+			MethodName: "AbortPrediction",
+			Handler:    _PredictionService_AbortPrediction_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

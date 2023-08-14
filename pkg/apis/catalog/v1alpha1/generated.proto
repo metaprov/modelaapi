@@ -940,6 +940,15 @@ message PermissionsSpec {
   repeated AccountPermissions accounts = 1;
 }
 
+// PredictionRunReference defines a reference to a specific run for a Prediction
+message PredictionRunReference {
+  // Prediction specifies the name of the Study which the run belongs to
+  optional string prediction = 1;
+
+  // Version specifies the version of the run to use. If empty, the latest available run will be used
+  optional uint32 version = 2;
+}
+
 // Pretrained model contain the metadata about a pretrained model
 // +kubebuilder:object:root=true
 message PretrainedModel {
@@ -1208,7 +1217,7 @@ message RunStatusOld {
 
 // SnapshotReference defines a reference to a specific snapshot for a Dataset
 message SnapshotReference {
-  // Dataset specifies the name of the dataset which the snapshot belongs to
+  // Dataset specifies the name of the Dataset which the snapshot belongs to
   optional string dataset = 1;
 
   // Version specifies the version of the snapshot to use. If empty, the latest available snapshot will be used
@@ -1217,7 +1226,7 @@ message SnapshotReference {
 
 // StudyRunReference defines a reference to a specific run for a Study
 message StudyRunReference {
-  // Study specifies the name of the study which the run belongs to
+  // Study specifies the name of the Study which the run belongs to
   optional string study = 1;
 
   // Version specifies the version of the run to use. If empty, the latest available run will be used

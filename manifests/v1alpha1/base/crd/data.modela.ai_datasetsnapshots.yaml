@@ -111,8 +111,8 @@ spec:
                     type: string
                 type: object
               completedAt:
-                description: CompletedAt specifies the time at which the run completed
-                  or failed
+                description: CompletedAt specifies the time at which the snapshot
+                  completed or failed
                 format: date-time
                 type: string
               conditions:
@@ -291,12 +291,12 @@ spec:
                   detected as imbalanced
                 type: boolean
               lastStudyAt:
-                description: LastStudyAt specifies the last time the run was used
-                  to create a Study
+                description: LastStudyAt specifies the last time the snapshot was
+                  used to create a Study
                 format: date-time
                 type: string
               logs:
-                description: Logs contains the location of all logs produced by run
+                description: Logs contains the location of all logs produced by snapshot
                   workloads
                 properties:
                   bucket:
@@ -859,7 +859,7 @@ spec:
                     type: array
                 type: object
               updatedAt:
-                description: UpdatedAt specifies the last time the run was updated
+                description: UpdatedAt specifies the last time the snapshot was updated
                 format: date-time
                 type: string
             required:

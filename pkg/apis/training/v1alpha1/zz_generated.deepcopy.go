@@ -3166,8 +3166,8 @@ func (in *StudyStatus) DeepCopyInto(out *StudyStatus) {
 		*out = make(catalogv1alpha1.VersionList, len(*in))
 		copy(*out, *in)
 	}
-	if in.LastSnapshotAt != nil {
-		in, out := &in.LastSnapshotAt, &out.LastSnapshotAt
+	if in.LastRunAt != nil {
+		in, out := &in.LastRunAt, &out.LastRunAt
 		*out = (*in).DeepCopy()
 	}
 	if in.LastFailureMessage != nil {

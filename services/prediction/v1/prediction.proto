@@ -5,15 +5,17 @@ package github.com.metaprov.modelaapi.services.prediction.v1;
 
 import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto";
 
+/////// List Predictions ///////
 
 message ListPredictionsRequest {
     string namespace = 1;
     map<string,string> labels =2;
-    int32              page_size  = 3;
-    string             page_token = 4;
-    string             order_by   = 5;
+    int32 page_size  = 3;
+    string page_token = 4;
+    string order_by   = 5;
 }
 
 message ListPredictionsResponse {
@@ -21,21 +23,24 @@ message ListPredictionsResponse {
     string next_page_token = 2;
 }
 
-
-message CreatePredictionResponse {}
+/////// Create Prediction ///////
 
 message CreatePredictionRequest {
     github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction prediction = 1;
 }
+
+message CreatePredictionResponse {}
+
+/////// Update Prediction ///////
 
 message UpdatePredictionRequest {
     github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction prediction = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
-message UpdatePredictionResponse {
+message UpdatePredictionResponse {}
 
-}
+/////// Get Prediction ///////
 
 message GetPredictionRequest {
     string namespace = 1;
@@ -45,40 +50,38 @@ message GetPredictionRequest {
 message GetPredictionResponse {
     github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction prediction = 1;
     string yaml = 2;
-
 }
+
+/////// Delete Prediction ///////
 
 message DeletePredictionRequest {
     string namespace = 1;
     string name      = 2;
 }
 
-message DeletePredictionResponse {
+message DeletePredictionResponse {}
 
-}
+/////// Download Prediction ///////
 
 message DownloadPredictionRequest {
     string namespace = 1;
-    string name      = 2;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictionRunReference run = 2;
 }
 
-// Answer the report in base 64
 message DownloadPredictionResponse {
     bytes raw = 1;
-
 }
+
+/////// Abort Prediction ///////
 
 message AbortPredictionRequest {
     string namespace = 1;
-    string name      = 2;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictionRunReference run = 2;
 }
 
-// Answer the report in base 64
-message AbortPredictionResponse {
-    
+message AbortPredictionResponse {}
 
-}
-
+/////// Prediction Service ///////
 
 service PredictionService {
     rpc ListPredictions(ListPredictionsRequest) returns (ListPredictionsResponse) {
@@ -107,14 +110,11 @@ service PredictionService {
         option (google.api.http).delete = "/v1/predictions/{namespace}/{name}";
     }
 
-    rpc Download(DownloadPredictionRequest) returns (DownloadPredictionResponse) {
-        option (google.api.http).get = "/v1/predictions/{namespace}/{name}:download";
+    rpc DownloadPrediction(DownloadPredictionRequest) returns (DownloadPredictionResponse) {
+        option (google.api.http).get = "/v1/predictions/{namespace}/{run.prediction}:download";
     }
 
-    rpc Abort(AbortPredictionRequest) returns (AbortPredictionResponse) {
-        option (google.api.http).post = "/v1/predictions/{namespace}/{name}:abort";
+    rpc AbortPrediction(AbortPredictionRequest) returns (AbortPredictionResponse) {
+        option (google.api.http).post = "/v1/predictions/{namespace}/{run.prediction}:abort";
     }
-
-
-    
 }

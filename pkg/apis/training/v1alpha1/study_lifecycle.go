@@ -90,7 +90,7 @@ func (study *Study) IsTestDataset() bool {
 	return *study.Spec.Split.Method == catalog.DataSplitMethodUseTestDataset
 }
 
-func (study *Study) IsSaved() bool {
+func (study *Study) Saved() bool {
 	return study.GetCondition(StudySaved).Status == metav1.ConditionTrue
 }
 
@@ -189,6 +189,24 @@ func (study *Study) Random() bool {
 
 func (study *Study) Deleted() bool {
 	return !study.ObjectMeta.DeletionTimestamp.IsZero()
+}
+
+/////// Saved Condition ///////
+
+func (study *Study) MarkNotSaved() {
+	study.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(StudySaved),
+		Status: metav1.ConditionFalse,
+		Reason: string(catalog.NotSaved),
+	})
+}
+
+func (study *Study) MarkSaved() {
+	study.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(StudySaved),
+		Status: metav1.ConditionTrue,
+		Reason: string(StudySaved),
+	})
 }
 
 /////// Reconciler Methods ///////

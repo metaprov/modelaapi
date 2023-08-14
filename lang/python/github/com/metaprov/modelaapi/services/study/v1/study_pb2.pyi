@@ -15,8 +15,8 @@ class AbortStudyRequest(_message.Message):
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     RUN_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    run: _generated_pb2_1.RunReference
-    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.RunReference, _Mapping]] = ...) -> None: ...
+    run: _generated_pb2_1.StudyRunReference
+    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.StudyRunReference, _Mapping]] = ...) -> None: ...
 
 class AbortStudyResponse(_message.Message):
     __slots__ = []
@@ -27,8 +27,8 @@ class CompleteStudySearchRequest(_message.Message):
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     RUN_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    run: _generated_pb2_1.RunReference
-    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.RunReference, _Mapping]] = ...) -> None: ...
+    run: _generated_pb2_1.StudyRunReference
+    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.StudyRunReference, _Mapping]] = ...) -> None: ...
 
 class CompleteStudySearchResponse(_message.Message):
     __slots__ = []
@@ -63,8 +63,8 @@ class GetStudyProfileRequest(_message.Message):
     RUN_FIELD_NUMBER: _ClassVar[int]
     models: int
     namespace: str
-    run: _generated_pb2_1.RunReference
-    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.RunReference, _Mapping]] = ..., models: _Optional[int] = ...) -> None: ...
+    run: _generated_pb2_1.StudyRunReference
+    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.StudyRunReference, _Mapping]] = ..., models: _Optional[int] = ...) -> None: ...
 
 class GetStudyProfileResponse(_message.Message):
     __slots__ = ["modelsProfile", "profile"]
@@ -118,8 +118,8 @@ class PauseStudyRequest(_message.Message):
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     RUN_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    run: _generated_pb2_1.RunReference
-    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.RunReference, _Mapping]] = ...) -> None: ...
+    run: _generated_pb2_1.StudyRunReference
+    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.StudyRunReference, _Mapping]] = ...) -> None: ...
 
 class PauseStudyResponse(_message.Message):
     __slots__ = []
@@ -130,8 +130,8 @@ class ResumeStudyRequest(_message.Message):
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     RUN_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    run: _generated_pb2_1.RunReference
-    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.RunReference, _Mapping]] = ...) -> None: ...
+    run: _generated_pb2_1.StudyRunReference
+    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.StudyRunReference, _Mapping]] = ...) -> None: ...
 
 class ResumeStudyResponse(_message.Message):
     __slots__ = []

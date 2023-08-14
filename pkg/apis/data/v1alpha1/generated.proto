@@ -1216,7 +1216,6 @@ message DataSourceStatus {
 // +kubebuilder:resource:path=datasets,shortName=ds,singular=dataset,categories={data,modela,all}
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".status.version"
 // +kubebuilder:printcolumn:name="Data Source",type="string",JSONPath=".spec.datasourceName"
@@ -1388,21 +1387,21 @@ message DatasetSnapshotStatus {
   // +kubebuilder:validation:Optional
   optional int32 progress = 15;
 
-  // Logs contains the location of all logs produced by run workloads
+  // Logs contains the location of all logs produced by snapshot workloads
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 16;
 
   // +kubebuilder:validation:Optional
   optional string hash = 17;
 
-  // UpdatedAt specifies the last time the run was updated
+  // UpdatedAt specifies the last time the snapshot was updated
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 18;
 
-  // CompletedAt specifies the time at which the run completed or failed
+  // CompletedAt specifies the time at which the snapshot completed or failed
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 19;
 
-  // LastStudyAt specifies the last time the run was used to create a Study
+  // LastStudyAt specifies the last time the snapshot was used to create a Study
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudyAt = 20;
 
@@ -1424,7 +1423,7 @@ message DatasetSnapshotStatus {
   repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 24;
 }
 
-// DatasetSpec defines the desired state of the Dataset
+// DatasetSpec defines the desired parameters for a Dataset
 message DatasetSpec {
   // Owner specifies the name of the Account which the object belongs to
   // +kubebuilder:default:="no-one"

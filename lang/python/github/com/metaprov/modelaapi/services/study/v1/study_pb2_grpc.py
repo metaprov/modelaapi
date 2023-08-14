@@ -6,7 +6,9 @@ from github.com.metaprov.modelaapi.services.study.v1 import study_pb2 as github_
 
 
 class StudyServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """///// Study Service ///////
+
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -67,7 +69,9 @@ class StudyServiceStub(object):
 
 
 class StudyServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """///// Study Service ///////
+
+    """
 
     def ListStudies(self, request, context):
         """Missing associated documentation comment in .proto file."""
@@ -124,8 +128,7 @@ class StudyServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CompleteStudySearch(self, request, context):
-        """Force completion of the search.
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -191,7 +194,9 @@ def add_StudyServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class StudyService(object):
-    """Missing associated documentation comment in .proto file."""
+    """///// Study Service ///////
+
+    """
 
     @staticmethod
     def ListStudies(request,

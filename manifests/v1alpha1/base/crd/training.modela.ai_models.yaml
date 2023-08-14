@@ -1126,9 +1126,9 @@ spec:
                 description: If true, a Report resource will be generated for the
                   Model succeeding completion
                 type: boolean
-              studyName:
-                description: The name of the Study which created the Model. If empty,
-                  the Model will be trained as a stand-alone model
+              studyRunName:
+                description: The name of the Study Run which created the Model. If
+                  empty, the Model will be trained as a stand-alone model
                 maxLength: 63
                 type: string
               subtask:

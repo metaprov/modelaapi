@@ -1201,6 +1201,7 @@ const (
 	Approved           ConditionReason = "Approved"
 	Denied             ConditionReason = "Denied"
 	MissingResources   ConditionReason = "MissingResources"
+	NotSaved           ConditionReason = "NotSaved"
 )
 
 //==============================================================================
@@ -1511,7 +1512,7 @@ type RunReference struct {
 
 // SnapshotReference defines a reference to a specific snapshot for a Dataset
 type SnapshotReference struct {
-	// Dataset specifies the name of the dataset which the snapshot belongs to
+	// Dataset specifies the name of the Dataset which the snapshot belongs to
 	Dataset string `json:"dataset,omitempty" protobuf:"bytes,1,opt,name=dataset"`
 	// Version specifies the version of the snapshot to use. If empty, the latest available snapshot will be used
 	Version *Version `json:"version,omitempty" protobuf:"varint,2,opt,name=version"`
@@ -1519,8 +1520,16 @@ type SnapshotReference struct {
 
 // StudyRunReference defines a reference to a specific run for a Study
 type StudyRunReference struct {
-	// Study specifies the name of the study which the run belongs to
-	Study string `json:"dataset,omitempty" protobuf:"bytes,1,opt,name=study"`
+	// Study specifies the name of the Study which the run belongs to
+	Study string `json:"study,omitempty" protobuf:"bytes,1,opt,name=study"`
+	// Version specifies the version of the run to use. If empty, the latest available run will be used
+	Version *Version `json:"version,omitempty" protobuf:"varint,2,opt,name=version"`
+}
+
+// PredictionRunReference defines a reference to a specific run for a Prediction
+type PredictionRunReference struct {
+	// Prediction specifies the name of the Study which the run belongs to
+	Prediction string `json:"prediction,omitempty" protobuf:"bytes,1,opt,name=prediction"`
 	// Version specifies the version of the run to use. If empty, the latest available run will be used
 	Version *Version `json:"version,omitempty" protobuf:"varint,2,opt,name=version"`
 }

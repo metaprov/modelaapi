@@ -21,31 +21,17 @@ spec:
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
-    - jsonPath: .status.conditions[?(@.type=="Ready")].status
-      name: Ready
+    - jsonPath: .spec.owner
+      name: Owner
       type: string
-    - jsonPath: .spec.predictorRef.Name
-      name: Predictor
-      type: string
-    - jsonPath: .spec.output.bucketName
-      name: BucketName
-      priority: 1
-      type: string
-    - jsonPath: .spec.output.path
-      name: Key
-      priority: 1
-      type: string
-    - jsonPath: .status.score
-      name: Score
-      type: string
-    - jsonPath: .status.phase
-      name: Status
-      type: string
-    - jsonPath: .status.rows
-      name: Rows
+    - jsonPath: .status.version
+      name: Version
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age
+      type: date
+    - jsonPath: .status.lastRunAt
+      name: Last Prediction
       type: date
     name: v1alpha1
     schema:
@@ -67,26 +53,14 @@ spec:
           spec:
             description: PredictionSpec represent the desired state of Prediction
             properties:
-              abort:
-                default: false
-                description: If true, all workloads created by the Prediction will
-                  be removed and the Prediction will no longer be reconciled
-                type: boolean
-              activeDeadlineSeconds:
-                default: 600
-                description: The deadline for any Jobs associated with the Prediction
-                  to be completed in seconds
-                format: int64
-                minimum: 0
-                type: integer
-              createDataset:
-                default: false
-                description: If true, a feedback dataset is created containing the
-                  prediction data and results
-                type: boolean
-              forecastSpec:
-                description: The forecasting specification in the case that the predicted
-                  model is a hierarchical forecast
+              description:
+                default: ""
+                description: Description contains the user-provided description of
+                  the object
+                maxLength: 512
+                type: string
+              forecast:
+                description: Forecast specifies the configuration to perform a forecast
                 properties:
                   hierarchyValues:
                     additionalProperties:
@@ -638,12 +612,6 @@ spec:
                 description: The name of the Account which created the object, which
                   exists in the same tenant as the object
                 type: string
-              partitionLocation:
-                properties:
-                  groupForecastFile:
-                    description: The folder of group data
-                    type: string
-                type: object
               resources:
                 description: Resources specifies the resource requirements allocated
                   to the batch prediction workload
@@ -687,9 +655,29 @@ spec:
                       over custom requirements
                     type: string
                 type: object
+              run:
+                description: RunSpec specifies the configuration for runs created
+                  by the Prediction
+                properties:
+                  maxPreviousRuns:
+                    default: 1
+                    description: MaxPreviousRuns specifies the amount of previous
+                      runs to maintain, sorted by their run version. When a new run
+                      is created, any runs with a version below that of the latest
+                      version minus MaxPreviousRuns will be garbage collected. Runs
+                      which are still in progress will not be affected
+                    format: int32
+                    type: integer
+                  timeout:
+                    description: Timeout specifies the deadline in seconds for a run
+                      to complete, after which it will be aborted. If empty, runs
+                      will not have a deadline
+                    format: int32
+                    type: integer
+                type: object
               schedule:
-                description: Schedule specifies the schedule for the Prediction to
-                  be executed
+                description: Schedule specifies the schedule to create new runs for
+                  the Prediction
                 properties:
                   cron:
                     description: The cron string for the schedule, applicable if the
@@ -700,15 +688,9 @@ spec:
                     default: false
                     description: Enabled indicates if the schedule is enabled. When
                       enabled, a CronJob will be created which when triggered will
-                      initiate the regeneration of the resource that specifies the
-                      schedule
+                      initiate the creation of a run for the resource that specifies
+                      the schedule
                     type: boolean
-                  maxRecords:
-                    default: 10
-                    description: The number of historical run records that the resource
-                      will maintain
-                    format: int32
-                    type: integer
                   type:
                     description: The type of schedule, which can be a frequency interval
                       or a cron expression
@@ -762,6 +744,21 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
+              studyRunRef:
+                description: The reference to the Study Run, whose selected model
+                  will be used for the prediction. When specified, StudyRunRef will
+                  take precedence over ModelRef
+                properties:
+                  study:
+                    description: Study specifies the name of the Study which the run
+                      belongs to
+                    type: string
+                  version:
+                    description: Version specifies the version of the run to use.
+                      If empty, the latest available run will be used
+                    format: int32
+                    type: integer
+                type: object
               unitTests:
                 properties:
                   baselineModelRef:
@@ -1054,18 +1051,34 @@ spec:
                         type: array
                     type: object
                 type: object
-              versionName:
-                default: ""
-                type: string
             type: object
           status:
             description: PredictionStatus is the observed state of a Prediction
             properties:
-              completedAt:
-                description: CompletedAt denotes the time when the batch prediction
-                  Job completed or failed
-                format: date-time
-                type: string
+              active:
+                description: Active contains a collection of references to currently
+                  active runs
+                items:
+                  description: RunReference defines a generic reference to any type
+                    of run
+                  properties:
+                    dataset:
+                      description: Name specifies the name of the resource
+                      type: string
+                    version:
+                      description: Version specifies the version of the run
+                      format: int32
+                      type: integer
+                  type: object
+                type: array
+              availableRunVersions:
+                description: AvailableRunVersions contains the collection of run versions
+                  which are ready for use. Each version corresponds with an existing
+                  PredictionRun resource
+                items:
+                  format: int32
+                  type: integer
+                type: array
               conditions:
                 items:
                   description: "Condition contains details for one aspect of the current
@@ -1134,422 +1147,66 @@ spec:
                   - type
                   type: object
                 type: array
-              datasetRef:
-                description: The reference to the Dataset that was generated
-                properties:
-                  apiVersion:
-                    description: API version of the referent.
-                    type: string
-                  fieldPath:
-                    description: 'If referring to a piece of an object instead of
-                      an entire object, this string should contain a valid JSON/Go
-                      field access statement, such as desiredState.manifest.containers[2].
-                      For example, if the object reference is to a container within
-                      a pod, this would take on a value like: "spec.containers{name}"
-                      (where "name" refers to the name of the container that triggered
-                      the event) or if no container name is specified "spec.containers[2]"
-                      (container with index 2 in this pod). This syntax is chosen
-                      only to have some well-defined way of referencing a part of
-                      an object. TODO: this design is not final and this field is
-                      subject to change in the future.'
-                    type: string
-                  kind:
-                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                    type: string
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                    type: string
-                  namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                    type: string
-                  resourceVersion:
-                    description: 'Specific resourceVersion to which this reference
-                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                    type: string
-                  uid:
-                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                    type: string
-                type: object
-                x-kubernetes-map-type: atomic
               failureMessage:
-                description: In the case of failure, the Prediction resource controller
-                  will set this field with a failure message
+                description: LastFailureMessage specifies the failure message of the
+                  last run. If the last snapshot succeeded, the field will be cleared
                 type: string
-              forecast:
-                description: Forecast contains the forecast results for the prediction
-                properties:
-                  failed:
-                    description: Mark forecast as a failure.
-                    type: boolean
-                  failureMessage:
-                    description: In case of failure, this is the failure message
-                    type: string
-                  forecastURI:
-                    description: A pointer to the file containing the metadata about
-                      the forecasts
-                    type: string
-                  profileURI:
-                    description: The URI of all the porfiles
-                    type: string
-                  reportURI:
-                    description: A pointer to the actual forecast
-                    type: string
-                  workerResults:
-                    description: Holds the worker on going result, when a worker finish,
-                      we update the location of thier result files
-                    items:
-                      properties:
-                        error:
-                          type: string
-                        id:
-                          description: Worker ID
-                          format: int32
-                          type: integer
-                        task:
-                          type: string
-                        uri:
-                          description: URI
-                          type: string
-                      type: object
-                    type: array
-                type: object
-              logs:
-                description: The location of logs produced by the batch prediction
-                  Job
-                properties:
-                  bucket:
-                    description: The name of the Virtual Bucket resource where the
-                      logs are stored
-                    type: string
-                  containers:
-                    description: The collection of logs for each container of the
-                      workload
-                    items:
-                      description: ContainerLog describes the location of logs for
-                        a single Job
-                      properties:
-                        bucket:
-                          description: The bucket the log was stored in
-                          type: string
-                        container:
-                          description: The container name
-                          type: string
-                        job:
-                          description: The name of the Job
-                          type: string
-                        key:
-                          description: The path to the log in the bucket
-                          type: string
-                      type: object
-                    type: array
-                type: object
-              observedGeneration:
-                description: ObservedGeneration is the last generation that was acted
-                  on
-                format: int64
-                type: integer
-              phase:
-                default: Pending
-                description: The current phase of the prediction
-                type: string
-              rows:
-                description: The number of rows predicted
-                format: int32
-                type: integer
-              runs:
-                properties:
-                  activeRunId:
-                    description: The unique ID of the currently active run
-                    type: string
-                  activeRunLogs:
-                    description: The logs of the currently active run
-                    items:
-                      description: ContainerLog describes the location of logs for
-                        a single Job
-                      properties:
-                        bucket:
-                          description: The bucket the log was stored in
-                          type: string
-                        container:
-                          description: The container name
-                          type: string
-                        job:
-                          description: The name of the Job
-                          type: string
-                        key:
-                          description: The path to the log in the bucket
-                          type: string
-                      type: object
-                    type: array
-                  lastRunAt:
-                    description: Last time the job started
-                    format: date-time
-                    type: string
-                  lastRunId:
-                    description: The unique ID of the last run created by the schedule.
-                    type: string
-                  runRecords:
-                    description: RunRecords contains the collection of previously
-                      recorded runs
-                    items:
-                      properties:
-                        completedAt:
-                          description: CompletedAt specifies the time at which the
-                            run was completed
-                          format: date-time
-                          type: string
-                        failureMessage:
-                          description: FailureMessage contains the failure produced
-                            by the run, if applicable
-                          type: string
-                        id:
-                          description: ID specifies the unique ID or resource name
-                            for the run
-                          type: string
-                        logs:
-                          description: Logs contains the logs for all workloads produced
-                            by the run
-                          items:
-                            description: ContainerLog describes the location of logs
-                              for a single Job
-                            properties:
-                              bucket:
-                                description: The bucket the log was stored in
-                                type: string
-                              container:
-                                description: The container name
-                                type: string
-                              job:
-                                description: The name of the Job
-                                type: string
-                              key:
-                                description: The path to the log in the bucket
-                                type: string
-                            type: object
-                          type: array
-                        resourceVersion:
-                          description: ResourceVersion specifies the version of the
-                            resource relevant to the run at the time of completion
-                          format: int32
-                          type: integer
-                        startedAt:
-                          description: StartedAt specifies the time at which the run
-                            started
-                          format: date-time
-                          type: string
-                      type: object
-                    type: array
-                type: object
-              unitTestsResult:
-                properties:
-                  completedAt:
-                    description: Stop time of running the suite.
-                    format: date-time
-                    type: string
-                  entityRef:
-                    description: A reference to the object under test. Best practice
-                      is to have one suite for an object
-                    properties:
-                      apiVersion:
-                        description: API version of the referent.
-                        type: string
-                      fieldPath:
-                        description: 'If referring to a piece of an object instead
-                          of an entire object, this string should contain a valid
-                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
-                          For example, if the object reference is to a container within
-                          a pod, this would take on a value like: "spec.containers{name}"
-                          (where "name" refers to the name of the container that triggered
-                          the event) or if no container name is specified "spec.containers[2]"
-                          (container with index 2 in this pod). This syntax is chosen
-                          only to have some well-defined way of referencing a part
-                          of an object. TODO: this design is not final and this field
-                          is subject to change in the future.'
-                        type: string
-                      kind:
-                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                        type: string
-                      name:
-                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                        type: string
-                      namespace:
-                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                        type: string
-                      resourceVersion:
-                        description: 'Specific resourceVersion to which this reference
-                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                        type: string
-                      uid:
-                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                        type: string
-                    type: object
-                    x-kubernetes-map-type: atomic
-                  errors:
-                    description: Total number of assertion errors.
-                    format: int32
-                    type: integer
-                  failures:
-                    description: Total number of failures. A failure is an unplanned
-                      error, e.g. cannot connect to a dataset
-                    format: int32
-                    type: integer
-                  startedAt:
-                    description: Start time of running the suite
-                    format: date-time
-                    type: string
-                  tests:
-                    description: The result of executing the test suite. The result
-                      contain one result object per test case.
-                    items:
-                      description: Result for a specific case
-                      properties:
-                        actual:
-                          description: Actual observation
-                          properties:
-                            algorithm:
-                              description: The name of the algorithm that generated
-                                this measurment
-                              type: string
-                            boolQty:
-                              description: If the metric refer to a bool unit, store
-                                the bool value
-                              type: boolean
-                            category:
-                              description: If the metric refer to categorical measure,store
-                                the category.
-                              type: string
-                            column:
-                              type: string
-                            entity:
-                              description: 'ObjectReference contains enough information
-                                to let you inspect or modify the referred object.
-                                --- New uses of this type are discouraged because
-                                of difficulty describing its usage when embedded in
-                                APIs. 1. Ignored fields.  It includes many fields
-                                which are not generally honored.  For instance, ResourceVersion
-                                and FieldPath are both very rarely valid in actual
-                                usage. 2. Invalid usage help.  It is impossible to
-                                add specific help for individual usage.  In most embedded
-                                usages, there are particular restrictions like, "must
-                                refer only to types A and B" or "UID not honored"
-                                or "name must be restricted". Those cannot be well
-                                described when embedded. 3. Inconsistent validation.  Because
-                                the usages are different, the validation rules are
-                                different by usage, which makes it hard for users
-                                to predict what will happen. 4. The fields are both
-                                imprecise and overly precise.  Kind is not a precise
-                                mapping to a URL. This can produce ambiguity during
-                                interpretation and require a REST mapping.  In most
-                                cases, the dependency is on the group,resource tuple
-                                and the version of the actual struct is irrelevant.
-                                5. We cannot easily change it.  Because this type
-                                is embedded in many locations, updates to this type
-                                will affect numerous schemas.  Don''t make new APIs
-                                embed an underspecified API type they do not control.
-                                Instead of using this type, create a locally provided
-                                and used type that is well-focused on your reference.
-                                For example, ServiceReferences for admission registration:
-                                https://github.com/kubernetes/api/blob/release-1.17/admissionregistration/v1/types.go#L533
-                                .'
-                              properties:
-                                apiVersion:
-                                  description: API version of the referent.
-                                  type: string
-                                fieldPath:
-                                  description: 'If referring to a piece of an object
-                                    instead of an entire object, this string should
-                                    contain a valid JSON/Go field access statement,
-                                    such as desiredState.manifest.containers[2]. For
-                                    example, if the object reference is to a container
-                                    within a pod, this would take on a value like:
-                                    "spec.containers{name}" (where "name" refers to
-                                    the name of the container that triggered the event)
-                                    or if no container name is specified "spec.containers[2]"
-                                    (container with index 2 in this pod). This syntax
-                                    is chosen only to have some well-defined way of
-                                    referencing a part of an object. TODO: this design
-                                    is not final and this field is subject to change
-                                    in the future.'
-                                  type: string
-                                kind:
-                                  description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                                  type: string
-                                name:
-                                  description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                                  type: string
-                                namespace:
-                                  description: 'Namespace of the referent. More info:
-                                    https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                                  type: string
-                                resourceVersion:
-                                  description: 'Specific resourceVersion to which
-                                    this reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                                  type: string
-                                uid:
-                                  description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                                  type: string
-                              type: object
-                              x-kubernetes-map-type: atomic
-                            metric:
-                              description: The metric type name (e.g. F1 / Accuracy)
-                              type: string
-                            stddev:
-                              description: Metric standard diviation for quantative
-                                observations.
-                              type: number
-                            taskType:
-                              description: The measurment task type (e.g. train, test,
-                                cv, feature)
-                              type: string
-                            timePoint:
-                              description: The Time when the observation was taken
-                              format: date-time
-                              type: string
-                            value:
-                              description: The value of the metric for quantitive
-                                observations
-                              type: number
-                            valueSet:
-                              description: Capture a set of values.
-                              items:
-                                type: string
-                              type: array
-                          type: object
-                        error:
-                          description: An error occur if the system cannot execute
-                            the test case (e.g. connection error).
-                          type: boolean
-                        failure:
-                          description: A failure occur on assertion failure
-                          type: boolean
-                        failureMsg:
-                          description: An optional
-                          type: string
-                        name:
-                          description: The test case name for this result.
-                          type: string
-                      required:
-                      - name
-                      type: object
-                    type: array
-                type: object
-              updatedAt:
-                description: The last time the object was updated
+              lastRunAt:
+                description: LastRunAt specifies the time at which a run was last
+                  created for the Study
                 format: date-time
                 type: string
-              usage:
-                description: Store resource consumption for a task
+              lastRunVersion:
+                default: 0
+                description: LastRunVersion contains the integer version last used
+                  to create a run
+                format: int32
+                type: integer
+              observedGeneration:
+                description: ObservedGeneration specifies the last generation that
+                  was reconciled
+                format: int64
+                type: integer
+              schedule:
+                description: Schedule specifies the status of the run schedule
                 properties:
-                  cpu:
-                    format: int64
-                    type: integer
-                  gpu:
-                    format: int64
-                    type: integer
-                  memory:
-                    format: int64
-                    type: integer
+                  active:
+                    description: Active contains a collection of references to currently
+                      active runs
+                    items:
+                      description: RunReference defines a generic reference to any
+                        type of run
+                      properties:
+                        dataset:
+                          description: Name specifies the name of the resource
+                          type: string
+                        version:
+                          description: Version specifies the version of the run
+                          format: int32
+                          type: integer
+                      type: object
+                    type: array
+                  lastScheduleTime:
+                    description: LastScheduleTime specifies when was the last time
+                      a run was successfully scheduled
+                    format: date-time
+                    type: string
+                  lastSuccessfulTime:
+                    description: LastSuccessfulTime specifies when was the last time
+                      a run successfully completed
+                    format: date-time
+                    type: string
                 type: object
+              updatedAt:
+                description: UpdatedAt specifies the last time the Study was updated
+                format: date-time
+                type: string
+              version:
+                default: 1
+                description: Version specifies the version of the Study as tracked
+                  by Modela, which is incremented each time the object is changed
+                format: int32
+                type: integer
             type: object
         required:
         - spec

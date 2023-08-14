@@ -540,20 +540,10 @@ export class ForecastStatus extends jspb.Message {
   hasReporturi(): boolean;
   clearReporturi(): ForecastStatus;
 
-  getForecasturi(): string;
-  setForecasturi(value: string): ForecastStatus;
-  hasForecasturi(): boolean;
-  clearForecasturi(): ForecastStatus;
-
-  getFailed(): boolean;
-  setFailed(value: boolean): ForecastStatus;
-  hasFailed(): boolean;
-  clearFailed(): ForecastStatus;
-
-  getFailuremsg(): string;
-  setFailuremsg(value: string): ForecastStatus;
-  hasFailuremsg(): boolean;
-  clearFailuremsg(): ForecastStatus;
+  getForecastlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setForecastlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ForecastStatus;
+  hasForecastlocation(): boolean;
+  clearForecastlocation(): ForecastStatus;
 
   getWorkerresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>;
   setWorkerresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult>): ForecastStatus;
@@ -572,9 +562,7 @@ export namespace ForecastStatus {
   export type AsObject = {
     profileuri?: string,
     reporturi?: string,
-    forecasturi?: string,
-    failed?: boolean,
-    failuremsg?: string,
+    forecastlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     workerresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkerRunResult.AsObject>,
   }
 }
@@ -885,26 +873,6 @@ export namespace OnlineStoreStatus {
   }
 }
 
-export class PartitionPredictionLocationsSpec extends jspb.Message {
-  getGroupforecastfile(): string;
-  setGroupforecastfile(value: string): PartitionPredictionLocationsSpec;
-  hasGroupforecastfile(): boolean;
-  clearGroupforecastfile(): PartitionPredictionLocationsSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PartitionPredictionLocationsSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: PartitionPredictionLocationsSpec): PartitionPredictionLocationsSpec.AsObject;
-  static serializeBinaryToWriter(message: PartitionPredictionLocationsSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PartitionPredictionLocationsSpec;
-  static deserializeBinaryFromReader(message: PartitionPredictionLocationsSpec, reader: jspb.BinaryReader): PartitionPredictionLocationsSpec;
-}
-
-export namespace PartitionPredictionLocationsSpec {
-  export type AsObject = {
-    groupforecastfile?: string,
-  }
-}
-
 export class Prediction extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Prediction;
@@ -1051,26 +1019,232 @@ export namespace PredictionLoggingSpec {
   }
 }
 
-export class PredictionSpec extends jspb.Message {
-  getVersionname(): string;
-  setVersionname(value: string): PredictionSpec;
-  hasVersionname(): boolean;
-  clearVersionname(): PredictionSpec;
+export class PredictionRun extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): PredictionRun;
+  hasMetadata(): boolean;
+  clearMetadata(): PredictionRun;
 
+  getSpec(): PredictionRunSpec | undefined;
+  setSpec(value?: PredictionRunSpec): PredictionRun;
+  hasSpec(): boolean;
+  clearSpec(): PredictionRun;
+
+  getStatus(): PredictionRunStatus | undefined;
+  setStatus(value?: PredictionRunStatus): PredictionRun;
+  hasStatus(): boolean;
+  clearStatus(): PredictionRun;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictionRun.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionRun): PredictionRun.AsObject;
+  static serializeBinaryToWriter(message: PredictionRun, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionRun;
+  static deserializeBinaryFromReader(message: PredictionRun, reader: jspb.BinaryReader): PredictionRun;
+}
+
+export namespace PredictionRun {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: PredictionRunSpec.AsObject,
+    status?: PredictionRunStatus.AsObject,
+  }
+}
+
+export class PredictionRunList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): PredictionRunList;
+  hasMetadata(): boolean;
+  clearMetadata(): PredictionRunList;
+
+  getItemsList(): Array<PredictionRun>;
+  setItemsList(value: Array<PredictionRun>): PredictionRunList;
+  clearItemsList(): PredictionRunList;
+  addItems(value?: PredictionRun, index?: number): PredictionRun;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictionRunList.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionRunList): PredictionRunList.AsObject;
+  static serializeBinaryToWriter(message: PredictionRunList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionRunList;
+  static deserializeBinaryFromReader(message: PredictionRunList, reader: jspb.BinaryReader): PredictionRunList;
+}
+
+export namespace PredictionRunList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<PredictionRun.AsObject>,
+  }
+}
+
+export class PredictionRunSpec extends jspb.Message {
+  getOwner(): string;
+  setOwner(value: string): PredictionRunSpec;
+  hasOwner(): boolean;
+  clearOwner(): PredictionRunSpec;
+
+  getDatasetname(): string;
+  setDatasetname(value: string): PredictionRunSpec;
+  hasDatasetname(): boolean;
+  clearDatasetname(): PredictionRunSpec;
+
+  getModelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setModelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionRunSpec;
+  hasModelref(): boolean;
+  clearModelref(): PredictionRunSpec;
+
+  getTimeout(): number;
+  setTimeout(value: number): PredictionRunSpec;
+  hasTimeout(): boolean;
+  clearTimeout(): PredictionRunSpec;
+
+  getPause(): boolean;
+  setPause(value: boolean): PredictionRunSpec;
+  hasPause(): boolean;
+  clearPause(): PredictionRunSpec;
+
+  getAbort(): boolean;
+  setAbort(value: boolean): PredictionRunSpec;
+  hasAbort(): boolean;
+  clearAbort(): PredictionRunSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictionRunSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionRunSpec): PredictionRunSpec.AsObject;
+  static serializeBinaryToWriter(message: PredictionRunSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionRunSpec;
+  static deserializeBinaryFromReader(message: PredictionRunSpec, reader: jspb.BinaryReader): PredictionRunSpec;
+}
+
+export namespace PredictionRunSpec {
+  export type AsObject = {
+    owner?: string,
+    datasetname?: string,
+    modelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    timeout?: number,
+    pause?: boolean,
+    abort?: boolean,
+  }
+}
+
+export class PredictionRunStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): PredictionRunStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): PredictionRunStatus;
+
+  getManifestlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setManifestlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): PredictionRunStatus;
+  hasManifestlocation(): boolean;
+  clearManifestlocation(): PredictionRunStatus;
+
+  getManifestversion(): number;
+  setManifestversion(value: number): PredictionRunStatus;
+  hasManifestversion(): boolean;
+  clearManifestversion(): PredictionRunStatus;
+
+  getRunversion(): number;
+  setRunversion(value: number): PredictionRunStatus;
+  hasRunversion(): boolean;
+  clearRunversion(): PredictionRunStatus;
+
+  getRows(): number;
+  setRows(value: number): PredictionRunStatus;
+  hasRows(): boolean;
+  clearRows(): PredictionRunStatus;
+
+  getPhase(): string;
+  setPhase(value: string): PredictionRunStatus;
+  hasPhase(): boolean;
+  clearPhase(): PredictionRunStatus;
+
+  getUnittestresults(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
+  setUnittestresults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): PredictionRunStatus;
+  hasUnittestresults(): boolean;
+  clearUnittestresults(): PredictionRunStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): PredictionRunStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): PredictionRunStatus;
+
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): PredictionRunStatus;
+  hasLogs(): boolean;
+  clearLogs(): PredictionRunStatus;
+
+  getForecast(): ForecastStatus | undefined;
+  setForecast(value?: ForecastStatus): PredictionRunStatus;
+  hasForecast(): boolean;
+  clearForecast(): PredictionRunStatus;
+
+  getUsage(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption | undefined;
+  setUsage(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption): PredictionRunStatus;
+  hasUsage(): boolean;
+  clearUsage(): PredictionRunStatus;
+
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionRunStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): PredictionRunStatus;
+
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionRunStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): PredictionRunStatus;
+
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): PredictionRunStatus;
+  clearConditionsList(): PredictionRunStatus;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictionRunStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionRunStatus): PredictionRunStatus.AsObject;
+  static serializeBinaryToWriter(message: PredictionRunStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionRunStatus;
+  static deserializeBinaryFromReader(message: PredictionRunStatus, reader: jspb.BinaryReader): PredictionRunStatus;
+}
+
+export namespace PredictionRunStatus {
+  export type AsObject = {
+    observedgeneration?: number,
+    manifestlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    manifestversion?: number,
+    runversion?: number,
+    rows?: number,
+    phase?: string,
+    unittestresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
+    failuremessage?: string,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
+    forecast?: ForecastStatus.AsObject,
+    usage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
+  }
+}
+
+export class PredictionSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): PredictionSpec;
   hasOwner(): boolean;
   clearOwner(): PredictionSpec;
 
-  getInput(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec | undefined;
-  setInput(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec): PredictionSpec;
-  hasInput(): boolean;
-  clearInput(): PredictionSpec;
+  getDescription(): string;
+  setDescription(value: string): PredictionSpec;
+  hasDescription(): boolean;
+  clearDescription(): PredictionSpec;
 
-  getOutput(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec | undefined;
-  setOutput(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec): PredictionSpec;
-  hasOutput(): boolean;
-  clearOutput(): PredictionSpec;
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSpec | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSpec): PredictionSpec;
+  hasRun(): boolean;
+  clearRun(): PredictionSpec;
+
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): PredictionSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): PredictionSpec;
 
   getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionSpec;
@@ -1082,10 +1256,20 @@ export class PredictionSpec extends jspb.Message {
   hasModelref(): boolean;
   clearModelref(): PredictionSpec;
 
-  getCreatedataset(): boolean;
-  setCreatedataset(value: boolean): PredictionSpec;
-  hasCreatedataset(): boolean;
-  clearCreatedataset(): PredictionSpec;
+  getStudyrunref(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference | undefined;
+  setStudyrunref(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference): PredictionSpec;
+  hasStudyrunref(): boolean;
+  clearStudyrunref(): PredictionSpec;
+
+  getInput(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec | undefined;
+  setInput(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec): PredictionSpec;
+  hasInput(): boolean;
+  clearInput(): PredictionSpec;
+
+  getOutput(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec | undefined;
+  setOutput(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec): PredictionSpec;
+  hasOutput(): boolean;
+  clearOutput(): PredictionSpec;
 
   getLabeled(): boolean;
   setLabeled(value: boolean): PredictionSpec;
@@ -1102,30 +1286,10 @@ export class PredictionSpec extends jspb.Message {
   hasResources(): boolean;
   clearResources(): PredictionSpec;
 
-  getActivedeadlineseconds(): number;
-  setActivedeadlineseconds(value: number): PredictionSpec;
-  hasActivedeadlineseconds(): boolean;
-  clearActivedeadlineseconds(): PredictionSpec;
-
-  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CronSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CronSchedule): PredictionSpec;
-  hasSchedule(): boolean;
-  clearSchedule(): PredictionSpec;
-
-  getAbort(): boolean;
-  setAbort(value: boolean): PredictionSpec;
-  hasAbort(): boolean;
-  clearAbort(): PredictionSpec;
-
-  getForecastspec(): ForecastPredictionSpec | undefined;
-  setForecastspec(value?: ForecastPredictionSpec): PredictionSpec;
-  hasForecastspec(): boolean;
-  clearForecastspec(): PredictionSpec;
-
-  getPartitionlocation(): PartitionPredictionLocationsSpec | undefined;
-  setPartitionlocation(value?: PartitionPredictionLocationsSpec): PredictionSpec;
-  hasPartitionlocation(): boolean;
-  clearPartitionlocation(): PredictionSpec;
+  getForecast(): ForecastPredictionSpec | undefined;
+  setForecast(value?: ForecastPredictionSpec): PredictionSpec;
+  hasForecast(): boolean;
+  clearForecast(): PredictionSpec;
 
   getModelclassname(): string;
   setModelclassname(value: string): PredictionSpec;
@@ -1142,85 +1306,68 @@ export class PredictionSpec extends jspb.Message {
 
 export namespace PredictionSpec {
   export type AsObject = {
-    versionname?: string,
     owner?: string,
-    input?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.AsObject,
-    output?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
+    description?: string,
+    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSpec.AsObject,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     modelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    createdataset?: boolean,
+    studyrunref?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.AsObject,
+    input?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.AsObject,
+    output?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
     labeled?: boolean,
     unittests?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelTestSuite.AsObject,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    activedeadlineseconds?: number,
-    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CronSchedule.AsObject,
-    abort?: boolean,
-    forecastspec?: ForecastPredictionSpec.AsObject,
-    partitionlocation?: PartitionPredictionLocationsSpec.AsObject,
+    forecast?: ForecastPredictionSpec.AsObject,
     modelclassname?: string,
   }
 }
 
 export class PredictionStatus extends jspb.Message {
-  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionStatus;
-  hasCompletedat(): boolean;
-  clearCompletedat(): PredictionStatus;
-
-  getPhase(): string;
-  setPhase(value: string): PredictionStatus;
-  hasPhase(): boolean;
-  clearPhase(): PredictionStatus;
-
-  getUnittestsresult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult | undefined;
-  setUnittestsresult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult): PredictionStatus;
-  hasUnittestsresult(): boolean;
-  clearUnittestsresult(): PredictionStatus;
-
   getObservedgeneration(): number;
   setObservedgeneration(value: number): PredictionStatus;
   hasObservedgeneration(): boolean;
   clearObservedgeneration(): PredictionStatus;
 
-  getRows(): number;
-  setRows(value: number): PredictionStatus;
-  hasRows(): boolean;
-  clearRows(): PredictionStatus;
+  getActiveList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference>;
+  setActiveList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference>): PredictionStatus;
+  clearActiveList(): PredictionStatus;
+  addActive(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference;
 
-  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
-  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): PredictionStatus;
-  hasLogs(): boolean;
-  clearLogs(): PredictionStatus;
+  getVersion(): number;
+  setVersion(value: number): PredictionStatus;
+  hasVersion(): boolean;
+  clearVersion(): PredictionStatus;
 
-  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionStatus;
-  hasUpdatedat(): boolean;
-  clearUpdatedat(): PredictionStatus;
+  getLastrunversion(): number;
+  setLastrunversion(value: number): PredictionStatus;
+  hasLastrunversion(): boolean;
+  clearLastrunversion(): PredictionStatus;
+
+  getAvailablerunversionsList(): Array<number>;
+  setAvailablerunversionsList(value: Array<number>): PredictionStatus;
+  clearAvailablerunversionsList(): PredictionStatus;
+  addAvailablerunversions(value: number, index?: number): PredictionStatus;
+
+  getLastrunat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrunat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionStatus;
+  hasLastrunat(): boolean;
+  clearLastrunat(): PredictionStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): PredictionStatus;
   hasFailuremessage(): boolean;
   clearFailuremessage(): PredictionStatus;
 
-  getDatasetref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setDatasetref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionStatus;
-  hasDatasetref(): boolean;
-  clearDatasetref(): PredictionStatus;
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): PredictionStatus;
+  hasSchedule(): boolean;
+  clearSchedule(): PredictionStatus;
 
-  getForecast(): ForecastStatus | undefined;
-  setForecast(value?: ForecastStatus): PredictionStatus;
-  hasForecast(): boolean;
-  clearForecast(): PredictionStatus;
-
-  getUsage(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption | undefined;
-  setUsage(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption): PredictionStatus;
-  hasUsage(): boolean;
-  clearUsage(): PredictionStatus;
-
-  getRuns(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunStatusOld | undefined;
-  setRuns(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunStatusOld): PredictionStatus;
-  hasRuns(): boolean;
-  clearRuns(): PredictionStatus;
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): PredictionStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): PredictionStatus;
@@ -1237,18 +1384,15 @@ export class PredictionStatus extends jspb.Message {
 
 export namespace PredictionStatus {
   export type AsObject = {
-    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    phase?: string,
-    unittestsresult?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     observedgeneration?: number,
-    rows?: number,
-    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    activeList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject>,
+    version?: number,
+    lastrunversion?: number,
+    availablerunversionsList: Array<number>,
+    lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failuremessage?: string,
-    datasetref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    forecast?: ForecastStatus.AsObject,
-    usage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.AsObject,
-    runs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunStatusOld.AsObject,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }

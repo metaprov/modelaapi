@@ -1,6 +1,7 @@
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from google.api import annotations_pb2 as _annotations_pb2
-from github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1 import generated_pb2 as _generated_pb2
+from github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1 import generated_pb2 as _generated_pb2
+from github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1 import generated_pb2 as _generated_pb2_1
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -9,12 +10,12 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AbortPredictionRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+    __slots__ = ["namespace", "run"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
+    RUN_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+    run: _generated_pb2.PredictionRunReference
+    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2.PredictionRunReference, _Mapping]] = ...) -> None: ...
 
 class AbortPredictionResponse(_message.Message):
     __slots__ = []
@@ -23,8 +24,8 @@ class AbortPredictionResponse(_message.Message):
 class CreatePredictionRequest(_message.Message):
     __slots__ = ["prediction"]
     PREDICTION_FIELD_NUMBER: _ClassVar[int]
-    prediction: _generated_pb2.Prediction
-    def __init__(self, prediction: _Optional[_Union[_generated_pb2.Prediction, _Mapping]] = ...) -> None: ...
+    prediction: _generated_pb2_1.Prediction
+    def __init__(self, prediction: _Optional[_Union[_generated_pb2_1.Prediction, _Mapping]] = ...) -> None: ...
 
 class CreatePredictionResponse(_message.Message):
     __slots__ = []
@@ -43,12 +44,12 @@ class DeletePredictionResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class DownloadPredictionRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+    __slots__ = ["namespace", "run"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
+    RUN_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+    run: _generated_pb2.PredictionRunReference
+    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2.PredictionRunReference, _Mapping]] = ...) -> None: ...
 
 class DownloadPredictionResponse(_message.Message):
     __slots__ = ["raw"]
@@ -68,9 +69,9 @@ class GetPredictionResponse(_message.Message):
     __slots__ = ["prediction", "yaml"]
     PREDICTION_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
-    prediction: _generated_pb2.Prediction
+    prediction: _generated_pb2_1.Prediction
     yaml: str
-    def __init__(self, prediction: _Optional[_Union[_generated_pb2.Prediction, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
+    def __init__(self, prediction: _Optional[_Union[_generated_pb2_1.Prediction, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class ListPredictionsRequest(_message.Message):
     __slots__ = ["labels", "namespace", "order_by", "page_size", "page_token"]
@@ -98,16 +99,16 @@ class ListPredictionsResponse(_message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     PREDICTIONS_FIELD_NUMBER: _ClassVar[int]
     next_page_token: str
-    predictions: _generated_pb2.PredictionList
-    def __init__(self, predictions: _Optional[_Union[_generated_pb2.PredictionList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
+    predictions: _generated_pb2_1.PredictionList
+    def __init__(self, predictions: _Optional[_Union[_generated_pb2_1.PredictionList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class UpdatePredictionRequest(_message.Message):
     __slots__ = ["field_mask", "prediction"]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
     PREDICTION_FIELD_NUMBER: _ClassVar[int]
     field_mask: _field_mask_pb2.FieldMask
-    prediction: _generated_pb2.Prediction
-    def __init__(self, prediction: _Optional[_Union[_generated_pb2.Prediction, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+    prediction: _generated_pb2_1.Prediction
+    def __init__(self, prediction: _Optional[_Union[_generated_pb2_1.Prediction, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdatePredictionResponse(_message.Message):
     __slots__ = []

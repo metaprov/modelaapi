@@ -6,7 +6,9 @@ from github.com.metaprov.modelaapi.services.prediction.v1 import prediction_pb2 
 
 
 class PredictionServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """///// Prediction Service ///////
+
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -39,20 +41,22 @@ class PredictionServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.DeletePredictionRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.DeletePredictionResponse.FromString,
                 )
-        self.Download = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/Download',
+        self.DownloadPrediction = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/DownloadPrediction',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.DownloadPredictionRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.DownloadPredictionResponse.FromString,
                 )
-        self.Abort = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/Abort',
+        self.AbortPrediction = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/AbortPrediction',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.AbortPredictionRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.AbortPredictionResponse.FromString,
                 )
 
 
 class PredictionServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """///// Prediction Service ///////
+
+    """
 
     def ListPredictions(self, request, context):
         """Missing associated documentation comment in .proto file."""
@@ -84,13 +88,13 @@ class PredictionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Download(self, request, context):
+    def DownloadPrediction(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Abort(self, request, context):
+    def AbortPrediction(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -124,13 +128,13 @@ def add_PredictionServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.DeletePredictionRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.DeletePredictionResponse.SerializeToString,
             ),
-            'Download': grpc.unary_unary_rpc_method_handler(
-                    servicer.Download,
+            'DownloadPrediction': grpc.unary_unary_rpc_method_handler(
+                    servicer.DownloadPrediction,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.DownloadPredictionRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.DownloadPredictionResponse.SerializeToString,
             ),
-            'Abort': grpc.unary_unary_rpc_method_handler(
-                    servicer.Abort,
+            'AbortPrediction': grpc.unary_unary_rpc_method_handler(
+                    servicer.AbortPrediction,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.AbortPredictionRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.AbortPredictionResponse.SerializeToString,
             ),
@@ -142,7 +146,9 @@ def add_PredictionServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class PredictionService(object):
-    """Missing associated documentation comment in .proto file."""
+    """///// Prediction Service ///////
+
+    """
 
     @staticmethod
     def ListPredictions(request,
@@ -230,7 +236,7 @@ class PredictionService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Download(request,
+    def DownloadPrediction(request,
             target,
             options=(),
             channel_credentials=None,
@@ -240,14 +246,14 @@ class PredictionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/Download',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/DownloadPrediction',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.DownloadPredictionRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.DownloadPredictionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Abort(request,
+    def AbortPrediction(request,
             target,
             options=(),
             channel_credentials=None,
@@ -257,7 +263,7 @@ class PredictionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/Abort',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/AbortPrediction',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.AbortPredictionRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.AbortPredictionResponse.FromString,
             options, channel_credentials,

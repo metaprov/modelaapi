@@ -591,6 +591,14 @@ class PermissionsSpec(_message.Message):
     accounts: _containers.RepeatedCompositeFieldContainer[AccountPermissions]
     def __init__(self, accounts: _Optional[_Iterable[_Union[AccountPermissions, _Mapping]]] = ...) -> None: ...
 
+class PredictionRunReference(_message.Message):
+    __slots__ = ["prediction", "version"]
+    PREDICTION_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    prediction: str
+    version: int
+    def __init__(self, prediction: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+
 class PretrainedModel(_message.Message):
     __slots__ = ["metadata", "spec"]
     METADATA_FIELD_NUMBER: _ClassVar[int]

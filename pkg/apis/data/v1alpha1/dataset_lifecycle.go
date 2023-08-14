@@ -91,20 +91,6 @@ func ParseDatasetYaml(content []byte) (*Dataset, error) {
 	return r, nil
 }
 
-/////// Saved Condition ///////
-
-func (dataset *Dataset) Saved() bool {
-	return dataset.GetCondition(DatasetSaved).Status == metav1.ConditionTrue
-}
-
-func (dataset *Dataset) MarkSaved() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
-		Type:   string(DatasetSaved),
-		Status: metav1.ConditionTrue,
-		Reason: string(DatasetSaved),
-	})
-}
-
 func (dataset *Dataset) Deleted() bool {
 	return !dataset.ObjectMeta.DeletionTimestamp.IsZero()
 }
@@ -116,6 +102,30 @@ func (dataset *Dataset) IsGroup() bool {
 func (dataset *Dataset) IsFeatureGroup() bool {
 	return dataset.Spec.Role == DatasetRoleFeatureGroup
 }
+
+/////// Saved Condition ///////
+
+func (dataset *Dataset) Saved() bool {
+	return dataset.GetCondition(DatasetSaved).Status == metav1.ConditionTrue
+}
+
+func (dataset *Dataset) MarkNotSaved() {
+	dataset.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(DatasetSaved),
+		Status: metav1.ConditionFalse,
+		Reason: string(catalog.NotSaved),
+	})
+}
+
+func (dataset *Dataset) MarkSaved() {
+	dataset.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(DatasetSaved),
+		Status: metav1.ConditionTrue,
+		Reason: string(DatasetSaved),
+	})
+}
+
+/////// Reconciler Methods ///////
 
 func (dataset *Dataset) GetStatus() proto.Message {
 	return &dataset.Status

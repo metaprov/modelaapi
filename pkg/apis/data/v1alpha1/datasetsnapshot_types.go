@@ -150,17 +150,17 @@ type DatasetSnapshotStatus struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Progress int32 `json:"progress,omitempty" protobuf:"varint,15,opt,name=progress"`
-	// Logs contains the location of all logs produced by run workloads
+	// Logs contains the location of all logs produced by snapshot workloads
 	Logs catalog.Logs `json:"logs" protobuf:"bytes,16,opt,name=logs"`
 	// +kubebuilder:validation:Optional
 	Hash string `json:"hash,omitempty" protobuf:"bytes,17,opt,name=hash"`
-	// UpdatedAt specifies the last time the run was updated
+	// UpdatedAt specifies the last time the snapshot was updated
 	//+kubebuilder:validation:Optional
 	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,18,opt,name=updatedAt"`
-	// CompletedAt specifies the time at which the run completed or failed
+	// CompletedAt specifies the time at which the snapshot completed or failed
 	// +kubebuilder:validation:Optional
 	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,19,opt,name=completedAt"`
-	// LastStudyAt specifies the last time the run was used to create a Study
+	// LastStudyAt specifies the last time the snapshot was used to create a Study
 	//+kubebuilder:validation:Optional
 	LastStudyAt *metav1.Time `json:"lastStudyAt,omitempty" protobuf:"bytes,20,opt,name=lastStudyAt"`
 	// Images contains the container images used by the run

@@ -1996,7 +1996,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileRequest.pro
 proto.github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    run: (f = msg.getRun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.toObject(includeInstance, f),
+    run: (f = msg.getRun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.toObject(includeInstance, f),
     models: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
@@ -2039,8 +2039,8 @@ proto.github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileRequest.des
       msg.setNamespace(value);
       break;
     case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.deserializeBinaryFromReader);
       msg.setRun(value);
       break;
     case 3:
@@ -2088,7 +2088,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileRequest.ser
     writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.serializeBinaryToWriter
     );
   }
   f = message.getModels();
@@ -2120,17 +2120,17 @@ proto.github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileRequest.pro
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference run = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference run = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference}
  */
 proto.github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileRequest.prototype.getRun = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference, 2));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference, 2));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileRequest.prototype.setRun = function(value) {
@@ -2418,7 +2418,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.AbortStudyRequest.prototyp
 proto.github.com.metaprov.modelaapi.services.study.v1.AbortStudyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    run: (f = msg.getRun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.toObject(includeInstance, f)
+    run: (f = msg.getRun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2460,8 +2460,8 @@ proto.github.com.metaprov.modelaapi.services.study.v1.AbortStudyRequest.deserial
       msg.setNamespace(value);
       break;
     case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.deserializeBinaryFromReader);
       msg.setRun(value);
       break;
     default:
@@ -2505,7 +2505,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.AbortStudyRequest.serializ
     writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.serializeBinaryToWriter
     );
   }
 };
@@ -2530,17 +2530,17 @@ proto.github.com.metaprov.modelaapi.services.study.v1.AbortStudyRequest.prototyp
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference run = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference run = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference}
  */
 proto.github.com.metaprov.modelaapi.services.study.v1.AbortStudyRequest.prototype.getRun = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference, 2));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference, 2));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.study.v1.AbortStudyRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.study.v1.AbortStudyRequest.prototype.setRun = function(value) {
@@ -2700,7 +2700,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.PauseStudyRequest.prototyp
 proto.github.com.metaprov.modelaapi.services.study.v1.PauseStudyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    run: (f = msg.getRun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.toObject(includeInstance, f)
+    run: (f = msg.getRun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2742,8 +2742,8 @@ proto.github.com.metaprov.modelaapi.services.study.v1.PauseStudyRequest.deserial
       msg.setNamespace(value);
       break;
     case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.deserializeBinaryFromReader);
       msg.setRun(value);
       break;
     default:
@@ -2787,7 +2787,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.PauseStudyRequest.serializ
     writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.serializeBinaryToWriter
     );
   }
 };
@@ -2812,17 +2812,17 @@ proto.github.com.metaprov.modelaapi.services.study.v1.PauseStudyRequest.prototyp
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference run = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference run = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference}
  */
 proto.github.com.metaprov.modelaapi.services.study.v1.PauseStudyRequest.prototype.getRun = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference, 2));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference, 2));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.study.v1.PauseStudyRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.study.v1.PauseStudyRequest.prototype.setRun = function(value) {
@@ -2982,7 +2982,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.ResumeStudyRequest.prototy
 proto.github.com.metaprov.modelaapi.services.study.v1.ResumeStudyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    run: (f = msg.getRun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.toObject(includeInstance, f)
+    run: (f = msg.getRun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3024,8 +3024,8 @@ proto.github.com.metaprov.modelaapi.services.study.v1.ResumeStudyRequest.deseria
       msg.setNamespace(value);
       break;
     case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.deserializeBinaryFromReader);
       msg.setRun(value);
       break;
     default:
@@ -3069,7 +3069,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.ResumeStudyRequest.seriali
     writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.serializeBinaryToWriter
     );
   }
 };
@@ -3094,17 +3094,17 @@ proto.github.com.metaprov.modelaapi.services.study.v1.ResumeStudyRequest.prototy
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference run = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference run = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference}
  */
 proto.github.com.metaprov.modelaapi.services.study.v1.ResumeStudyRequest.prototype.getRun = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference, 2));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference, 2));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.study.v1.ResumeStudyRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.study.v1.ResumeStudyRequest.prototype.setRun = function(value) {
@@ -3264,7 +3264,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.CompleteStudySearchRequest
 proto.github.com.metaprov.modelaapi.services.study.v1.CompleteStudySearchRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    run: (f = msg.getRun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.toObject(includeInstance, f)
+    run: (f = msg.getRun()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3306,8 +3306,8 @@ proto.github.com.metaprov.modelaapi.services.study.v1.CompleteStudySearchRequest
       msg.setNamespace(value);
       break;
     case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.deserializeBinaryFromReader);
       msg.setRun(value);
       break;
     default:
@@ -3351,7 +3351,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.CompleteStudySearchRequest
     writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.serializeBinaryToWriter
     );
   }
 };
@@ -3376,17 +3376,17 @@ proto.github.com.metaprov.modelaapi.services.study.v1.CompleteStudySearchRequest
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference run = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference run = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference}
  */
 proto.github.com.metaprov.modelaapi.services.study.v1.CompleteStudySearchRequest.prototype.getRun = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference, 2));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference, 2));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.study.v1.CompleteStudySearchRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.study.v1.CompleteStudySearchRequest.prototype.setRun = function(value) {

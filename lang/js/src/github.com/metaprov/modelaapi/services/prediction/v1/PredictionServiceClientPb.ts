@@ -254,8 +254,8 @@ export class PredictionServiceClient {
     this.methodDescriptorDeletePrediction);
   }
 
-  methodDescriptorDownload = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/Download',
+  methodDescriptorDownloadPrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/DownloadPrediction',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.DownloadPredictionRequest,
     github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.DownloadPredictionResponse,
@@ -265,17 +265,17 @@ export class PredictionServiceClient {
     github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.DownloadPredictionResponse.deserializeBinary
   );
 
-  download(
+  downloadPrediction(
     request: github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.DownloadPredictionRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.DownloadPredictionResponse>;
 
-  download(
+  downloadPrediction(
     request: github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.DownloadPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.DownloadPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.DownloadPredictionResponse>;
 
-  download(
+  downloadPrediction(
     request: github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.DownloadPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
@@ -283,22 +283,22 @@ export class PredictionServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/Download',
+          '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/DownloadPrediction',
         request,
         metadata || {},
-        this.methodDescriptorDownload,
+        this.methodDescriptorDownloadPrediction,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/Download',
+      '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/DownloadPrediction',
     request,
     metadata || {},
-    this.methodDescriptorDownload);
+    this.methodDescriptorDownloadPrediction);
   }
 
-  methodDescriptorAbort = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/Abort',
+  methodDescriptorAbortPrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/AbortPrediction',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.AbortPredictionRequest,
     github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.AbortPredictionResponse,
@@ -308,17 +308,17 @@ export class PredictionServiceClient {
     github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.AbortPredictionResponse.deserializeBinary
   );
 
-  abort(
+  abortPrediction(
     request: github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.AbortPredictionRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.AbortPredictionResponse>;
 
-  abort(
+  abortPrediction(
     request: github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.AbortPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.AbortPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.AbortPredictionResponse>;
 
-  abort(
+  abortPrediction(
     request: github_com_metaprov_modelaapi_services_prediction_v1_prediction_pb.AbortPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
@@ -326,18 +326,18 @@ export class PredictionServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/Abort',
+          '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/AbortPrediction',
         request,
         metadata || {},
-        this.methodDescriptorAbort,
+        this.methodDescriptorAbortPrediction,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/Abort',
+      '/github.com.metaprov.modelaapi.services.prediction.v1.PredictionService/AbortPrediction',
     request,
     metadata || {},
-    this.methodDescriptorAbort);
+    this.methodDescriptorAbortPrediction);
   }
 
 }
