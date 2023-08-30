@@ -40,13 +40,13 @@ func TestModelConditions(t *testing.T) {
 		Status: v1.ConditionUnknown,
 	}
 
-	idx := model.GetCondIdx(ModelTrained)
+	idx := model.GetConditionIndex(ModelTrained)
 	util.Assert(t, idx == -1, "not found")
 
-	model.CreateOrUpdateCond(cond)
+	model.CreateOrUpdateCondition(cond)
 	util.Assert(t, len(model.Status.Conditions) == 1, "expect 1 conditions")
 
-	after := model.GetCond(ModelTrained)
+	after := model.GetCondition(ModelTrained)
 	util.Assert(t, !after.LastTransitionTime.IsZero(), "expect valid time")
 
 	// do an update

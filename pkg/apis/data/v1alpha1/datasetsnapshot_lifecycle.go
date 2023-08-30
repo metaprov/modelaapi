@@ -19,7 +19,6 @@ import (
 	"k8s.io/client-go/kubernetes/scheme"
 	"path"
 	ctrl "sigs.k8s.io/controller-runtime"
-	"strconv"
 )
 
 func (dataset *DatasetSnapshot) SetupWebhookWithManager(mgr ctrl.Manager) error {
@@ -130,7 +129,7 @@ func (dataset *DatasetSnapshot) ExternalStatusUpdated() bool {
 }
 
 func (dataset *DatasetSnapshot) RootURI() string {
-	return fmt.Sprintf("dataproducts/%s/datasets/%s/snapshots/versions/%s", dataset.Namespace, dataset.Name, strconv.Itoa(int(dataset.Status.SnapshotVersion)))
+	return fmt.Sprintf("dataproducts/%s/datasets/%s/datasetsnapshots/%s", dataset.Namespace, dataset.Spec.DatasetName, dataset.Name)
 }
 
 func (dataset *DatasetSnapshot) ReportURI() string {

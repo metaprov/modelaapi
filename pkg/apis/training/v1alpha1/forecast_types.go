@@ -157,9 +157,6 @@ type ForecasterSpec struct {
 	// Make a forecast post training
 	// +kubebuilder:validation:Optional
 	Coverage *float64 `json:"coverage,omitempty" protobuf:"bytes,6,opt,name=coverage"`
-	// The data location that would store the forecast result.
-	// +kubebuilder:validation:Optional
-	OutputLocation catalog.DataLocation `json:"outputLocation,omitempty" protobuf:"bytes,7,opt,name=outputLocation"`
 	// List of time series features to compute on each time series.
 	// +kubebuilder:validation:Optional
 	Features []catalog.Metric `json:"features,omitempty" protobuf:"bytes,8,rep,name=features"`
@@ -200,8 +197,6 @@ type ForecasterSpec struct {
 	// The estimators to try. By default, we try graykit / auto arima and prophet.
 	// +kubebuilder:validation:Optional
 	Estimators []catalog.ClassicEstimatorName `json:"estimators,omitempty" protobuf:"bytes,22,rep,name=estimators"`
-	// Group recocile.
-	// By default this is the bottom-up
 	// +kubebuilder:default:="bottom-up"
 	// +kubebuilder:validation:Optional
 	HTS *catalog.HTS `json:"hts,omitempty" protobuf:"bytes,23,opt,name=hts"`

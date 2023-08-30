@@ -14,16 +14,13 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/validation/field"
-	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
 
 func (model *Model) Default() {
-
 	if model.Spec.Owner == nil {
 		model.Spec.Owner = util.StrPtr("")
 	}
-	// Objective
 
 	if model.Spec.Training.Priority == nil {
 		p := catalog.PriorityLevelMedium
@@ -64,17 +61,9 @@ func (model *Model) Default() {
 
 }
 
-// validation
 var _ webhook.Validator = &Model{}
 
-// Set up the webhook with the manager.
-func (model *Model) SetupWebhookWithManager(mgr ctrl.Manager) error {
-	return ctrl.NewWebhookManagedBy(mgr).
-		For(model).
-		Complete()
-}
-
-func (model Model) ValidateDelete() error {
+func (model *Model) ValidateDelete() error {
 	return model.validateDelete()
 }
 
@@ -83,16 +72,16 @@ func (model Model) ValidateDelete() error {
 //==============================================================================
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (model Model) ValidateCreate() error {
+func (model *Model) ValidateCreate() error {
 	return model.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (model Model) ValidateUpdate(old runtime.Object) error {
+func (model *Model) ValidateUpdate(old runtime.Object) error {
 	return model.validate()
 }
 
-func (model Model) validate() error {
+func (model *Model) validate() error {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, model.validateMeta(field.NewPath("metadata"))...)
 	allErrs = append(allErrs, model.validateSpec(field.NewPath("spec"))...)
@@ -105,13 +94,13 @@ func (model Model) validate() error {
 		model.Name, allErrs)
 }
 
-func (model Model) validateMeta(fldPath *field.Path) field.ErrorList {
+func (model *Model) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, model.validateName(fldPath.Child("name"))...)
 	return allErrs
 }
 
-func (model Model) validateName(fldPath *field.Path) field.ErrorList {
+func (model *Model) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	err := common.ValidateResourceName(model.Name)
 	if err != nil {
@@ -120,12 +109,12 @@ func (model Model) validateName(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (model Model) validateSpec(fldPath *field.Path) field.ErrorList {
+func (model *Model) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	return allErrs
 }
 
-func (model Model) validateDelete() error {
+func (model *Model) validateDelete() error {
 	var allErrors field.ErrorList
 
 	path := field.NewPath("")

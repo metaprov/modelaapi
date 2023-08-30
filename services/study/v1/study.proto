@@ -87,7 +87,9 @@ message PauseStudyRequest {
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference run = 2;
 }
 
-message PauseStudyResponse {}
+message PauseStudyResponse {
+    int32 version = 1;
+}
 
 /////// Resume Study ///////
 
@@ -105,7 +107,9 @@ message CompleteStudySearchRequest {
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference run = 2;
 }
 
-message CompleteStudySearchResponse {}
+message CompleteStudySearchResponse {
+    int32 version = 1;
+}
 
 /////// Study Service ///////
 

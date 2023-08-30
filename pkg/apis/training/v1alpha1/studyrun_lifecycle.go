@@ -93,7 +93,7 @@ func (studyrun *StudyRun) Transformed() bool {
 }
 
 func (studyrun *StudyRun) Baselined() bool {
-	return studyrun.GetCondition(StudyRunBaselined).Reason == ReasonFailed
+	return studyrun.GetCondition(StudyRunBaselined).Reason == catalog.ReasonFailed
 }
 
 func (studyrun *StudyRun) Searched() bool {
@@ -563,7 +563,7 @@ func (studyrun *StudyRun) MarkReporting() {
 	studyrun.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(StudyRunReported),
 		Status: metav1.ConditionFalse,
-		Reason: ReasonReporting,
+		Reason: string(StudyRunPhaseReporting),
 	})
 	studyrun.Status.Phase = StudyRunPhaseReporting
 
@@ -620,7 +620,7 @@ func (studyrun *StudyRun) MarkAbortFailed(err string) {
 	studyrun.CreateOrUpdateCondition(metav1.Condition{
 		Type:    string(StudyRunAborted),
 		Status:  metav1.ConditionFalse,
-		Reason:  ReasonFailed,
+		Reason:  catalog.ReasonFailed,
 		Message: err,
 	})
 	studyrun.Status.Phase = StudyRunPhaseFailed
@@ -685,6 +685,24 @@ func (studyrun *StudyRun) MarkPauseFailed(reason string, err string) {
 	studyrun.RefreshProgress()
 	now := metav1.Now()
 	studyrun.Status.CompletedAt = &now
+}
+
+/////// External Status Updated Condition ///////
+
+func (studyrun *StudyRun) MarkExternalStatusNotUpdated() {
+	studyrun.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(StudyRunExternalStatusUpdated),
+		Status: metav1.ConditionFalse,
+		Reason: "ExternalStatusStale",
+	})
+}
+
+func (studyrun *StudyRun) MarkExternalStatusUpdated() {
+	studyrun.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(StudyRunExternalStatusUpdated),
+		Status: metav1.ConditionTrue,
+		Reason: string(StudyRunExternalStatusUpdated),
+	})
 }
 
 func (studyrun *StudyRun) CreateReport(bucketName string) *Report {

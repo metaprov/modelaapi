@@ -42,20 +42,21 @@ const (
 type StudyRunCondition string
 
 const (
-	StudyRunPrepared        StudyRunCondition = "Prepared"
-	StudyRunSplit           StudyRunCondition = "Split"
-	StudyRunTransformed     StudyRunCondition = "Transformed"
-	StudyRunBaselined       StudyRunCondition = "Baselined"
-	StudyRunSearched        StudyRunCondition = "Searched"
-	StudyRunEnsembleCreated StudyRunCondition = "EnsembleCreated"
-	StudyRunTested          StudyRunCondition = "Tested"
-	StudyRunReported        StudyRunCondition = "Reported"
-	StudyRunProfiled        StudyRunCondition = "Profiled"
-	StudyRunAborted         StudyRunCondition = "Aborted"
-	StudyRunPaused          StudyRunCondition = "Paused"
-	StudyRunCompleted       StudyRunCondition = "Completed"
-	StudyRunPartitioned     StudyRunCondition = "Partitioned"
-	StudyRunModelPromoted   StudyRunCondition = "ModelPromoted"
+	StudyRunPrepared              StudyRunCondition = "Prepared"
+	StudyRunSplit                 StudyRunCondition = "Split"
+	StudyRunTransformed           StudyRunCondition = "Transformed"
+	StudyRunBaselined             StudyRunCondition = "Baselined"
+	StudyRunSearched              StudyRunCondition = "Searched"
+	StudyRunEnsembleCreated       StudyRunCondition = "EnsembleCreated"
+	StudyRunTested                StudyRunCondition = "Tested"
+	StudyRunReported              StudyRunCondition = "Reported"
+	StudyRunProfiled              StudyRunCondition = "Profiled"
+	StudyRunAborted               StudyRunCondition = "Aborted"
+	StudyRunPaused                StudyRunCondition = "Paused"
+	StudyRunCompleted             StudyRunCondition = "Completed"
+	StudyRunPartitioned           StudyRunCondition = "Partitioned"
+	StudyRunModelPromoted         StudyRunCondition = "ModelPromoted"
+	StudyRunExternalStatusUpdated StudyRunCondition = "ExternalStatusUpdated"
 )
 
 // +kubebuilder:subresource:status
