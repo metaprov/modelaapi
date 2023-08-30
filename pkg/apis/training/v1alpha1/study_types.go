@@ -237,18 +237,15 @@ type DataSplitSpec struct {
 	// +kubebuilder:validation:Optional
 	SplitColumn *string `json:"splitColumn,omitempty" protobuf:"bytes,5,opt,name=splitColumn"`
 	// The reference to the dataset snapshot which will be used as the training dataset
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	TrainSnapshot *catalog.SnapshotReference `json:"trainSnapshot,omitempty" protobuf:"bytes,7,rep,name=trainSnapshot"`
 	// The name of the Dataset resource which will be used as the testing dataset
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	TestSnapshot *catalog.SnapshotReference `json:"testSnapshot,omitempty" protobuf:"bytes,8,rep,name=testSnapshot"`
 	// The name of the Dataset resource which will be used as the validation dataset, applicable
 	// if the split type uses test-dataset. If enabled, the training dataset will not be split and used as-is
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ValidationDatasetName *string `json:"validationDataset,omitempty" protobuf:"bytes,9,rep,name=validationDataset"`
+	ValidationSnapshot *string `json:"validationSnapshot,omitempty" protobuf:"bytes,9,rep,name=validationSnapshot"`
 }
 
 // SearchSpec specifies the configuration for a distributed model search

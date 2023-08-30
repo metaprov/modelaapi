@@ -309,8 +309,8 @@ func (in *DataSplitSpec) DeepCopyInto(out *DataSplitSpec) {
 		*out = new(catalogv1alpha1.SnapshotReference)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.ValidationDatasetName != nil {
-		in, out := &in.ValidationDatasetName, &out.ValidationDatasetName
+	if in.ValidationSnapshot != nil {
+		in, out := &in.ValidationSnapshot, &out.ValidationSnapshot
 		*out = new(string)
 		**out = **in
 	}

@@ -2387,13 +2387,16 @@ spec:
                       description: RunReference defines a generic reference to any
                         type of run
                       properties:
-                        dataset:
+                        name:
                           description: Name specifies the name of the resource
                           type: string
                         version:
                           description: Version specifies the version of the run
                           format: int32
                           type: integer
+                      required:
+                      - name
+                      - version
                       type: object
                     type: array
                   lastScheduleTime:
@@ -2422,13 +2425,16 @@ spec:
                       description: RunReference defines a generic reference to any
                         type of run
                       properties:
-                        dataset:
+                        name:
                           description: Name specifies the name of the resource
                           type: string
                         version:
                           description: Version specifies the version of the run
                           format: int32
                           type: integer
+                      required:
+                      - name
+                      - version
                       type: object
                     type: array
                   lastScheduleTime:
@@ -2463,13 +2469,16 @@ spec:
                       description: RunReference defines a generic reference to any
                         type of run
                       properties:
-                        dataset:
+                        name:
                           description: Name specifies the name of the resource
                           type: string
                         version:
                           description: Version specifies the version of the run
                           format: int32
                           type: integer
+                      required:
+                      - name
+                      - version
                       type: object
                     type: array
                   lastScheduleTime:
@@ -2503,13 +2512,16 @@ spec:
                       description: RunReference defines a generic reference to any
                         type of run
                       properties:
-                        dataset:
+                        name:
                           description: Name specifies the name of the resource
                           type: string
                         version:
                           description: Version specifies the version of the run
                           format: int32
                           type: integer
+                      required:
+                      - name
+                      - version
                       type: object
                     type: array
                   lastScheduleTime:

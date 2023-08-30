@@ -360,10 +360,10 @@ export class DataSplitSpec extends jspb.Message {
   hasTestsnapshot(): boolean;
   clearTestsnapshot(): DataSplitSpec;
 
-  getValidationdataset(): string;
-  setValidationdataset(value: string): DataSplitSpec;
-  hasValidationdataset(): boolean;
-  clearValidationdataset(): DataSplitSpec;
+  getValidationsnapshot(): string;
+  setValidationsnapshot(value: string): DataSplitSpec;
+  hasValidationsnapshot(): boolean;
+  clearValidationsnapshot(): DataSplitSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataSplitSpec.AsObject;
@@ -382,7 +382,7 @@ export namespace DataSplitSpec {
     splitcolumn?: string,
     trainsnapshot?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject,
     testsnapshot?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject,
-    validationdataset?: string,
+    validationsnapshot?: string,
   }
 }
 

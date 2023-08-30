@@ -1505,9 +1505,9 @@ func (runs *RunSchedule) SetNext(nextRun metav1.Time) {}
 // RunReference defines a generic reference to any type of run
 type RunReference struct {
 	// Name specifies the name of the resource
-	Name string `json:"dataset,omitempty" protobuf:"bytes,1,opt,name=name"`
+	Name string `json:"name" protobuf:"bytes,1,opt,name=name"`
 	// Version specifies the version of the run
-	Version Version `json:"version,omitempty" protobuf:"varint,2,opt,name=version"`
+	Version Version `json:"version" protobuf:"varint,2,opt,name=version"`
 }
 
 // SnapshotReference defines a reference to a specific snapshot for a Dataset
@@ -1535,6 +1535,13 @@ type PredictionRunReference struct {
 }
 
 type Version uint32
+
+func (v *Version) Value() Version {
+	if v == nil {
+		return 0
+	}
+	return *v
+}
 
 type VersionList []Version
 

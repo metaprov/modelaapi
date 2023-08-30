@@ -110,14 +110,14 @@ class DataHashes(_message.Message):
     def __init__(self, trainHash: _Optional[str] = ..., testingHash: _Optional[str] = ..., validationHash: _Optional[str] = ...) -> None: ...
 
 class DataSplitSpec(_message.Message):
-    __slots__ = ["method", "splitColumn", "test", "testSnapshot", "train", "trainSnapshot", "validation", "validationDataset"]
+    __slots__ = ["method", "splitColumn", "test", "testSnapshot", "train", "trainSnapshot", "validation", "validationSnapshot"]
     METHOD_FIELD_NUMBER: _ClassVar[int]
     SPLITCOLUMN_FIELD_NUMBER: _ClassVar[int]
     TESTSNAPSHOT_FIELD_NUMBER: _ClassVar[int]
     TEST_FIELD_NUMBER: _ClassVar[int]
     TRAINSNAPSHOT_FIELD_NUMBER: _ClassVar[int]
     TRAIN_FIELD_NUMBER: _ClassVar[int]
-    VALIDATIONDATASET_FIELD_NUMBER: _ClassVar[int]
+    VALIDATIONSNAPSHOT_FIELD_NUMBER: _ClassVar[int]
     VALIDATION_FIELD_NUMBER: _ClassVar[int]
     method: str
     splitColumn: str
@@ -126,8 +126,8 @@ class DataSplitSpec(_message.Message):
     train: int
     trainSnapshot: _generated_pb2.SnapshotReference
     validation: int
-    validationDataset: str
-    def __init__(self, method: _Optional[str] = ..., train: _Optional[int] = ..., validation: _Optional[int] = ..., test: _Optional[int] = ..., splitColumn: _Optional[str] = ..., trainSnapshot: _Optional[_Union[_generated_pb2.SnapshotReference, _Mapping]] = ..., testSnapshot: _Optional[_Union[_generated_pb2.SnapshotReference, _Mapping]] = ..., validationDataset: _Optional[str] = ...) -> None: ...
+    validationSnapshot: str
+    def __init__(self, method: _Optional[str] = ..., train: _Optional[int] = ..., validation: _Optional[int] = ..., test: _Optional[int] = ..., splitColumn: _Optional[str] = ..., trainSnapshot: _Optional[_Union[_generated_pb2.SnapshotReference, _Mapping]] = ..., testSnapshot: _Optional[_Union[_generated_pb2.SnapshotReference, _Mapping]] = ..., validationSnapshot: _Optional[str] = ...) -> None: ...
 
 class DeepEstimatorLayer(_message.Message):
     __slots__ = ["inputLayers", "name", "parameters", "type"]

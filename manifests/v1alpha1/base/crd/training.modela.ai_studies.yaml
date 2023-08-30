@@ -1741,7 +1741,6 @@ spec:
                     minimum: 0
                     type: integer
                   testSnapshot:
-                    default: ""
                     description: The name of the Dataset resource which will be used
                       as the testing dataset
                     properties:
@@ -1765,7 +1764,6 @@ spec:
                     minimum: 1
                     type: integer
                   trainSnapshot:
-                    default: ""
                     description: The reference to the dataset snapshot which will
                       be used as the training dataset
                     properties:
@@ -1789,8 +1787,7 @@ spec:
                     maximum: 50
                     minimum: 0
                     type: integer
-                  validationDataset:
-                    default: ""
+                  validationSnapshot:
                     description: The name of the Dataset resource which will be used
                       as the validation dataset, applicable if the split type uses
                       test-dataset. If enabled, the training dataset will not be split
@@ -2414,13 +2411,16 @@ spec:
                   description: RunReference defines a generic reference to any type
                     of run
                   properties:
-                    dataset:
+                    name:
                       description: Name specifies the name of the resource
                       type: string
                     version:
                       description: Version specifies the version of the run
                       format: int32
                       type: integer
+                  required:
+                  - name
+                  - version
                   type: object
                 type: array
               availableRunVersions:
@@ -2529,13 +2529,16 @@ spec:
                       description: RunReference defines a generic reference to any
                         type of run
                       properties:
-                        dataset:
+                        name:
                           description: Name specifies the name of the resource
                           type: string
                         version:
                           description: Version specifies the version of the run
                           format: int32
                           type: integer
+                      required:
+                      - name
+                      - version
                       type: object
                     type: array
                   lastScheduleTime:

@@ -23,7 +23,7 @@ const (
 	DatasetSnapshotPhaseProfileRunning  DatasetSnapshotPhase = "Profiling"
 	DatasetSnapshotPhaseProfileSuccess  DatasetSnapshotPhase = "Profiled"
 	DatasetSnapshotPhaseUnitTesting     DatasetSnapshotPhase = "UnitTesting"
-	DatasetSnapshotPhaseSnapshotRunning DatasetSnapshotPhase = "Taking Snapshot"
+	DatasetSnapshotPhaseSnapshotRunning DatasetSnapshotPhase = "TakingSnapshot"
 	DatasetSnapshotPhaseSnapshotSuccess DatasetSnapshotPhase = "Snapshotted"
 	DatasetSnapshotPhaseFailed          DatasetSnapshotPhase = "Failed"
 	DatasetSnapshotPhaseAborted         DatasetSnapshotPhase = "Aborted"
@@ -113,7 +113,7 @@ type DatasetSnapshotStatus struct {
 	// ManifestVersion specifies the version of the saved dataset manifest
 	ManifestVersion catalog.Version `json:"manifestVersion,omitempty" protobuf:"varint,3,opt,name=manifestVersion"`
 	// SnapshotVersion specifies the version of the snapshot, which is determined when the Dataset manifest is saved
-	SnapshotVersion catalog.Version `json:"snapshotVersion,omitempty" protobuf:"varint,4,opt,name=snapshotVersion"`
+	SnapshotVersion catalog.Version `json:"snapshotVersion" protobuf:"varint,4,opt,name=snapshotVersion"`
 	// DatasetStatistics contains statistics for each column of the dataset generated during the dataset profile
 	// +kubebuilder:validation:Optional
 	Statistics DatasetStatistics `json:"statistics,omitempty" protobuf:"bytes,5,opt,name=statistics"`

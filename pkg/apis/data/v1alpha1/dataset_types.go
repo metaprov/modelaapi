@@ -30,7 +30,7 @@ const (
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".status.version"
-// +kubebuilder:printcolumn:name="Data Source",type="string",JSONPath=".spec.datasourceName"
+// +kubebuilder:printcolumn:name="Data Source",type="string",JSONPath=".spec.dataSourceName"
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:printcolumn:name="Last Snapshot",type="date",JSONPath=".status.lastSnapshotAt",description=""
@@ -166,7 +166,7 @@ type DatasetStatus struct {
 	Version catalog.Version `json:"version,omitempty" protobuf:"varint,3,opt,name=version"`
 	// LastSnapshotVersion contains the integer version last used to create a snapshot
 	// +kubebuilder:default:=0
-	LastSnapshotVersion catalog.Version `json:"lastSnapshotVersion,omitempty" protobuf:"varint,4,opt,name=lastSnapshotVersion"`
+	LastSnapshotVersion catalog.Version `json:"lastSnapshotVersion" protobuf:"varint,4,opt,name=lastSnapshotVersion"`
 	// AvailableSnapshotVersions contains the collection of snapshot versions which are ready for use.
 	// Each version corresponds with an existing DatasetSnapshot resource
 	AvailableSnapshotVersions catalog.VersionList `json:"availableSnapshotVersions,omitempty" protobuf:"bytes,5,opt,name=availableSnapshotVersions"`

@@ -43,6 +43,8 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 		&PredictorList{},
 		&Prediction{},
 		&PredictionList{},
+		&PredictionRun{},
+		&PredictionRunList{},
 		&DataApp{},
 		&DataAppList{},
 	)

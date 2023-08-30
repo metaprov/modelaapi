@@ -1218,7 +1218,7 @@ message DataSourceStatus {
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".status.version"
-// +kubebuilder:printcolumn:name="Data Source",type="string",JSONPath=".spec.datasourceName"
+// +kubebuilder:printcolumn:name="Data Source",type="string",JSONPath=".spec.dataSourceName"
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:printcolumn:name="Last Snapshot",type="date",JSONPath=".status.lastSnapshotAt",description=""

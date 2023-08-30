@@ -72,6 +72,7 @@ protoc \
          k8s.io/apimachinery/pkg/runtime/generated.proto \
          github.com/gogo/protobuf/gogoproto/gogo.proto \
          github.com/metaprov/modelaapi/services/common/v1/common.proto \
+         github.com/metaprov/modelaapi/services/grpc/health/v1/health.proto \
          github.com/metaprov/modelaapi/services/account/v1/account.proto \
          github.com/metaprov/modelaapi/services/userroleclass/v1/userroleclass.proto \
          github.com/metaprov/modelaapi/services/alert/v1/alert.proto \
@@ -90,6 +91,7 @@ protoc \
          github.com/metaprov/modelaapi/services/dataproduct/v1/dataproduct.proto \
          github.com/metaprov/modelaapi/services/dataproductversion/v1/dataproductversion.proto \
          github.com/metaprov/modelaapi/services/dataset/v1/dataset.proto \
+         github.com/metaprov/modelaapi/services/datasetsnapshot/v1/datasetsnapshot.proto \
          github.com/metaprov/modelaapi/services/datasource/v1/datasource.proto \
          github.com/metaprov/modelaapi/services/dataapp/v1/dataapp.proto \
          github.com/metaprov/modelaapi/services/entity/v1/entity.proto \
@@ -109,6 +111,7 @@ protoc \
          github.com/metaprov/modelaapi/services/review/v1/review.proto \
          github.com/metaprov/modelaapi/services/runbook/v1/runbook.proto \
          github.com/metaprov/modelaapi/services/prediction/v1/prediction.proto \
+         github.com/metaprov/modelaapi/services/predictionrun/v1/predictionrun.proto \
          github.com/metaprov/modelaapi/services/predictionstore/v1/predictionstore.proto \
          github.com/metaprov/modelaapi/services/grpcinferenceservice/v1/grpcinferenceservice.proto \
          github.com/metaprov/modelaapi/services/predictor/v1/predictor.proto \
@@ -118,7 +121,9 @@ protoc \
          github.com/metaprov/modelaapi/services/report/v1/report.proto \
          github.com/metaprov/modelaapi/services/servingsite/v1/servingsite.proto \
          github.com/metaprov/modelaapi/services/study/v1/study.proto \
+         github.com/metaprov/modelaapi/services/studyrun/v1/studyrun.proto \
          github.com/metaprov/modelaapi/services/tenant/v1/tenant.proto \
          github.com/metaprov/modelaapi/services/trainerd/v1/trainerd.proto \
          github.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket.proto \
+         github.com/metaprov/modelaapi/services/watcherd/v1/watcherd.proto \
 

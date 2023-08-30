@@ -75,7 +75,7 @@ func NewModel(
 	result.ObjectMeta.Namespace = ns
 
 	result.Default()
-	result.Spec.StudyName = study
+	result.Spec.StudyRunName = study
 	result.Spec.Task = task
 	result.ObjectMeta.Labels = map[string]string{
 		"study":      study,
@@ -165,7 +165,7 @@ func (model Model) RootURI() string {
 	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s",
 		model.Namespace,
 		model.Spec.Version,
-		model.Spec.StudyName,
+		model.Spec.StudyRunName,
 		model.Name)
 }
 
@@ -1165,12 +1165,12 @@ func (model Model) IsArchived() bool {
 	return cond.Status == metav1.ConditionTrue
 }
 
-func (model *Model) InitModelFromStudy(study *Study) {
+func (model *Model) InitModelFromStudy(run *StudyRun, study *Study) {
 	model.Namespace = study.Namespace
 	model.Spec.Training = *study.Spec.TrainingTemplate.DeepCopy()
-	model.Spec.StudyName = study.Name
+	model.Spec.StudyRunName = study.Name
 	model.Spec.ModelClassName = study.Spec.ModelClassName
-	model.Spec.ModelClassRunName = study.Spec.ModelClassRunName
+	model.Spec.ModelClassRunName = run.Spec.ModelClassRunName
 	model.Spec.ArtifactBucketName = study.Spec.ArtifactBucketName
 	model.Spec.Task = study.Spec.Task
 	model.Spec.Forecasting = study.Spec.ForecastTemplate.DeepCopy()
@@ -1180,13 +1180,13 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	model.ObjectMeta.Labels[catalog.StudyLabelKey] = study.Name
 	model.Spec.Training.LabRef = study.Spec.LabRef
 	model.Spec.Fast = study.Spec.Fast
-	model.Spec.Version = study.Spec.ModelVersion
-	model.Status.TrainDatasetLocation = study.Status.TrainDatasetLocation
-	model.Status.TestDatasetLocation = study.Status.TestDatasetLocation
-	model.Status.ValidationDatasetLocation = study.Status.ValidationDatasetLocation
-	model.Status.TrainingDataHash.TestingHash = study.Status.TrainingDataHash.TestingHash
-	model.Status.TrainingDataHash.TrainingHash = study.Status.TrainingDataHash.TrainingHash
-	model.Status.TrainingDataHash.ValidationHash = study.Status.TrainingDataHash.TrainingHash
+	// model.Spec.Version = study.Spec.ModelVersion
+	model.Status.TrainDatasetLocation = run.Status.TrainDatasetLocation
+	model.Status.TestDatasetLocation = run.Status.TestDatasetLocation
+	model.Status.ValidationDatasetLocation = run.Status.ValidationDatasetLocation
+	model.Status.TrainingDataHash.TestingHash = run.Status.TrainingDataHash.TestingHash
+	model.Status.TrainingDataHash.TrainingHash = run.Status.TrainingDataHash.TrainingHash
+	model.Status.TrainingDataHash.ValidationHash = run.Status.TrainingDataHash.TrainingHash
 
 }
 
@@ -1248,7 +1248,8 @@ func (model Model) CompletionAlert(notification catalog.NotificationSpec) *infra
 			Notification: notification,
 			Owner:        model.Spec.Owner,
 			Fields: map[string]string{
-				"Study":      model.Spec.StudyName,
+				"Study":      "TODO",
+				"Study Run":  model.Spec.StudyRunName,
 				"Task":       string(model.Spec.Task),
 				"Objective":  string(model.Spec.Objective.Metric),
 				"Algorithm":  model.Spec.Estimator.AlgorithmName,
@@ -1285,7 +1286,8 @@ func (model Model) ErrorAlert(notification catalog.NotificationSpec, err error) 
 			Owner:        model.Spec.Owner,
 			Fields: map[string]string{
 				"Entity":     model.Status.DatasetName,
-				"Study":      model.Spec.StudyName,
+				"Study":      "TODO",
+				"Study Run":  model.Spec.StudyRunName,
 				"Task":       string(model.Spec.Task),
 				"Objective":  string(model.Spec.Objective.Metric),
 				"Algorithm":  model.Spec.Estimator.AlgorithmName,

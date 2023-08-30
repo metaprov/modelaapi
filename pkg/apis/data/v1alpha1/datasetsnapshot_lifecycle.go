@@ -130,8 +130,7 @@ func (dataset *DatasetSnapshot) ExternalStatusUpdated() bool {
 }
 
 func (dataset *DatasetSnapshot) RootURI() string {
-	return fmt.Sprintf("dataproducts/%s/datasets/%s/snapshots/%s",
-		dataset.Namespace, dataset.Name, strconv.Itoa(int(dataset.Status.SnapshotVersion)))
+	return fmt.Sprintf("dataproducts/%s/datasets/%s/snapshots/versions/%s", dataset.Namespace, dataset.Name, strconv.Itoa(int(dataset.Status.SnapshotVersion)))
 }
 
 func (dataset *DatasetSnapshot) ReportURI() string {
@@ -139,7 +138,7 @@ func (dataset *DatasetSnapshot) ReportURI() string {
 }
 
 func (dataset *DatasetSnapshot) ManifestURI() string {
-	return fmt.Sprintf("%s/manifest.json", dataset.RootURI(), dataset.Name)
+	return fmt.Sprintf("%s/manifest.json", dataset.RootURI())
 }
 
 func (dataset *DatasetSnapshot) ProfileURI() string {
@@ -222,6 +221,7 @@ func (dataset *DatasetSnapshot) MarkPrepareSuccess() {
 	dataset.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotPrepared),
 		Status: metav1.ConditionTrue,
+		Reason: string(DatasetSnapshotPhasePrepared),
 	})
 	dataset.Status.Phase = DatasetSnapshotPhasePrepared
 	dataset.RefreshProgress()
@@ -260,6 +260,7 @@ func (dataset *DatasetSnapshot) MarkSnapshotSuccess() {
 	dataset.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotSnapshotted),
 		Status: metav1.ConditionTrue,
+		Reason: string(DatasetSnapshotPhaseSnapshotSuccess),
 	})
 	dataset.Status.Phase = DatasetSnapshotPhaseSnapshotSuccess
 	dataset.RefreshProgress()
@@ -548,7 +549,7 @@ func (dataset *DatasetSnapshot) MarkExternalStatusNotUpdated() {
 func (dataset *DatasetSnapshot) MarkExternalStatusUpdated() {
 	dataset.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotExternalStatusUpdated),
-		Status: metav1.ConditionFalse,
+		Status: metav1.ConditionTrue,
 		Reason: string(DatasetSnapshotExternalStatusUpdated),
 	})
 }

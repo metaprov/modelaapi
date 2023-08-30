@@ -201,20 +201,17 @@ message DataSplitSpec {
   optional string splitColumn = 5;
 
   // The reference to the dataset snapshot which will be used as the training dataset
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference trainSnapshot = 7;
 
   // The name of the Dataset resource which will be used as the testing dataset
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference testSnapshot = 8;
 
   // The name of the Dataset resource which will be used as the validation dataset, applicable
   // if the split type uses test-dataset. If enabled, the training dataset will not be split and used as-is
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string validationDataset = 9;
+  optional string validationSnapshot = 9;
 }
 
 message DeepEstimatorLayer {
