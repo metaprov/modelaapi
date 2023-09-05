@@ -963,6 +963,8 @@ spec:
                   by Modela, which is incremented each time the object is changed
                 format: int32
                 type: integer
+            required:
+            - lastSnapshotVersion
             type: object
         required:
         - metadata

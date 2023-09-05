@@ -864,6 +864,7 @@ spec:
                 type: string
             required:
             - logs
+            - snapshotVersion
             type: object
         required:
         - metadata

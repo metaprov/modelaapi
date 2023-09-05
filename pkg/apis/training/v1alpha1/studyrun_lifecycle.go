@@ -80,6 +80,14 @@ func (studyrun *StudyRun) GetCondition(condition StudyRunCondition) metav1.Condi
 	}
 }
 
+func (studyrun *StudyRun) Prepared() bool {
+	return studyrun.GetCondition(StudyRunPrepared).Status == metav1.ConditionTrue
+}
+
+func (studyrun *StudyRun) ExternalStatusUpdated() bool {
+	return studyrun.GetCondition(StudyRunExternalStatusUpdated).Status == metav1.ConditionTrue
+}
+
 func (studyrun *StudyRun) Splitted() bool {
 	return studyrun.GetCondition(StudyRunSplit).Status == metav1.ConditionTrue
 }
@@ -141,8 +149,7 @@ func (studyrun *StudyRun) Phase() StudyRunPhase {
 }
 
 func (studyrun *StudyRun) RootURI() string {
-	return fmt.Sprintf("dataproducts/%s/studies/%s/runs/%s",
-		studyrun.Namespace, studyrun.Name, strconv.Itoa(int(studyrun.Status.RunVersion)))
+	return fmt.Sprintf("dataproducts/%s/studies/%s/studyruns/%s", studyrun.Namespace, studyrun.Name, strconv.Itoa(int(studyrun.Status.RunVersion)))
 }
 
 func (studyrun *StudyRun) ManifestURI() string {
@@ -235,6 +242,45 @@ func ParseStudyRunYaml(content []byte) (*StudyRun, error) {
 
 func (studyrun *StudyRun) ReportName() string {
 	return "studyrun-report-" + studyrun.ObjectMeta.Name
+}
+
+/////// Preparing Condition ///////
+
+func (studyrun *StudyRun) MarkPrepareFailed(reason string, msg string) {
+	studyrun.CreateOrUpdateCondition(metav1.Condition{
+		Type:    string(StudyRunPrepared),
+		Status:  metav1.ConditionFalse,
+		Reason:  reason,
+		Message: msg,
+	})
+	studyrun.Status.Phase = StudyRunPhaseFailed
+	studyrun.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Prepare failed: %s", msg))
+	studyrun.RefreshProgress()
+	now := metav1.Now()
+	if studyrun.Status.CompletedAt == nil {
+		studyrun.Status.CompletedAt = &now
+	}
+
+}
+
+func (studyrun *StudyRun) MarkPrepareSuccess() {
+	studyrun.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(StudyRunPrepared),
+		Status: metav1.ConditionTrue,
+		Reason: string(StudyRunPhasePrepared),
+	})
+	studyrun.Status.Phase = StudyRunPhasePrepared
+	studyrun.RefreshProgress()
+}
+
+func (studyrun *StudyRun) MarkPreparing() {
+	studyrun.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(StudyRunPrepared),
+		Status: metav1.ConditionFalse,
+		Reason: string(StudyRunPhasePreparing),
+	})
+	studyrun.Status.Phase = StudyRunPhasePreparing
+	studyrun.RefreshProgress()
 }
 
 /////// Split Condition ///////
@@ -817,6 +863,18 @@ func (studyrun *StudyRun) PromotionAlert(model Model) *infra.Alert {
 	}
 
 	return result
+}
+
+func (studyrun *StudyRun) ToRunReference() catalog.RunReference {
+	return catalog.RunReference{Name: studyrun.Name, Version: studyrun.Status.RunVersion}
+}
+
+func (studyrun *StudyRun) HasScheduleTrigger() bool {
+	trigger, ok := studyrun.Labels[catalog.TriggerLabelKey]
+	if ok {
+		return trigger == string(catalog.ScheduleTriggerType)
+	}
+	return false
 }
 
 /////// Reconciler Methods ///////

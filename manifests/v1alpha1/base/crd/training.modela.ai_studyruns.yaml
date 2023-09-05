@@ -100,7 +100,7 @@ spec:
                 type: integer
             type: object
           status:
-            description: StudyStatus defines the observed state of a Study
+            description: StudyRunStatus defines the observed state of a StudyRun
             properties:
               baseline:
                 description: BaselineStatus contains the status of the baseline phase

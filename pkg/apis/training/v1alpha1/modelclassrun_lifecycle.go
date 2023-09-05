@@ -73,11 +73,16 @@ func (run *ModelClassRun) RemoveFinalizer() { util.RemoveFin(&run.ObjectMeta, tr
 // PIpeline stage status
 //==============================================================================
 
+var (
+	ReasonCreatingTrainingDataset = "CreatingTrainingDataset"
+	ReasonWaitingForPromotion     = "WaitingForPromotion"
+)
+
 func (mclass *ModelClassRun) StartTrainingProcess() {
 	mclass.Status.Phase = ModelClassRunPhasePending
 }
 
-func (mclass *ModelClassRun) MarkCreatingTrainingDatasetSet(dataset string) {
+func (mclass *ModelClassRun) MarkCreatingTrainingDataset(dataset string) {
 	mclass.Status.Phase = ModelClassRunPhaseTraining
 	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassRunTrainingDatasetReady,
@@ -87,7 +92,6 @@ func (mclass *ModelClassRun) MarkCreatingTrainingDatasetSet(dataset string) {
 	mclass.Status.DatasetName = dataset
 }
 
-// when
 func (mclass *ModelClassRun) MarkCreatedTrainingSet() {
 	mclass.Status.Phase = ModelClassRunPhaseTraining
 	mclass.CreateOrUpdateCond(metav1.Condition{
@@ -97,12 +101,12 @@ func (mclass *ModelClassRun) MarkCreatedTrainingSet() {
 	})
 }
 
-func (mclass *ModelClassRun) MarkCreatingTrainingSetFailed(err string) {
+func (mclass *ModelClassRun) MarkCreatingTrainingSetFailed(reason string, err string) {
 	mclass.Status.Phase = ModelClassRunPhaseFailed
 	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelClassRunTrainingDatasetReady,
 		Status:  metav1.ConditionFalse,
-		Reason:  ReasonFailedToCreateTrainingDataset,
+		Reason:  reason,
 		Message: err,
 	})
 	mclass.Status.FailureMessage = &err
@@ -116,7 +120,7 @@ func (mclass *ModelClassRun) MarkTraining(study string) {
 	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:   ModelClassRunModelTrained,
 		Status: metav1.ConditionFalse,
-		Reason: ReasonTraining,
+		Reason: string(ModelClassRunPhaseTraining),
 	})
 	mclass.Status.StudyName = study
 }
@@ -129,20 +133,14 @@ func (mclass *ModelClassRun) MarkModelTrained(model string) {
 		Reason: ModelClassRunModelTrained,
 	})
 	mclass.Status.ModelName = model
-	// If we do not promote, we can set the schedule to next cycle
-	//if mclass.Spec.Training.PromotionPolicy == catalog.NonePromotion {
-	//	nextRun := mclass.Spec.Training.TrainingSchedule.NextRun()
-	//	mclass.Status.TrainingScheduleStatus.End()
-	//	mclass.Status.TrainingScheduleStatus.SetNext(*nextRun)
-	//}
 }
 
-func (mclass *ModelClassRun) MarkTrainingFailed(err string) {
+func (mclass *ModelClassRun) MarkTrainingFailed(reason string, err string) {
 	mclass.Status.Phase = ModelClassRunPhaseFailed
 	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelClassRunModelTrained,
 		Status:  metav1.ConditionFalse,
-		Reason:  ReasonFailed,
+		Reason:  reason,
 		Message: err,
 	})
 }
@@ -188,12 +186,12 @@ func (mclass *ModelClassRun) MarkPromoted() {
 	})
 }
 
-func (mclass *ModelClassRun) MarkFailToPromote(err error) {
+func (mclass *ModelClassRun) MarkFailToPromote(reason string, err error) {
 	mclass.Status.Phase = ModelClassRunPhaseFailed
 	mclass.CreateOrUpdateCond(metav1.Condition{
 		Type:    ModelClassRunModelPromoted,
 		Status:  metav1.ConditionFalse,
-		Reason:  ReasonFailedToPromote,
+		Reason:  reason,
 		Message: err.Error(),
 	})
 }

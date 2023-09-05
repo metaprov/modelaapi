@@ -326,6 +326,9 @@ export namespace PauseStudyRequest {
 }
 
 export class PauseStudyResponse extends jspb.Message {
+  getVersion(): number;
+  setVersion(value: number): PauseStudyResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PauseStudyResponse.AsObject;
   static toObject(includeInstance: boolean, msg: PauseStudyResponse): PauseStudyResponse.AsObject;
@@ -336,6 +339,7 @@ export class PauseStudyResponse extends jspb.Message {
 
 export namespace PauseStudyResponse {
   export type AsObject = {
+    version: number,
   }
 }
 
@@ -402,6 +406,9 @@ export namespace CompleteStudySearchRequest {
 }
 
 export class CompleteStudySearchResponse extends jspb.Message {
+  getVersion(): number;
+  setVersion(value: number): CompleteStudySearchResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CompleteStudySearchResponse.AsObject;
   static toObject(includeInstance: boolean, msg: CompleteStudySearchResponse): CompleteStudySearchResponse.AsObject;
@@ -412,6 +419,7 @@ export class CompleteStudySearchResponse extends jspb.Message {
 
 export namespace CompleteStudySearchResponse {
   export type AsObject = {
+    version: number,
   }
 }
 

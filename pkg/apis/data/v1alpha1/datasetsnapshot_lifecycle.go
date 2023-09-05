@@ -213,7 +213,6 @@ func (dataset *DatasetSnapshot) MarkPrepareFailed(reason string, msg string) {
 	if dataset.Status.CompletedAt == nil {
 		dataset.Status.CompletedAt = &now
 	}
-
 }
 
 func (dataset *DatasetSnapshot) MarkPrepareSuccess() {
@@ -228,7 +227,7 @@ func (dataset *DatasetSnapshot) MarkPrepareSuccess() {
 
 func (dataset *DatasetSnapshot) MarkPreparing() {
 	dataset.CreateOrUpdateCondition(metav1.Condition{
-		Type:   string(DatasetSnapshotSnapshotted),
+		Type:   string(DatasetSnapshotPrepared),
 		Status: metav1.ConditionFalse,
 		Reason: string(DatasetSnapshotPhasePreparing),
 	})
@@ -841,6 +840,8 @@ func (dataset *DatasetSnapshot) HasScheduleTrigger() bool {
 	}
 	return false
 }
+
+/////// Reconciler Methods ///////
 
 func (dataset *DatasetSnapshot) GetStatus() proto.Message {
 	return &dataset.Status

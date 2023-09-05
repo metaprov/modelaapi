@@ -31,8 +31,10 @@ class CompleteStudySearchRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.StudyRunReference, _Mapping]] = ...) -> None: ...
 
 class CompleteStudySearchResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["version"]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    version: int
+    def __init__(self, version: _Optional[int] = ...) -> None: ...
 
 class CreateStudyRequest(_message.Message):
     __slots__ = ["study"]
@@ -122,8 +124,10 @@ class PauseStudyRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.StudyRunReference, _Mapping]] = ...) -> None: ...
 
 class PauseStudyResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+    __slots__ = ["version"]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    version: int
+    def __init__(self, version: _Optional[int] = ...) -> None: ...
 
 class ResumeStudyRequest(_message.Message):
     __slots__ = ["namespace", "run"]

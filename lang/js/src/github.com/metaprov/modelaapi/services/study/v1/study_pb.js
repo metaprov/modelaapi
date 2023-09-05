@@ -2880,7 +2880,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.PauseStudyResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.study.v1.PauseStudyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    version: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -2917,6 +2917,10 @@ proto.github.com.metaprov.modelaapi.services.study.v1.PauseStudyResponse.deseria
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setVersion(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2946,6 +2950,31 @@ proto.github.com.metaprov.modelaapi.services.study.v1.PauseStudyResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.study.v1.PauseStudyResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getVersion();
+  if (f !== 0) {
+    writer.writeInt32(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int32 version = 1;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.study.v1.PauseStudyResponse.prototype.getVersion = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.study.v1.PauseStudyResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.study.v1.PauseStudyResponse.prototype.setVersion = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -3444,7 +3473,7 @@ proto.github.com.metaprov.modelaapi.services.study.v1.CompleteStudySearchRespons
  */
 proto.github.com.metaprov.modelaapi.services.study.v1.CompleteStudySearchResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    version: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -3481,6 +3510,10 @@ proto.github.com.metaprov.modelaapi.services.study.v1.CompleteStudySearchRespons
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setVersion(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3510,6 +3543,31 @@ proto.github.com.metaprov.modelaapi.services.study.v1.CompleteStudySearchRespons
  */
 proto.github.com.metaprov.modelaapi.services.study.v1.CompleteStudySearchResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getVersion();
+  if (f !== 0) {
+    writer.writeInt32(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int32 version = 1;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.study.v1.CompleteStudySearchResponse.prototype.getVersion = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.study.v1.CompleteStudySearchResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.study.v1.CompleteStudySearchResponse.prototype.setVersion = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 

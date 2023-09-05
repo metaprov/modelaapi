@@ -9,7 +9,7 @@ import (
 type StudyRunPhase string
 
 const (
-	StudyRunPhaseModelPending      StudyRunPhase = "Pending"
+	StudyRunPhasePending           StudyRunPhase = "Pending"
 	StudyRunPhasePreparing         StudyRunPhase = "Preparing"
 	StudyRunPhasePrepared          StudyRunPhase = "Prepared"
 	StudyRunPhaseSplitting         StudyRunPhase = "Splitting"
@@ -24,8 +24,6 @@ const (
 	StudyRunPhaseCreatedEnsembles  StudyRunPhase = "CreatedEnsembles"
 	StudyRunPhaseTesting           StudyRunPhase = "Testing"
 	StudyRunPhaseTested            StudyRunPhase = "Tested"
-	StudyRunPhaseUnitTesting       StudyRunPhase = "UnitTesting"
-	StudyRunPhaseUnitTested        StudyRunPhase = "UnitTested"
 	StudyRunPhaseReported          StudyRunPhase = "Reported"
 	StudyRunPhaseReporting         StudyRunPhase = "Reporting"
 	StudyRunPhaseProfiling         StudyRunPhase = "Profiling"
@@ -109,7 +107,7 @@ type StudyRunSpec struct {
 	ModelClassRunName *string `json:"modelClassRunName,omitempty" protobuf:"bytes,6,opt,name=modelClassRunName"`
 }
 
-// StudyStatus defines the observed state of a Study
+// StudyRunStatus defines the observed state of a StudyRun
 type StudyRunStatus struct {
 	// ObservedGeneration is the last generation that was reconciled
 	//+kubebuilder:validation:Optional

@@ -856,49 +856,6 @@ export class DataServiceClient {
     this.methodDescriptorCreateSummaryReport);
   }
 
-  methodDescriptorAskFE = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskFE',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelResponse.deserializeBinary
-  );
-
-  askFE(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelResponse>;
-
-  askFE(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelResponse>;
-
-  askFE(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskFE',
-        request,
-        metadata || {},
-        this.methodDescriptorAskFE,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskFE',
-    request,
-    metadata || {},
-    this.methodDescriptorAskFE);
-  }
-
   methodDescriptorAskBaseline = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskBaseline',
     grpcWeb.MethodType.UNARY,
@@ -1069,49 +1026,6 @@ export class DataServiceClient {
     request,
     metadata || {},
     this.methodDescriptorAskModel);
-  }
-
-  methodDescriptorAskAllModelsForTask = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskAllModelsForTask',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskResponse.deserializeBinary
-  );
-
-  askAllModelsForTask(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskResponse>;
-
-  askAllModelsForTask(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskResponse>;
-
-  askAllModelsForTask(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskAllModelsForTask',
-        request,
-        metadata || {},
-        this.methodDescriptorAskAllModelsForTask,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskAllModelsForTask',
-    request,
-    metadata || {},
-    this.methodDescriptorAskAllModelsForTask);
   }
 
   methodDescriptorTellPartialModel = new grpcWeb.MethodDescriptor(

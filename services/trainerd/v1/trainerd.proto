@@ -22,12 +22,14 @@ service TrainerdService {
 
 message TrainRequest {
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
-  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 4;
-  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 5;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 6;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 7;
-  repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model baseModels = 8;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 2;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 3;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot    snapshot = 4;
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 5;
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 6;
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 7;
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRun       run = 8;
+  repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model baseModels = 9;
 }
 
 message TrainResponse {
@@ -47,11 +49,13 @@ message TrainResponse {
 
 message TestRequest {
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 2;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 3;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot    snapshot = 4;
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 5;
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 6;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 7;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRun       run = 7;
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 8;
   repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model baseModels = 9;
 }
 
@@ -70,23 +74,26 @@ message TestResponse {
 
 message TrainDriftDetectorRequest  {
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
-  // the spec for the base models
-  repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model base = 5;
-  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 6;
-  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 7;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 8;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 9;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 2;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 3;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot    snapshot = 4;
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 5;
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 6;
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRun       run = 7;
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 8;
+  repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model baseModels = 9;
 }
 
 
 message ForecastRequest {
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 2;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 3;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot    snapshot = 4;
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 5;
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 6;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 7;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRun       run = 7;
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 8;
 }
 
 message ForecastResponse {
@@ -98,11 +105,14 @@ message ShutdownResponse {}
 
 message ExplainRequest {
   github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
-  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 2;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 3;
+  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot    snapshot = 4;
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model          model = 5;
   github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study          study = 6;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource         datasource = 7;
-  github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
+  github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRun       run = 7;
+  github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 8;
+  repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model baseModels = 9;
 }
 
 message ExplainResponse {

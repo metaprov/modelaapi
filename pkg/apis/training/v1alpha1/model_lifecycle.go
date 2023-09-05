@@ -286,7 +286,8 @@ func (model *Model) IsTest() bool {
 /////// Location Functions ///////
 
 func (model *Model) RootURI() string {
-	return fmt.Sprintf("dataproducts/%s/studyruns/%s/models/%s", model.Namespace, model.Spec.StudyRunName, model.Name)
+	return fmt.Sprintf("dataproducts/%s/studies/%s/studyruns/%s/models/%s",
+		model.Namespace, model.Status.StudyName, model.Spec.StudyRunName, model.Name)
 }
 
 func (model *Model) ManifestURI() string {
@@ -857,6 +858,7 @@ func (model *Model) InitializeFromStudy(run *StudyRun, study *Study) {
 	model.Spec.Notification = study.Spec.Notification
 	model.ObjectMeta.Labels = study.ObjectMeta.Labels
 	model.ObjectMeta.Labels[catalog.StudyLabelKey] = study.Name
+	model.ObjectMeta.Labels[catalog.StudyRunLabelKey] = run.Name
 	model.Spec.Training.LabRef = study.Spec.LabRef
 	model.Spec.Fast = study.Spec.Fast
 	// model.Spec.Version = study.Spec.ModelVersion
@@ -866,7 +868,6 @@ func (model *Model) InitializeFromStudy(run *StudyRun, study *Study) {
 	model.Status.TrainingDataHash.TestingHash = run.Status.TrainingDataHash.TestingHash
 	model.Status.TrainingDataHash.TrainingHash = run.Status.TrainingDataHash.TrainingHash
 	model.Status.TrainingDataHash.ValidationHash = run.Status.TrainingDataHash.TrainingHash
-
 }
 
 func (model *Model) OpName() string {
