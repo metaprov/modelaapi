@@ -390,16 +390,15 @@ class PredictionRunSpec(_message.Message):
     def __init__(self, owner: _Optional[str] = ..., datasetName: _Optional[str] = ..., modelRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., timeout: _Optional[int] = ..., pause: bool = ..., abort: bool = ...) -> None: ...
 
 class PredictionRunStatus(_message.Message):
-    __slots__ = ["completedAt", "conditions", "failureMessage", "forecast", "logs", "manifestLocation", "manifestVersion", "observedGeneration", "phase", "rows", "runVersion", "unitTestResults", "updatedAt", "usage"]
+    __slots__ = ["completedAt", "conditions", "failureMessage", "forecast", "logs", "observedGeneration", "phase", "predictionManifestLocation", "rows", "runVersion", "unitTestResults", "updatedAt", "usage"]
     COMPLETEDAT_FIELD_NUMBER: _ClassVar[int]
     CONDITIONS_FIELD_NUMBER: _ClassVar[int]
     FAILUREMESSAGE_FIELD_NUMBER: _ClassVar[int]
     FORECAST_FIELD_NUMBER: _ClassVar[int]
     LOGS_FIELD_NUMBER: _ClassVar[int]
-    MANIFESTLOCATION_FIELD_NUMBER: _ClassVar[int]
-    MANIFESTVERSION_FIELD_NUMBER: _ClassVar[int]
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     PHASE_FIELD_NUMBER: _ClassVar[int]
+    PREDICTIONMANIFESTLOCATION_FIELD_NUMBER: _ClassVar[int]
     ROWS_FIELD_NUMBER: _ClassVar[int]
     RUNVERSION_FIELD_NUMBER: _ClassVar[int]
     UNITTESTRESULTS_FIELD_NUMBER: _ClassVar[int]
@@ -410,16 +409,15 @@ class PredictionRunStatus(_message.Message):
     failureMessage: str
     forecast: ForecastStatus
     logs: _generated_pb2.Logs
-    manifestLocation: _generated_pb2.FileLocation
-    manifestVersion: int
     observedGeneration: int
     phase: str
+    predictionManifestLocation: _generated_pb2.ManifestLocation
     rows: int
     runVersion: int
     unitTestResults: _generated_pb2.TestSuiteResult
     updatedAt: _generated_pb2_1_1_1_1.Time
     usage: _generated_pb2.ResourceConsumption
-    def __init__(self, observedGeneration: _Optional[int] = ..., manifestLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., manifestVersion: _Optional[int] = ..., runVersion: _Optional[int] = ..., rows: _Optional[int] = ..., phase: _Optional[str] = ..., unitTestResults: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., failureMessage: _Optional[str] = ..., logs: _Optional[_Union[_generated_pb2.Logs, _Mapping]] = ..., forecast: _Optional[_Union[ForecastStatus, _Mapping]] = ..., usage: _Optional[_Union[_generated_pb2.ResourceConsumption, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, observedGeneration: _Optional[int] = ..., predictionManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., runVersion: _Optional[int] = ..., rows: _Optional[int] = ..., phase: _Optional[str] = ..., unitTestResults: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., failureMessage: _Optional[str] = ..., logs: _Optional[_Union[_generated_pb2.Logs, _Mapping]] = ..., forecast: _Optional[_Union[ForecastStatus, _Mapping]] = ..., usage: _Optional[_Union[_generated_pb2.ResourceConsumption, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class PredictionSpec(_message.Message):
     __slots__ = ["description", "forecast", "input", "labeled", "modelClassName", "modelRef", "output", "owner", "resources", "run", "schedule", "servingSiteRef", "studyRunRef", "unitTests"]

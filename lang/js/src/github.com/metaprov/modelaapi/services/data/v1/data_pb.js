@@ -15636,7 +15636,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.AskForecastModelResponse.pr
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleRequest.repeatedFields_ = [7,8];
+proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleRequest.repeatedFields_ = [7];
 
 
 
@@ -15676,9 +15676,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleRequest.toObject
     study: (f = msg.getStudy()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
     run: (f = msg.getRun()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyRun.toObject(includeInstance, f),
     modelsList: jspb.Message.toObjectList(msg.getModelsList(),
-    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject, includeInstance),
-    algorithmsList: jspb.Message.toObjectList(msg.getAlgorithmsList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.toObject, includeInstance)
+    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -15749,11 +15747,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleRequest.deserial
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.deserializeBinaryFromReader);
       msg.addModels(value);
-      break;
-    case 8:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.deserializeBinaryFromReader);
-      msg.addAlgorithms(value);
       break;
     default:
       reader.skipField();
@@ -15838,14 +15831,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleRequest.serializ
       7,
       f,
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.serializeBinaryToWriter
-    );
-  }
-  f = message.getAlgorithmsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      8,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.serializeBinaryToWriter
     );
   }
 };
@@ -16108,44 +16093,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleRequest.prototyp
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleRequest.prototype.clearModelsList = function() {
   return this.setModelsList([]);
-};
-
-
-/**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm algorithms = 8;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm>}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleRequest.prototype.getAlgorithmsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm, 8));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm>} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleRequest.prototype.setAlgorithmsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 8, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleRequest.prototype.addAlgorithms = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleRequest.prototype.clearAlgorithmsList = function() {
-  return this.setAlgorithmsList([]);
 };
 
 

@@ -360,11 +360,6 @@ export class DataSplitSpec extends jspb.Message {
   hasTestsnapshot(): boolean;
   clearTestsnapshot(): DataSplitSpec;
 
-  getValidationsnapshot(): string;
-  setValidationsnapshot(value: string): DataSplitSpec;
-  hasValidationsnapshot(): boolean;
-  clearValidationsnapshot(): DataSplitSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataSplitSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataSplitSpec): DataSplitSpec.AsObject;
@@ -382,7 +377,6 @@ export namespace DataSplitSpec {
     splitcolumn?: string,
     trainsnapshot?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject,
     testsnapshot?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject,
-    validationsnapshot?: string,
   }
 }
 
@@ -4156,15 +4150,10 @@ export class StudyRunStatus extends jspb.Message {
   hasObservedgeneration(): boolean;
   clearObservedgeneration(): StudyRunStatus;
 
-  getManifestlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setManifestlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): StudyRunStatus;
-  hasManifestlocation(): boolean;
-  clearManifestlocation(): StudyRunStatus;
-
-  getManifestversion(): number;
-  setManifestversion(value: number): StudyRunStatus;
-  hasManifestversion(): boolean;
-  clearManifestversion(): StudyRunStatus;
+  getStudymanifestlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation | undefined;
+  setStudymanifestlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation): StudyRunStatus;
+  hasStudymanifestlocation(): boolean;
+  clearStudymanifestlocation(): StudyRunStatus;
 
   getRunversion(): number;
   setRunversion(value: number): StudyRunStatus;
@@ -4322,8 +4311,7 @@ export class StudyRunStatus extends jspb.Message {
 export namespace StudyRunStatus {
   export type AsObject = {
     observedgeneration?: number,
-    manifestlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
-    manifestversion?: number,
+    studymanifestlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation.AsObject,
     runversion?: number,
     phase?: string,
     trainingrowscount?: number,

@@ -480,6 +480,16 @@ class ManagedImageSpec(_message.Message):
     uri: str
     def __init__(self, description: _Optional[str] = ..., registry: _Optional[str] = ..., repository: _Optional[str] = ..., tag: _Optional[str] = ..., env: _Optional[_Iterable[_Union[_generated_pb2.EnvVar, _Mapping]]] = ..., gpu: bool = ..., active: bool = ..., preload: bool = ..., connectionRef: _Optional[_Union[_generated_pb2.ObjectReference, _Mapping]] = ..., base: _Optional[str] = ..., role: _Optional[str] = ..., mantainedBy: _Optional[str] = ..., uri: _Optional[str] = ..., frameworks: _Optional[_Iterable[str]] = ..., libs: _Optional[_Iterable[_Union[Lib, _Mapping]]] = ..., os: _Optional[str] = ..., osVersion: _Optional[str] = ..., private: bool = ...) -> None: ...
 
+class ManifestLocation(_message.Message):
+    __slots__ = ["bucketName", "path", "version"]
+    BUCKETNAME_FIELD_NUMBER: _ClassVar[int]
+    PATH_FIELD_NUMBER: _ClassVar[int]
+    VERSION_FIELD_NUMBER: _ClassVar[int]
+    bucketName: str
+    path: str
+    version: int
+    def __init__(self, bucketName: _Optional[str] = ..., path: _Optional[str] = ..., version: _Optional[int] = ...) -> None: ...
+
 class Measurement(_message.Message):
     __slots__ = ["algorithm", "boolQty", "category", "column", "entity", "metric", "stddev", "taskType", "timePoint", "value", "valueSet"]
     ALGORITHM_FIELD_NUMBER: _ClassVar[int]

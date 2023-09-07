@@ -112,10 +112,8 @@ type StudyRunStatus struct {
 	// ObservedGeneration is the last generation that was reconciled
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
-	// ManifestLocation specifies the location of the Study manifest used during the course of the snapshot
-	ManifestLocation catalog.FileLocation `json:"manifestLocation,omitempty" protobuf:"bytes,2,opt,name=manifestLocation"`
-	// ManifestVersion specifies the version of the saved Study manifest
-	ManifestVersion catalog.Version `json:"manifestVersion,omitempty" protobuf:"varint,3,opt,name=manifestVersion"`
+	// StudyManifestLocation specifies the location of the Study manifest used during the course of the run
+	StudyManifestLocation catalog.ManifestLocation `json:"studyManifestLocation,omitempty" protobuf:"bytes,2,opt,name=studyManifestLocation"`
 	// RunVersion specifies the version of the run, which is determined when the Study manifest is saved
 	RunVersion catalog.Version `json:"runVersion,omitempty" protobuf:"varint,4,opt,name=runVersion"`
 	// The phase of the Study

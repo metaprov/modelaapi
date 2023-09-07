@@ -1719,7 +1719,7 @@ spec:
                 type: string
               forecastLocation:
                 description: FileLocation denotes the location of a flat-file, which
-                  is the name of a VirtualBucket and the path within it
+                  is the name of a Virtual Bucket and the path within it
                 properties:
                   bucketName:
                     type: string
@@ -1728,7 +1728,7 @@ spec:
                 type: object
               fullWeightsLocation:
                 description: FileLocation denotes the location of a flat-file, which
-                  is the name of a VirtualBucket and the path within it
+                  is the name of a Virtual Bucket and the path within it
                 properties:
                   bucketName:
                     type: string
@@ -1856,7 +1856,7 @@ spec:
                 type: object
               labelEncoderLocation:
                 description: FileLocation denotes the location of a flat-file, which
-                  is the name of a VirtualBucket and the path within it
+                  is the name of a Virtual Bucket and the path within it
                 properties:
                   bucketName:
                     type: string
@@ -2179,7 +2179,7 @@ spec:
                 type: number
               testWeightsLocation:
                 description: FileLocation denotes the location of a flat-file, which
-                  is the name of a VirtualBucket and the path within it
+                  is the name of a Virtual Bucket and the path within it
                 properties:
                   bucketName:
                     type: string
@@ -2349,7 +2349,7 @@ spec:
                 type: object
               trainWeightsLocation:
                 description: FileLocation denotes the location of a flat-file, which
-                  is the name of a VirtualBucket and the path within it
+                  is the name of a Virtual Bucket and the path within it
                 properties:
                   bucketName:
                     type: string

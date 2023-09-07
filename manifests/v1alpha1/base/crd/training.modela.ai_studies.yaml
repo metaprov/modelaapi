@@ -1632,12 +1632,6 @@ spec:
                     maximum: 50
                     minimum: 0
                     type: integer
-                  validationSnapshot:
-                    description: The name of the Dataset resource which will be used
-                      as the validation dataset, applicable if the split type uses
-                      test-dataset. If enabled, the training dataset will not be split
-                      and used as-is
-                    type: string
                 type: object
               subtask:
                 default: none

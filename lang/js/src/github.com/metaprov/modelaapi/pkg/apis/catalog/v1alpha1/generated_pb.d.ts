@@ -1489,6 +1489,38 @@ export namespace ManagedImageSpec {
   }
 }
 
+export class ManifestLocation extends jspb.Message {
+  getBucketname(): string;
+  setBucketname(value: string): ManifestLocation;
+  hasBucketname(): boolean;
+  clearBucketname(): ManifestLocation;
+
+  getPath(): string;
+  setPath(value: string): ManifestLocation;
+  hasPath(): boolean;
+  clearPath(): ManifestLocation;
+
+  getVersion(): number;
+  setVersion(value: number): ManifestLocation;
+  hasVersion(): boolean;
+  clearVersion(): ManifestLocation;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ManifestLocation.AsObject;
+  static toObject(includeInstance: boolean, msg: ManifestLocation): ManifestLocation.AsObject;
+  static serializeBinaryToWriter(message: ManifestLocation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ManifestLocation;
+  static deserializeBinaryFromReader(message: ManifestLocation, reader: jspb.BinaryReader): ManifestLocation;
+}
+
+export namespace ManifestLocation {
+  export type AsObject = {
+    bucketname?: string,
+    path?: string,
+    version?: number,
+  }
+}
+
 export class Measurement extends jspb.Message {
   getEntity(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setEntity(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): Measurement;

@@ -1152,7 +1152,7 @@ spec:
                 type: array
               failureMessage:
                 description: LastFailureMessage specifies the failure message of the
-                  last run. If the last snapshot succeeded, the field will be cleared
+                  last run. If the last run succeeded, the field will be cleared
                 type: string
               lastRunAt:
                 description: LastRunAt specifies the time at which a run was last

@@ -621,11 +621,8 @@ message PredictionRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // ManifestLocation specifies the location of the Prediction manifest used during the course of the run
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation manifestLocation = 2;
-
-  // ManifestVersion specifies the version of the saved Prediction manifest
-  optional uint32 manifestVersion = 3;
+  // PredictionManifestLocation specifies the location of the Prediction manifest used during the course of the run
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation predictionManifestLocation = 2;
 
   // RunVersion specifies the version of the snapshot, which is determined when the Prediction manifest is saved
   optional uint32 runVersion = 4;
@@ -764,7 +761,7 @@ message PredictionStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRunAt = 6;
 
-  // LastFailureMessage specifies the failure message of the last run. If the last snapshot succeeded, the field will be cleared
+  // LastFailureMessage specifies the failure message of the last run. If the last run succeeded, the field will be cleared
   // +kubebuilder:validation:Optional
   optional string failureMessage = 7;
 

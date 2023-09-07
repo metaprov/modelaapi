@@ -1769,11 +1769,6 @@ export class AskEnsembleRequest extends jspb.Message {
   clearModelsList(): AskEnsembleRequest;
   addModels(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
 
-  getAlgorithmsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm>;
-  setAlgorithmsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm>): AskEnsembleRequest;
-  clearAlgorithmsList(): AskEnsembleRequest;
-  addAlgorithms(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AskEnsembleRequest.AsObject;
   static toObject(includeInstance: boolean, msg: AskEnsembleRequest): AskEnsembleRequest.AsObject;
@@ -1791,7 +1786,6 @@ export namespace AskEnsembleRequest {
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     run?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyRun.AsObject,
     modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
-    algorithmsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.AsObject>,
   }
 }
 

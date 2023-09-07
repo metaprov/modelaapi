@@ -242,10 +242,6 @@ type DataSplitSpec struct {
 	// The name of the Dataset resource which will be used as the testing dataset
 	// +kubebuilder:validation:Optional
 	TestSnapshot *catalog.SnapshotReference `json:"testSnapshot,omitempty" protobuf:"bytes,8,rep,name=testSnapshot"`
-	// The name of the Dataset resource which will be used as the validation dataset, applicable
-	// if the split type uses test-dataset. If enabled, the training dataset will not be split and used as-is
-	// +kubebuilder:validation:Optional
-	ValidationSnapshot *string `json:"validationSnapshot,omitempty" protobuf:"bytes,9,rep,name=validationSnapshot"`
 }
 
 // SearchSpec specifies the configuration for a distributed model search

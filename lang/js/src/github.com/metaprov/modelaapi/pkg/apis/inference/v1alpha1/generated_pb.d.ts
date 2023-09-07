@@ -1133,15 +1133,10 @@ export class PredictionRunStatus extends jspb.Message {
   hasObservedgeneration(): boolean;
   clearObservedgeneration(): PredictionRunStatus;
 
-  getManifestlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setManifestlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): PredictionRunStatus;
-  hasManifestlocation(): boolean;
-  clearManifestlocation(): PredictionRunStatus;
-
-  getManifestversion(): number;
-  setManifestversion(value: number): PredictionRunStatus;
-  hasManifestversion(): boolean;
-  clearManifestversion(): PredictionRunStatus;
+  getPredictionmanifestlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation | undefined;
+  setPredictionmanifestlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation): PredictionRunStatus;
+  hasPredictionmanifestlocation(): boolean;
+  clearPredictionmanifestlocation(): PredictionRunStatus;
 
   getRunversion(): number;
   setRunversion(value: number): PredictionRunStatus;
@@ -1209,8 +1204,7 @@ export class PredictionRunStatus extends jspb.Message {
 export namespace PredictionRunStatus {
   export type AsObject = {
     observedgeneration?: number,
-    manifestlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
-    manifestversion?: number,
+    predictionmanifestlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation.AsObject,
     runversion?: number,
     rows?: number,
     phase?: string,

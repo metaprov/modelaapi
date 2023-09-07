@@ -2229,15 +2229,15 @@ export class DatasetSnapshotStatus extends jspb.Message {
   hasObservedgeneration(): boolean;
   clearObservedgeneration(): DatasetSnapshotStatus;
 
-  getManifestlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setManifestlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetSnapshotStatus;
-  hasManifestlocation(): boolean;
-  clearManifestlocation(): DatasetSnapshotStatus;
+  getDatasetmanifestlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation | undefined;
+  setDatasetmanifestlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation): DatasetSnapshotStatus;
+  hasDatasetmanifestlocation(): boolean;
+  clearDatasetmanifestlocation(): DatasetSnapshotStatus;
 
-  getManifestversion(): number;
-  setManifestversion(value: number): DatasetSnapshotStatus;
-  hasManifestversion(): boolean;
-  clearManifestversion(): DatasetSnapshotStatus;
+  getDatasourcemanifestlocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation | undefined;
+  setDatasourcemanifestlocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation): DatasetSnapshotStatus;
+  hasDatasourcemanifestlocation(): boolean;
+  clearDatasourcemanifestlocation(): DatasetSnapshotStatus;
 
   getSnapshotversion(): number;
   setSnapshotversion(value: number): DatasetSnapshotStatus;
@@ -2355,8 +2355,8 @@ export class DatasetSnapshotStatus extends jspb.Message {
 export namespace DatasetSnapshotStatus {
   export type AsObject = {
     observedgeneration?: number,
-    manifestlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
-    manifestversion?: number,
+    datasetmanifestlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation.AsObject,
+    datasourcemanifestlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation.AsObject,
     snapshotversion?: number,
     statistics?: DatasetStatistics.AsObject,
     phase?: string,

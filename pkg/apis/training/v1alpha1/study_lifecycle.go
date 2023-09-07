@@ -83,6 +83,10 @@ func (study *Study) IsFast() bool {
 	return *study.Spec.Fast
 }
 
+func (study *Study) IsGroup() bool {
+	return study.Spec.Task == catalog.PartitionForecast
+}
+
 func (study *Study) IsTestDataset() bool {
 	if study.Spec.Split.Method == nil {
 		return false

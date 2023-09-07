@@ -9750,8 +9750,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunSta
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    manifestlocation: (f = msg.getManifestlocation()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.toObject(includeInstance, f),
-    manifestversion: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    predictionmanifestlocation: (f = msg.getPredictionmanifestlocation()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation.toObject(includeInstance, f),
     runversion: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     rows: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     phase: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
@@ -9805,13 +9804,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunSta
       msg.setObservedgeneration(value);
       break;
     case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.deserializeBinaryFromReader);
-      msg.setManifestlocation(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setManifestversion(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation.deserializeBinaryFromReader);
+      msg.setPredictionmanifestlocation(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint32());
@@ -9900,19 +9895,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunSta
       f
     );
   }
-  f = message.getManifestlocation();
+  f = message.getPredictionmanifestlocation();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeUint32(
-      3,
-      f
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 4));
@@ -10039,20 +10027,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunSta
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation manifestLocation = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation predictionManifestLocation = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.getManifestlocation = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation, 2));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.getPredictionmanifestlocation = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation, 2));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.setManifestlocation = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.setPredictionmanifestlocation = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -10061,8 +10049,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunSta
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.clearManifestlocation = function() {
-  return this.setManifestlocation(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.clearPredictionmanifestlocation = function() {
+  return this.setPredictionmanifestlocation(undefined);
 };
 
 
@@ -10070,44 +10058,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunSta
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.hasManifestlocation = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.hasPredictionmanifestlocation = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional uint32 manifestVersion = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.getManifestversion = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.setManifestversion = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.clearManifestversion = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.hasManifestversion = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 

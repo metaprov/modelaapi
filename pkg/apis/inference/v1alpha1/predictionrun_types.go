@@ -87,10 +87,8 @@ type PredictionRunStatus struct {
 	// ObservedGeneration is the last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
-	// ManifestLocation specifies the location of the Prediction manifest used during the course of the run
-	ManifestLocation catalog.FileLocation `json:"manifestLocation,omitempty" protobuf:"bytes,2,opt,name=manifestLocation"`
-	// ManifestVersion specifies the version of the saved Prediction manifest
-	ManifestVersion catalog.Version `json:"manifestVersion,omitempty" protobuf:"varint,3,opt,name=manifestVersion"`
+	// PredictionManifestLocation specifies the location of the Prediction manifest used during the course of the run
+	PredictionManifestLocation catalog.ManifestLocation `json:"predictionManifestLocation,omitempty" protobuf:"bytes,2,opt,name=predictionManifestLocation"`
 	// RunVersion specifies the version of the snapshot, which is determined when the Prediction manifest is saved
 	RunVersion catalog.Version `json:"runVersion,omitempty" protobuf:"varint,4,opt,name=runVersion"`
 	// Rows specifies the number of rows predicted

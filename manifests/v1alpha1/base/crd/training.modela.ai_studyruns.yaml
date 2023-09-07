@@ -374,20 +374,6 @@ spec:
                       type: object
                     type: array
                 type: object
-              manifestLocation:
-                description: ManifestLocation specifies the location of the Study
-                  manifest used during the course of the snapshot
-                properties:
-                  bucketName:
-                    type: string
-                  path:
-                    type: string
-                type: object
-              manifestVersion:
-                description: ManifestVersion specifies the version of the saved Study
-                  manifest
-                format: int32
-                type: integer
               modelsCount:
                 description: Total models created for the study
                 format: int32
@@ -476,6 +462,18 @@ spec:
                     type: string
                   waitingModelsCount:
                     description: The number of models pending training
+                    format: int32
+                    type: integer
+                type: object
+              studyManifestLocation:
+                description: StudyManifestLocation specifies the location of the Study
+                  manifest used during the course of the run
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    type: string
+                  version:
                     format: int32
                     type: integer
                 type: object

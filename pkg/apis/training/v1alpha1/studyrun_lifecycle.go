@@ -149,7 +149,7 @@ func (studyrun *StudyRun) Phase() StudyRunPhase {
 }
 
 func (studyrun *StudyRun) RootURI() string {
-	return fmt.Sprintf("dataproducts/%s/studies/%s/studyruns/%s", studyrun.Namespace, studyrun.Name, strconv.Itoa(int(studyrun.Status.RunVersion)))
+	return fmt.Sprintf("dataproducts/%s/studies/%s/studyruns/%s", studyrun.Namespace, studyrun.Spec.StudyName, studyrun.Name)
 }
 
 func (studyrun *StudyRun) ManifestURI() string {

@@ -19925,8 +19925,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    manifestlocation: (f = msg.getManifestlocation()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.toObject(includeInstance, f),
-    manifestversion: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    datasetmanifestlocation: (f = msg.getDatasetmanifestlocation()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation.toObject(includeInstance, f),
+    datasourcemanifestlocation: (f = msg.getDatasourcemanifestlocation()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation.toObject(includeInstance, f),
     snapshotversion: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     statistics: (f = msg.getStatistics()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatistics.toObject(includeInstance, f),
     phase: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
@@ -19990,13 +19990,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
       msg.setObservedgeneration(value);
       break;
     case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.deserializeBinaryFromReader);
-      msg.setManifestlocation(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation.deserializeBinaryFromReader);
+      msg.setDatasetmanifestlocation(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setManifestversion(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation.deserializeBinaryFromReader);
+      msg.setDatasourcemanifestlocation(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint32());
@@ -20132,19 +20133,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
       f
     );
   }
-  f = message.getManifestlocation();
+  f = message.getDatasetmanifestlocation();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  f = message.getDatasourcemanifestlocation();
   if (f != null) {
-    writer.writeUint32(
+    writer.writeMessage(
       3,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 4));
@@ -20348,20 +20350,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation manifestLocation = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation datasetManifestLocation = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getManifestlocation = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation, 2));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getDatasetmanifestlocation = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation, 2));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setManifestlocation = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setDatasetmanifestlocation = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -20370,8 +20372,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.clearManifestlocation = function() {
-  return this.setManifestlocation(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.clearDatasetmanifestlocation = function() {
+  return this.setDatasetmanifestlocation(undefined);
 };
 
 
@@ -20379,35 +20381,36 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasManifestlocation = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasDatasetmanifestlocation = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional uint32 manifestVersion = 3;
- * @return {number}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation dataSourceManifestLocation = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getManifestversion = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getDatasourcemanifestlocation = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManifestLocation, 3));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setManifestversion = function(value) {
-  return jspb.Message.setField(this, 3, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setDatasourcemanifestlocation = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.clearManifestversion = function() {
-  return jspb.Message.setField(this, 3, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.clearDatasourcemanifestlocation = function() {
+  return this.setDatasourcemanifestlocation(undefined);
 };
 
 
@@ -20415,7 +20418,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasManifestversion = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasDatasourcemanifestlocation = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

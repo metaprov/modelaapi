@@ -108,10 +108,10 @@ type DatasetSnapshotStatus struct {
 	// ObservedGeneration is the last generation that was reconciled
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
-	// ManifestLocation specifies the location of the dataset manifest used during the course of the snapshot
-	ManifestLocation catalog.FileLocation `json:"manifestLocation,omitempty" protobuf:"bytes,2,opt,name=manifestLocation"`
-	// ManifestVersion specifies the version of the saved dataset manifest
-	ManifestVersion catalog.Version `json:"manifestVersion,omitempty" protobuf:"varint,3,opt,name=manifestVersion"`
+	// DatasetManifestLocation specifies the location of Dataset manifest used during the course of the snapshot
+	DatasetManifestLocation catalog.ManifestLocation `json:"datasetManifestLocation,omitempty" protobuf:"bytes,2,opt,name=datasetManifestLocation"`
+	// DatasetManifestLocation specifies the location of Data Source manifest used during the course of the snapshot
+	DataSourceManifestLocation catalog.ManifestLocation `json:"dataSourceManifestLocation,omitempty" protobuf:"bytes,3,opt,name=dataSourceManifestLocation"`
 	// SnapshotVersion specifies the version of the snapshot, which is determined when the Dataset manifest is saved
 	SnapshotVersion catalog.Version `json:"snapshotVersion" protobuf:"varint,4,opt,name=snapshotVersion"`
 	// DatasetStatistics contains statistics for each column of the dataset generated during the dataset profile

@@ -369,7 +369,6 @@ message AskEnsembleRequest {
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRun run = 6;
     repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model models = 7;
-    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm algorithms = 8;
 }
 
 message AskEnsembleResponse {

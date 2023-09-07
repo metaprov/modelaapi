@@ -115,7 +115,7 @@ type PredictionStatus struct {
 	// LastRunAt specifies the time at which a run was last created for the Study
 	//+kubebuilder:validation:Optional
 	LastRunAt *metav1.Time `json:"lastRunAt,omitempty" protobuf:"bytes,6,opt,name=lastRunAt"`
-	// LastFailureMessage specifies the failure message of the last run. If the last snapshot succeeded, the field will be cleared
+	// LastFailureMessage specifies the failure message of the last run. If the last run succeeded, the field will be cleared
 	//+kubebuilder:validation:Optional
 	LastFailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,7,opt,name=failureMessage"`
 	// Schedule specifies the status of the run schedule

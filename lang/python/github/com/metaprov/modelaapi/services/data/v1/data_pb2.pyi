@@ -39,8 +39,7 @@ class AskBaselineResponse(_message.Message):
     def __init__(self, model: _Optional[_Iterable[_Union[_generated_pb2_1.Model, _Mapping]]] = ...) -> None: ...
 
 class AskEnsembleRequest(_message.Message):
-    __slots__ = ["algorithms", "dataset", "datasource", "models", "product", "run", "snapshot", "study"]
-    ALGORITHMS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["dataset", "datasource", "models", "product", "run", "snapshot", "study"]
     DATASET_FIELD_NUMBER: _ClassVar[int]
     DATASOURCE_FIELD_NUMBER: _ClassVar[int]
     MODELS_FIELD_NUMBER: _ClassVar[int]
@@ -48,7 +47,6 @@ class AskEnsembleRequest(_message.Message):
     RUN_FIELD_NUMBER: _ClassVar[int]
     SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
     STUDY_FIELD_NUMBER: _ClassVar[int]
-    algorithms: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1_1_1.Algorithm]
     dataset: _generated_pb2.Dataset
     datasource: _generated_pb2.DataSource
     models: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1.Model]
@@ -56,7 +54,7 @@ class AskEnsembleRequest(_message.Message):
     run: _generated_pb2_1.StudyRun
     snapshot: _generated_pb2.DatasetSnapshot
     study: _generated_pb2_1.Study
-    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., snapshot: _Optional[_Union[_generated_pb2.DatasetSnapshot, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2_1.Study, _Mapping]] = ..., run: _Optional[_Union[_generated_pb2_1.StudyRun, _Mapping]] = ..., models: _Optional[_Iterable[_Union[_generated_pb2_1.Model, _Mapping]]] = ..., algorithms: _Optional[_Iterable[_Union[_generated_pb2_1_1_1_1.Algorithm, _Mapping]]] = ...) -> None: ...
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., snapshot: _Optional[_Union[_generated_pb2.DatasetSnapshot, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2_1.Study, _Mapping]] = ..., run: _Optional[_Union[_generated_pb2_1.StudyRun, _Mapping]] = ..., models: _Optional[_Iterable[_Union[_generated_pb2_1.Model, _Mapping]]] = ...) -> None: ...
 
 class AskEnsembleResponse(_message.Message):
     __slots__ = ["model"]

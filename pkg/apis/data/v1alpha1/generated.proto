@@ -1331,11 +1331,11 @@ message DatasetSnapshotStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // ManifestLocation specifies the location of the dataset manifest used during the course of the snapshot
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation manifestLocation = 2;
+  // DatasetManifestLocation specifies the location of Dataset manifest used during the course of the snapshot
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation datasetManifestLocation = 2;
 
-  // ManifestVersion specifies the version of the saved dataset manifest
-  optional uint32 manifestVersion = 3;
+  // DatasetManifestLocation specifies the location of Data Source manifest used during the course of the snapshot
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation dataSourceManifestLocation = 3;
 
   // SnapshotVersion specifies the version of the snapshot, which is determined when the Dataset manifest is saved
   optional uint32 snapshotVersion = 4;

@@ -268,20 +268,6 @@ spec:
                       type: object
                     type: array
                 type: object
-              manifestLocation:
-                description: ManifestLocation specifies the location of the Prediction
-                  manifest used during the course of the run
-                properties:
-                  bucketName:
-                    type: string
-                  path:
-                    type: string
-                type: object
-              manifestVersion:
-                description: ManifestVersion specifies the version of the saved Prediction
-                  manifest
-                format: int32
-                type: integer
               observedGeneration:
                 description: ObservedGeneration is the last generation that was acted
                   on
@@ -291,6 +277,18 @@ spec:
                 default: Pending
                 description: The current phase of the prediction
                 type: string
+              predictionManifestLocation:
+                description: PredictionManifestLocation specifies the location of
+                  the Prediction manifest used during the course of the run
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    type: string
+                  version:
+                    format: int32
+                    type: integer
+                type: object
               rows:
                 description: Rows specifies the number of rows predicted
                 format: int32

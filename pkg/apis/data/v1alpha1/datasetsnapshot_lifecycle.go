@@ -140,6 +140,14 @@ func (dataset *DatasetSnapshot) ManifestURI() string {
 	return fmt.Sprintf("%s/manifest.json", dataset.RootURI())
 }
 
+func (dataset *DatasetSnapshot) DatasetManifestURI() string {
+	return fmt.Sprintf("%s/dataset.json", dataset.RootURI())
+}
+
+func (dataset *DatasetSnapshot) DataSourceManifestURI() string {
+	return fmt.Sprintf("%s/datasource.json", dataset.RootURI())
+}
+
 func (dataset *DatasetSnapshot) ProfileURI() string {
 	return fmt.Sprintf("%s/profile/dataset_profile.json", dataset.RootURI())
 }

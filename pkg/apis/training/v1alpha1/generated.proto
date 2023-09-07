@@ -207,11 +207,6 @@ message DataSplitSpec {
   // The name of the Dataset resource which will be used as the testing dataset
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference testSnapshot = 8;
-
-  // The name of the Dataset resource which will be used as the validation dataset, applicable
-  // if the split type uses test-dataset. If enabled, the training dataset will not be split and used as-is
-  // +kubebuilder:validation:Optional
-  optional string validationSnapshot = 9;
 }
 
 message DeepEstimatorLayer {
@@ -2463,11 +2458,8 @@ message StudyRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // ManifestLocation specifies the location of the Study manifest used during the course of the snapshot
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation manifestLocation = 2;
-
-  // ManifestVersion specifies the version of the saved Study manifest
-  optional uint32 manifestVersion = 3;
+  // StudyManifestLocation specifies the location of the Study manifest used during the course of the run
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation studyManifestLocation = 2;
 
   // RunVersion specifies the version of the run, which is determined when the Study manifest is saved
   optional uint32 runVersion = 4;

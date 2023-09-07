@@ -191,6 +191,30 @@ spec:
                   path:
                     type: string
                 type: object
+              dataSourceManifestLocation:
+                description: DatasetManifestLocation specifies the location of Data
+                  Source manifest used during the course of the snapshot
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    type: string
+                  version:
+                    format: int32
+                    type: integer
+                type: object
+              datasetManifestLocation:
+                description: DatasetManifestLocation specifies the location of Dataset
+                  manifest used during the course of the snapshot
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    type: string
+                  version:
+                    format: int32
+                    type: integer
+                type: object
               failureMessage:
                 description: FailureMessage is set to a failure message in the case
                   that an error occurred during the snapshot
@@ -325,20 +349,6 @@ spec:
                       type: object
                     type: array
                 type: object
-              manifestLocation:
-                description: ManifestLocation specifies the location of the dataset
-                  manifest used during the course of the snapshot
-                properties:
-                  bucketName:
-                    type: string
-                  path:
-                    type: string
-                type: object
-              manifestVersion:
-                description: ManifestVersion specifies the version of the saved dataset
-                  manifest
-                format: int32
-                type: integer
               observedGeneration:
                 description: ObservedGeneration is the last generation that was reconciled
                 format: int64

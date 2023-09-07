@@ -5,6 +5,7 @@ import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/utils/pointer"
+	"strconv"
 )
 
 const (
@@ -2038,7 +2039,7 @@ func (location *DataLocation) ToFileLocation() *FileLocation {
 	}
 }
 
-// FileLocation denotes the location of a flat-file, which is the name of a VirtualBucket and the path within it
+// FileLocation denotes the location of a flat-file, which is the name of a Virtual Bucket and the path within it
 type FileLocation struct {
 	BucketName string `json:"bucketName,omitempty" protobuf:"bytes,1,opt,name=bucketName"`
 	Path       string `json:"path,omitempty" protobuf:"bytes,2,opt,name=path"`
@@ -2046,6 +2047,18 @@ type FileLocation struct {
 
 func (f *FileLocation) Hash() string {
 	return f.BucketName + f.Path
+}
+
+// ManifestLocation specifies the location of a JSON-serialized custom resource, which includes the name of a
+// Virtual Bucket and a path within it. The version of the resource is also specified
+type ManifestLocation struct {
+	BucketName string  `json:"bucketName,omitempty" protobuf:"bytes,1,opt,name=bucketName"`
+	Path       string  `json:"path,omitempty" protobuf:"bytes,2,opt,name=path"`
+	Version    Version `json:"version,omitempty" protobuf:"bytes,3,opt,name=version"`
+}
+
+func (f *ManifestLocation) Hash() string {
+	return f.BucketName + f.Path + strconv.Itoa(int(f.Version))
 }
 
 //////////////////////////////////////////////////////////
