@@ -290,6 +290,9 @@ export class DownloadDatasetRequest extends jspb.Message {
   clearGroupsList(): DownloadDatasetRequest;
   addGroups(value: string, index?: number): DownloadDatasetRequest;
 
+  getConvert(): boolean;
+  setConvert(value: boolean): DownloadDatasetRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownloadDatasetRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DownloadDatasetRequest): DownloadDatasetRequest.AsObject;
@@ -303,6 +306,7 @@ export namespace DownloadDatasetRequest {
     namespace: string,
     snapshot?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject,
     groupsList: Array<string>,
+    convert: boolean,
   }
 }
 

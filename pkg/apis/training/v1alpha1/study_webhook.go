@@ -90,9 +90,6 @@ func (study *Study) Default() {
 	if study.ObjectMeta.Labels == nil {
 		study.ObjectMeta.Labels = make(map[string]string)
 	}
-	if study.Spec.Owner != nil {
-		study.ObjectMeta.Labels[catalog.OwnerKindLabelKey] = *study.Spec.Owner
-	}
 
 	study.ObjectMeta.Labels[catalog.DatasetLabelKey] = study.Spec.Snapshot.Dataset
 	if study.Spec.LabRef != nil {

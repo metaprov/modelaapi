@@ -2054,11 +2054,11 @@ func (f *FileLocation) Hash() string {
 type ManifestLocation struct {
 	BucketName string  `json:"bucketName,omitempty" protobuf:"bytes,1,opt,name=bucketName"`
 	Path       string  `json:"path,omitempty" protobuf:"bytes,2,opt,name=path"`
-	Version    Version `json:"version,omitempty" protobuf:"bytes,3,opt,name=version"`
+	Version    Version `json:"version" protobuf:"bytes,3,opt,name=version"`
 }
 
-func (f *ManifestLocation) Hash() string {
-	return f.BucketName + f.Path + strconv.Itoa(int(f.Version))
+func (m *ManifestLocation) Hash() string {
+	return m.BucketName + m.Path + strconv.Itoa(int(m.Version))
 }
 
 //////////////////////////////////////////////////////////

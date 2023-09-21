@@ -140,50 +140,56 @@ func (report Report) IsModelReport() bool {
 func (report Report) RootURI() string {
 	if report.Spec.ReportType == PartitionTimeSeriesDatasetReport {
 		if len(report.Spec.Key) > 0 {
-			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s/groups/%s",
+			return fmt.Sprintf("dataproducts/%s/datasets/%s/snapshots/%s/groups/%s/reports/%s",
 				report.Namespace,
-				report.Spec.VersionName,
+				report.Labels[catalog.DatasetLabelKey],
 				report.Spec.EntityRef.Name,
-				strings.Join(report.Spec.Key, "/"))
+				strings.Join(report.Spec.Key, "/"),
+				report.Name)
 		} else {
-			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s",
+			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s/reports/%s",
 				report.Namespace,
-				report.Spec.VersionName,
-				report.Spec.EntityRef.Name)
+				report.Labels[catalog.DatasetLabelKey],
+				report.Spec.EntityRef.Name,
+				report.Name)
 		}
 
 	}
 
 	if report.Spec.ReportType == PartitionTimeSeriesModelReport {
 		if len(report.Spec.Key) > 0 {
-			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s/groups/%s",
+			return fmt.Sprintf("dataproducts/%s/studies/%s/studyruns/%s/models/%s/groups/%s/reports/%s",
 				report.Namespace,
-				report.Spec.VersionName,
-				report.Labels["study"],
+				report.Labels[catalog.StudyLabelKey],
+				report.Labels[catalog.StudyRunLabelKey],
 				report.Spec.EntityRef.Name,
-				strings.Join(report.Spec.Key, "/"))
+				strings.Join(report.Spec.Key, "/"),
+				report.Name)
 		} else {
-			return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s",
+			return fmt.Sprintf("dataproducts/%s/studies/%s/studyruns/%s/models/%s/reports/%s",
 				report.Namespace,
-				report.Spec.VersionName,
-				report.Labels["study"],
-				report.Spec.EntityRef.Name)
+				report.Labels[catalog.StudyLabelKey],
+				report.Labels[catalog.StudyRunLabelKey],
+				report.Spec.EntityRef.Name,
+				report.Name)
 		}
 	}
 
 	if report.IsModelReport() {
-		return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/studies/%s/models/%s",
+		return fmt.Sprintf("dataproducts/%s/studies/%s/studyruns/%s/models/%s/reports/%s",
 			report.Namespace,
-			report.Spec.VersionName,
-			report.Labels["study"],
-			report.Spec.EntityRef.Name)
+			report.Labels[catalog.StudyLabelKey],
+			report.Labels[catalog.StudyRunLabelKey],
+			report.Spec.EntityRef.Name,
+			report.Name)
 
 	}
 	if report.IsDatasetReport() {
-		return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s",
+		return fmt.Sprintf("dataproducts/%s/datasets/%s/snapshots/%s/reports/%s",
 			report.Namespace,
-			report.Spec.VersionName,
-			report.Spec.EntityRef.Name)
+			report.Labels[catalog.DatasetLabelKey],
+			report.Spec.EntityRef.Name,
+			report.Name)
 	}
 
 	if report.IsStudyReport() {

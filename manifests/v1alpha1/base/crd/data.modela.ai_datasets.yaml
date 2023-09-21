@@ -356,7 +356,7 @@ spec:
                 description: Owner specifies the name of the Account which the object
                   belongs to
                 type: string
-              reported:
+              report:
                 default: true
                 description: Indicates if a PDF report containing the Dataset profile
                   should be generated

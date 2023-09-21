@@ -288,6 +288,8 @@ spec:
                   version:
                     format: int32
                     type: integer
+                required:
+                - version
                 type: object
               rows:
                 description: Rows specifies the number of rows predicted

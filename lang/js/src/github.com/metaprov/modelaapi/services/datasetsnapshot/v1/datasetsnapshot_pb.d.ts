@@ -339,6 +339,9 @@ export class DownloadDatasetSnapshotRequest extends jspb.Message {
   clearGroupsList(): DownloadDatasetSnapshotRequest;
   addGroups(value: string, index?: number): DownloadDatasetSnapshotRequest;
 
+  getConvert(): boolean;
+  setConvert(value: boolean): DownloadDatasetSnapshotRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownloadDatasetSnapshotRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DownloadDatasetSnapshotRequest): DownloadDatasetSnapshotRequest.AsObject;
@@ -352,6 +355,7 @@ export namespace DownloadDatasetSnapshotRequest {
     namespace: string,
     name: string,
     groupsList: Array<string>,
+    convert: boolean,
   }
 }
 

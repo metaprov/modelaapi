@@ -110,7 +110,7 @@ message DsCreateModelProfileRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 3;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 4;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study run = 6;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRun run = 6;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 7;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 8;
 }
@@ -163,11 +163,12 @@ message RunTestSuiteRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 3;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 4;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 5;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 6;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 7;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram histogram = 8;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram refHistogram = 9;
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite suite = 10;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRun studyrun = 6;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 7;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 8;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram histogram = 9;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram refHistogram = 10;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite suite = 11;
 }
 
 message RunTestSuiteResponse {

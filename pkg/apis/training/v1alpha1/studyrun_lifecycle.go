@@ -189,7 +189,7 @@ func (studyrun *StudyRun) RefreshProgress() {
 }
 
 func (studyrun *StudyRun) ReachedMaxTime(study *Study) bool {
-	if studyrun.Status.SearchStatus.StartedAt == nil {
+	if study == nil || studyrun.Status.SearchStatus.StartedAt == nil {
 		return false
 	}
 	duration := metav1.Now().Unix() - studyrun.Status.SearchStatus.StartedAt.Unix()

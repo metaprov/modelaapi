@@ -2875,7 +2875,8 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotR
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    groupsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+    groupsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    convert: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -2924,6 +2925,10 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotR
       var value = /** @type {string} */ (reader.readString());
       msg.addGroups(value);
       break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setConvert(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2971,6 +2976,13 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotR
   if (f.length > 0) {
     writer.writeRepeatedString(
       3,
+      f
+    );
+  }
+  f = message.getConvert();
+  if (f) {
+    writer.writeBool(
+      4,
       f
     );
   }
@@ -3047,6 +3059,24 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotR
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest.prototype.clearGroupsList = function() {
   return this.setGroupsList([]);
+};
+
+
+/**
+ * optional bool convert = 4;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest.prototype.getConvert = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetSnapshotRequest.prototype.setConvert = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 

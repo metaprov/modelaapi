@@ -35,12 +35,8 @@ func (model *Model) Default() {
 		model.ObjectMeta.Labels = make(map[string]string)
 	}
 
-	model.ObjectMeta.Labels[catalog.StudyLabelKey] = model.Spec.StudyRunName
+	model.ObjectMeta.Labels[catalog.StudyRunLabelKey] = model.Spec.StudyRunName
 	model.ObjectMeta.Labels[catalog.AlgorithmLabelKey] = model.Spec.Estimator.AlgorithmName
-
-	if model.Spec.Owner != nil {
-		model.ObjectMeta.Labels[catalog.OwnerKindLabelKey] = *model.Spec.Owner
-	}
 
 	if model.Spec.ModelClassName != nil {
 		model.ObjectMeta.Labels[catalog.ModelClassLabelKey] = *model.Spec.ModelClassName

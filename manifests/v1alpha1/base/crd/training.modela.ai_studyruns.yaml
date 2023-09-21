@@ -476,6 +476,8 @@ spec:
                   version:
                     format: int32
                     type: integer
+                required:
+                - version
                 type: object
               test:
                 description: TestStatus contains the status of the testing phase

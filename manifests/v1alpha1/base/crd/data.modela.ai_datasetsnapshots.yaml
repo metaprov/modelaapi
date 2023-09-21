@@ -202,6 +202,8 @@ spec:
                   version:
                     format: int32
                     type: integer
+                required:
+                - version
                 type: object
               datasetManifestLocation:
                 description: DatasetManifestLocation specifies the location of Dataset
@@ -214,6 +216,8 @@ spec:
                   version:
                     format: int32
                     type: integer
+                required:
+                - version
                 type: object
               failureMessage:
                 description: FailureMessage is set to a failure message in the case

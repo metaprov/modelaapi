@@ -102,7 +102,7 @@ type DatasetSpec struct {
 	// Indicates if a PDF report containing the Dataset profile should be generated
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Report *bool `json:"reported,omitempty" protobuf:"varint,13,opt,name=report"`
+	Report *bool `json:"report,omitempty" protobuf:"varint,13,opt,name=report"`
 	// Indicates if the Dataset should be checked against the validation rules of its Data Source
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional

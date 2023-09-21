@@ -848,7 +848,7 @@ func (model *Model) Demote() {
 func (model *Model) InitializeFromStudy(run *StudyRun, study *Study) {
 	model.Namespace = study.Namespace
 	model.Spec.Training = *study.Spec.TrainingTemplate.DeepCopy()
-	model.Spec.StudyRunName = study.Name
+	model.Spec.StudyRunName = run.Name
 	model.Spec.ModelClassName = study.Spec.ModelClassName
 	model.Spec.ModelClassRunName = run.Spec.ModelClassRunName
 	model.Spec.ArtifactBucketName = study.Spec.ArtifactBucketName

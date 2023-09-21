@@ -51,14 +51,16 @@ class DeleteDatasetSnapshotResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class DownloadDatasetSnapshotRequest(_message.Message):
-    __slots__ = ["groups", "name", "namespace"]
+    __slots__ = ["convert", "groups", "name", "namespace"]
+    CONVERT_FIELD_NUMBER: _ClassVar[int]
     GROUPS_FIELD_NUMBER: _ClassVar[int]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
+    convert: bool
     groups: _containers.RepeatedScalarFieldContainer[str]
     name: str
     namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., groups: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., groups: _Optional[_Iterable[str]] = ..., convert: bool = ...) -> None: ...
 
 class DownloadDatasetSnapshotResponse(_message.Message):
     __slots__ = ["raw"]

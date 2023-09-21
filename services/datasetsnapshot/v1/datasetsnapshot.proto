@@ -95,6 +95,8 @@ message DownloadDatasetSnapshotRequest {
     string namespace = 1;
     string name = 2;
     repeated string groups = 3;
+    // Convert to CSV
+    bool convert = 4;
 }
 
 message DownloadDatasetSnapshotResponse {

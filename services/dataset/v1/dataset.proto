@@ -83,6 +83,8 @@ message DownloadDatasetRequest {
     string namespace = 1;
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference snapshot = 2;
     repeated string groups = 3;
+    // Convert to CSV
+    bool convert = 4;
 }
 
 message DownloadDatasetResponse {
