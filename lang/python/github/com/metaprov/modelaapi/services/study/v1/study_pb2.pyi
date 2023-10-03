@@ -92,6 +92,20 @@ class GetStudyResponse(_message.Message):
     yaml: str
     def __init__(self, study: _Optional[_Union[_generated_pb2.Study, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
+class GetStudyRunReferenceRequest(_message.Message):
+    __slots__ = ["namespace", "run"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    RUN_FIELD_NUMBER: _ClassVar[int]
+    namespace: str
+    run: _generated_pb2_1.StudyRunReference
+    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2_1.StudyRunReference, _Mapping]] = ...) -> None: ...
+
+class GetStudyRunReferenceResponse(_message.Message):
+    __slots__ = ["run"]
+    RUN_FIELD_NUMBER: _ClassVar[int]
+    run: _generated_pb2.StudyRun
+    def __init__(self, run: _Optional[_Union[_generated_pb2.StudyRun, _Mapping]] = ...) -> None: ...
+
 class ListStudyRequest(_message.Message):
     __slots__ = ["labels", "namespace"]
     class LabelsEntry(_message.Message):

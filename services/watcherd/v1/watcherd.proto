@@ -15,22 +15,27 @@ enum EventType {
 }
 
 service WatcherdService {
-  rpc WatchDataset         (WatchDatasetRequest)         returns (WatchDatasetResponse) {}
-  rpc WatchDatasetSnapshot (WatchDatasetSnapshotRequest) returns (WatchDatasetSnapshotResponse) {}
-  rpc WatchModel           (WatchModelRequest)           returns (WatchModelResponse) {}
-  rpc WatchAlert           (WatchAlertRequest)           returns (WatchAlertResponse) {}
+  rpc WatchDataset         (WatchRequestOptions) returns (WatchDatasetResponse) {}
+  rpc WatchDatasetSnapshot (WatchRequestOptions) returns (WatchDatasetSnapshotResponse) {}
+  rpc WatchStudy           (WatchRequestOptions) returns (WatchStudyResponse) {}
+  rpc WatchStudyRun        (WatchRequestOptions) returns (WatchStudyRunResponse) {}
+  rpc WatchModel           (WatchRequestOptions) returns (WatchModelResponse) {}
+  rpc WatchAlert           (WatchRequestOptions) returns (WatchAlertResponse) {}
+}
+
+message WatchRequestOptions {
+  uint64 generation = 1;
+  string namespace = 2;
+  // Latest indicates if we should instantly respond with
+  // all the events from the previous generation, or respond with nothing.
+  bool latest = 3;
 }
 
 /////// Dataset Watch ///////
-message WatchDatasetRequest {
-  uint64 generation = 1;
-  string namespace = 2;
-}
-
 message WatchDatasetResponse {
   message DatasetEvent {
     EventType event = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset object = 2;
   }
 
   uint64 generation = 1;
@@ -38,15 +43,10 @@ message WatchDatasetResponse {
 }
 
 /////// Model Watch ///////
-message WatchModelRequest {
-  uint64 generation = 1;
-  string namespace = 2;
-}
-
 message WatchModelResponse {
   message ModelEvent {
     EventType event = 1;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model object = 2;
   }
 
   uint64 generation = 1;
@@ -54,15 +54,10 @@ message WatchModelResponse {
 }
 
 /////// Alert Watch ///////
-message WatchAlertRequest {
-  uint64 generation = 1;
-  string namespace = 2;
-}
-
 message WatchAlertResponse {
   message AlertEvent {
     EventType event = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert alert = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert object = 2;
   }
 
   uint64 generation = 1;
@@ -70,17 +65,34 @@ message WatchAlertResponse {
 }
 
 /////// Dataset Snapshot Watch ///////
-message WatchDatasetSnapshotRequest {
-  uint64 generation = 1;
-  string namespace = 2;
-}
-
 message WatchDatasetSnapshotResponse {
   message DatasetSnapshotEvent {
     EventType event = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot object = 2;
   }
 
   uint64 generation = 1;
   repeated DatasetSnapshotEvent events = 2;
+}
+
+/////// Study Watch ///////
+message WatchStudyResponse {
+  message StudyEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated StudyEvent events = 2;
+}
+
+/////// Study Run Watch ///////
+message WatchStudyRunResponse {
+  message StudyRunEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRun object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated StudyRunEvent events = 2;
 }

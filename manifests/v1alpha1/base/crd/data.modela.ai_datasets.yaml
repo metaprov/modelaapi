@@ -823,13 +823,25 @@ spec:
                   - version
                   type: object
                 type: array
-              availableSnapshotVersions:
-                description: AvailableSnapshotVersions contains the collection of
-                  snapshot versions which are ready for use. Each version corresponds
-                  with an existing DatasetSnapshot resource
+              availableSnapshots:
+                description: AvailableSnapshots contains the collection of snapshot
+                  references which are ready for use. Each version corresponds with
+                  an existing DatasetSnapshot resource
                 items:
-                  format: int32
-                  type: integer
+                  description: RunReference defines a generic reference to any type
+                    of run
+                  properties:
+                    name:
+                      description: Name specifies the name of the resource
+                      type: string
+                    version:
+                      description: Version specifies the version of the run
+                      format: int32
+                      type: integer
+                  required:
+                  - name
+                  - version
+                  type: object
                 type: array
               conditions:
                 items:
@@ -957,12 +969,6 @@ spec:
                 description: UpdatedAt specifies the last time the Dataset was changed
                 format: date-time
                 type: string
-              version:
-                default: 1
-                description: Version specifies the version of the Dataset as tracked
-                  by Modela, which is incremented each time the object is changed
-                format: int32
-                type: integer
             required:
             - lastSnapshotVersion
             type: object

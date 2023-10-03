@@ -2612,20 +2612,15 @@ export class DatasetStatus extends jspb.Message {
   clearActiveList(): DatasetStatus;
   addActive(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference;
 
-  getVersion(): number;
-  setVersion(value: number): DatasetStatus;
-  hasVersion(): boolean;
-  clearVersion(): DatasetStatus;
-
   getLastsnapshotversion(): number;
   setLastsnapshotversion(value: number): DatasetStatus;
   hasLastsnapshotversion(): boolean;
   clearLastsnapshotversion(): DatasetStatus;
 
-  getAvailablesnapshotversionsList(): Array<number>;
-  setAvailablesnapshotversionsList(value: Array<number>): DatasetStatus;
-  clearAvailablesnapshotversionsList(): DatasetStatus;
-  addAvailablesnapshotversions(value: number, index?: number): DatasetStatus;
+  getAvailablesnapshotsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference>;
+  setAvailablesnapshotsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference>): DatasetStatus;
+  clearAvailablesnapshotsList(): DatasetStatus;
+  addAvailablesnapshots(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference;
 
   getLastsnapshotat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastsnapshotat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
@@ -2664,9 +2659,8 @@ export namespace DatasetStatus {
   export type AsObject = {
     observedgeneration?: number,
     activeList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject>,
-    version?: number,
     lastsnapshotversion?: number,
-    availablesnapshotversionsList: Array<number>,
+    availablesnapshotsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject>,
     lastsnapshotat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastfailuremessage?: string,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,

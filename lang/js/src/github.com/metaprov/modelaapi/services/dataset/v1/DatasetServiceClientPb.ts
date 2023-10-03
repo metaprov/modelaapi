@@ -125,6 +125,49 @@ export class DatasetServiceClient {
     this.methodDescriptorGetDataset);
   }
 
+  methodDescriptorGetDatasetSnapshot = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatasetSnapshot',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetSnapshotReferenceRequest,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetSnapshotReferenceResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetSnapshotReferenceRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetSnapshotReferenceResponse.deserializeBinary
+  );
+
+  getDatasetSnapshot(
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetSnapshotReferenceRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetSnapshotReferenceResponse>;
+
+  getDatasetSnapshot(
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetSnapshotReferenceRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetSnapshotReferenceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetSnapshotReferenceResponse>;
+
+  getDatasetSnapshot(
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetSnapshotReferenceRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetSnapshotReferenceResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatasetSnapshot',
+        request,
+        metadata || {},
+        this.methodDescriptorGetDatasetSnapshot,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatasetSnapshot',
+    request,
+    metadata || {},
+    this.methodDescriptorGetDatasetSnapshot);
+  }
+
   methodDescriptorCreateDataset = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDataset',
     grpcWeb.MethodType.UNARY,

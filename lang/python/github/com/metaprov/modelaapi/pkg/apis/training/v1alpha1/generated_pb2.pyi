@@ -1471,9 +1471,9 @@ class StudySpec(_message.Message):
     def __init__(self, owner: _Optional[str] = ..., description: _Optional[str] = ..., snapshot: _Optional[_Union[_generated_pb2.SnapshotReference, _Mapping]] = ..., labRef: _Optional[_Union[_generated_pb2_1_1.ObjectReference, _Mapping]] = ..., task: _Optional[str] = ..., subtask: _Optional[str] = ..., featureEngineering: _Optional[_Union[FeatureEngineeringSpec, _Mapping]] = ..., imbalanceHandler: _Optional[_Union[ImbalanceHandlingSpec, _Mapping]] = ..., baseline: _Optional[_Union[BaselineSpec, _Mapping]] = ..., search: _Optional[_Union[SearchSpec, _Mapping]] = ..., ensembles: _Optional[_Union[EnsemblesSpec, _Mapping]] = ..., trainingTemplate: _Optional[_Union[TrainingSpec, _Mapping]] = ..., split: _Optional[_Union[DataSplitSpec, _Mapping]] = ..., forecastTemplate: _Optional[_Union[ForecasterSpec, _Mapping]] = ..., schedule: _Optional[_Union[_generated_pb2.RunSchedule, _Mapping]] = ..., interpretability: _Optional[_Union[InterpretabilitySpec, _Mapping]] = ..., outlierModel: _Optional[_Union[OutlierModelSpec, _Mapping]] = ..., unitTestsTemplate: _Optional[_Union[_generated_pb2.TestSuite, _Mapping]] = ..., serving: _Optional[_Union[ServingSpec, _Mapping]] = ..., gc: _Optional[_Union[GarbageCollectionSpec, _Mapping]] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ..., report: bool = ..., profile: bool = ..., explain: bool = ..., fast: bool = ..., artifactBucketName: _Optional[str] = ..., timeout: _Optional[int] = ..., modelClassName: _Optional[str] = ...) -> None: ...
 
 class StudyStatus(_message.Message):
-    __slots__ = ["active", "availableRunVersions", "conditions", "failureMessage", "lastRunAt", "lastRunVersion", "observedGeneration", "schedule", "updatedAt", "version"]
+    __slots__ = ["active", "availableRuns", "conditions", "failureMessage", "lastRunAt", "lastRunVersion", "observedGeneration", "schedule", "updatedAt"]
     ACTIVE_FIELD_NUMBER: _ClassVar[int]
-    AVAILABLERUNVERSIONS_FIELD_NUMBER: _ClassVar[int]
+    AVAILABLERUNS_FIELD_NUMBER: _ClassVar[int]
     CONDITIONS_FIELD_NUMBER: _ClassVar[int]
     FAILUREMESSAGE_FIELD_NUMBER: _ClassVar[int]
     LASTRUNAT_FIELD_NUMBER: _ClassVar[int]
@@ -1481,9 +1481,8 @@ class StudyStatus(_message.Message):
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     SCHEDULE_FIELD_NUMBER: _ClassVar[int]
     UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
     active: _containers.RepeatedCompositeFieldContainer[_generated_pb2.RunReference]
-    availableRunVersions: _containers.RepeatedScalarFieldContainer[int]
+    availableRuns: _containers.RepeatedCompositeFieldContainer[_generated_pb2.RunReference]
     conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1_1.Condition]
     failureMessage: str
     lastRunAt: _generated_pb2_1_1_1.Time
@@ -1491,8 +1490,7 @@ class StudyStatus(_message.Message):
     observedGeneration: int
     schedule: _generated_pb2.RunScheduleStatus
     updatedAt: _generated_pb2_1_1_1.Time
-    version: int
-    def __init__(self, observedGeneration: _Optional[int] = ..., active: _Optional[_Iterable[_Union[_generated_pb2.RunReference, _Mapping]]] = ..., version: _Optional[int] = ..., lastRunVersion: _Optional[int] = ..., availableRunVersions: _Optional[_Iterable[int]] = ..., lastRunAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., failureMessage: _Optional[str] = ..., schedule: _Optional[_Union[_generated_pb2.RunScheduleStatus, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, observedGeneration: _Optional[int] = ..., active: _Optional[_Iterable[_Union[_generated_pb2.RunReference, _Mapping]]] = ..., lastRunVersion: _Optional[int] = ..., availableRuns: _Optional[_Iterable[_Union[_generated_pb2.RunReference, _Mapping]]] = ..., lastRunAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., failureMessage: _Optional[str] = ..., schedule: _Optional[_Union[_generated_pb2.RunScheduleStatus, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class SuccessiveHalvingOptions(_message.Message):
     __slots__ = ["bootstrapCount", "minEarlyStoppingRate", "minResources", "reductionFactor"]

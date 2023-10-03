@@ -13269,7 +13269,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation.t
   var f, obj = {
     bucketname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     path: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    version: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    generation: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13315,8 +13315,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation.d
       msg.setPath(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setVersion(value);
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setGeneration(value);
       break;
     default:
       reader.skipField();
@@ -13363,7 +13363,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation.s
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeUint32(
+    writer.writeInt64(
       3,
       f
     );
@@ -13444,10 +13444,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation.p
 
 
 /**
- * optional uint32 version = 3;
+ * optional int64 generation = 3;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation.prototype.getVersion = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation.prototype.getGeneration = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -13456,7 +13456,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation.p
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation.prototype.setVersion = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation.prototype.setGeneration = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -13465,7 +13465,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation.prototype.clearVersion = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation.prototype.clearGeneration = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -13474,7 +13474,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation.prototype.hasVersion = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManifestLocation.prototype.hasGeneration = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

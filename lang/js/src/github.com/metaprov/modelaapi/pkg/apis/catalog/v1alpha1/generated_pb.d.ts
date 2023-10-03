@@ -1500,10 +1500,10 @@ export class ManifestLocation extends jspb.Message {
   hasPath(): boolean;
   clearPath(): ManifestLocation;
 
-  getVersion(): number;
-  setVersion(value: number): ManifestLocation;
-  hasVersion(): boolean;
-  clearVersion(): ManifestLocation;
+  getGeneration(): number;
+  setGeneration(value: number): ManifestLocation;
+  hasGeneration(): boolean;
+  clearGeneration(): ManifestLocation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ManifestLocation.AsObject;
@@ -1517,7 +1517,7 @@ export namespace ManifestLocation {
   export type AsObject = {
     bucketname?: string,
     path?: string,
-    version?: number,
+    generation?: number,
   }
 }
 

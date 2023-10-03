@@ -4537,20 +4537,15 @@ export class StudyStatus extends jspb.Message {
   clearActiveList(): StudyStatus;
   addActive(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference;
 
-  getVersion(): number;
-  setVersion(value: number): StudyStatus;
-  hasVersion(): boolean;
-  clearVersion(): StudyStatus;
-
   getLastrunversion(): number;
   setLastrunversion(value: number): StudyStatus;
   hasLastrunversion(): boolean;
   clearLastrunversion(): StudyStatus;
 
-  getAvailablerunversionsList(): Array<number>;
-  setAvailablerunversionsList(value: Array<number>): StudyStatus;
-  clearAvailablerunversionsList(): StudyStatus;
-  addAvailablerunversions(value: number, index?: number): StudyStatus;
+  getAvailablerunsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference>;
+  setAvailablerunsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference>): StudyStatus;
+  clearAvailablerunsList(): StudyStatus;
+  addAvailableruns(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference;
 
   getLastrunat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastrunat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
@@ -4589,9 +4584,8 @@ export namespace StudyStatus {
   export type AsObject = {
     observedgeneration?: number,
     activeList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject>,
-    version?: number,
     lastrunversion?: number,
-    availablerunversionsList: Array<number>,
+    availablerunsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject>,
     lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failuremessage?: string,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,

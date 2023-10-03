@@ -169,17 +169,13 @@ type StudyStatus struct {
 	// Active contains a collection of references to currently active runs
 	// +optional
 	Active catalog.RunReferenceList `json:"active,omitempty" protobuf:"bytes,2,rep,name=active"`
-	// Version specifies the version of the Study as tracked by Modela, which is
-	// incremented each time the object is changed
-	// +kubebuilder:default:=1
-	Version catalog.Version `json:"version,omitempty" protobuf:"varint,3,opt,name=version"`
 	// LastRunVersion contains the integer version last used to create a run
 	// +kubebuilder:default:=0
 	LastRunVersion catalog.Version `json:"lastRunVersion,omitempty" protobuf:"varint,4,opt,name=lastRunVersion"`
-	// AvailableRunVersions contains the collection of run versions which are ready for use.
+	// AvailableRuns contains the collection of run versions which are ready for use.
 	// Each version corresponds with an existing StudyRun resource
 	//+kubebuilder:validation:Optional
-	AvailableRunVersions catalog.VersionList `json:"availableRunVersions,omitempty" protobuf:"bytes,5,opt,name=availableRunVersions"`
+	AvailableRuns catalog.RunReferenceList `json:"availableRuns,omitempty" protobuf:"bytes,5,opt,name=availableRuns"`
 	// LastRunAt specifies the time at which a run was last created for the Study
 	//+kubebuilder:validation:Optional
 	LastRunAt *metav1.Time `json:"lastRunAt,omitempty" protobuf:"bytes,6,opt,name=lastRunAt"`

@@ -136,7 +136,7 @@ type DatasetSpec struct {
 	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,21,opt,name=labRef"`
 	// GroupBy specifies the configuration to partition the dataset by groups
 	// By default, this dataset is assigned
-	GroupBy GroupBySpec `json:"groupBy,omitempty" protobuf:"bytes,24,opt,name=groupBy"`
+	GroupBy *GroupBySpec `json:"groupBy,omitempty" protobuf:"bytes,24,opt,name=groupBy"`
 	// Key contains the collection of group keys, in the case that the dataset represents hierarchical time-series data.
 	// The keys will be used to perform a group by
 	// +kubebuilder:validation:Optional
@@ -160,16 +160,12 @@ type DatasetStatus struct {
 	// Active contains a collection of references to currently active snapshots
 	// +optional
 	Active catalog.RunReferenceList `json:"active,omitempty" protobuf:"bytes,2,rep,name=active"`
-	// Version specifies the version of the Dataset as tracked by Modela, which is
-	// incremented each time the object is changed
-	// +kubebuilder:default:=1
-	Version catalog.Version `json:"version,omitempty" protobuf:"varint,3,opt,name=version"`
 	// LastSnapshotVersion contains the integer version last used to create a snapshot
 	// +kubebuilder:default:=0
 	LastSnapshotVersion catalog.Version `json:"lastSnapshotVersion" protobuf:"varint,4,opt,name=lastSnapshotVersion"`
-	// AvailableSnapshotVersions contains the collection of snapshot versions which are ready for use.
+	// AvailableSnapshots contains the collection of snapshot references which are ready for use.
 	// Each version corresponds with an existing DatasetSnapshot resource
-	AvailableSnapshotVersions catalog.VersionList `json:"availableSnapshotVersions,omitempty" protobuf:"bytes,5,opt,name=availableSnapshotVersions"`
+	AvailableSnapshots catalog.RunReferenceList `json:"availableSnapshots,omitempty" protobuf:"bytes,5,opt,name=availableSnapshots"`
 	// LastSnapshotAt specifies the time at which a snapshot was last created for the Dataset
 	//+kubebuilder:validation:Optional
 	LastSnapshotAt *metav1.Time `json:"lastSnapshotAt,omitempty" protobuf:"bytes,6,opt,name=lastSnapshotAt"`

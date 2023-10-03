@@ -3064,9 +3064,9 @@ func (in *StudyStatus) DeepCopyInto(out *StudyStatus) {
 		*out = make(catalogv1alpha1.RunReferenceList, len(*in))
 		copy(*out, *in)
 	}
-	if in.AvailableRunVersions != nil {
-		in, out := &in.AvailableRunVersions, &out.AvailableRunVersions
-		*out = make(catalogv1alpha1.VersionList, len(*in))
+	if in.AvailableRuns != nil {
+		in, out := &in.AvailableRuns, &out.AvailableRuns
+		*out = make(catalogv1alpha1.RunReferenceList, len(*in))
 		copy(*out, *in)
 	}
 	if in.LastRunAt != nil {

@@ -16,7 +16,6 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
 	ctrl "sigs.k8s.io/controller-runtime"
-	"strconv"
 )
 
 func (dataset *Dataset) SetupWebhookWithManager(mgr ctrl.Manager) error {
@@ -79,7 +78,7 @@ func (dataset *Dataset) GetCondition(condType DatasetConditionType) metav1.Condi
 }
 
 func (dataset *Dataset) RootURI() string {
-	return fmt.Sprintf("dataproducts/%s/datasets/%s/versions/%s", dataset.Namespace, dataset.Name, strconv.Itoa(int(dataset.Status.Version)))
+	return fmt.Sprintf("dataproducts/%s/datasets/%s", dataset.Namespace, dataset.Name)
 }
 
 func ParseDatasetYaml(content []byte) (*Dataset, error) {

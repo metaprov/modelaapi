@@ -1539,6 +1539,7 @@ type PredictionRunReference struct {
 	Version *Version `json:"version,omitempty" protobuf:"varint,2,opt,name=version"`
 }
 
+// Version specifies the numerical version of a resource
 type Version uint32
 
 func (v *Version) Value() Version {
@@ -2050,15 +2051,15 @@ func (f *FileLocation) Hash() string {
 }
 
 // ManifestLocation specifies the location of a JSON-serialized custom resource, which includes the name of a
-// Virtual Bucket and a path within it. The version of the resource is also specified
+// Virtual Bucket and a path within it. The generation of the resource is also specified
 type ManifestLocation struct {
-	BucketName string  `json:"bucketName,omitempty" protobuf:"bytes,1,opt,name=bucketName"`
-	Path       string  `json:"path,omitempty" protobuf:"bytes,2,opt,name=path"`
-	Version    Version `json:"version" protobuf:"bytes,3,opt,name=version"`
+	BucketName string `json:"bucketName,omitempty" protobuf:"bytes,1,opt,name=bucketName"`
+	Path       string `json:"path,omitempty" protobuf:"bytes,2,opt,name=path"`
+	Generation int64  `json:"generation" protobuf:"bytes,3,opt,name=generation"`
 }
 
 func (m *ManifestLocation) Hash() string {
-	return m.BucketName + m.Path + strconv.Itoa(int(m.Version))
+	return m.BucketName + m.Path + strconv.Itoa(int(m.Generation))
 }
 
 //////////////////////////////////////////////////////////

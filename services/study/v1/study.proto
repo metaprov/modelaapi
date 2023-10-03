@@ -32,6 +32,17 @@ message GetStudyResponse {
     string yaml = 2;
 }
 
+/////// Get Study Run ///////
+
+message GetStudyRunReferenceRequest {
+    string namespace = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference run = 2;
+}
+
+message GetStudyRunReferenceResponse {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRun run = 1;
+}
+
 /////// Delete Study ///////
 
 message DeleteStudyRequest {
@@ -127,6 +138,10 @@ service StudyService {
 
     rpc GetStudy(GetStudyRequest) returns (GetStudyResponse) {
         option (google.api.http).get = "/v1/studies/{namespace}/{name}";
+    }
+
+    rpc GetStudyRun(GetStudyRunReferenceRequest) returns (GetStudyRunReferenceResponse) {
+        option (google.api.http).get = "/v1/datasets/{namespace}/{run.study}/versions/{run.version}";
     }
 
     rpc UpdateStudy(UpdateStudyRequest) returns (UpdateStudyResponse) {

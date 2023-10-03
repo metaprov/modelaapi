@@ -1079,6 +1079,7 @@ spec:
                   which are ready for use. Each version corresponds with an existing
                   PredictionRun resource
                 items:
+                  description: Version specifies the numerical version of a resource
                   format: int32
                   type: integer
                 type: array

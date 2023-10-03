@@ -99,6 +99,50 @@ export namespace GetStudyResponse {
   }
 }
 
+export class GetStudyRunReferenceRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetStudyRunReferenceRequest;
+
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference): GetStudyRunReferenceRequest;
+  hasRun(): boolean;
+  clearRun(): GetStudyRunReferenceRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetStudyRunReferenceRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetStudyRunReferenceRequest): GetStudyRunReferenceRequest.AsObject;
+  static serializeBinaryToWriter(message: GetStudyRunReferenceRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetStudyRunReferenceRequest;
+  static deserializeBinaryFromReader(message: GetStudyRunReferenceRequest, reader: jspb.BinaryReader): GetStudyRunReferenceRequest;
+}
+
+export namespace GetStudyRunReferenceRequest {
+  export type AsObject = {
+    namespace: string,
+    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.AsObject,
+  }
+}
+
+export class GetStudyRunReferenceResponse extends jspb.Message {
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyRun | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyRun): GetStudyRunReferenceResponse;
+  hasRun(): boolean;
+  clearRun(): GetStudyRunReferenceResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetStudyRunReferenceResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetStudyRunReferenceResponse): GetStudyRunReferenceResponse.AsObject;
+  static serializeBinaryToWriter(message: GetStudyRunReferenceResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetStudyRunReferenceResponse;
+  static deserializeBinaryFromReader(message: GetStudyRunReferenceResponse, reader: jspb.BinaryReader): GetStudyRunReferenceResponse;
+}
+
+export namespace GetStudyRunReferenceResponse {
+  export type AsObject = {
+    run?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyRun.AsObject,
+  }
+}
+
 export class DeleteStudyRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): DeleteStudyRequest;

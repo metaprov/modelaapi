@@ -2716,19 +2716,14 @@ message StudyStatus {
   // +optional
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference active = 2;
 
-  // Version specifies the version of the Study as tracked by Modela, which is
-  // incremented each time the object is changed
-  // +kubebuilder:default:=1
-  optional uint32 version = 3;
-
   // LastRunVersion contains the integer version last used to create a run
   // +kubebuilder:default:=0
   optional uint32 lastRunVersion = 4;
 
-  // AvailableRunVersions contains the collection of run versions which are ready for use.
+  // AvailableRuns contains the collection of run versions which are ready for use.
   // Each version corresponds with an existing StudyRun resource
   // +kubebuilder:validation:Optional
-  repeated uint32 availableRunVersions = 5;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference availableRuns = 5;
 
   // LastRunAt specifies the time at which a run was last created for the Study
   // +kubebuilder:validation:Optional

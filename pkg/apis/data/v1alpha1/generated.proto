@@ -1586,18 +1586,13 @@ message DatasetStatus {
   // +optional
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference active = 2;
 
-  // Version specifies the version of the Dataset as tracked by Modela, which is
-  // incremented each time the object is changed
-  // +kubebuilder:default:=1
-  optional uint32 version = 3;
-
   // LastSnapshotVersion contains the integer version last used to create a snapshot
   // +kubebuilder:default:=0
   optional uint32 lastSnapshotVersion = 4;
 
-  // AvailableSnapshotVersions contains the collection of snapshot versions which are ready for use.
+  // AvailableSnapshots contains the collection of snapshot references which are ready for use.
   // Each version corresponds with an existing DatasetSnapshot resource
-  repeated uint32 availableSnapshotVersions = 5;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference availableSnapshots = 5;
 
   // LastSnapshotAt specifies the time at which a snapshot was last created for the Dataset
   // +kubebuilder:validation:Optional

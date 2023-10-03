@@ -766,13 +766,13 @@ message ManagedImageSpec {
 }
 
 // ManifestLocation specifies the location of a JSON-serialized custom resource, which includes the name of a
-// Virtual Bucket and a path within it. The version of the resource is also specified
+// Virtual Bucket and a path within it. The generation of the resource is also specified
 message ManifestLocation {
   optional string bucketName = 1;
 
   optional string path = 2;
 
-  optional uint32 version = 3;
+  optional int64 generation = 3;
 }
 
 // Measurement is a value for a specific metric

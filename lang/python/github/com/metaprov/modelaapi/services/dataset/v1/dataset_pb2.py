@@ -19,7 +19,7 @@ from github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1 import generated_pb
 from github.com.metaprov.modelaapi.services.common.v1 import common_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n?github.com/metaprov/modelaapi/services/dataset/v1/dataset.proto\x12\x31github.com.metaprov.modelaapi.services.dataset.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1aGgithub.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xf4\x01\n\x13ListDatasetsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.dataset.v1.ListDatasetsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x84\x01\n\x14ListDatasetsResponse\x12S\n\x08\x64\x61tasets\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc5\x01\n\x11GetDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"r\n\x12GetDatasetResponse\x12N\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"f\n\x14\x43reateDatasetRequest\x12N\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\"\x17\n\x15\x43reateDatasetResponse\"\x96\x01\n\x14UpdateDatasetRequest\x12N\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x17\n\x15UpdateDatasetResponse\"7\n\x14\x44\x65leteDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteDatasetResponse\"\x9b\x01\n\x18GetDatasetProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\\\n\x08snapshot\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference\x12\x0e\n\x06groups\x18\x03 \x03(\t\"n\n\x19GetDatasetProfileResponse\x12Q\n\x07profile\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile\"\xaa\x01\n\x16\x44ownloadDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\\\n\x08snapshot\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference\x12\x0e\n\x06groups\x18\x03 \x03(\t\x12\x0f\n\x07\x63onvert\x18\x04 \x01(\x08\"&\n\x17\x44ownloadDatasetResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\"\x9d\x01\n\x1aGetDatasetAnomaliesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\\\n\x08snapshot\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference\x12\x0e\n\x06groups\x18\x03 \x03(\t\"i\n\x1bGetDatasetAnomaliesResponse\x12J\n\x05table\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView\"\x8a\x01\n\x16\x43ompareDatasetsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12]\n\tsnapshots\x18\x02 \x03(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference\"m\n\x17\x43ompareDatasetsResponse\x12R\n\x08profiles\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile\"I\n\x16SnapshotDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06groups\x18\x03 \x03(\t\"\'\n\x17SnapshotDatasetResponse\x12\x0c\n\x04name\x18\x01 \x01(\t2\x90\x11\n\x0e\x44\x61tasetService\x12\xc1\x01\n\x0cListDatasets\x12\x46.github.com.metaprov.modelaapi.services.dataset.v1.ListDatasetsRequest\x1aG.github.com.metaprov.modelaapi.services.dataset.v1.ListDatasetsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/datasets/{namespace}\x12\xc2\x01\n\nGetDataset\x12\x44.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetRequest\x1a\x45.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/datasets/{namespace}/{name}\x12\xbb\x01\n\rCreateDataset\x12G.github.com.metaprov.modelaapi.services.dataset.v1.CreateDatasetRequest\x1aH.github.com.metaprov.modelaapi.services.dataset.v1.CreateDatasetResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/datasets:\x01*\x12\xf0\x01\n\rUpdateDataset\x12G.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest\x1aH.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetResponse\"L\x82\xd3\xe4\x93\x02\x46\x1a\x41/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteDataset\x12G.github.com.metaprov.modelaapi.services.dataset.v1.DeleteDatasetRequest\x1aH.github.com.metaprov.modelaapi.services.dataset.v1.DeleteDatasetResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/datasets/{namespace}/{name}\x12\xeb\x01\n\x11GetDatasetProfile\x12K.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileRequest\x1aL.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse\";\x82\xd3\xe4\x93\x02\x35\"3/v1/datasets/{namespace}/{snapshot.dataset}:profile\x12\xe6\x01\n\x0f\x44ownloadDataset\x12I.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest\x1aJ.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetResponse\"<\x82\xd3\xe4\x93\x02\x36\"4/v1/datasets/{namespace}/{snapshot.dataset}:download\x12\xec\x01\n\x0cGetAnomalies\x12M.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetAnomaliesRequest\x1aN.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetAnomaliesResponse\"=\x82\xd3\xe4\x93\x02\x37\"5/v1/datasets/{namespace}/{snapshot.dataset}:anomalies\x12\xd2\x01\n\x0f\x43ompareDatasets\x12I.github.com.metaprov.modelaapi.services.dataset.v1.CompareDatasetsRequest\x1aJ.github.com.metaprov.modelaapi.services.dataset.v1.CompareDatasetsResponse\"(\x82\xd3\xe4\x93\x02\"\" /v1/datasets/{namespace}:compare\x12\xda\x01\n\x0fSnapshotDataset\x12I.github.com.metaprov.modelaapi.services.dataset.v1.SnapshotDatasetRequest\x1aJ.github.com.metaprov.modelaapi.services.dataset.v1.SnapshotDatasetResponse\"0\x82\xd3\xe4\x93\x02*\"(/v1/datasets/{namespace}/{name}:snapshotB3Z1github.com/metaprov/modelaapi/services/dataset/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n?github.com/metaprov/modelaapi/services/dataset/v1/dataset.proto\x12\x31github.com.metaprov.modelaapi.services.dataset.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1aGgithub.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xf4\x01\n\x13ListDatasetsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.dataset.v1.ListDatasetsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x84\x01\n\x14ListDatasetsResponse\x12S\n\x08\x64\x61tasets\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc5\x01\n\x11GetDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"r\n\x12GetDatasetResponse\x12N\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"\x95\x01\n\"GetDatasetSnapshotReferenceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\\\n\x08snapshot\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference\"~\n#GetDatasetSnapshotReferenceResponse\x12W\n\x08snapshot\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot\"f\n\x14\x43reateDatasetRequest\x12N\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\"\x17\n\x15\x43reateDatasetResponse\"\x96\x01\n\x14UpdateDatasetRequest\x12N\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x17\n\x15UpdateDatasetResponse\"7\n\x14\x44\x65leteDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteDatasetResponse\"\x9b\x01\n\x18GetDatasetProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\\\n\x08snapshot\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference\x12\x0e\n\x06groups\x18\x03 \x03(\t\"n\n\x19GetDatasetProfileResponse\x12Q\n\x07profile\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile\"\xaa\x01\n\x16\x44ownloadDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\\\n\x08snapshot\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference\x12\x0e\n\x06groups\x18\x03 \x03(\t\x12\x0f\n\x07\x63onvert\x18\x04 \x01(\x08\"&\n\x17\x44ownloadDatasetResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\"\x9d\x01\n\x1aGetDatasetAnomaliesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\\\n\x08snapshot\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference\x12\x0e\n\x06groups\x18\x03 \x03(\t\"i\n\x1bGetDatasetAnomaliesResponse\x12J\n\x05table\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView\"\x8a\x01\n\x16\x43ompareDatasetsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12]\n\tsnapshots\x18\x02 \x03(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference\"m\n\x17\x43ompareDatasetsResponse\x12R\n\x08profiles\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile\"I\n\x16SnapshotDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06groups\x18\x03 \x03(\t\"\'\n\x17SnapshotDatasetResponse\x12\x0c\n\x04name\x18\x01 \x01(\t2\xa7\x13\n\x0e\x44\x61tasetService\x12\xc1\x01\n\x0cListDatasets\x12\x46.github.com.metaprov.modelaapi.services.dataset.v1.ListDatasetsRequest\x1aG.github.com.metaprov.modelaapi.services.dataset.v1.ListDatasetsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/datasets/{namespace}\x12\xc2\x01\n\nGetDataset\x12\x44.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetRequest\x1a\x45.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/datasets/{namespace}/{name}\x12\x94\x02\n\x12GetDatasetSnapshot\x12U.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotReferenceRequest\x1aV.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetSnapshotReferenceResponse\"O\x82\xd3\xe4\x93\x02I\x12G/v1/datasets/{namespace}/{snapshot.dataset}/versions/{snapshot.version}\x12\xbb\x01\n\rCreateDataset\x12G.github.com.metaprov.modelaapi.services.dataset.v1.CreateDatasetRequest\x1aH.github.com.metaprov.modelaapi.services.dataset.v1.CreateDatasetResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/datasets:\x01*\x12\xf0\x01\n\rUpdateDataset\x12G.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetRequest\x1aH.github.com.metaprov.modelaapi.services.dataset.v1.UpdateDatasetResponse\"L\x82\xd3\xe4\x93\x02\x46\x1a\x41/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteDataset\x12G.github.com.metaprov.modelaapi.services.dataset.v1.DeleteDatasetRequest\x1aH.github.com.metaprov.modelaapi.services.dataset.v1.DeleteDatasetResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/datasets/{namespace}/{name}\x12\xeb\x01\n\x11GetDatasetProfile\x12K.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileRequest\x1aL.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetProfileResponse\";\x82\xd3\xe4\x93\x02\x35\"3/v1/datasets/{namespace}/{snapshot.dataset}:profile\x12\xe6\x01\n\x0f\x44ownloadDataset\x12I.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetRequest\x1aJ.github.com.metaprov.modelaapi.services.dataset.v1.DownloadDatasetResponse\"<\x82\xd3\xe4\x93\x02\x36\"4/v1/datasets/{namespace}/{snapshot.dataset}:download\x12\xec\x01\n\x0cGetAnomalies\x12M.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetAnomaliesRequest\x1aN.github.com.metaprov.modelaapi.services.dataset.v1.GetDatasetAnomaliesResponse\"=\x82\xd3\xe4\x93\x02\x37\"5/v1/datasets/{namespace}/{snapshot.dataset}:anomalies\x12\xd2\x01\n\x0f\x43ompareDatasets\x12I.github.com.metaprov.modelaapi.services.dataset.v1.CompareDatasetsRequest\x1aJ.github.com.metaprov.modelaapi.services.dataset.v1.CompareDatasetsResponse\"(\x82\xd3\xe4\x93\x02\"\" /v1/datasets/{namespace}:compare\x12\xda\x01\n\x0fSnapshotDataset\x12I.github.com.metaprov.modelaapi.services.dataset.v1.SnapshotDatasetRequest\x1aJ.github.com.metaprov.modelaapi.services.dataset.v1.SnapshotDatasetResponse\"0\x82\xd3\xe4\x93\x02*\"(/v1/datasets/{namespace}/{name}:snapshotB3Z1github.com/metaprov/modelaapi/services/dataset/v1b\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'github.com.metaprov.modelaapi.services.dataset.v1.dataset_pb2', globals())
@@ -35,6 +35,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DATASETSERVICE.methods_by_name['ListDatasets']._serialized_options = b'\202\323\344\223\002\032\022\030/v1/datasets/{namespace}'
   _DATASETSERVICE.methods_by_name['GetDataset']._options = None
   _DATASETSERVICE.methods_by_name['GetDataset']._serialized_options = b'\202\323\344\223\002!\022\037/v1/datasets/{namespace}/{name}'
+  _DATASETSERVICE.methods_by_name['GetDatasetSnapshot']._options = None
+  _DATASETSERVICE.methods_by_name['GetDatasetSnapshot']._serialized_options = b'\202\323\344\223\002I\022G/v1/datasets/{namespace}/{snapshot.dataset}/versions/{snapshot.version}'
   _DATASETSERVICE.methods_by_name['CreateDataset']._options = None
   _DATASETSERVICE.methods_by_name['CreateDataset']._serialized_options = b'\202\323\344\223\002\021\"\014/v1/datasets:\001*'
   _DATASETSERVICE.methods_by_name['UpdateDataset']._options = None
@@ -63,38 +65,42 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _GETDATASETREQUEST_LABELSENTRY._serialized_end=662
   _GETDATASETRESPONSE._serialized_start=999
   _GETDATASETRESPONSE._serialized_end=1113
-  _CREATEDATASETREQUEST._serialized_start=1115
-  _CREATEDATASETREQUEST._serialized_end=1217
-  _CREATEDATASETRESPONSE._serialized_start=1219
-  _CREATEDATASETRESPONSE._serialized_end=1242
-  _UPDATEDATASETREQUEST._serialized_start=1245
-  _UPDATEDATASETREQUEST._serialized_end=1395
-  _UPDATEDATASETRESPONSE._serialized_start=1397
-  _UPDATEDATASETRESPONSE._serialized_end=1420
-  _DELETEDATASETREQUEST._serialized_start=1422
-  _DELETEDATASETREQUEST._serialized_end=1477
-  _DELETEDATASETRESPONSE._serialized_start=1479
-  _DELETEDATASETRESPONSE._serialized_end=1502
-  _GETDATASETPROFILEREQUEST._serialized_start=1505
-  _GETDATASETPROFILEREQUEST._serialized_end=1660
-  _GETDATASETPROFILERESPONSE._serialized_start=1662
-  _GETDATASETPROFILERESPONSE._serialized_end=1772
-  _DOWNLOADDATASETREQUEST._serialized_start=1775
-  _DOWNLOADDATASETREQUEST._serialized_end=1945
-  _DOWNLOADDATASETRESPONSE._serialized_start=1947
-  _DOWNLOADDATASETRESPONSE._serialized_end=1985
-  _GETDATASETANOMALIESREQUEST._serialized_start=1988
-  _GETDATASETANOMALIESREQUEST._serialized_end=2145
-  _GETDATASETANOMALIESRESPONSE._serialized_start=2147
-  _GETDATASETANOMALIESRESPONSE._serialized_end=2252
-  _COMPAREDATASETSREQUEST._serialized_start=2255
-  _COMPAREDATASETSREQUEST._serialized_end=2393
-  _COMPAREDATASETSRESPONSE._serialized_start=2395
-  _COMPAREDATASETSRESPONSE._serialized_end=2504
-  _SNAPSHOTDATASETREQUEST._serialized_start=2506
-  _SNAPSHOTDATASETREQUEST._serialized_end=2579
-  _SNAPSHOTDATASETRESPONSE._serialized_start=2581
-  _SNAPSHOTDATASETRESPONSE._serialized_end=2620
-  _DATASETSERVICE._serialized_start=2623
-  _DATASETSERVICE._serialized_end=4815
+  _GETDATASETSNAPSHOTREFERENCEREQUEST._serialized_start=1116
+  _GETDATASETSNAPSHOTREFERENCEREQUEST._serialized_end=1265
+  _GETDATASETSNAPSHOTREFERENCERESPONSE._serialized_start=1267
+  _GETDATASETSNAPSHOTREFERENCERESPONSE._serialized_end=1393
+  _CREATEDATASETREQUEST._serialized_start=1395
+  _CREATEDATASETREQUEST._serialized_end=1497
+  _CREATEDATASETRESPONSE._serialized_start=1499
+  _CREATEDATASETRESPONSE._serialized_end=1522
+  _UPDATEDATASETREQUEST._serialized_start=1525
+  _UPDATEDATASETREQUEST._serialized_end=1675
+  _UPDATEDATASETRESPONSE._serialized_start=1677
+  _UPDATEDATASETRESPONSE._serialized_end=1700
+  _DELETEDATASETREQUEST._serialized_start=1702
+  _DELETEDATASETREQUEST._serialized_end=1757
+  _DELETEDATASETRESPONSE._serialized_start=1759
+  _DELETEDATASETRESPONSE._serialized_end=1782
+  _GETDATASETPROFILEREQUEST._serialized_start=1785
+  _GETDATASETPROFILEREQUEST._serialized_end=1940
+  _GETDATASETPROFILERESPONSE._serialized_start=1942
+  _GETDATASETPROFILERESPONSE._serialized_end=2052
+  _DOWNLOADDATASETREQUEST._serialized_start=2055
+  _DOWNLOADDATASETREQUEST._serialized_end=2225
+  _DOWNLOADDATASETRESPONSE._serialized_start=2227
+  _DOWNLOADDATASETRESPONSE._serialized_end=2265
+  _GETDATASETANOMALIESREQUEST._serialized_start=2268
+  _GETDATASETANOMALIESREQUEST._serialized_end=2425
+  _GETDATASETANOMALIESRESPONSE._serialized_start=2427
+  _GETDATASETANOMALIESRESPONSE._serialized_end=2532
+  _COMPAREDATASETSREQUEST._serialized_start=2535
+  _COMPAREDATASETSREQUEST._serialized_end=2673
+  _COMPAREDATASETSRESPONSE._serialized_start=2675
+  _COMPAREDATASETSRESPONSE._serialized_end=2784
+  _SNAPSHOTDATASETREQUEST._serialized_start=2786
+  _SNAPSHOTDATASETREQUEST._serialized_end=2859
+  _SNAPSHOTDATASETRESPONSE._serialized_start=2861
+  _SNAPSHOTDATASETRESPONSE._serialized_end=2900
+  _DATASETSERVICE._serialized_start=2903
+  _DATASETSERVICE._serialized_end=5374
 # @@protoc_insertion_point(module_scope)

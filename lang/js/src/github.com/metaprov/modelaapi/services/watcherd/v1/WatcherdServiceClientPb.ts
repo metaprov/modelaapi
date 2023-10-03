@@ -42,26 +42,26 @@ export class WatcherdServiceClient {
   methodDescriptorWatchDataset = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDataset',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetRequest,
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetResponse,
-    (request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetRequest) => {
+    (request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetResponse.deserializeBinary
   );
 
   watchDataset(
-    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetResponse>;
 
   watchDataset(
-    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetResponse>;
 
   watchDataset(
-    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetResponse) => void) {
@@ -85,26 +85,26 @@ export class WatcherdServiceClient {
   methodDescriptorWatchDatasetSnapshot = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDatasetSnapshot',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotRequest,
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotResponse,
-    (request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotRequest) => {
+    (request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotResponse.deserializeBinary
   );
 
   watchDatasetSnapshot(
-    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotRequest,
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotResponse>;
 
   watchDatasetSnapshot(
-    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotRequest,
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotResponse>;
 
   watchDatasetSnapshot(
-    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotRequest,
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotResponse) => void) {
@@ -125,29 +125,115 @@ export class WatcherdServiceClient {
     this.methodDescriptorWatchDatasetSnapshot);
   }
 
+  methodDescriptorWatchStudy = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchStudy',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchStudyResponse,
+    (request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchStudyResponse.deserializeBinary
+  );
+
+  watchStudy(
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchStudyResponse>;
+
+  watchStudy(
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchStudyResponse>;
+
+  watchStudy(
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchStudyResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchStudy',
+        request,
+        metadata || {},
+        this.methodDescriptorWatchStudy,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchStudy',
+    request,
+    metadata || {},
+    this.methodDescriptorWatchStudy);
+  }
+
+  methodDescriptorWatchStudyRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchStudyRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchStudyRunResponse,
+    (request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchStudyRunResponse.deserializeBinary
+  );
+
+  watchStudyRun(
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchStudyRunResponse>;
+
+  watchStudyRun(
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchStudyRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchStudyRunResponse>;
+
+  watchStudyRun(
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchStudyRunResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchStudyRun',
+        request,
+        metadata || {},
+        this.methodDescriptorWatchStudyRun,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchStudyRun',
+    request,
+    metadata || {},
+    this.methodDescriptorWatchStudyRun);
+  }
+
   methodDescriptorWatchModel = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchModel',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchModelRequest,
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchModelResponse,
-    (request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchModelRequest) => {
+    (request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchModelResponse.deserializeBinary
   );
 
   watchModel(
-    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchModelRequest,
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchModelResponse>;
 
   watchModel(
-    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchModelRequest,
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchModelResponse>;
 
   watchModel(
-    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchModelRequest,
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchModelResponse) => void) {
@@ -171,26 +257,26 @@ export class WatcherdServiceClient {
   methodDescriptorWatchAlert = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchAlert',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAlertRequest,
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAlertResponse,
-    (request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAlertRequest) => {
+    (request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAlertResponse.deserializeBinary
   );
 
   watchAlert(
-    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAlertRequest,
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAlertResponse>;
 
   watchAlert(
-    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAlertRequest,
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAlertResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAlertResponse>;
 
   watchAlert(
-    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAlertRequest,
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAlertResponse) => void) {

@@ -283,13 +283,13 @@ spec:
                 properties:
                   bucketName:
                     type: string
+                  generation:
+                    format: int64
+                    type: integer
                   path:
                     type: string
-                  version:
-                    format: int32
-                    type: integer
                 required:
-                - version
+                - generation
                 type: object
               rows:
                 description: Rows specifies the number of rows predicted

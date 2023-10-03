@@ -31,6 +31,11 @@ class StudyServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyResponse.FromString,
                 )
+        self.GetStudyRun = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyRunReferenceRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyRunReferenceResponse.FromString,
+                )
         self.UpdateStudy = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.study.v1.StudyService/UpdateStudy',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.UpdateStudyRequest.SerializeToString,
@@ -86,6 +91,12 @@ class StudyServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetStudy(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetStudyRun(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -150,6 +161,11 @@ def add_StudyServiceServicer_to_server(servicer, server):
                     servicer.GetStudy,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyResponse.SerializeToString,
+            ),
+            'GetStudyRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetStudyRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyRunReferenceRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyRunReferenceResponse.SerializeToString,
             ),
             'UpdateStudy': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateStudy,
@@ -246,6 +262,23 @@ class StudyService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudy',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetStudyRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyRunReferenceRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyRunReferenceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

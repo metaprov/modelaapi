@@ -23035,9 +23035,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.toObjec
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     activeList: jspb.Message.toObjectList(msg.getActiveList(),
     github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.toObject, includeInstance),
-    version: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     lastsnapshotversion: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    availablesnapshotversionsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+    availablesnapshotsList: jspb.Message.toObjectList(msg.getAvailablesnapshotsList(),
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.toObject, includeInstance),
     lastsnapshotat: (f = msg.getLastsnapshotat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     lastfailuremessage: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
@@ -23089,17 +23089,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.deseria
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.deserializeBinaryFromReader);
       msg.addActive(value);
       break;
-    case 3:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setVersion(value);
-      break;
     case 4:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setLastsnapshotversion(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.addAvailablesnapshotversions(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.deserializeBinaryFromReader);
+      msg.addAvailablesnapshots(value);
       break;
     case 6:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
@@ -23169,13 +23166,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.seriali
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeUint32(
-      3,
-      f
-    );
-  }
   f = /** @type {number} */ (jspb.Message.getField(message, 4));
   if (f != null) {
     writer.writeUint32(
@@ -23183,11 +23173,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.seriali
       f
     );
   }
-  f = message.getAvailablesnapshotversionsList();
+  f = message.getAvailablesnapshotsList();
   if (f.length > 0) {
-    writer.writeRepeatedUint32(
+    writer.writeRepeatedMessage(
       5,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.serializeBinaryToWriter
     );
   }
   f = message.getLastsnapshotat();
@@ -23307,42 +23298,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
 
 
 /**
- * optional uint32 version = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getVersion = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.setVersion = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.clearVersion = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.hasVersion = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
  * optional uint32 lastSnapshotVersion = 4;
  * @return {number}
  */
@@ -23379,30 +23334,31 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
 
 
 /**
- * repeated uint32 availableSnapshotVersions = 5;
- * @return {!Array<number>}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference availableSnapshots = 5;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getAvailablesnapshotversionsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 5));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getAvailablesnapshotsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference, 5));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.setAvailablesnapshotversionsList = function(value) {
-  return jspb.Message.setField(this, 5, value || []);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.setAvailablesnapshotsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
 /**
- * @param {number} value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.addAvailablesnapshotversions = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.addAvailablesnapshots = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference, opt_index);
 };
 
 
@@ -23410,8 +23366,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.clearAvailablesnapshotversionsList = function() {
-  return this.setAvailablesnapshotversionsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.clearAvailablesnapshotsList = function() {
+  return this.setAvailablesnapshotsList([]);
 };
 
 

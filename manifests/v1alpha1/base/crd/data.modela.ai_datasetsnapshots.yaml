@@ -197,13 +197,13 @@ spec:
                 properties:
                   bucketName:
                     type: string
+                  generation:
+                    format: int64
+                    type: integer
                   path:
                     type: string
-                  version:
-                    format: int32
-                    type: integer
                 required:
-                - version
+                - generation
                 type: object
               datasetManifestLocation:
                 description: DatasetManifestLocation specifies the location of Dataset
@@ -211,13 +211,13 @@ spec:
                 properties:
                   bucketName:
                     type: string
+                  generation:
+                    format: int64
+                    type: integer
                   path:
                     type: string
-                  version:
-                    format: int32
-                    type: integer
                 required:
-                - version
+                - generation
                 type: object
               failureMessage:
                 description: FailureMessage is set to a failure message in the case

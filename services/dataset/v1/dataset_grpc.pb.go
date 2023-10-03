@@ -24,6 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type DatasetServiceClient interface {
 	ListDatasets(ctx context.Context, in *ListDatasetsRequest, opts ...grpc.CallOption) (*ListDatasetsResponse, error)
 	GetDataset(ctx context.Context, in *GetDatasetRequest, opts ...grpc.CallOption) (*GetDatasetResponse, error)
+	GetDatasetSnapshot(ctx context.Context, in *GetDatasetSnapshotReferenceRequest, opts ...grpc.CallOption) (*GetDatasetSnapshotReferenceResponse, error)
 	CreateDataset(ctx context.Context, in *CreateDatasetRequest, opts ...grpc.CallOption) (*CreateDatasetResponse, error)
 	UpdateDataset(ctx context.Context, in *UpdateDatasetRequest, opts ...grpc.CallOption) (*UpdateDatasetResponse, error)
 	DeleteDataset(ctx context.Context, in *DeleteDatasetRequest, opts ...grpc.CallOption) (*DeleteDatasetResponse, error)
@@ -54,6 +55,15 @@ func (c *datasetServiceClient) ListDatasets(ctx context.Context, in *ListDataset
 func (c *datasetServiceClient) GetDataset(ctx context.Context, in *GetDatasetRequest, opts ...grpc.CallOption) (*GetDatasetResponse, error) {
 	out := new(GetDatasetResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDataset", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datasetServiceClient) GetDatasetSnapshot(ctx context.Context, in *GetDatasetSnapshotReferenceRequest, opts ...grpc.CallOption) (*GetDatasetSnapshotReferenceResponse, error) {
+	out := new(GetDatasetSnapshotReferenceResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatasetSnapshot", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -138,6 +148,7 @@ func (c *datasetServiceClient) SnapshotDataset(ctx context.Context, in *Snapshot
 type DatasetServiceServer interface {
 	ListDatasets(context.Context, *ListDatasetsRequest) (*ListDatasetsResponse, error)
 	GetDataset(context.Context, *GetDatasetRequest) (*GetDatasetResponse, error)
+	GetDatasetSnapshot(context.Context, *GetDatasetSnapshotReferenceRequest) (*GetDatasetSnapshotReferenceResponse, error)
 	CreateDataset(context.Context, *CreateDatasetRequest) (*CreateDatasetResponse, error)
 	UpdateDataset(context.Context, *UpdateDatasetRequest) (*UpdateDatasetResponse, error)
 	DeleteDataset(context.Context, *DeleteDatasetRequest) (*DeleteDatasetResponse, error)
@@ -158,6 +169,9 @@ func (UnimplementedDatasetServiceServer) ListDatasets(context.Context, *ListData
 }
 func (UnimplementedDatasetServiceServer) GetDataset(context.Context, *GetDatasetRequest) (*GetDatasetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDataset not implemented")
+}
+func (UnimplementedDatasetServiceServer) GetDatasetSnapshot(context.Context, *GetDatasetSnapshotReferenceRequest) (*GetDatasetSnapshotReferenceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetDatasetSnapshot not implemented")
 }
 func (UnimplementedDatasetServiceServer) CreateDataset(context.Context, *CreateDatasetRequest) (*CreateDatasetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateDataset not implemented")
@@ -228,6 +242,24 @@ func _DatasetService_GetDataset_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DatasetServiceServer).GetDataset(ctx, req.(*GetDatasetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatasetService_GetDatasetSnapshot_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDatasetSnapshotReferenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatasetServiceServer).GetDatasetSnapshot(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatasetSnapshot",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatasetServiceServer).GetDatasetSnapshot(ctx, req.(*GetDatasetSnapshotReferenceRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -390,6 +422,10 @@ var DatasetService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDataset",
 			Handler:    _DatasetService_GetDataset_Handler,
+		},
+		{
+			MethodName: "GetDatasetSnapshot",
+			Handler:    _DatasetService_GetDatasetSnapshot_Handler,
 		},
 		{
 			MethodName: "CreateDataset",

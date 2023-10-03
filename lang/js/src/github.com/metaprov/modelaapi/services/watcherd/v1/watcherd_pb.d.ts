@@ -7,25 +7,29 @@ import * as github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb
 import * as k8s_io_api_core_v1_generated_pb from '../../../../../../k8s.io/api/core/v1/generated_pb';
 
 
-export class WatchDatasetRequest extends jspb.Message {
+export class WatchRequestOptions extends jspb.Message {
   getGeneration(): number;
-  setGeneration(value: number): WatchDatasetRequest;
+  setGeneration(value: number): WatchRequestOptions;
 
   getNamespace(): string;
-  setNamespace(value: string): WatchDatasetRequest;
+  setNamespace(value: string): WatchRequestOptions;
+
+  getLatest(): boolean;
+  setLatest(value: boolean): WatchRequestOptions;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): WatchDatasetRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: WatchDatasetRequest): WatchDatasetRequest.AsObject;
-  static serializeBinaryToWriter(message: WatchDatasetRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): WatchDatasetRequest;
-  static deserializeBinaryFromReader(message: WatchDatasetRequest, reader: jspb.BinaryReader): WatchDatasetRequest;
+  toObject(includeInstance?: boolean): WatchRequestOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: WatchRequestOptions): WatchRequestOptions.AsObject;
+  static serializeBinaryToWriter(message: WatchRequestOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WatchRequestOptions;
+  static deserializeBinaryFromReader(message: WatchRequestOptions, reader: jspb.BinaryReader): WatchRequestOptions;
 }
 
-export namespace WatchDatasetRequest {
+export namespace WatchRequestOptions {
   export type AsObject = {
     generation: number,
     namespace: string,
+    latest: boolean,
   }
 }
 
@@ -56,10 +60,10 @@ export namespace WatchDatasetResponse {
     getEvent(): EventType;
     setEvent(value: EventType): DatasetEvent;
 
-    getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-    setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DatasetEvent;
-    hasDataset(): boolean;
-    clearDataset(): DatasetEvent;
+    getObject(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+    setObject(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DatasetEvent;
+    hasObject(): boolean;
+    clearObject(): DatasetEvent;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): DatasetEvent.AsObject;
@@ -72,32 +76,10 @@ export namespace WatchDatasetResponse {
   export namespace DatasetEvent {
     export type AsObject = {
       event: EventType,
-      dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+      object?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     }
   }
 
-}
-
-export class WatchModelRequest extends jspb.Message {
-  getGeneration(): number;
-  setGeneration(value: number): WatchModelRequest;
-
-  getNamespace(): string;
-  setNamespace(value: string): WatchModelRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): WatchModelRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: WatchModelRequest): WatchModelRequest.AsObject;
-  static serializeBinaryToWriter(message: WatchModelRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): WatchModelRequest;
-  static deserializeBinaryFromReader(message: WatchModelRequest, reader: jspb.BinaryReader): WatchModelRequest;
-}
-
-export namespace WatchModelRequest {
-  export type AsObject = {
-    generation: number,
-    namespace: string,
-  }
 }
 
 export class WatchModelResponse extends jspb.Message {
@@ -127,10 +109,10 @@ export namespace WatchModelResponse {
     getEvent(): EventType;
     setEvent(value: EventType): ModelEvent;
 
-    getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-    setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): ModelEvent;
-    hasModel(): boolean;
-    clearModel(): ModelEvent;
+    getObject(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+    setObject(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): ModelEvent;
+    hasObject(): boolean;
+    clearObject(): ModelEvent;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ModelEvent.AsObject;
@@ -143,32 +125,10 @@ export namespace WatchModelResponse {
   export namespace ModelEvent {
     export type AsObject = {
       event: EventType,
-      model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+      object?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     }
   }
 
-}
-
-export class WatchAlertRequest extends jspb.Message {
-  getGeneration(): number;
-  setGeneration(value: number): WatchAlertRequest;
-
-  getNamespace(): string;
-  setNamespace(value: string): WatchAlertRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): WatchAlertRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: WatchAlertRequest): WatchAlertRequest.AsObject;
-  static serializeBinaryToWriter(message: WatchAlertRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): WatchAlertRequest;
-  static deserializeBinaryFromReader(message: WatchAlertRequest, reader: jspb.BinaryReader): WatchAlertRequest;
-}
-
-export namespace WatchAlertRequest {
-  export type AsObject = {
-    generation: number,
-    namespace: string,
-  }
 }
 
 export class WatchAlertResponse extends jspb.Message {
@@ -198,10 +158,10 @@ export namespace WatchAlertResponse {
     getEvent(): EventType;
     setEvent(value: EventType): AlertEvent;
 
-    getAlert(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert | undefined;
-    setAlert(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert): AlertEvent;
-    hasAlert(): boolean;
-    clearAlert(): AlertEvent;
+    getObject(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert | undefined;
+    setObject(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert): AlertEvent;
+    hasObject(): boolean;
+    clearObject(): AlertEvent;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): AlertEvent.AsObject;
@@ -214,32 +174,10 @@ export namespace WatchAlertResponse {
   export namespace AlertEvent {
     export type AsObject = {
       event: EventType,
-      alert?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.AsObject,
+      object?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.AsObject,
     }
   }
 
-}
-
-export class WatchDatasetSnapshotRequest extends jspb.Message {
-  getGeneration(): number;
-  setGeneration(value: number): WatchDatasetSnapshotRequest;
-
-  getNamespace(): string;
-  setNamespace(value: string): WatchDatasetSnapshotRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): WatchDatasetSnapshotRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: WatchDatasetSnapshotRequest): WatchDatasetSnapshotRequest.AsObject;
-  static serializeBinaryToWriter(message: WatchDatasetSnapshotRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): WatchDatasetSnapshotRequest;
-  static deserializeBinaryFromReader(message: WatchDatasetSnapshotRequest, reader: jspb.BinaryReader): WatchDatasetSnapshotRequest;
-}
-
-export namespace WatchDatasetSnapshotRequest {
-  export type AsObject = {
-    generation: number,
-    namespace: string,
-  }
 }
 
 export class WatchDatasetSnapshotResponse extends jspb.Message {
@@ -269,10 +207,10 @@ export namespace WatchDatasetSnapshotResponse {
     getEvent(): EventType;
     setEvent(value: EventType): DatasetSnapshotEvent;
 
-    getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
-    setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): DatasetSnapshotEvent;
-    hasSnapshot(): boolean;
-    clearSnapshot(): DatasetSnapshotEvent;
+    getObject(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+    setObject(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): DatasetSnapshotEvent;
+    hasObject(): boolean;
+    clearObject(): DatasetSnapshotEvent;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): DatasetSnapshotEvent.AsObject;
@@ -285,7 +223,105 @@ export namespace WatchDatasetSnapshotResponse {
   export namespace DatasetSnapshotEvent {
     export type AsObject = {
       event: EventType,
-      snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
+      object?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
+    }
+  }
+
+}
+
+export class WatchStudyResponse extends jspb.Message {
+  getGeneration(): number;
+  setGeneration(value: number): WatchStudyResponse;
+
+  getEventsList(): Array<WatchStudyResponse.StudyEvent>;
+  setEventsList(value: Array<WatchStudyResponse.StudyEvent>): WatchStudyResponse;
+  clearEventsList(): WatchStudyResponse;
+  addEvents(value?: WatchStudyResponse.StudyEvent, index?: number): WatchStudyResponse.StudyEvent;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WatchStudyResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: WatchStudyResponse): WatchStudyResponse.AsObject;
+  static serializeBinaryToWriter(message: WatchStudyResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WatchStudyResponse;
+  static deserializeBinaryFromReader(message: WatchStudyResponse, reader: jspb.BinaryReader): WatchStudyResponse;
+}
+
+export namespace WatchStudyResponse {
+  export type AsObject = {
+    generation: number,
+    eventsList: Array<WatchStudyResponse.StudyEvent.AsObject>,
+  }
+
+  export class StudyEvent extends jspb.Message {
+    getEvent(): EventType;
+    setEvent(value: EventType): StudyEvent;
+
+    getObject(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+    setObject(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): StudyEvent;
+    hasObject(): boolean;
+    clearObject(): StudyEvent;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): StudyEvent.AsObject;
+    static toObject(includeInstance: boolean, msg: StudyEvent): StudyEvent.AsObject;
+    static serializeBinaryToWriter(message: StudyEvent, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): StudyEvent;
+    static deserializeBinaryFromReader(message: StudyEvent, reader: jspb.BinaryReader): StudyEvent;
+  }
+
+  export namespace StudyEvent {
+    export type AsObject = {
+      event: EventType,
+      object?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    }
+  }
+
+}
+
+export class WatchStudyRunResponse extends jspb.Message {
+  getGeneration(): number;
+  setGeneration(value: number): WatchStudyRunResponse;
+
+  getEventsList(): Array<WatchStudyRunResponse.StudyRunEvent>;
+  setEventsList(value: Array<WatchStudyRunResponse.StudyRunEvent>): WatchStudyRunResponse;
+  clearEventsList(): WatchStudyRunResponse;
+  addEvents(value?: WatchStudyRunResponse.StudyRunEvent, index?: number): WatchStudyRunResponse.StudyRunEvent;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WatchStudyRunResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: WatchStudyRunResponse): WatchStudyRunResponse.AsObject;
+  static serializeBinaryToWriter(message: WatchStudyRunResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WatchStudyRunResponse;
+  static deserializeBinaryFromReader(message: WatchStudyRunResponse, reader: jspb.BinaryReader): WatchStudyRunResponse;
+}
+
+export namespace WatchStudyRunResponse {
+  export type AsObject = {
+    generation: number,
+    eventsList: Array<WatchStudyRunResponse.StudyRunEvent.AsObject>,
+  }
+
+  export class StudyRunEvent extends jspb.Message {
+    getEvent(): EventType;
+    setEvent(value: EventType): StudyRunEvent;
+
+    getObject(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyRun | undefined;
+    setObject(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyRun): StudyRunEvent;
+    hasObject(): boolean;
+    clearObject(): StudyRunEvent;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): StudyRunEvent.AsObject;
+    static toObject(includeInstance: boolean, msg: StudyRunEvent): StudyRunEvent.AsObject;
+    static serializeBinaryToWriter(message: StudyRunEvent, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): StudyRunEvent;
+    static deserializeBinaryFromReader(message: StudyRunEvent, reader: jspb.BinaryReader): StudyRunEvent;
+  }
+
+  export namespace StudyRunEvent {
+    export type AsObject = {
+      event: EventType,
+      object?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyRun.AsObject,
     }
   }
 

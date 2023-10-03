@@ -1838,7 +1838,11 @@ func (in *DatasetSpec) DeepCopyInto(out *DatasetSpec) {
 		*out = new(corev1.ObjectReference)
 		**out = **in
 	}
-	in.GroupBy.DeepCopyInto(&out.GroupBy)
+	if in.GroupBy != nil {
+		in, out := &in.GroupBy, &out.GroupBy
+		*out = new(GroupBySpec)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Key != nil {
 		in, out := &in.Key, &out.Key
 		*out = make([]string, len(*in))
@@ -1911,9 +1915,9 @@ func (in *DatasetStatus) DeepCopyInto(out *DatasetStatus) {
 		*out = make(catalogv1alpha1.RunReferenceList, len(*in))
 		copy(*out, *in)
 	}
-	if in.AvailableSnapshotVersions != nil {
-		in, out := &in.AvailableSnapshotVersions, &out.AvailableSnapshotVersions
-		*out = make(catalogv1alpha1.VersionList, len(*in))
+	if in.AvailableSnapshots != nil {
+		in, out := &in.AvailableSnapshots, &out.AvailableSnapshots
+		*out = make(catalogv1alpha1.RunReferenceList, len(*in))
 		copy(*out, *in)
 	}
 	if in.LastSnapshotAt != nil {

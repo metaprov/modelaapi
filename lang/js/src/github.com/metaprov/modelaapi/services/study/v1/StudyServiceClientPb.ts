@@ -168,6 +168,49 @@ export class StudyServiceClient {
     this.methodDescriptorGetStudy);
   }
 
+  methodDescriptorGetStudyRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRunReferenceRequest,
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRunReferenceResponse,
+    (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRunReferenceRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRunReferenceResponse.deserializeBinary
+  );
+
+  getStudyRun(
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRunReferenceRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRunReferenceResponse>;
+
+  getStudyRun(
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRunReferenceRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRunReferenceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRunReferenceResponse>;
+
+  getStudyRun(
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRunReferenceRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRunReferenceResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyRun',
+        request,
+        metadata || {},
+        this.methodDescriptorGetStudyRun,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyRun',
+    request,
+    metadata || {},
+    this.methodDescriptorGetStudyRun);
+  }
+
   methodDescriptorUpdateStudy = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.study.v1.StudyService/UpdateStudy',
     grpcWeb.MethodType.UNARY,

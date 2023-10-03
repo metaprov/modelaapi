@@ -16,7 +16,6 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
 	ctrl "sigs.k8s.io/controller-runtime"
-	"strconv"
 )
 
 func (study *Study) SetupWebhookWithManager(mgr ctrl.Manager) error {
@@ -103,7 +102,7 @@ func (study *Study) IsForecast() bool {
 }
 
 func (study *Study) RootURI() string {
-	return fmt.Sprintf("dataproducts/%s/studies/%s/versions/%s", study.Namespace, study.Name, strconv.Itoa(int(study.Status.Version)))
+	return fmt.Sprintf("dataproducts/%s/studies/%s", study.Namespace, study.Name)
 }
 
 func ParseStudyYaml(content []byte) (*Study, error) {

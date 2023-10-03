@@ -1,7 +1,7 @@
 apiVersion: inference.modela.ai/v1alpha1
 kind: Prediction
 metadata:
-  name: prediction-test
+  name: ouod-batch-prediction
   namespace: default-product
 spec:
   abort: false
@@ -36,19 +36,18 @@ spec:
       parquet:
         engine: auto
     location:
-      bucket: default-minio-bucket
-      connection: ''
+      bucket: ''
+      connection: oneuponedown
       database: ''
-      path: >-
-        modela/live/tenants/modela/dataproducts/default-product/predictions/prediction-20230712-112050/versions/v1/data/raw/iris.csv
-      sql: ''
-      table: ''
+      path: ''
+      sql: SELECT * FROM prediction_view;
+      table: prediction_view
       topic: ''
-      type: object
+      type: view
       url: ''
   labeled: false
   modelRef:
-    name: model-20230711-1502360
+    name: model-20230711-1659570
     namespace: default-product
   output:
     IncludeShapValues: false
@@ -57,17 +56,16 @@ spec:
     datasetName: ''
     detectOutliers: false
     format: csv
-    includeFeatures: true
+    includeFeatures: false
     location:
-      bucket: default-minio-bucket
-      connection: ''
+      bucket: ''
+      connection: oneuponedown
       database: ''
-      path: >-
-        modela/live/tenants/modela/dataproducts/default-product/predictions/prediction-20230712-112050/versions/v1/data/raw/iris.csv.out
+      path: ''
       sql: ''
-      table: ''
+      table: prediction_alt
       topic: ''
-      type: object
+      type: table
       url: ''
   owner: admin
   partitionLocation: {}

@@ -25,6 +25,7 @@ type StudyServiceClient interface {
 	ListStudies(ctx context.Context, in *ListStudyRequest, opts ...grpc.CallOption) (*ListStudyResponse, error)
 	CreateStudy(ctx context.Context, in *CreateStudyRequest, opts ...grpc.CallOption) (*CreateStudyResponse, error)
 	GetStudy(ctx context.Context, in *GetStudyRequest, opts ...grpc.CallOption) (*GetStudyResponse, error)
+	GetStudyRun(ctx context.Context, in *GetStudyRunReferenceRequest, opts ...grpc.CallOption) (*GetStudyRunReferenceResponse, error)
 	UpdateStudy(ctx context.Context, in *UpdateStudyRequest, opts ...grpc.CallOption) (*UpdateStudyResponse, error)
 	DeleteStudy(ctx context.Context, in *DeleteStudyRequest, opts ...grpc.CallOption) (*DeleteStudyResponse, error)
 	GetStudyProfile(ctx context.Context, in *GetStudyProfileRequest, opts ...grpc.CallOption) (*GetStudyProfileResponse, error)
@@ -63,6 +64,15 @@ func (c *studyServiceClient) CreateStudy(ctx context.Context, in *CreateStudyReq
 func (c *studyServiceClient) GetStudy(ctx context.Context, in *GetStudyRequest, opts ...grpc.CallOption) (*GetStudyResponse, error) {
 	out := new(GetStudyResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudy", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *studyServiceClient) GetStudyRun(ctx context.Context, in *GetStudyRunReferenceRequest, opts ...grpc.CallOption) (*GetStudyRunReferenceResponse, error) {
+	out := new(GetStudyRunReferenceResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyRun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -139,6 +149,7 @@ type StudyServiceServer interface {
 	ListStudies(context.Context, *ListStudyRequest) (*ListStudyResponse, error)
 	CreateStudy(context.Context, *CreateStudyRequest) (*CreateStudyResponse, error)
 	GetStudy(context.Context, *GetStudyRequest) (*GetStudyResponse, error)
+	GetStudyRun(context.Context, *GetStudyRunReferenceRequest) (*GetStudyRunReferenceResponse, error)
 	UpdateStudy(context.Context, *UpdateStudyRequest) (*UpdateStudyResponse, error)
 	DeleteStudy(context.Context, *DeleteStudyRequest) (*DeleteStudyResponse, error)
 	GetStudyProfile(context.Context, *GetStudyProfileRequest) (*GetStudyProfileResponse, error)
@@ -161,6 +172,9 @@ func (UnimplementedStudyServiceServer) CreateStudy(context.Context, *CreateStudy
 }
 func (UnimplementedStudyServiceServer) GetStudy(context.Context, *GetStudyRequest) (*GetStudyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStudy not implemented")
+}
+func (UnimplementedStudyServiceServer) GetStudyRun(context.Context, *GetStudyRunReferenceRequest) (*GetStudyRunReferenceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetStudyRun not implemented")
 }
 func (UnimplementedStudyServiceServer) UpdateStudy(context.Context, *UpdateStudyRequest) (*UpdateStudyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateStudy not implemented")
@@ -246,6 +260,24 @@ func _StudyService_GetStudy_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StudyServiceServer).GetStudy(ctx, req.(*GetStudyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StudyService_GetStudyRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetStudyRunReferenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StudyServiceServer).GetStudyRun(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyRun",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StudyServiceServer).GetStudyRun(ctx, req.(*GetStudyRunReferenceRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -394,6 +426,10 @@ var StudyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetStudy",
 			Handler:    _StudyService_GetStudy_Handler,
+		},
+		{
+			MethodName: "GetStudyRun",
+			Handler:    _StudyService_GetStudyRun_Handler,
 		},
 		{
 			MethodName: "UpdateStudy",

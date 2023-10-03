@@ -39,6 +39,17 @@ message GetDatasetResponse {
     string yaml = 2;
 }
 
+/////// Get Dataset Snapshot ///////
+
+message GetDatasetSnapshotReferenceRequest {
+    string namespace = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference snapshot = 2;
+}
+
+message GetDatasetSnapshotReferenceResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 1;
+}
+
 /////// Create Dataset ///////
 
 message CreateDatasetRequest {
@@ -135,6 +146,10 @@ service DatasetService {
 
     rpc GetDataset(GetDatasetRequest) returns (GetDatasetResponse) {
         option (google.api.http).get = "/v1/datasets/{namespace}/{name}";
+    }
+
+    rpc GetDatasetSnapshot(GetDatasetSnapshotReferenceRequest) returns (GetDatasetSnapshotReferenceResponse) {
+        option (google.api.http).get = "/v1/datasets/{namespace}/{snapshot.dataset}/versions/{snapshot.version}";
     }
 
     rpc CreateDataset(CreateDatasetRequest) returns (CreateDatasetResponse) {

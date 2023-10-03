@@ -116,6 +116,50 @@ export namespace GetDatasetResponse {
   }
 }
 
+export class GetDatasetSnapshotReferenceRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetDatasetSnapshotReferenceRequest;
+
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference): GetDatasetSnapshotReferenceRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): GetDatasetSnapshotReferenceRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDatasetSnapshotReferenceRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDatasetSnapshotReferenceRequest): GetDatasetSnapshotReferenceRequest.AsObject;
+  static serializeBinaryToWriter(message: GetDatasetSnapshotReferenceRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDatasetSnapshotReferenceRequest;
+  static deserializeBinaryFromReader(message: GetDatasetSnapshotReferenceRequest, reader: jspb.BinaryReader): GetDatasetSnapshotReferenceRequest;
+}
+
+export namespace GetDatasetSnapshotReferenceRequest {
+  export type AsObject = {
+    namespace: string,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject,
+  }
+}
+
+export class GetDatasetSnapshotReferenceResponse extends jspb.Message {
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): GetDatasetSnapshotReferenceResponse;
+  hasSnapshot(): boolean;
+  clearSnapshot(): GetDatasetSnapshotReferenceResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDatasetSnapshotReferenceResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDatasetSnapshotReferenceResponse): GetDatasetSnapshotReferenceResponse.AsObject;
+  static serializeBinaryToWriter(message: GetDatasetSnapshotReferenceResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDatasetSnapshotReferenceResponse;
+  static deserializeBinaryFromReader(message: GetDatasetSnapshotReferenceResponse, reader: jspb.BinaryReader): GetDatasetSnapshotReferenceResponse;
+}
+
+export namespace GetDatasetSnapshotReferenceResponse {
+  export type AsObject = {
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
+  }
+}
+
 export class CreateDatasetRequest extends jspb.Message {
   getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
   setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateDatasetRequest;

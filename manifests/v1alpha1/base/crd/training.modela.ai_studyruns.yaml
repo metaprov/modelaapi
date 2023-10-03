@@ -471,13 +471,13 @@ spec:
                 properties:
                   bucketName:
                     type: string
+                  generation:
+                    format: int64
+                    type: integer
                   path:
                     type: string
-                  version:
-                    format: int32
-                    type: integer
                 required:
-                - version
+                - generation
                 type: object
               test:
                 description: TestStatus contains the status of the testing phase

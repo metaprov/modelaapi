@@ -2262,13 +2262,25 @@ spec:
                   - version
                   type: object
                 type: array
-              availableRunVersions:
-                description: AvailableRunVersions contains the collection of run versions
+              availableRuns:
+                description: AvailableRuns contains the collection of run versions
                   which are ready for use. Each version corresponds with an existing
                   StudyRun resource
                 items:
-                  format: int32
-                  type: integer
+                  description: RunReference defines a generic reference to any type
+                    of run
+                  properties:
+                    name:
+                      description: Name specifies the name of the resource
+                      type: string
+                    version:
+                      description: Version specifies the version of the run
+                      format: int32
+                      type: integer
+                  required:
+                  - name
+                  - version
+                  type: object
                 type: array
               conditions:
                 items:
@@ -2395,12 +2407,6 @@ spec:
                 description: UpdatedAt specifies the last time the Study was updated
                 format: date-time
                 type: string
-              version:
-                default: 1
-                description: Version specifies the version of the Study as tracked
-                  by Modela, which is incremented each time the object is changed
-                format: int32
-                type: integer
             type: object
         type: object
     served: true

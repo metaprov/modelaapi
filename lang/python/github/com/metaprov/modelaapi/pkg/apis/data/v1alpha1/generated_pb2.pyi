@@ -854,9 +854,9 @@ class DatasetStatistics(_message.Message):
     def __init__(self, features: _Optional[_Iterable[_Union[FeatureStatistics, _Mapping]]] = ..., rows: _Optional[int] = ..., columns: _Optional[int] = ..., sizeInBytes: _Optional[int] = ..., correlationsWithTarget: _Optional[_Iterable[_Union[Correlation, _Mapping]]] = ..., topCorrelations: _Optional[_Iterable[_Union[Correlation, _Mapping]]] = ...) -> None: ...
 
 class DatasetStatus(_message.Message):
-    __slots__ = ["active", "availableSnapshotVersions", "conditions", "lastFailureMessage", "lastSnapshotAt", "lastSnapshotVersion", "observedGeneration", "schedule", "updatedAt", "version"]
+    __slots__ = ["active", "availableSnapshots", "conditions", "lastFailureMessage", "lastSnapshotAt", "lastSnapshotVersion", "observedGeneration", "schedule", "updatedAt"]
     ACTIVE_FIELD_NUMBER: _ClassVar[int]
-    AVAILABLESNAPSHOTVERSIONS_FIELD_NUMBER: _ClassVar[int]
+    AVAILABLESNAPSHOTS_FIELD_NUMBER: _ClassVar[int]
     CONDITIONS_FIELD_NUMBER: _ClassVar[int]
     LASTFAILUREMESSAGE_FIELD_NUMBER: _ClassVar[int]
     LASTSNAPSHOTAT_FIELD_NUMBER: _ClassVar[int]
@@ -864,9 +864,8 @@ class DatasetStatus(_message.Message):
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     SCHEDULE_FIELD_NUMBER: _ClassVar[int]
     UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
-    VERSION_FIELD_NUMBER: _ClassVar[int]
     active: _containers.RepeatedCompositeFieldContainer[_generated_pb2.RunReference]
-    availableSnapshotVersions: _containers.RepeatedScalarFieldContainer[int]
+    availableSnapshots: _containers.RepeatedCompositeFieldContainer[_generated_pb2.RunReference]
     conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1.Condition]
     lastFailureMessage: str
     lastSnapshotAt: _generated_pb2_1_1.Time
@@ -874,8 +873,7 @@ class DatasetStatus(_message.Message):
     observedGeneration: int
     schedule: _generated_pb2.RunScheduleStatus
     updatedAt: _generated_pb2_1_1.Time
-    version: int
-    def __init__(self, observedGeneration: _Optional[int] = ..., active: _Optional[_Iterable[_Union[_generated_pb2.RunReference, _Mapping]]] = ..., version: _Optional[int] = ..., lastSnapshotVersion: _Optional[int] = ..., availableSnapshotVersions: _Optional[_Iterable[int]] = ..., lastSnapshotAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastFailureMessage: _Optional[str] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., schedule: _Optional[_Union[_generated_pb2.RunScheduleStatus, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, observedGeneration: _Optional[int] = ..., active: _Optional[_Iterable[_Union[_generated_pb2.RunReference, _Mapping]]] = ..., lastSnapshotVersion: _Optional[int] = ..., availableSnapshots: _Optional[_Iterable[_Union[_generated_pb2.RunReference, _Mapping]]] = ..., lastSnapshotAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastFailureMessage: _Optional[str] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., schedule: _Optional[_Union[_generated_pb2.RunScheduleStatus, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class DriftThreshold(_message.Message):
     __slots__ = ["metric", "value"]
