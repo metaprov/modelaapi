@@ -20,7 +20,6 @@ service WatcherdService {
       rpc WatchDataPipeline         (WatchRequestOptions) returns (WatchDataPipelineResponse) {}
       rpc WatchDataPipelineRun      (WatchRequestOptions) returns (WatchDataPipelineRunResponse) {}
       rpc WatchDataProduct          (WatchRequestOptions) returns (WatchDataProductResponse) {}
-      rpc WatchDataproductVersion   (WatchRequestOptions) returns (WatchDataProductVersionResponse) {}
       rpc WatchEntity               (WatchRequestOptions) returns (WatchEntityResponse) {}
       rpc WatchFeatureHistogram     (WatchRequestOptions) returns (WatchFeatureHistogramResponse) {}
       rpc WatchFeatureGroup         (WatchRequestOptions) returns (WatchFeatureGroupResponse) {}
@@ -30,39 +29,34 @@ service WatcherdService {
       rpc WatchDatasetSnapshot      (WatchRequestOptions) returns (WatchDatasetSnapshotResponse) {}
       rpc WatchDatasource           (WatchRequestOptions) returns (WatchDatasetSnapshotResponse) {}
 
-      rpc WatchModel           (WatchRequestOptions) returns (WatchModelResponse) {}
-      rpc WatchModelClass      (WatchRequestOptions) returns (WatchModelClassResponse) {}
-      rpc WatchModelClassRun   (WatchRequestOptions) returns (WatchModelClassRunResponse) {}
-      rpc WatchReport          (WatchRequestOptions) returns (WatchReportResponse) {}
-      rpc WatchStudy           (WatchRequestOptions) returns (WatchStudyResponse) {}
-      rpc WatchStudyRun        (WatchRequestOptions) returns (WatchStudyRunResponse) {}
+      rpc WatchModel         (WatchRequestOptions) returns (WatchModelResponse) {}
+      rpc WatchModelClass    (WatchRequestOptions) returns (WatchModelClassResponse) {}
+      rpc WatchModelClassRun (WatchRequestOptions) returns (WatchModelClassRunResponse) {}
+      rpc WatchReport        (WatchRequestOptions) returns (WatchReportResponse) {}
+      rpc WatchStudy         (WatchRequestOptions) returns (WatchStudyResponse) {}
+      rpc WatchStudyRun      (WatchRequestOptions) returns (WatchStudyRunResponse) {}
 
-
-      rpc WatchAccount    (WatchRequestOptions) returns (WatchAccountResponse) {}
-      rpc WatchAlert    (WatchRequestOptions) returns (WatchAlertResponse) {}
-      rpc WatchAttachement    (WatchRequestOptions) returns (WatchAttachmentResponse) {}
+      rpc WatchAccount       (WatchRequestOptions) returns (WatchAccountResponse) {}
+      rpc WatchAlert         (WatchRequestOptions) returns (WatchAlertResponse) {}
+      rpc WatchAttachment    (WatchRequestOptions) returns (WatchAttachmentResponse) {}
       rpc WatchConnection    (WatchRequestOptions) returns (WatchConnectionResponse) {}
-      rpc WatchLab    (WatchRequestOptions) returns (WatchLabResponse) {}
-      rpc WatchLicense    (WatchRequestOptions) returns (WatchLicenseResponse) {}
-      rpc WatchNotifier    (WatchRequestOptions) returns (WatchNotifierResponse) {}
-      rpc WatchServingSite    (WatchRequestOptions) returns (WatchServingSiteResponse) {}
-      rpc WatchTenant    (WatchRequestOptions) returns (WatchTenantResponse) {}
-      rpc WatchUserRoleClass    (WatchRequestOptions) returns (WatchUserRoleClassResponse) {}
-      rpc WatchVirtualBucket    (WatchRequestOptions) returns (WatchVirtualBucketResponse) {}
+      rpc WatchLab           (WatchRequestOptions) returns (WatchLabResponse) {}
+      rpc WatchLicense       (WatchRequestOptions) returns (WatchLicenseResponse) {}
+      rpc WatchNotifier      (WatchRequestOptions) returns (WatchNotifierResponse) {}
+      rpc WatchServingSite   (WatchRequestOptions) returns (WatchServingSiteResponse) {}
+      rpc WatchTenant        (WatchRequestOptions) returns (WatchTenantResponse) {}
+      rpc WatchUserRoleClass (WatchRequestOptions) returns (WatchUserRoleClassResponse) {}
+      rpc WatchVirtualBucket (WatchRequestOptions) returns (WatchVirtualBucketResponse) {}
 
-
-  // inference
-      rpc WatchDataApp    (WatchRequestOptions) returns (WatchDataAppResponse) {}
+      rpc WatchDataApp       (WatchRequestOptions) returns (WatchDataAppResponse) {}
       rpc WatchPrediction    (WatchRequestOptions) returns (WatchPredictionResponse) {}
-      rpc WatchPredictionRun    (WatchRequestOptions) returns (WatchPredictionRunResponse) {}
-      rpc WatchPredictor    (WatchRequestOptions) returns (WatchPredictorResponse) {}
+      rpc WatchPredictionRun (WatchRequestOptions) returns (WatchPredictionRunResponse) {}
+      rpc WatchPredictor     (WatchRequestOptions) returns (WatchPredictorResponse) {}
 
-  // team
-      rpc WatchPostmortem    (WatchRequestOptions) returns (WatchPostmortemResponse) {}
-      rpc WatchReview    (WatchRequestOptions) returns (WatchReviewResponse) {}
+      rpc WatchPostmortem (WatchRequestOptions) returns (WatchPostmortemResponse) {}
+      rpc WatchReview     (WatchRequestOptions) returns (WatchReviewResponse) {}
       rpc WatchRunbook    (WatchRequestOptions) returns (WatchRunbookResponse) {}
-      rpc WatchTodo    (WatchRequestOptions) returns (WatchTodoResponse) {}
-
+      rpc WatchTodo       (WatchRequestOptions) returns (WatchTodoResponse) {}
 }
 
 message WatchRequestOptions {
@@ -103,16 +97,6 @@ message WatchDataProductResponse {
 
   uint64 generation = 1;
   repeated DataProductEvent events = 2;
-}
-
-message WatchDataProductVersionResponse {
-  message DataProductVersionEvent {
-    EventType event = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion object = 2;
-  }
-
-  uint64 generation = 1;
-  repeated DataProductVersionEvent events = 2;
 }
 
 message WatchEntityResponse {
@@ -166,37 +150,35 @@ message WatchRecipeRunResponse {
 }
 
 message WatchDatasetResponse {
-  message RecipeRunEvent {
+  message DatasetEvent {
     EventType event = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun object = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset object = 2;
   }
 
   uint64 generation = 1;
-  repeated RecipeRunEvent events = 2;
+  repeated DatasetEvent events = 2;
 }
 
 message WatchDatasetSnapshotResponse {
-  message RecipeRunEvent {
+  message DatasetSnapshotEvent {
     EventType event = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun object = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot object = 2;
   }
 
   uint64 generation = 1;
-  repeated RecipeRunEvent events = 2;
+  repeated DatasetSnapshotEvent events = 2;
 }
 
-message WatchDatasourceResponse {
-  message DatasourceEvent {
+message WatchDataSourceResponse {
+  message DataSourceEvent {
     EventType event = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource object = 2;
   }
 
   uint64 generation = 1;
-  repeated DatasourceEvent events = 2;
+  repeated DataSourceEvent events = 2;
 }
 
-
-/////// Model Watch ///////
 message WatchModelResponse {
   message ModelEvent {
     EventType event = 1;
@@ -210,7 +192,7 @@ message WatchModelResponse {
 message WatchModelClassResponse {
   message ModelClassEvent {
     EventType event = 1;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model object = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass object = 2;
   }
 
   uint64 generation = 1;
@@ -227,7 +209,6 @@ message WatchModelClassRunResponse {
   repeated ModelClassRunEvent events = 2;
 }
 
-
 message WatchReportResponse {
   message ReportEvent {
     EventType event = 1;
@@ -238,7 +219,6 @@ message WatchReportResponse {
   repeated ReportEvent events = 2;
 }
 
-/////// Study Watch ///////
 message WatchStudyResponse {
   message StudyEvent {
     EventType event = 1;
@@ -249,7 +229,6 @@ message WatchStudyResponse {
   repeated StudyEvent events = 2;
 }
 
-/////// Study Run Watch ///////
 message WatchStudyRunResponse {
   message StudyRunEvent {
     EventType event = 1;
@@ -259,9 +238,6 @@ message WatchStudyRunResponse {
   uint64 generation = 1;
   repeated StudyRunEvent events = 2;
 }
-
-
-///  Infrastructure
 
 message WatchAccountResponse {
   message AccountEvent {
@@ -327,7 +303,7 @@ message WatchLicenseResponse {
 message WatchNotifierResponse {
   message NotifierEvent {
     EventType event = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License object = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier object = 2;
   }
 
   uint64 generation = 1;
@@ -335,13 +311,13 @@ message WatchNotifierResponse {
 }
 
 message WatchServingSiteResponse {
-  message ServingsiteEvent {
+  message ServingSiteEvent {
     EventType event = 1;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite object = 2;
   }
 
   uint64 generation = 1;
-  repeated ServingsiteEvent events = 2;
+  repeated ServingSiteEvent events = 2;
 }
 
 message WatchTenantResponse {
@@ -377,7 +353,7 @@ message WatchVirtualBucketResponse {
 message WatchDataAppResponse {
   message DataAppEvent {
     EventType event = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket object = 2;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp object = 2;
   }
 
   uint64 generation = 1;
@@ -385,23 +361,23 @@ message WatchDataAppResponse {
 }
 
 message WatchPredictionResponse {
-  message DataAppEvent {
+  message PredictionEvent {
     EventType event = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket object = 2;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction object = 2;
   }
 
   uint64 generation = 1;
-  repeated DataAppEvent events = 2;
+  repeated PredictionEvent events = 2;
 }
 
 message WatchPredictionRunResponse {
-  message PredicitonRunEvent {
+  message PredictionRunEvent {
     EventType event = 1;
     github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun object = 2;
   }
 
   uint64 generation = 1;
-  repeated PredicitonRunEvent events = 2;
+  repeated PredictionRunEvent events = 2;
 }
 
 message WatchPredictorResponse {
@@ -413,13 +389,6 @@ message WatchPredictorResponse {
   uint64 generation = 1;
   repeated PredictorEvent events = 2;
 }
-
-
-// team
-
-
-
-//rpc WatchPostmortem    (WatchRequestOptions) returns (WatchPostmortemResponse) {}
 
 message WatchPostmortemResponse {
   message PostmortemEvent {
