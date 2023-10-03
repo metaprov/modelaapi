@@ -6,7 +6,9 @@ package github.com.metaprov.modelaapi.services.watcherd.v1;
 import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto";
 import "k8s.io/api/core/v1/generated.proto";
 
 enum EventType {
@@ -15,12 +17,53 @@ enum EventType {
 }
 
 service WatcherdService {
-  rpc WatchDataset         (WatchRequestOptions) returns (WatchDatasetResponse) {}
-  rpc WatchDatasetSnapshot (WatchRequestOptions) returns (WatchDatasetSnapshotResponse) {}
-  rpc WatchStudy           (WatchRequestOptions) returns (WatchStudyResponse) {}
-  rpc WatchStudyRun        (WatchRequestOptions) returns (WatchStudyRunResponse) {}
-  rpc WatchModel           (WatchRequestOptions) returns (WatchModelResponse) {}
-  rpc WatchAlert           (WatchRequestOptions) returns (WatchAlertResponse) {}
+      rpc WatchDatapipeline         (WatchRequestOptions) returns (WatchDatapipelineResponse) {}
+      rpc WatchDatapipelineRun      (WatchRequestOptions) returns (WatchDatapipelineRunResponse) {}
+      rpc WatchDataproduct          (WatchRequestOptions) returns (WatchDataProductResponse) {}
+      rpc WatchDataproductVersion   (WatchRequestOptions) returns (WatchDataProductVersionResponse) {}
+      rpc WatchEntity               (WatchRequestOptions) returns (WatchEntityResponse) {}
+      rpc WatchFeatureHistogram     (WatchRequestOptions) returns (WatchFeatureHistogramResponse) {}
+      rpc WatchFeatureGroup         (WatchRequestOptions) returns (WatchFeatureGroupResponse) {}
+      rpc WatchRecipe               (WatchRequestOptions) returns (WatchRecipeResponse) {}
+      rpc WatchRecipeRun            (WatchRequestOptions) returns (WatchRecipeRunResponse) {}
+      rpc WatchDataset              (WatchRequestOptions) returns (WatchDatasetResponse) {}
+      rpc WatchDatasetSnapshot      (WatchRequestOptions) returns (WatchDatasetSnapshotResponse) {}
+      rpc WatchDatasource           (WatchRequestOptions) returns (WatchDatasetSnapshotResponse) {}
+
+      rpc WatchModel           (WatchRequestOptions) returns (WatchModelResponse) {}
+      rpc WatchModelClass      (WatchRequestOptions) returns (WatchModelClassResponse) {}
+      rpc WatchModelClassRun   (WatchRequestOptions) returns (WatchModelClassRunResponse) {}
+      rpc WatchReport          (WatchRequestOptions) returns (WatchReportResponse) {}
+      rpc WatchStudy           (WatchRequestOptions) returns (WatchStudyResponse) {}
+      rpc WatchStudyRun        (WatchRequestOptions) returns (WatchStudyRunResponse) {}
+
+
+      rpc WatchAccount    (WatchRequestOptions) returns (WatchAccountResponse) {}
+      rpc WatchAlert    (WatchRequestOptions) returns (WatchAlertResponse) {}
+      rpc WatchAttachement    (WatchRequestOptions) returns (WatchAttachmentResponse) {}
+      rpc WatchConnection    (WatchRequestOptions) returns (WatchConnectionResponse) {}
+      rpc WatchLab    (WatchRequestOptions) returns (WatchLabResponse) {}
+      rpc WatchLicense    (WatchRequestOptions) returns (WatchLicenseResponse) {}
+      rpc WatchNotifier    (WatchRequestOptions) returns (WatchNotifierResponse) {}
+      rpc WatchServingSite    (WatchRequestOptions) returns (WatchServingsiteResponse) {}
+      rpc WatchTenant    (WatchRequestOptions) returns (WatchTenantResponse) {}
+      rpc WatchUserclass    (WatchRequestOptions) returns (WatchUserclassResponse) {}
+      rpc WatchVirtualBucket    (WatchRequestOptions) returns (WatchVirtualBucketResponse) {}
+
+
+
+  // inference
+      rpc WatchDataApp    (WatchRequestOptions) returns (WatchDataAppResponse) {}
+      rpc WatchPrediction    (WatchRequestOptions) returns (WatchPredictionResponse) {}
+      rpc WatchPredictionRun    (WatchRequestOptions) returns (WatchPredictionRunResponse) {}
+      rpc WatchPredictor    (WatchRequestOptions) returns (WatchPredictorResponse) {}
+
+  // team
+      rpc WatchPostmortem    (WatchRequestOptions) returns (WatchPostmortemResponse) {}
+      rpc WatchReview    (WatchRequestOptions) returns (WatchReviewResponse) {}
+      rpc WatchRunbook    (WatchRequestOptions) returns (WatchRunbookResponse) {}
+      rpc WatchTodo    (WatchRequestOptions) returns (WatchTodoResponse) {}
+
 }
 
 message WatchRequestOptions {
@@ -31,16 +74,128 @@ message WatchRequestOptions {
   bool latest = 3;
 }
 
-/////// Dataset Watch ///////
-message WatchDatasetResponse {
-  message DatasetEvent {
+
+message WatchDatapipelineResponse {
+  message DatapipelineEvent {
     EventType event = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset object = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline object = 2;
   }
 
   uint64 generation = 1;
-  repeated DatasetEvent events = 2;
+  repeated DatapipelineEvent events = 2;
 }
+
+
+message WatchDatapipelineRunResponse {
+  message DatapipelineRunEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated DatapipelineRunEvent events = 2;
+}
+
+message WatchDataProductResponse {
+  message DataProductEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated DataProductEvent events = 2;
+}
+
+message WatchDataProductVersionResponse {
+  message DataProductVersionEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated DataProductVersionEvent events = 2;
+}
+
+message WatchEntityResponse {
+  message EntityEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated EntityEvent events = 2;
+}
+
+message WatchFeatureHistogramResponse {
+  message FeatureHistogramEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated FeatureHistogramEvent events = 2;
+}
+
+message WatchFeatureGroupResponse {
+  message FeatureGroupEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureGroup object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated FeatureGroupEvent events = 2;
+}
+
+message WatchRecipeResponse {
+  message RecipeEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated RecipeEvent events = 2;
+}
+
+message WatchRecipeRunResponse {
+  message RecipeRunEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated RecipeRunEvent events = 2;
+}
+
+message WatchDatasetResponse {
+  message RecipeRunEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated RecipeRunEvent events = 2;
+}
+
+message WatchDatasetSnapshotResponse {
+  message RecipeRunEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated RecipeRunEvent events = 2;
+}
+
+message WatchDatasourceResponse {
+  message DatasourceEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated DatasourceEvent events = 2;
+}
+
 
 /////// Model Watch ///////
 message WatchModelResponse {
@@ -53,26 +208,35 @@ message WatchModelResponse {
   repeated ModelEvent events = 2;
 }
 
-/////// Alert Watch ///////
-message WatchAlertResponse {
-  message AlertEvent {
+message WatchModelClassResponse {
+  message ModelClassEvent {
     EventType event = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert object = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model object = 2;
   }
 
   uint64 generation = 1;
-  repeated AlertEvent events = 2;
+  repeated ModelClassEvent events = 2;
 }
 
-/////// Dataset Snapshot Watch ///////
-message WatchDatasetSnapshotResponse {
-  message DatasetSnapshotEvent {
+message WatchModelClassRunResponse {
+  message ModelClassRunEvent {
     EventType event = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot object = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRun object = 2;
   }
 
   uint64 generation = 1;
-  repeated DatasetSnapshotEvent events = 2;
+  repeated ModelClassRunEvent events = 2;
+}
+
+
+message WatchReportResponse {
+  message ReportEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated ReportEvent events = 2;
 }
 
 /////// Study Watch ///////
@@ -96,3 +260,214 @@ message WatchStudyRunResponse {
   uint64 generation = 1;
   repeated StudyRunEvent events = 2;
 }
+
+
+///  Infrastructure
+
+message WatchAccountResponse {
+  message AccountEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated AccountEvent events = 2;
+}
+
+message WatchAlertResponse {
+  message AlertEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated AlertEvent events = 2;
+}
+
+message WatchAttachmentResponse {
+  message AttachmentEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated AttachmentEvent events = 2;
+}
+
+message WatchConnectionResponse {
+  message ConnectionEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated ConnectionEvent events = 2;
+}
+
+
+message WatchLabResponse {
+  message LabEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated LabEvent events = 2;
+}
+
+message WatchLicenseResponse {
+  message LicenseEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated LicenseEvent events = 2;
+}
+
+message WatchNotifierResponse {
+  message NotifierEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated NotifierEvent events = 2;
+}
+
+message WatchServingsiteResponse {
+  message ServingsiteEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated ServingsiteEvent events = 2;
+}
+
+message WatchTenantResponse {
+  message TenantEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated TenantEvent events = 2;
+}
+
+message WatchUserclassResponse {
+  message UserclassEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClass object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated UserclassEvent events = 2;
+}
+
+message WatchVirtualBucketResponse {
+  message VirtualBucketEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated VirtualBucketEvent events = 2;
+}
+
+message WatchDataAppResponse {
+  message DataAppEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated DataAppEvent events = 2;
+}
+
+message WatchPredictionResponse {
+  message DataAppEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated DataAppEvent events = 2;
+}
+
+message WatchPredictionRunResponse {
+  message PredicitonRunEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated PredicitonRunEvent events = 2;
+}
+
+message WatchPredictorResponse {
+  message PredictorEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated PredictorEvent events = 2;
+}
+
+
+// team
+
+
+
+//rpc WatchPostmortem    (WatchRequestOptions) returns (WatchPostmortemResponse) {}
+
+message WatchPostmortemResponse {
+  message PostmortemEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated PostmortemEvent events = 2;
+}
+
+message WatchReviewResponse {
+  message ReviewEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated ReviewEvent events = 2;
+}
+
+message WatchRunbookResponse {
+  message RunbookEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated RunbookEvent events = 2;
+}
+
+message WatchTodoResponse {
+  message TodoEvent {
+    EventType event = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo object = 2;
+  }
+
+  uint64 generation = 1;
+  repeated TodoEvent events = 2;
+}
+
+
+
+
+
+
+
+
+
+
