@@ -22,9 +22,9 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type WatcherdServiceClient interface {
-	WatchDatapipeline(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDatapipelineResponse, error)
-	WatchDatapipelineRun(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDatapipelineRunResponse, error)
-	WatchDataproduct(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDataProductResponse, error)
+	WatchDataPipeline(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDataPipelineResponse, error)
+	WatchDataPipelineRun(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDataPipelineRunResponse, error)
+	WatchDataProduct(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDataProductResponse, error)
 	WatchDataproductVersion(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDataProductVersionResponse, error)
 	WatchEntity(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchEntityResponse, error)
 	WatchFeatureHistogram(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchFeatureHistogramResponse, error)
@@ -47,9 +47,9 @@ type WatcherdServiceClient interface {
 	WatchLab(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchLabResponse, error)
 	WatchLicense(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchLicenseResponse, error)
 	WatchNotifier(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchNotifierResponse, error)
-	WatchServingSite(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchServingsiteResponse, error)
+	WatchServingSite(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchServingSiteResponse, error)
 	WatchTenant(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchTenantResponse, error)
-	WatchUserclass(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchUserclassResponse, error)
+	WatchUserRoleClass(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchUserRoleClassResponse, error)
 	WatchVirtualBucket(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchVirtualBucketResponse, error)
 	// inference
 	WatchDataApp(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDataAppResponse, error)
@@ -71,27 +71,27 @@ func NewWatcherdServiceClient(cc grpc.ClientConnInterface) WatcherdServiceClient
 	return &watcherdServiceClient{cc}
 }
 
-func (c *watcherdServiceClient) WatchDatapipeline(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDatapipelineResponse, error) {
-	out := new(WatchDatapipelineResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDatapipeline", in, out, opts...)
+func (c *watcherdServiceClient) WatchDataPipeline(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDataPipelineResponse, error) {
+	out := new(WatchDataPipelineResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDataPipeline", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *watcherdServiceClient) WatchDatapipelineRun(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDatapipelineRunResponse, error) {
-	out := new(WatchDatapipelineRunResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDatapipelineRun", in, out, opts...)
+func (c *watcherdServiceClient) WatchDataPipelineRun(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDataPipelineRunResponse, error) {
+	out := new(WatchDataPipelineRunResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDataPipelineRun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *watcherdServiceClient) WatchDataproduct(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDataProductResponse, error) {
+func (c *watcherdServiceClient) WatchDataProduct(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDataProductResponse, error) {
 	out := new(WatchDataProductResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDataproduct", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDataProduct", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -296,8 +296,8 @@ func (c *watcherdServiceClient) WatchNotifier(ctx context.Context, in *WatchRequ
 	return out, nil
 }
 
-func (c *watcherdServiceClient) WatchServingSite(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchServingsiteResponse, error) {
-	out := new(WatchServingsiteResponse)
+func (c *watcherdServiceClient) WatchServingSite(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchServingSiteResponse, error) {
+	out := new(WatchServingSiteResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchServingSite", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -314,9 +314,9 @@ func (c *watcherdServiceClient) WatchTenant(ctx context.Context, in *WatchReques
 	return out, nil
 }
 
-func (c *watcherdServiceClient) WatchUserclass(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchUserclassResponse, error) {
-	out := new(WatchUserclassResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchUserclass", in, out, opts...)
+func (c *watcherdServiceClient) WatchUserRoleClass(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchUserRoleClassResponse, error) {
+	out := new(WatchUserRoleClassResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchUserRoleClass", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -408,9 +408,9 @@ func (c *watcherdServiceClient) WatchTodo(ctx context.Context, in *WatchRequestO
 // All implementations must embed UnimplementedWatcherdServiceServer
 // for forward compatibility
 type WatcherdServiceServer interface {
-	WatchDatapipeline(context.Context, *WatchRequestOptions) (*WatchDatapipelineResponse, error)
-	WatchDatapipelineRun(context.Context, *WatchRequestOptions) (*WatchDatapipelineRunResponse, error)
-	WatchDataproduct(context.Context, *WatchRequestOptions) (*WatchDataProductResponse, error)
+	WatchDataPipeline(context.Context, *WatchRequestOptions) (*WatchDataPipelineResponse, error)
+	WatchDataPipelineRun(context.Context, *WatchRequestOptions) (*WatchDataPipelineRunResponse, error)
+	WatchDataProduct(context.Context, *WatchRequestOptions) (*WatchDataProductResponse, error)
 	WatchDataproductVersion(context.Context, *WatchRequestOptions) (*WatchDataProductVersionResponse, error)
 	WatchEntity(context.Context, *WatchRequestOptions) (*WatchEntityResponse, error)
 	WatchFeatureHistogram(context.Context, *WatchRequestOptions) (*WatchFeatureHistogramResponse, error)
@@ -433,9 +433,9 @@ type WatcherdServiceServer interface {
 	WatchLab(context.Context, *WatchRequestOptions) (*WatchLabResponse, error)
 	WatchLicense(context.Context, *WatchRequestOptions) (*WatchLicenseResponse, error)
 	WatchNotifier(context.Context, *WatchRequestOptions) (*WatchNotifierResponse, error)
-	WatchServingSite(context.Context, *WatchRequestOptions) (*WatchServingsiteResponse, error)
+	WatchServingSite(context.Context, *WatchRequestOptions) (*WatchServingSiteResponse, error)
 	WatchTenant(context.Context, *WatchRequestOptions) (*WatchTenantResponse, error)
-	WatchUserclass(context.Context, *WatchRequestOptions) (*WatchUserclassResponse, error)
+	WatchUserRoleClass(context.Context, *WatchRequestOptions) (*WatchUserRoleClassResponse, error)
 	WatchVirtualBucket(context.Context, *WatchRequestOptions) (*WatchVirtualBucketResponse, error)
 	// inference
 	WatchDataApp(context.Context, *WatchRequestOptions) (*WatchDataAppResponse, error)
@@ -454,14 +454,14 @@ type WatcherdServiceServer interface {
 type UnimplementedWatcherdServiceServer struct {
 }
 
-func (UnimplementedWatcherdServiceServer) WatchDatapipeline(context.Context, *WatchRequestOptions) (*WatchDatapipelineResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method WatchDatapipeline not implemented")
+func (UnimplementedWatcherdServiceServer) WatchDataPipeline(context.Context, *WatchRequestOptions) (*WatchDataPipelineResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WatchDataPipeline not implemented")
 }
-func (UnimplementedWatcherdServiceServer) WatchDatapipelineRun(context.Context, *WatchRequestOptions) (*WatchDatapipelineRunResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method WatchDatapipelineRun not implemented")
+func (UnimplementedWatcherdServiceServer) WatchDataPipelineRun(context.Context, *WatchRequestOptions) (*WatchDataPipelineRunResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WatchDataPipelineRun not implemented")
 }
-func (UnimplementedWatcherdServiceServer) WatchDataproduct(context.Context, *WatchRequestOptions) (*WatchDataProductResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method WatchDataproduct not implemented")
+func (UnimplementedWatcherdServiceServer) WatchDataProduct(context.Context, *WatchRequestOptions) (*WatchDataProductResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WatchDataProduct not implemented")
 }
 func (UnimplementedWatcherdServiceServer) WatchDataproductVersion(context.Context, *WatchRequestOptions) (*WatchDataProductVersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WatchDataproductVersion not implemented")
@@ -529,14 +529,14 @@ func (UnimplementedWatcherdServiceServer) WatchLicense(context.Context, *WatchRe
 func (UnimplementedWatcherdServiceServer) WatchNotifier(context.Context, *WatchRequestOptions) (*WatchNotifierResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WatchNotifier not implemented")
 }
-func (UnimplementedWatcherdServiceServer) WatchServingSite(context.Context, *WatchRequestOptions) (*WatchServingsiteResponse, error) {
+func (UnimplementedWatcherdServiceServer) WatchServingSite(context.Context, *WatchRequestOptions) (*WatchServingSiteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WatchServingSite not implemented")
 }
 func (UnimplementedWatcherdServiceServer) WatchTenant(context.Context, *WatchRequestOptions) (*WatchTenantResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WatchTenant not implemented")
 }
-func (UnimplementedWatcherdServiceServer) WatchUserclass(context.Context, *WatchRequestOptions) (*WatchUserclassResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method WatchUserclass not implemented")
+func (UnimplementedWatcherdServiceServer) WatchUserRoleClass(context.Context, *WatchRequestOptions) (*WatchUserRoleClassResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WatchUserRoleClass not implemented")
 }
 func (UnimplementedWatcherdServiceServer) WatchVirtualBucket(context.Context, *WatchRequestOptions) (*WatchVirtualBucketResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WatchVirtualBucket not implemented")
@@ -578,56 +578,56 @@ func RegisterWatcherdServiceServer(s grpc.ServiceRegistrar, srv WatcherdServiceS
 	s.RegisterService(&WatcherdService_ServiceDesc, srv)
 }
 
-func _WatcherdService_WatchDatapipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WatcherdService_WatchDataPipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(WatchRequestOptions)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WatcherdServiceServer).WatchDatapipeline(ctx, in)
+		return srv.(WatcherdServiceServer).WatchDataPipeline(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDatapipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDataPipeline",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WatcherdServiceServer).WatchDatapipeline(ctx, req.(*WatchRequestOptions))
+		return srv.(WatcherdServiceServer).WatchDataPipeline(ctx, req.(*WatchRequestOptions))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _WatcherdService_WatchDatapipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WatcherdService_WatchDataPipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(WatchRequestOptions)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WatcherdServiceServer).WatchDatapipelineRun(ctx, in)
+		return srv.(WatcherdServiceServer).WatchDataPipelineRun(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDatapipelineRun",
+		FullMethod: "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDataPipelineRun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WatcherdServiceServer).WatchDatapipelineRun(ctx, req.(*WatchRequestOptions))
+		return srv.(WatcherdServiceServer).WatchDataPipelineRun(ctx, req.(*WatchRequestOptions))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _WatcherdService_WatchDataproduct_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WatcherdService_WatchDataProduct_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(WatchRequestOptions)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WatcherdServiceServer).WatchDataproduct(ctx, in)
+		return srv.(WatcherdServiceServer).WatchDataProduct(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDataproduct",
+		FullMethod: "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDataProduct",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WatcherdServiceServer).WatchDataproduct(ctx, req.(*WatchRequestOptions))
+		return srv.(WatcherdServiceServer).WatchDataProduct(ctx, req.(*WatchRequestOptions))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1064,20 +1064,20 @@ func _WatcherdService_WatchTenant_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _WatcherdService_WatchUserclass_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WatcherdService_WatchUserRoleClass_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(WatchRequestOptions)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WatcherdServiceServer).WatchUserclass(ctx, in)
+		return srv.(WatcherdServiceServer).WatchUserRoleClass(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchUserclass",
+		FullMethod: "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchUserRoleClass",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WatcherdServiceServer).WatchUserclass(ctx, req.(*WatchRequestOptions))
+		return srv.(WatcherdServiceServer).WatchUserRoleClass(ctx, req.(*WatchRequestOptions))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1252,16 +1252,16 @@ var WatcherdService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*WatcherdServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "WatchDatapipeline",
-			Handler:    _WatcherdService_WatchDatapipeline_Handler,
+			MethodName: "WatchDataPipeline",
+			Handler:    _WatcherdService_WatchDataPipeline_Handler,
 		},
 		{
-			MethodName: "WatchDatapipelineRun",
-			Handler:    _WatcherdService_WatchDatapipelineRun_Handler,
+			MethodName: "WatchDataPipelineRun",
+			Handler:    _WatcherdService_WatchDataPipelineRun_Handler,
 		},
 		{
-			MethodName: "WatchDataproduct",
-			Handler:    _WatcherdService_WatchDataproduct_Handler,
+			MethodName: "WatchDataProduct",
+			Handler:    _WatcherdService_WatchDataProduct_Handler,
 		},
 		{
 			MethodName: "WatchDataproductVersion",
@@ -1360,8 +1360,8 @@ var WatcherdService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _WatcherdService_WatchTenant_Handler,
 		},
 		{
-			MethodName: "WatchUserclass",
-			Handler:    _WatcherdService_WatchUserclass_Handler,
+			MethodName: "WatchUserRoleClass",
+			Handler:    _WatcherdService_WatchUserRoleClass_Handler,
 		},
 		{
 			MethodName: "WatchVirtualBucket",

@@ -17,9 +17,9 @@ enum EventType {
 }
 
 service WatcherdService {
-      rpc WatchDatapipeline         (WatchRequestOptions) returns (WatchDatapipelineResponse) {}
-      rpc WatchDatapipelineRun      (WatchRequestOptions) returns (WatchDatapipelineRunResponse) {}
-      rpc WatchDataproduct          (WatchRequestOptions) returns (WatchDataProductResponse) {}
+      rpc WatchDataPipeline         (WatchRequestOptions) returns (WatchDataPipelineResponse) {}
+      rpc WatchDataPipelineRun      (WatchRequestOptions) returns (WatchDataPipelineRunResponse) {}
+      rpc WatchDataProduct          (WatchRequestOptions) returns (WatchDataProductResponse) {}
       rpc WatchDataproductVersion   (WatchRequestOptions) returns (WatchDataProductVersionResponse) {}
       rpc WatchEntity               (WatchRequestOptions) returns (WatchEntityResponse) {}
       rpc WatchFeatureHistogram     (WatchRequestOptions) returns (WatchFeatureHistogramResponse) {}
@@ -45,11 +45,10 @@ service WatcherdService {
       rpc WatchLab    (WatchRequestOptions) returns (WatchLabResponse) {}
       rpc WatchLicense    (WatchRequestOptions) returns (WatchLicenseResponse) {}
       rpc WatchNotifier    (WatchRequestOptions) returns (WatchNotifierResponse) {}
-      rpc WatchServingSite    (WatchRequestOptions) returns (WatchServingsiteResponse) {}
+      rpc WatchServingSite    (WatchRequestOptions) returns (WatchServingSiteResponse) {}
       rpc WatchTenant    (WatchRequestOptions) returns (WatchTenantResponse) {}
-      rpc WatchUserclass    (WatchRequestOptions) returns (WatchUserclassResponse) {}
+      rpc WatchUserRoleClass    (WatchRequestOptions) returns (WatchUserRoleClassResponse) {}
       rpc WatchVirtualBucket    (WatchRequestOptions) returns (WatchVirtualBucketResponse) {}
-
 
 
   // inference
@@ -75,25 +74,25 @@ message WatchRequestOptions {
 }
 
 
-message WatchDatapipelineResponse {
-  message DatapipelineEvent {
+message WatchDataPipelineResponse {
+  message DataPipelineEvent {
     EventType event = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline object = 2;
   }
 
   uint64 generation = 1;
-  repeated DatapipelineEvent events = 2;
+  repeated DataPipelineEvent events = 2;
 }
 
 
-message WatchDatapipelineRunResponse {
-  message DatapipelineRunEvent {
+message WatchDataPipelineRunResponse {
+  message DataPipelineRunEvent {
     EventType event = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun object = 2;
   }
 
   uint64 generation = 1;
-  repeated DatapipelineRunEvent events = 2;
+  repeated DataPipelineRunEvent events = 2;
 }
 
 message WatchDataProductResponse {
@@ -335,7 +334,7 @@ message WatchNotifierResponse {
   repeated NotifierEvent events = 2;
 }
 
-message WatchServingsiteResponse {
+message WatchServingSiteResponse {
   message ServingsiteEvent {
     EventType event = 1;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite object = 2;
@@ -355,14 +354,14 @@ message WatchTenantResponse {
   repeated TenantEvent events = 2;
 }
 
-message WatchUserclassResponse {
-  message UserclassEvent {
+message WatchUserRoleClassResponse {
+  message UserRoleClassEvent {
     EventType event = 1;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.UserRoleClass object = 2;
   }
 
   uint64 generation = 1;
-  repeated UserclassEvent events = 2;
+  repeated UserRoleClassEvent events = 2;
 }
 
 message WatchVirtualBucketResponse {
