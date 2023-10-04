@@ -28,9 +28,10 @@ const (
 	RecipeRunKind          KindName = "reciperuns"
 
 	// inference
-	PredictionKind KindName = "predictions"
-	PredictorKind  KindName = "predictors"
-	DataAppKind    KindName = "dataapps"
+	PredictionKind    KindName = "predictions"
+	PredictionRunKind KindName = "predictionrun"
+	PredictorKind     KindName = "predictors"
+	DataAppKind       KindName = "dataapps"
 
 	// infra
 	AccountKind       KindName = "accounts"
