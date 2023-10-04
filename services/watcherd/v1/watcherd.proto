@@ -27,7 +27,7 @@ service WatcherdService {
       rpc WatchRecipeRun            (WatchRequestOptions) returns (WatchRecipeRunResponse) {}
       rpc WatchDataset              (WatchRequestOptions) returns (WatchDatasetResponse) {}
       rpc WatchDatasetSnapshot      (WatchRequestOptions) returns (WatchDatasetSnapshotResponse) {}
-      rpc WatchDatasource           (WatchRequestOptions) returns (WatchDatasetSnapshotResponse) {}
+      rpc WatchDatasource           (WatchRequestOptions) returns (WatchDataSourceResponse) {}
 
       rpc WatchModel         (WatchRequestOptions) returns (WatchModelResponse) {}
       rpc WatchModelClass    (WatchRequestOptions) returns (WatchModelClassResponse) {}
