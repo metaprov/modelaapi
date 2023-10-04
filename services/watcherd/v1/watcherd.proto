@@ -403,7 +403,7 @@ message WatchPostmortemResponse {
 message WatchReviewResponse {
   message ReviewEvent {
     EventType event = 1;
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem object = 2;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review object = 2;
   }
 
   uint64 generation = 1;
