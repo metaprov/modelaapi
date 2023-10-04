@@ -14233,7 +14233,7 @@ proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchReviewResponse.Rev
 proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchReviewResponse.ReviewEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
     event: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    object: (f = msg.getObject()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.toObject(includeInstance, f)
+    object: (f = msg.getObject()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14275,8 +14275,8 @@ proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchReviewResponse.Rev
       msg.setEvent(value);
       break;
     case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.deserializeBinaryFromReader);
       msg.setObject(value);
       break;
     default:
@@ -14320,7 +14320,7 @@ proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchReviewResponse.Rev
     writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.serializeBinaryToWriter
     );
   }
 };
@@ -14345,17 +14345,17 @@ proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchReviewResponse.Rev
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem object = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem}
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review object = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review}
  */
 proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchReviewResponse.ReviewEvent.prototype.getObject = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem, 2));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review, 2));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchReviewResponse.ReviewEvent} returns this
 */
 proto.github.com.metaprov.modelaapi.services.watcherd.v1.WatchReviewResponse.ReviewEvent.prototype.setObject = function(value) {

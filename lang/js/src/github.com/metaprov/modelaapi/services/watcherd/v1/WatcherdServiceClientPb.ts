@@ -473,28 +473,28 @@ export class WatcherdServiceClient {
     '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDatasource',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
-    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotResponse,
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDataSourceResponse,
     (request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDataSourceResponse.deserializeBinary
   );
 
   watchDatasource(
     request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotResponse>;
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDataSourceResponse>;
 
   watchDatasource(
     request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotResponse>;
+               response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDataSourceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDataSourceResponse>;
 
   watchDatasource(
     request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDatasetSnapshotResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchDataSourceResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +

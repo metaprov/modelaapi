@@ -1679,8 +1679,8 @@ export namespace WatchReviewResponse {
     getEvent(): EventType;
     setEvent(value: EventType): ReviewEvent;
 
-    getObject(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem | undefined;
-    setObject(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem): ReviewEvent;
+    getObject(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
+    setObject(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review): ReviewEvent;
     hasObject(): boolean;
     clearObject(): ReviewEvent;
 
@@ -1695,7 +1695,7 @@ export namespace WatchReviewResponse {
   export namespace ReviewEvent {
     export type AsObject = {
       event: EventType,
-      object?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.AsObject,
+      object?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
     }
   }
 
