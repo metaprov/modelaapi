@@ -2350,7 +2350,7 @@ spec:
                   - type
                   type: object
                 type: array
-              failureMessage:
+              lastFailureMessage:
                 description: LastFailureMessage specifies the failure message of the
                   last run. If the last snapshot succeeded, the field will be cleared
                 type: string

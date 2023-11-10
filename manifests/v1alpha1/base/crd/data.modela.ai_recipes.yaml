@@ -383,18 +383,9 @@ spec:
                 description: Sample specify the sampling paramters when viewing the
                   recipe
                 properties:
-                  column:
-                    default: ""
-                    description: The name of the column to be used for stratified
-                      sampling
-                    type: string
-                  enabled:
-                    default: false
-                    description: Indicates if sampling is enabled
-                    type: boolean
                   filter:
                     default: ""
-                    description: The filter formula, valid only if the sample type
+                    description: The filter formula, applicable if the sample type
                       is a filter
                     type: string
                   percent:
@@ -407,16 +398,17 @@ spec:
                     default: 500
                     description: The number of rows to sample (by default, 500)
                     format: int32
+                    maximum: 1000
                     minimum: 0
                     type: integer
                   type:
-                    default: random
-                    description: The type of sampling (random sampling, by default)
+                    default: stratified
+                    description: The type of sampling (stratified sampling, by default).
+                      Modela will sample rows until their contents exceed a maximum
+                      of 1Mb
                     enum:
                     - header
                     - random
-                    - filter
-                    - anomaly
                     - stratified
                     type: string
                 type: object

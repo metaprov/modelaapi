@@ -101,10 +101,6 @@ type PredictionStatus struct {
 	// Active contains a collection of references to currently active runs
 	// +optional
 	Active catalog.RunReferenceList `json:"active,omitempty" protobuf:"bytes,2,rep,name=active"`
-	// Version specifies the version of the Study as tracked by Modela, which is
-	// incremented each time the object is changed
-	// +kubebuilder:default:=1
-	Version catalog.Version `json:"version,omitempty" protobuf:"varint,3,opt,name=version"`
 	// LastRunVersion contains the integer version last used to create a run
 	// +kubebuilder:default:=0
 	LastRunVersion catalog.Version `json:"lastRunVersion,omitempty" protobuf:"varint,4,opt,name=lastRunVersion"`

@@ -3,6 +3,7 @@ import * as jspb from 'google-protobuf'
 import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
 
@@ -774,42 +775,6 @@ export namespace DownloadModelResponse {
   }
 }
 
-export class FlagModelRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): FlagModelRequest;
-
-  getName(): string;
-  setName(value: string): FlagModelRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FlagModelRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: FlagModelRequest): FlagModelRequest.AsObject;
-  static serializeBinaryToWriter(message: FlagModelRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FlagModelRequest;
-  static deserializeBinaryFromReader(message: FlagModelRequest, reader: jspb.BinaryReader): FlagModelRequest;
-}
-
-export namespace FlagModelRequest {
-  export type AsObject = {
-    namespace: string,
-    name: string,
-  }
-}
-
-export class FlagModelResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FlagModelResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: FlagModelResponse): FlagModelResponse.AsObject;
-  static serializeBinaryToWriter(message: FlagModelResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FlagModelResponse;
-  static deserializeBinaryFromReader(message: FlagModelResponse, reader: jspb.BinaryReader): FlagModelResponse;
-}
-
-export namespace FlagModelResponse {
-  export type AsObject = {
-  }
-}
-
 export class PromoteModelRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): PromoteModelRequest;
@@ -862,46 +827,6 @@ export namespace PromoteModelResponse {
   }
 }
 
-export class CreateDashboardRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateDashboardRequest;
-
-  getName(): string;
-  setName(value: string): CreateDashboardRequest;
-
-  getShadow(): boolean;
-  setShadow(value: boolean): CreateDashboardRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateDashboardRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateDashboardRequest): CreateDashboardRequest.AsObject;
-  static serializeBinaryToWriter(message: CreateDashboardRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateDashboardRequest;
-  static deserializeBinaryFromReader(message: CreateDashboardRequest, reader: jspb.BinaryReader): CreateDashboardRequest;
-}
-
-export namespace CreateDashboardRequest {
-  export type AsObject = {
-    namespace: string,
-    name: string,
-    shadow: boolean,
-  }
-}
-
-export class CreateDashboardResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateDashboardResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateDashboardResponse): CreateDashboardResponse.AsObject;
-  static serializeBinaryToWriter(message: CreateDashboardResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateDashboardResponse;
-  static deserializeBinaryFromReader(message: CreateDashboardResponse, reader: jspb.BinaryReader): CreateDashboardResponse;
-}
-
-export namespace CreateDashboardResponse {
-  export type AsObject = {
-  }
-}
-
 export class TestModelRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): TestModelRequest;
@@ -935,6 +860,66 @@ export class TestModelResponse extends jspb.Message {
 
 export namespace TestModelResponse {
   export type AsObject = {
+  }
+}
+
+export class PreviewScoreRequest extends jspb.Message {
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): PreviewScoreRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): PreviewScoreRequest;
+
+  getPipelinesList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.FeatureEngineeringPipeline>;
+  setPipelinesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.FeatureEngineeringPipeline>): PreviewScoreRequest;
+  clearPipelinesList(): PreviewScoreRequest;
+  addPipelines(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.FeatureEngineeringPipeline, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.FeatureEngineeringPipeline;
+
+  getEstimator(): string;
+  setEstimator(value: string): PreviewScoreRequest;
+
+  getMetric(): string;
+  setMetric(value: string): PreviewScoreRequest;
+
+  getRows(): number;
+  setRows(value: number): PreviewScoreRequest;
+
+  getClient(): string;
+  setClient(value: string): PreviewScoreRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PreviewScoreRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PreviewScoreRequest): PreviewScoreRequest.AsObject;
+  static serializeBinaryToWriter(message: PreviewScoreRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PreviewScoreRequest;
+  static deserializeBinaryFromReader(message: PreviewScoreRequest, reader: jspb.BinaryReader): PreviewScoreRequest;
+}
+
+export namespace PreviewScoreRequest {
+  export type AsObject = {
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
+    pipelinesList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.FeatureEngineeringPipeline.AsObject>,
+    estimator: string,
+    metric: string,
+    rows: number,
+    client: string,
+  }
+}
+
+export class PreviewScoreResponse extends jspb.Message {
+  getScore(): number;
+  setScore(value: number): PreviewScoreResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PreviewScoreResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PreviewScoreResponse): PreviewScoreResponse.AsObject;
+  static serializeBinaryToWriter(message: PreviewScoreResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PreviewScoreResponse;
+  static deserializeBinaryFromReader(message: PreviewScoreResponse, reader: jspb.BinaryReader): PreviewScoreResponse;
+}
+
+export namespace PreviewScoreResponse {
+  export type AsObject = {
+    score: number,
   }
 }
 

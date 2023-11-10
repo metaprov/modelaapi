@@ -1729,14 +1729,12 @@ const (
 )
 
 // SamplingType defines how a dataset is sampled
-// +kubebuilder:validation:Enum="header";"random";"filter";"anomaly";"stratified"
+// +kubebuilder:validation:Enum="header";"random";"stratified"
 type SamplingType string
 
 const (
 	Header     SamplingType = "header"
 	Random     SamplingType = "random"
-	Filter     SamplingType = "filter"
-	Anomaly    SamplingType = "anomaly"
 	Stratified SamplingType = "stratified"
 )
 
@@ -1973,71 +1971,48 @@ const (
 // DataLocation describes the external location of data that will be accessed by Modela, and additional
 // information on how to query the data if the location is a non flat-file source.
 type DataLocation struct {
-	// The type of location where the data resides, which can either be an object inside an object storage system (i.e. Minio), a SQL location
-	// like a table or a view, a data stream (i.e. Kafka, currently unsupported), or a web location (currently unsupported)
-	// +kubebuilder:default:="object"
-	// +kubebuilder:validation:Optional
-	Type *DataLocationType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
-	// In the case of the type of location being a database, ConnectionName specifies the name of the ConnectionName resource
-	// that exists in the same tenant as the resource specifying the DataLocation. Modela will attempt to connect
-	// to the database using the credentials specified in the ConnectionName, and will execute the query specified by the SQL field
+	// File specifies the location of a flat-file
+	File *FileLocation `json:"file,omitempty" protobuf:"bytes,1,opt,name=file"`
+	// Database specifies the location of a database (and an optional query)
+	Database *DatabaseLocation `json:"database,omitempty" protobuf:"bytes,2,opt,name=database"`
+	// Web specifies the location of an internet-accessible flat-file
+	Web *WebLocation `json:"web,omitempty" protobuf:"bytes,3,opt,name=web"`
+	// Resource references another Modela resource that contains data
+	Resource *ResourceLocation `json:"resource,omitempty" protobuf:"bytes,3,opt,name=resource"`
+}
+
+type DatabaseLocation struct {
+	// ConnectionName specifies the name of the Connection resource containing the credentials to connect to the database
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ConnectionName *string `json:"connection,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
-	// In the case of the location type being an object storage system, BucketName is the name of the VirtualBucket resource
-	// that exists in the same tenant as the resource specifying the DataLocation. Modela will connect to the external
-	// object storage system, and will access the file from the path specified by the Path field
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	BucketName *string `json:"bucket,omitempty" protobuf:"bytes,3,opt,name=bucketName"`
-	// The path to a flat-file inside an object storage system. When using the Modela API to upload files (through the
-	// FileService API), Modela will upload the data to a predetermined path based on the Tenant, Data Product,
-	// Data Product Version, and resource type of the resource in relation to the file being uploaded.
-	// The path does not need to adhere to this format; you may also specify an arbitrary path
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Path *string `json:"path,omitempty" protobuf:"bytes,4,opt,name=path"`
+	ConnectionName string `json:"connection,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
 	// The name of a table inside a database, if applicable
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Table *string `json:"table,omitempty" protobuf:"bytes,5,opt,name=table"`
-	// The name of a database inside the database system specified by the ConnectionName field
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Database *string `json:"database,omitempty" protobuf:"bytes,6,opt,name=database"`
+	Table string `json:"table,omitempty" protobuf:"bytes,2,opt,name=table"`
 	// The SQL statement which will be executed to query data from the table specified by Table
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Sql *string `json:"sql,omitempty" protobuf:"bytes,7,opt,name=sql"`
-	// The name of the streaming topic (currently unsupported)
+	Sql string `json:"sql,omitempty" protobuf:"bytes,3,opt,name=sql"`
+}
+
+type WebLocation struct {
+	//  URL specifies the external location (HTTP or Git) that will be queried
+	// and then stored as flat-file by the resource which specifies the WebLocation
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Topic *string `json:"topic,omitempty" protobuf:"bytes,8,opt,name=topic"`
-	// In the case of the location type being WebApi, URL specifies the external location (HTTP or Git) that will be queried
-	// and then stored as flat-file by the resource which specifies the DataLocation
-	// +kubebuilder:default:=""
+	URL string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
+}
+
+type ResourceLocation struct {
+	// ResourceRef references another resource that
+	// containing data that will be used as the data source
 	// +kubebuilder:validation:Optional
-	URL *string `json:"url,omitempty" protobuf:"bytes,9,opt,name=url"`
-	// In the case of the location type being Dataset or PublicDataset, ResourceRef references another resource that
-	// containing data that will be used as a data source
-	// +kubebuilder:validation:Optional
-	ResourceRef *v1.ObjectReference `json:"resourceRef,omitempty" protobuf:"bytes,10,opt,name=resourceRef"`
+	ResourceRef v1.ObjectReference `json:"resourceRef,omitempty" protobuf:"bytes,1,opt,name=resourceRef"`
 }
 
 func (location *DataLocation) ToFileLocation() *FileLocation {
-	var bucketName, path string
-	if location.BucketName != nil {
-		bucketName = *location.BucketName
-	}
-
-	if location.Path != nil {
-		path = *location.Path
-	}
-
-	return &FileLocation{
-		BucketName: bucketName,
-		Path:       path,
-	}
+	return location.File
 }
 
 // FileLocation denotes the location of a flat-file, which is the name of a Virtual Bucket and the path within it

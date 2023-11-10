@@ -730,7 +730,7 @@ class DatasetSnapshotSpec(_message.Message):
     def __init__(self, owner: _Optional[str] = ..., datasetName: _Optional[str] = ..., timeout: _Optional[int] = ..., pause: bool = ..., abort: bool = ..., modelClassRunName: _Optional[str] = ...) -> None: ...
 
 class DatasetSnapshotStatus(_message.Message):
-    __slots__ = ["anomaliesLocation", "completedAt", "conditions", "dataLocation", "dataSourceManifestLocation", "datasetManifestLocation", "failureMessage", "featureHistogramRef", "groupBy", "hash", "images", "imbalanced", "lastStudyAt", "logs", "observedGeneration", "phase", "profileLocation", "progress", "reportLocation", "reportName", "snapshotVersion", "statistics", "unitTestResults", "updatedAt"]
+    __slots__ = ["anomaliesLocation", "completedAt", "conditions", "dataLocation", "dataSourceManifestLocation", "datasetManifestLocation", "failureMessage", "featureHistogramRef", "groupBy", "hash", "images", "imbalanced", "lastStudyAt", "logs", "observedGeneration", "phase", "profileLocation", "progress", "reportLocation", "reportName", "sampleLocation", "snapshotVersion", "statistics", "unitTestResults", "updatedAt"]
     ANOMALIESLOCATION_FIELD_NUMBER: _ClassVar[int]
     COMPLETEDAT_FIELD_NUMBER: _ClassVar[int]
     CONDITIONS_FIELD_NUMBER: _ClassVar[int]
@@ -751,6 +751,7 @@ class DatasetSnapshotStatus(_message.Message):
     PROGRESS_FIELD_NUMBER: _ClassVar[int]
     REPORTLOCATION_FIELD_NUMBER: _ClassVar[int]
     REPORTNAME_FIELD_NUMBER: _ClassVar[int]
+    SAMPLELOCATION_FIELD_NUMBER: _ClassVar[int]
     SNAPSHOTVERSION_FIELD_NUMBER: _ClassVar[int]
     STATISTICS_FIELD_NUMBER: _ClassVar[int]
     UNITTESTRESULTS_FIELD_NUMBER: _ClassVar[int]
@@ -775,11 +776,12 @@ class DatasetSnapshotStatus(_message.Message):
     progress: int
     reportLocation: _generated_pb2.FileLocation
     reportName: str
+    sampleLocation: _generated_pb2.FileLocation
     snapshotVersion: int
     statistics: DatasetStatistics
     unitTestResults: _generated_pb2.TestSuiteResult
     updatedAt: _generated_pb2_1_1.Time
-    def __init__(self, observedGeneration: _Optional[int] = ..., datasetManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., dataSourceManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., snapshotVersion: _Optional[int] = ..., statistics: _Optional[_Union[DatasetStatistics, _Mapping]] = ..., phase: _Optional[str] = ..., reportName: _Optional[str] = ..., dataLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., reportLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., profileLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., anomaliesLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., imbalanced: bool = ..., unitTestResults: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., failureMessage: _Optional[str] = ..., progress: _Optional[int] = ..., logs: _Optional[_Union[_generated_pb2.Logs, _Mapping]] = ..., hash: _Optional[str] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastStudyAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., images: _Optional[_Union[_generated_pb2.Images, _Mapping]] = ..., featureHistogramRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., groupBy: _Optional[_Union[DatasetGroupByStatus, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, observedGeneration: _Optional[int] = ..., datasetManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., dataSourceManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., snapshotVersion: _Optional[int] = ..., statistics: _Optional[_Union[DatasetStatistics, _Mapping]] = ..., phase: _Optional[str] = ..., reportName: _Optional[str] = ..., dataLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., reportLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., profileLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., anomaliesLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., sampleLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., imbalanced: bool = ..., unitTestResults: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., failureMessage: _Optional[str] = ..., progress: _Optional[int] = ..., logs: _Optional[_Union[_generated_pb2.Logs, _Mapping]] = ..., hash: _Optional[str] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastStudyAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., images: _Optional[_Union[_generated_pb2.Images, _Mapping]] = ..., featureHistogramRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., groupBy: _Optional[_Union[DatasetGroupByStatus, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class DatasetSpec(_message.Message):
     __slots__ = ["artifactBucketName", "correlation", "dataSourceName", "description", "fast", "featureGroupName", "generateFeatureHistogram", "groupBy", "key", "labRef", "modelClassName", "notification", "origin", "owner", "report", "resources", "role", "run", "sample", "schedule", "subtask", "synthetic", "task", "type", "unitTest", "unitTests"]
@@ -1578,20 +1580,16 @@ class RowSpec(_message.Message):
     def __init__(self, cols: _Optional[_Iterable[_Union[ColumnSpec, _Mapping]]] = ...) -> None: ...
 
 class SampleSpec(_message.Message):
-    __slots__ = ["column", "enabled", "filter", "percent", "rows", "type"]
-    COLUMN_FIELD_NUMBER: _ClassVar[int]
-    ENABLED_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["filter", "percent", "rows", "type"]
     FILTER_FIELD_NUMBER: _ClassVar[int]
     PERCENT_FIELD_NUMBER: _ClassVar[int]
     ROWS_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    column: str
-    enabled: bool
     filter: str
     percent: int
     rows: int
     type: str
-    def __init__(self, enabled: bool = ..., type: _Optional[str] = ..., rows: _Optional[int] = ..., percent: _Optional[int] = ..., filter: _Optional[str] = ..., column: _Optional[str] = ...) -> None: ...
+    def __init__(self, type: _Optional[str] = ..., rows: _Optional[int] = ..., percent: _Optional[int] = ..., filter: _Optional[str] = ...) -> None: ...
 
 class ScatterPlotSpec(_message.Message):
     __slots__ = ["datasetName", "x", "y"]

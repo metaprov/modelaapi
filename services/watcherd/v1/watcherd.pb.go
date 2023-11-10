@@ -5087,7 +5087,7 @@ var file_github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_proto_rawDe
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x77, 0x61, 0x74, 0x63, 0x68, 0x65, 0x72, 0x64, 0x2e, 0x76,
 	0x31, 0x2e, 0x57, 0x61, 0x74, 0x63, 0x68, 0x44, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x53, 0x6e,
 	0x61, 0x70, 0x73, 0x68, 0x6f, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
-	0x12, 0xa9, 0x01, 0x0a, 0x0f, 0x57, 0x61, 0x74, 0x63, 0x68, 0x44, 0x61, 0x74, 0x61, 0x73, 0x6f,
+	0x12, 0xa9, 0x01, 0x0a, 0x0f, 0x57, 0x61, 0x74, 0x63, 0x68, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f,
 	0x75, 0x72, 0x63, 0x65, 0x12, 0x47, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
 	0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
 	0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x77, 0x61,
@@ -5612,7 +5612,7 @@ var file_github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_proto_depId
 	1,   // 115: github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService.WatchRecipeRun:input_type -> github.com.metaprov.modelaapi.services.watcherd.v1.WatchRequestOptions
 	1,   // 116: github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService.WatchDataset:input_type -> github.com.metaprov.modelaapi.services.watcherd.v1.WatchRequestOptions
 	1,   // 117: github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService.WatchDatasetSnapshot:input_type -> github.com.metaprov.modelaapi.services.watcherd.v1.WatchRequestOptions
-	1,   // 118: github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService.WatchDatasource:input_type -> github.com.metaprov.modelaapi.services.watcherd.v1.WatchRequestOptions
+	1,   // 118: github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService.WatchDataSource:input_type -> github.com.metaprov.modelaapi.services.watcherd.v1.WatchRequestOptions
 	1,   // 119: github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService.WatchModel:input_type -> github.com.metaprov.modelaapi.services.watcherd.v1.WatchRequestOptions
 	1,   // 120: github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService.WatchModelClass:input_type -> github.com.metaprov.modelaapi.services.watcherd.v1.WatchRequestOptions
 	1,   // 121: github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService.WatchModelClassRun:input_type -> github.com.metaprov.modelaapi.services.watcherd.v1.WatchRequestOptions
@@ -5648,7 +5648,7 @@ var file_github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_proto_depId
 	9,   // 151: github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService.WatchRecipeRun:output_type -> github.com.metaprov.modelaapi.services.watcherd.v1.WatchRecipeRunResponse
 	10,  // 152: github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService.WatchDataset:output_type -> github.com.metaprov.modelaapi.services.watcherd.v1.WatchDatasetResponse
 	11,  // 153: github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService.WatchDatasetSnapshot:output_type -> github.com.metaprov.modelaapi.services.watcherd.v1.WatchDatasetSnapshotResponse
-	12,  // 154: github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService.WatchDatasource:output_type -> github.com.metaprov.modelaapi.services.watcherd.v1.WatchDataSourceResponse
+	12,  // 154: github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService.WatchDataSource:output_type -> github.com.metaprov.modelaapi.services.watcherd.v1.WatchDataSourceResponse
 	13,  // 155: github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService.WatchModel:output_type -> github.com.metaprov.modelaapi.services.watcherd.v1.WatchModelResponse
 	14,  // 156: github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService.WatchModelClass:output_type -> github.com.metaprov.modelaapi.services.watcherd.v1.WatchModelClassResponse
 	15,  // 157: github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService.WatchModelClassRun:output_type -> github.com.metaprov.modelaapi.services.watcherd.v1.WatchModelClassRunResponse

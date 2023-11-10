@@ -2367,6 +2367,20 @@ export class DsSnapshotResponse extends jspb.Message {
   hasLocation(): boolean;
   clearLocation(): DsSnapshotResponse;
 
+  getSamplelocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setSamplelocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DsSnapshotResponse;
+  hasSamplelocation(): boolean;
+  clearSamplelocation(): DsSnapshotResponse;
+
+  getCols(): number;
+  setCols(value: number): DsSnapshotResponse;
+
+  getRows(): number;
+  setRows(value: number): DsSnapshotResponse;
+
+  getFilesize(): number;
+  setFilesize(value: number): DsSnapshotResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsSnapshotResponse.AsObject;
   static toObject(includeInstance: boolean, msg: DsSnapshotResponse): DsSnapshotResponse.AsObject;
@@ -2378,6 +2392,10 @@ export class DsSnapshotResponse extends jspb.Message {
 export namespace DsSnapshotResponse {
   export type AsObject = {
     location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    samplelocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    cols: number,
+    rows: number,
+    filesize: number,
   }
 }
 
@@ -2936,9 +2954,6 @@ export namespace CreateMetricsStoreResponse {
 }
 
 export class SaveResponse extends jspb.Message {
-  getDbid(): number;
-  setDbid(value: number): SaveResponse;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SaveResponse.AsObject;
   static toObject(includeInstance: boolean, msg: SaveResponse): SaveResponse.AsObject;
@@ -2949,7 +2964,84 @@ export class SaveResponse extends jspb.Message {
 
 export namespace SaveResponse {
   export type AsObject = {
-    dbid: number,
+  }
+}
+
+export class ModelScorePreviewRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): ModelScorePreviewRequest;
+  hasProduct(): boolean;
+  clearProduct(): ModelScorePreviewRequest;
+
+  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): ModelScorePreviewRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): ModelScorePreviewRequest;
+
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): ModelScorePreviewRequest;
+  hasDataset(): boolean;
+  clearDataset(): ModelScorePreviewRequest;
+
+  getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot | undefined;
+  setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot): ModelScorePreviewRequest;
+  hasSnapshot(): boolean;
+  clearSnapshot(): ModelScorePreviewRequest;
+
+  getPipelinesList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.FeatureEngineeringPipeline>;
+  setPipelinesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.FeatureEngineeringPipeline>): ModelScorePreviewRequest;
+  clearPipelinesList(): ModelScorePreviewRequest;
+  addPipelines(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.FeatureEngineeringPipeline, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.FeatureEngineeringPipeline;
+
+  getEstimator(): string;
+  setEstimator(value: string): ModelScorePreviewRequest;
+
+  getMetric(): string;
+  setMetric(value: string): ModelScorePreviewRequest;
+
+  getRows(): number;
+  setRows(value: number): ModelScorePreviewRequest;
+
+  getClient(): string;
+  setClient(value: string): ModelScorePreviewRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelScorePreviewRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelScorePreviewRequest): ModelScorePreviewRequest.AsObject;
+  static serializeBinaryToWriter(message: ModelScorePreviewRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelScorePreviewRequest;
+  static deserializeBinaryFromReader(message: ModelScorePreviewRequest, reader: jspb.BinaryReader): ModelScorePreviewRequest;
+}
+
+export namespace ModelScorePreviewRequest {
+  export type AsObject = {
+    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    snapshot?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSnapshot.AsObject,
+    pipelinesList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.FeatureEngineeringPipeline.AsObject>,
+    estimator: string,
+    metric: string,
+    rows: number,
+    client: string,
+  }
+}
+
+export class ModelScorePreviewResponse extends jspb.Message {
+  getScore(): number;
+  setScore(value: number): ModelScorePreviewResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelScorePreviewResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelScorePreviewResponse): ModelScorePreviewResponse.AsObject;
+  static serializeBinaryToWriter(message: ModelScorePreviewResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelScorePreviewResponse;
+  static deserializeBinaryFromReader(message: ModelScorePreviewResponse, reader: jspb.BinaryReader): ModelScorePreviewResponse;
+}
+
+export namespace ModelScorePreviewResponse {
+  export type AsObject = {
+    score: number,
   }
 }
 

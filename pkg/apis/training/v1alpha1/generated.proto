@@ -2731,7 +2731,7 @@ message StudyStatus {
 
   // LastFailureMessage specifies the failure message of the last run. If the last snapshot succeeded, the field will be cleared
   // +kubebuilder:validation:Optional
-  optional string failureMessage = 7;
+  optional string lastFailureMessage = 7;
 
   // Schedule specifies the status of the run schedule
   // +kubebuilder:validation:Optional

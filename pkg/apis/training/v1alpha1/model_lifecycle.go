@@ -861,13 +861,6 @@ func (model *Model) InitializeFromStudy(run *StudyRun, study *Study) {
 	model.ObjectMeta.Labels[catalog.StudyRunLabelKey] = run.Name
 	model.Spec.Training.LabRef = study.Spec.LabRef
 	model.Spec.Fast = study.Spec.Fast
-	// model.Spec.Version = study.Spec.ModelVersion
-	model.Status.TrainDatasetLocation = run.Status.TrainDatasetLocation
-	model.Status.TestDatasetLocation = run.Status.TestDatasetLocation
-	model.Status.ValidationDatasetLocation = run.Status.ValidationDatasetLocation
-	model.Status.TrainingDataHash.TestingHash = run.Status.TrainingDataHash.TestingHash
-	model.Status.TrainingDataHash.TrainingHash = run.Status.TrainingDataHash.TrainingHash
-	model.Status.TrainingDataHash.ValidationHash = run.Status.TrainingDataHash.TrainingHash
 }
 
 func (model *Model) OpName() string {

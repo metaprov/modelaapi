@@ -1,6 +1,7 @@
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from google.api import annotations_pb2 as _annotations_pb2
 from github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1 import generated_pb2 as _generated_pb2
+from github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1 import generated_pb2 as _generated_pb2_1
 from github.com.metaprov.modelaapi.services.common.v1 import common_pb2 as _common_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -58,20 +59,6 @@ class CompileModelResponse(_message.Message):
     names: str
     namespace: str
     def __init__(self, namespace: _Optional[str] = ..., names: _Optional[str] = ...) -> None: ...
-
-class CreateDashboardRequest(_message.Message):
-    __slots__ = ["name", "namespace", "shadow"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    SHADOW_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    namespace: str
-    shadow: bool
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., shadow: bool = ...) -> None: ...
-
-class CreateDashboardResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
 
 class CreateModelProfileRequest(_message.Message):
     __slots__ = ["name", "namespace"]
@@ -146,18 +133,6 @@ class DownloadModelResponse(_message.Message):
     RAW_FIELD_NUMBER: _ClassVar[int]
     raw: bytes
     def __init__(self, raw: _Optional[bytes] = ...) -> None: ...
-
-class FlagModelRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
-
-class FlagModelResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
 
 class GetMisclassRequest(_message.Message):
     __slots__ = ["name", "namespace"]
@@ -274,6 +249,28 @@ class PauseModelRequest(_message.Message):
 class PauseModelResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
+
+class PreviewScoreRequest(_message.Message):
+    __slots__ = ["client", "estimator", "metric", "pipelines", "rows", "snapshot"]
+    CLIENT_FIELD_NUMBER: _ClassVar[int]
+    ESTIMATOR_FIELD_NUMBER: _ClassVar[int]
+    METRIC_FIELD_NUMBER: _ClassVar[int]
+    PIPELINES_FIELD_NUMBER: _ClassVar[int]
+    ROWS_FIELD_NUMBER: _ClassVar[int]
+    SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
+    client: str
+    estimator: str
+    metric: str
+    pipelines: _containers.RepeatedCompositeFieldContainer[_generated_pb2.FeatureEngineeringPipeline]
+    rows: int
+    snapshot: _generated_pb2_1.DatasetSnapshot
+    def __init__(self, snapshot: _Optional[_Union[_generated_pb2_1.DatasetSnapshot, _Mapping]] = ..., pipelines: _Optional[_Iterable[_Union[_generated_pb2.FeatureEngineeringPipeline, _Mapping]]] = ..., estimator: _Optional[str] = ..., metric: _Optional[str] = ..., rows: _Optional[int] = ..., client: _Optional[str] = ...) -> None: ...
+
+class PreviewScoreResponse(_message.Message):
+    __slots__ = ["score"]
+    SCORE_FIELD_NUMBER: _ClassVar[int]
+    score: float
+    def __init__(self, score: _Optional[float] = ...) -> None: ...
 
 class PromoteModelRequest(_message.Message):
     __slots__ = ["name", "namespace", "predictor", "servingsite", "shadow", "tenant"]

@@ -254,49 +254,6 @@ export class DataServiceClient {
     this.methodDescriptorRunRecipe);
   }
 
-  methodDescriptorWriteFile = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/WriteFile',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsWriteFileRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsReadFromStoreResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsWriteFileRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsReadFromStoreResponse.deserializeBinary
-  );
-
-  writeFile(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsWriteFileRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsReadFromStoreResponse>;
-
-  writeFile(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsWriteFileRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsReadFromStoreResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsReadFromStoreResponse>;
-
-  writeFile(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsWriteFileRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsReadFromStoreResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/WriteFile',
-        request,
-        metadata || {},
-        this.methodDescriptorWriteFile,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/WriteFile',
-    request,
-    metadata || {},
-    this.methodDescriptorWriteFile);
-  }
-
   methodDescriptorGenerateDataset = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.data.v1.DataService/GenerateDataset',
     grpcWeb.MethodType.UNARY,
@@ -1929,6 +1886,49 @@ export class DataServiceClient {
     request,
     metadata || {},
     this.methodDescriptorBatchPredict);
+  }
+
+  methodDescriptorPreviewModelScore = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.data.v1.DataService/PreviewModelScore',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.ModelScorePreviewRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.ModelScorePreviewResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.ModelScorePreviewRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.ModelScorePreviewResponse.deserializeBinary
+  );
+
+  previewModelScore(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.ModelScorePreviewRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.ModelScorePreviewResponse>;
+
+  previewModelScore(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.ModelScorePreviewRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.ModelScorePreviewResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.ModelScorePreviewResponse>;
+
+  previewModelScore(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.ModelScorePreviewRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.ModelScorePreviewResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/PreviewModelScore',
+        request,
+        metadata || {},
+        this.methodDescriptorPreviewModelScore,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/PreviewModelScore',
+    request,
+    metadata || {},
+    this.methodDescriptorPreviewModelScore);
   }
 
   methodDescriptorSaveDataSet = new grpcWeb.MethodDescriptor(

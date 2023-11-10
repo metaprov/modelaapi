@@ -678,10 +678,18 @@ class DsSnapshotRequest(_message.Message):
     def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1_1.VirtualBucket, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., snapshot: _Optional[_Union[_generated_pb2.DatasetSnapshot, _Mapping]] = ...) -> None: ...
 
 class DsSnapshotResponse(_message.Message):
-    __slots__ = ["location"]
+    __slots__ = ["cols", "filesize", "location", "rows", "sampleLocation"]
+    COLS_FIELD_NUMBER: _ClassVar[int]
+    FILESIZE_FIELD_NUMBER: _ClassVar[int]
     LOCATION_FIELD_NUMBER: _ClassVar[int]
+    ROWS_FIELD_NUMBER: _ClassVar[int]
+    SAMPLELOCATION_FIELD_NUMBER: _ClassVar[int]
+    cols: int
+    filesize: int
     location: _generated_pb2_1_1_1_1.FileLocation
-    def __init__(self, location: _Optional[_Union[_generated_pb2_1_1_1_1.FileLocation, _Mapping]] = ...) -> None: ...
+    rows: int
+    sampleLocation: _generated_pb2_1_1_1_1.FileLocation
+    def __init__(self, location: _Optional[_Union[_generated_pb2_1_1_1_1.FileLocation, _Mapping]] = ..., sampleLocation: _Optional[_Union[_generated_pb2_1_1_1_1.FileLocation, _Mapping]] = ..., cols: _Optional[int] = ..., rows: _Optional[int] = ..., filesize: _Optional[int] = ...) -> None: ...
 
 class DsSplitDatasetRequest(_message.Message):
     __slots__ = ["bucket", "dataset", "datasource", "product", "snapshot", "study", "studyrun", "testDataset", "testSnapshot", "trainDataset", "trainSnapshot"]
@@ -913,6 +921,34 @@ class GroupByDatasetResponse(_message.Message):
     uri: str
     def __init__(self, uri: _Optional[str] = ...) -> None: ...
 
+class ModelScorePreviewRequest(_message.Message):
+    __slots__ = ["client", "dataset", "datasource", "estimator", "metric", "pipelines", "product", "rows", "snapshot"]
+    CLIENT_FIELD_NUMBER: _ClassVar[int]
+    DATASET_FIELD_NUMBER: _ClassVar[int]
+    DATASOURCE_FIELD_NUMBER: _ClassVar[int]
+    ESTIMATOR_FIELD_NUMBER: _ClassVar[int]
+    METRIC_FIELD_NUMBER: _ClassVar[int]
+    PIPELINES_FIELD_NUMBER: _ClassVar[int]
+    PRODUCT_FIELD_NUMBER: _ClassVar[int]
+    ROWS_FIELD_NUMBER: _ClassVar[int]
+    SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
+    client: str
+    dataset: _generated_pb2.Dataset
+    datasource: _generated_pb2.DataSource
+    estimator: str
+    metric: str
+    pipelines: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1.FeatureEngineeringPipeline]
+    product: _generated_pb2.DataProduct
+    rows: int
+    snapshot: _generated_pb2.DatasetSnapshot
+    def __init__(self, product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., snapshot: _Optional[_Union[_generated_pb2.DatasetSnapshot, _Mapping]] = ..., pipelines: _Optional[_Iterable[_Union[_generated_pb2_1.FeatureEngineeringPipeline, _Mapping]]] = ..., estimator: _Optional[str] = ..., metric: _Optional[str] = ..., rows: _Optional[int] = ..., client: _Optional[str] = ...) -> None: ...
+
+class ModelScorePreviewResponse(_message.Message):
+    __slots__ = ["score"]
+    SCORE_FIELD_NUMBER: _ClassVar[int]
+    score: float
+    def __init__(self, score: _Optional[float] = ...) -> None: ...
+
 class RunTestSuiteRequest(_message.Message):
     __slots__ = ["bucket", "dataset", "datasource", "histogram", "model", "product", "refHistogram", "snapshot", "study", "studyrun", "suite"]
     BUCKET_FIELD_NUMBER: _ClassVar[int]
@@ -1032,10 +1068,8 @@ class SavePredictorRequest(_message.Message):
     def __init__(self, dataproduct: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., modelclass: _Optional[_Union[_generated_pb2_1.ModelClass, _Mapping]] = ..., predictor: _Optional[_Union[_generated_pb2_1_1.Prediction, _Mapping]] = ..., dbConnection: _Optional[_Union[_generated_pb2_1_1_1.Connection, _Mapping]] = ...) -> None: ...
 
 class SaveResponse(_message.Message):
-    __slots__ = ["dbid"]
-    DBID_FIELD_NUMBER: _ClassVar[int]
-    dbid: int
-    def __init__(self, dbid: _Optional[int] = ...) -> None: ...
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class SyncOnlineStoreRequest(_message.Message):
     __slots__ = ["dbConnection", "dbSecret", "fg", "location", "model", "storageBucket", "storageConnection", "storageSecret"]

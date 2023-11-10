@@ -6,6 +6,7 @@ package github.com.metaprov.modelaapi.services.model.v1;
 import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 
@@ -70,9 +71,7 @@ message AbortModelRequest {
     string name      = 2;
 }
 
-message AbortModelResponse {
-
-}
+message AbortModelResponse {}
 
 message PauseModelRequest {
     string namespace = 1;
@@ -131,7 +130,6 @@ message PublishModelRequest {
     string name      = 2;
 }
 
-
 message DeployModelResponse {}
 
 message ListModelsRequest {
@@ -146,11 +144,9 @@ message ListModelsResponse {
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList models = 1;
 }
 
-
 message GetModelRequest {
     string namespace = 1;
     string name      = 2;
-    
 }
 
 message UpdateModelResult {
@@ -162,9 +158,7 @@ message DeleteModelRequest{
     string name      = 2;
 }
 
-message DeleteModelResponse {
-
-}
+message DeleteModelResponse {}
 
 message PublishModelResponse {
     string modelTarHash      = 1; // the sig for the moder tar file.
@@ -185,22 +179,9 @@ message DownloadModelRequest {
     string group     = 3; // if not null
 }
 
-// Answer the report in base 64
 message DownloadModelResponse {
     bytes raw = 1;
 }
-
-// Flag model
-message FlagModelRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
-// Answer the report in base 64
-message FlagModelResponse {
-    
-}
-
 
 // Promote model
 message PromoteModelRequest {
@@ -212,37 +193,27 @@ message PromoteModelRequest {
     bool   shadow      = 6; // if true the model become shadow model
 }
 
-// Answer the report in base 64
-message PromoteModelResponse {
+message PromoteModelResponse {}
 
-}
-
-message CreateDashboardRequest {
-    string namespace = 1;
-    string name      = 2;
-    bool   shadow    = 3; // if true the model become shadow model
-}
-
-// Answer the report in base 64
-message CreateDashboardResponse {
-
-}
-
-
-
-// Flag model
 message TestModelRequest {
     string namespace = 1;
     string name      = 2;
 }
 
-// Answer the report in base 64
-message TestModelResponse {
-    
+message TestModelResponse {}
+
+message PreviewScoreRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline pipelines = 2;
+    string estimator = 3;
+    string metric = 4;
+    int32 rows = 5;
+    string client = 6;
 }
 
-
-
+message PreviewScoreResponse {
+    float score = 1;
+}
 
 service ModelService {
     rpc ListModels(ListModelsRequest) returns (ListModelsResponse) {
@@ -324,23 +295,14 @@ service ModelService {
     rpc DownloadModel(DownloadModelRequest) returns (DownloadModelResponse) {
         option (google.api.http).post = "/v1/models/{namespace}/{name}:download";
     }
-    
-    // Flag model 
-    rpc FlagModel(FlagModelRequest) returns (FlagModelResponse) {
-        option (google.api.http).post = "/v1/models/{namespace}/{name}:flag";
-    }
 
-    // promote model to live in model class
     rpc PromoteModel(PromoteModelRequest) returns (PromoteModelResponse) {
         option (google.api.http).post = "/v1/models/{namespace}/{name}:promote";
     }
 
-    rpc CreateDashboard(CreateDashboardRequest) returns (CreateDashboardResponse) {
-        option (google.api.http).post = "/v1/models/{namespace}/{name}:dashboard";
-    }
-
-    // Mark the model to test
     rpc TestModel(TestModelRequest) returns (TestModelResponse) {
         option (google.api.http).post = "/v1/models/{namespace}/{name}:test";
     }
+
+    rpc PreviewScore(PreviewScoreRequest) returns (PreviewScoreResponse) {}
 }

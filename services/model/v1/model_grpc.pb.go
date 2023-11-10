@@ -39,13 +39,9 @@ type ModelServiceClient interface {
 	CompareModels(ctx context.Context, in *CompareModelsRequest, opts ...grpc.CallOption) (*CompareModelsResponse, error)
 	CompileModel(ctx context.Context, in *CompileModelRequest, opts ...grpc.CallOption) (*CompileModelResponse, error)
 	DownloadModel(ctx context.Context, in *DownloadModelRequest, opts ...grpc.CallOption) (*DownloadModelResponse, error)
-	// Flag model
-	FlagModel(ctx context.Context, in *FlagModelRequest, opts ...grpc.CallOption) (*FlagModelResponse, error)
-	// promote model to live in model class
 	PromoteModel(ctx context.Context, in *PromoteModelRequest, opts ...grpc.CallOption) (*PromoteModelResponse, error)
-	CreateDashboard(ctx context.Context, in *CreateDashboardRequest, opts ...grpc.CallOption) (*CreateDashboardResponse, error)
-	// Mark the model to test
 	TestModel(ctx context.Context, in *TestModelRequest, opts ...grpc.CallOption) (*TestModelResponse, error)
+	PreviewScore(ctx context.Context, in *PreviewScoreRequest, opts ...grpc.CallOption) (*PreviewScoreResponse, error)
 }
 
 type modelServiceClient struct {
@@ -209,15 +205,6 @@ func (c *modelServiceClient) DownloadModel(ctx context.Context, in *DownloadMode
 	return out, nil
 }
 
-func (c *modelServiceClient) FlagModel(ctx context.Context, in *FlagModelRequest, opts ...grpc.CallOption) (*FlagModelResponse, error) {
-	out := new(FlagModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/FlagModel", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *modelServiceClient) PromoteModel(ctx context.Context, in *PromoteModelRequest, opts ...grpc.CallOption) (*PromoteModelResponse, error) {
 	out := new(PromoteModelResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/PromoteModel", in, out, opts...)
@@ -227,18 +214,18 @@ func (c *modelServiceClient) PromoteModel(ctx context.Context, in *PromoteModelR
 	return out, nil
 }
 
-func (c *modelServiceClient) CreateDashboard(ctx context.Context, in *CreateDashboardRequest, opts ...grpc.CallOption) (*CreateDashboardResponse, error) {
-	out := new(CreateDashboardResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateDashboard", in, out, opts...)
+func (c *modelServiceClient) TestModel(ctx context.Context, in *TestModelRequest, opts ...grpc.CallOption) (*TestModelResponse, error) {
+	out := new(TestModelResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/TestModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *modelServiceClient) TestModel(ctx context.Context, in *TestModelRequest, opts ...grpc.CallOption) (*TestModelResponse, error) {
-	out := new(TestModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/TestModel", in, out, opts...)
+func (c *modelServiceClient) PreviewScore(ctx context.Context, in *PreviewScoreRequest, opts ...grpc.CallOption) (*PreviewScoreResponse, error) {
+	out := new(PreviewScoreResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/PreviewScore", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -266,13 +253,9 @@ type ModelServiceServer interface {
 	CompareModels(context.Context, *CompareModelsRequest) (*CompareModelsResponse, error)
 	CompileModel(context.Context, *CompileModelRequest) (*CompileModelResponse, error)
 	DownloadModel(context.Context, *DownloadModelRequest) (*DownloadModelResponse, error)
-	// Flag model
-	FlagModel(context.Context, *FlagModelRequest) (*FlagModelResponse, error)
-	// promote model to live in model class
 	PromoteModel(context.Context, *PromoteModelRequest) (*PromoteModelResponse, error)
-	CreateDashboard(context.Context, *CreateDashboardRequest) (*CreateDashboardResponse, error)
-	// Mark the model to test
 	TestModel(context.Context, *TestModelRequest) (*TestModelResponse, error)
+	PreviewScore(context.Context, *PreviewScoreRequest) (*PreviewScoreResponse, error)
 	mustEmbedUnimplementedModelServiceServer()
 }
 
@@ -331,17 +314,14 @@ func (UnimplementedModelServiceServer) CompileModel(context.Context, *CompileMod
 func (UnimplementedModelServiceServer) DownloadModel(context.Context, *DownloadModelRequest) (*DownloadModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DownloadModel not implemented")
 }
-func (UnimplementedModelServiceServer) FlagModel(context.Context, *FlagModelRequest) (*FlagModelResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method FlagModel not implemented")
-}
 func (UnimplementedModelServiceServer) PromoteModel(context.Context, *PromoteModelRequest) (*PromoteModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PromoteModel not implemented")
 }
-func (UnimplementedModelServiceServer) CreateDashboard(context.Context, *CreateDashboardRequest) (*CreateDashboardResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateDashboard not implemented")
-}
 func (UnimplementedModelServiceServer) TestModel(context.Context, *TestModelRequest) (*TestModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TestModel not implemented")
+}
+func (UnimplementedModelServiceServer) PreviewScore(context.Context, *PreviewScoreRequest) (*PreviewScoreResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PreviewScore not implemented")
 }
 func (UnimplementedModelServiceServer) mustEmbedUnimplementedModelServiceServer() {}
 
@@ -662,24 +642,6 @@ func _ModelService_DownloadModel_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ModelService_FlagModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(FlagModelRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ModelServiceServer).FlagModel(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/FlagModel",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelServiceServer).FlagModel(ctx, req.(*FlagModelRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _ModelService_PromoteModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PromoteModelRequest)
 	if err := dec(in); err != nil {
@@ -698,24 +660,6 @@ func _ModelService_PromoteModel_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ModelService_CreateDashboard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateDashboardRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ModelServiceServer).CreateDashboard(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateDashboard",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelServiceServer).CreateDashboard(ctx, req.(*CreateDashboardRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _ModelService_TestModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(TestModelRequest)
 	if err := dec(in); err != nil {
@@ -730,6 +674,24 @@ func _ModelService_TestModel_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).TestModel(ctx, req.(*TestModelRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ModelService_PreviewScore_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PreviewScoreRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ModelServiceServer).PreviewScore(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/PreviewScore",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ModelServiceServer).PreviewScore(ctx, req.(*PreviewScoreRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -810,20 +772,16 @@ var ModelService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ModelService_DownloadModel_Handler,
 		},
 		{
-			MethodName: "FlagModel",
-			Handler:    _ModelService_FlagModel_Handler,
-		},
-		{
 			MethodName: "PromoteModel",
 			Handler:    _ModelService_PromoteModel_Handler,
 		},
 		{
-			MethodName: "CreateDashboard",
-			Handler:    _ModelService_CreateDashboard_Handler,
-		},
-		{
 			MethodName: "TestModel",
 			Handler:    _ModelService_TestModel_Handler,
+		},
+		{
+			MethodName: "PreviewScore",
+			Handler:    _ModelService_PreviewScore_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

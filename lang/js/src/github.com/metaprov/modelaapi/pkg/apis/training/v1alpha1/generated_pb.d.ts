@@ -4552,10 +4552,10 @@ export class StudyStatus extends jspb.Message {
   hasLastrunat(): boolean;
   clearLastrunat(): StudyStatus;
 
-  getFailuremessage(): string;
-  setFailuremessage(value: string): StudyStatus;
-  hasFailuremessage(): boolean;
-  clearFailuremessage(): StudyStatus;
+  getLastfailuremessage(): string;
+  setLastfailuremessage(value: string): StudyStatus;
+  hasLastfailuremessage(): boolean;
+  clearLastfailuremessage(): StudyStatus;
 
   getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus | undefined;
   setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus): StudyStatus;
@@ -4587,7 +4587,7 @@ export namespace StudyStatus {
     lastrunversion?: number,
     availablerunsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject>,
     lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failuremessage?: string,
+    lastfailuremessage?: string,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,

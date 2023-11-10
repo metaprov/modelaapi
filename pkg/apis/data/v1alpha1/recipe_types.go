@@ -391,17 +391,15 @@ const (
 
 // SampleSpec specifies how the contents of a dataset should be sampled
 type SampleSpec struct {
-	// Indicates if sampling is enabled
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// The type of sampling (random sampling, by default)
-	// +kubebuilder:default:="random"
+	// The type of sampling (stratified sampling, by default). Modela will
+	// sample rows until their contents exceed a maximum of 1Mb
+	// +kubebuilder:default:="stratified"
 	// +kubebuilder:validation:Optional
 	Type catalog.SamplingType `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
 	// The number of rows to sample (by default, 500)
 	// +kubebuilder:default:=500
 	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:validation:Maximum=1000
 	// +kubebuilder:validation:Optional
 	Rows *int32 `json:"rows,omitempty" protobuf:"varint,3,opt,name=rows"`
 	// The percentage of rows to sample
@@ -409,14 +407,10 @@ type SampleSpec struct {
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Percent *int32 `json:"percent,omitempty" protobuf:"varint,4,opt,name=percent"`
-	// The filter formula, valid only if the sample type is a filter
+	// The filter formula, applicable if the sample type is a filter
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Filter *string `json:"filter,omitempty" protobuf:"bytes,5,opt,name=filter"`
-	// The name of the column to be used for stratified sampling
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Column *string `json:"column,omitempty" protobuf:"bytes,6,opt,name=column"`
 }
 
 // RecipeInputSpec specify the input for a recipe

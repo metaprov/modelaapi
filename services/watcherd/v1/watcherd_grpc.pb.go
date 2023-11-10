@@ -32,7 +32,7 @@ type WatcherdServiceClient interface {
 	WatchRecipeRun(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchRecipeRunResponse, error)
 	WatchDataset(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDatasetResponse, error)
 	WatchDatasetSnapshot(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDatasetSnapshotResponse, error)
-	WatchDatasource(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDataSourceResponse, error)
+	WatchDataSource(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDataSourceResponse, error)
 	WatchModel(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchModelResponse, error)
 	WatchModelClass(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchModelClassResponse, error)
 	WatchModelClassRun(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchModelClassRunResponse, error)
@@ -158,9 +158,9 @@ func (c *watcherdServiceClient) WatchDatasetSnapshot(ctx context.Context, in *Wa
 	return out, nil
 }
 
-func (c *watcherdServiceClient) WatchDatasource(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDataSourceResponse, error) {
+func (c *watcherdServiceClient) WatchDataSource(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchDataSourceResponse, error) {
 	out := new(WatchDataSourceResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDatasource", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDataSource", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -406,7 +406,7 @@ type WatcherdServiceServer interface {
 	WatchRecipeRun(context.Context, *WatchRequestOptions) (*WatchRecipeRunResponse, error)
 	WatchDataset(context.Context, *WatchRequestOptions) (*WatchDatasetResponse, error)
 	WatchDatasetSnapshot(context.Context, *WatchRequestOptions) (*WatchDatasetSnapshotResponse, error)
-	WatchDatasource(context.Context, *WatchRequestOptions) (*WatchDataSourceResponse, error)
+	WatchDataSource(context.Context, *WatchRequestOptions) (*WatchDataSourceResponse, error)
 	WatchModel(context.Context, *WatchRequestOptions) (*WatchModelResponse, error)
 	WatchModelClass(context.Context, *WatchRequestOptions) (*WatchModelClassResponse, error)
 	WatchModelClassRun(context.Context, *WatchRequestOptions) (*WatchModelClassRunResponse, error)
@@ -469,8 +469,8 @@ func (UnimplementedWatcherdServiceServer) WatchDataset(context.Context, *WatchRe
 func (UnimplementedWatcherdServiceServer) WatchDatasetSnapshot(context.Context, *WatchRequestOptions) (*WatchDatasetSnapshotResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WatchDatasetSnapshot not implemented")
 }
-func (UnimplementedWatcherdServiceServer) WatchDatasource(context.Context, *WatchRequestOptions) (*WatchDataSourceResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method WatchDatasource not implemented")
+func (UnimplementedWatcherdServiceServer) WatchDataSource(context.Context, *WatchRequestOptions) (*WatchDataSourceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WatchDataSource not implemented")
 }
 func (UnimplementedWatcherdServiceServer) WatchModel(context.Context, *WatchRequestOptions) (*WatchModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WatchModel not implemented")
@@ -740,20 +740,20 @@ func _WatcherdService_WatchDatasetSnapshot_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
-func _WatcherdService_WatchDatasource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WatcherdService_WatchDataSource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(WatchRequestOptions)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WatcherdServiceServer).WatchDatasource(ctx, in)
+		return srv.(WatcherdServiceServer).WatchDataSource(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDatasource",
+		FullMethod: "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchDataSource",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WatcherdServiceServer).WatchDatasource(ctx, req.(*WatchRequestOptions))
+		return srv.(WatcherdServiceServer).WatchDataSource(ctx, req.(*WatchRequestOptions))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1256,8 +1256,8 @@ var WatcherdService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _WatcherdService_WatchDatasetSnapshot_Handler,
 		},
 		{
-			MethodName: "WatchDatasource",
-			Handler:    _WatcherdService_WatchDatasource_Handler,
+			MethodName: "WatchDataSource",
+			Handler:    _WatcherdService_WatchDataSource_Handler,
 		},
 		{
 			MethodName: "WatchModel",

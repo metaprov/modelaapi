@@ -770,49 +770,6 @@ export class ModelServiceClient {
     this.methodDescriptorDownloadModel);
   }
 
-  methodDescriptorFlagModel = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.model.v1.ModelService/FlagModel',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelRequest,
-    github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelResponse,
-    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelResponse.deserializeBinary
-  );
-
-  flagModel(
-    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelResponse>;
-
-  flagModel(
-    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelResponse>;
-
-  flagModel(
-    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/FlagModel',
-        request,
-        metadata || {},
-        this.methodDescriptorFlagModel,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/FlagModel',
-    request,
-    metadata || {},
-    this.methodDescriptorFlagModel);
-  }
-
   methodDescriptorPromoteModel = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.model.v1.ModelService/PromoteModel',
     grpcWeb.MethodType.UNARY,
@@ -856,49 +813,6 @@ export class ModelServiceClient {
     this.methodDescriptorPromoteModel);
   }
 
-  methodDescriptorCreateDashboard = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateDashboard',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardRequest,
-    github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardResponse,
-    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardResponse.deserializeBinary
-  );
-
-  createDashboard(
-    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardResponse>;
-
-  createDashboard(
-    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardResponse>;
-
-  createDashboard(
-    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateDashboardResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateDashboard',
-        request,
-        metadata || {},
-        this.methodDescriptorCreateDashboard,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateDashboard',
-    request,
-    metadata || {},
-    this.methodDescriptorCreateDashboard);
-  }
-
   methodDescriptorTestModel = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.model.v1.ModelService/TestModel',
     grpcWeb.MethodType.UNARY,
@@ -940,6 +854,49 @@ export class ModelServiceClient {
     request,
     metadata || {},
     this.methodDescriptorTestModel);
+  }
+
+  methodDescriptorPreviewScore = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.model.v1.ModelService/PreviewScore',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.PreviewScoreRequest,
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.PreviewScoreResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.PreviewScoreRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.PreviewScoreResponse.deserializeBinary
+  );
+
+  previewScore(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.PreviewScoreRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.PreviewScoreResponse>;
+
+  previewScore(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.PreviewScoreRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.PreviewScoreResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.PreviewScoreResponse>;
+
+  previewScore(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.PreviewScoreRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.PreviewScoreResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/PreviewScore',
+        request,
+        metadata || {},
+        this.methodDescriptorPreviewScore,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/PreviewScore',
+    request,
+    metadata || {},
+    this.methodDescriptorPreviewScore);
   }
 
 }

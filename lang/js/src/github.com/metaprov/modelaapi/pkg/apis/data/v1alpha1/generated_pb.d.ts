@@ -2279,6 +2279,11 @@ export class DatasetSnapshotStatus extends jspb.Message {
   hasAnomalieslocation(): boolean;
   clearAnomalieslocation(): DatasetSnapshotStatus;
 
+  getSamplelocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setSamplelocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): DatasetSnapshotStatus;
+  hasSamplelocation(): boolean;
+  clearSamplelocation(): DatasetSnapshotStatus;
+
   getImbalanced(): boolean;
   setImbalanced(value: boolean): DatasetSnapshotStatus;
   hasImbalanced(): boolean;
@@ -2365,6 +2370,7 @@ export namespace DatasetSnapshotStatus {
     reportlocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     profilelocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     anomalieslocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    samplelocation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     imbalanced?: boolean,
     unittestresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     failuremessage?: string,
@@ -4872,11 +4878,6 @@ export namespace RowSpec {
 }
 
 export class SampleSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): SampleSpec;
-  hasEnabled(): boolean;
-  clearEnabled(): SampleSpec;
-
   getType(): string;
   setType(value: string): SampleSpec;
   hasType(): boolean;
@@ -4897,11 +4898,6 @@ export class SampleSpec extends jspb.Message {
   hasFilter(): boolean;
   clearFilter(): SampleSpec;
 
-  getColumn(): string;
-  setColumn(value: string): SampleSpec;
-  hasColumn(): boolean;
-  clearColumn(): SampleSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SampleSpec.AsObject;
   static toObject(includeInstance: boolean, msg: SampleSpec): SampleSpec.AsObject;
@@ -4912,12 +4908,10 @@ export class SampleSpec extends jspb.Message {
 
 export namespace SampleSpec {
   export type AsObject = {
-    enabled?: boolean,
     type?: string,
     rows?: number,
     percent?: number,
     filter?: string,
-    column?: string,
   }
 }
 

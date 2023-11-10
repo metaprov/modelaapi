@@ -44,7 +44,6 @@ const (
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".status.version",priority=1
 // +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.snapshot.dataset"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.search.objective.metric"
@@ -181,7 +180,7 @@ type StudyStatus struct {
 	LastRunAt *metav1.Time `json:"lastRunAt,omitempty" protobuf:"bytes,6,opt,name=lastRunAt"`
 	// LastFailureMessage specifies the failure message of the last run. If the last snapshot succeeded, the field will be cleared
 	//+kubebuilder:validation:Optional
-	LastFailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,7,opt,name=failureMessage"`
+	LastFailureMessage *string `json:"lastFailureMessage,omitempty" protobuf:"bytes,7,opt,name=lastFailureMessage"`
 	// Schedule specifies the status of the run schedule
 	//+kubebuilder:validation:Optional
 	Schedule catalog.RunScheduleStatus `json:"schedule,omitempty" protobuf:"bytes,8,opt,name=schedule"`

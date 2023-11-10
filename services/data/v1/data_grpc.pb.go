@@ -32,8 +32,6 @@ type DataServiceClient interface {
 	RunDataPipeline(ctx context.Context, in *DsRunDataPipelineRequest, opts ...grpc.CallOption) (*DsRunDataPipelineResponse, error)
 	// Run recipe
 	RunRecipe(ctx context.Context, in *DsRunRecipeRequest, opts ...grpc.CallOption) (*DsRunRecipeResponse, error)
-	// Read from a flat file and create a dataset
-	WriteFile(ctx context.Context, in *DsWriteFileRequest, opts ...grpc.CallOption) (*DsReadFromStoreResponse, error)
 	// Based on the datasource, generate test dataset
 	GenerateDataset(ctx context.Context, in *DsGenerateDatasetRequest, opts ...grpc.CallOption) (*DsGenerateDatasetResponse, error)
 	// Preform the split. The dataset is assumed to be in the live area after validation
@@ -59,12 +57,9 @@ type DataServiceClient interface {
 	AskBaseline(ctx context.Context, in *AskBaselineRequest, opts ...grpc.CallOption) (*AskBaselineResponse, error)
 	AskEnsemble(ctx context.Context, in *AskEnsembleRequest, opts ...grpc.CallOption) (*AskEnsembleResponse, error)
 	AskForecastModel(ctx context.Context, in *AskForecastModelRequest, opts ...grpc.CallOption) (*AskForecastModelResponse, error)
-	// sample model randomly for a given budget
 	AskModel(ctx context.Context, in *AskModelRequest, opts ...grpc.CallOption) (*AskModelResponse, error)
-	// If a model is a partial model (sample < 100%)
 	TellPartialModel(ctx context.Context, in *TellModelRequest, opts ...grpc.CallOption) (*TellModelResponse, error)
 	TellModel(ctx context.Context, in *TellModelRequest, opts ...grpc.CallOption) (*TellModelResponse, error)
-	// Merge the forecast back to one file.
 	MergeForecastFile(ctx context.Context, in *DsMergeForecastFileRequest, opts ...grpc.CallOption) (*DsMergeForecastFileResponse, error)
 	DsTestConnection(ctx context.Context, in *DsTestConnectionRequest, opts ...grpc.CallOption) (*DsTestConnectionResponse, error)
 	ShutDown(ctx context.Context, in *DsShutdownRequest, opts ...grpc.CallOption) (*DsShutdownResponse, error)
@@ -74,20 +69,17 @@ type DataServiceClient interface {
 	GetTables(ctx context.Context, in *DsGetTablesRequest, opts ...grpc.CallOption) (*DsGetTablesResponse, error)
 	ExecuteSql(ctx context.Context, in *DsExecuteSqlRequest, opts ...grpc.CallOption) (*DsExecuteSqlResponse, error)
 	Snapshot(ctx context.Context, in *DsSnapshotRequest, opts ...grpc.CallOption) (*DsSnapshotResponse, error)
-	// Tests
 	UnitTestDataset(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
 	UnitTestModel(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
 	UnitTestFeedback(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
 	UnitTestFeatureHistogram(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
 	UnitTestPredictor(ctx context.Context, in *RunTestSuiteRequest, opts ...grpc.CallOption) (*RunTestSuiteResponse, error)
 	GroupByDataset(ctx context.Context, in *GroupByDatasetRequest, opts ...grpc.CallOption) (*GroupByDatasetResponse, error)
-	// Sync from the online store to the offline store
 	SyncOnlineStore(ctx context.Context, in *SyncOnlineStoreRequest, opts ...grpc.CallOption) (*SyncOnlineStoreResponse, error)
-	// Generate training dataset.
 	GenTrainingData(ctx context.Context, in *GenTrainingDataRequest, opts ...grpc.CallOption) (*GenTrainingDataResponse, error)
-	// Generate training dataset.
 	GenOnlineStoreDataset(ctx context.Context, in *GenOnlineStoreDatasetRequest, opts ...grpc.CallOption) (*GenOnlineStoreDatasetResponse, error)
 	BatchPredict(ctx context.Context, in *BatchPredictRequest, opts ...grpc.CallOption) (*BatchPredictResponse, error)
+	PreviewModelScore(ctx context.Context, in *ModelScorePreviewRequest, opts ...grpc.CallOption) (*ModelScorePreviewResponse, error)
 	SaveDataSet(ctx context.Context, in *SaveDatasetRequest, opts ...grpc.CallOption) (*SaveResponse, error)
 	SaveModel(ctx context.Context, in *SaveModelRequest, opts ...grpc.CallOption) (*SaveResponse, error)
 	SavePrediction(ctx context.Context, in *SavePredictionRequest, opts ...grpc.CallOption) (*SaveResponse, error)
@@ -141,15 +133,6 @@ func (c *dataServiceClient) RunDataPipeline(ctx context.Context, in *DsRunDataPi
 func (c *dataServiceClient) RunRecipe(ctx context.Context, in *DsRunRecipeRequest, opts ...grpc.CallOption) (*DsRunRecipeResponse, error) {
 	out := new(DsRunRecipeResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunRecipe", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *dataServiceClient) WriteFile(ctx context.Context, in *DsWriteFileRequest, opts ...grpc.CallOption) (*DsReadFromStoreResponse, error) {
-	out := new(DsReadFromStoreResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/WriteFile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -498,6 +481,15 @@ func (c *dataServiceClient) BatchPredict(ctx context.Context, in *BatchPredictRe
 	return out, nil
 }
 
+func (c *dataServiceClient) PreviewModelScore(ctx context.Context, in *ModelScorePreviewRequest, opts ...grpc.CallOption) (*ModelScorePreviewResponse, error) {
+	out := new(ModelScorePreviewResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/PreviewModelScore", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *dataServiceClient) SaveDataSet(ctx context.Context, in *SaveDatasetRequest, opts ...grpc.CallOption) (*SaveResponse, error) {
 	out := new(SaveResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/SaveDataSet", in, out, opts...)
@@ -548,8 +540,6 @@ type DataServiceServer interface {
 	RunDataPipeline(context.Context, *DsRunDataPipelineRequest) (*DsRunDataPipelineResponse, error)
 	// Run recipe
 	RunRecipe(context.Context, *DsRunRecipeRequest) (*DsRunRecipeResponse, error)
-	// Read from a flat file and create a dataset
-	WriteFile(context.Context, *DsWriteFileRequest) (*DsReadFromStoreResponse, error)
 	// Based on the datasource, generate test dataset
 	GenerateDataset(context.Context, *DsGenerateDatasetRequest) (*DsGenerateDatasetResponse, error)
 	// Preform the split. The dataset is assumed to be in the live area after validation
@@ -575,12 +565,9 @@ type DataServiceServer interface {
 	AskBaseline(context.Context, *AskBaselineRequest) (*AskBaselineResponse, error)
 	AskEnsemble(context.Context, *AskEnsembleRequest) (*AskEnsembleResponse, error)
 	AskForecastModel(context.Context, *AskForecastModelRequest) (*AskForecastModelResponse, error)
-	// sample model randomly for a given budget
 	AskModel(context.Context, *AskModelRequest) (*AskModelResponse, error)
-	// If a model is a partial model (sample < 100%)
 	TellPartialModel(context.Context, *TellModelRequest) (*TellModelResponse, error)
 	TellModel(context.Context, *TellModelRequest) (*TellModelResponse, error)
-	// Merge the forecast back to one file.
 	MergeForecastFile(context.Context, *DsMergeForecastFileRequest) (*DsMergeForecastFileResponse, error)
 	DsTestConnection(context.Context, *DsTestConnectionRequest) (*DsTestConnectionResponse, error)
 	ShutDown(context.Context, *DsShutdownRequest) (*DsShutdownResponse, error)
@@ -590,20 +577,17 @@ type DataServiceServer interface {
 	GetTables(context.Context, *DsGetTablesRequest) (*DsGetTablesResponse, error)
 	ExecuteSql(context.Context, *DsExecuteSqlRequest) (*DsExecuteSqlResponse, error)
 	Snapshot(context.Context, *DsSnapshotRequest) (*DsSnapshotResponse, error)
-	// Tests
 	UnitTestDataset(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
 	UnitTestModel(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
 	UnitTestFeedback(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
 	UnitTestFeatureHistogram(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
 	UnitTestPredictor(context.Context, *RunTestSuiteRequest) (*RunTestSuiteResponse, error)
 	GroupByDataset(context.Context, *GroupByDatasetRequest) (*GroupByDatasetResponse, error)
-	// Sync from the online store to the offline store
 	SyncOnlineStore(context.Context, *SyncOnlineStoreRequest) (*SyncOnlineStoreResponse, error)
-	// Generate training dataset.
 	GenTrainingData(context.Context, *GenTrainingDataRequest) (*GenTrainingDataResponse, error)
-	// Generate training dataset.
 	GenOnlineStoreDataset(context.Context, *GenOnlineStoreDatasetRequest) (*GenOnlineStoreDatasetResponse, error)
 	BatchPredict(context.Context, *BatchPredictRequest) (*BatchPredictResponse, error)
+	PreviewModelScore(context.Context, *ModelScorePreviewRequest) (*ModelScorePreviewResponse, error)
 	SaveDataSet(context.Context, *SaveDatasetRequest) (*SaveResponse, error)
 	SaveModel(context.Context, *SaveModelRequest) (*SaveResponse, error)
 	SavePrediction(context.Context, *SavePredictionRequest) (*SaveResponse, error)
@@ -629,9 +613,6 @@ func (UnimplementedDataServiceServer) RunDataPipeline(context.Context, *DsRunDat
 }
 func (UnimplementedDataServiceServer) RunRecipe(context.Context, *DsRunRecipeRequest) (*DsRunRecipeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RunRecipe not implemented")
-}
-func (UnimplementedDataServiceServer) WriteFile(context.Context, *DsWriteFileRequest) (*DsReadFromStoreResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method WriteFile not implemented")
 }
 func (UnimplementedDataServiceServer) GenerateDataset(context.Context, *DsGenerateDatasetRequest) (*DsGenerateDatasetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateDataset not implemented")
@@ -747,6 +728,9 @@ func (UnimplementedDataServiceServer) GenOnlineStoreDataset(context.Context, *Ge
 func (UnimplementedDataServiceServer) BatchPredict(context.Context, *BatchPredictRequest) (*BatchPredictResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BatchPredict not implemented")
 }
+func (UnimplementedDataServiceServer) PreviewModelScore(context.Context, *ModelScorePreviewRequest) (*ModelScorePreviewResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PreviewModelScore not implemented")
+}
 func (UnimplementedDataServiceServer) SaveDataSet(context.Context, *SaveDatasetRequest) (*SaveResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SaveDataSet not implemented")
 }
@@ -858,24 +842,6 @@ func _DataService_RunRecipe_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).RunRecipe(ctx, req.(*DsRunRecipeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DataService_WriteFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DsWriteFileRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DataServiceServer).WriteFile(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/WriteFile",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).WriteFile(ctx, req.(*DsWriteFileRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1564,6 +1530,24 @@ func _DataService_BatchPredict_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_PreviewModelScore_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ModelScorePreviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).PreviewModelScore(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/PreviewModelScore",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).PreviewModelScore(ctx, req.(*ModelScorePreviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _DataService_SaveDataSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SaveDatasetRequest)
 	if err := dec(in); err != nil {
@@ -1662,10 +1646,6 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RunRecipe",
 			Handler:    _DataService_RunRecipe_Handler,
-		},
-		{
-			MethodName: "WriteFile",
-			Handler:    _DataService_WriteFile_Handler,
 		},
 		{
 			MethodName: "GenerateDataset",
@@ -1818,6 +1798,10 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "BatchPredict",
 			Handler:    _DataService_BatchPredict_Handler,
+		},
+		{
+			MethodName: "PreviewModelScore",
+			Handler:    _DataService_PreviewModelScore_Handler,
 		},
 		{
 			MethodName: "SaveDataSet",

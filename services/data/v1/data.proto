@@ -478,6 +478,10 @@ message DsSnapshotRequest {
 
 message DsSnapshotResponse {
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation location = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation sampleLocation = 2;
+    int32 cols = 3;
+    int32 rows = 4;
+    int32 filesize = 5;
 }
 
 message AskModelResponse {
@@ -509,9 +513,7 @@ message SyncOnlineStoreRequest {
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation           location = 8;
 }
 
-message SyncOnlineStoreResponse {
-
-}
+message SyncOnlineStoreResponse {}
 
 message GenOnlineStoreDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            storageConnection = 1;
@@ -548,8 +550,7 @@ message BatchPredictResponse {
     int32 rows = 1; // number of predicted rows
 }
 
-/////////// Metric store
-
+/////// Metric Store ///////
 
 message SaveDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            dataproduct = 1;
@@ -570,7 +571,6 @@ message SaveModelRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 7;
 }
 
-
 message SavePredictionRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct            dataproduct = 1;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClass         modelclass = 2;
@@ -589,12 +589,27 @@ message SavePredictorRequest {
 
 message CreateMetricsStoreRequest {
     string tenant = 1;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection            dbConnection = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection dbConnection = 2;
 }
 message CreateMetricsStoreResponse {}
+message SaveResponse {}
 
-message SaveResponse {
-    int32 dbid = 1;
+/////// Model Preview ///////
+
+message ModelScorePreviewRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 2;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshot snapshot = 4;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline pipelines = 5;
+    string estimator = 6;
+    string metric = 7;
+    int32 rows = 8;
+    string client = 9;
+}
+
+message ModelScorePreviewResponse {
+    float score = 1;
 }
 
 
@@ -609,8 +624,6 @@ service DataService {
     rpc RunDataPipeline(DsRunDataPipelineRequest) returns (DsRunDataPipelineResponse) {}
     // Run recipe
     rpc RunRecipe(DsRunRecipeRequest) returns (DsRunRecipeResponse) {}
-    // Read from a flat file and create a dataset
-    rpc WriteFile(DsWriteFileRequest) returns (DsReadFromStoreResponse) {}
     // Based on the datasource, generate test dataset
     rpc GenerateDataset(DsGenerateDatasetRequest) returns (DsGenerateDatasetResponse) {}
     // Preform the split. The dataset is assumed to be in the live area after validation
@@ -637,14 +650,10 @@ service DataService {
     rpc AskBaseline (AskBaselineRequest) returns (AskBaselineResponse) {}
     rpc AskEnsemble (AskEnsembleRequest) returns (AskEnsembleResponse) {}
     rpc AskForecastModel (AskForecastModelRequest) returns (AskForecastModelResponse) {}
-
-    // sample model randomly for a given budget
     rpc AskModel (AskModelRequest) returns (AskModelResponse) {}
-
-    // If a model is a partial model (sample < 100%)
     rpc TellPartialModel (TellModelRequest) returns (TellModelResponse) {}
     rpc TellModel (TellModelRequest) returns (TellModelResponse) {}
-    // Merge the forecast back to one file.
+
     rpc MergeForecastFile(DsMergeForecastFileRequest) returns (DsMergeForecastFileResponse) {}
     rpc DsTestConnection(DsTestConnectionRequest) returns (DsTestConnectionResponse) {}
     rpc ShutDown(DsShutdownRequest) returns (DsShutdownResponse) {}
@@ -654,21 +663,20 @@ service DataService {
     rpc GetTables(DsGetTablesRequest)   returns (DsGetTablesResponse) {}
     rpc ExecuteSql(DsExecuteSqlRequest) returns (DsExecuteSqlResponse) {}
     rpc Snapshot(DsSnapshotRequest) returns (DsSnapshotResponse) {}
-    // Tests
+
     rpc UnitTestDataset(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
     rpc UnitTestModel(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
     rpc UnitTestFeedback(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
     rpc UnitTestFeatureHistogram(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
     rpc UnitTestPredictor(RunTestSuiteRequest) returns (RunTestSuiteResponse) {}
-    rpc GroupByDataset(GroupByDatasetRequest) returns (GroupByDatasetResponse) {}
-    // Sync from the online store to the offline store
-    rpc SyncOnlineStore(SyncOnlineStoreRequest) returns (SyncOnlineStoreResponse)     {}
-    // Generate training dataset.
-    rpc GenTrainingData(GenTrainingDataRequest) returns (GenTrainingDataResponse)     {}
-    // Generate training dataset.
-    rpc GenOnlineStoreDataset(GenOnlineStoreDatasetRequest) returns (GenOnlineStoreDatasetResponse)     {}
 
+    rpc GroupByDataset(GroupByDatasetRequest) returns (GroupByDatasetResponse) {}
+    rpc SyncOnlineStore(SyncOnlineStoreRequest) returns (SyncOnlineStoreResponse)     {}
+    rpc GenTrainingData(GenTrainingDataRequest) returns (GenTrainingDataResponse)     {}
+    rpc GenOnlineStoreDataset(GenOnlineStoreDatasetRequest) returns (GenOnlineStoreDatasetResponse)     {}
     rpc BatchPredict(BatchPredictRequest) returns (BatchPredictResponse) {}
+
+    rpc PreviewModelScore(ModelScorePreviewRequest) returns (ModelScorePreviewResponse) {}
 
     // metric store methods, used to save the
 

@@ -99,25 +99,20 @@ class ModelServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.DownloadModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.DownloadModelResponse.FromString,
                 )
-        self.FlagModel = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.model.v1.ModelService/FlagModel',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.FlagModelRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.FlagModelResponse.FromString,
-                )
         self.PromoteModel = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.model.v1.ModelService/PromoteModel',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.PromoteModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.PromoteModelResponse.FromString,
                 )
-        self.CreateDashboard = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateDashboard',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.CreateDashboardRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.CreateDashboardResponse.FromString,
-                )
         self.TestModel = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.model.v1.ModelService/TestModel',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.TestModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.TestModelResponse.FromString,
+                )
+        self.PreviewScore = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.model.v1.ModelService/PreviewScore',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.PreviewScoreRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.PreviewScoreResponse.FromString,
                 )
 
 
@@ -226,29 +221,20 @@ class ModelServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def FlagModel(self, request, context):
-        """Flag model 
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def PromoteModel(self, request, context):
-        """promote model to live in model class
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def CreateDashboard(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def TestModel(self, request, context):
-        """Mark the model to test
-        """
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def PreviewScore(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -341,25 +327,20 @@ def add_ModelServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.DownloadModelRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.DownloadModelResponse.SerializeToString,
             ),
-            'FlagModel': grpc.unary_unary_rpc_method_handler(
-                    servicer.FlagModel,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.FlagModelRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.FlagModelResponse.SerializeToString,
-            ),
             'PromoteModel': grpc.unary_unary_rpc_method_handler(
                     servicer.PromoteModel,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.PromoteModelRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.PromoteModelResponse.SerializeToString,
             ),
-            'CreateDashboard': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateDashboard,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.CreateDashboardRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.CreateDashboardResponse.SerializeToString,
-            ),
             'TestModel': grpc.unary_unary_rpc_method_handler(
                     servicer.TestModel,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.TestModelRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.TestModelResponse.SerializeToString,
+            ),
+            'PreviewScore': grpc.unary_unary_rpc_method_handler(
+                    servicer.PreviewScore,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.PreviewScoreRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.PreviewScoreResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -661,23 +642,6 @@ class ModelService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def FlagModel(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.model.v1.ModelService/FlagModel',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.FlagModelRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.FlagModelResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def PromoteModel(request,
             target,
             options=(),
@@ -695,23 +659,6 @@ class ModelService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CreateDashboard(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateDashboard',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.CreateDashboardRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.CreateDashboardResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def TestModel(request,
             target,
             options=(),
@@ -725,5 +672,22 @@ class ModelService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.model.v1.ModelService/TestModel',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.TestModelRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.TestModelResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PreviewScore(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.model.v1.ModelService/PreviewScore',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.PreviewScoreRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_model_dot_v1_dot_model__pb2.PreviewScoreResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
